@@ -39,26 +39,26 @@ void QueryServerLockResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["GmtCreate"].isNull())
-		gmtCreate_ = value["GmtCreate"].asString();
-	if(!value["GmtModified"].isNull())
-		gmtModified_ = value["GmtModified"].asString();
-	if(!value["UserId"].isNull())
-		userId_ = value["UserId"].asString();
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["DomainInstanceId"].isNull())
-		domainInstanceId_ = value["DomainInstanceId"].asString();
-	if(!value["LockProductId"].isNull())
-		lockProductId_ = value["LockProductId"].asString();
 	if(!value["StartDate"].isNull())
 		startDate_ = value["StartDate"].asString();
+	if(!value["GmtCreate"].isNull())
+		gmtCreate_ = value["GmtCreate"].asString();
 	if(!value["ExpireDate"].isNull())
 		expireDate_ = value["ExpireDate"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["UserId"].isNull())
+		userId_ = value["UserId"].asString();
+	if(!value["GmtModified"].isNull())
+		gmtModified_ = value["GmtModified"].asString();
+	if(!value["DomainInstanceId"].isNull())
+		domainInstanceId_ = value["DomainInstanceId"].asString();
 	if(!value["LockInstanceId"].isNull())
 		lockInstanceId_ = value["LockInstanceId"].asString();
 	if(!value["ServerLockStatus"].isNull())
 		serverLockStatus_ = std::stoi(value["ServerLockStatus"].asString());
+	if(!value["LockProductId"].isNull())
+		lockProductId_ = value["LockProductId"].asString();
 
 }
 

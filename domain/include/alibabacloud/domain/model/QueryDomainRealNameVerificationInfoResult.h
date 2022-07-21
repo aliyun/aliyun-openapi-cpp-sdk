@@ -38,8 +38,8 @@ namespace AlibabaCloud
 				explicit QueryDomainRealNameVerificationInfoResult(const std::string &payload);
 				~QueryDomainRealNameVerificationInfoResult();
 				std::string getIdentityCredentialType()const;
-				std::string getDomainName()const;
 				std::string getInstanceId()const;
+				std::string getDomainName()const;
 				std::string getIdentityCredential()const;
 				std::string getSubmissionDate()const;
 				std::string getIdentityCredentialNo()const;
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string identityCredentialType_;
-				std::string domainName_;
 				std::string instanceId_;
+				std::string domainName_;
 				std::string identityCredential_;
 				std::string submissionDate_;
 				std::string identityCredentialNo_;

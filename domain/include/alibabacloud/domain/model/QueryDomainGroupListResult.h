@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string creationDate;
 					std::string domainGroupName;
 					std::string modificationDate;
-					std::string domainGroupId;
 					std::string domainGroupStatus;
+					std::string domainGroupId;
 					int totalNumber;
 				};
 

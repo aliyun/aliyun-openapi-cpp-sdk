@@ -39,14 +39,14 @@ void GetOperationOssUploadPolicyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Accessid"].isNull())
-		accessid_ = value["Accessid"].asString();
-	if(!value["EncodedPolicy"].isNull())
-		encodedPolicy_ = value["EncodedPolicy"].asString();
-	if(!value["Signature"].isNull())
-		signature_ = value["Signature"].asString();
 	if(!value["FileDir"].isNull())
 		fileDir_ = value["FileDir"].asString();
+	if(!value["EncodedPolicy"].isNull())
+		encodedPolicy_ = value["EncodedPolicy"].asString();
+	if(!value["Accessid"].isNull())
+		accessid_ = value["Accessid"].asString();
+	if(!value["Signature"].isNull())
+		signature_ = value["Signature"].asString();
 	if(!value["Host"].isNull())
 		host_ = value["Host"].asString();
 	if(!value["ExpireTime"].isNull())

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,40 +17,32 @@
 #ifndef ALIBABACLOUD_DOMAIN_MODEL_SAVEBATCHTASKFORRESERVEDROPLISTDOMAINREQUEST_H_
 #define ALIBABACLOUD_DOMAIN_MODEL_SAVEBATCHTASKFORRESERVEDROPLISTDOMAINREQUEST_H_
 
+#include <alibabacloud/domain/DomainExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/domain/DomainExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Domain
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_DOMAIN_EXPORT SaveBatchTaskForReserveDropListDomainRequest : public RpcServiceRequest
-			{
-			public:
-				struct Domains
-				{
-					std::string domainName;
-				};
+namespace AlibabaCloud {
+namespace Domain {
+namespace Model {
+class ALIBABACLOUD_DOMAIN_EXPORT SaveBatchTaskForReserveDropListDomainRequest : public RpcServiceRequest {
+public:
+	struct Domains {
+		std::string domainName;
+	};
+	SaveBatchTaskForReserveDropListDomainRequest();
+	~SaveBatchTaskForReserveDropListDomainRequest();
+	std::vector<Domains> getDomains() const;
+	void setDomains(const std::vector<Domains> &domains);
+	std::string getContactTemplateId() const;
+	void setContactTemplateId(const std::string &contactTemplateId);
 
-			public:
-				SaveBatchTaskForReserveDropListDomainRequest();
-				~SaveBatchTaskForReserveDropListDomainRequest();
-
-				std::vector<Domains> getDomains()const;
-				void setDomains(const std::vector<Domains>& domains);
-				std::string getContactTemplateId()const;
-				void setContactTemplateId(const std::string& contactTemplateId);
-
-            private:
-				std::vector<Domains> domains_;
-				std::string contactTemplateId_;
-
-			};
-		}
-	}
-}
+private:
+	std::vector<Domains> domains_;
+	std::string contactTemplateId_;
+};
+} // namespace Model
+} // namespace Domain
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_DOMAIN_MODEL_SAVEBATCHTASKFORRESERVEDROPLISTDOMAINREQUEST_H_

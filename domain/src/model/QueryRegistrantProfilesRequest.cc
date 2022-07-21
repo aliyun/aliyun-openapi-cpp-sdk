@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,144 +18,118 @@
 
 using AlibabaCloud::Domain::Model::QueryRegistrantProfilesRequest;
 
-QueryRegistrantProfilesRequest::QueryRegistrantProfilesRequest() :
-	RpcServiceRequest("domain", "2018-01-29", "QueryRegistrantProfiles")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryRegistrantProfilesRequest::QueryRegistrantProfilesRequest()
+    : RpcServiceRequest("domain", "2018-01-29", "QueryRegistrantProfiles") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryRegistrantProfilesRequest::~QueryRegistrantProfilesRequest()
-{}
+QueryRegistrantProfilesRequest::~QueryRegistrantProfilesRequest() {}
 
-long QueryRegistrantProfilesRequest::getRegistrantProfileId()const
-{
-	return registrantProfileId_;
+long QueryRegistrantProfilesRequest::getRegistrantProfileId() const {
+  return registrantProfileId_;
 }
 
-void QueryRegistrantProfilesRequest::setRegistrantProfileId(long registrantProfileId)
-{
-	registrantProfileId_ = registrantProfileId;
-	setParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+void QueryRegistrantProfilesRequest::setRegistrantProfileId(long registrantProfileId) {
+  registrantProfileId_ = registrantProfileId;
+  setParameter(std::string("RegistrantProfileId"), std::to_string(registrantProfileId));
 }
 
-int QueryRegistrantProfilesRequest::getPageNum()const
-{
-	return pageNum_;
+int QueryRegistrantProfilesRequest::getPageNum() const {
+  return pageNum_;
 }
 
-void QueryRegistrantProfilesRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+void QueryRegistrantProfilesRequest::setPageNum(int pageNum) {
+  pageNum_ = pageNum;
+  setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-int QueryRegistrantProfilesRequest::getPageSize()const
-{
-	return pageSize_;
+int QueryRegistrantProfilesRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void QueryRegistrantProfilesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void QueryRegistrantProfilesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string QueryRegistrantProfilesRequest::getRealNameStatus()const
-{
-	return realNameStatus_;
+std::string QueryRegistrantProfilesRequest::getRealNameStatus() const {
+  return realNameStatus_;
 }
 
-void QueryRegistrantProfilesRequest::setRealNameStatus(const std::string& realNameStatus)
-{
-	realNameStatus_ = realNameStatus;
-	setParameter("RealNameStatus", realNameStatus);
+void QueryRegistrantProfilesRequest::setRealNameStatus(const std::string &realNameStatus) {
+  realNameStatus_ = realNameStatus;
+  setParameter(std::string("RealNameStatus"), realNameStatus);
 }
 
-std::string QueryRegistrantProfilesRequest::getLang()const
-{
-	return lang_;
+std::string QueryRegistrantProfilesRequest::getLang() const {
+  return lang_;
 }
 
-void QueryRegistrantProfilesRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void QueryRegistrantProfilesRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-std::string QueryRegistrantProfilesRequest::getEmail()const
-{
-	return email_;
+std::string QueryRegistrantProfilesRequest::getEmail() const {
+  return email_;
 }
 
-void QueryRegistrantProfilesRequest::setEmail(const std::string& email)
-{
-	email_ = email;
-	setParameter("Email", email);
+void QueryRegistrantProfilesRequest::setEmail(const std::string &email) {
+  email_ = email;
+  setParameter(std::string("Email"), email);
 }
 
-std::string QueryRegistrantProfilesRequest::getZhRegistrantOrganization()const
-{
-	return zhRegistrantOrganization_;
+std::string QueryRegistrantProfilesRequest::getZhRegistrantOrganization() const {
+  return zhRegistrantOrganization_;
 }
 
-void QueryRegistrantProfilesRequest::setZhRegistrantOrganization(const std::string& zhRegistrantOrganization)
-{
-	zhRegistrantOrganization_ = zhRegistrantOrganization;
-	setParameter("ZhRegistrantOrganization", zhRegistrantOrganization);
+void QueryRegistrantProfilesRequest::setZhRegistrantOrganization(const std::string &zhRegistrantOrganization) {
+  zhRegistrantOrganization_ = zhRegistrantOrganization;
+  setParameter(std::string("ZhRegistrantOrganization"), zhRegistrantOrganization);
 }
 
-std::string QueryRegistrantProfilesRequest::getRegistrantType()const
-{
-	return registrantType_;
+std::string QueryRegistrantProfilesRequest::getRegistrantType() const {
+  return registrantType_;
 }
 
-void QueryRegistrantProfilesRequest::setRegistrantType(const std::string& registrantType)
-{
-	registrantType_ = registrantType;
-	setParameter("RegistrantType", registrantType);
+void QueryRegistrantProfilesRequest::setRegistrantType(const std::string &registrantType) {
+  registrantType_ = registrantType;
+  setParameter(std::string("RegistrantType"), registrantType);
 }
 
-std::string QueryRegistrantProfilesRequest::getRegistrantProfileType()const
-{
-	return registrantProfileType_;
+std::string QueryRegistrantProfilesRequest::getRegistrantProfileType() const {
+  return registrantProfileType_;
 }
 
-void QueryRegistrantProfilesRequest::setRegistrantProfileType(const std::string& registrantProfileType)
-{
-	registrantProfileType_ = registrantProfileType;
-	setParameter("RegistrantProfileType", registrantProfileType);
+void QueryRegistrantProfilesRequest::setRegistrantProfileType(const std::string &registrantProfileType) {
+  registrantProfileType_ = registrantProfileType;
+  setParameter(std::string("RegistrantProfileType"), registrantProfileType);
 }
 
-bool QueryRegistrantProfilesRequest::getDefaultRegistrantProfile()const
-{
-	return defaultRegistrantProfile_;
+bool QueryRegistrantProfilesRequest::getDefaultRegistrantProfile() const {
+  return defaultRegistrantProfile_;
 }
 
-void QueryRegistrantProfilesRequest::setDefaultRegistrantProfile(bool defaultRegistrantProfile)
-{
-	defaultRegistrantProfile_ = defaultRegistrantProfile;
-	setParameter("DefaultRegistrantProfile", defaultRegistrantProfile ? "true" : "false");
+void QueryRegistrantProfilesRequest::setDefaultRegistrantProfile(bool defaultRegistrantProfile) {
+  defaultRegistrantProfile_ = defaultRegistrantProfile;
+  setParameter(std::string("DefaultRegistrantProfile"), defaultRegistrantProfile ? "true" : "false");
 }
 
-std::string QueryRegistrantProfilesRequest::getRegistrantOrganization()const
-{
-	return registrantOrganization_;
+std::string QueryRegistrantProfilesRequest::getRegistrantOrganization() const {
+  return registrantOrganization_;
 }
 
-void QueryRegistrantProfilesRequest::setRegistrantOrganization(const std::string& registrantOrganization)
-{
-	registrantOrganization_ = registrantOrganization;
-	setParameter("RegistrantOrganization", registrantOrganization);
+void QueryRegistrantProfilesRequest::setRegistrantOrganization(const std::string &registrantOrganization) {
+  registrantOrganization_ = registrantOrganization;
+  setParameter(std::string("RegistrantOrganization"), registrantOrganization);
 }
 
-std::string QueryRegistrantProfilesRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string QueryRegistrantProfilesRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void QueryRegistrantProfilesRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void QueryRegistrantProfilesRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 

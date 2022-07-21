@@ -37,43 +37,43 @@ namespace AlibabaCloud
 				QueryContactInfoResult();
 				explicit QueryContactInfoResult(const std::string &payload);
 				~QueryContactInfoResult();
-				std::string getEmail()const;
 				std::string getZhProvince()const;
-				std::string getAddress()const;
+				std::string getEmail()const;
 				std::string getTelephone()const;
+				std::string getAddress()const;
 				std::string getPostalCode()const;
 				std::string getZhRegistrantName()const;
 				std::string getCity()const;
 				std::string getCreateDate()const;
 				std::string getProvince()const;
-				std::string getRegistrantName()const;
 				std::string getZhCity()const;
-				std::string getCountry()const;
+				std::string getRegistrantName()const;
 				std::string getZhRegistrantOrganization()const;
+				std::string getCountry()const;
 				std::string getRegistrantOrganization()const;
-				std::string getTelArea()const;
 				std::string getTelExt()const;
+				std::string getTelArea()const;
 				std::string getZhAddress()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string email_;
 				std::string zhProvince_;
-				std::string address_;
+				std::string email_;
 				std::string telephone_;
+				std::string address_;
 				std::string postalCode_;
 				std::string zhRegistrantName_;
 				std::string city_;
 				std::string createDate_;
 				std::string province_;
-				std::string registrantName_;
 				std::string zhCity_;
-				std::string country_;
+				std::string registrantName_;
 				std::string zhRegistrantOrganization_;
+				std::string country_;
 				std::string registrantOrganization_;
-				std::string telArea_;
 				std::string telExt_;
+				std::string telArea_;
 				std::string zhAddress_;
 
 			};

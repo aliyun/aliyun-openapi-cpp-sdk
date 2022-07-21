@@ -38,8 +38,8 @@ namespace AlibabaCloud
 				explicit CheckDomainResult(const std::string &payload);
 				~CheckDomainResult();
 				std::string getAvail()const;
-				std::string getDomainName()const;
 				long getPrice()const;
+				std::string getDomainName()const;
 				std::string getPremium()const;
 				bool getDynamicCheck()const;
 				std::string getReason()const;
@@ -48,8 +48,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string avail_;
-				std::string domainName_;
 				long price_;
+				std::string domainName_;
 				std::string premium_;
 				bool dynamicCheck_;
 				std::string reason_;

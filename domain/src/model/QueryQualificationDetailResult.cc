@@ -43,18 +43,18 @@ void QueryQualificationDetailResult::parse(const std::string &payload)
 	for (auto valueCredentialsQualificationCredential : allCredentialsNode)
 	{
 		QualificationCredential credentialsObject;
-		if(!valueCredentialsQualificationCredential["CredentialNo"].isNull())
-			credentialsObject.credentialNo = valueCredentialsQualificationCredential["CredentialNo"].asString();
 		if(!valueCredentialsQualificationCredential["CredentialType"].isNull())
 			credentialsObject.credentialType = valueCredentialsQualificationCredential["CredentialType"].asString();
+		if(!valueCredentialsQualificationCredential["CredentialNo"].isNull())
+			credentialsObject.credentialNo = valueCredentialsQualificationCredential["CredentialNo"].asString();
 		if(!valueCredentialsQualificationCredential["CredentialUrl"].isNull())
 			credentialsObject.credentialUrl = valueCredentialsQualificationCredential["CredentialUrl"].asString();
 		credentials_.push_back(credentialsObject);
 	}
-	if(!value["TrackId"].isNull())
-		trackId_ = value["TrackId"].asString();
 	if(!value["AuditStatus"].isNull())
 		auditStatus_ = std::stoi(value["AuditStatus"].asString());
+	if(!value["TrackId"].isNull())
+		trackId_ = value["TrackId"].asString();
 
 }
 

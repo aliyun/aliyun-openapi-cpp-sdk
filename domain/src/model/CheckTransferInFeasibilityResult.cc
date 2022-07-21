@@ -41,12 +41,12 @@ void CheckTransferInFeasibilityResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["CanTransfer"].isNull())
 		canTransfer_ = value["CanTransfer"].asString() == "true";
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["ProductId"].isNull())
 		productId_ = value["ProductId"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 
 }
 

@@ -39,10 +39,10 @@ void CheckDomainSunriseClaimResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Result"].isNull())
-		result_ = std::stoi(value["Result"].asString());
 	if(!value["ClaimKey"].isNull())
 		claimKey_ = value["ClaimKey"].asString();
+	if(!value["Result"].isNull())
+		result_ = std::stoi(value["Result"].asString());
 
 }
 

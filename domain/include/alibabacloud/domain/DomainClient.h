@@ -22,14 +22,10 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "DomainExport.h"
-#include "model/AcceptDemandRequest.h"
-#include "model/AcceptDemandResult.h"
 #include "model/AcknowledgeTaskResultRequest.h"
 #include "model/AcknowledgeTaskResultResult.h"
 #include "model/BatchFuzzyMatchDomainSensitiveWordRequest.h"
 #include "model/BatchFuzzyMatchDomainSensitiveWordResult.h"
-#include "model/BidDomainRequest.h"
-#include "model/BidDomainResult.h"
 #include "model/CancelDomainVerificationRequest.h"
 #include "model/CancelDomainVerificationResult.h"
 #include "model/CancelOperationAuditRequest.h"
@@ -38,12 +34,8 @@
 #include "model/CancelQualificationVerificationResult.h"
 #include "model/CancelTaskRequest.h"
 #include "model/CancelTaskResult.h"
-#include "model/ChangeAuctionRequest.h"
-#include "model/ChangeAuctionResult.h"
 #include "model/CheckDomainRequest.h"
 #include "model/CheckDomainResult.h"
-#include "model/CheckDomainStatusRequest.h"
-#include "model/CheckDomainStatusResult.h"
 #include "model/CheckDomainSunriseClaimRequest.h"
 #include "model/CheckDomainSunriseClaimResult.h"
 #include "model/CheckMaxYearOfServerLockRequest.h"
@@ -54,8 +46,6 @@
 #include "model/CheckTransferInFeasibilityResult.h"
 #include "model/ConfirmTransferInEmailRequest.h"
 #include "model/ConfirmTransferInEmailResult.h"
-#include "model/CreateFixedPriceDemandOrderRequest.h"
-#include "model/CreateFixedPriceDemandOrderResult.h"
 #include "model/DeleteContactTemplatesRequest.h"
 #include "model/DeleteContactTemplatesResult.h"
 #include "model/DeleteDomainGroupRequest.h"
@@ -66,18 +56,12 @@
 #include "model/DeleteRegistrantProfileResult.h"
 #include "model/EmailVerifiedRequest.h"
 #include "model/EmailVerifiedResult.h"
-#include "model/FailDemandRequest.h"
-#include "model/FailDemandResult.h"
-#include "model/FinishDemandRequest.h"
-#include "model/FinishDemandResult.h"
 #include "model/FuzzyMatchDomainSensitiveWordRequest.h"
 #include "model/FuzzyMatchDomainSensitiveWordResult.h"
 #include "model/GetOperationOssUploadPolicyRequest.h"
 #include "model/GetOperationOssUploadPolicyResult.h"
 #include "model/GetQualificationUploadPolicyRequest.h"
 #include "model/GetQualificationUploadPolicyResult.h"
-#include "model/GetReserveDomainUrlRequest.h"
-#include "model/GetReserveDomainUrlResult.h"
 #include "model/ListEmailVerificationRequest.h"
 #include "model/ListEmailVerificationResult.h"
 #include "model/ListServerLockRequest.h"
@@ -90,18 +74,6 @@
 #include "model/QueryAdvancedDomainListResult.h"
 #include "model/QueryArtExtensionRequest.h"
 #include "model/QueryArtExtensionResult.h"
-#include "model/QueryAuctionDetailRequest.h"
-#include "model/QueryAuctionDetailResult.h"
-#include "model/QueryAuctionsRequest.h"
-#include "model/QueryAuctionsResult.h"
-#include "model/QueryBidRecordsRequest.h"
-#include "model/QueryBidRecordsResult.h"
-#include "model/QueryBookingDomainInfoRequest.h"
-#include "model/QueryBookingDomainInfoResult.h"
-#include "model/QueryBrokerDemandRequest.h"
-#include "model/QueryBrokerDemandResult.h"
-#include "model/QueryBrokerDemandRecordRequest.h"
-#include "model/QueryBrokerDemandRecordResult.h"
 #include "model/QueryChangeLogListRequest.h"
 #include "model/QueryChangeLogListResult.h"
 #include "model/QueryContactInfoRequest.h"
@@ -124,8 +96,6 @@
 #include "model/QueryDomainRealNameVerificationInfoResult.h"
 #include "model/QueryDomainSuffixRequest.h"
 #include "model/QueryDomainSuffixResult.h"
-#include "model/QueryDomainTransferStatusRequest.h"
-#include "model/QueryDomainTransferStatusResult.h"
 #include "model/QueryEmailVerificationRequest.h"
 #include "model/QueryEmailVerificationResult.h"
 #include "model/QueryEnsAssociationRequest.h"
@@ -164,18 +134,10 @@
 #include "model/QueryTransferInListResult.h"
 #include "model/QueryTransferOutInfoRequest.h"
 #include "model/QueryTransferOutInfoResult.h"
-#include "model/RecordDemandRequest.h"
-#include "model/RecordDemandResult.h"
-#include "model/RefuseDemandRequest.h"
-#include "model/RefuseDemandResult.h"
 #include "model/RegistrantProfileRealNameVerificationRequest.h"
 #include "model/RegistrantProfileRealNameVerificationResult.h"
-#include "model/RequestPayDemandRequest.h"
-#include "model/RequestPayDemandResult.h"
 #include "model/ResendEmailVerificationRequest.h"
 #include "model/ResendEmailVerificationResult.h"
-#include "model/ReserveDomainRequest.h"
-#include "model/ReserveDomainResult.h"
 #include "model/ResetQualificationVerificationRequest.h"
 #include "model/ResetQualificationVerificationResult.h"
 #include "model/SaveBatchDomainRemarkRequest.h"
@@ -297,18 +259,12 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_DOMAIN_EXPORT DomainClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::AcceptDemandResult> AcceptDemandOutcome;
-			typedef std::future<AcceptDemandOutcome> AcceptDemandOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::AcceptDemandRequest&, const AcceptDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AcceptDemandAsyncHandler;
 			typedef Outcome<Error, Model::AcknowledgeTaskResultResult> AcknowledgeTaskResultOutcome;
 			typedef std::future<AcknowledgeTaskResultOutcome> AcknowledgeTaskResultOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::AcknowledgeTaskResultRequest&, const AcknowledgeTaskResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AcknowledgeTaskResultAsyncHandler;
 			typedef Outcome<Error, Model::BatchFuzzyMatchDomainSensitiveWordResult> BatchFuzzyMatchDomainSensitiveWordOutcome;
 			typedef std::future<BatchFuzzyMatchDomainSensitiveWordOutcome> BatchFuzzyMatchDomainSensitiveWordOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::BatchFuzzyMatchDomainSensitiveWordRequest&, const BatchFuzzyMatchDomainSensitiveWordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchFuzzyMatchDomainSensitiveWordAsyncHandler;
-			typedef Outcome<Error, Model::BidDomainResult> BidDomainOutcome;
-			typedef std::future<BidDomainOutcome> BidDomainOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::BidDomainRequest&, const BidDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BidDomainAsyncHandler;
 			typedef Outcome<Error, Model::CancelDomainVerificationResult> CancelDomainVerificationOutcome;
 			typedef std::future<CancelDomainVerificationOutcome> CancelDomainVerificationOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::CancelDomainVerificationRequest&, const CancelDomainVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelDomainVerificationAsyncHandler;
@@ -321,15 +277,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelTaskResult> CancelTaskOutcome;
 			typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::CancelTaskRequest&, const CancelTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
-			typedef Outcome<Error, Model::ChangeAuctionResult> ChangeAuctionOutcome;
-			typedef std::future<ChangeAuctionOutcome> ChangeAuctionOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::ChangeAuctionRequest&, const ChangeAuctionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeAuctionAsyncHandler;
 			typedef Outcome<Error, Model::CheckDomainResult> CheckDomainOutcome;
 			typedef std::future<CheckDomainOutcome> CheckDomainOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::CheckDomainRequest&, const CheckDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDomainAsyncHandler;
-			typedef Outcome<Error, Model::CheckDomainStatusResult> CheckDomainStatusOutcome;
-			typedef std::future<CheckDomainStatusOutcome> CheckDomainStatusOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::CheckDomainStatusRequest&, const CheckDomainStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDomainStatusAsyncHandler;
 			typedef Outcome<Error, Model::CheckDomainSunriseClaimResult> CheckDomainSunriseClaimOutcome;
 			typedef std::future<CheckDomainSunriseClaimOutcome> CheckDomainSunriseClaimOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::CheckDomainSunriseClaimRequest&, const CheckDomainSunriseClaimOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDomainSunriseClaimAsyncHandler;
@@ -345,9 +295,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ConfirmTransferInEmailResult> ConfirmTransferInEmailOutcome;
 			typedef std::future<ConfirmTransferInEmailOutcome> ConfirmTransferInEmailOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::ConfirmTransferInEmailRequest&, const ConfirmTransferInEmailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmTransferInEmailAsyncHandler;
-			typedef Outcome<Error, Model::CreateFixedPriceDemandOrderResult> CreateFixedPriceDemandOrderOutcome;
-			typedef std::future<CreateFixedPriceDemandOrderOutcome> CreateFixedPriceDemandOrderOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::CreateFixedPriceDemandOrderRequest&, const CreateFixedPriceDemandOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFixedPriceDemandOrderAsyncHandler;
 			typedef Outcome<Error, Model::DeleteContactTemplatesResult> DeleteContactTemplatesOutcome;
 			typedef std::future<DeleteContactTemplatesOutcome> DeleteContactTemplatesOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::DeleteContactTemplatesRequest&, const DeleteContactTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteContactTemplatesAsyncHandler;
@@ -363,12 +310,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EmailVerifiedResult> EmailVerifiedOutcome;
 			typedef std::future<EmailVerifiedOutcome> EmailVerifiedOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::EmailVerifiedRequest&, const EmailVerifiedOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EmailVerifiedAsyncHandler;
-			typedef Outcome<Error, Model::FailDemandResult> FailDemandOutcome;
-			typedef std::future<FailDemandOutcome> FailDemandOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::FailDemandRequest&, const FailDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FailDemandAsyncHandler;
-			typedef Outcome<Error, Model::FinishDemandResult> FinishDemandOutcome;
-			typedef std::future<FinishDemandOutcome> FinishDemandOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::FinishDemandRequest&, const FinishDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FinishDemandAsyncHandler;
 			typedef Outcome<Error, Model::FuzzyMatchDomainSensitiveWordResult> FuzzyMatchDomainSensitiveWordOutcome;
 			typedef std::future<FuzzyMatchDomainSensitiveWordOutcome> FuzzyMatchDomainSensitiveWordOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::FuzzyMatchDomainSensitiveWordRequest&, const FuzzyMatchDomainSensitiveWordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FuzzyMatchDomainSensitiveWordAsyncHandler;
@@ -378,9 +319,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetQualificationUploadPolicyResult> GetQualificationUploadPolicyOutcome;
 			typedef std::future<GetQualificationUploadPolicyOutcome> GetQualificationUploadPolicyOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::GetQualificationUploadPolicyRequest&, const GetQualificationUploadPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetQualificationUploadPolicyAsyncHandler;
-			typedef Outcome<Error, Model::GetReserveDomainUrlResult> GetReserveDomainUrlOutcome;
-			typedef std::future<GetReserveDomainUrlOutcome> GetReserveDomainUrlOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::GetReserveDomainUrlRequest&, const GetReserveDomainUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetReserveDomainUrlAsyncHandler;
 			typedef Outcome<Error, Model::ListEmailVerificationResult> ListEmailVerificationOutcome;
 			typedef std::future<ListEmailVerificationOutcome> ListEmailVerificationOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::ListEmailVerificationRequest&, const ListEmailVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListEmailVerificationAsyncHandler;
@@ -399,24 +337,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryArtExtensionResult> QueryArtExtensionOutcome;
 			typedef std::future<QueryArtExtensionOutcome> QueryArtExtensionOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::QueryArtExtensionRequest&, const QueryArtExtensionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryArtExtensionAsyncHandler;
-			typedef Outcome<Error, Model::QueryAuctionDetailResult> QueryAuctionDetailOutcome;
-			typedef std::future<QueryAuctionDetailOutcome> QueryAuctionDetailOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::QueryAuctionDetailRequest&, const QueryAuctionDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAuctionDetailAsyncHandler;
-			typedef Outcome<Error, Model::QueryAuctionsResult> QueryAuctionsOutcome;
-			typedef std::future<QueryAuctionsOutcome> QueryAuctionsOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::QueryAuctionsRequest&, const QueryAuctionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAuctionsAsyncHandler;
-			typedef Outcome<Error, Model::QueryBidRecordsResult> QueryBidRecordsOutcome;
-			typedef std::future<QueryBidRecordsOutcome> QueryBidRecordsOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::QueryBidRecordsRequest&, const QueryBidRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryBidRecordsAsyncHandler;
-			typedef Outcome<Error, Model::QueryBookingDomainInfoResult> QueryBookingDomainInfoOutcome;
-			typedef std::future<QueryBookingDomainInfoOutcome> QueryBookingDomainInfoOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::QueryBookingDomainInfoRequest&, const QueryBookingDomainInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryBookingDomainInfoAsyncHandler;
-			typedef Outcome<Error, Model::QueryBrokerDemandResult> QueryBrokerDemandOutcome;
-			typedef std::future<QueryBrokerDemandOutcome> QueryBrokerDemandOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::QueryBrokerDemandRequest&, const QueryBrokerDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryBrokerDemandAsyncHandler;
-			typedef Outcome<Error, Model::QueryBrokerDemandRecordResult> QueryBrokerDemandRecordOutcome;
-			typedef std::future<QueryBrokerDemandRecordOutcome> QueryBrokerDemandRecordOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::QueryBrokerDemandRecordRequest&, const QueryBrokerDemandRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryBrokerDemandRecordAsyncHandler;
 			typedef Outcome<Error, Model::QueryChangeLogListResult> QueryChangeLogListOutcome;
 			typedef std::future<QueryChangeLogListOutcome> QueryChangeLogListOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::QueryChangeLogListRequest&, const QueryChangeLogListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryChangeLogListAsyncHandler;
@@ -450,9 +370,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryDomainSuffixResult> QueryDomainSuffixOutcome;
 			typedef std::future<QueryDomainSuffixOutcome> QueryDomainSuffixOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::QueryDomainSuffixRequest&, const QueryDomainSuffixOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDomainSuffixAsyncHandler;
-			typedef Outcome<Error, Model::QueryDomainTransferStatusResult> QueryDomainTransferStatusOutcome;
-			typedef std::future<QueryDomainTransferStatusOutcome> QueryDomainTransferStatusOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::QueryDomainTransferStatusRequest&, const QueryDomainTransferStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDomainTransferStatusAsyncHandler;
 			typedef Outcome<Error, Model::QueryEmailVerificationResult> QueryEmailVerificationOutcome;
 			typedef std::future<QueryEmailVerificationOutcome> QueryEmailVerificationOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::QueryEmailVerificationRequest&, const QueryEmailVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryEmailVerificationAsyncHandler;
@@ -510,24 +427,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryTransferOutInfoResult> QueryTransferOutInfoOutcome;
 			typedef std::future<QueryTransferOutInfoOutcome> QueryTransferOutInfoOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::QueryTransferOutInfoRequest&, const QueryTransferOutInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryTransferOutInfoAsyncHandler;
-			typedef Outcome<Error, Model::RecordDemandResult> RecordDemandOutcome;
-			typedef std::future<RecordDemandOutcome> RecordDemandOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::RecordDemandRequest&, const RecordDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecordDemandAsyncHandler;
-			typedef Outcome<Error, Model::RefuseDemandResult> RefuseDemandOutcome;
-			typedef std::future<RefuseDemandOutcome> RefuseDemandOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::RefuseDemandRequest&, const RefuseDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RefuseDemandAsyncHandler;
 			typedef Outcome<Error, Model::RegistrantProfileRealNameVerificationResult> RegistrantProfileRealNameVerificationOutcome;
 			typedef std::future<RegistrantProfileRealNameVerificationOutcome> RegistrantProfileRealNameVerificationOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::RegistrantProfileRealNameVerificationRequest&, const RegistrantProfileRealNameVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegistrantProfileRealNameVerificationAsyncHandler;
-			typedef Outcome<Error, Model::RequestPayDemandResult> RequestPayDemandOutcome;
-			typedef std::future<RequestPayDemandOutcome> RequestPayDemandOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::RequestPayDemandRequest&, const RequestPayDemandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RequestPayDemandAsyncHandler;
 			typedef Outcome<Error, Model::ResendEmailVerificationResult> ResendEmailVerificationOutcome;
 			typedef std::future<ResendEmailVerificationOutcome> ResendEmailVerificationOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::ResendEmailVerificationRequest&, const ResendEmailVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResendEmailVerificationAsyncHandler;
-			typedef Outcome<Error, Model::ReserveDomainResult> ReserveDomainOutcome;
-			typedef std::future<ReserveDomainOutcome> ReserveDomainOutcomeCallable;
-			typedef std::function<void(const DomainClient*, const Model::ReserveDomainRequest&, const ReserveDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReserveDomainAsyncHandler;
 			typedef Outcome<Error, Model::ResetQualificationVerificationResult> ResetQualificationVerificationOutcome;
 			typedef std::future<ResetQualificationVerificationOutcome> ResetQualificationVerificationOutcomeCallable;
 			typedef std::function<void(const DomainClient*, const Model::ResetQualificationVerificationRequest&, const ResetQualificationVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetQualificationVerificationAsyncHandler;
@@ -701,18 +606,12 @@ namespace AlibabaCloud
 			DomainClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			DomainClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~DomainClient();
-			AcceptDemandOutcome acceptDemand(const Model::AcceptDemandRequest &request)const;
-			void acceptDemandAsync(const Model::AcceptDemandRequest& request, const AcceptDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AcceptDemandOutcomeCallable acceptDemandCallable(const Model::AcceptDemandRequest& request) const;
 			AcknowledgeTaskResultOutcome acknowledgeTaskResult(const Model::AcknowledgeTaskResultRequest &request)const;
 			void acknowledgeTaskResultAsync(const Model::AcknowledgeTaskResultRequest& request, const AcknowledgeTaskResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AcknowledgeTaskResultOutcomeCallable acknowledgeTaskResultCallable(const Model::AcknowledgeTaskResultRequest& request) const;
 			BatchFuzzyMatchDomainSensitiveWordOutcome batchFuzzyMatchDomainSensitiveWord(const Model::BatchFuzzyMatchDomainSensitiveWordRequest &request)const;
 			void batchFuzzyMatchDomainSensitiveWordAsync(const Model::BatchFuzzyMatchDomainSensitiveWordRequest& request, const BatchFuzzyMatchDomainSensitiveWordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchFuzzyMatchDomainSensitiveWordOutcomeCallable batchFuzzyMatchDomainSensitiveWordCallable(const Model::BatchFuzzyMatchDomainSensitiveWordRequest& request) const;
-			BidDomainOutcome bidDomain(const Model::BidDomainRequest &request)const;
-			void bidDomainAsync(const Model::BidDomainRequest& request, const BidDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			BidDomainOutcomeCallable bidDomainCallable(const Model::BidDomainRequest& request) const;
 			CancelDomainVerificationOutcome cancelDomainVerification(const Model::CancelDomainVerificationRequest &request)const;
 			void cancelDomainVerificationAsync(const Model::CancelDomainVerificationRequest& request, const CancelDomainVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelDomainVerificationOutcomeCallable cancelDomainVerificationCallable(const Model::CancelDomainVerificationRequest& request) const;
@@ -725,15 +624,9 @@ namespace AlibabaCloud
 			CancelTaskOutcome cancelTask(const Model::CancelTaskRequest &request)const;
 			void cancelTaskAsync(const Model::CancelTaskRequest& request, const CancelTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelTaskOutcomeCallable cancelTaskCallable(const Model::CancelTaskRequest& request) const;
-			ChangeAuctionOutcome changeAuction(const Model::ChangeAuctionRequest &request)const;
-			void changeAuctionAsync(const Model::ChangeAuctionRequest& request, const ChangeAuctionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ChangeAuctionOutcomeCallable changeAuctionCallable(const Model::ChangeAuctionRequest& request) const;
 			CheckDomainOutcome checkDomain(const Model::CheckDomainRequest &request)const;
 			void checkDomainAsync(const Model::CheckDomainRequest& request, const CheckDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckDomainOutcomeCallable checkDomainCallable(const Model::CheckDomainRequest& request) const;
-			CheckDomainStatusOutcome checkDomainStatus(const Model::CheckDomainStatusRequest &request)const;
-			void checkDomainStatusAsync(const Model::CheckDomainStatusRequest& request, const CheckDomainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CheckDomainStatusOutcomeCallable checkDomainStatusCallable(const Model::CheckDomainStatusRequest& request) const;
 			CheckDomainSunriseClaimOutcome checkDomainSunriseClaim(const Model::CheckDomainSunriseClaimRequest &request)const;
 			void checkDomainSunriseClaimAsync(const Model::CheckDomainSunriseClaimRequest& request, const CheckDomainSunriseClaimAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckDomainSunriseClaimOutcomeCallable checkDomainSunriseClaimCallable(const Model::CheckDomainSunriseClaimRequest& request) const;
@@ -749,9 +642,6 @@ namespace AlibabaCloud
 			ConfirmTransferInEmailOutcome confirmTransferInEmail(const Model::ConfirmTransferInEmailRequest &request)const;
 			void confirmTransferInEmailAsync(const Model::ConfirmTransferInEmailRequest& request, const ConfirmTransferInEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConfirmTransferInEmailOutcomeCallable confirmTransferInEmailCallable(const Model::ConfirmTransferInEmailRequest& request) const;
-			CreateFixedPriceDemandOrderOutcome createFixedPriceDemandOrder(const Model::CreateFixedPriceDemandOrderRequest &request)const;
-			void createFixedPriceDemandOrderAsync(const Model::CreateFixedPriceDemandOrderRequest& request, const CreateFixedPriceDemandOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateFixedPriceDemandOrderOutcomeCallable createFixedPriceDemandOrderCallable(const Model::CreateFixedPriceDemandOrderRequest& request) const;
 			DeleteContactTemplatesOutcome deleteContactTemplates(const Model::DeleteContactTemplatesRequest &request)const;
 			void deleteContactTemplatesAsync(const Model::DeleteContactTemplatesRequest& request, const DeleteContactTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteContactTemplatesOutcomeCallable deleteContactTemplatesCallable(const Model::DeleteContactTemplatesRequest& request) const;
@@ -767,12 +657,6 @@ namespace AlibabaCloud
 			EmailVerifiedOutcome emailVerified(const Model::EmailVerifiedRequest &request)const;
 			void emailVerifiedAsync(const Model::EmailVerifiedRequest& request, const EmailVerifiedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EmailVerifiedOutcomeCallable emailVerifiedCallable(const Model::EmailVerifiedRequest& request) const;
-			FailDemandOutcome failDemand(const Model::FailDemandRequest &request)const;
-			void failDemandAsync(const Model::FailDemandRequest& request, const FailDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			FailDemandOutcomeCallable failDemandCallable(const Model::FailDemandRequest& request) const;
-			FinishDemandOutcome finishDemand(const Model::FinishDemandRequest &request)const;
-			void finishDemandAsync(const Model::FinishDemandRequest& request, const FinishDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			FinishDemandOutcomeCallable finishDemandCallable(const Model::FinishDemandRequest& request) const;
 			FuzzyMatchDomainSensitiveWordOutcome fuzzyMatchDomainSensitiveWord(const Model::FuzzyMatchDomainSensitiveWordRequest &request)const;
 			void fuzzyMatchDomainSensitiveWordAsync(const Model::FuzzyMatchDomainSensitiveWordRequest& request, const FuzzyMatchDomainSensitiveWordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FuzzyMatchDomainSensitiveWordOutcomeCallable fuzzyMatchDomainSensitiveWordCallable(const Model::FuzzyMatchDomainSensitiveWordRequest& request) const;
@@ -782,9 +666,6 @@ namespace AlibabaCloud
 			GetQualificationUploadPolicyOutcome getQualificationUploadPolicy(const Model::GetQualificationUploadPolicyRequest &request)const;
 			void getQualificationUploadPolicyAsync(const Model::GetQualificationUploadPolicyRequest& request, const GetQualificationUploadPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetQualificationUploadPolicyOutcomeCallable getQualificationUploadPolicyCallable(const Model::GetQualificationUploadPolicyRequest& request) const;
-			GetReserveDomainUrlOutcome getReserveDomainUrl(const Model::GetReserveDomainUrlRequest &request)const;
-			void getReserveDomainUrlAsync(const Model::GetReserveDomainUrlRequest& request, const GetReserveDomainUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetReserveDomainUrlOutcomeCallable getReserveDomainUrlCallable(const Model::GetReserveDomainUrlRequest& request) const;
 			ListEmailVerificationOutcome listEmailVerification(const Model::ListEmailVerificationRequest &request)const;
 			void listEmailVerificationAsync(const Model::ListEmailVerificationRequest& request, const ListEmailVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListEmailVerificationOutcomeCallable listEmailVerificationCallable(const Model::ListEmailVerificationRequest& request) const;
@@ -803,24 +684,6 @@ namespace AlibabaCloud
 			QueryArtExtensionOutcome queryArtExtension(const Model::QueryArtExtensionRequest &request)const;
 			void queryArtExtensionAsync(const Model::QueryArtExtensionRequest& request, const QueryArtExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryArtExtensionOutcomeCallable queryArtExtensionCallable(const Model::QueryArtExtensionRequest& request) const;
-			QueryAuctionDetailOutcome queryAuctionDetail(const Model::QueryAuctionDetailRequest &request)const;
-			void queryAuctionDetailAsync(const Model::QueryAuctionDetailRequest& request, const QueryAuctionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryAuctionDetailOutcomeCallable queryAuctionDetailCallable(const Model::QueryAuctionDetailRequest& request) const;
-			QueryAuctionsOutcome queryAuctions(const Model::QueryAuctionsRequest &request)const;
-			void queryAuctionsAsync(const Model::QueryAuctionsRequest& request, const QueryAuctionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryAuctionsOutcomeCallable queryAuctionsCallable(const Model::QueryAuctionsRequest& request) const;
-			QueryBidRecordsOutcome queryBidRecords(const Model::QueryBidRecordsRequest &request)const;
-			void queryBidRecordsAsync(const Model::QueryBidRecordsRequest& request, const QueryBidRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryBidRecordsOutcomeCallable queryBidRecordsCallable(const Model::QueryBidRecordsRequest& request) const;
-			QueryBookingDomainInfoOutcome queryBookingDomainInfo(const Model::QueryBookingDomainInfoRequest &request)const;
-			void queryBookingDomainInfoAsync(const Model::QueryBookingDomainInfoRequest& request, const QueryBookingDomainInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryBookingDomainInfoOutcomeCallable queryBookingDomainInfoCallable(const Model::QueryBookingDomainInfoRequest& request) const;
-			QueryBrokerDemandOutcome queryBrokerDemand(const Model::QueryBrokerDemandRequest &request)const;
-			void queryBrokerDemandAsync(const Model::QueryBrokerDemandRequest& request, const QueryBrokerDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryBrokerDemandOutcomeCallable queryBrokerDemandCallable(const Model::QueryBrokerDemandRequest& request) const;
-			QueryBrokerDemandRecordOutcome queryBrokerDemandRecord(const Model::QueryBrokerDemandRecordRequest &request)const;
-			void queryBrokerDemandRecordAsync(const Model::QueryBrokerDemandRecordRequest& request, const QueryBrokerDemandRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryBrokerDemandRecordOutcomeCallable queryBrokerDemandRecordCallable(const Model::QueryBrokerDemandRecordRequest& request) const;
 			QueryChangeLogListOutcome queryChangeLogList(const Model::QueryChangeLogListRequest &request)const;
 			void queryChangeLogListAsync(const Model::QueryChangeLogListRequest& request, const QueryChangeLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryChangeLogListOutcomeCallable queryChangeLogListCallable(const Model::QueryChangeLogListRequest& request) const;
@@ -854,9 +717,6 @@ namespace AlibabaCloud
 			QueryDomainSuffixOutcome queryDomainSuffix(const Model::QueryDomainSuffixRequest &request)const;
 			void queryDomainSuffixAsync(const Model::QueryDomainSuffixRequest& request, const QueryDomainSuffixAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDomainSuffixOutcomeCallable queryDomainSuffixCallable(const Model::QueryDomainSuffixRequest& request) const;
-			QueryDomainTransferStatusOutcome queryDomainTransferStatus(const Model::QueryDomainTransferStatusRequest &request)const;
-			void queryDomainTransferStatusAsync(const Model::QueryDomainTransferStatusRequest& request, const QueryDomainTransferStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryDomainTransferStatusOutcomeCallable queryDomainTransferStatusCallable(const Model::QueryDomainTransferStatusRequest& request) const;
 			QueryEmailVerificationOutcome queryEmailVerification(const Model::QueryEmailVerificationRequest &request)const;
 			void queryEmailVerificationAsync(const Model::QueryEmailVerificationRequest& request, const QueryEmailVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryEmailVerificationOutcomeCallable queryEmailVerificationCallable(const Model::QueryEmailVerificationRequest& request) const;
@@ -914,24 +774,12 @@ namespace AlibabaCloud
 			QueryTransferOutInfoOutcome queryTransferOutInfo(const Model::QueryTransferOutInfoRequest &request)const;
 			void queryTransferOutInfoAsync(const Model::QueryTransferOutInfoRequest& request, const QueryTransferOutInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryTransferOutInfoOutcomeCallable queryTransferOutInfoCallable(const Model::QueryTransferOutInfoRequest& request) const;
-			RecordDemandOutcome recordDemand(const Model::RecordDemandRequest &request)const;
-			void recordDemandAsync(const Model::RecordDemandRequest& request, const RecordDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RecordDemandOutcomeCallable recordDemandCallable(const Model::RecordDemandRequest& request) const;
-			RefuseDemandOutcome refuseDemand(const Model::RefuseDemandRequest &request)const;
-			void refuseDemandAsync(const Model::RefuseDemandRequest& request, const RefuseDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RefuseDemandOutcomeCallable refuseDemandCallable(const Model::RefuseDemandRequest& request) const;
 			RegistrantProfileRealNameVerificationOutcome registrantProfileRealNameVerification(const Model::RegistrantProfileRealNameVerificationRequest &request)const;
 			void registrantProfileRealNameVerificationAsync(const Model::RegistrantProfileRealNameVerificationRequest& request, const RegistrantProfileRealNameVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RegistrantProfileRealNameVerificationOutcomeCallable registrantProfileRealNameVerificationCallable(const Model::RegistrantProfileRealNameVerificationRequest& request) const;
-			RequestPayDemandOutcome requestPayDemand(const Model::RequestPayDemandRequest &request)const;
-			void requestPayDemandAsync(const Model::RequestPayDemandRequest& request, const RequestPayDemandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RequestPayDemandOutcomeCallable requestPayDemandCallable(const Model::RequestPayDemandRequest& request) const;
 			ResendEmailVerificationOutcome resendEmailVerification(const Model::ResendEmailVerificationRequest &request)const;
 			void resendEmailVerificationAsync(const Model::ResendEmailVerificationRequest& request, const ResendEmailVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResendEmailVerificationOutcomeCallable resendEmailVerificationCallable(const Model::ResendEmailVerificationRequest& request) const;
-			ReserveDomainOutcome reserveDomain(const Model::ReserveDomainRequest &request)const;
-			void reserveDomainAsync(const Model::ReserveDomainRequest& request, const ReserveDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ReserveDomainOutcomeCallable reserveDomainCallable(const Model::ReserveDomainRequest& request) const;
 			ResetQualificationVerificationOutcome resetQualificationVerification(const Model::ResetQualificationVerificationRequest &request)const;
 			void resetQualificationVerificationAsync(const Model::ResetQualificationVerificationRequest& request, const ResetQualificationVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetQualificationVerificationOutcomeCallable resetQualificationVerificationCallable(const Model::ResetQualificationVerificationRequest& request) const;

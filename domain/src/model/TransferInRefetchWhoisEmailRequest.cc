@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Domain::Model::TransferInRefetchWhoisEmailRequest;
 
-TransferInRefetchWhoisEmailRequest::TransferInRefetchWhoisEmailRequest() :
-	RpcServiceRequest("domain", "2018-01-29", "TransferInRefetchWhoisEmail")
-{
-	setMethod(HttpRequest::Method::Post);
+TransferInRefetchWhoisEmailRequest::TransferInRefetchWhoisEmailRequest()
+    : RpcServiceRequest("domain", "2018-01-29", "TransferInRefetchWhoisEmail") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-TransferInRefetchWhoisEmailRequest::~TransferInRefetchWhoisEmailRequest()
-{}
+TransferInRefetchWhoisEmailRequest::~TransferInRefetchWhoisEmailRequest() {}
 
-std::string TransferInRefetchWhoisEmailRequest::getDomainName()const
-{
-	return domainName_;
+std::string TransferInRefetchWhoisEmailRequest::getDomainName() const {
+  return domainName_;
 }
 
-void TransferInRefetchWhoisEmailRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void TransferInRefetchWhoisEmailRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string TransferInRefetchWhoisEmailRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string TransferInRefetchWhoisEmailRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void TransferInRefetchWhoisEmailRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void TransferInRefetchWhoisEmailRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string TransferInRefetchWhoisEmailRequest::getLang()const
-{
-	return lang_;
+std::string TransferInRefetchWhoisEmailRequest::getLang() const {
+  return lang_;
 }
 
-void TransferInRefetchWhoisEmailRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void TransferInRefetchWhoisEmailRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

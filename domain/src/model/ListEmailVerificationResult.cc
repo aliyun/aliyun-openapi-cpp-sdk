@@ -43,38 +43,38 @@ void ListEmailVerificationResult::parse(const std::string &payload)
 	for (auto valueDataEmailVerification : allDataNode)
 	{
 		EmailVerification dataObject;
-		if(!valueDataEmailVerification["GmtCreate"].isNull())
-			dataObject.gmtCreate = valueDataEmailVerification["GmtCreate"].asString();
-		if(!valueDataEmailVerification["GmtModified"].isNull())
-			dataObject.gmtModified = valueDataEmailVerification["GmtModified"].asString();
-		if(!valueDataEmailVerification["Email"].isNull())
-			dataObject.email = valueDataEmailVerification["Email"].asString();
-		if(!valueDataEmailVerification["UserId"].isNull())
-			dataObject.userId = valueDataEmailVerification["UserId"].asString();
-		if(!valueDataEmailVerification["EmailVerificationNo"].isNull())
-			dataObject.emailVerificationNo = valueDataEmailVerification["EmailVerificationNo"].asString();
-		if(!valueDataEmailVerification["TokenSendTime"].isNull())
-			dataObject.tokenSendTime = valueDataEmailVerification["TokenSendTime"].asString();
-		if(!valueDataEmailVerification["VerificationStatus"].isNull())
-			dataObject.verificationStatus = std::stoi(valueDataEmailVerification["VerificationStatus"].asString());
 		if(!valueDataEmailVerification["VerificationTime"].isNull())
 			dataObject.verificationTime = valueDataEmailVerification["VerificationTime"].asString();
+		if(!valueDataEmailVerification["Email"].isNull())
+			dataObject.email = valueDataEmailVerification["Email"].asString();
+		if(!valueDataEmailVerification["EmailVerificationNo"].isNull())
+			dataObject.emailVerificationNo = valueDataEmailVerification["EmailVerificationNo"].asString();
+		if(!valueDataEmailVerification["UserId"].isNull())
+			dataObject.userId = valueDataEmailVerification["UserId"].asString();
+		if(!valueDataEmailVerification["GmtCreate"].isNull())
+			dataObject.gmtCreate = valueDataEmailVerification["GmtCreate"].asString();
+		if(!valueDataEmailVerification["VerificationStatus"].isNull())
+			dataObject.verificationStatus = std::stoi(valueDataEmailVerification["VerificationStatus"].asString());
+		if(!valueDataEmailVerification["TokenSendTime"].isNull())
+			dataObject.tokenSendTime = valueDataEmailVerification["TokenSendTime"].asString();
 		if(!valueDataEmailVerification["SendIp"].isNull())
 			dataObject.sendIp = valueDataEmailVerification["SendIp"].asString();
+		if(!valueDataEmailVerification["GmtModified"].isNull())
+			dataObject.gmtModified = valueDataEmailVerification["GmtModified"].asString();
 		if(!valueDataEmailVerification["ConfirmIp"].isNull())
 			dataObject.confirmIp = valueDataEmailVerification["ConfirmIp"].asString();
 		data_.push_back(dataObject);
 	}
-	if(!value["TotalItemNum"].isNull())
-		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
-	if(!value["CurrentPageNum"].isNull())
-		currentPageNum_ = std::stoi(value["CurrentPageNum"].asString());
-	if(!value["TotalPageNum"].isNull())
-		totalPageNum_ = std::stoi(value["TotalPageNum"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PrePage"].isNull())
 		prePage_ = value["PrePage"].asString() == "true";
+	if(!value["CurrentPageNum"].isNull())
+		currentPageNum_ = std::stoi(value["CurrentPageNum"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalPageNum"].isNull())
+		totalPageNum_ = std::stoi(value["TotalPageNum"].asString());
+	if(!value["TotalItemNum"].isNull())
+		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
 	if(!value["NextPage"].isNull())
 		nextPage_ = value["NextPage"].asString() == "true";
 

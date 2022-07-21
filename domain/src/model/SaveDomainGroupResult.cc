@@ -39,20 +39,20 @@ void SaveDomainGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DomainGroupId"].isNull())
-		domainGroupId_ = std::stol(value["DomainGroupId"].asString());
-	if(!value["DomainGroupName"].isNull())
-		domainGroupName_ = value["DomainGroupName"].asString();
-	if(!value["TotalNumber"].isNull())
-		totalNumber_ = std::stoi(value["TotalNumber"].asString());
+	if(!value["BeingDeleted"].isNull())
+		beingDeleted_ = value["BeingDeleted"].asString() == "true";
 	if(!value["CreationDate"].isNull())
 		creationDate_ = value["CreationDate"].asString();
+	if(!value["DomainGroupName"].isNull())
+		domainGroupName_ = value["DomainGroupName"].asString();
 	if(!value["ModificationDate"].isNull())
 		modificationDate_ = value["ModificationDate"].asString();
 	if(!value["DomainGroupStatus"].isNull())
 		domainGroupStatus_ = value["DomainGroupStatus"].asString();
-	if(!value["BeingDeleted"].isNull())
-		beingDeleted_ = value["BeingDeleted"].asString() == "true";
+	if(!value["DomainGroupId"].isNull())
+		domainGroupId_ = std::stol(value["DomainGroupId"].asString());
+	if(!value["TotalNumber"].isNull())
+		totalNumber_ = std::stoi(value["TotalNumber"].asString());
 
 }
 
@@ -76,14 +76,14 @@ std::string SaveDomainGroupResult::getModificationDate()const
 	return modificationDate_;
 }
 
-long SaveDomainGroupResult::getDomainGroupId()const
-{
-	return domainGroupId_;
-}
-
 std::string SaveDomainGroupResult::getDomainGroupStatus()const
 {
 	return domainGroupStatus_;
+}
+
+long SaveDomainGroupResult::getDomainGroupId()const
+{
+	return domainGroupId_;
 }
 
 int SaveDomainGroupResult::getTotalNumber()const

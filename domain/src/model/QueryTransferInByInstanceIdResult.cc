@@ -39,48 +39,48 @@ void QueryTransferInByInstanceIdResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["SubmissionDate"].isNull())
-		submissionDate_ = value["SubmissionDate"].asString();
-	if(!value["ModificationDate"].isNull())
-		modificationDate_ = value["ModificationDate"].asString();
-	if(!value["UserId"].isNull())
-		userId_ = value["UserId"].asString();
+	if(!value["Status"].isNull())
+		status_ = std::stoi(value["Status"].asString());
+	if(!value["TransferAuthorizationCodeSubmissionDate"].isNull())
+		transferAuthorizationCodeSubmissionDate_ = value["TransferAuthorizationCodeSubmissionDate"].asString();
+	if(!value["Email"].isNull())
+		email_ = value["Email"].asString();
+	if(!value["ProgressBarType"].isNull())
+		progressBarType_ = std::stoi(value["ProgressBarType"].asString());
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
-	if(!value["Status"].isNull())
-		status_ = std::stoi(value["Status"].asString());
+	if(!value["SubmissionDateLong"].isNull())
+		submissionDateLong_ = std::stol(value["SubmissionDateLong"].asString());
+	if(!value["SubmissionDate"].isNull())
+		submissionDate_ = value["SubmissionDate"].asString();
 	if(!value["SimpleTransferInStatus"].isNull())
 		simpleTransferInStatus_ = value["SimpleTransferInStatus"].asString();
+	if(!value["TransferAuthorizationCodeSubmissionDateLong"].isNull())
+		transferAuthorizationCodeSubmissionDateLong_ = std::stol(value["TransferAuthorizationCodeSubmissionDateLong"].asString());
+	if(!value["ExpirationDateLong"].isNull())
+		expirationDateLong_ = std::stol(value["ExpirationDateLong"].asString());
+	if(!value["ExpirationDate"].isNull())
+		expirationDate_ = value["ExpirationDate"].asString();
+	if(!value["NeedMailCheck"].isNull())
+		needMailCheck_ = value["NeedMailCheck"].asString() == "true";
+	if(!value["UserId"].isNull())
+		userId_ = value["UserId"].asString();
+	if(!value["ModificationDate"].isNull())
+		modificationDate_ = value["ModificationDate"].asString();
+	if(!value["ResultDateLong"].isNull())
+		resultDateLong_ = std::stol(value["ResultDateLong"].asString());
+	if(!value["ResultMsg"].isNull())
+		resultMsg_ = value["ResultMsg"].asString();
+	if(!value["WhoisMailStatus"].isNull())
+		whoisMailStatus_ = value["WhoisMailStatus"].asString() == "true";
+	if(!value["ModificationDateLong"].isNull())
+		modificationDateLong_ = std::stol(value["ModificationDateLong"].asString());
 	if(!value["ResultCode"].isNull())
 		resultCode_ = value["ResultCode"].asString();
 	if(!value["ResultDate"].isNull())
 		resultDate_ = value["ResultDate"].asString();
-	if(!value["ResultMsg"].isNull())
-		resultMsg_ = value["ResultMsg"].asString();
-	if(!value["TransferAuthorizationCodeSubmissionDate"].isNull())
-		transferAuthorizationCodeSubmissionDate_ = value["TransferAuthorizationCodeSubmissionDate"].asString();
-	if(!value["NeedMailCheck"].isNull())
-		needMailCheck_ = value["NeedMailCheck"].asString() == "true";
-	if(!value["Email"].isNull())
-		email_ = value["Email"].asString();
-	if(!value["WhoisMailStatus"].isNull())
-		whoisMailStatus_ = value["WhoisMailStatus"].asString() == "true";
-	if(!value["ExpirationDate"].isNull())
-		expirationDate_ = value["ExpirationDate"].asString();
-	if(!value["ProgressBarType"].isNull())
-		progressBarType_ = std::stoi(value["ProgressBarType"].asString());
-	if(!value["SubmissionDateLong"].isNull())
-		submissionDateLong_ = std::stol(value["SubmissionDateLong"].asString());
-	if(!value["ModificationDateLong"].isNull())
-		modificationDateLong_ = std::stol(value["ModificationDateLong"].asString());
-	if(!value["ResultDateLong"].isNull())
-		resultDateLong_ = std::stol(value["ResultDateLong"].asString());
-	if(!value["ExpirationDateLong"].isNull())
-		expirationDateLong_ = std::stol(value["ExpirationDateLong"].asString());
-	if(!value["TransferAuthorizationCodeSubmissionDateLong"].isNull())
-		transferAuthorizationCodeSubmissionDateLong_ = std::stol(value["TransferAuthorizationCodeSubmissionDateLong"].asString());
 
 }
 
@@ -149,14 +149,14 @@ bool QueryTransferInByInstanceIdResult::getNeedMailCheck()const
 	return needMailCheck_;
 }
 
-std::string QueryTransferInByInstanceIdResult::getModificationDate()const
-{
-	return modificationDate_;
-}
-
 std::string QueryTransferInByInstanceIdResult::getUserId()const
 {
 	return userId_;
+}
+
+std::string QueryTransferInByInstanceIdResult::getModificationDate()const
+{
+	return modificationDate_;
 }
 
 long QueryTransferInByInstanceIdResult::getResultDateLong()const

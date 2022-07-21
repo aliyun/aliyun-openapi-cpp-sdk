@@ -39,20 +39,20 @@ void GetQualificationUploadPolicyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Accessid"].isNull())
-		accessid_ = value["Accessid"].asString();
 	if(!value["Policy"].isNull())
 		policy_ = value["Policy"].asString();
-	if(!value["Signature"].isNull())
-		signature_ = value["Signature"].asString();
-	if(!value["Dir"].isNull())
-		dir_ = value["Dir"].asString();
-	if(!value["Prefix"].isNull())
-		prefix_ = value["Prefix"].asString();
-	if(!value["Host"].isNull())
-		host_ = value["Host"].asString();
 	if(!value["Expire"].isNull())
 		expire_ = value["Expire"].asString();
+	if(!value["Accessid"].isNull())
+		accessid_ = value["Accessid"].asString();
+	if(!value["Signature"].isNull())
+		signature_ = value["Signature"].asString();
+	if(!value["Host"].isNull())
+		host_ = value["Host"].asString();
+	if(!value["Prefix"].isNull())
+		prefix_ = value["Prefix"].asString();
+	if(!value["Dir"].isNull())
+		dir_ = value["Dir"].asString();
 
 }
 

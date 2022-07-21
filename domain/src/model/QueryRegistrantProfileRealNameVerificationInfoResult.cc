@@ -39,18 +39,18 @@ void QueryRegistrantProfileRealNameVerificationInfoResult::parse(const std::stri
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["SubmissionDate"].isNull())
-		submissionDate_ = value["SubmissionDate"].asString();
+	if(!value["IdentityCredentialType"].isNull())
+		identityCredentialType_ = value["IdentityCredentialType"].asString();
 	if(!value["ModificationDate"].isNull())
 		modificationDate_ = value["ModificationDate"].asString();
 	if(!value["IdentityCredential"].isNull())
 		identityCredential_ = value["IdentityCredential"].asString();
-	if(!value["RegistrantProfileId"].isNull())
-		registrantProfileId_ = std::stol(value["RegistrantProfileId"].asString());
+	if(!value["SubmissionDate"].isNull())
+		submissionDate_ = value["SubmissionDate"].asString();
 	if(!value["IdentityCredentialNo"].isNull())
 		identityCredentialNo_ = value["IdentityCredentialNo"].asString();
-	if(!value["IdentityCredentialType"].isNull())
-		identityCredentialType_ = value["IdentityCredentialType"].asString();
+	if(!value["RegistrantProfileId"].isNull())
+		registrantProfileId_ = std::stol(value["RegistrantProfileId"].asString());
 	if(!value["IdentityCredentialUrl"].isNull())
 		identityCredentialUrl_ = value["IdentityCredentialUrl"].asString();
 

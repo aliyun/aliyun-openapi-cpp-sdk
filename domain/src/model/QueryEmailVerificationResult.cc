@@ -39,26 +39,26 @@ void QueryEmailVerificationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["GmtCreate"].isNull())
-		gmtCreate_ = value["GmtCreate"].asString();
-	if(!value["GmtModified"].isNull())
-		gmtModified_ = value["GmtModified"].asString();
-	if(!value["Email"].isNull())
-		email_ = value["Email"].asString();
-	if(!value["UserId"].isNull())
-		userId_ = value["UserId"].asString();
-	if(!value["EmailVerificationNo"].isNull())
-		emailVerificationNo_ = value["EmailVerificationNo"].asString();
-	if(!value["TokenSendTime"].isNull())
-		tokenSendTime_ = value["TokenSendTime"].asString();
 	if(!value["VerificationStatus"].isNull())
 		verificationStatus_ = std::stoi(value["VerificationStatus"].asString());
-	if(!value["VerificationTime"].isNull())
-		verificationTime_ = value["VerificationTime"].asString();
-	if(!value["SendIp"].isNull())
-		sendIp_ = value["SendIp"].asString();
+	if(!value["GmtCreate"].isNull())
+		gmtCreate_ = value["GmtCreate"].asString();
+	if(!value["Email"].isNull())
+		email_ = value["Email"].asString();
+	if(!value["EmailVerificationNo"].isNull())
+		emailVerificationNo_ = value["EmailVerificationNo"].asString();
 	if(!value["ConfirmIp"].isNull())
 		confirmIp_ = value["ConfirmIp"].asString();
+	if(!value["UserId"].isNull())
+		userId_ = value["UserId"].asString();
+	if(!value["GmtModified"].isNull())
+		gmtModified_ = value["GmtModified"].asString();
+	if(!value["SendIp"].isNull())
+		sendIp_ = value["SendIp"].asString();
+	if(!value["VerificationTime"].isNull())
+		verificationTime_ = value["VerificationTime"].asString();
+	if(!value["TokenSendTime"].isNull())
+		tokenSendTime_ = value["TokenSendTime"].asString();
 
 }
 

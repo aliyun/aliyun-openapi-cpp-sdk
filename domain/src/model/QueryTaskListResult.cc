@@ -45,36 +45,36 @@ void QueryTaskListResult::parse(const std::string &payload)
 		TaskInfo dataObject;
 		if(!valueDataTaskInfo["TaskType"].isNull())
 			dataObject.taskType = valueDataTaskInfo["TaskType"].asString();
-		if(!valueDataTaskInfo["TaskNum"].isNull())
-			dataObject.taskNum = std::stoi(valueDataTaskInfo["TaskNum"].asString());
+		if(!valueDataTaskInfo["TaskCancelStatus"].isNull())
+			dataObject.taskCancelStatus = valueDataTaskInfo["TaskCancelStatus"].asString();
+		if(!valueDataTaskInfo["TaskNo"].isNull())
+			dataObject.taskNo = valueDataTaskInfo["TaskNo"].asString();
+		if(!valueDataTaskInfo["TaskCancelStatusCode"].isNull())
+			dataObject.taskCancelStatusCode = std::stoi(valueDataTaskInfo["TaskCancelStatusCode"].asString());
+		if(!valueDataTaskInfo["TaskStatusCode"].isNull())
+			dataObject.taskStatusCode = std::stoi(valueDataTaskInfo["TaskStatusCode"].asString());
 		if(!valueDataTaskInfo["TaskStatus"].isNull())
 			dataObject.taskStatus = valueDataTaskInfo["TaskStatus"].asString();
+		if(!valueDataTaskInfo["TaskTypeDescription"].isNull())
+			dataObject.taskTypeDescription = valueDataTaskInfo["TaskTypeDescription"].asString();
+		if(!valueDataTaskInfo["TaskNum"].isNull())
+			dataObject.taskNum = std::stoi(valueDataTaskInfo["TaskNum"].asString());
 		if(!valueDataTaskInfo["CreateTime"].isNull())
 			dataObject.createTime = valueDataTaskInfo["CreateTime"].asString();
 		if(!valueDataTaskInfo["Clientip"].isNull())
 			dataObject.clientip = valueDataTaskInfo["Clientip"].asString();
-		if(!valueDataTaskInfo["TaskNo"].isNull())
-			dataObject.taskNo = valueDataTaskInfo["TaskNo"].asString();
-		if(!valueDataTaskInfo["TaskStatusCode"].isNull())
-			dataObject.taskStatusCode = std::stoi(valueDataTaskInfo["TaskStatusCode"].asString());
-		if(!valueDataTaskInfo["TaskTypeDescription"].isNull())
-			dataObject.taskTypeDescription = valueDataTaskInfo["TaskTypeDescription"].asString();
-		if(!valueDataTaskInfo["TaskCancelStatus"].isNull())
-			dataObject.taskCancelStatus = valueDataTaskInfo["TaskCancelStatus"].asString();
-		if(!valueDataTaskInfo["TaskCancelStatusCode"].isNull())
-			dataObject.taskCancelStatusCode = std::stoi(valueDataTaskInfo["TaskCancelStatusCode"].asString());
 		data_.push_back(dataObject);
 	}
-	if(!value["TotalItemNum"].isNull())
-		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
-	if(!value["CurrentPageNum"].isNull())
-		currentPageNum_ = std::stoi(value["CurrentPageNum"].asString());
-	if(!value["TotalPageNum"].isNull())
-		totalPageNum_ = std::stoi(value["TotalPageNum"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PrePage"].isNull())
 		prePage_ = value["PrePage"].asString() == "true";
+	if(!value["CurrentPageNum"].isNull())
+		currentPageNum_ = std::stoi(value["CurrentPageNum"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalPageNum"].isNull())
+		totalPageNum_ = std::stoi(value["TotalPageNum"].asString());
+	if(!value["TotalItemNum"].isNull())
+		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
 	if(!value["NextPage"].isNull())
 		nextPage_ = value["NextPage"].asString() == "true";
 

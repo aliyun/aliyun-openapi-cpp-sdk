@@ -35,27 +35,12 @@ namespace AlibabaCloud
 				struct CurrentPageCursor
 				{
 					int tryCount;
-					std::string taskNo;
 					std::string instanceId;
 					std::string domainName;
-					int taskStatusCode;
-					std::string taskType;
-					std::string createTime;
-					std::string updateTime;
-					std::string errorMsg;
-					std::string taskStatus;
-					std::string taskTypeDescription;
-					std::string taskDetailNo;
-				};
-				struct NextPageCursor
-				{
-					int tryCount;
 					std::string taskNo;
-					std::string instanceId;
-					std::string domainName;
 					int taskStatusCode;
-					std::string taskType;
 					std::string createTime;
+					std::string taskType;
 					std::string updateTime;
 					std::string errorMsg;
 					std::string taskStatus;
@@ -65,12 +50,27 @@ namespace AlibabaCloud
 				struct PrePageCursor
 				{
 					int tryCount;
-					std::string taskNo;
 					std::string instanceId;
 					std::string domainName;
+					std::string taskNo;
 					int taskStatusCode;
-					std::string taskType;
 					std::string createTime;
+					std::string taskType;
+					std::string updateTime;
+					std::string errorMsg;
+					std::string taskStatus;
+					std::string taskTypeDescription;
+					std::string taskDetailNo;
+				};
+				struct NextPageCursor
+				{
+					int tryCount;
+					std::string instanceId;
+					std::string domainName;
+					std::string taskNo;
+					int taskStatusCode;
+					std::string createTime;
+					std::string taskType;
 					std::string updateTime;
 					std::string errorMsg;
 					std::string taskStatus;
@@ -80,12 +80,12 @@ namespace AlibabaCloud
 				struct TaskDetailHistory
 				{
 					int tryCount;
-					std::string taskNo;
 					std::string instanceId;
 					std::string domainName;
+					std::string taskNo;
 					int taskStatusCode;
-					std::string taskType;
 					std::string createTime;
+					std::string taskType;
 					std::string updateTime;
 					std::string errorMsg;
 					std::string taskStatus;

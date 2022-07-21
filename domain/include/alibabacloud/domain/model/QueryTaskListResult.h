@@ -36,14 +36,14 @@ namespace AlibabaCloud
 				{
 					int taskCancelStatusCode;
 					std::string taskNo;
-					int taskNum;
 					int taskStatusCode;
+					int taskNum;
 					std::string taskType;
 					std::string createTime;
 					std::string taskCancelStatus;
 					std::string taskStatus;
-					std::string clientip;
 					std::string taskTypeDescription;
+					std::string clientip;
 				};
 
 

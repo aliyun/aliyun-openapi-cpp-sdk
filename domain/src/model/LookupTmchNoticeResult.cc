@@ -43,60 +43,38 @@ void LookupTmchNoticeResult::parse(const std::string &payload)
 	for (auto valueClaimsClaim : allClaimsNode)
 	{
 		Claim claimsObject;
-		if(!valueClaimsClaim["MarkName"].isNull())
-			claimsObject.markName = valueClaimsClaim["MarkName"].asString();
 		if(!valueClaimsClaim["GoodsAndServices"].isNull())
 			claimsObject.goodsAndServices = valueClaimsClaim["GoodsAndServices"].asString();
-		auto allHoldersNode = valueClaimsClaim["Holders"]["Holder"];
-		for (auto valueClaimsClaimHoldersHolder : allHoldersNode)
-		{
-			Claim::Holder holdersObject;
-			if(!valueClaimsClaimHoldersHolder["Entitlement"].isNull())
-				holdersObject.entitlement = valueClaimsClaimHoldersHolder["Entitlement"].asString();
-			if(!valueClaimsClaimHoldersHolder["Org"].isNull())
-				holdersObject.org = valueClaimsClaimHoldersHolder["Org"].asString();
-			auto addrNode = value["Addr"];
-			if(!addrNode["City"].isNull())
-				holdersObject.addr.city = addrNode["City"].asString();
-			if(!addrNode["Sp"].isNull())
-				holdersObject.addr.sp = addrNode["Sp"].asString();
-			if(!addrNode["Pc"].isNull())
-				holdersObject.addr.pc = addrNode["Pc"].asString();
-			if(!addrNode["Cc"].isNull())
-				holdersObject.addr.cc = addrNode["Cc"].asString();
-				auto allStreet = addrNode["Street"]["Street"];
-				for (auto value : allStreet)
-					holdersObject.addr.street.push_back(value.asString());
-			claimsObject.holders.push_back(holdersObject);
-		}
+		if(!valueClaimsClaim["MarkName"].isNull())
+			claimsObject.markName = valueClaimsClaim["MarkName"].asString();
 		auto allContactsNode = valueClaimsClaim["Contacts"]["Contact"];
 		for (auto valueClaimsClaimContactsContact : allContactsNode)
 		{
 			Claim::Contact contactsObject;
 			if(!valueClaimsClaimContactsContact["Type"].isNull())
 				contactsObject.type = valueClaimsClaimContactsContact["Type"].asString();
-			if(!valueClaimsClaimContactsContact["Name"].isNull())
-				contactsObject.name = valueClaimsClaimContactsContact["Name"].asString();
-			if(!valueClaimsClaimContactsContact["Org"].isNull())
-				contactsObject.org = valueClaimsClaimContactsContact["Org"].asString();
 			if(!valueClaimsClaimContactsContact["Voice"].isNull())
 				contactsObject.voice = valueClaimsClaimContactsContact["Voice"].asString();
-			if(!valueClaimsClaimContactsContact["Fax"].isNull())
-				contactsObject.fax = valueClaimsClaimContactsContact["Fax"].asString();
 			if(!valueClaimsClaimContactsContact["Email"].isNull())
 				contactsObject.email = valueClaimsClaimContactsContact["Email"].asString();
-			auto addr1Node = value["Addr"];
-			if(!addr1Node["City"].isNull())
-				contactsObject.addr1.city = addr1Node["City"].asString();
-			if(!addr1Node["Sp"].isNull())
-				contactsObject.addr1.sp = addr1Node["Sp"].asString();
-			if(!addr1Node["Pc"].isNull())
-				contactsObject.addr1.pc = addr1Node["Pc"].asString();
-			if(!addr1Node["Cc"].isNull())
-				contactsObject.addr1.cc = addr1Node["Cc"].asString();
-				auto allStreet2 = addr1Node["Street"]["Street"];
-				for (auto value : allStreet2)
-					contactsObject.addr1.street2.push_back(value.asString());
+			if(!valueClaimsClaimContactsContact["Fax"].isNull())
+				contactsObject.fax = valueClaimsClaimContactsContact["Fax"].asString();
+			if(!valueClaimsClaimContactsContact["Org"].isNull())
+				contactsObject.org = valueClaimsClaimContactsContact["Org"].asString();
+			if(!valueClaimsClaimContactsContact["Name"].isNull())
+				contactsObject.name = valueClaimsClaimContactsContact["Name"].asString();
+			auto addrNode = value["Addr"];
+			if(!addrNode["Cc"].isNull())
+				contactsObject.addr.cc = addrNode["Cc"].asString();
+			if(!addrNode["Sp"].isNull())
+				contactsObject.addr.sp = addrNode["Sp"].asString();
+			if(!addrNode["Pc"].isNull())
+				contactsObject.addr.pc = addrNode["Pc"].asString();
+			if(!addrNode["City"].isNull())
+				contactsObject.addr.city = addrNode["City"].asString();
+				auto allStreet = addrNode["Street"]["Street"];
+				for (auto value : allStreet)
+					contactsObject.addr.street.push_back(value.asString());
 			claimsObject.contacts.push_back(contactsObject);
 		}
 		auto allClassDescsNode = valueClaimsClaim["ClassDescs"]["ClassDesc"];
@@ -109,6 +87,28 @@ void LookupTmchNoticeResult::parse(const std::string &payload)
 				classDescsObject.desc = valueClaimsClaimClassDescsClassDesc["Desc"].asString();
 			claimsObject.classDescs.push_back(classDescsObject);
 		}
+		auto allHoldersNode = valueClaimsClaim["Holders"]["Holder"];
+		for (auto valueClaimsClaimHoldersHolder : allHoldersNode)
+		{
+			Claim::Holder holdersObject;
+			if(!valueClaimsClaimHoldersHolder["Entitlement"].isNull())
+				holdersObject.entitlement = valueClaimsClaimHoldersHolder["Entitlement"].asString();
+			if(!valueClaimsClaimHoldersHolder["Org"].isNull())
+				holdersObject.org = valueClaimsClaimHoldersHolder["Org"].asString();
+			auto addr1Node = value["Addr"];
+			if(!addr1Node["Cc"].isNull())
+				holdersObject.addr1.cc = addr1Node["Cc"].asString();
+			if(!addr1Node["Sp"].isNull())
+				holdersObject.addr1.sp = addr1Node["Sp"].asString();
+			if(!addr1Node["Pc"].isNull())
+				holdersObject.addr1.pc = addr1Node["Pc"].asString();
+			if(!addr1Node["City"].isNull())
+				holdersObject.addr1.city = addr1Node["City"].asString();
+				auto allStreet2 = addr1Node["Street"]["Street"];
+				for (auto value : allStreet2)
+					holdersObject.addr1.street2.push_back(value.asString());
+			claimsObject.holders.push_back(holdersObject);
+		}
 		auto jurDescNode = value["JurDesc"];
 		if(!jurDescNode["JurCC"].isNull())
 			claimsObject.jurDesc.jurCC = jurDescNode["JurCC"].asString();
@@ -116,14 +116,14 @@ void LookupTmchNoticeResult::parse(const std::string &payload)
 			claimsObject.jurDesc.desc = jurDescNode["Desc"].asString();
 		claims_.push_back(claimsObject);
 	}
+	if(!value["Label"].isNull())
+		label_ = value["Label"].asString();
 	if(!value["Id"].isNull())
 		id_ = std::stol(value["Id"].asString());
 	if(!value["NotBefore"].isNull())
 		notBefore_ = value["NotBefore"].asString();
 	if(!value["NotAfter"].isNull())
 		notAfter_ = value["NotAfter"].asString();
-	if(!value["Label"].isNull())
-		label_ = value["Label"].asString();
 
 }
 

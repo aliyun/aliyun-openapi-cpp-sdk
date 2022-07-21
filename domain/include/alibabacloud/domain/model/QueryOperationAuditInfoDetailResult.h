@@ -40,8 +40,8 @@ namespace AlibabaCloud
 				std::string getAuditInfo()const;
 				int getAuditStatus()const;
 				std::string getBusinessName()const;
-				std::string getDomainName()const;
 				int getAuditType()const;
+				std::string getDomainName()const;
 				long getCreateTime()const;
 				long getUpdateTime()const;
 				std::string getId()const;
@@ -53,8 +53,8 @@ namespace AlibabaCloud
 				std::string auditInfo_;
 				int auditStatus_;
 				std::string businessName_;
-				std::string domainName_;
 				int auditType_;
+				std::string domainName_;
 				long createTime_;
 				long updateTime_;
 				std::string id_;

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Domain::Model::QueryFailingReasonListForQualificationRequest;
 
-QueryFailingReasonListForQualificationRequest::QueryFailingReasonListForQualificationRequest() :
-	RpcServiceRequest("domain", "2018-01-29", "QueryFailingReasonListForQualification")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryFailingReasonListForQualificationRequest::QueryFailingReasonListForQualificationRequest()
+    : RpcServiceRequest("domain", "2018-01-29", "QueryFailingReasonListForQualification") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryFailingReasonListForQualificationRequest::~QueryFailingReasonListForQualificationRequest()
-{}
+QueryFailingReasonListForQualificationRequest::~QueryFailingReasonListForQualificationRequest() {}
 
-std::string QueryFailingReasonListForQualificationRequest::getQualificationType()const
-{
-	return qualificationType_;
+std::string QueryFailingReasonListForQualificationRequest::getQualificationType() const {
+  return qualificationType_;
 }
 
-void QueryFailingReasonListForQualificationRequest::setQualificationType(const std::string& qualificationType)
-{
-	qualificationType_ = qualificationType;
-	setParameter("QualificationType", qualificationType);
+void QueryFailingReasonListForQualificationRequest::setQualificationType(const std::string &qualificationType) {
+  qualificationType_ = qualificationType;
+  setParameter(std::string("QualificationType"), qualificationType);
 }
 
-std::string QueryFailingReasonListForQualificationRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string QueryFailingReasonListForQualificationRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void QueryFailingReasonListForQualificationRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void QueryFailingReasonListForQualificationRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string QueryFailingReasonListForQualificationRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string QueryFailingReasonListForQualificationRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void QueryFailingReasonListForQualificationRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void QueryFailingReasonListForQualificationRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-int QueryFailingReasonListForQualificationRequest::getLimit()const
-{
-	return limit_;
+int QueryFailingReasonListForQualificationRequest::getLimit() const {
+  return limit_;
 }
 
-void QueryFailingReasonListForQualificationRequest::setLimit(int limit)
-{
-	limit_ = limit;
-	setParameter("Limit", std::to_string(limit));
+void QueryFailingReasonListForQualificationRequest::setLimit(int limit) {
+  limit_ = limit;
+  setParameter(std::string("Limit"), std::to_string(limit));
 }
 
-std::string QueryFailingReasonListForQualificationRequest::getLang()const
-{
-	return lang_;
+std::string QueryFailingReasonListForQualificationRequest::getLang() const {
+  return lang_;
 }
 
-void QueryFailingReasonListForQualificationRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void QueryFailingReasonListForQualificationRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

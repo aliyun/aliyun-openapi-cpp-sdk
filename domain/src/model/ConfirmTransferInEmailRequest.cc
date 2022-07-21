@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,58 +18,45 @@
 
 using AlibabaCloud::Domain::Model::ConfirmTransferInEmailRequest;
 
-ConfirmTransferInEmailRequest::ConfirmTransferInEmailRequest() :
-	RpcServiceRequest("domain", "2018-01-29", "ConfirmTransferInEmail")
-{
-	setMethod(HttpRequest::Method::Post);
+ConfirmTransferInEmailRequest::ConfirmTransferInEmailRequest()
+    : RpcServiceRequest("domain", "2018-01-29", "ConfirmTransferInEmail") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ConfirmTransferInEmailRequest::~ConfirmTransferInEmailRequest()
-{}
+ConfirmTransferInEmailRequest::~ConfirmTransferInEmailRequest() {}
 
-std::vector<std::string> ConfirmTransferInEmailRequest::getDomainName()const
-{
-	return domainName_;
+std::vector<std::string> ConfirmTransferInEmailRequest::getDomainName() const {
+  return domainName_;
 }
 
-void ConfirmTransferInEmailRequest::setDomainName(const std::vector<std::string>& domainName)
-{
-	domainName_ = domainName;
-	for(int dep1 = 0; dep1!= domainName.size(); dep1++) {
-		setParameter("DomainName."+ std::to_string(dep1), domainName.at(dep1));
-	}
+void ConfirmTransferInEmailRequest::setDomainName(const std::vector<std::string> &domainName) {
+  domainName_ = domainName;
 }
 
-std::string ConfirmTransferInEmailRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string ConfirmTransferInEmailRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void ConfirmTransferInEmailRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void ConfirmTransferInEmailRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string ConfirmTransferInEmailRequest::getLang()const
-{
-	return lang_;
+std::string ConfirmTransferInEmailRequest::getLang() const {
+  return lang_;
 }
 
-void ConfirmTransferInEmailRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void ConfirmTransferInEmailRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-std::string ConfirmTransferInEmailRequest::getEmail()const
-{
-	return email_;
+std::string ConfirmTransferInEmailRequest::getEmail() const {
+  return email_;
 }
 
-void ConfirmTransferInEmailRequest::setEmail(const std::string& email)
-{
-	email_ = email;
-	setParameter("Email", email);
+void ConfirmTransferInEmailRequest::setEmail(const std::string &email) {
+  email_ = email;
+  setParameter(std::string("Email"), email);
 }
 

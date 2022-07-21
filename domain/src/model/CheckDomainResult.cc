@@ -39,18 +39,18 @@ void CheckDomainResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
 	if(!value["Avail"].isNull())
 		avail_ = value["Avail"].asString();
-	if(!value["Premium"].isNull())
-		premium_ = value["Premium"].asString();
-	if(!value["Reason"].isNull())
-		reason_ = value["Reason"].asString();
 	if(!value["Price"].isNull())
 		price_ = std::stol(value["Price"].asString());
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["Premium"].isNull())
+		premium_ = value["Premium"].asString();
 	if(!value["DynamicCheck"].isNull())
 		dynamicCheck_ = value["DynamicCheck"].asString() == "true";
+	if(!value["Reason"].isNull())
+		reason_ = value["Reason"].asString();
 
 }
 
@@ -59,14 +59,14 @@ std::string CheckDomainResult::getAvail()const
 	return avail_;
 }
 
-std::string CheckDomainResult::getDomainName()const
-{
-	return domainName_;
-}
-
 long CheckDomainResult::getPrice()const
 {
 	return price_;
+}
+
+std::string CheckDomainResult::getDomainName()const
+{
+	return domainName_;
 }
 
 std::string CheckDomainResult::getPremium()const

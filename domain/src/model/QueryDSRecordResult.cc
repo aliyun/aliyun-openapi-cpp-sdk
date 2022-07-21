@@ -43,14 +43,14 @@ void QueryDSRecordResult::parse(const std::string &payload)
 	for (auto valueDSRecordListDSRecord : allDSRecordListNode)
 	{
 		DSRecord dSRecordListObject;
-		if(!valueDSRecordListDSRecord["KeyTag"].isNull())
-			dSRecordListObject.keyTag = std::stoi(valueDSRecordListDSRecord["KeyTag"].asString());
-		if(!valueDSRecordListDSRecord["Algorithm"].isNull())
-			dSRecordListObject.algorithm = std::stoi(valueDSRecordListDSRecord["Algorithm"].asString());
 		if(!valueDSRecordListDSRecord["DigestType"].isNull())
 			dSRecordListObject.digestType = std::stoi(valueDSRecordListDSRecord["DigestType"].asString());
 		if(!valueDSRecordListDSRecord["Digest"].isNull())
 			dSRecordListObject.digest = valueDSRecordListDSRecord["Digest"].asString();
+		if(!valueDSRecordListDSRecord["Algorithm"].isNull())
+			dSRecordListObject.algorithm = std::stoi(valueDSRecordListDSRecord["Algorithm"].asString());
+		if(!valueDSRecordListDSRecord["KeyTag"].isNull())
+			dSRecordListObject.keyTag = std::stoi(valueDSRecordListDSRecord["KeyTag"].asString());
 		dSRecordList_.push_back(dSRecordListObject);
 	}
 

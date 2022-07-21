@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,166 +18,136 @@
 
 using AlibabaCloud::Domain::Model::QueryDomainListRequest;
 
-QueryDomainListRequest::QueryDomainListRequest() :
-	RpcServiceRequest("domain", "2018-01-29", "QueryDomainList")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryDomainListRequest::QueryDomainListRequest()
+    : RpcServiceRequest("domain", "2018-01-29", "QueryDomainList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryDomainListRequest::~QueryDomainListRequest()
-{}
+QueryDomainListRequest::~QueryDomainListRequest() {}
 
-std::string QueryDomainListRequest::getProductDomainType()const
-{
-	return productDomainType_;
+std::string QueryDomainListRequest::getProductDomainType() const {
+  return productDomainType_;
 }
 
-void QueryDomainListRequest::setProductDomainType(const std::string& productDomainType)
-{
-	productDomainType_ = productDomainType;
-	setParameter("ProductDomainType", productDomainType);
+void QueryDomainListRequest::setProductDomainType(const std::string &productDomainType) {
+  productDomainType_ = productDomainType;
+  setParameter(std::string("ProductDomainType"), productDomainType);
 }
 
-std::string QueryDomainListRequest::getOrderKeyType()const
-{
-	return orderKeyType_;
+std::string QueryDomainListRequest::getOrderKeyType() const {
+  return orderKeyType_;
 }
 
-void QueryDomainListRequest::setOrderKeyType(const std::string& orderKeyType)
-{
-	orderKeyType_ = orderKeyType;
-	setParameter("OrderKeyType", orderKeyType);
+void QueryDomainListRequest::setOrderKeyType(const std::string &orderKeyType) {
+  orderKeyType_ = orderKeyType;
+  setParameter(std::string("OrderKeyType"), orderKeyType);
 }
 
-int QueryDomainListRequest::getPageNum()const
-{
-	return pageNum_;
+int QueryDomainListRequest::getPageNum() const {
+  return pageNum_;
 }
 
-void QueryDomainListRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+void QueryDomainListRequest::setPageNum(int pageNum) {
+  pageNum_ = pageNum;
+  setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-std::string QueryDomainListRequest::getOrderByType()const
-{
-	return orderByType_;
+std::string QueryDomainListRequest::getOrderByType() const {
+  return orderByType_;
 }
 
-void QueryDomainListRequest::setOrderByType(const std::string& orderByType)
-{
-	orderByType_ = orderByType;
-	setParameter("OrderByType", orderByType);
+void QueryDomainListRequest::setOrderByType(const std::string &orderByType) {
+  orderByType_ = orderByType;
+  setParameter(std::string("OrderByType"), orderByType);
 }
 
-int QueryDomainListRequest::getPageSize()const
-{
-	return pageSize_;
+int QueryDomainListRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void QueryDomainListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void QueryDomainListRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string QueryDomainListRequest::getLang()const
-{
-	return lang_;
+std::string QueryDomainListRequest::getLang() const {
+  return lang_;
 }
 
-void QueryDomainListRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void QueryDomainListRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-std::string QueryDomainListRequest::getQueryType()const
-{
-	return queryType_;
+std::string QueryDomainListRequest::getQueryType() const {
+  return queryType_;
 }
 
-void QueryDomainListRequest::setQueryType(const std::string& queryType)
-{
-	queryType_ = queryType;
-	setParameter("QueryType", queryType);
+void QueryDomainListRequest::setQueryType(const std::string &queryType) {
+  queryType_ = queryType;
+  setParameter(std::string("QueryType"), queryType);
 }
 
-long QueryDomainListRequest::getEndExpirationDate()const
-{
-	return endExpirationDate_;
+long QueryDomainListRequest::getEndExpirationDate() const {
+  return endExpirationDate_;
 }
 
-void QueryDomainListRequest::setEndExpirationDate(long endExpirationDate)
-{
-	endExpirationDate_ = endExpirationDate;
-	setParameter("EndExpirationDate", std::to_string(endExpirationDate));
+void QueryDomainListRequest::setEndExpirationDate(long endExpirationDate) {
+  endExpirationDate_ = endExpirationDate;
+  setParameter(std::string("EndExpirationDate"), std::to_string(endExpirationDate));
 }
 
-std::string QueryDomainListRequest::getDomainName()const
-{
-	return domainName_;
+std::string QueryDomainListRequest::getDomainName() const {
+  return domainName_;
 }
 
-void QueryDomainListRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void QueryDomainListRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-long QueryDomainListRequest::getStartExpirationDate()const
-{
-	return startExpirationDate_;
+long QueryDomainListRequest::getStartExpirationDate() const {
+  return startExpirationDate_;
 }
 
-void QueryDomainListRequest::setStartExpirationDate(long startExpirationDate)
-{
-	startExpirationDate_ = startExpirationDate;
-	setParameter("StartExpirationDate", std::to_string(startExpirationDate));
+void QueryDomainListRequest::setStartExpirationDate(long startExpirationDate) {
+  startExpirationDate_ = startExpirationDate;
+  setParameter(std::string("StartExpirationDate"), std::to_string(startExpirationDate));
 }
 
-std::string QueryDomainListRequest::getDomainGroupId()const
-{
-	return domainGroupId_;
+std::string QueryDomainListRequest::getDomainGroupId() const {
+  return domainGroupId_;
 }
 
-void QueryDomainListRequest::setDomainGroupId(const std::string& domainGroupId)
-{
-	domainGroupId_ = domainGroupId;
-	setParameter("DomainGroupId", domainGroupId);
+void QueryDomainListRequest::setDomainGroupId(const std::string &domainGroupId) {
+  domainGroupId_ = domainGroupId;
+  setParameter(std::string("DomainGroupId"), domainGroupId);
 }
 
-long QueryDomainListRequest::getEndRegistrationDate()const
-{
-	return endRegistrationDate_;
+long QueryDomainListRequest::getEndRegistrationDate() const {
+  return endRegistrationDate_;
 }
 
-void QueryDomainListRequest::setEndRegistrationDate(long endRegistrationDate)
-{
-	endRegistrationDate_ = endRegistrationDate;
-	setParameter("EndRegistrationDate", std::to_string(endRegistrationDate));
+void QueryDomainListRequest::setEndRegistrationDate(long endRegistrationDate) {
+  endRegistrationDate_ = endRegistrationDate;
+  setParameter(std::string("EndRegistrationDate"), std::to_string(endRegistrationDate));
 }
 
-std::string QueryDomainListRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string QueryDomainListRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void QueryDomainListRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void QueryDomainListRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-long QueryDomainListRequest::getStartRegistrationDate()const
-{
-	return startRegistrationDate_;
+long QueryDomainListRequest::getStartRegistrationDate() const {
+  return startRegistrationDate_;
 }
 
-void QueryDomainListRequest::setStartRegistrationDate(long startRegistrationDate)
-{
-	startRegistrationDate_ = startRegistrationDate;
-	setParameter("StartRegistrationDate", std::to_string(startRegistrationDate));
+void QueryDomainListRequest::setStartRegistrationDate(long startRegistrationDate) {
+  startRegistrationDate_ = startRegistrationDate;
+  setParameter(std::string("StartRegistrationDate"), std::to_string(startRegistrationDate));
 }
 

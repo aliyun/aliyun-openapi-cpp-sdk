@@ -35,50 +35,50 @@ namespace AlibabaCloud
 				struct CurrentPageCursor
 				{
 					std::string taskNo;
-					int taskNum;
 					int taskStatusCode;
+					int taskNum;
 					std::string taskType;
 					std::string createTime;
 					long createTimeLong;
 					std::string taskStatus;
-					std::string clientip;
 					std::string taskTypeDescription;
-				};
-				struct NextPageCursor
-				{
-					std::string taskNo;
-					int taskNum;
-					int taskStatusCode;
-					std::string taskType;
-					std::string createTime;
-					long createTimeLong;
-					std::string taskStatus;
 					std::string clientip;
-					std::string taskTypeDescription;
 				};
 				struct PrePageCursor
 				{
 					std::string taskNo;
-					int taskNum;
 					int taskStatusCode;
+					int taskNum;
 					std::string taskType;
 					std::string createTime;
 					long createTimeLong;
 					std::string taskStatus;
-					std::string clientip;
 					std::string taskTypeDescription;
+					std::string clientip;
+				};
+				struct NextPageCursor
+				{
+					std::string taskNo;
+					int taskStatusCode;
+					int taskNum;
+					std::string taskType;
+					std::string createTime;
+					long createTimeLong;
+					std::string taskStatus;
+					std::string taskTypeDescription;
+					std::string clientip;
 				};
 				struct TaskInfoHistory
 				{
 					std::string taskNo;
-					int taskNum;
 					int taskStatusCode;
+					int taskNum;
 					std::string taskType;
 					std::string createTime;
 					long createTimeLong;
 					std::string taskStatus;
-					std::string clientip;
 					std::string taskTypeDescription;
+					std::string clientip;
 				};
 
 

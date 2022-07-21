@@ -50,8 +50,8 @@ namespace AlibabaCloud
 				long getExpirationDateLong()const;
 				std::string getExpirationDate()const;
 				bool getNeedMailCheck()const;
-				std::string getModificationDate()const;
 				std::string getUserId()const;
+				std::string getModificationDate()const;
 				long getResultDateLong()const;
 				std::string getResultMsg()const;
 				bool getWhoisMailStatus()const;
@@ -75,8 +75,8 @@ namespace AlibabaCloud
 				long expirationDateLong_;
 				std::string expirationDate_;
 				bool needMailCheck_;
-				std::string modificationDate_;
 				std::string userId_;
+				std::string modificationDate_;
 				long resultDateLong_;
 				std::string resultMsg_;
 				bool whoisMailStatus_;

@@ -34,9 +34,9 @@ namespace AlibabaCloud
 			public:
 				struct TaskDetail
 				{
-					std::string taskNo;
 					std::string instanceId;
 					std::string domainName;
+					std::string taskNo;
 					int taskStatusCode;
 					std::string createTime;
 					std::string errorMsg;

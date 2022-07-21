@@ -43,20 +43,20 @@ void QueryDomainGroupListResult::parse(const std::string &payload)
 	for (auto valueDataDomainGroup : allDataNode)
 	{
 		DomainGroup dataObject;
+		if(!valueDataDomainGroup["BeingDeleted"].isNull())
+			dataObject.beingDeleted = valueDataDomainGroup["BeingDeleted"].asString() == "true";
+		if(!valueDataDomainGroup["DomainGroupStatus"].isNull())
+			dataObject.domainGroupStatus = valueDataDomainGroup["DomainGroupStatus"].asString();
 		if(!valueDataDomainGroup["DomainGroupId"].isNull())
 			dataObject.domainGroupId = valueDataDomainGroup["DomainGroupId"].asString();
 		if(!valueDataDomainGroup["DomainGroupName"].isNull())
 			dataObject.domainGroupName = valueDataDomainGroup["DomainGroupName"].asString();
+		if(!valueDataDomainGroup["ModificationDate"].isNull())
+			dataObject.modificationDate = valueDataDomainGroup["ModificationDate"].asString();
 		if(!valueDataDomainGroup["TotalNumber"].isNull())
 			dataObject.totalNumber = std::stoi(valueDataDomainGroup["TotalNumber"].asString());
 		if(!valueDataDomainGroup["CreationDate"].isNull())
 			dataObject.creationDate = valueDataDomainGroup["CreationDate"].asString();
-		if(!valueDataDomainGroup["ModificationDate"].isNull())
-			dataObject.modificationDate = valueDataDomainGroup["ModificationDate"].asString();
-		if(!valueDataDomainGroup["DomainGroupStatus"].isNull())
-			dataObject.domainGroupStatus = valueDataDomainGroup["DomainGroupStatus"].asString();
-		if(!valueDataDomainGroup["BeingDeleted"].isNull())
-			dataObject.beingDeleted = valueDataDomainGroup["BeingDeleted"].asString() == "true";
 		data_.push_back(dataObject);
 	}
 

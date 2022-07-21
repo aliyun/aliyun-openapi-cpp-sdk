@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Domain::Model::QueryDomainByInstanceIdRequest;
 
-QueryDomainByInstanceIdRequest::QueryDomainByInstanceIdRequest() :
-	RpcServiceRequest("domain", "2018-01-29", "QueryDomainByInstanceId")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryDomainByInstanceIdRequest::QueryDomainByInstanceIdRequest()
+    : RpcServiceRequest("domain", "2018-01-29", "QueryDomainByInstanceId") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryDomainByInstanceIdRequest::~QueryDomainByInstanceIdRequest()
-{}
+QueryDomainByInstanceIdRequest::~QueryDomainByInstanceIdRequest() {}
 
-std::string QueryDomainByInstanceIdRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string QueryDomainByInstanceIdRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void QueryDomainByInstanceIdRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void QueryDomainByInstanceIdRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string QueryDomainByInstanceIdRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string QueryDomainByInstanceIdRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void QueryDomainByInstanceIdRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void QueryDomainByInstanceIdRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string QueryDomainByInstanceIdRequest::getLang()const
-{
-	return lang_;
+std::string QueryDomainByInstanceIdRequest::getLang() const {
+  return lang_;
 }
 
-void QueryDomainByInstanceIdRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void QueryDomainByInstanceIdRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

@@ -43,44 +43,44 @@ void PollTaskResultResult::parse(const std::string &payload)
 	for (auto valueDataTaskDetail : allDataNode)
 	{
 		TaskDetail dataObject;
-		if(!valueDataTaskDetail["TaskNo"].isNull())
-			dataObject.taskNo = valueDataTaskDetail["TaskNo"].asString();
+		if(!valueDataTaskDetail["UpdateTime"].isNull())
+			dataObject.updateTime = valueDataTaskDetail["UpdateTime"].asString();
 		if(!valueDataTaskDetail["TaskDetailNo"].isNull())
 			dataObject.taskDetailNo = valueDataTaskDetail["TaskDetailNo"].asString();
-		if(!valueDataTaskDetail["TaskType"].isNull())
-			dataObject.taskType = valueDataTaskDetail["TaskType"].asString();
+		if(!valueDataTaskDetail["CreateTime"].isNull())
+			dataObject.createTime = valueDataTaskDetail["CreateTime"].asString();
 		if(!valueDataTaskDetail["InstanceId"].isNull())
 			dataObject.instanceId = valueDataTaskDetail["InstanceId"].asString();
 		if(!valueDataTaskDetail["DomainName"].isNull())
 			dataObject.domainName = valueDataTaskDetail["DomainName"].asString();
+		if(!valueDataTaskDetail["TaskType"].isNull())
+			dataObject.taskType = valueDataTaskDetail["TaskType"].asString();
+		if(!valueDataTaskDetail["TaskNo"].isNull())
+			dataObject.taskNo = valueDataTaskDetail["TaskNo"].asString();
+		if(!valueDataTaskDetail["TaskResult"].isNull())
+			dataObject.taskResult = valueDataTaskDetail["TaskResult"].asString();
+		if(!valueDataTaskDetail["TaskStatusCode"].isNull())
+			dataObject.taskStatusCode = std::stoi(valueDataTaskDetail["TaskStatusCode"].asString());
 		if(!valueDataTaskDetail["TaskStatus"].isNull())
 			dataObject.taskStatus = valueDataTaskDetail["TaskStatus"].asString();
-		if(!valueDataTaskDetail["UpdateTime"].isNull())
-			dataObject.updateTime = valueDataTaskDetail["UpdateTime"].asString();
-		if(!valueDataTaskDetail["CreateTime"].isNull())
-			dataObject.createTime = valueDataTaskDetail["CreateTime"].asString();
+		if(!valueDataTaskDetail["TaskTypeDescription"].isNull())
+			dataObject.taskTypeDescription = valueDataTaskDetail["TaskTypeDescription"].asString();
 		if(!valueDataTaskDetail["TryCount"].isNull())
 			dataObject.tryCount = std::stoi(valueDataTaskDetail["TryCount"].asString());
 		if(!valueDataTaskDetail["ErrorMsg"].isNull())
 			dataObject.errorMsg = valueDataTaskDetail["ErrorMsg"].asString();
-		if(!valueDataTaskDetail["TaskStatusCode"].isNull())
-			dataObject.taskStatusCode = std::stoi(valueDataTaskDetail["TaskStatusCode"].asString());
-		if(!valueDataTaskDetail["TaskResult"].isNull())
-			dataObject.taskResult = valueDataTaskDetail["TaskResult"].asString();
-		if(!valueDataTaskDetail["TaskTypeDescription"].isNull())
-			dataObject.taskTypeDescription = valueDataTaskDetail["TaskTypeDescription"].asString();
 		data_.push_back(dataObject);
 	}
-	if(!value["TotalItemNum"].isNull())
-		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
-	if(!value["CurrentPageNum"].isNull())
-		currentPageNum_ = std::stoi(value["CurrentPageNum"].asString());
-	if(!value["TotalPageNum"].isNull())
-		totalPageNum_ = std::stoi(value["TotalPageNum"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PrePage"].isNull())
 		prePage_ = value["PrePage"].asString() == "true";
+	if(!value["CurrentPageNum"].isNull())
+		currentPageNum_ = std::stoi(value["CurrentPageNum"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalPageNum"].isNull())
+		totalPageNum_ = std::stoi(value["TotalPageNum"].asString());
+	if(!value["TotalItemNum"].isNull())
+		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
 	if(!value["NextPage"].isNull())
 		nextPage_ = value["NextPage"].asString() == "true";
 

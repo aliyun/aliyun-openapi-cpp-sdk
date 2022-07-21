@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Domain::Model::SetDefaultRegistrantProfileRequest;
 
-SetDefaultRegistrantProfileRequest::SetDefaultRegistrantProfileRequest() :
-	RpcServiceRequest("domain", "2018-01-29", "SetDefaultRegistrantProfile")
-{
-	setMethod(HttpRequest::Method::Post);
+SetDefaultRegistrantProfileRequest::SetDefaultRegistrantProfileRequest()
+    : RpcServiceRequest("domain", "2018-01-29", "SetDefaultRegistrantProfile") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SetDefaultRegistrantProfileRequest::~SetDefaultRegistrantProfileRequest()
-{}
+SetDefaultRegistrantProfileRequest::~SetDefaultRegistrantProfileRequest() {}
 
-long SetDefaultRegistrantProfileRequest::getRegistrantProfileId()const
-{
-	return registrantProfileId_;
+long SetDefaultRegistrantProfileRequest::getRegistrantProfileId() const {
+  return registrantProfileId_;
 }
 
-void SetDefaultRegistrantProfileRequest::setRegistrantProfileId(long registrantProfileId)
-{
-	registrantProfileId_ = registrantProfileId;
-	setParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+void SetDefaultRegistrantProfileRequest::setRegistrantProfileId(long registrantProfileId) {
+  registrantProfileId_ = registrantProfileId;
+  setParameter(std::string("RegistrantProfileId"), std::to_string(registrantProfileId));
 }
 
-std::string SetDefaultRegistrantProfileRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string SetDefaultRegistrantProfileRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void SetDefaultRegistrantProfileRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void SetDefaultRegistrantProfileRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 

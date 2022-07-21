@@ -47,8 +47,8 @@ namespace AlibabaCloud
 					long expirationDateLong;
 					std::string expirationDate;
 					bool needMailCheck;
-					std::string modificationDate;
 					std::string userId;
+					std::string modificationDate;
 					long resultDateLong;
 					std::string resultMsg;
 					bool whoisMailStatus;

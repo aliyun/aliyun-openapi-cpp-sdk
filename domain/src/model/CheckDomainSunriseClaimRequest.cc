@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Domain::Model::CheckDomainSunriseClaimRequest;
 
-CheckDomainSunriseClaimRequest::CheckDomainSunriseClaimRequest() :
-	RpcServiceRequest("domain", "2018-01-29", "CheckDomainSunriseClaim")
-{
-	setMethod(HttpRequest::Method::Post);
+CheckDomainSunriseClaimRequest::CheckDomainSunriseClaimRequest()
+    : RpcServiceRequest("domain", "2018-01-29", "CheckDomainSunriseClaim") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CheckDomainSunriseClaimRequest::~CheckDomainSunriseClaimRequest()
-{}
+CheckDomainSunriseClaimRequest::~CheckDomainSunriseClaimRequest() {}
 
-std::string CheckDomainSunriseClaimRequest::getDomainName()const
-{
-	return domainName_;
+std::string CheckDomainSunriseClaimRequest::getDomainName() const {
+  return domainName_;
 }
 
-void CheckDomainSunriseClaimRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void CheckDomainSunriseClaimRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string CheckDomainSunriseClaimRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string CheckDomainSunriseClaimRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void CheckDomainSunriseClaimRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void CheckDomainSunriseClaimRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string CheckDomainSunriseClaimRequest::getLang()const
-{
-	return lang_;
+std::string CheckDomainSunriseClaimRequest::getLang() const {
+  return lang_;
 }
 
-void CheckDomainSunriseClaimRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void CheckDomainSunriseClaimRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Domain::Model::QueryQualificationDetailRequest;
 
-QueryQualificationDetailRequest::QueryQualificationDetailRequest() :
-	RpcServiceRequest("domain", "2018-01-29", "QueryQualificationDetail")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryQualificationDetailRequest::QueryQualificationDetailRequest()
+    : RpcServiceRequest("domain", "2018-01-29", "QueryQualificationDetail") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryQualificationDetailRequest::~QueryQualificationDetailRequest()
-{}
+QueryQualificationDetailRequest::~QueryQualificationDetailRequest() {}
 
-std::string QueryQualificationDetailRequest::getQualificationType()const
-{
-	return qualificationType_;
+std::string QueryQualificationDetailRequest::getQualificationType() const {
+  return qualificationType_;
 }
 
-void QueryQualificationDetailRequest::setQualificationType(const std::string& qualificationType)
-{
-	qualificationType_ = qualificationType;
-	setParameter("QualificationType", qualificationType);
+void QueryQualificationDetailRequest::setQualificationType(const std::string &qualificationType) {
+  qualificationType_ = qualificationType;
+  setParameter(std::string("QualificationType"), qualificationType);
 }
 
-std::string QueryQualificationDetailRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string QueryQualificationDetailRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void QueryQualificationDetailRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void QueryQualificationDetailRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string QueryQualificationDetailRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string QueryQualificationDetailRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void QueryQualificationDetailRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void QueryQualificationDetailRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string QueryQualificationDetailRequest::getLang()const
-{
-	return lang_;
+std::string QueryQualificationDetailRequest::getLang() const {
+  return lang_;
 }
 
-void QueryQualificationDetailRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void QueryQualificationDetailRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

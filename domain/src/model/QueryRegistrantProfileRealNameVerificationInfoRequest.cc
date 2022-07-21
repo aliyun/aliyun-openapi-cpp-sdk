@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Domain::Model::QueryRegistrantProfileRealNameVerificationInfoRequest;
 
-QueryRegistrantProfileRealNameVerificationInfoRequest::QueryRegistrantProfileRealNameVerificationInfoRequest() :
-	RpcServiceRequest("domain", "2018-01-29", "QueryRegistrantProfileRealNameVerificationInfo")
-{
-	setMethod(HttpRequest::Method::Post);
+QueryRegistrantProfileRealNameVerificationInfoRequest::QueryRegistrantProfileRealNameVerificationInfoRequest()
+    : RpcServiceRequest("domain", "2018-01-29", "QueryRegistrantProfileRealNameVerificationInfo") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-QueryRegistrantProfileRealNameVerificationInfoRequest::~QueryRegistrantProfileRealNameVerificationInfoRequest()
-{}
+QueryRegistrantProfileRealNameVerificationInfoRequest::~QueryRegistrantProfileRealNameVerificationInfoRequest() {}
 
-bool QueryRegistrantProfileRealNameVerificationInfoRequest::getFetchImage()const
-{
-	return fetchImage_;
+bool QueryRegistrantProfileRealNameVerificationInfoRequest::getFetchImage() const {
+  return fetchImage_;
 }
 
-void QueryRegistrantProfileRealNameVerificationInfoRequest::setFetchImage(bool fetchImage)
-{
-	fetchImage_ = fetchImage;
-	setParameter("FetchImage", fetchImage ? "true" : "false");
+void QueryRegistrantProfileRealNameVerificationInfoRequest::setFetchImage(bool fetchImage) {
+  fetchImage_ = fetchImage;
+  setParameter(std::string("FetchImage"), fetchImage ? "true" : "false");
 }
 
-long QueryRegistrantProfileRealNameVerificationInfoRequest::getRegistrantProfileId()const
-{
-	return registrantProfileId_;
+long QueryRegistrantProfileRealNameVerificationInfoRequest::getRegistrantProfileId() const {
+  return registrantProfileId_;
 }
 
-void QueryRegistrantProfileRealNameVerificationInfoRequest::setRegistrantProfileId(long registrantProfileId)
-{
-	registrantProfileId_ = registrantProfileId;
-	setParameter("RegistrantProfileId", std::to_string(registrantProfileId));
+void QueryRegistrantProfileRealNameVerificationInfoRequest::setRegistrantProfileId(long registrantProfileId) {
+  registrantProfileId_ = registrantProfileId;
+  setParameter(std::string("RegistrantProfileId"), std::to_string(registrantProfileId));
 }
 
-std::string QueryRegistrantProfileRealNameVerificationInfoRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string QueryRegistrantProfileRealNameVerificationInfoRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void QueryRegistrantProfileRealNameVerificationInfoRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void QueryRegistrantProfileRealNameVerificationInfoRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string QueryRegistrantProfileRealNameVerificationInfoRequest::getLang()const
-{
-	return lang_;
+std::string QueryRegistrantProfileRealNameVerificationInfoRequest::getLang() const {
+  return lang_;
 }
 
-void QueryRegistrantProfileRealNameVerificationInfoRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void QueryRegistrantProfileRealNameVerificationInfoRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

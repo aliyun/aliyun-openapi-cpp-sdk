@@ -39,22 +39,22 @@ void QueryOperationAuditInfoDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Id"].isNull())
-		id_ = value["Id"].asString();
+	if(!value["AuditInfo"].isNull())
+		auditInfo_ = value["AuditInfo"].asString();
+	if(!value["AuditStatus"].isNull())
+		auditStatus_ = std::stoi(value["AuditStatus"].asString());
+	if(!value["BusinessName"].isNull())
+		businessName_ = value["BusinessName"].asString();
+	if(!value["AuditType"].isNull())
+		auditType_ = std::stoi(value["AuditType"].asString());
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = std::stol(value["CreateTime"].asString());
 	if(!value["UpdateTime"].isNull())
 		updateTime_ = std::stol(value["UpdateTime"].asString());
-	if(!value["BusinessName"].isNull())
-		businessName_ = value["BusinessName"].asString();
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["AuditType"].isNull())
-		auditType_ = std::stoi(value["AuditType"].asString());
-	if(!value["AuditStatus"].isNull())
-		auditStatus_ = std::stoi(value["AuditStatus"].asString());
-	if(!value["AuditInfo"].isNull())
-		auditInfo_ = value["AuditInfo"].asString();
+	if(!value["Id"].isNull())
+		id_ = value["Id"].asString();
 	if(!value["Remark"].isNull())
 		remark_ = value["Remark"].asString();
 
@@ -75,14 +75,14 @@ std::string QueryOperationAuditInfoDetailResult::getBusinessName()const
 	return businessName_;
 }
 
-std::string QueryOperationAuditInfoDetailResult::getDomainName()const
-{
-	return domainName_;
-}
-
 int QueryOperationAuditInfoDetailResult::getAuditType()const
 {
 	return auditType_;
+}
+
+std::string QueryOperationAuditInfoDetailResult::getDomainName()const
+{
+	return domainName_;
 }
 
 long QueryOperationAuditInfoDetailResult::getCreateTime()const

@@ -42,63 +42,67 @@ void QueryDomainByDomainNameResult::parse(const std::string &payload)
 	auto allDnsList = value["DnsList"]["Dns"];
 	for (const auto &item : allDnsList)
 		dnsList_.push_back(item.asString());
-	if(!value["UserId"].isNull())
-		userId_ = value["UserId"].asString();
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["RegistrationDate"].isNull())
-		registrationDate_ = value["RegistrationDate"].asString();
-	if(!value["ExpirationDate"].isNull())
-		expirationDate_ = value["ExpirationDate"].asString();
-	if(!value["RegistrantOrganization"].isNull())
-		registrantOrganization_ = value["RegistrantOrganization"].asString();
-	if(!value["RegistrantName"].isNull())
-		registrantName_ = value["RegistrantName"].asString();
 	if(!value["Email"].isNull())
 		email_ = value["Email"].asString();
-	if(!value["UpdateProhibitionLock"].isNull())
-		updateProhibitionLock_ = value["UpdateProhibitionLock"].asString();
+	if(!value["RegistrationDate"].isNull())
+		registrationDate_ = value["RegistrationDate"].asString();
+	if(!value["RegistrationDateLong"].isNull())
+		registrationDateLong_ = std::stol(value["RegistrationDateLong"].asString());
+	if(!value["RealNameStatus"].isNull())
+		realNameStatus_ = value["RealNameStatus"].asString();
+	if(!value["Premium"].isNull())
+		premium_ = value["Premium"].asString() == "true";
+	if(!value["DomainNameVerificationStatus"].isNull())
+		domainNameVerificationStatus_ = value["DomainNameVerificationStatus"].asString();
+	if(!value["ExpirationDateLong"].isNull())
+		expirationDateLong_ = std::stol(value["ExpirationDateLong"].asString());
+	if(!value["TransferOutStatus"].isNull())
+		transferOutStatus_ = value["TransferOutStatus"].asString();
+	if(!value["ZhRegistrantOrganization"].isNull())
+		zhRegistrantOrganization_ = value["ZhRegistrantOrganization"].asString();
+	if(!value["EmailVerificationClientHold"].isNull())
+		emailVerificationClientHold_ = value["EmailVerificationClientHold"].asString() == "true";
+	if(!value["EmailVerificationStatus"].isNull())
+		emailVerificationStatus_ = std::stoi(value["EmailVerificationStatus"].asString());
+	if(!value["RegistrantOrganization"].isNull())
+		registrantOrganization_ = value["RegistrantOrganization"].asString();
 	if(!value["TransferProhibitionLock"].isNull())
 		transferProhibitionLock_ = value["TransferProhibitionLock"].asString();
 	if(!value["DomainNameProxyService"].isNull())
 		domainNameProxyService_ = value["DomainNameProxyService"].asString() == "true";
-	if(!value["Premium"].isNull())
-		premium_ = value["Premium"].asString() == "true";
-	if(!value["EmailVerificationStatus"].isNull())
-		emailVerificationStatus_ = std::stoi(value["EmailVerificationStatus"].asString());
-	if(!value["EmailVerificationClientHold"].isNull())
-		emailVerificationClientHold_ = value["EmailVerificationClientHold"].asString() == "true";
-	if(!value["RealNameStatus"].isNull())
-		realNameStatus_ = value["RealNameStatus"].asString();
-	if(!value["RegistrantUpdatingStatus"].isNull())
-		registrantUpdatingStatus_ = value["RegistrantUpdatingStatus"].asString();
-	if(!value["TransferOutStatus"].isNull())
-		transferOutStatus_ = value["TransferOutStatus"].asString();
 	if(!value["RegistrantType"].isNull())
 		registrantType_ = value["RegistrantType"].asString();
-	if(!value["DomainNameVerificationStatus"].isNull())
-		domainNameVerificationStatus_ = value["DomainNameVerificationStatus"].asString();
-	if(!value["ZhRegistrantOrganization"].isNull())
-		zhRegistrantOrganization_ = value["ZhRegistrantOrganization"].asString();
+	if(!value["RegistrantUpdatingStatus"].isNull())
+		registrantUpdatingStatus_ = value["RegistrantUpdatingStatus"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
 	if(!value["ZhRegistrantName"].isNull())
 		zhRegistrantName_ = value["ZhRegistrantName"].asString();
-	if(!value["RegistrationDateLong"].isNull())
-		registrationDateLong_ = std::stol(value["RegistrationDateLong"].asString());
-	if(!value["ExpirationDateLong"].isNull())
-		expirationDateLong_ = std::stol(value["ExpirationDateLong"].asString());
+	if(!value["ExpirationDate"].isNull())
+		expirationDate_ = value["ExpirationDate"].asString();
+	if(!value["RegistrantName"].isNull())
+		registrantName_ = value["RegistrantName"].asString();
+	if(!value["UserId"].isNull())
+		userId_ = value["UserId"].asString();
+	if(!value["UpdateProhibitionLock"].isNull())
+		updateProhibitionLock_ = value["UpdateProhibitionLock"].asString();
+	if(!value["DomainGroupId"].isNull())
+		domainGroupId_ = std::stol(value["DomainGroupId"].asString());
+	if(!value["Remark"].isNull())
+		remark_ = value["Remark"].asString();
+	if(!value["DomainGroupName"].isNull())
+		domainGroupName_ = value["DomainGroupName"].asString();
+	if(!value["ExpirationDateStatus"].isNull())
+		expirationDateStatus_ = value["ExpirationDateStatus"].asString();
+	if(!value["ExpirationCurrDateDiff"].isNull())
+		expirationCurrDateDiff_ = std::stoi(value["ExpirationCurrDateDiff"].asString());
+	if(!value["DomainType"].isNull())
+		domainType_ = value["DomainType"].asString();
+	if(!value["domainStatus"].isNull())
+		domainStatus_ = value["domainStatus"].asString();
 
-}
-
-std::string QueryDomainByDomainNameResult::getRegistrantType()const
-{
-	return registrantType_;
-}
-
-std::string QueryDomainByDomainNameResult::getRegistrantUpdatingStatus()const
-{
-	return registrantUpdatingStatus_;
 }
 
 std::string QueryDomainByDomainNameResult::getEmail()const
@@ -116,24 +120,9 @@ long QueryDomainByDomainNameResult::getRegistrationDateLong()const
 	return registrationDateLong_;
 }
 
-std::string QueryDomainByDomainNameResult::getDomainName()const
-{
-	return domainName_;
-}
-
-std::string QueryDomainByDomainNameResult::getInstanceId()const
-{
-	return instanceId_;
-}
-
 std::string QueryDomainByDomainNameResult::getRealNameStatus()const
 {
 	return realNameStatus_;
-}
-
-std::string QueryDomainByDomainNameResult::getZhRegistrantName()const
-{
-	return zhRegistrantName_;
 }
 
 bool QueryDomainByDomainNameResult::getPremium()const
@@ -146,6 +135,11 @@ std::string QueryDomainByDomainNameResult::getDomainNameVerificationStatus()cons
 	return domainNameVerificationStatus_;
 }
 
+std::string QueryDomainByDomainNameResult::getRemark()const
+{
+	return remark_;
+}
+
 long QueryDomainByDomainNameResult::getExpirationDateLong()const
 {
 	return expirationDateLong_;
@@ -156,14 +150,9 @@ std::vector<std::string> QueryDomainByDomainNameResult::getDnsList()const
 	return dnsList_;
 }
 
-std::string QueryDomainByDomainNameResult::getExpirationDate()const
+std::string QueryDomainByDomainNameResult::getDomainType()const
 {
-	return expirationDate_;
-}
-
-std::string QueryDomainByDomainNameResult::getRegistrantName()const
-{
-	return registrantName_;
+	return domainType_;
 }
 
 std::string QueryDomainByDomainNameResult::getTransferOutStatus()const
@@ -171,9 +160,9 @@ std::string QueryDomainByDomainNameResult::getTransferOutStatus()const
 	return transferOutStatus_;
 }
 
-std::string QueryDomainByDomainNameResult::getUserId()const
+std::string QueryDomainByDomainNameResult::getDomainGroupName()const
 {
-	return userId_;
+	return domainGroupName_;
 }
 
 std::string QueryDomainByDomainNameResult::getZhRegistrantOrganization()const
@@ -184,11 +173,6 @@ std::string QueryDomainByDomainNameResult::getZhRegistrantOrganization()const
 bool QueryDomainByDomainNameResult::getEmailVerificationClientHold()const
 {
 	return emailVerificationClientHold_;
-}
-
-std::string QueryDomainByDomainNameResult::getUpdateProhibitionLock()const
-{
-	return updateProhibitionLock_;
 }
 
 int QueryDomainByDomainNameResult::getEmailVerificationStatus()const
@@ -209,5 +193,70 @@ std::string QueryDomainByDomainNameResult::getTransferProhibitionLock()const
 bool QueryDomainByDomainNameResult::getDomainNameProxyService()const
 {
 	return domainNameProxyService_;
+}
+
+std::string QueryDomainByDomainNameResult::getRegistrantType()const
+{
+	return registrantType_;
+}
+
+std::string QueryDomainByDomainNameResult::getRegistrantUpdatingStatus()const
+{
+	return registrantUpdatingStatus_;
+}
+
+int QueryDomainByDomainNameResult::getExpirationCurrDateDiff()const
+{
+	return expirationCurrDateDiff_;
+}
+
+std::string QueryDomainByDomainNameResult::getDomainName()const
+{
+	return domainName_;
+}
+
+std::string QueryDomainByDomainNameResult::getInstanceId()const
+{
+	return instanceId_;
+}
+
+long QueryDomainByDomainNameResult::getDomainGroupId()const
+{
+	return domainGroupId_;
+}
+
+std::string QueryDomainByDomainNameResult::getZhRegistrantName()const
+{
+	return zhRegistrantName_;
+}
+
+std::string QueryDomainByDomainNameResult::getExpirationDateStatus()const
+{
+	return expirationDateStatus_;
+}
+
+std::string QueryDomainByDomainNameResult::getExpirationDate()const
+{
+	return expirationDate_;
+}
+
+std::string QueryDomainByDomainNameResult::getRegistrantName()const
+{
+	return registrantName_;
+}
+
+std::string QueryDomainByDomainNameResult::getUserId()const
+{
+	return userId_;
+}
+
+std::string QueryDomainByDomainNameResult::getUpdateProhibitionLock()const
+{
+	return updateProhibitionLock_;
+}
+
+std::string QueryDomainByDomainNameResult::getDomainStatus()const
+{
+	return domainStatus_;
 }
 

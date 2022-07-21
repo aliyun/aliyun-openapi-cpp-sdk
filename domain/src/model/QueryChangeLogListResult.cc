@@ -43,34 +43,34 @@ void QueryChangeLogListResult::parse(const std::string &payload)
 	for (auto valueDataChangeLog : allDataNode)
 	{
 		ChangeLog dataObject;
-		if(!valueDataChangeLog["DomainName"].isNull())
-			dataObject.domainName = valueDataChangeLog["DomainName"].asString();
-		if(!valueDataChangeLog["Result"].isNull())
-			dataObject.result = valueDataChangeLog["Result"].asString();
 		if(!valueDataChangeLog["Operation"].isNull())
 			dataObject.operation = valueDataChangeLog["Operation"].asString();
+		if(!valueDataChangeLog["Time"].isNull())
+			dataObject.time = valueDataChangeLog["Time"].asString();
+		if(!valueDataChangeLog["Result"].isNull())
+			dataObject.result = valueDataChangeLog["Result"].asString();
+		if(!valueDataChangeLog["DomainName"].isNull())
+			dataObject.domainName = valueDataChangeLog["DomainName"].asString();
 		if(!valueDataChangeLog["OperationIPAddress"].isNull())
 			dataObject.operationIPAddress = valueDataChangeLog["OperationIPAddress"].asString();
 		if(!valueDataChangeLog["Details"].isNull())
 			dataObject.details = valueDataChangeLog["Details"].asString();
-		if(!valueDataChangeLog["Time"].isNull())
-			dataObject.time = valueDataChangeLog["Time"].asString();
 		data_.push_back(dataObject);
 	}
-	if(!value["TotalItemNum"].isNull())
-		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
-	if(!value["CurrentPageNum"].isNull())
-		currentPageNum_ = std::stoi(value["CurrentPageNum"].asString());
-	if(!value["TotalPageNum"].isNull())
-		totalPageNum_ = std::stoi(value["TotalPageNum"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PrePage"].isNull())
 		prePage_ = value["PrePage"].asString() == "true";
-	if(!value["NextPage"].isNull())
-		nextPage_ = value["NextPage"].asString() == "true";
+	if(!value["CurrentPageNum"].isNull())
+		currentPageNum_ = std::stoi(value["CurrentPageNum"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalPageNum"].isNull())
+		totalPageNum_ = std::stoi(value["TotalPageNum"].asString());
 	if(!value["ResultLimit"].isNull())
 		resultLimit_ = value["ResultLimit"].asString() == "true";
+	if(!value["TotalItemNum"].isNull())
+		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
+	if(!value["NextPage"].isNull())
+		nextPage_ = value["NextPage"].asString() == "true";
 
 }
 

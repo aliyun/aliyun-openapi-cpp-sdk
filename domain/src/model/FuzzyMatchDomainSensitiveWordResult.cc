@@ -47,10 +47,10 @@ void FuzzyMatchDomainSensitiveWordResult::parse(const std::string &payload)
 			matchedSentiveWordsObject.word = valueMatchedSentiveWordsMatchedSensitiveWord["Word"].asString();
 		matchedSentiveWords_.push_back(matchedSentiveWordsObject);
 	}
-	if(!value["Keyword"].isNull())
-		keyword_ = value["Keyword"].asString();
 	if(!value["Exist"].isNull())
 		exist_ = value["Exist"].asString() == "true";
+	if(!value["Keyword"].isNull())
+		keyword_ = value["Keyword"].asString();
 
 }
 

@@ -43,16 +43,16 @@ void QueryTransferOutInfoResult::parse(const std::string &payload)
 		status_ = std::stoi(value["Status"].asString());
 	if(!value["Email"].isNull())
 		email_ = value["Email"].asString();
-	if(!value["TransferAuthorizationCodeSendDate"].isNull())
-		transferAuthorizationCodeSendDate_ = value["TransferAuthorizationCodeSendDate"].asString();
 	if(!value["ExpirationDate"].isNull())
 		expirationDate_ = value["ExpirationDate"].asString();
+	if(!value["ResultMsg"].isNull())
+		resultMsg_ = value["ResultMsg"].asString();
 	if(!value["PendingRequestDate"].isNull())
 		pendingRequestDate_ = value["PendingRequestDate"].asString();
 	if(!value["ResultCode"].isNull())
 		resultCode_ = value["ResultCode"].asString();
-	if(!value["ResultMsg"].isNull())
-		resultMsg_ = value["ResultMsg"].asString();
+	if(!value["TransferAuthorizationCodeSendDate"].isNull())
+		transferAuthorizationCodeSendDate_ = value["TransferAuthorizationCodeSendDate"].asString();
 
 }
 

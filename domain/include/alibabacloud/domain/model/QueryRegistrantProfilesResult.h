@@ -35,11 +35,11 @@ namespace AlibabaCloud
 				struct RegistrantProfile
 				{
 					std::string registrantType;
+					std::string zhProvince;
 					bool defaultRegistrantProfile;
 					std::string email;
-					std::string zhProvince;
-					std::string address;
 					std::string telephone;
+					std::string address;
 					std::string realNameStatus;
 					std::string createTime;
 					std::string postalCode;
@@ -47,16 +47,16 @@ namespace AlibabaCloud
 					std::string city;
 					long registrantProfileId;
 					std::string province;
-					std::string registrantName;
 					std::string zhCity;
+					std::string registrantName;
 					std::string registrantProfileType;
 					std::string updateTime;
-					std::string country;
 					std::string zhRegistrantOrganization;
+					std::string country;
 					int emailVerificationStatus;
 					std::string registrantOrganization;
-					std::string telArea;
 					std::string telExt;
+					std::string telArea;
 					std::string zhAddress;
 				};
 

@@ -45,8 +45,8 @@ namespace AlibabaCloud
 				std::string getDimensions()const;
 				std::string getTitle()const;
 				std::string getFeatures()const;
-				std::string getMaker()const;
 				std::string getSubject()const;
+				std::string getMaker()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -59,8 +59,8 @@ namespace AlibabaCloud
 				std::string dimensions_;
 				std::string title_;
 				std::string features_;
-				std::string maker_;
 				std::string subject_;
+				std::string maker_;
 
 			};
 		}

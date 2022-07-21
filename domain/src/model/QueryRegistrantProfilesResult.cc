@@ -43,68 +43,68 @@ void QueryRegistrantProfilesResult::parse(const std::string &payload)
 	for (auto valueRegistrantProfilesRegistrantProfile : allRegistrantProfilesNode)
 	{
 		RegistrantProfile registrantProfilesObject;
-		if(!valueRegistrantProfilesRegistrantProfile["RegistrantProfileId"].isNull())
-			registrantProfilesObject.registrantProfileId = std::stol(valueRegistrantProfilesRegistrantProfile["RegistrantProfileId"].asString());
-		if(!valueRegistrantProfilesRegistrantProfile["CreateTime"].isNull())
-			registrantProfilesObject.createTime = valueRegistrantProfilesRegistrantProfile["CreateTime"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["UpdateTime"].isNull())
-			registrantProfilesObject.updateTime = valueRegistrantProfilesRegistrantProfile["UpdateTime"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["DefaultRegistrantProfile"].isNull())
-			registrantProfilesObject.defaultRegistrantProfile = valueRegistrantProfilesRegistrantProfile["DefaultRegistrantProfile"].asString() == "true";
-		if(!valueRegistrantProfilesRegistrantProfile["RegistrantName"].isNull())
-			registrantProfilesObject.registrantName = valueRegistrantProfilesRegistrantProfile["RegistrantName"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["RegistrantOrganization"].isNull())
-			registrantProfilesObject.registrantOrganization = valueRegistrantProfilesRegistrantProfile["RegistrantOrganization"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["Country"].isNull())
-			registrantProfilesObject.country = valueRegistrantProfilesRegistrantProfile["Country"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["Province"].isNull())
-			registrantProfilesObject.province = valueRegistrantProfilesRegistrantProfile["Province"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["City"].isNull())
-			registrantProfilesObject.city = valueRegistrantProfilesRegistrantProfile["City"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["Address"].isNull())
-			registrantProfilesObject.address = valueRegistrantProfilesRegistrantProfile["Address"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["Email"].isNull())
-			registrantProfilesObject.email = valueRegistrantProfilesRegistrantProfile["Email"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["PostalCode"].isNull())
-			registrantProfilesObject.postalCode = valueRegistrantProfilesRegistrantProfile["PostalCode"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["TelArea"].isNull())
-			registrantProfilesObject.telArea = valueRegistrantProfilesRegistrantProfile["TelArea"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["Telephone"].isNull())
-			registrantProfilesObject.telephone = valueRegistrantProfilesRegistrantProfile["Telephone"].asString();
 		if(!valueRegistrantProfilesRegistrantProfile["TelExt"].isNull())
 			registrantProfilesObject.telExt = valueRegistrantProfilesRegistrantProfile["TelExt"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["EmailVerificationStatus"].isNull())
-			registrantProfilesObject.emailVerificationStatus = std::stoi(valueRegistrantProfilesRegistrantProfile["EmailVerificationStatus"].asString());
-		if(!valueRegistrantProfilesRegistrantProfile["ZhRegistrantName"].isNull())
-			registrantProfilesObject.zhRegistrantName = valueRegistrantProfilesRegistrantProfile["ZhRegistrantName"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["ZhRegistrantOrganization"].isNull())
-			registrantProfilesObject.zhRegistrantOrganization = valueRegistrantProfilesRegistrantProfile["ZhRegistrantOrganization"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["UpdateTime"].isNull())
+			registrantProfilesObject.updateTime = valueRegistrantProfilesRegistrantProfile["UpdateTime"].asString();
 		if(!valueRegistrantProfilesRegistrantProfile["ZhProvince"].isNull())
 			registrantProfilesObject.zhProvince = valueRegistrantProfilesRegistrantProfile["ZhProvince"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["CreateTime"].isNull())
+			registrantProfilesObject.createTime = valueRegistrantProfilesRegistrantProfile["CreateTime"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["Telephone"].isNull())
+			registrantProfilesObject.telephone = valueRegistrantProfilesRegistrantProfile["Telephone"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["RegistrantOrganization"].isNull())
+			registrantProfilesObject.registrantOrganization = valueRegistrantProfilesRegistrantProfile["RegistrantOrganization"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["City"].isNull())
+			registrantProfilesObject.city = valueRegistrantProfilesRegistrantProfile["City"].asString();
 		if(!valueRegistrantProfilesRegistrantProfile["ZhCity"].isNull())
 			registrantProfilesObject.zhCity = valueRegistrantProfilesRegistrantProfile["ZhCity"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["ZhAddress"].isNull())
-			registrantProfilesObject.zhAddress = valueRegistrantProfilesRegistrantProfile["ZhAddress"].asString();
-		if(!valueRegistrantProfilesRegistrantProfile["RegistrantType"].isNull())
-			registrantProfilesObject.registrantType = valueRegistrantProfilesRegistrantProfile["RegistrantType"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["TelArea"].isNull())
+			registrantProfilesObject.telArea = valueRegistrantProfilesRegistrantProfile["TelArea"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["Address"].isNull())
+			registrantProfilesObject.address = valueRegistrantProfilesRegistrantProfile["Address"].asString();
 		if(!valueRegistrantProfilesRegistrantProfile["RealNameStatus"].isNull())
 			registrantProfilesObject.realNameStatus = valueRegistrantProfilesRegistrantProfile["RealNameStatus"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["PostalCode"].isNull())
+			registrantProfilesObject.postalCode = valueRegistrantProfilesRegistrantProfile["PostalCode"].asString();
 		if(!valueRegistrantProfilesRegistrantProfile["RegistrantProfileType"].isNull())
 			registrantProfilesObject.registrantProfileType = valueRegistrantProfilesRegistrantProfile["RegistrantProfileType"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["RegistrantProfileId"].isNull())
+			registrantProfilesObject.registrantProfileId = std::stol(valueRegistrantProfilesRegistrantProfile["RegistrantProfileId"].asString());
+		if(!valueRegistrantProfilesRegistrantProfile["ZhRegistrantOrganization"].isNull())
+			registrantProfilesObject.zhRegistrantOrganization = valueRegistrantProfilesRegistrantProfile["ZhRegistrantOrganization"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["DefaultRegistrantProfile"].isNull())
+			registrantProfilesObject.defaultRegistrantProfile = valueRegistrantProfilesRegistrantProfile["DefaultRegistrantProfile"].asString() == "true";
+		if(!valueRegistrantProfilesRegistrantProfile["Email"].isNull())
+			registrantProfilesObject.email = valueRegistrantProfilesRegistrantProfile["Email"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["ZhRegistrantName"].isNull())
+			registrantProfilesObject.zhRegistrantName = valueRegistrantProfilesRegistrantProfile["ZhRegistrantName"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["RegistrantType"].isNull())
+			registrantProfilesObject.registrantType = valueRegistrantProfilesRegistrantProfile["RegistrantType"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["Country"].isNull())
+			registrantProfilesObject.country = valueRegistrantProfilesRegistrantProfile["Country"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["RegistrantName"].isNull())
+			registrantProfilesObject.registrantName = valueRegistrantProfilesRegistrantProfile["RegistrantName"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["EmailVerificationStatus"].isNull())
+			registrantProfilesObject.emailVerificationStatus = std::stoi(valueRegistrantProfilesRegistrantProfile["EmailVerificationStatus"].asString());
+		if(!valueRegistrantProfilesRegistrantProfile["ZhAddress"].isNull())
+			registrantProfilesObject.zhAddress = valueRegistrantProfilesRegistrantProfile["ZhAddress"].asString();
+		if(!valueRegistrantProfilesRegistrantProfile["Province"].isNull())
+			registrantProfilesObject.province = valueRegistrantProfilesRegistrantProfile["Province"].asString();
 		registrantProfiles_.push_back(registrantProfilesObject);
 	}
+	if(!value["NextPage"].isNull())
+		nextPage_ = value["NextPage"].asString() == "true";
 	if(!value["TotalItemNum"].isNull())
 		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
+	if(!value["PrePage"].isNull())
+		prePage_ = value["PrePage"].asString() == "true";
 	if(!value["CurrentPageNum"].isNull())
 		currentPageNum_ = std::stoi(value["CurrentPageNum"].asString());
 	if(!value["TotalPageNum"].isNull())
 		totalPageNum_ = std::stoi(value["TotalPageNum"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["PrePage"].isNull())
-		prePage_ = value["PrePage"].asString() == "true";
-	if(!value["NextPage"].isNull())
-		nextPage_ = value["NextPage"].asString() == "true";
 
 }
 

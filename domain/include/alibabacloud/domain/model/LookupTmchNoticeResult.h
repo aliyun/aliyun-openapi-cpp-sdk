@@ -39,7 +39,7 @@ namespace AlibabaCloud
 						std::string desc;
 						std::string jurCC;
 					};
-					struct Holder
+					struct Contact
 					{
 						struct Addr
 						{
@@ -49,11 +49,20 @@ namespace AlibabaCloud
 							std::string city;
 							std::string sp;
 						};
+						std::string type;
+						std::string email;
 						std::string org;
-						std::string entitlement;
+						std::string fax;
+						std::string voice;
 						Addr addr;
+						std::string name;
 					};
-					struct Contact
+					struct ClassDesc
+					{
+						int classNum;
+						std::string desc;
+					};
+					struct Holder
 					{
 						struct Addr1
 						{
@@ -64,17 +73,8 @@ namespace AlibabaCloud
 							std::string sp;
 						};
 						Addr1 addr1;
-						std::string type;
-						std::string email;
 						std::string org;
-						std::string fax;
-						std::string voice;
-						std::string name;
-					};
-					struct ClassDesc
-					{
-						int classNum;
-						std::string desc;
+						std::string entitlement;
 					};
 					std::string markName;
 					JurDesc jurDesc;

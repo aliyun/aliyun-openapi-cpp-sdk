@@ -43,38 +43,38 @@ void ListServerLockResult::parse(const std::string &payload)
 	for (auto valueDataQueryTransferInResponse : allDataNode)
 	{
 		QueryTransferInResponse dataObject;
-		if(!valueDataQueryTransferInResponse["GmtCreate"].isNull())
-			dataObject.gmtCreate = valueDataQueryTransferInResponse["GmtCreate"].asString();
-		if(!valueDataQueryTransferInResponse["GmtModified"].isNull())
-			dataObject.gmtModified = valueDataQueryTransferInResponse["GmtModified"].asString();
-		if(!valueDataQueryTransferInResponse["UserId"].isNull())
-			dataObject.userId = valueDataQueryTransferInResponse["UserId"].asString();
-		if(!valueDataQueryTransferInResponse["DomainName"].isNull())
-			dataObject.domainName = valueDataQueryTransferInResponse["DomainName"].asString();
-		if(!valueDataQueryTransferInResponse["DomainInstanceId"].isNull())
-			dataObject.domainInstanceId = valueDataQueryTransferInResponse["DomainInstanceId"].asString();
-		if(!valueDataQueryTransferInResponse["LockProductId"].isNull())
-			dataObject.lockProductId = valueDataQueryTransferInResponse["LockProductId"].asString();
-		if(!valueDataQueryTransferInResponse["StartDate"].isNull())
-			dataObject.startDate = valueDataQueryTransferInResponse["StartDate"].asString();
-		if(!valueDataQueryTransferInResponse["ExpireDate"].isNull())
-			dataObject.expireDate = valueDataQueryTransferInResponse["ExpireDate"].asString();
-		if(!valueDataQueryTransferInResponse["LockInstanceId"].isNull())
-			dataObject.lockInstanceId = valueDataQueryTransferInResponse["LockInstanceId"].asString();
 		if(!valueDataQueryTransferInResponse["ServerLockStatus"].isNull())
 			dataObject.serverLockStatus = valueDataQueryTransferInResponse["ServerLockStatus"].asString();
+		if(!valueDataQueryTransferInResponse["LockInstanceId"].isNull())
+			dataObject.lockInstanceId = valueDataQueryTransferInResponse["LockInstanceId"].asString();
+		if(!valueDataQueryTransferInResponse["UserId"].isNull())
+			dataObject.userId = valueDataQueryTransferInResponse["UserId"].asString();
+		if(!valueDataQueryTransferInResponse["GmtCreate"].isNull())
+			dataObject.gmtCreate = valueDataQueryTransferInResponse["GmtCreate"].asString();
+		if(!valueDataQueryTransferInResponse["ExpireDate"].isNull())
+			dataObject.expireDate = valueDataQueryTransferInResponse["ExpireDate"].asString();
+		if(!valueDataQueryTransferInResponse["StartDate"].isNull())
+			dataObject.startDate = valueDataQueryTransferInResponse["StartDate"].asString();
+		if(!valueDataQueryTransferInResponse["LockProductId"].isNull())
+			dataObject.lockProductId = valueDataQueryTransferInResponse["LockProductId"].asString();
+		if(!valueDataQueryTransferInResponse["DomainInstanceId"].isNull())
+			dataObject.domainInstanceId = valueDataQueryTransferInResponse["DomainInstanceId"].asString();
+		if(!valueDataQueryTransferInResponse["GmtModified"].isNull())
+			dataObject.gmtModified = valueDataQueryTransferInResponse["GmtModified"].asString();
+		if(!valueDataQueryTransferInResponse["DomainName"].isNull())
+			dataObject.domainName = valueDataQueryTransferInResponse["DomainName"].asString();
 		data_.push_back(dataObject);
 	}
-	if(!value["TotalItemNum"].isNull())
-		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
-	if(!value["CurrentPageNum"].isNull())
-		currentPageNum_ = std::stoi(value["CurrentPageNum"].asString());
-	if(!value["TotalPageNum"].isNull())
-		totalPageNum_ = std::stoi(value["TotalPageNum"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PrePage"].isNull())
 		prePage_ = value["PrePage"].asString() == "true";
+	if(!value["CurrentPageNum"].isNull())
+		currentPageNum_ = std::stoi(value["CurrentPageNum"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalPageNum"].isNull())
+		totalPageNum_ = std::stoi(value["TotalPageNum"].asString());
+	if(!value["TotalItemNum"].isNull())
+		totalItemNum_ = std::stoi(value["TotalItemNum"].asString());
 	if(!value["NextPage"].isNull())
 		nextPage_ = value["NextPage"].asString() == "true";
 

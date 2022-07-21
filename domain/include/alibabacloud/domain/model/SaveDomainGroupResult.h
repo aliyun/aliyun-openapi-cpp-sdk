@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				std::string getCreationDate()const;
 				std::string getDomainGroupName()const;
 				std::string getModificationDate()const;
-				long getDomainGroupId()const;
 				std::string getDomainGroupStatus()const;
+				long getDomainGroupId()const;
 				int getTotalNumber()const;
 
 			protected:
@@ -52,8 +52,8 @@ namespace AlibabaCloud
 				std::string creationDate_;
 				std::string domainGroupName_;
 				std::string modificationDate_;
-				long domainGroupId_;
 				std::string domainGroupStatus_;
+				long domainGroupId_;
 				int totalNumber_;
 
 			};

@@ -39,6 +39,18 @@ void SubmitEmailVerificationResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allExistListNode = value["ExistList"]["SendResult"];
+	for (auto valueExistListSendResult : allExistListNode)
+	{
+		SendResult existListObject;
+		if(!valueExistListSendResult["Email"].isNull())
+			existListObject.email = valueExistListSendResult["Email"].asString();
+		if(!valueExistListSendResult["Code"].isNull())
+			existListObject.code = valueExistListSendResult["Code"].asString();
+		if(!valueExistListSendResult["Message"].isNull())
+			existListObject.message = valueExistListSendResult["Message"].asString();
+		existList_.push_back(existListObject);
+	}
 	auto allSuccessListNode = value["SuccessList"]["SendResult"];
 	for (auto valueSuccessListSendResult : allSuccessListNode)
 	{
@@ -62,18 +74,6 @@ void SubmitEmailVerificationResult::parse(const std::string &payload)
 		if(!valueFailListSendResult["Message"].isNull())
 			failListObject.message = valueFailListSendResult["Message"].asString();
 		failList_.push_back(failListObject);
-	}
-	auto allExistListNode = value["ExistList"]["SendResult"];
-	for (auto valueExistListSendResult : allExistListNode)
-	{
-		SendResult existListObject;
-		if(!valueExistListSendResult["Email"].isNull())
-			existListObject.email = valueExistListSendResult["Email"].asString();
-		if(!valueExistListSendResult["Code"].isNull())
-			existListObject.code = valueExistListSendResult["Code"].asString();
-		if(!valueExistListSendResult["Message"].isNull())
-			existListObject.message = valueExistListSendResult["Message"].asString();
-		existList_.push_back(existListObject);
 	}
 
 }

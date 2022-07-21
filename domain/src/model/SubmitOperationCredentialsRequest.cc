@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Domain::Model::SubmitOperationCredentialsRequest;
 
-SubmitOperationCredentialsRequest::SubmitOperationCredentialsRequest() :
-	RpcServiceRequest("domain", "2018-01-29", "SubmitOperationCredentials")
-{
-	setMethod(HttpRequest::Method::Post);
+SubmitOperationCredentialsRequest::SubmitOperationCredentialsRequest()
+    : RpcServiceRequest("domain", "2018-01-29", "SubmitOperationCredentials") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SubmitOperationCredentialsRequest::~SubmitOperationCredentialsRequest()
-{}
+SubmitOperationCredentialsRequest::~SubmitOperationCredentialsRequest() {}
 
-std::string SubmitOperationCredentialsRequest::getCredentials()const
-{
-	return credentials_;
+std::string SubmitOperationCredentialsRequest::getCredentials() const {
+  return credentials_;
 }
 
-void SubmitOperationCredentialsRequest::setCredentials(const std::string& credentials)
-{
-	credentials_ = credentials;
-	setParameter("Credentials", credentials);
+void SubmitOperationCredentialsRequest::setCredentials(const std::string &credentials) {
+  credentials_ = credentials;
+  setParameter(std::string("Credentials"), credentials);
 }
 
-long SubmitOperationCredentialsRequest::getAuditRecordId()const
-{
-	return auditRecordId_;
+long SubmitOperationCredentialsRequest::getAuditRecordId() const {
+  return auditRecordId_;
 }
 
-void SubmitOperationCredentialsRequest::setAuditRecordId(long auditRecordId)
-{
-	auditRecordId_ = auditRecordId;
-	setParameter("AuditRecordId", std::to_string(auditRecordId));
+void SubmitOperationCredentialsRequest::setAuditRecordId(long auditRecordId) {
+  auditRecordId_ = auditRecordId;
+  setParameter(std::string("AuditRecordId"), std::to_string(auditRecordId));
 }
 
-int SubmitOperationCredentialsRequest::getRegType()const
-{
-	return regType_;
+int SubmitOperationCredentialsRequest::getRegType() const {
+  return regType_;
 }
 
-void SubmitOperationCredentialsRequest::setRegType(int regType)
-{
-	regType_ = regType;
-	setParameter("RegType", std::to_string(regType));
+void SubmitOperationCredentialsRequest::setRegType(int regType) {
+  regType_ = regType;
+  setParameter(std::string("RegType"), std::to_string(regType));
 }
 
-int SubmitOperationCredentialsRequest::getAuditType()const
-{
-	return auditType_;
+int SubmitOperationCredentialsRequest::getAuditType() const {
+  return auditType_;
 }
 
-void SubmitOperationCredentialsRequest::setAuditType(int auditType)
-{
-	auditType_ = auditType;
-	setParameter("AuditType", std::to_string(auditType));
+void SubmitOperationCredentialsRequest::setAuditType(int auditType) {
+  auditType_ = auditType;
+  setParameter(std::string("AuditType"), std::to_string(auditType));
 }
 
-std::string SubmitOperationCredentialsRequest::getLang()const
-{
-	return lang_;
+std::string SubmitOperationCredentialsRequest::getLang() const {
+  return lang_;
 }
 
-void SubmitOperationCredentialsRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void SubmitOperationCredentialsRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

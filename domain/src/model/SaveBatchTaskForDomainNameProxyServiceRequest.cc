@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,58 +18,45 @@
 
 using AlibabaCloud::Domain::Model::SaveBatchTaskForDomainNameProxyServiceRequest;
 
-SaveBatchTaskForDomainNameProxyServiceRequest::SaveBatchTaskForDomainNameProxyServiceRequest() :
-	RpcServiceRequest("domain", "2018-01-29", "SaveBatchTaskForDomainNameProxyService")
-{
-	setMethod(HttpRequest::Method::Post);
+SaveBatchTaskForDomainNameProxyServiceRequest::SaveBatchTaskForDomainNameProxyServiceRequest()
+    : RpcServiceRequest("domain", "2018-01-29", "SaveBatchTaskForDomainNameProxyService") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SaveBatchTaskForDomainNameProxyServiceRequest::~SaveBatchTaskForDomainNameProxyServiceRequest()
-{}
+SaveBatchTaskForDomainNameProxyServiceRequest::~SaveBatchTaskForDomainNameProxyServiceRequest() {}
 
-std::vector<std::string> SaveBatchTaskForDomainNameProxyServiceRequest::getDomainName()const
-{
-	return domainName_;
+std::vector<std::string> SaveBatchTaskForDomainNameProxyServiceRequest::getDomainName() const {
+  return domainName_;
 }
 
-void SaveBatchTaskForDomainNameProxyServiceRequest::setDomainName(const std::vector<std::string>& domainName)
-{
-	domainName_ = domainName;
-	for(int dep1 = 0; dep1!= domainName.size(); dep1++) {
-		setParameter("DomainName."+ std::to_string(dep1), domainName.at(dep1));
-	}
+void SaveBatchTaskForDomainNameProxyServiceRequest::setDomainName(const std::vector<std::string> &domainName) {
+  domainName_ = domainName;
 }
 
-std::string SaveBatchTaskForDomainNameProxyServiceRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string SaveBatchTaskForDomainNameProxyServiceRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void SaveBatchTaskForDomainNameProxyServiceRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void SaveBatchTaskForDomainNameProxyServiceRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string SaveBatchTaskForDomainNameProxyServiceRequest::getLang()const
-{
-	return lang_;
+std::string SaveBatchTaskForDomainNameProxyServiceRequest::getLang() const {
+  return lang_;
 }
 
-void SaveBatchTaskForDomainNameProxyServiceRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void SaveBatchTaskForDomainNameProxyServiceRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-bool SaveBatchTaskForDomainNameProxyServiceRequest::getStatus()const
-{
-	return status_;
+bool SaveBatchTaskForDomainNameProxyServiceRequest::getStatus() const {
+  return status_;
 }
 
-void SaveBatchTaskForDomainNameProxyServiceRequest::setStatus(bool status)
-{
-	status_ = status;
-	setParameter("Status", status ? "true" : "false");
+void SaveBatchTaskForDomainNameProxyServiceRequest::setStatus(bool status) {
+  status_ = status;
+  setParameter(std::string("Status"), status ? "true" : "false");
 }
 

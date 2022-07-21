@@ -36,20 +36,20 @@ namespace AlibabaCloud
 				{
 					std::string registrantType;
 					std::string registrationDate;
-					long registrationDateLong;
 					int expirationCurrDateDiff;
-					std::string domainName;
+					long registrationDateLong;
 					std::string instanceId;
+					std::string domainName;
 					std::string domainGroupId;
-					std::string productId;
 					bool premium;
+					std::string productId;
 					std::string domainAuditStatus;
 					std::string remark;
 					long expirationDateLong;
-					std::string domainType;
 					std::string expirationDateStatus;
-					std::string expirationDate;
+					std::string domainType;
 					std::string domainGroupName;
+					std::string expirationDate;
 					std::string domainStatus;
 				};
 

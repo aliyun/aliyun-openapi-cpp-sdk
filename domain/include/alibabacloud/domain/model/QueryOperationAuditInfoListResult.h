@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string auditInfo;
 					int auditStatus;
 					std::string businessName;
-					std::string domainName;
 					int auditType;
+					std::string domainName;
 					long createTime;
 					long updateTime;
 					long id;

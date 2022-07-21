@@ -39,18 +39,18 @@ void QueryDomainRealNameVerificationInfoResult::parse(const std::string &payload
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["SubmissionDate"].isNull())
-		submissionDate_ = value["SubmissionDate"].asString();
-	if(!value["IdentityCredential"].isNull())
-		identityCredential_ = value["IdentityCredential"].asString();
-	if(!value["IdentityCredentialNo"].isNull())
-		identityCredentialNo_ = value["IdentityCredentialNo"].asString();
 	if(!value["IdentityCredentialType"].isNull())
 		identityCredentialType_ = value["IdentityCredentialType"].asString();
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["IdentityCredential"].isNull())
+		identityCredential_ = value["IdentityCredential"].asString();
+	if(!value["SubmissionDate"].isNull())
+		submissionDate_ = value["SubmissionDate"].asString();
+	if(!value["IdentityCredentialNo"].isNull())
+		identityCredentialNo_ = value["IdentityCredentialNo"].asString();
 	if(!value["IdentityCredentialUrl"].isNull())
 		identityCredentialUrl_ = value["IdentityCredentialUrl"].asString();
 
@@ -61,14 +61,14 @@ std::string QueryDomainRealNameVerificationInfoResult::getIdentityCredentialType
 	return identityCredentialType_;
 }
 
-std::string QueryDomainRealNameVerificationInfoResult::getDomainName()const
-{
-	return domainName_;
-}
-
 std::string QueryDomainRealNameVerificationInfoResult::getInstanceId()const
 {
 	return instanceId_;
+}
+
+std::string QueryDomainRealNameVerificationInfoResult::getDomainName()const
+{
+	return domainName_;
 }
 
 std::string QueryDomainRealNameVerificationInfoResult::getIdentityCredential()const

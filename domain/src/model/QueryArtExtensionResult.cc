@@ -43,22 +43,22 @@ void QueryArtExtensionResult::parse(const std::string &payload)
 		objectType_ = value["ObjectType"].asString();
 	if(!value["MaterialsAndTechniques"].isNull())
 		materialsAndTechniques_ = value["MaterialsAndTechniques"].asString();
+	if(!value["InscriptionsAndMarkings"].isNull())
+		inscriptionsAndMarkings_ = value["InscriptionsAndMarkings"].asString();
+	if(!value["Reference"].isNull())
+		reference_ = value["Reference"].asString();
+	if(!value["DateOrPeriod"].isNull())
+		dateOrPeriod_ = value["DateOrPeriod"].asString();
 	if(!value["Dimensions"].isNull())
 		dimensions_ = value["Dimensions"].asString();
 	if(!value["Title"].isNull())
 		title_ = value["Title"].asString();
-	if(!value["DateOrPeriod"].isNull())
-		dateOrPeriod_ = value["DateOrPeriod"].asString();
-	if(!value["Maker"].isNull())
-		maker_ = value["Maker"].asString();
-	if(!value["InscriptionsAndMarkings"].isNull())
-		inscriptionsAndMarkings_ = value["InscriptionsAndMarkings"].asString();
-	if(!value["Subject"].isNull())
-		subject_ = value["Subject"].asString();
 	if(!value["Features"].isNull())
 		features_ = value["Features"].asString();
-	if(!value["Reference"].isNull())
-		reference_ = value["Reference"].asString();
+	if(!value["Subject"].isNull())
+		subject_ = value["Subject"].asString();
+	if(!value["Maker"].isNull())
+		maker_ = value["Maker"].asString();
 
 }
 
@@ -102,13 +102,13 @@ std::string QueryArtExtensionResult::getFeatures()const
 	return features_;
 }
 
-std::string QueryArtExtensionResult::getMaker()const
-{
-	return maker_;
-}
-
 std::string QueryArtExtensionResult::getSubject()const
 {
 	return subject_;
+}
+
+std::string QueryArtExtensionResult::getMaker()const
+{
+	return maker_;
 }
 
