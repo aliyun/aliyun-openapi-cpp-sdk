@@ -34,6 +34,24 @@ void CreateFigureClustersMergingTaskRequest::setUserData(const std::string &user
   setParameter(std::string("UserData"), userData);
 }
 
+std::string CreateFigureClustersMergingTaskRequest::getProjectName() const {
+  return projectName_;
+}
+
+void CreateFigureClustersMergingTaskRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string CreateFigureClustersMergingTaskRequest::getNotifyTopicName() const {
+  return notifyTopicName_;
+}
+
+void CreateFigureClustersMergingTaskRequest::setNotifyTopicName(const std::string &notifyTopicName) {
+  notifyTopicName_ = notifyTopicName;
+  setParameter(std::string("NotifyTopicName"), notifyTopicName);
+}
+
 std::string CreateFigureClustersMergingTaskRequest::getNotifyEndpoint() const {
   return notifyEndpoint_;
 }
@@ -61,22 +79,13 @@ void CreateFigureClustersMergingTaskRequest::setFrom(const std::string &from) {
   setParameter(std::string("From"), from);
 }
 
-std::string CreateFigureClustersMergingTaskRequest::getProjectName() const {
-  return projectName_;
+std::string CreateFigureClustersMergingTaskRequest::getTo() const {
+  return to_;
 }
 
-void CreateFigureClustersMergingTaskRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
-std::string CreateFigureClustersMergingTaskRequest::getNotifyTopicName() const {
-  return notifyTopicName_;
-}
-
-void CreateFigureClustersMergingTaskRequest::setNotifyTopicName(const std::string &notifyTopicName) {
-  notifyTopicName_ = notifyTopicName;
-  setParameter(std::string("NotifyTopicName"), notifyTopicName);
+void CreateFigureClustersMergingTaskRequest::setTo(const std::string &to) {
+  to_ = to;
+  setParameter(std::string("To"), to);
 }
 
 std::map<std::string, std::string> CreateFigureClustersMergingTaskRequest::getTags() const {
@@ -88,14 +97,5 @@ void CreateFigureClustersMergingTaskRequest::setTags(const std::map<std::string,
   for(auto const &iter1 : tags) {
     setParameter(std::string("Tags") + "." + iter1.first, iter1.second);
   }
-}
-
-std::string CreateFigureClustersMergingTaskRequest::getTo() const {
-  return to_;
-}
-
-void CreateFigureClustersMergingTaskRequest::setTo(const std::string &to) {
-  to_ = to;
-  setParameter(std::string("To"), to);
 }
 

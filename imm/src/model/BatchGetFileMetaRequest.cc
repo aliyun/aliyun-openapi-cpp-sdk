@@ -25,13 +25,15 @@ BatchGetFileMetaRequest::BatchGetFileMetaRequest()
 
 BatchGetFileMetaRequest::~BatchGetFileMetaRequest() {}
 
-std::string BatchGetFileMetaRequest::getDatasetName() const {
-  return datasetName_;
+std::vector<BatchGetFileMetaRequest::std::string> BatchGetFileMetaRequest::getURIs() const {
+  return uRIs_;
 }
 
-void BatchGetFileMetaRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
+void BatchGetFileMetaRequest::setURIs(const std::vector<BatchGetFileMetaRequest::std::string> &uRIs) {
+  uRIs_ = uRIs;
+  for(int dep1 = 0; dep1 != uRIs.size(); dep1++) {
+    setParameter(std::string("URIs") + "." + std::to_string(dep1 + 1), uRIs[dep1]);
+  }
 }
 
 std::string BatchGetFileMetaRequest::getProjectName() const {
@@ -43,14 +45,12 @@ void BatchGetFileMetaRequest::setProjectName(const std::string &projectName) {
   setParameter(std::string("ProjectName"), projectName);
 }
 
-std::vector<BatchGetFileMetaRequest::std::string> BatchGetFileMetaRequest::getURIs() const {
-  return uRIs_;
+std::string BatchGetFileMetaRequest::getDatasetName() const {
+  return datasetName_;
 }
 
-void BatchGetFileMetaRequest::setURIs(const std::vector<BatchGetFileMetaRequest::std::string> &uRIs) {
-  uRIs_ = uRIs;
-  for(int dep1 = 0; dep1 != uRIs.size(); dep1++) {
-    setParameter(std::string("URIs") + "." + std::to_string(dep1 + 1), uRIs[dep1]);
-  }
+void BatchGetFileMetaRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
 }
 

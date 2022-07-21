@@ -32,23 +32,23 @@ public:
 	~CreateFigureClusteringTaskRequest();
 	std::string getUserData() const;
 	void setUserData(const std::string &userData);
-	std::string getNotifyEndpoint() const;
-	void setNotifyEndpoint(const std::string &notifyEndpoint);
-	std::string getDatasetName() const;
-	void setDatasetName(const std::string &datasetName);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
 	std::string getNotifyTopicName() const;
 	void setNotifyTopicName(const std::string &notifyTopicName);
+	std::string getNotifyEndpoint() const;
+	void setNotifyEndpoint(const std::string &notifyEndpoint);
+	std::string getDatasetName() const;
+	void setDatasetName(const std::string &datasetName);
 	std::map<std::string, std::string> getTags() const;
 	void setTags(const std::map<std::string, std::string> &tags);
 
 private:
 	std::string userData_;
-	std::string notifyEndpoint_;
-	std::string datasetName_;
 	std::string projectName_;
 	std::string notifyTopicName_;
+	std::string notifyEndpoint_;
+	std::string datasetName_;
 	std::map<std::string, std::string> tags_;
 };
 } // namespace Model

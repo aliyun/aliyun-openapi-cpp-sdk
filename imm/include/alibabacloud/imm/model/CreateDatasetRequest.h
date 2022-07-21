@@ -30,35 +30,35 @@ class ALIBABACLOUD_IMM_EXPORT CreateDatasetRequest : public RpcServiceRequest {
 public:
 	CreateDatasetRequest();
 	~CreateDatasetRequest();
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
 	long getDatasetMaxBindCount() const;
 	void setDatasetMaxBindCount(long datasetMaxBindCount);
-	std::string getDescription() const;
-	void setDescription(const std::string &description);
+	long getDatasetMaxTotalFileSize() const;
+	void setDatasetMaxTotalFileSize(long datasetMaxTotalFileSize);
 	long getDatasetMaxRelationCount() const;
 	void setDatasetMaxRelationCount(long datasetMaxRelationCount);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
-	long getDatasetMaxFileCount() const;
-	void setDatasetMaxFileCount(long datasetMaxFileCount);
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
 	long getDatasetMaxEntityCount() const;
 	void setDatasetMaxEntityCount(long datasetMaxEntityCount);
+	long getDatasetMaxFileCount() const;
+	void setDatasetMaxFileCount(long datasetMaxFileCount);
 	std::string getTemplateId() const;
 	void setTemplateId(const std::string &templateId);
-	long getDatasetMaxTotalFileSize() const;
-	void setDatasetMaxTotalFileSize(long datasetMaxTotalFileSize);
 
 private:
+	std::string projectName_;
 	long datasetMaxBindCount_;
-	std::string description_;
+	long datasetMaxTotalFileSize_;
 	long datasetMaxRelationCount_;
 	std::string datasetName_;
-	long datasetMaxFileCount_;
-	std::string projectName_;
+	std::string description_;
 	long datasetMaxEntityCount_;
+	long datasetMaxFileCount_;
 	std::string templateId_;
-	long datasetMaxTotalFileSize_;
 };
 } // namespace Model
 } // namespace Imm

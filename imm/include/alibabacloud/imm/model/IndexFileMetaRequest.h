@@ -46,23 +46,23 @@ public:
 	};
 	IndexFileMetaRequest();
 	~IndexFileMetaRequest();
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
 	File getFile() const;
 	void setFile(const File &file);
+	std::string getNotifyTopicName() const;
+	void setNotifyTopicName(const std::string &notifyTopicName);
 	std::string getNotifyEndpoint() const;
 	void setNotifyEndpoint(const std::string &notifyEndpoint);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
-	std::string getNotifyTopicName() const;
-	void setNotifyTopicName(const std::string &notifyTopicName);
 
 private:
+	std::string projectName_;
 	File file_;
+	std::string notifyTopicName_;
 	std::string notifyEndpoint_;
 	std::string datasetName_;
-	std::string projectName_;
-	std::string notifyTopicName_;
 };
 } // namespace Model
 } // namespace Imm

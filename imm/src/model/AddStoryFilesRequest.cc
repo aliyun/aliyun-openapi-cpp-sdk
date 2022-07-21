@@ -25,15 +25,6 @@ AddStoryFilesRequest::AddStoryFilesRequest()
 
 AddStoryFilesRequest::~AddStoryFilesRequest() {}
 
-std::string AddStoryFilesRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void AddStoryFilesRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setBodyParameter(std::string("DatasetName"), datasetName);
-}
-
 std::string AddStoryFilesRequest::getProjectName() const {
   return projectName_;
 }
@@ -41,6 +32,15 @@ std::string AddStoryFilesRequest::getProjectName() const {
 void AddStoryFilesRequest::setProjectName(const std::string &projectName) {
   projectName_ = projectName;
   setBodyParameter(std::string("ProjectName"), projectName);
+}
+
+std::string AddStoryFilesRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void AddStoryFilesRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setBodyParameter(std::string("DatasetName"), datasetName);
 }
 
 std::vector<AddStoryFilesRequest::Files> AddStoryFilesRequest::getFiles() const {

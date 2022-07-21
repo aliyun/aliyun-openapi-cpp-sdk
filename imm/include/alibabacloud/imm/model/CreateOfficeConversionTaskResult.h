@@ -37,14 +37,20 @@ namespace AlibabaCloud
 				CreateOfficeConversionTaskResult();
 				explicit CreateOfficeConversionTaskResult(const std::string &payload);
 				~CreateOfficeConversionTaskResult();
+				std::string getStatus()const;
 				std::string getTaskId()const;
-				std::string getEventId()const;
+				int getPercent()const;
+				std::string getCreateTime()const;
+				std::string getTgtLoc()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string status_;
 				std::string taskId_;
-				std::string eventId_;
+				int percent_;
+				std::string createTime_;
+				std::string tgtLoc_;
 
 			};
 		}

@@ -19,117 +19,54 @@
 using AlibabaCloud::Imm::Model::UpdateProjectRequest;
 
 UpdateProjectRequest::UpdateProjectRequest()
-    : RpcServiceRequest("imm", "2020-09-30", "UpdateProject") {
+    : RpcServiceRequest("imm", "2017-09-06", "UpdateProject") {
   setMethod(HttpRequest::Method::Post);
 }
 
 UpdateProjectRequest::~UpdateProjectRequest() {}
 
-long UpdateProjectRequest::getEngineConcurrency() const {
-  return engineConcurrency_;
+std::string UpdateProjectRequest::getProject() const {
+  return project_;
 }
 
-void UpdateProjectRequest::setEngineConcurrency(long engineConcurrency) {
-  engineConcurrency_ = engineConcurrency;
-  setParameter(std::string("EngineConcurrency"), std::to_string(engineConcurrency));
+void UpdateProjectRequest::setProject(const std::string &project) {
+  project_ = project;
+  setParameter(std::string("Project"), project);
 }
 
-long UpdateProjectRequest::getDatasetMaxBindCount() const {
-  return datasetMaxBindCount_;
+std::string UpdateProjectRequest::getNewBCTaskVersion() const {
+  return newBCTaskVersion_;
 }
 
-void UpdateProjectRequest::setDatasetMaxBindCount(long datasetMaxBindCount) {
-  datasetMaxBindCount_ = datasetMaxBindCount;
-  setParameter(std::string("DatasetMaxBindCount"), std::to_string(datasetMaxBindCount));
+void UpdateProjectRequest::setNewBCTaskVersion(const std::string &newBCTaskVersion) {
+  newBCTaskVersion_ = newBCTaskVersion;
+  setParameter(std::string("NewBCTaskVersion"), newBCTaskVersion);
 }
 
-std::string UpdateProjectRequest::getDescription() const {
-  return description_;
+std::string UpdateProjectRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void UpdateProjectRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setParameter(std::string("Description"), description);
+void UpdateProjectRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-long UpdateProjectRequest::getProjectQueriesPerSecond() const {
-  return projectQueriesPerSecond_;
+std::string UpdateProjectRequest::getNewServiceRole() const {
+  return newServiceRole_;
 }
 
-void UpdateProjectRequest::setProjectQueriesPerSecond(long projectQueriesPerSecond) {
-  projectQueriesPerSecond_ = projectQueriesPerSecond;
-  setParameter(std::string("ProjectQueriesPerSecond"), std::to_string(projectQueriesPerSecond));
+void UpdateProjectRequest::setNewServiceRole(const std::string &newServiceRole) {
+  newServiceRole_ = newServiceRole;
+  setParameter(std::string("NewServiceRole"), newServiceRole);
 }
 
-long UpdateProjectRequest::getDatasetMaxRelationCount() const {
-  return datasetMaxRelationCount_;
+int UpdateProjectRequest::getNewCU() const {
+  return newCU_;
 }
 
-void UpdateProjectRequest::setDatasetMaxRelationCount(long datasetMaxRelationCount) {
-  datasetMaxRelationCount_ = datasetMaxRelationCount;
-  setParameter(std::string("DatasetMaxRelationCount"), std::to_string(datasetMaxRelationCount));
-}
-
-long UpdateProjectRequest::getDatasetMaxFileCount() const {
-  return datasetMaxFileCount_;
-}
-
-void UpdateProjectRequest::setDatasetMaxFileCount(long datasetMaxFileCount) {
-  datasetMaxFileCount_ = datasetMaxFileCount;
-  setParameter(std::string("DatasetMaxFileCount"), std::to_string(datasetMaxFileCount));
-}
-
-std::string UpdateProjectRequest::getProjectName() const {
-  return projectName_;
-}
-
-void UpdateProjectRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
-long UpdateProjectRequest::getProjectMaxDatasetCount() const {
-  return projectMaxDatasetCount_;
-}
-
-void UpdateProjectRequest::setProjectMaxDatasetCount(long projectMaxDatasetCount) {
-  projectMaxDatasetCount_ = projectMaxDatasetCount;
-  setParameter(std::string("ProjectMaxDatasetCount"), std::to_string(projectMaxDatasetCount));
-}
-
-long UpdateProjectRequest::getDatasetMaxEntityCount() const {
-  return datasetMaxEntityCount_;
-}
-
-void UpdateProjectRequest::setDatasetMaxEntityCount(long datasetMaxEntityCount) {
-  datasetMaxEntityCount_ = datasetMaxEntityCount;
-  setParameter(std::string("DatasetMaxEntityCount"), std::to_string(datasetMaxEntityCount));
-}
-
-std::string UpdateProjectRequest::getTemplateId() const {
-  return templateId_;
-}
-
-void UpdateProjectRequest::setTemplateId(const std::string &templateId) {
-  templateId_ = templateId;
-  setParameter(std::string("TemplateId"), templateId);
-}
-
-long UpdateProjectRequest::getDatasetMaxTotalFileSize() const {
-  return datasetMaxTotalFileSize_;
-}
-
-void UpdateProjectRequest::setDatasetMaxTotalFileSize(long datasetMaxTotalFileSize) {
-  datasetMaxTotalFileSize_ = datasetMaxTotalFileSize;
-  setParameter(std::string("DatasetMaxTotalFileSize"), std::to_string(datasetMaxTotalFileSize));
-}
-
-std::string UpdateProjectRequest::getServiceRole() const {
-  return serviceRole_;
-}
-
-void UpdateProjectRequest::setServiceRole(const std::string &serviceRole) {
-  serviceRole_ = serviceRole;
-  setParameter(std::string("ServiceRole"), serviceRole);
+void UpdateProjectRequest::setNewCU(int newCU) {
+  newCU_ = newCU;
+  setParameter(std::string("NewCU"), std::to_string(newCU));
 }
 

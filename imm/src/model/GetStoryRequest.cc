@@ -25,15 +25,6 @@ GetStoryRequest::GetStoryRequest()
 
 GetStoryRequest::~GetStoryRequest() {}
 
-std::string GetStoryRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void GetStoryRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
-}
-
 std::string GetStoryRequest::getProjectName() const {
   return projectName_;
 }
@@ -41,6 +32,15 @@ std::string GetStoryRequest::getProjectName() const {
 void GetStoryRequest::setProjectName(const std::string &projectName) {
   projectName_ = projectName;
   setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string GetStoryRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void GetStoryRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
 }
 
 std::string GetStoryRequest::getObjectId() const {

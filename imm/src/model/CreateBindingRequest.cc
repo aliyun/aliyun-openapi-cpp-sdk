@@ -25,6 +25,15 @@ CreateBindingRequest::CreateBindingRequest()
 
 CreateBindingRequest::~CreateBindingRequest() {}
 
+std::string CreateBindingRequest::getProjectName() const {
+  return projectName_;
+}
+
+void CreateBindingRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
+}
+
 std::string CreateBindingRequest::getBucketOwnerId() const {
   return bucketOwnerId_;
 }
@@ -41,15 +50,6 @@ std::string CreateBindingRequest::getDatasetName() const {
 void CreateBindingRequest::setDatasetName(const std::string &datasetName) {
   datasetName_ = datasetName;
   setParameter(std::string("DatasetName"), datasetName);
-}
-
-std::string CreateBindingRequest::getProjectName() const {
-  return projectName_;
-}
-
-void CreateBindingRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
 }
 
 std::string CreateBindingRequest::getURI() const {

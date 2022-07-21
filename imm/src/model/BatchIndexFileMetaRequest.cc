@@ -25,24 +25,6 @@ BatchIndexFileMetaRequest::BatchIndexFileMetaRequest()
 
 BatchIndexFileMetaRequest::~BatchIndexFileMetaRequest() {}
 
-std::string BatchIndexFileMetaRequest::getNotifyEndpoint() const {
-  return notifyEndpoint_;
-}
-
-void BatchIndexFileMetaRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
-  notifyEndpoint_ = notifyEndpoint;
-  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
-}
-
-std::string BatchIndexFileMetaRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void BatchIndexFileMetaRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
-}
-
 std::string BatchIndexFileMetaRequest::getProjectName() const {
   return projectName_;
 }
@@ -59,6 +41,24 @@ std::string BatchIndexFileMetaRequest::getNotifyTopicName() const {
 void BatchIndexFileMetaRequest::setNotifyTopicName(const std::string &notifyTopicName) {
   notifyTopicName_ = notifyTopicName;
   setParameter(std::string("NotifyTopicName"), notifyTopicName);
+}
+
+std::string BatchIndexFileMetaRequest::getNotifyEndpoint() const {
+  return notifyEndpoint_;
+}
+
+void BatchIndexFileMetaRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
+  notifyEndpoint_ = notifyEndpoint;
+  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
+}
+
+std::string BatchIndexFileMetaRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void BatchIndexFileMetaRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
 }
 
 std::vector<BatchIndexFileMetaRequest::Files> BatchIndexFileMetaRequest::getFiles() const {

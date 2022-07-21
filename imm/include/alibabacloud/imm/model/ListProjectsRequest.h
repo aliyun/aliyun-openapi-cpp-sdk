@@ -30,17 +30,17 @@ class ALIBABACLOUD_IMM_EXPORT ListProjectsRequest : public RpcServiceRequest {
 public:
 	ListProjectsRequest();
 	~ListProjectsRequest();
-	std::string getPrefix() const;
-	void setPrefix(const std::string &prefix);
-	std::string getNextToken() const;
-	void setNextToken(const std::string &nextToken);
-	long getMaxResults() const;
-	void setMaxResults(long maxResults);
+	int getMaxKeys() const;
+	void setMaxKeys(int maxKeys);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getMarker() const;
+	void setMarker(const std::string &marker);
 
 private:
-	std::string prefix_;
-	std::string nextToken_;
-	long maxResults_;
+	int maxKeys_;
+	std::string accessKeyId_;
+	std::string marker_;
 };
 } // namespace Model
 } // namespace Imm

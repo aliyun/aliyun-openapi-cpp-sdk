@@ -39,16 +39,16 @@ void GetWebofficeURLResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["WebofficeURL"].isNull())
-		webofficeURL_ = value["WebofficeURL"].asString();
-	if(!value["AccessToken"].isNull())
-		accessToken_ = value["AccessToken"].asString();
 	if(!value["RefreshToken"].isNull())
 		refreshToken_ = value["RefreshToken"].asString();
-	if(!value["AccessTokenExpiredTime"].isNull())
-		accessTokenExpiredTime_ = value["AccessTokenExpiredTime"].asString();
+	if(!value["AccessToken"].isNull())
+		accessToken_ = value["AccessToken"].asString();
 	if(!value["RefreshTokenExpiredTime"].isNull())
 		refreshTokenExpiredTime_ = value["RefreshTokenExpiredTime"].asString();
+	if(!value["WebofficeURL"].isNull())
+		webofficeURL_ = value["WebofficeURL"].asString();
+	if(!value["AccessTokenExpiredTime"].isNull())
+		accessTokenExpiredTime_ = value["AccessTokenExpiredTime"].asString();
 
 }
 

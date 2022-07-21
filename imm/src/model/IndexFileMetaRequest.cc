@@ -25,6 +25,15 @@ IndexFileMetaRequest::IndexFileMetaRequest()
 
 IndexFileMetaRequest::~IndexFileMetaRequest() {}
 
+std::string IndexFileMetaRequest::getProjectName() const {
+  return projectName_;
+}
+
+void IndexFileMetaRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
+}
+
 IndexFileMetaRequest::File IndexFileMetaRequest::getFile() const {
   return file_;
 }
@@ -47,6 +56,15 @@ void IndexFileMetaRequest::setFile(const IndexFileMetaRequest::File &file) {
   setParameter(std::string("File") + ".ContentType", file.contentType);
 }
 
+std::string IndexFileMetaRequest::getNotifyTopicName() const {
+  return notifyTopicName_;
+}
+
+void IndexFileMetaRequest::setNotifyTopicName(const std::string &notifyTopicName) {
+  notifyTopicName_ = notifyTopicName;
+  setParameter(std::string("NotifyTopicName"), notifyTopicName);
+}
+
 std::string IndexFileMetaRequest::getNotifyEndpoint() const {
   return notifyEndpoint_;
 }
@@ -63,23 +81,5 @@ std::string IndexFileMetaRequest::getDatasetName() const {
 void IndexFileMetaRequest::setDatasetName(const std::string &datasetName) {
   datasetName_ = datasetName;
   setParameter(std::string("DatasetName"), datasetName);
-}
-
-std::string IndexFileMetaRequest::getProjectName() const {
-  return projectName_;
-}
-
-void IndexFileMetaRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
-std::string IndexFileMetaRequest::getNotifyTopicName() const {
-  return notifyTopicName_;
-}
-
-void IndexFileMetaRequest::setNotifyTopicName(const std::string &notifyTopicName) {
-  notifyTopicName_ = notifyTopicName;
-  setParameter(std::string("NotifyTopicName"), notifyTopicName);
 }
 

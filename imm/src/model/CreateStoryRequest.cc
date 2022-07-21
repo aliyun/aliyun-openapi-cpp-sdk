@@ -25,22 +25,13 @@ CreateStoryRequest::CreateStoryRequest()
 
 CreateStoryRequest::~CreateStoryRequest() {}
 
-std::string CreateStoryRequest::getCustomLabels() const {
-  return customLabels_;
+long CreateStoryRequest::getMinFileCount() const {
+  return minFileCount_;
 }
 
-void CreateStoryRequest::setCustomLabels(const std::string &customLabels) {
-  customLabels_ = customLabels;
-  setBodyParameter(std::string("CustomLabels"), customLabels);
-}
-
-std::string CreateStoryRequest::getNotifyEndpoint() const {
-  return notifyEndpoint_;
-}
-
-void CreateStoryRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
-  notifyEndpoint_ = notifyEndpoint;
-  setBodyParameter(std::string("NotifyEndpoint"), notifyEndpoint);
+void CreateStoryRequest::setMinFileCount(long minFileCount) {
+  minFileCount_ = minFileCount;
+  setBodyParameter(std::string("MinFileCount"), std::to_string(minFileCount));
 }
 
 std::string CreateStoryRequest::getProjectName() const {
@@ -50,6 +41,24 @@ std::string CreateStoryRequest::getProjectName() const {
 void CreateStoryRequest::setProjectName(const std::string &projectName) {
   projectName_ = projectName;
   setBodyParameter(std::string("ProjectName"), projectName);
+}
+
+std::string CreateStoryRequest::getCustomLabels() const {
+  return customLabels_;
+}
+
+void CreateStoryRequest::setCustomLabels(const std::string &customLabels) {
+  customLabels_ = customLabels;
+  setBodyParameter(std::string("CustomLabels"), customLabels);
+}
+
+std::string CreateStoryRequest::getStoryStartTime() const {
+  return storyStartTime_;
+}
+
+void CreateStoryRequest::setStoryStartTime(const std::string &storyStartTime) {
+  storyStartTime_ = storyStartTime;
+  setBodyParameter(std::string("StoryStartTime"), storyStartTime);
 }
 
 std::string CreateStoryRequest::getNotifyTopicName() const {
@@ -70,6 +79,15 @@ void CreateStoryRequest::setStoryType(const std::string &storyType) {
   setBodyParameter(std::string("StoryType"), storyType);
 }
 
+std::string CreateStoryRequest::getCustomId() const {
+  return customId_;
+}
+
+void CreateStoryRequest::setCustomId(const std::string &customId) {
+  customId_ = customId;
+  setBodyParameter(std::string("CustomId"), customId);
+}
+
 std::map<std::string, std::string> CreateStoryRequest::getTags() const {
   return tags_;
 }
@@ -81,24 +99,6 @@ void CreateStoryRequest::setTags(const std::map<std::string, std::string> &tags)
   }
 }
 
-std::string CreateStoryRequest::getStorySubType() const {
-  return storySubType_;
-}
-
-void CreateStoryRequest::setStorySubType(const std::string &storySubType) {
-  storySubType_ = storySubType;
-  setBodyParameter(std::string("StorySubType"), storySubType);
-}
-
-long CreateStoryRequest::getMinFileCount() const {
-  return minFileCount_;
-}
-
-void CreateStoryRequest::setMinFileCount(long minFileCount) {
-  minFileCount_ = minFileCount;
-  setBodyParameter(std::string("MinFileCount"), std::to_string(minFileCount));
-}
-
 std::string CreateStoryRequest::getUserData() const {
   return userData_;
 }
@@ -106,6 +106,15 @@ std::string CreateStoryRequest::getUserData() const {
 void CreateStoryRequest::setUserData(const std::string &userData) {
   userData_ = userData;
   setParameter(std::string("UserData"), userData);
+}
+
+std::string CreateStoryRequest::getNotifyEndpoint() const {
+  return notifyEndpoint_;
+}
+
+void CreateStoryRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
+  notifyEndpoint_ = notifyEndpoint;
+  setBodyParameter(std::string("NotifyEndpoint"), notifyEndpoint);
 }
 
 long CreateStoryRequest::getMaxFileCount() const {
@@ -117,6 +126,15 @@ void CreateStoryRequest::setMaxFileCount(long maxFileCount) {
   setBodyParameter(std::string("MaxFileCount"), std::to_string(maxFileCount));
 }
 
+std::string CreateStoryRequest::getStorySubType() const {
+  return storySubType_;
+}
+
+void CreateStoryRequest::setStorySubType(const std::string &storySubType) {
+  storySubType_ = storySubType;
+  setBodyParameter(std::string("StorySubType"), storySubType);
+}
+
 std::string CreateStoryRequest::getDatasetName() const {
   return datasetName_;
 }
@@ -124,24 +142,6 @@ std::string CreateStoryRequest::getDatasetName() const {
 void CreateStoryRequest::setDatasetName(const std::string &datasetName) {
   datasetName_ = datasetName;
   setBodyParameter(std::string("DatasetName"), datasetName);
-}
-
-std::string CreateStoryRequest::getStoryStartTime() const {
-  return storyStartTime_;
-}
-
-void CreateStoryRequest::setStoryStartTime(const std::string &storyStartTime) {
-  storyStartTime_ = storyStartTime;
-  setBodyParameter(std::string("StoryStartTime"), storyStartTime);
-}
-
-std::string CreateStoryRequest::getCustomId() const {
-  return customId_;
-}
-
-void CreateStoryRequest::setCustomId(const std::string &customId) {
-  customId_ = customId;
-  setBodyParameter(std::string("CustomId"), customId);
 }
 
 std::string CreateStoryRequest::getStoryEndTime() const {

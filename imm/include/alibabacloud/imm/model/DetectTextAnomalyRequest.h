@@ -30,14 +30,14 @@ class ALIBABACLOUD_IMM_EXPORT DetectTextAnomalyRequest : public RpcServiceReques
 public:
 	DetectTextAnomalyRequest();
 	~DetectTextAnomalyRequest();
-	std::string getContent() const;
-	void setContent(const std::string &content);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
+	std::string getContent() const;
+	void setContent(const std::string &content);
 
 private:
-	std::string content_;
 	std::string projectName_;
+	std::string content_;
 };
 } // namespace Model
 } // namespace Imm

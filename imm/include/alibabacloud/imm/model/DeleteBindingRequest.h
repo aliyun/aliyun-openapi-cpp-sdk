@@ -30,20 +30,20 @@ class ALIBABACLOUD_IMM_EXPORT DeleteBindingRequest : public RpcServiceRequest {
 public:
 	DeleteBindingRequest();
 	~DeleteBindingRequest();
-	std::string getDatasetName() const;
-	void setDatasetName(const std::string &datasetName);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
-	std::string getURI() const;
-	void setURI(const std::string &uRI);
 	bool getCleanup() const;
 	void setCleanup(bool cleanup);
+	std::string getDatasetName() const;
+	void setDatasetName(const std::string &datasetName);
+	std::string getURI() const;
+	void setURI(const std::string &uRI);
 
 private:
-	std::string datasetName_;
 	std::string projectName_;
-	std::string uRI_;
 	bool cleanup_;
+	std::string datasetName_;
+	std::string uRI_;
 };
 } // namespace Model
 } // namespace Imm

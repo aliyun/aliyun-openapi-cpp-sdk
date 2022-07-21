@@ -34,6 +34,15 @@ void CreateProjectRequest::setEngineConcurrency(long engineConcurrency) {
   setParameter(std::string("EngineConcurrency"), std::to_string(engineConcurrency));
 }
 
+std::string CreateProjectRequest::getProjectName() const {
+  return projectName_;
+}
+
+void CreateProjectRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
+}
+
 long CreateProjectRequest::getDatasetMaxBindCount() const {
   return datasetMaxBindCount_;
 }
@@ -43,13 +52,31 @@ void CreateProjectRequest::setDatasetMaxBindCount(long datasetMaxBindCount) {
   setParameter(std::string("DatasetMaxBindCount"), std::to_string(datasetMaxBindCount));
 }
 
-std::string CreateProjectRequest::getDescription() const {
-  return description_;
+long CreateProjectRequest::getProjectMaxDatasetCount() const {
+  return projectMaxDatasetCount_;
 }
 
-void CreateProjectRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setParameter(std::string("Description"), description);
+void CreateProjectRequest::setProjectMaxDatasetCount(long projectMaxDatasetCount) {
+  projectMaxDatasetCount_ = projectMaxDatasetCount;
+  setParameter(std::string("ProjectMaxDatasetCount"), std::to_string(projectMaxDatasetCount));
+}
+
+long CreateProjectRequest::getDatasetMaxTotalFileSize() const {
+  return datasetMaxTotalFileSize_;
+}
+
+void CreateProjectRequest::setDatasetMaxTotalFileSize(long datasetMaxTotalFileSize) {
+  datasetMaxTotalFileSize_ = datasetMaxTotalFileSize;
+  setParameter(std::string("DatasetMaxTotalFileSize"), std::to_string(datasetMaxTotalFileSize));
+}
+
+std::string CreateProjectRequest::getServiceRole() const {
+  return serviceRole_;
+}
+
+void CreateProjectRequest::setServiceRole(const std::string &serviceRole) {
+  serviceRole_ = serviceRole;
+  setParameter(std::string("ServiceRole"), serviceRole);
 }
 
 long CreateProjectRequest::getProjectQueriesPerSecond() const {
@@ -70,31 +97,13 @@ void CreateProjectRequest::setDatasetMaxRelationCount(long datasetMaxRelationCou
   setParameter(std::string("DatasetMaxRelationCount"), std::to_string(datasetMaxRelationCount));
 }
 
-long CreateProjectRequest::getDatasetMaxFileCount() const {
-  return datasetMaxFileCount_;
+std::string CreateProjectRequest::getDescription() const {
+  return description_;
 }
 
-void CreateProjectRequest::setDatasetMaxFileCount(long datasetMaxFileCount) {
-  datasetMaxFileCount_ = datasetMaxFileCount;
-  setParameter(std::string("DatasetMaxFileCount"), std::to_string(datasetMaxFileCount));
-}
-
-std::string CreateProjectRequest::getProjectName() const {
-  return projectName_;
-}
-
-void CreateProjectRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
-long CreateProjectRequest::getProjectMaxDatasetCount() const {
-  return projectMaxDatasetCount_;
-}
-
-void CreateProjectRequest::setProjectMaxDatasetCount(long projectMaxDatasetCount) {
-  projectMaxDatasetCount_ = projectMaxDatasetCount;
-  setParameter(std::string("ProjectMaxDatasetCount"), std::to_string(projectMaxDatasetCount));
+void CreateProjectRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
 long CreateProjectRequest::getDatasetMaxEntityCount() const {
@@ -106,6 +115,15 @@ void CreateProjectRequest::setDatasetMaxEntityCount(long datasetMaxEntityCount) 
   setParameter(std::string("DatasetMaxEntityCount"), std::to_string(datasetMaxEntityCount));
 }
 
+long CreateProjectRequest::getDatasetMaxFileCount() const {
+  return datasetMaxFileCount_;
+}
+
+void CreateProjectRequest::setDatasetMaxFileCount(long datasetMaxFileCount) {
+  datasetMaxFileCount_ = datasetMaxFileCount;
+  setParameter(std::string("DatasetMaxFileCount"), std::to_string(datasetMaxFileCount));
+}
+
 std::string CreateProjectRequest::getTemplateId() const {
   return templateId_;
 }
@@ -113,23 +131,5 @@ std::string CreateProjectRequest::getTemplateId() const {
 void CreateProjectRequest::setTemplateId(const std::string &templateId) {
   templateId_ = templateId;
   setParameter(std::string("TemplateId"), templateId);
-}
-
-long CreateProjectRequest::getDatasetMaxTotalFileSize() const {
-  return datasetMaxTotalFileSize_;
-}
-
-void CreateProjectRequest::setDatasetMaxTotalFileSize(long datasetMaxTotalFileSize) {
-  datasetMaxTotalFileSize_ = datasetMaxTotalFileSize;
-  setParameter(std::string("DatasetMaxTotalFileSize"), std::to_string(datasetMaxTotalFileSize));
-}
-
-std::string CreateProjectRequest::getServiceRole() const {
-  return serviceRole_;
-}
-
-void CreateProjectRequest::setServiceRole(const std::string &serviceRole) {
-  serviceRole_ = serviceRole;
-  setParameter(std::string("ServiceRole"), serviceRole);
 }
 

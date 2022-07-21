@@ -25,40 +25,13 @@ CreateImageSplicingTaskRequest::CreateImageSplicingTaskRequest()
 
 CreateImageSplicingTaskRequest::~CreateImageSplicingTaskRequest() {}
 
-long CreateImageSplicingTaskRequest::getAlign() const {
-  return align_;
+long CreateImageSplicingTaskRequest::getPadding() const {
+  return padding_;
 }
 
-void CreateImageSplicingTaskRequest::setAlign(long align) {
-  align_ = align;
-  setParameter(std::string("Align"), std::to_string(align));
-}
-
-std::string CreateImageSplicingTaskRequest::getBackgroundColor() const {
-  return backgroundColor_;
-}
-
-void CreateImageSplicingTaskRequest::setBackgroundColor(const std::string &backgroundColor) {
-  backgroundColor_ = backgroundColor;
-  setParameter(std::string("BackgroundColor"), backgroundColor);
-}
-
-std::string CreateImageSplicingTaskRequest::getNotifyEndpoint() const {
-  return notifyEndpoint_;
-}
-
-void CreateImageSplicingTaskRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
-  notifyEndpoint_ = notifyEndpoint;
-  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
-}
-
-std::string CreateImageSplicingTaskRequest::getScaleType() const {
-  return scaleType_;
-}
-
-void CreateImageSplicingTaskRequest::setScaleType(const std::string &scaleType) {
-  scaleType_ = scaleType;
-  setParameter(std::string("ScaleType"), scaleType);
+void CreateImageSplicingTaskRequest::setPadding(long padding) {
+  padding_ = padding;
+  setParameter(std::string("Padding"), std::to_string(padding));
 }
 
 std::string CreateImageSplicingTaskRequest::getProjectName() const {
@@ -88,6 +61,42 @@ void CreateImageSplicingTaskRequest::setNotifyTopicName(const std::string &notif
   setParameter(std::string("NotifyTopicName"), notifyTopicName);
 }
 
+std::vector<CreateImageSplicingTaskRequest::Sources> CreateImageSplicingTaskRequest::getSources() const {
+  return sources_;
+}
+
+void CreateImageSplicingTaskRequest::setSources(const std::vector<CreateImageSplicingTaskRequest::Sources> &sources) {
+  sources_ = sources;
+  for(int dep1 = 0; dep1 != sources.size(); dep1++) {
+    setParameter(std::string("Sources") + "." + std::to_string(dep1 + 1) + ".Rotate", std::to_string(sources[dep1].rotate));
+    setParameter(std::string("Sources") + "." + std::to_string(dep1 + 1) + ".URI", sources[dep1].uRI);
+  }
+}
+
+CreateImageSplicingTaskRequest::CredentialConfig CreateImageSplicingTaskRequest::getCredentialConfig() const {
+  return credentialConfig_;
+}
+
+void CreateImageSplicingTaskRequest::setCredentialConfig(const CreateImageSplicingTaskRequest::CredentialConfig &credentialConfig) {
+  credentialConfig_ = credentialConfig;
+  for(int dep1 = 0; dep1 != credentialConfig.chain.size(); dep1++) {
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".Role", credentialConfig.chain[dep1].role);
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".RoleType", credentialConfig.chain[dep1].roleType);
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".AssumeRoleFor", credentialConfig.chain[dep1].assumeRoleFor);
+  }
+  setParameter(std::string("CredentialConfig") + ".ServiceRole", credentialConfig.serviceRole);
+  setParameter(std::string("CredentialConfig") + ".Policy", credentialConfig.policy);
+}
+
+long CreateImageSplicingTaskRequest::getAlign() const {
+  return align_;
+}
+
+void CreateImageSplicingTaskRequest::setAlign(long align) {
+  align_ = align;
+  setParameter(std::string("Align"), std::to_string(align));
+}
+
 long CreateImageSplicingTaskRequest::getQuality() const {
   return quality_;
 }
@@ -95,6 +104,15 @@ long CreateImageSplicingTaskRequest::getQuality() const {
 void CreateImageSplicingTaskRequest::setQuality(long quality) {
   quality_ = quality;
   setParameter(std::string("Quality"), std::to_string(quality));
+}
+
+std::string CreateImageSplicingTaskRequest::getBackgroundColor() const {
+  return backgroundColor_;
+}
+
+void CreateImageSplicingTaskRequest::setBackgroundColor(const std::string &backgroundColor) {
+  backgroundColor_ = backgroundColor;
+  setParameter(std::string("BackgroundColor"), backgroundColor);
 }
 
 std::map<std::string, std::string> CreateImageSplicingTaskRequest::getTags() const {
@@ -108,18 +126,6 @@ void CreateImageSplicingTaskRequest::setTags(const std::map<std::string, std::st
   }
 }
 
-std::vector<CreateImageSplicingTaskRequest::Sources> CreateImageSplicingTaskRequest::getSources() const {
-  return sources_;
-}
-
-void CreateImageSplicingTaskRequest::setSources(const std::vector<CreateImageSplicingTaskRequest::Sources> &sources) {
-  sources_ = sources;
-  for(int dep1 = 0; dep1 != sources.size(); dep1++) {
-    setParameter(std::string("Sources") + "." + std::to_string(dep1 + 1) + ".Rotate", std::to_string(sources[dep1].rotate));
-    setParameter(std::string("Sources") + "." + std::to_string(dep1 + 1) + ".URI", sources[dep1].uRI);
-  }
-}
-
 std::string CreateImageSplicingTaskRequest::getUserData() const {
   return userData_;
 }
@@ -129,6 +135,15 @@ void CreateImageSplicingTaskRequest::setUserData(const std::string &userData) {
   setParameter(std::string("UserData"), userData);
 }
 
+std::string CreateImageSplicingTaskRequest::getNotifyEndpoint() const {
+  return notifyEndpoint_;
+}
+
+void CreateImageSplicingTaskRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
+  notifyEndpoint_ = notifyEndpoint;
+  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
+}
+
 std::string CreateImageSplicingTaskRequest::getTargetURI() const {
   return targetURI_;
 }
@@ -136,6 +151,15 @@ std::string CreateImageSplicingTaskRequest::getTargetURI() const {
 void CreateImageSplicingTaskRequest::setTargetURI(const std::string &targetURI) {
   targetURI_ = targetURI;
   setParameter(std::string("TargetURI"), targetURI);
+}
+
+std::string CreateImageSplicingTaskRequest::getScaleType() const {
+  return scaleType_;
+}
+
+void CreateImageSplicingTaskRequest::setScaleType(const std::string &scaleType) {
+  scaleType_ = scaleType;
+  setParameter(std::string("ScaleType"), scaleType);
 }
 
 std::string CreateImageSplicingTaskRequest::getImageFormat() const {
@@ -154,29 +178,5 @@ std::string CreateImageSplicingTaskRequest::getDirection() const {
 void CreateImageSplicingTaskRequest::setDirection(const std::string &direction) {
   direction_ = direction;
   setParameter(std::string("Direction"), direction);
-}
-
-long CreateImageSplicingTaskRequest::getPadding() const {
-  return padding_;
-}
-
-void CreateImageSplicingTaskRequest::setPadding(long padding) {
-  padding_ = padding;
-  setParameter(std::string("Padding"), std::to_string(padding));
-}
-
-CreateImageSplicingTaskRequest::CredentialConfig CreateImageSplicingTaskRequest::getCredentialConfig() const {
-  return credentialConfig_;
-}
-
-void CreateImageSplicingTaskRequest::setCredentialConfig(const CreateImageSplicingTaskRequest::CredentialConfig &credentialConfig) {
-  credentialConfig_ = credentialConfig;
-  for(int dep1 = 0; dep1 != credentialConfig.chain.size(); dep1++) {
-    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".Role", credentialConfig.chain[dep1].role);
-    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".RoleType", credentialConfig.chain[dep1].roleType);
-    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".AssumeRoleFor", credentialConfig.chain[dep1].assumeRoleFor);
-  }
-  setParameter(std::string("CredentialConfig") + ".ServiceRole", credentialConfig.serviceRole);
-  setParameter(std::string("CredentialConfig") + ".Policy", credentialConfig.policy);
 }
 

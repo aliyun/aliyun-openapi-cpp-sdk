@@ -30,11 +30,14 @@ class ALIBABACLOUD_IMM_EXPORT DeleteProjectRequest : public RpcServiceRequest {
 public:
 	DeleteProjectRequest();
 	~DeleteProjectRequest();
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
+	std::string getProject() const;
+	void setProject(const std::string &project);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
 
 private:
-	std::string projectName_;
+	std::string project_;
+	std::string accessKeyId_;
 };
 } // namespace Model
 } // namespace Imm

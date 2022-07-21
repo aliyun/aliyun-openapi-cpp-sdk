@@ -25,24 +25,6 @@ MergeFigureClustersRequest::MergeFigureClustersRequest()
 
 MergeFigureClustersRequest::~MergeFigureClustersRequest() {}
 
-std::string MergeFigureClustersRequest::getNotifyTopicEndpoint() const {
-  return notifyTopicEndpoint_;
-}
-
-void MergeFigureClustersRequest::setNotifyTopicEndpoint(const std::string &notifyTopicEndpoint) {
-  notifyTopicEndpoint_ = notifyTopicEndpoint;
-  setParameter(std::string("NotifyTopicEndpoint"), notifyTopicEndpoint);
-}
-
-std::string MergeFigureClustersRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void MergeFigureClustersRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
-}
-
 std::string MergeFigureClustersRequest::getCustomMessage() const {
   return customMessage_;
 }
@@ -79,6 +61,15 @@ void MergeFigureClustersRequest::setNotifyTopicName(const std::string &notifyTop
   setParameter(std::string("NotifyTopicName"), notifyTopicName);
 }
 
+std::string MergeFigureClustersRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void MergeFigureClustersRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
+}
+
 std::string MergeFigureClustersRequest::getFigureType() const {
   return figureType_;
 }
@@ -95,5 +86,14 @@ std::string MergeFigureClustersRequest::getClusterIdTo() const {
 void MergeFigureClustersRequest::setClusterIdTo(const std::string &clusterIdTo) {
   clusterIdTo_ = clusterIdTo;
   setParameter(std::string("ClusterIdTo"), clusterIdTo);
+}
+
+std::string MergeFigureClustersRequest::getNotifyTopicEndpoint() const {
+  return notifyTopicEndpoint_;
+}
+
+void MergeFigureClustersRequest::setNotifyTopicEndpoint(const std::string &notifyTopicEndpoint) {
+  notifyTopicEndpoint_ = notifyTopicEndpoint;
+  setParameter(std::string("NotifyTopicEndpoint"), notifyTopicEndpoint);
 }
 

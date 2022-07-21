@@ -34,24 +34,6 @@ void CreateFigureClusteringTaskRequest::setUserData(const std::string &userData)
   setParameter(std::string("UserData"), userData);
 }
 
-std::string CreateFigureClusteringTaskRequest::getNotifyEndpoint() const {
-  return notifyEndpoint_;
-}
-
-void CreateFigureClusteringTaskRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
-  notifyEndpoint_ = notifyEndpoint;
-  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
-}
-
-std::string CreateFigureClusteringTaskRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void CreateFigureClusteringTaskRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
-}
-
 std::string CreateFigureClusteringTaskRequest::getProjectName() const {
   return projectName_;
 }
@@ -68,6 +50,24 @@ std::string CreateFigureClusteringTaskRequest::getNotifyTopicName() const {
 void CreateFigureClusteringTaskRequest::setNotifyTopicName(const std::string &notifyTopicName) {
   notifyTopicName_ = notifyTopicName;
   setParameter(std::string("NotifyTopicName"), notifyTopicName);
+}
+
+std::string CreateFigureClusteringTaskRequest::getNotifyEndpoint() const {
+  return notifyEndpoint_;
+}
+
+void CreateFigureClusteringTaskRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
+  notifyEndpoint_ = notifyEndpoint;
+  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
+}
+
+std::string CreateFigureClusteringTaskRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void CreateFigureClusteringTaskRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
 }
 
 std::map<std::string, std::string> CreateFigureClusteringTaskRequest::getTags() const {

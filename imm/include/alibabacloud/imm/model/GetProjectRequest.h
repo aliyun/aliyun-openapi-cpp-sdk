@@ -30,14 +30,14 @@ class ALIBABACLOUD_IMM_EXPORT GetProjectRequest : public RpcServiceRequest {
 public:
 	GetProjectRequest();
 	~GetProjectRequest();
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
-	bool getWithStatistics() const;
-	void setWithStatistics(bool withStatistics);
+	std::string getProject() const;
+	void setProject(const std::string &project);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
 
 private:
-	std::string projectName_;
-	bool withStatistics_;
+	std::string project_;
+	std::string accessKeyId_;
 };
 } // namespace Model
 } // namespace Imm

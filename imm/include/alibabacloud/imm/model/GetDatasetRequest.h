@@ -30,17 +30,17 @@ class ALIBABACLOUD_IMM_EXPORT GetDatasetRequest : public RpcServiceRequest {
 public:
 	GetDatasetRequest();
 	~GetDatasetRequest();
-	std::string getDatasetName() const;
-	void setDatasetName(const std::string &datasetName);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
 	bool getWithStatistics() const;
 	void setWithStatistics(bool withStatistics);
+	std::string getDatasetName() const;
+	void setDatasetName(const std::string &datasetName);
 
 private:
-	std::string datasetName_;
 	std::string projectName_;
 	bool withStatistics_;
+	std::string datasetName_;
 };
 } // namespace Model
 } // namespace Imm

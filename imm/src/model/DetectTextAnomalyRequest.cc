@@ -25,15 +25,6 @@ DetectTextAnomalyRequest::DetectTextAnomalyRequest()
 
 DetectTextAnomalyRequest::~DetectTextAnomalyRequest() {}
 
-std::string DetectTextAnomalyRequest::getContent() const {
-  return content_;
-}
-
-void DetectTextAnomalyRequest::setContent(const std::string &content) {
-  content_ = content;
-  setParameter(std::string("Content"), content);
-}
-
 std::string DetectTextAnomalyRequest::getProjectName() const {
   return projectName_;
 }
@@ -41,5 +32,14 @@ std::string DetectTextAnomalyRequest::getProjectName() const {
 void DetectTextAnomalyRequest::setProjectName(const std::string &projectName) {
   projectName_ = projectName;
   setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string DetectTextAnomalyRequest::getContent() const {
+  return content_;
+}
+
+void DetectTextAnomalyRequest::setContent(const std::string &content) {
+  content_ = content;
+  setParameter(std::string("Content"), content);
 }
 

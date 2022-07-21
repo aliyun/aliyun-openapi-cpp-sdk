@@ -33,14 +33,14 @@ public:
 	};
 	UpdateStoryRequest();
 	~UpdateStoryRequest();
-	std::string getCustomLabels() const;
-	void setCustomLabels(const std::string &customLabels);
 	Cover getCover() const;
 	void setCover(const Cover &cover);
-	std::string getDatasetName() const;
-	void setDatasetName(const std::string &datasetName);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
+	std::string getCustomLabels() const;
+	void setCustomLabels(const std::string &customLabels);
+	std::string getDatasetName() const;
+	void setDatasetName(const std::string &datasetName);
 	std::string getCustomId() const;
 	void setCustomId(const std::string &customId);
 	std::string getObjectId() const;
@@ -49,10 +49,10 @@ public:
 	void setStoryName(const std::string &storyName);
 
 private:
-	std::string customLabels_;
 	Cover cover_;
-	std::string datasetName_;
 	std::string projectName_;
+	std::string customLabels_;
+	std::string datasetName_;
 	std::string customId_;
 	std::string objectId_;
 	std::string storyName_;

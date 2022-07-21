@@ -36,33 +36,6 @@ void QueryStoriesRequest::setFigureClusterIds(const std::vector<QueryStoriesRequ
   }
 }
 
-std::string QueryStoriesRequest::getCustomLabels() const {
-  return customLabels_;
-}
-
-void QueryStoriesRequest::setCustomLabels(const std::string &customLabels) {
-  customLabels_ = customLabels;
-  setParameter(std::string("CustomLabels"), customLabels);
-}
-
-bool QueryStoriesRequest::getWithEmptyStories() const {
-  return withEmptyStories_;
-}
-
-void QueryStoriesRequest::setWithEmptyStories(bool withEmptyStories) {
-  withEmptyStories_ = withEmptyStories;
-  setParameter(std::string("WithEmptyStories"), withEmptyStories ? "true" : "false");
-}
-
-std::string QueryStoriesRequest::getOrder() const {
-  return order_;
-}
-
-void QueryStoriesRequest::setOrder(const std::string &order) {
-  order_ = order;
-  setParameter(std::string("Order"), order);
-}
-
 std::string QueryStoriesRequest::getProjectName() const {
   return projectName_;
 }
@@ -70,6 +43,15 @@ std::string QueryStoriesRequest::getProjectName() const {
 void QueryStoriesRequest::setProjectName(const std::string &projectName) {
   projectName_ = projectName;
   setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string QueryStoriesRequest::getCustomLabels() const {
+  return customLabels_;
+}
+
+void QueryStoriesRequest::setCustomLabels(const std::string &customLabels) {
+  customLabels_ = customLabels;
+  setParameter(std::string("CustomLabels"), customLabels);
 }
 
 std::string QueryStoriesRequest::getSort() const {
@@ -90,6 +72,25 @@ void QueryStoriesRequest::setStoryType(const std::string &storyType) {
   setParameter(std::string("StoryType"), storyType);
 }
 
+QueryStoriesRequest::StoryEndTimeRange QueryStoriesRequest::getStoryEndTimeRange() const {
+  return storyEndTimeRange_;
+}
+
+void QueryStoriesRequest::setStoryEndTimeRange(const QueryStoriesRequest::StoryEndTimeRange &storyEndTimeRange) {
+  storyEndTimeRange_ = storyEndTimeRange;
+  setParameter(std::string("StoryEndTimeRange") + ".Start", storyEndTimeRange.start);
+  setParameter(std::string("StoryEndTimeRange") + ".End", storyEndTimeRange.end);
+}
+
+bool QueryStoriesRequest::getWithEmptyStories() const {
+  return withEmptyStories_;
+}
+
+void QueryStoriesRequest::setWithEmptyStories(bool withEmptyStories) {
+  withEmptyStories_ = withEmptyStories;
+  setParameter(std::string("WithEmptyStories"), withEmptyStories ? "true" : "false");
+}
+
 QueryStoriesRequest::StoryStartTimeRange QueryStoriesRequest::getStoryStartTimeRange() const {
   return storyStartTimeRange_;
 }
@@ -98,24 +99,6 @@ void QueryStoriesRequest::setStoryStartTimeRange(const QueryStoriesRequest::Stor
   storyStartTimeRange_ = storyStartTimeRange;
   setParameter(std::string("StoryStartTimeRange") + ".Start", storyStartTimeRange.start);
   setParameter(std::string("StoryStartTimeRange") + ".End", storyStartTimeRange.end);
-}
-
-std::string QueryStoriesRequest::getStorySubType() const {
-  return storySubType_;
-}
-
-void QueryStoriesRequest::setStorySubType(const std::string &storySubType) {
-  storySubType_ = storySubType;
-  setParameter(std::string("StorySubType"), storySubType);
-}
-
-long QueryStoriesRequest::getMaxResults() const {
-  return maxResults_;
-}
-
-void QueryStoriesRequest::setMaxResults(long maxResults) {
-  maxResults_ = maxResults;
-  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
 std::string QueryStoriesRequest::getNextToken() const {
@@ -127,23 +110,13 @@ void QueryStoriesRequest::setNextToken(const std::string &nextToken) {
   setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string QueryStoriesRequest::getDatasetName() const {
-  return datasetName_;
+std::string QueryStoriesRequest::getStorySubType() const {
+  return storySubType_;
 }
 
-void QueryStoriesRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
-}
-
-QueryStoriesRequest::StoryEndTimeRange QueryStoriesRequest::getStoryEndTimeRange() const {
-  return storyEndTimeRange_;
-}
-
-void QueryStoriesRequest::setStoryEndTimeRange(const QueryStoriesRequest::StoryEndTimeRange &storyEndTimeRange) {
-  storyEndTimeRange_ = storyEndTimeRange;
-  setParameter(std::string("StoryEndTimeRange") + ".Start", storyEndTimeRange.start);
-  setParameter(std::string("StoryEndTimeRange") + ".End", storyEndTimeRange.end);
+void QueryStoriesRequest::setStorySubType(const std::string &storySubType) {
+  storySubType_ = storySubType;
+  setParameter(std::string("StorySubType"), storySubType);
 }
 
 QueryStoriesRequest::CreateTimeRange QueryStoriesRequest::getCreateTimeRange() const {
@@ -154,6 +127,24 @@ void QueryStoriesRequest::setCreateTimeRange(const QueryStoriesRequest::CreateTi
   createTimeRange_ = createTimeRange;
   setParameter(std::string("CreateTimeRange") + ".Start", createTimeRange.start);
   setParameter(std::string("CreateTimeRange") + ".End", createTimeRange.end);
+}
+
+std::string QueryStoriesRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void QueryStoriesRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
+}
+
+long QueryStoriesRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void QueryStoriesRequest::setMaxResults(long maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
 std::string QueryStoriesRequest::getObjectId() const {
@@ -172,5 +163,14 @@ std::string QueryStoriesRequest::getStoryName() const {
 void QueryStoriesRequest::setStoryName(const std::string &storyName) {
   storyName_ = storyName;
   setParameter(std::string("StoryName"), storyName);
+}
+
+std::string QueryStoriesRequest::getOrder() const {
+  return order_;
+}
+
+void QueryStoriesRequest::setOrder(const std::string &order) {
+  order_ = order;
+  setParameter(std::string("Order"), order);
 }
 

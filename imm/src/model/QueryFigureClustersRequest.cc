@@ -25,6 +25,15 @@ QueryFigureClustersRequest::QueryFigureClustersRequest()
 
 QueryFigureClustersRequest::~QueryFigureClustersRequest() {}
 
+std::string QueryFigureClustersRequest::getProjectName() const {
+  return projectName_;
+}
+
+void QueryFigureClustersRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
+}
+
 std::string QueryFigureClustersRequest::getCustomLabels() const {
   return customLabels_;
 }
@@ -52,22 +61,13 @@ void QueryFigureClustersRequest::setDatasetName(const std::string &datasetName) 
   setParameter(std::string("DatasetName"), datasetName);
 }
 
-std::string QueryFigureClustersRequest::getOrder() const {
-  return order_;
+long QueryFigureClustersRequest::getMaxResults() const {
+  return maxResults_;
 }
 
-void QueryFigureClustersRequest::setOrder(const std::string &order) {
-  order_ = order;
-  setParameter(std::string("Order"), order);
-}
-
-std::string QueryFigureClustersRequest::getProjectName() const {
-  return projectName_;
-}
-
-void QueryFigureClustersRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
+void QueryFigureClustersRequest::setMaxResults(long maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
 std::string QueryFigureClustersRequest::getSort() const {
@@ -79,12 +79,12 @@ void QueryFigureClustersRequest::setSort(const std::string &sort) {
   setParameter(std::string("Sort"), sort);
 }
 
-long QueryFigureClustersRequest::getMaxResults() const {
-  return maxResults_;
+std::string QueryFigureClustersRequest::getOrder() const {
+  return order_;
 }
 
-void QueryFigureClustersRequest::setMaxResults(long maxResults) {
-  maxResults_ = maxResults;
-  setParameter(std::string("MaxResults"), std::to_string(maxResults));
+void QueryFigureClustersRequest::setOrder(const std::string &order) {
+  order_ = order;
+  setParameter(std::string("Order"), order);
 }
 

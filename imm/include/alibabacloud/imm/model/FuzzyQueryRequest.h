@@ -30,23 +30,23 @@ class ALIBABACLOUD_IMM_EXPORT FuzzyQueryRequest : public RpcServiceRequest {
 public:
 	FuzzyQueryRequest();
 	~FuzzyQueryRequest();
-	std::string getNextToken() const;
-	void setNextToken(const std::string &nextToken);
-	std::string getDatasetName() const;
-	void setDatasetName(const std::string &datasetName);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	std::string getQuery() const;
 	void setQuery(const std::string &query);
 	long getMaxResults() const;
 	void setMaxResults(long maxResults);
+	std::string getDatasetName() const;
+	void setDatasetName(const std::string &datasetName);
 
 private:
-	std::string nextToken_;
-	std::string datasetName_;
 	std::string projectName_;
+	std::string nextToken_;
 	std::string query_;
 	long maxResults_;
+	std::string datasetName_;
 };
 } // namespace Model
 } // namespace Imm

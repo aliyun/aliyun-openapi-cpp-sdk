@@ -30,19 +30,19 @@ class ALIBABACLOUD_IMM_EXPORT ListBindingsRequest : public RpcServiceRequest {
 public:
 	ListBindingsRequest();
 	~ListBindingsRequest();
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
 	long getMaxResults() const;
 	void setMaxResults(long maxResults);
 
 private:
+	std::string projectName_;
 	std::string nextToken_;
 	std::string datasetName_;
-	std::string projectName_;
 	long maxResults_;
 };
 } // namespace Model

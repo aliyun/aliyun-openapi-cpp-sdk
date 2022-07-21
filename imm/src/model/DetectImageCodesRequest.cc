@@ -34,6 +34,15 @@ void DetectImageCodesRequest::setProjectName(const std::string &projectName) {
   setParameter(std::string("ProjectName"), projectName);
 }
 
+std::string DetectImageCodesRequest::getSourceURI() const {
+  return sourceURI_;
+}
+
+void DetectImageCodesRequest::setSourceURI(const std::string &sourceURI) {
+  sourceURI_ = sourceURI;
+  setParameter(std::string("SourceURI"), sourceURI);
+}
+
 DetectImageCodesRequest::CredentialConfig DetectImageCodesRequest::getCredentialConfig() const {
   return credentialConfig_;
 }
@@ -47,14 +56,5 @@ void DetectImageCodesRequest::setCredentialConfig(const DetectImageCodesRequest:
   }
   setParameter(std::string("CredentialConfig") + ".ServiceRole", credentialConfig.serviceRole);
   setParameter(std::string("CredentialConfig") + ".Policy", credentialConfig.policy);
-}
-
-std::string DetectImageCodesRequest::getSourceURI() const {
-  return sourceURI_;
-}
-
-void DetectImageCodesRequest::setSourceURI(const std::string &sourceURI) {
-  sourceURI_ = sourceURI;
-  setParameter(std::string("SourceURI"), sourceURI);
 }
 

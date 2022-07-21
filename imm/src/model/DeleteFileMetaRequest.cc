@@ -25,15 +25,6 @@ DeleteFileMetaRequest::DeleteFileMetaRequest()
 
 DeleteFileMetaRequest::~DeleteFileMetaRequest() {}
 
-std::string DeleteFileMetaRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void DeleteFileMetaRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
-}
-
 std::string DeleteFileMetaRequest::getProjectName() const {
   return projectName_;
 }
@@ -41,6 +32,15 @@ std::string DeleteFileMetaRequest::getProjectName() const {
 void DeleteFileMetaRequest::setProjectName(const std::string &projectName) {
   projectName_ = projectName;
   setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string DeleteFileMetaRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void DeleteFileMetaRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
 }
 
 std::string DeleteFileMetaRequest::getURI() const {

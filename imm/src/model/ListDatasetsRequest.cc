@@ -25,13 +25,13 @@ ListDatasetsRequest::ListDatasetsRequest()
 
 ListDatasetsRequest::~ListDatasetsRequest() {}
 
-std::string ListDatasetsRequest::getPrefix() const {
-  return prefix_;
+std::string ListDatasetsRequest::getProjectName() const {
+  return projectName_;
 }
 
-void ListDatasetsRequest::setPrefix(const std::string &prefix) {
-  prefix_ = prefix;
-  setParameter(std::string("Prefix"), prefix);
+void ListDatasetsRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
 std::string ListDatasetsRequest::getNextToken() const {
@@ -43,13 +43,13 @@ void ListDatasetsRequest::setNextToken(const std::string &nextToken) {
   setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string ListDatasetsRequest::getProjectName() const {
-  return projectName_;
+std::string ListDatasetsRequest::getPrefix() const {
+  return prefix_;
 }
 
-void ListDatasetsRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
+void ListDatasetsRequest::setPrefix(const std::string &prefix) {
+  prefix_ = prefix;
+  setParameter(std::string("Prefix"), prefix);
 }
 
 long ListDatasetsRequest::getMaxResults() const {

@@ -25,15 +25,6 @@ GetDatasetRequest::GetDatasetRequest()
 
 GetDatasetRequest::~GetDatasetRequest() {}
 
-std::string GetDatasetRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void GetDatasetRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
-}
-
 std::string GetDatasetRequest::getProjectName() const {
   return projectName_;
 }
@@ -50,5 +41,14 @@ bool GetDatasetRequest::getWithStatistics() const {
 void GetDatasetRequest::setWithStatistics(bool withStatistics) {
   withStatistics_ = withStatistics;
   setParameter(std::string("WithStatistics"), withStatistics ? "true" : "false");
+}
+
+std::string GetDatasetRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void GetDatasetRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
 }
 

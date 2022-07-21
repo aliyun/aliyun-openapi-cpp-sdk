@@ -25,15 +25,6 @@ UpdateFigureClusterRequest::UpdateFigureClusterRequest()
 
 UpdateFigureClusterRequest::~UpdateFigureClusterRequest() {}
 
-std::string UpdateFigureClusterRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void UpdateFigureClusterRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
-}
-
 std::string UpdateFigureClusterRequest::getProjectName() const {
   return projectName_;
 }
@@ -58,5 +49,14 @@ void UpdateFigureClusterRequest::setFigureCluster(const UpdateFigureClusterReque
   setParameter(std::string("FigureCluster") + ".Name", figureCluster.name);
   setParameter(std::string("FigureCluster") + ".CustomId", figureCluster.customId);
   setParameter(std::string("FigureCluster") + ".ObjectId", figureCluster.objectId);
+}
+
+std::string UpdateFigureClusterRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void UpdateFigureClusterRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
 }
 

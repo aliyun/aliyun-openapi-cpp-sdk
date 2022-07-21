@@ -25,15 +25,6 @@ DeleteStoryRequest::DeleteStoryRequest()
 
 DeleteStoryRequest::~DeleteStoryRequest() {}
 
-std::string DeleteStoryRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void DeleteStoryRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
-}
-
 std::string DeleteStoryRequest::getProjectName() const {
   return projectName_;
 }
@@ -41,6 +32,15 @@ std::string DeleteStoryRequest::getProjectName() const {
 void DeleteStoryRequest::setProjectName(const std::string &projectName) {
   projectName_ = projectName;
   setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string DeleteStoryRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void DeleteStoryRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
 }
 
 std::string DeleteStoryRequest::getObjectId() const {

@@ -30,10 +30,6 @@ class ALIBABACLOUD_IMM_EXPORT MergeFigureClustersRequest : public RpcServiceRequ
 public:
 	MergeFigureClustersRequest();
 	~MergeFigureClustersRequest();
-	std::string getNotifyTopicEndpoint() const;
-	void setNotifyTopicEndpoint(const std::string &notifyTopicEndpoint);
-	std::string getDatasetName() const;
-	void setDatasetName(const std::string &datasetName);
 	std::string getCustomMessage() const;
 	void setCustomMessage(const std::string &customMessage);
 	std::string getClusterIdFrom() const;
@@ -42,20 +38,24 @@ public:
 	void setProjectName(const std::string &projectName);
 	std::string getNotifyTopicName() const;
 	void setNotifyTopicName(const std::string &notifyTopicName);
+	std::string getDatasetName() const;
+	void setDatasetName(const std::string &datasetName);
 	std::string getFigureType() const;
 	void setFigureType(const std::string &figureType);
 	std::string getClusterIdTo() const;
 	void setClusterIdTo(const std::string &clusterIdTo);
+	std::string getNotifyTopicEndpoint() const;
+	void setNotifyTopicEndpoint(const std::string &notifyTopicEndpoint);
 
 private:
-	std::string notifyTopicEndpoint_;
-	std::string datasetName_;
 	std::string customMessage_;
 	std::string clusterIdFrom_;
 	std::string projectName_;
 	std::string notifyTopicName_;
+	std::string datasetName_;
 	std::string figureType_;
 	std::string clusterIdTo_;
+	std::string notifyTopicEndpoint_;
 };
 } // namespace Model
 } // namespace Imm

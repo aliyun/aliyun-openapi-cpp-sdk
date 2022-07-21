@@ -34,15 +34,6 @@ void StopBindingRequest::setReason(const std::string &reason) {
   setParameter(std::string("Reason"), reason);
 }
 
-std::string StopBindingRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void StopBindingRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
-}
-
 std::string StopBindingRequest::getProjectName() const {
   return projectName_;
 }
@@ -50,6 +41,15 @@ std::string StopBindingRequest::getProjectName() const {
 void StopBindingRequest::setProjectName(const std::string &projectName) {
   projectName_ = projectName;
   setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string StopBindingRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void StopBindingRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
 }
 
 std::string StopBindingRequest::getURI() const {

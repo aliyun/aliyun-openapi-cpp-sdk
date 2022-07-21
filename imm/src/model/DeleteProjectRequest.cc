@@ -19,18 +19,27 @@
 using AlibabaCloud::Imm::Model::DeleteProjectRequest;
 
 DeleteProjectRequest::DeleteProjectRequest()
-    : RpcServiceRequest("imm", "2020-09-30", "DeleteProject") {
+    : RpcServiceRequest("imm", "2017-09-06", "DeleteProject") {
   setMethod(HttpRequest::Method::Post);
 }
 
 DeleteProjectRequest::~DeleteProjectRequest() {}
 
-std::string DeleteProjectRequest::getProjectName() const {
-  return projectName_;
+std::string DeleteProjectRequest::getProject() const {
+  return project_;
 }
 
-void DeleteProjectRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
+void DeleteProjectRequest::setProject(const std::string &project) {
+  project_ = project;
+  setParameter(std::string("Project"), project);
+}
+
+std::string DeleteProjectRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DeleteProjectRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 

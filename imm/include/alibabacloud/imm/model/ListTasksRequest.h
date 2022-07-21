@@ -28,48 +28,48 @@ namespace Imm {
 namespace Model {
 class ALIBABACLOUD_IMM_EXPORT ListTasksRequest : public RpcServiceRequest {
 public:
-	struct StartTimeRange {
+	struct EndTimeRange {
 		std::string start;
 		std::string end;
 	};
-	struct EndTimeRange {
+	struct StartTimeRange {
 		std::string start;
 		std::string end;
 	};
 	ListTasksRequest();
 	~ListTasksRequest();
-	StartTimeRange getStartTimeRange() const;
-	void setStartTimeRange(const StartTimeRange &startTimeRange);
-	std::string getNextToken() const;
-	void setNextToken(const std::string &nextToken);
-	std::string getOrder() const;
-	void setOrder(const std::string &order);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	std::vector<std::string> getTaskTypes() const;
 	void setTaskTypes(const std::vector<std::string> &taskTypes);
 	EndTimeRange getEndTimeRange() const;
 	void setEndTimeRange(const EndTimeRange &endTimeRange);
-	std::string getSort() const;
-	void setSort(const std::string &sort);
 	long getMaxResults() const;
 	void setMaxResults(long maxResults);
 	std::string getTagSelector() const;
 	void setTagSelector(const std::string &tagSelector);
+	std::string getSort() const;
+	void setSort(const std::string &sort);
+	std::string getOrder() const;
+	void setOrder(const std::string &order);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
+	StartTimeRange getStartTimeRange() const;
+	void setStartTimeRange(const StartTimeRange &startTimeRange);
 
 private:
-	StartTimeRange startTimeRange_;
-	std::string nextToken_;
-	std::string order_;
 	std::string projectName_;
+	std::string nextToken_;
 	std::vector<std::string> taskTypes_;
 	EndTimeRange endTimeRange_;
-	std::string sort_;
 	long maxResults_;
 	std::string tagSelector_;
+	std::string sort_;
+	std::string order_;
 	std::string status_;
+	StartTimeRange startTimeRange_;
 };
 } // namespace Model
 } // namespace Imm

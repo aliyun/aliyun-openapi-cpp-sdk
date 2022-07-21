@@ -34,6 +34,15 @@ void DetectImageScoreRequest::setProjectName(const std::string &projectName) {
   setParameter(std::string("ProjectName"), projectName);
 }
 
+std::string DetectImageScoreRequest::getSourceURI() const {
+  return sourceURI_;
+}
+
+void DetectImageScoreRequest::setSourceURI(const std::string &sourceURI) {
+  sourceURI_ = sourceURI;
+  setParameter(std::string("SourceURI"), sourceURI);
+}
+
 DetectImageScoreRequest::CredentialConfig DetectImageScoreRequest::getCredentialConfig() const {
   return credentialConfig_;
 }
@@ -47,14 +56,5 @@ void DetectImageScoreRequest::setCredentialConfig(const DetectImageScoreRequest:
   }
   setParameter(std::string("CredentialConfig") + ".ServiceRole", credentialConfig.serviceRole);
   setParameter(std::string("CredentialConfig") + ".Policy", credentialConfig.policy);
-}
-
-std::string DetectImageScoreRequest::getSourceURI() const {
-  return sourceURI_;
-}
-
-void DetectImageScoreRequest::setSourceURI(const std::string &sourceURI) {
-  sourceURI_ = sourceURI;
-  setParameter(std::string("SourceURI"), sourceURI);
 }
 

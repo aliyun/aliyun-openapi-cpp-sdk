@@ -25,6 +25,15 @@ UpdateFileMetaRequest::UpdateFileMetaRequest()
 
 UpdateFileMetaRequest::~UpdateFileMetaRequest() {}
 
+std::string UpdateFileMetaRequest::getProjectName() const {
+  return projectName_;
+}
+
+void UpdateFileMetaRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
+}
+
 UpdateFileMetaRequest::File UpdateFileMetaRequest::getFile() const {
   return file_;
 }
@@ -54,14 +63,5 @@ std::string UpdateFileMetaRequest::getDatasetName() const {
 void UpdateFileMetaRequest::setDatasetName(const std::string &datasetName) {
   datasetName_ = datasetName;
   setParameter(std::string("DatasetName"), datasetName);
-}
-
-std::string UpdateFileMetaRequest::getProjectName() const {
-  return projectName_;
-}
-
-void UpdateFileMetaRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
 }
 

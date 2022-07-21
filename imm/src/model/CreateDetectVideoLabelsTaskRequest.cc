@@ -34,15 +34,6 @@ void CreateDetectVideoLabelsTaskRequest::setUserData(const std::string &userData
   setParameter(std::string("UserData"), userData);
 }
 
-std::string CreateDetectVideoLabelsTaskRequest::getNotifyEndpoint() const {
-  return notifyEndpoint_;
-}
-
-void CreateDetectVideoLabelsTaskRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
-  notifyEndpoint_ = notifyEndpoint;
-  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
-}
-
 std::string CreateDetectVideoLabelsTaskRequest::getProjectName() const {
   return projectName_;
 }
@@ -59,6 +50,24 @@ std::string CreateDetectVideoLabelsTaskRequest::getNotifyTopicName() const {
 void CreateDetectVideoLabelsTaskRequest::setNotifyTopicName(const std::string &notifyTopicName) {
   notifyTopicName_ = notifyTopicName;
   setParameter(std::string("NotifyTopicName"), notifyTopicName);
+}
+
+std::string CreateDetectVideoLabelsTaskRequest::getSourceURI() const {
+  return sourceURI_;
+}
+
+void CreateDetectVideoLabelsTaskRequest::setSourceURI(const std::string &sourceURI) {
+  sourceURI_ = sourceURI;
+  setParameter(std::string("SourceURI"), sourceURI);
+}
+
+std::string CreateDetectVideoLabelsTaskRequest::getNotifyEndpoint() const {
+  return notifyEndpoint_;
+}
+
+void CreateDetectVideoLabelsTaskRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
+  notifyEndpoint_ = notifyEndpoint;
+  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
 }
 
 CreateDetectVideoLabelsTaskRequest::CredentialConfig CreateDetectVideoLabelsTaskRequest::getCredentialConfig() const {
@@ -85,14 +94,5 @@ void CreateDetectVideoLabelsTaskRequest::setTags(const std::map<std::string, std
   for(auto const &iter1 : tags) {
     setParameter(std::string("Tags") + "." + iter1.first, iter1.second);
   }
-}
-
-std::string CreateDetectVideoLabelsTaskRequest::getSourceURI() const {
-  return sourceURI_;
-}
-
-void CreateDetectVideoLabelsTaskRequest::setSourceURI(const std::string &sourceURI) {
-  sourceURI_ = sourceURI;
-  setParameter(std::string("SourceURI"), sourceURI);
 }
 

@@ -1,3 +1,6 @@
+2022-07-21 Version: 1.36.1192
+- Add Body Detection and Image Splicing API.
+
 2022-07-20 Version: 1.36.1191
 - Change getFileDetectResult.
 

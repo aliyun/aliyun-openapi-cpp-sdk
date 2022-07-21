@@ -34,56 +34,66 @@ namespace AlibabaCloud
 			public:
 				struct FacesItem
 				{
-					struct Boundary
+					struct FaceAttributes
 					{
-						long left;
-						long top;
-						long height;
-						long width;
+						struct FaceBoundary
+						{
+							int left;
+							int top;
+							int height;
+							int width;
+						};
+						struct HeadPose
+						{
+							float pitch;
+							float roll;
+							float yaw;
+						};
+						FaceBoundary faceBoundary;
+						std::string beard;
+						float beardConfidence;
+						HeadPose headPose;
+						std::string glasses;
+						std::string mask;
+						float maskConfidence;
+						float glassesConfidence;
 					};
-					struct HeadPose
+					struct EmotionDetails
 					{
-						float pitch;
-						float roll;
-						float yaw;
+						float cALM;
+						float sCARED;
+						float hAPPY;
+						float sURPRISED;
+						float sAD;
+						float dISGUSTED;
+						float aNGRY;
 					};
-					std::string beard;
-					float maskConfidence;
-					std::string gender;
-					float figureClusterConfidence;
-					Boundary boundary;
-					float beardConfidence;
-					std::string figureId;
-					std::string mouth;
-					std::string emotion;
-					long age;
-					float mouthConfidence;
-					HeadPose headPose;
-					std::string figureType;
+					std::string faceId;
+					float attractiveConfidence;
+					FaceAttributes faceAttributes;
 					float genderConfidence;
-					std::string mask;
 					float emotionConfidence;
-					float hatConfidence;
-					float glassesConfidence;
-					float sharpness;
-					std::string figureClusterId;
+					std::string gender;
+					EmotionDetails emotionDetails;
+					float faceConfidence;
 					float faceQuality;
 					float attractive;
-					float ageSD;
-					std::string glasses;
-					float figureConfidence;
-					std::string hat;
+					std::string emotion;
+					int age;
+					float ageConfidence;
 				};
 
 
 				DetectImageFacesResult();
 				explicit DetectImageFacesResult(const std::string &payload);
 				~DetectImageFacesResult();
+				std::string getImageUri()const;
 				std::vector<FacesItem> getFaces()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string imageUri_;
 				std::vector<FacesItem> faces_;
 
 			};

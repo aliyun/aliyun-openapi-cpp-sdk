@@ -43,15 +43,15 @@ public:
 	~DetectImageCodesRequest();
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
-	CredentialConfig getCredentialConfig() const;
-	void setCredentialConfig(const CredentialConfig &credentialConfig);
 	std::string getSourceURI() const;
 	void setSourceURI(const std::string &sourceURI);
+	CredentialConfig getCredentialConfig() const;
+	void setCredentialConfig(const CredentialConfig &credentialConfig);
 
 private:
 	std::string projectName_;
-	CredentialConfig credentialConfig_;
 	std::string sourceURI_;
+	CredentialConfig credentialConfig_;
 };
 } // namespace Model
 } // namespace Imm

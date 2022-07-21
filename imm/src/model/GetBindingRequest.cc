@@ -25,15 +25,6 @@ GetBindingRequest::GetBindingRequest()
 
 GetBindingRequest::~GetBindingRequest() {}
 
-std::string GetBindingRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void GetBindingRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
-}
-
 std::string GetBindingRequest::getOwner() const {
   return owner_;
 }
@@ -50,6 +41,15 @@ std::string GetBindingRequest::getProjectName() const {
 void GetBindingRequest::setProjectName(const std::string &projectName) {
   projectName_ = projectName;
   setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string GetBindingRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void GetBindingRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
 }
 
 std::string GetBindingRequest::getURI() const {

@@ -25,6 +25,33 @@ CreateMediaConvertTaskRequest::CreateMediaConvertTaskRequest()
 
 CreateMediaConvertTaskRequest::~CreateMediaConvertTaskRequest() {}
 
+std::string CreateMediaConvertTaskRequest::getUserData() const {
+  return userData_;
+}
+
+void CreateMediaConvertTaskRequest::setUserData(const std::string &userData) {
+  userData_ = userData;
+  setParameter(std::string("UserData"), userData);
+}
+
+std::string CreateMediaConvertTaskRequest::getProjectName() const {
+  return projectName_;
+}
+
+void CreateMediaConvertTaskRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string CreateMediaConvertTaskRequest::getNotifyTopicName() const {
+  return notifyTopicName_;
+}
+
+void CreateMediaConvertTaskRequest::setNotifyTopicName(const std::string &notifyTopicName) {
+  notifyTopicName_ = notifyTopicName;
+  setParameter(std::string("NotifyTopicName"), notifyTopicName);
+}
+
 std::vector<CreateMediaConvertTaskRequest::Sources> CreateMediaConvertTaskRequest::getSources() const {
   return sources_;
 }
@@ -41,6 +68,30 @@ void CreateMediaConvertTaskRequest::setSources(const std::vector<CreateMediaConv
     setParameter(std::string("Sources") + "." + std::to_string(dep1 + 1) + ".StartTime", std::to_string(sources[dep1].startTime));
     setParameter(std::string("Sources") + "." + std::to_string(dep1 + 1) + ".URI", sources[dep1].uRI);
   }
+}
+
+std::string CreateMediaConvertTaskRequest::getNotifyEndpoint() const {
+  return notifyEndpoint_;
+}
+
+void CreateMediaConvertTaskRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
+  notifyEndpoint_ = notifyEndpoint;
+  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
+}
+
+CreateMediaConvertTaskRequest::CredentialConfig CreateMediaConvertTaskRequest::getCredentialConfig() const {
+  return credentialConfig_;
+}
+
+void CreateMediaConvertTaskRequest::setCredentialConfig(const CreateMediaConvertTaskRequest::CredentialConfig &credentialConfig) {
+  credentialConfig_ = credentialConfig;
+  for(int dep1 = 0; dep1 != credentialConfig.chain.size(); dep1++) {
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".Role", credentialConfig.chain[dep1].role);
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".RoleType", credentialConfig.chain[dep1].roleType);
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".AssumeRoleFor", credentialConfig.chain[dep1].assumeRoleFor);
+  }
+  setParameter(std::string("CredentialConfig") + ".ServiceRole", credentialConfig.serviceRole);
+  setParameter(std::string("CredentialConfig") + ".Policy", credentialConfig.policy);
 }
 
 std::vector<CreateMediaConvertTaskRequest::Targets> CreateMediaConvertTaskRequest::getTargets() const {
@@ -141,57 +192,6 @@ void CreateMediaConvertTaskRequest::setTargets(const std::vector<CreateMediaConv
     setParameter(std::string("Targets") + "." + std::to_string(dep1 + 1) + ".URI", targets[dep1].uRI);
     setParameter(std::string("Targets") + "." + std::to_string(dep1 + 1) + ".Speed", std::to_string(targets[dep1].speed));
   }
-}
-
-std::string CreateMediaConvertTaskRequest::getUserData() const {
-  return userData_;
-}
-
-void CreateMediaConvertTaskRequest::setUserData(const std::string &userData) {
-  userData_ = userData;
-  setParameter(std::string("UserData"), userData);
-}
-
-std::string CreateMediaConvertTaskRequest::getNotifyEndpoint() const {
-  return notifyEndpoint_;
-}
-
-void CreateMediaConvertTaskRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
-  notifyEndpoint_ = notifyEndpoint;
-  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
-}
-
-std::string CreateMediaConvertTaskRequest::getProjectName() const {
-  return projectName_;
-}
-
-void CreateMediaConvertTaskRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
-std::string CreateMediaConvertTaskRequest::getNotifyTopicName() const {
-  return notifyTopicName_;
-}
-
-void CreateMediaConvertTaskRequest::setNotifyTopicName(const std::string &notifyTopicName) {
-  notifyTopicName_ = notifyTopicName;
-  setParameter(std::string("NotifyTopicName"), notifyTopicName);
-}
-
-CreateMediaConvertTaskRequest::CredentialConfig CreateMediaConvertTaskRequest::getCredentialConfig() const {
-  return credentialConfig_;
-}
-
-void CreateMediaConvertTaskRequest::setCredentialConfig(const CreateMediaConvertTaskRequest::CredentialConfig &credentialConfig) {
-  credentialConfig_ = credentialConfig;
-  for(int dep1 = 0; dep1 != credentialConfig.chain.size(); dep1++) {
-    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".Role", credentialConfig.chain[dep1].role);
-    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".RoleType", credentialConfig.chain[dep1].roleType);
-    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".AssumeRoleFor", credentialConfig.chain[dep1].assumeRoleFor);
-  }
-  setParameter(std::string("CredentialConfig") + ".ServiceRole", credentialConfig.serviceRole);
-  setParameter(std::string("CredentialConfig") + ".Policy", credentialConfig.policy);
 }
 
 std::map<std::string, std::string> CreateMediaConvertTaskRequest::getTags() const {

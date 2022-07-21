@@ -25,15 +25,6 @@ DetectImageLabelsRequest::DetectImageLabelsRequest()
 
 DetectImageLabelsRequest::~DetectImageLabelsRequest() {}
 
-float DetectImageLabelsRequest::getThreshold() const {
-  return threshold_;
-}
-
-void DetectImageLabelsRequest::setThreshold(float threshold) {
-  threshold_ = threshold;
-  setParameter(std::string("Threshold"), std::to_string(threshold));
-}
-
 std::string DetectImageLabelsRequest::getProjectName() const {
   return projectName_;
 }
@@ -41,6 +32,24 @@ std::string DetectImageLabelsRequest::getProjectName() const {
 void DetectImageLabelsRequest::setProjectName(const std::string &projectName) {
   projectName_ = projectName;
   setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string DetectImageLabelsRequest::getSourceURI() const {
+  return sourceURI_;
+}
+
+void DetectImageLabelsRequest::setSourceURI(const std::string &sourceURI) {
+  sourceURI_ = sourceURI;
+  setParameter(std::string("SourceURI"), sourceURI);
+}
+
+float DetectImageLabelsRequest::getThreshold() const {
+  return threshold_;
+}
+
+void DetectImageLabelsRequest::setThreshold(float threshold) {
+  threshold_ = threshold;
+  setParameter(std::string("Threshold"), std::to_string(threshold));
 }
 
 DetectImageLabelsRequest::CredentialConfig DetectImageLabelsRequest::getCredentialConfig() const {
@@ -56,14 +65,5 @@ void DetectImageLabelsRequest::setCredentialConfig(const DetectImageLabelsReques
   }
   setParameter(std::string("CredentialConfig") + ".ServiceRole", credentialConfig.serviceRole);
   setParameter(std::string("CredentialConfig") + ".Policy", credentialConfig.policy);
-}
-
-std::string DetectImageLabelsRequest::getSourceURI() const {
-  return sourceURI_;
-}
-
-void DetectImageLabelsRequest::setSourceURI(const std::string &sourceURI) {
-  sourceURI_ = sourceURI;
-  setParameter(std::string("SourceURI"), sourceURI);
 }
 

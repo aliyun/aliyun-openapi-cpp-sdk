@@ -40,6 +40,17 @@ public:
 		double startTime;
 		std::string uRI;
 	};
+	struct CredentialConfig {
+		struct ChainItem {
+			std::string role;
+			std::string roleType;
+			std::string assumeRoleFor;
+		};
+		ChainItem chainItem;
+		std::vector<ChainItem> chain;
+		std::string serviceRole;
+		std::string policy;
+	};
 	struct Targets {
 		std::string container;
 		struct Image {
@@ -176,44 +187,33 @@ public:
 		std::string uRI;
 		float speed;
 	};
-	struct CredentialConfig {
-		struct ChainItem {
-			std::string role;
-			std::string roleType;
-			std::string assumeRoleFor;
-		};
-		ChainItem chainItem;
-		std::vector<ChainItem> chain;
-		std::string serviceRole;
-		std::string policy;
-	};
 	CreateMediaConvertTaskRequest();
 	~CreateMediaConvertTaskRequest();
-	std::vector<Sources> getSources() const;
-	void setSources(const std::vector<Sources> &sources);
-	std::vector<Targets> getTargets() const;
-	void setTargets(const std::vector<Targets> &targets);
 	std::string getUserData() const;
 	void setUserData(const std::string &userData);
-	std::string getNotifyEndpoint() const;
-	void setNotifyEndpoint(const std::string &notifyEndpoint);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
 	std::string getNotifyTopicName() const;
 	void setNotifyTopicName(const std::string &notifyTopicName);
+	std::vector<Sources> getSources() const;
+	void setSources(const std::vector<Sources> &sources);
+	std::string getNotifyEndpoint() const;
+	void setNotifyEndpoint(const std::string &notifyEndpoint);
 	CredentialConfig getCredentialConfig() const;
 	void setCredentialConfig(const CredentialConfig &credentialConfig);
+	std::vector<Targets> getTargets() const;
+	void setTargets(const std::vector<Targets> &targets);
 	std::map<std::string, std::string> getTags() const;
 	void setTags(const std::map<std::string, std::string> &tags);
 
 private:
-	std::vector<Sources> sources_;
-	std::vector<Targets> targets_;
 	std::string userData_;
-	std::string notifyEndpoint_;
 	std::string projectName_;
 	std::string notifyTopicName_;
+	std::vector<Sources> sources_;
+	std::string notifyEndpoint_;
 	CredentialConfig credentialConfig_;
+	std::vector<Targets> targets_;
 	std::map<std::string, std::string> tags_;
 };
 } // namespace Model

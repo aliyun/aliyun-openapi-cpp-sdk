@@ -25,15 +25,6 @@ BatchUpdateFileMetaRequest::BatchUpdateFileMetaRequest()
 
 BatchUpdateFileMetaRequest::~BatchUpdateFileMetaRequest() {}
 
-std::string BatchUpdateFileMetaRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void BatchUpdateFileMetaRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
-}
-
 std::string BatchUpdateFileMetaRequest::getProjectName() const {
   return projectName_;
 }
@@ -41,6 +32,15 @@ std::string BatchUpdateFileMetaRequest::getProjectName() const {
 void BatchUpdateFileMetaRequest::setProjectName(const std::string &projectName) {
   projectName_ = projectName;
   setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string BatchUpdateFileMetaRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void BatchUpdateFileMetaRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
 }
 
 std::vector<BatchUpdateFileMetaRequest::Files> BatchUpdateFileMetaRequest::getFiles() const {

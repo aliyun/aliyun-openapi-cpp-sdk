@@ -43,27 +43,27 @@ public:
 	~CreateDetectVideoLabelsTaskRequest();
 	std::string getUserData() const;
 	void setUserData(const std::string &userData);
-	std::string getNotifyEndpoint() const;
-	void setNotifyEndpoint(const std::string &notifyEndpoint);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
 	std::string getNotifyTopicName() const;
 	void setNotifyTopicName(const std::string &notifyTopicName);
+	std::string getSourceURI() const;
+	void setSourceURI(const std::string &sourceURI);
+	std::string getNotifyEndpoint() const;
+	void setNotifyEndpoint(const std::string &notifyEndpoint);
 	CredentialConfig getCredentialConfig() const;
 	void setCredentialConfig(const CredentialConfig &credentialConfig);
 	std::map<std::string, std::string> getTags() const;
 	void setTags(const std::map<std::string, std::string> &tags);
-	std::string getSourceURI() const;
-	void setSourceURI(const std::string &sourceURI);
 
 private:
 	std::string userData_;
-	std::string notifyEndpoint_;
 	std::string projectName_;
 	std::string notifyTopicName_;
+	std::string sourceURI_;
+	std::string notifyEndpoint_;
 	CredentialConfig credentialConfig_;
 	std::map<std::string, std::string> tags_;
-	std::string sourceURI_;
 };
 } // namespace Model
 } // namespace Imm

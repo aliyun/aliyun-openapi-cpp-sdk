@@ -30,17 +30,17 @@ class ALIBABACLOUD_IMM_EXPORT BatchDeleteFileMetaRequest : public RpcServiceRequ
 public:
 	BatchDeleteFileMetaRequest();
 	~BatchDeleteFileMetaRequest();
-	std::string getDatasetName() const;
-	void setDatasetName(const std::string &datasetName);
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
 	std::vector<std::string> getURIs() const;
 	void setURIs(const std::vector<std::string> &uRIs);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
+	std::string getDatasetName() const;
+	void setDatasetName(const std::string &datasetName);
 
 private:
-	std::string datasetName_;
-	std::string projectName_;
 	std::vector<std::string> uRIs_;
+	std::string projectName_;
+	std::string datasetName_;
 };
 } // namespace Model
 } // namespace Imm

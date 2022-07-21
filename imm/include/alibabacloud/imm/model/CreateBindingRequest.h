@@ -30,19 +30,19 @@ class ALIBABACLOUD_IMM_EXPORT CreateBindingRequest : public RpcServiceRequest {
 public:
 	CreateBindingRequest();
 	~CreateBindingRequest();
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
 	std::string getBucketOwnerId() const;
 	void setBucketOwnerId(const std::string &bucketOwnerId);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
 	std::string getURI() const;
 	void setURI(const std::string &uRI);
 
 private:
+	std::string projectName_;
 	std::string bucketOwnerId_;
 	std::string datasetName_;
-	std::string projectName_;
 	std::string uRI_;
 };
 } // namespace Model
