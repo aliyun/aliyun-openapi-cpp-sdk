@@ -310,6 +310,8 @@
 #include "model/FixCheckWarningsResult.h"
 #include "model/GetBackupStorageCountRequest.h"
 #include "model/GetBackupStorageCountResult.h"
+#include "model/GetCheckDetailRequest.h"
+#include "model/GetCheckDetailResult.h"
 #include "model/GetFileDetectResultRequest.h"
 #include "model/GetFileDetectResultResult.h"
 #include "model/GetSuspiciousStatisticsRequest.h"
@@ -326,6 +328,8 @@
 #include "model/InstallBackupClientResult.h"
 #include "model/InstallCloudMonitorRequest.h"
 #include "model/InstallCloudMonitorResult.h"
+#include "model/ListCheckInstanceResultRequest.h"
+#include "model/ListCheckInstanceResultResult.h"
 #include "model/ListCheckResultRequest.h"
 #include "model/ListCheckResultResult.h"
 #include "model/ListVulAutoRepairConfigRequest.h"
@@ -871,6 +875,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetBackupStorageCountResult> GetBackupStorageCountOutcome;
 			typedef std::future<GetBackupStorageCountOutcome> GetBackupStorageCountOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::GetBackupStorageCountRequest&, const GetBackupStorageCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBackupStorageCountAsyncHandler;
+			typedef Outcome<Error, Model::GetCheckDetailResult> GetCheckDetailOutcome;
+			typedef std::future<GetCheckDetailOutcome> GetCheckDetailOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::GetCheckDetailRequest&, const GetCheckDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCheckDetailAsyncHandler;
 			typedef Outcome<Error, Model::GetFileDetectResultResult> GetFileDetectResultOutcome;
 			typedef std::future<GetFileDetectResultOutcome> GetFileDetectResultOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::GetFileDetectResultRequest&, const GetFileDetectResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFileDetectResultAsyncHandler;
@@ -895,6 +902,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InstallCloudMonitorResult> InstallCloudMonitorOutcome;
 			typedef std::future<InstallCloudMonitorOutcome> InstallCloudMonitorOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::InstallCloudMonitorRequest&, const InstallCloudMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallCloudMonitorAsyncHandler;
+			typedef Outcome<Error, Model::ListCheckInstanceResultResult> ListCheckInstanceResultOutcome;
+			typedef std::future<ListCheckInstanceResultOutcome> ListCheckInstanceResultOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::ListCheckInstanceResultRequest&, const ListCheckInstanceResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCheckInstanceResultAsyncHandler;
 			typedef Outcome<Error, Model::ListCheckResultResult> ListCheckResultOutcome;
 			typedef std::future<ListCheckResultOutcome> ListCheckResultOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ListCheckResultRequest&, const ListCheckResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCheckResultAsyncHandler;
@@ -1488,6 +1498,9 @@ namespace AlibabaCloud
 			GetBackupStorageCountOutcome getBackupStorageCount(const Model::GetBackupStorageCountRequest &request)const;
 			void getBackupStorageCountAsync(const Model::GetBackupStorageCountRequest& request, const GetBackupStorageCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetBackupStorageCountOutcomeCallable getBackupStorageCountCallable(const Model::GetBackupStorageCountRequest& request) const;
+			GetCheckDetailOutcome getCheckDetail(const Model::GetCheckDetailRequest &request)const;
+			void getCheckDetailAsync(const Model::GetCheckDetailRequest& request, const GetCheckDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetCheckDetailOutcomeCallable getCheckDetailCallable(const Model::GetCheckDetailRequest& request) const;
 			GetFileDetectResultOutcome getFileDetectResult(const Model::GetFileDetectResultRequest &request)const;
 			void getFileDetectResultAsync(const Model::GetFileDetectResultRequest& request, const GetFileDetectResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetFileDetectResultOutcomeCallable getFileDetectResultCallable(const Model::GetFileDetectResultRequest& request) const;
@@ -1512,6 +1525,9 @@ namespace AlibabaCloud
 			InstallCloudMonitorOutcome installCloudMonitor(const Model::InstallCloudMonitorRequest &request)const;
 			void installCloudMonitorAsync(const Model::InstallCloudMonitorRequest& request, const InstallCloudMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InstallCloudMonitorOutcomeCallable installCloudMonitorCallable(const Model::InstallCloudMonitorRequest& request) const;
+			ListCheckInstanceResultOutcome listCheckInstanceResult(const Model::ListCheckInstanceResultRequest &request)const;
+			void listCheckInstanceResultAsync(const Model::ListCheckInstanceResultRequest& request, const ListCheckInstanceResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCheckInstanceResultOutcomeCallable listCheckInstanceResultCallable(const Model::ListCheckInstanceResultRequest& request) const;
 			ListCheckResultOutcome listCheckResult(const Model::ListCheckResultRequest &request)const;
 			void listCheckResultAsync(const Model::ListCheckResultRequest& request, const ListCheckResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCheckResultOutcomeCallable listCheckResultCallable(const Model::ListCheckResultRequest& request) const;

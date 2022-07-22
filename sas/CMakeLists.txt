@@ -309,6 +309,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/FixCheckWarningsResult.h
 	include/alibabacloud/sas/model/GetBackupStorageCountRequest.h
 	include/alibabacloud/sas/model/GetBackupStorageCountResult.h
+	include/alibabacloud/sas/model/GetCheckDetailRequest.h
+	include/alibabacloud/sas/model/GetCheckDetailResult.h
 	include/alibabacloud/sas/model/GetFileDetectResultRequest.h
 	include/alibabacloud/sas/model/GetFileDetectResultResult.h
 	include/alibabacloud/sas/model/GetSuspiciousStatisticsRequest.h
@@ -325,6 +327,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/InstallBackupClientResult.h
 	include/alibabacloud/sas/model/InstallCloudMonitorRequest.h
 	include/alibabacloud/sas/model/InstallCloudMonitorResult.h
+	include/alibabacloud/sas/model/ListCheckInstanceResultRequest.h
+	include/alibabacloud/sas/model/ListCheckInstanceResultResult.h
 	include/alibabacloud/sas/model/ListCheckResultRequest.h
 	include/alibabacloud/sas/model/ListCheckResultResult.h
 	include/alibabacloud/sas/model/ListVulAutoRepairConfigRequest.h
@@ -720,6 +724,8 @@ set(sas_src
 	src/model/FixCheckWarningsResult.cc
 	src/model/GetBackupStorageCountRequest.cc
 	src/model/GetBackupStorageCountResult.cc
+	src/model/GetCheckDetailRequest.cc
+	src/model/GetCheckDetailResult.cc
 	src/model/GetFileDetectResultRequest.cc
 	src/model/GetFileDetectResultResult.cc
 	src/model/GetSuspiciousStatisticsRequest.cc
@@ -736,6 +742,8 @@ set(sas_src
 	src/model/InstallBackupClientResult.cc
 	src/model/InstallCloudMonitorRequest.cc
 	src/model/InstallCloudMonitorResult.cc
+	src/model/ListCheckInstanceResultRequest.cc
+	src/model/ListCheckInstanceResultResult.cc
 	src/model/ListCheckResultRequest.cc
 	src/model/ListCheckResultResult.cc
 	src/model/ListVulAutoRepairConfigRequest.cc

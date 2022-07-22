@@ -5235,6 +5235,42 @@ SasClient::GetBackupStorageCountOutcomeCallable SasClient::getBackupStorageCount
 	return task->get_future();
 }
 
+SasClient::GetCheckDetailOutcome SasClient::getCheckDetail(const GetCheckDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCheckDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCheckDetailOutcome(GetCheckDetailResult(outcome.result()));
+	else
+		return GetCheckDetailOutcome(outcome.error());
+}
+
+void SasClient::getCheckDetailAsync(const GetCheckDetailRequest& request, const GetCheckDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCheckDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::GetCheckDetailOutcomeCallable SasClient::getCheckDetailCallable(const GetCheckDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCheckDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getCheckDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::GetFileDetectResultOutcome SasClient::getFileDetectResult(const GetFileDetectResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5517,6 +5553,42 @@ SasClient::InstallCloudMonitorOutcomeCallable SasClient::installCloudMonitorCall
 			[this, request]()
 			{
 			return this->installCloudMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ListCheckInstanceResultOutcome SasClient::listCheckInstanceResult(const ListCheckInstanceResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCheckInstanceResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCheckInstanceResultOutcome(ListCheckInstanceResultResult(outcome.result()));
+	else
+		return ListCheckInstanceResultOutcome(outcome.error());
+}
+
+void SasClient::listCheckInstanceResultAsync(const ListCheckInstanceResultRequest& request, const ListCheckInstanceResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCheckInstanceResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListCheckInstanceResultOutcomeCallable SasClient::listCheckInstanceResultCallable(const ListCheckInstanceResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCheckInstanceResultOutcome()>>(
+			[this, request]()
+			{
+			return this->listCheckInstanceResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
