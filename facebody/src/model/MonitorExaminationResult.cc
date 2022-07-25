@@ -46,7 +46,7 @@ void MonitorExaminationResult::parse(const std::string &payload)
 		data_.threshold = std::stof(dataNode["Threshold"].asString());
 	auto faceInfoNode = dataNode["FaceInfo"];
 	if(!faceInfoNode["Completeness"].isNull())
-		data_.faceInfo.completeness = std::stol(faceInfoNode["Completeness"].asString());
+		data_.faceInfo.completeness = std::stof(faceInfoNode["Completeness"].asString());
 	if(!faceInfoNode["FaceNumber"].isNull())
 		data_.faceInfo.faceNumber = std::stol(faceInfoNode["FaceNumber"].asString());
 	auto poseNode = faceInfoNode["Pose"];

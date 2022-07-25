@@ -42,7 +42,7 @@ namespace AlibabaCloud
 							float roll;
 							float yaw;
 						};
-						long completeness;
+						float completeness;
 						Pose pose;
 						long faceNumber;
 					};
