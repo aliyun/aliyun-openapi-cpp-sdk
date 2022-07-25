@@ -96,14 +96,9 @@ void ListCheckInstanceResultResult::parse(const std::string &payload)
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
 	if(!pageInfoNode["Count"].isNull())
 		pageInfo_.count = pageInfoNode["Count"].asString();
-	if(!value["NextToken"].isNull())
-		nextToken_ = value["NextToken"].asString();
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["Checks"].isNull())
-		checks_ = value["Checks"].asString();
+	auto allChecks = value["Checks"]["Checks"];
+	for (const auto &item : allChecks)
+		checks_.push_back(item.asString());
 
 }
 
@@ -112,24 +107,9 @@ ListCheckInstanceResultResult::PageInfo ListCheckInstanceResultResult::getPageIn
 	return pageInfo_;
 }
 
-int ListCheckInstanceResultResult::getTotalCount()const
-{
-	return totalCount_;
-}
-
-std::string ListCheckInstanceResultResult::getNextToken()const
-{
-	return nextToken_;
-}
-
-std::string ListCheckInstanceResultResult::getChecks()const
+std::vector<std::string> ListCheckInstanceResultResult::getChecks()const
 {
 	return checks_;
-}
-
-int ListCheckInstanceResultResult::getMaxResults()const
-{
-	return maxResults_;
 }
 
 std::vector<ListCheckInstanceResultResult::ColumnsItem> ListCheckInstanceResultResult::getColumns()const

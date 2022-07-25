@@ -70,10 +70,7 @@ namespace AlibabaCloud
 				explicit ListCheckInstanceResultResult(const std::string &payload);
 				~ListCheckInstanceResultResult();
 				PageInfo getPageInfo()const;
-				int getTotalCount()const;
-				std::string getNextToken()const;
-				std::string getChecks()const;
-				int getMaxResults()const;
+				std::vector<std::string> getChecks()const;
 				std::vector<ColumnsItem> getColumns()const;
 				std::vector<BasicDataItem> getBasicData()const;
 
@@ -81,10 +78,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				PageInfo pageInfo_;
-				int totalCount_;
-				std::string nextToken_;
-				std::string checks_;
-				int maxResults_;
+				std::vector<std::string> checks_;
 				std::vector<ColumnsItem> columns_;
 				std::vector<BasicDataItem> basicData_;
 
