@@ -115,6 +115,15 @@ void RunInstancesRequest::setPeriod(long period) {
   setParameter(std::string("Period"), std::to_string(period));
 }
 
+bool RunInstancesRequest::getPublicIpIdentification() const {
+  return publicIpIdentification_;
+}
+
+void RunInstancesRequest::setPublicIpIdentification(bool publicIpIdentification) {
+  publicIpIdentification_ = publicIpIdentification;
+  setParameter(std::string("PublicIpIdentification"), publicIpIdentification ? "true" : "false");
+}
+
 std::string RunInstancesRequest::getVSwitchId() const {
   return vSwitchId_;
 }
@@ -131,6 +140,15 @@ std::string RunInstancesRequest::getPrivateIpAddress() const {
 void RunInstancesRequest::setPrivateIpAddress(const std::string &privateIpAddress) {
   privateIpAddress_ = privateIpAddress;
   setParameter(std::string("PrivateIpAddress"), privateIpAddress);
+}
+
+std::string RunInstancesRequest::getPeriodUnit() const {
+  return periodUnit_;
+}
+
+void RunInstancesRequest::setPeriodUnit(const std::string &periodUnit) {
+  periodUnit_ = periodUnit;
+  setParameter(std::string("PeriodUnit"), periodUnit);
 }
 
 std::string RunInstancesRequest::getInstanceName() const {

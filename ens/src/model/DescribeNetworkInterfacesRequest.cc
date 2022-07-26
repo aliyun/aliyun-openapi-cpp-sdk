@@ -25,6 +25,15 @@ DescribeNetworkInterfacesRequest::DescribeNetworkInterfacesRequest()
 
 DescribeNetworkInterfacesRequest::~DescribeNetworkInterfacesRequest() {}
 
+std::string DescribeNetworkInterfacesRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void DescribeNetworkInterfacesRequest::setPageNumber(const std::string &pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), pageNumber);
+}
+
 std::string DescribeNetworkInterfacesRequest::getEnsRegionId() const {
   return ensRegionId_;
 }
@@ -32,6 +41,15 @@ std::string DescribeNetworkInterfacesRequest::getEnsRegionId() const {
 void DescribeNetworkInterfacesRequest::setEnsRegionId(const std::string &ensRegionId) {
   ensRegionId_ = ensRegionId;
   setParameter(std::string("EnsRegionId"), ensRegionId);
+}
+
+std::string DescribeNetworkInterfacesRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void DescribeNetworkInterfacesRequest::setPageSize(const std::string &pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), pageSize);
 }
 
 std::string DescribeNetworkInterfacesRequest::getVSwitchId() const {
@@ -50,24 +68,6 @@ std::string DescribeNetworkInterfacesRequest::getInstanceId() const {
 void DescribeNetworkInterfacesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string DescribeNetworkInterfacesRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void DescribeNetworkInterfacesRequest::setPageNumber(const std::string &pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), pageNumber);
-}
-
-std::string DescribeNetworkInterfacesRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void DescribeNetworkInterfacesRequest::setPageSize(const std::string &pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), pageSize);
 }
 
 std::string DescribeNetworkInterfacesRequest::getPrimaryIpAddress() const {

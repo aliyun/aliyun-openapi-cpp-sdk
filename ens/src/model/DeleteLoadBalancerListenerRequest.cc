@@ -34,6 +34,15 @@ void DeleteLoadBalancerListenerRequest::setListenerPort(int listenerPort) {
   setParameter(std::string("ListenerPort"), std::to_string(listenerPort));
 }
 
+std::string DeleteLoadBalancerListenerRequest::getListenerProtocol() const {
+  return listenerProtocol_;
+}
+
+void DeleteLoadBalancerListenerRequest::setListenerProtocol(const std::string &listenerProtocol) {
+  listenerProtocol_ = listenerProtocol;
+  setParameter(std::string("ListenerProtocol"), listenerProtocol);
+}
+
 std::string DeleteLoadBalancerListenerRequest::getLoadBalancerId() const {
   return loadBalancerId_;
 }

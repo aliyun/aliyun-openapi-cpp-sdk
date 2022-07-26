@@ -159,72 +159,36 @@ EnsClient::AddNetworkInterfaceToInstanceOutcomeCallable EnsClient::addNetworkInt
 	return task->get_future();
 }
 
-EnsClient::AllocateEipAddressOutcome EnsClient::allocateEipAddress(const AllocateEipAddressRequest &request) const
+EnsClient::AssignPrivateIpAddressesOutcome EnsClient::assignPrivateIpAddresses(const AssignPrivateIpAddressesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return AllocateEipAddressOutcome(endpointOutcome.error());
+		return AssignPrivateIpAddressesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return AllocateEipAddressOutcome(AllocateEipAddressResult(outcome.result()));
+		return AssignPrivateIpAddressesOutcome(AssignPrivateIpAddressesResult(outcome.result()));
 	else
-		return AllocateEipAddressOutcome(outcome.error());
+		return AssignPrivateIpAddressesOutcome(outcome.error());
 }
 
-void EnsClient::allocateEipAddressAsync(const AllocateEipAddressRequest& request, const AllocateEipAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EnsClient::assignPrivateIpAddressesAsync(const AssignPrivateIpAddressesRequest& request, const AssignPrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, allocateEipAddress(request), context);
+		handler(this, request, assignPrivateIpAddresses(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EnsClient::AllocateEipAddressOutcomeCallable EnsClient::allocateEipAddressCallable(const AllocateEipAddressRequest &request) const
+EnsClient::AssignPrivateIpAddressesOutcomeCallable EnsClient::assignPrivateIpAddressesCallable(const AssignPrivateIpAddressesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<AllocateEipAddressOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AssignPrivateIpAddressesOutcome()>>(
 			[this, request]()
 			{
-			return this->allocateEipAddress(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EnsClient::AssociateEipAddressOutcome EnsClient::associateEipAddress(const AssociateEipAddressRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AssociateEipAddressOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AssociateEipAddressOutcome(AssociateEipAddressResult(outcome.result()));
-	else
-		return AssociateEipAddressOutcome(outcome.error());
-}
-
-void EnsClient::associateEipAddressAsync(const AssociateEipAddressRequest& request, const AssociateEipAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, associateEipAddress(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::AssociateEipAddressOutcomeCallable EnsClient::associateEipAddressCallable(const AssociateEipAddressRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AssociateEipAddressOutcome()>>(
-			[this, request]()
-			{
-			return this->associateEipAddress(request);
+			return this->assignPrivateIpAddresses(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -411,72 +375,36 @@ EnsClient::AuthorizeSecurityGroupEgressOutcomeCallable EnsClient::authorizeSecur
 	return task->get_future();
 }
 
-EnsClient::CheckQuotaOutcome EnsClient::checkQuota(const CheckQuotaRequest &request) const
+EnsClient::CreateARMServerInstancesOutcome EnsClient::createARMServerInstances(const CreateARMServerInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CheckQuotaOutcome(endpointOutcome.error());
+		return CreateARMServerInstancesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CheckQuotaOutcome(CheckQuotaResult(outcome.result()));
+		return CreateARMServerInstancesOutcome(CreateARMServerInstancesResult(outcome.result()));
 	else
-		return CheckQuotaOutcome(outcome.error());
+		return CreateARMServerInstancesOutcome(outcome.error());
 }
 
-void EnsClient::checkQuotaAsync(const CheckQuotaRequest& request, const CheckQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EnsClient::createARMServerInstancesAsync(const CreateARMServerInstancesRequest& request, const CreateARMServerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, checkQuota(request), context);
+		handler(this, request, createARMServerInstances(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EnsClient::CheckQuotaOutcomeCallable EnsClient::checkQuotaCallable(const CheckQuotaRequest &request) const
+EnsClient::CreateARMServerInstancesOutcomeCallable EnsClient::createARMServerInstancesCallable(const CreateARMServerInstancesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CheckQuotaOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateARMServerInstancesOutcome()>>(
 			[this, request]()
 			{
-			return this->checkQuota(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EnsClient::ConfigureSecurityGroupPermissionsOutcome EnsClient::configureSecurityGroupPermissions(const ConfigureSecurityGroupPermissionsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ConfigureSecurityGroupPermissionsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ConfigureSecurityGroupPermissionsOutcome(ConfigureSecurityGroupPermissionsResult(outcome.result()));
-	else
-		return ConfigureSecurityGroupPermissionsOutcome(outcome.error());
-}
-
-void EnsClient::configureSecurityGroupPermissionsAsync(const ConfigureSecurityGroupPermissionsRequest& request, const ConfigureSecurityGroupPermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, configureSecurityGroupPermissions(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::ConfigureSecurityGroupPermissionsOutcomeCallable EnsClient::configureSecurityGroupPermissionsCallable(const ConfigureSecurityGroupPermissionsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ConfigureSecurityGroupPermissionsOutcome()>>(
-			[this, request]()
-			{
-			return this->configureSecurityGroupPermissions(request);
+			return this->createARMServerInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -519,6 +447,42 @@ EnsClient::CreateApplicationOutcomeCallable EnsClient::createApplicationCallable
 	return task->get_future();
 }
 
+EnsClient::CreateClassicNetworkOutcome EnsClient::createClassicNetwork(const CreateClassicNetworkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateClassicNetworkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateClassicNetworkOutcome(CreateClassicNetworkResult(outcome.result()));
+	else
+		return CreateClassicNetworkOutcome(outcome.error());
+}
+
+void EnsClient::createClassicNetworkAsync(const CreateClassicNetworkRequest& request, const CreateClassicNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createClassicNetwork(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateClassicNetworkOutcomeCallable EnsClient::createClassicNetworkCallable(const CreateClassicNetworkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateClassicNetworkOutcome()>>(
+			[this, request]()
+			{
+			return this->createClassicNetwork(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::CreateDiskOutcome EnsClient::createDisk(const CreateDiskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,78 +513,6 @@ EnsClient::CreateDiskOutcomeCallable EnsClient::createDiskCallable(const CreateD
 			[this, request]()
 			{
 			return this->createDisk(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EnsClient::CreateDiskBuyOrderOutcome EnsClient::createDiskBuyOrder(const CreateDiskBuyOrderRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDiskBuyOrderOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDiskBuyOrderOutcome(CreateDiskBuyOrderResult(outcome.result()));
-	else
-		return CreateDiskBuyOrderOutcome(outcome.error());
-}
-
-void EnsClient::createDiskBuyOrderAsync(const CreateDiskBuyOrderRequest& request, const CreateDiskBuyOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDiskBuyOrder(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::CreateDiskBuyOrderOutcomeCallable EnsClient::createDiskBuyOrderCallable(const CreateDiskBuyOrderRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDiskBuyOrderOutcome()>>(
-			[this, request]()
-			{
-			return this->createDiskBuyOrder(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EnsClient::CreateEPInstanceOutcome EnsClient::createEPInstance(const CreateEPInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateEPInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateEPInstanceOutcome(CreateEPInstanceResult(outcome.result()));
-	else
-		return CreateEPInstanceOutcome(outcome.error());
-}
-
-void EnsClient::createEPInstanceAsync(const CreateEPInstanceRequest& request, const CreateEPInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createEPInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::CreateEPInstanceOutcomeCallable EnsClient::createEPInstanceCallable(const CreateEPInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateEPInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->createEPInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -663,36 +555,36 @@ EnsClient::CreateEipInstanceOutcomeCallable EnsClient::createEipInstanceCallable
 	return task->get_future();
 }
 
-EnsClient::CreateElbBuyOrderOutcome EnsClient::createElbBuyOrder(const CreateElbBuyOrderRequest &request) const
+EnsClient::CreateEnsRouteEntryOutcome EnsClient::createEnsRouteEntry(const CreateEnsRouteEntryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateElbBuyOrderOutcome(endpointOutcome.error());
+		return CreateEnsRouteEntryOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateElbBuyOrderOutcome(CreateElbBuyOrderResult(outcome.result()));
+		return CreateEnsRouteEntryOutcome(CreateEnsRouteEntryResult(outcome.result()));
 	else
-		return CreateElbBuyOrderOutcome(outcome.error());
+		return CreateEnsRouteEntryOutcome(outcome.error());
 }
 
-void EnsClient::createElbBuyOrderAsync(const CreateElbBuyOrderRequest& request, const CreateElbBuyOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EnsClient::createEnsRouteEntryAsync(const CreateEnsRouteEntryRequest& request, const CreateEnsRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createElbBuyOrder(request), context);
+		handler(this, request, createEnsRouteEntry(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EnsClient::CreateElbBuyOrderOutcomeCallable EnsClient::createElbBuyOrderCallable(const CreateElbBuyOrderRequest &request) const
+EnsClient::CreateEnsRouteEntryOutcomeCallable EnsClient::createEnsRouteEntryCallable(const CreateEnsRouteEntryRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateElbBuyOrderOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateEnsRouteEntryOutcome()>>(
 			[this, request]()
 			{
-			return this->createElbBuyOrder(request);
+			return this->createEnsRouteEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -765,6 +657,42 @@ EnsClient::CreateEpnInstanceOutcomeCallable EnsClient::createEpnInstanceCallable
 			[this, request]()
 			{
 			return this->createEpnInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::CreateForwardEntryOutcome EnsClient::createForwardEntry(const CreateForwardEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateForwardEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateForwardEntryOutcome(CreateForwardEntryResult(outcome.result()));
+	else
+		return CreateForwardEntryOutcome(outcome.error());
+}
+
+void EnsClient::createForwardEntryAsync(const CreateForwardEntryRequest& request, const CreateForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createForwardEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateForwardEntryOutcomeCallable EnsClient::createForwardEntryCallable(const CreateForwardEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateForwardEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->createForwardEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1059,6 +987,42 @@ EnsClient::CreateLoadBalancerUDPListenerOutcomeCallable EnsClient::createLoadBal
 	return task->get_future();
 }
 
+EnsClient::CreateNatGatewayOutcome EnsClient::createNatGateway(const CreateNatGatewayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateNatGatewayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateNatGatewayOutcome(CreateNatGatewayResult(outcome.result()));
+	else
+		return CreateNatGatewayOutcome(outcome.error());
+}
+
+void EnsClient::createNatGatewayAsync(const CreateNatGatewayRequest& request, const CreateNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createNatGateway(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateNatGatewayOutcomeCallable EnsClient::createNatGatewayCallable(const CreateNatGatewayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateNatGatewayOutcome()>>(
+			[this, request]()
+			{
+			return this->createNatGateway(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::CreateNetworkOutcome EnsClient::createNetwork(const CreateNetworkRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1131,6 +1095,42 @@ EnsClient::CreateSecurityGroupOutcomeCallable EnsClient::createSecurityGroupCall
 	return task->get_future();
 }
 
+EnsClient::CreateSnatEntryOutcome EnsClient::createSnatEntry(const CreateSnatEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSnatEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSnatEntryOutcome(CreateSnatEntryResult(outcome.result()));
+	else
+		return CreateSnatEntryOutcome(outcome.error());
+}
+
+void EnsClient::createSnatEntryAsync(const CreateSnatEntryRequest& request, const CreateSnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSnatEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateSnatEntryOutcomeCallable EnsClient::createSnatEntryCallable(const CreateSnatEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSnatEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->createSnatEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::CreateVSwitchOutcome EnsClient::createVSwitch(const CreateVSwitchRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1161,42 +1161,6 @@ EnsClient::CreateVSwitchOutcomeCallable EnsClient::createVSwitchCallable(const C
 			[this, request]()
 			{
 			return this->createVSwitch(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EnsClient::CreateVmAndSaveStockOutcome EnsClient::createVmAndSaveStock(const CreateVmAndSaveStockRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateVmAndSaveStockOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateVmAndSaveStockOutcome(CreateVmAndSaveStockResult(outcome.result()));
-	else
-		return CreateVmAndSaveStockOutcome(outcome.error());
-}
-
-void EnsClient::createVmAndSaveStockAsync(const CreateVmAndSaveStockRequest& request, const CreateVmAndSaveStockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createVmAndSaveStock(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::CreateVmAndSaveStockOutcomeCallable EnsClient::createVmAndSaveStockCallable(const CreateVmAndSaveStockRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateVmAndSaveStockOutcome()>>(
-			[this, request]()
-			{
-			return this->createVmAndSaveStock(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1275,6 +1239,42 @@ EnsClient::DeleteDeviceInternetPortOutcomeCallable EnsClient::deleteDeviceIntern
 	return task->get_future();
 }
 
+EnsClient::DeleteEnsRouteEntryOutcome EnsClient::deleteEnsRouteEntry(const DeleteEnsRouteEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteEnsRouteEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteEnsRouteEntryOutcome(DeleteEnsRouteEntryResult(outcome.result()));
+	else
+		return DeleteEnsRouteEntryOutcome(outcome.error());
+}
+
+void EnsClient::deleteEnsRouteEntryAsync(const DeleteEnsRouteEntryRequest& request, const DeleteEnsRouteEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteEnsRouteEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteEnsRouteEntryOutcomeCallable EnsClient::deleteEnsRouteEntryCallable(const DeleteEnsRouteEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteEnsRouteEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteEnsRouteEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DeleteEpnInstanceOutcome EnsClient::deleteEpnInstance(const DeleteEpnInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1305,6 +1305,78 @@ EnsClient::DeleteEpnInstanceOutcomeCallable EnsClient::deleteEpnInstanceCallable
 			[this, request]()
 			{
 			return this->deleteEpnInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeleteForwardEntryOutcome EnsClient::deleteForwardEntry(const DeleteForwardEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteForwardEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteForwardEntryOutcome(DeleteForwardEntryResult(outcome.result()));
+	else
+		return DeleteForwardEntryOutcome(outcome.error());
+}
+
+void EnsClient::deleteForwardEntryAsync(const DeleteForwardEntryRequest& request, const DeleteForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteForwardEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteForwardEntryOutcomeCallable EnsClient::deleteForwardEntryCallable(const DeleteForwardEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteForwardEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteForwardEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeleteImageOutcome EnsClient::deleteImage(const DeleteImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteImageOutcome(DeleteImageResult(outcome.result()));
+	else
+		return DeleteImageOutcome(outcome.error());
+}
+
+void EnsClient::deleteImageAsync(const DeleteImageRequest& request, const DeleteImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteImageOutcomeCallable EnsClient::deleteImageCallable(const DeleteImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteImageOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteImage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1383,6 +1455,42 @@ EnsClient::DeleteLoadBalancerListenerOutcomeCallable EnsClient::deleteLoadBalanc
 	return task->get_future();
 }
 
+EnsClient::DeleteNatGatewayOutcome EnsClient::deleteNatGateway(const DeleteNatGatewayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNatGatewayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNatGatewayOutcome(DeleteNatGatewayResult(outcome.result()));
+	else
+		return DeleteNatGatewayOutcome(outcome.error());
+}
+
+void EnsClient::deleteNatGatewayAsync(const DeleteNatGatewayRequest& request, const DeleteNatGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNatGateway(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteNatGatewayOutcomeCallable EnsClient::deleteNatGatewayCallable(const DeleteNatGatewayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNatGatewayOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNatGateway(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DeleteNetworkOutcome EnsClient::deleteNetwork(const DeleteNetworkRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1455,6 +1563,42 @@ EnsClient::DeleteSecurityGroupOutcomeCallable EnsClient::deleteSecurityGroupCall
 	return task->get_future();
 }
 
+EnsClient::DeleteSnatEntryOutcome EnsClient::deleteSnatEntry(const DeleteSnatEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSnatEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSnatEntryOutcome(DeleteSnatEntryResult(outcome.result()));
+	else
+		return DeleteSnatEntryOutcome(outcome.error());
+}
+
+void EnsClient::deleteSnatEntryAsync(const DeleteSnatEntryRequest& request, const DeleteSnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSnatEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteSnatEntryOutcomeCallable EnsClient::deleteSnatEntryCallable(const DeleteSnatEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSnatEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSnatEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DeleteVSwitchOutcome EnsClient::deleteVSwitch(const DeleteVSwitchRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1491,36 +1635,36 @@ EnsClient::DeleteVSwitchOutcomeCallable EnsClient::deleteVSwitchCallable(const D
 	return task->get_future();
 }
 
-EnsClient::DeleteVmOutcome EnsClient::deleteVm(const DeleteVmRequest &request) const
+EnsClient::DescribeARMServerInstancesOutcome EnsClient::describeARMServerInstances(const DescribeARMServerInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteVmOutcome(endpointOutcome.error());
+		return DescribeARMServerInstancesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteVmOutcome(DeleteVmResult(outcome.result()));
+		return DescribeARMServerInstancesOutcome(DescribeARMServerInstancesResult(outcome.result()));
 	else
-		return DeleteVmOutcome(outcome.error());
+		return DescribeARMServerInstancesOutcome(outcome.error());
 }
 
-void EnsClient::deleteVmAsync(const DeleteVmRequest& request, const DeleteVmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EnsClient::describeARMServerInstancesAsync(const DescribeARMServerInstancesRequest& request, const DescribeARMServerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteVm(request), context);
+		handler(this, request, describeARMServerInstances(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EnsClient::DeleteVmOutcomeCallable EnsClient::deleteVmCallable(const DeleteVmRequest &request) const
+EnsClient::DescribeARMServerInstancesOutcomeCallable EnsClient::describeARMServerInstancesCallable(const DescribeARMServerInstancesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteVmOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeARMServerInstancesOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteVm(request);
+			return this->describeARMServerInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2391,6 +2535,42 @@ EnsClient::DescribeEnsResourceUsageOutcomeCallable EnsClient::describeEnsResourc
 	return task->get_future();
 }
 
+EnsClient::DescribeEnsRouteEntryListOutcome EnsClient::describeEnsRouteEntryList(const DescribeEnsRouteEntryListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEnsRouteEntryListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEnsRouteEntryListOutcome(DescribeEnsRouteEntryListResult(outcome.result()));
+	else
+		return DescribeEnsRouteEntryListOutcome(outcome.error());
+}
+
+void EnsClient::describeEnsRouteEntryListAsync(const DescribeEnsRouteEntryListRequest& request, const DescribeEnsRouteEntryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEnsRouteEntryList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeEnsRouteEntryListOutcomeCallable EnsClient::describeEnsRouteEntryListCallable(const DescribeEnsRouteEntryListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEnsRouteEntryListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEnsRouteEntryList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeEpnBandWidthDataOutcome EnsClient::describeEpnBandWidthData(const DescribeEpnBandWidthDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2637,6 +2817,42 @@ EnsClient::DescribeExportImageStatusOutcomeCallable EnsClient::describeExportIma
 			[this, request]()
 			{
 			return this->describeExportImageStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeForwardTableEntriesOutcome EnsClient::describeForwardTableEntries(const DescribeForwardTableEntriesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeForwardTableEntriesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeForwardTableEntriesOutcome(DescribeForwardTableEntriesResult(outcome.result()));
+	else
+		return DescribeForwardTableEntriesOutcome(outcome.error());
+}
+
+void EnsClient::describeForwardTableEntriesAsync(const DescribeForwardTableEntriesRequest& request, const DescribeForwardTableEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeForwardTableEntries(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeForwardTableEntriesOutcomeCallable EnsClient::describeForwardTableEntriesCallable(const DescribeForwardTableEntriesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeForwardTableEntriesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeForwardTableEntries(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3291,6 +3507,42 @@ EnsClient::DescribeMeasurementDataOutcomeCallable EnsClient::describeMeasurement
 	return task->get_future();
 }
 
+EnsClient::DescribeNatGatewaysOutcome EnsClient::describeNatGateways(const DescribeNatGatewaysRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNatGatewaysOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNatGatewaysOutcome(DescribeNatGatewaysResult(outcome.result()));
+	else
+		return DescribeNatGatewaysOutcome(outcome.error());
+}
+
+void EnsClient::describeNatGatewaysAsync(const DescribeNatGatewaysRequest& request, const DescribeNatGatewaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNatGateways(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeNatGatewaysOutcomeCallable EnsClient::describeNatGatewaysCallable(const DescribeNatGatewaysRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNatGatewaysOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNatGateways(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeNetworkAttributeOutcome EnsClient::describeNetworkAttribute(const DescribeNetworkAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3651,6 +3903,42 @@ EnsClient::DescribeServcieScheduleOutcomeCallable EnsClient::describeServcieSche
 	return task->get_future();
 }
 
+EnsClient::DescribeSnatTableEntriesOutcome EnsClient::describeSnatTableEntries(const DescribeSnatTableEntriesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSnatTableEntriesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSnatTableEntriesOutcome(DescribeSnatTableEntriesResult(outcome.result()));
+	else
+		return DescribeSnatTableEntriesOutcome(outcome.error());
+}
+
+void EnsClient::describeSnatTableEntriesAsync(const DescribeSnatTableEntriesRequest& request, const DescribeSnatTableEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSnatTableEntries(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeSnatTableEntriesOutcomeCallable EnsClient::describeSnatTableEntriesCallable(const DescribeSnatTableEntriesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSnatTableEntriesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSnatTableEntries(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeUserBandWidthDataOutcome EnsClient::describeUserBandWidthData(const DescribeUserBandWidthDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3939,42 +4227,6 @@ EnsClient::GetDeviceInternetPortOutcomeCallable EnsClient::getDeviceInternetPort
 	return task->get_future();
 }
 
-EnsClient::GetVmListOutcome EnsClient::getVmList(const GetVmListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetVmListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetVmListOutcome(GetVmListResult(outcome.result()));
-	else
-		return GetVmListOutcome(outcome.error());
-}
-
-void EnsClient::getVmListAsync(const GetVmListRequest& request, const GetVmListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getVmList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::GetVmListOutcomeCallable EnsClient::getVmListCallable(const GetVmListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetVmListOutcome()>>(
-			[this, request]()
-			{
-			return this->getVmList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EnsClient::ImportKeyPairOutcome EnsClient::importKeyPair(const ImportKeyPairRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4191,42 +4443,6 @@ EnsClient::ListApplicationsOutcomeCallable EnsClient::listApplicationsCallable(c
 	return task->get_future();
 }
 
-EnsClient::MigrateVmOutcome EnsClient::migrateVm(const MigrateVmRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return MigrateVmOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return MigrateVmOutcome(MigrateVmResult(outcome.result()));
-	else
-		return MigrateVmOutcome(outcome.error());
-}
-
-void EnsClient::migrateVmAsync(const MigrateVmRequest& request, const MigrateVmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, migrateVm(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::MigrateVmOutcomeCallable EnsClient::migrateVmCallable(const MigrateVmRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<MigrateVmOutcome()>>(
-			[this, request]()
-			{
-			return this->migrateVm(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EnsClient::ModifyEnsEipAddressAttributeOutcome EnsClient::modifyEnsEipAddressAttribute(const ModifyEnsEipAddressAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4293,6 +4509,42 @@ EnsClient::ModifyEpnInstanceOutcomeCallable EnsClient::modifyEpnInstanceCallable
 			[this, request]()
 			{
 			return this->modifyEpnInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::ModifyForwardEntryOutcome EnsClient::modifyForwardEntry(const ModifyForwardEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyForwardEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyForwardEntryOutcome(ModifyForwardEntryResult(outcome.result()));
+	else
+		return ModifyForwardEntryOutcome(outcome.error());
+}
+
+void EnsClient::modifyForwardEntryAsync(const ModifyForwardEntryRequest& request, const ModifyForwardEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyForwardEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ModifyForwardEntryOutcomeCallable EnsClient::modifyForwardEntryCallable(const ModifyForwardEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyForwardEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyForwardEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4515,6 +4767,42 @@ EnsClient::ModifyNetworkAttributeOutcomeCallable EnsClient::modifyNetworkAttribu
 	return task->get_future();
 }
 
+EnsClient::ModifyPrepayInstanceSpecOutcome EnsClient::modifyPrepayInstanceSpec(const ModifyPrepayInstanceSpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyPrepayInstanceSpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyPrepayInstanceSpecOutcome(ModifyPrepayInstanceSpecResult(outcome.result()));
+	else
+		return ModifyPrepayInstanceSpecOutcome(outcome.error());
+}
+
+void EnsClient::modifyPrepayInstanceSpecAsync(const ModifyPrepayInstanceSpecRequest& request, const ModifyPrepayInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyPrepayInstanceSpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ModifyPrepayInstanceSpecOutcomeCallable EnsClient::modifyPrepayInstanceSpecCallable(const ModifyPrepayInstanceSpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyPrepayInstanceSpecOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyPrepayInstanceSpec(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::ModifySecurityGroupAttributeOutcome EnsClient::modifySecurityGroupAttribute(const ModifySecurityGroupAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4695,6 +4983,78 @@ EnsClient::ReInitDiskOutcomeCallable EnsClient::reInitDiskCallable(const ReInitD
 	return task->get_future();
 }
 
+EnsClient::RebootAICInstanceOutcome EnsClient::rebootAICInstance(const RebootAICInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RebootAICInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RebootAICInstanceOutcome(RebootAICInstanceResult(outcome.result()));
+	else
+		return RebootAICInstanceOutcome(outcome.error());
+}
+
+void EnsClient::rebootAICInstanceAsync(const RebootAICInstanceRequest& request, const RebootAICInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rebootAICInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::RebootAICInstanceOutcomeCallable EnsClient::rebootAICInstanceCallable(const RebootAICInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RebootAICInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->rebootAICInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::RebootARMServerInstanceOutcome EnsClient::rebootARMServerInstance(const RebootARMServerInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RebootARMServerInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RebootARMServerInstanceOutcome(RebootARMServerInstanceResult(outcome.result()));
+	else
+		return RebootARMServerInstanceOutcome(outcome.error());
+}
+
+void EnsClient::rebootARMServerInstanceAsync(const RebootARMServerInstanceRequest& request, const RebootARMServerInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rebootARMServerInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::RebootARMServerInstanceOutcomeCallable EnsClient::rebootARMServerInstanceCallable(const RebootARMServerInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RebootARMServerInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->rebootARMServerInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::RebootInstanceOutcome EnsClient::rebootInstance(const RebootInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4731,36 +5091,36 @@ EnsClient::RebootInstanceOutcomeCallable EnsClient::rebootInstanceCallable(const
 	return task->get_future();
 }
 
-EnsClient::ReleaseEipAddressOutcome EnsClient::releaseEipAddress(const ReleaseEipAddressRequest &request) const
+EnsClient::ReleaseARMServerInstanceOutcome EnsClient::releaseARMServerInstance(const ReleaseARMServerInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ReleaseEipAddressOutcome(endpointOutcome.error());
+		return ReleaseARMServerInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ReleaseEipAddressOutcome(ReleaseEipAddressResult(outcome.result()));
+		return ReleaseARMServerInstanceOutcome(ReleaseARMServerInstanceResult(outcome.result()));
 	else
-		return ReleaseEipAddressOutcome(outcome.error());
+		return ReleaseARMServerInstanceOutcome(outcome.error());
 }
 
-void EnsClient::releaseEipAddressAsync(const ReleaseEipAddressRequest& request, const ReleaseEipAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EnsClient::releaseARMServerInstanceAsync(const ReleaseARMServerInstanceRequest& request, const ReleaseARMServerInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, releaseEipAddress(request), context);
+		handler(this, request, releaseARMServerInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EnsClient::ReleaseEipAddressOutcomeCallable EnsClient::releaseEipAddressCallable(const ReleaseEipAddressRequest &request) const
+EnsClient::ReleaseARMServerInstanceOutcomeCallable EnsClient::releaseARMServerInstanceCallable(const ReleaseARMServerInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ReleaseEipAddressOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ReleaseARMServerInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->releaseEipAddress(request);
+			return this->releaseARMServerInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4983,6 +5343,42 @@ EnsClient::RemoveVSwitchesFromEpnInstanceOutcomeCallable EnsClient::removeVSwitc
 	return task->get_future();
 }
 
+EnsClient::RenewARMServerInstanceOutcome EnsClient::renewARMServerInstance(const RenewARMServerInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RenewARMServerInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RenewARMServerInstanceOutcome(RenewARMServerInstanceResult(outcome.result()));
+	else
+		return RenewARMServerInstanceOutcome(outcome.error());
+}
+
+void EnsClient::renewARMServerInstanceAsync(const RenewARMServerInstanceRequest& request, const RenewARMServerInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, renewARMServerInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::RenewARMServerInstanceOutcomeCallable EnsClient::renewARMServerInstanceCallable(const RenewARMServerInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RenewARMServerInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->renewARMServerInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::RenewInstanceOutcome EnsClient::renewInstance(const RenewInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5085,6 +5481,42 @@ EnsClient::RescaleDeviceServiceOutcomeCallable EnsClient::rescaleDeviceServiceCa
 			[this, request]()
 			{
 			return this->rescaleDeviceService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::ResetAICInstanceOutcome EnsClient::resetAICInstance(const ResetAICInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResetAICInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResetAICInstanceOutcome(ResetAICInstanceResult(outcome.result()));
+	else
+		return ResetAICInstanceOutcome(outcome.error());
+}
+
+void EnsClient::resetAICInstanceAsync(const ResetAICInstanceRequest& request, const ResetAICInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resetAICInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ResetAICInstanceOutcomeCallable EnsClient::resetAICInstanceCallable(const ResetAICInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResetAICInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->resetAICInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5337,42 +5769,6 @@ EnsClient::RunServiceScheduleOutcomeCallable EnsClient::runServiceScheduleCallab
 			[this, request]()
 			{
 			return this->runServiceSchedule(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EnsClient::SchedulePodOutcome EnsClient::schedulePod(const SchedulePodRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SchedulePodOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SchedulePodOutcome(SchedulePodResult(outcome.result()));
-	else
-		return SchedulePodOutcome(outcome.error());
-}
-
-void EnsClient::schedulePodAsync(const SchedulePodRequest& request, const SchedulePodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, schedulePod(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::SchedulePodOutcomeCallable EnsClient::schedulePodCallable(const SchedulePodRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SchedulePodOutcome()>>(
-			[this, request]()
-			{
-			return this->schedulePod(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5847,36 +6243,72 @@ EnsClient::UnAssociateEnsEipAddressOutcomeCallable EnsClient::unAssociateEnsEipA
 	return task->get_future();
 }
 
-EnsClient::UnassociateEipAddressOutcome EnsClient::unassociateEipAddress(const UnassociateEipAddressRequest &request) const
+EnsClient::UnassignPrivateIpAddressesOutcome EnsClient::unassignPrivateIpAddresses(const UnassignPrivateIpAddressesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UnassociateEipAddressOutcome(endpointOutcome.error());
+		return UnassignPrivateIpAddressesOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UnassociateEipAddressOutcome(UnassociateEipAddressResult(outcome.result()));
+		return UnassignPrivateIpAddressesOutcome(UnassignPrivateIpAddressesResult(outcome.result()));
 	else
-		return UnassociateEipAddressOutcome(outcome.error());
+		return UnassignPrivateIpAddressesOutcome(outcome.error());
 }
 
-void EnsClient::unassociateEipAddressAsync(const UnassociateEipAddressRequest& request, const UnassociateEipAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void EnsClient::unassignPrivateIpAddressesAsync(const UnassignPrivateIpAddressesRequest& request, const UnassignPrivateIpAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, unassociateEipAddress(request), context);
+		handler(this, request, unassignPrivateIpAddresses(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-EnsClient::UnassociateEipAddressOutcomeCallable EnsClient::unassociateEipAddressCallable(const UnassociateEipAddressRequest &request) const
+EnsClient::UnassignPrivateIpAddressesOutcomeCallable EnsClient::unassignPrivateIpAddressesCallable(const UnassignPrivateIpAddressesRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UnassociateEipAddressOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<UnassignPrivateIpAddressesOutcome()>>(
 			[this, request]()
 			{
-			return this->unassociateEipAddress(request);
+			return this->unassignPrivateIpAddresses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::UpgradeAICInstanceImageOutcome EnsClient::upgradeAICInstanceImage(const UpgradeAICInstanceImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpgradeAICInstanceImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpgradeAICInstanceImageOutcome(UpgradeAICInstanceImageResult(outcome.result()));
+	else
+		return UpgradeAICInstanceImageOutcome(outcome.error());
+}
+
+void EnsClient::upgradeAICInstanceImageAsync(const UpgradeAICInstanceImageRequest& request, const UpgradeAICInstanceImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, upgradeAICInstanceImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::UpgradeAICInstanceImageOutcomeCallable EnsClient::upgradeAICInstanceImageCallable(const UpgradeAICInstanceImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpgradeAICInstanceImageOutcome()>>(
+			[this, request]()
+			{
+			return this->upgradeAICInstanceImage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

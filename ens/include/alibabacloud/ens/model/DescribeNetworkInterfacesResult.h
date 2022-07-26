@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct NetworkInterfaceSet
 				{
+					struct PrivateIpSet
+					{
+						std::string privateIpAddress;
+						bool primary;
+					};
 					std::string status;
 					std::string instanceId;
 					std::string vSwitchId;
@@ -43,6 +48,7 @@ namespace AlibabaCloud
 					std::string ensRegionId;
 					std::string macAddress;
 					std::string networkInterfaceId;
+					std::vector<NetworkInterfaceSet::PrivateIpSet> privateIpSets;
 				};
 
 

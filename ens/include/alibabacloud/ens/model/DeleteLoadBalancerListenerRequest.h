@@ -32,11 +32,14 @@ public:
 	~DeleteLoadBalancerListenerRequest();
 	int getListenerPort() const;
 	void setListenerPort(int listenerPort);
+	std::string getListenerProtocol() const;
+	void setListenerProtocol(const std::string &listenerProtocol);
 	std::string getLoadBalancerId() const;
 	void setLoadBalancerId(const std::string &loadBalancerId);
 
 private:
 	int listenerPort_;
+	std::string listenerProtocol_;
 	std::string loadBalancerId_;
 };
 } // namespace Model

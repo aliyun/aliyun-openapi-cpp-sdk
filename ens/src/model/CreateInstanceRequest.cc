@@ -169,6 +169,15 @@ void CreateInstanceRequest::setUserData(const std::string &userData) {
   setParameter(std::string("UserData"), userData);
 }
 
+bool CreateInstanceRequest::getPasswordInherit() const {
+  return passwordInherit_;
+}
+
+void CreateInstanceRequest::setPasswordInherit(bool passwordInherit) {
+  passwordInherit_ = passwordInherit;
+  setParameter(std::string("PasswordInherit"), passwordInherit ? "true" : "false");
+}
+
 std::string CreateInstanceRequest::getInstanceType() const {
   return instanceType_;
 }

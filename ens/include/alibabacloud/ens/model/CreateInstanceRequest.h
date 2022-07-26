@@ -62,6 +62,8 @@ public:
 	void setImageId(const std::string &imageId);
 	std::string getUserData() const;
 	void setUserData(const std::string &userData);
+	bool getPasswordInherit() const;
+	void setPasswordInherit(bool passwordInherit);
 	std::string getInstanceType() const;
 	void setInstanceType(const std::string &instanceType);
 	std::string getDataDisk1Size() const;
@@ -92,6 +94,7 @@ private:
 	std::string internetChargeType_;
 	std::string imageId_;
 	std::string userData_;
+	bool passwordInherit_;
 	std::string instanceType_;
 	std::string dataDisk1Size_;
 	std::string quantity_;

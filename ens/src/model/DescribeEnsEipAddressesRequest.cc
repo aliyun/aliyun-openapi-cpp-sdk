@@ -34,6 +34,15 @@ void DescribeEnsEipAddressesRequest::setEipAddress(const std::string &eipAddress
   setParameter(std::string("EipAddress"), eipAddress);
 }
 
+std::string DescribeEnsEipAddressesRequest::getEnsRegionId() const {
+  return ensRegionId_;
+}
+
+void DescribeEnsEipAddressesRequest::setEnsRegionId(const std::string &ensRegionId) {
+  ensRegionId_ = ensRegionId;
+  setParameter(std::string("EnsRegionId"), ensRegionId);
+}
+
 std::string DescribeEnsEipAddressesRequest::getStatus() const {
   return status_;
 }

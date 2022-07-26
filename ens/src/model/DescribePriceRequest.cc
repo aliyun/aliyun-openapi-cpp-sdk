@@ -25,6 +25,18 @@ DescribePriceRequest::DescribePriceRequest()
 
 DescribePriceRequest::~DescribePriceRequest() {}
 
+std::vector<DescribePriceRequest::DataDisks> DescribePriceRequest::getDataDisks() const {
+  return dataDisks_;
+}
+
+void DescribePriceRequest::setDataDisks(const std::vector<DescribePriceRequest::DataDisks> &dataDisks) {
+  dataDisks_ = dataDisks;
+  for(int dep1 = 0; dep1 != dataDisks.size(); dep1++) {
+    setParameter(std::string("DataDisks") + "." + std::to_string(dep1 + 1) + ".Size", std::to_string(dataDisks[dep1].size));
+    setParameter(std::string("DataDisks") + "." + std::to_string(dep1 + 1) + ".Category", dataDisks[dep1].category);
+  }
+}
+
 std::string DescribePriceRequest::getEnsRegionId() const {
   return ensRegionId_;
 }
@@ -41,6 +53,15 @@ int DescribePriceRequest::getPeriod() const {
 void DescribePriceRequest::setPeriod(int period) {
   period_ = period;
   setParameter(std::string("Period"), std::to_string(period));
+}
+
+std::string DescribePriceRequest::getPeriodUnit() const {
+  return periodUnit_;
+}
+
+void DescribePriceRequest::setPeriodUnit(const std::string &periodUnit) {
+  periodUnit_ = periodUnit;
+  setParameter(std::string("PeriodUnit"), periodUnit);
 }
 
 std::string DescribePriceRequest::getInternetChargeType() const {

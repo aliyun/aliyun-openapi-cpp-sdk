@@ -30,25 +30,25 @@ class ALIBABACLOUD_ENS_EXPORT DescribeNetworkInterfacesRequest : public RpcServi
 public:
 	DescribeNetworkInterfacesRequest();
 	~DescribeNetworkInterfacesRequest();
+	std::string getPageNumber() const;
+	void setPageNumber(const std::string &pageNumber);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
+	std::string getPageSize() const;
+	void setPageSize(const std::string &pageSize);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
-	std::string getPageNumber() const;
-	void setPageNumber(const std::string &pageNumber);
-	std::string getPageSize() const;
-	void setPageSize(const std::string &pageSize);
 	std::string getPrimaryIpAddress() const;
 	void setPrimaryIpAddress(const std::string &primaryIpAddress);
 
 private:
+	std::string pageNumber_;
 	std::string ensRegionId_;
+	std::string pageSize_;
 	std::string vSwitchId_;
 	std::string instanceId_;
-	std::string pageNumber_;
-	std::string pageSize_;
 	std::string primaryIpAddress_;
 };
 } // namespace Model

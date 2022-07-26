@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string createdTime;
 					std::vector<std::string> vSwitchIds;
 					std::string cidrBlock;
+					std::string routerTableId;
 					std::string ensRegionId;
 					std::string networkId;
 				};

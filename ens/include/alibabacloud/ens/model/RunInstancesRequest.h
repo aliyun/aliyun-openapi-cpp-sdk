@@ -57,10 +57,14 @@ public:
 	void setEnsRegionId(const std::string &ensRegionId);
 	long getPeriod() const;
 	void setPeriod(long period);
+	bool getPublicIpIdentification() const;
+	void setPublicIpIdentification(bool publicIpIdentification);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getPrivateIpAddress() const;
 	void setPrivateIpAddress(const std::string &privateIpAddress);
+	std::string getPeriodUnit() const;
+	void setPeriodUnit(const std::string &periodUnit);
 	std::string getInstanceName() const;
 	void setInstanceName(const std::string &instanceName);
 	bool getAutoRenew() const;
@@ -101,8 +105,10 @@ private:
 	std::string netDistrictCode_;
 	std::string ensRegionId_;
 	long period_;
+	bool publicIpIdentification_;
 	std::string vSwitchId_;
 	std::string privateIpAddress_;
+	std::string periodUnit_;
 	std::string instanceName_;
 	bool autoRenew_;
 	std::string internetChargeType_;

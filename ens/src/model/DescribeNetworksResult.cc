@@ -57,6 +57,8 @@ void DescribeNetworksResult::parse(const std::string &payload)
 			networksObject.description = valueNetworksNetwork["Description"].asString();
 		if(!valueNetworksNetwork["CreatedTime"].isNull())
 			networksObject.createdTime = valueNetworksNetwork["CreatedTime"].asString();
+		if(!valueNetworksNetwork["RouterTableId"].isNull())
+			networksObject.routerTableId = valueNetworksNetwork["RouterTableId"].asString();
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
 			networksObject.vSwitchIds.push_back(value.asString());

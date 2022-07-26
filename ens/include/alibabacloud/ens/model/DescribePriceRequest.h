@@ -28,12 +28,20 @@ namespace Ens {
 namespace Model {
 class ALIBABACLOUD_ENS_EXPORT DescribePriceRequest : public RpcServiceRequest {
 public:
+	struct DataDisks {
+		long size;
+		std::string category;
+	};
 	DescribePriceRequest();
 	~DescribePriceRequest();
+	std::vector<DataDisks> getDataDisks() const;
+	void setDataDisks(const std::vector<DataDisks> &dataDisks);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
 	int getPeriod() const;
 	void setPeriod(int period);
+	std::string getPeriodUnit() const;
+	void setPeriodUnit(const std::string &periodUnit);
 	std::string getInternetChargeType() const;
 	void setInternetChargeType(const std::string &internetChargeType);
 	std::string getInstanceType() const;
@@ -46,8 +54,10 @@ public:
 	void setSystemDiskSize(int systemDiskSize);
 
 private:
+	std::vector<DataDisks> dataDisks_;
 	std::string ensRegionId_;
 	int period_;
+	std::string periodUnit_;
 	std::string internetChargeType_;
 	std::string instanceType_;
 	int dataDisk1Size_;

@@ -32,6 +32,8 @@ public:
 	~DescribeEnsEipAddressesRequest();
 	std::string getEipAddress() const;
 	void setEipAddress(const std::string &eipAddress);
+	std::string getEnsRegionId() const;
+	void setEnsRegionId(const std::string &ensRegionId);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 	std::string getAllocationId() const;
@@ -47,6 +49,7 @@ public:
 
 private:
 	std::string eipAddress_;
+	std::string ensRegionId_;
 	std::string status_;
 	std::string allocationId_;
 	int pageNumber_;

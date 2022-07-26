@@ -66,6 +66,8 @@ void DescribeNetworkAttributeResult::parse(const std::string &payload)
 		description_ = value["Description"].asString();
 	if(!value["CreatedTime"].isNull())
 		createdTime_ = value["CreatedTime"].asString();
+	if(!value["RouterTableId"].isNull())
+		routerTableId_ = value["RouterTableId"].asString();
 
 }
 
@@ -97,6 +99,11 @@ std::vector<std::string> DescribeNetworkAttributeResult::getVSwitchIds()const
 std::string DescribeNetworkAttributeResult::getCidrBlock()const
 {
 	return cidrBlock_;
+}
+
+std::string DescribeNetworkAttributeResult::getRouterTableId()const
+{
+	return routerTableId_;
 }
 
 std::string DescribeNetworkAttributeResult::getEnsRegionId()const
