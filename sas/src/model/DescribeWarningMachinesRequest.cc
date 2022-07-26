@@ -25,6 +25,24 @@ DescribeWarningMachinesRequest::DescribeWarningMachinesRequest()
 
 DescribeWarningMachinesRequest::~DescribeWarningMachinesRequest() {}
 
+std::string DescribeWarningMachinesRequest::getTargetType() const {
+  return targetType_;
+}
+
+void DescribeWarningMachinesRequest::setTargetType(const std::string &targetType) {
+  targetType_ = targetType;
+  setParameter(std::string("TargetType"), targetType);
+}
+
+std::string DescribeWarningMachinesRequest::getContainerFieldName() const {
+  return containerFieldName_;
+}
+
+void DescribeWarningMachinesRequest::setContainerFieldName(const std::string &containerFieldName) {
+  containerFieldName_ = containerFieldName;
+  setParameter(std::string("ContainerFieldName"), containerFieldName);
+}
+
 std::string DescribeWarningMachinesRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -32,6 +50,15 @@ std::string DescribeWarningMachinesRequest::getSourceIp() const {
 void DescribeWarningMachinesRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string DescribeWarningMachinesRequest::getContainerFieldValue() const {
+  return containerFieldValue_;
+}
+
+void DescribeWarningMachinesRequest::setContainerFieldValue(const std::string &containerFieldValue) {
+  containerFieldValue_ = containerFieldValue;
+  setParameter(std::string("ContainerFieldValue"), containerFieldValue);
 }
 
 int DescribeWarningMachinesRequest::getPageSize() const {
@@ -68,6 +95,15 @@ int DescribeWarningMachinesRequest::getCurrentPage() const {
 void DescribeWarningMachinesRequest::setCurrentPage(int currentPage) {
   currentPage_ = currentPage;
   setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string DescribeWarningMachinesRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void DescribeWarningMachinesRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 long DescribeWarningMachinesRequest::getRiskId() const {

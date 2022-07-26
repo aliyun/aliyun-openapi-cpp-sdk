@@ -30,8 +30,14 @@ class ALIBABACLOUD_SAS_EXPORT DescribeWarningMachinesRequest : public RpcService
 public:
 	DescribeWarningMachinesRequest();
 	~DescribeWarningMachinesRequest();
+	std::string getTargetType() const;
+	void setTargetType(const std::string &targetType);
+	std::string getContainerFieldName() const;
+	void setContainerFieldName(const std::string &containerFieldName);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getContainerFieldValue() const;
+	void setContainerFieldValue(const std::string &containerFieldValue);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getMachineName() const;
@@ -40,6 +46,8 @@ public:
 	void setLang(const std::string &lang);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 	long getRiskId() const;
 	void setRiskId(long riskId);
 	long getStrategyId() const;
@@ -48,11 +56,15 @@ public:
 	void setUuids(const std::string &uuids);
 
 private:
+	std::string targetType_;
+	std::string containerFieldName_;
 	std::string sourceIp_;
+	std::string containerFieldValue_;
 	int pageSize_;
 	std::string machineName_;
 	std::string lang_;
 	int currentPage_;
+	std::string clusterId_;
 	long riskId_;
 	long strategyId_;
 	std::string uuids_;
