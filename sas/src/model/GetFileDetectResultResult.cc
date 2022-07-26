@@ -51,9 +51,8 @@ void GetFileDetectResultResult::parse(const std::string &payload)
 			resultListObject.score = std::stoi(valueResultListResult["Score"].asString());
 		if(!valueResultListResult["VirusType"].isNull())
 			resultListObject.virusType = valueResultListResult["VirusType"].asString();
-		auto extNode = value["Ext"];
-		if(!extNode["VirusName"].isNull())
-			resultListObject.ext.virusName = extNode["VirusName"].asString();
+		if(!valueResultListResult["Ext"].isNull())
+			resultListObject.ext = valueResultListResult["Ext"].asString();
 		resultList_.push_back(resultListObject);
 	}
 

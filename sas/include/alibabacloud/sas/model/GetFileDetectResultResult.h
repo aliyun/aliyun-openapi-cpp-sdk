@@ -34,11 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Result
 				{
-					struct Ext
-					{
-						std::string virusName;
-					};
-					Ext ext;
+					std::string ext;
 					int score;
 					std::string virusType;
 					std::string hashKey;
