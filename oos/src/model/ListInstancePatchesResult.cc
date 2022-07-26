@@ -43,24 +43,24 @@ void ListInstancePatchesResult::parse(const std::string &payload)
 	for (auto valuePatchesPatch : allPatchesNode)
 	{
 		Patch patchesObject;
-		if(!valuePatchesPatch["Classification"].isNull())
-			patchesObject.classification = valuePatchesPatch["Classification"].asString();
-		if(!valuePatchesPatch["InstalledTime"].isNull())
-			patchesObject.installedTime = valuePatchesPatch["InstalledTime"].asString();
-		if(!valuePatchesPatch["KBId"].isNull())
-			patchesObject.kBId = valuePatchesPatch["KBId"].asString();
 		if(!valuePatchesPatch["Severity"].isNull())
 			patchesObject.severity = valuePatchesPatch["Severity"].asString();
 		if(!valuePatchesPatch["Status"].isNull())
 			patchesObject.status = valuePatchesPatch["Status"].asString();
+		if(!valuePatchesPatch["InstalledTime"].isNull())
+			patchesObject.installedTime = valuePatchesPatch["InstalledTime"].asString();
+		if(!valuePatchesPatch["KBId"].isNull())
+			patchesObject.kBId = valuePatchesPatch["KBId"].asString();
 		if(!valuePatchesPatch["Title"].isNull())
 			patchesObject.title = valuePatchesPatch["Title"].asString();
+		if(!valuePatchesPatch["Classification"].isNull())
+			patchesObject.classification = valuePatchesPatch["Classification"].asString();
 		patches_.push_back(patchesObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

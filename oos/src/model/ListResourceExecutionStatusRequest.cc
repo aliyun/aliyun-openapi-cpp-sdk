@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Oos::Model::ListResourceExecutionStatusRequest;
 
-ListResourceExecutionStatusRequest::ListResourceExecutionStatusRequest() :
-	RpcServiceRequest("oos", "2019-06-01", "ListResourceExecutionStatus")
-{
-	setMethod(HttpRequest::Method::Post);
+ListResourceExecutionStatusRequest::ListResourceExecutionStatusRequest()
+    : RpcServiceRequest("oos", "2019-06-01", "ListResourceExecutionStatus") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListResourceExecutionStatusRequest::~ListResourceExecutionStatusRequest()
-{}
+ListResourceExecutionStatusRequest::~ListResourceExecutionStatusRequest() {}
 
-std::string ListResourceExecutionStatusRequest::getExecutionId()const
-{
-	return executionId_;
+std::string ListResourceExecutionStatusRequest::getExecutionId() const {
+  return executionId_;
 }
 
-void ListResourceExecutionStatusRequest::setExecutionId(const std::string& executionId)
-{
-	executionId_ = executionId;
-	setParameter("ExecutionId", executionId);
+void ListResourceExecutionStatusRequest::setExecutionId(const std::string &executionId) {
+  executionId_ = executionId;
+  setParameter(std::string("ExecutionId"), executionId);
 }
 
-std::string ListResourceExecutionStatusRequest::getRegionId()const
-{
-	return regionId_;
+std::string ListResourceExecutionStatusRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ListResourceExecutionStatusRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ListResourceExecutionStatusRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ListResourceExecutionStatusRequest::getNextToken()const
-{
-	return nextToken_;
+std::string ListResourceExecutionStatusRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void ListResourceExecutionStatusRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+void ListResourceExecutionStatusRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-int ListResourceExecutionStatusRequest::getMaxResults()const
-{
-	return maxResults_;
+int ListResourceExecutionStatusRequest::getMaxResults() const {
+  return maxResults_;
 }
 
-void ListResourceExecutionStatusRequest::setMaxResults(int maxResults)
-{
-	maxResults_ = maxResults;
-	setParameter("MaxResults", std::to_string(maxResults));
+void ListResourceExecutionStatusRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

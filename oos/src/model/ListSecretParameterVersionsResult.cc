@@ -43,34 +43,34 @@ void ListSecretParameterVersionsResult::parse(const std::string &payload)
 	for (auto valueParameterVersionsParameterVersion : allParameterVersionsNode)
 	{
 		ParameterVersion parameterVersionsObject;
-		if(!valueParameterVersionsParameterVersion["UpdatedDate"].isNull())
-			parameterVersionsObject.updatedDate = valueParameterVersionsParameterVersion["UpdatedDate"].asString();
-		if(!valueParameterVersionsParameterVersion["UpdatedBy"].isNull())
-			parameterVersionsObject.updatedBy = valueParameterVersionsParameterVersion["UpdatedBy"].asString();
 		if(!valueParameterVersionsParameterVersion["ParameterVersion"].isNull())
 			parameterVersionsObject.parameterVersion = std::stoi(valueParameterVersionsParameterVersion["ParameterVersion"].asString());
 		if(!valueParameterVersionsParameterVersion["Value"].isNull())
 			parameterVersionsObject.value = valueParameterVersionsParameterVersion["Value"].asString();
+		if(!valueParameterVersionsParameterVersion["UpdatedDate"].isNull())
+			parameterVersionsObject.updatedDate = valueParameterVersionsParameterVersion["UpdatedDate"].asString();
+		if(!valueParameterVersionsParameterVersion["UpdatedBy"].isNull())
+			parameterVersionsObject.updatedBy = valueParameterVersionsParameterVersion["UpdatedBy"].asString();
 		parameterVersions_.push_back(parameterVersionsObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
-	if(!value["NextToken"].isNull())
-		nextToken_ = value["NextToken"].asString();
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["Id"].isNull())
-		id_ = value["Id"].asString();
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
-	if(!value["CreatedDate"].isNull())
-		createdDate_ = value["CreatedDate"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["CreatedBy"].isNull())
 		createdBy_ = value["CreatedBy"].asString();
+	if(!value["CreatedDate"].isNull())
+		createdDate_ = value["CreatedDate"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["Id"].isNull())
+		id_ = value["Id"].asString();
 
 }
 
@@ -79,14 +79,14 @@ std::vector<ListSecretParameterVersionsResult::ParameterVersion> ListSecretParam
 	return parameterVersions_;
 }
 
-int ListSecretParameterVersionsResult::getTotalCount()const
-{
-	return totalCount_;
-}
-
 std::string ListSecretParameterVersionsResult::getType()const
 {
 	return type_;
+}
+
+int ListSecretParameterVersionsResult::getTotalCount()const
+{
+	return totalCount_;
 }
 
 std::string ListSecretParameterVersionsResult::getDescription()const

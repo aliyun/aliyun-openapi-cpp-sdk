@@ -43,32 +43,34 @@ void ListStateConfigurationsResult::parse(const std::string &payload)
 	for (auto valueStateConfigurationsStateConfiguration : allStateConfigurationsNode)
 	{
 		StateConfiguration stateConfigurationsObject;
+		if(!valueStateConfigurationsStateConfiguration["UpdateTime"].isNull())
+			stateConfigurationsObject.updateTime = valueStateConfigurationsStateConfiguration["UpdateTime"].asString();
 		if(!valueStateConfigurationsStateConfiguration["CreateTime"].isNull())
 			stateConfigurationsObject.createTime = valueStateConfigurationsStateConfiguration["CreateTime"].asString();
-		if(!valueStateConfigurationsStateConfiguration["Description"].isNull())
-			stateConfigurationsObject.description = valueStateConfigurationsStateConfiguration["Description"].asString();
+		if(!valueStateConfigurationsStateConfiguration["Targets"].isNull())
+			stateConfigurationsObject.targets = valueStateConfigurationsStateConfiguration["Targets"].asString();
+		if(!valueStateConfigurationsStateConfiguration["Tags"].isNull())
+			stateConfigurationsObject.tags = valueStateConfigurationsStateConfiguration["Tags"].asString();
 		if(!valueStateConfigurationsStateConfiguration["StateConfigurationId"].isNull())
 			stateConfigurationsObject.stateConfigurationId = valueStateConfigurationsStateConfiguration["StateConfigurationId"].asString();
-		if(!valueStateConfigurationsStateConfiguration["TemplateId"].isNull())
-			stateConfigurationsObject.templateId = valueStateConfigurationsStateConfiguration["TemplateId"].asString();
+		if(!valueStateConfigurationsStateConfiguration["ScheduleExpression"].isNull())
+			stateConfigurationsObject.scheduleExpression = valueStateConfigurationsStateConfiguration["ScheduleExpression"].asString();
 		if(!valueStateConfigurationsStateConfiguration["TemplateName"].isNull())
 			stateConfigurationsObject.templateName = valueStateConfigurationsStateConfiguration["TemplateName"].asString();
 		if(!valueStateConfigurationsStateConfiguration["TemplateVersion"].isNull())
 			stateConfigurationsObject.templateVersion = valueStateConfigurationsStateConfiguration["TemplateVersion"].asString();
-		if(!valueStateConfigurationsStateConfiguration["Parameters"].isNull())
-			stateConfigurationsObject.parameters = valueStateConfigurationsStateConfiguration["Parameters"].asString();
 		if(!valueStateConfigurationsStateConfiguration["ConfigureMode"].isNull())
 			stateConfigurationsObject.configureMode = valueStateConfigurationsStateConfiguration["ConfigureMode"].asString();
 		if(!valueStateConfigurationsStateConfiguration["ScheduleType"].isNull())
 			stateConfigurationsObject.scheduleType = valueStateConfigurationsStateConfiguration["ScheduleType"].asString();
-		if(!valueStateConfigurationsStateConfiguration["ScheduleExpression"].isNull())
-			stateConfigurationsObject.scheduleExpression = valueStateConfigurationsStateConfiguration["ScheduleExpression"].asString();
-		if(!valueStateConfigurationsStateConfiguration["Targets"].isNull())
-			stateConfigurationsObject.targets = valueStateConfigurationsStateConfiguration["Targets"].asString();
-		if(!valueStateConfigurationsStateConfiguration["UpdateTime"].isNull())
-			stateConfigurationsObject.updateTime = valueStateConfigurationsStateConfiguration["UpdateTime"].asString();
-		if(!valueStateConfigurationsStateConfiguration["Tags"].isNull())
-			stateConfigurationsObject.tags = valueStateConfigurationsStateConfiguration["Tags"].asString();
+		if(!valueStateConfigurationsStateConfiguration["Parameters"].isNull())
+			stateConfigurationsObject.parameters = valueStateConfigurationsStateConfiguration["Parameters"].asString();
+		if(!valueStateConfigurationsStateConfiguration["Description"].isNull())
+			stateConfigurationsObject.description = valueStateConfigurationsStateConfiguration["Description"].asString();
+		if(!valueStateConfigurationsStateConfiguration["ResourceGroupId"].isNull())
+			stateConfigurationsObject.resourceGroupId = valueStateConfigurationsStateConfiguration["ResourceGroupId"].asString();
+		if(!valueStateConfigurationsStateConfiguration["TemplateId"].isNull())
+			stateConfigurationsObject.templateId = valueStateConfigurationsStateConfiguration["TemplateId"].asString();
 		stateConfigurations_.push_back(stateConfigurationsObject);
 	}
 

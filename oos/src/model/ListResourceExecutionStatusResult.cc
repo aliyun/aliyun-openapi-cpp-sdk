@@ -43,22 +43,22 @@ void ListResourceExecutionStatusResult::parse(const std::string &payload)
 	for (auto valueResourceExecutionStatusStatus : allResourceExecutionStatusNode)
 	{
 		Status resourceExecutionStatusObject;
-		if(!valueResourceExecutionStatusStatus["ResourceId"].isNull())
-			resourceExecutionStatusObject.resourceId = valueResourceExecutionStatusStatus["ResourceId"].asString();
-		if(!valueResourceExecutionStatusStatus["ExecutionTime"].isNull())
-			resourceExecutionStatusObject.executionTime = valueResourceExecutionStatusStatus["ExecutionTime"].asString();
-		if(!valueResourceExecutionStatusStatus["Status"].isNull())
-			resourceExecutionStatusObject.status = valueResourceExecutionStatusStatus["Status"].asString();
 		if(!valueResourceExecutionStatusStatus["Outputs"].isNull())
 			resourceExecutionStatusObject.outputs = valueResourceExecutionStatusStatus["Outputs"].asString();
+		if(!valueResourceExecutionStatusStatus["Status"].isNull())
+			resourceExecutionStatusObject.status = valueResourceExecutionStatusStatus["Status"].asString();
+		if(!valueResourceExecutionStatusStatus["ExecutionTime"].isNull())
+			resourceExecutionStatusObject.executionTime = valueResourceExecutionStatusStatus["ExecutionTime"].asString();
+		if(!valueResourceExecutionStatusStatus["ResourceId"].isNull())
+			resourceExecutionStatusObject.resourceId = valueResourceExecutionStatusStatus["ResourceId"].asString();
 		if(!valueResourceExecutionStatusStatus["ExecutionId"].isNull())
 			resourceExecutionStatusObject.executionId = valueResourceExecutionStatusStatus["ExecutionId"].asString();
 		resourceExecutionStatus_.push_back(resourceExecutionStatusObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

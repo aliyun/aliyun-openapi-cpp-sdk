@@ -23,6 +23,14 @@ set(oos_public_header
 set(oos_public_header_model 
 	include/alibabacloud/oos/model/CancelExecutionRequest.h
 	include/alibabacloud/oos/model/CancelExecutionResult.h
+	include/alibabacloud/oos/model/ChangeResourceGroupRequest.h
+	include/alibabacloud/oos/model/ChangeResourceGroupResult.h
+	include/alibabacloud/oos/model/ContinueDeployApplicationGroupRequest.h
+	include/alibabacloud/oos/model/ContinueDeployApplicationGroupResult.h
+	include/alibabacloud/oos/model/CreateApplicationRequest.h
+	include/alibabacloud/oos/model/CreateApplicationResult.h
+	include/alibabacloud/oos/model/CreateApplicationGroupRequest.h
+	include/alibabacloud/oos/model/CreateApplicationGroupResult.h
 	include/alibabacloud/oos/model/CreateParameterRequest.h
 	include/alibabacloud/oos/model/CreateParameterResult.h
 	include/alibabacloud/oos/model/CreatePatchBaselineRequest.h
@@ -33,6 +41,10 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/CreateStateConfigurationResult.h
 	include/alibabacloud/oos/model/CreateTemplateRequest.h
 	include/alibabacloud/oos/model/CreateTemplateResult.h
+	include/alibabacloud/oos/model/DeleteApplicationRequest.h
+	include/alibabacloud/oos/model/DeleteApplicationResult.h
+	include/alibabacloud/oos/model/DeleteApplicationGroupRequest.h
+	include/alibabacloud/oos/model/DeleteApplicationGroupResult.h
 	include/alibabacloud/oos/model/DeleteExecutionsRequest.h
 	include/alibabacloud/oos/model/DeleteExecutionsResult.h
 	include/alibabacloud/oos/model/DeleteParameterRequest.h
@@ -47,10 +59,16 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/DeleteTemplateResult.h
 	include/alibabacloud/oos/model/DeleteTemplatesRequest.h
 	include/alibabacloud/oos/model/DeleteTemplatesResult.h
+	include/alibabacloud/oos/model/DeployApplicationGroupRequest.h
+	include/alibabacloud/oos/model/DeployApplicationGroupResult.h
 	include/alibabacloud/oos/model/DescribeRegionsRequest.h
 	include/alibabacloud/oos/model/DescribeRegionsResult.h
 	include/alibabacloud/oos/model/GenerateExecutionPolicyRequest.h
 	include/alibabacloud/oos/model/GenerateExecutionPolicyResult.h
+	include/alibabacloud/oos/model/GetApplicationRequest.h
+	include/alibabacloud/oos/model/GetApplicationResult.h
+	include/alibabacloud/oos/model/GetApplicationGroupRequest.h
+	include/alibabacloud/oos/model/GetApplicationGroupResult.h
 	include/alibabacloud/oos/model/GetExecutionTemplateRequest.h
 	include/alibabacloud/oos/model/GetExecutionTemplateResult.h
 	include/alibabacloud/oos/model/GetInventorySchemaRequest.h
@@ -75,6 +93,10 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/GetTemplateResult.h
 	include/alibabacloud/oos/model/ListActionsRequest.h
 	include/alibabacloud/oos/model/ListActionsResult.h
+	include/alibabacloud/oos/model/ListApplicationGroupsRequest.h
+	include/alibabacloud/oos/model/ListApplicationGroupsResult.h
+	include/alibabacloud/oos/model/ListApplicationsRequest.h
+	include/alibabacloud/oos/model/ListApplicationsResult.h
 	include/alibabacloud/oos/model/ListExecutionLogsRequest.h
 	include/alibabacloud/oos/model/ListExecutionLogsResult.h
 	include/alibabacloud/oos/model/ListExecutionRiskyTasksRequest.h
@@ -85,8 +107,6 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/ListInstancePatchStatesResult.h
 	include/alibabacloud/oos/model/ListInstancePatchesRequest.h
 	include/alibabacloud/oos/model/ListInstancePatchesResult.h
-	include/alibabacloud/oos/model/ListInstanceStateReportsRequest.h
-	include/alibabacloud/oos/model/ListInstanceStateReportsResult.h
 	include/alibabacloud/oos/model/ListInventoryEntriesRequest.h
 	include/alibabacloud/oos/model/ListInventoryEntriesResult.h
 	include/alibabacloud/oos/model/ListParameterVersionsRequest.h
@@ -131,10 +151,12 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/TriggerExecutionResult.h
 	include/alibabacloud/oos/model/UntagResourcesRequest.h
 	include/alibabacloud/oos/model/UntagResourcesResult.h
+	include/alibabacloud/oos/model/UpdateApplicationRequest.h
+	include/alibabacloud/oos/model/UpdateApplicationResult.h
+	include/alibabacloud/oos/model/UpdateApplicationGroupRequest.h
+	include/alibabacloud/oos/model/UpdateApplicationGroupResult.h
 	include/alibabacloud/oos/model/UpdateExecutionRequest.h
 	include/alibabacloud/oos/model/UpdateExecutionResult.h
-	include/alibabacloud/oos/model/UpdateInstanceInformationRequest.h
-	include/alibabacloud/oos/model/UpdateInstanceInformationResult.h
 	include/alibabacloud/oos/model/UpdateParameterRequest.h
 	include/alibabacloud/oos/model/UpdateParameterResult.h
 	include/alibabacloud/oos/model/UpdatePatchBaselineRequest.h
@@ -152,6 +174,14 @@ set(oos_src
 	src/OosClient.cc
 	src/model/CancelExecutionRequest.cc
 	src/model/CancelExecutionResult.cc
+	src/model/ChangeResourceGroupRequest.cc
+	src/model/ChangeResourceGroupResult.cc
+	src/model/ContinueDeployApplicationGroupRequest.cc
+	src/model/ContinueDeployApplicationGroupResult.cc
+	src/model/CreateApplicationRequest.cc
+	src/model/CreateApplicationResult.cc
+	src/model/CreateApplicationGroupRequest.cc
+	src/model/CreateApplicationGroupResult.cc
 	src/model/CreateParameterRequest.cc
 	src/model/CreateParameterResult.cc
 	src/model/CreatePatchBaselineRequest.cc
@@ -162,6 +192,10 @@ set(oos_src
 	src/model/CreateStateConfigurationResult.cc
 	src/model/CreateTemplateRequest.cc
 	src/model/CreateTemplateResult.cc
+	src/model/DeleteApplicationRequest.cc
+	src/model/DeleteApplicationResult.cc
+	src/model/DeleteApplicationGroupRequest.cc
+	src/model/DeleteApplicationGroupResult.cc
 	src/model/DeleteExecutionsRequest.cc
 	src/model/DeleteExecutionsResult.cc
 	src/model/DeleteParameterRequest.cc
@@ -176,10 +210,16 @@ set(oos_src
 	src/model/DeleteTemplateResult.cc
 	src/model/DeleteTemplatesRequest.cc
 	src/model/DeleteTemplatesResult.cc
+	src/model/DeployApplicationGroupRequest.cc
+	src/model/DeployApplicationGroupResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/GenerateExecutionPolicyRequest.cc
 	src/model/GenerateExecutionPolicyResult.cc
+	src/model/GetApplicationRequest.cc
+	src/model/GetApplicationResult.cc
+	src/model/GetApplicationGroupRequest.cc
+	src/model/GetApplicationGroupResult.cc
 	src/model/GetExecutionTemplateRequest.cc
 	src/model/GetExecutionTemplateResult.cc
 	src/model/GetInventorySchemaRequest.cc
@@ -204,6 +244,10 @@ set(oos_src
 	src/model/GetTemplateResult.cc
 	src/model/ListActionsRequest.cc
 	src/model/ListActionsResult.cc
+	src/model/ListApplicationGroupsRequest.cc
+	src/model/ListApplicationGroupsResult.cc
+	src/model/ListApplicationsRequest.cc
+	src/model/ListApplicationsResult.cc
 	src/model/ListExecutionLogsRequest.cc
 	src/model/ListExecutionLogsResult.cc
 	src/model/ListExecutionRiskyTasksRequest.cc
@@ -214,8 +258,6 @@ set(oos_src
 	src/model/ListInstancePatchStatesResult.cc
 	src/model/ListInstancePatchesRequest.cc
 	src/model/ListInstancePatchesResult.cc
-	src/model/ListInstanceStateReportsRequest.cc
-	src/model/ListInstanceStateReportsResult.cc
 	src/model/ListInventoryEntriesRequest.cc
 	src/model/ListInventoryEntriesResult.cc
 	src/model/ListParameterVersionsRequest.cc
@@ -260,10 +302,12 @@ set(oos_src
 	src/model/TriggerExecutionResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
+	src/model/UpdateApplicationRequest.cc
+	src/model/UpdateApplicationResult.cc
+	src/model/UpdateApplicationGroupRequest.cc
+	src/model/UpdateApplicationGroupResult.cc
 	src/model/UpdateExecutionRequest.cc
 	src/model/UpdateExecutionResult.cc
-	src/model/UpdateInstanceInformationRequest.cc
-	src/model/UpdateInstanceInformationResult.cc
 	src/model/UpdateParameterRequest.cc
 	src/model/UpdateParameterResult.cc
 	src/model/UpdatePatchBaselineRequest.cc

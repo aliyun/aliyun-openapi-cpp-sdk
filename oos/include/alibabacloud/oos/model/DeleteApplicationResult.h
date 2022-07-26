@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_UPDATEINSTANCEINFORMATIONRESULT_H_
-#define ALIBABACLOUD_OOS_MODEL_UPDATEINSTANCEINFORMATIONRESULT_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_DELETEAPPLICATIONRESULT_H_
+#define ALIBABACLOUD_OOS_MODEL_DELETEAPPLICATIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT UpdateInstanceInformationResult : public ServiceResult
+			class ALIBABACLOUD_OOS_EXPORT DeleteApplicationResult : public ServiceResult
 			{
 			public:
 
 
-				UpdateInstanceInformationResult();
-				explicit UpdateInstanceInformationResult(const std::string &payload);
-				~UpdateInstanceInformationResult();
+				DeleteApplicationResult();
+				explicit DeleteApplicationResult(const std::string &payload);
+				~DeleteApplicationResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_UPDATEINSTANCEINFORMATIONRESULT_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_DELETEAPPLICATIONRESULT_H_

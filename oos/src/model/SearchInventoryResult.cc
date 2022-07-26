@@ -42,10 +42,10 @@ void SearchInventoryResult::parse(const std::string &payload)
 	auto allEntities = value["Entities"]["Entity"];
 	for (const auto &item : allEntities)
 		entities_.push_back(item.asString());
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

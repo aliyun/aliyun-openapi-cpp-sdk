@@ -42,10 +42,10 @@ void ListTagValuesResult::parse(const std::string &payload)
 	auto allValues = value["Values"]["Value"];
 	for (const auto &item : allValues)
 		values_.push_back(item.asString());
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

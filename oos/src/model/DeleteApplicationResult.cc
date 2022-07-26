@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/oos/model/UpdateInstanceInformationResult.h>
+#include <alibabacloud/oos/model/DeleteApplicationResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Oos;
 using namespace AlibabaCloud::Oos::Model;
 
-UpdateInstanceInformationResult::UpdateInstanceInformationResult() :
+DeleteApplicationResult::DeleteApplicationResult() :
 	ServiceResult()
 {}
 
-UpdateInstanceInformationResult::UpdateInstanceInformationResult(const std::string &payload) :
+DeleteApplicationResult::DeleteApplicationResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UpdateInstanceInformationResult::~UpdateInstanceInformationResult()
+DeleteApplicationResult::~DeleteApplicationResult()
 {}
 
-void UpdateInstanceInformationResult::parse(const std::string &payload)
+void DeleteApplicationResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct ParameterVersion
 				{
 					std::string updatedBy;
-					std::string updatedDate;
 					int parameterVersion;
+					std::string updatedDate;
 					std::string value;
 				};
 
@@ -45,8 +45,8 @@ namespace AlibabaCloud
 				explicit ListParameterVersionsResult(const std::string &payload);
 				~ListParameterVersionsResult();
 				std::vector<ParameterVersion> getParameterVersions()const;
-				int getTotalCount()const;
 				std::string getType()const;
+				int getTotalCount()const;
 				std::string getDescription()const;
 				std::string getCreatedBy()const;
 				std::string getNextToken()const;
@@ -59,8 +59,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::vector<ParameterVersion> parameterVersions_;
-				int totalCount_;
 				std::string type_;
+				int totalCount_;
 				std::string description_;
 				std::string createdBy_;
 				std::string nextToken_;

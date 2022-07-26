@@ -35,12 +35,12 @@ namespace AlibabaCloud
 				struct PatchBaseline
 				{
 					std::string updatedBy;
-					std::string createdBy;
 					std::string description;
+					std::string createdBy;
 					std::string updatedDate;
 					std::string createdDate;
-					std::string id;
 					std::string operationSystem;
+					std::string id;
 					std::string approvalRules;
 					std::string name;
 					std::string shareType;

@@ -34,10 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct StateConfiguration
 				{
-					std::string scheduleType;
 					std::string scheduleExpression;
-					std::string description;
+					std::string scheduleType;
 					std::string parameters;
+					std::string description;
+					std::string resourceGroupId;
 					std::string createTime;
 					std::string templateVersion;
 					std::string targets;
@@ -45,8 +46,8 @@ namespace AlibabaCloud
 					std::string stateConfigurationId;
 					std::string updateTime;
 					std::string templateName;
-					std::string templateId;
 					std::string tags;
+					std::string templateId;
 				};
 
 

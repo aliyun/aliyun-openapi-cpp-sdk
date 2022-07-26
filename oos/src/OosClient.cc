@@ -31,21 +31,21 @@ OosClient::OosClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "oos");
 }
 
 OosClient::OosClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "oos");
 }
 
 OosClient::OosClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "oos");
 }
 
 OosClient::~OosClient()
@@ -81,6 +81,150 @@ OosClient::CancelExecutionOutcomeCallable OosClient::cancelExecutionCallable(con
 			[this, request]()
 			{
 			return this->cancelExecution(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::ChangeResourceGroupOutcome OosClient::changeResourceGroup(const ChangeResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeResourceGroupOutcome(ChangeResourceGroupResult(outcome.result()));
+	else
+		return ChangeResourceGroupOutcome(outcome.error());
+}
+
+void OosClient::changeResourceGroupAsync(const ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ChangeResourceGroupOutcomeCallable OosClient::changeResourceGroupCallable(const ChangeResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->changeResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::ContinueDeployApplicationGroupOutcome OosClient::continueDeployApplicationGroup(const ContinueDeployApplicationGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ContinueDeployApplicationGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ContinueDeployApplicationGroupOutcome(ContinueDeployApplicationGroupResult(outcome.result()));
+	else
+		return ContinueDeployApplicationGroupOutcome(outcome.error());
+}
+
+void OosClient::continueDeployApplicationGroupAsync(const ContinueDeployApplicationGroupRequest& request, const ContinueDeployApplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, continueDeployApplicationGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ContinueDeployApplicationGroupOutcomeCallable OosClient::continueDeployApplicationGroupCallable(const ContinueDeployApplicationGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ContinueDeployApplicationGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->continueDeployApplicationGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::CreateApplicationOutcome OosClient::createApplication(const CreateApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateApplicationOutcome(CreateApplicationResult(outcome.result()));
+	else
+		return CreateApplicationOutcome(outcome.error());
+}
+
+void OosClient::createApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::CreateApplicationOutcomeCallable OosClient::createApplicationCallable(const CreateApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->createApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::CreateApplicationGroupOutcome OosClient::createApplicationGroup(const CreateApplicationGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateApplicationGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateApplicationGroupOutcome(CreateApplicationGroupResult(outcome.result()));
+	else
+		return CreateApplicationGroupOutcome(outcome.error());
+}
+
+void OosClient::createApplicationGroupAsync(const CreateApplicationGroupRequest& request, const CreateApplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createApplicationGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::CreateApplicationGroupOutcomeCallable OosClient::createApplicationGroupCallable(const CreateApplicationGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateApplicationGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createApplicationGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -261,6 +405,78 @@ OosClient::CreateTemplateOutcomeCallable OosClient::createTemplateCallable(const
 			[this, request]()
 			{
 			return this->createTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::DeleteApplicationOutcome OosClient::deleteApplication(const DeleteApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteApplicationOutcome(DeleteApplicationResult(outcome.result()));
+	else
+		return DeleteApplicationOutcome(outcome.error());
+}
+
+void OosClient::deleteApplicationAsync(const DeleteApplicationRequest& request, const DeleteApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::DeleteApplicationOutcomeCallable OosClient::deleteApplicationCallable(const DeleteApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::DeleteApplicationGroupOutcome OosClient::deleteApplicationGroup(const DeleteApplicationGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteApplicationGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteApplicationGroupOutcome(DeleteApplicationGroupResult(outcome.result()));
+	else
+		return DeleteApplicationGroupOutcome(outcome.error());
+}
+
+void OosClient::deleteApplicationGroupAsync(const DeleteApplicationGroupRequest& request, const DeleteApplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteApplicationGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::DeleteApplicationGroupOutcomeCallable OosClient::deleteApplicationGroupCallable(const DeleteApplicationGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteApplicationGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteApplicationGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -519,6 +735,42 @@ OosClient::DeleteTemplatesOutcomeCallable OosClient::deleteTemplatesCallable(con
 	return task->get_future();
 }
 
+OosClient::DeployApplicationGroupOutcome OosClient::deployApplicationGroup(const DeployApplicationGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeployApplicationGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeployApplicationGroupOutcome(DeployApplicationGroupResult(outcome.result()));
+	else
+		return DeployApplicationGroupOutcome(outcome.error());
+}
+
+void OosClient::deployApplicationGroupAsync(const DeployApplicationGroupRequest& request, const DeployApplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deployApplicationGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::DeployApplicationGroupOutcomeCallable OosClient::deployApplicationGroupCallable(const DeployApplicationGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeployApplicationGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deployApplicationGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::DescribeRegionsOutcome OosClient::describeRegions(const DescribeRegionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +837,78 @@ OosClient::GenerateExecutionPolicyOutcomeCallable OosClient::generateExecutionPo
 			[this, request]()
 			{
 			return this->generateExecutionPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::GetApplicationOutcome OosClient::getApplication(const GetApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetApplicationOutcome(GetApplicationResult(outcome.result()));
+	else
+		return GetApplicationOutcome(outcome.error());
+}
+
+void OosClient::getApplicationAsync(const GetApplicationRequest& request, const GetApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::GetApplicationOutcomeCallable OosClient::getApplicationCallable(const GetApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->getApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::GetApplicationGroupOutcome OosClient::getApplicationGroup(const GetApplicationGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetApplicationGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetApplicationGroupOutcome(GetApplicationGroupResult(outcome.result()));
+	else
+		return GetApplicationGroupOutcome(outcome.error());
+}
+
+void OosClient::getApplicationGroupAsync(const GetApplicationGroupRequest& request, const GetApplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getApplicationGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::GetApplicationGroupOutcomeCallable OosClient::getApplicationGroupCallable(const GetApplicationGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetApplicationGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->getApplicationGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1023,6 +1347,78 @@ OosClient::ListActionsOutcomeCallable OosClient::listActionsCallable(const ListA
 	return task->get_future();
 }
 
+OosClient::ListApplicationGroupsOutcome OosClient::listApplicationGroups(const ListApplicationGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApplicationGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApplicationGroupsOutcome(ListApplicationGroupsResult(outcome.result()));
+	else
+		return ListApplicationGroupsOutcome(outcome.error());
+}
+
+void OosClient::listApplicationGroupsAsync(const ListApplicationGroupsRequest& request, const ListApplicationGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApplicationGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListApplicationGroupsOutcomeCallable OosClient::listApplicationGroupsCallable(const ListApplicationGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApplicationGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->listApplicationGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::ListApplicationsOutcome OosClient::listApplications(const ListApplicationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApplicationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApplicationsOutcome(ListApplicationsResult(outcome.result()));
+	else
+		return ListApplicationsOutcome(outcome.error());
+}
+
+void OosClient::listApplicationsAsync(const ListApplicationsRequest& request, const ListApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApplications(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListApplicationsOutcomeCallable OosClient::listApplicationsCallable(const ListApplicationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApplicationsOutcome()>>(
+			[this, request]()
+			{
+			return this->listApplications(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::ListExecutionLogsOutcome OosClient::listExecutionLogs(const ListExecutionLogsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1197,42 +1593,6 @@ OosClient::ListInstancePatchesOutcomeCallable OosClient::listInstancePatchesCall
 			[this, request]()
 			{
 			return this->listInstancePatches(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OosClient::ListInstanceStateReportsOutcome OosClient::listInstanceStateReports(const ListInstanceStateReportsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListInstanceStateReportsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListInstanceStateReportsOutcome(ListInstanceStateReportsResult(outcome.result()));
-	else
-		return ListInstanceStateReportsOutcome(outcome.error());
-}
-
-void OosClient::listInstanceStateReportsAsync(const ListInstanceStateReportsRequest& request, const ListInstanceStateReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listInstanceStateReports(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OosClient::ListInstanceStateReportsOutcomeCallable OosClient::listInstanceStateReportsCallable(const ListInstanceStateReportsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListInstanceStateReportsOutcome()>>(
-			[this, request]()
-			{
-			return this->listInstanceStateReports(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2031,6 +2391,78 @@ OosClient::UntagResourcesOutcomeCallable OosClient::untagResourcesCallable(const
 	return task->get_future();
 }
 
+OosClient::UpdateApplicationOutcome OosClient::updateApplication(const UpdateApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApplicationOutcome(UpdateApplicationResult(outcome.result()));
+	else
+		return UpdateApplicationOutcome(outcome.error());
+}
+
+void OosClient::updateApplicationAsync(const UpdateApplicationRequest& request, const UpdateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::UpdateApplicationOutcomeCallable OosClient::updateApplicationCallable(const UpdateApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::UpdateApplicationGroupOutcome OosClient::updateApplicationGroup(const UpdateApplicationGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateApplicationGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateApplicationGroupOutcome(UpdateApplicationGroupResult(outcome.result()));
+	else
+		return UpdateApplicationGroupOutcome(outcome.error());
+}
+
+void OosClient::updateApplicationGroupAsync(const UpdateApplicationGroupRequest& request, const UpdateApplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateApplicationGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::UpdateApplicationGroupOutcomeCallable OosClient::updateApplicationGroupCallable(const UpdateApplicationGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateApplicationGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->updateApplicationGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::UpdateExecutionOutcome OosClient::updateExecution(const UpdateExecutionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2061,42 +2493,6 @@ OosClient::UpdateExecutionOutcomeCallable OosClient::updateExecutionCallable(con
 			[this, request]()
 			{
 			return this->updateExecution(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OosClient::UpdateInstanceInformationOutcome OosClient::updateInstanceInformation(const UpdateInstanceInformationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateInstanceInformationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateInstanceInformationOutcome(UpdateInstanceInformationResult(outcome.result()));
-	else
-		return UpdateInstanceInformationOutcome(outcome.error());
-}
-
-void OosClient::updateInstanceInformationAsync(const UpdateInstanceInformationRequest& request, const UpdateInstanceInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateInstanceInformation(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OosClient::UpdateInstanceInformationOutcomeCallable OosClient::updateInstanceInformationCallable(const UpdateInstanceInformationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateInstanceInformationOutcome()>>(
-			[this, request]()
-			{
-			return this->updateInstanceInformation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

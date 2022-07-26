@@ -34,9 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct Action
 				{
-					std::string oOSActionName;
-					std::string description;
 					std::string actionType;
+					std::string description;
+					std::string oOSActionName;
+					int popularity;
 					std::string createdDate;
 					std::string templateVersion;
 					std::string properties;

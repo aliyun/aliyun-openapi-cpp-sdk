@@ -45,22 +45,22 @@ void ListTemplateVersionsResult::parse(const std::string &payload)
 		TemplateVersion templateVersionsObject;
 		if(!valueTemplateVersionsTemplateVersion["Description"].isNull())
 			templateVersionsObject.description = valueTemplateVersionsTemplateVersion["Description"].asString();
-		if(!valueTemplateVersionsTemplateVersion["TemplateFormat"].isNull())
-			templateVersionsObject.templateFormat = valueTemplateVersionsTemplateVersion["TemplateFormat"].asString();
-		if(!valueTemplateVersionsTemplateVersion["TemplateVersion"].isNull())
-			templateVersionsObject.templateVersion = valueTemplateVersionsTemplateVersion["TemplateVersion"].asString();
 		if(!valueTemplateVersionsTemplateVersion["UpdatedDate"].isNull())
 			templateVersionsObject.updatedDate = valueTemplateVersionsTemplateVersion["UpdatedDate"].asString();
 		if(!valueTemplateVersionsTemplateVersion["UpdatedBy"].isNull())
 			templateVersionsObject.updatedBy = valueTemplateVersionsTemplateVersion["UpdatedBy"].asString();
 		if(!valueTemplateVersionsTemplateVersion["VersionName"].isNull())
 			templateVersionsObject.versionName = valueTemplateVersionsTemplateVersion["VersionName"].asString();
+		if(!valueTemplateVersionsTemplateVersion["TemplateVersion"].isNull())
+			templateVersionsObject.templateVersion = valueTemplateVersionsTemplateVersion["TemplateVersion"].asString();
+		if(!valueTemplateVersionsTemplateVersion["TemplateFormat"].isNull())
+			templateVersionsObject.templateFormat = valueTemplateVersionsTemplateVersion["TemplateFormat"].asString();
 		templateVersions_.push_back(templateVersionsObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

@@ -42,28 +42,30 @@ void CreateStateConfigurationResult::parse(const std::string &payload)
 	auto stateConfigurationNode = value["StateConfiguration"];
 	if(!stateConfigurationNode["CreateTime"].isNull())
 		stateConfiguration_.createTime = stateConfigurationNode["CreateTime"].asString();
-	if(!stateConfigurationNode["Description"].isNull())
-		stateConfiguration_.description = stateConfigurationNode["Description"].asString();
-	if(!stateConfigurationNode["StateConfigurationId"].isNull())
-		stateConfiguration_.stateConfigurationId = stateConfigurationNode["StateConfigurationId"].asString();
-	if(!stateConfigurationNode["TemplateId"].isNull())
-		stateConfiguration_.templateId = stateConfigurationNode["TemplateId"].asString();
-	if(!stateConfigurationNode["TemplateName"].isNull())
-		stateConfiguration_.templateName = stateConfigurationNode["TemplateName"].asString();
-	if(!stateConfigurationNode["TemplateVersion"].isNull())
-		stateConfiguration_.templateVersion = stateConfigurationNode["TemplateVersion"].asString();
-	if(!stateConfigurationNode["Parameters"].isNull())
-		stateConfiguration_.parameters = stateConfigurationNode["Parameters"].asString();
-	if(!stateConfigurationNode["ConfigureMode"].isNull())
-		stateConfiguration_.configureMode = stateConfigurationNode["ConfigureMode"].asString();
-	if(!stateConfigurationNode["ScheduleType"].isNull())
-		stateConfiguration_.scheduleType = stateConfigurationNode["ScheduleType"].asString();
-	if(!stateConfigurationNode["ScheduleExpression"].isNull())
-		stateConfiguration_.scheduleExpression = stateConfigurationNode["ScheduleExpression"].asString();
 	if(!stateConfigurationNode["Targets"].isNull())
 		stateConfiguration_.targets = stateConfigurationNode["Targets"].asString();
 	if(!stateConfigurationNode["Tags"].isNull())
 		stateConfiguration_.tags = stateConfigurationNode["Tags"].asString();
+	if(!stateConfigurationNode["StateConfigurationId"].isNull())
+		stateConfiguration_.stateConfigurationId = stateConfigurationNode["StateConfigurationId"].asString();
+	if(!stateConfigurationNode["ScheduleExpression"].isNull())
+		stateConfiguration_.scheduleExpression = stateConfigurationNode["ScheduleExpression"].asString();
+	if(!stateConfigurationNode["TemplateName"].isNull())
+		stateConfiguration_.templateName = stateConfigurationNode["TemplateName"].asString();
+	if(!stateConfigurationNode["TemplateVersion"].isNull())
+		stateConfiguration_.templateVersion = stateConfigurationNode["TemplateVersion"].asString();
+	if(!stateConfigurationNode["ConfigureMode"].isNull())
+		stateConfiguration_.configureMode = stateConfigurationNode["ConfigureMode"].asString();
+	if(!stateConfigurationNode["ScheduleType"].isNull())
+		stateConfiguration_.scheduleType = stateConfigurationNode["ScheduleType"].asString();
+	if(!stateConfigurationNode["Parameters"].isNull())
+		stateConfiguration_.parameters = stateConfigurationNode["Parameters"].asString();
+	if(!stateConfigurationNode["Description"].isNull())
+		stateConfiguration_.description = stateConfigurationNode["Description"].asString();
+	if(!stateConfigurationNode["ResourceGroupId"].isNull())
+		stateConfiguration_.resourceGroupId = stateConfigurationNode["ResourceGroupId"].asString();
+	if(!stateConfigurationNode["TemplateId"].isNull())
+		stateConfiguration_.templateId = stateConfigurationNode["TemplateId"].asString();
 
 }
 

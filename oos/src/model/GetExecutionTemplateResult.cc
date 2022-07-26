@@ -40,30 +40,30 @@ void GetExecutionTemplateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto _templateNode = value["Template"];
-	if(!_templateNode["TemplateName"].isNull())
-		_template_.templateName = _templateNode["TemplateName"].asString();
-	if(!_templateNode["TemplateId"].isNull())
-		_template_.templateId = _templateNode["TemplateId"].asString();
-	if(!_templateNode["CreatedDate"].isNull())
-		_template_.createdDate = _templateNode["CreatedDate"].asString();
-	if(!_templateNode["CreatedBy"].isNull())
-		_template_.createdBy = _templateNode["CreatedBy"].asString();
+	if(!_templateNode["Hash"].isNull())
+		_template_.hash = _templateNode["Hash"].asString();
 	if(!_templateNode["UpdatedDate"].isNull())
 		_template_.updatedDate = _templateNode["UpdatedDate"].asString();
 	if(!_templateNode["UpdatedBy"].isNull())
 		_template_.updatedBy = _templateNode["UpdatedBy"].asString();
-	if(!_templateNode["Hash"].isNull())
-		_template_.hash = _templateNode["Hash"].asString();
-	if(!_templateNode["Description"].isNull())
-		_template_.description = _templateNode["Description"].asString();
-	if(!_templateNode["ShareType"].isNull())
-		_template_.shareType = _templateNode["ShareType"].asString();
-	if(!_templateNode["TemplateFormat"].isNull())
-		_template_.templateFormat = _templateNode["TemplateFormat"].asString();
-	if(!_templateNode["TemplateVersion"].isNull())
-		_template_.templateVersion = _templateNode["TemplateVersion"].asString();
 	if(!_templateNode["Tags"].isNull())
 		_template_.tags = _templateNode["Tags"].asString();
+	if(!_templateNode["TemplateName"].isNull())
+		_template_.templateName = _templateNode["TemplateName"].asString();
+	if(!_templateNode["TemplateVersion"].isNull())
+		_template_.templateVersion = _templateNode["TemplateVersion"].asString();
+	if(!_templateNode["TemplateFormat"].isNull())
+		_template_.templateFormat = _templateNode["TemplateFormat"].asString();
+	if(!_templateNode["Description"].isNull())
+		_template_.description = _templateNode["Description"].asString();
+	if(!_templateNode["CreatedBy"].isNull())
+		_template_.createdBy = _templateNode["CreatedBy"].asString();
+	if(!_templateNode["CreatedDate"].isNull())
+		_template_.createdDate = _templateNode["CreatedDate"].asString();
+	if(!_templateNode["TemplateId"].isNull())
+		_template_.templateId = _templateNode["TemplateId"].asString();
+	if(!_templateNode["ShareType"].isNull())
+		_template_.shareType = _templateNode["ShareType"].asString();
 	if(!value["Content"].isNull())
 		content_ = value["Content"].asString();
 

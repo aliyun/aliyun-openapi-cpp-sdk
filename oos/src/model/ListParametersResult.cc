@@ -43,36 +43,38 @@ void ListParametersResult::parse(const std::string &payload)
 	for (auto valueParametersParameter : allParametersNode)
 	{
 		_Parameter parametersObject;
-		if(!valueParametersParameter["Name"].isNull())
-			parametersObject.name = valueParametersParameter["Name"].asString();
-		if(!valueParametersParameter["Id"].isNull())
-			parametersObject.id = valueParametersParameter["Id"].asString();
-		if(!valueParametersParameter["CreatedDate"].isNull())
-			parametersObject.createdDate = valueParametersParameter["CreatedDate"].asString();
-		if(!valueParametersParameter["CreatedBy"].isNull())
-			parametersObject.createdBy = valueParametersParameter["CreatedBy"].asString();
+		if(!valueParametersParameter["Type"].isNull())
+			parametersObject.type = valueParametersParameter["Type"].asString();
 		if(!valueParametersParameter["UpdatedDate"].isNull())
 			parametersObject.updatedDate = valueParametersParameter["UpdatedDate"].asString();
 		if(!valueParametersParameter["UpdatedBy"].isNull())
 			parametersObject.updatedBy = valueParametersParameter["UpdatedBy"].asString();
-		if(!valueParametersParameter["Description"].isNull())
-			parametersObject.description = valueParametersParameter["Description"].asString();
-		if(!valueParametersParameter["ShareType"].isNull())
-			parametersObject.shareType = valueParametersParameter["ShareType"].asString();
-		if(!valueParametersParameter["ParameterVersion"].isNull())
-			parametersObject.parameterVersion = valueParametersParameter["ParameterVersion"].asString();
-		if(!valueParametersParameter["Type"].isNull())
-			parametersObject.type = valueParametersParameter["Type"].asString();
 		if(!valueParametersParameter["Tags"].isNull())
 			parametersObject.tags = valueParametersParameter["Tags"].asString();
+		if(!valueParametersParameter["Description"].isNull())
+			parametersObject.description = valueParametersParameter["Description"].asString();
+		if(!valueParametersParameter["CreatedBy"].isNull())
+			parametersObject.createdBy = valueParametersParameter["CreatedBy"].asString();
+		if(!valueParametersParameter["ResourceGroupId"].isNull())
+			parametersObject.resourceGroupId = valueParametersParameter["ResourceGroupId"].asString();
+		if(!valueParametersParameter["CreatedDate"].isNull())
+			parametersObject.createdDate = valueParametersParameter["CreatedDate"].asString();
+		if(!valueParametersParameter["ParameterVersion"].isNull())
+			parametersObject.parameterVersion = valueParametersParameter["ParameterVersion"].asString();
+		if(!valueParametersParameter["Name"].isNull())
+			parametersObject.name = valueParametersParameter["Name"].asString();
+		if(!valueParametersParameter["Id"].isNull())
+			parametersObject.id = valueParametersParameter["Id"].asString();
+		if(!valueParametersParameter["ShareType"].isNull())
+			parametersObject.shareType = valueParametersParameter["ShareType"].asString();
 		parameters_.push_back(parametersObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

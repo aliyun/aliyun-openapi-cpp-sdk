@@ -43,24 +43,24 @@ void ValidateTemplateContentResult::parse(const std::string &payload)
 	for (auto valueTasksTask : allTasksNode)
 	{
 		Task tasksObject;
-		if(!valueTasksTask["Name"].isNull())
-			tasksObject.name = valueTasksTask["Name"].asString();
+		if(!valueTasksTask["Outputs"].isNull())
+			tasksObject.outputs = valueTasksTask["Outputs"].asString();
 		if(!valueTasksTask["Type"].isNull())
 			tasksObject.type = valueTasksTask["Type"].asString();
 		if(!valueTasksTask["Description"].isNull())
 			tasksObject.description = valueTasksTask["Description"].asString();
+		if(!valueTasksTask["Name"].isNull())
+			tasksObject.name = valueTasksTask["Name"].asString();
 		if(!valueTasksTask["Properties"].isNull())
 			tasksObject.properties = valueTasksTask["Properties"].asString();
-		if(!valueTasksTask["Outputs"].isNull())
-			tasksObject.outputs = valueTasksTask["Outputs"].asString();
 		tasks_.push_back(tasksObject);
 	}
+	if(!value["Outputs"].isNull())
+		outputs_ = value["Outputs"].asString();
 	if(!value["Parameters"].isNull())
 		parameters_ = value["Parameters"].asString();
 	if(!value["RamRole"].isNull())
 		ramRole_ = value["RamRole"].asString();
-	if(!value["Outputs"].isNull())
-		outputs_ = value["Outputs"].asString();
 
 }
 
@@ -74,13 +74,13 @@ std::string ValidateTemplateContentResult::getParameters()const
 	return parameters_;
 }
 
-std::string ValidateTemplateContentResult::getRamRole()const
-{
-	return ramRole_;
-}
-
 std::string ValidateTemplateContentResult::getOutputs()const
 {
 	return outputs_;
+}
+
+std::string ValidateTemplateContentResult::getRamRole()const
+{
+	return ramRole_;
 }
 

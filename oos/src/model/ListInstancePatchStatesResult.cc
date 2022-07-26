@@ -43,38 +43,38 @@ void ListInstancePatchStatesResult::parse(const std::string &payload)
 	for (auto valueInstancePatchStatesInstancePatchState : allInstancePatchStatesNode)
 	{
 		InstancePatchState instancePatchStatesObject;
-		if(!valueInstancePatchStatesInstancePatchState["InstanceId"].isNull())
-			instancePatchStatesObject.instanceId = valueInstancePatchStatesInstancePatchState["InstanceId"].asString();
-		if(!valueInstancePatchStatesInstancePatchState["PatchGroup"].isNull())
-			instancePatchStatesObject.patchGroup = valueInstancePatchStatesInstancePatchState["PatchGroup"].asString();
-		if(!valueInstancePatchStatesInstancePatchState["BaselineId"].isNull())
-			instancePatchStatesObject.baselineId = valueInstancePatchStatesInstancePatchState["BaselineId"].asString();
-		if(!valueInstancePatchStatesInstancePatchState["OwnerInformation"].isNull())
-			instancePatchStatesObject.ownerInformation = valueInstancePatchStatesInstancePatchState["OwnerInformation"].asString();
-		if(!valueInstancePatchStatesInstancePatchState["InstalledCount"].isNull())
-			instancePatchStatesObject.installedCount = valueInstancePatchStatesInstancePatchState["InstalledCount"].asString();
-		if(!valueInstancePatchStatesInstancePatchState["InstalledOtherCount"].isNull())
-			instancePatchStatesObject.installedOtherCount = valueInstancePatchStatesInstancePatchState["InstalledOtherCount"].asString();
-		if(!valueInstancePatchStatesInstancePatchState["InstalledPendingRebootCount"].isNull())
-			instancePatchStatesObject.installedPendingRebootCount = valueInstancePatchStatesInstancePatchState["InstalledPendingRebootCount"].asString();
-		if(!valueInstancePatchStatesInstancePatchState["InstalledRejectedCount"].isNull())
-			instancePatchStatesObject.installedRejectedCount = valueInstancePatchStatesInstancePatchState["InstalledRejectedCount"].asString();
 		if(!valueInstancePatchStatesInstancePatchState["MissingCount"].isNull())
 			instancePatchStatesObject.missingCount = valueInstancePatchStatesInstancePatchState["MissingCount"].asString();
-		if(!valueInstancePatchStatesInstancePatchState["FailedCount"].isNull())
-			instancePatchStatesObject.failedCount = valueInstancePatchStatesInstancePatchState["FailedCount"].asString();
+		if(!valueInstancePatchStatesInstancePatchState["OperationEndTime"].isNull())
+			instancePatchStatesObject.operationEndTime = valueInstancePatchStatesInstancePatchState["OperationEndTime"].asString();
+		if(!valueInstancePatchStatesInstancePatchState["OwnerInformation"].isNull())
+			instancePatchStatesObject.ownerInformation = valueInstancePatchStatesInstancePatchState["OwnerInformation"].asString();
+		if(!valueInstancePatchStatesInstancePatchState["InstalledOtherCount"].isNull())
+			instancePatchStatesObject.installedOtherCount = valueInstancePatchStatesInstancePatchState["InstalledOtherCount"].asString();
+		if(!valueInstancePatchStatesInstancePatchState["InstanceId"].isNull())
+			instancePatchStatesObject.instanceId = valueInstancePatchStatesInstancePatchState["InstanceId"].asString();
 		if(!valueInstancePatchStatesInstancePatchState["OperationType"].isNull())
 			instancePatchStatesObject.operationType = valueInstancePatchStatesInstancePatchState["OperationType"].asString();
 		if(!valueInstancePatchStatesInstancePatchState["OperationStartTime"].isNull())
 			instancePatchStatesObject.operationStartTime = valueInstancePatchStatesInstancePatchState["OperationStartTime"].asString();
-		if(!valueInstancePatchStatesInstancePatchState["OperationEndTime"].isNull())
-			instancePatchStatesObject.operationEndTime = valueInstancePatchStatesInstancePatchState["OperationEndTime"].asString();
+		if(!valueInstancePatchStatesInstancePatchState["FailedCount"].isNull())
+			instancePatchStatesObject.failedCount = valueInstancePatchStatesInstancePatchState["FailedCount"].asString();
+		if(!valueInstancePatchStatesInstancePatchState["BaselineId"].isNull())
+			instancePatchStatesObject.baselineId = valueInstancePatchStatesInstancePatchState["BaselineId"].asString();
+		if(!valueInstancePatchStatesInstancePatchState["InstalledPendingRebootCount"].isNull())
+			instancePatchStatesObject.installedPendingRebootCount = valueInstancePatchStatesInstancePatchState["InstalledPendingRebootCount"].asString();
+		if(!valueInstancePatchStatesInstancePatchState["InstalledRejectedCount"].isNull())
+			instancePatchStatesObject.installedRejectedCount = valueInstancePatchStatesInstancePatchState["InstalledRejectedCount"].asString();
+		if(!valueInstancePatchStatesInstancePatchState["PatchGroup"].isNull())
+			instancePatchStatesObject.patchGroup = valueInstancePatchStatesInstancePatchState["PatchGroup"].asString();
+		if(!valueInstancePatchStatesInstancePatchState["InstalledCount"].isNull())
+			instancePatchStatesObject.installedCount = valueInstancePatchStatesInstancePatchState["InstalledCount"].asString();
 		instancePatchStates_.push_back(instancePatchStatesObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

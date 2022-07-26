@@ -49,12 +49,14 @@ namespace AlibabaCloud
 				explicit GetInventorySchemaResult(const std::string &payload);
 				~GetInventorySchemaResult();
 				std::string getNextToken()const;
+				std::string getMaxResults()const;
 				std::vector<Schema> getSchemas()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string nextToken_;
+				std::string maxResults_;
 				std::vector<Schema> schemas_;
 
 			};

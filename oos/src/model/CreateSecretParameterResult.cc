@@ -40,32 +40,34 @@ void CreateSecretParameterResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto _parameterNode = value["Parameter"];
-	if(!_parameterNode["Id"].isNull())
-		_parameter_.id = _parameterNode["Id"].asString();
-	if(!_parameterNode["Name"].isNull())
-		_parameter_.name = _parameterNode["Name"].asString();
-	if(!_parameterNode["CreatedDate"].isNull())
-		_parameter_.createdDate = _parameterNode["CreatedDate"].asString();
-	if(!_parameterNode["CreatedBy"].isNull())
-		_parameter_.createdBy = _parameterNode["CreatedBy"].asString();
+	if(!_parameterNode["Type"].isNull())
+		_parameter_.type = _parameterNode["Type"].asString();
 	if(!_parameterNode["UpdatedDate"].isNull())
 		_parameter_.updatedDate = _parameterNode["UpdatedDate"].asString();
 	if(!_parameterNode["UpdatedBy"].isNull())
 		_parameter_.updatedBy = _parameterNode["UpdatedBy"].asString();
-	if(!_parameterNode["Description"].isNull())
-		_parameter_.description = _parameterNode["Description"].asString();
-	if(!_parameterNode["ShareType"].isNull())
-		_parameter_.shareType = _parameterNode["ShareType"].asString();
-	if(!_parameterNode["ParameterVersion"].isNull())
-		_parameter_.parameterVersion = std::stoi(_parameterNode["ParameterVersion"].asString());
-	if(!_parameterNode["Type"].isNull())
-		_parameter_.type = _parameterNode["Type"].asString();
-	if(!_parameterNode["Constraints"].isNull())
-		_parameter_.constraints = _parameterNode["Constraints"].asString();
 	if(!_parameterNode["KeyId"].isNull())
 		_parameter_.keyId = _parameterNode["KeyId"].asString();
 	if(!_parameterNode["Tags"].isNull())
 		_parameter_.tags = _parameterNode["Tags"].asString();
+	if(!_parameterNode["Description"].isNull())
+		_parameter_.description = _parameterNode["Description"].asString();
+	if(!_parameterNode["Constraints"].isNull())
+		_parameter_.constraints = _parameterNode["Constraints"].asString();
+	if(!_parameterNode["ResourceGroupId"].isNull())
+		_parameter_.resourceGroupId = _parameterNode["ResourceGroupId"].asString();
+	if(!_parameterNode["CreatedBy"].isNull())
+		_parameter_.createdBy = _parameterNode["CreatedBy"].asString();
+	if(!_parameterNode["CreatedDate"].isNull())
+		_parameter_.createdDate = _parameterNode["CreatedDate"].asString();
+	if(!_parameterNode["ParameterVersion"].isNull())
+		_parameter_.parameterVersion = std::stoi(_parameterNode["ParameterVersion"].asString());
+	if(!_parameterNode["Name"].isNull())
+		_parameter_.name = _parameterNode["Name"].asString();
+	if(!_parameterNode["Id"].isNull())
+		_parameter_.id = _parameterNode["Id"].asString();
+	if(!_parameterNode["ShareType"].isNull())
+		_parameter_.shareType = _parameterNode["ShareType"].asString();
 
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,41 +17,35 @@
 #ifndef ALIBABACLOUD_OOS_MODEL_TAGRESOURCESREQUEST_H_
 #define ALIBABACLOUD_OOS_MODEL_TAGRESOURCESREQUEST_H_
 
+#include <alibabacloud/oos/OosExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/oos/OosExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Oos
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_OOS_EXPORT TagResourcesRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Oos {
+namespace Model {
+class ALIBABACLOUD_OOS_EXPORT TagResourcesRequest : public RpcServiceRequest {
+public:
+	TagResourcesRequest();
+	~TagResourcesRequest();
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::map<std::string, std::string> getTags() const;
+	void setTags(std::map<std::string, std::string> tags);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::map<std::string, std::string> getResourceIds() const;
+	void setResourceIds(std::map<std::string, std::string> resourceIds);
 
-			public:
-				TagResourcesRequest();
-				~TagResourcesRequest();
-
-				std::string getResourceType()const;
-				void setResourceType(const std::string& resourceType);
-				std::map<std::string, std::string> getTags()const;
-				void setTags(const std::map<std::string, std::string>& tags);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::map<std::string, std::string> getResourceIds()const;
-				void setResourceIds(const std::map<std::string, std::string>& resourceIds);
-
-            private:
-				std::string resourceType_;
-				std::map<std::string, std::string> tags_;
-				std::string regionId_;
-				std::map<std::string, std::string> resourceIds_;
-
-			};
-		}
-	}
-}
+private:
+	std::string resourceType_;
+	std::map<std::string, std::string> tags_;
+	std::string regionId_;
+	std::map<std::string, std::string> resourceIds_;
+};
+} // namespace Model
+} // namespace Oos
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_OOS_MODEL_TAGRESOURCESREQUEST_H_

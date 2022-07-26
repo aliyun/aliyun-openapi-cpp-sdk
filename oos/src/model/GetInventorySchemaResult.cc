@@ -43,10 +43,10 @@ void GetInventorySchemaResult::parse(const std::string &payload)
 	for (auto valueSchemasSchema : allSchemasNode)
 	{
 		Schema schemasObject;
-		if(!valueSchemasSchema["TypeName"].isNull())
-			schemasObject.typeName = valueSchemasSchema["TypeName"].asString();
 		if(!valueSchemasSchema["Version"].isNull())
 			schemasObject.version = valueSchemasSchema["Version"].asString();
+		if(!valueSchemasSchema["TypeName"].isNull())
+			schemasObject.typeName = valueSchemasSchema["TypeName"].asString();
 		auto allAttributesNode = valueSchemasSchema["Attributes"]["Attribute"];
 		for (auto valueSchemasSchemaAttributesAttribute : allAttributesNode)
 		{
@@ -61,12 +61,19 @@ void GetInventorySchemaResult::parse(const std::string &payload)
 	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = value["MaxResults"].asString();
 
 }
 
 std::string GetInventorySchemaResult::getNextToken()const
 {
 	return nextToken_;
+}
+
+std::string GetInventorySchemaResult::getMaxResults()const
+{
+	return maxResults_;
 }
 
 std::vector<GetInventorySchemaResult::Schema> GetInventorySchemaResult::getSchemas()const

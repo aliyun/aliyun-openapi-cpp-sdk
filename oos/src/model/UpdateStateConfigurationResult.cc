@@ -43,32 +43,34 @@ void UpdateStateConfigurationResult::parse(const std::string &payload)
 	for (auto valueStateConfigurationStateConfigurationItem : allStateConfigurationNode)
 	{
 		StateConfigurationItem stateConfigurationObject;
+		if(!valueStateConfigurationStateConfigurationItem["UpdateTime"].isNull())
+			stateConfigurationObject.updateTime = valueStateConfigurationStateConfigurationItem["UpdateTime"].asString();
 		if(!valueStateConfigurationStateConfigurationItem["CreateTime"].isNull())
 			stateConfigurationObject.createTime = valueStateConfigurationStateConfigurationItem["CreateTime"].asString();
-		if(!valueStateConfigurationStateConfigurationItem["Description"].isNull())
-			stateConfigurationObject.description = valueStateConfigurationStateConfigurationItem["Description"].asString();
+		if(!valueStateConfigurationStateConfigurationItem["Targets"].isNull())
+			stateConfigurationObject.targets = valueStateConfigurationStateConfigurationItem["Targets"].asString();
+		if(!valueStateConfigurationStateConfigurationItem["Tags"].isNull())
+			stateConfigurationObject.tags = valueStateConfigurationStateConfigurationItem["Tags"].asString();
 		if(!valueStateConfigurationStateConfigurationItem["StateConfigurationId"].isNull())
 			stateConfigurationObject.stateConfigurationId = valueStateConfigurationStateConfigurationItem["StateConfigurationId"].asString();
-		if(!valueStateConfigurationStateConfigurationItem["TemplateId"].isNull())
-			stateConfigurationObject.templateId = valueStateConfigurationStateConfigurationItem["TemplateId"].asString();
+		if(!valueStateConfigurationStateConfigurationItem["ScheduleExpression"].isNull())
+			stateConfigurationObject.scheduleExpression = valueStateConfigurationStateConfigurationItem["ScheduleExpression"].asString();
 		if(!valueStateConfigurationStateConfigurationItem["TemplateName"].isNull())
 			stateConfigurationObject.templateName = valueStateConfigurationStateConfigurationItem["TemplateName"].asString();
 		if(!valueStateConfigurationStateConfigurationItem["TemplateVersion"].isNull())
 			stateConfigurationObject.templateVersion = valueStateConfigurationStateConfigurationItem["TemplateVersion"].asString();
-		if(!valueStateConfigurationStateConfigurationItem["Parameters"].isNull())
-			stateConfigurationObject.parameters = valueStateConfigurationStateConfigurationItem["Parameters"].asString();
 		if(!valueStateConfigurationStateConfigurationItem["ConfigureMode"].isNull())
 			stateConfigurationObject.configureMode = valueStateConfigurationStateConfigurationItem["ConfigureMode"].asString();
 		if(!valueStateConfigurationStateConfigurationItem["ScheduleType"].isNull())
 			stateConfigurationObject.scheduleType = valueStateConfigurationStateConfigurationItem["ScheduleType"].asString();
-		if(!valueStateConfigurationStateConfigurationItem["ScheduleExpression"].isNull())
-			stateConfigurationObject.scheduleExpression = valueStateConfigurationStateConfigurationItem["ScheduleExpression"].asString();
-		if(!valueStateConfigurationStateConfigurationItem["Targets"].isNull())
-			stateConfigurationObject.targets = valueStateConfigurationStateConfigurationItem["Targets"].asString();
-		if(!valueStateConfigurationStateConfigurationItem["UpdateTime"].isNull())
-			stateConfigurationObject.updateTime = valueStateConfigurationStateConfigurationItem["UpdateTime"].asString();
-		if(!valueStateConfigurationStateConfigurationItem["Tags"].isNull())
-			stateConfigurationObject.tags = valueStateConfigurationStateConfigurationItem["Tags"].asString();
+		if(!valueStateConfigurationStateConfigurationItem["Parameters"].isNull())
+			stateConfigurationObject.parameters = valueStateConfigurationStateConfigurationItem["Parameters"].asString();
+		if(!valueStateConfigurationStateConfigurationItem["Description"].isNull())
+			stateConfigurationObject.description = valueStateConfigurationStateConfigurationItem["Description"].asString();
+		if(!valueStateConfigurationStateConfigurationItem["ResourceGroupId"].isNull())
+			stateConfigurationObject.resourceGroupId = valueStateConfigurationStateConfigurationItem["ResourceGroupId"].asString();
+		if(!valueStateConfigurationStateConfigurationItem["TemplateId"].isNull())
+			stateConfigurationObject.templateId = valueStateConfigurationStateConfigurationItem["TemplateId"].asString();
 		stateConfiguration_.push_back(stateConfigurationObject);
 	}
 

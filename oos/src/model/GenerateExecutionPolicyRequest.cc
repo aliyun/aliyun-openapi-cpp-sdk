@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Oos::Model::GenerateExecutionPolicyRequest;
 
-GenerateExecutionPolicyRequest::GenerateExecutionPolicyRequest() :
-	RpcServiceRequest("oos", "2019-06-01", "GenerateExecutionPolicy")
-{
-	setMethod(HttpRequest::Method::Post);
+GenerateExecutionPolicyRequest::GenerateExecutionPolicyRequest()
+    : RpcServiceRequest("oos", "2019-06-01", "GenerateExecutionPolicy") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GenerateExecutionPolicyRequest::~GenerateExecutionPolicyRequest()
-{}
+GenerateExecutionPolicyRequest::~GenerateExecutionPolicyRequest() {}
 
-std::string GenerateExecutionPolicyRequest::getTemplateVersion()const
-{
-	return templateVersion_;
+std::string GenerateExecutionPolicyRequest::getTemplateVersion() const {
+  return templateVersion_;
 }
 
-void GenerateExecutionPolicyRequest::setTemplateVersion(const std::string& templateVersion)
-{
-	templateVersion_ = templateVersion;
-	setParameter("TemplateVersion", templateVersion);
+void GenerateExecutionPolicyRequest::setTemplateVersion(const std::string &templateVersion) {
+  templateVersion_ = templateVersion;
+  setParameter(std::string("TemplateVersion"), templateVersion);
 }
 
-std::string GenerateExecutionPolicyRequest::getRegionId()const
-{
-	return regionId_;
+std::string GenerateExecutionPolicyRequest::getRegionId() const {
+  return regionId_;
 }
 
-void GenerateExecutionPolicyRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void GenerateExecutionPolicyRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string GenerateExecutionPolicyRequest::getTemplateName()const
-{
-	return templateName_;
+std::string GenerateExecutionPolicyRequest::getTemplateName() const {
+  return templateName_;
 }
 
-void GenerateExecutionPolicyRequest::setTemplateName(const std::string& templateName)
-{
-	templateName_ = templateName;
-	setParameter("TemplateName", templateName);
+void GenerateExecutionPolicyRequest::setTemplateName(const std::string &templateName) {
+  templateName_ = templateName;
+  setParameter(std::string("TemplateName"), templateName);
 }
 

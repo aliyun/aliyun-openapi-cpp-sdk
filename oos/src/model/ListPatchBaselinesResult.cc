@@ -43,32 +43,32 @@ void ListPatchBaselinesResult::parse(const std::string &payload)
 	for (auto valuePatchBaselinesPatchBaseline : allPatchBaselinesNode)
 	{
 		PatchBaseline patchBaselinesObject;
-		if(!valuePatchBaselinesPatchBaseline["Id"].isNull())
-			patchBaselinesObject.id = valuePatchBaselinesPatchBaseline["Id"].asString();
-		if(!valuePatchBaselinesPatchBaseline["Name"].isNull())
-			patchBaselinesObject.name = valuePatchBaselinesPatchBaseline["Name"].asString();
-		if(!valuePatchBaselinesPatchBaseline["CreatedDate"].isNull())
-			patchBaselinesObject.createdDate = valuePatchBaselinesPatchBaseline["CreatedDate"].asString();
-		if(!valuePatchBaselinesPatchBaseline["CreatedBy"].isNull())
-			patchBaselinesObject.createdBy = valuePatchBaselinesPatchBaseline["CreatedBy"].asString();
-		if(!valuePatchBaselinesPatchBaseline["UpdatedDate"].isNull())
-			patchBaselinesObject.updatedDate = valuePatchBaselinesPatchBaseline["UpdatedDate"].asString();
-		if(!valuePatchBaselinesPatchBaseline["UpdatedBy"].isNull())
-			patchBaselinesObject.updatedBy = valuePatchBaselinesPatchBaseline["UpdatedBy"].asString();
-		if(!valuePatchBaselinesPatchBaseline["Description"].isNull())
-			patchBaselinesObject.description = valuePatchBaselinesPatchBaseline["Description"].asString();
-		if(!valuePatchBaselinesPatchBaseline["ShareType"].isNull())
-			patchBaselinesObject.shareType = valuePatchBaselinesPatchBaseline["ShareType"].asString();
 		if(!valuePatchBaselinesPatchBaseline["OperationSystem"].isNull())
 			patchBaselinesObject.operationSystem = valuePatchBaselinesPatchBaseline["OperationSystem"].asString();
 		if(!valuePatchBaselinesPatchBaseline["IsDefault"].isNull())
 			patchBaselinesObject.isDefault = valuePatchBaselinesPatchBaseline["IsDefault"].asString() == "true";
+		if(!valuePatchBaselinesPatchBaseline["Description"].isNull())
+			patchBaselinesObject.description = valuePatchBaselinesPatchBaseline["Description"].asString();
+		if(!valuePatchBaselinesPatchBaseline["UpdatedDate"].isNull())
+			patchBaselinesObject.updatedDate = valuePatchBaselinesPatchBaseline["UpdatedDate"].asString();
+		if(!valuePatchBaselinesPatchBaseline["UpdatedBy"].isNull())
+			patchBaselinesObject.updatedBy = valuePatchBaselinesPatchBaseline["UpdatedBy"].asString();
+		if(!valuePatchBaselinesPatchBaseline["CreatedBy"].isNull())
+			patchBaselinesObject.createdBy = valuePatchBaselinesPatchBaseline["CreatedBy"].asString();
+		if(!valuePatchBaselinesPatchBaseline["CreatedDate"].isNull())
+			patchBaselinesObject.createdDate = valuePatchBaselinesPatchBaseline["CreatedDate"].asString();
+		if(!valuePatchBaselinesPatchBaseline["Name"].isNull())
+			patchBaselinesObject.name = valuePatchBaselinesPatchBaseline["Name"].asString();
+		if(!valuePatchBaselinesPatchBaseline["Id"].isNull())
+			patchBaselinesObject.id = valuePatchBaselinesPatchBaseline["Id"].asString();
+		if(!valuePatchBaselinesPatchBaseline["ShareType"].isNull())
+			patchBaselinesObject.shareType = valuePatchBaselinesPatchBaseline["ShareType"].asString();
 		patchBaselines_.push_back(patchBaselinesObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

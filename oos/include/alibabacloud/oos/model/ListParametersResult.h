@@ -36,8 +36,9 @@ namespace AlibabaCloud
 				{
 					std::string updatedBy;
 					std::string type;
-					std::string createdBy;
 					std::string description;
+					std::string createdBy;
+					std::string resourceGroupId;
 					std::string updatedDate;
 					std::string parameterVersion;
 					std::string createdDate;

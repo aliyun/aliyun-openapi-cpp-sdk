@@ -34,9 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct _Template
 				{
-					std::string createdBy;
 					std::string description;
+					std::string createdBy;
 					std::string templateFormat;
+					std::string resourceGroupId;
 					std::string updatedDate;
 					std::string templateVersion;
 					std::string templateType;
@@ -46,8 +47,8 @@ namespace AlibabaCloud
 					std::string createdDate;
 					std::string templateName;
 					std::string versionName;
-					std::string templateId;
 					std::string tags;
+					std::string templateId;
 					std::string shareType;
 				};
 

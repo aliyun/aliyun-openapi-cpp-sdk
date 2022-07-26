@@ -43,24 +43,26 @@ void ListActionsResult::parse(const std::string &payload)
 	for (auto valueActionsAction : allActionsNode)
 	{
 		Action actionsObject;
-		if(!valueActionsAction["OOSActionName"].isNull())
-			actionsObject.oOSActionName = valueActionsAction["OOSActionName"].asString();
-		if(!valueActionsAction["Description"].isNull())
-			actionsObject.description = valueActionsAction["Description"].asString();
+		if(!valueActionsAction["Popularity"].isNull())
+			actionsObject.popularity = std::stoi(valueActionsAction["Popularity"].asString());
 		if(!valueActionsAction["ActionType"].isNull())
 			actionsObject.actionType = valueActionsAction["ActionType"].asString();
+		if(!valueActionsAction["Description"].isNull())
+			actionsObject.description = valueActionsAction["Description"].asString();
 		if(!valueActionsAction["CreatedDate"].isNull())
 			actionsObject.createdDate = valueActionsAction["CreatedDate"].asString();
-		if(!valueActionsAction["Properties"].isNull())
-			actionsObject.properties = valueActionsAction["Properties"].asString();
 		if(!valueActionsAction["TemplateVersion"].isNull())
 			actionsObject.templateVersion = valueActionsAction["TemplateVersion"].asString();
+		if(!valueActionsAction["OOSActionName"].isNull())
+			actionsObject.oOSActionName = valueActionsAction["OOSActionName"].asString();
+		if(!valueActionsAction["Properties"].isNull())
+			actionsObject.properties = valueActionsAction["Properties"].asString();
 		actions_.push_back(actionsObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

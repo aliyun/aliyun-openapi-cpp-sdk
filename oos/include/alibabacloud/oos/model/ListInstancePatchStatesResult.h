@@ -37,16 +37,16 @@ namespace AlibabaCloud
 					std::string baselineId;
 					std::string missingCount;
 					std::string ownerInformation;
-					std::string instanceId;
-					std::string installedOtherCount;
 					std::string operationEndTime;
+					std::string installedOtherCount;
+					std::string instanceId;
 					std::string installedPendingRebootCount;
 					std::string operationStartTime;
 					std::string failedCount;
 					std::string operationType;
 					std::string installedCount;
-					std::string patchGroup;
 					std::string installedRejectedCount;
+					std::string patchGroup;
 				};
 
 

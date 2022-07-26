@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					std::string loopMode;
 					std::string parameters;
 					std::string description;
+					std::string resourceGroupId;
 					bool isParent;
 					std::string mode;
 					std::string templateVersion;
@@ -59,9 +60,9 @@ namespace AlibabaCloud
 					std::string ramRole;
 					std::string templateName;
 					std::string counters;
-					std::string templateId;
 					std::string executedBy;
 					std::string tags;
+					std::string templateId;
 					std::string executionId;
 				};
 

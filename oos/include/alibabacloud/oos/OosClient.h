@@ -24,6 +24,14 @@
 #include "OosExport.h"
 #include "model/CancelExecutionRequest.h"
 #include "model/CancelExecutionResult.h"
+#include "model/ChangeResourceGroupRequest.h"
+#include "model/ChangeResourceGroupResult.h"
+#include "model/ContinueDeployApplicationGroupRequest.h"
+#include "model/ContinueDeployApplicationGroupResult.h"
+#include "model/CreateApplicationRequest.h"
+#include "model/CreateApplicationResult.h"
+#include "model/CreateApplicationGroupRequest.h"
+#include "model/CreateApplicationGroupResult.h"
 #include "model/CreateParameterRequest.h"
 #include "model/CreateParameterResult.h"
 #include "model/CreatePatchBaselineRequest.h"
@@ -34,6 +42,10 @@
 #include "model/CreateStateConfigurationResult.h"
 #include "model/CreateTemplateRequest.h"
 #include "model/CreateTemplateResult.h"
+#include "model/DeleteApplicationRequest.h"
+#include "model/DeleteApplicationResult.h"
+#include "model/DeleteApplicationGroupRequest.h"
+#include "model/DeleteApplicationGroupResult.h"
 #include "model/DeleteExecutionsRequest.h"
 #include "model/DeleteExecutionsResult.h"
 #include "model/DeleteParameterRequest.h"
@@ -48,10 +60,16 @@
 #include "model/DeleteTemplateResult.h"
 #include "model/DeleteTemplatesRequest.h"
 #include "model/DeleteTemplatesResult.h"
+#include "model/DeployApplicationGroupRequest.h"
+#include "model/DeployApplicationGroupResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/GenerateExecutionPolicyRequest.h"
 #include "model/GenerateExecutionPolicyResult.h"
+#include "model/GetApplicationRequest.h"
+#include "model/GetApplicationResult.h"
+#include "model/GetApplicationGroupRequest.h"
+#include "model/GetApplicationGroupResult.h"
 #include "model/GetExecutionTemplateRequest.h"
 #include "model/GetExecutionTemplateResult.h"
 #include "model/GetInventorySchemaRequest.h"
@@ -76,6 +94,10 @@
 #include "model/GetTemplateResult.h"
 #include "model/ListActionsRequest.h"
 #include "model/ListActionsResult.h"
+#include "model/ListApplicationGroupsRequest.h"
+#include "model/ListApplicationGroupsResult.h"
+#include "model/ListApplicationsRequest.h"
+#include "model/ListApplicationsResult.h"
 #include "model/ListExecutionLogsRequest.h"
 #include "model/ListExecutionLogsResult.h"
 #include "model/ListExecutionRiskyTasksRequest.h"
@@ -86,8 +108,6 @@
 #include "model/ListInstancePatchStatesResult.h"
 #include "model/ListInstancePatchesRequest.h"
 #include "model/ListInstancePatchesResult.h"
-#include "model/ListInstanceStateReportsRequest.h"
-#include "model/ListInstanceStateReportsResult.h"
 #include "model/ListInventoryEntriesRequest.h"
 #include "model/ListInventoryEntriesResult.h"
 #include "model/ListParameterVersionsRequest.h"
@@ -132,10 +152,12 @@
 #include "model/TriggerExecutionResult.h"
 #include "model/UntagResourcesRequest.h"
 #include "model/UntagResourcesResult.h"
+#include "model/UpdateApplicationRequest.h"
+#include "model/UpdateApplicationResult.h"
+#include "model/UpdateApplicationGroupRequest.h"
+#include "model/UpdateApplicationGroupResult.h"
 #include "model/UpdateExecutionRequest.h"
 #include "model/UpdateExecutionResult.h"
-#include "model/UpdateInstanceInformationRequest.h"
-#include "model/UpdateInstanceInformationResult.h"
 #include "model/UpdateParameterRequest.h"
 #include "model/UpdateParameterResult.h"
 #include "model/UpdatePatchBaselineRequest.h"
@@ -160,6 +182,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelExecutionResult> CancelExecutionOutcome;
 			typedef std::future<CancelExecutionOutcome> CancelExecutionOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::CancelExecutionRequest&, const CancelExecutionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelExecutionAsyncHandler;
+			typedef Outcome<Error, Model::ChangeResourceGroupResult> ChangeResourceGroupOutcome;
+			typedef std::future<ChangeResourceGroupOutcome> ChangeResourceGroupOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::ChangeResourceGroupRequest&, const ChangeResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeResourceGroupAsyncHandler;
+			typedef Outcome<Error, Model::ContinueDeployApplicationGroupResult> ContinueDeployApplicationGroupOutcome;
+			typedef std::future<ContinueDeployApplicationGroupOutcome> ContinueDeployApplicationGroupOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::ContinueDeployApplicationGroupRequest&, const ContinueDeployApplicationGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ContinueDeployApplicationGroupAsyncHandler;
+			typedef Outcome<Error, Model::CreateApplicationResult> CreateApplicationOutcome;
+			typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::CreateApplicationRequest&, const CreateApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationAsyncHandler;
+			typedef Outcome<Error, Model::CreateApplicationGroupResult> CreateApplicationGroupOutcome;
+			typedef std::future<CreateApplicationGroupOutcome> CreateApplicationGroupOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::CreateApplicationGroupRequest&, const CreateApplicationGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateApplicationGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreateParameterResult> CreateParameterOutcome;
 			typedef std::future<CreateParameterOutcome> CreateParameterOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::CreateParameterRequest&, const CreateParameterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateParameterAsyncHandler;
@@ -175,6 +209,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateTemplateResult> CreateTemplateOutcome;
 			typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::CreateTemplateRequest&, const CreateTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTemplateAsyncHandler;
+			typedef Outcome<Error, Model::DeleteApplicationResult> DeleteApplicationOutcome;
+			typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::DeleteApplicationRequest&, const DeleteApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationAsyncHandler;
+			typedef Outcome<Error, Model::DeleteApplicationGroupResult> DeleteApplicationGroupOutcome;
+			typedef std::future<DeleteApplicationGroupOutcome> DeleteApplicationGroupOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::DeleteApplicationGroupRequest&, const DeleteApplicationGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteExecutionsResult> DeleteExecutionsOutcome;
 			typedef std::future<DeleteExecutionsOutcome> DeleteExecutionsOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::DeleteExecutionsRequest&, const DeleteExecutionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExecutionsAsyncHandler;
@@ -196,12 +236,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteTemplatesResult> DeleteTemplatesOutcome;
 			typedef std::future<DeleteTemplatesOutcome> DeleteTemplatesOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::DeleteTemplatesRequest&, const DeleteTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTemplatesAsyncHandler;
+			typedef Outcome<Error, Model::DeployApplicationGroupResult> DeployApplicationGroupOutcome;
+			typedef std::future<DeployApplicationGroupOutcome> DeployApplicationGroupOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::DeployApplicationGroupRequest&, const DeployApplicationGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeployApplicationGroupAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
 			typedef Outcome<Error, Model::GenerateExecutionPolicyResult> GenerateExecutionPolicyOutcome;
 			typedef std::future<GenerateExecutionPolicyOutcome> GenerateExecutionPolicyOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::GenerateExecutionPolicyRequest&, const GenerateExecutionPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateExecutionPolicyAsyncHandler;
+			typedef Outcome<Error, Model::GetApplicationResult> GetApplicationOutcome;
+			typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::GetApplicationRequest&, const GetApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetApplicationAsyncHandler;
+			typedef Outcome<Error, Model::GetApplicationGroupResult> GetApplicationGroupOutcome;
+			typedef std::future<GetApplicationGroupOutcome> GetApplicationGroupOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::GetApplicationGroupRequest&, const GetApplicationGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetApplicationGroupAsyncHandler;
 			typedef Outcome<Error, Model::GetExecutionTemplateResult> GetExecutionTemplateOutcome;
 			typedef std::future<GetExecutionTemplateOutcome> GetExecutionTemplateOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::GetExecutionTemplateRequest&, const GetExecutionTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetExecutionTemplateAsyncHandler;
@@ -238,6 +287,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListActionsResult> ListActionsOutcome;
 			typedef std::future<ListActionsOutcome> ListActionsOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::ListActionsRequest&, const ListActionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListActionsAsyncHandler;
+			typedef Outcome<Error, Model::ListApplicationGroupsResult> ListApplicationGroupsOutcome;
+			typedef std::future<ListApplicationGroupsOutcome> ListApplicationGroupsOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::ListApplicationGroupsRequest&, const ListApplicationGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApplicationGroupsAsyncHandler;
+			typedef Outcome<Error, Model::ListApplicationsResult> ListApplicationsOutcome;
+			typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::ListApplicationsRequest&, const ListApplicationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListApplicationsAsyncHandler;
 			typedef Outcome<Error, Model::ListExecutionLogsResult> ListExecutionLogsOutcome;
 			typedef std::future<ListExecutionLogsOutcome> ListExecutionLogsOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::ListExecutionLogsRequest&, const ListExecutionLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListExecutionLogsAsyncHandler;
@@ -253,9 +308,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListInstancePatchesResult> ListInstancePatchesOutcome;
 			typedef std::future<ListInstancePatchesOutcome> ListInstancePatchesOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::ListInstancePatchesRequest&, const ListInstancePatchesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancePatchesAsyncHandler;
-			typedef Outcome<Error, Model::ListInstanceStateReportsResult> ListInstanceStateReportsOutcome;
-			typedef std::future<ListInstanceStateReportsOutcome> ListInstanceStateReportsOutcomeCallable;
-			typedef std::function<void(const OosClient*, const Model::ListInstanceStateReportsRequest&, const ListInstanceStateReportsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstanceStateReportsAsyncHandler;
 			typedef Outcome<Error, Model::ListInventoryEntriesResult> ListInventoryEntriesOutcome;
 			typedef std::future<ListInventoryEntriesOutcome> ListInventoryEntriesOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::ListInventoryEntriesRequest&, const ListInventoryEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInventoryEntriesAsyncHandler;
@@ -322,12 +374,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
 			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UpdateApplicationResult> UpdateApplicationOutcome;
+			typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::UpdateApplicationRequest&, const UpdateApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateApplicationAsyncHandler;
+			typedef Outcome<Error, Model::UpdateApplicationGroupResult> UpdateApplicationGroupOutcome;
+			typedef std::future<UpdateApplicationGroupOutcome> UpdateApplicationGroupOutcomeCallable;
+			typedef std::function<void(const OosClient*, const Model::UpdateApplicationGroupRequest&, const UpdateApplicationGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateApplicationGroupAsyncHandler;
 			typedef Outcome<Error, Model::UpdateExecutionResult> UpdateExecutionOutcome;
 			typedef std::future<UpdateExecutionOutcome> UpdateExecutionOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::UpdateExecutionRequest&, const UpdateExecutionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateExecutionAsyncHandler;
-			typedef Outcome<Error, Model::UpdateInstanceInformationResult> UpdateInstanceInformationOutcome;
-			typedef std::future<UpdateInstanceInformationOutcome> UpdateInstanceInformationOutcomeCallable;
-			typedef std::function<void(const OosClient*, const Model::UpdateInstanceInformationRequest&, const UpdateInstanceInformationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceInformationAsyncHandler;
 			typedef Outcome<Error, Model::UpdateParameterResult> UpdateParameterOutcome;
 			typedef std::future<UpdateParameterOutcome> UpdateParameterOutcomeCallable;
 			typedef std::function<void(const OosClient*, const Model::UpdateParameterRequest&, const UpdateParameterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateParameterAsyncHandler;
@@ -354,6 +409,18 @@ namespace AlibabaCloud
 			CancelExecutionOutcome cancelExecution(const Model::CancelExecutionRequest &request)const;
 			void cancelExecutionAsync(const Model::CancelExecutionRequest& request, const CancelExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelExecutionOutcomeCallable cancelExecutionCallable(const Model::CancelExecutionRequest& request) const;
+			ChangeResourceGroupOutcome changeResourceGroup(const Model::ChangeResourceGroupRequest &request)const;
+			void changeResourceGroupAsync(const Model::ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeResourceGroupOutcomeCallable changeResourceGroupCallable(const Model::ChangeResourceGroupRequest& request) const;
+			ContinueDeployApplicationGroupOutcome continueDeployApplicationGroup(const Model::ContinueDeployApplicationGroupRequest &request)const;
+			void continueDeployApplicationGroupAsync(const Model::ContinueDeployApplicationGroupRequest& request, const ContinueDeployApplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ContinueDeployApplicationGroupOutcomeCallable continueDeployApplicationGroupCallable(const Model::ContinueDeployApplicationGroupRequest& request) const;
+			CreateApplicationOutcome createApplication(const Model::CreateApplicationRequest &request)const;
+			void createApplicationAsync(const Model::CreateApplicationRequest& request, const CreateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateApplicationOutcomeCallable createApplicationCallable(const Model::CreateApplicationRequest& request) const;
+			CreateApplicationGroupOutcome createApplicationGroup(const Model::CreateApplicationGroupRequest &request)const;
+			void createApplicationGroupAsync(const Model::CreateApplicationGroupRequest& request, const CreateApplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateApplicationGroupOutcomeCallable createApplicationGroupCallable(const Model::CreateApplicationGroupRequest& request) const;
 			CreateParameterOutcome createParameter(const Model::CreateParameterRequest &request)const;
 			void createParameterAsync(const Model::CreateParameterRequest& request, const CreateParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateParameterOutcomeCallable createParameterCallable(const Model::CreateParameterRequest& request) const;
@@ -369,6 +436,12 @@ namespace AlibabaCloud
 			CreateTemplateOutcome createTemplate(const Model::CreateTemplateRequest &request)const;
 			void createTemplateAsync(const Model::CreateTemplateRequest& request, const CreateTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateTemplateOutcomeCallable createTemplateCallable(const Model::CreateTemplateRequest& request) const;
+			DeleteApplicationOutcome deleteApplication(const Model::DeleteApplicationRequest &request)const;
+			void deleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteApplicationOutcomeCallable deleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
+			DeleteApplicationGroupOutcome deleteApplicationGroup(const Model::DeleteApplicationGroupRequest &request)const;
+			void deleteApplicationGroupAsync(const Model::DeleteApplicationGroupRequest& request, const DeleteApplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteApplicationGroupOutcomeCallable deleteApplicationGroupCallable(const Model::DeleteApplicationGroupRequest& request) const;
 			DeleteExecutionsOutcome deleteExecutions(const Model::DeleteExecutionsRequest &request)const;
 			void deleteExecutionsAsync(const Model::DeleteExecutionsRequest& request, const DeleteExecutionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteExecutionsOutcomeCallable deleteExecutionsCallable(const Model::DeleteExecutionsRequest& request) const;
@@ -390,12 +463,21 @@ namespace AlibabaCloud
 			DeleteTemplatesOutcome deleteTemplates(const Model::DeleteTemplatesRequest &request)const;
 			void deleteTemplatesAsync(const Model::DeleteTemplatesRequest& request, const DeleteTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteTemplatesOutcomeCallable deleteTemplatesCallable(const Model::DeleteTemplatesRequest& request) const;
+			DeployApplicationGroupOutcome deployApplicationGroup(const Model::DeployApplicationGroupRequest &request)const;
+			void deployApplicationGroupAsync(const Model::DeployApplicationGroupRequest& request, const DeployApplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeployApplicationGroupOutcomeCallable deployApplicationGroupCallable(const Model::DeployApplicationGroupRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
 			GenerateExecutionPolicyOutcome generateExecutionPolicy(const Model::GenerateExecutionPolicyRequest &request)const;
 			void generateExecutionPolicyAsync(const Model::GenerateExecutionPolicyRequest& request, const GenerateExecutionPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateExecutionPolicyOutcomeCallable generateExecutionPolicyCallable(const Model::GenerateExecutionPolicyRequest& request) const;
+			GetApplicationOutcome getApplication(const Model::GetApplicationRequest &request)const;
+			void getApplicationAsync(const Model::GetApplicationRequest& request, const GetApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetApplicationOutcomeCallable getApplicationCallable(const Model::GetApplicationRequest& request) const;
+			GetApplicationGroupOutcome getApplicationGroup(const Model::GetApplicationGroupRequest &request)const;
+			void getApplicationGroupAsync(const Model::GetApplicationGroupRequest& request, const GetApplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetApplicationGroupOutcomeCallable getApplicationGroupCallable(const Model::GetApplicationGroupRequest& request) const;
 			GetExecutionTemplateOutcome getExecutionTemplate(const Model::GetExecutionTemplateRequest &request)const;
 			void getExecutionTemplateAsync(const Model::GetExecutionTemplateRequest& request, const GetExecutionTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetExecutionTemplateOutcomeCallable getExecutionTemplateCallable(const Model::GetExecutionTemplateRequest& request) const;
@@ -432,6 +514,12 @@ namespace AlibabaCloud
 			ListActionsOutcome listActions(const Model::ListActionsRequest &request)const;
 			void listActionsAsync(const Model::ListActionsRequest& request, const ListActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListActionsOutcomeCallable listActionsCallable(const Model::ListActionsRequest& request) const;
+			ListApplicationGroupsOutcome listApplicationGroups(const Model::ListApplicationGroupsRequest &request)const;
+			void listApplicationGroupsAsync(const Model::ListApplicationGroupsRequest& request, const ListApplicationGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListApplicationGroupsOutcomeCallable listApplicationGroupsCallable(const Model::ListApplicationGroupsRequest& request) const;
+			ListApplicationsOutcome listApplications(const Model::ListApplicationsRequest &request)const;
+			void listApplicationsAsync(const Model::ListApplicationsRequest& request, const ListApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListApplicationsOutcomeCallable listApplicationsCallable(const Model::ListApplicationsRequest& request) const;
 			ListExecutionLogsOutcome listExecutionLogs(const Model::ListExecutionLogsRequest &request)const;
 			void listExecutionLogsAsync(const Model::ListExecutionLogsRequest& request, const ListExecutionLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListExecutionLogsOutcomeCallable listExecutionLogsCallable(const Model::ListExecutionLogsRequest& request) const;
@@ -447,9 +535,6 @@ namespace AlibabaCloud
 			ListInstancePatchesOutcome listInstancePatches(const Model::ListInstancePatchesRequest &request)const;
 			void listInstancePatchesAsync(const Model::ListInstancePatchesRequest& request, const ListInstancePatchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstancePatchesOutcomeCallable listInstancePatchesCallable(const Model::ListInstancePatchesRequest& request) const;
-			ListInstanceStateReportsOutcome listInstanceStateReports(const Model::ListInstanceStateReportsRequest &request)const;
-			void listInstanceStateReportsAsync(const Model::ListInstanceStateReportsRequest& request, const ListInstanceStateReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListInstanceStateReportsOutcomeCallable listInstanceStateReportsCallable(const Model::ListInstanceStateReportsRequest& request) const;
 			ListInventoryEntriesOutcome listInventoryEntries(const Model::ListInventoryEntriesRequest &request)const;
 			void listInventoryEntriesAsync(const Model::ListInventoryEntriesRequest& request, const ListInventoryEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInventoryEntriesOutcomeCallable listInventoryEntriesCallable(const Model::ListInventoryEntriesRequest& request) const;
@@ -516,12 +601,15 @@ namespace AlibabaCloud
 			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
 			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
+			UpdateApplicationOutcome updateApplication(const Model::UpdateApplicationRequest &request)const;
+			void updateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateApplicationOutcomeCallable updateApplicationCallable(const Model::UpdateApplicationRequest& request) const;
+			UpdateApplicationGroupOutcome updateApplicationGroup(const Model::UpdateApplicationGroupRequest &request)const;
+			void updateApplicationGroupAsync(const Model::UpdateApplicationGroupRequest& request, const UpdateApplicationGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateApplicationGroupOutcomeCallable updateApplicationGroupCallable(const Model::UpdateApplicationGroupRequest& request) const;
 			UpdateExecutionOutcome updateExecution(const Model::UpdateExecutionRequest &request)const;
 			void updateExecutionAsync(const Model::UpdateExecutionRequest& request, const UpdateExecutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateExecutionOutcomeCallable updateExecutionCallable(const Model::UpdateExecutionRequest& request) const;
-			UpdateInstanceInformationOutcome updateInstanceInformation(const Model::UpdateInstanceInformationRequest &request)const;
-			void updateInstanceInformationAsync(const Model::UpdateInstanceInformationRequest& request, const UpdateInstanceInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateInstanceInformationOutcomeCallable updateInstanceInformationCallable(const Model::UpdateInstanceInformationRequest& request) const;
 			UpdateParameterOutcome updateParameter(const Model::UpdateParameterRequest &request)const;
 			void updateParameterAsync(const Model::UpdateParameterRequest& request, const UpdateParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateParameterOutcomeCallable updateParameterCallable(const Model::UpdateParameterRequest& request) const;

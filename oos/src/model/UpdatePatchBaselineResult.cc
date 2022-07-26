@@ -40,26 +40,26 @@ void UpdatePatchBaselineResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto patchBaselineNode = value["PatchBaseline"];
-	if(!patchBaselineNode["Id"].isNull())
-		patchBaseline_.id = patchBaselineNode["Id"].asString();
-	if(!patchBaselineNode["Name"].isNull())
-		patchBaseline_.name = patchBaselineNode["Name"].asString();
-	if(!patchBaselineNode["CreatedDate"].isNull())
-		patchBaseline_.createdDate = patchBaselineNode["CreatedDate"].asString();
-	if(!patchBaselineNode["CreatedBy"].isNull())
-		patchBaseline_.createdBy = patchBaselineNode["CreatedBy"].asString();
+	if(!patchBaselineNode["OperationSystem"].isNull())
+		patchBaseline_.operationSystem = patchBaselineNode["OperationSystem"].asString();
+	if(!patchBaselineNode["Description"].isNull())
+		patchBaseline_.description = patchBaselineNode["Description"].asString();
 	if(!patchBaselineNode["UpdatedDate"].isNull())
 		patchBaseline_.updatedDate = patchBaselineNode["UpdatedDate"].asString();
 	if(!patchBaselineNode["UpdatedBy"].isNull())
 		patchBaseline_.updatedBy = patchBaselineNode["UpdatedBy"].asString();
-	if(!patchBaselineNode["Description"].isNull())
-		patchBaseline_.description = patchBaselineNode["Description"].asString();
-	if(!patchBaselineNode["ShareType"].isNull())
-		patchBaseline_.shareType = patchBaselineNode["ShareType"].asString();
-	if(!patchBaselineNode["OperationSystem"].isNull())
-		patchBaseline_.operationSystem = patchBaselineNode["OperationSystem"].asString();
+	if(!patchBaselineNode["CreatedBy"].isNull())
+		patchBaseline_.createdBy = patchBaselineNode["CreatedBy"].asString();
+	if(!patchBaselineNode["CreatedDate"].isNull())
+		patchBaseline_.createdDate = patchBaselineNode["CreatedDate"].asString();
+	if(!patchBaselineNode["Name"].isNull())
+		patchBaseline_.name = patchBaselineNode["Name"].asString();
 	if(!patchBaselineNode["ApprovalRules"].isNull())
 		patchBaseline_.approvalRules = patchBaselineNode["ApprovalRules"].asString();
+	if(!patchBaselineNode["Id"].isNull())
+		patchBaseline_.id = patchBaselineNode["Id"].asString();
+	if(!patchBaselineNode["ShareType"].isNull())
+		patchBaseline_.shareType = patchBaselineNode["ShareType"].asString();
 
 }
 

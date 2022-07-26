@@ -43,50 +43,50 @@ void ListTaskExecutionsResult::parse(const std::string &payload)
 	for (auto valueTaskExecutionsTaskExecution : allTaskExecutionsNode)
 	{
 		TaskExecution taskExecutionsObject;
-		if(!valueTaskExecutionsTaskExecution["ExecutionId"].isNull())
-			taskExecutionsObject.executionId = valueTaskExecutionsTaskExecution["ExecutionId"].asString();
-		if(!valueTaskExecutionsTaskExecution["TaskExecutionId"].isNull())
-			taskExecutionsObject.taskExecutionId = valueTaskExecutionsTaskExecution["TaskExecutionId"].asString();
-		if(!valueTaskExecutionsTaskExecution["TemplateId"].isNull())
-			taskExecutionsObject.templateId = valueTaskExecutionsTaskExecution["TemplateId"].asString();
-		if(!valueTaskExecutionsTaskExecution["StartDate"].isNull())
-			taskExecutionsObject.startDate = valueTaskExecutionsTaskExecution["StartDate"].asString();
-		if(!valueTaskExecutionsTaskExecution["EndDate"].isNull())
-			taskExecutionsObject.endDate = valueTaskExecutionsTaskExecution["EndDate"].asString();
-		if(!valueTaskExecutionsTaskExecution["CreateDate"].isNull())
-			taskExecutionsObject.createDate = valueTaskExecutionsTaskExecution["CreateDate"].asString();
-		if(!valueTaskExecutionsTaskExecution["UpdateDate"].isNull())
-			taskExecutionsObject.updateDate = valueTaskExecutionsTaskExecution["UpdateDate"].asString();
-		if(!valueTaskExecutionsTaskExecution["Status"].isNull())
-			taskExecutionsObject.status = valueTaskExecutionsTaskExecution["Status"].asString();
-		if(!valueTaskExecutionsTaskExecution["Properties"].isNull())
-			taskExecutionsObject.properties = valueTaskExecutionsTaskExecution["Properties"].asString();
-		if(!valueTaskExecutionsTaskExecution["Outputs"].isNull())
-			taskExecutionsObject.outputs = valueTaskExecutionsTaskExecution["Outputs"].asString();
-		if(!valueTaskExecutionsTaskExecution["TaskAction"].isNull())
-			taskExecutionsObject.taskAction = valueTaskExecutionsTaskExecution["TaskAction"].asString();
-		if(!valueTaskExecutionsTaskExecution["TaskName"].isNull())
-			taskExecutionsObject.taskName = valueTaskExecutionsTaskExecution["TaskName"].asString();
-		if(!valueTaskExecutionsTaskExecution["StatusMessage"].isNull())
-			taskExecutionsObject.statusMessage = valueTaskExecutionsTaskExecution["StatusMessage"].asString();
 		if(!valueTaskExecutionsTaskExecution["ChildExecutionId"].isNull())
 			taskExecutionsObject.childExecutionId = valueTaskExecutionsTaskExecution["ChildExecutionId"].asString();
+		if(!valueTaskExecutionsTaskExecution["Outputs"].isNull())
+			taskExecutionsObject.outputs = valueTaskExecutionsTaskExecution["Outputs"].asString();
+		if(!valueTaskExecutionsTaskExecution["Status"].isNull())
+			taskExecutionsObject.status = valueTaskExecutionsTaskExecution["Status"].asString();
+		if(!valueTaskExecutionsTaskExecution["EndDate"].isNull())
+			taskExecutionsObject.endDate = valueTaskExecutionsTaskExecution["EndDate"].asString();
 		if(!valueTaskExecutionsTaskExecution["ParentTaskExecutionId"].isNull())
 			taskExecutionsObject.parentTaskExecutionId = valueTaskExecutionsTaskExecution["ParentTaskExecutionId"].asString();
+		if(!valueTaskExecutionsTaskExecution["TaskName"].isNull())
+			taskExecutionsObject.taskName = valueTaskExecutionsTaskExecution["TaskName"].asString();
+		if(!valueTaskExecutionsTaskExecution["StartDate"].isNull())
+			taskExecutionsObject.startDate = valueTaskExecutionsTaskExecution["StartDate"].asString();
 		if(!valueTaskExecutionsTaskExecution["LoopItem"].isNull())
 			taskExecutionsObject.loopItem = valueTaskExecutionsTaskExecution["LoopItem"].asString();
+		if(!valueTaskExecutionsTaskExecution["CreateDate"].isNull())
+			taskExecutionsObject.createDate = valueTaskExecutionsTaskExecution["CreateDate"].asString();
+		if(!valueTaskExecutionsTaskExecution["ExecutionId"].isNull())
+			taskExecutionsObject.executionId = valueTaskExecutionsTaskExecution["ExecutionId"].asString();
+		if(!valueTaskExecutionsTaskExecution["TaskAction"].isNull())
+			taskExecutionsObject.taskAction = valueTaskExecutionsTaskExecution["TaskAction"].asString();
+		if(!valueTaskExecutionsTaskExecution["TaskExecutionId"].isNull())
+			taskExecutionsObject.taskExecutionId = valueTaskExecutionsTaskExecution["TaskExecutionId"].asString();
+		if(!valueTaskExecutionsTaskExecution["UpdateDate"].isNull())
+			taskExecutionsObject.updateDate = valueTaskExecutionsTaskExecution["UpdateDate"].asString();
 		if(!valueTaskExecutionsTaskExecution["Loop"].isNull())
 			taskExecutionsObject.loop = valueTaskExecutionsTaskExecution["Loop"].asString();
-		if(!valueTaskExecutionsTaskExecution["ExtraData"].isNull())
-			taskExecutionsObject.extraData = valueTaskExecutionsTaskExecution["ExtraData"].asString();
+		if(!valueTaskExecutionsTaskExecution["TemplateId"].isNull())
+			taskExecutionsObject.templateId = valueTaskExecutionsTaskExecution["TemplateId"].asString();
 		if(!valueTaskExecutionsTaskExecution["LoopBatchNumber"].isNull())
 			taskExecutionsObject.loopBatchNumber = std::stoi(valueTaskExecutionsTaskExecution["LoopBatchNumber"].asString());
+		if(!valueTaskExecutionsTaskExecution["StatusMessage"].isNull())
+			taskExecutionsObject.statusMessage = valueTaskExecutionsTaskExecution["StatusMessage"].asString();
+		if(!valueTaskExecutionsTaskExecution["ExtraData"].isNull())
+			taskExecutionsObject.extraData = valueTaskExecutionsTaskExecution["ExtraData"].asString();
+		if(!valueTaskExecutionsTaskExecution["Properties"].isNull())
+			taskExecutionsObject.properties = valueTaskExecutionsTaskExecution["Properties"].asString();
 		taskExecutions_.push_back(taskExecutionsObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

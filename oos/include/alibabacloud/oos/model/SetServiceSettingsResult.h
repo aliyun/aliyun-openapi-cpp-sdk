@@ -36,8 +36,9 @@ namespace AlibabaCloud
 				{
 					bool deliverySlsEnabled;
 					std::string deliveryOssKeyPrefix;
-					bool deliveryOssEnabled;
 					std::string deliveryOssBucketName;
+					bool deliveryOssEnabled;
+					std::string rdcEnterpriseId;
 					std::string deliverySlsProjectName;
 				};
 

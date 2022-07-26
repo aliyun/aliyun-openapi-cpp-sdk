@@ -43,16 +43,18 @@ void GetServiceSettingsResult::parse(const std::string &payload)
 	for (auto valueServiceSettingsServiceSetting : allServiceSettingsNode)
 	{
 		ServiceSetting serviceSettingsObject;
-		if(!valueServiceSettingsServiceSetting["DeliveryOssEnabled"].isNull())
-			serviceSettingsObject.deliveryOssEnabled = valueServiceSettingsServiceSetting["DeliveryOssEnabled"].asString() == "true";
 		if(!valueServiceSettingsServiceSetting["DeliveryOssBucketName"].isNull())
 			serviceSettingsObject.deliveryOssBucketName = valueServiceSettingsServiceSetting["DeliveryOssBucketName"].asString();
 		if(!valueServiceSettingsServiceSetting["DeliveryOssKeyPrefix"].isNull())
 			serviceSettingsObject.deliveryOssKeyPrefix = valueServiceSettingsServiceSetting["DeliveryOssKeyPrefix"].asString();
+		if(!valueServiceSettingsServiceSetting["DeliveryOssEnabled"].isNull())
+			serviceSettingsObject.deliveryOssEnabled = valueServiceSettingsServiceSetting["DeliveryOssEnabled"].asString() == "true";
 		if(!valueServiceSettingsServiceSetting["DeliverySlsEnabled"].isNull())
 			serviceSettingsObject.deliverySlsEnabled = valueServiceSettingsServiceSetting["DeliverySlsEnabled"].asString() == "true";
 		if(!valueServiceSettingsServiceSetting["DeliverySlsProjectName"].isNull())
 			serviceSettingsObject.deliverySlsProjectName = valueServiceSettingsServiceSetting["DeliverySlsProjectName"].asString();
+		if(!valueServiceSettingsServiceSetting["RdcEnterpriseId"].isNull())
+			serviceSettingsObject.rdcEnterpriseId = valueServiceSettingsServiceSetting["RdcEnterpriseId"].asString();
 		serviceSettings_.push_back(serviceSettingsObject);
 	}
 

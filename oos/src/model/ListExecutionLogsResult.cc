@@ -43,22 +43,22 @@ void ListExecutionLogsResult::parse(const std::string &payload)
 	for (auto valueExecutionLogsExecutionLog : allExecutionLogsNode)
 	{
 		ExecutionLog executionLogsObject;
-		if(!valueExecutionLogsExecutionLog["Timestamp"].isNull())
-			executionLogsObject.timestamp = valueExecutionLogsExecutionLog["Timestamp"].asString();
-		if(!valueExecutionLogsExecutionLog["Message"].isNull())
-			executionLogsObject.message = valueExecutionLogsExecutionLog["Message"].asString();
 		if(!valueExecutionLogsExecutionLog["TaskExecutionId"].isNull())
 			executionLogsObject.taskExecutionId = valueExecutionLogsExecutionLog["TaskExecutionId"].asString();
+		if(!valueExecutionLogsExecutionLog["Message"].isNull())
+			executionLogsObject.message = valueExecutionLogsExecutionLog["Message"].asString();
 		if(!valueExecutionLogsExecutionLog["LogType"].isNull())
 			executionLogsObject.logType = valueExecutionLogsExecutionLog["LogType"].asString();
+		if(!valueExecutionLogsExecutionLog["Timestamp"].isNull())
+			executionLogsObject.timestamp = valueExecutionLogsExecutionLog["Timestamp"].asString();
 		executionLogs_.push_back(executionLogsObject);
 	}
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["IsTruncated"].isNull())
 		isTruncated_ = value["IsTruncated"].asString() == "true";
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

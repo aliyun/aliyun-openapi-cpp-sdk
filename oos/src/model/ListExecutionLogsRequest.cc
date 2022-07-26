@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Oos::Model::ListExecutionLogsRequest;
 
-ListExecutionLogsRequest::ListExecutionLogsRequest() :
-	RpcServiceRequest("oos", "2019-06-01", "ListExecutionLogs")
-{
-	setMethod(HttpRequest::Method::Post);
+ListExecutionLogsRequest::ListExecutionLogsRequest()
+    : RpcServiceRequest("oos", "2019-06-01", "ListExecutionLogs") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListExecutionLogsRequest::~ListExecutionLogsRequest()
-{}
+ListExecutionLogsRequest::~ListExecutionLogsRequest() {}
 
-std::string ListExecutionLogsRequest::getExecutionId()const
-{
-	return executionId_;
+std::string ListExecutionLogsRequest::getExecutionId() const {
+  return executionId_;
 }
 
-void ListExecutionLogsRequest::setExecutionId(const std::string& executionId)
-{
-	executionId_ = executionId;
-	setParameter("ExecutionId", executionId);
+void ListExecutionLogsRequest::setExecutionId(const std::string &executionId) {
+  executionId_ = executionId;
+  setParameter(std::string("ExecutionId"), executionId);
 }
 
-std::string ListExecutionLogsRequest::getLogType()const
-{
-	return logType_;
+std::string ListExecutionLogsRequest::getLogType() const {
+  return logType_;
 }
 
-void ListExecutionLogsRequest::setLogType(const std::string& logType)
-{
-	logType_ = logType;
-	setParameter("LogType", logType);
+void ListExecutionLogsRequest::setLogType(const std::string &logType) {
+  logType_ = logType;
+  setParameter(std::string("LogType"), logType);
 }
 
-std::string ListExecutionLogsRequest::getRegionId()const
-{
-	return regionId_;
+std::string ListExecutionLogsRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ListExecutionLogsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ListExecutionLogsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ListExecutionLogsRequest::getNextToken()const
-{
-	return nextToken_;
+std::string ListExecutionLogsRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void ListExecutionLogsRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+void ListExecutionLogsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-int ListExecutionLogsRequest::getMaxResults()const
-{
-	return maxResults_;
+int ListExecutionLogsRequest::getMaxResults() const {
+  return maxResults_;
 }
 
-void ListExecutionLogsRequest::setMaxResults(int maxResults)
-{
-	maxResults_ = maxResults;
-	setParameter("MaxResults", std::to_string(maxResults));
+void ListExecutionLogsRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
-std::string ListExecutionLogsRequest::getTaskExecutionId()const
-{
-	return taskExecutionId_;
+std::string ListExecutionLogsRequest::getTaskExecutionId() const {
+  return taskExecutionId_;
 }
 
-void ListExecutionLogsRequest::setTaskExecutionId(const std::string& taskExecutionId)
-{
-	taskExecutionId_ = taskExecutionId;
-	setParameter("TaskExecutionId", taskExecutionId);
+void ListExecutionLogsRequest::setTaskExecutionId(const std::string &taskExecutionId) {
+  taskExecutionId_ = taskExecutionId;
+  setParameter(std::string("TaskExecutionId"), taskExecutionId);
 }
 

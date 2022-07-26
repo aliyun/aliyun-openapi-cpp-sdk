@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,243 +18,208 @@
 
 using AlibabaCloud::Oos::Model::ListExecutionsRequest;
 
-ListExecutionsRequest::ListExecutionsRequest() :
-	RpcServiceRequest("oos", "2019-06-01", "ListExecutions")
-{
-	setMethod(HttpRequest::Method::Post);
+ListExecutionsRequest::ListExecutionsRequest()
+    : RpcServiceRequest("oos", "2019-06-01", "ListExecutions") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListExecutionsRequest::~ListExecutionsRequest()
-{}
+ListExecutionsRequest::~ListExecutionsRequest() {}
 
-std::string ListExecutionsRequest::getExecutedBy()const
-{
-	return executedBy_;
+std::string ListExecutionsRequest::getExecutedBy() const {
+  return executedBy_;
 }
 
-void ListExecutionsRequest::setExecutedBy(const std::string& executedBy)
-{
-	executedBy_ = executedBy;
-	setParameter("ExecutedBy", executedBy);
+void ListExecutionsRequest::setExecutedBy(const std::string &executedBy) {
+  executedBy_ = executedBy;
+  setParameter(std::string("ExecutedBy"), executedBy);
 }
 
-bool ListExecutionsRequest::getIncludeChildExecution()const
-{
-	return includeChildExecution_;
+bool ListExecutionsRequest::getIncludeChildExecution() const {
+  return includeChildExecution_;
 }
 
-void ListExecutionsRequest::setIncludeChildExecution(bool includeChildExecution)
-{
-	includeChildExecution_ = includeChildExecution;
-	setParameter("IncludeChildExecution", includeChildExecution ? "true" : "false");
+void ListExecutionsRequest::setIncludeChildExecution(bool includeChildExecution) {
+  includeChildExecution_ = includeChildExecution;
+  setParameter(std::string("IncludeChildExecution"), includeChildExecution ? "true" : "false");
 }
 
-std::string ListExecutionsRequest::getMode()const
-{
-	return mode_;
+std::string ListExecutionsRequest::getMode() const {
+  return mode_;
 }
 
-void ListExecutionsRequest::setMode(const std::string& mode)
-{
-	mode_ = mode;
-	setParameter("Mode", mode);
+void ListExecutionsRequest::setMode(const std::string &mode) {
+  mode_ = mode;
+  setParameter(std::string("Mode"), mode);
 }
 
-std::string ListExecutionsRequest::getExecutionId()const
-{
-	return executionId_;
+std::string ListExecutionsRequest::getExecutionId() const {
+  return executionId_;
 }
 
-void ListExecutionsRequest::setExecutionId(const std::string& executionId)
-{
-	executionId_ = executionId;
-	setParameter("ExecutionId", executionId);
+void ListExecutionsRequest::setExecutionId(const std::string &executionId) {
+  executionId_ = executionId;
+  setParameter(std::string("ExecutionId"), executionId);
 }
 
-std::string ListExecutionsRequest::getRegionId()const
-{
-	return regionId_;
+std::string ListExecutionsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void ListExecutionsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ListExecutionsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string ListExecutionsRequest::getRamRole()const
-{
-	return ramRole_;
+std::string ListExecutionsRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ListExecutionsRequest::setRamRole(const std::string& ramRole)
-{
-	ramRole_ = ramRole;
-	setParameter("RamRole", ramRole);
+void ListExecutionsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ListExecutionsRequest::getNextToken()const
-{
-	return nextToken_;
+std::string ListExecutionsRequest::getRamRole() const {
+  return ramRole_;
 }
 
-void ListExecutionsRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+void ListExecutionsRequest::setRamRole(const std::string &ramRole) {
+  ramRole_ = ramRole;
+  setParameter(std::string("RamRole"), ramRole);
 }
 
-std::string ListExecutionsRequest::getTemplateName()const
-{
-	return templateName_;
+std::string ListExecutionsRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void ListExecutionsRequest::setTemplateName(const std::string& templateName)
-{
-	templateName_ = templateName;
-	setParameter("TemplateName", templateName);
+void ListExecutionsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string ListExecutionsRequest::getEndDateBefore()const
-{
-	return endDateBefore_;
+std::string ListExecutionsRequest::getTemplateName() const {
+  return templateName_;
 }
 
-void ListExecutionsRequest::setEndDateBefore(const std::string& endDateBefore)
-{
-	endDateBefore_ = endDateBefore;
-	setParameter("EndDateBefore", endDateBefore);
+void ListExecutionsRequest::setTemplateName(const std::string &templateName) {
+  templateName_ = templateName;
+  setParameter(std::string("TemplateName"), templateName);
 }
 
-std::string ListExecutionsRequest::getSortOrder()const
-{
-	return sortOrder_;
+std::string ListExecutionsRequest::getEndDateBefore() const {
+  return endDateBefore_;
 }
 
-void ListExecutionsRequest::setSortOrder(const std::string& sortOrder)
-{
-	sortOrder_ = sortOrder;
-	setParameter("SortOrder", sortOrder);
+void ListExecutionsRequest::setEndDateBefore(const std::string &endDateBefore) {
+  endDateBefore_ = endDateBefore;
+  setParameter(std::string("EndDateBefore"), endDateBefore);
 }
 
-std::string ListExecutionsRequest::getResourceId()const
-{
-	return resourceId_;
+std::string ListExecutionsRequest::getSortOrder() const {
+  return sortOrder_;
 }
 
-void ListExecutionsRequest::setResourceId(const std::string& resourceId)
-{
-	resourceId_ = resourceId;
-	setParameter("ResourceId", resourceId);
+void ListExecutionsRequest::setSortOrder(const std::string &sortOrder) {
+  sortOrder_ = sortOrder;
+  setParameter(std::string("SortOrder"), sortOrder);
 }
 
-std::string ListExecutionsRequest::getStartDateAfter()const
-{
-	return startDateAfter_;
+std::string ListExecutionsRequest::getResourceId() const {
+  return resourceId_;
 }
 
-void ListExecutionsRequest::setStartDateAfter(const std::string& startDateAfter)
-{
-	startDateAfter_ = startDateAfter;
-	setParameter("StartDateAfter", startDateAfter);
+void ListExecutionsRequest::setResourceId(const std::string &resourceId) {
+  resourceId_ = resourceId;
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-std::string ListExecutionsRequest::getStartDateBefore()const
-{
-	return startDateBefore_;
+std::string ListExecutionsRequest::getStartDateAfter() const {
+  return startDateAfter_;
 }
 
-void ListExecutionsRequest::setStartDateBefore(const std::string& startDateBefore)
-{
-	startDateBefore_ = startDateBefore;
-	setParameter("StartDateBefore", startDateBefore);
+void ListExecutionsRequest::setStartDateAfter(const std::string &startDateAfter) {
+  startDateAfter_ = startDateAfter;
+  setParameter(std::string("StartDateAfter"), startDateAfter);
 }
 
-std::map<std::string, std::string> ListExecutionsRequest::getTags()const
-{
-	return tags_;
+std::string ListExecutionsRequest::getStartDateBefore() const {
+  return startDateBefore_;
 }
 
-void ListExecutionsRequest::setTags(const std::map<std::string, std::string>& tags)
-{
-	tags_ = tags;
-	setJsonParameters("Tags", tags);
+void ListExecutionsRequest::setStartDateBefore(const std::string &startDateBefore) {
+  startDateBefore_ = startDateBefore;
+  setParameter(std::string("StartDateBefore"), startDateBefore);
 }
 
-std::string ListExecutionsRequest::getParentExecutionId()const
-{
-	return parentExecutionId_;
+std::map<std::string, std::string> ListExecutionsRequest::getTags() const {
+  return tags_;
 }
 
-void ListExecutionsRequest::setParentExecutionId(const std::string& parentExecutionId)
-{
-	parentExecutionId_ = parentExecutionId;
-	setParameter("ParentExecutionId", parentExecutionId);
+void ListExecutionsRequest::setTags(std::map<std::string, std::string> tags) {
+  tags_ = tags;
+  setParameter(std::string("Tags"), tags);
 }
 
-std::string ListExecutionsRequest::getEndDateAfter()const
-{
-	return endDateAfter_;
+std::string ListExecutionsRequest::getParentExecutionId() const {
+  return parentExecutionId_;
 }
 
-void ListExecutionsRequest::setEndDateAfter(const std::string& endDateAfter)
-{
-	endDateAfter_ = endDateAfter;
-	setParameter("EndDateAfter", endDateAfter);
+void ListExecutionsRequest::setParentExecutionId(const std::string &parentExecutionId) {
+  parentExecutionId_ = parentExecutionId;
+  setParameter(std::string("ParentExecutionId"), parentExecutionId);
 }
 
-int ListExecutionsRequest::getMaxResults()const
-{
-	return maxResults_;
+std::string ListExecutionsRequest::getEndDateAfter() const {
+  return endDateAfter_;
 }
 
-void ListExecutionsRequest::setMaxResults(int maxResults)
-{
-	maxResults_ = maxResults;
-	setParameter("MaxResults", std::to_string(maxResults));
+void ListExecutionsRequest::setEndDateAfter(const std::string &endDateAfter) {
+  endDateAfter_ = endDateAfter;
+  setParameter(std::string("EndDateAfter"), endDateAfter);
 }
 
-std::string ListExecutionsRequest::getSortField()const
-{
-	return sortField_;
+int ListExecutionsRequest::getMaxResults() const {
+  return maxResults_;
 }
 
-void ListExecutionsRequest::setSortField(const std::string& sortField)
-{
-	sortField_ = sortField;
-	setParameter("SortField", sortField);
+void ListExecutionsRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
-std::string ListExecutionsRequest::getCategory()const
-{
-	return category_;
+std::string ListExecutionsRequest::getSortField() const {
+  return sortField_;
 }
 
-void ListExecutionsRequest::setCategory(const std::string& category)
-{
-	category_ = category;
-	setParameter("Category", category);
+void ListExecutionsRequest::setSortField(const std::string &sortField) {
+  sortField_ = sortField;
+  setParameter(std::string("SortField"), sortField);
 }
 
-std::string ListExecutionsRequest::getResourceTemplateName()const
-{
-	return resourceTemplateName_;
+std::string ListExecutionsRequest::getCategory() const {
+  return category_;
 }
 
-void ListExecutionsRequest::setResourceTemplateName(const std::string& resourceTemplateName)
-{
-	resourceTemplateName_ = resourceTemplateName;
-	setParameter("ResourceTemplateName", resourceTemplateName);
+void ListExecutionsRequest::setCategory(const std::string &category) {
+  category_ = category;
+  setParameter(std::string("Category"), category);
 }
 
-std::string ListExecutionsRequest::getStatus()const
-{
-	return status_;
+std::string ListExecutionsRequest::getResourceTemplateName() const {
+  return resourceTemplateName_;
 }
 
-void ListExecutionsRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setParameter("Status", status);
+void ListExecutionsRequest::setResourceTemplateName(const std::string &resourceTemplateName) {
+  resourceTemplateName_ = resourceTemplateName;
+  setParameter(std::string("ResourceTemplateName"), resourceTemplateName);
+}
+
+std::string ListExecutionsRequest::getStatus() const {
+  return status_;
+}
+
+void ListExecutionsRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,177 +18,154 @@
 
 using AlibabaCloud::Oos::Model::ListTemplatesRequest;
 
-ListTemplatesRequest::ListTemplatesRequest() :
-	RpcServiceRequest("oos", "2019-06-01", "ListTemplates")
-{
-	setMethod(HttpRequest::Method::Post);
+ListTemplatesRequest::ListTemplatesRequest()
+    : RpcServiceRequest("oos", "2019-06-01", "ListTemplates") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListTemplatesRequest::~ListTemplatesRequest()
-{}
+ListTemplatesRequest::~ListTemplatesRequest() {}
 
-std::string ListTemplatesRequest::getCreatedDateBefore()const
-{
-	return createdDateBefore_;
+std::string ListTemplatesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void ListTemplatesRequest::setCreatedDateBefore(const std::string& createdDateBefore)
-{
-	createdDateBefore_ = createdDateBefore;
-	setParameter("CreatedDateBefore", createdDateBefore);
+void ListTemplatesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string ListTemplatesRequest::getRegionId()const
-{
-	return regionId_;
+std::string ListTemplatesRequest::getCreatedDateBefore() const {
+  return createdDateBefore_;
 }
 
-void ListTemplatesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ListTemplatesRequest::setCreatedDateBefore(const std::string &createdDateBefore) {
+  createdDateBefore_ = createdDateBefore;
+  setParameter(std::string("CreatedDateBefore"), createdDateBefore);
 }
 
-std::string ListTemplatesRequest::getCreatedBy()const
-{
-	return createdBy_;
+std::string ListTemplatesRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ListTemplatesRequest::setCreatedBy(const std::string& createdBy)
-{
-	createdBy_ = createdBy;
-	setParameter("CreatedBy", createdBy);
+void ListTemplatesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ListTemplatesRequest::getNextToken()const
-{
-	return nextToken_;
+std::string ListTemplatesRequest::getCreatedBy() const {
+  return createdBy_;
 }
 
-void ListTemplatesRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+void ListTemplatesRequest::setCreatedBy(const std::string &createdBy) {
+  createdBy_ = createdBy;
+  setParameter(std::string("CreatedBy"), createdBy);
 }
 
-std::string ListTemplatesRequest::getTemplateType()const
-{
-	return templateType_;
+std::string ListTemplatesRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void ListTemplatesRequest::setTemplateType(const std::string& templateType)
-{
-	templateType_ = templateType;
-	setParameter("TemplateType", templateType);
+void ListTemplatesRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string ListTemplatesRequest::getTemplateName()const
-{
-	return templateName_;
+std::string ListTemplatesRequest::getTemplateType() const {
+  return templateType_;
 }
 
-void ListTemplatesRequest::setTemplateName(const std::string& templateName)
-{
-	templateName_ = templateName;
-	setParameter("TemplateName", templateName);
+void ListTemplatesRequest::setTemplateType(const std::string &templateType) {
+  templateType_ = templateType;
+  setParameter(std::string("TemplateType"), templateType);
 }
 
-std::string ListTemplatesRequest::getSortOrder()const
-{
-	return sortOrder_;
+std::string ListTemplatesRequest::getTemplateName() const {
+  return templateName_;
 }
 
-void ListTemplatesRequest::setSortOrder(const std::string& sortOrder)
-{
-	sortOrder_ = sortOrder;
-	setParameter("SortOrder", sortOrder);
+void ListTemplatesRequest::setTemplateName(const std::string &templateName) {
+  templateName_ = templateName;
+  setParameter(std::string("TemplateName"), templateName);
 }
 
-std::string ListTemplatesRequest::getShareType()const
-{
-	return shareType_;
+std::string ListTemplatesRequest::getSortOrder() const {
+  return sortOrder_;
 }
 
-void ListTemplatesRequest::setShareType(const std::string& shareType)
-{
-	shareType_ = shareType;
-	setParameter("ShareType", shareType);
+void ListTemplatesRequest::setSortOrder(const std::string &sortOrder) {
+  sortOrder_ = sortOrder;
+  setParameter(std::string("SortOrder"), sortOrder);
 }
 
-bool ListTemplatesRequest::getHasTrigger()const
-{
-	return hasTrigger_;
+std::string ListTemplatesRequest::getShareType() const {
+  return shareType_;
 }
 
-void ListTemplatesRequest::setHasTrigger(bool hasTrigger)
-{
-	hasTrigger_ = hasTrigger;
-	setParameter("HasTrigger", hasTrigger ? "true" : "false");
+void ListTemplatesRequest::setShareType(const std::string &shareType) {
+  shareType_ = shareType;
+  setParameter(std::string("ShareType"), shareType);
 }
 
-std::string ListTemplatesRequest::getCreatedDateAfter()const
-{
-	return createdDateAfter_;
+bool ListTemplatesRequest::getHasTrigger() const {
+  return hasTrigger_;
 }
 
-void ListTemplatesRequest::setCreatedDateAfter(const std::string& createdDateAfter)
-{
-	createdDateAfter_ = createdDateAfter;
-	setParameter("CreatedDateAfter", createdDateAfter);
+void ListTemplatesRequest::setHasTrigger(bool hasTrigger) {
+  hasTrigger_ = hasTrigger;
+  setParameter(std::string("HasTrigger"), hasTrigger ? "true" : "false");
 }
 
-std::map<std::string, std::string> ListTemplatesRequest::getTags()const
-{
-	return tags_;
+std::string ListTemplatesRequest::getCreatedDateAfter() const {
+  return createdDateAfter_;
 }
 
-void ListTemplatesRequest::setTags(const std::map<std::string, std::string>& tags)
-{
-	tags_ = tags;
-	setJsonParameters("Tags", tags);
+void ListTemplatesRequest::setCreatedDateAfter(const std::string &createdDateAfter) {
+  createdDateAfter_ = createdDateAfter;
+  setParameter(std::string("CreatedDateAfter"), createdDateAfter);
 }
 
-int ListTemplatesRequest::getMaxResults()const
-{
-	return maxResults_;
+std::map<std::string, std::string> ListTemplatesRequest::getTags() const {
+  return tags_;
 }
 
-void ListTemplatesRequest::setMaxResults(int maxResults)
-{
-	maxResults_ = maxResults;
-	setParameter("MaxResults", std::to_string(maxResults));
+void ListTemplatesRequest::setTags(std::map<std::string, std::string> tags) {
+  tags_ = tags;
+  setParameter(std::string("Tags"), tags);
 }
 
-std::string ListTemplatesRequest::getTemplateFormat()const
-{
-	return templateFormat_;
+int ListTemplatesRequest::getMaxResults() const {
+  return maxResults_;
 }
 
-void ListTemplatesRequest::setTemplateFormat(const std::string& templateFormat)
-{
-	templateFormat_ = templateFormat;
-	setParameter("TemplateFormat", templateFormat);
+void ListTemplatesRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
-std::string ListTemplatesRequest::getSortField()const
-{
-	return sortField_;
+std::string ListTemplatesRequest::getTemplateFormat() const {
+  return templateFormat_;
 }
 
-void ListTemplatesRequest::setSortField(const std::string& sortField)
-{
-	sortField_ = sortField;
-	setParameter("SortField", sortField);
+void ListTemplatesRequest::setTemplateFormat(const std::string &templateFormat) {
+  templateFormat_ = templateFormat;
+  setParameter(std::string("TemplateFormat"), templateFormat);
 }
 
-std::string ListTemplatesRequest::getCategory()const
-{
-	return category_;
+std::string ListTemplatesRequest::getSortField() const {
+  return sortField_;
 }
 
-void ListTemplatesRequest::setCategory(const std::string& category)
-{
-	category_ = category;
-	setParameter("Category", category);
+void ListTemplatesRequest::setSortField(const std::string &sortField) {
+  sortField_ = sortField;
+  setParameter(std::string("SortField"), sortField);
+}
+
+std::string ListTemplatesRequest::getCategory() const {
+  return category_;
+}
+
+void ListTemplatesRequest::setCategory(const std::string &category) {
+  category_ = category;
+  setParameter(std::string("Category"), category);
 }
 

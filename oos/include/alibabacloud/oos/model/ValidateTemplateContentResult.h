@@ -47,16 +47,16 @@ namespace AlibabaCloud
 				~ValidateTemplateContentResult();
 				std::vector<Task> getTasks()const;
 				std::string getParameters()const;
-				std::string getRamRole()const;
 				std::string getOutputs()const;
+				std::string getRamRole()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<Task> tasks_;
 				std::string parameters_;
-				std::string ramRole_;
 				std::string outputs_;
+				std::string ramRole_;
 
 			};
 		}

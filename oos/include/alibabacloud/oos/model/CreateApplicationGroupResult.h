@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_LISTINSTANCESTATEREPORTSRESULT_H_
-#define ALIBABACLOUD_OOS_MODEL_LISTINSTANCESTATEREPORTSRESULT_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_CREATEAPPLICATIONGROUPRESULT_H_
+#define ALIBABACLOUD_OOS_MODEL_CREATEAPPLICATIONGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT ListInstanceStateReportsResult : public ServiceResult
+			class ALIBABACLOUD_OOS_EXPORT CreateApplicationGroupResult : public ServiceResult
 			{
 			public:
-				struct StateReport
+				struct ApplicationGroup
 				{
-					std::string reportTime;
-					std::string instanceId;
-					std::string stateConfigurationId;
-					std::string successApplyTime;
-					std::string mode;
-					std::string reportInfo;
-					std::string reportStatus;
+					std::string importTagValue;
+					std::string updateDate;
+					std::string deployRegionId;
+					std::string description;
+					std::string applicationName;
+					std::string importTagKey;
+					std::string cmsGroupId;
+					std::string createDate;
+					std::string name;
 				};
 
 
-				ListInstanceStateReportsResult();
-				explicit ListInstanceStateReportsResult(const std::string &payload);
-				~ListInstanceStateReportsResult();
-				std::vector<StateReport> getStateReports()const;
-				std::string getNextToken()const;
-				int getMaxResults()const;
+				CreateApplicationGroupResult();
+				explicit CreateApplicationGroupResult(const std::string &payload);
+				~CreateApplicationGroupResult();
+				ApplicationGroup getApplicationGroup()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<StateReport> stateReports_;
-				std::string nextToken_;
-				int maxResults_;
+				ApplicationGroup applicationGroup_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_LISTINSTANCESTATEREPORTSRESULT_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_CREATEAPPLICATIONGROUPRESULT_H_

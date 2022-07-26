@@ -44,16 +44,16 @@ void ListInventoryEntriesResult::parse(const std::string &payload)
 		entries_.push_back(item.asString());
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["CaptureTime"].isNull())
-		captureTime_ = value["CaptureTime"].asString();
-	if(!value["TypeName"].isNull())
-		typeName_ = value["TypeName"].asString();
 	if(!value["SchemaVersion"].isNull())
 		schemaVersion_ = value["SchemaVersion"].asString();
 	if(!value["MaxResults"].isNull())
 		maxResults_ = std::stoi(value["MaxResults"].asString());
+	if(!value["CaptureTime"].isNull())
+		captureTime_ = value["CaptureTime"].asString();
+	if(!value["TypeName"].isNull())
+		typeName_ = value["TypeName"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
 
 }
 

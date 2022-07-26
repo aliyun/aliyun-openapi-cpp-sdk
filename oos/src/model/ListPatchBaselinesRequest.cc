@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Oos::Model::ListPatchBaselinesRequest;
 
-ListPatchBaselinesRequest::ListPatchBaselinesRequest() :
-	RpcServiceRequest("oos", "2019-06-01", "ListPatchBaselines")
-{
-	setMethod(HttpRequest::Method::Post);
+ListPatchBaselinesRequest::ListPatchBaselinesRequest()
+    : RpcServiceRequest("oos", "2019-06-01", "ListPatchBaselines") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListPatchBaselinesRequest::~ListPatchBaselinesRequest()
-{}
+ListPatchBaselinesRequest::~ListPatchBaselinesRequest() {}
 
-std::string ListPatchBaselinesRequest::getOperationSystem()const
-{
-	return operationSystem_;
+std::string ListPatchBaselinesRequest::getOperationSystem() const {
+  return operationSystem_;
 }
 
-void ListPatchBaselinesRequest::setOperationSystem(const std::string& operationSystem)
-{
-	operationSystem_ = operationSystem;
-	setParameter("OperationSystem", operationSystem);
+void ListPatchBaselinesRequest::setOperationSystem(const std::string &operationSystem) {
+  operationSystem_ = operationSystem;
+  setParameter(std::string("OperationSystem"), operationSystem);
 }
 
-std::string ListPatchBaselinesRequest::getRegionId()const
-{
-	return regionId_;
+std::string ListPatchBaselinesRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ListPatchBaselinesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ListPatchBaselinesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ListPatchBaselinesRequest::getNextToken()const
-{
-	return nextToken_;
+std::string ListPatchBaselinesRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void ListPatchBaselinesRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+void ListPatchBaselinesRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
 }
 
-std::string ListPatchBaselinesRequest::getName()const
-{
-	return name_;
+std::string ListPatchBaselinesRequest::getName() const {
+  return name_;
 }
 
-void ListPatchBaselinesRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
+void ListPatchBaselinesRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 
-int ListPatchBaselinesRequest::getMaxResults()const
-{
-	return maxResults_;
+int ListPatchBaselinesRequest::getMaxResults() const {
+  return maxResults_;
 }
 
-void ListPatchBaselinesRequest::setMaxResults(int maxResults)
-{
-	maxResults_ = maxResults;
-	setParameter("MaxResults", std::to_string(maxResults));
+void ListPatchBaselinesRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
-std::string ListPatchBaselinesRequest::getShareType()const
-{
-	return shareType_;
+std::string ListPatchBaselinesRequest::getShareType() const {
+  return shareType_;
 }
 
-void ListPatchBaselinesRequest::setShareType(const std::string& shareType)
-{
-	shareType_ = shareType;
-	setParameter("ShareType", shareType);
+void ListPatchBaselinesRequest::setShareType(const std::string &shareType) {
+  shareType_ = shareType;
+  setParameter(std::string("ShareType"), shareType);
 }
 

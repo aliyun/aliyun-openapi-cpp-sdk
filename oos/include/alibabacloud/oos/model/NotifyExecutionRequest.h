@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,59 +17,53 @@
 #ifndef ALIBABACLOUD_OOS_MODEL_NOTIFYEXECUTIONREQUEST_H_
 #define ALIBABACLOUD_OOS_MODEL_NOTIFYEXECUTIONREQUEST_H_
 
+#include <alibabacloud/oos/OosExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/oos/OosExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Oos
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_OOS_EXPORT NotifyExecutionRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Oos {
+namespace Model {
+class ALIBABACLOUD_OOS_EXPORT NotifyExecutionRequest : public RpcServiceRequest {
+public:
+	NotifyExecutionRequest();
+	~NotifyExecutionRequest();
+	std::string getTaskName() const;
+	void setTaskName(const std::string &taskName);
+	std::string getExecutionId() const;
+	void setExecutionId(const std::string &executionId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getNotifyType() const;
+	void setNotifyType(const std::string &notifyType);
+	std::string getExecutionStatus() const;
+	void setExecutionStatus(const std::string &executionStatus);
+	std::string getNotifyNote() const;
+	void setNotifyNote(const std::string &notifyNote);
+	std::string getLoopItem() const;
+	void setLoopItem(const std::string &loopItem);
+	std::string getTaskExecutionIds() const;
+	void setTaskExecutionIds(const std::string &taskExecutionIds);
+	std::string getTaskExecutionId() const;
+	void setTaskExecutionId(const std::string &taskExecutionId);
+	std::string getParameters() const;
+	void setParameters(const std::string &parameters);
 
-			public:
-				NotifyExecutionRequest();
-				~NotifyExecutionRequest();
-
-				std::string getTaskName()const;
-				void setTaskName(const std::string& taskName);
-				std::string getExecutionId()const;
-				void setExecutionId(const std::string& executionId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getNotifyType()const;
-				void setNotifyType(const std::string& notifyType);
-				std::string getExecutionStatus()const;
-				void setExecutionStatus(const std::string& executionStatus);
-				std::string getNotifyNote()const;
-				void setNotifyNote(const std::string& notifyNote);
-				std::string getLoopItem()const;
-				void setLoopItem(const std::string& loopItem);
-				std::string getTaskExecutionIds()const;
-				void setTaskExecutionIds(const std::string& taskExecutionIds);
-				std::string getTaskExecutionId()const;
-				void setTaskExecutionId(const std::string& taskExecutionId);
-				std::string getParameters()const;
-				void setParameters(const std::string& parameters);
-
-            private:
-				std::string taskName_;
-				std::string executionId_;
-				std::string regionId_;
-				std::string notifyType_;
-				std::string executionStatus_;
-				std::string notifyNote_;
-				std::string loopItem_;
-				std::string taskExecutionIds_;
-				std::string taskExecutionId_;
-				std::string parameters_;
-
-			};
-		}
-	}
-}
+private:
+	std::string taskName_;
+	std::string executionId_;
+	std::string regionId_;
+	std::string notifyType_;
+	std::string executionStatus_;
+	std::string notifyNote_;
+	std::string loopItem_;
+	std::string taskExecutionIds_;
+	std::string taskExecutionId_;
+	std::string parameters_;
+};
+} // namespace Model
+} // namespace Oos
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_OOS_MODEL_NOTIFYEXECUTIONREQUEST_H_
