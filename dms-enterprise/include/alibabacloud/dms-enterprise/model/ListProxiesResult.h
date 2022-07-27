@@ -39,7 +39,8 @@ namespace AlibabaCloud
 					long instanceId;
 					long proxyId;
 					long creatorId;
-					int mysqlPort;
+					std::string protocolType;
+					int protocolPort;
 					bool privateEnable;
 					std::string creatorName;
 					bool publicEnable;

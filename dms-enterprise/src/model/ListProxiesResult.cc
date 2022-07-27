@@ -59,10 +59,12 @@ void ListProxiesResult::parse(const std::string &payload)
 			proxyListObject.publicEnable = valueProxyListProxyListItem["PublicEnable"].asString() == "true";
 		if(!valueProxyListProxyListItem["PublicHost"].isNull())
 			proxyListObject.publicHost = valueProxyListProxyListItem["PublicHost"].asString();
-		if(!valueProxyListProxyListItem["MysqlPort"].isNull())
-			proxyListObject.mysqlPort = std::stoi(valueProxyListProxyListItem["MysqlPort"].asString());
 		if(!valueProxyListProxyListItem["HttpsPort"].isNull())
 			proxyListObject.httpsPort = std::stoi(valueProxyListProxyListItem["HttpsPort"].asString());
+		if(!valueProxyListProxyListItem["ProtocolType"].isNull())
+			proxyListObject.protocolType = valueProxyListProxyListItem["ProtocolType"].asString();
+		if(!valueProxyListProxyListItem["ProtocolPort"].isNull())
+			proxyListObject.protocolPort = std::stoi(valueProxyListProxyListItem["ProtocolPort"].asString());
 		proxyList_.push_back(proxyListObject);
 	}
 	if(!value["Success"].isNull())

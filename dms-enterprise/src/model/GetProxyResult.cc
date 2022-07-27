@@ -61,10 +61,12 @@ void GetProxyResult::parse(const std::string &payload)
 		publicEnable_ = value["PublicEnable"].asString() == "true";
 	if(!value["PublicHost"].isNull())
 		publicHost_ = value["PublicHost"].asString();
-	if(!value["MysqlPort"].isNull())
-		mysqlPort_ = std::stoi(value["MysqlPort"].asString());
 	if(!value["HttpsPort"].isNull())
 		httpsPort_ = std::stoi(value["HttpsPort"].asString());
+	if(!value["ProtocolType"].isNull())
+		protocolType_ = value["ProtocolType"].asString();
+	if(!value["ProtocolPort"].isNull())
+		protocolPort_ = std::stoi(value["ProtocolPort"].asString());
 
 }
 
@@ -103,14 +105,19 @@ bool GetProxyResult::getPublicEnable()const
 	return publicEnable_;
 }
 
-int GetProxyResult::getMysqlPort()const
+std::string GetProxyResult::getProtocolType()const
 {
-	return mysqlPort_;
+	return protocolType_;
 }
 
 std::string GetProxyResult::getErrorCode()const
 {
 	return errorCode_;
+}
+
+int GetProxyResult::getProtocolPort()const
+{
+	return protocolPort_;
 }
 
 std::string GetProxyResult::getErrorMessage()const

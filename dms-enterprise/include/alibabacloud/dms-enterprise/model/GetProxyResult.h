@@ -44,8 +44,9 @@ namespace AlibabaCloud
 				long getCreatorId()const;
 				bool getSuccess()const;
 				bool getPublicEnable()const;
-				int getMysqlPort()const;
+				std::string getProtocolType()const;
 				std::string getErrorCode()const;
+				int getProtocolPort()const;
 				std::string getErrorMessage()const;
 				bool getPrivateEnable()const;
 				std::string getCreatorName()const;
@@ -61,8 +62,9 @@ namespace AlibabaCloud
 				long creatorId_;
 				bool success_;
 				bool publicEnable_;
-				int mysqlPort_;
+				std::string protocolType_;
 				std::string errorCode_;
+				int protocolPort_;
 				std::string errorMessage_;
 				bool privateEnable_;
 				std::string creatorName_;
