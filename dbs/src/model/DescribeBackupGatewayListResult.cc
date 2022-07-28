@@ -43,55 +43,55 @@ void DescribeBackupGatewayListResult::parse(const std::string &payload)
 	for (auto valueItemsBackupGateway : allItemsNode)
 	{
 		BackupGateway itemsObject;
-		if(!valueItemsBackupGateway["BackupGatewayId"].isNull())
-			itemsObject.backupGatewayId = valueItemsBackupGateway["BackupGatewayId"].asString();
-		if(!valueItemsBackupGateway["SourceEndpointInternetIP"].isNull())
-			itemsObject.sourceEndpointInternetIP = valueItemsBackupGateway["SourceEndpointInternetIP"].asString();
-		if(!valueItemsBackupGateway["SourceEndpointIntranetIP"].isNull())
-			itemsObject.sourceEndpointIntranetIP = valueItemsBackupGateway["SourceEndpointIntranetIP"].asString();
-		if(!valueItemsBackupGateway["SourceEndpointHostname"].isNull())
-			itemsObject.sourceEndpointHostname = valueItemsBackupGateway["SourceEndpointHostname"].asString();
-		if(!valueItemsBackupGateway["BackupGatewayStatus"].isNull())
-			itemsObject.backupGatewayStatus = valueItemsBackupGateway["BackupGatewayStatus"].asString();
-		if(!valueItemsBackupGateway["LastHeartbeatTime"].isNull())
-			itemsObject.lastHeartbeatTime = std::stol(valueItemsBackupGateway["LastHeartbeatTime"].asString());
-		if(!valueItemsBackupGateway["BackupGatewayCreateTime"].isNull())
-			itemsObject.backupGatewayCreateTime = std::stol(valueItemsBackupGateway["BackupGatewayCreateTime"].asString());
-		if(!valueItemsBackupGateway["Region"].isNull())
-			itemsObject.region = valueItemsBackupGateway["Region"].asString();
 		if(!valueItemsBackupGateway["DisplayName"].isNull())
 			itemsObject.displayName = valueItemsBackupGateway["DisplayName"].asString();
+		if(!valueItemsBackupGateway["BackupGatewayCreateTime"].isNull())
+			itemsObject.backupGatewayCreateTime = std::stol(valueItemsBackupGateway["BackupGatewayCreateTime"].asString());
+		if(!valueItemsBackupGateway["BackupGatewayId"].isNull())
+			itemsObject.backupGatewayId = valueItemsBackupGateway["BackupGatewayId"].asString();
+		if(!valueItemsBackupGateway["Region"].isNull())
+			itemsObject.region = valueItemsBackupGateway["Region"].asString();
 		if(!valueItemsBackupGateway["Identifier"].isNull())
 			itemsObject.identifier = valueItemsBackupGateway["Identifier"].asString();
+		if(!valueItemsBackupGateway["SourceEndpointInternetIP"].isNull())
+			itemsObject.sourceEndpointInternetIP = valueItemsBackupGateway["SourceEndpointInternetIP"].asString();
+		if(!valueItemsBackupGateway["BackupGatewayStatus"].isNull())
+			itemsObject.backupGatewayStatus = valueItemsBackupGateway["BackupGatewayStatus"].asString();
+		if(!valueItemsBackupGateway["SourceEndpointIntranetIP"].isNull())
+			itemsObject.sourceEndpointIntranetIP = valueItemsBackupGateway["SourceEndpointIntranetIP"].asString();
+		if(!valueItemsBackupGateway["LastHeartbeatTime"].isNull())
+			itemsObject.lastHeartbeatTime = std::stol(valueItemsBackupGateway["LastHeartbeatTime"].asString());
+		if(!valueItemsBackupGateway["SourceEndpointHostname"].isNull())
+			itemsObject.sourceEndpointHostname = valueItemsBackupGateway["SourceEndpointHostname"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["TotalPages"].isNull())
-		totalPages_ = std::stoi(value["TotalPages"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNum"].isNull())
 		pageNum_ = std::stoi(value["PageNum"].asString());
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
+	if(!value["TotalPages"].isNull())
+		totalPages_ = std::stoi(value["TotalPages"].asString());
 	if(!value["TotalElements"].isNull())
 		totalElements_ = std::stoi(value["TotalElements"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
-}
-
-int DescribeBackupGatewayListResult::getPageSize()const
-{
-	return pageSize_;
 }
 
 int DescribeBackupGatewayListResult::getPageNum()const
 {
 	return pageNum_;
+}
+
+int DescribeBackupGatewayListResult::getPageSize()const
+{
+	return pageSize_;
 }
 
 int DescribeBackupGatewayListResult::getHttpStatusCode()const

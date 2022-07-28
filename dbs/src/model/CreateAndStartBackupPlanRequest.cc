@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,463 +18,388 @@
 
 using AlibabaCloud::Dbs::Model::CreateAndStartBackupPlanRequest;
 
-CreateAndStartBackupPlanRequest::CreateAndStartBackupPlanRequest() :
-	RpcServiceRequest("dbs", "2019-03-06", "CreateAndStartBackupPlan")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateAndStartBackupPlanRequest::CreateAndStartBackupPlanRequest()
+    : RpcServiceRequest("dbs", "2019-03-06", "CreateAndStartBackupPlan") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateAndStartBackupPlanRequest::~CreateAndStartBackupPlanRequest()
-{}
+CreateAndStartBackupPlanRequest::~CreateAndStartBackupPlanRequest() {}
 
-std::string CreateAndStartBackupPlanRequest::getDatabaseType()const
-{
-	return databaseType_;
+std::string CreateAndStartBackupPlanRequest::getDatabaseType() const {
+  return databaseType_;
 }
 
-void CreateAndStartBackupPlanRequest::setDatabaseType(const std::string& databaseType)
-{
-	databaseType_ = databaseType;
-	setParameter("DatabaseType", databaseType);
+void CreateAndStartBackupPlanRequest::setDatabaseType(const std::string &databaseType) {
+  databaseType_ = databaseType;
+  setParameter(std::string("DatabaseType"), databaseType);
 }
 
-long CreateAndStartBackupPlanRequest::getBackupGatewayId()const
-{
-	return backupGatewayId_;
+long CreateAndStartBackupPlanRequest::getBackupGatewayId() const {
+  return backupGatewayId_;
 }
 
-void CreateAndStartBackupPlanRequest::setBackupGatewayId(long backupGatewayId)
-{
-	backupGatewayId_ = backupGatewayId;
-	setParameter("BackupGatewayId", std::to_string(backupGatewayId));
+void CreateAndStartBackupPlanRequest::setBackupGatewayId(long backupGatewayId) {
+  backupGatewayId_ = backupGatewayId;
+  setParameter(std::string("BackupGatewayId"), std::to_string(backupGatewayId));
 }
 
-std::string CreateAndStartBackupPlanRequest::getSourceEndpointUserName()const
-{
-	return sourceEndpointUserName_;
+std::string CreateAndStartBackupPlanRequest::getSourceEndpointUserName() const {
+  return sourceEndpointUserName_;
 }
 
-void CreateAndStartBackupPlanRequest::setSourceEndpointUserName(const std::string& sourceEndpointUserName)
-{
-	sourceEndpointUserName_ = sourceEndpointUserName;
-	setParameter("SourceEndpointUserName", sourceEndpointUserName);
+void CreateAndStartBackupPlanRequest::setSourceEndpointUserName(const std::string &sourceEndpointUserName) {
+  sourceEndpointUserName_ = sourceEndpointUserName;
+  setParameter(std::string("SourceEndpointUserName"), sourceEndpointUserName);
 }
 
-std::string CreateAndStartBackupPlanRequest::getStorageType()const
-{
-	return storageType_;
+std::string CreateAndStartBackupPlanRequest::getStorageType() const {
+  return storageType_;
 }
 
-void CreateAndStartBackupPlanRequest::setStorageType(const std::string& storageType)
-{
-	storageType_ = storageType;
-	setParameter("StorageType", storageType);
+void CreateAndStartBackupPlanRequest::setStorageType(const std::string &storageType) {
+  storageType_ = storageType;
+  setParameter(std::string("StorageType"), storageType);
 }
 
-std::string CreateAndStartBackupPlanRequest::getDatabaseRegion()const
-{
-	return databaseRegion_;
+std::string CreateAndStartBackupPlanRequest::getDatabaseRegion() const {
+  return databaseRegion_;
 }
 
-void CreateAndStartBackupPlanRequest::setDatabaseRegion(const std::string& databaseRegion)
-{
-	databaseRegion_ = databaseRegion;
-	setParameter("DatabaseRegion", databaseRegion);
+void CreateAndStartBackupPlanRequest::setDatabaseRegion(const std::string &databaseRegion) {
+  databaseRegion_ = databaseRegion;
+  setParameter(std::string("DatabaseRegion"), databaseRegion);
 }
 
-std::string CreateAndStartBackupPlanRequest::getBackupStartTime()const
-{
-	return backupStartTime_;
+std::string CreateAndStartBackupPlanRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void CreateAndStartBackupPlanRequest::setBackupStartTime(const std::string& backupStartTime)
-{
-	backupStartTime_ = backupStartTime;
-	setParameter("BackupStartTime", backupStartTime);
+void CreateAndStartBackupPlanRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string CreateAndStartBackupPlanRequest::getSourceEndpointIP()const
-{
-	return sourceEndpointIP_;
+std::string CreateAndStartBackupPlanRequest::getBackupStartTime() const {
+  return backupStartTime_;
 }
 
-void CreateAndStartBackupPlanRequest::setSourceEndpointIP(const std::string& sourceEndpointIP)
-{
-	sourceEndpointIP_ = sourceEndpointIP;
-	setParameter("SourceEndpointIP", sourceEndpointIP);
+void CreateAndStartBackupPlanRequest::setBackupStartTime(const std::string &backupStartTime) {
+  backupStartTime_ = backupStartTime;
+  setParameter(std::string("BackupStartTime"), backupStartTime);
 }
 
-std::string CreateAndStartBackupPlanRequest::getCrossRoleName()const
-{
-	return crossRoleName_;
+std::string CreateAndStartBackupPlanRequest::getSourceEndpointIP() const {
+  return sourceEndpointIP_;
 }
 
-void CreateAndStartBackupPlanRequest::setCrossRoleName(const std::string& crossRoleName)
-{
-	crossRoleName_ = crossRoleName;
-	setParameter("CrossRoleName", crossRoleName);
+void CreateAndStartBackupPlanRequest::setSourceEndpointIP(const std::string &sourceEndpointIP) {
+  sourceEndpointIP_ = sourceEndpointIP;
+  setParameter(std::string("SourceEndpointIP"), sourceEndpointIP);
 }
 
-std::string CreateAndStartBackupPlanRequest::getBackupStorageType()const
-{
-	return backupStorageType_;
+std::string CreateAndStartBackupPlanRequest::getCrossRoleName() const {
+  return crossRoleName_;
 }
 
-void CreateAndStartBackupPlanRequest::setBackupStorageType(const std::string& backupStorageType)
-{
-	backupStorageType_ = backupStorageType;
-	setParameter("BackupStorageType", backupStorageType);
+void CreateAndStartBackupPlanRequest::setCrossRoleName(const std::string &crossRoleName) {
+  crossRoleName_ = crossRoleName;
+  setParameter(std::string("CrossRoleName"), crossRoleName);
 }
 
-int CreateAndStartBackupPlanRequest::getDuplicationArchivePeriod()const
-{
-	return duplicationArchivePeriod_;
+std::string CreateAndStartBackupPlanRequest::getBackupStorageType() const {
+  return backupStorageType_;
 }
 
-void CreateAndStartBackupPlanRequest::setDuplicationArchivePeriod(int duplicationArchivePeriod)
-{
-	duplicationArchivePeriod_ = duplicationArchivePeriod;
-	setParameter("DuplicationArchivePeriod", std::to_string(duplicationArchivePeriod));
+void CreateAndStartBackupPlanRequest::setBackupStorageType(const std::string &backupStorageType) {
+  backupStorageType_ = backupStorageType;
+  setParameter(std::string("BackupStorageType"), backupStorageType);
 }
 
-std::string CreateAndStartBackupPlanRequest::getPeriod()const
-{
-	return period_;
+int CreateAndStartBackupPlanRequest::getDuplicationArchivePeriod() const {
+  return duplicationArchivePeriod_;
 }
 
-void CreateAndStartBackupPlanRequest::setPeriod(const std::string& period)
-{
-	period_ = period;
-	setParameter("Period", period);
+void CreateAndStartBackupPlanRequest::setDuplicationArchivePeriod(int duplicationArchivePeriod) {
+  duplicationArchivePeriod_ = duplicationArchivePeriod;
+  setParameter(std::string("DuplicationArchivePeriod"), std::to_string(duplicationArchivePeriod));
 }
 
-int CreateAndStartBackupPlanRequest::getBackupLogIntervalSeconds()const
-{
-	return backupLogIntervalSeconds_;
+std::string CreateAndStartBackupPlanRequest::getPeriod() const {
+  return period_;
 }
 
-void CreateAndStartBackupPlanRequest::setBackupLogIntervalSeconds(int backupLogIntervalSeconds)
-{
-	backupLogIntervalSeconds_ = backupLogIntervalSeconds;
-	setParameter("BackupLogIntervalSeconds", std::to_string(backupLogIntervalSeconds));
+void CreateAndStartBackupPlanRequest::setPeriod(const std::string &period) {
+  period_ = period;
+  setParameter(std::string("Period"), period);
 }
 
-std::string CreateAndStartBackupPlanRequest::getFromApp()const
-{
-	return fromApp_;
+int CreateAndStartBackupPlanRequest::getBackupLogIntervalSeconds() const {
+  return backupLogIntervalSeconds_;
 }
 
-void CreateAndStartBackupPlanRequest::setFromApp(const std::string& fromApp)
-{
-	fromApp_ = fromApp;
-	setParameter("FromApp", fromApp);
+void CreateAndStartBackupPlanRequest::setBackupLogIntervalSeconds(int backupLogIntervalSeconds) {
+  backupLogIntervalSeconds_ = backupLogIntervalSeconds;
+  setParameter(std::string("BackupLogIntervalSeconds"), std::to_string(backupLogIntervalSeconds));
 }
 
-std::string CreateAndStartBackupPlanRequest::getSourceEndpointPassword()const
-{
-	return sourceEndpointPassword_;
+std::string CreateAndStartBackupPlanRequest::getFromApp() const {
+  return fromApp_;
 }
 
-void CreateAndStartBackupPlanRequest::setSourceEndpointPassword(const std::string& sourceEndpointPassword)
-{
-	sourceEndpointPassword_ = sourceEndpointPassword;
-	setParameter("SourceEndpointPassword", sourceEndpointPassword);
+void CreateAndStartBackupPlanRequest::setFromApp(const std::string &fromApp) {
+  fromApp_ = fromApp;
+  setParameter(std::string("FromApp"), fromApp);
 }
 
-std::string CreateAndStartBackupPlanRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string CreateAndStartBackupPlanRequest::getSourceEndpointPassword() const {
+  return sourceEndpointPassword_;
 }
 
-void CreateAndStartBackupPlanRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void CreateAndStartBackupPlanRequest::setSourceEndpointPassword(const std::string &sourceEndpointPassword) {
+  sourceEndpointPassword_ = sourceEndpointPassword;
+  setParameter(std::string("SourceEndpointPassword"), sourceEndpointPassword);
 }
 
-std::string CreateAndStartBackupPlanRequest::getBackupMethod()const
-{
-	return backupMethod_;
+std::string CreateAndStartBackupPlanRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void CreateAndStartBackupPlanRequest::setBackupMethod(const std::string& backupMethod)
-{
-	backupMethod_ = backupMethod;
-	setParameter("BackupMethod", backupMethod);
+void CreateAndStartBackupPlanRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
-int CreateAndStartBackupPlanRequest::getBackupRetentionPeriod()const
-{
-	return backupRetentionPeriod_;
+std::string CreateAndStartBackupPlanRequest::getBackupMethod() const {
+  return backupMethod_;
 }
 
-void CreateAndStartBackupPlanRequest::setBackupRetentionPeriod(int backupRetentionPeriod)
-{
-	backupRetentionPeriod_ = backupRetentionPeriod;
-	setParameter("BackupRetentionPeriod", std::to_string(backupRetentionPeriod));
+void CreateAndStartBackupPlanRequest::setBackupMethod(const std::string &backupMethod) {
+  backupMethod_ = backupMethod;
+  setParameter(std::string("BackupMethod"), backupMethod);
 }
 
-std::string CreateAndStartBackupPlanRequest::getBackupPeriod()const
-{
-	return backupPeriod_;
+int CreateAndStartBackupPlanRequest::getBackupRetentionPeriod() const {
+  return backupRetentionPeriod_;
 }
 
-void CreateAndStartBackupPlanRequest::setBackupPeriod(const std::string& backupPeriod)
-{
-	backupPeriod_ = backupPeriod;
-	setParameter("BackupPeriod", backupPeriod);
+void CreateAndStartBackupPlanRequest::setBackupRetentionPeriod(int backupRetentionPeriod) {
+  backupRetentionPeriod_ = backupRetentionPeriod;
+  setParameter(std::string("BackupRetentionPeriod"), std::to_string(backupRetentionPeriod));
 }
 
-long CreateAndStartBackupPlanRequest::getBackupSpeedLimit()const
-{
-	return backupSpeedLimit_;
+std::string CreateAndStartBackupPlanRequest::getBackupPeriod() const {
+  return backupPeriod_;
 }
 
-void CreateAndStartBackupPlanRequest::setBackupSpeedLimit(long backupSpeedLimit)
-{
-	backupSpeedLimit_ = backupSpeedLimit;
-	setParameter("BackupSpeedLimit", std::to_string(backupSpeedLimit));
+void CreateAndStartBackupPlanRequest::setBackupPeriod(const std::string &backupPeriod) {
+  backupPeriod_ = backupPeriod;
+  setParameter(std::string("BackupPeriod"), backupPeriod);
 }
 
-std::string CreateAndStartBackupPlanRequest::getSourceEndpointInstanceType()const
-{
-	return sourceEndpointInstanceType_;
+long CreateAndStartBackupPlanRequest::getBackupSpeedLimit() const {
+  return backupSpeedLimit_;
 }
 
-void CreateAndStartBackupPlanRequest::setSourceEndpointInstanceType(const std::string& sourceEndpointInstanceType)
-{
-	sourceEndpointInstanceType_ = sourceEndpointInstanceType;
-	setParameter("SourceEndpointInstanceType", sourceEndpointInstanceType);
+void CreateAndStartBackupPlanRequest::setBackupSpeedLimit(long backupSpeedLimit) {
+  backupSpeedLimit_ = backupSpeedLimit;
+  setParameter(std::string("BackupSpeedLimit"), std::to_string(backupSpeedLimit));
 }
 
-std::string CreateAndStartBackupPlanRequest::getBackupPlanName()const
-{
-	return backupPlanName_;
+std::string CreateAndStartBackupPlanRequest::getSourceEndpointInstanceType() const {
+  return sourceEndpointInstanceType_;
 }
 
-void CreateAndStartBackupPlanRequest::setBackupPlanName(const std::string& backupPlanName)
-{
-	backupPlanName_ = backupPlanName;
-	setParameter("BackupPlanName", backupPlanName);
+void CreateAndStartBackupPlanRequest::setSourceEndpointInstanceType(const std::string &sourceEndpointInstanceType) {
+  sourceEndpointInstanceType_ = sourceEndpointInstanceType;
+  setParameter(std::string("SourceEndpointInstanceType"), sourceEndpointInstanceType);
 }
 
-std::string CreateAndStartBackupPlanRequest::getOSSBucketName()const
-{
-	return oSSBucketName_;
+std::string CreateAndStartBackupPlanRequest::getBackupPlanName() const {
+  return backupPlanName_;
 }
 
-void CreateAndStartBackupPlanRequest::setOSSBucketName(const std::string& oSSBucketName)
-{
-	oSSBucketName_ = oSSBucketName;
-	setParameter("OSSBucketName", oSSBucketName);
+void CreateAndStartBackupPlanRequest::setBackupPlanName(const std::string &backupPlanName) {
+  backupPlanName_ = backupPlanName;
+  setParameter(std::string("BackupPlanName"), backupPlanName);
 }
 
-std::string CreateAndStartBackupPlanRequest::getRegion()const
-{
-	return region_;
+std::string CreateAndStartBackupPlanRequest::getOSSBucketName() const {
+  return oSSBucketName_;
 }
 
-void CreateAndStartBackupPlanRequest::setRegion(const std::string& region)
-{
-	region_ = region;
-	setParameter("Region", region);
+void CreateAndStartBackupPlanRequest::setOSSBucketName(const std::string &oSSBucketName) {
+  oSSBucketName_ = oSSBucketName;
+  setParameter(std::string("OSSBucketName"), oSSBucketName);
 }
 
-std::string CreateAndStartBackupPlanRequest::getSourceEndpointRegion()const
-{
-	return sourceEndpointRegion_;
+std::string CreateAndStartBackupPlanRequest::getRegion() const {
+  return region_;
 }
 
-void CreateAndStartBackupPlanRequest::setSourceEndpointRegion(const std::string& sourceEndpointRegion)
-{
-	sourceEndpointRegion_ = sourceEndpointRegion;
-	setParameter("SourceEndpointRegion", sourceEndpointRegion);
+void CreateAndStartBackupPlanRequest::setRegion(const std::string &region) {
+  region_ = region;
+  setParameter(std::string("Region"), region);
 }
 
-std::string CreateAndStartBackupPlanRequest::getSourceEndpointInstanceID()const
-{
-	return sourceEndpointInstanceID_;
+std::string CreateAndStartBackupPlanRequest::getSourceEndpointRegion() const {
+  return sourceEndpointRegion_;
 }
 
-void CreateAndStartBackupPlanRequest::setSourceEndpointInstanceID(const std::string& sourceEndpointInstanceID)
-{
-	sourceEndpointInstanceID_ = sourceEndpointInstanceID;
-	setParameter("SourceEndpointInstanceID", sourceEndpointInstanceID);
+void CreateAndStartBackupPlanRequest::setSourceEndpointRegion(const std::string &sourceEndpointRegion) {
+  sourceEndpointRegion_ = sourceEndpointRegion;
+  setParameter(std::string("SourceEndpointRegion"), sourceEndpointRegion);
 }
 
-std::string CreateAndStartBackupPlanRequest::getClientToken()const
-{
-	return clientToken_;
+std::string CreateAndStartBackupPlanRequest::getSourceEndpointInstanceID() const {
+  return sourceEndpointInstanceID_;
 }
 
-void CreateAndStartBackupPlanRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void CreateAndStartBackupPlanRequest::setSourceEndpointInstanceID(const std::string &sourceEndpointInstanceID) {
+  sourceEndpointInstanceID_ = sourceEndpointInstanceID;
+  setParameter(std::string("SourceEndpointInstanceID"), sourceEndpointInstanceID);
 }
 
-std::string CreateAndStartBackupPlanRequest::getBackupPlanId()const
-{
-	return backupPlanId_;
+std::string CreateAndStartBackupPlanRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void CreateAndStartBackupPlanRequest::setBackupPlanId(const std::string& backupPlanId)
-{
-	backupPlanId_ = backupPlanId;
-	setParameter("BackupPlanId", backupPlanId);
+void CreateAndStartBackupPlanRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string CreateAndStartBackupPlanRequest::getInstanceClass()const
-{
-	return instanceClass_;
+std::string CreateAndStartBackupPlanRequest::getBackupPlanId() const {
+  return backupPlanId_;
 }
 
-void CreateAndStartBackupPlanRequest::setInstanceClass(const std::string& instanceClass)
-{
-	instanceClass_ = instanceClass;
-	setParameter("InstanceClass", instanceClass);
+void CreateAndStartBackupPlanRequest::setBackupPlanId(const std::string &backupPlanId) {
+  backupPlanId_ = backupPlanId;
+  setParameter(std::string("BackupPlanId"), backupPlanId);
 }
 
-std::string CreateAndStartBackupPlanRequest::getSourceEndpointDatabaseName()const
-{
-	return sourceEndpointDatabaseName_;
+std::string CreateAndStartBackupPlanRequest::getInstanceClass() const {
+  return instanceClass_;
 }
 
-void CreateAndStartBackupPlanRequest::setSourceEndpointDatabaseName(const std::string& sourceEndpointDatabaseName)
-{
-	sourceEndpointDatabaseName_ = sourceEndpointDatabaseName;
-	setParameter("SourceEndpointDatabaseName", sourceEndpointDatabaseName);
+void CreateAndStartBackupPlanRequest::setInstanceClass(const std::string &instanceClass) {
+  instanceClass_ = instanceClass;
+  setParameter(std::string("InstanceClass"), instanceClass);
 }
 
-int CreateAndStartBackupPlanRequest::getDuplicationInfrequentAccessPeriod()const
-{
-	return duplicationInfrequentAccessPeriod_;
+std::string CreateAndStartBackupPlanRequest::getSourceEndpointDatabaseName() const {
+  return sourceEndpointDatabaseName_;
 }
 
-void CreateAndStartBackupPlanRequest::setDuplicationInfrequentAccessPeriod(int duplicationInfrequentAccessPeriod)
-{
-	duplicationInfrequentAccessPeriod_ = duplicationInfrequentAccessPeriod;
-	setParameter("DuplicationInfrequentAccessPeriod", std::to_string(duplicationInfrequentAccessPeriod));
+void CreateAndStartBackupPlanRequest::setSourceEndpointDatabaseName(const std::string &sourceEndpointDatabaseName) {
+  sourceEndpointDatabaseName_ = sourceEndpointDatabaseName;
+  setParameter(std::string("SourceEndpointDatabaseName"), sourceEndpointDatabaseName);
 }
 
-std::string CreateAndStartBackupPlanRequest::getInstanceType()const
-{
-	return instanceType_;
+int CreateAndStartBackupPlanRequest::getDuplicationInfrequentAccessPeriod() const {
+  return duplicationInfrequentAccessPeriod_;
 }
 
-void CreateAndStartBackupPlanRequest::setInstanceType(const std::string& instanceType)
-{
-	instanceType_ = instanceType;
-	setParameter("InstanceType", instanceType);
+void CreateAndStartBackupPlanRequest::setDuplicationInfrequentAccessPeriod(int duplicationInfrequentAccessPeriod) {
+  duplicationInfrequentAccessPeriod_ = duplicationInfrequentAccessPeriod;
+  setParameter(std::string("DuplicationInfrequentAccessPeriod"), std::to_string(duplicationInfrequentAccessPeriod));
 }
 
-bool CreateAndStartBackupPlanRequest::getEnableBackupLog()const
-{
-	return enableBackupLog_;
+std::string CreateAndStartBackupPlanRequest::getInstanceType() const {
+  return instanceType_;
 }
 
-void CreateAndStartBackupPlanRequest::setEnableBackupLog(bool enableBackupLog)
-{
-	enableBackupLog_ = enableBackupLog;
-	setParameter("EnableBackupLog", enableBackupLog ? "true" : "false");
+void CreateAndStartBackupPlanRequest::setInstanceType(const std::string &instanceType) {
+  instanceType_ = instanceType;
+  setParameter(std::string("InstanceType"), instanceType);
 }
 
-std::string CreateAndStartBackupPlanRequest::getCrossAliyunId()const
-{
-	return crossAliyunId_;
+bool CreateAndStartBackupPlanRequest::getEnableBackupLog() const {
+  return enableBackupLog_;
 }
 
-void CreateAndStartBackupPlanRequest::setCrossAliyunId(const std::string& crossAliyunId)
-{
-	crossAliyunId_ = crossAliyunId;
-	setParameter("CrossAliyunId", crossAliyunId);
+void CreateAndStartBackupPlanRequest::setEnableBackupLog(bool enableBackupLog) {
+  enableBackupLog_ = enableBackupLog;
+  setParameter(std::string("EnableBackupLog"), enableBackupLog ? "true" : "false");
 }
 
-std::string CreateAndStartBackupPlanRequest::getBackupObjects()const
-{
-	return backupObjects_;
+std::string CreateAndStartBackupPlanRequest::getCrossAliyunId() const {
+  return crossAliyunId_;
 }
 
-void CreateAndStartBackupPlanRequest::setBackupObjects(const std::string& backupObjects)
-{
-	backupObjects_ = backupObjects;
-	setParameter("BackupObjects", backupObjects);
+void CreateAndStartBackupPlanRequest::setCrossAliyunId(const std::string &crossAliyunId) {
+  crossAliyunId_ = crossAliyunId;
+  setParameter(std::string("CrossAliyunId"), crossAliyunId);
 }
 
-long CreateAndStartBackupPlanRequest::getBackupRateLimit()const
-{
-	return backupRateLimit_;
+std::string CreateAndStartBackupPlanRequest::getBackupObjects() const {
+  return backupObjects_;
 }
 
-void CreateAndStartBackupPlanRequest::setBackupRateLimit(long backupRateLimit)
-{
-	backupRateLimit_ = backupRateLimit;
-	setParameter("BackupRateLimit", std::to_string(backupRateLimit));
+void CreateAndStartBackupPlanRequest::setBackupObjects(const std::string &backupObjects) {
+  backupObjects_ = backupObjects;
+  setParameter(std::string("BackupObjects"), backupObjects);
 }
 
-int CreateAndStartBackupPlanRequest::getUsedTime()const
-{
-	return usedTime_;
+long CreateAndStartBackupPlanRequest::getBackupRateLimit() const {
+  return backupRateLimit_;
 }
 
-void CreateAndStartBackupPlanRequest::setUsedTime(int usedTime)
-{
-	usedTime_ = usedTime;
-	setParameter("UsedTime", std::to_string(usedTime));
+void CreateAndStartBackupPlanRequest::setBackupRateLimit(long backupRateLimit) {
+  backupRateLimit_ = backupRateLimit;
+  setParameter(std::string("BackupRateLimit"), std::to_string(backupRateLimit));
 }
 
-int CreateAndStartBackupPlanRequest::getSourceEndpointPort()const
-{
-	return sourceEndpointPort_;
+int CreateAndStartBackupPlanRequest::getUsedTime() const {
+  return usedTime_;
 }
 
-void CreateAndStartBackupPlanRequest::setSourceEndpointPort(int sourceEndpointPort)
-{
-	sourceEndpointPort_ = sourceEndpointPort;
-	setParameter("SourceEndpointPort", std::to_string(sourceEndpointPort));
+void CreateAndStartBackupPlanRequest::setUsedTime(int usedTime) {
+  usedTime_ = usedTime;
+  setParameter(std::string("UsedTime"), std::to_string(usedTime));
 }
 
-std::string CreateAndStartBackupPlanRequest::getStorageRegion()const
-{
-	return storageRegion_;
+int CreateAndStartBackupPlanRequest::getSourceEndpointPort() const {
+  return sourceEndpointPort_;
 }
 
-void CreateAndStartBackupPlanRequest::setStorageRegion(const std::string& storageRegion)
-{
-	storageRegion_ = storageRegion;
-	setParameter("StorageRegion", storageRegion);
+void CreateAndStartBackupPlanRequest::setSourceEndpointPort(int sourceEndpointPort) {
+  sourceEndpointPort_ = sourceEndpointPort;
+  setParameter(std::string("SourceEndpointPort"), std::to_string(sourceEndpointPort));
 }
 
-std::string CreateAndStartBackupPlanRequest::getSourceEndpointOracleSID()const
-{
-	return sourceEndpointOracleSID_;
+std::string CreateAndStartBackupPlanRequest::getStorageRegion() const {
+  return storageRegion_;
 }
 
-void CreateAndStartBackupPlanRequest::setSourceEndpointOracleSID(const std::string& sourceEndpointOracleSID)
-{
-	sourceEndpointOracleSID_ = sourceEndpointOracleSID;
-	setParameter("SourceEndpointOracleSID", sourceEndpointOracleSID);
+void CreateAndStartBackupPlanRequest::setStorageRegion(const std::string &storageRegion) {
+  storageRegion_ = storageRegion;
+  setParameter(std::string("StorageRegion"), storageRegion);
 }
 
-std::string CreateAndStartBackupPlanRequest::getBackupStrategyType()const
-{
-	return backupStrategyType_;
+std::string CreateAndStartBackupPlanRequest::getSourceEndpointOracleSID() const {
+  return sourceEndpointOracleSID_;
 }
 
-void CreateAndStartBackupPlanRequest::setBackupStrategyType(const std::string& backupStrategyType)
-{
-	backupStrategyType_ = backupStrategyType;
-	setParameter("BackupStrategyType", backupStrategyType);
+void CreateAndStartBackupPlanRequest::setSourceEndpointOracleSID(const std::string &sourceEndpointOracleSID) {
+  sourceEndpointOracleSID_ = sourceEndpointOracleSID;
+  setParameter(std::string("SourceEndpointOracleSID"), sourceEndpointOracleSID);
 }
 
-std::string CreateAndStartBackupPlanRequest::getPayType()const
-{
-	return payType_;
+std::string CreateAndStartBackupPlanRequest::getBackupStrategyType() const {
+  return backupStrategyType_;
 }
 
-void CreateAndStartBackupPlanRequest::setPayType(const std::string& payType)
-{
-	payType_ = payType;
-	setParameter("PayType", payType);
+void CreateAndStartBackupPlanRequest::setBackupStrategyType(const std::string &backupStrategyType) {
+  backupStrategyType_ = backupStrategyType;
+  setParameter(std::string("BackupStrategyType"), backupStrategyType);
+}
+
+std::string CreateAndStartBackupPlanRequest::getPayType() const {
+  return payType_;
+}
+
+void CreateAndStartBackupPlanRequest::setPayType(const std::string &payType) {
+  payType_ = payType;
+  setParameter(std::string("PayType"), payType);
 }
 

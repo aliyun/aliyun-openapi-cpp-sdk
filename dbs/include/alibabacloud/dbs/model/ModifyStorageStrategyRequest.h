@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,47 +17,41 @@
 #ifndef ALIBABACLOUD_DBS_MODEL_MODIFYSTORAGESTRATEGYREQUEST_H_
 #define ALIBABACLOUD_DBS_MODEL_MODIFYSTORAGESTRATEGYREQUEST_H_
 
+#include <alibabacloud/dbs/DbsExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/dbs/DbsExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Dbs
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_DBS_EXPORT ModifyStorageStrategyRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Dbs {
+namespace Model {
+class ALIBABACLOUD_DBS_EXPORT ModifyStorageStrategyRequest : public RpcServiceRequest {
+public:
+	ModifyStorageStrategyRequest();
+	~ModifyStorageStrategyRequest();
+	int getDuplicationArchivePeriod() const;
+	void setDuplicationArchivePeriod(int duplicationArchivePeriod);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getBackupPlanId() const;
+	void setBackupPlanId(const std::string &backupPlanId);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
+	int getBackupRetentionPeriod() const;
+	void setBackupRetentionPeriod(int backupRetentionPeriod);
+	int getDuplicationInfrequentAccessPeriod() const;
+	void setDuplicationInfrequentAccessPeriod(int duplicationInfrequentAccessPeriod);
 
-			public:
-				ModifyStorageStrategyRequest();
-				~ModifyStorageStrategyRequest();
-
-				int getDuplicationArchivePeriod()const;
-				void setDuplicationArchivePeriod(int duplicationArchivePeriod);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				std::string getBackupPlanId()const;
-				void setBackupPlanId(const std::string& backupPlanId);
-				std::string getOwnerId()const;
-				void setOwnerId(const std::string& ownerId);
-				int getBackupRetentionPeriod()const;
-				void setBackupRetentionPeriod(int backupRetentionPeriod);
-				int getDuplicationInfrequentAccessPeriod()const;
-				void setDuplicationInfrequentAccessPeriod(int duplicationInfrequentAccessPeriod);
-
-            private:
-				int duplicationArchivePeriod_;
-				std::string clientToken_;
-				std::string backupPlanId_;
-				std::string ownerId_;
-				int backupRetentionPeriod_;
-				int duplicationInfrequentAccessPeriod_;
-
-			};
-		}
-	}
-}
+private:
+	int duplicationArchivePeriod_;
+	std::string clientToken_;
+	std::string backupPlanId_;
+	std::string ownerId_;
+	int backupRetentionPeriod_;
+	int duplicationInfrequentAccessPeriod_;
+};
+} // namespace Model
+} // namespace Dbs
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_DBS_MODEL_MODIFYSTORAGESTRATEGYREQUEST_H_

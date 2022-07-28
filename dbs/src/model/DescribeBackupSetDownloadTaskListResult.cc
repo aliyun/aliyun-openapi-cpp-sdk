@@ -43,73 +43,73 @@ void DescribeBackupSetDownloadTaskListResult::parse(const std::string &payload)
 	for (auto valueItemsBackupSetDownloadTaskDetail : allItemsNode)
 	{
 		BackupSetDownloadTaskDetail itemsObject;
+		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadStatus"].isNull())
+			itemsObject.backupSetDownloadStatus = valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadStatus"].asString();
+		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDataSize"].isNull())
+			itemsObject.backupSetDataSize = std::stol(valueItemsBackupSetDownloadTaskDetail["BackupSetDataSize"].asString());
+		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadTargetType"].isNull())
+			itemsObject.backupSetDownloadTargetType = valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadTargetType"].asString();
+		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadDir"].isNull())
+			itemsObject.backupSetDownloadDir = valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadDir"].asString();
+		if(!valueItemsBackupSetDownloadTaskDetail["ErrMessage"].isNull())
+			itemsObject.errMessage = valueItemsBackupSetDownloadTaskDetail["ErrMessage"].asString();
+		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadCreateTime"].isNull())
+			itemsObject.backupSetDownloadCreateTime = std::stol(valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadCreateTime"].asString());
 		if(!valueItemsBackupSetDownloadTaskDetail["BackupPlanId"].isNull())
 			itemsObject.backupPlanId = valueItemsBackupSetDownloadTaskDetail["BackupPlanId"].asString();
+		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDbType"].isNull())
+			itemsObject.backupSetDbType = valueItemsBackupSetDownloadTaskDetail["BackupSetDbType"].asString();
+		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadInternetUrl"].isNull())
+			itemsObject.backupSetDownloadInternetUrl = valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadInternetUrl"].asString();
+		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetId"].isNull())
+			itemsObject.backupSetId = valueItemsBackupSetDownloadTaskDetail["BackupSetId"].asString();
+		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadIntranetUrl"].isNull())
+			itemsObject.backupSetDownloadIntranetUrl = valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadIntranetUrl"].asString();
+		if(!valueItemsBackupSetDownloadTaskDetail["BackupGatewayId"].isNull())
+			itemsObject.backupGatewayId = std::stol(valueItemsBackupSetDownloadTaskDetail["BackupGatewayId"].asString());
+		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadWay"].isNull())
+			itemsObject.backupSetDownloadWay = valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadWay"].asString();
+		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadFinishTime"].isNull())
+			itemsObject.backupSetDownloadFinishTime = std::stol(valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadFinishTime"].asString());
+		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetJobType"].isNull())
+			itemsObject.backupSetJobType = valueItemsBackupSetDownloadTaskDetail["BackupSetJobType"].asString();
 		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadTaskId"].isNull())
 			itemsObject.backupSetDownloadTaskId = valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadTaskId"].asString();
 		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadTaskName"].isNull())
 			itemsObject.backupSetDownloadTaskName = valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadTaskName"].asString();
-		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadStatus"].isNull())
-			itemsObject.backupSetDownloadStatus = valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadStatus"].asString();
-		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadCreateTime"].isNull())
-			itemsObject.backupSetDownloadCreateTime = std::stol(valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadCreateTime"].asString());
-		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadFinishTime"].isNull())
-			itemsObject.backupSetDownloadFinishTime = std::stol(valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadFinishTime"].asString());
-		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetId"].isNull())
-			itemsObject.backupSetId = valueItemsBackupSetDownloadTaskDetail["BackupSetId"].asString();
-		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetCode"].isNull())
-			itemsObject.backupSetCode = valueItemsBackupSetDownloadTaskDetail["BackupSetCode"].asString();
-		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetJobType"].isNull())
-			itemsObject.backupSetJobType = valueItemsBackupSetDownloadTaskDetail["BackupSetJobType"].asString();
-		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDataSize"].isNull())
-			itemsObject.backupSetDataSize = std::stol(valueItemsBackupSetDownloadTaskDetail["BackupSetDataSize"].asString());
 		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDataFormat"].isNull())
 			itemsObject.backupSetDataFormat = valueItemsBackupSetDownloadTaskDetail["BackupSetDataFormat"].asString();
-		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDbType"].isNull())
-			itemsObject.backupSetDbType = valueItemsBackupSetDownloadTaskDetail["BackupSetDbType"].asString();
-		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadWay"].isNull())
-			itemsObject.backupSetDownloadWay = valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadWay"].asString();
-		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadDir"].isNull())
-			itemsObject.backupSetDownloadDir = valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadDir"].asString();
-		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadTargetType"].isNull())
-			itemsObject.backupSetDownloadTargetType = valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadTargetType"].asString();
-		if(!valueItemsBackupSetDownloadTaskDetail["BackupGatewayId"].isNull())
-			itemsObject.backupGatewayId = std::stol(valueItemsBackupSetDownloadTaskDetail["BackupGatewayId"].asString());
-		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadIntranetUrl"].isNull())
-			itemsObject.backupSetDownloadIntranetUrl = valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadIntranetUrl"].asString();
-		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadInternetUrl"].isNull())
-			itemsObject.backupSetDownloadInternetUrl = valueItemsBackupSetDownloadTaskDetail["BackupSetDownloadInternetUrl"].asString();
-		if(!valueItemsBackupSetDownloadTaskDetail["ErrMessage"].isNull())
-			itemsObject.errMessage = valueItemsBackupSetDownloadTaskDetail["ErrMessage"].asString();
+		if(!valueItemsBackupSetDownloadTaskDetail["BackupSetCode"].isNull())
+			itemsObject.backupSetCode = valueItemsBackupSetDownloadTaskDetail["BackupSetCode"].asString();
 		items_.push_back(itemsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["TotalPages"].isNull())
-		totalPages_ = std::stoi(value["TotalPages"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNum"].isNull())
 		pageNum_ = std::stoi(value["PageNum"].asString());
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
+	if(!value["TotalPages"].isNull())
+		totalPages_ = std::stoi(value["TotalPages"].asString());
 	if(!value["TotalElements"].isNull())
 		totalElements_ = std::stoi(value["TotalElements"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
-}
-
-int DescribeBackupSetDownloadTaskListResult::getPageSize()const
-{
-	return pageSize_;
 }
 
 int DescribeBackupSetDownloadTaskListResult::getPageNum()const
 {
 	return pageNum_;
+}
+
+int DescribeBackupSetDownloadTaskListResult::getPageSize()const
+{
+	return pageSize_;
 }
 
 int DescribeBackupSetDownloadTaskListResult::getHttpStatusCode()const

@@ -43,53 +43,53 @@ void DescribeIncrementBackupListResult::parse(const std::string &payload)
 	for (auto valueItemsIncrementBackupFile : allItemsNode)
 	{
 		IncrementBackupFile itemsObject;
-		if(!valueItemsIncrementBackupFile["BackupSetId"].isNull())
-			itemsObject.backupSetId = valueItemsIncrementBackupFile["BackupSetId"].asString();
-		if(!valueItemsIncrementBackupFile["BackupSetJobId"].isNull())
-			itemsObject.backupSetJobId = valueItemsIncrementBackupFile["BackupSetJobId"].asString();
-		if(!valueItemsIncrementBackupFile["SourceEndpointIpPort"].isNull())
-			itemsObject.sourceEndpointIpPort = valueItemsIncrementBackupFile["SourceEndpointIpPort"].asString();
-		if(!valueItemsIncrementBackupFile["StartTime"].isNull())
-			itemsObject.startTime = std::stol(valueItemsIncrementBackupFile["StartTime"].asString());
 		if(!valueItemsIncrementBackupFile["EndTime"].isNull())
 			itemsObject.endTime = std::stol(valueItemsIncrementBackupFile["EndTime"].asString());
-		if(!valueItemsIncrementBackupFile["BackupStatus"].isNull())
-			itemsObject.backupStatus = valueItemsIncrementBackupFile["BackupStatus"].asString();
 		if(!valueItemsIncrementBackupFile["BackupSetExpiredTime"].isNull())
 			itemsObject.backupSetExpiredTime = std::stol(valueItemsIncrementBackupFile["BackupSetExpiredTime"].asString());
-		if(!valueItemsIncrementBackupFile["BackupSize"].isNull())
-			itemsObject.backupSize = std::stol(valueItemsIncrementBackupFile["BackupSize"].asString());
+		if(!valueItemsIncrementBackupFile["StartTime"].isNull())
+			itemsObject.startTime = std::stol(valueItemsIncrementBackupFile["StartTime"].asString());
 		if(!valueItemsIncrementBackupFile["StorageMethod"].isNull())
 			itemsObject.storageMethod = valueItemsIncrementBackupFile["StorageMethod"].asString();
+		if(!valueItemsIncrementBackupFile["BackupSetJobId"].isNull())
+			itemsObject.backupSetJobId = valueItemsIncrementBackupFile["BackupSetJobId"].asString();
+		if(!valueItemsIncrementBackupFile["BackupSetId"].isNull())
+			itemsObject.backupSetId = valueItemsIncrementBackupFile["BackupSetId"].asString();
+		if(!valueItemsIncrementBackupFile["BackupStatus"].isNull())
+			itemsObject.backupStatus = valueItemsIncrementBackupFile["BackupStatus"].asString();
+		if(!valueItemsIncrementBackupFile["SourceEndpointIpPort"].isNull())
+			itemsObject.sourceEndpointIpPort = valueItemsIncrementBackupFile["SourceEndpointIpPort"].asString();
+		if(!valueItemsIncrementBackupFile["BackupSize"].isNull())
+			itemsObject.backupSize = std::stol(valueItemsIncrementBackupFile["BackupSize"].asString());
 		items_.push_back(itemsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["TotalPages"].isNull())
-		totalPages_ = std::stoi(value["TotalPages"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNum"].isNull())
 		pageNum_ = std::stoi(value["PageNum"].asString());
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
+	if(!value["TotalPages"].isNull())
+		totalPages_ = std::stoi(value["TotalPages"].asString());
 	if(!value["TotalElements"].isNull())
 		totalElements_ = std::stoi(value["TotalElements"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
-}
-
-int DescribeIncrementBackupListResult::getPageSize()const
-{
-	return pageSize_;
 }
 
 int DescribeIncrementBackupListResult::getPageNum()const
 {
 	return pageNum_;
+}
+
+int DescribeIncrementBackupListResult::getPageSize()const
+{
+	return pageSize_;
 }
 
 int DescribeIncrementBackupListResult::getHttpStatusCode()const

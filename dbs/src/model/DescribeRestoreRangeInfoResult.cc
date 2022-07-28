@@ -43,38 +43,38 @@ void DescribeRestoreRangeInfoResult::parse(const std::string &payload)
 	for (auto valueItemsDBSRecoverRange : allItemsNode)
 	{
 		DBSRecoverRange itemsObject;
-		if(!valueItemsDBSRecoverRange["SourceEndpointInstanceType"].isNull())
-			itemsObject.sourceEndpointInstanceType = valueItemsDBSRecoverRange["SourceEndpointInstanceType"].asString();
-		if(!valueItemsDBSRecoverRange["SourceEndpointInstanceID"].isNull())
-			itemsObject.sourceEndpointInstanceID = valueItemsDBSRecoverRange["SourceEndpointInstanceID"].asString();
-		if(!valueItemsDBSRecoverRange["BeginTimestampForRestore"].isNull())
-			itemsObject.beginTimestampForRestore = std::stol(valueItemsDBSRecoverRange["BeginTimestampForRestore"].asString());
 		if(!valueItemsDBSRecoverRange["EndTimestampForRestore"].isNull())
 			itemsObject.endTimestampForRestore = std::stol(valueItemsDBSRecoverRange["EndTimestampForRestore"].asString());
+		if(!valueItemsDBSRecoverRange["SourceEndpointInstanceType"].isNull())
+			itemsObject.sourceEndpointInstanceType = valueItemsDBSRecoverRange["SourceEndpointInstanceType"].asString();
 		if(!valueItemsDBSRecoverRange["RangeType"].isNull())
 			itemsObject.rangeType = valueItemsDBSRecoverRange["RangeType"].asString();
+		if(!valueItemsDBSRecoverRange["BeginTimestampForRestore"].isNull())
+			itemsObject.beginTimestampForRestore = std::stol(valueItemsDBSRecoverRange["BeginTimestampForRestore"].asString());
+		if(!valueItemsDBSRecoverRange["SourceEndpointInstanceID"].isNull())
+			itemsObject.sourceEndpointInstanceID = valueItemsDBSRecoverRange["SourceEndpointInstanceID"].asString();
 		auto allFullBackupListNode = valueItemsDBSRecoverRange["FullBackupList"]["FullBackupDetail"];
 		for (auto valueItemsDBSRecoverRangeFullBackupListFullBackupDetail : allFullBackupListNode)
 		{
 			DBSRecoverRange::FullBackupDetail fullBackupListObject;
-			if(!valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["BackupSetId"].isNull())
-				fullBackupListObject.backupSetId = valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["BackupSetId"].asString();
-			if(!valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["StartTime"].isNull())
-				fullBackupListObject.startTime = std::stol(valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["StartTime"].asString());
 			if(!valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["EndTime"].isNull())
 				fullBackupListObject.endTime = std::stol(valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["EndTime"].asString());
+			if(!valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["StartTime"].isNull())
+				fullBackupListObject.startTime = std::stol(valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["StartTime"].asString());
+			if(!valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["BackupSetId"].isNull())
+				fullBackupListObject.backupSetId = valueItemsDBSRecoverRangeFullBackupListFullBackupDetail["BackupSetId"].asString();
 			itemsObject.fullBackupList.push_back(fullBackupListObject);
 		}
 		items_.push_back(itemsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
 
 }
 

@@ -39,20 +39,20 @@ void DescribeNodeCidrListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allInternetIPs = value["InternetIPs"]["InternetIP"];
-	for (const auto &item : allInternetIPs)
-		internetIPs_.push_back(item.asString());
 	auto allIntranetIPs = value["IntranetIPs"]["IntranetIP"];
 	for (const auto &item : allIntranetIPs)
 		intranetIPs_.push_back(item.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
+	auto allInternetIPs = value["InternetIPs"]["InternetIP"];
+	for (const auto &item : allInternetIPs)
+		internetIPs_.push_back(item.asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
 
 }
 

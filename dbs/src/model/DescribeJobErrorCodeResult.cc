@@ -40,26 +40,26 @@ void DescribeJobErrorCodeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto itemNode = value["Item"];
-	if(!itemNode["JobId"].isNull())
-		item_.jobId = itemNode["JobId"].asString();
-	if(!itemNode["Language"].isNull())
-		item_.language = itemNode["Language"].asString();
-	if(!itemNode["ErrorCode"].isNull())
-		item_.errorCode = itemNode["ErrorCode"].asString();
-	if(!itemNode["ErrorMessage"].isNull())
-		item_.errorMessage = itemNode["ErrorMessage"].asString();
-	if(!itemNode["JobType"].isNull())
-		item_.jobType = itemNode["JobType"].asString();
 	if(!itemNode["JobState"].isNull())
 		item_.jobState = itemNode["JobState"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
+	if(!itemNode["ErrorMessage"].isNull())
+		item_.errorMessage = itemNode["ErrorMessage"].asString();
+	if(!itemNode["ErrorCode"].isNull())
+		item_.errorCode = itemNode["ErrorCode"].asString();
+	if(!itemNode["JobId"].isNull())
+		item_.jobId = itemNode["JobId"].asString();
+	if(!itemNode["JobType"].isNull())
+		item_.jobType = itemNode["JobType"].asString();
+	if(!itemNode["Language"].isNull())
+		item_.language = itemNode["Language"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
 
 }
 

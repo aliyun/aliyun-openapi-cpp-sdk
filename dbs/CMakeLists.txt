@@ -47,14 +47,10 @@ set(dbs_public_header_model
 	include/alibabacloud/dbs/model/DescribeDLAServiceResult.h
 	include/alibabacloud/dbs/model/DescribeFullBackupListRequest.h
 	include/alibabacloud/dbs/model/DescribeFullBackupListResult.h
-	include/alibabacloud/dbs/model/DescribeFullBackupSetRequest.h
-	include/alibabacloud/dbs/model/DescribeFullBackupSetResult.h
 	include/alibabacloud/dbs/model/DescribeIncrementBackupListRequest.h
 	include/alibabacloud/dbs/model/DescribeIncrementBackupListResult.h
 	include/alibabacloud/dbs/model/DescribeJobErrorCodeRequest.h
 	include/alibabacloud/dbs/model/DescribeJobErrorCodeResult.h
-	include/alibabacloud/dbs/model/DescribeLogicalBackupSetRequest.h
-	include/alibabacloud/dbs/model/DescribeLogicalBackupSetResult.h
 	include/alibabacloud/dbs/model/DescribeNodeCidrListRequest.h
 	include/alibabacloud/dbs/model/DescribeNodeCidrListResult.h
 	include/alibabacloud/dbs/model/DescribePreCheckProgressListRequest.h
@@ -126,14 +122,10 @@ set(dbs_src
 	src/model/DescribeDLAServiceResult.cc
 	src/model/DescribeFullBackupListRequest.cc
 	src/model/DescribeFullBackupListResult.cc
-	src/model/DescribeFullBackupSetRequest.cc
-	src/model/DescribeFullBackupSetResult.cc
 	src/model/DescribeIncrementBackupListRequest.cc
 	src/model/DescribeIncrementBackupListResult.cc
 	src/model/DescribeJobErrorCodeRequest.cc
 	src/model/DescribeJobErrorCodeResult.cc
-	src/model/DescribeLogicalBackupSetRequest.cc
-	src/model/DescribeLogicalBackupSetResult.cc
 	src/model/DescribeNodeCidrListRequest.cc
 	src/model/DescribeNodeCidrListResult.cc
 	src/model/DescribePreCheckProgressListRequest.cc

@@ -48,14 +48,10 @@
 #include "model/DescribeDLAServiceResult.h"
 #include "model/DescribeFullBackupListRequest.h"
 #include "model/DescribeFullBackupListResult.h"
-#include "model/DescribeFullBackupSetRequest.h"
-#include "model/DescribeFullBackupSetResult.h"
 #include "model/DescribeIncrementBackupListRequest.h"
 #include "model/DescribeIncrementBackupListResult.h"
 #include "model/DescribeJobErrorCodeRequest.h"
 #include "model/DescribeJobErrorCodeResult.h"
-#include "model/DescribeLogicalBackupSetRequest.h"
-#include "model/DescribeLogicalBackupSetResult.h"
 #include "model/DescribeNodeCidrListRequest.h"
 #include "model/DescribeNodeCidrListResult.h"
 #include "model/DescribePreCheckProgressListRequest.h"
@@ -146,18 +142,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeFullBackupListResult> DescribeFullBackupListOutcome;
 			typedef std::future<DescribeFullBackupListOutcome> DescribeFullBackupListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeFullBackupListRequest&, const DescribeFullBackupListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFullBackupListAsyncHandler;
-			typedef Outcome<Error, Model::DescribeFullBackupSetResult> DescribeFullBackupSetOutcome;
-			typedef std::future<DescribeFullBackupSetOutcome> DescribeFullBackupSetOutcomeCallable;
-			typedef std::function<void(const DbsClient*, const Model::DescribeFullBackupSetRequest&, const DescribeFullBackupSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFullBackupSetAsyncHandler;
 			typedef Outcome<Error, Model::DescribeIncrementBackupListResult> DescribeIncrementBackupListOutcome;
 			typedef std::future<DescribeIncrementBackupListOutcome> DescribeIncrementBackupListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeIncrementBackupListRequest&, const DescribeIncrementBackupListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIncrementBackupListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeJobErrorCodeResult> DescribeJobErrorCodeOutcome;
 			typedef std::future<DescribeJobErrorCodeOutcome> DescribeJobErrorCodeOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeJobErrorCodeRequest&, const DescribeJobErrorCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobErrorCodeAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLogicalBackupSetResult> DescribeLogicalBackupSetOutcome;
-			typedef std::future<DescribeLogicalBackupSetOutcome> DescribeLogicalBackupSetOutcomeCallable;
-			typedef std::function<void(const DbsClient*, const Model::DescribeLogicalBackupSetRequest&, const DescribeLogicalBackupSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogicalBackupSetAsyncHandler;
 			typedef Outcome<Error, Model::DescribeNodeCidrListResult> DescribeNodeCidrListOutcome;
 			typedef std::future<DescribeNodeCidrListOutcome> DescribeNodeCidrListOutcomeCallable;
 			typedef std::function<void(const DbsClient*, const Model::DescribeNodeCidrListRequest&, const DescribeNodeCidrListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeCidrListAsyncHandler;
@@ -265,18 +255,12 @@ namespace AlibabaCloud
 			DescribeFullBackupListOutcome describeFullBackupList(const Model::DescribeFullBackupListRequest &request)const;
 			void describeFullBackupListAsync(const Model::DescribeFullBackupListRequest& request, const DescribeFullBackupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeFullBackupListOutcomeCallable describeFullBackupListCallable(const Model::DescribeFullBackupListRequest& request) const;
-			DescribeFullBackupSetOutcome describeFullBackupSet(const Model::DescribeFullBackupSetRequest &request)const;
-			void describeFullBackupSetAsync(const Model::DescribeFullBackupSetRequest& request, const DescribeFullBackupSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeFullBackupSetOutcomeCallable describeFullBackupSetCallable(const Model::DescribeFullBackupSetRequest& request) const;
 			DescribeIncrementBackupListOutcome describeIncrementBackupList(const Model::DescribeIncrementBackupListRequest &request)const;
 			void describeIncrementBackupListAsync(const Model::DescribeIncrementBackupListRequest& request, const DescribeIncrementBackupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeIncrementBackupListOutcomeCallable describeIncrementBackupListCallable(const Model::DescribeIncrementBackupListRequest& request) const;
 			DescribeJobErrorCodeOutcome describeJobErrorCode(const Model::DescribeJobErrorCodeRequest &request)const;
 			void describeJobErrorCodeAsync(const Model::DescribeJobErrorCodeRequest& request, const DescribeJobErrorCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeJobErrorCodeOutcomeCallable describeJobErrorCodeCallable(const Model::DescribeJobErrorCodeRequest& request) const;
-			DescribeLogicalBackupSetOutcome describeLogicalBackupSet(const Model::DescribeLogicalBackupSetRequest &request)const;
-			void describeLogicalBackupSetAsync(const Model::DescribeLogicalBackupSetRequest& request, const DescribeLogicalBackupSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLogicalBackupSetOutcomeCallable describeLogicalBackupSetCallable(const Model::DescribeLogicalBackupSetRequest& request) const;
 			DescribeNodeCidrListOutcome describeNodeCidrList(const Model::DescribeNodeCidrListRequest &request)const;
 			void describeNodeCidrListAsync(const Model::DescribeNodeCidrListRequest& request, const DescribeNodeCidrListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNodeCidrListOutcomeCallable describeNodeCidrListCallable(const Model::DescribeNodeCidrListRequest& request) const;

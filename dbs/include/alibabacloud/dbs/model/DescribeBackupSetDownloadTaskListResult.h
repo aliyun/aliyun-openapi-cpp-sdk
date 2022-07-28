@@ -36,12 +36,12 @@ namespace AlibabaCloud
 				{
 					std::string backupSetDbType;
 					long backupSetDownloadCreateTime;
-					std::string backupSetDownloadTaskName;
 					std::string backupSetDownloadDir;
+					std::string backupSetDownloadTaskName;
 					std::string backupSetDownloadWay;
 					std::string backupSetCode;
-					std::string backupSetId;
 					std::string errMessage;
+					std::string backupSetId;
 					std::string backupSetDownloadTargetType;
 					std::string backupSetDownloadStatus;
 					std::string backupSetDownloadIntranetUrl;
@@ -59,8 +59,8 @@ namespace AlibabaCloud
 				DescribeBackupSetDownloadTaskListResult();
 				explicit DescribeBackupSetDownloadTaskListResult(const std::string &payload);
 				~DescribeBackupSetDownloadTaskListResult();
-				int getPageSize()const;
 				int getPageNum()const;
+				int getPageSize()const;
 				int getHttpStatusCode()const;
 				int getTotalElements()const;
 				std::vector<BackupSetDownloadTaskDetail> getItems()const;
@@ -72,8 +72,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
 				int pageNum_;
+				int pageSize_;
 				int httpStatusCode_;
 				int totalElements_;
 				std::vector<BackupSetDownloadTaskDetail> items_;

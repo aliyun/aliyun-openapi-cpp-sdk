@@ -35,16 +35,16 @@ namespace AlibabaCloud
 				struct FullBackupFile
 				{
 					std::string sourceEndpointIpPort;
-					std::string storageMethod;
 					std::string backupObjects;
-					long endTime;
+					std::string storageMethod;
 					long finishTime;
-					long backupSize;
+					long endTime;
 					long createTime;
+					long backupSize;
 					long startTime;
 					long backupSetExpiredTime;
-					std::string backupSetId;
 					std::string errMessage;
+					std::string backupSetId;
 					std::string backupStatus;
 				};
 
@@ -52,8 +52,8 @@ namespace AlibabaCloud
 				DescribeFullBackupListResult();
 				explicit DescribeFullBackupListResult(const std::string &payload);
 				~DescribeFullBackupListResult();
-				int getPageSize()const;
 				int getPageNum()const;
+				int getPageSize()const;
 				int getHttpStatusCode()const;
 				int getTotalElements()const;
 				std::vector<FullBackupFile> getItems()const;
@@ -65,8 +65,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
 				int pageNum_;
+				int pageSize_;
 				int httpStatusCode_;
 				int totalElements_;
 				std::vector<FullBackupFile> items_;

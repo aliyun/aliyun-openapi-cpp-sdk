@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string names;
 					std::string item;
-					std::string orderNum;
 					long finishTime;
+					std::string orderNum;
 					std::string errMsg;
 					std::string state;
 					long bootTime;

@@ -39,8 +39,8 @@ namespace AlibabaCloud
 					long endTime;
 					std::string backupSetJobId;
 					long backupSize;
-					long startTime;
 					long backupSetExpiredTime;
+					long startTime;
 					std::string backupSetId;
 					std::string backupStatus;
 				};
@@ -49,8 +49,8 @@ namespace AlibabaCloud
 				DescribeIncrementBackupListResult();
 				explicit DescribeIncrementBackupListResult(const std::string &payload);
 				~DescribeIncrementBackupListResult();
-				int getPageSize()const;
 				int getPageNum()const;
+				int getPageSize()const;
 				int getHttpStatusCode()const;
 				int getTotalElements()const;
 				std::vector<IncrementBackupFile> getItems()const;
@@ -62,8 +62,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
 				int pageNum_;
+				int pageSize_;
 				int httpStatusCode_;
 				int totalElements_;
 				std::vector<IncrementBackupFile> items_;

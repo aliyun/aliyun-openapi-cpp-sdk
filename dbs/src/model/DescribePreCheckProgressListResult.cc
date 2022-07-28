@@ -43,36 +43,36 @@ void DescribePreCheckProgressListResult::parse(const std::string &payload)
 	for (auto valueItemsPreCheckProgressDetail : allItemsNode)
 	{
 		PreCheckProgressDetail itemsObject;
-		if(!valueItemsPreCheckProgressDetail["JobId"].isNull())
-			itemsObject.jobId = valueItemsPreCheckProgressDetail["JobId"].asString();
-		if(!valueItemsPreCheckProgressDetail["State"].isNull())
-			itemsObject.state = valueItemsPreCheckProgressDetail["State"].asString();
-		if(!valueItemsPreCheckProgressDetail["OrderNum"].isNull())
-			itemsObject.orderNum = valueItemsPreCheckProgressDetail["OrderNum"].asString();
-		if(!valueItemsPreCheckProgressDetail["ErrMsg"].isNull())
-			itemsObject.errMsg = valueItemsPreCheckProgressDetail["ErrMsg"].asString();
-		if(!valueItemsPreCheckProgressDetail["Names"].isNull())
-			itemsObject.names = valueItemsPreCheckProgressDetail["Names"].asString();
-		if(!valueItemsPreCheckProgressDetail["Item"].isNull())
-			itemsObject.item = valueItemsPreCheckProgressDetail["Item"].asString();
-		if(!valueItemsPreCheckProgressDetail["BootTime"].isNull())
-			itemsObject.bootTime = std::stol(valueItemsPreCheckProgressDetail["BootTime"].asString());
 		if(!valueItemsPreCheckProgressDetail["FinishTime"].isNull())
 			itemsObject.finishTime = std::stol(valueItemsPreCheckProgressDetail["FinishTime"].asString());
+		if(!valueItemsPreCheckProgressDetail["State"].isNull())
+			itemsObject.state = valueItemsPreCheckProgressDetail["State"].asString();
+		if(!valueItemsPreCheckProgressDetail["BootTime"].isNull())
+			itemsObject.bootTime = std::stol(valueItemsPreCheckProgressDetail["BootTime"].asString());
+		if(!valueItemsPreCheckProgressDetail["JobId"].isNull())
+			itemsObject.jobId = valueItemsPreCheckProgressDetail["JobId"].asString();
+		if(!valueItemsPreCheckProgressDetail["Item"].isNull())
+			itemsObject.item = valueItemsPreCheckProgressDetail["Item"].asString();
+		if(!valueItemsPreCheckProgressDetail["ErrMsg"].isNull())
+			itemsObject.errMsg = valueItemsPreCheckProgressDetail["ErrMsg"].asString();
+		if(!valueItemsPreCheckProgressDetail["OrderNum"].isNull())
+			itemsObject.orderNum = valueItemsPreCheckProgressDetail["OrderNum"].asString();
+		if(!valueItemsPreCheckProgressDetail["Names"].isNull())
+			itemsObject.names = valueItemsPreCheckProgressDetail["Names"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["Progress"].isNull())
-		progress_ = std::stoi(value["Progress"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Progress"].isNull())
+		progress_ = std::stoi(value["Progress"].asString());
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
 
 }
 

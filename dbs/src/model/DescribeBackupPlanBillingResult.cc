@@ -40,42 +40,44 @@ void DescribeBackupPlanBillingResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto itemNode = value["Item"];
-	if(!itemNode["BuySpec"].isNull())
-		item_.buySpec = itemNode["BuySpec"].asString();
-	if(!itemNode["BuyChargeType"].isNull())
-		item_.buyChargeType = itemNode["BuyChargeType"].asString();
+	if(!itemNode["BuyCreateTimestamp"].isNull())
+		item_.buyCreateTimestamp = std::stol(itemNode["BuyCreateTimestamp"].asString());
+	if(!itemNode["FullStorageSize"].isNull())
+		item_.fullStorageSize = std::stol(itemNode["FullStorageSize"].asString());
 	if(!itemNode["BuyExpiredTimestamp"].isNull())
 		item_.buyExpiredTimestamp = std::stol(itemNode["BuyExpiredTimestamp"].asString());
+	if(!itemNode["BuySpec"].isNull())
+		item_.buySpec = itemNode["BuySpec"].asString();
+	if(!itemNode["QuotaEndTimestamp"].isNull())
+		item_.quotaEndTimestamp = std::stol(itemNode["QuotaEndTimestamp"].asString());
+	if(!itemNode["IsExpired"].isNull())
+		item_.isExpired = itemNode["IsExpired"].asString() == "true";
+	if(!itemNode["QuotaStartTimestamp"].isNull())
+		item_.quotaStartTimestamp = std::stol(itemNode["QuotaStartTimestamp"].asString());
 	if(!itemNode["TotalFreeBytes"].isNull())
 		item_.totalFreeBytes = std::stol(itemNode["TotalFreeBytes"].asString());
 	if(!itemNode["PaiedBytes"].isNull())
 		item_.paiedBytes = std::stol(itemNode["PaiedBytes"].asString());
 	if(!itemNode["UsedFullBytes"].isNull())
 		item_.usedFullBytes = std::stol(itemNode["UsedFullBytes"].asString());
-	if(!itemNode["UsedIncrementBytes"].isNull())
-		item_.usedIncrementBytes = std::stol(itemNode["UsedIncrementBytes"].asString());
-	if(!itemNode["QuotaStartTimestamp"].isNull())
-		item_.quotaStartTimestamp = std::stol(itemNode["QuotaStartTimestamp"].asString());
-	if(!itemNode["QuotaEndTimestamp"].isNull())
-		item_.quotaEndTimestamp = std::stol(itemNode["QuotaEndTimestamp"].asString());
-	if(!itemNode["BuyCreateTimestamp"].isNull())
-		item_.buyCreateTimestamp = std::stol(itemNode["BuyCreateTimestamp"].asString());
-	if(!itemNode["FullStorageSize"].isNull())
-		item_.fullStorageSize = std::stol(itemNode["FullStorageSize"].asString());
-	if(!itemNode["ContStorageSize"].isNull())
-		item_.contStorageSize = std::stol(itemNode["ContStorageSize"].asString());
-	if(!itemNode["IsExpired"].isNull())
-		item_.isExpired = itemNode["IsExpired"].asString() == "true";
 	if(!itemNode["IsFreeBytesUnlimited"].isNull())
 		item_.isFreeBytesUnlimited = itemNode["IsFreeBytesUnlimited"].asString() == "true";
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
+	if(!itemNode["ContStorageSize"].isNull())
+		item_.contStorageSize = std::stol(itemNode["ContStorageSize"].asString());
+	if(!itemNode["BuyChargeType"].isNull())
+		item_.buyChargeType = itemNode["BuyChargeType"].asString();
+	if(!itemNode["UsedIncrementBytes"].isNull())
+		item_.usedIncrementBytes = std::stol(itemNode["UsedIncrementBytes"].asString());
+	if(!itemNode["ResourceGroupId"].isNull())
+		item_.resourceGroupId = itemNode["ResourceGroupId"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
 
 }
 

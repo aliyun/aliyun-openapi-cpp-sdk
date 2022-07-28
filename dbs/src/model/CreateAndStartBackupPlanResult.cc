@@ -39,18 +39,18 @@ void CreateAndStartBackupPlanResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["BackupPlanId"].isNull())
-		backupPlanId_ = value["BackupPlanId"].asString();
 	if(!value["CreateBackupSet"].isNull())
 		createBackupSet_ = value["CreateBackupSet"].asString() == "true";
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
+	if(!value["BackupPlanId"].isNull())
+		backupPlanId_ = value["BackupPlanId"].asString();
 	if(!value["OrderId"].isNull())
 		orderId_ = value["OrderId"].asString();
 

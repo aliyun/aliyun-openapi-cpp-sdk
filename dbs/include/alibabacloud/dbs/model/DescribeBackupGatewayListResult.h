@@ -38,11 +38,11 @@ namespace AlibabaCloud
 					std::string identifier;
 					long backupGatewayCreateTime;
 					std::string backupGatewayStatus;
+					std::string displayName;
 					std::string sourceEndpointInternetIP;
 					std::string sourceEndpointIntranetIP;
-					std::string displayName;
-					long lastHeartbeatTime;
 					std::string region;
+					long lastHeartbeatTime;
 					std::string backupGatewayId;
 				};
 
@@ -50,8 +50,8 @@ namespace AlibabaCloud
 				DescribeBackupGatewayListResult();
 				explicit DescribeBackupGatewayListResult(const std::string &payload);
 				~DescribeBackupGatewayListResult();
-				int getPageSize()const;
 				int getPageNum()const;
+				int getPageSize()const;
 				int getHttpStatusCode()const;
 				int getTotalElements()const;
 				std::vector<BackupGateway> getItems()const;
@@ -63,8 +63,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
 				int pageNum_;
+				int pageSize_;
 				int httpStatusCode_;
 				int totalElements_;
 				std::vector<BackupGateway> items_;

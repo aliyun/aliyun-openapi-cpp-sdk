@@ -34,9 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct BackupPlanDetail
 				{
-					std::string backupPlanName;
 					long backupPlanCreateTime;
+					std::string backupPlanName;
 					std::string backupObjects;
+					std::string resourceGroupId;
 					std::string backupSetDownloadDir;
 					std::string sourceEndpointInstanceID;
 					std::string crossAliyunId;
@@ -50,12 +51,12 @@ namespace AlibabaCloud
 					std::string backupPlanId;
 					std::string sourceEndpointInstanceType;
 					long backupGatewayId;
-					std::string sourceEndpointUserName;
 					std::string backupStorageType;
-					int duplicationInfrequentAccessPeriod;
+					std::string sourceEndpointUserName;
 					std::string crossRoleName;
-					std::string backupMethod;
+					int duplicationInfrequentAccessPeriod;
 					std::string backupSetDownloadFullDataFormat;
+					std::string backupMethod;
 					std::string backupPeriod;
 					std::string instanceClass;
 					std::string backupSetDownloadIncrementDataFormat;
@@ -63,8 +64,8 @@ namespace AlibabaCloud
 					std::string errMessage;
 					std::string backupSetDownloadTargetType;
 					int duplicationArchivePeriod;
-					std::string oSSBucketName;
 					std::string backupPlanStatus;
+					std::string oSSBucketName;
 					std::string backupStartTime;
 					bool enableBackupLog;
 					std::string sourceEndpointOracleSID;
@@ -75,8 +76,8 @@ namespace AlibabaCloud
 				DescribeBackupPlanListResult();
 				explicit DescribeBackupPlanListResult(const std::string &payload);
 				~DescribeBackupPlanListResult();
-				int getPageSize()const;
 				int getPageNum()const;
+				int getPageSize()const;
 				int getHttpStatusCode()const;
 				int getTotalElements()const;
 				std::vector<BackupPlanDetail> getItems()const;
@@ -88,8 +89,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
 				int pageNum_;
+				int pageSize_;
 				int httpStatusCode_;
 				int totalElements_;
 				std::vector<BackupPlanDetail> items_;

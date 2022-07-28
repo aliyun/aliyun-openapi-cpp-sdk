@@ -43,8 +43,8 @@ namespace AlibabaCloud
 					std::string rangeType;
 					std::vector<DBSRecoverRange::FullBackupDetail> fullBackupList;
 					std::string sourceEndpointInstanceID;
-					std::string sourceEndpointInstanceType;
 					long endTimestampForRestore;
+					std::string sourceEndpointInstanceType;
 					long beginTimestampForRestore;
 				};
 

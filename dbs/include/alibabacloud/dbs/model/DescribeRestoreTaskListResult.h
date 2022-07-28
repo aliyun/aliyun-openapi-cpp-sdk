@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					int fullStruAfterRestoreProgress;
 					std::string crossAliyunId;
-					std::string destinationEndpointOracleSID;
 					std::string restoreStatus;
+					std::string destinationEndpointOracleSID;
 					long restoreTime;
 					std::string destinationEndpointRegion;
 					int fullDataRestoreProgress;
@@ -48,12 +48,12 @@ namespace AlibabaCloud
 					std::string restoreTaskName;
 					std::string backupPlanId;
 					long backupGatewayId;
-					long restoreTaskFinishTime;
 					std::string crossRoleName;
+					long restoreTaskFinishTime;
 					std::string restoreDir;
 					int fullStruforeRestoreProgress;
-					std::string backupSetId;
 					std::string errMessage;
+					std::string backupSetId;
 					std::string destinationEndpointInstanceType;
 					std::string restoreTaskId;
 					std::string destinationEndpointUserName;
@@ -65,8 +65,8 @@ namespace AlibabaCloud
 				DescribeRestoreTaskListResult();
 				explicit DescribeRestoreTaskListResult(const std::string &payload);
 				~DescribeRestoreTaskListResult();
-				int getPageSize()const;
 				int getPageNum()const;
+				int getPageSize()const;
 				int getHttpStatusCode()const;
 				int getTotalElements()const;
 				std::vector<RestoreTaskDetail> getItems()const;
@@ -78,8 +78,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
 				int pageNum_;
+				int pageSize_;
 				int httpStatusCode_;
 				int totalElements_;
 				std::vector<RestoreTaskDetail> items_;

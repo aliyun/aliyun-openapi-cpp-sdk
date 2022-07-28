@@ -39,14 +39,16 @@ void StartBackupPlanResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
+	if(!value["CreatedFullBackupsetId"].isNull())
+		createdFullBackupsetId_ = value["CreatedFullBackupsetId"].asString();
 	if(!value["BackupPlanId"].isNull())
 		backupPlanId_ = value["BackupPlanId"].asString();
 
@@ -55,6 +57,11 @@ void StartBackupPlanResult::parse(const std::string &payload)
 int StartBackupPlanResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
+}
+
+std::string StartBackupPlanResult::getCreatedFullBackupsetId()const
+{
+	return createdFullBackupsetId_;
 }
 
 std::string StartBackupPlanResult::getBackupPlanId()const
