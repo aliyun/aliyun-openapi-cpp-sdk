@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,35 +18,29 @@
 
 using AlibabaCloud::Eas::Model::DeleteServiceRequest;
 
-DeleteServiceRequest::DeleteServiceRequest() :
-	RoaServiceRequest("eas", "2018-05-22")
-{
-	setResourcePath("/api/services/[region]/[service_name]");
-	setMethod(HttpRequest::Method::Delete);
+DeleteServiceRequest::DeleteServiceRequest()
+    : RoaServiceRequest("eas", "2021-07-01") {
+  setResourcePath("/api/v2/services/[ClusterId]/[ServiceName]"};
+  setMethod(HttpRequest::Method::Delete);
 }
 
-DeleteServiceRequest::~DeleteServiceRequest()
-{}
+DeleteServiceRequest::~DeleteServiceRequest() {}
 
-std::string DeleteServiceRequest::getService_name()const
-{
-	return service_name_;
+string DeleteServiceRequest::getServiceName() const {
+  return serviceName_;
 }
 
-void DeleteServiceRequest::setService_name(const std::string& service_name)
-{
-	service_name_ = service_name;
-	setParameter("Service_name", service_name);
+void DeleteServiceRequest::setServiceName(string serviceName) {
+  serviceName_ = serviceName;
+  setParameter(std::string("ServiceName"), std::to_string(serviceName));
 }
 
-std::string DeleteServiceRequest::getRegion()const
-{
-	return region_;
+string DeleteServiceRequest::getClusterId() const {
+  return clusterId_;
 }
 
-void DeleteServiceRequest::setRegion(const std::string& region)
-{
-	region_ = region;
-	setParameter("Region", region);
+void DeleteServiceRequest::setClusterId(string clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), std::to_string(clusterId));
 }
 

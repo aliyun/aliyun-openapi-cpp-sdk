@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,35 +17,29 @@
 #ifndef ALIBABACLOUD_EAS_MODEL_DELETERESOURCEREQUEST_H_
 #define ALIBABACLOUD_EAS_MODEL_DELETERESOURCEREQUEST_H_
 
+#include <alibabacloud/eas/EasExport.h>
+#include <alibabacloud/core/RoaServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RoaServiceRequest.h>
-#include <alibabacloud/eas/EasExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Eas
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_EAS_EXPORT DeleteResourceRequest : public RoaServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Eas {
+namespace Model {
+class ALIBABACLOUD_EAS_EXPORT DeleteResourceRequest : public RoaServiceRequest {
+public:
+	DeleteResourceRequest();
+	~DeleteResourceRequest();
+	string getResourceId() const;
+	void setResourceId(string resourceId);
+	string getClusterId() const;
+	void setClusterId(string clusterId);
 
-			public:
-				DeleteResourceRequest();
-				~DeleteResourceRequest();
-
-				std::string getCluster_id()const;
-				void setCluster_id(const std::string& cluster_id);
-				std::string getResource_name()const;
-				void setResource_name(const std::string& resource_name);
-
-            private:
-				std::string cluster_id_;
-				std::string resource_name_;
-
-			};
-		}
-	}
-}
+private:
+	string resourceId_;
+	string clusterId_;
+};
+} // namespace Model
+} // namespace Eas
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_EAS_MODEL_DELETERESOURCEREQUEST_H_

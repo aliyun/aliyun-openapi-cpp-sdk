@@ -39,6 +39,48 @@ void CreateServiceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["ServiceId"].isNull())
+		serviceId_ = value["ServiceId"].asString();
+	if(!value["ServiceName"].isNull())
+		serviceName_ = value["ServiceName"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["Region"].isNull())
+		region_ = value["Region"].asString();
+	if(!value["InternetEndpoint"].isNull())
+		internetEndpoint_ = value["InternetEndpoint"].asString();
+	if(!value["IntranetEndpoint"].isNull())
+		intranetEndpoint_ = value["IntranetEndpoint"].asString();
 
+}
+
+std::string CreateServiceResult::getStatus()const
+{
+	return status_;
+}
+
+std::string CreateServiceResult::getServiceName()const
+{
+	return serviceName_;
+}
+
+std::string CreateServiceResult::getInternetEndpoint()const
+{
+	return internetEndpoint_;
+}
+
+std::string CreateServiceResult::getRegion()const
+{
+	return region_;
+}
+
+std::string CreateServiceResult::getIntranetEndpoint()const
+{
+	return intranetEndpoint_;
+}
+
+std::string CreateServiceResult::getServiceId()const
+{
+	return serviceId_;
 }
 

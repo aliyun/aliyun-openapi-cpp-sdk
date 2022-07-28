@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,35 +17,29 @@
 #ifndef ALIBABACLOUD_EAS_MODEL_STARTSERVICEREQUEST_H_
 #define ALIBABACLOUD_EAS_MODEL_STARTSERVICEREQUEST_H_
 
+#include <alibabacloud/eas/EasExport.h>
+#include <alibabacloud/core/RoaServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RoaServiceRequest.h>
-#include <alibabacloud/eas/EasExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Eas
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_EAS_EXPORT StartServiceRequest : public RoaServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Eas {
+namespace Model {
+class ALIBABACLOUD_EAS_EXPORT StartServiceRequest : public RoaServiceRequest {
+public:
+	StartServiceRequest();
+	~StartServiceRequest();
+	string getServiceName() const;
+	void setServiceName(string serviceName);
+	string getClusterId() const;
+	void setClusterId(string clusterId);
 
-			public:
-				StartServiceRequest();
-				~StartServiceRequest();
-
-				std::string getService_name()const;
-				void setService_name(const std::string& service_name);
-				std::string getRegion()const;
-				void setRegion(const std::string& region);
-
-            private:
-				std::string service_name_;
-				std::string region_;
-
-			};
-		}
-	}
-}
+private:
+	string serviceName_;
+	string clusterId_;
+};
+} // namespace Model
+} // namespace Eas
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_EAS_MODEL_STARTSERVICEREQUEST_H_

@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				StopServiceResult();
 				explicit StopServiceResult(const std::string &payload);
 				~StopServiceResult();
+				std::string getMessage()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 
 			};
 		}

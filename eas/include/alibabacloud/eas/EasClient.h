@@ -22,72 +22,102 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RoaServiceClient.h>
 #include "EasExport.h"
-#include "model/CheckServiceExistsRequest.h"
-#include "model/CheckServiceExistsResult.h"
-#include "model/CreateNetworkInterfaceRequest.h"
-#include "model/CreateNetworkInterfaceResult.h"
-#include "model/CreateSLSRequest.h"
-#include "model/CreateSLSResult.h"
+#include "model/CreateBenchmarkTaskRequest.h"
+#include "model/CreateBenchmarkTaskResult.h"
+#include "model/CreateResourceRequest.h"
+#include "model/CreateResourceResult.h"
+#include "model/CreateResourceInstancesRequest.h"
+#include "model/CreateResourceInstancesResult.h"
+#include "model/CreateResourceLogRequest.h"
+#include "model/CreateResourceLogResult.h"
 #include "model/CreateServiceRequest.h"
 #include "model/CreateServiceResult.h"
-#include "model/CreateTaskRequest.h"
-#include "model/CreateTaskResult.h"
+#include "model/CreateServiceAutoScalerRequest.h"
+#include "model/CreateServiceAutoScalerResult.h"
+#include "model/CreateServiceCronScalerRequest.h"
+#include "model/CreateServiceCronScalerResult.h"
+#include "model/CreateServiceMirrorRequest.h"
+#include "model/CreateServiceMirrorResult.h"
+#include "model/DeleteBenchmarkTaskRequest.h"
+#include "model/DeleteBenchmarkTaskResult.h"
 #include "model/DeleteResourceRequest.h"
 #include "model/DeleteResourceResult.h"
-#include "model/DeleteResourceInstanceRequest.h"
-#include "model/DeleteResourceInstanceResult.h"
+#include "model/DeleteResourceDLinkRequest.h"
+#include "model/DeleteResourceDLinkResult.h"
+#include "model/DeleteResourceInstancesRequest.h"
+#include "model/DeleteResourceInstancesResult.h"
+#include "model/DeleteResourceLogRequest.h"
+#include "model/DeleteResourceLogResult.h"
 #include "model/DeleteServiceRequest.h"
 #include "model/DeleteServiceResult.h"
-#include "model/DeleteTaskRequest.h"
-#include "model/DeleteTaskResult.h"
-#include "model/GetAvailableRegionsRequest.h"
-#include "model/GetAvailableRegionsResult.h"
-#include "model/GetNetworkInterfaceRequest.h"
-#include "model/GetNetworkInterfaceResult.h"
-#include "model/GetOrCreateResourceRequest.h"
-#include "model/GetOrCreateResourceResult.h"
-#include "model/GetOssAuthorizeRequest.h"
-#include "model/GetOssAuthorizeResult.h"
-#include "model/GetResourceInstancesRequest.h"
-#include "model/GetResourceInstancesResult.h"
-#include "model/GetResourcePodsRequest.h"
-#include "model/GetResourcePodsResult.h"
-#include "model/GetResourceServicesRequest.h"
-#include "model/GetResourceServicesResult.h"
-#include "model/GetResourceStatusRequest.h"
-#include "model/GetResourceStatusResult.h"
-#include "model/GetServiceRequest.h"
-#include "model/GetServiceResult.h"
-#include "model/GetServiceRegionRequest.h"
-#include "model/GetServiceRegionResult.h"
-#include "model/GetServiceStatisticsRequest.h"
-#include "model/GetServiceStatisticsResult.h"
-#include "model/GetServiceTokenRequest.h"
-#include "model/GetServiceTokenResult.h"
-#include "model/GetServiceVersionRequest.h"
-#include "model/GetServiceVersionResult.h"
-#include "model/GetServiceWorkerRequest.h"
-#include "model/GetServiceWorkerResult.h"
-#include "model/GetTaskRequest.h"
-#include "model/GetTaskResult.h"
+#include "model/DeleteServiceAutoScalerRequest.h"
+#include "model/DeleteServiceAutoScalerResult.h"
+#include "model/DeleteServiceCronScalerRequest.h"
+#include "model/DeleteServiceCronScalerResult.h"
+#include "model/DeleteServiceInstancesRequest.h"
+#include "model/DeleteServiceInstancesResult.h"
+#include "model/DeleteServiceMirrorRequest.h"
+#include "model/DeleteServiceMirrorResult.h"
+#include "model/DescribeBenchmarkTaskRequest.h"
+#include "model/DescribeBenchmarkTaskResult.h"
+#include "model/DescribeBenchmarkTaskReportRequest.h"
+#include "model/DescribeBenchmarkTaskReportResult.h"
+#include "model/DescribeResourceRequest.h"
+#include "model/DescribeResourceResult.h"
+#include "model/DescribeResourceDLinkRequest.h"
+#include "model/DescribeResourceDLinkResult.h"
+#include "model/DescribeResourceLogRequest.h"
+#include "model/DescribeResourceLogResult.h"
+#include "model/DescribeServiceRequest.h"
+#include "model/DescribeServiceResult.h"
+#include "model/DescribeServiceAutoScalerRequest.h"
+#include "model/DescribeServiceAutoScalerResult.h"
+#include "model/DescribeServiceCronScalerRequest.h"
+#include "model/DescribeServiceCronScalerResult.h"
+#include "model/DescribeServiceLogRequest.h"
+#include "model/DescribeServiceLogResult.h"
+#include "model/DescribeServiceMirrorRequest.h"
+#include "model/DescribeServiceMirrorResult.h"
+#include "model/ListBenchmarkTaskRequest.h"
+#include "model/ListBenchmarkTaskResult.h"
+#include "model/ListResourceInstanceWorkerRequest.h"
+#include "model/ListResourceInstanceWorkerResult.h"
+#include "model/ListResourceInstancesRequest.h"
+#include "model/ListResourceInstancesResult.h"
+#include "model/ListResourceServicesRequest.h"
+#include "model/ListResourceServicesResult.h"
+#include "model/ListResourcesRequest.h"
+#include "model/ListResourcesResult.h"
+#include "model/ListServiceInstancesRequest.h"
+#include "model/ListServiceInstancesResult.h"
 #include "model/ListServicesRequest.h"
 #include "model/ListServicesResult.h"
-#include "model/ListTasksRequest.h"
-#include "model/ListTasksResult.h"
-#include "model/ListVIndexRequest.h"
-#include "model/ListVIndexResult.h"
-#include "model/ModifyServiceRequest.h"
-#include "model/ModifyServiceResult.h"
-#include "model/ModifyServiceVersionRequest.h"
-#include "model/ModifyServiceVersionResult.h"
 #include "model/ReleaseServiceRequest.h"
 #include "model/ReleaseServiceResult.h"
+#include "model/StartBenchmarkTaskRequest.h"
+#include "model/StartBenchmarkTaskResult.h"
 #include "model/StartServiceRequest.h"
 #include "model/StartServiceResult.h"
+#include "model/StopBenchmarkTaskRequest.h"
+#include "model/StopBenchmarkTaskResult.h"
 #include "model/StopServiceRequest.h"
 #include "model/StopServiceResult.h"
-#include "model/SyncServiceRequest.h"
-#include "model/SyncServiceResult.h"
+#include "model/UpdateBenchmarkTaskRequest.h"
+#include "model/UpdateBenchmarkTaskResult.h"
+#include "model/UpdateResourceRequest.h"
+#include "model/UpdateResourceResult.h"
+#include "model/UpdateResourceDLinkRequest.h"
+#include "model/UpdateResourceDLinkResult.h"
+#include "model/UpdateServiceRequest.h"
+#include "model/UpdateServiceResult.h"
+#include "model/UpdateServiceAutoScalerRequest.h"
+#include "model/UpdateServiceAutoScalerResult.h"
+#include "model/UpdateServiceCronScalerRequest.h"
+#include "model/UpdateServiceCronScalerResult.h"
+#include "model/UpdateServiceMirrorRequest.h"
+#include "model/UpdateServiceMirrorResult.h"
+#include "model/UpdateServiceVersionRequest.h"
+#include "model/UpdateServiceVersionResult.h"
 
 
 namespace AlibabaCloud
@@ -97,209 +127,299 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_EAS_EXPORT EasClient : public RoaServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::CheckServiceExistsResult> CheckServiceExistsOutcome;
-			typedef std::future<CheckServiceExistsOutcome> CheckServiceExistsOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::CheckServiceExistsRequest&, const CheckServiceExistsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckServiceExistsAsyncHandler;
-			typedef Outcome<Error, Model::CreateNetworkInterfaceResult> CreateNetworkInterfaceOutcome;
-			typedef std::future<CreateNetworkInterfaceOutcome> CreateNetworkInterfaceOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::CreateNetworkInterfaceRequest&, const CreateNetworkInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkInterfaceAsyncHandler;
-			typedef Outcome<Error, Model::CreateSLSResult> CreateSLSOutcome;
-			typedef std::future<CreateSLSOutcome> CreateSLSOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::CreateSLSRequest&, const CreateSLSOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSLSAsyncHandler;
+			typedef Outcome<Error, Model::CreateBenchmarkTaskResult> CreateBenchmarkTaskOutcome;
+			typedef std::future<CreateBenchmarkTaskOutcome> CreateBenchmarkTaskOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::CreateBenchmarkTaskRequest&, const CreateBenchmarkTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBenchmarkTaskAsyncHandler;
+			typedef Outcome<Error, Model::CreateResourceResult> CreateResourceOutcome;
+			typedef std::future<CreateResourceOutcome> CreateResourceOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::CreateResourceRequest&, const CreateResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceAsyncHandler;
+			typedef Outcome<Error, Model::CreateResourceInstancesResult> CreateResourceInstancesOutcome;
+			typedef std::future<CreateResourceInstancesOutcome> CreateResourceInstancesOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::CreateResourceInstancesRequest&, const CreateResourceInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceInstancesAsyncHandler;
+			typedef Outcome<Error, Model::CreateResourceLogResult> CreateResourceLogOutcome;
+			typedef std::future<CreateResourceLogOutcome> CreateResourceLogOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::CreateResourceLogRequest&, const CreateResourceLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourceLogAsyncHandler;
 			typedef Outcome<Error, Model::CreateServiceResult> CreateServiceOutcome;
 			typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
 			typedef std::function<void(const EasClient*, const Model::CreateServiceRequest&, const CreateServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceAsyncHandler;
-			typedef Outcome<Error, Model::CreateTaskResult> CreateTaskOutcome;
-			typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::CreateTaskRequest&, const CreateTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
+			typedef Outcome<Error, Model::CreateServiceAutoScalerResult> CreateServiceAutoScalerOutcome;
+			typedef std::future<CreateServiceAutoScalerOutcome> CreateServiceAutoScalerOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::CreateServiceAutoScalerRequest&, const CreateServiceAutoScalerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceAutoScalerAsyncHandler;
+			typedef Outcome<Error, Model::CreateServiceCronScalerResult> CreateServiceCronScalerOutcome;
+			typedef std::future<CreateServiceCronScalerOutcome> CreateServiceCronScalerOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::CreateServiceCronScalerRequest&, const CreateServiceCronScalerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceCronScalerAsyncHandler;
+			typedef Outcome<Error, Model::CreateServiceMirrorResult> CreateServiceMirrorOutcome;
+			typedef std::future<CreateServiceMirrorOutcome> CreateServiceMirrorOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::CreateServiceMirrorRequest&, const CreateServiceMirrorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceMirrorAsyncHandler;
+			typedef Outcome<Error, Model::DeleteBenchmarkTaskResult> DeleteBenchmarkTaskOutcome;
+			typedef std::future<DeleteBenchmarkTaskOutcome> DeleteBenchmarkTaskOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DeleteBenchmarkTaskRequest&, const DeleteBenchmarkTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBenchmarkTaskAsyncHandler;
 			typedef Outcome<Error, Model::DeleteResourceResult> DeleteResourceOutcome;
 			typedef std::future<DeleteResourceOutcome> DeleteResourceOutcomeCallable;
 			typedef std::function<void(const EasClient*, const Model::DeleteResourceRequest&, const DeleteResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceAsyncHandler;
-			typedef Outcome<Error, Model::DeleteResourceInstanceResult> DeleteResourceInstanceOutcome;
-			typedef std::future<DeleteResourceInstanceOutcome> DeleteResourceInstanceOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::DeleteResourceInstanceRequest&, const DeleteResourceInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteResourceDLinkResult> DeleteResourceDLinkOutcome;
+			typedef std::future<DeleteResourceDLinkOutcome> DeleteResourceDLinkOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DeleteResourceDLinkRequest&, const DeleteResourceDLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceDLinkAsyncHandler;
+			typedef Outcome<Error, Model::DeleteResourceInstancesResult> DeleteResourceInstancesOutcome;
+			typedef std::future<DeleteResourceInstancesOutcome> DeleteResourceInstancesOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DeleteResourceInstancesRequest&, const DeleteResourceInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteResourceLogResult> DeleteResourceLogOutcome;
+			typedef std::future<DeleteResourceLogOutcome> DeleteResourceLogOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DeleteResourceLogRequest&, const DeleteResourceLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceLogAsyncHandler;
 			typedef Outcome<Error, Model::DeleteServiceResult> DeleteServiceOutcome;
 			typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
 			typedef std::function<void(const EasClient*, const Model::DeleteServiceRequest&, const DeleteServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceAsyncHandler;
-			typedef Outcome<Error, Model::DeleteTaskResult> DeleteTaskOutcome;
-			typedef std::future<DeleteTaskOutcome> DeleteTaskOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::DeleteTaskRequest&, const DeleteTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTaskAsyncHandler;
-			typedef Outcome<Error, Model::GetAvailableRegionsResult> GetAvailableRegionsOutcome;
-			typedef std::future<GetAvailableRegionsOutcome> GetAvailableRegionsOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetAvailableRegionsRequest&, const GetAvailableRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAvailableRegionsAsyncHandler;
-			typedef Outcome<Error, Model::GetNetworkInterfaceResult> GetNetworkInterfaceOutcome;
-			typedef std::future<GetNetworkInterfaceOutcome> GetNetworkInterfaceOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetNetworkInterfaceRequest&, const GetNetworkInterfaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNetworkInterfaceAsyncHandler;
-			typedef Outcome<Error, Model::GetOrCreateResourceResult> GetOrCreateResourceOutcome;
-			typedef std::future<GetOrCreateResourceOutcome> GetOrCreateResourceOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetOrCreateResourceRequest&, const GetOrCreateResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOrCreateResourceAsyncHandler;
-			typedef Outcome<Error, Model::GetOssAuthorizeResult> GetOssAuthorizeOutcome;
-			typedef std::future<GetOssAuthorizeOutcome> GetOssAuthorizeOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetOssAuthorizeRequest&, const GetOssAuthorizeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOssAuthorizeAsyncHandler;
-			typedef Outcome<Error, Model::GetResourceInstancesResult> GetResourceInstancesOutcome;
-			typedef std::future<GetResourceInstancesOutcome> GetResourceInstancesOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetResourceInstancesRequest&, const GetResourceInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceInstancesAsyncHandler;
-			typedef Outcome<Error, Model::GetResourcePodsResult> GetResourcePodsOutcome;
-			typedef std::future<GetResourcePodsOutcome> GetResourcePodsOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetResourcePodsRequest&, const GetResourcePodsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourcePodsAsyncHandler;
-			typedef Outcome<Error, Model::GetResourceServicesResult> GetResourceServicesOutcome;
-			typedef std::future<GetResourceServicesOutcome> GetResourceServicesOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetResourceServicesRequest&, const GetResourceServicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceServicesAsyncHandler;
-			typedef Outcome<Error, Model::GetResourceStatusResult> GetResourceStatusOutcome;
-			typedef std::future<GetResourceStatusOutcome> GetResourceStatusOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetResourceStatusRequest&, const GetResourceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceStatusAsyncHandler;
-			typedef Outcome<Error, Model::GetServiceResult> GetServiceOutcome;
-			typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetServiceRequest&, const GetServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceAsyncHandler;
-			typedef Outcome<Error, Model::GetServiceRegionResult> GetServiceRegionOutcome;
-			typedef std::future<GetServiceRegionOutcome> GetServiceRegionOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetServiceRegionRequest&, const GetServiceRegionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceRegionAsyncHandler;
-			typedef Outcome<Error, Model::GetServiceStatisticsResult> GetServiceStatisticsOutcome;
-			typedef std::future<GetServiceStatisticsOutcome> GetServiceStatisticsOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetServiceStatisticsRequest&, const GetServiceStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceStatisticsAsyncHandler;
-			typedef Outcome<Error, Model::GetServiceTokenResult> GetServiceTokenOutcome;
-			typedef std::future<GetServiceTokenOutcome> GetServiceTokenOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetServiceTokenRequest&, const GetServiceTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceTokenAsyncHandler;
-			typedef Outcome<Error, Model::GetServiceVersionResult> GetServiceVersionOutcome;
-			typedef std::future<GetServiceVersionOutcome> GetServiceVersionOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetServiceVersionRequest&, const GetServiceVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceVersionAsyncHandler;
-			typedef Outcome<Error, Model::GetServiceWorkerResult> GetServiceWorkerOutcome;
-			typedef std::future<GetServiceWorkerOutcome> GetServiceWorkerOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetServiceWorkerRequest&, const GetServiceWorkerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceWorkerAsyncHandler;
-			typedef Outcome<Error, Model::GetTaskResult> GetTaskOutcome;
-			typedef std::future<GetTaskOutcome> GetTaskOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::GetTaskRequest&, const GetTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskAsyncHandler;
+			typedef Outcome<Error, Model::DeleteServiceAutoScalerResult> DeleteServiceAutoScalerOutcome;
+			typedef std::future<DeleteServiceAutoScalerOutcome> DeleteServiceAutoScalerOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DeleteServiceAutoScalerRequest&, const DeleteServiceAutoScalerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceAutoScalerAsyncHandler;
+			typedef Outcome<Error, Model::DeleteServiceCronScalerResult> DeleteServiceCronScalerOutcome;
+			typedef std::future<DeleteServiceCronScalerOutcome> DeleteServiceCronScalerOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DeleteServiceCronScalerRequest&, const DeleteServiceCronScalerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceCronScalerAsyncHandler;
+			typedef Outcome<Error, Model::DeleteServiceInstancesResult> DeleteServiceInstancesOutcome;
+			typedef std::future<DeleteServiceInstancesOutcome> DeleteServiceInstancesOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DeleteServiceInstancesRequest&, const DeleteServiceInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteServiceMirrorResult> DeleteServiceMirrorOutcome;
+			typedef std::future<DeleteServiceMirrorOutcome> DeleteServiceMirrorOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DeleteServiceMirrorRequest&, const DeleteServiceMirrorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceMirrorAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBenchmarkTaskResult> DescribeBenchmarkTaskOutcome;
+			typedef std::future<DescribeBenchmarkTaskOutcome> DescribeBenchmarkTaskOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DescribeBenchmarkTaskRequest&, const DescribeBenchmarkTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBenchmarkTaskAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBenchmarkTaskReportResult> DescribeBenchmarkTaskReportOutcome;
+			typedef std::future<DescribeBenchmarkTaskReportOutcome> DescribeBenchmarkTaskReportOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DescribeBenchmarkTaskReportRequest&, const DescribeBenchmarkTaskReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBenchmarkTaskReportAsyncHandler;
+			typedef Outcome<Error, Model::DescribeResourceResult> DescribeResourceOutcome;
+			typedef std::future<DescribeResourceOutcome> DescribeResourceOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DescribeResourceRequest&, const DescribeResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeResourceDLinkResult> DescribeResourceDLinkOutcome;
+			typedef std::future<DescribeResourceDLinkOutcome> DescribeResourceDLinkOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DescribeResourceDLinkRequest&, const DescribeResourceDLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceDLinkAsyncHandler;
+			typedef Outcome<Error, Model::DescribeResourceLogResult> DescribeResourceLogOutcome;
+			typedef std::future<DescribeResourceLogOutcome> DescribeResourceLogOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DescribeResourceLogRequest&, const DescribeResourceLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceLogAsyncHandler;
+			typedef Outcome<Error, Model::DescribeServiceResult> DescribeServiceOutcome;
+			typedef std::future<DescribeServiceOutcome> DescribeServiceOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DescribeServiceRequest&, const DescribeServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeServiceAutoScalerResult> DescribeServiceAutoScalerOutcome;
+			typedef std::future<DescribeServiceAutoScalerOutcome> DescribeServiceAutoScalerOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DescribeServiceAutoScalerRequest&, const DescribeServiceAutoScalerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceAutoScalerAsyncHandler;
+			typedef Outcome<Error, Model::DescribeServiceCronScalerResult> DescribeServiceCronScalerOutcome;
+			typedef std::future<DescribeServiceCronScalerOutcome> DescribeServiceCronScalerOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DescribeServiceCronScalerRequest&, const DescribeServiceCronScalerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceCronScalerAsyncHandler;
+			typedef Outcome<Error, Model::DescribeServiceLogResult> DescribeServiceLogOutcome;
+			typedef std::future<DescribeServiceLogOutcome> DescribeServiceLogOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DescribeServiceLogRequest&, const DescribeServiceLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceLogAsyncHandler;
+			typedef Outcome<Error, Model::DescribeServiceMirrorResult> DescribeServiceMirrorOutcome;
+			typedef std::future<DescribeServiceMirrorOutcome> DescribeServiceMirrorOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::DescribeServiceMirrorRequest&, const DescribeServiceMirrorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceMirrorAsyncHandler;
+			typedef Outcome<Error, Model::ListBenchmarkTaskResult> ListBenchmarkTaskOutcome;
+			typedef std::future<ListBenchmarkTaskOutcome> ListBenchmarkTaskOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::ListBenchmarkTaskRequest&, const ListBenchmarkTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBenchmarkTaskAsyncHandler;
+			typedef Outcome<Error, Model::ListResourceInstanceWorkerResult> ListResourceInstanceWorkerOutcome;
+			typedef std::future<ListResourceInstanceWorkerOutcome> ListResourceInstanceWorkerOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::ListResourceInstanceWorkerRequest&, const ListResourceInstanceWorkerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourceInstanceWorkerAsyncHandler;
+			typedef Outcome<Error, Model::ListResourceInstancesResult> ListResourceInstancesOutcome;
+			typedef std::future<ListResourceInstancesOutcome> ListResourceInstancesOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::ListResourceInstancesRequest&, const ListResourceInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourceInstancesAsyncHandler;
+			typedef Outcome<Error, Model::ListResourceServicesResult> ListResourceServicesOutcome;
+			typedef std::future<ListResourceServicesOutcome> ListResourceServicesOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::ListResourceServicesRequest&, const ListResourceServicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourceServicesAsyncHandler;
+			typedef Outcome<Error, Model::ListResourcesResult> ListResourcesOutcome;
+			typedef std::future<ListResourcesOutcome> ListResourcesOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::ListResourcesRequest&, const ListResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListResourcesAsyncHandler;
+			typedef Outcome<Error, Model::ListServiceInstancesResult> ListServiceInstancesOutcome;
+			typedef std::future<ListServiceInstancesOutcome> ListServiceInstancesOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::ListServiceInstancesRequest&, const ListServiceInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListServiceInstancesAsyncHandler;
 			typedef Outcome<Error, Model::ListServicesResult> ListServicesOutcome;
 			typedef std::future<ListServicesOutcome> ListServicesOutcomeCallable;
 			typedef std::function<void(const EasClient*, const Model::ListServicesRequest&, const ListServicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListServicesAsyncHandler;
-			typedef Outcome<Error, Model::ListTasksResult> ListTasksOutcome;
-			typedef std::future<ListTasksOutcome> ListTasksOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::ListTasksRequest&, const ListTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTasksAsyncHandler;
-			typedef Outcome<Error, Model::ListVIndexResult> ListVIndexOutcome;
-			typedef std::future<ListVIndexOutcome> ListVIndexOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::ListVIndexRequest&, const ListVIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListVIndexAsyncHandler;
-			typedef Outcome<Error, Model::ModifyServiceResult> ModifyServiceOutcome;
-			typedef std::future<ModifyServiceOutcome> ModifyServiceOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::ModifyServiceRequest&, const ModifyServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceAsyncHandler;
-			typedef Outcome<Error, Model::ModifyServiceVersionResult> ModifyServiceVersionOutcome;
-			typedef std::future<ModifyServiceVersionOutcome> ModifyServiceVersionOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::ModifyServiceVersionRequest&, const ModifyServiceVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceVersionAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseServiceResult> ReleaseServiceOutcome;
 			typedef std::future<ReleaseServiceOutcome> ReleaseServiceOutcomeCallable;
 			typedef std::function<void(const EasClient*, const Model::ReleaseServiceRequest&, const ReleaseServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseServiceAsyncHandler;
+			typedef Outcome<Error, Model::StartBenchmarkTaskResult> StartBenchmarkTaskOutcome;
+			typedef std::future<StartBenchmarkTaskOutcome> StartBenchmarkTaskOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::StartBenchmarkTaskRequest&, const StartBenchmarkTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartBenchmarkTaskAsyncHandler;
 			typedef Outcome<Error, Model::StartServiceResult> StartServiceOutcome;
 			typedef std::future<StartServiceOutcome> StartServiceOutcomeCallable;
 			typedef std::function<void(const EasClient*, const Model::StartServiceRequest&, const StartServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartServiceAsyncHandler;
+			typedef Outcome<Error, Model::StopBenchmarkTaskResult> StopBenchmarkTaskOutcome;
+			typedef std::future<StopBenchmarkTaskOutcome> StopBenchmarkTaskOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::StopBenchmarkTaskRequest&, const StopBenchmarkTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopBenchmarkTaskAsyncHandler;
 			typedef Outcome<Error, Model::StopServiceResult> StopServiceOutcome;
 			typedef std::future<StopServiceOutcome> StopServiceOutcomeCallable;
 			typedef std::function<void(const EasClient*, const Model::StopServiceRequest&, const StopServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopServiceAsyncHandler;
-			typedef Outcome<Error, Model::SyncServiceResult> SyncServiceOutcome;
-			typedef std::future<SyncServiceOutcome> SyncServiceOutcomeCallable;
-			typedef std::function<void(const EasClient*, const Model::SyncServiceRequest&, const SyncServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SyncServiceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateBenchmarkTaskResult> UpdateBenchmarkTaskOutcome;
+			typedef std::future<UpdateBenchmarkTaskOutcome> UpdateBenchmarkTaskOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::UpdateBenchmarkTaskRequest&, const UpdateBenchmarkTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBenchmarkTaskAsyncHandler;
+			typedef Outcome<Error, Model::UpdateResourceResult> UpdateResourceOutcome;
+			typedef std::future<UpdateResourceOutcome> UpdateResourceOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::UpdateResourceRequest&, const UpdateResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateResourceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateResourceDLinkResult> UpdateResourceDLinkOutcome;
+			typedef std::future<UpdateResourceDLinkOutcome> UpdateResourceDLinkOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::UpdateResourceDLinkRequest&, const UpdateResourceDLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateResourceDLinkAsyncHandler;
+			typedef Outcome<Error, Model::UpdateServiceResult> UpdateServiceOutcome;
+			typedef std::future<UpdateServiceOutcome> UpdateServiceOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::UpdateServiceRequest&, const UpdateServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServiceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateServiceAutoScalerResult> UpdateServiceAutoScalerOutcome;
+			typedef std::future<UpdateServiceAutoScalerOutcome> UpdateServiceAutoScalerOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::UpdateServiceAutoScalerRequest&, const UpdateServiceAutoScalerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServiceAutoScalerAsyncHandler;
+			typedef Outcome<Error, Model::UpdateServiceCronScalerResult> UpdateServiceCronScalerOutcome;
+			typedef std::future<UpdateServiceCronScalerOutcome> UpdateServiceCronScalerOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::UpdateServiceCronScalerRequest&, const UpdateServiceCronScalerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServiceCronScalerAsyncHandler;
+			typedef Outcome<Error, Model::UpdateServiceMirrorResult> UpdateServiceMirrorOutcome;
+			typedef std::future<UpdateServiceMirrorOutcome> UpdateServiceMirrorOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::UpdateServiceMirrorRequest&, const UpdateServiceMirrorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServiceMirrorAsyncHandler;
+			typedef Outcome<Error, Model::UpdateServiceVersionResult> UpdateServiceVersionOutcome;
+			typedef std::future<UpdateServiceVersionOutcome> UpdateServiceVersionOutcomeCallable;
+			typedef std::function<void(const EasClient*, const Model::UpdateServiceVersionRequest&, const UpdateServiceVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServiceVersionAsyncHandler;
 
 			EasClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			EasClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			EasClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~EasClient();
-			CheckServiceExistsOutcome checkServiceExists(const Model::CheckServiceExistsRequest &request)const;
-			void checkServiceExistsAsync(const Model::CheckServiceExistsRequest& request, const CheckServiceExistsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CheckServiceExistsOutcomeCallable checkServiceExistsCallable(const Model::CheckServiceExistsRequest& request) const;
-			CreateNetworkInterfaceOutcome createNetworkInterface(const Model::CreateNetworkInterfaceRequest &request)const;
-			void createNetworkInterfaceAsync(const Model::CreateNetworkInterfaceRequest& request, const CreateNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateNetworkInterfaceOutcomeCallable createNetworkInterfaceCallable(const Model::CreateNetworkInterfaceRequest& request) const;
-			CreateSLSOutcome createSLS(const Model::CreateSLSRequest &request)const;
-			void createSLSAsync(const Model::CreateSLSRequest& request, const CreateSLSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateSLSOutcomeCallable createSLSCallable(const Model::CreateSLSRequest& request) const;
+			CreateBenchmarkTaskOutcome createBenchmarkTask(const Model::CreateBenchmarkTaskRequest &request)const;
+			void createBenchmarkTaskAsync(const Model::CreateBenchmarkTaskRequest& request, const CreateBenchmarkTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateBenchmarkTaskOutcomeCallable createBenchmarkTaskCallable(const Model::CreateBenchmarkTaskRequest& request) const;
+			CreateResourceOutcome createResource(const Model::CreateResourceRequest &request)const;
+			void createResourceAsync(const Model::CreateResourceRequest& request, const CreateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateResourceOutcomeCallable createResourceCallable(const Model::CreateResourceRequest& request) const;
+			CreateResourceInstancesOutcome createResourceInstances(const Model::CreateResourceInstancesRequest &request)const;
+			void createResourceInstancesAsync(const Model::CreateResourceInstancesRequest& request, const CreateResourceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateResourceInstancesOutcomeCallable createResourceInstancesCallable(const Model::CreateResourceInstancesRequest& request) const;
+			CreateResourceLogOutcome createResourceLog(const Model::CreateResourceLogRequest &request)const;
+			void createResourceLogAsync(const Model::CreateResourceLogRequest& request, const CreateResourceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateResourceLogOutcomeCallable createResourceLogCallable(const Model::CreateResourceLogRequest& request) const;
 			CreateServiceOutcome createService(const Model::CreateServiceRequest &request)const;
 			void createServiceAsync(const Model::CreateServiceRequest& request, const CreateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateServiceOutcomeCallable createServiceCallable(const Model::CreateServiceRequest& request) const;
-			CreateTaskOutcome createTask(const Model::CreateTaskRequest &request)const;
-			void createTaskAsync(const Model::CreateTaskRequest& request, const CreateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateTaskOutcomeCallable createTaskCallable(const Model::CreateTaskRequest& request) const;
+			CreateServiceAutoScalerOutcome createServiceAutoScaler(const Model::CreateServiceAutoScalerRequest &request)const;
+			void createServiceAutoScalerAsync(const Model::CreateServiceAutoScalerRequest& request, const CreateServiceAutoScalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateServiceAutoScalerOutcomeCallable createServiceAutoScalerCallable(const Model::CreateServiceAutoScalerRequest& request) const;
+			CreateServiceCronScalerOutcome createServiceCronScaler(const Model::CreateServiceCronScalerRequest &request)const;
+			void createServiceCronScalerAsync(const Model::CreateServiceCronScalerRequest& request, const CreateServiceCronScalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateServiceCronScalerOutcomeCallable createServiceCronScalerCallable(const Model::CreateServiceCronScalerRequest& request) const;
+			CreateServiceMirrorOutcome createServiceMirror(const Model::CreateServiceMirrorRequest &request)const;
+			void createServiceMirrorAsync(const Model::CreateServiceMirrorRequest& request, const CreateServiceMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateServiceMirrorOutcomeCallable createServiceMirrorCallable(const Model::CreateServiceMirrorRequest& request) const;
+			DeleteBenchmarkTaskOutcome deleteBenchmarkTask(const Model::DeleteBenchmarkTaskRequest &request)const;
+			void deleteBenchmarkTaskAsync(const Model::DeleteBenchmarkTaskRequest& request, const DeleteBenchmarkTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteBenchmarkTaskOutcomeCallable deleteBenchmarkTaskCallable(const Model::DeleteBenchmarkTaskRequest& request) const;
 			DeleteResourceOutcome deleteResource(const Model::DeleteResourceRequest &request)const;
 			void deleteResourceAsync(const Model::DeleteResourceRequest& request, const DeleteResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteResourceOutcomeCallable deleteResourceCallable(const Model::DeleteResourceRequest& request) const;
-			DeleteResourceInstanceOutcome deleteResourceInstance(const Model::DeleteResourceInstanceRequest &request)const;
-			void deleteResourceInstanceAsync(const Model::DeleteResourceInstanceRequest& request, const DeleteResourceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteResourceInstanceOutcomeCallable deleteResourceInstanceCallable(const Model::DeleteResourceInstanceRequest& request) const;
+			DeleteResourceDLinkOutcome deleteResourceDLink(const Model::DeleteResourceDLinkRequest &request)const;
+			void deleteResourceDLinkAsync(const Model::DeleteResourceDLinkRequest& request, const DeleteResourceDLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteResourceDLinkOutcomeCallable deleteResourceDLinkCallable(const Model::DeleteResourceDLinkRequest& request) const;
+			DeleteResourceInstancesOutcome deleteResourceInstances(const Model::DeleteResourceInstancesRequest &request)const;
+			void deleteResourceInstancesAsync(const Model::DeleteResourceInstancesRequest& request, const DeleteResourceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteResourceInstancesOutcomeCallable deleteResourceInstancesCallable(const Model::DeleteResourceInstancesRequest& request) const;
+			DeleteResourceLogOutcome deleteResourceLog(const Model::DeleteResourceLogRequest &request)const;
+			void deleteResourceLogAsync(const Model::DeleteResourceLogRequest& request, const DeleteResourceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteResourceLogOutcomeCallable deleteResourceLogCallable(const Model::DeleteResourceLogRequest& request) const;
 			DeleteServiceOutcome deleteService(const Model::DeleteServiceRequest &request)const;
 			void deleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteServiceOutcomeCallable deleteServiceCallable(const Model::DeleteServiceRequest& request) const;
-			DeleteTaskOutcome deleteTask(const Model::DeleteTaskRequest &request)const;
-			void deleteTaskAsync(const Model::DeleteTaskRequest& request, const DeleteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteTaskOutcomeCallable deleteTaskCallable(const Model::DeleteTaskRequest& request) const;
-			GetAvailableRegionsOutcome getAvailableRegions(const Model::GetAvailableRegionsRequest &request)const;
-			void getAvailableRegionsAsync(const Model::GetAvailableRegionsRequest& request, const GetAvailableRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetAvailableRegionsOutcomeCallable getAvailableRegionsCallable(const Model::GetAvailableRegionsRequest& request) const;
-			GetNetworkInterfaceOutcome getNetworkInterface(const Model::GetNetworkInterfaceRequest &request)const;
-			void getNetworkInterfaceAsync(const Model::GetNetworkInterfaceRequest& request, const GetNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetNetworkInterfaceOutcomeCallable getNetworkInterfaceCallable(const Model::GetNetworkInterfaceRequest& request) const;
-			GetOrCreateResourceOutcome getOrCreateResource(const Model::GetOrCreateResourceRequest &request)const;
-			void getOrCreateResourceAsync(const Model::GetOrCreateResourceRequest& request, const GetOrCreateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetOrCreateResourceOutcomeCallable getOrCreateResourceCallable(const Model::GetOrCreateResourceRequest& request) const;
-			GetOssAuthorizeOutcome getOssAuthorize(const Model::GetOssAuthorizeRequest &request)const;
-			void getOssAuthorizeAsync(const Model::GetOssAuthorizeRequest& request, const GetOssAuthorizeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetOssAuthorizeOutcomeCallable getOssAuthorizeCallable(const Model::GetOssAuthorizeRequest& request) const;
-			GetResourceInstancesOutcome getResourceInstances(const Model::GetResourceInstancesRequest &request)const;
-			void getResourceInstancesAsync(const Model::GetResourceInstancesRequest& request, const GetResourceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetResourceInstancesOutcomeCallable getResourceInstancesCallable(const Model::GetResourceInstancesRequest& request) const;
-			GetResourcePodsOutcome getResourcePods(const Model::GetResourcePodsRequest &request)const;
-			void getResourcePodsAsync(const Model::GetResourcePodsRequest& request, const GetResourcePodsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetResourcePodsOutcomeCallable getResourcePodsCallable(const Model::GetResourcePodsRequest& request) const;
-			GetResourceServicesOutcome getResourceServices(const Model::GetResourceServicesRequest &request)const;
-			void getResourceServicesAsync(const Model::GetResourceServicesRequest& request, const GetResourceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetResourceServicesOutcomeCallable getResourceServicesCallable(const Model::GetResourceServicesRequest& request) const;
-			GetResourceStatusOutcome getResourceStatus(const Model::GetResourceStatusRequest &request)const;
-			void getResourceStatusAsync(const Model::GetResourceStatusRequest& request, const GetResourceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetResourceStatusOutcomeCallable getResourceStatusCallable(const Model::GetResourceStatusRequest& request) const;
-			GetServiceOutcome getService(const Model::GetServiceRequest &request)const;
-			void getServiceAsync(const Model::GetServiceRequest& request, const GetServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetServiceOutcomeCallable getServiceCallable(const Model::GetServiceRequest& request) const;
-			GetServiceRegionOutcome getServiceRegion(const Model::GetServiceRegionRequest &request)const;
-			void getServiceRegionAsync(const Model::GetServiceRegionRequest& request, const GetServiceRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetServiceRegionOutcomeCallable getServiceRegionCallable(const Model::GetServiceRegionRequest& request) const;
-			GetServiceStatisticsOutcome getServiceStatistics(const Model::GetServiceStatisticsRequest &request)const;
-			void getServiceStatisticsAsync(const Model::GetServiceStatisticsRequest& request, const GetServiceStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetServiceStatisticsOutcomeCallable getServiceStatisticsCallable(const Model::GetServiceStatisticsRequest& request) const;
-			GetServiceTokenOutcome getServiceToken(const Model::GetServiceTokenRequest &request)const;
-			void getServiceTokenAsync(const Model::GetServiceTokenRequest& request, const GetServiceTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetServiceTokenOutcomeCallable getServiceTokenCallable(const Model::GetServiceTokenRequest& request) const;
-			GetServiceVersionOutcome getServiceVersion(const Model::GetServiceVersionRequest &request)const;
-			void getServiceVersionAsync(const Model::GetServiceVersionRequest& request, const GetServiceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetServiceVersionOutcomeCallable getServiceVersionCallable(const Model::GetServiceVersionRequest& request) const;
-			GetServiceWorkerOutcome getServiceWorker(const Model::GetServiceWorkerRequest &request)const;
-			void getServiceWorkerAsync(const Model::GetServiceWorkerRequest& request, const GetServiceWorkerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetServiceWorkerOutcomeCallable getServiceWorkerCallable(const Model::GetServiceWorkerRequest& request) const;
-			GetTaskOutcome getTask(const Model::GetTaskRequest &request)const;
-			void getTaskAsync(const Model::GetTaskRequest& request, const GetTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetTaskOutcomeCallable getTaskCallable(const Model::GetTaskRequest& request) const;
+			DeleteServiceAutoScalerOutcome deleteServiceAutoScaler(const Model::DeleteServiceAutoScalerRequest &request)const;
+			void deleteServiceAutoScalerAsync(const Model::DeleteServiceAutoScalerRequest& request, const DeleteServiceAutoScalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteServiceAutoScalerOutcomeCallable deleteServiceAutoScalerCallable(const Model::DeleteServiceAutoScalerRequest& request) const;
+			DeleteServiceCronScalerOutcome deleteServiceCronScaler(const Model::DeleteServiceCronScalerRequest &request)const;
+			void deleteServiceCronScalerAsync(const Model::DeleteServiceCronScalerRequest& request, const DeleteServiceCronScalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteServiceCronScalerOutcomeCallable deleteServiceCronScalerCallable(const Model::DeleteServiceCronScalerRequest& request) const;
+			DeleteServiceInstancesOutcome deleteServiceInstances(const Model::DeleteServiceInstancesRequest &request)const;
+			void deleteServiceInstancesAsync(const Model::DeleteServiceInstancesRequest& request, const DeleteServiceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteServiceInstancesOutcomeCallable deleteServiceInstancesCallable(const Model::DeleteServiceInstancesRequest& request) const;
+			DeleteServiceMirrorOutcome deleteServiceMirror(const Model::DeleteServiceMirrorRequest &request)const;
+			void deleteServiceMirrorAsync(const Model::DeleteServiceMirrorRequest& request, const DeleteServiceMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteServiceMirrorOutcomeCallable deleteServiceMirrorCallable(const Model::DeleteServiceMirrorRequest& request) const;
+			DescribeBenchmarkTaskOutcome describeBenchmarkTask(const Model::DescribeBenchmarkTaskRequest &request)const;
+			void describeBenchmarkTaskAsync(const Model::DescribeBenchmarkTaskRequest& request, const DescribeBenchmarkTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBenchmarkTaskOutcomeCallable describeBenchmarkTaskCallable(const Model::DescribeBenchmarkTaskRequest& request) const;
+			DescribeBenchmarkTaskReportOutcome describeBenchmarkTaskReport(const Model::DescribeBenchmarkTaskReportRequest &request)const;
+			void describeBenchmarkTaskReportAsync(const Model::DescribeBenchmarkTaskReportRequest& request, const DescribeBenchmarkTaskReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBenchmarkTaskReportOutcomeCallable describeBenchmarkTaskReportCallable(const Model::DescribeBenchmarkTaskReportRequest& request) const;
+			DescribeResourceOutcome describeResource(const Model::DescribeResourceRequest &request)const;
+			void describeResourceAsync(const Model::DescribeResourceRequest& request, const DescribeResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeResourceOutcomeCallable describeResourceCallable(const Model::DescribeResourceRequest& request) const;
+			DescribeResourceDLinkOutcome describeResourceDLink(const Model::DescribeResourceDLinkRequest &request)const;
+			void describeResourceDLinkAsync(const Model::DescribeResourceDLinkRequest& request, const DescribeResourceDLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeResourceDLinkOutcomeCallable describeResourceDLinkCallable(const Model::DescribeResourceDLinkRequest& request) const;
+			DescribeResourceLogOutcome describeResourceLog(const Model::DescribeResourceLogRequest &request)const;
+			void describeResourceLogAsync(const Model::DescribeResourceLogRequest& request, const DescribeResourceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeResourceLogOutcomeCallable describeResourceLogCallable(const Model::DescribeResourceLogRequest& request) const;
+			DescribeServiceOutcome describeService(const Model::DescribeServiceRequest &request)const;
+			void describeServiceAsync(const Model::DescribeServiceRequest& request, const DescribeServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeServiceOutcomeCallable describeServiceCallable(const Model::DescribeServiceRequest& request) const;
+			DescribeServiceAutoScalerOutcome describeServiceAutoScaler(const Model::DescribeServiceAutoScalerRequest &request)const;
+			void describeServiceAutoScalerAsync(const Model::DescribeServiceAutoScalerRequest& request, const DescribeServiceAutoScalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeServiceAutoScalerOutcomeCallable describeServiceAutoScalerCallable(const Model::DescribeServiceAutoScalerRequest& request) const;
+			DescribeServiceCronScalerOutcome describeServiceCronScaler(const Model::DescribeServiceCronScalerRequest &request)const;
+			void describeServiceCronScalerAsync(const Model::DescribeServiceCronScalerRequest& request, const DescribeServiceCronScalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeServiceCronScalerOutcomeCallable describeServiceCronScalerCallable(const Model::DescribeServiceCronScalerRequest& request) const;
+			DescribeServiceLogOutcome describeServiceLog(const Model::DescribeServiceLogRequest &request)const;
+			void describeServiceLogAsync(const Model::DescribeServiceLogRequest& request, const DescribeServiceLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeServiceLogOutcomeCallable describeServiceLogCallable(const Model::DescribeServiceLogRequest& request) const;
+			DescribeServiceMirrorOutcome describeServiceMirror(const Model::DescribeServiceMirrorRequest &request)const;
+			void describeServiceMirrorAsync(const Model::DescribeServiceMirrorRequest& request, const DescribeServiceMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeServiceMirrorOutcomeCallable describeServiceMirrorCallable(const Model::DescribeServiceMirrorRequest& request) const;
+			ListBenchmarkTaskOutcome listBenchmarkTask(const Model::ListBenchmarkTaskRequest &request)const;
+			void listBenchmarkTaskAsync(const Model::ListBenchmarkTaskRequest& request, const ListBenchmarkTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListBenchmarkTaskOutcomeCallable listBenchmarkTaskCallable(const Model::ListBenchmarkTaskRequest& request) const;
+			ListResourceInstanceWorkerOutcome listResourceInstanceWorker(const Model::ListResourceInstanceWorkerRequest &request)const;
+			void listResourceInstanceWorkerAsync(const Model::ListResourceInstanceWorkerRequest& request, const ListResourceInstanceWorkerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListResourceInstanceWorkerOutcomeCallable listResourceInstanceWorkerCallable(const Model::ListResourceInstanceWorkerRequest& request) const;
+			ListResourceInstancesOutcome listResourceInstances(const Model::ListResourceInstancesRequest &request)const;
+			void listResourceInstancesAsync(const Model::ListResourceInstancesRequest& request, const ListResourceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListResourceInstancesOutcomeCallable listResourceInstancesCallable(const Model::ListResourceInstancesRequest& request) const;
+			ListResourceServicesOutcome listResourceServices(const Model::ListResourceServicesRequest &request)const;
+			void listResourceServicesAsync(const Model::ListResourceServicesRequest& request, const ListResourceServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListResourceServicesOutcomeCallable listResourceServicesCallable(const Model::ListResourceServicesRequest& request) const;
+			ListResourcesOutcome listResources(const Model::ListResourcesRequest &request)const;
+			void listResourcesAsync(const Model::ListResourcesRequest& request, const ListResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListResourcesOutcomeCallable listResourcesCallable(const Model::ListResourcesRequest& request) const;
+			ListServiceInstancesOutcome listServiceInstances(const Model::ListServiceInstancesRequest &request)const;
+			void listServiceInstancesAsync(const Model::ListServiceInstancesRequest& request, const ListServiceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListServiceInstancesOutcomeCallable listServiceInstancesCallable(const Model::ListServiceInstancesRequest& request) const;
 			ListServicesOutcome listServices(const Model::ListServicesRequest &request)const;
 			void listServicesAsync(const Model::ListServicesRequest& request, const ListServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListServicesOutcomeCallable listServicesCallable(const Model::ListServicesRequest& request) const;
-			ListTasksOutcome listTasks(const Model::ListTasksRequest &request)const;
-			void listTasksAsync(const Model::ListTasksRequest& request, const ListTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListTasksOutcomeCallable listTasksCallable(const Model::ListTasksRequest& request) const;
-			ListVIndexOutcome listVIndex(const Model::ListVIndexRequest &request)const;
-			void listVIndexAsync(const Model::ListVIndexRequest& request, const ListVIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListVIndexOutcomeCallable listVIndexCallable(const Model::ListVIndexRequest& request) const;
-			ModifyServiceOutcome modifyService(const Model::ModifyServiceRequest &request)const;
-			void modifyServiceAsync(const Model::ModifyServiceRequest& request, const ModifyServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyServiceOutcomeCallable modifyServiceCallable(const Model::ModifyServiceRequest& request) const;
-			ModifyServiceVersionOutcome modifyServiceVersion(const Model::ModifyServiceVersionRequest &request)const;
-			void modifyServiceVersionAsync(const Model::ModifyServiceVersionRequest& request, const ModifyServiceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyServiceVersionOutcomeCallable modifyServiceVersionCallable(const Model::ModifyServiceVersionRequest& request) const;
 			ReleaseServiceOutcome releaseService(const Model::ReleaseServiceRequest &request)const;
 			void releaseServiceAsync(const Model::ReleaseServiceRequest& request, const ReleaseServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseServiceOutcomeCallable releaseServiceCallable(const Model::ReleaseServiceRequest& request) const;
+			StartBenchmarkTaskOutcome startBenchmarkTask(const Model::StartBenchmarkTaskRequest &request)const;
+			void startBenchmarkTaskAsync(const Model::StartBenchmarkTaskRequest& request, const StartBenchmarkTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartBenchmarkTaskOutcomeCallable startBenchmarkTaskCallable(const Model::StartBenchmarkTaskRequest& request) const;
 			StartServiceOutcome startService(const Model::StartServiceRequest &request)const;
 			void startServiceAsync(const Model::StartServiceRequest& request, const StartServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartServiceOutcomeCallable startServiceCallable(const Model::StartServiceRequest& request) const;
+			StopBenchmarkTaskOutcome stopBenchmarkTask(const Model::StopBenchmarkTaskRequest &request)const;
+			void stopBenchmarkTaskAsync(const Model::StopBenchmarkTaskRequest& request, const StopBenchmarkTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopBenchmarkTaskOutcomeCallable stopBenchmarkTaskCallable(const Model::StopBenchmarkTaskRequest& request) const;
 			StopServiceOutcome stopService(const Model::StopServiceRequest &request)const;
 			void stopServiceAsync(const Model::StopServiceRequest& request, const StopServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopServiceOutcomeCallable stopServiceCallable(const Model::StopServiceRequest& request) const;
-			SyncServiceOutcome syncService(const Model::SyncServiceRequest &request)const;
-			void syncServiceAsync(const Model::SyncServiceRequest& request, const SyncServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SyncServiceOutcomeCallable syncServiceCallable(const Model::SyncServiceRequest& request) const;
+			UpdateBenchmarkTaskOutcome updateBenchmarkTask(const Model::UpdateBenchmarkTaskRequest &request)const;
+			void updateBenchmarkTaskAsync(const Model::UpdateBenchmarkTaskRequest& request, const UpdateBenchmarkTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateBenchmarkTaskOutcomeCallable updateBenchmarkTaskCallable(const Model::UpdateBenchmarkTaskRequest& request) const;
+			UpdateResourceOutcome updateResource(const Model::UpdateResourceRequest &request)const;
+			void updateResourceAsync(const Model::UpdateResourceRequest& request, const UpdateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateResourceOutcomeCallable updateResourceCallable(const Model::UpdateResourceRequest& request) const;
+			UpdateResourceDLinkOutcome updateResourceDLink(const Model::UpdateResourceDLinkRequest &request)const;
+			void updateResourceDLinkAsync(const Model::UpdateResourceDLinkRequest& request, const UpdateResourceDLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateResourceDLinkOutcomeCallable updateResourceDLinkCallable(const Model::UpdateResourceDLinkRequest& request) const;
+			UpdateServiceOutcome updateService(const Model::UpdateServiceRequest &request)const;
+			void updateServiceAsync(const Model::UpdateServiceRequest& request, const UpdateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateServiceOutcomeCallable updateServiceCallable(const Model::UpdateServiceRequest& request) const;
+			UpdateServiceAutoScalerOutcome updateServiceAutoScaler(const Model::UpdateServiceAutoScalerRequest &request)const;
+			void updateServiceAutoScalerAsync(const Model::UpdateServiceAutoScalerRequest& request, const UpdateServiceAutoScalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateServiceAutoScalerOutcomeCallable updateServiceAutoScalerCallable(const Model::UpdateServiceAutoScalerRequest& request) const;
+			UpdateServiceCronScalerOutcome updateServiceCronScaler(const Model::UpdateServiceCronScalerRequest &request)const;
+			void updateServiceCronScalerAsync(const Model::UpdateServiceCronScalerRequest& request, const UpdateServiceCronScalerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateServiceCronScalerOutcomeCallable updateServiceCronScalerCallable(const Model::UpdateServiceCronScalerRequest& request) const;
+			UpdateServiceMirrorOutcome updateServiceMirror(const Model::UpdateServiceMirrorRequest &request)const;
+			void updateServiceMirrorAsync(const Model::UpdateServiceMirrorRequest& request, const UpdateServiceMirrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateServiceMirrorOutcomeCallable updateServiceMirrorCallable(const Model::UpdateServiceMirrorRequest& request) const;
+			UpdateServiceVersionOutcome updateServiceVersion(const Model::UpdateServiceVersionRequest &request)const;
+			void updateServiceVersionAsync(const Model::UpdateServiceVersionRequest& request, const UpdateServiceVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateServiceVersionOutcomeCallable updateServiceVersionCallable(const Model::UpdateServiceVersionRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

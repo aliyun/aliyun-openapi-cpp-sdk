@@ -39,6 +39,94 @@ void ListServicesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allServicesNode = value["Services"]["ServicesItem"];
+	for (auto valueServicesServicesItem : allServicesNode)
+	{
+		ServicesItem servicesObject;
+		if(!valueServicesServicesItem["RequestId"].isNull())
+			servicesObject.requestId = valueServicesServicesItem["RequestId"].asString();
+		if(!valueServicesServicesItem["Region"].isNull())
+			servicesObject.region = valueServicesServicesItem["Region"].asString();
+		if(!valueServicesServicesItem["CallerUid"].isNull())
+			servicesObject.callerUid = valueServicesServicesItem["CallerUid"].asString();
+		if(!valueServicesServicesItem["ParentUid"].isNull())
+			servicesObject.parentUid = valueServicesServicesItem["ParentUid"].asString();
+		if(!valueServicesServicesItem["CurrentVersion"].isNull())
+			servicesObject.currentVersion = std::stoi(valueServicesServicesItem["CurrentVersion"].asString());
+		if(!valueServicesServicesItem["Cpu"].isNull())
+			servicesObject.cpu = std::stoi(valueServicesServicesItem["Cpu"].asString());
+		if(!valueServicesServicesItem["Gpu"].isNull())
+			servicesObject.gpu = std::stoi(valueServicesServicesItem["Gpu"].asString());
+		if(!valueServicesServicesItem["Image"].isNull())
+			servicesObject.image = valueServicesServicesItem["Image"].asString();
+		if(!valueServicesServicesItem["PendingInstance"].isNull())
+			servicesObject.pendingInstance = std::stoi(valueServicesServicesItem["PendingInstance"].asString());
+		if(!valueServicesServicesItem["RunningInstance"].isNull())
+			servicesObject.runningInstance = std::stoi(valueServicesServicesItem["RunningInstance"].asString());
+		if(!valueServicesServicesItem["TotalInstance"].isNull())
+			servicesObject.totalInstance = std::stoi(valueServicesServicesItem["TotalInstance"].asString());
+		if(!valueServicesServicesItem["InternetEndpoint"].isNull())
+			servicesObject.internetEndpoint = valueServicesServicesItem["InternetEndpoint"].asString();
+		if(!valueServicesServicesItem["IntranetEndpoint"].isNull())
+			servicesObject.intranetEndpoint = valueServicesServicesItem["IntranetEndpoint"].asString();
+		if(!valueServicesServicesItem["LatestVersion"].isNull())
+			servicesObject.latestVersion = std::stoi(valueServicesServicesItem["LatestVersion"].asString());
+		if(!valueServicesServicesItem["Memory"].isNull())
+			servicesObject.memory = std::stoi(valueServicesServicesItem["Memory"].asString());
+		if(!valueServicesServicesItem["Message"].isNull())
+			servicesObject.message = valueServicesServicesItem["Message"].asString();
+		if(!valueServicesServicesItem["Namespace"].isNull())
+			servicesObject._namespace = valueServicesServicesItem["Namespace"].asString();
+		if(!valueServicesServicesItem["Reason"].isNull())
+			servicesObject.reason = valueServicesServicesItem["Reason"].asString();
+		if(!valueServicesServicesItem["Resource"].isNull())
+			servicesObject.resource = valueServicesServicesItem["Resource"].asString();
+		if(!valueServicesServicesItem["ServiceConfig"].isNull())
+			servicesObject.serviceConfig = valueServicesServicesItem["ServiceConfig"].asString();
+		if(!valueServicesServicesItem["ServiceName"].isNull())
+			servicesObject.serviceName = valueServicesServicesItem["ServiceName"].asString();
+		if(!valueServicesServicesItem["Status"].isNull())
+			servicesObject.status = valueServicesServicesItem["Status"].asString();
+		if(!valueServicesServicesItem["CreateTime"].isNull())
+			servicesObject.createTime = valueServicesServicesItem["CreateTime"].asString();
+		if(!valueServicesServicesItem["UpdateTime"].isNull())
+			servicesObject.updateTime = valueServicesServicesItem["UpdateTime"].asString();
+		if(!valueServicesServicesItem["Weight"].isNull())
+			servicesObject.weight = std::stoi(valueServicesServicesItem["Weight"].asString());
+		if(!valueServicesServicesItem["ServiceId"].isNull())
+			servicesObject.serviceId = valueServicesServicesItem["ServiceId"].asString();
+		if(!valueServicesServicesItem["AccessToken"].isNull())
+			servicesObject.accessToken = valueServicesServicesItem["AccessToken"].asString();
+		if(!valueServicesServicesItem["Source"].isNull())
+			servicesObject.source = valueServicesServicesItem["Source"].asString();
+		services_.push_back(servicesObject);
+	}
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
+}
+
+std::vector<ListServicesResult::ServicesItem> ListServicesResult::getServices()const
+{
+	return services_;
+}
+
+int ListServicesResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
+int ListServicesResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int ListServicesResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 

@@ -21,141 +21,201 @@ set(eas_public_header
 	include/alibabacloud/eas/EasExport.h )
 
 set(eas_public_header_model 
-	include/alibabacloud/eas/model/CheckServiceExistsRequest.h
-	include/alibabacloud/eas/model/CheckServiceExistsResult.h
-	include/alibabacloud/eas/model/CreateNetworkInterfaceRequest.h
-	include/alibabacloud/eas/model/CreateNetworkInterfaceResult.h
-	include/alibabacloud/eas/model/CreateSLSRequest.h
-	include/alibabacloud/eas/model/CreateSLSResult.h
+	include/alibabacloud/eas/model/CreateBenchmarkTaskRequest.h
+	include/alibabacloud/eas/model/CreateBenchmarkTaskResult.h
+	include/alibabacloud/eas/model/CreateResourceRequest.h
+	include/alibabacloud/eas/model/CreateResourceResult.h
+	include/alibabacloud/eas/model/CreateResourceInstancesRequest.h
+	include/alibabacloud/eas/model/CreateResourceInstancesResult.h
+	include/alibabacloud/eas/model/CreateResourceLogRequest.h
+	include/alibabacloud/eas/model/CreateResourceLogResult.h
 	include/alibabacloud/eas/model/CreateServiceRequest.h
 	include/alibabacloud/eas/model/CreateServiceResult.h
-	include/alibabacloud/eas/model/CreateTaskRequest.h
-	include/alibabacloud/eas/model/CreateTaskResult.h
+	include/alibabacloud/eas/model/CreateServiceAutoScalerRequest.h
+	include/alibabacloud/eas/model/CreateServiceAutoScalerResult.h
+	include/alibabacloud/eas/model/CreateServiceCronScalerRequest.h
+	include/alibabacloud/eas/model/CreateServiceCronScalerResult.h
+	include/alibabacloud/eas/model/CreateServiceMirrorRequest.h
+	include/alibabacloud/eas/model/CreateServiceMirrorResult.h
+	include/alibabacloud/eas/model/DeleteBenchmarkTaskRequest.h
+	include/alibabacloud/eas/model/DeleteBenchmarkTaskResult.h
 	include/alibabacloud/eas/model/DeleteResourceRequest.h
 	include/alibabacloud/eas/model/DeleteResourceResult.h
-	include/alibabacloud/eas/model/DeleteResourceInstanceRequest.h
-	include/alibabacloud/eas/model/DeleteResourceInstanceResult.h
+	include/alibabacloud/eas/model/DeleteResourceDLinkRequest.h
+	include/alibabacloud/eas/model/DeleteResourceDLinkResult.h
+	include/alibabacloud/eas/model/DeleteResourceInstancesRequest.h
+	include/alibabacloud/eas/model/DeleteResourceInstancesResult.h
+	include/alibabacloud/eas/model/DeleteResourceLogRequest.h
+	include/alibabacloud/eas/model/DeleteResourceLogResult.h
 	include/alibabacloud/eas/model/DeleteServiceRequest.h
 	include/alibabacloud/eas/model/DeleteServiceResult.h
-	include/alibabacloud/eas/model/DeleteTaskRequest.h
-	include/alibabacloud/eas/model/DeleteTaskResult.h
-	include/alibabacloud/eas/model/GetAvailableRegionsRequest.h
-	include/alibabacloud/eas/model/GetAvailableRegionsResult.h
-	include/alibabacloud/eas/model/GetNetworkInterfaceRequest.h
-	include/alibabacloud/eas/model/GetNetworkInterfaceResult.h
-	include/alibabacloud/eas/model/GetOrCreateResourceRequest.h
-	include/alibabacloud/eas/model/GetOrCreateResourceResult.h
-	include/alibabacloud/eas/model/GetOssAuthorizeRequest.h
-	include/alibabacloud/eas/model/GetOssAuthorizeResult.h
-	include/alibabacloud/eas/model/GetResourceInstancesRequest.h
-	include/alibabacloud/eas/model/GetResourceInstancesResult.h
-	include/alibabacloud/eas/model/GetResourcePodsRequest.h
-	include/alibabacloud/eas/model/GetResourcePodsResult.h
-	include/alibabacloud/eas/model/GetResourceServicesRequest.h
-	include/alibabacloud/eas/model/GetResourceServicesResult.h
-	include/alibabacloud/eas/model/GetResourceStatusRequest.h
-	include/alibabacloud/eas/model/GetResourceStatusResult.h
-	include/alibabacloud/eas/model/GetServiceRequest.h
-	include/alibabacloud/eas/model/GetServiceResult.h
-	include/alibabacloud/eas/model/GetServiceRegionRequest.h
-	include/alibabacloud/eas/model/GetServiceRegionResult.h
-	include/alibabacloud/eas/model/GetServiceStatisticsRequest.h
-	include/alibabacloud/eas/model/GetServiceStatisticsResult.h
-	include/alibabacloud/eas/model/GetServiceTokenRequest.h
-	include/alibabacloud/eas/model/GetServiceTokenResult.h
-	include/alibabacloud/eas/model/GetServiceVersionRequest.h
-	include/alibabacloud/eas/model/GetServiceVersionResult.h
-	include/alibabacloud/eas/model/GetServiceWorkerRequest.h
-	include/alibabacloud/eas/model/GetServiceWorkerResult.h
-	include/alibabacloud/eas/model/GetTaskRequest.h
-	include/alibabacloud/eas/model/GetTaskResult.h
+	include/alibabacloud/eas/model/DeleteServiceAutoScalerRequest.h
+	include/alibabacloud/eas/model/DeleteServiceAutoScalerResult.h
+	include/alibabacloud/eas/model/DeleteServiceCronScalerRequest.h
+	include/alibabacloud/eas/model/DeleteServiceCronScalerResult.h
+	include/alibabacloud/eas/model/DeleteServiceInstancesRequest.h
+	include/alibabacloud/eas/model/DeleteServiceInstancesResult.h
+	include/alibabacloud/eas/model/DeleteServiceMirrorRequest.h
+	include/alibabacloud/eas/model/DeleteServiceMirrorResult.h
+	include/alibabacloud/eas/model/DescribeBenchmarkTaskRequest.h
+	include/alibabacloud/eas/model/DescribeBenchmarkTaskResult.h
+	include/alibabacloud/eas/model/DescribeBenchmarkTaskReportRequest.h
+	include/alibabacloud/eas/model/DescribeBenchmarkTaskReportResult.h
+	include/alibabacloud/eas/model/DescribeResourceRequest.h
+	include/alibabacloud/eas/model/DescribeResourceResult.h
+	include/alibabacloud/eas/model/DescribeResourceDLinkRequest.h
+	include/alibabacloud/eas/model/DescribeResourceDLinkResult.h
+	include/alibabacloud/eas/model/DescribeResourceLogRequest.h
+	include/alibabacloud/eas/model/DescribeResourceLogResult.h
+	include/alibabacloud/eas/model/DescribeServiceRequest.h
+	include/alibabacloud/eas/model/DescribeServiceResult.h
+	include/alibabacloud/eas/model/DescribeServiceAutoScalerRequest.h
+	include/alibabacloud/eas/model/DescribeServiceAutoScalerResult.h
+	include/alibabacloud/eas/model/DescribeServiceCronScalerRequest.h
+	include/alibabacloud/eas/model/DescribeServiceCronScalerResult.h
+	include/alibabacloud/eas/model/DescribeServiceLogRequest.h
+	include/alibabacloud/eas/model/DescribeServiceLogResult.h
+	include/alibabacloud/eas/model/DescribeServiceMirrorRequest.h
+	include/alibabacloud/eas/model/DescribeServiceMirrorResult.h
+	include/alibabacloud/eas/model/ListBenchmarkTaskRequest.h
+	include/alibabacloud/eas/model/ListBenchmarkTaskResult.h
+	include/alibabacloud/eas/model/ListResourceInstanceWorkerRequest.h
+	include/alibabacloud/eas/model/ListResourceInstanceWorkerResult.h
+	include/alibabacloud/eas/model/ListResourceInstancesRequest.h
+	include/alibabacloud/eas/model/ListResourceInstancesResult.h
+	include/alibabacloud/eas/model/ListResourceServicesRequest.h
+	include/alibabacloud/eas/model/ListResourceServicesResult.h
+	include/alibabacloud/eas/model/ListResourcesRequest.h
+	include/alibabacloud/eas/model/ListResourcesResult.h
+	include/alibabacloud/eas/model/ListServiceInstancesRequest.h
+	include/alibabacloud/eas/model/ListServiceInstancesResult.h
 	include/alibabacloud/eas/model/ListServicesRequest.h
 	include/alibabacloud/eas/model/ListServicesResult.h
-	include/alibabacloud/eas/model/ListTasksRequest.h
-	include/alibabacloud/eas/model/ListTasksResult.h
-	include/alibabacloud/eas/model/ListVIndexRequest.h
-	include/alibabacloud/eas/model/ListVIndexResult.h
-	include/alibabacloud/eas/model/ModifyServiceRequest.h
-	include/alibabacloud/eas/model/ModifyServiceResult.h
-	include/alibabacloud/eas/model/ModifyServiceVersionRequest.h
-	include/alibabacloud/eas/model/ModifyServiceVersionResult.h
 	include/alibabacloud/eas/model/ReleaseServiceRequest.h
 	include/alibabacloud/eas/model/ReleaseServiceResult.h
+	include/alibabacloud/eas/model/StartBenchmarkTaskRequest.h
+	include/alibabacloud/eas/model/StartBenchmarkTaskResult.h
 	include/alibabacloud/eas/model/StartServiceRequest.h
 	include/alibabacloud/eas/model/StartServiceResult.h
+	include/alibabacloud/eas/model/StopBenchmarkTaskRequest.h
+	include/alibabacloud/eas/model/StopBenchmarkTaskResult.h
 	include/alibabacloud/eas/model/StopServiceRequest.h
 	include/alibabacloud/eas/model/StopServiceResult.h
-	include/alibabacloud/eas/model/SyncServiceRequest.h
-	include/alibabacloud/eas/model/SyncServiceResult.h )
+	include/alibabacloud/eas/model/UpdateBenchmarkTaskRequest.h
+	include/alibabacloud/eas/model/UpdateBenchmarkTaskResult.h
+	include/alibabacloud/eas/model/UpdateResourceRequest.h
+	include/alibabacloud/eas/model/UpdateResourceResult.h
+	include/alibabacloud/eas/model/UpdateResourceDLinkRequest.h
+	include/alibabacloud/eas/model/UpdateResourceDLinkResult.h
+	include/alibabacloud/eas/model/UpdateServiceRequest.h
+	include/alibabacloud/eas/model/UpdateServiceResult.h
+	include/alibabacloud/eas/model/UpdateServiceAutoScalerRequest.h
+	include/alibabacloud/eas/model/UpdateServiceAutoScalerResult.h
+	include/alibabacloud/eas/model/UpdateServiceCronScalerRequest.h
+	include/alibabacloud/eas/model/UpdateServiceCronScalerResult.h
+	include/alibabacloud/eas/model/UpdateServiceMirrorRequest.h
+	include/alibabacloud/eas/model/UpdateServiceMirrorResult.h
+	include/alibabacloud/eas/model/UpdateServiceVersionRequest.h
+	include/alibabacloud/eas/model/UpdateServiceVersionResult.h )
 
 set(eas_src 
 	src/EasClient.cc
-	src/model/CheckServiceExistsRequest.cc
-	src/model/CheckServiceExistsResult.cc
-	src/model/CreateNetworkInterfaceRequest.cc
-	src/model/CreateNetworkInterfaceResult.cc
-	src/model/CreateSLSRequest.cc
-	src/model/CreateSLSResult.cc
+	src/model/CreateBenchmarkTaskRequest.cc
+	src/model/CreateBenchmarkTaskResult.cc
+	src/model/CreateResourceRequest.cc
+	src/model/CreateResourceResult.cc
+	src/model/CreateResourceInstancesRequest.cc
+	src/model/CreateResourceInstancesResult.cc
+	src/model/CreateResourceLogRequest.cc
+	src/model/CreateResourceLogResult.cc
 	src/model/CreateServiceRequest.cc
 	src/model/CreateServiceResult.cc
-	src/model/CreateTaskRequest.cc
-	src/model/CreateTaskResult.cc
+	src/model/CreateServiceAutoScalerRequest.cc
+	src/model/CreateServiceAutoScalerResult.cc
+	src/model/CreateServiceCronScalerRequest.cc
+	src/model/CreateServiceCronScalerResult.cc
+	src/model/CreateServiceMirrorRequest.cc
+	src/model/CreateServiceMirrorResult.cc
+	src/model/DeleteBenchmarkTaskRequest.cc
+	src/model/DeleteBenchmarkTaskResult.cc
 	src/model/DeleteResourceRequest.cc
 	src/model/DeleteResourceResult.cc
-	src/model/DeleteResourceInstanceRequest.cc
-	src/model/DeleteResourceInstanceResult.cc
+	src/model/DeleteResourceDLinkRequest.cc
+	src/model/DeleteResourceDLinkResult.cc
+	src/model/DeleteResourceInstancesRequest.cc
+	src/model/DeleteResourceInstancesResult.cc
+	src/model/DeleteResourceLogRequest.cc
+	src/model/DeleteResourceLogResult.cc
 	src/model/DeleteServiceRequest.cc
 	src/model/DeleteServiceResult.cc
-	src/model/DeleteTaskRequest.cc
-	src/model/DeleteTaskResult.cc
-	src/model/GetAvailableRegionsRequest.cc
-	src/model/GetAvailableRegionsResult.cc
-	src/model/GetNetworkInterfaceRequest.cc
-	src/model/GetNetworkInterfaceResult.cc
-	src/model/GetOrCreateResourceRequest.cc
-	src/model/GetOrCreateResourceResult.cc
-	src/model/GetOssAuthorizeRequest.cc
-	src/model/GetOssAuthorizeResult.cc
-	src/model/GetResourceInstancesRequest.cc
-	src/model/GetResourceInstancesResult.cc
-	src/model/GetResourcePodsRequest.cc
-	src/model/GetResourcePodsResult.cc
-	src/model/GetResourceServicesRequest.cc
-	src/model/GetResourceServicesResult.cc
-	src/model/GetResourceStatusRequest.cc
-	src/model/GetResourceStatusResult.cc
-	src/model/GetServiceRequest.cc
-	src/model/GetServiceResult.cc
-	src/model/GetServiceRegionRequest.cc
-	src/model/GetServiceRegionResult.cc
-	src/model/GetServiceStatisticsRequest.cc
-	src/model/GetServiceStatisticsResult.cc
-	src/model/GetServiceTokenRequest.cc
-	src/model/GetServiceTokenResult.cc
-	src/model/GetServiceVersionRequest.cc
-	src/model/GetServiceVersionResult.cc
-	src/model/GetServiceWorkerRequest.cc
-	src/model/GetServiceWorkerResult.cc
-	src/model/GetTaskRequest.cc
-	src/model/GetTaskResult.cc
+	src/model/DeleteServiceAutoScalerRequest.cc
+	src/model/DeleteServiceAutoScalerResult.cc
+	src/model/DeleteServiceCronScalerRequest.cc
+	src/model/DeleteServiceCronScalerResult.cc
+	src/model/DeleteServiceInstancesRequest.cc
+	src/model/DeleteServiceInstancesResult.cc
+	src/model/DeleteServiceMirrorRequest.cc
+	src/model/DeleteServiceMirrorResult.cc
+	src/model/DescribeBenchmarkTaskRequest.cc
+	src/model/DescribeBenchmarkTaskResult.cc
+	src/model/DescribeBenchmarkTaskReportRequest.cc
+	src/model/DescribeBenchmarkTaskReportResult.cc
+	src/model/DescribeResourceRequest.cc
+	src/model/DescribeResourceResult.cc
+	src/model/DescribeResourceDLinkRequest.cc
+	src/model/DescribeResourceDLinkResult.cc
+	src/model/DescribeResourceLogRequest.cc
+	src/model/DescribeResourceLogResult.cc
+	src/model/DescribeServiceRequest.cc
+	src/model/DescribeServiceResult.cc
+	src/model/DescribeServiceAutoScalerRequest.cc
+	src/model/DescribeServiceAutoScalerResult.cc
+	src/model/DescribeServiceCronScalerRequest.cc
+	src/model/DescribeServiceCronScalerResult.cc
+	src/model/DescribeServiceLogRequest.cc
+	src/model/DescribeServiceLogResult.cc
+	src/model/DescribeServiceMirrorRequest.cc
+	src/model/DescribeServiceMirrorResult.cc
+	src/model/ListBenchmarkTaskRequest.cc
+	src/model/ListBenchmarkTaskResult.cc
+	src/model/ListResourceInstanceWorkerRequest.cc
+	src/model/ListResourceInstanceWorkerResult.cc
+	src/model/ListResourceInstancesRequest.cc
+	src/model/ListResourceInstancesResult.cc
+	src/model/ListResourceServicesRequest.cc
+	src/model/ListResourceServicesResult.cc
+	src/model/ListResourcesRequest.cc
+	src/model/ListResourcesResult.cc
+	src/model/ListServiceInstancesRequest.cc
+	src/model/ListServiceInstancesResult.cc
 	src/model/ListServicesRequest.cc
 	src/model/ListServicesResult.cc
-	src/model/ListTasksRequest.cc
-	src/model/ListTasksResult.cc
-	src/model/ListVIndexRequest.cc
-	src/model/ListVIndexResult.cc
-	src/model/ModifyServiceRequest.cc
-	src/model/ModifyServiceResult.cc
-	src/model/ModifyServiceVersionRequest.cc
-	src/model/ModifyServiceVersionResult.cc
 	src/model/ReleaseServiceRequest.cc
 	src/model/ReleaseServiceResult.cc
+	src/model/StartBenchmarkTaskRequest.cc
+	src/model/StartBenchmarkTaskResult.cc
 	src/model/StartServiceRequest.cc
 	src/model/StartServiceResult.cc
+	src/model/StopBenchmarkTaskRequest.cc
+	src/model/StopBenchmarkTaskResult.cc
 	src/model/StopServiceRequest.cc
 	src/model/StopServiceResult.cc
-	src/model/SyncServiceRequest.cc
-	src/model/SyncServiceResult.cc )
+	src/model/UpdateBenchmarkTaskRequest.cc
+	src/model/UpdateBenchmarkTaskResult.cc
+	src/model/UpdateResourceRequest.cc
+	src/model/UpdateResourceResult.cc
+	src/model/UpdateResourceDLinkRequest.cc
+	src/model/UpdateResourceDLinkResult.cc
+	src/model/UpdateServiceRequest.cc
+	src/model/UpdateServiceResult.cc
+	src/model/UpdateServiceAutoScalerRequest.cc
+	src/model/UpdateServiceAutoScalerResult.cc
+	src/model/UpdateServiceCronScalerRequest.cc
+	src/model/UpdateServiceCronScalerResult.cc
+	src/model/UpdateServiceMirrorRequest.cc
+	src/model/UpdateServiceMirrorResult.cc
+	src/model/UpdateServiceVersionRequest.cc
+	src/model/UpdateServiceVersionResult.cc )
 
 add_library(eas ${LIB_TYPE}
 	${eas_public_header}
