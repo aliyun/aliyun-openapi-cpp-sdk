@@ -2535,6 +2535,42 @@ VodClient::GetImageInfoOutcomeCallable VodClient::getImageInfoCallable(const Get
 	return task->get_future();
 }
 
+VodClient::GetImageInfosOutcome VodClient::getImageInfos(const GetImageInfosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetImageInfosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetImageInfosOutcome(GetImageInfosResult(outcome.result()));
+	else
+		return GetImageInfosOutcome(outcome.error());
+}
+
+void VodClient::getImageInfosAsync(const GetImageInfosRequest& request, const GetImageInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getImageInfos(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::GetImageInfosOutcomeCallable VodClient::getImageInfosCallable(const GetImageInfosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetImageInfosOutcome()>>(
+			[this, request]()
+			{
+			return this->getImageInfos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::GetMediaAuditAudioResultDetailOutcome VodClient::getMediaAuditAudioResultDetail(const GetMediaAuditAudioResultDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

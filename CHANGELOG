@@ -1,3 +1,6 @@
+2022-07-28 Version: 1.36.1209
+- Add GetImageInfos api.
+
 2022-07-27 Version: 1.36.1208
 - Support ListProxies API to return protocolType, protocolPort and remove mysqlPort.
 - Support GetProxy API to return protocolType, protocolPort and remove mysqlPort.

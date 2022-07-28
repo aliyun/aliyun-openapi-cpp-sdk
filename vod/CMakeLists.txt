@@ -159,6 +159,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/GetEditingProjectMaterialsResult.h
 	include/alibabacloud/vod/model/GetImageInfoRequest.h
 	include/alibabacloud/vod/model/GetImageInfoResult.h
+	include/alibabacloud/vod/model/GetImageInfosRequest.h
+	include/alibabacloud/vod/model/GetImageInfosResult.h
 	include/alibabacloud/vod/model/GetMediaAuditAudioResultDetailRequest.h
 	include/alibabacloud/vod/model/GetMediaAuditAudioResultDetailResult.h
 	include/alibabacloud/vod/model/GetMediaAuditResultRequest.h
@@ -450,6 +452,8 @@ set(vod_src
 	src/model/GetEditingProjectMaterialsResult.cc
 	src/model/GetImageInfoRequest.cc
 	src/model/GetImageInfoResult.cc
+	src/model/GetImageInfosRequest.cc
+	src/model/GetImageInfosResult.cc
 	src/model/GetMediaAuditAudioResultDetailRequest.cc
 	src/model/GetMediaAuditAudioResultDetailResult.cc
 	src/model/GetMediaAuditResultRequest.cc

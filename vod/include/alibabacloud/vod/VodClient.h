@@ -160,6 +160,8 @@
 #include "model/GetEditingProjectMaterialsResult.h"
 #include "model/GetImageInfoRequest.h"
 #include "model/GetImageInfoResult.h"
+#include "model/GetImageInfosRequest.h"
+#include "model/GetImageInfosResult.h"
 #include "model/GetMediaAuditAudioResultDetailRequest.h"
 #include "model/GetMediaAuditAudioResultDetailResult.h"
 #include "model/GetMediaAuditResultRequest.h"
@@ -526,6 +528,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetImageInfoResult> GetImageInfoOutcome;
 			typedef std::future<GetImageInfoOutcome> GetImageInfoOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetImageInfoRequest&, const GetImageInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetImageInfosResult> GetImageInfosOutcome;
+			typedef std::future<GetImageInfosOutcome> GetImageInfosOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::GetImageInfosRequest&, const GetImageInfosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetImageInfosAsyncHandler;
 			typedef Outcome<Error, Model::GetMediaAuditAudioResultDetailResult> GetMediaAuditAudioResultDetailOutcome;
 			typedef std::future<GetMediaAuditAudioResultDetailOutcome> GetMediaAuditAudioResultDetailOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::GetMediaAuditAudioResultDetailRequest&, const GetMediaAuditAudioResultDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMediaAuditAudioResultDetailAsyncHandler;
@@ -963,6 +968,9 @@ namespace AlibabaCloud
 			GetImageInfoOutcome getImageInfo(const Model::GetImageInfoRequest &request)const;
 			void getImageInfoAsync(const Model::GetImageInfoRequest& request, const GetImageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetImageInfoOutcomeCallable getImageInfoCallable(const Model::GetImageInfoRequest& request) const;
+			GetImageInfosOutcome getImageInfos(const Model::GetImageInfosRequest &request)const;
+			void getImageInfosAsync(const Model::GetImageInfosRequest& request, const GetImageInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetImageInfosOutcomeCallable getImageInfosCallable(const Model::GetImageInfosRequest& request) const;
 			GetMediaAuditAudioResultDetailOutcome getMediaAuditAudioResultDetail(const Model::GetMediaAuditAudioResultDetailRequest &request)const;
 			void getMediaAuditAudioResultDetailAsync(const Model::GetMediaAuditAudioResultDetailRequest& request, const GetMediaAuditAudioResultDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMediaAuditAudioResultDetailOutcomeCallable getMediaAuditAudioResultDetailCallable(const Model::GetMediaAuditAudioResultDetailRequest& request) const;
