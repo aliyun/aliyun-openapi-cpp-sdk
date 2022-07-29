@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					int generalAssetCount;
 					int idcInstanceCount;
 					int testAssetCount;
+					int outMachineInstanceCount;
 					int unprotectedInstanceCount;
 					int instanceCount;
 					int offlineInstanceCount;

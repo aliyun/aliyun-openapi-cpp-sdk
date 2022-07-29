@@ -21,6 +21,8 @@ set(sas_public_header
 	include/alibabacloud/sas/SasExport.h )
 
 set(sas_public_header_model 
+	include/alibabacloud/sas/model/AddInstallCodeRequest.h
+	include/alibabacloud/sas/model/AddInstallCodeResult.h
 	include/alibabacloud/sas/model/AddVpcHoneyPotRequest.h
 	include/alibabacloud/sas/model/AddVpcHoneyPotResult.h
 	include/alibabacloud/sas/model/CheckQuaraFileIdRequest.h
@@ -109,6 +111,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeCloudCenterInstancesResult.h
 	include/alibabacloud/sas/model/DescribeCloudProductFieldStatisticsRequest.h
 	include/alibabacloud/sas/model/DescribeCloudProductFieldStatisticsResult.h
+	include/alibabacloud/sas/model/DescribeCommonOverallConfigRequest.h
+	include/alibabacloud/sas/model/DescribeCommonOverallConfigResult.h
 	include/alibabacloud/sas/model/DescribeConcernNecessityRequest.h
 	include/alibabacloud/sas/model/DescribeConcernNecessityResult.h
 	include/alibabacloud/sas/model/DescribeContainerStatisticsRequest.h
@@ -265,6 +269,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeSuspEventQuaraFilesResult.h
 	include/alibabacloud/sas/model/DescribeSuspEventsRequest.h
 	include/alibabacloud/sas/model/DescribeSuspEventsResult.h
+	include/alibabacloud/sas/model/DescribeSuspiciousOverallConfigRequest.h
+	include/alibabacloud/sas/model/DescribeSuspiciousOverallConfigResult.h
 	include/alibabacloud/sas/model/DescribeSuspiciousUUIDConfigRequest.h
 	include/alibabacloud/sas/model/DescribeSuspiciousUUIDConfigResult.h
 	include/alibabacloud/sas/model/DescribeUserBackupMachinesRequest.h
@@ -275,6 +281,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeUserLayoutAuthorizationResult.h
 	include/alibabacloud/sas/model/DescribeUuidsByVulNamesRequest.h
 	include/alibabacloud/sas/model/DescribeUuidsByVulNamesResult.h
+	include/alibabacloud/sas/model/DescribeVendorListRequest.h
+	include/alibabacloud/sas/model/DescribeVendorListResult.h
 	include/alibabacloud/sas/model/DescribeVersionConfigRequest.h
 	include/alibabacloud/sas/model/DescribeVersionConfigResult.h
 	include/alibabacloud/sas/model/DescribeVpcHoneyPotCriteriaRequest.h
@@ -393,6 +401,10 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/ModifyWebLockUpdateConfigResult.h
 	include/alibabacloud/sas/model/OperateAgentClientInstallRequest.h
 	include/alibabacloud/sas/model/OperateAgentClientInstallResult.h
+	include/alibabacloud/sas/model/OperateCommonOverallConfigRequest.h
+	include/alibabacloud/sas/model/OperateCommonOverallConfigResult.h
+	include/alibabacloud/sas/model/OperateSuspiciousOverallConfigRequest.h
+	include/alibabacloud/sas/model/OperateSuspiciousOverallConfigResult.h
 	include/alibabacloud/sas/model/OperateSuspiciousTargetConfigRequest.h
 	include/alibabacloud/sas/model/OperateSuspiciousTargetConfigResult.h
 	include/alibabacloud/sas/model/OperateVulsRequest.h
@@ -436,6 +448,8 @@ set(sas_public_header_model
 
 set(sas_src 
 	src/SasClient.cc
+	src/model/AddInstallCodeRequest.cc
+	src/model/AddInstallCodeResult.cc
 	src/model/AddVpcHoneyPotRequest.cc
 	src/model/AddVpcHoneyPotResult.cc
 	src/model/CheckQuaraFileIdRequest.cc
@@ -524,6 +538,8 @@ set(sas_src
 	src/model/DescribeCloudCenterInstancesResult.cc
 	src/model/DescribeCloudProductFieldStatisticsRequest.cc
 	src/model/DescribeCloudProductFieldStatisticsResult.cc
+	src/model/DescribeCommonOverallConfigRequest.cc
+	src/model/DescribeCommonOverallConfigResult.cc
 	src/model/DescribeConcernNecessityRequest.cc
 	src/model/DescribeConcernNecessityResult.cc
 	src/model/DescribeContainerStatisticsRequest.cc
@@ -680,6 +696,8 @@ set(sas_src
 	src/model/DescribeSuspEventQuaraFilesResult.cc
 	src/model/DescribeSuspEventsRequest.cc
 	src/model/DescribeSuspEventsResult.cc
+	src/model/DescribeSuspiciousOverallConfigRequest.cc
+	src/model/DescribeSuspiciousOverallConfigResult.cc
 	src/model/DescribeSuspiciousUUIDConfigRequest.cc
 	src/model/DescribeSuspiciousUUIDConfigResult.cc
 	src/model/DescribeUserBackupMachinesRequest.cc
@@ -690,6 +708,8 @@ set(sas_src
 	src/model/DescribeUserLayoutAuthorizationResult.cc
 	src/model/DescribeUuidsByVulNamesRequest.cc
 	src/model/DescribeUuidsByVulNamesResult.cc
+	src/model/DescribeVendorListRequest.cc
+	src/model/DescribeVendorListResult.cc
 	src/model/DescribeVersionConfigRequest.cc
 	src/model/DescribeVersionConfigResult.cc
 	src/model/DescribeVpcHoneyPotCriteriaRequest.cc
@@ -808,6 +828,10 @@ set(sas_src
 	src/model/ModifyWebLockUpdateConfigResult.cc
 	src/model/OperateAgentClientInstallRequest.cc
 	src/model/OperateAgentClientInstallResult.cc
+	src/model/OperateCommonOverallConfigRequest.cc
+	src/model/OperateCommonOverallConfigResult.cc
+	src/model/OperateSuspiciousOverallConfigRequest.cc
+	src/model/OperateSuspiciousOverallConfigResult.cc
 	src/model/OperateSuspiciousTargetConfigRequest.cc
 	src/model/OperateSuspiciousTargetConfigResult.cc
 	src/model/OperateVulsRequest.cc

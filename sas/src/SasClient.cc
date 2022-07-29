@@ -51,6 +51,42 @@ SasClient::SasClient(const std::string & accessKeyId, const std::string & access
 SasClient::~SasClient()
 {}
 
+SasClient::AddInstallCodeOutcome SasClient::addInstallCode(const AddInstallCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddInstallCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddInstallCodeOutcome(AddInstallCodeResult(outcome.result()));
+	else
+		return AddInstallCodeOutcome(outcome.error());
+}
+
+void SasClient::addInstallCodeAsync(const AddInstallCodeRequest& request, const AddInstallCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addInstallCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::AddInstallCodeOutcomeCallable SasClient::addInstallCodeCallable(const AddInstallCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddInstallCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->addInstallCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::AddVpcHoneyPotOutcome SasClient::addVpcHoneyPot(const AddVpcHoneyPotRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,6 +1665,42 @@ SasClient::DescribeCloudProductFieldStatisticsOutcomeCallable SasClient::describ
 			[this, request]()
 			{
 			return this->describeCloudProductFieldStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DescribeCommonOverallConfigOutcome SasClient::describeCommonOverallConfig(const DescribeCommonOverallConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCommonOverallConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCommonOverallConfigOutcome(DescribeCommonOverallConfigResult(outcome.result()));
+	else
+		return DescribeCommonOverallConfigOutcome(outcome.error());
+}
+
+void SasClient::describeCommonOverallConfigAsync(const DescribeCommonOverallConfigRequest& request, const DescribeCommonOverallConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCommonOverallConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeCommonOverallConfigOutcomeCallable SasClient::describeCommonOverallConfigCallable(const DescribeCommonOverallConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCommonOverallConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCommonOverallConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4443,6 +4515,42 @@ SasClient::DescribeSuspEventsOutcomeCallable SasClient::describeSuspEventsCallab
 	return task->get_future();
 }
 
+SasClient::DescribeSuspiciousOverallConfigOutcome SasClient::describeSuspiciousOverallConfig(const DescribeSuspiciousOverallConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSuspiciousOverallConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSuspiciousOverallConfigOutcome(DescribeSuspiciousOverallConfigResult(outcome.result()));
+	else
+		return DescribeSuspiciousOverallConfigOutcome(outcome.error());
+}
+
+void SasClient::describeSuspiciousOverallConfigAsync(const DescribeSuspiciousOverallConfigRequest& request, const DescribeSuspiciousOverallConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSuspiciousOverallConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeSuspiciousOverallConfigOutcomeCallable SasClient::describeSuspiciousOverallConfigCallable(const DescribeSuspiciousOverallConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSuspiciousOverallConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSuspiciousOverallConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeSuspiciousUUIDConfigOutcome SasClient::describeSuspiciousUUIDConfig(const DescribeSuspiciousUUIDConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4617,6 +4725,42 @@ SasClient::DescribeUuidsByVulNamesOutcomeCallable SasClient::describeUuidsByVulN
 			[this, request]()
 			{
 			return this->describeUuidsByVulNames(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DescribeVendorListOutcome SasClient::describeVendorList(const DescribeVendorListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVendorListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVendorListOutcome(DescribeVendorListResult(outcome.result()));
+	else
+		return DescribeVendorListOutcome(outcome.error());
+}
+
+void SasClient::describeVendorListAsync(const DescribeVendorListRequest& request, const DescribeVendorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVendorList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeVendorListOutcomeCallable SasClient::describeVendorListCallable(const DescribeVendorListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVendorListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVendorList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6741,6 +6885,78 @@ SasClient::OperateAgentClientInstallOutcomeCallable SasClient::operateAgentClien
 			[this, request]()
 			{
 			return this->operateAgentClientInstall(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::OperateCommonOverallConfigOutcome SasClient::operateCommonOverallConfig(const OperateCommonOverallConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OperateCommonOverallConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OperateCommonOverallConfigOutcome(OperateCommonOverallConfigResult(outcome.result()));
+	else
+		return OperateCommonOverallConfigOutcome(outcome.error());
+}
+
+void SasClient::operateCommonOverallConfigAsync(const OperateCommonOverallConfigRequest& request, const OperateCommonOverallConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, operateCommonOverallConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::OperateCommonOverallConfigOutcomeCallable SasClient::operateCommonOverallConfigCallable(const OperateCommonOverallConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OperateCommonOverallConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->operateCommonOverallConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::OperateSuspiciousOverallConfigOutcome SasClient::operateSuspiciousOverallConfig(const OperateSuspiciousOverallConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OperateSuspiciousOverallConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OperateSuspiciousOverallConfigOutcome(OperateSuspiciousOverallConfigResult(outcome.result()));
+	else
+		return OperateSuspiciousOverallConfigOutcome(outcome.error());
+}
+
+void SasClient::operateSuspiciousOverallConfigAsync(const OperateSuspiciousOverallConfigRequest& request, const OperateSuspiciousOverallConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, operateSuspiciousOverallConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::OperateSuspiciousOverallConfigOutcomeCallable SasClient::operateSuspiciousOverallConfigCallable(const OperateSuspiciousOverallConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OperateSuspiciousOverallConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->operateSuspiciousOverallConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

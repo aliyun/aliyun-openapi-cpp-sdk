@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "SasExport.h"
+#include "model/AddInstallCodeRequest.h"
+#include "model/AddInstallCodeResult.h"
 #include "model/AddVpcHoneyPotRequest.h"
 #include "model/AddVpcHoneyPotResult.h"
 #include "model/CheckQuaraFileIdRequest.h"
@@ -110,6 +112,8 @@
 #include "model/DescribeCloudCenterInstancesResult.h"
 #include "model/DescribeCloudProductFieldStatisticsRequest.h"
 #include "model/DescribeCloudProductFieldStatisticsResult.h"
+#include "model/DescribeCommonOverallConfigRequest.h"
+#include "model/DescribeCommonOverallConfigResult.h"
 #include "model/DescribeConcernNecessityRequest.h"
 #include "model/DescribeConcernNecessityResult.h"
 #include "model/DescribeContainerStatisticsRequest.h"
@@ -266,6 +270,8 @@
 #include "model/DescribeSuspEventQuaraFilesResult.h"
 #include "model/DescribeSuspEventsRequest.h"
 #include "model/DescribeSuspEventsResult.h"
+#include "model/DescribeSuspiciousOverallConfigRequest.h"
+#include "model/DescribeSuspiciousOverallConfigResult.h"
 #include "model/DescribeSuspiciousUUIDConfigRequest.h"
 #include "model/DescribeSuspiciousUUIDConfigResult.h"
 #include "model/DescribeUserBackupMachinesRequest.h"
@@ -276,6 +282,8 @@
 #include "model/DescribeUserLayoutAuthorizationResult.h"
 #include "model/DescribeUuidsByVulNamesRequest.h"
 #include "model/DescribeUuidsByVulNamesResult.h"
+#include "model/DescribeVendorListRequest.h"
+#include "model/DescribeVendorListResult.h"
 #include "model/DescribeVersionConfigRequest.h"
 #include "model/DescribeVersionConfigResult.h"
 #include "model/DescribeVpcHoneyPotCriteriaRequest.h"
@@ -394,6 +402,10 @@
 #include "model/ModifyWebLockUpdateConfigResult.h"
 #include "model/OperateAgentClientInstallRequest.h"
 #include "model/OperateAgentClientInstallResult.h"
+#include "model/OperateCommonOverallConfigRequest.h"
+#include "model/OperateCommonOverallConfigResult.h"
+#include "model/OperateSuspiciousOverallConfigRequest.h"
+#include "model/OperateSuspiciousOverallConfigResult.h"
 #include "model/OperateSuspiciousTargetConfigRequest.h"
 #include "model/OperateSuspiciousTargetConfigResult.h"
 #include "model/OperateVulsRequest.h"
@@ -443,6 +455,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_SAS_EXPORT SasClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::AddInstallCodeResult> AddInstallCodeOutcome;
+			typedef std::future<AddInstallCodeOutcome> AddInstallCodeOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::AddInstallCodeRequest&, const AddInstallCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddInstallCodeAsyncHandler;
 			typedef Outcome<Error, Model::AddVpcHoneyPotResult> AddVpcHoneyPotOutcome;
 			typedef std::future<AddVpcHoneyPotOutcome> AddVpcHoneyPotOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::AddVpcHoneyPotRequest&, const AddVpcHoneyPotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddVpcHoneyPotAsyncHandler;
@@ -575,6 +590,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCloudProductFieldStatisticsResult> DescribeCloudProductFieldStatisticsOutcome;
 			typedef std::future<DescribeCloudProductFieldStatisticsOutcome> DescribeCloudProductFieldStatisticsOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeCloudProductFieldStatisticsRequest&, const DescribeCloudProductFieldStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudProductFieldStatisticsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCommonOverallConfigResult> DescribeCommonOverallConfigOutcome;
+			typedef std::future<DescribeCommonOverallConfigOutcome> DescribeCommonOverallConfigOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeCommonOverallConfigRequest&, const DescribeCommonOverallConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCommonOverallConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeConcernNecessityResult> DescribeConcernNecessityOutcome;
 			typedef std::future<DescribeConcernNecessityOutcome> DescribeConcernNecessityOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeConcernNecessityRequest&, const DescribeConcernNecessityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConcernNecessityAsyncHandler;
@@ -809,6 +827,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSuspEventsResult> DescribeSuspEventsOutcome;
 			typedef std::future<DescribeSuspEventsOutcome> DescribeSuspEventsOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeSuspEventsRequest&, const DescribeSuspEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSuspEventsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSuspiciousOverallConfigResult> DescribeSuspiciousOverallConfigOutcome;
+			typedef std::future<DescribeSuspiciousOverallConfigOutcome> DescribeSuspiciousOverallConfigOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeSuspiciousOverallConfigRequest&, const DescribeSuspiciousOverallConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSuspiciousOverallConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSuspiciousUUIDConfigResult> DescribeSuspiciousUUIDConfigOutcome;
 			typedef std::future<DescribeSuspiciousUUIDConfigOutcome> DescribeSuspiciousUUIDConfigOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeSuspiciousUUIDConfigRequest&, const DescribeSuspiciousUUIDConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSuspiciousUUIDConfigAsyncHandler;
@@ -824,6 +845,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeUuidsByVulNamesResult> DescribeUuidsByVulNamesOutcome;
 			typedef std::future<DescribeUuidsByVulNamesOutcome> DescribeUuidsByVulNamesOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeUuidsByVulNamesRequest&, const DescribeUuidsByVulNamesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUuidsByVulNamesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVendorListResult> DescribeVendorListOutcome;
+			typedef std::future<DescribeVendorListOutcome> DescribeVendorListOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeVendorListRequest&, const DescribeVendorListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVendorListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVersionConfigResult> DescribeVersionConfigOutcome;
 			typedef std::future<DescribeVersionConfigOutcome> DescribeVersionConfigOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeVersionConfigRequest&, const DescribeVersionConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVersionConfigAsyncHandler;
@@ -1001,6 +1025,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OperateAgentClientInstallResult> OperateAgentClientInstallOutcome;
 			typedef std::future<OperateAgentClientInstallOutcome> OperateAgentClientInstallOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::OperateAgentClientInstallRequest&, const OperateAgentClientInstallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateAgentClientInstallAsyncHandler;
+			typedef Outcome<Error, Model::OperateCommonOverallConfigResult> OperateCommonOverallConfigOutcome;
+			typedef std::future<OperateCommonOverallConfigOutcome> OperateCommonOverallConfigOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::OperateCommonOverallConfigRequest&, const OperateCommonOverallConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateCommonOverallConfigAsyncHandler;
+			typedef Outcome<Error, Model::OperateSuspiciousOverallConfigResult> OperateSuspiciousOverallConfigOutcome;
+			typedef std::future<OperateSuspiciousOverallConfigOutcome> OperateSuspiciousOverallConfigOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::OperateSuspiciousOverallConfigRequest&, const OperateSuspiciousOverallConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateSuspiciousOverallConfigAsyncHandler;
 			typedef Outcome<Error, Model::OperateSuspiciousTargetConfigResult> OperateSuspiciousTargetConfigOutcome;
 			typedef std::future<OperateSuspiciousTargetConfigOutcome> OperateSuspiciousTargetConfigOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::OperateSuspiciousTargetConfigRequest&, const OperateSuspiciousTargetConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateSuspiciousTargetConfigAsyncHandler;
@@ -1066,6 +1096,9 @@ namespace AlibabaCloud
 			SasClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			SasClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~SasClient();
+			AddInstallCodeOutcome addInstallCode(const Model::AddInstallCodeRequest &request)const;
+			void addInstallCodeAsync(const Model::AddInstallCodeRequest& request, const AddInstallCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddInstallCodeOutcomeCallable addInstallCodeCallable(const Model::AddInstallCodeRequest& request) const;
 			AddVpcHoneyPotOutcome addVpcHoneyPot(const Model::AddVpcHoneyPotRequest &request)const;
 			void addVpcHoneyPotAsync(const Model::AddVpcHoneyPotRequest& request, const AddVpcHoneyPotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddVpcHoneyPotOutcomeCallable addVpcHoneyPotCallable(const Model::AddVpcHoneyPotRequest& request) const;
@@ -1198,6 +1231,9 @@ namespace AlibabaCloud
 			DescribeCloudProductFieldStatisticsOutcome describeCloudProductFieldStatistics(const Model::DescribeCloudProductFieldStatisticsRequest &request)const;
 			void describeCloudProductFieldStatisticsAsync(const Model::DescribeCloudProductFieldStatisticsRequest& request, const DescribeCloudProductFieldStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCloudProductFieldStatisticsOutcomeCallable describeCloudProductFieldStatisticsCallable(const Model::DescribeCloudProductFieldStatisticsRequest& request) const;
+			DescribeCommonOverallConfigOutcome describeCommonOverallConfig(const Model::DescribeCommonOverallConfigRequest &request)const;
+			void describeCommonOverallConfigAsync(const Model::DescribeCommonOverallConfigRequest& request, const DescribeCommonOverallConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCommonOverallConfigOutcomeCallable describeCommonOverallConfigCallable(const Model::DescribeCommonOverallConfigRequest& request) const;
 			DescribeConcernNecessityOutcome describeConcernNecessity(const Model::DescribeConcernNecessityRequest &request)const;
 			void describeConcernNecessityAsync(const Model::DescribeConcernNecessityRequest& request, const DescribeConcernNecessityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConcernNecessityOutcomeCallable describeConcernNecessityCallable(const Model::DescribeConcernNecessityRequest& request) const;
@@ -1432,6 +1468,9 @@ namespace AlibabaCloud
 			DescribeSuspEventsOutcome describeSuspEvents(const Model::DescribeSuspEventsRequest &request)const;
 			void describeSuspEventsAsync(const Model::DescribeSuspEventsRequest& request, const DescribeSuspEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSuspEventsOutcomeCallable describeSuspEventsCallable(const Model::DescribeSuspEventsRequest& request) const;
+			DescribeSuspiciousOverallConfigOutcome describeSuspiciousOverallConfig(const Model::DescribeSuspiciousOverallConfigRequest &request)const;
+			void describeSuspiciousOverallConfigAsync(const Model::DescribeSuspiciousOverallConfigRequest& request, const DescribeSuspiciousOverallConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSuspiciousOverallConfigOutcomeCallable describeSuspiciousOverallConfigCallable(const Model::DescribeSuspiciousOverallConfigRequest& request) const;
 			DescribeSuspiciousUUIDConfigOutcome describeSuspiciousUUIDConfig(const Model::DescribeSuspiciousUUIDConfigRequest &request)const;
 			void describeSuspiciousUUIDConfigAsync(const Model::DescribeSuspiciousUUIDConfigRequest& request, const DescribeSuspiciousUUIDConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSuspiciousUUIDConfigOutcomeCallable describeSuspiciousUUIDConfigCallable(const Model::DescribeSuspiciousUUIDConfigRequest& request) const;
@@ -1447,6 +1486,9 @@ namespace AlibabaCloud
 			DescribeUuidsByVulNamesOutcome describeUuidsByVulNames(const Model::DescribeUuidsByVulNamesRequest &request)const;
 			void describeUuidsByVulNamesAsync(const Model::DescribeUuidsByVulNamesRequest& request, const DescribeUuidsByVulNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUuidsByVulNamesOutcomeCallable describeUuidsByVulNamesCallable(const Model::DescribeUuidsByVulNamesRequest& request) const;
+			DescribeVendorListOutcome describeVendorList(const Model::DescribeVendorListRequest &request)const;
+			void describeVendorListAsync(const Model::DescribeVendorListRequest& request, const DescribeVendorListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVendorListOutcomeCallable describeVendorListCallable(const Model::DescribeVendorListRequest& request) const;
 			DescribeVersionConfigOutcome describeVersionConfig(const Model::DescribeVersionConfigRequest &request)const;
 			void describeVersionConfigAsync(const Model::DescribeVersionConfigRequest& request, const DescribeVersionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVersionConfigOutcomeCallable describeVersionConfigCallable(const Model::DescribeVersionConfigRequest& request) const;
@@ -1624,6 +1666,12 @@ namespace AlibabaCloud
 			OperateAgentClientInstallOutcome operateAgentClientInstall(const Model::OperateAgentClientInstallRequest &request)const;
 			void operateAgentClientInstallAsync(const Model::OperateAgentClientInstallRequest& request, const OperateAgentClientInstallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OperateAgentClientInstallOutcomeCallable operateAgentClientInstallCallable(const Model::OperateAgentClientInstallRequest& request) const;
+			OperateCommonOverallConfigOutcome operateCommonOverallConfig(const Model::OperateCommonOverallConfigRequest &request)const;
+			void operateCommonOverallConfigAsync(const Model::OperateCommonOverallConfigRequest& request, const OperateCommonOverallConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OperateCommonOverallConfigOutcomeCallable operateCommonOverallConfigCallable(const Model::OperateCommonOverallConfigRequest& request) const;
+			OperateSuspiciousOverallConfigOutcome operateSuspiciousOverallConfig(const Model::OperateSuspiciousOverallConfigRequest &request)const;
+			void operateSuspiciousOverallConfigAsync(const Model::OperateSuspiciousOverallConfigRequest& request, const OperateSuspiciousOverallConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OperateSuspiciousOverallConfigOutcomeCallable operateSuspiciousOverallConfigCallable(const Model::OperateSuspiciousOverallConfigRequest& request) const;
 			OperateSuspiciousTargetConfigOutcome operateSuspiciousTargetConfig(const Model::OperateSuspiciousTargetConfigRequest &request)const;
 			void operateSuspiciousTargetConfigAsync(const Model::OperateSuspiciousTargetConfigRequest& request, const OperateSuspiciousTargetConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OperateSuspiciousTargetConfigOutcomeCallable operateSuspiciousTargetConfigCallable(const Model::OperateSuspiciousTargetConfigRequest& request) const;

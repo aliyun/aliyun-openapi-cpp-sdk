@@ -80,6 +80,8 @@ void DescribeFieldStatisticsResult::parse(const std::string &payload)
 		groupedFields_.huaweiInstanceCount = std::stoi(groupedFieldsNode["HuaweiInstanceCount"].asString());
 	if(!groupedFieldsNode["AwsInstanceCount"].isNull())
 		groupedFields_.awsInstanceCount = std::stoi(groupedFieldsNode["AwsInstanceCount"].asString());
+	if(!groupedFieldsNode["OutMachineInstanceCount"].isNull())
+		groupedFields_.outMachineInstanceCount = std::stoi(groupedFieldsNode["OutMachineInstanceCount"].asString());
 
 }
 
