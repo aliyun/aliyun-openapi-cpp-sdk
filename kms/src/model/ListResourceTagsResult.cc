@@ -45,10 +45,10 @@ void ListResourceTagsResult::parse(const std::string &payload)
 		Tag tagsObject;
 		if(!valueTagsTag["KeyId"].isNull())
 			tagsObject.keyId = valueTagsTag["KeyId"].asString();
-		if(!valueTagsTag["TagKey"].isNull())
-			tagsObject.tagKey = valueTagsTag["TagKey"].asString();
 		if(!valueTagsTag["TagValue"].isNull())
 			tagsObject.tagValue = valueTagsTag["TagValue"].asString();
+		if(!valueTagsTag["TagKey"].isNull())
+			tagsObject.tagKey = valueTagsTag["TagKey"].asString();
 		tags_.push_back(tagsObject);
 	}
 

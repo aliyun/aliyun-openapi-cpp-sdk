@@ -39,14 +39,14 @@ void GenerateDataKeyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CiphertextBlob"].isNull())
-		ciphertextBlob_ = value["CiphertextBlob"].asString();
-	if(!value["KeyId"].isNull())
-		keyId_ = value["KeyId"].asString();
-	if(!value["Plaintext"].isNull())
-		plaintext_ = value["Plaintext"].asString();
 	if(!value["KeyVersionId"].isNull())
 		keyVersionId_ = value["KeyVersionId"].asString();
+	if(!value["KeyId"].isNull())
+		keyId_ = value["KeyId"].asString();
+	if(!value["CiphertextBlob"].isNull())
+		ciphertextBlob_ = value["CiphertextBlob"].asString();
+	if(!value["Plaintext"].isNull())
+		plaintext_ = value["Plaintext"].asString();
 
 }
 

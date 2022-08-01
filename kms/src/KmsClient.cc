@@ -951,42 +951,6 @@ KmsClient::DescribeSecretOutcomeCallable KmsClient::describeSecretCallable(const
 	return task->get_future();
 }
 
-KmsClient::DescribeServiceOutcome KmsClient::describeService(const DescribeServiceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeServiceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeServiceOutcome(DescribeServiceResult(outcome.result()));
-	else
-		return DescribeServiceOutcome(outcome.error());
-}
-
-void KmsClient::describeServiceAsync(const DescribeServiceRequest& request, const DescribeServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeService(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::DescribeServiceOutcomeCallable KmsClient::describeServiceCallable(const DescribeServiceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeServiceOutcome()>>(
-			[this, request]()
-			{
-			return this->describeService(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 KmsClient::DisableKeyOutcome KmsClient::disableKey(const DisableKeyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,42 +1053,6 @@ KmsClient::EncryptOutcomeCallable KmsClient::encryptCallable(const EncryptReques
 			[this, request]()
 			{
 			return this->encrypt(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-KmsClient::ExportCertificateOutcome KmsClient::exportCertificate(const ExportCertificateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ExportCertificateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ExportCertificateOutcome(ExportCertificateResult(outcome.result()));
-	else
-		return ExportCertificateOutcome(outcome.error());
-}
-
-void KmsClient::exportCertificateAsync(const ExportCertificateRequest& request, const ExportCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, exportCertificate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::ExportCertificateOutcomeCallable KmsClient::exportCertificateCallable(const ExportCertificateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ExportCertificateOutcome()>>(
-			[this, request]()
-			{
-			return this->exportCertificate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1455,78 +1383,6 @@ KmsClient::GetSecretValueOutcomeCallable KmsClient::getSecretValueCallable(const
 	return task->get_future();
 }
 
-KmsClient::ImportCertificateOutcome KmsClient::importCertificate(const ImportCertificateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ImportCertificateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ImportCertificateOutcome(ImportCertificateResult(outcome.result()));
-	else
-		return ImportCertificateOutcome(outcome.error());
-}
-
-void KmsClient::importCertificateAsync(const ImportCertificateRequest& request, const ImportCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, importCertificate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::ImportCertificateOutcomeCallable KmsClient::importCertificateCallable(const ImportCertificateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ImportCertificateOutcome()>>(
-			[this, request]()
-			{
-			return this->importCertificate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-KmsClient::ImportEncryptionCertificateOutcome KmsClient::importEncryptionCertificate(const ImportEncryptionCertificateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ImportEncryptionCertificateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ImportEncryptionCertificateOutcome(ImportEncryptionCertificateResult(outcome.result()));
-	else
-		return ImportEncryptionCertificateOutcome(outcome.error());
-}
-
-void KmsClient::importEncryptionCertificateAsync(const ImportEncryptionCertificateRequest& request, const ImportEncryptionCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, importEncryptionCertificate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::ImportEncryptionCertificateOutcomeCallable KmsClient::importEncryptionCertificateCallable(const ImportEncryptionCertificateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ImportEncryptionCertificateOutcome()>>(
-			[this, request]()
-			{
-			return this->importEncryptionCertificate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 KmsClient::ImportKeyMaterialOutcome KmsClient::importKeyMaterial(const ImportKeyMaterialRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,42 +1485,6 @@ KmsClient::ListAliasesByKeyIdOutcomeCallable KmsClient::listAliasesByKeyIdCallab
 			[this, request]()
 			{
 			return this->listAliasesByKeyId(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-KmsClient::ListCertificatesOutcome KmsClient::listCertificates(const ListCertificatesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListCertificatesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListCertificatesOutcome(ListCertificatesResult(outcome.result()));
-	else
-		return ListCertificatesOutcome(outcome.error());
-}
-
-void KmsClient::listCertificatesAsync(const ListCertificatesRequest& request, const ListCertificatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listCertificates(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-KmsClient::ListCertificatesOutcomeCallable KmsClient::listCertificatesCallable(const ListCertificatesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListCertificatesOutcome()>>(
-			[this, request]()
-			{
-			return this->listCertificates(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

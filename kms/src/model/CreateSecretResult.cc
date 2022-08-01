@@ -39,33 +39,35 @@ void CreateSecretResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Arn"].isNull())
-		arn_ = value["Arn"].asString();
-	if(!value["VersionId"].isNull())
-		versionId_ = value["VersionId"].asString();
-	if(!value["SecretName"].isNull())
-		secretName_ = value["SecretName"].asString();
-	if(!value["SecretType"].isNull())
-		secretType_ = value["SecretType"].asString();
 	if(!value["AutomaticRotation"].isNull())
 		automaticRotation_ = value["AutomaticRotation"].asString();
-	if(!value["RotationInterval"].isNull())
-		rotationInterval_ = value["RotationInterval"].asString();
+	if(!value["SecretName"].isNull())
+		secretName_ = value["SecretName"].asString();
+	if(!value["VersionId"].isNull())
+		versionId_ = value["VersionId"].asString();
 	if(!value["NextRotationDate"].isNull())
 		nextRotationDate_ = value["NextRotationDate"].asString();
+	if(!value["SecretType"].isNull())
+		secretType_ = value["SecretType"].asString();
+	if(!value["RotationInterval"].isNull())
+		rotationInterval_ = value["RotationInterval"].asString();
+	if(!value["Arn"].isNull())
+		arn_ = value["Arn"].asString();
 	if(!value["ExtendedConfig"].isNull())
 		extendedConfig_ = value["ExtendedConfig"].asString();
+	if(!value["DKMSInstanceId"].isNull())
+		dKMSInstanceId_ = value["DKMSInstanceId"].asString();
 
-}
-
-std::string CreateSecretResult::getVersionId()const
-{
-	return versionId_;
 }
 
 std::string CreateSecretResult::getSecretName()const
 {
 	return secretName_;
+}
+
+std::string CreateSecretResult::getVersionId()const
+{
+	return versionId_;
 }
 
 std::string CreateSecretResult::getNextRotationDate()const
@@ -86,6 +88,11 @@ std::string CreateSecretResult::getRotationInterval()const
 std::string CreateSecretResult::getExtendedConfig()const
 {
 	return extendedConfig_;
+}
+
+std::string CreateSecretResult::getDKMSInstanceId()const
+{
+	return dKMSInstanceId_;
 }
 
 std::string CreateSecretResult::getArn()const

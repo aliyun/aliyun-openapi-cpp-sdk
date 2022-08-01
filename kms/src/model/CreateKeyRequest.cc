@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,82 @@
 
 using AlibabaCloud::Kms::Model::CreateKeyRequest;
 
-CreateKeyRequest::CreateKeyRequest() :
-	RpcServiceRequest("kms", "2016-01-20", "CreateKey")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateKeyRequest::CreateKeyRequest()
+    : RpcServiceRequest("kms", "2016-01-20", "CreateKey") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateKeyRequest::~CreateKeyRequest()
-{}
+CreateKeyRequest::~CreateKeyRequest() {}
 
-std::string CreateKeyRequest::getProtectionLevel()const
-{
-	return protectionLevel_;
+std::string CreateKeyRequest::getProtectionLevel() const {
+  return protectionLevel_;
 }
 
-void CreateKeyRequest::setProtectionLevel(const std::string& protectionLevel)
-{
-	protectionLevel_ = protectionLevel;
-	setParameter("ProtectionLevel", protectionLevel);
+void CreateKeyRequest::setProtectionLevel(const std::string &protectionLevel) {
+  protectionLevel_ = protectionLevel;
+  setParameter(std::string("ProtectionLevel"), protectionLevel);
 }
 
-std::string CreateKeyRequest::getKeyUsage()const
-{
-	return keyUsage_;
+std::string CreateKeyRequest::getKeyUsage() const {
+  return keyUsage_;
 }
 
-void CreateKeyRequest::setKeyUsage(const std::string& keyUsage)
-{
-	keyUsage_ = keyUsage;
-	setParameter("KeyUsage", keyUsage);
+void CreateKeyRequest::setKeyUsage(const std::string &keyUsage) {
+  keyUsage_ = keyUsage;
+  setParameter(std::string("KeyUsage"), keyUsage);
 }
 
-std::string CreateKeyRequest::getOrigin()const
-{
-	return origin_;
+std::string CreateKeyRequest::getOrigin() const {
+  return origin_;
 }
 
-void CreateKeyRequest::setOrigin(const std::string& origin)
-{
-	origin_ = origin;
-	setParameter("Origin", origin);
+void CreateKeyRequest::setOrigin(const std::string &origin) {
+  origin_ = origin;
+  setParameter(std::string("Origin"), origin);
 }
 
-std::string CreateKeyRequest::getDescription()const
-{
-	return description_;
+std::string CreateKeyRequest::getDKMSInstanceId() const {
+  return dKMSInstanceId_;
 }
 
-void CreateKeyRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void CreateKeyRequest::setDKMSInstanceId(const std::string &dKMSInstanceId) {
+  dKMSInstanceId_ = dKMSInstanceId;
+  setParameter(std::string("DKMSInstanceId"), dKMSInstanceId);
 }
 
-std::string CreateKeyRequest::getKeySpec()const
-{
-	return keySpec_;
+std::string CreateKeyRequest::getDescription() const {
+  return description_;
 }
 
-void CreateKeyRequest::setKeySpec(const std::string& keySpec)
-{
-	keySpec_ = keySpec;
-	setParameter("KeySpec", keySpec);
+void CreateKeyRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
-std::string CreateKeyRequest::getRotationInterval()const
-{
-	return rotationInterval_;
+std::string CreateKeyRequest::getKeySpec() const {
+  return keySpec_;
 }
 
-void CreateKeyRequest::setRotationInterval(const std::string& rotationInterval)
-{
-	rotationInterval_ = rotationInterval;
-	setParameter("RotationInterval", rotationInterval);
+void CreateKeyRequest::setKeySpec(const std::string &keySpec) {
+  keySpec_ = keySpec;
+  setParameter(std::string("KeySpec"), keySpec);
 }
 
-bool CreateKeyRequest::getEnableAutomaticRotation()const
-{
-	return enableAutomaticRotation_;
+std::string CreateKeyRequest::getRotationInterval() const {
+  return rotationInterval_;
 }
 
-void CreateKeyRequest::setEnableAutomaticRotation(bool enableAutomaticRotation)
-{
-	enableAutomaticRotation_ = enableAutomaticRotation;
-	setParameter("EnableAutomaticRotation", enableAutomaticRotation ? "true" : "false");
+void CreateKeyRequest::setRotationInterval(const std::string &rotationInterval) {
+  rotationInterval_ = rotationInterval;
+  setParameter(std::string("RotationInterval"), rotationInterval);
+}
+
+bool CreateKeyRequest::getEnableAutomaticRotation() const {
+  return enableAutomaticRotation_;
+}
+
+void CreateKeyRequest::setEnableAutomaticRotation(bool enableAutomaticRotation) {
+  enableAutomaticRotation_ = enableAutomaticRotation;
+  setParameter(std::string("EnableAutomaticRotation"), enableAutomaticRotation ? "true" : "false");
 }
 

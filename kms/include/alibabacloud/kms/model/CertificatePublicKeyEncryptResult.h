@@ -37,14 +37,14 @@ namespace AlibabaCloud
 				CertificatePublicKeyEncryptResult();
 				explicit CertificatePublicKeyEncryptResult(const std::string &payload);
 				~CertificatePublicKeyEncryptResult();
-				std::string getCertificateId()const;
 				std::string getCiphertextBlob()const;
+				std::string getCertificateId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string certificateId_;
 				std::string ciphertextBlob_;
+				std::string certificateId_;
 
 			};
 		}

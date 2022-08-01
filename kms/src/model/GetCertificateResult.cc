@@ -39,14 +39,14 @@ void GetCertificateResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Certificate"].isNull())
-		certificate_ = value["Certificate"].asString();
 	if(!value["CertificateChain"].isNull())
 		certificateChain_ = value["CertificateChain"].asString();
-	if(!value["Csr"].isNull())
-		csr_ = value["Csr"].asString();
+	if(!value["Certificate"].isNull())
+		certificate_ = value["Certificate"].asString();
 	if(!value["CertificateId"].isNull())
 		certificateId_ = value["CertificateId"].asString();
+	if(!value["Csr"].isNull())
+		csr_ = value["Csr"].asString();
 
 }
 

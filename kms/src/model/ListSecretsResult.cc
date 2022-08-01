@@ -43,24 +43,24 @@ void ListSecretsResult::parse(const std::string &payload)
 	for (auto valueSecretListSecret : allSecretListNode)
 	{
 		Secret secretListObject;
-		if(!valueSecretListSecret["CreateTime"].isNull())
-			secretListObject.createTime = valueSecretListSecret["CreateTime"].asString();
-		if(!valueSecretListSecret["PlannedDeleteTime"].isNull())
-			secretListObject.plannedDeleteTime = valueSecretListSecret["PlannedDeleteTime"].asString();
 		if(!valueSecretListSecret["SecretName"].isNull())
 			secretListObject.secretName = valueSecretListSecret["SecretName"].asString();
 		if(!valueSecretListSecret["UpdateTime"].isNull())
 			secretListObject.updateTime = valueSecretListSecret["UpdateTime"].asString();
 		if(!valueSecretListSecret["SecretType"].isNull())
 			secretListObject.secretType = valueSecretListSecret["SecretType"].asString();
+		if(!valueSecretListSecret["PlannedDeleteTime"].isNull())
+			secretListObject.plannedDeleteTime = valueSecretListSecret["PlannedDeleteTime"].asString();
+		if(!valueSecretListSecret["CreateTime"].isNull())
+			secretListObject.createTime = valueSecretListSecret["CreateTime"].asString();
 		auto allTagsNode = valueSecretListSecret["Tags"]["Tag"];
 		for (auto valueSecretListSecretTagsTag : allTagsNode)
 		{
 			Secret::Tag tagsObject;
-			if(!valueSecretListSecretTagsTag["TagKey"].isNull())
-				tagsObject.tagKey = valueSecretListSecretTagsTag["TagKey"].asString();
 			if(!valueSecretListSecretTagsTag["TagValue"].isNull())
 				tagsObject.tagValue = valueSecretListSecretTagsTag["TagValue"].asString();
+			if(!valueSecretListSecretTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueSecretListSecretTagsTag["TagKey"].asString();
 			secretListObject.tags.push_back(tagsObject);
 		}
 		secretList_.push_back(secretListObject);

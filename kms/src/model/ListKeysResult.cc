@@ -43,10 +43,10 @@ void ListKeysResult::parse(const std::string &payload)
 	for (auto valueKeysKey : allKeysNode)
 	{
 		Key keysObject;
-		if(!valueKeysKey["KeyArn"].isNull())
-			keysObject.keyArn = valueKeysKey["KeyArn"].asString();
 		if(!valueKeysKey["KeyId"].isNull())
 			keysObject.keyId = valueKeysKey["KeyId"].asString();
+		if(!valueKeysKey["KeyArn"].isNull())
+			keysObject.keyArn = valueKeysKey["KeyArn"].asString();
 		keys_.push_back(keysObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -39,12 +39,12 @@ void ExportDataKeyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ExportedDataKey"].isNull())
-		exportedDataKey_ = value["ExportedDataKey"].asString();
-	if(!value["KeyId"].isNull())
-		keyId_ = value["KeyId"].asString();
 	if(!value["KeyVersionId"].isNull())
 		keyVersionId_ = value["KeyVersionId"].asString();
+	if(!value["KeyId"].isNull())
+		keyId_ = value["KeyId"].asString();
+	if(!value["ExportedDataKey"].isNull())
+		exportedDataKey_ = value["ExportedDataKey"].asString();
 
 }
 

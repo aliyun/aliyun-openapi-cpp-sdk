@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				std::string getProtectionLevel()const;
 				std::string getIssuer()const;
 				std::string getCertificateId()const;
-				std::string getKeySpec()const;
 				std::string getCreatedAt()const;
+				std::string getKeySpec()const;
 				std::vector<std::string> getSubjectAlternativeNames()const;
 				std::string getSignatureAlgorithm()const;
 				std::string getSubjectKeyIdentifier()const;
@@ -63,8 +63,8 @@ namespace AlibabaCloud
 				std::string protectionLevel_;
 				std::string issuer_;
 				std::string certificateId_;
-				std::string keySpec_;
 				std::string createdAt_;
+				std::string keySpec_;
 				std::vector<std::string> subjectAlternativeNames_;
 				std::string signatureAlgorithm_;
 				std::string subjectKeyIdentifier_;

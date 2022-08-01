@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Kms::Model::CreateCertificateRequest;
 
-CreateCertificateRequest::CreateCertificateRequest() :
-	RpcServiceRequest("kms", "2016-01-20", "CreateCertificate")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateCertificateRequest::CreateCertificateRequest()
+    : RpcServiceRequest("kms", "2016-01-20", "CreateCertificate") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateCertificateRequest::~CreateCertificateRequest()
-{}
+CreateCertificateRequest::~CreateCertificateRequest() {}
 
-std::string CreateCertificateRequest::getProtectionLevel()const
-{
-	return protectionLevel_;
+std::string CreateCertificateRequest::getProtectionLevel() const {
+  return protectionLevel_;
 }
 
-void CreateCertificateRequest::setProtectionLevel(const std::string& protectionLevel)
-{
-	protectionLevel_ = protectionLevel;
-	setParameter("ProtectionLevel", protectionLevel);
+void CreateCertificateRequest::setProtectionLevel(const std::string &protectionLevel) {
+  protectionLevel_ = protectionLevel;
+  setParameter(std::string("ProtectionLevel"), protectionLevel);
 }
 
-bool CreateCertificateRequest::getExportablePrivateKey()const
-{
-	return exportablePrivateKey_;
+bool CreateCertificateRequest::getExportablePrivateKey() const {
+  return exportablePrivateKey_;
 }
 
-void CreateCertificateRequest::setExportablePrivateKey(bool exportablePrivateKey)
-{
-	exportablePrivateKey_ = exportablePrivateKey;
-	setParameter("ExportablePrivateKey", exportablePrivateKey ? "true" : "false");
+void CreateCertificateRequest::setExportablePrivateKey(bool exportablePrivateKey) {
+  exportablePrivateKey_ = exportablePrivateKey;
+  setParameter(std::string("ExportablePrivateKey"), exportablePrivateKey ? "true" : "false");
 }
 
-std::string CreateCertificateRequest::getClientToken()const
-{
-	return clientToken_;
+std::string CreateCertificateRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void CreateCertificateRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void CreateCertificateRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string CreateCertificateRequest::getSubject()const
-{
-	return subject_;
+std::string CreateCertificateRequest::getSubject() const {
+  return subject_;
 }
 
-void CreateCertificateRequest::setSubject(const std::string& subject)
-{
-	subject_ = subject;
-	setParameter("Subject", subject);
+void CreateCertificateRequest::setSubject(const std::string &subject) {
+  subject_ = subject;
+  setParameter(std::string("Subject"), subject);
 }
 
-std::map<std::string, std::string> CreateCertificateRequest::getSubjectAlternativeNames()const
-{
-	return subjectAlternativeNames_;
+std::map<std::string, std::string> CreateCertificateRequest::getSubjectAlternativeNames() const {
+  return subjectAlternativeNames_;
 }
 
-void CreateCertificateRequest::setSubjectAlternativeNames(const std::map<std::string, std::string>& subjectAlternativeNames)
-{
-	subjectAlternativeNames_ = subjectAlternativeNames;
-	setJsonParameters("SubjectAlternativeNames", subjectAlternativeNames);
+void CreateCertificateRequest::setSubjectAlternativeNames(std::map<std::string, std::string> subjectAlternativeNames) {
+  subjectAlternativeNames_ = subjectAlternativeNames;
+  setParameter(std::string("SubjectAlternativeNames"), subjectAlternativeNames);
 }
 
-std::string CreateCertificateRequest::getKeySpec()const
-{
-	return keySpec_;
+std::string CreateCertificateRequest::getKeySpec() const {
+  return keySpec_;
 }
 
-void CreateCertificateRequest::setKeySpec(const std::string& keySpec)
-{
-	keySpec_ = keySpec;
-	setParameter("KeySpec", keySpec);
+void CreateCertificateRequest::setKeySpec(const std::string &keySpec) {
+  keySpec_ = keySpec;
+  setParameter(std::string("KeySpec"), keySpec);
 }
 

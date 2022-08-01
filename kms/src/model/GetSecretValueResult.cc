@@ -42,39 +42,39 @@ void GetSecretValueResult::parse(const std::string &payload)
 	auto allVersionStages = value["VersionStages"]["VersionStage"];
 	for (const auto &item : allVersionStages)
 		versionStages_.push_back(item.asString());
-	if(!value["SecretName"].isNull())
-		secretName_ = value["SecretName"].asString();
-	if(!value["VersionId"].isNull())
-		versionId_ = value["VersionId"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
-	if(!value["SecretData"].isNull())
-		secretData_ = value["SecretData"].asString();
 	if(!value["SecretDataType"].isNull())
 		secretDataType_ = value["SecretDataType"].asString();
-	if(!value["AutomaticRotation"].isNull())
-		automaticRotation_ = value["AutomaticRotation"].asString();
-	if(!value["RotationInterval"].isNull())
-		rotationInterval_ = value["RotationInterval"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["VersionId"].isNull())
+		versionId_ = value["VersionId"].asString();
 	if(!value["NextRotationDate"].isNull())
 		nextRotationDate_ = value["NextRotationDate"].asString();
+	if(!value["SecretData"].isNull())
+		secretData_ = value["SecretData"].asString();
+	if(!value["RotationInterval"].isNull())
+		rotationInterval_ = value["RotationInterval"].asString();
 	if(!value["ExtendedConfig"].isNull())
 		extendedConfig_ = value["ExtendedConfig"].asString();
 	if(!value["LastRotationDate"].isNull())
 		lastRotationDate_ = value["LastRotationDate"].asString();
+	if(!value["SecretName"].isNull())
+		secretName_ = value["SecretName"].asString();
+	if(!value["AutomaticRotation"].isNull())
+		automaticRotation_ = value["AutomaticRotation"].asString();
 	if(!value["SecretType"].isNull())
 		secretType_ = value["SecretType"].asString();
 
 }
 
-std::string GetSecretValueResult::getSecretName()const
-{
-	return secretName_;
-}
-
 std::string GetSecretValueResult::getVersionId()const
 {
 	return versionId_;
+}
+
+std::string GetSecretValueResult::getSecretName()const
+{
+	return secretName_;
 }
 
 std::string GetSecretValueResult::getNextRotationDate()const

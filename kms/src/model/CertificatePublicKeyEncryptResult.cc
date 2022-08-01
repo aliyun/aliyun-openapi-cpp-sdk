@@ -39,20 +39,20 @@ void CertificatePublicKeyEncryptResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CertificateId"].isNull())
-		certificateId_ = value["CertificateId"].asString();
 	if(!value["CiphertextBlob"].isNull())
 		ciphertextBlob_ = value["CiphertextBlob"].asString();
+	if(!value["CertificateId"].isNull())
+		certificateId_ = value["CertificateId"].asString();
 
-}
-
-std::string CertificatePublicKeyEncryptResult::getCertificateId()const
-{
-	return certificateId_;
 }
 
 std::string CertificatePublicKeyEncryptResult::getCiphertextBlob()const
 {
 	return ciphertextBlob_;
+}
+
+std::string CertificatePublicKeyEncryptResult::getCertificateId()const
+{
+	return certificateId_;
 }
 

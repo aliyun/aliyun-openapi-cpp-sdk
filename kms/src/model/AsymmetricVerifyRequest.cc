@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Kms::Model::AsymmetricVerifyRequest;
 
-AsymmetricVerifyRequest::AsymmetricVerifyRequest() :
-	RpcServiceRequest("kms", "2016-01-20", "AsymmetricVerify")
-{
-	setMethod(HttpRequest::Method::Post);
+AsymmetricVerifyRequest::AsymmetricVerifyRequest()
+    : RpcServiceRequest("kms", "2016-01-20", "AsymmetricVerify") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-AsymmetricVerifyRequest::~AsymmetricVerifyRequest()
-{}
+AsymmetricVerifyRequest::~AsymmetricVerifyRequest() {}
 
-std::string AsymmetricVerifyRequest::getKeyVersionId()const
-{
-	return keyVersionId_;
+std::string AsymmetricVerifyRequest::getKeyVersionId() const {
+  return keyVersionId_;
 }
 
-void AsymmetricVerifyRequest::setKeyVersionId(const std::string& keyVersionId)
-{
-	keyVersionId_ = keyVersionId;
-	setParameter("KeyVersionId", keyVersionId);
+void AsymmetricVerifyRequest::setKeyVersionId(const std::string &keyVersionId) {
+  keyVersionId_ = keyVersionId;
+  setParameter(std::string("KeyVersionId"), keyVersionId);
 }
 
-std::string AsymmetricVerifyRequest::getDigest()const
-{
-	return digest_;
+std::string AsymmetricVerifyRequest::getDigest() const {
+  return digest_;
 }
 
-void AsymmetricVerifyRequest::setDigest(const std::string& digest)
-{
-	digest_ = digest;
-	setParameter("Digest", digest);
+void AsymmetricVerifyRequest::setDigest(const std::string &digest) {
+  digest_ = digest;
+  setParameter(std::string("Digest"), digest);
 }
 
-std::string AsymmetricVerifyRequest::getKeyId()const
-{
-	return keyId_;
+std::string AsymmetricVerifyRequest::getKeyId() const {
+  return keyId_;
 }
 
-void AsymmetricVerifyRequest::setKeyId(const std::string& keyId)
-{
-	keyId_ = keyId;
-	setParameter("KeyId", keyId);
+void AsymmetricVerifyRequest::setKeyId(const std::string &keyId) {
+  keyId_ = keyId;
+  setParameter(std::string("KeyId"), keyId);
 }
 
-std::string AsymmetricVerifyRequest::getValue()const
-{
-	return value_;
+std::string AsymmetricVerifyRequest::getValue() const {
+  return value_;
 }
 
-void AsymmetricVerifyRequest::setValue(const std::string& value)
-{
-	value_ = value;
-	setParameter("Value", value);
+void AsymmetricVerifyRequest::setValue(const std::string &value) {
+  value_ = value;
+  setParameter(std::string("Value"), value);
 }
 
-std::string AsymmetricVerifyRequest::getAlgorithm()const
-{
-	return algorithm_;
+std::string AsymmetricVerifyRequest::getAlgorithm() const {
+  return algorithm_;
 }
 
-void AsymmetricVerifyRequest::setAlgorithm(const std::string& algorithm)
-{
-	algorithm_ = algorithm;
-	setParameter("Algorithm", algorithm);
+void AsymmetricVerifyRequest::setAlgorithm(const std::string &algorithm) {
+  algorithm_ = algorithm;
+  setParameter(std::string("Algorithm"), algorithm);
 }
 

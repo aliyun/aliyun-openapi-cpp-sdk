@@ -35,17 +35,18 @@ namespace AlibabaCloud
 				struct KeyMetadata
 				{
 					std::string origin;
-					std::string creationDate;
 					std::string protectionLevel;
+					std::string creationDate;
 					std::string description;
-					std::string lastRotationDate;
 					std::string rotationInterval;
+					std::string lastRotationDate;
 					std::string keySpec;
 					std::string keyUsage;
 					std::string keyId;
 					std::string primaryKeyVersion;
-					std::string creator;
 					std::string deletionProtection;
+					std::string creator;
+					std::string dKMSInstanceId;
 					std::string deleteDate;
 					std::string automaticRotation;
 					std::string nextRotationDate;

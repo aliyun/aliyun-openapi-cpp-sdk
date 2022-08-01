@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Kms::Model::DeleteSecretRequest;
 
-DeleteSecretRequest::DeleteSecretRequest() :
-	RpcServiceRequest("kms", "2016-01-20", "DeleteSecret")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteSecretRequest::DeleteSecretRequest()
+    : RpcServiceRequest("kms", "2016-01-20", "DeleteSecret") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteSecretRequest::~DeleteSecretRequest()
-{}
+DeleteSecretRequest::~DeleteSecretRequest() {}
 
-std::string DeleteSecretRequest::getForceDeleteWithoutRecovery()const
-{
-	return forceDeleteWithoutRecovery_;
+std::string DeleteSecretRequest::getForceDeleteWithoutRecovery() const {
+  return forceDeleteWithoutRecovery_;
 }
 
-void DeleteSecretRequest::setForceDeleteWithoutRecovery(const std::string& forceDeleteWithoutRecovery)
-{
-	forceDeleteWithoutRecovery_ = forceDeleteWithoutRecovery;
-	setParameter("ForceDeleteWithoutRecovery", forceDeleteWithoutRecovery);
+void DeleteSecretRequest::setForceDeleteWithoutRecovery(const std::string &forceDeleteWithoutRecovery) {
+  forceDeleteWithoutRecovery_ = forceDeleteWithoutRecovery;
+  setParameter(std::string("ForceDeleteWithoutRecovery"), forceDeleteWithoutRecovery);
 }
 
-std::string DeleteSecretRequest::getRecoveryWindowInDays()const
-{
-	return recoveryWindowInDays_;
+std::string DeleteSecretRequest::getRecoveryWindowInDays() const {
+  return recoveryWindowInDays_;
 }
 
-void DeleteSecretRequest::setRecoveryWindowInDays(const std::string& recoveryWindowInDays)
-{
-	recoveryWindowInDays_ = recoveryWindowInDays;
-	setParameter("RecoveryWindowInDays", recoveryWindowInDays);
+void DeleteSecretRequest::setRecoveryWindowInDays(const std::string &recoveryWindowInDays) {
+  recoveryWindowInDays_ = recoveryWindowInDays;
+  setParameter(std::string("RecoveryWindowInDays"), recoveryWindowInDays);
 }
 
-std::string DeleteSecretRequest::getSecretName()const
-{
-	return secretName_;
+std::string DeleteSecretRequest::getSecretName() const {
+  return secretName_;
 }
 
-void DeleteSecretRequest::setSecretName(const std::string& secretName)
-{
-	secretName_ = secretName;
-	setParameter("SecretName", secretName);
+void DeleteSecretRequest::setSecretName(const std::string &secretName) {
+  secretName_ = secretName;
+  setParameter(std::string("SecretName"), secretName);
 }
 

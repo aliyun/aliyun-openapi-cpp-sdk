@@ -43,21 +43,21 @@ void ListSecretVersionIdsResult::parse(const std::string &payload)
 	for (auto valueVersionIdsVersionId : allVersionIdsNode)
 	{
 		VersionId versionIdsObject;
-		if(!valueVersionIdsVersionId["CreateTime"].isNull())
-			versionIdsObject.createTime = valueVersionIdsVersionId["CreateTime"].asString();
 		if(!valueVersionIdsVersionId["VersionId"].isNull())
 			versionIdsObject.versionId = valueVersionIdsVersionId["VersionId"].asString();
+		if(!valueVersionIdsVersionId["CreateTime"].isNull())
+			versionIdsObject.createTime = valueVersionIdsVersionId["CreateTime"].asString();
 		auto allVersionStages = value["VersionStages"]["VersionStage"];
 		for (auto value : allVersionStages)
 			versionIdsObject.versionStages.push_back(value.asString());
 		versionIds_.push_back(versionIdsObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["SecretName"].isNull())
 		secretName_ = value["SecretName"].asString();
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
 

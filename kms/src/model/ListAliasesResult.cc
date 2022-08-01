@@ -45,18 +45,18 @@ void ListAliasesResult::parse(const std::string &payload)
 		Alias aliasesObject;
 		if(!valueAliasesAlias["KeyId"].isNull())
 			aliasesObject.keyId = valueAliasesAlias["KeyId"].asString();
-		if(!valueAliasesAlias["AliasName"].isNull())
-			aliasesObject.aliasName = valueAliasesAlias["AliasName"].asString();
 		if(!valueAliasesAlias["AliasArn"].isNull())
 			aliasesObject.aliasArn = valueAliasesAlias["AliasArn"].asString();
+		if(!valueAliasesAlias["AliasName"].isNull())
+			aliasesObject.aliasName = valueAliasesAlias["AliasName"].asString();
 		aliases_.push_back(aliasesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

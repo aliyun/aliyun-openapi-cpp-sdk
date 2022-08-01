@@ -43,38 +43,40 @@ void DescribeSecretResult::parse(const std::string &payload)
 	for (auto valueTagsTag : allTagsNode)
 	{
 		Tag tagsObject;
-		if(!valueTagsTag["TagKey"].isNull())
-			tagsObject.tagKey = valueTagsTag["TagKey"].asString();
 		if(!valueTagsTag["TagValue"].isNull())
 			tagsObject.tagValue = valueTagsTag["TagValue"].asString();
+		if(!valueTagsTag["TagKey"].isNull())
+			tagsObject.tagKey = valueTagsTag["TagKey"].asString();
 		tags_.push_back(tagsObject);
 	}
-	if(!value["Arn"].isNull())
-		arn_ = value["Arn"].asString();
-	if(!value["SecretName"].isNull())
-		secretName_ = value["SecretName"].asString();
-	if(!value["EncryptionKeyId"].isNull())
-		encryptionKeyId_ = value["EncryptionKeyId"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
 	if(!value["UpdateTime"].isNull())
 		updateTime_ = value["UpdateTime"].asString();
-	if(!value["PlannedDeleteTime"].isNull())
-		plannedDeleteTime_ = value["PlannedDeleteTime"].asString();
-	if(!value["AutomaticRotation"].isNull())
-		automaticRotation_ = value["AutomaticRotation"].asString();
-	if(!value["LastRotationDate"].isNull())
-		lastRotationDate_ = value["LastRotationDate"].asString();
-	if(!value["RotationInterval"].isNull())
-		rotationInterval_ = value["RotationInterval"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
 	if(!value["NextRotationDate"].isNull())
 		nextRotationDate_ = value["NextRotationDate"].asString();
+	if(!value["EncryptionKeyId"].isNull())
+		encryptionKeyId_ = value["EncryptionKeyId"].asString();
+	if(!value["RotationInterval"].isNull())
+		rotationInterval_ = value["RotationInterval"].asString();
+	if(!value["Arn"].isNull())
+		arn_ = value["Arn"].asString();
 	if(!value["ExtendedConfig"].isNull())
 		extendedConfig_ = value["ExtendedConfig"].asString();
+	if(!value["LastRotationDate"].isNull())
+		lastRotationDate_ = value["LastRotationDate"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["SecretName"].isNull())
+		secretName_ = value["SecretName"].asString();
+	if(!value["AutomaticRotation"].isNull())
+		automaticRotation_ = value["AutomaticRotation"].asString();
 	if(!value["SecretType"].isNull())
 		secretType_ = value["SecretType"].asString();
+	if(!value["PlannedDeleteTime"].isNull())
+		plannedDeleteTime_ = value["PlannedDeleteTime"].asString();
+	if(!value["DKMSInstanceId"].isNull())
+		dKMSInstanceId_ = value["DKMSInstanceId"].asString();
 
 }
 
@@ -83,14 +85,14 @@ std::string DescribeSecretResult::getDescription()const
 	return description_;
 }
 
-std::string DescribeSecretResult::getLastRotationDate()const
-{
-	return lastRotationDate_;
-}
-
 std::string DescribeSecretResult::getRotationInterval()const
 {
 	return rotationInterval_;
+}
+
+std::string DescribeSecretResult::getLastRotationDate()const
+{
+	return lastRotationDate_;
 }
 
 std::string DescribeSecretResult::getSecretType()const
@@ -101,6 +103,11 @@ std::string DescribeSecretResult::getSecretType()const
 std::string DescribeSecretResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+std::string DescribeSecretResult::getDKMSInstanceId()const
+{
+	return dKMSInstanceId_;
 }
 
 std::string DescribeSecretResult::getAutomaticRotation()const
@@ -123,14 +130,14 @@ std::string DescribeSecretResult::getUpdateTime()const
 	return updateTime_;
 }
 
-std::string DescribeSecretResult::getPlannedDeleteTime()const
-{
-	return plannedDeleteTime_;
-}
-
 std::string DescribeSecretResult::getExtendedConfig()const
 {
 	return extendedConfig_;
+}
+
+std::string DescribeSecretResult::getPlannedDeleteTime()const
+{
+	return plannedDeleteTime_;
 }
 
 std::string DescribeSecretResult::getArn()const

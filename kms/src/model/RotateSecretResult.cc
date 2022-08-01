@@ -39,12 +39,12 @@ void RotateSecretResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Arn"].isNull())
-		arn_ = value["Arn"].asString();
 	if(!value["VersionId"].isNull())
 		versionId_ = value["VersionId"].asString();
 	if(!value["SecretName"].isNull())
 		secretName_ = value["SecretName"].asString();
+	if(!value["Arn"].isNull())
+		arn_ = value["Arn"].asString();
 
 }
 

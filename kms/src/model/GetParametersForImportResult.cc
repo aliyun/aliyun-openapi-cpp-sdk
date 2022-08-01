@@ -43,10 +43,10 @@ void GetParametersForImportResult::parse(const std::string &payload)
 		keyId_ = value["KeyId"].asString();
 	if(!value["ImportToken"].isNull())
 		importToken_ = value["ImportToken"].asString();
-	if(!value["PublicKey"].isNull())
-		publicKey_ = value["PublicKey"].asString();
 	if(!value["TokenExpireTime"].isNull())
 		tokenExpireTime_ = value["TokenExpireTime"].asString();
+	if(!value["PublicKey"].isNull())
+		publicKey_ = value["PublicKey"].asString();
 
 }
 

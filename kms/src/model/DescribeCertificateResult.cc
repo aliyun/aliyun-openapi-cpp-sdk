@@ -42,40 +42,40 @@ void DescribeCertificateResult::parse(const std::string &payload)
 	auto allSubjectAlternativeNames = value["SubjectAlternativeNames"]["SubjectAlternativeName"];
 	for (const auto &item : allSubjectAlternativeNames)
 		subjectAlternativeNames_.push_back(item.asString());
-	if(!value["CertificateId"].isNull())
-		certificateId_ = value["CertificateId"].asString();
-	if(!value["Arn"].isNull())
-		arn_ = value["Arn"].asString();
-	if(!value["KeySpec"].isNull())
-		keySpec_ = value["KeySpec"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["CreatedAt"].isNull())
-		createdAt_ = value["CreatedAt"].asString();
-	if(!value["UpdatedAt"].isNull())
-		updatedAt_ = value["UpdatedAt"].asString();
 	if(!value["Serial"].isNull())
 		serial_ = value["Serial"].asString();
-	if(!value["Subject"].isNull())
-		subject_ = value["Subject"].asString();
-	if(!value["Issuer"].isNull())
-		issuer_ = value["Issuer"].asString();
-	if(!value["NotBefore"].isNull())
-		notBefore_ = value["NotBefore"].asString();
-	if(!value["NotAfter"].isNull())
-		notAfter_ = value["NotAfter"].asString();
-	if(!value["SignatureAlgorithm"].isNull())
-		signatureAlgorithm_ = value["SignatureAlgorithm"].asString();
-	if(!value["SubjectPublicKey"].isNull())
-		subjectPublicKey_ = value["SubjectPublicKey"].asString();
-	if(!value["SubjectKeyIdentifier"].isNull())
-		subjectKeyIdentifier_ = value["SubjectKeyIdentifier"].asString();
+	if(!value["CreatedAt"].isNull())
+		createdAt_ = value["CreatedAt"].asString();
 	if(!value["Tags"].isNull())
 		tags_ = value["Tags"].asString();
+	if(!value["SubjectKeyIdentifier"].isNull())
+		subjectKeyIdentifier_ = value["SubjectKeyIdentifier"].asString();
 	if(!value["ExportablePrivateKey"].isNull())
 		exportablePrivateKey_ = value["ExportablePrivateKey"].asString() == "true";
+	if(!value["Issuer"].isNull())
+		issuer_ = value["Issuer"].asString();
+	if(!value["SignatureAlgorithm"].isNull())
+		signatureAlgorithm_ = value["SignatureAlgorithm"].asString();
+	if(!value["NotAfter"].isNull())
+		notAfter_ = value["NotAfter"].asString();
+	if(!value["Arn"].isNull())
+		arn_ = value["Arn"].asString();
+	if(!value["CertificateId"].isNull())
+		certificateId_ = value["CertificateId"].asString();
+	if(!value["KeySpec"].isNull())
+		keySpec_ = value["KeySpec"].asString();
 	if(!value["ProtectionLevel"].isNull())
 		protectionLevel_ = value["ProtectionLevel"].asString();
+	if(!value["SubjectPublicKey"].isNull())
+		subjectPublicKey_ = value["SubjectPublicKey"].asString();
+	if(!value["Subject"].isNull())
+		subject_ = value["Subject"].asString();
+	if(!value["NotBefore"].isNull())
+		notBefore_ = value["NotBefore"].asString();
+	if(!value["UpdatedAt"].isNull())
+		updatedAt_ = value["UpdatedAt"].asString();
 
 }
 
@@ -99,14 +99,14 @@ std::string DescribeCertificateResult::getCertificateId()const
 	return certificateId_;
 }
 
-std::string DescribeCertificateResult::getKeySpec()const
-{
-	return keySpec_;
-}
-
 std::string DescribeCertificateResult::getCreatedAt()const
 {
 	return createdAt_;
+}
+
+std::string DescribeCertificateResult::getKeySpec()const
+{
+	return keySpec_;
 }
 
 std::vector<std::string> DescribeCertificateResult::getSubjectAlternativeNames()const
