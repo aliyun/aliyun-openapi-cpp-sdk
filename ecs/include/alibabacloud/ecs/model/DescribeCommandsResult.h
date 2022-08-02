@@ -42,6 +42,11 @@ namespace AlibabaCloud
 						std::string parameterName;
 						std::vector<std::string> possibleValues;
 					};
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::vector<Command::ParameterDefinition> parameterDefinitions;
 					std::string description;
 					std::string category;
@@ -58,6 +63,7 @@ namespace AlibabaCloud
 					bool latest;
 					bool enableParameter;
 					std::string commandId;
+					std::vector<Command::Tag> tags;
 				};
 
 

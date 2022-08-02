@@ -36,6 +36,11 @@ namespace AlibabaCloud
 				{
 					struct InvocationResult
 					{
+						struct Tag
+						{
+							std::string tagKey;
+							std::string tagValue;
+						};
 						int dropped;
 						std::string invocationStatus;
 						std::string instanceId;
@@ -49,6 +54,7 @@ namespace AlibabaCloud
 						std::string output;
 						std::string commandId;
 						std::string errorCode;
+						std::vector<InvocationResult::Tag> tags;
 						std::string invokeId;
 						std::string stopTime;
 					};

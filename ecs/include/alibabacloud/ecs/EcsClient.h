@@ -98,6 +98,10 @@
 #include "model/CreateDemandResult.h"
 #include "model/CreateDeploymentSetRequest.h"
 #include "model/CreateDeploymentSetResult.h"
+#include "model/CreateDiagnosticMetricSetRequest.h"
+#include "model/CreateDiagnosticMetricSetResult.h"
+#include "model/CreateDiagnosticReportRequest.h"
+#include "model/CreateDiagnosticReportResult.h"
 #include "model/CreateDiskRequest.h"
 #include "model/CreateDiskResult.h"
 #include "model/CreateElasticityAssuranceRequest.h"
@@ -170,6 +174,10 @@
 #include "model/DeleteDemandResult.h"
 #include "model/DeleteDeploymentSetRequest.h"
 #include "model/DeleteDeploymentSetResult.h"
+#include "model/DeleteDiagnosticMetricSetsRequest.h"
+#include "model/DeleteDiagnosticMetricSetsResult.h"
+#include "model/DeleteDiagnosticReportsRequest.h"
+#include "model/DeleteDiagnosticReportsResult.h"
 #include "model/DeleteDiskRequest.h"
 #include "model/DeleteDiskResult.h"
 #include "model/DeleteForwardEntryRequest.h"
@@ -272,6 +280,12 @@
 #include "model/DescribeDeploymentSetSupportedInstanceTypeFamilyResult.h"
 #include "model/DescribeDeploymentSetsRequest.h"
 #include "model/DescribeDeploymentSetsResult.h"
+#include "model/DescribeDiagnosticMetricSetsRequest.h"
+#include "model/DescribeDiagnosticMetricSetsResult.h"
+#include "model/DescribeDiagnosticMetricsRequest.h"
+#include "model/DescribeDiagnosticMetricsResult.h"
+#include "model/DescribeDiagnosticReportsRequest.h"
+#include "model/DescribeDiagnosticReportsResult.h"
 #include "model/DescribeDiskMonitorDataRequest.h"
 #include "model/DescribeDiskMonitorDataResult.h"
 #include "model/DescribeDisksRequest.h"
@@ -514,6 +528,8 @@
 #include "model/ModifyDemandResult.h"
 #include "model/ModifyDeploymentSetAttributeRequest.h"
 #include "model/ModifyDeploymentSetAttributeResult.h"
+#include "model/ModifyDiagnosticMetricSetRequest.h"
+#include "model/ModifyDiagnosticMetricSetResult.h"
 #include "model/ModifyDiskAttributeRequest.h"
 #include "model/ModifyDiskAttributeResult.h"
 #include "model/ModifyDiskChargeTypeRequest.h"
@@ -815,6 +831,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDeploymentSetResult> CreateDeploymentSetOutcome;
 			typedef std::future<CreateDeploymentSetOutcome> CreateDeploymentSetOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateDeploymentSetRequest&, const CreateDeploymentSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeploymentSetAsyncHandler;
+			typedef Outcome<Error, Model::CreateDiagnosticMetricSetResult> CreateDiagnosticMetricSetOutcome;
+			typedef std::future<CreateDiagnosticMetricSetOutcome> CreateDiagnosticMetricSetOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CreateDiagnosticMetricSetRequest&, const CreateDiagnosticMetricSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDiagnosticMetricSetAsyncHandler;
+			typedef Outcome<Error, Model::CreateDiagnosticReportResult> CreateDiagnosticReportOutcome;
+			typedef std::future<CreateDiagnosticReportOutcome> CreateDiagnosticReportOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::CreateDiagnosticReportRequest&, const CreateDiagnosticReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDiagnosticReportAsyncHandler;
 			typedef Outcome<Error, Model::CreateDiskResult> CreateDiskOutcome;
 			typedef std::future<CreateDiskOutcome> CreateDiskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::CreateDiskRequest&, const CreateDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDiskAsyncHandler;
@@ -923,6 +945,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDeploymentSetResult> DeleteDeploymentSetOutcome;
 			typedef std::future<DeleteDeploymentSetOutcome> DeleteDeploymentSetOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteDeploymentSetRequest&, const DeleteDeploymentSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeploymentSetAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDiagnosticMetricSetsResult> DeleteDiagnosticMetricSetsOutcome;
+			typedef std::future<DeleteDiagnosticMetricSetsOutcome> DeleteDiagnosticMetricSetsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DeleteDiagnosticMetricSetsRequest&, const DeleteDiagnosticMetricSetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDiagnosticMetricSetsAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDiagnosticReportsResult> DeleteDiagnosticReportsOutcome;
+			typedef std::future<DeleteDiagnosticReportsOutcome> DeleteDiagnosticReportsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DeleteDiagnosticReportsRequest&, const DeleteDiagnosticReportsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDiagnosticReportsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDiskResult> DeleteDiskOutcome;
 			typedef std::future<DeleteDiskOutcome> DeleteDiskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DeleteDiskRequest&, const DeleteDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDiskAsyncHandler;
@@ -1076,6 +1104,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDeploymentSetsResult> DescribeDeploymentSetsOutcome;
 			typedef std::future<DescribeDeploymentSetsOutcome> DescribeDeploymentSetsOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDeploymentSetsRequest&, const DescribeDeploymentSetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeploymentSetsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDiagnosticMetricSetsResult> DescribeDiagnosticMetricSetsOutcome;
+			typedef std::future<DescribeDiagnosticMetricSetsOutcome> DescribeDiagnosticMetricSetsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeDiagnosticMetricSetsRequest&, const DescribeDiagnosticMetricSetsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnosticMetricSetsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDiagnosticMetricsResult> DescribeDiagnosticMetricsOutcome;
+			typedef std::future<DescribeDiagnosticMetricsOutcome> DescribeDiagnosticMetricsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeDiagnosticMetricsRequest&, const DescribeDiagnosticMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnosticMetricsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDiagnosticReportsResult> DescribeDiagnosticReportsOutcome;
+			typedef std::future<DescribeDiagnosticReportsOutcome> DescribeDiagnosticReportsOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeDiagnosticReportsRequest&, const DescribeDiagnosticReportsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnosticReportsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDiskMonitorDataResult> DescribeDiskMonitorDataOutcome;
 			typedef std::future<DescribeDiskMonitorDataOutcome> DescribeDiskMonitorDataOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeDiskMonitorDataRequest&, const DescribeDiskMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskMonitorDataAsyncHandler;
@@ -1439,6 +1476,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDeploymentSetAttributeResult> ModifyDeploymentSetAttributeOutcome;
 			typedef std::future<ModifyDeploymentSetAttributeOutcome> ModifyDeploymentSetAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDeploymentSetAttributeRequest&, const ModifyDeploymentSetAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeploymentSetAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDiagnosticMetricSetResult> ModifyDiagnosticMetricSetOutcome;
+			typedef std::future<ModifyDiagnosticMetricSetOutcome> ModifyDiagnosticMetricSetOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyDiagnosticMetricSetRequest&, const ModifyDiagnosticMetricSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiagnosticMetricSetAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDiskAttributeResult> ModifyDiskAttributeOutcome;
 			typedef std::future<ModifyDiskAttributeOutcome> ModifyDiskAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDiskAttributeRequest&, const ModifyDiskAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskAttributeAsyncHandler;
@@ -1825,6 +1865,12 @@ namespace AlibabaCloud
 			CreateDeploymentSetOutcome createDeploymentSet(const Model::CreateDeploymentSetRequest &request)const;
 			void createDeploymentSetAsync(const Model::CreateDeploymentSetRequest& request, const CreateDeploymentSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDeploymentSetOutcomeCallable createDeploymentSetCallable(const Model::CreateDeploymentSetRequest& request) const;
+			CreateDiagnosticMetricSetOutcome createDiagnosticMetricSet(const Model::CreateDiagnosticMetricSetRequest &request)const;
+			void createDiagnosticMetricSetAsync(const Model::CreateDiagnosticMetricSetRequest& request, const CreateDiagnosticMetricSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDiagnosticMetricSetOutcomeCallable createDiagnosticMetricSetCallable(const Model::CreateDiagnosticMetricSetRequest& request) const;
+			CreateDiagnosticReportOutcome createDiagnosticReport(const Model::CreateDiagnosticReportRequest &request)const;
+			void createDiagnosticReportAsync(const Model::CreateDiagnosticReportRequest& request, const CreateDiagnosticReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDiagnosticReportOutcomeCallable createDiagnosticReportCallable(const Model::CreateDiagnosticReportRequest& request) const;
 			CreateDiskOutcome createDisk(const Model::CreateDiskRequest &request)const;
 			void createDiskAsync(const Model::CreateDiskRequest& request, const CreateDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDiskOutcomeCallable createDiskCallable(const Model::CreateDiskRequest& request) const;
@@ -1933,6 +1979,12 @@ namespace AlibabaCloud
 			DeleteDeploymentSetOutcome deleteDeploymentSet(const Model::DeleteDeploymentSetRequest &request)const;
 			void deleteDeploymentSetAsync(const Model::DeleteDeploymentSetRequest& request, const DeleteDeploymentSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDeploymentSetOutcomeCallable deleteDeploymentSetCallable(const Model::DeleteDeploymentSetRequest& request) const;
+			DeleteDiagnosticMetricSetsOutcome deleteDiagnosticMetricSets(const Model::DeleteDiagnosticMetricSetsRequest &request)const;
+			void deleteDiagnosticMetricSetsAsync(const Model::DeleteDiagnosticMetricSetsRequest& request, const DeleteDiagnosticMetricSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDiagnosticMetricSetsOutcomeCallable deleteDiagnosticMetricSetsCallable(const Model::DeleteDiagnosticMetricSetsRequest& request) const;
+			DeleteDiagnosticReportsOutcome deleteDiagnosticReports(const Model::DeleteDiagnosticReportsRequest &request)const;
+			void deleteDiagnosticReportsAsync(const Model::DeleteDiagnosticReportsRequest& request, const DeleteDiagnosticReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDiagnosticReportsOutcomeCallable deleteDiagnosticReportsCallable(const Model::DeleteDiagnosticReportsRequest& request) const;
 			DeleteDiskOutcome deleteDisk(const Model::DeleteDiskRequest &request)const;
 			void deleteDiskAsync(const Model::DeleteDiskRequest& request, const DeleteDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDiskOutcomeCallable deleteDiskCallable(const Model::DeleteDiskRequest& request) const;
@@ -2086,6 +2138,15 @@ namespace AlibabaCloud
 			DescribeDeploymentSetsOutcome describeDeploymentSets(const Model::DescribeDeploymentSetsRequest &request)const;
 			void describeDeploymentSetsAsync(const Model::DescribeDeploymentSetsRequest& request, const DescribeDeploymentSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDeploymentSetsOutcomeCallable describeDeploymentSetsCallable(const Model::DescribeDeploymentSetsRequest& request) const;
+			DescribeDiagnosticMetricSetsOutcome describeDiagnosticMetricSets(const Model::DescribeDiagnosticMetricSetsRequest &request)const;
+			void describeDiagnosticMetricSetsAsync(const Model::DescribeDiagnosticMetricSetsRequest& request, const DescribeDiagnosticMetricSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDiagnosticMetricSetsOutcomeCallable describeDiagnosticMetricSetsCallable(const Model::DescribeDiagnosticMetricSetsRequest& request) const;
+			DescribeDiagnosticMetricsOutcome describeDiagnosticMetrics(const Model::DescribeDiagnosticMetricsRequest &request)const;
+			void describeDiagnosticMetricsAsync(const Model::DescribeDiagnosticMetricsRequest& request, const DescribeDiagnosticMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDiagnosticMetricsOutcomeCallable describeDiagnosticMetricsCallable(const Model::DescribeDiagnosticMetricsRequest& request) const;
+			DescribeDiagnosticReportsOutcome describeDiagnosticReports(const Model::DescribeDiagnosticReportsRequest &request)const;
+			void describeDiagnosticReportsAsync(const Model::DescribeDiagnosticReportsRequest& request, const DescribeDiagnosticReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDiagnosticReportsOutcomeCallable describeDiagnosticReportsCallable(const Model::DescribeDiagnosticReportsRequest& request) const;
 			DescribeDiskMonitorDataOutcome describeDiskMonitorData(const Model::DescribeDiskMonitorDataRequest &request)const;
 			void describeDiskMonitorDataAsync(const Model::DescribeDiskMonitorDataRequest& request, const DescribeDiskMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDiskMonitorDataOutcomeCallable describeDiskMonitorDataCallable(const Model::DescribeDiskMonitorDataRequest& request) const;
@@ -2449,6 +2510,9 @@ namespace AlibabaCloud
 			ModifyDeploymentSetAttributeOutcome modifyDeploymentSetAttribute(const Model::ModifyDeploymentSetAttributeRequest &request)const;
 			void modifyDeploymentSetAttributeAsync(const Model::ModifyDeploymentSetAttributeRequest& request, const ModifyDeploymentSetAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDeploymentSetAttributeOutcomeCallable modifyDeploymentSetAttributeCallable(const Model::ModifyDeploymentSetAttributeRequest& request) const;
+			ModifyDiagnosticMetricSetOutcome modifyDiagnosticMetricSet(const Model::ModifyDiagnosticMetricSetRequest &request)const;
+			void modifyDiagnosticMetricSetAsync(const Model::ModifyDiagnosticMetricSetRequest& request, const ModifyDiagnosticMetricSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDiagnosticMetricSetOutcomeCallable modifyDiagnosticMetricSetCallable(const Model::ModifyDiagnosticMetricSetRequest& request) const;
 			ModifyDiskAttributeOutcome modifyDiskAttribute(const Model::ModifyDiskAttributeRequest &request)const;
 			void modifyDiskAttributeAsync(const Model::ModifyDiskAttributeRequest& request, const ModifyDiskAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDiskAttributeOutcomeCallable modifyDiskAttributeCallable(const Model::ModifyDiskAttributeRequest& request) const;

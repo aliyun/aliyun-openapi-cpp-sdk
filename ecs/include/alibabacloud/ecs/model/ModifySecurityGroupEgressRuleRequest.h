@@ -46,12 +46,12 @@ public:
 	void setDescription(const std::string &description);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getPolicy() const;
+	void setPolicy(const std::string &policy);
 	std::string getIpv6DestCidrIp() const;
 	void setIpv6DestCidrIp(const std::string &ipv6DestCidrIp);
 	std::string getIpv6SourceCidrIp() const;
 	void setIpv6SourceCidrIp(const std::string &ipv6SourceCidrIp);
-	std::string getPolicy() const;
-	void setPolicy(const std::string &policy);
 	std::string getPortRange() const;
 	void setPortRange(const std::string &portRange);
 	std::string getResourceOwnerAccount() const;
@@ -66,10 +66,10 @@ public:
 	void setDestGroupId(const std::string &destGroupId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getDestGroupOwnerAccount() const;
-	void setDestGroupOwnerAccount(const std::string &destGroupOwnerAccount);
 	std::string getPriority() const;
 	void setPriority(const std::string &priority);
+	std::string getDestGroupOwnerAccount() const;
+	void setDestGroupOwnerAccount(const std::string &destGroupOwnerAccount);
 	std::string getDestCidrIp() const;
 	void setDestCidrIp(const std::string &destCidrIp);
 	long getDestGroupOwnerId() const;
@@ -84,9 +84,9 @@ private:
 	std::string securityGroupId_;
 	std::string description_;
 	std::string regionId_;
+	std::string policy_;
 	std::string ipv6DestCidrIp_;
 	std::string ipv6SourceCidrIp_;
-	std::string policy_;
 	std::string portRange_;
 	std::string resourceOwnerAccount_;
 	std::string ipProtocol_;
@@ -94,8 +94,8 @@ private:
 	std::string sourceCidrIp_;
 	std::string destGroupId_;
 	long ownerId_;
-	std::string destGroupOwnerAccount_;
 	std::string priority_;
+	std::string destGroupOwnerAccount_;
 	std::string destCidrIp_;
 	long destGroupOwnerId_;
 };

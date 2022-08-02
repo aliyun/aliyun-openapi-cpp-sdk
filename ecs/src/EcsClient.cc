@@ -1419,6 +1419,78 @@ EcsClient::CreateDeploymentSetOutcomeCallable EcsClient::createDeploymentSetCall
 	return task->get_future();
 }
 
+EcsClient::CreateDiagnosticMetricSetOutcome EcsClient::createDiagnosticMetricSet(const CreateDiagnosticMetricSetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDiagnosticMetricSetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDiagnosticMetricSetOutcome(CreateDiagnosticMetricSetResult(outcome.result()));
+	else
+		return CreateDiagnosticMetricSetOutcome(outcome.error());
+}
+
+void EcsClient::createDiagnosticMetricSetAsync(const CreateDiagnosticMetricSetRequest& request, const CreateDiagnosticMetricSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDiagnosticMetricSet(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateDiagnosticMetricSetOutcomeCallable EcsClient::createDiagnosticMetricSetCallable(const CreateDiagnosticMetricSetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDiagnosticMetricSetOutcome()>>(
+			[this, request]()
+			{
+			return this->createDiagnosticMetricSet(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::CreateDiagnosticReportOutcome EcsClient::createDiagnosticReport(const CreateDiagnosticReportRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDiagnosticReportOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDiagnosticReportOutcome(CreateDiagnosticReportResult(outcome.result()));
+	else
+		return CreateDiagnosticReportOutcome(outcome.error());
+}
+
+void EcsClient::createDiagnosticReportAsync(const CreateDiagnosticReportRequest& request, const CreateDiagnosticReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDiagnosticReport(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::CreateDiagnosticReportOutcomeCallable EcsClient::createDiagnosticReportCallable(const CreateDiagnosticReportRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDiagnosticReportOutcome()>>(
+			[this, request]()
+			{
+			return this->createDiagnosticReport(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::CreateDiskOutcome EcsClient::createDisk(const CreateDiskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2709,6 +2781,78 @@ EcsClient::DeleteDeploymentSetOutcomeCallable EcsClient::deleteDeploymentSetCall
 			[this, request]()
 			{
 			return this->deleteDeploymentSet(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DeleteDiagnosticMetricSetsOutcome EcsClient::deleteDiagnosticMetricSets(const DeleteDiagnosticMetricSetsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDiagnosticMetricSetsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDiagnosticMetricSetsOutcome(DeleteDiagnosticMetricSetsResult(outcome.result()));
+	else
+		return DeleteDiagnosticMetricSetsOutcome(outcome.error());
+}
+
+void EcsClient::deleteDiagnosticMetricSetsAsync(const DeleteDiagnosticMetricSetsRequest& request, const DeleteDiagnosticMetricSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDiagnosticMetricSets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DeleteDiagnosticMetricSetsOutcomeCallable EcsClient::deleteDiagnosticMetricSetsCallable(const DeleteDiagnosticMetricSetsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDiagnosticMetricSetsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDiagnosticMetricSets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DeleteDiagnosticReportsOutcome EcsClient::deleteDiagnosticReports(const DeleteDiagnosticReportsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDiagnosticReportsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDiagnosticReportsOutcome(DeleteDiagnosticReportsResult(outcome.result()));
+	else
+		return DeleteDiagnosticReportsOutcome(outcome.error());
+}
+
+void EcsClient::deleteDiagnosticReportsAsync(const DeleteDiagnosticReportsRequest& request, const DeleteDiagnosticReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDiagnosticReports(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DeleteDiagnosticReportsOutcomeCallable EcsClient::deleteDiagnosticReportsCallable(const DeleteDiagnosticReportsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDiagnosticReportsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDiagnosticReports(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4545,6 +4689,114 @@ EcsClient::DescribeDeploymentSetsOutcomeCallable EcsClient::describeDeploymentSe
 			[this, request]()
 			{
 			return this->describeDeploymentSets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeDiagnosticMetricSetsOutcome EcsClient::describeDiagnosticMetricSets(const DescribeDiagnosticMetricSetsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDiagnosticMetricSetsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDiagnosticMetricSetsOutcome(DescribeDiagnosticMetricSetsResult(outcome.result()));
+	else
+		return DescribeDiagnosticMetricSetsOutcome(outcome.error());
+}
+
+void EcsClient::describeDiagnosticMetricSetsAsync(const DescribeDiagnosticMetricSetsRequest& request, const DescribeDiagnosticMetricSetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDiagnosticMetricSets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeDiagnosticMetricSetsOutcomeCallable EcsClient::describeDiagnosticMetricSetsCallable(const DescribeDiagnosticMetricSetsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDiagnosticMetricSetsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDiagnosticMetricSets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeDiagnosticMetricsOutcome EcsClient::describeDiagnosticMetrics(const DescribeDiagnosticMetricsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDiagnosticMetricsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDiagnosticMetricsOutcome(DescribeDiagnosticMetricsResult(outcome.result()));
+	else
+		return DescribeDiagnosticMetricsOutcome(outcome.error());
+}
+
+void EcsClient::describeDiagnosticMetricsAsync(const DescribeDiagnosticMetricsRequest& request, const DescribeDiagnosticMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDiagnosticMetrics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeDiagnosticMetricsOutcomeCallable EcsClient::describeDiagnosticMetricsCallable(const DescribeDiagnosticMetricsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDiagnosticMetricsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDiagnosticMetrics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeDiagnosticReportsOutcome EcsClient::describeDiagnosticReports(const DescribeDiagnosticReportsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDiagnosticReportsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDiagnosticReportsOutcome(DescribeDiagnosticReportsResult(outcome.result()));
+	else
+		return DescribeDiagnosticReportsOutcome(outcome.error());
+}
+
+void EcsClient::describeDiagnosticReportsAsync(const DescribeDiagnosticReportsRequest& request, const DescribeDiagnosticReportsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDiagnosticReports(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeDiagnosticReportsOutcomeCallable EcsClient::describeDiagnosticReportsCallable(const DescribeDiagnosticReportsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDiagnosticReportsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDiagnosticReports(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8901,6 +9153,42 @@ EcsClient::ModifyDeploymentSetAttributeOutcomeCallable EcsClient::modifyDeployme
 			[this, request]()
 			{
 			return this->modifyDeploymentSetAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ModifyDiagnosticMetricSetOutcome EcsClient::modifyDiagnosticMetricSet(const ModifyDiagnosticMetricSetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDiagnosticMetricSetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDiagnosticMetricSetOutcome(ModifyDiagnosticMetricSetResult(outcome.result()));
+	else
+		return ModifyDiagnosticMetricSetOutcome(outcome.error());
+}
+
+void EcsClient::modifyDiagnosticMetricSetAsync(const ModifyDiagnosticMetricSetRequest& request, const ModifyDiagnosticMetricSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDiagnosticMetricSet(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyDiagnosticMetricSetOutcomeCallable EcsClient::modifyDiagnosticMetricSetCallable(const ModifyDiagnosticMetricSetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDiagnosticMetricSetOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDiagnosticMetricSet(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

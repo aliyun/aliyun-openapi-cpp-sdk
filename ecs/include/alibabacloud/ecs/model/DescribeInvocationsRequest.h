@@ -28,6 +28,10 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT DescribeInvocationsRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	DescribeInvocationsRequest();
 	~DescribeInvocationsRequest();
 	long getResourceOwnerId() const;
@@ -48,6 +52,8 @@ public:
 	void setRepeatMode(const std::string &repeatMode);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getInvokeId() const;
 	void setInvokeId(const std::string &invokeId);
 	bool getTimed() const;
@@ -75,6 +81,7 @@ private:
 	std::string contentEncoding_;
 	std::string repeatMode_;
 	long pageSize_;
+	std::vector<Tag> tag_;
 	std::string invokeId_;
 	bool timed_;
 	std::string commandName_;

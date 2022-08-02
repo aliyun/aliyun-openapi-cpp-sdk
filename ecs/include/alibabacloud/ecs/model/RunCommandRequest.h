@@ -28,6 +28,10 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT RunCommandRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	RunCommandRequest();
 	~RunCommandRequest();
 	long getResourceOwnerId() const;
@@ -52,6 +56,8 @@ public:
 	void setRepeatMode(const std::string &repeatMode);
 	std::string getWindowsPasswordName() const;
 	void setWindowsPasswordName(const std::string &windowsPasswordName);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getKeepCommand() const;
 	void setKeepCommand(bool keepCommand);
 	bool getTimed() const;
@@ -85,6 +91,7 @@ private:
 	std::string contentEncoding_;
 	std::string repeatMode_;
 	std::string windowsPasswordName_;
+	std::vector<Tag> tag_;
 	bool keepCommand_;
 	bool timed_;
 	std::string resourceOwnerAccount_;

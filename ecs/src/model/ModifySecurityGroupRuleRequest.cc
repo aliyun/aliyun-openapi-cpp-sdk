@@ -115,6 +115,15 @@ void ModifySecurityGroupRuleRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string ModifySecurityGroupRuleRequest::getPolicy() const {
+  return policy_;
+}
+
+void ModifySecurityGroupRuleRequest::setPolicy(const std::string &policy) {
+  policy_ = policy;
+  setParameter(std::string("Policy"), policy);
+}
+
 std::string ModifySecurityGroupRuleRequest::getIpv6SourceCidrIp() const {
   return ipv6SourceCidrIp_;
 }
@@ -131,15 +140,6 @@ std::string ModifySecurityGroupRuleRequest::getIpv6DestCidrIp() const {
 void ModifySecurityGroupRuleRequest::setIpv6DestCidrIp(const std::string &ipv6DestCidrIp) {
   ipv6DestCidrIp_ = ipv6DestCidrIp;
   setParameter(std::string("Ipv6DestCidrIp"), ipv6DestCidrIp);
-}
-
-std::string ModifySecurityGroupRuleRequest::getPolicy() const {
-  return policy_;
-}
-
-void ModifySecurityGroupRuleRequest::setPolicy(const std::string &policy) {
-  policy_ = policy;
-  setParameter(std::string("Policy"), policy);
 }
 
 std::string ModifySecurityGroupRuleRequest::getPortRange() const {

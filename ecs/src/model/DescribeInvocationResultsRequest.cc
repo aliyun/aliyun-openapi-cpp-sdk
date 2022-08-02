@@ -79,6 +79,20 @@ void DescribeInvocationResultsRequest::setPageSize(long pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::vector<DescribeInvocationResultsRequest::Tag> DescribeInvocationResultsRequest::getTag() const {
+  return tag_;
+}
+
+void DescribeInvocationResultsRequest::setTag(const std::vector<DescribeInvocationResultsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
 std::string DescribeInvocationResultsRequest::getInvokeId() const {
   return invokeId_;
 }

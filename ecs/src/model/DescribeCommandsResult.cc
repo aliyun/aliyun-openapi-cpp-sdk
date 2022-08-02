@@ -88,6 +88,16 @@ void DescribeCommandsResult::parse(const std::string &payload)
 				parameterDefinitionsObject.possibleValues.push_back(value.asString());
 			commandsObject.parameterDefinitions.push_back(parameterDefinitionsObject);
 		}
+		auto allTagsNode = valueCommandsCommand["Tags"]["Tag"];
+		for (auto valueCommandsCommandTagsTag : allTagsNode)
+		{
+			Command::Tag tagsObject;
+			if(!valueCommandsCommandTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueCommandsCommandTagsTag["TagKey"].asString();
+			if(!valueCommandsCommandTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueCommandsCommandTagsTag["TagValue"].asString();
+			commandsObject.tags.push_back(tagsObject);
+		}
 		auto allParameterNames = value["ParameterNames"]["ParameterName"];
 		for (auto value : allParameterNames)
 			commandsObject.parameterNames.push_back(value.asString());

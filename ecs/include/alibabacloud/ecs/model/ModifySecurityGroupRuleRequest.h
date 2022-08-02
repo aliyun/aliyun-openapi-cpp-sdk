@@ -50,12 +50,12 @@ public:
 	void setSourceGroupOwnerAccount(const std::string &sourceGroupOwnerAccount);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getPolicy() const;
+	void setPolicy(const std::string &policy);
 	std::string getIpv6SourceCidrIp() const;
 	void setIpv6SourceCidrIp(const std::string &ipv6SourceCidrIp);
 	std::string getIpv6DestCidrIp() const;
 	void setIpv6DestCidrIp(const std::string &ipv6DestCidrIp);
-	std::string getPolicy() const;
-	void setPolicy(const std::string &policy);
 	std::string getPortRange() const;
 	void setPortRange(const std::string &portRange);
 	std::string getResourceOwnerAccount() const;
@@ -86,9 +86,9 @@ private:
 	long sourceGroupOwnerId_;
 	std::string sourceGroupOwnerAccount_;
 	std::string regionId_;
+	std::string policy_;
 	std::string ipv6SourceCidrIp_;
 	std::string ipv6DestCidrIp_;
-	std::string policy_;
 	std::string portRange_;
 	std::string resourceOwnerAccount_;
 	std::string ipProtocol_;

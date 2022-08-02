@@ -97,6 +97,10 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateDemandResult.h
 	include/alibabacloud/ecs/model/CreateDeploymentSetRequest.h
 	include/alibabacloud/ecs/model/CreateDeploymentSetResult.h
+	include/alibabacloud/ecs/model/CreateDiagnosticMetricSetRequest.h
+	include/alibabacloud/ecs/model/CreateDiagnosticMetricSetResult.h
+	include/alibabacloud/ecs/model/CreateDiagnosticReportRequest.h
+	include/alibabacloud/ecs/model/CreateDiagnosticReportResult.h
 	include/alibabacloud/ecs/model/CreateDiskRequest.h
 	include/alibabacloud/ecs/model/CreateDiskResult.h
 	include/alibabacloud/ecs/model/CreateElasticityAssuranceRequest.h
@@ -169,6 +173,10 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DeleteDemandResult.h
 	include/alibabacloud/ecs/model/DeleteDeploymentSetRequest.h
 	include/alibabacloud/ecs/model/DeleteDeploymentSetResult.h
+	include/alibabacloud/ecs/model/DeleteDiagnosticMetricSetsRequest.h
+	include/alibabacloud/ecs/model/DeleteDiagnosticMetricSetsResult.h
+	include/alibabacloud/ecs/model/DeleteDiagnosticReportsRequest.h
+	include/alibabacloud/ecs/model/DeleteDiagnosticReportsResult.h
 	include/alibabacloud/ecs/model/DeleteDiskRequest.h
 	include/alibabacloud/ecs/model/DeleteDiskResult.h
 	include/alibabacloud/ecs/model/DeleteForwardEntryRequest.h
@@ -271,6 +279,12 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeDeploymentSetSupportedInstanceTypeFamilyResult.h
 	include/alibabacloud/ecs/model/DescribeDeploymentSetsRequest.h
 	include/alibabacloud/ecs/model/DescribeDeploymentSetsResult.h
+	include/alibabacloud/ecs/model/DescribeDiagnosticMetricSetsRequest.h
+	include/alibabacloud/ecs/model/DescribeDiagnosticMetricSetsResult.h
+	include/alibabacloud/ecs/model/DescribeDiagnosticMetricsRequest.h
+	include/alibabacloud/ecs/model/DescribeDiagnosticMetricsResult.h
+	include/alibabacloud/ecs/model/DescribeDiagnosticReportsRequest.h
+	include/alibabacloud/ecs/model/DescribeDiagnosticReportsResult.h
 	include/alibabacloud/ecs/model/DescribeDiskMonitorDataRequest.h
 	include/alibabacloud/ecs/model/DescribeDiskMonitorDataResult.h
 	include/alibabacloud/ecs/model/DescribeDisksRequest.h
@@ -513,6 +527,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyDemandResult.h
 	include/alibabacloud/ecs/model/ModifyDeploymentSetAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyDeploymentSetAttributeResult.h
+	include/alibabacloud/ecs/model/ModifyDiagnosticMetricSetRequest.h
+	include/alibabacloud/ecs/model/ModifyDiagnosticMetricSetResult.h
 	include/alibabacloud/ecs/model/ModifyDiskAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyDiskAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyDiskChargeTypeRequest.h
@@ -770,6 +786,10 @@ set(ecs_src
 	src/model/CreateDemandResult.cc
 	src/model/CreateDeploymentSetRequest.cc
 	src/model/CreateDeploymentSetResult.cc
+	src/model/CreateDiagnosticMetricSetRequest.cc
+	src/model/CreateDiagnosticMetricSetResult.cc
+	src/model/CreateDiagnosticReportRequest.cc
+	src/model/CreateDiagnosticReportResult.cc
 	src/model/CreateDiskRequest.cc
 	src/model/CreateDiskResult.cc
 	src/model/CreateElasticityAssuranceRequest.cc
@@ -842,6 +862,10 @@ set(ecs_src
 	src/model/DeleteDemandResult.cc
 	src/model/DeleteDeploymentSetRequest.cc
 	src/model/DeleteDeploymentSetResult.cc
+	src/model/DeleteDiagnosticMetricSetsRequest.cc
+	src/model/DeleteDiagnosticMetricSetsResult.cc
+	src/model/DeleteDiagnosticReportsRequest.cc
+	src/model/DeleteDiagnosticReportsResult.cc
 	src/model/DeleteDiskRequest.cc
 	src/model/DeleteDiskResult.cc
 	src/model/DeleteForwardEntryRequest.cc
@@ -944,6 +968,12 @@ set(ecs_src
 	src/model/DescribeDeploymentSetSupportedInstanceTypeFamilyResult.cc
 	src/model/DescribeDeploymentSetsRequest.cc
 	src/model/DescribeDeploymentSetsResult.cc
+	src/model/DescribeDiagnosticMetricSetsRequest.cc
+	src/model/DescribeDiagnosticMetricSetsResult.cc
+	src/model/DescribeDiagnosticMetricsRequest.cc
+	src/model/DescribeDiagnosticMetricsResult.cc
+	src/model/DescribeDiagnosticReportsRequest.cc
+	src/model/DescribeDiagnosticReportsResult.cc
 	src/model/DescribeDiskMonitorDataRequest.cc
 	src/model/DescribeDiskMonitorDataResult.cc
 	src/model/DescribeDisksRequest.cc
@@ -1186,6 +1216,8 @@ set(ecs_src
 	src/model/ModifyDemandResult.cc
 	src/model/ModifyDeploymentSetAttributeRequest.cc
 	src/model/ModifyDeploymentSetAttributeResult.cc
+	src/model/ModifyDiagnosticMetricSetRequest.cc
+	src/model/ModifyDiagnosticMetricSetResult.cc
 	src/model/ModifyDiskAttributeRequest.cc
 	src/model/ModifyDiskAttributeResult.cc
 	src/model/ModifyDiskChargeTypeRequest.cc

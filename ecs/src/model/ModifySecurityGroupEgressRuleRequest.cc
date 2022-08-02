@@ -97,6 +97,15 @@ void ModifySecurityGroupEgressRuleRequest::setRegionId(const std::string &region
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string ModifySecurityGroupEgressRuleRequest::getPolicy() const {
+  return policy_;
+}
+
+void ModifySecurityGroupEgressRuleRequest::setPolicy(const std::string &policy) {
+  policy_ = policy;
+  setParameter(std::string("Policy"), policy);
+}
+
 std::string ModifySecurityGroupEgressRuleRequest::getIpv6DestCidrIp() const {
   return ipv6DestCidrIp_;
 }
@@ -113,15 +122,6 @@ std::string ModifySecurityGroupEgressRuleRequest::getIpv6SourceCidrIp() const {
 void ModifySecurityGroupEgressRuleRequest::setIpv6SourceCidrIp(const std::string &ipv6SourceCidrIp) {
   ipv6SourceCidrIp_ = ipv6SourceCidrIp;
   setParameter(std::string("Ipv6SourceCidrIp"), ipv6SourceCidrIp);
-}
-
-std::string ModifySecurityGroupEgressRuleRequest::getPolicy() const {
-  return policy_;
-}
-
-void ModifySecurityGroupEgressRuleRequest::setPolicy(const std::string &policy) {
-  policy_ = policy;
-  setParameter(std::string("Policy"), policy);
 }
 
 std::string ModifySecurityGroupEgressRuleRequest::getPortRange() const {
@@ -187,15 +187,6 @@ void ModifySecurityGroupEgressRuleRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ModifySecurityGroupEgressRuleRequest::getDestGroupOwnerAccount() const {
-  return destGroupOwnerAccount_;
-}
-
-void ModifySecurityGroupEgressRuleRequest::setDestGroupOwnerAccount(const std::string &destGroupOwnerAccount) {
-  destGroupOwnerAccount_ = destGroupOwnerAccount;
-  setParameter(std::string("DestGroupOwnerAccount"), destGroupOwnerAccount);
-}
-
 std::string ModifySecurityGroupEgressRuleRequest::getPriority() const {
   return priority_;
 }
@@ -203,6 +194,15 @@ std::string ModifySecurityGroupEgressRuleRequest::getPriority() const {
 void ModifySecurityGroupEgressRuleRequest::setPriority(const std::string &priority) {
   priority_ = priority;
   setParameter(std::string("Priority"), priority);
+}
+
+std::string ModifySecurityGroupEgressRuleRequest::getDestGroupOwnerAccount() const {
+  return destGroupOwnerAccount_;
+}
+
+void ModifySecurityGroupEgressRuleRequest::setDestGroupOwnerAccount(const std::string &destGroupOwnerAccount) {
+  destGroupOwnerAccount_ = destGroupOwnerAccount;
+  setParameter(std::string("DestGroupOwnerAccount"), destGroupOwnerAccount);
 }
 
 std::string ModifySecurityGroupEgressRuleRequest::getDestCidrIp() const {

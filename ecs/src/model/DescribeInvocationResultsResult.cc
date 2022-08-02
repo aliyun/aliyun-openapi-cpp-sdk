@@ -80,6 +80,16 @@ void DescribeInvocationResultsResult::parse(const std::string &payload)
 			invocationResultObject.invokeRecordStatus = invocationNodeInvocationResultsInvocationResult["InvokeRecordStatus"].asString();
 		if(!invocationNodeInvocationResultsInvocationResult["Username"].isNull())
 			invocationResultObject.username = invocationNodeInvocationResultsInvocationResult["Username"].asString();
+		auto allTagsNode = invocationNodeInvocationResultsInvocationResult["Tags"]["Tag"];
+		for (auto invocationNodeInvocationResultsInvocationResultTagsTag : allTagsNode)
+		{
+			Invocation::InvocationResult::Tag tagsObject;
+			if(!invocationNodeInvocationResultsInvocationResultTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = invocationNodeInvocationResultsInvocationResultTagsTag["TagKey"].asString();
+			if(!invocationNodeInvocationResultsInvocationResultTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = invocationNodeInvocationResultsInvocationResultTagsTag["TagValue"].asString();
+			invocationResultObject.tags.push_back(tagsObject);
+		}
 		invocation_.invocationResults.push_back(invocationResultObject);
 	}
 
