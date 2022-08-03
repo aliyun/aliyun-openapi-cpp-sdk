@@ -103,6 +103,8 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/GetResourceDirectoryResult.h
 	include/alibabacloud/resourcemanager/model/GetResourceGroupRequest.h
 	include/alibabacloud/resourcemanager/model/GetResourceGroupResult.h
+	include/alibabacloud/resourcemanager/model/GetResourceGroupListAclModeRequest.h
+	include/alibabacloud/resourcemanager/model/GetResourceGroupListAclModeResult.h
 	include/alibabacloud/resourcemanager/model/GetRoleRequest.h
 	include/alibabacloud/resourcemanager/model/GetRoleResult.h
 	include/alibabacloud/resourcemanager/model/GetServiceLinkedRoleDeletionStatusRequest.h
@@ -143,6 +145,12 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/ListResourcesResult.h
 	include/alibabacloud/resourcemanager/model/ListRolesRequest.h
 	include/alibabacloud/resourcemanager/model/ListRolesResult.h
+	include/alibabacloud/resourcemanager/model/ListTagKeysRequest.h
+	include/alibabacloud/resourcemanager/model/ListTagKeysResult.h
+	include/alibabacloud/resourcemanager/model/ListTagResourcesRequest.h
+	include/alibabacloud/resourcemanager/model/ListTagResourcesResult.h
+	include/alibabacloud/resourcemanager/model/ListTagValuesRequest.h
+	include/alibabacloud/resourcemanager/model/ListTagValuesResult.h
 	include/alibabacloud/resourcemanager/model/ListTargetAttachmentsForControlPolicyRequest.h
 	include/alibabacloud/resourcemanager/model/ListTargetAttachmentsForControlPolicyResult.h
 	include/alibabacloud/resourcemanager/model/ListTrustedServiceStatusRequest.h
@@ -167,6 +175,12 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/SendVerificationCodeForEnableRDResult.h
 	include/alibabacloud/resourcemanager/model/SetDefaultPolicyVersionRequest.h
 	include/alibabacloud/resourcemanager/model/SetDefaultPolicyVersionResult.h
+	include/alibabacloud/resourcemanager/model/SetMemberDeletionPermissionRequest.h
+	include/alibabacloud/resourcemanager/model/SetMemberDeletionPermissionResult.h
+	include/alibabacloud/resourcemanager/model/TagResourcesRequest.h
+	include/alibabacloud/resourcemanager/model/TagResourcesResult.h
+	include/alibabacloud/resourcemanager/model/UntagResourcesRequest.h
+	include/alibabacloud/resourcemanager/model/UntagResourcesResult.h
 	include/alibabacloud/resourcemanager/model/UpdateAccountRequest.h
 	include/alibabacloud/resourcemanager/model/UpdateAccountResult.h
 	include/alibabacloud/resourcemanager/model/UpdateControlPolicyRequest.h
@@ -262,6 +276,8 @@ set(resourcemanager_src
 	src/model/GetResourceDirectoryResult.cc
 	src/model/GetResourceGroupRequest.cc
 	src/model/GetResourceGroupResult.cc
+	src/model/GetResourceGroupListAclModeRequest.cc
+	src/model/GetResourceGroupListAclModeResult.cc
 	src/model/GetRoleRequest.cc
 	src/model/GetRoleResult.cc
 	src/model/GetServiceLinkedRoleDeletionStatusRequest.cc
@@ -302,6 +318,12 @@ set(resourcemanager_src
 	src/model/ListResourcesResult.cc
 	src/model/ListRolesRequest.cc
 	src/model/ListRolesResult.cc
+	src/model/ListTagKeysRequest.cc
+	src/model/ListTagKeysResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
+	src/model/ListTagValuesRequest.cc
+	src/model/ListTagValuesResult.cc
 	src/model/ListTargetAttachmentsForControlPolicyRequest.cc
 	src/model/ListTargetAttachmentsForControlPolicyResult.cc
 	src/model/ListTrustedServiceStatusRequest.cc
@@ -326,6 +348,12 @@ set(resourcemanager_src
 	src/model/SendVerificationCodeForEnableRDResult.cc
 	src/model/SetDefaultPolicyVersionRequest.cc
 	src/model/SetDefaultPolicyVersionResult.cc
+	src/model/SetMemberDeletionPermissionRequest.cc
+	src/model/SetMemberDeletionPermissionResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
 	src/model/UpdateAccountRequest.cc
 	src/model/UpdateAccountResult.cc
 	src/model/UpdateControlPolicyRequest.cc

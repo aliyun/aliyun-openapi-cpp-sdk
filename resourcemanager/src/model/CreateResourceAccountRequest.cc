@@ -52,6 +52,18 @@ void CreateResourceAccountRequest::setDisplayName(const std::string &displayName
   setParameter(std::string("DisplayName"), displayName);
 }
 
+std::vector<CreateResourceAccountRequest::Tag> CreateResourceAccountRequest::getTag() const {
+  return tag_;
+}
+
+void CreateResourceAccountRequest::setTag(const std::vector<CreateResourceAccountRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
+}
+
 std::string CreateResourceAccountRequest::getPayerAccountId() const {
   return payerAccountId_;
 }

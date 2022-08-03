@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPRESULT_H_
-#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPRESULT_H_
+#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_SETMEMBERDELETIONPERMISSIONRESULT_H_
+#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_SETMEMBERDELETIONPERMISSIONRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RESOURCEMANAGER_EXPORT GetResourceGroupResult : public ServiceResult
+			class ALIBABACLOUD_RESOURCEMANAGER_EXPORT SetMemberDeletionPermissionResult : public ServiceResult
 			{
 			public:
-				struct ResourceGroup
-				{
-					struct RegionStatus
-					{
-						std::string status;
-						std::string regionId;
-					};
-					struct Tag
-					{
-						std::string tagKey;
-						std::string tagValue;
-					};
-					std::string status;
-					std::vector<RegionStatus> regionStatuses;
-					std::string accountId;
-					std::string displayName;
-					std::string id;
-					std::string createDate;
-					std::vector<Tag> tags;
-					std::string name;
-				};
 
 
-				GetResourceGroupResult();
-				explicit GetResourceGroupResult(const std::string &payload);
-				~GetResourceGroupResult();
-				ResourceGroup getResourceGroup()const;
+				SetMemberDeletionPermissionResult();
+				explicit SetMemberDeletionPermissionResult(const std::string &payload);
+				~SetMemberDeletionPermissionResult();
+				std::string getResourceDirectoryId()const;
+				std::string getMemberDeletionStatus()const;
+				std::string getManagementAccountId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				ResourceGroup resourceGroup_;
+				std::string resourceDirectoryId_;
+				std::string memberDeletionStatus_;
+				std::string managementAccountId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPRESULT_H_
+#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_SETMEMBERDELETIONPERMISSIONRESULT_H_

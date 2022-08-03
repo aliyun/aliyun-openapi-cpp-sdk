@@ -52,6 +52,15 @@ void ListAccountsForParentRequest::setParentFolderId(const std::string &parentFo
   setParameter(std::string("ParentFolderId"), parentFolderId);
 }
 
+bool ListAccountsForParentRequest::getIncludeTags() const {
+  return includeTags_;
+}
+
+void ListAccountsForParentRequest::setIncludeTags(bool includeTags) {
+  includeTags_ = includeTags;
+  setParameter(std::string("IncludeTags"), includeTags ? "true" : "false");
+}
+
 int ListAccountsForParentRequest::getPageSize() const {
   return pageSize_;
 }
@@ -59,5 +68,17 @@ int ListAccountsForParentRequest::getPageSize() const {
 void ListAccountsForParentRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::vector<ListAccountsForParentRequest::Tag> ListAccountsForParentRequest::getTag() const {
+  return tag_;
+}
+
+void ListAccountsForParentRequest::setTag(const std::vector<ListAccountsForParentRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
 }
 

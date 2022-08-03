@@ -104,6 +104,8 @@
 #include "model/GetResourceDirectoryResult.h"
 #include "model/GetResourceGroupRequest.h"
 #include "model/GetResourceGroupResult.h"
+#include "model/GetResourceGroupListAclModeRequest.h"
+#include "model/GetResourceGroupListAclModeResult.h"
 #include "model/GetRoleRequest.h"
 #include "model/GetRoleResult.h"
 #include "model/GetServiceLinkedRoleDeletionStatusRequest.h"
@@ -144,6 +146,12 @@
 #include "model/ListResourcesResult.h"
 #include "model/ListRolesRequest.h"
 #include "model/ListRolesResult.h"
+#include "model/ListTagKeysRequest.h"
+#include "model/ListTagKeysResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
+#include "model/ListTagValuesRequest.h"
+#include "model/ListTagValuesResult.h"
 #include "model/ListTargetAttachmentsForControlPolicyRequest.h"
 #include "model/ListTargetAttachmentsForControlPolicyResult.h"
 #include "model/ListTrustedServiceStatusRequest.h"
@@ -168,6 +176,12 @@
 #include "model/SendVerificationCodeForEnableRDResult.h"
 #include "model/SetDefaultPolicyVersionRequest.h"
 #include "model/SetDefaultPolicyVersionResult.h"
+#include "model/SetMemberDeletionPermissionRequest.h"
+#include "model/SetMemberDeletionPermissionResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
+#include "model/UntagResourcesRequest.h"
+#include "model/UntagResourcesResult.h"
 #include "model/UpdateAccountRequest.h"
 #include "model/UpdateAccountResult.h"
 #include "model/UpdateControlPolicyRequest.h"
@@ -310,6 +324,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetResourceGroupResult> GetResourceGroupOutcome;
 			typedef std::future<GetResourceGroupOutcome> GetResourceGroupOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::GetResourceGroupRequest&, const GetResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceGroupAsyncHandler;
+			typedef Outcome<Error, Model::GetResourceGroupListAclModeResult> GetResourceGroupListAclModeOutcome;
+			typedef std::future<GetResourceGroupListAclModeOutcome> GetResourceGroupListAclModeOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::GetResourceGroupListAclModeRequest&, const GetResourceGroupListAclModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceGroupListAclModeAsyncHandler;
 			typedef Outcome<Error, Model::GetRoleResult> GetRoleOutcome;
 			typedef std::future<GetRoleOutcome> GetRoleOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::GetRoleRequest&, const GetRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRoleAsyncHandler;
@@ -370,6 +387,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListRolesResult> ListRolesOutcome;
 			typedef std::future<ListRolesOutcome> ListRolesOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::ListRolesRequest&, const ListRolesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListRolesAsyncHandler;
+			typedef Outcome<Error, Model::ListTagKeysResult> ListTagKeysOutcome;
+			typedef std::future<ListTagKeysOutcome> ListTagKeysOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::ListTagKeysRequest&, const ListTagKeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagKeysAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::ListTagValuesResult> ListTagValuesOutcome;
+			typedef std::future<ListTagValuesOutcome> ListTagValuesOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::ListTagValuesRequest&, const ListTagValuesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagValuesAsyncHandler;
 			typedef Outcome<Error, Model::ListTargetAttachmentsForControlPolicyResult> ListTargetAttachmentsForControlPolicyOutcome;
 			typedef std::future<ListTargetAttachmentsForControlPolicyOutcome> ListTargetAttachmentsForControlPolicyOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::ListTargetAttachmentsForControlPolicyRequest&, const ListTargetAttachmentsForControlPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTargetAttachmentsForControlPolicyAsyncHandler;
@@ -406,6 +432,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetDefaultPolicyVersionResult> SetDefaultPolicyVersionOutcome;
 			typedef std::future<SetDefaultPolicyVersionOutcome> SetDefaultPolicyVersionOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::SetDefaultPolicyVersionRequest&, const SetDefaultPolicyVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDefaultPolicyVersionAsyncHandler;
+			typedef Outcome<Error, Model::SetMemberDeletionPermissionResult> SetMemberDeletionPermissionOutcome;
+			typedef std::future<SetMemberDeletionPermissionOutcome> SetMemberDeletionPermissionOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::SetMemberDeletionPermissionRequest&, const SetMemberDeletionPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetMemberDeletionPermissionAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
+			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateAccountResult> UpdateAccountOutcome;
 			typedef std::future<UpdateAccountOutcome> UpdateAccountOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::UpdateAccountRequest&, const UpdateAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAccountAsyncHandler;
@@ -549,6 +584,9 @@ namespace AlibabaCloud
 			GetResourceGroupOutcome getResourceGroup(const Model::GetResourceGroupRequest &request)const;
 			void getResourceGroupAsync(const Model::GetResourceGroupRequest& request, const GetResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetResourceGroupOutcomeCallable getResourceGroupCallable(const Model::GetResourceGroupRequest& request) const;
+			GetResourceGroupListAclModeOutcome getResourceGroupListAclMode(const Model::GetResourceGroupListAclModeRequest &request)const;
+			void getResourceGroupListAclModeAsync(const Model::GetResourceGroupListAclModeRequest& request, const GetResourceGroupListAclModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetResourceGroupListAclModeOutcomeCallable getResourceGroupListAclModeCallable(const Model::GetResourceGroupListAclModeRequest& request) const;
 			GetRoleOutcome getRole(const Model::GetRoleRequest &request)const;
 			void getRoleAsync(const Model::GetRoleRequest& request, const GetRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRoleOutcomeCallable getRoleCallable(const Model::GetRoleRequest& request) const;
@@ -609,6 +647,15 @@ namespace AlibabaCloud
 			ListRolesOutcome listRoles(const Model::ListRolesRequest &request)const;
 			void listRolesAsync(const Model::ListRolesRequest& request, const ListRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListRolesOutcomeCallable listRolesCallable(const Model::ListRolesRequest& request) const;
+			ListTagKeysOutcome listTagKeys(const Model::ListTagKeysRequest &request)const;
+			void listTagKeysAsync(const Model::ListTagKeysRequest& request, const ListTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagKeysOutcomeCallable listTagKeysCallable(const Model::ListTagKeysRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
+			ListTagValuesOutcome listTagValues(const Model::ListTagValuesRequest &request)const;
+			void listTagValuesAsync(const Model::ListTagValuesRequest& request, const ListTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagValuesOutcomeCallable listTagValuesCallable(const Model::ListTagValuesRequest& request) const;
 			ListTargetAttachmentsForControlPolicyOutcome listTargetAttachmentsForControlPolicy(const Model::ListTargetAttachmentsForControlPolicyRequest &request)const;
 			void listTargetAttachmentsForControlPolicyAsync(const Model::ListTargetAttachmentsForControlPolicyRequest& request, const ListTargetAttachmentsForControlPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTargetAttachmentsForControlPolicyOutcomeCallable listTargetAttachmentsForControlPolicyCallable(const Model::ListTargetAttachmentsForControlPolicyRequest& request) const;
@@ -645,6 +692,15 @@ namespace AlibabaCloud
 			SetDefaultPolicyVersionOutcome setDefaultPolicyVersion(const Model::SetDefaultPolicyVersionRequest &request)const;
 			void setDefaultPolicyVersionAsync(const Model::SetDefaultPolicyVersionRequest& request, const SetDefaultPolicyVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDefaultPolicyVersionOutcomeCallable setDefaultPolicyVersionCallable(const Model::SetDefaultPolicyVersionRequest& request) const;
+			SetMemberDeletionPermissionOutcome setMemberDeletionPermission(const Model::SetMemberDeletionPermissionRequest &request)const;
+			void setMemberDeletionPermissionAsync(const Model::SetMemberDeletionPermissionRequest& request, const SetMemberDeletionPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetMemberDeletionPermissionOutcomeCallable setMemberDeletionPermissionCallable(const Model::SetMemberDeletionPermissionRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
+			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
+			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 			UpdateAccountOutcome updateAccount(const Model::UpdateAccountRequest &request)const;
 			void updateAccountAsync(const Model::UpdateAccountRequest& request, const UpdateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAccountOutcomeCallable updateAccountCallable(const Model::UpdateAccountRequest& request) const;

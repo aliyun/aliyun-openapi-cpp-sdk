@@ -32,9 +32,12 @@ public:
 	~GetAccountRequest();
 	std::string getAccountId() const;
 	void setAccountId(const std::string &accountId);
+	bool getIncludeTags() const;
+	void setIncludeTags(bool includeTags);
 
 private:
 	std::string accountId_;
+	bool includeTags_;
 };
 } // namespace Model
 } // namespace ResourceManager

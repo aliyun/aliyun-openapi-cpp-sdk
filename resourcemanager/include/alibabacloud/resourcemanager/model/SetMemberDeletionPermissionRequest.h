@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPREQUEST_H_
-#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_SETMEMBERDELETIONPERMISSIONREQUEST_H_
+#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_SETMEMBERDELETIONPERMISSIONREQUEST_H_
 
 #include <alibabacloud/resourcemanager/ResourceManagerExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,17 @@
 namespace AlibabaCloud {
 namespace ResourceManager {
 namespace Model {
-class ALIBABACLOUD_RESOURCEMANAGER_EXPORT GetResourceGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_RESOURCEMANAGER_EXPORT SetMemberDeletionPermissionRequest : public RpcServiceRequest {
 public:
-	GetResourceGroupRequest();
-	~GetResourceGroupRequest();
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
-	bool getIncludeTags() const;
-	void setIncludeTags(bool includeTags);
+	SetMemberDeletionPermissionRequest();
+	~SetMemberDeletionPermissionRequest();
+	std::string getStatus() const;
+	void setStatus(const std::string &status);
 
 private:
-	std::string resourceGroupId_;
-	bool includeTags_;
+	std::string status_;
 };
 } // namespace Model
 } // namespace ResourceManager
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_SETMEMBERDELETIONPERMISSIONREQUEST_H_

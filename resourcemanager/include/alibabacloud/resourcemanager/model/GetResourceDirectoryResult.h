@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct ResourceDirectory
 				{
+					std::string identityInformation;
 					std::string resourceDirectoryId;
 					std::string scpStatus;
 					std::string memberDeletionStatus;

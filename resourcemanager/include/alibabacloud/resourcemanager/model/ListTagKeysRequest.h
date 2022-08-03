@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPREQUEST_H_
-#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTTAGKEYSREQUEST_H_
+#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTTAGKEYSREQUEST_H_
 
 #include <alibabacloud/resourcemanager/ResourceManagerExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,26 @@
 namespace AlibabaCloud {
 namespace ResourceManager {
 namespace Model {
-class ALIBABACLOUD_RESOURCEMANAGER_EXPORT GetResourceGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_RESOURCEMANAGER_EXPORT ListTagKeysRequest : public RpcServiceRequest {
 public:
-	GetResourceGroupRequest();
-	~GetResourceGroupRequest();
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
-	bool getIncludeTags() const;
-	void setIncludeTags(bool includeTags);
+	ListTagKeysRequest();
+	~ListTagKeysRequest();
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
+	std::string getKeyFilter() const;
+	void setKeyFilter(const std::string &keyFilter);
 
 private:
-	std::string resourceGroupId_;
-	bool includeTags_;
+	std::string resourceType_;
+	std::string nextToken_;
+	int maxResults_;
+	std::string keyFilter_;
 };
 } // namespace Model
 } // namespace ResourceManager
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTTAGKEYSREQUEST_H_

@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Account
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string joinMethod;
 					std::string modifyTime;
@@ -43,6 +48,7 @@ namespace AlibabaCloud
 					std::string displayName;
 					std::string joinTime;
 					std::string folderId;
+					std::vector<Account::Tag> tags;
 					std::string resourceDirectoryPath;
 				};
 

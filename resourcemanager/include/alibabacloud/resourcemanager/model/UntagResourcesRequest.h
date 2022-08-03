@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPREQUEST_H_
-#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_UNTAGRESOURCESREQUEST_H_
+#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_UNTAGRESOURCESREQUEST_H_
 
 #include <alibabacloud/resourcemanager/ResourceManagerExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,26 @@
 namespace AlibabaCloud {
 namespace ResourceManager {
 namespace Model {
-class ALIBABACLOUD_RESOURCEMANAGER_EXPORT GetResourceGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_RESOURCEMANAGER_EXPORT UntagResourcesRequest : public RpcServiceRequest {
 public:
-	GetResourceGroupRequest();
-	~GetResourceGroupRequest();
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
-	bool getIncludeTags() const;
-	void setIncludeTags(bool includeTags);
+	UntagResourcesRequest();
+	~UntagResourcesRequest();
+	bool getAll() const;
+	void setAll(bool all);
+	std::vector<std::string> getResourceId() const;
+	void setResourceId(const std::vector<std::string> &resourceId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::vector<std::string> getTagKey() const;
+	void setTagKey(const std::vector<std::string> &tagKey);
 
 private:
-	std::string resourceGroupId_;
-	bool includeTags_;
+	bool all_;
+	std::vector<std::string> resourceId_;
+	std::string resourceType_;
+	std::vector<std::string> tagKey_;
 };
 } // namespace Model
 } // namespace ResourceManager
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_UNTAGRESOURCESREQUEST_H_

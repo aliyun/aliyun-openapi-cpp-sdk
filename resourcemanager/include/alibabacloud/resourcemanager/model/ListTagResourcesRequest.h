@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_INVITEACCOUNTTORESOURCEDIRECTORYREQUEST_H_
-#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_INVITEACCOUNTTORESOURCEDIRECTORYREQUEST_H_
+#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTTAGRESOURCESREQUEST_H_
+#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTTAGRESOURCESREQUEST_H_
 
 #include <alibabacloud/resourcemanager/ResourceManagerExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,30 +26,33 @@
 namespace AlibabaCloud {
 namespace ResourceManager {
 namespace Model {
-class ALIBABACLOUD_RESOURCEMANAGER_EXPORT InviteAccountToResourceDirectoryRequest : public RpcServiceRequest {
+class ALIBABACLOUD_RESOURCEMANAGER_EXPORT ListTagResourcesRequest : public RpcServiceRequest {
 public:
 	struct Tag {
 		std::string value;
 		std::string key;
 	};
-	InviteAccountToResourceDirectoryRequest();
-	~InviteAccountToResourceDirectoryRequest();
-	std::string getNote() const;
-	void setNote(const std::string &note);
-	std::string getTargetType() const;
-	void setTargetType(const std::string &targetType);
+	ListTagResourcesRequest();
+	~ListTagResourcesRequest();
+	std::vector<std::string> getResourceId() const;
+	void setResourceId(const std::vector<std::string> &resourceId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
-	std::string getTargetEntity() const;
-	void setTargetEntity(const std::string &targetEntity);
 
 private:
-	std::string note_;
-	std::string targetType_;
+	std::vector<std::string> resourceId_;
+	std::string resourceType_;
+	std::string nextToken_;
+	int maxResults_;
 	std::vector<Tag> tag_;
-	std::string targetEntity_;
 };
 } // namespace Model
 } // namespace ResourceManager
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_INVITEACCOUNTTORESOURCEDIRECTORYREQUEST_H_
+#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTTAGRESOURCESREQUEST_H_

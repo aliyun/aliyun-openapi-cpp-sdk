@@ -34,3 +34,12 @@ void GetAccountRequest::setAccountId(const std::string &accountId) {
   setParameter(std::string("AccountId"), accountId);
 }
 
+bool GetAccountRequest::getIncludeTags() const {
+  return includeTags_;
+}
+
+void GetAccountRequest::setIncludeTags(bool includeTags) {
+  includeTags_ = includeTags;
+  setParameter(std::string("IncludeTags"), includeTags ? "true" : "false");
+}
+

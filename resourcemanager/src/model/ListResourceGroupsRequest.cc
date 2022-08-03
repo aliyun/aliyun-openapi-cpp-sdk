@@ -52,6 +52,38 @@ void ListResourceGroupsRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::vector<ListResourceGroupsRequest::Tag> ListResourceGroupsRequest::getTag() const {
+  return tag_;
+}
+
+void ListResourceGroupsRequest::setTag(const std::vector<ListResourceGroupsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
+}
+
+std::vector<ListResourceGroupsRequest::std::string> ListResourceGroupsRequest::getResourceGroupIds() const {
+  return resourceGroupIds_;
+}
+
+void ListResourceGroupsRequest::setResourceGroupIds(const std::vector<ListResourceGroupsRequest::std::string> &resourceGroupIds) {
+  resourceGroupIds_ = resourceGroupIds;
+  for(int dep1 = 0; dep1 != resourceGroupIds.size(); dep1++) {
+    setParameter(std::string("ResourceGroupIds") + "." + std::to_string(dep1 + 1), resourceGroupIds[dep1]);
+  }
+}
+
+bool ListResourceGroupsRequest::getIncludeTags() const {
+  return includeTags_;
+}
+
+void ListResourceGroupsRequest::setIncludeTags(bool includeTags) {
+  includeTags_ = includeTags;
+  setParameter(std::string("IncludeTags"), includeTags ? "true" : "false");
+}
+
 std::string ListResourceGroupsRequest::getDisplayName() const {
   return displayName_;
 }

@@ -28,6 +28,10 @@ namespace ResourceManager {
 namespace Model {
 class ALIBABACLOUD_RESOURCEMANAGER_EXPORT CreateResourceAccountRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateResourceAccountRequest();
 	~CreateResourceAccountRequest();
 	std::string getAccountNamePrefix() const;
@@ -36,6 +40,8 @@ public:
 	void setParentFolderId(const std::string &parentFolderId);
 	std::string getDisplayName() const;
 	void setDisplayName(const std::string &displayName);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getPayerAccountId() const;
 	void setPayerAccountId(const std::string &payerAccountId);
 
@@ -43,6 +49,7 @@ private:
 	std::string accountNamePrefix_;
 	std::string parentFolderId_;
 	std::string displayName_;
+	std::vector<Tag> tag_;
 	std::string payerAccountId_;
 };
 } // namespace Model

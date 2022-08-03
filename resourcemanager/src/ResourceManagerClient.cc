@@ -1527,6 +1527,42 @@ ResourceManagerClient::GetResourceGroupOutcomeCallable ResourceManagerClient::ge
 	return task->get_future();
 }
 
+ResourceManagerClient::GetResourceGroupListAclModeOutcome ResourceManagerClient::getResourceGroupListAclMode(const GetResourceGroupListAclModeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetResourceGroupListAclModeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetResourceGroupListAclModeOutcome(GetResourceGroupListAclModeResult(outcome.result()));
+	else
+		return GetResourceGroupListAclModeOutcome(outcome.error());
+}
+
+void ResourceManagerClient::getResourceGroupListAclModeAsync(const GetResourceGroupListAclModeRequest& request, const GetResourceGroupListAclModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getResourceGroupListAclMode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::GetResourceGroupListAclModeOutcomeCallable ResourceManagerClient::getResourceGroupListAclModeCallable(const GetResourceGroupListAclModeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetResourceGroupListAclModeOutcome()>>(
+			[this, request]()
+			{
+			return this->getResourceGroupListAclMode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ResourceManagerClient::GetRoleOutcome ResourceManagerClient::getRole(const GetRoleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2247,6 +2283,114 @@ ResourceManagerClient::ListRolesOutcomeCallable ResourceManagerClient::listRoles
 	return task->get_future();
 }
 
+ResourceManagerClient::ListTagKeysOutcome ResourceManagerClient::listTagKeys(const ListTagKeysRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagKeysOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagKeysOutcome(ListTagKeysResult(outcome.result()));
+	else
+		return ListTagKeysOutcome(outcome.error());
+}
+
+void ResourceManagerClient::listTagKeysAsync(const ListTagKeysRequest& request, const ListTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagKeys(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::ListTagKeysOutcomeCallable ResourceManagerClient::listTagKeysCallable(const ListTagKeysRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagKeysOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagKeys(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::ListTagResourcesOutcome ResourceManagerClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void ResourceManagerClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::ListTagResourcesOutcomeCallable ResourceManagerClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::ListTagValuesOutcome ResourceManagerClient::listTagValues(const ListTagValuesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagValuesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagValuesOutcome(ListTagValuesResult(outcome.result()));
+	else
+		return ListTagValuesOutcome(outcome.error());
+}
+
+void ResourceManagerClient::listTagValuesAsync(const ListTagValuesRequest& request, const ListTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagValues(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::ListTagValuesOutcomeCallable ResourceManagerClient::listTagValuesCallable(const ListTagValuesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagValuesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagValues(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ResourceManagerClient::ListTargetAttachmentsForControlPolicyOutcome ResourceManagerClient::listTargetAttachmentsForControlPolicy(const ListTargetAttachmentsForControlPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2673,6 +2817,114 @@ ResourceManagerClient::SetDefaultPolicyVersionOutcomeCallable ResourceManagerCli
 			[this, request]()
 			{
 			return this->setDefaultPolicyVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::SetMemberDeletionPermissionOutcome ResourceManagerClient::setMemberDeletionPermission(const SetMemberDeletionPermissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetMemberDeletionPermissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetMemberDeletionPermissionOutcome(SetMemberDeletionPermissionResult(outcome.result()));
+	else
+		return SetMemberDeletionPermissionOutcome(outcome.error());
+}
+
+void ResourceManagerClient::setMemberDeletionPermissionAsync(const SetMemberDeletionPermissionRequest& request, const SetMemberDeletionPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setMemberDeletionPermission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::SetMemberDeletionPermissionOutcomeCallable ResourceManagerClient::setMemberDeletionPermissionCallable(const SetMemberDeletionPermissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetMemberDeletionPermissionOutcome()>>(
+			[this, request]()
+			{
+			return this->setMemberDeletionPermission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::TagResourcesOutcome ResourceManagerClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void ResourceManagerClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::TagResourcesOutcomeCallable ResourceManagerClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::UntagResourcesOutcome ResourceManagerClient::untagResources(const UntagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+	else
+		return UntagResourcesOutcome(outcome.error());
+}
+
+void ResourceManagerClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::UntagResourcesOutcomeCallable ResourceManagerClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -63,6 +63,16 @@ void ListAccountsResult::parse(const std::string &payload)
 			accountsObject.modifyTime = valueAccountsAccount["ModifyTime"].asString();
 		if(!valueAccountsAccount["ResourceDirectoryPath"].isNull())
 			accountsObject.resourceDirectoryPath = valueAccountsAccount["ResourceDirectoryPath"].asString();
+		auto allTagsNode = valueAccountsAccount["Tags"]["Tag"];
+		for (auto valueAccountsAccountTagsTag : allTagsNode)
+		{
+			Account::Tag tagsObject;
+			if(!valueAccountsAccountTagsTag["Key"].isNull())
+				tagsObject.key = valueAccountsAccountTagsTag["Key"].asString();
+			if(!valueAccountsAccountTagsTag["Value"].isNull())
+				tagsObject.value = valueAccountsAccountTagsTag["Value"].asString();
+			accountsObject.tags.push_back(tagsObject);
+		}
 		accounts_.push_back(accountsObject);
 	}
 	if(!value["TotalCount"].isNull())

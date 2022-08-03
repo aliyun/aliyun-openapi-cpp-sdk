@@ -28,16 +28,26 @@ namespace ResourceManager {
 namespace Model {
 class ALIBABACLOUD_RESOURCEMANAGER_EXPORT ListAccountsRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListAccountsRequest();
 	~ListAccountsRequest();
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	bool getIncludeTags() const;
+	void setIncludeTags(bool includeTags);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
 private:
 	int pageNumber_;
+	bool includeTags_;
 	int pageSize_;
+	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace ResourceManager

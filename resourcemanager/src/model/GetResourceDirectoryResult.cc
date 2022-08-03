@@ -56,6 +56,8 @@ void GetResourceDirectoryResult::parse(const std::string &payload)
 		resourceDirectory_.controlPolicyStatus = resourceDirectoryNode["ControlPolicyStatus"].asString();
 	if(!resourceDirectoryNode["MemberDeletionStatus"].isNull())
 		resourceDirectory_.memberDeletionStatus = resourceDirectoryNode["MemberDeletionStatus"].asString();
+	if(!resourceDirectoryNode["IdentityInformation"].isNull())
+		resourceDirectory_.identityInformation = resourceDirectoryNode["IdentityInformation"].asString();
 
 }
 

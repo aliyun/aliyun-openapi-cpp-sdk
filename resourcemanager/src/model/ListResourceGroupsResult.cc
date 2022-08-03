@@ -55,6 +55,16 @@ void ListResourceGroupsResult::parse(const std::string &payload)
 			resourceGroupsObject.createDate = valueResourceGroupsResourceGroup["CreateDate"].asString();
 		if(!valueResourceGroupsResourceGroup["Id"].isNull())
 			resourceGroupsObject.id = valueResourceGroupsResourceGroup["Id"].asString();
+		auto allTagsNode = valueResourceGroupsResourceGroup["Tags"]["Tag"];
+		for (auto valueResourceGroupsResourceGroupTagsTag : allTagsNode)
+		{
+			ResourceGroup::Tag tagsObject;
+			if(!valueResourceGroupsResourceGroupTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueResourceGroupsResourceGroupTagsTag["TagKey"].asString();
+			if(!valueResourceGroupsResourceGroupTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueResourceGroupsResourceGroupTagsTag["TagValue"].asString();
+			resourceGroupsObject.tags.push_back(tagsObject);
+		}
 		resourceGroups_.push_back(resourceGroupsObject);
 	}
 	if(!value["TotalCount"].isNull())
@@ -63,6 +73,8 @@ void ListResourceGroupsResult::parse(const std::string &payload)
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["ResourceGroupListAclMode"].isNull())
+		resourceGroupListAclMode_ = value["ResourceGroupListAclMode"].asString();
 
 }
 
@@ -84,5 +96,10 @@ int ListResourceGroupsResult::getPageNumber()const
 std::vector<ListResourceGroupsResult::ResourceGroup> ListResourceGroupsResult::getResourceGroups()const
 {
 	return resourceGroups_;
+}
+
+std::string ListResourceGroupsResult::getResourceGroupListAclMode()const
+{
+	return resourceGroupListAclMode_;
 }
 

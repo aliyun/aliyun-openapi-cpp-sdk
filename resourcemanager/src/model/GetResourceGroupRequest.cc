@@ -34,3 +34,12 @@ void GetResourceGroupRequest::setResourceGroupId(const std::string &resourceGrou
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+bool GetResourceGroupRequest::getIncludeTags() const {
+  return includeTags_;
+}
+
+void GetResourceGroupRequest::setIncludeTags(bool includeTags) {
+  includeTags_ = includeTags;
+  setParameter(std::string("IncludeTags"), includeTags ? "true" : "false");
+}
+

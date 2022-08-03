@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPRESULT_H_
-#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPRESULT_H_
+#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTTAGRESOURCESRESULT_H_
+#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTTAGRESOURCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RESOURCEMANAGER_EXPORT GetResourceGroupResult : public ServiceResult
+			class ALIBABACLOUD_RESOURCEMANAGER_EXPORT ListTagResourcesResult : public ServiceResult
 			{
 			public:
-				struct ResourceGroup
+				struct TagResource
 				{
-					struct RegionStatus
-					{
-						std::string status;
-						std::string regionId;
-					};
-					struct Tag
-					{
-						std::string tagKey;
-						std::string tagValue;
-					};
-					std::string status;
-					std::vector<RegionStatus> regionStatuses;
-					std::string accountId;
-					std::string displayName;
-					std::string id;
-					std::string createDate;
-					std::vector<Tag> tags;
-					std::string name;
+					std::string resourceId;
+					std::string tagKey;
+					std::string resourceType;
+					std::string tagValue;
 				};
 
 
-				GetResourceGroupResult();
-				explicit GetResourceGroupResult(const std::string &payload);
-				~GetResourceGroupResult();
-				ResourceGroup getResourceGroup()const;
+				ListTagResourcesResult();
+				explicit ListTagResourcesResult(const std::string &payload);
+				~ListTagResourcesResult();
+				std::string getNextToken()const;
+				std::vector<TagResource> getTagResources()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				ResourceGroup resourceGroup_;
+				std::string nextToken_;
+				std::vector<TagResource> tagResources_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPRESULT_H_
+#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTTAGRESOURCESRESULT_H_

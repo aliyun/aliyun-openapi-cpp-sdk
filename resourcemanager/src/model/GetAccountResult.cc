@@ -64,6 +64,18 @@ void GetAccountResult::parse(const std::string &payload)
 		account_.accountName = accountNode["AccountName"].asString();
 	if(!accountNode["ResourceDirectoryPath"].isNull())
 		account_.resourceDirectoryPath = accountNode["ResourceDirectoryPath"].asString();
+	if(!accountNode["Location"].isNull())
+		account_.location = accountNode["Location"].asString();
+	auto allTagsNode = accountNode["Tags"]["Tag"];
+	for (auto accountNodeTagsTag : allTagsNode)
+	{
+		Account::Tag tagObject;
+		if(!accountNodeTagsTag["Key"].isNull())
+			tagObject.key = accountNodeTagsTag["Key"].asString();
+		if(!accountNodeTagsTag["Value"].isNull())
+			tagObject.value = accountNodeTagsTag["Value"].asString();
+		account_.tags.push_back(tagObject);
+	}
 
 }
 

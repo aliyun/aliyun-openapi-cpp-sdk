@@ -34,11 +34,17 @@ namespace AlibabaCloud
 			public:
 				struct ResourceGroup
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string status;
 					std::string accountId;
 					std::string displayName;
 					std::string id;
 					std::string createDate;
+					std::vector<ResourceGroup::Tag> tags;
 					std::string name;
 				};
 
@@ -50,6 +56,7 @@ namespace AlibabaCloud
 				int getPageSize()const;
 				int getPageNumber()const;
 				std::vector<ResourceGroup> getResourceGroups()const;
+				std::string getResourceGroupListAclMode()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -58,6 +65,7 @@ namespace AlibabaCloud
 				int pageSize_;
 				int pageNumber_;
 				std::vector<ResourceGroup> resourceGroups_;
+				std::string resourceGroupListAclMode_;
 
 			};
 		}

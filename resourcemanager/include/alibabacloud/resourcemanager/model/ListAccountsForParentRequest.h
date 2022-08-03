@@ -28,6 +28,10 @@ namespace ResourceManager {
 namespace Model {
 class ALIBABACLOUD_RESOURCEMANAGER_EXPORT ListAccountsForParentRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListAccountsForParentRequest();
 	~ListAccountsForParentRequest();
 	std::string getQueryKeyword() const;
@@ -36,14 +40,20 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getParentFolderId() const;
 	void setParentFolderId(const std::string &parentFolderId);
+	bool getIncludeTags() const;
+	void setIncludeTags(bool includeTags);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
 private:
 	std::string queryKeyword_;
 	int pageNumber_;
 	std::string parentFolderId_;
+	bool includeTags_;
 	int pageSize_;
+	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace ResourceManager

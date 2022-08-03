@@ -62,6 +62,16 @@ void GetResourceGroupResult::parse(const std::string &payload)
 			regionStatusObject.regionId = resourceGroupNodeRegionStatusesRegionStatus["RegionId"].asString();
 		resourceGroup_.regionStatuses.push_back(regionStatusObject);
 	}
+	auto allTagsNode = resourceGroupNode["Tags"]["Tag"];
+	for (auto resourceGroupNodeTagsTag : allTagsNode)
+	{
+		ResourceGroup::Tag tagObject;
+		if(!resourceGroupNodeTagsTag["TagKey"].isNull())
+			tagObject.tagKey = resourceGroupNodeTagsTag["TagKey"].asString();
+		if(!resourceGroupNodeTagsTag["TagValue"].isNull())
+			tagObject.tagValue = resourceGroupNodeTagsTag["TagValue"].asString();
+		resourceGroup_.tags.push_back(tagObject);
+	}
 
 }
 

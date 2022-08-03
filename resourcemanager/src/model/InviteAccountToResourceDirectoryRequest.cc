@@ -43,6 +43,18 @@ void InviteAccountToResourceDirectoryRequest::setTargetType(const std::string &t
   setParameter(std::string("TargetType"), targetType);
 }
 
+std::vector<InviteAccountToResourceDirectoryRequest::Tag> InviteAccountToResourceDirectoryRequest::getTag() const {
+  return tag_;
+}
+
+void InviteAccountToResourceDirectoryRequest::setTag(const std::vector<InviteAccountToResourceDirectoryRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
+}
+
 std::string InviteAccountToResourceDirectoryRequest::getTargetEntity() const {
   return targetEntity_;
 }

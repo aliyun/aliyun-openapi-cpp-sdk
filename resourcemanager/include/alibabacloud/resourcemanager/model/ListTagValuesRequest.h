@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPREQUEST_H_
-#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTTAGVALUESREQUEST_H_
+#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTTAGVALUESREQUEST_H_
 
 #include <alibabacloud/resourcemanager/ResourceManagerExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,29 @@
 namespace AlibabaCloud {
 namespace ResourceManager {
 namespace Model {
-class ALIBABACLOUD_RESOURCEMANAGER_EXPORT GetResourceGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_RESOURCEMANAGER_EXPORT ListTagValuesRequest : public RpcServiceRequest {
 public:
-	GetResourceGroupRequest();
-	~GetResourceGroupRequest();
-	std::string getResourceGroupId() const;
-	void setResourceGroupId(const std::string &resourceGroupId);
-	bool getIncludeTags() const;
-	void setIncludeTags(bool includeTags);
+	ListTagValuesRequest();
+	~ListTagValuesRequest();
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getValueFilter() const;
+	void setValueFilter(const std::string &valueFilter);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
+	std::string getTagKey() const;
+	void setTagKey(const std::string &tagKey);
 
 private:
-	std::string resourceGroupId_;
-	bool includeTags_;
+	std::string resourceType_;
+	std::string valueFilter_;
+	std::string nextToken_;
+	int maxResults_;
+	std::string tagKey_;
 };
 } // namespace Model
 } // namespace ResourceManager
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETRESOURCEGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTTAGVALUESREQUEST_H_
