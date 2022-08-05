@@ -1,3 +1,6 @@
+2022-08-05 Version: 1.36.1218
+- Automatically generate sdk tasks.
+
 2022-08-03 Version: 1.36.1217
 - Supported more query conditions when searching resource group.
 
