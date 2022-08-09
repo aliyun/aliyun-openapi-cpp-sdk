@@ -4227,6 +4227,42 @@ EnsClient::GetDeviceInternetPortOutcomeCallable EnsClient::getDeviceInternetPort
 	return task->get_future();
 }
 
+EnsClient::GetOssStorageAndAccByBucketsOutcome EnsClient::getOssStorageAndAccByBuckets(const GetOssStorageAndAccByBucketsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOssStorageAndAccByBucketsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOssStorageAndAccByBucketsOutcome(GetOssStorageAndAccByBucketsResult(outcome.result()));
+	else
+		return GetOssStorageAndAccByBucketsOutcome(outcome.error());
+}
+
+void EnsClient::getOssStorageAndAccByBucketsAsync(const GetOssStorageAndAccByBucketsRequest& request, const GetOssStorageAndAccByBucketsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOssStorageAndAccByBuckets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::GetOssStorageAndAccByBucketsOutcomeCallable EnsClient::getOssStorageAndAccByBucketsCallable(const GetOssStorageAndAccByBucketsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOssStorageAndAccByBucketsOutcome()>>(
+			[this, request]()
+			{
+			return this->getOssStorageAndAccByBuckets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::ImportKeyPairOutcome EnsClient::importKeyPair(const ImportKeyPairRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5085,6 +5121,42 @@ EnsClient::RebootInstanceOutcomeCallable EnsClient::rebootInstanceCallable(const
 			[this, request]()
 			{
 			return this->rebootInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::ReinitInstanceOutcome EnsClient::reinitInstance(const ReinitInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReinitInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReinitInstanceOutcome(ReinitInstanceResult(outcome.result()));
+	else
+		return ReinitInstanceOutcome(outcome.error());
+}
+
+void EnsClient::reinitInstanceAsync(const ReinitInstanceRequest& request, const ReinitInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reinitInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ReinitInstanceOutcomeCallable EnsClient::reinitInstanceCallable(const ReinitInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReinitInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->reinitInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

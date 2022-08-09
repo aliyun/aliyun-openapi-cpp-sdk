@@ -253,6 +253,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ExportMeasurementDataResult.h
 	include/alibabacloud/ens/model/GetDeviceInternetPortRequest.h
 	include/alibabacloud/ens/model/GetDeviceInternetPortResult.h
+	include/alibabacloud/ens/model/GetOssStorageAndAccByBucketsRequest.h
+	include/alibabacloud/ens/model/GetOssStorageAndAccByBucketsResult.h
 	include/alibabacloud/ens/model/ImportKeyPairRequest.h
 	include/alibabacloud/ens/model/ImportKeyPairResult.h
 	include/alibabacloud/ens/model/JoinPublicIpsToEpnInstanceRequest.h
@@ -301,6 +303,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/RebootARMServerInstanceResult.h
 	include/alibabacloud/ens/model/RebootInstanceRequest.h
 	include/alibabacloud/ens/model/RebootInstanceResult.h
+	include/alibabacloud/ens/model/ReinitInstanceRequest.h
+	include/alibabacloud/ens/model/ReinitInstanceResult.h
 	include/alibabacloud/ens/model/ReleaseARMServerInstanceRequest.h
 	include/alibabacloud/ens/model/ReleaseARMServerInstanceResult.h
 	include/alibabacloud/ens/model/ReleaseInstanceRequest.h
@@ -606,6 +610,8 @@ set(ens_src
 	src/model/ExportMeasurementDataResult.cc
 	src/model/GetDeviceInternetPortRequest.cc
 	src/model/GetDeviceInternetPortResult.cc
+	src/model/GetOssStorageAndAccByBucketsRequest.cc
+	src/model/GetOssStorageAndAccByBucketsResult.cc
 	src/model/ImportKeyPairRequest.cc
 	src/model/ImportKeyPairResult.cc
 	src/model/JoinPublicIpsToEpnInstanceRequest.cc
@@ -654,6 +660,8 @@ set(ens_src
 	src/model/RebootARMServerInstanceResult.cc
 	src/model/RebootInstanceRequest.cc
 	src/model/RebootInstanceResult.cc
+	src/model/ReinitInstanceRequest.cc
+	src/model/ReinitInstanceResult.cc
 	src/model/ReleaseARMServerInstanceRequest.cc
 	src/model/ReleaseARMServerInstanceResult.cc
 	src/model/ReleaseInstanceRequest.cc

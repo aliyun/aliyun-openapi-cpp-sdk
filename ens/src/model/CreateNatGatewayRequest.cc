@@ -34,6 +34,15 @@ void CreateNatGatewayRequest::setEnsRegionId(const std::string &ensRegionId) {
   setParameter(std::string("EnsRegionId"), ensRegionId);
 }
 
+std::string CreateNatGatewayRequest::getInstanceType() const {
+  return instanceType_;
+}
+
+void CreateNatGatewayRequest::setInstanceType(const std::string &instanceType) {
+  instanceType_ = instanceType;
+  setParameter(std::string("InstanceType"), instanceType);
+}
+
 std::string CreateNatGatewayRequest::getVSwitchId() const {
   return vSwitchId_;
 }

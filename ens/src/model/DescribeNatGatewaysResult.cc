@@ -55,6 +55,8 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 			natGatewaysObject.name = valueNatGatewaysNatGateway["Name"].asString();
 		if(!valueNatGatewaysNatGateway["CreationTime"].isNull())
 			natGatewaysObject.creationTime = valueNatGatewaysNatGateway["CreationTime"].asString();
+		if(!valueNatGatewaysNatGateway["Spec"].isNull())
+			natGatewaysObject.spec = valueNatGatewaysNatGateway["Spec"].asString();
 		natGateways_.push_back(natGatewaysObject);
 	}
 	if(!value["PageNumber"].isNull())

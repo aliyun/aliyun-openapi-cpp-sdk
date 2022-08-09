@@ -52,6 +52,15 @@ void CreateSnatEntryRequest::setSourceVSwitchId(const std::string &sourceVSwitch
   setParameter(std::string("SourceVSwitchId"), sourceVSwitchId);
 }
 
+std::string CreateSnatEntryRequest::getSourceNetworkId() const {
+  return sourceNetworkId_;
+}
+
+void CreateSnatEntryRequest::setSourceNetworkId(const std::string &sourceNetworkId) {
+  sourceNetworkId_ = sourceNetworkId;
+  setParameter(std::string("SourceNetworkId"), sourceNetworkId);
+}
+
 std::string CreateSnatEntryRequest::getNatGatewayId() const {
   return natGatewayId_;
 }

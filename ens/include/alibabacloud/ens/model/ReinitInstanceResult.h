@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBENATGATEWAYSRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBENATGATEWAYSRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_REINITINSTANCERESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_REINITINSTANCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DescribeNatGatewaysResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT ReinitInstanceResult : public ServiceResult
 			{
 			public:
-				struct NatGateway
-				{
-					std::string vSwitchId;
-					std::string creationTime;
-					std::string ensRegionId;
-					std::string networkId;
-					std::string spec;
-					std::string natGatewayId;
-					std::string name;
-				};
 
 
-				DescribeNatGatewaysResult();
-				explicit DescribeNatGatewaysResult(const std::string &payload);
-				~DescribeNatGatewaysResult();
-				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<NatGateway> getNatGateways()const;
+				ReinitInstanceResult();
+				explicit ReinitInstanceResult(const std::string &payload);
+				~ReinitInstanceResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<NatGateway> natGateways_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBENATGATEWAYSRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_REINITINSTANCERESULT_H_

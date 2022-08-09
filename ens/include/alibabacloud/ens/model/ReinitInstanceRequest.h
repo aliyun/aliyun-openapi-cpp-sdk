@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_CREATENATGATEWAYREQUEST_H_
-#define ALIBABACLOUD_ENS_MODEL_CREATENATGATEWAYREQUEST_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_REINITINSTANCEREQUEST_H_
+#define ALIBABACLOUD_ENS_MODEL_REINITINSTANCEREQUEST_H_
 
 #include <alibabacloud/ens/EnsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,23 @@
 namespace AlibabaCloud {
 namespace Ens {
 namespace Model {
-class ALIBABACLOUD_ENS_EXPORT CreateNatGatewayRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ENS_EXPORT ReinitInstanceRequest : public RpcServiceRequest {
 public:
-	CreateNatGatewayRequest();
-	~CreateNatGatewayRequest();
-	std::string getEnsRegionId() const;
-	void setEnsRegionId(const std::string &ensRegionId);
-	std::string getInstanceType() const;
-	void setInstanceType(const std::string &instanceType);
-	std::string getVSwitchId() const;
-	void setVSwitchId(const std::string &vSwitchId);
-	std::string getName() const;
-	void setName(const std::string &name);
-	std::string getNetworkId() const;
-	void setNetworkId(const std::string &networkId);
+	ReinitInstanceRequest();
+	~ReinitInstanceRequest();
+	std::string getImageId() const;
+	void setImageId(const std::string &imageId);
+	std::string getPassword() const;
+	void setPassword(const std::string &password);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 
 private:
-	std::string ensRegionId_;
-	std::string instanceType_;
-	std::string vSwitchId_;
-	std::string name_;
-	std::string networkId_;
+	std::string imageId_;
+	std::string password_;
+	std::string instanceId_;
 };
 } // namespace Model
 } // namespace Ens
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ENS_MODEL_CREATENATGATEWAYREQUEST_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_REINITINSTANCEREQUEST_H_

@@ -254,6 +254,8 @@
 #include "model/ExportMeasurementDataResult.h"
 #include "model/GetDeviceInternetPortRequest.h"
 #include "model/GetDeviceInternetPortResult.h"
+#include "model/GetOssStorageAndAccByBucketsRequest.h"
+#include "model/GetOssStorageAndAccByBucketsResult.h"
 #include "model/ImportKeyPairRequest.h"
 #include "model/ImportKeyPairResult.h"
 #include "model/JoinPublicIpsToEpnInstanceRequest.h"
@@ -302,6 +304,8 @@
 #include "model/RebootARMServerInstanceResult.h"
 #include "model/RebootInstanceRequest.h"
 #include "model/RebootInstanceResult.h"
+#include "model/ReinitInstanceRequest.h"
+#include "model/ReinitInstanceResult.h"
 #include "model/ReleaseARMServerInstanceRequest.h"
 #include "model/ReleaseARMServerInstanceResult.h"
 #include "model/ReleaseInstanceRequest.h"
@@ -729,6 +733,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDeviceInternetPortResult> GetDeviceInternetPortOutcome;
 			typedef std::future<GetDeviceInternetPortOutcome> GetDeviceInternetPortOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::GetDeviceInternetPortRequest&, const GetDeviceInternetPortOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceInternetPortAsyncHandler;
+			typedef Outcome<Error, Model::GetOssStorageAndAccByBucketsResult> GetOssStorageAndAccByBucketsOutcome;
+			typedef std::future<GetOssStorageAndAccByBucketsOutcome> GetOssStorageAndAccByBucketsOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::GetOssStorageAndAccByBucketsRequest&, const GetOssStorageAndAccByBucketsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOssStorageAndAccByBucketsAsyncHandler;
 			typedef Outcome<Error, Model::ImportKeyPairResult> ImportKeyPairOutcome;
 			typedef std::future<ImportKeyPairOutcome> ImportKeyPairOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::ImportKeyPairRequest&, const ImportKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportKeyPairAsyncHandler;
@@ -801,6 +808,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RebootInstanceResult> RebootInstanceOutcome;
 			typedef std::future<RebootInstanceOutcome> RebootInstanceOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::RebootInstanceRequest&, const RebootInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstanceAsyncHandler;
+			typedef Outcome<Error, Model::ReinitInstanceResult> ReinitInstanceOutcome;
+			typedef std::future<ReinitInstanceOutcome> ReinitInstanceOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::ReinitInstanceRequest&, const ReinitInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReinitInstanceAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseARMServerInstanceResult> ReleaseARMServerInstanceOutcome;
 			typedef std::future<ReleaseARMServerInstanceOutcome> ReleaseARMServerInstanceOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::ReleaseARMServerInstanceRequest&, const ReleaseARMServerInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseARMServerInstanceAsyncHandler;
@@ -1259,6 +1269,9 @@ namespace AlibabaCloud
 			GetDeviceInternetPortOutcome getDeviceInternetPort(const Model::GetDeviceInternetPortRequest &request)const;
 			void getDeviceInternetPortAsync(const Model::GetDeviceInternetPortRequest& request, const GetDeviceInternetPortAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDeviceInternetPortOutcomeCallable getDeviceInternetPortCallable(const Model::GetDeviceInternetPortRequest& request) const;
+			GetOssStorageAndAccByBucketsOutcome getOssStorageAndAccByBuckets(const Model::GetOssStorageAndAccByBucketsRequest &request)const;
+			void getOssStorageAndAccByBucketsAsync(const Model::GetOssStorageAndAccByBucketsRequest& request, const GetOssStorageAndAccByBucketsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetOssStorageAndAccByBucketsOutcomeCallable getOssStorageAndAccByBucketsCallable(const Model::GetOssStorageAndAccByBucketsRequest& request) const;
 			ImportKeyPairOutcome importKeyPair(const Model::ImportKeyPairRequest &request)const;
 			void importKeyPairAsync(const Model::ImportKeyPairRequest& request, const ImportKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImportKeyPairOutcomeCallable importKeyPairCallable(const Model::ImportKeyPairRequest& request) const;
@@ -1331,6 +1344,9 @@ namespace AlibabaCloud
 			RebootInstanceOutcome rebootInstance(const Model::RebootInstanceRequest &request)const;
 			void rebootInstanceAsync(const Model::RebootInstanceRequest& request, const RebootInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RebootInstanceOutcomeCallable rebootInstanceCallable(const Model::RebootInstanceRequest& request) const;
+			ReinitInstanceOutcome reinitInstance(const Model::ReinitInstanceRequest &request)const;
+			void reinitInstanceAsync(const Model::ReinitInstanceRequest& request, const ReinitInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReinitInstanceOutcomeCallable reinitInstanceCallable(const Model::ReinitInstanceRequest& request) const;
 			ReleaseARMServerInstanceOutcome releaseARMServerInstance(const Model::ReleaseARMServerInstanceRequest &request)const;
 			void releaseARMServerInstanceAsync(const Model::ReleaseARMServerInstanceRequest& request, const ReleaseARMServerInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseARMServerInstanceOutcomeCallable releaseARMServerInstanceCallable(const Model::ReleaseARMServerInstanceRequest& request) const;

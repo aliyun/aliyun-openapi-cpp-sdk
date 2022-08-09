@@ -36,6 +36,8 @@ public:
 	void setSnatIp(const std::string &snatIp);
 	std::string getSourceVSwitchId() const;
 	void setSourceVSwitchId(const std::string &sourceVSwitchId);
+	std::string getSourceNetworkId() const;
+	void setSourceNetworkId(const std::string &sourceNetworkId);
 	std::string getNatGatewayId() const;
 	void setNatGatewayId(const std::string &natGatewayId);
 	std::string getSnatEntryName() const;
@@ -45,6 +47,7 @@ private:
 	std::string sourceCIDR_;
 	std::string snatIp_;
 	std::string sourceVSwitchId_;
+	std::string sourceNetworkId_;
 	std::string natGatewayId_;
 	std::string snatEntryName_;
 };

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBENATGATEWAYSRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBENATGATEWAYSRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_GETOSSSTORAGEANDACCBYBUCKETSRESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_GETOSSSTORAGEANDACCBYBUCKETSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DescribeNatGatewaysResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT GetOssStorageAndAccByBucketsResult : public ServiceResult
 			{
 			public:
-				struct NatGateway
+				struct BucketListItem
 				{
-					std::string vSwitchId;
-					std::string creationTime;
-					std::string ensRegionId;
-					std::string networkId;
-					std::string spec;
-					std::string natGatewayId;
-					std::string name;
+					long acc;
+					std::string bucket;
+					long storageUsageByte;
 				};
 
 
-				DescribeNatGatewaysResult();
-				explicit DescribeNatGatewaysResult(const std::string &payload);
-				~DescribeNatGatewaysResult();
-				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<NatGateway> getNatGateways()const;
+				GetOssStorageAndAccByBucketsResult();
+				explicit GetOssStorageAndAccByBucketsResult(const std::string &payload);
+				~GetOssStorageAndAccByBucketsResult();
+				std::vector<BucketListItem> getBucketList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<NatGateway> natGateways_;
+				std::vector<BucketListItem> bucketList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBENATGATEWAYSRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_GETOSSSTORAGEANDACCBYBUCKETSRESULT_H_
