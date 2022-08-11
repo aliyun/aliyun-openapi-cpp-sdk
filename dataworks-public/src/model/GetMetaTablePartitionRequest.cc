@@ -25,6 +25,16 @@ GetMetaTablePartitionRequest::GetMetaTablePartitionRequest()
 
 GetMetaTablePartitionRequest::~GetMetaTablePartitionRequest() {}
 
+GetMetaTablePartitionRequest::SortCriterion GetMetaTablePartitionRequest::getSortCriterion() const {
+  return sortCriterion_;
+}
+
+void GetMetaTablePartitionRequest::setSortCriterion(const GetMetaTablePartitionRequest::SortCriterion &sortCriterion) {
+  sortCriterion_ = sortCriterion;
+  setParameter(std::string("SortCriterion") + ".SortField", sortCriterion.sortField);
+  setParameter(std::string("SortCriterion") + ".Order", sortCriterion.order);
+}
+
 std::string GetMetaTablePartitionRequest::getDataSourceType() const {
   return dataSourceType_;
 }

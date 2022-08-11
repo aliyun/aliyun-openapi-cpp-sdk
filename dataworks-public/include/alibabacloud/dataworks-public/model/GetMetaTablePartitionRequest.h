@@ -28,8 +28,14 @@ namespace Dataworks_public {
 namespace Model {
 class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetMetaTablePartitionRequest : public RpcServiceRequest {
 public:
+	struct SortCriterion {
+		std::string sortField;
+		std::string order;
+	};
 	GetMetaTablePartitionRequest();
 	~GetMetaTablePartitionRequest();
+	SortCriterion getSortCriterion() const;
+	void setSortCriterion(const SortCriterion &sortCriterion);
 	std::string getDataSourceType() const;
 	void setDataSourceType(const std::string &dataSourceType);
 	std::string getClusterId() const;
@@ -46,6 +52,7 @@ public:
 	void setTableName(const std::string &tableName);
 
 private:
+	SortCriterion sortCriterion_;
 	std::string dataSourceType_;
 	std::string clusterId_;
 	int pageNumber_;
