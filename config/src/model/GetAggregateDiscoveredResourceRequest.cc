@@ -19,7 +19,7 @@
 using AlibabaCloud::Config::Model::GetAggregateDiscoveredResourceRequest;
 
 GetAggregateDiscoveredResourceRequest::GetAggregateDiscoveredResourceRequest()
-    : RpcServiceRequest("config", "2020-09-07", "GetAggregateDiscoveredResource") {
+    : RpcServiceRequest("config", "2019-01-08", "GetAggregateDiscoveredResource") {
   setMethod(HttpRequest::Method::Get);
 }
 

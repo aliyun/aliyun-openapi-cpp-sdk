@@ -19,7 +19,7 @@
 using AlibabaCloud::Config::Model::ListRemediationTemplatesRequest;
 
 ListRemediationTemplatesRequest::ListRemediationTemplatesRequest()
-    : RpcServiceRequest("config", "2020-09-07", "ListRemediationTemplates") {
+    : RpcServiceRequest("config", "2019-01-08", "ListRemediationTemplates") {
   setMethod(HttpRequest::Method::Post);
 }
 

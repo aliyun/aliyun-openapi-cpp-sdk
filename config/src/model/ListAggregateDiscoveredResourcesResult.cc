@@ -40,10 +40,10 @@ void ListAggregateDiscoveredResourcesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto discoveredResourceProfilesNode = value["DiscoveredResourceProfiles"];
-	if(!discoveredResourceProfilesNode["NextToken"].isNull())
-		discoveredResourceProfiles_.nextToken = discoveredResourceProfilesNode["NextToken"].asString();
-	if(!discoveredResourceProfilesNode["MaxResults"].isNull())
-		discoveredResourceProfiles_.maxResults = std::stoi(discoveredResourceProfilesNode["MaxResults"].asString());
+	if(!discoveredResourceProfilesNode["PageNumber"].isNull())
+		discoveredResourceProfiles_.pageNumber = std::stoi(discoveredResourceProfilesNode["PageNumber"].asString());
+	if(!discoveredResourceProfilesNode["PageSize"].isNull())
+		discoveredResourceProfiles_.pageSize = std::stoi(discoveredResourceProfilesNode["PageSize"].asString());
 	if(!discoveredResourceProfilesNode["TotalCount"].isNull())
 		discoveredResourceProfiles_.totalCount = std::stoi(discoveredResourceProfilesNode["TotalCount"].asString());
 	auto allDiscoveredResourceProfileListNode = discoveredResourceProfilesNode["DiscoveredResourceProfileList"]["DiscoveredResourceProfile"];

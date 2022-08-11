@@ -50,9 +50,10 @@ namespace AlibabaCloud
 						std::string region;
 						std::string tags;
 					};
+					long totalCount;
 					std::string nextToken;
-					int maxResults;
 					std::vector<ConfigurationListItem> configurationList;
+					int limit;
 				};
 
 
