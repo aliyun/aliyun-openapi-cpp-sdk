@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,38 +17,44 @@
 #ifndef ALIBABACLOUD_FT_MODEL_FTDYNAMICADDRESSHTTPVPCREQUEST_H_
 #define ALIBABACLOUD_FT_MODEL_FTDYNAMICADDRESSHTTPVPCREQUEST_H_
 
-#include <alibabacloud/ft/FtExport.h>
-#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <map>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/ft/FtExport.h>
 
-namespace AlibabaCloud {
-namespace Ft {
-namespace Model {
-class ALIBABACLOUD_FT_EXPORT FtDynamicAddressHttpVpcRequest : public RpcServiceRequest {
-public:
-	FtDynamicAddressHttpVpcRequest();
-	~FtDynamicAddressHttpVpcRequest();
-	std::string getP1() const;
-	void setP1(const std::string &p1);
-	std::string getStringValue() const;
-	void setStringValue(const std::string &stringValue);
-	std::string getOtherParam() const;
-	void setOtherParam(const std::string &otherParam);
-	bool getBooleanParam() const;
-	void setBooleanParam(bool booleanParam);
-	std::string getDefaultValue() const;
-	void setDefaultValue(const std::string &defaultValue);
+namespace AlibabaCloud
+{
+	namespace Ft
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_FT_EXPORT FtDynamicAddressHttpVpcRequest : public RpcServiceRequest
+			{
 
-private:
-	std::string p1_;
-	std::string stringValue_;
-	std::string otherParam_;
-	bool booleanParam_;
-	std::string defaultValue_;
-};
-} // namespace Model
-} // namespace Ft
-} // namespace AlibabaCloud
+			public:
+				FtDynamicAddressHttpVpcRequest();
+				~FtDynamicAddressHttpVpcRequest();
+
+				std::string getP1()const;
+				void setP1(const std::string& p1);
+				std::string getStringValue()const;
+				void setStringValue(const std::string& stringValue);
+				std::string getOtherParam()const;
+				void setOtherParam(const std::string& otherParam);
+				bool getBooleanParam()const;
+				void setBooleanParam(bool booleanParam);
+				std::string getDefaultValue()const;
+				void setDefaultValue(const std::string& defaultValue);
+
+            private:
+				std::string p1_;
+				std::string stringValue_;
+				std::string otherParam_;
+				bool booleanParam_;
+				std::string defaultValue_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_FT_MODEL_FTDYNAMICADDRESSHTTPVPCREQUEST_H_

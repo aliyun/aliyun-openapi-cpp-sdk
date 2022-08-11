@@ -39,10 +39,10 @@ void TestHttpApiResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ServiceRpcSign"].isNull())
-		serviceRpcSign_ = value["ServiceRpcSign"].asString();
 	if(!value["Params"].isNull())
 		params_ = value["Params"].asString();
+	if(!value["ServiceRpcSign"].isNull())
+		serviceRpcSign_ = value["ServiceRpcSign"].asString();
 
 }
 
