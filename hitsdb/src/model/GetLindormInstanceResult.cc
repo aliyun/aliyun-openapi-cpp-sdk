@@ -123,6 +123,12 @@ void GetLindormInstanceResult::parse(const std::string &payload)
 		enableStream_ = value["EnableStream"].asString() == "true";
 	if(!value["EnableShs"].isNull())
 		enableShs_ = value["EnableShs"].asString() == "true";
+	if(!value["MaintainStartTime"].isNull())
+		maintainStartTime_ = value["MaintainStartTime"].asString();
+	if(!value["MaintainEndTime"].isNull())
+		maintainEndTime_ = value["MaintainEndTime"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -139,6 +145,11 @@ std::vector<GetLindormInstanceResult::Engine> GetLindormInstanceResult::getEngin
 std::string GetLindormInstanceResult::getDiskThreshold()const
 {
 	return diskThreshold_;
+}
+
+std::string GetLindormInstanceResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 bool GetLindormInstanceResult::getEnableBDS()const
@@ -164,6 +175,11 @@ bool GetLindormInstanceResult::getEnableFS()const
 bool GetLindormInstanceResult::getEnableShs()const
 {
 	return enableShs_;
+}
+
+std::string GetLindormInstanceResult::getMaintainEndTime()const
+{
+	return maintainEndTime_;
 }
 
 bool GetLindormInstanceResult::getEnableCompute()const
@@ -199,6 +215,11 @@ int GetLindormInstanceResult::getEngineType()const
 long GetLindormInstanceResult::getCreateMilliseconds()const
 {
 	return createMilliseconds_;
+}
+
+std::string GetLindormInstanceResult::getMaintainStartTime()const
+{
+	return maintainStartTime_;
 }
 
 bool GetLindormInstanceResult::getEnableSSL()const

@@ -42,6 +42,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getDuration() const;
 	void setDuration(const std::string &duration);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
 	std::string getRegionId() const;
@@ -92,6 +94,7 @@ private:
 	std::string filestoreSpec_;
 	std::string accessKeyId_;
 	std::string duration_;
+	std::string resourceGroupId_;
 	std::string securityToken_;
 	std::string regionId_;
 	int tsdbNum_;

@@ -77,6 +77,10 @@ void GetLindormInstanceListResult::parse(const std::string &payload)
 			instanceListObject.expiredMilliseconds = std::stol(valueInstanceListLindormInstanceSummary["ExpiredMilliseconds"].asString());
 		if(!valueInstanceListLindormInstanceSummary["EnableStream"].isNull())
 			instanceListObject.enableStream = valueInstanceListLindormInstanceSummary["EnableStream"].asString() == "true";
+		if(!valueInstanceListLindormInstanceSummary["EnableCompute"].isNull())
+			instanceListObject.enableCompute = valueInstanceListLindormInstanceSummary["EnableCompute"].asString() == "true";
+		if(!valueInstanceListLindormInstanceSummary["ResourceGroupId"].isNull())
+			instanceListObject.resourceGroupId = valueInstanceListLindormInstanceSummary["ResourceGroupId"].asString();
 		auto allTagsNode = valueInstanceListLindormInstanceSummary["Tags"]["Tag"];
 		for (auto valueInstanceListLindormInstanceSummaryTagsTag : allTagsNode)
 		{

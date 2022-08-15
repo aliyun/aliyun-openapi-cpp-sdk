@@ -79,6 +79,15 @@ void CreateLindormInstanceRequest::setDuration(const std::string &duration) {
   setParameter(std::string("Duration"), duration);
 }
 
+std::string CreateLindormInstanceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateLindormInstanceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateLindormInstanceRequest::getSecurityToken() const {
   return securityToken_;
 }

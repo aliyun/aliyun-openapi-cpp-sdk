@@ -52,6 +52,15 @@ void TagResourcesRequest::setSecurityToken(const std::string &securityToken) {
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string TagResourcesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void TagResourcesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag() const {
   return tag_;
 }

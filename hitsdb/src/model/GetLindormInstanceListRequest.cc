@@ -61,6 +61,15 @@ void GetLindormInstanceListRequest::setAccessKeyId(const std::string &accessKeyI
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string GetLindormInstanceListRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void GetLindormInstanceListRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string GetLindormInstanceListRequest::getSecurityToken() const {
   return securityToken_;
 }

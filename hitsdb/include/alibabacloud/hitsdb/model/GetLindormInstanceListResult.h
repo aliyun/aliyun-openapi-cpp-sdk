@@ -42,10 +42,12 @@ namespace AlibabaCloud
 					long expiredMilliseconds;
 					std::string instanceStorage;
 					std::string zoneId;
+					std::string resourceGroupId;
 					std::string instanceId;
 					std::string createTime;
 					std::string payType;
 					std::string vpcId;
+					bool enableCompute;
 					std::string networkType;
 					std::string serviceType;
 					std::string instanceAlias;

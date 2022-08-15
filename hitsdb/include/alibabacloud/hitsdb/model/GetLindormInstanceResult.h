@@ -50,11 +50,13 @@ namespace AlibabaCloud
 				long getExpiredMilliseconds()const;
 				std::vector<Engine> getEngineList()const;
 				std::string getDiskThreshold()const;
+				std::string getResourceGroupId()const;
 				bool getEnableBDS()const;
 				bool getAutoRenew()const;
 				std::string getDiskUsage()const;
 				bool getEnableFS()const;
 				bool getEnableShs()const;
+				std::string getMaintainEndTime()const;
 				bool getEnableCompute()const;
 				std::string getNetworkType()const;
 				std::string getServiceType()const;
@@ -62,6 +64,7 @@ namespace AlibabaCloud
 				std::string getInstanceStatus()const;
 				int getEngineType()const;
 				long getCreateMilliseconds()const;
+				std::string getMaintainStartTime()const;
 				bool getEnableSSL()const;
 				std::string getInstanceStorage()const;
 				std::string getZoneId()const;
@@ -87,11 +90,13 @@ namespace AlibabaCloud
 				long expiredMilliseconds_;
 				std::vector<Engine> engineList_;
 				std::string diskThreshold_;
+				std::string resourceGroupId_;
 				bool enableBDS_;
 				bool autoRenew_;
 				std::string diskUsage_;
 				bool enableFS_;
 				bool enableShs_;
+				std::string maintainEndTime_;
 				bool enableCompute_;
 				std::string networkType_;
 				std::string serviceType_;
@@ -99,6 +104,7 @@ namespace AlibabaCloud
 				std::string instanceStatus_;
 				int engineType_;
 				long createMilliseconds_;
+				std::string maintainStartTime_;
 				bool enableSSL_;
 				std::string instanceStorage_;
 				std::string zoneId_;

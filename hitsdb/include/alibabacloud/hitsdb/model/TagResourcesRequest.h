@@ -40,6 +40,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
 	std::vector<std::string> getResourceId() const;
@@ -57,6 +59,7 @@ private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string securityToken_;
+	std::string regionId_;
 	std::vector<Tag> tag_;
 	std::vector<std::string> resourceId_;
 	std::string resourceOwnerAccount_;

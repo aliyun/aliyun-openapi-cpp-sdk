@@ -52,15 +52,6 @@ void GetLindormInstanceRequest::setSecurityToken(const std::string &securityToke
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string GetLindormInstanceRequest::getRegionId() const {
-  return regionId_;
-}
-
-void GetLindormInstanceRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string GetLindormInstanceRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
