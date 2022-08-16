@@ -63,6 +63,8 @@ void DescribeGroupedVulResult::parse(const std::string &payload)
 			groupedVulItemsObject.totalFixCount = std::stol(valueGroupedVulItemsGroupedVulItem["TotalFixCount"].asString());
 		if(!valueGroupedVulItemsGroupedVulItem["AsapCount"].isNull())
 			groupedVulItemsObject.asapCount = std::stoi(valueGroupedVulItemsGroupedVulItem["AsapCount"].asString());
+		if(!valueGroupedVulItemsGroupedVulItem["RuleModifyTime"].isNull())
+			groupedVulItemsObject.ruleModifyTime = std::stol(valueGroupedVulItemsGroupedVulItem["RuleModifyTime"].asString());
 		groupedVulItems_.push_back(groupedVulItemsObject);
 	}
 	if(!value["CurrentPage"].isNull())

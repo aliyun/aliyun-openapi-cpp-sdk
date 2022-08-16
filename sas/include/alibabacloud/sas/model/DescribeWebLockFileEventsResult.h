@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBEGROUPEDVULRESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_DESCRIBEGROUPEDVULRESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBEWEBLOCKFILEEVENTSRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_DESCRIBEWEBLOCKFILEEVENTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,39 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT DescribeGroupedVulResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT DescribeWebLockFileEventsResult : public ServiceResult
 			{
 			public:
-				struct GroupedVulItem
+				struct Info
 				{
-					std::string type;
-					long gmtLast;
-					int laterCount;
-					int handledCount;
-					std::string aliasName;
-					int asapCount;
-					long ruleModifyTime;
-					int nntfCount;
-					long totalFixCount;
-					std::string tags;
-					std::string name;
+					std::string status;
+					std::string path;
+					std::string processName;
+					std::string eventType;
+					std::string ip;
+					std::string eventStatus;
+					std::string eventName;
+					long count;
+					std::string processPath;
+					std::string intranetIp;
+					long ds;
+					std::string instanceName;
+					std::string uuid;
+					std::string internetIp;
+					std::string level;
+					long id;
+					long gmtEvent;
+					std::string solution;
 				};
 
 
-				DescribeGroupedVulResult();
-				explicit DescribeGroupedVulResult(const std::string &payload);
-				~DescribeGroupedVulResult();
+				DescribeWebLockFileEventsResult();
+				explicit DescribeWebLockFileEventsResult(const std::string &payload);
+				~DescribeWebLockFileEventsResult();
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getCurrentPage()const;
-				std::vector<GroupedVulItem> getGroupedVulItems()const;
+				std::vector<Info> getList()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -62,10 +69,10 @@ namespace AlibabaCloud
 				int totalCount_;
 				int pageSize_;
 				int currentPage_;
-				std::vector<GroupedVulItem> groupedVulItems_;
+				std::vector<Info> list_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBEGROUPEDVULRESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBEWEBLOCKFILEEVENTSRESULT_H_

@@ -30,6 +30,10 @@ class ALIBABACLOUD_SAS_EXPORT DescribeOnceTaskRequest : public RpcServiceRequest
 public:
 	DescribeOnceTaskRequest();
 	~DescribeOnceTaskRequest();
+	std::vector<std::string> getStatusList() const;
+	void setStatusList(const std::vector<std::string> &statusList);
+	std::string getSource() const;
+	void setSource(const std::string &source);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getRootTaskId() const;
@@ -38,21 +42,29 @@ public:
 	void setEndTimeQuery(long endTimeQuery);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getFinish() const;
+	void setFinish(int finish);
 	std::string getTaskType() const;
 	void setTaskType(const std::string &taskType);
 	long getStartTimeQuery() const;
 	void setStartTimeQuery(long startTimeQuery);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
+	std::string getTargetQuery() const;
+	void setTargetQuery(const std::string &targetQuery);
 
 private:
+	std::vector<std::string> statusList_;
+	std::string source_;
 	std::string sourceIp_;
 	std::string rootTaskId_;
 	long endTimeQuery_;
 	int pageSize_;
+	int finish_;
 	std::string taskType_;
 	long startTimeQuery_;
 	int currentPage_;
+	std::string targetQuery_;
 };
 } // namespace Model
 } // namespace Sas

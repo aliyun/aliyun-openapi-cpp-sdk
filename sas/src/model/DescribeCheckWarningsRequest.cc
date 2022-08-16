@@ -97,3 +97,12 @@ void DescribeCheckWarningsRequest::setRiskId(long riskId) {
   setParameter(std::string("RiskId"), std::to_string(riskId));
 }
 
+int DescribeCheckWarningsRequest::getRiskStatus() const {
+  return riskStatus_;
+}
+
+void DescribeCheckWarningsRequest::setRiskStatus(int riskStatus) {
+  riskStatus_ = riskStatus;
+  setParameter(std::string("RiskStatus"), std::to_string(riskStatus));
+}
+

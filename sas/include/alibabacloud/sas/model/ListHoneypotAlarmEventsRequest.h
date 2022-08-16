@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBECHECKWARNINGSREQUEST_H_
-#define ALIBABACLOUD_SAS_MODEL_DESCRIBECHECKWARNINGSREQUEST_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_LISTHONEYPOTALARMEVENTSREQUEST_H_
+#define ALIBABACLOUD_SAS_MODEL_LISTHONEYPOTALARMEVENTSREQUEST_H_
 
 #include <alibabacloud/sas/SasExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,41 +26,35 @@
 namespace AlibabaCloud {
 namespace Sas {
 namespace Model {
-class ALIBABACLOUD_SAS_EXPORT DescribeCheckWarningsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SAS_EXPORT ListHoneypotAlarmEventsRequest : public RpcServiceRequest {
 public:
-	DescribeCheckWarningsRequest();
-	~DescribeCheckWarningsRequest();
-	std::string getUuid() const;
-	void setUuid(const std::string &uuid);
-	std::string getCheckType() const;
-	void setCheckType(const std::string &checkType);
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
+	ListHoneypotAlarmEventsRequest();
+	~ListHoneypotAlarmEventsRequest();
+	std::string getSrcIp() const;
+	void setSrcIp(const std::string &srcIp);
+	std::vector<std::string> getRiskLevelList() const;
+	void setRiskLevelList(const std::vector<std::string> &riskLevelList);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	std::string getLang() const;
-	void setLang(const std::string &lang);
-	long getCheckId() const;
-	void setCheckId(long checkId);
+	std::string getDstIp() const;
+	void setDstIp(const std::string &dstIp);
+	std::string getDealed() const;
+	void setDealed(const std::string &dealed);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
-	long getRiskId() const;
-	void setRiskId(long riskId);
-	int getRiskStatus() const;
-	void setRiskStatus(int riskStatus);
+	std::string getRequestId() const;
+	void setRequestId(const std::string &requestId);
 
 private:
-	std::string uuid_;
-	std::string checkType_;
-	std::string sourceIp_;
+	std::string srcIp_;
+	std::vector<std::string> riskLevelList_;
 	int pageSize_;
-	std::string lang_;
-	long checkId_;
+	std::string dstIp_;
+	std::string dealed_;
 	int currentPage_;
-	long riskId_;
-	int riskStatus_;
+	std::string requestId_;
 };
 } // namespace Model
 } // namespace Sas
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBECHECKWARNINGSREQUEST_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_LISTHONEYPOTALARMEVENTSREQUEST_H_

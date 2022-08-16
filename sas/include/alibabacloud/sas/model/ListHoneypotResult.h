@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBEONCETASKRESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_DESCRIBEONCETASKRESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_LISTHONEYPOTRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_LISTHONEYPOTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT DescribeOnceTaskResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT ListHoneypotResult : public ServiceResult
 			{
 			public:
 				struct PageInfo
@@ -38,37 +38,43 @@ namespace AlibabaCloud
 					int pageSize;
 					int currentPage;
 					int count;
+					std::string lastRowKey;
 				};
-				struct TaskManageResponse
+				struct ListItem
 				{
-					std::string context;
-					std::string progress;
-					std::string taskId;
-					std::string taskName;
-					long taskEndTime;
-					std::string taskType;
-					int taskStatus;
-					std::string taskStatusText;
-					std::string detailData;
-					long taskStartTime;
-					std::string source;
+					std::string honeypotImageName;
+					std::string controlNodeName;
+					std::string honeypotId;
+					std::vector<std::string> state;
+					std::string presetId;
+					std::string honeypotImageDisplayName;
+					std::string nodeId;
+					std::string honeypotName;
 				};
 
 
-				DescribeOnceTaskResult();
-				explicit DescribeOnceTaskResult(const std::string &payload);
-				~DescribeOnceTaskResult();
+				ListHoneypotResult();
+				explicit ListHoneypotResult(const std::string &payload);
+				~ListHoneypotResult();
 				PageInfo getPageInfo()const;
-				std::vector<TaskManageResponse> getTaskManageResponseList()const;
+				std::string getMessage()const;
+				int getHttpStatusCode()const;
+				std::vector<ListItem> getList()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				PageInfo pageInfo_;
-				std::vector<TaskManageResponse> taskManageResponseList_;
+				std::string message_;
+				int httpStatusCode_;
+				std::vector<ListItem> list_;
+				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBEONCETASKRESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_LISTHONEYPOTRESULT_H_

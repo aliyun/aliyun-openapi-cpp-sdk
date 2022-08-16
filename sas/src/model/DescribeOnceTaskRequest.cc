@@ -25,6 +25,23 @@ DescribeOnceTaskRequest::DescribeOnceTaskRequest()
 
 DescribeOnceTaskRequest::~DescribeOnceTaskRequest() {}
 
+std::vector<std::string> DescribeOnceTaskRequest::getStatusList() const {
+  return statusList_;
+}
+
+void DescribeOnceTaskRequest::setStatusList(const std::vector<std::string> &statusList) {
+  statusList_ = statusList;
+}
+
+std::string DescribeOnceTaskRequest::getSource() const {
+  return source_;
+}
+
+void DescribeOnceTaskRequest::setSource(const std::string &source) {
+  source_ = source;
+  setParameter(std::string("Source"), source);
+}
+
 std::string DescribeOnceTaskRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -61,6 +78,15 @@ void DescribeOnceTaskRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+int DescribeOnceTaskRequest::getFinish() const {
+  return finish_;
+}
+
+void DescribeOnceTaskRequest::setFinish(int finish) {
+  finish_ = finish;
+  setParameter(std::string("Finish"), std::to_string(finish));
+}
+
 std::string DescribeOnceTaskRequest::getTaskType() const {
   return taskType_;
 }
@@ -86,5 +112,14 @@ int DescribeOnceTaskRequest::getCurrentPage() const {
 void DescribeOnceTaskRequest::setCurrentPage(int currentPage) {
   currentPage_ = currentPage;
   setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string DescribeOnceTaskRequest::getTargetQuery() const {
+  return targetQuery_;
+}
+
+void DescribeOnceTaskRequest::setTargetQuery(const std::string &targetQuery) {
+  targetQuery_ = targetQuery;
+  setParameter(std::string("TargetQuery"), targetQuery);
 }
 

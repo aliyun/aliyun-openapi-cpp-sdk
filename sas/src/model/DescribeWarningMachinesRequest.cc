@@ -88,6 +88,15 @@ void DescribeWarningMachinesRequest::setLang(const std::string &lang) {
   setParameter(std::string("Lang"), lang);
 }
 
+int DescribeWarningMachinesRequest::getHaveRisk() const {
+  return haveRisk_;
+}
+
+void DescribeWarningMachinesRequest::setHaveRisk(int haveRisk) {
+  haveRisk_ = haveRisk;
+  setParameter(std::string("HaveRisk"), std::to_string(haveRisk));
+}
+
 int DescribeWarningMachinesRequest::getCurrentPage() const {
   return currentPage_;
 }

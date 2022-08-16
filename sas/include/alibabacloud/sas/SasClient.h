@@ -38,6 +38,12 @@
 #include "model/CreateFileDetectResult.h"
 #include "model/CreateFileDetectUploadUrlRequest.h"
 #include "model/CreateFileDetectUploadUrlResult.h"
+#include "model/CreateHoneypotRequest.h"
+#include "model/CreateHoneypotResult.h"
+#include "model/CreateHoneypotNodeRequest.h"
+#include "model/CreateHoneypotNodeResult.h"
+#include "model/CreateHoneypotProbeRequest.h"
+#include "model/CreateHoneypotProbeResult.h"
 #include "model/CreateOrUpdateAssetGroupRequest.h"
 #include "model/CreateOrUpdateAssetGroupResult.h"
 #include "model/CreateServiceLinkedRoleRequest.h"
@@ -308,6 +314,8 @@
 #include "model/DescribeWebLockBindListResult.h"
 #include "model/DescribeWebLockConfigListRequest.h"
 #include "model/DescribeWebLockConfigListResult.h"
+#include "model/DescribeWebLockFileEventsRequest.h"
+#include "model/DescribeWebLockFileEventsResult.h"
 #include "model/ExportRecordRequest.h"
 #include "model/ExportRecordResult.h"
 #include "model/ExportVulRequest.h"
@@ -340,6 +348,12 @@
 #include "model/ListCheckInstanceResultResult.h"
 #include "model/ListCheckResultRequest.h"
 #include "model/ListCheckResultResult.h"
+#include "model/ListHoneypotRequest.h"
+#include "model/ListHoneypotResult.h"
+#include "model/ListHoneypotAlarmEventsRequest.h"
+#include "model/ListHoneypotAlarmEventsResult.h"
+#include "model/ListHoneypotNodeRequest.h"
+#include "model/ListHoneypotNodeResult.h"
 #include "model/ListVulAutoRepairConfigRequest.h"
 #include "model/ListVulAutoRepairConfigResult.h"
 #include "model/ModifyAntiBruteForceRuleRequest.h"
@@ -479,6 +493,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateFileDetectUploadUrlResult> CreateFileDetectUploadUrlOutcome;
 			typedef std::future<CreateFileDetectUploadUrlOutcome> CreateFileDetectUploadUrlOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::CreateFileDetectUploadUrlRequest&, const CreateFileDetectUploadUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileDetectUploadUrlAsyncHandler;
+			typedef Outcome<Error, Model::CreateHoneypotResult> CreateHoneypotOutcome;
+			typedef std::future<CreateHoneypotOutcome> CreateHoneypotOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::CreateHoneypotRequest&, const CreateHoneypotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateHoneypotAsyncHandler;
+			typedef Outcome<Error, Model::CreateHoneypotNodeResult> CreateHoneypotNodeOutcome;
+			typedef std::future<CreateHoneypotNodeOutcome> CreateHoneypotNodeOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::CreateHoneypotNodeRequest&, const CreateHoneypotNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateHoneypotNodeAsyncHandler;
+			typedef Outcome<Error, Model::CreateHoneypotProbeResult> CreateHoneypotProbeOutcome;
+			typedef std::future<CreateHoneypotProbeOutcome> CreateHoneypotProbeOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::CreateHoneypotProbeRequest&, const CreateHoneypotProbeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateHoneypotProbeAsyncHandler;
 			typedef Outcome<Error, Model::CreateOrUpdateAssetGroupResult> CreateOrUpdateAssetGroupOutcome;
 			typedef std::future<CreateOrUpdateAssetGroupOutcome> CreateOrUpdateAssetGroupOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::CreateOrUpdateAssetGroupRequest&, const CreateOrUpdateAssetGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrUpdateAssetGroupAsyncHandler;
@@ -884,6 +907,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeWebLockConfigListResult> DescribeWebLockConfigListOutcome;
 			typedef std::future<DescribeWebLockConfigListOutcome> DescribeWebLockConfigListOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeWebLockConfigListRequest&, const DescribeWebLockConfigListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebLockConfigListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeWebLockFileEventsResult> DescribeWebLockFileEventsOutcome;
+			typedef std::future<DescribeWebLockFileEventsOutcome> DescribeWebLockFileEventsOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeWebLockFileEventsRequest&, const DescribeWebLockFileEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWebLockFileEventsAsyncHandler;
 			typedef Outcome<Error, Model::ExportRecordResult> ExportRecordOutcome;
 			typedef std::future<ExportRecordOutcome> ExportRecordOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ExportRecordRequest&, const ExportRecordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExportRecordAsyncHandler;
@@ -932,6 +958,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListCheckResultResult> ListCheckResultOutcome;
 			typedef std::future<ListCheckResultOutcome> ListCheckResultOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ListCheckResultRequest&, const ListCheckResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCheckResultAsyncHandler;
+			typedef Outcome<Error, Model::ListHoneypotResult> ListHoneypotOutcome;
+			typedef std::future<ListHoneypotOutcome> ListHoneypotOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::ListHoneypotRequest&, const ListHoneypotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListHoneypotAsyncHandler;
+			typedef Outcome<Error, Model::ListHoneypotAlarmEventsResult> ListHoneypotAlarmEventsOutcome;
+			typedef std::future<ListHoneypotAlarmEventsOutcome> ListHoneypotAlarmEventsOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::ListHoneypotAlarmEventsRequest&, const ListHoneypotAlarmEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListHoneypotAlarmEventsAsyncHandler;
+			typedef Outcome<Error, Model::ListHoneypotNodeResult> ListHoneypotNodeOutcome;
+			typedef std::future<ListHoneypotNodeOutcome> ListHoneypotNodeOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::ListHoneypotNodeRequest&, const ListHoneypotNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListHoneypotNodeAsyncHandler;
 			typedef Outcome<Error, Model::ListVulAutoRepairConfigResult> ListVulAutoRepairConfigOutcome;
 			typedef std::future<ListVulAutoRepairConfigOutcome> ListVulAutoRepairConfigOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ListVulAutoRepairConfigRequest&, const ListVulAutoRepairConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListVulAutoRepairConfigAsyncHandler;
@@ -1120,6 +1155,15 @@ namespace AlibabaCloud
 			CreateFileDetectUploadUrlOutcome createFileDetectUploadUrl(const Model::CreateFileDetectUploadUrlRequest &request)const;
 			void createFileDetectUploadUrlAsync(const Model::CreateFileDetectUploadUrlRequest& request, const CreateFileDetectUploadUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFileDetectUploadUrlOutcomeCallable createFileDetectUploadUrlCallable(const Model::CreateFileDetectUploadUrlRequest& request) const;
+			CreateHoneypotOutcome createHoneypot(const Model::CreateHoneypotRequest &request)const;
+			void createHoneypotAsync(const Model::CreateHoneypotRequest& request, const CreateHoneypotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateHoneypotOutcomeCallable createHoneypotCallable(const Model::CreateHoneypotRequest& request) const;
+			CreateHoneypotNodeOutcome createHoneypotNode(const Model::CreateHoneypotNodeRequest &request)const;
+			void createHoneypotNodeAsync(const Model::CreateHoneypotNodeRequest& request, const CreateHoneypotNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateHoneypotNodeOutcomeCallable createHoneypotNodeCallable(const Model::CreateHoneypotNodeRequest& request) const;
+			CreateHoneypotProbeOutcome createHoneypotProbe(const Model::CreateHoneypotProbeRequest &request)const;
+			void createHoneypotProbeAsync(const Model::CreateHoneypotProbeRequest& request, const CreateHoneypotProbeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateHoneypotProbeOutcomeCallable createHoneypotProbeCallable(const Model::CreateHoneypotProbeRequest& request) const;
 			CreateOrUpdateAssetGroupOutcome createOrUpdateAssetGroup(const Model::CreateOrUpdateAssetGroupRequest &request)const;
 			void createOrUpdateAssetGroupAsync(const Model::CreateOrUpdateAssetGroupRequest& request, const CreateOrUpdateAssetGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateOrUpdateAssetGroupOutcomeCallable createOrUpdateAssetGroupCallable(const Model::CreateOrUpdateAssetGroupRequest& request) const;
@@ -1525,6 +1569,9 @@ namespace AlibabaCloud
 			DescribeWebLockConfigListOutcome describeWebLockConfigList(const Model::DescribeWebLockConfigListRequest &request)const;
 			void describeWebLockConfigListAsync(const Model::DescribeWebLockConfigListRequest& request, const DescribeWebLockConfigListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeWebLockConfigListOutcomeCallable describeWebLockConfigListCallable(const Model::DescribeWebLockConfigListRequest& request) const;
+			DescribeWebLockFileEventsOutcome describeWebLockFileEvents(const Model::DescribeWebLockFileEventsRequest &request)const;
+			void describeWebLockFileEventsAsync(const Model::DescribeWebLockFileEventsRequest& request, const DescribeWebLockFileEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeWebLockFileEventsOutcomeCallable describeWebLockFileEventsCallable(const Model::DescribeWebLockFileEventsRequest& request) const;
 			ExportRecordOutcome exportRecord(const Model::ExportRecordRequest &request)const;
 			void exportRecordAsync(const Model::ExportRecordRequest& request, const ExportRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExportRecordOutcomeCallable exportRecordCallable(const Model::ExportRecordRequest& request) const;
@@ -1573,6 +1620,15 @@ namespace AlibabaCloud
 			ListCheckResultOutcome listCheckResult(const Model::ListCheckResultRequest &request)const;
 			void listCheckResultAsync(const Model::ListCheckResultRequest& request, const ListCheckResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCheckResultOutcomeCallable listCheckResultCallable(const Model::ListCheckResultRequest& request) const;
+			ListHoneypotOutcome listHoneypot(const Model::ListHoneypotRequest &request)const;
+			void listHoneypotAsync(const Model::ListHoneypotRequest& request, const ListHoneypotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListHoneypotOutcomeCallable listHoneypotCallable(const Model::ListHoneypotRequest& request) const;
+			ListHoneypotAlarmEventsOutcome listHoneypotAlarmEvents(const Model::ListHoneypotAlarmEventsRequest &request)const;
+			void listHoneypotAlarmEventsAsync(const Model::ListHoneypotAlarmEventsRequest& request, const ListHoneypotAlarmEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListHoneypotAlarmEventsOutcomeCallable listHoneypotAlarmEventsCallable(const Model::ListHoneypotAlarmEventsRequest& request) const;
+			ListHoneypotNodeOutcome listHoneypotNode(const Model::ListHoneypotNodeRequest &request)const;
+			void listHoneypotNodeAsync(const Model::ListHoneypotNodeRequest& request, const ListHoneypotNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListHoneypotNodeOutcomeCallable listHoneypotNodeCallable(const Model::ListHoneypotNodeRequest& request) const;
 			ListVulAutoRepairConfigOutcome listVulAutoRepairConfig(const Model::ListVulAutoRepairConfigRequest &request)const;
 			void listVulAutoRepairConfigAsync(const Model::ListVulAutoRepairConfigRequest& request, const ListVulAutoRepairConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListVulAutoRepairConfigOutcomeCallable listVulAutoRepairConfigCallable(const Model::ListVulAutoRepairConfigRequest& request) const;

@@ -37,6 +37,12 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/CreateFileDetectResult.h
 	include/alibabacloud/sas/model/CreateFileDetectUploadUrlRequest.h
 	include/alibabacloud/sas/model/CreateFileDetectUploadUrlResult.h
+	include/alibabacloud/sas/model/CreateHoneypotRequest.h
+	include/alibabacloud/sas/model/CreateHoneypotResult.h
+	include/alibabacloud/sas/model/CreateHoneypotNodeRequest.h
+	include/alibabacloud/sas/model/CreateHoneypotNodeResult.h
+	include/alibabacloud/sas/model/CreateHoneypotProbeRequest.h
+	include/alibabacloud/sas/model/CreateHoneypotProbeResult.h
 	include/alibabacloud/sas/model/CreateOrUpdateAssetGroupRequest.h
 	include/alibabacloud/sas/model/CreateOrUpdateAssetGroupResult.h
 	include/alibabacloud/sas/model/CreateServiceLinkedRoleRequest.h
@@ -307,6 +313,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeWebLockBindListResult.h
 	include/alibabacloud/sas/model/DescribeWebLockConfigListRequest.h
 	include/alibabacloud/sas/model/DescribeWebLockConfigListResult.h
+	include/alibabacloud/sas/model/DescribeWebLockFileEventsRequest.h
+	include/alibabacloud/sas/model/DescribeWebLockFileEventsResult.h
 	include/alibabacloud/sas/model/ExportRecordRequest.h
 	include/alibabacloud/sas/model/ExportRecordResult.h
 	include/alibabacloud/sas/model/ExportVulRequest.h
@@ -339,6 +347,12 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/ListCheckInstanceResultResult.h
 	include/alibabacloud/sas/model/ListCheckResultRequest.h
 	include/alibabacloud/sas/model/ListCheckResultResult.h
+	include/alibabacloud/sas/model/ListHoneypotRequest.h
+	include/alibabacloud/sas/model/ListHoneypotResult.h
+	include/alibabacloud/sas/model/ListHoneypotAlarmEventsRequest.h
+	include/alibabacloud/sas/model/ListHoneypotAlarmEventsResult.h
+	include/alibabacloud/sas/model/ListHoneypotNodeRequest.h
+	include/alibabacloud/sas/model/ListHoneypotNodeResult.h
 	include/alibabacloud/sas/model/ListVulAutoRepairConfigRequest.h
 	include/alibabacloud/sas/model/ListVulAutoRepairConfigResult.h
 	include/alibabacloud/sas/model/ModifyAntiBruteForceRuleRequest.h
@@ -464,6 +478,12 @@ set(sas_src
 	src/model/CreateFileDetectResult.cc
 	src/model/CreateFileDetectUploadUrlRequest.cc
 	src/model/CreateFileDetectUploadUrlResult.cc
+	src/model/CreateHoneypotRequest.cc
+	src/model/CreateHoneypotResult.cc
+	src/model/CreateHoneypotNodeRequest.cc
+	src/model/CreateHoneypotNodeResult.cc
+	src/model/CreateHoneypotProbeRequest.cc
+	src/model/CreateHoneypotProbeResult.cc
 	src/model/CreateOrUpdateAssetGroupRequest.cc
 	src/model/CreateOrUpdateAssetGroupResult.cc
 	src/model/CreateServiceLinkedRoleRequest.cc
@@ -734,6 +754,8 @@ set(sas_src
 	src/model/DescribeWebLockBindListResult.cc
 	src/model/DescribeWebLockConfigListRequest.cc
 	src/model/DescribeWebLockConfigListResult.cc
+	src/model/DescribeWebLockFileEventsRequest.cc
+	src/model/DescribeWebLockFileEventsResult.cc
 	src/model/ExportRecordRequest.cc
 	src/model/ExportRecordResult.cc
 	src/model/ExportVulRequest.cc
@@ -766,6 +788,12 @@ set(sas_src
 	src/model/ListCheckInstanceResultResult.cc
 	src/model/ListCheckResultRequest.cc
 	src/model/ListCheckResultResult.cc
+	src/model/ListHoneypotRequest.cc
+	src/model/ListHoneypotResult.cc
+	src/model/ListHoneypotAlarmEventsRequest.cc
+	src/model/ListHoneypotAlarmEventsResult.cc
+	src/model/ListHoneypotNodeRequest.cc
+	src/model/ListHoneypotNodeResult.cc
 	src/model/ListVulAutoRepairConfigRequest.cc
 	src/model/ListVulAutoRepairConfigResult.cc
 	src/model/ModifyAntiBruteForceRuleRequest.cc

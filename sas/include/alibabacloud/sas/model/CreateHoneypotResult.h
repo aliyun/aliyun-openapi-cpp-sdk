@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_GETFILEDETECTRESULTRESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_GETFILEDETECTRESULTRESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_CREATEHONEYPOTRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_CREATEHONEYPOTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT GetFileDetectResultResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT CreateHoneypotResult : public ServiceResult
 			{
 			public:
-				struct Result
+				struct Data
 				{
-					std::string ext;
-					int score;
-					std::string virusType;
-					std::string hashKey;
-					std::string errorCode;
-					std::string errorMessage;
-					int result;
+					std::string honeypotImageName;
+					std::string controlNodeName;
+					std::string honeypotId;
+					std::vector<std::string> state;
+					std::string presetId;
+					std::string honeypotImageDisplayName;
+					std::string nodeId;
+					std::string honeypotName;
 				};
 
 
-				GetFileDetectResultResult();
-				explicit GetFileDetectResultResult(const std::string &payload);
-				~GetFileDetectResultResult();
-				std::vector<Result> getResultList()const;
+				CreateHoneypotResult();
+				explicit CreateHoneypotResult(const std::string &payload);
+				~CreateHoneypotResult();
+				std::string getMessage()const;
+				int getHttpStatusCode()const;
+				Data getData()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Result> resultList_;
+				std::string message_;
+				int httpStatusCode_;
+				Data data_;
+				std::string code_;
+				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_GETFILEDETECTRESULTRESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_CREATEHONEYPOTRESULT_H_

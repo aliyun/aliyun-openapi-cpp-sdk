@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBECHECKWARNINGSREQUEST_H_
-#define ALIBABACLOUD_SAS_MODEL_DESCRIBECHECKWARNINGSREQUEST_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBEWEBLOCKFILEEVENTSREQUEST_H_
+#define ALIBABACLOUD_SAS_MODEL_DESCRIBEWEBLOCKFILEEVENTSREQUEST_H_
 
 #include <alibabacloud/sas/SasExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,41 +26,38 @@
 namespace AlibabaCloud {
 namespace Sas {
 namespace Model {
-class ALIBABACLOUD_SAS_EXPORT DescribeCheckWarningsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SAS_EXPORT DescribeWebLockFileEventsRequest : public RpcServiceRequest {
 public:
-	DescribeCheckWarningsRequest();
-	~DescribeCheckWarningsRequest();
-	std::string getUuid() const;
-	void setUuid(const std::string &uuid);
-	std::string getCheckType() const;
-	void setCheckType(const std::string &checkType);
+	DescribeWebLockFileEventsRequest();
+	~DescribeWebLockFileEventsRequest();
+	std::string getRemark() const;
+	void setRemark(const std::string &remark);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	std::string getLang() const;
-	void setLang(const std::string &lang);
-	long getCheckId() const;
-	void setCheckId(long checkId);
+	long getTsEnd() const;
+	void setTsEnd(long tsEnd);
+	std::string getProcessName() const;
+	void setProcessName(const std::string &processName);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
-	long getRiskId() const;
-	void setRiskId(long riskId);
-	int getRiskStatus() const;
-	void setRiskStatus(int riskStatus);
+	std::string getDealed() const;
+	void setDealed(const std::string &dealed);
+	long getTsBegin() const;
+	void setTsBegin(long tsBegin);
 
 private:
-	std::string uuid_;
-	std::string checkType_;
+	std::string remark_;
 	std::string sourceIp_;
 	int pageSize_;
-	std::string lang_;
-	long checkId_;
+	long tsEnd_;
+	std::string processName_;
 	int currentPage_;
-	long riskId_;
-	int riskStatus_;
+	std::string dealed_;
+	long tsBegin_;
 };
 } // namespace Model
 } // namespace Sas
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBECHECKWARNINGSREQUEST_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBEWEBLOCKFILEEVENTSREQUEST_H_

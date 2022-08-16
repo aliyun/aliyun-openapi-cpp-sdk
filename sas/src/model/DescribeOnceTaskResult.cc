@@ -61,6 +61,10 @@ void DescribeOnceTaskResult::parse(const std::string &payload)
 			taskManageResponseListObject.taskEndTime = std::stol(valueTaskManageResponseListTaskManageResponse["TaskEndTime"].asString());
 		if(!valueTaskManageResponseListTaskManageResponse["TaskId"].isNull())
 			taskManageResponseListObject.taskId = valueTaskManageResponseListTaskManageResponse["TaskId"].asString();
+		if(!valueTaskManageResponseListTaskManageResponse["Source"].isNull())
+			taskManageResponseListObject.source = valueTaskManageResponseListTaskManageResponse["Source"].asString();
+		if(!valueTaskManageResponseListTaskManageResponse["Context"].isNull())
+			taskManageResponseListObject.context = valueTaskManageResponseListTaskManageResponse["Context"].asString();
 		taskManageResponseList_.push_back(taskManageResponseListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

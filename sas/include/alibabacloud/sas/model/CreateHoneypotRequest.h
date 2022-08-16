@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBECHECKWARNINGSREQUEST_H_
-#define ALIBABACLOUD_SAS_MODEL_DESCRIBECHECKWARNINGSREQUEST_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_CREATEHONEYPOTREQUEST_H_
+#define ALIBABACLOUD_SAS_MODEL_CREATEHONEYPOTREQUEST_H_
 
 #include <alibabacloud/sas/SasExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,41 +26,38 @@
 namespace AlibabaCloud {
 namespace Sas {
 namespace Model {
-class ALIBABACLOUD_SAS_EXPORT DescribeCheckWarningsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SAS_EXPORT CreateHoneypotRequest : public RpcServiceRequest {
 public:
-	DescribeCheckWarningsRequest();
-	~DescribeCheckWarningsRequest();
-	std::string getUuid() const;
-	void setUuid(const std::string &uuid);
-	std::string getCheckType() const;
-	void setCheckType(const std::string &checkType);
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
+	CreateHoneypotRequest();
+	~CreateHoneypotRequest();
+	std::string getHoneypotName() const;
+	void setHoneypotName(const std::string &honeypotName);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
-	long getCheckId() const;
-	void setCheckId(long checkId);
+	std::string getNodeId() const;
+	void setNodeId(const std::string &nodeId);
+	std::string getHoneypotImageId() const;
+	void setHoneypotImageId(const std::string &honeypotImageId);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
-	long getRiskId() const;
-	void setRiskId(long riskId);
-	int getRiskStatus() const;
-	void setRiskStatus(int riskStatus);
+	std::string getMeta() const;
+	void setMeta(const std::string &meta);
+	std::string getHoneypotImageName() const;
+	void setHoneypotImageName(const std::string &honeypotImageName);
 
 private:
-	std::string uuid_;
-	std::string checkType_;
-	std::string sourceIp_;
+	std::string honeypotName_;
 	int pageSize_;
 	std::string lang_;
-	long checkId_;
+	std::string nodeId_;
+	std::string honeypotImageId_;
 	int currentPage_;
-	long riskId_;
-	int riskStatus_;
+	std::string meta_;
+	std::string honeypotImageName_;
 };
 } // namespace Model
 } // namespace Sas
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBECHECKWARNINGSREQUEST_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_CREATEHONEYPOTREQUEST_H_

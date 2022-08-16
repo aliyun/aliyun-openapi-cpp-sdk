@@ -339,6 +339,114 @@ SasClient::CreateFileDetectUploadUrlOutcomeCallable SasClient::createFileDetectU
 	return task->get_future();
 }
 
+SasClient::CreateHoneypotOutcome SasClient::createHoneypot(const CreateHoneypotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateHoneypotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateHoneypotOutcome(CreateHoneypotResult(outcome.result()));
+	else
+		return CreateHoneypotOutcome(outcome.error());
+}
+
+void SasClient::createHoneypotAsync(const CreateHoneypotRequest& request, const CreateHoneypotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createHoneypot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::CreateHoneypotOutcomeCallable SasClient::createHoneypotCallable(const CreateHoneypotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateHoneypotOutcome()>>(
+			[this, request]()
+			{
+			return this->createHoneypot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::CreateHoneypotNodeOutcome SasClient::createHoneypotNode(const CreateHoneypotNodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateHoneypotNodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateHoneypotNodeOutcome(CreateHoneypotNodeResult(outcome.result()));
+	else
+		return CreateHoneypotNodeOutcome(outcome.error());
+}
+
+void SasClient::createHoneypotNodeAsync(const CreateHoneypotNodeRequest& request, const CreateHoneypotNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createHoneypotNode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::CreateHoneypotNodeOutcomeCallable SasClient::createHoneypotNodeCallable(const CreateHoneypotNodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateHoneypotNodeOutcome()>>(
+			[this, request]()
+			{
+			return this->createHoneypotNode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::CreateHoneypotProbeOutcome SasClient::createHoneypotProbe(const CreateHoneypotProbeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateHoneypotProbeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateHoneypotProbeOutcome(CreateHoneypotProbeResult(outcome.result()));
+	else
+		return CreateHoneypotProbeOutcome(outcome.error());
+}
+
+void SasClient::createHoneypotProbeAsync(const CreateHoneypotProbeRequest& request, const CreateHoneypotProbeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createHoneypotProbe(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::CreateHoneypotProbeOutcomeCallable SasClient::createHoneypotProbeCallable(const CreateHoneypotProbeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateHoneypotProbeOutcome()>>(
+			[this, request]()
+			{
+			return this->createHoneypotProbe(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::CreateOrUpdateAssetGroupOutcome SasClient::createOrUpdateAssetGroup(const CreateOrUpdateAssetGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5199,6 +5307,42 @@ SasClient::DescribeWebLockConfigListOutcomeCallable SasClient::describeWebLockCo
 	return task->get_future();
 }
 
+SasClient::DescribeWebLockFileEventsOutcome SasClient::describeWebLockFileEvents(const DescribeWebLockFileEventsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeWebLockFileEventsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeWebLockFileEventsOutcome(DescribeWebLockFileEventsResult(outcome.result()));
+	else
+		return DescribeWebLockFileEventsOutcome(outcome.error());
+}
+
+void SasClient::describeWebLockFileEventsAsync(const DescribeWebLockFileEventsRequest& request, const DescribeWebLockFileEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeWebLockFileEvents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeWebLockFileEventsOutcomeCallable SasClient::describeWebLockFileEventsCallable(const DescribeWebLockFileEventsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeWebLockFileEventsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeWebLockFileEvents(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::ExportRecordOutcome SasClient::exportRecord(const ExportRecordRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5769,6 +5913,114 @@ SasClient::ListCheckResultOutcomeCallable SasClient::listCheckResultCallable(con
 			[this, request]()
 			{
 			return this->listCheckResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ListHoneypotOutcome SasClient::listHoneypot(const ListHoneypotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListHoneypotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListHoneypotOutcome(ListHoneypotResult(outcome.result()));
+	else
+		return ListHoneypotOutcome(outcome.error());
+}
+
+void SasClient::listHoneypotAsync(const ListHoneypotRequest& request, const ListHoneypotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listHoneypot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListHoneypotOutcomeCallable SasClient::listHoneypotCallable(const ListHoneypotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListHoneypotOutcome()>>(
+			[this, request]()
+			{
+			return this->listHoneypot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ListHoneypotAlarmEventsOutcome SasClient::listHoneypotAlarmEvents(const ListHoneypotAlarmEventsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListHoneypotAlarmEventsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListHoneypotAlarmEventsOutcome(ListHoneypotAlarmEventsResult(outcome.result()));
+	else
+		return ListHoneypotAlarmEventsOutcome(outcome.error());
+}
+
+void SasClient::listHoneypotAlarmEventsAsync(const ListHoneypotAlarmEventsRequest& request, const ListHoneypotAlarmEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listHoneypotAlarmEvents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListHoneypotAlarmEventsOutcomeCallable SasClient::listHoneypotAlarmEventsCallable(const ListHoneypotAlarmEventsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListHoneypotAlarmEventsOutcome()>>(
+			[this, request]()
+			{
+			return this->listHoneypotAlarmEvents(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ListHoneypotNodeOutcome SasClient::listHoneypotNode(const ListHoneypotNodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListHoneypotNodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListHoneypotNodeOutcome(ListHoneypotNodeResult(outcome.result()));
+	else
+		return ListHoneypotNodeOutcome(outcome.error());
+}
+
+void SasClient::listHoneypotNodeAsync(const ListHoneypotNodeRequest& request, const ListHoneypotNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listHoneypotNode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListHoneypotNodeOutcomeCallable SasClient::listHoneypotNodeCallable(const ListHoneypotNodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListHoneypotNodeOutcome()>>(
+			[this, request]()
+			{
+			return this->listHoneypotNode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBEONCETASKRESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_DESCRIBEONCETASKRESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_LISTHONEYPOTALARMEVENTSRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_LISTHONEYPOTALARMEVENTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,46 +29,54 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT DescribeOnceTaskResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT ListHoneypotAlarmEventsResult : public ServiceResult
 			{
 			public:
 				struct PageInfo
 				{
 					int totalCount;
 					int pageSize;
+					std::string nextToken;
 					int currentPage;
 					int count;
+					std::string lastRowKey;
 				};
-				struct TaskManageResponse
+				struct HoneypotAlarmEvent
 				{
-					std::string context;
-					std::string progress;
-					std::string taskId;
-					std::string taskName;
-					long taskEndTime;
-					std::string taskType;
-					int taskStatus;
-					std::string taskStatusText;
-					std::string detailData;
-					long taskStartTime;
-					std::string source;
+					struct MergeFieldListItem
+					{
+						std::string fieldExtInfo;
+						std::string fieldValue;
+						std::string fieldType;
+						std::string fieldKey;
+					};
+					long firstTime;
+					int operateStatus;
+					long alarmEventId;
+					int eventCount;
+					std::string alarmEventType;
+					std::string alarmEventName;
+					std::string alarmUniqueInfo;
+					std::vector<HoneypotAlarmEvent::MergeFieldListItem> mergeFieldList;
+					std::string riskLevel;
+					long lastTime;
 				};
 
 
-				DescribeOnceTaskResult();
-				explicit DescribeOnceTaskResult(const std::string &payload);
-				~DescribeOnceTaskResult();
+				ListHoneypotAlarmEventsResult();
+				explicit ListHoneypotAlarmEventsResult(const std::string &payload);
+				~ListHoneypotAlarmEventsResult();
 				PageInfo getPageInfo()const;
-				std::vector<TaskManageResponse> getTaskManageResponseList()const;
+				std::vector<HoneypotAlarmEvent> getHoneypotAlarmEvents()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				PageInfo pageInfo_;
-				std::vector<TaskManageResponse> taskManageResponseList_;
+				std::vector<HoneypotAlarmEvent> honeypotAlarmEvents_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBEONCETASKRESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_LISTHONEYPOTALARMEVENTSRESULT_H_
