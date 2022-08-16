@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCELOGREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCELOGREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTINSTANCEHISTORYREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTINSTANCEHISTORYREQUEST_H_
 
 #include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,20 @@
 namespace AlibabaCloud {
 namespace Dataworks_public {
 namespace Model {
-class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetInstanceLogRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListInstanceHistoryRequest : public RpcServiceRequest {
 public:
-	GetInstanceLogRequest();
-	~GetInstanceLogRequest();
+	ListInstanceHistoryRequest();
+	~ListInstanceHistoryRequest();
 	std::string getProjectEnv() const;
 	void setProjectEnv(const std::string &projectEnv);
 	long getInstanceId() const;
 	void setInstanceId(long instanceId);
-	long getInstanceHistoryId() const;
-	void setInstanceHistoryId(long instanceHistoryId);
 
 private:
 	std::string projectEnv_;
 	long instanceId_;
-	long instanceHistoryId_;
 };
 } // namespace Model
 } // namespace Dataworks_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCELOGREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTINSTANCEHISTORYREQUEST_H_

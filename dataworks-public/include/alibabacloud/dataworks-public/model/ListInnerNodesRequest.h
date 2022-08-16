@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCELOGREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCELOGREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTINNERNODESREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTINNERNODESREQUEST_H_
 
 #include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,35 @@
 namespace AlibabaCloud {
 namespace Dataworks_public {
 namespace Model {
-class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetInstanceLogRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListInnerNodesRequest : public RpcServiceRequest {
 public:
-	GetInstanceLogRequest();
-	~GetInstanceLogRequest();
+	ListInnerNodesRequest();
+	~ListInnerNodesRequest();
 	std::string getProjectEnv() const;
 	void setProjectEnv(const std::string &projectEnv);
-	long getInstanceId() const;
-	void setInstanceId(long instanceId);
-	long getInstanceHistoryId() const;
-	void setInstanceHistoryId(long instanceHistoryId);
+	long getOuterNodeId() const;
+	void setOuterNodeId(long outerNodeId);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
+	std::string getNodeName() const;
+	void setNodeName(const std::string &nodeName);
+	std::string getProgramType() const;
+	void setProgramType(const std::string &programType);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
 	std::string projectEnv_;
-	long instanceId_;
-	long instanceHistoryId_;
+	long outerNodeId_;
+	int pageNumber_;
+	std::string nodeName_;
+	std::string programType_;
+	int pageSize_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETINSTANCELOGREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTINNERNODESREQUEST_H_

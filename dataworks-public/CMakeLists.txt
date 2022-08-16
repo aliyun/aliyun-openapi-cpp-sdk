@@ -329,8 +329,12 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListFoldersResult.h
 	include/alibabacloud/dataworks-public/model/ListHistoryTasksForResourceGroupRequest.h
 	include/alibabacloud/dataworks-public/model/ListHistoryTasksForResourceGroupResult.h
+	include/alibabacloud/dataworks-public/model/ListInnerNodesRequest.h
+	include/alibabacloud/dataworks-public/model/ListInnerNodesResult.h
 	include/alibabacloud/dataworks-public/model/ListInstanceAmountRequest.h
 	include/alibabacloud/dataworks-public/model/ListInstanceAmountResult.h
+	include/alibabacloud/dataworks-public/model/ListInstanceHistoryRequest.h
+	include/alibabacloud/dataworks-public/model/ListInstanceHistoryResult.h
 	include/alibabacloud/dataworks-public/model/ListInstancesRequest.h
 	include/alibabacloud/dataworks-public/model/ListInstancesResult.h
 	include/alibabacloud/dataworks-public/model/ListManualDagInstancesRequest.h
@@ -802,8 +806,12 @@ set(dataworks-public_src
 	src/model/ListFoldersResult.cc
 	src/model/ListHistoryTasksForResourceGroupRequest.cc
 	src/model/ListHistoryTasksForResourceGroupResult.cc
+	src/model/ListInnerNodesRequest.cc
+	src/model/ListInnerNodesResult.cc
 	src/model/ListInstanceAmountRequest.cc
 	src/model/ListInstanceAmountResult.cc
+	src/model/ListInstanceHistoryRequest.cc
+	src/model/ListInstanceHistoryResult.cc
 	src/model/ListInstancesRequest.cc
 	src/model/ListInstancesResult.cc
 	src/model/ListManualDagInstancesRequest.cc

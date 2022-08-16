@@ -42,6 +42,8 @@ public:
 	void setBizBeginTime(const std::string &bizBeginTime);
 	std::string getEndBizDate() const;
 	void setEndBizDate(const std::string &endBizDate);
+	bool getStartFutureInstanceImmediately() const;
+	void setStartFutureInstanceImmediately(bool startFutureInstanceImmediately);
 	std::string getIncludeNodeIds() const;
 	void setIncludeNodeIds(const std::string &includeNodeIds);
 	std::string getBizEndTime() const;
@@ -60,6 +62,7 @@ private:
 	long rootNodeId_;
 	std::string bizBeginTime_;
 	std::string endBizDate_;
+	bool startFutureInstanceImmediately_;
 	std::string includeNodeIds_;
 	std::string bizEndTime_;
 	std::string name_;

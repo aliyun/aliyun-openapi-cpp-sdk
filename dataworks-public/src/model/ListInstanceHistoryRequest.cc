@@ -14,41 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dataworks-public/model/GetInstanceLogRequest.h>
+#include <alibabacloud/dataworks-public/model/ListInstanceHistoryRequest.h>
 
-using AlibabaCloud::Dataworks_public::Model::GetInstanceLogRequest;
+using AlibabaCloud::Dataworks_public::Model::ListInstanceHistoryRequest;
 
-GetInstanceLogRequest::GetInstanceLogRequest()
-    : RpcServiceRequest("dataworks-public", "2020-05-18", "GetInstanceLog") {
+ListInstanceHistoryRequest::ListInstanceHistoryRequest()
+    : RpcServiceRequest("dataworks-public", "2020-05-18", "ListInstanceHistory") {
   setMethod(HttpRequest::Method::Post);
 }
 
-GetInstanceLogRequest::~GetInstanceLogRequest() {}
+ListInstanceHistoryRequest::~ListInstanceHistoryRequest() {}
 
-std::string GetInstanceLogRequest::getProjectEnv() const {
+std::string ListInstanceHistoryRequest::getProjectEnv() const {
   return projectEnv_;
 }
 
-void GetInstanceLogRequest::setProjectEnv(const std::string &projectEnv) {
+void ListInstanceHistoryRequest::setProjectEnv(const std::string &projectEnv) {
   projectEnv_ = projectEnv;
   setBodyParameter(std::string("ProjectEnv"), projectEnv);
 }
 
-long GetInstanceLogRequest::getInstanceId() const {
+long ListInstanceHistoryRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void GetInstanceLogRequest::setInstanceId(long instanceId) {
+void ListInstanceHistoryRequest::setInstanceId(long instanceId) {
   instanceId_ = instanceId;
   setBodyParameter(std::string("InstanceId"), std::to_string(instanceId));
-}
-
-long GetInstanceLogRequest::getInstanceHistoryId() const {
-  return instanceHistoryId_;
-}
-
-void GetInstanceLogRequest::setInstanceHistoryId(long instanceHistoryId) {
-  instanceHistoryId_ = instanceHistoryId;
-  setBodyParameter(std::string("InstanceHistoryId"), std::to_string(instanceHistoryId));
 }
 

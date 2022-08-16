@@ -330,8 +330,12 @@
 #include "model/ListFoldersResult.h"
 #include "model/ListHistoryTasksForResourceGroupRequest.h"
 #include "model/ListHistoryTasksForResourceGroupResult.h"
+#include "model/ListInnerNodesRequest.h"
+#include "model/ListInnerNodesResult.h"
 #include "model/ListInstanceAmountRequest.h"
 #include "model/ListInstanceAmountResult.h"
+#include "model/ListInstanceHistoryRequest.h"
+#include "model/ListInstanceHistoryResult.h"
 #include "model/ListInstancesRequest.h"
 #include "model/ListInstancesResult.h"
 #include "model/ListManualDagInstancesRequest.h"
@@ -963,9 +967,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListHistoryTasksForResourceGroupResult> ListHistoryTasksForResourceGroupOutcome;
 			typedef std::future<ListHistoryTasksForResourceGroupOutcome> ListHistoryTasksForResourceGroupOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListHistoryTasksForResourceGroupRequest&, const ListHistoryTasksForResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListHistoryTasksForResourceGroupAsyncHandler;
+			typedef Outcome<Error, Model::ListInnerNodesResult> ListInnerNodesOutcome;
+			typedef std::future<ListInnerNodesOutcome> ListInnerNodesOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListInnerNodesRequest&, const ListInnerNodesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInnerNodesAsyncHandler;
 			typedef Outcome<Error, Model::ListInstanceAmountResult> ListInstanceAmountOutcome;
 			typedef std::future<ListInstanceAmountOutcome> ListInstanceAmountOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListInstanceAmountRequest&, const ListInstanceAmountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstanceAmountAsyncHandler;
+			typedef Outcome<Error, Model::ListInstanceHistoryResult> ListInstanceHistoryOutcome;
+			typedef std::future<ListInstanceHistoryOutcome> ListInstanceHistoryOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListInstanceHistoryRequest&, const ListInstanceHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstanceHistoryAsyncHandler;
 			typedef Outcome<Error, Model::ListInstancesResult> ListInstancesOutcome;
 			typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListInstancesRequest&, const ListInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancesAsyncHandler;
@@ -1673,9 +1683,15 @@ namespace AlibabaCloud
 			ListHistoryTasksForResourceGroupOutcome listHistoryTasksForResourceGroup(const Model::ListHistoryTasksForResourceGroupRequest &request)const;
 			void listHistoryTasksForResourceGroupAsync(const Model::ListHistoryTasksForResourceGroupRequest& request, const ListHistoryTasksForResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListHistoryTasksForResourceGroupOutcomeCallable listHistoryTasksForResourceGroupCallable(const Model::ListHistoryTasksForResourceGroupRequest& request) const;
+			ListInnerNodesOutcome listInnerNodes(const Model::ListInnerNodesRequest &request)const;
+			void listInnerNodesAsync(const Model::ListInnerNodesRequest& request, const ListInnerNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListInnerNodesOutcomeCallable listInnerNodesCallable(const Model::ListInnerNodesRequest& request) const;
 			ListInstanceAmountOutcome listInstanceAmount(const Model::ListInstanceAmountRequest &request)const;
 			void listInstanceAmountAsync(const Model::ListInstanceAmountRequest& request, const ListInstanceAmountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstanceAmountOutcomeCallable listInstanceAmountCallable(const Model::ListInstanceAmountRequest& request) const;
+			ListInstanceHistoryOutcome listInstanceHistory(const Model::ListInstanceHistoryRequest &request)const;
+			void listInstanceHistoryAsync(const Model::ListInstanceHistoryRequest& request, const ListInstanceHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListInstanceHistoryOutcomeCallable listInstanceHistoryCallable(const Model::ListInstanceHistoryRequest& request) const;
 			ListInstancesOutcome listInstances(const Model::ListInstancesRequest &request)const;
 			void listInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstancesOutcomeCallable listInstancesCallable(const Model::ListInstancesRequest& request) const;

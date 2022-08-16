@@ -5595,6 +5595,42 @@ Dataworks_publicClient::ListHistoryTasksForResourceGroupOutcomeCallable Datawork
 	return task->get_future();
 }
 
+Dataworks_publicClient::ListInnerNodesOutcome Dataworks_publicClient::listInnerNodes(const ListInnerNodesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInnerNodesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInnerNodesOutcome(ListInnerNodesResult(outcome.result()));
+	else
+		return ListInnerNodesOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listInnerNodesAsync(const ListInnerNodesRequest& request, const ListInnerNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInnerNodes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListInnerNodesOutcomeCallable Dataworks_publicClient::listInnerNodesCallable(const ListInnerNodesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInnerNodesOutcome()>>(
+			[this, request]()
+			{
+			return this->listInnerNodes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ListInstanceAmountOutcome Dataworks_publicClient::listInstanceAmount(const ListInstanceAmountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5625,6 +5661,42 @@ Dataworks_publicClient::ListInstanceAmountOutcomeCallable Dataworks_publicClient
 			[this, request]()
 			{
 			return this->listInstanceAmount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListInstanceHistoryOutcome Dataworks_publicClient::listInstanceHistory(const ListInstanceHistoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInstanceHistoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInstanceHistoryOutcome(ListInstanceHistoryResult(outcome.result()));
+	else
+		return ListInstanceHistoryOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listInstanceHistoryAsync(const ListInstanceHistoryRequest& request, const ListInstanceHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInstanceHistory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListInstanceHistoryOutcomeCallable Dataworks_publicClient::listInstanceHistoryCallable(const ListInstanceHistoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInstanceHistoryOutcome()>>(
+			[this, request]()
+			{
+			return this->listInstanceHistory(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

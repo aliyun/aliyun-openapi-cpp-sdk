@@ -79,6 +79,15 @@ void RunCycleDagNodesRequest::setEndBizDate(const std::string &endBizDate) {
   setBodyParameter(std::string("EndBizDate"), endBizDate);
 }
 
+bool RunCycleDagNodesRequest::getStartFutureInstanceImmediately() const {
+  return startFutureInstanceImmediately_;
+}
+
+void RunCycleDagNodesRequest::setStartFutureInstanceImmediately(bool startFutureInstanceImmediately) {
+  startFutureInstanceImmediately_ = startFutureInstanceImmediately;
+  setBodyParameter(std::string("StartFutureInstanceImmediately"), startFutureInstanceImmediately ? "true" : "false");
+}
+
 std::string RunCycleDagNodesRequest::getIncludeNodeIds() const {
   return includeNodeIds_;
 }
