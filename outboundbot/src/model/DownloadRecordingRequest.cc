@@ -25,6 +25,15 @@ DownloadRecordingRequest::DownloadRecordingRequest()
 
 DownloadRecordingRequest::~DownloadRecordingRequest() {}
 
+bool DownloadRecordingRequest::getNeedVoiceSliceRecording() const {
+  return needVoiceSliceRecording_;
+}
+
+void DownloadRecordingRequest::setNeedVoiceSliceRecording(bool needVoiceSliceRecording) {
+  needVoiceSliceRecording_ = needVoiceSliceRecording;
+  setParameter(std::string("NeedVoiceSliceRecording"), needVoiceSliceRecording ? "true" : "false");
+}
+
 std::string DownloadRecordingRequest::getInstanceId() const {
   return instanceId_;
 }

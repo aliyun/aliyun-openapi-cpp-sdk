@@ -42,6 +42,8 @@ public:
 	void setScriptWaveform(const std::vector<std::string> &scriptWaveform);
 	std::string getAsrConfig() const;
 	void setAsrConfig(const std::string &asrConfig);
+	std::string getMiniPlaybackConfigListJsonString() const;
+	void setMiniPlaybackConfigListJsonString(const std::string &miniPlaybackConfigListJsonString);
 	bool getNewBargeInEnable() const;
 	void setNewBargeInEnable(bool newBargeInEnable);
 	bool getMiniPlaybackEnable() const;
@@ -64,6 +66,7 @@ private:
 	std::string scene_;
 	std::vector<std::string> scriptWaveform_;
 	std::string asrConfig_;
+	std::string miniPlaybackConfigListJsonString_;
 	bool newBargeInEnable_;
 	bool miniPlaybackEnable_;
 	std::string chatbotId_;

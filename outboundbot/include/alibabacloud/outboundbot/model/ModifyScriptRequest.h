@@ -44,6 +44,8 @@ public:
 	void setScriptWaveform(const std::vector<std::string> &scriptWaveform);
 	std::string getAsrConfig() const;
 	void setAsrConfig(const std::string &asrConfig);
+	std::string getMiniPlaybackConfigListJsonString() const;
+	void setMiniPlaybackConfigListJsonString(const std::string &miniPlaybackConfigListJsonString);
 	std::string getNlsConfig() const;
 	void setNlsConfig(const std::string &nlsConfig);
 	bool getNewBargeInEnable() const;
@@ -69,6 +71,7 @@ private:
 	std::string scriptId_;
 	std::vector<std::string> scriptWaveform_;
 	std::string asrConfig_;
+	std::string miniPlaybackConfigListJsonString_;
 	std::string nlsConfig_;
 	bool newBargeInEnable_;
 	bool miniPlaybackEnable_;

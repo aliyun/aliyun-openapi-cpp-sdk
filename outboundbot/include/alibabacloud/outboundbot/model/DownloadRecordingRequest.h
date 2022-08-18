@@ -30,12 +30,15 @@ class ALIBABACLOUD_OUTBOUNDBOT_EXPORT DownloadRecordingRequest : public RpcServi
 public:
 	DownloadRecordingRequest();
 	~DownloadRecordingRequest();
+	bool getNeedVoiceSliceRecording() const;
+	void setNeedVoiceSliceRecording(bool needVoiceSliceRecording);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getTaskId() const;
 	void setTaskId(const std::string &taskId);
 
 private:
+	bool needVoiceSliceRecording_;
 	std::string instanceId_;
 	std::string taskId_;
 };

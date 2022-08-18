@@ -87,6 +87,15 @@ void ModifyScriptRequest::setAsrConfig(const std::string &asrConfig) {
   setParameter(std::string("AsrConfig"), asrConfig);
 }
 
+std::string ModifyScriptRequest::getMiniPlaybackConfigListJsonString() const {
+  return miniPlaybackConfigListJsonString_;
+}
+
+void ModifyScriptRequest::setMiniPlaybackConfigListJsonString(const std::string &miniPlaybackConfigListJsonString) {
+  miniPlaybackConfigListJsonString_ = miniPlaybackConfigListJsonString;
+  setParameter(std::string("MiniPlaybackConfigListJsonString"), miniPlaybackConfigListJsonString);
+}
+
 std::string ModifyScriptRequest::getNlsConfig() const {
   return nlsConfig_;
 }

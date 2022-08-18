@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct DownloadParams
 				{
 					std::string fileName;
+					std::string voiceSliceRecordingListJson;
 					std::string signatureUrl;
 				};
 

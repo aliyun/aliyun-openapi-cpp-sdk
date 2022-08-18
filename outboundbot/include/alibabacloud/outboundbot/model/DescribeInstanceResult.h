@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string secretKey;
 						std::string endpoint;
 						std::string accessKey;
+						std::string agentId;
 					};
 					std::string owner;
 					std::string ownerName;

@@ -44,6 +44,8 @@ void DownloadRecordingResult::parse(const std::string &payload)
 		downloadParams_.signatureUrl = downloadParamsNode["SignatureUrl"].asString();
 	if(!downloadParamsNode["FileName"].isNull())
 		downloadParams_.fileName = downloadParamsNode["FileName"].asString();
+	if(!downloadParamsNode["VoiceSliceRecordingListJson"].isNull())
+		downloadParams_.voiceSliceRecordingListJson = downloadParamsNode["VoiceSliceRecordingListJson"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())

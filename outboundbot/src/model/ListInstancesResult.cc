@@ -86,6 +86,8 @@ void ListInstancesResult::parse(const std::string &payload)
 			instancesObject.nluProfile.secretKey = nluProfileNode["SecretKey"].asString();
 		if(!nluProfileNode["Endpoint"].isNull())
 			instancesObject.nluProfile.endpoint = nluProfileNode["Endpoint"].asString();
+		if(!nluProfileNode["AgentId"].isNull())
+			instancesObject.nluProfile.agentId = nluProfileNode["AgentId"].asString();
 		instances_.push_back(instancesObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

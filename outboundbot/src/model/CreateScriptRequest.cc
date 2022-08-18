@@ -78,6 +78,15 @@ void CreateScriptRequest::setAsrConfig(const std::string &asrConfig) {
   setParameter(std::string("AsrConfig"), asrConfig);
 }
 
+std::string CreateScriptRequest::getMiniPlaybackConfigListJsonString() const {
+  return miniPlaybackConfigListJsonString_;
+}
+
+void CreateScriptRequest::setMiniPlaybackConfigListJsonString(const std::string &miniPlaybackConfigListJsonString) {
+  miniPlaybackConfigListJsonString_ = miniPlaybackConfigListJsonString;
+  setParameter(std::string("MiniPlaybackConfigListJsonString"), miniPlaybackConfigListJsonString);
+}
+
 bool CreateScriptRequest::getNewBargeInEnable() const {
   return newBargeInEnable_;
 }

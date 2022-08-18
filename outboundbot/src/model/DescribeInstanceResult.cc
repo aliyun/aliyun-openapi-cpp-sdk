@@ -71,6 +71,8 @@ void DescribeInstanceResult::parse(const std::string &payload)
 		instance_.nluProfile.secretKey = nluProfileNode["SecretKey"].asString();
 	if(!nluProfileNode["Endpoint"].isNull())
 		instance_.nluProfile.endpoint = nluProfileNode["Endpoint"].asString();
+	if(!nluProfileNode["AgentId"].isNull())
+		instance_.nluProfile.agentId = nluProfileNode["AgentId"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
