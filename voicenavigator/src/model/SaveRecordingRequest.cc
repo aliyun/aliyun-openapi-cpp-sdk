@@ -25,6 +25,15 @@ SaveRecordingRequest::SaveRecordingRequest()
 
 SaveRecordingRequest::~SaveRecordingRequest() {}
 
+std::string SaveRecordingRequest::getVoiceSliceRecordingList() const {
+  return voiceSliceRecordingList_;
+}
+
+void SaveRecordingRequest::setVoiceSliceRecordingList(const std::string &voiceSliceRecordingList) {
+  voiceSliceRecordingList_ = voiceSliceRecordingList;
+  setParameter(std::string("VoiceSliceRecordingList"), voiceSliceRecordingList);
+}
+
 std::string SaveRecordingRequest::getConversationId() const {
   return conversationId_;
 }

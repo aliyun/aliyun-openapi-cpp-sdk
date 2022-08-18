@@ -30,6 +30,8 @@ class ALIBABACLOUD_VOICENAVIGATOR_EXPORT SaveRecordingRequest : public RpcServic
 public:
 	SaveRecordingRequest();
 	~SaveRecordingRequest();
+	std::string getVoiceSliceRecordingList() const;
+	void setVoiceSliceRecordingList(const std::string &voiceSliceRecordingList);
 	std::string getConversationId() const;
 	void setConversationId(const std::string &conversationId);
 	long getStartTime() const;
@@ -48,6 +50,7 @@ public:
 	void setInstanceOwnerId(long instanceOwnerId);
 
 private:
+	std::string voiceSliceRecordingList_;
 	std::string conversationId_;
 	long startTime_;
 	std::string type_;

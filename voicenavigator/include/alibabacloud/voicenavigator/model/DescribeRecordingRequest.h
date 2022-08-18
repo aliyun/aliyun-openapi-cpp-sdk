@@ -30,12 +30,15 @@ class ALIBABACLOUD_VOICENAVIGATOR_EXPORT DescribeRecordingRequest : public RpcSe
 public:
 	DescribeRecordingRequest();
 	~DescribeRecordingRequest();
+	bool getNeedVoiceSliceRecording() const;
+	void setNeedVoiceSliceRecording(bool needVoiceSliceRecording);
 	std::string getConversationId() const;
 	void setConversationId(const std::string &conversationId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 
 private:
+	bool needVoiceSliceRecording_;
 	std::string conversationId_;
 	std::string instanceId_;
 };

@@ -25,6 +25,15 @@ DescribeRecordingRequest::DescribeRecordingRequest()
 
 DescribeRecordingRequest::~DescribeRecordingRequest() {}
 
+bool DescribeRecordingRequest::getNeedVoiceSliceRecording() const {
+  return needVoiceSliceRecording_;
+}
+
+void DescribeRecordingRequest::setNeedVoiceSliceRecording(bool needVoiceSliceRecording) {
+  needVoiceSliceRecording_ = needVoiceSliceRecording;
+  setParameter(std::string("NeedVoiceSliceRecording"), needVoiceSliceRecording ? "true" : "false");
+}
+
 std::string DescribeRecordingRequest::getConversationId() const {
   return conversationId_;
 }

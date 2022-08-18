@@ -39,12 +39,14 @@ namespace AlibabaCloud
 				~DescribeRecordingResult();
 				std::string getFilePath()const;
 				std::string getFileName()const;
+				std::string getVoiceSliceRecordingListJson()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string filePath_;
 				std::string fileName_;
+				std::string voiceSliceRecordingListJson_;
 
 			};
 		}

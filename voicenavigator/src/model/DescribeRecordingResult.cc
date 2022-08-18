@@ -43,6 +43,8 @@ void DescribeRecordingResult::parse(const std::string &payload)
 		filePath_ = value["FilePath"].asString();
 	if(!value["FileName"].isNull())
 		fileName_ = value["FileName"].asString();
+	if(!value["VoiceSliceRecordingListJson"].isNull())
+		voiceSliceRecordingListJson_ = value["VoiceSliceRecordingListJson"].asString();
 
 }
 
@@ -54,5 +56,10 @@ std::string DescribeRecordingResult::getFilePath()const
 std::string DescribeRecordingResult::getFileName()const
 {
 	return fileName_;
+}
+
+std::string DescribeRecordingResult::getVoiceSliceRecordingListJson()const
+{
+	return voiceSliceRecordingListJson_;
 }
 
