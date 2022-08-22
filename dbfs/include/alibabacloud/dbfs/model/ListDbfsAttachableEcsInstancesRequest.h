@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBFS_MODEL_RESIZEDBFSREQUEST_H_
-#define ALIBABACLOUD_DBFS_MODEL_RESIZEDBFSREQUEST_H_
+#ifndef ALIBABACLOUD_DBFS_MODEL_LISTDBFSATTACHABLEECSINSTANCESREQUEST_H_
+#define ALIBABACLOUD_DBFS_MODEL_LISTDBFSATTACHABLEECSINSTANCESREQUEST_H_
 
 #include <alibabacloud/dbfs/DBFSExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,23 @@
 namespace AlibabaCloud {
 namespace DBFS {
 namespace Model {
-class ALIBABACLOUD_DBFS_EXPORT ResizeDbfsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DBFS_EXPORT ListDbfsAttachableEcsInstancesRequest : public RpcServiceRequest {
 public:
-	ResizeDbfsRequest();
-	~ResizeDbfsRequest();
-	int getNewSizeG() const;
-	void setNewSizeG(int newSizeG);
+	ListDbfsAttachableEcsInstancesRequest();
+	~ListDbfsAttachableEcsInstancesRequest();
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getFsId() const;
-	void setFsId(const std::string &fsId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 
 private:
-	int newSizeG_;
 	std::string regionId_;
-	std::string fsId_;
+	int pageSize_;
+	int pageNumber_;
 };
 } // namespace Model
 } // namespace DBFS
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DBFS_MODEL_RESIZEDBFSREQUEST_H_
+#endif // !ALIBABACLOUD_DBFS_MODEL_LISTDBFSATTACHABLEECSINSTANCESREQUEST_H_

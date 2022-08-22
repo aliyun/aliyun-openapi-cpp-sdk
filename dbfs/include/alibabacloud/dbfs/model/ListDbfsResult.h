@@ -50,6 +50,7 @@ namespace AlibabaCloud
 						std::string ebsId;
 					};
 					std::string status;
+					std::string lastFailed;
 					std::string category;
 					std::string createdTime;
 					std::string kMSKeyId;
@@ -70,6 +71,7 @@ namespace AlibabaCloud
 					std::string lastMountTime;
 					std::string regionId;
 					int attachNodeNumber;
+					std::string instanceType;
 					std::vector<Info::TagList> tags;
 				};
 

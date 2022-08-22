@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBFS_MODEL_INSERTSYNCHRONIZCONSTANTSRESULT_H_
-#define ALIBABACLOUD_DBFS_MODEL_INSERTSYNCHRONIZCONSTANTSRESULT_H_
+#ifndef ALIBABACLOUD_DBFS_MODEL_LISTDBFSATTACHEDECSINSTANCESRESULT_H_
+#define ALIBABACLOUD_DBFS_MODEL_LISTDBFSATTACHEDECSINSTANCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,32 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBFS_EXPORT InsertSynchronizConstantsResult : public ServiceResult
+			class ALIBABACLOUD_DBFS_EXPORT ListDbfsAttachedEcsInstancesResult : public ServiceResult
 			{
 			public:
+				struct LabelInfo
+				{
+					std::string mountPoint;
+					std::string instanceTypeFamily;
+					std::string value;
+					std::string label;
+					std::string mountedTime;
+					std::string oSName;
+				};
 
 
-				InsertSynchronizConstantsResult();
-				explicit InsertSynchronizConstantsResult(const std::string &payload);
-				~InsertSynchronizConstantsResult();
-				long getTotalCount()const;
-				long getPageSize()const;
-				long getPageNumber()const;
-				std::string getData()const;
+				ListDbfsAttachedEcsInstancesResult();
+				explicit ListDbfsAttachedEcsInstancesResult(const std::string &payload);
+				~ListDbfsAttachedEcsInstancesResult();
+				std::vector<LabelInfo> getEcsLabelInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				long pageSize_;
-				long pageNumber_;
-				std::string data_;
+				std::vector<LabelInfo> ecsLabelInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBFS_MODEL_INSERTSYNCHRONIZCONSTANTSRESULT_H_
+#endif // !ALIBABACLOUD_DBFS_MODEL_LISTDBFSATTACHEDECSINSTANCESRESULT_H_

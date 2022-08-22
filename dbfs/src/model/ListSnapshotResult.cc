@@ -43,40 +43,42 @@ void ListSnapshotResult::parse(const std::string &payload)
 	for (auto valueSnapshotsSnapshotsItem : allSnapshotsNode)
 	{
 		SnapshotsItem snapshotsObject;
-		if(!valueSnapshotsSnapshotsItem["Category"].isNull())
-			snapshotsObject.category = valueSnapshotsSnapshotsItem["Category"].asString();
-		if(!valueSnapshotsSnapshotsItem["CreationTime"].isNull())
-			snapshotsObject.creationTime = valueSnapshotsSnapshotsItem["CreationTime"].asString();
-		if(!valueSnapshotsSnapshotsItem["Description"].isNull())
-			snapshotsObject.description = valueSnapshotsSnapshotsItem["Description"].asString();
-		if(!valueSnapshotsSnapshotsItem["LastModifiedTime"].isNull())
-			snapshotsObject.lastModifiedTime = valueSnapshotsSnapshotsItem["LastModifiedTime"].asString();
-		if(!valueSnapshotsSnapshotsItem["Progress"].isNull())
-			snapshotsObject.progress = valueSnapshotsSnapshotsItem["Progress"].asString();
-		if(!valueSnapshotsSnapshotsItem["RemainTime"].isNull())
-			snapshotsObject.remainTime = std::stoi(valueSnapshotsSnapshotsItem["RemainTime"].asString());
-		if(!valueSnapshotsSnapshotsItem["RetentionDays"].isNull())
-			snapshotsObject.retentionDays = std::stoi(valueSnapshotsSnapshotsItem["RetentionDays"].asString());
-		if(!valueSnapshotsSnapshotsItem["SnapshotId"].isNull())
-			snapshotsObject.snapshotId = valueSnapshotsSnapshotsItem["SnapshotId"].asString();
-		if(!valueSnapshotsSnapshotsItem["SnapshotName"].isNull())
-			snapshotsObject.snapshotName = valueSnapshotsSnapshotsItem["SnapshotName"].asString();
-		if(!valueSnapshotsSnapshotsItem["SnapshotType"].isNull())
-			snapshotsObject.snapshotType = valueSnapshotsSnapshotsItem["SnapshotType"].asString();
 		if(!valueSnapshotsSnapshotsItem["Status"].isNull())
 			snapshotsObject.status = valueSnapshotsSnapshotsItem["Status"].asString();
-		if(!valueSnapshotsSnapshotsItem["SourceFsId"].isNull())
-			snapshotsObject.sourceFsId = valueSnapshotsSnapshotsItem["SourceFsId"].asString();
+		if(!valueSnapshotsSnapshotsItem["CreationTime"].isNull())
+			snapshotsObject.creationTime = valueSnapshotsSnapshotsItem["CreationTime"].asString();
+		if(!valueSnapshotsSnapshotsItem["Progress"].isNull())
+			snapshotsObject.progress = valueSnapshotsSnapshotsItem["Progress"].asString();
 		if(!valueSnapshotsSnapshotsItem["SourceFsSize"].isNull())
 			snapshotsObject.sourceFsSize = std::stoi(valueSnapshotsSnapshotsItem["SourceFsSize"].asString());
+		if(!valueSnapshotsSnapshotsItem["RetentionDays"].isNull())
+			snapshotsObject.retentionDays = std::stoi(valueSnapshotsSnapshotsItem["RetentionDays"].asString());
+		if(!valueSnapshotsSnapshotsItem["RemainTime"].isNull())
+			snapshotsObject.remainTime = std::stoi(valueSnapshotsSnapshotsItem["RemainTime"].asString());
+		if(!valueSnapshotsSnapshotsItem["LastModifiedTime"].isNull())
+			snapshotsObject.lastModifiedTime = valueSnapshotsSnapshotsItem["LastModifiedTime"].asString();
+		if(!valueSnapshotsSnapshotsItem["SnapshotType"].isNull())
+			snapshotsObject.snapshotType = valueSnapshotsSnapshotsItem["SnapshotType"].asString();
+		if(!valueSnapshotsSnapshotsItem["SnapshotName"].isNull())
+			snapshotsObject.snapshotName = valueSnapshotsSnapshotsItem["SnapshotName"].asString();
+		if(!valueSnapshotsSnapshotsItem["Description"].isNull())
+			snapshotsObject.description = valueSnapshotsSnapshotsItem["Description"].asString();
+		if(!valueSnapshotsSnapshotsItem["SourceFsId"].isNull())
+			snapshotsObject.sourceFsId = valueSnapshotsSnapshotsItem["SourceFsId"].asString();
+		if(!valueSnapshotsSnapshotsItem["SnapshotId"].isNull())
+			snapshotsObject.snapshotId = valueSnapshotsSnapshotsItem["SnapshotId"].asString();
+		if(!valueSnapshotsSnapshotsItem["Category"].isNull())
+			snapshotsObject.category = valueSnapshotsSnapshotsItem["Category"].asString();
+		if(!valueSnapshotsSnapshotsItem["SourceFsStripeWidth"].isNull())
+			snapshotsObject.sourceFsStripeWidth = std::stoi(valueSnapshotsSnapshotsItem["SourceFsStripeWidth"].asString());
 		snapshots_.push_back(snapshotsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

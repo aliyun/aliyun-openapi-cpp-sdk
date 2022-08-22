@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBFS_MODEL_RESIZEDBFSREQUEST_H_
-#define ALIBABACLOUD_DBFS_MODEL_RESIZEDBFSREQUEST_H_
+#ifndef ALIBABACLOUD_DBFS_MODEL_DESCRIBEINSTANCETYPESREQUEST_H_
+#define ALIBABACLOUD_DBFS_MODEL_DESCRIBEINSTANCETYPESREQUEST_H_
 
 #include <alibabacloud/dbfs/DBFSExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,17 @@
 namespace AlibabaCloud {
 namespace DBFS {
 namespace Model {
-class ALIBABACLOUD_DBFS_EXPORT ResizeDbfsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DBFS_EXPORT DescribeInstanceTypesRequest : public RpcServiceRequest {
 public:
-	ResizeDbfsRequest();
-	~ResizeDbfsRequest();
-	int getNewSizeG() const;
-	void setNewSizeG(int newSizeG);
+	DescribeInstanceTypesRequest();
+	~DescribeInstanceTypesRequest();
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getFsId() const;
-	void setFsId(const std::string &fsId);
 
 private:
-	int newSizeG_;
 	std::string regionId_;
-	std::string fsId_;
 };
 } // namespace Model
 } // namespace DBFS
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DBFS_MODEL_RESIZEDBFSREQUEST_H_
+#endif // !ALIBABACLOUD_DBFS_MODEL_DESCRIBEINSTANCETYPESREQUEST_H_

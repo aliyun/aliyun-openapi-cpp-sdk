@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBFS_MODEL_PUBLISHUPGRADETASKRESULT_H_
-#define ALIBABACLOUD_DBFS_MODEL_PUBLISHUPGRADETASKRESULT_H_
+#ifndef ALIBABACLOUD_DBFS_MODEL_UPDATEDBFSRESULT_H_
+#define ALIBABACLOUD_DBFS_MODEL_UPDATEDBFSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,14 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBFS_EXPORT PublishUpgradeTaskResult : public ServiceResult
+			class ALIBABACLOUD_DBFS_EXPORT UpdateDbfsResult : public ServiceResult
 			{
 			public:
 
 
-				PublishUpgradeTaskResult();
-				explicit PublishUpgradeTaskResult(const std::string &payload);
-				~PublishUpgradeTaskResult();
+				UpdateDbfsResult();
+				explicit UpdateDbfsResult(const std::string &payload);
+				~UpdateDbfsResult();
 
 			protected:
 				void parse(const std::string &payload);
@@ -46,4 +46,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBFS_MODEL_PUBLISHUPGRADETASKRESULT_H_
+#endif // !ALIBABACLOUD_DBFS_MODEL_UPDATEDBFSRESULT_H_

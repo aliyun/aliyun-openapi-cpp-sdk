@@ -78,8 +78,12 @@ void GetDbfsResult::parse(const std::string &payload)
 		dBFSInfo_.lastUmountTime = dBFSInfoNode["LastUmountTime"].asString();
 	if(!dBFSInfoNode["EnableRaid"].isNull())
 		dBFSInfo_.enableRaid = dBFSInfoNode["EnableRaid"].asString() == "true";
+	if(!dBFSInfoNode["InstanceType"].isNull())
+		dBFSInfo_.instanceType = dBFSInfoNode["InstanceType"].asString();
 	if(!dBFSInfoNode["RaidStrip"].isNull())
 		dBFSInfo_.raidStrip = std::stoi(dBFSInfoNode["RaidStrip"].asString());
+	if(!dBFSInfoNode["LastFailed"].isNull())
+		dBFSInfo_.lastFailed = dBFSInfoNode["LastFailed"].asString();
 	auto allTagsNode = dBFSInfoNode["Tags"]["TagList"];
 	for (auto dBFSInfoNodeTagsTagList : allTagsNode)
 	{

@@ -14,23 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dbfs/model/GetServiceLinkedRoleRequest.h>
+#include <alibabacloud/dbfs/model/ListDbfsAttachedEcsInstancesRequest.h>
 
-using AlibabaCloud::DBFS::Model::GetServiceLinkedRoleRequest;
+using AlibabaCloud::DBFS::Model::ListDbfsAttachedEcsInstancesRequest;
 
-GetServiceLinkedRoleRequest::GetServiceLinkedRoleRequest()
-    : RpcServiceRequest("dbfs", "2020-04-18", "GetServiceLinkedRole") {
+ListDbfsAttachedEcsInstancesRequest::ListDbfsAttachedEcsInstancesRequest()
+    : RpcServiceRequest("dbfs", "2020-04-18", "ListDbfsAttachedEcsInstances") {
   setMethod(HttpRequest::Method::Post);
 }
 
-GetServiceLinkedRoleRequest::~GetServiceLinkedRoleRequest() {}
+ListDbfsAttachedEcsInstancesRequest::~ListDbfsAttachedEcsInstancesRequest() {}
 
-std::string GetServiceLinkedRoleRequest::getRegionId() const {
+std::string ListDbfsAttachedEcsInstancesRequest::getRegionId() const {
   return regionId_;
 }
 
-void GetServiceLinkedRoleRequest::setRegionId(const std::string &regionId) {
+void ListDbfsAttachedEcsInstancesRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string ListDbfsAttachedEcsInstancesRequest::getFsId() const {
+  return fsId_;
+}
+
+void ListDbfsAttachedEcsInstancesRequest::setFsId(const std::string &fsId) {
+  fsId_ = fsId;
+  setParameter(std::string("FsId"), fsId);
 }
 

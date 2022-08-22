@@ -14,59 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dbfs/model/ListConstantsResult.h>
+#include <alibabacloud/dbfs/model/UpdateDbfsResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::DBFS;
 using namespace AlibabaCloud::DBFS::Model;
 
-ListConstantsResult::ListConstantsResult() :
+UpdateDbfsResult::UpdateDbfsResult() :
 	ServiceResult()
 {}
 
-ListConstantsResult::ListConstantsResult(const std::string &payload) :
+UpdateDbfsResult::UpdateDbfsResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListConstantsResult::~ListConstantsResult()
+UpdateDbfsResult::~UpdateDbfsResult()
 {}
 
-void ListConstantsResult::parse(const std::string &payload)
+void UpdateDbfsResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stol(value["PageSize"].asString());
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 
-}
-
-long ListConstantsResult::getTotalCount()const
-{
-	return totalCount_;
-}
-
-long ListConstantsResult::getPageSize()const
-{
-	return pageSize_;
-}
-
-long ListConstantsResult::getPageNumber()const
-{
-	return pageNumber_;
-}
-
-std::string ListConstantsResult::getData()const
-{
-	return data_;
 }
 

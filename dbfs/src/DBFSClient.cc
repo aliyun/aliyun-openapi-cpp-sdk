@@ -31,21 +31,21 @@ DBFSClient::DBFSClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dbfs");
 }
 
 DBFSClient::DBFSClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dbfs");
 }
 
 DBFSClient::DBFSClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dbfs");
 }
 
 DBFSClient::~DBFSClient()
@@ -117,42 +117,6 @@ DBFSClient::AttachDbfsOutcomeCallable DBFSClient::attachDbfsCallable(const Attac
 			[this, request]()
 			{
 			return this->attachDbfs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DBFSClient::CreateConstantsOutcome DBFSClient::createConstants(const CreateConstantsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateConstantsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateConstantsOutcome(CreateConstantsResult(outcome.result()));
-	else
-		return CreateConstantsOutcome(outcome.error());
-}
-
-void DBFSClient::createConstantsAsync(const CreateConstantsRequest& request, const CreateConstantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createConstants(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DBFSClient::CreateConstantsOutcomeCallable DBFSClient::createConstantsCallable(const CreateConstantsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateConstantsOutcome()>>(
-			[this, request]()
-			{
-			return this->createConstants(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -261,78 +225,6 @@ DBFSClient::CreateSnapshotOutcomeCallable DBFSClient::createSnapshotCallable(con
 			[this, request]()
 			{
 			return this->createSnapshot(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DBFSClient::DbfsRecordOutcome DBFSClient::dbfsRecord(const DbfsRecordRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DbfsRecordOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DbfsRecordOutcome(DbfsRecordResult(outcome.result()));
-	else
-		return DbfsRecordOutcome(outcome.error());
-}
-
-void DBFSClient::dbfsRecordAsync(const DbfsRecordRequest& request, const DbfsRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, dbfsRecord(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DBFSClient::DbfsRecordOutcomeCallable DBFSClient::dbfsRecordCallable(const DbfsRecordRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DbfsRecordOutcome()>>(
-			[this, request]()
-			{
-			return this->dbfsRecord(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DBFSClient::DeleteConstantsOutcome DBFSClient::deleteConstants(const DeleteConstantsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteConstantsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteConstantsOutcome(DeleteConstantsResult(outcome.result()));
-	else
-		return DeleteConstantsOutcome(outcome.error());
-}
-
-void DBFSClient::deleteConstantsAsync(const DeleteConstantsRequest& request, const DeleteConstantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteConstants(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DBFSClient::DeleteConstantsOutcomeCallable DBFSClient::deleteConstantsCallable(const DeleteConstantsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteConstantsOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteConstants(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -483,6 +375,42 @@ DBFSClient::DescribeDbfsSpecificationsOutcomeCallable DBFSClient::describeDbfsSp
 	return task->get_future();
 }
 
+DBFSClient::DescribeInstanceTypesOutcome DBFSClient::describeInstanceTypes(const DescribeInstanceTypesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceTypesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceTypesOutcome(DescribeInstanceTypesResult(outcome.result()));
+	else
+		return DescribeInstanceTypesOutcome(outcome.error());
+}
+
+void DBFSClient::describeInstanceTypesAsync(const DescribeInstanceTypesRequest& request, const DescribeInstanceTypesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceTypes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::DescribeInstanceTypesOutcomeCallable DBFSClient::describeInstanceTypesCallable(const DescribeInstanceTypesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceTypesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceTypes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DBFSClient::DetachDbfsOutcome DBFSClient::detachDbfs(const DetachDbfsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,42 +441,6 @@ DBFSClient::DetachDbfsOutcomeCallable DBFSClient::detachDbfsCallable(const Detac
 			[this, request]()
 			{
 			return this->detachDbfs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DBFSClient::GenerateUpgradeRecordOutcome DBFSClient::generateUpgradeRecord(const GenerateUpgradeRecordRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GenerateUpgradeRecordOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GenerateUpgradeRecordOutcome(GenerateUpgradeRecordResult(outcome.result()));
-	else
-		return GenerateUpgradeRecordOutcome(outcome.error());
-}
-
-void DBFSClient::generateUpgradeRecordAsync(const GenerateUpgradeRecordRequest& request, const GenerateUpgradeRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, generateUpgradeRecord(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DBFSClient::GenerateUpgradeRecordOutcomeCallable DBFSClient::generateUpgradeRecordCallable(const GenerateUpgradeRecordRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GenerateUpgradeRecordOutcome()>>(
-			[this, request]()
-			{
-			return this->generateUpgradeRecord(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -627,114 +519,6 @@ DBFSClient::GetServiceLinkedRoleOutcomeCallable DBFSClient::getServiceLinkedRole
 	return task->get_future();
 }
 
-DBFSClient::GetSynchronizConstantsOutcome DBFSClient::getSynchronizConstants(const GetSynchronizConstantsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetSynchronizConstantsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetSynchronizConstantsOutcome(GetSynchronizConstantsResult(outcome.result()));
-	else
-		return GetSynchronizConstantsOutcome(outcome.error());
-}
-
-void DBFSClient::getSynchronizConstantsAsync(const GetSynchronizConstantsRequest& request, const GetSynchronizConstantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getSynchronizConstants(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DBFSClient::GetSynchronizConstantsOutcomeCallable DBFSClient::getSynchronizConstantsCallable(const GetSynchronizConstantsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetSynchronizConstantsOutcome()>>(
-			[this, request]()
-			{
-			return this->getSynchronizConstants(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DBFSClient::InsertSynchronizConstantsOutcome DBFSClient::insertSynchronizConstants(const InsertSynchronizConstantsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return InsertSynchronizConstantsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return InsertSynchronizConstantsOutcome(InsertSynchronizConstantsResult(outcome.result()));
-	else
-		return InsertSynchronizConstantsOutcome(outcome.error());
-}
-
-void DBFSClient::insertSynchronizConstantsAsync(const InsertSynchronizConstantsRequest& request, const InsertSynchronizConstantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, insertSynchronizConstants(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DBFSClient::InsertSynchronizConstantsOutcomeCallable DBFSClient::insertSynchronizConstantsCallable(const InsertSynchronizConstantsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<InsertSynchronizConstantsOutcome()>>(
-			[this, request]()
-			{
-			return this->insertSynchronizConstants(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DBFSClient::ListConstantsOutcome DBFSClient::listConstants(const ListConstantsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListConstantsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListConstantsOutcome(ListConstantsResult(outcome.result()));
-	else
-		return ListConstantsOutcome(outcome.error());
-}
-
-void DBFSClient::listConstantsAsync(const ListConstantsRequest& request, const ListConstantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listConstants(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DBFSClient::ListConstantsOutcomeCallable DBFSClient::listConstantsCallable(const ListConstantsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListConstantsOutcome()>>(
-			[this, request]()
-			{
-			return this->listConstants(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DBFSClient::ListDbfsOutcome DBFSClient::listDbfs(const ListDbfsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,6 +549,78 @@ DBFSClient::ListDbfsOutcomeCallable DBFSClient::listDbfsCallable(const ListDbfsR
 			[this, request]()
 			{
 			return this->listDbfs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DBFSClient::ListDbfsAttachableEcsInstancesOutcome DBFSClient::listDbfsAttachableEcsInstances(const ListDbfsAttachableEcsInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDbfsAttachableEcsInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDbfsAttachableEcsInstancesOutcome(ListDbfsAttachableEcsInstancesResult(outcome.result()));
+	else
+		return ListDbfsAttachableEcsInstancesOutcome(outcome.error());
+}
+
+void DBFSClient::listDbfsAttachableEcsInstancesAsync(const ListDbfsAttachableEcsInstancesRequest& request, const ListDbfsAttachableEcsInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDbfsAttachableEcsInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::ListDbfsAttachableEcsInstancesOutcomeCallable DBFSClient::listDbfsAttachableEcsInstancesCallable(const ListDbfsAttachableEcsInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDbfsAttachableEcsInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->listDbfsAttachableEcsInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DBFSClient::ListDbfsAttachedEcsInstancesOutcome DBFSClient::listDbfsAttachedEcsInstances(const ListDbfsAttachedEcsInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDbfsAttachedEcsInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDbfsAttachedEcsInstancesOutcome(ListDbfsAttachedEcsInstancesResult(outcome.result()));
+	else
+		return ListDbfsAttachedEcsInstancesOutcome(outcome.error());
+}
+
+void DBFSClient::listDbfsAttachedEcsInstancesAsync(const ListDbfsAttachedEcsInstancesRequest& request, const ListDbfsAttachedEcsInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDbfsAttachedEcsInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::ListDbfsAttachedEcsInstancesOutcomeCallable DBFSClient::listDbfsAttachedEcsInstancesCallable(const ListDbfsAttachedEcsInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDbfsAttachedEcsInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->listDbfsAttachedEcsInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -879,114 +735,6 @@ DBFSClient::ListTagValuesOutcomeCallable DBFSClient::listTagValuesCallable(const
 	return task->get_future();
 }
 
-DBFSClient::ListTaskOutcome DBFSClient::listTask(const ListTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListTaskOutcome(ListTaskResult(outcome.result()));
-	else
-		return ListTaskOutcome(outcome.error());
-}
-
-void DBFSClient::listTaskAsync(const ListTaskRequest& request, const ListTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DBFSClient::ListTaskOutcomeCallable DBFSClient::listTaskCallable(const ListTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->listTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DBFSClient::OpreateConstantsOutcome DBFSClient::opreateConstants(const OpreateConstantsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return OpreateConstantsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return OpreateConstantsOutcome(OpreateConstantsResult(outcome.result()));
-	else
-		return OpreateConstantsOutcome(outcome.error());
-}
-
-void DBFSClient::opreateConstantsAsync(const OpreateConstantsRequest& request, const OpreateConstantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, opreateConstants(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DBFSClient::OpreateConstantsOutcomeCallable DBFSClient::opreateConstantsCallable(const OpreateConstantsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<OpreateConstantsOutcome()>>(
-			[this, request]()
-			{
-			return this->opreateConstants(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DBFSClient::PublishUpgradeTaskOutcome DBFSClient::publishUpgradeTask(const PublishUpgradeTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PublishUpgradeTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PublishUpgradeTaskOutcome(PublishUpgradeTaskResult(outcome.result()));
-	else
-		return PublishUpgradeTaskOutcome(outcome.error());
-}
-
-void DBFSClient::publishUpgradeTaskAsync(const PublishUpgradeTaskRequest& request, const PublishUpgradeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, publishUpgradeTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DBFSClient::PublishUpgradeTaskOutcomeCallable DBFSClient::publishUpgradeTaskCallable(const PublishUpgradeTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PublishUpgradeTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->publishUpgradeTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DBFSClient::RenameDbfsOutcome DBFSClient::renameDbfs(const RenameDbfsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1017,42 +765,6 @@ DBFSClient::RenameDbfsOutcomeCallable DBFSClient::renameDbfsCallable(const Renam
 			[this, request]()
 			{
 			return this->renameDbfs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DBFSClient::ResetDbfsOutcome DBFSClient::resetDbfs(const ResetDbfsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ResetDbfsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ResetDbfsOutcome(ResetDbfsResult(outcome.result()));
-	else
-		return ResetDbfsOutcome(outcome.error());
-}
-
-void DBFSClient::resetDbfsAsync(const ResetDbfsRequest& request, const ResetDbfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, resetDbfs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DBFSClient::ResetDbfsOutcomeCallable DBFSClient::resetDbfsCallable(const ResetDbfsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ResetDbfsOutcome()>>(
-			[this, request]()
-			{
-			return this->resetDbfs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1095,42 +807,6 @@ DBFSClient::ResizeDbfsOutcomeCallable DBFSClient::resizeDbfsCallable(const Resiz
 	return task->get_future();
 }
 
-DBFSClient::StopUpgradeTaskOutcome DBFSClient::stopUpgradeTask(const StopUpgradeTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StopUpgradeTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StopUpgradeTaskOutcome(StopUpgradeTaskResult(outcome.result()));
-	else
-		return StopUpgradeTaskOutcome(outcome.error());
-}
-
-void DBFSClient::stopUpgradeTaskAsync(const StopUpgradeTaskRequest& request, const StopUpgradeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, stopUpgradeTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DBFSClient::StopUpgradeTaskOutcomeCallable DBFSClient::stopUpgradeTaskCallable(const StopUpgradeTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StopUpgradeTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->stopUpgradeTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DBFSClient::TagDbfsOutcome DBFSClient::tagDbfs(const TagDbfsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1167,72 +843,36 @@ DBFSClient::TagDbfsOutcomeCallable DBFSClient::tagDbfsCallable(const TagDbfsRequ
 	return task->get_future();
 }
 
-DBFSClient::UpdateConstantsOutcome DBFSClient::updateConstants(const UpdateConstantsRequest &request) const
+DBFSClient::UpdateDbfsOutcome DBFSClient::updateDbfs(const UpdateDbfsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UpdateConstantsOutcome(endpointOutcome.error());
+		return UpdateDbfsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UpdateConstantsOutcome(UpdateConstantsResult(outcome.result()));
+		return UpdateDbfsOutcome(UpdateDbfsResult(outcome.result()));
 	else
-		return UpdateConstantsOutcome(outcome.error());
+		return UpdateDbfsOutcome(outcome.error());
 }
 
-void DBFSClient::updateConstantsAsync(const UpdateConstantsRequest& request, const UpdateConstantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void DBFSClient::updateDbfsAsync(const UpdateDbfsRequest& request, const UpdateDbfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, updateConstants(request), context);
+		handler(this, request, updateDbfs(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-DBFSClient::UpdateConstantsOutcomeCallable DBFSClient::updateConstantsCallable(const UpdateConstantsRequest &request) const
+DBFSClient::UpdateDbfsOutcomeCallable DBFSClient::updateDbfsCallable(const UpdateDbfsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UpdateConstantsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<UpdateDbfsOutcome()>>(
 			[this, request]()
 			{
-			return this->updateConstants(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DBFSClient::UpdateTaskOutcome DBFSClient::updateTask(const UpdateTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateTaskOutcome(UpdateTaskResult(outcome.result()));
-	else
-		return UpdateTaskOutcome(outcome.error());
-}
-
-void DBFSClient::updateTaskAsync(const UpdateTaskRequest& request, const UpdateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DBFSClient::UpdateTaskOutcomeCallable DBFSClient::updateTaskCallable(const UpdateTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->updateTask(request);
+			return this->updateDbfs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

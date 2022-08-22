@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dbfs/model/GetServiceLinkedRoleRequest.h>
+#include <alibabacloud/dbfs/model/DescribeInstanceTypesRequest.h>
 
-using AlibabaCloud::DBFS::Model::GetServiceLinkedRoleRequest;
+using AlibabaCloud::DBFS::Model::DescribeInstanceTypesRequest;
 
-GetServiceLinkedRoleRequest::GetServiceLinkedRoleRequest()
-    : RpcServiceRequest("dbfs", "2020-04-18", "GetServiceLinkedRole") {
+DescribeInstanceTypesRequest::DescribeInstanceTypesRequest()
+    : RpcServiceRequest("dbfs", "2020-04-18", "DescribeInstanceTypes") {
   setMethod(HttpRequest::Method::Post);
 }
 
-GetServiceLinkedRoleRequest::~GetServiceLinkedRoleRequest() {}
+DescribeInstanceTypesRequest::~DescribeInstanceTypesRequest() {}
 
-std::string GetServiceLinkedRoleRequest::getRegionId() const {
+std::string DescribeInstanceTypesRequest::getRegionId() const {
   return regionId_;
 }
 
-void GetServiceLinkedRoleRequest::setRegionId(const std::string &regionId) {
+void DescribeInstanceTypesRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
 }

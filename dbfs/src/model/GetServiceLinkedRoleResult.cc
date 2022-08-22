@@ -41,10 +41,10 @@ void GetServiceLinkedRoleResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["AccountId"].isNull())
 		accountId_ = value["AccountId"].asString();
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
 	if(!value["DbfsLinkedRole"].isNull())
 		dbfsLinkedRole_ = value["DbfsLinkedRole"].asString() == "true";
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 

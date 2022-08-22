@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBFS_MODEL_STOPUPGRADETASKRESULT_H_
-#define ALIBABACLOUD_DBFS_MODEL_STOPUPGRADETASKRESULT_H_
+#ifndef ALIBABACLOUD_DBFS_MODEL_LISTDBFSATTACHABLEECSINSTANCESRESULT_H_
+#define ALIBABACLOUD_DBFS_MODEL_LISTDBFSATTACHABLEECSINSTANCESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBFS_EXPORT StopUpgradeTaskResult : public ServiceResult
+			class ALIBABACLOUD_DBFS_EXPORT ListDbfsAttachableEcsInstancesResult : public ServiceResult
 			{
 			public:
+				struct LabelInfo
+				{
+					std::string status;
+					std::string zoneId;
+					std::string instanceTypeFamily;
+					std::string value;
+					std::string label;
+					std::string oSName;
+				};
 
 
-				StopUpgradeTaskResult();
-				explicit StopUpgradeTaskResult(const std::string &payload);
-				~StopUpgradeTaskResult();
+				ListDbfsAttachableEcsInstancesResult();
+				explicit ListDbfsAttachableEcsInstancesResult(const std::string &payload);
+				~ListDbfsAttachableEcsInstancesResult();
+				int getTotalCount()const;
+				std::vector<LabelInfo> getEcsLabelInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int totalCount_;
+				std::vector<LabelInfo> ecsLabelInfo_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBFS_MODEL_STOPUPGRADETASKRESULT_H_
+#endif // !ALIBABACLOUD_DBFS_MODEL_LISTDBFSATTACHABLEECSINSTANCESRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBFS_MODEL_DELETECONSTANTSRESULT_H_
-#define ALIBABACLOUD_DBFS_MODEL_DELETECONSTANTSRESULT_H_
+#ifndef ALIBABACLOUD_DBFS_MODEL_DESCRIBEINSTANCETYPESRESULT_H_
+#define ALIBABACLOUD_DBFS_MODEL_DESCRIBEINSTANCETYPESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBFS_EXPORT DeleteConstantsResult : public ServiceResult
+			class ALIBABACLOUD_DBFS_EXPORT DescribeInstanceTypesResult : public ServiceResult
 			{
 			public:
+				struct InstanceTypesItem
+				{
+					std::string instanceTypeDescription;
+					float memorySize;
+					float cpuCoreCount;
+					std::string instanceTypeId;
+				};
 
 
-				DeleteConstantsResult();
-				explicit DeleteConstantsResult(const std::string &payload);
-				~DeleteConstantsResult();
-				long getTotalCount()const;
-				long getPageSize()const;
-				long getPageNumber()const;
-				std::string getData()const;
+				DescribeInstanceTypesResult();
+				explicit DescribeInstanceTypesResult(const std::string &payload);
+				~DescribeInstanceTypesResult();
+				std::vector<InstanceTypesItem> getInstanceTypes()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				long pageSize_;
-				long pageNumber_;
-				std::string data_;
+				std::vector<InstanceTypesItem> instanceTypes_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBFS_MODEL_DELETECONSTANTSRESULT_H_
+#endif // !ALIBABACLOUD_DBFS_MODEL_DESCRIBEINSTANCETYPESRESULT_H_

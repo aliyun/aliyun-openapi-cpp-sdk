@@ -36,13 +36,14 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string progress;
-					std::string category;
 					std::string description;
+					std::string category;
 					int retentionDays;
 					int sourceFsSize;
 					std::string snapshotName;
 					std::string sourceFsId;
 					std::string snapshotId;
+					int sourceFsStripeWidth;
 					std::string creationTime;
 					std::string lastModifiedTime;
 					std::string snapshotType;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBFS_MODEL_RESIZEDBFSREQUEST_H_
-#define ALIBABACLOUD_DBFS_MODEL_RESIZEDBFSREQUEST_H_
+#ifndef ALIBABACLOUD_DBFS_MODEL_UPDATEDBFSREQUEST_H_
+#define ALIBABACLOUD_DBFS_MODEL_UPDATEDBFSREQUEST_H_
 
 #include <alibabacloud/dbfs/DBFSExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,29 @@
 namespace AlibabaCloud {
 namespace DBFS {
 namespace Model {
-class ALIBABACLOUD_DBFS_EXPORT ResizeDbfsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DBFS_EXPORT UpdateDbfsRequest : public RpcServiceRequest {
 public:
-	ResizeDbfsRequest();
-	~ResizeDbfsRequest();
-	int getNewSizeG() const;
-	void setNewSizeG(int newSizeG);
+	UpdateDbfsRequest();
+	~UpdateDbfsRequest();
+	std::string getUsedScene() const;
+	void setUsedScene(const std::string &usedScene);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getFsId() const;
 	void setFsId(const std::string &fsId);
+	std::string getInstanceType() const;
+	void setInstanceType(const std::string &instanceType);
+	std::string getAdvancedFeatures() const;
+	void setAdvancedFeatures(const std::string &advancedFeatures);
 
 private:
-	int newSizeG_;
+	std::string usedScene_;
 	std::string regionId_;
 	std::string fsId_;
+	std::string instanceType_;
+	std::string advancedFeatures_;
 };
 } // namespace Model
 } // namespace DBFS
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DBFS_MODEL_RESIZEDBFSREQUEST_H_
+#endif // !ALIBABACLOUD_DBFS_MODEL_UPDATEDBFSREQUEST_H_
