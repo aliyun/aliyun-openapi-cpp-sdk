@@ -44,9 +44,11 @@ namespace AlibabaCloud
 					Context context;
 					std::string internalUrl;
 					std::string expire;
+					std::string message;
 					std::string publicUrl;
 					std::string hashKey;
 					bool fileExist;
+					std::string code;
 				};
 
 

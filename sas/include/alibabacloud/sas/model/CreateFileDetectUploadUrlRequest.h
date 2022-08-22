@@ -28,16 +28,23 @@ namespace Sas {
 namespace Model {
 class ALIBABACLOUD_SAS_EXPORT CreateFileDetectUploadUrlRequest : public RpcServiceRequest {
 public:
+	struct HashKeyContextList {
+		std::string hashKey;
+		int fileSize;
+	};
 	CreateFileDetectUploadUrlRequest();
 	~CreateFileDetectUploadUrlRequest();
 	std::vector<std::string> getHashKeyList() const;
 	void setHashKeyList(const std::vector<std::string> &hashKeyList);
 	int getType() const;
 	void setType(int type);
+	std::vector<HashKeyContextList> getHashKeyContextList() const;
+	void setHashKeyContextList(const std::vector<HashKeyContextList> &hashKeyContextList);
 
 private:
 	std::vector<std::string> hashKeyList_;
 	int type_;
+	std::vector<HashKeyContextList> hashKeyContextList_;
 };
 } // namespace Model
 } // namespace Sas

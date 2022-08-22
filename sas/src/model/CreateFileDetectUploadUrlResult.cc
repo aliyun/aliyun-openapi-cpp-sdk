@@ -53,6 +53,10 @@ void CreateFileDetectUploadUrlResult::parse(const std::string &payload)
 			uploadUrlListObject.fileExist = valueUploadUrlListUploadUrList["FileExist"].asString() == "true";
 		if(!valueUploadUrlListUploadUrList["HashKey"].isNull())
 			uploadUrlListObject.hashKey = valueUploadUrlListUploadUrList["HashKey"].asString();
+		if(!valueUploadUrlListUploadUrList["Code"].isNull())
+			uploadUrlListObject.code = valueUploadUrlListUploadUrList["Code"].asString();
+		if(!valueUploadUrlListUploadUrList["Message"].isNull())
+			uploadUrlListObject.message = valueUploadUrlListUploadUrList["Message"].asString();
 		auto contextNode = value["Context"];
 		if(!contextNode["AccessId"].isNull())
 			uploadUrlListObject.context.accessId = contextNode["AccessId"].asString();

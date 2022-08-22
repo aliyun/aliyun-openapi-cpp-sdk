@@ -42,3 +42,17 @@ void CreateFileDetectUploadUrlRequest::setType(int type) {
   setParameter(std::string("Type"), std::to_string(type));
 }
 
+std::vector<CreateFileDetectUploadUrlRequest::HashKeyContextList> CreateFileDetectUploadUrlRequest::getHashKeyContextList() const {
+  return hashKeyContextList_;
+}
+
+void CreateFileDetectUploadUrlRequest::setHashKeyContextList(const std::vector<CreateFileDetectUploadUrlRequest::HashKeyContextList> &hashKeyContextList) {
+  hashKeyContextList_ = hashKeyContextList;
+  for(int dep1 = 0; dep1 != hashKeyContextList.size(); dep1++) {
+  auto hashKeyContextListObj = hashKeyContextList.at(dep1);
+  std::string hashKeyContextListObjStr = std::string("HashKeyContextList") + "." + std::to_string(dep1 + 1);
+    setParameter(hashKeyContextListObjStr + ".HashKey", hashKeyContextListObj.hashKey);
+    setParameter(hashKeyContextListObjStr + ".FileSize", std::to_string(hashKeyContextListObj.fileSize));
+  }
+}
+

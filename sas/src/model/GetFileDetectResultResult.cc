@@ -51,10 +51,10 @@ void GetFileDetectResultResult::parse(const std::string &payload)
 			resultListObject.score = std::stoi(valueResultListResult["Score"].asString());
 		if(!valueResultListResult["VirusType"].isNull())
 			resultListObject.virusType = valueResultListResult["VirusType"].asString();
-		if(!valueResultListResult["ErrorCode"].isNull())
-			resultListObject.errorCode = valueResultListResult["ErrorCode"].asString();
-		if(!valueResultListResult["ErrorMessage"].isNull())
-			resultListObject.errorMessage = valueResultListResult["ErrorMessage"].asString();
+		if(!valueResultListResult["Code"].isNull())
+			resultListObject.code = valueResultListResult["Code"].asString();
+		if(!valueResultListResult["Message"].isNull())
+			resultListObject.message = valueResultListResult["Message"].asString();
 		if(!valueResultListResult["Ext"].isNull())
 			resultListObject.ext = valueResultListResult["Ext"].asString();
 		resultList_.push_back(resultListObject);

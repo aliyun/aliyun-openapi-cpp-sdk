@@ -36,10 +36,10 @@ namespace AlibabaCloud
 				{
 					std::string ext;
 					int score;
+					std::string message;
 					std::string virusType;
 					std::string hashKey;
-					std::string errorCode;
-					std::string errorMessage;
+					std::string code;
 					int result;
 				};
 
