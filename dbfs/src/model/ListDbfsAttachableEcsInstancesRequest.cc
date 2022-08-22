@@ -25,6 +25,15 @@ ListDbfsAttachableEcsInstancesRequest::ListDbfsAttachableEcsInstancesRequest()
 
 ListDbfsAttachableEcsInstancesRequest::~ListDbfsAttachableEcsInstancesRequest() {}
 
+std::string ListDbfsAttachableEcsInstancesRequest::getFilterKey() const {
+  return filterKey_;
+}
+
+void ListDbfsAttachableEcsInstancesRequest::setFilterKey(const std::string &filterKey) {
+  filterKey_ = filterKey;
+  setParameter(std::string("FilterKey"), filterKey);
+}
+
 std::string ListDbfsAttachableEcsInstancesRequest::getRegionId() const {
   return regionId_;
 }
@@ -41,6 +50,15 @@ int ListDbfsAttachableEcsInstancesRequest::getPageSize() const {
 void ListDbfsAttachableEcsInstancesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListDbfsAttachableEcsInstancesRequest::getFilterValue() const {
+  return filterValue_;
+}
+
+void ListDbfsAttachableEcsInstancesRequest::setFilterValue(const std::string &filterValue) {
+  filterValue_ = filterValue;
+  setParameter(std::string("FilterValue"), filterValue);
 }
 
 int ListDbfsAttachableEcsInstancesRequest::getPageNumber() const {

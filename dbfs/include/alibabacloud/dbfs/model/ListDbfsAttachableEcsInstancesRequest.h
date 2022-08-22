@@ -30,16 +30,22 @@ class ALIBABACLOUD_DBFS_EXPORT ListDbfsAttachableEcsInstancesRequest : public Rp
 public:
 	ListDbfsAttachableEcsInstancesRequest();
 	~ListDbfsAttachableEcsInstancesRequest();
+	std::string getFilterKey() const;
+	void setFilterKey(const std::string &filterKey);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getFilterValue() const;
+	void setFilterValue(const std::string &filterValue);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 
 private:
+	std::string filterKey_;
 	std::string regionId_;
 	int pageSize_;
+	std::string filterValue_;
 	int pageNumber_;
 };
 } // namespace Model
