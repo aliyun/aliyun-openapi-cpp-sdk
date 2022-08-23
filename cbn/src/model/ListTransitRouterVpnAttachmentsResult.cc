@@ -65,12 +65,12 @@ void ListTransitRouterVpnAttachmentsResult::parse(const std::string &payload)
 			transitRouterAttachmentsObject.autoPublishRouteEnabled = valueTransitRouterAttachmentsTransitRouterAttachment["AutoPublishRouteEnabled"].asString() == "true";
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].isNull())
 			transitRouterAttachmentsObject.transitRouterAttachmentName = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].asString();
-		auto allZonesNode = valueTransitRouterAttachmentsTransitRouterAttachment["Zones"]["Zone"];
-		for (auto valueTransitRouterAttachmentsTransitRouterAttachmentZonesZone : allZonesNode)
+		auto allZonesNode = valueTransitRouterAttachmentsTransitRouterAttachment["Zones"]["ZoneMapping"];
+		for (auto valueTransitRouterAttachmentsTransitRouterAttachmentZonesZoneMapping : allZonesNode)
 		{
-			TransitRouterAttachment::Zone zonesObject;
-			if(!valueTransitRouterAttachmentsTransitRouterAttachmentZonesZone["ZoneId"].isNull())
-				zonesObject.zoneId = valueTransitRouterAttachmentsTransitRouterAttachmentZonesZone["ZoneId"].asString();
+			TransitRouterAttachment::ZoneMapping zonesObject;
+			if(!valueTransitRouterAttachmentsTransitRouterAttachmentZonesZoneMapping["ZoneId"].isNull())
+				zonesObject.zoneId = valueTransitRouterAttachmentsTransitRouterAttachmentZonesZoneMapping["ZoneId"].asString();
 			transitRouterAttachmentsObject.zones.push_back(zonesObject);
 		}
 		transitRouterAttachments_.push_back(transitRouterAttachmentsObject);

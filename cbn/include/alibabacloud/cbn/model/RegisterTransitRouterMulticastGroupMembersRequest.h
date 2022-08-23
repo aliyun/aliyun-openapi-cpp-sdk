@@ -50,6 +50,8 @@ public:
 	void setPeerTransitRouterMulticastDomains(const std::vector<std::string> &peerTransitRouterMulticastDomains);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVpcId() const;
+	void setVpcId(const std::string &vpcId);
 
 private:
 	long resourceOwnerId_;
@@ -62,6 +64,7 @@ private:
 	std::string ownerAccount_;
 	std::vector<std::string> peerTransitRouterMulticastDomains_;
 	long ownerId_;
+	std::string vpcId_;
 };
 } // namespace Model
 } // namespace Cbn

@@ -105,3 +105,12 @@ void RegisterTransitRouterMulticastGroupSourcesRequest::setOwnerId(long ownerId)
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string RegisterTransitRouterMulticastGroupSourcesRequest::getVpcId() const {
+  return vpcId_;
+}
+
+void RegisterTransitRouterMulticastGroupSourcesRequest::setVpcId(const std::string &vpcId) {
+  vpcId_ = vpcId;
+  setParameter(std::string("VpcId"), vpcId);
+}
+

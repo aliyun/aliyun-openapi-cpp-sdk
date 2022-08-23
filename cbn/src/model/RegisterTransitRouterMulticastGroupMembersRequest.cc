@@ -113,3 +113,12 @@ void RegisterTransitRouterMulticastGroupMembersRequest::setOwnerId(long ownerId)
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string RegisterTransitRouterMulticastGroupMembersRequest::getVpcId() const {
+  return vpcId_;
+}
+
+void RegisterTransitRouterMulticastGroupMembersRequest::setVpcId(const std::string &vpcId) {
+  vpcId_ = vpcId;
+  setParameter(std::string("VpcId"), vpcId);
+}
+

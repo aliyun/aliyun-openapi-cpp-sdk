@@ -34,7 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct TransitRouterAttachment
 				{
-					struct Zone
+					struct ZoneMapping
 					{
 						std::string zoneId;
 					};
@@ -47,7 +47,7 @@ namespace AlibabaCloud
 					std::string transitRouterAttachmentName;
 					int resourceType;
 					std::string transitRouterAttachmentDescription;
-					std::vector<TransitRouterAttachment::Zone> zones;
+					std::vector<TransitRouterAttachment::ZoneMapping> zones;
 					std::string transitRouterId;
 					std::string vpnId;
 				};

@@ -48,6 +48,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVpcId() const;
+	void setVpcId(const std::string &vpcId);
 
 private:
 	long resourceOwnerId_;
@@ -59,6 +61,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string vpcId_;
 };
 } // namespace Model
 } // namespace Cbn
