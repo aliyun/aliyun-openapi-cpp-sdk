@@ -4659,6 +4659,42 @@ CbnClient::UpdateTransitRouterVpcAttachmentAttributeOutcomeCallable CbnClient::u
 	return task->get_future();
 }
 
+CbnClient::UpdateTransitRouterVpcAttachmentZonesOutcome CbnClient::updateTransitRouterVpcAttachmentZones(const UpdateTransitRouterVpcAttachmentZonesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTransitRouterVpcAttachmentZonesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTransitRouterVpcAttachmentZonesOutcome(UpdateTransitRouterVpcAttachmentZonesResult(outcome.result()));
+	else
+		return UpdateTransitRouterVpcAttachmentZonesOutcome(outcome.error());
+}
+
+void CbnClient::updateTransitRouterVpcAttachmentZonesAsync(const UpdateTransitRouterVpcAttachmentZonesRequest& request, const UpdateTransitRouterVpcAttachmentZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTransitRouterVpcAttachmentZones(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::UpdateTransitRouterVpcAttachmentZonesOutcomeCallable CbnClient::updateTransitRouterVpcAttachmentZonesCallable(const UpdateTransitRouterVpcAttachmentZonesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTransitRouterVpcAttachmentZonesOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTransitRouterVpcAttachmentZones(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::UpdateTransitRouterVpnAttachmentAttributeOutcome CbnClient::updateTransitRouterVpnAttachmentAttribute(const UpdateTransitRouterVpnAttachmentAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

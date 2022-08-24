@@ -277,6 +277,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/UpdateTransitRouterVbrAttachmentAttributeResult.h
 	include/alibabacloud/cbn/model/UpdateTransitRouterVpcAttachmentAttributeRequest.h
 	include/alibabacloud/cbn/model/UpdateTransitRouterVpcAttachmentAttributeResult.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterVpcAttachmentZonesRequest.h
+	include/alibabacloud/cbn/model/UpdateTransitRouterVpcAttachmentZonesResult.h
 	include/alibabacloud/cbn/model/UpdateTransitRouterVpnAttachmentAttributeRequest.h
 	include/alibabacloud/cbn/model/UpdateTransitRouterVpnAttachmentAttributeResult.h
 	include/alibabacloud/cbn/model/WithdrawPublishedRouteEntriesRequest.h
@@ -540,6 +542,8 @@ set(cbn_src
 	src/model/UpdateTransitRouterVbrAttachmentAttributeResult.cc
 	src/model/UpdateTransitRouterVpcAttachmentAttributeRequest.cc
 	src/model/UpdateTransitRouterVpcAttachmentAttributeResult.cc
+	src/model/UpdateTransitRouterVpcAttachmentZonesRequest.cc
+	src/model/UpdateTransitRouterVpcAttachmentZonesResult.cc
 	src/model/UpdateTransitRouterVpnAttachmentAttributeRequest.cc
 	src/model/UpdateTransitRouterVpnAttachmentAttributeResult.cc
 	src/model/WithdrawPublishedRouteEntriesRequest.cc

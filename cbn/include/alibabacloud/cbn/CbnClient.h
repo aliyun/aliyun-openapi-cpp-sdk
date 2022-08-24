@@ -278,6 +278,8 @@
 #include "model/UpdateTransitRouterVbrAttachmentAttributeResult.h"
 #include "model/UpdateTransitRouterVpcAttachmentAttributeRequest.h"
 #include "model/UpdateTransitRouterVpcAttachmentAttributeResult.h"
+#include "model/UpdateTransitRouterVpcAttachmentZonesRequest.h"
+#include "model/UpdateTransitRouterVpcAttachmentZonesResult.h"
 #include "model/UpdateTransitRouterVpnAttachmentAttributeRequest.h"
 #include "model/UpdateTransitRouterVpnAttachmentAttributeResult.h"
 #include "model/WithdrawPublishedRouteEntriesRequest.h"
@@ -675,6 +677,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateTransitRouterVpcAttachmentAttributeResult> UpdateTransitRouterVpcAttachmentAttributeOutcome;
 			typedef std::future<UpdateTransitRouterVpcAttachmentAttributeOutcome> UpdateTransitRouterVpcAttachmentAttributeOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::UpdateTransitRouterVpcAttachmentAttributeRequest&, const UpdateTransitRouterVpcAttachmentAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTransitRouterVpcAttachmentAttributeAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTransitRouterVpcAttachmentZonesResult> UpdateTransitRouterVpcAttachmentZonesOutcome;
+			typedef std::future<UpdateTransitRouterVpcAttachmentZonesOutcome> UpdateTransitRouterVpcAttachmentZonesOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::UpdateTransitRouterVpcAttachmentZonesRequest&, const UpdateTransitRouterVpcAttachmentZonesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTransitRouterVpcAttachmentZonesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateTransitRouterVpnAttachmentAttributeResult> UpdateTransitRouterVpnAttachmentAttributeOutcome;
 			typedef std::future<UpdateTransitRouterVpnAttachmentAttributeOutcome> UpdateTransitRouterVpnAttachmentAttributeOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::UpdateTransitRouterVpnAttachmentAttributeRequest&, const UpdateTransitRouterVpnAttachmentAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTransitRouterVpnAttachmentAttributeAsyncHandler;
@@ -1070,6 +1075,9 @@ namespace AlibabaCloud
 			UpdateTransitRouterVpcAttachmentAttributeOutcome updateTransitRouterVpcAttachmentAttribute(const Model::UpdateTransitRouterVpcAttachmentAttributeRequest &request)const;
 			void updateTransitRouterVpcAttachmentAttributeAsync(const Model::UpdateTransitRouterVpcAttachmentAttributeRequest& request, const UpdateTransitRouterVpcAttachmentAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateTransitRouterVpcAttachmentAttributeOutcomeCallable updateTransitRouterVpcAttachmentAttributeCallable(const Model::UpdateTransitRouterVpcAttachmentAttributeRequest& request) const;
+			UpdateTransitRouterVpcAttachmentZonesOutcome updateTransitRouterVpcAttachmentZones(const Model::UpdateTransitRouterVpcAttachmentZonesRequest &request)const;
+			void updateTransitRouterVpcAttachmentZonesAsync(const Model::UpdateTransitRouterVpcAttachmentZonesRequest& request, const UpdateTransitRouterVpcAttachmentZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTransitRouterVpcAttachmentZonesOutcomeCallable updateTransitRouterVpcAttachmentZonesCallable(const Model::UpdateTransitRouterVpcAttachmentZonesRequest& request) const;
 			UpdateTransitRouterVpnAttachmentAttributeOutcome updateTransitRouterVpnAttachmentAttribute(const Model::UpdateTransitRouterVpnAttachmentAttributeRequest &request)const;
 			void updateTransitRouterVpnAttachmentAttributeAsync(const Model::UpdateTransitRouterVpnAttachmentAttributeRequest& request, const UpdateTransitRouterVpnAttachmentAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateTransitRouterVpnAttachmentAttributeOutcomeCallable updateTransitRouterVpnAttachmentAttributeCallable(const Model::UpdateTransitRouterVpnAttachmentAttributeRequest& request) const;
