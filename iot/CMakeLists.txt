@@ -145,6 +145,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CreateDeviceGroupResult.h
 	include/alibabacloud/iot/model/CreateDeviceTunnelRequest.h
 	include/alibabacloud/iot/model/CreateDeviceTunnelResult.h
+	include/alibabacloud/iot/model/CreateDownloadDataJobRequest.h
+	include/alibabacloud/iot/model/CreateDownloadDataJobResult.h
 	include/alibabacloud/iot/model/CreateEdgeDriverRequest.h
 	include/alibabacloud/iot/model/CreateEdgeDriverResult.h
 	include/alibabacloud/iot/model/CreateEdgeDriverVersionRequest.h
@@ -323,6 +325,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/GetDeviceTunnelShareStatusResult.h
 	include/alibabacloud/iot/model/GetDeviceTunnelStatusRequest.h
 	include/alibabacloud/iot/model/GetDeviceTunnelStatusResult.h
+	include/alibabacloud/iot/model/GetDownloadFileRequest.h
+	include/alibabacloud/iot/model/GetDownloadFileResult.h
 	include/alibabacloud/iot/model/GetEdgeDriverVersionRequest.h
 	include/alibabacloud/iot/model/GetEdgeDriverVersionResult.h
 	include/alibabacloud/iot/model/GetEdgeInstanceRequest.h
@@ -521,6 +525,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryDeviceSpeechResult.h
 	include/alibabacloud/iot/model/QueryDeviceStatisticsRequest.h
 	include/alibabacloud/iot/model/QueryDeviceStatisticsResult.h
+	include/alibabacloud/iot/model/QueryDeviceSubTopicRequest.h
+	include/alibabacloud/iot/model/QueryDeviceSubTopicResult.h
 	include/alibabacloud/iot/model/QueryDeviceTunnelRequest.h
 	include/alibabacloud/iot/model/QueryDeviceTunnelResult.h
 	include/alibabacloud/iot/model/QueryDynamicGroupDevicesRequest.h
@@ -892,6 +898,8 @@ set(iot_src
 	src/model/CreateDeviceGroupResult.cc
 	src/model/CreateDeviceTunnelRequest.cc
 	src/model/CreateDeviceTunnelResult.cc
+	src/model/CreateDownloadDataJobRequest.cc
+	src/model/CreateDownloadDataJobResult.cc
 	src/model/CreateEdgeDriverRequest.cc
 	src/model/CreateEdgeDriverResult.cc
 	src/model/CreateEdgeDriverVersionRequest.cc
@@ -1070,6 +1078,8 @@ set(iot_src
 	src/model/GetDeviceTunnelShareStatusResult.cc
 	src/model/GetDeviceTunnelStatusRequest.cc
 	src/model/GetDeviceTunnelStatusResult.cc
+	src/model/GetDownloadFileRequest.cc
+	src/model/GetDownloadFileResult.cc
 	src/model/GetEdgeDriverVersionRequest.cc
 	src/model/GetEdgeDriverVersionResult.cc
 	src/model/GetEdgeInstanceRequest.cc
@@ -1268,6 +1278,8 @@ set(iot_src
 	src/model/QueryDeviceSpeechResult.cc
 	src/model/QueryDeviceStatisticsRequest.cc
 	src/model/QueryDeviceStatisticsResult.cc
+	src/model/QueryDeviceSubTopicRequest.cc
+	src/model/QueryDeviceSubTopicResult.cc
 	src/model/QueryDeviceTunnelRequest.cc
 	src/model/QueryDeviceTunnelResult.cc
 	src/model/QueryDynamicGroupDevicesRequest.cc

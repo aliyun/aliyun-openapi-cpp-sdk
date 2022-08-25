@@ -146,6 +146,8 @@
 #include "model/CreateDeviceGroupResult.h"
 #include "model/CreateDeviceTunnelRequest.h"
 #include "model/CreateDeviceTunnelResult.h"
+#include "model/CreateDownloadDataJobRequest.h"
+#include "model/CreateDownloadDataJobResult.h"
 #include "model/CreateEdgeDriverRequest.h"
 #include "model/CreateEdgeDriverResult.h"
 #include "model/CreateEdgeDriverVersionRequest.h"
@@ -324,6 +326,8 @@
 #include "model/GetDeviceTunnelShareStatusResult.h"
 #include "model/GetDeviceTunnelStatusRequest.h"
 #include "model/GetDeviceTunnelStatusResult.h"
+#include "model/GetDownloadFileRequest.h"
+#include "model/GetDownloadFileResult.h"
 #include "model/GetEdgeDriverVersionRequest.h"
 #include "model/GetEdgeDriverVersionResult.h"
 #include "model/GetEdgeInstanceRequest.h"
@@ -522,6 +526,8 @@
 #include "model/QueryDeviceSpeechResult.h"
 #include "model/QueryDeviceStatisticsRequest.h"
 #include "model/QueryDeviceStatisticsResult.h"
+#include "model/QueryDeviceSubTopicRequest.h"
+#include "model/QueryDeviceSubTopicResult.h"
 #include "model/QueryDeviceTunnelRequest.h"
 #include "model/QueryDeviceTunnelResult.h"
 #include "model/QueryDynamicGroupDevicesRequest.h"
@@ -961,6 +967,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDeviceTunnelResult> CreateDeviceTunnelOutcome;
 			typedef std::future<CreateDeviceTunnelOutcome> CreateDeviceTunnelOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateDeviceTunnelRequest&, const CreateDeviceTunnelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceTunnelAsyncHandler;
+			typedef Outcome<Error, Model::CreateDownloadDataJobResult> CreateDownloadDataJobOutcome;
+			typedef std::future<CreateDownloadDataJobOutcome> CreateDownloadDataJobOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CreateDownloadDataJobRequest&, const CreateDownloadDataJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDownloadDataJobAsyncHandler;
 			typedef Outcome<Error, Model::CreateEdgeDriverResult> CreateEdgeDriverOutcome;
 			typedef std::future<CreateEdgeDriverOutcome> CreateEdgeDriverOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateEdgeDriverRequest&, const CreateEdgeDriverOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateEdgeDriverAsyncHandler;
@@ -1228,6 +1237,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDeviceTunnelStatusResult> GetDeviceTunnelStatusOutcome;
 			typedef std::future<GetDeviceTunnelStatusOutcome> GetDeviceTunnelStatusOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetDeviceTunnelStatusRequest&, const GetDeviceTunnelStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceTunnelStatusAsyncHandler;
+			typedef Outcome<Error, Model::GetDownloadFileResult> GetDownloadFileOutcome;
+			typedef std::future<GetDownloadFileOutcome> GetDownloadFileOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::GetDownloadFileRequest&, const GetDownloadFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDownloadFileAsyncHandler;
 			typedef Outcome<Error, Model::GetEdgeDriverVersionResult> GetEdgeDriverVersionOutcome;
 			typedef std::future<GetEdgeDriverVersionOutcome> GetEdgeDriverVersionOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetEdgeDriverVersionRequest&, const GetEdgeDriverVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEdgeDriverVersionAsyncHandler;
@@ -1525,6 +1537,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryDeviceStatisticsResult> QueryDeviceStatisticsOutcome;
 			typedef std::future<QueryDeviceStatisticsOutcome> QueryDeviceStatisticsOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceStatisticsRequest&, const QueryDeviceStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceStatisticsAsyncHandler;
+			typedef Outcome<Error, Model::QueryDeviceSubTopicResult> QueryDeviceSubTopicOutcome;
+			typedef std::future<QueryDeviceSubTopicOutcome> QueryDeviceSubTopicOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryDeviceSubTopicRequest&, const QueryDeviceSubTopicOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceSubTopicAsyncHandler;
 			typedef Outcome<Error, Model::QueryDeviceTunnelResult> QueryDeviceTunnelOutcome;
 			typedef std::future<QueryDeviceTunnelOutcome> QueryDeviceTunnelOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceTunnelRequest&, const QueryDeviceTunnelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceTunnelAsyncHandler;
@@ -2082,6 +2097,9 @@ namespace AlibabaCloud
 			CreateDeviceTunnelOutcome createDeviceTunnel(const Model::CreateDeviceTunnelRequest &request)const;
 			void createDeviceTunnelAsync(const Model::CreateDeviceTunnelRequest& request, const CreateDeviceTunnelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDeviceTunnelOutcomeCallable createDeviceTunnelCallable(const Model::CreateDeviceTunnelRequest& request) const;
+			CreateDownloadDataJobOutcome createDownloadDataJob(const Model::CreateDownloadDataJobRequest &request)const;
+			void createDownloadDataJobAsync(const Model::CreateDownloadDataJobRequest& request, const CreateDownloadDataJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDownloadDataJobOutcomeCallable createDownloadDataJobCallable(const Model::CreateDownloadDataJobRequest& request) const;
 			CreateEdgeDriverOutcome createEdgeDriver(const Model::CreateEdgeDriverRequest &request)const;
 			void createEdgeDriverAsync(const Model::CreateEdgeDriverRequest& request, const CreateEdgeDriverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateEdgeDriverOutcomeCallable createEdgeDriverCallable(const Model::CreateEdgeDriverRequest& request) const;
@@ -2349,6 +2367,9 @@ namespace AlibabaCloud
 			GetDeviceTunnelStatusOutcome getDeviceTunnelStatus(const Model::GetDeviceTunnelStatusRequest &request)const;
 			void getDeviceTunnelStatusAsync(const Model::GetDeviceTunnelStatusRequest& request, const GetDeviceTunnelStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDeviceTunnelStatusOutcomeCallable getDeviceTunnelStatusCallable(const Model::GetDeviceTunnelStatusRequest& request) const;
+			GetDownloadFileOutcome getDownloadFile(const Model::GetDownloadFileRequest &request)const;
+			void getDownloadFileAsync(const Model::GetDownloadFileRequest& request, const GetDownloadFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDownloadFileOutcomeCallable getDownloadFileCallable(const Model::GetDownloadFileRequest& request) const;
 			GetEdgeDriverVersionOutcome getEdgeDriverVersion(const Model::GetEdgeDriverVersionRequest &request)const;
 			void getEdgeDriverVersionAsync(const Model::GetEdgeDriverVersionRequest& request, const GetEdgeDriverVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetEdgeDriverVersionOutcomeCallable getEdgeDriverVersionCallable(const Model::GetEdgeDriverVersionRequest& request) const;
@@ -2646,6 +2667,9 @@ namespace AlibabaCloud
 			QueryDeviceStatisticsOutcome queryDeviceStatistics(const Model::QueryDeviceStatisticsRequest &request)const;
 			void queryDeviceStatisticsAsync(const Model::QueryDeviceStatisticsRequest& request, const QueryDeviceStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceStatisticsOutcomeCallable queryDeviceStatisticsCallable(const Model::QueryDeviceStatisticsRequest& request) const;
+			QueryDeviceSubTopicOutcome queryDeviceSubTopic(const Model::QueryDeviceSubTopicRequest &request)const;
+			void queryDeviceSubTopicAsync(const Model::QueryDeviceSubTopicRequest& request, const QueryDeviceSubTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDeviceSubTopicOutcomeCallable queryDeviceSubTopicCallable(const Model::QueryDeviceSubTopicRequest& request) const;
 			QueryDeviceTunnelOutcome queryDeviceTunnel(const Model::QueryDeviceTunnelRequest &request)const;
 			void queryDeviceTunnelAsync(const Model::QueryDeviceTunnelRequest& request, const QueryDeviceTunnelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceTunnelOutcomeCallable queryDeviceTunnelCallable(const Model::QueryDeviceTunnelRequest& request) const;

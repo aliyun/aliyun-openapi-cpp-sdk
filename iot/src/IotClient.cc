@@ -2283,6 +2283,42 @@ IotClient::CreateDeviceTunnelOutcomeCallable IotClient::createDeviceTunnelCallab
 	return task->get_future();
 }
 
+IotClient::CreateDownloadDataJobOutcome IotClient::createDownloadDataJob(const CreateDownloadDataJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDownloadDataJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDownloadDataJobOutcome(CreateDownloadDataJobResult(outcome.result()));
+	else
+		return CreateDownloadDataJobOutcome(outcome.error());
+}
+
+void IotClient::createDownloadDataJobAsync(const CreateDownloadDataJobRequest& request, const CreateDownloadDataJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDownloadDataJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateDownloadDataJobOutcomeCallable IotClient::createDownloadDataJobCallable(const CreateDownloadDataJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDownloadDataJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createDownloadDataJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::CreateEdgeDriverOutcome IotClient::createEdgeDriver(const CreateEdgeDriverRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5481,6 +5517,42 @@ IotClient::GetDeviceTunnelStatusOutcomeCallable IotClient::getDeviceTunnelStatus
 			[this, request]()
 			{
 			return this->getDeviceTunnelStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::GetDownloadFileOutcome IotClient::getDownloadFile(const GetDownloadFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDownloadFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDownloadFileOutcome(GetDownloadFileResult(outcome.result()));
+	else
+		return GetDownloadFileOutcome(outcome.error());
+}
+
+void IotClient::getDownloadFileAsync(const GetDownloadFileRequest& request, const GetDownloadFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDownloadFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GetDownloadFileOutcomeCallable IotClient::getDownloadFileCallable(const GetDownloadFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDownloadFileOutcome()>>(
+			[this, request]()
+			{
+			return this->getDownloadFile(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9045,6 +9117,42 @@ IotClient::QueryDeviceStatisticsOutcomeCallable IotClient::queryDeviceStatistics
 			[this, request]()
 			{
 			return this->queryDeviceStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryDeviceSubTopicOutcome IotClient::queryDeviceSubTopic(const QueryDeviceSubTopicRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDeviceSubTopicOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDeviceSubTopicOutcome(QueryDeviceSubTopicResult(outcome.result()));
+	else
+		return QueryDeviceSubTopicOutcome(outcome.error());
+}
+
+void IotClient::queryDeviceSubTopicAsync(const QueryDeviceSubTopicRequest& request, const QueryDeviceSubTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDeviceSubTopic(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryDeviceSubTopicOutcomeCallable IotClient::queryDeviceSubTopicCallable(const QueryDeviceSubTopicRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDeviceSubTopicOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDeviceSubTopic(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
