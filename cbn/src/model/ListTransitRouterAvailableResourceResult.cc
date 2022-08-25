@@ -45,6 +45,9 @@ void ListTransitRouterAvailableResourceResult::parse(const std::string &payload)
 	auto allMasterZones = value["MasterZones"]["MasterZone"];
 	for (const auto &item : allMasterZones)
 		masterZones_.push_back(item.asString());
+	auto allAvailableZones = value["AvailableZones"]["AvailableZone"];
+	for (const auto &item : allAvailableZones)
+		availableZones_.push_back(item.asString());
 
 }
 
@@ -56,5 +59,10 @@ std::vector<std::string> ListTransitRouterAvailableResourceResult::getSlaveZones
 std::vector<std::string> ListTransitRouterAvailableResourceResult::getMasterZones()const
 {
 	return masterZones_;
+}
+
+std::vector<std::string> ListTransitRouterAvailableResourceResult::getAvailableZones()const
+{
+	return availableZones_;
 }
 

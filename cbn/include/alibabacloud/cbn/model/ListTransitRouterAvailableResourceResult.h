@@ -39,12 +39,14 @@ namespace AlibabaCloud
 				~ListTransitRouterAvailableResourceResult();
 				std::vector<std::string> getSlaveZones()const;
 				std::vector<std::string> getMasterZones()const;
+				std::vector<std::string> getAvailableZones()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<std::string> slaveZones_;
 				std::vector<std::string> masterZones_;
+				std::vector<std::string> availableZones_;
 
 			};
 		}
