@@ -56,6 +56,8 @@ public:
 	void setNodeId(long nodeId);
 	long getProjectId() const;
 	void setProjectId(long projectId);
+	std::string getStatus() const;
+	void setStatus(const std::string &status);
 
 private:
 	std::string projectEnv_;
@@ -71,6 +73,7 @@ private:
 	int pageSize_;
 	long nodeId_;
 	long projectId_;
+	std::string status_;
 };
 } // namespace Model
 } // namespace Dataworks_public

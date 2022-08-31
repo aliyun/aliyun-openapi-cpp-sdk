@@ -40,6 +40,8 @@ public:
 	void setAlertMethods(const std::string &alertMethods);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	long getBaselineId() const;
+	void setBaselineId(long baselineId);
 	long getRemindId() const;
 	void setRemindId(long remindId);
 	int getPageSize() const;
@@ -53,6 +55,7 @@ private:
 	std::string beginTime_;
 	std::string alertMethods_;
 	int pageNumber_;
+	long baselineId_;
 	long remindId_;
 	int pageSize_;
 	std::string alertRuleTypes_;

@@ -142,3 +142,12 @@ void ListInstancesRequest::setProjectId(long projectId) {
   setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
+std::string ListInstancesRequest::getStatus() const {
+  return status_;
+}
+
+void ListInstancesRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setBodyParameter(std::string("Status"), status);
+}
+

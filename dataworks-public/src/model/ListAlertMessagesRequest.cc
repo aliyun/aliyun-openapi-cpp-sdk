@@ -70,6 +70,15 @@ void ListAlertMessagesRequest::setPageNumber(int pageNumber) {
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+long ListAlertMessagesRequest::getBaselineId() const {
+  return baselineId_;
+}
+
+void ListAlertMessagesRequest::setBaselineId(long baselineId) {
+  baselineId_ = baselineId;
+  setBodyParameter(std::string("BaselineId"), std::to_string(baselineId));
+}
+
 long ListAlertMessagesRequest::getRemindId() const {
   return remindId_;
 }
