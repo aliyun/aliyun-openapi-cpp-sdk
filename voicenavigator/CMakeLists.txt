@@ -73,6 +73,8 @@ set(voicenavigator_public_header_model
 	include/alibabacloud/voicenavigator/model/GenerateUploadUrlResult.h
 	include/alibabacloud/voicenavigator/model/GetAsrConfigRequest.h
 	include/alibabacloud/voicenavigator/model/GetAsrConfigResult.h
+	include/alibabacloud/voicenavigator/model/GetRealTimeConcurrencyRequest.h
+	include/alibabacloud/voicenavigator/model/GetRealTimeConcurrencyResult.h
 	include/alibabacloud/voicenavigator/model/ListChatbotInstancesRequest.h
 	include/alibabacloud/voicenavigator/model/ListChatbotInstancesResult.h
 	include/alibabacloud/voicenavigator/model/ListConversationDetailsRequest.h
@@ -156,6 +158,8 @@ set(voicenavigator_src
 	src/model/GenerateUploadUrlResult.cc
 	src/model/GetAsrConfigRequest.cc
 	src/model/GetAsrConfigResult.cc
+	src/model/GetRealTimeConcurrencyRequest.cc
+	src/model/GetRealTimeConcurrencyResult.cc
 	src/model/ListChatbotInstancesRequest.cc
 	src/model/ListChatbotInstancesResult.cc
 	src/model/ListConversationDetailsRequest.cc

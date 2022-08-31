@@ -74,6 +74,8 @@
 #include "model/GenerateUploadUrlResult.h"
 #include "model/GetAsrConfigRequest.h"
 #include "model/GetAsrConfigResult.h"
+#include "model/GetRealTimeConcurrencyRequest.h"
+#include "model/GetRealTimeConcurrencyResult.h"
 #include "model/ListChatbotInstancesRequest.h"
 #include "model/ListChatbotInstancesResult.h"
 #include "model/ListConversationDetailsRequest.h"
@@ -189,6 +191,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAsrConfigResult> GetAsrConfigOutcome;
 			typedef std::future<GetAsrConfigOutcome> GetAsrConfigOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::GetAsrConfigRequest&, const GetAsrConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsrConfigAsyncHandler;
+			typedef Outcome<Error, Model::GetRealTimeConcurrencyResult> GetRealTimeConcurrencyOutcome;
+			typedef std::future<GetRealTimeConcurrencyOutcome> GetRealTimeConcurrencyOutcomeCallable;
+			typedef std::function<void(const VoiceNavigatorClient*, const Model::GetRealTimeConcurrencyRequest&, const GetRealTimeConcurrencyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRealTimeConcurrencyAsyncHandler;
 			typedef Outcome<Error, Model::ListChatbotInstancesResult> ListChatbotInstancesOutcome;
 			typedef std::future<ListChatbotInstancesOutcome> ListChatbotInstancesOutcomeCallable;
 			typedef std::function<void(const VoiceNavigatorClient*, const Model::ListChatbotInstancesRequest&, const ListChatbotInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListChatbotInstancesAsyncHandler;
@@ -314,6 +319,9 @@ namespace AlibabaCloud
 			GetAsrConfigOutcome getAsrConfig(const Model::GetAsrConfigRequest &request)const;
 			void getAsrConfigAsync(const Model::GetAsrConfigRequest& request, const GetAsrConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAsrConfigOutcomeCallable getAsrConfigCallable(const Model::GetAsrConfigRequest& request) const;
+			GetRealTimeConcurrencyOutcome getRealTimeConcurrency(const Model::GetRealTimeConcurrencyRequest &request)const;
+			void getRealTimeConcurrencyAsync(const Model::GetRealTimeConcurrencyRequest& request, const GetRealTimeConcurrencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetRealTimeConcurrencyOutcomeCallable getRealTimeConcurrencyCallable(const Model::GetRealTimeConcurrencyRequest& request) const;
 			ListChatbotInstancesOutcome listChatbotInstances(const Model::ListChatbotInstancesRequest &request)const;
 			void listChatbotInstancesAsync(const Model::ListChatbotInstancesRequest& request, const ListChatbotInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListChatbotInstancesOutcomeCallable listChatbotInstancesCallable(const Model::ListChatbotInstancesRequest& request) const;

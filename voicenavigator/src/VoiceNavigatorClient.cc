@@ -987,6 +987,42 @@ VoiceNavigatorClient::GetAsrConfigOutcomeCallable VoiceNavigatorClient::getAsrCo
 	return task->get_future();
 }
 
+VoiceNavigatorClient::GetRealTimeConcurrencyOutcome VoiceNavigatorClient::getRealTimeConcurrency(const GetRealTimeConcurrencyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRealTimeConcurrencyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRealTimeConcurrencyOutcome(GetRealTimeConcurrencyResult(outcome.result()));
+	else
+		return GetRealTimeConcurrencyOutcome(outcome.error());
+}
+
+void VoiceNavigatorClient::getRealTimeConcurrencyAsync(const GetRealTimeConcurrencyRequest& request, const GetRealTimeConcurrencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRealTimeConcurrency(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VoiceNavigatorClient::GetRealTimeConcurrencyOutcomeCallable VoiceNavigatorClient::getRealTimeConcurrencyCallable(const GetRealTimeConcurrencyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRealTimeConcurrencyOutcome()>>(
+			[this, request]()
+			{
+			return this->getRealTimeConcurrency(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VoiceNavigatorClient::ListChatbotInstancesOutcome VoiceNavigatorClient::listChatbotInstances(const ListChatbotInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
