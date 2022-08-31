@@ -43,22 +43,22 @@ void DescribeScdnDomainOriginTrafficDataResult::parse(const std::string &payload
 	for (auto valueOriginTrafficDataPerIntervalDataModule : allOriginTrafficDataPerIntervalNode)
 	{
 		DataModule originTrafficDataPerIntervalObject;
-		if(!valueOriginTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
-			originTrafficDataPerIntervalObject.timeStamp = valueOriginTrafficDataPerIntervalDataModule["TimeStamp"].asString();
 		if(!valueOriginTrafficDataPerIntervalDataModule["TrafficValue"].isNull())
 			originTrafficDataPerIntervalObject.trafficValue = valueOriginTrafficDataPerIntervalDataModule["TrafficValue"].asString();
 		if(!valueOriginTrafficDataPerIntervalDataModule["HttpTrafficValue"].isNull())
 			originTrafficDataPerIntervalObject.httpTrafficValue = valueOriginTrafficDataPerIntervalDataModule["HttpTrafficValue"].asString();
+		if(!valueOriginTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			originTrafficDataPerIntervalObject.timeStamp = valueOriginTrafficDataPerIntervalDataModule["TimeStamp"].asString();
 		if(!valueOriginTrafficDataPerIntervalDataModule["HttpsTrafficValue"].isNull())
 			originTrafficDataPerIntervalObject.httpsTrafficValue = valueOriginTrafficDataPerIntervalDataModule["HttpsTrafficValue"].asString();
 		originTrafficDataPerInterval_.push_back(originTrafficDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

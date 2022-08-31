@@ -39,24 +39,24 @@ void DescribeScdnUserQuotaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DomainQuota"].isNull())
-		domainQuota_ = std::stoi(value["DomainQuota"].asString());
-	if(!value["RefreshUrlQuota"].isNull())
-		refreshUrlQuota_ = std::stoi(value["RefreshUrlQuota"].asString());
-	if(!value["RefreshDirQuota"].isNull())
-		refreshDirQuota_ = std::stoi(value["RefreshDirQuota"].asString());
-	if(!value["RefreshUrlRemain"].isNull())
-		refreshUrlRemain_ = std::stoi(value["RefreshUrlRemain"].asString());
-	if(!value["RefreshDirRemain"].isNull())
-		refreshDirRemain_ = std::stoi(value["RefreshDirRemain"].asString());
-	if(!value["PreloadQuota"].isNull())
-		preloadQuota_ = std::stoi(value["PreloadQuota"].asString());
-	if(!value["PreloadRemain"].isNull())
-		preloadRemain_ = std::stoi(value["PreloadRemain"].asString());
 	if(!value["BlockQuota"].isNull())
 		blockQuota_ = std::stoi(value["BlockQuota"].asString());
+	if(!value["RefreshUrlRemain"].isNull())
+		refreshUrlRemain_ = std::stoi(value["RefreshUrlRemain"].asString());
+	if(!value["DomainQuota"].isNull())
+		domainQuota_ = std::stoi(value["DomainQuota"].asString());
 	if(!value["BlockRemain"].isNull())
 		blockRemain_ = std::stoi(value["BlockRemain"].asString());
+	if(!value["PreloadRemain"].isNull())
+		preloadRemain_ = std::stoi(value["PreloadRemain"].asString());
+	if(!value["RefreshUrlQuota"].isNull())
+		refreshUrlQuota_ = std::stoi(value["RefreshUrlQuota"].asString());
+	if(!value["PreloadQuota"].isNull())
+		preloadQuota_ = std::stoi(value["PreloadQuota"].asString());
+	if(!value["RefreshDirQuota"].isNull())
+		refreshDirQuota_ = std::stoi(value["RefreshDirQuota"].asString());
+	if(!value["RefreshDirRemain"].isNull())
+		refreshDirRemain_ = std::stoi(value["RefreshDirRemain"].asString());
 
 }
 
@@ -65,14 +65,14 @@ int DescribeScdnUserQuotaResult::getRefreshUrlQuota()const
 	return refreshUrlQuota_;
 }
 
-int DescribeScdnUserQuotaResult::getPreloadRemain()const
-{
-	return preloadRemain_;
-}
-
 int DescribeScdnUserQuotaResult::getBlockRemain()const
 {
 	return blockRemain_;
+}
+
+int DescribeScdnUserQuotaResult::getPreloadRemain()const
+{
+	return preloadRemain_;
 }
 
 int DescribeScdnUserQuotaResult::getRefreshDirRemain()const
@@ -80,14 +80,14 @@ int DescribeScdnUserQuotaResult::getRefreshDirRemain()const
 	return refreshDirRemain_;
 }
 
-int DescribeScdnUserQuotaResult::getRefreshDirQuota()const
-{
-	return refreshDirQuota_;
-}
-
 int DescribeScdnUserQuotaResult::getBlockQuota()const
 {
 	return blockQuota_;
+}
+
+int DescribeScdnUserQuotaResult::getRefreshDirQuota()const
+{
+	return refreshDirQuota_;
 }
 
 int DescribeScdnUserQuotaResult::getDomainQuota()const

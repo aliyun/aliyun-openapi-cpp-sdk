@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Scdn::Model::DescribeScdnCertificateDetailRequest;
 
-DescribeScdnCertificateDetailRequest::DescribeScdnCertificateDetailRequest() :
-	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnCertificateDetail")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeScdnCertificateDetailRequest::DescribeScdnCertificateDetailRequest()
+    : RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnCertificateDetail") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeScdnCertificateDetailRequest::~DescribeScdnCertificateDetailRequest()
-{}
+DescribeScdnCertificateDetailRequest::~DescribeScdnCertificateDetailRequest() {}
 
-std::string DescribeScdnCertificateDetailRequest::getCertName()const
-{
-	return certName_;
+std::string DescribeScdnCertificateDetailRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DescribeScdnCertificateDetailRequest::setCertName(const std::string& certName)
-{
-	certName_ = certName;
-	setParameter("CertName", certName);
+void DescribeScdnCertificateDetailRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-long DescribeScdnCertificateDetailRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string DescribeScdnCertificateDetailRequest::getCertName() const {
+  return certName_;
 }
 
-void DescribeScdnCertificateDetailRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeScdnCertificateDetailRequest::setCertName(const std::string &certName) {
+  certName_ = certName;
+  setParameter(std::string("CertName"), certName);
 }
 
-std::string DescribeScdnCertificateDetailRequest::getSecurityToken()const
-{
-	return securityToken_;
+long DescribeScdnCertificateDetailRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeScdnCertificateDetailRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void DescribeScdnCertificateDetailRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

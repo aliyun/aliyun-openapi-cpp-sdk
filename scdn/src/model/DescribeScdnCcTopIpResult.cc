@@ -43,10 +43,10 @@ void DescribeScdnCcTopIpResult::parse(const std::string &payload)
 	for (auto valueAttackIpDataListAttackIpDatas : allAttackIpDataListNode)
 	{
 		AttackIpDatas attackIpDataListObject;
-		if(!valueAttackIpDataListAttackIpDatas["Ip"].isNull())
-			attackIpDataListObject.ip = valueAttackIpDataListAttackIpDatas["Ip"].asString();
 		if(!valueAttackIpDataListAttackIpDatas["AttackCount"].isNull())
 			attackIpDataListObject.attackCount = valueAttackIpDataListAttackIpDatas["AttackCount"].asString();
+		if(!valueAttackIpDataListAttackIpDatas["Ip"].isNull())
+			attackIpDataListObject.ip = valueAttackIpDataListAttackIpDatas["Ip"].asString();
 		attackIpDataList_.push_back(attackIpDataListObject);
 	}
 	if(!value["Total"].isNull())

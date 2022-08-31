@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,55 @@
 
 using AlibabaCloud::Scdn::Model::DescribeScdnDomainRealTimeBpsDataRequest;
 
-DescribeScdnDomainRealTimeBpsDataRequest::DescribeScdnDomainRealTimeBpsDataRequest() :
-	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDomainRealTimeBpsData")
-{
-	setMethod(HttpRequest::Method::Get);
+DescribeScdnDomainRealTimeBpsDataRequest::DescribeScdnDomainRealTimeBpsDataRequest()
+    : RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDomainRealTimeBpsData") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-DescribeScdnDomainRealTimeBpsDataRequest::~DescribeScdnDomainRealTimeBpsDataRequest()
-{}
+DescribeScdnDomainRealTimeBpsDataRequest::~DescribeScdnDomainRealTimeBpsDataRequest() {}
 
-std::string DescribeScdnDomainRealTimeBpsDataRequest::getLocationNameEn()const
-{
-	return locationNameEn_;
+std::string DescribeScdnDomainRealTimeBpsDataRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DescribeScdnDomainRealTimeBpsDataRequest::setLocationNameEn(const std::string& locationNameEn)
-{
-	locationNameEn_ = locationNameEn;
-	setParameter("LocationNameEn", locationNameEn);
+void DescribeScdnDomainRealTimeBpsDataRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string DescribeScdnDomainRealTimeBpsDataRequest::getIspNameEn()const
-{
-	return ispNameEn_;
+std::string DescribeScdnDomainRealTimeBpsDataRequest::getEndTime() const {
+  return endTime_;
 }
 
-void DescribeScdnDomainRealTimeBpsDataRequest::setIspNameEn(const std::string& ispNameEn)
-{
-	ispNameEn_ = ispNameEn;
-	setParameter("IspNameEn", ispNameEn);
+void DescribeScdnDomainRealTimeBpsDataRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
-std::string DescribeScdnDomainRealTimeBpsDataRequest::getStartTime()const
-{
-	return startTime_;
+std::string DescribeScdnDomainRealTimeBpsDataRequest::getLocationNameEn() const {
+  return locationNameEn_;
 }
 
-void DescribeScdnDomainRealTimeBpsDataRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+void DescribeScdnDomainRealTimeBpsDataRequest::setLocationNameEn(const std::string &locationNameEn) {
+  locationNameEn_ = locationNameEn;
+  setParameter(std::string("LocationNameEn"), locationNameEn);
 }
 
-std::string DescribeScdnDomainRealTimeBpsDataRequest::getDomainName()const
-{
-	return domainName_;
+std::string DescribeScdnDomainRealTimeBpsDataRequest::getIspNameEn() const {
+  return ispNameEn_;
 }
 
-void DescribeScdnDomainRealTimeBpsDataRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DescribeScdnDomainRealTimeBpsDataRequest::setIspNameEn(const std::string &ispNameEn) {
+  ispNameEn_ = ispNameEn;
+  setParameter(std::string("IspNameEn"), ispNameEn);
 }
 
-std::string DescribeScdnDomainRealTimeBpsDataRequest::getEndTime()const
-{
-	return endTime_;
+std::string DescribeScdnDomainRealTimeBpsDataRequest::getStartTime() const {
+  return startTime_;
 }
 
-void DescribeScdnDomainRealTimeBpsDataRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
-}
-
-long DescribeScdnDomainRealTimeBpsDataRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeScdnDomainRealTimeBpsDataRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeScdnDomainRealTimeBpsDataRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 

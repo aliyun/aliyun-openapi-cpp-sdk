@@ -39,14 +39,14 @@ void DescribeScdnCertificateDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Cert"].isNull())
-		cert_ = value["Cert"].asString();
-	if(!value["Key"].isNull())
-		key_ = value["Key"].asString();
-	if(!value["CertId"].isNull())
-		certId_ = std::stol(value["CertId"].asString());
 	if(!value["CertName"].isNull())
 		certName_ = value["CertName"].asString();
+	if(!value["Key"].isNull())
+		key_ = value["Key"].asString();
+	if(!value["Cert"].isNull())
+		cert_ = value["Cert"].asString();
+	if(!value["CertId"].isNull())
+		certId_ = std::stol(value["CertId"].asString());
 
 }
 
@@ -55,14 +55,14 @@ long DescribeScdnCertificateDetailResult::getCertId()const
 	return certId_;
 }
 
-std::string DescribeScdnCertificateDetailResult::getCert()const
-{
-	return cert_;
-}
-
 std::string DescribeScdnCertificateDetailResult::getCertName()const
 {
 	return certName_;
+}
+
+std::string DescribeScdnCertificateDetailResult::getCert()const
+{
+	return cert_;
 }
 
 std::string DescribeScdnCertificateDetailResult::getKey()const

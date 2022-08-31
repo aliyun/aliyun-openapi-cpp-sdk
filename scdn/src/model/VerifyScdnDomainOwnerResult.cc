@@ -14,31 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/scdn/model/SetScdnDomainBizInfoResult.h>
+#include <alibabacloud/scdn/model/VerifyScdnDomainOwnerResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Scdn;
 using namespace AlibabaCloud::Scdn::Model;
 
-SetScdnDomainBizInfoResult::SetScdnDomainBizInfoResult() :
+VerifyScdnDomainOwnerResult::VerifyScdnDomainOwnerResult() :
 	ServiceResult()
 {}
 
-SetScdnDomainBizInfoResult::SetScdnDomainBizInfoResult(const std::string &payload) :
+VerifyScdnDomainOwnerResult::VerifyScdnDomainOwnerResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SetScdnDomainBizInfoResult::~SetScdnDomainBizInfoResult()
+VerifyScdnDomainOwnerResult::~VerifyScdnDomainOwnerResult()
 {}
 
-void SetScdnDomainBizInfoResult::parse(const std::string &payload)
+void VerifyScdnDomainOwnerResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Content"].isNull())
+		content_ = value["Content"].asString();
 
+}
+
+std::string VerifyScdnDomainOwnerResult::getContent()const
+{
+	return content_;
 }
 

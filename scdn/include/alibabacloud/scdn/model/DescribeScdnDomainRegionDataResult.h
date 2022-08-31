@@ -37,13 +37,13 @@ namespace AlibabaCloud
 					std::string avgObjectSize;
 					std::string bytesProportion;
 					std::string bps;
-					std::string proportion;
-					std::string qps;
 					std::string totalQuery;
+					std::string qps;
+					std::string proportion;
 					std::string totalBytes;
 					std::string avgResponseRate;
-					std::string region;
 					std::string reqErrRate;
+					std::string region;
 					std::string regionEname;
 					std::string avgResponseTime;
 				};
@@ -55,8 +55,8 @@ namespace AlibabaCloud
 				std::string getEndTime()const;
 				std::string getDomainName()const;
 				std::vector<RegionProportionData> getValue()const;
-				std::string getDataInterval()const;
 				std::string getStartTime()const;
+				std::string getDataInterval()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -64,8 +64,8 @@ namespace AlibabaCloud
 				std::string endTime_;
 				std::string domainName_;
 				std::vector<RegionProportionData> value_;
-				std::string dataInterval_;
 				std::string startTime_;
+				std::string dataInterval_;
 
 			};
 		}

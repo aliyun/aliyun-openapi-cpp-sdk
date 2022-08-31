@@ -49,18 +49,18 @@ void DescribeScdnDDoSTrafficInfoResult::parse(const std::string &payload)
 			timeScopesObject.start = valueTimeScopesTimeScope["Start"].asString();
 		timeScopes_.push_back(timeScopesObject);
 	}
-	auto allBpsDrops = value["BpsDrops"]["BpsDrop"];
-	for (const auto &item : allBpsDrops)
-		bpsDrops_.push_back(item.asString());
-	auto allBpsTotals = value["BpsTotals"]["BpsTotal"];
-	for (const auto &item : allBpsTotals)
-		bpsTotals_.push_back(item.asString());
 	auto allPpsTotals = value["PpsTotals"]["PpsTotal"];
 	for (const auto &item : allPpsTotals)
 		ppsTotals_.push_back(item.asString());
 	auto allPpsDrops = value["PpsDrops"]["PpsDrop"];
 	for (const auto &item : allPpsDrops)
 		ppsDrops_.push_back(item.asString());
+	auto allBpsDrops = value["BpsDrops"]["BpsDrop"];
+	for (const auto &item : allBpsDrops)
+		bpsDrops_.push_back(item.asString());
+	auto allBpsTotals = value["BpsTotals"]["BpsTotal"];
+	for (const auto &item : allBpsTotals)
+		bpsTotals_.push_back(item.asString());
 
 }
 

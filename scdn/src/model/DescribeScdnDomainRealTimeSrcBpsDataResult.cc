@@ -43,18 +43,18 @@ void DescribeScdnDomainRealTimeSrcBpsDataResult::parse(const std::string &payloa
 	for (auto valueRealTimeSrcBpsDataPerIntervalDataModule : allRealTimeSrcBpsDataPerIntervalNode)
 	{
 		DataModule realTimeSrcBpsDataPerIntervalObject;
-		if(!valueRealTimeSrcBpsDataPerIntervalDataModule["TimeStamp"].isNull())
-			realTimeSrcBpsDataPerIntervalObject.timeStamp = valueRealTimeSrcBpsDataPerIntervalDataModule["TimeStamp"].asString();
 		if(!valueRealTimeSrcBpsDataPerIntervalDataModule["Value"].isNull())
 			realTimeSrcBpsDataPerIntervalObject.value = valueRealTimeSrcBpsDataPerIntervalDataModule["Value"].asString();
+		if(!valueRealTimeSrcBpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			realTimeSrcBpsDataPerIntervalObject.timeStamp = valueRealTimeSrcBpsDataPerIntervalDataModule["TimeStamp"].asString();
 		realTimeSrcBpsDataPerInterval_.push_back(realTimeSrcBpsDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

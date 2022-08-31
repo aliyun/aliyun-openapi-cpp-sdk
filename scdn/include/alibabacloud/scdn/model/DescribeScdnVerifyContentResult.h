@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCDN_MODEL_SETSCDNDOMAINBIZINFORESULT_H_
-#define ALIBABACLOUD_SCDN_MODEL_SETSCDNDOMAINBIZINFORESULT_H_
+#ifndef ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNVERIFYCONTENTRESULT_H_
+#define ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNVERIFYCONTENTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCDN_EXPORT SetScdnDomainBizInfoResult : public ServiceResult
+			class ALIBABACLOUD_SCDN_EXPORT DescribeScdnVerifyContentResult : public ServiceResult
 			{
 			public:
 
 
-				SetScdnDomainBizInfoResult();
-				explicit SetScdnDomainBizInfoResult(const std::string &payload);
-				~SetScdnDomainBizInfoResult();
+				DescribeScdnVerifyContentResult();
+				explicit DescribeScdnVerifyContentResult(const std::string &payload);
+				~DescribeScdnVerifyContentResult();
+				std::string getContent()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string content_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCDN_MODEL_SETSCDNDOMAINBIZINFORESULT_H_
+#endif // !ALIBABACLOUD_SCDN_MODEL_DESCRIBESCDNVERIFYCONTENTRESULT_H_

@@ -43,28 +43,28 @@ void DescribeScdnDomainQpsDataResult::parse(const std::string &payload)
 	for (auto valueQpsDataPerIntervalDataModule : allQpsDataPerIntervalNode)
 	{
 		DataModule qpsDataPerIntervalObject;
-		if(!valueQpsDataPerIntervalDataModule["TimeStamp"].isNull())
-			qpsDataPerIntervalObject.timeStamp = valueQpsDataPerIntervalDataModule["TimeStamp"].asString();
-		if(!valueQpsDataPerIntervalDataModule["QpsValue"].isNull())
-			qpsDataPerIntervalObject.qpsValue = valueQpsDataPerIntervalDataModule["QpsValue"].asString();
-		if(!valueQpsDataPerIntervalDataModule["HttpQpsValue"].isNull())
-			qpsDataPerIntervalObject.httpQpsValue = valueQpsDataPerIntervalDataModule["HttpQpsValue"].asString();
-		if(!valueQpsDataPerIntervalDataModule["HttpsQpsValue"].isNull())
-			qpsDataPerIntervalObject.httpsQpsValue = valueQpsDataPerIntervalDataModule["HttpsQpsValue"].asString();
-		if(!valueQpsDataPerIntervalDataModule["AccValue"].isNull())
-			qpsDataPerIntervalObject.accValue = valueQpsDataPerIntervalDataModule["AccValue"].asString();
-		if(!valueQpsDataPerIntervalDataModule["HttpAccValue"].isNull())
-			qpsDataPerIntervalObject.httpAccValue = valueQpsDataPerIntervalDataModule["HttpAccValue"].asString();
 		if(!valueQpsDataPerIntervalDataModule["HttpsAccValue"].isNull())
 			qpsDataPerIntervalObject.httpsAccValue = valueQpsDataPerIntervalDataModule["HttpsAccValue"].asString();
+		if(!valueQpsDataPerIntervalDataModule["QpsValue"].isNull())
+			qpsDataPerIntervalObject.qpsValue = valueQpsDataPerIntervalDataModule["QpsValue"].asString();
+		if(!valueQpsDataPerIntervalDataModule["AccValue"].isNull())
+			qpsDataPerIntervalObject.accValue = valueQpsDataPerIntervalDataModule["AccValue"].asString();
+		if(!valueQpsDataPerIntervalDataModule["HttpQpsValue"].isNull())
+			qpsDataPerIntervalObject.httpQpsValue = valueQpsDataPerIntervalDataModule["HttpQpsValue"].asString();
+		if(!valueQpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			qpsDataPerIntervalObject.timeStamp = valueQpsDataPerIntervalDataModule["TimeStamp"].asString();
+		if(!valueQpsDataPerIntervalDataModule["HttpsQpsValue"].isNull())
+			qpsDataPerIntervalObject.httpsQpsValue = valueQpsDataPerIntervalDataModule["HttpsQpsValue"].asString();
+		if(!valueQpsDataPerIntervalDataModule["HttpAccValue"].isNull())
+			qpsDataPerIntervalObject.httpAccValue = valueQpsDataPerIntervalDataModule["HttpAccValue"].asString();
 		qpsDataPerInterval_.push_back(qpsDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

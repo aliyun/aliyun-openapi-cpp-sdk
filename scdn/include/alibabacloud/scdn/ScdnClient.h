@@ -122,8 +122,8 @@
 #include "model/DescribeScdnUserProtectInfoResult.h"
 #include "model/DescribeScdnUserQuotaRequest.h"
 #include "model/DescribeScdnUserQuotaResult.h"
-#include "model/OpenScdnServiceRequest.h"
-#include "model/OpenScdnServiceResult.h"
+#include "model/DescribeScdnVerifyContentRequest.h"
+#include "model/DescribeScdnVerifyContentResult.h"
 #include "model/PreloadScdnObjectCachesRequest.h"
 #include "model/PreloadScdnObjectCachesResult.h"
 #include "model/RefreshScdnObjectCachesRequest.h"
@@ -134,16 +134,18 @@
 #include "model/SetScdnCcInfoResult.h"
 #include "model/SetScdnDDoSInfoRequest.h"
 #include "model/SetScdnDDoSInfoResult.h"
-#include "model/SetScdnDomainBizInfoRequest.h"
-#include "model/SetScdnDomainBizInfoResult.h"
 #include "model/SetScdnDomainCertificateRequest.h"
 #include "model/SetScdnDomainCertificateResult.h"
 #include "model/StartScdnDomainRequest.h"
 #include "model/StartScdnDomainResult.h"
 #include "model/StopScdnDomainRequest.h"
 #include "model/StopScdnDomainResult.h"
+#include "model/TestAmpDescribeScdnDomainIspDataRequest.h"
+#include "model/TestAmpDescribeScdnDomainIspDataResult.h"
 #include "model/UpdateScdnDomainRequest.h"
 #include "model/UpdateScdnDomainResult.h"
+#include "model/VerifyScdnDomainOwnerRequest.h"
+#include "model/VerifyScdnDomainOwnerResult.h"
 
 
 namespace AlibabaCloud
@@ -303,9 +305,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeScdnUserQuotaResult> DescribeScdnUserQuotaOutcome;
 			typedef std::future<DescribeScdnUserQuotaOutcome> DescribeScdnUserQuotaOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnUserQuotaRequest&, const DescribeScdnUserQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnUserQuotaAsyncHandler;
-			typedef Outcome<Error, Model::OpenScdnServiceResult> OpenScdnServiceOutcome;
-			typedef std::future<OpenScdnServiceOutcome> OpenScdnServiceOutcomeCallable;
-			typedef std::function<void(const ScdnClient*, const Model::OpenScdnServiceRequest&, const OpenScdnServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenScdnServiceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeScdnVerifyContentResult> DescribeScdnVerifyContentOutcome;
+			typedef std::future<DescribeScdnVerifyContentOutcome> DescribeScdnVerifyContentOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::DescribeScdnVerifyContentRequest&, const DescribeScdnVerifyContentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScdnVerifyContentAsyncHandler;
 			typedef Outcome<Error, Model::PreloadScdnObjectCachesResult> PreloadScdnObjectCachesOutcome;
 			typedef std::future<PreloadScdnObjectCachesOutcome> PreloadScdnObjectCachesOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::PreloadScdnObjectCachesRequest&, const PreloadScdnObjectCachesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PreloadScdnObjectCachesAsyncHandler;
@@ -321,9 +323,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetScdnDDoSInfoResult> SetScdnDDoSInfoOutcome;
 			typedef std::future<SetScdnDDoSInfoOutcome> SetScdnDDoSInfoOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::SetScdnDDoSInfoRequest&, const SetScdnDDoSInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetScdnDDoSInfoAsyncHandler;
-			typedef Outcome<Error, Model::SetScdnDomainBizInfoResult> SetScdnDomainBizInfoOutcome;
-			typedef std::future<SetScdnDomainBizInfoOutcome> SetScdnDomainBizInfoOutcomeCallable;
-			typedef std::function<void(const ScdnClient*, const Model::SetScdnDomainBizInfoRequest&, const SetScdnDomainBizInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetScdnDomainBizInfoAsyncHandler;
 			typedef Outcome<Error, Model::SetScdnDomainCertificateResult> SetScdnDomainCertificateOutcome;
 			typedef std::future<SetScdnDomainCertificateOutcome> SetScdnDomainCertificateOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::SetScdnDomainCertificateRequest&, const SetScdnDomainCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetScdnDomainCertificateAsyncHandler;
@@ -333,9 +332,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopScdnDomainResult> StopScdnDomainOutcome;
 			typedef std::future<StopScdnDomainOutcome> StopScdnDomainOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::StopScdnDomainRequest&, const StopScdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopScdnDomainAsyncHandler;
+			typedef Outcome<Error, Model::TestAmpDescribeScdnDomainIspDataResult> TestAmpDescribeScdnDomainIspDataOutcome;
+			typedef std::future<TestAmpDescribeScdnDomainIspDataOutcome> TestAmpDescribeScdnDomainIspDataOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::TestAmpDescribeScdnDomainIspDataRequest&, const TestAmpDescribeScdnDomainIspDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TestAmpDescribeScdnDomainIspDataAsyncHandler;
 			typedef Outcome<Error, Model::UpdateScdnDomainResult> UpdateScdnDomainOutcome;
 			typedef std::future<UpdateScdnDomainOutcome> UpdateScdnDomainOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::UpdateScdnDomainRequest&, const UpdateScdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateScdnDomainAsyncHandler;
+			typedef Outcome<Error, Model::VerifyScdnDomainOwnerResult> VerifyScdnDomainOwnerOutcome;
+			typedef std::future<VerifyScdnDomainOwnerOutcome> VerifyScdnDomainOwnerOutcomeCallable;
+			typedef std::function<void(const ScdnClient*, const Model::VerifyScdnDomainOwnerRequest&, const VerifyScdnDomainOwnerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyScdnDomainOwnerAsyncHandler;
 
 			ScdnClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			ScdnClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -491,9 +496,9 @@ namespace AlibabaCloud
 			DescribeScdnUserQuotaOutcome describeScdnUserQuota(const Model::DescribeScdnUserQuotaRequest &request)const;
 			void describeScdnUserQuotaAsync(const Model::DescribeScdnUserQuotaRequest& request, const DescribeScdnUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeScdnUserQuotaOutcomeCallable describeScdnUserQuotaCallable(const Model::DescribeScdnUserQuotaRequest& request) const;
-			OpenScdnServiceOutcome openScdnService(const Model::OpenScdnServiceRequest &request)const;
-			void openScdnServiceAsync(const Model::OpenScdnServiceRequest& request, const OpenScdnServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OpenScdnServiceOutcomeCallable openScdnServiceCallable(const Model::OpenScdnServiceRequest& request) const;
+			DescribeScdnVerifyContentOutcome describeScdnVerifyContent(const Model::DescribeScdnVerifyContentRequest &request)const;
+			void describeScdnVerifyContentAsync(const Model::DescribeScdnVerifyContentRequest& request, const DescribeScdnVerifyContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeScdnVerifyContentOutcomeCallable describeScdnVerifyContentCallable(const Model::DescribeScdnVerifyContentRequest& request) const;
 			PreloadScdnObjectCachesOutcome preloadScdnObjectCaches(const Model::PreloadScdnObjectCachesRequest &request)const;
 			void preloadScdnObjectCachesAsync(const Model::PreloadScdnObjectCachesRequest& request, const PreloadScdnObjectCachesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PreloadScdnObjectCachesOutcomeCallable preloadScdnObjectCachesCallable(const Model::PreloadScdnObjectCachesRequest& request) const;
@@ -509,9 +514,6 @@ namespace AlibabaCloud
 			SetScdnDDoSInfoOutcome setScdnDDoSInfo(const Model::SetScdnDDoSInfoRequest &request)const;
 			void setScdnDDoSInfoAsync(const Model::SetScdnDDoSInfoRequest& request, const SetScdnDDoSInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetScdnDDoSInfoOutcomeCallable setScdnDDoSInfoCallable(const Model::SetScdnDDoSInfoRequest& request) const;
-			SetScdnDomainBizInfoOutcome setScdnDomainBizInfo(const Model::SetScdnDomainBizInfoRequest &request)const;
-			void setScdnDomainBizInfoAsync(const Model::SetScdnDomainBizInfoRequest& request, const SetScdnDomainBizInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SetScdnDomainBizInfoOutcomeCallable setScdnDomainBizInfoCallable(const Model::SetScdnDomainBizInfoRequest& request) const;
 			SetScdnDomainCertificateOutcome setScdnDomainCertificate(const Model::SetScdnDomainCertificateRequest &request)const;
 			void setScdnDomainCertificateAsync(const Model::SetScdnDomainCertificateRequest& request, const SetScdnDomainCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetScdnDomainCertificateOutcomeCallable setScdnDomainCertificateCallable(const Model::SetScdnDomainCertificateRequest& request) const;
@@ -521,9 +523,15 @@ namespace AlibabaCloud
 			StopScdnDomainOutcome stopScdnDomain(const Model::StopScdnDomainRequest &request)const;
 			void stopScdnDomainAsync(const Model::StopScdnDomainRequest& request, const StopScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopScdnDomainOutcomeCallable stopScdnDomainCallable(const Model::StopScdnDomainRequest& request) const;
+			TestAmpDescribeScdnDomainIspDataOutcome testAmpDescribeScdnDomainIspData(const Model::TestAmpDescribeScdnDomainIspDataRequest &request)const;
+			void testAmpDescribeScdnDomainIspDataAsync(const Model::TestAmpDescribeScdnDomainIspDataRequest& request, const TestAmpDescribeScdnDomainIspDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TestAmpDescribeScdnDomainIspDataOutcomeCallable testAmpDescribeScdnDomainIspDataCallable(const Model::TestAmpDescribeScdnDomainIspDataRequest& request) const;
 			UpdateScdnDomainOutcome updateScdnDomain(const Model::UpdateScdnDomainRequest &request)const;
 			void updateScdnDomainAsync(const Model::UpdateScdnDomainRequest& request, const UpdateScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateScdnDomainOutcomeCallable updateScdnDomainCallable(const Model::UpdateScdnDomainRequest& request) const;
+			VerifyScdnDomainOwnerOutcome verifyScdnDomainOwner(const Model::VerifyScdnDomainOwnerRequest &request)const;
+			void verifyScdnDomainOwnerAsync(const Model::VerifyScdnDomainOwnerRequest& request, const VerifyScdnDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			VerifyScdnDomainOwnerOutcomeCallable verifyScdnDomainOwnerCallable(const Model::VerifyScdnDomainOwnerRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

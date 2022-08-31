@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct AttackIpDatas
 				{
-					std::string ip;
 					std::string attackCount;
+					std::string ip;
 				};
 
 

@@ -42,13 +42,13 @@ namespace AlibabaCloud
 				explicit DescribeScdnServiceResult(const std::string &payload);
 				~DescribeScdnServiceResult();
 				std::string getCurrentDDoSBasicValue()const;
-				std::string getEndTime()const;
 				std::string getCurrentElasticProtectionValue()const;
+				std::string getEndTime()const;
 				std::string getPricingCycle()const;
 				std::string getElasticProtection()const;
-				std::string getDDoSBasic()const;
 				std::string getDomainCountValue()const;
 				std::string getCurrentDomainCount()const;
+				std::string getDDoSBasic()const;
 				std::string getCcProtectionValue()const;
 				std::string getElasticProtectionValue()const;
 				std::string getOpenTime()const;
@@ -59,8 +59,8 @@ namespace AlibabaCloud
 				std::string getCurrentElasticProtection()const;
 				std::string getInstanceId()const;
 				std::string getCurrentCcProtectionValue()const;
-				std::string getCurrentProtectType()const;
 				std::string getCurrentDDoSBasic()const;
+				std::string getCurrentProtectType()const;
 				std::string getCurrentDomainCountValue()const;
 				std::string getCurrentBandwidthValue()const;
 				std::string getProtectTypeValue()const;
@@ -72,20 +72,20 @@ namespace AlibabaCloud
 				std::string getDDoSBasicValue()const;
 				std::string getProtectType()const;
 				std::string getCurrentCcProtection()const;
-				std::string getBandwidthValue()const;
 				std::string getPriceType()const;
+				std::string getBandwidthValue()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string currentDDoSBasicValue_;
-				std::string endTime_;
 				std::string currentElasticProtectionValue_;
+				std::string endTime_;
 				std::string pricingCycle_;
 				std::string elasticProtection_;
-				std::string dDoSBasic_;
 				std::string domainCountValue_;
 				std::string currentDomainCount_;
+				std::string dDoSBasic_;
 				std::string ccProtectionValue_;
 				std::string elasticProtectionValue_;
 				std::string openTime_;
@@ -96,8 +96,8 @@ namespace AlibabaCloud
 				std::string currentElasticProtection_;
 				std::string instanceId_;
 				std::string currentCcProtectionValue_;
-				std::string currentProtectType_;
 				std::string currentDDoSBasic_;
+				std::string currentProtectType_;
 				std::string currentDomainCountValue_;
 				std::string currentBandwidthValue_;
 				std::string protectTypeValue_;
@@ -109,8 +109,8 @@ namespace AlibabaCloud
 				std::string dDoSBasicValue_;
 				std::string protectType_;
 				std::string currentCcProtection_;
-				std::string bandwidthValue_;
 				std::string priceType_;
+				std::string bandwidthValue_;
 
 			};
 		}

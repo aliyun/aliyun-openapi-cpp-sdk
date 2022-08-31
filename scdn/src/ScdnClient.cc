@@ -1851,36 +1851,36 @@ ScdnClient::DescribeScdnUserQuotaOutcomeCallable ScdnClient::describeScdnUserQuo
 	return task->get_future();
 }
 
-ScdnClient::OpenScdnServiceOutcome ScdnClient::openScdnService(const OpenScdnServiceRequest &request) const
+ScdnClient::DescribeScdnVerifyContentOutcome ScdnClient::describeScdnVerifyContent(const DescribeScdnVerifyContentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return OpenScdnServiceOutcome(endpointOutcome.error());
+		return DescribeScdnVerifyContentOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return OpenScdnServiceOutcome(OpenScdnServiceResult(outcome.result()));
+		return DescribeScdnVerifyContentOutcome(DescribeScdnVerifyContentResult(outcome.result()));
 	else
-		return OpenScdnServiceOutcome(outcome.error());
+		return DescribeScdnVerifyContentOutcome(outcome.error());
 }
 
-void ScdnClient::openScdnServiceAsync(const OpenScdnServiceRequest& request, const OpenScdnServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void ScdnClient::describeScdnVerifyContentAsync(const DescribeScdnVerifyContentRequest& request, const DescribeScdnVerifyContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, openScdnService(request), context);
+		handler(this, request, describeScdnVerifyContent(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-ScdnClient::OpenScdnServiceOutcomeCallable ScdnClient::openScdnServiceCallable(const OpenScdnServiceRequest &request) const
+ScdnClient::DescribeScdnVerifyContentOutcomeCallable ScdnClient::describeScdnVerifyContentCallable(const DescribeScdnVerifyContentRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<OpenScdnServiceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeScdnVerifyContentOutcome()>>(
 			[this, request]()
 			{
-			return this->openScdnService(request);
+			return this->describeScdnVerifyContent(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2067,42 +2067,6 @@ ScdnClient::SetScdnDDoSInfoOutcomeCallable ScdnClient::setScdnDDoSInfoCallable(c
 	return task->get_future();
 }
 
-ScdnClient::SetScdnDomainBizInfoOutcome ScdnClient::setScdnDomainBizInfo(const SetScdnDomainBizInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SetScdnDomainBizInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SetScdnDomainBizInfoOutcome(SetScdnDomainBizInfoResult(outcome.result()));
-	else
-		return SetScdnDomainBizInfoOutcome(outcome.error());
-}
-
-void ScdnClient::setScdnDomainBizInfoAsync(const SetScdnDomainBizInfoRequest& request, const SetScdnDomainBizInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, setScdnDomainBizInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ScdnClient::SetScdnDomainBizInfoOutcomeCallable ScdnClient::setScdnDomainBizInfoCallable(const SetScdnDomainBizInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SetScdnDomainBizInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->setScdnDomainBizInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ScdnClient::SetScdnDomainCertificateOutcome ScdnClient::setScdnDomainCertificate(const SetScdnDomainCertificateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2211,6 +2175,42 @@ ScdnClient::StopScdnDomainOutcomeCallable ScdnClient::stopScdnDomainCallable(con
 	return task->get_future();
 }
 
+ScdnClient::TestAmpDescribeScdnDomainIspDataOutcome ScdnClient::testAmpDescribeScdnDomainIspData(const TestAmpDescribeScdnDomainIspDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TestAmpDescribeScdnDomainIspDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TestAmpDescribeScdnDomainIspDataOutcome(TestAmpDescribeScdnDomainIspDataResult(outcome.result()));
+	else
+		return TestAmpDescribeScdnDomainIspDataOutcome(outcome.error());
+}
+
+void ScdnClient::testAmpDescribeScdnDomainIspDataAsync(const TestAmpDescribeScdnDomainIspDataRequest& request, const TestAmpDescribeScdnDomainIspDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, testAmpDescribeScdnDomainIspData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::TestAmpDescribeScdnDomainIspDataOutcomeCallable ScdnClient::testAmpDescribeScdnDomainIspDataCallable(const TestAmpDescribeScdnDomainIspDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TestAmpDescribeScdnDomainIspDataOutcome()>>(
+			[this, request]()
+			{
+			return this->testAmpDescribeScdnDomainIspData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ScdnClient::UpdateScdnDomainOutcome ScdnClient::updateScdnDomain(const UpdateScdnDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2241,6 +2241,42 @@ ScdnClient::UpdateScdnDomainOutcomeCallable ScdnClient::updateScdnDomainCallable
 			[this, request]()
 			{
 			return this->updateScdnDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ScdnClient::VerifyScdnDomainOwnerOutcome ScdnClient::verifyScdnDomainOwner(const VerifyScdnDomainOwnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return VerifyScdnDomainOwnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return VerifyScdnDomainOwnerOutcome(VerifyScdnDomainOwnerResult(outcome.result()));
+	else
+		return VerifyScdnDomainOwnerOutcome(outcome.error());
+}
+
+void ScdnClient::verifyScdnDomainOwnerAsync(const VerifyScdnDomainOwnerRequest& request, const VerifyScdnDomainOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, verifyScdnDomainOwner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ScdnClient::VerifyScdnDomainOwnerOutcomeCallable ScdnClient::verifyScdnDomainOwnerCallable(const VerifyScdnDomainOwnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<VerifyScdnDomainOwnerOutcome()>>(
+			[this, request]()
+			{
+			return this->verifyScdnDomainOwner(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

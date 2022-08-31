@@ -49,12 +49,12 @@ void DescribeScdnCcQpsInfoResult::parse(const std::string &payload)
 			timeScopesObject.start = valueTimeScopesTimeScope["Start"].asString();
 		timeScopes_.push_back(timeScopesObject);
 	}
-	auto allTotals = value["Totals"]["Total"];
-	for (const auto &item : allTotals)
-		totals_.push_back(item.asString());
 	auto allAttacks = value["Attacks"]["Attack"];
 	for (const auto &item : allAttacks)
 		attacks_.push_back(item.asString());
+	auto allTotals = value["Totals"]["Total"];
+	for (const auto &item : allTotals)
+		totals_.push_back(item.asString());
 
 }
 

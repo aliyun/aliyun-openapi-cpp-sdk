@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,37 @@
 
 using AlibabaCloud::Scdn::Model::DescribeScdnDomainIspDataRequest;
 
-DescribeScdnDomainIspDataRequest::DescribeScdnDomainIspDataRequest() :
-	RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDomainIspData")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeScdnDomainIspDataRequest::DescribeScdnDomainIspDataRequest()
+    : RpcServiceRequest("scdn", "2017-11-15", "DescribeScdnDomainIspData") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeScdnDomainIspDataRequest::~DescribeScdnDomainIspDataRequest()
-{}
+DescribeScdnDomainIspDataRequest::~DescribeScdnDomainIspDataRequest() {}
 
-std::string DescribeScdnDomainIspDataRequest::getStartTime()const
-{
-	return startTime_;
+std::string DescribeScdnDomainIspDataRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DescribeScdnDomainIspDataRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+void DescribeScdnDomainIspDataRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string DescribeScdnDomainIspDataRequest::getDomainName()const
-{
-	return domainName_;
+std::string DescribeScdnDomainIspDataRequest::getEndTime() const {
+  return endTime_;
 }
 
-void DescribeScdnDomainIspDataRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DescribeScdnDomainIspDataRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
-std::string DescribeScdnDomainIspDataRequest::getEndTime()const
-{
-	return endTime_;
+std::string DescribeScdnDomainIspDataRequest::getStartTime() const {
+  return startTime_;
 }
 
-void DescribeScdnDomainIspDataRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
-}
-
-long DescribeScdnDomainIspDataRequest::getOwnerId()const
-{
-	return ownerId_;
-}
-
-void DescribeScdnDomainIspDataRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeScdnDomainIspDataRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 

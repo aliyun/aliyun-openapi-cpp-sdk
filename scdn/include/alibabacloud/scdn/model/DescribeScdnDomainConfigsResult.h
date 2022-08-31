@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string argName;
 					};
 					std::string status;
+					std::string parentId;
 					std::string functionName;
 					std::vector<DomainConfig::FunctionArg> functionArgs;
 					std::string configId;

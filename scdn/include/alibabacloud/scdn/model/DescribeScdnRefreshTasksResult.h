@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string status;
 					std::string objectType;
 					std::string objectPath;
-					std::string taskId;
 					std::string description;
+					std::string taskId;
 					std::string creationTime;
 					std::string process;
 				};

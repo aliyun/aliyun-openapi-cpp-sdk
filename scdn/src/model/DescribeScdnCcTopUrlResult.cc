@@ -43,10 +43,10 @@ void DescribeScdnCcTopUrlResult::parse(const std::string &payload)
 	for (auto valueAttackUrlDataListAttackUrlDatas : allAttackUrlDataListNode)
 	{
 		AttackUrlDatas attackUrlDataListObject;
-		if(!valueAttackUrlDataListAttackUrlDatas["Url"].isNull())
-			attackUrlDataListObject.url = valueAttackUrlDataListAttackUrlDatas["Url"].asString();
 		if(!valueAttackUrlDataListAttackUrlDatas["AttackCount"].isNull())
 			attackUrlDataListObject.attackCount = valueAttackUrlDataListAttackUrlDatas["AttackCount"].asString();
+		if(!valueAttackUrlDataListAttackUrlDatas["Url"].isNull())
+			attackUrlDataListObject.url = valueAttackUrlDataListAttackUrlDatas["Url"].asString();
 		attackUrlDataList_.push_back(attackUrlDataListObject);
 	}
 	if(!value["Total"].isNull())

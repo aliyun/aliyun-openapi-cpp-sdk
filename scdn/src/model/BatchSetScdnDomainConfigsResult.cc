@@ -43,10 +43,10 @@ void BatchSetScdnDomainConfigsResult::parse(const std::string &payload)
 	for (auto valueDomainConfigListDomainConfigModel : allDomainConfigListNode)
 	{
 		DomainConfigModel domainConfigListObject;
-		if(!valueDomainConfigListDomainConfigModel["DomainName"].isNull())
-			domainConfigListObject.domainName = valueDomainConfigListDomainConfigModel["DomainName"].asString();
 		if(!valueDomainConfigListDomainConfigModel["ConfigId"].isNull())
 			domainConfigListObject.configId = std::stol(valueDomainConfigListDomainConfigModel["ConfigId"].asString());
+		if(!valueDomainConfigListDomainConfigModel["DomainName"].isNull())
+			domainConfigListObject.domainName = valueDomainConfigListDomainConfigModel["DomainName"].asString();
 		if(!valueDomainConfigListDomainConfigModel["FunctionName"].isNull())
 			domainConfigListObject.functionName = valueDomainConfigListDomainConfigModel["FunctionName"].asString();
 		domainConfigList_.push_back(domainConfigListObject);

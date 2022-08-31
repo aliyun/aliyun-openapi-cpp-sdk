@@ -43,18 +43,18 @@ void DescribeScdnDomainRealTimeSrcTrafficDataResult::parse(const std::string &pa
 	for (auto valueRealTimeSrcTrafficDataPerIntervalDataModule : allRealTimeSrcTrafficDataPerIntervalNode)
 	{
 		DataModule realTimeSrcTrafficDataPerIntervalObject;
-		if(!valueRealTimeSrcTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
-			realTimeSrcTrafficDataPerIntervalObject.timeStamp = valueRealTimeSrcTrafficDataPerIntervalDataModule["TimeStamp"].asString();
 		if(!valueRealTimeSrcTrafficDataPerIntervalDataModule["Value"].isNull())
 			realTimeSrcTrafficDataPerIntervalObject.value = valueRealTimeSrcTrafficDataPerIntervalDataModule["Value"].asString();
+		if(!valueRealTimeSrcTrafficDataPerIntervalDataModule["TimeStamp"].isNull())
+			realTimeSrcTrafficDataPerIntervalObject.timeStamp = valueRealTimeSrcTrafficDataPerIntervalDataModule["TimeStamp"].asString();
 		realTimeSrcTrafficDataPerInterval_.push_back(realTimeSrcTrafficDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

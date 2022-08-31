@@ -121,8 +121,8 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/DescribeScdnUserProtectInfoResult.h
 	include/alibabacloud/scdn/model/DescribeScdnUserQuotaRequest.h
 	include/alibabacloud/scdn/model/DescribeScdnUserQuotaResult.h
-	include/alibabacloud/scdn/model/OpenScdnServiceRequest.h
-	include/alibabacloud/scdn/model/OpenScdnServiceResult.h
+	include/alibabacloud/scdn/model/DescribeScdnVerifyContentRequest.h
+	include/alibabacloud/scdn/model/DescribeScdnVerifyContentResult.h
 	include/alibabacloud/scdn/model/PreloadScdnObjectCachesRequest.h
 	include/alibabacloud/scdn/model/PreloadScdnObjectCachesResult.h
 	include/alibabacloud/scdn/model/RefreshScdnObjectCachesRequest.h
@@ -133,16 +133,18 @@ set(scdn_public_header_model
 	include/alibabacloud/scdn/model/SetScdnCcInfoResult.h
 	include/alibabacloud/scdn/model/SetScdnDDoSInfoRequest.h
 	include/alibabacloud/scdn/model/SetScdnDDoSInfoResult.h
-	include/alibabacloud/scdn/model/SetScdnDomainBizInfoRequest.h
-	include/alibabacloud/scdn/model/SetScdnDomainBizInfoResult.h
 	include/alibabacloud/scdn/model/SetScdnDomainCertificateRequest.h
 	include/alibabacloud/scdn/model/SetScdnDomainCertificateResult.h
 	include/alibabacloud/scdn/model/StartScdnDomainRequest.h
 	include/alibabacloud/scdn/model/StartScdnDomainResult.h
 	include/alibabacloud/scdn/model/StopScdnDomainRequest.h
 	include/alibabacloud/scdn/model/StopScdnDomainResult.h
+	include/alibabacloud/scdn/model/TestAmpDescribeScdnDomainIspDataRequest.h
+	include/alibabacloud/scdn/model/TestAmpDescribeScdnDomainIspDataResult.h
 	include/alibabacloud/scdn/model/UpdateScdnDomainRequest.h
-	include/alibabacloud/scdn/model/UpdateScdnDomainResult.h )
+	include/alibabacloud/scdn/model/UpdateScdnDomainResult.h
+	include/alibabacloud/scdn/model/VerifyScdnDomainOwnerRequest.h
+	include/alibabacloud/scdn/model/VerifyScdnDomainOwnerResult.h )
 
 set(scdn_src 
 	src/ScdnClient.cc
@@ -246,8 +248,8 @@ set(scdn_src
 	src/model/DescribeScdnUserProtectInfoResult.cc
 	src/model/DescribeScdnUserQuotaRequest.cc
 	src/model/DescribeScdnUserQuotaResult.cc
-	src/model/OpenScdnServiceRequest.cc
-	src/model/OpenScdnServiceResult.cc
+	src/model/DescribeScdnVerifyContentRequest.cc
+	src/model/DescribeScdnVerifyContentResult.cc
 	src/model/PreloadScdnObjectCachesRequest.cc
 	src/model/PreloadScdnObjectCachesResult.cc
 	src/model/RefreshScdnObjectCachesRequest.cc
@@ -258,16 +260,18 @@ set(scdn_src
 	src/model/SetScdnCcInfoResult.cc
 	src/model/SetScdnDDoSInfoRequest.cc
 	src/model/SetScdnDDoSInfoResult.cc
-	src/model/SetScdnDomainBizInfoRequest.cc
-	src/model/SetScdnDomainBizInfoResult.cc
 	src/model/SetScdnDomainCertificateRequest.cc
 	src/model/SetScdnDomainCertificateResult.cc
 	src/model/StartScdnDomainRequest.cc
 	src/model/StartScdnDomainResult.cc
 	src/model/StopScdnDomainRequest.cc
 	src/model/StopScdnDomainResult.cc
+	src/model/TestAmpDescribeScdnDomainIspDataRequest.cc
+	src/model/TestAmpDescribeScdnDomainIspDataResult.cc
 	src/model/UpdateScdnDomainRequest.cc
-	src/model/UpdateScdnDomainResult.cc )
+	src/model/UpdateScdnDomainResult.cc
+	src/model/VerifyScdnDomainOwnerRequest.cc
+	src/model/VerifyScdnDomainOwnerResult.cc )
 
 add_library(scdn ${LIB_TYPE}
 	${scdn_public_header}

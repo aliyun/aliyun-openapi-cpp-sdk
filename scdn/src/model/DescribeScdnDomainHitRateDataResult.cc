@@ -45,18 +45,18 @@ void DescribeScdnDomainHitRateDataResult::parse(const std::string &payload)
 		DataModule hitRatePerIntervalObject;
 		if(!valueHitRatePerIntervalDataModule["TimeStamp"].isNull())
 			hitRatePerIntervalObject.timeStamp = valueHitRatePerIntervalDataModule["TimeStamp"].asString();
-		if(!valueHitRatePerIntervalDataModule["ReqHitRate"].isNull())
-			hitRatePerIntervalObject.reqHitRate = valueHitRatePerIntervalDataModule["ReqHitRate"].asString();
 		if(!valueHitRatePerIntervalDataModule["ByteHitRate"].isNull())
 			hitRatePerIntervalObject.byteHitRate = valueHitRatePerIntervalDataModule["ByteHitRate"].asString();
+		if(!valueHitRatePerIntervalDataModule["ReqHitRate"].isNull())
+			hitRatePerIntervalObject.reqHitRate = valueHitRatePerIntervalDataModule["ReqHitRate"].asString();
 		hitRatePerInterval_.push_back(hitRatePerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

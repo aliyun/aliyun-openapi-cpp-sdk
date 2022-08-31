@@ -39,8 +39,8 @@ namespace AlibabaCloud
 					std::string httpQpsValue;
 					std::string httpsAccValue;
 					std::string qpsValue;
-					std::string timeStamp;
 					std::string accValue;
+					std::string timeStamp;
 				};
 
 

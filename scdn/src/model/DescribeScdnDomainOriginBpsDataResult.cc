@@ -43,22 +43,22 @@ void DescribeScdnDomainOriginBpsDataResult::parse(const std::string &payload)
 	for (auto valueOriginBpsDataPerIntervalDataModule : allOriginBpsDataPerIntervalNode)
 	{
 		DataModule originBpsDataPerIntervalObject;
-		if(!valueOriginBpsDataPerIntervalDataModule["TimeStamp"].isNull())
-			originBpsDataPerIntervalObject.timeStamp = valueOriginBpsDataPerIntervalDataModule["TimeStamp"].asString();
-		if(!valueOriginBpsDataPerIntervalDataModule["OriginBpsValue"].isNull())
-			originBpsDataPerIntervalObject.originBpsValue = valueOriginBpsDataPerIntervalDataModule["OriginBpsValue"].asString();
 		if(!valueOriginBpsDataPerIntervalDataModule["HttpOriginBpsValue"].isNull())
 			originBpsDataPerIntervalObject.httpOriginBpsValue = valueOriginBpsDataPerIntervalDataModule["HttpOriginBpsValue"].asString();
+		if(!valueOriginBpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			originBpsDataPerIntervalObject.timeStamp = valueOriginBpsDataPerIntervalDataModule["TimeStamp"].asString();
 		if(!valueOriginBpsDataPerIntervalDataModule["HttpsOriginBpsValue"].isNull())
 			originBpsDataPerIntervalObject.httpsOriginBpsValue = valueOriginBpsDataPerIntervalDataModule["HttpsOriginBpsValue"].asString();
+		if(!valueOriginBpsDataPerIntervalDataModule["OriginBpsValue"].isNull())
+			originBpsDataPerIntervalObject.originBpsValue = valueOriginBpsDataPerIntervalDataModule["OriginBpsValue"].asString();
 		originBpsDataPerInterval_.push_back(originBpsDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

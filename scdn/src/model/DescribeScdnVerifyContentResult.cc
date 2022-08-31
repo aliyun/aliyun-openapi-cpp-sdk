@@ -14,31 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/scdn/model/OpenScdnServiceResult.h>
+#include <alibabacloud/scdn/model/DescribeScdnVerifyContentResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Scdn;
 using namespace AlibabaCloud::Scdn::Model;
 
-OpenScdnServiceResult::OpenScdnServiceResult() :
+DescribeScdnVerifyContentResult::DescribeScdnVerifyContentResult() :
 	ServiceResult()
 {}
 
-OpenScdnServiceResult::OpenScdnServiceResult(const std::string &payload) :
+DescribeScdnVerifyContentResult::DescribeScdnVerifyContentResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-OpenScdnServiceResult::~OpenScdnServiceResult()
+DescribeScdnVerifyContentResult::~DescribeScdnVerifyContentResult()
 {}
 
-void OpenScdnServiceResult::parse(const std::string &payload)
+void DescribeScdnVerifyContentResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Content"].isNull())
+		content_ = value["Content"].asString();
 
+}
+
+std::string DescribeScdnVerifyContentResult::getContent()const
+{
+	return content_;
 }
 

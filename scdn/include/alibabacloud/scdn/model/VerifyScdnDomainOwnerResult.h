@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCDN_MODEL_SETSCDNDOMAINBIZINFOREQUEST_H_
-#define ALIBABACLOUD_SCDN_MODEL_SETSCDNDOMAINBIZINFOREQUEST_H_
+#ifndef ALIBABACLOUD_SCDN_MODEL_VERIFYSCDNDOMAINOWNERRESULT_H_
+#define ALIBABACLOUD_SCDN_MODEL_VERIFYSCDNDOMAINOWNERRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/scdn/ScdnExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCDN_EXPORT SetScdnDomainBizInfoRequest : public RpcServiceRequest
+			class ALIBABACLOUD_SCDN_EXPORT VerifyScdnDomainOwnerResult : public ServiceResult
 			{
-
 			public:
-				SetScdnDomainBizInfoRequest();
-				~SetScdnDomainBizInfoRequest();
 
-				std::string getBizName()const;
-				void setBizName(const std::string& bizName);
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
 
-            private:
-				std::string bizName_;
-				std::string domainName_;
-				long ownerId_;
+				VerifyScdnDomainOwnerResult();
+				explicit VerifyScdnDomainOwnerResult(const std::string &payload);
+				~VerifyScdnDomainOwnerResult();
+				std::string getContent()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string content_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCDN_MODEL_SETSCDNDOMAINBIZINFOREQUEST_H_
+#endif // !ALIBABACLOUD_SCDN_MODEL_VERIFYSCDNDOMAINOWNERRESULT_H_

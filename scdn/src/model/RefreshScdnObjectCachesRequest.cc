@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Scdn::Model::RefreshScdnObjectCachesRequest;
 
-RefreshScdnObjectCachesRequest::RefreshScdnObjectCachesRequest() :
-	RpcServiceRequest("scdn", "2017-11-15", "RefreshScdnObjectCaches")
-{
-	setMethod(HttpRequest::Method::Post);
+RefreshScdnObjectCachesRequest::RefreshScdnObjectCachesRequest()
+    : RpcServiceRequest("scdn", "2017-11-15", "RefreshScdnObjectCaches") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-RefreshScdnObjectCachesRequest::~RefreshScdnObjectCachesRequest()
-{}
+RefreshScdnObjectCachesRequest::~RefreshScdnObjectCachesRequest() {}
 
-std::string RefreshScdnObjectCachesRequest::getObjectPath()const
-{
-	return objectPath_;
+std::string RefreshScdnObjectCachesRequest::getObjectPath() const {
+  return objectPath_;
 }
 
-void RefreshScdnObjectCachesRequest::setObjectPath(const std::string& objectPath)
-{
-	objectPath_ = objectPath;
-	setParameter("ObjectPath", objectPath);
+void RefreshScdnObjectCachesRequest::setObjectPath(const std::string &objectPath) {
+  objectPath_ = objectPath;
+  setParameter(std::string("ObjectPath"), objectPath);
 }
 
-long RefreshScdnObjectCachesRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string RefreshScdnObjectCachesRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void RefreshScdnObjectCachesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void RefreshScdnObjectCachesRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string RefreshScdnObjectCachesRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string RefreshScdnObjectCachesRequest::getObjectType() const {
+  return objectType_;
 }
 
-void RefreshScdnObjectCachesRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void RefreshScdnObjectCachesRequest::setObjectType(const std::string &objectType) {
+  objectType_ = objectType;
+  setParameter(std::string("ObjectType"), objectType);
 }
 
-std::string RefreshScdnObjectCachesRequest::getObjectType()const
-{
-	return objectType_;
+long RefreshScdnObjectCachesRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void RefreshScdnObjectCachesRequest::setObjectType(const std::string& objectType)
-{
-	objectType_ = objectType;
-	setParameter("ObjectType", objectType);
+void RefreshScdnObjectCachesRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
