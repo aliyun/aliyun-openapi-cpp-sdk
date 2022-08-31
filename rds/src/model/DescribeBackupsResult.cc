@@ -97,6 +97,8 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			itemsObject.backupExtractionStatus = valueItemsBackup["BackupExtractionStatus"].asString();
 		if(!valueItemsBackup["Checksum"].isNull())
 			itemsObject.checksum = valueItemsBackup["Checksum"].asString();
+		if(!valueItemsBackup["ResourceGroupId"].isNull())
+			itemsObject.resourceGroupId = valueItemsBackup["ResourceGroupId"].asString();
 		auto allBackupDownloadLinkByDBNode = valueItemsBackup["BackupDownloadLinkByDB"]["BackupDownloadLinkByDBItem"];
 		for (auto valueItemsBackupBackupDownloadLinkByDBBackupDownloadLinkByDBItem : allBackupDownloadLinkByDBNode)
 		{

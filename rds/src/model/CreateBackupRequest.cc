@@ -43,6 +43,15 @@ void CreateBackupRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CreateBackupRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateBackupRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateBackupRequest::getBackupStrategy() const {
   return backupStrategy_;
 }

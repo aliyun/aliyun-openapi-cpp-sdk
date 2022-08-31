@@ -43,6 +43,15 @@ void CreateDatabaseRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CreateDatabaseRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateDatabaseRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateDatabaseRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

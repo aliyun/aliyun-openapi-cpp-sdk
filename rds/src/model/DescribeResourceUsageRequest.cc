@@ -34,15 +34,6 @@ void DescribeResourceUsageRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeResourceUsageRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeResourceUsageRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
 std::string DescribeResourceUsageRequest::getClientToken() const {
   return clientToken_;
 }
@@ -50,6 +41,42 @@ std::string DescribeResourceUsageRequest::getClientToken() const {
 void DescribeResourceUsageRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
   setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string DescribeResourceUsageRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DescribeResourceUsageRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeResourceUsageRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeResourceUsageRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string DescribeResourceUsageRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void DescribeResourceUsageRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DescribeResourceUsageRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeResourceUsageRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
 std::string DescribeResourceUsageRequest::getOwnerAccount() const {
@@ -68,23 +95,5 @@ long DescribeResourceUsageRequest::getOwnerId() const {
 void DescribeResourceUsageRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DescribeResourceUsageRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DescribeResourceUsageRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DescribeResourceUsageRequest::getDBInstanceId() const {
-  return dBInstanceId_;
-}
-
-void DescribeResourceUsageRequest::setDBInstanceId(const std::string &dBInstanceId) {
-  dBInstanceId_ = dBInstanceId;
-  setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 

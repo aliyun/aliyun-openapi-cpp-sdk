@@ -65,6 +65,8 @@ void DescribeDBProxyPerformanceResult::parse(const std::string &payload)
 		startTime_ = value["StartTime"].asString();
 	if(!value["DBInstanceId"].isNull())
 		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["DBProxyEngineType"].isNull())
+		dBProxyEngineType_ = value["DBProxyEngineType"].asString();
 
 }
 
@@ -86,5 +88,10 @@ std::string DescribeDBProxyPerformanceResult::getDBInstanceId()const
 std::string DescribeDBProxyPerformanceResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeDBProxyPerformanceResult::getDBProxyEngineType()const
+{
+	return dBProxyEngineType_;
 }
 

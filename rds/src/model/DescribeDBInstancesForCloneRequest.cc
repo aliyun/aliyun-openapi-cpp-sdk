@@ -97,6 +97,15 @@ void DescribeDBInstancesForCloneRequest::setAccessKeyId(const std::string &acces
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBInstancesForCloneRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeDBInstancesForCloneRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeDBInstancesForCloneRequest::getExpired() const {
   return expired_;
 }

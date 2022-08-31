@@ -70,3 +70,12 @@ void DescribeDBInstanceMetricsRequest::setAccessKeyId(const std::string &accessK
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBInstanceMetricsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeDBInstanceMetricsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+

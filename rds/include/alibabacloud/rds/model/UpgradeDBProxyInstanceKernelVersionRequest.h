@@ -32,27 +32,30 @@ public:
 	~UpgradeDBProxyInstanceKernelVersionRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getUpgradeTime() const;
-	void setUpgradeTime(const std::string &upgradeTime);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getSwitchTime() const;
 	void setSwitchTime(const std::string &switchTime);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getDBProxyEngineType() const;
+	void setDBProxyEngineType(const std::string &dBProxyEngineType);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getUpgradeTime() const;
+	void setUpgradeTime(const std::string &upgradeTime);
 
 private:
 	long resourceOwnerId_;
-	std::string resourceOwnerAccount_;
-	long ownerId_;
 	std::string accessKeyId_;
-	std::string upgradeTime_;
 	std::string dBInstanceId_;
 	std::string switchTime_;
+	std::string resourceOwnerAccount_;
+	std::string dBProxyEngineType_;
+	long ownerId_;
+	std::string upgradeTime_;
 };
 } // namespace Model
 } // namespace Rds

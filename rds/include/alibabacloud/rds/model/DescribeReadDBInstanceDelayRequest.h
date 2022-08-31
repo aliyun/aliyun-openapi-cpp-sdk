@@ -36,6 +36,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getReadInstanceId() const;
 	void setReadInstanceId(const std::string &readInstanceId);
 	std::string getDBInstanceId() const;
@@ -51,6 +53,7 @@ private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string securityToken_;
+	std::string regionId_;
 	std::string readInstanceId_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;

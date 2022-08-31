@@ -46,6 +46,8 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getEndTime() const;
 	void setEndTime(const std::string &endTime);
+	std::string getDBProxyEngineType() const;
+	void setDBProxyEngineType(const std::string &dBProxyEngineType);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getDBProxyInstanceType() const;
@@ -60,6 +62,7 @@ private:
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	std::string endTime_;
+	std::string dBProxyEngineType_;
 	long ownerId_;
 	std::string dBProxyInstanceType_;
 };

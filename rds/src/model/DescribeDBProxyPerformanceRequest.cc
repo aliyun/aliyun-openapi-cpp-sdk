@@ -97,6 +97,15 @@ void DescribeDBProxyPerformanceRequest::setEndTime(const std::string &endTime) {
   setParameter(std::string("EndTime"), endTime);
 }
 
+std::string DescribeDBProxyPerformanceRequest::getDBProxyEngineType() const {
+  return dBProxyEngineType_;
+}
+
+void DescribeDBProxyPerformanceRequest::setDBProxyEngineType(const std::string &dBProxyEngineType) {
+  dBProxyEngineType_ = dBProxyEngineType;
+  setParameter(std::string("DBProxyEngineType"), dBProxyEngineType);
+}
+
 long DescribeDBProxyPerformanceRequest::getOwnerId() const {
   return ownerId_;
 }

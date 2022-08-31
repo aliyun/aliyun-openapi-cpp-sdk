@@ -52,6 +52,15 @@ void DescribeDatabasesRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDatabasesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeDatabasesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeDatabasesRequest::getDBStatus() const {
   return dBStatus_;
 }

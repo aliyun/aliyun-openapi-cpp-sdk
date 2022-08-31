@@ -42,6 +42,8 @@ public:
 	void setDBProxyNewConnectStringPort(const std::string &dBProxyNewConnectStringPort);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getDBProxyEngineType() const;
+	void setDBProxyEngineType(const std::string &dBProxyEngineType);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getDBProxyEndpointId() const;
@@ -56,6 +58,7 @@ private:
 	std::string dBInstanceId_;
 	std::string dBProxyNewConnectStringPort_;
 	std::string resourceOwnerAccount_;
+	std::string dBProxyEngineType_;
 	long ownerId_;
 	std::string dBProxyEndpointId_;
 	std::string dBProxyNewConnectString_;

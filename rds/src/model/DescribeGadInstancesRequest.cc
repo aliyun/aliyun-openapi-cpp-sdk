@@ -25,6 +25,15 @@ DescribeGadInstancesRequest::DescribeGadInstancesRequest()
 
 DescribeGadInstancesRequest::~DescribeGadInstancesRequest() {}
 
+std::string DescribeGadInstancesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeGadInstancesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeGadInstancesRequest::getRegionId() const {
   return regionId_;
 }

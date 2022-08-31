@@ -52,6 +52,15 @@ void DescribeReadDBInstanceDelayRequest::setSecurityToken(const std::string &sec
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string DescribeReadDBInstanceDelayRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeReadDBInstanceDelayRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string DescribeReadDBInstanceDelayRequest::getReadInstanceId() const {
   return readInstanceId_;
 }

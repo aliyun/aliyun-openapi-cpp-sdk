@@ -106,3 +106,12 @@ void RenewInstanceRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string RenewInstanceRequest::getAutoRenew() const {
+  return autoRenew_;
+}
+
+void RenewInstanceRequest::setAutoRenew(const std::string &autoRenew) {
+  autoRenew_ = autoRenew;
+  setParameter(std::string("AutoRenew"), autoRenew);
+}
+

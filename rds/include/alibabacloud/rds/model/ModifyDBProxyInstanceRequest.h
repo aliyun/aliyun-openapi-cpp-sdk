@@ -44,6 +44,8 @@ public:
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getDBProxyEngineType() const;
+	void setDBProxyEngineType(const std::string &dBProxyEngineType);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getDBProxyInstanceNum() const;
@@ -59,6 +61,7 @@ private:
 	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
+	std::string dBProxyEngineType_;
 	long ownerId_;
 	std::string dBProxyInstanceNum_;
 	std::string dBProxyInstanceType_;

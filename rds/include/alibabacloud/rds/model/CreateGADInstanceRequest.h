@@ -28,6 +28,10 @@ namespace Rds {
 namespace Model {
 class ALIBABACLOUD_RDS_EXPORT CreateGADInstanceRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	struct UnitNode {
 		long dBInstanceStorage;
 		std::string zoneIDSlave1;
@@ -47,29 +51,35 @@ public:
 	};
 	CreateGADInstanceRequest();
 	~CreateGADInstanceRequest();
-	std::string getDBList() const;
-	void setDBList(const std::string &dBList);
-	std::string getCentralDBInstanceId() const;
-	void setCentralDBInstanceId(const std::string &centralDBInstanceId);
-	std::string getCentralRdsDtsAdminPassword() const;
-	void setCentralRdsDtsAdminPassword(const std::string &centralRdsDtsAdminPassword);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getCentralRdsDtsAdminAccount() const;
 	void setCentralRdsDtsAdminAccount(const std::string &centralRdsDtsAdminAccount);
 	std::string getCentralRegionId() const;
 	void setCentralRegionId(const std::string &centralRegionId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::vector<UnitNode> getUnitNode() const;
 	void setUnitNode(const std::vector<UnitNode> &unitNode);
+	std::string getDBList() const;
+	void setDBList(const std::string &dBList);
+	std::string getCentralDBInstanceId() const;
+	void setCentralDBInstanceId(const std::string &centralDBInstanceId);
+	std::string getCentralRdsDtsAdminPassword() const;
+	void setCentralRdsDtsAdminPassword(const std::string &centralRdsDtsAdminPassword);
 
 private:
-	std::string dBList_;
-	std::string centralDBInstanceId_;
-	std::string centralRdsDtsAdminPassword_;
 	std::string description_;
 	std::string centralRdsDtsAdminAccount_;
 	std::string centralRegionId_;
+	std::string resourceGroupId_;
+	std::vector<Tag> tag_;
 	std::vector<UnitNode> unitNode_;
+	std::string dBList_;
+	std::string centralDBInstanceId_;
+	std::string centralRdsDtsAdminPassword_;
 };
 } // namespace Model
 } // namespace Rds

@@ -70,6 +70,15 @@ void DescribeBackupsRequest::setBackupLocation(const std::string &backupLocation
   setParameter(std::string("BackupLocation"), backupLocation);
 }
 
+std::string DescribeBackupsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeBackupsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 int DescribeBackupsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -86,6 +95,15 @@ std::string DescribeBackupsRequest::getDBInstanceId() const {
 void DescribeBackupsRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DescribeBackupsRequest::getBackupType() const {
+  return backupType_;
+}
+
+void DescribeBackupsRequest::setBackupType(const std::string &backupType) {
+  backupType_ = backupType;
+  setParameter(std::string("BackupType"), backupType);
 }
 
 std::string DescribeBackupsRequest::getResourceOwnerAccount() const {

@@ -31,6 +31,8 @@ public:
 	struct ServerlessConfiguration {
 		double minCapacity;
 		double maxCapacity;
+		bool autoPause;
+		bool switchForce;
 	};
 	ModifyDBInstanceSpecRequest();
 	~ModifyDBInstanceSpecRequest();

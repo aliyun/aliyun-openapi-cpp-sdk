@@ -40,10 +40,14 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getBackupLocation() const;
 	void setBackupLocation(const std::string &backupLocation);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getBackupType() const;
+	void setBackupType(const std::string &backupType);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getBackupId() const;
@@ -65,8 +69,10 @@ private:
 	int pageNumber_;
 	std::string accessKeyId_;
 	std::string backupLocation_;
+	std::string resourceGroupId_;
 	int pageSize_;
 	std::string dBInstanceId_;
+	std::string backupType_;
 	std::string resourceOwnerAccount_;
 	std::string backupId_;
 	std::string ownerAccount_;

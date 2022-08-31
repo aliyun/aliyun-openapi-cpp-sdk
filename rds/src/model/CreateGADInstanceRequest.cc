@@ -25,33 +25,6 @@ CreateGADInstanceRequest::CreateGADInstanceRequest()
 
 CreateGADInstanceRequest::~CreateGADInstanceRequest() {}
 
-std::string CreateGADInstanceRequest::getDBList() const {
-  return dBList_;
-}
-
-void CreateGADInstanceRequest::setDBList(const std::string &dBList) {
-  dBList_ = dBList;
-  setParameter(std::string("DBList"), dBList);
-}
-
-std::string CreateGADInstanceRequest::getCentralDBInstanceId() const {
-  return centralDBInstanceId_;
-}
-
-void CreateGADInstanceRequest::setCentralDBInstanceId(const std::string &centralDBInstanceId) {
-  centralDBInstanceId_ = centralDBInstanceId;
-  setParameter(std::string("CentralDBInstanceId"), centralDBInstanceId);
-}
-
-std::string CreateGADInstanceRequest::getCentralRdsDtsAdminPassword() const {
-  return centralRdsDtsAdminPassword_;
-}
-
-void CreateGADInstanceRequest::setCentralRdsDtsAdminPassword(const std::string &centralRdsDtsAdminPassword) {
-  centralRdsDtsAdminPassword_ = centralRdsDtsAdminPassword;
-  setParameter(std::string("CentralRdsDtsAdminPassword"), centralRdsDtsAdminPassword);
-}
-
 std::string CreateGADInstanceRequest::getDescription() const {
   return description_;
 }
@@ -79,6 +52,29 @@ void CreateGADInstanceRequest::setCentralRegionId(const std::string &centralRegi
   setParameter(std::string("CentralRegionId"), centralRegionId);
 }
 
+std::string CreateGADInstanceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateGADInstanceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::vector<CreateGADInstanceRequest::Tag> CreateGADInstanceRequest::getTag() const {
+  return tag_;
+}
+
+void CreateGADInstanceRequest::setTag(const std::vector<CreateGADInstanceRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::vector<CreateGADInstanceRequest::UnitNode> CreateGADInstanceRequest::getUnitNode() const {
   return unitNode_;
 }
@@ -104,5 +100,32 @@ void CreateGADInstanceRequest::setUnitNode(const std::vector<CreateGADInstanceRe
     setParameter(unitNodeObjStr + ".PayType", unitNodeObj.payType);
     setParameter(unitNodeObjStr + ".DtsConflict", unitNodeObj.dtsConflict);
   }
+}
+
+std::string CreateGADInstanceRequest::getDBList() const {
+  return dBList_;
+}
+
+void CreateGADInstanceRequest::setDBList(const std::string &dBList) {
+  dBList_ = dBList;
+  setParameter(std::string("DBList"), dBList);
+}
+
+std::string CreateGADInstanceRequest::getCentralDBInstanceId() const {
+  return centralDBInstanceId_;
+}
+
+void CreateGADInstanceRequest::setCentralDBInstanceId(const std::string &centralDBInstanceId) {
+  centralDBInstanceId_ = centralDBInstanceId;
+  setParameter(std::string("CentralDBInstanceId"), centralDBInstanceId);
+}
+
+std::string CreateGADInstanceRequest::getCentralRdsDtsAdminPassword() const {
+  return centralRdsDtsAdminPassword_;
+}
+
+void CreateGADInstanceRequest::setCentralRdsDtsAdminPassword(const std::string &centralRdsDtsAdminPassword) {
+  centralRdsDtsAdminPassword_ = centralRdsDtsAdminPassword;
+  setParameter(std::string("CentralRdsDtsAdminPassword"), centralRdsDtsAdminPassword);
 }
 

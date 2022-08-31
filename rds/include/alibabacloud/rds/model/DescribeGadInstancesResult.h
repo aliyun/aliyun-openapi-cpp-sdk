@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						std::string role;
 						std::string status;
 						std::string engineVersion;
+						std::string resourceGroupId;
 						std::string dBInstanceID;
 						std::string regionId;
 						std::string dtsInstance;

@@ -46,6 +46,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getTag1value() const;
 	void setTag1value(const std::string &tag1value);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSortKey() const;
 	void setSortKey(const std::string &sortKey);
 	std::string getRegionId() const;
@@ -88,6 +90,7 @@ private:
 	int pageNumber_;
 	std::string accessKeyId_;
 	std::string tag1value_;
+	std::string resourceGroupId_;
 	std::string sortKey_;
 	std::string regionId_;
 	int pageSize_;

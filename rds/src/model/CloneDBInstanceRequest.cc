@@ -241,6 +241,18 @@ void CloneDBInstanceRequest::setRestoreTime(const std::string &restoreTime) {
   setParameter(std::string("RestoreTime"), restoreTime);
 }
 
+CloneDBInstanceRequest::ServerlessConfig CloneDBInstanceRequest::getServerlessConfig() const {
+  return serverlessConfig_;
+}
+
+void CloneDBInstanceRequest::setServerlessConfig(const CloneDBInstanceRequest::ServerlessConfig &serverlessConfig) {
+  serverlessConfig_ = serverlessConfig;
+  setParameter(std::string("ServerlessConfig") + ".MinCapacity", std::to_string(serverlessConfig.minCapacity));
+  setParameter(std::string("ServerlessConfig") + ".MaxCapacity", std::to_string(serverlessConfig.maxCapacity));
+  setParameter(std::string("ServerlessConfig") + ".AutoPause", serverlessConfig.autoPause ? "true" : "false");
+  setParameter(std::string("ServerlessConfig") + ".SwitchForce", serverlessConfig.switchForce ? "true" : "false");
+}
+
 std::string CloneDBInstanceRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

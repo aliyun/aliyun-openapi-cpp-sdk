@@ -70,3 +70,12 @@ void DescribeAvailableMetricsRequest::setAccessKeyId(const std::string &accessKe
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeAvailableMetricsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeAvailableMetricsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+

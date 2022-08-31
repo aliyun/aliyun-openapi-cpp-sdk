@@ -45,11 +45,13 @@ namespace AlibabaCloud
 				DescribeDiagnosticReportListResult();
 				explicit DescribeDiagnosticReportListResult(const std::string &payload);
 				~DescribeDiagnosticReportListResult();
+				std::string getDBInstanceId()const;
 				std::vector<Report> getReportList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dBInstanceId_;
 				std::vector<Report> reportList_;
 
 			};

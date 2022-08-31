@@ -52,6 +52,15 @@ void DescribeVSwitchesRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeVSwitchesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeVSwitchesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeVSwitchesRequest::getSecurityToken() const {
   return securityToken_;
 }

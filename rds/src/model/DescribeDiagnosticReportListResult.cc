@@ -55,7 +55,14 @@ void DescribeDiagnosticReportListResult::parse(const std::string &payload)
 			reportListObject.downloadURL = valueReportListReport["DownloadURL"].asString();
 		reportList_.push_back(reportListObject);
 	}
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
 
+}
+
+std::string DescribeDiagnosticReportListResult::getDBInstanceId()const
+{
+	return dBInstanceId_;
 }
 
 std::vector<DescribeDiagnosticReportListResult::Report> DescribeDiagnosticReportListResult::getReportList()const

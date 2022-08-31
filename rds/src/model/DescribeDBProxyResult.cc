@@ -89,12 +89,13 @@ void DescribeDBProxyResult::parse(const std::string &payload)
 		dBProxyInstanceName_ = value["DBProxyInstanceName"].asString();
 	if(!value["DBProxyInstanceSize"].isNull())
 		dBProxyInstanceSize_ = value["DBProxyInstanceSize"].asString();
+	if(!value["DBProxyEngineType"].isNull())
+		dBProxyEngineType_ = value["DBProxyEngineType"].asString();
+	if(!value["AccountName"].isNull())
+		accountName_ = value["AccountName"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
-}
-
-std::string DescribeDBProxyResult::getDBProxyInstanceName()const
-{
-	return dBProxyInstanceName_;
 }
 
 std::string DescribeDBProxyResult::getDBProxyInstanceCurrentMinorVersion()const
@@ -112,9 +113,9 @@ int DescribeDBProxyResult::getDBProxyInstanceNum()const
 	return dBProxyInstanceNum_;
 }
 
-std::string DescribeDBProxyResult::getDBProxyServiceStatus()const
+std::string DescribeDBProxyResult::getResourceGroupId()const
 {
-	return dBProxyServiceStatus_;
+	return resourceGroupId_;
 }
 
 std::vector<DescribeDBProxyResult::DbProxyEndpointItemsItem> DescribeDBProxyResult::getDbProxyEndpointItems()const
@@ -127,18 +128,38 @@ std::string DescribeDBProxyResult::getDBProxyInstanceSize()const
 	return dBProxyInstanceSize_;
 }
 
-std::vector<DescribeDBProxyResult::DBProxyConnectStringItemsItem> DescribeDBProxyResult::getDBProxyConnectStringItems()const
-{
-	return dBProxyConnectStringItems_;
-}
-
 std::string DescribeDBProxyResult::getDBProxyInstanceStatus()const
 {
 	return dBProxyInstanceStatus_;
 }
 
+std::string DescribeDBProxyResult::getDBProxyEngineType()const
+{
+	return dBProxyEngineType_;
+}
+
+std::string DescribeDBProxyResult::getDBProxyInstanceName()const
+{
+	return dBProxyInstanceName_;
+}
+
+std::string DescribeDBProxyResult::getDBProxyServiceStatus()const
+{
+	return dBProxyServiceStatus_;
+}
+
+std::vector<DescribeDBProxyResult::DBProxyConnectStringItemsItem> DescribeDBProxyResult::getDBProxyConnectStringItems()const
+{
+	return dBProxyConnectStringItems_;
+}
+
 std::string DescribeDBProxyResult::getDBProxyInstanceType()const
 {
 	return dBProxyInstanceType_;
+}
+
+std::string DescribeDBProxyResult::getAccountName()const
+{
+	return accountName_;
 }
 

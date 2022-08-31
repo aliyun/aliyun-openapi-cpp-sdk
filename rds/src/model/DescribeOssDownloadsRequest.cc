@@ -70,6 +70,15 @@ void DescribeOssDownloadsRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeOssDownloadsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeOssDownloadsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeOssDownloadsRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

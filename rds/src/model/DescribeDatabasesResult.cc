@@ -55,6 +55,14 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 			databasesObject.engine = valueDatabasesDatabase["Engine"].asString();
 		if(!valueDatabasesDatabase["CharacterSetName"].isNull())
 			databasesObject.characterSetName = valueDatabasesDatabase["CharacterSetName"].asString();
+		if(!valueDatabasesDatabase["PageNumber"].isNull())
+			databasesObject.pageNumber = std::stoi(valueDatabasesDatabase["PageNumber"].asString());
+		if(!valueDatabasesDatabase["PageSize"].isNull())
+			databasesObject.pageSize = std::stoi(valueDatabasesDatabase["PageSize"].asString());
+		if(!valueDatabasesDatabase["TotalCount"].isNull())
+			databasesObject.totalCount = std::stoi(valueDatabasesDatabase["TotalCount"].asString());
+		if(!valueDatabasesDatabase["ResourceGroupId"].isNull())
+			databasesObject.resourceGroupId = valueDatabasesDatabase["ResourceGroupId"].asString();
 		auto allAccountsNode = valueDatabasesDatabase["Accounts"]["AccountPrivilegeInfo"];
 		for (auto valueDatabasesDatabaseAccountsAccountPrivilegeInfo : allAccountsNode)
 		{

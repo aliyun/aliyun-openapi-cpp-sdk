@@ -28,6 +28,12 @@ namespace Rds {
 namespace Model {
 class ALIBABACLOUD_RDS_EXPORT CloneDBInstanceRequest : public RpcServiceRequest {
 public:
+	struct ServerlessConfig {
+		double minCapacity;
+		double maxCapacity;
+		bool autoPause;
+		bool switchForce;
+	};
 	CloneDBInstanceRequest();
 	~CloneDBInstanceRequest();
 	long getResourceOwnerId() const;
@@ -78,6 +84,8 @@ public:
 	void setDedicatedHostGroupId(const std::string &dedicatedHostGroupId);
 	std::string getRestoreTime() const;
 	void setRestoreTime(const std::string &restoreTime);
+	ServerlessConfig getServerlessConfig() const;
+	void setServerlessConfig(const ServerlessConfig &serverlessConfig);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -120,6 +128,7 @@ private:
 	std::string dBInstanceStorageType_;
 	std::string dedicatedHostGroupId_;
 	std::string restoreTime_;
+	ServerlessConfig serverlessConfig_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string restoreTable_;

@@ -87,6 +87,8 @@ void ModifyDBInstanceSpecRequest::setServerlessConfiguration(const ModifyDBInsta
   serverlessConfiguration_ = serverlessConfiguration;
   setParameter(std::string("ServerlessConfiguration") + ".MinCapacity", std::to_string(serverlessConfiguration.minCapacity));
   setParameter(std::string("ServerlessConfiguration") + ".MaxCapacity", std::to_string(serverlessConfiguration.maxCapacity));
+  setParameter(std::string("ServerlessConfiguration") + ".AutoPause", serverlessConfiguration.autoPause ? "true" : "false");
+  setParameter(std::string("ServerlessConfiguration") + ".SwitchForce", serverlessConfiguration.switchForce ? "true" : "false");
 }
 
 std::string ModifyDBInstanceSpecRequest::getEffectiveTime() const {

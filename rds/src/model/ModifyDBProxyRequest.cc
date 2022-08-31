@@ -43,6 +43,24 @@ void ModifyDBProxyRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyDBProxyRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ModifyDBProxyRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string ModifyDBProxyRequest::getAccountName() const {
+  return accountName_;
+}
+
+void ModifyDBProxyRequest::setAccountName(const std::string &accountName) {
+  accountName_ = accountName;
+  setParameter(std::string("AccountName"), accountName);
+}
+
 std::string ModifyDBProxyRequest::getRegionId() const {
   return regionId_;
 }
@@ -68,6 +86,15 @@ std::string ModifyDBProxyRequest::getResourceOwnerAccount() const {
 void ModifyDBProxyRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string ModifyDBProxyRequest::getDBProxyEngineType() const {
+  return dBProxyEngineType_;
+}
+
+void ModifyDBProxyRequest::setDBProxyEngineType(const std::string &dBProxyEngineType) {
+  dBProxyEngineType_ = dBProxyEngineType;
+  setParameter(std::string("DBProxyEngineType"), dBProxyEngineType);
 }
 
 long ModifyDBProxyRequest::getOwnerId() const {
@@ -104,6 +131,15 @@ std::string ModifyDBProxyRequest::getVSwitchId() const {
 void ModifyDBProxyRequest::setVSwitchId(const std::string &vSwitchId) {
   vSwitchId_ = vSwitchId;
   setParameter(std::string("VSwitchId"), vSwitchId);
+}
+
+std::string ModifyDBProxyRequest::getAccountPassword() const {
+  return accountPassword_;
+}
+
+void ModifyDBProxyRequest::setAccountPassword(const std::string &accountPassword) {
+  accountPassword_ = accountPassword;
+  setParameter(std::string("AccountPassword"), accountPassword);
 }
 
 std::string ModifyDBProxyRequest::getVPCId() const {

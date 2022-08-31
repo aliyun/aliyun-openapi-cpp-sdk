@@ -48,6 +48,8 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getAutoRenew() const;
+	void setAutoRenew(const std::string &autoRenew);
 
 private:
 	long resourceOwnerId_;
@@ -59,6 +61,7 @@ private:
 	std::string autoPay_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
+	std::string autoRenew_;
 };
 } // namespace Model
 } // namespace Rds

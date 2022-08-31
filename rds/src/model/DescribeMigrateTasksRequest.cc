@@ -61,6 +61,15 @@ void DescribeMigrateTasksRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeMigrateTasksRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeMigrateTasksRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 int DescribeMigrateTasksRequest::getPageSize() const {
   return pageSize_;
 }

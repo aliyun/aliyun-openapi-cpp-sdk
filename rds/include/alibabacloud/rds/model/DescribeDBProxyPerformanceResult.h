@@ -52,6 +52,7 @@ namespace AlibabaCloud
 				std::string getEndTime()const;
 				std::string getDBInstanceId()const;
 				std::string getStartTime()const;
+				std::string getDBProxyEngineType()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -60,6 +61,7 @@ namespace AlibabaCloud
 				std::string endTime_;
 				std::string dBInstanceId_;
 				std::string startTime_;
+				std::string dBProxyEngineType_;
 
 			};
 		}

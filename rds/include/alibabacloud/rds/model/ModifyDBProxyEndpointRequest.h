@@ -48,6 +48,8 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDbEndpointAliases() const;
 	void setDbEndpointAliases(const std::string &dbEndpointAliases);
+	std::string getDBProxyEngineType() const;
+	void setDBProxyEngineType(const std::string &dBProxyEngineType);
 	std::string getDbEndpointOperator() const;
 	void setDbEndpointOperator(const std::string &dbEndpointOperator);
 	std::string getDbEndpointType() const;
@@ -71,6 +73,7 @@ private:
 	std::string readOnlyInstanceMaxDelayTime_;
 	std::string resourceOwnerAccount_;
 	std::string dbEndpointAliases_;
+	std::string dBProxyEngineType_;
 	std::string dbEndpointOperator_;
 	std::string dbEndpointType_;
 	long ownerId_;

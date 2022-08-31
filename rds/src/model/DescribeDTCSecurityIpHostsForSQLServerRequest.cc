@@ -43,6 +43,15 @@ void DescribeDTCSecurityIpHostsForSQLServerRequest::setAccessKeyId(const std::st
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDTCSecurityIpHostsForSQLServerRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeDTCSecurityIpHostsForSQLServerRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeDTCSecurityIpHostsForSQLServerRequest::getSecurityToken() const {
   return securityToken_;
 }

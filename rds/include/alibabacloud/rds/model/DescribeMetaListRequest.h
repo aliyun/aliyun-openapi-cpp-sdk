@@ -38,6 +38,8 @@ public:
 	void setPattern(const std::string &pattern);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getDBInstanceId() const;
@@ -62,6 +64,7 @@ private:
 	std::string clientToken_;
 	std::string pattern_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	int pageSize_;
 	std::string dBInstanceId_;
 	int pageIndex_;

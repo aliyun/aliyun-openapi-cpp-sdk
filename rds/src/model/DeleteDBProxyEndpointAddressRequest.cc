@@ -52,15 +52,6 @@ void DeleteDBProxyEndpointAddressRequest::setRegionId(const std::string &regionI
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DeleteDBProxyEndpointAddressRequest::getDBProxyEndpointId() const {
-  return dBProxyEndpointId_;
-}
-
-void DeleteDBProxyEndpointAddressRequest::setDBProxyEndpointId(const std::string &dBProxyEndpointId) {
-  dBProxyEndpointId_ = dBProxyEndpointId;
-  setParameter(std::string("DBProxyEndpointId"), dBProxyEndpointId);
-}
-
 std::string DeleteDBProxyEndpointAddressRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }
@@ -68,5 +59,23 @@ std::string DeleteDBProxyEndpointAddressRequest::getDBInstanceId() const {
 void DeleteDBProxyEndpointAddressRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DeleteDBProxyEndpointAddressRequest::getDBProxyEngineType() const {
+  return dBProxyEngineType_;
+}
+
+void DeleteDBProxyEndpointAddressRequest::setDBProxyEngineType(const std::string &dBProxyEngineType) {
+  dBProxyEngineType_ = dBProxyEngineType;
+  setParameter(std::string("DBProxyEngineType"), dBProxyEngineType);
+}
+
+std::string DeleteDBProxyEndpointAddressRequest::getDBProxyEndpointId() const {
+  return dBProxyEndpointId_;
+}
+
+void DeleteDBProxyEndpointAddressRequest::setDBProxyEndpointId(const std::string &dBProxyEndpointId) {
+  dBProxyEndpointId_ = dBProxyEndpointId;
+  setParameter(std::string("DBProxyEndpointId"), dBProxyEndpointId);
 }
 

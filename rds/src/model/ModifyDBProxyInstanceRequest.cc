@@ -88,6 +88,15 @@ void ModifyDBProxyInstanceRequest::setResourceOwnerAccount(const std::string &re
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
+std::string ModifyDBProxyInstanceRequest::getDBProxyEngineType() const {
+  return dBProxyEngineType_;
+}
+
+void ModifyDBProxyInstanceRequest::setDBProxyEngineType(const std::string &dBProxyEngineType) {
+  dBProxyEngineType_ = dBProxyEngineType;
+  setParameter(std::string("DBProxyEngineType"), dBProxyEngineType);
+}
+
 long ModifyDBProxyInstanceRequest::getOwnerId() const {
   return ownerId_;
 }

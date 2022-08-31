@@ -36,17 +36,20 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getDBProxyEndpointId() const;
-	void setDBProxyEndpointId(const std::string &dBProxyEndpointId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getDBProxyEngineType() const;
+	void setDBProxyEngineType(const std::string &dBProxyEngineType);
+	std::string getDBProxyEndpointId() const;
+	void setDBProxyEndpointId(const std::string &dBProxyEndpointId);
 
 private:
 	std::string dBProxyConnectStringNetType_;
 	std::string accessKeyId_;
 	std::string regionId_;
-	std::string dBProxyEndpointId_;
 	std::string dBInstanceId_;
+	std::string dBProxyEngineType_;
+	std::string dBProxyEndpointId_;
 };
 } // namespace Model
 } // namespace Rds

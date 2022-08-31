@@ -61,6 +61,15 @@ void DescribeDBInstancesAsCsvRequest::setAccessKeyId(const std::string &accessKe
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBInstancesAsCsvRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeDBInstancesAsCsvRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeDBInstancesAsCsvRequest::getRegionId() const {
   return regionId_;
 }

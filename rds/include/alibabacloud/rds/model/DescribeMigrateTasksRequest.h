@@ -38,6 +38,8 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getDBInstanceId() const;
@@ -54,6 +56,7 @@ private:
 	std::string startTime_;
 	int pageNumber_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	int pageSize_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;

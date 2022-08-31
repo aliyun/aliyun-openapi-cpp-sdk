@@ -70,6 +70,15 @@ void DescribeMigrateTaskByIdRequest::setAccessKeyId(const std::string &accessKey
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeMigrateTaskByIdRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeMigrateTaskByIdRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeMigrateTaskByIdRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

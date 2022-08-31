@@ -41,7 +41,11 @@ namespace AlibabaCloud
 						std::string accountPrivilegeDetail;
 					};
 					std::string characterSetName;
+					int totalCount;
+					int pageSize;
+					std::string resourceGroupId;
 					std::string dBInstanceId;
+					int pageNumber;
 					std::string dBDescription;
 					std::string dBName;
 					std::string dBStatus;

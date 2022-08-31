@@ -71,6 +71,8 @@ void DescribeDBProxyEndpointResult::parse(const std::string &payload)
 		dBProxyConnectStringPort_ = value["DBProxyConnectStringPort"].asString();
 	if(!value["DBProxyConnectString"].isNull())
 		dBProxyConnectString_ = value["DBProxyConnectString"].asString();
+	if(!value["DBProxyEngineType"].isNull())
+		dBProxyEngineType_ = value["DBProxyEngineType"].asString();
 
 }
 
@@ -127,5 +129,10 @@ std::vector<DescribeDBProxyEndpointResult::EndpointConnectItemsItem> DescribeDBP
 std::string DescribeDBProxyEndpointResult::getDBProxyConnectStringPort()const
 {
 	return dBProxyConnectStringPort_;
+}
+
+std::string DescribeDBProxyEndpointResult::getDBProxyEngineType()const
+{
+	return dBProxyEngineType_;
 }
 

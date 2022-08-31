@@ -43,6 +43,15 @@ void CheckCloudResourceAuthorizedRequest::setAccessKeyId(const std::string &acce
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CheckCloudResourceAuthorizedRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CheckCloudResourceAuthorizedRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CheckCloudResourceAuthorizedRequest::getSecurityToken() const {
   return securityToken_;
 }

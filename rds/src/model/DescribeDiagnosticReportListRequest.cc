@@ -34,6 +34,15 @@ void DescribeDiagnosticReportListRequest::setAccessKeyId(const std::string &acce
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDiagnosticReportListRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeDiagnosticReportListRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeDiagnosticReportListRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

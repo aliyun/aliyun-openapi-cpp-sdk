@@ -67,6 +67,8 @@ void DescribeAvailableMetricsResult::parse(const std::string &payload)
 	}
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
+	if(!value["DBInstanceName"].isNull())
+		dBInstanceName_ = value["DBInstanceName"].asString();
 
 }
 
@@ -78,5 +80,10 @@ int DescribeAvailableMetricsResult::getTotalRecordCount()const
 std::vector<DescribeAvailableMetricsResult::Metrics> DescribeAvailableMetricsResult::getItems()const
 {
 	return items_;
+}
+
+std::string DescribeAvailableMetricsResult::getDBInstanceName()const
+{
+	return dBInstanceName_;
 }
 

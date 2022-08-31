@@ -61,6 +61,15 @@ void DescribeLocalAvailableRecoveryTimeRequest::setAccessKeyId(const std::string
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeLocalAvailableRecoveryTimeRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeLocalAvailableRecoveryTimeRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeLocalAvailableRecoveryTimeRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

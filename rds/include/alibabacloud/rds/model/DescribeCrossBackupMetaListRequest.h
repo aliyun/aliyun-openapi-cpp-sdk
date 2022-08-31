@@ -36,6 +36,8 @@ public:
 	void setPattern(const std::string &pattern);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getPageSize() const;
 	void setPageSize(const std::string &pageSize);
 	std::string getPageIndex() const;
@@ -55,6 +57,7 @@ private:
 	long resourceOwnerId_;
 	std::string pattern_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	std::string pageSize_;
 	std::string pageIndex_;
 	std::string resourceOwnerAccount_;

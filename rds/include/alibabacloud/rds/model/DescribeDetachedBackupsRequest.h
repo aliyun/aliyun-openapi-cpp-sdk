@@ -40,6 +40,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getBackupLocation() const;
 	void setBackupLocation(const std::string &backupLocation);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getDBInstanceId() const;
@@ -67,6 +69,7 @@ private:
 	int pageNumber_;
 	std::string accessKeyId_;
 	std::string backupLocation_;
+	std::string resourceGroupId_;
 	int pageSize_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;

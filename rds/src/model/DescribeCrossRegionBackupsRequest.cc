@@ -61,6 +61,15 @@ void DescribeCrossRegionBackupsRequest::setAccessKeyId(const std::string &access
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeCrossRegionBackupsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeCrossRegionBackupsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeCrossRegionBackupsRequest::getRegionId() const {
   return regionId_;
 }

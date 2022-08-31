@@ -34,6 +34,42 @@ void DescribeAvailableRecoveryTimeRequest::setResourceOwnerId(long resourceOwner
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeAvailableRecoveryTimeRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DescribeAvailableRecoveryTimeRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeAvailableRecoveryTimeRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeAvailableRecoveryTimeRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
+std::string DescribeAvailableRecoveryTimeRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeAvailableRecoveryTimeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeAvailableRecoveryTimeRequest::getDBInstanceId() const {
+  return dBInstanceId_;
+}
+
+void DescribeAvailableRecoveryTimeRequest::setDBInstanceId(const std::string &dBInstanceId) {
+  dBInstanceId_ = dBInstanceId;
+  setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
 std::string DescribeAvailableRecoveryTimeRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -50,24 +86,6 @@ long DescribeAvailableRecoveryTimeRequest::getOwnerId() const {
 void DescribeAvailableRecoveryTimeRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string DescribeAvailableRecoveryTimeRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DescribeAvailableRecoveryTimeRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DescribeAvailableRecoveryTimeRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeAvailableRecoveryTimeRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
 int DescribeAvailableRecoveryTimeRequest::getCrossBackupId() const {

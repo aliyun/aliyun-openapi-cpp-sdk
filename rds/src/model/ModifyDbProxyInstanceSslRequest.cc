@@ -70,6 +70,15 @@ void ModifyDbProxyInstanceSslRequest::setDbInstanceId(const std::string &dbInsta
   setParameter(std::string("DbInstanceId"), dbInstanceId);
 }
 
+std::string ModifyDbProxyInstanceSslRequest::getDBProxyEngineType() const {
+  return dBProxyEngineType_;
+}
+
+void ModifyDbProxyInstanceSslRequest::setDBProxyEngineType(const std::string &dBProxyEngineType) {
+  dBProxyEngineType_ = dBProxyEngineType;
+  setParameter(std::string("DBProxyEngineType"), dBProxyEngineType);
+}
+
 std::string ModifyDbProxyInstanceSslRequest::getDbProxyEndpointId() const {
   return dbProxyEndpointId_;
 }

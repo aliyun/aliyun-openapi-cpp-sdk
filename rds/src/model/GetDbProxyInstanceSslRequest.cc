@@ -25,6 +25,15 @@ GetDbProxyInstanceSslRequest::GetDbProxyInstanceSslRequest()
 
 GetDbProxyInstanceSslRequest::~GetDbProxyInstanceSslRequest() {}
 
+std::string GetDbProxyInstanceSslRequest::getDBProxyEngineType() const {
+  return dBProxyEngineType_;
+}
+
+void GetDbProxyInstanceSslRequest::setDBProxyEngineType(const std::string &dBProxyEngineType) {
+  dBProxyEngineType_ = dBProxyEngineType;
+  setParameter(std::string("DBProxyEngineType"), dBProxyEngineType);
+}
+
 std::string GetDbProxyInstanceSslRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

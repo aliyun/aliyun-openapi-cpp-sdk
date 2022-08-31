@@ -40,6 +40,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getDbInstanceId() const;
 	void setDbInstanceId(const std::string &dbInstanceId);
+	std::string getDBProxyEngineType() const;
+	void setDBProxyEngineType(const std::string &dBProxyEngineType);
 	std::string getDbProxyEndpointId() const;
 	void setDbProxyEndpointId(const std::string &dbProxyEndpointId);
 
@@ -49,6 +51,7 @@ private:
 	std::string dbProxyConnectString_;
 	std::string regionId_;
 	std::string dbInstanceId_;
+	std::string dBProxyEngineType_;
 	std::string dbProxyEndpointId_;
 };
 } // namespace Model

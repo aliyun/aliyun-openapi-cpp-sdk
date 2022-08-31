@@ -34,24 +34,6 @@ void DescribeDBProxyRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDBProxyRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeDBProxyRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long DescribeDBProxyRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeDBProxyRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string DescribeDBProxyRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -59,6 +41,15 @@ std::string DescribeDBProxyRequest::getAccessKeyId() const {
 void DescribeDBProxyRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeDBProxyRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeDBProxyRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string DescribeDBProxyRequest::getRegionId() const {
@@ -77,5 +68,32 @@ std::string DescribeDBProxyRequest::getDBInstanceId() const {
 void DescribeDBProxyRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DescribeDBProxyRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeDBProxyRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string DescribeDBProxyRequest::getDBProxyEngineType() const {
+  return dBProxyEngineType_;
+}
+
+void DescribeDBProxyRequest::setDBProxyEngineType(const std::string &dBProxyEngineType) {
+  dBProxyEngineType_ = dBProxyEngineType;
+  setParameter(std::string("DBProxyEngineType"), dBProxyEngineType);
+}
+
+long DescribeDBProxyRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeDBProxyRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

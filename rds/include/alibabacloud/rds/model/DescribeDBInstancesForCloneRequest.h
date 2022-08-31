@@ -46,6 +46,8 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getExpired() const;
 	void setExpired(const std::string &expired);
 	std::string getEngine() const;
@@ -92,6 +94,7 @@ private:
 	std::string engineVersion_;
 	int pageNumber_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	std::string expired_;
 	std::string engine_;
 	std::string regionId_;

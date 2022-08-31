@@ -201,6 +201,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.engine = valueItemsDBInstanceAttribute["Engine"].asString();
 		if(!valueItemsDBInstanceAttribute["DeletionProtection"].isNull())
 			itemsObject.deletionProtection = valueItemsDBInstanceAttribute["DeletionProtection"].asString() == "true";
+		if(!valueItemsDBInstanceAttribute["kindCode"].isNull())
+			itemsObject.kindCode = valueItemsDBInstanceAttribute["kindCode"].asString();
 		auto allSlaveZonesNode = valueItemsDBInstanceAttribute["SlaveZones"]["SlaveZone"];
 		for (auto valueItemsDBInstanceAttributeSlaveZonesSlaveZone : allSlaveZonesNode)
 		{
@@ -232,6 +234,10 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.serverlessConfig.scaleMin = serverlessConfigNode["ScaleMin"].asString();
 		if(!serverlessConfigNode["ScaleMax"].isNull())
 			itemsObject.serverlessConfig.scaleMax = serverlessConfigNode["ScaleMax"].asString();
+		if(!serverlessConfigNode["AutoPause"].isNull())
+			itemsObject.serverlessConfig.autoPause = serverlessConfigNode["AutoPause"].asString() == "true";
+		if(!serverlessConfigNode["SwitchForce"].isNull())
+			itemsObject.serverlessConfig.switchForce = serverlessConfigNode["SwitchForce"].asString() == "true";
 		auto babelfishConfigNode = value["BabelfishConfig"];
 		if(!babelfishConfigNode["BabelfishEnabled"].isNull())
 			itemsObject.babelfishConfig.babelfishEnabled = babelfishConfigNode["BabelfishEnabled"].asString();

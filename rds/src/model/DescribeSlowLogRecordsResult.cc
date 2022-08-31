@@ -79,6 +79,8 @@ void DescribeSlowLogRecordsResult::parse(const std::string &payload)
 			itemsObject.userName = valueItemsSQLSlowRecord["UserName"].asString();
 		if(!valueItemsSQLSlowRecord["LastRowsAffectedCount"].isNull())
 			itemsObject.lastRowsAffectedCount = std::stol(valueItemsSQLSlowRecord["LastRowsAffectedCount"].asString());
+		if(!valueItemsSQLSlowRecord["SQLHash"].isNull())
+			itemsObject.sQLHash = valueItemsSQLSlowRecord["SQLHash"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["RowsAffectedCount"].isNull())

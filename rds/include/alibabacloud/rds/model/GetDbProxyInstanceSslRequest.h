@@ -30,6 +30,8 @@ class ALIBABACLOUD_RDS_EXPORT GetDbProxyInstanceSslRequest : public RpcServiceRe
 public:
 	GetDbProxyInstanceSslRequest();
 	~GetDbProxyInstanceSslRequest();
+	std::string getDBProxyEngineType() const;
+	void setDBProxyEngineType(const std::string &dBProxyEngineType);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getRegionId() const;
@@ -38,6 +40,7 @@ public:
 	void setDbInstanceId(const std::string &dbInstanceId);
 
 private:
+	std::string dBProxyEngineType_;
 	std::string accessKeyId_;
 	std::string regionId_;
 	std::string dbInstanceId_;

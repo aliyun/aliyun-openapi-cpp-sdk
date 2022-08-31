@@ -61,6 +61,15 @@ void DescribeMetaListRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeMetaListRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeMetaListRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 int DescribeMetaListRequest::getPageSize() const {
   return pageSize_;
 }

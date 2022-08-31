@@ -54,6 +54,7 @@ namespace AlibabaCloud
 				std::string getDBProxyConnectStringNetType()const;
 				std::vector<EndpointConnectItemsItem> getEndpointConnectItems()const;
 				std::string getDBProxyConnectStringPort()const;
+				std::string getDBProxyEngineType()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -69,6 +70,7 @@ namespace AlibabaCloud
 				std::string dBProxyConnectStringNetType_;
 				std::vector<EndpointConnectItemsItem> endpointConnectItems_;
 				std::string dBProxyConnectStringPort_;
+				std::string dBProxyEngineType_;
 
 			};
 		}

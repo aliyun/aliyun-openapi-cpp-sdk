@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					long logicalIORead;
 					std::string sQLText;
 					long queryTimes;
+					std::string sQLHash;
 					long returnRowCounts;
 					long lockTimes;
 					std::string dBName;

@@ -34,24 +34,6 @@ void UpgradeDBProxyInstanceKernelVersionRequest::setResourceOwnerId(long resourc
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string UpgradeDBProxyInstanceKernelVersionRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void UpgradeDBProxyInstanceKernelVersionRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long UpgradeDBProxyInstanceKernelVersionRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void UpgradeDBProxyInstanceKernelVersionRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string UpgradeDBProxyInstanceKernelVersionRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -59,15 +41,6 @@ std::string UpgradeDBProxyInstanceKernelVersionRequest::getAccessKeyId() const {
 void UpgradeDBProxyInstanceKernelVersionRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string UpgradeDBProxyInstanceKernelVersionRequest::getUpgradeTime() const {
-  return upgradeTime_;
-}
-
-void UpgradeDBProxyInstanceKernelVersionRequest::setUpgradeTime(const std::string &upgradeTime) {
-  upgradeTime_ = upgradeTime;
-  setParameter(std::string("UpgradeTime"), upgradeTime);
 }
 
 std::string UpgradeDBProxyInstanceKernelVersionRequest::getDBInstanceId() const {
@@ -86,5 +59,41 @@ std::string UpgradeDBProxyInstanceKernelVersionRequest::getSwitchTime() const {
 void UpgradeDBProxyInstanceKernelVersionRequest::setSwitchTime(const std::string &switchTime) {
   switchTime_ = switchTime;
   setParameter(std::string("SwitchTime"), switchTime);
+}
+
+std::string UpgradeDBProxyInstanceKernelVersionRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void UpgradeDBProxyInstanceKernelVersionRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string UpgradeDBProxyInstanceKernelVersionRequest::getDBProxyEngineType() const {
+  return dBProxyEngineType_;
+}
+
+void UpgradeDBProxyInstanceKernelVersionRequest::setDBProxyEngineType(const std::string &dBProxyEngineType) {
+  dBProxyEngineType_ = dBProxyEngineType;
+  setParameter(std::string("DBProxyEngineType"), dBProxyEngineType);
+}
+
+long UpgradeDBProxyInstanceKernelVersionRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void UpgradeDBProxyInstanceKernelVersionRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string UpgradeDBProxyInstanceKernelVersionRequest::getUpgradeTime() const {
+  return upgradeTime_;
+}
+
+void UpgradeDBProxyInstanceKernelVersionRequest::setUpgradeTime(const std::string &upgradeTime) {
+  upgradeTime_ = upgradeTime;
+  setParameter(std::string("UpgradeTime"), upgradeTime);
 }
 

@@ -61,6 +61,15 @@ void DescribeModifyPGHbaConfigLogRequest::setAccessKeyId(const std::string &acce
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeModifyPGHbaConfigLogRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeModifyPGHbaConfigLogRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeModifyPGHbaConfigLogRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

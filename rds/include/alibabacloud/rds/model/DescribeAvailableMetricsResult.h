@@ -52,12 +52,14 @@ namespace AlibabaCloud
 				~DescribeAvailableMetricsResult();
 				int getTotalRecordCount()const;
 				std::vector<Metrics> getItems()const;
+				std::string getDBInstanceName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalRecordCount_;
 				std::vector<Metrics> items_;
+				std::string dBInstanceName_;
 
 			};
 		}

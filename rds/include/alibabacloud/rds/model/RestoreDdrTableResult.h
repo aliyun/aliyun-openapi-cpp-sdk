@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				RestoreDdrTableResult();
 				explicit RestoreDdrTableResult(const std::string &payload);
 				~RestoreDdrTableResult();
+				std::string getDBInstanceId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dBInstanceId_;
 
 			};
 		}

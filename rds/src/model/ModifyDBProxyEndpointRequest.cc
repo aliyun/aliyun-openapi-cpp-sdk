@@ -106,6 +106,15 @@ void ModifyDBProxyEndpointRequest::setDbEndpointAliases(const std::string &dbEnd
   setParameter(std::string("DbEndpointAliases"), dbEndpointAliases);
 }
 
+std::string ModifyDBProxyEndpointRequest::getDBProxyEngineType() const {
+  return dBProxyEngineType_;
+}
+
+void ModifyDBProxyEndpointRequest::setDBProxyEngineType(const std::string &dBProxyEngineType) {
+  dBProxyEngineType_ = dBProxyEngineType;
+  setParameter(std::string("DBProxyEngineType"), dBProxyEngineType);
+}
+
 std::string ModifyDBProxyEndpointRequest::getDbEndpointOperator() const {
   return dbEndpointOperator_;
 }

@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getBackupStrategy() const;
 	void setBackupStrategy(const std::string &backupStrategy);
 	std::string getDBInstanceId() const;
@@ -54,6 +56,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	std::string backupStrategy_;
 	std::string dBInstanceId_;
 	std::string backupType_;

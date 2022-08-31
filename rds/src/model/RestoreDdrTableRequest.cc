@@ -70,6 +70,15 @@ void RestoreDdrTableRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string RestoreDdrTableRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void RestoreDdrTableRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string RestoreDdrTableRequest::getRegionId() const {
   return regionId_;
 }

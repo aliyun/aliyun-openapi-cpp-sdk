@@ -70,6 +70,15 @@ void DescribeDetachedBackupsRequest::setBackupLocation(const std::string &backup
   setParameter(std::string("BackupLocation"), backupLocation);
 }
 
+std::string DescribeDetachedBackupsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeDetachedBackupsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 int DescribeDetachedBackupsRequest::getPageSize() const {
   return pageSize_;
 }

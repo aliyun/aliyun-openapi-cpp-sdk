@@ -36,12 +36,16 @@ public:
 	void setDBProxyConnectStringNetType(const std::string &dBProxyConnectStringNetType);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getDBProxyNewConnectStringPort() const;
 	void setDBProxyNewConnectStringPort(const std::string &dBProxyNewConnectStringPort);
+	std::string getDBProxyEngineType() const;
+	void setDBProxyEngineType(const std::string &dBProxyEngineType);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getDBProxyEndpointId() const;
@@ -53,9 +57,11 @@ private:
 	std::string connectionStringPrefix_;
 	std::string dBProxyConnectStringNetType_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string dBProxyNewConnectStringPort_;
+	std::string dBProxyEngineType_;
 	std::string vSwitchId_;
 	std::string dBProxyEndpointId_;
 	std::string vPCId_;

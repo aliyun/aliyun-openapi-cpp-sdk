@@ -52,6 +52,15 @@ void CreateDBProxyEndpointAddressRequest::setAccessKeyId(const std::string &acce
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CreateDBProxyEndpointAddressRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateDBProxyEndpointAddressRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateDBProxyEndpointAddressRequest::getRegionId() const {
   return regionId_;
 }
@@ -77,6 +86,15 @@ std::string CreateDBProxyEndpointAddressRequest::getDBProxyNewConnectStringPort(
 void CreateDBProxyEndpointAddressRequest::setDBProxyNewConnectStringPort(const std::string &dBProxyNewConnectStringPort) {
   dBProxyNewConnectStringPort_ = dBProxyNewConnectStringPort;
   setParameter(std::string("DBProxyNewConnectStringPort"), dBProxyNewConnectStringPort);
+}
+
+std::string CreateDBProxyEndpointAddressRequest::getDBProxyEngineType() const {
+  return dBProxyEngineType_;
+}
+
+void CreateDBProxyEndpointAddressRequest::setDBProxyEngineType(const std::string &dBProxyEngineType) {
+  dBProxyEngineType_ = dBProxyEngineType;
+  setParameter(std::string("DBProxyEngineType"), dBProxyEngineType);
 }
 
 std::string CreateDBProxyEndpointAddressRequest::getVSwitchId() const {

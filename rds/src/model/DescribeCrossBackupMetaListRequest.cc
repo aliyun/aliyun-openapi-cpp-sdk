@@ -52,6 +52,15 @@ void DescribeCrossBackupMetaListRequest::setAccessKeyId(const std::string &acces
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeCrossBackupMetaListRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeCrossBackupMetaListRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeCrossBackupMetaListRequest::getPageSize() const {
   return pageSize_;
 }

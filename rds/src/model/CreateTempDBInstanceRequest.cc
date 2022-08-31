@@ -43,6 +43,15 @@ void CreateTempDBInstanceRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CreateTempDBInstanceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateTempDBInstanceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateTempDBInstanceRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -43,8 +43,10 @@ namespace AlibabaCloud
 					};
 					struct ServerlessConfig
 					{
+						bool switchForce;
 						double scaleMin;
 						double scaleMax;
+						bool autoPause;
 					};
 					struct BabelfishConfig
 					{
@@ -142,6 +144,7 @@ namespace AlibabaCloud
 					BabelfishConfig babelfishConfig;
 					bool canTempUpgrade;
 					std::string regionId;
+					std::string kindCode;
 					std::string tips;
 				};
 

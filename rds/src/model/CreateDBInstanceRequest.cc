@@ -425,6 +425,8 @@ void CreateDBInstanceRequest::setServerlessConfig(const CreateDBInstanceRequest:
   serverlessConfig_ = serverlessConfig;
   setParameter(std::string("ServerlessConfig") + ".MinCapacity", std::to_string(serverlessConfig.minCapacity));
   setParameter(std::string("ServerlessConfig") + ".MaxCapacity", std::to_string(serverlessConfig.maxCapacity));
+  setParameter(std::string("ServerlessConfig") + ".AutoPause", serverlessConfig.autoPause ? "true" : "false");
+  setParameter(std::string("ServerlessConfig") + ".SwitchForce", serverlessConfig.switchForce ? "true" : "false");
 }
 
 std::string CreateDBInstanceRequest::getResourceOwnerAccount() const {

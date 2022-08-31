@@ -89,12 +89,19 @@ void DescribePGHbaConfigResult::parse(const std::string &payload)
 		modifyStatusReason_ = value["ModifyStatusReason"].asString();
 	if(!value["LastModifyStatus"].isNull())
 		lastModifyStatus_ = value["LastModifyStatus"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
 
 }
 
 std::vector<DescribePGHbaConfigResult::HbaItem> DescribePGHbaConfigResult::getDefaultHbaItems()const
 {
 	return defaultHbaItems_;
+}
+
+std::string DescribePGHbaConfigResult::getDBInstanceId()const
+{
+	return dBInstanceId_;
 }
 
 std::string DescribePGHbaConfigResult::getHbaModifyTime()const

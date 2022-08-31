@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string intranetDownloadLink;
 						std::string dataBase;
 					};
+					std::string resourceGroupId;
 					std::string backupMode;
 					std::string backupId;
 					std::string encryption;

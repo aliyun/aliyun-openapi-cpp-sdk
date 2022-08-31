@@ -40,6 +40,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 
 private:
 	std::string dBInstanceName_;
@@ -47,6 +49,7 @@ private:
 	std::string resourceOwnerAccount_;
 	long ownerId_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 };
 } // namespace Model
 } // namespace Rds

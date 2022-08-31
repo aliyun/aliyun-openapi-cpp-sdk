@@ -97,6 +97,15 @@ void DescribeDBInstancesByPerformanceRequest::setTag1value(const std::string &ta
   setParameter(std::string("Tag.1.value"), tag1value);
 }
 
+std::string DescribeDBInstancesByPerformanceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeDBInstancesByPerformanceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeDBInstancesByPerformanceRequest::getSortKey() const {
   return sortKey_;
 }

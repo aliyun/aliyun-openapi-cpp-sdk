@@ -34,12 +34,18 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getAccountName() const;
+	void setAccountName(const std::string &accountName);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getDBProxyEngineType() const;
+	void setDBProxyEngineType(const std::string &dBProxyEngineType);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getDBProxyInstanceNum() const;
@@ -48,6 +54,8 @@ public:
 	void setConfigDBProxyService(const std::string &configDBProxyService);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
+	std::string getAccountPassword() const;
+	void setAccountPassword(const std::string &accountPassword);
 	std::string getVPCId() const;
 	void setVPCId(const std::string &vPCId);
 	std::string getInstanceNetworkType() const;
@@ -56,13 +64,17 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
+	std::string accountName_;
 	std::string regionId_;
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
+	std::string dBProxyEngineType_;
 	long ownerId_;
 	std::string dBProxyInstanceNum_;
 	std::string configDBProxyService_;
 	std::string vSwitchId_;
+	std::string accountPassword_;
 	std::string vPCId_;
 	std::string instanceNetworkType_;
 };

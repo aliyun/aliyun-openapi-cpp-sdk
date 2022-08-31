@@ -73,6 +73,8 @@ void DescribeGadInstancesResult::parse(const std::string &payload)
 				gadInstanceMembersObject.status = valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["Status"].asString();
 			if(!valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["DtsInstance"].isNull())
 				gadInstanceMembersObject.dtsInstance = valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["DtsInstance"].asString();
+			if(!valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["ResourceGroupId"].isNull())
+				gadInstanceMembersObject.resourceGroupId = valueGadInstancesGadInstancesItemGadInstanceMembersGadInstanceMembersItem["ResourceGroupId"].asString();
 			gadInstancesObject.gadInstanceMembers.push_back(gadInstanceMembersObject);
 		}
 		gadInstances_.push_back(gadInstancesObject);

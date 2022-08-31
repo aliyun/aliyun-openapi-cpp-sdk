@@ -32,11 +32,14 @@ public:
 	~DescribeDiagnosticReportListRequest();
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 
 private:
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	std::string dBInstanceId_;
 };
 } // namespace Model

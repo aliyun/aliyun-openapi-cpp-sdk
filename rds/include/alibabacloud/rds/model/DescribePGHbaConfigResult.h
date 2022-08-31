@@ -49,6 +49,7 @@ namespace AlibabaCloud
 				explicit DescribePGHbaConfigResult(const std::string &payload);
 				~DescribePGHbaConfigResult();
 				std::vector<HbaItem> getDefaultHbaItems()const;
+				std::string getDBInstanceId()const;
 				std::string getHbaModifyTime()const;
 				std::string getLastModifyStatus()const;
 				std::vector<HbaItem> getRunningHbaItems()const;
@@ -58,6 +59,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::vector<HbaItem> defaultHbaItems_;
+				std::string dBInstanceId_;
 				std::string hbaModifyTime_;
 				std::string lastModifyStatus_;
 				std::vector<HbaItem> runningHbaItems_;

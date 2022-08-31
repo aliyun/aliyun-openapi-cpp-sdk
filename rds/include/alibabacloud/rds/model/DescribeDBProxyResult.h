@@ -54,30 +54,36 @@ namespace AlibabaCloud
 				DescribeDBProxyResult();
 				explicit DescribeDBProxyResult(const std::string &payload);
 				~DescribeDBProxyResult();
-				std::string getDBProxyInstanceName()const;
 				std::string getDBProxyInstanceCurrentMinorVersion()const;
 				std::string getDBProxyInstanceLatestMinorVersion()const;
 				int getDBProxyInstanceNum()const;
-				std::string getDBProxyServiceStatus()const;
+				std::string getResourceGroupId()const;
 				std::vector<DbProxyEndpointItemsItem> getDbProxyEndpointItems()const;
 				std::string getDBProxyInstanceSize()const;
-				std::vector<DBProxyConnectStringItemsItem> getDBProxyConnectStringItems()const;
 				std::string getDBProxyInstanceStatus()const;
+				std::string getDBProxyEngineType()const;
+				std::string getDBProxyInstanceName()const;
+				std::string getDBProxyServiceStatus()const;
+				std::vector<DBProxyConnectStringItemsItem> getDBProxyConnectStringItems()const;
 				std::string getDBProxyInstanceType()const;
+				std::string getAccountName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string dBProxyInstanceName_;
 				std::string dBProxyInstanceCurrentMinorVersion_;
 				std::string dBProxyInstanceLatestMinorVersion_;
 				int dBProxyInstanceNum_;
-				std::string dBProxyServiceStatus_;
+				std::string resourceGroupId_;
 				std::vector<DbProxyEndpointItemsItem> dbProxyEndpointItems_;
 				std::string dBProxyInstanceSize_;
-				std::vector<DBProxyConnectStringItemsItem> dBProxyConnectStringItems_;
 				std::string dBProxyInstanceStatus_;
+				std::string dBProxyEngineType_;
+				std::string dBProxyInstanceName_;
+				std::string dBProxyServiceStatus_;
+				std::vector<DBProxyConnectStringItemsItem> dBProxyConnectStringItems_;
 				std::string dBProxyInstanceType_;
+				std::string accountName_;
 
 			};
 		}
