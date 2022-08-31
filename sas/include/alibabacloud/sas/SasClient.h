@@ -30,6 +30,8 @@
 #include "model/CheckQuaraFileIdResult.h"
 #include "model/CheckSecurityEventIdRequest.h"
 #include "model/CheckSecurityEventIdResult.h"
+#include "model/CheckUserHasEcsRequest.h"
+#include "model/CheckUserHasEcsResult.h"
 #include "model/CreateAntiBruteForceRuleRequest.h"
 #include "model/CreateAntiBruteForceRuleResult.h"
 #include "model/CreateBackupPolicyRequest.h"
@@ -481,6 +483,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckSecurityEventIdResult> CheckSecurityEventIdOutcome;
 			typedef std::future<CheckSecurityEventIdOutcome> CheckSecurityEventIdOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::CheckSecurityEventIdRequest&, const CheckSecurityEventIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckSecurityEventIdAsyncHandler;
+			typedef Outcome<Error, Model::CheckUserHasEcsResult> CheckUserHasEcsOutcome;
+			typedef std::future<CheckUserHasEcsOutcome> CheckUserHasEcsOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::CheckUserHasEcsRequest&, const CheckUserHasEcsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckUserHasEcsAsyncHandler;
 			typedef Outcome<Error, Model::CreateAntiBruteForceRuleResult> CreateAntiBruteForceRuleOutcome;
 			typedef std::future<CreateAntiBruteForceRuleOutcome> CreateAntiBruteForceRuleOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::CreateAntiBruteForceRuleRequest&, const CreateAntiBruteForceRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAntiBruteForceRuleAsyncHandler;
@@ -1143,6 +1148,9 @@ namespace AlibabaCloud
 			CheckSecurityEventIdOutcome checkSecurityEventId(const Model::CheckSecurityEventIdRequest &request)const;
 			void checkSecurityEventIdAsync(const Model::CheckSecurityEventIdRequest& request, const CheckSecurityEventIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckSecurityEventIdOutcomeCallable checkSecurityEventIdCallable(const Model::CheckSecurityEventIdRequest& request) const;
+			CheckUserHasEcsOutcome checkUserHasEcs(const Model::CheckUserHasEcsRequest &request)const;
+			void checkUserHasEcsAsync(const Model::CheckUserHasEcsRequest& request, const CheckUserHasEcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckUserHasEcsOutcomeCallable checkUserHasEcsCallable(const Model::CheckUserHasEcsRequest& request) const;
 			CreateAntiBruteForceRuleOutcome createAntiBruteForceRule(const Model::CreateAntiBruteForceRuleRequest &request)const;
 			void createAntiBruteForceRuleAsync(const Model::CreateAntiBruteForceRuleRequest& request, const CreateAntiBruteForceRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAntiBruteForceRuleOutcomeCallable createAntiBruteForceRuleCallable(const Model::CreateAntiBruteForceRuleRequest& request) const;

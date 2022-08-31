@@ -195,6 +195,42 @@ SasClient::CheckSecurityEventIdOutcomeCallable SasClient::checkSecurityEventIdCa
 	return task->get_future();
 }
 
+SasClient::CheckUserHasEcsOutcome SasClient::checkUserHasEcs(const CheckUserHasEcsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckUserHasEcsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckUserHasEcsOutcome(CheckUserHasEcsResult(outcome.result()));
+	else
+		return CheckUserHasEcsOutcome(outcome.error());
+}
+
+void SasClient::checkUserHasEcsAsync(const CheckUserHasEcsRequest& request, const CheckUserHasEcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkUserHasEcs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::CheckUserHasEcsOutcomeCallable SasClient::checkUserHasEcsCallable(const CheckUserHasEcsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckUserHasEcsOutcome()>>(
+			[this, request]()
+			{
+			return this->checkUserHasEcs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::CreateAntiBruteForceRuleOutcome SasClient::createAntiBruteForceRule(const CreateAntiBruteForceRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

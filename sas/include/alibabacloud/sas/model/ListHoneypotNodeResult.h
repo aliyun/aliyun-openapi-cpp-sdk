@@ -40,7 +40,7 @@ namespace AlibabaCloud
 					int count;
 					std::string lastRowKey;
 				};
-				struct List
+				struct HoneypotNode
 				{
 					int probeTotalCount;
 					std::string nodeName;
@@ -63,7 +63,7 @@ namespace AlibabaCloud
 				explicit ListHoneypotNodeResult(const std::string &payload);
 				~ListHoneypotNodeResult();
 				PageInfo getPageInfo()const;
-				std::vector<List> getHoneypotNodeList()const;
+				std::vector<HoneypotNode> getHoneypotNodeList()const;
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
@@ -73,7 +73,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				PageInfo pageInfo_;
-				std::vector<List> honeypotNodeList_;
+				std::vector<HoneypotNode> honeypotNodeList_;
 				std::string message_;
 				int httpStatusCode_;
 				std::string code_;

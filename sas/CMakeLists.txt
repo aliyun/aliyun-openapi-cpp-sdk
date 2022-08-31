@@ -29,6 +29,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/CheckQuaraFileIdResult.h
 	include/alibabacloud/sas/model/CheckSecurityEventIdRequest.h
 	include/alibabacloud/sas/model/CheckSecurityEventIdResult.h
+	include/alibabacloud/sas/model/CheckUserHasEcsRequest.h
+	include/alibabacloud/sas/model/CheckUserHasEcsResult.h
 	include/alibabacloud/sas/model/CreateAntiBruteForceRuleRequest.h
 	include/alibabacloud/sas/model/CreateAntiBruteForceRuleResult.h
 	include/alibabacloud/sas/model/CreateBackupPolicyRequest.h
@@ -470,6 +472,8 @@ set(sas_src
 	src/model/CheckQuaraFileIdResult.cc
 	src/model/CheckSecurityEventIdRequest.cc
 	src/model/CheckSecurityEventIdResult.cc
+	src/model/CheckUserHasEcsRequest.cc
+	src/model/CheckUserHasEcsResult.cc
 	src/model/CreateAntiBruteForceRuleRequest.cc
 	src/model/CreateAntiBruteForceRuleResult.cc
 	src/model/CreateBackupPolicyRequest.cc

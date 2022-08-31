@@ -39,36 +39,36 @@ void ListHoneypotNodeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allHoneypotNodeListNode = value["HoneypotNodeList"]["List"];
-	for (auto valueHoneypotNodeListList : allHoneypotNodeListNode)
+	auto allHoneypotNodeListNode = value["HoneypotNodeList"]["HoneypotNode"];
+	for (auto valueHoneypotNodeListHoneypotNode : allHoneypotNodeListNode)
 	{
-		List honeypotNodeListObject;
-		if(!valueHoneypotNodeListList["NodeId"].isNull())
-			honeypotNodeListObject.nodeId = valueHoneypotNodeListList["NodeId"].asString();
-		if(!valueHoneypotNodeListList["NodeName"].isNull())
-			honeypotNodeListObject.nodeName = valueHoneypotNodeListList["NodeName"].asString();
-		if(!valueHoneypotNodeListList["NodeVersion"].isNull())
-			honeypotNodeListObject.nodeVersion = valueHoneypotNodeListList["NodeVersion"].asString();
-		if(!valueHoneypotNodeListList["HoneypotTotalCount"].isNull())
-			honeypotNodeListObject.honeypotTotalCount = std::stoi(valueHoneypotNodeListList["HoneypotTotalCount"].asString());
-		if(!valueHoneypotNodeListList["HoneypotUsedCount"].isNull())
-			honeypotNodeListObject.honeypotUsedCount = std::stoi(valueHoneypotNodeListList["HoneypotUsedCount"].asString());
-		if(!valueHoneypotNodeListList["ProbeTotalCount"].isNull())
-			honeypotNodeListObject.probeTotalCount = std::stoi(valueHoneypotNodeListList["ProbeTotalCount"].asString());
-		if(!valueHoneypotNodeListList["ProbeUsedCount"].isNull())
-			honeypotNodeListObject.probeUsedCount = std::stoi(valueHoneypotNodeListList["ProbeUsedCount"].asString());
-		if(!valueHoneypotNodeListList["TotalStatus"].isNull())
-			honeypotNodeListObject.totalStatus = std::stoi(valueHoneypotNodeListList["TotalStatus"].asString());
-		if(!valueHoneypotNodeListList["EcsInstanceId"].isNull())
-			honeypotNodeListObject.ecsInstanceId = valueHoneypotNodeListList["EcsInstanceId"].asString();
-		if(!valueHoneypotNodeListList["CreateTime"].isNull())
-			honeypotNodeListObject.createTime = valueHoneypotNodeListList["CreateTime"].asString();
-		if(!valueHoneypotNodeListList["AllowHoneypotAccessInternet"].isNull())
-			honeypotNodeListObject.allowHoneypotAccessInternet = valueHoneypotNodeListList["AllowHoneypotAccessInternet"].asString() == "true";
-		if(!valueHoneypotNodeListList["DefaultNode"].isNull())
-			honeypotNodeListObject.defaultNode = valueHoneypotNodeListList["DefaultNode"].asString() == "true";
-		if(!valueHoneypotNodeListList["NodeIp"].isNull())
-			honeypotNodeListObject.nodeIp = valueHoneypotNodeListList["NodeIp"].asString();
+		HoneypotNode honeypotNodeListObject;
+		if(!valueHoneypotNodeListHoneypotNode["NodeId"].isNull())
+			honeypotNodeListObject.nodeId = valueHoneypotNodeListHoneypotNode["NodeId"].asString();
+		if(!valueHoneypotNodeListHoneypotNode["NodeName"].isNull())
+			honeypotNodeListObject.nodeName = valueHoneypotNodeListHoneypotNode["NodeName"].asString();
+		if(!valueHoneypotNodeListHoneypotNode["NodeVersion"].isNull())
+			honeypotNodeListObject.nodeVersion = valueHoneypotNodeListHoneypotNode["NodeVersion"].asString();
+		if(!valueHoneypotNodeListHoneypotNode["HoneypotTotalCount"].isNull())
+			honeypotNodeListObject.honeypotTotalCount = std::stoi(valueHoneypotNodeListHoneypotNode["HoneypotTotalCount"].asString());
+		if(!valueHoneypotNodeListHoneypotNode["HoneypotUsedCount"].isNull())
+			honeypotNodeListObject.honeypotUsedCount = std::stoi(valueHoneypotNodeListHoneypotNode["HoneypotUsedCount"].asString());
+		if(!valueHoneypotNodeListHoneypotNode["ProbeTotalCount"].isNull())
+			honeypotNodeListObject.probeTotalCount = std::stoi(valueHoneypotNodeListHoneypotNode["ProbeTotalCount"].asString());
+		if(!valueHoneypotNodeListHoneypotNode["ProbeUsedCount"].isNull())
+			honeypotNodeListObject.probeUsedCount = std::stoi(valueHoneypotNodeListHoneypotNode["ProbeUsedCount"].asString());
+		if(!valueHoneypotNodeListHoneypotNode["TotalStatus"].isNull())
+			honeypotNodeListObject.totalStatus = std::stoi(valueHoneypotNodeListHoneypotNode["TotalStatus"].asString());
+		if(!valueHoneypotNodeListHoneypotNode["EcsInstanceId"].isNull())
+			honeypotNodeListObject.ecsInstanceId = valueHoneypotNodeListHoneypotNode["EcsInstanceId"].asString();
+		if(!valueHoneypotNodeListHoneypotNode["CreateTime"].isNull())
+			honeypotNodeListObject.createTime = valueHoneypotNodeListHoneypotNode["CreateTime"].asString();
+		if(!valueHoneypotNodeListHoneypotNode["AllowHoneypotAccessInternet"].isNull())
+			honeypotNodeListObject.allowHoneypotAccessInternet = valueHoneypotNodeListHoneypotNode["AllowHoneypotAccessInternet"].asString() == "true";
+		if(!valueHoneypotNodeListHoneypotNode["DefaultNode"].isNull())
+			honeypotNodeListObject.defaultNode = valueHoneypotNodeListHoneypotNode["DefaultNode"].asString() == "true";
+		if(!valueHoneypotNodeListHoneypotNode["NodeIp"].isNull())
+			honeypotNodeListObject.nodeIp = valueHoneypotNodeListHoneypotNode["NodeIp"].asString();
 		auto allSecurityGroupProbeIpList = value["SecurityGroupProbeIpList"]["SecurityGroupProbeIp"];
 		for (auto value : allSecurityGroupProbeIpList)
 			honeypotNodeListObject.securityGroupProbeIpList.push_back(value.asString());
@@ -101,7 +101,7 @@ ListHoneypotNodeResult::PageInfo ListHoneypotNodeResult::getPageInfo()const
 	return pageInfo_;
 }
 
-std::vector<ListHoneypotNodeResult::List> ListHoneypotNodeResult::getHoneypotNodeList()const
+std::vector<ListHoneypotNodeResult::HoneypotNode> ListHoneypotNodeResult::getHoneypotNodeList()const
 {
 	return honeypotNodeList_;
 }

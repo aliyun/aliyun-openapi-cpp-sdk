@@ -74,6 +74,7 @@ namespace AlibabaCloud
 					std::string saleVersion;
 					std::string containerImageId;
 					std::string dataSource;
+					bool displaySandboxResult;
 					std::string occurrenceTime;
 					std::string instanceName;
 					long operateTime;
