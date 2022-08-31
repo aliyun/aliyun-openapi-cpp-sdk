@@ -75,6 +75,8 @@ void DescribeInvocationsResult::parse(const std::string &payload)
 			invocationsObject.workingDir = valueInvocationsInvocation["WorkingDir"].asString();
 		if(!valueInvocationsInvocation["Timeout"].isNull())
 			invocationsObject.timeout = std::stol(valueInvocationsInvocation["Timeout"].asString());
+		if(!valueInvocationsInvocation["ContainerId"].isNull())
+			invocationsObject.containerId = valueInvocationsInvocation["ContainerId"].asString();
 		auto allInvokeInstancesNode = valueInvocationsInvocation["InvokeInstances"]["InvokeInstance"];
 		for (auto valueInvocationsInvocationInvokeInstancesInvokeInstance : allInvokeInstancesNode)
 		{

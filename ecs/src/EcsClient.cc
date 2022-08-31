@@ -11463,6 +11463,42 @@ EcsClient::RenewInstanceOutcomeCallable EcsClient::renewInstanceCallable(const R
 	return task->get_future();
 }
 
+EcsClient::RenewReservedInstancesOutcome EcsClient::renewReservedInstances(const RenewReservedInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RenewReservedInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RenewReservedInstancesOutcome(RenewReservedInstancesResult(outcome.result()));
+	else
+		return RenewReservedInstancesOutcome(outcome.error());
+}
+
+void EcsClient::renewReservedInstancesAsync(const RenewReservedInstancesRequest& request, const RenewReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, renewReservedInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::RenewReservedInstancesOutcomeCallable EcsClient::renewReservedInstancesCallable(const RenewReservedInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RenewReservedInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->renewReservedInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::ReplaceSystemDiskOutcome EcsClient::replaceSystemDisk(const ReplaceSystemDiskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

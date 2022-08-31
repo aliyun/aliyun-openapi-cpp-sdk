@@ -52,6 +52,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::vector<std::string> getInstanceId() const;
 	void setInstanceId(const std::vector<std::string> &instanceId);
+	std::string getContainerId() const;
+	void setContainerId(const std::string &containerId);
 	std::map<std::string, std::string> getParameters() const;
 	void setParameters(std::map<std::string, std::string> parameters);
 	std::string getUsername() const;
@@ -69,6 +71,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::vector<std::string> instanceId_;
+	std::string containerId_;
 	std::map<std::string, std::string> parameters_;
 	std::string username_;
 };

@@ -52,20 +52,6 @@ void DeleteImagePipelineRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::vector<DeleteImagePipelineRequest::TemplateTag> DeleteImagePipelineRequest::getTemplateTag() const {
-  return templateTag_;
-}
-
-void DeleteImagePipelineRequest::setTemplateTag(const std::vector<DeleteImagePipelineRequest::TemplateTag> &templateTag) {
-  templateTag_ = templateTag;
-  for(int dep1 = 0; dep1 != templateTag.size(); dep1++) {
-  auto templateTagObj = templateTag.at(dep1);
-  std::string templateTagObjStr = std::string("TemplateTag") + "." + std::to_string(dep1 + 1);
-    setParameter(templateTagObjStr + ".Key", templateTagObj.key);
-    setParameter(templateTagObjStr + ".Value", templateTagObj.value);
-  }
-}
-
 std::string DeleteImagePipelineRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

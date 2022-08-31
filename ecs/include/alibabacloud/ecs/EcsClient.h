@@ -656,6 +656,8 @@
 #include "model/RenewDedicatedHostsResult.h"
 #include "model/RenewInstanceRequest.h"
 #include "model/RenewInstanceResult.h"
+#include "model/RenewReservedInstancesRequest.h"
+#include "model/RenewReservedInstancesResult.h"
 #include "model/ReplaceSystemDiskRequest.h"
 #include "model/ReplaceSystemDiskResult.h"
 #include "model/ReportInstancesStatusRequest.h"
@@ -1668,6 +1670,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RenewInstanceResult> RenewInstanceOutcome;
 			typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::RenewInstanceRequest&, const RenewInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RenewReservedInstancesResult> RenewReservedInstancesOutcome;
+			typedef std::future<RenewReservedInstancesOutcome> RenewReservedInstancesOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::RenewReservedInstancesRequest&, const RenewReservedInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewReservedInstancesAsyncHandler;
 			typedef Outcome<Error, Model::ReplaceSystemDiskResult> ReplaceSystemDiskOutcome;
 			typedef std::future<ReplaceSystemDiskOutcome> ReplaceSystemDiskOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ReplaceSystemDiskRequest&, const ReplaceSystemDiskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceSystemDiskAsyncHandler;
@@ -2702,6 +2707,9 @@ namespace AlibabaCloud
 			RenewInstanceOutcome renewInstance(const Model::RenewInstanceRequest &request)const;
 			void renewInstanceAsync(const Model::RenewInstanceRequest& request, const RenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenewInstanceOutcomeCallable renewInstanceCallable(const Model::RenewInstanceRequest& request) const;
+			RenewReservedInstancesOutcome renewReservedInstances(const Model::RenewReservedInstancesRequest &request)const;
+			void renewReservedInstancesAsync(const Model::RenewReservedInstancesRequest& request, const RenewReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RenewReservedInstancesOutcomeCallable renewReservedInstancesCallable(const Model::RenewReservedInstancesRequest& request) const;
 			ReplaceSystemDiskOutcome replaceSystemDisk(const Model::ReplaceSystemDiskRequest &request)const;
 			void replaceSystemDiskAsync(const Model::ReplaceSystemDiskRequest& request, const ReplaceSystemDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReplaceSystemDiskOutcomeCallable replaceSystemDiskCallable(const Model::ReplaceSystemDiskRequest& request) const;

@@ -200,6 +200,15 @@ void RunCommandRequest::setName(const std::string &name) {
   setParameter(std::string("Name"), name);
 }
 
+std::string RunCommandRequest::getContainerId() const {
+  return containerId_;
+}
+
+void RunCommandRequest::setContainerId(const std::string &containerId) {
+  containerId_ = containerId;
+  setParameter(std::string("ContainerId"), containerId);
+}
+
 std::map<std::string, std::string> RunCommandRequest::getParameters() const {
   return parameters_;
 }

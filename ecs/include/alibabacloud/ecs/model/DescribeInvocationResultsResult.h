@@ -51,6 +51,7 @@ namespace AlibabaCloud
 						std::string invokeRecordStatus;
 						std::string finishedTime;
 						std::string username;
+						std::string containerId;
 						std::string output;
 						std::string commandId;
 						std::string errorCode;

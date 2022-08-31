@@ -655,6 +655,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/RenewDedicatedHostsResult.h
 	include/alibabacloud/ecs/model/RenewInstanceRequest.h
 	include/alibabacloud/ecs/model/RenewInstanceResult.h
+	include/alibabacloud/ecs/model/RenewReservedInstancesRequest.h
+	include/alibabacloud/ecs/model/RenewReservedInstancesResult.h
 	include/alibabacloud/ecs/model/ReplaceSystemDiskRequest.h
 	include/alibabacloud/ecs/model/ReplaceSystemDiskResult.h
 	include/alibabacloud/ecs/model/ReportInstancesStatusRequest.h
@@ -1344,6 +1346,8 @@ set(ecs_src
 	src/model/RenewDedicatedHostsResult.cc
 	src/model/RenewInstanceRequest.cc
 	src/model/RenewInstanceResult.cc
+	src/model/RenewReservedInstancesRequest.cc
+	src/model/RenewReservedInstancesResult.cc
 	src/model/ReplaceSystemDiskRequest.cc
 	src/model/ReplaceSystemDiskResult.cc
 	src/model/ReportInstancesStatusRequest.cc

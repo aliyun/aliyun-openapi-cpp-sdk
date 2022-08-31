@@ -28,10 +28,6 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT DeleteImagePipelineRequest : public RpcServiceRequest {
 public:
-	struct TemplateTag {
-		std::string key;
-		std::string value;
-	};
 	DeleteImagePipelineRequest();
 	~DeleteImagePipelineRequest();
 	std::string getImagePipelineId() const;
@@ -40,8 +36,6 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::vector<TemplateTag> getTemplateTag() const;
-	void setTemplateTag(const std::vector<TemplateTag> &templateTag);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -53,7 +47,6 @@ private:
 	std::string imagePipelineId_;
 	long resourceOwnerId_;
 	std::string regionId_;
-	std::vector<TemplateTag> templateTag_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

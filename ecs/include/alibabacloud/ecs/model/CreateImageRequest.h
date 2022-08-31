@@ -54,6 +54,8 @@ public:
 	void setPlatform(const std::string &platform);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getBootMode() const;
+	void setBootMode(const std::string &bootMode);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getImageName() const;
@@ -83,6 +85,7 @@ private:
 	std::string description_;
 	std::string platform_;
 	std::string resourceGroupId_;
+	std::string bootMode_;
 	std::string regionId_;
 	std::string imageName_;
 	std::vector<Tag> tag_;

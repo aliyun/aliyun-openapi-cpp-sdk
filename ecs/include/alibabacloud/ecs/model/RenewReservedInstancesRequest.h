@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DELETEIMAGECOMPONENTREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DELETEIMAGECOMPONENTREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_RENEWRESERVEDINSTANCESREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_RENEWRESERVEDINSTANCESREQUEST_H_
 
 #include <alibabacloud/ecs/EcsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,41 @@
 namespace AlibabaCloud {
 namespace Ecs {
 namespace Model {
-class ALIBABACLOUD_ECS_EXPORT DeleteImageComponentRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ECS_EXPORT RenewReservedInstancesRequest : public RpcServiceRequest {
 public:
-	DeleteImageComponentRequest();
-	~DeleteImageComponentRequest();
+	RenewReservedInstancesRequest();
+	~RenewReservedInstancesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getImageComponentId() const;
-	void setImageComponentId(const std::string &imageComponentId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getPeriod() const;
+	void setPeriod(int period);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getPeriodUnit() const;
+	void setPeriodUnit(const std::string &periodUnit);
+	std::vector<std::string> getReservedInstanceId() const;
+	void setReservedInstanceId(const std::vector<std::string> &reservedInstanceId);
 
 private:
 	long resourceOwnerId_;
-	std::string imageComponentId_;
+	std::string clientToken_;
 	std::string regionId_;
+	int period_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string periodUnit_;
+	std::vector<std::string> reservedInstanceId_;
 };
 } // namespace Model
 } // namespace Ecs
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ECS_MODEL_DELETEIMAGECOMPONENTREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_RENEWRESERVEDINSTANCESREQUEST_H_

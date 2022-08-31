@@ -123,6 +123,15 @@ void InvokeCommandRequest::setInstanceId(const std::vector<std::string> &instanc
   instanceId_ = instanceId;
 }
 
+std::string InvokeCommandRequest::getContainerId() const {
+  return containerId_;
+}
+
+void InvokeCommandRequest::setContainerId(const std::string &containerId) {
+  containerId_ = containerId;
+  setParameter(std::string("ContainerId"), containerId);
+}
+
 std::map<std::string, std::string> InvokeCommandRequest::getParameters() const {
   return parameters_;
 }

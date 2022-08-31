@@ -95,6 +95,15 @@ void CreateImageRequest::setResourceGroupId(const std::string &resourceGroupId) 
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string CreateImageRequest::getBootMode() const {
+  return bootMode_;
+}
+
+void CreateImageRequest::setBootMode(const std::string &bootMode) {
+  bootMode_ = bootMode;
+  setParameter(std::string("BootMode"), bootMode);
+}
+
 std::string CreateImageRequest::getRegionId() const {
   return regionId_;
 }

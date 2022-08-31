@@ -52,20 +52,6 @@ void DeleteImageComponentRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::vector<DeleteImageComponentRequest::TemplateTag> DeleteImageComponentRequest::getTemplateTag() const {
-  return templateTag_;
-}
-
-void DeleteImageComponentRequest::setTemplateTag(const std::vector<DeleteImageComponentRequest::TemplateTag> &templateTag) {
-  templateTag_ = templateTag;
-  for(int dep1 = 0; dep1 != templateTag.size(); dep1++) {
-  auto templateTagObj = templateTag.at(dep1);
-  std::string templateTagObjStr = std::string("TemplateTag") + "." + std::to_string(dep1 + 1);
-    setParameter(templateTagObjStr + ".Key", templateTagObj.key);
-    setParameter(templateTagObjStr + ".Value", templateTagObj.value);
-  }
-}
-
 std::string DeleteImageComponentRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
