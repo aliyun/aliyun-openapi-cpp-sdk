@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINFILESIZEPROPORTIONDATARESULT_H_
-#define ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINFILESIZEPROPORTIONDATARESULT_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_TESTDESCRIBEDOMAINBPSDATARESULT_H_
+#define ALIBABACLOUD_CDN_MODEL_TESTDESCRIBEDOMAINBPSDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,55 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CDN_EXPORT DescribeDomainFileSizeProportionDataResult : public ServiceResult
+			class ALIBABACLOUD_CDN_EXPORT TestDescribeDomainBpsDataResult : public ServiceResult
 			{
 			public:
-				struct UsageData
+				struct DataModule
 				{
-					struct FileSizeProportionData
-					{
-						std::string proportion;
-						std::string fileSize;
-					};
-					std::vector<UsageData::FileSizeProportionData> value;
+					std::string overseasValue;
+					std::string staticOverseasValue;
+					std::string staticDomesticValue;
+					std::string staticValue;
+					std::string overseasL2Value;
 					std::string timeStamp;
+					std::string domesticValue;
+					std::string dynamicOverseasValue;
+					std::string dynamicDomesticValue;
+					std::string value;
+					std::string domesticL2Value;
+					std::string l2Value;
+					std::string dynamicValue;
 				};
 
 
-				DescribeDomainFileSizeProportionDataResult();
-				explicit DescribeDomainFileSizeProportionDataResult(const std::string &payload);
-				~DescribeDomainFileSizeProportionDataResult();
-				std::vector<UsageData> getFileSizeProportionDataInterval()const;
+				TestDescribeDomainBpsDataResult();
+				explicit TestDescribeDomainBpsDataResult(const std::string &payload);
+				~TestDescribeDomainBpsDataResult();
+				std::string getIspNameEn()const;
+				std::string getIspName()const;
 				std::string getEndTime()const;
 				std::string getDomainName()const;
+				std::string getLocationNameEn()const;
 				std::string getStartTime()const;
 				std::string getDataInterval()const;
+				std::vector<DataModule> getBpsDataPerInterval()const;
+				std::string getLocationName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<UsageData> fileSizeProportionDataInterval_;
+				std::string ispNameEn_;
+				std::string ispName_;
 				std::string endTime_;
 				std::string domainName_;
+				std::string locationNameEn_;
 				std::string startTime_;
 				std::string dataInterval_;
+				std::vector<DataModule> bpsDataPerInterval_;
+				std::string locationName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINFILESIZEPROPORTIONDATARESULT_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_TESTDESCRIBEDOMAINBPSDATARESULT_H_

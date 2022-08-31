@@ -43,20 +43,18 @@ void DescribeDomainSrcBpsDataResult::parse(const std::string &payload)
 	for (auto valueSrcBpsDataPerIntervalDataModule : allSrcBpsDataPerIntervalNode)
 	{
 		DataModule srcBpsDataPerIntervalObject;
-		if(!valueSrcBpsDataPerIntervalDataModule["TimeStamp"].isNull())
-			srcBpsDataPerIntervalObject.timeStamp = valueSrcBpsDataPerIntervalDataModule["TimeStamp"].asString();
 		if(!valueSrcBpsDataPerIntervalDataModule["Value"].isNull())
 			srcBpsDataPerIntervalObject.value = valueSrcBpsDataPerIntervalDataModule["Value"].asString();
-		if(!valueSrcBpsDataPerIntervalDataModule["HttpsValue"].isNull())
-			srcBpsDataPerIntervalObject.httpsValue = valueSrcBpsDataPerIntervalDataModule["HttpsValue"].asString();
+		if(!valueSrcBpsDataPerIntervalDataModule["TimeStamp"].isNull())
+			srcBpsDataPerIntervalObject.timeStamp = valueSrcBpsDataPerIntervalDataModule["TimeStamp"].asString();
 		srcBpsDataPerInterval_.push_back(srcBpsDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

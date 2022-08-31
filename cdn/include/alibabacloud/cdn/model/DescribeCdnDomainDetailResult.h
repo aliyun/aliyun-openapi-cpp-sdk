@@ -37,23 +37,26 @@ namespace AlibabaCloud
 					struct SourceModel
 					{
 						std::string type;
-						std::string content;
 						std::string priority;
+						std::string content;
 						int port;
 						std::string enabled;
-						std::string weight;
 					};
 					std::vector<SourceModel> sourceModels;
 					std::string description;
 					std::string resourceGroupId;
-					std::string scope;
 					std::string domainName;
+					std::string sourceType;
 					std::string gmtModified;
-					std::string cdnType;
 					std::string gmtCreated;
-					std::string cname;
+					int sourcePort;
 					std::string serverCertificateStatus;
+					std::string cname;
+					std::vector<std::string> sources;
 					std::string httpsCname;
+					std::string scope;
+					std::string region;
+					std::string cdnType;
 					std::string domainStatus;
 				};
 

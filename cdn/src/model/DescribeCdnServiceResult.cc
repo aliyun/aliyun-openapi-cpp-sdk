@@ -47,16 +47,16 @@ void DescribeCdnServiceResult::parse(const std::string &payload)
 			operationLocksObject.lockReason = valueOperationLocksLockReason["LockReason"].asString();
 		operationLocks_.push_back(operationLocksObject);
 	}
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["InternetChargeType"].isNull())
-		internetChargeType_ = value["InternetChargeType"].asString();
-	if(!value["OpeningTime"].isNull())
-		openingTime_ = value["OpeningTime"].asString();
-	if(!value["ChangingChargeType"].isNull())
-		changingChargeType_ = value["ChangingChargeType"].asString();
 	if(!value["ChangingAffectTime"].isNull())
 		changingAffectTime_ = value["ChangingAffectTime"].asString();
+	if(!value["ChangingChargeType"].isNull())
+		changingChargeType_ = value["ChangingChargeType"].asString();
+	if(!value["OpeningTime"].isNull())
+		openingTime_ = value["OpeningTime"].asString();
+	if(!value["InternetChargeType"].isNull())
+		internetChargeType_ = value["InternetChargeType"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
 
 }
 

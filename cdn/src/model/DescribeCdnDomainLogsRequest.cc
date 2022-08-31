@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,82 @@
 
 using AlibabaCloud::Cdn::Model::DescribeCdnDomainLogsRequest;
 
-DescribeCdnDomainLogsRequest::DescribeCdnDomainLogsRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeCdnDomainLogs")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeCdnDomainLogsRequest::DescribeCdnDomainLogsRequest()
+    : RpcServiceRequest("cdn", "2014-11-11", "DescribeCdnDomainLogs") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeCdnDomainLogsRequest::~DescribeCdnDomainLogsRequest()
-{}
+DescribeCdnDomainLogsRequest::~DescribeCdnDomainLogsRequest() {}
 
-std::string DescribeCdnDomainLogsRequest::getStartTime()const
-{
-	return startTime_;
+std::string DescribeCdnDomainLogsRequest::getStartTime() const {
+  return startTime_;
 }
 
-void DescribeCdnDomainLogsRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+void DescribeCdnDomainLogsRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 
-long DescribeCdnDomainLogsRequest::getPageNumber()const
-{
-	return pageNumber_;
+long DescribeCdnDomainLogsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeCdnDomainLogsRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeCdnDomainLogsRequest::setPageNumber(long pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-long DescribeCdnDomainLogsRequest::getPageSize()const
-{
-	return pageSize_;
+std::string DescribeCdnDomainLogsRequest::getLogDay() const {
+  return logDay_;
 }
 
-void DescribeCdnDomainLogsRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeCdnDomainLogsRequest::setLogDay(const std::string &logDay) {
+  logDay_ = logDay;
+  setParameter(std::string("LogDay"), logDay);
 }
 
-std::string DescribeCdnDomainLogsRequest::getDomainName()const
-{
-	return domainName_;
+std::string DescribeCdnDomainLogsRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DescribeCdnDomainLogsRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DescribeCdnDomainLogsRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string DescribeCdnDomainLogsRequest::getEndTime()const
-{
-	return endTime_;
+long DescribeCdnDomainLogsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeCdnDomainLogsRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+void DescribeCdnDomainLogsRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-long DescribeCdnDomainLogsRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string DescribeCdnDomainLogsRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DescribeCdnDomainLogsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeCdnDomainLogsRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
+}
+
+std::string DescribeCdnDomainLogsRequest::getEndTime() const {
+  return endTime_;
+}
+
+void DescribeCdnDomainLogsRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
+}
+
+long DescribeCdnDomainLogsRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeCdnDomainLogsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

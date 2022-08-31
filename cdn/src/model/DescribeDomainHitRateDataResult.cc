@@ -43,20 +43,18 @@ void DescribeDomainHitRateDataResult::parse(const std::string &payload)
 	for (auto valueHitRateIntervalDataModule : allHitRateIntervalNode)
 	{
 		DataModule hitRateIntervalObject;
-		if(!valueHitRateIntervalDataModule["TimeStamp"].isNull())
-			hitRateIntervalObject.timeStamp = valueHitRateIntervalDataModule["TimeStamp"].asString();
 		if(!valueHitRateIntervalDataModule["Value"].isNull())
 			hitRateIntervalObject.value = valueHitRateIntervalDataModule["Value"].asString();
-		if(!valueHitRateIntervalDataModule["HttpsValue"].isNull())
-			hitRateIntervalObject.httpsValue = valueHitRateIntervalDataModule["HttpsValue"].asString();
+		if(!valueHitRateIntervalDataModule["TimeStamp"].isNull())
+			hitRateIntervalObject.timeStamp = valueHitRateIntervalDataModule["TimeStamp"].asString();
 		hitRateInterval_.push_back(hitRateIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

@@ -34,26 +34,26 @@ namespace AlibabaCloud
 			public:
 				struct UsageTotal
 				{
-					std::string bytesHitRate;
-					std::string maxBps;
 					std::string maxSrcBpsTime;
+					std::string maxBps;
+					std::string bytesHitRate;
 					std::string requestHitRate;
 					std::string maxBpsTime;
 					std::string totalTraffic;
-					std::string maxSrcBps;
 					std::string totalAccess;
+					std::string maxSrcBps;
 				};
 				struct UsageByDay
 				{
-					std::string bytesHitRate;
-					std::string maxBps;
 					std::string maxSrcBpsTime;
+					std::string maxBps;
+					std::string bytesHitRate;
 					std::string qps;
 					std::string requestHitRate;
 					std::string maxBpsTime;
 					std::string totalTraffic;
-					std::string maxSrcBps;
 					std::string totalAccess;
+					std::string maxSrcBps;
 					std::string timeStamp;
 				};
 
@@ -64,8 +64,8 @@ namespace AlibabaCloud
 				UsageTotal getUsageTotal()const;
 				std::string getEndTime()const;
 				std::string getDomainName()const;
-				std::string getDataInterval()const;
 				std::string getStartTime()const;
+				std::string getDataInterval()const;
 				std::vector<UsageByDay> getUsageByDays()const;
 
 			protected:
@@ -74,8 +74,8 @@ namespace AlibabaCloud
 				UsageTotal usageTotal_;
 				std::string endTime_;
 				std::string domainName_;
-				std::string dataInterval_;
 				std::string startTime_;
+				std::string dataInterval_;
 				std::vector<UsageByDay> usageByDays_;
 
 			};

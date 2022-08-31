@@ -49,18 +49,16 @@ void DescribeDomainsBySourceResult::parse(const std::string &payload)
 		for (auto valueDomainsListDomainsDataDomainInfosdomainInfo : allDomainInfosNode)
 		{
 			DomainsData::DomainInfo domainInfosObject;
-			if(!valueDomainsListDomainsDataDomainInfosdomainInfo["DomainName"].isNull())
-				domainInfosObject.domainName = valueDomainsListDomainsDataDomainInfosdomainInfo["DomainName"].asString();
-			if(!valueDomainsListDomainsDataDomainInfosdomainInfo["DomainCname"].isNull())
-				domainInfosObject.domainCname = valueDomainsListDomainsDataDomainInfosdomainInfo["DomainCname"].asString();
-			if(!valueDomainsListDomainsDataDomainInfosdomainInfo["CreateTime"].isNull())
-				domainInfosObject.createTime = valueDomainsListDomainsDataDomainInfosdomainInfo["CreateTime"].asString();
-			if(!valueDomainsListDomainsDataDomainInfosdomainInfo["UpdateTime"].isNull())
-				domainInfosObject.updateTime = valueDomainsListDomainsDataDomainInfosdomainInfo["UpdateTime"].asString();
 			if(!valueDomainsListDomainsDataDomainInfosdomainInfo["Status"].isNull())
 				domainInfosObject.status = valueDomainsListDomainsDataDomainInfosdomainInfo["Status"].asString();
-			if(!valueDomainsListDomainsDataDomainInfosdomainInfo["CdnType"].isNull())
-				domainInfosObject.cdnType = valueDomainsListDomainsDataDomainInfosdomainInfo["CdnType"].asString();
+			if(!valueDomainsListDomainsDataDomainInfosdomainInfo["UpdateTime"].isNull())
+				domainInfosObject.updateTime = valueDomainsListDomainsDataDomainInfosdomainInfo["UpdateTime"].asString();
+			if(!valueDomainsListDomainsDataDomainInfosdomainInfo["DomainCname"].isNull())
+				domainInfosObject.domainCname = valueDomainsListDomainsDataDomainInfosdomainInfo["DomainCname"].asString();
+			if(!valueDomainsListDomainsDataDomainInfosdomainInfo["DomainName"].isNull())
+				domainInfosObject.domainName = valueDomainsListDomainsDataDomainInfosdomainInfo["DomainName"].asString();
+			if(!valueDomainsListDomainsDataDomainInfosdomainInfo["CreateTime"].isNull())
+				domainInfosObject.createTime = valueDomainsListDomainsDataDomainInfosdomainInfo["CreateTime"].asString();
 			domainsListObject.domainInfos.push_back(domainInfosObject);
 		}
 		auto allDomains = value["Domains"]["domainNames"];

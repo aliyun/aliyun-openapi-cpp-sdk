@@ -43,40 +43,44 @@ void DescribeDomainISPDataResult::parse(const std::string &payload)
 	for (auto valueValueISPProportionData : allValueNode)
 	{
 		ISPProportionData valueObject;
-		if(!valueValueISPProportionData["ISP"].isNull())
-			valueObject.iSP = valueValueISPProportionData["ISP"].asString();
-		if(!valueValueISPProportionData["Proportion"].isNull())
-			valueObject.proportion = valueValueISPProportionData["Proportion"].asString();
-		if(!valueValueISPProportionData["IspEname"].isNull())
-			valueObject.ispEname = valueValueISPProportionData["IspEname"].asString();
-		if(!valueValueISPProportionData["AvgObjectSize"].isNull())
-			valueObject.avgObjectSize = valueValueISPProportionData["AvgObjectSize"].asString();
+		if(!valueValueISPProportionData["TotalQuery"].isNull())
+			valueObject.totalQuery = valueValueISPProportionData["TotalQuery"].asString();
+		if(!valueValueISPProportionData["ByteHitRate"].isNull())
+			valueObject.byteHitRate = valueValueISPProportionData["ByteHitRate"].asString();
+		if(!valueValueISPProportionData["TotalBytes"].isNull())
+			valueObject.totalBytes = valueValueISPProportionData["TotalBytes"].asString();
+		if(!valueValueISPProportionData["ReqHitRate"].isNull())
+			valueObject.reqHitRate = valueValueISPProportionData["ReqHitRate"].asString();
+		if(!valueValueISPProportionData["AvgResponseRate"].isNull())
+			valueObject.avgResponseRate = valueValueISPProportionData["AvgResponseRate"].asString();
 		if(!valueValueISPProportionData["AvgResponseTime"].isNull())
 			valueObject.avgResponseTime = valueValueISPProportionData["AvgResponseTime"].asString();
+		if(!valueValueISPProportionData["ReqErrRate"].isNull())
+			valueObject.reqErrRate = valueValueISPProportionData["ReqErrRate"].asString();
+		if(!valueValueISPProportionData["AvgObjectSize"].isNull())
+			valueObject.avgObjectSize = valueValueISPProportionData["AvgObjectSize"].asString();
 		if(!valueValueISPProportionData["Bps"].isNull())
 			valueObject.bps = valueValueISPProportionData["Bps"].asString();
 		if(!valueValueISPProportionData["Qps"].isNull())
 			valueObject.qps = valueValueISPProportionData["Qps"].asString();
-		if(!valueValueISPProportionData["AvgResponseRate"].isNull())
-			valueObject.avgResponseRate = valueValueISPProportionData["AvgResponseRate"].asString();
-		if(!valueValueISPProportionData["ReqErrRate"].isNull())
-			valueObject.reqErrRate = valueValueISPProportionData["ReqErrRate"].asString();
-		if(!valueValueISPProportionData["TotalBytes"].isNull())
-			valueObject.totalBytes = valueValueISPProportionData["TotalBytes"].asString();
+		if(!valueValueISPProportionData["Proportion"].isNull())
+			valueObject.proportion = valueValueISPProportionData["Proportion"].asString();
+		if(!valueValueISPProportionData["IspEname"].isNull())
+			valueObject.ispEname = valueValueISPProportionData["IspEname"].asString();
+		if(!valueValueISPProportionData["ISP"].isNull())
+			valueObject.iSP = valueValueISPProportionData["ISP"].asString();
 		if(!valueValueISPProportionData["BytesProportion"].isNull())
 			valueObject.bytesProportion = valueValueISPProportionData["BytesProportion"].asString();
-		if(!valueValueISPProportionData["TotalQuery"].isNull())
-			valueObject.totalQuery = valueValueISPProportionData["TotalQuery"].asString();
 		value_.push_back(valueObject);
 	}
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
 
 }
 
@@ -95,13 +99,13 @@ std::vector<DescribeDomainISPDataResult::ISPProportionData> DescribeDomainISPDat
 	return value_;
 }
 
-std::string DescribeDomainISPDataResult::getDataInterval()const
-{
-	return dataInterval_;
-}
-
 std::string DescribeDomainISPDataResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeDomainISPDataResult::getDataInterval()const
+{
+	return dataInterval_;
 }
 

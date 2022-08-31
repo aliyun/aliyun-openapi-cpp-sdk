@@ -34,24 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct PageData
 				{
-					struct Source
-					{
-						std::string type;
-						std::string content;
-						std::string priority;
-						int port;
-						std::string weight;
-					};
-					std::string description;
 					std::string sslProtocol;
+					std::string description;
 					std::string resourceGroupId;
 					std::string domainName;
+					std::string sourceType;
 					std::string gmtModified;
-					std::string coverage;
-					std::string cdnType;
 					std::string gmtCreated;
-					std::vector<PageData::Source> sources;
+					std::string cdnType;
 					std::string cname;
+					std::vector<std::string> sources;
 					std::string domainStatus;
 					std::string sandbox;
 				};

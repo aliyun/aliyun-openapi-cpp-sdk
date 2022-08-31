@@ -43,18 +43,18 @@ void DescribeDomainSrcFlowDataResult::parse(const std::string &payload)
 	for (auto valueSrcFlowDataPerIntervalDataModule : allSrcFlowDataPerIntervalNode)
 	{
 		DataModule srcFlowDataPerIntervalObject;
-		if(!valueSrcFlowDataPerIntervalDataModule["TimeStamp"].isNull())
-			srcFlowDataPerIntervalObject.timeStamp = valueSrcFlowDataPerIntervalDataModule["TimeStamp"].asString();
 		if(!valueSrcFlowDataPerIntervalDataModule["Value"].isNull())
 			srcFlowDataPerIntervalObject.value = valueSrcFlowDataPerIntervalDataModule["Value"].asString();
+		if(!valueSrcFlowDataPerIntervalDataModule["TimeStamp"].isNull())
+			srcFlowDataPerIntervalObject.timeStamp = valueSrcFlowDataPerIntervalDataModule["TimeStamp"].asString();
 		srcFlowDataPerInterval_.push_back(srcFlowDataPerIntervalObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

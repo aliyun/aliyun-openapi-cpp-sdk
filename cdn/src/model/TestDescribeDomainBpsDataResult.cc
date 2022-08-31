@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cdn/model/DescribeDomainBpsDataResult.h>
+#include <alibabacloud/cdn/model/TestDescribeDomainBpsDataResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cdn;
 using namespace AlibabaCloud::Cdn::Model;
 
-DescribeDomainBpsDataResult::DescribeDomainBpsDataResult() :
+TestDescribeDomainBpsDataResult::TestDescribeDomainBpsDataResult() :
 	ServiceResult()
 {}
 
-DescribeDomainBpsDataResult::DescribeDomainBpsDataResult(const std::string &payload) :
+TestDescribeDomainBpsDataResult::TestDescribeDomainBpsDataResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeDomainBpsDataResult::~DescribeDomainBpsDataResult()
+TestDescribeDomainBpsDataResult::~TestDescribeDomainBpsDataResult()
 {}
 
-void DescribeDomainBpsDataResult::parse(const std::string &payload)
+void TestDescribeDomainBpsDataResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -90,47 +90,47 @@ void DescribeDomainBpsDataResult::parse(const std::string &payload)
 
 }
 
-std::string DescribeDomainBpsDataResult::getIspNameEn()const
+std::string TestDescribeDomainBpsDataResult::getIspNameEn()const
 {
 	return ispNameEn_;
 }
 
-std::string DescribeDomainBpsDataResult::getIspName()const
+std::string TestDescribeDomainBpsDataResult::getIspName()const
 {
 	return ispName_;
 }
 
-std::string DescribeDomainBpsDataResult::getEndTime()const
+std::string TestDescribeDomainBpsDataResult::getEndTime()const
 {
 	return endTime_;
 }
 
-std::string DescribeDomainBpsDataResult::getDomainName()const
+std::string TestDescribeDomainBpsDataResult::getDomainName()const
 {
 	return domainName_;
 }
 
-std::string DescribeDomainBpsDataResult::getLocationNameEn()const
+std::string TestDescribeDomainBpsDataResult::getLocationNameEn()const
 {
 	return locationNameEn_;
 }
 
-std::string DescribeDomainBpsDataResult::getStartTime()const
+std::string TestDescribeDomainBpsDataResult::getStartTime()const
 {
 	return startTime_;
 }
 
-std::string DescribeDomainBpsDataResult::getDataInterval()const
+std::string TestDescribeDomainBpsDataResult::getDataInterval()const
 {
 	return dataInterval_;
 }
 
-std::vector<DescribeDomainBpsDataResult::DataModule> DescribeDomainBpsDataResult::getBpsDataPerInterval()const
+std::vector<TestDescribeDomainBpsDataResult::DataModule> TestDescribeDomainBpsDataResult::getBpsDataPerInterval()const
 {
 	return bpsDataPerInterval_;
 }
 
-std::string DescribeDomainBpsDataResult::getLocationName()const
+std::string TestDescribeDomainBpsDataResult::getLocationName()const
 {
 	return locationName_;
 }

@@ -49,22 +49,22 @@ void DescribeDomainFileSizeProportionDataResult::parse(const std::string &payloa
 		for (auto valueFileSizeProportionDataIntervalUsageDataValueFileSizeProportionData : allValueNode)
 		{
 			UsageData::FileSizeProportionData valueObject;
-			if(!valueFileSizeProportionDataIntervalUsageDataValueFileSizeProportionData["FileSize"].isNull())
-				valueObject.fileSize = valueFileSizeProportionDataIntervalUsageDataValueFileSizeProportionData["FileSize"].asString();
 			if(!valueFileSizeProportionDataIntervalUsageDataValueFileSizeProportionData["Proportion"].isNull())
 				valueObject.proportion = valueFileSizeProportionDataIntervalUsageDataValueFileSizeProportionData["Proportion"].asString();
+			if(!valueFileSizeProportionDataIntervalUsageDataValueFileSizeProportionData["FileSize"].isNull())
+				valueObject.fileSize = valueFileSizeProportionDataIntervalUsageDataValueFileSizeProportionData["FileSize"].asString();
 			fileSizeProportionDataIntervalObject.value.push_back(valueObject);
 		}
 		fileSizeProportionDataInterval_.push_back(fileSizeProportionDataIntervalObject);
 	}
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
 
 }
 
@@ -83,13 +83,13 @@ std::string DescribeDomainFileSizeProportionDataResult::getDomainName()const
 	return domainName_;
 }
 
-std::string DescribeDomainFileSizeProportionDataResult::getDataInterval()const
-{
-	return dataInterval_;
-}
-
 std::string DescribeDomainFileSizeProportionDataResult::getStartTime()const
 {
 	return startTime_;
+}
+
+std::string DescribeDomainFileSizeProportionDataResult::getDataInterval()const
+{
+	return dataInterval_;
 }
 

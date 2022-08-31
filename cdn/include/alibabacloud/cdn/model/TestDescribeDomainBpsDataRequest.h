@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINUVDATAREQUEST_H_
-#define ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINUVDATAREQUEST_H_
+#ifndef ALIBABACLOUD_CDN_MODEL_TESTDESCRIBEDOMAINBPSDATAREQUEST_H_
+#define ALIBABACLOUD_CDN_MODEL_TESTDESCRIBEDOMAINBPSDATAREQUEST_H_
 
 #include <alibabacloud/cdn/CdnExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,38 @@
 namespace AlibabaCloud {
 namespace Cdn {
 namespace Model {
-class ALIBABACLOUD_CDN_EXPORT DescribeDomainUvDataRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CDN_EXPORT TestDescribeDomainBpsDataRequest : public RpcServiceRequest {
 public:
-	DescribeDomainUvDataRequest();
-	~DescribeDomainUvDataRequest();
-	std::string getStartTime() const;
-	void setStartTime(const std::string &startTime);
-	std::string getSecurityToken() const;
-	void setSecurityToken(const std::string &securityToken);
+	TestDescribeDomainBpsDataRequest();
+	~TestDescribeDomainBpsDataRequest();
+	std::string getDomainType() const;
+	void setDomainType(const std::string &domainType);
+	std::string getTimeMerge() const;
+	void setTimeMerge(const std::string &timeMerge);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
 	std::string getEndTime() const;
 	void setEndTime(const std::string &endTime);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
+	std::string getInterval() const;
+	void setInterval(const std::string &interval);
+	std::string getLocationNameEn() const;
+	void setLocationNameEn(const std::string &locationNameEn);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getIspNameEn() const;
+	void setIspNameEn(const std::string &ispNameEn);
 
 private:
-	std::string startTime_;
-	std::string securityToken_;
+	std::string domainType_;
+	std::string timeMerge_;
 	std::string domainName_;
 	std::string endTime_;
-	long ownerId_;
+	std::string interval_;
+	std::string locationNameEn_;
+	std::string startTime_;
+	std::string ispNameEn_;
 };
 } // namespace Model
 } // namespace Cdn
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CDN_MODEL_DESCRIBEDOMAINUVDATAREQUEST_H_
+#endif // !ALIBABACLOUD_CDN_MODEL_TESTDESCRIBEDOMAINBPSDATAREQUEST_H_

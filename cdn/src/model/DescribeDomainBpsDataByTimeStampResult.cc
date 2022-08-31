@@ -43,20 +43,20 @@ void DescribeDomainBpsDataByTimeStampResult::parse(const std::string &payload)
 	for (auto valueBpsDataListBpsDataModel : allBpsDataListNode)
 	{
 		BpsDataModel bpsDataListObject;
-		if(!valueBpsDataListBpsDataModel["TimeStamp"].isNull())
-			bpsDataListObject.timeStamp = valueBpsDataListBpsDataModel["TimeStamp"].asString();
 		if(!valueBpsDataListBpsDataModel["LocationName"].isNull())
 			bpsDataListObject.locationName = valueBpsDataListBpsDataModel["LocationName"].asString();
+		if(!valueBpsDataListBpsDataModel["TimeStamp"].isNull())
+			bpsDataListObject.timeStamp = valueBpsDataListBpsDataModel["TimeStamp"].asString();
 		if(!valueBpsDataListBpsDataModel["IspName"].isNull())
 			bpsDataListObject.ispName = valueBpsDataListBpsDataModel["IspName"].asString();
 		if(!valueBpsDataListBpsDataModel["Bps"].isNull())
 			bpsDataListObject.bps = std::stol(valueBpsDataListBpsDataModel["Bps"].asString());
 		bpsDataList_.push_back(bpsDataListObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
 	if(!value["TimeStamp"].isNull())
 		timeStamp_ = value["TimeStamp"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 
 }
 

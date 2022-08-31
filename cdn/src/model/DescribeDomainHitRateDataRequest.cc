@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Cdn::Model::DescribeDomainHitRateDataRequest;
 
-DescribeDomainHitRateDataRequest::DescribeDomainHitRateDataRequest() :
-	RpcServiceRequest("cdn", "2018-05-10", "DescribeDomainHitRateData")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDomainHitRateDataRequest::DescribeDomainHitRateDataRequest()
+    : RpcServiceRequest("cdn", "2014-11-11", "DescribeDomainHitRateData") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDomainHitRateDataRequest::~DescribeDomainHitRateDataRequest()
-{}
+DescribeDomainHitRateDataRequest::~DescribeDomainHitRateDataRequest() {}
 
-std::string DescribeDomainHitRateDataRequest::getStartTime()const
-{
-	return startTime_;
+std::string DescribeDomainHitRateDataRequest::getStartTime() const {
+  return startTime_;
 }
 
-void DescribeDomainHitRateDataRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+void DescribeDomainHitRateDataRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 
-std::string DescribeDomainHitRateDataRequest::getDomainName()const
-{
-	return domainName_;
+std::string DescribeDomainHitRateDataRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DescribeDomainHitRateDataRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DescribeDomainHitRateDataRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string DescribeDomainHitRateDataRequest::getEndTime()const
-{
-	return endTime_;
+std::string DescribeDomainHitRateDataRequest::getEndTime() const {
+  return endTime_;
 }
 
-void DescribeDomainHitRateDataRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+void DescribeDomainHitRateDataRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
-long DescribeDomainHitRateDataRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeDomainHitRateDataRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeDomainHitRateDataRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeDomainHitRateDataRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeDomainHitRateDataRequest::getInterval()const
-{
-	return interval_;
+std::string DescribeDomainHitRateDataRequest::getInterval() const {
+  return interval_;
 }
 
-void DescribeDomainHitRateDataRequest::setInterval(const std::string& interval)
-{
-	interval_ = interval;
-	setParameter("Interval", interval);
+void DescribeDomainHitRateDataRequest::setInterval(const std::string &interval) {
+  interval_ = interval;
+  setParameter(std::string("Interval"), interval);
 }
 
