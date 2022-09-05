@@ -40,28 +40,28 @@ void SearchTracesByPageResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto pageBeanNode = value["PageBean"];
-	if(!pageBeanNode["Total"].isNull())
-		pageBean_.total = std::stoi(pageBeanNode["Total"].asString());
 	if(!pageBeanNode["PageNumber"].isNull())
 		pageBean_.pageNumber = std::stoi(pageBeanNode["PageNumber"].asString());
 	if(!pageBeanNode["PageSize"].isNull())
 		pageBean_.pageSize = std::stoi(pageBeanNode["PageSize"].asString());
+	if(!pageBeanNode["Total"].isNull())
+		pageBean_.total = std::stoi(pageBeanNode["Total"].asString());
 	auto allTraceInfosNode = pageBeanNode["TraceInfos"]["TraceInfo"];
 	for (auto pageBeanNodeTraceInfosTraceInfo : allTraceInfosNode)
 	{
 		PageBean::TraceInfo traceInfoObject;
-		if(!pageBeanNodeTraceInfosTraceInfo["TraceID"].isNull())
-			traceInfoObject.traceID = pageBeanNodeTraceInfosTraceInfo["TraceID"].asString();
 		if(!pageBeanNodeTraceInfosTraceInfo["OperationName"].isNull())
 			traceInfoObject.operationName = pageBeanNodeTraceInfosTraceInfo["OperationName"].asString();
-		if(!pageBeanNodeTraceInfosTraceInfo["ServiceName"].isNull())
-			traceInfoObject.serviceName = pageBeanNodeTraceInfosTraceInfo["ServiceName"].asString();
 		if(!pageBeanNodeTraceInfosTraceInfo["ServiceIp"].isNull())
 			traceInfoObject.serviceIp = pageBeanNodeTraceInfosTraceInfo["ServiceIp"].asString();
 		if(!pageBeanNodeTraceInfosTraceInfo["Duration"].isNull())
 			traceInfoObject.duration = std::stol(pageBeanNodeTraceInfosTraceInfo["Duration"].asString());
 		if(!pageBeanNodeTraceInfosTraceInfo["Timestamp"].isNull())
 			traceInfoObject.timestamp = std::stol(pageBeanNodeTraceInfosTraceInfo["Timestamp"].asString());
+		if(!pageBeanNodeTraceInfosTraceInfo["ServiceName"].isNull())
+			traceInfoObject.serviceName = pageBeanNodeTraceInfosTraceInfo["ServiceName"].asString();
+		if(!pageBeanNodeTraceInfosTraceInfo["TraceID"].isNull())
+			traceInfoObject.traceID = pageBeanNodeTraceInfosTraceInfo["TraceID"].asString();
 		pageBean_.traceInfos.push_back(traceInfoObject);
 	}
 

@@ -43,38 +43,38 @@ void SearchAlertContactGroupResult::parse(const std::string &payload)
 	for (auto valueContactGroupsContactGroup : allContactGroupsNode)
 	{
 		ContactGroup contactGroupsObject;
-		if(!valueContactGroupsContactGroup["ContactGroupId"].isNull())
-			contactGroupsObject.contactGroupId = std::stol(valueContactGroupsContactGroup["ContactGroupId"].asString());
-		if(!valueContactGroupsContactGroup["ContactGroupName"].isNull())
-			contactGroupsObject.contactGroupName = valueContactGroupsContactGroup["ContactGroupName"].asString();
-		if(!valueContactGroupsContactGroup["UserId"].isNull())
-			contactGroupsObject.userId = valueContactGroupsContactGroup["UserId"].asString();
-		if(!valueContactGroupsContactGroup["CreateTime"].isNull())
-			contactGroupsObject.createTime = std::stol(valueContactGroupsContactGroup["CreateTime"].asString());
 		if(!valueContactGroupsContactGroup["UpdateTime"].isNull())
 			contactGroupsObject.updateTime = std::stol(valueContactGroupsContactGroup["UpdateTime"].asString());
+		if(!valueContactGroupsContactGroup["ContactGroupName"].isNull())
+			contactGroupsObject.contactGroupName = valueContactGroupsContactGroup["ContactGroupName"].asString();
+		if(!valueContactGroupsContactGroup["ContactGroupId"].isNull())
+			contactGroupsObject.contactGroupId = std::stol(valueContactGroupsContactGroup["ContactGroupId"].asString());
+		if(!valueContactGroupsContactGroup["CreateTime"].isNull())
+			contactGroupsObject.createTime = std::stol(valueContactGroupsContactGroup["CreateTime"].asString());
+		if(!valueContactGroupsContactGroup["UserId"].isNull())
+			contactGroupsObject.userId = valueContactGroupsContactGroup["UserId"].asString();
 		auto allContactsNode = valueContactGroupsContactGroup["Contacts"]["Contact"];
 		for (auto valueContactGroupsContactGroupContactsContact : allContactsNode)
 		{
 			ContactGroup::Contact contactsObject;
-			if(!valueContactGroupsContactGroupContactsContact["ContactId"].isNull())
-				contactsObject.contactId = std::stol(valueContactGroupsContactGroupContactsContact["ContactId"].asString());
-			if(!valueContactGroupsContactGroupContactsContact["ContactName"].isNull())
-				contactsObject.contactName = valueContactGroupsContactGroupContactsContact["ContactName"].asString();
-			if(!valueContactGroupsContactGroupContactsContact["Phone"].isNull())
-				contactsObject.phone = valueContactGroupsContactGroupContactsContact["Phone"].asString();
-			if(!valueContactGroupsContactGroupContactsContact["Email"].isNull())
-				contactsObject.email = valueContactGroupsContactGroupContactsContact["Email"].asString();
-			if(!valueContactGroupsContactGroupContactsContact["UserId"].isNull())
-				contactsObject.userId = valueContactGroupsContactGroupContactsContact["UserId"].asString();
-			if(!valueContactGroupsContactGroupContactsContact["DingRobot"].isNull())
-				contactsObject.dingRobot = valueContactGroupsContactGroupContactsContact["DingRobot"].asString();
-			if(!valueContactGroupsContactGroupContactsContact["CreateTime"].isNull())
-				contactsObject.createTime = std::stol(valueContactGroupsContactGroupContactsContact["CreateTime"].asString());
 			if(!valueContactGroupsContactGroupContactsContact["UpdateTime"].isNull())
 				contactsObject.updateTime = std::stol(valueContactGroupsContactGroupContactsContact["UpdateTime"].asString());
+			if(!valueContactGroupsContactGroupContactsContact["DingRobot"].isNull())
+				contactsObject.dingRobot = valueContactGroupsContactGroupContactsContact["DingRobot"].asString();
+			if(!valueContactGroupsContactGroupContactsContact["Email"].isNull())
+				contactsObject.email = valueContactGroupsContactGroupContactsContact["Email"].asString();
+			if(!valueContactGroupsContactGroupContactsContact["ContactId"].isNull())
+				contactsObject.contactId = std::stol(valueContactGroupsContactGroupContactsContact["ContactId"].asString());
+			if(!valueContactGroupsContactGroupContactsContact["CreateTime"].isNull())
+				contactsObject.createTime = std::stol(valueContactGroupsContactGroupContactsContact["CreateTime"].asString());
+			if(!valueContactGroupsContactGroupContactsContact["UserId"].isNull())
+				contactsObject.userId = valueContactGroupsContactGroupContactsContact["UserId"].asString();
+			if(!valueContactGroupsContactGroupContactsContact["ContactName"].isNull())
+				contactsObject.contactName = valueContactGroupsContactGroupContactsContact["ContactName"].asString();
 			if(!valueContactGroupsContactGroupContactsContact["SystemNoc"].isNull())
 				contactsObject.systemNoc = valueContactGroupsContactGroupContactsContact["SystemNoc"].asString() == "true";
+			if(!valueContactGroupsContactGroupContactsContact["Phone"].isNull())
+				contactsObject.phone = valueContactGroupsContactGroupContactsContact["Phone"].asString();
 			contactGroupsObject.contacts.push_back(contactsObject);
 		}
 		contactGroups_.push_back(contactGroupsObject);

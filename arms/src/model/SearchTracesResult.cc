@@ -43,18 +43,18 @@ void SearchTracesResult::parse(const std::string &payload)
 	for (auto valueTraceInfosTraceInfo : allTraceInfosNode)
 	{
 		TraceInfo traceInfosObject;
-		if(!valueTraceInfosTraceInfo["TraceID"].isNull())
-			traceInfosObject.traceID = valueTraceInfosTraceInfo["TraceID"].asString();
 		if(!valueTraceInfosTraceInfo["OperationName"].isNull())
 			traceInfosObject.operationName = valueTraceInfosTraceInfo["OperationName"].asString();
-		if(!valueTraceInfosTraceInfo["ServiceName"].isNull())
-			traceInfosObject.serviceName = valueTraceInfosTraceInfo["ServiceName"].asString();
 		if(!valueTraceInfosTraceInfo["ServiceIp"].isNull())
 			traceInfosObject.serviceIp = valueTraceInfosTraceInfo["ServiceIp"].asString();
 		if(!valueTraceInfosTraceInfo["Duration"].isNull())
 			traceInfosObject.duration = std::stol(valueTraceInfosTraceInfo["Duration"].asString());
 		if(!valueTraceInfosTraceInfo["Timestamp"].isNull())
 			traceInfosObject.timestamp = std::stol(valueTraceInfosTraceInfo["Timestamp"].asString());
+		if(!valueTraceInfosTraceInfo["ServiceName"].isNull())
+			traceInfosObject.serviceName = valueTraceInfosTraceInfo["ServiceName"].asString();
+		if(!valueTraceInfosTraceInfo["TraceID"].isNull())
+			traceInfosObject.traceID = valueTraceInfosTraceInfo["TraceID"].asString();
 		traceInfos_.push_back(traceInfosObject);
 	}
 

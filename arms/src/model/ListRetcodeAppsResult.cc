@@ -43,14 +43,14 @@ void ListRetcodeAppsResult::parse(const std::string &payload)
 	for (auto valueRetcodeAppsRetcodeApp : allRetcodeAppsNode)
 	{
 		RetcodeApp retcodeAppsObject;
-		if(!valueRetcodeAppsRetcodeApp["AppId"].isNull())
-			retcodeAppsObject.appId = std::stol(valueRetcodeAppsRetcodeApp["AppId"].asString());
-		if(!valueRetcodeAppsRetcodeApp["Pid"].isNull())
-			retcodeAppsObject.pid = valueRetcodeAppsRetcodeApp["Pid"].asString();
 		if(!valueRetcodeAppsRetcodeApp["AppName"].isNull())
 			retcodeAppsObject.appName = valueRetcodeAppsRetcodeApp["AppName"].asString();
 		if(!valueRetcodeAppsRetcodeApp["RetcodeAppType"].isNull())
 			retcodeAppsObject.retcodeAppType = valueRetcodeAppsRetcodeApp["RetcodeAppType"].asString();
+		if(!valueRetcodeAppsRetcodeApp["AppId"].isNull())
+			retcodeAppsObject.appId = std::stol(valueRetcodeAppsRetcodeApp["AppId"].asString());
+		if(!valueRetcodeAppsRetcodeApp["Pid"].isNull())
+			retcodeAppsObject.pid = valueRetcodeAppsRetcodeApp["Pid"].asString();
 		retcodeApps_.push_back(retcodeAppsObject);
 	}
 

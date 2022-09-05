@@ -34,15 +34,37 @@ namespace AlibabaCloud
 			public:
 				struct DashboardVosItem
 				{
+					struct I18nChild
+					{
+						std::string title;
+						std::string time;
+						std::string exporter;
+						std::string url;
+						std::string httpUrl;
+						std::string name;
+						std::string uid;
+						std::string type;
+						bool needUpdate;
+						std::string language;
+						std::string version;
+						std::vector<std::string> tags1;
+						std::string kind;
+						std::string id;
+						std::string dashboardType;
+						std::string httpsUrl;
+						bool isArmsExporter;
+					};
 					std::string title;
 					std::string time;
 					std::string exporter;
+					I18nChild i18nChild;
 					std::string url;
 					std::string httpUrl;
 					std::string name;
 					std::string uid;
 					std::string type;
 					bool needUpdate;
+					std::string language;
 					std::string version;
 					std::string kind;
 					std::string id;

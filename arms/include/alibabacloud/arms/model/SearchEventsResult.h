@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					struct EventItem
 					{
-						int alertType;
 						std::string eventLevel;
+						int alertType;
 						long alertId;
 						std::string alertName;
 						std::string message;

@@ -45,18 +45,18 @@ void GetStackResult::parse(const std::string &payload)
 		StackInfoItem stackInfoObject;
 		if(!valueStackInfoStackInfoItem["StartTime"].isNull())
 			stackInfoObject.startTime = std::stol(valueStackInfoStackInfoItem["StartTime"].asString());
+		if(!valueStackInfoStackInfoItem["Exception"].isNull())
+			stackInfoObject.exception = valueStackInfoStackInfoItem["Exception"].asString();
+		if(!valueStackInfoStackInfoItem["Api"].isNull())
+			stackInfoObject.api = valueStackInfoStackInfoItem["Api"].asString();
+		if(!valueStackInfoStackInfoItem["Line"].isNull())
+			stackInfoObject.line = valueStackInfoStackInfoItem["Line"].asString();
 		if(!valueStackInfoStackInfoItem["Duration"].isNull())
 			stackInfoObject.duration = std::stol(valueStackInfoStackInfoItem["Duration"].asString());
 		if(!valueStackInfoStackInfoItem["RpcId"].isNull())
 			stackInfoObject.rpcId = valueStackInfoStackInfoItem["RpcId"].asString();
 		if(!valueStackInfoStackInfoItem["ServiceName"].isNull())
 			stackInfoObject.serviceName = valueStackInfoStackInfoItem["ServiceName"].asString();
-		if(!valueStackInfoStackInfoItem["Api"].isNull())
-			stackInfoObject.api = valueStackInfoStackInfoItem["Api"].asString();
-		if(!valueStackInfoStackInfoItem["Exception"].isNull())
-			stackInfoObject.exception = valueStackInfoStackInfoItem["Exception"].asString();
-		if(!valueStackInfoStackInfoItem["Line"].isNull())
-			stackInfoObject.line = valueStackInfoStackInfoItem["Line"].asString();
 		auto extInfoNode = value["ExtInfo"];
 		if(!extInfoNode["Type"].isNull())
 			stackInfoObject.extInfo.type = extInfoNode["Type"].asString();

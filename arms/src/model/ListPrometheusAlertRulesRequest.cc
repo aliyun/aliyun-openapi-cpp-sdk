@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::ARMS::Model::ListPrometheusAlertRulesRequest;
 
-ListPrometheusAlertRulesRequest::ListPrometheusAlertRulesRequest() :
-	RpcServiceRequest("arms", "2019-08-08", "ListPrometheusAlertRules")
-{
-	setMethod(HttpRequest::Method::Post);
+ListPrometheusAlertRulesRequest::ListPrometheusAlertRulesRequest()
+    : RpcServiceRequest("arms", "2019-08-08", "ListPrometheusAlertRules") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListPrometheusAlertRulesRequest::~ListPrometheusAlertRulesRequest()
-{}
+ListPrometheusAlertRulesRequest::~ListPrometheusAlertRulesRequest() {}
 
-std::string ListPrometheusAlertRulesRequest::getClusterId()const
-{
-	return clusterId_;
+std::string ListPrometheusAlertRulesRequest::getClusterId() const {
+  return clusterId_;
 }
 
-void ListPrometheusAlertRulesRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+void ListPrometheusAlertRulesRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
-std::string ListPrometheusAlertRulesRequest::getProxyUserId()const
-{
-	return proxyUserId_;
+std::string ListPrometheusAlertRulesRequest::getProxyUserId() const {
+  return proxyUserId_;
 }
 
-void ListPrometheusAlertRulesRequest::setProxyUserId(const std::string& proxyUserId)
-{
-	proxyUserId_ = proxyUserId;
-	setParameter("ProxyUserId", proxyUserId);
+void ListPrometheusAlertRulesRequest::setProxyUserId(const std::string &proxyUserId) {
+  proxyUserId_ = proxyUserId;
+  setParameter(std::string("ProxyUserId"), proxyUserId);
 }
 
-std::string ListPrometheusAlertRulesRequest::getType()const
-{
-	return type_;
+std::string ListPrometheusAlertRulesRequest::getType() const {
+  return type_;
 }
 
-void ListPrometheusAlertRulesRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setParameter("Type", type);
+void ListPrometheusAlertRulesRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
 }
 
-std::string ListPrometheusAlertRulesRequest::getRegionId()const
-{
-	return regionId_;
+std::string ListPrometheusAlertRulesRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ListPrometheusAlertRulesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ListPrometheusAlertRulesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ListPrometheusAlertRulesRequest::getName()const
-{
-	return name_;
+std::string ListPrometheusAlertRulesRequest::getName() const {
+  return name_;
 }
 
-void ListPrometheusAlertRulesRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
+void ListPrometheusAlertRulesRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 
-std::string ListPrometheusAlertRulesRequest::getMatchExpressions()const
-{
-	return matchExpressions_;
+std::string ListPrometheusAlertRulesRequest::getMatchExpressions() const {
+  return matchExpressions_;
 }
 
-void ListPrometheusAlertRulesRequest::setMatchExpressions(const std::string& matchExpressions)
-{
-	matchExpressions_ = matchExpressions;
-	setParameter("MatchExpressions", matchExpressions);
+void ListPrometheusAlertRulesRequest::setMatchExpressions(const std::string &matchExpressions) {
+  matchExpressions_ = matchExpressions;
+  setParameter(std::string("MatchExpressions"), matchExpressions);
 }
 
-int ListPrometheusAlertRulesRequest::getStatus()const
-{
-	return status_;
+int ListPrometheusAlertRulesRequest::getStatus() const {
+  return status_;
 }
 
-void ListPrometheusAlertRulesRequest::setStatus(int status)
-{
-	status_ = status;
-	setParameter("Status", std::to_string(status));
+void ListPrometheusAlertRulesRequest::setStatus(int status) {
+  status_ = status;
+  setParameter(std::string("Status"), std::to_string(status));
 }
 

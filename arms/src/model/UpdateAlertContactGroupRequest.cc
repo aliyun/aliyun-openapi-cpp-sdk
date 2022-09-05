@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::ARMS::Model::UpdateAlertContactGroupRequest;
 
-UpdateAlertContactGroupRequest::UpdateAlertContactGroupRequest() :
-	RpcServiceRequest("arms", "2019-08-08", "UpdateAlertContactGroup")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateAlertContactGroupRequest::UpdateAlertContactGroupRequest()
+    : RpcServiceRequest("arms", "2019-08-08", "UpdateAlertContactGroup") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateAlertContactGroupRequest::~UpdateAlertContactGroupRequest()
-{}
+UpdateAlertContactGroupRequest::~UpdateAlertContactGroupRequest() {}
 
-long UpdateAlertContactGroupRequest::getContactGroupId()const
-{
-	return contactGroupId_;
+long UpdateAlertContactGroupRequest::getContactGroupId() const {
+  return contactGroupId_;
 }
 
-void UpdateAlertContactGroupRequest::setContactGroupId(long contactGroupId)
-{
-	contactGroupId_ = contactGroupId;
-	setParameter("ContactGroupId", std::to_string(contactGroupId));
+void UpdateAlertContactGroupRequest::setContactGroupId(long contactGroupId) {
+  contactGroupId_ = contactGroupId;
+  setParameter(std::string("ContactGroupId"), std::to_string(contactGroupId));
 }
 
-std::string UpdateAlertContactGroupRequest::getRegionId()const
-{
-	return regionId_;
+std::string UpdateAlertContactGroupRequest::getRegionId() const {
+  return regionId_;
 }
 
-void UpdateAlertContactGroupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void UpdateAlertContactGroupRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string UpdateAlertContactGroupRequest::getContactGroupName()const
-{
-	return contactGroupName_;
+std::string UpdateAlertContactGroupRequest::getContactGroupName() const {
+  return contactGroupName_;
 }
 
-void UpdateAlertContactGroupRequest::setContactGroupName(const std::string& contactGroupName)
-{
-	contactGroupName_ = contactGroupName;
-	setParameter("ContactGroupName", contactGroupName);
+void UpdateAlertContactGroupRequest::setContactGroupName(const std::string &contactGroupName) {
+  contactGroupName_ = contactGroupName;
+  setParameter(std::string("ContactGroupName"), contactGroupName);
 }
 
-std::string UpdateAlertContactGroupRequest::getProxyUserId()const
-{
-	return proxyUserId_;
+std::string UpdateAlertContactGroupRequest::getProxyUserId() const {
+  return proxyUserId_;
 }
 
-void UpdateAlertContactGroupRequest::setProxyUserId(const std::string& proxyUserId)
-{
-	proxyUserId_ = proxyUserId;
-	setParameter("ProxyUserId", proxyUserId);
+void UpdateAlertContactGroupRequest::setProxyUserId(const std::string &proxyUserId) {
+  proxyUserId_ = proxyUserId;
+  setParameter(std::string("ProxyUserId"), proxyUserId);
 }
 
-std::string UpdateAlertContactGroupRequest::getContactIds()const
-{
-	return contactIds_;
+std::string UpdateAlertContactGroupRequest::getContactIds() const {
+  return contactIds_;
 }
 
-void UpdateAlertContactGroupRequest::setContactIds(const std::string& contactIds)
-{
-	contactIds_ = contactIds;
-	setParameter("ContactIds", contactIds);
+void UpdateAlertContactGroupRequest::setContactIds(const std::string &contactIds) {
+  contactIds_ = contactIds;
+  setParameter(std::string("ContactIds"), contactIds);
 }
 

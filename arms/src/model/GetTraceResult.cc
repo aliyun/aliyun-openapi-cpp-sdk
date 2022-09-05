@@ -43,30 +43,30 @@ void GetTraceResult::parse(const std::string &payload)
 	for (auto valueSpansSpan : allSpansNode)
 	{
 		Span spansObject;
-		if(!valueSpansSpan["TraceID"].isNull())
-			spansObject.traceID = valueSpansSpan["TraceID"].asString();
-		if(!valueSpansSpan["OperationName"].isNull())
-			spansObject.operationName = valueSpansSpan["OperationName"].asString();
-		if(!valueSpansSpan["Duration"].isNull())
-			spansObject.duration = std::stol(valueSpansSpan["Duration"].asString());
-		if(!valueSpansSpan["ServiceName"].isNull())
-			spansObject.serviceName = valueSpansSpan["ServiceName"].asString();
-		if(!valueSpansSpan["ServiceIp"].isNull())
-			spansObject.serviceIp = valueSpansSpan["ServiceIp"].asString();
-		if(!valueSpansSpan["Timestamp"].isNull())
-			spansObject.timestamp = std::stol(valueSpansSpan["Timestamp"].asString());
-		if(!valueSpansSpan["RpcId"].isNull())
-			spansObject.rpcId = valueSpansSpan["RpcId"].asString();
-		if(!valueSpansSpan["ResultCode"].isNull())
-			spansObject.resultCode = valueSpansSpan["ResultCode"].asString();
-		if(!valueSpansSpan["HaveStack"].isNull())
-			spansObject.haveStack = valueSpansSpan["HaveStack"].asString() == "true";
-		if(!valueSpansSpan["RpcType"].isNull())
-			spansObject.rpcType = std::stoi(valueSpansSpan["RpcType"].asString());
 		if(!valueSpansSpan["SpanId"].isNull())
 			spansObject.spanId = valueSpansSpan["SpanId"].asString();
+		if(!valueSpansSpan["OperationName"].isNull())
+			spansObject.operationName = valueSpansSpan["OperationName"].asString();
+		if(!valueSpansSpan["ResultCode"].isNull())
+			spansObject.resultCode = valueSpansSpan["ResultCode"].asString();
+		if(!valueSpansSpan["Timestamp"].isNull())
+			spansObject.timestamp = std::stol(valueSpansSpan["Timestamp"].asString());
+		if(!valueSpansSpan["RpcType"].isNull())
+			spansObject.rpcType = std::stoi(valueSpansSpan["RpcType"].asString());
+		if(!valueSpansSpan["ServiceIp"].isNull())
+			spansObject.serviceIp = valueSpansSpan["ServiceIp"].asString();
+		if(!valueSpansSpan["HaveStack"].isNull())
+			spansObject.haveStack = valueSpansSpan["HaveStack"].asString() == "true";
 		if(!valueSpansSpan["ParentSpanId"].isNull())
 			spansObject.parentSpanId = valueSpansSpan["ParentSpanId"].asString();
+		if(!valueSpansSpan["Duration"].isNull())
+			spansObject.duration = std::stol(valueSpansSpan["Duration"].asString());
+		if(!valueSpansSpan["RpcId"].isNull())
+			spansObject.rpcId = valueSpansSpan["RpcId"].asString();
+		if(!valueSpansSpan["ServiceName"].isNull())
+			spansObject.serviceName = valueSpansSpan["ServiceName"].asString();
+		if(!valueSpansSpan["TraceID"].isNull())
+			spansObject.traceID = valueSpansSpan["TraceID"].asString();
 		auto allTagEntryListNode = valueSpansSpan["TagEntryList"]["TagEntry"];
 		for (auto valueSpansSpanTagEntryListTagEntry : allTagEntryListNode)
 		{
@@ -95,6 +95,9 @@ void GetTraceResult::parse(const std::string &payload)
 			}
 			spansObject.logEventList.push_back(logEventListObject);
 		}
+		auto allChildren = value["Children"]["child"];
+		for (auto value : allChildren)
+			spansObject.children.push_back(value.asString());
 		spans_.push_back(spansObject);
 	}
 

@@ -43,42 +43,42 @@ void ListClusterFromGrafanaResult::parse(const std::string &payload)
 	for (auto valuePromClusterListPromCluster : allPromClusterListNode)
 	{
 		PromCluster promClusterListObject;
+		if(!valuePromClusterListPromCluster["UpdateTime"].isNull())
+			promClusterListObject.updateTime = std::stol(valuePromClusterListPromCluster["UpdateTime"].asString());
+		if(!valuePromClusterListPromCluster["CreateTime"].isNull())
+			promClusterListObject.createTime = std::stol(valuePromClusterListPromCluster["CreateTime"].asString());
+		if(!valuePromClusterListPromCluster["UserId"].isNull())
+			promClusterListObject.userId = valuePromClusterListPromCluster["UserId"].asString();
+		if(!valuePromClusterListPromCluster["Options"].isNull())
+			promClusterListObject.options = valuePromClusterListPromCluster["Options"].asString();
+		if(!valuePromClusterListPromCluster["IsControllerInstalled"].isNull())
+			promClusterListObject.isControllerInstalled = valuePromClusterListPromCluster["IsControllerInstalled"].asString() == "true";
+		if(!valuePromClusterListPromCluster["AgentStatus"].isNull())
+			promClusterListObject.agentStatus = valuePromClusterListPromCluster["AgentStatus"].asString();
+		if(!valuePromClusterListPromCluster["Extra"].isNull())
+			promClusterListObject.extra = valuePromClusterListPromCluster["Extra"].asString();
+		if(!valuePromClusterListPromCluster["InstallTime"].isNull())
+			promClusterListObject.installTime = std::stol(valuePromClusterListPromCluster["InstallTime"].asString());
+		if(!valuePromClusterListPromCluster["RegionId"].isNull())
+			promClusterListObject.regionId = valuePromClusterListPromCluster["RegionId"].asString();
+		if(!valuePromClusterListPromCluster["ControllerId"].isNull())
+			promClusterListObject.controllerId = valuePromClusterListPromCluster["ControllerId"].asString();
+		if(!valuePromClusterListPromCluster["PluginsJsonArray"].isNull())
+			promClusterListObject.pluginsJsonArray = valuePromClusterListPromCluster["PluginsJsonArray"].asString();
+		if(!valuePromClusterListPromCluster["ClusterType"].isNull())
+			promClusterListObject.clusterType = valuePromClusterListPromCluster["ClusterType"].asString();
+		if(!valuePromClusterListPromCluster["ClusterName"].isNull())
+			promClusterListObject.clusterName = valuePromClusterListPromCluster["ClusterName"].asString();
+		if(!valuePromClusterListPromCluster["StateJson"].isNull())
+			promClusterListObject.stateJson = valuePromClusterListPromCluster["StateJson"].asString();
+		if(!valuePromClusterListPromCluster["LastHeartBeatTime"].isNull())
+			promClusterListObject.lastHeartBeatTime = std::stol(valuePromClusterListPromCluster["LastHeartBeatTime"].asString());
+		if(!valuePromClusterListPromCluster["NodeNum"].isNull())
+			promClusterListObject.nodeNum = std::stoi(valuePromClusterListPromCluster["NodeNum"].asString());
 		if(!valuePromClusterListPromCluster["Id"].isNull())
 			promClusterListObject.id = std::stol(valuePromClusterListPromCluster["Id"].asString());
 		if(!valuePromClusterListPromCluster["ClusterId"].isNull())
 			promClusterListObject.clusterId = valuePromClusterListPromCluster["ClusterId"].asString();
-		if(!valuePromClusterListPromCluster["ClusterName"].isNull())
-			promClusterListObject.clusterName = valuePromClusterListPromCluster["ClusterName"].asString();
-		if(!valuePromClusterListPromCluster["AgentStatus"].isNull())
-			promClusterListObject.agentStatus = valuePromClusterListPromCluster["AgentStatus"].asString();
-		if(!valuePromClusterListPromCluster["ClusterType"].isNull())
-			promClusterListObject.clusterType = valuePromClusterListPromCluster["ClusterType"].asString();
-		if(!valuePromClusterListPromCluster["ControllerId"].isNull())
-			promClusterListObject.controllerId = valuePromClusterListPromCluster["ControllerId"].asString();
-		if(!valuePromClusterListPromCluster["IsControllerInstalled"].isNull())
-			promClusterListObject.isControllerInstalled = valuePromClusterListPromCluster["IsControllerInstalled"].asString() == "true";
-		if(!valuePromClusterListPromCluster["UserId"].isNull())
-			promClusterListObject.userId = valuePromClusterListPromCluster["UserId"].asString();
-		if(!valuePromClusterListPromCluster["RegionId"].isNull())
-			promClusterListObject.regionId = valuePromClusterListPromCluster["RegionId"].asString();
-		if(!valuePromClusterListPromCluster["PluginsJsonArray"].isNull())
-			promClusterListObject.pluginsJsonArray = valuePromClusterListPromCluster["PluginsJsonArray"].asString();
-		if(!valuePromClusterListPromCluster["StateJson"].isNull())
-			promClusterListObject.stateJson = valuePromClusterListPromCluster["StateJson"].asString();
-		if(!valuePromClusterListPromCluster["NodeNum"].isNull())
-			promClusterListObject.nodeNum = std::stoi(valuePromClusterListPromCluster["NodeNum"].asString());
-		if(!valuePromClusterListPromCluster["CreateTime"].isNull())
-			promClusterListObject.createTime = std::stol(valuePromClusterListPromCluster["CreateTime"].asString());
-		if(!valuePromClusterListPromCluster["UpdateTime"].isNull())
-			promClusterListObject.updateTime = std::stol(valuePromClusterListPromCluster["UpdateTime"].asString());
-		if(!valuePromClusterListPromCluster["LastHeartBeatTime"].isNull())
-			promClusterListObject.lastHeartBeatTime = std::stol(valuePromClusterListPromCluster["LastHeartBeatTime"].asString());
-		if(!valuePromClusterListPromCluster["InstallTime"].isNull())
-			promClusterListObject.installTime = std::stol(valuePromClusterListPromCluster["InstallTime"].asString());
-		if(!valuePromClusterListPromCluster["Extra"].isNull())
-			promClusterListObject.extra = valuePromClusterListPromCluster["Extra"].asString();
-		if(!valuePromClusterListPromCluster["Options"].isNull())
-			promClusterListObject.options = valuePromClusterListPromCluster["Options"].asString();
 		promClusterList_.push_back(promClusterListObject);
 	}
 

@@ -43,35 +43,35 @@ void ListTraceAppsResult::parse(const std::string &payload)
 	for (auto valueTraceAppsTraceApp : allTraceAppsNode)
 	{
 		TraceApp traceAppsObject;
-		if(!valueTraceAppsTraceApp["AppId"].isNull())
-			traceAppsObject.appId = std::stol(valueTraceAppsTraceApp["AppId"].asString());
-		if(!valueTraceAppsTraceApp["Pid"].isNull())
-			traceAppsObject.pid = valueTraceAppsTraceApp["Pid"].asString();
-		if(!valueTraceAppsTraceApp["AppName"].isNull())
-			traceAppsObject.appName = valueTraceAppsTraceApp["AppName"].asString();
 		if(!valueTraceAppsTraceApp["Type"].isNull())
 			traceAppsObject.type = valueTraceAppsTraceApp["Type"].asString();
-		if(!valueTraceAppsTraceApp["UserId"].isNull())
-			traceAppsObject.userId = valueTraceAppsTraceApp["UserId"].asString();
-		if(!valueTraceAppsTraceApp["CreateTime"].isNull())
-			traceAppsObject.createTime = std::stol(valueTraceAppsTraceApp["CreateTime"].asString());
+		if(!valueTraceAppsTraceApp["AppName"].isNull())
+			traceAppsObject.appName = valueTraceAppsTraceApp["AppName"].asString();
 		if(!valueTraceAppsTraceApp["UpdateTime"].isNull())
 			traceAppsObject.updateTime = std::stol(valueTraceAppsTraceApp["UpdateTime"].asString());
-		if(!valueTraceAppsTraceApp["RegionId"].isNull())
-			traceAppsObject.regionId = valueTraceAppsTraceApp["RegionId"].asString();
 		if(!valueTraceAppsTraceApp["Show"].isNull())
 			traceAppsObject.show = valueTraceAppsTraceApp["Show"].asString() == "true";
+		if(!valueTraceAppsTraceApp["CreateTime"].isNull())
+			traceAppsObject.createTime = std::stol(valueTraceAppsTraceApp["CreateTime"].asString());
+		if(!valueTraceAppsTraceApp["Pid"].isNull())
+			traceAppsObject.pid = valueTraceAppsTraceApp["Pid"].asString();
+		if(!valueTraceAppsTraceApp["AppId"].isNull())
+			traceAppsObject.appId = std::stol(valueTraceAppsTraceApp["AppId"].asString());
+		if(!valueTraceAppsTraceApp["UserId"].isNull())
+			traceAppsObject.userId = valueTraceAppsTraceApp["UserId"].asString();
+		if(!valueTraceAppsTraceApp["RegionId"].isNull())
+			traceAppsObject.regionId = valueTraceAppsTraceApp["RegionId"].asString();
 		auto allLabels = value["Labels"]["Labels"];
 		for (auto value : allLabels)
 			traceAppsObject.labels.push_back(value.asString());
 		traceApps_.push_back(traceAppsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

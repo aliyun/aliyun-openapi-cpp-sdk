@@ -90,16 +90,15 @@ namespace AlibabaCloud
 						std::string title;
 						std::string taskStatus;
 						AlarmContext alarmContext;
-						std::vector<std::string> alertWay;
 						int alertType;
 						std::string contactGroupIdList;
 						Notice notice;
 						std::string userId;
-						std::string alertTitle;
 						long updateTime;
+						std::string alertTitle;
 						std::string alertLevel;
-						long id;
 						std::string regionId;
+						long id;
 						AlertRule alertRule;
 					};
 					int totalCount;

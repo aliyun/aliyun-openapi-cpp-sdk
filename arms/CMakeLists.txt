@@ -21,16 +21,24 @@ set(arms_public_header
 	include/alibabacloud/arms/ARMSExport.h )
 
 set(arms_public_header_model 
+	include/alibabacloud/arms/model/AddAliClusterIdsToPrometheusGlobalViewRequest.h
+	include/alibabacloud/arms/model/AddAliClusterIdsToPrometheusGlobalViewResult.h
 	include/alibabacloud/arms/model/AddGrafanaRequest.h
 	include/alibabacloud/arms/model/AddGrafanaResult.h
 	include/alibabacloud/arms/model/AddIntegrationRequest.h
 	include/alibabacloud/arms/model/AddIntegrationResult.h
+	include/alibabacloud/arms/model/AddPrometheusGlobalViewRequest.h
+	include/alibabacloud/arms/model/AddPrometheusGlobalViewResult.h
+	include/alibabacloud/arms/model/AddPrometheusGlobalViewByAliClusterIdsRequest.h
+	include/alibabacloud/arms/model/AddPrometheusGlobalViewByAliClusterIdsResult.h
+	include/alibabacloud/arms/model/AddPrometheusInstanceRequest.h
+	include/alibabacloud/arms/model/AddPrometheusInstanceResult.h
+	include/alibabacloud/arms/model/AddRecordingRuleRequest.h
+	include/alibabacloud/arms/model/AddRecordingRuleResult.h
+	include/alibabacloud/arms/model/AppendInstancesToPrometheusGlobalViewRequest.h
+	include/alibabacloud/arms/model/AppendInstancesToPrometheusGlobalViewResult.h
 	include/alibabacloud/arms/model/ApplyScenarioRequest.h
 	include/alibabacloud/arms/model/ApplyScenarioResult.h
-	include/alibabacloud/arms/model/CheckDataConsistencyRequest.h
-	include/alibabacloud/arms/model/CheckDataConsistencyResult.h
-	include/alibabacloud/arms/model/CheckServiceLinkedRoleForDeletingRequest.h
-	include/alibabacloud/arms/model/CheckServiceLinkedRoleForDeletingResult.h
 	include/alibabacloud/arms/model/CheckServiceStatusRequest.h
 	include/alibabacloud/arms/model/CheckServiceStatusResult.h
 	include/alibabacloud/arms/model/ConfigAppRequest.h
@@ -39,122 +47,210 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/CreateAlertContactResult.h
 	include/alibabacloud/arms/model/CreateAlertContactGroupRequest.h
 	include/alibabacloud/arms/model/CreateAlertContactGroupResult.h
-	include/alibabacloud/arms/model/CreateAlertTemplateRequest.h
-	include/alibabacloud/arms/model/CreateAlertTemplateResult.h
 	include/alibabacloud/arms/model/CreateDispatchRuleRequest.h
 	include/alibabacloud/arms/model/CreateDispatchRuleResult.h
+	include/alibabacloud/arms/model/CreateIntegrationRequest.h
+	include/alibabacloud/arms/model/CreateIntegrationResult.h
+	include/alibabacloud/arms/model/CreateOrUpdateAlertRuleRequest.h
+	include/alibabacloud/arms/model/CreateOrUpdateAlertRuleResult.h
+	include/alibabacloud/arms/model/CreateOrUpdateContactRequest.h
+	include/alibabacloud/arms/model/CreateOrUpdateContactResult.h
+	include/alibabacloud/arms/model/CreateOrUpdateContactGroupRequest.h
+	include/alibabacloud/arms/model/CreateOrUpdateContactGroupResult.h
+	include/alibabacloud/arms/model/CreateOrUpdateEventBridgeIntegrationRequest.h
+	include/alibabacloud/arms/model/CreateOrUpdateEventBridgeIntegrationResult.h
+	include/alibabacloud/arms/model/CreateOrUpdateIMRobotRequest.h
+	include/alibabacloud/arms/model/CreateOrUpdateIMRobotResult.h
+	include/alibabacloud/arms/model/CreateOrUpdateNotificationPolicyRequest.h
+	include/alibabacloud/arms/model/CreateOrUpdateNotificationPolicyResult.h
+	include/alibabacloud/arms/model/CreateOrUpdateSilencePolicyRequest.h
+	include/alibabacloud/arms/model/CreateOrUpdateSilencePolicyResult.h
+	include/alibabacloud/arms/model/CreateOrUpdateWebhookContactRequest.h
+	include/alibabacloud/arms/model/CreateOrUpdateWebhookContactResult.h
 	include/alibabacloud/arms/model/CreatePrometheusAlertRuleRequest.h
 	include/alibabacloud/arms/model/CreatePrometheusAlertRuleResult.h
 	include/alibabacloud/arms/model/CreateRetcodeAppRequest.h
 	include/alibabacloud/arms/model/CreateRetcodeAppResult.h
+	include/alibabacloud/arms/model/CreateSyntheticTaskRequest.h
+	include/alibabacloud/arms/model/CreateSyntheticTaskResult.h
 	include/alibabacloud/arms/model/CreateWebhookRequest.h
 	include/alibabacloud/arms/model/CreateWebhookResult.h
-	include/alibabacloud/arms/model/CreateWehookRequest.h
-	include/alibabacloud/arms/model/CreateWehookResult.h
+	include/alibabacloud/arms/model/DelAuthTokenRequest.h
+	include/alibabacloud/arms/model/DelAuthTokenResult.h
 	include/alibabacloud/arms/model/DeleteAlertContactRequest.h
 	include/alibabacloud/arms/model/DeleteAlertContactResult.h
 	include/alibabacloud/arms/model/DeleteAlertContactGroupRequest.h
 	include/alibabacloud/arms/model/DeleteAlertContactGroupResult.h
+	include/alibabacloud/arms/model/DeleteAlertRuleRequest.h
+	include/alibabacloud/arms/model/DeleteAlertRuleResult.h
 	include/alibabacloud/arms/model/DeleteAlertRulesRequest.h
 	include/alibabacloud/arms/model/DeleteAlertRulesResult.h
-	include/alibabacloud/arms/model/DeleteAlertTemplateRequest.h
-	include/alibabacloud/arms/model/DeleteAlertTemplateResult.h
+	include/alibabacloud/arms/model/DeleteCmsExporterRequest.h
+	include/alibabacloud/arms/model/DeleteCmsExporterResult.h
+	include/alibabacloud/arms/model/DeleteContactRequest.h
+	include/alibabacloud/arms/model/DeleteContactResult.h
+	include/alibabacloud/arms/model/DeleteContactGroupRequest.h
+	include/alibabacloud/arms/model/DeleteContactGroupResult.h
 	include/alibabacloud/arms/model/DeleteDispatchRuleRequest.h
 	include/alibabacloud/arms/model/DeleteDispatchRuleResult.h
+	include/alibabacloud/arms/model/DeleteEventBridgeIntegrationRequest.h
+	include/alibabacloud/arms/model/DeleteEventBridgeIntegrationResult.h
 	include/alibabacloud/arms/model/DeleteGrafanaResourceRequest.h
 	include/alibabacloud/arms/model/DeleteGrafanaResourceResult.h
+	include/alibabacloud/arms/model/DeleteIMRobotRequest.h
+	include/alibabacloud/arms/model/DeleteIMRobotResult.h
+	include/alibabacloud/arms/model/DeleteIntegrationRequest.h
+	include/alibabacloud/arms/model/DeleteIntegrationResult.h
+	include/alibabacloud/arms/model/DeleteIntegrationsRequest.h
+	include/alibabacloud/arms/model/DeleteIntegrationsResult.h
+	include/alibabacloud/arms/model/DeleteNotificationPolicyRequest.h
+	include/alibabacloud/arms/model/DeleteNotificationPolicyResult.h
 	include/alibabacloud/arms/model/DeletePrometheusAlertRuleRequest.h
 	include/alibabacloud/arms/model/DeletePrometheusAlertRuleResult.h
+	include/alibabacloud/arms/model/DeletePrometheusGlobalViewRequest.h
+	include/alibabacloud/arms/model/DeletePrometheusGlobalViewResult.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppRequest.h
 	include/alibabacloud/arms/model/DeleteRetcodeAppResult.h
 	include/alibabacloud/arms/model/DeleteScenarioRequest.h
 	include/alibabacloud/arms/model/DeleteScenarioResult.h
+	include/alibabacloud/arms/model/DeleteSilencePolicyRequest.h
+	include/alibabacloud/arms/model/DeleteSilencePolicyResult.h
+	include/alibabacloud/arms/model/DeleteSourceMapRequest.h
+	include/alibabacloud/arms/model/DeleteSourceMapResult.h
+	include/alibabacloud/arms/model/DeleteSyntheticTaskRequest.h
+	include/alibabacloud/arms/model/DeleteSyntheticTaskResult.h
 	include/alibabacloud/arms/model/DeleteTraceAppRequest.h
 	include/alibabacloud/arms/model/DeleteTraceAppResult.h
+	include/alibabacloud/arms/model/DeleteWebhookContactRequest.h
+	include/alibabacloud/arms/model/DeleteWebhookContactResult.h
+	include/alibabacloud/arms/model/DescribeContactGroupsRequest.h
+	include/alibabacloud/arms/model/DescribeContactGroupsResult.h
+	include/alibabacloud/arms/model/DescribeContactsRequest.h
+	include/alibabacloud/arms/model/DescribeContactsResult.h
 	include/alibabacloud/arms/model/DescribeDispatchRuleRequest.h
 	include/alibabacloud/arms/model/DescribeDispatchRuleResult.h
+	include/alibabacloud/arms/model/DescribeIMRobotsRequest.h
+	include/alibabacloud/arms/model/DescribeIMRobotsResult.h
 	include/alibabacloud/arms/model/DescribePrometheusAlertRuleRequest.h
 	include/alibabacloud/arms/model/DescribePrometheusAlertRuleResult.h
 	include/alibabacloud/arms/model/DescribeTraceLicenseKeyRequest.h
 	include/alibabacloud/arms/model/DescribeTraceLicenseKeyResult.h
-	include/alibabacloud/arms/model/DescribeTraceLocationRequest.h
-	include/alibabacloud/arms/model/DescribeTraceLocationResult.h
-	include/alibabacloud/arms/model/DisableAlertTemplateRequest.h
-	include/alibabacloud/arms/model/DisableAlertTemplateResult.h
-	include/alibabacloud/arms/model/EnableAlertTemplateRequest.h
-	include/alibabacloud/arms/model/EnableAlertTemplateResult.h
-	include/alibabacloud/arms/model/ExportPrometheusRulesRequest.h
-	include/alibabacloud/arms/model/ExportPrometheusRulesResult.h
+	include/alibabacloud/arms/model/DescribeWebhookContactsRequest.h
+	include/alibabacloud/arms/model/DescribeWebhookContactsResult.h
 	include/alibabacloud/arms/model/GetAgentDownloadUrlRequest.h
 	include/alibabacloud/arms/model/GetAgentDownloadUrlResult.h
+	include/alibabacloud/arms/model/GetAlertRulesRequest.h
+	include/alibabacloud/arms/model/GetAlertRulesResult.h
 	include/alibabacloud/arms/model/GetAppApiByPageRequest.h
 	include/alibabacloud/arms/model/GetAppApiByPageResult.h
-	include/alibabacloud/arms/model/GetArmsConsoleUrlRequest.h
-	include/alibabacloud/arms/model/GetArmsConsoleUrlResult.h
-	include/alibabacloud/arms/model/GetConsistencySnapshotRequest.h
-	include/alibabacloud/arms/model/GetConsistencySnapshotResult.h
+	include/alibabacloud/arms/model/GetAuthTokenRequest.h
+	include/alibabacloud/arms/model/GetAuthTokenResult.h
+	include/alibabacloud/arms/model/GetClusterAllUrlRequest.h
+	include/alibabacloud/arms/model/GetClusterAllUrlResult.h
 	include/alibabacloud/arms/model/GetExploreUrlRequest.h
 	include/alibabacloud/arms/model/GetExploreUrlResult.h
-	include/alibabacloud/arms/model/GetIntegrationTokenRequest.h
-	include/alibabacloud/arms/model/GetIntegrationTokenResult.h
+	include/alibabacloud/arms/model/GetIntegrationStateRequest.h
+	include/alibabacloud/arms/model/GetIntegrationStateResult.h
+	include/alibabacloud/arms/model/GetManagedPrometheusStatusRequest.h
+	include/alibabacloud/arms/model/GetManagedPrometheusStatusResult.h
 	include/alibabacloud/arms/model/GetMultipleTraceRequest.h
 	include/alibabacloud/arms/model/GetMultipleTraceResult.h
+	include/alibabacloud/arms/model/GetOnCallSchedulesDetailRequest.h
+	include/alibabacloud/arms/model/GetOnCallSchedulesDetailResult.h
 	include/alibabacloud/arms/model/GetPrometheusApiTokenRequest.h
 	include/alibabacloud/arms/model/GetPrometheusApiTokenResult.h
+	include/alibabacloud/arms/model/GetPrometheusGlobalViewRequest.h
+	include/alibabacloud/arms/model/GetPrometheusGlobalViewResult.h
+	include/alibabacloud/arms/model/GetRecordingRuleRequest.h
+	include/alibabacloud/arms/model/GetRecordingRuleResult.h
 	include/alibabacloud/arms/model/GetRetcodeShareUrlRequest.h
 	include/alibabacloud/arms/model/GetRetcodeShareUrlResult.h
+	include/alibabacloud/arms/model/GetSourceMapInfoRequest.h
+	include/alibabacloud/arms/model/GetSourceMapInfoResult.h
 	include/alibabacloud/arms/model/GetStackRequest.h
 	include/alibabacloud/arms/model/GetStackResult.h
+	include/alibabacloud/arms/model/GetSyntheticTaskDetailRequest.h
+	include/alibabacloud/arms/model/GetSyntheticTaskDetailResult.h
+	include/alibabacloud/arms/model/GetSyntheticTaskListRequest.h
+	include/alibabacloud/arms/model/GetSyntheticTaskListResult.h
+	include/alibabacloud/arms/model/GetSyntheticTaskMonitorsRequest.h
+	include/alibabacloud/arms/model/GetSyntheticTaskMonitorsResult.h
 	include/alibabacloud/arms/model/GetTraceRequest.h
 	include/alibabacloud/arms/model/GetTraceResult.h
 	include/alibabacloud/arms/model/GetTraceAppRequest.h
 	include/alibabacloud/arms/model/GetTraceAppResult.h
 	include/alibabacloud/arms/model/ImportAppAlertRulesRequest.h
 	include/alibabacloud/arms/model/ImportAppAlertRulesResult.h
-	include/alibabacloud/arms/model/ImportCustomAlertRulesRequest.h
-	include/alibabacloud/arms/model/ImportCustomAlertRulesResult.h
-	include/alibabacloud/arms/model/ImportPrometheusRulesRequest.h
-	include/alibabacloud/arms/model/ImportPrometheusRulesResult.h
+	include/alibabacloud/arms/model/InstallCmsExporterRequest.h
+	include/alibabacloud/arms/model/InstallCmsExporterResult.h
+	include/alibabacloud/arms/model/InstallManagedPrometheusRequest.h
+	include/alibabacloud/arms/model/InstallManagedPrometheusResult.h
 	include/alibabacloud/arms/model/ListActivatedAlertsRequest.h
 	include/alibabacloud/arms/model/ListActivatedAlertsResult.h
-	include/alibabacloud/arms/model/ListAlertTemplatesRequest.h
-	include/alibabacloud/arms/model/ListAlertTemplatesResult.h
+	include/alibabacloud/arms/model/ListAlertEventsRequest.h
+	include/alibabacloud/arms/model/ListAlertEventsResult.h
+	include/alibabacloud/arms/model/ListAlertsRequest.h
+	include/alibabacloud/arms/model/ListAlertsResult.h
 	include/alibabacloud/arms/model/ListClusterFromGrafanaRequest.h
 	include/alibabacloud/arms/model/ListClusterFromGrafanaResult.h
+	include/alibabacloud/arms/model/ListCmsInstancesRequest.h
+	include/alibabacloud/arms/model/ListCmsInstancesResult.h
 	include/alibabacloud/arms/model/ListDashboardsRequest.h
 	include/alibabacloud/arms/model/ListDashboardsResult.h
+	include/alibabacloud/arms/model/ListDashboardsByNameRequest.h
+	include/alibabacloud/arms/model/ListDashboardsByNameResult.h
 	include/alibabacloud/arms/model/ListDispatchRuleRequest.h
 	include/alibabacloud/arms/model/ListDispatchRuleResult.h
-	include/alibabacloud/arms/model/ListPromClustersRequest.h
-	include/alibabacloud/arms/model/ListPromClustersResult.h
+	include/alibabacloud/arms/model/ListEscalationPoliciesRequest.h
+	include/alibabacloud/arms/model/ListEscalationPoliciesResult.h
+	include/alibabacloud/arms/model/ListEventBridgeIntegrationsRequest.h
+	include/alibabacloud/arms/model/ListEventBridgeIntegrationsResult.h
+	include/alibabacloud/arms/model/ListInsightsEventsRequest.h
+	include/alibabacloud/arms/model/ListInsightsEventsResult.h
+	include/alibabacloud/arms/model/ListIntegrationRequest.h
+	include/alibabacloud/arms/model/ListIntegrationResult.h
+	include/alibabacloud/arms/model/ListNotificationPoliciesRequest.h
+	include/alibabacloud/arms/model/ListNotificationPoliciesResult.h
+	include/alibabacloud/arms/model/ListOnCallSchedulesRequest.h
+	include/alibabacloud/arms/model/ListOnCallSchedulesResult.h
 	include/alibabacloud/arms/model/ListPrometheusAlertRulesRequest.h
 	include/alibabacloud/arms/model/ListPrometheusAlertRulesResult.h
 	include/alibabacloud/arms/model/ListPrometheusAlertTemplatesRequest.h
 	include/alibabacloud/arms/model/ListPrometheusAlertTemplatesResult.h
+	include/alibabacloud/arms/model/ListPrometheusGlobalViewRequest.h
+	include/alibabacloud/arms/model/ListPrometheusGlobalViewResult.h
+	include/alibabacloud/arms/model/ListPrometheusInstancesRequest.h
+	include/alibabacloud/arms/model/ListPrometheusInstancesResult.h
 	include/alibabacloud/arms/model/ListRetcodeAppsRequest.h
 	include/alibabacloud/arms/model/ListRetcodeAppsResult.h
 	include/alibabacloud/arms/model/ListScenarioRequest.h
 	include/alibabacloud/arms/model/ListScenarioResult.h
-	include/alibabacloud/arms/model/ListServerlessTopNAppsRequest.h
-	include/alibabacloud/arms/model/ListServerlessTopNAppsResult.h
+	include/alibabacloud/arms/model/ListSilencePoliciesRequest.h
+	include/alibabacloud/arms/model/ListSilencePoliciesResult.h
 	include/alibabacloud/arms/model/ListTraceAppsRequest.h
 	include/alibabacloud/arms/model/ListTraceAppsResult.h
+	include/alibabacloud/arms/model/ManageGetRecordingRuleRequest.h
+	include/alibabacloud/arms/model/ManageGetRecordingRuleResult.h
+	include/alibabacloud/arms/model/ManageRecordingRuleRequest.h
+	include/alibabacloud/arms/model/ManageRecordingRuleResult.h
 	include/alibabacloud/arms/model/OpenArmsDefaultSLRRequest.h
 	include/alibabacloud/arms/model/OpenArmsDefaultSLRResult.h
-	include/alibabacloud/arms/model/OpenArmsServiceRequest.h
-	include/alibabacloud/arms/model/OpenArmsServiceResult.h
 	include/alibabacloud/arms/model/OpenArmsServiceSecondVersionRequest.h
 	include/alibabacloud/arms/model/OpenArmsServiceSecondVersionResult.h
 	include/alibabacloud/arms/model/OpenVClusterRequest.h
 	include/alibabacloud/arms/model/OpenVClusterResult.h
 	include/alibabacloud/arms/model/OpenXtraceDefaultSLRRequest.h
 	include/alibabacloud/arms/model/OpenXtraceDefaultSLRResult.h
-	include/alibabacloud/arms/model/QueryDatasetRequest.h
-	include/alibabacloud/arms/model/QueryDatasetResult.h
-	include/alibabacloud/arms/model/QueryMetricRequest.h
-	include/alibabacloud/arms/model/QueryMetricResult.h
 	include/alibabacloud/arms/model/QueryMetricByPageRequest.h
 	include/alibabacloud/arms/model/QueryMetricByPageResult.h
+	include/alibabacloud/arms/model/QueryPromInstallStatusRequest.h
+	include/alibabacloud/arms/model/QueryPromInstallStatusResult.h
+	include/alibabacloud/arms/model/QueryReleaseMetricRequest.h
+	include/alibabacloud/arms/model/QueryReleaseMetricResult.h
+	include/alibabacloud/arms/model/RemoveAliClusterIdsFromPrometheusGlobalViewRequest.h
+	include/alibabacloud/arms/model/RemoveAliClusterIdsFromPrometheusGlobalViewResult.h
+	include/alibabacloud/arms/model/RemoveSourcesFromPrometheusGlobalViewRequest.h
+	include/alibabacloud/arms/model/RemoveSourcesFromPrometheusGlobalViewResult.h
 	include/alibabacloud/arms/model/SaveTraceAppConfigRequest.h
 	include/alibabacloud/arms/model/SaveTraceAppConfigResult.h
 	include/alibabacloud/arms/model/SearchAlertContactRequest.h
@@ -177,43 +273,61 @@ set(arms_public_header_model
 	include/alibabacloud/arms/model/SearchTracesResult.h
 	include/alibabacloud/arms/model/SearchTracesByPageRequest.h
 	include/alibabacloud/arms/model/SearchTracesByPageResult.h
-	include/alibabacloud/arms/model/SendCustomIncidentsRequest.h
-	include/alibabacloud/arms/model/SendCustomIncidentsResult.h
-	include/alibabacloud/arms/model/SendMseIncidentRequest.h
-	include/alibabacloud/arms/model/SendMseIncidentResult.h
+	include/alibabacloud/arms/model/SendTTSVerifyLinkRequest.h
+	include/alibabacloud/arms/model/SendTTSVerifyLinkResult.h
 	include/alibabacloud/arms/model/SetRetcodeShareStatusRequest.h
 	include/alibabacloud/arms/model/SetRetcodeShareStatusResult.h
 	include/alibabacloud/arms/model/StartAlertRequest.h
 	include/alibabacloud/arms/model/StartAlertResult.h
 	include/alibabacloud/arms/model/StopAlertRequest.h
 	include/alibabacloud/arms/model/StopAlertResult.h
+	include/alibabacloud/arms/model/SwitchSyntheticTaskStatusRequest.h
+	include/alibabacloud/arms/model/SwitchSyntheticTaskStatusResult.h
+	include/alibabacloud/arms/model/SyncRecordingRulesRequest.h
+	include/alibabacloud/arms/model/SyncRecordingRulesResult.h
+	include/alibabacloud/arms/model/TurnOnSecondSwitchRequest.h
+	include/alibabacloud/arms/model/TurnOnSecondSwitchResult.h
+	include/alibabacloud/arms/model/UninstallManagedPrometheusRequest.h
+	include/alibabacloud/arms/model/UninstallManagedPrometheusResult.h
+	include/alibabacloud/arms/model/UninstallPromClusterRequest.h
+	include/alibabacloud/arms/model/UninstallPromClusterResult.h
 	include/alibabacloud/arms/model/UpdateAlertContactRequest.h
 	include/alibabacloud/arms/model/UpdateAlertContactResult.h
 	include/alibabacloud/arms/model/UpdateAlertContactGroupRequest.h
 	include/alibabacloud/arms/model/UpdateAlertContactGroupResult.h
 	include/alibabacloud/arms/model/UpdateAlertRuleRequest.h
 	include/alibabacloud/arms/model/UpdateAlertRuleResult.h
-	include/alibabacloud/arms/model/UpdateAlertTemplateRequest.h
-	include/alibabacloud/arms/model/UpdateAlertTemplateResult.h
 	include/alibabacloud/arms/model/UpdateDispatchRuleRequest.h
 	include/alibabacloud/arms/model/UpdateDispatchRuleResult.h
+	include/alibabacloud/arms/model/UpdateIntegrationRequest.h
+	include/alibabacloud/arms/model/UpdateIntegrationResult.h
 	include/alibabacloud/arms/model/UpdatePrometheusAlertRuleRequest.h
 	include/alibabacloud/arms/model/UpdatePrometheusAlertRuleResult.h
 	include/alibabacloud/arms/model/UpdateWebhookRequest.h
-	include/alibabacloud/arms/model/UpdateWebhookResult.h )
+	include/alibabacloud/arms/model/UpdateWebhookResult.h
+	include/alibabacloud/arms/model/UploadRequest.h
+	include/alibabacloud/arms/model/UploadResult.h )
 
 set(arms_src 
 	src/ARMSClient.cc
+	src/model/AddAliClusterIdsToPrometheusGlobalViewRequest.cc
+	src/model/AddAliClusterIdsToPrometheusGlobalViewResult.cc
 	src/model/AddGrafanaRequest.cc
 	src/model/AddGrafanaResult.cc
 	src/model/AddIntegrationRequest.cc
 	src/model/AddIntegrationResult.cc
+	src/model/AddPrometheusGlobalViewRequest.cc
+	src/model/AddPrometheusGlobalViewResult.cc
+	src/model/AddPrometheusGlobalViewByAliClusterIdsRequest.cc
+	src/model/AddPrometheusGlobalViewByAliClusterIdsResult.cc
+	src/model/AddPrometheusInstanceRequest.cc
+	src/model/AddPrometheusInstanceResult.cc
+	src/model/AddRecordingRuleRequest.cc
+	src/model/AddRecordingRuleResult.cc
+	src/model/AppendInstancesToPrometheusGlobalViewRequest.cc
+	src/model/AppendInstancesToPrometheusGlobalViewResult.cc
 	src/model/ApplyScenarioRequest.cc
 	src/model/ApplyScenarioResult.cc
-	src/model/CheckDataConsistencyRequest.cc
-	src/model/CheckDataConsistencyResult.cc
-	src/model/CheckServiceLinkedRoleForDeletingRequest.cc
-	src/model/CheckServiceLinkedRoleForDeletingResult.cc
 	src/model/CheckServiceStatusRequest.cc
 	src/model/CheckServiceStatusResult.cc
 	src/model/ConfigAppRequest.cc
@@ -222,122 +336,210 @@ set(arms_src
 	src/model/CreateAlertContactResult.cc
 	src/model/CreateAlertContactGroupRequest.cc
 	src/model/CreateAlertContactGroupResult.cc
-	src/model/CreateAlertTemplateRequest.cc
-	src/model/CreateAlertTemplateResult.cc
 	src/model/CreateDispatchRuleRequest.cc
 	src/model/CreateDispatchRuleResult.cc
+	src/model/CreateIntegrationRequest.cc
+	src/model/CreateIntegrationResult.cc
+	src/model/CreateOrUpdateAlertRuleRequest.cc
+	src/model/CreateOrUpdateAlertRuleResult.cc
+	src/model/CreateOrUpdateContactRequest.cc
+	src/model/CreateOrUpdateContactResult.cc
+	src/model/CreateOrUpdateContactGroupRequest.cc
+	src/model/CreateOrUpdateContactGroupResult.cc
+	src/model/CreateOrUpdateEventBridgeIntegrationRequest.cc
+	src/model/CreateOrUpdateEventBridgeIntegrationResult.cc
+	src/model/CreateOrUpdateIMRobotRequest.cc
+	src/model/CreateOrUpdateIMRobotResult.cc
+	src/model/CreateOrUpdateNotificationPolicyRequest.cc
+	src/model/CreateOrUpdateNotificationPolicyResult.cc
+	src/model/CreateOrUpdateSilencePolicyRequest.cc
+	src/model/CreateOrUpdateSilencePolicyResult.cc
+	src/model/CreateOrUpdateWebhookContactRequest.cc
+	src/model/CreateOrUpdateWebhookContactResult.cc
 	src/model/CreatePrometheusAlertRuleRequest.cc
 	src/model/CreatePrometheusAlertRuleResult.cc
 	src/model/CreateRetcodeAppRequest.cc
 	src/model/CreateRetcodeAppResult.cc
+	src/model/CreateSyntheticTaskRequest.cc
+	src/model/CreateSyntheticTaskResult.cc
 	src/model/CreateWebhookRequest.cc
 	src/model/CreateWebhookResult.cc
-	src/model/CreateWehookRequest.cc
-	src/model/CreateWehookResult.cc
+	src/model/DelAuthTokenRequest.cc
+	src/model/DelAuthTokenResult.cc
 	src/model/DeleteAlertContactRequest.cc
 	src/model/DeleteAlertContactResult.cc
 	src/model/DeleteAlertContactGroupRequest.cc
 	src/model/DeleteAlertContactGroupResult.cc
+	src/model/DeleteAlertRuleRequest.cc
+	src/model/DeleteAlertRuleResult.cc
 	src/model/DeleteAlertRulesRequest.cc
 	src/model/DeleteAlertRulesResult.cc
-	src/model/DeleteAlertTemplateRequest.cc
-	src/model/DeleteAlertTemplateResult.cc
+	src/model/DeleteCmsExporterRequest.cc
+	src/model/DeleteCmsExporterResult.cc
+	src/model/DeleteContactRequest.cc
+	src/model/DeleteContactResult.cc
+	src/model/DeleteContactGroupRequest.cc
+	src/model/DeleteContactGroupResult.cc
 	src/model/DeleteDispatchRuleRequest.cc
 	src/model/DeleteDispatchRuleResult.cc
+	src/model/DeleteEventBridgeIntegrationRequest.cc
+	src/model/DeleteEventBridgeIntegrationResult.cc
 	src/model/DeleteGrafanaResourceRequest.cc
 	src/model/DeleteGrafanaResourceResult.cc
+	src/model/DeleteIMRobotRequest.cc
+	src/model/DeleteIMRobotResult.cc
+	src/model/DeleteIntegrationRequest.cc
+	src/model/DeleteIntegrationResult.cc
+	src/model/DeleteIntegrationsRequest.cc
+	src/model/DeleteIntegrationsResult.cc
+	src/model/DeleteNotificationPolicyRequest.cc
+	src/model/DeleteNotificationPolicyResult.cc
 	src/model/DeletePrometheusAlertRuleRequest.cc
 	src/model/DeletePrometheusAlertRuleResult.cc
+	src/model/DeletePrometheusGlobalViewRequest.cc
+	src/model/DeletePrometheusGlobalViewResult.cc
 	src/model/DeleteRetcodeAppRequest.cc
 	src/model/DeleteRetcodeAppResult.cc
 	src/model/DeleteScenarioRequest.cc
 	src/model/DeleteScenarioResult.cc
+	src/model/DeleteSilencePolicyRequest.cc
+	src/model/DeleteSilencePolicyResult.cc
+	src/model/DeleteSourceMapRequest.cc
+	src/model/DeleteSourceMapResult.cc
+	src/model/DeleteSyntheticTaskRequest.cc
+	src/model/DeleteSyntheticTaskResult.cc
 	src/model/DeleteTraceAppRequest.cc
 	src/model/DeleteTraceAppResult.cc
+	src/model/DeleteWebhookContactRequest.cc
+	src/model/DeleteWebhookContactResult.cc
+	src/model/DescribeContactGroupsRequest.cc
+	src/model/DescribeContactGroupsResult.cc
+	src/model/DescribeContactsRequest.cc
+	src/model/DescribeContactsResult.cc
 	src/model/DescribeDispatchRuleRequest.cc
 	src/model/DescribeDispatchRuleResult.cc
+	src/model/DescribeIMRobotsRequest.cc
+	src/model/DescribeIMRobotsResult.cc
 	src/model/DescribePrometheusAlertRuleRequest.cc
 	src/model/DescribePrometheusAlertRuleResult.cc
 	src/model/DescribeTraceLicenseKeyRequest.cc
 	src/model/DescribeTraceLicenseKeyResult.cc
-	src/model/DescribeTraceLocationRequest.cc
-	src/model/DescribeTraceLocationResult.cc
-	src/model/DisableAlertTemplateRequest.cc
-	src/model/DisableAlertTemplateResult.cc
-	src/model/EnableAlertTemplateRequest.cc
-	src/model/EnableAlertTemplateResult.cc
-	src/model/ExportPrometheusRulesRequest.cc
-	src/model/ExportPrometheusRulesResult.cc
+	src/model/DescribeWebhookContactsRequest.cc
+	src/model/DescribeWebhookContactsResult.cc
 	src/model/GetAgentDownloadUrlRequest.cc
 	src/model/GetAgentDownloadUrlResult.cc
+	src/model/GetAlertRulesRequest.cc
+	src/model/GetAlertRulesResult.cc
 	src/model/GetAppApiByPageRequest.cc
 	src/model/GetAppApiByPageResult.cc
-	src/model/GetArmsConsoleUrlRequest.cc
-	src/model/GetArmsConsoleUrlResult.cc
-	src/model/GetConsistencySnapshotRequest.cc
-	src/model/GetConsistencySnapshotResult.cc
+	src/model/GetAuthTokenRequest.cc
+	src/model/GetAuthTokenResult.cc
+	src/model/GetClusterAllUrlRequest.cc
+	src/model/GetClusterAllUrlResult.cc
 	src/model/GetExploreUrlRequest.cc
 	src/model/GetExploreUrlResult.cc
-	src/model/GetIntegrationTokenRequest.cc
-	src/model/GetIntegrationTokenResult.cc
+	src/model/GetIntegrationStateRequest.cc
+	src/model/GetIntegrationStateResult.cc
+	src/model/GetManagedPrometheusStatusRequest.cc
+	src/model/GetManagedPrometheusStatusResult.cc
 	src/model/GetMultipleTraceRequest.cc
 	src/model/GetMultipleTraceResult.cc
+	src/model/GetOnCallSchedulesDetailRequest.cc
+	src/model/GetOnCallSchedulesDetailResult.cc
 	src/model/GetPrometheusApiTokenRequest.cc
 	src/model/GetPrometheusApiTokenResult.cc
+	src/model/GetPrometheusGlobalViewRequest.cc
+	src/model/GetPrometheusGlobalViewResult.cc
+	src/model/GetRecordingRuleRequest.cc
+	src/model/GetRecordingRuleResult.cc
 	src/model/GetRetcodeShareUrlRequest.cc
 	src/model/GetRetcodeShareUrlResult.cc
+	src/model/GetSourceMapInfoRequest.cc
+	src/model/GetSourceMapInfoResult.cc
 	src/model/GetStackRequest.cc
 	src/model/GetStackResult.cc
+	src/model/GetSyntheticTaskDetailRequest.cc
+	src/model/GetSyntheticTaskDetailResult.cc
+	src/model/GetSyntheticTaskListRequest.cc
+	src/model/GetSyntheticTaskListResult.cc
+	src/model/GetSyntheticTaskMonitorsRequest.cc
+	src/model/GetSyntheticTaskMonitorsResult.cc
 	src/model/GetTraceRequest.cc
 	src/model/GetTraceResult.cc
 	src/model/GetTraceAppRequest.cc
 	src/model/GetTraceAppResult.cc
 	src/model/ImportAppAlertRulesRequest.cc
 	src/model/ImportAppAlertRulesResult.cc
-	src/model/ImportCustomAlertRulesRequest.cc
-	src/model/ImportCustomAlertRulesResult.cc
-	src/model/ImportPrometheusRulesRequest.cc
-	src/model/ImportPrometheusRulesResult.cc
+	src/model/InstallCmsExporterRequest.cc
+	src/model/InstallCmsExporterResult.cc
+	src/model/InstallManagedPrometheusRequest.cc
+	src/model/InstallManagedPrometheusResult.cc
 	src/model/ListActivatedAlertsRequest.cc
 	src/model/ListActivatedAlertsResult.cc
-	src/model/ListAlertTemplatesRequest.cc
-	src/model/ListAlertTemplatesResult.cc
+	src/model/ListAlertEventsRequest.cc
+	src/model/ListAlertEventsResult.cc
+	src/model/ListAlertsRequest.cc
+	src/model/ListAlertsResult.cc
 	src/model/ListClusterFromGrafanaRequest.cc
 	src/model/ListClusterFromGrafanaResult.cc
+	src/model/ListCmsInstancesRequest.cc
+	src/model/ListCmsInstancesResult.cc
 	src/model/ListDashboardsRequest.cc
 	src/model/ListDashboardsResult.cc
+	src/model/ListDashboardsByNameRequest.cc
+	src/model/ListDashboardsByNameResult.cc
 	src/model/ListDispatchRuleRequest.cc
 	src/model/ListDispatchRuleResult.cc
-	src/model/ListPromClustersRequest.cc
-	src/model/ListPromClustersResult.cc
+	src/model/ListEscalationPoliciesRequest.cc
+	src/model/ListEscalationPoliciesResult.cc
+	src/model/ListEventBridgeIntegrationsRequest.cc
+	src/model/ListEventBridgeIntegrationsResult.cc
+	src/model/ListInsightsEventsRequest.cc
+	src/model/ListInsightsEventsResult.cc
+	src/model/ListIntegrationRequest.cc
+	src/model/ListIntegrationResult.cc
+	src/model/ListNotificationPoliciesRequest.cc
+	src/model/ListNotificationPoliciesResult.cc
+	src/model/ListOnCallSchedulesRequest.cc
+	src/model/ListOnCallSchedulesResult.cc
 	src/model/ListPrometheusAlertRulesRequest.cc
 	src/model/ListPrometheusAlertRulesResult.cc
 	src/model/ListPrometheusAlertTemplatesRequest.cc
 	src/model/ListPrometheusAlertTemplatesResult.cc
+	src/model/ListPrometheusGlobalViewRequest.cc
+	src/model/ListPrometheusGlobalViewResult.cc
+	src/model/ListPrometheusInstancesRequest.cc
+	src/model/ListPrometheusInstancesResult.cc
 	src/model/ListRetcodeAppsRequest.cc
 	src/model/ListRetcodeAppsResult.cc
 	src/model/ListScenarioRequest.cc
 	src/model/ListScenarioResult.cc
-	src/model/ListServerlessTopNAppsRequest.cc
-	src/model/ListServerlessTopNAppsResult.cc
+	src/model/ListSilencePoliciesRequest.cc
+	src/model/ListSilencePoliciesResult.cc
 	src/model/ListTraceAppsRequest.cc
 	src/model/ListTraceAppsResult.cc
+	src/model/ManageGetRecordingRuleRequest.cc
+	src/model/ManageGetRecordingRuleResult.cc
+	src/model/ManageRecordingRuleRequest.cc
+	src/model/ManageRecordingRuleResult.cc
 	src/model/OpenArmsDefaultSLRRequest.cc
 	src/model/OpenArmsDefaultSLRResult.cc
-	src/model/OpenArmsServiceRequest.cc
-	src/model/OpenArmsServiceResult.cc
 	src/model/OpenArmsServiceSecondVersionRequest.cc
 	src/model/OpenArmsServiceSecondVersionResult.cc
 	src/model/OpenVClusterRequest.cc
 	src/model/OpenVClusterResult.cc
 	src/model/OpenXtraceDefaultSLRRequest.cc
 	src/model/OpenXtraceDefaultSLRResult.cc
-	src/model/QueryDatasetRequest.cc
-	src/model/QueryDatasetResult.cc
-	src/model/QueryMetricRequest.cc
-	src/model/QueryMetricResult.cc
 	src/model/QueryMetricByPageRequest.cc
 	src/model/QueryMetricByPageResult.cc
+	src/model/QueryPromInstallStatusRequest.cc
+	src/model/QueryPromInstallStatusResult.cc
+	src/model/QueryReleaseMetricRequest.cc
+	src/model/QueryReleaseMetricResult.cc
+	src/model/RemoveAliClusterIdsFromPrometheusGlobalViewRequest.cc
+	src/model/RemoveAliClusterIdsFromPrometheusGlobalViewResult.cc
+	src/model/RemoveSourcesFromPrometheusGlobalViewRequest.cc
+	src/model/RemoveSourcesFromPrometheusGlobalViewResult.cc
 	src/model/SaveTraceAppConfigRequest.cc
 	src/model/SaveTraceAppConfigResult.cc
 	src/model/SearchAlertContactRequest.cc
@@ -360,30 +562,40 @@ set(arms_src
 	src/model/SearchTracesResult.cc
 	src/model/SearchTracesByPageRequest.cc
 	src/model/SearchTracesByPageResult.cc
-	src/model/SendCustomIncidentsRequest.cc
-	src/model/SendCustomIncidentsResult.cc
-	src/model/SendMseIncidentRequest.cc
-	src/model/SendMseIncidentResult.cc
+	src/model/SendTTSVerifyLinkRequest.cc
+	src/model/SendTTSVerifyLinkResult.cc
 	src/model/SetRetcodeShareStatusRequest.cc
 	src/model/SetRetcodeShareStatusResult.cc
 	src/model/StartAlertRequest.cc
 	src/model/StartAlertResult.cc
 	src/model/StopAlertRequest.cc
 	src/model/StopAlertResult.cc
+	src/model/SwitchSyntheticTaskStatusRequest.cc
+	src/model/SwitchSyntheticTaskStatusResult.cc
+	src/model/SyncRecordingRulesRequest.cc
+	src/model/SyncRecordingRulesResult.cc
+	src/model/TurnOnSecondSwitchRequest.cc
+	src/model/TurnOnSecondSwitchResult.cc
+	src/model/UninstallManagedPrometheusRequest.cc
+	src/model/UninstallManagedPrometheusResult.cc
+	src/model/UninstallPromClusterRequest.cc
+	src/model/UninstallPromClusterResult.cc
 	src/model/UpdateAlertContactRequest.cc
 	src/model/UpdateAlertContactResult.cc
 	src/model/UpdateAlertContactGroupRequest.cc
 	src/model/UpdateAlertContactGroupResult.cc
 	src/model/UpdateAlertRuleRequest.cc
 	src/model/UpdateAlertRuleResult.cc
-	src/model/UpdateAlertTemplateRequest.cc
-	src/model/UpdateAlertTemplateResult.cc
 	src/model/UpdateDispatchRuleRequest.cc
 	src/model/UpdateDispatchRuleResult.cc
+	src/model/UpdateIntegrationRequest.cc
+	src/model/UpdateIntegrationResult.cc
 	src/model/UpdatePrometheusAlertRuleRequest.cc
 	src/model/UpdatePrometheusAlertRuleResult.cc
 	src/model/UpdateWebhookRequest.cc
-	src/model/UpdateWebhookResult.cc )
+	src/model/UpdateWebhookResult.cc
+	src/model/UploadRequest.cc
+	src/model/UploadResult.cc )
 
 add_library(arms ${LIB_TYPE}
 	${arms_public_header}

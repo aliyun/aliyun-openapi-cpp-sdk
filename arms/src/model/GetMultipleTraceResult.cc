@@ -49,30 +49,30 @@ void GetMultipleTraceResult::parse(const std::string &payload)
 		for (auto valueMultiCallChainInfosMultiCallChainInfoSpansSpan : allSpansNode)
 		{
 			MultiCallChainInfo::Span spansObject;
-			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["TraceID"].isNull())
-				spansObject.traceID = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["TraceID"].asString();
-			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["OperationName"].isNull())
-				spansObject.operationName = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["OperationName"].asString();
-			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["Duration"].isNull())
-				spansObject.duration = std::stol(valueMultiCallChainInfosMultiCallChainInfoSpansSpan["Duration"].asString());
-			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ServiceName"].isNull())
-				spansObject.serviceName = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ServiceName"].asString();
-			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ServiceIp"].isNull())
-				spansObject.serviceIp = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ServiceIp"].asString();
-			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["Timestamp"].isNull())
-				spansObject.timestamp = std::stol(valueMultiCallChainInfosMultiCallChainInfoSpansSpan["Timestamp"].asString());
-			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["RpcId"].isNull())
-				spansObject.rpcId = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["RpcId"].asString();
-			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ResultCode"].isNull())
-				spansObject.resultCode = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ResultCode"].asString();
-			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["HaveStack"].isNull())
-				spansObject.haveStack = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["HaveStack"].asString() == "true";
-			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["RpcType"].isNull())
-				spansObject.rpcType = std::stoi(valueMultiCallChainInfosMultiCallChainInfoSpansSpan["RpcType"].asString());
 			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["SpanId"].isNull())
 				spansObject.spanId = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["SpanId"].asString();
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["OperationName"].isNull())
+				spansObject.operationName = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["OperationName"].asString();
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ResultCode"].isNull())
+				spansObject.resultCode = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ResultCode"].asString();
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["Timestamp"].isNull())
+				spansObject.timestamp = std::stol(valueMultiCallChainInfosMultiCallChainInfoSpansSpan["Timestamp"].asString());
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["RpcType"].isNull())
+				spansObject.rpcType = std::stoi(valueMultiCallChainInfosMultiCallChainInfoSpansSpan["RpcType"].asString());
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ServiceIp"].isNull())
+				spansObject.serviceIp = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ServiceIp"].asString();
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["HaveStack"].isNull())
+				spansObject.haveStack = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["HaveStack"].asString() == "true";
 			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ParentSpanId"].isNull())
 				spansObject.parentSpanId = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ParentSpanId"].asString();
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["Duration"].isNull())
+				spansObject.duration = std::stol(valueMultiCallChainInfosMultiCallChainInfoSpansSpan["Duration"].asString());
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["RpcId"].isNull())
+				spansObject.rpcId = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["RpcId"].asString();
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ServiceName"].isNull())
+				spansObject.serviceName = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["ServiceName"].asString();
+			if(!valueMultiCallChainInfosMultiCallChainInfoSpansSpan["TraceID"].isNull())
+				spansObject.traceID = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["TraceID"].asString();
 			auto allTagEntryListNode = valueMultiCallChainInfosMultiCallChainInfoSpansSpan["TagEntryList"]["TagEntry"];
 			for (auto valueMultiCallChainInfosMultiCallChainInfoSpansSpanTagEntryListTagEntry : allTagEntryListNode)
 			{

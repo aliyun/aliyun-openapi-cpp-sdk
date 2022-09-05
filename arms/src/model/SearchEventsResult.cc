@@ -40,32 +40,32 @@ void SearchEventsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto pageBeanNode = value["PageBean"];
-	if(!pageBeanNode["TotalCount"].isNull())
-		pageBean_.totalCount = std::stoi(pageBeanNode["TotalCount"].asString());
 	if(!pageBeanNode["PageNumber"].isNull())
 		pageBean_.pageNumber = std::stoi(pageBeanNode["PageNumber"].asString());
 	if(!pageBeanNode["PageSize"].isNull())
 		pageBean_.pageSize = std::stoi(pageBeanNode["PageSize"].asString());
+	if(!pageBeanNode["TotalCount"].isNull())
+		pageBean_.totalCount = std::stoi(pageBeanNode["TotalCount"].asString());
 	auto allEventNode = pageBeanNode["Event"]["EventItem"];
 	for (auto pageBeanNodeEventEventItem : allEventNode)
 	{
 		PageBean::EventItem eventItemObject;
-		if(!pageBeanNodeEventEventItem["Id"].isNull())
-			eventItemObject.id = std::stol(pageBeanNodeEventEventItem["Id"].asString());
 		if(!pageBeanNodeEventEventItem["EventTime"].isNull())
 			eventItemObject.eventTime = std::stol(pageBeanNodeEventEventItem["EventTime"].asString());
-		if(!pageBeanNodeEventEventItem["AlertType"].isNull())
-			eventItemObject.alertType = std::stoi(pageBeanNodeEventEventItem["AlertType"].asString());
 		if(!pageBeanNodeEventEventItem["EventLevel"].isNull())
 			eventItemObject.eventLevel = pageBeanNodeEventEventItem["EventLevel"].asString();
-		if(!pageBeanNodeEventEventItem["Message"].isNull())
-			eventItemObject.message = pageBeanNodeEventEventItem["Message"].asString();
-		if(!pageBeanNodeEventEventItem["AlertId"].isNull())
-			eventItemObject.alertId = std::stol(pageBeanNodeEventEventItem["AlertId"].asString());
-		if(!pageBeanNodeEventEventItem["AlertName"].isNull())
-			eventItemObject.alertName = pageBeanNodeEventEventItem["AlertName"].asString();
 		if(!pageBeanNodeEventEventItem["AlertRule"].isNull())
 			eventItemObject.alertRule = pageBeanNodeEventEventItem["AlertRule"].asString();
+		if(!pageBeanNodeEventEventItem["Message"].isNull())
+			eventItemObject.message = pageBeanNodeEventEventItem["Message"].asString();
+		if(!pageBeanNodeEventEventItem["AlertType"].isNull())
+			eventItemObject.alertType = std::stoi(pageBeanNodeEventEventItem["AlertType"].asString());
+		if(!pageBeanNodeEventEventItem["AlertName"].isNull())
+			eventItemObject.alertName = pageBeanNodeEventEventItem["AlertName"].asString();
+		if(!pageBeanNodeEventEventItem["Id"].isNull())
+			eventItemObject.id = std::stol(pageBeanNodeEventEventItem["Id"].asString());
+		if(!pageBeanNodeEventEventItem["AlertId"].isNull())
+			eventItemObject.alertId = std::stol(pageBeanNodeEventEventItem["AlertId"].asString());
 		auto allLinks = value["Links"]["Link"];
 		for (auto value : allLinks)
 			eventItemObject.links.push_back(value.asString());

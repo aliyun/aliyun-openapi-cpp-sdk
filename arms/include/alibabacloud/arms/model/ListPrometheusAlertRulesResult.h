@@ -46,8 +46,8 @@ namespace AlibabaCloud
 					};
 					int status;
 					std::string notifyType;
-					long alertId;
 					std::string type;
+					long alertId;
 					std::vector<PrometheusAlertRule::Annotation> annotations;
 					std::string alertName;
 					std::string message;

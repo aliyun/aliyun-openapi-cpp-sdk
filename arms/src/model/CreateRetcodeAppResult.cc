@@ -40,10 +40,10 @@ void CreateRetcodeAppResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto retcodeAppDataBeanNode = value["RetcodeAppDataBean"];
-	if(!retcodeAppDataBeanNode["AppId"].isNull())
-		retcodeAppDataBean_.appId = std::stol(retcodeAppDataBeanNode["AppId"].asString());
 	if(!retcodeAppDataBeanNode["Pid"].isNull())
 		retcodeAppDataBean_.pid = retcodeAppDataBeanNode["Pid"].asString();
+	if(!retcodeAppDataBeanNode["AppId"].isNull())
+		retcodeAppDataBean_.appId = std::stol(retcodeAppDataBeanNode["AppId"].asString());
 
 }
 

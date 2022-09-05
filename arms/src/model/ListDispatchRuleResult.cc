@@ -43,12 +43,12 @@ void ListDispatchRuleResult::parse(const std::string &payload)
 	for (auto valueDispatchRulesDispatchRule : allDispatchRulesNode)
 	{
 		DispatchRule dispatchRulesObject;
-		if(!valueDispatchRulesDispatchRule["RuleId"].isNull())
-			dispatchRulesObject.ruleId = std::stol(valueDispatchRulesDispatchRule["RuleId"].asString());
 		if(!valueDispatchRulesDispatchRule["Name"].isNull())
 			dispatchRulesObject.name = valueDispatchRulesDispatchRule["Name"].asString();
 		if(!valueDispatchRulesDispatchRule["State"].isNull())
 			dispatchRulesObject.state = valueDispatchRulesDispatchRule["State"].asString();
+		if(!valueDispatchRulesDispatchRule["RuleId"].isNull())
+			dispatchRulesObject.ruleId = std::stol(valueDispatchRulesDispatchRule["RuleId"].asString());
 		dispatchRules_.push_back(dispatchRulesObject);
 	}
 

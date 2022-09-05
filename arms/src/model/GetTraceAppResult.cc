@@ -40,24 +40,24 @@ void GetTraceAppResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto traceAppNode = value["TraceApp"];
-	if(!traceAppNode["AppId"].isNull())
-		traceApp_.appId = std::stol(traceAppNode["AppId"].asString());
-	if(!traceAppNode["Pid"].isNull())
-		traceApp_.pid = traceAppNode["Pid"].asString();
-	if(!traceAppNode["AppName"].isNull())
-		traceApp_.appName = traceAppNode["AppName"].asString();
 	if(!traceAppNode["Type"].isNull())
 		traceApp_.type = traceAppNode["Type"].asString();
-	if(!traceAppNode["UserId"].isNull())
-		traceApp_.userId = traceAppNode["UserId"].asString();
-	if(!traceAppNode["RegionId"].isNull())
-		traceApp_.regionId = traceAppNode["RegionId"].asString();
-	if(!traceAppNode["CreateTime"].isNull())
-		traceApp_.createTime = std::stol(traceAppNode["CreateTime"].asString());
+	if(!traceAppNode["AppName"].isNull())
+		traceApp_.appName = traceAppNode["AppName"].asString();
 	if(!traceAppNode["UpdateTime"].isNull())
 		traceApp_.updateTime = std::stol(traceAppNode["UpdateTime"].asString());
 	if(!traceAppNode["Show"].isNull())
 		traceApp_.show = traceAppNode["Show"].asString() == "true";
+	if(!traceAppNode["CreateTime"].isNull())
+		traceApp_.createTime = std::stol(traceAppNode["CreateTime"].asString());
+	if(!traceAppNode["Pid"].isNull())
+		traceApp_.pid = traceAppNode["Pid"].asString();
+	if(!traceAppNode["AppId"].isNull())
+		traceApp_.appId = std::stol(traceAppNode["AppId"].asString());
+	if(!traceAppNode["UserId"].isNull())
+		traceApp_.userId = traceAppNode["UserId"].asString();
+	if(!traceAppNode["RegionId"].isNull())
+		traceApp_.regionId = traceAppNode["RegionId"].asString();
 		auto allLabels = traceAppNode["Labels"]["Labels"];
 		for (auto value : allLabels)
 			traceApp_.labels.push_back(value.asString());

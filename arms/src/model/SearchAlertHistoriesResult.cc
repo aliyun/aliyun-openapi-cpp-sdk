@@ -40,38 +40,38 @@ void SearchAlertHistoriesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto pageBeanNode = value["PageBean"];
-	if(!pageBeanNode["TotalCount"].isNull())
-		pageBean_.totalCount = std::stoi(pageBeanNode["TotalCount"].asString());
 	if(!pageBeanNode["PageNumber"].isNull())
 		pageBean_.pageNumber = std::stoi(pageBeanNode["PageNumber"].asString());
 	if(!pageBeanNode["PageSize"].isNull())
 		pageBean_.pageSize = std::stoi(pageBeanNode["PageSize"].asString());
+	if(!pageBeanNode["TotalCount"].isNull())
+		pageBean_.totalCount = std::stoi(pageBeanNode["TotalCount"].asString());
 	auto allAlarmHistoriesNode = pageBeanNode["AlarmHistories"]["AlarmHistory"];
 	for (auto pageBeanNodeAlarmHistoriesAlarmHistory : allAlarmHistoriesNode)
 	{
 		PageBean::AlarmHistory alarmHistoryObject;
-		if(!pageBeanNodeAlarmHistoriesAlarmHistory["Id"].isNull())
-			alarmHistoryObject.id = std::stol(pageBeanNodeAlarmHistoriesAlarmHistory["Id"].asString());
-		if(!pageBeanNodeAlarmHistoriesAlarmHistory["StrategyId"].isNull())
-			alarmHistoryObject.strategyId = pageBeanNodeAlarmHistoriesAlarmHistory["StrategyId"].asString();
-		if(!pageBeanNodeAlarmHistoriesAlarmHistory["UserId"].isNull())
-			alarmHistoryObject.userId = pageBeanNodeAlarmHistoriesAlarmHistory["UserId"].asString();
-		if(!pageBeanNodeAlarmHistoriesAlarmHistory["Target"].isNull())
-			alarmHistoryObject.target = pageBeanNodeAlarmHistoriesAlarmHistory["Target"].asString();
-		if(!pageBeanNodeAlarmHistoriesAlarmHistory["Phones"].isNull())
-			alarmHistoryObject.phones = pageBeanNodeAlarmHistoriesAlarmHistory["Phones"].asString();
-		if(!pageBeanNodeAlarmHistoriesAlarmHistory["Emails"].isNull())
-			alarmHistoryObject.emails = pageBeanNodeAlarmHistoriesAlarmHistory["Emails"].asString();
 		if(!pageBeanNodeAlarmHistoriesAlarmHistory["AlarmTime"].isNull())
 			alarmHistoryObject.alarmTime = std::stol(pageBeanNodeAlarmHistoriesAlarmHistory["AlarmTime"].asString());
-		if(!pageBeanNodeAlarmHistoriesAlarmHistory["AlarmType"].isNull())
-			alarmHistoryObject.alarmType = std::stoi(pageBeanNodeAlarmHistoriesAlarmHistory["AlarmType"].asString());
+		if(!pageBeanNodeAlarmHistoriesAlarmHistory["StrategyId"].isNull())
+			alarmHistoryObject.strategyId = pageBeanNodeAlarmHistoriesAlarmHistory["StrategyId"].asString();
 		if(!pageBeanNodeAlarmHistoriesAlarmHistory["AlarmResponseCode"].isNull())
 			alarmHistoryObject.alarmResponseCode = std::stoi(pageBeanNodeAlarmHistoriesAlarmHistory["AlarmResponseCode"].asString());
-		if(!pageBeanNodeAlarmHistoriesAlarmHistory["AlarmContent"].isNull())
-			alarmHistoryObject.alarmContent = pageBeanNodeAlarmHistoriesAlarmHistory["AlarmContent"].asString();
+		if(!pageBeanNodeAlarmHistoriesAlarmHistory["Emails"].isNull())
+			alarmHistoryObject.emails = pageBeanNodeAlarmHistoriesAlarmHistory["Emails"].asString();
+		if(!pageBeanNodeAlarmHistoriesAlarmHistory["UserId"].isNull())
+			alarmHistoryObject.userId = pageBeanNodeAlarmHistoriesAlarmHistory["UserId"].asString();
 		if(!pageBeanNodeAlarmHistoriesAlarmHistory["AlarmSources"].isNull())
 			alarmHistoryObject.alarmSources = pageBeanNodeAlarmHistoriesAlarmHistory["AlarmSources"].asString();
+		if(!pageBeanNodeAlarmHistoriesAlarmHistory["AlarmContent"].isNull())
+			alarmHistoryObject.alarmContent = pageBeanNodeAlarmHistoriesAlarmHistory["AlarmContent"].asString();
+		if(!pageBeanNodeAlarmHistoriesAlarmHistory["Phones"].isNull())
+			alarmHistoryObject.phones = pageBeanNodeAlarmHistoriesAlarmHistory["Phones"].asString();
+		if(!pageBeanNodeAlarmHistoriesAlarmHistory["AlarmType"].isNull())
+			alarmHistoryObject.alarmType = std::stoi(pageBeanNodeAlarmHistoriesAlarmHistory["AlarmType"].asString());
+		if(!pageBeanNodeAlarmHistoriesAlarmHistory["Target"].isNull())
+			alarmHistoryObject.target = pageBeanNodeAlarmHistoriesAlarmHistory["Target"].asString();
+		if(!pageBeanNodeAlarmHistoriesAlarmHistory["Id"].isNull())
+			alarmHistoryObject.id = std::stol(pageBeanNodeAlarmHistoriesAlarmHistory["Id"].asString());
 		pageBean_.alarmHistories.push_back(alarmHistoryObject);
 	}
 

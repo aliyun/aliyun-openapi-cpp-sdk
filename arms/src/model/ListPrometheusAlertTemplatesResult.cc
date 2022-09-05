@@ -43,18 +43,18 @@ void ListPrometheusAlertTemplatesResult::parse(const std::string &payload)
 	for (auto valuePrometheusAlertTemplatesPrometheusAlertTemplate : allPrometheusAlertTemplatesNode)
 	{
 		PrometheusAlertTemplate prometheusAlertTemplatesObject;
-		if(!valuePrometheusAlertTemplatesPrometheusAlertTemplate["AlertName"].isNull())
-			prometheusAlertTemplatesObject.alertName = valuePrometheusAlertTemplatesPrometheusAlertTemplate["AlertName"].asString();
-		if(!valuePrometheusAlertTemplatesPrometheusAlertTemplate["Description"].isNull())
-			prometheusAlertTemplatesObject.description = valuePrometheusAlertTemplatesPrometheusAlertTemplate["Description"].asString();
 		if(!valuePrometheusAlertTemplatesPrometheusAlertTemplate["Type"].isNull())
 			prometheusAlertTemplatesObject.type = valuePrometheusAlertTemplatesPrometheusAlertTemplate["Type"].asString();
+		if(!valuePrometheusAlertTemplatesPrometheusAlertTemplate["Description"].isNull())
+			prometheusAlertTemplatesObject.description = valuePrometheusAlertTemplatesPrometheusAlertTemplate["Description"].asString();
 		if(!valuePrometheusAlertTemplatesPrometheusAlertTemplate["Expression"].isNull())
 			prometheusAlertTemplatesObject.expression = valuePrometheusAlertTemplatesPrometheusAlertTemplate["Expression"].asString();
-		if(!valuePrometheusAlertTemplatesPrometheusAlertTemplate["Duration"].isNull())
-			prometheusAlertTemplatesObject.duration = valuePrometheusAlertTemplatesPrometheusAlertTemplate["Duration"].asString();
 		if(!valuePrometheusAlertTemplatesPrometheusAlertTemplate["Version"].isNull())
 			prometheusAlertTemplatesObject.version = valuePrometheusAlertTemplatesPrometheusAlertTemplate["Version"].asString();
+		if(!valuePrometheusAlertTemplatesPrometheusAlertTemplate["Duration"].isNull())
+			prometheusAlertTemplatesObject.duration = valuePrometheusAlertTemplatesPrometheusAlertTemplate["Duration"].asString();
+		if(!valuePrometheusAlertTemplatesPrometheusAlertTemplate["AlertName"].isNull())
+			prometheusAlertTemplatesObject.alertName = valuePrometheusAlertTemplatesPrometheusAlertTemplate["AlertName"].asString();
 		auto allLabelsNode = valuePrometheusAlertTemplatesPrometheusAlertTemplate["Labels"]["Label"];
 		for (auto valuePrometheusAlertTemplatesPrometheusAlertTemplateLabelsLabel : allLabelsNode)
 		{

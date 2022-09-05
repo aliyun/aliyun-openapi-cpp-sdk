@@ -40,26 +40,26 @@ void UpdatePrometheusAlertRuleResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto prometheusAlertRuleNode = value["PrometheusAlertRule"];
-	if(!prometheusAlertRuleNode["AlertId"].isNull())
-		prometheusAlertRule_.alertId = std::stol(prometheusAlertRuleNode["AlertId"].asString());
-	if(!prometheusAlertRuleNode["AlertName"].isNull())
-		prometheusAlertRule_.alertName = prometheusAlertRuleNode["AlertName"].asString();
-	if(!prometheusAlertRuleNode["Message"].isNull())
-		prometheusAlertRule_.message = prometheusAlertRuleNode["Message"].asString();
-	if(!prometheusAlertRuleNode["Type"].isNull())
-		prometheusAlertRule_.type = prometheusAlertRuleNode["Type"].asString();
-	if(!prometheusAlertRuleNode["Expression"].isNull())
-		prometheusAlertRule_.expression = prometheusAlertRuleNode["Expression"].asString();
-	if(!prometheusAlertRuleNode["Duration"].isNull())
-		prometheusAlertRule_.duration = prometheusAlertRuleNode["Duration"].asString();
-	if(!prometheusAlertRuleNode["ClusterId"].isNull())
-		prometheusAlertRule_.clusterId = prometheusAlertRuleNode["ClusterId"].asString();
 	if(!prometheusAlertRuleNode["Status"].isNull())
 		prometheusAlertRule_.status = std::stoi(prometheusAlertRuleNode["Status"].asString());
-	if(!prometheusAlertRuleNode["DispatchRuleId"].isNull())
-		prometheusAlertRule_.dispatchRuleId = std::stol(prometheusAlertRuleNode["DispatchRuleId"].asString());
+	if(!prometheusAlertRuleNode["Type"].isNull())
+		prometheusAlertRule_.type = prometheusAlertRuleNode["Type"].asString();
 	if(!prometheusAlertRuleNode["NotifyType"].isNull())
 		prometheusAlertRule_.notifyType = prometheusAlertRuleNode["NotifyType"].asString();
+	if(!prometheusAlertRuleNode["Expression"].isNull())
+		prometheusAlertRule_.expression = prometheusAlertRuleNode["Expression"].asString();
+	if(!prometheusAlertRuleNode["Message"].isNull())
+		prometheusAlertRule_.message = prometheusAlertRuleNode["Message"].asString();
+	if(!prometheusAlertRuleNode["Duration"].isNull())
+		prometheusAlertRule_.duration = prometheusAlertRuleNode["Duration"].asString();
+	if(!prometheusAlertRuleNode["DispatchRuleId"].isNull())
+		prometheusAlertRule_.dispatchRuleId = std::stol(prometheusAlertRuleNode["DispatchRuleId"].asString());
+	if(!prometheusAlertRuleNode["AlertName"].isNull())
+		prometheusAlertRule_.alertName = prometheusAlertRuleNode["AlertName"].asString();
+	if(!prometheusAlertRuleNode["AlertId"].isNull())
+		prometheusAlertRule_.alertId = std::stol(prometheusAlertRuleNode["AlertId"].asString());
+	if(!prometheusAlertRuleNode["ClusterId"].isNull())
+		prometheusAlertRule_.clusterId = prometheusAlertRuleNode["ClusterId"].asString();
 	auto allLabelsNode = prometheusAlertRuleNode["Labels"]["Label"];
 	for (auto prometheusAlertRuleNodeLabelsLabel : allLabelsNode)
 	{

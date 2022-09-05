@@ -40,28 +40,28 @@ void DescribeDispatchRuleResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dispatchRuleNode = value["DispatchRule"];
-	if(!dispatchRuleNode["RuleId"].isNull())
-		dispatchRule_.ruleId = std::stol(dispatchRuleNode["RuleId"].asString());
 	if(!dispatchRuleNode["Name"].isNull())
 		dispatchRule_.name = dispatchRuleNode["Name"].asString();
-	if(!dispatchRuleNode["State"].isNull())
-		dispatchRule_.state = dispatchRuleNode["State"].asString();
-	if(!dispatchRuleNode["DispatchType"].isNull())
-		dispatchRule_.dispatchType = dispatchRuleNode["DispatchType"].asString();
 	if(!dispatchRuleNode["IsRecover"].isNull())
 		dispatchRule_.isRecover = dispatchRuleNode["IsRecover"].asString() == "true";
+	if(!dispatchRuleNode["DispatchType"].isNull())
+		dispatchRule_.dispatchType = dispatchRuleNode["DispatchType"].asString();
+	if(!dispatchRuleNode["State"].isNull())
+		dispatchRule_.state = dispatchRuleNode["State"].asString();
+	if(!dispatchRuleNode["RuleId"].isNull())
+		dispatchRule_.ruleId = std::stol(dispatchRuleNode["RuleId"].asString());
 	auto allGroupRulesNode = dispatchRuleNode["GroupRules"]["GroupRule"];
 	for (auto dispatchRuleNodeGroupRulesGroupRule : allGroupRulesNode)
 	{
 		DispatchRule::GroupRule groupRuleObject;
+		if(!dispatchRuleNodeGroupRulesGroupRule["RepeatInterval"].isNull())
+			groupRuleObject.repeatInterval = std::stol(dispatchRuleNodeGroupRulesGroupRule["RepeatInterval"].asString());
 		if(!dispatchRuleNodeGroupRulesGroupRule["GroupId"].isNull())
 			groupRuleObject.groupId = std::stol(dispatchRuleNodeGroupRulesGroupRule["GroupId"].asString());
 		if(!dispatchRuleNodeGroupRulesGroupRule["GroupWaitTime"].isNull())
 			groupRuleObject.groupWaitTime = std::stol(dispatchRuleNodeGroupRulesGroupRule["GroupWaitTime"].asString());
 		if(!dispatchRuleNodeGroupRulesGroupRule["GroupInterval"].isNull())
 			groupRuleObject.groupInterval = std::stol(dispatchRuleNodeGroupRulesGroupRule["GroupInterval"].asString());
-		if(!dispatchRuleNodeGroupRulesGroupRule["RepeatInterval"].isNull())
-			groupRuleObject.repeatInterval = std::stol(dispatchRuleNodeGroupRulesGroupRule["RepeatInterval"].asString());
 		auto allGroupingFields = value["GroupingFields"]["GroupingField"];
 		for (auto value : allGroupingFields)
 			groupRuleObject.groupingFields.push_back(value.asString());
@@ -75,12 +75,12 @@ void DescribeDispatchRuleResult::parse(const std::string &payload)
 		for (auto dispatchRuleNodeNotifyRulesNotifyRuleNotifyObjectsNotifyObject : allNotifyObjectsNode)
 		{
 			DispatchRule::NotifyRule::NotifyObject notifyObjectsObject;
+			if(!dispatchRuleNodeNotifyRulesNotifyRuleNotifyObjectsNotifyObject["NotifyObjectId"].isNull())
+				notifyObjectsObject.notifyObjectId = dispatchRuleNodeNotifyRulesNotifyRuleNotifyObjectsNotifyObject["NotifyObjectId"].asString();
 			if(!dispatchRuleNodeNotifyRulesNotifyRuleNotifyObjectsNotifyObject["NotifyType"].isNull())
 				notifyObjectsObject.notifyType = dispatchRuleNodeNotifyRulesNotifyRuleNotifyObjectsNotifyObject["NotifyType"].asString();
 			if(!dispatchRuleNodeNotifyRulesNotifyRuleNotifyObjectsNotifyObject["Name"].isNull())
 				notifyObjectsObject.name = dispatchRuleNodeNotifyRulesNotifyRuleNotifyObjectsNotifyObject["Name"].asString();
-			if(!dispatchRuleNodeNotifyRulesNotifyRuleNotifyObjectsNotifyObject["NotifyObjectId"].isNull())
-				notifyObjectsObject.notifyObjectId = dispatchRuleNodeNotifyRulesNotifyRuleNotifyObjectsNotifyObject["NotifyObjectId"].asString();
 			notifyRuleObject.notifyObjects.push_back(notifyObjectsObject);
 		}
 		auto allNotifyChannels = value["NotifyChannels"]["NotifyChannel"];

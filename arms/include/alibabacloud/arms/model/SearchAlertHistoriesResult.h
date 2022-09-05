@@ -40,12 +40,12 @@ namespace AlibabaCloud
 						std::string phones;
 						long alarmTime;
 						std::string userId;
-						int alarmType;
 						int alarmResponseCode;
+						int alarmType;
 						std::string strategyId;
-						long id;
 						std::string emails;
 						std::string alarmContent;
+						long id;
 						std::string alarmSources;
 					};
 					int totalCount;

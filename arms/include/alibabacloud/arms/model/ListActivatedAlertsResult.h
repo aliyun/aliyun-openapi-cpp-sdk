@@ -53,8 +53,8 @@ namespace AlibabaCloud
 						std::string involvedObjectName;
 						long endsAt;
 						std::string alertType;
-						std::string alertId;
 						std::string integrationName;
+						std::string alertId;
 						long startsAt;
 						std::string integrationType;
 					};

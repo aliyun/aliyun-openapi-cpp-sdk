@@ -43,24 +43,24 @@ void ListScenarioResult::parse(const std::string &payload)
 	for (auto valueArmsScenariosArmsScenariosItem : allArmsScenariosNode)
 	{
 		ArmsScenariosItem armsScenariosObject;
-		if(!valueArmsScenariosArmsScenariosItem["Id"].isNull())
-			armsScenariosObject.id = std::stol(valueArmsScenariosArmsScenariosItem["Id"].asString());
-		if(!valueArmsScenariosArmsScenariosItem["CreateTime"].isNull())
-			armsScenariosObject.createTime = valueArmsScenariosArmsScenariosItem["CreateTime"].asString();
 		if(!valueArmsScenariosArmsScenariosItem["UpdateTime"].isNull())
 			armsScenariosObject.updateTime = valueArmsScenariosArmsScenariosItem["UpdateTime"].asString();
-		if(!valueArmsScenariosArmsScenariosItem["Name"].isNull())
-			armsScenariosObject.name = valueArmsScenariosArmsScenariosItem["Name"].asString();
-		if(!valueArmsScenariosArmsScenariosItem["Sign"].isNull())
-			armsScenariosObject.sign = valueArmsScenariosArmsScenariosItem["Sign"].asString();
-		if(!valueArmsScenariosArmsScenariosItem["UserId"].isNull())
-			armsScenariosObject.userId = valueArmsScenariosArmsScenariosItem["UserId"].asString();
-		if(!valueArmsScenariosArmsScenariosItem["RegionId"].isNull())
-			armsScenariosObject.regionId = valueArmsScenariosArmsScenariosItem["RegionId"].asString();
 		if(!valueArmsScenariosArmsScenariosItem["AppId"].isNull())
 			armsScenariosObject.appId = valueArmsScenariosArmsScenariosItem["AppId"].asString();
+		if(!valueArmsScenariosArmsScenariosItem["Sign"].isNull())
+			armsScenariosObject.sign = valueArmsScenariosArmsScenariosItem["Sign"].asString();
+		if(!valueArmsScenariosArmsScenariosItem["CreateTime"].isNull())
+			armsScenariosObject.createTime = valueArmsScenariosArmsScenariosItem["CreateTime"].asString();
+		if(!valueArmsScenariosArmsScenariosItem["UserId"].isNull())
+			armsScenariosObject.userId = valueArmsScenariosArmsScenariosItem["UserId"].asString();
 		if(!valueArmsScenariosArmsScenariosItem["Extensions"].isNull())
 			armsScenariosObject.extensions = valueArmsScenariosArmsScenariosItem["Extensions"].asString();
+		if(!valueArmsScenariosArmsScenariosItem["Name"].isNull())
+			armsScenariosObject.name = valueArmsScenariosArmsScenariosItem["Name"].asString();
+		if(!valueArmsScenariosArmsScenariosItem["Id"].isNull())
+			armsScenariosObject.id = std::stol(valueArmsScenariosArmsScenariosItem["Id"].asString());
+		if(!valueArmsScenariosArmsScenariosItem["RegionId"].isNull())
+			armsScenariosObject.regionId = valueArmsScenariosArmsScenariosItem["RegionId"].asString();
 		armsScenarios_.push_back(armsScenariosObject);
 	}
 

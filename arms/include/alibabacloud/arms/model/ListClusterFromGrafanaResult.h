@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string stateJson;
 					std::string options;
 					int nodeNum;
-					std::string clusterId;
 					long installTime;
+					std::string clusterId;
 					long createTime;
 					std::string controllerId;
 					std::string pluginsJsonArray;
@@ -50,8 +50,8 @@ namespace AlibabaCloud
 					long lastHeartBeatTime;
 					long updateTime;
 					std::string clusterName;
-					long id;
 					std::string regionId;
+					long id;
 				};
 
 

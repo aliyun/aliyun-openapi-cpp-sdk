@@ -53,8 +53,8 @@ namespace AlibabaCloud
 						long groupInterval;
 						std::vector<std::string> groupingFields;
 						long groupWaitTime;
-						long groupId;
 						long repeatInterval;
+						long groupId;
 					};
 					struct NotifyRule
 					{

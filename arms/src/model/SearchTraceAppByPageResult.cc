@@ -40,34 +40,34 @@ void SearchTraceAppByPageResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto pageBeanNode = value["PageBean"];
-	if(!pageBeanNode["TotalCount"].isNull())
-		pageBean_.totalCount = std::stoi(pageBeanNode["TotalCount"].asString());
 	if(!pageBeanNode["PageNumber"].isNull())
 		pageBean_.pageNumber = std::stoi(pageBeanNode["PageNumber"].asString());
 	if(!pageBeanNode["PageSize"].isNull())
 		pageBean_.pageSize = std::stoi(pageBeanNode["PageSize"].asString());
+	if(!pageBeanNode["TotalCount"].isNull())
+		pageBean_.totalCount = std::stoi(pageBeanNode["TotalCount"].asString());
 	auto allTraceAppsNode = pageBeanNode["TraceApps"]["TraceApp"];
 	for (auto pageBeanNodeTraceAppsTraceApp : allTraceAppsNode)
 	{
 		PageBean::TraceApp traceAppObject;
-		if(!pageBeanNodeTraceAppsTraceApp["AppId"].isNull())
-			traceAppObject.appId = std::stol(pageBeanNodeTraceAppsTraceApp["AppId"].asString());
-		if(!pageBeanNodeTraceAppsTraceApp["Pid"].isNull())
-			traceAppObject.pid = pageBeanNodeTraceAppsTraceApp["Pid"].asString();
-		if(!pageBeanNodeTraceAppsTraceApp["AppName"].isNull())
-			traceAppObject.appName = pageBeanNodeTraceAppsTraceApp["AppName"].asString();
 		if(!pageBeanNodeTraceAppsTraceApp["Type"].isNull())
 			traceAppObject.type = pageBeanNodeTraceAppsTraceApp["Type"].asString();
-		if(!pageBeanNodeTraceAppsTraceApp["UserId"].isNull())
-			traceAppObject.userId = pageBeanNodeTraceAppsTraceApp["UserId"].asString();
-		if(!pageBeanNodeTraceAppsTraceApp["RegionId"].isNull())
-			traceAppObject.regionId = pageBeanNodeTraceAppsTraceApp["RegionId"].asString();
-		if(!pageBeanNodeTraceAppsTraceApp["CreateTime"].isNull())
-			traceAppObject.createTime = std::stol(pageBeanNodeTraceAppsTraceApp["CreateTime"].asString());
+		if(!pageBeanNodeTraceAppsTraceApp["AppName"].isNull())
+			traceAppObject.appName = pageBeanNodeTraceAppsTraceApp["AppName"].asString();
 		if(!pageBeanNodeTraceAppsTraceApp["UpdateTime"].isNull())
 			traceAppObject.updateTime = std::stol(pageBeanNodeTraceAppsTraceApp["UpdateTime"].asString());
 		if(!pageBeanNodeTraceAppsTraceApp["Show"].isNull())
 			traceAppObject.show = pageBeanNodeTraceAppsTraceApp["Show"].asString() == "true";
+		if(!pageBeanNodeTraceAppsTraceApp["CreateTime"].isNull())
+			traceAppObject.createTime = std::stol(pageBeanNodeTraceAppsTraceApp["CreateTime"].asString());
+		if(!pageBeanNodeTraceAppsTraceApp["Pid"].isNull())
+			traceAppObject.pid = pageBeanNodeTraceAppsTraceApp["Pid"].asString();
+		if(!pageBeanNodeTraceAppsTraceApp["AppId"].isNull())
+			traceAppObject.appId = std::stol(pageBeanNodeTraceAppsTraceApp["AppId"].asString());
+		if(!pageBeanNodeTraceAppsTraceApp["UserId"].isNull())
+			traceAppObject.userId = pageBeanNodeTraceAppsTraceApp["UserId"].asString();
+		if(!pageBeanNodeTraceAppsTraceApp["RegionId"].isNull())
+			traceAppObject.regionId = pageBeanNodeTraceAppsTraceApp["RegionId"].asString();
 		auto allLabels = value["Labels"]["Labels"];
 		for (auto value : allLabels)
 			traceAppObject.labels.push_back(value.asString());

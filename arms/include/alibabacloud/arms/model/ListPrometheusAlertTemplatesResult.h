@@ -46,8 +46,8 @@ namespace AlibabaCloud
 					};
 					std::string type;
 					std::vector<PrometheusAlertTemplate::Annotation> annotations;
-					std::string alertName;
 					std::string description;
+					std::string alertName;
 					std::string expression;
 					std::string version;
 					std::vector<PrometheusAlertTemplate::Label> labels;

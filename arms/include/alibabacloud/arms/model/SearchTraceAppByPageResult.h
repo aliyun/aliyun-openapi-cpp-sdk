@@ -41,8 +41,8 @@ namespace AlibabaCloud
 						std::string userId;
 						long createTime;
 						long updateTime;
-						std::string pid;
 						bool show;
+						std::string pid;
 						std::vector<std::string> labels;
 						std::string regionId;
 						std::string appName;

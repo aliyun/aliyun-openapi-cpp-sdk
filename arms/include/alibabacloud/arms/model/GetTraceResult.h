@@ -61,6 +61,7 @@ namespace AlibabaCloud
 					std::string serviceName;
 					std::string rpcId;
 					std::string traceID;
+					std::vector<std::string> children;
 					std::string resultCode;
 					std::string spanId;
 				};

@@ -40,12 +40,12 @@ void GetAppApiByPageResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	if(!dataNode["PageSize"].isNull())
+		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 	if(!dataNode["Total"].isNull())
 		data_.total = dataNode["Total"].asString();
 	if(!dataNode["Page"].isNull())
 		data_.page = std::stoi(dataNode["Page"].asString());
-	if(!dataNode["PageSize"].isNull())
-		data_.pageSize = std::stoi(dataNode["PageSize"].asString());
 		auto allItems = dataNode["Items"]["Items"];
 		for (auto value : allItems)
 			data_.items.push_back(value.asString());
