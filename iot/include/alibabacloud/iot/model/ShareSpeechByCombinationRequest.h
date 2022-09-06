@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_SYNCSPEECHBYCOMBINATIONREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_SYNCSPEECHBYCOMBINATIONREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_SHARESPEECHBYCOMBINATIONREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_SHARESPEECHBYCOMBINATIONREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,12 +28,12 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT SyncSpeechByCombinationRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT ShareSpeechByCombinationRequest : public RpcServiceRequest
 			{
 
 			public:
-				SyncSpeechByCombinationRequest();
-				~SyncSpeechByCombinationRequest();
+				ShareSpeechByCombinationRequest();
+				~ShareSpeechByCombinationRequest();
 
 				std::string getSpeechId()const;
 				void setSpeechId(const std::string& speechId);
@@ -45,8 +45,6 @@ namespace AlibabaCloud
 				void setCombinationList(const std::vector<std::string>& combinationList);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				bool getEnforceFlag()const;
-				void setEnforceFlag(bool enforceFlag);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
 				std::string getApiProduct()const;
@@ -62,7 +60,6 @@ namespace AlibabaCloud
 				std::string iotId_;
 				std::vector<std::string> combinationList_;
 				std::string iotInstanceId_;
-				bool enforceFlag_;
 				std::string productKey_;
 				std::string apiProduct_;
 				std::string apiRevision_;
@@ -72,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_SYNCSPEECHBYCOMBINATIONREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_SHARESPEECHBYCOMBINATIONREQUEST_H_

@@ -27,6 +27,19 @@ BindLicenseDeviceRequest::BindLicenseDeviceRequest() :
 BindLicenseDeviceRequest::~BindLicenseDeviceRequest()
 {}
 
+std::vector<std::string> BindLicenseDeviceRequest::getDeviceNameList()const
+{
+	return deviceNameList_;
+}
+
+void BindLicenseDeviceRequest::setDeviceNameList(const std::vector<std::string>& deviceNameList)
+{
+	deviceNameList_ = deviceNameList;
+	for(int dep1 = 0; dep1!= deviceNameList.size(); dep1++) {
+		setBodyParameter("DeviceNameList."+ std::to_string(dep1), deviceNameList.at(dep1));
+	}
+}
+
 std::string BindLicenseDeviceRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -47,7 +60,7 @@ void BindLicenseDeviceRequest::setIotIdList(const std::vector<std::string>& iotI
 {
 	iotIdList_ = iotIdList;
 	for(int dep1 = 0; dep1!= iotIdList.size(); dep1++) {
-		setParameter("IotIdList."+ std::to_string(dep1), iotIdList.at(dep1));
+		setBodyParameter("IotIdList."+ std::to_string(dep1), iotIdList.at(dep1));
 	}
 }
 

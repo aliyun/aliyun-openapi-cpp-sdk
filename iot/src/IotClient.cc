@@ -87,6 +87,42 @@ IotClient::AddDataForApiSourceOutcomeCallable IotClient::addDataForApiSourceCall
 	return task->get_future();
 }
 
+IotClient::AddShareTaskDeviceOutcome IotClient::addShareTaskDevice(const AddShareTaskDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddShareTaskDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddShareTaskDeviceOutcome(AddShareTaskDeviceResult(outcome.result()));
+	else
+		return AddShareTaskDeviceOutcome(outcome.error());
+}
+
+void IotClient::addShareTaskDeviceAsync(const AddShareTaskDeviceRequest& request, const AddShareTaskDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addShareTaskDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::AddShareTaskDeviceOutcomeCallable IotClient::addShareTaskDeviceCallable(const AddShareTaskDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddShareTaskDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->addShareTaskDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::AttachDestinationOutcome IotClient::attachDestination(const AttachDestinationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4551,6 +4587,42 @@ IotClient::DeleteSchedulePeriodOutcomeCallable IotClient::deleteSchedulePeriodCa
 	return task->get_future();
 }
 
+IotClient::DeleteShareTaskDeviceOutcome IotClient::deleteShareTaskDevice(const DeleteShareTaskDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteShareTaskDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteShareTaskDeviceOutcome(DeleteShareTaskDeviceResult(outcome.result()));
+	else
+		return DeleteShareTaskDeviceOutcome(outcome.error());
+}
+
+void IotClient::deleteShareTaskDeviceAsync(const DeleteShareTaskDeviceRequest& request, const DeleteShareTaskDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteShareTaskDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::DeleteShareTaskDeviceOutcomeCallable IotClient::deleteShareTaskDeviceCallable(const DeleteShareTaskDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteShareTaskDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteShareTaskDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::DeleteSoundCodeOutcome IotClient::deleteSoundCode(const DeleteSoundCodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5955,6 +6027,42 @@ IotClient::GetSceneRuleOutcomeCallable IotClient::getSceneRuleCallable(const Get
 	return task->get_future();
 }
 
+IotClient::GetShareTaskByDeviceOpenOutcome IotClient::getShareTaskByDeviceOpen(const GetShareTaskByDeviceOpenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetShareTaskByDeviceOpenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetShareTaskByDeviceOpenOutcome(GetShareTaskByDeviceOpenResult(outcome.result()));
+	else
+		return GetShareTaskByDeviceOpenOutcome(outcome.error());
+}
+
+void IotClient::getShareTaskByDeviceOpenAsync(const GetShareTaskByDeviceOpenRequest& request, const GetShareTaskByDeviceOpenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getShareTaskByDeviceOpen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GetShareTaskByDeviceOpenOutcomeCallable IotClient::getShareTaskByDeviceOpenCallable(const GetShareTaskByDeviceOpenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetShareTaskByDeviceOpenOutcome()>>(
+			[this, request]()
+			{
+			return this->getShareTaskByDeviceOpen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::GetSoundCodeAudioOutcome IotClient::getSoundCodeAudio(const GetSoundCodeAudioRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6057,6 +6165,42 @@ IotClient::GetSpeechDeviceDetailOutcomeCallable IotClient::getSpeechDeviceDetail
 			[this, request]()
 			{
 			return this->getSpeechDeviceDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::GetSpeechLicenseDeviceStatisticsOutcome IotClient::getSpeechLicenseDeviceStatistics(const GetSpeechLicenseDeviceStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSpeechLicenseDeviceStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSpeechLicenseDeviceStatisticsOutcome(GetSpeechLicenseDeviceStatisticsResult(outcome.result()));
+	else
+		return GetSpeechLicenseDeviceStatisticsOutcome(outcome.error());
+}
+
+void IotClient::getSpeechLicenseDeviceStatisticsAsync(const GetSpeechLicenseDeviceStatisticsRequest& request, const GetSpeechLicenseDeviceStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSpeechLicenseDeviceStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GetSpeechLicenseDeviceStatisticsOutcomeCallable IotClient::getSpeechLicenseDeviceStatisticsCallable(const GetSpeechLicenseDeviceStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSpeechLicenseDeviceStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->getSpeechLicenseDeviceStatistics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7533,6 +7677,42 @@ IotClient::PackageSoundCodeLabelBatchAudioOutcomeCallable IotClient::packageSoun
 			[this, request]()
 			{
 			return this->packageSoundCodeLabelBatchAudio(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::PageQuerySharedSpeechOpenOutcome IotClient::pageQuerySharedSpeechOpen(const PageQuerySharedSpeechOpenRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PageQuerySharedSpeechOpenOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PageQuerySharedSpeechOpenOutcome(PageQuerySharedSpeechOpenResult(outcome.result()));
+	else
+		return PageQuerySharedSpeechOpenOutcome(outcome.error());
+}
+
+void IotClient::pageQuerySharedSpeechOpenAsync(const PageQuerySharedSpeechOpenRequest& request, const PageQuerySharedSpeechOpenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, pageQuerySharedSpeechOpen(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::PageQuerySharedSpeechOpenOutcomeCallable IotClient::pageQuerySharedSpeechOpenCallable(const PageQuerySharedSpeechOpenRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PageQuerySharedSpeechOpenOutcome()>>(
+			[this, request]()
+			{
+			return this->pageQuerySharedSpeechOpen(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -10095,6 +10275,42 @@ IotClient::QueryProductTopicOutcomeCallable IotClient::queryProductTopicCallable
 	return task->get_future();
 }
 
+IotClient::QueryProjectShareDeviceListOutcome IotClient::queryProjectShareDeviceList(const QueryProjectShareDeviceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryProjectShareDeviceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryProjectShareDeviceListOutcome(QueryProjectShareDeviceListResult(outcome.result()));
+	else
+		return QueryProjectShareDeviceListOutcome(outcome.error());
+}
+
+void IotClient::queryProjectShareDeviceListAsync(const QueryProjectShareDeviceListRequest& request, const QueryProjectShareDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryProjectShareDeviceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryProjectShareDeviceListOutcomeCallable IotClient::queryProjectShareDeviceListCallable(const QueryProjectShareDeviceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryProjectShareDeviceListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryProjectShareDeviceList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::QuerySceneRuleOutcome IotClient::querySceneRule(const QuerySceneRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -10161,6 +10377,42 @@ IotClient::QuerySchedulePeriodListOutcomeCallable IotClient::querySchedulePeriod
 			[this, request]()
 			{
 			return this->querySchedulePeriodList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryShareTaskDeviceListOutcome IotClient::queryShareTaskDeviceList(const QueryShareTaskDeviceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryShareTaskDeviceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryShareTaskDeviceListOutcome(QueryShareTaskDeviceListResult(outcome.result()));
+	else
+		return QueryShareTaskDeviceListOutcome(outcome.error());
+}
+
+void IotClient::queryShareTaskDeviceListAsync(const QueryShareTaskDeviceListRequest& request, const QueryShareTaskDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryShareTaskDeviceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryShareTaskDeviceListOutcomeCallable IotClient::queryShareTaskDeviceListCallable(const QueryShareTaskDeviceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryShareTaskDeviceListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryShareTaskDeviceList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -10449,6 +10701,42 @@ IotClient::QuerySpeechDeviceOutcomeCallable IotClient::querySpeechDeviceCallable
 			[this, request]()
 			{
 			return this->querySpeechDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QuerySpeechLicenseDeviceListOutcome IotClient::querySpeechLicenseDeviceList(const QuerySpeechLicenseDeviceListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySpeechLicenseDeviceListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySpeechLicenseDeviceListOutcome(QuerySpeechLicenseDeviceListResult(outcome.result()));
+	else
+		return QuerySpeechLicenseDeviceListOutcome(outcome.error());
+}
+
+void IotClient::querySpeechLicenseDeviceListAsync(const QuerySpeechLicenseDeviceListRequest& request, const QuerySpeechLicenseDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySpeechLicenseDeviceList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySpeechLicenseDeviceListOutcomeCallable IotClient::querySpeechLicenseDeviceListCallable(const QuerySpeechLicenseDeviceListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySpeechLicenseDeviceListOutcome()>>(
+			[this, request]()
+			{
+			return this->querySpeechLicenseDeviceList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -11133,6 +11421,42 @@ IotClient::RRpcOutcomeCallable IotClient::rRpcCallable(const RRpcRequest &reques
 			[this, request]()
 			{
 			return this->rRpc(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::ReBindLicenseDeviceOutcome IotClient::reBindLicenseDevice(const ReBindLicenseDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReBindLicenseDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReBindLicenseDeviceOutcome(ReBindLicenseDeviceResult(outcome.result()));
+	else
+		return ReBindLicenseDeviceOutcome(outcome.error());
+}
+
+void IotClient::reBindLicenseDeviceAsync(const ReBindLicenseDeviceRequest& request, const ReBindLicenseDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reBindLicenseDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ReBindLicenseDeviceOutcomeCallable IotClient::reBindLicenseDeviceCallable(const ReBindLicenseDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReBindLicenseDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->reBindLicenseDevice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -11997,6 +12321,42 @@ IotClient::SetupStudioAppAuthModeOpenOutcomeCallable IotClient::setupStudioAppAu
 			[this, request]()
 			{
 			return this->setupStudioAppAuthModeOpen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::ShareSpeechByCombinationOutcome IotClient::shareSpeechByCombination(const ShareSpeechByCombinationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ShareSpeechByCombinationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ShareSpeechByCombinationOutcome(ShareSpeechByCombinationResult(outcome.result()));
+	else
+		return ShareSpeechByCombinationOutcome(outcome.error());
+}
+
+void IotClient::shareSpeechByCombinationAsync(const ShareSpeechByCombinationRequest& request, const ShareSpeechByCombinationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, shareSpeechByCombination(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ShareSpeechByCombinationOutcomeCallable IotClient::shareSpeechByCombinationCallable(const ShareSpeechByCombinationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ShareSpeechByCombinationOutcome()>>(
+			[this, request]()
+			{
+			return this->shareSpeechByCombination(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

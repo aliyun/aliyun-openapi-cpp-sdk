@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_SYNCSPEECHBYCOMBINATIONREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_SYNCSPEECHBYCOMBINATIONREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_PAGEQUERYSHAREDSPEECHOPENREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_PAGEQUERYSHAREDSPEECHOPENREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,25 +28,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT SyncSpeechByCombinationRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT PageQuerySharedSpeechOpenRequest : public RpcServiceRequest
 			{
 
 			public:
-				SyncSpeechByCombinationRequest();
-				~SyncSpeechByCombinationRequest();
+				PageQuerySharedSpeechOpenRequest();
+				~PageQuerySharedSpeechOpenRequest();
 
-				std::string getSpeechId()const;
-				void setSpeechId(const std::string& speechId);
-				std::string getAudioFormat()const;
-				void setAudioFormat(const std::string& audioFormat);
+				int getPageId()const;
+				void setPageId(int pageId);
 				std::string getIotId()const;
 				void setIotId(const std::string& iotId);
-				std::vector<std::string> getCombinationList()const;
-				void setCombinationList(const std::vector<std::string>& combinationList);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				bool getEnforceFlag()const;
-				void setEnforceFlag(bool enforceFlag);
+				int getPageSize()const;
+				void setPageSize(int pageSize);
+				std::string getShareTaskCode()const;
+				void setShareTaskCode(const std::string& shareTaskCode);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
 				std::string getApiProduct()const;
@@ -55,21 +53,23 @@ namespace AlibabaCloud
 				void setApiRevision(const std::string& apiRevision);
 				std::string getDeviceName()const;
 				void setDeviceName(const std::string& deviceName);
+				int getStatus()const;
+				void setStatus(int status);
 
             private:
-				std::string speechId_;
-				std::string audioFormat_;
+				int pageId_;
 				std::string iotId_;
-				std::vector<std::string> combinationList_;
 				std::string iotInstanceId_;
-				bool enforceFlag_;
+				int pageSize_;
+				std::string shareTaskCode_;
 				std::string productKey_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 				std::string deviceName_;
+				int status_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_SYNCSPEECHBYCOMBINATIONREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_PAGEQUERYSHAREDSPEECHOPENREQUEST_H_

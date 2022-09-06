@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_SYNCSPEECHBYCOMBINATIONREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_SYNCSPEECHBYCOMBINATIONREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_REBINDLICENSEDEVICEREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_REBINDLICENSEDEVICEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT SyncSpeechByCombinationRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT ReBindLicenseDeviceRequest : public RpcServiceRequest
 			{
 
 			public:
-				SyncSpeechByCombinationRequest();
-				~SyncSpeechByCombinationRequest();
+				ReBindLicenseDeviceRequest();
+				~ReBindLicenseDeviceRequest();
 
-				std::string getSpeechId()const;
-				void setSpeechId(const std::string& speechId);
-				std::string getAudioFormat()const;
-				void setAudioFormat(const std::string& audioFormat);
-				std::string getIotId()const;
-				void setIotId(const std::string& iotId);
-				std::vector<std::string> getCombinationList()const;
-				void setCombinationList(const std::vector<std::string>& combinationList);
+				std::vector<std::string> getDeviceNameList()const;
+				void setDeviceNameList(const std::vector<std::string>& deviceNameList);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				bool getEnforceFlag()const;
-				void setEnforceFlag(bool enforceFlag);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
-				std::string getDeviceName()const;
-				void setDeviceName(const std::string& deviceName);
+				std::string getLicenseCode()const;
+				void setLicenseCode(const std::string& licenseCode);
 
             private:
-				std::string speechId_;
-				std::string audioFormat_;
-				std::string iotId_;
-				std::vector<std::string> combinationList_;
+				std::vector<std::string> deviceNameList_;
 				std::string iotInstanceId_;
-				bool enforceFlag_;
 				std::string productKey_;
 				std::string apiProduct_;
 				std::string apiRevision_;
-				std::string deviceName_;
+				std::string licenseCode_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_SYNCSPEECHBYCOMBINATIONREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_REBINDLICENSEDEVICEREQUEST_H_

@@ -84,6 +84,17 @@ void SpeechByCombinationRequest::setIotInstanceId(const std::string& iotInstance
 	setBodyParameter("IotInstanceId", iotInstanceId);
 }
 
+bool SpeechByCombinationRequest::getEnforceFlag()const
+{
+	return enforceFlag_;
+}
+
+void SpeechByCombinationRequest::setEnforceFlag(bool enforceFlag)
+{
+	enforceFlag_ = enforceFlag;
+	setBodyParameter("EnforceFlag", enforceFlag ? "true" : "false");
+}
+
 std::string SpeechByCombinationRequest::getProductKey()const
 {
 	return productKey_;

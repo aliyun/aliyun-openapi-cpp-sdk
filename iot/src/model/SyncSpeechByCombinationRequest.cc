@@ -84,6 +84,17 @@ void SyncSpeechByCombinationRequest::setIotInstanceId(const std::string& iotInst
 	setBodyParameter("IotInstanceId", iotInstanceId);
 }
 
+bool SyncSpeechByCombinationRequest::getEnforceFlag()const
+{
+	return enforceFlag_;
+}
+
+void SyncSpeechByCombinationRequest::setEnforceFlag(bool enforceFlag)
+{
+	enforceFlag_ = enforceFlag;
+	setBodyParameter("EnforceFlag", enforceFlag ? "true" : "false");
+}
+
 std::string SyncSpeechByCombinationRequest::getProductKey()const
 {
 	return productKey_;

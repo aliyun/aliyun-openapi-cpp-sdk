@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				BindLicenseDeviceRequest();
 				~BindLicenseDeviceRequest();
 
+				std::vector<std::string> getDeviceNameList()const;
+				void setDeviceNameList(const std::vector<std::string>& deviceNameList);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::vector<std::string> getIotIdList()const;
@@ -49,6 +51,7 @@ namespace AlibabaCloud
 				void setLicenseCode(const std::string& licenseCode);
 
             private:
+				std::vector<std::string> deviceNameList_;
 				std::string iotInstanceId_;
 				std::vector<std::string> iotIdList_;
 				std::string productKey_;

@@ -45,6 +45,8 @@ namespace AlibabaCloud
 				void setCombinationList(const std::vector<std::string>& combinationList);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
+				bool getEnforceFlag()const;
+				void setEnforceFlag(bool enforceFlag);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
 				std::string getApiProduct()const;
@@ -60,6 +62,7 @@ namespace AlibabaCloud
 				std::string iotId_;
 				std::vector<std::string> combinationList_;
 				std::string iotInstanceId_;
+				bool enforceFlag_;
 				std::string productKey_;
 				std::string apiProduct_;
 				std::string apiRevision_;
