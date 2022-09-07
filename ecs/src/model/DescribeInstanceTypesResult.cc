@@ -101,6 +101,18 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.eniQuantity = std::stoi(valueInstanceTypesInstanceType["EniQuantity"].asString());
 		if(!valueInstanceTypesInstanceType["EniTrunkSupported"].isNull())
 			instanceTypesObject.eniTrunkSupported = valueInstanceTypesInstanceType["EniTrunkSupported"].asString() == "true";
+		if(!valueInstanceTypesInstanceType["CpuSpeedFrequency"].isNull())
+			instanceTypesObject.cpuSpeedFrequency = std::stof(valueInstanceTypesInstanceType["CpuSpeedFrequency"].asString());
+		if(!valueInstanceTypesInstanceType["CpuTurboFrequency"].isNull())
+			instanceTypesObject.cpuTurboFrequency = std::stof(valueInstanceTypesInstanceType["CpuTurboFrequency"].asString());
+		if(!valueInstanceTypesInstanceType["PhysicalProcessorModel"].isNull())
+			instanceTypesObject.physicalProcessorModel = valueInstanceTypesInstanceType["PhysicalProcessorModel"].asString();
+		if(!valueInstanceTypesInstanceType["NetworkEncryptionSupport"].isNull())
+			instanceTypesObject.networkEncryptionSupport = valueInstanceTypesInstanceType["NetworkEncryptionSupport"].asString() == "true";
+		if(!valueInstanceTypesInstanceType["InstanceCategory"].isNull())
+			instanceTypesObject.instanceCategory = valueInstanceTypesInstanceType["InstanceCategory"].asString();
+		if(!valueInstanceTypesInstanceType["CpuArchitecture"].isNull())
+			instanceTypesObject.cpuArchitecture = valueInstanceTypesInstanceType["CpuArchitecture"].asString();
 		instanceTypes_.push_back(instanceTypesObject);
 	}
 	if(!value["NextToken"].isNull())

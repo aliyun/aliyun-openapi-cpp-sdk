@@ -42,13 +42,16 @@ namespace AlibabaCloud
 					bool eniTrunkSupported;
 					std::string instanceTypeFamily;
 					long instancePpsRx;
+					bool networkEncryptionSupport;
 					int eriQuantity;
 					int instanceBandwidthRx;
 					int instanceBandwidthTx;
 					int localStorageAmount;
 					int secondaryEniQueueNumber;
+					std::string physicalProcessorModel;
 					std::string localStorageCategory;
 					std::string gPUSpec;
+					std::string cpuArchitecture;
 					std::string instanceTypeId;
 					float memorySize;
 					int maximumQueueNumberPerEni;
@@ -56,12 +59,15 @@ namespace AlibabaCloud
 					int eniTotalQuantity;
 					int cpuCoreCount;
 					int initialCredit;
+					std::string instanceCategory;
 					int eniQuantity;
 					int gPUAmount;
 					int diskQuantity;
+					float cpuSpeedFrequency;
 					int queuePairNumber;
 					int baselineCredit;
 					std::string instanceFamilyLevel;
+					float cpuTurboFrequency;
 					int eniPrivateIpAddressQuantity;
 				};
 
