@@ -41,6 +41,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/AddWorkspaceUsersResult.h
 	include/alibabacloud/quickbi-public/model/AuthorizeMenuRequest.h
 	include/alibabacloud/quickbi-public/model/AuthorizeMenuResult.h
+	include/alibabacloud/quickbi-public/model/BatchAddFeishuUsersRequest.h
+	include/alibabacloud/quickbi-public/model/BatchAddFeishuUsersResult.h
 	include/alibabacloud/quickbi-public/model/CancelAuthorizationMenuRequest.h
 	include/alibabacloud/quickbi-public/model/CancelAuthorizationMenuResult.h
 	include/alibabacloud/quickbi-public/model/CancelCollectionRequest.h
@@ -200,6 +202,8 @@ set(quickbi-public_src
 	src/model/AddWorkspaceUsersResult.cc
 	src/model/AuthorizeMenuRequest.cc
 	src/model/AuthorizeMenuResult.cc
+	src/model/BatchAddFeishuUsersRequest.cc
+	src/model/BatchAddFeishuUsersResult.cc
 	src/model/CancelAuthorizationMenuRequest.cc
 	src/model/CancelAuthorizationMenuResult.cc
 	src/model/CancelCollectionRequest.cc

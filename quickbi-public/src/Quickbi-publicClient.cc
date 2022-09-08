@@ -411,6 +411,42 @@ Quickbi_publicClient::AuthorizeMenuOutcomeCallable Quickbi_publicClient::authori
 	return task->get_future();
 }
 
+Quickbi_publicClient::BatchAddFeishuUsersOutcome Quickbi_publicClient::batchAddFeishuUsers(const BatchAddFeishuUsersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchAddFeishuUsersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchAddFeishuUsersOutcome(BatchAddFeishuUsersResult(outcome.result()));
+	else
+		return BatchAddFeishuUsersOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::batchAddFeishuUsersAsync(const BatchAddFeishuUsersRequest& request, const BatchAddFeishuUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchAddFeishuUsers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::BatchAddFeishuUsersOutcomeCallable Quickbi_publicClient::batchAddFeishuUsersCallable(const BatchAddFeishuUsersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchAddFeishuUsersOutcome()>>(
+			[this, request]()
+			{
+			return this->batchAddFeishuUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::CancelAuthorizationMenuOutcome Quickbi_publicClient::cancelAuthorizationMenu(const CancelAuthorizationMenuRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

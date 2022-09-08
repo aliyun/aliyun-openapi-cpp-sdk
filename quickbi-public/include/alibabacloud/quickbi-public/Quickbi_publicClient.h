@@ -42,6 +42,8 @@
 #include "model/AddWorkspaceUsersResult.h"
 #include "model/AuthorizeMenuRequest.h"
 #include "model/AuthorizeMenuResult.h"
+#include "model/BatchAddFeishuUsersRequest.h"
+#include "model/BatchAddFeishuUsersResult.h"
 #include "model/CancelAuthorizationMenuRequest.h"
 #include "model/CancelAuthorizationMenuResult.h"
 #include "model/CancelCollectionRequest.h"
@@ -217,6 +219,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AuthorizeMenuResult> AuthorizeMenuOutcome;
 			typedef std::future<AuthorizeMenuOutcome> AuthorizeMenuOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::AuthorizeMenuRequest&, const AuthorizeMenuOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AuthorizeMenuAsyncHandler;
+			typedef Outcome<Error, Model::BatchAddFeishuUsersResult> BatchAddFeishuUsersOutcome;
+			typedef std::future<BatchAddFeishuUsersOutcome> BatchAddFeishuUsersOutcomeCallable;
+			typedef std::function<void(const Quickbi_publicClient*, const Model::BatchAddFeishuUsersRequest&, const BatchAddFeishuUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchAddFeishuUsersAsyncHandler;
 			typedef Outcome<Error, Model::CancelAuthorizationMenuResult> CancelAuthorizationMenuOutcome;
 			typedef std::future<CancelAuthorizationMenuOutcome> CancelAuthorizationMenuOutcomeCallable;
 			typedef std::function<void(const Quickbi_publicClient*, const Model::CancelAuthorizationMenuRequest&, const CancelAuthorizationMenuOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelAuthorizationMenuAsyncHandler;
@@ -456,6 +461,9 @@ namespace AlibabaCloud
 			AuthorizeMenuOutcome authorizeMenu(const Model::AuthorizeMenuRequest &request)const;
 			void authorizeMenuAsync(const Model::AuthorizeMenuRequest& request, const AuthorizeMenuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AuthorizeMenuOutcomeCallable authorizeMenuCallable(const Model::AuthorizeMenuRequest& request) const;
+			BatchAddFeishuUsersOutcome batchAddFeishuUsers(const Model::BatchAddFeishuUsersRequest &request)const;
+			void batchAddFeishuUsersAsync(const Model::BatchAddFeishuUsersRequest& request, const BatchAddFeishuUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchAddFeishuUsersOutcomeCallable batchAddFeishuUsersCallable(const Model::BatchAddFeishuUsersRequest& request) const;
 			CancelAuthorizationMenuOutcome cancelAuthorizationMenu(const Model::CancelAuthorizationMenuRequest &request)const;
 			void cancelAuthorizationMenuAsync(const Model::CancelAuthorizationMenuRequest& request, const CancelAuthorizationMenuAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelAuthorizationMenuOutcomeCallable cancelAuthorizationMenuCallable(const Model::CancelAuthorizationMenuRequest& request) const;
