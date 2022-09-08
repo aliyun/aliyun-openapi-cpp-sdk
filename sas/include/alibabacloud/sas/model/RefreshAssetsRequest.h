@@ -32,12 +32,18 @@ public:
 	~RefreshAssetsRequest();
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	int getCloudAssetSubType() const;
+	void setCloudAssetSubType(int cloudAssetSubType);
 	std::string getAssetType() const;
 	void setAssetType(const std::string &assetType);
+	int getCloudAssetType() const;
+	void setCloudAssetType(int cloudAssetType);
 
 private:
 	std::string sourceIp_;
+	int cloudAssetSubType_;
 	std::string assetType_;
+	int cloudAssetType_;
 };
 } // namespace Model
 } // namespace Sas
