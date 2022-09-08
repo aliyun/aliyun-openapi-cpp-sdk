@@ -88,6 +88,15 @@ void DescribeCloudCenterInstancesRequest::setLogicalExp(const std::string &logic
   setParameter(std::string("LogicalExp"), logicalExp);
 }
 
+std::string DescribeCloudCenterInstancesRequest::getLang() const {
+  return lang_;
+}
+
+void DescribeCloudCenterInstancesRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 std::string DescribeCloudCenterInstancesRequest::getResourceDirectoryAccountId() const {
   return resourceDirectoryAccountId_;
 }

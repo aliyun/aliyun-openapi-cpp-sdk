@@ -25,6 +25,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/AddInstallCodeResult.h
 	include/alibabacloud/sas/model/AddVpcHoneyPotRequest.h
 	include/alibabacloud/sas/model/AddVpcHoneyPotResult.h
+	include/alibabacloud/sas/model/BindAuthToMachineRequest.h
+	include/alibabacloud/sas/model/BindAuthToMachineResult.h
 	include/alibabacloud/sas/model/CheckQuaraFileIdRequest.h
 	include/alibabacloud/sas/model/CheckQuaraFileIdResult.h
 	include/alibabacloud/sas/model/CheckSecurityEventIdRequest.h
@@ -468,6 +470,8 @@ set(sas_src
 	src/model/AddInstallCodeResult.cc
 	src/model/AddVpcHoneyPotRequest.cc
 	src/model/AddVpcHoneyPotResult.cc
+	src/model/BindAuthToMachineRequest.cc
+	src/model/BindAuthToMachineResult.cc
 	src/model/CheckQuaraFileIdRequest.cc
 	src/model/CheckQuaraFileIdResult.cc
 	src/model/CheckSecurityEventIdRequest.cc

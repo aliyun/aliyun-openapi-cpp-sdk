@@ -44,6 +44,8 @@ public:
 	void setPageSize(int pageSize);
 	std::string getLogicalExp() const;
 	void setLogicalExp(const std::string &logicalExp);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	std::string getResourceDirectoryAccountId() const;
 	void setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId);
 	int getCurrentPage() const;
@@ -61,6 +63,7 @@ private:
 	bool noPage_;
 	int pageSize_;
 	std::string logicalExp_;
+	std::string lang_;
 	std::string resourceDirectoryAccountId_;
 	int currentPage_;
 	std::string machineTypes_;

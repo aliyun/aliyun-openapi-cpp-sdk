@@ -52,6 +52,15 @@ void DescribeFrontVulPatchListRequest::setOperateType(const std::string &operate
   setParameter(std::string("OperateType"), operateType);
 }
 
+std::string DescribeFrontVulPatchListRequest::getLang() const {
+  return lang_;
+}
+
+void DescribeFrontVulPatchListRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 std::string DescribeFrontVulPatchListRequest::getInfo() const {
   return info_;
 }

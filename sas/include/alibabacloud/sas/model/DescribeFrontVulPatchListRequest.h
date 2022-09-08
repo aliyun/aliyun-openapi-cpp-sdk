@@ -36,6 +36,8 @@ public:
 	void setSourceIp(const std::string &sourceIp);
 	std::string getOperateType() const;
 	void setOperateType(const std::string &operateType);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	std::string getInfo() const;
 	void setInfo(const std::string &info);
 
@@ -43,6 +45,7 @@ private:
 	std::string type_;
 	std::string sourceIp_;
 	std::string operateType_;
+	std::string lang_;
 	std::string info_;
 };
 } // namespace Model

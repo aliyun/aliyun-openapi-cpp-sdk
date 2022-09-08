@@ -123,6 +123,42 @@ SasClient::AddVpcHoneyPotOutcomeCallable SasClient::addVpcHoneyPotCallable(const
 	return task->get_future();
 }
 
+SasClient::BindAuthToMachineOutcome SasClient::bindAuthToMachine(const BindAuthToMachineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindAuthToMachineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindAuthToMachineOutcome(BindAuthToMachineResult(outcome.result()));
+	else
+		return BindAuthToMachineOutcome(outcome.error());
+}
+
+void SasClient::bindAuthToMachineAsync(const BindAuthToMachineRequest& request, const BindAuthToMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindAuthToMachine(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::BindAuthToMachineOutcomeCallable SasClient::bindAuthToMachineCallable(const BindAuthToMachineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindAuthToMachineOutcome()>>(
+			[this, request]()
+			{
+			return this->bindAuthToMachine(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::CheckQuaraFileIdOutcome SasClient::checkQuaraFileId(const CheckQuaraFileIdRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

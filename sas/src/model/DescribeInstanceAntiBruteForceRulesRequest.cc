@@ -34,6 +34,15 @@ void DescribeInstanceAntiBruteForceRulesRequest::setResourceOwnerId(long resourc
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+int DescribeInstanceAntiBruteForceRulesRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeInstanceAntiBruteForceRulesRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
 std::string DescribeInstanceAntiBruteForceRulesRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -41,6 +50,15 @@ std::string DescribeInstanceAntiBruteForceRulesRequest::getSourceIp() const {
 void DescribeInstanceAntiBruteForceRulesRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+int DescribeInstanceAntiBruteForceRulesRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void DescribeInstanceAntiBruteForceRulesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
 std::vector<std::string> DescribeInstanceAntiBruteForceRulesRequest::getUuidList() const {

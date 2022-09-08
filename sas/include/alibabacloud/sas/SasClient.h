@@ -26,6 +26,8 @@
 #include "model/AddInstallCodeResult.h"
 #include "model/AddVpcHoneyPotRequest.h"
 #include "model/AddVpcHoneyPotResult.h"
+#include "model/BindAuthToMachineRequest.h"
+#include "model/BindAuthToMachineResult.h"
 #include "model/CheckQuaraFileIdRequest.h"
 #include "model/CheckQuaraFileIdResult.h"
 #include "model/CheckSecurityEventIdRequest.h"
@@ -477,6 +479,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddVpcHoneyPotResult> AddVpcHoneyPotOutcome;
 			typedef std::future<AddVpcHoneyPotOutcome> AddVpcHoneyPotOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::AddVpcHoneyPotRequest&, const AddVpcHoneyPotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddVpcHoneyPotAsyncHandler;
+			typedef Outcome<Error, Model::BindAuthToMachineResult> BindAuthToMachineOutcome;
+			typedef std::future<BindAuthToMachineOutcome> BindAuthToMachineOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::BindAuthToMachineRequest&, const BindAuthToMachineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindAuthToMachineAsyncHandler;
 			typedef Outcome<Error, Model::CheckQuaraFileIdResult> CheckQuaraFileIdOutcome;
 			typedef std::future<CheckQuaraFileIdOutcome> CheckQuaraFileIdOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::CheckQuaraFileIdRequest&, const CheckQuaraFileIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckQuaraFileIdAsyncHandler;
@@ -1142,6 +1147,9 @@ namespace AlibabaCloud
 			AddVpcHoneyPotOutcome addVpcHoneyPot(const Model::AddVpcHoneyPotRequest &request)const;
 			void addVpcHoneyPotAsync(const Model::AddVpcHoneyPotRequest& request, const AddVpcHoneyPotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddVpcHoneyPotOutcomeCallable addVpcHoneyPotCallable(const Model::AddVpcHoneyPotRequest& request) const;
+			BindAuthToMachineOutcome bindAuthToMachine(const Model::BindAuthToMachineRequest &request)const;
+			void bindAuthToMachineAsync(const Model::BindAuthToMachineRequest& request, const BindAuthToMachineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindAuthToMachineOutcomeCallable bindAuthToMachineCallable(const Model::BindAuthToMachineRequest& request) const;
 			CheckQuaraFileIdOutcome checkQuaraFileId(const Model::CheckQuaraFileIdRequest &request)const;
 			void checkQuaraFileIdAsync(const Model::CheckQuaraFileIdRequest& request, const CheckQuaraFileIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckQuaraFileIdOutcomeCallable checkQuaraFileIdCallable(const Model::CheckQuaraFileIdRequest& request) const;
