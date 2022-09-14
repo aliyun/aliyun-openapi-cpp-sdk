@@ -37,13 +37,11 @@ namespace AlibabaCloud
 				CreateClusterResult();
 				explicit CreateClusterResult(const std::string &payload);
 				~CreateClusterResult();
-				std::string getTaskId()const;
 				std::string getClusterId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string taskId_;
 				std::string clusterId_;
 
 			};

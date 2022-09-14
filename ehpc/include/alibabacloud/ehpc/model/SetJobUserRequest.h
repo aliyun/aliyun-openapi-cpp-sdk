@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_DELETEUSERSREQUEST_H_
-#define ALIBABACLOUD_EHPC_MODEL_DELETEUSERSREQUEST_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_SETJOBUSERREQUEST_H_
+#define ALIBABACLOUD_EHPC_MODEL_SETJOBUSERREQUEST_H_
 
 #include <alibabacloud/ehpc/EHPCExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,26 @@
 namespace AlibabaCloud {
 namespace EHPC {
 namespace Model {
-class ALIBABACLOUD_EHPC_EXPORT DeleteUsersRequest : public RpcServiceRequest {
+class ALIBABACLOUD_EHPC_EXPORT SetJobUserRequest : public RpcServiceRequest {
 public:
-	struct User {
-		std::string name;
-	};
-	DeleteUsersRequest();
-	~DeleteUsersRequest();
+	SetJobUserRequest();
+	~SetJobUserRequest();
+	std::string getRunasUserPassword() const;
+	void setRunasUserPassword(const std::string &runasUserPassword);
+	std::string getRunasUser() const;
+	void setRunasUser(const std::string &runasUser);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::vector<User> getUser() const;
-	void setUser(const std::vector<User> &user);
 
 private:
+	std::string runasUserPassword_;
+	std::string runasUser_;
 	std::string clusterId_;
 	std::string accessKeyId_;
-	std::vector<User> user_;
 };
 } // namespace Model
 } // namespace EHPC
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_EHPC_MODEL_DELETEUSERSREQUEST_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_SETJOBUSERREQUEST_H_

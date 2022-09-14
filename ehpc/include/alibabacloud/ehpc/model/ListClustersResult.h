@@ -37,16 +37,12 @@ namespace AlibabaCloud
 					struct Managers
 					{
 						int normalCount;
-						int operatingCount;
-						int stoppedCount;
 						int total;
 						int exceptionCount;
 					};
 					struct Computes
 					{
 						int normalCount;
-						int operatingCount;
-						int stoppedCount;
 						int total;
 						int exceptionCount;
 					};
@@ -62,38 +58,25 @@ namespace AlibabaCloud
 						int cpu;
 						int gpu;
 					};
+					std::string status;
 					std::string imageOwnerAlias;
 					std::string description;
-					std::string nodePrefix;
-					std::string instanceChargeType;
-					float computeSpotPriceLimit;
-					std::string nodeSuffix;
+					std::string zoneId;
+					std::string createTime;
+					std::string schedulerType;
 					int count;
-					std::string clientVersion;
+					std::string accountType;
 					std::string name;
-					std::string deployMode;
+					UsedResources usedResources;
+					Managers managers;
 					TotalResources totalResources;
+					std::string osTag;
 					std::string imageId;
+					std::string regionId;
+					std::string id;
 					std::string instanceType;
 					std::string loginNodes;
 					Computes computes;
-					std::string status;
-					bool isComputeEss;
-					std::string zoneId;
-					std::string vSwitchId;
-					std::string createTime;
-					std::string schedulerType;
-					std::string computeSpotStrategy;
-					std::string accountType;
-					std::string ehpcVersion;
-					std::string baseOsTag;
-					UsedResources usedResources;
-					std::string vpcId;
-					Managers managers;
-					std::string osTag;
-					std::string id;
-					std::string regionId;
-					std::string location;
 				};
 
 

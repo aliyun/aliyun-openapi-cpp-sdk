@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,46 @@
 
 using AlibabaCloud::EHPC::Model::ListCustomImagesRequest;
 
-ListCustomImagesRequest::ListCustomImagesRequest() :
-	RpcServiceRequest("ehpc", "2018-04-12", "ListCustomImages")
-{
-	setMethod(HttpRequest::Method::Get);
+ListCustomImagesRequest::ListCustomImagesRequest()
+    : RpcServiceRequest("ehpc", "2017-07-14", "ListCustomImages") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListCustomImagesRequest::~ListCustomImagesRequest()
-{}
+ListCustomImagesRequest::~ListCustomImagesRequest() {}
 
-std::string ListCustomImagesRequest::getClusterId()const
-{
-	return clusterId_;
+std::string ListCustomImagesRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ListCustomImagesRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+void ListCustomImagesRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ListCustomImagesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ListCustomImagesRequest::getImageOwnerAlias() const {
+  return imageOwnerAlias_;
 }
 
-void ListCustomImagesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ListCustomImagesRequest::setImageOwnerAlias(const std::string &imageOwnerAlias) {
+  imageOwnerAlias_ = imageOwnerAlias;
+  setParameter(std::string("ImageOwnerAlias"), imageOwnerAlias);
 }
 
-std::string ListCustomImagesRequest::getImageOwnerAlias()const
-{
-	return imageOwnerAlias_;
+std::string ListCustomImagesRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ListCustomImagesRequest::setImageOwnerAlias(const std::string& imageOwnerAlias)
-{
-	imageOwnerAlias_ = imageOwnerAlias;
-	setParameter("ImageOwnerAlias", imageOwnerAlias);
+void ListCustomImagesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ListCustomImagesRequest::getBaseOsTag()const
-{
-	return baseOsTag_;
+std::string ListCustomImagesRequest::getBaseOsTag() const {
+  return baseOsTag_;
 }
 
-void ListCustomImagesRequest::setBaseOsTag(const std::string& baseOsTag)
-{
-	baseOsTag_ = baseOsTag;
-	setParameter("BaseOsTag", baseOsTag);
-}
-
-std::string ListCustomImagesRequest::getInstanceType()const
-{
-	return instanceType_;
-}
-
-void ListCustomImagesRequest::setInstanceType(const std::string& instanceType)
-{
-	instanceType_ = instanceType;
-	setParameter("InstanceType", instanceType);
+void ListCustomImagesRequest::setBaseOsTag(const std::string &baseOsTag) {
+  baseOsTag_ = baseOsTag;
+  setParameter(std::string("BaseOsTag"), baseOsTag);
 }
 

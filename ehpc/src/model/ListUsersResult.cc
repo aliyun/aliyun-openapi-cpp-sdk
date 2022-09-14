@@ -45,18 +45,18 @@ void ListUsersResult::parse(const std::string &payload)
 		UserInfo usersObject;
 		if(!valueUsersUserInfo["Name"].isNull())
 			usersObject.name = valueUsersUserInfo["Name"].asString();
-		if(!valueUsersUserInfo["Group"].isNull())
-			usersObject.group = valueUsersUserInfo["Group"].asString();
 		if(!valueUsersUserInfo["AddTime"].isNull())
 			usersObject.addTime = valueUsersUserInfo["AddTime"].asString();
+		if(!valueUsersUserInfo["Group"].isNull())
+			usersObject.group = valueUsersUserInfo["Group"].asString();
 		users_.push_back(usersObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

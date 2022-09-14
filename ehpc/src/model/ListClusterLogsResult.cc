@@ -45,20 +45,20 @@ void ListClusterLogsResult::parse(const std::string &payload)
 		LogInfo logsObject;
 		if(!valueLogsLogInfo["Operation"].isNull())
 			logsObject.operation = valueLogsLogInfo["Operation"].asString();
-		if(!valueLogsLogInfo["Level"].isNull())
-			logsObject.level = valueLogsLogInfo["Level"].asString();
 		if(!valueLogsLogInfo["Message"].isNull())
 			logsObject.message = valueLogsLogInfo["Message"].asString();
 		if(!valueLogsLogInfo["CreateTime"].isNull())
 			logsObject.createTime = valueLogsLogInfo["CreateTime"].asString();
+		if(!valueLogsLogInfo["Level"].isNull())
+			logsObject.level = valueLogsLogInfo["Level"].asString();
 		logs_.push_back(logsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["ClusterId"].isNull())
 		clusterId_ = value["ClusterId"].asString();
 

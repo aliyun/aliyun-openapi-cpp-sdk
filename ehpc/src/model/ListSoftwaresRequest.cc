@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,28 @@
 
 using AlibabaCloud::EHPC::Model::ListSoftwaresRequest;
 
-ListSoftwaresRequest::ListSoftwaresRequest() :
-	RpcServiceRequest("ehpc", "2018-04-12", "ListSoftwares")
-{
-	setMethod(HttpRequest::Method::Get);
+ListSoftwaresRequest::ListSoftwaresRequest()
+    : RpcServiceRequest("ehpc", "2017-07-14", "ListSoftwares") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListSoftwaresRequest::~ListSoftwaresRequest()
-{}
+ListSoftwaresRequest::~ListSoftwaresRequest() {}
 
-std::string ListSoftwaresRequest::getOsTag()const
-{
-	return osTag_;
+std::string ListSoftwaresRequest::getEhpcVersion() const {
+  return ehpcVersion_;
 }
 
-void ListSoftwaresRequest::setOsTag(const std::string& osTag)
-{
-	osTag_ = osTag;
-	setParameter("OsTag", osTag);
+void ListSoftwaresRequest::setEhpcVersion(const std::string &ehpcVersion) {
+  ehpcVersion_ = ehpcVersion;
+  setParameter(std::string("EhpcVersion"), ehpcVersion);
 }
 
-std::string ListSoftwaresRequest::getEhpcVersion()const
-{
-	return ehpcVersion_;
+std::string ListSoftwaresRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ListSoftwaresRequest::setEhpcVersion(const std::string& ehpcVersion)
-{
-	ehpcVersion_ = ehpcVersion;
-	setParameter("EhpcVersion", ehpcVersion);
-}
-
-std::string ListSoftwaresRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void ListSoftwaresRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ListSoftwaresRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 

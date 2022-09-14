@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::EHPC::Model::ListVolumesRequest;
 
-ListVolumesRequest::ListVolumesRequest() :
-	RpcServiceRequest("ehpc", "2018-04-12", "ListVolumes")
-{
-	setMethod(HttpRequest::Method::Get);
+ListVolumesRequest::ListVolumesRequest()
+    : RpcServiceRequest("ehpc", "2017-07-14", "ListVolumes") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListVolumesRequest::~ListVolumesRequest()
-{}
+ListVolumesRequest::~ListVolumesRequest() {}
 
-int ListVolumesRequest::getPageNumber()const
-{
-	return pageNumber_;
+int ListVolumesRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListVolumesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void ListVolumesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string ListVolumesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ListVolumesRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ListVolumesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ListVolumesRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-int ListVolumesRequest::getPageSize()const
-{
-	return pageSize_;
+int ListVolumesRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListVolumesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListVolumesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

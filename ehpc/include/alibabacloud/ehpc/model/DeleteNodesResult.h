@@ -37,12 +37,10 @@ namespace AlibabaCloud
 				DeleteNodesResult();
 				explicit DeleteNodesResult(const std::string &payload);
 				~DeleteNodesResult();
-				std::string getTaskId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string taskId_;
 
 			};
 		}

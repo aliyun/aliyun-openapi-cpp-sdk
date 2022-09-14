@@ -43,10 +43,10 @@ void ListRegionsResult::parse(const std::string &payload)
 	for (auto valueRegionsRegionInfo : allRegionsNode)
 	{
 		RegionInfo regionsObject;
-		if(!valueRegionsRegionInfo["RegionId"].isNull())
-			regionsObject.regionId = valueRegionsRegionInfo["RegionId"].asString();
 		if(!valueRegionsRegionInfo["LocalName"].isNull())
 			regionsObject.localName = valueRegionsRegionInfo["LocalName"].asString();
+		if(!valueRegionsRegionInfo["RegionId"].isNull())
+			regionsObject.regionId = valueRegionsRegionInfo["RegionId"].asString();
 		regions_.push_back(regionsObject);
 	}
 

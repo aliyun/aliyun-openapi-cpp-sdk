@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,71 +18,50 @@
 
 using AlibabaCloud::EHPC::Model::DeleteNodesRequest;
 
-DeleteNodesRequest::DeleteNodesRequest() :
-	RpcServiceRequest("ehpc", "2018-04-12", "DeleteNodes")
-{
-	setMethod(HttpRequest::Method::Get);
+DeleteNodesRequest::DeleteNodesRequest()
+    : RpcServiceRequest("ehpc", "2017-07-14", "DeleteNodes") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-DeleteNodesRequest::~DeleteNodesRequest()
-{}
+DeleteNodesRequest::~DeleteNodesRequest() {}
 
-std::vector<DeleteNodesRequest::Instance> DeleteNodesRequest::getInstance()const
-{
-	return instance_;
+std::vector<DeleteNodesRequest::Instance> DeleteNodesRequest::getInstance() const {
+  return instance_;
 }
 
-void DeleteNodesRequest::setInstance(const std::vector<Instance>& instance)
-{
-	instance_ = instance;
-	for(int dep1 = 0; dep1!= instance.size(); dep1++) {
-		auto instanceObj = instance.at(dep1);
-		std::string instanceObjStr = "Instance." + std::to_string(dep1 + 1);
-		setParameter(instanceObjStr + ".Id", instanceObj.id);
-	}
+void DeleteNodesRequest::setInstance(const std::vector<DeleteNodesRequest::Instance> &instance) {
+  instance_ = instance;
+  for(int dep1 = 0; dep1 != instance.size(); dep1++) {
+  auto instanceObj = instance.at(dep1);
+  std::string instanceObjStr = std::string("Instance") + "." + std::to_string(dep1 + 1);
+    setParameter(instanceObjStr + ".Id", instanceObj.id);
+  }
 }
 
-std::string DeleteNodesRequest::getClusterId()const
-{
-	return clusterId_;
+std::string DeleteNodesRequest::getClusterId() const {
+  return clusterId_;
 }
 
-void DeleteNodesRequest::setClusterId(const std::string& clusterId)
-{
-	clusterId_ = clusterId;
-	setParameter("ClusterId", clusterId);
+void DeleteNodesRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
-bool DeleteNodesRequest::getSync()const
-{
-	return sync_;
+std::string DeleteNodesRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DeleteNodesRequest::setSync(bool sync)
-{
-	sync_ = sync;
-	setParameter("Sync", sync ? "true" : "false");
+void DeleteNodesRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DeleteNodesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+bool DeleteNodesRequest::getReleaseInstance() const {
+  return releaseInstance_;
 }
 
-void DeleteNodesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
-bool DeleteNodesRequest::getReleaseInstance()const
-{
-	return releaseInstance_;
-}
-
-void DeleteNodesRequest::setReleaseInstance(bool releaseInstance)
-{
-	releaseInstance_ = releaseInstance;
-	setParameter("ReleaseInstance", releaseInstance ? "true" : "false");
+void DeleteNodesRequest::setReleaseInstance(bool releaseInstance) {
+  releaseInstance_ = releaseInstance;
+  setParameter(std::string("ReleaseInstance"), releaseInstance ? "true" : "false");
 }
 

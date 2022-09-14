@@ -42,14 +42,7 @@ void AddNodesResult::parse(const std::string &payload)
 	auto allInstanceIds = value["InstanceIds"]["InstanceId"];
 	for (const auto &item : allInstanceIds)
 		instanceIds_.push_back(item.asString());
-	if(!value["TaskId"].isNull())
-		taskId_ = value["TaskId"].asString();
 
-}
-
-std::string AddNodesResult::getTaskId()const
-{
-	return taskId_;
 }
 
 std::vector<std::string> AddNodesResult::getInstanceIds()const

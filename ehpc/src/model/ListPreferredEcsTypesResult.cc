@@ -43,10 +43,10 @@ void ListPreferredEcsTypesResult::parse(const std::string &payload)
 	for (auto valueSeriesSeriesInfo : allSeriesNode)
 	{
 		SeriesInfo seriesObject;
-		if(!valueSeriesSeriesInfo["SeriesId"].isNull())
-			seriesObject.seriesId = valueSeriesSeriesInfo["SeriesId"].asString();
 		if(!valueSeriesSeriesInfo["SeriesName"].isNull())
 			seriesObject.seriesName = valueSeriesSeriesInfo["SeriesName"].asString();
+		if(!valueSeriesSeriesInfo["SeriesId"].isNull())
+			seriesObject.seriesId = valueSeriesSeriesInfo["SeriesId"].asString();
 		auto rolesNode = value["Roles"];
 			auto allManager = rolesNode["Manager"]["InstanceTypeId"];
 			for (auto value : allManager)

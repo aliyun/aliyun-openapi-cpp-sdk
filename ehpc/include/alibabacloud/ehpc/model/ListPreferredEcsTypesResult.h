@@ -40,8 +40,8 @@ namespace AlibabaCloud
 						std::vector<std::string> login;
 						std::vector<std::string> manager;
 					};
-					std::string seriesId;
 					std::string seriesName;
+					std::string seriesId;
 					Roles roles;
 				};
 

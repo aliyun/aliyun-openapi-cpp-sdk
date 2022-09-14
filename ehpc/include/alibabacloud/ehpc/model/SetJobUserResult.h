@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EHPC_MODEL_LISTCUSTOMIMAGESRESULT_H_
-#define ALIBABACLOUD_EHPC_MODEL_LISTCUSTOMIMAGESRESULT_H_
+#ifndef ALIBABACLOUD_EHPC_MODEL_SETJOBUSERRESULT_H_
+#define ALIBABACLOUD_EHPC_MODEL_SETJOBUSERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EHPC_EXPORT ListCustomImagesResult : public ServiceResult
+			class ALIBABACLOUD_EHPC_EXPORT SetJobUserResult : public ServiceResult
 			{
 			public:
-				struct ImageInfo
-				{
-					struct BaseOsTag
-					{
-						std::string platform;
-						std::string architecture;
-						std::string version;
-						std::string osTag;
-					};
-					std::string imageOwnerAlias;
-					std::string imageName;
-					std::string description;
-					std::string imageId;
-					BaseOsTag baseOsTag;
-				};
 
 
-				ListCustomImagesResult();
-				explicit ListCustomImagesResult(const std::string &payload);
-				~ListCustomImagesResult();
-				std::vector<ImageInfo> getImages()const;
+				SetJobUserResult();
+				explicit SetJobUserResult(const std::string &payload);
+				~SetJobUserResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ImageInfo> images_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EHPC_MODEL_LISTCUSTOMIMAGESRESULT_H_
+#endif // !ALIBABACLOUD_EHPC_MODEL_SETJOBUSERRESULT_H_

@@ -43,30 +43,30 @@ void ListSoftwaresResult::parse(const std::string &payload)
 	for (auto valueSoftwaresSoftwareInfo : allSoftwaresNode)
 	{
 		SoftwareInfo softwaresObject;
-		if(!valueSoftwaresSoftwareInfo["EhpcVersion"].isNull())
-			softwaresObject.ehpcVersion = valueSoftwaresSoftwareInfo["EhpcVersion"].asString();
-		if(!valueSoftwaresSoftwareInfo["OsTag"].isNull())
-			softwaresObject.osTag = valueSoftwaresSoftwareInfo["OsTag"].asString();
 		if(!valueSoftwaresSoftwareInfo["SchedulerType"].isNull())
 			softwaresObject.schedulerType = valueSoftwaresSoftwareInfo["SchedulerType"].asString();
+		if(!valueSoftwaresSoftwareInfo["OsTag"].isNull())
+			softwaresObject.osTag = valueSoftwaresSoftwareInfo["OsTag"].asString();
 		if(!valueSoftwaresSoftwareInfo["SchedulerVersion"].isNull())
 			softwaresObject.schedulerVersion = valueSoftwaresSoftwareInfo["SchedulerVersion"].asString();
-		if(!valueSoftwaresSoftwareInfo["AccountType"].isNull())
-			softwaresObject.accountType = valueSoftwaresSoftwareInfo["AccountType"].asString();
 		if(!valueSoftwaresSoftwareInfo["AccountVersion"].isNull())
 			softwaresObject.accountVersion = valueSoftwaresSoftwareInfo["AccountVersion"].asString();
+		if(!valueSoftwaresSoftwareInfo["AccountType"].isNull())
+			softwaresObject.accountType = valueSoftwaresSoftwareInfo["AccountType"].asString();
+		if(!valueSoftwaresSoftwareInfo["EhpcVersion"].isNull())
+			softwaresObject.ehpcVersion = valueSoftwaresSoftwareInfo["EhpcVersion"].asString();
 		auto allApplicationsNode = valueSoftwaresSoftwareInfo["Applications"]["ApplicationInfo"];
 		for (auto valueSoftwaresSoftwareInfoApplicationsApplicationInfo : allApplicationsNode)
 		{
 			SoftwareInfo::ApplicationInfo applicationsObject;
+			if(!valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Required"].isNull())
+				applicationsObject.required = valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Required"].asString() == "true";
 			if(!valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Tag"].isNull())
 				applicationsObject.tag = valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Tag"].asString();
 			if(!valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Name"].isNull())
 				applicationsObject.name = valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Name"].asString();
 			if(!valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Version"].isNull())
 				applicationsObject.version = valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Version"].asString();
-			if(!valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Required"].isNull())
-				applicationsObject.required = valueSoftwaresSoftwareInfoApplicationsApplicationInfo["Required"].asString() == "true";
 			softwaresObject.applications.push_back(applicationsObject);
 		}
 		softwares_.push_back(softwaresObject);

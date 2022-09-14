@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ehpc/model/DeleteNodesResult.h>
+#include <alibabacloud/ehpc/model/SetJobUserResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::EHPC;
 using namespace AlibabaCloud::EHPC::Model;
 
-DeleteNodesResult::DeleteNodesResult() :
+SetJobUserResult::SetJobUserResult() :
 	ServiceResult()
 {}
 
-DeleteNodesResult::DeleteNodesResult(const std::string &payload) :
+SetJobUserResult::SetJobUserResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DeleteNodesResult::~DeleteNodesResult()
+SetJobUserResult::~SetJobUserResult()
 {}
 
-void DeleteNodesResult::parse(const std::string &payload)
+void SetJobUserResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;

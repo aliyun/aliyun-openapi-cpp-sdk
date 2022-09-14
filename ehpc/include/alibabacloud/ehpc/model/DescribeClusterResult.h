@@ -61,42 +61,31 @@ namespace AlibabaCloud
 						std::string tag;
 						std::string name;
 					};
-					struct PostInstallScriptInfo
-					{
-						std::string args;
-						std::string url;
-					};
-					std::string volumeProtocol;
 					std::string imageOwnerAlias;
+					std::string volumeProtocol;
 					std::string description;
 					std::string clientVersion;
 					std::string name;
 					std::string volumeId;
 					std::string volumeType;
-					std::string deployMode;
 					std::string imageId;
 					std::string status;
 					std::string keyPairName;
 					std::string remoteDirectory;
 					std::string sccClusterId;
 					std::vector<ApplicationInfo> applications;
-					std::vector<PostInstallScriptInfo> postInstallScripts;
-					std::string createTime;
 					std::string securityGroupId;
+					std::string createTime;
 					std::string vSwitchId;
 					std::string schedulerType;
 					std::string accountType;
 					std::string volumeMountpoint;
-					std::string baseOsTag;
-					std::string imageName;
-					std::string vpcId;
 					EcsInfo ecsInfo;
 					bool haEnable;
 					std::string osTag;
-					std::string id;
-					std::string regionId;
 					std::string ecsChargeType;
-					std::string location;
+					std::string regionId;
+					std::string id;
 				};
 
 

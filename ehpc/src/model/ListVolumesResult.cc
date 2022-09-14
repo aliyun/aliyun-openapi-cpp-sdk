@@ -43,54 +43,30 @@ void ListVolumesResult::parse(const std::string &payload)
 	for (auto valueVolumesVolumeInfo : allVolumesNode)
 	{
 		VolumeInfo volumesObject;
-		if(!valueVolumesVolumeInfo["RegionId"].isNull())
-			volumesObject.regionId = valueVolumesVolumeInfo["RegionId"].asString();
-		if(!valueVolumesVolumeInfo["ClusterId"].isNull())
-			volumesObject.clusterId = valueVolumesVolumeInfo["ClusterId"].asString();
-		if(!valueVolumesVolumeInfo["ClusterName"].isNull())
-			volumesObject.clusterName = valueVolumesVolumeInfo["ClusterName"].asString();
 		if(!valueVolumesVolumeInfo["VolumeId"].isNull())
 			volumesObject.volumeId = valueVolumesVolumeInfo["VolumeId"].asString();
+		if(!valueVolumesVolumeInfo["ClusterName"].isNull())
+			volumesObject.clusterName = valueVolumesVolumeInfo["ClusterName"].asString();
+		if(!valueVolumesVolumeInfo["RemoteDirectory"].isNull())
+			volumesObject.remoteDirectory = valueVolumesVolumeInfo["RemoteDirectory"].asString();
+		if(!valueVolumesVolumeInfo["VolumeMountpoint"].isNull())
+			volumesObject.volumeMountpoint = valueVolumesVolumeInfo["VolumeMountpoint"].asString();
 		if(!valueVolumesVolumeInfo["VolumeType"].isNull())
 			volumesObject.volumeType = valueVolumesVolumeInfo["VolumeType"].asString();
 		if(!valueVolumesVolumeInfo["VolumeProtocol"].isNull())
 			volumesObject.volumeProtocol = valueVolumesVolumeInfo["VolumeProtocol"].asString();
-		if(!valueVolumesVolumeInfo["VolumeMountpoint"].isNull())
-			volumesObject.volumeMountpoint = valueVolumesVolumeInfo["VolumeMountpoint"].asString();
-		if(!valueVolumesVolumeInfo["RemoteDirectory"].isNull())
-			volumesObject.remoteDirectory = valueVolumesVolumeInfo["RemoteDirectory"].asString();
-		auto allAdditionalVolumesNode = valueVolumesVolumeInfo["AdditionalVolumes"]["VolumeInfo"];
-		for (auto valueVolumesVolumeInfoAdditionalVolumesVolumeInfo : allAdditionalVolumesNode)
-		{
-			VolumeInfo::VolumeInfo1 additionalVolumesObject;
-			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeType"].isNull())
-				additionalVolumesObject.volumeType = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeType"].asString();
-			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeId"].isNull())
-				additionalVolumesObject.volumeId = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeId"].asString();
-			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeProtocol"].isNull())
-				additionalVolumesObject.volumeProtocol = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeProtocol"].asString();
-			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeMountpoint"].isNull())
-				additionalVolumesObject.volumeMountpoint = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeMountpoint"].asString();
-			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["RemoteDirectory"].isNull())
-				additionalVolumesObject.remoteDirectory = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["RemoteDirectory"].asString();
-			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["LocalDirectory"].isNull())
-				additionalVolumesObject.localDirectory = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["LocalDirectory"].asString();
-			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["Role"].isNull())
-				additionalVolumesObject.role = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["Role"].asString();
-			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["Location"].isNull())
-				additionalVolumesObject.location = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["Location"].asString();
-			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["JobQueue"].isNull())
-				additionalVolumesObject.jobQueue = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["JobQueue"].asString();
-			volumesObject.additionalVolumes.push_back(additionalVolumesObject);
-		}
+		if(!valueVolumesVolumeInfo["RegionId"].isNull())
+			volumesObject.regionId = valueVolumesVolumeInfo["RegionId"].asString();
+		if(!valueVolumesVolumeInfo["ClusterId"].isNull())
+			volumesObject.clusterId = valueVolumesVolumeInfo["ClusterId"].asString();
 		volumes_.push_back(volumesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

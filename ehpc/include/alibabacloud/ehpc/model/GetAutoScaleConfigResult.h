@@ -32,34 +32,6 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_EHPC_EXPORT GetAutoScaleConfigResult : public ServiceResult
 			{
 			public:
-				struct QueueInfo
-				{
-					struct InstanceTypeInfo
-					{
-						std::string zoneId;
-						std::string vSwitchId;
-						float spotPriceLimit;
-						std::string hostNamePrefix;
-						std::string instanceType;
-						std::string spotStrategy;
-					};
-					int minNodesInQueue;
-					std::string hostNameSuffix;
-					int maxNodesInQueue;
-					std::string resourceGroupId;
-					bool enableAutoGrow;
-					std::string queueImageId;
-					int systemDiskSize;
-					std::string systemDiskLevel;
-					bool enableAutoShrink;
-					std::string systemDiskCategory;
-					float spotPriceLimit;
-					std::string hostNamePrefix;
-					std::vector<QueueInfo::InstanceTypeInfo> instanceTypes;
-					std::string instanceType;
-					std::string queueName;
-					std::string spotStrategy;
-				};
 
 
 				GetAutoScaleConfigResult();
@@ -68,20 +40,16 @@ namespace AlibabaCloud
 				int getExtraNodesGrowRatio()const;
 				bool getEnableAutoGrow()const;
 				std::string getClusterId()const;
-				int getShrinkIdleTimes()const;
 				int getMaxNodesInCluster()const;
-				std::string getClusterType()const;
+				int getShrinkIdleTimes()const;
 				bool getEnableAutoShrink()const;
+				std::string getClusterType()const;
 				int getGrowRatio()const;
 				int getGrowIntervalInMinutes()const;
 				std::string getUid()const;
 				int getGrowTimeoutInMinutes()const;
-				std::string getImageId()const;
 				int getShrinkIntervalInMinutes()const;
-				float getSpotPriceLimit()const;
-				std::vector<QueueInfo> getQueues()const;
 				std::string getExcludeNodes()const;
-				std::string getSpotStrategy()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -89,20 +57,16 @@ namespace AlibabaCloud
 				int extraNodesGrowRatio_;
 				bool enableAutoGrow_;
 				std::string clusterId_;
-				int shrinkIdleTimes_;
 				int maxNodesInCluster_;
-				std::string clusterType_;
+				int shrinkIdleTimes_;
 				bool enableAutoShrink_;
+				std::string clusterType_;
 				int growRatio_;
 				int growIntervalInMinutes_;
 				std::string uid_;
 				int growTimeoutInMinutes_;
-				std::string imageId_;
 				int shrinkIntervalInMinutes_;
-				float spotPriceLimit_;
-				std::vector<QueueInfo> queues_;
 				std::string excludeNodes_;
-				std::string spotStrategy_;
 
 			};
 		}

@@ -49,19 +49,16 @@ namespace AlibabaCloud
 					std::string status;
 					std::string imageOwnerAlias;
 					bool expired;
-					std::vector<std::string> roles;
 					std::string addTime;
 					UsedResources usedResources;
+					std::string role;
 					bool createdByEhpc;
-					std::string version;
 					TotalResources totalResources;
 					std::string expiredTime;
 					std::string imageId;
-					bool htEnabled;
+					std::string regionId;
 					std::string id;
 					std::string lockReason;
-					std::string instanceType;
-					std::string hostName;
 					std::string spotStrategy;
 				};
 
@@ -69,11 +66,17 @@ namespace AlibabaCloud
 				ListNodesNoPagingResult();
 				explicit ListNodesNoPagingResult(const std::string &payload);
 				~ListNodesNoPagingResult();
+				int getTotalCount()const;
+				int getPageSize()const;
+				int getPageNumber()const;
 				std::vector<NodeInfo> getNodes()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int totalCount_;
+				int pageSize_;
+				int pageNumber_;
 				std::vector<NodeInfo> nodes_;
 
 			};

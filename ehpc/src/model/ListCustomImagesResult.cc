@@ -43,48 +43,23 @@ void ListCustomImagesResult::parse(const std::string &payload)
 	for (auto valueImagesImageInfo : allImagesNode)
 	{
 		ImageInfo imagesObject;
-		if(!valueImagesImageInfo["Uid"].isNull())
-			imagesObject.uid = valueImagesImageInfo["Uid"].asString();
-		if(!valueImagesImageInfo["ImageId"].isNull())
-			imagesObject.imageId = valueImagesImageInfo["ImageId"].asString();
 		if(!valueImagesImageInfo["ImageName"].isNull())
 			imagesObject.imageName = valueImagesImageInfo["ImageName"].asString();
 		if(!valueImagesImageInfo["ImageOwnerAlias"].isNull())
 			imagesObject.imageOwnerAlias = valueImagesImageInfo["ImageOwnerAlias"].asString();
 		if(!valueImagesImageInfo["Description"].isNull())
 			imagesObject.description = valueImagesImageInfo["Description"].asString();
-		if(!valueImagesImageInfo["Status"].isNull())
-			imagesObject.status = valueImagesImageInfo["Status"].asString();
-		if(!valueImagesImageInfo["ProductCode"].isNull())
-			imagesObject.productCode = valueImagesImageInfo["ProductCode"].asString();
-		if(!valueImagesImageInfo["SkuCode"].isNull())
-			imagesObject.skuCode = valueImagesImageInfo["SkuCode"].asString();
-		if(!valueImagesImageInfo["PricingCycle"].isNull())
-			imagesObject.pricingCycle = valueImagesImageInfo["PricingCycle"].asString();
-		if(!valueImagesImageInfo["PostInstallScript"].isNull())
-			imagesObject.postInstallScript = valueImagesImageInfo["PostInstallScript"].asString();
-		if(!valueImagesImageInfo["Size"].isNull())
-			imagesObject.size = std::stoi(valueImagesImageInfo["Size"].asString());
+		if(!valueImagesImageInfo["ImageId"].isNull())
+			imagesObject.imageId = valueImagesImageInfo["ImageId"].asString();
 		auto baseOsTagNode = value["BaseOsTag"];
-		if(!baseOsTagNode["OsTag"].isNull())
-			imagesObject.baseOsTag.osTag = baseOsTagNode["OsTag"].asString();
 		if(!baseOsTagNode["Platform"].isNull())
 			imagesObject.baseOsTag.platform = baseOsTagNode["Platform"].asString();
+		if(!baseOsTagNode["OsTag"].isNull())
+			imagesObject.baseOsTag.osTag = baseOsTagNode["OsTag"].asString();
 		if(!baseOsTagNode["Version"].isNull())
 			imagesObject.baseOsTag.version = baseOsTagNode["Version"].asString();
 		if(!baseOsTagNode["Architecture"].isNull())
 			imagesObject.baseOsTag.architecture = baseOsTagNode["Architecture"].asString();
-		auto osTagNode = value["OsTag"];
-		if(!osTagNode["OsTag"].isNull())
-			imagesObject.osTag.osTag = osTagNode["OsTag"].asString();
-		if(!osTagNode["BaseOsTag"].isNull())
-			imagesObject.osTag.baseOsTag = osTagNode["BaseOsTag"].asString();
-		if(!osTagNode["Platform"].isNull())
-			imagesObject.osTag.platform = osTagNode["Platform"].asString();
-		if(!osTagNode["Version"].isNull())
-			imagesObject.osTag.version = osTagNode["Version"].asString();
-		if(!osTagNode["Architecture"].isNull())
-			imagesObject.osTag.architecture = osTagNode["Architecture"].asString();
 		images_.push_back(imagesObject);
 	}
 

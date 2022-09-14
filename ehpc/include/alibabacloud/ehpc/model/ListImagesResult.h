@@ -38,8 +38,6 @@ namespace AlibabaCloud
 					std::string architecture;
 					std::string version;
 					std::string osTag;
-					std::string imageId;
-					std::string baseOsTag;
 				};
 
 
