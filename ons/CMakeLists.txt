@@ -93,10 +93,6 @@ set(ons_public_header_model
 	include/alibabacloud/ons/model/OnsTrendGroupOutputTpsResult.h
 	include/alibabacloud/ons/model/OnsTrendTopicInputTpsRequest.h
 	include/alibabacloud/ons/model/OnsTrendTopicInputTpsResult.h
-	include/alibabacloud/ons/model/OnsWarnCreateRequest.h
-	include/alibabacloud/ons/model/OnsWarnCreateResult.h
-	include/alibabacloud/ons/model/OnsWarnDeleteRequest.h
-	include/alibabacloud/ons/model/OnsWarnDeleteResult.h
 	include/alibabacloud/ons/model/OpenOnsServiceRequest.h
 	include/alibabacloud/ons/model/OpenOnsServiceResult.h
 	include/alibabacloud/ons/model/TagResourcesRequest.h
@@ -178,10 +174,6 @@ set(ons_src
 	src/model/OnsTrendGroupOutputTpsResult.cc
 	src/model/OnsTrendTopicInputTpsRequest.cc
 	src/model/OnsTrendTopicInputTpsResult.cc
-	src/model/OnsWarnCreateRequest.cc
-	src/model/OnsWarnCreateResult.cc
-	src/model/OnsWarnDeleteRequest.cc
-	src/model/OnsWarnDeleteResult.cc
 	src/model/OpenOnsServiceRequest.cc
 	src/model/OpenOnsServiceResult.cc
 	src/model/TagResourcesRequest.cc

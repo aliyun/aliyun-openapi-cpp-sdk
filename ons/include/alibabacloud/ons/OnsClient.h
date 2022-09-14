@@ -94,10 +94,6 @@
 #include "model/OnsTrendGroupOutputTpsResult.h"
 #include "model/OnsTrendTopicInputTpsRequest.h"
 #include "model/OnsTrendTopicInputTpsResult.h"
-#include "model/OnsWarnCreateRequest.h"
-#include "model/OnsWarnCreateResult.h"
-#include "model/OnsWarnDeleteRequest.h"
-#include "model/OnsWarnDeleteResult.h"
 #include "model/OpenOnsServiceRequest.h"
 #include "model/OpenOnsServiceResult.h"
 #include "model/TagResourcesRequest.h"
@@ -221,12 +217,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OnsTrendTopicInputTpsResult> OnsTrendTopicInputTpsOutcome;
 			typedef std::future<OnsTrendTopicInputTpsOutcome> OnsTrendTopicInputTpsOutcomeCallable;
 			typedef std::function<void(const OnsClient*, const Model::OnsTrendTopicInputTpsRequest&, const OnsTrendTopicInputTpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsTrendTopicInputTpsAsyncHandler;
-			typedef Outcome<Error, Model::OnsWarnCreateResult> OnsWarnCreateOutcome;
-			typedef std::future<OnsWarnCreateOutcome> OnsWarnCreateOutcomeCallable;
-			typedef std::function<void(const OnsClient*, const Model::OnsWarnCreateRequest&, const OnsWarnCreateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsWarnCreateAsyncHandler;
-			typedef Outcome<Error, Model::OnsWarnDeleteResult> OnsWarnDeleteOutcome;
-			typedef std::future<OnsWarnDeleteOutcome> OnsWarnDeleteOutcomeCallable;
-			typedef std::function<void(const OnsClient*, const Model::OnsWarnDeleteRequest&, const OnsWarnDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsWarnDeleteAsyncHandler;
 			typedef Outcome<Error, Model::OpenOnsServiceResult> OpenOnsServiceOutcome;
 			typedef std::future<OpenOnsServiceOutcome> OpenOnsServiceOutcomeCallable;
 			typedef std::function<void(const OnsClient*, const Model::OpenOnsServiceRequest&, const OpenOnsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenOnsServiceAsyncHandler;
@@ -349,12 +339,6 @@ namespace AlibabaCloud
 			OnsTrendTopicInputTpsOutcome onsTrendTopicInputTps(const Model::OnsTrendTopicInputTpsRequest &request)const;
 			void onsTrendTopicInputTpsAsync(const Model::OnsTrendTopicInputTpsRequest& request, const OnsTrendTopicInputTpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OnsTrendTopicInputTpsOutcomeCallable onsTrendTopicInputTpsCallable(const Model::OnsTrendTopicInputTpsRequest& request) const;
-			OnsWarnCreateOutcome onsWarnCreate(const Model::OnsWarnCreateRequest &request)const;
-			void onsWarnCreateAsync(const Model::OnsWarnCreateRequest& request, const OnsWarnCreateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OnsWarnCreateOutcomeCallable onsWarnCreateCallable(const Model::OnsWarnCreateRequest& request) const;
-			OnsWarnDeleteOutcome onsWarnDelete(const Model::OnsWarnDeleteRequest &request)const;
-			void onsWarnDeleteAsync(const Model::OnsWarnDeleteRequest& request, const OnsWarnDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OnsWarnDeleteOutcomeCallable onsWarnDeleteCallable(const Model::OnsWarnDeleteRequest& request) const;
 			OpenOnsServiceOutcome openOnsService(const Model::OpenOnsServiceRequest &request)const;
 			void openOnsServiceAsync(const Model::OpenOnsServiceRequest& request, const OpenOnsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenOnsServiceOutcomeCallable openOnsServiceCallable(const Model::OpenOnsServiceRequest& request) const;

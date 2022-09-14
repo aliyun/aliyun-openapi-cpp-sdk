@@ -58,17 +58,23 @@ void OnsInstanceBaseInfoResult::parse(const std::string &payload)
 		instanceBaseInfo_.instanceId = instanceBaseInfoNode["InstanceId"].asString();
 	if(!instanceBaseInfoNode["InstanceType"].isNull())
 		instanceBaseInfo_.instanceType = std::stoi(instanceBaseInfoNode["InstanceType"].asString());
+	if(!instanceBaseInfoNode["CreateTime"].isNull())
+		instanceBaseInfo_.createTime = instanceBaseInfoNode["CreateTime"].asString();
+	if(!instanceBaseInfoNode["spInstanceId"].isNull())
+		instanceBaseInfo_.spInstanceId = instanceBaseInfoNode["spInstanceId"].asString();
+	if(!instanceBaseInfoNode["spInstanceType"].isNull())
+		instanceBaseInfo_.spInstanceType = std::stoi(instanceBaseInfoNode["spInstanceType"].asString());
 	auto endpointsNode = instanceBaseInfoNode["Endpoints"];
 	if(!endpointsNode["TcpEndpoint"].isNull())
 		instanceBaseInfo_.endpoints.tcpEndpoint = endpointsNode["TcpEndpoint"].asString();
+	if(!endpointsNode["TcpInternetEndpoint"].isNull())
+		instanceBaseInfo_.endpoints.tcpInternetEndpoint = endpointsNode["TcpInternetEndpoint"].asString();
 	if(!endpointsNode["HttpInternetEndpoint"].isNull())
 		instanceBaseInfo_.endpoints.httpInternetEndpoint = endpointsNode["HttpInternetEndpoint"].asString();
 	if(!endpointsNode["HttpInternalEndpoint"].isNull())
 		instanceBaseInfo_.endpoints.httpInternalEndpoint = endpointsNode["HttpInternalEndpoint"].asString();
 	if(!endpointsNode["HttpInternetSecureEndpoint"].isNull())
 		instanceBaseInfo_.endpoints.httpInternetSecureEndpoint = endpointsNode["HttpInternetSecureEndpoint"].asString();
-	if(!endpointsNode["TcpInternetEndpoint"].isNull())
-		instanceBaseInfo_.endpoints.tcpInternetEndpoint = endpointsNode["TcpInternetEndpoint"].asString();
 	if(!value["HelpUrl"].isNull())
 		helpUrl_ = value["HelpUrl"].asString();
 

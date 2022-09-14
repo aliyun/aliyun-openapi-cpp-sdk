@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Ons::Model::OnsInstanceCreateRequest;
 
-OnsInstanceCreateRequest::OnsInstanceCreateRequest() :
-	RpcServiceRequest("ons", "2019-02-14", "OnsInstanceCreate")
-{
-	setMethod(HttpRequest::Method::Post);
+OnsInstanceCreateRequest::OnsInstanceCreateRequest()
+    : RpcServiceRequest("ons", "2019-02-14", "OnsInstanceCreate") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-OnsInstanceCreateRequest::~OnsInstanceCreateRequest()
-{}
+OnsInstanceCreateRequest::~OnsInstanceCreateRequest() {}
 
-std::string OnsInstanceCreateRequest::getRemark()const
-{
-	return remark_;
+std::string OnsInstanceCreateRequest::getRemark() const {
+  return remark_;
 }
 
-void OnsInstanceCreateRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setParameter("Remark", remark);
+void OnsInstanceCreateRequest::setRemark(const std::string &remark) {
+  remark_ = remark;
+  setParameter(std::string("Remark"), remark);
 }
 
-std::string OnsInstanceCreateRequest::getInstanceName()const
-{
-	return instanceName_;
+std::string OnsInstanceCreateRequest::getInstanceName() const {
+  return instanceName_;
 }
 
-void OnsInstanceCreateRequest::setInstanceName(const std::string& instanceName)
-{
-	instanceName_ = instanceName;
-	setParameter("InstanceName", instanceName);
+void OnsInstanceCreateRequest::setInstanceName(const std::string &instanceName) {
+  instanceName_ = instanceName;
+  setParameter(std::string("InstanceName"), instanceName);
 }
 

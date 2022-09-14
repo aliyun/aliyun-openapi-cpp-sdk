@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string channelName;
 					std::string regionName;
-					std::string onsRegionId;
 					long createTime;
+					std::string onsRegionId;
 					long updateTime;
 					long id;
 					int channelId;
