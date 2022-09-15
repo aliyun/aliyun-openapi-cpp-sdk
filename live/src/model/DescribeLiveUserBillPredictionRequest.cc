@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Live::Model::DescribeLiveUserBillPredictionRequest;
 
-DescribeLiveUserBillPredictionRequest::DescribeLiveUserBillPredictionRequest() :
-	RpcServiceRequest("live", "2016-11-01", "DescribeLiveUserBillPrediction")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeLiveUserBillPredictionRequest::DescribeLiveUserBillPredictionRequest()
+    : RpcServiceRequest("live", "2016-11-01", "DescribeLiveUserBillPrediction") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeLiveUserBillPredictionRequest::~DescribeLiveUserBillPredictionRequest()
-{}
+DescribeLiveUserBillPredictionRequest::~DescribeLiveUserBillPredictionRequest() {}
 
-std::string DescribeLiveUserBillPredictionRequest::getStartTime()const
-{
-	return startTime_;
+std::string DescribeLiveUserBillPredictionRequest::getStartTime() const {
+  return startTime_;
 }
 
-void DescribeLiveUserBillPredictionRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+void DescribeLiveUserBillPredictionRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 
-std::string DescribeLiveUserBillPredictionRequest::getDimension()const
-{
-	return dimension_;
+std::string DescribeLiveUserBillPredictionRequest::getDimension() const {
+  return dimension_;
 }
 
-void DescribeLiveUserBillPredictionRequest::setDimension(const std::string& dimension)
-{
-	dimension_ = dimension;
-	setParameter("Dimension", dimension);
+void DescribeLiveUserBillPredictionRequest::setDimension(const std::string &dimension) {
+  dimension_ = dimension;
+  setParameter(std::string("Dimension"), dimension);
 }
 
-std::string DescribeLiveUserBillPredictionRequest::getArea()const
-{
-	return area_;
+std::string DescribeLiveUserBillPredictionRequest::getArea() const {
+  return area_;
 }
 
-void DescribeLiveUserBillPredictionRequest::setArea(const std::string& area)
-{
-	area_ = area;
-	setParameter("Area", area);
+void DescribeLiveUserBillPredictionRequest::setArea(const std::string &area) {
+  area_ = area;
+  setParameter(std::string("Area"), area);
 }
 
-std::string DescribeLiveUserBillPredictionRequest::getEndTime()const
-{
-	return endTime_;
+std::string DescribeLiveUserBillPredictionRequest::getEndTime() const {
+  return endTime_;
 }
 
-void DescribeLiveUserBillPredictionRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+void DescribeLiveUserBillPredictionRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
-long DescribeLiveUserBillPredictionRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeLiveUserBillPredictionRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeLiveUserBillPredictionRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeLiveUserBillPredictionRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

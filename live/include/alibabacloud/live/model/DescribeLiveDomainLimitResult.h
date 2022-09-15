@@ -35,7 +35,11 @@ namespace AlibabaCloud
 				struct LiveDomainLimit
 				{
 					int limitTranscodeNum;
+					int currentNum;
+					int limitTransferNum;
 					std::string domainName;
+					int currentTransferNum;
+					int currentTranscodeNum;
 					int limitNum;
 				};
 

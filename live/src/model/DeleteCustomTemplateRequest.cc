@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Live::Model::DeleteCustomTemplateRequest;
 
-DeleteCustomTemplateRequest::DeleteCustomTemplateRequest() :
-	RpcServiceRequest("live", "2016-11-01", "DeleteCustomTemplate")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteCustomTemplateRequest::DeleteCustomTemplateRequest()
+    : RpcServiceRequest("live", "2016-11-01", "DeleteCustomTemplate") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteCustomTemplateRequest::~DeleteCustomTemplateRequest()
-{}
+DeleteCustomTemplateRequest::~DeleteCustomTemplateRequest() {}
 
-std::string DeleteCustomTemplateRequest::get_Template()const
-{
-	return _template_;
+std::string DeleteCustomTemplateRequest::get_Template() const {
+  return _template_;
 }
 
-void DeleteCustomTemplateRequest::set_Template(const std::string& _template)
-{
-	_template_ = _template;
-	setParameter("_Template", _template);
+void DeleteCustomTemplateRequest::set_Template(const std::string &_template) {
+  _template_ = _template;
+  setParameter(std::string("Template"), _template);
 }
 
-long DeleteCustomTemplateRequest::getOwnerId()const
-{
-	return ownerId_;
+long DeleteCustomTemplateRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DeleteCustomTemplateRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DeleteCustomTemplateRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

@@ -43,18 +43,18 @@ void DescribeRoomKickoutUserListResult::parse(const std::string &payload)
 	for (auto valueUserListUser : allUserListNode)
 	{
 		User userListObject;
-		if(!valueUserListUser["AppUid"].isNull())
-			userListObject.appUid = valueUserListUser["AppUid"].asString();
 		if(!valueUserListUser["OpStartTime"].isNull())
 			userListObject.opStartTime = valueUserListUser["OpStartTime"].asString();
 		if(!valueUserListUser["OpEndTime"].isNull())
 			userListObject.opEndTime = valueUserListUser["OpEndTime"].asString();
+		if(!valueUserListUser["AppUid"].isNull())
+			userListObject.appUid = valueUserListUser["AppUid"].asString();
 		userList_.push_back(userListObject);
 	}
-	if(!value["TotalNum"].isNull())
-		totalNum_ = std::stoi(value["TotalNum"].asString());
 	if(!value["TotalPage"].isNull())
 		totalPage_ = std::stoi(value["TotalPage"].asString());
+	if(!value["TotalNum"].isNull())
+		totalNum_ = std::stoi(value["TotalNum"].asString());
 
 }
 

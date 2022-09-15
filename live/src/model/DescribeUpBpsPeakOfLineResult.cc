@@ -43,14 +43,14 @@ void DescribeUpBpsPeakOfLineResult::parse(const std::string &payload)
 	for (auto valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine : allDescribeUpBpsPeakOfLinesNode)
 	{
 		DescribeUpBpsPeakOfLine describeUpBpsPeakOfLinesObject;
-		if(!valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["BandWidth"].isNull())
-			describeUpBpsPeakOfLinesObject.bandWidth = std::stof(valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["BandWidth"].asString());
-		if(!valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["PeakTime"].isNull())
-			describeUpBpsPeakOfLinesObject.peakTime = valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["PeakTime"].asString();
 		if(!valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["QueryTime"].isNull())
 			describeUpBpsPeakOfLinesObject.queryTime = valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["QueryTime"].asString();
 		if(!valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["StatName"].isNull())
 			describeUpBpsPeakOfLinesObject.statName = valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["StatName"].asString();
+		if(!valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["BandWidth"].isNull())
+			describeUpBpsPeakOfLinesObject.bandWidth = std::stof(valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["BandWidth"].asString());
+		if(!valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["PeakTime"].isNull())
+			describeUpBpsPeakOfLinesObject.peakTime = valueDescribeUpBpsPeakOfLinesDescribeUpBpsPeakOfLine["PeakTime"].asString();
 		describeUpBpsPeakOfLines_.push_back(describeUpBpsPeakOfLinesObject);
 	}
 

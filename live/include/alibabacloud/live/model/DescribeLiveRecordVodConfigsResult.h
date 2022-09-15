@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string streamName;
 					std::string composeVodTranscodeGroupId;
-					std::string domainName;
 					std::string autoCompose;
+					std::string domainName;
 					std::string createTime;
 					int cycleDuration;
 					std::string appName;

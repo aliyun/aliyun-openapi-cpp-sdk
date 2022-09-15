@@ -64,8 +64,8 @@ namespace AlibabaCloud
 					std::string outputTemplate;
 					int audioFrom;
 					std::vector<LiveStreamMonitorInfo::InputConfig> inputList;
-					std::string monitorName;
 					std::string startTime;
+					std::string monitorName;
 					std::string region;
 					std::string domain;
 					std::string monitorId;

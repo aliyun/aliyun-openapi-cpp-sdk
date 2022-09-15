@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,122 +18,100 @@
 
 using AlibabaCloud::Live::Model::SetLiveLazyPullStreamInfoConfigRequest;
 
-SetLiveLazyPullStreamInfoConfigRequest::SetLiveLazyPullStreamInfoConfigRequest() :
-	RpcServiceRequest("live", "2016-11-01", "SetLiveLazyPullStreamInfoConfig")
-{
-	setMethod(HttpRequest::Method::Post);
+SetLiveLazyPullStreamInfoConfigRequest::SetLiveLazyPullStreamInfoConfigRequest()
+    : RpcServiceRequest("live", "2016-11-01", "SetLiveLazyPullStreamInfoConfig") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SetLiveLazyPullStreamInfoConfigRequest::~SetLiveLazyPullStreamInfoConfigRequest()
-{}
+SetLiveLazyPullStreamInfoConfigRequest::~SetLiveLazyPullStreamInfoConfigRequest() {}
 
-std::string SetLiveLazyPullStreamInfoConfigRequest::getPullArgs()const
-{
-	return pullArgs_;
+std::string SetLiveLazyPullStreamInfoConfigRequest::getPullArgs() const {
+  return pullArgs_;
 }
 
-void SetLiveLazyPullStreamInfoConfigRequest::setPullArgs(const std::string& pullArgs)
-{
-	pullArgs_ = pullArgs;
-	setParameter("PullArgs", pullArgs);
+void SetLiveLazyPullStreamInfoConfigRequest::setPullArgs(const std::string &pullArgs) {
+  pullArgs_ = pullArgs;
+  setParameter(std::string("PullArgs"), pullArgs);
 }
 
-std::string SetLiveLazyPullStreamInfoConfigRequest::getAppName()const
-{
-	return appName_;
+std::string SetLiveLazyPullStreamInfoConfigRequest::getAppName() const {
+  return appName_;
 }
 
-void SetLiveLazyPullStreamInfoConfigRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setParameter("AppName", appName);
+void SetLiveLazyPullStreamInfoConfigRequest::setAppName(const std::string &appName) {
+  appName_ = appName;
+  setParameter(std::string("AppName"), appName);
 }
 
-std::string SetLiveLazyPullStreamInfoConfigRequest::getLiveapiRequestFrom()const
-{
-	return liveapiRequestFrom_;
+std::string SetLiveLazyPullStreamInfoConfigRequest::getLiveapiRequestFrom() const {
+  return liveapiRequestFrom_;
 }
 
-void SetLiveLazyPullStreamInfoConfigRequest::setLiveapiRequestFrom(const std::string& liveapiRequestFrom)
-{
-	liveapiRequestFrom_ = liveapiRequestFrom;
-	setParameter("LiveapiRequestFrom", liveapiRequestFrom);
+void SetLiveLazyPullStreamInfoConfigRequest::setLiveapiRequestFrom(const std::string &liveapiRequestFrom) {
+  liveapiRequestFrom_ = liveapiRequestFrom;
+  setParameter(std::string("LiveapiRequestFrom"), liveapiRequestFrom);
 }
 
-std::string SetLiveLazyPullStreamInfoConfigRequest::getPullAuthKey()const
-{
-	return pullAuthKey_;
+std::string SetLiveLazyPullStreamInfoConfigRequest::getPullAuthKey() const {
+  return pullAuthKey_;
 }
 
-void SetLiveLazyPullStreamInfoConfigRequest::setPullAuthKey(const std::string& pullAuthKey)
-{
-	pullAuthKey_ = pullAuthKey;
-	setParameter("PullAuthKey", pullAuthKey);
+void SetLiveLazyPullStreamInfoConfigRequest::setPullAuthKey(const std::string &pullAuthKey) {
+  pullAuthKey_ = pullAuthKey;
+  setParameter(std::string("PullAuthKey"), pullAuthKey);
 }
 
-std::string SetLiveLazyPullStreamInfoConfigRequest::getPullAuthType()const
-{
-	return pullAuthType_;
+std::string SetLiveLazyPullStreamInfoConfigRequest::getPullAuthType() const {
+  return pullAuthType_;
 }
 
-void SetLiveLazyPullStreamInfoConfigRequest::setPullAuthType(const std::string& pullAuthType)
-{
-	pullAuthType_ = pullAuthType;
-	setParameter("PullAuthType", pullAuthType);
+void SetLiveLazyPullStreamInfoConfigRequest::setPullAuthType(const std::string &pullAuthType) {
+  pullAuthType_ = pullAuthType;
+  setParameter(std::string("PullAuthType"), pullAuthType);
 }
 
-std::string SetLiveLazyPullStreamInfoConfigRequest::getDomainName()const
-{
-	return domainName_;
+std::string SetLiveLazyPullStreamInfoConfigRequest::getDomainName() const {
+  return domainName_;
 }
 
-void SetLiveLazyPullStreamInfoConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void SetLiveLazyPullStreamInfoConfigRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string SetLiveLazyPullStreamInfoConfigRequest::getPullDomainName()const
-{
-	return pullDomainName_;
+std::string SetLiveLazyPullStreamInfoConfigRequest::getPullDomainName() const {
+  return pullDomainName_;
 }
 
-void SetLiveLazyPullStreamInfoConfigRequest::setPullDomainName(const std::string& pullDomainName)
-{
-	pullDomainName_ = pullDomainName;
-	setParameter("PullDomainName", pullDomainName);
+void SetLiveLazyPullStreamInfoConfigRequest::setPullDomainName(const std::string &pullDomainName) {
+  pullDomainName_ = pullDomainName;
+  setParameter(std::string("PullDomainName"), pullDomainName);
 }
 
-long SetLiveLazyPullStreamInfoConfigRequest::getOwnerId()const
-{
-	return ownerId_;
+long SetLiveLazyPullStreamInfoConfigRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void SetLiveLazyPullStreamInfoConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void SetLiveLazyPullStreamInfoConfigRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string SetLiveLazyPullStreamInfoConfigRequest::getPullAppName()const
-{
-	return pullAppName_;
+std::string SetLiveLazyPullStreamInfoConfigRequest::getPullAppName() const {
+  return pullAppName_;
 }
 
-void SetLiveLazyPullStreamInfoConfigRequest::setPullAppName(const std::string& pullAppName)
-{
-	pullAppName_ = pullAppName;
-	setParameter("PullAppName", pullAppName);
+void SetLiveLazyPullStreamInfoConfigRequest::setPullAppName(const std::string &pullAppName) {
+  pullAppName_ = pullAppName;
+  setParameter(std::string("PullAppName"), pullAppName);
 }
 
-std::string SetLiveLazyPullStreamInfoConfigRequest::getPullProtocol()const
-{
-	return pullProtocol_;
+std::string SetLiveLazyPullStreamInfoConfigRequest::getPullProtocol() const {
+  return pullProtocol_;
 }
 
-void SetLiveLazyPullStreamInfoConfigRequest::setPullProtocol(const std::string& pullProtocol)
-{
-	pullProtocol_ = pullProtocol;
-	setParameter("PullProtocol", pullProtocol);
+void SetLiveLazyPullStreamInfoConfigRequest::setPullProtocol(const std::string &pullProtocol) {
+  pullProtocol_ = pullProtocol;
+  setParameter(std::string("PullProtocol"), pullProtocol);
 }
 

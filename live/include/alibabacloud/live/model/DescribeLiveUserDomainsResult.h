@@ -34,11 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct PageData
 				{
-					std::string description;
 					std::string liveDomainStatus;
-					std::string domainName;
+					std::string description;
 					std::string liveDomainType;
 					std::string regionName;
+					std::string domainName;
 					std::string gmtModified;
 					std::string gmtCreated;
 					std::string cname;

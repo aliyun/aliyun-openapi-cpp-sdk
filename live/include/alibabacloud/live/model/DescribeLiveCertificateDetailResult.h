@@ -38,15 +38,15 @@ namespace AlibabaCloud
 				explicit DescribeLiveCertificateDetailResult(const std::string &payload);
 				~DescribeLiveCertificateDetailResult();
 				long getCertId()const;
-				std::string getCert()const;
 				std::string getCertName()const;
+				std::string getCert()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				long certId_;
-				std::string cert_;
 				std::string certName_;
+				std::string cert_;
 
 			};
 		}

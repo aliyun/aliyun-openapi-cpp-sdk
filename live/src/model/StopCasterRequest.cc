@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Live::Model::StopCasterRequest;
 
-StopCasterRequest::StopCasterRequest() :
-	RpcServiceRequest("live", "2016-11-01", "StopCaster")
-{
-	setMethod(HttpRequest::Method::Post);
+StopCasterRequest::StopCasterRequest()
+    : RpcServiceRequest("live", "2016-11-01", "StopCaster") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-StopCasterRequest::~StopCasterRequest()
-{}
+StopCasterRequest::~StopCasterRequest() {}
 
-std::string StopCasterRequest::getCasterId()const
-{
-	return casterId_;
+std::string StopCasterRequest::getCasterId() const {
+  return casterId_;
 }
 
-void StopCasterRequest::setCasterId(const std::string& casterId)
-{
-	casterId_ = casterId;
-	setParameter("CasterId", casterId);
+void StopCasterRequest::setCasterId(const std::string &casterId) {
+  casterId_ = casterId;
+  setParameter(std::string("CasterId"), casterId);
 }
 
-long StopCasterRequest::getOwnerId()const
-{
-	return ownerId_;
+long StopCasterRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void StopCasterRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void StopCasterRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

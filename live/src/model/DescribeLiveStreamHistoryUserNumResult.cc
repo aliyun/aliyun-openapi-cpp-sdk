@@ -43,10 +43,10 @@ void DescribeLiveStreamHistoryUserNumResult::parse(const std::string &payload)
 	for (auto valueLiveStreamUserNumInfosLiveStreamUserNumInfo : allLiveStreamUserNumInfosNode)
 	{
 		LiveStreamUserNumInfo liveStreamUserNumInfosObject;
-		if(!valueLiveStreamUserNumInfosLiveStreamUserNumInfo["StreamTime"].isNull())
-			liveStreamUserNumInfosObject.streamTime = valueLiveStreamUserNumInfosLiveStreamUserNumInfo["StreamTime"].asString();
 		if(!valueLiveStreamUserNumInfosLiveStreamUserNumInfo["UserNum"].isNull())
 			liveStreamUserNumInfosObject.userNum = valueLiveStreamUserNumInfosLiveStreamUserNumInfo["UserNum"].asString();
+		if(!valueLiveStreamUserNumInfosLiveStreamUserNumInfo["StreamTime"].isNull())
+			liveStreamUserNumInfosObject.streamTime = valueLiveStreamUserNumInfosLiveStreamUserNumInfo["StreamTime"].asString();
 		liveStreamUserNumInfos_.push_back(liveStreamUserNumInfosObject);
 	}
 

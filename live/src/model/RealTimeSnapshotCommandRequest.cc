@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,82 @@
 
 using AlibabaCloud::Live::Model::RealTimeSnapshotCommandRequest;
 
-RealTimeSnapshotCommandRequest::RealTimeSnapshotCommandRequest() :
-	RpcServiceRequest("live", "2016-11-01", "RealTimeSnapshotCommand")
-{
-	setMethod(HttpRequest::Method::Post);
+RealTimeSnapshotCommandRequest::RealTimeSnapshotCommandRequest()
+    : RpcServiceRequest("live", "2016-11-01", "RealTimeSnapshotCommand") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-RealTimeSnapshotCommandRequest::~RealTimeSnapshotCommandRequest()
-{}
+RealTimeSnapshotCommandRequest::~RealTimeSnapshotCommandRequest() {}
 
-int RealTimeSnapshotCommandRequest::getMode()const
-{
-	return mode_;
+int RealTimeSnapshotCommandRequest::getSource() const {
+  return source_;
 }
 
-void RealTimeSnapshotCommandRequest::setMode(int mode)
-{
-	mode_ = mode;
-	setParameter("Mode", std::to_string(mode));
+void RealTimeSnapshotCommandRequest::setSource(int source) {
+  source_ = source;
+  setParameter(std::string("Source"), std::to_string(source));
 }
 
-std::string RealTimeSnapshotCommandRequest::getAppName()const
-{
-	return appName_;
+int RealTimeSnapshotCommandRequest::getMode() const {
+  return mode_;
 }
 
-void RealTimeSnapshotCommandRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setParameter("AppName", appName);
+void RealTimeSnapshotCommandRequest::setMode(int mode) {
+  mode_ = mode;
+  setParameter(std::string("Mode"), std::to_string(mode));
 }
 
-std::string RealTimeSnapshotCommandRequest::getStreamName()const
-{
-	return streamName_;
+std::string RealTimeSnapshotCommandRequest::getAppName() const {
+  return appName_;
 }
 
-void RealTimeSnapshotCommandRequest::setStreamName(const std::string& streamName)
-{
-	streamName_ = streamName;
-	setParameter("StreamName", streamName);
+void RealTimeSnapshotCommandRequest::setAppName(const std::string &appName) {
+  appName_ = appName;
+  setParameter(std::string("AppName"), appName);
 }
 
-std::string RealTimeSnapshotCommandRequest::getDomainName()const
-{
-	return domainName_;
+std::string RealTimeSnapshotCommandRequest::getStreamName() const {
+  return streamName_;
 }
 
-void RealTimeSnapshotCommandRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void RealTimeSnapshotCommandRequest::setStreamName(const std::string &streamName) {
+  streamName_ = streamName;
+  setParameter(std::string("StreamName"), streamName);
 }
 
-long RealTimeSnapshotCommandRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string RealTimeSnapshotCommandRequest::getDomainName() const {
+  return domainName_;
 }
 
-void RealTimeSnapshotCommandRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void RealTimeSnapshotCommandRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string RealTimeSnapshotCommandRequest::getCommand()const
-{
-	return command_;
+long RealTimeSnapshotCommandRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void RealTimeSnapshotCommandRequest::setCommand(const std::string& command)
-{
-	command_ = command;
-	setParameter("Command", command);
+void RealTimeSnapshotCommandRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-int RealTimeSnapshotCommandRequest::getInterval()const
-{
-	return interval_;
+std::string RealTimeSnapshotCommandRequest::getCommand() const {
+  return command_;
 }
 
-void RealTimeSnapshotCommandRequest::setInterval(int interval)
-{
-	interval_ = interval;
-	setParameter("Interval", std::to_string(interval));
+void RealTimeSnapshotCommandRequest::setCommand(const std::string &command) {
+  command_ = command;
+  setParameter(std::string("Command"), command);
+}
+
+int RealTimeSnapshotCommandRequest::getInterval() const {
+  return interval_;
+}
+
+void RealTimeSnapshotCommandRequest::setInterval(int interval) {
+  interval_ = interval;
+  setParameter(std::string("Interval"), std::to_string(interval));
 }
 

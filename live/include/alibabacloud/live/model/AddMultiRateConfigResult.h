@@ -45,8 +45,8 @@ namespace AlibabaCloud
 					int height;
 					int audioChannelNum;
 					int width;
-					std::string audioCodec;
 					int audioRate;
+					std::string audioCodec;
 					int videoBitrate;
 				};
 

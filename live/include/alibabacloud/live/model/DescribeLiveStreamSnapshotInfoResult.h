@@ -34,10 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct LiveStreamSnapshotInfo
 				{
+					bool isOverlay;
 					std::string ossEndpoint;
 					std::string createTime;
 					std::string ossBucket;
 					std::string ossObject;
+					long createTimestamp;
 				};
 
 

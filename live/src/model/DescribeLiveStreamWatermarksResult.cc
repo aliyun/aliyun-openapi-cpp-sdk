@@ -43,30 +43,30 @@ void DescribeLiveStreamWatermarksResult::parse(const std::string &payload)
 	for (auto valueWatermarkListWatermark : allWatermarkListNode)
 	{
 		Watermark watermarkListObject;
-		if(!valueWatermarkListWatermark["TemplateId"].isNull())
-			watermarkListObject.templateId = valueWatermarkListWatermark["TemplateId"].asString();
-		if(!valueWatermarkListWatermark["Name"].isNull())
-			watermarkListObject.name = valueWatermarkListWatermark["Name"].asString();
 		if(!valueWatermarkListWatermark["Type"].isNull())
 			watermarkListObject.type = std::stoi(valueWatermarkListWatermark["Type"].asString());
-		if(!valueWatermarkListWatermark["Description"].isNull())
-			watermarkListObject.description = valueWatermarkListWatermark["Description"].asString();
-		if(!valueWatermarkListWatermark["RefWidth"].isNull())
-			watermarkListObject.refWidth = std::stoi(valueWatermarkListWatermark["RefWidth"].asString());
-		if(!valueWatermarkListWatermark["RefHeight"].isNull())
-			watermarkListObject.refHeight = std::stoi(valueWatermarkListWatermark["RefHeight"].asString());
 		if(!valueWatermarkListWatermark["XOffset"].isNull())
 			watermarkListObject.xOffset = std::stof(valueWatermarkListWatermark["XOffset"].asString());
+		if(!valueWatermarkListWatermark["RefWidth"].isNull())
+			watermarkListObject.refWidth = std::stoi(valueWatermarkListWatermark["RefWidth"].asString());
 		if(!valueWatermarkListWatermark["YOffset"].isNull())
 			watermarkListObject.yOffset = std::stof(valueWatermarkListWatermark["YOffset"].asString());
 		if(!valueWatermarkListWatermark["Height"].isNull())
 			watermarkListObject.height = std::stoi(valueWatermarkListWatermark["Height"].asString());
-		if(!valueWatermarkListWatermark["Transparency"].isNull())
-			watermarkListObject.transparency = std::stoi(valueWatermarkListWatermark["Transparency"].asString());
-		if(!valueWatermarkListWatermark["OffsetCorner"].isNull())
-			watermarkListObject.offsetCorner = valueWatermarkListWatermark["OffsetCorner"].asString();
+		if(!valueWatermarkListWatermark["RefHeight"].isNull())
+			watermarkListObject.refHeight = std::stoi(valueWatermarkListWatermark["RefHeight"].asString());
 		if(!valueWatermarkListWatermark["PictureUrl"].isNull())
 			watermarkListObject.pictureUrl = valueWatermarkListWatermark["PictureUrl"].asString();
+		if(!valueWatermarkListWatermark["Transparency"].isNull())
+			watermarkListObject.transparency = std::stoi(valueWatermarkListWatermark["Transparency"].asString());
+		if(!valueWatermarkListWatermark["Description"].isNull())
+			watermarkListObject.description = valueWatermarkListWatermark["Description"].asString();
+		if(!valueWatermarkListWatermark["OffsetCorner"].isNull())
+			watermarkListObject.offsetCorner = valueWatermarkListWatermark["OffsetCorner"].asString();
+		if(!valueWatermarkListWatermark["Name"].isNull())
+			watermarkListObject.name = valueWatermarkListWatermark["Name"].asString();
+		if(!valueWatermarkListWatermark["TemplateId"].isNull())
+			watermarkListObject.templateId = valueWatermarkListWatermark["TemplateId"].asString();
 		watermarkList_.push_back(watermarkListObject);
 	}
 

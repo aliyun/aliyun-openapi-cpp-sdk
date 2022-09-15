@@ -50,8 +50,8 @@ namespace AlibabaCloud
 				std::string getOrder()const;
 				int getTotalNum()const;
 				int getPageNum()const;
-				int getPageSize()const;
 				int getTotalPage()const;
+				int getPageSize()const;
 				std::vector<LiveSnapshotDetectPornConfig> getLiveSnapshotDetectPornConfigList()const;
 
 			protected:
@@ -60,8 +60,8 @@ namespace AlibabaCloud
 				std::string order_;
 				int totalNum_;
 				int pageNum_;
-				int pageSize_;
 				int totalPage_;
+				int pageSize_;
 				std::vector<LiveSnapshotDetectPornConfig> liveSnapshotDetectPornConfigList_;
 
 			};

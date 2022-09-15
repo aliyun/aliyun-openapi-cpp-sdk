@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Live::Model::DeleteCasterSceneConfigRequest;
 
-DeleteCasterSceneConfigRequest::DeleteCasterSceneConfigRequest() :
-	RpcServiceRequest("live", "2016-11-01", "DeleteCasterSceneConfig")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteCasterSceneConfigRequest::DeleteCasterSceneConfigRequest()
+    : RpcServiceRequest("live", "2016-11-01", "DeleteCasterSceneConfig") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteCasterSceneConfigRequest::~DeleteCasterSceneConfigRequest()
-{}
+DeleteCasterSceneConfigRequest::~DeleteCasterSceneConfigRequest() {}
 
-std::string DeleteCasterSceneConfigRequest::getType()const
-{
-	return type_;
+std::string DeleteCasterSceneConfigRequest::getType() const {
+  return type_;
 }
 
-void DeleteCasterSceneConfigRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setParameter("Type", type);
+void DeleteCasterSceneConfigRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
 }
 
-std::string DeleteCasterSceneConfigRequest::getCasterId()const
-{
-	return casterId_;
+std::string DeleteCasterSceneConfigRequest::getCasterId() const {
+  return casterId_;
 }
 
-void DeleteCasterSceneConfigRequest::setCasterId(const std::string& casterId)
-{
-	casterId_ = casterId;
-	setParameter("CasterId", casterId);
+void DeleteCasterSceneConfigRequest::setCasterId(const std::string &casterId) {
+  casterId_ = casterId;
+  setParameter(std::string("CasterId"), casterId);
 }
 
-long DeleteCasterSceneConfigRequest::getOwnerId()const
-{
-	return ownerId_;
+long DeleteCasterSceneConfigRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DeleteCasterSceneConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DeleteCasterSceneConfigRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DeleteCasterSceneConfigRequest::getSceneId()const
-{
-	return sceneId_;
+std::string DeleteCasterSceneConfigRequest::getSceneId() const {
+  return sceneId_;
 }
 
-void DeleteCasterSceneConfigRequest::setSceneId(const std::string& sceneId)
-{
-	sceneId_ = sceneId;
-	setParameter("SceneId", sceneId);
+void DeleteCasterSceneConfigRequest::setSceneId(const std::string &sceneId) {
+  sceneId_ = sceneId;
+  setParameter(std::string("SceneId"), sceneId);
 }
 

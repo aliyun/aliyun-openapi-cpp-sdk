@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Live::Model::SetLiveStreamDelayConfigRequest;
 
-SetLiveStreamDelayConfigRequest::SetLiveStreamDelayConfigRequest() :
-	RpcServiceRequest("live", "2016-11-01", "SetLiveStreamDelayConfig")
-{
-	setMethod(HttpRequest::Method::Post);
+SetLiveStreamDelayConfigRequest::SetLiveStreamDelayConfigRequest()
+    : RpcServiceRequest("live", "2016-11-01", "SetLiveStreamDelayConfig") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SetLiveStreamDelayConfigRequest::~SetLiveStreamDelayConfigRequest()
-{}
+SetLiveStreamDelayConfigRequest::~SetLiveStreamDelayConfigRequest() {}
 
-std::string SetLiveStreamDelayConfigRequest::getFlvLevel()const
-{
-	return flvLevel_;
+std::string SetLiveStreamDelayConfigRequest::getFlvLevel() const {
+  return flvLevel_;
 }
 
-void SetLiveStreamDelayConfigRequest::setFlvLevel(const std::string& flvLevel)
-{
-	flvLevel_ = flvLevel;
-	setParameter("FlvLevel", flvLevel);
+void SetLiveStreamDelayConfigRequest::setFlvLevel(const std::string &flvLevel) {
+  flvLevel_ = flvLevel;
+  setParameter(std::string("FlvLevel"), flvLevel);
 }
 
-std::string SetLiveStreamDelayConfigRequest::getHlsLevel()const
-{
-	return hlsLevel_;
+std::string SetLiveStreamDelayConfigRequest::getHlsLevel() const {
+  return hlsLevel_;
 }
 
-void SetLiveStreamDelayConfigRequest::setHlsLevel(const std::string& hlsLevel)
-{
-	hlsLevel_ = hlsLevel;
-	setParameter("HlsLevel", hlsLevel);
+void SetLiveStreamDelayConfigRequest::setHlsLevel(const std::string &hlsLevel) {
+  hlsLevel_ = hlsLevel;
+  setParameter(std::string("HlsLevel"), hlsLevel);
 }
 
-int SetLiveStreamDelayConfigRequest::getRtmpDelay()const
-{
-	return rtmpDelay_;
+int SetLiveStreamDelayConfigRequest::getRtmpDelay() const {
+  return rtmpDelay_;
 }
 
-void SetLiveStreamDelayConfigRequest::setRtmpDelay(int rtmpDelay)
-{
-	rtmpDelay_ = rtmpDelay;
-	setParameter("RtmpDelay", std::to_string(rtmpDelay));
+void SetLiveStreamDelayConfigRequest::setRtmpDelay(int rtmpDelay) {
+  rtmpDelay_ = rtmpDelay;
+  setParameter(std::string("RtmpDelay"), std::to_string(rtmpDelay));
 }
 
-std::string SetLiveStreamDelayConfigRequest::getDomainName()const
-{
-	return domainName_;
+std::string SetLiveStreamDelayConfigRequest::getDomainName() const {
+  return domainName_;
 }
 
-void SetLiveStreamDelayConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void SetLiveStreamDelayConfigRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-long SetLiveStreamDelayConfigRequest::getOwnerId()const
-{
-	return ownerId_;
+long SetLiveStreamDelayConfigRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void SetLiveStreamDelayConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void SetLiveStreamDelayConfigRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-int SetLiveStreamDelayConfigRequest::getFlvDelay()const
-{
-	return flvDelay_;
+int SetLiveStreamDelayConfigRequest::getFlvDelay() const {
+  return flvDelay_;
 }
 
-void SetLiveStreamDelayConfigRequest::setFlvDelay(int flvDelay)
-{
-	flvDelay_ = flvDelay;
-	setParameter("FlvDelay", std::to_string(flvDelay));
+void SetLiveStreamDelayConfigRequest::setFlvDelay(int flvDelay) {
+  flvDelay_ = flvDelay;
+  setParameter(std::string("FlvDelay"), std::to_string(flvDelay));
 }
 
-std::string SetLiveStreamDelayConfigRequest::getRtmpLevel()const
-{
-	return rtmpLevel_;
+std::string SetLiveStreamDelayConfigRequest::getRtmpLevel() const {
+  return rtmpLevel_;
 }
 
-void SetLiveStreamDelayConfigRequest::setRtmpLevel(const std::string& rtmpLevel)
-{
-	rtmpLevel_ = rtmpLevel;
-	setParameter("RtmpLevel", rtmpLevel);
+void SetLiveStreamDelayConfigRequest::setRtmpLevel(const std::string &rtmpLevel) {
+  rtmpLevel_ = rtmpLevel;
+  setParameter(std::string("RtmpLevel"), rtmpLevel);
 }
 
-int SetLiveStreamDelayConfigRequest::getHlsDelay()const
-{
-	return hlsDelay_;
+int SetLiveStreamDelayConfigRequest::getHlsDelay() const {
+  return hlsDelay_;
 }
 
-void SetLiveStreamDelayConfigRequest::setHlsDelay(int hlsDelay)
-{
-	hlsDelay_ = hlsDelay;
-	setParameter("HlsDelay", std::to_string(hlsDelay));
+void SetLiveStreamDelayConfigRequest::setHlsDelay(int hlsDelay) {
+  hlsDelay_ = hlsDelay;
+  setParameter(std::string("HlsDelay"), std::to_string(hlsDelay));
 }
 

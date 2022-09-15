@@ -39,12 +39,12 @@ void QuerySnapshotCallbackAuthResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["CallbackAuthKey"].isNull())
+		callbackAuthKey_ = value["CallbackAuthKey"].asString();
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
 	if(!value["CallbackReqAuth"].isNull())
 		callbackReqAuth_ = value["CallbackReqAuth"].asString();
-	if(!value["CallbackAuthKey"].isNull())
-		callbackAuthKey_ = value["CallbackAuthKey"].asString();
 
 }
 

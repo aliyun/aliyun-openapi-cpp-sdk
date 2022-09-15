@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_SETLIVEDOMAINSPECIALCONFIGRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_SETLIVEDOMAINSPECIALCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_CREATEMESSAGEAPPRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_CREATEMESSAGEAPPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT SetLiveDomainSpecialConfigResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT CreateMessageAppResult : public ServiceResult
 			{
 			public:
+				struct Result
+				{
+					std::string appId;
+				};
 
 
-				SetLiveDomainSpecialConfigResult();
-				explicit SetLiveDomainSpecialConfigResult(const std::string &payload);
-				~SetLiveDomainSpecialConfigResult();
+				CreateMessageAppResult();
+				explicit CreateMessageAppResult(const std::string &payload);
+				~CreateMessageAppResult();
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_SETLIVEDOMAINSPECIALCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_CREATEMESSAGEAPPRESULT_H_

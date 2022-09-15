@@ -45,16 +45,16 @@ void DescribeLiveUserBillPredictionResult::parse(const std::string &payload)
 		BillPredictionDataItem billPredictionDataObject;
 		if(!valueBillPredictionDataBillPredictionDataItem["Value"].isNull())
 			billPredictionDataObject.value = std::stof(valueBillPredictionDataBillPredictionDataItem["Value"].asString());
-		if(!valueBillPredictionDataBillPredictionDataItem["Area"].isNull())
-			billPredictionDataObject.area = valueBillPredictionDataBillPredictionDataItem["Area"].asString();
 		if(!valueBillPredictionDataBillPredictionDataItem["TimeStp"].isNull())
 			billPredictionDataObject.timeStp = valueBillPredictionDataBillPredictionDataItem["TimeStp"].asString();
+		if(!valueBillPredictionDataBillPredictionDataItem["Area"].isNull())
+			billPredictionDataObject.area = valueBillPredictionDataBillPredictionDataItem["Area"].asString();
 		billPredictionData_.push_back(billPredictionDataObject);
 	}
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 	if(!value["BillType"].isNull())
 		billType_ = value["BillType"].asString();
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERQUOTARESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERQUOTARESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_JOINMESSAGEGROUPRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_JOINMESSAGEGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveUserQuotaResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT JoinMessageGroupResult : public ServiceResult
 			{
 			public:
+				struct Result
+				{
+					bool success;
+				};
 
 
-				DescribeLiveUserQuotaResult();
-				explicit DescribeLiveUserQuotaResult(const std::string &payload);
-				~DescribeLiveUserQuotaResult();
-				int getDomainQuota()const;
-				std::string getDomainUsedCount()const;
+				JoinMessageGroupResult();
+				explicit JoinMessageGroupResult(const std::string &payload);
+				~JoinMessageGroupResult();
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int domainQuota_;
-				std::string domainUsedCount_;
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERQUOTARESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_JOINMESSAGEGROUPRESULT_H_

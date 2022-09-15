@@ -87,6 +87,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/BatchSetLiveDomainConfigsResult.h
 	include/alibabacloud/live/model/CloseLiveShiftRequest.h
 	include/alibabacloud/live/model/CloseLiveShiftResult.h
+	include/alibabacloud/live/model/CloseMessageGroupRequest.h
+	include/alibabacloud/live/model/CloseMessageGroupResult.h
 	include/alibabacloud/live/model/CopyCasterRequest.h
 	include/alibabacloud/live/model/CopyCasterResult.h
 	include/alibabacloud/live/model/CopyCasterSceneConfigRequest.h
@@ -101,6 +103,12 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CreateLiveStreamMonitorResult.h
 	include/alibabacloud/live/model/CreateLiveStreamRecordIndexFilesRequest.h
 	include/alibabacloud/live/model/CreateLiveStreamRecordIndexFilesResult.h
+	include/alibabacloud/live/model/CreateLiveTranscodeTemplateRequest.h
+	include/alibabacloud/live/model/CreateLiveTranscodeTemplateResult.h
+	include/alibabacloud/live/model/CreateMessageAppRequest.h
+	include/alibabacloud/live/model/CreateMessageAppResult.h
+	include/alibabacloud/live/model/CreateMessageGroupRequest.h
+	include/alibabacloud/live/model/CreateMessageGroupResult.h
 	include/alibabacloud/live/model/CreateMixStreamRequest.h
 	include/alibabacloud/live/model/CreateMixStreamResult.h
 	include/alibabacloud/live/model/DeleteCasterRequest.h
@@ -167,6 +175,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteLiveStreamWatermarkRuleResult.h
 	include/alibabacloud/live/model/DeleteLiveStreamsNotifyUrlConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveStreamsNotifyUrlConfigResult.h
+	include/alibabacloud/live/model/DeleteMessageAppRequest.h
+	include/alibabacloud/live/model/DeleteMessageAppResult.h
 	include/alibabacloud/live/model/DeleteMixStreamRequest.h
 	include/alibabacloud/live/model/DeleteMixStreamResult.h
 	include/alibabacloud/live/model/DeleteMultiRateConfigRequest.h
@@ -269,8 +279,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveDomainRecordUsageDataResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainSnapshotDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainSnapshotDataResult.h
-	include/alibabacloud/live/model/DescribeLiveDomainSpecialConfigRequest.h
-	include/alibabacloud/live/model/DescribeLiveDomainSpecialConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainStagingConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveDomainStagingConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveDomainStreamTranscodeDataRequest.h
@@ -287,6 +295,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveEdgeTransferResult.h
 	include/alibabacloud/live/model/DescribeLiveLazyPullStreamConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveLazyPullStreamConfigResult.h
+	include/alibabacloud/live/model/DescribeLiveProducerUsageDataRequest.h
+	include/alibabacloud/live/model/DescribeLiveProducerUsageDataResult.h
 	include/alibabacloud/live/model/DescribeLivePullStreamConfigRequest.h
 	include/alibabacloud/live/model/DescribeLivePullStreamConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveRealtimeDeliveryAccRequest.h
@@ -353,10 +363,10 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveUserBillPredictionResult.h
 	include/alibabacloud/live/model/DescribeLiveUserDomainsRequest.h
 	include/alibabacloud/live/model/DescribeLiveUserDomainsResult.h
-	include/alibabacloud/live/model/DescribeLiveUserQuotaRequest.h
-	include/alibabacloud/live/model/DescribeLiveUserQuotaResult.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsRequest.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsResult.h
+	include/alibabacloud/live/model/DescribeMeterLiveRtcDurationRequest.h
+	include/alibabacloud/live/model/DescribeMeterLiveRtcDurationResult.h
 	include/alibabacloud/live/model/DescribeMixStreamListRequest.h
 	include/alibabacloud/live/model/DescribeMixStreamListResult.h
 	include/alibabacloud/live/model/DescribeRoomKickoutUserListRequest.h
@@ -403,6 +413,12 @@ set(live_public_header_model
 	include/alibabacloud/live/model/GetCustomTemplateResult.h
 	include/alibabacloud/live/model/GetEditingJobInfoRequest.h
 	include/alibabacloud/live/model/GetEditingJobInfoResult.h
+	include/alibabacloud/live/model/GetMessageAppRequest.h
+	include/alibabacloud/live/model/GetMessageAppResult.h
+	include/alibabacloud/live/model/GetMessageGroupRequest.h
+	include/alibabacloud/live/model/GetMessageGroupResult.h
+	include/alibabacloud/live/model/GetMessageTokenRequest.h
+	include/alibabacloud/live/model/GetMessageTokenResult.h
 	include/alibabacloud/live/model/GetMultiRateConfigRequest.h
 	include/alibabacloud/live/model/GetMultiRateConfigResult.h
 	include/alibabacloud/live/model/GetMultiRateConfigListRequest.h
@@ -411,12 +427,24 @@ set(live_public_header_model
 	include/alibabacloud/live/model/HotLiveRtcStreamResult.h
 	include/alibabacloud/live/model/InitializeAutoShowListTaskRequest.h
 	include/alibabacloud/live/model/InitializeAutoShowListTaskResult.h
+	include/alibabacloud/live/model/JoinMessageGroupRequest.h
+	include/alibabacloud/live/model/JoinMessageGroupResult.h
+	include/alibabacloud/live/model/LeaveMessageGroupRequest.h
+	include/alibabacloud/live/model/LeaveMessageGroupResult.h
 	include/alibabacloud/live/model/ListLiveRealtimeLogDeliveryRequest.h
 	include/alibabacloud/live/model/ListLiveRealtimeLogDeliveryResult.h
 	include/alibabacloud/live/model/ListLiveRealtimeLogDeliveryDomainsRequest.h
 	include/alibabacloud/live/model/ListLiveRealtimeLogDeliveryDomainsResult.h
 	include/alibabacloud/live/model/ListLiveRealtimeLogDeliveryInfosRequest.h
 	include/alibabacloud/live/model/ListLiveRealtimeLogDeliveryInfosResult.h
+	include/alibabacloud/live/model/ListMessageRequest.h
+	include/alibabacloud/live/model/ListMessageResult.h
+	include/alibabacloud/live/model/ListMessageAppRequest.h
+	include/alibabacloud/live/model/ListMessageAppResult.h
+	include/alibabacloud/live/model/ListMessageGroupRequest.h
+	include/alibabacloud/live/model/ListMessageGroupResult.h
+	include/alibabacloud/live/model/ListMessageGroupUserRequest.h
+	include/alibabacloud/live/model/ListMessageGroupUserResult.h
 	include/alibabacloud/live/model/ListPlaylistRequest.h
 	include/alibabacloud/live/model/ListPlaylistResult.h
 	include/alibabacloud/live/model/ListPlaylistItemsRequest.h
@@ -457,6 +485,10 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ResumeLiveStreamResult.h
 	include/alibabacloud/live/model/RollbackLiveStagingConfigRequest.h
 	include/alibabacloud/live/model/RollbackLiveStagingConfigResult.h
+	include/alibabacloud/live/model/SendMessageToGroupRequest.h
+	include/alibabacloud/live/model/SendMessageToGroupResult.h
+	include/alibabacloud/live/model/SendMessageToGroupUsersRequest.h
+	include/alibabacloud/live/model/SendMessageToGroupUsersResult.h
 	include/alibabacloud/live/model/SendRoomNotificationRequest.h
 	include/alibabacloud/live/model/SendRoomNotificationResult.h
 	include/alibabacloud/live/model/SendRoomUserNotificationRequest.h
@@ -469,10 +501,10 @@ set(live_public_header_model
 	include/alibabacloud/live/model/SetCasterSceneConfigResult.h
 	include/alibabacloud/live/model/SetCasterSyncGroupRequest.h
 	include/alibabacloud/live/model/SetCasterSyncGroupResult.h
+	include/alibabacloud/live/model/SetCasterTimedEventRequest.h
+	include/alibabacloud/live/model/SetCasterTimedEventResult.h
 	include/alibabacloud/live/model/SetLiveDomainCertificateRequest.h
 	include/alibabacloud/live/model/SetLiveDomainCertificateResult.h
-	include/alibabacloud/live/model/SetLiveDomainSpecialConfigRequest.h
-	include/alibabacloud/live/model/SetLiveDomainSpecialConfigResult.h
 	include/alibabacloud/live/model/SetLiveDomainStagingConfigRequest.h
 	include/alibabacloud/live/model/SetLiveDomainStagingConfigResult.h
 	include/alibabacloud/live/model/SetLiveEdgeTransferRequest.h
@@ -610,6 +642,8 @@ set(live_src
 	src/model/BatchSetLiveDomainConfigsResult.cc
 	src/model/CloseLiveShiftRequest.cc
 	src/model/CloseLiveShiftResult.cc
+	src/model/CloseMessageGroupRequest.cc
+	src/model/CloseMessageGroupResult.cc
 	src/model/CopyCasterRequest.cc
 	src/model/CopyCasterResult.cc
 	src/model/CopyCasterSceneConfigRequest.cc
@@ -624,6 +658,12 @@ set(live_src
 	src/model/CreateLiveStreamMonitorResult.cc
 	src/model/CreateLiveStreamRecordIndexFilesRequest.cc
 	src/model/CreateLiveStreamRecordIndexFilesResult.cc
+	src/model/CreateLiveTranscodeTemplateRequest.cc
+	src/model/CreateLiveTranscodeTemplateResult.cc
+	src/model/CreateMessageAppRequest.cc
+	src/model/CreateMessageAppResult.cc
+	src/model/CreateMessageGroupRequest.cc
+	src/model/CreateMessageGroupResult.cc
 	src/model/CreateMixStreamRequest.cc
 	src/model/CreateMixStreamResult.cc
 	src/model/DeleteCasterRequest.cc
@@ -690,6 +730,8 @@ set(live_src
 	src/model/DeleteLiveStreamWatermarkRuleResult.cc
 	src/model/DeleteLiveStreamsNotifyUrlConfigRequest.cc
 	src/model/DeleteLiveStreamsNotifyUrlConfigResult.cc
+	src/model/DeleteMessageAppRequest.cc
+	src/model/DeleteMessageAppResult.cc
 	src/model/DeleteMixStreamRequest.cc
 	src/model/DeleteMixStreamResult.cc
 	src/model/DeleteMultiRateConfigRequest.cc
@@ -792,8 +834,6 @@ set(live_src
 	src/model/DescribeLiveDomainRecordUsageDataResult.cc
 	src/model/DescribeLiveDomainSnapshotDataRequest.cc
 	src/model/DescribeLiveDomainSnapshotDataResult.cc
-	src/model/DescribeLiveDomainSpecialConfigRequest.cc
-	src/model/DescribeLiveDomainSpecialConfigResult.cc
 	src/model/DescribeLiveDomainStagingConfigRequest.cc
 	src/model/DescribeLiveDomainStagingConfigResult.cc
 	src/model/DescribeLiveDomainStreamTranscodeDataRequest.cc
@@ -810,6 +850,8 @@ set(live_src
 	src/model/DescribeLiveEdgeTransferResult.cc
 	src/model/DescribeLiveLazyPullStreamConfigRequest.cc
 	src/model/DescribeLiveLazyPullStreamConfigResult.cc
+	src/model/DescribeLiveProducerUsageDataRequest.cc
+	src/model/DescribeLiveProducerUsageDataResult.cc
 	src/model/DescribeLivePullStreamConfigRequest.cc
 	src/model/DescribeLivePullStreamConfigResult.cc
 	src/model/DescribeLiveRealtimeDeliveryAccRequest.cc
@@ -876,10 +918,10 @@ set(live_src
 	src/model/DescribeLiveUserBillPredictionResult.cc
 	src/model/DescribeLiveUserDomainsRequest.cc
 	src/model/DescribeLiveUserDomainsResult.cc
-	src/model/DescribeLiveUserQuotaRequest.cc
-	src/model/DescribeLiveUserQuotaResult.cc
 	src/model/DescribeLiveUserTagsRequest.cc
 	src/model/DescribeLiveUserTagsResult.cc
+	src/model/DescribeMeterLiveRtcDurationRequest.cc
+	src/model/DescribeMeterLiveRtcDurationResult.cc
 	src/model/DescribeMixStreamListRequest.cc
 	src/model/DescribeMixStreamListResult.cc
 	src/model/DescribeRoomKickoutUserListRequest.cc
@@ -926,6 +968,12 @@ set(live_src
 	src/model/GetCustomTemplateResult.cc
 	src/model/GetEditingJobInfoRequest.cc
 	src/model/GetEditingJobInfoResult.cc
+	src/model/GetMessageAppRequest.cc
+	src/model/GetMessageAppResult.cc
+	src/model/GetMessageGroupRequest.cc
+	src/model/GetMessageGroupResult.cc
+	src/model/GetMessageTokenRequest.cc
+	src/model/GetMessageTokenResult.cc
 	src/model/GetMultiRateConfigRequest.cc
 	src/model/GetMultiRateConfigResult.cc
 	src/model/GetMultiRateConfigListRequest.cc
@@ -934,12 +982,24 @@ set(live_src
 	src/model/HotLiveRtcStreamResult.cc
 	src/model/InitializeAutoShowListTaskRequest.cc
 	src/model/InitializeAutoShowListTaskResult.cc
+	src/model/JoinMessageGroupRequest.cc
+	src/model/JoinMessageGroupResult.cc
+	src/model/LeaveMessageGroupRequest.cc
+	src/model/LeaveMessageGroupResult.cc
 	src/model/ListLiveRealtimeLogDeliveryRequest.cc
 	src/model/ListLiveRealtimeLogDeliveryResult.cc
 	src/model/ListLiveRealtimeLogDeliveryDomainsRequest.cc
 	src/model/ListLiveRealtimeLogDeliveryDomainsResult.cc
 	src/model/ListLiveRealtimeLogDeliveryInfosRequest.cc
 	src/model/ListLiveRealtimeLogDeliveryInfosResult.cc
+	src/model/ListMessageRequest.cc
+	src/model/ListMessageResult.cc
+	src/model/ListMessageAppRequest.cc
+	src/model/ListMessageAppResult.cc
+	src/model/ListMessageGroupRequest.cc
+	src/model/ListMessageGroupResult.cc
+	src/model/ListMessageGroupUserRequest.cc
+	src/model/ListMessageGroupUserResult.cc
 	src/model/ListPlaylistRequest.cc
 	src/model/ListPlaylistResult.cc
 	src/model/ListPlaylistItemsRequest.cc
@@ -980,6 +1040,10 @@ set(live_src
 	src/model/ResumeLiveStreamResult.cc
 	src/model/RollbackLiveStagingConfigRequest.cc
 	src/model/RollbackLiveStagingConfigResult.cc
+	src/model/SendMessageToGroupRequest.cc
+	src/model/SendMessageToGroupResult.cc
+	src/model/SendMessageToGroupUsersRequest.cc
+	src/model/SendMessageToGroupUsersResult.cc
 	src/model/SendRoomNotificationRequest.cc
 	src/model/SendRoomNotificationResult.cc
 	src/model/SendRoomUserNotificationRequest.cc
@@ -992,10 +1056,10 @@ set(live_src
 	src/model/SetCasterSceneConfigResult.cc
 	src/model/SetCasterSyncGroupRequest.cc
 	src/model/SetCasterSyncGroupResult.cc
+	src/model/SetCasterTimedEventRequest.cc
+	src/model/SetCasterTimedEventResult.cc
 	src/model/SetLiveDomainCertificateRequest.cc
 	src/model/SetLiveDomainCertificateResult.cc
-	src/model/SetLiveDomainSpecialConfigRequest.cc
-	src/model/SetLiveDomainSpecialConfigResult.cc
 	src/model/SetLiveDomainStagingConfigRequest.cc
 	src/model/SetLiveDomainStagingConfigResult.cc
 	src/model/SetLiveEdgeTransferRequest.cc

@@ -45,10 +45,10 @@ void DescribeLiveRealtimeDeliveryAccResult::parse(const std::string &payload)
 		AccData realTimeDeliveryAccDataObject;
 		if(!valueRealTimeDeliveryAccDataAccData["TimeStamp"].isNull())
 			realTimeDeliveryAccDataObject.timeStamp = valueRealTimeDeliveryAccDataAccData["TimeStamp"].asString();
-		if(!valueRealTimeDeliveryAccDataAccData["SuccessNum"].isNull())
-			realTimeDeliveryAccDataObject.successNum = std::stoi(valueRealTimeDeliveryAccDataAccData["SuccessNum"].asString());
 		if(!valueRealTimeDeliveryAccDataAccData["FailedNum"].isNull())
 			realTimeDeliveryAccDataObject.failedNum = std::stoi(valueRealTimeDeliveryAccDataAccData["FailedNum"].asString());
+		if(!valueRealTimeDeliveryAccDataAccData["SuccessNum"].isNull())
+			realTimeDeliveryAccDataObject.successNum = std::stoi(valueRealTimeDeliveryAccDataAccData["SuccessNum"].asString());
 		realTimeDeliveryAccData_.push_back(realTimeDeliveryAccDataObject);
 	}
 

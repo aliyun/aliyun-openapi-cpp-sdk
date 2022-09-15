@@ -40,24 +40,24 @@ void StartPlaylistResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto streamInfoNode = value["StreamInfo"];
-	if(!streamInfoNode["DomainName"].isNull())
-		streamInfo_.domainName = streamInfoNode["DomainName"].asString();
 	if(!streamInfoNode["AppName"].isNull())
 		streamInfo_.appName = streamInfoNode["AppName"].asString();
+	if(!streamInfoNode["DomainName"].isNull())
+		streamInfo_.domainName = streamInfoNode["DomainName"].asString();
 	if(!streamInfoNode["StreamName"].isNull())
 		streamInfo_.streamName = streamInfoNode["StreamName"].asString();
 	auto allStreamsNode = streamInfoNode["Streams"]["Stream"];
 	for (auto streamInfoNodeStreamsStream : allStreamsNode)
 	{
 		StreamInfo::Stream streamObject;
-		if(!streamInfoNodeStreamsStream["PullFlvUrl"].isNull())
-			streamObject.pullFlvUrl = streamInfoNodeStreamsStream["PullFlvUrl"].asString();
-		if(!streamInfoNodeStreamsStream["PullRtmpUrl"].isNull())
-			streamObject.pullRtmpUrl = streamInfoNodeStreamsStream["PullRtmpUrl"].asString();
-		if(!streamInfoNodeStreamsStream["PullM3U8Url"].isNull())
-			streamObject.pullM3U8Url = streamInfoNodeStreamsStream["PullM3U8Url"].asString();
 		if(!streamInfoNodeStreamsStream["Quality"].isNull())
 			streamObject.quality = streamInfoNodeStreamsStream["Quality"].asString();
+		if(!streamInfoNodeStreamsStream["PullFlvUrl"].isNull())
+			streamObject.pullFlvUrl = streamInfoNodeStreamsStream["PullFlvUrl"].asString();
+		if(!streamInfoNodeStreamsStream["PullM3U8Url"].isNull())
+			streamObject.pullM3U8Url = streamInfoNodeStreamsStream["PullM3U8Url"].asString();
+		if(!streamInfoNodeStreamsStream["PullRtmpUrl"].isNull())
+			streamObject.pullRtmpUrl = streamInfoNodeStreamsStream["PullRtmpUrl"].asString();
 		streamInfo_.streams.push_back(streamObject);
 	}
 	if(!value["ProgramId"].isNull())

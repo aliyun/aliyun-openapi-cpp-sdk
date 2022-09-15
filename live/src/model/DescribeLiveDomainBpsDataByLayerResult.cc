@@ -43,12 +43,12 @@ void DescribeLiveDomainBpsDataByLayerResult::parse(const std::string &payload)
 	for (auto valueBpsDataIntervalDataModule : allBpsDataIntervalNode)
 	{
 		DataModule bpsDataIntervalObject;
-		if(!valueBpsDataIntervalDataModule["TimeStamp"].isNull())
-			bpsDataIntervalObject.timeStamp = valueBpsDataIntervalDataModule["TimeStamp"].asString();
 		if(!valueBpsDataIntervalDataModule["Value"].isNull())
 			bpsDataIntervalObject.value = valueBpsDataIntervalDataModule["Value"].asString();
 		if(!valueBpsDataIntervalDataModule["TrafficValue"].isNull())
 			bpsDataIntervalObject.trafficValue = valueBpsDataIntervalDataModule["TrafficValue"].asString();
+		if(!valueBpsDataIntervalDataModule["TimeStamp"].isNull())
+			bpsDataIntervalObject.timeStamp = valueBpsDataIntervalDataModule["TimeStamp"].asString();
 		bpsDataInterval_.push_back(bpsDataIntervalObject);
 	}
 	if(!value["DataInterval"].isNull())

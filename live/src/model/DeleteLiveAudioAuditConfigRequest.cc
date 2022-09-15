@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Live::Model::DeleteLiveAudioAuditConfigRequest;
 
-DeleteLiveAudioAuditConfigRequest::DeleteLiveAudioAuditConfigRequest() :
-	RpcServiceRequest("live", "2016-11-01", "DeleteLiveAudioAuditConfig")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteLiveAudioAuditConfigRequest::DeleteLiveAudioAuditConfigRequest()
+    : RpcServiceRequest("live", "2016-11-01", "DeleteLiveAudioAuditConfig") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteLiveAudioAuditConfigRequest::~DeleteLiveAudioAuditConfigRequest()
-{}
+DeleteLiveAudioAuditConfigRequest::~DeleteLiveAudioAuditConfigRequest() {}
 
-std::string DeleteLiveAudioAuditConfigRequest::getAppName()const
-{
-	return appName_;
+std::string DeleteLiveAudioAuditConfigRequest::getAppName() const {
+  return appName_;
 }
 
-void DeleteLiveAudioAuditConfigRequest::setAppName(const std::string& appName)
-{
-	appName_ = appName;
-	setParameter("AppName", appName);
+void DeleteLiveAudioAuditConfigRequest::setAppName(const std::string &appName) {
+  appName_ = appName;
+  setParameter(std::string("AppName"), appName);
 }
 
-std::string DeleteLiveAudioAuditConfigRequest::getStreamName()const
-{
-	return streamName_;
+std::string DeleteLiveAudioAuditConfigRequest::getStreamName() const {
+  return streamName_;
 }
 
-void DeleteLiveAudioAuditConfigRequest::setStreamName(const std::string& streamName)
-{
-	streamName_ = streamName;
-	setParameter("StreamName", streamName);
+void DeleteLiveAudioAuditConfigRequest::setStreamName(const std::string &streamName) {
+  streamName_ = streamName;
+  setParameter(std::string("StreamName"), streamName);
 }
 
-std::string DeleteLiveAudioAuditConfigRequest::getDomainName()const
-{
-	return domainName_;
+std::string DeleteLiveAudioAuditConfigRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DeleteLiveAudioAuditConfigRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DeleteLiveAudioAuditConfigRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-long DeleteLiveAudioAuditConfigRequest::getOwnerId()const
-{
-	return ownerId_;
+long DeleteLiveAudioAuditConfigRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DeleteLiveAudioAuditConfigRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DeleteLiveAudioAuditConfigRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

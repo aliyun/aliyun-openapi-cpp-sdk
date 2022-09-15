@@ -45,18 +45,18 @@ void DescribeLiveDomainPvUvDataResult::parse(const std::string &payload)
 		PvUvDataInfo pvUvDataInfosObject;
 		if(!valuePvUvDataInfosPvUvDataInfo["PV"].isNull())
 			pvUvDataInfosObject.pV = valuePvUvDataInfosPvUvDataInfo["PV"].asString();
-		if(!valuePvUvDataInfosPvUvDataInfo["UV"].isNull())
-			pvUvDataInfosObject.uV = valuePvUvDataInfosPvUvDataInfo["UV"].asString();
 		if(!valuePvUvDataInfosPvUvDataInfo["TimeStamp"].isNull())
 			pvUvDataInfosObject.timeStamp = valuePvUvDataInfosPvUvDataInfo["TimeStamp"].asString();
+		if(!valuePvUvDataInfosPvUvDataInfo["UV"].isNull())
+			pvUvDataInfosObject.uV = valuePvUvDataInfosPvUvDataInfo["UV"].asString();
 		pvUvDataInfos_.push_back(pvUvDataInfosObject);
 	}
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
 	if(!value["EndTime"].isNull())
 		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DataInterval"].isNull())
 		dataInterval_ = value["DataInterval"].asString();
 

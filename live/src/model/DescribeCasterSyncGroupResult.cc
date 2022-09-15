@@ -43,10 +43,10 @@ void DescribeCasterSyncGroupResult::parse(const std::string &payload)
 	for (auto valueSyncGroupsSyncGroup : allSyncGroupsNode)
 	{
 		SyncGroup syncGroupsObject;
-		if(!valueSyncGroupsSyncGroup["Mode"].isNull())
-			syncGroupsObject.mode = std::stoi(valueSyncGroupsSyncGroup["Mode"].asString());
 		if(!valueSyncGroupsSyncGroup["HostResourceId"].isNull())
 			syncGroupsObject.hostResourceId = valueSyncGroupsSyncGroup["HostResourceId"].asString();
+		if(!valueSyncGroupsSyncGroup["Mode"].isNull())
+			syncGroupsObject.mode = std::stoi(valueSyncGroupsSyncGroup["Mode"].asString());
 		auto allResourceIds = value["ResourceIds"]["ResourceId"];
 		for (auto value : allResourceIds)
 			syncGroupsObject.resourceIds.push_back(value.asString());

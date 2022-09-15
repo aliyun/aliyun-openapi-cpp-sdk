@@ -45,12 +45,12 @@ void DescribeDomainWithIntegrityResult::parse(const std::string &payload)
 		ContentItem contentObject;
 		if(!valueContentcontentItem["Name"].isNull())
 			contentObject.name = valueContentcontentItem["Name"].asString();
-		auto allColumns = value["Columns"]["columns"];
-		for (auto value : allColumns)
-			contentObject.columns.push_back(value.asString());
 		auto allPoints = value["Points"]["points"];
 		for (auto value : allPoints)
 			contentObject.points.push_back(value.asString());
+		auto allColumns = value["Columns"]["columns"];
+		for (auto value : allColumns)
+			contentObject.columns.push_back(value.asString());
 		content_.push_back(contentObject);
 	}
 

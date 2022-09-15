@@ -43,16 +43,16 @@ void DeleteSnapshotFilesResult::parse(const std::string &payload)
 	for (auto valueSnapshotDeleteInfoListSnapshotDeleteInfo : allSnapshotDeleteInfoListNode)
 	{
 		SnapshotDeleteInfo snapshotDeleteInfoListObject;
-		if(!valueSnapshotDeleteInfoListSnapshotDeleteInfo["CreateTimestamp"].isNull())
-			snapshotDeleteInfoListObject.createTimestamp = std::stol(valueSnapshotDeleteInfoListSnapshotDeleteInfo["CreateTimestamp"].asString());
 		if(!valueSnapshotDeleteInfoListSnapshotDeleteInfo["Message"].isNull())
 			snapshotDeleteInfoListObject.message = valueSnapshotDeleteInfoListSnapshotDeleteInfo["Message"].asString();
+		if(!valueSnapshotDeleteInfoListSnapshotDeleteInfo["CreateTimestamp"].isNull())
+			snapshotDeleteInfoListObject.createTimestamp = std::stol(valueSnapshotDeleteInfoListSnapshotDeleteInfo["CreateTimestamp"].asString());
 		snapshotDeleteInfoList_.push_back(snapshotDeleteInfoListObject);
 	}
-	if(!value["SuccessCount"].isNull())
-		successCount_ = std::stoi(value["SuccessCount"].asString());
 	if(!value["FailureCount"].isNull())
 		failureCount_ = std::stoi(value["FailureCount"].asString());
+	if(!value["SuccessCount"].isNull())
+		successCount_ = std::stoi(value["SuccessCount"].asString());
 
 }
 

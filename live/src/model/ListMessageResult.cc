@@ -1,0 +1,68 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/live/model/ListMessageResult.h>
+#include <json/json.h>
+
+using namespace AlibabaCloud::Live;
+using namespace AlibabaCloud::Live::Model;
+
+ListMessageResult::ListMessageResult() :
+	ServiceResult()
+{}
+
+ListMessageResult::ListMessageResult(const std::string &payload) :
+	ServiceResult()
+{
+	parse(payload);
+}
+
+ListMessageResult::~ListMessageResult()
+{}
+
+void ListMessageResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+	setRequestId(value["RequestId"].asString());
+	auto resultNode = value["Result"];
+	if(!resultNode["HasMore"].isNull())
+		result_.hasMore = resultNode["HasMore"].asString() == "true";
+	auto allMessageListNode = resultNode["MessageList"]["messageListItem"];
+	for (auto resultNodeMessageListmessageListItem : allMessageListNode)
+	{
+		Result::MessageListItem messageListItemObject;
+		if(!resultNodeMessageListmessageListItem["GroupId"].isNull())
+			messageListItemObject.groupId = resultNodeMessageListmessageListItem["GroupId"].asString();
+		if(!resultNodeMessageListmessageListItem["MessageId"].isNull())
+			messageListItemObject.messageId = resultNodeMessageListmessageListItem["MessageId"].asString();
+		if(!resultNodeMessageListmessageListItem["Type"].isNull())
+			messageListItemObject.type = std::stoi(resultNodeMessageListmessageListItem["Type"].asString());
+		if(!resultNodeMessageListmessageListItem["SenderId"].isNull())
+			messageListItemObject.senderId = resultNodeMessageListmessageListItem["SenderId"].asString();
+		if(!resultNodeMessageListmessageListItem["Data"].isNull())
+			messageListItemObject.data = resultNodeMessageListmessageListItem["Data"].asString();
+		result_.messageList.push_back(messageListItemObject);
+	}
+
+}
+
+ListMessageResult::Result ListMessageResult::getResult()const
+{
+	return result_;
+}
+

@@ -43,12 +43,20 @@ void DescribeLiveDomainLimitResult::parse(const std::string &payload)
 	for (auto valueLiveDomainLimitListLiveDomainLimit : allLiveDomainLimitListNode)
 	{
 		LiveDomainLimit liveDomainLimitListObject;
-		if(!valueLiveDomainLimitListLiveDomainLimit["DomainName"].isNull())
-			liveDomainLimitListObject.domainName = valueLiveDomainLimitListLiveDomainLimit["DomainName"].asString();
-		if(!valueLiveDomainLimitListLiveDomainLimit["LimitNum"].isNull())
-			liveDomainLimitListObject.limitNum = std::stoi(valueLiveDomainLimitListLiveDomainLimit["LimitNum"].asString());
 		if(!valueLiveDomainLimitListLiveDomainLimit["LimitTranscodeNum"].isNull())
 			liveDomainLimitListObject.limitTranscodeNum = std::stoi(valueLiveDomainLimitListLiveDomainLimit["LimitTranscodeNum"].asString());
+		if(!valueLiveDomainLimitListLiveDomainLimit["CurrentTranscodeNum"].isNull())
+			liveDomainLimitListObject.currentTranscodeNum = std::stoi(valueLiveDomainLimitListLiveDomainLimit["CurrentTranscodeNum"].asString());
+		if(!valueLiveDomainLimitListLiveDomainLimit["LimitNum"].isNull())
+			liveDomainLimitListObject.limitNum = std::stoi(valueLiveDomainLimitListLiveDomainLimit["LimitNum"].asString());
+		if(!valueLiveDomainLimitListLiveDomainLimit["LimitTransferNum"].isNull())
+			liveDomainLimitListObject.limitTransferNum = std::stoi(valueLiveDomainLimitListLiveDomainLimit["LimitTransferNum"].asString());
+		if(!valueLiveDomainLimitListLiveDomainLimit["CurrentNum"].isNull())
+			liveDomainLimitListObject.currentNum = std::stoi(valueLiveDomainLimitListLiveDomainLimit["CurrentNum"].asString());
+		if(!valueLiveDomainLimitListLiveDomainLimit["CurrentTransferNum"].isNull())
+			liveDomainLimitListObject.currentTransferNum = std::stoi(valueLiveDomainLimitListLiveDomainLimit["CurrentTransferNum"].asString());
+		if(!valueLiveDomainLimitListLiveDomainLimit["DomainName"].isNull())
+			liveDomainLimitListObject.domainName = valueLiveDomainLimitListLiveDomainLimit["DomainName"].asString();
 		liveDomainLimitList_.push_back(liveDomainLimitListObject);
 	}
 

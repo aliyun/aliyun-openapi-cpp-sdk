@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Live::Model::UpdateMixStreamRequest;
 
-UpdateMixStreamRequest::UpdateMixStreamRequest() :
-	RpcServiceRequest("live", "2016-11-01", "UpdateMixStream")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateMixStreamRequest::UpdateMixStreamRequest()
+    : RpcServiceRequest("live", "2016-11-01", "UpdateMixStream") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateMixStreamRequest::~UpdateMixStreamRequest()
-{}
+UpdateMixStreamRequest::~UpdateMixStreamRequest() {}
 
-std::string UpdateMixStreamRequest::getLayoutId()const
-{
-	return layoutId_;
+std::string UpdateMixStreamRequest::getLayoutId() const {
+  return layoutId_;
 }
 
-void UpdateMixStreamRequest::setLayoutId(const std::string& layoutId)
-{
-	layoutId_ = layoutId;
-	setParameter("LayoutId", layoutId);
+void UpdateMixStreamRequest::setLayoutId(const std::string &layoutId) {
+  layoutId_ = layoutId;
+  setParameter(std::string("LayoutId"), layoutId);
 }
 
-std::string UpdateMixStreamRequest::getMixStreamId()const
-{
-	return mixStreamId_;
+std::string UpdateMixStreamRequest::getMixStreamId() const {
+  return mixStreamId_;
 }
 
-void UpdateMixStreamRequest::setMixStreamId(const std::string& mixStreamId)
-{
-	mixStreamId_ = mixStreamId;
-	setParameter("MixStreamId", mixStreamId);
+void UpdateMixStreamRequest::setMixStreamId(const std::string &mixStreamId) {
+  mixStreamId_ = mixStreamId;
+  setParameter(std::string("MixStreamId"), mixStreamId);
 }
 
-std::string UpdateMixStreamRequest::getDomainName()const
-{
-	return domainName_;
+std::string UpdateMixStreamRequest::getDomainName() const {
+  return domainName_;
 }
 
-void UpdateMixStreamRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void UpdateMixStreamRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string UpdateMixStreamRequest::getInputStreamList()const
-{
-	return inputStreamList_;
+std::string UpdateMixStreamRequest::getInputStreamList() const {
+  return inputStreamList_;
 }
 
-void UpdateMixStreamRequest::setInputStreamList(const std::string& inputStreamList)
-{
-	inputStreamList_ = inputStreamList;
-	setParameter("InputStreamList", inputStreamList);
+void UpdateMixStreamRequest::setInputStreamList(const std::string &inputStreamList) {
+  inputStreamList_ = inputStreamList;
+  setParameter(std::string("InputStreamList"), inputStreamList);
 }
 
-long UpdateMixStreamRequest::getOwnerId()const
-{
-	return ownerId_;
+long UpdateMixStreamRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void UpdateMixStreamRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void UpdateMixStreamRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

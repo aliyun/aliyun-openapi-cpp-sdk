@@ -14,45 +14,43 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/DescribeLiveUserQuotaResult.h>
+#include <alibabacloud/live/model/GetMessageTokenResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-DescribeLiveUserQuotaResult::DescribeLiveUserQuotaResult() :
+GetMessageTokenResult::GetMessageTokenResult() :
 	ServiceResult()
 {}
 
-DescribeLiveUserQuotaResult::DescribeLiveUserQuotaResult(const std::string &payload) :
+GetMessageTokenResult::GetMessageTokenResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeLiveUserQuotaResult::~DescribeLiveUserQuotaResult()
+GetMessageTokenResult::~GetMessageTokenResult()
 {}
 
-void DescribeLiveUserQuotaResult::parse(const std::string &payload)
+void GetMessageTokenResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DomainQuota"].isNull())
-		domainQuota_ = std::stoi(value["DomainQuota"].asString());
-	if(!value["DomainUsedCount"].isNull())
-		domainUsedCount_ = value["DomainUsedCount"].asString();
+	auto resultNode = value["Result"];
+	if(!resultNode["AccessToken"].isNull())
+		result_.accessToken = resultNode["AccessToken"].asString();
+	if(!resultNode["RefreshToken"].isNull())
+		result_.refreshToken = resultNode["RefreshToken"].asString();
+	if(!resultNode["AccessTokenExpiredTime"].isNull())
+		result_.accessTokenExpiredTime = std::stol(resultNode["AccessTokenExpiredTime"].asString());
 
 }
 
-int DescribeLiveUserQuotaResult::getDomainQuota()const
+GetMessageTokenResult::Result GetMessageTokenResult::getResult()const
 {
-	return domainQuota_;
-}
-
-std::string DescribeLiveUserQuotaResult::getDomainUsedCount()const
-{
-	return domainUsedCount_;
+	return result_;
 }
 

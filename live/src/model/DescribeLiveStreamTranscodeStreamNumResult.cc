@@ -39,14 +39,14 @@ void DescribeLiveStreamTranscodeStreamNumResult::parse(const std::string &payloa
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Total"].isNull())
-		total_ = std::stol(value["Total"].asString());
-	if(!value["TranscodedNumber"].isNull())
-		transcodedNumber_ = std::stol(value["TranscodedNumber"].asString());
 	if(!value["UntranscodeNumber"].isNull())
 		untranscodeNumber_ = std::stol(value["UntranscodeNumber"].asString());
 	if(!value["LazyTranscodedNumber"].isNull())
 		lazyTranscodedNumber_ = std::stol(value["LazyTranscodedNumber"].asString());
+	if(!value["TranscodedNumber"].isNull())
+		transcodedNumber_ = std::stol(value["TranscodedNumber"].asString());
+	if(!value["Total"].isNull())
+		total_ = std::stol(value["Total"].asString());
 
 }
 

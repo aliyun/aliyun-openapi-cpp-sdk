@@ -45,46 +45,48 @@ void DescribeLiveStreamTranscodeInfoResult::parse(const std::string &payload)
 		DomainTranscodeInfo domainTranscodeListObject;
 		if(!valueDomainTranscodeListDomainTranscodeInfo["TranscodeApp"].isNull())
 			domainTranscodeListObject.transcodeApp = valueDomainTranscodeListDomainTranscodeInfo["TranscodeApp"].asString();
-		if(!valueDomainTranscodeListDomainTranscodeInfo["TranscodeName"].isNull())
-			domainTranscodeListObject.transcodeName = valueDomainTranscodeListDomainTranscodeInfo["TranscodeName"].asString();
 		if(!valueDomainTranscodeListDomainTranscodeInfo["TranscodeTemplate"].isNull())
 			domainTranscodeListObject.transcodeTemplate = valueDomainTranscodeListDomainTranscodeInfo["TranscodeTemplate"].asString();
+		if(!valueDomainTranscodeListDomainTranscodeInfo["IsLazy"].isNull())
+			domainTranscodeListObject.isLazy = valueDomainTranscodeListDomainTranscodeInfo["IsLazy"].asString() == "true";
+		if(!valueDomainTranscodeListDomainTranscodeInfo["TranscodeName"].isNull())
+			domainTranscodeListObject.transcodeName = valueDomainTranscodeListDomainTranscodeInfo["TranscodeName"].asString();
 		auto customTranscodeParametersNode = value["CustomTranscodeParameters"];
-		if(!customTranscodeParametersNode["RtsFlag"].isNull())
-			domainTranscodeListObject.customTranscodeParameters.rtsFlag = customTranscodeParametersNode["RtsFlag"].asString();
-		if(!customTranscodeParametersNode["Bframes"].isNull())
-			domainTranscodeListObject.customTranscodeParameters.bframes = customTranscodeParametersNode["Bframes"].asString();
-		if(!customTranscodeParametersNode["VideoBitrate"].isNull())
-			domainTranscodeListObject.customTranscodeParameters.videoBitrate = std::stoi(customTranscodeParametersNode["VideoBitrate"].asString());
-		if(!customTranscodeParametersNode["FPS"].isNull())
-			domainTranscodeListObject.customTranscodeParameters.fPS = std::stoi(customTranscodeParametersNode["FPS"].asString());
-		if(!customTranscodeParametersNode["Height"].isNull())
-			domainTranscodeListObject.customTranscodeParameters.height = std::stoi(customTranscodeParametersNode["Height"].asString());
-		if(!customTranscodeParametersNode["Width"].isNull())
-			domainTranscodeListObject.customTranscodeParameters.width = std::stoi(customTranscodeParametersNode["Width"].asString());
-		if(!customTranscodeParametersNode["TemplateType"].isNull())
-			domainTranscodeListObject.customTranscodeParameters.templateType = customTranscodeParametersNode["TemplateType"].asString();
 		if(!customTranscodeParametersNode["VideoProfile"].isNull())
 			domainTranscodeListObject.customTranscodeParameters.videoProfile = customTranscodeParametersNode["VideoProfile"].asString();
-		if(!customTranscodeParametersNode["Gop"].isNull())
-			domainTranscodeListObject.customTranscodeParameters.gop = customTranscodeParametersNode["Gop"].asString();
 		if(!customTranscodeParametersNode["AudioBitrate"].isNull())
 			domainTranscodeListObject.customTranscodeParameters.audioBitrate = std::stoi(customTranscodeParametersNode["AudioBitrate"].asString());
-		if(!customTranscodeParametersNode["AudioProfile"].isNull())
-			domainTranscodeListObject.customTranscodeParameters.audioProfile = customTranscodeParametersNode["AudioProfile"].asString();
-		if(!customTranscodeParametersNode["AudioCodec"].isNull())
-			domainTranscodeListObject.customTranscodeParameters.audioCodec = customTranscodeParametersNode["AudioCodec"].asString();
+		if(!customTranscodeParametersNode["RtsFlag"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.rtsFlag = customTranscodeParametersNode["RtsFlag"].asString();
+		if(!customTranscodeParametersNode["Height"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.height = std::stoi(customTranscodeParametersNode["Height"].asString());
+		if(!customTranscodeParametersNode["TemplateType"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.templateType = customTranscodeParametersNode["TemplateType"].asString();
+		if(!customTranscodeParametersNode["Bframes"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.bframes = customTranscodeParametersNode["Bframes"].asString();
 		if(!customTranscodeParametersNode["AudioRate"].isNull())
 			domainTranscodeListObject.customTranscodeParameters.audioRate = std::stoi(customTranscodeParametersNode["AudioRate"].asString());
+		if(!customTranscodeParametersNode["FPS"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.fPS = std::stoi(customTranscodeParametersNode["FPS"].asString());
+		if(!customTranscodeParametersNode["AudioCodec"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.audioCodec = customTranscodeParametersNode["AudioCodec"].asString();
+		if(!customTranscodeParametersNode["Gop"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.gop = customTranscodeParametersNode["Gop"].asString();
+		if(!customTranscodeParametersNode["VideoBitrate"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.videoBitrate = std::stoi(customTranscodeParametersNode["VideoBitrate"].asString());
+		if(!customTranscodeParametersNode["Width"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.width = std::stoi(customTranscodeParametersNode["Width"].asString());
 		if(!customTranscodeParametersNode["AudioChannelNum"].isNull())
 			domainTranscodeListObject.customTranscodeParameters.audioChannelNum = std::stoi(customTranscodeParametersNode["AudioChannelNum"].asString());
+		if(!customTranscodeParametersNode["AudioProfile"].isNull())
+			domainTranscodeListObject.customTranscodeParameters.audioProfile = customTranscodeParametersNode["AudioProfile"].asString();
 		auto encryptParametersNode = value["EncryptParameters"];
 		if(!encryptParametersNode["EncryptType"].isNull())
 			domainTranscodeListObject.encryptParameters.encryptType = encryptParametersNode["EncryptType"].asString();
-		if(!encryptParametersNode["KmsKeyExpireInterval"].isNull())
-			domainTranscodeListObject.encryptParameters.kmsKeyExpireInterval = encryptParametersNode["KmsKeyExpireInterval"].asString();
 		if(!encryptParametersNode["KmsKeyID"].isNull())
 			domainTranscodeListObject.encryptParameters.kmsKeyID = encryptParametersNode["KmsKeyID"].asString();
+		if(!encryptParametersNode["KmsKeyExpireInterval"].isNull())
+			domainTranscodeListObject.encryptParameters.kmsKeyExpireInterval = encryptParametersNode["KmsKeyExpireInterval"].asString();
 		domainTranscodeList_.push_back(domainTranscodeListObject);
 	}
 

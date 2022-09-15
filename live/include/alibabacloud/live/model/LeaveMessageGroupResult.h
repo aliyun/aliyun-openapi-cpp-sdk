@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERQUOTAREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERQUOTAREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_LEAVEMESSAGEGROUPRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_LEAVEMESSAGEGROUPRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/live/LiveExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveUserQuotaRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT LeaveMessageGroupResult : public ServiceResult
 			{
-
 			public:
-				DescribeLiveUserQuotaRequest();
-				~DescribeLiveUserQuotaRequest();
+				struct Result
+				{
+					bool success;
+				};
 
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
 
-            private:
-				long ownerId_;
-				std::string securityToken_;
+				LeaveMessageGroupResult();
+				explicit LeaveMessageGroupResult(const std::string &payload);
+				~LeaveMessageGroupResult();
+				Result getResult()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERQUOTAREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_LEAVEMESSAGEGROUPRESULT_H_

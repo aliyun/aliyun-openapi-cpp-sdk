@@ -14,31 +14,39 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/SetLiveDomainSpecialConfigResult.h>
+#include <alibabacloud/live/model/DeleteMessageAppResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-SetLiveDomainSpecialConfigResult::SetLiveDomainSpecialConfigResult() :
+DeleteMessageAppResult::DeleteMessageAppResult() :
 	ServiceResult()
 {}
 
-SetLiveDomainSpecialConfigResult::SetLiveDomainSpecialConfigResult(const std::string &payload) :
+DeleteMessageAppResult::DeleteMessageAppResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SetLiveDomainSpecialConfigResult::~SetLiveDomainSpecialConfigResult()
+DeleteMessageAppResult::~DeleteMessageAppResult()
 {}
 
-void SetLiveDomainSpecialConfigResult::parse(const std::string &payload)
+void DeleteMessageAppResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto resultNode = value["Result"];
+	if(!resultNode["Success"].isNull())
+		result_.success = resultNode["Success"].asString() == "true";
 
+}
+
+DeleteMessageAppResult::Result DeleteMessageAppResult::getResult()const
+{
+	return result_;
 }
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINSPECIALCONFIGRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINSPECIALCONFIGRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_SENDMESSAGETOGROUPUSERSRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_SENDMESSAGETOGROUPUSERSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,27 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainSpecialConfigResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT SendMessageToGroupUsersResult : public ServiceResult
 			{
 			public:
-				struct Config
+				struct Result
 				{
-					std::string value;
-					long configId;
-					std::string name;
+					std::string messageId;
 				};
 
 
-				DescribeLiveDomainSpecialConfigResult();
-				explicit DescribeLiveDomainSpecialConfigResult(const std::string &payload);
-				~DescribeLiveDomainSpecialConfigResult();
-				std::vector<Config> getConfigs()const;
+				SendMessageToGroupUsersResult();
+				explicit SendMessageToGroupUsersResult(const std::string &payload);
+				~SendMessageToGroupUsersResult();
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Config> configs_;
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINSPECIALCONFIGRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_SENDMESSAGETOGROUPUSERSRESULT_H_

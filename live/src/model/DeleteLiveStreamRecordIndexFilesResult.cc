@@ -43,16 +43,16 @@ void DeleteLiveStreamRecordIndexFilesResult::parse(const std::string &payload)
 	for (auto valueRecordDeleteInfoListRecordDeleteInfo : allRecordDeleteInfoListNode)
 	{
 		RecordDeleteInfo recordDeleteInfoListObject;
-		if(!valueRecordDeleteInfoListRecordDeleteInfo["RecordId"].isNull())
-			recordDeleteInfoListObject.recordId = valueRecordDeleteInfoListRecordDeleteInfo["RecordId"].asString();
 		if(!valueRecordDeleteInfoListRecordDeleteInfo["Message"].isNull())
 			recordDeleteInfoListObject.message = valueRecordDeleteInfoListRecordDeleteInfo["Message"].asString();
+		if(!valueRecordDeleteInfoListRecordDeleteInfo["RecordId"].isNull())
+			recordDeleteInfoListObject.recordId = valueRecordDeleteInfoListRecordDeleteInfo["RecordId"].asString();
 		recordDeleteInfoList_.push_back(recordDeleteInfoListObject);
 	}
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 

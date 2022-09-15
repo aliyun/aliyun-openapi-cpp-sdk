@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINSPECIALCONFIGREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINSPECIALCONFIGREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_GETMESSAGEAPPRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_GETMESSAGEAPPRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/live/LiveExport.h>
 
 namespace AlibabaCloud
@@ -28,27 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainSpecialConfigRequest : public RpcServiceRequest
+			class ALIBABACLOUD_LIVE_EXPORT GetMessageAppResult : public ServiceResult
 			{
-
 			public:
-				DescribeLiveDomainSpecialConfigRequest();
-				~DescribeLiveDomainSpecialConfigRequest();
+				struct Result
+				{
+					int status;
+					std::string extension;
+					std::string appConfig;
+					std::string appId;
+					long createTime;
+				};
 
-				std::string getDomainName()const;
-				void setDomainName(const std::string& domainName);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getName()const;
-				void setName(const std::string& name);
 
-            private:
-				std::string domainName_;
-				long ownerId_;
-				std::string name_;
+				GetMessageAppResult();
+				explicit GetMessageAppResult(const std::string &payload);
+				~GetMessageAppResult();
+				Result getResult()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINSPECIALCONFIGREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_GETMESSAGEAPPRESULT_H_

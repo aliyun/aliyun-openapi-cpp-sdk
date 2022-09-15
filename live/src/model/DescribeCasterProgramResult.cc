@@ -43,33 +43,33 @@ void DescribeCasterProgramResult::parse(const std::string &payload)
 	for (auto valueEpisodesEpisode : allEpisodesNode)
 	{
 		Episode episodesObject;
-		if(!valueEpisodesEpisode["EpisodeId"].isNull())
-			episodesObject.episodeId = valueEpisodesEpisode["EpisodeId"].asString();
-		if(!valueEpisodesEpisode["EpisodeType"].isNull())
-			episodesObject.episodeType = valueEpisodesEpisode["EpisodeType"].asString();
-		if(!valueEpisodesEpisode["EpisodeName"].isNull())
-			episodesObject.episodeName = valueEpisodesEpisode["EpisodeName"].asString();
-		if(!valueEpisodesEpisode["ResourceId"].isNull())
-			episodesObject.resourceId = valueEpisodesEpisode["ResourceId"].asString();
-		if(!valueEpisodesEpisode["StartTime"].isNull())
-			episodesObject.startTime = valueEpisodesEpisode["StartTime"].asString();
-		if(!valueEpisodesEpisode["EndTime"].isNull())
-			episodesObject.endTime = valueEpisodesEpisode["EndTime"].asString();
-		if(!valueEpisodesEpisode["SwitchType"].isNull())
-			episodesObject.switchType = valueEpisodesEpisode["SwitchType"].asString();
 		if(!valueEpisodesEpisode["Status"].isNull())
 			episodesObject.status = std::stoi(valueEpisodesEpisode["Status"].asString());
+		if(!valueEpisodesEpisode["EndTime"].isNull())
+			episodesObject.endTime = valueEpisodesEpisode["EndTime"].asString();
+		if(!valueEpisodesEpisode["StartTime"].isNull())
+			episodesObject.startTime = valueEpisodesEpisode["StartTime"].asString();
+		if(!valueEpisodesEpisode["EpisodeName"].isNull())
+			episodesObject.episodeName = valueEpisodesEpisode["EpisodeName"].asString();
+		if(!valueEpisodesEpisode["EpisodeType"].isNull())
+			episodesObject.episodeType = valueEpisodesEpisode["EpisodeType"].asString();
+		if(!valueEpisodesEpisode["EpisodeId"].isNull())
+			episodesObject.episodeId = valueEpisodesEpisode["EpisodeId"].asString();
+		if(!valueEpisodesEpisode["ResourceId"].isNull())
+			episodesObject.resourceId = valueEpisodesEpisode["ResourceId"].asString();
+		if(!valueEpisodesEpisode["SwitchType"].isNull())
+			episodesObject.switchType = valueEpisodesEpisode["SwitchType"].asString();
 		auto allComponentIds = value["ComponentIds"]["ComponentId"];
 		for (auto value : allComponentIds)
 			episodesObject.componentIds.push_back(value.asString());
 		episodes_.push_back(episodesObject);
 	}
-	if(!value["CasterId"].isNull())
-		casterId_ = value["CasterId"].asString();
 	if(!value["ProgramName"].isNull())
 		programName_ = value["ProgramName"].asString();
 	if(!value["ProgramEffect"].isNull())
 		programEffect_ = std::stoi(value["ProgramEffect"].asString());
+	if(!value["CasterId"].isNull())
+		casterId_ = value["CasterId"].asString();
 	if(!value["Total"].isNull())
 		total_ = std::stoi(value["Total"].asString());
 
@@ -90,13 +90,13 @@ std::vector<DescribeCasterProgramResult::Episode> DescribeCasterProgramResult::g
 	return episodes_;
 }
 
-std::string DescribeCasterProgramResult::getCasterId()const
-{
-	return casterId_;
-}
-
 std::string DescribeCasterProgramResult::getProgramName()const
 {
 	return programName_;
+}
+
+std::string DescribeCasterProgramResult::getCasterId()const
+{
+	return casterId_;
 }
 

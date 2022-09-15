@@ -40,34 +40,34 @@ void DescribeLiveStreamRecordIndexFileResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto recordIndexInfoNode = value["RecordIndexInfo"];
-	if(!recordIndexInfoNode["RecordId"].isNull())
-		recordIndexInfo_.recordId = recordIndexInfoNode["RecordId"].asString();
 	if(!recordIndexInfoNode["RecordUrl"].isNull())
 		recordIndexInfo_.recordUrl = recordIndexInfoNode["RecordUrl"].asString();
-	if(!recordIndexInfoNode["DomainName"].isNull())
-		recordIndexInfo_.domainName = recordIndexInfoNode["DomainName"].asString();
-	if(!recordIndexInfoNode["AppName"].isNull())
-		recordIndexInfo_.appName = recordIndexInfoNode["AppName"].asString();
 	if(!recordIndexInfoNode["StreamName"].isNull())
 		recordIndexInfo_.streamName = recordIndexInfoNode["StreamName"].asString();
-	if(!recordIndexInfoNode["OssBucket"].isNull())
-		recordIndexInfo_.ossBucket = recordIndexInfoNode["OssBucket"].asString();
-	if(!recordIndexInfoNode["OssEndpoint"].isNull())
-		recordIndexInfo_.ossEndpoint = recordIndexInfoNode["OssEndpoint"].asString();
-	if(!recordIndexInfoNode["OssObject"].isNull())
-		recordIndexInfo_.ossObject = recordIndexInfoNode["OssObject"].asString();
-	if(!recordIndexInfoNode["StartTime"].isNull())
-		recordIndexInfo_.startTime = recordIndexInfoNode["StartTime"].asString();
-	if(!recordIndexInfoNode["EndTime"].isNull())
-		recordIndexInfo_.endTime = recordIndexInfoNode["EndTime"].asString();
-	if(!recordIndexInfoNode["Duration"].isNull())
-		recordIndexInfo_.duration = std::stof(recordIndexInfoNode["Duration"].asString());
-	if(!recordIndexInfoNode["Height"].isNull())
-		recordIndexInfo_.height = std::stoi(recordIndexInfoNode["Height"].asString());
-	if(!recordIndexInfoNode["Width"].isNull())
-		recordIndexInfo_.width = std::stoi(recordIndexInfoNode["Width"].asString());
 	if(!recordIndexInfoNode["CreateTime"].isNull())
 		recordIndexInfo_.createTime = recordIndexInfoNode["CreateTime"].asString();
+	if(!recordIndexInfoNode["RecordId"].isNull())
+		recordIndexInfo_.recordId = recordIndexInfoNode["RecordId"].asString();
+	if(!recordIndexInfoNode["Height"].isNull())
+		recordIndexInfo_.height = std::stoi(recordIndexInfoNode["Height"].asString());
+	if(!recordIndexInfoNode["OssBucket"].isNull())
+		recordIndexInfo_.ossBucket = recordIndexInfoNode["OssBucket"].asString();
+	if(!recordIndexInfoNode["DomainName"].isNull())
+		recordIndexInfo_.domainName = recordIndexInfoNode["DomainName"].asString();
+	if(!recordIndexInfoNode["OssObject"].isNull())
+		recordIndexInfo_.ossObject = recordIndexInfoNode["OssObject"].asString();
+	if(!recordIndexInfoNode["EndTime"].isNull())
+		recordIndexInfo_.endTime = recordIndexInfoNode["EndTime"].asString();
+	if(!recordIndexInfoNode["AppName"].isNull())
+		recordIndexInfo_.appName = recordIndexInfoNode["AppName"].asString();
+	if(!recordIndexInfoNode["StartTime"].isNull())
+		recordIndexInfo_.startTime = recordIndexInfoNode["StartTime"].asString();
+	if(!recordIndexInfoNode["Width"].isNull())
+		recordIndexInfo_.width = std::stoi(recordIndexInfoNode["Width"].asString());
+	if(!recordIndexInfoNode["Duration"].isNull())
+		recordIndexInfo_.duration = std::stof(recordIndexInfoNode["Duration"].asString());
+	if(!recordIndexInfoNode["OssEndpoint"].isNull())
+		recordIndexInfo_.ossEndpoint = recordIndexInfoNode["OssEndpoint"].asString();
 
 }
 
