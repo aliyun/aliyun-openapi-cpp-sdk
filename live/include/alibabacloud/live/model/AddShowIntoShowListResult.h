@@ -37,11 +37,15 @@ namespace AlibabaCloud
 				AddShowIntoShowListResult();
 				explicit AddShowIntoShowListResult(const std::string &payload);
 				~AddShowIntoShowListResult();
+				std::string getSuccessfulShowIds()const;
+				std::string getFailedList()const;
 				std::string getShowId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string successfulShowIds_;
+				std::string failedList_;
 				std::string showId_;
 
 			};

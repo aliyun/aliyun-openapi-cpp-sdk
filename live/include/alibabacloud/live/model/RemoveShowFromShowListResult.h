@@ -37,11 +37,15 @@ namespace AlibabaCloud
 				RemoveShowFromShowListResult();
 				explicit RemoveShowFromShowListResult(const std::string &payload);
 				~RemoveShowFromShowListResult();
+				std::string getSuccessfulShowIds()const;
+				std::string getFailedList()const;
 				std::string getShowId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string successfulShowIds_;
+				std::string failedList_;
 				std::string showId_;
 
 			};

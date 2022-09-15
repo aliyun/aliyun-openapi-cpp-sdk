@@ -30,6 +30,10 @@ class ALIBABACLOUD_LIVE_EXPORT RemoveShowFromShowListRequest : public RpcService
 public:
 	RemoveShowFromShowListRequest();
 	~RemoveShowFromShowListRequest();
+	bool getIsBatchMode() const;
+	void setIsBatchMode(bool isBatchMode);
+	std::vector<std::string> getShowIdList() const;
+	void setShowIdList(const std::vector<std::string> &showIdList);
 	std::string getCasterId() const;
 	void setCasterId(const std::string &casterId);
 	long getOwnerId() const;
@@ -38,6 +42,8 @@ public:
 	void setShowId(const std::string &showId);
 
 private:
+	bool isBatchMode_;
+	std::vector<std::string> showIdList_;
 	std::string casterId_;
 	long ownerId_;
 	std::string showId_;

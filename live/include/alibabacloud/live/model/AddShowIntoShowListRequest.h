@@ -28,10 +28,23 @@ namespace Live {
 namespace Model {
 class ALIBABACLOUD_LIVE_EXPORT AddShowIntoShowListRequest : public RpcServiceRequest {
 public:
+	struct ShowList {
+		std::string showName;
+		int repeatTimes;
+		std::string resourceType;
+		std::string resourceUrl;
+		int liveInputType;
+		long duration;
+		std::string resourceId;
+	};
 	AddShowIntoShowListRequest();
 	~AddShowIntoShowListRequest();
+	std::vector<ShowList> getShowList() const;
+	void setShowList(const std::vector<ShowList> &showList);
 	int getLiveInputType() const;
 	void setLiveInputType(int liveInputType);
+	bool getIsBatchMode() const;
+	void setIsBatchMode(bool isBatchMode);
 	long getDuration() const;
 	void setDuration(long duration);
 	int getRepeatTimes() const;
@@ -52,7 +65,9 @@ public:
 	void setSpot(int spot);
 
 private:
+	std::vector<ShowList> showList_;
 	int liveInputType_;
+	bool isBatchMode_;
 	long duration_;
 	int repeatTimes_;
 	std::string showName_;

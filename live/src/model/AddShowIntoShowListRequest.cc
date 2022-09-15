@@ -25,6 +25,25 @@ AddShowIntoShowListRequest::AddShowIntoShowListRequest()
 
 AddShowIntoShowListRequest::~AddShowIntoShowListRequest() {}
 
+std::vector<AddShowIntoShowListRequest::ShowList> AddShowIntoShowListRequest::getShowList() const {
+  return showList_;
+}
+
+void AddShowIntoShowListRequest::setShowList(const std::vector<AddShowIntoShowListRequest::ShowList> &showList) {
+  showList_ = showList;
+  for(int dep1 = 0; dep1 != showList.size(); dep1++) {
+  auto showListObj = showList.at(dep1);
+  std::string showListObjStr = std::string("showList") + "." + std::to_string(dep1 + 1);
+    setParameter(showListObjStr + ".showName", showListObj.showName);
+    setParameter(showListObjStr + ".repeatTimes", std::to_string(showListObj.repeatTimes));
+    setParameter(showListObjStr + ".resourceType", showListObj.resourceType);
+    setParameter(showListObjStr + ".resourceUrl", showListObj.resourceUrl);
+    setParameter(showListObjStr + ".liveInputType", std::to_string(showListObj.liveInputType));
+    setParameter(showListObjStr + ".duration", std::to_string(showListObj.duration));
+    setParameter(showListObjStr + ".resourceId", showListObj.resourceId);
+  }
+}
+
 int AddShowIntoShowListRequest::getLiveInputType() const {
   return liveInputType_;
 }
@@ -32,6 +51,15 @@ int AddShowIntoShowListRequest::getLiveInputType() const {
 void AddShowIntoShowListRequest::setLiveInputType(int liveInputType) {
   liveInputType_ = liveInputType;
   setParameter(std::string("LiveInputType"), std::to_string(liveInputType));
+}
+
+bool AddShowIntoShowListRequest::getIsBatchMode() const {
+  return isBatchMode_;
+}
+
+void AddShowIntoShowListRequest::setIsBatchMode(bool isBatchMode) {
+  isBatchMode_ = isBatchMode;
+  setParameter(std::string("isBatchMode"), isBatchMode ? "true" : "false");
 }
 
 long AddShowIntoShowListRequest::getDuration() const {

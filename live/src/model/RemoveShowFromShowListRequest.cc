@@ -25,6 +25,23 @@ RemoveShowFromShowListRequest::RemoveShowFromShowListRequest()
 
 RemoveShowFromShowListRequest::~RemoveShowFromShowListRequest() {}
 
+bool RemoveShowFromShowListRequest::getIsBatchMode() const {
+  return isBatchMode_;
+}
+
+void RemoveShowFromShowListRequest::setIsBatchMode(bool isBatchMode) {
+  isBatchMode_ = isBatchMode;
+  setParameter(std::string("isBatchMode"), isBatchMode ? "true" : "false");
+}
+
+std::vector<std::string> RemoveShowFromShowListRequest::getShowIdList() const {
+  return showIdList_;
+}
+
+void RemoveShowFromShowListRequest::setShowIdList(const std::vector<std::string> &showIdList) {
+  showIdList_ = showIdList;
+}
+
 std::string RemoveShowFromShowListRequest::getCasterId() const {
   return casterId_;
 }
