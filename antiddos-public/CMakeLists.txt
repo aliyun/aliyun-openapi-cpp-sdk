@@ -46,7 +46,9 @@ set(antiddos-public_public_header_model
 	include/alibabacloud/antiddos-public/model/ModifyDdosStatusRequest.h
 	include/alibabacloud/antiddos-public/model/ModifyDdosStatusResult.h
 	include/alibabacloud/antiddos-public/model/ModifyDefenseThresholdRequest.h
-	include/alibabacloud/antiddos-public/model/ModifyDefenseThresholdResult.h )
+	include/alibabacloud/antiddos-public/model/ModifyDefenseThresholdResult.h
+	include/alibabacloud/antiddos-public/model/ModifyIpDefenseThresholdRequest.h
+	include/alibabacloud/antiddos-public/model/ModifyIpDefenseThresholdResult.h )
 
 set(antiddos-public_src 
 	src/Antiddos-publicClient.cc
@@ -75,7 +77,9 @@ set(antiddos-public_src
 	src/model/ModifyDdosStatusRequest.cc
 	src/model/ModifyDdosStatusResult.cc
 	src/model/ModifyDefenseThresholdRequest.cc
-	src/model/ModifyDefenseThresholdResult.cc )
+	src/model/ModifyDefenseThresholdResult.cc
+	src/model/ModifyIpDefenseThresholdRequest.cc
+	src/model/ModifyIpDefenseThresholdResult.cc )
 
 add_library(antiddos-public ${LIB_TYPE}
 	${antiddos-public_public_header}

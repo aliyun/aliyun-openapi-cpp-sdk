@@ -519,3 +519,39 @@ Antiddos_publicClient::ModifyDefenseThresholdOutcomeCallable Antiddos_publicClie
 	return task->get_future();
 }
 
+Antiddos_publicClient::ModifyIpDefenseThresholdOutcome Antiddos_publicClient::modifyIpDefenseThreshold(const ModifyIpDefenseThresholdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyIpDefenseThresholdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyIpDefenseThresholdOutcome(ModifyIpDefenseThresholdResult(outcome.result()));
+	else
+		return ModifyIpDefenseThresholdOutcome(outcome.error());
+}
+
+void Antiddos_publicClient::modifyIpDefenseThresholdAsync(const ModifyIpDefenseThresholdRequest& request, const ModifyIpDefenseThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyIpDefenseThreshold(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Antiddos_publicClient::ModifyIpDefenseThresholdOutcomeCallable Antiddos_publicClient::modifyIpDefenseThresholdCallable(const ModifyIpDefenseThresholdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyIpDefenseThresholdOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyIpDefenseThreshold(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+

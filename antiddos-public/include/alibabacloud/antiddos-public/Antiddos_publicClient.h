@@ -48,6 +48,8 @@
 #include "model/ModifyDdosStatusResult.h"
 #include "model/ModifyDefenseThresholdRequest.h"
 #include "model/ModifyDefenseThresholdResult.h"
+#include "model/ModifyIpDefenseThresholdRequest.h"
+#include "model/ModifyIpDefenseThresholdResult.h"
 
 
 namespace AlibabaCloud
@@ -96,6 +98,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDefenseThresholdResult> ModifyDefenseThresholdOutcome;
 			typedef std::future<ModifyDefenseThresholdOutcome> ModifyDefenseThresholdOutcomeCallable;
 			typedef std::function<void(const Antiddos_publicClient*, const Model::ModifyDefenseThresholdRequest&, const ModifyDefenseThresholdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDefenseThresholdAsyncHandler;
+			typedef Outcome<Error, Model::ModifyIpDefenseThresholdResult> ModifyIpDefenseThresholdOutcome;
+			typedef std::future<ModifyIpDefenseThresholdOutcome> ModifyIpDefenseThresholdOutcomeCallable;
+			typedef std::function<void(const Antiddos_publicClient*, const Model::ModifyIpDefenseThresholdRequest&, const ModifyIpDefenseThresholdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIpDefenseThresholdAsyncHandler;
 
 			Antiddos_publicClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			Antiddos_publicClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -140,6 +145,9 @@ namespace AlibabaCloud
 			ModifyDefenseThresholdOutcome modifyDefenseThreshold(const Model::ModifyDefenseThresholdRequest &request)const;
 			void modifyDefenseThresholdAsync(const Model::ModifyDefenseThresholdRequest& request, const ModifyDefenseThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDefenseThresholdOutcomeCallable modifyDefenseThresholdCallable(const Model::ModifyDefenseThresholdRequest& request) const;
+			ModifyIpDefenseThresholdOutcome modifyIpDefenseThreshold(const Model::ModifyIpDefenseThresholdRequest &request)const;
+			void modifyIpDefenseThresholdAsync(const Model::ModifyIpDefenseThresholdRequest& request, const ModifyIpDefenseThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyIpDefenseThresholdOutcomeCallable modifyIpDefenseThresholdCallable(const Model::ModifyIpDefenseThresholdRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
