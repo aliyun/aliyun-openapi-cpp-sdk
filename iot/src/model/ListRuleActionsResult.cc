@@ -53,6 +53,8 @@ void ListRuleActionsResult::parse(const std::string &payload)
 			ruleActionListObject.configuration = valueRuleActionListRuleActionInfo["Configuration"].asString();
 		if(!valueRuleActionListRuleActionInfo["ErrorActionFlag"].isNull())
 			ruleActionListObject.errorActionFlag = valueRuleActionListRuleActionInfo["ErrorActionFlag"].asString() == "true";
+		if(!valueRuleActionListRuleActionInfo["Status"].isNull())
+			ruleActionListObject.status = valueRuleActionListRuleActionInfo["Status"].asString();
 		ruleActionList_.push_back(ruleActionListObject);
 	}
 	if(!value["Success"].isNull())

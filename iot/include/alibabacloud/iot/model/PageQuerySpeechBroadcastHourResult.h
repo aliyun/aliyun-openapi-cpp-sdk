@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_LISTDESTINATIONRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_LISTDESTINATIONRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_PAGEQUERYSPEECHBROADCASTHOURRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_PAGEQUERYSPEECHBROADCASTHOURRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT ListDestinationResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT PageQuerySpeechBroadcastHourResult : public ServiceResult
 			{
 			public:
-				struct DestinationsItem
+				struct Data
 				{
-					std::string status;
-					std::string type;
-					std::string description;
-					std::string configuration;
-					std::string utcCreated;
-					bool isFailover;
-					long destinationId;
-					std::string name;
+					struct Data1
+					{
+						std::string msg;
+						std::string shareTaskCode;
+						std::string speechs;
+						long startTime;
+						int code;
+						std::string productKey;
+						std::string deviceName;
+						std::string speechId;
+					};
+					int pageId;
+					std::vector<Data1> resultData;
+					int pageSize;
+					int total;
+					std::string pageToken;
 				};
 
 
-				ListDestinationResult();
-				explicit ListDestinationResult(const std::string &payload);
-				~ListDestinationResult();
-				int getPageSize()const;
-				int getTotal()const;
-				std::vector<DestinationsItem> getDestinations()const;
-				int getPage()const;
+				PageQuerySpeechBroadcastHourResult();
+				explicit PageQuerySpeechBroadcastHourResult(const std::string &payload);
+				~PageQuerySpeechBroadcastHourResult();
+				Data getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -59,10 +64,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
-				int total_;
-				std::vector<DestinationsItem> destinations_;
-				int page_;
+				Data data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -71,4 +73,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_LISTDESTINATIONRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_PAGEQUERYSPEECHBROADCASTHOURRESULT_H_

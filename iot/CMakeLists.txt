@@ -129,6 +129,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/ConfirmOTATaskResult.h
 	include/alibabacloud/iot/model/CopyThingModelRequest.h
 	include/alibabacloud/iot/model/CopyThingModelResult.h
+	include/alibabacloud/iot/model/CountSpeechBroadcastHourRequest.h
+	include/alibabacloud/iot/model/CountSpeechBroadcastHourResult.h
 	include/alibabacloud/iot/model/CreateConsumerGroupRequest.h
 	include/alibabacloud/iot/model/CreateConsumerGroupResult.h
 	include/alibabacloud/iot/model/CreateConsumerGroupSubscribeRelationRequest.h
@@ -447,6 +449,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/PackageSoundCodeLabelBatchAudioResult.h
 	include/alibabacloud/iot/model/PageQuerySharedSpeechOpenRequest.h
 	include/alibabacloud/iot/model/PageQuerySharedSpeechOpenResult.h
+	include/alibabacloud/iot/model/PageQuerySpeechBroadcastHourRequest.h
+	include/alibabacloud/iot/model/PageQuerySpeechBroadcastHourResult.h
 	include/alibabacloud/iot/model/PrintByTemplateRequest.h
 	include/alibabacloud/iot/model/PrintByTemplateResult.h
 	include/alibabacloud/iot/model/PubRequest.h
@@ -902,6 +906,8 @@ set(iot_src
 	src/model/ConfirmOTATaskResult.cc
 	src/model/CopyThingModelRequest.cc
 	src/model/CopyThingModelResult.cc
+	src/model/CountSpeechBroadcastHourRequest.cc
+	src/model/CountSpeechBroadcastHourResult.cc
 	src/model/CreateConsumerGroupRequest.cc
 	src/model/CreateConsumerGroupResult.cc
 	src/model/CreateConsumerGroupSubscribeRelationRequest.cc
@@ -1220,6 +1226,8 @@ set(iot_src
 	src/model/PackageSoundCodeLabelBatchAudioResult.cc
 	src/model/PageQuerySharedSpeechOpenRequest.cc
 	src/model/PageQuerySharedSpeechOpenResult.cc
+	src/model/PageQuerySpeechBroadcastHourRequest.cc
+	src/model/PageQuerySpeechBroadcastHourResult.cc
 	src/model/PrintByTemplateRequest.cc
 	src/model/PrintByTemplateResult.cc
 	src/model/PubRequest.cc

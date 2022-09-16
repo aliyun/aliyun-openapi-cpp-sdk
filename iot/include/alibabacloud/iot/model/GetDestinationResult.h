@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Destination
 				{
+					std::string status;
 					std::string type;
 					std::string configuration;
 					std::string utcCreated;

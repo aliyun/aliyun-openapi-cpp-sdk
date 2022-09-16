@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_LISTDESTINATIONRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_LISTDESTINATIONRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_COUNTSPEECHBROADCASTHOURRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_COUNTSPEECHBROADCASTHOURRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT ListDestinationResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT CountSpeechBroadcastHourResult : public ServiceResult
 			{
 			public:
-				struct DestinationsItem
-				{
-					std::string status;
-					std::string type;
-					std::string description;
-					std::string configuration;
-					std::string utcCreated;
-					bool isFailover;
-					long destinationId;
-					std::string name;
-				};
 
 
-				ListDestinationResult();
-				explicit ListDestinationResult(const std::string &payload);
-				~ListDestinationResult();
-				int getPageSize()const;
-				int getTotal()const;
-				std::vector<DestinationsItem> getDestinations()const;
-				int getPage()const;
+				CountSpeechBroadcastHourResult();
+				explicit CountSpeechBroadcastHourResult(const std::string &payload);
+				~CountSpeechBroadcastHourResult();
+				int getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -59,10 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int pageSize_;
-				int total_;
-				std::vector<DestinationsItem> destinations_;
-				int page_;
+				int data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -71,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_LISTDESTINATIONRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_COUNTSPEECHBROADCASTHOURRESULT_H_

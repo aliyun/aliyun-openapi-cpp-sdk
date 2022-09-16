@@ -130,6 +130,8 @@
 #include "model/ConfirmOTATaskResult.h"
 #include "model/CopyThingModelRequest.h"
 #include "model/CopyThingModelResult.h"
+#include "model/CountSpeechBroadcastHourRequest.h"
+#include "model/CountSpeechBroadcastHourResult.h"
 #include "model/CreateConsumerGroupRequest.h"
 #include "model/CreateConsumerGroupResult.h"
 #include "model/CreateConsumerGroupSubscribeRelationRequest.h"
@@ -448,6 +450,8 @@
 #include "model/PackageSoundCodeLabelBatchAudioResult.h"
 #include "model/PageQuerySharedSpeechOpenRequest.h"
 #include "model/PageQuerySharedSpeechOpenResult.h"
+#include "model/PageQuerySpeechBroadcastHourRequest.h"
+#include "model/PageQuerySpeechBroadcastHourResult.h"
 #include "model/PrintByTemplateRequest.h"
 #include "model/PrintByTemplateResult.h"
 #include "model/PubRequest.h"
@@ -963,6 +967,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CopyThingModelResult> CopyThingModelOutcome;
 			typedef std::future<CopyThingModelOutcome> CopyThingModelOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CopyThingModelRequest&, const CopyThingModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyThingModelAsyncHandler;
+			typedef Outcome<Error, Model::CountSpeechBroadcastHourResult> CountSpeechBroadcastHourOutcome;
+			typedef std::future<CountSpeechBroadcastHourOutcome> CountSpeechBroadcastHourOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CountSpeechBroadcastHourRequest&, const CountSpeechBroadcastHourOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CountSpeechBroadcastHourAsyncHandler;
 			typedef Outcome<Error, Model::CreateConsumerGroupResult> CreateConsumerGroupOutcome;
 			typedef std::future<CreateConsumerGroupOutcome> CreateConsumerGroupOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateConsumerGroupRequest&, const CreateConsumerGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerGroupAsyncHandler;
@@ -1440,6 +1447,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PageQuerySharedSpeechOpenResult> PageQuerySharedSpeechOpenOutcome;
 			typedef std::future<PageQuerySharedSpeechOpenOutcome> PageQuerySharedSpeechOpenOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::PageQuerySharedSpeechOpenRequest&, const PageQuerySharedSpeechOpenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PageQuerySharedSpeechOpenAsyncHandler;
+			typedef Outcome<Error, Model::PageQuerySpeechBroadcastHourResult> PageQuerySpeechBroadcastHourOutcome;
+			typedef std::future<PageQuerySpeechBroadcastHourOutcome> PageQuerySpeechBroadcastHourOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::PageQuerySpeechBroadcastHourRequest&, const PageQuerySpeechBroadcastHourOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PageQuerySpeechBroadcastHourAsyncHandler;
 			typedef Outcome<Error, Model::PrintByTemplateResult> PrintByTemplateOutcome;
 			typedef std::future<PrintByTemplateOutcome> PrintByTemplateOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::PrintByTemplateRequest&, const PrintByTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PrintByTemplateAsyncHandler;
@@ -2123,6 +2133,9 @@ namespace AlibabaCloud
 			CopyThingModelOutcome copyThingModel(const Model::CopyThingModelRequest &request)const;
 			void copyThingModelAsync(const Model::CopyThingModelRequest& request, const CopyThingModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CopyThingModelOutcomeCallable copyThingModelCallable(const Model::CopyThingModelRequest& request) const;
+			CountSpeechBroadcastHourOutcome countSpeechBroadcastHour(const Model::CountSpeechBroadcastHourRequest &request)const;
+			void countSpeechBroadcastHourAsync(const Model::CountSpeechBroadcastHourRequest& request, const CountSpeechBroadcastHourAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CountSpeechBroadcastHourOutcomeCallable countSpeechBroadcastHourCallable(const Model::CountSpeechBroadcastHourRequest& request) const;
 			CreateConsumerGroupOutcome createConsumerGroup(const Model::CreateConsumerGroupRequest &request)const;
 			void createConsumerGroupAsync(const Model::CreateConsumerGroupRequest& request, const CreateConsumerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateConsumerGroupOutcomeCallable createConsumerGroupCallable(const Model::CreateConsumerGroupRequest& request) const;
@@ -2600,6 +2613,9 @@ namespace AlibabaCloud
 			PageQuerySharedSpeechOpenOutcome pageQuerySharedSpeechOpen(const Model::PageQuerySharedSpeechOpenRequest &request)const;
 			void pageQuerySharedSpeechOpenAsync(const Model::PageQuerySharedSpeechOpenRequest& request, const PageQuerySharedSpeechOpenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PageQuerySharedSpeechOpenOutcomeCallable pageQuerySharedSpeechOpenCallable(const Model::PageQuerySharedSpeechOpenRequest& request) const;
+			PageQuerySpeechBroadcastHourOutcome pageQuerySpeechBroadcastHour(const Model::PageQuerySpeechBroadcastHourRequest &request)const;
+			void pageQuerySpeechBroadcastHourAsync(const Model::PageQuerySpeechBroadcastHourRequest& request, const PageQuerySpeechBroadcastHourAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PageQuerySpeechBroadcastHourOutcomeCallable pageQuerySpeechBroadcastHourCallable(const Model::PageQuerySpeechBroadcastHourRequest& request) const;
 			PrintByTemplateOutcome printByTemplate(const Model::PrintByTemplateRequest &request)const;
 			void printByTemplateAsync(const Model::PrintByTemplateRequest& request, const PrintByTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PrintByTemplateOutcomeCallable printByTemplateCallable(const Model::PrintByTemplateRequest& request) const;

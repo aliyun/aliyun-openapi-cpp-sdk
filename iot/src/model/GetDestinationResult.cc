@@ -52,6 +52,8 @@ void GetDestinationResult::parse(const std::string &payload)
 		destination_.isFailover = destinationNode["IsFailover"].asString() == "true";
 	if(!destinationNode["UtcCreated"].isNull())
 		destination_.utcCreated = destinationNode["UtcCreated"].asString();
+	if(!destinationNode["Status"].isNull())
+		destination_.status = destinationNode["Status"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

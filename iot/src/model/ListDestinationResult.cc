@@ -57,6 +57,8 @@ void ListDestinationResult::parse(const std::string &payload)
 			destinationsObject.utcCreated = valueDestinationsdestinationsItem["UtcCreated"].asString();
 		if(!valueDestinationsdestinationsItem["Description"].isNull())
 			destinationsObject.description = valueDestinationsdestinationsItem["Description"].asString();
+		if(!valueDestinationsdestinationsItem["Status"].isNull())
+			destinationsObject.status = valueDestinationsdestinationsItem["Status"].asString();
 		destinations_.push_back(destinationsObject);
 	}
 	if(!value["Success"].isNull())

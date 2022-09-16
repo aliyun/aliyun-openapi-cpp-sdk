@@ -1995,6 +1995,42 @@ IotClient::CopyThingModelOutcomeCallable IotClient::copyThingModelCallable(const
 	return task->get_future();
 }
 
+IotClient::CountSpeechBroadcastHourOutcome IotClient::countSpeechBroadcastHour(const CountSpeechBroadcastHourRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CountSpeechBroadcastHourOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CountSpeechBroadcastHourOutcome(CountSpeechBroadcastHourResult(outcome.result()));
+	else
+		return CountSpeechBroadcastHourOutcome(outcome.error());
+}
+
+void IotClient::countSpeechBroadcastHourAsync(const CountSpeechBroadcastHourRequest& request, const CountSpeechBroadcastHourAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, countSpeechBroadcastHour(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CountSpeechBroadcastHourOutcomeCallable IotClient::countSpeechBroadcastHourCallable(const CountSpeechBroadcastHourRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CountSpeechBroadcastHourOutcome()>>(
+			[this, request]()
+			{
+			return this->countSpeechBroadcastHour(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::CreateConsumerGroupOutcome IotClient::createConsumerGroup(const CreateConsumerGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7713,6 +7749,42 @@ IotClient::PageQuerySharedSpeechOpenOutcomeCallable IotClient::pageQuerySharedSp
 			[this, request]()
 			{
 			return this->pageQuerySharedSpeechOpen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::PageQuerySpeechBroadcastHourOutcome IotClient::pageQuerySpeechBroadcastHour(const PageQuerySpeechBroadcastHourRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PageQuerySpeechBroadcastHourOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PageQuerySpeechBroadcastHourOutcome(PageQuerySpeechBroadcastHourResult(outcome.result()));
+	else
+		return PageQuerySpeechBroadcastHourOutcome(outcome.error());
+}
+
+void IotClient::pageQuerySpeechBroadcastHourAsync(const PageQuerySpeechBroadcastHourRequest& request, const PageQuerySpeechBroadcastHourAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, pageQuerySpeechBroadcastHour(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::PageQuerySpeechBroadcastHourOutcomeCallable IotClient::pageQuerySpeechBroadcastHourCallable(const PageQuerySpeechBroadcastHourRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PageQuerySpeechBroadcastHourOutcome()>>(
+			[this, request]()
+			{
+			return this->pageQuerySpeechBroadcastHour(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
