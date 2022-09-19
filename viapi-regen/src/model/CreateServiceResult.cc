@@ -1,0 +1,78 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/viapi-regen/model/CreateServiceResult.h>
+#include <json/json.h>
+
+using namespace AlibabaCloud::Viapi_regen;
+using namespace AlibabaCloud::Viapi_regen::Model;
+
+CreateServiceResult::CreateServiceResult() :
+	ServiceResult()
+{}
+
+CreateServiceResult::CreateServiceResult(const std::string &payload) :
+	ServiceResult()
+{
+	parse(payload);
+}
+
+CreateServiceResult::~CreateServiceResult()
+{}
+
+void CreateServiceResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+	setRequestId(value["RequestId"].asString());
+	auto dataNode = value["Data"];
+	if(!dataNode["Id"].isNull())
+		data_.id = std::stol(dataNode["Id"].asString());
+	if(!dataNode["GmtCreate"].isNull())
+		data_.gmtCreate = std::stol(dataNode["GmtCreate"].asString());
+	if(!dataNode["ServiceName"].isNull())
+		data_.serviceName = dataNode["ServiceName"].asString();
+	if(!dataNode["ServiceDescription"].isNull())
+		data_.serviceDescription = dataNode["ServiceDescription"].asString();
+	if(!dataNode["Status"].isNull())
+		data_.status = dataNode["Status"].asString();
+	if(!dataNode["AuthorizationType"].isNull())
+		data_.authorizationType = dataNode["AuthorizationType"].asString();
+	if(!dataNode["AuthorizedAccount"].isNull())
+		data_.authorizedAccount = dataNode["AuthorizedAccount"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+
+}
+
+std::string CreateServiceResult::getMessage()const
+{
+	return message_;
+}
+
+CreateServiceResult::Data CreateServiceResult::getData()const
+{
+	return data_;
+}
+
+std::string CreateServiceResult::getCode()const
+{
+	return code_;
+}
+
