@@ -81,8 +81,22 @@ void DescribeImageListWithBaselineNameResult::parse(const std::string &payload)
 			imageInfosObject.imageId = valueImageInfosImageInfosItem["ImageId"].asString();
 		if(!valueImageInfosImageInfosItem["RepoName"].isNull())
 			imageInfosObject.repoName = valueImageInfosImageInfosItem["RepoName"].asString();
+		if(!valueImageInfosImageInfosItem["ClusterId"].isNull())
+			imageInfosObject.clusterId = valueImageInfosImageInfosItem["ClusterId"].asString();
+		if(!valueImageInfosImageInfosItem["ClusterName"].isNull())
+			imageInfosObject.clusterName = valueImageInfosImageInfosItem["ClusterName"].asString();
 		if(!valueImageInfosImageInfosItem["RepoNamespace"].isNull())
 			imageInfosObject.repoNamespace = valueImageInfosImageInfosItem["RepoNamespace"].asString();
+		if(!valueImageInfosImageInfosItem["Pod"].isNull())
+			imageInfosObject.pod = valueImageInfosImageInfosItem["Pod"].asString();
+		if(!valueImageInfosImageInfosItem["Namespace"].isNull())
+			imageInfosObject._namespace = valueImageInfosImageInfosItem["Namespace"].asString();
+		if(!valueImageInfosImageInfosItem["ContainerId"].isNull())
+			imageInfosObject.containerId = valueImageInfosImageInfosItem["ContainerId"].asString();
+		if(!valueImageInfosImageInfosItem["Image"].isNull())
+			imageInfosObject.image = valueImageInfosImageInfosItem["Image"].asString();
+		if(!valueImageInfosImageInfosItem["BaselineType"].isNull())
+			imageInfosObject.baselineType = valueImageInfosImageInfosItem["BaselineType"].asString();
 		imageInfos_.push_back(imageInfosObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

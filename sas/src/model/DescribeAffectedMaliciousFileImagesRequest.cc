@@ -34,6 +34,24 @@ void DescribeAffectedMaliciousFileImagesRequest::setRepoId(const std::string &re
   setParameter(std::string("RepoId"), repoId);
 }
 
+std::string DescribeAffectedMaliciousFileImagesRequest::getPod() const {
+  return pod_;
+}
+
+void DescribeAffectedMaliciousFileImagesRequest::setPod(const std::string &pod) {
+  pod_ = pod;
+  setParameter(std::string("Pod"), pod);
+}
+
+std::string DescribeAffectedMaliciousFileImagesRequest::getClusterName() const {
+  return clusterName_;
+}
+
+void DescribeAffectedMaliciousFileImagesRequest::setClusterName(const std::string &clusterName) {
+  clusterName_ = clusterName;
+  setParameter(std::string("ClusterName"), clusterName);
+}
+
 std::string DescribeAffectedMaliciousFileImagesRequest::getRepoNamespace() const {
   return repoNamespace_;
 }
@@ -61,6 +79,14 @@ void DescribeAffectedMaliciousFileImagesRequest::setImageDigest(const std::strin
   setParameter(std::string("ImageDigest"), imageDigest);
 }
 
+std::vector<std::string> DescribeAffectedMaliciousFileImagesRequest::getScanRange() const {
+  return scanRange_;
+}
+
+void DescribeAffectedMaliciousFileImagesRequest::setScanRange(const std::vector<std::string> &scanRange) {
+  scanRange_ = scanRange;
+}
+
 std::string DescribeAffectedMaliciousFileImagesRequest::getPageSize() const {
   return pageSize_;
 }
@@ -86,6 +112,15 @@ std::string DescribeAffectedMaliciousFileImagesRequest::getImageTag() const {
 void DescribeAffectedMaliciousFileImagesRequest::setImageTag(const std::string &imageTag) {
   imageTag_ = imageTag;
   setParameter(std::string("ImageTag"), imageTag);
+}
+
+std::string DescribeAffectedMaliciousFileImagesRequest::getImage() const {
+  return image_;
+}
+
+void DescribeAffectedMaliciousFileImagesRequest::setImage(const std::string &image) {
+  image_ = image;
+  setParameter(std::string("Image"), image);
 }
 
 std::string DescribeAffectedMaliciousFileImagesRequest::getMaliciousMd5() const {
@@ -124,6 +159,15 @@ void DescribeAffectedMaliciousFileImagesRequest::setRepoName(const std::string &
   setParameter(std::string("RepoName"), repoName);
 }
 
+std::string DescribeAffectedMaliciousFileImagesRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void DescribeAffectedMaliciousFileImagesRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
+}
+
 std::string DescribeAffectedMaliciousFileImagesRequest::getRepoInstanceId() const {
   return repoInstanceId_;
 }
@@ -140,6 +184,24 @@ std::string DescribeAffectedMaliciousFileImagesRequest::getImageLayer() const {
 void DescribeAffectedMaliciousFileImagesRequest::setImageLayer(const std::string &imageLayer) {
   imageLayer_ = imageLayer;
   setParameter(std::string("ImageLayer"), imageLayer);
+}
+
+std::string DescribeAffectedMaliciousFileImagesRequest::getContainerId() const {
+  return containerId_;
+}
+
+void DescribeAffectedMaliciousFileImagesRequest::setContainerId(const std::string &containerId) {
+  containerId_ = containerId;
+  setParameter(std::string("ContainerId"), containerId);
+}
+
+std::string DescribeAffectedMaliciousFileImagesRequest::getLevels() const {
+  return levels_;
+}
+
+void DescribeAffectedMaliciousFileImagesRequest::setLevels(const std::string &levels) {
+  levels_ = levels;
+  setParameter(std::string("Levels"), levels);
 }
 
 std::string DescribeAffectedMaliciousFileImagesRequest::getRepoRegionId() const {

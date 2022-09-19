@@ -305,6 +305,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeVulDetailsResult.h
 	include/alibabacloud/sas/model/DescribeVulExportInfoRequest.h
 	include/alibabacloud/sas/model/DescribeVulExportInfoResult.h
+	include/alibabacloud/sas/model/DescribeVulFixStatisticsRequest.h
+	include/alibabacloud/sas/model/DescribeVulFixStatisticsResult.h
 	include/alibabacloud/sas/model/DescribeVulListRequest.h
 	include/alibabacloud/sas/model/DescribeVulListResult.h
 	include/alibabacloud/sas/model/DescribeVulWhitelistRequest.h
@@ -347,6 +349,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/InstallBackupClientResult.h
 	include/alibabacloud/sas/model/InstallCloudMonitorRequest.h
 	include/alibabacloud/sas/model/InstallCloudMonitorResult.h
+	include/alibabacloud/sas/model/ListAvailableHoneypotRequest.h
+	include/alibabacloud/sas/model/ListAvailableHoneypotResult.h
 	include/alibabacloud/sas/model/ListCheckInstanceResultRequest.h
 	include/alibabacloud/sas/model/ListCheckInstanceResultResult.h
 	include/alibabacloud/sas/model/ListCheckResultRequest.h
@@ -750,6 +754,8 @@ set(sas_src
 	src/model/DescribeVulDetailsResult.cc
 	src/model/DescribeVulExportInfoRequest.cc
 	src/model/DescribeVulExportInfoResult.cc
+	src/model/DescribeVulFixStatisticsRequest.cc
+	src/model/DescribeVulFixStatisticsResult.cc
 	src/model/DescribeVulListRequest.cc
 	src/model/DescribeVulListResult.cc
 	src/model/DescribeVulWhitelistRequest.cc
@@ -792,6 +798,8 @@ set(sas_src
 	src/model/InstallBackupClientResult.cc
 	src/model/InstallCloudMonitorRequest.cc
 	src/model/InstallCloudMonitorResult.cc
+	src/model/ListAvailableHoneypotRequest.cc
+	src/model/ListAvailableHoneypotResult.cc
 	src/model/ListCheckInstanceResultRequest.cc
 	src/model/ListCheckInstanceResultResult.cc
 	src/model/ListCheckResultRequest.cc

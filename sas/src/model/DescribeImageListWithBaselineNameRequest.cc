@@ -25,6 +25,24 @@ DescribeImageListWithBaselineNameRequest::DescribeImageListWithBaselineNameReque
 
 DescribeImageListWithBaselineNameRequest::~DescribeImageListWithBaselineNameRequest() {}
 
+std::string DescribeImageListWithBaselineNameRequest::getPod() const {
+  return pod_;
+}
+
+void DescribeImageListWithBaselineNameRequest::setPod(const std::string &pod) {
+  pod_ = pod;
+  setParameter(std::string("Pod"), pod);
+}
+
+std::string DescribeImageListWithBaselineNameRequest::getClusterName() const {
+  return clusterName_;
+}
+
+void DescribeImageListWithBaselineNameRequest::setClusterName(const std::string &clusterName) {
+  clusterName_ = clusterName;
+  setParameter(std::string("ClusterName"), clusterName);
+}
+
 std::string DescribeImageListWithBaselineNameRequest::getCriteria() const {
   return criteria_;
 }
@@ -61,6 +79,14 @@ void DescribeImageListWithBaselineNameRequest::setImageDigest(const std::string 
   setParameter(std::string("ImageDigest"), imageDigest);
 }
 
+std::vector<std::string> DescribeImageListWithBaselineNameRequest::getScanRange() const {
+  return scanRange_;
+}
+
+void DescribeImageListWithBaselineNameRequest::setScanRange(const std::vector<std::string> &scanRange) {
+  scanRange_ = scanRange;
+}
+
 int DescribeImageListWithBaselineNameRequest::getPageSize() const {
   return pageSize_;
 }
@@ -86,6 +112,15 @@ std::string DescribeImageListWithBaselineNameRequest::getLang() const {
 void DescribeImageListWithBaselineNameRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeImageListWithBaselineNameRequest::getImage() const {
+  return image_;
+}
+
+void DescribeImageListWithBaselineNameRequest::setImage(const std::string &image) {
+  image_ = image;
+  setParameter(std::string("Image"), image);
 }
 
 int DescribeImageListWithBaselineNameRequest::getCurrentPage() const {
@@ -115,6 +150,15 @@ void DescribeImageListWithBaselineNameRequest::setRepoName(const std::string &re
   setParameter(std::string("RepoName"), repoName);
 }
 
+std::string DescribeImageListWithBaselineNameRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void DescribeImageListWithBaselineNameRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
+}
+
 std::string DescribeImageListWithBaselineNameRequest::getBaselineNameKey() const {
   return baselineNameKey_;
 }
@@ -131,5 +175,14 @@ std::string DescribeImageListWithBaselineNameRequest::getRepoInstanceId() const 
 void DescribeImageListWithBaselineNameRequest::setRepoInstanceId(const std::string &repoInstanceId) {
   repoInstanceId_ = repoInstanceId;
   setParameter(std::string("RepoInstanceId"), repoInstanceId);
+}
+
+std::string DescribeImageListWithBaselineNameRequest::getContainerId() const {
+  return containerId_;
+}
+
+void DescribeImageListWithBaselineNameRequest::setContainerId(const std::string &containerId) {
+  containerId_ = containerId;
+  setParameter(std::string("ContainerId"), containerId);
 }
 

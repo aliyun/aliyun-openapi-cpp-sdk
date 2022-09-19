@@ -79,6 +79,18 @@ void DescribeAffectedMaliciousFileImagesResult::parse(const std::string &payload
 			affectedMaliciousFileImagesResponseObject.downloadUrl = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["DownloadUrl"].asString();
 		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["HighLight"].isNull())
 			affectedMaliciousFileImagesResponseObject.highLight = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["HighLight"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["ContainerId"].isNull())
+			affectedMaliciousFileImagesResponseObject.containerId = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["ContainerId"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Image"].isNull())
+			affectedMaliciousFileImagesResponseObject.image = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Image"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Pod"].isNull())
+			affectedMaliciousFileImagesResponseObject.pod = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Pod"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["ClusterId"].isNull())
+			affectedMaliciousFileImagesResponseObject.clusterId = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["ClusterId"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["ClusterName"].isNull())
+			affectedMaliciousFileImagesResponseObject.clusterName = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["ClusterName"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["MaliciousSource"].isNull())
+			affectedMaliciousFileImagesResponseObject.maliciousSource = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["MaliciousSource"].asString();
 		affectedMaliciousFileImagesResponse_.push_back(affectedMaliciousFileImagesResponseObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

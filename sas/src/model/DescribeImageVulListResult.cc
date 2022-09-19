@@ -81,6 +81,18 @@ void DescribeImageVulListResult::parse(const std::string &payload)
 			vulRecordsObject.level = valueVulRecordsVulRecord["Level"].asString();
 		if(!valueVulRecordsVulRecord["CanFix"].isNull())
 			vulRecordsObject.canFix = valueVulRecordsVulRecord["CanFix"].asString();
+		if(!valueVulRecordsVulRecord["ClusterId"].isNull())
+			vulRecordsObject.clusterId = valueVulRecordsVulRecord["ClusterId"].asString();
+		if(!valueVulRecordsVulRecord["ClusterName"].isNull())
+			vulRecordsObject.clusterName = valueVulRecordsVulRecord["ClusterName"].asString();
+		if(!valueVulRecordsVulRecord["Pod"].isNull())
+			vulRecordsObject.pod = valueVulRecordsVulRecord["Pod"].asString();
+		if(!valueVulRecordsVulRecord["Namespace"].isNull())
+			vulRecordsObject._namespace = valueVulRecordsVulRecord["Namespace"].asString();
+		if(!valueVulRecordsVulRecord["Image"].isNull())
+			vulRecordsObject.image = valueVulRecordsVulRecord["Image"].asString();
+		if(!valueVulRecordsVulRecord["ContainerId"].isNull())
+			vulRecordsObject.containerId = valueVulRecordsVulRecord["ContainerId"].asString();
 		auto extendContentJsonNode = value["ExtendContentJson"];
 		if(!extendContentJsonNode["OsRelease"].isNull())
 			vulRecordsObject.extendContentJson.osRelease = extendContentJsonNode["OsRelease"].asString();

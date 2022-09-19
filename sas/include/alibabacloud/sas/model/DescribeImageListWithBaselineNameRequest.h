@@ -30,6 +30,10 @@ class ALIBABACLOUD_SAS_EXPORT DescribeImageListWithBaselineNameRequest : public 
 public:
 	DescribeImageListWithBaselineNameRequest();
 	~DescribeImageListWithBaselineNameRequest();
+	std::string getPod() const;
+	void setPod(const std::string &pod);
+	std::string getClusterName() const;
+	void setClusterName(const std::string &clusterName);
 	std::string getCriteria() const;
 	void setCriteria(const std::string &criteria);
 	std::string getRepoNamespace() const;
@@ -38,36 +42,50 @@ public:
 	void setSourceIp(const std::string &sourceIp);
 	std::string getImageDigest() const;
 	void setImageDigest(const std::string &imageDigest);
+	std::vector<std::string> getScanRange() const;
+	void setScanRange(const std::vector<std::string> &scanRange);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getCriteriaType() const;
 	void setCriteriaType(const std::string &criteriaType);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getImage() const;
+	void setImage(const std::string &image);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getRepoName() const;
 	void setRepoName(const std::string &repoName);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
 	std::string getBaselineNameKey() const;
 	void setBaselineNameKey(const std::string &baselineNameKey);
 	std::string getRepoInstanceId() const;
 	void setRepoInstanceId(const std::string &repoInstanceId);
+	std::string getContainerId() const;
+	void setContainerId(const std::string &containerId);
 
 private:
+	std::string pod_;
+	std::string clusterName_;
 	std::string criteria_;
 	std::string repoNamespace_;
 	std::string sourceIp_;
 	std::string imageDigest_;
+	std::vector<std::string> scanRange_;
 	int pageSize_;
 	std::string criteriaType_;
 	std::string lang_;
+	std::string image_;
 	int currentPage_;
 	std::string clusterId_;
 	std::string repoName_;
+	std::string _namespace_;
 	std::string baselineNameKey_;
 	std::string repoInstanceId_;
+	std::string containerId_;
 };
 } // namespace Model
 } // namespace Sas

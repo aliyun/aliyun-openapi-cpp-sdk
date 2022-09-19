@@ -214,6 +214,14 @@ void DescribeImageGroupedVulListRequest::setImageDigest(const std::string &image
   setParameter(std::string("ImageDigest"), imageDigest);
 }
 
+std::vector<std::string> DescribeImageGroupedVulListRequest::getScanRange() const {
+  return scanRange_;
+}
+
+void DescribeImageGroupedVulListRequest::setScanRange(const std::vector<std::string> &scanRange) {
+  scanRange_ = scanRange;
+}
+
 int DescribeImageGroupedVulListRequest::getPageSize() const {
   return pageSize_;
 }

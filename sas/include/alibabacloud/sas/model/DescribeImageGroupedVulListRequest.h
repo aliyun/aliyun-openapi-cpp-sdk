@@ -72,6 +72,8 @@ public:
 	void setRepoNamespace(const std::string &repoNamespace);
 	std::string getImageDigest() const;
 	void setImageDigest(const std::string &imageDigest);
+	std::vector<std::string> getScanRange() const;
+	void setScanRange(const std::vector<std::string> &scanRange);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getLang() const;
@@ -119,6 +121,7 @@ private:
 	std::string remark_;
 	std::string repoNamespace_;
 	std::string imageDigest_;
+	std::vector<std::string> scanRange_;
 	int pageSize_;
 	std::string lang_;
 	long lastTsStart_;

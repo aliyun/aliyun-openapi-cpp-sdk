@@ -25,6 +25,15 @@ DescribeImageVulListRequest::DescribeImageVulListRequest()
 
 DescribeImageVulListRequest::~DescribeImageVulListRequest() {}
 
+std::string DescribeImageVulListRequest::getClusterName() const {
+  return clusterName_;
+}
+
+void DescribeImageVulListRequest::setClusterName(const std::string &clusterName) {
+  clusterName_ = clusterName;
+  setParameter(std::string("ClusterName"), clusterName);
+}
+
 std::string DescribeImageVulListRequest::getType() const {
   return type_;
 }
@@ -77,6 +86,15 @@ long DescribeImageVulListRequest::getModifyTsEnd() const {
 void DescribeImageVulListRequest::setModifyTsEnd(long modifyTsEnd) {
   modifyTsEnd_ = modifyTsEnd;
   setParameter(std::string("ModifyTsEnd"), std::to_string(modifyTsEnd));
+}
+
+std::string DescribeImageVulListRequest::getImage() const {
+  return image_;
+}
+
+void DescribeImageVulListRequest::setImage(const std::string &image) {
+  image_ = image;
+  setParameter(std::string("Image"), image);
 }
 
 std::string DescribeImageVulListRequest::getLevel() const {
@@ -151,6 +169,15 @@ void DescribeImageVulListRequest::setCreateTsEnd(long createTsEnd) {
   setParameter(std::string("CreateTsEnd"), std::to_string(createTsEnd));
 }
 
+std::string DescribeImageVulListRequest::getContainerId() const {
+  return containerId_;
+}
+
+void DescribeImageVulListRequest::setContainerId(const std::string &containerId) {
+  containerId_ = containerId;
+  setParameter(std::string("ContainerId"), containerId);
+}
+
 std::string DescribeImageVulListRequest::getNecessity() const {
   return necessity_;
 }
@@ -196,6 +223,15 @@ void DescribeImageVulListRequest::setTargetType(const std::string &targetType) {
   setParameter(std::string("TargetType"), targetType);
 }
 
+std::string DescribeImageVulListRequest::getPod() const {
+  return pod_;
+}
+
+void DescribeImageVulListRequest::setPod(const std::string &pod) {
+  pod_ = pod;
+  setParameter(std::string("Pod"), pod);
+}
+
 std::string DescribeImageVulListRequest::getCveId() const {
   return cveId_;
 }
@@ -239,6 +275,14 @@ std::string DescribeImageVulListRequest::getContainerFieldValue() const {
 void DescribeImageVulListRequest::setContainerFieldValue(const std::string &containerFieldValue) {
   containerFieldValue_ = containerFieldValue;
   setParameter(std::string("ContainerFieldValue"), containerFieldValue);
+}
+
+std::vector<std::string> DescribeImageVulListRequest::getScanRange() const {
+  return scanRange_;
+}
+
+void DescribeImageVulListRequest::setScanRange(const std::vector<std::string> &scanRange) {
+  scanRange_ = scanRange;
 }
 
 int DescribeImageVulListRequest::getPageSize() const {
@@ -320,6 +364,15 @@ std::string DescribeImageVulListRequest::getRepoName() const {
 void DescribeImageVulListRequest::setRepoName(const std::string &repoName) {
   repoName_ = repoName;
   setParameter(std::string("RepoName"), repoName);
+}
+
+std::string DescribeImageVulListRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void DescribeImageVulListRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
 }
 
 std::string DescribeImageVulListRequest::getRepoInstanceId() const {

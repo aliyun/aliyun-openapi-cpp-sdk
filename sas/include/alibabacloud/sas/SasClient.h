@@ -306,6 +306,8 @@
 #include "model/DescribeVulDetailsResult.h"
 #include "model/DescribeVulExportInfoRequest.h"
 #include "model/DescribeVulExportInfoResult.h"
+#include "model/DescribeVulFixStatisticsRequest.h"
+#include "model/DescribeVulFixStatisticsResult.h"
 #include "model/DescribeVulListRequest.h"
 #include "model/DescribeVulListResult.h"
 #include "model/DescribeVulWhitelistRequest.h"
@@ -348,6 +350,8 @@
 #include "model/InstallBackupClientResult.h"
 #include "model/InstallCloudMonitorRequest.h"
 #include "model/InstallCloudMonitorResult.h"
+#include "model/ListAvailableHoneypotRequest.h"
+#include "model/ListAvailableHoneypotResult.h"
 #include "model/ListCheckInstanceResultRequest.h"
 #include "model/ListCheckInstanceResultResult.h"
 #include "model/ListCheckResultRequest.h"
@@ -899,6 +903,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVulExportInfoResult> DescribeVulExportInfoOutcome;
 			typedef std::future<DescribeVulExportInfoOutcome> DescribeVulExportInfoOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeVulExportInfoRequest&, const DescribeVulExportInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulExportInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVulFixStatisticsResult> DescribeVulFixStatisticsOutcome;
+			typedef std::future<DescribeVulFixStatisticsOutcome> DescribeVulFixStatisticsOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeVulFixStatisticsRequest&, const DescribeVulFixStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulFixStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVulListResult> DescribeVulListOutcome;
 			typedef std::future<DescribeVulListOutcome> DescribeVulListOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeVulListRequest&, const DescribeVulListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulListAsyncHandler;
@@ -962,6 +969,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InstallCloudMonitorResult> InstallCloudMonitorOutcome;
 			typedef std::future<InstallCloudMonitorOutcome> InstallCloudMonitorOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::InstallCloudMonitorRequest&, const InstallCloudMonitorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallCloudMonitorAsyncHandler;
+			typedef Outcome<Error, Model::ListAvailableHoneypotResult> ListAvailableHoneypotOutcome;
+			typedef std::future<ListAvailableHoneypotOutcome> ListAvailableHoneypotOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::ListAvailableHoneypotRequest&, const ListAvailableHoneypotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAvailableHoneypotAsyncHandler;
 			typedef Outcome<Error, Model::ListCheckInstanceResultResult> ListCheckInstanceResultOutcome;
 			typedef std::future<ListCheckInstanceResultOutcome> ListCheckInstanceResultOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ListCheckInstanceResultRequest&, const ListCheckInstanceResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCheckInstanceResultAsyncHandler;
@@ -1567,6 +1577,9 @@ namespace AlibabaCloud
 			DescribeVulExportInfoOutcome describeVulExportInfo(const Model::DescribeVulExportInfoRequest &request)const;
 			void describeVulExportInfoAsync(const Model::DescribeVulExportInfoRequest& request, const DescribeVulExportInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVulExportInfoOutcomeCallable describeVulExportInfoCallable(const Model::DescribeVulExportInfoRequest& request) const;
+			DescribeVulFixStatisticsOutcome describeVulFixStatistics(const Model::DescribeVulFixStatisticsRequest &request)const;
+			void describeVulFixStatisticsAsync(const Model::DescribeVulFixStatisticsRequest& request, const DescribeVulFixStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVulFixStatisticsOutcomeCallable describeVulFixStatisticsCallable(const Model::DescribeVulFixStatisticsRequest& request) const;
 			DescribeVulListOutcome describeVulList(const Model::DescribeVulListRequest &request)const;
 			void describeVulListAsync(const Model::DescribeVulListRequest& request, const DescribeVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVulListOutcomeCallable describeVulListCallable(const Model::DescribeVulListRequest& request) const;
@@ -1630,6 +1643,9 @@ namespace AlibabaCloud
 			InstallCloudMonitorOutcome installCloudMonitor(const Model::InstallCloudMonitorRequest &request)const;
 			void installCloudMonitorAsync(const Model::InstallCloudMonitorRequest& request, const InstallCloudMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InstallCloudMonitorOutcomeCallable installCloudMonitorCallable(const Model::InstallCloudMonitorRequest& request) const;
+			ListAvailableHoneypotOutcome listAvailableHoneypot(const Model::ListAvailableHoneypotRequest &request)const;
+			void listAvailableHoneypotAsync(const Model::ListAvailableHoneypotRequest& request, const ListAvailableHoneypotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAvailableHoneypotOutcomeCallable listAvailableHoneypotCallable(const Model::ListAvailableHoneypotRequest& request) const;
 			ListCheckInstanceResultOutcome listCheckInstanceResult(const Model::ListCheckInstanceResultRequest &request)const;
 			void listCheckInstanceResultAsync(const Model::ListCheckInstanceResultRequest& request, const ListCheckInstanceResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCheckInstanceResultOutcomeCallable listCheckInstanceResultCallable(const Model::ListCheckInstanceResultRequest& request) const;

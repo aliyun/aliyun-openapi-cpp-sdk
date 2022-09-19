@@ -43,6 +43,14 @@ void DescribeImageBaselineCheckSummaryRequest::setSourceIp(const std::string &so
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::vector<std::string> DescribeImageBaselineCheckSummaryRequest::getScanRange() const {
+  return scanRange_;
+}
+
+void DescribeImageBaselineCheckSummaryRequest::setScanRange(const std::vector<std::string> &scanRange) {
+  scanRange_ = scanRange;
+}
+
 int DescribeImageBaselineCheckSummaryRequest::getPageSize() const {
   return pageSize_;
 }

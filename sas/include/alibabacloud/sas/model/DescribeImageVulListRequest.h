@@ -30,6 +30,8 @@ class ALIBABACLOUD_SAS_EXPORT DescribeImageVulListRequest : public RpcServiceReq
 public:
 	DescribeImageVulListRequest();
 	~DescribeImageVulListRequest();
+	std::string getClusterName() const;
+	void setClusterName(const std::string &clusterName);
 	std::string getType() const;
 	void setType(const std::string &type);
 	long getCreateTsStart() const;
@@ -42,6 +44,8 @@ public:
 	void setTag(const std::string &tag);
 	long getModifyTsEnd() const;
 	void setModifyTsEnd(long modifyTsEnd);
+	std::string getImage() const;
+	void setImage(const std::string &image);
 	std::string getLevel() const;
 	void setLevel(const std::string &level);
 	std::string getResource() const;
@@ -58,6 +62,8 @@ public:
 	void setIds(const std::string &ids);
 	long getCreateTsEnd() const;
 	void setCreateTsEnd(long createTsEnd);
+	std::string getContainerId() const;
+	void setContainerId(const std::string &containerId);
 	std::string getNecessity() const;
 	void setNecessity(const std::string &necessity);
 	std::string getUuids() const;
@@ -68,6 +74,8 @@ public:
 	void setStatusList(const std::string &statusList);
 	std::string getTargetType() const;
 	void setTargetType(const std::string &targetType);
+	std::string getPod() const;
+	void setPod(const std::string &pod);
 	std::string getCveId() const;
 	void setCveId(const std::string &cveId);
 	std::string getRemark() const;
@@ -78,6 +86,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getContainerFieldValue() const;
 	void setContainerFieldValue(const std::string &containerFieldValue);
+	std::vector<std::string> getScanRange() const;
+	void setScanRange(const std::vector<std::string> &scanRange);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getDigest() const;
@@ -96,18 +106,22 @@ public:
 	void setBatchName(const std::string &batchName);
 	std::string getRepoName() const;
 	void setRepoName(const std::string &repoName);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
 	std::string getRepoInstanceId() const;
 	void setRepoInstanceId(const std::string &repoInstanceId);
 	std::string getRepoRegionId() const;
 	void setRepoRegionId(const std::string &repoRegionId);
 
 private:
+	std::string clusterName_;
 	std::string type_;
 	long createTsStart_;
 	std::string containerFieldName_;
 	std::string sourceIp_;
 	std::string tag_;
 	long modifyTsEnd_;
+	std::string image_;
 	std::string level_;
 	std::string resource_;
 	std::string groupId_;
@@ -116,16 +130,19 @@ private:
 	std::string name_;
 	std::string ids_;
 	long createTsEnd_;
+	std::string containerId_;
 	std::string necessity_;
 	std::string uuids_;
 	std::string repoId_;
 	std::string statusList_;
 	std::string targetType_;
+	std::string pod_;
 	std::string cveId_;
 	std::string remark_;
 	std::string repoNamespace_;
 	std::string regionId_;
 	std::string containerFieldValue_;
+	std::vector<std::string> scanRange_;
 	int pageSize_;
 	std::string digest_;
 	long modifyTsStart_;
@@ -135,6 +152,7 @@ private:
 	std::string clusterId_;
 	std::string batchName_;
 	std::string repoName_;
+	std::string _namespace_;
 	std::string repoInstanceId_;
 	std::string repoRegionId_;
 };

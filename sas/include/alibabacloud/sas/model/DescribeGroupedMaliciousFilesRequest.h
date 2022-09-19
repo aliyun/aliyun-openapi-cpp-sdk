@@ -40,6 +40,8 @@ public:
 	void setSourceIp(const std::string &sourceIp);
 	std::string getImageDigest() const;
 	void setImageDigest(const std::string &imageDigest);
+	std::vector<std::string> getScanRange() const;
+	void setScanRange(const std::vector<std::string> &scanRange);
 	std::string getPageSize() const;
 	void setPageSize(const std::string &pageSize);
 	std::string getLang() const;
@@ -69,6 +71,7 @@ private:
 	std::string repoNamespace_;
 	std::string sourceIp_;
 	std::string imageDigest_;
+	std::vector<std::string> scanRange_;
 	std::string pageSize_;
 	std::string lang_;
 	std::string imageTag_;

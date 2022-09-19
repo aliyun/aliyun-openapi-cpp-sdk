@@ -5163,6 +5163,42 @@ SasClient::DescribeVulExportInfoOutcomeCallable SasClient::describeVulExportInfo
 	return task->get_future();
 }
 
+SasClient::DescribeVulFixStatisticsOutcome SasClient::describeVulFixStatistics(const DescribeVulFixStatisticsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVulFixStatisticsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVulFixStatisticsOutcome(DescribeVulFixStatisticsResult(outcome.result()));
+	else
+		return DescribeVulFixStatisticsOutcome(outcome.error());
+}
+
+void SasClient::describeVulFixStatisticsAsync(const DescribeVulFixStatisticsRequest& request, const DescribeVulFixStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVulFixStatistics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeVulFixStatisticsOutcomeCallable SasClient::describeVulFixStatisticsCallable(const DescribeVulFixStatisticsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVulFixStatisticsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVulFixStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeVulListOutcome SasClient::describeVulList(const DescribeVulListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5913,6 +5949,42 @@ SasClient::InstallCloudMonitorOutcomeCallable SasClient::installCloudMonitorCall
 			[this, request]()
 			{
 			return this->installCloudMonitor(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ListAvailableHoneypotOutcome SasClient::listAvailableHoneypot(const ListAvailableHoneypotRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAvailableHoneypotOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAvailableHoneypotOutcome(ListAvailableHoneypotResult(outcome.result()));
+	else
+		return ListAvailableHoneypotOutcome(outcome.error());
+}
+
+void SasClient::listAvailableHoneypotAsync(const ListAvailableHoneypotRequest& request, const ListAvailableHoneypotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAvailableHoneypot(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListAvailableHoneypotOutcomeCallable SasClient::listAvailableHoneypotCallable(const ListAvailableHoneypotRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAvailableHoneypotOutcome()>>(
+			[this, request]()
+			{
+			return this->listAvailableHoneypot(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

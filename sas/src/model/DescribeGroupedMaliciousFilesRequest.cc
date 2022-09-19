@@ -70,6 +70,14 @@ void DescribeGroupedMaliciousFilesRequest::setImageDigest(const std::string &ima
   setParameter(std::string("ImageDigest"), imageDigest);
 }
 
+std::vector<std::string> DescribeGroupedMaliciousFilesRequest::getScanRange() const {
+  return scanRange_;
+}
+
+void DescribeGroupedMaliciousFilesRequest::setScanRange(const std::vector<std::string> &scanRange) {
+  scanRange_ = scanRange;
+}
+
 std::string DescribeGroupedMaliciousFilesRequest::getPageSize() const {
   return pageSize_;
 }

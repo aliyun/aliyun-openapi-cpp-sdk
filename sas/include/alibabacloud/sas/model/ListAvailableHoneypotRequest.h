@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_DESCRIBEIMAGEBASELINECHECKSUMMARYREQUEST_H_
-#define ALIBABACLOUD_SAS_MODEL_DESCRIBEIMAGEBASELINECHECKSUMMARYREQUEST_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_LISTAVAILABLEHONEYPOTREQUEST_H_
+#define ALIBABACLOUD_SAS_MODEL_LISTAVAILABLEHONEYPOTREQUEST_H_
 
 #include <alibabacloud/sas/SasExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,41 +26,26 @@
 namespace AlibabaCloud {
 namespace Sas {
 namespace Model {
-class ALIBABACLOUD_SAS_EXPORT DescribeImageBaselineCheckSummaryRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SAS_EXPORT ListAvailableHoneypotRequest : public RpcServiceRequest {
 public:
-	DescribeImageBaselineCheckSummaryRequest();
-	~DescribeImageBaselineCheckSummaryRequest();
-	std::string getCriteria() const;
-	void setCriteria(const std::string &criteria);
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
-	std::vector<std::string> getScanRange() const;
-	void setScanRange(const std::vector<std::string> &scanRange);
+	ListAvailableHoneypotRequest();
+	~ListAvailableHoneypotRequest();
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	std::string getCriteriaType() const;
-	void setCriteriaType(const std::string &criteriaType);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getNodeId() const;
+	void setNodeId(const std::string &nodeId);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
-	std::string getClusterId() const;
-	void setClusterId(const std::string &clusterId);
-	std::string getRiskLevel() const;
-	void setRiskLevel(const std::string &riskLevel);
 
 private:
-	std::string criteria_;
-	std::string sourceIp_;
-	std::vector<std::string> scanRange_;
 	int pageSize_;
-	std::string criteriaType_;
 	std::string lang_;
+	std::string nodeId_;
 	int currentPage_;
-	std::string clusterId_;
-	std::string riskLevel_;
 };
 } // namespace Model
 } // namespace Sas
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SAS_MODEL_DESCRIBEIMAGEBASELINECHECKSUMMARYREQUEST_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_LISTAVAILABLEHONEYPOTREQUEST_H_
