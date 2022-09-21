@@ -58,6 +58,8 @@
 #include "model/RunMedQAResult.h"
 #include "model/ScreenChestCTRequest.h"
 #include "model/ScreenChestCTResult.h"
+#include "model/ScreenECRequest.h"
+#include "model/ScreenECResult.h"
 #include "model/SegmentOARRequest.h"
 #include "model/SegmentOARResult.h"
 #include "model/TranslateMedRequest.h"
@@ -125,6 +127,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ScreenChestCTResult> ScreenChestCTOutcome;
 			typedef std::future<ScreenChestCTOutcome> ScreenChestCTOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::ScreenChestCTRequest&, const ScreenChestCTOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ScreenChestCTAsyncHandler;
+			typedef Outcome<Error, Model::ScreenECResult> ScreenECOutcome;
+			typedef std::future<ScreenECOutcome> ScreenECOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::ScreenECRequest&, const ScreenECOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ScreenECAsyncHandler;
 			typedef Outcome<Error, Model::SegmentOARResult> SegmentOAROutcome;
 			typedef std::future<SegmentOAROutcome> SegmentOAROutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::SegmentOARRequest&, const SegmentOAROutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentOARAsyncHandler;
@@ -190,6 +195,9 @@ namespace AlibabaCloud
 			ScreenChestCTOutcome screenChestCT(const Model::ScreenChestCTRequest &request)const;
 			void screenChestCTAsync(const Model::ScreenChestCTRequest& request, const ScreenChestCTAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ScreenChestCTOutcomeCallable screenChestCTCallable(const Model::ScreenChestCTRequest& request) const;
+			ScreenECOutcome screenEC(const Model::ScreenECRequest &request)const;
+			void screenECAsync(const Model::ScreenECRequest& request, const ScreenECAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ScreenECOutcomeCallable screenECCallable(const Model::ScreenECRequest& request) const;
 			SegmentOAROutcome segmentOAR(const Model::SegmentOARRequest &request)const;
 			void segmentOARAsync(const Model::SegmentOARRequest& request, const SegmentOARAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentOAROutcomeCallable segmentOARCallable(const Model::SegmentOARRequest& request) const;

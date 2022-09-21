@@ -57,6 +57,8 @@ set(imageprocess_public_header_model
 	include/alibabacloud/imageprocess/model/RunMedQAResult.h
 	include/alibabacloud/imageprocess/model/ScreenChestCTRequest.h
 	include/alibabacloud/imageprocess/model/ScreenChestCTResult.h
+	include/alibabacloud/imageprocess/model/ScreenECRequest.h
+	include/alibabacloud/imageprocess/model/ScreenECResult.h
 	include/alibabacloud/imageprocess/model/SegmentOARRequest.h
 	include/alibabacloud/imageprocess/model/SegmentOARResult.h
 	include/alibabacloud/imageprocess/model/TranslateMedRequest.h
@@ -100,6 +102,8 @@ set(imageprocess_src
 	src/model/RunMedQAResult.cc
 	src/model/ScreenChestCTRequest.cc
 	src/model/ScreenChestCTResult.cc
+	src/model/ScreenECRequest.cc
+	src/model/ScreenECResult.cc
 	src/model/SegmentOARRequest.cc
 	src/model/SegmentOARResult.cc
 	src/model/TranslateMedRequest.cc

@@ -699,6 +699,42 @@ ImageprocessClient::ScreenChestCTOutcomeCallable ImageprocessClient::screenChest
 	return task->get_future();
 }
 
+ImageprocessClient::ScreenECOutcome ImageprocessClient::screenEC(const ScreenECRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ScreenECOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ScreenECOutcome(ScreenECResult(outcome.result()));
+	else
+		return ScreenECOutcome(outcome.error());
+}
+
+void ImageprocessClient::screenECAsync(const ScreenECRequest& request, const ScreenECAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, screenEC(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::ScreenECOutcomeCallable ImageprocessClient::screenECCallable(const ScreenECRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ScreenECOutcome()>>(
+			[this, request]()
+			{
+			return this->screenEC(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageprocessClient::SegmentOAROutcome ImageprocessClient::segmentOAR(const SegmentOARRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
