@@ -79,15 +79,6 @@ void ListTransitRouterMulticastDomainsRequest::setNextToken(const std::string &n
   setParameter(std::string("NextToken"), nextToken);
 }
 
-bool ListTransitRouterMulticastDomainsRequest::getDryRun() const {
-  return dryRun_;
-}
-
-void ListTransitRouterMulticastDomainsRequest::setDryRun(bool dryRun) {
-  dryRun_ = dryRun;
-  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
-}
-
 std::string ListTransitRouterMulticastDomainsRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

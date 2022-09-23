@@ -61,6 +61,15 @@ void DescribeGrantRulesToCenRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string DescribeGrantRulesToCenRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void DescribeGrantRulesToCenRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
 std::string DescribeGrantRulesToCenRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -86,5 +95,14 @@ long DescribeGrantRulesToCenRequest::getOwnerId() const {
 void DescribeGrantRulesToCenRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+long DescribeGrantRulesToCenRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void DescribeGrantRulesToCenRequest::setMaxResults(long maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

@@ -42,8 +42,6 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
-	bool getDryRun() const;
-	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -62,7 +60,6 @@ private:
 	std::string transitRouterMulticastDomainId_;
 	std::string regionId_;
 	std::string nextToken_;
-	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

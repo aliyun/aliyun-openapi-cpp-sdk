@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTDOMAINASSOCIATIONSREQUEST_H_
-#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTDOMAINASSOCIATIONSREQUEST_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_REMOVETRAFFICMATCHRULEFROMTRAFFICMARKINGPOLICYREQUEST_H_
+#define ALIBABACLOUD_CBN_MODEL_REMOVETRAFFICMATCHRULEFROMTRAFFICMARKINGPOLICYREQUEST_H_
 
 #include <alibabacloud/cbn/CbnExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,50 +26,38 @@
 namespace AlibabaCloud {
 namespace Cbn {
 namespace Model {
-class ALIBABACLOUD_CBN_EXPORT ListTransitRouterMulticastDomainAssociationsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CBN_EXPORT RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest : public RpcServiceRequest {
 public:
-	ListTransitRouterMulticastDomainAssociationsRequest();
-	~ListTransitRouterMulticastDomainAssociationsRequest();
+	RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest();
+	~RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::vector<std::string> getVSwitchIds() const;
-	void setVSwitchIds(const std::vector<std::string> &vSwitchIds);
-	std::string getTransitRouterMulticastDomainId() const;
-	void setTransitRouterMulticastDomainId(const std::string &transitRouterMulticastDomainId);
-	std::string getNextToken() const;
-	void setNextToken(const std::string &nextToken);
-	std::string getResourceId() const;
-	void setResourceId(const std::string &resourceId);
+	std::string getTrafficMarkingPolicyId() const;
+	void setTrafficMarkingPolicyId(const std::string &trafficMarkingPolicyId);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::vector<std::string> getTrafficMarkRuleIds() const;
+	void setTrafficMarkRuleIds(const std::vector<std::string> &trafficMarkRuleIds);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getResourceType() const;
-	void setResourceType(const std::string &resourceType);
-	std::string getTransitRouterAttachmentId() const;
-	void setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId);
-	long getMaxResults() const;
-	void setMaxResults(long maxResults);
 
 private:
 	long resourceOwnerId_;
 	std::string clientToken_;
-	std::vector<std::string> vSwitchIds_;
-	std::string transitRouterMulticastDomainId_;
-	std::string nextToken_;
-	std::string resourceId_;
+	std::string trafficMarkingPolicyId_;
+	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	std::vector<std::string> trafficMarkRuleIds_;
 	long ownerId_;
-	std::string resourceType_;
-	std::string transitRouterAttachmentId_;
-	long maxResults_;
 };
 } // namespace Model
 } // namespace Cbn
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERMULTICASTDOMAINASSOCIATIONSREQUEST_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_REMOVETRAFFICMATCHRULEFROMTRAFFICMARKINGPOLICYREQUEST_H_

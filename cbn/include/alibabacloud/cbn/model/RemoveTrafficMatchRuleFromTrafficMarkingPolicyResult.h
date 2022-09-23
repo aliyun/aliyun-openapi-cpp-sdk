@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_DESCRIBEGRANTRULESTOCENRESULT_H_
-#define ALIBABACLOUD_CBN_MODEL_DESCRIBEGRANTRULESTOCENRESULT_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_REMOVETRAFFICMATCHRULEFROMTRAFFICMARKINGPOLICYRESULT_H_
+#define ALIBABACLOUD_CBN_MODEL_REMOVETRAFFICMATCHRULEFROMTRAFFICMARKINGPOLICYRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CBN_EXPORT DescribeGrantRulesToCenResult : public ServiceResult
+			class ALIBABACLOUD_CBN_EXPORT RemoveTrafficMatchRuleFromTrafficMarkingPolicyResult : public ServiceResult
 			{
 			public:
-				struct GrantRule
-				{
-					std::string childInstanceType;
-					std::string orderType;
-					long cenOwnerId;
-					std::string cenId;
-					long childInstanceOwnerId;
-					std::string childInstanceId;
-					std::string childInstanceRegionId;
-				};
 
 
-				DescribeGrantRulesToCenResult();
-				explicit DescribeGrantRulesToCenResult(const std::string &payload);
-				~DescribeGrantRulesToCenResult();
-				long getTotalCount()const;
-				std::string getNextToken()const;
-				long getMaxResults()const;
-				std::vector<GrantRule> getGrantRules()const;
+				RemoveTrafficMatchRuleFromTrafficMarkingPolicyResult();
+				explicit RemoveTrafficMatchRuleFromTrafficMarkingPolicyResult(const std::string &payload);
+				~RemoveTrafficMatchRuleFromTrafficMarkingPolicyResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				long totalCount_;
-				std::string nextToken_;
-				long maxResults_;
-				std::vector<GrantRule> grantRules_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CBN_MODEL_DESCRIBEGRANTRULESTOCENRESULT_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_REMOVETRAFFICMATCHRULEFROMTRAFFICMARKINGPOLICYRESULT_H_

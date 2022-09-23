@@ -55,9 +55,32 @@ void DescribeGrantRulesToCenResult::parse(const std::string &payload)
 			grantRulesObject.cenId = valueGrantRulesGrantRule["CenId"].asString();
 		if(!valueGrantRulesGrantRule["OrderType"].isNull())
 			grantRulesObject.orderType = valueGrantRulesGrantRule["OrderType"].asString();
+		if(!valueGrantRulesGrantRule["CenOwnerId"].isNull())
+			grantRulesObject.cenOwnerId = std::stol(valueGrantRulesGrantRule["CenOwnerId"].asString());
 		grantRules_.push_back(grantRulesObject);
 	}
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stol(value["MaxResults"].asString());
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
+}
+
+long DescribeGrantRulesToCenResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
+std::string DescribeGrantRulesToCenResult::getNextToken()const
+{
+	return nextToken_;
+}
+
+long DescribeGrantRulesToCenResult::getMaxResults()const
+{
+	return maxResults_;
 }
 
 std::vector<DescribeGrantRulesToCenResult::GrantRule> DescribeGrantRulesToCenResult::getGrantRules()const

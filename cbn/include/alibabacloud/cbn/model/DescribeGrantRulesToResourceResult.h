@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERPREFIXLISTASSOCIATIONRESULT_H_
-#define ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERPREFIXLISTASSOCIATIONRESULT_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_DESCRIBEGRANTRULESTORESOURCERESULT_H_
+#define ALIBABACLOUD_CBN_MODEL_DESCRIBEGRANTRULESTORESOURCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,40 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CBN_EXPORT ListTransitRouterPrefixListAssociationResult : public ServiceResult
+			class ALIBABACLOUD_CBN_EXPORT DescribeGrantRulesToResourceResult : public ServiceResult
 			{
 			public:
-				struct PrefixList
+				struct GrantRule
 				{
-					std::string status;
-					std::string transitRouterTableId;
-					std::string nextHopType;
-					std::string prefixListId;
-					long ownerUid;
-					std::string nextHop;
-					std::string nextHopInstanceId;
-					std::string transitRouterId;
+					std::string orderType;
+					long cenOwnerId;
+					std::string cenId;
 				};
 
 
-				ListTransitRouterPrefixListAssociationResult();
-				explicit ListTransitRouterPrefixListAssociationResult(const std::string &payload);
-				~ListTransitRouterPrefixListAssociationResult();
+				DescribeGrantRulesToResourceResult();
+				explicit DescribeGrantRulesToResourceResult(const std::string &payload);
+				~DescribeGrantRulesToResourceResult();
 				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<PrefixList> getPrefixLists()const;
+				std::string getNextToken()const;
+				int getMaxResults()const;
+				std::vector<GrantRule> getGrantRules()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<PrefixList> prefixLists_;
+				std::string nextToken_;
+				int maxResults_;
+				std::vector<GrantRule> grantRules_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CBN_MODEL_LISTTRANSITROUTERPREFIXLISTASSOCIATIONRESULT_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_DESCRIBEGRANTRULESTORESOURCERESULT_H_

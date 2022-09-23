@@ -78,15 +78,6 @@ void ListTransitRouterMulticastDomainAssociationsRequest::setResourceId(const st
   setParameter(std::string("ResourceId"), resourceId);
 }
 
-bool ListTransitRouterMulticastDomainAssociationsRequest::getDryRun() const {
-  return dryRun_;
-}
-
-void ListTransitRouterMulticastDomainAssociationsRequest::setDryRun(bool dryRun) {
-  dryRun_ = dryRun;
-  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
-}
-
 std::string ListTransitRouterMulticastDomainAssociationsRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

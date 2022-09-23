@@ -519,6 +519,42 @@ CbnClient::CreateCenInterRegionTrafficQosPolicyOutcomeCallable CbnClient::create
 	return task->get_future();
 }
 
+CbnClient::CreateCenInterRegionTrafficQosQueueOutcome CbnClient::createCenInterRegionTrafficQosQueue(const CreateCenInterRegionTrafficQosQueueRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCenInterRegionTrafficQosQueueOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCenInterRegionTrafficQosQueueOutcome(CreateCenInterRegionTrafficQosQueueResult(outcome.result()));
+	else
+		return CreateCenInterRegionTrafficQosQueueOutcome(outcome.error());
+}
+
+void CbnClient::createCenInterRegionTrafficQosQueueAsync(const CreateCenInterRegionTrafficQosQueueRequest& request, const CreateCenInterRegionTrafficQosQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCenInterRegionTrafficQosQueue(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateCenInterRegionTrafficQosQueueOutcomeCallable CbnClient::createCenInterRegionTrafficQosQueueCallable(const CreateCenInterRegionTrafficQosQueueRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCenInterRegionTrafficQosQueueOutcome()>>(
+			[this, request]()
+			{
+			return this->createCenInterRegionTrafficQosQueue(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::CreateCenRouteMapOutcome CbnClient::createCenRouteMap(const CreateCenRouteMapRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2355,6 +2391,42 @@ CbnClient::DescribeGrantRulesToCenOutcomeCallable CbnClient::describeGrantRulesT
 	return task->get_future();
 }
 
+CbnClient::DescribeGrantRulesToResourceOutcome CbnClient::describeGrantRulesToResource(const DescribeGrantRulesToResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGrantRulesToResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGrantRulesToResourceOutcome(DescribeGrantRulesToResourceResult(outcome.result()));
+	else
+		return DescribeGrantRulesToResourceOutcome(outcome.error());
+}
+
+void CbnClient::describeGrantRulesToResourceAsync(const DescribeGrantRulesToResourceRequest& request, const DescribeGrantRulesToResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGrantRulesToResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DescribeGrantRulesToResourceOutcomeCallable CbnClient::describeGrantRulesToResourceCallable(const DescribeGrantRulesToResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGrantRulesToResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGrantRulesToResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::DescribePublishedRouteEntriesOutcome CbnClient::describePublishedRouteEntries(const DescribePublishedRouteEntriesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3933,6 +4005,42 @@ CbnClient::RegisterTransitRouterMulticastGroupSourcesOutcomeCallable CbnClient::
 			[this, request]()
 			{
 			return this->registerTransitRouterMulticastGroupSources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::RemoveTrafficMatchRuleFromTrafficMarkingPolicyOutcome CbnClient::removeTrafficMatchRuleFromTrafficMarkingPolicy(const RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveTrafficMatchRuleFromTrafficMarkingPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveTrafficMatchRuleFromTrafficMarkingPolicyOutcome(RemoveTrafficMatchRuleFromTrafficMarkingPolicyResult(outcome.result()));
+	else
+		return RemoveTrafficMatchRuleFromTrafficMarkingPolicyOutcome(outcome.error());
+}
+
+void CbnClient::removeTrafficMatchRuleFromTrafficMarkingPolicyAsync(const RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest& request, const RemoveTrafficMatchRuleFromTrafficMarkingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeTrafficMatchRuleFromTrafficMarkingPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::RemoveTrafficMatchRuleFromTrafficMarkingPolicyOutcomeCallable CbnClient::removeTrafficMatchRuleFromTrafficMarkingPolicyCallable(const RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveTrafficMatchRuleFromTrafficMarkingPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->removeTrafficMatchRuleFromTrafficMarkingPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

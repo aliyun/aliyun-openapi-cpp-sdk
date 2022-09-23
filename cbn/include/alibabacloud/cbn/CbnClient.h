@@ -48,6 +48,8 @@
 #include "model/CreateCenChildInstanceRouteEntryToCenResult.h"
 #include "model/CreateCenInterRegionTrafficQosPolicyRequest.h"
 #include "model/CreateCenInterRegionTrafficQosPolicyResult.h"
+#include "model/CreateCenInterRegionTrafficQosQueueRequest.h"
+#include "model/CreateCenInterRegionTrafficQosQueueResult.h"
 #include "model/CreateCenRouteMapRequest.h"
 #include "model/CreateCenRouteMapResult.h"
 #include "model/CreateFlowlogRequest.h"
@@ -150,6 +152,8 @@
 #include "model/DescribeGeographicRegionMembershipResult.h"
 #include "model/DescribeGrantRulesToCenRequest.h"
 #include "model/DescribeGrantRulesToCenResult.h"
+#include "model/DescribeGrantRulesToResourceRequest.h"
+#include "model/DescribeGrantRulesToResourceResult.h"
 #include "model/DescribePublishedRouteEntriesRequest.h"
 #include "model/DescribePublishedRouteEntriesResult.h"
 #include "model/DescribeRouteConflictRequest.h"
@@ -238,6 +242,8 @@
 #include "model/RegisterTransitRouterMulticastGroupMembersResult.h"
 #include "model/RegisterTransitRouterMulticastGroupSourcesRequest.h"
 #include "model/RegisterTransitRouterMulticastGroupSourcesResult.h"
+#include "model/RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest.h"
+#include "model/RemoveTrafficMatchRuleFromTrafficMarkingPolicyResult.h"
 #include "model/RemoveTraficMatchRuleFromTrafficMarkingPolicyRequest.h"
 #include "model/RemoveTraficMatchRuleFromTrafficMarkingPolicyResult.h"
 #include "model/ReplaceTransitRouterRouteTableAssociationRequest.h"
@@ -332,6 +338,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCenInterRegionTrafficQosPolicyResult> CreateCenInterRegionTrafficQosPolicyOutcome;
 			typedef std::future<CreateCenInterRegionTrafficQosPolicyOutcome> CreateCenInterRegionTrafficQosPolicyOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::CreateCenInterRegionTrafficQosPolicyRequest&, const CreateCenInterRegionTrafficQosPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCenInterRegionTrafficQosPolicyAsyncHandler;
+			typedef Outcome<Error, Model::CreateCenInterRegionTrafficQosQueueResult> CreateCenInterRegionTrafficQosQueueOutcome;
+			typedef std::future<CreateCenInterRegionTrafficQosQueueOutcome> CreateCenInterRegionTrafficQosQueueOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::CreateCenInterRegionTrafficQosQueueRequest&, const CreateCenInterRegionTrafficQosQueueOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCenInterRegionTrafficQosQueueAsyncHandler;
 			typedef Outcome<Error, Model::CreateCenRouteMapResult> CreateCenRouteMapOutcome;
 			typedef std::future<CreateCenRouteMapOutcome> CreateCenRouteMapOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::CreateCenRouteMapRequest&, const CreateCenRouteMapOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCenRouteMapAsyncHandler;
@@ -485,6 +494,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeGrantRulesToCenResult> DescribeGrantRulesToCenOutcome;
 			typedef std::future<DescribeGrantRulesToCenOutcome> DescribeGrantRulesToCenOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DescribeGrantRulesToCenRequest&, const DescribeGrantRulesToCenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGrantRulesToCenAsyncHandler;
+			typedef Outcome<Error, Model::DescribeGrantRulesToResourceResult> DescribeGrantRulesToResourceOutcome;
+			typedef std::future<DescribeGrantRulesToResourceOutcome> DescribeGrantRulesToResourceOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::DescribeGrantRulesToResourceRequest&, const DescribeGrantRulesToResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGrantRulesToResourceAsyncHandler;
 			typedef Outcome<Error, Model::DescribePublishedRouteEntriesResult> DescribePublishedRouteEntriesOutcome;
 			typedef std::future<DescribePublishedRouteEntriesOutcome> DescribePublishedRouteEntriesOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DescribePublishedRouteEntriesRequest&, const DescribePublishedRouteEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePublishedRouteEntriesAsyncHandler;
@@ -617,6 +629,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RegisterTransitRouterMulticastGroupSourcesResult> RegisterTransitRouterMulticastGroupSourcesOutcome;
 			typedef std::future<RegisterTransitRouterMulticastGroupSourcesOutcome> RegisterTransitRouterMulticastGroupSourcesOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::RegisterTransitRouterMulticastGroupSourcesRequest&, const RegisterTransitRouterMulticastGroupSourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterTransitRouterMulticastGroupSourcesAsyncHandler;
+			typedef Outcome<Error, Model::RemoveTrafficMatchRuleFromTrafficMarkingPolicyResult> RemoveTrafficMatchRuleFromTrafficMarkingPolicyOutcome;
+			typedef std::future<RemoveTrafficMatchRuleFromTrafficMarkingPolicyOutcome> RemoveTrafficMatchRuleFromTrafficMarkingPolicyOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest&, const RemoveTrafficMatchRuleFromTrafficMarkingPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveTrafficMatchRuleFromTrafficMarkingPolicyAsyncHandler;
 			typedef Outcome<Error, Model::RemoveTraficMatchRuleFromTrafficMarkingPolicyResult> RemoveTraficMatchRuleFromTrafficMarkingPolicyOutcome;
 			typedef std::future<RemoveTraficMatchRuleFromTrafficMarkingPolicyOutcome> RemoveTraficMatchRuleFromTrafficMarkingPolicyOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::RemoveTraficMatchRuleFromTrafficMarkingPolicyRequest&, const RemoveTraficMatchRuleFromTrafficMarkingPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveTraficMatchRuleFromTrafficMarkingPolicyAsyncHandler;
@@ -730,6 +745,9 @@ namespace AlibabaCloud
 			CreateCenInterRegionTrafficQosPolicyOutcome createCenInterRegionTrafficQosPolicy(const Model::CreateCenInterRegionTrafficQosPolicyRequest &request)const;
 			void createCenInterRegionTrafficQosPolicyAsync(const Model::CreateCenInterRegionTrafficQosPolicyRequest& request, const CreateCenInterRegionTrafficQosPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCenInterRegionTrafficQosPolicyOutcomeCallable createCenInterRegionTrafficQosPolicyCallable(const Model::CreateCenInterRegionTrafficQosPolicyRequest& request) const;
+			CreateCenInterRegionTrafficQosQueueOutcome createCenInterRegionTrafficQosQueue(const Model::CreateCenInterRegionTrafficQosQueueRequest &request)const;
+			void createCenInterRegionTrafficQosQueueAsync(const Model::CreateCenInterRegionTrafficQosQueueRequest& request, const CreateCenInterRegionTrafficQosQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCenInterRegionTrafficQosQueueOutcomeCallable createCenInterRegionTrafficQosQueueCallable(const Model::CreateCenInterRegionTrafficQosQueueRequest& request) const;
 			CreateCenRouteMapOutcome createCenRouteMap(const Model::CreateCenRouteMapRequest &request)const;
 			void createCenRouteMapAsync(const Model::CreateCenRouteMapRequest& request, const CreateCenRouteMapAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCenRouteMapOutcomeCallable createCenRouteMapCallable(const Model::CreateCenRouteMapRequest& request) const;
@@ -883,6 +901,9 @@ namespace AlibabaCloud
 			DescribeGrantRulesToCenOutcome describeGrantRulesToCen(const Model::DescribeGrantRulesToCenRequest &request)const;
 			void describeGrantRulesToCenAsync(const Model::DescribeGrantRulesToCenRequest& request, const DescribeGrantRulesToCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeGrantRulesToCenOutcomeCallable describeGrantRulesToCenCallable(const Model::DescribeGrantRulesToCenRequest& request) const;
+			DescribeGrantRulesToResourceOutcome describeGrantRulesToResource(const Model::DescribeGrantRulesToResourceRequest &request)const;
+			void describeGrantRulesToResourceAsync(const Model::DescribeGrantRulesToResourceRequest& request, const DescribeGrantRulesToResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeGrantRulesToResourceOutcomeCallable describeGrantRulesToResourceCallable(const Model::DescribeGrantRulesToResourceRequest& request) const;
 			DescribePublishedRouteEntriesOutcome describePublishedRouteEntries(const Model::DescribePublishedRouteEntriesRequest &request)const;
 			void describePublishedRouteEntriesAsync(const Model::DescribePublishedRouteEntriesRequest& request, const DescribePublishedRouteEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePublishedRouteEntriesOutcomeCallable describePublishedRouteEntriesCallable(const Model::DescribePublishedRouteEntriesRequest& request) const;
@@ -1015,6 +1036,9 @@ namespace AlibabaCloud
 			RegisterTransitRouterMulticastGroupSourcesOutcome registerTransitRouterMulticastGroupSources(const Model::RegisterTransitRouterMulticastGroupSourcesRequest &request)const;
 			void registerTransitRouterMulticastGroupSourcesAsync(const Model::RegisterTransitRouterMulticastGroupSourcesRequest& request, const RegisterTransitRouterMulticastGroupSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RegisterTransitRouterMulticastGroupSourcesOutcomeCallable registerTransitRouterMulticastGroupSourcesCallable(const Model::RegisterTransitRouterMulticastGroupSourcesRequest& request) const;
+			RemoveTrafficMatchRuleFromTrafficMarkingPolicyOutcome removeTrafficMatchRuleFromTrafficMarkingPolicy(const Model::RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest &request)const;
+			void removeTrafficMatchRuleFromTrafficMarkingPolicyAsync(const Model::RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest& request, const RemoveTrafficMatchRuleFromTrafficMarkingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveTrafficMatchRuleFromTrafficMarkingPolicyOutcomeCallable removeTrafficMatchRuleFromTrafficMarkingPolicyCallable(const Model::RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest& request) const;
 			RemoveTraficMatchRuleFromTrafficMarkingPolicyOutcome removeTraficMatchRuleFromTrafficMarkingPolicy(const Model::RemoveTraficMatchRuleFromTrafficMarkingPolicyRequest &request)const;
 			void removeTraficMatchRuleFromTrafficMarkingPolicyAsync(const Model::RemoveTraficMatchRuleFromTrafficMarkingPolicyRequest& request, const RemoveTraficMatchRuleFromTrafficMarkingPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveTraficMatchRuleFromTrafficMarkingPolicyOutcomeCallable removeTraficMatchRuleFromTrafficMarkingPolicyCallable(const Model::RemoveTraficMatchRuleFromTrafficMarkingPolicyRequest& request) const;

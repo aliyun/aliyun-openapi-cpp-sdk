@@ -57,6 +57,8 @@ void ListTransitRouterPrefixListAssociationResult::parse(const std::string &payl
 			prefixListsObject.nextHopType = valuePrefixListsPrefixList["NextHopType"].asString();
 		if(!valuePrefixListsPrefixList["TransitRouterTableId"].isNull())
 			prefixListsObject.transitRouterTableId = valuePrefixListsPrefixList["TransitRouterTableId"].asString();
+		if(!valuePrefixListsPrefixList["TransitRouterId"].isNull())
+			prefixListsObject.transitRouterId = valuePrefixListsPrefixList["TransitRouterId"].asString();
 		prefixLists_.push_back(prefixListsObject);
 	}
 	if(!value["TotalCount"].isNull())

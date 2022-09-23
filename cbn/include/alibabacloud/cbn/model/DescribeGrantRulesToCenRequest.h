@@ -38,21 +38,27 @@ public:
 	void setProductType(const std::string &productType);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	long getMaxResults() const;
+	void setMaxResults(long maxResults);
 
 private:
 	long resourceOwnerId_;
 	std::string cenId_;
 	std::string productType_;
 	std::string regionId_;
+	std::string nextToken_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	long maxResults_;
 };
 } // namespace Model
 } // namespace Cbn
