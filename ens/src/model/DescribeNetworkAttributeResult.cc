@@ -68,6 +68,8 @@ void DescribeNetworkAttributeResult::parse(const std::string &payload)
 		createdTime_ = value["CreatedTime"].asString();
 	if(!value["RouterTableId"].isNull())
 		routerTableId_ = value["RouterTableId"].asString();
+	if(!value["NetworkAclId"].isNull())
+		networkAclId_ = value["NetworkAclId"].asString();
 
 }
 
@@ -89,6 +91,11 @@ std::string DescribeNetworkAttributeResult::getDescription()const
 std::string DescribeNetworkAttributeResult::getCreatedTime()const
 {
 	return createdTime_;
+}
+
+std::string DescribeNetworkAttributeResult::getNetworkAclId()const
+{
+	return networkAclId_;
 }
 
 std::vector<std::string> DescribeNetworkAttributeResult::getVSwitchIds()const

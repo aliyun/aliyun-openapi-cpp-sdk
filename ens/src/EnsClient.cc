@@ -51,6 +51,42 @@ EnsClient::EnsClient(const std::string & accessKeyId, const std::string & access
 EnsClient::~EnsClient()
 {}
 
+EnsClient::AccosicateNetworkAclOutcome EnsClient::accosicateNetworkAcl(const AccosicateNetworkAclRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AccosicateNetworkAclOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AccosicateNetworkAclOutcome(AccosicateNetworkAclResult(outcome.result()));
+	else
+		return AccosicateNetworkAclOutcome(outcome.error());
+}
+
+void EnsClient::accosicateNetworkAclAsync(const AccosicateNetworkAclRequest& request, const AccosicateNetworkAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, accosicateNetworkAcl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::AccosicateNetworkAclOutcomeCallable EnsClient::accosicateNetworkAclCallable(const AccosicateNetworkAclRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AccosicateNetworkAclOutcome()>>(
+			[this, request]()
+			{
+			return this->accosicateNetworkAcl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::AddBackendServersOutcome EnsClient::addBackendServers(const AddBackendServersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -663,6 +699,42 @@ EnsClient::CreateEpnInstanceOutcomeCallable EnsClient::createEpnInstanceCallable
 	return task->get_future();
 }
 
+EnsClient::CreateFileSystemOutcome EnsClient::createFileSystem(const CreateFileSystemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFileSystemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFileSystemOutcome(CreateFileSystemResult(outcome.result()));
+	else
+		return CreateFileSystemOutcome(outcome.error());
+}
+
+void EnsClient::createFileSystemAsync(const CreateFileSystemRequest& request, const CreateFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFileSystem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateFileSystemOutcomeCallable EnsClient::createFileSystemCallable(const CreateFileSystemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFileSystemOutcome()>>(
+			[this, request]()
+			{
+			return this->createFileSystem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::CreateForwardEntryOutcome EnsClient::createForwardEntry(const CreateForwardEntryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -987,6 +1059,42 @@ EnsClient::CreateLoadBalancerUDPListenerOutcomeCallable EnsClient::createLoadBal
 	return task->get_future();
 }
 
+EnsClient::CreateMountTargetOutcome EnsClient::createMountTarget(const CreateMountTargetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateMountTargetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateMountTargetOutcome(CreateMountTargetResult(outcome.result()));
+	else
+		return CreateMountTargetOutcome(outcome.error());
+}
+
+void EnsClient::createMountTargetAsync(const CreateMountTargetRequest& request, const CreateMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createMountTarget(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateMountTargetOutcomeCallable EnsClient::createMountTargetCallable(const CreateMountTargetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateMountTargetOutcome()>>(
+			[this, request]()
+			{
+			return this->createMountTarget(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::CreateNatGatewayOutcome EnsClient::createNatGateway(const CreateNatGatewayRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1053,6 +1161,78 @@ EnsClient::CreateNetworkOutcomeCallable EnsClient::createNetworkCallable(const C
 			[this, request]()
 			{
 			return this->createNetwork(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::CreateNetworkAclOutcome EnsClient::createNetworkAcl(const CreateNetworkAclRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateNetworkAclOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateNetworkAclOutcome(CreateNetworkAclResult(outcome.result()));
+	else
+		return CreateNetworkAclOutcome(outcome.error());
+}
+
+void EnsClient::createNetworkAclAsync(const CreateNetworkAclRequest& request, const CreateNetworkAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createNetworkAcl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateNetworkAclOutcomeCallable EnsClient::createNetworkAclCallable(const CreateNetworkAclRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateNetworkAclOutcome()>>(
+			[this, request]()
+			{
+			return this->createNetworkAcl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::CreateNetworkAclEntryOutcome EnsClient::createNetworkAclEntry(const CreateNetworkAclEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateNetworkAclEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateNetworkAclEntryOutcome(CreateNetworkAclEntryResult(outcome.result()));
+	else
+		return CreateNetworkAclEntryOutcome(outcome.error());
+}
+
+void EnsClient::createNetworkAclEntryAsync(const CreateNetworkAclEntryRequest& request, const CreateNetworkAclEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createNetworkAclEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateNetworkAclEntryOutcomeCallable EnsClient::createNetworkAclEntryCallable(const CreateNetworkAclEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateNetworkAclEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->createNetworkAclEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1311,6 +1491,42 @@ EnsClient::DeleteEpnInstanceOutcomeCallable EnsClient::deleteEpnInstanceCallable
 	return task->get_future();
 }
 
+EnsClient::DeleteFileSystemOutcome EnsClient::deleteFileSystem(const DeleteFileSystemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteFileSystemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteFileSystemOutcome(DeleteFileSystemResult(outcome.result()));
+	else
+		return DeleteFileSystemOutcome(outcome.error());
+}
+
+void EnsClient::deleteFileSystemAsync(const DeleteFileSystemRequest& request, const DeleteFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteFileSystem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteFileSystemOutcomeCallable EnsClient::deleteFileSystemCallable(const DeleteFileSystemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteFileSystemOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteFileSystem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DeleteForwardEntryOutcome EnsClient::deleteForwardEntry(const DeleteForwardEntryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1455,6 +1671,42 @@ EnsClient::DeleteLoadBalancerListenerOutcomeCallable EnsClient::deleteLoadBalanc
 	return task->get_future();
 }
 
+EnsClient::DeleteMountTargetOutcome EnsClient::deleteMountTarget(const DeleteMountTargetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMountTargetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMountTargetOutcome(DeleteMountTargetResult(outcome.result()));
+	else
+		return DeleteMountTargetOutcome(outcome.error());
+}
+
+void EnsClient::deleteMountTargetAsync(const DeleteMountTargetRequest& request, const DeleteMountTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMountTarget(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteMountTargetOutcomeCallable EnsClient::deleteMountTargetCallable(const DeleteMountTargetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMountTargetOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMountTarget(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DeleteNatGatewayOutcome EnsClient::deleteNatGateway(const DeleteNatGatewayRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1521,6 +1773,78 @@ EnsClient::DeleteNetworkOutcomeCallable EnsClient::deleteNetworkCallable(const D
 			[this, request]()
 			{
 			return this->deleteNetwork(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeleteNetworkAclOutcome EnsClient::deleteNetworkAcl(const DeleteNetworkAclRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNetworkAclOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNetworkAclOutcome(DeleteNetworkAclResult(outcome.result()));
+	else
+		return DeleteNetworkAclOutcome(outcome.error());
+}
+
+void EnsClient::deleteNetworkAclAsync(const DeleteNetworkAclRequest& request, const DeleteNetworkAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNetworkAcl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteNetworkAclOutcomeCallable EnsClient::deleteNetworkAclCallable(const DeleteNetworkAclRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNetworkAclOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNetworkAcl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeleteNetworkAclEntryOutcome EnsClient::deleteNetworkAclEntry(const DeleteNetworkAclEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteNetworkAclEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteNetworkAclEntryOutcome(DeleteNetworkAclEntryResult(outcome.result()));
+	else
+		return DeleteNetworkAclEntryOutcome(outcome.error());
+}
+
+void EnsClient::deleteNetworkAclEntryAsync(const DeleteNetworkAclEntryRequest& request, const DeleteNetworkAclEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteNetworkAclEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteNetworkAclEntryOutcomeCallable EnsClient::deleteNetworkAclEntryCallable(const DeleteNetworkAclEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteNetworkAclEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteNetworkAclEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3507,6 +3831,42 @@ EnsClient::DescribeMeasurementDataOutcomeCallable EnsClient::describeMeasurement
 	return task->get_future();
 }
 
+EnsClient::DescribeMountTargetsOutcome EnsClient::describeMountTargets(const DescribeMountTargetsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMountTargetsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMountTargetsOutcome(DescribeMountTargetsResult(outcome.result()));
+	else
+		return DescribeMountTargetsOutcome(outcome.error());
+}
+
+void EnsClient::describeMountTargetsAsync(const DescribeMountTargetsRequest& request, const DescribeMountTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMountTargets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeMountTargetsOutcomeCallable EnsClient::describeMountTargetsCallable(const DescribeMountTargetsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMountTargetsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMountTargets(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeNatGatewaysOutcome EnsClient::describeNatGateways(const DescribeNatGatewaysRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3537,6 +3897,42 @@ EnsClient::DescribeNatGatewaysOutcomeCallable EnsClient::describeNatGatewaysCall
 			[this, request]()
 			{
 			return this->describeNatGateways(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeNetworkAclsOutcome EnsClient::describeNetworkAcls(const DescribeNetworkAclsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNetworkAclsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNetworkAclsOutcome(DescribeNetworkAclsResult(outcome.result()));
+	else
+		return DescribeNetworkAclsOutcome(outcome.error());
+}
+
+void EnsClient::describeNetworkAclsAsync(const DescribeNetworkAclsRequest& request, const DescribeNetworkAclsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNetworkAcls(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeNetworkAclsOutcomeCallable EnsClient::describeNetworkAclsCallable(const DescribeNetworkAclsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNetworkAclsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNetworkAcls(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3861,6 +4257,42 @@ EnsClient::DescribeSecurityGroupsOutcomeCallable EnsClient::describeSecurityGrou
 			[this, request]()
 			{
 			return this->describeSecurityGroups(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeSelfImagesOutcome EnsClient::describeSelfImages(const DescribeSelfImagesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSelfImagesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSelfImagesOutcome(DescribeSelfImagesResult(outcome.result()));
+	else
+		return DescribeSelfImagesOutcome(outcome.error());
+}
+
+void EnsClient::describeSelfImagesAsync(const DescribeSelfImagesRequest& request, const DescribeSelfImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSelfImages(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeSelfImagesOutcomeCallable EnsClient::describeSelfImagesCallable(const DescribeSelfImagesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSelfImagesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSelfImages(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4545,6 +4977,42 @@ EnsClient::ModifyEpnInstanceOutcomeCallable EnsClient::modifyEpnInstanceCallable
 			[this, request]()
 			{
 			return this->modifyEpnInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::ModifyFileSystemOutcome EnsClient::modifyFileSystem(const ModifyFileSystemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyFileSystemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyFileSystemOutcome(ModifyFileSystemResult(outcome.result()));
+	else
+		return ModifyFileSystemOutcome(outcome.error());
+}
+
+void EnsClient::modifyFileSystemAsync(const ModifyFileSystemRequest& request, const ModifyFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyFileSystem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ModifyFileSystemOutcomeCallable EnsClient::modifyFileSystemCallable(const ModifyFileSystemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyFileSystemOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyFileSystem(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5631,6 +6099,42 @@ EnsClient::ResetDeviceInstanceOutcomeCallable EnsClient::resetDeviceInstanceCall
 	return task->get_future();
 }
 
+EnsClient::ResizeDiskOutcome EnsClient::resizeDisk(const ResizeDiskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResizeDiskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResizeDiskOutcome(ResizeDiskResult(outcome.result()));
+	else
+		return ResizeDiskOutcome(outcome.error());
+}
+
+void EnsClient::resizeDiskAsync(const ResizeDiskRequest& request, const ResizeDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resizeDisk(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ResizeDiskOutcomeCallable EnsClient::resizeDiskCallable(const ResizeDiskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResizeDiskOutcome()>>(
+			[this, request]()
+			{
+			return this->resizeDisk(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::RestartDeviceInstanceOutcome EnsClient::restartDeviceInstance(const RestartDeviceInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6345,6 +6849,42 @@ EnsClient::UnassignPrivateIpAddressesOutcomeCallable EnsClient::unassignPrivateI
 			[this, request]()
 			{
 			return this->unassignPrivateIpAddresses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::UnassociateNetworkAclOutcome EnsClient::unassociateNetworkAcl(const UnassociateNetworkAclRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UnassociateNetworkAclOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UnassociateNetworkAclOutcome(UnassociateNetworkAclResult(outcome.result()));
+	else
+		return UnassociateNetworkAclOutcome(outcome.error());
+}
+
+void EnsClient::unassociateNetworkAclAsync(const UnassociateNetworkAclRequest& request, const UnassociateNetworkAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, unassociateNetworkAcl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::UnassociateNetworkAclOutcomeCallable EnsClient::unassociateNetworkAclCallable(const UnassociateNetworkAclRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UnassociateNetworkAclOutcome()>>(
+			[this, request]()
+			{
+			return this->unassociateNetworkAcl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

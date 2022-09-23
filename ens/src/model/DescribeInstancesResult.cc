@@ -49,6 +49,8 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.status = valueInstancesInstance["Status"].asString();
 		if(!valueInstancesInstance["SpecName"].isNull())
 			instancesObject.specName = valueInstancesInstance["SpecName"].asString();
+		if(!valueInstancesInstance["InstanceTypeFamily"].isNull())
+			instancesObject.instanceTypeFamily = valueInstancesInstance["InstanceTypeFamily"].asString();
 		if(!valueInstancesInstance["InstanceResourceType"].isNull())
 			instancesObject.instanceResourceType = valueInstancesInstance["InstanceResourceType"].asString();
 		if(!valueInstancesInstance["HostName"].isNull())
@@ -69,10 +71,10 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.instanceName = valueInstancesInstance["InstanceName"].asString();
 		if(!valueInstancesInstance["Disk"].isNull())
 			instancesObject.disk = std::stoi(valueInstancesInstance["Disk"].asString());
-		if(!valueInstancesInstance["Memory"].isNull())
-			instancesObject.memory = std::stoi(valueInstancesInstance["Memory"].asString());
 		if(!valueInstancesInstance["OSName"].isNull())
 			instancesObject.oSName = valueInstancesInstance["OSName"].asString();
+		if(!valueInstancesInstance["Memory"].isNull())
+			instancesObject.memory = std::stoi(valueInstancesInstance["Memory"].asString());
 		if(!valueInstancesInstance["ImageId"].isNull())
 			instancesObject.imageId = valueInstancesInstance["ImageId"].asString();
 		auto allDataDiskNode = valueInstancesInstance["DataDisk"]["DataDiskItem"];

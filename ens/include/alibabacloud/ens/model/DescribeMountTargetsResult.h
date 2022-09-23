@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBENETWORKSRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBENETWORKSRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEMOUNTTARGETSRESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_DESCRIBEMOUNTTARGETSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DescribeNetworksResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT DescribeMountTargetsResult : public ServiceResult
 			{
 			public:
-				struct Network
+				struct MountTargetsItem
 				{
 					std::string status;
-					std::string networkName;
-					std::string description;
-					std::string createdTime;
-					std::string networkAclId;
-					std::vector<std::string> vSwitchIds;
-					std::string cidrBlock;
-					std::string routerTableId;
+					std::string netWorkId;
+					std::string mountTargetName;
+					std::string mountTargetDomain;
+					std::string fileSystemId;
 					std::string ensRegionId;
-					std::string networkId;
 				};
 
 
-				DescribeNetworksResult();
-				explicit DescribeNetworksResult(const std::string &payload);
-				~DescribeNetworksResult();
-				std::vector<Network> getNetworks()const;
+				DescribeMountTargetsResult();
+				explicit DescribeMountTargetsResult(const std::string &payload);
+				~DescribeMountTargetsResult();
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
+				std::vector<MountTargetsItem> getMountTargets()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Network> networks_;
 				int totalCount_;
 				int pageSize_;
 				int pageNumber_;
+				std::vector<MountTargetsItem> mountTargets_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBENETWORKSRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEMOUNTTARGETSRESULT_H_

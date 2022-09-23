@@ -21,6 +21,8 @@ set(ens_public_header
 	include/alibabacloud/ens/EnsExport.h )
 
 set(ens_public_header_model 
+	include/alibabacloud/ens/model/AccosicateNetworkAclRequest.h
+	include/alibabacloud/ens/model/AccosicateNetworkAclResult.h
 	include/alibabacloud/ens/model/AddBackendServersRequest.h
 	include/alibabacloud/ens/model/AddBackendServersResult.h
 	include/alibabacloud/ens/model/AddDeviceInternetPortRequest.h
@@ -55,6 +57,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/CreateEnsServiceResult.h
 	include/alibabacloud/ens/model/CreateEpnInstanceRequest.h
 	include/alibabacloud/ens/model/CreateEpnInstanceResult.h
+	include/alibabacloud/ens/model/CreateFileSystemRequest.h
+	include/alibabacloud/ens/model/CreateFileSystemResult.h
 	include/alibabacloud/ens/model/CreateForwardEntryRequest.h
 	include/alibabacloud/ens/model/CreateForwardEntryResult.h
 	include/alibabacloud/ens/model/CreateImageRequest.h
@@ -73,10 +77,16 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/CreateLoadBalancerTCPListenerResult.h
 	include/alibabacloud/ens/model/CreateLoadBalancerUDPListenerRequest.h
 	include/alibabacloud/ens/model/CreateLoadBalancerUDPListenerResult.h
+	include/alibabacloud/ens/model/CreateMountTargetRequest.h
+	include/alibabacloud/ens/model/CreateMountTargetResult.h
 	include/alibabacloud/ens/model/CreateNatGatewayRequest.h
 	include/alibabacloud/ens/model/CreateNatGatewayResult.h
 	include/alibabacloud/ens/model/CreateNetworkRequest.h
 	include/alibabacloud/ens/model/CreateNetworkResult.h
+	include/alibabacloud/ens/model/CreateNetworkAclRequest.h
+	include/alibabacloud/ens/model/CreateNetworkAclResult.h
+	include/alibabacloud/ens/model/CreateNetworkAclEntryRequest.h
+	include/alibabacloud/ens/model/CreateNetworkAclEntryResult.h
 	include/alibabacloud/ens/model/CreateSecurityGroupRequest.h
 	include/alibabacloud/ens/model/CreateSecurityGroupResult.h
 	include/alibabacloud/ens/model/CreateSnatEntryRequest.h
@@ -91,6 +101,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DeleteEnsRouteEntryResult.h
 	include/alibabacloud/ens/model/DeleteEpnInstanceRequest.h
 	include/alibabacloud/ens/model/DeleteEpnInstanceResult.h
+	include/alibabacloud/ens/model/DeleteFileSystemRequest.h
+	include/alibabacloud/ens/model/DeleteFileSystemResult.h
 	include/alibabacloud/ens/model/DeleteForwardEntryRequest.h
 	include/alibabacloud/ens/model/DeleteForwardEntryResult.h
 	include/alibabacloud/ens/model/DeleteImageRequest.h
@@ -99,10 +111,16 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DeleteKeyPairsResult.h
 	include/alibabacloud/ens/model/DeleteLoadBalancerListenerRequest.h
 	include/alibabacloud/ens/model/DeleteLoadBalancerListenerResult.h
+	include/alibabacloud/ens/model/DeleteMountTargetRequest.h
+	include/alibabacloud/ens/model/DeleteMountTargetResult.h
 	include/alibabacloud/ens/model/DeleteNatGatewayRequest.h
 	include/alibabacloud/ens/model/DeleteNatGatewayResult.h
 	include/alibabacloud/ens/model/DeleteNetworkRequest.h
 	include/alibabacloud/ens/model/DeleteNetworkResult.h
+	include/alibabacloud/ens/model/DeleteNetworkAclRequest.h
+	include/alibabacloud/ens/model/DeleteNetworkAclResult.h
+	include/alibabacloud/ens/model/DeleteNetworkAclEntryRequest.h
+	include/alibabacloud/ens/model/DeleteNetworkAclEntryResult.h
 	include/alibabacloud/ens/model/DeleteSecurityGroupRequest.h
 	include/alibabacloud/ens/model/DeleteSecurityGroupResult.h
 	include/alibabacloud/ens/model/DeleteSnatEntryRequest.h
@@ -213,8 +231,12 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeLoadBalancersResult.h
 	include/alibabacloud/ens/model/DescribeMeasurementDataRequest.h
 	include/alibabacloud/ens/model/DescribeMeasurementDataResult.h
+	include/alibabacloud/ens/model/DescribeMountTargetsRequest.h
+	include/alibabacloud/ens/model/DescribeMountTargetsResult.h
 	include/alibabacloud/ens/model/DescribeNatGatewaysRequest.h
 	include/alibabacloud/ens/model/DescribeNatGatewaysResult.h
+	include/alibabacloud/ens/model/DescribeNetworkAclsRequest.h
+	include/alibabacloud/ens/model/DescribeNetworkAclsResult.h
 	include/alibabacloud/ens/model/DescribeNetworkAttributeRequest.h
 	include/alibabacloud/ens/model/DescribeNetworkAttributeResult.h
 	include/alibabacloud/ens/model/DescribeNetworkInterfacesRequest.h
@@ -233,6 +255,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeSecurityGroupAttributeResult.h
 	include/alibabacloud/ens/model/DescribeSecurityGroupsRequest.h
 	include/alibabacloud/ens/model/DescribeSecurityGroupsResult.h
+	include/alibabacloud/ens/model/DescribeSelfImagesRequest.h
+	include/alibabacloud/ens/model/DescribeSelfImagesResult.h
 	include/alibabacloud/ens/model/DescribeServcieScheduleRequest.h
 	include/alibabacloud/ens/model/DescribeServcieScheduleResult.h
 	include/alibabacloud/ens/model/DescribeSnatTableEntriesRequest.h
@@ -271,6 +295,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ModifyEnsEipAddressAttributeResult.h
 	include/alibabacloud/ens/model/ModifyEpnInstanceRequest.h
 	include/alibabacloud/ens/model/ModifyEpnInstanceResult.h
+	include/alibabacloud/ens/model/ModifyFileSystemRequest.h
+	include/alibabacloud/ens/model/ModifyFileSystemResult.h
 	include/alibabacloud/ens/model/ModifyForwardEntryRequest.h
 	include/alibabacloud/ens/model/ModifyForwardEntryResult.h
 	include/alibabacloud/ens/model/ModifyImageAttributeRequest.h
@@ -331,6 +357,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ResetAICInstanceResult.h
 	include/alibabacloud/ens/model/ResetDeviceInstanceRequest.h
 	include/alibabacloud/ens/model/ResetDeviceInstanceResult.h
+	include/alibabacloud/ens/model/ResizeDiskRequest.h
+	include/alibabacloud/ens/model/ResizeDiskResult.h
 	include/alibabacloud/ens/model/RestartDeviceInstanceRequest.h
 	include/alibabacloud/ens/model/RestartDeviceInstanceResult.h
 	include/alibabacloud/ens/model/RevokeSecurityGroupRequest.h
@@ -371,6 +399,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/UnAssociateEnsEipAddressResult.h
 	include/alibabacloud/ens/model/UnassignPrivateIpAddressesRequest.h
 	include/alibabacloud/ens/model/UnassignPrivateIpAddressesResult.h
+	include/alibabacloud/ens/model/UnassociateNetworkAclRequest.h
+	include/alibabacloud/ens/model/UnassociateNetworkAclResult.h
 	include/alibabacloud/ens/model/UpgradeAICInstanceImageRequest.h
 	include/alibabacloud/ens/model/UpgradeAICInstanceImageResult.h
 	include/alibabacloud/ens/model/UpgradeApplicationRequest.h
@@ -378,6 +408,8 @@ set(ens_public_header_model
 
 set(ens_src 
 	src/EnsClient.cc
+	src/model/AccosicateNetworkAclRequest.cc
+	src/model/AccosicateNetworkAclResult.cc
 	src/model/AddBackendServersRequest.cc
 	src/model/AddBackendServersResult.cc
 	src/model/AddDeviceInternetPortRequest.cc
@@ -412,6 +444,8 @@ set(ens_src
 	src/model/CreateEnsServiceResult.cc
 	src/model/CreateEpnInstanceRequest.cc
 	src/model/CreateEpnInstanceResult.cc
+	src/model/CreateFileSystemRequest.cc
+	src/model/CreateFileSystemResult.cc
 	src/model/CreateForwardEntryRequest.cc
 	src/model/CreateForwardEntryResult.cc
 	src/model/CreateImageRequest.cc
@@ -430,10 +464,16 @@ set(ens_src
 	src/model/CreateLoadBalancerTCPListenerResult.cc
 	src/model/CreateLoadBalancerUDPListenerRequest.cc
 	src/model/CreateLoadBalancerUDPListenerResult.cc
+	src/model/CreateMountTargetRequest.cc
+	src/model/CreateMountTargetResult.cc
 	src/model/CreateNatGatewayRequest.cc
 	src/model/CreateNatGatewayResult.cc
 	src/model/CreateNetworkRequest.cc
 	src/model/CreateNetworkResult.cc
+	src/model/CreateNetworkAclRequest.cc
+	src/model/CreateNetworkAclResult.cc
+	src/model/CreateNetworkAclEntryRequest.cc
+	src/model/CreateNetworkAclEntryResult.cc
 	src/model/CreateSecurityGroupRequest.cc
 	src/model/CreateSecurityGroupResult.cc
 	src/model/CreateSnatEntryRequest.cc
@@ -448,6 +488,8 @@ set(ens_src
 	src/model/DeleteEnsRouteEntryResult.cc
 	src/model/DeleteEpnInstanceRequest.cc
 	src/model/DeleteEpnInstanceResult.cc
+	src/model/DeleteFileSystemRequest.cc
+	src/model/DeleteFileSystemResult.cc
 	src/model/DeleteForwardEntryRequest.cc
 	src/model/DeleteForwardEntryResult.cc
 	src/model/DeleteImageRequest.cc
@@ -456,10 +498,16 @@ set(ens_src
 	src/model/DeleteKeyPairsResult.cc
 	src/model/DeleteLoadBalancerListenerRequest.cc
 	src/model/DeleteLoadBalancerListenerResult.cc
+	src/model/DeleteMountTargetRequest.cc
+	src/model/DeleteMountTargetResult.cc
 	src/model/DeleteNatGatewayRequest.cc
 	src/model/DeleteNatGatewayResult.cc
 	src/model/DeleteNetworkRequest.cc
 	src/model/DeleteNetworkResult.cc
+	src/model/DeleteNetworkAclRequest.cc
+	src/model/DeleteNetworkAclResult.cc
+	src/model/DeleteNetworkAclEntryRequest.cc
+	src/model/DeleteNetworkAclEntryResult.cc
 	src/model/DeleteSecurityGroupRequest.cc
 	src/model/DeleteSecurityGroupResult.cc
 	src/model/DeleteSnatEntryRequest.cc
@@ -570,8 +618,12 @@ set(ens_src
 	src/model/DescribeLoadBalancersResult.cc
 	src/model/DescribeMeasurementDataRequest.cc
 	src/model/DescribeMeasurementDataResult.cc
+	src/model/DescribeMountTargetsRequest.cc
+	src/model/DescribeMountTargetsResult.cc
 	src/model/DescribeNatGatewaysRequest.cc
 	src/model/DescribeNatGatewaysResult.cc
+	src/model/DescribeNetworkAclsRequest.cc
+	src/model/DescribeNetworkAclsResult.cc
 	src/model/DescribeNetworkAttributeRequest.cc
 	src/model/DescribeNetworkAttributeResult.cc
 	src/model/DescribeNetworkInterfacesRequest.cc
@@ -590,6 +642,8 @@ set(ens_src
 	src/model/DescribeSecurityGroupAttributeResult.cc
 	src/model/DescribeSecurityGroupsRequest.cc
 	src/model/DescribeSecurityGroupsResult.cc
+	src/model/DescribeSelfImagesRequest.cc
+	src/model/DescribeSelfImagesResult.cc
 	src/model/DescribeServcieScheduleRequest.cc
 	src/model/DescribeServcieScheduleResult.cc
 	src/model/DescribeSnatTableEntriesRequest.cc
@@ -628,6 +682,8 @@ set(ens_src
 	src/model/ModifyEnsEipAddressAttributeResult.cc
 	src/model/ModifyEpnInstanceRequest.cc
 	src/model/ModifyEpnInstanceResult.cc
+	src/model/ModifyFileSystemRequest.cc
+	src/model/ModifyFileSystemResult.cc
 	src/model/ModifyForwardEntryRequest.cc
 	src/model/ModifyForwardEntryResult.cc
 	src/model/ModifyImageAttributeRequest.cc
@@ -688,6 +744,8 @@ set(ens_src
 	src/model/ResetAICInstanceResult.cc
 	src/model/ResetDeviceInstanceRequest.cc
 	src/model/ResetDeviceInstanceResult.cc
+	src/model/ResizeDiskRequest.cc
+	src/model/ResizeDiskResult.cc
 	src/model/RestartDeviceInstanceRequest.cc
 	src/model/RestartDeviceInstanceResult.cc
 	src/model/RevokeSecurityGroupRequest.cc
@@ -728,6 +786,8 @@ set(ens_src
 	src/model/UnAssociateEnsEipAddressResult.cc
 	src/model/UnassignPrivateIpAddressesRequest.cc
 	src/model/UnassignPrivateIpAddressesResult.cc
+	src/model/UnassociateNetworkAclRequest.cc
+	src/model/UnassociateNetworkAclResult.cc
 	src/model/UpgradeAICInstanceImageRequest.cc
 	src/model/UpgradeAICInstanceImageResult.cc
 	src/model/UpgradeApplicationRequest.cc

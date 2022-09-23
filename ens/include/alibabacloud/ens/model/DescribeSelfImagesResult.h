@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBENETWORKSRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBENETWORKSRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBESELFIMAGESRESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_DESCRIBESELFIMAGESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DescribeNetworksResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT DescribeSelfImagesResult : public ServiceResult
 			{
 			public:
-				struct Network
+				struct Image
 				{
+					std::string imageOwnerAlias;
 					std::string status;
-					std::string networkName;
-					std::string description;
-					std::string createdTime;
-					std::string networkAclId;
-					std::vector<std::string> vSwitchIds;
-					std::string cidrBlock;
-					std::string routerTableId;
-					std::string ensRegionId;
-					std::string networkId;
+					std::string imageName;
+					std::string architecture;
+					std::string platform;
+					std::string imageSize;
+					std::string instanceId;
+					std::string osVersion;
+					std::string creationTime;
+					std::string imageId;
 				};
 
 
-				DescribeNetworksResult();
-				explicit DescribeNetworksResult(const std::string &payload);
-				~DescribeNetworksResult();
-				std::vector<Network> getNetworks()const;
-				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
+				DescribeSelfImagesResult();
+				explicit DescribeSelfImagesResult(const std::string &payload);
+				~DescribeSelfImagesResult();
+				std::vector<Image> getImages()const;
+				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Network> networks_;
-				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
+				std::vector<Image> images_;
+				int code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBENETWORKSRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBESELFIMAGESRESULT_H_

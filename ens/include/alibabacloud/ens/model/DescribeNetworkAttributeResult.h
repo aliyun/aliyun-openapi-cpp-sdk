@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				std::string getNetworkName()const;
 				std::string getDescription()const;
 				std::string getCreatedTime()const;
+				std::string getNetworkAclId()const;
 				std::vector<std::string> getVSwitchIds()const;
 				std::string getCidrBlock()const;
 				std::string getRouterTableId()const;
@@ -60,6 +61,7 @@ namespace AlibabaCloud
 				std::string networkName_;
 				std::string description_;
 				std::string createdTime_;
+				std::string networkAclId_;
 				std::vector<std::string> vSwitchIds_;
 				std::string cidrBlock_;
 				std::string routerTableId_;

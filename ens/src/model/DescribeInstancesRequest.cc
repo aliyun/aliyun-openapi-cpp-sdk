@@ -115,6 +115,15 @@ void DescribeInstancesRequest::setStatus(const std::string &status) {
   setParameter(std::string("Status"), status);
 }
 
+std::string DescribeInstancesRequest::getIntranetIp() const {
+  return intranetIp_;
+}
+
+void DescribeInstancesRequest::setIntranetIp(const std::string &intranetIp) {
+  intranetIp_ = intranetIp;
+  setParameter(std::string("IntranetIp"), intranetIp);
+}
+
 std::string DescribeInstancesRequest::getImageId() const {
   return imageId_;
 }

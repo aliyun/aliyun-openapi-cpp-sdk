@@ -50,6 +50,8 @@ public:
 	void setNetworkId(const std::string &networkId);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
+	std::string getIntranetIp() const;
+	void setIntranetIp(const std::string &intranetIp);
 	std::string getImageId() const;
 	void setImageId(const std::string &imageId);
 	std::string getSecurityGroupId() const;
@@ -74,6 +76,7 @@ private:
 	std::string instanceIds_;
 	std::string networkId_;
 	std::string status_;
+	std::string intranetIp_;
 	std::string imageId_;
 	std::string securityGroupId_;
 	std::string searchKey_;
