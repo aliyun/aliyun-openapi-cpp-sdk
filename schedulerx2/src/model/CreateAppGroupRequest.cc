@@ -124,6 +124,15 @@ void CreateAppGroupRequest::setGroupId(const std::string &groupId) {
   setParameter(std::string("GroupId"), groupId);
 }
 
+int CreateAppGroupRequest::getAppType() const {
+  return appType_;
+}
+
+void CreateAppGroupRequest::setAppType(int appType) {
+  appType_ = appType;
+  setParameter(std::string("AppType"), std::to_string(appType));
+}
+
 std::string CreateAppGroupRequest::getMonitorConfigJson() const {
   return monitorConfigJson_;
 }

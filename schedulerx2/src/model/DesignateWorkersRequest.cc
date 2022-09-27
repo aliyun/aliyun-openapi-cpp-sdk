@@ -34,15 +34,6 @@ void DesignateWorkersRequest::setNamespaceSource(const std::string &namespaceSou
   setParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
-std::string DesignateWorkersRequest::getGroupId() const {
-  return groupId_;
-}
-
-void DesignateWorkersRequest::setGroupId(const std::string &groupId) {
-  groupId_ = groupId;
-  setParameter(std::string("GroupId"), groupId);
-}
-
 bool DesignateWorkersRequest::getTransferable() const {
   return transferable_;
 }
@@ -50,15 +41,6 @@ bool DesignateWorkersRequest::getTransferable() const {
 void DesignateWorkersRequest::setTransferable(bool transferable) {
   transferable_ = transferable;
   setParameter(std::string("Transferable"), transferable ? "true" : "false");
-}
-
-std::string DesignateWorkersRequest::getLabels() const {
-  return labels_;
-}
-
-void DesignateWorkersRequest::setLabels(const std::string &labels) {
-  labels_ = labels;
-  setParameter(std::string("Labels"), labels);
 }
 
 int DesignateWorkersRequest::getDesignateType() const {
@@ -88,15 +70,6 @@ void DesignateWorkersRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DesignateWorkersRequest::get_Namespace() const {
-  return _namespace_;
-}
-
-void DesignateWorkersRequest::set_Namespace(const std::string &_namespace) {
-  _namespace_ = _namespace;
-  setParameter(std::string("Namespace"), _namespace);
-}
-
 std::string DesignateWorkersRequest::getWorkers() const {
   return workers_;
 }
@@ -104,5 +77,32 @@ std::string DesignateWorkersRequest::getWorkers() const {
 void DesignateWorkersRequest::setWorkers(const std::string &workers) {
   workers_ = workers;
   setParameter(std::string("Workers"), workers);
+}
+
+std::string DesignateWorkersRequest::getGroupId() const {
+  return groupId_;
+}
+
+void DesignateWorkersRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
+}
+
+std::string DesignateWorkersRequest::getLabels() const {
+  return labels_;
+}
+
+void DesignateWorkersRequest::setLabels(const std::string &labels) {
+  labels_ = labels;
+  setParameter(std::string("Labels"), labels);
+}
+
+std::string DesignateWorkersRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void DesignateWorkersRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
 }
 

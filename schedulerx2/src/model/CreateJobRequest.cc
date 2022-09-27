@@ -25,6 +25,166 @@ CreateJobRequest::CreateJobRequest()
 
 CreateJobRequest::~CreateJobRequest() {}
 
+int CreateJobRequest::getAttemptInterval() const {
+  return attemptInterval_;
+}
+
+void CreateJobRequest::setAttemptInterval(int attemptInterval) {
+  attemptInterval_ = attemptInterval;
+  setBodyParameter(std::string("AttemptInterval"), std::to_string(attemptInterval));
+}
+
+int CreateJobRequest::getConsumerSize() const {
+  return consumerSize_;
+}
+
+void CreateJobRequest::setConsumerSize(int consumerSize) {
+  consumerSize_ = consumerSize;
+  setBodyParameter(std::string("ConsumerSize"), std::to_string(consumerSize));
+}
+
+std::string CreateJobRequest::getJarUrl() const {
+  return jarUrl_;
+}
+
+void CreateJobRequest::setJarUrl(const std::string &jarUrl) {
+  jarUrl_ = jarUrl;
+  setBodyParameter(std::string("JarUrl"), jarUrl);
+}
+
+int CreateJobRequest::getDataOffset() const {
+  return dataOffset_;
+}
+
+void CreateJobRequest::setDataOffset(int dataOffset) {
+  dataOffset_ = dataOffset;
+  setBodyParameter(std::string("DataOffset"), std::to_string(dataOffset));
+}
+
+std::string CreateJobRequest::getGroupId() const {
+  return groupId_;
+}
+
+void CreateJobRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setBodyParameter(std::string("GroupId"), groupId);
+}
+
+int CreateJobRequest::getTaskMaxAttempt() const {
+  return taskMaxAttempt_;
+}
+
+void CreateJobRequest::setTaskMaxAttempt(int taskMaxAttempt) {
+  taskMaxAttempt_ = taskMaxAttempt;
+  setBodyParameter(std::string("TaskMaxAttempt"), std::to_string(taskMaxAttempt));
+}
+
+int CreateJobRequest::getDispatcherSize() const {
+  return dispatcherSize_;
+}
+
+void CreateJobRequest::setDispatcherSize(int dispatcherSize) {
+  dispatcherSize_ = dispatcherSize;
+  setBodyParameter(std::string("DispatcherSize"), std::to_string(dispatcherSize));
+}
+
+std::string CreateJobRequest::getJobType() const {
+  return jobType_;
+}
+
+void CreateJobRequest::setJobType(const std::string &jobType) {
+  jobType_ = jobType;
+  setBodyParameter(std::string("JobType"), jobType);
+}
+
+int CreateJobRequest::getTaskAttemptInterval() const {
+  return taskAttemptInterval_;
+}
+
+void CreateJobRequest::setTaskAttemptInterval(int taskAttemptInterval) {
+  taskAttemptInterval_ = taskAttemptInterval;
+  setBodyParameter(std::string("TaskAttemptInterval"), std::to_string(taskAttemptInterval));
+}
+
+std::string CreateJobRequest::getExecuteMode() const {
+  return executeMode_;
+}
+
+void CreateJobRequest::setExecuteMode(const std::string &executeMode) {
+  executeMode_ = executeMode;
+  setBodyParameter(std::string("ExecuteMode"), executeMode);
+}
+
+std::string CreateJobRequest::getTimeExpression() const {
+  return timeExpression_;
+}
+
+void CreateJobRequest::setTimeExpression(const std::string &timeExpression) {
+  timeExpression_ = timeExpression;
+  setBodyParameter(std::string("TimeExpression"), timeExpression);
+}
+
+bool CreateJobRequest::getTimeoutEnable() const {
+  return timeoutEnable_;
+}
+
+void CreateJobRequest::setTimeoutEnable(bool timeoutEnable) {
+  timeoutEnable_ = timeoutEnable;
+  setBodyParameter(std::string("TimeoutEnable"), timeoutEnable ? "true" : "false");
+}
+
+std::vector<CreateJobRequest::ContactInfo> CreateJobRequest::getContactInfo() const {
+  return contactInfo_;
+}
+
+void CreateJobRequest::setContactInfo(const std::vector<CreateJobRequest::ContactInfo> &contactInfo) {
+  contactInfo_ = contactInfo;
+  for(int dep1 = 0; dep1 != contactInfo.size(); dep1++) {
+  auto contactInfoObj = contactInfo.at(dep1);
+  std::string contactInfoObjStr = std::string("ContactInfo") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(contactInfoObjStr + ".Ding", contactInfoObj.ding);
+    setBodyParameter(contactInfoObjStr + ".UserPhone", contactInfoObj.userPhone);
+    setBodyParameter(contactInfoObjStr + ".UserMail", contactInfoObj.userMail);
+    setBodyParameter(contactInfoObjStr + ".UserName", contactInfoObj.userName);
+  }
+}
+
+std::string CreateJobRequest::getName() const {
+  return name_;
+}
+
+void CreateJobRequest::setName(const std::string &name) {
+  name_ = name;
+  setBodyParameter(std::string("Name"), name);
+}
+
+int CreateJobRequest::getTimeType() const {
+  return timeType_;
+}
+
+void CreateJobRequest::setTimeType(int timeType) {
+  timeType_ = timeType;
+  setBodyParameter(std::string("TimeType"), std::to_string(timeType));
+}
+
+std::string CreateJobRequest::getParameters() const {
+  return parameters_;
+}
+
+void CreateJobRequest::setParameters(const std::string &parameters) {
+  parameters_ = parameters;
+  setBodyParameter(std::string("Parameters"), parameters);
+}
+
+int CreateJobRequest::getStatus() const {
+  return status_;
+}
+
+void CreateJobRequest::setStatus(int status) {
+  status_ = status;
+  setBodyParameter(std::string("Status"), std::to_string(status));
+}
+
 std::string CreateJobRequest::getNamespaceSource() const {
   return namespaceSource_;
 }
@@ -41,15 +201,6 @@ std::string CreateJobRequest::getDescription() const {
 void CreateJobRequest::setDescription(const std::string &description) {
   description_ = description;
   setBodyParameter(std::string("Description"), description);
-}
-
-int CreateJobRequest::getAttemptInterval() const {
-  return attemptInterval_;
-}
-
-void CreateJobRequest::setAttemptInterval(int attemptInterval) {
-  attemptInterval_ = attemptInterval;
-  setBodyParameter(std::string("AttemptInterval"), std::to_string(attemptInterval));
 }
 
 std::string CreateJobRequest::getContent() const {
@@ -97,24 +248,6 @@ void CreateJobRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-int CreateJobRequest::getConsumerSize() const {
-  return consumerSize_;
-}
-
-void CreateJobRequest::setConsumerSize(int consumerSize) {
-  consumerSize_ = consumerSize;
-  setBodyParameter(std::string("ConsumerSize"), std::to_string(consumerSize));
-}
-
-std::string CreateJobRequest::getJarUrl() const {
-  return jarUrl_;
-}
-
-void CreateJobRequest::setJarUrl(const std::string &jarUrl) {
-  jarUrl_ = jarUrl;
-  setBodyParameter(std::string("JarUrl"), jarUrl);
-}
-
 std::string CreateJobRequest::getCalendar() const {
   return calendar_;
 }
@@ -142,33 +275,6 @@ void CreateJobRequest::setSendChannel(const std::string &sendChannel) {
   setBodyParameter(std::string("SendChannel"), sendChannel);
 }
 
-int CreateJobRequest::getDataOffset() const {
-  return dataOffset_;
-}
-
-void CreateJobRequest::setDataOffset(int dataOffset) {
-  dataOffset_ = dataOffset;
-  setBodyParameter(std::string("DataOffset"), std::to_string(dataOffset));
-}
-
-std::string CreateJobRequest::getGroupId() const {
-  return groupId_;
-}
-
-void CreateJobRequest::setGroupId(const std::string &groupId) {
-  groupId_ = groupId;
-  setBodyParameter(std::string("GroupId"), groupId);
-}
-
-int CreateJobRequest::getTaskMaxAttempt() const {
-  return taskMaxAttempt_;
-}
-
-void CreateJobRequest::setTaskMaxAttempt(int taskMaxAttempt) {
-  taskMaxAttempt_ = taskMaxAttempt;
-  setBodyParameter(std::string("TaskMaxAttempt"), std::to_string(taskMaxAttempt));
-}
-
 int CreateJobRequest::getMaxAttempt() const {
   return maxAttempt_;
 }
@@ -187,42 +293,6 @@ void CreateJobRequest::setMissWorkerEnable(bool missWorkerEnable) {
   setBodyParameter(std::string("MissWorkerEnable"), missWorkerEnable ? "true" : "false");
 }
 
-int CreateJobRequest::getDispatcherSize() const {
-  return dispatcherSize_;
-}
-
-void CreateJobRequest::setDispatcherSize(int dispatcherSize) {
-  dispatcherSize_ = dispatcherSize;
-  setBodyParameter(std::string("DispatcherSize"), std::to_string(dispatcherSize));
-}
-
-std::string CreateJobRequest::getJobType() const {
-  return jobType_;
-}
-
-void CreateJobRequest::setJobType(const std::string &jobType) {
-  jobType_ = jobType;
-  setBodyParameter(std::string("JobType"), jobType);
-}
-
-int CreateJobRequest::getTaskAttemptInterval() const {
-  return taskAttemptInterval_;
-}
-
-void CreateJobRequest::setTaskAttemptInterval(int taskAttemptInterval) {
-  taskAttemptInterval_ = taskAttemptInterval;
-  setBodyParameter(std::string("TaskAttemptInterval"), std::to_string(taskAttemptInterval));
-}
-
-std::string CreateJobRequest::getExecuteMode() const {
-  return executeMode_;
-}
-
-void CreateJobRequest::setExecuteMode(const std::string &executeMode) {
-  executeMode_ = executeMode;
-  setBodyParameter(std::string("ExecuteMode"), executeMode);
-}
-
 int CreateJobRequest::getQueueSize() const {
   return queueSize_;
 }
@@ -230,15 +300,6 @@ int CreateJobRequest::getQueueSize() const {
 void CreateJobRequest::setQueueSize(int queueSize) {
   queueSize_ = queueSize;
   setBodyParameter(std::string("QueueSize"), std::to_string(queueSize));
-}
-
-std::string CreateJobRequest::getTimeExpression() const {
-  return timeExpression_;
-}
-
-void CreateJobRequest::setTimeExpression(const std::string &timeExpression) {
-  timeExpression_ = timeExpression;
-  setBodyParameter(std::string("TimeExpression"), timeExpression);
 }
 
 std::string CreateJobRequest::getClassName() const {
@@ -250,40 +311,6 @@ void CreateJobRequest::setClassName(const std::string &className) {
   setBodyParameter(std::string("ClassName"), className);
 }
 
-bool CreateJobRequest::getTimeoutEnable() const {
-  return timeoutEnable_;
-}
-
-void CreateJobRequest::setTimeoutEnable(bool timeoutEnable) {
-  timeoutEnable_ = timeoutEnable;
-  setBodyParameter(std::string("TimeoutEnable"), timeoutEnable ? "true" : "false");
-}
-
-std::vector<CreateJobRequest::ContactInfo> CreateJobRequest::getContactInfo() const {
-  return contactInfo_;
-}
-
-void CreateJobRequest::setContactInfo(const std::vector<CreateJobRequest::ContactInfo> &contactInfo) {
-  contactInfo_ = contactInfo;
-  for(int dep1 = 0; dep1 != contactInfo.size(); dep1++) {
-  auto contactInfoObj = contactInfo.at(dep1);
-  std::string contactInfoObjStr = std::string("ContactInfo") + "." + std::to_string(dep1 + 1);
-    setBodyParameter(contactInfoObjStr + ".Ding", contactInfoObj.ding);
-    setBodyParameter(contactInfoObjStr + ".UserPhone", contactInfoObj.userPhone);
-    setBodyParameter(contactInfoObjStr + ".UserMail", contactInfoObj.userMail);
-    setBodyParameter(contactInfoObjStr + ".UserName", contactInfoObj.userName);
-  }
-}
-
-std::string CreateJobRequest::getName() const {
-  return name_;
-}
-
-void CreateJobRequest::setName(const std::string &name) {
-  name_ = name;
-  setBodyParameter(std::string("Name"), name);
-}
-
 std::string CreateJobRequest::get_Namespace() const {
   return _namespace_;
 }
@@ -293,6 +320,15 @@ void CreateJobRequest::set_Namespace(const std::string &_namespace) {
   setBodyParameter(std::string("Namespace"), _namespace);
 }
 
+std::string CreateJobRequest::getXAttrs() const {
+  return xAttrs_;
+}
+
+void CreateJobRequest::setXAttrs(const std::string &xAttrs) {
+  xAttrs_ = xAttrs;
+  setBodyParameter(std::string("XAttrs"), xAttrs);
+}
+
 int CreateJobRequest::getMaxConcurrency() const {
   return maxConcurrency_;
 }
@@ -300,32 +336,5 @@ int CreateJobRequest::getMaxConcurrency() const {
 void CreateJobRequest::setMaxConcurrency(int maxConcurrency) {
   maxConcurrency_ = maxConcurrency;
   setBodyParameter(std::string("MaxConcurrency"), std::to_string(maxConcurrency));
-}
-
-int CreateJobRequest::getTimeType() const {
-  return timeType_;
-}
-
-void CreateJobRequest::setTimeType(int timeType) {
-  timeType_ = timeType;
-  setBodyParameter(std::string("TimeType"), std::to_string(timeType));
-}
-
-std::string CreateJobRequest::getParameters() const {
-  return parameters_;
-}
-
-void CreateJobRequest::setParameters(const std::string &parameters) {
-  parameters_ = parameters;
-  setBodyParameter(std::string("Parameters"), parameters);
-}
-
-int CreateJobRequest::getStatus() const {
-  return status_;
-}
-
-void CreateJobRequest::setStatus(int status) {
-  status_ = status;
-  setBodyParameter(std::string("Status"), std::to_string(status));
 }
 

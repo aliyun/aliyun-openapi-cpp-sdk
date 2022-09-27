@@ -34,34 +34,34 @@ public:
 	void setNamespaceSource(const std::string &namespaceSource);
 	bool getCheckJobStatus() const;
 	void setCheckJobStatus(bool checkJobStatus);
-	std::string getGroupId() const;
-	void setGroupId(const std::string &groupId);
-	std::string getLabel() const;
-	void setLabel(const std::string &label);
 	int getDesignateType() const;
 	void setDesignateType(int designateType);
 	long getJobId() const;
 	void setJobId(long jobId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string get_Namespace() const;
-	void set_Namespace(const std::string &_namespace);
 	std::string getWorker() const;
 	void setWorker(const std::string &worker);
 	std::string getInstanceParameters() const;
 	void setInstanceParameters(const std::string &instanceParameters);
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
+	std::string getLabel() const;
+	void setLabel(const std::string &label);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
 
 private:
 	std::string namespaceSource_;
 	bool checkJobStatus_;
-	std::string groupId_;
-	std::string label_;
 	int designateType_;
 	long jobId_;
 	std::string regionId_;
-	std::string _namespace_;
 	std::string worker_;
 	std::string instanceParameters_;
+	std::string groupId_;
+	std::string label_;
+	std::string _namespace_;
 };
 } // namespace Model
 } // namespace Schedulerx2

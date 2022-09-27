@@ -32,33 +32,33 @@ public:
 	~DesignateWorkersRequest();
 	std::string getNamespaceSource() const;
 	void setNamespaceSource(const std::string &namespaceSource);
-	std::string getGroupId() const;
-	void setGroupId(const std::string &groupId);
 	bool getTransferable() const;
 	void setTransferable(bool transferable);
-	std::string getLabels() const;
-	void setLabels(const std::string &labels);
 	int getDesignateType() const;
 	void setDesignateType(int designateType);
 	long getJobId() const;
 	void setJobId(long jobId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string get_Namespace() const;
-	void set_Namespace(const std::string &_namespace);
 	std::string getWorkers() const;
 	void setWorkers(const std::string &workers);
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
+	std::string getLabels() const;
+	void setLabels(const std::string &labels);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
 
 private:
 	std::string namespaceSource_;
-	std::string groupId_;
 	bool transferable_;
-	std::string labels_;
 	int designateType_;
 	long jobId_;
 	std::string regionId_;
-	std::string _namespace_;
 	std::string workers_;
+	std::string groupId_;
+	std::string labels_;
+	std::string _namespace_;
 };
 } // namespace Model
 } // namespace Schedulerx2

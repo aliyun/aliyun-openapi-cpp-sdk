@@ -43,24 +43,6 @@ void ExecuteJobRequest::setCheckJobStatus(bool checkJobStatus) {
   setParameter(std::string("CheckJobStatus"), checkJobStatus ? "true" : "false");
 }
 
-std::string ExecuteJobRequest::getGroupId() const {
-  return groupId_;
-}
-
-void ExecuteJobRequest::setGroupId(const std::string &groupId) {
-  groupId_ = groupId;
-  setParameter(std::string("GroupId"), groupId);
-}
-
-std::string ExecuteJobRequest::getLabel() const {
-  return label_;
-}
-
-void ExecuteJobRequest::setLabel(const std::string &label) {
-  label_ = label;
-  setParameter(std::string("Label"), label);
-}
-
 int ExecuteJobRequest::getDesignateType() const {
   return designateType_;
 }
@@ -88,15 +70,6 @@ void ExecuteJobRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ExecuteJobRequest::get_Namespace() const {
-  return _namespace_;
-}
-
-void ExecuteJobRequest::set_Namespace(const std::string &_namespace) {
-  _namespace_ = _namespace;
-  setParameter(std::string("Namespace"), _namespace);
-}
-
 std::string ExecuteJobRequest::getWorker() const {
   return worker_;
 }
@@ -113,5 +86,32 @@ std::string ExecuteJobRequest::getInstanceParameters() const {
 void ExecuteJobRequest::setInstanceParameters(const std::string &instanceParameters) {
   instanceParameters_ = instanceParameters;
   setParameter(std::string("InstanceParameters"), instanceParameters);
+}
+
+std::string ExecuteJobRequest::getGroupId() const {
+  return groupId_;
+}
+
+void ExecuteJobRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
+}
+
+std::string ExecuteJobRequest::getLabel() const {
+  return label_;
+}
+
+void ExecuteJobRequest::setLabel(const std::string &label) {
+  label_ = label;
+  setParameter(std::string("Label"), label);
+}
+
+std::string ExecuteJobRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void ExecuteJobRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
 }
 
