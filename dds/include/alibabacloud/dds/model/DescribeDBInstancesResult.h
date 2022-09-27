@@ -55,6 +55,7 @@ namespace AlibabaCloud
 					};
 					std::string resourceGroupId;
 					std::string capacityUnit;
+					std::string hiddenZoneId;
 					std::string destroyTime;
 					std::string dBInstanceType;
 					std::vector<DBInstance::MongosAttribute> mongosList;
@@ -74,6 +75,7 @@ namespace AlibabaCloud
 					std::string dBInstanceClass;
 					std::vector<DBInstance::ShardAttribute> shardList;
 					std::string lockMode;
+					std::string secondaryZoneId;
 					std::string chargeType;
 					std::string vpcAuthMode;
 					std::string creationTime;

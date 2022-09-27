@@ -81,6 +81,13 @@ void DescribeAvailableResourceResult::parse(const std::string &payload)
 								availableResourcesObject.instanceClassRemark = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource["InstanceClassRemark"].asString();
 							if(!valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource["InstanceClass"].isNull())
 								availableResourcesObject.instanceClass = valueSupportedDBTypesSupportedDBTypeAvailableZonesAvailableZoneSupportedEngineVersionsSupportedEngineVersionSupportedEnginesSupportedEngineSupportedNodeTypesSupportedNodeTypeAvailableResourcesAvailableResource["InstanceClass"].asString();
+							auto dBInstanceStorageRangeNode = value["DBInstanceStorageRange"];
+							if(!dBInstanceStorageRangeNode["Min"].isNull())
+								availableResourcesObject.dBInstanceStorageRange.min = std::stoi(dBInstanceStorageRangeNode["Min"].asString());
+							if(!dBInstanceStorageRangeNode["Max"].isNull())
+								availableResourcesObject.dBInstanceStorageRange.max = std::stoi(dBInstanceStorageRangeNode["Max"].asString());
+							if(!dBInstanceStorageRangeNode["Step"].isNull())
+								availableResourcesObject.dBInstanceStorageRange.step = std::stoi(dBInstanceStorageRangeNode["Step"].asString());
 							supportedNodeTypesObject.availableResources.push_back(availableResourcesObject);
 						}
 						supportedEnginesObject.supportedNodeTypes.push_back(supportedNodeTypesObject);

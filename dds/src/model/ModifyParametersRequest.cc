@@ -52,6 +52,15 @@ void ModifyParametersRequest::setSecurityToken(const std::string &securityToken)
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+std::string ModifyParametersRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ModifyParametersRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ModifyParametersRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -48,6 +48,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getChargeType() const;
+	void setChargeType(const std::string &chargeType);
 
 private:
 	long resourceOwnerId_;
@@ -59,6 +61,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string chargeType_;
 };
 } // namespace Model
 } // namespace Dds

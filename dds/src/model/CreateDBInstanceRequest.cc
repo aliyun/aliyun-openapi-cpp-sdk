@@ -43,6 +43,15 @@ void CreateDBInstanceRequest::setDBInstanceStorage(int dBInstanceStorage) {
   setParameter(std::string("DBInstanceStorage"), std::to_string(dBInstanceStorage));
 }
 
+std::string CreateDBInstanceRequest::getSecondaryZoneId() const {
+  return secondaryZoneId_;
+}
+
+void CreateDBInstanceRequest::setSecondaryZoneId(const std::string &secondaryZoneId) {
+  secondaryZoneId_ = secondaryZoneId;
+  setParameter(std::string("SecondaryZoneId"), secondaryZoneId);
+}
+
 std::string CreateDBInstanceRequest::getCouponNo() const {
   return couponNo_;
 }
@@ -104,6 +113,20 @@ std::string CreateDBInstanceRequest::getDBInstanceDescription() const {
 void CreateDBInstanceRequest::setDBInstanceDescription(const std::string &dBInstanceDescription) {
   dBInstanceDescription_ = dBInstanceDescription;
   setParameter(std::string("DBInstanceDescription"), dBInstanceDescription);
+}
+
+std::vector<CreateDBInstanceRequest::Tag> CreateDBInstanceRequest::getTag() const {
+  return tag_;
+}
+
+void CreateDBInstanceRequest::setTag(const std::vector<CreateDBInstanceRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
 std::string CreateDBInstanceRequest::getBusinessInfo() const {
@@ -257,6 +280,15 @@ std::string CreateDBInstanceRequest::getEngine() const {
 void CreateDBInstanceRequest::setEngine(const std::string &engine) {
   engine_ = engine;
   setParameter(std::string("Engine"), engine);
+}
+
+std::string CreateDBInstanceRequest::getHiddenZoneId() const {
+  return hiddenZoneId_;
+}
+
+void CreateDBInstanceRequest::setHiddenZoneId(const std::string &hiddenZoneId) {
+  hiddenZoneId_ = hiddenZoneId;
+  setParameter(std::string("HiddenZoneId"), hiddenZoneId);
 }
 
 std::string CreateDBInstanceRequest::getRestoreTime() const {

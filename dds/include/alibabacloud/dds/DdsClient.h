@@ -38,8 +38,6 @@
 #include "model/CreateNodeResult.h"
 #include "model/CreateNodeBatchRequest.h"
 #include "model/CreateNodeBatchResult.h"
-#include "model/CreateServerlessDBInstanceRequest.h"
-#include "model/CreateServerlessDBInstanceResult.h"
 #include "model/CreateShardingDBInstanceRequest.h"
 #include "model/CreateShardingDBInstanceResult.h"
 #include "model/DeleteDBInstanceRequest.h"
@@ -233,9 +231,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateNodeBatchResult> CreateNodeBatchOutcome;
 			typedef std::future<CreateNodeBatchOutcome> CreateNodeBatchOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::CreateNodeBatchRequest&, const CreateNodeBatchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNodeBatchAsyncHandler;
-			typedef Outcome<Error, Model::CreateServerlessDBInstanceResult> CreateServerlessDBInstanceOutcome;
-			typedef std::future<CreateServerlessDBInstanceOutcome> CreateServerlessDBInstanceOutcomeCallable;
-			typedef std::function<void(const DdsClient*, const Model::CreateServerlessDBInstanceRequest&, const CreateServerlessDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateServerlessDBInstanceAsyncHandler;
 			typedef Outcome<Error, Model::CreateShardingDBInstanceResult> CreateShardingDBInstanceOutcome;
 			typedef std::future<CreateShardingDBInstanceOutcome> CreateShardingDBInstanceOutcomeCallable;
 			typedef std::function<void(const DdsClient*, const Model::CreateShardingDBInstanceRequest&, const CreateShardingDBInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateShardingDBInstanceAsyncHandler;
@@ -505,9 +500,6 @@ namespace AlibabaCloud
 			CreateNodeBatchOutcome createNodeBatch(const Model::CreateNodeBatchRequest &request)const;
 			void createNodeBatchAsync(const Model::CreateNodeBatchRequest& request, const CreateNodeBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateNodeBatchOutcomeCallable createNodeBatchCallable(const Model::CreateNodeBatchRequest& request) const;
-			CreateServerlessDBInstanceOutcome createServerlessDBInstance(const Model::CreateServerlessDBInstanceRequest &request)const;
-			void createServerlessDBInstanceAsync(const Model::CreateServerlessDBInstanceRequest& request, const CreateServerlessDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateServerlessDBInstanceOutcomeCallable createServerlessDBInstanceCallable(const Model::CreateServerlessDBInstanceRequest& request) const;
 			CreateShardingDBInstanceOutcome createShardingDBInstance(const Model::CreateShardingDBInstanceRequest &request)const;
 			void createShardingDBInstanceAsync(const Model::CreateShardingDBInstanceRequest& request, const CreateShardingDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateShardingDBInstanceOutcomeCallable createShardingDBInstanceCallable(const Model::CreateShardingDBInstanceRequest& request) const;

@@ -70,6 +70,24 @@ void CreateNodeBatchRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+bool CreateNodeBatchRequest::getShardDirect() const {
+  return shardDirect_;
+}
+
+void CreateNodeBatchRequest::setShardDirect(bool shardDirect) {
+  shardDirect_ = shardDirect;
+  setParameter(std::string("ShardDirect"), shardDirect ? "true" : "false");
+}
+
+std::string CreateNodeBatchRequest::getAccountName() const {
+  return accountName_;
+}
+
+void CreateNodeBatchRequest::setAccountName(const std::string &accountName) {
+  accountName_ = accountName;
+  setParameter(std::string("AccountName"), accountName);
+}
+
 std::string CreateNodeBatchRequest::getSecurityToken() const {
   return securityToken_;
 }
@@ -140,5 +158,14 @@ long CreateNodeBatchRequest::getOwnerId() const {
 void CreateNodeBatchRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string CreateNodeBatchRequest::getAccountPassword() const {
+  return accountPassword_;
+}
+
+void CreateNodeBatchRequest::setAccountPassword(const std::string &accountPassword) {
+  accountPassword_ = accountPassword;
+  setParameter(std::string("AccountPassword"), accountPassword);
 }
 

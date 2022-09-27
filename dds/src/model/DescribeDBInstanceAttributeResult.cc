@@ -47,8 +47,6 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.creationTime = valueDBInstancesDBInstance["CreationTime"].asString();
 		if(!valueDBInstancesDBInstance["ReplacateId"].isNull())
 			dBInstancesObject.replacateId = valueDBInstancesDBInstance["ReplacateId"].asString();
-		if(!valueDBInstancesDBInstance["ChargeType"].isNull())
-			dBInstancesObject.chargeType = valueDBInstancesDBInstance["ChargeType"].asString();
 		if(!valueDBInstancesDBInstance["VpcAuthMode"].isNull())
 			dBInstancesObject.vpcAuthMode = valueDBInstancesDBInstance["VpcAuthMode"].asString();
 		if(!valueDBInstancesDBInstance["NetworkType"].isNull())
@@ -115,8 +113,18 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.capacityUnit = valueDBInstancesDBInstance["CapacityUnit"].asString();
 		if(!valueDBInstancesDBInstance["CloudType"].isNull())
 			dBInstancesObject.cloudType = valueDBInstancesDBInstance["CloudType"].asString();
+		if(!valueDBInstancesDBInstance["ChargeType"].isNull())
+			dBInstancesObject.chargeType = valueDBInstancesDBInstance["ChargeType"].asString();
 		if(!valueDBInstancesDBInstance["StorageType"].isNull())
 			dBInstancesObject.storageType = valueDBInstancesDBInstance["StorageType"].asString();
+		if(!valueDBInstancesDBInstance["SecondaryZoneId"].isNull())
+			dBInstancesObject.secondaryZoneId = valueDBInstancesDBInstance["SecondaryZoneId"].asString();
+		if(!valueDBInstancesDBInstance["HiddenZoneId"].isNull())
+			dBInstancesObject.hiddenZoneId = valueDBInstancesDBInstance["HiddenZoneId"].asString();
+		if(!valueDBInstancesDBInstance["DestroyTime"].isNull())
+			dBInstancesObject.destroyTime = valueDBInstancesDBInstance["DestroyTime"].asString();
+		if(!valueDBInstancesDBInstance["PaymentType"].isNull())
+			dBInstancesObject.paymentType = valueDBInstancesDBInstance["PaymentType"].asString();
 		auto allReplicaSetsNode = valueDBInstancesDBInstance["ReplicaSets"]["ReplicaSet"];
 		for (auto valueDBInstancesDBInstanceReplicaSetsReplicaSet : allReplicaSetsNode)
 		{
@@ -224,6 +232,32 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			if(!valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["Status"].isNull())
 				configserverListObject.status = valueDBInstancesDBInstanceConfigserverListConfigserverAttribute["Status"].asString();
 			dBInstancesObject.configserverList.push_back(configserverListObject);
+		}
+		auto allNetworkAddressesNode = valueDBInstancesDBInstance["NetworkAddresses"]["NetworkAddress"];
+		for (auto valueDBInstancesDBInstanceNetworkAddressesNetworkAddress : allNetworkAddressesNode)
+		{
+			DBInstance::NetworkAddress networkAddressesObject;
+			if(!valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["NodeType"].isNull())
+				networkAddressesObject.nodeType = valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["NodeType"].asString();
+			if(!valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["VSwitchId"].isNull())
+				networkAddressesObject.vSwitchId = valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["VSwitchId"].asString();
+			if(!valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["ExpiredTime"].isNull())
+				networkAddressesObject.expiredTime = valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["ExpiredTime"].asString();
+			if(!valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["NetworkType"].isNull())
+				networkAddressesObject.networkType = valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["NetworkType"].asString();
+			if(!valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["Role"].isNull())
+				networkAddressesObject.role = valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["Role"].asString();
+			if(!valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["Port"].isNull())
+				networkAddressesObject.port = valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["Port"].asString();
+			if(!valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["VPCId"].isNull())
+				networkAddressesObject.vPCId = valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["VPCId"].asString();
+			if(!valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["NetworkAddress"].isNull())
+				networkAddressesObject.networkAddress = valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["NetworkAddress"].asString();
+			if(!valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["NodeId"].isNull())
+				networkAddressesObject.nodeId = valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["NodeId"].asString();
+			if(!valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["IPAddress"].isNull())
+				networkAddressesObject.iPAddress = valueDBInstancesDBInstanceNetworkAddressesNetworkAddress["IPAddress"].asString();
+			dBInstancesObject.networkAddresses.push_back(networkAddressesObject);
 		}
 		dBInstances_.push_back(dBInstancesObject);
 	}

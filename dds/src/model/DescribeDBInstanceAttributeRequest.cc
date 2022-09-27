@@ -106,3 +106,12 @@ void DescribeDBInstanceAttributeRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeDBInstanceAttributeRequest::getChargeType() const {
+  return chargeType_;
+}
+
+void DescribeDBInstanceAttributeRequest::setChargeType(const std::string &chargeType) {
+  chargeType_ = chargeType;
+  setParameter(std::string("ChargeType"), chargeType);
+}
+

@@ -88,6 +88,24 @@ void CreateNodeRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+bool CreateNodeRequest::getShardDirect() const {
+  return shardDirect_;
+}
+
+void CreateNodeRequest::setShardDirect(bool shardDirect) {
+  shardDirect_ = shardDirect;
+  setParameter(std::string("ShardDirect"), shardDirect ? "true" : "false");
+}
+
+std::string CreateNodeRequest::getAccountName() const {
+  return accountName_;
+}
+
+void CreateNodeRequest::setAccountName(const std::string &accountName) {
+  accountName_ = accountName;
+  setParameter(std::string("AccountName"), accountName);
+}
+
 std::string CreateNodeRequest::getSecurityToken() const {
   return securityToken_;
 }
@@ -167,5 +185,14 @@ long CreateNodeRequest::getOwnerId() const {
 void CreateNodeRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string CreateNodeRequest::getAccountPassword() const {
+  return accountPassword_;
+}
+
+void CreateNodeRequest::setAccountPassword(const std::string &accountPassword) {
+  accountPassword_ = accountPassword;
+  setParameter(std::string("AccountPassword"), accountPassword);
 }
 

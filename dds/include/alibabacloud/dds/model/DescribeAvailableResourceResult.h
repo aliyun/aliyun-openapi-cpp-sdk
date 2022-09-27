@@ -44,7 +44,14 @@ namespace AlibabaCloud
 								{
 									struct AvailableResource
 									{
+										struct DBInstanceStorageRange
+										{
+											int min;
+											int max;
+											int step;
+										};
 										std::string instanceClassRemark;
+										DBInstanceStorageRange dBInstanceStorageRange;
 										std::string instanceClass;
 									};
 									std::string networkTypes;

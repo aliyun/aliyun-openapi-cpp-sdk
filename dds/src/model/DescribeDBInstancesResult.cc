@@ -91,6 +91,10 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			dBInstancesObject.capacityUnit = valueDBInstancesDBInstance["CapacityUnit"].asString();
 		if(!valueDBInstancesDBInstance["StorageType"].isNull())
 			dBInstancesObject.storageType = valueDBInstancesDBInstance["StorageType"].asString();
+		if(!valueDBInstancesDBInstance["SecondaryZoneId"].isNull())
+			dBInstancesObject.secondaryZoneId = valueDBInstancesDBInstance["SecondaryZoneId"].asString();
+		if(!valueDBInstancesDBInstance["HiddenZoneId"].isNull())
+			dBInstancesObject.hiddenZoneId = valueDBInstancesDBInstance["HiddenZoneId"].asString();
 		auto allTagsNode = valueDBInstancesDBInstance["Tags"]["Tag"];
 		for (auto valueDBInstancesDBInstanceTagsTag : allTagsNode)
 		{

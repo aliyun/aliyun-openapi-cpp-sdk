@@ -51,6 +51,10 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		enableBackupLog_ = std::stoi(value["EnableBackupLog"].asString());
 	if(!value["LogBackupRetentionPeriod"].isNull())
 		logBackupRetentionPeriod_ = std::stoi(value["LogBackupRetentionPeriod"].asString());
+	if(!value["SnapshotBackupType"].isNull())
+		snapshotBackupType_ = value["SnapshotBackupType"].asString();
+	if(!value["BackupInterval"].isNull())
+		backupInterval_ = std::stoi(value["BackupInterval"].asString());
 
 }
 
@@ -62,6 +66,11 @@ std::string DescribeBackupPolicyResult::getPreferredBackupPeriod()const
 int DescribeBackupPolicyResult::getLogBackupRetentionPeriod()const
 {
 	return logBackupRetentionPeriod_;
+}
+
+std::string DescribeBackupPolicyResult::getSnapshotBackupType()const
+{
+	return snapshotBackupType_;
 }
 
 std::string DescribeBackupPolicyResult::getPreferredBackupTime()const
@@ -82,5 +91,10 @@ std::string DescribeBackupPolicyResult::getBackupRetentionPeriod()const
 std::string DescribeBackupPolicyResult::getPreferredNextBackupTime()const
 {
 	return preferredNextBackupTime_;
+}
+
+int DescribeBackupPolicyResult::getBackupInterval()const
+{
+	return backupInterval_;
 }
 

@@ -43,6 +43,15 @@ void ModifyBackupPolicyRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string ModifyBackupPolicyRequest::getBackupInterval() const {
+  return backupInterval_;
+}
+
+void ModifyBackupPolicyRequest::setBackupInterval(const std::string &backupInterval) {
+  backupInterval_ = backupInterval;
+  setParameter(std::string("BackupInterval"), backupInterval);
+}
+
 std::string ModifyBackupPolicyRequest::getSecurityToken() const {
   return securityToken_;
 }
@@ -104,6 +113,15 @@ long ModifyBackupPolicyRequest::getOwnerId() const {
 void ModifyBackupPolicyRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string ModifyBackupPolicyRequest::getSnapshotBackupType() const {
+  return snapshotBackupType_;
+}
+
+void ModifyBackupPolicyRequest::setSnapshotBackupType(const std::string &snapshotBackupType) {
+  snapshotBackupType_ = snapshotBackupType;
+  setParameter(std::string("SnapshotBackupType"), snapshotBackupType);
 }
 
 std::string ModifyBackupPolicyRequest::getPreferredBackupTime() const {

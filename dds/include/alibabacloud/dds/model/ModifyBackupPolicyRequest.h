@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getBackupInterval() const;
+	void setBackupInterval(const std::string &backupInterval);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceId() const;
@@ -48,6 +50,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getSnapshotBackupType() const;
+	void setSnapshotBackupType(const std::string &snapshotBackupType);
 	std::string getPreferredBackupTime() const;
 	void setPreferredBackupTime(const std::string &preferredBackupTime);
 	long getBackupRetentionPeriod() const;
@@ -58,6 +62,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
+	std::string backupInterval_;
 	std::string securityToken_;
 	std::string dBInstanceId_;
 	long enableBackupLog_;
@@ -65,6 +70,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string snapshotBackupType_;
 	std::string preferredBackupTime_;
 	long backupRetentionPeriod_;
 	long logBackupRetentionPeriod_;

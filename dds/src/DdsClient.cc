@@ -339,42 +339,6 @@ DdsClient::CreateNodeBatchOutcomeCallable DdsClient::createNodeBatchCallable(con
 	return task->get_future();
 }
 
-DdsClient::CreateServerlessDBInstanceOutcome DdsClient::createServerlessDBInstance(const CreateServerlessDBInstanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateServerlessDBInstanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateServerlessDBInstanceOutcome(CreateServerlessDBInstanceResult(outcome.result()));
-	else
-		return CreateServerlessDBInstanceOutcome(outcome.error());
-}
-
-void DdsClient::createServerlessDBInstanceAsync(const CreateServerlessDBInstanceRequest& request, const CreateServerlessDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createServerlessDBInstance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::CreateServerlessDBInstanceOutcomeCallable DdsClient::createServerlessDBInstanceCallable(const CreateServerlessDBInstanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateServerlessDBInstanceOutcome()>>(
-			[this, request]()
-			{
-			return this->createServerlessDBInstance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DdsClient::CreateShardingDBInstanceOutcome DdsClient::createShardingDBInstance(const CreateShardingDBInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

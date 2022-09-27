@@ -88,9 +88,24 @@ namespace AlibabaCloud
 						std::string connectString;
 						int maxIOPS;
 					};
+					struct NetworkAddress
+					{
+						std::string role;
+						std::string networkAddress;
+						std::string vPCId;
+						std::string networkType;
+						std::string nodeType;
+						std::string vSwitchId;
+						std::string expiredTime;
+						std::string port;
+						std::string nodeId;
+						std::string iPAddress;
+					};
 					std::string vPCCloudInstanceIds;
 					std::string resourceGroupId;
 					std::string capacityUnit;
+					std::string hiddenZoneId;
+					std::string destroyTime;
 					std::string dBInstanceType;
 					std::string replicaSetName;
 					std::string storageEngine;
@@ -101,6 +116,7 @@ namespace AlibabaCloud
 					std::string networkType;
 					std::string lastDowngradeTime;
 					int dBInstanceStorage;
+					std::string paymentType;
 					std::vector<DBInstance::Tag> tags;
 					std::string dBInstanceDescription;
 					std::string maintainStartTime;
@@ -121,11 +137,13 @@ namespace AlibabaCloud
 					std::vector<DBInstance::ShardAttribute> shardList;
 					std::string lockMode;
 					int maxIOPS;
-					std::string chargeType;
+					std::string secondaryZoneId;
 					std::string vpcAuthMode;
 					std::string protocolType;
 					std::string currentKernelVersion;
+					std::string chargeType;
 					std::string creationTime;
+					std::vector<DBInstance::NetworkAddress> networkAddresses;
 					std::vector<DBInstance::ConfigserverAttribute> configserverList;
 					std::string regionId;
 					std::string expireTime;

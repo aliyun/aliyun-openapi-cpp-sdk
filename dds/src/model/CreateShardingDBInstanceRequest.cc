@@ -34,13 +34,13 @@ void CreateShardingDBInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string CreateShardingDBInstanceRequest::getClientToken() const {
-  return clientToken_;
+std::string CreateShardingDBInstanceRequest::getSecondaryZoneId() const {
+  return secondaryZoneId_;
 }
 
-void CreateShardingDBInstanceRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
+void CreateShardingDBInstanceRequest::setSecondaryZoneId(const std::string &secondaryZoneId) {
+  secondaryZoneId_ = secondaryZoneId;
+  setParameter(std::string("SecondaryZoneId"), secondaryZoneId);
 }
 
 std::string CreateShardingDBInstanceRequest::getEngineVersion() const {
@@ -76,24 +76,6 @@ void CreateShardingDBInstanceRequest::setReplicaSet(const std::vector<CreateShar
   }
 }
 
-std::string CreateShardingDBInstanceRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void CreateShardingDBInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string CreateShardingDBInstanceRequest::getStorageEngine() const {
-  return storageEngine_;
-}
-
-void CreateShardingDBInstanceRequest::setStorageEngine(const std::string &storageEngine) {
-  storageEngine_ = storageEngine;
-  setParameter(std::string("StorageEngine"), storageEngine);
-}
-
 std::string CreateShardingDBInstanceRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
@@ -103,15 +85,6 @@ void CreateShardingDBInstanceRequest::setResourceGroupId(const std::string &reso
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string CreateShardingDBInstanceRequest::getRegionId() const {
-  return regionId_;
-}
-
-void CreateShardingDBInstanceRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string CreateShardingDBInstanceRequest::getSecurityToken() const {
   return securityToken_;
 }
@@ -119,15 +92,6 @@ std::string CreateShardingDBInstanceRequest::getSecurityToken() const {
 void CreateShardingDBInstanceRequest::setSecurityToken(const std::string &securityToken) {
   securityToken_ = securityToken;
   setParameter(std::string("SecurityToken"), securityToken);
-}
-
-std::string CreateShardingDBInstanceRequest::getEngine() const {
-  return engine_;
-}
-
-void CreateShardingDBInstanceRequest::setEngine(const std::string &engine) {
-  engine_ = engine;
-  setParameter(std::string("Engine"), engine);
 }
 
 std::string CreateShardingDBInstanceRequest::getDBInstanceDescription() const {
@@ -146,42 +110,6 @@ int CreateShardingDBInstanceRequest::getPeriod() const {
 void CreateShardingDBInstanceRequest::setPeriod(int period) {
   period_ = period;
   setParameter(std::string("Period"), std::to_string(period));
-}
-
-std::string CreateShardingDBInstanceRequest::getRestoreTime() const {
-  return restoreTime_;
-}
-
-void CreateShardingDBInstanceRequest::setRestoreTime(const std::string &restoreTime) {
-  restoreTime_ = restoreTime;
-  setParameter(std::string("RestoreTime"), restoreTime);
-}
-
-std::string CreateShardingDBInstanceRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void CreateShardingDBInstanceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string CreateShardingDBInstanceRequest::getSrcDBInstanceId() const {
-  return srcDBInstanceId_;
-}
-
-void CreateShardingDBInstanceRequest::setSrcDBInstanceId(const std::string &srcDBInstanceId) {
-  srcDBInstanceId_ = srcDBInstanceId;
-  setParameter(std::string("SrcDBInstanceId"), srcDBInstanceId);
-}
-
-std::string CreateShardingDBInstanceRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void CreateShardingDBInstanceRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
 std::vector<CreateShardingDBInstanceRequest::ConfigServer> CreateShardingDBInstanceRequest::getConfigServer() const {
@@ -238,15 +166,6 @@ void CreateShardingDBInstanceRequest::setMongos(const std::vector<CreateSharding
   }
 }
 
-std::string CreateShardingDBInstanceRequest::getAccountPassword() const {
-  return accountPassword_;
-}
-
-void CreateShardingDBInstanceRequest::setAccountPassword(const std::string &accountPassword) {
-  accountPassword_ = accountPassword;
-  setParameter(std::string("AccountPassword"), accountPassword);
-}
-
 std::string CreateShardingDBInstanceRequest::getAutoRenew() const {
   return autoRenew_;
 }
@@ -256,15 +175,6 @@ void CreateShardingDBInstanceRequest::setAutoRenew(const std::string &autoRenew)
   setParameter(std::string("AutoRenew"), autoRenew);
 }
 
-std::string CreateShardingDBInstanceRequest::getVpcId() const {
-  return vpcId_;
-}
-
-void CreateShardingDBInstanceRequest::setVpcId(const std::string &vpcId) {
-  vpcId_ = vpcId;
-  setParameter(std::string("VpcId"), vpcId);
-}
-
 std::string CreateShardingDBInstanceRequest::getZoneId() const {
   return zoneId_;
 }
@@ -272,6 +182,114 @@ std::string CreateShardingDBInstanceRequest::getZoneId() const {
 void CreateShardingDBInstanceRequest::setZoneId(const std::string &zoneId) {
   zoneId_ = zoneId;
   setParameter(std::string("ZoneId"), zoneId);
+}
+
+std::string CreateShardingDBInstanceRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void CreateShardingDBInstanceRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string CreateShardingDBInstanceRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void CreateShardingDBInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string CreateShardingDBInstanceRequest::getStorageEngine() const {
+  return storageEngine_;
+}
+
+void CreateShardingDBInstanceRequest::setStorageEngine(const std::string &storageEngine) {
+  storageEngine_ = storageEngine;
+  setParameter(std::string("StorageEngine"), storageEngine);
+}
+
+std::string CreateShardingDBInstanceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateShardingDBInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string CreateShardingDBInstanceRequest::getEngine() const {
+  return engine_;
+}
+
+void CreateShardingDBInstanceRequest::setEngine(const std::string &engine) {
+  engine_ = engine;
+  setParameter(std::string("Engine"), engine);
+}
+
+std::string CreateShardingDBInstanceRequest::getHiddenZoneId() const {
+  return hiddenZoneId_;
+}
+
+void CreateShardingDBInstanceRequest::setHiddenZoneId(const std::string &hiddenZoneId) {
+  hiddenZoneId_ = hiddenZoneId;
+  setParameter(std::string("HiddenZoneId"), hiddenZoneId);
+}
+
+std::string CreateShardingDBInstanceRequest::getRestoreTime() const {
+  return restoreTime_;
+}
+
+void CreateShardingDBInstanceRequest::setRestoreTime(const std::string &restoreTime) {
+  restoreTime_ = restoreTime;
+  setParameter(std::string("RestoreTime"), restoreTime);
+}
+
+std::string CreateShardingDBInstanceRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void CreateShardingDBInstanceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string CreateShardingDBInstanceRequest::getSrcDBInstanceId() const {
+  return srcDBInstanceId_;
+}
+
+void CreateShardingDBInstanceRequest::setSrcDBInstanceId(const std::string &srcDBInstanceId) {
+  srcDBInstanceId_ = srcDBInstanceId;
+  setParameter(std::string("SrcDBInstanceId"), srcDBInstanceId);
+}
+
+std::string CreateShardingDBInstanceRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void CreateShardingDBInstanceRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+std::string CreateShardingDBInstanceRequest::getAccountPassword() const {
+  return accountPassword_;
+}
+
+void CreateShardingDBInstanceRequest::setAccountPassword(const std::string &accountPassword) {
+  accountPassword_ = accountPassword;
+  setParameter(std::string("AccountPassword"), accountPassword);
+}
+
+std::string CreateShardingDBInstanceRequest::getVpcId() const {
+  return vpcId_;
+}
+
+void CreateShardingDBInstanceRequest::setVpcId(const std::string &vpcId) {
+  vpcId_ = vpcId;
+  setParameter(std::string("VpcId"), vpcId);
 }
 
 std::string CreateShardingDBInstanceRequest::getProtocolType() const {

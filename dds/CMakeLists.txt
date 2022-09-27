@@ -37,8 +37,6 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/CreateNodeResult.h
 	include/alibabacloud/dds/model/CreateNodeBatchRequest.h
 	include/alibabacloud/dds/model/CreateNodeBatchResult.h
-	include/alibabacloud/dds/model/CreateServerlessDBInstanceRequest.h
-	include/alibabacloud/dds/model/CreateServerlessDBInstanceResult.h
 	include/alibabacloud/dds/model/CreateShardingDBInstanceRequest.h
 	include/alibabacloud/dds/model/CreateShardingDBInstanceResult.h
 	include/alibabacloud/dds/model/DeleteDBInstanceRequest.h
@@ -218,8 +216,6 @@ set(dds_src
 	src/model/CreateNodeResult.cc
 	src/model/CreateNodeBatchRequest.cc
 	src/model/CreateNodeBatchResult.cc
-	src/model/CreateServerlessDBInstanceRequest.cc
-	src/model/CreateServerlessDBInstanceResult.cc
 	src/model/CreateShardingDBInstanceRequest.cc
 	src/model/CreateShardingDBInstanceResult.cc
 	src/model/DeleteDBInstanceRequest.cc

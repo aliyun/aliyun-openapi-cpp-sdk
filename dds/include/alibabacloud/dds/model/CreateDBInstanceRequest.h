@@ -28,12 +28,18 @@ namespace Dds {
 namespace Model {
 class ALIBABACLOUD_DDS_EXPORT CreateDBInstanceRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateDBInstanceRequest();
 	~CreateDBInstanceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	int getDBInstanceStorage() const;
 	void setDBInstanceStorage(int dBInstanceStorage);
+	std::string getSecondaryZoneId() const;
+	void setSecondaryZoneId(const std::string &secondaryZoneId);
 	std::string getCouponNo() const;
 	void setCouponNo(const std::string &couponNo);
 	std::string getEngineVersion() const;
@@ -48,6 +54,8 @@ public:
 	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceDescription() const;
 	void setDBInstanceDescription(const std::string &dBInstanceDescription);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getBusinessInfo() const;
 	void setBusinessInfo(const std::string &businessInfo);
 	int getPeriod() const;
@@ -82,6 +90,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getEngine() const;
 	void setEngine(const std::string &engine);
+	std::string getHiddenZoneId() const;
+	void setHiddenZoneId(const std::string &hiddenZoneId);
 	std::string getRestoreTime() const;
 	void setRestoreTime(const std::string &restoreTime);
 	std::string getResourceOwnerAccount() const;
@@ -102,6 +112,7 @@ public:
 private:
 	long resourceOwnerId_;
 	int dBInstanceStorage_;
+	std::string secondaryZoneId_;
 	std::string couponNo_;
 	std::string engineVersion_;
 	std::string networkType_;
@@ -109,6 +120,7 @@ private:
 	std::string resourceGroupId_;
 	std::string securityToken_;
 	std::string dBInstanceDescription_;
+	std::vector<Tag> tag_;
 	std::string businessInfo_;
 	int period_;
 	std::string backupId_;
@@ -126,6 +138,7 @@ private:
 	std::string databaseNames_;
 	std::string regionId_;
 	std::string engine_;
+	std::string hiddenZoneId_;
 	std::string restoreTime_;
 	std::string resourceOwnerAccount_;
 	std::string srcDBInstanceId_;

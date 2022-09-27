@@ -40,6 +40,10 @@ public:
 	void setCouponNo(const std::string &couponNo);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	bool getShardDirect() const;
+	void setShardDirect(bool shardDirect);
+	std::string getAccountName() const;
+	void setAccountName(const std::string &accountName);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceId() const;
@@ -56,6 +60,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getAccountPassword() const;
+	void setAccountPassword(const std::string &accountPassword);
 
 private:
 	long resourceOwnerId_;
@@ -63,6 +69,8 @@ private:
 	std::string nodesInfo_;
 	std::string couponNo_;
 	std::string accessKeyId_;
+	bool shardDirect_;
+	std::string accountName_;
 	std::string securityToken_;
 	std::string dBInstanceId_;
 	std::string businessInfo_;
@@ -71,6 +79,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string accountPassword_;
 };
 } // namespace Model
 } // namespace Dds
