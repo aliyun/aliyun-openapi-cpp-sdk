@@ -32,6 +32,13 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SAS_EXPORT DescribeVulFixStatisticsResult : public ServiceResult
 			{
 			public:
+				struct FixTotal
+				{
+					int fixingNum;
+					int fixedTodayNum;
+					int fixedTotalNum;
+					int needFixNum;
+				};
 				struct Fix
 				{
 					int fixingNum;
@@ -45,11 +52,13 @@ namespace AlibabaCloud
 				DescribeVulFixStatisticsResult();
 				explicit DescribeVulFixStatisticsResult(const std::string &payload);
 				~DescribeVulFixStatisticsResult();
+				FixTotal getFixTotal()const;
 				std::vector<Fix> getFixStat()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				FixTotal fixTotal_;
 				std::vector<Fix> fixStat_;
 
 			};

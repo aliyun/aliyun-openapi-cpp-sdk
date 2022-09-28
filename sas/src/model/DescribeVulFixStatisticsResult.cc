@@ -55,7 +55,21 @@ void DescribeVulFixStatisticsResult::parse(const std::string &payload)
 			fixStatObject.needFixNum = std::stoi(valueFixStatFix["NeedFixNum"].asString());
 		fixStat_.push_back(fixStatObject);
 	}
+	auto fixTotalNode = value["FixTotal"];
+	if(!fixTotalNode["FixingNum"].isNull())
+		fixTotal_.fixingNum = std::stoi(fixTotalNode["FixingNum"].asString());
+	if(!fixTotalNode["FixedTodayNum"].isNull())
+		fixTotal_.fixedTodayNum = std::stoi(fixTotalNode["FixedTodayNum"].asString());
+	if(!fixTotalNode["FixedTotalNum"].isNull())
+		fixTotal_.fixedTotalNum = std::stoi(fixTotalNode["FixedTotalNum"].asString());
+	if(!fixTotalNode["NeedFixNum"].isNull())
+		fixTotal_.needFixNum = std::stoi(fixTotalNode["NeedFixNum"].asString());
 
+}
+
+DescribeVulFixStatisticsResult::FixTotal DescribeVulFixStatisticsResult::getFixTotal()const
+{
+	return fixTotal_;
 }
 
 std::vector<DescribeVulFixStatisticsResult::Fix> DescribeVulFixStatisticsResult::getFixStat()const
