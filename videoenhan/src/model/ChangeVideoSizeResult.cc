@@ -40,10 +40,10 @@ void ChangeVideoSizeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["VideoUrl"].isNull())
-		data_.videoUrl = dataNode["VideoUrl"].asString();
 	if(!dataNode["VideoCoverUrl"].isNull())
 		data_.videoCoverUrl = dataNode["VideoCoverUrl"].asString();
+	if(!dataNode["VideoUrl"].isNull())
+		data_.videoUrl = dataNode["VideoUrl"].asString();
 
 }
 
