@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					struct Element
 					{
 						int x;
-						int y;
 						std::string imageURL;
+						int y;
 						int height;
 						int width;
 					};

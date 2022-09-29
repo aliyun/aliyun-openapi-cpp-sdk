@@ -46,14 +46,14 @@ void SegmentHairResult::parse(const std::string &payload)
 		Data::Element elementObject;
 		if(!dataNodeElementsElement["ImageURL"].isNull())
 			elementObject.imageURL = dataNodeElementsElement["ImageURL"].asString();
-		if(!dataNodeElementsElement["X"].isNull())
-			elementObject.x = std::stoi(dataNodeElementsElement["X"].asString());
-		if(!dataNodeElementsElement["Y"].isNull())
-			elementObject.y = std::stoi(dataNodeElementsElement["Y"].asString());
 		if(!dataNodeElementsElement["Width"].isNull())
 			elementObject.width = std::stoi(dataNodeElementsElement["Width"].asString());
 		if(!dataNodeElementsElement["Height"].isNull())
 			elementObject.height = std::stoi(dataNodeElementsElement["Height"].asString());
+		if(!dataNodeElementsElement["Y"].isNull())
+			elementObject.y = std::stoi(dataNodeElementsElement["Y"].asString());
+		if(!dataNodeElementsElement["X"].isNull())
+			elementObject.x = std::stoi(dataNodeElementsElement["X"].asString());
 		data_.elements.push_back(elementObject);
 	}
 

@@ -46,10 +46,10 @@ void ParseFaceResult::parse(const std::string &payload)
 	for (auto dataNodeElementsElement : allElementsNode)
 	{
 		Data::Element elementObject;
-		if(!dataNodeElementsElement["Name"].isNull())
-			elementObject.name = dataNodeElementsElement["Name"].asString();
 		if(!dataNodeElementsElement["ImageURL"].isNull())
 			elementObject.imageURL = dataNodeElementsElement["ImageURL"].asString();
+		if(!dataNodeElementsElement["Name"].isNull())
+			elementObject.name = dataNodeElementsElement["Name"].asString();
 		data_.elements.push_back(elementObject);
 	}
 

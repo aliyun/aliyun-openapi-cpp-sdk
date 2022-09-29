@@ -44,10 +44,10 @@ void SegmentVehicleResult::parse(const std::string &payload)
 	for (auto dataNodeElementsElement : allElementsNode)
 	{
 		Data::Element elementObject;
-		if(!dataNodeElementsElement["OriginImageURL"].isNull())
-			elementObject.originImageURL = dataNodeElementsElement["OriginImageURL"].asString();
 		if(!dataNodeElementsElement["ImageURL"].isNull())
 			elementObject.imageURL = dataNodeElementsElement["ImageURL"].asString();
+		if(!dataNodeElementsElement["OriginImageURL"].isNull())
+			elementObject.originImageURL = dataNodeElementsElement["OriginImageURL"].asString();
 		data_.elements.push_back(elementObject);
 	}
 
