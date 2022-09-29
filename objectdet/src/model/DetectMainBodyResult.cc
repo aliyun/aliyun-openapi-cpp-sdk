@@ -41,14 +41,14 @@ void DetectMainBodyResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
 	auto locationNode = dataNode["Location"];
-	if(!locationNode["X"].isNull())
-		data_.location.x = std::stoi(locationNode["X"].asString());
-	if(!locationNode["Y"].isNull())
-		data_.location.y = std::stoi(locationNode["Y"].asString());
 	if(!locationNode["Width"].isNull())
 		data_.location.width = std::stoi(locationNode["Width"].asString());
 	if(!locationNode["Height"].isNull())
 		data_.location.height = std::stoi(locationNode["Height"].asString());
+	if(!locationNode["Y"].isNull())
+		data_.location.y = std::stoi(locationNode["Y"].asString());
+	if(!locationNode["X"].isNull())
+		data_.location.x = std::stoi(locationNode["X"].asString());
 
 }
 

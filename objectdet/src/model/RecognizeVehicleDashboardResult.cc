@@ -46,10 +46,10 @@ void RecognizeVehicleDashboardResult::parse(const std::string &payload)
 		Data::Element elementObject;
 		if(!dataNodeElementsElement["Score"].isNull())
 			elementObject.score = std::stof(dataNodeElementsElement["Score"].asString());
-		if(!dataNodeElementsElement["ClassName"].isNull())
-			elementObject.className = dataNodeElementsElement["ClassName"].asString();
 		if(!dataNodeElementsElement["Label"].isNull())
 			elementObject.label = dataNodeElementsElement["Label"].asString();
+		if(!dataNodeElementsElement["ClassName"].isNull())
+			elementObject.className = dataNodeElementsElement["ClassName"].asString();
 		auto allBoxes = value["Boxes"]["Box"];
 		for (auto value : allBoxes)
 			elementObject.boxes.push_back(value.asString());

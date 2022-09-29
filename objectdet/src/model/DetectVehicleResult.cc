@@ -48,10 +48,10 @@ void DetectVehicleResult::parse(const std::string &payload)
 	for (auto dataNodeDetectObjectInfoListDetectObjectInfo : allDetectObjectInfoListNode)
 	{
 		Data::DetectObjectInfo detectObjectInfoObject;
-		if(!dataNodeDetectObjectInfoListDetectObjectInfo["Score"].isNull())
-			detectObjectInfoObject.score = std::stof(dataNodeDetectObjectInfoListDetectObjectInfo["Score"].asString());
 		if(!dataNodeDetectObjectInfoListDetectObjectInfo["Type"].isNull())
 			detectObjectInfoObject.type = dataNodeDetectObjectInfoListDetectObjectInfo["Type"].asString();
+		if(!dataNodeDetectObjectInfoListDetectObjectInfo["Score"].isNull())
+			detectObjectInfoObject.score = std::stof(dataNodeDetectObjectInfoListDetectObjectInfo["Score"].asString());
 		if(!dataNodeDetectObjectInfoListDetectObjectInfo["Id"].isNull())
 			detectObjectInfoObject.id = std::stoi(dataNodeDetectObjectInfoListDetectObjectInfo["Id"].asString());
 		auto allBoxes = value["Boxes"]["Box"];

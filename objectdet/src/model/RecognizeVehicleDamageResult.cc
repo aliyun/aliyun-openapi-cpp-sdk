@@ -44,10 +44,10 @@ void RecognizeVehicleDamageResult::parse(const std::string &payload)
 	for (auto dataNodeElementsElement : allElementsNode)
 	{
 		Data::Element elementObject;
-		if(!dataNodeElementsElement["Score"].isNull())
-			elementObject.score = std::stof(dataNodeElementsElement["Score"].asString());
 		if(!dataNodeElementsElement["Type"].isNull())
 			elementObject.type = dataNodeElementsElement["Type"].asString();
+		if(!dataNodeElementsElement["Score"].isNull())
+			elementObject.score = std::stof(dataNodeElementsElement["Score"].asString());
 		auto allScores = value["Scores"]["Score"];
 		for (auto value : allScores)
 			elementObject.scores.push_back(value.asString());

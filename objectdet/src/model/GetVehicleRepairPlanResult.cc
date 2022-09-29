@@ -46,38 +46,38 @@ void GetVehicleRepairPlanResult::parse(const std::string &payload)
 	for (auto dataNodeRepairPartsRepairItems : allRepairPartsNode)
 	{
 		Data::RepairItems repairItemsObject;
-		if(!dataNodeRepairPartsRepairItems["GarageType"].isNull())
-			repairItemsObject.garageType = dataNodeRepairPartsRepairItems["GarageType"].asString();
+		if(!dataNodeRepairPartsRepairItems["RelationType"].isNull())
+			repairItemsObject.relationType = dataNodeRepairPartsRepairItems["RelationType"].asString();
+		if(!dataNodeRepairPartsRepairItems["PartsStdCode"].isNull())
+			repairItemsObject.partsStdCode = dataNodeRepairPartsRepairItems["PartsStdCode"].asString();
+		if(!dataNodeRepairPartsRepairItems["PartNameMatch"].isNull())
+			repairItemsObject.partNameMatch = dataNodeRepairPartsRepairItems["PartNameMatch"].asString() == "true";
+		if(!dataNodeRepairPartsRepairItems["RepairFee"].isNull())
+			repairItemsObject.repairFee = dataNodeRepairPartsRepairItems["RepairFee"].asString();
+		if(!dataNodeRepairPartsRepairItems["OutStandardPartsName"].isNull())
+			repairItemsObject.outStandardPartsName = dataNodeRepairPartsRepairItems["OutStandardPartsName"].asString();
+		if(!dataNodeRepairPartsRepairItems["PartsStdName"].isNull())
+			repairItemsObject.partsStdName = dataNodeRepairPartsRepairItems["PartsStdName"].asString();
+		if(!dataNodeRepairPartsRepairItems["RepairTypeName"].isNull())
+			repairItemsObject.repairTypeName = dataNodeRepairPartsRepairItems["RepairTypeName"].asString();
+		if(!dataNodeRepairPartsRepairItems["RepairType"].isNull())
+			repairItemsObject.repairType = dataNodeRepairPartsRepairItems["RepairType"].asString();
 		if(!dataNodeRepairPartsRepairItems["OeMatch"].isNull())
 			repairItemsObject.oeMatch = dataNodeRepairPartsRepairItems["OeMatch"].asString() == "true";
 		if(!dataNodeRepairPartsRepairItems["OutStandardPartsId"].isNull())
 			repairItemsObject.outStandardPartsId = dataNodeRepairPartsRepairItems["OutStandardPartsId"].asString();
-		if(!dataNodeRepairPartsRepairItems["OutStandardPartsName"].isNull())
-			repairItemsObject.outStandardPartsName = dataNodeRepairPartsRepairItems["OutStandardPartsName"].asString();
-		if(!dataNodeRepairPartsRepairItems["PartNameMatch"].isNull())
-			repairItemsObject.partNameMatch = dataNodeRepairPartsRepairItems["PartNameMatch"].asString() == "true";
-		if(!dataNodeRepairPartsRepairItems["PartsStdCode"].isNull())
-			repairItemsObject.partsStdCode = dataNodeRepairPartsRepairItems["PartsStdCode"].asString();
-		if(!dataNodeRepairPartsRepairItems["PartsStdName"].isNull())
-			repairItemsObject.partsStdName = dataNodeRepairPartsRepairItems["PartsStdName"].asString();
-		if(!dataNodeRepairPartsRepairItems["RelationType"].isNull())
-			repairItemsObject.relationType = dataNodeRepairPartsRepairItems["RelationType"].asString();
-		if(!dataNodeRepairPartsRepairItems["RepairFee"].isNull())
-			repairItemsObject.repairFee = dataNodeRepairPartsRepairItems["RepairFee"].asString();
-		if(!dataNodeRepairPartsRepairItems["RepairType"].isNull())
-			repairItemsObject.repairType = dataNodeRepairPartsRepairItems["RepairType"].asString();
-		if(!dataNodeRepairPartsRepairItems["RepairTypeName"].isNull())
-			repairItemsObject.repairTypeName = dataNodeRepairPartsRepairItems["RepairTypeName"].asString();
+		if(!dataNodeRepairPartsRepairItems["GarageType"].isNull())
+			repairItemsObject.garageType = dataNodeRepairPartsRepairItems["GarageType"].asString();
 		data_.repairParts.push_back(repairItemsObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["HttpCode"].isNull())
 		httpCode_ = std::stoi(value["HttpCode"].asString());
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

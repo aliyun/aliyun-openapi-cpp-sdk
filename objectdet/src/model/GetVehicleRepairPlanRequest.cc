@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,64 @@
 
 using AlibabaCloud::Objectdet::Model::GetVehicleRepairPlanRequest;
 
-GetVehicleRepairPlanRequest::GetVehicleRepairPlanRequest() :
-	RpcServiceRequest("objectdet", "2019-12-30", "GetVehicleRepairPlan")
-{
-	setMethod(HttpRequest::Method::Post);
+GetVehicleRepairPlanRequest::GetVehicleRepairPlanRequest()
+    : RpcServiceRequest("objectdet", "2019-12-30", "GetVehicleRepairPlan") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetVehicleRepairPlanRequest::~GetVehicleRepairPlanRequest()
-{}
+GetVehicleRepairPlanRequest::~GetVehicleRepairPlanRequest() {}
 
-std::string GetVehicleRepairPlanRequest::getVinCodeImage()const
-{
-	return vinCodeImage_;
+std::string GetVehicleRepairPlanRequest::getVinCodeImage() const {
+  return vinCodeImage_;
 }
 
-void GetVehicleRepairPlanRequest::setVinCodeImage(const std::string& vinCodeImage)
-{
-	vinCodeImage_ = vinCodeImage;
-	setBodyParameter("VinCodeImage", vinCodeImage);
+void GetVehicleRepairPlanRequest::setVinCodeImage(const std::string &vinCodeImage) {
+  vinCodeImage_ = vinCodeImage;
+  setBodyParameter(std::string("VinCodeImage"), vinCodeImage);
 }
 
-std::string GetVehicleRepairPlanRequest::getCarNumberImage()const
-{
-	return carNumberImage_;
+bool GetVehicleRepairPlanRequest::getFormatResultToJson() const {
+  return formatResultToJson_;
 }
 
-void GetVehicleRepairPlanRequest::setCarNumberImage(const std::string& carNumberImage)
-{
-	carNumberImage_ = carNumberImage;
-	setBodyParameter("CarNumberImage", carNumberImage);
+void GetVehicleRepairPlanRequest::setFormatResultToJson(bool formatResultToJson) {
+  formatResultToJson_ = formatResultToJson;
+  setParameter(std::string("FormatResultToJson"), formatResultToJson ? "true" : "false");
 }
 
-std::string GetVehicleRepairPlanRequest::getTaskId()const
-{
-	return taskId_;
+std::string GetVehicleRepairPlanRequest::getCarNumberImage() const {
+  return carNumberImage_;
 }
 
-void GetVehicleRepairPlanRequest::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-	setBodyParameter("TaskId", taskId);
+void GetVehicleRepairPlanRequest::setCarNumberImage(const std::string &carNumberImage) {
+  carNumberImage_ = carNumberImage;
+  setBodyParameter(std::string("CarNumberImage"), carNumberImage);
+}
+
+std::string GetVehicleRepairPlanRequest::getTaskId() const {
+  return taskId_;
+}
+
+void GetVehicleRepairPlanRequest::setTaskId(const std::string &taskId) {
+  taskId_ = taskId;
+  setBodyParameter(std::string("TaskId"), taskId);
+}
+
+std::string GetVehicleRepairPlanRequest::getOssFile() const {
+  return ossFile_;
+}
+
+void GetVehicleRepairPlanRequest::setOssFile(const std::string &ossFile) {
+  ossFile_ = ossFile;
+  setParameter(std::string("OssFile"), ossFile);
+}
+
+std::string GetVehicleRepairPlanRequest::getRequestProxyBy() const {
+  return requestProxyBy_;
+}
+
+void GetVehicleRepairPlanRequest::setRequestProxyBy(const std::string &requestProxyBy) {
+  requestProxyBy_ = requestProxyBy;
+  setParameter(std::string("RequestProxyBy"), requestProxyBy);
 }
 

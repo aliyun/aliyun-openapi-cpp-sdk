@@ -42,8 +42,8 @@ namespace AlibabaCloud
 						std::string repairType;
 						std::string relationType;
 						std::string repairFee;
-						std::string garageType;
 						std::string partsStdName;
+						std::string garageType;
 						std::string outStandardPartsId;
 						std::string repairTypeName;
 						bool oeMatch;

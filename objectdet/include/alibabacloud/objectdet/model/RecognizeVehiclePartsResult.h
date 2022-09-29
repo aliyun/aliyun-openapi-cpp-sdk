@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					struct Element
 					{
-						float score;
 						std::string type;
+						float score;
 						std::vector<std::string> boxes;
 					};
 					std::vector<Element> elements;

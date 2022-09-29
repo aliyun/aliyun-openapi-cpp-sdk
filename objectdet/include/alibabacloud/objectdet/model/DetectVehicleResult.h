@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					struct DetectObjectInfo
 					{
-						float score;
 						std::string type;
+						float score;
 						int id;
 						std::vector<std::string> boxes;
 					};
