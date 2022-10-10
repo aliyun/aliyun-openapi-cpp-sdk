@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EAIS_MODEL_GETPRIVATEIPREQUEST_H_
-#define ALIBABACLOUD_EAIS_MODEL_GETPRIVATEIPREQUEST_H_
+#ifndef ALIBABACLOUD_EAIS_MODEL_CREATEEAIJUPYTERRESULT_H_
+#define ALIBABACLOUD_EAIS_MODEL_CREATEEAIJUPYTERRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/eais/EaisExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_EAIS_EXPORT GetPrivateIpRequest : public RpcServiceRequest
+			class ALIBABACLOUD_EAIS_EXPORT CreateEaiJupyterResult : public ServiceResult
 			{
-
 			public:
-				GetPrivateIpRequest();
-				~GetPrivateIpRequest();
 
-				std::string getClientInstanceId()const;
-				void setClientInstanceId(const std::string& clientInstanceId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 
-            private:
-				std::string clientInstanceId_;
-				std::string regionId_;
+				CreateEaiJupyterResult();
+				explicit CreateEaiJupyterResult(const std::string &payload);
+				~CreateEaiJupyterResult();
+				std::string getElasticAcceleratedInstanceId()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string elasticAcceleratedInstanceId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_EAIS_MODEL_GETPRIVATEIPREQUEST_H_
+#endif // !ALIBABACLOUD_EAIS_MODEL_CREATEEAIJUPYTERRESULT_H_

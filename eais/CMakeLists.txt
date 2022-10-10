@@ -27,6 +27,8 @@ set(eais_public_header_model
 	include/alibabacloud/eais/model/CreateEaiResult.h
 	include/alibabacloud/eais/model/CreateEaiAllRequest.h
 	include/alibabacloud/eais/model/CreateEaiAllResult.h
+	include/alibabacloud/eais/model/CreateEaiJupyterRequest.h
+	include/alibabacloud/eais/model/CreateEaiJupyterResult.h
 	include/alibabacloud/eais/model/DeleteEaiRequest.h
 	include/alibabacloud/eais/model/DeleteEaiResult.h
 	include/alibabacloud/eais/model/DeleteEaiAllRequest.h
@@ -36,9 +38,7 @@ set(eais_public_header_model
 	include/alibabacloud/eais/model/DescribeRegionsRequest.h
 	include/alibabacloud/eais/model/DescribeRegionsResult.h
 	include/alibabacloud/eais/model/DetachEaiRequest.h
-	include/alibabacloud/eais/model/DetachEaiResult.h
-	include/alibabacloud/eais/model/GetPrivateIpRequest.h
-	include/alibabacloud/eais/model/GetPrivateIpResult.h )
+	include/alibabacloud/eais/model/DetachEaiResult.h )
 
 set(eais_src 
 	src/EaisClient.cc
@@ -48,6 +48,8 @@ set(eais_src
 	src/model/CreateEaiResult.cc
 	src/model/CreateEaiAllRequest.cc
 	src/model/CreateEaiAllResult.cc
+	src/model/CreateEaiJupyterRequest.cc
+	src/model/CreateEaiJupyterResult.cc
 	src/model/DeleteEaiRequest.cc
 	src/model/DeleteEaiResult.cc
 	src/model/DeleteEaiAllRequest.cc
@@ -57,9 +59,7 @@ set(eais_src
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DetachEaiRequest.cc
-	src/model/DetachEaiResult.cc
-	src/model/GetPrivateIpRequest.cc
-	src/model/GetPrivateIpResult.cc )
+	src/model/DetachEaiResult.cc )
 
 add_library(eais ${LIB_TYPE}
 	${eais_public_header}

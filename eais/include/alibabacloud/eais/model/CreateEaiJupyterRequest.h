@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EAIS_MODEL_DESCRIBEREGIONSREQUEST_H_
-#define ALIBABACLOUD_EAIS_MODEL_DESCRIBEREGIONSREQUEST_H_
+#ifndef ALIBABACLOUD_EAIS_MODEL_CREATEEAIJUPYTERREQUEST_H_
+#define ALIBABACLOUD_EAIS_MODEL_CREATEEAIJUPYTERREQUEST_H_
 
 #include <alibabacloud/eais/EaisExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,14 +26,29 @@
 namespace AlibabaCloud {
 namespace Eais {
 namespace Model {
-class ALIBABACLOUD_EAIS_EXPORT DescribeRegionsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_EAIS_EXPORT CreateEaiJupyterRequest : public RpcServiceRequest {
 public:
-	DescribeRegionsRequest();
-	~DescribeRegionsRequest();
+	CreateEaiJupyterRequest();
+	~CreateEaiJupyterRequest();
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getSecurityGroupId() const;
+	void setSecurityGroupId(const std::string &securityGroupId);
+	std::string getEaisType() const;
+	void setEaisType(const std::string &eaisType);
+	std::string getVSwitchId() const;
+	void setVSwitchId(const std::string &vSwitchId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 
 private:
+	std::string clientToken_;
+	std::string securityGroupId_;
+	std::string eaisType_;
+	std::string vSwitchId_;
+	std::string regionId_;
 };
 } // namespace Model
 } // namespace Eais
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_EAIS_MODEL_DESCRIBEREGIONSREQUEST_H_
+#endif // !ALIBABACLOUD_EAIS_MODEL_CREATEEAIJUPYTERREQUEST_H_

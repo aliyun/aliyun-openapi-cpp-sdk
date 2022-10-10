@@ -14,38 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/eais/model/GetPrivateIpResult.h>
+#include <alibabacloud/eais/model/CreateEaiJupyterResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Eais;
 using namespace AlibabaCloud::Eais::Model;
 
-GetPrivateIpResult::GetPrivateIpResult() :
+CreateEaiJupyterResult::CreateEaiJupyterResult() :
 	ServiceResult()
 {}
 
-GetPrivateIpResult::GetPrivateIpResult(const std::string &payload) :
+CreateEaiJupyterResult::CreateEaiJupyterResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetPrivateIpResult::~GetPrivateIpResult()
+CreateEaiJupyterResult::~CreateEaiJupyterResult()
 {}
 
-void GetPrivateIpResult::parse(const std::string &payload)
+void CreateEaiJupyterResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["PrivateIp"].isNull())
-		privateIp_ = value["PrivateIp"].asString();
+	if(!value["ElasticAcceleratedInstanceId"].isNull())
+		elasticAcceleratedInstanceId_ = value["ElasticAcceleratedInstanceId"].asString();
 
 }
 
-std::string GetPrivateIpResult::getPrivateIp()const
+std::string CreateEaiJupyterResult::getElasticAcceleratedInstanceId()const
 {
-	return privateIp_;
+	return elasticAcceleratedInstanceId_;
 }
 

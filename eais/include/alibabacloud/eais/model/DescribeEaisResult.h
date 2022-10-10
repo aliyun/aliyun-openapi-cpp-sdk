@@ -39,18 +39,22 @@ namespace AlibabaCloud
 						std::string tagKey;
 						std::string tagValue;
 					};
-					std::string instanceName;
 					std::string status;
 					std::string clientInstanceType;
 					std::string description;
-					std::string clientInstanceName;
+					std::string category;
 					std::string zoneId;
-					std::string creationTime;
+					std::string vSwitchId;
+					std::string securityGroupId;
 					std::string clientInstanceId;
+					std::string elasticAcceleratedInstanceId;
+					std::string jupyterUrl;
+					std::string instanceName;
+					std::string clientInstanceName;
+					std::string creationTime;
 					std::string regionId;
 					std::string instanceType;
 					std::vector<Instance::Tag> tags;
-					std::string elasticAcceleratedInstanceId;
 				};
 
 

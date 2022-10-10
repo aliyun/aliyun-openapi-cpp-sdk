@@ -159,6 +159,42 @@ EaisClient::CreateEaiAllOutcomeCallable EaisClient::createEaiAllCallable(const C
 	return task->get_future();
 }
 
+EaisClient::CreateEaiJupyterOutcome EaisClient::createEaiJupyter(const CreateEaiJupyterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateEaiJupyterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateEaiJupyterOutcome(CreateEaiJupyterResult(outcome.result()));
+	else
+		return CreateEaiJupyterOutcome(outcome.error());
+}
+
+void EaisClient::createEaiJupyterAsync(const CreateEaiJupyterRequest& request, const CreateEaiJupyterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createEaiJupyter(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EaisClient::CreateEaiJupyterOutcomeCallable EaisClient::createEaiJupyterCallable(const CreateEaiJupyterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateEaiJupyterOutcome()>>(
+			[this, request]()
+			{
+			return this->createEaiJupyter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EaisClient::DeleteEaiOutcome EaisClient::deleteEai(const DeleteEaiRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,42 +369,6 @@ EaisClient::DetachEaiOutcomeCallable EaisClient::detachEaiCallable(const DetachE
 			[this, request]()
 			{
 			return this->detachEai(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EaisClient::GetPrivateIpOutcome EaisClient::getPrivateIp(const GetPrivateIpRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetPrivateIpOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetPrivateIpOutcome(GetPrivateIpResult(outcome.result()));
-	else
-		return GetPrivateIpOutcome(outcome.error());
-}
-
-void EaisClient::getPrivateIpAsync(const GetPrivateIpRequest& request, const GetPrivateIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getPrivateIp(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EaisClient::GetPrivateIpOutcomeCallable EaisClient::getPrivateIpCallable(const GetPrivateIpRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetPrivateIpOutcome()>>(
-			[this, request]()
-			{
-			return this->getPrivateIp(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
