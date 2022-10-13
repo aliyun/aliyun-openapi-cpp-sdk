@@ -25,24 +25,6 @@ ListPermissionApplyOrdersRequest::ListPermissionApplyOrdersRequest()
 
 ListPermissionApplyOrdersRequest::~ListPermissionApplyOrdersRequest() {}
 
-std::string ListPermissionApplyOrdersRequest::getMaxComputeProjectName() const {
-  return maxComputeProjectName_;
-}
-
-void ListPermissionApplyOrdersRequest::setMaxComputeProjectName(const std::string &maxComputeProjectName) {
-  maxComputeProjectName_ = maxComputeProjectName;
-  setParameter(std::string("MaxComputeProjectName"), maxComputeProjectName);
-}
-
-long ListPermissionApplyOrdersRequest::getEndTime() const {
-  return endTime_;
-}
-
-void ListPermissionApplyOrdersRequest::setEndTime(long endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), std::to_string(endTime));
-}
-
 long ListPermissionApplyOrdersRequest::getStartTime() const {
   return startTime_;
 }
@@ -59,15 +41,6 @@ int ListPermissionApplyOrdersRequest::getPageNum() const {
 void ListPermissionApplyOrdersRequest::setPageNum(int pageNum) {
   pageNum_ = pageNum;
   setParameter(std::string("PageNum"), std::to_string(pageNum));
-}
-
-int ListPermissionApplyOrdersRequest::getFlowStatus() const {
-  return flowStatus_;
-}
-
-void ListPermissionApplyOrdersRequest::setFlowStatus(int flowStatus) {
-  flowStatus_ = flowStatus;
-  setParameter(std::string("FlowStatus"), std::to_string(flowStatus));
 }
 
 int ListPermissionApplyOrdersRequest::getPageSize() const {
@@ -97,6 +70,42 @@ void ListPermissionApplyOrdersRequest::setQueryType(int queryType) {
   setParameter(std::string("QueryType"), std::to_string(queryType));
 }
 
+std::string ListPermissionApplyOrdersRequest::getEngineType() const {
+  return engineType_;
+}
+
+void ListPermissionApplyOrdersRequest::setEngineType(const std::string &engineType) {
+  engineType_ = engineType;
+  setParameter(std::string("EngineType"), engineType);
+}
+
+std::string ListPermissionApplyOrdersRequest::getMaxComputeProjectName() const {
+  return maxComputeProjectName_;
+}
+
+void ListPermissionApplyOrdersRequest::setMaxComputeProjectName(const std::string &maxComputeProjectName) {
+  maxComputeProjectName_ = maxComputeProjectName;
+  setParameter(std::string("MaxComputeProjectName"), maxComputeProjectName);
+}
+
+long ListPermissionApplyOrdersRequest::getEndTime() const {
+  return endTime_;
+}
+
+void ListPermissionApplyOrdersRequest::setEndTime(long endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), std::to_string(endTime));
+}
+
+int ListPermissionApplyOrdersRequest::getFlowStatus() const {
+  return flowStatus_;
+}
+
+void ListPermissionApplyOrdersRequest::setFlowStatus(int flowStatus) {
+  flowStatus_ = flowStatus;
+  setParameter(std::string("FlowStatus"), std::to_string(flowStatus));
+}
+
 int ListPermissionApplyOrdersRequest::getWorkspaceId() const {
   return workspaceId_;
 }
@@ -113,14 +122,5 @@ int ListPermissionApplyOrdersRequest::getOrderType() const {
 void ListPermissionApplyOrdersRequest::setOrderType(int orderType) {
   orderType_ = orderType;
   setParameter(std::string("OrderType"), std::to_string(orderType));
-}
-
-std::string ListPermissionApplyOrdersRequest::getEngineType() const {
-  return engineType_;
-}
-
-void ListPermissionApplyOrdersRequest::setEngineType(const std::string &engineType) {
-  engineType_ = engineType;
-  setParameter(std::string("EngineType"), engineType);
 }
 

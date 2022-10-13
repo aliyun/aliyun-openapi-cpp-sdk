@@ -30,14 +30,14 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListProjectsRequest : public RpcServi
 public:
 	ListProjectsRequest();
 	~ListProjectsRequest();
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 
 private:
-	int pageSize_;
 	int pageNumber_;
+	int pageSize_;
 };
 } // namespace Model
 } // namespace Dataworks_public

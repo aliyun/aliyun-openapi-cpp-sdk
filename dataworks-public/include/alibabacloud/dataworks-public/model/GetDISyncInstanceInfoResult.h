@@ -41,6 +41,7 @@ namespace AlibabaCloud
 							std::string status;
 							long stepId;
 							std::string stepName;
+							std::string info;
 						};
 						std::string status;
 						long id;

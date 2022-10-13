@@ -34,15 +34,6 @@ void RemoveProjectMemberFromRoleRequest::setRoleCode(const std::string &roleCode
   setParameter(std::string("RoleCode"), roleCode);
 }
 
-long RemoveProjectMemberFromRoleRequest::getProjectId() const {
-  return projectId_;
-}
-
-void RemoveProjectMemberFromRoleRequest::setProjectId(long projectId) {
-  projectId_ = projectId;
-  setParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
 std::string RemoveProjectMemberFromRoleRequest::getUserId() const {
   return userId_;
 }
@@ -50,5 +41,14 @@ std::string RemoveProjectMemberFromRoleRequest::getUserId() const {
 void RemoveProjectMemberFromRoleRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+long RemoveProjectMemberFromRoleRequest::getProjectId() const {
+  return projectId_;
+}
+
+void RemoveProjectMemberFromRoleRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 

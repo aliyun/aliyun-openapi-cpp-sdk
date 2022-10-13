@@ -6711,6 +6711,42 @@ Dataworks_publicClient::ListUsageForResourceGroupOutcomeCallable Dataworks_publi
 	return task->get_future();
 }
 
+Dataworks_publicClient::OfflineNodeOutcome Dataworks_publicClient::offlineNode(const OfflineNodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OfflineNodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OfflineNodeOutcome(OfflineNodeResult(outcome.result()));
+	else
+		return OfflineNodeOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::offlineNodeAsync(const OfflineNodeRequest& request, const OfflineNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, offlineNode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::OfflineNodeOutcomeCallable Dataworks_publicClient::offlineNodeCallable(const OfflineNodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OfflineNodeOutcome()>>(
+			[this, request]()
+			{
+			return this->offlineNode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::PublishDataServiceApiOutcome Dataworks_publicClient::publishDataServiceApi(const PublishDataServiceApiRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

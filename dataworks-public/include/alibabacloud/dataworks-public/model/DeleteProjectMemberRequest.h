@@ -30,14 +30,14 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT DeleteProjectMemberRequest : public R
 public:
 	DeleteProjectMemberRequest();
 	~DeleteProjectMemberRequest();
-	long getProjectId() const;
-	void setProjectId(long projectId);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
-	long projectId_;
 	std::string userId_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

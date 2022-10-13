@@ -43,15 +43,6 @@ void CreateProjectMemberRequest::setClientToken(const std::string &clientToken) 
   setParameter(std::string("ClientToken"), clientToken);
 }
 
-long CreateProjectMemberRequest::getProjectId() const {
-  return projectId_;
-}
-
-void CreateProjectMemberRequest::setProjectId(long projectId) {
-  projectId_ = projectId;
-  setParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
 std::string CreateProjectMemberRequest::getUserId() const {
   return userId_;
 }
@@ -59,5 +50,14 @@ std::string CreateProjectMemberRequest::getUserId() const {
 void CreateProjectMemberRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+long CreateProjectMemberRequest::getProjectId() const {
+  return projectId_;
+}
+
+void CreateProjectMemberRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 

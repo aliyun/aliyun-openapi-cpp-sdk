@@ -63,6 +63,8 @@ void GetDISyncInstanceInfoResult::parse(const std::string &payload)
 			stepDetailItemObject.stepId = std::stol(solutionInfoNodeStepDetailStepDetailItem["StepId"].asString());
 		if(!solutionInfoNodeStepDetailStepDetailItem["StepName"].isNull())
 			stepDetailItemObject.stepName = solutionInfoNodeStepDetailStepDetailItem["StepName"].asString();
+		if(!solutionInfoNodeStepDetailStepDetailItem["Info"].isNull())
+			stepDetailItemObject.info = solutionInfoNodeStepDetailStepDetailItem["Info"].asString();
 		data_.solutionInfo.stepDetail.push_back(stepDetailItemObject);
 	}
 	if(!value["Success"].isNull())

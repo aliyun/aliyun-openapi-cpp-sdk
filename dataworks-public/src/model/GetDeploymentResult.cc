@@ -40,6 +40,18 @@ void GetDeploymentResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	auto allDeployedItemsNode = dataNode["DeployedItems"]["DeployedItem"];
+	for (auto dataNodeDeployedItemsDeployedItem : allDeployedItemsNode)
+	{
+		Data::DeployedItem deployedItemObject;
+		if(!dataNodeDeployedItemsDeployedItem["FileId"].isNull())
+			deployedItemObject.fileId = std::stol(dataNodeDeployedItemsDeployedItem["FileId"].asString());
+		if(!dataNodeDeployedItemsDeployedItem["FileVersion"].isNull())
+			deployedItemObject.fileVersion = std::stol(dataNodeDeployedItemsDeployedItem["FileVersion"].asString());
+		if(!dataNodeDeployedItemsDeployedItem["Status"].isNull())
+			deployedItemObject.status = std::stoi(dataNodeDeployedItemsDeployedItem["Status"].asString());
+		data_.deployedItems.push_back(deployedItemObject);
+	}
 	auto deploymentNode = dataNode["Deployment"];
 	if(!deploymentNode["Status"].isNull())
 		data_.deployment.status = std::stoi(deploymentNode["Status"].asString());

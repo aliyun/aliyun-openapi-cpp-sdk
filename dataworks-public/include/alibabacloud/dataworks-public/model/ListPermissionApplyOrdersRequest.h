@@ -30,41 +30,41 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListPermissionApplyOrdersRequest : pu
 public:
 	ListPermissionApplyOrdersRequest();
 	~ListPermissionApplyOrdersRequest();
-	std::string getMaxComputeProjectName() const;
-	void setMaxComputeProjectName(const std::string &maxComputeProjectName);
-	long getEndTime() const;
-	void setEndTime(long endTime);
 	long getStartTime() const;
 	void setStartTime(long startTime);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	int getFlowStatus() const;
-	void setFlowStatus(int flowStatus);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getTableName() const;
 	void setTableName(const std::string &tableName);
 	int getQueryType() const;
 	void setQueryType(int queryType);
+	std::string getEngineType() const;
+	void setEngineType(const std::string &engineType);
+	std::string getMaxComputeProjectName() const;
+	void setMaxComputeProjectName(const std::string &maxComputeProjectName);
+	long getEndTime() const;
+	void setEndTime(long endTime);
+	int getFlowStatus() const;
+	void setFlowStatus(int flowStatus);
 	int getWorkspaceId() const;
 	void setWorkspaceId(int workspaceId);
 	int getOrderType() const;
 	void setOrderType(int orderType);
-	std::string getEngineType() const;
-	void setEngineType(const std::string &engineType);
 
 private:
-	std::string maxComputeProjectName_;
-	long endTime_;
 	long startTime_;
 	int pageNum_;
-	int flowStatus_;
 	int pageSize_;
 	std::string tableName_;
 	int queryType_;
+	std::string engineType_;
+	std::string maxComputeProjectName_;
+	long endTime_;
+	int flowStatus_;
 	int workspaceId_;
 	int orderType_;
-	std::string engineType_;
 };
 } // namespace Model
 } // namespace Dataworks_public

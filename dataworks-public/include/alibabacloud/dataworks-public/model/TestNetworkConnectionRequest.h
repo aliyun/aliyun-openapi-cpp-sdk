@@ -32,17 +32,17 @@ public:
 	~TestNetworkConnectionRequest();
 	std::string getResourceGroup() const;
 	void setResourceGroup(const std::string &resourceGroup);
-	std::string getEnvType() const;
-	void setEnvType(const std::string &envType);
 	std::string getDatasourceName() const;
 	void setDatasourceName(const std::string &datasourceName);
+	std::string getEnvType() const;
+	void setEnvType(const std::string &envType);
 	long getProjectId() const;
 	void setProjectId(long projectId);
 
 private:
 	std::string resourceGroup_;
-	std::string envType_;
 	std::string datasourceName_;
+	std::string envType_;
 	long projectId_;
 };
 } // namespace Model

@@ -43,15 +43,6 @@ void AddProjectMemberToRoleRequest::setClientToken(const std::string &clientToke
   setParameter(std::string("ClientToken"), clientToken);
 }
 
-long AddProjectMemberToRoleRequest::getProjectId() const {
-  return projectId_;
-}
-
-void AddProjectMemberToRoleRequest::setProjectId(long projectId) {
-  projectId_ = projectId;
-  setParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
 std::string AddProjectMemberToRoleRequest::getUserId() const {
   return userId_;
 }
@@ -59,5 +50,14 @@ std::string AddProjectMemberToRoleRequest::getUserId() const {
 void AddProjectMemberToRoleRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+long AddProjectMemberToRoleRequest::getProjectId() const {
+  return projectId_;
+}
+
+void AddProjectMemberToRoleRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 

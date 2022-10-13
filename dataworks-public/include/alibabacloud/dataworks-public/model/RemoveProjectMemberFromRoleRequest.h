@@ -32,15 +32,15 @@ public:
 	~RemoveProjectMemberFromRoleRequest();
 	std::string getRoleCode() const;
 	void setRoleCode(const std::string &roleCode);
-	long getProjectId() const;
-	void setProjectId(long projectId);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
 	std::string roleCode_;
-	long projectId_;
 	std::string userId_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

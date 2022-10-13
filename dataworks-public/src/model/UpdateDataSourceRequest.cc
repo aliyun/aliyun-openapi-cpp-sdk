@@ -25,24 +25,6 @@ UpdateDataSourceRequest::UpdateDataSourceRequest()
 
 UpdateDataSourceRequest::~UpdateDataSourceRequest() {}
 
-int UpdateDataSourceRequest::getEnvType() const {
-  return envType_;
-}
-
-void UpdateDataSourceRequest::setEnvType(int envType) {
-  envType_ = envType;
-  setParameter(std::string("EnvType"), std::to_string(envType));
-}
-
-long UpdateDataSourceRequest::getDataSourceId() const {
-  return dataSourceId_;
-}
-
-void UpdateDataSourceRequest::setDataSourceId(long dataSourceId) {
-  dataSourceId_ = dataSourceId;
-  setParameter(std::string("DataSourceId"), std::to_string(dataSourceId));
-}
-
 std::string UpdateDataSourceRequest::getDescription() const {
   return description_;
 }
@@ -59,6 +41,24 @@ std::string UpdateDataSourceRequest::getContent() const {
 void UpdateDataSourceRequest::setContent(const std::string &content) {
   content_ = content;
   setParameter(std::string("Content"), content);
+}
+
+int UpdateDataSourceRequest::getEnvType() const {
+  return envType_;
+}
+
+void UpdateDataSourceRequest::setEnvType(int envType) {
+  envType_ = envType;
+  setParameter(std::string("EnvType"), std::to_string(envType));
+}
+
+long UpdateDataSourceRequest::getDataSourceId() const {
+  return dataSourceId_;
+}
+
+void UpdateDataSourceRequest::setDataSourceId(long dataSourceId) {
+  dataSourceId_ = dataSourceId;
+  setParameter(std::string("DataSourceId"), std::to_string(dataSourceId));
 }
 
 std::string UpdateDataSourceRequest::getStatus() const {

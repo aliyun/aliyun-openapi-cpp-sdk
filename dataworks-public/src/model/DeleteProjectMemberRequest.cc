@@ -25,15 +25,6 @@ DeleteProjectMemberRequest::DeleteProjectMemberRequest()
 
 DeleteProjectMemberRequest::~DeleteProjectMemberRequest() {}
 
-long DeleteProjectMemberRequest::getProjectId() const {
-  return projectId_;
-}
-
-void DeleteProjectMemberRequest::setProjectId(long projectId) {
-  projectId_ = projectId;
-  setParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
 std::string DeleteProjectMemberRequest::getUserId() const {
   return userId_;
 }
@@ -41,5 +32,14 @@ std::string DeleteProjectMemberRequest::getUserId() const {
 void DeleteProjectMemberRequest::setUserId(const std::string &userId) {
   userId_ = userId;
   setParameter(std::string("UserId"), userId);
+}
+
+long DeleteProjectMemberRequest::getProjectId() const {
+  return projectId_;
+}
+
+void DeleteProjectMemberRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 

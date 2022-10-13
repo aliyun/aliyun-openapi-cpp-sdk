@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_ADDPROJECTMEMBERTOROLEREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_ADDPROJECTMEMBERTOROLEREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_OFFLINENODEREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_OFFLINENODEREQUEST_H_
 
 #include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,20 @@
 namespace AlibabaCloud {
 namespace Dataworks_public {
 namespace Model {
-class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT AddProjectMemberToRoleRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT OfflineNodeRequest : public RpcServiceRequest {
 public:
-	AddProjectMemberToRoleRequest();
-	~AddProjectMemberToRoleRequest();
-	std::string getRoleCode() const;
-	void setRoleCode(const std::string &roleCode);
-	std::string getClientToken() const;
-	void setClientToken(const std::string &clientToken);
-	std::string getUserId() const;
-	void setUserId(const std::string &userId);
+	OfflineNodeRequest();
+	~OfflineNodeRequest();
+	long getNodeId() const;
+	void setNodeId(long nodeId);
 	long getProjectId() const;
 	void setProjectId(long projectId);
 
 private:
-	std::string roleCode_;
-	std::string clientToken_;
-	std::string userId_;
+	long nodeId_;
 	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_ADDPROJECTMEMBERTOROLEREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_OFFLINENODEREQUEST_H_

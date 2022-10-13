@@ -25,15 +25,6 @@ ListProjectsRequest::ListProjectsRequest()
 
 ListProjectsRequest::~ListProjectsRequest() {}
 
-int ListProjectsRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListProjectsRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 int ListProjectsRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -41,5 +32,14 @@ int ListProjectsRequest::getPageNumber() const {
 void ListProjectsRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+int ListProjectsRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListProjectsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

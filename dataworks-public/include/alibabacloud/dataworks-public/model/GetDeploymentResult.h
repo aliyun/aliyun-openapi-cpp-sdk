@@ -47,6 +47,13 @@ namespace AlibabaCloud
 						std::string errorMessage;
 						std::string name;
 					};
+					struct DeployedItem
+					{
+						int status;
+						long fileVersion;
+						long fileId;
+					};
+					std::vector<DeployedItem> deployedItems;
 					Deployment deployment;
 				};
 

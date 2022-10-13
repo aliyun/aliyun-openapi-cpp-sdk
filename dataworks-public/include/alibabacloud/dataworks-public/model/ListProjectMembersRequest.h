@@ -30,17 +30,17 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListProjectMembersRequest : public Rp
 public:
 	ListProjectMembersRequest();
 	~ListProjectMembersRequest();
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	long getProjectId() const;
 	void setProjectId(long projectId);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
 
 private:
+	int pageNumber_;
 	int pageSize_;
 	long projectId_;
-	int pageNumber_;
 };
 } // namespace Model
 } // namespace Dataworks_public

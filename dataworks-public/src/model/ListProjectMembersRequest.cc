@@ -25,6 +25,15 @@ ListProjectMembersRequest::ListProjectMembersRequest()
 
 ListProjectMembersRequest::~ListProjectMembersRequest() {}
 
+int ListProjectMembersRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void ListProjectMembersRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
 int ListProjectMembersRequest::getPageSize() const {
   return pageSize_;
 }
@@ -41,14 +50,5 @@ long ListProjectMembersRequest::getProjectId() const {
 void ListProjectMembersRequest::setProjectId(long projectId) {
   projectId_ = projectId;
   setParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
-int ListProjectMembersRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void ListProjectMembersRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

@@ -392,6 +392,8 @@
 #include "model/ListTopicsResult.h"
 #include "model/ListUsageForResourceGroupRequest.h"
 #include "model/ListUsageForResourceGroupResult.h"
+#include "model/OfflineNodeRequest.h"
+#include "model/OfflineNodeResult.h"
 #include "model/PublishDataServiceApiRequest.h"
 #include "model/PublishDataServiceApiResult.h"
 #include "model/QueryDISyncTaskConfigProcessResultRequest.h"
@@ -1060,6 +1062,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListUsageForResourceGroupResult> ListUsageForResourceGroupOutcome;
 			typedef std::future<ListUsageForResourceGroupOutcome> ListUsageForResourceGroupOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListUsageForResourceGroupRequest&, const ListUsageForResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUsageForResourceGroupAsyncHandler;
+			typedef Outcome<Error, Model::OfflineNodeResult> OfflineNodeOutcome;
+			typedef std::future<OfflineNodeOutcome> OfflineNodeOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::OfflineNodeRequest&, const OfflineNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OfflineNodeAsyncHandler;
 			typedef Outcome<Error, Model::PublishDataServiceApiResult> PublishDataServiceApiOutcome;
 			typedef std::future<PublishDataServiceApiOutcome> PublishDataServiceApiOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::PublishDataServiceApiRequest&, const PublishDataServiceApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishDataServiceApiAsyncHandler;
@@ -1776,6 +1781,9 @@ namespace AlibabaCloud
 			ListUsageForResourceGroupOutcome listUsageForResourceGroup(const Model::ListUsageForResourceGroupRequest &request)const;
 			void listUsageForResourceGroupAsync(const Model::ListUsageForResourceGroupRequest& request, const ListUsageForResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUsageForResourceGroupOutcomeCallable listUsageForResourceGroupCallable(const Model::ListUsageForResourceGroupRequest& request) const;
+			OfflineNodeOutcome offlineNode(const Model::OfflineNodeRequest &request)const;
+			void offlineNodeAsync(const Model::OfflineNodeRequest& request, const OfflineNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OfflineNodeOutcomeCallable offlineNodeCallable(const Model::OfflineNodeRequest& request) const;
 			PublishDataServiceApiOutcome publishDataServiceApi(const Model::PublishDataServiceApiRequest &request)const;
 			void publishDataServiceApiAsync(const Model::PublishDataServiceApiRequest& request, const PublishDataServiceApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PublishDataServiceApiOutcomeCallable publishDataServiceApiCallable(const Model::PublishDataServiceApiRequest& request) const;

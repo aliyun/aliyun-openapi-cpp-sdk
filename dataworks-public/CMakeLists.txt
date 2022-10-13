@@ -391,6 +391,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListTopicsResult.h
 	include/alibabacloud/dataworks-public/model/ListUsageForResourceGroupRequest.h
 	include/alibabacloud/dataworks-public/model/ListUsageForResourceGroupResult.h
+	include/alibabacloud/dataworks-public/model/OfflineNodeRequest.h
+	include/alibabacloud/dataworks-public/model/OfflineNodeResult.h
 	include/alibabacloud/dataworks-public/model/PublishDataServiceApiRequest.h
 	include/alibabacloud/dataworks-public/model/PublishDataServiceApiResult.h
 	include/alibabacloud/dataworks-public/model/QueryDISyncTaskConfigProcessResultRequest.h
@@ -868,6 +870,8 @@ set(dataworks-public_src
 	src/model/ListTopicsResult.cc
 	src/model/ListUsageForResourceGroupRequest.cc
 	src/model/ListUsageForResourceGroupResult.cc
+	src/model/OfflineNodeRequest.cc
+	src/model/OfflineNodeResult.cc
 	src/model/PublishDataServiceApiRequest.cc
 	src/model/PublishDataServiceApiResult.cc
 	src/model/QueryDISyncTaskConfigProcessResultRequest.cc

@@ -34,15 +34,6 @@ void TestNetworkConnectionRequest::setResourceGroup(const std::string &resourceG
   setParameter(std::string("ResourceGroup"), resourceGroup);
 }
 
-std::string TestNetworkConnectionRequest::getEnvType() const {
-  return envType_;
-}
-
-void TestNetworkConnectionRequest::setEnvType(const std::string &envType) {
-  envType_ = envType;
-  setParameter(std::string("EnvType"), envType);
-}
-
 std::string TestNetworkConnectionRequest::getDatasourceName() const {
   return datasourceName_;
 }
@@ -50,6 +41,15 @@ std::string TestNetworkConnectionRequest::getDatasourceName() const {
 void TestNetworkConnectionRequest::setDatasourceName(const std::string &datasourceName) {
   datasourceName_ = datasourceName;
   setParameter(std::string("DatasourceName"), datasourceName);
+}
+
+std::string TestNetworkConnectionRequest::getEnvType() const {
+  return envType_;
+}
+
+void TestNetworkConnectionRequest::setEnvType(const std::string &envType) {
+  envType_ = envType;
+  setParameter(std::string("EnvType"), envType);
 }
 
 long TestNetworkConnectionRequest::getProjectId() const {
