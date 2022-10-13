@@ -127,6 +127,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DeleteSnatEntryResult.h
 	include/alibabacloud/ens/model/DeleteVSwitchRequest.h
 	include/alibabacloud/ens/model/DeleteVSwitchResult.h
+	include/alibabacloud/ens/model/DescribeAICImagesRequest.h
+	include/alibabacloud/ens/model/DescribeAICImagesResult.h
 	include/alibabacloud/ens/model/DescribeARMServerInstancesRequest.h
 	include/alibabacloud/ens/model/DescribeARMServerInstancesResult.h
 	include/alibabacloud/ens/model/DescribeApplicationRequest.h
@@ -193,6 +195,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeExportImageInfoResult.h
 	include/alibabacloud/ens/model/DescribeExportImageStatusRequest.h
 	include/alibabacloud/ens/model/DescribeExportImageStatusResult.h
+	include/alibabacloud/ens/model/DescribeFileSystemsRequest.h
+	include/alibabacloud/ens/model/DescribeFileSystemsResult.h
 	include/alibabacloud/ens/model/DescribeForwardTableEntriesRequest.h
 	include/alibabacloud/ens/model/DescribeForwardTableEntriesResult.h
 	include/alibabacloud/ens/model/DescribeImageInfosRequest.h
@@ -514,6 +518,8 @@ set(ens_src
 	src/model/DeleteSnatEntryResult.cc
 	src/model/DeleteVSwitchRequest.cc
 	src/model/DeleteVSwitchResult.cc
+	src/model/DescribeAICImagesRequest.cc
+	src/model/DescribeAICImagesResult.cc
 	src/model/DescribeARMServerInstancesRequest.cc
 	src/model/DescribeARMServerInstancesResult.cc
 	src/model/DescribeApplicationRequest.cc
@@ -580,6 +586,8 @@ set(ens_src
 	src/model/DescribeExportImageInfoResult.cc
 	src/model/DescribeExportImageStatusRequest.cc
 	src/model/DescribeExportImageStatusResult.cc
+	src/model/DescribeFileSystemsRequest.cc
+	src/model/DescribeFileSystemsResult.cc
 	src/model/DescribeForwardTableEntriesRequest.cc
 	src/model/DescribeForwardTableEntriesResult.cc
 	src/model/DescribeImageInfosRequest.cc

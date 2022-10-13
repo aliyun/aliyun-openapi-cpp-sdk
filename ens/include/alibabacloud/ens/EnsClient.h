@@ -128,6 +128,8 @@
 #include "model/DeleteSnatEntryResult.h"
 #include "model/DeleteVSwitchRequest.h"
 #include "model/DeleteVSwitchResult.h"
+#include "model/DescribeAICImagesRequest.h"
+#include "model/DescribeAICImagesResult.h"
 #include "model/DescribeARMServerInstancesRequest.h"
 #include "model/DescribeARMServerInstancesResult.h"
 #include "model/DescribeApplicationRequest.h"
@@ -194,6 +196,8 @@
 #include "model/DescribeExportImageInfoResult.h"
 #include "model/DescribeExportImageStatusRequest.h"
 #include "model/DescribeExportImageStatusResult.h"
+#include "model/DescribeFileSystemsRequest.h"
+#include "model/DescribeFileSystemsResult.h"
 #include "model/DescribeForwardTableEntriesRequest.h"
 #include "model/DescribeForwardTableEntriesResult.h"
 #include "model/DescribeImageInfosRequest.h"
@@ -574,6 +578,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteVSwitchResult> DeleteVSwitchOutcome;
 			typedef std::future<DeleteVSwitchOutcome> DeleteVSwitchOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DeleteVSwitchRequest&, const DeleteVSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVSwitchAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAICImagesResult> DescribeAICImagesOutcome;
+			typedef std::future<DescribeAICImagesOutcome> DescribeAICImagesOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::DescribeAICImagesRequest&, const DescribeAICImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAICImagesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeARMServerInstancesResult> DescribeARMServerInstancesOutcome;
 			typedef std::future<DescribeARMServerInstancesOutcome> DescribeARMServerInstancesOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DescribeARMServerInstancesRequest&, const DescribeARMServerInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeARMServerInstancesAsyncHandler;
@@ -673,6 +680,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeExportImageStatusResult> DescribeExportImageStatusOutcome;
 			typedef std::future<DescribeExportImageStatusOutcome> DescribeExportImageStatusOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DescribeExportImageStatusRequest&, const DescribeExportImageStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportImageStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeFileSystemsResult> DescribeFileSystemsOutcome;
+			typedef std::future<DescribeFileSystemsOutcome> DescribeFileSystemsOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::DescribeFileSystemsRequest&, const DescribeFileSystemsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileSystemsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeForwardTableEntriesResult> DescribeForwardTableEntriesOutcome;
 			typedef std::future<DescribeForwardTableEntriesOutcome> DescribeForwardTableEntriesOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::DescribeForwardTableEntriesRequest&, const DescribeForwardTableEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForwardTableEntriesAsyncHandler;
@@ -1155,6 +1165,9 @@ namespace AlibabaCloud
 			DeleteVSwitchOutcome deleteVSwitch(const Model::DeleteVSwitchRequest &request)const;
 			void deleteVSwitchAsync(const Model::DeleteVSwitchRequest& request, const DeleteVSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteVSwitchOutcomeCallable deleteVSwitchCallable(const Model::DeleteVSwitchRequest& request) const;
+			DescribeAICImagesOutcome describeAICImages(const Model::DescribeAICImagesRequest &request)const;
+			void describeAICImagesAsync(const Model::DescribeAICImagesRequest& request, const DescribeAICImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAICImagesOutcomeCallable describeAICImagesCallable(const Model::DescribeAICImagesRequest& request) const;
 			DescribeARMServerInstancesOutcome describeARMServerInstances(const Model::DescribeARMServerInstancesRequest &request)const;
 			void describeARMServerInstancesAsync(const Model::DescribeARMServerInstancesRequest& request, const DescribeARMServerInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeARMServerInstancesOutcomeCallable describeARMServerInstancesCallable(const Model::DescribeARMServerInstancesRequest& request) const;
@@ -1254,6 +1267,9 @@ namespace AlibabaCloud
 			DescribeExportImageStatusOutcome describeExportImageStatus(const Model::DescribeExportImageStatusRequest &request)const;
 			void describeExportImageStatusAsync(const Model::DescribeExportImageStatusRequest& request, const DescribeExportImageStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeExportImageStatusOutcomeCallable describeExportImageStatusCallable(const Model::DescribeExportImageStatusRequest& request) const;
+			DescribeFileSystemsOutcome describeFileSystems(const Model::DescribeFileSystemsRequest &request)const;
+			void describeFileSystemsAsync(const Model::DescribeFileSystemsRequest& request, const DescribeFileSystemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeFileSystemsOutcomeCallable describeFileSystemsCallable(const Model::DescribeFileSystemsRequest& request) const;
 			DescribeForwardTableEntriesOutcome describeForwardTableEntries(const Model::DescribeForwardTableEntriesRequest &request)const;
 			void describeForwardTableEntriesAsync(const Model::DescribeForwardTableEntriesRequest& request, const DescribeForwardTableEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeForwardTableEntriesOutcomeCallable describeForwardTableEntriesCallable(const Model::DescribeForwardTableEntriesRequest& request) const;

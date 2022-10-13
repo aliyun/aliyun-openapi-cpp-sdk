@@ -53,6 +53,8 @@ void DescribePrePaidInstanceStockResult::parse(const std::string &payload)
 		memory_ = std::stoi(value["Memory"].asString());
 	if(!value["SystemDiskSize"].isNull())
 		systemDiskSize_ = std::stoi(value["SystemDiskSize"].asString());
+	if(!value["ResourceGap"].isNull())
+		resourceGap_ = value["ResourceGap"].asString();
 
 }
 
@@ -79,6 +81,11 @@ int DescribePrePaidInstanceStockResult::getSystemDiskSize()const
 int DescribePrePaidInstanceStockResult::getMemory()const
 {
 	return memory_;
+}
+
+std::string DescribePrePaidInstanceStockResult::getResourceGap()const
+{
+	return resourceGap_;
 }
 
 int DescribePrePaidInstanceStockResult::getDataDiskSize()const

@@ -49,15 +49,15 @@ void DescribeUserBandWidthDataResult::parse(const std::string &payload)
 	{
 		MonitorData::BandWidthMonitorDataItem bandWidthMonitorDataItemObject;
 		if(!monitorDataNodeBandWidthMonitorDataBandWidthMonitorDataItem["DownBandWidth"].isNull())
-			bandWidthMonitorDataItemObject.downBandWidth = std::stoi(monitorDataNodeBandWidthMonitorDataBandWidthMonitorDataItem["DownBandWidth"].asString());
+			bandWidthMonitorDataItemObject.downBandWidth = std::stol(monitorDataNodeBandWidthMonitorDataBandWidthMonitorDataItem["DownBandWidth"].asString());
 		if(!monitorDataNodeBandWidthMonitorDataBandWidthMonitorDataItem["InternetRX"].isNull())
-			bandWidthMonitorDataItemObject.internetRX = std::stoi(monitorDataNodeBandWidthMonitorDataBandWidthMonitorDataItem["InternetRX"].asString());
+			bandWidthMonitorDataItemObject.internetRX = std::stol(monitorDataNodeBandWidthMonitorDataBandWidthMonitorDataItem["InternetRX"].asString());
 		if(!monitorDataNodeBandWidthMonitorDataBandWidthMonitorDataItem["InternetTX"].isNull())
-			bandWidthMonitorDataItemObject.internetTX = std::stoi(monitorDataNodeBandWidthMonitorDataBandWidthMonitorDataItem["InternetTX"].asString());
+			bandWidthMonitorDataItemObject.internetTX = std::stol(monitorDataNodeBandWidthMonitorDataBandWidthMonitorDataItem["InternetTX"].asString());
 		if(!monitorDataNodeBandWidthMonitorDataBandWidthMonitorDataItem["TimeStamp"].isNull())
 			bandWidthMonitorDataItemObject.timeStamp = monitorDataNodeBandWidthMonitorDataBandWidthMonitorDataItem["TimeStamp"].asString();
 		if(!monitorDataNodeBandWidthMonitorDataBandWidthMonitorDataItem["UpBandWidth"].isNull())
-			bandWidthMonitorDataItemObject.upBandWidth = std::stoi(monitorDataNodeBandWidthMonitorDataBandWidthMonitorDataItem["UpBandWidth"].asString());
+			bandWidthMonitorDataItemObject.upBandWidth = std::stol(monitorDataNodeBandWidthMonitorDataBandWidthMonitorDataItem["UpBandWidth"].asString());
 		monitorData_.bandWidthMonitorData.push_back(bandWidthMonitorDataItemObject);
 	}
 	if(!value["Code"].isNull())

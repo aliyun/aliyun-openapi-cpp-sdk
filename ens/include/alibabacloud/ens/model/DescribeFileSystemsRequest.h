@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEUSERBANDWIDTHDATAREQUEST_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBEUSERBANDWIDTHDATAREQUEST_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEFILESYSTEMSREQUEST_H_
+#define ALIBABACLOUD_ENS_MODEL_DESCRIBEFILESYSTEMSREQUEST_H_
 
 #include <alibabacloud/ens/EnsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,29 @@
 namespace AlibabaCloud {
 namespace Ens {
 namespace Model {
-class ALIBABACLOUD_ENS_EXPORT DescribeUserBandWidthDataRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ENS_EXPORT DescribeFileSystemsRequest : public RpcServiceRequest {
 public:
-	DescribeUserBandWidthDataRequest();
-	~DescribeUserBandWidthDataRequest();
-	std::string getIsp() const;
-	void setIsp(const std::string &isp);
-	std::string getStartTime() const;
-	void setStartTime(const std::string &startTime);
+	DescribeFileSystemsRequest();
+	~DescribeFileSystemsRequest();
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
+	std::string getFileSystemName() const;
+	void setFileSystemName(const std::string &fileSystemName);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
-	std::string getPeriod() const;
-	void setPeriod(const std::string &period);
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getFileSystemId() const;
+	void setFileSystemId(const std::string &fileSystemId);
 
 private:
-	std::string isp_;
-	std::string startTime_;
+	int pageNumber_;
+	std::string fileSystemName_;
 	std::string ensRegionId_;
-	std::string period_;
-	std::string endTime_;
-	std::string instanceId_;
+	int pageSize_;
+	std::string fileSystemId_;
 };
 } // namespace Model
 } // namespace Ens
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEUSERBANDWIDTHDATAREQUEST_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEFILESYSTEMSREQUEST_H_

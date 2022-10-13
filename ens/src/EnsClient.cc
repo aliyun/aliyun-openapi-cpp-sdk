@@ -1959,6 +1959,42 @@ EnsClient::DeleteVSwitchOutcomeCallable EnsClient::deleteVSwitchCallable(const D
 	return task->get_future();
 }
 
+EnsClient::DescribeAICImagesOutcome EnsClient::describeAICImages(const DescribeAICImagesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAICImagesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAICImagesOutcome(DescribeAICImagesResult(outcome.result()));
+	else
+		return DescribeAICImagesOutcome(outcome.error());
+}
+
+void EnsClient::describeAICImagesAsync(const DescribeAICImagesRequest& request, const DescribeAICImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAICImages(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeAICImagesOutcomeCallable EnsClient::describeAICImagesCallable(const DescribeAICImagesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAICImagesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAICImages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeARMServerInstancesOutcome EnsClient::describeARMServerInstances(const DescribeARMServerInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3141,6 +3177,42 @@ EnsClient::DescribeExportImageStatusOutcomeCallable EnsClient::describeExportIma
 			[this, request]()
 			{
 			return this->describeExportImageStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeFileSystemsOutcome EnsClient::describeFileSystems(const DescribeFileSystemsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeFileSystemsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeFileSystemsOutcome(DescribeFileSystemsResult(outcome.result()));
+	else
+		return DescribeFileSystemsOutcome(outcome.error());
+}
+
+void EnsClient::describeFileSystemsAsync(const DescribeFileSystemsRequest& request, const DescribeFileSystemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeFileSystems(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeFileSystemsOutcomeCallable EnsClient::describeFileSystemsCallable(const DescribeFileSystemsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeFileSystemsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeFileSystems(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

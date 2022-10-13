@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEPREPAIDINSTANCESTOCKRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBEPREPAIDINSTANCESTOCKRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEAICIMAGESRESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_DESCRIBEAICIMAGESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,37 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DescribePrePaidInstanceStockResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT DescribeAICImagesResult : public ServiceResult
 			{
 			public:
+				struct ImagesItem
+				{
+					std::string status;
+					std::string user;
+					std::string imageId;
+					std::string creationTime;
+					std::string imageUrl;
+				};
 
 
-				DescribePrePaidInstanceStockResult();
-				explicit DescribePrePaidInstanceStockResult(const std::string &payload);
-				~DescribePrePaidInstanceStockResult();
-				int getCores()const;
-				int getAvaliableCount()const;
-				std::string getInstanceSpec()const;
-				int getSystemDiskSize()const;
-				int getMemory()const;
-				std::string getResourceGap()const;
-				int getDataDiskSize()const;
-				std::string getEnsRegionId()const;
+				DescribeAICImagesResult();
+				explicit DescribeAICImagesResult(const std::string &payload);
+				~DescribeAICImagesResult();
+				std::vector<ImagesItem> getImages()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int cores_;
-				int avaliableCount_;
-				std::string instanceSpec_;
-				int systemDiskSize_;
-				int memory_;
-				std::string resourceGap_;
-				int dataDiskSize_;
-				std::string ensRegionId_;
+				std::vector<ImagesItem> images_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEPREPAIDINSTANCESTOCKRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEAICIMAGESRESULT_H_

@@ -36,10 +36,10 @@ namespace AlibabaCloud
 				{
 					struct BandWidthMonitorDataItem
 					{
-						int upBandWidth;
-						int downBandWidth;
-						int internetTX;
-						int internetRX;
+						long upBandWidth;
+						long downBandWidth;
+						long internetTX;
+						long internetRX;
 						std::string timeStamp;
 					};
 					std::string maxDownBandWidth;

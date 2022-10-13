@@ -61,15 +61,6 @@ void DescribeUserBandWidthDataRequest::setPeriod(const std::string &period) {
   setParameter(std::string("Period"), period);
 }
 
-std::string DescribeUserBandWidthDataRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void DescribeUserBandWidthDataRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 std::string DescribeUserBandWidthDataRequest::getEndTime() const {
   return endTime_;
 }
@@ -77,5 +68,14 @@ std::string DescribeUserBandWidthDataRequest::getEndTime() const {
 void DescribeUserBandWidthDataRequest::setEndTime(const std::string &endTime) {
   endTime_ = endTime;
   setParameter(std::string("EndTime"), endTime);
+}
+
+std::string DescribeUserBandWidthDataRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DescribeUserBandWidthDataRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
