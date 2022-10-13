@@ -76,10 +76,10 @@ public:
 	void setAndroidNotificationXiaomiChannel(const std::string &androidNotificationXiaomiChannel);
 	bool getStoreOffline() const;
 	void setStoreOffline(bool storeOffline);
-	std::string getSmsParams() const;
-	void setSmsParams(const std::string &smsParams);
 	double getIOSRelevanceScore() const;
 	void setIOSRelevanceScore(double iOSRelevanceScore);
+	std::string getSmsParams() const;
+	void setSmsParams(const std::string &smsParams);
 	int getAndroidVivoPushMode() const;
 	void setAndroidVivoPushMode(int androidVivoPushMode);
 	std::string getAndroidInboxBody() const;
@@ -128,6 +128,8 @@ public:
 	void setAndroidRenderStyle(int androidRenderStyle);
 	std::string getIOSExtParameters() const;
 	void setIOSExtParameters(const std::string &iOSExtParameters);
+	std::string getAndroidNotificationHonorChannel() const;
+	void setAndroidNotificationHonorChannel(const std::string &androidNotificationHonorChannel);
 	std::string getAndroidXiaomiImageUrl() const;
 	void setAndroidXiaomiImageUrl(const std::string &androidXiaomiImageUrl);
 	std::string getSmsTemplateName() const;
@@ -138,6 +140,8 @@ public:
 	void setAndroidBigPictureUrl(const std::string &androidBigPictureUrl);
 	bool getIOSSilentNotification() const;
 	void setIOSSilentNotification(bool iOSSilentNotification);
+	std::string getAndroidNotificationGroup() const;
+	void setAndroidNotificationGroup(const std::string &androidNotificationGroup);
 	std::string getSendChannels() const;
 	void setSendChannels(const std::string &sendChannels);
 	std::string getTarget() const;
@@ -158,10 +162,10 @@ public:
 	void setAppKey(long appKey);
 	std::string getTargetValue() const;
 	void setTargetValue(const std::string &targetValue);
-	std::string getAndroidXiaoMiActivity() const;
-	void setAndroidXiaoMiActivity(const std::string &androidXiaoMiActivity);
 	std::string getAndroidXiaoMiNotifyTitle() const;
 	void setAndroidXiaoMiNotifyTitle(const std::string &androidXiaoMiNotifyTitle);
+	std::string getAndroidXiaoMiActivity() const;
+	void setAndroidXiaoMiActivity(const std::string &androidXiaoMiActivity);
 
 private:
 	int androidNotificationBarType_;
@@ -187,8 +191,8 @@ private:
 	std::string iOSNotificationCategory_;
 	std::string androidNotificationXiaomiChannel_;
 	bool storeOffline_;
-	std::string smsParams_;
 	double iOSRelevanceScore_;
+	std::string smsParams_;
 	int androidVivoPushMode_;
 	std::string androidInboxBody_;
 	std::string jobKey_;
@@ -213,11 +217,13 @@ private:
 	int smsDelaySecs_;
 	int androidRenderStyle_;
 	std::string iOSExtParameters_;
+	std::string androidNotificationHonorChannel_;
 	std::string androidXiaomiImageUrl_;
 	std::string smsTemplateName_;
 	std::string androidPopupBody_;
 	std::string androidBigPictureUrl_;
 	bool iOSSilentNotification_;
+	std::string androidNotificationGroup_;
 	std::string sendChannels_;
 	std::string target_;
 	std::string androidBigTitle_;
@@ -228,8 +234,8 @@ private:
 	int androidNotificationNotifyId_;
 	long appKey_;
 	std::string targetValue_;
-	std::string androidXiaoMiActivity_;
 	std::string androidXiaoMiNotifyTitle_;
+	std::string androidXiaoMiActivity_;
 };
 } // namespace Model
 } // namespace Push

@@ -74,10 +74,12 @@ public:
 		std::string title;
 		std::string androidRenderStyle;
 		std::string iOSExtParameters;
+		std::string androidNotificationHonorChannel;
 		std::string androidXiaomiImageUrl;
 		std::string androidPopupBody;
 		std::string androidBigPictureUrl;
 		bool iOSSilentNotification;
+		std::string androidNotificationGroup;
 		std::string sendChannels;
 		std::string target;
 		std::string androidBigTitle;

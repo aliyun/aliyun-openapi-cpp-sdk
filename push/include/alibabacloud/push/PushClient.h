@@ -58,8 +58,6 @@
 #include "model/PushNoticeToiOSResult.h"
 #include "model/QueryAliasesRequest.h"
 #include "model/QueryAliasesResult.h"
-#include "model/QueryDeviceCountRequest.h"
-#include "model/QueryDeviceCountResult.h"
 #include "model/QueryDeviceInfoRequest.h"
 #include "model/QueryDeviceInfoResult.h"
 #include "model/QueryDeviceStatRequest.h"
@@ -149,9 +147,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryAliasesResult> QueryAliasesOutcome;
 			typedef std::future<QueryAliasesOutcome> QueryAliasesOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::QueryAliasesRequest&, const QueryAliasesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAliasesAsyncHandler;
-			typedef Outcome<Error, Model::QueryDeviceCountResult> QueryDeviceCountOutcome;
-			typedef std::future<QueryDeviceCountOutcome> QueryDeviceCountOutcomeCallable;
-			typedef std::function<void(const PushClient*, const Model::QueryDeviceCountRequest&, const QueryDeviceCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceCountAsyncHandler;
 			typedef Outcome<Error, Model::QueryDeviceInfoResult> QueryDeviceInfoOutcome;
 			typedef std::future<QueryDeviceInfoOutcome> QueryDeviceInfoOutcomeCallable;
 			typedef std::function<void(const PushClient*, const Model::QueryDeviceInfoRequest&, const QueryDeviceInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceInfoAsyncHandler;
@@ -250,9 +245,6 @@ namespace AlibabaCloud
 			QueryAliasesOutcome queryAliases(const Model::QueryAliasesRequest &request)const;
 			void queryAliasesAsync(const Model::QueryAliasesRequest& request, const QueryAliasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryAliasesOutcomeCallable queryAliasesCallable(const Model::QueryAliasesRequest& request) const;
-			QueryDeviceCountOutcome queryDeviceCount(const Model::QueryDeviceCountRequest &request)const;
-			void queryDeviceCountAsync(const Model::QueryDeviceCountRequest& request, const QueryDeviceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryDeviceCountOutcomeCallable queryDeviceCountCallable(const Model::QueryDeviceCountRequest& request) const;
 			QueryDeviceInfoOutcome queryDeviceInfo(const Model::QueryDeviceInfoRequest &request)const;
 			void queryDeviceInfoAsync(const Model::QueryDeviceInfoRequest& request, const QueryDeviceInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceInfoOutcomeCallable queryDeviceInfoCallable(const Model::QueryDeviceInfoRequest& request) const;

@@ -232,15 +232,6 @@ void PushRequest::setStoreOffline(bool storeOffline) {
   setParameter(std::string("StoreOffline"), storeOffline ? "true" : "false");
 }
 
-std::string PushRequest::getSmsParams() const {
-  return smsParams_;
-}
-
-void PushRequest::setSmsParams(const std::string &smsParams) {
-  smsParams_ = smsParams;
-  setParameter(std::string("SmsParams"), smsParams);
-}
-
 double PushRequest::getIOSRelevanceScore() const {
   return iOSRelevanceScore_;
 }
@@ -248,6 +239,15 @@ double PushRequest::getIOSRelevanceScore() const {
 void PushRequest::setIOSRelevanceScore(double iOSRelevanceScore) {
   iOSRelevanceScore_ = iOSRelevanceScore;
   setParameter(std::string("iOSRelevanceScore"), std::to_string(iOSRelevanceScore));
+}
+
+std::string PushRequest::getSmsParams() const {
+  return smsParams_;
+}
+
+void PushRequest::setSmsParams(const std::string &smsParams) {
+  smsParams_ = smsParams;
+  setParameter(std::string("SmsParams"), smsParams);
 }
 
 int PushRequest::getAndroidVivoPushMode() const {
@@ -466,6 +466,15 @@ void PushRequest::setIOSExtParameters(const std::string &iOSExtParameters) {
   setParameter(std::string("iOSExtParameters"), iOSExtParameters);
 }
 
+std::string PushRequest::getAndroidNotificationHonorChannel() const {
+  return androidNotificationHonorChannel_;
+}
+
+void PushRequest::setAndroidNotificationHonorChannel(const std::string &androidNotificationHonorChannel) {
+  androidNotificationHonorChannel_ = androidNotificationHonorChannel;
+  setParameter(std::string("AndroidNotificationHonorChannel"), androidNotificationHonorChannel);
+}
+
 std::string PushRequest::getAndroidXiaomiImageUrl() const {
   return androidXiaomiImageUrl_;
 }
@@ -509,6 +518,15 @@ bool PushRequest::getIOSSilentNotification() const {
 void PushRequest::setIOSSilentNotification(bool iOSSilentNotification) {
   iOSSilentNotification_ = iOSSilentNotification;
   setParameter(std::string("iOSSilentNotification"), iOSSilentNotification ? "true" : "false");
+}
+
+std::string PushRequest::getAndroidNotificationGroup() const {
+  return androidNotificationGroup_;
+}
+
+void PushRequest::setAndroidNotificationGroup(const std::string &androidNotificationGroup) {
+  androidNotificationGroup_ = androidNotificationGroup;
+  setParameter(std::string("AndroidNotificationGroup"), androidNotificationGroup);
 }
 
 std::string PushRequest::getSendChannels() const {
@@ -601,15 +619,6 @@ void PushRequest::setTargetValue(const std::string &targetValue) {
   setParameter(std::string("TargetValue"), targetValue);
 }
 
-std::string PushRequest::getAndroidXiaoMiActivity() const {
-  return androidXiaoMiActivity_;
-}
-
-void PushRequest::setAndroidXiaoMiActivity(const std::string &androidXiaoMiActivity) {
-  androidXiaoMiActivity_ = androidXiaoMiActivity;
-  setParameter(std::string("AndroidXiaoMiActivity"), androidXiaoMiActivity);
-}
-
 std::string PushRequest::getAndroidXiaoMiNotifyTitle() const {
   return androidXiaoMiNotifyTitle_;
 }
@@ -617,5 +626,14 @@ std::string PushRequest::getAndroidXiaoMiNotifyTitle() const {
 void PushRequest::setAndroidXiaoMiNotifyTitle(const std::string &androidXiaoMiNotifyTitle) {
   androidXiaoMiNotifyTitle_ = androidXiaoMiNotifyTitle;
   setParameter(std::string("AndroidXiaoMiNotifyTitle"), androidXiaoMiNotifyTitle);
+}
+
+std::string PushRequest::getAndroidXiaoMiActivity() const {
+  return androidXiaoMiActivity_;
+}
+
+void PushRequest::setAndroidXiaoMiActivity(const std::string &androidXiaoMiActivity) {
+  androidXiaoMiActivity_ = androidXiaoMiActivity;
+  setParameter(std::string("AndroidXiaoMiActivity"), androidXiaoMiActivity);
 }
 

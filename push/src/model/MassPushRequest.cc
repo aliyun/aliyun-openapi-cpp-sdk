@@ -88,10 +88,12 @@ void MassPushRequest::setPushTask(const std::vector<MassPushRequest::PushTask> &
     setBodyParameter(pushTaskObjStr + ".Title", pushTaskObj.title);
     setBodyParameter(pushTaskObjStr + ".AndroidRenderStyle", pushTaskObj.androidRenderStyle);
     setBodyParameter(pushTaskObjStr + ".iOSExtParameters", pushTaskObj.iOSExtParameters);
+    setBodyParameter(pushTaskObjStr + ".AndroidNotificationHonorChannel", pushTaskObj.androidNotificationHonorChannel);
     setBodyParameter(pushTaskObjStr + ".AndroidXiaomiImageUrl", pushTaskObj.androidXiaomiImageUrl);
     setBodyParameter(pushTaskObjStr + ".AndroidPopupBody", pushTaskObj.androidPopupBody);
     setBodyParameter(pushTaskObjStr + ".AndroidBigPictureUrl", pushTaskObj.androidBigPictureUrl);
     setBodyParameter(pushTaskObjStr + ".iOSSilentNotification", pushTaskObj.iOSSilentNotification ? "true" : "false");
+    setBodyParameter(pushTaskObjStr + ".AndroidNotificationGroup", pushTaskObj.androidNotificationGroup);
     setBodyParameter(pushTaskObjStr + ".SendChannels", pushTaskObj.sendChannels);
     setBodyParameter(pushTaskObjStr + ".Target", pushTaskObj.target);
     setBodyParameter(pushTaskObjStr + ".AndroidBigTitle", pushTaskObj.androidBigTitle);

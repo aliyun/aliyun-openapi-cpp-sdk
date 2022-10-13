@@ -699,42 +699,6 @@ PushClient::QueryAliasesOutcomeCallable PushClient::queryAliasesCallable(const Q
 	return task->get_future();
 }
 
-PushClient::QueryDeviceCountOutcome PushClient::queryDeviceCount(const QueryDeviceCountRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryDeviceCountOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryDeviceCountOutcome(QueryDeviceCountResult(outcome.result()));
-	else
-		return QueryDeviceCountOutcome(outcome.error());
-}
-
-void PushClient::queryDeviceCountAsync(const QueryDeviceCountRequest& request, const QueryDeviceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryDeviceCount(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PushClient::QueryDeviceCountOutcomeCallable PushClient::queryDeviceCountCallable(const QueryDeviceCountRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryDeviceCountOutcome()>>(
-			[this, request]()
-			{
-			return this->queryDeviceCount(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 PushClient::QueryDeviceInfoOutcome PushClient::queryDeviceInfo(const QueryDeviceInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

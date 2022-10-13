@@ -57,8 +57,6 @@ set(push_public_header_model
 	include/alibabacloud/push/model/PushNoticeToiOSResult.h
 	include/alibabacloud/push/model/QueryAliasesRequest.h
 	include/alibabacloud/push/model/QueryAliasesResult.h
-	include/alibabacloud/push/model/QueryDeviceCountRequest.h
-	include/alibabacloud/push/model/QueryDeviceCountResult.h
 	include/alibabacloud/push/model/QueryDeviceInfoRequest.h
 	include/alibabacloud/push/model/QueryDeviceInfoResult.h
 	include/alibabacloud/push/model/QueryDeviceStatRequest.h
@@ -124,8 +122,6 @@ set(push_src
 	src/model/PushNoticeToiOSResult.cc
 	src/model/QueryAliasesRequest.cc
 	src/model/QueryAliasesResult.cc
-	src/model/QueryDeviceCountRequest.cc
-	src/model/QueryDeviceCountResult.cc
 	src/model/QueryDeviceInfoRequest.cc
 	src/model/QueryDeviceInfoResult.cc
 	src/model/QueryDeviceStatRequest.cc
