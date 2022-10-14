@@ -57,9 +57,11 @@ namespace AlibabaCloud
 					std::string startTimeType;
 					std::string privatePoolOptionsMatchCriteria;
 					std::string timeSlot;
+					std::string savingPlanId;
 					std::vector<CapacityReservationItem::AllocatedResource> allocatedResources;
 					std::string privatePoolOptionsId;
 					std::string endTimeType;
+					std::string reservedInstanceId;
 					std::string regionId;
 					std::vector<CapacityReservationItem::Tag> tags;
 				};

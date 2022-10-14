@@ -56,6 +56,7 @@ namespace AlibabaCloud
 					float memorySize;
 					int maximumQueueNumberPerEni;
 					int eniIpv6AddressQuantity;
+					float gPUMemorySize;
 					int eniTotalQuantity;
 					int cpuCoreCount;
 					int initialCredit;

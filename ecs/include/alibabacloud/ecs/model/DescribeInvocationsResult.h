@@ -70,6 +70,7 @@ namespace AlibabaCloud
 					std::string commandType;
 					std::string username;
 					std::string containerId;
+					std::string containerName;
 					std::string creationTime;
 					std::string frequency;
 					std::string commandId;

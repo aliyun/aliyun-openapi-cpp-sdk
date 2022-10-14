@@ -113,6 +113,8 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.instanceCategory = valueInstanceTypesInstanceType["InstanceCategory"].asString();
 		if(!valueInstanceTypesInstanceType["CpuArchitecture"].isNull())
 			instanceTypesObject.cpuArchitecture = valueInstanceTypesInstanceType["CpuArchitecture"].asString();
+		if(!valueInstanceTypesInstanceType["GPUMemorySize"].isNull())
+			instanceTypesObject.gPUMemorySize = std::stof(valueInstanceTypesInstanceType["GPUMemorySize"].asString());
 		instanceTypes_.push_back(instanceTypesObject);
 	}
 	if(!value["NextToken"].isNull())

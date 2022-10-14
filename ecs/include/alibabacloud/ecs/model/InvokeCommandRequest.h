@@ -32,6 +32,8 @@ public:
 	~InvokeCommandRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getContainerName() const;
+	void setContainerName(const std::string &containerName);
 	std::string getCommandId() const;
 	void setCommandId(const std::string &commandId);
 	std::string getFrequency() const;
@@ -61,6 +63,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string containerName_;
 	std::string commandId_;
 	std::string frequency_;
 	std::string regionId_;

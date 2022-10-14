@@ -71,6 +71,10 @@ void DescribeCapacityReservationsResult::parse(const std::string &payload)
 			capacityReservationSetObject.platform = valueCapacityReservationSetCapacityReservationItem["Platform"].asString();
 		if(!valueCapacityReservationSetCapacityReservationItem["StartTimeType"].isNull())
 			capacityReservationSetObject.startTimeType = valueCapacityReservationSetCapacityReservationItem["StartTimeType"].asString();
+		if(!valueCapacityReservationSetCapacityReservationItem["SavingPlanId"].isNull())
+			capacityReservationSetObject.savingPlanId = valueCapacityReservationSetCapacityReservationItem["SavingPlanId"].asString();
+		if(!valueCapacityReservationSetCapacityReservationItem["ReservedInstanceId"].isNull())
+			capacityReservationSetObject.reservedInstanceId = valueCapacityReservationSetCapacityReservationItem["ReservedInstanceId"].asString();
 		auto allAllocatedResourcesNode = valueCapacityReservationSetCapacityReservationItem["AllocatedResources"]["AllocatedResource"];
 		for (auto valueCapacityReservationSetCapacityReservationItemAllocatedResourcesAllocatedResource : allAllocatedResourcesNode)
 		{

@@ -52,6 +52,7 @@ namespace AlibabaCloud
 						std::string finishedTime;
 						std::string username;
 						std::string containerId;
+						std::string containerName;
 						std::string output;
 						std::string commandId;
 						std::string errorCode;

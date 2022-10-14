@@ -36,6 +36,8 @@ public:
 	~RunCommandRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getContainerName() const;
+	void setContainerName(const std::string &containerName);
 	std::string getWorkingDir() const;
 	void setWorkingDir(const std::string &workingDir);
 	std::string getDescription() const;
@@ -83,6 +85,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string containerName_;
 	std::string workingDir_;
 	std::string description_;
 	std::string type_;

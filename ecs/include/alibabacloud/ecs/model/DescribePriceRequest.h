@@ -28,6 +28,11 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT DescribePriceRequest : public RpcServiceRequest {
 public:
+	struct DataDisk {
+		long size;
+		std::string performanceLevel;
+		std::string category;
+	};
 	DescribePriceRequest();
 	~DescribePriceRequest();
 	int getDataDisk3Size() const;
@@ -108,6 +113,8 @@ public:
 	void setSpotDuration(int spotDuration);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
+	std::vector<DataDisk> getDataDisk() const;
+	void setDataDisk(const std::vector<DataDisk> &dataDisk);
 	std::string getDataDisk1Category() const;
 	void setDataDisk1Category(const std::string &dataDisk1Category);
 	std::string getDataDisk2PerformanceLevel() const;
@@ -157,6 +164,7 @@ private:
 	int dataDisk2Size_;
 	int spotDuration_;
 	std::string resourceType_;
+	std::vector<DataDisk> dataDisk_;
 	std::string dataDisk1Category_;
 	std::string dataDisk2PerformanceLevel_;
 	int systemDiskSize_;

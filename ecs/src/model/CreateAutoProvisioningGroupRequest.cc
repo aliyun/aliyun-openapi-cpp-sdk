@@ -560,6 +560,15 @@ void CreateAutoProvisioningGroupRequest::setPayAsYouGoTargetCapacity(const std::
   setParameter(std::string("PayAsYouGoTargetCapacity"), payAsYouGoTargetCapacity);
 }
 
+bool CreateAutoProvisioningGroupRequest::getHibernationOptionsConfigured() const {
+  return hibernationOptionsConfigured_;
+}
+
+void CreateAutoProvisioningGroupRequest::setHibernationOptionsConfigured(bool hibernationOptionsConfigured) {
+  hibernationOptionsConfigured_ = hibernationOptionsConfigured;
+  setParameter(std::string("HibernationOptionsConfigured"), hibernationOptionsConfigured ? "true" : "false");
+}
+
 std::string CreateAutoProvisioningGroupRequest::getTotalTargetCapacity() const {
   return totalTargetCapacity_;
 }

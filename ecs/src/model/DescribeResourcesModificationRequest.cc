@@ -133,3 +133,12 @@ void DescribeResourcesModificationRequest::setDestinationResource(const std::str
   setParameter(std::string("DestinationResource"), destinationResource);
 }
 
+std::string DescribeResourcesModificationRequest::getZoneId() const {
+  return zoneId_;
+}
+
+void DescribeResourcesModificationRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("ZoneId"), zoneId);
+}
+

@@ -500,6 +500,8 @@
 #include "model/JoinSecurityGroupResult.h"
 #include "model/LeaveSecurityGroupRequest.h"
 #include "model/LeaveSecurityGroupResult.h"
+#include "model/ListPluginStatusRequest.h"
+#include "model/ListPluginStatusResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/ModifyAutoProvisioningGroupRequest.h"
@@ -1436,6 +1438,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::LeaveSecurityGroupResult> LeaveSecurityGroupOutcome;
 			typedef std::future<LeaveSecurityGroupOutcome> LeaveSecurityGroupOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::LeaveSecurityGroupRequest&, const LeaveSecurityGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LeaveSecurityGroupAsyncHandler;
+			typedef Outcome<Error, Model::ListPluginStatusResult> ListPluginStatusOutcome;
+			typedef std::future<ListPluginStatusOutcome> ListPluginStatusOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ListPluginStatusRequest&, const ListPluginStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPluginStatusAsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
@@ -2473,6 +2478,9 @@ namespace AlibabaCloud
 			LeaveSecurityGroupOutcome leaveSecurityGroup(const Model::LeaveSecurityGroupRequest &request)const;
 			void leaveSecurityGroupAsync(const Model::LeaveSecurityGroupRequest& request, const LeaveSecurityGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			LeaveSecurityGroupOutcomeCallable leaveSecurityGroupCallable(const Model::LeaveSecurityGroupRequest& request) const;
+			ListPluginStatusOutcome listPluginStatus(const Model::ListPluginStatusRequest &request)const;
+			void listPluginStatusAsync(const Model::ListPluginStatusRequest& request, const ListPluginStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListPluginStatusOutcomeCallable listPluginStatusCallable(const Model::ListPluginStatusRequest& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;

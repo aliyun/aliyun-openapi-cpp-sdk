@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBERESOURCESMODIFICATIONREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_DESCRIBERESOURCESMODIFICATIONREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_LISTPLUGINSTATUSREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_LISTPLUGINSTATUSREQUEST_H_
 
 #include <alibabacloud/ecs/EcsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,53 +26,41 @@
 namespace AlibabaCloud {
 namespace Ecs {
 namespace Model {
-class ALIBABACLOUD_ECS_EXPORT DescribeResourcesModificationRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ECS_EXPORT ListPluginStatusRequest : public RpcServiceRequest {
 public:
-	DescribeResourcesModificationRequest();
-	~DescribeResourcesModificationRequest();
+	ListPluginStatusRequest();
+	~ListPluginStatusRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	float getMemory() const;
-	void setMemory(float memory);
-	int getCores() const;
-	void setCores(int cores);
+	long getPageNumber() const;
+	void setPageNumber(long pageNumber);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	bool getMigrateAcrossZone() const;
-	void setMigrateAcrossZone(bool migrateAcrossZone);
-	std::string getInstanceType() const;
-	void setInstanceType(const std::string &instanceType);
-	std::string getResourceId() const;
-	void setResourceId(const std::string &resourceId);
+	long getPageSize() const;
+	void setPageSize(long pageSize);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
-	std::string getOperationType() const;
-	void setOperationType(const std::string &operationType);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getDestinationResource() const;
-	void setDestinationResource(const std::string &destinationResource);
-	std::string getZoneId() const;
-	void setZoneId(const std::string &zoneId);
+	std::vector<std::string> getInstanceId() const;
+	void setInstanceId(const std::vector<std::string> &instanceId);
+	std::string getName() const;
+	void setName(const std::string &name);
 
 private:
 	long resourceOwnerId_;
-	float memory_;
-	int cores_;
+	long pageNumber_;
 	std::string regionId_;
-	bool migrateAcrossZone_;
-	std::string instanceType_;
-	std::string resourceId_;
+	long pageSize_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
-	std::string operationType_;
 	long ownerId_;
-	std::string destinationResource_;
-	std::string zoneId_;
+	std::vector<std::string> instanceId_;
+	std::string name_;
 };
 } // namespace Model
 } // namespace Ecs
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBERESOURCESMODIFICATIONREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_LISTPLUGINSTATUSREQUEST_H_

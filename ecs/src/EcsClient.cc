@@ -8655,6 +8655,42 @@ EcsClient::LeaveSecurityGroupOutcomeCallable EcsClient::leaveSecurityGroupCallab
 	return task->get_future();
 }
 
+EcsClient::ListPluginStatusOutcome EcsClient::listPluginStatus(const ListPluginStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPluginStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPluginStatusOutcome(ListPluginStatusResult(outcome.result()));
+	else
+		return ListPluginStatusOutcome(outcome.error());
+}
+
+void EcsClient::listPluginStatusAsync(const ListPluginStatusRequest& request, const ListPluginStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPluginStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ListPluginStatusOutcomeCallable EcsClient::listPluginStatusCallable(const ListPluginStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPluginStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->listPluginStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::ListTagResourcesOutcome EcsClient::listTagResources(const ListTagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

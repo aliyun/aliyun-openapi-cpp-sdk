@@ -34,6 +34,15 @@ void RunCommandRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string RunCommandRequest::getContainerName() const {
+  return containerName_;
+}
+
+void RunCommandRequest::setContainerName(const std::string &containerName) {
+  containerName_ = containerName;
+  setParameter(std::string("ContainerName"), containerName);
+}
+
 std::string RunCommandRequest::getWorkingDir() const {
   return workingDir_;
 }

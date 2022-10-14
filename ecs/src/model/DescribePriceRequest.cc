@@ -375,6 +375,21 @@ void DescribePriceRequest::setResourceType(const std::string &resourceType) {
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::vector<DescribePriceRequest::DataDisk> DescribePriceRequest::getDataDisk() const {
+  return dataDisk_;
+}
+
+void DescribePriceRequest::setDataDisk(const std::vector<DescribePriceRequest::DataDisk> &dataDisk) {
+  dataDisk_ = dataDisk;
+  for(int dep1 = 0; dep1 != dataDisk.size(); dep1++) {
+  auto dataDiskObj = dataDisk.at(dep1);
+  std::string dataDiskObjStr = std::string("DataDisk") + "." + std::to_string(dep1 + 1);
+    setParameter(dataDiskObjStr + ".Size", std::to_string(dataDiskObj.size));
+    setParameter(dataDiskObjStr + ".PerformanceLevel", dataDiskObj.performanceLevel);
+    setParameter(dataDiskObjStr + ".Category", dataDiskObj.category);
+  }
+}
+
 std::string DescribePriceRequest::getDataDisk1Category() const {
   return dataDisk1Category_;
 }

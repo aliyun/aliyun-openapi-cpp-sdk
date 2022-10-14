@@ -499,6 +499,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/JoinSecurityGroupResult.h
 	include/alibabacloud/ecs/model/LeaveSecurityGroupRequest.h
 	include/alibabacloud/ecs/model/LeaveSecurityGroupResult.h
+	include/alibabacloud/ecs/model/ListPluginStatusRequest.h
+	include/alibabacloud/ecs/model/ListPluginStatusResult.h
 	include/alibabacloud/ecs/model/ListTagResourcesRequest.h
 	include/alibabacloud/ecs/model/ListTagResourcesResult.h
 	include/alibabacloud/ecs/model/ModifyAutoProvisioningGroupRequest.h
@@ -1190,6 +1192,8 @@ set(ecs_src
 	src/model/JoinSecurityGroupResult.cc
 	src/model/LeaveSecurityGroupRequest.cc
 	src/model/LeaveSecurityGroupResult.cc
+	src/model/ListPluginStatusRequest.cc
+	src/model/ListPluginStatusResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ModifyAutoProvisioningGroupRequest.cc

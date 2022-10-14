@@ -34,6 +34,15 @@ void InvokeCommandRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string InvokeCommandRequest::getContainerName() const {
+  return containerName_;
+}
+
+void InvokeCommandRequest::setContainerName(const std::string &containerName) {
+  containerName_ = containerName;
+  setParameter(std::string("ContainerName"), containerName);
+}
+
 std::string InvokeCommandRequest::getCommandId() const {
   return commandId_;
 }

@@ -179,6 +179,8 @@ public:
 	void setLaunchConfigurationIoOptimized(const std::string &launchConfigurationIoOptimized);
 	std::string getPayAsYouGoTargetCapacity() const;
 	void setPayAsYouGoTargetCapacity(const std::string &payAsYouGoTargetCapacity);
+	bool getHibernationOptionsConfigured() const;
+	void setHibernationOptionsConfigured(bool hibernationOptionsConfigured);
 	std::string getTotalTargetCapacity() const;
 	void setTotalTargetCapacity(const std::string &totalTargetCapacity);
 	std::string getSpotTargetCapacity() const;
@@ -244,6 +246,7 @@ private:
 	std::string launchTemplateVersion_;
 	std::string launchConfigurationIoOptimized_;
 	std::string payAsYouGoTargetCapacity_;
+	bool hibernationOptionsConfigured_;
 	std::string totalTargetCapacity_;
 	std::string spotTargetCapacity_;
 	std::string validFrom_;
