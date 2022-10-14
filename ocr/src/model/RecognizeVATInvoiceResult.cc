@@ -98,6 +98,9 @@ void RecognizeVATInvoiceResult::parse(const std::string &payload)
 		auto allPayeeRegisterNoes = boxNode["PayeeRegisterNoes"]["PayeeRegisterNo"];
 		for (auto value : allPayeeRegisterNoes)
 			data_.box.payeeRegisterNoes.push_back(value.asString());
+		auto allItemNames = boxNode["ItemNames"]["ItemNames"];
+		for (auto value : allItemNames)
+			data_.box.itemNames.push_back(value.asString());
 	auto contentNode = dataNode["Content"];
 	if(!contentNode["PayerAddress"].isNull())
 		data_.content.payerAddress = contentNode["PayerAddress"].asString();
@@ -137,6 +140,9 @@ void RecognizeVATInvoiceResult::parse(const std::string &payload)
 		data_.content.payeeAddress = contentNode["PayeeAddress"].asString();
 	if(!contentNode["InvoiceCode"].isNull())
 		data_.content.invoiceCode = contentNode["InvoiceCode"].asString();
+		auto allItemName = contentNode["ItemName"]["ItemName"];
+		for (auto value : allItemName)
+			data_.content.itemName.push_back(value.asString());
 
 }
 

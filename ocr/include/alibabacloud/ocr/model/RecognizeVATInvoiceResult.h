@@ -47,6 +47,7 @@ namespace AlibabaCloud
 						std::vector<std::string> taxAmounts;
 						std::vector<std::string> invoiceCodes;
 						std::vector<std::string> sumAmounts;
+						std::vector<std::string> itemNames;
 						std::vector<std::string> payerNames;
 						std::vector<std::string> invoiceFakeCodes;
 						std::vector<std::string> payeeBankNames;
@@ -72,6 +73,7 @@ namespace AlibabaCloud
 						std::string taxAmount;
 						std::string payeeBankName;
 						std::string clerk;
+						std::vector<std::string> itemName;
 						std::string payeeRegisterNo;
 						std::string invoiceCode;
 						std::string invoiceDate;
