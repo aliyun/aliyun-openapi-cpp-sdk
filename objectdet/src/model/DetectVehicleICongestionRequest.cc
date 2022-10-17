@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,91 +18,100 @@
 
 using AlibabaCloud::Objectdet::Model::DetectVehicleICongestionRequest;
 
-DetectVehicleICongestionRequest::DetectVehicleICongestionRequest()
-    : RpcServiceRequest("objectdet", "2019-12-30", "DetectVehicleICongestion") {
-  setMethod(HttpRequest::Method::Post);
+DetectVehicleICongestionRequest::DetectVehicleICongestionRequest() :
+	RpcServiceRequest("objectdet", "2019-12-30", "DetectVehicleICongestion")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DetectVehicleICongestionRequest::~DetectVehicleICongestionRequest() {}
+DetectVehicleICongestionRequest::~DetectVehicleICongestionRequest()
+{}
 
-bool DetectVehicleICongestionRequest::getFormatResultToJson() const {
-  return formatResultToJson_;
+bool DetectVehicleICongestionRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
 }
 
-void DetectVehicleICongestionRequest::setFormatResultToJson(bool formatResultToJson) {
-  formatResultToJson_ = formatResultToJson;
-  setParameter(std::string("FormatResultToJson"), formatResultToJson ? "true" : "false");
+void DetectVehicleICongestionRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
 }
 
-std::vector<DetectVehicleICongestionRequest::RoadRegions> DetectVehicleICongestionRequest::getRoadRegions() const {
-  return roadRegions_;
+Array DetectVehicleICongestionRequest::getRoadRegions()const
+{
+	return roadRegions_;
 }
 
-void DetectVehicleICongestionRequest::setRoadRegions(const std::vector<DetectVehicleICongestionRequest::RoadRegions> &roadRegions) {
-  roadRegions_ = roadRegions;
-  for(int dep1 = 0; dep1 != roadRegions.size(); dep1++) {
-    for(int dep2 = 0; dep2 != roadRegions[dep1].roadRegion.size(); dep2++) {
-      setBodyParameter(std::string("RoadRegions") + "." + std::to_string(dep1 + 1) + ".RoadRegion." + std::to_string(dep2 + 1) + ".Point.X", std::to_string(roadRegions[dep1].roadRegion[dep2].point.x));
-      setBodyParameter(std::string("RoadRegions") + "." + std::to_string(dep1 + 1) + ".RoadRegion." + std::to_string(dep2 + 1) + ".Point.Y", std::to_string(roadRegions[dep1].roadRegion[dep2].point.y));
-    }
-  }
+void DetectVehicleICongestionRequest::setRoadRegions(const Array& roadRegions)
+{
+	roadRegions_ = roadRegions;
+	setBodyParameter("RoadRegions", std::to_string(roadRegions));
 }
 
-std::string DetectVehicleICongestionRequest::getOriginRequestId() const {
-  return originRequestId_;
+std::string DetectVehicleICongestionRequest::getOriginRequestId()const
+{
+	return originRequestId_;
 }
 
-void DetectVehicleICongestionRequest::setOriginRequestId(const std::string &originRequestId) {
-  originRequestId_ = originRequestId;
-  setParameter(std::string("OriginRequestId"), originRequestId);
+void DetectVehicleICongestionRequest::setOriginRequestId(const std::string& originRequestId)
+{
+	originRequestId_ = originRequestId;
+	setParameter("OriginRequestId", originRequestId);
 }
 
-std::string DetectVehicleICongestionRequest::getOssFile() const {
-  return ossFile_;
+std::string DetectVehicleICongestionRequest::getOssFile()const
+{
+	return ossFile_;
 }
 
-void DetectVehicleICongestionRequest::setOssFile(const std::string &ossFile) {
-  ossFile_ = ossFile;
-  setParameter(std::string("OssFile"), ossFile);
+void DetectVehicleICongestionRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
 }
 
-std::vector<DetectVehicleICongestionRequest::PreRegionIntersectFeatures> DetectVehicleICongestionRequest::getPreRegionIntersectFeatures() const {
-  return preRegionIntersectFeatures_;
+Array DetectVehicleICongestionRequest::getPreRegionIntersectFeatures()const
+{
+	return preRegionIntersectFeatures_;
 }
 
-void DetectVehicleICongestionRequest::setPreRegionIntersectFeatures(const std::vector<DetectVehicleICongestionRequest::PreRegionIntersectFeatures> &preRegionIntersectFeatures) {
-  preRegionIntersectFeatures_ = preRegionIntersectFeatures;
-  for(int dep1 = 0; dep1 != preRegionIntersectFeatures.size(); dep1++) {
-    for(int dep2 = 0; dep2 != preRegionIntersectFeatures[dep1].features.size(); dep2++) {
-      setBodyParameter(std::string("PreRegionIntersectFeatures") + "." + std::to_string(dep1 + 1) + ".Features." + std::to_string(dep2 + 1), preRegionIntersectFeatures[dep1].features[dep2]);
-    }
-  }
+void DetectVehicleICongestionRequest::setPreRegionIntersectFeatures(const Array& preRegionIntersectFeatures)
+{
+	preRegionIntersectFeatures_ = preRegionIntersectFeatures;
+	setBodyParameter("PreRegionIntersectFeatures", std::to_string(preRegionIntersectFeatures));
 }
 
-std::string DetectVehicleICongestionRequest::getRequestProxyBy() const {
-  return requestProxyBy_;
+std::string DetectVehicleICongestionRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
 }
 
-void DetectVehicleICongestionRequest::setRequestProxyBy(const std::string &requestProxyBy) {
-  requestProxyBy_ = requestProxyBy;
-  setParameter(std::string("RequestProxyBy"), requestProxyBy);
+void DetectVehicleICongestionRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 
-std::string DetectVehicleICongestionRequest::getStreamArn() const {
-  return streamArn_;
+std::string DetectVehicleICongestionRequest::getStreamArn()const
+{
+	return streamArn_;
 }
 
-void DetectVehicleICongestionRequest::setStreamArn(const std::string &streamArn) {
-  streamArn_ = streamArn;
-  setParameter(std::string("StreamArn"), streamArn);
+void DetectVehicleICongestionRequest::setStreamArn(const std::string& streamArn)
+{
+	streamArn_ = streamArn;
+	setParameter("StreamArn", streamArn);
 }
 
-std::string DetectVehicleICongestionRequest::getImageURL() const {
-  return imageURL_;
+std::string DetectVehicleICongestionRequest::getImageURL()const
+{
+	return imageURL_;
 }
 
-void DetectVehicleICongestionRequest::setImageURL(const std::string &imageURL) {
-  imageURL_ = imageURL;
-  setBodyParameter(std::string("ImageURL"), imageURL);
+void DetectVehicleICongestionRequest::setImageURL(const std::string& imageURL)
+{
+	imageURL_ = imageURL;
+	setBodyParameter("ImageURL", imageURL);
 }
 

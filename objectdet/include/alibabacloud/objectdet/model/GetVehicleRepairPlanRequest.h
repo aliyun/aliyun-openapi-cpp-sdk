@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,41 +17,47 @@
 #ifndef ALIBABACLOUD_OBJECTDET_MODEL_GETVEHICLEREPAIRPLANREQUEST_H_
 #define ALIBABACLOUD_OBJECTDET_MODEL_GETVEHICLEREPAIRPLANREQUEST_H_
 
-#include <alibabacloud/objectdet/ObjectdetExport.h>
-#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <map>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/objectdet/ObjectdetExport.h>
 
-namespace AlibabaCloud {
-namespace Objectdet {
-namespace Model {
-class ALIBABACLOUD_OBJECTDET_EXPORT GetVehicleRepairPlanRequest : public RpcServiceRequest {
-public:
-	GetVehicleRepairPlanRequest();
-	~GetVehicleRepairPlanRequest();
-	std::string getVinCodeImage() const;
-	void setVinCodeImage(const std::string &vinCodeImage);
-	bool getFormatResultToJson() const;
-	void setFormatResultToJson(bool formatResultToJson);
-	std::string getCarNumberImage() const;
-	void setCarNumberImage(const std::string &carNumberImage);
-	std::string getTaskId() const;
-	void setTaskId(const std::string &taskId);
-	std::string getOssFile() const;
-	void setOssFile(const std::string &ossFile);
-	std::string getRequestProxyBy() const;
-	void setRequestProxyBy(const std::string &requestProxyBy);
+namespace AlibabaCloud
+{
+	namespace Objectdet
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_OBJECTDET_EXPORT GetVehicleRepairPlanRequest : public RpcServiceRequest
+			{
 
-private:
-	std::string vinCodeImage_;
-	bool formatResultToJson_;
-	std::string carNumberImage_;
-	std::string taskId_;
-	std::string ossFile_;
-	std::string requestProxyBy_;
-};
-} // namespace Model
-} // namespace Objectdet
-} // namespace AlibabaCloud
+			public:
+				GetVehicleRepairPlanRequest();
+				~GetVehicleRepairPlanRequest();
+
+				std::string getVinCodeImage()const;
+				void setVinCodeImage(const std::string& vinCodeImage);
+				bool getFormatResultToJson()const;
+				void setFormatResultToJson(bool formatResultToJson);
+				std::string getCarNumberImage()const;
+				void setCarNumberImage(const std::string& carNumberImage);
+				std::string getTaskId()const;
+				void setTaskId(const std::string& taskId);
+				std::string getOssFile()const;
+				void setOssFile(const std::string& ossFile);
+				std::string getRequestProxyBy()const;
+				void setRequestProxyBy(const std::string& requestProxyBy);
+
+            private:
+				std::string vinCodeImage_;
+				bool formatResultToJson_;
+				std::string carNumberImage_;
+				std::string taskId_;
+				std::string ossFile_;
+				std::string requestProxyBy_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_OBJECTDET_MODEL_GETVEHICLEREPAIRPLANREQUEST_H_
