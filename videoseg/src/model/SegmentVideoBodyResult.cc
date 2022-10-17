@@ -42,11 +42,25 @@ void SegmentVideoBodyResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["VideoUrl"].isNull())
 		data_.videoUrl = dataNode["VideoUrl"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string SegmentVideoBodyResult::getMessage()const
+{
+	return message_;
 }
 
 SegmentVideoBodyResult::Data SegmentVideoBodyResult::getData()const
 {
 	return data_;
+}
+
+std::string SegmentVideoBodyResult::getCode()const
+{
+	return code_;
 }
 

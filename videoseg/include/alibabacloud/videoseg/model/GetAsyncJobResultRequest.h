@@ -35,14 +35,14 @@ namespace AlibabaCloud
 				GetAsyncJobResultRequest();
 				~GetAsyncJobResultRequest();
 
-				bool getAsync()const;
-				void setAsync(bool async);
 				std::string getJobId()const;
 				void setJobId(const std::string& jobId);
+				bool getAsync()const;
+				void setAsync(bool async);
 
             private:
-				bool async_;
 				std::string jobId_;
+				bool async_;
 
 			};
 		}
