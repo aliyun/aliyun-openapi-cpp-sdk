@@ -43,11 +43,25 @@ void DetectVideoShotResult::parse(const std::string &payload)
 		auto allShotFrameIds = dataNode["ShotFrameIds"]["ShotFrameId"];
 		for (auto value : allShotFrameIds)
 			data_.shotFrameIds.push_back(value.asString());
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 
+}
+
+std::string DetectVideoShotResult::getMessage()const
+{
+	return message_;
 }
 
 DetectVideoShotResult::Data DetectVideoShotResult::getData()const
 {
 	return data_;
+}
+
+std::string DetectVideoShotResult::getCode()const
+{
+	return code_;
 }
 

@@ -50,11 +50,25 @@ void GenerateVideoCoverResult::parse(const std::string &payload)
 			outputObject.confidence = std::stof(dataNodeOutputsOutput["Confidence"].asString());
 		data_.outputs.push_back(outputObject);
 	}
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 
+}
+
+std::string GenerateVideoCoverResult::getMessage()const
+{
+	return message_;
 }
 
 GenerateVideoCoverResult::Data GenerateVideoCoverResult::getData()const
 {
 	return data_;
+}
+
+std::string GenerateVideoCoverResult::getCode()const
+{
+	return code_;
 }
 
