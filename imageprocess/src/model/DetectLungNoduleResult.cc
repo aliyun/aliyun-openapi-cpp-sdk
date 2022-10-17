@@ -90,11 +90,25 @@ void DetectLungNoduleResult::parse(const std::string &payload)
 			serieObject.spacing.push_back(value.asString());
 		data_.series.push_back(serieObject);
 	}
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string DetectLungNoduleResult::getMessage()const
+{
+	return message_;
 }
 
 DetectLungNoduleResult::Data DetectLungNoduleResult::getData()const
 {
 	return data_;
+}
+
+std::string DetectLungNoduleResult::getCode()const
+{
+	return code_;
 }
 

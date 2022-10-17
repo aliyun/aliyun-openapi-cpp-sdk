@@ -32,46 +32,15 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_IMAGEPROCESS_EXPORT AnalyzeChestVesselResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct AortaInfo
-					{
-						float maxArea;
-						std::vector<std::string> area;
-						float maxDiameter;
-						long labelValue;
-						std::vector<std::string> coordinates;
-						long maxAreaIndex;
-					};
-					struct PulmonaryInfo
-					{
-						float maxArea;
-						float maxDiameter;
-						long labelValue;
-						std::vector<std::string> coordinates1;
-						long maxAreaIndex;
-						std::vector<std::string> area2;
-						float nearestAortaArea;
-					};
-					PulmonaryInfo pulmonaryInfo;
-					AortaInfo aortaInfo;
-					std::string resultURL;
-				};
 
 
 				AnalyzeChestVesselResult();
 				explicit AnalyzeChestVesselResult(const std::string &payload);
 				~AnalyzeChestVesselResult();
-				std::string getMessage()const;
-				Data getData()const;
-				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string message_;
-				Data data_;
-				std::string code_;
 
 			};
 		}

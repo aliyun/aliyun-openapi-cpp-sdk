@@ -44,11 +44,25 @@ void RunCTRegistrationResult::parse(const std::string &payload)
 		data_.dUrl = dataNode["DUrl"].asString();
 	if(!dataNode["NUrl"].isNull())
 		data_.nUrl = dataNode["NUrl"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string RunCTRegistrationResult::getMessage()const
+{
+	return message_;
 }
 
 RunCTRegistrationResult::Data RunCTRegistrationResult::getData()const
 {
 	return data_;
+}
+
+std::string RunCTRegistrationResult::getCode()const
+{
+	return code_;
 }
 

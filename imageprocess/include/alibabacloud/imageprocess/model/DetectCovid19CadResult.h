@@ -45,12 +45,16 @@ namespace AlibabaCloud
 				DetectCovid19CadResult();
 				explicit DetectCovid19CadResult(const std::string &payload);
 				~DetectCovid19CadResult();
+				std::string getMessage()const;
 				Data getData()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				Data data_;
+				std::string code_;
 
 			};
 		}

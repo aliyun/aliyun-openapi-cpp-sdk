@@ -70,11 +70,25 @@ void DetectRibFractureResult::parse(const std::string &payload)
 		auto allSpacing = dataNode["Spacing"]["Spacing"];
 		for (auto value : allSpacing)
 			data_.spacing.push_back(value.asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string DetectRibFractureResult::getMessage()const
+{
+	return message_;
 }
 
 DetectRibFractureResult::Data DetectRibFractureResult::getData()const
 {
 	return data_;
+}
+
+std::string DetectRibFractureResult::getCode()const
+{
+	return code_;
 }
 
