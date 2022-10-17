@@ -35,10 +35,19 @@ namespace AlibabaCloud
 				DetectImageElementsRequest();
 				~DetectImageElementsRequest();
 
+				bool getFormatResultToJson()const;
+				void setFormatResultToJson(bool formatResultToJson);
+				std::string getOssFile()const;
+				void setOssFile(const std::string& ossFile);
+				std::string getRequestProxyBy()const;
+				void setRequestProxyBy(const std::string& requestProxyBy);
 				std::string getUrl()const;
 				void setUrl(const std::string& url);
 
             private:
+				bool formatResultToJson_;
+				std::string ossFile_;
+				std::string requestProxyBy_;
 				std::string url_;
 
 			};

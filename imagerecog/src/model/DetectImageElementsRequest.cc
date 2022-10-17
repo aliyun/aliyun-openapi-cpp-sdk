@@ -27,6 +27,39 @@ DetectImageElementsRequest::DetectImageElementsRequest() :
 DetectImageElementsRequest::~DetectImageElementsRequest()
 {}
 
+bool DetectImageElementsRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void DetectImageElementsRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
+std::string DetectImageElementsRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void DetectImageElementsRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
+std::string DetectImageElementsRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void DetectImageElementsRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
+}
+
 std::string DetectImageElementsRequest::getUrl()const
 {
 	return url_;

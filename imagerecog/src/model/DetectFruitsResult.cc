@@ -44,10 +44,10 @@ void DetectFruitsResult::parse(const std::string &payload)
 	for (auto dataNodeElementsElement : allElementsNode)
 	{
 		Data::Element elementObject;
-		if(!dataNodeElementsElement["Name"].isNull())
-			elementObject.name = dataNodeElementsElement["Name"].asString();
 		if(!dataNodeElementsElement["Score"].isNull())
 			elementObject.score = std::stof(dataNodeElementsElement["Score"].asString());
+		if(!dataNodeElementsElement["Name"].isNull())
+			elementObject.name = dataNodeElementsElement["Name"].asString();
 		auto allBox = value["Box"]["Box"];
 		for (auto value : allBox)
 			elementObject.box.push_back(value.asString());

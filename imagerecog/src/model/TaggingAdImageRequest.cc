@@ -27,6 +27,28 @@ TaggingAdImageRequest::TaggingAdImageRequest() :
 TaggingAdImageRequest::~TaggingAdImageRequest()
 {}
 
+bool TaggingAdImageRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void TaggingAdImageRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
+std::string TaggingAdImageRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void TaggingAdImageRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
 int TaggingAdImageRequest::getImageType()const
 {
 	return imageType_;
@@ -36,6 +58,17 @@ void TaggingAdImageRequest::setImageType(int imageType)
 {
 	imageType_ = imageType;
 	setBodyParameter("ImageType", std::to_string(imageType));
+}
+
+std::string TaggingAdImageRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void TaggingAdImageRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 
 bool TaggingAdImageRequest::getAsync()const

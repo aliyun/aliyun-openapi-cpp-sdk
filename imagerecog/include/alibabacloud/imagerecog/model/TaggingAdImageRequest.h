@@ -35,15 +35,24 @@ namespace AlibabaCloud
 				TaggingAdImageRequest();
 				~TaggingAdImageRequest();
 
+				bool getFormatResultToJson()const;
+				void setFormatResultToJson(bool formatResultToJson);
+				std::string getOssFile()const;
+				void setOssFile(const std::string& ossFile);
 				int getImageType()const;
 				void setImageType(int imageType);
+				std::string getRequestProxyBy()const;
+				void setRequestProxyBy(const std::string& requestProxyBy);
 				bool getAsync()const;
 				void setAsync(bool async);
 				std::string getImageURL()const;
 				void setImageURL(const std::string& imageURL);
 
             private:
+				bool formatResultToJson_;
+				std::string ossFile_;
 				int imageType_;
+				std::string requestProxyBy_;
 				bool async_;
 				std::string imageURL_;
 

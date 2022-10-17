@@ -27,15 +27,15 @@ RecognizeImageColorRequest::RecognizeImageColorRequest() :
 RecognizeImageColorRequest::~RecognizeImageColorRequest()
 {}
 
-std::string RecognizeImageColorRequest::getUrl()const
+bool RecognizeImageColorRequest::getFormatResultToJson()const
 {
-	return url_;
+	return formatResultToJson_;
 }
 
-void RecognizeImageColorRequest::setUrl(const std::string& url)
+void RecognizeImageColorRequest::setFormatResultToJson(bool formatResultToJson)
 {
-	url_ = url;
-	setBodyParameter("Url", url);
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
 }
 
 int RecognizeImageColorRequest::getColorCount()const
@@ -47,5 +47,38 @@ void RecognizeImageColorRequest::setColorCount(int colorCount)
 {
 	colorCount_ = colorCount;
 	setBodyParameter("ColorCount", std::to_string(colorCount));
+}
+
+std::string RecognizeImageColorRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void RecognizeImageColorRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
+std::string RecognizeImageColorRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void RecognizeImageColorRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
+}
+
+std::string RecognizeImageColorRequest::getUrl()const
+{
+	return url_;
+}
+
+void RecognizeImageColorRequest::setUrl(const std::string& url)
+{
+	url_ = url;
+	setBodyParameter("Url", url);
 }
 

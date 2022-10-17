@@ -27,6 +27,17 @@ GetAsyncJobResultRequest::GetAsyncJobResultRequest() :
 GetAsyncJobResultRequest::~GetAsyncJobResultRequest()
 {}
 
+bool GetAsyncJobResultRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void GetAsyncJobResultRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
 std::string GetAsyncJobResultRequest::getJobId()const
 {
 	return jobId_;
@@ -36,6 +47,28 @@ void GetAsyncJobResultRequest::setJobId(const std::string& jobId)
 {
 	jobId_ = jobId;
 	setParameter("JobId", jobId);
+}
+
+std::string GetAsyncJobResultRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void GetAsyncJobResultRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
+std::string GetAsyncJobResultRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void GetAsyncJobResultRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 
 std::string GetAsyncJobResultRequest::getAsync()const

@@ -35,13 +35,22 @@ namespace AlibabaCloud
 				GetAsyncJobResultRequest();
 				~GetAsyncJobResultRequest();
 
+				bool getFormatResultToJson()const;
+				void setFormatResultToJson(bool formatResultToJson);
 				std::string getJobId()const;
 				void setJobId(const std::string& jobId);
+				std::string getOssFile()const;
+				void setOssFile(const std::string& ossFile);
+				std::string getRequestProxyBy()const;
+				void setRequestProxyBy(const std::string& requestProxyBy);
 				std::string getAsync()const;
 				void setAsync(const std::string& async);
 
             private:
+				bool formatResultToJson_;
 				std::string jobId_;
+				std::string ossFile_;
+				std::string requestProxyBy_;
 				std::string async_;
 
 			};

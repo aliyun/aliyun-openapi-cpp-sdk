@@ -27,6 +27,39 @@ RecognizeFoodRequest::RecognizeFoodRequest() :
 RecognizeFoodRequest::~RecognizeFoodRequest()
 {}
 
+bool RecognizeFoodRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void RecognizeFoodRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
+std::string RecognizeFoodRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void RecognizeFoodRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
+std::string RecognizeFoodRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void RecognizeFoodRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
+}
+
 std::string RecognizeFoodRequest::getImageURL()const
 {
 	return imageURL_;

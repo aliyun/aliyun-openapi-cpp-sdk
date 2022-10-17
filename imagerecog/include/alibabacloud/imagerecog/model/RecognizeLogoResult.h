@@ -42,8 +42,8 @@ namespace AlibabaCloud
 							{
 								std::string type;
 								float w;
-								float x;
 								float h;
+								float x;
 								float y;
 								std::string name;
 							};

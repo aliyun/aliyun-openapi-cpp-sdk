@@ -46,10 +46,10 @@ void RecognizeImageColorResult::parse(const std::string &payload)
 		Data::ColorTemplate colorTemplateObject;
 		if(!dataNodeColorTemplateListColorTemplate["Color"].isNull())
 			colorTemplateObject.color = dataNodeColorTemplateListColorTemplate["Color"].asString();
-		if(!dataNodeColorTemplateListColorTemplate["Label"].isNull())
-			colorTemplateObject.label = dataNodeColorTemplateListColorTemplate["Label"].asString();
 		if(!dataNodeColorTemplateListColorTemplate["Percentage"].isNull())
 			colorTemplateObject.percentage = std::stof(dataNodeColorTemplateListColorTemplate["Percentage"].asString());
+		if(!dataNodeColorTemplateListColorTemplate["Label"].isNull())
+			colorTemplateObject.label = dataNodeColorTemplateListColorTemplate["Label"].asString();
 		data_.colorTemplateList.push_back(colorTemplateObject);
 	}
 

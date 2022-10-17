@@ -42,14 +42,14 @@ void GetAsyncJobResultResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Status"].isNull())
 		data_.status = dataNode["Status"].asString();
-	if(!dataNode["ErrorCode"].isNull())
-		data_.errorCode = dataNode["ErrorCode"].asString();
 	if(!dataNode["ErrorMessage"].isNull())
 		data_.errorMessage = dataNode["ErrorMessage"].asString();
-	if(!dataNode["JobId"].isNull())
-		data_.jobId = dataNode["JobId"].asString();
 	if(!dataNode["Result"].isNull())
 		data_.result = dataNode["Result"].asString();
+	if(!dataNode["ErrorCode"].isNull())
+		data_.errorCode = dataNode["ErrorCode"].asString();
+	if(!dataNode["JobId"].isNull())
+		data_.jobId = dataNode["JobId"].asString();
 
 }
 

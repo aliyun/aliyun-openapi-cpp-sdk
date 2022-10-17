@@ -27,6 +27,39 @@ ClassifyingRubbishRequest::ClassifyingRubbishRequest() :
 ClassifyingRubbishRequest::~ClassifyingRubbishRequest()
 {}
 
+bool ClassifyingRubbishRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void ClassifyingRubbishRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
+std::string ClassifyingRubbishRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void ClassifyingRubbishRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
+std::string ClassifyingRubbishRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void ClassifyingRubbishRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
+}
+
 std::string ClassifyingRubbishRequest::getImageURL()const
 {
 	return imageURL_;

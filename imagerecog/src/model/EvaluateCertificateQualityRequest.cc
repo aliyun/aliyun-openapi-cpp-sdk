@@ -27,6 +27,17 @@ EvaluateCertificateQualityRequest::EvaluateCertificateQualityRequest() :
 EvaluateCertificateQualityRequest::~EvaluateCertificateQualityRequest()
 {}
 
+bool EvaluateCertificateQualityRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void EvaluateCertificateQualityRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
 std::string EvaluateCertificateQualityRequest::getType()const
 {
 	return type_;
@@ -36,6 +47,28 @@ void EvaluateCertificateQualityRequest::setType(const std::string& type)
 {
 	type_ = type;
 	setBodyParameter("Type", type);
+}
+
+std::string EvaluateCertificateQualityRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void EvaluateCertificateQualityRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
+std::string EvaluateCertificateQualityRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void EvaluateCertificateQualityRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
 }
 
 std::string EvaluateCertificateQualityRequest::getImageURL()const

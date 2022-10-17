@@ -35,14 +35,23 @@ namespace AlibabaCloud
 				RecognizeImageColorRequest();
 				~RecognizeImageColorRequest();
 
-				std::string getUrl()const;
-				void setUrl(const std::string& url);
+				bool getFormatResultToJson()const;
+				void setFormatResultToJson(bool formatResultToJson);
 				int getColorCount()const;
 				void setColorCount(int colorCount);
+				std::string getOssFile()const;
+				void setOssFile(const std::string& ossFile);
+				std::string getRequestProxyBy()const;
+				void setRequestProxyBy(const std::string& requestProxyBy);
+				std::string getUrl()const;
+				void setUrl(const std::string& url);
 
             private:
-				std::string url_;
+				bool formatResultToJson_;
 				int colorCount_;
+				std::string ossFile_;
+				std::string requestProxyBy_;
+				std::string url_;
 
 			};
 		}

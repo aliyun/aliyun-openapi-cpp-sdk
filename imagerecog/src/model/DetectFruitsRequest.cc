@@ -27,6 +27,39 @@ DetectFruitsRequest::DetectFruitsRequest() :
 DetectFruitsRequest::~DetectFruitsRequest()
 {}
 
+bool DetectFruitsRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void DetectFruitsRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
+std::string DetectFruitsRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void DetectFruitsRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
+std::string DetectFruitsRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void DetectFruitsRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
+}
+
 std::string DetectFruitsRequest::getImageURL()const
 {
 	return imageURL_;

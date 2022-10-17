@@ -27,6 +27,39 @@ RecognizeVehicleTypeRequest::RecognizeVehicleTypeRequest() :
 RecognizeVehicleTypeRequest::~RecognizeVehicleTypeRequest()
 {}
 
+bool RecognizeVehicleTypeRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
+}
+
+void RecognizeVehicleTypeRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+}
+
+std::string RecognizeVehicleTypeRequest::getOssFile()const
+{
+	return ossFile_;
+}
+
+void RecognizeVehicleTypeRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
+}
+
+std::string RecognizeVehicleTypeRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void RecognizeVehicleTypeRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
+}
+
 std::string RecognizeVehicleTypeRequest::getImageURL()const
 {
 	return imageURL_;

@@ -44,36 +44,36 @@ void RecognizeLogoResult::parse(const std::string &payload)
 	for (auto dataNodeElementsElement : allElementsNode)
 	{
 		Data::Element elementObject;
-		if(!dataNodeElementsElement["TaskId"].isNull())
-			elementObject.taskId = dataNodeElementsElement["TaskId"].asString();
 		if(!dataNodeElementsElement["ImageURL"].isNull())
 			elementObject.imageURL = dataNodeElementsElement["ImageURL"].asString();
+		if(!dataNodeElementsElement["TaskId"].isNull())
+			elementObject.taskId = dataNodeElementsElement["TaskId"].asString();
 		auto allResultsNode = dataNodeElementsElement["Results"]["Result"];
 		for (auto dataNodeElementsElementResultsResult : allResultsNode)
 		{
 			Data::Element::Result resultsObject;
-			if(!dataNodeElementsElementResultsResult["Label"].isNull())
-				resultsObject.label = dataNodeElementsElementResultsResult["Label"].asString();
 			if(!dataNodeElementsElementResultsResult["Suggestion"].isNull())
 				resultsObject.suggestion = dataNodeElementsElementResultsResult["Suggestion"].asString();
+			if(!dataNodeElementsElementResultsResult["Label"].isNull())
+				resultsObject.label = dataNodeElementsElementResultsResult["Label"].asString();
 			if(!dataNodeElementsElementResultsResult["Rate"].isNull())
 				resultsObject.rate = std::stof(dataNodeElementsElementResultsResult["Rate"].asString());
 			auto allLogosDataNode = dataNodeElementsElementResultsResult["LogosData"]["LogoData"];
 			for (auto dataNodeElementsElementResultsResultLogosDataLogoData : allLogosDataNode)
 			{
 				Data::Element::Result::LogoData logosDataObject;
-				if(!dataNodeElementsElementResultsResultLogosDataLogoData["Name"].isNull())
-					logosDataObject.name = dataNodeElementsElementResultsResultLogosDataLogoData["Name"].asString();
 				if(!dataNodeElementsElementResultsResultLogosDataLogoData["Type"].isNull())
 					logosDataObject.type = dataNodeElementsElementResultsResultLogosDataLogoData["Type"].asString();
-				if(!dataNodeElementsElementResultsResultLogosDataLogoData["X"].isNull())
-					logosDataObject.x = std::stof(dataNodeElementsElementResultsResultLogosDataLogoData["X"].asString());
-				if(!dataNodeElementsElementResultsResultLogosDataLogoData["Y"].isNull())
-					logosDataObject.y = std::stof(dataNodeElementsElementResultsResultLogosDataLogoData["Y"].asString());
-				if(!dataNodeElementsElementResultsResultLogosDataLogoData["H"].isNull())
-					logosDataObject.h = std::stof(dataNodeElementsElementResultsResultLogosDataLogoData["H"].asString());
 				if(!dataNodeElementsElementResultsResultLogosDataLogoData["W"].isNull())
 					logosDataObject.w = std::stof(dataNodeElementsElementResultsResultLogosDataLogoData["W"].asString());
+				if(!dataNodeElementsElementResultsResultLogosDataLogoData["H"].isNull())
+					logosDataObject.h = std::stof(dataNodeElementsElementResultsResultLogosDataLogoData["H"].asString());
+				if(!dataNodeElementsElementResultsResultLogosDataLogoData["Y"].isNull())
+					logosDataObject.y = std::stof(dataNodeElementsElementResultsResultLogosDataLogoData["Y"].asString());
+				if(!dataNodeElementsElementResultsResultLogosDataLogoData["Name"].isNull())
+					logosDataObject.name = dataNodeElementsElementResultsResultLogosDataLogoData["Name"].asString();
+				if(!dataNodeElementsElementResultsResultLogosDataLogoData["X"].isNull())
+					logosDataObject.x = std::stof(dataNodeElementsElementResultsResultLogosDataLogoData["X"].asString());
 				resultsObject.logosData.push_back(logosDataObject);
 			}
 			elementObject.results.push_back(resultsObject);

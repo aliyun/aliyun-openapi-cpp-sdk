@@ -46,14 +46,14 @@ void ClassifyingRubbishResult::parse(const std::string &payload)
 	for (auto dataNodeElementsElement : allElementsNode)
 	{
 		Data::Element elementObject;
-		if(!dataNodeElementsElement["Category"].isNull())
-			elementObject.category = dataNodeElementsElement["Category"].asString();
 		if(!dataNodeElementsElement["CategoryScore"].isNull())
 			elementObject.categoryScore = std::stof(dataNodeElementsElement["CategoryScore"].asString());
 		if(!dataNodeElementsElement["Rubbish"].isNull())
 			elementObject.rubbish = dataNodeElementsElement["Rubbish"].asString();
 		if(!dataNodeElementsElement["RubbishScore"].isNull())
 			elementObject.rubbishScore = std::stof(dataNodeElementsElement["RubbishScore"].asString());
+		if(!dataNodeElementsElement["Category"].isNull())
+			elementObject.category = dataNodeElementsElement["Category"].asString();
 		data_.elements.push_back(elementObject);
 	}
 
