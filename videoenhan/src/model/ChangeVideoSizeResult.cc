@@ -44,11 +44,25 @@ void ChangeVideoSizeResult::parse(const std::string &payload)
 		data_.videoCoverUrl = dataNode["VideoCoverUrl"].asString();
 	if(!dataNode["VideoUrl"].isNull())
 		data_.videoUrl = dataNode["VideoUrl"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string ChangeVideoSizeResult::getMessage()const
+{
+	return message_;
 }
 
 ChangeVideoSizeResult::Data ChangeVideoSizeResult::getData()const
 {
 	return data_;
+}
+
+std::string ChangeVideoSizeResult::getCode()const
+{
+	return code_;
 }
 

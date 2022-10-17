@@ -44,11 +44,25 @@ void GenerateVideoResult::parse(const std::string &payload)
 		data_.videoCoverUrl = dataNode["VideoCoverUrl"].asString();
 	if(!dataNode["VideoUrl"].isNull())
 		data_.videoUrl = dataNode["VideoUrl"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string GenerateVideoResult::getMessage()const
+{
+	return message_;
 }
 
 GenerateVideoResult::Data GenerateVideoResult::getData()const
 {
 	return data_;
+}
+
+std::string GenerateVideoResult::getCode()const
+{
+	return code_;
 }
 

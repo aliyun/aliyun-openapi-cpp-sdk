@@ -42,11 +42,25 @@ void AdjustVideoColorResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["VideoUrl"].isNull())
 		data_.videoUrl = dataNode["VideoUrl"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string AdjustVideoColorResult::getMessage()const
+{
+	return message_;
 }
 
 AdjustVideoColorResult::Data AdjustVideoColorResult::getData()const
 {
 	return data_;
+}
+
+std::string AdjustVideoColorResult::getCode()const
+{
+	return code_;
 }
 

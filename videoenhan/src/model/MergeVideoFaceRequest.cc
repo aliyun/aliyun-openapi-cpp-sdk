@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,56 @@
 
 using AlibabaCloud::Videoenhan::Model::MergeVideoFaceRequest;
 
-MergeVideoFaceRequest::MergeVideoFaceRequest()
-    : RpcServiceRequest("videoenhan", "2020-03-20", "MergeVideoFace") {
-  setMethod(HttpRequest::Method::Post);
+MergeVideoFaceRequest::MergeVideoFaceRequest() :
+	RpcServiceRequest("videoenhan", "2020-03-20", "MergeVideoFace")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-MergeVideoFaceRequest::~MergeVideoFaceRequest() {}
+MergeVideoFaceRequest::~MergeVideoFaceRequest()
+{}
 
-std::string MergeVideoFaceRequest::getReferenceURL() const {
-  return referenceURL_;
+std::string MergeVideoFaceRequest::getReferenceURL()const
+{
+	return referenceURL_;
 }
 
-void MergeVideoFaceRequest::setReferenceURL(const std::string &referenceURL) {
-  referenceURL_ = referenceURL;
-  setBodyParameter(std::string("ReferenceURL"), referenceURL);
+void MergeVideoFaceRequest::setReferenceURL(const std::string& referenceURL)
+{
+	referenceURL_ = referenceURL;
+	setBodyParameter("ReferenceURL", referenceURL);
 }
 
-std::string MergeVideoFaceRequest::getPostURL() const {
-  return postURL_;
+std::string MergeVideoFaceRequest::getPostURL()const
+{
+	return postURL_;
 }
 
-void MergeVideoFaceRequest::setPostURL(const std::string &postURL) {
-  postURL_ = postURL;
-  setBodyParameter(std::string("PostURL"), postURL);
+void MergeVideoFaceRequest::setPostURL(const std::string& postURL)
+{
+	postURL_ = postURL;
+	setBodyParameter("PostURL", postURL);
 }
 
-bool MergeVideoFaceRequest::getAsync() const {
-  return async_;
+bool MergeVideoFaceRequest::getAsync()const
+{
+	return async_;
 }
 
-void MergeVideoFaceRequest::setAsync(bool async) {
-  async_ = async;
-  setBodyParameter(std::string("Async"), async ? "true" : "false");
+void MergeVideoFaceRequest::setAsync(bool async)
+{
+	async_ = async;
+	setBodyParameter("Async", async ? "true" : "false");
 }
 
-std::string MergeVideoFaceRequest::getVideoURL() const {
-  return videoURL_;
+std::string MergeVideoFaceRequest::getVideoURL()const
+{
+	return videoURL_;
 }
 
-void MergeVideoFaceRequest::setVideoURL(const std::string &videoURL) {
-  videoURL_ = videoURL;
-  setBodyParameter(std::string("VideoURL"), videoURL);
+void MergeVideoFaceRequest::setVideoURL(const std::string& videoURL)
+{
+	videoURL_ = videoURL;
+	setBodyParameter("VideoURL", videoURL);
 }
 

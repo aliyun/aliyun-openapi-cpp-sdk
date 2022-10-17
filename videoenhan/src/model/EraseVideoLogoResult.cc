@@ -42,11 +42,25 @@ void EraseVideoLogoResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["VideoUrl"].isNull())
 		data_.videoUrl = dataNode["VideoUrl"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string EraseVideoLogoResult::getMessage()const
+{
+	return message_;
 }
 
 EraseVideoLogoResult::Data EraseVideoLogoResult::getData()const
 {
 	return data_;
+}
+
+std::string EraseVideoLogoResult::getCode()const
+{
+	return code_;
 }
 

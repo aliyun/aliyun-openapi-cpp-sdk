@@ -42,11 +42,25 @@ void EraseVideoSubtitlesResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["VideoUrl"].isNull())
 		data_.videoUrl = dataNode["VideoUrl"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string EraseVideoSubtitlesResult::getMessage()const
+{
+	return message_;
 }
 
 EraseVideoSubtitlesResult::Data EraseVideoSubtitlesResult::getData()const
 {
 	return data_;
+}
+
+std::string EraseVideoSubtitlesResult::getCode()const
+{
+	return code_;
 }
 

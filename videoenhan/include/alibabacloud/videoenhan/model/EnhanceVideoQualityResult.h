@@ -41,12 +41,16 @@ namespace AlibabaCloud
 				EnhanceVideoQualityResult();
 				explicit EnhanceVideoQualityResult(const std::string &payload);
 				~EnhanceVideoQualityResult();
+				std::string getMessage()const;
 				Data getData()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				Data data_;
+				std::string code_;
 
 			};
 		}

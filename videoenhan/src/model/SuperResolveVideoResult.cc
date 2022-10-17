@@ -42,11 +42,25 @@ void SuperResolveVideoResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["VideoUrl"].isNull())
 		data_.videoUrl = dataNode["VideoUrl"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string SuperResolveVideoResult::getMessage()const
+{
+	return message_;
 }
 
 SuperResolveVideoResult::Data SuperResolveVideoResult::getData()const
 {
 	return data_;
+}
+
+std::string SuperResolveVideoResult::getCode()const
+{
+	return code_;
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,56 @@
 
 using AlibabaCloud::Videoenhan::Model::InterpolateVideoFrameRequest;
 
-InterpolateVideoFrameRequest::InterpolateVideoFrameRequest()
-    : RpcServiceRequest("videoenhan", "2020-03-20", "InterpolateVideoFrame") {
-  setMethod(HttpRequest::Method::Post);
+InterpolateVideoFrameRequest::InterpolateVideoFrameRequest() :
+	RpcServiceRequest("videoenhan", "2020-03-20", "InterpolateVideoFrame")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-InterpolateVideoFrameRequest::~InterpolateVideoFrameRequest() {}
+InterpolateVideoFrameRequest::~InterpolateVideoFrameRequest()
+{}
 
-int InterpolateVideoFrameRequest::getFrameRate() const {
-  return frameRate_;
+int InterpolateVideoFrameRequest::getFrameRate()const
+{
+	return frameRate_;
 }
 
-void InterpolateVideoFrameRequest::setFrameRate(int frameRate) {
-  frameRate_ = frameRate;
-  setBodyParameter(std::string("FrameRate"), std::to_string(frameRate));
+void InterpolateVideoFrameRequest::setFrameRate(int frameRate)
+{
+	frameRate_ = frameRate;
+	setBodyParameter("FrameRate", std::to_string(frameRate));
 }
 
-int InterpolateVideoFrameRequest::getBitrate() const {
-  return bitrate_;
+int InterpolateVideoFrameRequest::getBitrate()const
+{
+	return bitrate_;
 }
 
-void InterpolateVideoFrameRequest::setBitrate(int bitrate) {
-  bitrate_ = bitrate;
-  setBodyParameter(std::string("Bitrate"), std::to_string(bitrate));
+void InterpolateVideoFrameRequest::setBitrate(int bitrate)
+{
+	bitrate_ = bitrate;
+	setBodyParameter("Bitrate", std::to_string(bitrate));
 }
 
-bool InterpolateVideoFrameRequest::getAsync() const {
-  return async_;
+bool InterpolateVideoFrameRequest::getAsync()const
+{
+	return async_;
 }
 
-void InterpolateVideoFrameRequest::setAsync(bool async) {
-  async_ = async;
-  setBodyParameter(std::string("Async"), async ? "true" : "false");
+void InterpolateVideoFrameRequest::setAsync(bool async)
+{
+	async_ = async;
+	setBodyParameter("Async", async ? "true" : "false");
 }
 
-std::string InterpolateVideoFrameRequest::getVideoURL() const {
-  return videoURL_;
+std::string InterpolateVideoFrameRequest::getVideoURL()const
+{
+	return videoURL_;
 }
 
-void InterpolateVideoFrameRequest::setVideoURL(const std::string &videoURL) {
-  videoURL_ = videoURL;
-  setBodyParameter(std::string("VideoURL"), videoURL);
+void InterpolateVideoFrameRequest::setVideoURL(const std::string& videoURL)
+{
+	videoURL_ = videoURL;
+	setBodyParameter("VideoURL", videoURL);
 }
 

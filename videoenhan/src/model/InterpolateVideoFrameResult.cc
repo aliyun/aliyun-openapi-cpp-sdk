@@ -42,11 +42,25 @@ void InterpolateVideoFrameResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["VideoURL"].isNull())
 		data_.videoURL = dataNode["VideoURL"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string InterpolateVideoFrameResult::getMessage()const
+{
+	return message_;
 }
 
 InterpolateVideoFrameResult::Data InterpolateVideoFrameResult::getData()const
 {
 	return data_;
+}
+
+std::string InterpolateVideoFrameResult::getCode()const
+{
+	return code_;
 }
 

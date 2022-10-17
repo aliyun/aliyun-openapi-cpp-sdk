@@ -42,11 +42,25 @@ void ToneSdrVideoResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["VideoURL"].isNull())
 		data_.videoURL = dataNode["VideoURL"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string ToneSdrVideoResult::getMessage()const
+{
+	return message_;
 }
 
 ToneSdrVideoResult::Data ToneSdrVideoResult::getData()const
 {
 	return data_;
+}
+
+std::string ToneSdrVideoResult::getCode()const
+{
+	return code_;
 }
 

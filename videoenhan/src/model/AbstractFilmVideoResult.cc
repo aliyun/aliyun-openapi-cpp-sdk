@@ -42,11 +42,25 @@ void AbstractFilmVideoResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["VideoUrl"].isNull())
 		data_.videoUrl = dataNode["VideoUrl"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string AbstractFilmVideoResult::getMessage()const
+{
+	return message_;
 }
 
 AbstractFilmVideoResult::Data AbstractFilmVideoResult::getData()const
 {
 	return data_;
+}
+
+std::string AbstractFilmVideoResult::getCode()const
+{
+	return code_;
 }
 
