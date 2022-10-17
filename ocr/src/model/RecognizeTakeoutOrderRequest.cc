@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,19 +18,23 @@
 
 using AlibabaCloud::Ocr::Model::RecognizeTakeoutOrderRequest;
 
-RecognizeTakeoutOrderRequest::RecognizeTakeoutOrderRequest()
-    : RpcServiceRequest("ocr", "2019-12-30", "RecognizeTakeoutOrder") {
-  setMethod(HttpRequest::Method::Post);
+RecognizeTakeoutOrderRequest::RecognizeTakeoutOrderRequest() :
+	RpcServiceRequest("ocr", "2019-12-30", "RecognizeTakeoutOrder")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-RecognizeTakeoutOrderRequest::~RecognizeTakeoutOrderRequest() {}
+RecognizeTakeoutOrderRequest::~RecognizeTakeoutOrderRequest()
+{}
 
-std::string RecognizeTakeoutOrderRequest::getImageURL() const {
-  return imageURL_;
+std::string RecognizeTakeoutOrderRequest::getImageURL()const
+{
+	return imageURL_;
 }
 
-void RecognizeTakeoutOrderRequest::setImageURL(const std::string &imageURL) {
-  imageURL_ = imageURL;
-  setBodyParameter(std::string("ImageURL"), imageURL);
+void RecognizeTakeoutOrderRequest::setImageURL(const std::string& imageURL)
+{
+	imageURL_ = imageURL;
+	setBodyParameter("ImageURL", imageURL);
 }
 

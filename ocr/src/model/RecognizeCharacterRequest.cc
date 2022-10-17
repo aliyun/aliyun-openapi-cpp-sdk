@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,89 @@
 
 using AlibabaCloud::Ocr::Model::RecognizeCharacterRequest;
 
-RecognizeCharacterRequest::RecognizeCharacterRequest()
-    : RpcServiceRequest("ocr", "2019-12-30", "RecognizeCharacter") {
-  setMethod(HttpRequest::Method::Post);
+RecognizeCharacterRequest::RecognizeCharacterRequest() :
+	RpcServiceRequest("ocr", "2019-12-30", "RecognizeCharacter")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-RecognizeCharacterRequest::~RecognizeCharacterRequest() {}
+RecognizeCharacterRequest::~RecognizeCharacterRequest()
+{}
 
-int RecognizeCharacterRequest::getMinHeight() const {
-  return minHeight_;
+bool RecognizeCharacterRequest::getFormatResultToJson()const
+{
+	return formatResultToJson_;
 }
 
-void RecognizeCharacterRequest::setMinHeight(int minHeight) {
-  minHeight_ = minHeight;
-  setBodyParameter(std::string("MinHeight"), std::to_string(minHeight));
+void RecognizeCharacterRequest::setFormatResultToJson(bool formatResultToJson)
+{
+	formatResultToJson_ = formatResultToJson;
+	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
 }
 
-int RecognizeCharacterRequest::getImageType() const {
-  return imageType_;
+int RecognizeCharacterRequest::getMinHeight()const
+{
+	return minHeight_;
 }
 
-void RecognizeCharacterRequest::setImageType(int imageType) {
-  imageType_ = imageType;
-  setBodyParameter(std::string("ImageType"), std::to_string(imageType));
+void RecognizeCharacterRequest::setMinHeight(int minHeight)
+{
+	minHeight_ = minHeight;
+	setBodyParameter("MinHeight", std::to_string(minHeight));
 }
 
-bool RecognizeCharacterRequest::getOutputProbability() const {
-  return outputProbability_;
+std::string RecognizeCharacterRequest::getOssFile()const
+{
+	return ossFile_;
 }
 
-void RecognizeCharacterRequest::setOutputProbability(bool outputProbability) {
-  outputProbability_ = outputProbability;
-  setBodyParameter(std::string("OutputProbability"), outputProbability ? "true" : "false");
+void RecognizeCharacterRequest::setOssFile(const std::string& ossFile)
+{
+	ossFile_ = ossFile;
+	setParameter("OssFile", ossFile);
 }
 
-std::string RecognizeCharacterRequest::getImageURL() const {
-  return imageURL_;
+int RecognizeCharacterRequest::getImageType()const
+{
+	return imageType_;
 }
 
-void RecognizeCharacterRequest::setImageURL(const std::string &imageURL) {
-  imageURL_ = imageURL;
-  setBodyParameter(std::string("ImageURL"), imageURL);
+void RecognizeCharacterRequest::setImageType(int imageType)
+{
+	imageType_ = imageType;
+	setBodyParameter("ImageType", std::to_string(imageType));
+}
+
+std::string RecognizeCharacterRequest::getRequestProxyBy()const
+{
+	return requestProxyBy_;
+}
+
+void RecognizeCharacterRequest::setRequestProxyBy(const std::string& requestProxyBy)
+{
+	requestProxyBy_ = requestProxyBy;
+	setParameter("RequestProxyBy", requestProxyBy);
+}
+
+bool RecognizeCharacterRequest::getOutputProbability()const
+{
+	return outputProbability_;
+}
+
+void RecognizeCharacterRequest::setOutputProbability(bool outputProbability)
+{
+	outputProbability_ = outputProbability;
+	setBodyParameter("OutputProbability", outputProbability ? "true" : "false");
+}
+
+std::string RecognizeCharacterRequest::getImageURL()const
+{
+	return imageURL_;
+}
+
+void RecognizeCharacterRequest::setImageURL(const std::string& imageURL)
+{
+	imageURL_ = imageURL;
+	setBodyParameter("ImageURL", imageURL);
 }
 

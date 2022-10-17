@@ -42,11 +42,25 @@ void TrimDocumentResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Content"].isNull())
 		data_.content = dataNode["Content"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string TrimDocumentResult::getMessage()const
+{
+	return message_;
 }
 
 TrimDocumentResult::Data TrimDocumentResult::getData()const
 {
 	return data_;
+}
+
+std::string TrimDocumentResult::getCode()const
+{
+	return code_;
 }
 

@@ -80,11 +80,25 @@ void RecognizeVideoCharacterResult::parse(const std::string &payload)
 		}
 		data_.frames.push_back(frameObject);
 	}
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string RecognizeVideoCharacterResult::getMessage()const
+{
+	return message_;
 }
 
 RecognizeVideoCharacterResult::Data RecognizeVideoCharacterResult::getData()const
 {
 	return data_;
+}
+
+std::string RecognizeVideoCharacterResult::getCode()const
+{
+	return code_;
 }
 

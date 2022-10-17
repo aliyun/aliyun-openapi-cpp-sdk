@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,73 +18,89 @@
 
 using AlibabaCloud::Ocr::Model::RecognizeTableRequest;
 
-RecognizeTableRequest::RecognizeTableRequest()
-    : RpcServiceRequest("ocr", "2019-12-30", "RecognizeTable") {
-  setMethod(HttpRequest::Method::Post);
+RecognizeTableRequest::RecognizeTableRequest() :
+	RpcServiceRequest("ocr", "2019-12-30", "RecognizeTable")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-RecognizeTableRequest::~RecognizeTableRequest() {}
+RecognizeTableRequest::~RecognizeTableRequest()
+{}
 
-bool RecognizeTableRequest::getUseFinanceModel() const {
-  return useFinanceModel_;
+bool RecognizeTableRequest::getUseFinanceModel()const
+{
+	return useFinanceModel_;
 }
 
-void RecognizeTableRequest::setUseFinanceModel(bool useFinanceModel) {
-  useFinanceModel_ = useFinanceModel;
-  setBodyParameter(std::string("UseFinanceModel"), useFinanceModel ? "true" : "false");
+void RecognizeTableRequest::setUseFinanceModel(bool useFinanceModel)
+{
+	useFinanceModel_ = useFinanceModel;
+	setBodyParameter("UseFinanceModel", useFinanceModel ? "true" : "false");
 }
 
-bool RecognizeTableRequest::getSkipDetection() const {
-  return skipDetection_;
+bool RecognizeTableRequest::getSkipDetection()const
+{
+	return skipDetection_;
 }
 
-void RecognizeTableRequest::setSkipDetection(bool skipDetection) {
-  skipDetection_ = skipDetection;
-  setBodyParameter(std::string("SkipDetection"), skipDetection ? "true" : "false");
+void RecognizeTableRequest::setSkipDetection(bool skipDetection)
+{
+	skipDetection_ = skipDetection;
+	setBodyParameter("SkipDetection", skipDetection ? "true" : "false");
 }
 
-std::string RecognizeTableRequest::getOutputFormat() const {
-  return outputFormat_;
+std::string RecognizeTableRequest::getOutputFormat()const
+{
+	return outputFormat_;
 }
 
-void RecognizeTableRequest::setOutputFormat(const std::string &outputFormat) {
-  outputFormat_ = outputFormat;
-  setBodyParameter(std::string("OutputFormat"), outputFormat);
+void RecognizeTableRequest::setOutputFormat(const std::string& outputFormat)
+{
+	outputFormat_ = outputFormat;
+	setBodyParameter("OutputFormat", outputFormat);
 }
 
-bool RecognizeTableRequest::getAssureDirection() const {
-  return assureDirection_;
+bool RecognizeTableRequest::getAssureDirection()const
+{
+	return assureDirection_;
 }
 
-void RecognizeTableRequest::setAssureDirection(bool assureDirection) {
-  assureDirection_ = assureDirection;
-  setBodyParameter(std::string("AssureDirection"), assureDirection ? "true" : "false");
+void RecognizeTableRequest::setAssureDirection(bool assureDirection)
+{
+	assureDirection_ = assureDirection;
+	setBodyParameter("AssureDirection", assureDirection ? "true" : "false");
 }
 
-bool RecognizeTableRequest::getHasLine() const {
-  return hasLine_;
+bool RecognizeTableRequest::getHasLine()const
+{
+	return hasLine_;
 }
 
-void RecognizeTableRequest::setHasLine(bool hasLine) {
-  hasLine_ = hasLine;
-  setBodyParameter(std::string("HasLine"), hasLine ? "true" : "false");
+void RecognizeTableRequest::setHasLine(bool hasLine)
+{
+	hasLine_ = hasLine;
+	setBodyParameter("HasLine", hasLine ? "true" : "false");
 }
 
-int RecognizeTableRequest::getImageType() const {
-  return imageType_;
+int RecognizeTableRequest::getImageType()const
+{
+	return imageType_;
 }
 
-void RecognizeTableRequest::setImageType(int imageType) {
-  imageType_ = imageType;
-  setBodyParameter(std::string("ImageType"), std::to_string(imageType));
+void RecognizeTableRequest::setImageType(int imageType)
+{
+	imageType_ = imageType;
+	setBodyParameter("ImageType", std::to_string(imageType));
 }
 
-std::string RecognizeTableRequest::getImageURL() const {
-  return imageURL_;
+std::string RecognizeTableRequest::getImageURL()const
+{
+	return imageURL_;
 }
 
-void RecognizeTableRequest::setImageURL(const std::string &imageURL) {
-  imageURL_ = imageURL;
-  setBodyParameter(std::string("ImageURL"), imageURL);
+void RecognizeTableRequest::setImageURL(const std::string& imageURL)
+{
+	imageURL_ = imageURL;
+	setBodyParameter("ImageURL", imageURL);
 }
 

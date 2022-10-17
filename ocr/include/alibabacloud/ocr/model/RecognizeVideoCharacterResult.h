@@ -63,12 +63,16 @@ namespace AlibabaCloud
 				RecognizeVideoCharacterResult();
 				explicit RecognizeVideoCharacterResult(const std::string &payload);
 				~RecognizeVideoCharacterResult();
+				std::string getMessage()const;
 				Data getData()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
 				Data data_;
+				std::string code_;
 
 			};
 		}
