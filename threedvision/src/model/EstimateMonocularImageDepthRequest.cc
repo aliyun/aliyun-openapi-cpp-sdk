@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,19 +18,23 @@
 
 using AlibabaCloud::Threedvision::Model::EstimateMonocularImageDepthRequest;
 
-EstimateMonocularImageDepthRequest::EstimateMonocularImageDepthRequest()
-    : RpcServiceRequest("threedvision", "2021-01-31", "EstimateMonocularImageDepth") {
-  setMethod(HttpRequest::Method::Post);
+EstimateMonocularImageDepthRequest::EstimateMonocularImageDepthRequest() :
+	RpcServiceRequest("threedvision", "2021-01-31", "EstimateMonocularImageDepth")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-EstimateMonocularImageDepthRequest::~EstimateMonocularImageDepthRequest() {}
+EstimateMonocularImageDepthRequest::~EstimateMonocularImageDepthRequest()
+{}
 
-std::string EstimateMonocularImageDepthRequest::getImageURL() const {
-  return imageURL_;
+std::string EstimateMonocularImageDepthRequest::getImageURL()const
+{
+	return imageURL_;
 }
 
-void EstimateMonocularImageDepthRequest::setImageURL(const std::string &imageURL) {
-  imageURL_ = imageURL;
-  setBodyParameter(std::string("ImageURL"), imageURL);
+void EstimateMonocularImageDepthRequest::setImageURL(const std::string& imageURL)
+{
+	imageURL_ = imageURL;
+	setBodyParameter("ImageURL", imageURL);
 }
 
