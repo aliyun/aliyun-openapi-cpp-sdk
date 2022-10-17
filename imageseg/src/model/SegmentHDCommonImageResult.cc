@@ -42,11 +42,25 @@ void SegmentHDCommonImageResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["ImageUrl"].isNull())
 		data_.imageUrl = dataNode["ImageUrl"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string SegmentHDCommonImageResult::getMessage()const
+{
+	return message_;
 }
 
 SegmentHDCommonImageResult::Data SegmentHDCommonImageResult::getData()const
 {
 	return data_;
+}
+
+std::string SegmentHDCommonImageResult::getCode()const
+{
+	return code_;
 }
 
