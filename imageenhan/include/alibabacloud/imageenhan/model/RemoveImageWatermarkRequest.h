@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,26 +17,32 @@
 #ifndef ALIBABACLOUD_IMAGEENHAN_MODEL_REMOVEIMAGEWATERMARKREQUEST_H_
 #define ALIBABACLOUD_IMAGEENHAN_MODEL_REMOVEIMAGEWATERMARKREQUEST_H_
 
-#include <alibabacloud/imageenhan/ImageenhanExport.h>
-#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <map>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/imageenhan/ImageenhanExport.h>
 
-namespace AlibabaCloud {
-namespace Imageenhan {
-namespace Model {
-class ALIBABACLOUD_IMAGEENHAN_EXPORT RemoveImageWatermarkRequest : public RpcServiceRequest {
-public:
-	RemoveImageWatermarkRequest();
-	~RemoveImageWatermarkRequest();
-	std::string getImageURL() const;
-	void setImageURL(const std::string &imageURL);
+namespace AlibabaCloud
+{
+	namespace Imageenhan
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_IMAGEENHAN_EXPORT RemoveImageWatermarkRequest : public RpcServiceRequest
+			{
 
-private:
-	std::string imageURL_;
-};
-} // namespace Model
-} // namespace Imageenhan
-} // namespace AlibabaCloud
+			public:
+				RemoveImageWatermarkRequest();
+				~RemoveImageWatermarkRequest();
+
+				std::string getImageURL()const;
+				void setImageURL(const std::string& imageURL);
+
+            private:
+				std::string imageURL_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_IMAGEENHAN_MODEL_REMOVEIMAGEWATERMARKREQUEST_H_

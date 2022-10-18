@@ -43,11 +43,25 @@ void RecolorHDImageResult::parse(const std::string &payload)
 		auto allImageList = dataNode["ImageList"]["ImageList"];
 		for (auto value : allImageList)
 			data_.imageList.push_back(value.asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
+}
+
+std::string RecolorHDImageResult::getMessage()const
+{
+	return message_;
 }
 
 RecolorHDImageResult::Data RecolorHDImageResult::getData()const
 {
 	return data_;
+}
+
+std::string RecolorHDImageResult::getCode()const
+{
+	return code_;
 }
 
