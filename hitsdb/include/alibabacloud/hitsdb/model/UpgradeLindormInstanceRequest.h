@@ -46,6 +46,8 @@ public:
 	void setFilestoreSpec(const std::string &filestoreSpec);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getLogSpec() const;
+	void setLogSpec(const std::string &logSpec);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
 	std::string getRegionId() const;
@@ -58,8 +60,12 @@ public:
 	void setSolrNum(int solrNum);
 	int getColdStorage() const;
 	void setColdStorage(int coldStorage);
+	int getLogNum() const;
+	void setLogNum(int logNum);
 	std::string getSolrSpec() const;
 	void setSolrSpec(const std::string &solrSpec);
+	int getCoreSingleStorage() const;
+	void setCoreSingleStorage(int coreSingleStorage);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -70,10 +76,6 @@ public:
 	void setOwnerId(long ownerId);
 	int getLindormNum() const;
 	void setLindormNum(int lindormNum);
-	std::string getCoreSpec() const;
-	void setCoreSpec(const std::string &coreSpec);
-	int getCoreNum() const;
-	void setCoreNum(int coreNum);
 	int getLtsCoreNum() const;
 	void setLtsCoreNum(int ltsCoreNum);
 	std::string getInstanceId() const;
@@ -82,6 +84,8 @@ public:
 	void setLtsCoreSpec(const std::string &ltsCoreSpec);
 	int getClusterStorage() const;
 	void setClusterStorage(int clusterStorage);
+	int getLogSingleStorage() const;
+	void setLogSingleStorage(int logSingleStorage);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
 
@@ -94,24 +98,26 @@ private:
 	std::string tsdbSpec_;
 	std::string filestoreSpec_;
 	std::string accessKeyId_;
+	std::string logSpec_;
 	std::string securityToken_;
 	std::string regionId_;
 	int tsdbNum_;
 	std::string lindormSpec_;
 	int solrNum_;
 	int coldStorage_;
+	int logNum_;
 	std::string solrSpec_;
+	int coreSingleStorage_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	int filestoreNum_;
 	long ownerId_;
 	int lindormNum_;
-	std::string coreSpec_;
-	int coreNum_;
 	int ltsCoreNum_;
 	std::string instanceId_;
 	std::string ltsCoreSpec_;
 	int clusterStorage_;
+	int logSingleStorage_;
 	std::string zoneId_;
 };
 } // namespace Model

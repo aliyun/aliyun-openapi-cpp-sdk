@@ -97,6 +97,15 @@ void UpgradeLindormInstanceRequest::setAccessKeyId(const std::string &accessKeyI
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string UpgradeLindormInstanceRequest::getLogSpec() const {
+  return logSpec_;
+}
+
+void UpgradeLindormInstanceRequest::setLogSpec(const std::string &logSpec) {
+  logSpec_ = logSpec;
+  setParameter(std::string("LogSpec"), logSpec);
+}
+
 std::string UpgradeLindormInstanceRequest::getSecurityToken() const {
   return securityToken_;
 }
@@ -151,6 +160,15 @@ void UpgradeLindormInstanceRequest::setColdStorage(int coldStorage) {
   setParameter(std::string("ColdStorage"), std::to_string(coldStorage));
 }
 
+int UpgradeLindormInstanceRequest::getLogNum() const {
+  return logNum_;
+}
+
+void UpgradeLindormInstanceRequest::setLogNum(int logNum) {
+  logNum_ = logNum;
+  setParameter(std::string("LogNum"), std::to_string(logNum));
+}
+
 std::string UpgradeLindormInstanceRequest::getSolrSpec() const {
   return solrSpec_;
 }
@@ -158,6 +176,15 @@ std::string UpgradeLindormInstanceRequest::getSolrSpec() const {
 void UpgradeLindormInstanceRequest::setSolrSpec(const std::string &solrSpec) {
   solrSpec_ = solrSpec;
   setParameter(std::string("SolrSpec"), solrSpec);
+}
+
+int UpgradeLindormInstanceRequest::getCoreSingleStorage() const {
+  return coreSingleStorage_;
+}
+
+void UpgradeLindormInstanceRequest::setCoreSingleStorage(int coreSingleStorage) {
+  coreSingleStorage_ = coreSingleStorage;
+  setParameter(std::string("CoreSingleStorage"), std::to_string(coreSingleStorage));
 }
 
 std::string UpgradeLindormInstanceRequest::getResourceOwnerAccount() const {
@@ -205,24 +232,6 @@ void UpgradeLindormInstanceRequest::setLindormNum(int lindormNum) {
   setParameter(std::string("LindormNum"), std::to_string(lindormNum));
 }
 
-std::string UpgradeLindormInstanceRequest::getCoreSpec() const {
-  return coreSpec_;
-}
-
-void UpgradeLindormInstanceRequest::setCoreSpec(const std::string &coreSpec) {
-  coreSpec_ = coreSpec;
-  setParameter(std::string("CoreSpec"), coreSpec);
-}
-
-int UpgradeLindormInstanceRequest::getCoreNum() const {
-  return coreNum_;
-}
-
-void UpgradeLindormInstanceRequest::setCoreNum(int coreNum) {
-  coreNum_ = coreNum;
-  setParameter(std::string("CoreNum"), std::to_string(coreNum));
-}
-
 int UpgradeLindormInstanceRequest::getLtsCoreNum() const {
   return ltsCoreNum_;
 }
@@ -257,6 +266,15 @@ int UpgradeLindormInstanceRequest::getClusterStorage() const {
 void UpgradeLindormInstanceRequest::setClusterStorage(int clusterStorage) {
   clusterStorage_ = clusterStorage;
   setParameter(std::string("ClusterStorage"), std::to_string(clusterStorage));
+}
+
+int UpgradeLindormInstanceRequest::getLogSingleStorage() const {
+  return logSingleStorage_;
+}
+
+void UpgradeLindormInstanceRequest::setLogSingleStorage(int logSingleStorage) {
+  logSingleStorage_ = logSingleStorage;
+  setParameter(std::string("LogSingleStorage"), std::to_string(logSingleStorage));
 }
 
 std::string UpgradeLindormInstanceRequest::getZoneId() const {

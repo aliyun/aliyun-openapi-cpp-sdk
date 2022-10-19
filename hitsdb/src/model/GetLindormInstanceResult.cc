@@ -129,6 +129,40 @@ void GetLindormInstanceResult::parse(const std::string &payload)
 		maintainEndTime_ = value["MaintainEndTime"].asString();
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["LocalCloudCategory"].isNull())
+		localCloudCategory_ = value["LocalCloudCategory"].asString();
+	if(!value["LocalCloudStorage"].isNull())
+		localCloudStorage_ = std::stoi(value["LocalCloudStorage"].asString());
+	if(!value["PrimaryZoneId"].isNull())
+		primaryZoneId_ = value["PrimaryZoneId"].asString();
+	if(!value["StandbyZoneId"].isNull())
+		standbyZoneId_ = value["StandbyZoneId"].asString();
+	if(!value["ArbiterZoneId"].isNull())
+		arbiterZoneId_ = value["ArbiterZoneId"].asString();
+	if(!value["PrimaryVSwitchId"].isNull())
+		primaryVSwitchId_ = value["PrimaryVSwitchId"].asString();
+	if(!value["StandbyVSwitchId"].isNull())
+		standbyVSwitchId_ = value["StandbyVSwitchId"].asString();
+	if(!value["ArbiterVSwitchId"].isNull())
+		arbiterVSwitchId_ = value["ArbiterVSwitchId"].asString();
+	if(!value["MultiZoneCombination"].isNull())
+		multiZoneCombination_ = value["MultiZoneCombination"].asString();
+	if(!value["CoreDiskCategory"].isNull())
+		coreDiskCategory_ = value["CoreDiskCategory"].asString();
+	if(!value["CoreSpec"].isNull())
+		coreSpec_ = value["CoreSpec"].asString();
+	if(!value["CoreNum"].isNull())
+		coreNum_ = std::stoi(value["CoreNum"].asString());
+	if(!value["CoreSingleStorage"].isNull())
+		coreSingleStorage_ = std::stoi(value["CoreSingleStorage"].asString());
+	if(!value["LogDiskCategory"].isNull())
+		logDiskCategory_ = value["LogDiskCategory"].asString();
+	if(!value["LogSpec"].isNull())
+		logSpec_ = value["LogSpec"].asString();
+	if(!value["LogNum"].isNull())
+		logNum_ = std::stoi(value["LogNum"].asString());
+	if(!value["LogSingleStorage"].isNull())
+		logSingleStorage_ = std::stoi(value["LogSingleStorage"].asString());
 
 }
 
@@ -137,14 +171,14 @@ long GetLindormInstanceResult::getExpiredMilliseconds()const
 	return expiredMilliseconds_;
 }
 
+std::string GetLindormInstanceResult::getStandbyZoneId()const
+{
+	return standbyZoneId_;
+}
+
 std::vector<GetLindormInstanceResult::Engine> GetLindormInstanceResult::getEngineList()const
 {
 	return engineList_;
-}
-
-std::string GetLindormInstanceResult::getDiskThreshold()const
-{
-	return diskThreshold_;
 }
 
 std::string GetLindormInstanceResult::getResourceGroupId()const
@@ -157,9 +191,9 @@ bool GetLindormInstanceResult::getEnableBDS()const
 	return enableBDS_;
 }
 
-bool GetLindormInstanceResult::getAutoRenew()const
+std::string GetLindormInstanceResult::getLogDiskCategory()const
 {
-	return autoRenew_;
+	return logDiskCategory_;
 }
 
 std::string GetLindormInstanceResult::getDiskUsage()const
@@ -172,24 +206,14 @@ bool GetLindormInstanceResult::getEnableFS()const
 	return enableFS_;
 }
 
-bool GetLindormInstanceResult::getEnableShs()const
+std::string GetLindormInstanceResult::getStandbyVSwitchId()const
 {
-	return enableShs_;
-}
-
-std::string GetLindormInstanceResult::getMaintainEndTime()const
-{
-	return maintainEndTime_;
+	return standbyVSwitchId_;
 }
 
 bool GetLindormInstanceResult::getEnableCompute()const
 {
 	return enableCompute_;
-}
-
-std::string GetLindormInstanceResult::getNetworkType()const
-{
-	return networkType_;
 }
 
 std::string GetLindormInstanceResult::getServiceType()const
@@ -202,24 +226,14 @@ std::string GetLindormInstanceResult::getInstanceAlias()const
 	return instanceAlias_;
 }
 
-std::string GetLindormInstanceResult::getInstanceStatus()const
-{
-	return instanceStatus_;
-}
-
 int GetLindormInstanceResult::getEngineType()const
 {
 	return engineType_;
 }
 
-long GetLindormInstanceResult::getCreateMilliseconds()const
+std::string GetLindormInstanceResult::getCoreSpec()const
 {
-	return createMilliseconds_;
-}
-
-std::string GetLindormInstanceResult::getMaintainStartTime()const
-{
-	return maintainStartTime_;
+	return coreSpec_;
 }
 
 bool GetLindormInstanceResult::getEnableSSL()const
@@ -227,19 +241,14 @@ bool GetLindormInstanceResult::getEnableSSL()const
 	return enableSSL_;
 }
 
+std::string GetLindormInstanceResult::getCoreDiskCategory()const
+{
+	return coreDiskCategory_;
+}
+
 std::string GetLindormInstanceResult::getInstanceStorage()const
 {
 	return instanceStorage_;
-}
-
-std::string GetLindormInstanceResult::getZoneId()const
-{
-	return zoneId_;
-}
-
-bool GetLindormInstanceResult::getEnableKms()const
-{
-	return enableKms_;
 }
 
 std::string GetLindormInstanceResult::getInstanceId()const
@@ -247,9 +256,9 @@ std::string GetLindormInstanceResult::getInstanceId()const
 	return instanceId_;
 }
 
-std::string GetLindormInstanceResult::getCreateTime()const
+int GetLindormInstanceResult::getCoreSingleStorage()const
 {
-	return createTime_;
+	return coreSingleStorage_;
 }
 
 int GetLindormInstanceResult::getColdStorage()const
@@ -277,6 +286,11 @@ std::string GetLindormInstanceResult::getVswitchId()const
 	return vswitchId_;
 }
 
+std::string GetLindormInstanceResult::getArbiterVSwitchId()const
+{
+	return arbiterVSwitchId_;
+}
+
 std::string GetLindormInstanceResult::getVpcId()const
 {
 	return vpcId_;
@@ -297,14 +311,119 @@ bool GetLindormInstanceResult::getEnablePhoenix()const
 	return enablePhoenix_;
 }
 
-std::string GetLindormInstanceResult::getRegionId()const
+int GetLindormInstanceResult::getLogSingleStorage()const
 {
-	return regionId_;
+	return logSingleStorage_;
 }
 
 std::string GetLindormInstanceResult::getExpireTime()const
 {
 	return expireTime_;
+}
+
+int GetLindormInstanceResult::getLogNum()const
+{
+	return logNum_;
+}
+
+int GetLindormInstanceResult::getLocalCloudStorage()const
+{
+	return localCloudStorage_;
+}
+
+std::string GetLindormInstanceResult::getDiskThreshold()const
+{
+	return diskThreshold_;
+}
+
+bool GetLindormInstanceResult::getAutoRenew()const
+{
+	return autoRenew_;
+}
+
+bool GetLindormInstanceResult::getEnableShs()const
+{
+	return enableShs_;
+}
+
+std::string GetLindormInstanceResult::getMaintainEndTime()const
+{
+	return maintainEndTime_;
+}
+
+std::string GetLindormInstanceResult::getNetworkType()const
+{
+	return networkType_;
+}
+
+std::string GetLindormInstanceResult::getInstanceStatus()const
+{
+	return instanceStatus_;
+}
+
+long GetLindormInstanceResult::getCreateMilliseconds()const
+{
+	return createMilliseconds_;
+}
+
+std::string GetLindormInstanceResult::getMaintainStartTime()const
+{
+	return maintainStartTime_;
+}
+
+std::string GetLindormInstanceResult::getArbiterZoneId()const
+{
+	return arbiterZoneId_;
+}
+
+std::string GetLindormInstanceResult::getPrimaryZoneId()const
+{
+	return primaryZoneId_;
+}
+
+std::string GetLindormInstanceResult::getZoneId()const
+{
+	return zoneId_;
+}
+
+std::string GetLindormInstanceResult::getMultiZoneCombination()const
+{
+	return multiZoneCombination_;
+}
+
+bool GetLindormInstanceResult::getEnableKms()const
+{
+	return enableKms_;
+}
+
+int GetLindormInstanceResult::getCoreNum()const
+{
+	return coreNum_;
+}
+
+std::string GetLindormInstanceResult::getCreateTime()const
+{
+	return createTime_;
+}
+
+std::string GetLindormInstanceResult::getLogSpec()const
+{
+	return logSpec_;
+}
+
+std::string GetLindormInstanceResult::getLocalCloudCategory()const
+{
+	return localCloudCategory_;
+}
+
+std::string GetLindormInstanceResult::getPrimaryVSwitchId()const
+{
+	return primaryVSwitchId_;
+}
+
+std::string GetLindormInstanceResult::getRegionId()const
+{
+	return regionId_;
 }
 
 long GetLindormInstanceResult::getAliUid()const
