@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTDELEGATEDSERVICESFORACCOUNTRESULT_H_
-#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTDELEGATEDSERVICESFORACCOUNTRESULT_H_
+#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_CHECKACCOUNTDELETERESULT_H_
+#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_CHECKACCOUNTDELETERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RESOURCEMANAGER_EXPORT ListDelegatedServicesForAccountResult : public ServiceResult
+			class ALIBABACLOUD_RESOURCEMANAGER_EXPORT CheckAccountDeleteResult : public ServiceResult
 			{
 			public:
-				struct DelegatedService
-				{
-					std::string status;
-					std::string delegationEnabledTime;
-					std::string servicePrincipal;
-				};
 
 
-				ListDelegatedServicesForAccountResult();
-				explicit ListDelegatedServicesForAccountResult(const std::string &payload);
-				~ListDelegatedServicesForAccountResult();
-				std::vector<DelegatedService> getDelegatedServices()const;
+				CheckAccountDeleteResult();
+				explicit CheckAccountDeleteResult(const std::string &payload);
+				~CheckAccountDeleteResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DelegatedService> delegatedServices_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTDELEGATEDSERVICESFORACCOUNTRESULT_H_
+#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_CHECKACCOUNTDELETERESULT_H_

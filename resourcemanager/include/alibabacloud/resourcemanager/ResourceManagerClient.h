@@ -36,6 +36,8 @@
 #include "model/CancelHandshakeResult.h"
 #include "model/CancelPromoteResourceAccountRequest.h"
 #include "model/CancelPromoteResourceAccountResult.h"
+#include "model/CheckAccountDeleteRequest.h"
+#include "model/CheckAccountDeleteResult.h"
 #include "model/CreateCloudAccountRequest.h"
 #include "model/CreateCloudAccountResult.h"
 #include "model/CreateControlPolicyRequest.h"
@@ -56,6 +58,8 @@
 #include "model/CreateServiceLinkedRoleResult.h"
 #include "model/DeclineHandshakeRequest.h"
 #include "model/DeclineHandshakeResult.h"
+#include "model/DeleteAccountRequest.h"
+#include "model/DeleteAccountResult.h"
 #include "model/DeleteControlPolicyRequest.h"
 #include "model/DeleteControlPolicyResult.h"
 #include "model/DeleteFolderRequest.h"
@@ -86,6 +90,10 @@
 #include "model/EnableResourceDirectoryResult.h"
 #include "model/GetAccountRequest.h"
 #include "model/GetAccountResult.h"
+#include "model/GetAccountDeletionCheckResultRequest.h"
+#include "model/GetAccountDeletionCheckResultResult.h"
+#include "model/GetAccountDeletionStatusRequest.h"
+#include "model/GetAccountDeletionStatusResult.h"
 #include "model/GetControlPolicyRequest.h"
 #include "model/GetControlPolicyResult.h"
 #include "model/GetControlPolicyEnablementStatusRequest.h"
@@ -222,6 +230,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelPromoteResourceAccountResult> CancelPromoteResourceAccountOutcome;
 			typedef std::future<CancelPromoteResourceAccountOutcome> CancelPromoteResourceAccountOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::CancelPromoteResourceAccountRequest&, const CancelPromoteResourceAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelPromoteResourceAccountAsyncHandler;
+			typedef Outcome<Error, Model::CheckAccountDeleteResult> CheckAccountDeleteOutcome;
+			typedef std::future<CheckAccountDeleteOutcome> CheckAccountDeleteOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::CheckAccountDeleteRequest&, const CheckAccountDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckAccountDeleteAsyncHandler;
 			typedef Outcome<Error, Model::CreateCloudAccountResult> CreateCloudAccountOutcome;
 			typedef std::future<CreateCloudAccountOutcome> CreateCloudAccountOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::CreateCloudAccountRequest&, const CreateCloudAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCloudAccountAsyncHandler;
@@ -252,6 +263,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeclineHandshakeResult> DeclineHandshakeOutcome;
 			typedef std::future<DeclineHandshakeOutcome> DeclineHandshakeOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::DeclineHandshakeRequest&, const DeclineHandshakeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeclineHandshakeAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAccountResult> DeleteAccountOutcome;
+			typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::DeleteAccountRequest&, const DeleteAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
 			typedef Outcome<Error, Model::DeleteControlPolicyResult> DeleteControlPolicyOutcome;
 			typedef std::future<DeleteControlPolicyOutcome> DeleteControlPolicyOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::DeleteControlPolicyRequest&, const DeleteControlPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteControlPolicyAsyncHandler;
@@ -297,6 +311,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAccountResult> GetAccountOutcome;
 			typedef std::future<GetAccountOutcome> GetAccountOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::GetAccountRequest&, const GetAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAccountAsyncHandler;
+			typedef Outcome<Error, Model::GetAccountDeletionCheckResultResult> GetAccountDeletionCheckResultOutcome;
+			typedef std::future<GetAccountDeletionCheckResultOutcome> GetAccountDeletionCheckResultOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::GetAccountDeletionCheckResultRequest&, const GetAccountDeletionCheckResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAccountDeletionCheckResultAsyncHandler;
+			typedef Outcome<Error, Model::GetAccountDeletionStatusResult> GetAccountDeletionStatusOutcome;
+			typedef std::future<GetAccountDeletionStatusOutcome> GetAccountDeletionStatusOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::GetAccountDeletionStatusRequest&, const GetAccountDeletionStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAccountDeletionStatusAsyncHandler;
 			typedef Outcome<Error, Model::GetControlPolicyResult> GetControlPolicyOutcome;
 			typedef std::future<GetControlPolicyOutcome> GetControlPolicyOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::GetControlPolicyRequest&, const GetControlPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetControlPolicyAsyncHandler;
@@ -482,6 +502,9 @@ namespace AlibabaCloud
 			CancelPromoteResourceAccountOutcome cancelPromoteResourceAccount(const Model::CancelPromoteResourceAccountRequest &request)const;
 			void cancelPromoteResourceAccountAsync(const Model::CancelPromoteResourceAccountRequest& request, const CancelPromoteResourceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelPromoteResourceAccountOutcomeCallable cancelPromoteResourceAccountCallable(const Model::CancelPromoteResourceAccountRequest& request) const;
+			CheckAccountDeleteOutcome checkAccountDelete(const Model::CheckAccountDeleteRequest &request)const;
+			void checkAccountDeleteAsync(const Model::CheckAccountDeleteRequest& request, const CheckAccountDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckAccountDeleteOutcomeCallable checkAccountDeleteCallable(const Model::CheckAccountDeleteRequest& request) const;
 			CreateCloudAccountOutcome createCloudAccount(const Model::CreateCloudAccountRequest &request)const;
 			void createCloudAccountAsync(const Model::CreateCloudAccountRequest& request, const CreateCloudAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCloudAccountOutcomeCallable createCloudAccountCallable(const Model::CreateCloudAccountRequest& request) const;
@@ -512,6 +535,9 @@ namespace AlibabaCloud
 			DeclineHandshakeOutcome declineHandshake(const Model::DeclineHandshakeRequest &request)const;
 			void declineHandshakeAsync(const Model::DeclineHandshakeRequest& request, const DeclineHandshakeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeclineHandshakeOutcomeCallable declineHandshakeCallable(const Model::DeclineHandshakeRequest& request) const;
+			DeleteAccountOutcome deleteAccount(const Model::DeleteAccountRequest &request)const;
+			void deleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAccountOutcomeCallable deleteAccountCallable(const Model::DeleteAccountRequest& request) const;
 			DeleteControlPolicyOutcome deleteControlPolicy(const Model::DeleteControlPolicyRequest &request)const;
 			void deleteControlPolicyAsync(const Model::DeleteControlPolicyRequest& request, const DeleteControlPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteControlPolicyOutcomeCallable deleteControlPolicyCallable(const Model::DeleteControlPolicyRequest& request) const;
@@ -557,6 +583,12 @@ namespace AlibabaCloud
 			GetAccountOutcome getAccount(const Model::GetAccountRequest &request)const;
 			void getAccountAsync(const Model::GetAccountRequest& request, const GetAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAccountOutcomeCallable getAccountCallable(const Model::GetAccountRequest& request) const;
+			GetAccountDeletionCheckResultOutcome getAccountDeletionCheckResult(const Model::GetAccountDeletionCheckResultRequest &request)const;
+			void getAccountDeletionCheckResultAsync(const Model::GetAccountDeletionCheckResultRequest& request, const GetAccountDeletionCheckResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAccountDeletionCheckResultOutcomeCallable getAccountDeletionCheckResultCallable(const Model::GetAccountDeletionCheckResultRequest& request) const;
+			GetAccountDeletionStatusOutcome getAccountDeletionStatus(const Model::GetAccountDeletionStatusRequest &request)const;
+			void getAccountDeletionStatusAsync(const Model::GetAccountDeletionStatusRequest& request, const GetAccountDeletionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAccountDeletionStatusOutcomeCallable getAccountDeletionStatusCallable(const Model::GetAccountDeletionStatusRequest& request) const;
 			GetControlPolicyOutcome getControlPolicy(const Model::GetControlPolicyRequest &request)const;
 			void getControlPolicyAsync(const Model::GetControlPolicyRequest& request, const GetControlPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetControlPolicyOutcomeCallable getControlPolicyCallable(const Model::GetControlPolicyRequest& request) const;

@@ -47,6 +47,8 @@ void ListDelegatedServicesForAccountResult::parse(const std::string &payload)
 			delegatedServicesObject.delegationEnabledTime = valueDelegatedServicesDelegatedService["DelegationEnabledTime"].asString();
 		if(!valueDelegatedServicesDelegatedService["ServicePrincipal"].isNull())
 			delegatedServicesObject.servicePrincipal = valueDelegatedServicesDelegatedService["ServicePrincipal"].asString();
+		if(!valueDelegatedServicesDelegatedService["Status"].isNull())
+			delegatedServicesObject.status = valueDelegatedServicesDelegatedService["Status"].asString();
 		delegatedServices_.push_back(delegatedServicesObject);
 	}
 

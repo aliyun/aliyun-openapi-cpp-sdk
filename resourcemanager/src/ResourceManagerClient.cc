@@ -303,6 +303,42 @@ ResourceManagerClient::CancelPromoteResourceAccountOutcomeCallable ResourceManag
 	return task->get_future();
 }
 
+ResourceManagerClient::CheckAccountDeleteOutcome ResourceManagerClient::checkAccountDelete(const CheckAccountDeleteRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckAccountDeleteOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckAccountDeleteOutcome(CheckAccountDeleteResult(outcome.result()));
+	else
+		return CheckAccountDeleteOutcome(outcome.error());
+}
+
+void ResourceManagerClient::checkAccountDeleteAsync(const CheckAccountDeleteRequest& request, const CheckAccountDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkAccountDelete(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::CheckAccountDeleteOutcomeCallable ResourceManagerClient::checkAccountDeleteCallable(const CheckAccountDeleteRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckAccountDeleteOutcome()>>(
+			[this, request]()
+			{
+			return this->checkAccountDelete(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ResourceManagerClient::CreateCloudAccountOutcome ResourceManagerClient::createCloudAccount(const CreateCloudAccountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +693,42 @@ ResourceManagerClient::DeclineHandshakeOutcomeCallable ResourceManagerClient::de
 			[this, request]()
 			{
 			return this->declineHandshake(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::DeleteAccountOutcome ResourceManagerClient::deleteAccount(const DeleteAccountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAccountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAccountOutcome(DeleteAccountResult(outcome.result()));
+	else
+		return DeleteAccountOutcome(outcome.error());
+}
+
+void ResourceManagerClient::deleteAccountAsync(const DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAccount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::DeleteAccountOutcomeCallable ResourceManagerClient::deleteAccountCallable(const DeleteAccountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAccountOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAccount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1197,6 +1269,78 @@ ResourceManagerClient::GetAccountOutcomeCallable ResourceManagerClient::getAccou
 			[this, request]()
 			{
 			return this->getAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::GetAccountDeletionCheckResultOutcome ResourceManagerClient::getAccountDeletionCheckResult(const GetAccountDeletionCheckResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAccountDeletionCheckResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAccountDeletionCheckResultOutcome(GetAccountDeletionCheckResultResult(outcome.result()));
+	else
+		return GetAccountDeletionCheckResultOutcome(outcome.error());
+}
+
+void ResourceManagerClient::getAccountDeletionCheckResultAsync(const GetAccountDeletionCheckResultRequest& request, const GetAccountDeletionCheckResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAccountDeletionCheckResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::GetAccountDeletionCheckResultOutcomeCallable ResourceManagerClient::getAccountDeletionCheckResultCallable(const GetAccountDeletionCheckResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAccountDeletionCheckResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getAccountDeletionCheckResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::GetAccountDeletionStatusOutcome ResourceManagerClient::getAccountDeletionStatus(const GetAccountDeletionStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAccountDeletionStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAccountDeletionStatusOutcome(GetAccountDeletionStatusResult(outcome.result()));
+	else
+		return GetAccountDeletionStatusOutcome(outcome.error());
+}
+
+void ResourceManagerClient::getAccountDeletionStatusAsync(const GetAccountDeletionStatusRequest& request, const GetAccountDeletionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAccountDeletionStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::GetAccountDeletionStatusOutcomeCallable ResourceManagerClient::getAccountDeletionStatusCallable(const GetAccountDeletionStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAccountDeletionStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->getAccountDeletionStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

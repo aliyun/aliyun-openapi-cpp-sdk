@@ -35,6 +35,8 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/CancelHandshakeResult.h
 	include/alibabacloud/resourcemanager/model/CancelPromoteResourceAccountRequest.h
 	include/alibabacloud/resourcemanager/model/CancelPromoteResourceAccountResult.h
+	include/alibabacloud/resourcemanager/model/CheckAccountDeleteRequest.h
+	include/alibabacloud/resourcemanager/model/CheckAccountDeleteResult.h
 	include/alibabacloud/resourcemanager/model/CreateCloudAccountRequest.h
 	include/alibabacloud/resourcemanager/model/CreateCloudAccountResult.h
 	include/alibabacloud/resourcemanager/model/CreateControlPolicyRequest.h
@@ -55,6 +57,8 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/CreateServiceLinkedRoleResult.h
 	include/alibabacloud/resourcemanager/model/DeclineHandshakeRequest.h
 	include/alibabacloud/resourcemanager/model/DeclineHandshakeResult.h
+	include/alibabacloud/resourcemanager/model/DeleteAccountRequest.h
+	include/alibabacloud/resourcemanager/model/DeleteAccountResult.h
 	include/alibabacloud/resourcemanager/model/DeleteControlPolicyRequest.h
 	include/alibabacloud/resourcemanager/model/DeleteControlPolicyResult.h
 	include/alibabacloud/resourcemanager/model/DeleteFolderRequest.h
@@ -85,6 +89,10 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/EnableResourceDirectoryResult.h
 	include/alibabacloud/resourcemanager/model/GetAccountRequest.h
 	include/alibabacloud/resourcemanager/model/GetAccountResult.h
+	include/alibabacloud/resourcemanager/model/GetAccountDeletionCheckResultRequest.h
+	include/alibabacloud/resourcemanager/model/GetAccountDeletionCheckResultResult.h
+	include/alibabacloud/resourcemanager/model/GetAccountDeletionStatusRequest.h
+	include/alibabacloud/resourcemanager/model/GetAccountDeletionStatusResult.h
 	include/alibabacloud/resourcemanager/model/GetControlPolicyRequest.h
 	include/alibabacloud/resourcemanager/model/GetControlPolicyResult.h
 	include/alibabacloud/resourcemanager/model/GetControlPolicyEnablementStatusRequest.h
@@ -208,6 +216,8 @@ set(resourcemanager_src
 	src/model/CancelHandshakeResult.cc
 	src/model/CancelPromoteResourceAccountRequest.cc
 	src/model/CancelPromoteResourceAccountResult.cc
+	src/model/CheckAccountDeleteRequest.cc
+	src/model/CheckAccountDeleteResult.cc
 	src/model/CreateCloudAccountRequest.cc
 	src/model/CreateCloudAccountResult.cc
 	src/model/CreateControlPolicyRequest.cc
@@ -228,6 +238,8 @@ set(resourcemanager_src
 	src/model/CreateServiceLinkedRoleResult.cc
 	src/model/DeclineHandshakeRequest.cc
 	src/model/DeclineHandshakeResult.cc
+	src/model/DeleteAccountRequest.cc
+	src/model/DeleteAccountResult.cc
 	src/model/DeleteControlPolicyRequest.cc
 	src/model/DeleteControlPolicyResult.cc
 	src/model/DeleteFolderRequest.cc
@@ -258,6 +270,10 @@ set(resourcemanager_src
 	src/model/EnableResourceDirectoryResult.cc
 	src/model/GetAccountRequest.cc
 	src/model/GetAccountResult.cc
+	src/model/GetAccountDeletionCheckResultRequest.cc
+	src/model/GetAccountDeletionCheckResultResult.cc
+	src/model/GetAccountDeletionStatusRequest.cc
+	src/model/GetAccountDeletionStatusResult.cc
 	src/model/GetControlPolicyRequest.cc
 	src/model/GetControlPolicyResult.cc
 	src/model/GetControlPolicyEnablementStatusRequest.cc

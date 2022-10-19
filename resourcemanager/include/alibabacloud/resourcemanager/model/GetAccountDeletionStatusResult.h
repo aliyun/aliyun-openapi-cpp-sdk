@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTDELEGATEDSERVICESFORACCOUNTRESULT_H_
-#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTDELEGATEDSERVICESFORACCOUNTRESULT_H_
+#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETACCOUNTDELETIONSTATUSRESULT_H_
+#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETACCOUNTDELETIONSTATUSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RESOURCEMANAGER_EXPORT ListDelegatedServicesForAccountResult : public ServiceResult
+			class ALIBABACLOUD_RESOURCEMANAGER_EXPORT GetAccountDeletionStatusResult : public ServiceResult
 			{
 			public:
-				struct DelegatedService
+				struct RdAccountDeletionStatus
 				{
+					struct FailReasonListItem
+					{
+						std::string description;
+						std::string name;
+					};
 					std::string status;
-					std::string delegationEnabledTime;
-					std::string servicePrincipal;
+					std::vector<FailReasonListItem> failReasonList;
+					std::string accountId;
+					std::string deletionType;
+					std::string createTime;
+					std::string deletionTime;
 				};
 
 
-				ListDelegatedServicesForAccountResult();
-				explicit ListDelegatedServicesForAccountResult(const std::string &payload);
-				~ListDelegatedServicesForAccountResult();
-				std::vector<DelegatedService> getDelegatedServices()const;
+				GetAccountDeletionStatusResult();
+				explicit GetAccountDeletionStatusResult(const std::string &payload);
+				~GetAccountDeletionStatusResult();
+				RdAccountDeletionStatus getRdAccountDeletionStatus()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DelegatedService> delegatedServices_;
+				RdAccountDeletionStatus rdAccountDeletionStatus_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_LISTDELEGATEDSERVICESFORACCOUNTRESULT_H_
+#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_GETACCOUNTDELETIONSTATUSRESULT_H_
