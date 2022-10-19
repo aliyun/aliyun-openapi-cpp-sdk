@@ -76,6 +76,15 @@ void CreateShardingDBInstanceRequest::setReplicaSet(const std::vector<CreateShar
   }
 }
 
+std::string CreateShardingDBInstanceRequest::getStorageType() const {
+  return storageType_;
+}
+
+void CreateShardingDBInstanceRequest::setStorageType(const std::string &storageType) {
+  storageType_ = storageType;
+  setParameter(std::string("StorageType"), storageType);
+}
+
 std::string CreateShardingDBInstanceRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }

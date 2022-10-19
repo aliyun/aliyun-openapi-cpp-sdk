@@ -52,6 +52,8 @@ public:
 	void setNetworkType(const std::string &networkType);
 	std::vector<ReplicaSet> getReplicaSet() const;
 	void setReplicaSet(const std::vector<ReplicaSet> &replicaSet);
+	std::string getStorageType() const;
+	void setStorageType(const std::string &storageType);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSecurityToken() const;
@@ -109,6 +111,7 @@ private:
 	std::string engineVersion_;
 	std::string networkType_;
 	std::vector<ReplicaSet> replicaSet_;
+	std::string storageType_;
 	std::string resourceGroupId_;
 	std::string securityToken_;
 	std::string dBInstanceDescription_;
