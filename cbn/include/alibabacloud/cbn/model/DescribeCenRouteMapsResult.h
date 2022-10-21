@@ -64,6 +64,7 @@ namespace AlibabaCloud
 					std::string cenId;
 					std::vector<std::string> destinationRegionIds;
 					int nextPriority;
+					std::string gatewayRegionId;
 					std::vector<std::string> prependAsPath;
 					std::string communityMatchMode;
 					std::vector<std::string> srcZoneIds;

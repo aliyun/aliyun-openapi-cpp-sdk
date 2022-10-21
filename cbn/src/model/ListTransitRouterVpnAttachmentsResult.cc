@@ -52,7 +52,7 @@ void ListTransitRouterVpnAttachmentsResult::parse(const std::string &payload)
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterId"].isNull())
 			transitRouterAttachmentsObject.transitRouterId = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterId"].asString();
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["ResourceType"].isNull())
-			transitRouterAttachmentsObject.resourceType = std::stoi(valueTransitRouterAttachmentsTransitRouterAttachment["ResourceType"].asString());
+			transitRouterAttachmentsObject.resourceType = valueTransitRouterAttachmentsTransitRouterAttachment["ResourceType"].asString();
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["VpnOwnerId"].isNull())
 			transitRouterAttachmentsObject.vpnOwnerId = std::stol(valueTransitRouterAttachmentsTransitRouterAttachment["VpnOwnerId"].asString());
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["VpnId"].isNull())

@@ -80,6 +80,8 @@ public:
 	void setDescription(const std::string &description);
 	bool getSourceInstanceIdsReverseMatch() const;
 	void setSourceInstanceIdsReverseMatch(bool sourceInstanceIdsReverseMatch);
+	std::string getGatewayRegionId() const;
+	void setGatewayRegionId(const std::string &gatewayRegionId);
 	std::vector<std::string> getDestinationRouteTableIds() const;
 	void setDestinationRouteTableIds(const std::vector<std::string> &destinationRouteTableIds);
 	std::vector<std::string> getSourceZoneIds() const;
@@ -129,6 +131,7 @@ private:
 	std::string cenId_;
 	std::string description_;
 	bool sourceInstanceIdsReverseMatch_;
+	std::string gatewayRegionId_;
 	std::vector<std::string> destinationRouteTableIds_;
 	std::vector<std::string> sourceZoneIds_;
 	std::vector<std::string> destinationInstanceIds_;

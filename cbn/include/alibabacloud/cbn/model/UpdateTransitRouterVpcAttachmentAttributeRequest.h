@@ -36,6 +36,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getTransitRouterAttachmentName() const;
 	void setTransitRouterAttachmentName(const std::string &transitRouterAttachmentName);
+	bool getAutoPublishRouteEnabled() const;
+	void setAutoPublishRouteEnabled(bool autoPublishRouteEnabled);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
@@ -55,6 +57,7 @@ private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	std::string transitRouterAttachmentName_;
+	bool autoPublishRouteEnabled_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

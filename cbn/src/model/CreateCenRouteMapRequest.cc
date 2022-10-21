@@ -257,6 +257,15 @@ void CreateCenRouteMapRequest::setSourceInstanceIdsReverseMatch(bool sourceInsta
   setParameter(std::string("SourceInstanceIdsReverseMatch"), sourceInstanceIdsReverseMatch ? "true" : "false");
 }
 
+std::string CreateCenRouteMapRequest::getGatewayRegionId() const {
+  return gatewayRegionId_;
+}
+
+void CreateCenRouteMapRequest::setGatewayRegionId(const std::string &gatewayRegionId) {
+  gatewayRegionId_ = gatewayRegionId;
+  setParameter(std::string("GatewayRegionId"), gatewayRegionId);
+}
+
 std::vector<std::string> CreateCenRouteMapRequest::getDestinationRouteTableIds() const {
   return destinationRouteTableIds_;
 }

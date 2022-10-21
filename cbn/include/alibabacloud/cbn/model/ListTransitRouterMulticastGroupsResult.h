@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					bool groupMember;
 					std::string vSwitchId;
 					std::string sourceType;
+					std::string connectPeerId;
 					std::string resourceType;
 					std::string networkInterfaceId;
 					long resourceOwnerId;

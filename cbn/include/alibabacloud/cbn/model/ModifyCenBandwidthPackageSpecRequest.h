@@ -40,6 +40,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getServiceType() const;
+	void setServiceType(const std::string &serviceType);
 	std::string getCenBandwidthPackageId() const;
 	void setCenBandwidthPackageId(const std::string &cenBandwidthPackageId);
 
@@ -49,6 +51,7 @@ private:
 	int bandwidth_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string serviceType_;
 	std::string cenBandwidthPackageId_;
 };
 } // namespace Model

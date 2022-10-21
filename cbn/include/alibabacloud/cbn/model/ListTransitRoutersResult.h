@@ -34,9 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct TransitRouter
 				{
+					struct TransitRouterCidrListItem
+					{
+						std::string description;
+						std::string cidr;
+						std::string transitRouterCidrId;
+						bool publishCidrRoute;
+						std::string name;
+					};
 					std::string status;
 					std::string type;
 					bool supportMulticast;
+					std::vector<TransitRouter::TransitRouterCidrListItem> transitRouterCidrList;
 					std::string creationTime;
 					std::string cenId;
 					std::string transitRouterDescription;

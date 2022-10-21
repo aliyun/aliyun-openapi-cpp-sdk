@@ -60,6 +60,14 @@ void ListTransitRouterMulticastGroupsRequest::setTransitRouterMulticastDomainId(
   setParameter(std::string("TransitRouterMulticastDomainId"), transitRouterMulticastDomainId);
 }
 
+std::vector<std::string> ListTransitRouterMulticastGroupsRequest::getConnectPeerIds() const {
+  return connectPeerIds_;
+}
+
+void ListTransitRouterMulticastGroupsRequest::setConnectPeerIds(const std::vector<std::string> &connectPeerIds) {
+  connectPeerIds_ = connectPeerIds;
+}
+
 std::string ListTransitRouterMulticastGroupsRequest::getNextToken() const {
   return nextToken_;
 }

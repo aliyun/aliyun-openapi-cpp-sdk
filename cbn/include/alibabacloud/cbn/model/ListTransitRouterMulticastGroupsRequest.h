@@ -38,6 +38,8 @@ public:
 	void setVSwitchIds(const std::vector<std::string> &vSwitchIds);
 	std::string getTransitRouterMulticastDomainId() const;
 	void setTransitRouterMulticastDomainId(const std::string &transitRouterMulticastDomainId);
+	std::vector<std::string> getConnectPeerIds() const;
+	void setConnectPeerIds(const std::vector<std::string> &connectPeerIds);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
 	std::string getGroupIpAddress() const;
@@ -64,6 +66,7 @@ private:
 	std::string clientToken_;
 	std::vector<std::string> vSwitchIds_;
 	std::string transitRouterMulticastDomainId_;
+	std::vector<std::string> connectPeerIds_;
 	std::string nextToken_;
 	std::string groupIpAddress_;
 	std::string resourceId_;

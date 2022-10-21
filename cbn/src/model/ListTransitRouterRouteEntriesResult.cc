@@ -61,6 +61,10 @@ void ListTransitRouterRouteEntriesResult::parse(const std::string &payload)
 			transitRouterRouteEntriesObject.transitRouterRouteEntryNextHopId = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryNextHopId"].asString();
 		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryDescription"].isNull())
 			transitRouterRouteEntriesObject.transitRouterRouteEntryDescription = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryDescription"].asString();
+		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["OperationalMode"].isNull())
+			transitRouterRouteEntriesObject.operationalMode = valueTransitRouterRouteEntriesTransitRouterRouteEntry["OperationalMode"].asString() == "true";
+		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["Tag"].isNull())
+			transitRouterRouteEntriesObject.tag = valueTransitRouterRouteEntriesTransitRouterRouteEntry["Tag"].asString();
 		transitRouterRouteEntries_.push_back(transitRouterRouteEntriesObject);
 	}
 	if(!value["NextToken"].isNull())

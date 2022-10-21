@@ -65,6 +65,22 @@ void ListTransitRoutersResult::parse(const std::string &payload)
 			transitRoutersObject.serviceMode = valueTransitRoutersTransitRouter["ServiceMode"].asString();
 		if(!valueTransitRoutersTransitRouter["SupportMulticast"].isNull())
 			transitRoutersObject.supportMulticast = valueTransitRoutersTransitRouter["SupportMulticast"].asString() == "true";
+		auto allTransitRouterCidrListNode = valueTransitRoutersTransitRouter["TransitRouterCidrList"]["TransitRouterCidrListItem"];
+		for (auto valueTransitRoutersTransitRouterTransitRouterCidrListTransitRouterCidrListItem : allTransitRouterCidrListNode)
+		{
+			TransitRouter::TransitRouterCidrListItem transitRouterCidrListObject;
+			if(!valueTransitRoutersTransitRouterTransitRouterCidrListTransitRouterCidrListItem["Cidr"].isNull())
+				transitRouterCidrListObject.cidr = valueTransitRoutersTransitRouterTransitRouterCidrListTransitRouterCidrListItem["Cidr"].asString();
+			if(!valueTransitRoutersTransitRouterTransitRouterCidrListTransitRouterCidrListItem["Name"].isNull())
+				transitRouterCidrListObject.name = valueTransitRoutersTransitRouterTransitRouterCidrListTransitRouterCidrListItem["Name"].asString();
+			if(!valueTransitRoutersTransitRouterTransitRouterCidrListTransitRouterCidrListItem["Description"].isNull())
+				transitRouterCidrListObject.description = valueTransitRoutersTransitRouterTransitRouterCidrListTransitRouterCidrListItem["Description"].asString();
+			if(!valueTransitRoutersTransitRouterTransitRouterCidrListTransitRouterCidrListItem["TransitRouterCidrId"].isNull())
+				transitRouterCidrListObject.transitRouterCidrId = valueTransitRoutersTransitRouterTransitRouterCidrListTransitRouterCidrListItem["TransitRouterCidrId"].asString();
+			if(!valueTransitRoutersTransitRouterTransitRouterCidrListTransitRouterCidrListItem["PublishCidrRoute"].isNull())
+				transitRouterCidrListObject.publishCidrRoute = valueTransitRoutersTransitRouterTransitRouterCidrListTransitRouterCidrListItem["PublishCidrRoute"].asString() == "true";
+			transitRoutersObject.transitRouterCidrList.push_back(transitRouterCidrListObject);
+		}
 		transitRouters_.push_back(transitRoutersObject);
 	}
 	if(!value["PageSize"].isNull())

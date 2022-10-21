@@ -46,30 +46,31 @@ namespace AlibabaCloud
 						std::string value;
 						std::string key;
 					};
-					std::string status;
 					std::string description;
 					std::string geographicSpanId;
 					std::string resourceGroupId;
 					std::string geographicRegionBId;
 					std::string geographicRegionAId;
 					bool isCrossBorder;
-					std::string hasReservationData;
 					std::string businessStatus;
-					std::string reservationInternetChargeType;
-					std::string typeFor95;
 					std::string name;
 					std::string reservationOrderType;
-					std::string bandwidthPackageChargeType;
+					std::string serviceType;
 					long bandwidth;
 					std::string expiredTime;
-					std::string creationTime;
 					std::string ratio;
-					std::vector<std::string> cenIds;
 					std::vector<CenBandwidthPackage::OrginInterRegionBandwidthLimit> orginInterRegionBandwidthLimits;
 					std::string reservationActiveTime;
 					std::string cenBandwidthPackageId;
 					std::string reservationBandwidth;
 					std::vector<CenBandwidthPackage::Tag> tags;
+					std::string status;
+					std::string hasReservationData;
+					std::string reservationInternetChargeType;
+					std::string typeFor95;
+					std::string bandwidthPackageChargeType;
+					std::string creationTime;
+					std::vector<std::string> cenIds;
 				};
 
 

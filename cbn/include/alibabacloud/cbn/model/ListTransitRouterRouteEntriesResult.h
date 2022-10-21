@@ -41,6 +41,8 @@ namespace AlibabaCloud
 					std::string createTime;
 					std::string transitRouterRouteEntryNextHopType;
 					std::string transitRouterRouteEntryName;
+					std::string tag;
+					bool operationalMode;
 					std::string transitRouterRouteEntryId;
 					std::string transitRouterRouteEntryStatus;
 				};

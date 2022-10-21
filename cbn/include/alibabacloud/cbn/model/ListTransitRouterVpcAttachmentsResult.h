@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::vector<TransitRouterAttachment::ZoneMapping> zoneMappings;
 					std::string serviceMode;
 					long vpcOwnerId;
+					bool autoPublishRouteEnabled;
 					std::string vpcId;
 					std::string chargeType;
 					std::string creationTime;

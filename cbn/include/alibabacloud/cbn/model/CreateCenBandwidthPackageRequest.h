@@ -58,6 +58,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getServiceType() const;
+	void setServiceType(const std::string &serviceType);
 	bool getAutoRenew() const;
 	void setAutoRenew(bool autoRenew);
 	std::string getName() const;
@@ -80,6 +82,7 @@ private:
 	int bandwidth_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string serviceType_;
 	bool autoRenew_;
 	std::string name_;
 	std::string pricingCycle_;

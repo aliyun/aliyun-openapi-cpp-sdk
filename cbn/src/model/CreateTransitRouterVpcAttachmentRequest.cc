@@ -106,6 +106,15 @@ void CreateTransitRouterVpcAttachmentRequest::setAutoCreateVpcRoute(bool autoCre
   setParameter(std::string("AutoCreateVpcRoute"), autoCreateVpcRoute ? "true" : "false");
 }
 
+bool CreateTransitRouterVpcAttachmentRequest::getAutoPublishRouteEnabled() const {
+  return autoPublishRouteEnabled_;
+}
+
+void CreateTransitRouterVpcAttachmentRequest::setAutoPublishRouteEnabled(bool autoPublishRouteEnabled) {
+  autoPublishRouteEnabled_ = autoPublishRouteEnabled;
+  setParameter(std::string("AutoPublishRouteEnabled"), autoPublishRouteEnabled ? "true" : "false");
+}
+
 bool CreateTransitRouterVpcAttachmentRequest::getRouteTablePropagationEnabled() const {
   return routeTablePropagationEnabled_;
 }
@@ -190,6 +199,15 @@ std::string CreateTransitRouterVpcAttachmentRequest::getTransitRouterAttachmentD
 void CreateTransitRouterVpcAttachmentRequest::setTransitRouterAttachmentDescription(const std::string &transitRouterAttachmentDescription) {
   transitRouterAttachmentDescription_ = transitRouterAttachmentDescription;
   setParameter(std::string("TransitRouterAttachmentDescription"), transitRouterAttachmentDescription);
+}
+
+std::string CreateTransitRouterVpcAttachmentRequest::getAssociateRouteTableId() const {
+  return associateRouteTableId_;
+}
+
+void CreateTransitRouterVpcAttachmentRequest::setAssociateRouteTableId(const std::string &associateRouteTableId) {
+  associateRouteTableId_ = associateRouteTableId;
+  setParameter(std::string("AssociateRouteTableId"), associateRouteTableId);
 }
 
 std::string CreateTransitRouterVpcAttachmentRequest::getVpcId() const {

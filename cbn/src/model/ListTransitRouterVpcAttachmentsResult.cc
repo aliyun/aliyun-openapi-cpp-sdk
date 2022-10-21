@@ -65,6 +65,8 @@ void ListTransitRouterVpcAttachmentsResult::parse(const std::string &payload)
 			transitRouterAttachmentsObject.transitRouterAttachmentName = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].asString();
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["ServiceMode"].isNull())
 			transitRouterAttachmentsObject.serviceMode = valueTransitRouterAttachmentsTransitRouterAttachment["ServiceMode"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["AutoPublishRouteEnabled"].isNull())
+			transitRouterAttachmentsObject.autoPublishRouteEnabled = valueTransitRouterAttachmentsTransitRouterAttachment["AutoPublishRouteEnabled"].asString() == "true";
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["ChargeType"].isNull())
 			transitRouterAttachmentsObject.chargeType = valueTransitRouterAttachmentsTransitRouterAttachment["ChargeType"].asString();
 		auto allZoneMappingsNode = valueTransitRouterAttachmentsTransitRouterAttachment["ZoneMappings"]["ZoneMapping"];

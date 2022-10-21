@@ -62,6 +62,8 @@ public:
 	void setResourceType(const std::string &resourceType);
 	std::string getTransitRouterAttachmentDescription() const;
 	void setTransitRouterAttachmentDescription(const std::string &transitRouterAttachmentDescription);
+	std::string getAssociateRouteTableId() const;
+	void setAssociateRouteTableId(const std::string &associateRouteTableId);
 	long getVbrOwnerId() const;
 	void setVbrOwnerId(long vbrOwnerId);
 
@@ -82,6 +84,7 @@ private:
 	std::string transitRouterId_;
 	std::string resourceType_;
 	std::string transitRouterAttachmentDescription_;
+	std::string associateRouteTableId_;
 	long vbrOwnerId_;
 };
 } // namespace Model

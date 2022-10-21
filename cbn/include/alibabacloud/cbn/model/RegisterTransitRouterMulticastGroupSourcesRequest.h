@@ -38,6 +38,8 @@ public:
 	void setNetworkInterfaceIds(const std::vector<std::string> &networkInterfaceIds);
 	std::string getTransitRouterMulticastDomainId() const;
 	void setTransitRouterMulticastDomainId(const std::string &transitRouterMulticastDomainId);
+	std::vector<std::string> getConnectPeerIds() const;
+	void setConnectPeerIds(const std::vector<std::string> &connectPeerIds);
 	std::string getGroupIpAddress() const;
 	void setGroupIpAddress(const std::string &groupIpAddress);
 	bool getDryRun() const;
@@ -56,6 +58,7 @@ private:
 	std::string clientToken_;
 	std::vector<std::string> networkInterfaceIds_;
 	std::string transitRouterMulticastDomainId_;
+	std::vector<std::string> connectPeerIds_;
 	std::string groupIpAddress_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;

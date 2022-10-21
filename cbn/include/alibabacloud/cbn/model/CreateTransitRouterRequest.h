@@ -28,6 +28,12 @@ namespace Cbn {
 namespace Model {
 class ALIBABACLOUD_CBN_EXPORT CreateTransitRouterRequest : public RpcServiceRequest {
 public:
+	struct TransitRouterCidrList {
+		std::string name;
+		std::string description;
+		std::string cidr;
+		bool publishCidrRoute;
+	};
 	CreateTransitRouterRequest();
 	~CreateTransitRouterRequest();
 	std::string getTransitRouterName() const;
@@ -40,6 +46,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getCenId() const;
 	void setCenId(const std::string &cenId);
+	std::vector<TransitRouterCidrList> getTransitRouterCidrList() const;
+	void setTransitRouterCidrList(const std::vector<TransitRouterCidrList> &transitRouterCidrList);
 	std::string getType() const;
 	void setType(const std::string &type);
 	std::string getRegionId() const;
@@ -63,6 +71,7 @@ private:
 	std::string serviceMode_;
 	std::string clientToken_;
 	std::string cenId_;
+	std::vector<TransitRouterCidrList> transitRouterCidrList_;
 	std::string type_;
 	std::string regionId_;
 	bool dryRun_;

@@ -70,6 +70,20 @@ void CreateTransitRouterRequest::setCenId(const std::string &cenId) {
   setParameter(std::string("CenId"), cenId);
 }
 
+std::vector<CreateTransitRouterRequest::TransitRouterCidrList> CreateTransitRouterRequest::getTransitRouterCidrList() const {
+  return transitRouterCidrList_;
+}
+
+void CreateTransitRouterRequest::setTransitRouterCidrList(const std::vector<CreateTransitRouterRequest::TransitRouterCidrList> &transitRouterCidrList) {
+  transitRouterCidrList_ = transitRouterCidrList;
+  for(int dep1 = 0; dep1 != transitRouterCidrList.size(); dep1++) {
+    setParameter(std::string("TransitRouterCidrList") + "." + std::to_string(dep1 + 1) + ".Name", transitRouterCidrList[dep1].name);
+    setParameter(std::string("TransitRouterCidrList") + "." + std::to_string(dep1 + 1) + ".Description", transitRouterCidrList[dep1].description);
+    setParameter(std::string("TransitRouterCidrList") + "." + std::to_string(dep1 + 1) + ".Cidr", transitRouterCidrList[dep1].cidr);
+    setParameter(std::string("TransitRouterCidrList") + "." + std::to_string(dep1 + 1) + ".PublishCidrRoute", transitRouterCidrList[dep1].publishCidrRoute ? "true" : "false");
+  }
+}
+
 std::string CreateTransitRouterRequest::getType() const {
   return type_;
 }

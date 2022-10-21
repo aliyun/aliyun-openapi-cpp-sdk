@@ -169,6 +169,15 @@ void CreateTransitRouterVbrAttachmentRequest::setTransitRouterAttachmentDescript
   setParameter(std::string("TransitRouterAttachmentDescription"), transitRouterAttachmentDescription);
 }
 
+std::string CreateTransitRouterVbrAttachmentRequest::getAssociateRouteTableId() const {
+  return associateRouteTableId_;
+}
+
+void CreateTransitRouterVbrAttachmentRequest::setAssociateRouteTableId(const std::string &associateRouteTableId) {
+  associateRouteTableId_ = associateRouteTableId;
+  setParameter(std::string("AssociateRouteTableId"), associateRouteTableId);
+}
+
 long CreateTransitRouterVbrAttachmentRequest::getVbrOwnerId() const {
   return vbrOwnerId_;
 }

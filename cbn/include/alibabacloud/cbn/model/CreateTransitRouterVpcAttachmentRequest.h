@@ -52,6 +52,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	bool getAutoCreateVpcRoute() const;
 	void setAutoCreateVpcRoute(bool autoCreateVpcRoute);
+	bool getAutoPublishRouteEnabled() const;
+	void setAutoPublishRouteEnabled(bool autoPublishRouteEnabled);
 	bool getRouteTablePropagationEnabled() const;
 	void setRouteTablePropagationEnabled(bool routeTablePropagationEnabled);
 	bool getDryRun() const;
@@ -70,6 +72,8 @@ public:
 	void setResourceType(const std::string &resourceType);
 	std::string getTransitRouterAttachmentDescription() const;
 	void setTransitRouterAttachmentDescription(const std::string &transitRouterAttachmentDescription);
+	std::string getAssociateRouteTableId() const;
+	void setAssociateRouteTableId(const std::string &associateRouteTableId);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
 	std::string getChargeType() const;
@@ -85,6 +89,7 @@ private:
 	std::string transitRouterAttachmentName_;
 	std::string regionId_;
 	bool autoCreateVpcRoute_;
+	bool autoPublishRouteEnabled_;
 	bool routeTablePropagationEnabled_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;
@@ -94,6 +99,7 @@ private:
 	std::string transitRouterId_;
 	std::string resourceType_;
 	std::string transitRouterAttachmentDescription_;
+	std::string associateRouteTableId_;
 	std::string vpcId_;
 	std::string chargeType_;
 };

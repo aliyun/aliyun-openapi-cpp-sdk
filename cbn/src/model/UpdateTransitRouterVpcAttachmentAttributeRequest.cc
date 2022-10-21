@@ -52,6 +52,15 @@ void UpdateTransitRouterVpcAttachmentAttributeRequest::setTransitRouterAttachmen
   setParameter(std::string("TransitRouterAttachmentName"), transitRouterAttachmentName);
 }
 
+bool UpdateTransitRouterVpcAttachmentAttributeRequest::getAutoPublishRouteEnabled() const {
+  return autoPublishRouteEnabled_;
+}
+
+void UpdateTransitRouterVpcAttachmentAttributeRequest::setAutoPublishRouteEnabled(bool autoPublishRouteEnabled) {
+  autoPublishRouteEnabled_ = autoPublishRouteEnabled;
+  setParameter(std::string("AutoPublishRouteEnabled"), autoPublishRouteEnabled ? "true" : "false");
+}
+
 bool UpdateTransitRouterVpcAttachmentAttributeRequest::getDryRun() const {
   return dryRun_;
 }

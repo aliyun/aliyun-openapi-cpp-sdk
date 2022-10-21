@@ -60,6 +60,14 @@ void DeregisterTransitRouterMulticastGroupMembersRequest::setTransitRouterMultic
   setParameter(std::string("TransitRouterMulticastDomainId"), transitRouterMulticastDomainId);
 }
 
+std::vector<std::string> DeregisterTransitRouterMulticastGroupMembersRequest::getConnectPeerIds() const {
+  return connectPeerIds_;
+}
+
+void DeregisterTransitRouterMulticastGroupMembersRequest::setConnectPeerIds(const std::vector<std::string> &connectPeerIds) {
+  connectPeerIds_ = connectPeerIds;
+}
+
 std::string DeregisterTransitRouterMulticastGroupMembersRequest::getGroupIpAddress() const {
   return groupIpAddress_;
 }
