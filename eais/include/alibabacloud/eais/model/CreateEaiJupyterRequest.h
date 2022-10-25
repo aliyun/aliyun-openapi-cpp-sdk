@@ -28,6 +28,10 @@ namespace Eais {
 namespace Model {
 class ALIBABACLOUD_EAIS_EXPORT CreateEaiJupyterRequest : public RpcServiceRequest {
 public:
+	struct EnvironmentVar {
+		std::string value;
+		std::string key;
+	};
 	CreateEaiJupyterRequest();
 	~CreateEaiJupyterRequest();
 	std::string getClientToken() const;
@@ -40,6 +44,8 @@ public:
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<EnvironmentVar> getEnvironmentVar() const;
+	void setEnvironmentVar(const std::vector<EnvironmentVar> &environmentVar);
 
 private:
 	std::string clientToken_;
@@ -47,6 +53,7 @@ private:
 	std::string eaisType_;
 	std::string vSwitchId_;
 	std::string regionId_;
+	std::vector<EnvironmentVar> environmentVar_;
 };
 } // namespace Model
 } // namespace Eais

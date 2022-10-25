@@ -70,3 +70,15 @@ void CreateEaiJupyterRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<CreateEaiJupyterRequest::EnvironmentVar> CreateEaiJupyterRequest::getEnvironmentVar() const {
+  return environmentVar_;
+}
+
+void CreateEaiJupyterRequest::setEnvironmentVar(const std::vector<CreateEaiJupyterRequest::EnvironmentVar> &environmentVar) {
+  environmentVar_ = environmentVar;
+  for(int dep1 = 0; dep1 != environmentVar.size(); dep1++) {
+    setParameter(std::string("EnvironmentVar") + "." + std::to_string(dep1 + 1) + ".Value", environmentVar[dep1].value);
+    setParameter(std::string("EnvironmentVar") + "." + std::to_string(dep1 + 1) + ".Key", environmentVar[dep1].key);
+  }
+}
+
