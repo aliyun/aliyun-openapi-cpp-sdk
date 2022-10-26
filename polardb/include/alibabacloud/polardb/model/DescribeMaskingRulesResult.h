@@ -42,6 +42,7 @@ namespace AlibabaCloud
 				explicit DescribeMaskingRulesResult(const std::string &payload);
 				~DescribeMaskingRulesResult();
 				std::string getMessage()const;
+				std::string getDBClusterId()const;
 				Data getData()const;
 				bool getSuccess()const;
 
@@ -49,6 +50,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::string dBClusterId_;
 				Data data_;
 				bool success_;
 

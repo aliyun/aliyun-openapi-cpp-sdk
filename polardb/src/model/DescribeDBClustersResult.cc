@@ -55,6 +55,10 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.createTime = valueItemsDBCluster["CreateTime"].asString();
 		if(!valueItemsDBCluster["PayType"].isNull())
 			itemsObject.payType = valueItemsDBCluster["PayType"].asString();
+		if(!valueItemsDBCluster["StoragePayType"].isNull())
+			itemsObject.storagePayType = valueItemsDBCluster["StoragePayType"].asString();
+		if(!valueItemsDBCluster["ServerlessType"].isNull())
+			itemsObject.serverlessType = valueItemsDBCluster["ServerlessType"].asString();
 		if(!valueItemsDBCluster["DBNodeClass"].isNull())
 			itemsObject.dBNodeClass = valueItemsDBCluster["DBNodeClass"].asString();
 		if(!valueItemsDBCluster["DBType"].isNull())
@@ -75,6 +79,8 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.resourceGroupId = valueItemsDBCluster["ResourceGroupId"].asString();
 		if(!valueItemsDBCluster["StorageUsed"].isNull())
 			itemsObject.storageUsed = std::stol(valueItemsDBCluster["StorageUsed"].asString());
+		if(!valueItemsDBCluster["StorageSpace"].isNull())
+			itemsObject.storageSpace = std::stol(valueItemsDBCluster["StorageSpace"].asString());
 		if(!valueItemsDBCluster["DBClusterNetworkType"].isNull())
 			itemsObject.dBClusterNetworkType = valueItemsDBCluster["DBClusterNetworkType"].asString();
 		if(!valueItemsDBCluster["DBClusterDescription"].isNull())

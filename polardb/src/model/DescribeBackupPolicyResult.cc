@@ -63,17 +63,16 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		dataLevel1BackupTime_ = value["DataLevel1BackupTime"].asString();
 	if(!value["DataLevel2BackupPeriod"].isNull())
 		dataLevel2BackupPeriod_ = value["DataLevel2BackupPeriod"].asString();
+	if(!value["DataLevel2BackupAnotherRegionRetentionPeriod"].isNull())
+		dataLevel2BackupAnotherRegionRetentionPeriod_ = value["DataLevel2BackupAnotherRegionRetentionPeriod"].asString();
+	if(!value["DataLevel2BackupAnotherRegionRegion"].isNull())
+		dataLevel2BackupAnotherRegionRegion_ = value["DataLevel2BackupAnotherRegionRegion"].asString();
 
 }
 
-std::string DescribeBackupPolicyResult::getPreferredBackupPeriod()const
+std::string DescribeBackupPolicyResult::getDataLevel2BackupAnotherRegionRegion()const
 {
-	return preferredBackupPeriod_;
-}
-
-std::string DescribeBackupPolicyResult::getDataLevel1BackupFrequency()const
-{
-	return dataLevel1BackupFrequency_;
+	return dataLevel2BackupAnotherRegionRegion_;
 }
 
 std::string DescribeBackupPolicyResult::getDataLevel1BackupRetentionPeriod()const
@@ -81,9 +80,9 @@ std::string DescribeBackupPolicyResult::getDataLevel1BackupRetentionPeriod()cons
 	return dataLevel1BackupRetentionPeriod_;
 }
 
-std::string DescribeBackupPolicyResult::getDataLevel2BackupPeriod()const
+std::string DescribeBackupPolicyResult::getDataLevel2BackupAnotherRegionRetentionPeriod()const
 {
-	return dataLevel2BackupPeriod_;
+	return dataLevel2BackupAnotherRegionRetentionPeriod_;
 }
 
 std::string DescribeBackupPolicyResult::getPreferredBackupTime()const
@@ -106,23 +105,38 @@ std::string DescribeBackupPolicyResult::getDataLevel1BackupTime()const
 	return dataLevel1BackupTime_;
 }
 
-int DescribeBackupPolicyResult::getBackupRetentionPeriod()const
-{
-	return backupRetentionPeriod_;
-}
-
 std::string DescribeBackupPolicyResult::getPreferredNextBackupTime()const
 {
 	return preferredNextBackupTime_;
 }
 
-std::string DescribeBackupPolicyResult::getDataLevel1BackupPeriod()const
-{
-	return dataLevel1BackupPeriod_;
-}
-
 std::string DescribeBackupPolicyResult::getDataLevel2BackupRetentionPeriod()const
 {
 	return dataLevel2BackupRetentionPeriod_;
+}
+
+std::string DescribeBackupPolicyResult::getPreferredBackupPeriod()const
+{
+	return preferredBackupPeriod_;
+}
+
+std::string DescribeBackupPolicyResult::getDataLevel1BackupFrequency()const
+{
+	return dataLevel1BackupFrequency_;
+}
+
+std::string DescribeBackupPolicyResult::getDataLevel2BackupPeriod()const
+{
+	return dataLevel2BackupPeriod_;
+}
+
+int DescribeBackupPolicyResult::getBackupRetentionPeriod()const
+{
+	return backupRetentionPeriod_;
+}
+
+std::string DescribeBackupPolicyResult::getDataLevel1BackupPeriod()const
+{
+	return dataLevel1BackupPeriod_;
 }
 

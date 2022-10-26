@@ -39,6 +39,13 @@ void CheckDBNameResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["DBName"].isNull())
+		dBName_ = value["DBName"].asString();
 
+}
+
+std::string CheckDBNameResult::getDBName()const
+{
+	return dBName_;
 }
 

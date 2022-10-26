@@ -58,6 +58,8 @@ void DescribeMetaListResult::parse(const std::string &payload)
 		pageSize_ = value["PageSize"].asString();
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = value["PageNumber"].asString();
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
 
 }
 
@@ -79,6 +81,11 @@ std::string DescribeMetaListResult::getPageSize()const
 std::string DescribeMetaListResult::getPageNumber()const
 {
 	return pageNumber_;
+}
+
+std::string DescribeMetaListResult::getDBClusterId()const
+{
+	return dBClusterId_;
 }
 
 std::vector<DescribeMetaListResult::MetaItem> DescribeMetaListResult::getItems()const

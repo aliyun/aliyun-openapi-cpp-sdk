@@ -47,12 +47,19 @@ void DescribeMaskingRulesResult::parse(const std::string &payload)
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
 
 }
 
 std::string DescribeMaskingRulesResult::getMessage()const
 {
 	return message_;
+}
+
+std::string DescribeMaskingRulesResult::getDBClusterId()const
+{
+	return dBClusterId_;
 }
 
 DescribeMaskingRulesResult::Data DescribeMaskingRulesResult::getData()const

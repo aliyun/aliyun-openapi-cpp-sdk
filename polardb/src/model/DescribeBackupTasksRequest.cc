@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,91 +18,111 @@
 
 using AlibabaCloud::Polardb::Model::DescribeBackupTasksRequest;
 
-DescribeBackupTasksRequest::DescribeBackupTasksRequest()
-    : RpcServiceRequest("polardb", "2017-08-01", "DescribeBackupTasks") {
-  setMethod(HttpRequest::Method::Post);
+DescribeBackupTasksRequest::DescribeBackupTasksRequest() :
+	RpcServiceRequest("polardb", "2017-08-01", "DescribeBackupTasks")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribeBackupTasksRequest::~DescribeBackupTasksRequest() {}
+DescribeBackupTasksRequest::~DescribeBackupTasksRequest()
+{}
 
-std::string DescribeBackupTasksRequest::getBackupJobId() const {
-  return backupJobId_;
+std::string DescribeBackupTasksRequest::getBackupJobId()const
+{
+	return backupJobId_;
 }
 
-void DescribeBackupTasksRequest::setBackupJobId(const std::string &backupJobId) {
-  backupJobId_ = backupJobId;
-  setParameter(std::string("BackupJobId"), backupJobId);
+void DescribeBackupTasksRequest::setBackupJobId(const std::string& backupJobId)
+{
+	backupJobId_ = backupJobId;
+	setParameter("BackupJobId", backupJobId);
 }
 
-long DescribeBackupTasksRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long DescribeBackupTasksRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void DescribeBackupTasksRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void DescribeBackupTasksRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribeBackupTasksRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string DescribeBackupTasksRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
 }
 
-void DescribeBackupTasksRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void DescribeBackupTasksRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string DescribeBackupTasksRequest::getRegionId() const {
-  return regionId_;
+std::string DescribeBackupTasksRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void DescribeBackupTasksRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void DescribeBackupTasksRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string DescribeBackupTasksRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string DescribeBackupTasksRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void DescribeBackupTasksRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void DescribeBackupTasksRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string DescribeBackupTasksRequest::getDBClusterId() const {
-  return dBClusterId_;
+std::string DescribeBackupTasksRequest::getDBClusterId()const
+{
+	return dBClusterId_;
 }
 
-void DescribeBackupTasksRequest::setDBClusterId(const std::string &dBClusterId) {
-  dBClusterId_ = dBClusterId;
-  setParameter(std::string("DBClusterId"), dBClusterId);
+void DescribeBackupTasksRequest::setDBClusterId(const std::string& dBClusterId)
+{
+	dBClusterId_ = dBClusterId;
+	setParameter("DBClusterId", dBClusterId);
 }
 
-std::string DescribeBackupTasksRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string DescribeBackupTasksRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void DescribeBackupTasksRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void DescribeBackupTasksRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-long DescribeBackupTasksRequest::getOwnerId() const {
-  return ownerId_;
+long DescribeBackupTasksRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void DescribeBackupTasksRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribeBackupTasksRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string DescribeBackupTasksRequest::getBackupMode() const {
-  return backupMode_;
+std::string DescribeBackupTasksRequest::getBackupMode()const
+{
+	return backupMode_;
 }
 
-void DescribeBackupTasksRequest::setBackupMode(const std::string &backupMode) {
-  backupMode_ = backupMode;
-  setParameter(std::string("BackupMode"), backupMode);
+void DescribeBackupTasksRequest::setBackupMode(const std::string& backupMode)
+{
+	backupMode_ = backupMode;
+	setParameter("BackupMode", backupMode);
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,109 +18,144 @@
 
 using AlibabaCloud::Polardb::Model::CreateParameterGroupRequest;
 
-CreateParameterGroupRequest::CreateParameterGroupRequest()
-    : RpcServiceRequest("polardb", "2017-08-01", "CreateParameterGroup") {
-  setMethod(HttpRequest::Method::Post);
+CreateParameterGroupRequest::CreateParameterGroupRequest() :
+	RpcServiceRequest("polardb", "2017-08-01", "CreateParameterGroup")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-CreateParameterGroupRequest::~CreateParameterGroupRequest() {}
+CreateParameterGroupRequest::~CreateParameterGroupRequest()
+{}
 
-long CreateParameterGroupRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long CreateParameterGroupRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void CreateParameterGroupRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void CreateParameterGroupRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateParameterGroupRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string CreateParameterGroupRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
 }
 
-void CreateParameterGroupRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void CreateParameterGroupRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string CreateParameterGroupRequest::getRegionId() const {
-  return regionId_;
+std::string CreateParameterGroupRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
-void CreateParameterGroupRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void CreateParameterGroupRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
-std::string CreateParameterGroupRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string CreateParameterGroupRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void CreateParameterGroupRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void CreateParameterGroupRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string CreateParameterGroupRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string CreateParameterGroupRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void CreateParameterGroupRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void CreateParameterGroupRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-long CreateParameterGroupRequest::getOwnerId() const {
-  return ownerId_;
+std::string CreateParameterGroupRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void CreateParameterGroupRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void CreateParameterGroupRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-std::string CreateParameterGroupRequest::getDBType() const {
-  return dBType_;
+long CreateParameterGroupRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void CreateParameterGroupRequest::setDBType(const std::string &dBType) {
-  dBType_ = dBType;
-  setParameter(std::string("DBType"), dBType);
+void CreateParameterGroupRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-std::string CreateParameterGroupRequest::getDBVersion() const {
-  return dBVersion_;
+std::string CreateParameterGroupRequest::getDBType()const
+{
+	return dBType_;
 }
 
-void CreateParameterGroupRequest::setDBVersion(const std::string &dBVersion) {
-  dBVersion_ = dBVersion;
-  setParameter(std::string("DBVersion"), dBVersion);
+void CreateParameterGroupRequest::setDBType(const std::string& dBType)
+{
+	dBType_ = dBType;
+	setParameter("DBType", dBType);
 }
 
-std::string CreateParameterGroupRequest::getParameterGroupName() const {
-  return parameterGroupName_;
+std::string CreateParameterGroupRequest::getDBVersion()const
+{
+	return dBVersion_;
 }
 
-void CreateParameterGroupRequest::setParameterGroupName(const std::string &parameterGroupName) {
-  parameterGroupName_ = parameterGroupName;
-  setParameter(std::string("ParameterGroupName"), parameterGroupName);
+void CreateParameterGroupRequest::setDBVersion(const std::string& dBVersion)
+{
+	dBVersion_ = dBVersion;
+	setParameter("DBVersion", dBVersion);
 }
 
-std::string CreateParameterGroupRequest::getParameters() const {
-  return parameters_;
+std::string CreateParameterGroupRequest::getParameterGroupName()const
+{
+	return parameterGroupName_;
 }
 
-void CreateParameterGroupRequest::setParameters(const std::string &parameters) {
-  parameters_ = parameters;
-  setParameter(std::string("Parameters"), parameters);
+void CreateParameterGroupRequest::setParameterGroupName(const std::string& parameterGroupName)
+{
+	parameterGroupName_ = parameterGroupName;
+	setParameter("ParameterGroupName", parameterGroupName);
 }
 
-std::string CreateParameterGroupRequest::getParameterGroupDesc() const {
-  return parameterGroupDesc_;
+std::string CreateParameterGroupRequest::getParameters()const
+{
+	return parameters_;
 }
 
-void CreateParameterGroupRequest::setParameterGroupDesc(const std::string &parameterGroupDesc) {
-  parameterGroupDesc_ = parameterGroupDesc;
-  setParameter(std::string("ParameterGroupDesc"), parameterGroupDesc);
+void CreateParameterGroupRequest::setParameters(const std::string& parameters)
+{
+	parameters_ = parameters;
+	setParameter("Parameters", parameters);
+}
+
+std::string CreateParameterGroupRequest::getParameterGroupDesc()const
+{
+	return parameterGroupDesc_;
+}
+
+void CreateParameterGroupRequest::setParameterGroupDesc(const std::string& parameterGroupDesc)
+{
+	parameterGroupDesc_ = parameterGroupDesc;
+	setParameter("ParameterGroupDesc", parameterGroupDesc);
 }
 

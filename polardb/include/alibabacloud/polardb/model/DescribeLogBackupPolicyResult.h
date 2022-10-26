@@ -37,13 +37,17 @@ namespace AlibabaCloud
 				DescribeLogBackupPolicyResult();
 				explicit DescribeLogBackupPolicyResult(const std::string &payload);
 				~DescribeLogBackupPolicyResult();
+				std::string getLogBackupAnotherRegionRegion()const;
 				int getLogBackupRetentionPeriod()const;
+				std::string getLogBackupAnotherRegionRetentionPeriod()const;
 				int getEnableBackupLog()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string logBackupAnotherRegionRegion_;
 				int logBackupRetentionPeriod_;
+				std::string logBackupAnotherRegionRetentionPeriod_;
 				int enableBackupLog_;
 
 			};

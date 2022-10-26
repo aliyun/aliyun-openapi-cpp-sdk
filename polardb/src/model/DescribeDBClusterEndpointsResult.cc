@@ -59,6 +59,8 @@ void DescribeDBClusterEndpointsResult::parse(const std::string &payload)
 			itemsObject.endpointType = valueItemsDBEndpoint["EndpointType"].asString();
 		if(!valueItemsDBEndpoint["AutoAddNewNodes"].isNull())
 			itemsObject.autoAddNewNodes = valueItemsDBEndpoint["AutoAddNewNodes"].asString();
+		if(!valueItemsDBEndpoint["DBClusterId"].isNull())
+			itemsObject.dBClusterId = valueItemsDBEndpoint["DBClusterId"].asString();
 		auto allAddressItemsNode = valueItemsDBEndpoint["AddressItems"]["Address"];
 		for (auto valueItemsDBEndpointAddressItemsAddress : allAddressItemsNode)
 		{

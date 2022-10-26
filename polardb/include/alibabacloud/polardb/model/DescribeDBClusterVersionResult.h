@@ -39,6 +39,7 @@ namespace AlibabaCloud
 				~DescribeDBClusterVersionResult();
 				std::string getProxyVersionStatus()const;
 				std::string getIsLatestVersion()const;
+				std::string getIsProxyLatestVersion()const;
 				std::string getDBVersion()const;
 				std::string getDBRevisionVersion()const;
 				std::string getDBVersionStatus()const;
@@ -53,6 +54,7 @@ namespace AlibabaCloud
 			private:
 				std::string proxyVersionStatus_;
 				std::string isLatestVersion_;
+				std::string isProxyLatestVersion_;
 				std::string dBVersion_;
 				std::string dBRevisionVersion_;
 				std::string dBVersionStatus_;

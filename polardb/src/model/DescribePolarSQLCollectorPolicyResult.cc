@@ -41,7 +41,14 @@ void DescribePolarSQLCollectorPolicyResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["SQLCollectorStatus"].isNull())
 		sQLCollectorStatus_ = value["SQLCollectorStatus"].asString();
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
 
+}
+
+std::string DescribePolarSQLCollectorPolicyResult::getDBClusterId()const
+{
+	return dBClusterId_;
 }
 
 std::string DescribePolarSQLCollectorPolicyResult::getSQLCollectorStatus()const

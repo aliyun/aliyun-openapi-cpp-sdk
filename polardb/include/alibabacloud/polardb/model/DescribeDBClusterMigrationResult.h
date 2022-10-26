@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					struct Address
 					{
+						std::string sSLEnabled;
 						std::string vPCId;
 						std::string vSwitchId;
 						std::string port;
@@ -51,6 +52,7 @@ namespace AlibabaCloud
 				{
 					struct Address2
 					{
+						std::string sSLEnabled;
 						std::string vPCId;
 						std::string vSwitchId;
 						std::string port;
@@ -67,32 +69,36 @@ namespace AlibabaCloud
 				DescribeDBClusterMigrationResult();
 				explicit DescribeDBClusterMigrationResult(const std::string &payload);
 				~DescribeDBClusterMigrationResult();
-				std::vector<DBClusterEndpoint> getDBClusterEndpointList()const;
 				std::string getComment()const;
-				std::string getExpiredTime()const;
 				std::string getDBClusterId()const;
-				std::string getTopologies()const;
-				std::string getRdsReadWriteMode()const;
+				std::string getSrcDbType()const;
 				std::string getSourceRDSDBInstanceId()const;
 				std::string getDBClusterReadWriteMode()const;
-				int getDelayedSeconds()const;
 				std::string getMigrationStatus()const;
+				std::string getDtsInstanceId()const;
 				std::vector<RdsEndpoint> getRdsEndpointList()const;
+				std::vector<DBClusterEndpoint> getDBClusterEndpointList()const;
+				std::string getExpiredTime()const;
+				std::string getTopologies()const;
+				std::string getRdsReadWriteMode()const;
+				int getDelayedSeconds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DBClusterEndpoint> dBClusterEndpointList_;
 				std::string comment_;
-				std::string expiredTime_;
 				std::string dBClusterId_;
-				std::string topologies_;
-				std::string rdsReadWriteMode_;
+				std::string srcDbType_;
 				std::string sourceRDSDBInstanceId_;
 				std::string dBClusterReadWriteMode_;
-				int delayedSeconds_;
 				std::string migrationStatus_;
+				std::string dtsInstanceId_;
 				std::vector<RdsEndpoint> rdsEndpointList_;
+				std::vector<DBClusterEndpoint> dBClusterEndpointList_;
+				std::string expiredTime_;
+				std::string topologies_;
+				std::string rdsReadWriteMode_;
+				int delayedSeconds_;
 
 			};
 		}

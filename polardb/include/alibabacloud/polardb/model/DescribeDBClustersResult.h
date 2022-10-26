@@ -50,26 +50,29 @@ namespace AlibabaCloud
 					int deletionLock;
 					std::string category;
 					std::string resourceGroupId;
+					std::string storagePayType;
+					std::string dBClusterId;
+					std::string dBType;
+					std::string dBClusterNetworkType;
+					std::string dBVersion;
+					std::vector<DBCluster::DBNode> dBNodes;
+					std::vector<DBCluster::Tag> tags;
+					std::string engine;
 					std::string zoneId;
 					std::string dBClusterStatus;
 					std::string createTime;
-					std::string dBClusterId;
 					std::string dBClusterDescription;
 					std::string expired;
 					std::string payType;
-					std::string dBType;
 					std::string lockMode;
-					std::string dBClusterNetworkType;
 					std::string dBNodeClass;
 					long storageUsed;
 					int dBNodeNumber;
-					std::string dBVersion;
 					std::string vpcId;
-					std::vector<DBCluster::DBNode> dBNodes;
+					long storageSpace;
+					std::string serverlessType;
 					std::string regionId;
 					std::string expireTime;
-					std::vector<DBCluster::Tag> tags;
-					std::string engine;
 				};
 
 

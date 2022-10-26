@@ -63,6 +63,8 @@ void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 				addressItemsObject.vPCId = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["VPCId"].asString();
 			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["IPAddress"].isNull())
 				addressItemsObject.iPAddress = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["IPAddress"].asString();
+			if(!valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["SSLEnabled"].isNull())
+				addressItemsObject.sSLEnabled = valueDBClusterEndpointListDBClusterEndpointAddressItemsAddress["SSLEnabled"].asString();
 			dBClusterEndpointListObject.addressItems.push_back(addressItemsObject);
 		}
 		dBClusterEndpointList_.push_back(dBClusterEndpointListObject);
@@ -91,6 +93,8 @@ void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 				addressItems1Object.vPCId = valueRdsEndpointListRdsEndpointAddressItemsAddress["VPCId"].asString();
 			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["IPAddress"].isNull())
 				addressItems1Object.iPAddress = valueRdsEndpointListRdsEndpointAddressItemsAddress["IPAddress"].asString();
+			if(!valueRdsEndpointListRdsEndpointAddressItemsAddress["SSLEnabled"].isNull())
+				addressItems1Object.sSLEnabled = valueRdsEndpointListRdsEndpointAddressItemsAddress["SSLEnabled"].asString();
 			rdsEndpointListObject.addressItems1.push_back(addressItems1Object);
 		}
 		rdsEndpointList_.push_back(rdsEndpointListObject);
@@ -113,12 +117,11 @@ void DescribeDBClusterMigrationResult::parse(const std::string &payload)
 		delayedSeconds_ = std::stoi(value["DelayedSeconds"].asString());
 	if(!value["MigrationStatus"].isNull())
 		migrationStatus_ = value["MigrationStatus"].asString();
+	if(!value["DtsInstanceId"].isNull())
+		dtsInstanceId_ = value["DtsInstanceId"].asString();
+	if(!value["SrcDbType"].isNull())
+		srcDbType_ = value["SrcDbType"].asString();
 
-}
-
-std::vector<DescribeDBClusterMigrationResult::DBClusterEndpoint> DescribeDBClusterMigrationResult::getDBClusterEndpointList()const
-{
-	return dBClusterEndpointList_;
 }
 
 std::string DescribeDBClusterMigrationResult::getComment()const
@@ -126,24 +129,14 @@ std::string DescribeDBClusterMigrationResult::getComment()const
 	return comment_;
 }
 
-std::string DescribeDBClusterMigrationResult::getExpiredTime()const
-{
-	return expiredTime_;
-}
-
 std::string DescribeDBClusterMigrationResult::getDBClusterId()const
 {
 	return dBClusterId_;
 }
 
-std::string DescribeDBClusterMigrationResult::getTopologies()const
+std::string DescribeDBClusterMigrationResult::getSrcDbType()const
 {
-	return topologies_;
-}
-
-std::string DescribeDBClusterMigrationResult::getRdsReadWriteMode()const
-{
-	return rdsReadWriteMode_;
+	return srcDbType_;
 }
 
 std::string DescribeDBClusterMigrationResult::getSourceRDSDBInstanceId()const
@@ -156,18 +149,43 @@ std::string DescribeDBClusterMigrationResult::getDBClusterReadWriteMode()const
 	return dBClusterReadWriteMode_;
 }
 
-int DescribeDBClusterMigrationResult::getDelayedSeconds()const
-{
-	return delayedSeconds_;
-}
-
 std::string DescribeDBClusterMigrationResult::getMigrationStatus()const
 {
 	return migrationStatus_;
 }
 
+std::string DescribeDBClusterMigrationResult::getDtsInstanceId()const
+{
+	return dtsInstanceId_;
+}
+
 std::vector<DescribeDBClusterMigrationResult::RdsEndpoint> DescribeDBClusterMigrationResult::getRdsEndpointList()const
 {
 	return rdsEndpointList_;
+}
+
+std::vector<DescribeDBClusterMigrationResult::DBClusterEndpoint> DescribeDBClusterMigrationResult::getDBClusterEndpointList()const
+{
+	return dBClusterEndpointList_;
+}
+
+std::string DescribeDBClusterMigrationResult::getExpiredTime()const
+{
+	return expiredTime_;
+}
+
+std::string DescribeDBClusterMigrationResult::getTopologies()const
+{
+	return topologies_;
+}
+
+std::string DescribeDBClusterMigrationResult::getRdsReadWriteMode()const
+{
+	return rdsReadWriteMode_;
+}
+
+int DescribeDBClusterMigrationResult::getDelayedSeconds()const
+{
+	return delayedSeconds_;
 }
 

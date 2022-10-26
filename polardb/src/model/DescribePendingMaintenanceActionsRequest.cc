@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,82 +18,111 @@
 
 using AlibabaCloud::Polardb::Model::DescribePendingMaintenanceActionsRequest;
 
-DescribePendingMaintenanceActionsRequest::DescribePendingMaintenanceActionsRequest()
-    : RpcServiceRequest("polardb", "2017-08-01", "DescribePendingMaintenanceActions") {
-  setMethod(HttpRequest::Method::Post);
+DescribePendingMaintenanceActionsRequest::DescribePendingMaintenanceActionsRequest() :
+	RpcServiceRequest("polardb", "2017-08-01", "DescribePendingMaintenanceActions")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-DescribePendingMaintenanceActionsRequest::~DescribePendingMaintenanceActionsRequest() {}
+DescribePendingMaintenanceActionsRequest::~DescribePendingMaintenanceActionsRequest()
+{}
 
-long DescribePendingMaintenanceActionsRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long DescribePendingMaintenanceActionsRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void DescribePendingMaintenanceActionsRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void DescribePendingMaintenanceActionsRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string DescribePendingMaintenanceActionsRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string DescribePendingMaintenanceActionsRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
 }
 
-void DescribePendingMaintenanceActionsRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void DescribePendingMaintenanceActionsRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
-int DescribePendingMaintenanceActionsRequest::getIsHistory() const {
-  return isHistory_;
+std::string DescribePendingMaintenanceActionsRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
-void DescribePendingMaintenanceActionsRequest::setIsHistory(int isHistory) {
-  isHistory_ = isHistory;
-  setParameter(std::string("IsHistory"), std::to_string(isHistory));
+void DescribePendingMaintenanceActionsRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
-std::string DescribePendingMaintenanceActionsRequest::getSecurityToken() const {
-  return securityToken_;
+int DescribePendingMaintenanceActionsRequest::getIsHistory()const
+{
+	return isHistory_;
 }
 
-void DescribePendingMaintenanceActionsRequest::setSecurityToken(const std::string &securityToken) {
-  securityToken_ = securityToken;
-  setParameter(std::string("SecurityToken"), securityToken);
+void DescribePendingMaintenanceActionsRequest::setIsHistory(int isHistory)
+{
+	isHistory_ = isHistory;
+	setParameter("IsHistory", std::to_string(isHistory));
 }
 
-std::string DescribePendingMaintenanceActionsRequest::getRegionId() const {
-  return regionId_;
+std::string DescribePendingMaintenanceActionsRequest::getSecurityToken()const
+{
+	return securityToken_;
 }
 
-void DescribePendingMaintenanceActionsRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void DescribePendingMaintenanceActionsRequest::setSecurityToken(const std::string& securityToken)
+{
+	securityToken_ = securityToken;
+	setParameter("SecurityToken", securityToken);
 }
 
-std::string DescribePendingMaintenanceActionsRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string DescribePendingMaintenanceActionsRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void DescribePendingMaintenanceActionsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void DescribePendingMaintenanceActionsRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string DescribePendingMaintenanceActionsRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string DescribePendingMaintenanceActionsRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void DescribePendingMaintenanceActionsRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void DescribePendingMaintenanceActionsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-long DescribePendingMaintenanceActionsRequest::getOwnerId() const {
-  return ownerId_;
+std::string DescribePendingMaintenanceActionsRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void DescribePendingMaintenanceActionsRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribePendingMaintenanceActionsRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
+}
+
+long DescribePendingMaintenanceActionsRequest::getOwnerId()const
+{
+	return ownerId_;
+}
+
+void DescribePendingMaintenanceActionsRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 

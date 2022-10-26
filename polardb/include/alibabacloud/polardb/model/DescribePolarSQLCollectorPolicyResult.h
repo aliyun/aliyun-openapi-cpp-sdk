@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				DescribePolarSQLCollectorPolicyResult();
 				explicit DescribePolarSQLCollectorPolicyResult(const std::string &payload);
 				~DescribePolarSQLCollectorPolicyResult();
+				std::string getDBClusterId()const;
 				std::string getSQLCollectorStatus()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dBClusterId_;
 				std::string sQLCollectorStatus_;
 
 			};

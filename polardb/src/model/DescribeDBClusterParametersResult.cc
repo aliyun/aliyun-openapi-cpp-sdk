@@ -65,6 +65,8 @@ void DescribeDBClusterParametersResult::parse(const std::string &payload)
 			runningParametersObject.isNodeAvailable = valueRunningParametersParameter["IsNodeAvailable"].asString();
 		if(!valueRunningParametersParameter["ParamRelyRule"].isNull())
 			runningParametersObject.paramRelyRule = valueRunningParametersParameter["ParamRelyRule"].asString();
+		if(!valueRunningParametersParameter["Factor"].isNull())
+			runningParametersObject.factor = valueRunningParametersParameter["Factor"].asString();
 		runningParameters_.push_back(runningParametersObject);
 	}
 	if(!value["DBVersion"].isNull())

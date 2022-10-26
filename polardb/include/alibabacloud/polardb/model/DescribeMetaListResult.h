@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				std::string getTotalRecordCount()const;
 				std::string getPageSize()const;
 				std::string getPageNumber()const;
+				std::string getDBClusterId()const;
 				std::vector<MetaItem> getItems()const;
 
 			protected:
@@ -55,6 +56,7 @@ namespace AlibabaCloud
 				std::string totalRecordCount_;
 				std::string pageSize_;
 				std::string pageNumber_;
+				std::string dBClusterId_;
 				std::vector<MetaItem> items_;
 
 			};

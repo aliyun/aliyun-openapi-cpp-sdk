@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string accountType;
 					std::vector<DBAccount::DatabasePrivilege> databasePrivileges;
 					std::string accountName;
+					std::string accountPassword;
 				};
 
 

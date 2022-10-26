@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string expectedFinishTime;
 					int progress;
-					int remain;
 					std::string taskId;
+					int remain;
 					std::string taskAction;
 					std::string beginTime;
 					std::string taskErrorMessage;

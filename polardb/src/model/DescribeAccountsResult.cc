@@ -57,6 +57,8 @@ void DescribeAccountsResult::parse(const std::string &payload)
 			accountsObject.accountLockState = valueAccountsDBAccount["AccountLockState"].asString();
 		if(!valueAccountsDBAccount["AccountName"].isNull())
 			accountsObject.accountName = valueAccountsDBAccount["AccountName"].asString();
+		if(!valueAccountsDBAccount["AccountPassword"].isNull())
+			accountsObject.accountPassword = valueAccountsDBAccount["AccountPassword"].asString();
 		auto allDatabasePrivilegesNode = valueAccountsDBAccount["DatabasePrivileges"]["DatabasePrivilege"];
 		for (auto valueAccountsDBAccountDatabasePrivilegesDatabasePrivilege : allDatabasePrivilegesNode)
 		{

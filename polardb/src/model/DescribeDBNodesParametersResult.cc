@@ -71,6 +71,8 @@ void DescribeDBNodesParametersResult::parse(const std::string &payload)
 				runningParametersObject.isNodeAvailable = valueDBNodeIdsDBNodeParameterRunningParametersParameter["IsNodeAvailable"].asString();
 			if(!valueDBNodeIdsDBNodeParameterRunningParametersParameter["ParamRelyRule"].isNull())
 				runningParametersObject.paramRelyRule = valueDBNodeIdsDBNodeParameterRunningParametersParameter["ParamRelyRule"].asString();
+			if(!valueDBNodeIdsDBNodeParameterRunningParametersParameter["Factor"].isNull())
+				runningParametersObject.factor = valueDBNodeIdsDBNodeParameterRunningParametersParameter["Factor"].asString();
 			dBNodeIdsObject.runningParameters.push_back(runningParametersObject);
 		}
 		dBNodeIds_.push_back(dBNodeIdsObject);

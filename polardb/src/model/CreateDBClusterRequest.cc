@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,307 +18,457 @@
 
 using AlibabaCloud::Polardb::Model::CreateDBClusterRequest;
 
-CreateDBClusterRequest::CreateDBClusterRequest()
-    : RpcServiceRequest("polardb", "2017-08-01", "CreateDBCluster") {
-  setMethod(HttpRequest::Method::Post);
+CreateDBClusterRequest::CreateDBClusterRequest() :
+	RpcServiceRequest("polardb", "2017-08-01", "CreateDBCluster")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-CreateDBClusterRequest::~CreateDBClusterRequest() {}
+CreateDBClusterRequest::~CreateDBClusterRequest()
+{}
 
-long CreateDBClusterRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long CreateDBClusterRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void CreateDBClusterRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void CreateDBClusterRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string CreateDBClusterRequest::getDBClusterDescription() const {
-  return dBClusterDescription_;
+std::string CreateDBClusterRequest::getDBClusterDescription()const
+{
+	return dBClusterDescription_;
 }
 
-void CreateDBClusterRequest::setDBClusterDescription(const std::string &dBClusterDescription) {
-  dBClusterDescription_ = dBClusterDescription;
-  setParameter(std::string("DBClusterDescription"), dBClusterDescription);
+void CreateDBClusterRequest::setDBClusterDescription(const std::string& dBClusterDescription)
+{
+	dBClusterDescription_ = dBClusterDescription;
+	setParameter("DBClusterDescription", dBClusterDescription);
 }
 
-std::string CreateDBClusterRequest::getCreationCategory() const {
-  return creationCategory_;
+std::string CreateDBClusterRequest::getScaleMax()const
+{
+	return scaleMax_;
 }
 
-void CreateDBClusterRequest::setCreationCategory(const std::string &creationCategory) {
-  creationCategory_ = creationCategory;
-  setParameter(std::string("CreationCategory"), creationCategory);
+void CreateDBClusterRequest::setScaleMax(const std::string& scaleMax)
+{
+	scaleMax_ = scaleMax;
+	setParameter("ScaleMax", scaleMax);
 }
 
-std::string CreateDBClusterRequest::getResourceGroupId() const {
-  return resourceGroupId_;
+std::string CreateDBClusterRequest::getCreationCategory()const
+{
+	return creationCategory_;
 }
 
-void CreateDBClusterRequest::setResourceGroupId(const std::string &resourceGroupId) {
-  resourceGroupId_ = resourceGroupId;
-  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+void CreateDBClusterRequest::setCreationCategory(const std::string& creationCategory)
+{
+	creationCategory_ = creationCategory;
+	setParameter("CreationCategory", creationCategory);
 }
 
-std::string CreateDBClusterRequest::getDBNodeClass() const {
-  return dBNodeClass_;
+std::string CreateDBClusterRequest::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
-void CreateDBClusterRequest::setDBNodeClass(const std::string &dBNodeClass) {
-  dBNodeClass_ = dBNodeClass;
-  setParameter(std::string("DBNodeClass"), dBNodeClass);
+void CreateDBClusterRequest::setResourceGroupId(const std::string& resourceGroupId)
+{
+	resourceGroupId_ = resourceGroupId;
+	setParameter("ResourceGroupId", resourceGroupId);
 }
 
-std::string CreateDBClusterRequest::getCreationOption() const {
-  return creationOption_;
+std::string CreateDBClusterRequest::getDBNodeClass()const
+{
+	return dBNodeClass_;
 }
 
-void CreateDBClusterRequest::setCreationOption(const std::string &creationOption) {
-  creationOption_ = creationOption;
-  setParameter(std::string("CreationOption"), creationOption);
+void CreateDBClusterRequest::setDBNodeClass(const std::string& dBNodeClass)
+{
+	dBNodeClass_ = dBNodeClass;
+	setParameter("DBNodeClass", dBNodeClass);
 }
 
-std::string CreateDBClusterRequest::getSourceResourceId() const {
-  return sourceResourceId_;
+std::string CreateDBClusterRequest::getCreationOption()const
+{
+	return creationOption_;
 }
 
-void CreateDBClusterRequest::setSourceResourceId(const std::string &sourceResourceId) {
-  sourceResourceId_ = sourceResourceId;
-  setParameter(std::string("SourceResourceId"), sourceResourceId);
+void CreateDBClusterRequest::setCreationOption(const std::string& creationOption)
+{
+	creationOption_ = creationOption;
+	setParameter("CreationOption", creationOption);
 }
 
-std::string CreateDBClusterRequest::getBackupRetentionPolicyOnClusterDeletion() const {
-  return backupRetentionPolicyOnClusterDeletion_;
+std::vector<CreateDBClusterRequest::Tag> CreateDBClusterRequest::getTag()const
+{
+	return tag_;
 }
 
-void CreateDBClusterRequest::setBackupRetentionPolicyOnClusterDeletion(const std::string &backupRetentionPolicyOnClusterDeletion) {
-  backupRetentionPolicyOnClusterDeletion_ = backupRetentionPolicyOnClusterDeletion;
-  setParameter(std::string("BackupRetentionPolicyOnClusterDeletion"), backupRetentionPolicyOnClusterDeletion);
+void CreateDBClusterRequest::setTag(const std::vector<Tag>& tag)
+{
+	tag_ = tag;
+	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
+		auto tagObj = tag.at(dep1);
+		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
+		setParameter(tagObjStr + ".Value", tagObj.value);
+		setParameter(tagObjStr + ".Key", tagObj.key);
+	}
 }
 
-std::string CreateDBClusterRequest::getPeriod() const {
-  return period_;
+std::string CreateDBClusterRequest::getSourceResourceId()const
+{
+	return sourceResourceId_;
 }
 
-void CreateDBClusterRequest::setPeriod(const std::string &period) {
-  period_ = period;
-  setParameter(std::string("Period"), period);
+void CreateDBClusterRequest::setSourceResourceId(const std::string& sourceResourceId)
+{
+	sourceResourceId_ = sourceResourceId;
+	setParameter("SourceResourceId", sourceResourceId);
 }
 
-long CreateDBClusterRequest::getOwnerId() const {
-  return ownerId_;
+std::string CreateDBClusterRequest::getScaleMin()const
+{
+	return scaleMin_;
 }
 
-void CreateDBClusterRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void CreateDBClusterRequest::setScaleMin(const std::string& scaleMin)
+{
+	scaleMin_ = scaleMin;
+	setParameter("ScaleMin", scaleMin);
 }
 
-std::string CreateDBClusterRequest::getVSwitchId() const {
-  return vSwitchId_;
+std::string CreateDBClusterRequest::getBackupRetentionPolicyOnClusterDeletion()const
+{
+	return backupRetentionPolicyOnClusterDeletion_;
 }
 
-void CreateDBClusterRequest::setVSwitchId(const std::string &vSwitchId) {
-  vSwitchId_ = vSwitchId;
-  setParameter(std::string("VSwitchId"), vSwitchId);
+void CreateDBClusterRequest::setBackupRetentionPolicyOnClusterDeletion(const std::string& backupRetentionPolicyOnClusterDeletion)
+{
+	backupRetentionPolicyOnClusterDeletion_ = backupRetentionPolicyOnClusterDeletion;
+	setParameter("BackupRetentionPolicyOnClusterDeletion", backupRetentionPolicyOnClusterDeletion);
 }
 
-std::string CreateDBClusterRequest::getSecurityIPList() const {
-  return securityIPList_;
+std::string CreateDBClusterRequest::getPeriod()const
+{
+	return period_;
 }
 
-void CreateDBClusterRequest::setSecurityIPList(const std::string &securityIPList) {
-  securityIPList_ = securityIPList;
-  setParameter(std::string("SecurityIPList"), securityIPList);
+void CreateDBClusterRequest::setPeriod(const std::string& period)
+{
+	period_ = period;
+	setParameter("Period", period);
 }
 
-std::string CreateDBClusterRequest::getDBMinorVersion() const {
-  return dBMinorVersion_;
+long CreateDBClusterRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void CreateDBClusterRequest::setDBMinorVersion(const std::string &dBMinorVersion) {
-  dBMinorVersion_ = dBMinorVersion;
-  setParameter(std::string("DBMinorVersion"), dBMinorVersion);
+void CreateDBClusterRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
 }
 
-bool CreateDBClusterRequest::getAutoRenew() const {
-  return autoRenew_;
+std::string CreateDBClusterRequest::getVSwitchId()const
+{
+	return vSwitchId_;
 }
 
-void CreateDBClusterRequest::setAutoRenew(bool autoRenew) {
-  autoRenew_ = autoRenew;
-  setParameter(std::string("AutoRenew"), autoRenew ? "true" : "false");
+void CreateDBClusterRequest::setVSwitchId(const std::string& vSwitchId)
+{
+	vSwitchId_ = vSwitchId;
+	setParameter("VSwitchId", vSwitchId);
 }
 
-std::string CreateDBClusterRequest::getZoneId() const {
-  return zoneId_;
+std::string CreateDBClusterRequest::getSecurityIPList()const
+{
+	return securityIPList_;
 }
 
-void CreateDBClusterRequest::setZoneId(const std::string &zoneId) {
-  zoneId_ = zoneId;
-  setParameter(std::string("ZoneId"), zoneId);
+void CreateDBClusterRequest::setSecurityIPList(const std::string& securityIPList)
+{
+	securityIPList_ = securityIPList;
+	setParameter("SecurityIPList", securityIPList);
 }
 
-bool CreateDBClusterRequest::getTDEStatus() const {
-  return tDEStatus_;
+std::string CreateDBClusterRequest::getDBMinorVersion()const
+{
+	return dBMinorVersion_;
 }
 
-void CreateDBClusterRequest::setTDEStatus(bool tDEStatus) {
-  tDEStatus_ = tDEStatus;
-  setParameter(std::string("TDEStatus"), tDEStatus ? "true" : "false");
+void CreateDBClusterRequest::setDBMinorVersion(const std::string& dBMinorVersion)
+{
+	dBMinorVersion_ = dBMinorVersion;
+	setParameter("DBMinorVersion", dBMinorVersion);
 }
 
-std::string CreateDBClusterRequest::getLowerCaseTableNames() const {
-  return lowerCaseTableNames_;
+bool CreateDBClusterRequest::getAutoRenew()const
+{
+	return autoRenew_;
 }
 
-void CreateDBClusterRequest::setLowerCaseTableNames(const std::string &lowerCaseTableNames) {
-  lowerCaseTableNames_ = lowerCaseTableNames;
-  setParameter(std::string("LowerCaseTableNames"), lowerCaseTableNames);
+void CreateDBClusterRequest::setAutoRenew(bool autoRenew)
+{
+	autoRenew_ = autoRenew;
+	setParameter("AutoRenew", autoRenew ? "true" : "false");
 }
 
-std::string CreateDBClusterRequest::getClientToken() const {
-  return clientToken_;
+std::string CreateDBClusterRequest::getZoneId()const
+{
+	return zoneId_;
 }
 
-void CreateDBClusterRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
+void CreateDBClusterRequest::setZoneId(const std::string& zoneId)
+{
+	zoneId_ = zoneId;
+	setParameter("ZoneId", zoneId);
 }
 
-std::string CreateDBClusterRequest::getDefaultTimeZone() const {
-  return defaultTimeZone_;
+bool CreateDBClusterRequest::getTDEStatus()const
+{
+	return tDEStatus_;
 }
 
-void CreateDBClusterRequest::setDefaultTimeZone(const std::string &defaultTimeZone) {
-  defaultTimeZone_ = defaultTimeZone;
-  setParameter(std::string("DefaultTimeZone"), defaultTimeZone);
+void CreateDBClusterRequest::setTDEStatus(bool tDEStatus)
+{
+	tDEStatus_ = tDEStatus;
+	setParameter("TDEStatus", tDEStatus ? "true" : "false");
 }
 
-std::string CreateDBClusterRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string CreateDBClusterRequest::getAllowShutDown()const
+{
+	return allowShutDown_;
 }
 
-void CreateDBClusterRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void CreateDBClusterRequest::setAllowShutDown(const std::string& allowShutDown)
+{
+	allowShutDown_ = allowShutDown;
+	setParameter("AllowShutDown", allowShutDown);
 }
 
-std::string CreateDBClusterRequest::getClusterNetworkType() const {
-  return clusterNetworkType_;
+std::string CreateDBClusterRequest::getLowerCaseTableNames()const
+{
+	return lowerCaseTableNames_;
 }
 
-void CreateDBClusterRequest::setClusterNetworkType(const std::string &clusterNetworkType) {
-  clusterNetworkType_ = clusterNetworkType;
-  setParameter(std::string("ClusterNetworkType"), clusterNetworkType);
+void CreateDBClusterRequest::setLowerCaseTableNames(const std::string& lowerCaseTableNames)
+{
+	lowerCaseTableNames_ = lowerCaseTableNames;
+	setParameter("LowerCaseTableNames", lowerCaseTableNames);
 }
 
-std::string CreateDBClusterRequest::getParameterGroupId() const {
-  return parameterGroupId_;
+std::string CreateDBClusterRequest::getScaleRoNumMax()const
+{
+	return scaleRoNumMax_;
 }
 
-void CreateDBClusterRequest::setParameterGroupId(const std::string &parameterGroupId) {
-  parameterGroupId_ = parameterGroupId;
-  setParameter(std::string("ParameterGroupId"), parameterGroupId);
+void CreateDBClusterRequest::setScaleRoNumMax(const std::string& scaleRoNumMax)
+{
+	scaleRoNumMax_ = scaleRoNumMax;
+	setParameter("ScaleRoNumMax", scaleRoNumMax);
 }
 
-std::string CreateDBClusterRequest::getRegionId() const {
-  return regionId_;
+std::string CreateDBClusterRequest::getClientToken()const
+{
+	return clientToken_;
 }
 
-void CreateDBClusterRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void CreateDBClusterRequest::setClientToken(const std::string& clientToken)
+{
+	clientToken_ = clientToken;
+	setParameter("ClientToken", clientToken);
 }
 
-std::string CreateDBClusterRequest::getEngine() const {
-  return engine_;
+std::string CreateDBClusterRequest::getDefaultTimeZone()const
+{
+	return defaultTimeZone_;
 }
 
-void CreateDBClusterRequest::setEngine(const std::string &engine) {
-  engine_ = engine;
-  setParameter(std::string("Engine"), engine);
+void CreateDBClusterRequest::setDefaultTimeZone(const std::string& defaultTimeZone)
+{
+	defaultTimeZone_ = defaultTimeZone;
+	setParameter("DefaultTimeZone", defaultTimeZone);
 }
 
-std::string CreateDBClusterRequest::getGDNId() const {
-  return gDNId_;
+std::string CreateDBClusterRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
 }
 
-void CreateDBClusterRequest::setGDNId(const std::string &gDNId) {
-  gDNId_ = gDNId;
-  setParameter(std::string("GDNId"), gDNId);
+void CreateDBClusterRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string CreateDBClusterRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string CreateDBClusterRequest::getClusterNetworkType()const
+{
+	return clusterNetworkType_;
 }
 
-void CreateDBClusterRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void CreateDBClusterRequest::setClusterNetworkType(const std::string& clusterNetworkType)
+{
+	clusterNetworkType_ = clusterNetworkType;
+	setParameter("ClusterNetworkType", clusterNetworkType);
 }
 
-std::string CreateDBClusterRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string CreateDBClusterRequest::getParameterGroupId()const
+{
+	return parameterGroupId_;
 }
 
-void CreateDBClusterRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void CreateDBClusterRequest::setParameterGroupId(const std::string& parameterGroupId)
+{
+	parameterGroupId_ = parameterGroupId;
+	setParameter("ParameterGroupId", parameterGroupId);
 }
 
-std::string CreateDBClusterRequest::getUsedTime() const {
-  return usedTime_;
+std::string CreateDBClusterRequest::getRegionId()const
+{
+	return regionId_;
 }
 
-void CreateDBClusterRequest::setUsedTime(const std::string &usedTime) {
-  usedTime_ = usedTime;
-  setParameter(std::string("UsedTime"), usedTime);
+void CreateDBClusterRequest::setRegionId(const std::string& regionId)
+{
+	regionId_ = regionId;
+	setParameter("RegionId", regionId);
 }
 
-std::string CreateDBClusterRequest::getVPCId() const {
-  return vPCId_;
+std::string CreateDBClusterRequest::getEngine()const
+{
+	return engine_;
 }
 
-void CreateDBClusterRequest::setVPCId(const std::string &vPCId) {
-  vPCId_ = vPCId;
-  setParameter(std::string("VPCId"), vPCId);
+void CreateDBClusterRequest::setEngine(const std::string& engine)
+{
+	engine_ = engine;
+	setParameter("Engine", engine);
 }
 
-std::string CreateDBClusterRequest::getDBType() const {
-  return dBType_;
+std::string CreateDBClusterRequest::getGDNId()const
+{
+	return gDNId_;
 }
 
-void CreateDBClusterRequest::setDBType(const std::string &dBType) {
-  dBType_ = dBType;
-  setParameter(std::string("DBType"), dBType);
+void CreateDBClusterRequest::setGDNId(const std::string& gDNId)
+{
+	gDNId_ = gDNId;
+	setParameter("GDNId", gDNId);
 }
 
-std::string CreateDBClusterRequest::getDBVersion() const {
-  return dBVersion_;
+std::string CreateDBClusterRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void CreateDBClusterRequest::setDBVersion(const std::string &dBVersion) {
-  dBVersion_ = dBVersion;
-  setParameter(std::string("DBVersion"), dBVersion);
+void CreateDBClusterRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string CreateDBClusterRequest::getCloneDataPoint() const {
-  return cloneDataPoint_;
+std::string CreateDBClusterRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void CreateDBClusterRequest::setCloneDataPoint(const std::string &cloneDataPoint) {
-  cloneDataPoint_ = cloneDataPoint;
-  setParameter(std::string("CloneDataPoint"), cloneDataPoint);
+void CreateDBClusterRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-std::string CreateDBClusterRequest::getPayType() const {
-  return payType_;
+std::string CreateDBClusterRequest::getUsedTime()const
+{
+	return usedTime_;
 }
 
-void CreateDBClusterRequest::setPayType(const std::string &payType) {
-  payType_ = payType;
-  setParameter(std::string("PayType"), payType);
+void CreateDBClusterRequest::setUsedTime(const std::string& usedTime)
+{
+	usedTime_ = usedTime;
+	setParameter("UsedTime", usedTime);
+}
+
+std::string CreateDBClusterRequest::getVPCId()const
+{
+	return vPCId_;
+}
+
+void CreateDBClusterRequest::setVPCId(const std::string& vPCId)
+{
+	vPCId_ = vPCId;
+	setParameter("VPCId", vPCId);
+}
+
+std::string CreateDBClusterRequest::getScaleRoNumMin()const
+{
+	return scaleRoNumMin_;
+}
+
+void CreateDBClusterRequest::setScaleRoNumMin(const std::string& scaleRoNumMin)
+{
+	scaleRoNumMin_ = scaleRoNumMin;
+	setParameter("ScaleRoNumMin", scaleRoNumMin);
+}
+
+std::string CreateDBClusterRequest::getDBType()const
+{
+	return dBType_;
+}
+
+void CreateDBClusterRequest::setDBType(const std::string& dBType)
+{
+	dBType_ = dBType;
+	setParameter("DBType", dBType);
+}
+
+std::string CreateDBClusterRequest::getDBVersion()const
+{
+	return dBVersion_;
+}
+
+void CreateDBClusterRequest::setDBVersion(const std::string& dBVersion)
+{
+	dBVersion_ = dBVersion;
+	setParameter("DBVersion", dBVersion);
+}
+
+std::string CreateDBClusterRequest::getCloneDataPoint()const
+{
+	return cloneDataPoint_;
+}
+
+void CreateDBClusterRequest::setCloneDataPoint(const std::string& cloneDataPoint)
+{
+	cloneDataPoint_ = cloneDataPoint;
+	setParameter("CloneDataPoint", cloneDataPoint);
+}
+
+std::string CreateDBClusterRequest::getPayType()const
+{
+	return payType_;
+}
+
+void CreateDBClusterRequest::setPayType(const std::string& payType)
+{
+	payType_ = payType;
+	setParameter("PayType", payType);
+}
+
+std::string CreateDBClusterRequest::getServerlessType()const
+{
+	return serverlessType_;
+}
+
+void CreateDBClusterRequest::setServerlessType(const std::string& serverlessType)
+{
+	serverlessType_ = serverlessType;
+	setParameter("ServerlessType", serverlessType);
 }
 

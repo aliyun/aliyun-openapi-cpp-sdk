@@ -47,6 +47,8 @@ void DescribeDBClusterTDEResult::parse(const std::string &payload)
 		encryptionKey_ = value["EncryptionKey"].asString();
 	if(!value["EncryptNewTables"].isNull())
 		encryptNewTables_ = value["EncryptNewTables"].asString();
+	if(!value["TDERegion"].isNull())
+		tDERegion_ = value["TDERegion"].asString();
 
 }
 
@@ -58,6 +60,11 @@ std::string DescribeDBClusterTDEResult::getTDEStatus()const
 std::string DescribeDBClusterTDEResult::getEncryptNewTables()const
 {
 	return encryptNewTables_;
+}
+
+std::string DescribeDBClusterTDEResult::getTDERegion()const
+{
+	return tDERegion_;
 }
 
 std::string DescribeDBClusterTDEResult::getDBClusterId()const

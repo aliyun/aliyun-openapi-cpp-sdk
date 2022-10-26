@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,91 +18,144 @@
 
 using AlibabaCloud::Polardb::Model::ModifyDBNodesParametersRequest;
 
-ModifyDBNodesParametersRequest::ModifyDBNodesParametersRequest()
-    : RpcServiceRequest("polardb", "2017-08-01", "ModifyDBNodesParameters") {
-  setMethod(HttpRequest::Method::Post);
+ModifyDBNodesParametersRequest::ModifyDBNodesParametersRequest() :
+	RpcServiceRequest("polardb", "2017-08-01", "ModifyDBNodesParameters")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-ModifyDBNodesParametersRequest::~ModifyDBNodesParametersRequest() {}
+ModifyDBNodesParametersRequest::~ModifyDBNodesParametersRequest()
+{}
 
-long ModifyDBNodesParametersRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+long ModifyDBNodesParametersRequest::getResourceOwnerId()const
+{
+	return resourceOwnerId_;
 }
 
-void ModifyDBNodesParametersRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void ModifyDBNodesParametersRequest::setResourceOwnerId(long resourceOwnerId)
+{
+	resourceOwnerId_ = resourceOwnerId;
+	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
 }
 
-std::string ModifyDBNodesParametersRequest::getDBNodeIds() const {
-  return dBNodeIds_;
+std::string ModifyDBNodesParametersRequest::getPlannedEndTime()const
+{
+	return plannedEndTime_;
 }
 
-void ModifyDBNodesParametersRequest::setDBNodeIds(const std::string &dBNodeIds) {
-  dBNodeIds_ = dBNodeIds;
-  setParameter(std::string("DBNodeIds"), dBNodeIds);
+void ModifyDBNodesParametersRequest::setPlannedEndTime(const std::string& plannedEndTime)
+{
+	plannedEndTime_ = plannedEndTime;
+	setParameter("PlannedEndTime", plannedEndTime);
 }
 
-std::string ModifyDBNodesParametersRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string ModifyDBNodesParametersRequest::getDBNodeIds()const
+{
+	return dBNodeIds_;
 }
 
-void ModifyDBNodesParametersRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void ModifyDBNodesParametersRequest::setDBNodeIds(const std::string& dBNodeIds)
+{
+	dBNodeIds_ = dBNodeIds;
+	setParameter("DBNodeIds", dBNodeIds);
 }
 
-std::string ModifyDBNodesParametersRequest::getParameterGroupId() const {
-  return parameterGroupId_;
+std::string ModifyDBNodesParametersRequest::getAccessKeyId()const
+{
+	return accessKeyId_;
 }
 
-void ModifyDBNodesParametersRequest::setParameterGroupId(const std::string &parameterGroupId) {
-  parameterGroupId_ = parameterGroupId;
-  setParameter(std::string("ParameterGroupId"), parameterGroupId);
+void ModifyDBNodesParametersRequest::setAccessKeyId(const std::string& accessKeyId)
+{
+	accessKeyId_ = accessKeyId;
+	setParameter("AccessKeyId", accessKeyId);
 }
 
-std::string ModifyDBNodesParametersRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string ModifyDBNodesParametersRequest::getParameterGroupId()const
+{
+	return parameterGroupId_;
 }
 
-void ModifyDBNodesParametersRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+void ModifyDBNodesParametersRequest::setParameterGroupId(const std::string& parameterGroupId)
+{
+	parameterGroupId_ = parameterGroupId;
+	setParameter("ParameterGroupId", parameterGroupId);
 }
 
-std::string ModifyDBNodesParametersRequest::getDBClusterId() const {
-  return dBClusterId_;
+std::string ModifyDBNodesParametersRequest::getResourceOwnerAccount()const
+{
+	return resourceOwnerAccount_;
 }
 
-void ModifyDBNodesParametersRequest::setDBClusterId(const std::string &dBClusterId) {
-  dBClusterId_ = dBClusterId;
-  setParameter(std::string("DBClusterId"), dBClusterId);
+void ModifyDBNodesParametersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
+{
+	resourceOwnerAccount_ = resourceOwnerAccount;
+	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
 }
 
-std::string ModifyDBNodesParametersRequest::getOwnerAccount() const {
-  return ownerAccount_;
+std::string ModifyDBNodesParametersRequest::getDBClusterId()const
+{
+	return dBClusterId_;
 }
 
-void ModifyDBNodesParametersRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
+void ModifyDBNodesParametersRequest::setDBClusterId(const std::string& dBClusterId)
+{
+	dBClusterId_ = dBClusterId;
+	setParameter("DBClusterId", dBClusterId);
 }
 
-long ModifyDBNodesParametersRequest::getOwnerId() const {
-  return ownerId_;
+std::string ModifyDBNodesParametersRequest::getOwnerAccount()const
+{
+	return ownerAccount_;
 }
 
-void ModifyDBNodesParametersRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void ModifyDBNodesParametersRequest::setOwnerAccount(const std::string& ownerAccount)
+{
+	ownerAccount_ = ownerAccount;
+	setParameter("OwnerAccount", ownerAccount);
 }
 
-std::string ModifyDBNodesParametersRequest::getParameters() const {
-  return parameters_;
+long ModifyDBNodesParametersRequest::getOwnerId()const
+{
+	return ownerId_;
 }
 
-void ModifyDBNodesParametersRequest::setParameters(const std::string &parameters) {
-  parameters_ = parameters;
-  setParameter(std::string("Parameters"), parameters);
+void ModifyDBNodesParametersRequest::setOwnerId(long ownerId)
+{
+	ownerId_ = ownerId;
+	setParameter("OwnerId", std::to_string(ownerId));
+}
+
+std::string ModifyDBNodesParametersRequest::getPlannedStartTime()const
+{
+	return plannedStartTime_;
+}
+
+void ModifyDBNodesParametersRequest::setPlannedStartTime(const std::string& plannedStartTime)
+{
+	plannedStartTime_ = plannedStartTime;
+	setParameter("PlannedStartTime", plannedStartTime);
+}
+
+std::string ModifyDBNodesParametersRequest::getParameters()const
+{
+	return parameters_;
+}
+
+void ModifyDBNodesParametersRequest::setParameters(const std::string& parameters)
+{
+	parameters_ = parameters;
+	setParameter("Parameters", parameters);
+}
+
+bool ModifyDBNodesParametersRequest::getFromTimeService()const
+{
+	return fromTimeService_;
+}
+
+void ModifyDBNodesParametersRequest::setFromTimeService(bool fromTimeService)
+{
+	fromTimeService_ = fromTimeService;
+	setParameter("FromTimeService", fromTimeService ? "true" : "false");
 }
 

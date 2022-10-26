@@ -69,6 +69,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 			dBNodesObject.addedCpuCores = valueDBNodesDBNode["AddedCpuCores"].asString();
 		if(!valueDBNodesDBNode["MasterId"].isNull())
 			dBNodesObject.masterId = valueDBNodesDBNode["MasterId"].asString();
+		if(!valueDBNodesDBNode["SccMode"].isNull())
+			dBNodesObject.sccMode = valueDBNodesDBNode["SccMode"].asString();
 		dBNodes_.push_back(dBNodesObject);
 	}
 	auto allTagsNode = value["Tags"]["Tag"];
@@ -119,16 +121,28 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		expired_ = value["Expired"].asString();
 	if(!value["PayType"].isNull())
 		payType_ = value["PayType"].asString();
+	if(!value["StoragePayType"].isNull())
+		storagePayType_ = value["StoragePayType"].asString();
 	if(!value["LockMode"].isNull())
 		lockMode_ = value["LockMode"].asString();
 	if(!value["StorageUsed"].isNull())
 		storageUsed_ = std::stol(value["StorageUsed"].asString());
+	if(!value["StorageSpace"].isNull())
+		storageSpace_ = std::stol(value["StorageSpace"].asString());
 	if(!value["DBVersionStatus"].isNull())
 		dBVersionStatus_ = value["DBVersionStatus"].asString();
 	if(!value["CreationTime"].isNull())
 		creationTime_ = value["CreationTime"].asString();
 	if(!value["SQLSize"].isNull())
 		sQLSize_ = std::stol(value["SQLSize"].asString());
+	if(!value["InodeTotal"].isNull())
+		inodeTotal_ = std::stol(value["InodeTotal"].asString());
+	if(!value["InodeUsed"].isNull())
+		inodeUsed_ = std::stol(value["InodeUsed"].asString());
+	if(!value["BlktagTotal"].isNull())
+		blktagTotal_ = std::stol(value["BlktagTotal"].asString());
+	if(!value["BlktagUsed"].isNull())
+		blktagUsed_ = std::stol(value["BlktagUsed"].asString());
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
 	if(!value["ExpireTime"].isNull())
@@ -139,6 +153,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		isProxyLatestVersion_ = value["IsProxyLatestVersion"].asString() == "true";
 	if(!value["StorageType"].isNull())
 		storageType_ = value["StorageType"].asString();
+	if(!value["ServerlessType"].isNull())
+		serverlessType_ = value["ServerlessType"].asString();
 	if(!value["ProxyCpuCores"].isNull())
 		proxyCpuCores_ = value["ProxyCpuCores"].asString();
 	if(!value["ProxyStandardCpuCores"].isNull())
@@ -165,6 +181,11 @@ std::string DescribeDBClusterAttributeResult::getResourceGroupId()const
 	return resourceGroupId_;
 }
 
+std::string DescribeDBClusterAttributeResult::getStoragePayType()const
+{
+	return storagePayType_;
+}
+
 long DescribeDBClusterAttributeResult::getDataLevel1BackupChainSize()const
 {
 	return dataLevel1BackupChainSize_;
@@ -188,6 +209,11 @@ std::string DescribeDBClusterAttributeResult::getDBType()const
 std::string DescribeDBClusterAttributeResult::getDBClusterNetworkType()const
 {
 	return dBClusterNetworkType_;
+}
+
+long DescribeDBClusterAttributeResult::getBlktagUsed()const
+{
+	return blktagUsed_;
 }
 
 std::string DescribeDBClusterAttributeResult::getProxyStandardCpuCores()const
@@ -220,6 +246,11 @@ std::string DescribeDBClusterAttributeResult::getZoneIds()const
 	return zoneIds_;
 }
 
+long DescribeDBClusterAttributeResult::getInodeUsed()const
+{
+	return inodeUsed_;
+}
+
 std::string DescribeDBClusterAttributeResult::getMaintainTime()const
 {
 	return maintainTime_;
@@ -233,6 +264,11 @@ std::vector<DescribeDBClusterAttributeResult::Tag> DescribeDBClusterAttributeRes
 std::string DescribeDBClusterAttributeResult::getEngine()const
 {
 	return engine_;
+}
+
+long DescribeDBClusterAttributeResult::getBlktagTotal()const
+{
+	return blktagTotal_;
 }
 
 std::string DescribeDBClusterAttributeResult::getStorageType()const
@@ -285,14 +321,29 @@ long DescribeDBClusterAttributeResult::getStorageUsed()const
 	return storageUsed_;
 }
 
+long DescribeDBClusterAttributeResult::getInodeTotal()const
+{
+	return inodeTotal_;
+}
+
 bool DescribeDBClusterAttributeResult::getIsProxyLatestVersion()const
 {
 	return isProxyLatestVersion_;
 }
 
+long DescribeDBClusterAttributeResult::getStorageSpace()const
+{
+	return storageSpace_;
+}
+
 std::string DescribeDBClusterAttributeResult::getDBVersionStatus()const
 {
 	return dBVersionStatus_;
+}
+
+std::string DescribeDBClusterAttributeResult::getServerlessType()const
+{
+	return serverlessType_;
 }
 
 std::string DescribeDBClusterAttributeResult::getCreationTime()const

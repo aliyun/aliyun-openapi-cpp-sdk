@@ -41,6 +41,8 @@ void DescribeDBClusterVersionResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["IsLatestVersion"].isNull())
 		isLatestVersion_ = value["IsLatestVersion"].asString();
+	if(!value["IsProxyLatestVersion"].isNull())
+		isProxyLatestVersion_ = value["IsProxyLatestVersion"].asString();
 	if(!value["DBVersion"].isNull())
 		dBVersion_ = value["DBVersion"].asString();
 	if(!value["DBRevisionVersion"].isNull())
@@ -70,6 +72,11 @@ std::string DescribeDBClusterVersionResult::getProxyVersionStatus()const
 std::string DescribeDBClusterVersionResult::getIsLatestVersion()const
 {
 	return isLatestVersion_;
+}
+
+std::string DescribeDBClusterVersionResult::getIsProxyLatestVersion()const
+{
+	return isProxyLatestVersion_;
 }
 
 std::string DescribeDBClusterVersionResult::getDBVersion()const

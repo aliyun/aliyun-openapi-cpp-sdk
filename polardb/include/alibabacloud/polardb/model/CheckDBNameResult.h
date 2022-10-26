@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				CheckDBNameResult();
 				explicit CheckDBNameResult(const std::string &payload);
 				~CheckDBNameResult();
+				std::string getDBName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dBName_;
 
 			};
 		}

@@ -41,14 +41,28 @@ void DescribeLogBackupPolicyResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["LogBackupRetentionPeriod"].isNull())
 		logBackupRetentionPeriod_ = std::stoi(value["LogBackupRetentionPeriod"].asString());
+	if(!value["LogBackupAnotherRegionRetentionPeriod"].isNull())
+		logBackupAnotherRegionRetentionPeriod_ = value["LogBackupAnotherRegionRetentionPeriod"].asString();
+	if(!value["LogBackupAnotherRegionRegion"].isNull())
+		logBackupAnotherRegionRegion_ = value["LogBackupAnotherRegionRegion"].asString();
 	if(!value["EnableBackupLog"].isNull())
 		enableBackupLog_ = std::stoi(value["EnableBackupLog"].asString());
 
 }
 
+std::string DescribeLogBackupPolicyResult::getLogBackupAnotherRegionRegion()const
+{
+	return logBackupAnotherRegionRegion_;
+}
+
 int DescribeLogBackupPolicyResult::getLogBackupRetentionPeriod()const
 {
 	return logBackupRetentionPeriod_;
+}
+
+std::string DescribeLogBackupPolicyResult::getLogBackupAnotherRegionRetentionPeriod()const
+{
+	return logBackupAnotherRegionRetentionPeriod_;
 }
 
 int DescribeLogBackupPolicyResult::getEnableBackupLog()const

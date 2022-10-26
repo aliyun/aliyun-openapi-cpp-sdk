@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					std::string nodeWithRoles;
 					std::string autoAddNewNodes;
 					std::string endpointType;
+					std::string dBClusterId;
 					std::vector<DBEndpoint::Address> addressItems;
 					std::string nodes;
 					std::string readWriteMode;
