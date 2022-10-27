@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::ListJobsRequest;
 
 ListJobsRequest::ListJobsRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "ListJobs") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "ListJobs") {
   setMethod(HttpRequest::Method::Get);
 }
 

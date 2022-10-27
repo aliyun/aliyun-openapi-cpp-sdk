@@ -41,11 +41,27 @@ namespace AlibabaCloud
 						std::string version;
 						std::string osTag;
 					};
+					struct OsTag
+					{
+						std::string platform;
+						std::string architecture;
+						std::string version;
+						std::string osTag;
+						std::string baseOsTag;
+					};
+					std::string status;
 					std::string imageOwnerAlias;
-					std::string imageName;
 					std::string description;
-					std::string imageId;
+					std::string productCode;
+					int size;
+					std::string skuCode;
+					std::string pricingCycle;
 					BaseOsTag baseOsTag;
+					std::string imageName;
+					std::string uid;
+					std::string postInstallScript;
+					OsTag osTag;
+					std::string imageId;
 				};
 
 

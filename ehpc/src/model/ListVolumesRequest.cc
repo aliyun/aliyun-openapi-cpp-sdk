@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::ListVolumesRequest;
 
 ListVolumesRequest::ListVolumesRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "ListVolumes") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "ListVolumes") {
   setMethod(HttpRequest::Method::Get);
 }
 

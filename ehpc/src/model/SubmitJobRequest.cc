@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::SubmitJobRequest;
 
 SubmitJobRequest::SubmitJobRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "SubmitJob") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "SubmitJob") {
   setMethod(HttpRequest::Method::Get);
 }
 
@@ -43,6 +43,15 @@ void SubmitJobRequest::setRunasUserPassword(const std::string &runasUserPassword
   setParameter(std::string("RunasUserPassword"), runasUserPassword);
 }
 
+std::string SubmitJobRequest::getClockTime() const {
+  return clockTime_;
+}
+
+void SubmitJobRequest::setClockTime(const std::string &clockTime) {
+  clockTime_ = clockTime;
+  setParameter(std::string("ClockTime"), clockTime);
+}
+
 std::string SubmitJobRequest::getCommandLine() const {
   return commandLine_;
 }
@@ -50,6 +59,15 @@ std::string SubmitJobRequest::getCommandLine() const {
 void SubmitJobRequest::setCommandLine(const std::string &commandLine) {
   commandLine_ = commandLine;
   setParameter(std::string("CommandLine"), commandLine);
+}
+
+std::string SubmitJobRequest::getJobQueue() const {
+  return jobQueue_;
+}
+
+void SubmitJobRequest::setJobQueue(const std::string &jobQueue) {
+  jobQueue_ = jobQueue;
+  setParameter(std::string("JobQueue"), jobQueue);
 }
 
 std::string SubmitJobRequest::getAccessKeyId() const {
@@ -70,6 +88,15 @@ void SubmitJobRequest::setArrayRequest(const std::string &arrayRequest) {
   setParameter(std::string("ArrayRequest"), arrayRequest);
 }
 
+std::string SubmitJobRequest::getUnzipCmd() const {
+  return unzipCmd_;
+}
+
+void SubmitJobRequest::setUnzipCmd(const std::string &unzipCmd) {
+  unzipCmd_ = unzipCmd;
+  setParameter(std::string("UnzipCmd"), unzipCmd);
+}
+
 std::string SubmitJobRequest::getPackagePath() const {
   return packagePath_;
 }
@@ -77,6 +104,15 @@ std::string SubmitJobRequest::getPackagePath() const {
 void SubmitJobRequest::setPackagePath(const std::string &packagePath) {
   packagePath_ = packagePath;
   setParameter(std::string("PackagePath"), packagePath);
+}
+
+std::string SubmitJobRequest::getMem() const {
+  return mem_;
+}
+
+void SubmitJobRequest::setMem(const std::string &mem) {
+  mem_ = mem;
+  setParameter(std::string("Mem"), mem);
 }
 
 std::string SubmitJobRequest::getStdoutRedirectPath() const {
@@ -95,6 +131,15 @@ std::string SubmitJobRequest::getVariables() const {
 void SubmitJobRequest::setVariables(const std::string &variables) {
   variables_ = variables;
   setParameter(std::string("Variables"), variables);
+}
+
+std::string SubmitJobRequest::getPostCmdLine() const {
+  return postCmdLine_;
+}
+
+void SubmitJobRequest::setPostCmdLine(const std::string &postCmdLine) {
+  postCmdLine_ = postCmdLine;
+  setParameter(std::string("PostCmdLine"), postCmdLine);
 }
 
 std::string SubmitJobRequest::getRunasUser() const {
@@ -124,6 +169,15 @@ void SubmitJobRequest::setReRunable(bool reRunable) {
   setParameter(std::string("ReRunable"), reRunable ? "true" : "false");
 }
 
+int SubmitJobRequest::getThread() const {
+  return thread_;
+}
+
+void SubmitJobRequest::setThread(int thread) {
+  thread_ = thread;
+  setParameter(std::string("Thread"), std::to_string(thread));
+}
+
 int SubmitJobRequest::getPriority() const {
   return priority_;
 }
@@ -133,6 +187,42 @@ void SubmitJobRequest::setPriority(int priority) {
   setParameter(std::string("Priority"), std::to_string(priority));
 }
 
+int SubmitJobRequest::getGpu() const {
+  return gpu_;
+}
+
+void SubmitJobRequest::setGpu(int gpu) {
+  gpu_ = gpu;
+  setParameter(std::string("Gpu"), std::to_string(gpu));
+}
+
+int SubmitJobRequest::getNode() const {
+  return node_;
+}
+
+void SubmitJobRequest::setNode(int node) {
+  node_ = node;
+  setParameter(std::string("Node"), std::to_string(node));
+}
+
+int SubmitJobRequest::getTask() const {
+  return task_;
+}
+
+void SubmitJobRequest::setTask(int task) {
+  task_ = task;
+  setParameter(std::string("Task"), std::to_string(task));
+}
+
+std::string SubmitJobRequest::getInputFileUrl() const {
+  return inputFileUrl_;
+}
+
+void SubmitJobRequest::setInputFileUrl(const std::string &inputFileUrl) {
+  inputFileUrl_ = inputFileUrl;
+  setParameter(std::string("InputFileUrl"), inputFileUrl);
+}
+
 std::string SubmitJobRequest::getName() const {
   return name_;
 }
@@ -140,5 +230,14 @@ std::string SubmitJobRequest::getName() const {
 void SubmitJobRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
+}
+
+std::string SubmitJobRequest::getContainerId() const {
+  return containerId_;
+}
+
+void SubmitJobRequest::setContainerId(const std::string &containerId) {
+  containerId_ = containerId;
+  setParameter(std::string("ContainerId"), containerId);
 }
 

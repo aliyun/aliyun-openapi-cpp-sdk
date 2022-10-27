@@ -32,6 +32,46 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_EHPC_EXPORT GetAutoScaleConfigResult : public ServiceResult
 			{
 			public:
+				struct QueueInfo
+				{
+					struct InstanceTypeInfo
+					{
+						std::string zoneId;
+						std::string vSwitchId;
+						std::string hostNamePrefix;
+						float spotPriceLimit;
+						std::string instanceType;
+						std::string spotStrategy;
+					};
+					struct DataDisksInfo
+					{
+						std::string dataDiskPerformanceLevel;
+						std::string dataDiskKMSKeyId;
+						bool dataDiskDeleteWithInstance;
+						bool dataDiskEncrypted;
+						int dataDiskSize;
+						std::string dataDiskCategory;
+					};
+					std::string hostNameSuffix;
+					int minNodesInQueue;
+					int maxNodesInQueue;
+					std::vector<QueueInfo::DataDisksInfo> dataDisks;
+					bool enableAutoGrow;
+					std::string resourceGroupId;
+					std::string queueImageId;
+					int systemDiskSize;
+					std::string systemDiskLevel;
+					long minNodesPerCycle;
+					long maxNodesPerCycle;
+					bool enableAutoShrink;
+					std::string systemDiskCategory;
+					std::string hostNamePrefix;
+					float spotPriceLimit;
+					std::vector<QueueInfo::InstanceTypeInfo> instanceTypes;
+					std::string instanceType;
+					std::string queueName;
+					std::string spotStrategy;
+				};
 
 
 				GetAutoScaleConfigResult();
@@ -48,8 +88,12 @@ namespace AlibabaCloud
 				int getGrowIntervalInMinutes()const;
 				std::string getUid()const;
 				int getGrowTimeoutInMinutes()const;
+				std::string getImageId()const;
 				int getShrinkIntervalInMinutes()const;
+				float getSpotPriceLimit()const;
+				std::vector<QueueInfo> getQueues()const;
 				std::string getExcludeNodes()const;
+				std::string getSpotStrategy()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -65,8 +109,12 @@ namespace AlibabaCloud
 				int growIntervalInMinutes_;
 				std::string uid_;
 				int growTimeoutInMinutes_;
+				std::string imageId_;
 				int shrinkIntervalInMinutes_;
+				float spotPriceLimit_;
+				std::vector<QueueInfo> queues_;
 				std::string excludeNodes_;
+				std::string spotStrategy_;
 
 			};
 		}

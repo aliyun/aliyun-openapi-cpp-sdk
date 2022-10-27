@@ -52,7 +52,7 @@ void ListJobsResult::parse(const std::string &payload)
 		if(!valueJobsJobInfo["Stderr"].isNull())
 			jobsObject._stderr = valueJobsJobInfo["Stderr"].asString();
 		if(!valueJobsJobInfo["Priority"].isNull())
-			jobsObject.priority = std::stoi(valueJobsJobInfo["Priority"].asString());
+			jobsObject.priority = valueJobsJobInfo["Priority"].asString();
 		if(!valueJobsJobInfo["ShellPath"].isNull())
 			jobsObject.shellPath = valueJobsJobInfo["ShellPath"].asString();
 		if(!valueJobsJobInfo["Stdout"].isNull())
@@ -63,6 +63,8 @@ void ListJobsResult::parse(const std::string &payload)
 			jobsObject.startTime = valueJobsJobInfo["StartTime"].asString();
 		if(!valueJobsJobInfo["LastModifyTime"].isNull())
 			jobsObject.lastModifyTime = valueJobsJobInfo["LastModifyTime"].asString();
+		if(!valueJobsJobInfo["NodeList"].isNull())
+			jobsObject.nodeList = valueJobsJobInfo["NodeList"].asString();
 		if(!valueJobsJobInfo["Name"].isNull())
 			jobsObject.name = valueJobsJobInfo["Name"].asString();
 		if(!valueJobsJobInfo["Id"].isNull())

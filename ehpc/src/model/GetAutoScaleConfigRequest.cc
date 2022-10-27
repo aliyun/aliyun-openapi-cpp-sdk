@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::GetAutoScaleConfigRequest;
 
 GetAutoScaleConfigRequest::GetAutoScaleConfigRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "GetAutoScaleConfig") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "GetAutoScaleConfig") {
   setMethod(HttpRequest::Method::Get);
 }
 

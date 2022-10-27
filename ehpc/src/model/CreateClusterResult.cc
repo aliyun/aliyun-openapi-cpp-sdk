@@ -39,9 +39,16 @@ void CreateClusterResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["TaskId"].isNull())
+		taskId_ = value["TaskId"].asString();
 	if(!value["ClusterId"].isNull())
 		clusterId_ = value["ClusterId"].asString();
 
+}
+
+std::string CreateClusterResult::getTaskId()const
+{
+	return taskId_;
 }
 
 std::string CreateClusterResult::getClusterId()const

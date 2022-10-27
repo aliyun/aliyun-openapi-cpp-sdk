@@ -30,12 +30,15 @@ class ALIBABACLOUD_EHPC_EXPORT ListSoftwaresRequest : public RpcServiceRequest {
 public:
 	ListSoftwaresRequest();
 	~ListSoftwaresRequest();
+	std::string getOsTag() const;
+	void setOsTag(const std::string &osTag);
 	std::string getEhpcVersion() const;
 	void setEhpcVersion(const std::string &ehpcVersion);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 
 private:
+	std::string osTag_;
 	std::string ehpcVersion_;
 	std::string accessKeyId_;
 };

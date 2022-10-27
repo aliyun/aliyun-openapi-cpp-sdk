@@ -28,8 +28,47 @@ namespace EHPC {
 namespace Model {
 class ALIBABACLOUD_EHPC_EXPORT SetAutoScaleConfigRequest : public RpcServiceRequest {
 public:
+	struct Queues {
+		std::string queueName;
+		std::string systemDiskLevel;
+		struct InstanceTypes {
+			std::string vSwitchId;
+			std::string spotStrategy;
+			std::string zoneId;
+			std::string instanceType;
+			float spotPriceLimit;
+		};
+		std::vector<InstanceTypes> instanceTypes;
+		bool enableAutoGrow;
+		std::string hostNameSuffix;
+		float spotPriceLimit;
+		bool enableAutoShrink;
+		std::string spotStrategy;
+		struct DataDisks {
+			bool dataDiskDeleteWithInstance;
+			bool dataDiskEncrypted;
+			std::string dataDiskKMSKeyId;
+			int dataDiskSize;
+			std::string dataDiskCategory;
+			std::string dataDiskPerformanceLevel;
+		};
+		std::vector<DataDisks> dataDisks;
+		int minNodesInQueue;
+		long maxNodesPerCycle;
+		std::string systemDiskCategory;
+		int maxNodesInQueue;
+		int systemDiskSize;
+		std::string queueImageId;
+		std::string instanceType;
+		std::string hostNamePrefix;
+		long minNodesPerCycle;
+	};
 	SetAutoScaleConfigRequest();
 	~SetAutoScaleConfigRequest();
+	std::string getImageId() const;
+	void setImageId(const std::string &imageId);
+	float getSpotPriceLimit() const;
+	void setSpotPriceLimit(float spotPriceLimit);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getExcludeNodes() const;
@@ -46,16 +85,22 @@ public:
 	void setEnableAutoGrow(bool enableAutoGrow);
 	bool getEnableAutoShrink() const;
 	void setEnableAutoShrink(bool enableAutoShrink);
+	std::string getSpotStrategy() const;
+	void setSpotStrategy(const std::string &spotStrategy);
 	int getMaxNodesInCluster() const;
 	void setMaxNodesInCluster(int maxNodesInCluster);
 	int getShrinkIntervalInMinutes() const;
 	void setShrinkIntervalInMinutes(int shrinkIntervalInMinutes);
+	std::vector<Queues> getQueues() const;
+	void setQueues(const std::vector<Queues> &queues);
 	int getGrowIntervalInMinutes() const;
 	void setGrowIntervalInMinutes(int growIntervalInMinutes);
 	int getGrowRatio() const;
 	void setGrowRatio(int growRatio);
 
 private:
+	std::string imageId_;
+	float spotPriceLimit_;
 	std::string accessKeyId_;
 	std::string excludeNodes_;
 	int extraNodesGrowRatio_;
@@ -64,8 +109,10 @@ private:
 	std::string clusterId_;
 	bool enableAutoGrow_;
 	bool enableAutoShrink_;
+	std::string spotStrategy_;
 	int maxNodesInCluster_;
 	int shrinkIntervalInMinutes_;
+	std::vector<Queues> queues_;
 	int growIntervalInMinutes_;
 	int growRatio_;
 };

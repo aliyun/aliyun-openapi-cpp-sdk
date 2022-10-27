@@ -43,28 +43,48 @@ void ListJobTemplatesResult::parse(const std::string &payload)
 	for (auto valueTemplatesJobTemplates : allTemplatesNode)
 	{
 		JobTemplates templatesObject;
-		if(!valueTemplatesJobTemplates["StdoutRedirectPath"].isNull())
-			templatesObject.stdoutRedirectPath = valueTemplatesJobTemplates["StdoutRedirectPath"].asString();
+		if(!valueTemplatesJobTemplates["Task"].isNull())
+			templatesObject.task = std::stoi(valueTemplatesJobTemplates["Task"].asString());
 		if(!valueTemplatesJobTemplates["Variables"].isNull())
 			templatesObject.variables = valueTemplatesJobTemplates["Variables"].asString();
 		if(!valueTemplatesJobTemplates["CommandLine"].isNull())
 			templatesObject.commandLine = valueTemplatesJobTemplates["CommandLine"].asString();
-		if(!valueTemplatesJobTemplates["PackagePath"].isNull())
-			templatesObject.packagePath = valueTemplatesJobTemplates["PackagePath"].asString();
+		if(!valueTemplatesJobTemplates["Queue"].isNull())
+			templatesObject.queue = valueTemplatesJobTemplates["Queue"].asString();
 		if(!valueTemplatesJobTemplates["Priority"].isNull())
 			templatesObject.priority = std::stoi(valueTemplatesJobTemplates["Priority"].asString());
+		if(!valueTemplatesJobTemplates["Mem"].isNull())
+			templatesObject.mem = valueTemplatesJobTemplates["Mem"].asString();
+		if(!valueTemplatesJobTemplates["Thread"].isNull())
+			templatesObject.thread = std::stoi(valueTemplatesJobTemplates["Thread"].asString());
+		if(!valueTemplatesJobTemplates["ArrayRequest"].isNull())
+			templatesObject.arrayRequest = valueTemplatesJobTemplates["ArrayRequest"].asString();
+		if(!valueTemplatesJobTemplates["StderrRedirectPath"].isNull())
+			templatesObject.stderrRedirectPath = valueTemplatesJobTemplates["StderrRedirectPath"].asString();
+		if(!valueTemplatesJobTemplates["Node"].isNull())
+			templatesObject.node = std::stoi(valueTemplatesJobTemplates["Node"].asString());
+		if(!valueTemplatesJobTemplates["StdoutRedirectPath"].isNull())
+			templatesObject.stdoutRedirectPath = valueTemplatesJobTemplates["StdoutRedirectPath"].asString();
+		if(!valueTemplatesJobTemplates["Gpu"].isNull())
+			templatesObject.gpu = std::stoi(valueTemplatesJobTemplates["Gpu"].asString());
+		if(!valueTemplatesJobTemplates["PackagePath"].isNull())
+			templatesObject.packagePath = valueTemplatesJobTemplates["PackagePath"].asString();
+		if(!valueTemplatesJobTemplates["ClockTime"].isNull())
+			templatesObject.clockTime = valueTemplatesJobTemplates["ClockTime"].asString();
 		if(!valueTemplatesJobTemplates["ReRunable"].isNull())
 			templatesObject.reRunable = valueTemplatesJobTemplates["ReRunable"].asString() == "true";
 		if(!valueTemplatesJobTemplates["Name"].isNull())
 			templatesObject.name = valueTemplatesJobTemplates["Name"].asString();
-		if(!valueTemplatesJobTemplates["ArrayRequest"].isNull())
-			templatesObject.arrayRequest = valueTemplatesJobTemplates["ArrayRequest"].asString();
 		if(!valueTemplatesJobTemplates["Id"].isNull())
 			templatesObject.id = valueTemplatesJobTemplates["Id"].asString();
-		if(!valueTemplatesJobTemplates["StderrRedirectPath"].isNull())
-			templatesObject.stderrRedirectPath = valueTemplatesJobTemplates["StderrRedirectPath"].asString();
 		if(!valueTemplatesJobTemplates["RunasUser"].isNull())
 			templatesObject.runasUser = valueTemplatesJobTemplates["RunasUser"].asString();
+		if(!valueTemplatesJobTemplates["InputFileUrl"].isNull())
+			templatesObject.inputFileUrl = valueTemplatesJobTemplates["InputFileUrl"].asString();
+		if(!valueTemplatesJobTemplates["WithUnzipCmd"].isNull())
+			templatesObject.withUnzipCmd = valueTemplatesJobTemplates["WithUnzipCmd"].asString() == "true";
+		if(!valueTemplatesJobTemplates["UnzipCmd"].isNull())
+			templatesObject.unzipCmd = valueTemplatesJobTemplates["UnzipCmd"].asString();
 		templates_.push_back(templatesObject);
 	}
 	if(!value["PageSize"].isNull())

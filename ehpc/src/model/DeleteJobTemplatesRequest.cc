@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::DeleteJobTemplatesRequest;
 
 DeleteJobTemplatesRequest::DeleteJobTemplatesRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "DeleteJobTemplates") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "DeleteJobTemplates") {
   setMethod(HttpRequest::Method::Get);
 }
 
@@ -41,14 +41,5 @@ std::string DeleteJobTemplatesRequest::getAccessKeyId() const {
 void DeleteJobTemplatesRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string DeleteJobTemplatesRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DeleteJobTemplatesRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 

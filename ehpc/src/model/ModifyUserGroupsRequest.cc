@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::ModifyUserGroupsRequest;
 
 ModifyUserGroupsRequest::ModifyUserGroupsRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "ModifyUserGroups") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "ModifyUserGroups") {
   setMethod(HttpRequest::Method::Get);
 }
 

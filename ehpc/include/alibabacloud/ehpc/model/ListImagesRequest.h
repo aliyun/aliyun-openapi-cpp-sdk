@@ -32,9 +32,15 @@ public:
 	~ListImagesRequest();
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getBaseOsTag() const;
+	void setBaseOsTag(const std::string &baseOsTag);
+	std::string getInstanceType() const;
+	void setInstanceType(const std::string &instanceType);
 
 private:
 	std::string accessKeyId_;
+	std::string baseOsTag_;
+	std::string instanceType_;
 };
 } // namespace Model
 } // namespace EHPC

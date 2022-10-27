@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::DeleteNodesRequest;
 
 DeleteNodesRequest::DeleteNodesRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "DeleteNodes") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "DeleteNodes") {
   setMethod(HttpRequest::Method::Get);
 }
 
@@ -45,6 +45,15 @@ std::string DeleteNodesRequest::getClusterId() const {
 void DeleteNodesRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
   setParameter(std::string("ClusterId"), clusterId);
+}
+
+bool DeleteNodesRequest::getSync() const {
+  return sync_;
+}
+
+void DeleteNodesRequest::setSync(bool sync) {
+  sync_ = sync;
+  setParameter(std::string("Sync"), sync ? "true" : "false");
 }
 
 std::string DeleteNodesRequest::getAccessKeyId() const {

@@ -34,8 +34,6 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getName() const;
 	void setName(const std::string &name);
 	int getPageSize() const;
@@ -44,7 +42,6 @@ public:
 private:
 	int pageNumber_;
 	std::string accessKeyId_;
-	std::string regionId_;
 	std::string name_;
 	int pageSize_;
 };

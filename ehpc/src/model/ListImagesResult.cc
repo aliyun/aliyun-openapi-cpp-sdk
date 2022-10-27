@@ -43,12 +43,16 @@ void ListImagesResult::parse(const std::string &payload)
 	for (auto valueOsTagsOsInfo : allOsTagsNode)
 	{
 		OsInfo osTagsObject;
+		if(!valueOsTagsOsInfo["Version"].isNull())
+			osTagsObject.version = valueOsTagsOsInfo["Version"].asString();
+		if(!valueOsTagsOsInfo["BaseOsTag"].isNull())
+			osTagsObject.baseOsTag = valueOsTagsOsInfo["BaseOsTag"].asString();
 		if(!valueOsTagsOsInfo["Platform"].isNull())
 			osTagsObject.platform = valueOsTagsOsInfo["Platform"].asString();
 		if(!valueOsTagsOsInfo["OsTag"].isNull())
 			osTagsObject.osTag = valueOsTagsOsInfo["OsTag"].asString();
-		if(!valueOsTagsOsInfo["Version"].isNull())
-			osTagsObject.version = valueOsTagsOsInfo["Version"].asString();
+		if(!valueOsTagsOsInfo["ImageId"].isNull())
+			osTagsObject.imageId = valueOsTagsOsInfo["ImageId"].asString();
 		if(!valueOsTagsOsInfo["Architecture"].isNull())
 			osTagsObject.architecture = valueOsTagsOsInfo["Architecture"].asString();
 		osTags_.push_back(osTagsObject);

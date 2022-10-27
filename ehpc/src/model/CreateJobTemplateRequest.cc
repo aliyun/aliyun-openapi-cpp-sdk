@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::CreateJobTemplateRequest;
 
 CreateJobTemplateRequest::CreateJobTemplateRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "CreateJobTemplate") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "CreateJobTemplate") {
   setMethod(HttpRequest::Method::Get);
 }
 
@@ -32,6 +32,15 @@ std::string CreateJobTemplateRequest::getStderrRedirectPath() const {
 void CreateJobTemplateRequest::setStderrRedirectPath(const std::string &stderrRedirectPath) {
   stderrRedirectPath_ = stderrRedirectPath;
   setParameter(std::string("StderrRedirectPath"), stderrRedirectPath);
+}
+
+std::string CreateJobTemplateRequest::getClockTime() const {
+  return clockTime_;
+}
+
+void CreateJobTemplateRequest::setClockTime(const std::string &clockTime) {
+  clockTime_ = clockTime;
+  setParameter(std::string("ClockTime"), clockTime);
 }
 
 std::string CreateJobTemplateRequest::getCommandLine() const {
@@ -61,6 +70,15 @@ void CreateJobTemplateRequest::setArrayRequest(const std::string &arrayRequest) 
   setParameter(std::string("ArrayRequest"), arrayRequest);
 }
 
+std::string CreateJobTemplateRequest::getUnzipCmd() const {
+  return unzipCmd_;
+}
+
+void CreateJobTemplateRequest::setUnzipCmd(const std::string &unzipCmd) {
+  unzipCmd_ = unzipCmd;
+  setParameter(std::string("UnzipCmd"), unzipCmd);
+}
+
 std::string CreateJobTemplateRequest::getPackagePath() const {
   return packagePath_;
 }
@@ -70,13 +88,13 @@ void CreateJobTemplateRequest::setPackagePath(const std::string &packagePath) {
   setParameter(std::string("PackagePath"), packagePath);
 }
 
-std::string CreateJobTemplateRequest::getRegionId() const {
-  return regionId_;
+std::string CreateJobTemplateRequest::getMem() const {
+  return mem_;
 }
 
-void CreateJobTemplateRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void CreateJobTemplateRequest::setMem(const std::string &mem) {
+  mem_ = mem;
+  setParameter(std::string("Mem"), mem);
 }
 
 std::string CreateJobTemplateRequest::getStdoutRedirectPath() const {
@@ -115,6 +133,15 @@ void CreateJobTemplateRequest::setReRunable(bool reRunable) {
   setParameter(std::string("ReRunable"), reRunable ? "true" : "false");
 }
 
+int CreateJobTemplateRequest::getThread() const {
+  return thread_;
+}
+
+void CreateJobTemplateRequest::setThread(int thread) {
+  thread_ = thread;
+  setParameter(std::string("Thread"), std::to_string(thread));
+}
+
 int CreateJobTemplateRequest::getPriority() const {
   return priority_;
 }
@@ -124,6 +151,51 @@ void CreateJobTemplateRequest::setPriority(int priority) {
   setParameter(std::string("Priority"), std::to_string(priority));
 }
 
+int CreateJobTemplateRequest::getGpu() const {
+  return gpu_;
+}
+
+void CreateJobTemplateRequest::setGpu(int gpu) {
+  gpu_ = gpu;
+  setParameter(std::string("Gpu"), std::to_string(gpu));
+}
+
+bool CreateJobTemplateRequest::getWithUnzipCmd() const {
+  return withUnzipCmd_;
+}
+
+void CreateJobTemplateRequest::setWithUnzipCmd(bool withUnzipCmd) {
+  withUnzipCmd_ = withUnzipCmd;
+  setParameter(std::string("WithUnzipCmd"), withUnzipCmd ? "true" : "false");
+}
+
+int CreateJobTemplateRequest::getNode() const {
+  return node_;
+}
+
+void CreateJobTemplateRequest::setNode(int node) {
+  node_ = node;
+  setParameter(std::string("Node"), std::to_string(node));
+}
+
+int CreateJobTemplateRequest::getTask() const {
+  return task_;
+}
+
+void CreateJobTemplateRequest::setTask(int task) {
+  task_ = task;
+  setParameter(std::string("Task"), std::to_string(task));
+}
+
+std::string CreateJobTemplateRequest::getInputFileUrl() const {
+  return inputFileUrl_;
+}
+
+void CreateJobTemplateRequest::setInputFileUrl(const std::string &inputFileUrl) {
+  inputFileUrl_ = inputFileUrl;
+  setParameter(std::string("InputFileUrl"), inputFileUrl);
+}
+
 std::string CreateJobTemplateRequest::getName() const {
   return name_;
 }
@@ -131,5 +203,14 @@ std::string CreateJobTemplateRequest::getName() const {
 void CreateJobTemplateRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
+}
+
+std::string CreateJobTemplateRequest::getQueue() const {
+  return queue_;
+}
+
+void CreateJobTemplateRequest::setQueue(const std::string &queue) {
+  queue_ = queue;
+  setParameter(std::string("Queue"), queue);
 }
 

@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::ListJobTemplatesRequest;
 
 ListJobTemplatesRequest::ListJobTemplatesRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "ListJobTemplates") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "ListJobTemplates") {
   setMethod(HttpRequest::Method::Get);
 }
 
@@ -41,15 +41,6 @@ std::string ListJobTemplatesRequest::getAccessKeyId() const {
 void ListJobTemplatesRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string ListJobTemplatesRequest::getRegionId() const {
-  return regionId_;
-}
-
-void ListJobTemplatesRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string ListJobTemplatesRequest::getName() const {

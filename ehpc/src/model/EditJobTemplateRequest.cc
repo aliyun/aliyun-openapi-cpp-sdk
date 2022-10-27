@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::EditJobTemplateRequest;
 
 EditJobTemplateRequest::EditJobTemplateRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "EditJobTemplate") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "EditJobTemplate") {
   setMethod(HttpRequest::Method::Get);
 }
 
@@ -32,6 +32,15 @@ std::string EditJobTemplateRequest::getStderrRedirectPath() const {
 void EditJobTemplateRequest::setStderrRedirectPath(const std::string &stderrRedirectPath) {
   stderrRedirectPath_ = stderrRedirectPath;
   setParameter(std::string("StderrRedirectPath"), stderrRedirectPath);
+}
+
+std::string EditJobTemplateRequest::getClockTime() const {
+  return clockTime_;
+}
+
+void EditJobTemplateRequest::setClockTime(const std::string &clockTime) {
+  clockTime_ = clockTime;
+  setParameter(std::string("ClockTime"), clockTime);
 }
 
 std::string EditJobTemplateRequest::getCommandLine() const {
@@ -61,6 +70,15 @@ void EditJobTemplateRequest::setArrayRequest(const std::string &arrayRequest) {
   setParameter(std::string("ArrayRequest"), arrayRequest);
 }
 
+std::string EditJobTemplateRequest::getUnzipCmd() const {
+  return unzipCmd_;
+}
+
+void EditJobTemplateRequest::setUnzipCmd(const std::string &unzipCmd) {
+  unzipCmd_ = unzipCmd;
+  setParameter(std::string("UnzipCmd"), unzipCmd);
+}
+
 std::string EditJobTemplateRequest::getPackagePath() const {
   return packagePath_;
 }
@@ -70,13 +88,13 @@ void EditJobTemplateRequest::setPackagePath(const std::string &packagePath) {
   setParameter(std::string("PackagePath"), packagePath);
 }
 
-std::string EditJobTemplateRequest::getRegionId() const {
-  return regionId_;
+std::string EditJobTemplateRequest::getMem() const {
+  return mem_;
 }
 
-void EditJobTemplateRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
+void EditJobTemplateRequest::setMem(const std::string &mem) {
+  mem_ = mem;
+  setParameter(std::string("Mem"), mem);
 }
 
 std::string EditJobTemplateRequest::getStdoutRedirectPath() const {
@@ -115,6 +133,15 @@ void EditJobTemplateRequest::setReRunable(bool reRunable) {
   setParameter(std::string("ReRunable"), reRunable ? "true" : "false");
 }
 
+int EditJobTemplateRequest::getThread() const {
+  return thread_;
+}
+
+void EditJobTemplateRequest::setThread(int thread) {
+  thread_ = thread;
+  setParameter(std::string("Thread"), std::to_string(thread));
+}
+
 std::string EditJobTemplateRequest::getTemplateId() const {
   return templateId_;
 }
@@ -133,6 +160,51 @@ void EditJobTemplateRequest::setPriority(int priority) {
   setParameter(std::string("Priority"), std::to_string(priority));
 }
 
+int EditJobTemplateRequest::getGpu() const {
+  return gpu_;
+}
+
+void EditJobTemplateRequest::setGpu(int gpu) {
+  gpu_ = gpu;
+  setParameter(std::string("Gpu"), std::to_string(gpu));
+}
+
+bool EditJobTemplateRequest::getWithUnzipCmd() const {
+  return withUnzipCmd_;
+}
+
+void EditJobTemplateRequest::setWithUnzipCmd(bool withUnzipCmd) {
+  withUnzipCmd_ = withUnzipCmd;
+  setParameter(std::string("WithUnzipCmd"), withUnzipCmd ? "true" : "false");
+}
+
+int EditJobTemplateRequest::getNode() const {
+  return node_;
+}
+
+void EditJobTemplateRequest::setNode(int node) {
+  node_ = node;
+  setParameter(std::string("Node"), std::to_string(node));
+}
+
+int EditJobTemplateRequest::getTask() const {
+  return task_;
+}
+
+void EditJobTemplateRequest::setTask(int task) {
+  task_ = task;
+  setParameter(std::string("Task"), std::to_string(task));
+}
+
+std::string EditJobTemplateRequest::getInputFileUrl() const {
+  return inputFileUrl_;
+}
+
+void EditJobTemplateRequest::setInputFileUrl(const std::string &inputFileUrl) {
+  inputFileUrl_ = inputFileUrl;
+  setParameter(std::string("InputFileUrl"), inputFileUrl);
+}
+
 std::string EditJobTemplateRequest::getName() const {
   return name_;
 }
@@ -140,5 +212,14 @@ std::string EditJobTemplateRequest::getName() const {
 void EditJobTemplateRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
+}
+
+std::string EditJobTemplateRequest::getQueue() const {
+  return queue_;
+}
+
+void EditJobTemplateRequest::setQueue(const std::string &queue) {
+  queue_ = queue;
+  setParameter(std::string("Queue"), queue);
 }
 

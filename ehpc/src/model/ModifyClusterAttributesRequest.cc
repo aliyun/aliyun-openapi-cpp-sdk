@@ -19,11 +19,20 @@
 using AlibabaCloud::EHPC::Model::ModifyClusterAttributesRequest;
 
 ModifyClusterAttributesRequest::ModifyClusterAttributesRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "ModifyClusterAttributes") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "ModifyClusterAttributes") {
   setMethod(HttpRequest::Method::Get);
 }
 
 ModifyClusterAttributesRequest::~ModifyClusterAttributesRequest() {}
+
+std::string ModifyClusterAttributesRequest::getImageId() const {
+  return imageId_;
+}
+
+void ModifyClusterAttributesRequest::setImageId(const std::string &imageId) {
+  imageId_ = imageId;
+  setParameter(std::string("ImageId"), imageId);
+}
 
 std::string ModifyClusterAttributesRequest::getDescription() const {
   return description_;
@@ -50,6 +59,15 @@ std::string ModifyClusterAttributesRequest::getAccessKeyId() const {
 void ModifyClusterAttributesRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ModifyClusterAttributesRequest::getImageOwnerAlias() const {
+  return imageOwnerAlias_;
+}
+
+void ModifyClusterAttributesRequest::setImageOwnerAlias(const std::string &imageOwnerAlias) {
+  imageOwnerAlias_ = imageOwnerAlias;
+  setParameter(std::string("ImageOwnerAlias"), imageOwnerAlias);
 }
 
 std::string ModifyClusterAttributesRequest::getName() const {

@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::ListClusterLogsRequest;
 
 ListClusterLogsRequest::ListClusterLogsRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "ListClusterLogs") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "ListClusterLogs") {
   setMethod(HttpRequest::Method::Get);
 }
 

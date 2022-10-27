@@ -1,0 +1,97 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/ehpc/model/ListCommunityImagesResult.h>
+#include <json/json.h>
+
+using namespace AlibabaCloud::EHPC;
+using namespace AlibabaCloud::EHPC::Model;
+
+ListCommunityImagesResult::ListCommunityImagesResult() :
+	ServiceResult()
+{}
+
+ListCommunityImagesResult::ListCommunityImagesResult(const std::string &payload) :
+	ServiceResult()
+{
+	parse(payload);
+}
+
+ListCommunityImagesResult::~ListCommunityImagesResult()
+{}
+
+void ListCommunityImagesResult::parse(const std::string &payload)
+{
+	Json::Reader reader;
+	Json::Value value;
+	reader.parse(payload, value);
+	setRequestId(value["RequestId"].asString());
+	auto allImagesNode = value["Images"]["ImageInfo"];
+	for (auto valueImagesImageInfo : allImagesNode)
+	{
+		ImageInfo imagesObject;
+		if(!valueImagesImageInfo["Status"].isNull())
+			imagesObject.status = valueImagesImageInfo["Status"].asString();
+		if(!valueImagesImageInfo["PostInstallScript"].isNull())
+			imagesObject.postInstallScript = valueImagesImageInfo["PostInstallScript"].asString();
+		if(!valueImagesImageInfo["Description"].isNull())
+			imagesObject.description = valueImagesImageInfo["Description"].asString();
+		if(!valueImagesImageInfo["Size"].isNull())
+			imagesObject.size = std::stoi(valueImagesImageInfo["Size"].asString());
+		if(!valueImagesImageInfo["ImageOwnerAlias"].isNull())
+			imagesObject.imageOwnerAlias = valueImagesImageInfo["ImageOwnerAlias"].asString();
+		if(!valueImagesImageInfo["ImageName"].isNull())
+			imagesObject.imageName = valueImagesImageInfo["ImageName"].asString();
+		if(!valueImagesImageInfo["SkuCode"].isNull())
+			imagesObject.skuCode = valueImagesImageInfo["SkuCode"].asString();
+		if(!valueImagesImageInfo["PricingCycle"].isNull())
+			imagesObject.pricingCycle = valueImagesImageInfo["PricingCycle"].asString();
+		if(!valueImagesImageInfo["ImageId"].isNull())
+			imagesObject.imageId = valueImagesImageInfo["ImageId"].asString();
+		if(!valueImagesImageInfo["ProductCode"].isNull())
+			imagesObject.productCode = valueImagesImageInfo["ProductCode"].asString();
+		if(!valueImagesImageInfo["Uid"].isNull())
+			imagesObject.uid = valueImagesImageInfo["Uid"].asString();
+		auto baseOsTagNode = value["BaseOsTag"];
+		if(!baseOsTagNode["Platform"].isNull())
+			imagesObject.baseOsTag.platform = baseOsTagNode["Platform"].asString();
+		if(!baseOsTagNode["OsTag"].isNull())
+			imagesObject.baseOsTag.osTag = baseOsTagNode["OsTag"].asString();
+		if(!baseOsTagNode["Version"].isNull())
+			imagesObject.baseOsTag.version = baseOsTagNode["Version"].asString();
+		if(!baseOsTagNode["Architecture"].isNull())
+			imagesObject.baseOsTag.architecture = baseOsTagNode["Architecture"].asString();
+		auto osTagNode = value["OsTag"];
+		if(!osTagNode["Platform"].isNull())
+			imagesObject.osTag.platform = osTagNode["Platform"].asString();
+		if(!osTagNode["OsTag"].isNull())
+			imagesObject.osTag.osTag = osTagNode["OsTag"].asString();
+		if(!osTagNode["Version"].isNull())
+			imagesObject.osTag.version = osTagNode["Version"].asString();
+		if(!osTagNode["Architecture"].isNull())
+			imagesObject.osTag.architecture = osTagNode["Architecture"].asString();
+		if(!osTagNode["BaseOsTag"].isNull())
+			imagesObject.osTag.baseOsTag = osTagNode["BaseOsTag"].asString();
+		images_.push_back(imagesObject);
+	}
+
+}
+
+std::vector<ListCommunityImagesResult::ImageInfo> ListCommunityImagesResult::getImages()const
+{
+	return images_;
+}
+

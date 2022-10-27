@@ -59,6 +59,30 @@ void ListVolumesResult::parse(const std::string &payload)
 			volumesObject.regionId = valueVolumesVolumeInfo["RegionId"].asString();
 		if(!valueVolumesVolumeInfo["ClusterId"].isNull())
 			volumesObject.clusterId = valueVolumesVolumeInfo["ClusterId"].asString();
+		auto allAdditionalVolumesNode = valueVolumesVolumeInfo["AdditionalVolumes"]["VolumeInfo"];
+		for (auto valueVolumesVolumeInfoAdditionalVolumesVolumeInfo : allAdditionalVolumesNode)
+		{
+			VolumeInfo::VolumeInfo1 additionalVolumesObject;
+			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["JobQueue"].isNull())
+				additionalVolumesObject.jobQueue = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["JobQueue"].asString();
+			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeId"].isNull())
+				additionalVolumesObject.volumeId = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeId"].asString();
+			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["RemoteDirectory"].isNull())
+				additionalVolumesObject.remoteDirectory = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["RemoteDirectory"].asString();
+			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeMountpoint"].isNull())
+				additionalVolumesObject.volumeMountpoint = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeMountpoint"].asString();
+			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["Role"].isNull())
+				additionalVolumesObject.role = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["Role"].asString();
+			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["LocalDirectory"].isNull())
+				additionalVolumesObject.localDirectory = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["LocalDirectory"].asString();
+			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeType"].isNull())
+				additionalVolumesObject.volumeType = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeType"].asString();
+			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["Location"].isNull())
+				additionalVolumesObject.location = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["Location"].asString();
+			if(!valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeProtocol"].isNull())
+				additionalVolumesObject.volumeProtocol = valueVolumesVolumeInfoAdditionalVolumesVolumeInfo["VolumeProtocol"].asString();
+			volumesObject.additionalVolumes.push_back(additionalVolumesObject);
+		}
 		volumes_.push_back(volumesObject);
 	}
 	if(!value["PageSize"].isNull())

@@ -19,11 +19,20 @@
 using AlibabaCloud::EHPC::Model::ListSoftwaresRequest;
 
 ListSoftwaresRequest::ListSoftwaresRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "ListSoftwares") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "ListSoftwares") {
   setMethod(HttpRequest::Method::Get);
 }
 
 ListSoftwaresRequest::~ListSoftwaresRequest() {}
+
+std::string ListSoftwaresRequest::getOsTag() const {
+  return osTag_;
+}
+
+void ListSoftwaresRequest::setOsTag(const std::string &osTag) {
+  osTag_ = osTag;
+  setParameter(std::string("OsTag"), osTag);
+}
 
 std::string ListSoftwaresRequest::getEhpcVersion() const {
   return ehpcVersion_;

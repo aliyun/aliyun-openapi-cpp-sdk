@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::ListNodesRequest;
 
 ListNodesRequest::ListNodesRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "ListNodes") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "ListNodes") {
   setMethod(HttpRequest::Method::Get);
 }
 
@@ -32,15 +32,6 @@ std::string ListNodesRequest::getRole() const {
 void ListNodesRequest::setRole(const std::string &role) {
   role_ = role;
   setParameter(std::string("Role"), role);
-}
-
-std::string ListNodesRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void ListNodesRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
 }
 
 int ListNodesRequest::getPageNumber() const {
@@ -77,5 +68,68 @@ int ListNodesRequest::getPageSize() const {
 void ListNodesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListNodesRequest::getHostNamePrefix() const {
+  return hostNamePrefix_;
+}
+
+void ListNodesRequest::setHostNamePrefix(const std::string &hostNamePrefix) {
+  hostNamePrefix_ = hostNamePrefix;
+  setParameter(std::string("HostNamePrefix"), hostNamePrefix);
+}
+
+std::string ListNodesRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void ListNodesRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
+}
+
+std::string ListNodesRequest::getHostNameSuffix() const {
+  return hostNameSuffix_;
+}
+
+void ListNodesRequest::setHostNameSuffix(const std::string &hostNameSuffix) {
+  hostNameSuffix_ = hostNameSuffix;
+  setParameter(std::string("HostNameSuffix"), hostNameSuffix);
+}
+
+std::string ListNodesRequest::getFilter() const {
+  return filter_;
+}
+
+void ListNodesRequest::setFilter(const std::string &filter) {
+  filter_ = filter;
+  setParameter(std::string("Filter"), filter);
+}
+
+std::string ListNodesRequest::getPrivateIpAddress() const {
+  return privateIpAddress_;
+}
+
+void ListNodesRequest::setPrivateIpAddress(const std::string &privateIpAddress) {
+  privateIpAddress_ = privateIpAddress;
+  setParameter(std::string("PrivateIpAddress"), privateIpAddress);
+}
+
+std::string ListNodesRequest::getSequence() const {
+  return sequence_;
+}
+
+void ListNodesRequest::setSequence(const std::string &sequence) {
+  sequence_ = sequence;
+  setParameter(std::string("Sequence"), sequence);
+}
+
+std::string ListNodesRequest::getSortBy() const {
+  return sortBy_;
+}
+
+void ListNodesRequest::setSortBy(const std::string &sortBy) {
+  sortBy_ = sortBy;
+  setParameter(std::string("SortBy"), sortBy);
 }
 

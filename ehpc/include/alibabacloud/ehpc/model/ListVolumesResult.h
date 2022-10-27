@@ -34,11 +34,24 @@ namespace AlibabaCloud
 			public:
 				struct VolumeInfo
 				{
+					struct VolumeInfo1
+					{
+						std::string role;
+						std::string volumeProtocol;
+						std::string volumeId;
+						std::string remoteDirectory;
+						std::string localDirectory;
+						std::string volumeType;
+						std::string jobQueue;
+						std::string volumeMountpoint;
+						std::string location;
+					};
 					std::string volumeProtocol;
 					std::string volumeId;
 					std::string remoteDirectory;
 					std::string volumeType;
 					std::string clusterId;
+					std::vector<VolumeInfo::VolumeInfo1> additionalVolumes;
 					std::string clusterName;
 					std::string regionId;
 					std::string volumeMountpoint;

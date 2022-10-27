@@ -34,13 +34,10 @@ public:
 	void setTemplates(const std::string &templates);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 
 private:
 	std::string templates_;
 	std::string accessKeyId_;
-	std::string regionId_;
 };
 } // namespace Model
 } // namespace EHPC

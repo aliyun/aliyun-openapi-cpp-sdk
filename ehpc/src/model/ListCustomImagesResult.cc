@@ -43,14 +43,28 @@ void ListCustomImagesResult::parse(const std::string &payload)
 	for (auto valueImagesImageInfo : allImagesNode)
 	{
 		ImageInfo imagesObject;
-		if(!valueImagesImageInfo["ImageName"].isNull())
-			imagesObject.imageName = valueImagesImageInfo["ImageName"].asString();
-		if(!valueImagesImageInfo["ImageOwnerAlias"].isNull())
-			imagesObject.imageOwnerAlias = valueImagesImageInfo["ImageOwnerAlias"].asString();
+		if(!valueImagesImageInfo["Status"].isNull())
+			imagesObject.status = valueImagesImageInfo["Status"].asString();
+		if(!valueImagesImageInfo["PostInstallScript"].isNull())
+			imagesObject.postInstallScript = valueImagesImageInfo["PostInstallScript"].asString();
 		if(!valueImagesImageInfo["Description"].isNull())
 			imagesObject.description = valueImagesImageInfo["Description"].asString();
+		if(!valueImagesImageInfo["Size"].isNull())
+			imagesObject.size = std::stoi(valueImagesImageInfo["Size"].asString());
+		if(!valueImagesImageInfo["ImageOwnerAlias"].isNull())
+			imagesObject.imageOwnerAlias = valueImagesImageInfo["ImageOwnerAlias"].asString();
+		if(!valueImagesImageInfo["ImageName"].isNull())
+			imagesObject.imageName = valueImagesImageInfo["ImageName"].asString();
+		if(!valueImagesImageInfo["SkuCode"].isNull())
+			imagesObject.skuCode = valueImagesImageInfo["SkuCode"].asString();
+		if(!valueImagesImageInfo["PricingCycle"].isNull())
+			imagesObject.pricingCycle = valueImagesImageInfo["PricingCycle"].asString();
 		if(!valueImagesImageInfo["ImageId"].isNull())
 			imagesObject.imageId = valueImagesImageInfo["ImageId"].asString();
+		if(!valueImagesImageInfo["ProductCode"].isNull())
+			imagesObject.productCode = valueImagesImageInfo["ProductCode"].asString();
+		if(!valueImagesImageInfo["Uid"].isNull())
+			imagesObject.uid = valueImagesImageInfo["Uid"].asString();
 		auto baseOsTagNode = value["BaseOsTag"];
 		if(!baseOsTagNode["Platform"].isNull())
 			imagesObject.baseOsTag.platform = baseOsTagNode["Platform"].asString();
@@ -60,6 +74,17 @@ void ListCustomImagesResult::parse(const std::string &payload)
 			imagesObject.baseOsTag.version = baseOsTagNode["Version"].asString();
 		if(!baseOsTagNode["Architecture"].isNull())
 			imagesObject.baseOsTag.architecture = baseOsTagNode["Architecture"].asString();
+		auto osTagNode = value["OsTag"];
+		if(!osTagNode["Platform"].isNull())
+			imagesObject.osTag.platform = osTagNode["Platform"].asString();
+		if(!osTagNode["OsTag"].isNull())
+			imagesObject.osTag.osTag = osTagNode["OsTag"].asString();
+		if(!osTagNode["Version"].isNull())
+			imagesObject.osTag.version = osTagNode["Version"].asString();
+		if(!osTagNode["Architecture"].isNull())
+			imagesObject.osTag.architecture = osTagNode["Architecture"].asString();
+		if(!osTagNode["BaseOsTag"].isNull())
+			imagesObject.osTag.baseOsTag = osTagNode["BaseOsTag"].asString();
 		images_.push_back(imagesObject);
 	}
 

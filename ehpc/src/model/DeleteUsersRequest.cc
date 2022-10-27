@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::DeleteUsersRequest;
 
 DeleteUsersRequest::DeleteUsersRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "DeleteUsers") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "DeleteUsers") {
   setMethod(HttpRequest::Method::Get);
 }
 

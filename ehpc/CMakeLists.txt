@@ -21,151 +21,535 @@ set(ehpc_public_header
 	include/alibabacloud/ehpc/EHPCExport.h )
 
 set(ehpc_public_header_model 
+	include/alibabacloud/ehpc/model/AddContainerAppRequest.h
+	include/alibabacloud/ehpc/model/AddContainerAppResult.h
+	include/alibabacloud/ehpc/model/AddExistedNodesRequest.h
+	include/alibabacloud/ehpc/model/AddExistedNodesResult.h
+	include/alibabacloud/ehpc/model/AddLocalNodesRequest.h
+	include/alibabacloud/ehpc/model/AddLocalNodesResult.h
 	include/alibabacloud/ehpc/model/AddNodesRequest.h
 	include/alibabacloud/ehpc/model/AddNodesResult.h
+	include/alibabacloud/ehpc/model/AddQueueRequest.h
+	include/alibabacloud/ehpc/model/AddQueueResult.h
+	include/alibabacloud/ehpc/model/AddSecurityGroupRequest.h
+	include/alibabacloud/ehpc/model/AddSecurityGroupResult.h
 	include/alibabacloud/ehpc/model/AddUsersRequest.h
 	include/alibabacloud/ehpc/model/AddUsersResult.h
+	include/alibabacloud/ehpc/model/ApplyNodesRequest.h
+	include/alibabacloud/ehpc/model/ApplyNodesResult.h
 	include/alibabacloud/ehpc/model/CreateClusterRequest.h
 	include/alibabacloud/ehpc/model/CreateClusterResult.h
+	include/alibabacloud/ehpc/model/CreateGWSClusterRequest.h
+	include/alibabacloud/ehpc/model/CreateGWSClusterResult.h
+	include/alibabacloud/ehpc/model/CreateGWSImageRequest.h
+	include/alibabacloud/ehpc/model/CreateGWSImageResult.h
+	include/alibabacloud/ehpc/model/CreateGWSInstanceRequest.h
+	include/alibabacloud/ehpc/model/CreateGWSInstanceResult.h
+	include/alibabacloud/ehpc/model/CreateHybridClusterRequest.h
+	include/alibabacloud/ehpc/model/CreateHybridClusterResult.h
+	include/alibabacloud/ehpc/model/CreateJobFileRequest.h
+	include/alibabacloud/ehpc/model/CreateJobFileResult.h
 	include/alibabacloud/ehpc/model/CreateJobTemplateRequest.h
 	include/alibabacloud/ehpc/model/CreateJobTemplateResult.h
 	include/alibabacloud/ehpc/model/DeleteClusterRequest.h
 	include/alibabacloud/ehpc/model/DeleteClusterResult.h
+	include/alibabacloud/ehpc/model/DeleteContainerAppsRequest.h
+	include/alibabacloud/ehpc/model/DeleteContainerAppsResult.h
+	include/alibabacloud/ehpc/model/DeleteGWSClusterRequest.h
+	include/alibabacloud/ehpc/model/DeleteGWSClusterResult.h
+	include/alibabacloud/ehpc/model/DeleteGWSInstanceRequest.h
+	include/alibabacloud/ehpc/model/DeleteGWSInstanceResult.h
+	include/alibabacloud/ehpc/model/DeleteImageRequest.h
+	include/alibabacloud/ehpc/model/DeleteImageResult.h
 	include/alibabacloud/ehpc/model/DeleteJobTemplatesRequest.h
 	include/alibabacloud/ehpc/model/DeleteJobTemplatesResult.h
 	include/alibabacloud/ehpc/model/DeleteJobsRequest.h
 	include/alibabacloud/ehpc/model/DeleteJobsResult.h
+	include/alibabacloud/ehpc/model/DeleteLocalImageRequest.h
+	include/alibabacloud/ehpc/model/DeleteLocalImageResult.h
 	include/alibabacloud/ehpc/model/DeleteNodesRequest.h
 	include/alibabacloud/ehpc/model/DeleteNodesResult.h
+	include/alibabacloud/ehpc/model/DeleteQueueRequest.h
+	include/alibabacloud/ehpc/model/DeleteQueueResult.h
+	include/alibabacloud/ehpc/model/DeleteSecurityGroupRequest.h
+	include/alibabacloud/ehpc/model/DeleteSecurityGroupResult.h
 	include/alibabacloud/ehpc/model/DeleteUsersRequest.h
 	include/alibabacloud/ehpc/model/DeleteUsersResult.h
+	include/alibabacloud/ehpc/model/DescribeAutoScaleConfigRequest.h
+	include/alibabacloud/ehpc/model/DescribeAutoScaleConfigResult.h
 	include/alibabacloud/ehpc/model/DescribeClusterRequest.h
 	include/alibabacloud/ehpc/model/DescribeClusterResult.h
+	include/alibabacloud/ehpc/model/DescribeContainerAppRequest.h
+	include/alibabacloud/ehpc/model/DescribeContainerAppResult.h
+	include/alibabacloud/ehpc/model/DescribeEstackImageRequest.h
+	include/alibabacloud/ehpc/model/DescribeEstackImageResult.h
+	include/alibabacloud/ehpc/model/DescribeGWSClusterPolicyRequest.h
+	include/alibabacloud/ehpc/model/DescribeGWSClusterPolicyResult.h
+	include/alibabacloud/ehpc/model/DescribeGWSClustersRequest.h
+	include/alibabacloud/ehpc/model/DescribeGWSClustersResult.h
+	include/alibabacloud/ehpc/model/DescribeGWSImagesRequest.h
+	include/alibabacloud/ehpc/model/DescribeGWSImagesResult.h
+	include/alibabacloud/ehpc/model/DescribeGWSInstancesRequest.h
+	include/alibabacloud/ehpc/model/DescribeGWSInstancesResult.h
+	include/alibabacloud/ehpc/model/DescribeImageRequest.h
+	include/alibabacloud/ehpc/model/DescribeImageResult.h
+	include/alibabacloud/ehpc/model/DescribeImageGatewayConfigRequest.h
+	include/alibabacloud/ehpc/model/DescribeImageGatewayConfigResult.h
+	include/alibabacloud/ehpc/model/DescribeImagePriceRequest.h
+	include/alibabacloud/ehpc/model/DescribeImagePriceResult.h
+	include/alibabacloud/ehpc/model/DescribeJobRequest.h
+	include/alibabacloud/ehpc/model/DescribeJobResult.h
+	include/alibabacloud/ehpc/model/DescribeNFSClientStatusRequest.h
+	include/alibabacloud/ehpc/model/DescribeNFSClientStatusResult.h
+	include/alibabacloud/ehpc/model/DescribePriceRequest.h
+	include/alibabacloud/ehpc/model/DescribePriceResult.h
 	include/alibabacloud/ehpc/model/EditJobTemplateRequest.h
 	include/alibabacloud/ehpc/model/EditJobTemplateResult.h
+	include/alibabacloud/ehpc/model/GetAccountingReportRequest.h
+	include/alibabacloud/ehpc/model/GetAccountingReportResult.h
 	include/alibabacloud/ehpc/model/GetAutoScaleConfigRequest.h
 	include/alibabacloud/ehpc/model/GetAutoScaleConfigResult.h
+	include/alibabacloud/ehpc/model/GetCloudMetricLogsRequest.h
+	include/alibabacloud/ehpc/model/GetCloudMetricLogsResult.h
+	include/alibabacloud/ehpc/model/GetCloudMetricProfilingRequest.h
+	include/alibabacloud/ehpc/model/GetCloudMetricProfilingResult.h
+	include/alibabacloud/ehpc/model/GetClusterVolumesRequest.h
+	include/alibabacloud/ehpc/model/GetClusterVolumesResult.h
+	include/alibabacloud/ehpc/model/GetCommonImageRequest.h
+	include/alibabacloud/ehpc/model/GetCommonImageResult.h
+	include/alibabacloud/ehpc/model/GetGWSConnectTicketRequest.h
+	include/alibabacloud/ehpc/model/GetGWSConnectTicketResult.h
+	include/alibabacloud/ehpc/model/GetHybridClusterConfigRequest.h
+	include/alibabacloud/ehpc/model/GetHybridClusterConfigResult.h
+	include/alibabacloud/ehpc/model/GetIfEcsTypeSupportHtConfigRequest.h
+	include/alibabacloud/ehpc/model/GetIfEcsTypeSupportHtConfigResult.h
+	include/alibabacloud/ehpc/model/GetPostScriptsRequest.h
+	include/alibabacloud/ehpc/model/GetPostScriptsResult.h
+	include/alibabacloud/ehpc/model/GetSchedulerInfoRequest.h
+	include/alibabacloud/ehpc/model/GetSchedulerInfoResult.h
+	include/alibabacloud/ehpc/model/GetUserImageRequest.h
+	include/alibabacloud/ehpc/model/GetUserImageResult.h
+	include/alibabacloud/ehpc/model/GetVisualServiceStatusRequest.h
+	include/alibabacloud/ehpc/model/GetVisualServiceStatusResult.h
+	include/alibabacloud/ehpc/model/InitializeEHPCRequest.h
+	include/alibabacloud/ehpc/model/InitializeEHPCResult.h
+	include/alibabacloud/ehpc/model/InspectImageRequest.h
+	include/alibabacloud/ehpc/model/InspectImageResult.h
+	include/alibabacloud/ehpc/model/InstallSoftwareRequest.h
+	include/alibabacloud/ehpc/model/InstallSoftwareResult.h
+	include/alibabacloud/ehpc/model/InvokeShellCommandRequest.h
+	include/alibabacloud/ehpc/model/InvokeShellCommandResult.h
+	include/alibabacloud/ehpc/model/ListAvailableEcsTypesRequest.h
+	include/alibabacloud/ehpc/model/ListAvailableEcsTypesResult.h
+	include/alibabacloud/ehpc/model/ListCloudMetricProfilingsRequest.h
+	include/alibabacloud/ehpc/model/ListCloudMetricProfilingsResult.h
 	include/alibabacloud/ehpc/model/ListClusterLogsRequest.h
 	include/alibabacloud/ehpc/model/ListClusterLogsResult.h
 	include/alibabacloud/ehpc/model/ListClustersRequest.h
 	include/alibabacloud/ehpc/model/ListClustersResult.h
+	include/alibabacloud/ehpc/model/ListClustersMetaRequest.h
+	include/alibabacloud/ehpc/model/ListClustersMetaResult.h
+	include/alibabacloud/ehpc/model/ListCommandsRequest.h
+	include/alibabacloud/ehpc/model/ListCommandsResult.h
+	include/alibabacloud/ehpc/model/ListCommunityImagesRequest.h
+	include/alibabacloud/ehpc/model/ListCommunityImagesResult.h
+	include/alibabacloud/ehpc/model/ListContainerAppsRequest.h
+	include/alibabacloud/ehpc/model/ListContainerAppsResult.h
+	include/alibabacloud/ehpc/model/ListContainerImagesRequest.h
+	include/alibabacloud/ehpc/model/ListContainerImagesResult.h
+	include/alibabacloud/ehpc/model/ListCpfsFileSystemsRequest.h
+	include/alibabacloud/ehpc/model/ListCpfsFileSystemsResult.h
 	include/alibabacloud/ehpc/model/ListCurrentClientVersionRequest.h
 	include/alibabacloud/ehpc/model/ListCurrentClientVersionResult.h
 	include/alibabacloud/ehpc/model/ListCustomImagesRequest.h
 	include/alibabacloud/ehpc/model/ListCustomImagesResult.h
+	include/alibabacloud/ehpc/model/ListFileSystemWithMountTargetsRequest.h
+	include/alibabacloud/ehpc/model/ListFileSystemWithMountTargetsResult.h
 	include/alibabacloud/ehpc/model/ListImagesRequest.h
 	include/alibabacloud/ehpc/model/ListImagesResult.h
+	include/alibabacloud/ehpc/model/ListInstalledSoftwareRequest.h
+	include/alibabacloud/ehpc/model/ListInstalledSoftwareResult.h
+	include/alibabacloud/ehpc/model/ListInvocationResultsRequest.h
+	include/alibabacloud/ehpc/model/ListInvocationResultsResult.h
+	include/alibabacloud/ehpc/model/ListInvocationStatusRequest.h
+	include/alibabacloud/ehpc/model/ListInvocationStatusResult.h
 	include/alibabacloud/ehpc/model/ListJobTemplatesRequest.h
 	include/alibabacloud/ehpc/model/ListJobTemplatesResult.h
 	include/alibabacloud/ehpc/model/ListJobsRequest.h
 	include/alibabacloud/ehpc/model/ListJobsResult.h
+	include/alibabacloud/ehpc/model/ListJobsWithFiltersRequest.h
+	include/alibabacloud/ehpc/model/ListJobsWithFiltersResult.h
 	include/alibabacloud/ehpc/model/ListNodesRequest.h
 	include/alibabacloud/ehpc/model/ListNodesResult.h
+	include/alibabacloud/ehpc/model/ListNodesByQueueRequest.h
+	include/alibabacloud/ehpc/model/ListNodesByQueueResult.h
 	include/alibabacloud/ehpc/model/ListNodesNoPagingRequest.h
 	include/alibabacloud/ehpc/model/ListNodesNoPagingResult.h
 	include/alibabacloud/ehpc/model/ListPreferredEcsTypesRequest.h
 	include/alibabacloud/ehpc/model/ListPreferredEcsTypesResult.h
+	include/alibabacloud/ehpc/model/ListQueuesRequest.h
+	include/alibabacloud/ehpc/model/ListQueuesResult.h
 	include/alibabacloud/ehpc/model/ListRegionsRequest.h
 	include/alibabacloud/ehpc/model/ListRegionsResult.h
+	include/alibabacloud/ehpc/model/ListSecurityGroupsRequest.h
+	include/alibabacloud/ehpc/model/ListSecurityGroupsResult.h
 	include/alibabacloud/ehpc/model/ListSoftwaresRequest.h
 	include/alibabacloud/ehpc/model/ListSoftwaresResult.h
+	include/alibabacloud/ehpc/model/ListTagResourcesRequest.h
+	include/alibabacloud/ehpc/model/ListTagResourcesResult.h
+	include/alibabacloud/ehpc/model/ListTasksRequest.h
+	include/alibabacloud/ehpc/model/ListTasksResult.h
+	include/alibabacloud/ehpc/model/ListUpgradeClientsRequest.h
+	include/alibabacloud/ehpc/model/ListUpgradeClientsResult.h
 	include/alibabacloud/ehpc/model/ListUsersRequest.h
 	include/alibabacloud/ehpc/model/ListUsersResult.h
+	include/alibabacloud/ehpc/model/ListUsersAsyncRequest.h
+	include/alibabacloud/ehpc/model/ListUsersAsyncResult.h
 	include/alibabacloud/ehpc/model/ListVolumesRequest.h
 	include/alibabacloud/ehpc/model/ListVolumesResult.h
 	include/alibabacloud/ehpc/model/ModifyClusterAttributesRequest.h
 	include/alibabacloud/ehpc/model/ModifyClusterAttributesResult.h
+	include/alibabacloud/ehpc/model/ModifyContainerAppAttributesRequest.h
+	include/alibabacloud/ehpc/model/ModifyContainerAppAttributesResult.h
+	include/alibabacloud/ehpc/model/ModifyImageGatewayConfigRequest.h
+	include/alibabacloud/ehpc/model/ModifyImageGatewayConfigResult.h
 	include/alibabacloud/ehpc/model/ModifyUserGroupsRequest.h
 	include/alibabacloud/ehpc/model/ModifyUserGroupsResult.h
 	include/alibabacloud/ehpc/model/ModifyUserPasswordsRequest.h
 	include/alibabacloud/ehpc/model/ModifyUserPasswordsResult.h
+	include/alibabacloud/ehpc/model/ModifyVisualServicePasswdRequest.h
+	include/alibabacloud/ehpc/model/ModifyVisualServicePasswdResult.h
+	include/alibabacloud/ehpc/model/MountNFSRequest.h
+	include/alibabacloud/ehpc/model/MountNFSResult.h
+	include/alibabacloud/ehpc/model/PullImageRequest.h
+	include/alibabacloud/ehpc/model/PullImageResult.h
+	include/alibabacloud/ehpc/model/QueryServicePackAndPriceRequest.h
+	include/alibabacloud/ehpc/model/QueryServicePackAndPriceResult.h
+	include/alibabacloud/ehpc/model/RecoverClusterRequest.h
+	include/alibabacloud/ehpc/model/RecoverClusterResult.h
 	include/alibabacloud/ehpc/model/RerunJobsRequest.h
 	include/alibabacloud/ehpc/model/RerunJobsResult.h
 	include/alibabacloud/ehpc/model/ResetNodesRequest.h
 	include/alibabacloud/ehpc/model/ResetNodesResult.h
+	include/alibabacloud/ehpc/model/RunCloudMetricProfilingRequest.h
+	include/alibabacloud/ehpc/model/RunCloudMetricProfilingResult.h
 	include/alibabacloud/ehpc/model/SetAutoScaleConfigRequest.h
 	include/alibabacloud/ehpc/model/SetAutoScaleConfigResult.h
-	include/alibabacloud/ehpc/model/SetJobUserRequest.h
-	include/alibabacloud/ehpc/model/SetJobUserResult.h
+	include/alibabacloud/ehpc/model/SetGWSClusterPolicyRequest.h
+	include/alibabacloud/ehpc/model/SetGWSClusterPolicyResult.h
+	include/alibabacloud/ehpc/model/SetGWSInstanceNameRequest.h
+	include/alibabacloud/ehpc/model/SetGWSInstanceNameResult.h
+	include/alibabacloud/ehpc/model/SetGWSInstanceUserRequest.h
+	include/alibabacloud/ehpc/model/SetGWSInstanceUserResult.h
+	include/alibabacloud/ehpc/model/SetPostScriptsRequest.h
+	include/alibabacloud/ehpc/model/SetPostScriptsResult.h
+	include/alibabacloud/ehpc/model/SetQueueRequest.h
+	include/alibabacloud/ehpc/model/SetQueueResult.h
+	include/alibabacloud/ehpc/model/SetSchedulerInfoRequest.h
+	include/alibabacloud/ehpc/model/SetSchedulerInfoResult.h
+	include/alibabacloud/ehpc/model/StartClusterRequest.h
+	include/alibabacloud/ehpc/model/StartClusterResult.h
+	include/alibabacloud/ehpc/model/StartGWSInstanceRequest.h
+	include/alibabacloud/ehpc/model/StartGWSInstanceResult.h
+	include/alibabacloud/ehpc/model/StartNodesRequest.h
+	include/alibabacloud/ehpc/model/StartNodesResult.h
+	include/alibabacloud/ehpc/model/StartVisualServiceRequest.h
+	include/alibabacloud/ehpc/model/StartVisualServiceResult.h
+	include/alibabacloud/ehpc/model/StopClusterRequest.h
+	include/alibabacloud/ehpc/model/StopClusterResult.h
+	include/alibabacloud/ehpc/model/StopGWSInstanceRequest.h
+	include/alibabacloud/ehpc/model/StopGWSInstanceResult.h
 	include/alibabacloud/ehpc/model/StopJobsRequest.h
 	include/alibabacloud/ehpc/model/StopJobsResult.h
+	include/alibabacloud/ehpc/model/StopNodesRequest.h
+	include/alibabacloud/ehpc/model/StopNodesResult.h
+	include/alibabacloud/ehpc/model/StopVisualServiceRequest.h
+	include/alibabacloud/ehpc/model/StopVisualServiceResult.h
 	include/alibabacloud/ehpc/model/SubmitJobRequest.h
 	include/alibabacloud/ehpc/model/SubmitJobResult.h
+	include/alibabacloud/ehpc/model/SummaryImagesRequest.h
+	include/alibabacloud/ehpc/model/SummaryImagesResult.h
+	include/alibabacloud/ehpc/model/SummaryImagesInfoRequest.h
+	include/alibabacloud/ehpc/model/SummaryImagesInfoResult.h
+	include/alibabacloud/ehpc/model/SyncUsersRequest.h
+	include/alibabacloud/ehpc/model/SyncUsersResult.h
+	include/alibabacloud/ehpc/model/TagResourcesRequest.h
+	include/alibabacloud/ehpc/model/TagResourcesResult.h
+	include/alibabacloud/ehpc/model/UnTagResourcesRequest.h
+	include/alibabacloud/ehpc/model/UnTagResourcesResult.h
+	include/alibabacloud/ehpc/model/UninstallSoftwareRequest.h
+	include/alibabacloud/ehpc/model/UninstallSoftwareResult.h
+	include/alibabacloud/ehpc/model/UpdateClusterVolumesRequest.h
+	include/alibabacloud/ehpc/model/UpdateClusterVolumesResult.h
+	include/alibabacloud/ehpc/model/UpdateQueueConfigRequest.h
+	include/alibabacloud/ehpc/model/UpdateQueueConfigResult.h
 	include/alibabacloud/ehpc/model/UpgradeClientRequest.h
 	include/alibabacloud/ehpc/model/UpgradeClientResult.h )
 
 set(ehpc_src 
 	src/EHPCClient.cc
+	src/model/AddContainerAppRequest.cc
+	src/model/AddContainerAppResult.cc
+	src/model/AddExistedNodesRequest.cc
+	src/model/AddExistedNodesResult.cc
+	src/model/AddLocalNodesRequest.cc
+	src/model/AddLocalNodesResult.cc
 	src/model/AddNodesRequest.cc
 	src/model/AddNodesResult.cc
+	src/model/AddQueueRequest.cc
+	src/model/AddQueueResult.cc
+	src/model/AddSecurityGroupRequest.cc
+	src/model/AddSecurityGroupResult.cc
 	src/model/AddUsersRequest.cc
 	src/model/AddUsersResult.cc
+	src/model/ApplyNodesRequest.cc
+	src/model/ApplyNodesResult.cc
 	src/model/CreateClusterRequest.cc
 	src/model/CreateClusterResult.cc
+	src/model/CreateGWSClusterRequest.cc
+	src/model/CreateGWSClusterResult.cc
+	src/model/CreateGWSImageRequest.cc
+	src/model/CreateGWSImageResult.cc
+	src/model/CreateGWSInstanceRequest.cc
+	src/model/CreateGWSInstanceResult.cc
+	src/model/CreateHybridClusterRequest.cc
+	src/model/CreateHybridClusterResult.cc
+	src/model/CreateJobFileRequest.cc
+	src/model/CreateJobFileResult.cc
 	src/model/CreateJobTemplateRequest.cc
 	src/model/CreateJobTemplateResult.cc
 	src/model/DeleteClusterRequest.cc
 	src/model/DeleteClusterResult.cc
+	src/model/DeleteContainerAppsRequest.cc
+	src/model/DeleteContainerAppsResult.cc
+	src/model/DeleteGWSClusterRequest.cc
+	src/model/DeleteGWSClusterResult.cc
+	src/model/DeleteGWSInstanceRequest.cc
+	src/model/DeleteGWSInstanceResult.cc
+	src/model/DeleteImageRequest.cc
+	src/model/DeleteImageResult.cc
 	src/model/DeleteJobTemplatesRequest.cc
 	src/model/DeleteJobTemplatesResult.cc
 	src/model/DeleteJobsRequest.cc
 	src/model/DeleteJobsResult.cc
+	src/model/DeleteLocalImageRequest.cc
+	src/model/DeleteLocalImageResult.cc
 	src/model/DeleteNodesRequest.cc
 	src/model/DeleteNodesResult.cc
+	src/model/DeleteQueueRequest.cc
+	src/model/DeleteQueueResult.cc
+	src/model/DeleteSecurityGroupRequest.cc
+	src/model/DeleteSecurityGroupResult.cc
 	src/model/DeleteUsersRequest.cc
 	src/model/DeleteUsersResult.cc
+	src/model/DescribeAutoScaleConfigRequest.cc
+	src/model/DescribeAutoScaleConfigResult.cc
 	src/model/DescribeClusterRequest.cc
 	src/model/DescribeClusterResult.cc
+	src/model/DescribeContainerAppRequest.cc
+	src/model/DescribeContainerAppResult.cc
+	src/model/DescribeEstackImageRequest.cc
+	src/model/DescribeEstackImageResult.cc
+	src/model/DescribeGWSClusterPolicyRequest.cc
+	src/model/DescribeGWSClusterPolicyResult.cc
+	src/model/DescribeGWSClustersRequest.cc
+	src/model/DescribeGWSClustersResult.cc
+	src/model/DescribeGWSImagesRequest.cc
+	src/model/DescribeGWSImagesResult.cc
+	src/model/DescribeGWSInstancesRequest.cc
+	src/model/DescribeGWSInstancesResult.cc
+	src/model/DescribeImageRequest.cc
+	src/model/DescribeImageResult.cc
+	src/model/DescribeImageGatewayConfigRequest.cc
+	src/model/DescribeImageGatewayConfigResult.cc
+	src/model/DescribeImagePriceRequest.cc
+	src/model/DescribeImagePriceResult.cc
+	src/model/DescribeJobRequest.cc
+	src/model/DescribeJobResult.cc
+	src/model/DescribeNFSClientStatusRequest.cc
+	src/model/DescribeNFSClientStatusResult.cc
+	src/model/DescribePriceRequest.cc
+	src/model/DescribePriceResult.cc
 	src/model/EditJobTemplateRequest.cc
 	src/model/EditJobTemplateResult.cc
+	src/model/GetAccountingReportRequest.cc
+	src/model/GetAccountingReportResult.cc
 	src/model/GetAutoScaleConfigRequest.cc
 	src/model/GetAutoScaleConfigResult.cc
+	src/model/GetCloudMetricLogsRequest.cc
+	src/model/GetCloudMetricLogsResult.cc
+	src/model/GetCloudMetricProfilingRequest.cc
+	src/model/GetCloudMetricProfilingResult.cc
+	src/model/GetClusterVolumesRequest.cc
+	src/model/GetClusterVolumesResult.cc
+	src/model/GetCommonImageRequest.cc
+	src/model/GetCommonImageResult.cc
+	src/model/GetGWSConnectTicketRequest.cc
+	src/model/GetGWSConnectTicketResult.cc
+	src/model/GetHybridClusterConfigRequest.cc
+	src/model/GetHybridClusterConfigResult.cc
+	src/model/GetIfEcsTypeSupportHtConfigRequest.cc
+	src/model/GetIfEcsTypeSupportHtConfigResult.cc
+	src/model/GetPostScriptsRequest.cc
+	src/model/GetPostScriptsResult.cc
+	src/model/GetSchedulerInfoRequest.cc
+	src/model/GetSchedulerInfoResult.cc
+	src/model/GetUserImageRequest.cc
+	src/model/GetUserImageResult.cc
+	src/model/GetVisualServiceStatusRequest.cc
+	src/model/GetVisualServiceStatusResult.cc
+	src/model/InitializeEHPCRequest.cc
+	src/model/InitializeEHPCResult.cc
+	src/model/InspectImageRequest.cc
+	src/model/InspectImageResult.cc
+	src/model/InstallSoftwareRequest.cc
+	src/model/InstallSoftwareResult.cc
+	src/model/InvokeShellCommandRequest.cc
+	src/model/InvokeShellCommandResult.cc
+	src/model/ListAvailableEcsTypesRequest.cc
+	src/model/ListAvailableEcsTypesResult.cc
+	src/model/ListCloudMetricProfilingsRequest.cc
+	src/model/ListCloudMetricProfilingsResult.cc
 	src/model/ListClusterLogsRequest.cc
 	src/model/ListClusterLogsResult.cc
 	src/model/ListClustersRequest.cc
 	src/model/ListClustersResult.cc
+	src/model/ListClustersMetaRequest.cc
+	src/model/ListClustersMetaResult.cc
+	src/model/ListCommandsRequest.cc
+	src/model/ListCommandsResult.cc
+	src/model/ListCommunityImagesRequest.cc
+	src/model/ListCommunityImagesResult.cc
+	src/model/ListContainerAppsRequest.cc
+	src/model/ListContainerAppsResult.cc
+	src/model/ListContainerImagesRequest.cc
+	src/model/ListContainerImagesResult.cc
+	src/model/ListCpfsFileSystemsRequest.cc
+	src/model/ListCpfsFileSystemsResult.cc
 	src/model/ListCurrentClientVersionRequest.cc
 	src/model/ListCurrentClientVersionResult.cc
 	src/model/ListCustomImagesRequest.cc
 	src/model/ListCustomImagesResult.cc
+	src/model/ListFileSystemWithMountTargetsRequest.cc
+	src/model/ListFileSystemWithMountTargetsResult.cc
 	src/model/ListImagesRequest.cc
 	src/model/ListImagesResult.cc
+	src/model/ListInstalledSoftwareRequest.cc
+	src/model/ListInstalledSoftwareResult.cc
+	src/model/ListInvocationResultsRequest.cc
+	src/model/ListInvocationResultsResult.cc
+	src/model/ListInvocationStatusRequest.cc
+	src/model/ListInvocationStatusResult.cc
 	src/model/ListJobTemplatesRequest.cc
 	src/model/ListJobTemplatesResult.cc
 	src/model/ListJobsRequest.cc
 	src/model/ListJobsResult.cc
+	src/model/ListJobsWithFiltersRequest.cc
+	src/model/ListJobsWithFiltersResult.cc
 	src/model/ListNodesRequest.cc
 	src/model/ListNodesResult.cc
+	src/model/ListNodesByQueueRequest.cc
+	src/model/ListNodesByQueueResult.cc
 	src/model/ListNodesNoPagingRequest.cc
 	src/model/ListNodesNoPagingResult.cc
 	src/model/ListPreferredEcsTypesRequest.cc
 	src/model/ListPreferredEcsTypesResult.cc
+	src/model/ListQueuesRequest.cc
+	src/model/ListQueuesResult.cc
 	src/model/ListRegionsRequest.cc
 	src/model/ListRegionsResult.cc
+	src/model/ListSecurityGroupsRequest.cc
+	src/model/ListSecurityGroupsResult.cc
 	src/model/ListSoftwaresRequest.cc
 	src/model/ListSoftwaresResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
+	src/model/ListTasksRequest.cc
+	src/model/ListTasksResult.cc
+	src/model/ListUpgradeClientsRequest.cc
+	src/model/ListUpgradeClientsResult.cc
 	src/model/ListUsersRequest.cc
 	src/model/ListUsersResult.cc
+	src/model/ListUsersAsyncRequest.cc
+	src/model/ListUsersAsyncResult.cc
 	src/model/ListVolumesRequest.cc
 	src/model/ListVolumesResult.cc
 	src/model/ModifyClusterAttributesRequest.cc
 	src/model/ModifyClusterAttributesResult.cc
+	src/model/ModifyContainerAppAttributesRequest.cc
+	src/model/ModifyContainerAppAttributesResult.cc
+	src/model/ModifyImageGatewayConfigRequest.cc
+	src/model/ModifyImageGatewayConfigResult.cc
 	src/model/ModifyUserGroupsRequest.cc
 	src/model/ModifyUserGroupsResult.cc
 	src/model/ModifyUserPasswordsRequest.cc
 	src/model/ModifyUserPasswordsResult.cc
+	src/model/ModifyVisualServicePasswdRequest.cc
+	src/model/ModifyVisualServicePasswdResult.cc
+	src/model/MountNFSRequest.cc
+	src/model/MountNFSResult.cc
+	src/model/PullImageRequest.cc
+	src/model/PullImageResult.cc
+	src/model/QueryServicePackAndPriceRequest.cc
+	src/model/QueryServicePackAndPriceResult.cc
+	src/model/RecoverClusterRequest.cc
+	src/model/RecoverClusterResult.cc
 	src/model/RerunJobsRequest.cc
 	src/model/RerunJobsResult.cc
 	src/model/ResetNodesRequest.cc
 	src/model/ResetNodesResult.cc
+	src/model/RunCloudMetricProfilingRequest.cc
+	src/model/RunCloudMetricProfilingResult.cc
 	src/model/SetAutoScaleConfigRequest.cc
 	src/model/SetAutoScaleConfigResult.cc
-	src/model/SetJobUserRequest.cc
-	src/model/SetJobUserResult.cc
+	src/model/SetGWSClusterPolicyRequest.cc
+	src/model/SetGWSClusterPolicyResult.cc
+	src/model/SetGWSInstanceNameRequest.cc
+	src/model/SetGWSInstanceNameResult.cc
+	src/model/SetGWSInstanceUserRequest.cc
+	src/model/SetGWSInstanceUserResult.cc
+	src/model/SetPostScriptsRequest.cc
+	src/model/SetPostScriptsResult.cc
+	src/model/SetQueueRequest.cc
+	src/model/SetQueueResult.cc
+	src/model/SetSchedulerInfoRequest.cc
+	src/model/SetSchedulerInfoResult.cc
+	src/model/StartClusterRequest.cc
+	src/model/StartClusterResult.cc
+	src/model/StartGWSInstanceRequest.cc
+	src/model/StartGWSInstanceResult.cc
+	src/model/StartNodesRequest.cc
+	src/model/StartNodesResult.cc
+	src/model/StartVisualServiceRequest.cc
+	src/model/StartVisualServiceResult.cc
+	src/model/StopClusterRequest.cc
+	src/model/StopClusterResult.cc
+	src/model/StopGWSInstanceRequest.cc
+	src/model/StopGWSInstanceResult.cc
 	src/model/StopJobsRequest.cc
 	src/model/StopJobsResult.cc
+	src/model/StopNodesRequest.cc
+	src/model/StopNodesResult.cc
+	src/model/StopVisualServiceRequest.cc
+	src/model/StopVisualServiceResult.cc
 	src/model/SubmitJobRequest.cc
 	src/model/SubmitJobResult.cc
+	src/model/SummaryImagesRequest.cc
+	src/model/SummaryImagesResult.cc
+	src/model/SummaryImagesInfoRequest.cc
+	src/model/SummaryImagesInfoResult.cc
+	src/model/SyncUsersRequest.cc
+	src/model/SyncUsersResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
+	src/model/UnTagResourcesRequest.cc
+	src/model/UnTagResourcesResult.cc
+	src/model/UninstallSoftwareRequest.cc
+	src/model/UninstallSoftwareResult.cc
+	src/model/UpdateClusterVolumesRequest.cc
+	src/model/UpdateClusterVolumesResult.cc
+	src/model/UpdateQueueConfigRequest.cc
+	src/model/UpdateQueueConfigResult.cc
 	src/model/UpgradeClientRequest.cc
 	src/model/UpgradeClientResult.cc )
 

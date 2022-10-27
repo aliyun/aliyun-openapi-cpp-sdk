@@ -30,19 +30,25 @@ class ALIBABACLOUD_EHPC_EXPORT ModifyClusterAttributesRequest : public RpcServic
 public:
 	ModifyClusterAttributesRequest();
 	~ModifyClusterAttributesRequest();
+	std::string getImageId() const;
+	void setImageId(const std::string &imageId);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getImageOwnerAlias() const;
+	void setImageOwnerAlias(const std::string &imageOwnerAlias);
 	std::string getName() const;
 	void setName(const std::string &name);
 
 private:
+	std::string imageId_;
 	std::string description_;
 	std::string clusterId_;
 	std::string accessKeyId_;
+	std::string imageOwnerAlias_;
 	std::string name_;
 };
 } // namespace Model

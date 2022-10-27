@@ -19,7 +19,7 @@
 using AlibabaCloud::EHPC::Model::AddUsersRequest;
 
 AddUsersRequest::AddUsersRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "AddUsers") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "AddUsers") {
   setMethod(HttpRequest::Method::Get);
 }
 
@@ -41,15 +41,6 @@ std::string AddUsersRequest::getAccessKeyId() const {
 void AddUsersRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-bool AddUsersRequest::getReleaseInstance() const {
-  return releaseInstance_;
-}
-
-void AddUsersRequest::setReleaseInstance(bool releaseInstance) {
-  releaseInstance_ = releaseInstance;
-  setParameter(std::string("ReleaseInstance"), releaseInstance ? "true" : "false");
 }
 
 std::vector<AddUsersRequest::User> AddUsersRequest::getUser() const {

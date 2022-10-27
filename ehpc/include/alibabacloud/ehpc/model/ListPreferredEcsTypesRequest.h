@@ -36,11 +36,14 @@ public:
 	void setSpotStrategy(const std::string &spotStrategy);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	std::string getInstanceChargeType() const;
+	void setInstanceChargeType(const std::string &instanceChargeType);
 
 private:
 	std::string accessKeyId_;
 	std::string spotStrategy_;
 	std::string zoneId_;
+	std::string instanceChargeType_;
 };
 } // namespace Model
 } // namespace EHPC

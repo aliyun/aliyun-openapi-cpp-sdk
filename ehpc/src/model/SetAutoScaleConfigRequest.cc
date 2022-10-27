@@ -19,11 +19,29 @@
 using AlibabaCloud::EHPC::Model::SetAutoScaleConfigRequest;
 
 SetAutoScaleConfigRequest::SetAutoScaleConfigRequest()
-    : RpcServiceRequest("ehpc", "2017-07-14", "SetAutoScaleConfig") {
+    : RpcServiceRequest("ehpc", "2018-04-12", "SetAutoScaleConfig") {
   setMethod(HttpRequest::Method::Get);
 }
 
 SetAutoScaleConfigRequest::~SetAutoScaleConfigRequest() {}
+
+std::string SetAutoScaleConfigRequest::getImageId() const {
+  return imageId_;
+}
+
+void SetAutoScaleConfigRequest::setImageId(const std::string &imageId) {
+  imageId_ = imageId;
+  setParameter(std::string("ImageId"), imageId);
+}
+
+float SetAutoScaleConfigRequest::getSpotPriceLimit() const {
+  return spotPriceLimit_;
+}
+
+void SetAutoScaleConfigRequest::setSpotPriceLimit(float spotPriceLimit) {
+  spotPriceLimit_ = spotPriceLimit;
+  setParameter(std::string("SpotPriceLimit"), std::to_string(spotPriceLimit));
+}
 
 std::string SetAutoScaleConfigRequest::getAccessKeyId() const {
   return accessKeyId_;
@@ -97,6 +115,15 @@ void SetAutoScaleConfigRequest::setEnableAutoShrink(bool enableAutoShrink) {
   setParameter(std::string("EnableAutoShrink"), enableAutoShrink ? "true" : "false");
 }
 
+std::string SetAutoScaleConfigRequest::getSpotStrategy() const {
+  return spotStrategy_;
+}
+
+void SetAutoScaleConfigRequest::setSpotStrategy(const std::string &spotStrategy) {
+  spotStrategy_ = spotStrategy;
+  setParameter(std::string("SpotStrategy"), spotStrategy);
+}
+
 int SetAutoScaleConfigRequest::getMaxNodesInCluster() const {
   return maxNodesInCluster_;
 }
@@ -113,6 +140,53 @@ int SetAutoScaleConfigRequest::getShrinkIntervalInMinutes() const {
 void SetAutoScaleConfigRequest::setShrinkIntervalInMinutes(int shrinkIntervalInMinutes) {
   shrinkIntervalInMinutes_ = shrinkIntervalInMinutes;
   setParameter(std::string("ShrinkIntervalInMinutes"), std::to_string(shrinkIntervalInMinutes));
+}
+
+std::vector<SetAutoScaleConfigRequest::Queues> SetAutoScaleConfigRequest::getQueues() const {
+  return queues_;
+}
+
+void SetAutoScaleConfigRequest::setQueues(const std::vector<SetAutoScaleConfigRequest::Queues> &queues) {
+  queues_ = queues;
+  for(int dep1 = 0; dep1 != queues.size(); dep1++) {
+  auto queuesObj = queues.at(dep1);
+  std::string queuesObjStr = std::string("Queues") + "." + std::to_string(dep1 + 1);
+    setParameter(queuesObjStr + ".QueueName", queuesObj.queueName);
+    setParameter(queuesObjStr + ".SystemDiskLevel", queuesObj.systemDiskLevel);
+    for(int dep2 = 0; dep2 != queuesObj.instanceTypes.size(); dep2++) {
+    auto instanceTypesObj = queuesObj.instanceTypes.at(dep2);
+    std::string instanceTypesObjStr = queuesObjStr + ".InstanceTypes" + "." + std::to_string(dep2 + 1);
+      setParameter(instanceTypesObjStr + ".VSwitchId", instanceTypesObj.vSwitchId);
+      setParameter(instanceTypesObjStr + ".SpotStrategy", instanceTypesObj.spotStrategy);
+      setParameter(instanceTypesObjStr + ".ZoneId", instanceTypesObj.zoneId);
+      setParameter(instanceTypesObjStr + ".InstanceType", instanceTypesObj.instanceType);
+      setParameter(instanceTypesObjStr + ".SpotPriceLimit", std::to_string(instanceTypesObj.spotPriceLimit));
+    }
+    setParameter(queuesObjStr + ".EnableAutoGrow", queuesObj.enableAutoGrow ? "true" : "false");
+    setParameter(queuesObjStr + ".HostNameSuffix", queuesObj.hostNameSuffix);
+    setParameter(queuesObjStr + ".SpotPriceLimit", std::to_string(queuesObj.spotPriceLimit));
+    setParameter(queuesObjStr + ".EnableAutoShrink", queuesObj.enableAutoShrink ? "true" : "false");
+    setParameter(queuesObjStr + ".SpotStrategy", queuesObj.spotStrategy);
+    for(int dep2 = 0; dep2 != queuesObj.dataDisks.size(); dep2++) {
+    auto dataDisksObj = queuesObj.dataDisks.at(dep2);
+    std::string dataDisksObjStr = queuesObjStr + ".DataDisks" + "." + std::to_string(dep2 + 1);
+      setParameter(dataDisksObjStr + ".DataDiskDeleteWithInstance", dataDisksObj.dataDiskDeleteWithInstance ? "true" : "false");
+      setParameter(dataDisksObjStr + ".DataDiskEncrypted", dataDisksObj.dataDiskEncrypted ? "true" : "false");
+      setParameter(dataDisksObjStr + ".DataDiskKMSKeyId", dataDisksObj.dataDiskKMSKeyId);
+      setParameter(dataDisksObjStr + ".DataDiskSize", std::to_string(dataDisksObj.dataDiskSize));
+      setParameter(dataDisksObjStr + ".DataDiskCategory", dataDisksObj.dataDiskCategory);
+      setParameter(dataDisksObjStr + ".DataDiskPerformanceLevel", dataDisksObj.dataDiskPerformanceLevel);
+    }
+    setParameter(queuesObjStr + ".MinNodesInQueue", std::to_string(queuesObj.minNodesInQueue));
+    setParameter(queuesObjStr + ".MaxNodesPerCycle", std::to_string(queuesObj.maxNodesPerCycle));
+    setParameter(queuesObjStr + ".SystemDiskCategory", queuesObj.systemDiskCategory);
+    setParameter(queuesObjStr + ".MaxNodesInQueue", std::to_string(queuesObj.maxNodesInQueue));
+    setParameter(queuesObjStr + ".SystemDiskSize", std::to_string(queuesObj.systemDiskSize));
+    setParameter(queuesObjStr + ".QueueImageId", queuesObj.queueImageId);
+    setParameter(queuesObjStr + ".InstanceType", queuesObj.instanceType);
+    setParameter(queuesObjStr + ".HostNamePrefix", queuesObj.hostNamePrefix);
+    setParameter(queuesObjStr + ".MinNodesPerCycle", std::to_string(queuesObj.minNodesPerCycle));
+  }
 }
 
 int SetAutoScaleConfigRequest::getGrowIntervalInMinutes() const {
