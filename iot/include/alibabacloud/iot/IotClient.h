@@ -384,6 +384,8 @@
 #include "model/GisQueryDeviceLocationResult.h"
 #include "model/GisSearchDeviceTraceRequest.h"
 #include "model/GisSearchDeviceTraceResult.h"
+#include "model/ImportDTDataRequest.h"
+#include "model/ImportDTDataResult.h"
 #include "model/ImportDeviceRequest.h"
 #include "model/ImportDeviceResult.h"
 #include "model/ImportThingModelTslRequest.h"
@@ -1348,6 +1350,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GisSearchDeviceTraceResult> GisSearchDeviceTraceOutcome;
 			typedef std::future<GisSearchDeviceTraceOutcome> GisSearchDeviceTraceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GisSearchDeviceTraceRequest&, const GisSearchDeviceTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GisSearchDeviceTraceAsyncHandler;
+			typedef Outcome<Error, Model::ImportDTDataResult> ImportDTDataOutcome;
+			typedef std::future<ImportDTDataOutcome> ImportDTDataOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ImportDTDataRequest&, const ImportDTDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportDTDataAsyncHandler;
 			typedef Outcome<Error, Model::ImportDeviceResult> ImportDeviceOutcome;
 			typedef std::future<ImportDeviceOutcome> ImportDeviceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ImportDeviceRequest&, const ImportDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ImportDeviceAsyncHandler;
@@ -2514,6 +2519,9 @@ namespace AlibabaCloud
 			GisSearchDeviceTraceOutcome gisSearchDeviceTrace(const Model::GisSearchDeviceTraceRequest &request)const;
 			void gisSearchDeviceTraceAsync(const Model::GisSearchDeviceTraceRequest& request, const GisSearchDeviceTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GisSearchDeviceTraceOutcomeCallable gisSearchDeviceTraceCallable(const Model::GisSearchDeviceTraceRequest& request) const;
+			ImportDTDataOutcome importDTData(const Model::ImportDTDataRequest &request)const;
+			void importDTDataAsync(const Model::ImportDTDataRequest& request, const ImportDTDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ImportDTDataOutcomeCallable importDTDataCallable(const Model::ImportDTDataRequest& request) const;
 			ImportDeviceOutcome importDevice(const Model::ImportDeviceRequest &request)const;
 			void importDeviceAsync(const Model::ImportDeviceRequest& request, const ImportDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ImportDeviceOutcomeCallable importDeviceCallable(const Model::ImportDeviceRequest& request) const;

@@ -6567,6 +6567,42 @@ IotClient::GisSearchDeviceTraceOutcomeCallable IotClient::gisSearchDeviceTraceCa
 	return task->get_future();
 }
 
+IotClient::ImportDTDataOutcome IotClient::importDTData(const ImportDTDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImportDTDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImportDTDataOutcome(ImportDTDataResult(outcome.result()));
+	else
+		return ImportDTDataOutcome(outcome.error());
+}
+
+void IotClient::importDTDataAsync(const ImportDTDataRequest& request, const ImportDTDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, importDTData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ImportDTDataOutcomeCallable IotClient::importDTDataCallable(const ImportDTDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImportDTDataOutcome()>>(
+			[this, request]()
+			{
+			return this->importDTData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::ImportDeviceOutcome IotClient::importDevice(const ImportDeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

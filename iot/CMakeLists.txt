@@ -383,6 +383,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/GisQueryDeviceLocationResult.h
 	include/alibabacloud/iot/model/GisSearchDeviceTraceRequest.h
 	include/alibabacloud/iot/model/GisSearchDeviceTraceResult.h
+	include/alibabacloud/iot/model/ImportDTDataRequest.h
+	include/alibabacloud/iot/model/ImportDTDataResult.h
 	include/alibabacloud/iot/model/ImportDeviceRequest.h
 	include/alibabacloud/iot/model/ImportDeviceResult.h
 	include/alibabacloud/iot/model/ImportThingModelTslRequest.h
@@ -1160,6 +1162,8 @@ set(iot_src
 	src/model/GisQueryDeviceLocationResult.cc
 	src/model/GisSearchDeviceTraceRequest.cc
 	src/model/GisSearchDeviceTraceResult.cc
+	src/model/ImportDTDataRequest.cc
+	src/model/ImportDTDataResult.cc
 	src/model/ImportDeviceRequest.cc
 	src/model/ImportDeviceResult.cc
 	src/model/ImportThingModelTslRequest.cc
