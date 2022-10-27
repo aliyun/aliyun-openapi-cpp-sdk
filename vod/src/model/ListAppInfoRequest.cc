@@ -43,15 +43,6 @@ void ListAppInfoRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-int ListAppInfoRequest::getPageNo() const {
-  return pageNo_;
-}
-
-void ListAppInfoRequest::setPageNo(int pageNo) {
-  pageNo_ = pageNo;
-  setParameter(std::string("PageNo"), std::to_string(pageNo));
-}
-
 int ListAppInfoRequest::getPageSize() const {
   return pageSize_;
 }
@@ -59,6 +50,25 @@ int ListAppInfoRequest::getPageSize() const {
 void ListAppInfoRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+ListAppInfoRequest::Tag ListAppInfoRequest::getTag() const {
+  return tag_;
+}
+
+void ListAppInfoRequest::setTag(const ListAppInfoRequest::Tag &tag) {
+  tag_ = tag;
+  setParameter(std::string("Tag") + ".Value", tag.value);
+  setParameter(std::string("Tag") + ".Key", tag.key);
+}
+
+int ListAppInfoRequest::getPageNo() const {
+  return pageNo_;
+}
+
+void ListAppInfoRequest::setPageNo(int pageNo) {
+  pageNo_ = pageNo;
+  setParameter(std::string("PageNo"), std::to_string(pageNo));
 }
 
 std::string ListAppInfoRequest::getStatus() const {

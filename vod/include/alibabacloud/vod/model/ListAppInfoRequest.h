@@ -28,24 +28,31 @@ namespace Vod {
 namespace Model {
 class ALIBABACLOUD_VOD_EXPORT ListAppInfoRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListAppInfoRequest();
 	~ListAppInfoRequest();
 	long getResourceRealOwnerId() const;
 	void setResourceRealOwnerId(long resourceRealOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	int getPageNo() const;
-	void setPageNo(int pageNo);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	Tag getTag() const;
+	void setTag(const Tag &tag);
+	int getPageNo() const;
+	void setPageNo(int pageNo);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 
 private:
 	long resourceRealOwnerId_;
 	std::string accessKeyId_;
-	int pageNo_;
 	int pageSize_;
+	Tag tag_;
+	int pageNo_;
 	std::string status_;
 };
 } // namespace Model
