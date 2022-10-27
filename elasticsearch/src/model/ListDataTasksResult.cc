@@ -45,38 +45,38 @@ void ListDataTasksResult::parse(const std::string &payload)
 		ResultItem resultObject;
 		if(!valueResultResultItem["createTime"].isNull())
 			resultObject.createTime = valueResultResultItem["createTime"].asString();
-		if(!valueResultResultItem["status"].isNull())
-			resultObject.status = valueResultResultItem["status"].asString();
 		if(!valueResultResultItem["taskId"].isNull())
 			resultObject.taskId = valueResultResultItem["taskId"].asString();
+		if(!valueResultResultItem["status"].isNull())
+			resultObject.status = valueResultResultItem["status"].asString();
 		auto sinkClusterNode = value["sinkCluster"];
-		if(!sinkClusterNode["dataSourceType"].isNull())
-			resultObject.sinkCluster.dataSourceType = sinkClusterNode["dataSourceType"].asString();
-		if(!sinkClusterNode["endpoint"].isNull())
-			resultObject.sinkCluster.endpoint = sinkClusterNode["endpoint"].asString();
 		if(!sinkClusterNode["index"].isNull())
 			resultObject.sinkCluster.index = sinkClusterNode["index"].asString();
 		if(!sinkClusterNode["type"].isNull())
 			resultObject.sinkCluster.type = sinkClusterNode["type"].asString();
+		if(!sinkClusterNode["endpoint"].isNull())
+			resultObject.sinkCluster.endpoint = sinkClusterNode["endpoint"].asString();
 		if(!sinkClusterNode["vpcId"].isNull())
 			resultObject.sinkCluster.vpcId = sinkClusterNode["vpcId"].asString();
-		if(!sinkClusterNode["vpcInstanceId"].isNull())
-			resultObject.sinkCluster.vpcInstanceId = sinkClusterNode["vpcInstanceId"].asString();
 		if(!sinkClusterNode["vpcInstancePort"].isNull())
 			resultObject.sinkCluster.vpcInstancePort = sinkClusterNode["vpcInstancePort"].asString();
+		if(!sinkClusterNode["vpcInstanceId"].isNull())
+			resultObject.sinkCluster.vpcInstanceId = sinkClusterNode["vpcInstanceId"].asString();
+		if(!sinkClusterNode["dataSourceType"].isNull())
+			resultObject.sinkCluster.dataSourceType = sinkClusterNode["dataSourceType"].asString();
 		auto sourceClusterNode = value["sourceCluster"];
-		if(!sourceClusterNode["dataSourceType"].isNull())
-			resultObject.sourceCluster.dataSourceType = sourceClusterNode["dataSourceType"].asString();
 		if(!sourceClusterNode["index"].isNull())
 			resultObject.sourceCluster.index = sourceClusterNode["index"].asString();
-		if(!sourceClusterNode["mapping"].isNull())
-			resultObject.sourceCluster.mapping = sourceClusterNode["mapping"].asString();
-		if(!sourceClusterNode["routing"].isNull())
-			resultObject.sourceCluster.routing = sourceClusterNode["routing"].asString();
 		if(!sourceClusterNode["settings"].isNull())
 			resultObject.sourceCluster.settings = sourceClusterNode["settings"].asString();
+		if(!sourceClusterNode["mapping"].isNull())
+			resultObject.sourceCluster.mapping = sourceClusterNode["mapping"].asString();
 		if(!sourceClusterNode["type"].isNull())
 			resultObject.sourceCluster.type = sourceClusterNode["type"].asString();
+		if(!sourceClusterNode["routing"].isNull())
+			resultObject.sourceCluster.routing = sourceClusterNode["routing"].asString();
+		if(!sourceClusterNode["dataSourceType"].isNull())
+			resultObject.sourceCluster.dataSourceType = sourceClusterNode["dataSourceType"].asString();
 		result_.push_back(resultObject);
 	}
 

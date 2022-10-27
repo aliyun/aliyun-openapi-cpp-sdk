@@ -43,14 +43,14 @@ void ListIndexTemplatesResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["indexTemplate"].isNull())
-			resultObject.indexTemplate = valueResultResultItem["indexTemplate"].asString();
 		if(!valueResultResultItem["dataStream"].isNull())
 			resultObject.dataStream = valueResultResultItem["dataStream"].asString() == "true";
-		if(!valueResultResultItem["priority"].isNull())
-			resultObject.priority = std::stoi(valueResultResultItem["priority"].asString());
+		if(!valueResultResultItem["indexTemplate"].isNull())
+			resultObject.indexTemplate = valueResultResultItem["indexTemplate"].asString();
 		if(!valueResultResultItem["ilmPolicy"].isNull())
 			resultObject.ilmPolicy = valueResultResultItem["ilmPolicy"].asString();
+		if(!valueResultResultItem["priority"].isNull())
+			resultObject.priority = std::stoi(valueResultResultItem["priority"].asString());
 		auto _templateNode = value["template"];
 		if(!_templateNode["settings"].isNull())
 			resultObject._template.settings = _templateNode["settings"].asString();

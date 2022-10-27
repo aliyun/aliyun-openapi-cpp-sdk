@@ -43,43 +43,43 @@ void ListDataStreamsResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["health"].isNull())
-			resultObject.health = valueResultResultItem["health"].asString();
 		if(!valueResultResultItem["totalStorageSize"].isNull())
 			resultObject.totalStorageSize = std::stol(valueResultResultItem["totalStorageSize"].asString());
-		if(!valueResultResultItem["name"].isNull())
-			resultObject.name = valueResultResultItem["name"].asString();
-		if(!valueResultResultItem["managedStorageSize"].isNull())
-			resultObject.managedStorageSize = std::stol(valueResultResultItem["managedStorageSize"].asString());
 		if(!valueResultResultItem["indexTemplateName"].isNull())
 			resultObject.indexTemplateName = valueResultResultItem["indexTemplateName"].asString();
 		if(!valueResultResultItem["ilmPolicyName"].isNull())
 			resultObject.ilmPolicyName = valueResultResultItem["ilmPolicyName"].asString();
+		if(!valueResultResultItem["name"].isNull())
+			resultObject.name = valueResultResultItem["name"].asString();
+		if(!valueResultResultItem["health"].isNull())
+			resultObject.health = valueResultResultItem["health"].asString();
+		if(!valueResultResultItem["managedStorageSize"].isNull())
+			resultObject.managedStorageSize = std::stol(valueResultResultItem["managedStorageSize"].asString());
 		auto allindicesNode = valueResultResultItem["indices"]["indicesItem"];
 		for (auto valueResultResultItemindicesindicesItem : allindicesNode)
 		{
 			ResultItem::IndicesItem indicesObject;
+			if(!valueResultResultItemindicesindicesItem["isManaged"].isNull())
+				indicesObject.isManaged = valueResultResultItemindicesindicesItem["isManaged"].asString() == "true";
+			if(!valueResultResultItemindicesindicesItem["createTime"].isNull())
+				indicesObject.createTime = valueResultResultItemindicesindicesItem["createTime"].asString();
+			if(!valueResultResultItemindicesindicesItem["size"].isNull())
+				indicesObject.size = std::stol(valueResultResultItemindicesindicesItem["size"].asString());
+			if(!valueResultResultItemindicesindicesItem["managedStatus"].isNull())
+				indicesObject.managedStatus = valueResultResultItemindicesindicesItem["managedStatus"].asString();
 			if(!valueResultResultItemindicesindicesItem["name"].isNull())
 				indicesObject.name = valueResultResultItemindicesindicesItem["name"].asString();
 			if(!valueResultResultItemindicesindicesItem["health"].isNull())
 				indicesObject.health = valueResultResultItemindicesindicesItem["health"].asString();
-			if(!valueResultResultItemindicesindicesItem["size"].isNull())
-				indicesObject.size = std::stol(valueResultResultItemindicesindicesItem["size"].asString());
-			if(!valueResultResultItemindicesindicesItem["createTime"].isNull())
-				indicesObject.createTime = valueResultResultItemindicesindicesItem["createTime"].asString();
-			if(!valueResultResultItemindicesindicesItem["isManaged"].isNull())
-				indicesObject.isManaged = valueResultResultItemindicesindicesItem["isManaged"].asString() == "true";
-			if(!valueResultResultItemindicesindicesItem["managedStatus"].isNull())
-				indicesObject.managedStatus = valueResultResultItemindicesindicesItem["managedStatus"].asString();
 			resultObject.indices.push_back(indicesObject);
 		}
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];
-	if(!headersNode["X-Managed-Count"].isNull())
-		headers_.xManagedCount = std::stoi(headersNode["X-Managed-Count"].asString());
 	if(!headersNode["X-Managed-StorageSize"].isNull())
 		headers_.xManagedStorageSize = std::stol(headersNode["X-Managed-StorageSize"].asString());
+	if(!headersNode["X-Managed-Count"].isNull())
+		headers_.xManagedCount = std::stoi(headersNode["X-Managed-Count"].asString());
 
 }
 

@@ -40,10 +40,10 @@ void DescribeDiagnosisSettingsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["scene"].isNull())
-		result_.scene = resultNode["scene"].asString();
 	if(!resultNode["updateTime"].isNull())
 		result_.updateTime = std::stol(resultNode["updateTime"].asString());
+	if(!resultNode["scene"].isNull())
+		result_.scene = resultNode["scene"].asString();
 
 }
 

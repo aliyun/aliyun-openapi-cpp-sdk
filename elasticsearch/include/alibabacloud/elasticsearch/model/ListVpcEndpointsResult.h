@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string endpointName;
 					std::string endpointDomain;
 					std::string serviceName;
-					std::string createTime;
 					std::string endpointId;
+					std::string createTime;
 					std::string endpointBusinessStatus;
 					std::string connectionStatus;
 					std::string serviceId;

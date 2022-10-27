@@ -43,19 +43,19 @@ void GetClusterDataInformationResult::parse(const std::string &payload)
 	if(!resultNode["connectable"].isNull())
 		result_.connectable = resultNode["connectable"].asString() == "true";
 	auto metaInfoNode = resultNode["metaInfo"];
-	if(!metaInfoNode["settings"].isNull())
-		result_.metaInfo.settings = metaInfoNode["settings"].asString();
 	if(!metaInfoNode["mapping"].isNull())
 		result_.metaInfo.mapping = metaInfoNode["mapping"].asString();
-		auto allIndices = metaInfoNode["indices"]["indices"];
-		for (auto value : allIndices)
-			result_.metaInfo.indices.push_back(value.asString());
-		auto allFields = metaInfoNode["fields"]["fields"];
-		for (auto value : allFields)
-			result_.metaInfo.fields.push_back(value.asString());
+	if(!metaInfoNode["settings"].isNull())
+		result_.metaInfo.settings = metaInfoNode["settings"].asString();
 		auto allTypeName = metaInfoNode["typeName"]["typeName"];
 		for (auto value : allTypeName)
 			result_.metaInfo.typeName.push_back(value.asString());
+		auto allFields = metaInfoNode["fields"]["fields"];
+		for (auto value : allFields)
+			result_.metaInfo.fields.push_back(value.asString());
+		auto allIndices = metaInfoNode["indices"]["indices"];
+		for (auto value : allIndices)
+			result_.metaInfo.indices.push_back(value.asString());
 
 }
 

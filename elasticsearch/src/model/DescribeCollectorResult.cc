@@ -40,72 +40,72 @@ void DescribeCollectorResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["gmtCreatedTime"].isNull())
-		result_.gmtCreatedTime = resultNode["gmtCreatedTime"].asString();
-	if(!resultNode["gmtUpdateTime"].isNull())
-		result_.gmtUpdateTime = resultNode["gmtUpdateTime"].asString();
-	if(!resultNode["name"].isNull())
-		result_.name = resultNode["name"].asString();
 	if(!resultNode["resId"].isNull())
 		result_.resId = resultNode["resId"].asString();
-	if(!resultNode["resVersion"].isNull())
-		result_.resVersion = resultNode["resVersion"].asString();
+	if(!resultNode["gmtUpdateTime"].isNull())
+		result_.gmtUpdateTime = resultNode["gmtUpdateTime"].asString();
+	if(!resultNode["dryRun"].isNull())
+		result_.dryRun = resultNode["dryRun"].asString() == "true";
+	if(!resultNode["ownerId"].isNull())
+		result_.ownerId = resultNode["ownerId"].asString();
 	if(!resultNode["vpcId"].isNull())
 		result_.vpcId = resultNode["vpcId"].asString();
 	if(!resultNode["resType"].isNull())
 		result_.resType = resultNode["resType"].asString();
-	if(!resultNode["ownerId"].isNull())
-		result_.ownerId = resultNode["ownerId"].asString();
+	if(!resultNode["resVersion"].isNull())
+		result_.resVersion = resultNode["resVersion"].asString();
+	if(!resultNode["gmtCreatedTime"].isNull())
+		result_.gmtCreatedTime = resultNode["gmtCreatedTime"].asString();
 	if(!resultNode["status"].isNull())
 		result_.status = resultNode["status"].asString();
-	if(!resultNode["dryRun"].isNull())
-		result_.dryRun = resultNode["dryRun"].asString() == "true";
+	if(!resultNode["name"].isNull())
+		result_.name = resultNode["name"].asString();
 	auto allconfigsNode = resultNode["configs"]["configsItem"];
 	for (auto resultNodeconfigsconfigsItem : allconfigsNode)
 	{
 		Result::ConfigsItem configsItemObject;
-		if(!resultNodeconfigsconfigsItem["fileName"].isNull())
-			configsItemObject.fileName = resultNodeconfigsconfigsItem["fileName"].asString();
 		if(!resultNodeconfigsconfigsItem["content"].isNull())
 			configsItemObject.content = resultNodeconfigsconfigsItem["content"].asString();
+		if(!resultNodeconfigsconfigsItem["fileName"].isNull())
+			configsItemObject.fileName = resultNodeconfigsconfigsItem["fileName"].asString();
 		result_.configs.push_back(configsItemObject);
 	}
 	auto allextendConfigsNode = resultNode["extendConfigs"]["extendConfigsItem"];
 	for (auto resultNodeextendConfigsextendConfigsItem : allextendConfigsNode)
 	{
 		Result::ExtendConfigsItem extendConfigsItemObject;
-		if(!resultNodeextendConfigsextendConfigsItem["configType"].isNull())
-			extendConfigsItemObject.configType = resultNodeextendConfigsextendConfigsItem["configType"].asString();
-		if(!resultNodeextendConfigsextendConfigsItem["instanceId"].isNull())
-			extendConfigsItemObject.instanceId = resultNodeextendConfigsextendConfigsItem["instanceId"].asString();
-		if(!resultNodeextendConfigsextendConfigsItem["instanceType"].isNull())
-			extendConfigsItemObject.instanceType = resultNodeextendConfigsextendConfigsItem["instanceType"].asString();
+		if(!resultNodeextendConfigsextendConfigsItem["successPodsCount"].isNull())
+			extendConfigsItemObject.successPodsCount = resultNodeextendConfigsextendConfigsItem["successPodsCount"].asString();
 		if(!resultNodeextendConfigsextendConfigsItem["protocol"].isNull())
 			extendConfigsItemObject.protocol = resultNodeextendConfigsextendConfigsItem["protocol"].asString();
 		if(!resultNodeextendConfigsextendConfigsItem["userName"].isNull())
 			extendConfigsItemObject.userName = resultNodeextendConfigsextendConfigsItem["userName"].asString();
-		if(!resultNodeextendConfigsextendConfigsItem["enableMonitoring"].isNull())
-			extendConfigsItemObject.enableMonitoring = resultNodeextendConfigsextendConfigsItem["enableMonitoring"].asString() == "true";
+		if(!resultNodeextendConfigsextendConfigsItem["totalPodsCount"].isNull())
+			extendConfigsItemObject.totalPodsCount = resultNodeextendConfigsextendConfigsItem["totalPodsCount"].asString();
 		if(!resultNodeextendConfigsextendConfigsItem["type"].isNull())
 			extendConfigsItemObject.type = resultNodeextendConfigsextendConfigsItem["type"].asString();
+		if(!resultNodeextendConfigsextendConfigsItem["kibanaHost"].isNull())
+			extendConfigsItemObject.kibanaHost = resultNodeextendConfigsextendConfigsItem["kibanaHost"].asString();
+		if(!resultNodeextendConfigsextendConfigsItem["enableMonitoring"].isNull())
+			extendConfigsItemObject.enableMonitoring = resultNodeextendConfigsextendConfigsItem["enableMonitoring"].asString() == "true";
+		if(!resultNodeextendConfigsextendConfigsItem["configType"].isNull())
+			extendConfigsItemObject.configType = resultNodeextendConfigsextendConfigsItem["configType"].asString();
+		if(!resultNodeextendConfigsextendConfigsItem["instanceType"].isNull())
+			extendConfigsItemObject.instanceType = resultNodeextendConfigsextendConfigsItem["instanceType"].asString();
 		if(!resultNodeextendConfigsextendConfigsItem["groupId"].isNull())
 			extendConfigsItemObject.groupId = resultNodeextendConfigsextendConfigsItem["groupId"].asString();
 		if(!resultNodeextendConfigsextendConfigsItem["host"].isNull())
 			extendConfigsItemObject.host = resultNodeextendConfigsextendConfigsItem["host"].asString();
-		if(!resultNodeextendConfigsextendConfigsItem["kibanaHost"].isNull())
-			extendConfigsItemObject.kibanaHost = resultNodeextendConfigsextendConfigsItem["kibanaHost"].asString();
-		if(!resultNodeextendConfigsextendConfigsItem["totalPodsCount"].isNull())
-			extendConfigsItemObject.totalPodsCount = resultNodeextendConfigsextendConfigsItem["totalPodsCount"].asString();
-		if(!resultNodeextendConfigsextendConfigsItem["successPodsCount"].isNull())
-			extendConfigsItemObject.successPodsCount = resultNodeextendConfigsextendConfigsItem["successPodsCount"].asString();
+		if(!resultNodeextendConfigsextendConfigsItem["instanceId"].isNull())
+			extendConfigsItemObject.instanceId = resultNodeextendConfigsextendConfigsItem["instanceId"].asString();
 		auto allmachinesNode = resultNodeextendConfigsextendConfigsItem["machines"]["machinesItem"];
 		for (auto resultNodeextendConfigsextendConfigsItemmachinesmachinesItem : allmachinesNode)
 		{
 			Result::ExtendConfigsItem::MachinesItem machinesObject;
-			if(!resultNodeextendConfigsextendConfigsItemmachinesmachinesItem["instanceId"].isNull())
-				machinesObject.instanceId = resultNodeextendConfigsextendConfigsItemmachinesmachinesItem["instanceId"].asString();
 			if(!resultNodeextendConfigsextendConfigsItemmachinesmachinesItem["agentStatus"].isNull())
 				machinesObject.agentStatus = resultNodeextendConfigsextendConfigsItemmachinesmachinesItem["agentStatus"].asString();
+			if(!resultNodeextendConfigsextendConfigsItemmachinesmachinesItem["instanceId"].isNull())
+				machinesObject.instanceId = resultNodeextendConfigsextendConfigsItemmachinesmachinesItem["instanceId"].asString();
 			extendConfigsItemObject.machines.push_back(machinesObject);
 		}
 		auto allHosts = value["hosts"]["hosts"];

@@ -43,10 +43,10 @@ void ListTagsResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["TagKey"].isNull())
-			resultObject.tagKey = valueResultResultItem["TagKey"].asString();
 		if(!valueResultResultItem["TagValue"].isNull())
 			resultObject.tagValue = valueResultResultItem["TagValue"].asString();
+		if(!valueResultResultItem["TagKey"].isNull())
+			resultObject.tagKey = valueResultResultItem["TagKey"].asString();
 		result_.push_back(resultObject);
 	}
 

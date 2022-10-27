@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,35 +18,29 @@
 
 using AlibabaCloud::Elasticsearch::Model::ResumeElasticsearchTaskRequest;
 
-ResumeElasticsearchTaskRequest::ResumeElasticsearchTaskRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/actions/resume");
-	setMethod(HttpRequest::Method::Post);
+ResumeElasticsearchTaskRequest::ResumeElasticsearchTaskRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/actions/resume"};
+  setMethod(HttpRequest::Method::Post);
 }
 
-ResumeElasticsearchTaskRequest::~ResumeElasticsearchTaskRequest()
-{}
+ResumeElasticsearchTaskRequest::~ResumeElasticsearchTaskRequest() {}
 
-std::string ResumeElasticsearchTaskRequest::getInstanceId()const
-{
-	return instanceId_;
+string ResumeElasticsearchTaskRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ResumeElasticsearchTaskRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ResumeElasticsearchTaskRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-std::string ResumeElasticsearchTaskRequest::getClientToken()const
-{
-	return clientToken_;
+string ResumeElasticsearchTaskRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void ResumeElasticsearchTaskRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void ResumeElasticsearchTaskRequest::setClientToken(string clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("clientToken"), std::to_string(clientToken));
 }
 

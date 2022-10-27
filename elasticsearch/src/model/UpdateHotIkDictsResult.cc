@@ -43,14 +43,14 @@ void UpdateHotIkDictsResult::parse(const std::string &payload)
 	for (auto valueResultDictList : allResultNode)
 	{
 		DictList resultObject;
-		if(!valueResultDictList["name"].isNull())
-			resultObject.name = valueResultDictList["name"].asString();
 		if(!valueResultDictList["fileSize"].isNull())
 			resultObject.fileSize = std::stol(valueResultDictList["fileSize"].asString());
-		if(!valueResultDictList["type"].isNull())
-			resultObject.type = valueResultDictList["type"].asString();
 		if(!valueResultDictList["sourceType"].isNull())
 			resultObject.sourceType = valueResultDictList["sourceType"].asString();
+		if(!valueResultDictList["name"].isNull())
+			resultObject.name = valueResultDictList["name"].asString();
+		if(!valueResultDictList["type"].isNull())
+			resultObject.type = valueResultDictList["type"].asString();
 		result_.push_back(resultObject);
 	}
 

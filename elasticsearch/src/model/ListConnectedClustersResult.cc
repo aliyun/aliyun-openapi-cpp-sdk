@@ -43,10 +43,10 @@ void ListConnectedClustersResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["instances"].isNull())
-			resultObject.instances = valueResultResultItem["instances"].asString();
 		if(!valueResultResultItem["networkType"].isNull())
 			resultObject.networkType = valueResultResultItem["networkType"].asString();
+		if(!valueResultResultItem["instances"].isNull())
+			resultObject.instances = valueResultResultItem["instances"].asString();
 		result_.push_back(resultObject);
 	}
 

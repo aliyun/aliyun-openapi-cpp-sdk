@@ -40,10 +40,10 @@ void DescribeAckOperatorResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["status"].isNull())
-		result_.status = resultNode["status"].asString();
 	if(!resultNode["version"].isNull())
 		result_.version = resultNode["version"].asString();
+	if(!resultNode["status"].isNull())
+		result_.status = resultNode["status"].asString();
 
 }
 

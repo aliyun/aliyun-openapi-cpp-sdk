@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,101 +18,83 @@
 
 using AlibabaCloud::Elasticsearch::Model::ListDiagnoseReportRequest;
 
-ListDiagnoseReportRequest::ListDiagnoseReportRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/diagnosis/instances/[InstanceId]/reports");
-	setMethod(HttpRequest::Method::Get);
+ListDiagnoseReportRequest::ListDiagnoseReportRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/diagnosis/instances/[InstanceId]/reports"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListDiagnoseReportRequest::~ListDiagnoseReportRequest()
-{}
+ListDiagnoseReportRequest::~ListDiagnoseReportRequest() {}
 
-std::string ListDiagnoseReportRequest::getInstanceId()const
-{
-	return instanceId_;
+string ListDiagnoseReportRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ListDiagnoseReportRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ListDiagnoseReportRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-int ListDiagnoseReportRequest::getSize()const
-{
-	return size_;
+integer ListDiagnoseReportRequest::getSize() const {
+  return size_;
 }
 
-void ListDiagnoseReportRequest::setSize(int size)
-{
-	size_ = size;
-	setParameter("Size", std::to_string(size));
+void ListDiagnoseReportRequest::setSize(integer size) {
+  size_ = size;
+  setParameter(std::string("size"), std::to_string(size));
 }
 
-long ListDiagnoseReportRequest::getEndTime()const
-{
-	return endTime_;
+integer ListDiagnoseReportRequest::getEndTime() const {
+  return endTime_;
 }
 
-void ListDiagnoseReportRequest::setEndTime(long endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+void ListDiagnoseReportRequest::setEndTime(integer endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("endTime"), std::to_string(endTime));
 }
 
-long ListDiagnoseReportRequest::getStartTime()const
-{
-	return startTime_;
+integer ListDiagnoseReportRequest::getStartTime() const {
+  return startTime_;
 }
 
-void ListDiagnoseReportRequest::setStartTime(long startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", std::to_string(startTime));
+void ListDiagnoseReportRequest::setStartTime(integer startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("startTime"), std::to_string(startTime));
 }
 
-int ListDiagnoseReportRequest::getPage()const
-{
-	return page_;
+integer ListDiagnoseReportRequest::getPage() const {
+  return page_;
 }
 
-void ListDiagnoseReportRequest::setPage(int page)
-{
-	page_ = page;
-	setParameter("Page", std::to_string(page));
+void ListDiagnoseReportRequest::setPage(integer page) {
+  page_ = page;
+  setParameter(std::string("page"), std::to_string(page));
 }
 
-bool ListDiagnoseReportRequest::getDetail()const
-{
-	return detail_;
+boolean ListDiagnoseReportRequest::getDetail() const {
+  return detail_;
 }
 
-void ListDiagnoseReportRequest::setDetail(bool detail)
-{
-	detail_ = detail;
-	setParameter("Detail", detail ? "true" : "false");
+void ListDiagnoseReportRequest::setDetail(boolean detail) {
+  detail_ = detail;
+  setParameter(std::string("detail"), std::to_string(detail));
 }
 
-std::string ListDiagnoseReportRequest::getTrigger()const
-{
-	return trigger_;
+string ListDiagnoseReportRequest::getTrigger() const {
+  return trigger_;
 }
 
-void ListDiagnoseReportRequest::setTrigger(const std::string& trigger)
-{
-	trigger_ = trigger;
-	setParameter("Trigger", trigger);
+void ListDiagnoseReportRequest::setTrigger(string trigger) {
+  trigger_ = trigger;
+  setParameter(std::string("trigger"), std::to_string(trigger));
 }
 
-std::string ListDiagnoseReportRequest::getLang()const
-{
-	return lang_;
+string ListDiagnoseReportRequest::getLang() const {
+  return lang_;
 }
 
-void ListDiagnoseReportRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void ListDiagnoseReportRequest::setLang(string lang) {
+  lang_ = lang;
+  setParameter(std::string("lang"), std::to_string(lang));
 }
 

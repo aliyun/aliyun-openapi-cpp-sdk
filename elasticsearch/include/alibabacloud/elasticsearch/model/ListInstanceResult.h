@@ -78,6 +78,7 @@ namespace AlibabaCloud
 					{
 						std::string diskType;
 						bool diskEncryption;
+						std::string performanceLevel;
 						std::string spec;
 						int disk;
 					};
@@ -97,8 +98,8 @@ namespace AlibabaCloud
 					std::string createdAt;
 					NetworkConfig networkConfig;
 					std::string isNewDeployment;
-					std::string esVersion;
 					int nodeAmount;
+					std::string esVersion;
 					std::string updatedAt;
 					std::vector<Instance::Tag> tags;
 					KibanaConfiguration kibanaConfiguration;
@@ -106,6 +107,7 @@ namespace AlibabaCloud
 					NodeSpec nodeSpec;
 					bool serviceVpc;
 					std::string paymentType;
+					std::string vpcInstanceId;
 					std::string postpaidServiceStatus;
 					ClientNodeConfiguration clientNodeConfiguration;
 				};

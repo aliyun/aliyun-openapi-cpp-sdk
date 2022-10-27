@@ -43,14 +43,14 @@ void ListSnapshotReposByInstanceIdResult::parse(const std::string &payload)
 	for (auto valueResultrepo : allResultNode)
 	{
 		Repo resultObject;
-		if(!valueResultrepo["instanceId"].isNull())
-			resultObject.instanceId = valueResultrepo["instanceId"].asString();
 		if(!valueResultrepo["snapWarehouse"].isNull())
 			resultObject.snapWarehouse = valueResultrepo["snapWarehouse"].asString();
 		if(!valueResultrepo["repoPath"].isNull())
 			resultObject.repoPath = valueResultrepo["repoPath"].asString();
 		if(!valueResultrepo["status"].isNull())
 			resultObject.status = valueResultrepo["status"].asString();
+		if(!valueResultrepo["instanceId"].isNull())
+			resultObject.instanceId = valueResultrepo["instanceId"].asString();
 		result_.push_back(resultObject);
 	}
 

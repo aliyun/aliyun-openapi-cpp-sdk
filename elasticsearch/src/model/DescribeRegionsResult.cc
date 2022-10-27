@@ -45,14 +45,14 @@ void DescribeRegionsResult::parse(const std::string &payload)
 		RegionInfo resultObject;
 		if(!valueResultregionInfo["regionId"].isNull())
 			resultObject.regionId = valueResultregionInfo["regionId"].asString();
+		if(!valueResultregionInfo["status"].isNull())
+			resultObject.status = valueResultregionInfo["status"].asString();
 		if(!valueResultregionInfo["regionEndpoint"].isNull())
 			resultObject.regionEndpoint = valueResultregionInfo["regionEndpoint"].asString();
 		if(!valueResultregionInfo["localName"].isNull())
 			resultObject.localName = valueResultregionInfo["localName"].asString();
 		if(!valueResultregionInfo["consoleEndpoint"].isNull())
 			resultObject.consoleEndpoint = valueResultregionInfo["consoleEndpoint"].asString();
-		if(!valueResultregionInfo["status"].isNull())
-			resultObject.status = valueResultregionInfo["status"].asString();
 		result_.push_back(resultObject);
 	}
 

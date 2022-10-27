@@ -44,14 +44,8 @@ void CreateDataTasksResult::parse(const std::string &payload)
 	{
 		ResultItem resultObject;
 		auto sourceClusterNode = value["sourceCluster"];
-		if(!sourceClusterNode["dataSourceType"].isNull())
-			resultObject.sourceCluster.dataSourceType = sourceClusterNode["dataSourceType"].asString();
-		if(!sourceClusterNode["vpcInstancePort"].isNull())
-			resultObject.sourceCluster.vpcInstancePort = std::stoi(sourceClusterNode["vpcInstancePort"].asString());
-		if(!sourceClusterNode["vpcId"].isNull())
-			resultObject.sourceCluster.vpcId = sourceClusterNode["vpcId"].asString();
-		if(!sourceClusterNode["vpcInstanceId"].isNull())
-			resultObject.sourceCluster.vpcInstanceId = sourceClusterNode["vpcInstanceId"].asString();
+		if(!sourceClusterNode["password"].isNull())
+			resultObject.sourceCluster.password = sourceClusterNode["password"].asString();
 		if(!sourceClusterNode["index"].isNull())
 			resultObject.sourceCluster.index = sourceClusterNode["index"].asString();
 		if(!sourceClusterNode["type"].isNull())
@@ -60,31 +54,37 @@ void CreateDataTasksResult::parse(const std::string &payload)
 			resultObject.sourceCluster.endpoint = sourceClusterNode["endpoint"].asString();
 		if(!sourceClusterNode["username"].isNull())
 			resultObject.sourceCluster.username = sourceClusterNode["username"].asString();
-		if(!sourceClusterNode["password"].isNull())
-			resultObject.sourceCluster.password = sourceClusterNode["password"].asString();
+		if(!sourceClusterNode["vpcId"].isNull())
+			resultObject.sourceCluster.vpcId = sourceClusterNode["vpcId"].asString();
+		if(!sourceClusterNode["vpcInstanceId"].isNull())
+			resultObject.sourceCluster.vpcInstanceId = sourceClusterNode["vpcInstanceId"].asString();
+		if(!sourceClusterNode["vpcInstancePort"].isNull())
+			resultObject.sourceCluster.vpcInstancePort = std::stoi(sourceClusterNode["vpcInstancePort"].asString());
+		if(!sourceClusterNode["dataSourceType"].isNull())
+			resultObject.sourceCluster.dataSourceType = sourceClusterNode["dataSourceType"].asString();
 		auto sinkClusterNode = value["sinkCluster"];
-		if(!sinkClusterNode["dataSourceType"].isNull())
-			resultObject.sinkCluster.dataSourceType = sinkClusterNode["dataSourceType"].asString();
+		if(!sinkClusterNode["password"].isNull())
+			resultObject.sinkCluster.password = sinkClusterNode["password"].asString();
 		if(!sinkClusterNode["index"].isNull())
 			resultObject.sinkCluster.index = sinkClusterNode["index"].asString();
-		if(!sinkClusterNode["type"].isNull())
-			resultObject.sinkCluster.type = sinkClusterNode["type"].asString();
 		if(!sinkClusterNode["settings"].isNull())
 			resultObject.sinkCluster.settings = sinkClusterNode["settings"].asString();
 		if(!sinkClusterNode["mapping"].isNull())
 			resultObject.sinkCluster.mapping = sinkClusterNode["mapping"].asString();
+		if(!sinkClusterNode["type"].isNull())
+			resultObject.sinkCluster.type = sinkClusterNode["type"].asString();
 		if(!sinkClusterNode["routing"].isNull())
 			resultObject.sinkCluster.routing = sinkClusterNode["routing"].asString();
-		if(!sinkClusterNode["vpcId"].isNull())
-			resultObject.sinkCluster.vpcId = sinkClusterNode["vpcId"].asString();
-		if(!sinkClusterNode["vpcInstanceId"].isNull())
-			resultObject.sinkCluster.vpcInstanceId = sinkClusterNode["vpcInstanceId"].asString();
-		if(!sinkClusterNode["vpcInstancePort"].isNull())
-			resultObject.sinkCluster.vpcInstancePort = sinkClusterNode["vpcInstancePort"].asString();
 		if(!sinkClusterNode["username"].isNull())
 			resultObject.sinkCluster.username = sinkClusterNode["username"].asString();
-		if(!sinkClusterNode["password"].isNull())
-			resultObject.sinkCluster.password = sinkClusterNode["password"].asString();
+		if(!sinkClusterNode["vpcId"].isNull())
+			resultObject.sinkCluster.vpcId = sinkClusterNode["vpcId"].asString();
+		if(!sinkClusterNode["vpcInstancePort"].isNull())
+			resultObject.sinkCluster.vpcInstancePort = sinkClusterNode["vpcInstancePort"].asString();
+		if(!sinkClusterNode["vpcInstanceId"].isNull())
+			resultObject.sinkCluster.vpcInstanceId = sinkClusterNode["vpcInstanceId"].asString();
+		if(!sinkClusterNode["dataSourceType"].isNull())
+			resultObject.sinkCluster.dataSourceType = sinkClusterNode["dataSourceType"].asString();
 		result_.push_back(resultObject);
 	}
 

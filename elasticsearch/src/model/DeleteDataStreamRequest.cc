@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,38 @@
 
 using AlibabaCloud::Elasticsearch::Model::DeleteDataStreamRequest;
 
-DeleteDataStreamRequest::DeleteDataStreamRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/data-streams/[DataStream]");
-	setMethod(HttpRequest::Method::Delete);
+DeleteDataStreamRequest::DeleteDataStreamRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/data-streams/[DataStream]"};
+  setMethod(HttpRequest::Method::Delete);
 }
 
-DeleteDataStreamRequest::~DeleteDataStreamRequest()
-{}
+DeleteDataStreamRequest::~DeleteDataStreamRequest() {}
 
-std::string DeleteDataStreamRequest::getDataStream()const
-{
-	return dataStream_;
+string DeleteDataStreamRequest::getDataStream() const {
+  return dataStream_;
 }
 
-void DeleteDataStreamRequest::setDataStream(const std::string& dataStream)
-{
-	dataStream_ = dataStream;
-	setParameter("DataStream", dataStream);
+void DeleteDataStreamRequest::setDataStream(string dataStream) {
+  dataStream_ = dataStream;
+  setParameter(std::string("DataStream"), std::to_string(dataStream));
 }
 
-std::string DeleteDataStreamRequest::getInstanceId()const
-{
-	return instanceId_;
+string DeleteDataStreamRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void DeleteDataStreamRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void DeleteDataStreamRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-std::string DeleteDataStreamRequest::getClientToken()const
-{
-	return clientToken_;
+string DeleteDataStreamRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void DeleteDataStreamRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void DeleteDataStreamRequest::setClientToken(string clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), std::to_string(clientToken));
 }
 

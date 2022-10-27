@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,24 +18,20 @@
 
 using AlibabaCloud::Elasticsearch::Model::DescribeCollectorRequest;
 
-DescribeCollectorRequest::DescribeCollectorRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/collectors/[ResId]");
-	setMethod(HttpRequest::Method::Get);
+DescribeCollectorRequest::DescribeCollectorRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/collectors/[ResId]"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-DescribeCollectorRequest::~DescribeCollectorRequest()
-{}
+DescribeCollectorRequest::~DescribeCollectorRequest() {}
 
-std::string DescribeCollectorRequest::getResId()const
-{
-	return resId_;
+string DescribeCollectorRequest::getResId() const {
+  return resId_;
 }
 
-void DescribeCollectorRequest::setResId(const std::string& resId)
-{
-	resId_ = resId;
-	setParameter("ResId", resId);
+void DescribeCollectorRequest::setResId(string resId) {
+  resId_ = resId;
+  setParameter(std::string("ResId"), std::to_string(resId));
 }
 

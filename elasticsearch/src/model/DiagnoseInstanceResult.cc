@@ -40,14 +40,14 @@ void DiagnoseInstanceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["reportId"].isNull())
-		result_.reportId = resultNode["reportId"].asString();
-	if(!resultNode["instanceId"].isNull())
-		result_.instanceId = resultNode["instanceId"].asString();
-	if(!resultNode["state"].isNull())
-		result_.state = resultNode["state"].asString();
 	if(!resultNode["createTime"].isNull())
 		result_.createTime = std::stol(resultNode["createTime"].asString());
+	if(!resultNode["reportId"].isNull())
+		result_.reportId = resultNode["reportId"].asString();
+	if(!resultNode["state"].isNull())
+		result_.state = resultNode["state"].asString();
+	if(!resultNode["instanceId"].isNull())
+		result_.instanceId = resultNode["instanceId"].asString();
 	auto alldiagnoseItemsNode = resultNode["diagnoseItems"]["diagnoseItemsItem"];
 	for (auto resultNodediagnoseItemsdiagnoseItemsItem : alldiagnoseItemsNode)
 	{
@@ -57,16 +57,16 @@ void DiagnoseInstanceResult::parse(const std::string &payload)
 		if(!resultNodediagnoseItemsdiagnoseItemsItem["health"].isNull())
 			diagnoseItemsItemObject.health = resultNodediagnoseItemsdiagnoseItemsItem["health"].asString();
 		auto detailNode = value["detail"];
+		if(!detailNode["type"].isNull())
+			diagnoseItemsItemObject.detail.type = detailNode["type"].asString();
 		if(!detailNode["name"].isNull())
 			diagnoseItemsItemObject.detail.name = detailNode["name"].asString();
 		if(!detailNode["desc"].isNull())
 			diagnoseItemsItemObject.detail.desc = detailNode["desc"].asString();
-		if(!detailNode["type"].isNull())
-			diagnoseItemsItemObject.detail.type = detailNode["type"].asString();
-		if(!detailNode["suggest"].isNull())
-			diagnoseItemsItemObject.detail.suggest = detailNode["suggest"].asString();
 		if(!detailNode["result"].isNull())
 			diagnoseItemsItemObject.detail.result = detailNode["result"].asString();
+		if(!detailNode["suggest"].isNull())
+			diagnoseItemsItemObject.detail.suggest = detailNode["suggest"].asString();
 		result_.diagnoseItems.push_back(diagnoseItemsItemObject);
 	}
 

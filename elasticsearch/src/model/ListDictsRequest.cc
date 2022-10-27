@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,38 @@
 
 using AlibabaCloud::Elasticsearch::Model::ListDictsRequest;
 
-ListDictsRequest::ListDictsRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/dicts");
-	setMethod(HttpRequest::Method::Get);
+ListDictsRequest::ListDictsRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/dicts"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListDictsRequest::~ListDictsRequest()
-{}
+ListDictsRequest::~ListDictsRequest() {}
 
-std::string ListDictsRequest::getInstanceId()const
-{
-	return instanceId_;
+string ListDictsRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ListDictsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ListDictsRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-std::string ListDictsRequest::getAnalyzerType()const
-{
-	return analyzerType_;
+string ListDictsRequest::getAnalyzerType() const {
+  return analyzerType_;
 }
 
-void ListDictsRequest::setAnalyzerType(const std::string& analyzerType)
-{
-	analyzerType_ = analyzerType;
-	setParameter("AnalyzerType", analyzerType);
+void ListDictsRequest::setAnalyzerType(string analyzerType) {
+  analyzerType_ = analyzerType;
+  setParameter(std::string("analyzerType"), std::to_string(analyzerType));
 }
 
-std::string ListDictsRequest::getName()const
-{
-	return name_;
+string ListDictsRequest::getName() const {
+  return name_;
 }
 
-void ListDictsRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
+void ListDictsRequest::setName(string name) {
+  name_ = name;
+  setParameter(std::string("name"), std::to_string(name));
 }
 

@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct Result
 				{
 					std::string endpoints;
-					std::string pipelineManagementType;
 					std::string userName;
+					std::string pipelineManagementType;
 					std::string esInstanceId;
 					std::vector<std::string> pipelineIds;
 				};

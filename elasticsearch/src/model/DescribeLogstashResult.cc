@@ -40,38 +40,38 @@ void DescribeLogstashResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["instanceId"].isNull())
-		result_.instanceId = resultNode["instanceId"].asString();
-	if(!resultNode["description"].isNull())
-		result_.description = resultNode["description"].asString();
-	if(!resultNode["nodeAmount"].isNull())
-		result_.nodeAmount = std::stoi(resultNode["nodeAmount"].asString());
-	if(!resultNode["paymentType"].isNull())
-		result_.paymentType = resultNode["paymentType"].asString();
-	if(!resultNode["status"].isNull())
-		result_.status = resultNode["status"].asString();
-	if(!resultNode["version"].isNull())
-		result_.version = resultNode["version"].asString();
-	if(!resultNode["createdAt"].isNull())
-		result_.createdAt = resultNode["createdAt"].asString();
-	if(!resultNode["updatedAt"].isNull())
-		result_.updatedAt = resultNode["updatedAt"].asString();
-	if(!resultNode["vpcInstanceId"].isNull())
-		result_.vpcInstanceId = resultNode["vpcInstanceId"].asString();
 	if(!resultNode["config"].isNull())
 		result_.config = resultNode["config"].asString();
+	if(!resultNode["paymentType"].isNull())
+		result_.paymentType = resultNode["paymentType"].asString();
 	if(!resultNode["ResourceGroupId"].isNull())
 		result_.resourceGroupId = resultNode["ResourceGroupId"].asString();
+	if(!resultNode["nodeAmount"].isNull())
+		result_.nodeAmount = std::stoi(resultNode["nodeAmount"].asString());
+	if(!resultNode["description"].isNull())
+		result_.description = resultNode["description"].asString();
+	if(!resultNode["createdAt"].isNull())
+		result_.createdAt = resultNode["createdAt"].asString();
+	if(!resultNode["status"].isNull())
+		result_.status = resultNode["status"].asString();
+	if(!resultNode["vpcInstanceId"].isNull())
+		result_.vpcInstanceId = resultNode["vpcInstanceId"].asString();
+	if(!resultNode["updatedAt"].isNull())
+		result_.updatedAt = resultNode["updatedAt"].asString();
+	if(!resultNode["version"].isNull())
+		result_.version = resultNode["version"].asString();
+	if(!resultNode["instanceId"].isNull())
+		result_.instanceId = resultNode["instanceId"].asString();
 	auto allendpointListNode = resultNode["endpointList"]["endpoint"];
 	for (auto resultNodeendpointListendpoint : allendpointListNode)
 	{
 		Result::Endpoint endpointObject;
-		if(!resultNodeendpointListendpoint["host"].isNull())
-			endpointObject.host = resultNodeendpointListendpoint["host"].asString();
-		if(!resultNodeendpointListendpoint["port"].isNull())
-			endpointObject.port = resultNodeendpointListendpoint["port"].asString();
 		if(!resultNodeendpointListendpoint["zoneId"].isNull())
 			endpointObject.zoneId = resultNodeendpointListendpoint["zoneId"].asString();
+		if(!resultNodeendpointListendpoint["port"].isNull())
+			endpointObject.port = resultNodeendpointListendpoint["port"].asString();
+		if(!resultNodeendpointListendpoint["host"].isNull())
+			endpointObject.host = resultNodeendpointListendpoint["host"].asString();
 		result_.endpointList.push_back(endpointObject);
 	}
 	auto allTagsNode = resultNode["Tags"]["tagsItem"];
@@ -88,10 +88,10 @@ void DescribeLogstashResult::parse(const std::string &payload)
 	for (auto resultNodeZoneInfoszoneInfosItem : allZoneInfosNode)
 	{
 		Result::ZoneInfosItem zoneInfosItemObject;
-		if(!resultNodeZoneInfoszoneInfosItem["zoneId"].isNull())
-			zoneInfosItemObject.zoneId = resultNodeZoneInfoszoneInfosItem["zoneId"].asString();
 		if(!resultNodeZoneInfoszoneInfosItem["status"].isNull())
 			zoneInfosItemObject.status = resultNodeZoneInfoszoneInfosItem["status"].asString();
+		if(!resultNodeZoneInfoszoneInfosItem["zoneId"].isNull())
+			zoneInfosItemObject.zoneId = resultNodeZoneInfoszoneInfosItem["zoneId"].asString();
 		result_.zoneInfos.push_back(zoneInfosItemObject);
 	}
 	auto nodeSpecNode = resultNode["nodeSpec"];
@@ -99,19 +99,19 @@ void DescribeLogstashResult::parse(const std::string &payload)
 		result_.nodeSpec.spec = nodeSpecNode["spec"].asString();
 	if(!nodeSpecNode["disk"].isNull())
 		result_.nodeSpec.disk = std::stoi(nodeSpecNode["disk"].asString());
-	if(!nodeSpecNode["diskType"].isNull())
-		result_.nodeSpec.diskType = nodeSpecNode["diskType"].asString();
 	if(!nodeSpecNode["diskEncryption"].isNull())
 		result_.nodeSpec.diskEncryption = nodeSpecNode["diskEncryption"].asString() == "true";
+	if(!nodeSpecNode["diskType"].isNull())
+		result_.nodeSpec.diskType = nodeSpecNode["diskType"].asString();
 	auto networkConfigNode = resultNode["networkConfig"];
-	if(!networkConfigNode["type"].isNull())
-		result_.networkConfig.type = networkConfigNode["type"].asString();
 	if(!networkConfigNode["vpcId"].isNull())
 		result_.networkConfig.vpcId = networkConfigNode["vpcId"].asString();
-	if(!networkConfigNode["vswitchId"].isNull())
-		result_.networkConfig.vswitchId = networkConfigNode["vswitchId"].asString();
 	if(!networkConfigNode["vsArea"].isNull())
 		result_.networkConfig.vsArea = networkConfigNode["vsArea"].asString();
+	if(!networkConfigNode["type"].isNull())
+		result_.networkConfig.type = networkConfigNode["type"].asString();
+	if(!networkConfigNode["vswitchId"].isNull())
+		result_.networkConfig.vswitchId = networkConfigNode["vswitchId"].asString();
 		auto allExtendConfigs = resultNode["ExtendConfigs"]["extendConfigs"];
 		for (auto value : allExtendConfigs)
 			result_.extendConfigs.push_back(value.asString());

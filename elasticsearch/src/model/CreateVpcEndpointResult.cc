@@ -40,14 +40,14 @@ void CreateVpcEndpointResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["endpointId"].isNull())
-		result_.endpointId = resultNode["endpointId"].asString();
-	if(!resultNode["endpointName"].isNull())
-		result_.endpointName = resultNode["endpointName"].asString();
 	if(!resultNode["serviceId"].isNull())
 		result_.serviceId = resultNode["serviceId"].asString();
 	if(!resultNode["endpointDomain"].isNull())
 		result_.endpointDomain = resultNode["endpointDomain"].asString();
+	if(!resultNode["endpointId"].isNull())
+		result_.endpointId = resultNode["endpointId"].asString();
+	if(!resultNode["endpointName"].isNull())
+		result_.endpointName = resultNode["endpointName"].asString();
 
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,24 +18,29 @@
 
 using AlibabaCloud::Elasticsearch::Model::ListPipelineIdsRequest;
 
-ListPipelineIdsRequest::ListPipelineIdsRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/pipeline-ids");
-	setMethod(HttpRequest::Method::Post);
+ListPipelineIdsRequest::ListPipelineIdsRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/pipeline-ids"};
+  setMethod(HttpRequest::Method::Post);
 }
 
-ListPipelineIdsRequest::~ListPipelineIdsRequest()
-{}
+ListPipelineIdsRequest::~ListPipelineIdsRequest() {}
 
-std::string ListPipelineIdsRequest::getInstanceId()const
-{
-	return instanceId_;
+string ListPipelineIdsRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ListPipelineIdsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ListPipelineIdsRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
+}
+
+string ListPipelineIdsRequest::getBody() const {
+  return body_;
+}
+
+void ListPipelineIdsRequest::setBody(string body) {
+  body_ = body;
+  setBodyParameter(std::string("body"), std::to_string(body));
 }
 

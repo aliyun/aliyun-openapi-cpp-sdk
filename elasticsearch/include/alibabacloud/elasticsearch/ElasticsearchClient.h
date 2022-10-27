@@ -44,6 +44,8 @@
 #include "model/CloseManagedIndexResult.h"
 #include "model/CreateCollectorRequest.h"
 #include "model/CreateCollectorResult.h"
+#include "model/CreateComponentIndexRequest.h"
+#include "model/CreateComponentIndexResult.h"
 #include "model/CreateDataStreamRequest.h"
 #include "model/CreateDataStreamResult.h"
 #include "model/CreateDataTasksRequest.h"
@@ -66,12 +68,16 @@
 #include "model/DeactivateZonesResult.h"
 #include "model/DeleteCollectorRequest.h"
 #include "model/DeleteCollectorResult.h"
+#include "model/DeleteComponentIndexRequest.h"
+#include "model/DeleteComponentIndexResult.h"
 #include "model/DeleteConnectedClusterRequest.h"
 #include "model/DeleteConnectedClusterResult.h"
 #include "model/DeleteDataStreamRequest.h"
 #include "model/DeleteDataStreamResult.h"
 #include "model/DeleteDataTaskRequest.h"
 #include "model/DeleteDataTaskResult.h"
+#include "model/DeleteDeprecatedTemplateRequest.h"
+#include "model/DeleteDeprecatedTemplateResult.h"
 #include "model/DeleteILMPolicyRequest.h"
 #include "model/DeleteILMPolicyResult.h"
 #include "model/DeleteIndexTemplateRequest.h"
@@ -92,12 +98,18 @@
 #include "model/DescribeApmResult.h"
 #include "model/DescribeCollectorRequest.h"
 #include "model/DescribeCollectorResult.h"
+#include "model/DescribeComponentIndexRequest.h"
+#include "model/DescribeComponentIndexResult.h"
 #include "model/DescribeConnectableClustersRequest.h"
 #include "model/DescribeConnectableClustersResult.h"
+#include "model/DescribeDeprecatedTemplateRequest.h"
+#include "model/DescribeDeprecatedTemplateResult.h"
 #include "model/DescribeDiagnoseReportRequest.h"
 #include "model/DescribeDiagnoseReportResult.h"
 #include "model/DescribeDiagnosisSettingsRequest.h"
 #include "model/DescribeDiagnosisSettingsResult.h"
+#include "model/DescribeDynamicSettingsRequest.h"
+#include "model/DescribeDynamicSettingsResult.h"
 #include "model/DescribeElasticsearchHealthRequest.h"
 #include "model/DescribeElasticsearchHealthResult.h"
 #include "model/DescribeILMPolicyRequest.h"
@@ -166,6 +178,8 @@
 #include "model/ListAckClustersResult.h"
 #include "model/ListAckNamespacesRequest.h"
 #include "model/ListAckNamespacesResult.h"
+#include "model/ListActionRecordsRequest.h"
+#include "model/ListActionRecordsResult.h"
 #include "model/ListAllNodeRequest.h"
 #include "model/ListAllNodeResult.h"
 #include "model/ListAlternativeSnapshotReposRequest.h"
@@ -176,6 +190,8 @@
 #include "model/ListAvailableEsInstanceIdsResult.h"
 #include "model/ListCollectorsRequest.h"
 #include "model/ListCollectorsResult.h"
+#include "model/ListComponentIndicesRequest.h"
+#include "model/ListComponentIndicesResult.h"
 #include "model/ListConnectedClustersRequest.h"
 #include "model/ListConnectedClustersResult.h"
 #include "model/ListDataStreamsRequest.h"
@@ -184,6 +200,8 @@
 #include "model/ListDataTasksResult.h"
 #include "model/ListDefaultCollectorConfigurationsRequest.h"
 #include "model/ListDefaultCollectorConfigurationsResult.h"
+#include "model/ListDeprecatedTemplatesRequest.h"
+#include "model/ListDeprecatedTemplatesResult.h"
 #include "model/ListDiagnoseIndicesRequest.h"
 #include "model/ListDiagnoseIndicesResult.h"
 #include "model/ListDiagnoseReportRequest.h"
@@ -204,6 +222,8 @@
 #include "model/ListIndexTemplatesResult.h"
 #include "model/ListInstanceRequest.h"
 #include "model/ListInstanceResult.h"
+#include "model/ListInstanceHistoryEventsRequest.h"
+#include "model/ListInstanceHistoryEventsResult.h"
 #include "model/ListInstanceIndicesRequest.h"
 #include "model/ListInstanceIndicesResult.h"
 #include "model/ListKibanaPluginsRequest.h"
@@ -316,12 +336,16 @@
 #include "model/UpdateCollectorResult.h"
 #include "model/UpdateCollectorNameRequest.h"
 #include "model/UpdateCollectorNameResult.h"
+#include "model/UpdateComponentIndexRequest.h"
+#include "model/UpdateComponentIndexResult.h"
 #include "model/UpdateDescriptionRequest.h"
 #include "model/UpdateDescriptionResult.h"
 #include "model/UpdateDiagnosisSettingsRequest.h"
 #include "model/UpdateDiagnosisSettingsResult.h"
 #include "model/UpdateDictRequest.h"
 #include "model/UpdateDictResult.h"
+#include "model/UpdateDynamicSettingsRequest.h"
+#include "model/UpdateDynamicSettingsResult.h"
 #include "model/UpdateExtendConfigRequest.h"
 #include "model/UpdateExtendConfigResult.h"
 #include "model/UpdateExtendfilesRequest.h"
@@ -424,6 +448,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCollectorResult> CreateCollectorOutcome;
 			typedef std::future<CreateCollectorOutcome> CreateCollectorOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CreateCollectorRequest&, const CreateCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCollectorAsyncHandler;
+			typedef Outcome<Error, Model::CreateComponentIndexResult> CreateComponentIndexOutcome;
+			typedef std::future<CreateComponentIndexOutcome> CreateComponentIndexOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::CreateComponentIndexRequest&, const CreateComponentIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateComponentIndexAsyncHandler;
 			typedef Outcome<Error, Model::CreateDataStreamResult> CreateDataStreamOutcome;
 			typedef std::future<CreateDataStreamOutcome> CreateDataStreamOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::CreateDataStreamRequest&, const CreateDataStreamOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataStreamAsyncHandler;
@@ -457,6 +484,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteCollectorResult> DeleteCollectorOutcome;
 			typedef std::future<DeleteCollectorOutcome> DeleteCollectorOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteCollectorRequest&, const DeleteCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCollectorAsyncHandler;
+			typedef Outcome<Error, Model::DeleteComponentIndexResult> DeleteComponentIndexOutcome;
+			typedef std::future<DeleteComponentIndexOutcome> DeleteComponentIndexOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteComponentIndexRequest&, const DeleteComponentIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteComponentIndexAsyncHandler;
 			typedef Outcome<Error, Model::DeleteConnectedClusterResult> DeleteConnectedClusterOutcome;
 			typedef std::future<DeleteConnectedClusterOutcome> DeleteConnectedClusterOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteConnectedClusterRequest&, const DeleteConnectedClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteConnectedClusterAsyncHandler;
@@ -466,6 +496,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDataTaskResult> DeleteDataTaskOutcome;
 			typedef std::future<DeleteDataTaskOutcome> DeleteDataTaskOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteDataTaskRequest&, const DeleteDataTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDataTaskAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDeprecatedTemplateResult> DeleteDeprecatedTemplateOutcome;
+			typedef std::future<DeleteDeprecatedTemplateOutcome> DeleteDeprecatedTemplateOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteDeprecatedTemplateRequest&, const DeleteDeprecatedTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeprecatedTemplateAsyncHandler;
 			typedef Outcome<Error, Model::DeleteILMPolicyResult> DeleteILMPolicyOutcome;
 			typedef std::future<DeleteILMPolicyOutcome> DeleteILMPolicyOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DeleteILMPolicyRequest&, const DeleteILMPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteILMPolicyAsyncHandler;
@@ -496,15 +529,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCollectorResult> DescribeCollectorOutcome;
 			typedef std::future<DescribeCollectorOutcome> DescribeCollectorOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeCollectorRequest&, const DescribeCollectorOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCollectorAsyncHandler;
+			typedef Outcome<Error, Model::DescribeComponentIndexResult> DescribeComponentIndexOutcome;
+			typedef std::future<DescribeComponentIndexOutcome> DescribeComponentIndexOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeComponentIndexRequest&, const DescribeComponentIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeComponentIndexAsyncHandler;
 			typedef Outcome<Error, Model::DescribeConnectableClustersResult> DescribeConnectableClustersOutcome;
 			typedef std::future<DescribeConnectableClustersOutcome> DescribeConnectableClustersOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeConnectableClustersRequest&, const DescribeConnectableClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConnectableClustersAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDeprecatedTemplateResult> DescribeDeprecatedTemplateOutcome;
+			typedef std::future<DescribeDeprecatedTemplateOutcome> DescribeDeprecatedTemplateOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeDeprecatedTemplateRequest&, const DescribeDeprecatedTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeprecatedTemplateAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDiagnoseReportResult> DescribeDiagnoseReportOutcome;
 			typedef std::future<DescribeDiagnoseReportOutcome> DescribeDiagnoseReportOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeDiagnoseReportRequest&, const DescribeDiagnoseReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnoseReportAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDiagnosisSettingsResult> DescribeDiagnosisSettingsOutcome;
 			typedef std::future<DescribeDiagnosisSettingsOutcome> DescribeDiagnosisSettingsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeDiagnosisSettingsRequest&, const DescribeDiagnosisSettingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnosisSettingsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDynamicSettingsResult> DescribeDynamicSettingsOutcome;
+			typedef std::future<DescribeDynamicSettingsOutcome> DescribeDynamicSettingsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeDynamicSettingsRequest&, const DescribeDynamicSettingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDynamicSettingsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeElasticsearchHealthResult> DescribeElasticsearchHealthOutcome;
 			typedef std::future<DescribeElasticsearchHealthOutcome> DescribeElasticsearchHealthOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::DescribeElasticsearchHealthRequest&, const DescribeElasticsearchHealthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeElasticsearchHealthAsyncHandler;
@@ -607,6 +649,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListAckNamespacesResult> ListAckNamespacesOutcome;
 			typedef std::future<ListAckNamespacesOutcome> ListAckNamespacesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListAckNamespacesRequest&, const ListAckNamespacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAckNamespacesAsyncHandler;
+			typedef Outcome<Error, Model::ListActionRecordsResult> ListActionRecordsOutcome;
+			typedef std::future<ListActionRecordsOutcome> ListActionRecordsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListActionRecordsRequest&, const ListActionRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListActionRecordsAsyncHandler;
 			typedef Outcome<Error, Model::ListAllNodeResult> ListAllNodeOutcome;
 			typedef std::future<ListAllNodeOutcome> ListAllNodeOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListAllNodeRequest&, const ListAllNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAllNodeAsyncHandler;
@@ -622,6 +667,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListCollectorsResult> ListCollectorsOutcome;
 			typedef std::future<ListCollectorsOutcome> ListCollectorsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListCollectorsRequest&, const ListCollectorsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCollectorsAsyncHandler;
+			typedef Outcome<Error, Model::ListComponentIndicesResult> ListComponentIndicesOutcome;
+			typedef std::future<ListComponentIndicesOutcome> ListComponentIndicesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListComponentIndicesRequest&, const ListComponentIndicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListComponentIndicesAsyncHandler;
 			typedef Outcome<Error, Model::ListConnectedClustersResult> ListConnectedClustersOutcome;
 			typedef std::future<ListConnectedClustersOutcome> ListConnectedClustersOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListConnectedClustersRequest&, const ListConnectedClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListConnectedClustersAsyncHandler;
@@ -634,6 +682,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListDefaultCollectorConfigurationsResult> ListDefaultCollectorConfigurationsOutcome;
 			typedef std::future<ListDefaultCollectorConfigurationsOutcome> ListDefaultCollectorConfigurationsOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListDefaultCollectorConfigurationsRequest&, const ListDefaultCollectorConfigurationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDefaultCollectorConfigurationsAsyncHandler;
+			typedef Outcome<Error, Model::ListDeprecatedTemplatesResult> ListDeprecatedTemplatesOutcome;
+			typedef std::future<ListDeprecatedTemplatesOutcome> ListDeprecatedTemplatesOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListDeprecatedTemplatesRequest&, const ListDeprecatedTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDeprecatedTemplatesAsyncHandler;
 			typedef Outcome<Error, Model::ListDiagnoseIndicesResult> ListDiagnoseIndicesOutcome;
 			typedef std::future<ListDiagnoseIndicesOutcome> ListDiagnoseIndicesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListDiagnoseIndicesRequest&, const ListDiagnoseIndicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDiagnoseIndicesAsyncHandler;
@@ -664,6 +715,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListInstanceResult> ListInstanceOutcome;
 			typedef std::future<ListInstanceOutcome> ListInstanceOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListInstanceRequest&, const ListInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstanceAsyncHandler;
+			typedef Outcome<Error, Model::ListInstanceHistoryEventsResult> ListInstanceHistoryEventsOutcome;
+			typedef std::future<ListInstanceHistoryEventsOutcome> ListInstanceHistoryEventsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::ListInstanceHistoryEventsRequest&, const ListInstanceHistoryEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstanceHistoryEventsAsyncHandler;
 			typedef Outcome<Error, Model::ListInstanceIndicesResult> ListInstanceIndicesOutcome;
 			typedef std::future<ListInstanceIndicesOutcome> ListInstanceIndicesOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::ListInstanceIndicesRequest&, const ListInstanceIndicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstanceIndicesAsyncHandler;
@@ -832,6 +886,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateCollectorNameResult> UpdateCollectorNameOutcome;
 			typedef std::future<UpdateCollectorNameOutcome> UpdateCollectorNameOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateCollectorNameRequest&, const UpdateCollectorNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateCollectorNameAsyncHandler;
+			typedef Outcome<Error, Model::UpdateComponentIndexResult> UpdateComponentIndexOutcome;
+			typedef std::future<UpdateComponentIndexOutcome> UpdateComponentIndexOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateComponentIndexRequest&, const UpdateComponentIndexOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateComponentIndexAsyncHandler;
 			typedef Outcome<Error, Model::UpdateDescriptionResult> UpdateDescriptionOutcome;
 			typedef std::future<UpdateDescriptionOutcome> UpdateDescriptionOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateDescriptionRequest&, const UpdateDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDescriptionAsyncHandler;
@@ -841,6 +898,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateDictResult> UpdateDictOutcome;
 			typedef std::future<UpdateDictOutcome> UpdateDictOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateDictRequest&, const UpdateDictOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDictAsyncHandler;
+			typedef Outcome<Error, Model::UpdateDynamicSettingsResult> UpdateDynamicSettingsOutcome;
+			typedef std::future<UpdateDynamicSettingsOutcome> UpdateDynamicSettingsOutcomeCallable;
+			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateDynamicSettingsRequest&, const UpdateDynamicSettingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDynamicSettingsAsyncHandler;
 			typedef Outcome<Error, Model::UpdateExtendConfigResult> UpdateExtendConfigOutcome;
 			typedef std::future<UpdateExtendConfigOutcome> UpdateExtendConfigOutcomeCallable;
 			typedef std::function<void(const ElasticsearchClient*, const Model::UpdateExtendConfigRequest&, const UpdateExtendConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateExtendConfigAsyncHandler;
@@ -969,6 +1029,9 @@ namespace AlibabaCloud
 			CreateCollectorOutcome createCollector(const Model::CreateCollectorRequest &request)const;
 			void createCollectorAsync(const Model::CreateCollectorRequest& request, const CreateCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCollectorOutcomeCallable createCollectorCallable(const Model::CreateCollectorRequest& request) const;
+			CreateComponentIndexOutcome createComponentIndex(const Model::CreateComponentIndexRequest &request)const;
+			void createComponentIndexAsync(const Model::CreateComponentIndexRequest& request, const CreateComponentIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateComponentIndexOutcomeCallable createComponentIndexCallable(const Model::CreateComponentIndexRequest& request) const;
 			CreateDataStreamOutcome createDataStream(const Model::CreateDataStreamRequest &request)const;
 			void createDataStreamAsync(const Model::CreateDataStreamRequest& request, const CreateDataStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataStreamOutcomeCallable createDataStreamCallable(const Model::CreateDataStreamRequest& request) const;
@@ -1002,6 +1065,9 @@ namespace AlibabaCloud
 			DeleteCollectorOutcome deleteCollector(const Model::DeleteCollectorRequest &request)const;
 			void deleteCollectorAsync(const Model::DeleteCollectorRequest& request, const DeleteCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCollectorOutcomeCallable deleteCollectorCallable(const Model::DeleteCollectorRequest& request) const;
+			DeleteComponentIndexOutcome deleteComponentIndex(const Model::DeleteComponentIndexRequest &request)const;
+			void deleteComponentIndexAsync(const Model::DeleteComponentIndexRequest& request, const DeleteComponentIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteComponentIndexOutcomeCallable deleteComponentIndexCallable(const Model::DeleteComponentIndexRequest& request) const;
 			DeleteConnectedClusterOutcome deleteConnectedCluster(const Model::DeleteConnectedClusterRequest &request)const;
 			void deleteConnectedClusterAsync(const Model::DeleteConnectedClusterRequest& request, const DeleteConnectedClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteConnectedClusterOutcomeCallable deleteConnectedClusterCallable(const Model::DeleteConnectedClusterRequest& request) const;
@@ -1011,6 +1077,9 @@ namespace AlibabaCloud
 			DeleteDataTaskOutcome deleteDataTask(const Model::DeleteDataTaskRequest &request)const;
 			void deleteDataTaskAsync(const Model::DeleteDataTaskRequest& request, const DeleteDataTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDataTaskOutcomeCallable deleteDataTaskCallable(const Model::DeleteDataTaskRequest& request) const;
+			DeleteDeprecatedTemplateOutcome deleteDeprecatedTemplate(const Model::DeleteDeprecatedTemplateRequest &request)const;
+			void deleteDeprecatedTemplateAsync(const Model::DeleteDeprecatedTemplateRequest& request, const DeleteDeprecatedTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDeprecatedTemplateOutcomeCallable deleteDeprecatedTemplateCallable(const Model::DeleteDeprecatedTemplateRequest& request) const;
 			DeleteILMPolicyOutcome deleteILMPolicy(const Model::DeleteILMPolicyRequest &request)const;
 			void deleteILMPolicyAsync(const Model::DeleteILMPolicyRequest& request, const DeleteILMPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteILMPolicyOutcomeCallable deleteILMPolicyCallable(const Model::DeleteILMPolicyRequest& request) const;
@@ -1041,15 +1110,24 @@ namespace AlibabaCloud
 			DescribeCollectorOutcome describeCollector(const Model::DescribeCollectorRequest &request)const;
 			void describeCollectorAsync(const Model::DescribeCollectorRequest& request, const DescribeCollectorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCollectorOutcomeCallable describeCollectorCallable(const Model::DescribeCollectorRequest& request) const;
+			DescribeComponentIndexOutcome describeComponentIndex(const Model::DescribeComponentIndexRequest &request)const;
+			void describeComponentIndexAsync(const Model::DescribeComponentIndexRequest& request, const DescribeComponentIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeComponentIndexOutcomeCallable describeComponentIndexCallable(const Model::DescribeComponentIndexRequest& request) const;
 			DescribeConnectableClustersOutcome describeConnectableClusters(const Model::DescribeConnectableClustersRequest &request)const;
 			void describeConnectableClustersAsync(const Model::DescribeConnectableClustersRequest& request, const DescribeConnectableClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConnectableClustersOutcomeCallable describeConnectableClustersCallable(const Model::DescribeConnectableClustersRequest& request) const;
+			DescribeDeprecatedTemplateOutcome describeDeprecatedTemplate(const Model::DescribeDeprecatedTemplateRequest &request)const;
+			void describeDeprecatedTemplateAsync(const Model::DescribeDeprecatedTemplateRequest& request, const DescribeDeprecatedTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDeprecatedTemplateOutcomeCallable describeDeprecatedTemplateCallable(const Model::DescribeDeprecatedTemplateRequest& request) const;
 			DescribeDiagnoseReportOutcome describeDiagnoseReport(const Model::DescribeDiagnoseReportRequest &request)const;
 			void describeDiagnoseReportAsync(const Model::DescribeDiagnoseReportRequest& request, const DescribeDiagnoseReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDiagnoseReportOutcomeCallable describeDiagnoseReportCallable(const Model::DescribeDiagnoseReportRequest& request) const;
 			DescribeDiagnosisSettingsOutcome describeDiagnosisSettings(const Model::DescribeDiagnosisSettingsRequest &request)const;
 			void describeDiagnosisSettingsAsync(const Model::DescribeDiagnosisSettingsRequest& request, const DescribeDiagnosisSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDiagnosisSettingsOutcomeCallable describeDiagnosisSettingsCallable(const Model::DescribeDiagnosisSettingsRequest& request) const;
+			DescribeDynamicSettingsOutcome describeDynamicSettings(const Model::DescribeDynamicSettingsRequest &request)const;
+			void describeDynamicSettingsAsync(const Model::DescribeDynamicSettingsRequest& request, const DescribeDynamicSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDynamicSettingsOutcomeCallable describeDynamicSettingsCallable(const Model::DescribeDynamicSettingsRequest& request) const;
 			DescribeElasticsearchHealthOutcome describeElasticsearchHealth(const Model::DescribeElasticsearchHealthRequest &request)const;
 			void describeElasticsearchHealthAsync(const Model::DescribeElasticsearchHealthRequest& request, const DescribeElasticsearchHealthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeElasticsearchHealthOutcomeCallable describeElasticsearchHealthCallable(const Model::DescribeElasticsearchHealthRequest& request) const;
@@ -1152,6 +1230,9 @@ namespace AlibabaCloud
 			ListAckNamespacesOutcome listAckNamespaces(const Model::ListAckNamespacesRequest &request)const;
 			void listAckNamespacesAsync(const Model::ListAckNamespacesRequest& request, const ListAckNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAckNamespacesOutcomeCallable listAckNamespacesCallable(const Model::ListAckNamespacesRequest& request) const;
+			ListActionRecordsOutcome listActionRecords(const Model::ListActionRecordsRequest &request)const;
+			void listActionRecordsAsync(const Model::ListActionRecordsRequest& request, const ListActionRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListActionRecordsOutcomeCallable listActionRecordsCallable(const Model::ListActionRecordsRequest& request) const;
 			ListAllNodeOutcome listAllNode(const Model::ListAllNodeRequest &request)const;
 			void listAllNodeAsync(const Model::ListAllNodeRequest& request, const ListAllNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAllNodeOutcomeCallable listAllNodeCallable(const Model::ListAllNodeRequest& request) const;
@@ -1167,6 +1248,9 @@ namespace AlibabaCloud
 			ListCollectorsOutcome listCollectors(const Model::ListCollectorsRequest &request)const;
 			void listCollectorsAsync(const Model::ListCollectorsRequest& request, const ListCollectorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCollectorsOutcomeCallable listCollectorsCallable(const Model::ListCollectorsRequest& request) const;
+			ListComponentIndicesOutcome listComponentIndices(const Model::ListComponentIndicesRequest &request)const;
+			void listComponentIndicesAsync(const Model::ListComponentIndicesRequest& request, const ListComponentIndicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListComponentIndicesOutcomeCallable listComponentIndicesCallable(const Model::ListComponentIndicesRequest& request) const;
 			ListConnectedClustersOutcome listConnectedClusters(const Model::ListConnectedClustersRequest &request)const;
 			void listConnectedClustersAsync(const Model::ListConnectedClustersRequest& request, const ListConnectedClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListConnectedClustersOutcomeCallable listConnectedClustersCallable(const Model::ListConnectedClustersRequest& request) const;
@@ -1179,6 +1263,9 @@ namespace AlibabaCloud
 			ListDefaultCollectorConfigurationsOutcome listDefaultCollectorConfigurations(const Model::ListDefaultCollectorConfigurationsRequest &request)const;
 			void listDefaultCollectorConfigurationsAsync(const Model::ListDefaultCollectorConfigurationsRequest& request, const ListDefaultCollectorConfigurationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDefaultCollectorConfigurationsOutcomeCallable listDefaultCollectorConfigurationsCallable(const Model::ListDefaultCollectorConfigurationsRequest& request) const;
+			ListDeprecatedTemplatesOutcome listDeprecatedTemplates(const Model::ListDeprecatedTemplatesRequest &request)const;
+			void listDeprecatedTemplatesAsync(const Model::ListDeprecatedTemplatesRequest& request, const ListDeprecatedTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListDeprecatedTemplatesOutcomeCallable listDeprecatedTemplatesCallable(const Model::ListDeprecatedTemplatesRequest& request) const;
 			ListDiagnoseIndicesOutcome listDiagnoseIndices(const Model::ListDiagnoseIndicesRequest &request)const;
 			void listDiagnoseIndicesAsync(const Model::ListDiagnoseIndicesRequest& request, const ListDiagnoseIndicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDiagnoseIndicesOutcomeCallable listDiagnoseIndicesCallable(const Model::ListDiagnoseIndicesRequest& request) const;
@@ -1209,6 +1296,9 @@ namespace AlibabaCloud
 			ListInstanceOutcome listInstance(const Model::ListInstanceRequest &request)const;
 			void listInstanceAsync(const Model::ListInstanceRequest& request, const ListInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstanceOutcomeCallable listInstanceCallable(const Model::ListInstanceRequest& request) const;
+			ListInstanceHistoryEventsOutcome listInstanceHistoryEvents(const Model::ListInstanceHistoryEventsRequest &request)const;
+			void listInstanceHistoryEventsAsync(const Model::ListInstanceHistoryEventsRequest& request, const ListInstanceHistoryEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListInstanceHistoryEventsOutcomeCallable listInstanceHistoryEventsCallable(const Model::ListInstanceHistoryEventsRequest& request) const;
 			ListInstanceIndicesOutcome listInstanceIndices(const Model::ListInstanceIndicesRequest &request)const;
 			void listInstanceIndicesAsync(const Model::ListInstanceIndicesRequest& request, const ListInstanceIndicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstanceIndicesOutcomeCallable listInstanceIndicesCallable(const Model::ListInstanceIndicesRequest& request) const;
@@ -1377,6 +1467,9 @@ namespace AlibabaCloud
 			UpdateCollectorNameOutcome updateCollectorName(const Model::UpdateCollectorNameRequest &request)const;
 			void updateCollectorNameAsync(const Model::UpdateCollectorNameRequest& request, const UpdateCollectorNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateCollectorNameOutcomeCallable updateCollectorNameCallable(const Model::UpdateCollectorNameRequest& request) const;
+			UpdateComponentIndexOutcome updateComponentIndex(const Model::UpdateComponentIndexRequest &request)const;
+			void updateComponentIndexAsync(const Model::UpdateComponentIndexRequest& request, const UpdateComponentIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateComponentIndexOutcomeCallable updateComponentIndexCallable(const Model::UpdateComponentIndexRequest& request) const;
 			UpdateDescriptionOutcome updateDescription(const Model::UpdateDescriptionRequest &request)const;
 			void updateDescriptionAsync(const Model::UpdateDescriptionRequest& request, const UpdateDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDescriptionOutcomeCallable updateDescriptionCallable(const Model::UpdateDescriptionRequest& request) const;
@@ -1386,6 +1479,9 @@ namespace AlibabaCloud
 			UpdateDictOutcome updateDict(const Model::UpdateDictRequest &request)const;
 			void updateDictAsync(const Model::UpdateDictRequest& request, const UpdateDictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateDictOutcomeCallable updateDictCallable(const Model::UpdateDictRequest& request) const;
+			UpdateDynamicSettingsOutcome updateDynamicSettings(const Model::UpdateDynamicSettingsRequest &request)const;
+			void updateDynamicSettingsAsync(const Model::UpdateDynamicSettingsRequest& request, const UpdateDynamicSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateDynamicSettingsOutcomeCallable updateDynamicSettingsCallable(const Model::UpdateDynamicSettingsRequest& request) const;
 			UpdateExtendConfigOutcome updateExtendConfig(const Model::UpdateExtendConfigRequest &request)const;
 			void updateExtendConfigAsync(const Model::UpdateExtendConfigRequest& request, const UpdateExtendConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateExtendConfigOutcomeCallable updateExtendConfigCallable(const Model::UpdateExtendConfigRequest& request) const;

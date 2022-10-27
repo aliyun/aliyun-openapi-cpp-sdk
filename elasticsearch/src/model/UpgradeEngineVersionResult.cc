@@ -39,22 +39,32 @@ void UpgradeEngineVersionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["validateType"].isNull())
-		result_.validateType = resultNode["validateType"].asString();
-	if(!resultNode["status"].isNull())
-		result_.status = resultNode["status"].asString();
-	auto validateResultNode = resultNode["validateResult"];
-	if(!validateResultNode["errorType"].isNull())
-		result_.validateResult.errorType = validateResultNode["errorType"].asString();
-	if(!validateResultNode["errorCode"].isNull())
-		result_.validateResult.errorCode = validateResultNode["errorCode"].asString();
-	if(!validateResultNode["errorMsg"].isNull())
-		result_.validateResult.errorMsg = validateResultNode["errorMsg"].asString();
+	auto allResultNode = value["Result"]["ResultItem"];
+	for (auto valueResultResultItem : allResultNode)
+	{
+		ResultItem resultObject;
+		if(!valueResultResultItem["validateType"].isNull())
+			resultObject.validateType = valueResultResultItem["validateType"].asString();
+		if(!valueResultResultItem["status"].isNull())
+			resultObject.status = valueResultResultItem["status"].asString();
+		auto allvalidateResultNode = valueResultResultItem["validateResult"]["validateResultItem"];
+		for (auto valueResultResultItemvalidateResultvalidateResultItem : allvalidateResultNode)
+		{
+			ResultItem::ValidateResultItem validateResultObject;
+			if(!valueResultResultItemvalidateResultvalidateResultItem["errorType"].isNull())
+				validateResultObject.errorType = valueResultResultItemvalidateResultvalidateResultItem["errorType"].asString();
+			if(!valueResultResultItemvalidateResultvalidateResultItem["errorCode"].isNull())
+				validateResultObject.errorCode = valueResultResultItemvalidateResultvalidateResultItem["errorCode"].asString();
+			if(!valueResultResultItemvalidateResultvalidateResultItem["errorMsg"].isNull())
+				validateResultObject.errorMsg = valueResultResultItemvalidateResultvalidateResultItem["errorMsg"].asString();
+			resultObject.validateResult.push_back(validateResultObject);
+		}
+		result_.push_back(resultObject);
+	}
 
 }
 
-UpgradeEngineVersionResult::Result UpgradeEngineVersionResult::getResult()const
+std::vector<UpgradeEngineVersionResult::ResultItem> UpgradeEngineVersionResult::getResult()const
 {
 	return result_;
 }

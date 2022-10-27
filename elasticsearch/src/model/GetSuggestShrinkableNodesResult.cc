@@ -43,10 +43,10 @@ void GetSuggestShrinkableNodesResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["host"].isNull())
-			resultObject.host = valueResultResultItem["host"].asString();
 		if(!valueResultResultItem["port"].isNull())
 			resultObject.port = std::stoi(valueResultResultItem["port"].asString());
+		if(!valueResultResultItem["host"].isNull())
+			resultObject.host = valueResultResultItem["host"].asString();
 		result_.push_back(resultObject);
 	}
 

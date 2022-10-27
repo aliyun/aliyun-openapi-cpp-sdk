@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,47 @@
 
 using AlibabaCloud::Elasticsearch::Model::UpdatePipelinesRequest;
 
-UpdatePipelinesRequest::UpdatePipelinesRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/logstashes/[InstanceId]/pipelines");
-	setMethod(HttpRequest::Method::Put);
+UpdatePipelinesRequest::UpdatePipelinesRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/logstashes/[InstanceId]/pipelines"};
+  setMethod(HttpRequest::Method::Put);
 }
 
-UpdatePipelinesRequest::~UpdatePipelinesRequest()
-{}
+UpdatePipelinesRequest::~UpdatePipelinesRequest() {}
 
-std::string UpdatePipelinesRequest::getInstanceId()const
-{
-	return instanceId_;
+string UpdatePipelinesRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void UpdatePipelinesRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void UpdatePipelinesRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-std::string UpdatePipelinesRequest::getClientToken()const
-{
-	return clientToken_;
+string UpdatePipelinesRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void UpdatePipelinesRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void UpdatePipelinesRequest::setClientToken(string clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("clientToken"), std::to_string(clientToken));
 }
 
-bool UpdatePipelinesRequest::getTrigger()const
-{
-	return trigger_;
+boolean UpdatePipelinesRequest::getTrigger() const {
+  return trigger_;
 }
 
-void UpdatePipelinesRequest::setTrigger(bool trigger)
-{
-	trigger_ = trigger;
-	setParameter("Trigger", trigger ? "true" : "false");
+void UpdatePipelinesRequest::setTrigger(boolean trigger) {
+  trigger_ = trigger;
+  setParameter(std::string("trigger"), std::to_string(trigger));
+}
+
+string UpdatePipelinesRequest::getBody() const {
+  return body_;
+}
+
+void UpdatePipelinesRequest::setBody(string body) {
+  body_ = body;
+  setBodyParameter(std::string("body"), std::to_string(body));
 }
 

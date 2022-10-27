@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct ResultItem
 				{
 					std::string dps;
-					long messageWatermark;
 					float summary;
+					long messageWatermark;
 					std::string metric;
 					std::string tags;
 					float integrity;

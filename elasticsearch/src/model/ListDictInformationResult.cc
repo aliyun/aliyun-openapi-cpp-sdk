@@ -40,15 +40,15 @@ void ListDictInformationResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["fileSize"].isNull())
-		result_.fileSize = std::stol(resultNode["fileSize"].asString());
 	if(!resultNode["type"].isNull())
 		result_.type = resultNode["type"].asString();
+	if(!resultNode["fileSize"].isNull())
+		result_.fileSize = std::stol(resultNode["fileSize"].asString());
 	auto ossObjectNode = resultNode["ossObject"];
-	if(!ossObjectNode["bucketName"].isNull())
-		result_.ossObject.bucketName = ossObjectNode["bucketName"].asString();
 	if(!ossObjectNode["key"].isNull())
 		result_.ossObject.key = ossObjectNode["key"].asString();
+	if(!ossObjectNode["bucketName"].isNull())
+		result_.ossObject.bucketName = ossObjectNode["bucketName"].asString();
 	if(!ossObjectNode["etag"].isNull())
 		result_.ossObject.etag = ossObjectNode["etag"].asString();
 

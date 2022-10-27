@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,47 @@
 
 using AlibabaCloud::Elasticsearch::Model::UpdatePublicWhiteIpsRequest;
 
-UpdatePublicWhiteIpsRequest::UpdatePublicWhiteIpsRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/public-white-ips");
-	setMethod(HttpRequest::Method::Post);
+UpdatePublicWhiteIpsRequest::UpdatePublicWhiteIpsRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/public-white-ips"};
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdatePublicWhiteIpsRequest::~UpdatePublicWhiteIpsRequest()
-{}
+UpdatePublicWhiteIpsRequest::~UpdatePublicWhiteIpsRequest() {}
 
-std::string UpdatePublicWhiteIpsRequest::getModifyMode()const
-{
-	return modifyMode_;
+string UpdatePublicWhiteIpsRequest::getModifyMode() const {
+  return modifyMode_;
 }
 
-void UpdatePublicWhiteIpsRequest::setModifyMode(const std::string& modifyMode)
-{
-	modifyMode_ = modifyMode;
-	setParameter("ModifyMode", modifyMode);
+void UpdatePublicWhiteIpsRequest::setModifyMode(string modifyMode) {
+  modifyMode_ = modifyMode;
+  setParameter(std::string("modifyMode"), std::to_string(modifyMode));
 }
 
-std::string UpdatePublicWhiteIpsRequest::getInstanceId()const
-{
-	return instanceId_;
+string UpdatePublicWhiteIpsRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void UpdatePublicWhiteIpsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void UpdatePublicWhiteIpsRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-std::string UpdatePublicWhiteIpsRequest::getClientToken()const
-{
-	return clientToken_;
+string UpdatePublicWhiteIpsRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void UpdatePublicWhiteIpsRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void UpdatePublicWhiteIpsRequest::setClientToken(string clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("clientToken"), std::to_string(clientToken));
+}
+
+string UpdatePublicWhiteIpsRequest::getBody() const {
+  return body_;
+}
+
+void UpdatePublicWhiteIpsRequest::setBody(string body) {
+  body_ = body;
+  setBodyParameter(std::string("body"), std::to_string(body));
 }
 

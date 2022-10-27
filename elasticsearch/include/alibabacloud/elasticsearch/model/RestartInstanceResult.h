@@ -82,8 +82,8 @@ namespace AlibabaCloud
 					int kibanaPort;
 					std::string createdAt;
 					NetworkConfig networkConfig;
-					std::string esVersion;
 					int nodeAmount;
+					std::string esVersion;
 					std::string updatedAt;
 					std::vector<DictListItem> dictList;
 					std::string kibanaDomain;

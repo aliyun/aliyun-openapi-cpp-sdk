@@ -45,12 +45,12 @@ void ListPipelineResult::parse(const std::string &payload)
 		ResultItem resultObject;
 		if(!valueResultResultItem["pipelineId"].isNull())
 			resultObject.pipelineId = valueResultResultItem["pipelineId"].asString();
-		if(!valueResultResultItem["pipelineStatus"].isNull())
-			resultObject.pipelineStatus = valueResultResultItem["pipelineStatus"].asString();
-		if(!valueResultResultItem["gmtCreatedTime"].isNull())
-			resultObject.gmtCreatedTime = valueResultResultItem["gmtCreatedTime"].asString();
 		if(!valueResultResultItem["gmtUpdateTime"].isNull())
 			resultObject.gmtUpdateTime = valueResultResultItem["gmtUpdateTime"].asString();
+		if(!valueResultResultItem["gmtCreatedTime"].isNull())
+			resultObject.gmtCreatedTime = valueResultResultItem["gmtCreatedTime"].asString();
+		if(!valueResultResultItem["pipelineStatus"].isNull())
+			resultObject.pipelineStatus = valueResultResultItem["pipelineStatus"].asString();
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];

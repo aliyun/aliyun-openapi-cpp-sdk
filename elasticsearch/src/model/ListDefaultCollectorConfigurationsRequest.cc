@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,38 @@
 
 using AlibabaCloud::Elasticsearch::Model::ListDefaultCollectorConfigurationsRequest;
 
-ListDefaultCollectorConfigurationsRequest::ListDefaultCollectorConfigurationsRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/beats/default-configurations");
-	setMethod(HttpRequest::Method::Get);
+ListDefaultCollectorConfigurationsRequest::ListDefaultCollectorConfigurationsRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/beats/default-configurations"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListDefaultCollectorConfigurationsRequest::~ListDefaultCollectorConfigurationsRequest()
-{}
+ListDefaultCollectorConfigurationsRequest::~ListDefaultCollectorConfigurationsRequest() {}
 
-std::string ListDefaultCollectorConfigurationsRequest::getResType()const
-{
-	return resType_;
+string ListDefaultCollectorConfigurationsRequest::getResType() const {
+  return resType_;
 }
 
-void ListDefaultCollectorConfigurationsRequest::setResType(const std::string& resType)
-{
-	resType_ = resType;
-	setParameter("ResType", resType);
+void ListDefaultCollectorConfigurationsRequest::setResType(string resType) {
+  resType_ = resType;
+  setParameter(std::string("resType"), std::to_string(resType));
 }
 
-std::string ListDefaultCollectorConfigurationsRequest::getResVersion()const
-{
-	return resVersion_;
+string ListDefaultCollectorConfigurationsRequest::getResVersion() const {
+  return resVersion_;
 }
 
-void ListDefaultCollectorConfigurationsRequest::setResVersion(const std::string& resVersion)
-{
-	resVersion_ = resVersion;
-	setParameter("ResVersion", resVersion);
+void ListDefaultCollectorConfigurationsRequest::setResVersion(string resVersion) {
+  resVersion_ = resVersion;
+  setParameter(std::string("resVersion"), std::to_string(resVersion));
 }
 
-std::string ListDefaultCollectorConfigurationsRequest::getSourceType()const
-{
-	return sourceType_;
+string ListDefaultCollectorConfigurationsRequest::getSourceType() const {
+  return sourceType_;
 }
 
-void ListDefaultCollectorConfigurationsRequest::setSourceType(const std::string& sourceType)
-{
-	sourceType_ = sourceType;
-	setParameter("SourceType", sourceType);
+void ListDefaultCollectorConfigurationsRequest::setSourceType(string sourceType) {
+  sourceType_ = sourceType;
+  setParameter(std::string("sourceType"), std::to_string(sourceType));
 }
 

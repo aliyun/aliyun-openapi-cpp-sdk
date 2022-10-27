@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,24 +18,29 @@
 
 using AlibabaCloud::Elasticsearch::Model::CreateLogstashRequest;
 
-CreateLogstashRequest::CreateLogstashRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/logstashes");
-	setMethod(HttpRequest::Method::Post);
+CreateLogstashRequest::CreateLogstashRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/logstashes"};
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateLogstashRequest::~CreateLogstashRequest()
-{}
+CreateLogstashRequest::~CreateLogstashRequest() {}
 
-std::string CreateLogstashRequest::getClientToken()const
-{
-	return clientToken_;
+string CreateLogstashRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void CreateLogstashRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void CreateLogstashRequest::setClientToken(string clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("clientToken"), std::to_string(clientToken));
+}
+
+std::string CreateLogstashRequest::getBody() const {
+  return body_;
+}
+
+void CreateLogstashRequest::setBody(const std::string &body) {
+  body_ = body;
+  setBodyParameter(std::string("body"), body);
 }
 

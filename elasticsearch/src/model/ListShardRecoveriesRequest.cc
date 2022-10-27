@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,35 +18,29 @@
 
 using AlibabaCloud::Elasticsearch::Model::ListShardRecoveriesRequest;
 
-ListShardRecoveriesRequest::ListShardRecoveriesRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/cat-recovery");
-	setMethod(HttpRequest::Method::Get);
+ListShardRecoveriesRequest::ListShardRecoveriesRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/cat-recovery"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListShardRecoveriesRequest::~ListShardRecoveriesRequest()
-{}
+ListShardRecoveriesRequest::~ListShardRecoveriesRequest() {}
 
-bool ListShardRecoveriesRequest::getActiveOnly()const
-{
-	return activeOnly_;
+boolean ListShardRecoveriesRequest::getActiveOnly() const {
+  return activeOnly_;
 }
 
-void ListShardRecoveriesRequest::setActiveOnly(bool activeOnly)
-{
-	activeOnly_ = activeOnly;
-	setParameter("ActiveOnly", activeOnly ? "true" : "false");
+void ListShardRecoveriesRequest::setActiveOnly(boolean activeOnly) {
+  activeOnly_ = activeOnly;
+  setParameter(std::string("activeOnly"), std::to_string(activeOnly));
 }
 
-std::string ListShardRecoveriesRequest::getInstanceId()const
-{
-	return instanceId_;
+string ListShardRecoveriesRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ListShardRecoveriesRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ListShardRecoveriesRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 

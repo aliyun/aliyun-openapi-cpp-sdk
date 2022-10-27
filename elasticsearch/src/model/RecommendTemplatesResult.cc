@@ -43,10 +43,10 @@ void RecommendTemplatesResult::parse(const std::string &payload)
 	for (auto valueResultTemplateConfig : allResultNode)
 	{
 		TemplateConfig resultObject;
-		if(!valueResultTemplateConfig["templateName"].isNull())
-			resultObject.templateName = valueResultTemplateConfig["templateName"].asString();
 		if(!valueResultTemplateConfig["content"].isNull())
 			resultObject.content = valueResultTemplateConfig["content"].asString();
+		if(!valueResultTemplateConfig["templateName"].isNull())
+			resultObject.templateName = valueResultTemplateConfig["templateName"].asString();
 		result_.push_back(resultObject);
 	}
 

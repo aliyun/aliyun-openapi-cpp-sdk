@@ -39,44 +39,44 @@ void ListApmResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allResultNode = value["Result"]["返回结果"];
-	for (auto valueResult返回结果 : allResultNode)
+	auto allResultNode = value["Result"]["object"];
+	for (auto valueResultobject : allResultNode)
 	{
-		返回结果 resultObject;
-		if(!valueResult返回结果["createdAt"].isNull())
-			resultObject.createdAt = valueResult返回结果["createdAt"].asString();
-		if(!valueResult返回结果["deployedReplica"].isNull())
-			resultObject.deployedReplica = std::stol(valueResult返回结果["deployedReplica"].asString());
-		if(!valueResult返回结果["description"].isNull())
-			resultObject.description = valueResult返回结果["description"].asString();
-		if(!valueResult返回结果["instanceId"].isNull())
-			resultObject.instanceId = valueResult返回结果["instanceId"].asString();
-		if(!valueResult返回结果["nodeAmount"].isNull())
-			resultObject.nodeAmount = std::stol(valueResult返回结果["nodeAmount"].asString());
-		if(!valueResult返回结果["outputES"].isNull())
-			resultObject.outputES = valueResult返回结果["outputES"].asString();
-		if(!valueResult返回结果["outputESUserName"].isNull())
-			resultObject.outputESUserName = valueResult返回结果["outputESUserName"].asString();
-		if(!valueResult返回结果["ownerId"].isNull())
-			resultObject.ownerId = valueResult返回结果["ownerId"].asString();
-		if(!valueResult返回结果["paymentType"].isNull())
-			resultObject.paymentType = valueResult返回结果["paymentType"].asString();
-		if(!valueResult返回结果["region"].isNull())
-			resultObject.region = valueResult返回结果["region"].asString();
-		if(!valueResult返回结果["replica"].isNull())
-			resultObject.replica = std::stol(valueResult返回结果["replica"].asString());
-		if(!valueResult返回结果["resourceSpec"].isNull())
-			resultObject.resourceSpec = valueResult返回结果["resourceSpec"].asString();
-		if(!valueResult返回结果["status"].isNull())
-			resultObject.status = valueResult返回结果["status"].asString();
-		if(!valueResult返回结果["version"].isNull())
-			resultObject.version = valueResult返回结果["version"].asString();
-		if(!valueResult返回结果["vpcId"].isNull())
-			resultObject.vpcId = valueResult返回结果["vpcId"].asString();
-		if(!valueResult返回结果["vsArea"].isNull())
-			resultObject.vsArea = valueResult返回结果["vsArea"].asString();
-		if(!valueResult返回结果["vswitchId"].isNull())
-			resultObject.vswitchId = valueResult返回结果["vswitchId"].asString();
+		Object resultObject;
+		if(!valueResultobject["createdAt"].isNull())
+			resultObject.createdAt = valueResultobject["createdAt"].asString();
+		if(!valueResultobject["deployedReplica"].isNull())
+			resultObject.deployedReplica = std::stol(valueResultobject["deployedReplica"].asString());
+		if(!valueResultobject["description"].isNull())
+			resultObject.description = valueResultobject["description"].asString();
+		if(!valueResultobject["instanceId"].isNull())
+			resultObject.instanceId = valueResultobject["instanceId"].asString();
+		if(!valueResultobject["nodeAmount"].isNull())
+			resultObject.nodeAmount = std::stol(valueResultobject["nodeAmount"].asString());
+		if(!valueResultobject["outputES"].isNull())
+			resultObject.outputES = valueResultobject["outputES"].asString();
+		if(!valueResultobject["outputESUserName"].isNull())
+			resultObject.outputESUserName = valueResultobject["outputESUserName"].asString();
+		if(!valueResultobject["ownerId"].isNull())
+			resultObject.ownerId = valueResultobject["ownerId"].asString();
+		if(!valueResultobject["paymentType"].isNull())
+			resultObject.paymentType = valueResultobject["paymentType"].asString();
+		if(!valueResultobject["region"].isNull())
+			resultObject.region = valueResultobject["region"].asString();
+		if(!valueResultobject["replica"].isNull())
+			resultObject.replica = std::stol(valueResultobject["replica"].asString());
+		if(!valueResultobject["resourceSpec"].isNull())
+			resultObject.resourceSpec = valueResultobject["resourceSpec"].asString();
+		if(!valueResultobject["status"].isNull())
+			resultObject.status = valueResultobject["status"].asString();
+		if(!valueResultobject["version"].isNull())
+			resultObject.version = valueResultobject["version"].asString();
+		if(!valueResultobject["vpcId"].isNull())
+			resultObject.vpcId = valueResultobject["vpcId"].asString();
+		if(!valueResultobject["vsArea"].isNull())
+			resultObject.vsArea = valueResultobject["vsArea"].asString();
+		if(!valueResultobject["vswitchId"].isNull())
+			resultObject.vswitchId = valueResultobject["vswitchId"].asString();
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];
@@ -90,7 +90,7 @@ ListApmResult::Headers ListApmResult::getHeaders()const
 	return headers_;
 }
 
-std::vector<ListApmResult::返回结果> ListApmResult::getResult()const
+std::vector<ListApmResult::Object> ListApmResult::getResult()const
 {
 	return result_;
 }

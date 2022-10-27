@@ -43,10 +43,10 @@ void DescribeConnectableClustersResult::parse(const std::string &payload)
 	for (auto valueResultConnectableClustersInfo : allResultNode)
 	{
 		ConnectableClustersInfo resultObject;
-		if(!valueResultConnectableClustersInfo["instances"].isNull())
-			resultObject.instances = valueResultConnectableClustersInfo["instances"].asString();
 		if(!valueResultConnectableClustersInfo["networkType"].isNull())
 			resultObject.networkType = valueResultConnectableClustersInfo["networkType"].asString();
+		if(!valueResultConnectableClustersInfo["instances"].isNull())
+			resultObject.instances = valueResultConnectableClustersInfo["instances"].asString();
 		result_.push_back(resultObject);
 	}
 

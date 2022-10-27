@@ -40,10 +40,10 @@ void DescribeSnapshotSettingResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["QuartzRegex"].isNull())
-		result_.quartzRegex = resultNode["QuartzRegex"].asString();
 	if(!resultNode["Enable"].isNull())
 		result_.enable = resultNode["Enable"].asString() == "true";
+	if(!resultNode["QuartzRegex"].isNull())
+		result_.quartzRegex = resultNode["QuartzRegex"].asString();
 
 }
 

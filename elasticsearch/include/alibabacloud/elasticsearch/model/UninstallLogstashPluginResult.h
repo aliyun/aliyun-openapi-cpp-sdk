@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				UninstallLogstashPluginResult();
 				explicit UninstallLogstashPluginResult(const std::string &payload);
 				~UninstallLogstashPluginResult();
+				std::string getHeaders()const;
 				std::vector<std::string> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string headers_;
 				std::vector<std::string> result_;
 
 			};

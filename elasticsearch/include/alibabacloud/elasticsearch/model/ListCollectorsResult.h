@@ -61,8 +61,8 @@ namespace AlibabaCloud
 						std::string totalPodsCount;
 						std::string successPodsCount;
 						std::vector<ExtendConfigsItem::MachinesItem> machines;
-						std::string instanceType;
 						std::string protocol;
+						std::string instanceType;
 						std::string configType;
 					};
 					std::string status;
@@ -73,11 +73,11 @@ namespace AlibabaCloud
 					bool dryRun;
 					std::string gmtUpdateTime;
 					std::vector<ResultItem::ExtendConfigsItem> extendConfigs;
-					std::string name;
 					std::string resType;
+					std::string name;
 					std::vector<std::string> collectorPaths;
-					std::string vpcId;
 					std::string ownerId;
+					std::string vpcId;
 				};
 
 

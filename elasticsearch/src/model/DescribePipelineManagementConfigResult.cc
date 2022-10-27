@@ -40,12 +40,12 @@ void DescribePipelineManagementConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["pipelineManagementType"].isNull())
-		result_.pipelineManagementType = resultNode["pipelineManagementType"].asString();
 	if(!resultNode["endpoints"].isNull())
 		result_.endpoints = resultNode["endpoints"].asString();
 	if(!resultNode["userName"].isNull())
 		result_.userName = resultNode["userName"].asString();
+	if(!resultNode["pipelineManagementType"].isNull())
+		result_.pipelineManagementType = resultNode["pipelineManagementType"].asString();
 	if(!resultNode["esInstanceId"].isNull())
 		result_.esInstanceId = resultNode["esInstanceId"].asString();
 		auto allPipelineIds = resultNode["pipelineIds"]["pipelineid"];

@@ -45,32 +45,34 @@ void ListInstanceResult::parse(const std::string &payload)
 		Instance resultObject;
 		if(!valueResultInstance["advancedDedicateMaster"].isNull())
 			resultObject.advancedDedicateMaster = valueResultInstance["advancedDedicateMaster"].asString() == "true";
-		if(!valueResultInstance["createdAt"].isNull())
-			resultObject.createdAt = valueResultInstance["createdAt"].asString();
-		if(!valueResultInstance["dedicateMaster"].isNull())
-			resultObject.dedicateMaster = valueResultInstance["dedicateMaster"].asString() == "true";
-		if(!valueResultInstance["description"].isNull())
-			resultObject.description = valueResultInstance["description"].asString();
-		if(!valueResultInstance["esVersion"].isNull())
-			resultObject.esVersion = valueResultInstance["esVersion"].asString();
-		if(!valueResultInstance["instanceId"].isNull())
-			resultObject.instanceId = valueResultInstance["instanceId"].asString();
 		if(!valueResultInstance["nodeAmount"].isNull())
 			resultObject.nodeAmount = std::stoi(valueResultInstance["nodeAmount"].asString());
+		if(!valueResultInstance["createdAt"].isNull())
+			resultObject.createdAt = valueResultInstance["createdAt"].asString();
+		if(!valueResultInstance["status"].isNull())
+			resultObject.status = valueResultInstance["status"].asString();
+		if(!valueResultInstance["dedicateMaster"].isNull())
+			resultObject.dedicateMaster = valueResultInstance["dedicateMaster"].asString() == "true";
+		if(!valueResultInstance["serviceVpc"].isNull())
+			resultObject.serviceVpc = valueResultInstance["serviceVpc"].asString() == "true";
 		if(!valueResultInstance["paymentType"].isNull())
 			resultObject.paymentType = valueResultInstance["paymentType"].asString();
 		if(!valueResultInstance["resourceGroupId"].isNull())
 			resultObject.resourceGroupId = valueResultInstance["resourceGroupId"].asString();
-		if(!valueResultInstance["status"].isNull())
-			resultObject.status = valueResultInstance["status"].asString();
-		if(!valueResultInstance["updatedAt"].isNull())
-			resultObject.updatedAt = valueResultInstance["updatedAt"].asString();
 		if(!valueResultInstance["postpaidServiceStatus"].isNull())
 			resultObject.postpaidServiceStatus = valueResultInstance["postpaidServiceStatus"].asString();
+		if(!valueResultInstance["description"].isNull())
+			resultObject.description = valueResultInstance["description"].asString();
+		if(!valueResultInstance["esVersion"].isNull())
+			resultObject.esVersion = valueResultInstance["esVersion"].asString();
 		if(!valueResultInstance["isNewDeployment"].isNull())
 			resultObject.isNewDeployment = valueResultInstance["isNewDeployment"].asString();
-		if(!valueResultInstance["serviceVpc"].isNull())
-			resultObject.serviceVpc = valueResultInstance["serviceVpc"].asString() == "true";
+		if(!valueResultInstance["updatedAt"].isNull())
+			resultObject.updatedAt = valueResultInstance["updatedAt"].asString();
+		if(!valueResultInstance["instanceId"].isNull())
+			resultObject.instanceId = valueResultInstance["instanceId"].asString();
+		if(!valueResultInstance["vpcInstanceId"].isNull())
+			resultObject.vpcInstanceId = valueResultInstance["vpcInstanceId"].asString();
 		auto alltagsNode = valueResultInstance["tags"]["Tag"];
 		for (auto valueResultInstancetagsTag : alltagsNode)
 		{
@@ -82,15 +84,17 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.tags.push_back(tagsObject);
 		}
 		auto clientNodeConfigurationNode = value["clientNodeConfiguration"];
+		if(!clientNodeConfigurationNode["spec"].isNull())
+			resultObject.clientNodeConfiguration.spec = clientNodeConfigurationNode["spec"].asString();
 		if(!clientNodeConfigurationNode["amount"].isNull())
 			resultObject.clientNodeConfiguration.amount = std::stoi(clientNodeConfigurationNode["amount"].asString());
 		if(!clientNodeConfigurationNode["disk"].isNull())
 			resultObject.clientNodeConfiguration.disk = std::stoi(clientNodeConfigurationNode["disk"].asString());
 		if(!clientNodeConfigurationNode["diskType"].isNull())
 			resultObject.clientNodeConfiguration.diskType = clientNodeConfigurationNode["diskType"].asString();
-		if(!clientNodeConfigurationNode["spec"].isNull())
-			resultObject.clientNodeConfiguration.spec = clientNodeConfigurationNode["spec"].asString();
 		auto elasticDataNodeConfigurationNode = value["elasticDataNodeConfiguration"];
+		if(!elasticDataNodeConfigurationNode["spec"].isNull())
+			resultObject.elasticDataNodeConfiguration.spec = elasticDataNodeConfigurationNode["spec"].asString();
 		if(!elasticDataNodeConfigurationNode["amount"].isNull())
 			resultObject.elasticDataNodeConfiguration.amount = std::stoi(elasticDataNodeConfigurationNode["amount"].asString());
 		if(!elasticDataNodeConfigurationNode["disk"].isNull())
@@ -99,44 +103,44 @@ void ListInstanceResult::parse(const std::string &payload)
 			resultObject.elasticDataNodeConfiguration.diskEncryption = elasticDataNodeConfigurationNode["diskEncryption"].asString() == "true";
 		if(!elasticDataNodeConfigurationNode["diskType"].isNull())
 			resultObject.elasticDataNodeConfiguration.diskType = elasticDataNodeConfigurationNode["diskType"].asString();
-		if(!elasticDataNodeConfigurationNode["spec"].isNull())
-			resultObject.elasticDataNodeConfiguration.spec = elasticDataNodeConfigurationNode["spec"].asString();
 		auto kibanaConfigurationNode = value["kibanaConfiguration"];
+		if(!kibanaConfigurationNode["spec"].isNull())
+			resultObject.kibanaConfiguration.spec = kibanaConfigurationNode["spec"].asString();
 		if(!kibanaConfigurationNode["amount"].isNull())
 			resultObject.kibanaConfiguration.amount = std::stoi(kibanaConfigurationNode["amount"].asString());
 		if(!kibanaConfigurationNode["disk"].isNull())
 			resultObject.kibanaConfiguration.disk = std::stoi(kibanaConfigurationNode["disk"].asString());
 		if(!kibanaConfigurationNode["diskType"].isNull())
 			resultObject.kibanaConfiguration.diskType = kibanaConfigurationNode["diskType"].asString();
-		if(!kibanaConfigurationNode["spec"].isNull())
-			resultObject.kibanaConfiguration.spec = kibanaConfigurationNode["spec"].asString();
 		auto masterConfigurationNode = value["masterConfiguration"];
+		if(!masterConfigurationNode["spec"].isNull())
+			resultObject.masterConfiguration.spec = masterConfigurationNode["spec"].asString();
 		if(!masterConfigurationNode["amount"].isNull())
 			resultObject.masterConfiguration.amount = std::stoi(masterConfigurationNode["amount"].asString());
 		if(!masterConfigurationNode["disk"].isNull())
 			resultObject.masterConfiguration.disk = std::stoi(masterConfigurationNode["disk"].asString());
 		if(!masterConfigurationNode["diskType"].isNull())
 			resultObject.masterConfiguration.diskType = masterConfigurationNode["diskType"].asString();
-		if(!masterConfigurationNode["spec"].isNull())
-			resultObject.masterConfiguration.spec = masterConfigurationNode["spec"].asString();
 		auto networkConfigNode = value["networkConfig"];
-		if(!networkConfigNode["type"].isNull())
-			resultObject.networkConfig.type = networkConfigNode["type"].asString();
 		if(!networkConfigNode["vpcId"].isNull())
 			resultObject.networkConfig.vpcId = networkConfigNode["vpcId"].asString();
 		if(!networkConfigNode["vsArea"].isNull())
 			resultObject.networkConfig.vsArea = networkConfigNode["vsArea"].asString();
+		if(!networkConfigNode["type"].isNull())
+			resultObject.networkConfig.type = networkConfigNode["type"].asString();
 		if(!networkConfigNode["vswitchId"].isNull())
 			resultObject.networkConfig.vswitchId = networkConfigNode["vswitchId"].asString();
 		auto nodeSpecNode = value["nodeSpec"];
+		if(!nodeSpecNode["spec"].isNull())
+			resultObject.nodeSpec.spec = nodeSpecNode["spec"].asString();
 		if(!nodeSpecNode["disk"].isNull())
 			resultObject.nodeSpec.disk = std::stoi(nodeSpecNode["disk"].asString());
 		if(!nodeSpecNode["diskEncryption"].isNull())
 			resultObject.nodeSpec.diskEncryption = nodeSpecNode["diskEncryption"].asString() == "true";
 		if(!nodeSpecNode["diskType"].isNull())
 			resultObject.nodeSpec.diskType = nodeSpecNode["diskType"].asString();
-		if(!nodeSpecNode["spec"].isNull())
-			resultObject.nodeSpec.spec = nodeSpecNode["spec"].asString();
+		if(!nodeSpecNode["performanceLevel"].isNull())
+			resultObject.nodeSpec.performanceLevel = nodeSpecNode["performanceLevel"].asString();
 		auto allExtendConfigs = value["extendConfigs"]["extendConfigs"];
 		for (auto value : allExtendConfigs)
 			resultObject.extendConfigs.push_back(value.asString());

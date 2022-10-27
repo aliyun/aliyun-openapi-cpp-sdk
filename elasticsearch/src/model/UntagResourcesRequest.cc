@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,57 +18,56 @@
 
 using AlibabaCloud::Elasticsearch::Model::UntagResourcesRequest;
 
-UntagResourcesRequest::UntagResourcesRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/tags");
-	setMethod(HttpRequest::Method::Delete);
+UntagResourcesRequest::UntagResourcesRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/tags"};
+  setMethod(HttpRequest::Method::Delete);
 }
 
-UntagResourcesRequest::~UntagResourcesRequest()
-{}
+UntagResourcesRequest::~UntagResourcesRequest() {}
 
-bool UntagResourcesRequest::getAll()const
-{
-	return all_;
+boolean UntagResourcesRequest::getAll() const {
+  return all_;
 }
 
-void UntagResourcesRequest::setAll(bool all)
-{
-	all_ = all;
-	setParameter("All", all ? "true" : "false");
+void UntagResourcesRequest::setAll(boolean all) {
+  all_ = all;
+  setParameter(std::string("All"), std::to_string(all));
 }
 
-std::string UntagResourcesRequest::getTagKeys()const
-{
-	return tagKeys_;
+string UntagResourcesRequest::getTagKeys() const {
+  return tagKeys_;
 }
 
-void UntagResourcesRequest::setTagKeys(const std::string& tagKeys)
-{
-	tagKeys_ = tagKeys;
-	setParameter("TagKeys", tagKeys);
+void UntagResourcesRequest::setTagKeys(string tagKeys) {
+  tagKeys_ = tagKeys;
+  setParameter(std::string("TagKeys"), std::to_string(tagKeys));
 }
 
-std::string UntagResourcesRequest::getResourceType()const
-{
-	return resourceType_;
+string UntagResourcesRequest::getBody() const {
+  return body_;
 }
 
-void UntagResourcesRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setParameter("ResourceType", resourceType);
+void UntagResourcesRequest::setBody(string body) {
+  body_ = body;
+  setBodyParameter(std::string("body"), std::to_string(body));
 }
 
-std::string UntagResourcesRequest::getResourceIds()const
-{
-	return resourceIds_;
+string UntagResourcesRequest::getResourceType() const {
+  return resourceType_;
 }
 
-void UntagResourcesRequest::setResourceIds(const std::string& resourceIds)
-{
-	resourceIds_ = resourceIds;
-	setParameter("ResourceIds", resourceIds);
+void UntagResourcesRequest::setResourceType(string resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), std::to_string(resourceType));
+}
+
+string UntagResourcesRequest::getResourceIds() const {
+  return resourceIds_;
+}
+
+void UntagResourcesRequest::setResourceIds(string resourceIds) {
+  resourceIds_ = resourceIds;
+  setParameter(std::string("ResourceIds"), std::to_string(resourceIds));
 }
 

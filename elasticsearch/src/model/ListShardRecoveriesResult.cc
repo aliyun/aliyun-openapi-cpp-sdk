@@ -47,26 +47,26 @@ void ListShardRecoveriesResult::parse(const std::string &payload)
 			resultObject.index = valueResultResultItem["index"].asString();
 		if(!valueResultResultItem["sourceHost"].isNull())
 			resultObject.sourceHost = valueResultResultItem["sourceHost"].asString();
-		if(!valueResultResultItem["targetNode"].isNull())
-			resultObject.targetNode = valueResultResultItem["targetNode"].asString();
-		if(!valueResultResultItem["stage"].isNull())
-			resultObject.stage = valueResultResultItem["stage"].asString();
+		if(!valueResultResultItem["sourceNode"].isNull())
+			resultObject.sourceNode = valueResultResultItem["sourceNode"].asString();
 		if(!valueResultResultItem["filesTotal"].isNull())
 			resultObject.filesTotal = std::stol(valueResultResultItem["filesTotal"].asString());
-		if(!valueResultResultItem["filesPercent"].isNull())
-			resultObject.filesPercent = valueResultResultItem["filesPercent"].asString();
-		if(!valueResultResultItem["bytesTotal"].isNull())
-			resultObject.bytesTotal = std::stol(valueResultResultItem["bytesTotal"].asString());
 		if(!valueResultResultItem["bytesPercent"].isNull())
 			resultObject.bytesPercent = valueResultResultItem["bytesPercent"].asString();
 		if(!valueResultResultItem["translogOps"].isNull())
 			resultObject.translogOps = std::stol(valueResultResultItem["translogOps"].asString());
 		if(!valueResultResultItem["translogOpsPercent"].isNull())
 			resultObject.translogOpsPercent = valueResultResultItem["translogOpsPercent"].asString();
-		if(!valueResultResultItem["sourceNode"].isNull())
-			resultObject.sourceNode = valueResultResultItem["sourceNode"].asString();
+		if(!valueResultResultItem["bytesTotal"].isNull())
+			resultObject.bytesTotal = std::stol(valueResultResultItem["bytesTotal"].asString());
 		if(!valueResultResultItem["targetHost"].isNull())
 			resultObject.targetHost = valueResultResultItem["targetHost"].asString();
+		if(!valueResultResultItem["targetNode"].isNull())
+			resultObject.targetNode = valueResultResultItem["targetNode"].asString();
+		if(!valueResultResultItem["filesPercent"].isNull())
+			resultObject.filesPercent = valueResultResultItem["filesPercent"].asString();
+		if(!valueResultResultItem["stage"].isNull())
+			resultObject.stage = valueResultResultItem["stage"].asString();
 		result_.push_back(resultObject);
 	}
 

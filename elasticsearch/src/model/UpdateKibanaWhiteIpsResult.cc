@@ -40,12 +40,34 @@ void UpdateKibanaWhiteIpsResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-		auto allKibanaIPWhitelist = resultNode["kibanaIPWhitelist"]["kibanaIPWhitelist"];
-		for (auto value : allKibanaIPWhitelist)
-			result_.kibanaIPWhitelist.push_back(value.asString());
+	auto networkConfigNode = resultNode["networkConfig"];
+	if(!networkConfigNode["vpcId"].isNull())
+		result_.networkConfig.vpcId = networkConfigNode["vpcId"].asString();
+	if(!networkConfigNode["vswitchId"].isNull())
+		result_.networkConfig.vswitchId = networkConfigNode["vswitchId"].asString();
+	if(!networkConfigNode["vsArea"].isNull())
+		result_.networkConfig.vsArea = networkConfigNode["vsArea"].asString();
+	if(!networkConfigNode["type"].isNull())
+		result_.networkConfig.type = networkConfigNode["type"].asString();
+	auto allwhiteIpGroupListNode = networkConfigNode["whiteIpGroupList"]["whiteIpGroupListItem"];
+	for (auto networkConfigNodewhiteIpGroupListwhiteIpGroupListItem : allwhiteIpGroupListNode)
+	{
+		Result::NetworkConfig::WhiteIpGroupListItem whiteIpGroupListItemObject;
+		if(!networkConfigNodewhiteIpGroupListwhiteIpGroupListItem["groupName"].isNull())
+			whiteIpGroupListItemObject.groupName = networkConfigNodewhiteIpGroupListwhiteIpGroupListItem["groupName"].asString();
+		if(!networkConfigNodewhiteIpGroupListwhiteIpGroupListItem["whiteIpType"].isNull())
+			whiteIpGroupListItemObject.whiteIpType = networkConfigNodewhiteIpGroupListwhiteIpGroupListItem["whiteIpType"].asString();
+		auto allIps = value["ips"]["ips"];
+		for (auto value : allIps)
+			whiteIpGroupListItemObject.ips.push_back(value.asString());
+		result_.networkConfig.whiteIpGroupList.push_back(whiteIpGroupListItemObject);
+	}
 		auto allKibanaPrivateIPWhitelist = resultNode["kibanaPrivateIPWhitelist"]["kibanaPrivateIPWhitelist"];
 		for (auto value : allKibanaPrivateIPWhitelist)
 			result_.kibanaPrivateIPWhitelist.push_back(value.asString());
+		auto allKibanaIPWhitelist = resultNode["kibanaIPWhitelist"]["kibanaIPWhitelist"];
+		for (auto value : allKibanaIPWhitelist)
+			result_.kibanaIPWhitelist.push_back(value.asString());
 
 }
 

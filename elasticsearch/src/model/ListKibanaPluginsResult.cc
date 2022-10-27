@@ -43,16 +43,16 @@ void ListKibanaPluginsResult::parse(const std::string &payload)
 	for (auto valueResultPluginItem : allResultNode)
 	{
 		PluginItem resultObject;
-		if(!valueResultPluginItem["name"].isNull())
-			resultObject.name = valueResultPluginItem["name"].asString();
-		if(!valueResultPluginItem["state"].isNull())
-			resultObject.state = valueResultPluginItem["state"].asString();
-		if(!valueResultPluginItem["source"].isNull())
-			resultObject.source = valueResultPluginItem["source"].asString();
 		if(!valueResultPluginItem["description"].isNull())
 			resultObject.description = valueResultPluginItem["description"].asString();
 		if(!valueResultPluginItem["specificationUrl"].isNull())
 			resultObject.specificationUrl = valueResultPluginItem["specificationUrl"].asString();
+		if(!valueResultPluginItem["state"].isNull())
+			resultObject.state = valueResultPluginItem["state"].asString();
+		if(!valueResultPluginItem["source"].isNull())
+			resultObject.source = valueResultPluginItem["source"].asString();
+		if(!valueResultPluginItem["name"].isNull())
+			resultObject.name = valueResultPluginItem["name"].asString();
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];

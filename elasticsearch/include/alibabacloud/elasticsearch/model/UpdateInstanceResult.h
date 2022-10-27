@@ -65,15 +65,15 @@ namespace AlibabaCloud
 					{
 						std::string type;
 						std::string sourceType;
-						std::string name;
 						long fileSize;
+						std::string name;
 					};
 					struct SynonymsDictsItem
 					{
 						std::string type;
 						std::string sourceType;
-						std::string name;
 						long fileSize;
+						std::string name;
 					};
 					MasterConfiguration masterConfiguration;
 					std::string status;

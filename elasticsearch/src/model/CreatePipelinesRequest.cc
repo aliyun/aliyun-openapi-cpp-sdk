@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,47 @@
 
 using AlibabaCloud::Elasticsearch::Model::CreatePipelinesRequest;
 
-CreatePipelinesRequest::CreatePipelinesRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/logstashes/[InstanceId]/pipelines");
-	setMethod(HttpRequest::Method::Post);
+CreatePipelinesRequest::CreatePipelinesRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/logstashes/[InstanceId]/pipelines"};
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreatePipelinesRequest::~CreatePipelinesRequest()
-{}
+CreatePipelinesRequest::~CreatePipelinesRequest() {}
 
-std::string CreatePipelinesRequest::getInstanceId()const
-{
-	return instanceId_;
+string CreatePipelinesRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void CreatePipelinesRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void CreatePipelinesRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-std::string CreatePipelinesRequest::getClientToken()const
-{
-	return clientToken_;
+string CreatePipelinesRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void CreatePipelinesRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void CreatePipelinesRequest::setClientToken(string clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), std::to_string(clientToken));
 }
 
-bool CreatePipelinesRequest::getTrigger()const
-{
-	return trigger_;
+boolean CreatePipelinesRequest::getTrigger() const {
+  return trigger_;
 }
 
-void CreatePipelinesRequest::setTrigger(bool trigger)
-{
-	trigger_ = trigger;
-	setParameter("Trigger", trigger ? "true" : "false");
+void CreatePipelinesRequest::setTrigger(boolean trigger) {
+  trigger_ = trigger;
+  setParameter(std::string("trigger"), std::to_string(trigger));
+}
+
+string CreatePipelinesRequest::getBody() const {
+  return body_;
+}
+
+void CreatePipelinesRequest::setBody(string body) {
+  body_ = body;
+  setBodyParameter(std::string("body"), std::to_string(body));
 }
 

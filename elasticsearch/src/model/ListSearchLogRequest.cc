@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,90 +18,74 @@
 
 using AlibabaCloud::Elasticsearch::Model::ListSearchLogRequest;
 
-ListSearchLogRequest::ListSearchLogRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/search-log");
-	setMethod(HttpRequest::Method::Get);
+ListSearchLogRequest::ListSearchLogRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/search-log"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListSearchLogRequest::~ListSearchLogRequest()
-{}
+ListSearchLogRequest::~ListSearchLogRequest() {}
 
-std::string ListSearchLogRequest::getInstanceId()const
-{
-	return instanceId_;
+string ListSearchLogRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ListSearchLogRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ListSearchLogRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-int ListSearchLogRequest::getSize()const
-{
-	return size_;
+integer ListSearchLogRequest::getSize() const {
+  return size_;
 }
 
-void ListSearchLogRequest::setSize(int size)
-{
-	size_ = size;
-	setParameter("Size", std::to_string(size));
+void ListSearchLogRequest::setSize(integer size) {
+  size_ = size;
+  setParameter(std::string("size"), std::to_string(size));
 }
 
-std::string ListSearchLogRequest::getQuery()const
-{
-	return query_;
+string ListSearchLogRequest::getQuery() const {
+  return query_;
 }
 
-void ListSearchLogRequest::setQuery(const std::string& query)
-{
-	query_ = query;
-	setParameter("Query", query);
+void ListSearchLogRequest::setQuery(string query) {
+  query_ = query;
+  setParameter(std::string("query"), std::to_string(query));
 }
 
-long ListSearchLogRequest::getEndTime()const
-{
-	return endTime_;
+integer ListSearchLogRequest::getEndTime() const {
+  return endTime_;
 }
 
-void ListSearchLogRequest::setEndTime(long endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", std::to_string(endTime));
+void ListSearchLogRequest::setEndTime(integer endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("endTime"), std::to_string(endTime));
 }
 
-long ListSearchLogRequest::getBeginTime()const
-{
-	return beginTime_;
+integer ListSearchLogRequest::getBeginTime() const {
+  return beginTime_;
 }
 
-void ListSearchLogRequest::setBeginTime(long beginTime)
-{
-	beginTime_ = beginTime;
-	setParameter("BeginTime", std::to_string(beginTime));
+void ListSearchLogRequest::setBeginTime(integer beginTime) {
+  beginTime_ = beginTime;
+  setParameter(std::string("beginTime"), std::to_string(beginTime));
 }
 
-int ListSearchLogRequest::getPage()const
-{
-	return page_;
+integer ListSearchLogRequest::getPage() const {
+  return page_;
 }
 
-void ListSearchLogRequest::setPage(int page)
-{
-	page_ = page;
-	setParameter("Page", std::to_string(page));
+void ListSearchLogRequest::setPage(integer page) {
+  page_ = page;
+  setParameter(std::string("page"), std::to_string(page));
 }
 
-std::string ListSearchLogRequest::getType()const
-{
-	return type_;
+string ListSearchLogRequest::getType() const {
+  return type_;
 }
 
-void ListSearchLogRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setParameter("Type", type);
+void ListSearchLogRequest::setType(string type) {
+  type_ = type;
+  setParameter(std::string("type"), std::to_string(type));
 }
 

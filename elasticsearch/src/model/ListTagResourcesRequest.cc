@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,79 +18,65 @@
 
 using AlibabaCloud::Elasticsearch::Model::ListTagResourcesRequest;
 
-ListTagResourcesRequest::ListTagResourcesRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/tags");
-	setMethod(HttpRequest::Method::Get);
+ListTagResourcesRequest::ListTagResourcesRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/tags"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListTagResourcesRequest::~ListTagResourcesRequest()
-{}
+ListTagResourcesRequest::~ListTagResourcesRequest() {}
 
-int ListTagResourcesRequest::getSize()const
-{
-	return size_;
+integer ListTagResourcesRequest::getSize() const {
+  return size_;
 }
 
-void ListTagResourcesRequest::setSize(int size)
-{
-	size_ = size;
-	setParameter("Size", std::to_string(size));
+void ListTagResourcesRequest::setSize(integer size) {
+  size_ = size;
+  setParameter(std::string("Size"), std::to_string(size));
 }
 
-std::string ListTagResourcesRequest::getNextToken()const
-{
-	return nextToken_;
+string ListTagResourcesRequest::getNextToken() const {
+  return nextToken_;
 }
 
-void ListTagResourcesRequest::setNextToken(const std::string& nextToken)
-{
-	nextToken_ = nextToken;
-	setParameter("NextToken", nextToken);
+void ListTagResourcesRequest::setNextToken(string nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), std::to_string(nextToken));
 }
 
-int ListTagResourcesRequest::getPage()const
-{
-	return page_;
+integer ListTagResourcesRequest::getPage() const {
+  return page_;
 }
 
-void ListTagResourcesRequest::setPage(int page)
-{
-	page_ = page;
-	setParameter("Page", std::to_string(page));
+void ListTagResourcesRequest::setPage(integer page) {
+  page_ = page;
+  setParameter(std::string("Page"), std::to_string(page));
 }
 
-std::string ListTagResourcesRequest::getResourceType()const
-{
-	return resourceType_;
+string ListTagResourcesRequest::getResourceType() const {
+  return resourceType_;
 }
 
-void ListTagResourcesRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setParameter("ResourceType", resourceType);
+void ListTagResourcesRequest::setResourceType(string resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), std::to_string(resourceType));
 }
 
-std::string ListTagResourcesRequest::getResourceIds()const
-{
-	return resourceIds_;
+string ListTagResourcesRequest::getResourceIds() const {
+  return resourceIds_;
 }
 
-void ListTagResourcesRequest::setResourceIds(const std::string& resourceIds)
-{
-	resourceIds_ = resourceIds;
-	setParameter("ResourceIds", resourceIds);
+void ListTagResourcesRequest::setResourceIds(string resourceIds) {
+  resourceIds_ = resourceIds;
+  setParameter(std::string("ResourceIds"), std::to_string(resourceIds));
 }
 
-std::string ListTagResourcesRequest::getTags()const
-{
-	return tags_;
+string ListTagResourcesRequest::getTags() const {
+  return tags_;
 }
 
-void ListTagResourcesRequest::setTags(const std::string& tags)
-{
-	tags_ = tags;
-	setParameter("Tags", tags);
+void ListTagResourcesRequest::setTags(string tags) {
+  tags_ = tags;
+  setParameter(std::string("Tags"), std::to_string(tags));
 }
 

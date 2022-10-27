@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,68 +18,38 @@
 
 using AlibabaCloud::Elasticsearch::Model::TriggerNetworkRequest;
 
-TriggerNetworkRequest::TriggerNetworkRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/actions/network-trigger");
-	setMethod(HttpRequest::Method::Post);
+TriggerNetworkRequest::TriggerNetworkRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/actions/network-trigger"};
+  setMethod(HttpRequest::Method::Post);
 }
 
-TriggerNetworkRequest::~TriggerNetworkRequest()
-{}
+TriggerNetworkRequest::~TriggerNetworkRequest() {}
 
-std::string TriggerNetworkRequest::getActionType()const
-{
-	return actionType_;
+string TriggerNetworkRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void TriggerNetworkRequest::setActionType(const std::string& actionType)
-{
-	actionType_ = actionType;
-	setBodyParameter("ActionType", actionType);
+void TriggerNetworkRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-std::string TriggerNetworkRequest::getInstanceId()const
-{
-	return instanceId_;
+string TriggerNetworkRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void TriggerNetworkRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void TriggerNetworkRequest::setClientToken(string clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("clientToken"), std::to_string(clientToken));
 }
 
-std::string TriggerNetworkRequest::getNodeType()const
-{
-	return nodeType_;
+std::string TriggerNetworkRequest::getBody() const {
+  return body_;
 }
 
-void TriggerNetworkRequest::setNodeType(const std::string& nodeType)
-{
-	nodeType_ = nodeType;
-	setBodyParameter("NodeType", nodeType);
-}
-
-std::string TriggerNetworkRequest::getClientToken()const
-{
-	return clientToken_;
-}
-
-void TriggerNetworkRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
-}
-
-std::string TriggerNetworkRequest::getNetworkType()const
-{
-	return networkType_;
-}
-
-void TriggerNetworkRequest::setNetworkType(const std::string& networkType)
-{
-	networkType_ = networkType;
-	setBodyParameter("NetworkType", networkType);
+void TriggerNetworkRequest::setBody(const std::string &body) {
+  body_ = body;
+  setBodyParameter(std::string("body"), body);
 }
 

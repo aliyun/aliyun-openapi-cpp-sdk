@@ -43,14 +43,14 @@ void ListAvailableEsInstanceIdsResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["esInstanceId"].isNull())
-			resultObject.esInstanceId = valueResultResultItem["esInstanceId"].asString();
 		if(!valueResultResultItem["endpoint"].isNull())
 			resultObject.endpoint = valueResultResultItem["endpoint"].asString();
 		if(!valueResultResultItem["description"].isNull())
 			resultObject.description = valueResultResultItem["description"].asString();
 		if(!valueResultResultItem["kibanaEndpoint"].isNull())
 			resultObject.kibanaEndpoint = valueResultResultItem["kibanaEndpoint"].asString();
+		if(!valueResultResultItem["esInstanceId"].isNull())
+			resultObject.esInstanceId = valueResultResultItem["esInstanceId"].asString();
 		result_.push_back(resultObject);
 	}
 

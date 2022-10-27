@@ -42,7 +42,14 @@ void UninstallLogstashPluginResult::parse(const std::string &payload)
 	auto allResult = value["Result"]["Result"];
 	for (const auto &item : allResult)
 		result_.push_back(item.asString());
+	if(!value["Headers"].isNull())
+		headers_ = value["Headers"].asString();
 
+}
+
+std::string UninstallLogstashPluginResult::getHeaders()const
+{
+	return headers_;
 }
 
 std::vector<std::string> UninstallLogstashPluginResult::getResult()const

@@ -43,30 +43,30 @@ void ListLogstashResult::parse(const std::string &payload)
 	for (auto valueResultInstance : allResultNode)
 	{
 		Instance resultObject;
-		if(!valueResultInstance["instanceId"].isNull())
-			resultObject.instanceId = valueResultInstance["instanceId"].asString();
-		if(!valueResultInstance["description"].isNull())
-			resultObject.description = valueResultInstance["description"].asString();
-		if(!valueResultInstance["nodeAmount"].isNull())
-			resultObject.nodeAmount = std::stoi(valueResultInstance["nodeAmount"].asString());
 		if(!valueResultInstance["paymentType"].isNull())
 			resultObject.paymentType = valueResultInstance["paymentType"].asString();
-		if(!valueResultInstance["status"].isNull())
-			resultObject.status = valueResultInstance["status"].asString();
-		if(!valueResultInstance["version"].isNull())
-			resultObject.version = valueResultInstance["version"].asString();
+		if(!valueResultInstance["nodeAmount"].isNull())
+			resultObject.nodeAmount = std::stoi(valueResultInstance["nodeAmount"].asString());
+		if(!valueResultInstance["description"].isNull())
+			resultObject.description = valueResultInstance["description"].asString();
 		if(!valueResultInstance["createdAt"].isNull())
 			resultObject.createdAt = valueResultInstance["createdAt"].asString();
+		if(!valueResultInstance["status"].isNull())
+			resultObject.status = valueResultInstance["status"].asString();
 		if(!valueResultInstance["updatedAt"].isNull())
 			resultObject.updatedAt = valueResultInstance["updatedAt"].asString();
+		if(!valueResultInstance["instanceId"].isNull())
+			resultObject.instanceId = valueResultInstance["instanceId"].asString();
+		if(!valueResultInstance["version"].isNull())
+			resultObject.version = valueResultInstance["version"].asString();
 		auto allTagsNode = valueResultInstance["Tags"]["tagsItem"];
 		for (auto valueResultInstanceTagstagsItem : allTagsNode)
 		{
 			Instance::TagsItem tagsObject;
-			if(!valueResultInstanceTagstagsItem["TagKey"].isNull())
-				tagsObject.tagKey = valueResultInstanceTagstagsItem["TagKey"].asString();
 			if(!valueResultInstanceTagstagsItem["TagValue"].isNull())
 				tagsObject.tagValue = valueResultInstanceTagstagsItem["TagValue"].asString();
+			if(!valueResultInstanceTagstagsItem["TagKey"].isNull())
+				tagsObject.tagKey = valueResultInstanceTagstagsItem["TagKey"].asString();
 			resultObject.tags.push_back(tagsObject);
 		}
 		auto nodeSpecNode = value["nodeSpec"];
@@ -74,19 +74,19 @@ void ListLogstashResult::parse(const std::string &payload)
 			resultObject.nodeSpec.spec = nodeSpecNode["spec"].asString();
 		if(!nodeSpecNode["disk"].isNull())
 			resultObject.nodeSpec.disk = std::stoi(nodeSpecNode["disk"].asString());
-		if(!nodeSpecNode["diskType"].isNull())
-			resultObject.nodeSpec.diskType = nodeSpecNode["diskType"].asString();
 		if(!nodeSpecNode["diskEncryption"].isNull())
 			resultObject.nodeSpec.diskEncryption = nodeSpecNode["diskEncryption"].asString() == "true";
+		if(!nodeSpecNode["diskType"].isNull())
+			resultObject.nodeSpec.diskType = nodeSpecNode["diskType"].asString();
 		auto networkConfigNode = value["networkConfig"];
-		if(!networkConfigNode["type"].isNull())
-			resultObject.networkConfig.type = networkConfigNode["type"].asString();
 		if(!networkConfigNode["vpcId"].isNull())
 			resultObject.networkConfig.vpcId = networkConfigNode["vpcId"].asString();
-		if(!networkConfigNode["vswitchId"].isNull())
-			resultObject.networkConfig.vswitchId = networkConfigNode["vswitchId"].asString();
 		if(!networkConfigNode["vsArea"].isNull())
 			resultObject.networkConfig.vsArea = networkConfigNode["vsArea"].asString();
+		if(!networkConfigNode["type"].isNull())
+			resultObject.networkConfig.type = networkConfigNode["type"].asString();
+		if(!networkConfigNode["vswitchId"].isNull())
+			resultObject.networkConfig.vswitchId = networkConfigNode["vswitchId"].asString();
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];

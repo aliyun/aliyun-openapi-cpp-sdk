@@ -48,8 +48,8 @@ namespace AlibabaCloud
 						std::string ipType;
 						std::string host;
 					};
-					std::string ecsInstanceId;
 					std::string ecsInstanceName;
+					std::string ecsInstanceId;
 					std::string status;
 					std::string agentStatus;
 					std::string osType;

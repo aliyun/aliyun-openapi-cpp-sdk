@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,24 +18,29 @@
 
 using AlibabaCloud::Elasticsearch::Model::GetEmonGrafanaAlertsRequest;
 
-GetEmonGrafanaAlertsRequest::GetEmonGrafanaAlertsRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/emon/projects/[ProjectId]/grafana/proxy/api/alerts");
-	setMethod(HttpRequest::Method::Get);
+GetEmonGrafanaAlertsRequest::GetEmonGrafanaAlertsRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/emon/projects/[ProjectId]/grafana/proxy/api/alerts"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-GetEmonGrafanaAlertsRequest::~GetEmonGrafanaAlertsRequest()
-{}
+GetEmonGrafanaAlertsRequest::~GetEmonGrafanaAlertsRequest() {}
 
-std::string GetEmonGrafanaAlertsRequest::getProjectId()const
-{
-	return projectId_;
+string GetEmonGrafanaAlertsRequest::getBody() const {
+  return body_;
 }
 
-void GetEmonGrafanaAlertsRequest::setProjectId(const std::string& projectId)
-{
-	projectId_ = projectId;
-	setParameter("ProjectId", projectId);
+void GetEmonGrafanaAlertsRequest::setBody(string body) {
+  body_ = body;
+  setBodyParameter(std::string("body"), std::to_string(body));
+}
+
+string GetEmonGrafanaAlertsRequest::getProjectId() const {
+  return projectId_;
+}
+
+void GetEmonGrafanaAlertsRequest::setProjectId(string projectId) {
+  projectId_ = projectId;
+  setParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 

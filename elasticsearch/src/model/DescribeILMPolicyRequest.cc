@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,35 +18,29 @@
 
 using AlibabaCloud::Elasticsearch::Model::DescribeILMPolicyRequest;
 
-DescribeILMPolicyRequest::DescribeILMPolicyRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/ilm-policies/[PolicyName]");
-	setMethod(HttpRequest::Method::Get);
+DescribeILMPolicyRequest::DescribeILMPolicyRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/ilm-policies/[PolicyName]"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-DescribeILMPolicyRequest::~DescribeILMPolicyRequest()
-{}
+DescribeILMPolicyRequest::~DescribeILMPolicyRequest() {}
 
-std::string DescribeILMPolicyRequest::getInstanceId()const
-{
-	return instanceId_;
+string DescribeILMPolicyRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void DescribeILMPolicyRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void DescribeILMPolicyRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-std::string DescribeILMPolicyRequest::getPolicyName()const
-{
-	return policyName_;
+string DescribeILMPolicyRequest::getPolicyName() const {
+  return policyName_;
 }
 
-void DescribeILMPolicyRequest::setPolicyName(const std::string& policyName)
-{
-	policyName_ = policyName;
-	setParameter("PolicyName", policyName);
+void DescribeILMPolicyRequest::setPolicyName(string policyName) {
+  policyName_ = policyName;
+  setParameter(std::string("PolicyName"), std::to_string(policyName));
 }
 

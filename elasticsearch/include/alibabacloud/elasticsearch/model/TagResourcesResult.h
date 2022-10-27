@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				TagResourcesResult();
 				explicit TagResourcesResult(const std::string &payload);
 				~TagResourcesResult();
+				bool getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				bool result_;
 
 			};
 		}

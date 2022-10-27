@@ -38,16 +38,16 @@ namespace AlibabaCloud
 					{
 						std::string triggerType;
 						int replicaCount;
-						std::string cronExpression;
 						int elasticNodeCount;
+						std::string cronExpression;
 						std::vector<std::string> targetIndices;
 					};
 					struct ElasticShrinkTask
 					{
 						std::string triggerType;
 						int replicaCount;
-						std::string cronExpression;
 						int elasticNodeCount;
+						std::string cronExpression;
 						std::vector<std::string> targetIndices1;
 					};
 					ElasticShrinkTask elasticShrinkTask;

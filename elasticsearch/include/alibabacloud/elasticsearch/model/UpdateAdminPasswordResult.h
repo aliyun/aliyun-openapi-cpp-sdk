@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				UpdateAdminPasswordResult();
 				explicit UpdateAdminPasswordResult(const std::string &payload);
 				~UpdateAdminPasswordResult();
+				bool getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				bool result_;
 
 			};
 		}

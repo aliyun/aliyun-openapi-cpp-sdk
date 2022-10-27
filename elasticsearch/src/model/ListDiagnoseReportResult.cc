@@ -43,18 +43,18 @@ void ListDiagnoseReportResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["reportId"].isNull())
-			resultObject.reportId = valueResultResultItem["reportId"].asString();
-		if(!valueResultResultItem["instanceId"].isNull())
-			resultObject.instanceId = valueResultResultItem["instanceId"].asString();
-		if(!valueResultResultItem["state"].isNull())
-			resultObject.state = valueResultResultItem["state"].asString();
 		if(!valueResultResultItem["trigger"].isNull())
 			resultObject.trigger = valueResultResultItem["trigger"].asString();
-		if(!valueResultResultItem["health"].isNull())
-			resultObject.health = valueResultResultItem["health"].asString();
 		if(!valueResultResultItem["createTime"].isNull())
 			resultObject.createTime = std::stol(valueResultResultItem["createTime"].asString());
+		if(!valueResultResultItem["reportId"].isNull())
+			resultObject.reportId = valueResultResultItem["reportId"].asString();
+		if(!valueResultResultItem["state"].isNull())
+			resultObject.state = valueResultResultItem["state"].asString();
+		if(!valueResultResultItem["instanceId"].isNull())
+			resultObject.instanceId = valueResultResultItem["instanceId"].asString();
+		if(!valueResultResultItem["health"].isNull())
+			resultObject.health = valueResultResultItem["health"].asString();
 		auto alldiagnoseItemsNode = valueResultResultItem["diagnoseItems"]["diagnoseItemsItem"];
 		for (auto valueResultResultItemdiagnoseItemsdiagnoseItemsItem : alldiagnoseItemsNode)
 		{
@@ -64,16 +64,16 @@ void ListDiagnoseReportResult::parse(const std::string &payload)
 			if(!valueResultResultItemdiagnoseItemsdiagnoseItemsItem["health"].isNull())
 				diagnoseItemsObject.health = valueResultResultItemdiagnoseItemsdiagnoseItemsItem["health"].asString();
 			auto detailNode = value["detail"];
+			if(!detailNode["type"].isNull())
+				diagnoseItemsObject.detail.type = detailNode["type"].asString();
 			if(!detailNode["name"].isNull())
 				diagnoseItemsObject.detail.name = detailNode["name"].asString();
 			if(!detailNode["desc"].isNull())
 				diagnoseItemsObject.detail.desc = detailNode["desc"].asString();
-			if(!detailNode["type"].isNull())
-				diagnoseItemsObject.detail.type = detailNode["type"].asString();
-			if(!detailNode["suggest"].isNull())
-				diagnoseItemsObject.detail.suggest = detailNode["suggest"].asString();
 			if(!detailNode["result"].isNull())
 				diagnoseItemsObject.detail.result = detailNode["result"].asString();
+			if(!detailNode["suggest"].isNull())
+				diagnoseItemsObject.detail.suggest = detailNode["suggest"].asString();
 			resultObject.diagnoseItems.push_back(diagnoseItemsObject);
 		}
 		result_.push_back(resultObject);

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,38 @@
 
 using AlibabaCloud::Elasticsearch::Model::ListKibanaPluginsRequest;
 
-ListKibanaPluginsRequest::ListKibanaPluginsRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/kibana-plugins");
-	setMethod(HttpRequest::Method::Get);
+ListKibanaPluginsRequest::ListKibanaPluginsRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/kibana-plugins"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListKibanaPluginsRequest::~ListKibanaPluginsRequest()
-{}
+ListKibanaPluginsRequest::~ListKibanaPluginsRequest() {}
 
-std::string ListKibanaPluginsRequest::getInstanceId()const
-{
-	return instanceId_;
+string ListKibanaPluginsRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ListKibanaPluginsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ListKibanaPluginsRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-int ListKibanaPluginsRequest::getSize()const
-{
-	return size_;
+integer ListKibanaPluginsRequest::getSize() const {
+  return size_;
 }
 
-void ListKibanaPluginsRequest::setSize(int size)
-{
-	size_ = size;
-	setParameter("Size", std::to_string(size));
+void ListKibanaPluginsRequest::setSize(integer size) {
+  size_ = size;
+  setParameter(std::string("size"), std::to_string(size));
 }
 
-std::string ListKibanaPluginsRequest::getPage()const
-{
-	return page_;
+string ListKibanaPluginsRequest::getPage() const {
+  return page_;
 }
 
-void ListKibanaPluginsRequest::setPage(const std::string& page)
-{
-	page_ = page;
-	setParameter("Page", page);
+void ListKibanaPluginsRequest::setPage(string page) {
+  page_ = page;
+  setParameter(std::string("page"), std::to_string(page));
 }
 

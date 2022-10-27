@@ -43,18 +43,18 @@ void GetEmonMonitorDataResult::parse(const std::string &payload)
 	for (auto valueResultresultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultresultItem["dps"].isNull())
-			resultObject.dps = valueResultresultItem["dps"].asString();
 		if(!valueResultresultItem["integrity"].isNull())
 			resultObject.integrity = std::stof(valueResultresultItem["integrity"].asString());
-		if(!valueResultresultItem["messageWatermark"].isNull())
-			resultObject.messageWatermark = std::stol(valueResultresultItem["messageWatermark"].asString());
-		if(!valueResultresultItem["metric"].isNull())
-			resultObject.metric = valueResultresultItem["metric"].asString();
 		if(!valueResultresultItem["summary"].isNull())
 			resultObject.summary = std::stof(valueResultresultItem["summary"].asString());
+		if(!valueResultresultItem["messageWatermark"].isNull())
+			resultObject.messageWatermark = std::stol(valueResultresultItem["messageWatermark"].asString());
+		if(!valueResultresultItem["dps"].isNull())
+			resultObject.dps = valueResultresultItem["dps"].asString();
 		if(!valueResultresultItem["tags"].isNull())
 			resultObject.tags = valueResultresultItem["tags"].asString();
+		if(!valueResultresultItem["metric"].isNull())
+			resultObject.metric = valueResultresultItem["metric"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["Code"].isNull())

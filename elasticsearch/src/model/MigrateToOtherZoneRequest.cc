@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,35 +18,38 @@
 
 using AlibabaCloud::Elasticsearch::Model::MigrateToOtherZoneRequest;
 
-MigrateToOtherZoneRequest::MigrateToOtherZoneRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/actions/migrate-zones");
-	setMethod(HttpRequest::Method::Post);
+MigrateToOtherZoneRequest::MigrateToOtherZoneRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/actions/migrate-zones"};
+  setMethod(HttpRequest::Method::Post);
 }
 
-MigrateToOtherZoneRequest::~MigrateToOtherZoneRequest()
-{}
+MigrateToOtherZoneRequest::~MigrateToOtherZoneRequest() {}
 
-std::string MigrateToOtherZoneRequest::getInstanceId()const
-{
-	return instanceId_;
+string MigrateToOtherZoneRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void MigrateToOtherZoneRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void MigrateToOtherZoneRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-bool MigrateToOtherZoneRequest::getDryRun()const
-{
-	return dryRun_;
+boolean MigrateToOtherZoneRequest::getDryRun() const {
+  return dryRun_;
 }
 
-void MigrateToOtherZoneRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setParameter("DryRun", dryRun ? "true" : "false");
+void MigrateToOtherZoneRequest::setDryRun(boolean dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("dryRun"), std::to_string(dryRun));
+}
+
+string MigrateToOtherZoneRequest::getBody() const {
+  return body_;
+}
+
+void MigrateToOtherZoneRequest::setBody(string body) {
+  body_ = body;
+  setBodyParameter(std::string("body"), std::to_string(body));
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,68 +18,47 @@
 
 using AlibabaCloud::Elasticsearch::Model::UpgradeEngineVersionRequest;
 
-UpgradeEngineVersionRequest::UpgradeEngineVersionRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/actions/upgrade-version");
-	setMethod(HttpRequest::Method::Post);
+UpgradeEngineVersionRequest::UpgradeEngineVersionRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/actions/upgrade-version"};
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpgradeEngineVersionRequest::~UpgradeEngineVersionRequest()
-{}
+UpgradeEngineVersionRequest::~UpgradeEngineVersionRequest() {}
 
-std::string UpgradeEngineVersionRequest::getInstanceId()const
-{
-	return instanceId_;
+string UpgradeEngineVersionRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void UpgradeEngineVersionRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void UpgradeEngineVersionRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-bool UpgradeEngineVersionRequest::getDryRun()const
-{
-	return dryRun_;
+boolean UpgradeEngineVersionRequest::getDryRun() const {
+  return dryRun_;
 }
 
-void UpgradeEngineVersionRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setParameter("DryRun", dryRun ? "true" : "false");
+void UpgradeEngineVersionRequest::setDryRun(boolean dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("dryRun"), std::to_string(dryRun));
 }
 
-std::string UpgradeEngineVersionRequest::getClientToken()const
-{
-	return clientToken_;
+string UpgradeEngineVersionRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void UpgradeEngineVersionRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void UpgradeEngineVersionRequest::setClientToken(string clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("clientToken"), std::to_string(clientToken));
 }
 
-std::string UpgradeEngineVersionRequest::getType()const
-{
-	return type_;
+std::string UpgradeEngineVersionRequest::getBody() const {
+  return body_;
 }
 
-void UpgradeEngineVersionRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setBodyParameter("Type", type);
-}
-
-std::string UpgradeEngineVersionRequest::getVersion()const
-{
-	return version_;
-}
-
-void UpgradeEngineVersionRequest::setVersion(const std::string& version)
-{
-	version_ = version;
-	setBodyParameter("Version", version);
+void UpgradeEngineVersionRequest::setBody(const std::string &body) {
+  body_ = body;
+  setBodyParameter(std::string("body"), body);
 }
 

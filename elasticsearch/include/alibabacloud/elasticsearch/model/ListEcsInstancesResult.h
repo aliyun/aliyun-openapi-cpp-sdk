@@ -76,14 +76,14 @@ namespace AlibabaCloud
 						bool dryRun;
 						std::string gmtUpdateTime;
 						std::vector<CollectorsItem::ExtendConfigsItem> extendConfigs;
-						std::string name;
 						std::string resType;
+						std::string name;
 						std::vector<std::string> collectorPaths;
-						std::string vpcId;
 						std::string ownerId;
+						std::string vpcId;
 					};
-					std::string ecsInstanceId;
 					std::string ecsInstanceName;
+					std::string ecsInstanceId;
 					std::string status;
 					std::vector<ResultItem::CollectorsItem> collectors;
 					std::string osType;

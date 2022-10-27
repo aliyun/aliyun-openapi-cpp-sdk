@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Result
 				{
-					std::string endpointName;
 					std::string endpointDomain;
+					std::string endpointName;
 					std::string endpointId;
 					std::string serviceId;
 				};

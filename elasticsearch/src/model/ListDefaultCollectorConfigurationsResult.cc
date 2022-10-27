@@ -43,10 +43,10 @@ void ListDefaultCollectorConfigurationsResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["fileName"].isNull())
-			resultObject.fileName = valueResultResultItem["fileName"].asString();
 		if(!valueResultResultItem["content"].isNull())
 			resultObject.content = valueResultResultItem["content"].asString();
+		if(!valueResultResultItem["fileName"].isNull())
+			resultObject.fileName = valueResultResultItem["fileName"].asString();
 		result_.push_back(resultObject);
 	}
 

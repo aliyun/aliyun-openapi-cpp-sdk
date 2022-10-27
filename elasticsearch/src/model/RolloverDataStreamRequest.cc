@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,38 @@
 
 using AlibabaCloud::Elasticsearch::Model::RolloverDataStreamRequest;
 
-RolloverDataStreamRequest::RolloverDataStreamRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/data-streams/[DataStream]/rollover");
-	setMethod(HttpRequest::Method::Post);
+RolloverDataStreamRequest::RolloverDataStreamRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/data-streams/[DataStream]/rollover"};
+  setMethod(HttpRequest::Method::Post);
 }
 
-RolloverDataStreamRequest::~RolloverDataStreamRequest()
-{}
+RolloverDataStreamRequest::~RolloverDataStreamRequest() {}
 
-std::string RolloverDataStreamRequest::getDataStream()const
-{
-	return dataStream_;
+string RolloverDataStreamRequest::getDataStream() const {
+  return dataStream_;
 }
 
-void RolloverDataStreamRequest::setDataStream(const std::string& dataStream)
-{
-	dataStream_ = dataStream;
-	setParameter("DataStream", dataStream);
+void RolloverDataStreamRequest::setDataStream(string dataStream) {
+  dataStream_ = dataStream;
+  setParameter(std::string("DataStream"), std::to_string(dataStream));
 }
 
-std::string RolloverDataStreamRequest::getInstanceId()const
-{
-	return instanceId_;
+string RolloverDataStreamRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void RolloverDataStreamRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void RolloverDataStreamRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-std::string RolloverDataStreamRequest::getClientToken()const
-{
-	return clientToken_;
+string RolloverDataStreamRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void RolloverDataStreamRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void RolloverDataStreamRequest::setClientToken(string clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), std::to_string(clientToken));
 }
 

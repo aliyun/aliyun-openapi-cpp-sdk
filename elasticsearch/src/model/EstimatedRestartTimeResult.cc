@@ -40,10 +40,10 @@ void EstimatedRestartTimeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["value"].isNull())
-		result_.value = std::stol(resultNode["value"].asString());
 	if(!resultNode["unit"].isNull())
 		result_.unit = resultNode["unit"].asString();
+	if(!resultNode["value"].isNull())
+		result_.value = std::stol(resultNode["value"].asString());
 
 }
 

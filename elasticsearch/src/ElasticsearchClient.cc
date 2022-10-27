@@ -447,6 +447,42 @@ ElasticsearchClient::CreateCollectorOutcomeCallable ElasticsearchClient::createC
 	return task->get_future();
 }
 
+ElasticsearchClient::CreateComponentIndexOutcome ElasticsearchClient::createComponentIndex(const CreateComponentIndexRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateComponentIndexOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateComponentIndexOutcome(CreateComponentIndexResult(outcome.result()));
+	else
+		return CreateComponentIndexOutcome(outcome.error());
+}
+
+void ElasticsearchClient::createComponentIndexAsync(const CreateComponentIndexRequest& request, const CreateComponentIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createComponentIndex(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::CreateComponentIndexOutcomeCallable ElasticsearchClient::createComponentIndexCallable(const CreateComponentIndexRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateComponentIndexOutcome()>>(
+			[this, request]()
+			{
+			return this->createComponentIndex(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::CreateDataStreamOutcome ElasticsearchClient::createDataStream(const CreateDataStreamRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -843,6 +879,42 @@ ElasticsearchClient::DeleteCollectorOutcomeCallable ElasticsearchClient::deleteC
 	return task->get_future();
 }
 
+ElasticsearchClient::DeleteComponentIndexOutcome ElasticsearchClient::deleteComponentIndex(const DeleteComponentIndexRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteComponentIndexOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteComponentIndexOutcome(DeleteComponentIndexResult(outcome.result()));
+	else
+		return DeleteComponentIndexOutcome(outcome.error());
+}
+
+void ElasticsearchClient::deleteComponentIndexAsync(const DeleteComponentIndexRequest& request, const DeleteComponentIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteComponentIndex(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DeleteComponentIndexOutcomeCallable ElasticsearchClient::deleteComponentIndexCallable(const DeleteComponentIndexRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteComponentIndexOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteComponentIndex(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::DeleteConnectedClusterOutcome ElasticsearchClient::deleteConnectedCluster(const DeleteConnectedClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -945,6 +1017,42 @@ ElasticsearchClient::DeleteDataTaskOutcomeCallable ElasticsearchClient::deleteDa
 			[this, request]()
 			{
 			return this->deleteDataTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::DeleteDeprecatedTemplateOutcome ElasticsearchClient::deleteDeprecatedTemplate(const DeleteDeprecatedTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDeprecatedTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDeprecatedTemplateOutcome(DeleteDeprecatedTemplateResult(outcome.result()));
+	else
+		return DeleteDeprecatedTemplateOutcome(outcome.error());
+}
+
+void ElasticsearchClient::deleteDeprecatedTemplateAsync(const DeleteDeprecatedTemplateRequest& request, const DeleteDeprecatedTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDeprecatedTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DeleteDeprecatedTemplateOutcomeCallable ElasticsearchClient::deleteDeprecatedTemplateCallable(const DeleteDeprecatedTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDeprecatedTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDeprecatedTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1311,6 +1419,42 @@ ElasticsearchClient::DescribeCollectorOutcomeCallable ElasticsearchClient::descr
 	return task->get_future();
 }
 
+ElasticsearchClient::DescribeComponentIndexOutcome ElasticsearchClient::describeComponentIndex(const DescribeComponentIndexRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeComponentIndexOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeComponentIndexOutcome(DescribeComponentIndexResult(outcome.result()));
+	else
+		return DescribeComponentIndexOutcome(outcome.error());
+}
+
+void ElasticsearchClient::describeComponentIndexAsync(const DescribeComponentIndexRequest& request, const DescribeComponentIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeComponentIndex(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DescribeComponentIndexOutcomeCallable ElasticsearchClient::describeComponentIndexCallable(const DescribeComponentIndexRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeComponentIndexOutcome()>>(
+			[this, request]()
+			{
+			return this->describeComponentIndex(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::DescribeConnectableClustersOutcome ElasticsearchClient::describeConnectableClusters(const DescribeConnectableClustersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1341,6 +1485,42 @@ ElasticsearchClient::DescribeConnectableClustersOutcomeCallable ElasticsearchCli
 			[this, request]()
 			{
 			return this->describeConnectableClusters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::DescribeDeprecatedTemplateOutcome ElasticsearchClient::describeDeprecatedTemplate(const DescribeDeprecatedTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDeprecatedTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDeprecatedTemplateOutcome(DescribeDeprecatedTemplateResult(outcome.result()));
+	else
+		return DescribeDeprecatedTemplateOutcome(outcome.error());
+}
+
+void ElasticsearchClient::describeDeprecatedTemplateAsync(const DescribeDeprecatedTemplateRequest& request, const DescribeDeprecatedTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDeprecatedTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DescribeDeprecatedTemplateOutcomeCallable ElasticsearchClient::describeDeprecatedTemplateCallable(const DescribeDeprecatedTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDeprecatedTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDeprecatedTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1413,6 +1593,42 @@ ElasticsearchClient::DescribeDiagnosisSettingsOutcomeCallable ElasticsearchClien
 			[this, request]()
 			{
 			return this->describeDiagnosisSettings(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::DescribeDynamicSettingsOutcome ElasticsearchClient::describeDynamicSettings(const DescribeDynamicSettingsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDynamicSettingsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDynamicSettingsOutcome(DescribeDynamicSettingsResult(outcome.result()));
+	else
+		return DescribeDynamicSettingsOutcome(outcome.error());
+}
+
+void ElasticsearchClient::describeDynamicSettingsAsync(const DescribeDynamicSettingsRequest& request, const DescribeDynamicSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDynamicSettings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::DescribeDynamicSettingsOutcomeCallable ElasticsearchClient::describeDynamicSettingsCallable(const DescribeDynamicSettingsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDynamicSettingsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDynamicSettings(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2643,6 +2859,42 @@ ElasticsearchClient::ListAckNamespacesOutcomeCallable ElasticsearchClient::listA
 	return task->get_future();
 }
 
+ElasticsearchClient::ListActionRecordsOutcome ElasticsearchClient::listActionRecords(const ListActionRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListActionRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListActionRecordsOutcome(ListActionRecordsResult(outcome.result()));
+	else
+		return ListActionRecordsOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listActionRecordsAsync(const ListActionRecordsRequest& request, const ListActionRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listActionRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListActionRecordsOutcomeCallable ElasticsearchClient::listActionRecordsCallable(const ListActionRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListActionRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->listActionRecords(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::ListAllNodeOutcome ElasticsearchClient::listAllNode(const ListAllNodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2823,6 +3075,42 @@ ElasticsearchClient::ListCollectorsOutcomeCallable ElasticsearchClient::listColl
 	return task->get_future();
 }
 
+ElasticsearchClient::ListComponentIndicesOutcome ElasticsearchClient::listComponentIndices(const ListComponentIndicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListComponentIndicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListComponentIndicesOutcome(ListComponentIndicesResult(outcome.result()));
+	else
+		return ListComponentIndicesOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listComponentIndicesAsync(const ListComponentIndicesRequest& request, const ListComponentIndicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listComponentIndices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListComponentIndicesOutcomeCallable ElasticsearchClient::listComponentIndicesCallable(const ListComponentIndicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListComponentIndicesOutcome()>>(
+			[this, request]()
+			{
+			return this->listComponentIndices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::ListConnectedClustersOutcome ElasticsearchClient::listConnectedClusters(const ListConnectedClustersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2961,6 +3249,42 @@ ElasticsearchClient::ListDefaultCollectorConfigurationsOutcomeCallable Elasticse
 			[this, request]()
 			{
 			return this->listDefaultCollectorConfigurations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::ListDeprecatedTemplatesOutcome ElasticsearchClient::listDeprecatedTemplates(const ListDeprecatedTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDeprecatedTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDeprecatedTemplatesOutcome(ListDeprecatedTemplatesResult(outcome.result()));
+	else
+		return ListDeprecatedTemplatesOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listDeprecatedTemplatesAsync(const ListDeprecatedTemplatesRequest& request, const ListDeprecatedTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDeprecatedTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListDeprecatedTemplatesOutcomeCallable ElasticsearchClient::listDeprecatedTemplatesCallable(const ListDeprecatedTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDeprecatedTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->listDeprecatedTemplates(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3321,6 +3645,42 @@ ElasticsearchClient::ListInstanceOutcomeCallable ElasticsearchClient::listInstan
 			[this, request]()
 			{
 			return this->listInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::ListInstanceHistoryEventsOutcome ElasticsearchClient::listInstanceHistoryEvents(const ListInstanceHistoryEventsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInstanceHistoryEventsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInstanceHistoryEventsOutcome(ListInstanceHistoryEventsResult(outcome.result()));
+	else
+		return ListInstanceHistoryEventsOutcome(outcome.error());
+}
+
+void ElasticsearchClient::listInstanceHistoryEventsAsync(const ListInstanceHistoryEventsRequest& request, const ListInstanceHistoryEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInstanceHistoryEvents(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::ListInstanceHistoryEventsOutcomeCallable ElasticsearchClient::listInstanceHistoryEventsCallable(const ListInstanceHistoryEventsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInstanceHistoryEventsOutcome()>>(
+			[this, request]()
+			{
+			return this->listInstanceHistoryEvents(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5343,6 +5703,42 @@ ElasticsearchClient::UpdateCollectorNameOutcomeCallable ElasticsearchClient::upd
 	return task->get_future();
 }
 
+ElasticsearchClient::UpdateComponentIndexOutcome ElasticsearchClient::updateComponentIndex(const UpdateComponentIndexRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateComponentIndexOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateComponentIndexOutcome(UpdateComponentIndexResult(outcome.result()));
+	else
+		return UpdateComponentIndexOutcome(outcome.error());
+}
+
+void ElasticsearchClient::updateComponentIndexAsync(const UpdateComponentIndexRequest& request, const UpdateComponentIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateComponentIndex(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::UpdateComponentIndexOutcomeCallable ElasticsearchClient::updateComponentIndexCallable(const UpdateComponentIndexRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateComponentIndexOutcome()>>(
+			[this, request]()
+			{
+			return this->updateComponentIndex(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ElasticsearchClient::UpdateDescriptionOutcome ElasticsearchClient::updateDescription(const UpdateDescriptionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5445,6 +5841,42 @@ ElasticsearchClient::UpdateDictOutcomeCallable ElasticsearchClient::updateDictCa
 			[this, request]()
 			{
 			return this->updateDict(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ElasticsearchClient::UpdateDynamicSettingsOutcome ElasticsearchClient::updateDynamicSettings(const UpdateDynamicSettingsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDynamicSettingsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDynamicSettingsOutcome(UpdateDynamicSettingsResult(outcome.result()));
+	else
+		return UpdateDynamicSettingsOutcome(outcome.error());
+}
+
+void ElasticsearchClient::updateDynamicSettingsAsync(const UpdateDynamicSettingsRequest& request, const UpdateDynamicSettingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDynamicSettings(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ElasticsearchClient::UpdateDynamicSettingsOutcomeCallable ElasticsearchClient::updateDynamicSettingsCallable(const UpdateDynamicSettingsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDynamicSettingsOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDynamicSettings(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

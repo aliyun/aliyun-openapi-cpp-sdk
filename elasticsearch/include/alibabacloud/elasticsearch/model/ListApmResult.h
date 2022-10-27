@@ -36,7 +36,7 @@ namespace AlibabaCloud
 				{
 					long xTotalCount;
 				};
-				struct 返回结果
+				struct Object
 				{
 					std::string status;
 					std::string description;
@@ -62,13 +62,13 @@ namespace AlibabaCloud
 				explicit ListApmResult(const std::string &payload);
 				~ListApmResult();
 				Headers getHeaders()const;
-				std::vector<返回结果> getResult()const;
+				std::vector<Object> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				Headers headers_;
-				std::vector<返回结果> result_;
+				std::vector<Object> result_;
 
 			};
 		}

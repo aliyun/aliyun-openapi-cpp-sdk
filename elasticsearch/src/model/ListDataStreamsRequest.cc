@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,38 @@
 
 using AlibabaCloud::Elasticsearch::Model::ListDataStreamsRequest;
 
-ListDataStreamsRequest::ListDataStreamsRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/data-streams");
-	setMethod(HttpRequest::Method::Get);
+ListDataStreamsRequest::ListDataStreamsRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/data-streams"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListDataStreamsRequest::~ListDataStreamsRequest()
-{}
+ListDataStreamsRequest::~ListDataStreamsRequest() {}
 
-std::string ListDataStreamsRequest::getInstanceId()const
-{
-	return instanceId_;
+string ListDataStreamsRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ListDataStreamsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ListDataStreamsRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-bool ListDataStreamsRequest::getIsManaged()const
-{
-	return isManaged_;
+boolean ListDataStreamsRequest::getIsManaged() const {
+  return isManaged_;
 }
 
-void ListDataStreamsRequest::setIsManaged(bool isManaged)
-{
-	isManaged_ = isManaged;
-	setParameter("IsManaged", isManaged ? "true" : "false");
+void ListDataStreamsRequest::setIsManaged(boolean isManaged) {
+  isManaged_ = isManaged;
+  setParameter(std::string("isManaged"), std::to_string(isManaged));
 }
 
-std::string ListDataStreamsRequest::getName()const
-{
-	return name_;
+string ListDataStreamsRequest::getName() const {
+  return name_;
 }
 
-void ListDataStreamsRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
+void ListDataStreamsRequest::setName(string name) {
+  name_ = name;
+  setParameter(std::string("name"), std::to_string(name));
 }
 

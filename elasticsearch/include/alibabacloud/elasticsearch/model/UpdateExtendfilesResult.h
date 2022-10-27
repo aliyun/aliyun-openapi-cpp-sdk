@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct ResultItem
 				{
 					std::string sourceType;
-					std::string name;
 					long fileSize;
+					std::string name;
 				};
 
 

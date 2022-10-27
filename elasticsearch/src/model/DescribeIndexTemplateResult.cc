@@ -40,14 +40,14 @@ void DescribeIndexTemplateResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["indexTemplate"].isNull())
-		result_.indexTemplate = resultNode["indexTemplate"].asString();
 	if(!resultNode["dataStream"].isNull())
 		result_.dataStream = resultNode["dataStream"].asString() == "true";
-	if(!resultNode["priority"].isNull())
-		result_.priority = std::stoi(resultNode["priority"].asString());
+	if(!resultNode["indexTemplate"].isNull())
+		result_.indexTemplate = resultNode["indexTemplate"].asString();
 	if(!resultNode["ilmPolicy"].isNull())
 		result_.ilmPolicy = resultNode["ilmPolicy"].asString();
+	if(!resultNode["priority"].isNull())
+		result_.priority = std::stoi(resultNode["priority"].asString());
 	auto _templateNode = resultNode["template"];
 	if(!_templateNode["settings"].isNull())
 		result_._template.settings = _templateNode["settings"].asString();

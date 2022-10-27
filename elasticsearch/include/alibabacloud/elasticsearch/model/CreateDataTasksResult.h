@@ -37,13 +37,13 @@ namespace AlibabaCloud
 					struct SourceCluster
 					{
 						std::string type;
-						int vpcInstancePort;
-						std::string vpcId;
 						std::string endpoint;
+						std::string vpcId;
+						int vpcInstancePort;
 						std::string username;
 						std::string dataSourceType;
-						std::string vpcInstanceId;
 						std::string index;
+						std::string vpcInstanceId;
 						std::string password;
 					};
 					struct SinkCluster

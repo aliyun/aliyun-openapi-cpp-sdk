@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						std::string diskType;
 						bool diskEncryption;
+						std::string performanceLevel;
 						std::string spec;
 						int disk;
 					};
@@ -59,6 +60,7 @@ namespace AlibabaCloud
 					{
 						int amount;
 						std::string spec;
+						int disk;
 					};
 					struct MasterConfiguration
 					{
@@ -98,15 +100,15 @@ namespace AlibabaCloud
 					{
 						std::string type;
 						std::string sourceType;
-						std::string name;
 						long fileSize;
+						std::string name;
 					};
 					struct SynonymsDictsItem
 					{
 						std::string type;
 						std::string sourceType;
-						std::string name;
 						long fileSize;
+						std::string name;
 					};
 					struct ZoneInfo
 					{
@@ -117,13 +119,20 @@ namespace AlibabaCloud
 					{
 						std::string type;
 						std::string sourceType;
-						std::string name;
 						long fileSize;
+						std::string name;
 					};
 					struct Tag
 					{
 						std::string tagKey;
 						std::string tagValue;
+					};
+					struct IkHotDictsItem
+					{
+						std::string type;
+						std::string sourceType;
+						int fileSize;
+						std::string name;
 					};
 					MasterConfiguration masterConfiguration;
 					std::string resourceGroupId;
@@ -146,6 +155,7 @@ namespace AlibabaCloud
 					std::vector<DictListItem> dictList;
 					std::string kibanaDomain;
 					std::vector<Tag> tags;
+					std::vector<IkHotDictsItem> ikHotDicts;
 					NodeSpec nodeSpec;
 					bool warmNode;
 					WarmNodeConfiguration warmNodeConfiguration;

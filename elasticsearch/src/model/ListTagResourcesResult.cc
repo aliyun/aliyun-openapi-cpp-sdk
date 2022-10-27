@@ -47,14 +47,14 @@ void ListTagResourcesResult::parse(const std::string &payload)
 	for (auto tagResourcesNodeTagResourceTagResourceItem : allTagResourceNode)
 	{
 		TagResources::TagResourceItem tagResourceItemObject;
-		if(!tagResourcesNodeTagResourceTagResourceItem["ResourceId"].isNull())
-			tagResourceItemObject.resourceId = tagResourcesNodeTagResourceTagResourceItem["ResourceId"].asString();
-		if(!tagResourcesNodeTagResourceTagResourceItem["ResourceType"].isNull())
-			tagResourceItemObject.resourceType = tagResourcesNodeTagResourceTagResourceItem["ResourceType"].asString();
-		if(!tagResourcesNodeTagResourceTagResourceItem["TagKey"].isNull())
-			tagResourceItemObject.tagKey = tagResourcesNodeTagResourceTagResourceItem["TagKey"].asString();
 		if(!tagResourcesNodeTagResourceTagResourceItem["TagValue"].isNull())
 			tagResourceItemObject.tagValue = tagResourcesNodeTagResourceTagResourceItem["TagValue"].asString();
+		if(!tagResourcesNodeTagResourceTagResourceItem["ResourceType"].isNull())
+			tagResourceItemObject.resourceType = tagResourcesNodeTagResourceTagResourceItem["ResourceType"].asString();
+		if(!tagResourcesNodeTagResourceTagResourceItem["ResourceId"].isNull())
+			tagResourceItemObject.resourceId = tagResourcesNodeTagResourceTagResourceItem["ResourceId"].asString();
+		if(!tagResourcesNodeTagResourceTagResourceItem["TagKey"].isNull())
+			tagResourceItemObject.tagKey = tagResourcesNodeTagResourceTagResourceItem["TagKey"].asString();
 		tagResources_.tagResource.push_back(tagResourceItemObject);
 	}
 	if(!value["PageSize"].isNull())

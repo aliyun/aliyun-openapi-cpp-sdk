@@ -43,14 +43,14 @@ void ListExtendfilesResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["name"].isNull())
-			resultObject.name = valueResultResultItem["name"].asString();
-		if(!valueResultResultItem["fileSize"].isNull())
-			resultObject.fileSize = std::stol(valueResultResultItem["fileSize"].asString());
-		if(!valueResultResultItem["sourceType"].isNull())
-			resultObject.sourceType = valueResultResultItem["sourceType"].asString();
 		if(!valueResultResultItem["filePath"].isNull())
 			resultObject.filePath = valueResultResultItem["filePath"].asString();
+		if(!valueResultResultItem["fileSize"].isNull())
+			resultObject.fileSize = std::stol(valueResultResultItem["fileSize"].asString());
+		if(!valueResultResultItem["name"].isNull())
+			resultObject.name = valueResultResultItem["name"].asString();
+		if(!valueResultResultItem["sourceType"].isNull())
+			resultObject.sourceType = valueResultResultItem["sourceType"].asString();
 		result_.push_back(resultObject);
 	}
 

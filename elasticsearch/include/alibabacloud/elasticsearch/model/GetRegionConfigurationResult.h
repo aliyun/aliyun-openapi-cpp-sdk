@@ -157,8 +157,8 @@ namespace AlibabaCloud
 					JvmConfine jvmConfine;
 					KibanaNodeProperties kibanaNodeProperties;
 					std::string regionId;
-					std::vector<std::string> esVersions;
 					std::vector<std::string> masterSpec;
+					std::vector<std::string> esVersions;
 					std::vector<std::string> instanceSupportNodes;
 				};
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,38 @@
 
 using AlibabaCloud::Elasticsearch::Model::DeleteConnectedClusterRequest;
 
-DeleteConnectedClusterRequest::DeleteConnectedClusterRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances/[InstanceId]/connected-clusters");
-	setMethod(HttpRequest::Method::Delete);
+DeleteConnectedClusterRequest::DeleteConnectedClusterRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances/[InstanceId]/connected-clusters"};
+  setMethod(HttpRequest::Method::Delete);
 }
 
-DeleteConnectedClusterRequest::~DeleteConnectedClusterRequest()
-{}
+DeleteConnectedClusterRequest::~DeleteConnectedClusterRequest() {}
 
-std::string DeleteConnectedClusterRequest::getInstanceId()const
-{
-	return instanceId_;
+string DeleteConnectedClusterRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void DeleteConnectedClusterRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void DeleteConnectedClusterRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-std::string DeleteConnectedClusterRequest::getClientToken()const
-{
-	return clientToken_;
+string DeleteConnectedClusterRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void DeleteConnectedClusterRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void DeleteConnectedClusterRequest::setClientToken(string clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("clientToken"), std::to_string(clientToken));
 }
 
-std::string DeleteConnectedClusterRequest::getConnectedInstanceId()const
-{
-	return connectedInstanceId_;
+string DeleteConnectedClusterRequest::getConnectedInstanceId() const {
+  return connectedInstanceId_;
 }
 
-void DeleteConnectedClusterRequest::setConnectedInstanceId(const std::string& connectedInstanceId)
-{
-	connectedInstanceId_ = connectedInstanceId;
-	setParameter("ConnectedInstanceId", connectedInstanceId);
+void DeleteConnectedClusterRequest::setConnectedInstanceId(string connectedInstanceId) {
+  connectedInstanceId_ = connectedInstanceId;
+  setParameter(std::string("connectedInstanceId"), std::to_string(connectedInstanceId));
 }
 

@@ -43,16 +43,16 @@ void ListPluginsResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["name"].isNull())
-			resultObject.name = valueResultResultItem["name"].asString();
-		if(!valueResultResultItem["state"].isNull())
-			resultObject.state = valueResultResultItem["state"].asString();
-		if(!valueResultResultItem["source"].isNull())
-			resultObject.source = valueResultResultItem["source"].asString();
 		if(!valueResultResultItem["description"].isNull())
 			resultObject.description = valueResultResultItem["description"].asString();
 		if(!valueResultResultItem["specificationUrl"].isNull())
 			resultObject.specificationUrl = valueResultResultItem["specificationUrl"].asString();
+		if(!valueResultResultItem["state"].isNull())
+			resultObject.state = valueResultResultItem["state"].asString();
+		if(!valueResultResultItem["source"].isNull())
+			resultObject.source = valueResultResultItem["source"].asString();
+		if(!valueResultResultItem["name"].isNull())
+			resultObject.name = valueResultResultItem["name"].asString();
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];

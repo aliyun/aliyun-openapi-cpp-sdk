@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,134 +18,128 @@
 
 using AlibabaCloud::Elasticsearch::Model::ListInstanceRequest;
 
-ListInstanceRequest::ListInstanceRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/instances");
-	setMethod(HttpRequest::Method::Get);
+ListInstanceRequest::ListInstanceRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/instances"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListInstanceRequest::~ListInstanceRequest()
-{}
+ListInstanceRequest::~ListInstanceRequest() {}
 
-std::string ListInstanceRequest::getDescription()const
-{
-	return description_;
+string ListInstanceRequest::getDescription() const {
+  return description_;
 }
 
-void ListInstanceRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void ListInstanceRequest::setDescription(string description) {
+  description_ = description;
+  setParameter(std::string("description"), std::to_string(description));
 }
 
-std::string ListInstanceRequest::getInstanceCategory()const
-{
-	return instanceCategory_;
+string ListInstanceRequest::getInstanceCategory() const {
+  return instanceCategory_;
 }
 
-void ListInstanceRequest::setInstanceCategory(const std::string& instanceCategory)
-{
-	instanceCategory_ = instanceCategory;
-	setParameter("InstanceCategory", instanceCategory);
+void ListInstanceRequest::setInstanceCategory(string instanceCategory) {
+  instanceCategory_ = instanceCategory;
+  setParameter(std::string("instanceCategory"), std::to_string(instanceCategory));
 }
 
-std::string ListInstanceRequest::getTags()const
-{
-	return tags_;
+string ListInstanceRequest::getInnerapiOwnerId() const {
+  return innerapiOwnerId_;
 }
 
-void ListInstanceRequest::setTags(const std::string& tags)
-{
-	tags_ = tags;
-	setParameter("Tags", tags);
+void ListInstanceRequest::setInnerapiOwnerId(string innerapiOwnerId) {
+  innerapiOwnerId_ = innerapiOwnerId;
+  setParameter(std::string("innerapiOwnerId"), std::to_string(innerapiOwnerId));
 }
 
-std::string ListInstanceRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
+string ListInstanceRequest::getTags() const {
+  return tags_;
 }
 
-void ListInstanceRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+void ListInstanceRequest::setTags(string tags) {
+  tags_ = tags;
+  setParameter(std::string("tags"), std::to_string(tags));
 }
 
-std::string ListInstanceRequest::getInstanceId()const
-{
-	return instanceId_;
+string ListInstanceRequest::getProductType() const {
+  return productType_;
 }
 
-void ListInstanceRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ListInstanceRequest::setProductType(string productType) {
+  productType_ = productType;
+  setParameter(std::string("productType"), std::to_string(productType));
 }
 
-int ListInstanceRequest::getSize()const
-{
-	return size_;
+string ListInstanceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void ListInstanceRequest::setSize(int size)
-{
-	size_ = size;
-	setParameter("Size", std::to_string(size));
+void ListInstanceRequest::setResourceGroupId(string resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("resourceGroupId"), std::to_string(resourceGroupId));
 }
 
-std::string ListInstanceRequest::getEsVersion()const
-{
-	return esVersion_;
+string ListInstanceRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ListInstanceRequest::setEsVersion(const std::string& esVersion)
-{
-	esVersion_ = esVersion;
-	setParameter("EsVersion", esVersion);
+void ListInstanceRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("instanceId"), std::to_string(instanceId));
 }
 
-std::string ListInstanceRequest::getVpcId()const
-{
-	return vpcId_;
+integer ListInstanceRequest::getSize() const {
+  return size_;
 }
 
-void ListInstanceRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setParameter("VpcId", vpcId);
+void ListInstanceRequest::setSize(integer size) {
+  size_ = size;
+  setParameter(std::string("size"), std::to_string(size));
 }
 
-std::string ListInstanceRequest::getZoneId()const
-{
-	return zoneId_;
+string ListInstanceRequest::getEsVersion() const {
+  return esVersion_;
 }
 
-void ListInstanceRequest::setZoneId(const std::string& zoneId)
-{
-	zoneId_ = zoneId;
-	setParameter("ZoneId", zoneId);
+void ListInstanceRequest::setEsVersion(string esVersion) {
+  esVersion_ = esVersion;
+  setParameter(std::string("esVersion"), std::to_string(esVersion));
 }
 
-int ListInstanceRequest::getPage()const
-{
-	return page_;
+string ListInstanceRequest::getVpcId() const {
+  return vpcId_;
 }
 
-void ListInstanceRequest::setPage(int page)
-{
-	page_ = page;
-	setParameter("Page", std::to_string(page));
+void ListInstanceRequest::setVpcId(string vpcId) {
+  vpcId_ = vpcId;
+  setParameter(std::string("vpcId"), std::to_string(vpcId));
 }
 
-std::string ListInstanceRequest::getPaymentType()const
-{
-	return paymentType_;
+string ListInstanceRequest::getZoneId() const {
+  return zoneId_;
 }
 
-void ListInstanceRequest::setPaymentType(const std::string& paymentType)
-{
-	paymentType_ = paymentType;
-	setParameter("PaymentType", paymentType);
+void ListInstanceRequest::setZoneId(string zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("zoneId"), std::to_string(zoneId));
+}
+
+integer ListInstanceRequest::getPage() const {
+  return page_;
+}
+
+void ListInstanceRequest::setPage(integer page) {
+  page_ = page;
+  setParameter(std::string("page"), std::to_string(page));
+}
+
+string ListInstanceRequest::getPaymentType() const {
+  return paymentType_;
+}
+
+void ListInstanceRequest::setPaymentType(string paymentType) {
+  paymentType_ = paymentType;
+  setParameter(std::string("paymentType"), std::to_string(paymentType));
 }
 

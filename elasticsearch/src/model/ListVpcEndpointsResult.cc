@@ -43,24 +43,24 @@ void ListVpcEndpointsResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["connectionStatus"].isNull())
-			resultObject.connectionStatus = valueResultResultItem["connectionStatus"].asString();
-		if(!valueResultResultItem["createTime"].isNull())
-			resultObject.createTime = valueResultResultItem["createTime"].asString();
 		if(!valueResultResultItem["endpointBusinessStatus"].isNull())
 			resultObject.endpointBusinessStatus = valueResultResultItem["endpointBusinessStatus"].asString();
-		if(!valueResultResultItem["endpointId"].isNull())
-			resultObject.endpointId = valueResultResultItem["endpointId"].asString();
-		if(!valueResultResultItem["endpointName"].isNull())
-			resultObject.endpointName = valueResultResultItem["endpointName"].asString();
-		if(!valueResultResultItem["endpointStatus"].isNull())
-			resultObject.endpointStatus = valueResultResultItem["endpointStatus"].asString();
 		if(!valueResultResultItem["serviceId"].isNull())
 			resultObject.serviceId = valueResultResultItem["serviceId"].asString();
+		if(!valueResultResultItem["endpointName"].isNull())
+			resultObject.endpointName = valueResultResultItem["endpointName"].asString();
+		if(!valueResultResultItem["endpointId"].isNull())
+			resultObject.endpointId = valueResultResultItem["endpointId"].asString();
 		if(!valueResultResultItem["serviceName"].isNull())
 			resultObject.serviceName = valueResultResultItem["serviceName"].asString();
+		if(!valueResultResultItem["createTime"].isNull())
+			resultObject.createTime = valueResultResultItem["createTime"].asString();
+		if(!valueResultResultItem["connectionStatus"].isNull())
+			resultObject.connectionStatus = valueResultResultItem["connectionStatus"].asString();
 		if(!valueResultResultItem["endpointDomain"].isNull())
 			resultObject.endpointDomain = valueResultResultItem["endpointDomain"].asString();
+		if(!valueResultResultItem["endpointStatus"].isNull())
+			resultObject.endpointStatus = valueResultResultItem["endpointStatus"].asString();
 		result_.push_back(resultObject);
 	}
 

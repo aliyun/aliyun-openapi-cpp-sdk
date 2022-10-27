@@ -32,16 +32,16 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ELASTICSEARCH_EXPORT UpgradeEngineVersionResult : public ServiceResult
 			{
 			public:
-				struct Result
+				struct ResultItem
 				{
-					struct ValidateResult
+					struct ValidateResultItem
 					{
 						std::string errorType;
 						std::string errorMsg;
 						std::string errorCode;
 					};
 					std::string status;
-					ValidateResult validateResult;
+					std::vector<ResultItem::ValidateResultItem> validateResult;
 					std::string validateType;
 				};
 
@@ -49,12 +49,12 @@ namespace AlibabaCloud
 				UpgradeEngineVersionResult();
 				explicit UpgradeEngineVersionResult(const std::string &payload);
 				~UpgradeEngineVersionResult();
-				Result getResult()const;
+				std::vector<ResultItem> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Result result_;
+				std::vector<ResultItem> result_;
 
 			};
 		}

@@ -43,16 +43,16 @@ void ListDictsResult::parse(const std::string &payload)
 	for (auto valueResultResultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultResultItem["name"].isNull())
-			resultObject.name = valueResultResultItem["name"].asString();
 		if(!valueResultResultItem["fileSize"].isNull())
 			resultObject.fileSize = std::stol(valueResultResultItem["fileSize"].asString());
-		if(!valueResultResultItem["type"].isNull())
-			resultObject.type = valueResultResultItem["type"].asString();
-		if(!valueResultResultItem["sourceType"].isNull())
-			resultObject.sourceType = valueResultResultItem["sourceType"].asString();
 		if(!valueResultResultItem["downloadUrl"].isNull())
 			resultObject.downloadUrl = valueResultResultItem["downloadUrl"].asString();
+		if(!valueResultResultItem["sourceType"].isNull())
+			resultObject.sourceType = valueResultResultItem["sourceType"].asString();
+		if(!valueResultResultItem["type"].isNull())
+			resultObject.type = valueResultResultItem["type"].asString();
+		if(!valueResultResultItem["name"].isNull())
+			resultObject.name = valueResultResultItem["name"].asString();
 		result_.push_back(resultObject);
 	}
 	auto headersNode = value["Headers"];

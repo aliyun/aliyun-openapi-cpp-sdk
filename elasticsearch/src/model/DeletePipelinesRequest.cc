@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,38 @@
 
 using AlibabaCloud::Elasticsearch::Model::DeletePipelinesRequest;
 
-DeletePipelinesRequest::DeletePipelinesRequest() :
-	RoaServiceRequest("elasticsearch", "2017-06-13")
-{
-	setResourcePath("/openapi/logstashes/[InstanceId]/pipelines");
-	setMethod(HttpRequest::Method::Delete);
+DeletePipelinesRequest::DeletePipelinesRequest()
+    : RoaServiceRequest("elasticsearch", "2017-06-13") {
+  setResourcePath("/openapi/logstashes/[InstanceId]/pipelines"};
+  setMethod(HttpRequest::Method::Delete);
 }
 
-DeletePipelinesRequest::~DeletePipelinesRequest()
-{}
+DeletePipelinesRequest::~DeletePipelinesRequest() {}
 
-std::string DeletePipelinesRequest::getInstanceId()const
-{
-	return instanceId_;
+string DeletePipelinesRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void DeletePipelinesRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void DeletePipelinesRequest::setInstanceId(string instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 
-std::string DeletePipelinesRequest::getClientToken()const
-{
-	return clientToken_;
+string DeletePipelinesRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void DeletePipelinesRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void DeletePipelinesRequest::setClientToken(string clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), std::to_string(clientToken));
 }
 
-std::string DeletePipelinesRequest::getPipelineIds()const
-{
-	return pipelineIds_;
+string DeletePipelinesRequest::getPipelineIds() const {
+  return pipelineIds_;
 }
 
-void DeletePipelinesRequest::setPipelineIds(const std::string& pipelineIds)
-{
-	pipelineIds_ = pipelineIds;
-	setParameter("PipelineIds", pipelineIds);
+void DeletePipelinesRequest::setPipelineIds(string pipelineIds) {
+  pipelineIds_ = pipelineIds;
+  setParameter(std::string("pipelineIds"), std::to_string(pipelineIds));
 }
 

@@ -40,10 +40,10 @@ void DescribeXpackMonitorConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["esInstanceId"].isNull())
-		result_.esInstanceId = resultNode["esInstanceId"].asString();
 	if(!resultNode["userName"].isNull())
 		result_.userName = resultNode["userName"].asString();
+	if(!resultNode["esInstanceId"].isNull())
+		result_.esInstanceId = resultNode["esInstanceId"].asString();
 	if(!resultNode["enable"].isNull())
 		result_.enable = resultNode["enable"].asString() == "true";
 		auto allEndpoints = resultNode["endpoints"]["endpoints"];

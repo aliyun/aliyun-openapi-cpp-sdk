@@ -34,7 +34,22 @@ namespace AlibabaCloud
 			public:
 				struct Result
 				{
+					struct NetworkConfig
+					{
+						struct WhiteIpGroupListItem
+						{
+							std::string groupName;
+							std::string whiteIpType;
+							std::vector<std::string> ips;
+						};
+						std::string type;
+						std::string vpcId;
+						std::vector<WhiteIpGroupListItem> whiteIpGroupList;
+						std::string vswitchId;
+						std::string vsArea;
+					};
 					std::vector<std::string> kibanaIPWhitelist;
+					NetworkConfig networkConfig;
 					std::vector<std::string> kibanaPrivateIPWhitelist;
 				};
 

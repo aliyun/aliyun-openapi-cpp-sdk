@@ -43,14 +43,14 @@ void ListAckClustersResult::parse(const std::string &payload)
 	for (auto valueResultresultItem : allResultNode)
 	{
 		ResultItem resultObject;
-		if(!valueResultresultItem["clusterId"].isNull())
-			resultObject.clusterId = valueResultresultItem["clusterId"].asString();
-		if(!valueResultresultItem["name"].isNull())
-			resultObject.name = valueResultresultItem["name"].asString();
 		if(!valueResultresultItem["clusterType"].isNull())
 			resultObject.clusterType = valueResultresultItem["clusterType"].asString();
 		if(!valueResultresultItem["vpcId"].isNull())
 			resultObject.vpcId = valueResultresultItem["vpcId"].asString();
+		if(!valueResultresultItem["name"].isNull())
+			resultObject.name = valueResultresultItem["name"].asString();
+		if(!valueResultresultItem["clusterId"].isNull())
+			resultObject.clusterId = valueResultresultItem["clusterId"].asString();
 		result_.push_back(resultObject);
 	}
 

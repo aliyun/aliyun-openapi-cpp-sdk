@@ -41,8 +41,8 @@ namespace AlibabaCloud
 					long filesTotal;
 					std::string stage;
 					std::string index;
-					std::string filesPercent;
 					std::string translogOpsPercent;
+					std::string filesPercent;
 					std::string sourceHost;
 					std::string bytesPercent;
 					long bytesTotal;

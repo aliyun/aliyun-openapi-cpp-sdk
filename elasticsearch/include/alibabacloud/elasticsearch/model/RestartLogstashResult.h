@@ -32,15 +32,68 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ELASTICSEARCH_EXPORT RestartLogstashResult : public ServiceResult
 			{
 			public:
+				struct Result
+				{
+					struct NetworkConfig
+					{
+						std::string type;
+						std::string vpcId;
+						std::string vswitchId;
+						std::string vsArea;
+					};
+					struct NodeSpec
+					{
+						std::string diskType;
+						std::string spec;
+						long disk;
+					};
+					struct EndpointListItem
+					{
+						std::string zoneId;
+						long port;
+						std::string host;
+					};
+					struct ZoneInfosItem
+					{
+						std::string status;
+						std::string zoneId;
+					};
+					struct TagsItem
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
+					std::string status;
+					std::string description;
+					std::string resourceGroupId;
+					long endTime;
+					std::string instanceId;
+					std::string config;
+					std::vector<ZoneInfosItem> zoneInfos;
+					std::string createdAt;
+					NetworkConfig networkConfig;
+					long nodeAmount;
+					std::string updatedAt;
+					std::vector<TagsItem> tags;
+					std::string version;
+					bool dataNode;
+					NodeSpec nodeSpec;
+					std::string paymentType;
+					std::vector<EndpointListItem> endpointList;
+					std::string protocol;
+					long zoneCount;
+				};
 
 
 				RestartLogstashResult();
 				explicit RestartLogstashResult(const std::string &payload);
 				~RestartLogstashResult();
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				Result result_;
 
 			};
 		}

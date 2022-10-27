@@ -40,9 +40,9 @@ namespace AlibabaCloud
 				{
 					std::string type;
 					std::string sourceType;
-					std::string name;
 					long fileSize;
 					std::string downloadUrl;
+					std::string name;
 				};
 
 
