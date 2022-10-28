@@ -25,15 +25,6 @@ GetMetaTableColumnRequest::GetMetaTableColumnRequest()
 
 GetMetaTableColumnRequest::~GetMetaTableColumnRequest() {}
 
-std::string GetMetaTableColumnRequest::getTableGuid() const {
-  return tableGuid_;
-}
-
-void GetMetaTableColumnRequest::setTableGuid(const std::string &tableGuid) {
-  tableGuid_ = tableGuid;
-  setParameter(std::string("TableGuid"), tableGuid);
-}
-
 long GetMetaTableColumnRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetMetaTableColumnRequest::getTid() const {
 void GetMetaTableColumnRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string GetMetaTableColumnRequest::getTableGuid() const {
+  return tableGuid_;
+}
+
+void GetMetaTableColumnRequest::setTableGuid(const std::string &tableGuid) {
+  tableGuid_ = tableGuid;
+  setParameter(std::string("TableGuid"), tableGuid);
 }
 

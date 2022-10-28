@@ -79,6 +79,15 @@ void UpdateInstanceRequest::setSid(const std::string &sid) {
   setParameter(std::string("Sid"), sid);
 }
 
+std::string UpdateInstanceRequest::getEnableSellSitd() const {
+  return enableSellSitd_;
+}
+
+void UpdateInstanceRequest::setEnableSellSitd(const std::string &enableSellSitd) {
+  enableSellSitd_ = enableSellSitd;
+  setParameter(std::string("EnableSellSitd"), enableSellSitd);
+}
+
 std::string UpdateInstanceRequest::getDbaId() const {
   return dbaId_;
 }
@@ -95,6 +104,15 @@ std::string UpdateInstanceRequest::getDataLinkName() const {
 void UpdateInstanceRequest::setDataLinkName(const std::string &dataLinkName) {
   dataLinkName_ = dataLinkName;
   setParameter(std::string("DataLinkName"), dataLinkName);
+}
+
+std::string UpdateInstanceRequest::getTemplateType() const {
+  return templateType_;
+}
+
+void UpdateInstanceRequest::setTemplateType(const std::string &templateType) {
+  templateType_ = templateType;
+  setParameter(std::string("TemplateType"), templateType);
 }
 
 std::string UpdateInstanceRequest::getInstanceSource() const {
@@ -176,6 +194,15 @@ std::string UpdateInstanceRequest::getInstanceAlias() const {
 void UpdateInstanceRequest::setInstanceAlias(const std::string &instanceAlias) {
   instanceAlias_ = instanceAlias;
   setParameter(std::string("InstanceAlias"), instanceAlias);
+}
+
+long UpdateInstanceRequest::getTemplateId() const {
+  return templateId_;
+}
+
+void UpdateInstanceRequest::setTemplateId(long templateId) {
+  templateId_ = templateId;
+  setParameter(std::string("TemplateId"), std::to_string(templateId));
 }
 
 std::string UpdateInstanceRequest::getDatabaseUser() const {

@@ -63,6 +63,8 @@ void ListTaskFlowInstanceResult::parse(const std::string &payload)
 			dAGInstanceListObject.dagName = valueDAGInstanceListDAGInstance["DagName"].asString();
 		if(!valueDAGInstanceListDAGInstance["OwnerName"].isNull())
 			dAGInstanceListObject.ownerName = valueDAGInstanceListDAGInstance["OwnerName"].asString();
+		if(!valueDAGInstanceListDAGInstance["DagVersion"].isNull())
+			dAGInstanceListObject.dagVersion = valueDAGInstanceListDAGInstance["DagVersion"].asString();
 		dAGInstanceList_.push_back(dAGInstanceListObject);
 	}
 	if(!value["ErrorCode"].isNull())

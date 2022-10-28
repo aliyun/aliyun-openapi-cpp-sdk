@@ -63,6 +63,8 @@ void ListSQLReviewOriginSQLResult::parse(const std::string &payload)
 			originSQLListObject.reviewSummary = valueOriginSQLListOriginSQLListItem["ReviewSummary"].asString();
 		if(!valueOriginSQLListOriginSQLListItem["SQLReviewQueryKey"].isNull())
 			originSQLListObject.sQLReviewQueryKey = valueOriginSQLListOriginSQLListItem["SQLReviewQueryKey"].asString();
+		if(!valueOriginSQLListOriginSQLListItem["SQLName"].isNull())
+			originSQLListObject.sQLName = valueOriginSQLListOriginSQLListItem["SQLName"].asString();
 		originSQLList_.push_back(originSQLListObject);
 	}
 	if(!value["ErrorCode"].isNull())

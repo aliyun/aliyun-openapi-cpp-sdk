@@ -25,15 +25,6 @@ ListLogicTableRouteConfigRequest::ListLogicTableRouteConfigRequest()
 
 ListLogicTableRouteConfigRequest::~ListLogicTableRouteConfigRequest() {}
 
-long ListLogicTableRouteConfigRequest::getTableId() const {
-  return tableId_;
-}
-
-void ListLogicTableRouteConfigRequest::setTableId(long tableId) {
-  tableId_ = tableId;
-  setParameter(std::string("TableId"), std::to_string(tableId));
-}
-
 long ListLogicTableRouteConfigRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long ListLogicTableRouteConfigRequest::getTid() const {
 void ListLogicTableRouteConfigRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long ListLogicTableRouteConfigRequest::getTableId() const {
+  return tableId_;
+}
+
+void ListLogicTableRouteConfigRequest::setTableId(long tableId) {
+  tableId_ = tableId;
+  setParameter(std::string("TableId"), std::to_string(tableId));
 }
 

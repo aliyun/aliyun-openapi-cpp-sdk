@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string ownerName;
 					std::string endTime;
 					std::string message;
+					std::string dagVersion;
 					long id;
 					std::string dagName;
 					std::string businessTime;

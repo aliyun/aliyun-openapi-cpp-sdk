@@ -25,15 +25,6 @@ DisableUserRequest::DisableUserRequest()
 
 DisableUserRequest::~DisableUserRequest() {}
 
-std::string DisableUserRequest::getUid() const {
-  return uid_;
-}
-
-void DisableUserRequest::setUid(const std::string &uid) {
-  uid_ = uid;
-  setParameter(std::string("Uid"), uid);
-}
-
 long DisableUserRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long DisableUserRequest::getTid() const {
 void DisableUserRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string DisableUserRequest::getUid() const {
+  return uid_;
+}
+
+void DisableUserRequest::setUid(const std::string &uid) {
+  uid_ = uid;
+  setParameter(std::string("Uid"), uid);
 }
 

@@ -30,14 +30,14 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT DeleteLakeHouseSpaceRequest : public Rp
 public:
 	DeleteLakeHouseSpaceRequest();
 	~DeleteLakeHouseSpaceRequest();
-	long getSpaceId() const;
-	void setSpaceId(long spaceId);
 	long getTid() const;
 	void setTid(long tid);
+	long getSpaceId() const;
+	void setSpaceId(long spaceId);
 
 private:
-	long spaceId_;
 	long tid_;
+	long spaceId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

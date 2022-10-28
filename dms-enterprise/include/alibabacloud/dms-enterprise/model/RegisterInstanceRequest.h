@@ -42,8 +42,12 @@ public:
 	void setTid(long tid);
 	std::string getSid() const;
 	void setSid(const std::string &sid);
+	std::string getEnableSellSitd() const;
+	void setEnableSellSitd(const std::string &enableSellSitd);
 	std::string getDataLinkName() const;
 	void setDataLinkName(const std::string &dataLinkName);
+	std::string getTemplateType() const;
+	void setTemplateType(const std::string &templateType);
 	std::string getInstanceSource() const;
 	void setInstanceSource(const std::string &instanceSource);
 	std::string getEnvType() const;
@@ -62,6 +66,8 @@ public:
 	void setDatabasePassword(const std::string &databasePassword);
 	std::string getInstanceAlias() const;
 	void setInstanceAlias(const std::string &instanceAlias);
+	long getTemplateId() const;
+	void setTemplateId(long templateId);
 	std::string getDatabaseUser() const;
 	void setDatabaseUser(const std::string &databaseUser);
 	int getPort() const;
@@ -82,7 +88,9 @@ private:
 	std::string networkType_;
 	long tid_;
 	std::string sid_;
+	std::string enableSellSitd_;
 	std::string dataLinkName_;
+	std::string templateType_;
 	std::string instanceSource_;
 	std::string envType_;
 	std::string host_;
@@ -92,6 +100,7 @@ private:
 	int exportTimeout_;
 	std::string databasePassword_;
 	std::string instanceAlias_;
+	long templateId_;
 	std::string databaseUser_;
 	int port_;
 	std::string vpcId_;

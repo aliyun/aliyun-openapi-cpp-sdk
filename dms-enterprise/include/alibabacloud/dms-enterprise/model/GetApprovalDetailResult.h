@@ -58,6 +58,7 @@ namespace AlibabaCloud
 					std::string title;
 					std::vector<WorkflowNode> workflowNodes;
 					long orderId;
+					long templateId;
 				};
 
 

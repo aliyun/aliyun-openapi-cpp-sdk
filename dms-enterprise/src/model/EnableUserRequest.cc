@@ -25,15 +25,6 @@ EnableUserRequest::EnableUserRequest()
 
 EnableUserRequest::~EnableUserRequest() {}
 
-std::string EnableUserRequest::getUid() const {
-  return uid_;
-}
-
-void EnableUserRequest::setUid(const std::string &uid) {
-  uid_ = uid;
-  setParameter(std::string("Uid"), uid);
-}
-
 long EnableUserRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long EnableUserRequest::getTid() const {
 void EnableUserRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string EnableUserRequest::getUid() const {
+  return uid_;
+}
+
+void EnableUserRequest::setUid(const std::string &uid) {
+  uid_ = uid;
+  setParameter(std::string("Uid"), uid);
 }
 

@@ -30,14 +30,14 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetPhysicalDatabaseRequest : public Rpc
 public:
 	GetPhysicalDatabaseRequest();
 	~GetPhysicalDatabaseRequest();
-	long getDbId() const;
-	void setDbId(long dbId);
 	long getTid() const;
 	void setTid(long tid);
+	long getDbId() const;
+	void setDbId(long dbId);
 
 private:
-	long dbId_;
 	long tid_;
+	long dbId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

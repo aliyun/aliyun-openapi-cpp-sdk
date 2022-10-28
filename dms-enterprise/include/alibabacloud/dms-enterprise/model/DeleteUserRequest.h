@@ -30,14 +30,14 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT DeleteUserRequest : public RpcServiceRe
 public:
 	DeleteUserRequest();
 	~DeleteUserRequest();
-	std::string getUid() const;
-	void setUid(const std::string &uid);
 	long getTid() const;
 	void setTid(long tid);
+	std::string getUid() const;
+	void setUid(const std::string &uid);
 
 private:
-	std::string uid_;
 	long tid_;
+	std::string uid_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

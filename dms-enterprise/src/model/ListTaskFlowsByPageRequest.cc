@@ -1,0 +1,72 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/dms-enterprise/model/ListTaskFlowsByPageRequest.h>
+
+using AlibabaCloud::Dms_enterprise::Model::ListTaskFlowsByPageRequest;
+
+ListTaskFlowsByPageRequest::ListTaskFlowsByPageRequest()
+    : RpcServiceRequest("dms-enterprise", "2018-11-01", "ListTaskFlowsByPage") {
+  setMethod(HttpRequest::Method::Post);
+}
+
+ListTaskFlowsByPageRequest::~ListTaskFlowsByPageRequest() {}
+
+std::string ListTaskFlowsByPageRequest::getSearchKey() const {
+  return searchKey_;
+}
+
+void ListTaskFlowsByPageRequest::setSearchKey(const std::string &searchKey) {
+  searchKey_ = searchKey;
+  setParameter(std::string("SearchKey"), searchKey);
+}
+
+long ListTaskFlowsByPageRequest::getTid() const {
+  return tid_;
+}
+
+void ListTaskFlowsByPageRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+bool ListTaskFlowsByPageRequest::getNeedLastDagInstance() const {
+  return needLastDagInstance_;
+}
+
+void ListTaskFlowsByPageRequest::setNeedLastDagInstance(bool needLastDagInstance) {
+  needLastDagInstance_ = needLastDagInstance;
+  setParameter(std::string("NeedLastDagInstance"), needLastDagInstance ? "true" : "false");
+}
+
+int ListTaskFlowsByPageRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListTaskFlowsByPageRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+int ListTaskFlowsByPageRequest::getPageIndex() const {
+  return pageIndex_;
+}
+
+void ListTaskFlowsByPageRequest::setPageIndex(int pageIndex) {
+  pageIndex_ = pageIndex;
+  setParameter(std::string("PageIndex"), std::to_string(pageIndex));
+}
+

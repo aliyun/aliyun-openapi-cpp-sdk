@@ -25,15 +25,6 @@ GetMetaTableDetailInfoRequest::GetMetaTableDetailInfoRequest()
 
 GetMetaTableDetailInfoRequest::~GetMetaTableDetailInfoRequest() {}
 
-std::string GetMetaTableDetailInfoRequest::getTableGuid() const {
-  return tableGuid_;
-}
-
-void GetMetaTableDetailInfoRequest::setTableGuid(const std::string &tableGuid) {
-  tableGuid_ = tableGuid;
-  setParameter(std::string("TableGuid"), tableGuid);
-}
-
 long GetMetaTableDetailInfoRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetMetaTableDetailInfoRequest::getTid() const {
 void GetMetaTableDetailInfoRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string GetMetaTableDetailInfoRequest::getTableGuid() const {
+  return tableGuid_;
+}
+
+void GetMetaTableDetailInfoRequest::setTableGuid(const std::string &tableGuid) {
+  tableGuid_ = tableGuid;
+  setParameter(std::string("TableGuid"), tableGuid);
 }
 

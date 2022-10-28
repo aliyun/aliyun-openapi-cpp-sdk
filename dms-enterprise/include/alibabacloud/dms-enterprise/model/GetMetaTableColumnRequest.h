@@ -30,14 +30,14 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetMetaTableColumnRequest : public RpcS
 public:
 	GetMetaTableColumnRequest();
 	~GetMetaTableColumnRequest();
-	std::string getTableGuid() const;
-	void setTableGuid(const std::string &tableGuid);
 	long getTid() const;
 	void setTid(long tid);
+	std::string getTableGuid() const;
+	void setTableGuid(const std::string &tableGuid);
 
 private:
-	std::string tableGuid_;
 	long tid_;
+	std::string tableGuid_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

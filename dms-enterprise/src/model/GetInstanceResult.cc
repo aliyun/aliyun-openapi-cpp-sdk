@@ -84,6 +84,8 @@ void GetInstanceResult::parse(const std::string &payload)
 		instance_.ddlOnline = std::stoi(instanceNode["DdlOnline"].asString());
 	if(!instanceNode["EcsRegion"].isNull())
 		instance_.ecsRegion = instanceNode["EcsRegion"].asString();
+	if(!instanceNode["SellSitd"].isNull())
+		instance_.sellSitd = instanceNode["SellSitd"].asString();
 	auto standardGroupNode = instanceNode["StandardGroup"];
 	if(!standardGroupNode["GroupName"].isNull())
 		instance_.standardGroup.groupName = standardGroupNode["GroupName"].asString();

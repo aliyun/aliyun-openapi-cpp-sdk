@@ -30,14 +30,14 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetDBTaskSQLJobLogRequest : public RpcS
 public:
 	GetDBTaskSQLJobLogRequest();
 	~GetDBTaskSQLJobLogRequest();
-	long getJobId() const;
-	void setJobId(long jobId);
 	long getTid() const;
 	void setTid(long tid);
+	long getJobId() const;
+	void setJobId(long jobId);
 
 private:
-	long jobId_;
 	long tid_;
+	long jobId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

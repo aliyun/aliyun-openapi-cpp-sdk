@@ -25,15 +25,6 @@ GetSQLReviewOptimizeDetailRequest::GetSQLReviewOptimizeDetailRequest()
 
 GetSQLReviewOptimizeDetailRequest::~GetSQLReviewOptimizeDetailRequest() {}
 
-std::string GetSQLReviewOptimizeDetailRequest::getSQLReviewQueryKey() const {
-  return sQLReviewQueryKey_;
-}
-
-void GetSQLReviewOptimizeDetailRequest::setSQLReviewQueryKey(const std::string &sQLReviewQueryKey) {
-  sQLReviewQueryKey_ = sQLReviewQueryKey;
-  setParameter(std::string("SQLReviewQueryKey"), sQLReviewQueryKey);
-}
-
 long GetSQLReviewOptimizeDetailRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetSQLReviewOptimizeDetailRequest::getTid() const {
 void GetSQLReviewOptimizeDetailRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string GetSQLReviewOptimizeDetailRequest::getSQLReviewQueryKey() const {
+  return sQLReviewQueryKey_;
+}
+
+void GetSQLReviewOptimizeDetailRequest::setSQLReviewQueryKey(const std::string &sQLReviewQueryKey) {
+  sQLReviewQueryKey_ = sQLReviewQueryKey;
+  setParameter(std::string("SQLReviewQueryKey"), sQLReviewQueryKey);
 }
 

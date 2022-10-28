@@ -25,15 +25,6 @@ DeleteLakeHouseSpaceRequest::DeleteLakeHouseSpaceRequest()
 
 DeleteLakeHouseSpaceRequest::~DeleteLakeHouseSpaceRequest() {}
 
-long DeleteLakeHouseSpaceRequest::getSpaceId() const {
-  return spaceId_;
-}
-
-void DeleteLakeHouseSpaceRequest::setSpaceId(long spaceId) {
-  spaceId_ = spaceId;
-  setParameter(std::string("SpaceId"), std::to_string(spaceId));
-}
-
 long DeleteLakeHouseSpaceRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long DeleteLakeHouseSpaceRequest::getTid() const {
 void DeleteLakeHouseSpaceRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long DeleteLakeHouseSpaceRequest::getSpaceId() const {
+  return spaceId_;
+}
+
+void DeleteLakeHouseSpaceRequest::setSpaceId(long spaceId) {
+  spaceId_ = spaceId;
+  setParameter(std::string("SpaceId"), std::to_string(spaceId));
 }
 

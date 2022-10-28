@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					int queryTimeout;
 					std::string dataLinkName;
 					std::string safeRuleId;
+					std::string sellSitd;
 					StandardGroup standardGroup;
 					std::string instanceSource;
 					std::string instanceId;

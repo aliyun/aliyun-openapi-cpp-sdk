@@ -30,14 +30,14 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetSQLReviewOptimizeDetailRequest : pub
 public:
 	GetSQLReviewOptimizeDetailRequest();
 	~GetSQLReviewOptimizeDetailRequest();
-	std::string getSQLReviewQueryKey() const;
-	void setSQLReviewQueryKey(const std::string &sQLReviewQueryKey);
 	long getTid() const;
 	void setTid(long tid);
+	std::string getSQLReviewQueryKey() const;
+	void setSQLReviewQueryKey(const std::string &sQLReviewQueryKey);
 
 private:
-	std::string sQLReviewQueryKey_;
 	long tid_;
+	std::string sQLReviewQueryKey_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

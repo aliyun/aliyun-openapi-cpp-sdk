@@ -25,15 +25,6 @@ GetPhysicalDatabaseRequest::GetPhysicalDatabaseRequest()
 
 GetPhysicalDatabaseRequest::~GetPhysicalDatabaseRequest() {}
 
-long GetPhysicalDatabaseRequest::getDbId() const {
-  return dbId_;
-}
-
-void GetPhysicalDatabaseRequest::setDbId(long dbId) {
-  dbId_ = dbId;
-  setParameter(std::string("DbId"), std::to_string(dbId));
-}
-
 long GetPhysicalDatabaseRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetPhysicalDatabaseRequest::getTid() const {
 void GetPhysicalDatabaseRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long GetPhysicalDatabaseRequest::getDbId() const {
+  return dbId_;
+}
+
+void GetPhysicalDatabaseRequest::setDbId(long dbId) {
+  dbId_ = dbId;
+  setParameter(std::string("DbId"), std::to_string(dbId));
 }
 

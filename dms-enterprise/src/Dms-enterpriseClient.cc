@@ -159,6 +159,42 @@ Dms_enterpriseClient::AddLogicTableRouteConfigOutcomeCallable Dms_enterpriseClie
 	return task->get_future();
 }
 
+Dms_enterpriseClient::AddTaskFlowEdgesOutcome Dms_enterpriseClient::addTaskFlowEdges(const AddTaskFlowEdgesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddTaskFlowEdgesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddTaskFlowEdgesOutcome(AddTaskFlowEdgesResult(outcome.result()));
+	else
+		return AddTaskFlowEdgesOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::addTaskFlowEdgesAsync(const AddTaskFlowEdgesRequest& request, const AddTaskFlowEdgesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addTaskFlowEdges(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::AddTaskFlowEdgesOutcomeCallable Dms_enterpriseClient::addTaskFlowEdgesCallable(const AddTaskFlowEdgesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddTaskFlowEdgesOutcome()>>(
+			[this, request]()
+			{
+			return this->addTaskFlowEdges(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::ApproveOrderOutcome Dms_enterpriseClient::approveOrder(const ApproveOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +225,78 @@ Dms_enterpriseClient::ApproveOrderOutcomeCallable Dms_enterpriseClient::approveO
 			[this, request]()
 			{
 			return this->approveOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::BackFillOutcome Dms_enterpriseClient::backFill(const BackFillRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BackFillOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BackFillOutcome(BackFillResult(outcome.result()));
+	else
+		return BackFillOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::backFillAsync(const BackFillRequest& request, const BackFillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, backFill(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::BackFillOutcomeCallable Dms_enterpriseClient::backFillCallable(const BackFillRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BackFillOutcome()>>(
+			[this, request]()
+			{
+			return this->backFill(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::BuyPayAsYouGoOrderOutcome Dms_enterpriseClient::buyPayAsYouGoOrder(const BuyPayAsYouGoOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BuyPayAsYouGoOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BuyPayAsYouGoOrderOutcome(BuyPayAsYouGoOrderResult(outcome.result()));
+	else
+		return BuyPayAsYouGoOrderOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::buyPayAsYouGoOrderAsync(const BuyPayAsYouGoOrderRequest& request, const BuyPayAsYouGoOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, buyPayAsYouGoOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::BuyPayAsYouGoOrderOutcomeCallable Dms_enterpriseClient::buyPayAsYouGoOrderCallable(const BuyPayAsYouGoOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BuyPayAsYouGoOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->buyPayAsYouGoOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -699,6 +807,42 @@ Dms_enterpriseClient::CreateSQLReviewOrderOutcomeCallable Dms_enterpriseClient::
 	return task->get_future();
 }
 
+Dms_enterpriseClient::CreateScenarioOutcome Dms_enterpriseClient::createScenario(const CreateScenarioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateScenarioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateScenarioOutcome(CreateScenarioResult(outcome.result()));
+	else
+		return CreateScenarioOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createScenarioAsync(const CreateScenarioRequest& request, const CreateScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createScenario(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateScenarioOutcomeCallable Dms_enterpriseClient::createScenarioCallable(const CreateScenarioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateScenarioOutcome()>>(
+			[this, request]()
+			{
+			return this->createScenario(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::CreateStandardGroupOutcome Dms_enterpriseClient::createStandardGroup(const CreateStandardGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,6 +909,78 @@ Dms_enterpriseClient::CreateStructSyncOrderOutcomeCallable Dms_enterpriseClient:
 			[this, request]()
 			{
 			return this->createStructSyncOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::CreateTaskOutcome Dms_enterpriseClient::createTask(const CreateTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTaskOutcome(CreateTaskResult(outcome.result()));
+	else
+		return CreateTaskOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createTaskAsync(const CreateTaskRequest& request, const CreateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateTaskOutcomeCallable Dms_enterpriseClient::createTaskCallable(const CreateTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::CreateTaskFlowOutcome Dms_enterpriseClient::createTaskFlow(const CreateTaskFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTaskFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTaskFlowOutcome(CreateTaskFlowResult(outcome.result()));
+	else
+		return CreateTaskFlowOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createTaskFlowAsync(const CreateTaskFlowRequest& request, const CreateTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTaskFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateTaskFlowOutcomeCallable Dms_enterpriseClient::createTaskFlowCallable(const CreateTaskFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTaskFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->createTaskFlow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1095,6 +1311,78 @@ Dms_enterpriseClient::DeleteProxyAccessOutcomeCallable Dms_enterpriseClient::del
 	return task->get_future();
 }
 
+Dms_enterpriseClient::DeleteScenarioOutcome Dms_enterpriseClient::deleteScenario(const DeleteScenarioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteScenarioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteScenarioOutcome(DeleteScenarioResult(outcome.result()));
+	else
+		return DeleteScenarioOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::deleteScenarioAsync(const DeleteScenarioRequest& request, const DeleteScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteScenario(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::DeleteScenarioOutcomeCallable Dms_enterpriseClient::deleteScenarioCallable(const DeleteScenarioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteScenarioOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteScenario(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::DeleteTaskOutcome Dms_enterpriseClient::deleteTask(const DeleteTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTaskOutcome(DeleteTaskResult(outcome.result()));
+	else
+		return DeleteTaskOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::deleteTaskAsync(const DeleteTaskRequest& request, const DeleteTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::DeleteTaskOutcomeCallable Dms_enterpriseClient::deleteTaskCallable(const DeleteTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::DeleteTaskFlowOutcome Dms_enterpriseClient::deleteTaskFlow(const DeleteTaskFlowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1125,6 +1413,42 @@ Dms_enterpriseClient::DeleteTaskFlowOutcomeCallable Dms_enterpriseClient::delete
 			[this, request]()
 			{
 			return this->deleteTaskFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::DeleteTaskFlowEdgesByConditionOutcome Dms_enterpriseClient::deleteTaskFlowEdgesByCondition(const DeleteTaskFlowEdgesByConditionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTaskFlowEdgesByConditionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTaskFlowEdgesByConditionOutcome(DeleteTaskFlowEdgesByConditionResult(outcome.result()));
+	else
+		return DeleteTaskFlowEdgesByConditionOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::deleteTaskFlowEdgesByConditionAsync(const DeleteTaskFlowEdgesByConditionRequest& request, const DeleteTaskFlowEdgesByConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTaskFlowEdgesByCondition(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::DeleteTaskFlowEdgesByConditionOutcomeCallable Dms_enterpriseClient::deleteTaskFlowEdgesByConditionCallable(const DeleteTaskFlowEdgesByConditionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTaskFlowEdgesByConditionOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTaskFlowEdgesByCondition(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1851,6 +2175,42 @@ Dms_enterpriseClient::GetInstanceOutcomeCallable Dms_enterpriseClient::getInstan
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetIntervalLimitOfSLAOutcome Dms_enterpriseClient::getIntervalLimitOfSLA(const GetIntervalLimitOfSLARequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetIntervalLimitOfSLAOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetIntervalLimitOfSLAOutcome(GetIntervalLimitOfSLAResult(outcome.result()));
+	else
+		return GetIntervalLimitOfSLAOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getIntervalLimitOfSLAAsync(const GetIntervalLimitOfSLARequest& request, const GetIntervalLimitOfSLAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getIntervalLimitOfSLA(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetIntervalLimitOfSLAOutcomeCallable Dms_enterpriseClient::getIntervalLimitOfSLACallable(const GetIntervalLimitOfSLARequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetIntervalLimitOfSLAOutcome()>>(
+			[this, request]()
+			{
+			return this->getIntervalLimitOfSLA(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetLhSpaceByNameOutcome Dms_enterpriseClient::getLhSpaceByName(const GetLhSpaceByNameRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2211,6 +2571,42 @@ Dms_enterpriseClient::GetProxyOutcomeCallable Dms_enterpriseClient::getProxyCall
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetRuleNumLimitOfSLAOutcome Dms_enterpriseClient::getRuleNumLimitOfSLA(const GetRuleNumLimitOfSLARequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetRuleNumLimitOfSLAOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetRuleNumLimitOfSLAOutcome(GetRuleNumLimitOfSLAResult(outcome.result()));
+	else
+		return GetRuleNumLimitOfSLAOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getRuleNumLimitOfSLAAsync(const GetRuleNumLimitOfSLARequest& request, const GetRuleNumLimitOfSLAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getRuleNumLimitOfSLA(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetRuleNumLimitOfSLAOutcomeCallable Dms_enterpriseClient::getRuleNumLimitOfSLACallable(const GetRuleNumLimitOfSLARequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetRuleNumLimitOfSLAOutcome()>>(
+			[this, request]()
+			{
+			return this->getRuleNumLimitOfSLA(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetSQLReviewCheckResultStatusOutcome Dms_enterpriseClient::getSQLReviewCheckResultStatus(const GetSQLReviewCheckResultStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2499,6 +2895,114 @@ Dms_enterpriseClient::GetTableTopologyOutcomeCallable Dms_enterpriseClient::getT
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetTaskOutcome Dms_enterpriseClient::getTask(const GetTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTaskOutcome(GetTaskResult(outcome.result()));
+	else
+		return GetTaskOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getTaskAsync(const GetTaskRequest& request, const GetTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetTaskOutcomeCallable Dms_enterpriseClient::getTaskCallable(const GetTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->getTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetTaskFlowGraphOutcome Dms_enterpriseClient::getTaskFlowGraph(const GetTaskFlowGraphRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTaskFlowGraphOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTaskFlowGraphOutcome(GetTaskFlowGraphResult(outcome.result()));
+	else
+		return GetTaskFlowGraphOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getTaskFlowGraphAsync(const GetTaskFlowGraphRequest& request, const GetTaskFlowGraphAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTaskFlowGraph(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetTaskFlowGraphOutcomeCallable Dms_enterpriseClient::getTaskFlowGraphCallable(const GetTaskFlowGraphRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTaskFlowGraphOutcome()>>(
+			[this, request]()
+			{
+			return this->getTaskFlowGraph(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetTaskFlowNotificationOutcome Dms_enterpriseClient::getTaskFlowNotification(const GetTaskFlowNotificationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTaskFlowNotificationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTaskFlowNotificationOutcome(GetTaskFlowNotificationResult(outcome.result()));
+	else
+		return GetTaskFlowNotificationOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getTaskFlowNotificationAsync(const GetTaskFlowNotificationRequest& request, const GetTaskFlowNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTaskFlowNotification(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetTaskFlowNotificationOutcomeCallable Dms_enterpriseClient::getTaskFlowNotificationCallable(const GetTaskFlowNotificationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTaskFlowNotificationOutcome()>>(
+			[this, request]()
+			{
+			return this->getTaskFlowNotification(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetTaskInstanceRelationOutcome Dms_enterpriseClient::getTaskInstanceRelation(const GetTaskInstanceRelationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2709,6 +3213,42 @@ Dms_enterpriseClient::InspectProxyAccessSecretOutcomeCallable Dms_enterpriseClie
 			[this, request]()
 			{
 			return this->inspectProxyAccessSecret(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListClassificationTemplatesOutcome Dms_enterpriseClient::listClassificationTemplates(const ListClassificationTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListClassificationTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListClassificationTemplatesOutcome(ListClassificationTemplatesResult(outcome.result()));
+	else
+		return ListClassificationTemplatesOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listClassificationTemplatesAsync(const ListClassificationTemplatesRequest& request, const ListClassificationTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listClassificationTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListClassificationTemplatesOutcomeCallable Dms_enterpriseClient::listClassificationTemplatesCallable(const ListClassificationTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListClassificationTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->listClassificationTemplates(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3039,6 +3579,42 @@ Dms_enterpriseClient::ListDatabasesOutcomeCallable Dms_enterpriseClient::listDat
 	return task->get_future();
 }
 
+Dms_enterpriseClient::ListDefaultSLARulesOutcome Dms_enterpriseClient::listDefaultSLARules(const ListDefaultSLARulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDefaultSLARulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDefaultSLARulesOutcome(ListDefaultSLARulesResult(outcome.result()));
+	else
+		return ListDefaultSLARulesOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listDefaultSLARulesAsync(const ListDefaultSLARulesRequest& request, const ListDefaultSLARulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDefaultSLARules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListDefaultSLARulesOutcomeCallable Dms_enterpriseClient::listDefaultSLARulesCallable(const ListDefaultSLARulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDefaultSLARulesOutcome()>>(
+			[this, request]()
+			{
+			return this->listDefaultSLARules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::ListDesensitizationRuleOutcome Dms_enterpriseClient::listDesensitizationRule(const ListDesensitizationRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3069,6 +3645,42 @@ Dms_enterpriseClient::ListDesensitizationRuleOutcomeCallable Dms_enterpriseClien
 			[this, request]()
 			{
 			return this->listDesensitizationRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListEffectiveOrdersOutcome Dms_enterpriseClient::listEffectiveOrders(const ListEffectiveOrdersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListEffectiveOrdersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListEffectiveOrdersOutcome(ListEffectiveOrdersResult(outcome.result()));
+	else
+		return ListEffectiveOrdersOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listEffectiveOrdersAsync(const ListEffectiveOrdersRequest& request, const ListEffectiveOrdersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listEffectiveOrders(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListEffectiveOrdersOutcomeCallable Dms_enterpriseClient::listEffectiveOrdersCallable(const ListEffectiveOrdersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListEffectiveOrdersOutcome()>>(
+			[this, request]()
+			{
+			return this->listEffectiveOrders(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3507,6 +4119,42 @@ Dms_enterpriseClient::ListProxySQLExecAuditLogOutcomeCallable Dms_enterpriseClie
 	return task->get_future();
 }
 
+Dms_enterpriseClient::ListSLARulesOutcome Dms_enterpriseClient::listSLARules(const ListSLARulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSLARulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSLARulesOutcome(ListSLARulesResult(outcome.result()));
+	else
+		return ListSLARulesOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listSLARulesAsync(const ListSLARulesRequest& request, const ListSLARulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSLARules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListSLARulesOutcomeCallable Dms_enterpriseClient::listSLARulesCallable(const ListSLARulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSLARulesOutcome()>>(
+			[this, request]()
+			{
+			return this->listSLARules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::ListSQLExecAuditLogOutcome Dms_enterpriseClient::listSQLExecAuditLog(const ListSQLExecAuditLogRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3579,6 +4227,42 @@ Dms_enterpriseClient::ListSQLReviewOriginSQLOutcomeCallable Dms_enterpriseClient
 	return task->get_future();
 }
 
+Dms_enterpriseClient::ListScenariosOutcome Dms_enterpriseClient::listScenarios(const ListScenariosRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListScenariosOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListScenariosOutcome(ListScenariosResult(outcome.result()));
+	else
+		return ListScenariosOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listScenariosAsync(const ListScenariosRequest& request, const ListScenariosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listScenarios(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListScenariosOutcomeCallable Dms_enterpriseClient::listScenariosCallable(const ListScenariosRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListScenariosOutcome()>>(
+			[this, request]()
+			{
+			return this->listScenarios(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::ListSensitiveColumnsOutcome Dms_enterpriseClient::listSensitiveColumns(const ListSensitiveColumnsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3645,6 +4329,42 @@ Dms_enterpriseClient::ListSensitiveColumnsDetailOutcomeCallable Dms_enterpriseCl
 			[this, request]()
 			{
 			return this->listSensitiveColumnsDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListSensitiveDataAuditLogOutcome Dms_enterpriseClient::listSensitiveDataAuditLog(const ListSensitiveDataAuditLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSensitiveDataAuditLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSensitiveDataAuditLogOutcome(ListSensitiveDataAuditLogResult(outcome.result()));
+	else
+		return ListSensitiveDataAuditLogOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listSensitiveDataAuditLogAsync(const ListSensitiveDataAuditLogRequest& request, const ListSensitiveDataAuditLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSensitiveDataAuditLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListSensitiveDataAuditLogOutcomeCallable Dms_enterpriseClient::listSensitiveDataAuditLogCallable(const ListSensitiveDataAuditLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSensitiveDataAuditLogOutcome()>>(
+			[this, request]()
+			{
+			return this->listSensitiveDataAuditLog(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3759,6 +4479,114 @@ Dms_enterpriseClient::ListTaskFlowOutcomeCallable Dms_enterpriseClient::listTask
 	return task->get_future();
 }
 
+Dms_enterpriseClient::ListTaskFlowConstantsOutcome Dms_enterpriseClient::listTaskFlowConstants(const ListTaskFlowConstantsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTaskFlowConstantsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTaskFlowConstantsOutcome(ListTaskFlowConstantsResult(outcome.result()));
+	else
+		return ListTaskFlowConstantsOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listTaskFlowConstantsAsync(const ListTaskFlowConstantsRequest& request, const ListTaskFlowConstantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTaskFlowConstants(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListTaskFlowConstantsOutcomeCallable Dms_enterpriseClient::listTaskFlowConstantsCallable(const ListTaskFlowConstantsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTaskFlowConstantsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTaskFlowConstants(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListTaskFlowCooperatorsOutcome Dms_enterpriseClient::listTaskFlowCooperators(const ListTaskFlowCooperatorsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTaskFlowCooperatorsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTaskFlowCooperatorsOutcome(ListTaskFlowCooperatorsResult(outcome.result()));
+	else
+		return ListTaskFlowCooperatorsOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listTaskFlowCooperatorsAsync(const ListTaskFlowCooperatorsRequest& request, const ListTaskFlowCooperatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTaskFlowCooperators(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListTaskFlowCooperatorsOutcomeCallable Dms_enterpriseClient::listTaskFlowCooperatorsCallable(const ListTaskFlowCooperatorsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTaskFlowCooperatorsOutcome()>>(
+			[this, request]()
+			{
+			return this->listTaskFlowCooperators(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListTaskFlowEdgesByConditionOutcome Dms_enterpriseClient::listTaskFlowEdgesByCondition(const ListTaskFlowEdgesByConditionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTaskFlowEdgesByConditionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTaskFlowEdgesByConditionOutcome(ListTaskFlowEdgesByConditionResult(outcome.result()));
+	else
+		return ListTaskFlowEdgesByConditionOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listTaskFlowEdgesByConditionAsync(const ListTaskFlowEdgesByConditionRequest& request, const ListTaskFlowEdgesByConditionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTaskFlowEdgesByCondition(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListTaskFlowEdgesByConditionOutcomeCallable Dms_enterpriseClient::listTaskFlowEdgesByConditionCallable(const ListTaskFlowEdgesByConditionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTaskFlowEdgesByConditionOutcome()>>(
+			[this, request]()
+			{
+			return this->listTaskFlowEdgesByCondition(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::ListTaskFlowInstanceOutcome Dms_enterpriseClient::listTaskFlowInstance(const ListTaskFlowInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3789,6 +4617,114 @@ Dms_enterpriseClient::ListTaskFlowInstanceOutcomeCallable Dms_enterpriseClient::
 			[this, request]()
 			{
 			return this->listTaskFlowInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListTaskFlowTimeVariablesOutcome Dms_enterpriseClient::listTaskFlowTimeVariables(const ListTaskFlowTimeVariablesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTaskFlowTimeVariablesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTaskFlowTimeVariablesOutcome(ListTaskFlowTimeVariablesResult(outcome.result()));
+	else
+		return ListTaskFlowTimeVariablesOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listTaskFlowTimeVariablesAsync(const ListTaskFlowTimeVariablesRequest& request, const ListTaskFlowTimeVariablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTaskFlowTimeVariables(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListTaskFlowTimeVariablesOutcomeCallable Dms_enterpriseClient::listTaskFlowTimeVariablesCallable(const ListTaskFlowTimeVariablesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTaskFlowTimeVariablesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTaskFlowTimeVariables(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListTaskFlowsByPageOutcome Dms_enterpriseClient::listTaskFlowsByPage(const ListTaskFlowsByPageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTaskFlowsByPageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTaskFlowsByPageOutcome(ListTaskFlowsByPageResult(outcome.result()));
+	else
+		return ListTaskFlowsByPageOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listTaskFlowsByPageAsync(const ListTaskFlowsByPageRequest& request, const ListTaskFlowsByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTaskFlowsByPage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListTaskFlowsByPageOutcomeCallable Dms_enterpriseClient::listTaskFlowsByPageCallable(const ListTaskFlowsByPageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTaskFlowsByPageOutcome()>>(
+			[this, request]()
+			{
+			return this->listTaskFlowsByPage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListTasksInTaskFlowOutcome Dms_enterpriseClient::listTasksInTaskFlow(const ListTasksInTaskFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTasksInTaskFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTasksInTaskFlowOutcome(ListTasksInTaskFlowResult(outcome.result()));
+	else
+		return ListTasksInTaskFlowOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listTasksInTaskFlowAsync(const ListTasksInTaskFlowRequest& request, const ListTasksInTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTasksInTaskFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListTasksInTaskFlowOutcomeCallable Dms_enterpriseClient::listTasksInTaskFlowCallable(const ListTasksInTaskFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTasksInTaskFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->listTasksInTaskFlow(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3975,6 +4911,42 @@ Dms_enterpriseClient::ListWorkFlowTemplatesOutcomeCallable Dms_enterpriseClient:
 	return task->get_future();
 }
 
+Dms_enterpriseClient::MakeTaskFlowInstanceSuccessOutcome Dms_enterpriseClient::makeTaskFlowInstanceSuccess(const MakeTaskFlowInstanceSuccessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MakeTaskFlowInstanceSuccessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MakeTaskFlowInstanceSuccessOutcome(MakeTaskFlowInstanceSuccessResult(outcome.result()));
+	else
+		return MakeTaskFlowInstanceSuccessOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::makeTaskFlowInstanceSuccessAsync(const MakeTaskFlowInstanceSuccessRequest& request, const MakeTaskFlowInstanceSuccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, makeTaskFlowInstanceSuccess(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::MakeTaskFlowInstanceSuccessOutcomeCallable Dms_enterpriseClient::makeTaskFlowInstanceSuccessCallable(const MakeTaskFlowInstanceSuccessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MakeTaskFlowInstanceSuccessOutcome()>>(
+			[this, request]()
+			{
+			return this->makeTaskFlowInstanceSuccess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::ModifyDataCorrectExecSQLOutcome Dms_enterpriseClient::modifyDataCorrectExecSQL(const ModifyDataCorrectExecSQLRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4041,6 +5013,42 @@ Dms_enterpriseClient::ModifyDesensitizationStrategyOutcomeCallable Dms_enterpris
 			[this, request]()
 			{
 			return this->modifyDesensitizationStrategy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::MoveTaskFlowToScenarioOutcome Dms_enterpriseClient::moveTaskFlowToScenario(const MoveTaskFlowToScenarioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MoveTaskFlowToScenarioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MoveTaskFlowToScenarioOutcome(MoveTaskFlowToScenarioResult(outcome.result()));
+	else
+		return MoveTaskFlowToScenarioOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::moveTaskFlowToScenarioAsync(const MoveTaskFlowToScenarioRequest& request, const MoveTaskFlowToScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, moveTaskFlowToScenario(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::MoveTaskFlowToScenarioOutcomeCallable Dms_enterpriseClient::moveTaskFlowToScenarioCallable(const MoveTaskFlowToScenarioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MoveTaskFlowToScenarioOutcome()>>(
+			[this, request]()
+			{
+			return this->moveTaskFlowToScenario(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4119,6 +5127,42 @@ Dms_enterpriseClient::PauseDataCorrectSQLJobOutcomeCallable Dms_enterpriseClient
 	return task->get_future();
 }
 
+Dms_enterpriseClient::PublishAndDeployTaskFlowOutcome Dms_enterpriseClient::publishAndDeployTaskFlow(const PublishAndDeployTaskFlowRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PublishAndDeployTaskFlowOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PublishAndDeployTaskFlowOutcome(PublishAndDeployTaskFlowResult(outcome.result()));
+	else
+		return PublishAndDeployTaskFlowOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::publishAndDeployTaskFlowAsync(const PublishAndDeployTaskFlowRequest& request, const PublishAndDeployTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, publishAndDeployTaskFlow(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::PublishAndDeployTaskFlowOutcomeCallable Dms_enterpriseClient::publishAndDeployTaskFlowCallable(const PublishAndDeployTaskFlowRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PublishAndDeployTaskFlowOutcome()>>(
+			[this, request]()
+			{
+			return this->publishAndDeployTaskFlow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::ReDeployLhDagVersionOutcome Dms_enterpriseClient::reDeployLhDagVersion(const ReDeployLhDagVersionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4149,6 +5193,78 @@ Dms_enterpriseClient::ReDeployLhDagVersionOutcomeCallable Dms_enterpriseClient::
 			[this, request]()
 			{
 			return this->reDeployLhDagVersion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ReRunTaskFlowInstanceOutcome Dms_enterpriseClient::reRunTaskFlowInstance(const ReRunTaskFlowInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReRunTaskFlowInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReRunTaskFlowInstanceOutcome(ReRunTaskFlowInstanceResult(outcome.result()));
+	else
+		return ReRunTaskFlowInstanceOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::reRunTaskFlowInstanceAsync(const ReRunTaskFlowInstanceRequest& request, const ReRunTaskFlowInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reRunTaskFlowInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ReRunTaskFlowInstanceOutcomeCallable Dms_enterpriseClient::reRunTaskFlowInstanceCallable(const ReRunTaskFlowInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReRunTaskFlowInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->reRunTaskFlowInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::RefundPayAsYouGoOrderOutcome Dms_enterpriseClient::refundPayAsYouGoOrder(const RefundPayAsYouGoOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefundPayAsYouGoOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefundPayAsYouGoOrderOutcome(RefundPayAsYouGoOrderResult(outcome.result()));
+	else
+		return RefundPayAsYouGoOrderOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::refundPayAsYouGoOrderAsync(const RefundPayAsYouGoOrderRequest& request, const RefundPayAsYouGoOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refundPayAsYouGoOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::RefundPayAsYouGoOrderOutcomeCallable Dms_enterpriseClient::refundPayAsYouGoOrderCallable(const RefundPayAsYouGoOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefundPayAsYouGoOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->refundPayAsYouGoOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4257,6 +5373,42 @@ Dms_enterpriseClient::RestartDataCorrectSQLJobOutcomeCallable Dms_enterpriseClie
 			[this, request]()
 			{
 			return this->restartDataCorrectSQLJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ResumeTaskFlowInstanceOutcome Dms_enterpriseClient::resumeTaskFlowInstance(const ResumeTaskFlowInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResumeTaskFlowInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResumeTaskFlowInstanceOutcome(ResumeTaskFlowInstanceResult(outcome.result()));
+	else
+		return ResumeTaskFlowInstanceOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::resumeTaskFlowInstanceAsync(const ResumeTaskFlowInstanceRequest& request, const ResumeTaskFlowInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resumeTaskFlowInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ResumeTaskFlowInstanceOutcomeCallable Dms_enterpriseClient::resumeTaskFlowInstanceCallable(const ResumeTaskFlowInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResumeTaskFlowInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->resumeTaskFlowInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4443,6 +5595,42 @@ Dms_enterpriseClient::SetOwnersOutcomeCallable Dms_enterpriseClient::setOwnersCa
 	return task->get_future();
 }
 
+Dms_enterpriseClient::StopTaskFlowInstanceOutcome Dms_enterpriseClient::stopTaskFlowInstance(const StopTaskFlowInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopTaskFlowInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopTaskFlowInstanceOutcome(StopTaskFlowInstanceResult(outcome.result()));
+	else
+		return StopTaskFlowInstanceOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::stopTaskFlowInstanceAsync(const StopTaskFlowInstanceRequest& request, const StopTaskFlowInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopTaskFlowInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::StopTaskFlowInstanceOutcomeCallable Dms_enterpriseClient::stopTaskFlowInstanceCallable(const StopTaskFlowInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopTaskFlowInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->stopTaskFlowInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::SubmitOrderApprovalOutcome Dms_enterpriseClient::submitOrderApproval(const SubmitOrderApprovalRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4509,6 +5697,42 @@ Dms_enterpriseClient::SubmitStructSyncOrderApprovalOutcomeCallable Dms_enterpris
 			[this, request]()
 			{
 			return this->submitStructSyncOrderApproval(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::SuspendTaskFlowInstanceOutcome Dms_enterpriseClient::suspendTaskFlowInstance(const SuspendTaskFlowInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SuspendTaskFlowInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SuspendTaskFlowInstanceOutcome(SuspendTaskFlowInstanceResult(outcome.result()));
+	else
+		return SuspendTaskFlowInstanceOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::suspendTaskFlowInstanceAsync(const SuspendTaskFlowInstanceRequest& request, const SuspendTaskFlowInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, suspendTaskFlowInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::SuspendTaskFlowInstanceOutcomeCallable Dms_enterpriseClient::suspendTaskFlowInstanceCallable(const SuspendTaskFlowInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SuspendTaskFlowInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->suspendTaskFlowInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4617,6 +5841,582 @@ Dms_enterpriseClient::UpdateInstanceOutcomeCallable Dms_enterpriseClient::update
 			[this, request]()
 			{
 			return this->updateInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateSLARulesOutcome Dms_enterpriseClient::updateSLARules(const UpdateSLARulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSLARulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSLARulesOutcome(UpdateSLARulesResult(outcome.result()));
+	else
+		return UpdateSLARulesOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateSLARulesAsync(const UpdateSLARulesRequest& request, const UpdateSLARulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSLARules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateSLARulesOutcomeCallable Dms_enterpriseClient::updateSLARulesCallable(const UpdateSLARulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSLARulesOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSLARules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateScenarioOutcome Dms_enterpriseClient::updateScenario(const UpdateScenarioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateScenarioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateScenarioOutcome(UpdateScenarioResult(outcome.result()));
+	else
+		return UpdateScenarioOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateScenarioAsync(const UpdateScenarioRequest& request, const UpdateScenarioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateScenario(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateScenarioOutcomeCallable Dms_enterpriseClient::updateScenarioCallable(const UpdateScenarioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateScenarioOutcome()>>(
+			[this, request]()
+			{
+			return this->updateScenario(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateTaskConfigOutcome Dms_enterpriseClient::updateTaskConfig(const UpdateTaskConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskConfigOutcome(UpdateTaskConfigResult(outcome.result()));
+	else
+		return UpdateTaskConfigOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateTaskConfigAsync(const UpdateTaskConfigRequest& request, const UpdateTaskConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateTaskConfigOutcomeCallable Dms_enterpriseClient::updateTaskConfigCallable(const UpdateTaskConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateTaskContentOutcome Dms_enterpriseClient::updateTaskContent(const UpdateTaskContentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskContentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskContentOutcome(UpdateTaskContentResult(outcome.result()));
+	else
+		return UpdateTaskContentOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateTaskContentAsync(const UpdateTaskContentRequest& request, const UpdateTaskContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskContent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateTaskContentOutcomeCallable Dms_enterpriseClient::updateTaskContentCallable(const UpdateTaskContentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskContentOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskContent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateTaskFlowConstantsOutcome Dms_enterpriseClient::updateTaskFlowConstants(const UpdateTaskFlowConstantsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskFlowConstantsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskFlowConstantsOutcome(UpdateTaskFlowConstantsResult(outcome.result()));
+	else
+		return UpdateTaskFlowConstantsOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateTaskFlowConstantsAsync(const UpdateTaskFlowConstantsRequest& request, const UpdateTaskFlowConstantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskFlowConstants(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateTaskFlowConstantsOutcomeCallable Dms_enterpriseClient::updateTaskFlowConstantsCallable(const UpdateTaskFlowConstantsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskFlowConstantsOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskFlowConstants(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateTaskFlowCooperatorsOutcome Dms_enterpriseClient::updateTaskFlowCooperators(const UpdateTaskFlowCooperatorsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskFlowCooperatorsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskFlowCooperatorsOutcome(UpdateTaskFlowCooperatorsResult(outcome.result()));
+	else
+		return UpdateTaskFlowCooperatorsOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateTaskFlowCooperatorsAsync(const UpdateTaskFlowCooperatorsRequest& request, const UpdateTaskFlowCooperatorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskFlowCooperators(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateTaskFlowCooperatorsOutcomeCallable Dms_enterpriseClient::updateTaskFlowCooperatorsCallable(const UpdateTaskFlowCooperatorsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskFlowCooperatorsOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskFlowCooperators(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateTaskFlowEdgesOutcome Dms_enterpriseClient::updateTaskFlowEdges(const UpdateTaskFlowEdgesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskFlowEdgesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskFlowEdgesOutcome(UpdateTaskFlowEdgesResult(outcome.result()));
+	else
+		return UpdateTaskFlowEdgesOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateTaskFlowEdgesAsync(const UpdateTaskFlowEdgesRequest& request, const UpdateTaskFlowEdgesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskFlowEdges(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateTaskFlowEdgesOutcomeCallable Dms_enterpriseClient::updateTaskFlowEdgesCallable(const UpdateTaskFlowEdgesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskFlowEdgesOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskFlowEdges(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateTaskFlowNameAndDescOutcome Dms_enterpriseClient::updateTaskFlowNameAndDesc(const UpdateTaskFlowNameAndDescRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskFlowNameAndDescOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskFlowNameAndDescOutcome(UpdateTaskFlowNameAndDescResult(outcome.result()));
+	else
+		return UpdateTaskFlowNameAndDescOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateTaskFlowNameAndDescAsync(const UpdateTaskFlowNameAndDescRequest& request, const UpdateTaskFlowNameAndDescAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskFlowNameAndDesc(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateTaskFlowNameAndDescOutcomeCallable Dms_enterpriseClient::updateTaskFlowNameAndDescCallable(const UpdateTaskFlowNameAndDescRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskFlowNameAndDescOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskFlowNameAndDesc(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateTaskFlowNotificationOutcome Dms_enterpriseClient::updateTaskFlowNotification(const UpdateTaskFlowNotificationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskFlowNotificationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskFlowNotificationOutcome(UpdateTaskFlowNotificationResult(outcome.result()));
+	else
+		return UpdateTaskFlowNotificationOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateTaskFlowNotificationAsync(const UpdateTaskFlowNotificationRequest& request, const UpdateTaskFlowNotificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskFlowNotification(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateTaskFlowNotificationOutcomeCallable Dms_enterpriseClient::updateTaskFlowNotificationCallable(const UpdateTaskFlowNotificationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskFlowNotificationOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskFlowNotification(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateTaskFlowOwnerOutcome Dms_enterpriseClient::updateTaskFlowOwner(const UpdateTaskFlowOwnerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskFlowOwnerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskFlowOwnerOutcome(UpdateTaskFlowOwnerResult(outcome.result()));
+	else
+		return UpdateTaskFlowOwnerOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateTaskFlowOwnerAsync(const UpdateTaskFlowOwnerRequest& request, const UpdateTaskFlowOwnerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskFlowOwner(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateTaskFlowOwnerOutcomeCallable Dms_enterpriseClient::updateTaskFlowOwnerCallable(const UpdateTaskFlowOwnerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskFlowOwnerOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskFlowOwner(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateTaskFlowRelationsOutcome Dms_enterpriseClient::updateTaskFlowRelations(const UpdateTaskFlowRelationsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskFlowRelationsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskFlowRelationsOutcome(UpdateTaskFlowRelationsResult(outcome.result()));
+	else
+		return UpdateTaskFlowRelationsOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateTaskFlowRelationsAsync(const UpdateTaskFlowRelationsRequest& request, const UpdateTaskFlowRelationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskFlowRelations(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateTaskFlowRelationsOutcomeCallable Dms_enterpriseClient::updateTaskFlowRelationsCallable(const UpdateTaskFlowRelationsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskFlowRelationsOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskFlowRelations(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateTaskFlowScheduleOutcome Dms_enterpriseClient::updateTaskFlowSchedule(const UpdateTaskFlowScheduleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskFlowScheduleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskFlowScheduleOutcome(UpdateTaskFlowScheduleResult(outcome.result()));
+	else
+		return UpdateTaskFlowScheduleOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateTaskFlowScheduleAsync(const UpdateTaskFlowScheduleRequest& request, const UpdateTaskFlowScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskFlowSchedule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateTaskFlowScheduleOutcomeCallable Dms_enterpriseClient::updateTaskFlowScheduleCallable(const UpdateTaskFlowScheduleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskFlowScheduleOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskFlowSchedule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateTaskFlowTimeVariablesOutcome Dms_enterpriseClient::updateTaskFlowTimeVariables(const UpdateTaskFlowTimeVariablesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskFlowTimeVariablesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskFlowTimeVariablesOutcome(UpdateTaskFlowTimeVariablesResult(outcome.result()));
+	else
+		return UpdateTaskFlowTimeVariablesOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateTaskFlowTimeVariablesAsync(const UpdateTaskFlowTimeVariablesRequest& request, const UpdateTaskFlowTimeVariablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskFlowTimeVariables(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateTaskFlowTimeVariablesOutcomeCallable Dms_enterpriseClient::updateTaskFlowTimeVariablesCallable(const UpdateTaskFlowTimeVariablesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskFlowTimeVariablesOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskFlowTimeVariables(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateTaskNameOutcome Dms_enterpriseClient::updateTaskName(const UpdateTaskNameRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskNameOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskNameOutcome(UpdateTaskNameResult(outcome.result()));
+	else
+		return UpdateTaskNameOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateTaskNameAsync(const UpdateTaskNameRequest& request, const UpdateTaskNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskName(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateTaskNameOutcomeCallable Dms_enterpriseClient::updateTaskNameCallable(const UpdateTaskNameRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskNameOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateTaskOutputOutcome Dms_enterpriseClient::updateTaskOutput(const UpdateTaskOutputRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskOutputOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskOutputOutcome(UpdateTaskOutputResult(outcome.result()));
+	else
+		return UpdateTaskOutputOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateTaskOutputAsync(const UpdateTaskOutputRequest& request, const UpdateTaskOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskOutput(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateTaskOutputOutcomeCallable Dms_enterpriseClient::updateTaskOutputCallable(const UpdateTaskOutputRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskOutputOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskOutput(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateTaskTimeVariablesOutcome Dms_enterpriseClient::updateTaskTimeVariables(const UpdateTaskTimeVariablesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTaskTimeVariablesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTaskTimeVariablesOutcome(UpdateTaskTimeVariablesResult(outcome.result()));
+	else
+		return UpdateTaskTimeVariablesOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateTaskTimeVariablesAsync(const UpdateTaskTimeVariablesRequest& request, const UpdateTaskTimeVariablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTaskTimeVariables(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateTaskTimeVariablesOutcomeCallable Dms_enterpriseClient::updateTaskTimeVariablesCallable(const UpdateTaskTimeVariablesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTaskTimeVariablesOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTaskTimeVariables(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

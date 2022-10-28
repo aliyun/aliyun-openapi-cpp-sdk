@@ -25,15 +25,6 @@ GetDBTaskSQLJobLogRequest::GetDBTaskSQLJobLogRequest()
 
 GetDBTaskSQLJobLogRequest::~GetDBTaskSQLJobLogRequest() {}
 
-long GetDBTaskSQLJobLogRequest::getJobId() const {
-  return jobId_;
-}
-
-void GetDBTaskSQLJobLogRequest::setJobId(long jobId) {
-  jobId_ = jobId;
-  setParameter(std::string("JobId"), std::to_string(jobId));
-}
-
 long GetDBTaskSQLJobLogRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetDBTaskSQLJobLogRequest::getTid() const {
 void GetDBTaskSQLJobLogRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long GetDBTaskSQLJobLogRequest::getJobId() const {
+  return jobId_;
+}
+
+void GetDBTaskSQLJobLogRequest::setJobId(long jobId) {
+  jobId_ = jobId;
+  setParameter(std::string("JobId"), std::to_string(jobId));
 }
 

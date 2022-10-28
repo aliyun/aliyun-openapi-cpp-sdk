@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string checkedTime;
 					std::string fileName;
 					std::string checkStatus;
+					std::string sQLName;
 					long fileId;
 					std::string reviewSummary;
 					long sQLId;

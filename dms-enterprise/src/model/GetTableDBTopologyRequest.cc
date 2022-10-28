@@ -25,15 +25,6 @@ GetTableDBTopologyRequest::GetTableDBTopologyRequest()
 
 GetTableDBTopologyRequest::~GetTableDBTopologyRequest() {}
 
-std::string GetTableDBTopologyRequest::getTableGuid() const {
-  return tableGuid_;
-}
-
-void GetTableDBTopologyRequest::setTableGuid(const std::string &tableGuid) {
-  tableGuid_ = tableGuid;
-  setParameter(std::string("TableGuid"), tableGuid);
-}
-
 long GetTableDBTopologyRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetTableDBTopologyRequest::getTid() const {
 void GetTableDBTopologyRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string GetTableDBTopologyRequest::getTableGuid() const {
+  return tableGuid_;
+}
+
+void GetTableDBTopologyRequest::setTableGuid(const std::string &tableGuid) {
+  tableGuid_ = tableGuid;
+  setParameter(std::string("TableGuid"), tableGuid);
 }
 

@@ -25,15 +25,6 @@ GetLogicDatabaseRequest::GetLogicDatabaseRequest()
 
 GetLogicDatabaseRequest::~GetLogicDatabaseRequest() {}
 
-std::string GetLogicDatabaseRequest::getDbId() const {
-  return dbId_;
-}
-
-void GetLogicDatabaseRequest::setDbId(const std::string &dbId) {
-  dbId_ = dbId;
-  setParameter(std::string("DbId"), dbId);
-}
-
 long GetLogicDatabaseRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetLogicDatabaseRequest::getTid() const {
 void GetLogicDatabaseRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string GetLogicDatabaseRequest::getDbId() const {
+  return dbId_;
+}
+
+void GetLogicDatabaseRequest::setDbId(const std::string &dbId) {
+  dbId_ = dbId;
+  setParameter(std::string("DbId"), dbId);
 }
 

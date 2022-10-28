@@ -30,14 +30,14 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListLogicTableRouteConfigRequest : publ
 public:
 	ListLogicTableRouteConfigRequest();
 	~ListLogicTableRouteConfigRequest();
-	long getTableId() const;
-	void setTableId(long tableId);
 	long getTid() const;
 	void setTid(long tid);
+	long getTableId() const;
+	void setTableId(long tableId);
 
 private:
-	long tableId_;
 	long tid_;
+	long tableId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

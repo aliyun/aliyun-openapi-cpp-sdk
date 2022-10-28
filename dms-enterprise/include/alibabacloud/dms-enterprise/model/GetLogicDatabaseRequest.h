@@ -30,14 +30,14 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetLogicDatabaseRequest : public RpcSer
 public:
 	GetLogicDatabaseRequest();
 	~GetLogicDatabaseRequest();
-	std::string getDbId() const;
-	void setDbId(const std::string &dbId);
 	long getTid() const;
 	void setTid(long tid);
+	std::string getDbId() const;
+	void setDbId(const std::string &dbId);
 
 private:
-	std::string dbId_;
 	long tid_;
+	std::string dbId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

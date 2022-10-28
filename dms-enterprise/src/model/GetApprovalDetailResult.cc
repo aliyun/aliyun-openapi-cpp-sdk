@@ -54,6 +54,8 @@ void GetApprovalDetailResult::parse(const std::string &payload)
 		approvalDetail_.orderId = std::stol(approvalDetailNode["OrderId"].asString());
 	if(!approvalDetailNode["WorkflowInsCode"].isNull())
 		approvalDetail_.workflowInsCode = approvalDetailNode["WorkflowInsCode"].asString();
+	if(!approvalDetailNode["TemplateId"].isNull())
+		approvalDetail_.templateId = std::stol(approvalDetailNode["TemplateId"].asString());
 	auto allWorkflowNodesNode = approvalDetailNode["WorkflowNodes"]["WorkflowNode"];
 	for (auto approvalDetailNodeWorkflowNodesWorkflowNode : allWorkflowNodesNode)
 	{

@@ -25,15 +25,6 @@ GetTableTopologyRequest::GetTableTopologyRequest()
 
 GetTableTopologyRequest::~GetTableTopologyRequest() {}
 
-std::string GetTableTopologyRequest::getTableGuid() const {
-  return tableGuid_;
-}
-
-void GetTableTopologyRequest::setTableGuid(const std::string &tableGuid) {
-  tableGuid_ = tableGuid;
-  setParameter(std::string("TableGuid"), tableGuid);
-}
-
 long GetTableTopologyRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetTableTopologyRequest::getTid() const {
 void GetTableTopologyRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string GetTableTopologyRequest::getTableGuid() const {
+  return tableGuid_;
+}
+
+void GetTableTopologyRequest::setTableGuid(const std::string &tableGuid) {
+  tableGuid_ = tableGuid;
+  setParameter(std::string("TableGuid"), tableGuid);
 }
 
