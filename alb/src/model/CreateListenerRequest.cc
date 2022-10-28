@@ -120,7 +120,9 @@ CreateListenerRequest::XForwardedForConfig CreateListenerRequest::getXForwardedF
 
 void CreateListenerRequest::setXForwardedForConfig(const CreateListenerRequest::XForwardedForConfig &xForwardedForConfig) {
   xForwardedForConfig_ = xForwardedForConfig;
+  setParameter(std::string("XForwardedForConfig") + ".XForwardedForClientSourceIpsTrusted", xForwardedForConfig.xForwardedForClientSourceIpsTrusted);
   setParameter(std::string("XForwardedForConfig") + ".XForwardedForClientCertSubjectDNAlias", xForwardedForConfig.xForwardedForClientCertSubjectDNAlias);
+  setParameter(std::string("XForwardedForConfig") + ".XForwardedForClientSourceIpsEnabled", xForwardedForConfig.xForwardedForClientSourceIpsEnabled ? "true" : "false");
   setParameter(std::string("XForwardedForConfig") + ".XForwardedForClientCertIssuerDNEnabled", xForwardedForConfig.xForwardedForClientCertIssuerDNEnabled ? "true" : "false");
   setParameter(std::string("XForwardedForConfig") + ".XForwardedForClientCertFingerprintEnabled", xForwardedForConfig.xForwardedForClientCertFingerprintEnabled ? "true" : "false");
   setParameter(std::string("XForwardedForConfig") + ".XForwardedForClientCertIssuerDNAlias", xForwardedForConfig.xForwardedForClientCertIssuerDNAlias);

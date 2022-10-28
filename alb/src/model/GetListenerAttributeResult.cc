@@ -131,6 +131,10 @@ void GetListenerAttributeResult::parse(const std::string &payload)
 		xForwardedForConfig_.xForwardedForSLBIdEnabled = xForwardedForConfigNode["XForwardedForSLBIdEnabled"].asString() == "true";
 	if(!xForwardedForConfigNode["XForwardedForSLBPortEnabled"].isNull())
 		xForwardedForConfig_.xForwardedForSLBPortEnabled = xForwardedForConfigNode["XForwardedForSLBPortEnabled"].asString() == "true";
+	if(!xForwardedForConfigNode["XForwardedForClientSourceIpsEnabled"].isNull())
+		xForwardedForConfig_.xForwardedForClientSourceIpsEnabled = xForwardedForConfigNode["XForwardedForClientSourceIpsEnabled"].asString() == "true";
+	if(!xForwardedForConfigNode["XForwardedForClientSourceIpsTrusted"].isNull())
+		xForwardedForConfig_.xForwardedForClientSourceIpsTrusted = xForwardedForConfigNode["XForwardedForClientSourceIpsTrusted"].asString();
 	if(!value["CaEnabled"].isNull())
 		caEnabled_ = value["CaEnabled"].asString() == "true";
 	if(!value["GzipEnabled"].isNull())

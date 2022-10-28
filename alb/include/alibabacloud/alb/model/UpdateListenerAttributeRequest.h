@@ -47,7 +47,9 @@ public:
 		std::string certificateId;
 	};
 	struct XForwardedForConfig {
+		std::string xForwardedForClientSourceIpsTrusted;
 		std::string xForwardedForClientCertSubjectDNAlias;
+		bool xForwardedForClientSourceIpsEnabled;
 		bool xForwardedForClientCertIssuerDNEnabled;
 		bool xForwardedForClientCertFingerprintEnabled;
 		std::string xForwardedForClientCertIssuerDNAlias;

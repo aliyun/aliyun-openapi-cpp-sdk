@@ -99,6 +99,7 @@ namespace AlibabaCloud
 						};
 						struct TrafficLimitConfig
 						{
+							int perIpQps;
 							int qPS;
 						};
 						struct CorsConfig

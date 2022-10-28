@@ -87,6 +87,7 @@ void CreateRuleRequest::setRuleActions(const std::vector<CreateRuleRequest::Rule
     setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".InsertHeaderConfig.Value", ruleActions[dep1].insertHeaderConfig.value);
     setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".InsertHeaderConfig.Key", ruleActions[dep1].insertHeaderConfig.key);
     setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".TrafficLimitConfig.QPS", std::to_string(ruleActions[dep1].trafficLimitConfig.qPS));
+    setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".TrafficLimitConfig.PerIpQps", std::to_string(ruleActions[dep1].trafficLimitConfig.perIpQps));
     setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".CorsConfig.AllowCredentials", ruleActions[dep1].corsConfig.allowCredentials);
     for(int dep2 = 0; dep2 != ruleActions[dep1].corsConfig.allowOrigin.size(); dep2++) {
       setParameter(std::string("RuleActions") + "." + std::to_string(dep1 + 1) + ".CorsConfig.AllowOrigin." + std::to_string(dep2 + 1), ruleActions[dep1].corsConfig.allowOrigin[dep2]);

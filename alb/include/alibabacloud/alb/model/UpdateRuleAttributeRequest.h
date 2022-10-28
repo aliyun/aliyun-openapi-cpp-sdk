@@ -74,6 +74,7 @@ public:
 		InsertHeaderConfig insertHeaderConfig;
 		struct TrafficLimitConfig {
 			int qPS;
+			int perIpQps;
 		};
 		TrafficLimitConfig trafficLimitConfig;
 		struct CorsConfig {

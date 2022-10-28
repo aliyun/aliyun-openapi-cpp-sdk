@@ -128,6 +128,10 @@ void ListListenersResult::parse(const std::string &payload)
 			listenersObject.xForwardedForConfig.xForwardedForSLBIdEnabled = xForwardedForConfigNode["XForwardedForSLBIdEnabled"].asString() == "true";
 		if(!xForwardedForConfigNode["XForwardedForSLBPortEnabled"].isNull())
 			listenersObject.xForwardedForConfig.xForwardedForSLBPortEnabled = xForwardedForConfigNode["XForwardedForSLBPortEnabled"].asString() == "true";
+		if(!xForwardedForConfigNode["XForwardedForClientSourceIpsEnabled"].isNull())
+			listenersObject.xForwardedForConfig.xForwardedForClientSourceIpsEnabled = xForwardedForConfigNode["XForwardedForClientSourceIpsEnabled"].asString() == "true";
+		if(!xForwardedForConfigNode["XForwardedForClientSourceIpsTrusted"].isNull())
+			listenersObject.xForwardedForConfig.xForwardedForClientSourceIpsTrusted = xForwardedForConfigNode["XForwardedForClientSourceIpsTrusted"].asString();
 		listeners_.push_back(listenersObject);
 	}
 	if(!value["MaxResults"].isNull())

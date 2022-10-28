@@ -52,8 +52,10 @@ namespace AlibabaCloud
 					};
 					struct XForwardedForConfig
 					{
+						bool xForwardedForClientSourceIpsEnabled;
 						std::string xForwardedForClientCertFingerprintAlias;
 						bool xForwardedForClientCertFingerprintEnabled;
+						std::string xForwardedForClientSourceIpsTrusted;
 						std::string xForwardedForClientCertIssuerDNAlias;
 						std::string xForwardedForClientCertClientVerifyAlias;
 						bool xForwardedForClientCertSubjectDNEnabled;

@@ -141,6 +141,8 @@ void ListRulesResult::parse(const std::string &payload)
 			auto trafficLimitConfigNode = value["TrafficLimitConfig"];
 			if(!trafficLimitConfigNode["QPS"].isNull())
 				ruleActionsObject.trafficLimitConfig.qPS = std::stoi(trafficLimitConfigNode["QPS"].asString());
+			if(!trafficLimitConfigNode["PerIpQps"].isNull())
+				ruleActionsObject.trafficLimitConfig.perIpQps = std::stoi(trafficLimitConfigNode["PerIpQps"].asString());
 			auto corsConfigNode = value["CorsConfig"];
 			if(!corsConfigNode["AllowCredentials"].isNull())
 				ruleActionsObject.corsConfig.allowCredentials = corsConfigNode["AllowCredentials"].asString();

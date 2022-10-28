@@ -98,6 +98,7 @@ void UpdateRulesAttributeRequest::setRules(const std::vector<UpdateRulesAttribut
       setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".InsertHeaderConfig.Value", rules[dep1].ruleActions[dep2].insertHeaderConfig.value);
       setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".InsertHeaderConfig.Key", rules[dep1].ruleActions[dep2].insertHeaderConfig.key);
       setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".TrafficLimitConfig.QPS", std::to_string(rules[dep1].ruleActions[dep2].trafficLimitConfig.qPS));
+      setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".TrafficLimitConfig.PerIpQps", std::to_string(rules[dep1].ruleActions[dep2].trafficLimitConfig.perIpQps));
       setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".CorsConfig.AllowCredentials", rules[dep1].ruleActions[dep2].corsConfig.allowCredentials);
       for(int dep3 = 0; dep3 != rules[dep1].ruleActions[dep2].corsConfig.allowOrigin.size(); dep3++) {
         setParameter(std::string("Rules") + "." + std::to_string(dep1 + 1) + ".RuleActions." + std::to_string(dep2 + 1) + ".CorsConfig.AllowOrigin." + std::to_string(dep3 + 1), rules[dep1].ruleActions[dep2].corsConfig.allowOrigin[dep3]);
