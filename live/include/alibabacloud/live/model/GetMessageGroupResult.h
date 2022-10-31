@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string extension;
 					std::string creatorId;
 					long createTime;
+					bool isMuteAll;
 					std::string groupId;
 				};
 

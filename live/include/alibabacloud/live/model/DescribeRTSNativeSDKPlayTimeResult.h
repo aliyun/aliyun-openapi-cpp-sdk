@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_CREATEMESSAGEAPPRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_CREATEMESSAGEAPPRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBERTSNATIVESDKPLAYTIMERESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBERTSNATIVESDKPLAYTIMERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT CreateMessageAppResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeRTSNativeSDKPlayTimeResult : public ServiceResult
 			{
 			public:
-				struct Result
+				struct Data
 				{
-					std::string appId;
+					std::string playTime;
+					std::string stallTime;
+					std::string timeStamp;
 				};
 
 
-				CreateMessageAppResult();
-				explicit CreateMessageAppResult(const std::string &payload);
-				~CreateMessageAppResult();
-				Result getResult()const;
+				DescribeRTSNativeSDKPlayTimeResult();
+				explicit DescribeRTSNativeSDKPlayTimeResult(const std::string &payload);
+				~DescribeRTSNativeSDKPlayTimeResult();
+				std::string getEndTime()const;
+				std::vector<Data> getPlayTimeData()const;
+				std::string getDataInterval()const;
+				std::string getStartTime()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Result result_;
+				std::string endTime_;
+				std::vector<Data> playTimeData_;
+				std::string dataInterval_;
+				std::string startTime_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_CREATEMESSAGEAPPRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBERTSNATIVESDKPLAYTIMERESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_SENDMESSAGETOGROUPRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_SENDMESSAGETOGROUPRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_CANCELMUTEALLGROUPUSERRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_CANCELMUTEALLGROUPUSERRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,18 +29,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT SendMessageToGroupResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT CancelMuteAllGroupUserResult : public ServiceResult
 			{
 			public:
 				struct Result
 				{
-					std::string messageId;
+					bool success;
 				};
 
 
-				SendMessageToGroupResult();
-				explicit SendMessageToGroupResult(const std::string &payload);
-				~SendMessageToGroupResult();
+				CancelMuteAllGroupUserResult();
+				explicit CancelMuteAllGroupUserResult(const std::string &payload);
+				~CancelMuteAllGroupUserResult();
 				Result getResult()const;
 
 			protected:
@@ -52,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_SENDMESSAGETOGROUPRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_CANCELMUTEALLGROUPUSERRESULT_H_

@@ -14,46 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/GetMessageAppResult.h>
+#include <alibabacloud/live/model/CancelMuteAllGroupUserResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-GetMessageAppResult::GetMessageAppResult() :
+CancelMuteAllGroupUserResult::CancelMuteAllGroupUserResult() :
 	ServiceResult()
 {}
 
-GetMessageAppResult::GetMessageAppResult(const std::string &payload) :
+CancelMuteAllGroupUserResult::CancelMuteAllGroupUserResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetMessageAppResult::~GetMessageAppResult()
+CancelMuteAllGroupUserResult::~CancelMuteAllGroupUserResult()
 {}
 
-void GetMessageAppResult::parse(const std::string &payload)
+void CancelMuteAllGroupUserResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["AppId"].isNull())
-		result_.appId = resultNode["AppId"].asString();
-	if(!resultNode["CreateTime"].isNull())
-		result_.createTime = std::stol(resultNode["CreateTime"].asString());
-	if(!resultNode["Status"].isNull())
-		result_.status = std::stoi(resultNode["Status"].asString());
-	if(!resultNode["AppConfig"].isNull())
-		result_.appConfig = resultNode["AppConfig"].asString();
-	if(!resultNode["Extension"].isNull())
-		result_.extension = resultNode["Extension"].asString();
+	if(!resultNode["Success"].isNull())
+		result_.success = resultNode["Success"].asString() == "true";
 
 }
 
-GetMessageAppResult::Result GetMessageAppResult::getResult()const
+CancelMuteAllGroupUserResult::Result CancelMuteAllGroupUserResult::getResult()const
 {
 	return result_;
 }

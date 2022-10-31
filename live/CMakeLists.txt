@@ -85,6 +85,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/BatchDeleteLiveDomainConfigsResult.h
 	include/alibabacloud/live/model/BatchSetLiveDomainConfigsRequest.h
 	include/alibabacloud/live/model/BatchSetLiveDomainConfigsResult.h
+	include/alibabacloud/live/model/CancelMuteAllGroupUserRequest.h
+	include/alibabacloud/live/model/CancelMuteAllGroupUserResult.h
 	include/alibabacloud/live/model/CloseLiveShiftRequest.h
 	include/alibabacloud/live/model/CloseLiveShiftResult.h
 	include/alibabacloud/live/model/CloseMessageGroupRequest.h
@@ -105,8 +107,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CreateLiveStreamRecordIndexFilesResult.h
 	include/alibabacloud/live/model/CreateLiveTranscodeTemplateRequest.h
 	include/alibabacloud/live/model/CreateLiveTranscodeTemplateResult.h
-	include/alibabacloud/live/model/CreateMessageAppRequest.h
-	include/alibabacloud/live/model/CreateMessageAppResult.h
 	include/alibabacloud/live/model/CreateMessageGroupRequest.h
 	include/alibabacloud/live/model/CreateMessageGroupResult.h
 	include/alibabacloud/live/model/CreateMixStreamRequest.h
@@ -323,6 +323,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveStreamDelayConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamHistoryUserNumRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamHistoryUserNumResult.h
+	include/alibabacloud/live/model/DescribeLiveStreamMetricDetailDataRequest.h
+	include/alibabacloud/live/model/DescribeLiveStreamMetricDetailDataResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamMonitorListRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamMonitorListResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamOptimizedFeatureConfigRequest.h
@@ -369,6 +371,16 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeMeterLiveRtcDurationResult.h
 	include/alibabacloud/live/model/DescribeMixStreamListRequest.h
 	include/alibabacloud/live/model/DescribeMixStreamListResult.h
+	include/alibabacloud/live/model/DescribeRTSNativeSDKFirstFrameCostRequest.h
+	include/alibabacloud/live/model/DescribeRTSNativeSDKFirstFrameCostResult.h
+	include/alibabacloud/live/model/DescribeRTSNativeSDKFirstFrameDelayRequest.h
+	include/alibabacloud/live/model/DescribeRTSNativeSDKFirstFrameDelayResult.h
+	include/alibabacloud/live/model/DescribeRTSNativeSDKPlayFailStatusRequest.h
+	include/alibabacloud/live/model/DescribeRTSNativeSDKPlayFailStatusResult.h
+	include/alibabacloud/live/model/DescribeRTSNativeSDKPlayTimeRequest.h
+	include/alibabacloud/live/model/DescribeRTSNativeSDKPlayTimeResult.h
+	include/alibabacloud/live/model/DescribeRTSNativeSDKVvDataRequest.h
+	include/alibabacloud/live/model/DescribeRTSNativeSDKVvDataResult.h
 	include/alibabacloud/live/model/DescribeRoomKickoutUserListRequest.h
 	include/alibabacloud/live/model/DescribeRoomKickoutUserListResult.h
 	include/alibabacloud/live/model/DescribeRoomListRequest.h
@@ -413,12 +425,12 @@ set(live_public_header_model
 	include/alibabacloud/live/model/GetCustomTemplateResult.h
 	include/alibabacloud/live/model/GetEditingJobInfoRequest.h
 	include/alibabacloud/live/model/GetEditingJobInfoResult.h
-	include/alibabacloud/live/model/GetMessageAppRequest.h
-	include/alibabacloud/live/model/GetMessageAppResult.h
 	include/alibabacloud/live/model/GetMessageGroupRequest.h
 	include/alibabacloud/live/model/GetMessageGroupResult.h
 	include/alibabacloud/live/model/GetMessageTokenRequest.h
 	include/alibabacloud/live/model/GetMessageTokenResult.h
+	include/alibabacloud/live/model/GetMessageUserInfoRequest.h
+	include/alibabacloud/live/model/GetMessageUserInfoResult.h
 	include/alibabacloud/live/model/GetMultiRateConfigRequest.h
 	include/alibabacloud/live/model/GetMultiRateConfigResult.h
 	include/alibabacloud/live/model/GetMultiRateConfigListRequest.h
@@ -439,8 +451,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ListLiveRealtimeLogDeliveryInfosResult.h
 	include/alibabacloud/live/model/ListMessageRequest.h
 	include/alibabacloud/live/model/ListMessageResult.h
-	include/alibabacloud/live/model/ListMessageAppRequest.h
-	include/alibabacloud/live/model/ListMessageAppResult.h
 	include/alibabacloud/live/model/ListMessageGroupRequest.h
 	include/alibabacloud/live/model/ListMessageGroupResult.h
 	include/alibabacloud/live/model/ListMessageGroupUserRequest.h
@@ -485,10 +495,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ResumeLiveStreamResult.h
 	include/alibabacloud/live/model/RollbackLiveStagingConfigRequest.h
 	include/alibabacloud/live/model/RollbackLiveStagingConfigResult.h
-	include/alibabacloud/live/model/SendMessageToGroupRequest.h
-	include/alibabacloud/live/model/SendMessageToGroupResult.h
-	include/alibabacloud/live/model/SendMessageToGroupUsersRequest.h
-	include/alibabacloud/live/model/SendMessageToGroupUsersResult.h
 	include/alibabacloud/live/model/SendRoomNotificationRequest.h
 	include/alibabacloud/live/model/SendRoomNotificationResult.h
 	include/alibabacloud/live/model/SendRoomUserNotificationRequest.h
@@ -640,6 +646,8 @@ set(live_src
 	src/model/BatchDeleteLiveDomainConfigsResult.cc
 	src/model/BatchSetLiveDomainConfigsRequest.cc
 	src/model/BatchSetLiveDomainConfigsResult.cc
+	src/model/CancelMuteAllGroupUserRequest.cc
+	src/model/CancelMuteAllGroupUserResult.cc
 	src/model/CloseLiveShiftRequest.cc
 	src/model/CloseLiveShiftResult.cc
 	src/model/CloseMessageGroupRequest.cc
@@ -660,8 +668,6 @@ set(live_src
 	src/model/CreateLiveStreamRecordIndexFilesResult.cc
 	src/model/CreateLiveTranscodeTemplateRequest.cc
 	src/model/CreateLiveTranscodeTemplateResult.cc
-	src/model/CreateMessageAppRequest.cc
-	src/model/CreateMessageAppResult.cc
 	src/model/CreateMessageGroupRequest.cc
 	src/model/CreateMessageGroupResult.cc
 	src/model/CreateMixStreamRequest.cc
@@ -878,6 +884,8 @@ set(live_src
 	src/model/DescribeLiveStreamDelayConfigResult.cc
 	src/model/DescribeLiveStreamHistoryUserNumRequest.cc
 	src/model/DescribeLiveStreamHistoryUserNumResult.cc
+	src/model/DescribeLiveStreamMetricDetailDataRequest.cc
+	src/model/DescribeLiveStreamMetricDetailDataResult.cc
 	src/model/DescribeLiveStreamMonitorListRequest.cc
 	src/model/DescribeLiveStreamMonitorListResult.cc
 	src/model/DescribeLiveStreamOptimizedFeatureConfigRequest.cc
@@ -924,6 +932,16 @@ set(live_src
 	src/model/DescribeMeterLiveRtcDurationResult.cc
 	src/model/DescribeMixStreamListRequest.cc
 	src/model/DescribeMixStreamListResult.cc
+	src/model/DescribeRTSNativeSDKFirstFrameCostRequest.cc
+	src/model/DescribeRTSNativeSDKFirstFrameCostResult.cc
+	src/model/DescribeRTSNativeSDKFirstFrameDelayRequest.cc
+	src/model/DescribeRTSNativeSDKFirstFrameDelayResult.cc
+	src/model/DescribeRTSNativeSDKPlayFailStatusRequest.cc
+	src/model/DescribeRTSNativeSDKPlayFailStatusResult.cc
+	src/model/DescribeRTSNativeSDKPlayTimeRequest.cc
+	src/model/DescribeRTSNativeSDKPlayTimeResult.cc
+	src/model/DescribeRTSNativeSDKVvDataRequest.cc
+	src/model/DescribeRTSNativeSDKVvDataResult.cc
 	src/model/DescribeRoomKickoutUserListRequest.cc
 	src/model/DescribeRoomKickoutUserListResult.cc
 	src/model/DescribeRoomListRequest.cc
@@ -968,12 +986,12 @@ set(live_src
 	src/model/GetCustomTemplateResult.cc
 	src/model/GetEditingJobInfoRequest.cc
 	src/model/GetEditingJobInfoResult.cc
-	src/model/GetMessageAppRequest.cc
-	src/model/GetMessageAppResult.cc
 	src/model/GetMessageGroupRequest.cc
 	src/model/GetMessageGroupResult.cc
 	src/model/GetMessageTokenRequest.cc
 	src/model/GetMessageTokenResult.cc
+	src/model/GetMessageUserInfoRequest.cc
+	src/model/GetMessageUserInfoResult.cc
 	src/model/GetMultiRateConfigRequest.cc
 	src/model/GetMultiRateConfigResult.cc
 	src/model/GetMultiRateConfigListRequest.cc
@@ -994,8 +1012,6 @@ set(live_src
 	src/model/ListLiveRealtimeLogDeliveryInfosResult.cc
 	src/model/ListMessageRequest.cc
 	src/model/ListMessageResult.cc
-	src/model/ListMessageAppRequest.cc
-	src/model/ListMessageAppResult.cc
 	src/model/ListMessageGroupRequest.cc
 	src/model/ListMessageGroupResult.cc
 	src/model/ListMessageGroupUserRequest.cc
@@ -1040,10 +1056,6 @@ set(live_src
 	src/model/ResumeLiveStreamResult.cc
 	src/model/RollbackLiveStagingConfigRequest.cc
 	src/model/RollbackLiveStagingConfigResult.cc
-	src/model/SendMessageToGroupRequest.cc
-	src/model/SendMessageToGroupResult.cc
-	src/model/SendMessageToGroupUsersRequest.cc
-	src/model/SendMessageToGroupUsersResult.cc
 	src/model/SendRoomNotificationRequest.cc
 	src/model/SendRoomNotificationResult.cc
 	src/model/SendRoomUserNotificationRequest.cc

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_SENDMESSAGETOGROUPREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_SENDMESSAGETOGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBERTSNATIVESDKPLAYTIMEREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBERTSNATIVESDKPLAYTIMEREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,26 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT SendMessageToGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT DescribeRTSNativeSDKPlayTimeRequest : public RpcServiceRequest {
 public:
-	SendMessageToGroupRequest();
-	~SendMessageToGroupRequest();
-	std::string getData() const;
-	void setData(const std::string &data);
-	std::string getGroupId() const;
-	void setGroupId(const std::string &groupId);
-	int getType() const;
-	void setType(int type);
-	std::string getAppId() const;
-	void setAppId(const std::string &appId);
+	DescribeRTSNativeSDKPlayTimeRequest();
+	~DescribeRTSNativeSDKPlayTimeRequest();
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	std::vector<std::string> getDomainNameList() const;
+	void setDomainNameList(const std::vector<std::string> &domainNameList);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getDataInterval() const;
+	void setDataInterval(const std::string &dataInterval);
 
 private:
-	std::string data_;
-	std::string groupId_;
-	int type_;
-	std::string appId_;
+	std::string endTime_;
+	std::vector<std::string> domainNameList_;
+	std::string startTime_;
+	std::string dataInterval_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_SENDMESSAGETOGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBERTSNATIVESDKPLAYTIMEREQUEST_H_

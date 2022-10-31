@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_GETMESSAGEAPPREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_GETMESSAGEAPPREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_CANCELMUTEALLGROUPUSERREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_CANCELMUTEALLGROUPUSERREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,17 +26,23 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT GetMessageAppRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT CancelMuteAllGroupUserRequest : public RpcServiceRequest {
 public:
-	GetMessageAppRequest();
-	~GetMessageAppRequest();
+	CancelMuteAllGroupUserRequest();
+	~CancelMuteAllGroupUserRequest();
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
+	std::string getOperatorUserId() const;
+	void setOperatorUserId(const std::string &operatorUserId);
 
 private:
+	std::string groupId_;
 	std::string appId_;
+	std::string operatorUserId_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_GETMESSAGEAPPREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_CANCELMUTEALLGROUPUSERREQUEST_H_

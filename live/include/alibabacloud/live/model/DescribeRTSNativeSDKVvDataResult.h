@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_SENDMESSAGETOGROUPUSERSRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_SENDMESSAGETOGROUPUSERSRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBERTSNATIVESDKVVDATARESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBERTSNATIVESDKVVDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT SendMessageToGroupUsersResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeRTSNativeSDKVvDataResult : public ServiceResult
 			{
 			public:
-				struct Result
+				struct Data
 				{
-					std::string messageId;
+					std::string vvTotal;
+					std::string vvSuccess;
+					std::string timeStamp;
 				};
 
 
-				SendMessageToGroupUsersResult();
-				explicit SendMessageToGroupUsersResult(const std::string &payload);
-				~SendMessageToGroupUsersResult();
-				Result getResult()const;
+				DescribeRTSNativeSDKVvDataResult();
+				explicit DescribeRTSNativeSDKVvDataResult(const std::string &payload);
+				~DescribeRTSNativeSDKVvDataResult();
+				std::string getEndTime()const;
+				std::vector<Data> getVvData()const;
+				std::string getDataInterval()const;
+				std::string getStartTime()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Result result_;
+				std::string endTime_;
+				std::vector<Data> vvData_;
+				std::string dataInterval_;
+				std::string startTime_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_SENDMESSAGETOGROUPUSERSRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBERTSNATIVESDKVVDATARESULT_H_

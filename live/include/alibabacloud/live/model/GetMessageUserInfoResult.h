@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_LISTMESSAGEAPPRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_LISTMESSAGEAPPRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_GETMESSAGEUSERINFORESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_GETMESSAGEUSERINFORESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,28 +29,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT ListMessageAppResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT GetMessageUserInfoResult : public ServiceResult
 			{
 			public:
 				struct Result
 				{
-					struct AppListItem
-					{
-						int status;
-						std::string extension;
-						std::string appConfig;
-						std::string appId;
-						long createTime;
-					};
-					bool hasMore;
-					int total;
-					std::vector<AppListItem> appList;
+					bool isNewIMUser;
+					bool hasOrderedIM;
 				};
 
 
-				ListMessageAppResult();
-				explicit ListMessageAppResult(const std::string &payload);
-				~ListMessageAppResult();
+				GetMessageUserInfoResult();
+				explicit GetMessageUserInfoResult(const std::string &payload);
+				~GetMessageUserInfoResult();
 				Result getResult()const;
 
 			protected:
@@ -62,4 +53,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_LISTMESSAGEAPPRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_GETMESSAGEUSERINFORESULT_H_

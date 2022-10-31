@@ -50,6 +50,8 @@ void GetMessageGroupResult::parse(const std::string &payload)
 		result_.creatorId = resultNode["CreatorId"].asString();
 	if(!resultNode["Extension"].isNull())
 		result_.extension = resultNode["Extension"].asString();
+	if(!resultNode["IsMuteAll"].isNull())
+		result_.isMuteAll = resultNode["IsMuteAll"].asString() == "true";
 
 }
 

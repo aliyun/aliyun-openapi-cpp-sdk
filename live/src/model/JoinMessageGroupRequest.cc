@@ -25,6 +25,15 @@ JoinMessageGroupRequest::JoinMessageGroupRequest()
 
 JoinMessageGroupRequest::~JoinMessageGroupRequest() {}
 
+bool JoinMessageGroupRequest::getBroadCastStatistics() const {
+  return broadCastStatistics_;
+}
+
+void JoinMessageGroupRequest::setBroadCastStatistics(bool broadCastStatistics) {
+  broadCastStatistics_ = broadCastStatistics;
+  setBodyParameter(std::string("BroadCastStatistics"), broadCastStatistics ? "true" : "false");
+}
+
 std::string JoinMessageGroupRequest::getGroupId() const {
   return groupId_;
 }
@@ -50,5 +59,14 @@ std::string JoinMessageGroupRequest::getAppId() const {
 void JoinMessageGroupRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setBodyParameter(std::string("AppId"), appId);
+}
+
+int JoinMessageGroupRequest::getBroadCastType() const {
+  return broadCastType_;
+}
+
+void JoinMessageGroupRequest::setBroadCastType(int broadCastType) {
+  broadCastType_ = broadCastType;
+  setBodyParameter(std::string("BroadCastType"), std::to_string(broadCastType));
 }
 

@@ -1203,6 +1203,42 @@ LiveClient::BatchSetLiveDomainConfigsOutcomeCallable LiveClient::batchSetLiveDom
 	return task->get_future();
 }
 
+LiveClient::CancelMuteAllGroupUserOutcome LiveClient::cancelMuteAllGroupUser(const CancelMuteAllGroupUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelMuteAllGroupUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelMuteAllGroupUserOutcome(CancelMuteAllGroupUserResult(outcome.result()));
+	else
+		return CancelMuteAllGroupUserOutcome(outcome.error());
+}
+
+void LiveClient::cancelMuteAllGroupUserAsync(const CancelMuteAllGroupUserRequest& request, const CancelMuteAllGroupUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelMuteAllGroupUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CancelMuteAllGroupUserOutcomeCallable LiveClient::cancelMuteAllGroupUserCallable(const CancelMuteAllGroupUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelMuteAllGroupUserOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelMuteAllGroupUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::CloseLiveShiftOutcome LiveClient::closeLiveShift(const CloseLiveShiftRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1557,42 +1593,6 @@ LiveClient::CreateLiveTranscodeTemplateOutcomeCallable LiveClient::createLiveTra
 			[this, request]()
 			{
 			return this->createLiveTranscodeTemplate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::CreateMessageAppOutcome LiveClient::createMessageApp(const CreateMessageAppRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateMessageAppOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateMessageAppOutcome(CreateMessageAppResult(outcome.result()));
-	else
-		return CreateMessageAppOutcome(outcome.error());
-}
-
-void LiveClient::createMessageAppAsync(const CreateMessageAppRequest& request, const CreateMessageAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createMessageApp(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::CreateMessageAppOutcomeCallable LiveClient::createMessageAppCallable(const CreateMessageAppRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateMessageAppOutcome()>>(
-			[this, request]()
-			{
-			return this->createMessageApp(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5487,6 +5487,42 @@ LiveClient::DescribeLiveStreamHistoryUserNumOutcomeCallable LiveClient::describe
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveStreamMetricDetailDataOutcome LiveClient::describeLiveStreamMetricDetailData(const DescribeLiveStreamMetricDetailDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveStreamMetricDetailDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveStreamMetricDetailDataOutcome(DescribeLiveStreamMetricDetailDataResult(outcome.result()));
+	else
+		return DescribeLiveStreamMetricDetailDataOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveStreamMetricDetailDataAsync(const DescribeLiveStreamMetricDetailDataRequest& request, const DescribeLiveStreamMetricDetailDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveStreamMetricDetailData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveStreamMetricDetailDataOutcomeCallable LiveClient::describeLiveStreamMetricDetailDataCallable(const DescribeLiveStreamMetricDetailDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveStreamMetricDetailDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveStreamMetricDetailData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveStreamMonitorListOutcome LiveClient::describeLiveStreamMonitorList(const DescribeLiveStreamMonitorListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6315,6 +6351,186 @@ LiveClient::DescribeMixStreamListOutcomeCallable LiveClient::describeMixStreamLi
 	return task->get_future();
 }
 
+LiveClient::DescribeRTSNativeSDKFirstFrameCostOutcome LiveClient::describeRTSNativeSDKFirstFrameCost(const DescribeRTSNativeSDKFirstFrameCostRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRTSNativeSDKFirstFrameCostOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRTSNativeSDKFirstFrameCostOutcome(DescribeRTSNativeSDKFirstFrameCostResult(outcome.result()));
+	else
+		return DescribeRTSNativeSDKFirstFrameCostOutcome(outcome.error());
+}
+
+void LiveClient::describeRTSNativeSDKFirstFrameCostAsync(const DescribeRTSNativeSDKFirstFrameCostRequest& request, const DescribeRTSNativeSDKFirstFrameCostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRTSNativeSDKFirstFrameCost(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeRTSNativeSDKFirstFrameCostOutcomeCallable LiveClient::describeRTSNativeSDKFirstFrameCostCallable(const DescribeRTSNativeSDKFirstFrameCostRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRTSNativeSDKFirstFrameCostOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRTSNativeSDKFirstFrameCost(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeRTSNativeSDKFirstFrameDelayOutcome LiveClient::describeRTSNativeSDKFirstFrameDelay(const DescribeRTSNativeSDKFirstFrameDelayRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRTSNativeSDKFirstFrameDelayOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRTSNativeSDKFirstFrameDelayOutcome(DescribeRTSNativeSDKFirstFrameDelayResult(outcome.result()));
+	else
+		return DescribeRTSNativeSDKFirstFrameDelayOutcome(outcome.error());
+}
+
+void LiveClient::describeRTSNativeSDKFirstFrameDelayAsync(const DescribeRTSNativeSDKFirstFrameDelayRequest& request, const DescribeRTSNativeSDKFirstFrameDelayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRTSNativeSDKFirstFrameDelay(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeRTSNativeSDKFirstFrameDelayOutcomeCallable LiveClient::describeRTSNativeSDKFirstFrameDelayCallable(const DescribeRTSNativeSDKFirstFrameDelayRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRTSNativeSDKFirstFrameDelayOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRTSNativeSDKFirstFrameDelay(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeRTSNativeSDKPlayFailStatusOutcome LiveClient::describeRTSNativeSDKPlayFailStatus(const DescribeRTSNativeSDKPlayFailStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRTSNativeSDKPlayFailStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRTSNativeSDKPlayFailStatusOutcome(DescribeRTSNativeSDKPlayFailStatusResult(outcome.result()));
+	else
+		return DescribeRTSNativeSDKPlayFailStatusOutcome(outcome.error());
+}
+
+void LiveClient::describeRTSNativeSDKPlayFailStatusAsync(const DescribeRTSNativeSDKPlayFailStatusRequest& request, const DescribeRTSNativeSDKPlayFailStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRTSNativeSDKPlayFailStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeRTSNativeSDKPlayFailStatusOutcomeCallable LiveClient::describeRTSNativeSDKPlayFailStatusCallable(const DescribeRTSNativeSDKPlayFailStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRTSNativeSDKPlayFailStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRTSNativeSDKPlayFailStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeRTSNativeSDKPlayTimeOutcome LiveClient::describeRTSNativeSDKPlayTime(const DescribeRTSNativeSDKPlayTimeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRTSNativeSDKPlayTimeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRTSNativeSDKPlayTimeOutcome(DescribeRTSNativeSDKPlayTimeResult(outcome.result()));
+	else
+		return DescribeRTSNativeSDKPlayTimeOutcome(outcome.error());
+}
+
+void LiveClient::describeRTSNativeSDKPlayTimeAsync(const DescribeRTSNativeSDKPlayTimeRequest& request, const DescribeRTSNativeSDKPlayTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRTSNativeSDKPlayTime(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeRTSNativeSDKPlayTimeOutcomeCallable LiveClient::describeRTSNativeSDKPlayTimeCallable(const DescribeRTSNativeSDKPlayTimeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRTSNativeSDKPlayTimeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRTSNativeSDKPlayTime(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeRTSNativeSDKVvDataOutcome LiveClient::describeRTSNativeSDKVvData(const DescribeRTSNativeSDKVvDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRTSNativeSDKVvDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRTSNativeSDKVvDataOutcome(DescribeRTSNativeSDKVvDataResult(outcome.result()));
+	else
+		return DescribeRTSNativeSDKVvDataOutcome(outcome.error());
+}
+
+void LiveClient::describeRTSNativeSDKVvDataAsync(const DescribeRTSNativeSDKVvDataRequest& request, const DescribeRTSNativeSDKVvDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRTSNativeSDKVvData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeRTSNativeSDKVvDataOutcomeCallable LiveClient::describeRTSNativeSDKVvDataCallable(const DescribeRTSNativeSDKVvDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRTSNativeSDKVvDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRTSNativeSDKVvData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeRoomKickoutUserListOutcome LiveClient::describeRoomKickoutUserList(const DescribeRoomKickoutUserListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7107,42 +7323,6 @@ LiveClient::GetEditingJobInfoOutcomeCallable LiveClient::getEditingJobInfoCallab
 	return task->get_future();
 }
 
-LiveClient::GetMessageAppOutcome LiveClient::getMessageApp(const GetMessageAppRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetMessageAppOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetMessageAppOutcome(GetMessageAppResult(outcome.result()));
-	else
-		return GetMessageAppOutcome(outcome.error());
-}
-
-void LiveClient::getMessageAppAsync(const GetMessageAppRequest& request, const GetMessageAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getMessageApp(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::GetMessageAppOutcomeCallable LiveClient::getMessageAppCallable(const GetMessageAppRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetMessageAppOutcome()>>(
-			[this, request]()
-			{
-			return this->getMessageApp(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 LiveClient::GetMessageGroupOutcome LiveClient::getMessageGroup(const GetMessageGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7209,6 +7389,42 @@ LiveClient::GetMessageTokenOutcomeCallable LiveClient::getMessageTokenCallable(c
 			[this, request]()
 			{
 			return this->getMessageToken(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::GetMessageUserInfoOutcome LiveClient::getMessageUserInfo(const GetMessageUserInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMessageUserInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMessageUserInfoOutcome(GetMessageUserInfoResult(outcome.result()));
+	else
+		return GetMessageUserInfoOutcome(outcome.error());
+}
+
+void LiveClient::getMessageUserInfoAsync(const GetMessageUserInfoRequest& request, const GetMessageUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMessageUserInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::GetMessageUserInfoOutcomeCallable LiveClient::getMessageUserInfoCallable(const GetMessageUserInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMessageUserInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getMessageUserInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7569,42 +7785,6 @@ LiveClient::ListMessageOutcomeCallable LiveClient::listMessageCallable(const Lis
 			[this, request]()
 			{
 			return this->listMessage(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::ListMessageAppOutcome LiveClient::listMessageApp(const ListMessageAppRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListMessageAppOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListMessageAppOutcome(ListMessageAppResult(outcome.result()));
-	else
-		return ListMessageAppOutcome(outcome.error());
-}
-
-void LiveClient::listMessageAppAsync(const ListMessageAppRequest& request, const ListMessageAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listMessageApp(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::ListMessageAppOutcomeCallable LiveClient::listMessageAppCallable(const ListMessageAppRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListMessageAppOutcome()>>(
-			[this, request]()
-			{
-			return this->listMessageApp(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8397,78 +8577,6 @@ LiveClient::RollbackLiveStagingConfigOutcomeCallable LiveClient::rollbackLiveSta
 			[this, request]()
 			{
 			return this->rollbackLiveStagingConfig(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::SendMessageToGroupOutcome LiveClient::sendMessageToGroup(const SendMessageToGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SendMessageToGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SendMessageToGroupOutcome(SendMessageToGroupResult(outcome.result()));
-	else
-		return SendMessageToGroupOutcome(outcome.error());
-}
-
-void LiveClient::sendMessageToGroupAsync(const SendMessageToGroupRequest& request, const SendMessageToGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, sendMessageToGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::SendMessageToGroupOutcomeCallable LiveClient::sendMessageToGroupCallable(const SendMessageToGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SendMessageToGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->sendMessageToGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-LiveClient::SendMessageToGroupUsersOutcome LiveClient::sendMessageToGroupUsers(const SendMessageToGroupUsersRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SendMessageToGroupUsersOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SendMessageToGroupUsersOutcome(SendMessageToGroupUsersResult(outcome.result()));
-	else
-		return SendMessageToGroupUsersOutcome(outcome.error());
-}
-
-void LiveClient::sendMessageToGroupUsersAsync(const SendMessageToGroupUsersRequest& request, const SendMessageToGroupUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, sendMessageToGroupUsers(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-LiveClient::SendMessageToGroupUsersOutcomeCallable LiveClient::sendMessageToGroupUsersCallable(const SendMessageToGroupUsersRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SendMessageToGroupUsersOutcome()>>(
-			[this, request]()
-			{
-			return this->sendMessageToGroupUsers(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

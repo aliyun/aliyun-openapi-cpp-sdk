@@ -14,38 +14,40 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/SendMessageToGroupUsersResult.h>
+#include <alibabacloud/live/model/GetMessageUserInfoResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-SendMessageToGroupUsersResult::SendMessageToGroupUsersResult() :
+GetMessageUserInfoResult::GetMessageUserInfoResult() :
 	ServiceResult()
 {}
 
-SendMessageToGroupUsersResult::SendMessageToGroupUsersResult(const std::string &payload) :
+GetMessageUserInfoResult::GetMessageUserInfoResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SendMessageToGroupUsersResult::~SendMessageToGroupUsersResult()
+GetMessageUserInfoResult::~GetMessageUserInfoResult()
 {}
 
-void SendMessageToGroupUsersResult::parse(const std::string &payload)
+void GetMessageUserInfoResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["MessageId"].isNull())
-		result_.messageId = resultNode["MessageId"].asString();
+	if(!resultNode["IsNewIMUser"].isNull())
+		result_.isNewIMUser = resultNode["IsNewIMUser"].asString() == "true";
+	if(!resultNode["HasOrderedIM"].isNull())
+		result_.hasOrderedIM = resultNode["HasOrderedIM"].asString() == "true";
 
 }
 
-SendMessageToGroupUsersResult::Result SendMessageToGroupUsersResult::getResult()const
+GetMessageUserInfoResult::Result GetMessageUserInfoResult::getResult()const
 {
 	return result_;
 }

@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/GetMessageAppRequest.h>
+#include <alibabacloud/live/model/GetMessageUserInfoRequest.h>
 
-using AlibabaCloud::Live::Model::GetMessageAppRequest;
+using AlibabaCloud::Live::Model::GetMessageUserInfoRequest;
 
-GetMessageAppRequest::GetMessageAppRequest()
-    : RpcServiceRequest("live", "2016-11-01", "GetMessageApp") {
+GetMessageUserInfoRequest::GetMessageUserInfoRequest()
+    : RpcServiceRequest("live", "2016-11-01", "GetMessageUserInfo") {
   setMethod(HttpRequest::Method::Post);
 }
 
-GetMessageAppRequest::~GetMessageAppRequest() {}
+GetMessageUserInfoRequest::~GetMessageUserInfoRequest() {}
 
-std::string GetMessageAppRequest::getAppId() const {
-  return appId_;
+std::string GetMessageUserInfoRequest::getCloudUid() const {
+  return cloudUid_;
 }
 
-void GetMessageAppRequest::setAppId(const std::string &appId) {
-  appId_ = appId;
-  setBodyParameter(std::string("AppId"), appId);
+void GetMessageUserInfoRequest::setCloudUid(const std::string &cloudUid) {
+  cloudUid_ = cloudUid;
+  setBodyParameter(std::string("CloudUid"), cloudUid);
 }
 
