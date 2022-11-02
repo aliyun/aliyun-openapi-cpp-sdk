@@ -66,8 +66,12 @@ void ListJobsResult::parse(const std::string &payload)
 			jobObject.className = dataNodeJobsJob["ClassName"].asString();
 		if(!dataNodeJobsJob["Content"].isNull())
 			jobObject.content = dataNodeJobsJob["Content"].asString();
+		if(!dataNodeJobsJob["JobType"].isNull())
+			jobObject.jobType = dataNodeJobsJob["JobType"].asString();
 		if(!dataNodeJobsJob["AttemptInterval"].isNull())
 			jobObject.attemptInterval = std::stoi(dataNodeJobsJob["AttemptInterval"].asString());
+		if(!dataNodeJobsJob["XAttrs"].isNull())
+			jobObject.xAttrs = dataNodeJobsJob["XAttrs"].asString();
 		auto mapTaskXAttrsNode = value["MapTaskXAttrs"];
 		if(!mapTaskXAttrsNode["TaskMaxAttempt"].isNull())
 			jobObject.mapTaskXAttrs.taskMaxAttempt = std::stoi(mapTaskXAttrsNode["TaskMaxAttempt"].asString());

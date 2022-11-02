@@ -83,11 +83,13 @@ namespace AlibabaCloud
 						MapTaskXAttrs mapTaskXAttrs;
 						std::string name;
 						JobMonitorInfo jobMonitorInfo;
+						std::string jobType;
 						std::string content;
 						std::string className;
 						int attemptInterval;
 						std::string executeMode;
 						long jobId;
+						std::string xAttrs;
 					};
 					std::vector<Job> jobs;
 				};

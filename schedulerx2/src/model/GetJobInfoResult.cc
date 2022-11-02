@@ -63,8 +63,12 @@ void GetJobInfoResult::parse(const std::string &payload)
 		data_.jobConfigInfo.jarUrl = jobConfigInfoNode["JarUrl"].asString();
 	if(!jobConfigInfoNode["ClassName"].isNull())
 		data_.jobConfigInfo.className = jobConfigInfoNode["ClassName"].asString();
+	if(!jobConfigInfoNode["JobType"].isNull())
+		data_.jobConfigInfo.jobType = jobConfigInfoNode["JobType"].asString();
 	if(!jobConfigInfoNode["AttemptInterval"].isNull())
 		data_.jobConfigInfo.attemptInterval = std::stoi(jobConfigInfoNode["AttemptInterval"].asString());
+	if(!jobConfigInfoNode["XAttrs"].isNull())
+		data_.jobConfigInfo.xAttrs = jobConfigInfoNode["XAttrs"].asString();
 	auto mapTaskXAttrsNode = jobConfigInfoNode["MapTaskXAttrs"];
 	if(!mapTaskXAttrsNode["TaskMaxAttempt"].isNull())
 		data_.jobConfigInfo.mapTaskXAttrs.taskMaxAttempt = std::stoi(mapTaskXAttrsNode["TaskMaxAttempt"].asString());
