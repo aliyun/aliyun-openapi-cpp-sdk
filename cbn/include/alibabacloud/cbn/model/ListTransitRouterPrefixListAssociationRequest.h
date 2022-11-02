@@ -42,6 +42,8 @@ public:
 	void setPageSize(int pageSize);
 	long getOwnerUid() const;
 	void setOwnerUid(long ownerUid);
+	std::string getNextHopType() const;
+	void setNextHopType(const std::string &nextHopType);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -52,6 +54,8 @@ public:
 	void setTransitRouterId(const std::string &transitRouterId);
 	std::string getTransitRouterTableId() const;
 	void setTransitRouterTableId(const std::string &transitRouterTableId);
+	std::string getNextHop() const;
+	void setNextHop(const std::string &nextHop);
 
 private:
 	long resourceOwnerId_;
@@ -60,11 +64,13 @@ private:
 	std::string prefixListId_;
 	int pageSize_;
 	long ownerUid_;
+	std::string nextHopType_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string transitRouterId_;
 	std::string transitRouterTableId_;
+	std::string nextHop_;
 };
 } // namespace Model
 } // namespace Cbn

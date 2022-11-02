@@ -79,6 +79,15 @@ void ListTransitRouterPrefixListAssociationRequest::setOwnerUid(long ownerUid) {
   setParameter(std::string("OwnerUid"), std::to_string(ownerUid));
 }
 
+std::string ListTransitRouterPrefixListAssociationRequest::getNextHopType() const {
+  return nextHopType_;
+}
+
+void ListTransitRouterPrefixListAssociationRequest::setNextHopType(const std::string &nextHopType) {
+  nextHopType_ = nextHopType;
+  setParameter(std::string("NextHopType"), nextHopType);
+}
+
 std::string ListTransitRouterPrefixListAssociationRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -122,5 +131,14 @@ std::string ListTransitRouterPrefixListAssociationRequest::getTransitRouterTable
 void ListTransitRouterPrefixListAssociationRequest::setTransitRouterTableId(const std::string &transitRouterTableId) {
   transitRouterTableId_ = transitRouterTableId;
   setParameter(std::string("TransitRouterTableId"), transitRouterTableId);
+}
+
+std::string ListTransitRouterPrefixListAssociationRequest::getNextHop() const {
+  return nextHop_;
+}
+
+void ListTransitRouterPrefixListAssociationRequest::setNextHop(const std::string &nextHop) {
+  nextHop_ = nextHop;
+  setParameter(std::string("NextHop"), nextHop);
 }
 
