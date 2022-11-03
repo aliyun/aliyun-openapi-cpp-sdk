@@ -31,2000 +31,776 @@ CasClient::CasClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cas");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CasClient::CasClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cas");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CasClient::CasClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cas");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CasClient::~CasClient()
 {}
 
-CasClient::CreateAliDnsRecordIdOutcome CasClient::createAliDnsRecordId(const CreateAliDnsRecordIdRequest &request) const
+CasClient::CancelCertificateForPackageRequestOutcome CasClient::cancelCertificateForPackageRequest(const CancelCertificateForPackageRequestRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateAliDnsRecordIdOutcome(endpointOutcome.error());
+		return CancelCertificateForPackageRequestOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateAliDnsRecordIdOutcome(CreateAliDnsRecordIdResult(outcome.result()));
+		return CancelCertificateForPackageRequestOutcome(CancelCertificateForPackageRequestResult(outcome.result()));
 	else
-		return CreateAliDnsRecordIdOutcome(outcome.error());
+		return CancelCertificateForPackageRequestOutcome(outcome.error());
 }
 
-void CasClient::createAliDnsRecordIdAsync(const CreateAliDnsRecordIdRequest& request, const CreateAliDnsRecordIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::cancelCertificateForPackageRequestAsync(const CancelCertificateForPackageRequestRequest& request, const CancelCertificateForPackageRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createAliDnsRecordId(request), context);
+		handler(this, request, cancelCertificateForPackageRequest(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateAliDnsRecordIdOutcomeCallable CasClient::createAliDnsRecordIdCallable(const CreateAliDnsRecordIdRequest &request) const
+CasClient::CancelCertificateForPackageRequestOutcomeCallable CasClient::cancelCertificateForPackageRequestCallable(const CancelCertificateForPackageRequestRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateAliDnsRecordIdOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CancelCertificateForPackageRequestOutcome()>>(
 			[this, request]()
 			{
-			return this->createAliDnsRecordId(request);
+			return this->cancelCertificateForPackageRequest(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateCertificateOutcome CasClient::createCertificate(const CreateCertificateRequest &request) const
+CasClient::CancelOrderRequestOutcome CasClient::cancelOrderRequest(const CancelOrderRequestRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateCertificateOutcome(endpointOutcome.error());
+		return CancelOrderRequestOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateCertificateOutcome(CreateCertificateResult(outcome.result()));
+		return CancelOrderRequestOutcome(CancelOrderRequestResult(outcome.result()));
 	else
-		return CreateCertificateOutcome(outcome.error());
+		return CancelOrderRequestOutcome(outcome.error());
 }
 
-void CasClient::createCertificateAsync(const CreateCertificateRequest& request, const CreateCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::cancelOrderRequestAsync(const CancelOrderRequestRequest& request, const CancelOrderRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createCertificate(request), context);
+		handler(this, request, cancelOrderRequest(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateCertificateOutcomeCallable CasClient::createCertificateCallable(const CreateCertificateRequest &request) const
+CasClient::CancelOrderRequestOutcomeCallable CasClient::cancelOrderRequestCallable(const CancelOrderRequestRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateCertificateOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CancelOrderRequestOutcome()>>(
 			[this, request]()
 			{
-			return this->createCertificate(request);
+			return this->cancelOrderRequest(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateCertificateNameOutcome CasClient::createCertificateName(const CreateCertificateNameRequest &request) const
+CasClient::CreateCertificateForPackageRequestOutcome CasClient::createCertificateForPackageRequest(const CreateCertificateForPackageRequestRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateCertificateNameOutcome(endpointOutcome.error());
+		return CreateCertificateForPackageRequestOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateCertificateNameOutcome(CreateCertificateNameResult(outcome.result()));
+		return CreateCertificateForPackageRequestOutcome(CreateCertificateForPackageRequestResult(outcome.result()));
 	else
-		return CreateCertificateNameOutcome(outcome.error());
+		return CreateCertificateForPackageRequestOutcome(outcome.error());
 }
 
-void CasClient::createCertificateNameAsync(const CreateCertificateNameRequest& request, const CreateCertificateNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::createCertificateForPackageRequestAsync(const CreateCertificateForPackageRequestRequest& request, const CreateCertificateForPackageRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createCertificateName(request), context);
+		handler(this, request, createCertificateForPackageRequest(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateCertificateNameOutcomeCallable CasClient::createCertificateNameCallable(const CreateCertificateNameRequest &request) const
+CasClient::CreateCertificateForPackageRequestOutcomeCallable CasClient::createCertificateForPackageRequestCallable(const CreateCertificateForPackageRequestRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateCertificateNameOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateCertificateForPackageRequestOutcome()>>(
 			[this, request]()
 			{
-			return this->createCertificateName(request);
+			return this->createCertificateForPackageRequest(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateCooperationOrderOutcome CasClient::createCooperationOrder(const CreateCooperationOrderRequest &request) const
+CasClient::CreateCertificateRequestOutcome CasClient::createCertificateRequest(const CreateCertificateRequestRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateCooperationOrderOutcome(endpointOutcome.error());
+		return CreateCertificateRequestOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateCooperationOrderOutcome(CreateCooperationOrderResult(outcome.result()));
+		return CreateCertificateRequestOutcome(CreateCertificateRequestResult(outcome.result()));
 	else
-		return CreateCooperationOrderOutcome(outcome.error());
+		return CreateCertificateRequestOutcome(outcome.error());
 }
 
-void CasClient::createCooperationOrderAsync(const CreateCooperationOrderRequest& request, const CreateCooperationOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::createCertificateRequestAsync(const CreateCertificateRequestRequest& request, const CreateCertificateRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createCooperationOrder(request), context);
+		handler(this, request, createCertificateRequest(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateCooperationOrderOutcomeCallable CasClient::createCooperationOrderCallable(const CreateCooperationOrderRequest &request) const
+CasClient::CreateCertificateRequestOutcomeCallable CasClient::createCertificateRequestCallable(const CreateCertificateRequestRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateCooperationOrderOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateCertificateRequestOutcome()>>(
 			[this, request]()
 			{
-			return this->createCooperationOrder(request);
+			return this->createCertificateRequest(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateDeploymentOutcome CasClient::createDeployment(const CreateDeploymentRequest &request) const
+CasClient::CreateCertificateWithCsrRequestOutcome CasClient::createCertificateWithCsrRequest(const CreateCertificateWithCsrRequestRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateDeploymentOutcome(endpointOutcome.error());
+		return CreateCertificateWithCsrRequestOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateDeploymentOutcome(CreateDeploymentResult(outcome.result()));
+		return CreateCertificateWithCsrRequestOutcome(CreateCertificateWithCsrRequestResult(outcome.result()));
 	else
-		return CreateDeploymentOutcome(outcome.error());
+		return CreateCertificateWithCsrRequestOutcome(outcome.error());
 }
 
-void CasClient::createDeploymentAsync(const CreateDeploymentRequest& request, const CreateDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::createCertificateWithCsrRequestAsync(const CreateCertificateWithCsrRequestRequest& request, const CreateCertificateWithCsrRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createDeployment(request), context);
+		handler(this, request, createCertificateWithCsrRequest(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateDeploymentOutcomeCallable CasClient::createDeploymentCallable(const CreateDeploymentRequest &request) const
+CasClient::CreateCertificateWithCsrRequestOutcomeCallable CasClient::createCertificateWithCsrRequestCallable(const CreateCertificateWithCsrRequestRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateDeploymentOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateCertificateWithCsrRequestOutcome()>>(
 			[this, request]()
 			{
-			return this->createDeployment(request);
+			return this->createCertificateWithCsrRequest(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateDomainVerifyConfigurationStatusOutcome CasClient::createDomainVerifyConfigurationStatus(const CreateDomainVerifyConfigurationStatusRequest &request) const
+CasClient::CreateWHCertificateWithExtensionOutcome CasClient::createWHCertificateWithExtension(const CreateWHCertificateWithExtensionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateDomainVerifyConfigurationStatusOutcome(endpointOutcome.error());
+		return CreateWHCertificateWithExtensionOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateDomainVerifyConfigurationStatusOutcome(CreateDomainVerifyConfigurationStatusResult(outcome.result()));
+		return CreateWHCertificateWithExtensionOutcome(CreateWHCertificateWithExtensionResult(outcome.result()));
 	else
-		return CreateDomainVerifyConfigurationStatusOutcome(outcome.error());
+		return CreateWHCertificateWithExtensionOutcome(outcome.error());
 }
 
-void CasClient::createDomainVerifyConfigurationStatusAsync(const CreateDomainVerifyConfigurationStatusRequest& request, const CreateDomainVerifyConfigurationStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::createWHCertificateWithExtensionAsync(const CreateWHCertificateWithExtensionRequest& request, const CreateWHCertificateWithExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createDomainVerifyConfigurationStatus(request), context);
+		handler(this, request, createWHCertificateWithExtension(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateDomainVerifyConfigurationStatusOutcomeCallable CasClient::createDomainVerifyConfigurationStatusCallable(const CreateDomainVerifyConfigurationStatusRequest &request) const
+CasClient::CreateWHCertificateWithExtensionOutcomeCallable CasClient::createWHCertificateWithExtensionCallable(const CreateWHCertificateWithExtensionRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateDomainVerifyConfigurationStatusOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateWHCertificateWithExtensionOutcome()>>(
 			[this, request]()
 			{
-			return this->createDomainVerifyConfigurationStatus(request);
+			return this->createWHCertificateWithExtension(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateFilingSignatureDocumentOutcome CasClient::createFilingSignatureDocument(const CreateFilingSignatureDocumentRequest &request) const
+CasClient::CreateWHClientCertificateOutcome CasClient::createWHClientCertificate(const CreateWHClientCertificateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateFilingSignatureDocumentOutcome(endpointOutcome.error());
+		return CreateWHClientCertificateOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateFilingSignatureDocumentOutcome(CreateFilingSignatureDocumentResult(outcome.result()));
+		return CreateWHClientCertificateOutcome(CreateWHClientCertificateResult(outcome.result()));
 	else
-		return CreateFilingSignatureDocumentOutcome(outcome.error());
+		return CreateWHClientCertificateOutcome(outcome.error());
 }
 
-void CasClient::createFilingSignatureDocumentAsync(const CreateFilingSignatureDocumentRequest& request, const CreateFilingSignatureDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::createWHClientCertificateAsync(const CreateWHClientCertificateRequest& request, const CreateWHClientCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createFilingSignatureDocument(request), context);
+		handler(this, request, createWHClientCertificate(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateFilingSignatureDocumentOutcomeCallable CasClient::createFilingSignatureDocumentCallable(const CreateFilingSignatureDocumentRequest &request) const
+CasClient::CreateWHClientCertificateOutcomeCallable CasClient::createWHClientCertificateCallable(const CreateWHClientCertificateRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateFilingSignatureDocumentOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateWHClientCertificateOutcome()>>(
 			[this, request]()
 			{
-			return this->createFilingSignatureDocument(request);
+			return this->createWHClientCertificate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateOrderAuditOutcome CasClient::createOrderAudit(const CreateOrderAuditRequest &request) const
+CasClient::DecryptOutcome CasClient::decrypt(const DecryptRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateOrderAuditOutcome(endpointOutcome.error());
+		return DecryptOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateOrderAuditOutcome(CreateOrderAuditResult(outcome.result()));
+		return DecryptOutcome(DecryptResult(outcome.result()));
 	else
-		return CreateOrderAuditOutcome(outcome.error());
+		return DecryptOutcome(outcome.error());
 }
 
-void CasClient::createOrderAuditAsync(const CreateOrderAuditRequest& request, const CreateOrderAuditAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::decryptAsync(const DecryptRequest& request, const DecryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createOrderAudit(request), context);
+		handler(this, request, decrypt(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateOrderAuditOutcomeCallable CasClient::createOrderAuditCallable(const CreateOrderAuditRequest &request) const
+CasClient::DecryptOutcomeCallable CasClient::decryptCallable(const DecryptRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateOrderAuditOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DecryptOutcome()>>(
 			[this, request]()
 			{
-			return this->createOrderAudit(request);
+			return this->decrypt(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateOrderCancelOutcome CasClient::createOrderCancel(const CreateOrderCancelRequest &request) const
+CasClient::DeleteCertificateRequestOutcome CasClient::deleteCertificateRequest(const DeleteCertificateRequestRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateOrderCancelOutcome(endpointOutcome.error());
+		return DeleteCertificateRequestOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateOrderCancelOutcome(CreateOrderCancelResult(outcome.result()));
+		return DeleteCertificateRequestOutcome(DeleteCertificateRequestResult(outcome.result()));
 	else
-		return CreateOrderCancelOutcome(outcome.error());
+		return DeleteCertificateRequestOutcome(outcome.error());
 }
 
-void CasClient::createOrderCancelAsync(const CreateOrderCancelRequest& request, const CreateOrderCancelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::deleteCertificateRequestAsync(const DeleteCertificateRequestRequest& request, const DeleteCertificateRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createOrderCancel(request), context);
+		handler(this, request, deleteCertificateRequest(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateOrderCancelOutcomeCallable CasClient::createOrderCancelCallable(const CreateOrderCancelRequest &request) const
+CasClient::DeleteCertificateRequestOutcomeCallable CasClient::deleteCertificateRequestCallable(const DeleteCertificateRequestRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateOrderCancelOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteCertificateRequestOutcome()>>(
 			[this, request]()
 			{
-			return this->createOrderCancel(request);
+			return this->deleteCertificateRequest(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateOrderDocumentOutcome CasClient::createOrderDocument(const CreateOrderDocumentRequest &request) const
+CasClient::DeletePCACertOutcome CasClient::deletePCACert(const DeletePCACertRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateOrderDocumentOutcome(endpointOutcome.error());
+		return DeletePCACertOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateOrderDocumentOutcome(CreateOrderDocumentResult(outcome.result()));
+		return DeletePCACertOutcome(DeletePCACertResult(outcome.result()));
 	else
-		return CreateOrderDocumentOutcome(outcome.error());
+		return DeletePCACertOutcome(outcome.error());
 }
 
-void CasClient::createOrderDocumentAsync(const CreateOrderDocumentRequest& request, const CreateOrderDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::deletePCACertAsync(const DeletePCACertRequest& request, const DeletePCACertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createOrderDocument(request), context);
+		handler(this, request, deletePCACert(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateOrderDocumentOutcomeCallable CasClient::createOrderDocumentCallable(const CreateOrderDocumentRequest &request) const
+CasClient::DeletePCACertOutcomeCallable CasClient::deletePCACertCallable(const DeletePCACertRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateOrderDocumentOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeletePCACertOutcome()>>(
 			[this, request]()
 			{
-			return this->createOrderDocument(request);
+			return this->deletePCACert(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateOrderMaterialOutcome CasClient::createOrderMaterial(const CreateOrderMaterialRequest &request) const
+CasClient::DescribeCertificateStateOutcome CasClient::describeCertificateState(const DescribeCertificateStateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateOrderMaterialOutcome(endpointOutcome.error());
+		return DescribeCertificateStateOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateOrderMaterialOutcome(CreateOrderMaterialResult(outcome.result()));
+		return DescribeCertificateStateOutcome(DescribeCertificateStateResult(outcome.result()));
 	else
-		return CreateOrderMaterialOutcome(outcome.error());
+		return DescribeCertificateStateOutcome(outcome.error());
 }
 
-void CasClient::createOrderMaterialAsync(const CreateOrderMaterialRequest& request, const CreateOrderMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::describeCertificateStateAsync(const DescribeCertificateStateRequest& request, const DescribeCertificateStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createOrderMaterial(request), context);
+		handler(this, request, describeCertificateState(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateOrderMaterialOutcomeCallable CasClient::createOrderMaterialCallable(const CreateOrderMaterialRequest &request) const
+CasClient::DescribeCertificateStateOutcomeCallable CasClient::describeCertificateStateCallable(const DescribeCertificateStateRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateOrderMaterialOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeCertificateStateOutcome()>>(
 			[this, request]()
 			{
-			return this->createOrderMaterial(request);
+			return this->describeCertificateState(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateOrderRefundRecordOutcome CasClient::createOrderRefundRecord(const CreateOrderRefundRecordRequest &request) const
+CasClient::DescribePackageStateOutcome CasClient::describePackageState(const DescribePackageStateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateOrderRefundRecordOutcome(endpointOutcome.error());
+		return DescribePackageStateOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateOrderRefundRecordOutcome(CreateOrderRefundRecordResult(outcome.result()));
+		return DescribePackageStateOutcome(DescribePackageStateResult(outcome.result()));
 	else
-		return CreateOrderRefundRecordOutcome(outcome.error());
+		return DescribePackageStateOutcome(outcome.error());
 }
 
-void CasClient::createOrderRefundRecordAsync(const CreateOrderRefundRecordRequest& request, const CreateOrderRefundRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::describePackageStateAsync(const DescribePackageStateRequest& request, const DescribePackageStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createOrderRefundRecord(request), context);
+		handler(this, request, describePackageState(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateOrderRefundRecordOutcomeCallable CasClient::createOrderRefundRecordCallable(const CreateOrderRefundRecordRequest &request) const
+CasClient::DescribePackageStateOutcomeCallable CasClient::describePackageStateCallable(const DescribePackageStateRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateOrderRefundRecordOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribePackageStateOutcome()>>(
 			[this, request]()
 			{
-			return this->createOrderRefundRecord(request);
+			return this->describePackageState(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateOrderRevokeOutcome CasClient::createOrderRevoke(const CreateOrderRevokeRequest &request) const
+CasClient::EncryptOutcome CasClient::encrypt(const EncryptRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateOrderRevokeOutcome(endpointOutcome.error());
+		return EncryptOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateOrderRevokeOutcome(CreateOrderRevokeResult(outcome.result()));
+		return EncryptOutcome(EncryptResult(outcome.result()));
 	else
-		return CreateOrderRevokeOutcome(outcome.error());
+		return EncryptOutcome(outcome.error());
 }
 
-void CasClient::createOrderRevokeAsync(const CreateOrderRevokeRequest& request, const CreateOrderRevokeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::encryptAsync(const EncryptRequest& request, const EncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createOrderRevoke(request), context);
+		handler(this, request, encrypt(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateOrderRevokeOutcomeCallable CasClient::createOrderRevokeCallable(const CreateOrderRevokeRequest &request) const
+CasClient::EncryptOutcomeCallable CasClient::encryptCallable(const EncryptRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateOrderRevokeOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<EncryptOutcome()>>(
 			[this, request]()
 			{
-			return this->createOrderRevoke(request);
+			return this->encrypt(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateSignatureOutcome CasClient::createSignature(const CreateSignatureRequest &request) const
+CasClient::ListCertOutcome CasClient::listCert(const ListCertRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateSignatureOutcome(endpointOutcome.error());
+		return ListCertOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateSignatureOutcome(CreateSignatureResult(outcome.result()));
+		return ListCertOutcome(ListCertResult(outcome.result()));
 	else
-		return CreateSignatureOutcome(outcome.error());
+		return ListCertOutcome(outcome.error());
 }
 
-void CasClient::createSignatureAsync(const CreateSignatureRequest& request, const CreateSignatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::listCertAsync(const ListCertRequest& request, const ListCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createSignature(request), context);
+		handler(this, request, listCert(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateSignatureOutcomeCallable CasClient::createSignatureCallable(const CreateSignatureRequest &request) const
+CasClient::ListCertOutcomeCallable CasClient::listCertCallable(const ListCertRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateSignatureOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListCertOutcome()>>(
 			[this, request]()
 			{
-			return this->createSignature(request);
+			return this->listCert(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateSignatureDocumentOutcome CasClient::createSignatureDocument(const CreateSignatureDocumentRequest &request) const
+CasClient::ListCertWarehouseOutcome CasClient::listCertWarehouse(const ListCertWarehouseRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateSignatureDocumentOutcome(endpointOutcome.error());
+		return ListCertWarehouseOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateSignatureDocumentOutcome(CreateSignatureDocumentResult(outcome.result()));
+		return ListCertWarehouseOutcome(ListCertWarehouseResult(outcome.result()));
 	else
-		return CreateSignatureDocumentOutcome(outcome.error());
+		return ListCertWarehouseOutcome(outcome.error());
 }
 
-void CasClient::createSignatureDocumentAsync(const CreateSignatureDocumentRequest& request, const CreateSignatureDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::listCertWarehouseAsync(const ListCertWarehouseRequest& request, const ListCertWarehouseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createSignatureDocument(request), context);
+		handler(this, request, listCertWarehouse(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateSignatureDocumentOutcomeCallable CasClient::createSignatureDocumentCallable(const CreateSignatureDocumentRequest &request) const
+CasClient::ListCertWarehouseOutcomeCallable CasClient::listCertWarehouseCallable(const ListCertWarehouseRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateSignatureDocumentOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListCertWarehouseOutcome()>>(
 			[this, request]()
 			{
-			return this->createSignatureDocument(request);
+			return this->listCertWarehouse(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateSignaturePeopleCertificateOutcome CasClient::createSignaturePeopleCertificate(const CreateSignaturePeopleCertificateRequest &request) const
+CasClient::ListUserCertificateOrderOutcome CasClient::listUserCertificateOrder(const ListUserCertificateOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateSignaturePeopleCertificateOutcome(endpointOutcome.error());
+		return ListUserCertificateOrderOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateSignaturePeopleCertificateOutcome(CreateSignaturePeopleCertificateResult(outcome.result()));
+		return ListUserCertificateOrderOutcome(ListUserCertificateOrderResult(outcome.result()));
 	else
-		return CreateSignaturePeopleCertificateOutcome(outcome.error());
+		return ListUserCertificateOrderOutcome(outcome.error());
 }
 
-void CasClient::createSignaturePeopleCertificateAsync(const CreateSignaturePeopleCertificateRequest& request, const CreateSignaturePeopleCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::listUserCertificateOrderAsync(const ListUserCertificateOrderRequest& request, const ListUserCertificateOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createSignaturePeopleCertificate(request), context);
+		handler(this, request, listUserCertificateOrder(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateSignaturePeopleCertificateOutcomeCallable CasClient::createSignaturePeopleCertificateCallable(const CreateSignaturePeopleCertificateRequest &request) const
+CasClient::ListUserCertificateOrderOutcomeCallable CasClient::listUserCertificateOrderCallable(const ListUserCertificateOrderRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateSignaturePeopleCertificateOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListUserCertificateOrderOutcome()>>(
 			[this, request]()
 			{
-			return this->createSignaturePeopleCertificate(request);
+			return this->listUserCertificateOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateUnDeploymentOutcome CasClient::createUnDeployment(const CreateUnDeploymentRequest &request) const
+CasClient::RenewCertificateOrderForPackageRequestOutcome CasClient::renewCertificateOrderForPackageRequest(const RenewCertificateOrderForPackageRequestRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateUnDeploymentOutcome(endpointOutcome.error());
+		return RenewCertificateOrderForPackageRequestOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateUnDeploymentOutcome(CreateUnDeploymentResult(outcome.result()));
+		return RenewCertificateOrderForPackageRequestOutcome(RenewCertificateOrderForPackageRequestResult(outcome.result()));
 	else
-		return CreateUnDeploymentOutcome(outcome.error());
+		return RenewCertificateOrderForPackageRequestOutcome(outcome.error());
 }
 
-void CasClient::createUnDeploymentAsync(const CreateUnDeploymentRequest& request, const CreateUnDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::renewCertificateOrderForPackageRequestAsync(const RenewCertificateOrderForPackageRequestRequest& request, const RenewCertificateOrderForPackageRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createUnDeployment(request), context);
+		handler(this, request, renewCertificateOrderForPackageRequest(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateUnDeploymentOutcomeCallable CasClient::createUnDeploymentCallable(const CreateUnDeploymentRequest &request) const
+CasClient::RenewCertificateOrderForPackageRequestOutcomeCallable CasClient::renewCertificateOrderForPackageRequestCallable(const RenewCertificateOrderForPackageRequestRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateUnDeploymentOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<RenewCertificateOrderForPackageRequestOutcome()>>(
 			[this, request]()
 			{
-			return this->createUnDeployment(request);
+			return this->renewCertificateOrderForPackageRequest(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::CreateWebSignatureOutcome CasClient::createWebSignature(const CreateWebSignatureRequest &request) const
+CasClient::RevokeWHClientCertificateOutcome CasClient::revokeWHClientCertificate(const RevokeWHClientCertificateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateWebSignatureOutcome(endpointOutcome.error());
+		return RevokeWHClientCertificateOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateWebSignatureOutcome(CreateWebSignatureResult(outcome.result()));
+		return RevokeWHClientCertificateOutcome(RevokeWHClientCertificateResult(outcome.result()));
 	else
-		return CreateWebSignatureOutcome(outcome.error());
+		return RevokeWHClientCertificateOutcome(outcome.error());
 }
 
-void CasClient::createWebSignatureAsync(const CreateWebSignatureRequest& request, const CreateWebSignatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::revokeWHClientCertificateAsync(const RevokeWHClientCertificateRequest& request, const RevokeWHClientCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createWebSignature(request), context);
+		handler(this, request, revokeWHClientCertificate(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::CreateWebSignatureOutcomeCallable CasClient::createWebSignatureCallable(const CreateWebSignatureRequest &request) const
+CasClient::RevokeWHClientCertificateOutcomeCallable CasClient::revokeWHClientCertificateCallable(const RevokeWHClientCertificateRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateWebSignatureOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<RevokeWHClientCertificateOutcome()>>(
 			[this, request]()
 			{
-			return this->createWebSignature(request);
+			return this->revokeWHClientCertificate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::DeleteCertificateOutcome CasClient::deleteCertificate(const DeleteCertificateRequest &request) const
+CasClient::SignOutcome CasClient::sign(const SignRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteCertificateOutcome(endpointOutcome.error());
+		return SignOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteCertificateOutcome(DeleteCertificateResult(outcome.result()));
+		return SignOutcome(SignResult(outcome.result()));
 	else
-		return DeleteCertificateOutcome(outcome.error());
+		return SignOutcome(outcome.error());
 }
 
-void CasClient::deleteCertificateAsync(const DeleteCertificateRequest& request, const DeleteCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::signAsync(const SignRequest& request, const SignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteCertificate(request), context);
+		handler(this, request, sign(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::DeleteCertificateOutcomeCallable CasClient::deleteCertificateCallable(const DeleteCertificateRequest &request) const
+CasClient::SignOutcomeCallable CasClient::signCallable(const SignRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteCertificateOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<SignOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteCertificate(request);
+			return this->sign(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::DeleteOrderOutcome CasClient::deleteOrder(const DeleteOrderRequest &request) const
+CasClient::UploadPCACertOutcome CasClient::uploadPCACert(const UploadPCACertRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteOrderOutcome(endpointOutcome.error());
+		return UploadPCACertOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteOrderOutcome(DeleteOrderResult(outcome.result()));
+		return UploadPCACertOutcome(UploadPCACertResult(outcome.result()));
 	else
-		return DeleteOrderOutcome(outcome.error());
+		return UploadPCACertOutcome(outcome.error());
 }
 
-void CasClient::deleteOrderAsync(const DeleteOrderRequest& request, const DeleteOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::uploadPCACertAsync(const UploadPCACertRequest& request, const UploadPCACertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteOrder(request), context);
+		handler(this, request, uploadPCACert(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::DeleteOrderOutcomeCallable CasClient::deleteOrderCallable(const DeleteOrderRequest &request) const
+CasClient::UploadPCACertOutcomeCallable CasClient::uploadPCACertCallable(const UploadPCACertRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteOrderOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<UploadPCACertOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteOrder(request);
+			return this->uploadPCACert(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-CasClient::DescribeCertificateBrandListOutcome CasClient::describeCertificateBrandList(const DescribeCertificateBrandListRequest &request) const
+CasClient::VerifyOutcome CasClient::verify(const VerifyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeCertificateBrandListOutcome(endpointOutcome.error());
+		return VerifyOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeCertificateBrandListOutcome(DescribeCertificateBrandListResult(outcome.result()));
+		return VerifyOutcome(VerifyResult(outcome.result()));
 	else
-		return DescribeCertificateBrandListOutcome(outcome.error());
+		return VerifyOutcome(outcome.error());
 }
 
-void CasClient::describeCertificateBrandListAsync(const DescribeCertificateBrandListRequest& request, const DescribeCertificateBrandListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void CasClient::verifyAsync(const VerifyRequest& request, const VerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeCertificateBrandList(request), context);
+		handler(this, request, verify(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-CasClient::DescribeCertificateBrandListOutcomeCallable CasClient::describeCertificateBrandListCallable(const DescribeCertificateBrandListRequest &request) const
+CasClient::VerifyOutcomeCallable CasClient::verifyCallable(const VerifyRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeCertificateBrandListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<VerifyOutcome()>>(
 			[this, request]()
 			{
-			return this->describeCertificateBrandList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeCertificateDetailOutcome CasClient::describeCertificateDetail(const DescribeCertificateDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCertificateDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCertificateDetailOutcome(DescribeCertificateDetailResult(outcome.result()));
-	else
-		return DescribeCertificateDetailOutcome(outcome.error());
-}
-
-void CasClient::describeCertificateDetailAsync(const DescribeCertificateDetailRequest& request, const DescribeCertificateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCertificateDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeCertificateDetailOutcomeCallable CasClient::describeCertificateDetailCallable(const DescribeCertificateDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCertificateDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCertificateDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeCertificateListOutcome CasClient::describeCertificateList(const DescribeCertificateListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCertificateListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCertificateListOutcome(DescribeCertificateListResult(outcome.result()));
-	else
-		return DescribeCertificateListOutcome(outcome.error());
-}
-
-void CasClient::describeCertificateListAsync(const DescribeCertificateListRequest& request, const DescribeCertificateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCertificateList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeCertificateListOutcomeCallable CasClient::describeCertificateListCallable(const DescribeCertificateListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCertificateListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCertificateList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeCertificateStatusCountOutcome CasClient::describeCertificateStatusCount(const DescribeCertificateStatusCountRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCertificateStatusCountOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCertificateStatusCountOutcome(DescribeCertificateStatusCountResult(outcome.result()));
-	else
-		return DescribeCertificateStatusCountOutcome(outcome.error());
-}
-
-void CasClient::describeCertificateStatusCountAsync(const DescribeCertificateStatusCountRequest& request, const DescribeCertificateStatusCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCertificateStatusCount(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeCertificateStatusCountOutcomeCallable CasClient::describeCertificateStatusCountCallable(const DescribeCertificateStatusCountRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCertificateStatusCountOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCertificateStatusCount(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeDeploymentDetailOutcome CasClient::describeDeploymentDetail(const DescribeDeploymentDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDeploymentDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDeploymentDetailOutcome(DescribeDeploymentDetailResult(outcome.result()));
-	else
-		return DescribeDeploymentDetailOutcome(outcome.error());
-}
-
-void CasClient::describeDeploymentDetailAsync(const DescribeDeploymentDetailRequest& request, const DescribeDeploymentDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDeploymentDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeDeploymentDetailOutcomeCallable CasClient::describeDeploymentDetailCallable(const DescribeDeploymentDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDeploymentDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDeploymentDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeDeploymentDomainListOutcome CasClient::describeDeploymentDomainList(const DescribeDeploymentDomainListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDeploymentDomainListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDeploymentDomainListOutcome(DescribeDeploymentDomainListResult(outcome.result()));
-	else
-		return DescribeDeploymentDomainListOutcome(outcome.error());
-}
-
-void CasClient::describeDeploymentDomainListAsync(const DescribeDeploymentDomainListRequest& request, const DescribeDeploymentDomainListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDeploymentDomainList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeDeploymentDomainListOutcomeCallable CasClient::describeDeploymentDomainListCallable(const DescribeDeploymentDomainListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDeploymentDomainListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDeploymentDomainList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeDeploymentProductOutcome CasClient::describeDeploymentProduct(const DescribeDeploymentProductRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDeploymentProductOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDeploymentProductOutcome(DescribeDeploymentProductResult(outcome.result()));
-	else
-		return DescribeDeploymentProductOutcome(outcome.error());
-}
-
-void CasClient::describeDeploymentProductAsync(const DescribeDeploymentProductRequest& request, const DescribeDeploymentProductAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDeploymentProduct(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeDeploymentProductOutcomeCallable CasClient::describeDeploymentProductCallable(const DescribeDeploymentProductRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDeploymentProductOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDeploymentProduct(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeDeploymentRegionListOutcome CasClient::describeDeploymentRegionList(const DescribeDeploymentRegionListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDeploymentRegionListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDeploymentRegionListOutcome(DescribeDeploymentRegionListResult(outcome.result()));
-	else
-		return DescribeDeploymentRegionListOutcome(outcome.error());
-}
-
-void CasClient::describeDeploymentRegionListAsync(const DescribeDeploymentRegionListRequest& request, const DescribeDeploymentRegionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDeploymentRegionList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeDeploymentRegionListOutcomeCallable CasClient::describeDeploymentRegionListCallable(const DescribeDeploymentRegionListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDeploymentRegionListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDeploymentRegionList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeDomainVerifyConfigurationStatusOutcome CasClient::describeDomainVerifyConfigurationStatus(const DescribeDomainVerifyConfigurationStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDomainVerifyConfigurationStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDomainVerifyConfigurationStatusOutcome(DescribeDomainVerifyConfigurationStatusResult(outcome.result()));
-	else
-		return DescribeDomainVerifyConfigurationStatusOutcome(outcome.error());
-}
-
-void CasClient::describeDomainVerifyConfigurationStatusAsync(const DescribeDomainVerifyConfigurationStatusRequest& request, const DescribeDomainVerifyConfigurationStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDomainVerifyConfigurationStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeDomainVerifyConfigurationStatusOutcomeCallable CasClient::describeDomainVerifyConfigurationStatusCallable(const DescribeDomainVerifyConfigurationStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDomainVerifyConfigurationStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDomainVerifyConfigurationStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeDomainVerifyInfoOutcome CasClient::describeDomainVerifyInfo(const DescribeDomainVerifyInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDomainVerifyInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDomainVerifyInfoOutcome(DescribeDomainVerifyInfoResult(outcome.result()));
-	else
-		return DescribeDomainVerifyInfoOutcome(outcome.error());
-}
-
-void CasClient::describeDomainVerifyInfoAsync(const DescribeDomainVerifyInfoRequest& request, const DescribeDomainVerifyInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDomainVerifyInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeDomainVerifyInfoOutcomeCallable CasClient::describeDomainVerifyInfoCallable(const DescribeDomainVerifyInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDomainVerifyInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDomainVerifyInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeDownloadCertificateOutcome CasClient::describeDownloadCertificate(const DescribeDownloadCertificateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDownloadCertificateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDownloadCertificateOutcome(DescribeDownloadCertificateResult(outcome.result()));
-	else
-		return DescribeDownloadCertificateOutcome(outcome.error());
-}
-
-void CasClient::describeDownloadCertificateAsync(const DescribeDownloadCertificateRequest& request, const DescribeDownloadCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDownloadCertificate(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeDownloadCertificateOutcomeCallable CasClient::describeDownloadCertificateCallable(const DescribeDownloadCertificateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDownloadCertificateOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDownloadCertificate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeDownloadDomainVerifyConfigurationOutcome CasClient::describeDownloadDomainVerifyConfiguration(const DescribeDownloadDomainVerifyConfigurationRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDownloadDomainVerifyConfigurationOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDownloadDomainVerifyConfigurationOutcome(DescribeDownloadDomainVerifyConfigurationResult(outcome.result()));
-	else
-		return DescribeDownloadDomainVerifyConfigurationOutcome(outcome.error());
-}
-
-void CasClient::describeDownloadDomainVerifyConfigurationAsync(const DescribeDownloadDomainVerifyConfigurationRequest& request, const DescribeDownloadDomainVerifyConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDownloadDomainVerifyConfiguration(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeDownloadDomainVerifyConfigurationOutcomeCallable CasClient::describeDownloadDomainVerifyConfigurationCallable(const DescribeDownloadDomainVerifyConfigurationRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDownloadDomainVerifyConfigurationOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDownloadDomainVerifyConfiguration(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeExpectationResultOutcome CasClient::describeExpectationResult(const DescribeExpectationResultRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeExpectationResultOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeExpectationResultOutcome(DescribeExpectationResultResult(outcome.result()));
-	else
-		return DescribeExpectationResultOutcome(outcome.error());
-}
-
-void CasClient::describeExpectationResultAsync(const DescribeExpectationResultRequest& request, const DescribeExpectationResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeExpectationResult(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeExpectationResultOutcomeCallable CasClient::describeExpectationResultCallable(const DescribeExpectationResultRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeExpectationResultOutcome()>>(
-			[this, request]()
-			{
-			return this->describeExpectationResult(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeHelpListOutcome CasClient::describeHelpList(const DescribeHelpListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeHelpListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeHelpListOutcome(DescribeHelpListResult(outcome.result()));
-	else
-		return DescribeHelpListOutcome(outcome.error());
-}
-
-void CasClient::describeHelpListAsync(const DescribeHelpListRequest& request, const DescribeHelpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeHelpList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeHelpListOutcomeCallable CasClient::describeHelpListCallable(const DescribeHelpListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeHelpListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeHelpList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeLocationListOutcome CasClient::describeLocationList(const DescribeLocationListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLocationListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLocationListOutcome(DescribeLocationListResult(outcome.result()));
-	else
-		return DescribeLocationListOutcome(outcome.error());
-}
-
-void CasClient::describeLocationListAsync(const DescribeLocationListRequest& request, const DescribeLocationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLocationList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeLocationListOutcomeCallable CasClient::describeLocationListCallable(const DescribeLocationListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLocationListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLocationList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeOSSDownloadInfoOutcome CasClient::describeOSSDownloadInfo(const DescribeOSSDownloadInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeOSSDownloadInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeOSSDownloadInfoOutcome(DescribeOSSDownloadInfoResult(outcome.result()));
-	else
-		return DescribeOSSDownloadInfoOutcome(outcome.error());
-}
-
-void CasClient::describeOSSDownloadInfoAsync(const DescribeOSSDownloadInfoRequest& request, const DescribeOSSDownloadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeOSSDownloadInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeOSSDownloadInfoOutcomeCallable CasClient::describeOSSDownloadInfoCallable(const DescribeOSSDownloadInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeOSSDownloadInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeOSSDownloadInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeOSSUploadInfoOutcome CasClient::describeOSSUploadInfo(const DescribeOSSUploadInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeOSSUploadInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeOSSUploadInfoOutcome(DescribeOSSUploadInfoResult(outcome.result()));
-	else
-		return DescribeOSSUploadInfoOutcome(outcome.error());
-}
-
-void CasClient::describeOSSUploadInfoAsync(const DescribeOSSUploadInfoRequest& request, const DescribeOSSUploadInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeOSSUploadInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeOSSUploadInfoOutcomeCallable CasClient::describeOSSUploadInfoCallable(const DescribeOSSUploadInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeOSSUploadInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeOSSUploadInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeOrderAuditFailRecordOutcome CasClient::describeOrderAuditFailRecord(const DescribeOrderAuditFailRecordRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeOrderAuditFailRecordOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeOrderAuditFailRecordOutcome(DescribeOrderAuditFailRecordResult(outcome.result()));
-	else
-		return DescribeOrderAuditFailRecordOutcome(outcome.error());
-}
-
-void CasClient::describeOrderAuditFailRecordAsync(const DescribeOrderAuditFailRecordRequest& request, const DescribeOrderAuditFailRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeOrderAuditFailRecord(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeOrderAuditFailRecordOutcomeCallable CasClient::describeOrderAuditFailRecordCallable(const DescribeOrderAuditFailRecordRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeOrderAuditFailRecordOutcome()>>(
-			[this, request]()
-			{
-			return this->describeOrderAuditFailRecord(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeOrderCountForConsoleIndexOutcome CasClient::describeOrderCountForConsoleIndex(const DescribeOrderCountForConsoleIndexRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeOrderCountForConsoleIndexOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeOrderCountForConsoleIndexOutcome(DescribeOrderCountForConsoleIndexResult(outcome.result()));
-	else
-		return DescribeOrderCountForConsoleIndexOutcome(outcome.error());
-}
-
-void CasClient::describeOrderCountForConsoleIndexAsync(const DescribeOrderCountForConsoleIndexRequest& request, const DescribeOrderCountForConsoleIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeOrderCountForConsoleIndex(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeOrderCountForConsoleIndexOutcomeCallable CasClient::describeOrderCountForConsoleIndexCallable(const DescribeOrderCountForConsoleIndexRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeOrderCountForConsoleIndexOutcome()>>(
-			[this, request]()
-			{
-			return this->describeOrderCountForConsoleIndex(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeOrderDetailOutcome CasClient::describeOrderDetail(const DescribeOrderDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeOrderDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeOrderDetailOutcome(DescribeOrderDetailResult(outcome.result()));
-	else
-		return DescribeOrderDetailOutcome(outcome.error());
-}
-
-void CasClient::describeOrderDetailAsync(const DescribeOrderDetailRequest& request, const DescribeOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeOrderDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeOrderDetailOutcomeCallable CasClient::describeOrderDetailCallable(const DescribeOrderDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeOrderDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->describeOrderDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeOrderDocumentOutcome CasClient::describeOrderDocument(const DescribeOrderDocumentRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeOrderDocumentOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeOrderDocumentOutcome(DescribeOrderDocumentResult(outcome.result()));
-	else
-		return DescribeOrderDocumentOutcome(outcome.error());
-}
-
-void CasClient::describeOrderDocumentAsync(const DescribeOrderDocumentRequest& request, const DescribeOrderDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeOrderDocument(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeOrderDocumentOutcomeCallable CasClient::describeOrderDocumentCallable(const DescribeOrderDocumentRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeOrderDocumentOutcome()>>(
-			[this, request]()
-			{
-			return this->describeOrderDocument(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeOrderListOutcome CasClient::describeOrderList(const DescribeOrderListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeOrderListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeOrderListOutcome(DescribeOrderListResult(outcome.result()));
-	else
-		return DescribeOrderListOutcome(outcome.error());
-}
-
-void CasClient::describeOrderListAsync(const DescribeOrderListRequest& request, const DescribeOrderListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeOrderList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeOrderListOutcomeCallable CasClient::describeOrderListCallable(const DescribeOrderListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeOrderListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeOrderList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeOrderMaterialOutcome CasClient::describeOrderMaterial(const DescribeOrderMaterialRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeOrderMaterialOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeOrderMaterialOutcome(DescribeOrderMaterialResult(outcome.result()));
-	else
-		return DescribeOrderMaterialOutcome(outcome.error());
-}
-
-void CasClient::describeOrderMaterialAsync(const DescribeOrderMaterialRequest& request, const DescribeOrderMaterialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeOrderMaterial(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeOrderMaterialOutcomeCallable CasClient::describeOrderMaterialCallable(const DescribeOrderMaterialRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeOrderMaterialOutcome()>>(
-			[this, request]()
-			{
-			return this->describeOrderMaterial(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeOrderRefundRecordOutcome CasClient::describeOrderRefundRecord(const DescribeOrderRefundRecordRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeOrderRefundRecordOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeOrderRefundRecordOutcome(DescribeOrderRefundRecordResult(outcome.result()));
-	else
-		return DescribeOrderRefundRecordOutcome(outcome.error());
-}
-
-void CasClient::describeOrderRefundRecordAsync(const DescribeOrderRefundRecordRequest& request, const DescribeOrderRefundRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeOrderRefundRecord(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeOrderRefundRecordOutcomeCallable CasClient::describeOrderRefundRecordCallable(const DescribeOrderRefundRecordRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeOrderRefundRecordOutcome()>>(
-			[this, request]()
-			{
-			return this->describeOrderRefundRecord(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeRenewOrderOutcome CasClient::describeRenewOrder(const DescribeRenewOrderRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeRenewOrderOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeRenewOrderOutcome(DescribeRenewOrderResult(outcome.result()));
-	else
-		return DescribeRenewOrderOutcome(outcome.error());
-}
-
-void CasClient::describeRenewOrderAsync(const DescribeRenewOrderRequest& request, const DescribeRenewOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeRenewOrder(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeRenewOrderOutcomeCallable CasClient::describeRenewOrderCallable(const DescribeRenewOrderRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeRenewOrderOutcome()>>(
-			[this, request]()
-			{
-			return this->describeRenewOrder(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeSignatureCapacityOutcome CasClient::describeSignatureCapacity(const DescribeSignatureCapacityRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSignatureCapacityOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSignatureCapacityOutcome(DescribeSignatureCapacityResult(outcome.result()));
-	else
-		return DescribeSignatureCapacityOutcome(outcome.error());
-}
-
-void CasClient::describeSignatureCapacityAsync(const DescribeSignatureCapacityRequest& request, const DescribeSignatureCapacityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSignatureCapacity(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeSignatureCapacityOutcomeCallable CasClient::describeSignatureCapacityCallable(const DescribeSignatureCapacityRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSignatureCapacityOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSignatureCapacity(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeSignatureProductStateOutcome CasClient::describeSignatureProductState(const DescribeSignatureProductStateRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSignatureProductStateOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSignatureProductStateOutcome(DescribeSignatureProductStateResult(outcome.result()));
-	else
-		return DescribeSignatureProductStateOutcome(outcome.error());
-}
-
-void CasClient::describeSignatureProductStateAsync(const DescribeSignatureProductStateRequest& request, const DescribeSignatureProductStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSignatureProductState(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeSignatureProductStateOutcomeCallable CasClient::describeSignatureProductStateCallable(const DescribeSignatureProductStateRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSignatureProductStateOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSignatureProductState(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeSignatureStatisticsOutcome CasClient::describeSignatureStatistics(const DescribeSignatureStatisticsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSignatureStatisticsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSignatureStatisticsOutcome(DescribeSignatureStatisticsResult(outcome.result()));
-	else
-		return DescribeSignatureStatisticsOutcome(outcome.error());
-}
-
-void CasClient::describeSignatureStatisticsAsync(const DescribeSignatureStatisticsRequest& request, const DescribeSignatureStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSignatureStatistics(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeSignatureStatisticsOutcomeCallable CasClient::describeSignatureStatisticsCallable(const DescribeSignatureStatisticsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSignatureStatisticsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSignatureStatistics(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeSignatureTradeDetailOutcome CasClient::describeSignatureTradeDetail(const DescribeSignatureTradeDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSignatureTradeDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSignatureTradeDetailOutcome(DescribeSignatureTradeDetailResult(outcome.result()));
-	else
-		return DescribeSignatureTradeDetailOutcome(outcome.error());
-}
-
-void CasClient::describeSignatureTradeDetailAsync(const DescribeSignatureTradeDetailRequest& request, const DescribeSignatureTradeDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSignatureTradeDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeSignatureTradeDetailOutcomeCallable CasClient::describeSignatureTradeDetailCallable(const DescribeSignatureTradeDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSignatureTradeDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSignatureTradeDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeSignatureTradeListOutcome CasClient::describeSignatureTradeList(const DescribeSignatureTradeListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSignatureTradeListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSignatureTradeListOutcome(DescribeSignatureTradeListResult(outcome.result()));
-	else
-		return DescribeSignatureTradeListOutcome(outcome.error());
-}
-
-void CasClient::describeSignatureTradeListAsync(const DescribeSignatureTradeListRequest& request, const DescribeSignatureTradeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSignatureTradeList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeSignatureTradeListOutcomeCallable CasClient::describeSignatureTradeListCallable(const DescribeSignatureTradeListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSignatureTradeListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSignatureTradeList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::DescribeStsAuthStatusOutcome CasClient::describeStsAuthStatus(const DescribeStsAuthStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeStsAuthStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeStsAuthStatusOutcome(DescribeStsAuthStatusResult(outcome.result()));
-	else
-		return DescribeStsAuthStatusOutcome(outcome.error());
-}
-
-void CasClient::describeStsAuthStatusAsync(const DescribeStsAuthStatusRequest& request, const DescribeStsAuthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeStsAuthStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::DescribeStsAuthStatusOutcomeCallable CasClient::describeStsAuthStatusCallable(const DescribeStsAuthStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeStsAuthStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeStsAuthStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::ListTagKeysOutcome CasClient::listTagKeys(const ListTagKeysRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListTagKeysOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListTagKeysOutcome(ListTagKeysResult(outcome.result()));
-	else
-		return ListTagKeysOutcome(outcome.error());
-}
-
-void CasClient::listTagKeysAsync(const ListTagKeysRequest& request, const ListTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listTagKeys(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::ListTagKeysOutcomeCallable CasClient::listTagKeysCallable(const ListTagKeysRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListTagKeysOutcome()>>(
-			[this, request]()
-			{
-			return this->listTagKeys(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::ListTagResourcesOutcome CasClient::listTagResources(const ListTagResourcesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListTagResourcesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
-	else
-		return ListTagResourcesOutcome(outcome.error());
-}
-
-void CasClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listTagResources(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::ListTagResourcesOutcomeCallable CasClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
-			[this, request]()
-			{
-			return this->listTagResources(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::TagResourcesOutcome CasClient::tagResources(const TagResourcesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TagResourcesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
-	else
-		return TagResourcesOutcome(outcome.error());
-}
-
-void CasClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, tagResources(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::TagResourcesOutcomeCallable CasClient::tagResourcesCallable(const TagResourcesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
-			[this, request]()
-			{
-			return this->tagResources(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CasClient::UntagResourcesOutcome CasClient::untagResources(const UntagResourcesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UntagResourcesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
-	else
-		return UntagResourcesOutcome(outcome.error());
-}
-
-void CasClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, untagResources(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::UntagResourcesOutcomeCallable CasClient::untagResourcesCallable(const UntagResourcesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
-			[this, request]()
-			{
-			return this->untagResources(request);
+			return this->verify(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
