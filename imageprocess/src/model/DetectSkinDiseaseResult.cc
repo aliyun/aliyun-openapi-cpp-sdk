@@ -42,6 +42,14 @@ void DetectSkinDiseaseResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Results"].isNull())
 		data_.results = dataNode["Results"].asString();
+	if(!dataNode["ResultsEnglish"].isNull())
+		data_.resultsEnglish = dataNode["ResultsEnglish"].asString();
+	if(!dataNode["BodyPart"].isNull())
+		data_.bodyPart = dataNode["BodyPart"].asString();
+	if(!dataNode["ImageQuality"].isNull())
+		data_.imageQuality = std::stof(dataNode["ImageQuality"].asString());
+	if(!dataNode["ImageType"].isNull())
+		data_.imageType = dataNode["ImageType"].asString();
 
 }
 

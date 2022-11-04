@@ -34,7 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					float imageQuality;
+					std::string bodyPart;
 					std::string results;
+					std::string resultsEnglish;
+					std::string imageType;
 				};
 
 
