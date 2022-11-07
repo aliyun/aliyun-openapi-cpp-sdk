@@ -66,6 +66,8 @@ void GetApplicationGroupResult::parse(const std::string &payload)
 		applicationGroup_.statusReason = applicationGroupNode["StatusReason"].asString();
 	if(!applicationGroupNode["DeployOutputs"].isNull())
 		applicationGroup_.deployOutputs = applicationGroupNode["DeployOutputs"].asString();
+	if(!applicationGroupNode["Progress"].isNull())
+		applicationGroup_.progress = applicationGroupNode["Progress"].asString();
 
 }
 

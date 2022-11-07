@@ -43,6 +43,15 @@ void StartExecutionRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
+std::string StartExecutionRequest::getTemplateURL() const {
+  return templateURL_;
+}
+
+void StartExecutionRequest::setTemplateURL(const std::string &templateURL) {
+  templateURL_ = templateURL;
+  setParameter(std::string("TemplateURL"), templateURL);
+}
+
 std::string StartExecutionRequest::getMode() const {
   return mode_;
 }

@@ -32,11 +32,14 @@ public:
 	~ValidateTemplateContentRequest();
 	std::string getContent() const;
 	void setContent(const std::string &content);
+	std::string getTemplateURL() const;
+	void setTemplateURL(const std::string &templateURL);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 
 private:
 	std::string content_;
+	std::string templateURL_;
 	std::string regionId_;
 };
 } // namespace Model

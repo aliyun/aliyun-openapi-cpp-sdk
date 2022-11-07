@@ -34,6 +34,15 @@ void ValidateTemplateContentRequest::setContent(const std::string &content) {
   setParameter(std::string("Content"), content);
 }
 
+std::string ValidateTemplateContentRequest::getTemplateURL() const {
+  return templateURL_;
+}
+
+void ValidateTemplateContentRequest::setTemplateURL(const std::string &templateURL) {
+  templateURL_ = templateURL;
+  setParameter(std::string("TemplateURL"), templateURL);
+}
+
 std::string ValidateTemplateContentRequest::getRegionId() const {
   return regionId_;
 }

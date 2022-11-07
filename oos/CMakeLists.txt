@@ -31,6 +31,8 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/CreateApplicationResult.h
 	include/alibabacloud/oos/model/CreateApplicationGroupRequest.h
 	include/alibabacloud/oos/model/CreateApplicationGroupResult.h
+	include/alibabacloud/oos/model/CreateOpsItemRequest.h
+	include/alibabacloud/oos/model/CreateOpsItemResult.h
 	include/alibabacloud/oos/model/CreateParameterRequest.h
 	include/alibabacloud/oos/model/CreateParameterResult.h
 	include/alibabacloud/oos/model/CreatePatchBaselineRequest.h
@@ -73,6 +75,8 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/GetExecutionTemplateResult.h
 	include/alibabacloud/oos/model/GetInventorySchemaRequest.h
 	include/alibabacloud/oos/model/GetInventorySchemaResult.h
+	include/alibabacloud/oos/model/GetOpsItemRequest.h
+	include/alibabacloud/oos/model/GetOpsItemResult.h
 	include/alibabacloud/oos/model/GetParameterRequest.h
 	include/alibabacloud/oos/model/GetParameterResult.h
 	include/alibabacloud/oos/model/GetParametersRequest.h
@@ -109,6 +113,8 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/ListInstancePatchesResult.h
 	include/alibabacloud/oos/model/ListInventoryEntriesRequest.h
 	include/alibabacloud/oos/model/ListInventoryEntriesResult.h
+	include/alibabacloud/oos/model/ListOpsItemsRequest.h
+	include/alibabacloud/oos/model/ListOpsItemsResult.h
 	include/alibabacloud/oos/model/ListParameterVersionsRequest.h
 	include/alibabacloud/oos/model/ListParameterVersionsResult.h
 	include/alibabacloud/oos/model/ListParametersRequest.h
@@ -157,6 +163,8 @@ set(oos_public_header_model
 	include/alibabacloud/oos/model/UpdateApplicationGroupResult.h
 	include/alibabacloud/oos/model/UpdateExecutionRequest.h
 	include/alibabacloud/oos/model/UpdateExecutionResult.h
+	include/alibabacloud/oos/model/UpdateOpsItemRequest.h
+	include/alibabacloud/oos/model/UpdateOpsItemResult.h
 	include/alibabacloud/oos/model/UpdateParameterRequest.h
 	include/alibabacloud/oos/model/UpdateParameterResult.h
 	include/alibabacloud/oos/model/UpdatePatchBaselineRequest.h
@@ -182,6 +190,8 @@ set(oos_src
 	src/model/CreateApplicationResult.cc
 	src/model/CreateApplicationGroupRequest.cc
 	src/model/CreateApplicationGroupResult.cc
+	src/model/CreateOpsItemRequest.cc
+	src/model/CreateOpsItemResult.cc
 	src/model/CreateParameterRequest.cc
 	src/model/CreateParameterResult.cc
 	src/model/CreatePatchBaselineRequest.cc
@@ -224,6 +234,8 @@ set(oos_src
 	src/model/GetExecutionTemplateResult.cc
 	src/model/GetInventorySchemaRequest.cc
 	src/model/GetInventorySchemaResult.cc
+	src/model/GetOpsItemRequest.cc
+	src/model/GetOpsItemResult.cc
 	src/model/GetParameterRequest.cc
 	src/model/GetParameterResult.cc
 	src/model/GetParametersRequest.cc
@@ -260,6 +272,8 @@ set(oos_src
 	src/model/ListInstancePatchesResult.cc
 	src/model/ListInventoryEntriesRequest.cc
 	src/model/ListInventoryEntriesResult.cc
+	src/model/ListOpsItemsRequest.cc
+	src/model/ListOpsItemsResult.cc
 	src/model/ListParameterVersionsRequest.cc
 	src/model/ListParameterVersionsResult.cc
 	src/model/ListParametersRequest.cc
@@ -308,6 +322,8 @@ set(oos_src
 	src/model/UpdateApplicationGroupResult.cc
 	src/model/UpdateExecutionRequest.cc
 	src/model/UpdateExecutionResult.cc
+	src/model/UpdateOpsItemRequest.cc
+	src/model/UpdateOpsItemResult.cc
 	src/model/UpdateParameterRequest.cc
 	src/model/UpdateParameterResult.cc
 	src/model/UpdatePatchBaselineRequest.cc

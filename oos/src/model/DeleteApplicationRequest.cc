@@ -43,3 +43,12 @@ void DeleteApplicationRequest::setName(const std::string &name) {
   setParameter(std::string("Name"), name);
 }
 
+bool DeleteApplicationRequest::getForce() const {
+  return force_;
+}
+
+void DeleteApplicationRequest::setForce(bool force) {
+  force_ = force;
+  setParameter(std::string("Force"), force ? "true" : "false");
+}
+

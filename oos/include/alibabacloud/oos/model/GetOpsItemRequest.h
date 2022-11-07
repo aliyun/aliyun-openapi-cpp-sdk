@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_DELETEAPPLICATIONREQUEST_H_
-#define ALIBABACLOUD_OOS_MODEL_DELETEAPPLICATIONREQUEST_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_GETOPSITEMREQUEST_H_
+#define ALIBABACLOUD_OOS_MODEL_GETOPSITEMREQUEST_H_
 
 #include <alibabacloud/oos/OosExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,20 @@
 namespace AlibabaCloud {
 namespace Oos {
 namespace Model {
-class ALIBABACLOUD_OOS_EXPORT DeleteApplicationRequest : public RpcServiceRequest {
+class ALIBABACLOUD_OOS_EXPORT GetOpsItemRequest : public RpcServiceRequest {
 public:
-	DeleteApplicationRequest();
-	~DeleteApplicationRequest();
+	GetOpsItemRequest();
+	~GetOpsItemRequest();
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getName() const;
-	void setName(const std::string &name);
-	bool getForce() const;
-	void setForce(bool force);
+	std::string getOpsItemId() const;
+	void setOpsItemId(const std::string &opsItemId);
 
 private:
 	std::string regionId_;
-	std::string name_;
-	bool force_;
+	std::string opsItemId_;
 };
 } // namespace Model
 } // namespace Oos
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_OOS_MODEL_DELETEAPPLICATIONREQUEST_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_GETOPSITEMREQUEST_H_

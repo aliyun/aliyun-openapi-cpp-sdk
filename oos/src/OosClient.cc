@@ -231,6 +231,42 @@ OosClient::CreateApplicationGroupOutcomeCallable OosClient::createApplicationGro
 	return task->get_future();
 }
 
+OosClient::CreateOpsItemOutcome OosClient::createOpsItem(const CreateOpsItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateOpsItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateOpsItemOutcome(CreateOpsItemResult(outcome.result()));
+	else
+		return CreateOpsItemOutcome(outcome.error());
+}
+
+void OosClient::createOpsItemAsync(const CreateOpsItemRequest& request, const CreateOpsItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createOpsItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::CreateOpsItemOutcomeCallable OosClient::createOpsItemCallable(const CreateOpsItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateOpsItemOutcome()>>(
+			[this, request]()
+			{
+			return this->createOpsItem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::CreateParameterOutcome OosClient::createParameter(const CreateParameterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -987,6 +1023,42 @@ OosClient::GetInventorySchemaOutcomeCallable OosClient::getInventorySchemaCallab
 	return task->get_future();
 }
 
+OosClient::GetOpsItemOutcome OosClient::getOpsItem(const GetOpsItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOpsItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOpsItemOutcome(GetOpsItemResult(outcome.result()));
+	else
+		return GetOpsItemOutcome(outcome.error());
+}
+
+void OosClient::getOpsItemAsync(const GetOpsItemRequest& request, const GetOpsItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOpsItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::GetOpsItemOutcomeCallable OosClient::getOpsItemCallable(const GetOpsItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOpsItemOutcome()>>(
+			[this, request]()
+			{
+			return this->getOpsItem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OosClient::GetParameterOutcome OosClient::getParameter(const GetParameterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,6 +1701,42 @@ OosClient::ListInventoryEntriesOutcomeCallable OosClient::listInventoryEntriesCa
 			[this, request]()
 			{
 			return this->listInventoryEntries(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::ListOpsItemsOutcome OosClient::listOpsItems(const ListOpsItemsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListOpsItemsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListOpsItemsOutcome(ListOpsItemsResult(outcome.result()));
+	else
+		return ListOpsItemsOutcome(outcome.error());
+}
+
+void OosClient::listOpsItemsAsync(const ListOpsItemsRequest& request, const ListOpsItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listOpsItems(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::ListOpsItemsOutcomeCallable OosClient::listOpsItemsCallable(const ListOpsItemsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListOpsItemsOutcome()>>(
+			[this, request]()
+			{
+			return this->listOpsItems(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2493,6 +2601,42 @@ OosClient::UpdateExecutionOutcomeCallable OosClient::updateExecutionCallable(con
 			[this, request]()
 			{
 			return this->updateExecution(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OosClient::UpdateOpsItemOutcome OosClient::updateOpsItem(const UpdateOpsItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateOpsItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateOpsItemOutcome(UpdateOpsItemResult(outcome.result()));
+	else
+		return UpdateOpsItemOutcome(outcome.error());
+}
+
+void OosClient::updateOpsItemAsync(const UpdateOpsItemRequest& request, const UpdateOpsItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateOpsItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OosClient::UpdateOpsItemOutcomeCallable OosClient::updateOpsItemCallable(const UpdateOpsItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateOpsItemOutcome()>>(
+			[this, request]()
+			{
+			return this->updateOpsItem(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

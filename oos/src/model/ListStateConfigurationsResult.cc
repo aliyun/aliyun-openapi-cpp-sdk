@@ -73,7 +73,14 @@ void ListStateConfigurationsResult::parse(const std::string &payload)
 			stateConfigurationsObject.templateId = valueStateConfigurationsStateConfiguration["TemplateId"].asString();
 		stateConfigurations_.push_back(stateConfigurationsObject);
 	}
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
+}
+
+std::string ListStateConfigurationsResult::getNextToken()const
+{
+	return nextToken_;
 }
 
 std::vector<ListStateConfigurationsResult::StateConfiguration> ListStateConfigurationsResult::getStateConfigurations()const

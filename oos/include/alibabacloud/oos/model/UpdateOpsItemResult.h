@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_LISTSTATECONFIGURATIONSRESULT_H_
-#define ALIBABACLOUD_OOS_MODEL_LISTSTATECONFIGURATIONSRESULT_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_UPDATEOPSITEMRESULT_H_
+#define ALIBABACLOUD_OOS_MODEL_UPDATEOPSITEMRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,43 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT ListStateConfigurationsResult : public ServiceResult
+			class ALIBABACLOUD_OOS_EXPORT UpdateOpsItemResult : public ServiceResult
 			{
 			public:
-				struct StateConfiguration
+				struct OpsItem
 				{
-					std::string scheduleExpression;
-					std::string scheduleType;
-					std::string parameters;
+					std::string status;
+					std::string lastModifiedBy;
 					std::string description;
+					std::string category;
+					std::string createdBy;
 					std::string resourceGroupId;
-					std::string createTime;
-					std::string templateVersion;
-					std::string targets;
-					std::string configureMode;
-					std::string stateConfigurationId;
-					std::string updateTime;
-					std::string templateName;
+					int priority;
+					std::string attributes;
+					std::string title;
+					std::string severity;
+					std::string createDate;
+					std::string source;
+					std::string updateDate;
+					std::string opsItemId;
+					std::vector<std::string> solutions;
+					std::vector<std::string> resources;
 					std::string tags;
-					std::string templateId;
 				};
 
 
-				ListStateConfigurationsResult();
-				explicit ListStateConfigurationsResult(const std::string &payload);
-				~ListStateConfigurationsResult();
-				std::string getNextToken()const;
-				std::vector<StateConfiguration> getStateConfigurations()const;
+				UpdateOpsItemResult();
+				explicit UpdateOpsItemResult(const std::string &payload);
+				~UpdateOpsItemResult();
+				OpsItem getOpsItem()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string nextToken_;
-				std::vector<StateConfiguration> stateConfigurations_;
+				OpsItem opsItem_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_LISTSTATECONFIGURATIONSRESULT_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_UPDATEOPSITEMRESULT_H_

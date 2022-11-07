@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_DELETEAPPLICATIONREQUEST_H_
-#define ALIBABACLOUD_OOS_MODEL_DELETEAPPLICATIONREQUEST_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_LISTOPSITEMSREQUEST_H_
+#define ALIBABACLOUD_OOS_MODEL_LISTOPSITEMSREQUEST_H_
 
 #include <alibabacloud/oos/OosExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,36 @@
 namespace AlibabaCloud {
 namespace Oos {
 namespace Model {
-class ALIBABACLOUD_OOS_EXPORT DeleteApplicationRequest : public RpcServiceRequest {
+class ALIBABACLOUD_OOS_EXPORT ListOpsItemsRequest : public RpcServiceRequest {
 public:
-	DeleteApplicationRequest();
-	~DeleteApplicationRequest();
+	struct Filter {
+		std::string name;
+		std::string _operator;
+	};
+	ListOpsItemsRequest();
+	~ListOpsItemsRequest();
+	std::string getResourceTags() const;
+	void setResourceTags(const std::string &resourceTags);
+	std::string getTags() const;
+	void setTags(const std::string &tags);
+	std::vector<Filter> getFilter() const;
+	void setFilter(const std::vector<Filter> &filter);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getName() const;
-	void setName(const std::string &name);
-	bool getForce() const;
-	void setForce(bool force);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 
 private:
+	std::string resourceTags_;
+	std::string tags_;
+	std::vector<Filter> filter_;
 	std::string regionId_;
-	std::string name_;
-	bool force_;
+	std::string nextToken_;
+	int maxResults_;
 };
 } // namespace Model
 } // namespace Oos
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_OOS_MODEL_DELETEAPPLICATIONREQUEST_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_LISTOPSITEMSREQUEST_H_

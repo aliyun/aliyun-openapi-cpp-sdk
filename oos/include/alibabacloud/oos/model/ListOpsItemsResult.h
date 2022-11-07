@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_LISTSTATECONFIGURATIONSRESULT_H_
-#define ALIBABACLOUD_OOS_MODEL_LISTSTATECONFIGURATIONSRESULT_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_LISTOPSITEMSRESULT_H_
+#define ALIBABACLOUD_OOS_MODEL_LISTOPSITEMSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,43 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OOS_EXPORT ListStateConfigurationsResult : public ServiceResult
+			class ALIBABACLOUD_OOS_EXPORT ListOpsItemsResult : public ServiceResult
 			{
 			public:
-				struct StateConfiguration
+				struct OpsItem
 				{
-					std::string scheduleExpression;
-					std::string scheduleType;
-					std::string parameters;
-					std::string description;
-					std::string resourceGroupId;
-					std::string createTime;
-					std::string templateVersion;
-					std::string targets;
-					std::string configureMode;
-					std::string stateConfigurationId;
-					std::string updateTime;
-					std::string templateName;
+					std::string status;
+					std::string updateDate;
+					std::string opsItemId;
+					std::string category;
+					int priority;
+					std::string title;
+					std::string severity;
+					std::vector<std::string> resources;
+					std::string createDate;
+					std::string source;
 					std::string tags;
-					std::string templateId;
 				};
 
 
-				ListStateConfigurationsResult();
-				explicit ListStateConfigurationsResult(const std::string &payload);
-				~ListStateConfigurationsResult();
+				ListOpsItemsResult();
+				explicit ListOpsItemsResult(const std::string &payload);
+				~ListOpsItemsResult();
+				std::vector<OpsItem> getOpsItems()const;
+				int getTotalCount()const;
 				std::string getNextToken()const;
-				std::vector<StateConfiguration> getStateConfigurations()const;
+				int getMaxResults()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<OpsItem> opsItems_;
+				int totalCount_;
 				std::string nextToken_;
-				std::vector<StateConfiguration> stateConfigurations_;
+				int maxResults_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OOS_MODEL_LISTSTATECONFIGURATIONSRESULT_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_LISTOPSITEMSRESULT_H_

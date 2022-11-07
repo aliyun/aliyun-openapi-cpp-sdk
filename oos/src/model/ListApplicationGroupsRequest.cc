@@ -25,6 +25,15 @@ ListApplicationGroupsRequest::ListApplicationGroupsRequest()
 
 ListApplicationGroupsRequest::~ListApplicationGroupsRequest() {}
 
+std::string ListApplicationGroupsRequest::getResourceProduct() const {
+  return resourceProduct_;
+}
+
+void ListApplicationGroupsRequest::setResourceProduct(const std::string &resourceProduct) {
+  resourceProduct_ = resourceProduct;
+  setParameter(std::string("ResourceProduct"), resourceProduct);
+}
+
 std::string ListApplicationGroupsRequest::getRegionId() const {
   return regionId_;
 }
@@ -43,6 +52,24 @@ void ListApplicationGroupsRequest::setNextToken(const std::string &nextToken) {
   setParameter(std::string("NextToken"), nextToken);
 }
 
+std::string ListApplicationGroupsRequest::getResourceId() const {
+  return resourceId_;
+}
+
+void ListApplicationGroupsRequest::setResourceId(const std::string &resourceId) {
+  resourceId_ = resourceId;
+  setParameter(std::string("ResourceId"), resourceId);
+}
+
+std::string ListApplicationGroupsRequest::getProduct() const {
+  return product_;
+}
+
+void ListApplicationGroupsRequest::setProduct(const std::string &product) {
+  product_ = product;
+  setParameter(std::string("Product"), product);
+}
+
 std::string ListApplicationGroupsRequest::getDeployRegionId() const {
   return deployRegionId_;
 }
@@ -50,6 +77,15 @@ std::string ListApplicationGroupsRequest::getDeployRegionId() const {
 void ListApplicationGroupsRequest::setDeployRegionId(const std::string &deployRegionId) {
   deployRegionId_ = deployRegionId;
   setParameter(std::string("DeployRegionId"), deployRegionId);
+}
+
+std::string ListApplicationGroupsRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void ListApplicationGroupsRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
 }
 
 std::string ListApplicationGroupsRequest::getApplicationName() const {

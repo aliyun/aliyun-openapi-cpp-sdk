@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OOS_MODEL_CREATESECRETPARAMETERREQUEST_H_
-#define ALIBABACLOUD_OOS_MODEL_CREATESECRETPARAMETERREQUEST_H_
+#ifndef ALIBABACLOUD_OOS_MODEL_CREATEOPSITEMREQUEST_H_
+#define ALIBABACLOUD_OOS_MODEL_CREATEOPSITEMREQUEST_H_
 
 #include <alibabacloud/oos/OosExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,44 +26,53 @@
 namespace AlibabaCloud {
 namespace Oos {
 namespace Model {
-class ALIBABACLOUD_OOS_EXPORT CreateSecretParameterRequest : public RpcServiceRequest {
+class ALIBABACLOUD_OOS_EXPORT CreateOpsItemRequest : public RpcServiceRequest {
 public:
-	CreateSecretParameterRequest();
-	~CreateSecretParameterRequest();
+	CreateOpsItemRequest();
+	~CreateOpsItemRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
-	std::string getType() const;
-	void setType(const std::string &type);
-	std::string getConstraints() const;
-	void setConstraints(const std::string &constraints);
+	std::string getSource() const;
+	void setSource(const std::string &source);
+	std::string getTitle() const;
+	void setTitle(const std::string &title);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getValue() const;
-	void setValue(const std::string &value);
-	std::string getKeyId() const;
-	void setKeyId(const std::string &keyId);
-	std::map<std::string, std::string> getTags() const;
-	void setTags(const std::map<std::string, std::string> &tags);
-	std::string getName() const;
-	void setName(const std::string &name);
+	std::string getSeverity() const;
+	void setSeverity(const std::string &severity);
+	std::string getSolutions() const;
+	void setSolutions(const std::string &solutions);
+	std::string getResources() const;
+	void setResources(const std::string &resources);
+	int getPriority() const;
+	void setPriority(int priority);
+	std::string getDedupString() const;
+	void setDedupString(const std::string &dedupString);
+	std::string getTags() const;
+	void setTags(const std::string &tags);
+	std::string getCategory() const;
+	void setCategory(const std::string &category);
 
 private:
 	std::string clientToken_;
 	std::string description_;
-	std::string type_;
-	std::string constraints_;
+	std::string source_;
+	std::string title_;
 	std::string resourceGroupId_;
 	std::string regionId_;
-	std::string value_;
-	std::string keyId_;
-	std::map<std::string, std::string> tags_;
-	std::string name_;
+	std::string severity_;
+	std::string solutions_;
+	std::string resources_;
+	int priority_;
+	std::string dedupString_;
+	std::string tags_;
+	std::string category_;
 };
 } // namespace Model
 } // namespace Oos
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_OOS_MODEL_CREATESECRETPARAMETERREQUEST_H_
+#endif // !ALIBABACLOUD_OOS_MODEL_CREATEOPSITEMREQUEST_H_

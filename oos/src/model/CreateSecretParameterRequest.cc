@@ -97,13 +97,15 @@ void CreateSecretParameterRequest::setKeyId(const std::string &keyId) {
   setParameter(std::string("KeyId"), keyId);
 }
 
-std::string CreateSecretParameterRequest::getTags() const {
+std::map<std::string, std::string> CreateSecretParameterRequest::getTags() const {
   return tags_;
 }
 
-void CreateSecretParameterRequest::setTags(const std::string &tags) {
+void CreateSecretParameterRequest::setTags(const std::map<std::string, std::string> &tags) {
   tags_ = tags;
-  setParameter(std::string("Tags"), tags);
+  for(auto const &iter1 : tags) {
+    setParameter(std::string("Tags") + "." + iter1.first, iter1.second);
+  }
 }
 
 std::string CreateSecretParameterRequest::getName() const {

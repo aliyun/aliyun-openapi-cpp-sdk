@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string deployRegionId;
+					std::string progress;
 					std::string description;
 					std::string applicationName;
 					std::string importTagKey;

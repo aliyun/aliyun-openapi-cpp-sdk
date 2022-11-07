@@ -30,21 +30,33 @@ class ALIBABACLOUD_OOS_EXPORT ListApplicationGroupsRequest : public RpcServiceRe
 public:
 	ListApplicationGroupsRequest();
 	~ListApplicationGroupsRequest();
+	std::string getResourceProduct() const;
+	void setResourceProduct(const std::string &resourceProduct);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	std::string getProduct() const;
+	void setProduct(const std::string &product);
 	std::string getDeployRegionId() const;
 	void setDeployRegionId(const std::string &deployRegionId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
 	std::string getApplicationName() const;
 	void setApplicationName(const std::string &applicationName);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
 
 private:
+	std::string resourceProduct_;
 	std::string regionId_;
 	std::string nextToken_;
+	std::string resourceId_;
+	std::string product_;
 	std::string deployRegionId_;
+	std::string resourceType_;
 	std::string applicationName_;
 	int maxResults_;
 };

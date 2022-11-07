@@ -34,6 +34,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getTemplateURL() const;
+	void setTemplateURL(const std::string &templateURL);
 	std::string getMode() const;
 	void setMode(const std::string &mode);
 	std::string getResourceGroupId() const;
@@ -60,6 +62,7 @@ public:
 private:
 	std::string clientToken_;
 	std::string description_;
+	std::string templateURL_;
 	std::string mode_;
 	std::string resourceGroupId_;
 	std::string templateVersion_;
