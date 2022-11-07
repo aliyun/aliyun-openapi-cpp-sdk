@@ -34,6 +34,8 @@ public:
 	void setAppendCrl(bool appendCrl);
 	std::string getCountryCode() const;
 	void setCountryCode(const std::string &countryCode);
+	long getImmediately() const;
+	void setImmediately(long immediately);
 	std::string getCommonName() const;
 	void setCommonName(const std::string &commonName);
 	std::string getSourceIp() const;
@@ -68,6 +70,7 @@ public:
 private:
 	bool appendCrl_;
 	std::string countryCode_;
+	long immediately_;
 	std::string commonName_;
 	std::string sourceIp_;
 	std::string certType_;

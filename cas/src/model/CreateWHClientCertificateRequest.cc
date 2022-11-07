@@ -25,6 +25,15 @@ CreateWHClientCertificateRequest::CreateWHClientCertificateRequest()
 
 CreateWHClientCertificateRequest::~CreateWHClientCertificateRequest() {}
 
+std::string CreateWHClientCertificateRequest::getCountry() const {
+  return country_;
+}
+
+void CreateWHClientCertificateRequest::setCountry(const std::string &country) {
+  country_ = country;
+  setParameter(std::string("Country"), country);
+}
+
 std::string CreateWHClientCertificateRequest::getCsr() const {
   return csr_;
 }
@@ -32,6 +41,24 @@ std::string CreateWHClientCertificateRequest::getCsr() const {
 void CreateWHClientCertificateRequest::setCsr(const std::string &csr) {
   csr_ = csr;
   setParameter(std::string("Csr"), csr);
+}
+
+long CreateWHClientCertificateRequest::getImmediately() const {
+  return immediately_;
+}
+
+void CreateWHClientCertificateRequest::setImmediately(long immediately) {
+  immediately_ = immediately;
+  setParameter(std::string("Immediately"), std::to_string(immediately));
+}
+
+long CreateWHClientCertificateRequest::getYears() const {
+  return years_;
+}
+
+void CreateWHClientCertificateRequest::setYears(long years) {
+  years_ = years;
+  setParameter(std::string("Years"), std::to_string(years));
 }
 
 std::string CreateWHClientCertificateRequest::getCommonName() const {
@@ -61,6 +88,15 @@ void CreateWHClientCertificateRequest::setSanValue(const std::string &sanValue) 
   setParameter(std::string("SanValue"), sanValue);
 }
 
+std::string CreateWHClientCertificateRequest::getState() const {
+  return state_;
+}
+
+void CreateWHClientCertificateRequest::setState(const std::string &state) {
+  state_ = state;
+  setParameter(std::string("State"), state);
+}
+
 std::string CreateWHClientCertificateRequest::getAlgorithm() const {
   return algorithm_;
 }
@@ -68,6 +104,15 @@ std::string CreateWHClientCertificateRequest::getAlgorithm() const {
 void CreateWHClientCertificateRequest::setAlgorithm(const std::string &algorithm) {
   algorithm_ = algorithm;
   setParameter(std::string("Algorithm"), algorithm);
+}
+
+long CreateWHClientCertificateRequest::getMonths() const {
+  return months_;
+}
+
+void CreateWHClientCertificateRequest::setMonths(long months) {
+  months_ = months;
+  setParameter(std::string("Months"), std::to_string(months));
 }
 
 long CreateWHClientCertificateRequest::getAfterTime() const {
@@ -79,6 +124,15 @@ void CreateWHClientCertificateRequest::setAfterTime(long afterTime) {
   setParameter(std::string("AfterTime"), std::to_string(afterTime));
 }
 
+std::string CreateWHClientCertificateRequest::getLocality() const {
+  return locality_;
+}
+
+void CreateWHClientCertificateRequest::setLocality(const std::string &locality) {
+  locality_ = locality;
+  setParameter(std::string("Locality"), locality);
+}
+
 long CreateWHClientCertificateRequest::getSanType() const {
   return sanType_;
 }
@@ -86,6 +140,15 @@ long CreateWHClientCertificateRequest::getSanType() const {
 void CreateWHClientCertificateRequest::setSanType(long sanType) {
   sanType_ = sanType;
   setParameter(std::string("SanType"), std::to_string(sanType));
+}
+
+std::string CreateWHClientCertificateRequest::getOrganization() const {
+  return organization_;
+}
+
+void CreateWHClientCertificateRequest::setOrganization(const std::string &organization) {
+  organization_ = organization;
+  setParameter(std::string("Organization"), organization);
 }
 
 long CreateWHClientCertificateRequest::getDays() const {
@@ -113,5 +176,14 @@ std::string CreateWHClientCertificateRequest::getParentIdentifier() const {
 void CreateWHClientCertificateRequest::setParentIdentifier(const std::string &parentIdentifier) {
   parentIdentifier_ = parentIdentifier;
   setParameter(std::string("ParentIdentifier"), parentIdentifier);
+}
+
+std::string CreateWHClientCertificateRequest::getOrganizationUnit() const {
+  return organizationUnit_;
+}
+
+void CreateWHClientCertificateRequest::setOrganizationUnit(const std::string &organizationUnit) {
+  organizationUnit_ = organizationUnit;
+  setParameter(std::string("OrganizationUnit"), organizationUnit);
 }
 

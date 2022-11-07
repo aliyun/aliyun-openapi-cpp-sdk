@@ -43,6 +43,15 @@ void CreateWHCertificateWithExtensionRequest::setCountryCode(const std::string &
   setParameter(std::string("CountryCode"), countryCode);
 }
 
+long CreateWHCertificateWithExtensionRequest::getImmediately() const {
+  return immediately_;
+}
+
+void CreateWHCertificateWithExtensionRequest::setImmediately(long immediately) {
+  immediately_ = immediately;
+  setParameter(std::string("Immediately"), std::to_string(immediately));
+}
+
 std::string CreateWHCertificateWithExtensionRequest::getCommonName() const {
   return commonName_;
 }
