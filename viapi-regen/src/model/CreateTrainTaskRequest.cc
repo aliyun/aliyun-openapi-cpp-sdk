@@ -43,6 +43,15 @@ void CreateTrainTaskRequest::setTrainMode(const std::string &trainMode) {
   setBodyParameter(std::string("TrainMode"), trainMode);
 }
 
+std::string CreateTrainTaskRequest::getDatasetIds() const {
+  return datasetIds_;
+}
+
+void CreateTrainTaskRequest::setDatasetIds(const std::string &datasetIds) {
+  datasetIds_ = datasetIds;
+  setBodyParameter(std::string("DatasetIds"), datasetIds);
+}
+
 long CreateTrainTaskRequest::getPreTrainTaskId() const {
   return preTrainTaskId_;
 }
@@ -86,6 +95,15 @@ long CreateTrainTaskRequest::getDatasetId() const {
 void CreateTrainTaskRequest::setDatasetId(long datasetId) {
   datasetId_ = datasetId;
   setBodyParameter(std::string("DatasetId"), std::to_string(datasetId));
+}
+
+std::string CreateTrainTaskRequest::getLabelIds() const {
+  return labelIds_;
+}
+
+void CreateTrainTaskRequest::setLabelIds(const std::string &labelIds) {
+  labelIds_ = labelIds;
+  setBodyParameter(std::string("LabelIds"), labelIds);
 }
 
 long CreateTrainTaskRequest::getWorkspaceId() const {

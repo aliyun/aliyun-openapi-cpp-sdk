@@ -52,6 +52,15 @@ void ListLabelsetDatasRequest::setCurrentPage(long currentPage) {
   setBodyParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
+bool ListLabelsetDatasRequest::getIsAbandon() const {
+  return isAbandon_;
+}
+
+void ListLabelsetDatasRequest::setIsAbandon(bool isAbandon) {
+  isAbandon_ = isAbandon;
+  setBodyParameter(std::string("IsAbandon"), isAbandon ? "true" : "false");
+}
+
 long ListLabelsetDatasRequest::getLabelId() const {
   return labelId_;
 }

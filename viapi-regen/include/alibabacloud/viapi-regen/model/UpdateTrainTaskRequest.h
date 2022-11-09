@@ -36,6 +36,8 @@ public:
 	void setTrainMode(const std::string &trainMode);
 	long getId() const;
 	void setId(long id);
+	std::string getDatasetIds() const;
+	void setDatasetIds(const std::string &datasetIds);
 	long getPreTrainTaskId() const;
 	void setPreTrainTaskId(long preTrainTaskId);
 	bool getPreTrainTaskFlag() const;
@@ -48,17 +50,21 @@ public:
 	void setName(const std::string &name);
 	long getDatasetId() const;
 	void setDatasetId(long datasetId);
+	std::string getLabelIds() const;
+	void setLabelIds(const std::string &labelIds);
 
 private:
 	std::string description_;
 	std::string trainMode_;
 	long id_;
+	std::string datasetIds_;
 	long preTrainTaskId_;
 	bool preTrainTaskFlag_;
 	std::string advancedParameters_;
 	long labelId_;
 	std::string name_;
 	long datasetId_;
+	std::string labelIds_;
 };
 } // namespace Model
 } // namespace Viapi_regen

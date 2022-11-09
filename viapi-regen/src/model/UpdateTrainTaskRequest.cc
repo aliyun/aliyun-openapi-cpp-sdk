@@ -52,6 +52,15 @@ void UpdateTrainTaskRequest::setId(long id) {
   setBodyParameter(std::string("Id"), std::to_string(id));
 }
 
+std::string UpdateTrainTaskRequest::getDatasetIds() const {
+  return datasetIds_;
+}
+
+void UpdateTrainTaskRequest::setDatasetIds(const std::string &datasetIds) {
+  datasetIds_ = datasetIds;
+  setBodyParameter(std::string("DatasetIds"), datasetIds);
+}
+
 long UpdateTrainTaskRequest::getPreTrainTaskId() const {
   return preTrainTaskId_;
 }
@@ -104,5 +113,14 @@ long UpdateTrainTaskRequest::getDatasetId() const {
 void UpdateTrainTaskRequest::setDatasetId(long datasetId) {
   datasetId_ = datasetId;
   setBodyParameter(std::string("DatasetId"), std::to_string(datasetId));
+}
+
+std::string UpdateTrainTaskRequest::getLabelIds() const {
+  return labelIds_;
+}
+
+void UpdateTrainTaskRequest::setLabelIds(const std::string &labelIds) {
+  labelIds_ = labelIds;
+  setBodyParameter(std::string("LabelIds"), labelIds);
 }
 

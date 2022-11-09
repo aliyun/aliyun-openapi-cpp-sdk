@@ -36,6 +36,8 @@ public:
 	void setValue(const std::string &value);
 	long getCurrentPage() const;
 	void setCurrentPage(long currentPage);
+	bool getIsAbandon() const;
+	void setIsAbandon(bool isAbandon);
 	long getLabelId() const;
 	void setLabelId(long labelId);
 	std::string getName() const;
@@ -47,6 +49,7 @@ private:
 	long pageSize_;
 	std::string value_;
 	long currentPage_;
+	bool isAbandon_;
 	long labelId_;
 	std::string name_;
 	std::string operation_;
