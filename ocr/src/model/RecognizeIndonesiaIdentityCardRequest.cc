@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,23 +18,19 @@
 
 using AlibabaCloud::Ocr::Model::RecognizeIndonesiaIdentityCardRequest;
 
-RecognizeIndonesiaIdentityCardRequest::RecognizeIndonesiaIdentityCardRequest() :
-	RpcServiceRequest("ocr", "2019-12-30", "RecognizeIndonesiaIdentityCard")
-{
-	setMethod(HttpRequest::Method::Post);
+RecognizeIndonesiaIdentityCardRequest::RecognizeIndonesiaIdentityCardRequest()
+    : RpcServiceRequest("ocr", "2019-12-30", "RecognizeIndonesiaIdentityCard") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-RecognizeIndonesiaIdentityCardRequest::~RecognizeIndonesiaIdentityCardRequest()
-{}
+RecognizeIndonesiaIdentityCardRequest::~RecognizeIndonesiaIdentityCardRequest() {}
 
-std::string RecognizeIndonesiaIdentityCardRequest::getImageUrl()const
-{
-	return imageUrl_;
+std::string RecognizeIndonesiaIdentityCardRequest::getImageUrl() const {
+  return imageUrl_;
 }
 
-void RecognizeIndonesiaIdentityCardRequest::setImageUrl(const std::string& imageUrl)
-{
-	imageUrl_ = imageUrl;
-	setBodyParameter("ImageUrl", imageUrl);
+void RecognizeIndonesiaIdentityCardRequest::setImageUrl(const std::string &imageUrl) {
+  imageUrl_ = imageUrl;
+  setBodyParameter(std::string("ImageUrl"), imageUrl);
 }
 

@@ -40,8 +40,8 @@ namespace AlibabaCloud
 					float price;
 					std::string level;
 					std::string date;
-					std::string name;
 					std::string departureStation;
+					std::string name;
 				};
 
 
