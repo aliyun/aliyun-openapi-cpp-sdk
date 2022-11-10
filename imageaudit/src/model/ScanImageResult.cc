@@ -44,56 +44,46 @@ void ScanImageResult::parse(const std::string &payload)
 	for (auto dataNodeResultsResult : allResultsNode)
 	{
 		Data::Result resultObject;
-		if(!dataNodeResultsResult["TaskId"].isNull())
-			resultObject.taskId = dataNodeResultsResult["TaskId"].asString();
-		if(!dataNodeResultsResult["DataId"].isNull())
-			resultObject.dataId = dataNodeResultsResult["DataId"].asString();
 		if(!dataNodeResultsResult["ImageURL"].isNull())
 			resultObject.imageURL = dataNodeResultsResult["ImageURL"].asString();
+		if(!dataNodeResultsResult["DataId"].isNull())
+			resultObject.dataId = dataNodeResultsResult["DataId"].asString();
+		if(!dataNodeResultsResult["TaskId"].isNull())
+			resultObject.taskId = dataNodeResultsResult["TaskId"].asString();
 		auto allSubResultsNode = dataNodeResultsResult["SubResults"]["SubResult"];
 		for (auto dataNodeResultsResultSubResultsSubResult : allSubResultsNode)
 		{
 			Data::Result::SubResult subResultsObject;
 			if(!dataNodeResultsResultSubResultsSubResult["Suggestion"].isNull())
 				subResultsObject.suggestion = dataNodeResultsResultSubResultsSubResult["Suggestion"].asString();
-			if(!dataNodeResultsResultSubResultsSubResult["Rate"].isNull())
-				subResultsObject.rate = std::stof(dataNodeResultsResultSubResultsSubResult["Rate"].asString());
 			if(!dataNodeResultsResultSubResultsSubResult["Label"].isNull())
 				subResultsObject.label = dataNodeResultsResultSubResultsSubResult["Label"].asString();
 			if(!dataNodeResultsResultSubResultsSubResult["Scene"].isNull())
 				subResultsObject.scene = dataNodeResultsResultSubResultsSubResult["Scene"].asString();
-			auto allFramesNode = dataNodeResultsResultSubResultsSubResult["Frames"]["Frame"];
-			for (auto dataNodeResultsResultSubResultsSubResultFramesFrame : allFramesNode)
-			{
-				Data::Result::SubResult::Frame framesObject;
-				if(!dataNodeResultsResultSubResultsSubResultFramesFrame["Rate"].isNull())
-					framesObject.rate = std::stof(dataNodeResultsResultSubResultsSubResultFramesFrame["Rate"].asString());
-				if(!dataNodeResultsResultSubResultsSubResultFramesFrame["URL"].isNull())
-					framesObject.uRL = dataNodeResultsResultSubResultsSubResultFramesFrame["URL"].asString();
-				subResultsObject.frames.push_back(framesObject);
-			}
+			if(!dataNodeResultsResultSubResultsSubResult["Rate"].isNull())
+				subResultsObject.rate = std::stof(dataNodeResultsResultSubResultsSubResult["Rate"].asString());
 			auto allSfaceDataListNode = dataNodeResultsResultSubResultsSubResult["SfaceDataList"]["SfaceData"];
 			for (auto dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData : allSfaceDataListNode)
 			{
 				Data::Result::SubResult::SfaceData sfaceDataListObject;
-				if(!dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["X"].isNull())
-					sfaceDataListObject.x = std::stof(dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["X"].asString());
-				if(!dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["Y"].isNull())
-					sfaceDataListObject.y = std::stof(dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["Y"].asString());
-				if(!dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["Height"].isNull())
-					sfaceDataListObject.height = std::stof(dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["Height"].asString());
 				if(!dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["Width"].isNull())
 					sfaceDataListObject.width = std::stof(dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["Width"].asString());
+				if(!dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["Height"].isNull())
+					sfaceDataListObject.height = std::stof(dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["Height"].asString());
+				if(!dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["Y"].isNull())
+					sfaceDataListObject.y = std::stof(dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["Y"].asString());
+				if(!dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["X"].isNull())
+					sfaceDataListObject.x = std::stof(dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["X"].asString());
 				auto allFacesNode = dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceData["Faces"]["Face"];
 				for (auto dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceDataFacesFace : allFacesNode)
 				{
 					Data::Result::SubResult::SfaceData::Face facesObject;
-					if(!dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceDataFacesFace["Rate"].isNull())
-						facesObject.rate = std::stof(dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceDataFacesFace["Rate"].asString());
-					if(!dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceDataFacesFace["Id"].isNull())
-						facesObject.id = dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceDataFacesFace["Id"].asString();
 					if(!dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceDataFacesFace["Name"].isNull())
 						facesObject.name = dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceDataFacesFace["Name"].asString();
+					if(!dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceDataFacesFace["Id"].isNull())
+						facesObject.id = dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceDataFacesFace["Id"].asString();
+					if(!dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceDataFacesFace["Rate"].isNull())
+						facesObject.rate = std::stof(dataNodeResultsResultSubResultsSubResultSfaceDataListSfaceDataFacesFace["Rate"].asString());
 					sfaceDataListObject.faces.push_back(facesObject);
 				}
 				subResultsObject.sfaceDataList.push_back(sfaceDataListObject);
@@ -106,37 +96,47 @@ void ScanImageResult::parse(const std::string &payload)
 					hintWordsInfoListObject.context = dataNodeResultsResultSubResultsSubResultHintWordsInfoListHintWordsInfo["Context"].asString();
 				subResultsObject.hintWordsInfoList.push_back(hintWordsInfoListObject);
 			}
+			auto allProgramCodeDataListNode = dataNodeResultsResultSubResultsSubResult["ProgramCodeDataList"]["ProgramCodeData"];
+			for (auto dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData : allProgramCodeDataListNode)
+			{
+				Data::Result::SubResult::ProgramCodeData programCodeDataListObject;
+				if(!dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["Width"].isNull())
+					programCodeDataListObject.width = std::stof(dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["Width"].asString());
+				if(!dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["Height"].isNull())
+					programCodeDataListObject.height = std::stof(dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["Height"].asString());
+				if(!dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["Y"].isNull())
+					programCodeDataListObject.y = std::stof(dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["Y"].asString());
+				if(!dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["X"].isNull())
+					programCodeDataListObject.x = std::stof(dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["X"].asString());
+				subResultsObject.programCodeDataList.push_back(programCodeDataListObject);
+			}
+			auto allFramesNode = dataNodeResultsResultSubResultsSubResult["Frames"]["Frame"];
+			for (auto dataNodeResultsResultSubResultsSubResultFramesFrame : allFramesNode)
+			{
+				Data::Result::SubResult::Frame framesObject;
+				if(!dataNodeResultsResultSubResultsSubResultFramesFrame["URL"].isNull())
+					framesObject.uRL = dataNodeResultsResultSubResultsSubResultFramesFrame["URL"].asString();
+				if(!dataNodeResultsResultSubResultsSubResultFramesFrame["Rate"].isNull())
+					framesObject.rate = std::stof(dataNodeResultsResultSubResultsSubResultFramesFrame["Rate"].asString());
+				subResultsObject.frames.push_back(framesObject);
+			}
 			auto allLogoDataListNode = dataNodeResultsResultSubResultsSubResult["LogoDataList"]["LogoData"];
 			for (auto dataNodeResultsResultSubResultsSubResultLogoDataListLogoData : allLogoDataListNode)
 			{
 				Data::Result::SubResult::LogoData logoDataListObject;
 				if(!dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["Type"].isNull())
 					logoDataListObject.type = dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["Type"].asString();
-				if(!dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["X"].isNull())
-					logoDataListObject.x = std::stof(dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["X"].asString());
-				if(!dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["Y"].isNull())
-					logoDataListObject.y = std::stof(dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["Y"].asString());
-				if(!dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["Height"].isNull())
-					logoDataListObject.height = std::stof(dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["Height"].asString());
 				if(!dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["Width"].isNull())
 					logoDataListObject.width = std::stof(dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["Width"].asString());
+				if(!dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["Height"].isNull())
+					logoDataListObject.height = std::stof(dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["Height"].asString());
+				if(!dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["Y"].isNull())
+					logoDataListObject.y = std::stof(dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["Y"].asString());
 				if(!dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["Name"].isNull())
 					logoDataListObject.name = dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["Name"].asString();
+				if(!dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["X"].isNull())
+					logoDataListObject.x = std::stof(dataNodeResultsResultSubResultsSubResultLogoDataListLogoData["X"].asString());
 				subResultsObject.logoDataList.push_back(logoDataListObject);
-			}
-			auto allProgramCodeDataListNode = dataNodeResultsResultSubResultsSubResult["ProgramCodeDataList"]["ProgramCodeData"];
-			for (auto dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData : allProgramCodeDataListNode)
-			{
-				Data::Result::SubResult::ProgramCodeData programCodeDataListObject;
-				if(!dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["X"].isNull())
-					programCodeDataListObject.x = std::stof(dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["X"].asString());
-				if(!dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["Y"].isNull())
-					programCodeDataListObject.y = std::stof(dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["Y"].asString());
-				if(!dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["Height"].isNull())
-					programCodeDataListObject.height = std::stof(dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["Height"].asString());
-				if(!dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["Width"].isNull())
-					programCodeDataListObject.width = std::stof(dataNodeResultsResultSubResultsSubResultProgramCodeDataListProgramCodeData["Width"].asString());
-				subResultsObject.programCodeDataList.push_back(programCodeDataListObject);
 			}
 			auto allOCRDataList = value["OCRDataList"]["OCRData"];
 			for (auto value : allOCRDataList)
