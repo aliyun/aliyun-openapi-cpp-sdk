@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,122 +18,100 @@
 
 using AlibabaCloud::Videoenhan::Model::ChangeVideoSizeRequest;
 
-ChangeVideoSizeRequest::ChangeVideoSizeRequest() :
-	RpcServiceRequest("videoenhan", "2020-03-20", "ChangeVideoSize")
-{
-	setMethod(HttpRequest::Method::Post);
+ChangeVideoSizeRequest::ChangeVideoSizeRequest()
+    : RpcServiceRequest("videoenhan", "2020-03-20", "ChangeVideoSize") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ChangeVideoSizeRequest::~ChangeVideoSizeRequest()
-{}
+ChangeVideoSizeRequest::~ChangeVideoSizeRequest() {}
 
-int ChangeVideoSizeRequest::getHeight()const
-{
-	return height_;
+int ChangeVideoSizeRequest::getHeight() const {
+  return height_;
 }
 
-void ChangeVideoSizeRequest::setHeight(int height)
-{
-	height_ = height;
-	setBodyParameter("Height", std::to_string(height));
+void ChangeVideoSizeRequest::setHeight(int height) {
+  height_ = height;
+  setBodyParameter(std::string("Height"), std::to_string(height));
 }
 
-int ChangeVideoSizeRequest::getB()const
-{
-	return b_;
+int ChangeVideoSizeRequest::getB() const {
+  return b_;
 }
 
-void ChangeVideoSizeRequest::setB(int b)
-{
-	b_ = b;
-	setBodyParameter("B", std::to_string(b));
+void ChangeVideoSizeRequest::setB(int b) {
+  b_ = b;
+  setBodyParameter(std::string("B"), std::to_string(b));
 }
 
-std::string ChangeVideoSizeRequest::getFillType()const
-{
-	return fillType_;
+std::string ChangeVideoSizeRequest::getFillType() const {
+  return fillType_;
 }
 
-void ChangeVideoSizeRequest::setFillType(const std::string& fillType)
-{
-	fillType_ = fillType;
-	setBodyParameter("FillType", fillType);
+void ChangeVideoSizeRequest::setFillType(const std::string &fillType) {
+  fillType_ = fillType;
+  setBodyParameter(std::string("FillType"), fillType);
 }
 
-int ChangeVideoSizeRequest::getG()const
-{
-	return g_;
+int ChangeVideoSizeRequest::getG() const {
+  return g_;
 }
 
-void ChangeVideoSizeRequest::setG(int g)
-{
-	g_ = g;
-	setBodyParameter("G", std::to_string(g));
+void ChangeVideoSizeRequest::setG(int g) {
+  g_ = g;
+  setBodyParameter(std::string("G"), std::to_string(g));
 }
 
-std::string ChangeVideoSizeRequest::getCropType()const
-{
-	return cropType_;
+std::string ChangeVideoSizeRequest::getCropType() const {
+  return cropType_;
 }
 
-void ChangeVideoSizeRequest::setCropType(const std::string& cropType)
-{
-	cropType_ = cropType;
-	setBodyParameter("CropType", cropType);
+void ChangeVideoSizeRequest::setCropType(const std::string &cropType) {
+  cropType_ = cropType;
+  setBodyParameter(std::string("CropType"), cropType);
 }
 
-bool ChangeVideoSizeRequest::getAsync()const
-{
-	return async_;
+bool ChangeVideoSizeRequest::getAsync() const {
+  return async_;
 }
 
-void ChangeVideoSizeRequest::setAsync(bool async)
-{
-	async_ = async;
-	setBodyParameter("Async", async ? "true" : "false");
+void ChangeVideoSizeRequest::setAsync(bool async) {
+  async_ = async;
+  setBodyParameter(std::string("Async"), async ? "true" : "false");
 }
 
-int ChangeVideoSizeRequest::getR()const
-{
-	return r_;
+int ChangeVideoSizeRequest::getR() const {
+  return r_;
 }
 
-void ChangeVideoSizeRequest::setR(int r)
-{
-	r_ = r;
-	setBodyParameter("R", std::to_string(r));
+void ChangeVideoSizeRequest::setR(int r) {
+  r_ = r;
+  setBodyParameter(std::string("R"), std::to_string(r));
 }
 
-std::string ChangeVideoSizeRequest::getVideoUrl()const
-{
-	return videoUrl_;
+std::string ChangeVideoSizeRequest::getVideoUrl() const {
+  return videoUrl_;
 }
 
-void ChangeVideoSizeRequest::setVideoUrl(const std::string& videoUrl)
-{
-	videoUrl_ = videoUrl;
-	setBodyParameter("VideoUrl", videoUrl);
+void ChangeVideoSizeRequest::setVideoUrl(const std::string &videoUrl) {
+  videoUrl_ = videoUrl;
+  setBodyParameter(std::string("VideoUrl"), videoUrl);
 }
 
-int ChangeVideoSizeRequest::getWidth()const
-{
-	return width_;
+int ChangeVideoSizeRequest::getWidth() const {
+  return width_;
 }
 
-void ChangeVideoSizeRequest::setWidth(int width)
-{
-	width_ = width;
-	setBodyParameter("Width", std::to_string(width));
+void ChangeVideoSizeRequest::setWidth(int width) {
+  width_ = width;
+  setBodyParameter(std::string("Width"), std::to_string(width));
 }
 
-float ChangeVideoSizeRequest::getTightness()const
-{
-	return tightness_;
+float ChangeVideoSizeRequest::getTightness() const {
+  return tightness_;
 }
 
-void ChangeVideoSizeRequest::setTightness(float tightness)
-{
-	tightness_ = tightness;
-	setBodyParameter("Tightness", std::to_string(tightness));
+void ChangeVideoSizeRequest::setTightness(float tightness) {
+  tightness_ = tightness;
+  setBodyParameter(std::string("Tightness"), std::to_string(tightness));
 }
 

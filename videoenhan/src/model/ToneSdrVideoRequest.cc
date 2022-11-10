@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Videoenhan::Model::ToneSdrVideoRequest;
 
-ToneSdrVideoRequest::ToneSdrVideoRequest() :
-	RpcServiceRequest("videoenhan", "2020-03-20", "ToneSdrVideo")
-{
-	setMethod(HttpRequest::Method::Post);
+ToneSdrVideoRequest::ToneSdrVideoRequest()
+    : RpcServiceRequest("videoenhan", "2020-03-20", "ToneSdrVideo") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ToneSdrVideoRequest::~ToneSdrVideoRequest()
-{}
+ToneSdrVideoRequest::~ToneSdrVideoRequest() {}
 
-int ToneSdrVideoRequest::getBitrate()const
-{
-	return bitrate_;
+int ToneSdrVideoRequest::getBitrate() const {
+  return bitrate_;
 }
 
-void ToneSdrVideoRequest::setBitrate(int bitrate)
-{
-	bitrate_ = bitrate;
-	setBodyParameter("Bitrate", std::to_string(bitrate));
+void ToneSdrVideoRequest::setBitrate(int bitrate) {
+  bitrate_ = bitrate;
+  setBodyParameter(std::string("Bitrate"), std::to_string(bitrate));
 }
 
-std::string ToneSdrVideoRequest::getRecolorModel()const
-{
-	return recolorModel_;
+std::string ToneSdrVideoRequest::getRecolorModel() const {
+  return recolorModel_;
 }
 
-void ToneSdrVideoRequest::setRecolorModel(const std::string& recolorModel)
-{
-	recolorModel_ = recolorModel;
-	setBodyParameter("RecolorModel", recolorModel);
+void ToneSdrVideoRequest::setRecolorModel(const std::string &recolorModel) {
+  recolorModel_ = recolorModel;
+  setBodyParameter(std::string("RecolorModel"), recolorModel);
 }
 
-bool ToneSdrVideoRequest::getAsync()const
-{
-	return async_;
+bool ToneSdrVideoRequest::getAsync() const {
+  return async_;
 }
 
-void ToneSdrVideoRequest::setAsync(bool async)
-{
-	async_ = async;
-	setBodyParameter("Async", async ? "true" : "false");
+void ToneSdrVideoRequest::setAsync(bool async) {
+  async_ = async;
+  setBodyParameter(std::string("Async"), async ? "true" : "false");
 }
 
-std::string ToneSdrVideoRequest::getVideoURL()const
-{
-	return videoURL_;
+std::string ToneSdrVideoRequest::getVideoURL() const {
+  return videoURL_;
 }
 
-void ToneSdrVideoRequest::setVideoURL(const std::string& videoURL)
-{
-	videoURL_ = videoURL;
-	setBodyParameter("VideoURL", videoURL);
+void ToneSdrVideoRequest::setVideoURL(const std::string &videoURL) {
+  videoURL_ = videoURL;
+  setBodyParameter(std::string("VideoURL"), videoURL);
 }
 

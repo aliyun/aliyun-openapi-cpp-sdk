@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Videoenhan::Model::AbstractEcommerceVideoRequest;
 
-AbstractEcommerceVideoRequest::AbstractEcommerceVideoRequest() :
-	RpcServiceRequest("videoenhan", "2020-03-20", "AbstractEcommerceVideo")
-{
-	setMethod(HttpRequest::Method::Post);
+AbstractEcommerceVideoRequest::AbstractEcommerceVideoRequest()
+    : RpcServiceRequest("videoenhan", "2020-03-20", "AbstractEcommerceVideo") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-AbstractEcommerceVideoRequest::~AbstractEcommerceVideoRequest()
-{}
+AbstractEcommerceVideoRequest::~AbstractEcommerceVideoRequest() {}
 
-float AbstractEcommerceVideoRequest::getDuration()const
-{
-	return duration_;
+float AbstractEcommerceVideoRequest::getDuration() const {
+  return duration_;
 }
 
-void AbstractEcommerceVideoRequest::setDuration(float duration)
-{
-	duration_ = duration;
-	setBodyParameter("Duration", std::to_string(duration));
+void AbstractEcommerceVideoRequest::setDuration(float duration) {
+  duration_ = duration;
+  setBodyParameter(std::string("Duration"), std::to_string(duration));
 }
 
-int AbstractEcommerceVideoRequest::getHeight()const
-{
-	return height_;
+int AbstractEcommerceVideoRequest::getHeight() const {
+  return height_;
 }
 
-void AbstractEcommerceVideoRequest::setHeight(int height)
-{
-	height_ = height;
-	setBodyParameter("Height", std::to_string(height));
+void AbstractEcommerceVideoRequest::setHeight(int height) {
+  height_ = height;
+  setBodyParameter(std::string("Height"), std::to_string(height));
 }
 
-bool AbstractEcommerceVideoRequest::getAsync()const
-{
-	return async_;
+bool AbstractEcommerceVideoRequest::getAsync() const {
+  return async_;
 }
 
-void AbstractEcommerceVideoRequest::setAsync(bool async)
-{
-	async_ = async;
-	setBodyParameter("Async", async ? "true" : "false");
+void AbstractEcommerceVideoRequest::setAsync(bool async) {
+  async_ = async;
+  setBodyParameter(std::string("Async"), async ? "true" : "false");
 }
 
-std::string AbstractEcommerceVideoRequest::getVideoUrl()const
-{
-	return videoUrl_;
+std::string AbstractEcommerceVideoRequest::getVideoUrl() const {
+  return videoUrl_;
 }
 
-void AbstractEcommerceVideoRequest::setVideoUrl(const std::string& videoUrl)
-{
-	videoUrl_ = videoUrl;
-	setBodyParameter("VideoUrl", videoUrl);
+void AbstractEcommerceVideoRequest::setVideoUrl(const std::string &videoUrl) {
+  videoUrl_ = videoUrl;
+  setBodyParameter(std::string("VideoUrl"), videoUrl);
 }
 
-int AbstractEcommerceVideoRequest::getWidth()const
-{
-	return width_;
+int AbstractEcommerceVideoRequest::getWidth() const {
+  return width_;
 }
 
-void AbstractEcommerceVideoRequest::setWidth(int width)
-{
-	width_ = width;
-	setBodyParameter("Width", std::to_string(width));
+void AbstractEcommerceVideoRequest::setWidth(int width) {
+  width_ = width;
+  setBodyParameter(std::string("Width"), std::to_string(width));
 }
 

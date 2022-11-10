@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Videoenhan::Model::ConvertHdrVideoRequest;
 
-ConvertHdrVideoRequest::ConvertHdrVideoRequest() :
-	RpcServiceRequest("videoenhan", "2020-03-20", "ConvertHdrVideo")
-{
-	setMethod(HttpRequest::Method::Post);
+ConvertHdrVideoRequest::ConvertHdrVideoRequest()
+    : RpcServiceRequest("videoenhan", "2020-03-20", "ConvertHdrVideo") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ConvertHdrVideoRequest::~ConvertHdrVideoRequest()
-{}
+ConvertHdrVideoRequest::~ConvertHdrVideoRequest() {}
 
-std::string ConvertHdrVideoRequest::getHDRFormat()const
-{
-	return hDRFormat_;
+std::string ConvertHdrVideoRequest::getHDRFormat() const {
+  return hDRFormat_;
 }
 
-void ConvertHdrVideoRequest::setHDRFormat(const std::string& hDRFormat)
-{
-	hDRFormat_ = hDRFormat;
-	setBodyParameter("HDRFormat", hDRFormat);
+void ConvertHdrVideoRequest::setHDRFormat(const std::string &hDRFormat) {
+  hDRFormat_ = hDRFormat;
+  setBodyParameter(std::string("HDRFormat"), hDRFormat);
 }
 
-int ConvertHdrVideoRequest::getMaxIlluminance()const
-{
-	return maxIlluminance_;
+int ConvertHdrVideoRequest::getMaxIlluminance() const {
+  return maxIlluminance_;
 }
 
-void ConvertHdrVideoRequest::setMaxIlluminance(int maxIlluminance)
-{
-	maxIlluminance_ = maxIlluminance;
-	setBodyParameter("MaxIlluminance", std::to_string(maxIlluminance));
+void ConvertHdrVideoRequest::setMaxIlluminance(int maxIlluminance) {
+  maxIlluminance_ = maxIlluminance;
+  setBodyParameter(std::string("MaxIlluminance"), std::to_string(maxIlluminance));
 }
 
-int ConvertHdrVideoRequest::getBitrate()const
-{
-	return bitrate_;
+int ConvertHdrVideoRequest::getBitrate() const {
+  return bitrate_;
 }
 
-void ConvertHdrVideoRequest::setBitrate(int bitrate)
-{
-	bitrate_ = bitrate;
-	setBodyParameter("Bitrate", std::to_string(bitrate));
+void ConvertHdrVideoRequest::setBitrate(int bitrate) {
+  bitrate_ = bitrate;
+  setBodyParameter(std::string("Bitrate"), std::to_string(bitrate));
 }
 
-bool ConvertHdrVideoRequest::getAsync()const
-{
-	return async_;
+bool ConvertHdrVideoRequest::getAsync() const {
+  return async_;
 }
 
-void ConvertHdrVideoRequest::setAsync(bool async)
-{
-	async_ = async;
-	setBodyParameter("Async", async ? "true" : "false");
+void ConvertHdrVideoRequest::setAsync(bool async) {
+  async_ = async;
+  setBodyParameter(std::string("Async"), async ? "true" : "false");
 }
 
-std::string ConvertHdrVideoRequest::getVideoURL()const
-{
-	return videoURL_;
+std::string ConvertHdrVideoRequest::getVideoURL() const {
+  return videoURL_;
 }
 
-void ConvertHdrVideoRequest::setVideoURL(const std::string& videoURL)
-{
-	videoURL_ = videoURL;
-	setBodyParameter("VideoURL", videoURL);
+void ConvertHdrVideoRequest::setVideoURL(const std::string &videoURL) {
+  videoURL_ = videoURL;
+  setBodyParameter(std::string("VideoURL"), videoURL);
 }
 
