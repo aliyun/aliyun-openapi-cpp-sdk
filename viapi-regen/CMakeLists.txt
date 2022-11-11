@@ -57,6 +57,8 @@ set(viapi-regen_public_header_model
 	include/alibabacloud/viapi-regen/model/DeleteWorkspaceResult.h
 	include/alibabacloud/viapi-regen/model/DisableDataReflowRequest.h
 	include/alibabacloud/viapi-regen/model/DisableDataReflowResult.h
+	include/alibabacloud/viapi-regen/model/DownloadDatasetRequest.h
+	include/alibabacloud/viapi-regen/model/DownloadDatasetResult.h
 	include/alibabacloud/viapi-regen/model/DownloadFileNameListRequest.h
 	include/alibabacloud/viapi-regen/model/DownloadFileNameListResult.h
 	include/alibabacloud/viapi-regen/model/DownloadLabelFileRequest.h
@@ -75,6 +77,10 @@ set(viapi-regen_public_header_model
 	include/alibabacloud/viapi-regen/model/GetLabelsetResult.h
 	include/alibabacloud/viapi-regen/model/GetServiceRequest.h
 	include/alibabacloud/viapi-regen/model/GetServiceResult.h
+	include/alibabacloud/viapi-regen/model/GetServiceInvokeRequest.h
+	include/alibabacloud/viapi-regen/model/GetServiceInvokeResult.h
+	include/alibabacloud/viapi-regen/model/GetServiceQpsRequest.h
+	include/alibabacloud/viapi-regen/model/GetServiceQpsResult.h
 	include/alibabacloud/viapi-regen/model/GetTrainModelRequest.h
 	include/alibabacloud/viapi-regen/model/GetTrainModelResult.h
 	include/alibabacloud/viapi-regen/model/GetTrainTaskRequest.h
@@ -160,6 +166,8 @@ set(viapi-regen_src
 	src/model/DeleteWorkspaceResult.cc
 	src/model/DisableDataReflowRequest.cc
 	src/model/DisableDataReflowResult.cc
+	src/model/DownloadDatasetRequest.cc
+	src/model/DownloadDatasetResult.cc
 	src/model/DownloadFileNameListRequest.cc
 	src/model/DownloadFileNameListResult.cc
 	src/model/DownloadLabelFileRequest.cc
@@ -178,6 +186,10 @@ set(viapi-regen_src
 	src/model/GetLabelsetResult.cc
 	src/model/GetServiceRequest.cc
 	src/model/GetServiceResult.cc
+	src/model/GetServiceInvokeRequest.cc
+	src/model/GetServiceInvokeResult.cc
+	src/model/GetServiceQpsRequest.cc
+	src/model/GetServiceQpsResult.cc
 	src/model/GetTrainModelRequest.cc
 	src/model/GetTrainModelResult.cc
 	src/model/GetTrainTaskRequest.cc

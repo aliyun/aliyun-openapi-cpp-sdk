@@ -58,6 +58,8 @@
 #include "model/DeleteWorkspaceResult.h"
 #include "model/DisableDataReflowRequest.h"
 #include "model/DisableDataReflowResult.h"
+#include "model/DownloadDatasetRequest.h"
+#include "model/DownloadDatasetResult.h"
 #include "model/DownloadFileNameListRequest.h"
 #include "model/DownloadFileNameListResult.h"
 #include "model/DownloadLabelFileRequest.h"
@@ -76,6 +78,10 @@
 #include "model/GetLabelsetResult.h"
 #include "model/GetServiceRequest.h"
 #include "model/GetServiceResult.h"
+#include "model/GetServiceInvokeRequest.h"
+#include "model/GetServiceInvokeResult.h"
+#include "model/GetServiceQpsRequest.h"
+#include "model/GetServiceQpsResult.h"
 #include "model/GetTrainModelRequest.h"
 #include "model/GetTrainModelResult.h"
 #include "model/GetTrainTaskRequest.h"
@@ -185,6 +191,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DisableDataReflowResult> DisableDataReflowOutcome;
 			typedef std::future<DisableDataReflowOutcome> DisableDataReflowOutcomeCallable;
 			typedef std::function<void(const Viapi_regenClient*, const Model::DisableDataReflowRequest&, const DisableDataReflowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableDataReflowAsyncHandler;
+			typedef Outcome<Error, Model::DownloadDatasetResult> DownloadDatasetOutcome;
+			typedef std::future<DownloadDatasetOutcome> DownloadDatasetOutcomeCallable;
+			typedef std::function<void(const Viapi_regenClient*, const Model::DownloadDatasetRequest&, const DownloadDatasetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DownloadDatasetAsyncHandler;
 			typedef Outcome<Error, Model::DownloadFileNameListResult> DownloadFileNameListOutcome;
 			typedef std::future<DownloadFileNameListOutcome> DownloadFileNameListOutcomeCallable;
 			typedef std::function<void(const Viapi_regenClient*, const Model::DownloadFileNameListRequest&, const DownloadFileNameListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DownloadFileNameListAsyncHandler;
@@ -212,6 +221,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetServiceResult> GetServiceOutcome;
 			typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
 			typedef std::function<void(const Viapi_regenClient*, const Model::GetServiceRequest&, const GetServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceAsyncHandler;
+			typedef Outcome<Error, Model::GetServiceInvokeResult> GetServiceInvokeOutcome;
+			typedef std::future<GetServiceInvokeOutcome> GetServiceInvokeOutcomeCallable;
+			typedef std::function<void(const Viapi_regenClient*, const Model::GetServiceInvokeRequest&, const GetServiceInvokeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceInvokeAsyncHandler;
+			typedef Outcome<Error, Model::GetServiceQpsResult> GetServiceQpsOutcome;
+			typedef std::future<GetServiceQpsOutcome> GetServiceQpsOutcomeCallable;
+			typedef std::function<void(const Viapi_regenClient*, const Model::GetServiceQpsRequest&, const GetServiceQpsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceQpsAsyncHandler;
 			typedef Outcome<Error, Model::GetTrainModelResult> GetTrainModelOutcome;
 			typedef std::future<GetTrainModelOutcome> GetTrainModelOutcomeCallable;
 			typedef std::function<void(const Viapi_regenClient*, const Model::GetTrainModelRequest&, const GetTrainModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTrainModelAsyncHandler;
@@ -340,6 +355,9 @@ namespace AlibabaCloud
 			DisableDataReflowOutcome disableDataReflow(const Model::DisableDataReflowRequest &request)const;
 			void disableDataReflowAsync(const Model::DisableDataReflowRequest& request, const DisableDataReflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableDataReflowOutcomeCallable disableDataReflowCallable(const Model::DisableDataReflowRequest& request) const;
+			DownloadDatasetOutcome downloadDataset(const Model::DownloadDatasetRequest &request)const;
+			void downloadDatasetAsync(const Model::DownloadDatasetRequest& request, const DownloadDatasetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DownloadDatasetOutcomeCallable downloadDatasetCallable(const Model::DownloadDatasetRequest& request) const;
 			DownloadFileNameListOutcome downloadFileNameList(const Model::DownloadFileNameListRequest &request)const;
 			void downloadFileNameListAsync(const Model::DownloadFileNameListRequest& request, const DownloadFileNameListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DownloadFileNameListOutcomeCallable downloadFileNameListCallable(const Model::DownloadFileNameListRequest& request) const;
@@ -367,6 +385,12 @@ namespace AlibabaCloud
 			GetServiceOutcome getService(const Model::GetServiceRequest &request)const;
 			void getServiceAsync(const Model::GetServiceRequest& request, const GetServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetServiceOutcomeCallable getServiceCallable(const Model::GetServiceRequest& request) const;
+			GetServiceInvokeOutcome getServiceInvoke(const Model::GetServiceInvokeRequest &request)const;
+			void getServiceInvokeAsync(const Model::GetServiceInvokeRequest& request, const GetServiceInvokeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetServiceInvokeOutcomeCallable getServiceInvokeCallable(const Model::GetServiceInvokeRequest& request) const;
+			GetServiceQpsOutcome getServiceQps(const Model::GetServiceQpsRequest &request)const;
+			void getServiceQpsAsync(const Model::GetServiceQpsRequest& request, const GetServiceQpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetServiceQpsOutcomeCallable getServiceQpsCallable(const Model::GetServiceQpsRequest& request) const;
 			GetTrainModelOutcome getTrainModel(const Model::GetTrainModelRequest &request)const;
 			void getTrainModelAsync(const Model::GetTrainModelRequest& request, const GetTrainModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTrainModelOutcomeCallable getTrainModelCallable(const Model::GetTrainModelRequest& request) const;

@@ -699,6 +699,42 @@ Viapi_regenClient::DisableDataReflowOutcomeCallable Viapi_regenClient::disableDa
 	return task->get_future();
 }
 
+Viapi_regenClient::DownloadDatasetOutcome Viapi_regenClient::downloadDataset(const DownloadDatasetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DownloadDatasetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DownloadDatasetOutcome(DownloadDatasetResult(outcome.result()));
+	else
+		return DownloadDatasetOutcome(outcome.error());
+}
+
+void Viapi_regenClient::downloadDatasetAsync(const DownloadDatasetRequest& request, const DownloadDatasetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, downloadDataset(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Viapi_regenClient::DownloadDatasetOutcomeCallable Viapi_regenClient::downloadDatasetCallable(const DownloadDatasetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DownloadDatasetOutcome()>>(
+			[this, request]()
+			{
+			return this->downloadDataset(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Viapi_regenClient::DownloadFileNameListOutcome Viapi_regenClient::downloadFileNameList(const DownloadFileNameListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1017,6 +1053,78 @@ Viapi_regenClient::GetServiceOutcomeCallable Viapi_regenClient::getServiceCallab
 			[this, request]()
 			{
 			return this->getService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Viapi_regenClient::GetServiceInvokeOutcome Viapi_regenClient::getServiceInvoke(const GetServiceInvokeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetServiceInvokeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetServiceInvokeOutcome(GetServiceInvokeResult(outcome.result()));
+	else
+		return GetServiceInvokeOutcome(outcome.error());
+}
+
+void Viapi_regenClient::getServiceInvokeAsync(const GetServiceInvokeRequest& request, const GetServiceInvokeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getServiceInvoke(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Viapi_regenClient::GetServiceInvokeOutcomeCallable Viapi_regenClient::getServiceInvokeCallable(const GetServiceInvokeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetServiceInvokeOutcome()>>(
+			[this, request]()
+			{
+			return this->getServiceInvoke(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Viapi_regenClient::GetServiceQpsOutcome Viapi_regenClient::getServiceQps(const GetServiceQpsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetServiceQpsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetServiceQpsOutcome(GetServiceQpsResult(outcome.result()));
+	else
+		return GetServiceQpsOutcome(outcome.error());
+}
+
+void Viapi_regenClient::getServiceQpsAsync(const GetServiceQpsRequest& request, const GetServiceQpsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getServiceQps(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Viapi_regenClient::GetServiceQpsOutcomeCallable Viapi_regenClient::getServiceQpsCallable(const GetServiceQpsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetServiceQpsOutcome()>>(
+			[this, request]()
+			{
+			return this->getServiceQps(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
