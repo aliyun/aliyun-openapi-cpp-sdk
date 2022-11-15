@@ -303,6 +303,42 @@ HitsdbClient::ListTagResourcesOutcomeCallable HitsdbClient::listTagResourcesCall
 	return task->get_future();
 }
 
+HitsdbClient::ModifyInstancePayTypeOutcome HitsdbClient::modifyInstancePayType(const ModifyInstancePayTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstancePayTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstancePayTypeOutcome(ModifyInstancePayTypeResult(outcome.result()));
+	else
+		return ModifyInstancePayTypeOutcome(outcome.error());
+}
+
+void HitsdbClient::modifyInstancePayTypeAsync(const ModifyInstancePayTypeRequest& request, const ModifyInstancePayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstancePayType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::ModifyInstancePayTypeOutcomeCallable HitsdbClient::modifyInstancePayTypeCallable(const ModifyInstancePayTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstancePayTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstancePayType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 HitsdbClient::ReleaseLindormInstanceOutcome HitsdbClient::releaseLindormInstance(const ReleaseLindormInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +369,42 @@ HitsdbClient::ReleaseLindormInstanceOutcomeCallable HitsdbClient::releaseLindorm
 			[this, request]()
 			{
 			return this->releaseLindormInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+HitsdbClient::RenewLindormInstanceOutcome HitsdbClient::renewLindormInstance(const RenewLindormInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RenewLindormInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RenewLindormInstanceOutcome(RenewLindormInstanceResult(outcome.result()));
+	else
+		return RenewLindormInstanceOutcome(outcome.error());
+}
+
+void HitsdbClient::renewLindormInstanceAsync(const RenewLindormInstanceRequest& request, const RenewLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, renewLindormInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+HitsdbClient::RenewLindormInstanceOutcomeCallable HitsdbClient::renewLindormInstanceCallable(const RenewLindormInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RenewLindormInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->renewLindormInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -36,8 +36,12 @@
 #include "model/GetLindormInstanceListResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
+#include "model/ModifyInstancePayTypeRequest.h"
+#include "model/ModifyInstancePayTypeResult.h"
 #include "model/ReleaseLindormInstanceRequest.h"
 #include "model/ReleaseLindormInstanceResult.h"
+#include "model/RenewLindormInstanceRequest.h"
+#include "model/RenewLindormInstanceResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
 #include "model/UntagResourcesRequest.h"
@@ -76,9 +80,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::ModifyInstancePayTypeResult> ModifyInstancePayTypeOutcome;
+			typedef std::future<ModifyInstancePayTypeOutcome> ModifyInstancePayTypeOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::ModifyInstancePayTypeRequest&, const ModifyInstancePayTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstancePayTypeAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseLindormInstanceResult> ReleaseLindormInstanceOutcome;
 			typedef std::future<ReleaseLindormInstanceOutcome> ReleaseLindormInstanceOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::ReleaseLindormInstanceRequest&, const ReleaseLindormInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseLindormInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RenewLindormInstanceResult> RenewLindormInstanceOutcome;
+			typedef std::future<RenewLindormInstanceOutcome> RenewLindormInstanceOutcomeCallable;
+			typedef std::function<void(const HitsdbClient*, const Model::RenewLindormInstanceRequest&, const RenewLindormInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenewLindormInstanceAsyncHandler;
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const HitsdbClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
@@ -117,9 +127,15 @@ namespace AlibabaCloud
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
+			ModifyInstancePayTypeOutcome modifyInstancePayType(const Model::ModifyInstancePayTypeRequest &request)const;
+			void modifyInstancePayTypeAsync(const Model::ModifyInstancePayTypeRequest& request, const ModifyInstancePayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyInstancePayTypeOutcomeCallable modifyInstancePayTypeCallable(const Model::ModifyInstancePayTypeRequest& request) const;
 			ReleaseLindormInstanceOutcome releaseLindormInstance(const Model::ReleaseLindormInstanceRequest &request)const;
 			void releaseLindormInstanceAsync(const Model::ReleaseLindormInstanceRequest& request, const ReleaseLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseLindormInstanceOutcomeCallable releaseLindormInstanceCallable(const Model::ReleaseLindormInstanceRequest& request) const;
+			RenewLindormInstanceOutcome renewLindormInstance(const Model::RenewLindormInstanceRequest &request)const;
+			void renewLindormInstanceAsync(const Model::RenewLindormInstanceRequest& request, const RenewLindormInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RenewLindormInstanceOutcomeCallable renewLindormInstanceCallable(const Model::RenewLindormInstanceRequest& request) const;
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;

@@ -42,6 +42,8 @@ public:
 	void setSecurityToken(const std::string &securityToken);
 	int getTsdbNum() const;
 	void setTsdbNum(int tsdbNum);
+	std::string getPrimaryVSwitchId() const;
+	void setPrimaryVSwitchId(const std::string &primaryVSwitchId);
 	int getSolrNum() const;
 	void setSolrNum(int solrNum);
 	std::string getInstanceStorage() const;
@@ -66,6 +68,8 @@ public:
 	void setMultiZoneCombination(const std::string &multiZoneCombination);
 	std::string getTsdbSpec() const;
 	void setTsdbSpec(const std::string &tsdbSpec);
+	std::string getPrimaryZoneId() const;
+	void setPrimaryZoneId(const std::string &primaryZoneId);
 	std::string getFilestoreSpec() const;
 	void setFilestoreSpec(const std::string &filestoreSpec);
 	std::string getAccessKeyId() const;
@@ -116,6 +120,7 @@ private:
 	std::string logSpec_;
 	std::string securityToken_;
 	int tsdbNum_;
+	std::string primaryVSwitchId_;
 	int solrNum_;
 	std::string instanceStorage_;
 	long ownerId_;
@@ -128,6 +133,7 @@ private:
 	std::string clientToken_;
 	std::string multiZoneCombination_;
 	std::string tsdbSpec_;
+	std::string primaryZoneId_;
 	std::string filestoreSpec_;
 	std::string accessKeyId_;
 	std::string duration_;

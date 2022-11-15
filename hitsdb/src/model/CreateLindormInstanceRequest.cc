@@ -79,6 +79,15 @@ void CreateLindormInstanceRequest::setTsdbNum(int tsdbNum) {
   setParameter(std::string("TsdbNum"), std::to_string(tsdbNum));
 }
 
+std::string CreateLindormInstanceRequest::getPrimaryVSwitchId() const {
+  return primaryVSwitchId_;
+}
+
+void CreateLindormInstanceRequest::setPrimaryVSwitchId(const std::string &primaryVSwitchId) {
+  primaryVSwitchId_ = primaryVSwitchId;
+  setParameter(std::string("PrimaryVSwitchId"), primaryVSwitchId);
+}
+
 int CreateLindormInstanceRequest::getSolrNum() const {
   return solrNum_;
 }
@@ -185,6 +194,15 @@ std::string CreateLindormInstanceRequest::getTsdbSpec() const {
 void CreateLindormInstanceRequest::setTsdbSpec(const std::string &tsdbSpec) {
   tsdbSpec_ = tsdbSpec;
   setParameter(std::string("TsdbSpec"), tsdbSpec);
+}
+
+std::string CreateLindormInstanceRequest::getPrimaryZoneId() const {
+  return primaryZoneId_;
+}
+
+void CreateLindormInstanceRequest::setPrimaryZoneId(const std::string &primaryZoneId) {
+  primaryZoneId_ = primaryZoneId;
+  setParameter(std::string("PrimaryZoneId"), primaryZoneId);
 }
 
 std::string CreateLindormInstanceRequest::getFilestoreSpec() const {
