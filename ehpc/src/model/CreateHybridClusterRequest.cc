@@ -97,6 +97,18 @@ void CreateHybridClusterRequest::setPassword(const std::string &password) {
   setParameter(std::string("Password"), password);
 }
 
+CreateHybridClusterRequest::WinAdPar CreateHybridClusterRequest::getWinAdPar() const {
+  return winAdPar_;
+}
+
+void CreateHybridClusterRequest::setWinAdPar(const CreateHybridClusterRequest::WinAdPar &winAdPar) {
+  winAdPar_ = winAdPar;
+  setParameter(std::string("WinAdPar") + ".AdUser", winAdPar.adUser);
+  setParameter(std::string("WinAdPar") + ".AdUserPasswd", winAdPar.adUserPasswd);
+  setParameter(std::string("WinAdPar") + ".AdIp", winAdPar.adIp);
+  setParameter(std::string("WinAdPar") + ".AdDc", winAdPar.adDc);
+}
+
 float CreateHybridClusterRequest::getComputeSpotPriceLimit() const {
   return computeSpotPriceLimit_;
 }
@@ -246,6 +258,16 @@ void CreateHybridClusterRequest::setEcsOrderComputeInstanceType(const std::strin
   setParameter(std::string("EcsOrder.Compute.InstanceType"), ecsOrderComputeInstanceType);
 }
 
+CreateHybridClusterRequest::OpenldapPar CreateHybridClusterRequest::getOpenldapPar() const {
+  return openldapPar_;
+}
+
+void CreateHybridClusterRequest::setOpenldapPar(const CreateHybridClusterRequest::OpenldapPar &openldapPar) {
+  openldapPar_ = openldapPar;
+  setParameter(std::string("OpenldapPar") + ".BaseDn", openldapPar.baseDn);
+  setParameter(std::string("OpenldapPar") + ".LdapServerIp", openldapPar.ldapServerIp);
+}
+
 std::string CreateHybridClusterRequest::getJobQueue() const {
   return jobQueue_;
 }
@@ -334,6 +356,15 @@ void CreateHybridClusterRequest::setNodes(const std::vector<CreateHybridClusterR
     setParameter(nodesObjStr + ".AccountType", nodesObj.accountType);
     setParameter(nodesObjStr + ".Dir", nodesObj.dir);
   }
+}
+
+std::string CreateHybridClusterRequest::getPlugin() const {
+  return plugin_;
+}
+
+void CreateHybridClusterRequest::setPlugin(const std::string &plugin) {
+  plugin_ = plugin;
+  setParameter(std::string("Plugin"), plugin);
 }
 
 std::vector<CreateHybridClusterRequest::Application> CreateHybridClusterRequest::getApplication() const {

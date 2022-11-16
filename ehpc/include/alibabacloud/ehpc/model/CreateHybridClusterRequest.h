@@ -28,9 +28,19 @@ namespace EHPC {
 namespace Model {
 class ALIBABACLOUD_EHPC_EXPORT CreateHybridClusterRequest : public RpcServiceRequest {
 public:
+	struct WinAdPar {
+		std::string adUser;
+		std::string adUserPasswd;
+		std::string adIp;
+		std::string adDc;
+	};
 	struct PostInstallScript {
 		std::string args;
 		std::string url;
+	};
+	struct OpenldapPar {
+		std::string baseDn;
+		std::string ldapServerIp;
 	};
 	struct Nodes {
 		std::string ipAddress;
@@ -61,6 +71,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getPassword() const;
 	void setPassword(const std::string &password);
+	WinAdPar getWinAdPar() const;
+	void setWinAdPar(const WinAdPar &winAdPar);
 	float getComputeSpotPriceLimit() const;
 	void setComputeSpotPriceLimit(float computeSpotPriceLimit);
 	std::string getOnPremiseVolumeLocalPath() const;
@@ -93,6 +105,8 @@ public:
 	void setDescription(const std::string &description);
 	std::string getEcsOrderComputeInstanceType() const;
 	void setEcsOrderComputeInstanceType(const std::string &ecsOrderComputeInstanceType);
+	OpenldapPar getOpenldapPar() const;
+	void setOpenldapPar(const OpenldapPar &openldapPar);
 	std::string getJobQueue() const;
 	void setJobQueue(const std::string &jobQueue);
 	std::string getAccessKeyId() const;
@@ -111,6 +125,8 @@ public:
 	void setOsTag(const std::string &osTag);
 	std::vector<Nodes> getNodes() const;
 	void setNodes(const std::vector<Nodes> &nodes);
+	std::string getPlugin() const;
+	void setPlugin(const std::string &plugin);
 	std::vector<Application> getApplication() const;
 	void setApplication(const std::vector<Application> &application);
 	std::string getVpcId() const;
@@ -131,6 +147,7 @@ private:
 	std::string imageOwnerAlias_;
 	std::string resourceGroupId_;
 	std::string password_;
+	WinAdPar winAdPar_;
 	float computeSpotPriceLimit_;
 	std::string onPremiseVolumeLocalPath_;
 	std::string remoteDirectory_;
@@ -147,6 +164,7 @@ private:
 	std::string securityGroupId_;
 	std::string description_;
 	std::string ecsOrderComputeInstanceType_;
+	OpenldapPar openldapPar_;
 	std::string jobQueue_;
 	std::string accessKeyId_;
 	std::string volumeType_;
@@ -156,6 +174,7 @@ private:
 	std::string clientVersion_;
 	std::string osTag_;
 	std::vector<Nodes> nodes_;
+	std::string plugin_;
 	std::vector<Application> application_;
 	std::string vpcId_;
 	std::string volumeMountpoint_;
