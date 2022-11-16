@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::CloudAPI::Model::DescribeHistoryApisRequest;
 
-DescribeHistoryApisRequest::DescribeHistoryApisRequest() :
-	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeHistoryApis")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeHistoryApisRequest::DescribeHistoryApisRequest()
+    : RpcServiceRequest("cloudapi", "2016-07-14", "DescribeHistoryApis") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeHistoryApisRequest::~DescribeHistoryApisRequest()
-{}
+DescribeHistoryApisRequest::~DescribeHistoryApisRequest() {}
 
-std::string DescribeHistoryApisRequest::getStageName()const
-{
-	return stageName_;
+std::string DescribeHistoryApisRequest::getStageName() const {
+  return stageName_;
 }
 
-void DescribeHistoryApisRequest::setStageName(const std::string& stageName)
-{
-	stageName_ = stageName;
-	setParameter("StageName", stageName);
+void DescribeHistoryApisRequest::setStageName(const std::string &stageName) {
+  stageName_ = stageName;
+  setParameter(std::string("StageName"), stageName);
 }
 
-std::string DescribeHistoryApisRequest::getGroupId()const
-{
-	return groupId_;
+std::string DescribeHistoryApisRequest::getGroupId() const {
+  return groupId_;
 }
 
-void DescribeHistoryApisRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+void DescribeHistoryApisRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
 }
 
-std::string DescribeHistoryApisRequest::getPageNumber()const
-{
-	return pageNumber_;
+std::string DescribeHistoryApisRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeHistoryApisRequest::setPageNumber(const std::string& pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", pageNumber);
+void DescribeHistoryApisRequest::setPageNumber(const std::string &pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), pageNumber);
 }
 
-std::string DescribeHistoryApisRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeHistoryApisRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeHistoryApisRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeHistoryApisRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeHistoryApisRequest::getApiName()const
-{
-	return apiName_;
+std::string DescribeHistoryApisRequest::getApiName() const {
+  return apiName_;
 }
 
-void DescribeHistoryApisRequest::setApiName(const std::string& apiName)
-{
-	apiName_ = apiName;
-	setParameter("ApiName", apiName);
+void DescribeHistoryApisRequest::setApiName(const std::string &apiName) {
+  apiName_ = apiName;
+  setParameter(std::string("ApiName"), apiName);
 }
 
-std::string DescribeHistoryApisRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string DescribeHistoryApisRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DescribeHistoryApisRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void DescribeHistoryApisRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string DescribeHistoryApisRequest::getPageSize()const
-{
-	return pageSize_;
+std::string DescribeHistoryApisRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeHistoryApisRequest::setPageSize(const std::string& pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", pageSize);
+void DescribeHistoryApisRequest::setPageSize(const std::string &pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), pageSize);
 }
 
-std::string DescribeHistoryApisRequest::getApiId()const
-{
-	return apiId_;
+std::string DescribeHistoryApisRequest::getApiId() const {
+  return apiId_;
 }
 
-void DescribeHistoryApisRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setParameter("ApiId", apiId);
+void DescribeHistoryApisRequest::setApiId(const std::string &apiId) {
+  apiId_ = apiId;
+  setParameter(std::string("ApiId"), apiId);
 }
 

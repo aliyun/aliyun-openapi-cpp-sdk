@@ -39,10 +39,10 @@ void CreateAppResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["AppId"].isNull())
-		appId_ = std::stol(value["AppId"].asString());
 	if(!value["TagStatus"].isNull())
 		tagStatus_ = value["TagStatus"].asString() == "true";
+	if(!value["AppId"].isNull())
+		appId_ = std::stol(value["AppId"].asString());
 
 }
 

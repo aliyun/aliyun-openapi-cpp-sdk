@@ -34,11 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct VpcAccessAttribute
 				{
+					std::string description;
 					std::string createdTime;
 					std::string vpcId;
 					std::string instanceId;
 					int port;
 					std::string regionId;
+					std::string vpcTargetHostName;
+					std::string vpcAccessId;
 					std::string name;
 				};
 

@@ -40,6 +40,7 @@ namespace AlibabaCloud
 				std::string getGroupName()const;
 				std::string getSubDomain()const;
 				std::string getDescription()const;
+				std::string getBasePath()const;
 				std::string getGroupId()const;
 
 			protected:
@@ -48,6 +49,7 @@ namespace AlibabaCloud
 				std::string groupName_;
 				std::string subDomain_;
 				std::string description_;
+				std::string basePath_;
 				std::string groupId_;
 
 			};

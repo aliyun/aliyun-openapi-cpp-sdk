@@ -39,16 +39,16 @@ void DescribeAppResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["AppId"].isNull())
-		appId_ = std::stol(value["AppId"].asString());
 	if(!value["AppName"].isNull())
 		appName_ = value["AppName"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["CreatedTime"].isNull())
-		createdTime_ = value["CreatedTime"].asString();
 	if(!value["ModifiedTime"].isNull())
 		modifiedTime_ = value["ModifiedTime"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["AppId"].isNull())
+		appId_ = std::stol(value["AppId"].asString());
+	if(!value["CreatedTime"].isNull())
+		createdTime_ = value["CreatedTime"].asString();
 
 }
 
@@ -62,14 +62,14 @@ std::string DescribeAppResult::getCreatedTime()const
 	return createdTime_;
 }
 
-long DescribeAppResult::getAppId()const
-{
-	return appId_;
-}
-
 std::string DescribeAppResult::getModifiedTime()const
 {
 	return modifiedTime_;
+}
+
+long DescribeAppResult::getAppId()const
+{
+	return appId_;
 }
 
 std::string DescribeAppResult::getAppName()const

@@ -43,40 +43,52 @@ void DescribeApiGroupsResult::parse(const std::string &payload)
 	for (auto valueApiGroupAttributesApiGroupAttribute : allApiGroupAttributesNode)
 	{
 		ApiGroupAttribute apiGroupAttributesObject;
-		if(!valueApiGroupAttributesApiGroupAttribute["GroupId"].isNull())
-			apiGroupAttributesObject.groupId = valueApiGroupAttributesApiGroupAttribute["GroupId"].asString();
-		if(!valueApiGroupAttributesApiGroupAttribute["GroupName"].isNull())
-			apiGroupAttributesObject.groupName = valueApiGroupAttributesApiGroupAttribute["GroupName"].asString();
-		if(!valueApiGroupAttributesApiGroupAttribute["SubDomain"].isNull())
-			apiGroupAttributesObject.subDomain = valueApiGroupAttributesApiGroupAttribute["SubDomain"].asString();
-		if(!valueApiGroupAttributesApiGroupAttribute["Description"].isNull())
-			apiGroupAttributesObject.description = valueApiGroupAttributesApiGroupAttribute["Description"].asString();
-		if(!valueApiGroupAttributesApiGroupAttribute["CreatedTime"].isNull())
-			apiGroupAttributesObject.createdTime = valueApiGroupAttributesApiGroupAttribute["CreatedTime"].asString();
-		if(!valueApiGroupAttributesApiGroupAttribute["ModifiedTime"].isNull())
-			apiGroupAttributesObject.modifiedTime = valueApiGroupAttributesApiGroupAttribute["ModifiedTime"].asString();
-		if(!valueApiGroupAttributesApiGroupAttribute["RegionId"].isNull())
-			apiGroupAttributesObject.regionId = valueApiGroupAttributesApiGroupAttribute["RegionId"].asString();
-		if(!valueApiGroupAttributesApiGroupAttribute["TrafficLimit"].isNull())
-			apiGroupAttributesObject.trafficLimit = std::stoi(valueApiGroupAttributesApiGroupAttribute["TrafficLimit"].asString());
+		if(!valueApiGroupAttributesApiGroupAttribute["BasePath"].isNull())
+			apiGroupAttributesObject.basePath = valueApiGroupAttributesApiGroupAttribute["BasePath"].asString();
 		if(!valueApiGroupAttributesApiGroupAttribute["BillingStatus"].isNull())
 			apiGroupAttributesObject.billingStatus = valueApiGroupAttributesApiGroupAttribute["BillingStatus"].asString();
-		if(!valueApiGroupAttributesApiGroupAttribute["IllegalStatus"].isNull())
-			apiGroupAttributesObject.illegalStatus = valueApiGroupAttributesApiGroupAttribute["IllegalStatus"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["TrafficLimit"].isNull())
+			apiGroupAttributesObject.trafficLimit = std::stoi(valueApiGroupAttributesApiGroupAttribute["TrafficLimit"].asString());
 		if(!valueApiGroupAttributesApiGroupAttribute["InstanceId"].isNull())
 			apiGroupAttributesObject.instanceId = valueApiGroupAttributesApiGroupAttribute["InstanceId"].asString();
 		if(!valueApiGroupAttributesApiGroupAttribute["InstanceType"].isNull())
 			apiGroupAttributesObject.instanceType = valueApiGroupAttributesApiGroupAttribute["InstanceType"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["RegionId"].isNull())
+			apiGroupAttributesObject.regionId = valueApiGroupAttributesApiGroupAttribute["RegionId"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["ModifiedTime"].isNull())
+			apiGroupAttributesObject.modifiedTime = valueApiGroupAttributesApiGroupAttribute["ModifiedTime"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["GroupId"].isNull())
+			apiGroupAttributesObject.groupId = valueApiGroupAttributesApiGroupAttribute["GroupId"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["GroupName"].isNull())
+			apiGroupAttributesObject.groupName = valueApiGroupAttributesApiGroupAttribute["GroupName"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["Description"].isNull())
+			apiGroupAttributesObject.description = valueApiGroupAttributesApiGroupAttribute["Description"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["IllegalStatus"].isNull())
+			apiGroupAttributesObject.illegalStatus = valueApiGroupAttributesApiGroupAttribute["IllegalStatus"].asString();
 		if(!valueApiGroupAttributesApiGroupAttribute["HttpsPolicy"].isNull())
 			apiGroupAttributesObject.httpsPolicy = valueApiGroupAttributesApiGroupAttribute["HttpsPolicy"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["SubDomain"].isNull())
+			apiGroupAttributesObject.subDomain = valueApiGroupAttributesApiGroupAttribute["SubDomain"].asString();
+		if(!valueApiGroupAttributesApiGroupAttribute["CreatedTime"].isNull())
+			apiGroupAttributesObject.createdTime = valueApiGroupAttributesApiGroupAttribute["CreatedTime"].asString();
+		auto allTagsNode = valueApiGroupAttributesApiGroupAttribute["Tags"]["TagInfo"];
+		for (auto valueApiGroupAttributesApiGroupAttributeTagsTagInfo : allTagsNode)
+		{
+			ApiGroupAttribute::TagInfo tagsObject;
+			if(!valueApiGroupAttributesApiGroupAttributeTagsTagInfo["Key"].isNull())
+				tagsObject.key = valueApiGroupAttributesApiGroupAttributeTagsTagInfo["Key"].asString();
+			if(!valueApiGroupAttributesApiGroupAttributeTagsTagInfo["Value"].isNull())
+				tagsObject.value = valueApiGroupAttributesApiGroupAttributeTagsTagInfo["Value"].asString();
+			apiGroupAttributesObject.tags.push_back(tagsObject);
+		}
 		apiGroupAttributes_.push_back(apiGroupAttributesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

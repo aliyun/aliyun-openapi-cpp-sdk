@@ -53,10 +53,18 @@ namespace AlibabaCloud
 					};
 					struct FunctionComputeConfig
 					{
+						std::string path;
 						std::string functionName;
+						std::string contentTypeValue;
 						std::string serviceName;
+						std::string fcType;
+						std::string qualifier;
+						std::string method;
 						std::string regionId;
+						bool onlyBusinessPath;
 						std::string roleArn;
+						std::string fcBaseUrl;
+						std::string contentTypeCatagory;
 					};
 					struct MockHeader
 					{
@@ -70,8 +78,8 @@ namespace AlibabaCloud
 					std::string serviceVpcEnable;
 					int mockStatusCode;
 					std::vector<MockHeader> mockHeaders;
-					std::string serviceHttpMethod;
 					std::string servicePath;
+					std::string serviceHttpMethod;
 					std::string mock;
 					std::string vpcId;
 					int serviceTimeout;
@@ -98,8 +106,8 @@ namespace AlibabaCloud
 					std::string id;
 					bool hasChild;
 					std::string key;
-					std::string name;
 					bool mandatory;
+					std::string name;
 				};
 				struct SystemParameter
 				{

@@ -39,16 +39,16 @@ void DescribeAppSecurityResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["AppKey"].isNull())
-		appKey_ = value["AppKey"].asString();
 	if(!value["AppSecret"].isNull())
 		appSecret_ = value["AppSecret"].asString();
-	if(!value["CreatedTime"].isNull())
-		createdTime_ = value["CreatedTime"].asString();
+	if(!value["AppKey"].isNull())
+		appKey_ = value["AppKey"].asString();
 	if(!value["ModifiedTime"].isNull())
 		modifiedTime_ = value["ModifiedTime"].asString();
 	if(!value["AppCode"].isNull())
 		appCode_ = value["AppCode"].asString();
+	if(!value["CreatedTime"].isNull())
+		createdTime_ = value["CreatedTime"].asString();
 
 }
 

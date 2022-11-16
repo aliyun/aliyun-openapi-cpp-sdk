@@ -39,36 +39,31 @@ void DescribeDomainResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["GroupId"].isNull())
-		groupId_ = value["GroupId"].asString();
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["SubDomain"].isNull())
-		subDomain_ = value["SubDomain"].asString();
-	if(!value["CertificateId"].isNull())
-		certificateId_ = value["CertificateId"].asString();
-	if(!value["CertificateName"].isNull())
-		certificateName_ = value["CertificateName"].asString();
-	if(!value["CertificateBody"].isNull())
-		certificateBody_ = value["CertificateBody"].asString();
 	if(!value["CertificatePrivateKey"].isNull())
 		certificatePrivateKey_ = value["CertificatePrivateKey"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["DomainBindingStatus"].isNull())
 		domainBindingStatus_ = value["DomainBindingStatus"].asString();
-	if(!value["DomainCNAMEStatus"].isNull())
-		domainCNAMEStatus_ = value["DomainCNAMEStatus"].asString();
-	if(!value["DomainLegalStatus"].isNull())
-		domainLegalStatus_ = value["DomainLegalStatus"].asString();
-	if(!value["DomainWebSocketStatus"].isNull())
-		domainWebSocketStatus_ = value["DomainWebSocketStatus"].asString();
 	if(!value["DomainRemark"].isNull())
 		domainRemark_ = value["DomainRemark"].asString();
+	if(!value["CertificateId"].isNull())
+		certificateId_ = value["CertificateId"].asString();
+	if(!value["DomainWebSocketStatus"].isNull())
+		domainWebSocketStatus_ = value["DomainWebSocketStatus"].asString();
+	if(!value["CertificateName"].isNull())
+		certificateName_ = value["CertificateName"].asString();
+	if(!value["DomainLegalStatus"].isNull())
+		domainLegalStatus_ = value["DomainLegalStatus"].asString();
+	if(!value["GroupId"].isNull())
+		groupId_ = value["GroupId"].asString();
+	if(!value["CertificateBody"].isNull())
+		certificateBody_ = value["CertificateBody"].asString();
+	if(!value["SubDomain"].isNull())
+		subDomain_ = value["SubDomain"].asString();
+	if(!value["DomainCNAMEStatus"].isNull())
+		domainCNAMEStatus_ = value["DomainCNAMEStatus"].asString();
 
-}
-
-std::string DescribeDomainResult::getSubDomain()const
-{
-	return subDomain_;
 }
 
 std::string DescribeDomainResult::getCertificateBody()const
@@ -76,14 +71,19 @@ std::string DescribeDomainResult::getCertificateBody()const
 	return certificateBody_;
 }
 
-std::string DescribeDomainResult::getDomainCNAMEStatus()const
+std::string DescribeDomainResult::getSubDomain()const
 {
-	return domainCNAMEStatus_;
+	return subDomain_;
 }
 
 std::string DescribeDomainResult::getDomainRemark()const
 {
 	return domainRemark_;
+}
+
+std::string DescribeDomainResult::getDomainCNAMEStatus()const
+{
+	return domainCNAMEStatus_;
 }
 
 std::string DescribeDomainResult::getDomainBindingStatus()const

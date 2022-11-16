@@ -43,24 +43,24 @@ void DescribeApiSignaturesResult::parse(const std::string &payload)
 	for (auto valueApiSignaturesApiSignatureItem : allApiSignaturesNode)
 	{
 		ApiSignatureItem apiSignaturesObject;
+		if(!valueApiSignaturesApiSignatureItem["BoundTime"].isNull())
+			apiSignaturesObject.boundTime = valueApiSignaturesApiSignatureItem["BoundTime"].asString();
 		if(!valueApiSignaturesApiSignatureItem["ApiId"].isNull())
 			apiSignaturesObject.apiId = valueApiSignaturesApiSignatureItem["ApiId"].asString();
-		if(!valueApiSignaturesApiSignatureItem["ApiName"].isNull())
-			apiSignaturesObject.apiName = valueApiSignaturesApiSignatureItem["ApiName"].asString();
 		if(!valueApiSignaturesApiSignatureItem["SignatureId"].isNull())
 			apiSignaturesObject.signatureId = valueApiSignaturesApiSignatureItem["SignatureId"].asString();
 		if(!valueApiSignaturesApiSignatureItem["SignatureName"].isNull())
 			apiSignaturesObject.signatureName = valueApiSignaturesApiSignatureItem["SignatureName"].asString();
-		if(!valueApiSignaturesApiSignatureItem["BoundTime"].isNull())
-			apiSignaturesObject.boundTime = valueApiSignaturesApiSignatureItem["BoundTime"].asString();
+		if(!valueApiSignaturesApiSignatureItem["ApiName"].isNull())
+			apiSignaturesObject.apiName = valueApiSignaturesApiSignatureItem["ApiName"].asString();
 		apiSignatures_.push_back(apiSignaturesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

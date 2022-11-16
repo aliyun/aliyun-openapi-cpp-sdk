@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::CloudAPI::Model::ModifyIpControlPolicyItemRequest;
 
-ModifyIpControlPolicyItemRequest::ModifyIpControlPolicyItemRequest() :
-	RpcServiceRequest("cloudapi", "2016-07-14", "ModifyIpControlPolicyItem")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyIpControlPolicyItemRequest::ModifyIpControlPolicyItemRequest()
+    : RpcServiceRequest("cloudapi", "2016-07-14", "ModifyIpControlPolicyItem") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyIpControlPolicyItemRequest::~ModifyIpControlPolicyItemRequest()
-{}
+ModifyIpControlPolicyItemRequest::~ModifyIpControlPolicyItemRequest() {}
 
-std::string ModifyIpControlPolicyItemRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ModifyIpControlPolicyItemRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ModifyIpControlPolicyItemRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ModifyIpControlPolicyItemRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyIpControlPolicyItemRequest::getIpControlId()const
-{
-	return ipControlId_;
+std::string ModifyIpControlPolicyItemRequest::getIpControlId() const {
+  return ipControlId_;
 }
 
-void ModifyIpControlPolicyItemRequest::setIpControlId(const std::string& ipControlId)
-{
-	ipControlId_ = ipControlId;
-	setParameter("IpControlId", ipControlId);
+void ModifyIpControlPolicyItemRequest::setIpControlId(const std::string &ipControlId) {
+  ipControlId_ = ipControlId;
+  setParameter(std::string("IpControlId"), ipControlId);
 }
 
-std::string ModifyIpControlPolicyItemRequest::getPolicyItemId()const
-{
-	return policyItemId_;
+std::string ModifyIpControlPolicyItemRequest::getPolicyItemId() const {
+  return policyItemId_;
 }
 
-void ModifyIpControlPolicyItemRequest::setPolicyItemId(const std::string& policyItemId)
-{
-	policyItemId_ = policyItemId;
-	setParameter("PolicyItemId", policyItemId);
+void ModifyIpControlPolicyItemRequest::setPolicyItemId(const std::string &policyItemId) {
+  policyItemId_ = policyItemId;
+  setParameter(std::string("PolicyItemId"), policyItemId);
 }
 
-std::string ModifyIpControlPolicyItemRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string ModifyIpControlPolicyItemRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void ModifyIpControlPolicyItemRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void ModifyIpControlPolicyItemRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string ModifyIpControlPolicyItemRequest::getAppId()const
-{
-	return appId_;
+std::string ModifyIpControlPolicyItemRequest::getAppId() const {
+  return appId_;
 }
 
-void ModifyIpControlPolicyItemRequest::setAppId(const std::string& appId)
-{
-	appId_ = appId;
-	setParameter("AppId", appId);
+void ModifyIpControlPolicyItemRequest::setAppId(const std::string &appId) {
+  appId_ = appId;
+  setParameter(std::string("AppId"), appId);
 }
 
-std::string ModifyIpControlPolicyItemRequest::getCidrIp()const
-{
-	return cidrIp_;
+std::string ModifyIpControlPolicyItemRequest::getCidrIp() const {
+  return cidrIp_;
 }
 
-void ModifyIpControlPolicyItemRequest::setCidrIp(const std::string& cidrIp)
-{
-	cidrIp_ = cidrIp;
-	setParameter("CidrIp", cidrIp);
+void ModifyIpControlPolicyItemRequest::setCidrIp(const std::string &cidrIp) {
+  cidrIp_ = cidrIp;
+  setParameter(std::string("CidrIp"), cidrIp);
 }
 

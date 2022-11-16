@@ -43,34 +43,40 @@ void DescribeApisByAppResult::parse(const std::string &payload)
 	for (auto valueAppApiRelationInfosAppApiRelationInfo : allAppApiRelationInfosNode)
 	{
 		AppApiRelationInfo appApiRelationInfosObject;
-		if(!valueAppApiRelationInfosAppApiRelationInfo["RegionId"].isNull())
-			appApiRelationInfosObject.regionId = valueAppApiRelationInfosAppApiRelationInfo["RegionId"].asString();
-		if(!valueAppApiRelationInfosAppApiRelationInfo["GroupId"].isNull())
-			appApiRelationInfosObject.groupId = valueAppApiRelationInfosAppApiRelationInfo["GroupId"].asString();
-		if(!valueAppApiRelationInfosAppApiRelationInfo["GroupName"].isNull())
-			appApiRelationInfosObject.groupName = valueAppApiRelationInfosAppApiRelationInfo["GroupName"].asString();
-		if(!valueAppApiRelationInfosAppApiRelationInfo["StageName"].isNull())
-			appApiRelationInfosObject.stageName = valueAppApiRelationInfosAppApiRelationInfo["StageName"].asString();
-		if(!valueAppApiRelationInfosAppApiRelationInfo["Operator"].isNull())
-			appApiRelationInfosObject._operator = valueAppApiRelationInfosAppApiRelationInfo["Operator"].asString();
 		if(!valueAppApiRelationInfosAppApiRelationInfo["ApiId"].isNull())
 			appApiRelationInfosObject.apiId = valueAppApiRelationInfosAppApiRelationInfo["ApiId"].asString();
-		if(!valueAppApiRelationInfosAppApiRelationInfo["ApiName"].isNull())
-			appApiRelationInfosObject.apiName = valueAppApiRelationInfosAppApiRelationInfo["ApiName"].asString();
 		if(!valueAppApiRelationInfosAppApiRelationInfo["AuthorizationSource"].isNull())
 			appApiRelationInfosObject.authorizationSource = valueAppApiRelationInfosAppApiRelationInfo["AuthorizationSource"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["AuthVaildTime"].isNull())
+			appApiRelationInfosObject.authVaildTime = valueAppApiRelationInfosAppApiRelationInfo["AuthVaildTime"].asString();
 		if(!valueAppApiRelationInfosAppApiRelationInfo["Description"].isNull())
 			appApiRelationInfosObject.description = valueAppApiRelationInfosAppApiRelationInfo["Description"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["GroupName"].isNull())
+			appApiRelationInfosObject.groupName = valueAppApiRelationInfosAppApiRelationInfo["GroupName"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["GroupId"].isNull())
+			appApiRelationInfosObject.groupId = valueAppApiRelationInfosAppApiRelationInfo["GroupId"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["Operator"].isNull())
+			appApiRelationInfosObject._operator = valueAppApiRelationInfosAppApiRelationInfo["Operator"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["StageName"].isNull())
+			appApiRelationInfosObject.stageName = valueAppApiRelationInfosAppApiRelationInfo["StageName"].asString();
 		if(!valueAppApiRelationInfosAppApiRelationInfo["CreatedTime"].isNull())
 			appApiRelationInfosObject.createdTime = valueAppApiRelationInfosAppApiRelationInfo["CreatedTime"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["ApiName"].isNull())
+			appApiRelationInfosObject.apiName = valueAppApiRelationInfosAppApiRelationInfo["ApiName"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["RegionId"].isNull())
+			appApiRelationInfosObject.regionId = valueAppApiRelationInfosAppApiRelationInfo["RegionId"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["Path"].isNull())
+			appApiRelationInfosObject.path = valueAppApiRelationInfosAppApiRelationInfo["Path"].asString();
+		if(!valueAppApiRelationInfosAppApiRelationInfo["Method"].isNull())
+			appApiRelationInfosObject.method = valueAppApiRelationInfosAppApiRelationInfo["Method"].asString();
 		appApiRelationInfos_.push_back(appApiRelationInfosObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

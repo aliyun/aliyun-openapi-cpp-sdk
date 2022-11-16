@@ -43,32 +43,36 @@ void DescribeDeployedApisResult::parse(const std::string &payload)
 	for (auto valueDeployedApisDeployedApiItem : allDeployedApisNode)
 	{
 		DeployedApiItem deployedApisObject;
-		if(!valueDeployedApisDeployedApiItem["RegionId"].isNull())
-			deployedApisObject.regionId = valueDeployedApisDeployedApiItem["RegionId"].asString();
-		if(!valueDeployedApisDeployedApiItem["ApiId"].isNull())
-			deployedApisObject.apiId = valueDeployedApisDeployedApiItem["ApiId"].asString();
-		if(!valueDeployedApisDeployedApiItem["ApiName"].isNull())
-			deployedApisObject.apiName = valueDeployedApisDeployedApiItem["ApiName"].asString();
-		if(!valueDeployedApisDeployedApiItem["GroupId"].isNull())
-			deployedApisObject.groupId = valueDeployedApisDeployedApiItem["GroupId"].asString();
-		if(!valueDeployedApisDeployedApiItem["GroupName"].isNull())
-			deployedApisObject.groupName = valueDeployedApisDeployedApiItem["GroupName"].asString();
-		if(!valueDeployedApisDeployedApiItem["StageName"].isNull())
-			deployedApisObject.stageName = valueDeployedApisDeployedApiItem["StageName"].asString();
 		if(!valueDeployedApisDeployedApiItem["Visibility"].isNull())
 			deployedApisObject.visibility = valueDeployedApisDeployedApiItem["Visibility"].asString();
+		if(!valueDeployedApisDeployedApiItem["ApiId"].isNull())
+			deployedApisObject.apiId = valueDeployedApisDeployedApiItem["ApiId"].asString();
 		if(!valueDeployedApisDeployedApiItem["Description"].isNull())
 			deployedApisObject.description = valueDeployedApisDeployedApiItem["Description"].asString();
+		if(!valueDeployedApisDeployedApiItem["GroupName"].isNull())
+			deployedApisObject.groupName = valueDeployedApisDeployedApiItem["GroupName"].asString();
+		if(!valueDeployedApisDeployedApiItem["GroupId"].isNull())
+			deployedApisObject.groupId = valueDeployedApisDeployedApiItem["GroupId"].asString();
 		if(!valueDeployedApisDeployedApiItem["DeployedTime"].isNull())
 			deployedApisObject.deployedTime = valueDeployedApisDeployedApiItem["DeployedTime"].asString();
+		if(!valueDeployedApisDeployedApiItem["StageName"].isNull())
+			deployedApisObject.stageName = valueDeployedApisDeployedApiItem["StageName"].asString();
+		if(!valueDeployedApisDeployedApiItem["ApiName"].isNull())
+			deployedApisObject.apiName = valueDeployedApisDeployedApiItem["ApiName"].asString();
+		if(!valueDeployedApisDeployedApiItem["RegionId"].isNull())
+			deployedApisObject.regionId = valueDeployedApisDeployedApiItem["RegionId"].asString();
+		if(!valueDeployedApisDeployedApiItem["ApiPath"].isNull())
+			deployedApisObject.apiPath = valueDeployedApisDeployedApiItem["ApiPath"].asString();
+		if(!valueDeployedApisDeployedApiItem["ApiMethod"].isNull())
+			deployedApisObject.apiMethod = valueDeployedApisDeployedApiItem["ApiMethod"].asString();
 		deployedApis_.push_back(deployedApisObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::CloudAPI::Model::AddTrafficSpecialControlRequest;
 
-AddTrafficSpecialControlRequest::AddTrafficSpecialControlRequest() :
-	RpcServiceRequest("cloudapi", "2016-07-14", "AddTrafficSpecialControl")
-{
-	setMethod(HttpRequest::Method::Post);
+AddTrafficSpecialControlRequest::AddTrafficSpecialControlRequest()
+    : RpcServiceRequest("cloudapi", "2016-07-14", "AddTrafficSpecialControl") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-AddTrafficSpecialControlRequest::~AddTrafficSpecialControlRequest()
-{}
+AddTrafficSpecialControlRequest::~AddTrafficSpecialControlRequest() {}
 
-std::string AddTrafficSpecialControlRequest::getTrafficControlId()const
-{
-	return trafficControlId_;
+std::string AddTrafficSpecialControlRequest::getTrafficControlId() const {
+  return trafficControlId_;
 }
 
-void AddTrafficSpecialControlRequest::setTrafficControlId(const std::string& trafficControlId)
-{
-	trafficControlId_ = trafficControlId;
-	setParameter("TrafficControlId", trafficControlId);
+void AddTrafficSpecialControlRequest::setTrafficControlId(const std::string &trafficControlId) {
+  trafficControlId_ = trafficControlId;
+  setParameter(std::string("TrafficControlId"), trafficControlId);
 }
 
-std::string AddTrafficSpecialControlRequest::getSpecialKey()const
-{
-	return specialKey_;
+std::string AddTrafficSpecialControlRequest::getSpecialKey() const {
+  return specialKey_;
 }
 
-void AddTrafficSpecialControlRequest::setSpecialKey(const std::string& specialKey)
-{
-	specialKey_ = specialKey;
-	setParameter("SpecialKey", specialKey);
+void AddTrafficSpecialControlRequest::setSpecialKey(const std::string &specialKey) {
+  specialKey_ = specialKey;
+  setParameter(std::string("SpecialKey"), specialKey);
 }
 
-int AddTrafficSpecialControlRequest::getTrafficValue()const
-{
-	return trafficValue_;
+int AddTrafficSpecialControlRequest::getTrafficValue() const {
+  return trafficValue_;
 }
 
-void AddTrafficSpecialControlRequest::setTrafficValue(int trafficValue)
-{
-	trafficValue_ = trafficValue;
-	setParameter("TrafficValue", std::to_string(trafficValue));
+void AddTrafficSpecialControlRequest::setTrafficValue(int trafficValue) {
+  trafficValue_ = trafficValue;
+  setParameter(std::string("TrafficValue"), std::to_string(trafficValue));
 }
 
-std::string AddTrafficSpecialControlRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string AddTrafficSpecialControlRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void AddTrafficSpecialControlRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void AddTrafficSpecialControlRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string AddTrafficSpecialControlRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string AddTrafficSpecialControlRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void AddTrafficSpecialControlRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void AddTrafficSpecialControlRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string AddTrafficSpecialControlRequest::getSpecialType()const
-{
-	return specialType_;
+std::string AddTrafficSpecialControlRequest::getSpecialType() const {
+  return specialType_;
 }
 
-void AddTrafficSpecialControlRequest::setSpecialType(const std::string& specialType)
-{
-	specialType_ = specialType;
-	setParameter("SpecialType", specialType);
+void AddTrafficSpecialControlRequest::setSpecialType(const std::string &specialType) {
+  specialType_ = specialType;
+  setParameter(std::string("SpecialType"), specialType);
 }
 

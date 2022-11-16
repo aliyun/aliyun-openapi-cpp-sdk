@@ -32,6 +32,12 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CLOUDAPI_EXPORT DescribeApiResult : public ServiceResult
 			{
 			public:
+				struct BackendConfig
+				{
+					std::string backendName;
+					std::string backendId;
+					std::string backendType;
+				};
 				struct RequestConfig
 				{
 					std::string requestPath;
@@ -46,6 +52,7 @@ namespace AlibabaCloud
 				{
 					struct VpcConfig
 					{
+						std::string vpcScheme;
 						std::string vpcId;
 						std::string instanceId;
 						int port;
@@ -53,9 +60,31 @@ namespace AlibabaCloud
 					};
 					struct FunctionComputeConfig
 					{
+						std::string path;
 						std::string functionName;
+						std::string contentTypeValue;
 						std::string serviceName;
+						std::string fcType;
+						std::string qualifier;
+						std::string method;
 						std::string regionId;
+						bool onlyBusinessPath;
+						std::string roleArn;
+						std::string fcBaseUrl;
+						std::string contentTypeCatagory;
+					};
+					struct OssConfig
+					{
+						std::string action;
+						std::string bucketName;
+						std::string ossRegionId;
+						std::string key;
+					};
+					struct EventBridgeConfig
+					{
+						std::string eventBridgeRegionId;
+						std::string eventSource;
+						std::string eventBus;
 						std::string roleArn;
 					};
 					struct MockHeader
@@ -68,13 +97,15 @@ namespace AlibabaCloud
 					std::string contentTypeValue;
 					std::string mockResult;
 					VpcConfig vpcConfig;
+					OssConfig ossConfig;
 					std::string serviceVpcEnable;
 					int mockStatusCode;
 					std::vector<MockHeader> mockHeaders;
-					std::string serviceHttpMethod;
 					std::string servicePath;
+					std::string serviceHttpMethod;
 					std::string aoneAppName;
 					std::string mock;
+					EventBridgeConfig eventBridgeConfig;
 					int serviceTimeout;
 					std::string serviceProtocol;
 					std::string contentTypeCatagory;
@@ -101,8 +132,8 @@ namespace AlibabaCloud
 					std::string id;
 					bool hasChild;
 					std::string key;
-					std::string name;
 					bool mandatory;
+					std::string name;
 				};
 				struct SystemParameter
 				{
@@ -170,8 +201,8 @@ namespace AlibabaCloud
 				explicit DescribeApiResult(const std::string &payload);
 				~DescribeApiResult();
 				std::string getGroupName()const;
-				std::string getCreatedTime()const;
 				std::string getDescription()const;
+				std::string getCreatedTime()const;
 				std::vector<DeployedInfo> getDeployedInfos()const;
 				bool getForceNonceCheck()const;
 				std::string getAllowSignatureMethod()const;
@@ -186,6 +217,7 @@ namespace AlibabaCloud
 				std::vector<ConstantParameter> getConstantParameters()const;
 				std::string getWebSocketApiType()const;
 				std::vector<ResultDescription> getResultDescriptions()const;
+				BackendConfig getBackendConfig()const;
 				OpenIdConnectConfig getOpenIdConnectConfig()const;
 				std::string getAuthType()const;
 				RequestConfig getRequestConfig()const;
@@ -197,6 +229,7 @@ namespace AlibabaCloud
 				std::string getFailResultSample()const;
 				std::vector<CustomSystemParameter> getCustomSystemParameters()const;
 				std::string getGroupId()const;
+				bool getBackendEnable()const;
 				std::vector<SystemParameter> getSystemParameters()const;
 				std::string getVisibility()const;
 				std::vector<ServiceParameter> getServiceParameters()const;
@@ -207,8 +240,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string groupName_;
-				std::string createdTime_;
 				std::string description_;
+				std::string createdTime_;
 				std::vector<DeployedInfo> deployedInfos_;
 				bool forceNonceCheck_;
 				std::string allowSignatureMethod_;
@@ -223,6 +256,7 @@ namespace AlibabaCloud
 				std::vector<ConstantParameter> constantParameters_;
 				std::string webSocketApiType_;
 				std::vector<ResultDescription> resultDescriptions_;
+				BackendConfig backendConfig_;
 				OpenIdConnectConfig openIdConnectConfig_;
 				std::string authType_;
 				RequestConfig requestConfig_;
@@ -234,6 +268,7 @@ namespace AlibabaCloud
 				std::string failResultSample_;
 				std::vector<CustomSystemParameter> customSystemParameters_;
 				std::string groupId_;
+				bool backendEnable_;
 				std::vector<SystemParameter> systemParameters_;
 				std::string visibility_;
 				std::vector<ServiceParameter> serviceParameters_;

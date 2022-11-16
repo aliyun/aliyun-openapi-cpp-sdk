@@ -35,15 +35,18 @@ namespace AlibabaCloud
 				struct AppApiRelationInfo
 				{
 					std::string groupName;
+					std::string path;
 					std::string description;
 					std::string createdTime;
+					std::string authVaildTime;
 					std::string stageName;
 					std::string apiName;
 					std::string authorizationSource;
 					std::string _operator;
+					std::string method;
+					std::string groupId;
 					std::string regionId;
 					std::string apiId;
-					std::string groupId;
 				};
 
 

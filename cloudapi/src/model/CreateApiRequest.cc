@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,309 +18,271 @@
 
 using AlibabaCloud::CloudAPI::Model::CreateApiRequest;
 
-CreateApiRequest::CreateApiRequest() :
-	RpcServiceRequest("cloudapi", "2016-07-14", "CreateApi")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateApiRequest::CreateApiRequest()
+    : RpcServiceRequest("cloudapi", "2016-07-14", "CreateApi") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateApiRequest::~CreateApiRequest()
-{}
+CreateApiRequest::~CreateApiRequest() {}
 
-std::string CreateApiRequest::getWebSocketApiType()const
-{
-	return webSocketApiType_;
+std::string CreateApiRequest::getWebSocketApiType() const {
+  return webSocketApiType_;
 }
 
-void CreateApiRequest::setWebSocketApiType(const std::string& webSocketApiType)
-{
-	webSocketApiType_ = webSocketApiType;
-	setParameter("WebSocketApiType", webSocketApiType);
+void CreateApiRequest::setWebSocketApiType(const std::string &webSocketApiType) {
+  webSocketApiType_ = webSocketApiType;
+  setParameter(std::string("WebSocketApiType"), webSocketApiType);
 }
 
-std::string CreateApiRequest::getErrorCodeSamples()const
-{
-	return errorCodeSamples_;
+std::string CreateApiRequest::getErrorCodeSamples() const {
+  return errorCodeSamples_;
 }
 
-void CreateApiRequest::setErrorCodeSamples(const std::string& errorCodeSamples)
-{
-	errorCodeSamples_ = errorCodeSamples;
-	setParameter("ErrorCodeSamples", errorCodeSamples);
+void CreateApiRequest::setErrorCodeSamples(const std::string &errorCodeSamples) {
+  errorCodeSamples_ = errorCodeSamples;
+  setParameter(std::string("ErrorCodeSamples"), errorCodeSamples);
 }
 
-std::string CreateApiRequest::getAppCodeAuthType()const
-{
-	return appCodeAuthType_;
+std::string CreateApiRequest::getAppCodeAuthType() const {
+  return appCodeAuthType_;
 }
 
-void CreateApiRequest::setAppCodeAuthType(const std::string& appCodeAuthType)
-{
-	appCodeAuthType_ = appCodeAuthType;
-	setParameter("AppCodeAuthType", appCodeAuthType);
+void CreateApiRequest::setAppCodeAuthType(const std::string &appCodeAuthType) {
+  appCodeAuthType_ = appCodeAuthType;
+  setParameter(std::string("AppCodeAuthType"), appCodeAuthType);
 }
 
-std::string CreateApiRequest::getDescription()const
-{
-	return description_;
+std::string CreateApiRequest::getDescription() const {
+  return description_;
 }
 
-void CreateApiRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void CreateApiRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
-bool CreateApiRequest::getDisableInternet()const
-{
-	return disableInternet_;
+bool CreateApiRequest::getDisableInternet() const {
+  return disableInternet_;
 }
 
-void CreateApiRequest::setDisableInternet(bool disableInternet)
-{
-	disableInternet_ = disableInternet;
-	setParameter("DisableInternet", disableInternet ? "true" : "false");
+void CreateApiRequest::setDisableInternet(bool disableInternet) {
+  disableInternet_ = disableInternet;
+  setParameter(std::string("DisableInternet"), disableInternet ? "true" : "false");
 }
 
-std::string CreateApiRequest::getConstantParameters()const
-{
-	return constantParameters_;
+std::string CreateApiRequest::getBackendId() const {
+  return backendId_;
 }
 
-void CreateApiRequest::setConstantParameters(const std::string& constantParameters)
-{
-	constantParameters_ = constantParameters;
-	setParameter("ConstantParameters", constantParameters);
+void CreateApiRequest::setBackendId(const std::string &backendId) {
+  backendId_ = backendId;
+  setParameter(std::string("BackendId"), backendId);
 }
 
-std::string CreateApiRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string CreateApiRequest::getConstantParameters() const {
+  return constantParameters_;
 }
 
-void CreateApiRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void CreateApiRequest::setConstantParameters(const std::string &constantParameters) {
+  constantParameters_ = constantParameters;
+  setParameter(std::string("ConstantParameters"), constantParameters);
 }
 
-std::string CreateApiRequest::getAuthType()const
-{
-	return authType_;
+std::string CreateApiRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void CreateApiRequest::setAuthType(const std::string& authType)
-{
-	authType_ = authType;
-	setParameter("AuthType", authType);
+void CreateApiRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string CreateApiRequest::getAllowSignatureMethod()const
-{
-	return allowSignatureMethod_;
+std::string CreateApiRequest::getAuthType() const {
+  return authType_;
 }
 
-void CreateApiRequest::setAllowSignatureMethod(const std::string& allowSignatureMethod)
-{
-	allowSignatureMethod_ = allowSignatureMethod;
-	setParameter("AllowSignatureMethod", allowSignatureMethod);
+void CreateApiRequest::setAuthType(const std::string &authType) {
+  authType_ = authType;
+  setParameter(std::string("AuthType"), authType);
 }
 
-std::string CreateApiRequest::getServiceParameters()const
-{
-	return serviceParameters_;
+std::string CreateApiRequest::getAllowSignatureMethod() const {
+  return allowSignatureMethod_;
 }
 
-void CreateApiRequest::setServiceParameters(const std::string& serviceParameters)
-{
-	serviceParameters_ = serviceParameters;
-	setParameter("ServiceParameters", serviceParameters);
+void CreateApiRequest::setAllowSignatureMethod(const std::string &allowSignatureMethod) {
+  allowSignatureMethod_ = allowSignatureMethod;
+  setParameter(std::string("AllowSignatureMethod"), allowSignatureMethod);
 }
 
-std::string CreateApiRequest::getFailResultSample()const
-{
-	return failResultSample_;
+std::string CreateApiRequest::getServiceParameters() const {
+  return serviceParameters_;
 }
 
-void CreateApiRequest::setFailResultSample(const std::string& failResultSample)
-{
-	failResultSample_ = failResultSample;
-	setParameter("FailResultSample", failResultSample);
+void CreateApiRequest::setServiceParameters(const std::string &serviceParameters) {
+  serviceParameters_ = serviceParameters;
+  setParameter(std::string("ServiceParameters"), serviceParameters);
 }
 
-std::string CreateApiRequest::getResourceOwnerToken()const
-{
-	return resourceOwnerToken_;
+std::string CreateApiRequest::getFailResultSample() const {
+  return failResultSample_;
 }
 
-void CreateApiRequest::setResourceOwnerToken(const std::string& resourceOwnerToken)
-{
-	resourceOwnerToken_ = resourceOwnerToken;
-	setParameter("ResourceOwnerToken", resourceOwnerToken);
+void CreateApiRequest::setFailResultSample(const std::string &failResultSample) {
+  failResultSample_ = failResultSample;
+  setParameter(std::string("FailResultSample"), failResultSample);
 }
 
-std::string CreateApiRequest::getSystemParameters()const
-{
-	return systemParameters_;
+std::string CreateApiRequest::getResourceOwnerToken() const {
+  return resourceOwnerToken_;
 }
 
-void CreateApiRequest::setSystemParameters(const std::string& systemParameters)
-{
-	systemParameters_ = systemParameters;
-	setParameter("SystemParameters", systemParameters);
+void CreateApiRequest::setResourceOwnerToken(const std::string &resourceOwnerToken) {
+  resourceOwnerToken_ = resourceOwnerToken;
+  setParameter(std::string("ResourceOwnerToken"), resourceOwnerToken);
 }
 
-std::string CreateApiRequest::getServiceParametersMap()const
-{
-	return serviceParametersMap_;
+std::string CreateApiRequest::getSystemParameters() const {
+  return systemParameters_;
 }
 
-void CreateApiRequest::setServiceParametersMap(const std::string& serviceParametersMap)
-{
-	serviceParametersMap_ = serviceParametersMap;
-	setParameter("ServiceParametersMap", serviceParametersMap);
+void CreateApiRequest::setSystemParameters(const std::string &systemParameters) {
+  systemParameters_ = systemParameters;
+  setParameter(std::string("SystemParameters"), systemParameters);
 }
 
-std::string CreateApiRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string CreateApiRequest::getServiceParametersMap() const {
+  return serviceParametersMap_;
 }
 
-void CreateApiRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void CreateApiRequest::setServiceParametersMap(const std::string &serviceParametersMap) {
+  serviceParametersMap_ = serviceParametersMap;
+  setParameter(std::string("ServiceParametersMap"), serviceParametersMap);
 }
 
-std::string CreateApiRequest::getOpenIdConnectConfig()const
-{
-	return openIdConnectConfig_;
+std::string CreateApiRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void CreateApiRequest::setOpenIdConnectConfig(const std::string& openIdConnectConfig)
-{
-	openIdConnectConfig_ = openIdConnectConfig;
-	setParameter("OpenIdConnectConfig", openIdConnectConfig);
+void CreateApiRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string CreateApiRequest::getRequestParameters()const
-{
-	return requestParameters_;
+std::string CreateApiRequest::getOpenIdConnectConfig() const {
+  return openIdConnectConfig_;
 }
 
-void CreateApiRequest::setRequestParameters(const std::string& requestParameters)
-{
-	requestParameters_ = requestParameters;
-	setParameter("RequestParameters", requestParameters);
+void CreateApiRequest::setOpenIdConnectConfig(const std::string &openIdConnectConfig) {
+  openIdConnectConfig_ = openIdConnectConfig;
+  setParameter(std::string("OpenIdConnectConfig"), openIdConnectConfig);
 }
 
-std::string CreateApiRequest::getResultDescriptions()const
-{
-	return resultDescriptions_;
+std::string CreateApiRequest::getRequestParameters() const {
+  return requestParameters_;
 }
 
-void CreateApiRequest::setResultDescriptions(const std::string& resultDescriptions)
-{
-	resultDescriptions_ = resultDescriptions;
-	setParameter("ResultDescriptions", resultDescriptions);
+void CreateApiRequest::setRequestParameters(const std::string &requestParameters) {
+  requestParameters_ = requestParameters;
+  setParameter(std::string("RequestParameters"), requestParameters);
 }
 
-std::string CreateApiRequest::getVisibility()const
-{
-	return visibility_;
+std::string CreateApiRequest::getResultDescriptions() const {
+  return resultDescriptions_;
 }
 
-void CreateApiRequest::setVisibility(const std::string& visibility)
-{
-	visibility_ = visibility;
-	setParameter("Visibility", visibility);
+void CreateApiRequest::setResultDescriptions(const std::string &resultDescriptions) {
+  resultDescriptions_ = resultDescriptions;
+  setParameter(std::string("ResultDescriptions"), resultDescriptions);
 }
 
-std::string CreateApiRequest::getGroupId()const
-{
-	return groupId_;
+std::string CreateApiRequest::getVisibility() const {
+  return visibility_;
 }
 
-void CreateApiRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+void CreateApiRequest::setVisibility(const std::string &visibility) {
+  visibility_ = visibility;
+  setParameter(std::string("Visibility"), visibility);
 }
 
-std::string CreateApiRequest::getServiceConfig()const
-{
-	return serviceConfig_;
+std::string CreateApiRequest::getGroupId() const {
+  return groupId_;
 }
 
-void CreateApiRequest::setServiceConfig(const std::string& serviceConfig)
-{
-	serviceConfig_ = serviceConfig;
-	setParameter("ServiceConfig", serviceConfig);
+void CreateApiRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
 }
 
-std::string CreateApiRequest::getResultType()const
-{
-	return resultType_;
+std::string CreateApiRequest::getServiceConfig() const {
+  return serviceConfig_;
 }
 
-void CreateApiRequest::setResultType(const std::string& resultType)
-{
-	resultType_ = resultType;
-	setParameter("ResultType", resultType);
+void CreateApiRequest::setServiceConfig(const std::string &serviceConfig) {
+  serviceConfig_ = serviceConfig;
+  setParameter(std::string("ServiceConfig"), serviceConfig);
 }
 
-std::string CreateApiRequest::getApiName()const
-{
-	return apiName_;
+std::string CreateApiRequest::getResultType() const {
+  return resultType_;
 }
 
-void CreateApiRequest::setApiName(const std::string& apiName)
-{
-	apiName_ = apiName;
-	setParameter("ApiName", apiName);
+void CreateApiRequest::setResultType(const std::string &resultType) {
+  resultType_ = resultType;
+  setParameter(std::string("ResultType"), resultType);
 }
 
-std::string CreateApiRequest::getResultSample()const
-{
-	return resultSample_;
+std::string CreateApiRequest::getApiName() const {
+  return apiName_;
 }
 
-void CreateApiRequest::setResultSample(const std::string& resultSample)
-{
-	resultSample_ = resultSample;
-	setParameter("ResultSample", resultSample);
+void CreateApiRequest::setApiName(const std::string &apiName) {
+  apiName_ = apiName;
+  setParameter(std::string("ApiName"), apiName);
 }
 
-bool CreateApiRequest::getForceNonceCheck()const
-{
-	return forceNonceCheck_;
+std::string CreateApiRequest::getResultSample() const {
+  return resultSample_;
 }
 
-void CreateApiRequest::setForceNonceCheck(bool forceNonceCheck)
-{
-	forceNonceCheck_ = forceNonceCheck;
-	setParameter("ForceNonceCheck", forceNonceCheck ? "true" : "false");
+void CreateApiRequest::setResultSample(const std::string &resultSample) {
+  resultSample_ = resultSample;
+  setParameter(std::string("ResultSample"), resultSample);
 }
 
-std::string CreateApiRequest::getRequestConfig()const
-{
-	return requestConfig_;
+bool CreateApiRequest::getBackendEnable() const {
+  return backendEnable_;
 }
 
-void CreateApiRequest::setRequestConfig(const std::string& requestConfig)
-{
-	requestConfig_ = requestConfig;
-	setParameter("RequestConfig", requestConfig);
+void CreateApiRequest::setBackendEnable(bool backendEnable) {
+  backendEnable_ = backendEnable;
+  setParameter(std::string("BackendEnable"), backendEnable ? "true" : "false");
 }
 
-std::string CreateApiRequest::getResultBodyModel()const
-{
-	return resultBodyModel_;
+bool CreateApiRequest::getForceNonceCheck() const {
+  return forceNonceCheck_;
 }
 
-void CreateApiRequest::setResultBodyModel(const std::string& resultBodyModel)
-{
-	resultBodyModel_ = resultBodyModel;
-	setParameter("ResultBodyModel", resultBodyModel);
+void CreateApiRequest::setForceNonceCheck(bool forceNonceCheck) {
+  forceNonceCheck_ = forceNonceCheck;
+  setParameter(std::string("ForceNonceCheck"), forceNonceCheck ? "true" : "false");
+}
+
+std::string CreateApiRequest::getRequestConfig() const {
+  return requestConfig_;
+}
+
+void CreateApiRequest::setRequestConfig(const std::string &requestConfig) {
+  requestConfig_ = requestConfig;
+  setParameter(std::string("RequestConfig"), requestConfig);
+}
+
+std::string CreateApiRequest::getResultBodyModel() const {
+  return resultBodyModel_;
+}
+
+void CreateApiRequest::setResultBodyModel(const std::string &resultBodyModel) {
+  resultBodyModel_ = resultBodyModel;
+  setParameter(std::string("ResultBodyModel"), resultBodyModel);
 }
 

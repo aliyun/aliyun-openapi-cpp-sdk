@@ -47,10 +47,10 @@ void ImportSwaggerResult::parse(const std::string &payload)
 			successObject.path = valueSuccessApiImportSwaggerSuccess["Path"].asString();
 		if(!valueSuccessApiImportSwaggerSuccess["HttpMethod"].isNull())
 			successObject.httpMethod = valueSuccessApiImportSwaggerSuccess["HttpMethod"].asString();
-		if(!valueSuccessApiImportSwaggerSuccess["ApiUid"].isNull())
-			successObject.apiUid = valueSuccessApiImportSwaggerSuccess["ApiUid"].asString();
 		if(!valueSuccessApiImportSwaggerSuccess["ApiOperation"].isNull())
 			successObject.apiOperation = valueSuccessApiImportSwaggerSuccess["ApiOperation"].asString();
+		if(!valueSuccessApiImportSwaggerSuccess["ApiUid"].isNull())
+			successObject.apiUid = valueSuccessApiImportSwaggerSuccess["ApiUid"].asString();
 		success_.push_back(successObject);
 	}
 	auto allFailedNode = value["Failed"]["ApiImportSwaggerFailed"];
@@ -69,12 +69,12 @@ void ImportSwaggerResult::parse(const std::string &payload)
 	for (auto valueModelFailedApiImportModelFailed : allModelFailedNode)
 	{
 		ApiImportModelFailed modelFailedObject;
-		if(!valueModelFailedApiImportModelFailed["GroupId"].isNull())
-			modelFailedObject.groupId = valueModelFailedApiImportModelFailed["GroupId"].asString();
-		if(!valueModelFailedApiImportModelFailed["ModelName"].isNull())
-			modelFailedObject.modelName = valueModelFailedApiImportModelFailed["ModelName"].asString();
 		if(!valueModelFailedApiImportModelFailed["ErrorMsg"].isNull())
 			modelFailedObject.errorMsg = valueModelFailedApiImportModelFailed["ErrorMsg"].asString();
+		if(!valueModelFailedApiImportModelFailed["ModelName"].isNull())
+			modelFailedObject.modelName = valueModelFailedApiImportModelFailed["ModelName"].asString();
+		if(!valueModelFailedApiImportModelFailed["GroupId"].isNull())
+			modelFailedObject.groupId = valueModelFailedApiImportModelFailed["GroupId"].asString();
 		modelFailed_.push_back(modelFailedObject);
 	}
 	auto allModelSuccessNode = value["ModelSuccess"]["ApiImportModelSuccess"];
@@ -83,12 +83,12 @@ void ImportSwaggerResult::parse(const std::string &payload)
 		ApiImportModelSuccess modelSuccessObject;
 		if(!valueModelSuccessApiImportModelSuccess["ModelUid"].isNull())
 			modelSuccessObject.modelUid = valueModelSuccessApiImportModelSuccess["ModelUid"].asString();
-		if(!valueModelSuccessApiImportModelSuccess["ModelOperation"].isNull())
-			modelSuccessObject.modelOperation = valueModelSuccessApiImportModelSuccess["ModelOperation"].asString();
-		if(!valueModelSuccessApiImportModelSuccess["GroupId"].isNull())
-			modelSuccessObject.groupId = valueModelSuccessApiImportModelSuccess["GroupId"].asString();
 		if(!valueModelSuccessApiImportModelSuccess["ModelName"].isNull())
 			modelSuccessObject.modelName = valueModelSuccessApiImportModelSuccess["ModelName"].asString();
+		if(!valueModelSuccessApiImportModelSuccess["GroupId"].isNull())
+			modelSuccessObject.groupId = valueModelSuccessApiImportModelSuccess["GroupId"].asString();
+		if(!valueModelSuccessApiImportModelSuccess["ModelOperation"].isNull())
+			modelSuccessObject.modelOperation = valueModelSuccessApiImportModelSuccess["ModelOperation"].asString();
 		modelSuccess_.push_back(modelSuccessObject);
 	}
 

@@ -37,10 +37,10 @@ namespace AlibabaCloud
 				DescribeDomainResult();
 				explicit DescribeDomainResult(const std::string &payload);
 				~DescribeDomainResult();
-				std::string getSubDomain()const;
 				std::string getCertificateBody()const;
-				std::string getDomainCNAMEStatus()const;
+				std::string getSubDomain()const;
 				std::string getDomainRemark()const;
+				std::string getDomainCNAMEStatus()const;
 				std::string getDomainBindingStatus()const;
 				std::string getDomainLegalStatus()const;
 				std::string getDomainName()const;
@@ -53,10 +53,10 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string subDomain_;
 				std::string certificateBody_;
-				std::string domainCNAMEStatus_;
+				std::string subDomain_;
 				std::string domainRemark_;
+				std::string domainCNAMEStatus_;
 				std::string domainBindingStatus_;
 				std::string domainLegalStatus_;
 				std::string domainName_;

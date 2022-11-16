@@ -54,8 +54,8 @@ namespace AlibabaCloud
 				struct ApiImportModelSuccess
 				{
 					std::string modelUid;
-					std::string modelOperation;
 					std::string modelName;
+					std::string modelOperation;
 					std::string groupId;
 				};
 

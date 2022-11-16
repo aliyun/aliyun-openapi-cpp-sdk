@@ -32,6 +32,12 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CLOUDAPI_EXPORT DescribeApiHistoryResult : public ServiceResult
 			{
 			public:
+				struct BackendConfig
+				{
+					std::string backendName;
+					std::string backendId;
+					std::string backendType;
+				};
 				struct RequestConfig
 				{
 					std::string requestPath;
@@ -46,6 +52,7 @@ namespace AlibabaCloud
 				{
 					struct VpcConfig
 					{
+						std::string vpcScheme;
 						std::string vpcId;
 						std::string instanceId;
 						int port;
@@ -53,9 +60,31 @@ namespace AlibabaCloud
 					};
 					struct FunctionComputeConfig
 					{
+						std::string path;
 						std::string functionName;
+						std::string contentTypeValue;
 						std::string serviceName;
+						std::string fcType;
+						std::string qualifier;
+						std::string method;
 						std::string regionId;
+						bool onlyBusinessPath;
+						std::string roleArn;
+						std::string fcBaseUrl;
+						std::string contentTypeCatagory;
+					};
+					struct OssConfig
+					{
+						std::string action;
+						std::string bucketName;
+						std::string ossRegionId;
+						std::string key;
+					};
+					struct EventBridgeConfig
+					{
+						std::string eventBridgeRegionId;
+						std::string eventSource;
+						std::string eventBus;
 						std::string roleArn;
 					};
 					struct MockHeader
@@ -65,17 +94,21 @@ namespace AlibabaCloud
 					};
 					std::string serviceAddress;
 					FunctionComputeConfig functionComputeConfig;
+					std::string contentTypeValue;
 					std::string mockResult;
 					VpcConfig vpcConfig;
+					OssConfig ossConfig;
 					std::string serviceVpcEnable;
 					int mockStatusCode;
 					std::vector<MockHeader> mockHeaders;
-					std::string serviceHttpMethod;
 					std::string servicePath;
+					std::string serviceHttpMethod;
 					std::string mock;
 					std::string vpcId;
+					EventBridgeConfig eventBridgeConfig;
 					int serviceTimeout;
 					std::string serviceProtocol;
+					std::string contentTypeCatagory;
 				};
 				struct OpenIdConnectConfig
 				{
@@ -98,8 +131,8 @@ namespace AlibabaCloud
 					std::string id;
 					bool hasChild;
 					std::string key;
-					std::string name;
 					bool mandatory;
+					std::string name;
 				};
 				struct SystemParameter
 				{
@@ -167,10 +200,13 @@ namespace AlibabaCloud
 				std::vector<ErrorCodeSample> getErrorCodeSamples()const;
 				std::vector<RequestParameter> getRequestParameters()const;
 				std::vector<ServiceParameterMap> getServiceParametersMap()const;
+				std::string getAppCodeAuthType()const;
 				std::string getResultBodyModel()const;
 				ServiceConfig getServiceConfig()const;
 				std::vector<ConstantParameter> getConstantParameters()const;
+				std::string getWebSocketApiType()const;
 				std::vector<ResultDescription> getResultDescriptions()const;
+				BackendConfig getBackendConfig()const;
 				OpenIdConnectConfig getOpenIdConnectConfig()const;
 				std::string getAuthType()const;
 				std::string getStatus()const;
@@ -184,6 +220,7 @@ namespace AlibabaCloud
 				std::vector<CustomSystemParameter> getCustomSystemParameters()const;
 				std::string getGroupId()const;
 				std::string getDeployedTime()const;
+				bool getBackendEnable()const;
 				std::vector<SystemParameter> getSystemParameters()const;
 				std::string getVisibility()const;
 				std::vector<ServiceParameter> getServiceParameters()const;
@@ -201,10 +238,13 @@ namespace AlibabaCloud
 				std::vector<ErrorCodeSample> errorCodeSamples_;
 				std::vector<RequestParameter> requestParameters_;
 				std::vector<ServiceParameterMap> serviceParametersMap_;
+				std::string appCodeAuthType_;
 				std::string resultBodyModel_;
 				ServiceConfig serviceConfig_;
 				std::vector<ConstantParameter> constantParameters_;
+				std::string webSocketApiType_;
 				std::vector<ResultDescription> resultDescriptions_;
+				BackendConfig backendConfig_;
 				OpenIdConnectConfig openIdConnectConfig_;
 				std::string authType_;
 				std::string status_;
@@ -218,6 +258,7 @@ namespace AlibabaCloud
 				std::vector<CustomSystemParameter> customSystemParameters_;
 				std::string groupId_;
 				std::string deployedTime_;
+				bool backendEnable_;
 				std::vector<SystemParameter> systemParameters_;
 				std::string visibility_;
 				std::vector<ServiceParameter> serviceParameters_;

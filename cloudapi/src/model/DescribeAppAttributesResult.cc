@@ -43,24 +43,34 @@ void DescribeAppAttributesResult::parse(const std::string &payload)
 	for (auto valueAppsAppAttribute : allAppsNode)
 	{
 		AppAttribute appsObject;
-		if(!valueAppsAppAttribute["AppId"].isNull())
-			appsObject.appId = std::stol(valueAppsAppAttribute["AppId"].asString());
 		if(!valueAppsAppAttribute["AppName"].isNull())
 			appsObject.appName = valueAppsAppAttribute["AppName"].asString();
+		if(!valueAppsAppAttribute["ModifiedTime"].isNull())
+			appsObject.modifiedTime = valueAppsAppAttribute["ModifiedTime"].asString();
 		if(!valueAppsAppAttribute["Description"].isNull())
 			appsObject.description = valueAppsAppAttribute["Description"].asString();
 		if(!valueAppsAppAttribute["CreatedTime"].isNull())
 			appsObject.createdTime = valueAppsAppAttribute["CreatedTime"].asString();
-		if(!valueAppsAppAttribute["ModifiedTime"].isNull())
-			appsObject.modifiedTime = valueAppsAppAttribute["ModifiedTime"].asString();
+		if(!valueAppsAppAttribute["AppId"].isNull())
+			appsObject.appId = std::stol(valueAppsAppAttribute["AppId"].asString());
+		auto allTagsNode = valueAppsAppAttribute["Tags"]["TagInfo"];
+		for (auto valueAppsAppAttributeTagsTagInfo : allTagsNode)
+		{
+			AppAttribute::TagInfo tagsObject;
+			if(!valueAppsAppAttributeTagsTagInfo["Key"].isNull())
+				tagsObject.key = valueAppsAppAttributeTagsTagInfo["Key"].asString();
+			if(!valueAppsAppAttributeTagsTagInfo["Value"].isNull())
+				tagsObject.value = valueAppsAppAttributeTagsTagInfo["Value"].asString();
+			appsObject.tags.push_back(tagsObject);
+		}
 		apps_.push_back(appsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

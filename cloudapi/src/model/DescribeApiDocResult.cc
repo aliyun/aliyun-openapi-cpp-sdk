@@ -55,107 +55,107 @@ void DescribeApiDocResult::parse(const std::string &payload)
 	for (auto valueResultDescriptionsResultDescription : allResultDescriptionsNode)
 	{
 		ResultDescription resultDescriptionsObject;
-		if(!valueResultDescriptionsResultDescription["Id"].isNull())
-			resultDescriptionsObject.id = valueResultDescriptionsResultDescription["Id"].asString();
-		if(!valueResultDescriptionsResultDescription["Pid"].isNull())
-			resultDescriptionsObject.pid = valueResultDescriptionsResultDescription["Pid"].asString();
-		if(!valueResultDescriptionsResultDescription["HasChild"].isNull())
-			resultDescriptionsObject.hasChild = valueResultDescriptionsResultDescription["HasChild"].asString() == "true";
-		if(!valueResultDescriptionsResultDescription["Key"].isNull())
-			resultDescriptionsObject.key = valueResultDescriptionsResultDescription["Key"].asString();
-		if(!valueResultDescriptionsResultDescription["Name"].isNull())
-			resultDescriptionsObject.name = valueResultDescriptionsResultDescription["Name"].asString();
-		if(!valueResultDescriptionsResultDescription["Mandatory"].isNull())
-			resultDescriptionsObject.mandatory = valueResultDescriptionsResultDescription["Mandatory"].asString() == "true";
 		if(!valueResultDescriptionsResultDescription["Type"].isNull())
 			resultDescriptionsObject.type = valueResultDescriptionsResultDescription["Type"].asString();
+		if(!valueResultDescriptionsResultDescription["Key"].isNull())
+			resultDescriptionsObject.key = valueResultDescriptionsResultDescription["Key"].asString();
+		if(!valueResultDescriptionsResultDescription["HasChild"].isNull())
+			resultDescriptionsObject.hasChild = valueResultDescriptionsResultDescription["HasChild"].asString() == "true";
 		if(!valueResultDescriptionsResultDescription["Description"].isNull())
 			resultDescriptionsObject.description = valueResultDescriptionsResultDescription["Description"].asString();
+		if(!valueResultDescriptionsResultDescription["Pid"].isNull())
+			resultDescriptionsObject.pid = valueResultDescriptionsResultDescription["Pid"].asString();
+		if(!valueResultDescriptionsResultDescription["Mandatory"].isNull())
+			resultDescriptionsObject.mandatory = valueResultDescriptionsResultDescription["Mandatory"].asString() == "true";
+		if(!valueResultDescriptionsResultDescription["Name"].isNull())
+			resultDescriptionsObject.name = valueResultDescriptionsResultDescription["Name"].asString();
+		if(!valueResultDescriptionsResultDescription["Id"].isNull())
+			resultDescriptionsObject.id = valueResultDescriptionsResultDescription["Id"].asString();
 		resultDescriptions_.push_back(resultDescriptionsObject);
 	}
 	auto allRequestParametersNode = value["RequestParameters"]["RequestParameter"];
 	for (auto valueRequestParametersRequestParameter : allRequestParametersNode)
 	{
 		RequestParameter requestParametersObject;
-		if(!valueRequestParametersRequestParameter["ApiParameterName"].isNull())
-			requestParametersObject.apiParameterName = valueRequestParametersRequestParameter["ApiParameterName"].asString();
-		if(!valueRequestParametersRequestParameter["Location"].isNull())
-			requestParametersObject.location = valueRequestParametersRequestParameter["Location"].asString();
-		if(!valueRequestParametersRequestParameter["ParameterType"].isNull())
-			requestParametersObject.parameterType = valueRequestParametersRequestParameter["ParameterType"].asString();
-		if(!valueRequestParametersRequestParameter["Required"].isNull())
-			requestParametersObject.required = valueRequestParametersRequestParameter["Required"].asString();
-		if(!valueRequestParametersRequestParameter["DefaultValue"].isNull())
-			requestParametersObject.defaultValue = valueRequestParametersRequestParameter["DefaultValue"].asString();
-		if(!valueRequestParametersRequestParameter["DemoValue"].isNull())
-			requestParametersObject.demoValue = valueRequestParametersRequestParameter["DemoValue"].asString();
-		if(!valueRequestParametersRequestParameter["MaxValue"].isNull())
-			requestParametersObject.maxValue = std::stol(valueRequestParametersRequestParameter["MaxValue"].asString());
-		if(!valueRequestParametersRequestParameter["MinValue"].isNull())
-			requestParametersObject.minValue = std::stol(valueRequestParametersRequestParameter["MinValue"].asString());
-		if(!valueRequestParametersRequestParameter["MaxLength"].isNull())
-			requestParametersObject.maxLength = std::stol(valueRequestParametersRequestParameter["MaxLength"].asString());
-		if(!valueRequestParametersRequestParameter["MinLength"].isNull())
-			requestParametersObject.minLength = std::stol(valueRequestParametersRequestParameter["MinLength"].asString());
-		if(!valueRequestParametersRequestParameter["RegularExpression"].isNull())
-			requestParametersObject.regularExpression = valueRequestParametersRequestParameter["RegularExpression"].asString();
 		if(!valueRequestParametersRequestParameter["JsonScheme"].isNull())
 			requestParametersObject.jsonScheme = valueRequestParametersRequestParameter["JsonScheme"].asString();
-		if(!valueRequestParametersRequestParameter["EnumValue"].isNull())
-			requestParametersObject.enumValue = valueRequestParametersRequestParameter["EnumValue"].asString();
-		if(!valueRequestParametersRequestParameter["DocShow"].isNull())
-			requestParametersObject.docShow = valueRequestParametersRequestParameter["DocShow"].asString();
-		if(!valueRequestParametersRequestParameter["DocOrder"].isNull())
-			requestParametersObject.docOrder = std::stoi(valueRequestParametersRequestParameter["DocOrder"].asString());
-		if(!valueRequestParametersRequestParameter["Description"].isNull())
-			requestParametersObject.description = valueRequestParametersRequestParameter["Description"].asString();
+		if(!valueRequestParametersRequestParameter["MaxValue"].isNull())
+			requestParametersObject.maxValue = std::stol(valueRequestParametersRequestParameter["MaxValue"].asString());
 		if(!valueRequestParametersRequestParameter["ArrayItemsType"].isNull())
 			requestParametersObject.arrayItemsType = valueRequestParametersRequestParameter["ArrayItemsType"].asString();
+		if(!valueRequestParametersRequestParameter["MinValue"].isNull())
+			requestParametersObject.minValue = std::stol(valueRequestParametersRequestParameter["MinValue"].asString());
+		if(!valueRequestParametersRequestParameter["DocShow"].isNull())
+			requestParametersObject.docShow = valueRequestParametersRequestParameter["DocShow"].asString();
+		if(!valueRequestParametersRequestParameter["MaxLength"].isNull())
+			requestParametersObject.maxLength = std::stol(valueRequestParametersRequestParameter["MaxLength"].asString());
+		if(!valueRequestParametersRequestParameter["DefaultValue"].isNull())
+			requestParametersObject.defaultValue = valueRequestParametersRequestParameter["DefaultValue"].asString();
+		if(!valueRequestParametersRequestParameter["ApiParameterName"].isNull())
+			requestParametersObject.apiParameterName = valueRequestParametersRequestParameter["ApiParameterName"].asString();
+		if(!valueRequestParametersRequestParameter["EnumValue"].isNull())
+			requestParametersObject.enumValue = valueRequestParametersRequestParameter["EnumValue"].asString();
+		if(!valueRequestParametersRequestParameter["DemoValue"].isNull())
+			requestParametersObject.demoValue = valueRequestParametersRequestParameter["DemoValue"].asString();
+		if(!valueRequestParametersRequestParameter["Required"].isNull())
+			requestParametersObject.required = valueRequestParametersRequestParameter["Required"].asString();
+		if(!valueRequestParametersRequestParameter["Description"].isNull())
+			requestParametersObject.description = valueRequestParametersRequestParameter["Description"].asString();
+		if(!valueRequestParametersRequestParameter["ParameterType"].isNull())
+			requestParametersObject.parameterType = valueRequestParametersRequestParameter["ParameterType"].asString();
+		if(!valueRequestParametersRequestParameter["RegularExpression"].isNull())
+			requestParametersObject.regularExpression = valueRequestParametersRequestParameter["RegularExpression"].asString();
+		if(!valueRequestParametersRequestParameter["MinLength"].isNull())
+			requestParametersObject.minLength = std::stol(valueRequestParametersRequestParameter["MinLength"].asString());
+		if(!valueRequestParametersRequestParameter["DocOrder"].isNull())
+			requestParametersObject.docOrder = std::stoi(valueRequestParametersRequestParameter["DocOrder"].asString());
+		if(!valueRequestParametersRequestParameter["Location"].isNull())
+			requestParametersObject.location = valueRequestParametersRequestParameter["Location"].asString();
 		requestParameters_.push_back(requestParametersObject);
 	}
 	auto requestConfigNode = value["RequestConfig"];
-	if(!requestConfigNode["RequestProtocol"].isNull())
-		requestConfig_.requestProtocol = requestConfigNode["RequestProtocol"].asString();
-	if(!requestConfigNode["RequestHttpMethod"].isNull())
-		requestConfig_.requestHttpMethod = requestConfigNode["RequestHttpMethod"].asString();
 	if(!requestConfigNode["RequestPath"].isNull())
 		requestConfig_.requestPath = requestConfigNode["RequestPath"].asString();
+	if(!requestConfigNode["RequestHttpMethod"].isNull())
+		requestConfig_.requestHttpMethod = requestConfigNode["RequestHttpMethod"].asString();
 	if(!requestConfigNode["BodyFormat"].isNull())
 		requestConfig_.bodyFormat = requestConfigNode["BodyFormat"].asString();
-	if(!requestConfigNode["PostBodyDescription"].isNull())
-		requestConfig_.postBodyDescription = requestConfigNode["PostBodyDescription"].asString();
 	if(!requestConfigNode["RequestMode"].isNull())
 		requestConfig_.requestMode = requestConfigNode["RequestMode"].asString();
+	if(!requestConfigNode["PostBodyDescription"].isNull())
+		requestConfig_.postBodyDescription = requestConfigNode["PostBodyDescription"].asString();
+	if(!requestConfigNode["RequestProtocol"].isNull())
+		requestConfig_.requestProtocol = requestConfigNode["RequestProtocol"].asString();
+	if(!value["ApiId"].isNull())
+		apiId_ = value["ApiId"].asString();
+	if(!value["ResultType"].isNull())
+		resultType_ = value["ResultType"].asString();
+	if(!value["DisableInternet"].isNull())
+		disableInternet_ = value["DisableInternet"].asString() == "true";
+	if(!value["ResultSample"].isNull())
+		resultSample_ = value["ResultSample"].asString();
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
+	if(!value["ForceNonceCheck"].isNull())
+		forceNonceCheck_ = value["ForceNonceCheck"].asString() == "true";
+	if(!value["Visibility"].isNull())
+		visibility_ = value["Visibility"].asString();
+	if(!value["FailResultSample"].isNull())
+		failResultSample_ = value["FailResultSample"].asString();
+	if(!value["AuthType"].isNull())
+		authType_ = value["AuthType"].asString();
 	if(!value["GroupId"].isNull())
 		groupId_ = value["GroupId"].asString();
 	if(!value["GroupName"].isNull())
 		groupName_ = value["GroupName"].asString();
-	if(!value["StageName"].isNull())
-		stageName_ = value["StageName"].asString();
-	if(!value["ApiId"].isNull())
-		apiId_ = value["ApiId"].asString();
-	if(!value["ApiName"].isNull())
-		apiName_ = value["ApiName"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
-	if(!value["Visibility"].isNull())
-		visibility_ = value["Visibility"].asString();
-	if(!value["AuthType"].isNull())
-		authType_ = value["AuthType"].asString();
-	if(!value["ResultType"].isNull())
-		resultType_ = value["ResultType"].asString();
-	if(!value["ResultSample"].isNull())
-		resultSample_ = value["ResultSample"].asString();
-	if(!value["FailResultSample"].isNull())
-		failResultSample_ = value["FailResultSample"].asString();
 	if(!value["DeployedTime"].isNull())
 		deployedTime_ = value["DeployedTime"].asString();
-	if(!value["ForceNonceCheck"].isNull())
-		forceNonceCheck_ = value["ForceNonceCheck"].asString() == "true";
-	if(!value["DisableInternet"].isNull())
-		disableInternet_ = value["DisableInternet"].asString() == "true";
+	if(!value["StageName"].isNull())
+		stageName_ = value["StageName"].asString();
+	if(!value["ApiName"].isNull())
+		apiName_ = value["ApiName"].asString();
 
 }
 
@@ -169,19 +169,24 @@ DescribeApiDocResult::RequestConfig DescribeApiDocResult::getRequestConfig()cons
 	return requestConfig_;
 }
 
-std::string DescribeApiDocResult::getDescription()const
-{
-	return description_;
-}
-
 std::string DescribeApiDocResult::getResultSample()const
 {
 	return resultSample_;
 }
 
+std::string DescribeApiDocResult::getDescription()const
+{
+	return description_;
+}
+
 bool DescribeApiDocResult::getDisableInternet()const
 {
 	return disableInternet_;
+}
+
+bool DescribeApiDocResult::getForceNonceCheck()const
+{
+	return forceNonceCheck_;
 }
 
 std::string DescribeApiDocResult::getStageName()const
@@ -192,11 +197,6 @@ std::string DescribeApiDocResult::getStageName()const
 std::string DescribeApiDocResult::getApiName()const
 {
 	return apiName_;
-}
-
-bool DescribeApiDocResult::getForceNonceCheck()const
-{
-	return forceNonceCheck_;
 }
 
 std::string DescribeApiDocResult::getResultType()const

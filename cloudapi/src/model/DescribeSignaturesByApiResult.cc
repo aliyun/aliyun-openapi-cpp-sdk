@@ -43,12 +43,12 @@ void DescribeSignaturesByApiResult::parse(const std::string &payload)
 	for (auto valueSignaturesSignatureItem : allSignaturesNode)
 	{
 		SignatureItem signaturesObject;
+		if(!valueSignaturesSignatureItem["BoundTime"].isNull())
+			signaturesObject.boundTime = valueSignaturesSignatureItem["BoundTime"].asString();
 		if(!valueSignaturesSignatureItem["SignatureId"].isNull())
 			signaturesObject.signatureId = valueSignaturesSignatureItem["SignatureId"].asString();
 		if(!valueSignaturesSignatureItem["SignatureName"].isNull())
 			signaturesObject.signatureName = valueSignaturesSignatureItem["SignatureName"].asString();
-		if(!valueSignaturesSignatureItem["BoundTime"].isNull())
-			signaturesObject.boundTime = valueSignaturesSignatureItem["BoundTime"].asString();
 		signatures_.push_back(signaturesObject);
 	}
 

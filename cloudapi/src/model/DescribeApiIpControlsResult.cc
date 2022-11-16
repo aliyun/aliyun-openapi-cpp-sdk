@@ -43,24 +43,24 @@ void DescribeApiIpControlsResult::parse(const std::string &payload)
 	for (auto valueApiIpControlsApiIpControlItem : allApiIpControlsNode)
 	{
 		ApiIpControlItem apiIpControlsObject;
+		if(!valueApiIpControlsApiIpControlItem["BoundTime"].isNull())
+			apiIpControlsObject.boundTime = valueApiIpControlsApiIpControlItem["BoundTime"].asString();
 		if(!valueApiIpControlsApiIpControlItem["ApiId"].isNull())
 			apiIpControlsObject.apiId = valueApiIpControlsApiIpControlItem["ApiId"].asString();
-		if(!valueApiIpControlsApiIpControlItem["ApiName"].isNull())
-			apiIpControlsObject.apiName = valueApiIpControlsApiIpControlItem["ApiName"].asString();
 		if(!valueApiIpControlsApiIpControlItem["IpControlId"].isNull())
 			apiIpControlsObject.ipControlId = valueApiIpControlsApiIpControlItem["IpControlId"].asString();
 		if(!valueApiIpControlsApiIpControlItem["IpControlName"].isNull())
 			apiIpControlsObject.ipControlName = valueApiIpControlsApiIpControlItem["IpControlName"].asString();
-		if(!valueApiIpControlsApiIpControlItem["BoundTime"].isNull())
-			apiIpControlsObject.boundTime = valueApiIpControlsApiIpControlItem["BoundTime"].asString();
+		if(!valueApiIpControlsApiIpControlItem["ApiName"].isNull())
+			apiIpControlsObject.apiName = valueApiIpControlsApiIpControlItem["ApiName"].asString();
 		apiIpControls_.push_back(apiIpControlsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

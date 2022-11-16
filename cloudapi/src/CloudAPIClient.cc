@@ -31,21 +31,21 @@ CloudAPIClient::CloudAPIClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cloudapi");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "apigateway");
 }
 
 CloudAPIClient::CloudAPIClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cloudapi");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "apigateway");
 }
 
 CloudAPIClient::CloudAPIClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cloudapi");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "apigateway");
 }
 
 CloudAPIClient::~CloudAPIClient()
@@ -81,6 +81,42 @@ CloudAPIClient::AbolishApiOutcomeCallable CloudAPIClient::abolishApiCallable(con
 			[this, request]()
 			{
 			return this->abolishApi(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::AddAccessControlListEntryOutcome CloudAPIClient::addAccessControlListEntry(const AddAccessControlListEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddAccessControlListEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddAccessControlListEntryOutcome(AddAccessControlListEntryResult(outcome.result()));
+	else
+		return AddAccessControlListEntryOutcome(outcome.error());
+}
+
+void CloudAPIClient::addAccessControlListEntryAsync(const AddAccessControlListEntryRequest& request, const AddAccessControlListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addAccessControlListEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::AddAccessControlListEntryOutcomeCallable CloudAPIClient::addAccessControlListEntryCallable(const AddAccessControlListEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddAccessControlListEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->addAccessControlListEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -153,6 +189,150 @@ CloudAPIClient::AddTrafficSpecialControlOutcomeCallable CloudAPIClient::addTraff
 			[this, request]()
 			{
 			return this->addTrafficSpecialControl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::AttachPluginOutcome CloudAPIClient::attachPlugin(const AttachPluginRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachPluginOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachPluginOutcome(AttachPluginResult(outcome.result()));
+	else
+		return AttachPluginOutcome(outcome.error());
+}
+
+void CloudAPIClient::attachPluginAsync(const AttachPluginRequest& request, const AttachPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachPlugin(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::AttachPluginOutcomeCallable CloudAPIClient::attachPluginCallable(const AttachPluginRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachPluginOutcome()>>(
+			[this, request]()
+			{
+			return this->attachPlugin(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::BatchAbolishApisOutcome CloudAPIClient::batchAbolishApis(const BatchAbolishApisRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchAbolishApisOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchAbolishApisOutcome(BatchAbolishApisResult(outcome.result()));
+	else
+		return BatchAbolishApisOutcome(outcome.error());
+}
+
+void CloudAPIClient::batchAbolishApisAsync(const BatchAbolishApisRequest& request, const BatchAbolishApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchAbolishApis(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::BatchAbolishApisOutcomeCallable CloudAPIClient::batchAbolishApisCallable(const BatchAbolishApisRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchAbolishApisOutcome()>>(
+			[this, request]()
+			{
+			return this->batchAbolishApis(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::BatchDeployApisOutcome CloudAPIClient::batchDeployApis(const BatchDeployApisRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchDeployApisOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchDeployApisOutcome(BatchDeployApisResult(outcome.result()));
+	else
+		return BatchDeployApisOutcome(outcome.error());
+}
+
+void CloudAPIClient::batchDeployApisAsync(const BatchDeployApisRequest& request, const BatchDeployApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchDeployApis(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::BatchDeployApisOutcomeCallable CloudAPIClient::batchDeployApisCallable(const BatchDeployApisRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchDeployApisOutcome()>>(
+			[this, request]()
+			{
+			return this->batchDeployApis(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::CreateAccessControlListOutcome CloudAPIClient::createAccessControlList(const CreateAccessControlListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAccessControlListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAccessControlListOutcome(CreateAccessControlListResult(outcome.result()));
+	else
+		return CreateAccessControlListOutcome(outcome.error());
+}
+
+void CloudAPIClient::createAccessControlListAsync(const CreateAccessControlListRequest& request, const CreateAccessControlListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAccessControlList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::CreateAccessControlListOutcomeCallable CloudAPIClient::createAccessControlListCallable(const CreateAccessControlListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAccessControlListOutcome()>>(
+			[this, request]()
+			{
+			return this->createAccessControlList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,6 +483,150 @@ CloudAPIClient::CreateAppOutcomeCallable CloudAPIClient::createAppCallable(const
 	return task->get_future();
 }
 
+CloudAPIClient::CreateBackendOutcome CloudAPIClient::createBackend(const CreateBackendRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateBackendOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateBackendOutcome(CreateBackendResult(outcome.result()));
+	else
+		return CreateBackendOutcome(outcome.error());
+}
+
+void CloudAPIClient::createBackendAsync(const CreateBackendRequest& request, const CreateBackendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createBackend(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::CreateBackendOutcomeCallable CloudAPIClient::createBackendCallable(const CreateBackendRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateBackendOutcome()>>(
+			[this, request]()
+			{
+			return this->createBackend(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::CreateBackendModelOutcome CloudAPIClient::createBackendModel(const CreateBackendModelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateBackendModelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateBackendModelOutcome(CreateBackendModelResult(outcome.result()));
+	else
+		return CreateBackendModelOutcome(outcome.error());
+}
+
+void CloudAPIClient::createBackendModelAsync(const CreateBackendModelRequest& request, const CreateBackendModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createBackendModel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::CreateBackendModelOutcomeCallable CloudAPIClient::createBackendModelCallable(const CreateBackendModelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateBackendModelOutcome()>>(
+			[this, request]()
+			{
+			return this->createBackendModel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::CreateDatasetOutcome CloudAPIClient::createDataset(const CreateDatasetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDatasetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDatasetOutcome(CreateDatasetResult(outcome.result()));
+	else
+		return CreateDatasetOutcome(outcome.error());
+}
+
+void CloudAPIClient::createDatasetAsync(const CreateDatasetRequest& request, const CreateDatasetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDataset(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::CreateDatasetOutcomeCallable CloudAPIClient::createDatasetCallable(const CreateDatasetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDatasetOutcome()>>(
+			[this, request]()
+			{
+			return this->createDataset(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::CreateDatasetItemOutcome CloudAPIClient::createDatasetItem(const CreateDatasetItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDatasetItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDatasetItemOutcome(CreateDatasetItemResult(outcome.result()));
+	else
+		return CreateDatasetItemOutcome(outcome.error());
+}
+
+void CloudAPIClient::createDatasetItemAsync(const CreateDatasetItemRequest& request, const CreateDatasetItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDatasetItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::CreateDatasetItemOutcomeCallable CloudAPIClient::createDatasetItemCallable(const CreateDatasetItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDatasetItemOutcome()>>(
+			[this, request]()
+			{
+			return this->createDatasetItem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::CreateInstanceOutcome CloudAPIClient::createInstance(const CreateInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -447,6 +771,114 @@ CloudAPIClient::CreateLogConfigOutcomeCallable CloudAPIClient::createLogConfigCa
 	return task->get_future();
 }
 
+CloudAPIClient::CreateModelOutcome CloudAPIClient::createModel(const CreateModelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateModelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateModelOutcome(CreateModelResult(outcome.result()));
+	else
+		return CreateModelOutcome(outcome.error());
+}
+
+void CloudAPIClient::createModelAsync(const CreateModelRequest& request, const CreateModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createModel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::CreateModelOutcomeCallable CloudAPIClient::createModelCallable(const CreateModelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateModelOutcome()>>(
+			[this, request]()
+			{
+			return this->createModel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::CreateMonitorGroupOutcome CloudAPIClient::createMonitorGroup(const CreateMonitorGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateMonitorGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateMonitorGroupOutcome(CreateMonitorGroupResult(outcome.result()));
+	else
+		return CreateMonitorGroupOutcome(outcome.error());
+}
+
+void CloudAPIClient::createMonitorGroupAsync(const CreateMonitorGroupRequest& request, const CreateMonitorGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createMonitorGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::CreateMonitorGroupOutcomeCallable CloudAPIClient::createMonitorGroupCallable(const CreateMonitorGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateMonitorGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->createMonitorGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::CreatePluginOutcome CloudAPIClient::createPlugin(const CreatePluginRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreatePluginOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreatePluginOutcome(CreatePluginResult(outcome.result()));
+	else
+		return CreatePluginOutcome(outcome.error());
+}
+
+void CloudAPIClient::createPluginAsync(const CreatePluginRequest& request, const CreatePluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createPlugin(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::CreatePluginOutcomeCallable CloudAPIClient::createPluginCallable(const CreatePluginRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreatePluginOutcome()>>(
+			[this, request]()
+			{
+			return this->createPlugin(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::CreateSignatureOutcome CloudAPIClient::createSignature(const CreateSignatureRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +945,42 @@ CloudAPIClient::CreateTrafficControlOutcomeCallable CloudAPIClient::createTraffi
 			[this, request]()
 			{
 			return this->createTrafficControl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DeleteAccessControlListOutcome CloudAPIClient::deleteAccessControlList(const DeleteAccessControlListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAccessControlListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAccessControlListOutcome(DeleteAccessControlListResult(outcome.result()));
+	else
+		return DeleteAccessControlListOutcome(outcome.error());
+}
+
+void CloudAPIClient::deleteAccessControlListAsync(const DeleteAccessControlListRequest& request, const DeleteAccessControlListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAccessControlList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DeleteAccessControlListOutcomeCallable CloudAPIClient::deleteAccessControlListCallable(const DeleteAccessControlListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAccessControlListOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAccessControlList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -699,6 +1167,150 @@ CloudAPIClient::DeleteAppOutcomeCallable CloudAPIClient::deleteAppCallable(const
 	return task->get_future();
 }
 
+CloudAPIClient::DeleteBackendOutcome CloudAPIClient::deleteBackend(const DeleteBackendRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteBackendOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteBackendOutcome(DeleteBackendResult(outcome.result()));
+	else
+		return DeleteBackendOutcome(outcome.error());
+}
+
+void CloudAPIClient::deleteBackendAsync(const DeleteBackendRequest& request, const DeleteBackendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteBackend(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DeleteBackendOutcomeCallable CloudAPIClient::deleteBackendCallable(const DeleteBackendRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteBackendOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteBackend(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DeleteBackendModelOutcome CloudAPIClient::deleteBackendModel(const DeleteBackendModelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteBackendModelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteBackendModelOutcome(DeleteBackendModelResult(outcome.result()));
+	else
+		return DeleteBackendModelOutcome(outcome.error());
+}
+
+void CloudAPIClient::deleteBackendModelAsync(const DeleteBackendModelRequest& request, const DeleteBackendModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteBackendModel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DeleteBackendModelOutcomeCallable CloudAPIClient::deleteBackendModelCallable(const DeleteBackendModelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteBackendModelOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteBackendModel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DeleteDatasetOutcome CloudAPIClient::deleteDataset(const DeleteDatasetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDatasetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDatasetOutcome(DeleteDatasetResult(outcome.result()));
+	else
+		return DeleteDatasetOutcome(outcome.error());
+}
+
+void CloudAPIClient::deleteDatasetAsync(const DeleteDatasetRequest& request, const DeleteDatasetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDataset(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DeleteDatasetOutcomeCallable CloudAPIClient::deleteDatasetCallable(const DeleteDatasetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDatasetOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDataset(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DeleteDatasetItemOutcome CloudAPIClient::deleteDatasetItem(const DeleteDatasetItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDatasetItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDatasetItemOutcome(DeleteDatasetItemResult(outcome.result()));
+	else
+		return DeleteDatasetItemOutcome(outcome.error());
+}
+
+void CloudAPIClient::deleteDatasetItemAsync(const DeleteDatasetItemRequest& request, const DeleteDatasetItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDatasetItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DeleteDatasetItemOutcomeCallable CloudAPIClient::deleteDatasetItemCallable(const DeleteDatasetItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDatasetItemOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDatasetItem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::DeleteDomainOutcome CloudAPIClient::deleteDomain(const DeleteDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -879,6 +1491,114 @@ CloudAPIClient::DeleteLogConfigOutcomeCallable CloudAPIClient::deleteLogConfigCa
 	return task->get_future();
 }
 
+CloudAPIClient::DeleteModelOutcome CloudAPIClient::deleteModel(const DeleteModelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteModelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteModelOutcome(DeleteModelResult(outcome.result()));
+	else
+		return DeleteModelOutcome(outcome.error());
+}
+
+void CloudAPIClient::deleteModelAsync(const DeleteModelRequest& request, const DeleteModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteModel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DeleteModelOutcomeCallable CloudAPIClient::deleteModelCallable(const DeleteModelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteModelOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteModel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DeleteMonitorGroupOutcome CloudAPIClient::deleteMonitorGroup(const DeleteMonitorGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMonitorGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMonitorGroupOutcome(DeleteMonitorGroupResult(outcome.result()));
+	else
+		return DeleteMonitorGroupOutcome(outcome.error());
+}
+
+void CloudAPIClient::deleteMonitorGroupAsync(const DeleteMonitorGroupRequest& request, const DeleteMonitorGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMonitorGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DeleteMonitorGroupOutcomeCallable CloudAPIClient::deleteMonitorGroupCallable(const DeleteMonitorGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMonitorGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMonitorGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DeletePluginOutcome CloudAPIClient::deletePlugin(const DeletePluginRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePluginOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePluginOutcome(DeletePluginResult(outcome.result()));
+	else
+		return DeletePluginOutcome(outcome.error());
+}
+
+void CloudAPIClient::deletePluginAsync(const DeletePluginRequest& request, const DeletePluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePlugin(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DeletePluginOutcomeCallable CloudAPIClient::deletePluginCallable(const DeletePluginRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePluginOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePlugin(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::DeleteSignatureOutcome CloudAPIClient::deleteSignature(const DeleteSignatureRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1023,6 +1743,114 @@ CloudAPIClient::DeployApiOutcomeCallable CloudAPIClient::deployApiCallable(const
 	return task->get_future();
 }
 
+CloudAPIClient::DescribeAbolishApiTaskOutcome CloudAPIClient::describeAbolishApiTask(const DescribeAbolishApiTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAbolishApiTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAbolishApiTaskOutcome(DescribeAbolishApiTaskResult(outcome.result()));
+	else
+		return DescribeAbolishApiTaskOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeAbolishApiTaskAsync(const DescribeAbolishApiTaskRequest& request, const DescribeAbolishApiTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAbolishApiTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeAbolishApiTaskOutcomeCallable CloudAPIClient::describeAbolishApiTaskCallable(const DescribeAbolishApiTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAbolishApiTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAbolishApiTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeAccessControlListAttributeOutcome CloudAPIClient::describeAccessControlListAttribute(const DescribeAccessControlListAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAccessControlListAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAccessControlListAttributeOutcome(DescribeAccessControlListAttributeResult(outcome.result()));
+	else
+		return DescribeAccessControlListAttributeOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeAccessControlListAttributeAsync(const DescribeAccessControlListAttributeRequest& request, const DescribeAccessControlListAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAccessControlListAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeAccessControlListAttributeOutcomeCallable CloudAPIClient::describeAccessControlListAttributeCallable(const DescribeAccessControlListAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAccessControlListAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAccessControlListAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeAccessControlListsOutcome CloudAPIClient::describeAccessControlLists(const DescribeAccessControlListsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAccessControlListsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAccessControlListsOutcome(DescribeAccessControlListsResult(outcome.result()));
+	else
+		return DescribeAccessControlListsOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeAccessControlListsAsync(const DescribeAccessControlListsRequest& request, const DescribeAccessControlListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAccessControlLists(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeAccessControlListsOutcomeCallable CloudAPIClient::describeAccessControlListsCallable(const DescribeAccessControlListsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAccessControlListsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAccessControlLists(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::DescribeApiOutcome CloudAPIClient::describeApi(const DescribeApiRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,42 +1917,6 @@ CloudAPIClient::DescribeApiDocOutcomeCallable CloudAPIClient::describeApiDocCall
 			[this, request]()
 			{
 			return this->describeApiDoc(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CloudAPIClient::DescribeApiErrorDataOutcome CloudAPIClient::describeApiErrorData(const DescribeApiErrorDataRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeApiErrorDataOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeApiErrorDataOutcome(DescribeApiErrorDataResult(outcome.result()));
-	else
-		return DescribeApiErrorDataOutcome(outcome.error());
-}
-
-void CloudAPIClient::describeApiErrorDataAsync(const DescribeApiErrorDataRequest& request, const DescribeApiErrorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeApiErrorData(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudAPIClient::DescribeApiErrorDataOutcomeCallable CloudAPIClient::describeApiErrorDataCallable(const DescribeApiErrorDataRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeApiErrorDataOutcome()>>(
-			[this, request]()
-			{
-			return this->describeApiErrorData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1491,42 +2283,6 @@ CloudAPIClient::DescribeApiSignaturesOutcomeCallable CloudAPIClient::describeApi
 	return task->get_future();
 }
 
-CloudAPIClient::DescribeApiStageOutcome CloudAPIClient::describeApiStage(const DescribeApiStageRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeApiStageOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeApiStageOutcome(DescribeApiStageResult(outcome.result()));
-	else
-		return DescribeApiStageOutcome(outcome.error());
-}
-
-void CloudAPIClient::describeApiStageAsync(const DescribeApiStageRequest& request, const DescribeApiStageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeApiStage(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudAPIClient::DescribeApiStageOutcomeCallable CloudAPIClient::describeApiStageCallable(const DescribeApiStageRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeApiStageOutcome()>>(
-			[this, request]()
-			{
-			return this->describeApiStage(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudAPIClient::DescribeApiTrafficControlsOutcome CloudAPIClient::describeApiTrafficControls(const DescribeApiTrafficControlsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1665,6 +2421,42 @@ CloudAPIClient::DescribeApisByAppOutcomeCallable CloudAPIClient::describeApisByA
 			[this, request]()
 			{
 			return this->describeApisByApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeApisByBackendOutcome CloudAPIClient::describeApisByBackend(const DescribeApisByBackendRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApisByBackendOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApisByBackendOutcome(DescribeApisByBackendResult(outcome.result()));
+	else
+		return DescribeApisByBackendOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeApisByBackendAsync(const DescribeApisByBackendRequest& request, const DescribeApisByBackendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApisByBackend(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeApisByBackendOutcomeCallable CloudAPIClient::describeApisByBackendCallable(const DescribeApisByBackendRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApisByBackendOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApisByBackend(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1995,6 +2787,258 @@ CloudAPIClient::DescribeAuthorizedAppsOutcomeCallable CloudAPIClient::describeAu
 	return task->get_future();
 }
 
+CloudAPIClient::DescribeBackendInfoOutcome CloudAPIClient::describeBackendInfo(const DescribeBackendInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBackendInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBackendInfoOutcome(DescribeBackendInfoResult(outcome.result()));
+	else
+		return DescribeBackendInfoOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeBackendInfoAsync(const DescribeBackendInfoRequest& request, const DescribeBackendInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBackendInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeBackendInfoOutcomeCallable CloudAPIClient::describeBackendInfoCallable(const DescribeBackendInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBackendInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBackendInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeBackendListOutcome CloudAPIClient::describeBackendList(const DescribeBackendListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeBackendListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeBackendListOutcome(DescribeBackendListResult(outcome.result()));
+	else
+		return DescribeBackendListOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeBackendListAsync(const DescribeBackendListRequest& request, const DescribeBackendListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeBackendList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeBackendListOutcomeCallable CloudAPIClient::describeBackendListCallable(const DescribeBackendListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeBackendListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeBackendList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeDatasetInfoOutcome CloudAPIClient::describeDatasetInfo(const DescribeDatasetInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDatasetInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDatasetInfoOutcome(DescribeDatasetInfoResult(outcome.result()));
+	else
+		return DescribeDatasetInfoOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeDatasetInfoAsync(const DescribeDatasetInfoRequest& request, const DescribeDatasetInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDatasetInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeDatasetInfoOutcomeCallable CloudAPIClient::describeDatasetInfoCallable(const DescribeDatasetInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDatasetInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDatasetInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeDatasetItemInfoOutcome CloudAPIClient::describeDatasetItemInfo(const DescribeDatasetItemInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDatasetItemInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDatasetItemInfoOutcome(DescribeDatasetItemInfoResult(outcome.result()));
+	else
+		return DescribeDatasetItemInfoOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeDatasetItemInfoAsync(const DescribeDatasetItemInfoRequest& request, const DescribeDatasetItemInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDatasetItemInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeDatasetItemInfoOutcomeCallable CloudAPIClient::describeDatasetItemInfoCallable(const DescribeDatasetItemInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDatasetItemInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDatasetItemInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeDatasetItemListOutcome CloudAPIClient::describeDatasetItemList(const DescribeDatasetItemListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDatasetItemListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDatasetItemListOutcome(DescribeDatasetItemListResult(outcome.result()));
+	else
+		return DescribeDatasetItemListOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeDatasetItemListAsync(const DescribeDatasetItemListRequest& request, const DescribeDatasetItemListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDatasetItemList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeDatasetItemListOutcomeCallable CloudAPIClient::describeDatasetItemListCallable(const DescribeDatasetItemListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDatasetItemListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDatasetItemList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeDatasetListOutcome CloudAPIClient::describeDatasetList(const DescribeDatasetListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDatasetListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDatasetListOutcome(DescribeDatasetListResult(outcome.result()));
+	else
+		return DescribeDatasetListOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeDatasetListAsync(const DescribeDatasetListRequest& request, const DescribeDatasetListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDatasetList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeDatasetListOutcomeCallable CloudAPIClient::describeDatasetListCallable(const DescribeDatasetListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDatasetListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDatasetList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeDeployApiTaskOutcome CloudAPIClient::describeDeployApiTask(const DescribeDeployApiTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDeployApiTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDeployApiTaskOutcome(DescribeDeployApiTaskResult(outcome.result()));
+	else
+		return DescribeDeployApiTaskOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeDeployApiTaskAsync(const DescribeDeployApiTaskRequest& request, const DescribeDeployApiTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDeployApiTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeDeployApiTaskOutcomeCallable CloudAPIClient::describeDeployApiTaskCallable(const DescribeDeployApiTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDeployApiTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDeployApiTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::DescribeDeployedApiOutcome CloudAPIClient::describeDeployedApi(const DescribeDeployedApiRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2103,42 +3147,6 @@ CloudAPIClient::DescribeDomainOutcomeCallable CloudAPIClient::describeDomainCall
 	return task->get_future();
 }
 
-CloudAPIClient::DescribeDomainsResolutionOutcome CloudAPIClient::describeDomainsResolution(const DescribeDomainsResolutionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDomainsResolutionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDomainsResolutionOutcome(DescribeDomainsResolutionResult(outcome.result()));
-	else
-		return DescribeDomainsResolutionOutcome(outcome.error());
-}
-
-void CloudAPIClient::describeDomainsResolutionAsync(const DescribeDomainsResolutionRequest& request, const DescribeDomainsResolutionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDomainsResolution(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudAPIClient::DescribeDomainsResolutionOutcomeCallable CloudAPIClient::describeDomainsResolutionCallable(const DescribeDomainsResolutionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDomainsResolutionOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDomainsResolution(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudAPIClient::DescribeHistoryApisOutcome CloudAPIClient::describeHistoryApis(const DescribeHistoryApisRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2169,6 +3177,42 @@ CloudAPIClient::DescribeHistoryApisOutcomeCallable CloudAPIClient::describeHisto
 			[this, request]()
 			{
 			return this->describeHistoryApis(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeInstancesOutcome CloudAPIClient::describeInstances(const DescribeInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstancesOutcome(DescribeInstancesResult(outcome.result()));
+	else
+		return DescribeInstancesOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeInstancesAsync(const DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeInstancesOutcomeCallable CloudAPIClient::describeInstancesCallable(const DescribeInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2277,6 +3321,222 @@ CloudAPIClient::DescribeLogConfigOutcomeCallable CloudAPIClient::describeLogConf
 			[this, request]()
 			{
 			return this->describeLogConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeMarketRemainsQuotaOutcome CloudAPIClient::describeMarketRemainsQuota(const DescribeMarketRemainsQuotaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMarketRemainsQuotaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMarketRemainsQuotaOutcome(DescribeMarketRemainsQuotaResult(outcome.result()));
+	else
+		return DescribeMarketRemainsQuotaOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeMarketRemainsQuotaAsync(const DescribeMarketRemainsQuotaRequest& request, const DescribeMarketRemainsQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMarketRemainsQuota(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeMarketRemainsQuotaOutcomeCallable CloudAPIClient::describeMarketRemainsQuotaCallable(const DescribeMarketRemainsQuotaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMarketRemainsQuotaOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMarketRemainsQuota(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeModelsOutcome CloudAPIClient::describeModels(const DescribeModelsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeModelsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeModelsOutcome(DescribeModelsResult(outcome.result()));
+	else
+		return DescribeModelsOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeModelsAsync(const DescribeModelsRequest& request, const DescribeModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeModels(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeModelsOutcomeCallable CloudAPIClient::describeModelsCallable(const DescribeModelsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeModelsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeModels(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribePluginSchemasOutcome CloudAPIClient::describePluginSchemas(const DescribePluginSchemasRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePluginSchemasOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePluginSchemasOutcome(DescribePluginSchemasResult(outcome.result()));
+	else
+		return DescribePluginSchemasOutcome(outcome.error());
+}
+
+void CloudAPIClient::describePluginSchemasAsync(const DescribePluginSchemasRequest& request, const DescribePluginSchemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePluginSchemas(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribePluginSchemasOutcomeCallable CloudAPIClient::describePluginSchemasCallable(const DescribePluginSchemasRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePluginSchemasOutcome()>>(
+			[this, request]()
+			{
+			return this->describePluginSchemas(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribePluginTemplatesOutcome CloudAPIClient::describePluginTemplates(const DescribePluginTemplatesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePluginTemplatesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePluginTemplatesOutcome(DescribePluginTemplatesResult(outcome.result()));
+	else
+		return DescribePluginTemplatesOutcome(outcome.error());
+}
+
+void CloudAPIClient::describePluginTemplatesAsync(const DescribePluginTemplatesRequest& request, const DescribePluginTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePluginTemplates(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribePluginTemplatesOutcomeCallable CloudAPIClient::describePluginTemplatesCallable(const DescribePluginTemplatesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePluginTemplatesOutcome()>>(
+			[this, request]()
+			{
+			return this->describePluginTemplates(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribePluginsOutcome CloudAPIClient::describePlugins(const DescribePluginsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePluginsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePluginsOutcome(DescribePluginsResult(outcome.result()));
+	else
+		return DescribePluginsOutcome(outcome.error());
+}
+
+void CloudAPIClient::describePluginsAsync(const DescribePluginsRequest& request, const DescribePluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePlugins(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribePluginsOutcomeCallable CloudAPIClient::describePluginsCallable(const DescribePluginsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePluginsOutcome()>>(
+			[this, request]()
+			{
+			return this->describePlugins(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribePluginsByApiOutcome CloudAPIClient::describePluginsByApi(const DescribePluginsByApiRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePluginsByApiOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePluginsByApiOutcome(DescribePluginsByApiResult(outcome.result()));
+	else
+		return DescribePluginsByApiOutcome(outcome.error());
+}
+
+void CloudAPIClient::describePluginsByApiAsync(const DescribePluginsByApiRequest& request, const DescribePluginsByApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePluginsByApi(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribePluginsByApiOutcomeCallable CloudAPIClient::describePluginsByApiCallable(const DescribePluginsByApiRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePluginsByApiOutcome()>>(
+			[this, request]()
+			{
+			return this->describePluginsByApi(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2607,6 +3867,78 @@ CloudAPIClient::DescribeTrafficControlsByApiOutcomeCallable CloudAPIClient::desc
 	return task->get_future();
 }
 
+CloudAPIClient::DescribeUpdateBackendTaskOutcome CloudAPIClient::describeUpdateBackendTask(const DescribeUpdateBackendTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUpdateBackendTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUpdateBackendTaskOutcome(DescribeUpdateBackendTaskResult(outcome.result()));
+	else
+		return DescribeUpdateBackendTaskOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeUpdateBackendTaskAsync(const DescribeUpdateBackendTaskRequest& request, const DescribeUpdateBackendTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUpdateBackendTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeUpdateBackendTaskOutcomeCallable CloudAPIClient::describeUpdateBackendTaskCallable(const DescribeUpdateBackendTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUpdateBackendTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUpdateBackendTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeUpdateVpcInfoTaskOutcome CloudAPIClient::describeUpdateVpcInfoTask(const DescribeUpdateVpcInfoTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUpdateVpcInfoTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUpdateVpcInfoTaskOutcome(DescribeUpdateVpcInfoTaskResult(outcome.result()));
+	else
+		return DescribeUpdateVpcInfoTaskOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeUpdateVpcInfoTaskAsync(const DescribeUpdateVpcInfoTaskRequest& request, const DescribeUpdateVpcInfoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUpdateVpcInfoTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeUpdateVpcInfoTaskOutcomeCallable CloudAPIClient::describeUpdateVpcInfoTaskCallable(const DescribeUpdateVpcInfoTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUpdateVpcInfoTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUpdateVpcInfoTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::DescribeVpcAccessesOutcome CloudAPIClient::describeVpcAccesses(const DescribeVpcAccessesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2637,6 +3969,222 @@ CloudAPIClient::DescribeVpcAccessesOutcomeCallable CloudAPIClient::describeVpcAc
 			[this, request]()
 			{
 			return this->describeVpcAccesses(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DescribeZonesOutcome CloudAPIClient::describeZones(const DescribeZonesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeZonesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeZonesOutcome(DescribeZonesResult(outcome.result()));
+	else
+		return DescribeZonesOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeZonesAsync(const DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeZones(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeZonesOutcomeCallable CloudAPIClient::describeZonesCallable(const DescribeZonesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeZonesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeZones(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DetachPluginOutcome CloudAPIClient::detachPlugin(const DetachPluginRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachPluginOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachPluginOutcome(DetachPluginResult(outcome.result()));
+	else
+		return DetachPluginOutcome(outcome.error());
+}
+
+void CloudAPIClient::detachPluginAsync(const DetachPluginRequest& request, const DetachPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachPlugin(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DetachPluginOutcomeCallable CloudAPIClient::detachPluginCallable(const DetachPluginRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachPluginOutcome()>>(
+			[this, request]()
+			{
+			return this->detachPlugin(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DisableInstanceAccessControlOutcome CloudAPIClient::disableInstanceAccessControl(const DisableInstanceAccessControlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableInstanceAccessControlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableInstanceAccessControlOutcome(DisableInstanceAccessControlResult(outcome.result()));
+	else
+		return DisableInstanceAccessControlOutcome(outcome.error());
+}
+
+void CloudAPIClient::disableInstanceAccessControlAsync(const DisableInstanceAccessControlRequest& request, const DisableInstanceAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableInstanceAccessControl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DisableInstanceAccessControlOutcomeCallable CloudAPIClient::disableInstanceAccessControlCallable(const DisableInstanceAccessControlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableInstanceAccessControlOutcome()>>(
+			[this, request]()
+			{
+			return this->disableInstanceAccessControl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::DryRunSwaggerOutcome CloudAPIClient::dryRunSwagger(const DryRunSwaggerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DryRunSwaggerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DryRunSwaggerOutcome(DryRunSwaggerResult(outcome.result()));
+	else
+		return DryRunSwaggerOutcome(outcome.error());
+}
+
+void CloudAPIClient::dryRunSwaggerAsync(const DryRunSwaggerRequest& request, const DryRunSwaggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, dryRunSwagger(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DryRunSwaggerOutcomeCallable CloudAPIClient::dryRunSwaggerCallable(const DryRunSwaggerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DryRunSwaggerOutcome()>>(
+			[this, request]()
+			{
+			return this->dryRunSwagger(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::EnableInstanceAccessControlOutcome CloudAPIClient::enableInstanceAccessControl(const EnableInstanceAccessControlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableInstanceAccessControlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableInstanceAccessControlOutcome(EnableInstanceAccessControlResult(outcome.result()));
+	else
+		return EnableInstanceAccessControlOutcome(outcome.error());
+}
+
+void CloudAPIClient::enableInstanceAccessControlAsync(const EnableInstanceAccessControlRequest& request, const EnableInstanceAccessControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableInstanceAccessControl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::EnableInstanceAccessControlOutcomeCallable CloudAPIClient::enableInstanceAccessControlCallable(const EnableInstanceAccessControlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableInstanceAccessControlOutcome()>>(
+			[this, request]()
+			{
+			return this->enableInstanceAccessControl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::ImportOASOutcome CloudAPIClient::importOAS(const ImportOASRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImportOASOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImportOASOutcome(ImportOASResult(outcome.result()));
+	else
+		return ImportOASOutcome(outcome.error());
+}
+
+void CloudAPIClient::importOASAsync(const ImportOASRequest& request, const ImportOASAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, importOAS(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::ImportOASOutcomeCallable CloudAPIClient::importOASCallable(const ImportOASRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImportOASOutcome()>>(
+			[this, request]()
+			{
+			return this->importOAS(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2751,6 +4299,42 @@ CloudAPIClient::ModifyApiOutcomeCallable CloudAPIClient::modifyApiCallable(const
 	return task->get_future();
 }
 
+CloudAPIClient::ModifyApiConfigurationOutcome CloudAPIClient::modifyApiConfiguration(const ModifyApiConfigurationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyApiConfigurationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyApiConfigurationOutcome(ModifyApiConfigurationResult(outcome.result()));
+	else
+		return ModifyApiConfigurationOutcome(outcome.error());
+}
+
+void CloudAPIClient::modifyApiConfigurationAsync(const ModifyApiConfigurationRequest& request, const ModifyApiConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyApiConfiguration(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::ModifyApiConfigurationOutcomeCallable CloudAPIClient::modifyApiConfigurationCallable(const ModifyApiConfigurationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyApiConfigurationOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyApiConfiguration(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::ModifyApiGroupOutcome CloudAPIClient::modifyApiGroup(const ModifyApiGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2823,42 +4407,6 @@ CloudAPIClient::ModifyApiGroupVpcWhitelistOutcomeCallable CloudAPIClient::modify
 	return task->get_future();
 }
 
-CloudAPIClient::ModifyApiMarketAttributesOutcome CloudAPIClient::modifyApiMarketAttributes(const ModifyApiMarketAttributesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyApiMarketAttributesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyApiMarketAttributesOutcome(ModifyApiMarketAttributesResult(outcome.result()));
-	else
-		return ModifyApiMarketAttributesOutcome(outcome.error());
-}
-
-void CloudAPIClient::modifyApiMarketAttributesAsync(const ModifyApiMarketAttributesRequest& request, const ModifyApiMarketAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyApiMarketAttributes(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CloudAPIClient::ModifyApiMarketAttributesOutcomeCallable CloudAPIClient::modifyApiMarketAttributesCallable(const ModifyApiMarketAttributesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyApiMarketAttributesOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyApiMarketAttributes(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CloudAPIClient::ModifyAppOutcome CloudAPIClient::modifyApp(const ModifyAppRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2889,6 +4437,186 @@ CloudAPIClient::ModifyAppOutcomeCallable CloudAPIClient::modifyAppCallable(const
 			[this, request]()
 			{
 			return this->modifyApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::ModifyBackendOutcome CloudAPIClient::modifyBackend(const ModifyBackendRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyBackendOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyBackendOutcome(ModifyBackendResult(outcome.result()));
+	else
+		return ModifyBackendOutcome(outcome.error());
+}
+
+void CloudAPIClient::modifyBackendAsync(const ModifyBackendRequest& request, const ModifyBackendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyBackend(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::ModifyBackendOutcomeCallable CloudAPIClient::modifyBackendCallable(const ModifyBackendRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyBackendOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyBackend(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::ModifyBackendModelOutcome CloudAPIClient::modifyBackendModel(const ModifyBackendModelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyBackendModelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyBackendModelOutcome(ModifyBackendModelResult(outcome.result()));
+	else
+		return ModifyBackendModelOutcome(outcome.error());
+}
+
+void CloudAPIClient::modifyBackendModelAsync(const ModifyBackendModelRequest& request, const ModifyBackendModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyBackendModel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::ModifyBackendModelOutcomeCallable CloudAPIClient::modifyBackendModelCallable(const ModifyBackendModelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyBackendModelOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyBackendModel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::ModifyDatasetOutcome CloudAPIClient::modifyDataset(const ModifyDatasetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDatasetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDatasetOutcome(ModifyDatasetResult(outcome.result()));
+	else
+		return ModifyDatasetOutcome(outcome.error());
+}
+
+void CloudAPIClient::modifyDatasetAsync(const ModifyDatasetRequest& request, const ModifyDatasetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDataset(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::ModifyDatasetOutcomeCallable CloudAPIClient::modifyDatasetCallable(const ModifyDatasetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDatasetOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDataset(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::ModifyDatasetItemOutcome CloudAPIClient::modifyDatasetItem(const ModifyDatasetItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDatasetItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDatasetItemOutcome(ModifyDatasetItemResult(outcome.result()));
+	else
+		return ModifyDatasetItemOutcome(outcome.error());
+}
+
+void CloudAPIClient::modifyDatasetItemAsync(const ModifyDatasetItemRequest& request, const ModifyDatasetItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDatasetItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::ModifyDatasetItemOutcomeCallable CloudAPIClient::modifyDatasetItemCallable(const ModifyDatasetItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDatasetItemOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDatasetItem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::ModifyInstanceSpecOutcome CloudAPIClient::modifyInstanceSpec(const ModifyInstanceSpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceSpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceSpecOutcome(ModifyInstanceSpecResult(outcome.result()));
+	else
+		return ModifyInstanceSpecOutcome(outcome.error());
+}
+
+void CloudAPIClient::modifyInstanceSpecAsync(const ModifyInstanceSpecRequest& request, const ModifyInstanceSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstanceSpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::ModifyInstanceSpecOutcomeCallable CloudAPIClient::modifyInstanceSpecCallable(const ModifyInstanceSpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceSpecOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstanceSpec(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3003,6 +4731,78 @@ CloudAPIClient::ModifyLogConfigOutcomeCallable CloudAPIClient::modifyLogConfigCa
 	return task->get_future();
 }
 
+CloudAPIClient::ModifyModelOutcome CloudAPIClient::modifyModel(const ModifyModelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyModelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyModelOutcome(ModifyModelResult(outcome.result()));
+	else
+		return ModifyModelOutcome(outcome.error());
+}
+
+void CloudAPIClient::modifyModelAsync(const ModifyModelRequest& request, const ModifyModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyModel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::ModifyModelOutcomeCallable CloudAPIClient::modifyModelCallable(const ModifyModelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyModelOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyModel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::ModifyPluginOutcome CloudAPIClient::modifyPlugin(const ModifyPluginRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyPluginOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyPluginOutcome(ModifyPluginResult(outcome.result()));
+	else
+		return ModifyPluginOutcome(outcome.error());
+}
+
+void CloudAPIClient::modifyPluginAsync(const ModifyPluginRequest& request, const ModifyPluginAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyPlugin(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::ModifyPluginOutcomeCallable CloudAPIClient::modifyPluginCallable(const ModifyPluginRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyPluginOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyPlugin(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::ModifySignatureOutcome CloudAPIClient::modifySignature(const ModifySignatureRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3075,6 +4875,114 @@ CloudAPIClient::ModifyTrafficControlOutcomeCallable CloudAPIClient::modifyTraffi
 	return task->get_future();
 }
 
+CloudAPIClient::ModifyVpcAccessAndUpdateApisOutcome CloudAPIClient::modifyVpcAccessAndUpdateApis(const ModifyVpcAccessAndUpdateApisRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyVpcAccessAndUpdateApisOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyVpcAccessAndUpdateApisOutcome(ModifyVpcAccessAndUpdateApisResult(outcome.result()));
+	else
+		return ModifyVpcAccessAndUpdateApisOutcome(outcome.error());
+}
+
+void CloudAPIClient::modifyVpcAccessAndUpdateApisAsync(const ModifyVpcAccessAndUpdateApisRequest& request, const ModifyVpcAccessAndUpdateApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyVpcAccessAndUpdateApis(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::ModifyVpcAccessAndUpdateApisOutcomeCallable CloudAPIClient::modifyVpcAccessAndUpdateApisCallable(const ModifyVpcAccessAndUpdateApisRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyVpcAccessAndUpdateApisOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyVpcAccessAndUpdateApis(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::OpenApiGatewayServiceOutcome CloudAPIClient::openApiGatewayService(const OpenApiGatewayServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OpenApiGatewayServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OpenApiGatewayServiceOutcome(OpenApiGatewayServiceResult(outcome.result()));
+	else
+		return OpenApiGatewayServiceOutcome(outcome.error());
+}
+
+void CloudAPIClient::openApiGatewayServiceAsync(const OpenApiGatewayServiceRequest& request, const OpenApiGatewayServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, openApiGatewayService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::OpenApiGatewayServiceOutcomeCallable CloudAPIClient::openApiGatewayServiceCallable(const OpenApiGatewayServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OpenApiGatewayServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->openApiGatewayService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::QueryRequestLogsOutcome CloudAPIClient::queryRequestLogs(const QueryRequestLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryRequestLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryRequestLogsOutcome(QueryRequestLogsResult(outcome.result()));
+	else
+		return QueryRequestLogsOutcome(outcome.error());
+}
+
+void CloudAPIClient::queryRequestLogsAsync(const QueryRequestLogsRequest& request, const QueryRequestLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryRequestLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::QueryRequestLogsOutcomeCallable CloudAPIClient::queryRequestLogsCallable(const QueryRequestLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryRequestLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->queryRequestLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::ReactivateDomainOutcome CloudAPIClient::reactivateDomain(const ReactivateDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3105,6 +5013,42 @@ CloudAPIClient::ReactivateDomainOutcomeCallable CloudAPIClient::reactivateDomain
 			[this, request]()
 			{
 			return this->reactivateDomain(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::RemoveAccessControlListEntryOutcome CloudAPIClient::removeAccessControlListEntry(const RemoveAccessControlListEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveAccessControlListEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveAccessControlListEntryOutcome(RemoveAccessControlListEntryResult(outcome.result()));
+	else
+		return RemoveAccessControlListEntryOutcome(outcome.error());
+}
+
+void CloudAPIClient::removeAccessControlListEntryAsync(const RemoveAccessControlListEntryRequest& request, const RemoveAccessControlListEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeAccessControlListEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::RemoveAccessControlListEntryOutcomeCallable CloudAPIClient::removeAccessControlListEntryCallable(const RemoveAccessControlListEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveAccessControlListEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->removeAccessControlListEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3363,6 +5307,42 @@ CloudAPIClient::RemoveVpcAccessOutcomeCallable CloudAPIClient::removeVpcAccessCa
 	return task->get_future();
 }
 
+CloudAPIClient::RemoveVpcAccessAndAbolishApisOutcome CloudAPIClient::removeVpcAccessAndAbolishApis(const RemoveVpcAccessAndAbolishApisRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveVpcAccessAndAbolishApisOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveVpcAccessAndAbolishApisOutcome(RemoveVpcAccessAndAbolishApisResult(outcome.result()));
+	else
+		return RemoveVpcAccessAndAbolishApisOutcome(outcome.error());
+}
+
+void CloudAPIClient::removeVpcAccessAndAbolishApisAsync(const RemoveVpcAccessAndAbolishApisRequest& request, const RemoveVpcAccessAndAbolishApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeVpcAccessAndAbolishApis(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::RemoveVpcAccessAndAbolishApisOutcomeCallable CloudAPIClient::removeVpcAccessAndAbolishApisCallable(const RemoveVpcAccessAndAbolishApisRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveVpcAccessAndAbolishApisOutcome()>>(
+			[this, request]()
+			{
+			return this->removeVpcAccessAndAbolishApis(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::ResetAppCodeOutcome CloudAPIClient::resetAppCode(const ResetAppCodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3471,6 +5451,42 @@ CloudAPIClient::SdkGenerateByAppOutcomeCallable CloudAPIClient::sdkGenerateByApp
 	return task->get_future();
 }
 
+CloudAPIClient::SdkGenerateByAppForRegionOutcome CloudAPIClient::sdkGenerateByAppForRegion(const SdkGenerateByAppForRegionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SdkGenerateByAppForRegionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SdkGenerateByAppForRegionOutcome(SdkGenerateByAppForRegionResult(outcome.result()));
+	else
+		return SdkGenerateByAppForRegionOutcome(outcome.error());
+}
+
+void CloudAPIClient::sdkGenerateByAppForRegionAsync(const SdkGenerateByAppForRegionRequest& request, const SdkGenerateByAppForRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sdkGenerateByAppForRegion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::SdkGenerateByAppForRegionOutcomeCallable CloudAPIClient::sdkGenerateByAppForRegionCallable(const SdkGenerateByAppForRegionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SdkGenerateByAppForRegionOutcome()>>(
+			[this, request]()
+			{
+			return this->sdkGenerateByAppForRegion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::SdkGenerateByGroupOutcome CloudAPIClient::sdkGenerateByGroup(const SdkGenerateByGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3501,6 +5517,42 @@ CloudAPIClient::SdkGenerateByGroupOutcomeCallable CloudAPIClient::sdkGenerateByG
 			[this, request]()
 			{
 			return this->sdkGenerateByGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CloudAPIClient::SetAccessControlListAttributeOutcome CloudAPIClient::setAccessControlListAttribute(const SetAccessControlListAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetAccessControlListAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetAccessControlListAttributeOutcome(SetAccessControlListAttributeResult(outcome.result()));
+	else
+		return SetAccessControlListAttributeOutcome(outcome.error());
+}
+
+void CloudAPIClient::setAccessControlListAttributeAsync(const SetAccessControlListAttributeRequest& request, const SetAccessControlListAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setAccessControlListAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::SetAccessControlListAttributeOutcomeCallable CloudAPIClient::setAccessControlListAttributeCallable(const SetAccessControlListAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetAccessControlListAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->setAccessControlListAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

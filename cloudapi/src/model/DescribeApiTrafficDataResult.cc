@@ -43,20 +43,20 @@ void DescribeApiTrafficDataResult::parse(const std::string &payload)
 	for (auto valueCallUploadsMonitorItem : allCallUploadsNode)
 	{
 		MonitorItem callUploadsObject;
-		if(!valueCallUploadsMonitorItem["ItemTime"].isNull())
-			callUploadsObject.itemTime = valueCallUploadsMonitorItem["ItemTime"].asString();
 		if(!valueCallUploadsMonitorItem["ItemValue"].isNull())
 			callUploadsObject.itemValue = valueCallUploadsMonitorItem["ItemValue"].asString();
+		if(!valueCallUploadsMonitorItem["ItemTime"].isNull())
+			callUploadsObject.itemTime = valueCallUploadsMonitorItem["ItemTime"].asString();
 		callUploads_.push_back(callUploadsObject);
 	}
 	auto allCallDownloadsNode = value["CallDownloads"]["MonitorItem"];
 	for (auto valueCallDownloadsMonitorItem : allCallDownloadsNode)
 	{
 		MonitorItem callDownloadsObject;
-		if(!valueCallDownloadsMonitorItem["ItemTime"].isNull())
-			callDownloadsObject.itemTime = valueCallDownloadsMonitorItem["ItemTime"].asString();
 		if(!valueCallDownloadsMonitorItem["ItemValue"].isNull())
 			callDownloadsObject.itemValue = valueCallDownloadsMonitorItem["ItemValue"].asString();
+		if(!valueCallDownloadsMonitorItem["ItemTime"].isNull())
+			callDownloadsObject.itemTime = valueCallDownloadsMonitorItem["ItemTime"].asString();
 		callDownloads_.push_back(callDownloadsObject);
 	}
 

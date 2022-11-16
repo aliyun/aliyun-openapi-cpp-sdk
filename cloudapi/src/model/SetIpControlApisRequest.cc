@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::CloudAPI::Model::SetIpControlApisRequest;
 
-SetIpControlApisRequest::SetIpControlApisRequest() :
-	RpcServiceRequest("cloudapi", "2016-07-14", "SetIpControlApis")
-{
-	setMethod(HttpRequest::Method::Post);
+SetIpControlApisRequest::SetIpControlApisRequest()
+    : RpcServiceRequest("cloudapi", "2016-07-14", "SetIpControlApis") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SetIpControlApisRequest::~SetIpControlApisRequest()
-{}
+SetIpControlApisRequest::~SetIpControlApisRequest() {}
 
-std::string SetIpControlApisRequest::getStageName()const
-{
-	return stageName_;
+std::string SetIpControlApisRequest::getStageName() const {
+  return stageName_;
 }
 
-void SetIpControlApisRequest::setStageName(const std::string& stageName)
-{
-	stageName_ = stageName;
-	setParameter("StageName", stageName);
+void SetIpControlApisRequest::setStageName(const std::string &stageName) {
+  stageName_ = stageName;
+  setParameter(std::string("StageName"), stageName);
 }
 
-std::string SetIpControlApisRequest::getGroupId()const
-{
-	return groupId_;
+std::string SetIpControlApisRequest::getGroupId() const {
+  return groupId_;
 }
 
-void SetIpControlApisRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+void SetIpControlApisRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
 }
 
-std::string SetIpControlApisRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string SetIpControlApisRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void SetIpControlApisRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void SetIpControlApisRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string SetIpControlApisRequest::getIpControlId()const
-{
-	return ipControlId_;
+std::string SetIpControlApisRequest::getIpControlId() const {
+  return ipControlId_;
 }
 
-void SetIpControlApisRequest::setIpControlId(const std::string& ipControlId)
-{
-	ipControlId_ = ipControlId;
-	setParameter("IpControlId", ipControlId);
+void SetIpControlApisRequest::setIpControlId(const std::string &ipControlId) {
+  ipControlId_ = ipControlId;
+  setParameter(std::string("IpControlId"), ipControlId);
 }
 
-std::string SetIpControlApisRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string SetIpControlApisRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void SetIpControlApisRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void SetIpControlApisRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string SetIpControlApisRequest::getApiIds()const
-{
-	return apiIds_;
+std::string SetIpControlApisRequest::getApiIds() const {
+  return apiIds_;
 }
 
-void SetIpControlApisRequest::setApiIds(const std::string& apiIds)
-{
-	apiIds_ = apiIds;
-	setParameter("ApiIds", apiIds);
+void SetIpControlApisRequest::setApiIds(const std::string &apiIds) {
+  apiIds_ = apiIds;
+  setParameter(std::string("ApiIds"), apiIds);
 }
 

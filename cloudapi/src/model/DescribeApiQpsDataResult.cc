@@ -43,20 +43,20 @@ void DescribeApiQpsDataResult::parse(const std::string &payload)
 	for (auto valueCallSuccessesMonitorItem : allCallSuccessesNode)
 	{
 		MonitorItem callSuccessesObject;
-		if(!valueCallSuccessesMonitorItem["ItemTime"].isNull())
-			callSuccessesObject.itemTime = valueCallSuccessesMonitorItem["ItemTime"].asString();
 		if(!valueCallSuccessesMonitorItem["ItemValue"].isNull())
 			callSuccessesObject.itemValue = valueCallSuccessesMonitorItem["ItemValue"].asString();
+		if(!valueCallSuccessesMonitorItem["ItemTime"].isNull())
+			callSuccessesObject.itemTime = valueCallSuccessesMonitorItem["ItemTime"].asString();
 		callSuccesses_.push_back(callSuccessesObject);
 	}
 	auto allCallFailsNode = value["CallFails"]["MonitorItem"];
 	for (auto valueCallFailsMonitorItem : allCallFailsNode)
 	{
 		MonitorItem callFailsObject;
-		if(!valueCallFailsMonitorItem["ItemTime"].isNull())
-			callFailsObject.itemTime = valueCallFailsMonitorItem["ItemTime"].asString();
 		if(!valueCallFailsMonitorItem["ItemValue"].isNull())
 			callFailsObject.itemValue = valueCallFailsMonitorItem["ItemValue"].asString();
+		if(!valueCallFailsMonitorItem["ItemTime"].isNull())
+			callFailsObject.itemTime = valueCallFailsMonitorItem["ItemTime"].asString();
 		callFails_.push_back(callFailsObject);
 	}
 

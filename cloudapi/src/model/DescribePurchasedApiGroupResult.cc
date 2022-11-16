@@ -47,18 +47,18 @@ void DescribePurchasedApiGroupResult::parse(const std::string &payload)
 			domainsObject.domainName = valueDomainsDomainItem["DomainName"].asString();
 		domains_.push_back(domainsObject);
 	}
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["PurchasedTime"].isNull())
+		purchasedTime_ = value["PurchasedTime"].asString();
 	if(!value["GroupId"].isNull())
 		groupId_ = value["GroupId"].asString();
 	if(!value["GroupName"].isNull())
 		groupName_ = value["GroupName"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
-	if(!value["PurchasedTime"].isNull())
-		purchasedTime_ = value["PurchasedTime"].asString();
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
 
 }
 
@@ -67,14 +67,14 @@ std::vector<DescribePurchasedApiGroupResult::DomainItem> DescribePurchasedApiGro
 	return domains_;
 }
 
-std::string DescribePurchasedApiGroupResult::getGroupName()const
-{
-	return groupName_;
-}
-
 std::string DescribePurchasedApiGroupResult::getStatus()const
 {
 	return status_;
+}
+
+std::string DescribePurchasedApiGroupResult::getGroupName()const
+{
+	return groupName_;
 }
 
 std::string DescribePurchasedApiGroupResult::getDescription()const
@@ -87,13 +87,13 @@ std::string DescribePurchasedApiGroupResult::getRegionId()const
 	return regionId_;
 }
 
-std::string DescribePurchasedApiGroupResult::getGroupId()const
-{
-	return groupId_;
-}
-
 std::string DescribePurchasedApiGroupResult::getPurchasedTime()const
 {
 	return purchasedTime_;
+}
+
+std::string DescribePurchasedApiGroupResult::getGroupId()const
+{
+	return groupId_;
 }
 

@@ -45,24 +45,30 @@ void DescribeVpcAccessesResult::parse(const std::string &payload)
 		VpcAccessAttribute vpcAccessAttributesObject;
 		if(!valueVpcAccessAttributesVpcAccessAttribute["VpcId"].isNull())
 			vpcAccessAttributesObject.vpcId = valueVpcAccessAttributesVpcAccessAttribute["VpcId"].asString();
+		if(!valueVpcAccessAttributesVpcAccessAttribute["Description"].isNull())
+			vpcAccessAttributesObject.description = valueVpcAccessAttributesVpcAccessAttribute["Description"].asString();
 		if(!valueVpcAccessAttributesVpcAccessAttribute["InstanceId"].isNull())
 			vpcAccessAttributesObject.instanceId = valueVpcAccessAttributesVpcAccessAttribute["InstanceId"].asString();
-		if(!valueVpcAccessAttributesVpcAccessAttribute["CreatedTime"].isNull())
-			vpcAccessAttributesObject.createdTime = valueVpcAccessAttributesVpcAccessAttribute["CreatedTime"].asString();
 		if(!valueVpcAccessAttributesVpcAccessAttribute["Port"].isNull())
 			vpcAccessAttributesObject.port = std::stoi(valueVpcAccessAttributesVpcAccessAttribute["Port"].asString());
-		if(!valueVpcAccessAttributesVpcAccessAttribute["RegionId"].isNull())
-			vpcAccessAttributesObject.regionId = valueVpcAccessAttributesVpcAccessAttribute["RegionId"].asString();
 		if(!valueVpcAccessAttributesVpcAccessAttribute["Name"].isNull())
 			vpcAccessAttributesObject.name = valueVpcAccessAttributesVpcAccessAttribute["Name"].asString();
+		if(!valueVpcAccessAttributesVpcAccessAttribute["CreatedTime"].isNull())
+			vpcAccessAttributesObject.createdTime = valueVpcAccessAttributesVpcAccessAttribute["CreatedTime"].asString();
+		if(!valueVpcAccessAttributesVpcAccessAttribute["RegionId"].isNull())
+			vpcAccessAttributesObject.regionId = valueVpcAccessAttributesVpcAccessAttribute["RegionId"].asString();
+		if(!valueVpcAccessAttributesVpcAccessAttribute["VpcAccessId"].isNull())
+			vpcAccessAttributesObject.vpcAccessId = valueVpcAccessAttributesVpcAccessAttribute["VpcAccessId"].asString();
+		if(!valueVpcAccessAttributesVpcAccessAttribute["VpcTargetHostName"].isNull())
+			vpcAccessAttributesObject.vpcTargetHostName = valueVpcAccessAttributesVpcAccessAttribute["VpcTargetHostName"].asString();
 		vpcAccessAttributes_.push_back(vpcAccessAttributesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

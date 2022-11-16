@@ -45,26 +45,26 @@ void DescribeIpControlsResult::parse(const std::string &payload)
 		IpControlInfo ipControlInfosObject;
 		if(!valueIpControlInfosIpControlInfo["IpControlId"].isNull())
 			ipControlInfosObject.ipControlId = valueIpControlInfosIpControlInfo["IpControlId"].asString();
-		if(!valueIpControlInfosIpControlInfo["IpControlName"].isNull())
-			ipControlInfosObject.ipControlName = valueIpControlInfosIpControlInfo["IpControlName"].asString();
 		if(!valueIpControlInfosIpControlInfo["IpControlType"].isNull())
 			ipControlInfosObject.ipControlType = valueIpControlInfosIpControlInfo["IpControlType"].asString();
+		if(!valueIpControlInfosIpControlInfo["ModifiedTime"].isNull())
+			ipControlInfosObject.modifiedTime = valueIpControlInfosIpControlInfo["ModifiedTime"].asString();
+		if(!valueIpControlInfosIpControlInfo["IpControlName"].isNull())
+			ipControlInfosObject.ipControlName = valueIpControlInfosIpControlInfo["IpControlName"].asString();
 		if(!valueIpControlInfosIpControlInfo["Description"].isNull())
 			ipControlInfosObject.description = valueIpControlInfosIpControlInfo["Description"].asString();
 		if(!valueIpControlInfosIpControlInfo["CreateTime"].isNull())
 			ipControlInfosObject.createTime = valueIpControlInfosIpControlInfo["CreateTime"].asString();
-		if(!valueIpControlInfosIpControlInfo["ModifiedTime"].isNull())
-			ipControlInfosObject.modifiedTime = valueIpControlInfosIpControlInfo["ModifiedTime"].asString();
 		if(!valueIpControlInfosIpControlInfo["RegionId"].isNull())
 			ipControlInfosObject.regionId = valueIpControlInfosIpControlInfo["RegionId"].asString();
 		ipControlInfos_.push_back(ipControlInfosObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

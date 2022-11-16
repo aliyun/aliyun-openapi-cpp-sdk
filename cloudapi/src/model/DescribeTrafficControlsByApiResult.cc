@@ -45,10 +45,10 @@ void DescribeTrafficControlsByApiResult::parse(const std::string &payload)
 		TrafficControlItem trafficControlItemsObject;
 		if(!valueTrafficControlItemsTrafficControlItem["TrafficControlItemId"].isNull())
 			trafficControlItemsObject.trafficControlItemId = valueTrafficControlItemsTrafficControlItem["TrafficControlItemId"].asString();
-		if(!valueTrafficControlItemsTrafficControlItem["TrafficControlItemName"].isNull())
-			trafficControlItemsObject.trafficControlItemName = valueTrafficControlItemsTrafficControlItem["TrafficControlItemName"].asString();
 		if(!valueTrafficControlItemsTrafficControlItem["BoundTime"].isNull())
 			trafficControlItemsObject.boundTime = valueTrafficControlItemsTrafficControlItem["BoundTime"].asString();
+		if(!valueTrafficControlItemsTrafficControlItem["TrafficControlItemName"].isNull())
+			trafficControlItemsObject.trafficControlItemName = valueTrafficControlItemsTrafficControlItem["TrafficControlItemName"].asString();
 		trafficControlItems_.push_back(trafficControlItemsObject);
 	}
 

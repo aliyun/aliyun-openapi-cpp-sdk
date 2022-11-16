@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct ApiIpControlItem
 				{
-					std::string apiName;
 					std::string boundTime;
+					std::string apiName;
 					std::string apiId;
 					std::string ipControlName;
 					std::string ipControlId;

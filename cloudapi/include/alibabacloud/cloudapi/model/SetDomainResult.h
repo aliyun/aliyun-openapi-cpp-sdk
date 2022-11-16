@@ -39,8 +39,8 @@ namespace AlibabaCloud
 				~SetDomainResult();
 				std::string getSubDomain()const;
 				std::string getDomainRemark()const;
-				std::string getDomainBindingStatus()const;
 				std::string getDomainLegalStatus()const;
+				std::string getDomainBindingStatus()const;
 				std::string getDomainName()const;
 				std::string getDomainWebSocketStatus()const;
 				std::string getGroupId()const;
@@ -50,8 +50,8 @@ namespace AlibabaCloud
 			private:
 				std::string subDomain_;
 				std::string domainRemark_;
-				std::string domainBindingStatus_;
 				std::string domainLegalStatus_;
+				std::string domainBindingStatus_;
 				std::string domainName_;
 				std::string domainWebSocketStatus_;
 				std::string groupId_;

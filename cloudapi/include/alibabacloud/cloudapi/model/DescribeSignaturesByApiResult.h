@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct SignatureItem
 				{
 					std::string signatureId;
-					std::string signatureName;
 					std::string boundTime;
+					std::string signatureName;
 				};
 
 

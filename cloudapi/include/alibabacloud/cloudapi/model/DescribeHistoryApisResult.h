@@ -34,12 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct ApiHisItem
 				{
-					std::string groupName;
 					std::string status;
+					std::string groupName;
 					std::string deployedTime;
 					std::string description;
-					std::string apiName;
 					std::string stageName;
+					std::string apiName;
 					std::string regionId;
 					std::string apiId;
 					std::string historyVersion;

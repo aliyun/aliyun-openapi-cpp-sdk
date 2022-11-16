@@ -43,32 +43,36 @@ void DescribeApisResult::parse(const std::string &payload)
 	for (auto valueApiSummarysApiSummary : allApiSummarysNode)
 	{
 		ApiSummary apiSummarysObject;
-		if(!valueApiSummarysApiSummary["RegionId"].isNull())
-			apiSummarysObject.regionId = valueApiSummarysApiSummary["RegionId"].asString();
-		if(!valueApiSummarysApiSummary["GroupId"].isNull())
-			apiSummarysObject.groupId = valueApiSummarysApiSummary["GroupId"].asString();
-		if(!valueApiSummarysApiSummary["GroupName"].isNull())
-			apiSummarysObject.groupName = valueApiSummarysApiSummary["GroupName"].asString();
-		if(!valueApiSummarysApiSummary["ApiId"].isNull())
-			apiSummarysObject.apiId = valueApiSummarysApiSummary["ApiId"].asString();
-		if(!valueApiSummarysApiSummary["ApiName"].isNull())
-			apiSummarysObject.apiName = valueApiSummarysApiSummary["ApiName"].asString();
 		if(!valueApiSummarysApiSummary["Visibility"].isNull())
 			apiSummarysObject.visibility = valueApiSummarysApiSummary["Visibility"].asString();
-		if(!valueApiSummarysApiSummary["Description"].isNull())
-			apiSummarysObject.description = valueApiSummarysApiSummary["Description"].asString();
-		if(!valueApiSummarysApiSummary["CreatedTime"].isNull())
-			apiSummarysObject.createdTime = valueApiSummarysApiSummary["CreatedTime"].asString();
+		if(!valueApiSummarysApiSummary["ApiId"].isNull())
+			apiSummarysObject.apiId = valueApiSummarysApiSummary["ApiId"].asString();
 		if(!valueApiSummarysApiSummary["ModifiedTime"].isNull())
 			apiSummarysObject.modifiedTime = valueApiSummarysApiSummary["ModifiedTime"].asString();
+		if(!valueApiSummarysApiSummary["Description"].isNull())
+			apiSummarysObject.description = valueApiSummarysApiSummary["Description"].asString();
+		if(!valueApiSummarysApiSummary["GroupName"].isNull())
+			apiSummarysObject.groupName = valueApiSummarysApiSummary["GroupName"].asString();
+		if(!valueApiSummarysApiSummary["GroupId"].isNull())
+			apiSummarysObject.groupId = valueApiSummarysApiSummary["GroupId"].asString();
+		if(!valueApiSummarysApiSummary["CreatedTime"].isNull())
+			apiSummarysObject.createdTime = valueApiSummarysApiSummary["CreatedTime"].asString();
+		if(!valueApiSummarysApiSummary["ApiName"].isNull())
+			apiSummarysObject.apiName = valueApiSummarysApiSummary["ApiName"].asString();
+		if(!valueApiSummarysApiSummary["RegionId"].isNull())
+			apiSummarysObject.regionId = valueApiSummarysApiSummary["RegionId"].asString();
+		if(!valueApiSummarysApiSummary["ApiPath"].isNull())
+			apiSummarysObject.apiPath = valueApiSummarysApiSummary["ApiPath"].asString();
+		if(!valueApiSummarysApiSummary["ApiMethod"].isNull())
+			apiSummarysObject.apiMethod = valueApiSummarysApiSummary["ApiMethod"].asString();
 		apiSummarys_.push_back(apiSummarysObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

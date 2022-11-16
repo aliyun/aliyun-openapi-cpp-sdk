@@ -43,28 +43,28 @@ void DescribeSignaturesResult::parse(const std::string &payload)
 	for (auto valueSignatureInfosSignatureInfo : allSignatureInfosNode)
 	{
 		SignatureInfo signatureInfosObject;
-		if(!valueSignatureInfosSignatureInfo["RegionId"].isNull())
-			signatureInfosObject.regionId = valueSignatureInfosSignatureInfo["RegionId"].asString();
+		if(!valueSignatureInfosSignatureInfo["ModifiedTime"].isNull())
+			signatureInfosObject.modifiedTime = valueSignatureInfosSignatureInfo["ModifiedTime"].asString();
 		if(!valueSignatureInfosSignatureInfo["SignatureId"].isNull())
 			signatureInfosObject.signatureId = valueSignatureInfosSignatureInfo["SignatureId"].asString();
+		if(!valueSignatureInfosSignatureInfo["SignatureSecret"].isNull())
+			signatureInfosObject.signatureSecret = valueSignatureInfosSignatureInfo["SignatureSecret"].asString();
 		if(!valueSignatureInfosSignatureInfo["SignatureName"].isNull())
 			signatureInfosObject.signatureName = valueSignatureInfosSignatureInfo["SignatureName"].asString();
 		if(!valueSignatureInfosSignatureInfo["SignatureKey"].isNull())
 			signatureInfosObject.signatureKey = valueSignatureInfosSignatureInfo["SignatureKey"].asString();
-		if(!valueSignatureInfosSignatureInfo["SignatureSecret"].isNull())
-			signatureInfosObject.signatureSecret = valueSignatureInfosSignatureInfo["SignatureSecret"].asString();
 		if(!valueSignatureInfosSignatureInfo["CreatedTime"].isNull())
 			signatureInfosObject.createdTime = valueSignatureInfosSignatureInfo["CreatedTime"].asString();
-		if(!valueSignatureInfosSignatureInfo["ModifiedTime"].isNull())
-			signatureInfosObject.modifiedTime = valueSignatureInfosSignatureInfo["ModifiedTime"].asString();
+		if(!valueSignatureInfosSignatureInfo["RegionId"].isNull())
+			signatureInfosObject.regionId = valueSignatureInfosSignatureInfo["RegionId"].asString();
 		signatureInfos_.push_back(signatureInfosObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

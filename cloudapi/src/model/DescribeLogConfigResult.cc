@@ -43,14 +43,14 @@ void DescribeLogConfigResult::parse(const std::string &payload)
 	for (auto valueLogInfosLogInfo : allLogInfosNode)
 	{
 		LogInfo logInfosObject;
-		if(!valueLogInfosLogInfo["RegionId"].isNull())
-			logInfosObject.regionId = valueLogInfosLogInfo["RegionId"].asString();
-		if(!valueLogInfosLogInfo["SlsProject"].isNull())
-			logInfosObject.slsProject = valueLogInfosLogInfo["SlsProject"].asString();
 		if(!valueLogInfosLogInfo["SlsLogStore"].isNull())
 			logInfosObject.slsLogStore = valueLogInfosLogInfo["SlsLogStore"].asString();
 		if(!valueLogInfosLogInfo["LogType"].isNull())
 			logInfosObject.logType = valueLogInfosLogInfo["LogType"].asString();
+		if(!valueLogInfosLogInfo["SlsProject"].isNull())
+			logInfosObject.slsProject = valueLogInfosLogInfo["SlsProject"].asString();
+		if(!valueLogInfosLogInfo["RegionId"].isNull())
+			logInfosObject.regionId = valueLogInfosLogInfo["RegionId"].asString();
 		logInfos_.push_back(logInfosObject);
 	}
 

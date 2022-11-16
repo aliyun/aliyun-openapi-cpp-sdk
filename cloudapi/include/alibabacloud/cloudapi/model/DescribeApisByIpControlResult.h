@@ -36,9 +36,9 @@ namespace AlibabaCloud
 				{
 					std::string groupName;
 					std::string description;
+					std::string boundTime;
 					std::string stageName;
 					std::string apiName;
-					std::string boundTime;
 					std::string visibility;
 					std::string regionId;
 					std::string apiId;

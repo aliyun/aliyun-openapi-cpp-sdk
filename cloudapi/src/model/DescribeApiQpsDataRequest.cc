@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,73 @@
 
 using AlibabaCloud::CloudAPI::Model::DescribeApiQpsDataRequest;
 
-DescribeApiQpsDataRequest::DescribeApiQpsDataRequest() :
-	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiQpsData")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeApiQpsDataRequest::DescribeApiQpsDataRequest()
+    : RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiQpsData") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeApiQpsDataRequest::~DescribeApiQpsDataRequest()
-{}
+DescribeApiQpsDataRequest::~DescribeApiQpsDataRequest() {}
 
-std::string DescribeApiQpsDataRequest::getGroupId()const
-{
-	return groupId_;
+std::string DescribeApiQpsDataRequest::getStageName() const {
+  return stageName_;
 }
 
-void DescribeApiQpsDataRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+void DescribeApiQpsDataRequest::setStageName(const std::string &stageName) {
+  stageName_ = stageName;
+  setParameter(std::string("StageName"), stageName);
 }
 
-std::string DescribeApiQpsDataRequest::getEndTime()const
-{
-	return endTime_;
+std::string DescribeApiQpsDataRequest::getGroupId() const {
+  return groupId_;
 }
 
-void DescribeApiQpsDataRequest::setEndTime(const std::string& endTime)
-{
-	endTime_ = endTime;
-	setParameter("EndTime", endTime);
+void DescribeApiQpsDataRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
 }
 
-std::string DescribeApiQpsDataRequest::getStartTime()const
-{
-	return startTime_;
+std::string DescribeApiQpsDataRequest::getEndTime() const {
+  return endTime_;
 }
 
-void DescribeApiQpsDataRequest::setStartTime(const std::string& startTime)
-{
-	startTime_ = startTime;
-	setParameter("StartTime", startTime);
+void DescribeApiQpsDataRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
-std::string DescribeApiQpsDataRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeApiQpsDataRequest::getStartTime() const {
+  return startTime_;
 }
 
-void DescribeApiQpsDataRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeApiQpsDataRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 
-std::string DescribeApiQpsDataRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string DescribeApiQpsDataRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeApiQpsDataRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void DescribeApiQpsDataRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeApiQpsDataRequest::getApiId()const
-{
-	return apiId_;
+std::string DescribeApiQpsDataRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DescribeApiQpsDataRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setParameter("ApiId", apiId);
+void DescribeApiQpsDataRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
+}
+
+std::string DescribeApiQpsDataRequest::getApiId() const {
+  return apiId_;
+}
+
+void DescribeApiQpsDataRequest::setApiId(const std::string &apiId) {
+  apiId_ = apiId;
+  setParameter(std::string("ApiId"), apiId);
 }
 

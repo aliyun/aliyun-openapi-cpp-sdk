@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::CloudAPI::Model::SetAppsAuthoritiesRequest;
 
-SetAppsAuthoritiesRequest::SetAppsAuthoritiesRequest() :
-	RpcServiceRequest("cloudapi", "2016-07-14", "SetAppsAuthorities")
-{
-	setMethod(HttpRequest::Method::Post);
+SetAppsAuthoritiesRequest::SetAppsAuthoritiesRequest()
+    : RpcServiceRequest("cloudapi", "2016-07-14", "SetAppsAuthorities") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SetAppsAuthoritiesRequest::~SetAppsAuthoritiesRequest()
-{}
+SetAppsAuthoritiesRequest::~SetAppsAuthoritiesRequest() {}
 
-std::string SetAppsAuthoritiesRequest::getAuthVaildTime()const
-{
-	return authVaildTime_;
+std::string SetAppsAuthoritiesRequest::getAuthVaildTime() const {
+  return authVaildTime_;
 }
 
-void SetAppsAuthoritiesRequest::setAuthVaildTime(const std::string& authVaildTime)
-{
-	authVaildTime_ = authVaildTime;
-	setParameter("AuthVaildTime", authVaildTime);
+void SetAppsAuthoritiesRequest::setAuthVaildTime(const std::string &authVaildTime) {
+  authVaildTime_ = authVaildTime;
+  setParameter(std::string("AuthVaildTime"), authVaildTime);
 }
 
-std::string SetAppsAuthoritiesRequest::getStageName()const
-{
-	return stageName_;
+std::string SetAppsAuthoritiesRequest::getStageName() const {
+  return stageName_;
 }
 
-void SetAppsAuthoritiesRequest::setStageName(const std::string& stageName)
-{
-	stageName_ = stageName;
-	setParameter("StageName", stageName);
+void SetAppsAuthoritiesRequest::setStageName(const std::string &stageName) {
+  stageName_ = stageName;
+  setParameter(std::string("StageName"), stageName);
 }
 
-std::string SetAppsAuthoritiesRequest::getGroupId()const
-{
-	return groupId_;
+std::string SetAppsAuthoritiesRequest::getGroupId() const {
+  return groupId_;
 }
 
-void SetAppsAuthoritiesRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+void SetAppsAuthoritiesRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
 }
 
-std::string SetAppsAuthoritiesRequest::getDescription()const
-{
-	return description_;
+std::string SetAppsAuthoritiesRequest::getDescription() const {
+  return description_;
 }
 
-void SetAppsAuthoritiesRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void SetAppsAuthoritiesRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
-std::string SetAppsAuthoritiesRequest::getAuthValidTime()const
-{
-	return authValidTime_;
+std::string SetAppsAuthoritiesRequest::getAuthValidTime() const {
+  return authValidTime_;
 }
 
-void SetAppsAuthoritiesRequest::setAuthValidTime(const std::string& authValidTime)
-{
-	authValidTime_ = authValidTime;
-	setParameter("AuthValidTime", authValidTime);
+void SetAppsAuthoritiesRequest::setAuthValidTime(const std::string &authValidTime) {
+  authValidTime_ = authValidTime;
+  setParameter(std::string("AuthValidTime"), authValidTime);
 }
 
-std::string SetAppsAuthoritiesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string SetAppsAuthoritiesRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void SetAppsAuthoritiesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void SetAppsAuthoritiesRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string SetAppsAuthoritiesRequest::getAppIds()const
-{
-	return appIds_;
+std::string SetAppsAuthoritiesRequest::getAppIds() const {
+  return appIds_;
 }
 
-void SetAppsAuthoritiesRequest::setAppIds(const std::string& appIds)
-{
-	appIds_ = appIds;
-	setParameter("AppIds", appIds);
+void SetAppsAuthoritiesRequest::setAppIds(const std::string &appIds) {
+  appIds_ = appIds;
+  setParameter(std::string("AppIds"), appIds);
 }
 
-std::string SetAppsAuthoritiesRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string SetAppsAuthoritiesRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void SetAppsAuthoritiesRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void SetAppsAuthoritiesRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string SetAppsAuthoritiesRequest::getApiId()const
-{
-	return apiId_;
+std::string SetAppsAuthoritiesRequest::getApiId() const {
+  return apiId_;
 }
 
-void SetAppsAuthoritiesRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setParameter("ApiId", apiId);
+void SetAppsAuthoritiesRequest::setApiId(const std::string &apiId) {
+  apiId_ = apiId;
+  setParameter(std::string("ApiId"), apiId);
 }
 

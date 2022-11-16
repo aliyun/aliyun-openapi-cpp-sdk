@@ -39,8 +39,8 @@ namespace AlibabaCloud
 				~DescribeAppResult();
 				std::string getDescription()const;
 				std::string getCreatedTime()const;
-				long getAppId()const;
 				std::string getModifiedTime()const;
+				long getAppId()const;
 				std::string getAppName()const;
 
 			protected:
@@ -48,8 +48,8 @@ namespace AlibabaCloud
 			private:
 				std::string description_;
 				std::string createdTime_;
-				long appId_;
 				std::string modifiedTime_;
+				long appId_;
 				std::string appName_;
 
 			};

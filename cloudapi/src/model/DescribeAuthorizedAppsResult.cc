@@ -43,30 +43,30 @@ void DescribeAuthorizedAppsResult::parse(const std::string &payload)
 	for (auto valueAuthorizedAppsAuthorizedApp : allAuthorizedAppsNode)
 	{
 		AuthorizedApp authorizedAppsObject;
-		if(!valueAuthorizedAppsAuthorizedApp["StageName"].isNull())
-			authorizedAppsObject.stageName = valueAuthorizedAppsAuthorizedApp["StageName"].asString();
-		if(!valueAuthorizedAppsAuthorizedApp["AppId"].isNull())
-			authorizedAppsObject.appId = std::stol(valueAuthorizedAppsAuthorizedApp["AppId"].asString());
 		if(!valueAuthorizedAppsAuthorizedApp["AppName"].isNull())
 			authorizedAppsObject.appName = valueAuthorizedAppsAuthorizedApp["AppName"].asString();
-		if(!valueAuthorizedAppsAuthorizedApp["Operator"].isNull())
-			authorizedAppsObject._operator = valueAuthorizedAppsAuthorizedApp["Operator"].asString();
 		if(!valueAuthorizedAppsAuthorizedApp["AuthorizationSource"].isNull())
 			authorizedAppsObject.authorizationSource = valueAuthorizedAppsAuthorizedApp["AuthorizationSource"].asString();
+		if(!valueAuthorizedAppsAuthorizedApp["AuthVaildTime"].isNull())
+			authorizedAppsObject.authVaildTime = valueAuthorizedAppsAuthorizedApp["AuthVaildTime"].asString();
 		if(!valueAuthorizedAppsAuthorizedApp["Description"].isNull())
 			authorizedAppsObject.description = valueAuthorizedAppsAuthorizedApp["Description"].asString();
 		if(!valueAuthorizedAppsAuthorizedApp["AuthorizedTime"].isNull())
 			authorizedAppsObject.authorizedTime = valueAuthorizedAppsAuthorizedApp["AuthorizedTime"].asString();
-		if(!valueAuthorizedAppsAuthorizedApp["AuthVaildTime"].isNull())
-			authorizedAppsObject.authVaildTime = valueAuthorizedAppsAuthorizedApp["AuthVaildTime"].asString();
+		if(!valueAuthorizedAppsAuthorizedApp["AppId"].isNull())
+			authorizedAppsObject.appId = std::stol(valueAuthorizedAppsAuthorizedApp["AppId"].asString());
+		if(!valueAuthorizedAppsAuthorizedApp["StageName"].isNull())
+			authorizedAppsObject.stageName = valueAuthorizedAppsAuthorizedApp["StageName"].asString();
+		if(!valueAuthorizedAppsAuthorizedApp["Operator"].isNull())
+			authorizedAppsObject._operator = valueAuthorizedAppsAuthorizedApp["Operator"].asString();
 		authorizedApps_.push_back(authorizedAppsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

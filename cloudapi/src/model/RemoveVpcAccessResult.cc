@@ -39,6 +39,23 @@ void RemoveVpcAccessResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allApisNode = value["Apis"]["Api"];
+	for (auto valueApisApi : allApisNode)
+	{
+		Api apisObject;
+		if(!valueApisApi["ApiId"].isNull())
+			apisObject.apiId = valueApisApi["ApiId"].asString();
+		if(!valueApisApi["StageId"].isNull())
+			apisObject.stageId = valueApisApi["StageId"].asString();
+		if(!valueApisApi["GroupId"].isNull())
+			apisObject.groupId = valueApisApi["GroupId"].asString();
+		apis_.push_back(apisObject);
+	}
 
+}
+
+std::vector<RemoveVpcAccessResult::Api> RemoveVpcAccessResult::getApis()const
+{
+	return apis_;
 }
 

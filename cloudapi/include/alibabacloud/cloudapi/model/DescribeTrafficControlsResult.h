@@ -46,12 +46,12 @@ namespace AlibabaCloud
 					};
 					std::string description;
 					std::string createdTime;
-					std::string trafficControlUnit;
 					std::string modifiedTime;
+					std::string trafficControlUnit;
 					std::string trafficControlName;
 					int appDefault;
-					int apiDefault;
 					int userDefault;
+					int apiDefault;
 					std::vector<TrafficControl::SpecialPolicy> specialPolicies;
 					std::string trafficControlId;
 				};

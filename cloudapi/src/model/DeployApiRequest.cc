@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::CloudAPI::Model::DeployApiRequest;
 
-DeployApiRequest::DeployApiRequest() :
-	RpcServiceRequest("cloudapi", "2016-07-14", "DeployApi")
-{
-	setMethod(HttpRequest::Method::Post);
+DeployApiRequest::DeployApiRequest()
+    : RpcServiceRequest("cloudapi", "2016-07-14", "DeployApi") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeployApiRequest::~DeployApiRequest()
-{}
+DeployApiRequest::~DeployApiRequest() {}
 
-std::string DeployApiRequest::getStageName()const
-{
-	return stageName_;
+std::string DeployApiRequest::getStageName() const {
+  return stageName_;
 }
 
-void DeployApiRequest::setStageName(const std::string& stageName)
-{
-	stageName_ = stageName;
-	setParameter("StageName", stageName);
+void DeployApiRequest::setStageName(const std::string &stageName) {
+  stageName_ = stageName;
+  setParameter(std::string("StageName"), stageName);
 }
 
-std::string DeployApiRequest::getGroupId()const
-{
-	return groupId_;
+std::string DeployApiRequest::getGroupId() const {
+  return groupId_;
 }
 
-void DeployApiRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+void DeployApiRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
 }
 
-std::string DeployApiRequest::getDescription()const
-{
-	return description_;
+std::string DeployApiRequest::getDescription() const {
+  return description_;
 }
 
-void DeployApiRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void DeployApiRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
-std::string DeployApiRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DeployApiRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DeployApiRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DeployApiRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DeployApiRequest::getResourceOwnerToken()const
-{
-	return resourceOwnerToken_;
+std::string DeployApiRequest::getResourceOwnerToken() const {
+  return resourceOwnerToken_;
 }
 
-void DeployApiRequest::setResourceOwnerToken(const std::string& resourceOwnerToken)
-{
-	resourceOwnerToken_ = resourceOwnerToken;
-	setParameter("ResourceOwnerToken", resourceOwnerToken);
+void DeployApiRequest::setResourceOwnerToken(const std::string &resourceOwnerToken) {
+  resourceOwnerToken_ = resourceOwnerToken;
+  setParameter(std::string("ResourceOwnerToken"), resourceOwnerToken);
 }
 
-std::string DeployApiRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string DeployApiRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DeployApiRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void DeployApiRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string DeployApiRequest::getApiId()const
-{
-	return apiId_;
+std::string DeployApiRequest::getApiId() const {
+  return apiId_;
 }
 
-void DeployApiRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setParameter("ApiId", apiId);
+void DeployApiRequest::setApiId(const std::string &apiId) {
+  apiId_ = apiId;
+  setParameter(std::string("ApiId"), apiId);
 }
 

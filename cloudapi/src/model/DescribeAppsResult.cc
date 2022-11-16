@@ -43,20 +43,20 @@ void DescribeAppsResult::parse(const std::string &payload)
 	for (auto valueAppsAppItem : allAppsNode)
 	{
 		AppItem appsObject;
-		if(!valueAppsAppItem["AppId"].isNull())
-			appsObject.appId = std::stol(valueAppsAppItem["AppId"].asString());
 		if(!valueAppsAppItem["AppName"].isNull())
 			appsObject.appName = valueAppsAppItem["AppName"].asString();
 		if(!valueAppsAppItem["Description"].isNull())
 			appsObject.description = valueAppsAppItem["Description"].asString();
+		if(!valueAppsAppItem["AppId"].isNull())
+			appsObject.appId = std::stol(valueAppsAppItem["AppId"].asString());
 		apps_.push_back(appsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

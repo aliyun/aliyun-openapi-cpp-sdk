@@ -42,23 +42,23 @@ namespace AlibabaCloud
 				explicit DescribePurchasedApiGroupResult(const std::string &payload);
 				~DescribePurchasedApiGroupResult();
 				std::vector<DomainItem> getDomains()const;
-				std::string getGroupName()const;
 				std::string getStatus()const;
+				std::string getGroupName()const;
 				std::string getDescription()const;
 				std::string getRegionId()const;
-				std::string getGroupId()const;
 				std::string getPurchasedTime()const;
+				std::string getGroupId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<DomainItem> domains_;
-				std::string groupName_;
 				std::string status_;
+				std::string groupName_;
 				std::string description_;
 				std::string regionId_;
-				std::string groupId_;
 				std::string purchasedTime_;
+				std::string groupId_;
 
 			};
 		}

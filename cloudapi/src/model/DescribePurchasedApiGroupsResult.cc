@@ -43,34 +43,34 @@ void DescribePurchasedApiGroupsResult::parse(const std::string &payload)
 	for (auto valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute : allPurchasedApiGroupAttributesNode)
 	{
 		PurchasedApiGroupAttribute purchasedApiGroupAttributesObject;
-		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["GroupId"].isNull())
-			purchasedApiGroupAttributesObject.groupId = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["GroupId"].asString();
-		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["GroupName"].isNull())
-			purchasedApiGroupAttributesObject.groupName = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["GroupName"].asString();
-		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["Description"].isNull())
-			purchasedApiGroupAttributesObject.description = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["Description"].asString();
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["Status"].isNull())
+			purchasedApiGroupAttributesObject.status = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["Status"].asString();
 		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["PurchasedTime"].isNull())
 			purchasedApiGroupAttributesObject.purchasedTime = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["PurchasedTime"].asString();
 		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["ExpireTime"].isNull())
 			purchasedApiGroupAttributesObject.expireTime = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["ExpireTime"].asString();
-		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["RegionId"].isNull())
-			purchasedApiGroupAttributesObject.regionId = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["RegionId"].asString();
-		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["BillingType"].isNull())
-			purchasedApiGroupAttributesObject.billingType = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["BillingType"].asString();
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["Description"].isNull())
+			purchasedApiGroupAttributesObject.description = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["Description"].asString();
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["GroupName"].isNull())
+			purchasedApiGroupAttributesObject.groupName = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["GroupName"].asString();
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["GroupId"].isNull())
+			purchasedApiGroupAttributesObject.groupId = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["GroupId"].asString();
 		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["InvokeTimesMax"].isNull())
 			purchasedApiGroupAttributesObject.invokeTimesMax = std::stol(valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["InvokeTimesMax"].asString());
 		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["InvokeTimesNow"].isNull())
 			purchasedApiGroupAttributesObject.invokeTimesNow = std::stol(valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["InvokeTimesNow"].asString());
-		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["Status"].isNull())
-			purchasedApiGroupAttributesObject.status = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["Status"].asString();
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["BillingType"].isNull())
+			purchasedApiGroupAttributesObject.billingType = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["BillingType"].asString();
+		if(!valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["RegionId"].isNull())
+			purchasedApiGroupAttributesObject.regionId = valuePurchasedApiGroupAttributesPurchasedApiGroupAttribute["RegionId"].asString();
 		purchasedApiGroupAttributes_.push_back(purchasedApiGroupAttributesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

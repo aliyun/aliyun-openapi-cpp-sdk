@@ -35,9 +35,9 @@ namespace AlibabaCloud
 				struct ApiSignatureItem
 				{
 					std::string signatureId;
-					std::string apiName;
-					std::string signatureName;
 					std::string boundTime;
+					std::string signatureName;
+					std::string apiName;
 					std::string apiId;
 				};
 

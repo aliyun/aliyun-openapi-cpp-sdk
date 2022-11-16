@@ -43,50 +43,50 @@ void DescribeTrafficControlsResult::parse(const std::string &payload)
 	for (auto valueTrafficControlsTrafficControl : allTrafficControlsNode)
 	{
 		TrafficControl trafficControlsObject;
-		if(!valueTrafficControlsTrafficControl["TrafficControlId"].isNull())
-			trafficControlsObject.trafficControlId = valueTrafficControlsTrafficControl["TrafficControlId"].asString();
-		if(!valueTrafficControlsTrafficControl["TrafficControlName"].isNull())
-			trafficControlsObject.trafficControlName = valueTrafficControlsTrafficControl["TrafficControlName"].asString();
+		if(!valueTrafficControlsTrafficControl["UserDefault"].isNull())
+			trafficControlsObject.userDefault = std::stoi(valueTrafficControlsTrafficControl["UserDefault"].asString());
+		if(!valueTrafficControlsTrafficControl["ApiDefault"].isNull())
+			trafficControlsObject.apiDefault = std::stoi(valueTrafficControlsTrafficControl["ApiDefault"].asString());
+		if(!valueTrafficControlsTrafficControl["ModifiedTime"].isNull())
+			trafficControlsObject.modifiedTime = valueTrafficControlsTrafficControl["ModifiedTime"].asString();
 		if(!valueTrafficControlsTrafficControl["Description"].isNull())
 			trafficControlsObject.description = valueTrafficControlsTrafficControl["Description"].asString();
 		if(!valueTrafficControlsTrafficControl["TrafficControlUnit"].isNull())
 			trafficControlsObject.trafficControlUnit = valueTrafficControlsTrafficControl["TrafficControlUnit"].asString();
-		if(!valueTrafficControlsTrafficControl["ApiDefault"].isNull())
-			trafficControlsObject.apiDefault = std::stoi(valueTrafficControlsTrafficControl["ApiDefault"].asString());
-		if(!valueTrafficControlsTrafficControl["UserDefault"].isNull())
-			trafficControlsObject.userDefault = std::stoi(valueTrafficControlsTrafficControl["UserDefault"].asString());
+		if(!valueTrafficControlsTrafficControl["TrafficControlName"].isNull())
+			trafficControlsObject.trafficControlName = valueTrafficControlsTrafficControl["TrafficControlName"].asString();
 		if(!valueTrafficControlsTrafficControl["AppDefault"].isNull())
 			trafficControlsObject.appDefault = std::stoi(valueTrafficControlsTrafficControl["AppDefault"].asString());
+		if(!valueTrafficControlsTrafficControl["TrafficControlId"].isNull())
+			trafficControlsObject.trafficControlId = valueTrafficControlsTrafficControl["TrafficControlId"].asString();
 		if(!valueTrafficControlsTrafficControl["CreatedTime"].isNull())
 			trafficControlsObject.createdTime = valueTrafficControlsTrafficControl["CreatedTime"].asString();
-		if(!valueTrafficControlsTrafficControl["ModifiedTime"].isNull())
-			trafficControlsObject.modifiedTime = valueTrafficControlsTrafficControl["ModifiedTime"].asString();
-		auto allSpecialPoliciesNode = allTrafficControlsNode["SpecialPolicies"]["SpecialPolicy"];
-		for (auto allTrafficControlsNodeSpecialPoliciesSpecialPolicy : allSpecialPoliciesNode)
+		auto allSpecialPoliciesNode = valueTrafficControlsTrafficControl["SpecialPolicies"]["SpecialPolicy"];
+		for (auto valueTrafficControlsTrafficControlSpecialPoliciesSpecialPolicy : allSpecialPoliciesNode)
 		{
 			TrafficControl::SpecialPolicy specialPoliciesObject;
-			if(!allTrafficControlsNodeSpecialPoliciesSpecialPolicy["SpecialType"].isNull())
-				specialPoliciesObject.specialType = allTrafficControlsNodeSpecialPoliciesSpecialPolicy["SpecialType"].asString();
-			auto allSpecialsNode = allSpecialPoliciesNode["Specials"]["Special"];
-			for (auto allSpecialPoliciesNodeSpecialsSpecial : allSpecialsNode)
+			if(!valueTrafficControlsTrafficControlSpecialPoliciesSpecialPolicy["SpecialType"].isNull())
+				specialPoliciesObject.specialType = valueTrafficControlsTrafficControlSpecialPoliciesSpecialPolicy["SpecialType"].asString();
+			auto allSpecialsNode = valueTrafficControlsTrafficControlSpecialPoliciesSpecialPolicy["Specials"]["Special"];
+			for (auto valueTrafficControlsTrafficControlSpecialPoliciesSpecialPolicySpecialsSpecial : allSpecialsNode)
 			{
 				TrafficControl::SpecialPolicy::Special specialsObject;
-				if(!allSpecialPoliciesNodeSpecialsSpecial["SpecialKey"].isNull())
-					specialsObject.specialKey = allSpecialPoliciesNodeSpecialsSpecial["SpecialKey"].asString();
-				if(!allSpecialPoliciesNodeSpecialsSpecial["TrafficValue"].isNull())
-					specialsObject.trafficValue = std::stoi(allSpecialPoliciesNodeSpecialsSpecial["TrafficValue"].asString());
+				if(!valueTrafficControlsTrafficControlSpecialPoliciesSpecialPolicySpecialsSpecial["TrafficValue"].isNull())
+					specialsObject.trafficValue = std::stoi(valueTrafficControlsTrafficControlSpecialPoliciesSpecialPolicySpecialsSpecial["TrafficValue"].asString());
+				if(!valueTrafficControlsTrafficControlSpecialPoliciesSpecialPolicySpecialsSpecial["SpecialKey"].isNull())
+					specialsObject.specialKey = valueTrafficControlsTrafficControlSpecialPoliciesSpecialPolicySpecialsSpecial["SpecialKey"].asString();
 				specialPoliciesObject.specials.push_back(specialsObject);
 			}
 			trafficControlsObject.specialPolicies.push_back(specialPoliciesObject);
 		}
 		trafficControls_.push_back(trafficControlsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

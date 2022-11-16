@@ -43,10 +43,10 @@ void DescribeApiLatencyDataResult::parse(const std::string &payload)
 	for (auto valueCallLatencysMonitorItem : allCallLatencysNode)
 	{
 		MonitorItem callLatencysObject;
-		if(!valueCallLatencysMonitorItem["ItemTime"].isNull())
-			callLatencysObject.itemTime = valueCallLatencysMonitorItem["ItemTime"].asString();
 		if(!valueCallLatencysMonitorItem["ItemValue"].isNull())
 			callLatencysObject.itemValue = valueCallLatencysMonitorItem["ItemValue"].asString();
+		if(!valueCallLatencysMonitorItem["ItemTime"].isNull())
+			callLatencysObject.itemTime = valueCallLatencysMonitorItem["ItemTime"].asString();
 		callLatencys_.push_back(callLatencysObject);
 	}
 

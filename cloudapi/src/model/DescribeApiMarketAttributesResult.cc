@@ -41,10 +41,10 @@ void DescribeApiMarketAttributesResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["ApiId"].isNull())
 		apiId_ = value["ApiId"].asString();
-	if(!value["NeedCharging"].isNull())
-		needCharging_ = value["NeedCharging"].asString();
 	if(!value["MarketChargingMode"].isNull())
 		marketChargingMode_ = value["MarketChargingMode"].asString();
+	if(!value["NeedCharging"].isNull())
+		needCharging_ = value["NeedCharging"].asString();
 
 }
 

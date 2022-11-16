@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct ApiTrafficControlItem
 				{
-					std::string apiName;
 					std::string boundTime;
+					std::string apiName;
 					std::string trafficControlName;
 					std::string trafficControlId;
 					std::string apiId;

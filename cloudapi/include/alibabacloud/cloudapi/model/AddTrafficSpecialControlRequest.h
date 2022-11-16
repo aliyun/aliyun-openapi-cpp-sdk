@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,47 +17,41 @@
 #ifndef ALIBABACLOUD_CLOUDAPI_MODEL_ADDTRAFFICSPECIALCONTROLREQUEST_H_
 #define ALIBABACLOUD_CLOUDAPI_MODEL_ADDTRAFFICSPECIALCONTROLREQUEST_H_
 
+#include <alibabacloud/cloudapi/CloudAPIExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/cloudapi/CloudAPIExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace CloudAPI
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CLOUDAPI_EXPORT AddTrafficSpecialControlRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace CloudAPI {
+namespace Model {
+class ALIBABACLOUD_CLOUDAPI_EXPORT AddTrafficSpecialControlRequest : public RpcServiceRequest {
+public:
+	AddTrafficSpecialControlRequest();
+	~AddTrafficSpecialControlRequest();
+	std::string getTrafficControlId() const;
+	void setTrafficControlId(const std::string &trafficControlId);
+	std::string getSpecialKey() const;
+	void setSpecialKey(const std::string &specialKey);
+	int getTrafficValue() const;
+	void setTrafficValue(int trafficValue);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getSecurityToken() const;
+	void setSecurityToken(const std::string &securityToken);
+	std::string getSpecialType() const;
+	void setSpecialType(const std::string &specialType);
 
-			public:
-				AddTrafficSpecialControlRequest();
-				~AddTrafficSpecialControlRequest();
-
-				std::string getTrafficControlId()const;
-				void setTrafficControlId(const std::string& trafficControlId);
-				std::string getSpecialKey()const;
-				void setSpecialKey(const std::string& specialKey);
-				int getTrafficValue()const;
-				void setTrafficValue(int trafficValue);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				std::string getSpecialType()const;
-				void setSpecialType(const std::string& specialType);
-
-            private:
-				std::string trafficControlId_;
-				std::string specialKey_;
-				int trafficValue_;
-				std::string accessKeyId_;
-				std::string securityToken_;
-				std::string specialType_;
-
-			};
-		}
-	}
-}
+private:
+	std::string trafficControlId_;
+	std::string specialKey_;
+	int trafficValue_;
+	std::string accessKeyId_;
+	std::string securityToken_;
+	std::string specialType_;
+};
+} // namespace Model
+} // namespace CloudAPI
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_CLOUDAPI_MODEL_ADDTRAFFICSPECIALCONTROLREQUEST_H_

@@ -35,13 +35,16 @@ namespace AlibabaCloud
 				struct PurchasedApi
 				{
 					std::string groupName;
+					std::string deployedTime;
 					std::string description;
-					std::string apiName;
+					std::string modifiedTime;
 					std::string stageName;
+					std::string apiName;
+					std::string visibility;
 					std::string regionId;
 					std::string apiId;
-					std::string groupId;
 					std::string purchasedTime;
+					std::string groupId;
 				};
 
 

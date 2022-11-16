@@ -43,32 +43,32 @@ void DescribeApisByTrafficControlResult::parse(const std::string &payload)
 	for (auto valueApiInfosApiInfo : allApiInfosNode)
 	{
 		ApiInfo apiInfosObject;
-		if(!valueApiInfosApiInfo["RegionId"].isNull())
-			apiInfosObject.regionId = valueApiInfosApiInfo["RegionId"].asString();
-		if(!valueApiInfosApiInfo["GroupId"].isNull())
-			apiInfosObject.groupId = valueApiInfosApiInfo["GroupId"].asString();
-		if(!valueApiInfosApiInfo["GroupName"].isNull())
-			apiInfosObject.groupName = valueApiInfosApiInfo["GroupName"].asString();
-		if(!valueApiInfosApiInfo["StageName"].isNull())
-			apiInfosObject.stageName = valueApiInfosApiInfo["StageName"].asString();
-		if(!valueApiInfosApiInfo["ApiId"].isNull())
-			apiInfosObject.apiId = valueApiInfosApiInfo["ApiId"].asString();
-		if(!valueApiInfosApiInfo["ApiName"].isNull())
-			apiInfosObject.apiName = valueApiInfosApiInfo["ApiName"].asString();
-		if(!valueApiInfosApiInfo["Description"].isNull())
-			apiInfosObject.description = valueApiInfosApiInfo["Description"].asString();
-		if(!valueApiInfosApiInfo["Visibility"].isNull())
-			apiInfosObject.visibility = valueApiInfosApiInfo["Visibility"].asString();
 		if(!valueApiInfosApiInfo["BoundTime"].isNull())
 			apiInfosObject.boundTime = valueApiInfosApiInfo["BoundTime"].asString();
+		if(!valueApiInfosApiInfo["Visibility"].isNull())
+			apiInfosObject.visibility = valueApiInfosApiInfo["Visibility"].asString();
+		if(!valueApiInfosApiInfo["ApiId"].isNull())
+			apiInfosObject.apiId = valueApiInfosApiInfo["ApiId"].asString();
+		if(!valueApiInfosApiInfo["Description"].isNull())
+			apiInfosObject.description = valueApiInfosApiInfo["Description"].asString();
+		if(!valueApiInfosApiInfo["GroupName"].isNull())
+			apiInfosObject.groupName = valueApiInfosApiInfo["GroupName"].asString();
+		if(!valueApiInfosApiInfo["GroupId"].isNull())
+			apiInfosObject.groupId = valueApiInfosApiInfo["GroupId"].asString();
+		if(!valueApiInfosApiInfo["StageName"].isNull())
+			apiInfosObject.stageName = valueApiInfosApiInfo["StageName"].asString();
+		if(!valueApiInfosApiInfo["ApiName"].isNull())
+			apiInfosObject.apiName = valueApiInfosApiInfo["ApiName"].asString();
+		if(!valueApiInfosApiInfo["RegionId"].isNull())
+			apiInfosObject.regionId = valueApiInfosApiInfo["RegionId"].asString();
 		apiInfos_.push_back(apiInfosObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

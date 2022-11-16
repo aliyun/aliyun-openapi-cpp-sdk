@@ -36,9 +36,9 @@ namespace AlibabaCloud
 				{
 					std::string groupName;
 					std::string description;
+					std::string authVaildTime;
 					std::string stageName;
 					std::string apiName;
-					std::string authVaildTime;
 					std::string authorizationSource;
 					std::string authorizedTime;
 					std::string _operator;

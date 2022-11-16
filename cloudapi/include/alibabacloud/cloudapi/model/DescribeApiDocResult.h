@@ -55,8 +55,8 @@ namespace AlibabaCloud
 					std::string id;
 					bool hasChild;
 					std::string key;
-					std::string name;
 					bool mandatory;
+					std::string name;
 				};
 				struct RequestParameter
 				{
@@ -85,12 +85,12 @@ namespace AlibabaCloud
 				~DescribeApiDocResult();
 				std::string getGroupName()const;
 				RequestConfig getRequestConfig()const;
-				std::string getDescription()const;
 				std::string getResultSample()const;
+				std::string getDescription()const;
 				bool getDisableInternet()const;
+				bool getForceNonceCheck()const;
 				std::string getStageName()const;
 				std::string getApiName()const;
-				bool getForceNonceCheck()const;
 				std::string getResultType()const;
 				std::string getFailResultSample()const;
 				std::vector<ErrorCodeSample> getErrorCodeSamples()const;
@@ -108,12 +108,12 @@ namespace AlibabaCloud
 			private:
 				std::string groupName_;
 				RequestConfig requestConfig_;
-				std::string description_;
 				std::string resultSample_;
+				std::string description_;
 				bool disableInternet_;
+				bool forceNonceCheck_;
 				std::string stageName_;
 				std::string apiName_;
-				bool forceNonceCheck_;
 				std::string resultType_;
 				std::string failResultSample_;
 				std::vector<ErrorCodeSample> errorCodeSamples_;

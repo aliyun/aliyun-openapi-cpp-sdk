@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::CloudAPI::Model::DescribeApisByIpControlRequest;
 
-DescribeApisByIpControlRequest::DescribeApisByIpControlRequest() :
-	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApisByIpControl")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeApisByIpControlRequest::DescribeApisByIpControlRequest()
+    : RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApisByIpControl") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeApisByIpControlRequest::~DescribeApisByIpControlRequest()
-{}
+DescribeApisByIpControlRequest::~DescribeApisByIpControlRequest() {}
 
-int DescribeApisByIpControlRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeApisByIpControlRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeApisByIpControlRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeApisByIpControlRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeApisByIpControlRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeApisByIpControlRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeApisByIpControlRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeApisByIpControlRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeApisByIpControlRequest::getIpControlId()const
-{
-	return ipControlId_;
+std::string DescribeApisByIpControlRequest::getIpControlId() const {
+  return ipControlId_;
 }
 
-void DescribeApisByIpControlRequest::setIpControlId(const std::string& ipControlId)
-{
-	ipControlId_ = ipControlId;
-	setParameter("IpControlId", ipControlId);
+void DescribeApisByIpControlRequest::setIpControlId(const std::string &ipControlId) {
+  ipControlId_ = ipControlId;
+  setParameter(std::string("IpControlId"), ipControlId);
 }
 
-std::string DescribeApisByIpControlRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string DescribeApisByIpControlRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DescribeApisByIpControlRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void DescribeApisByIpControlRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-int DescribeApisByIpControlRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeApisByIpControlRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeApisByIpControlRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeApisByIpControlRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

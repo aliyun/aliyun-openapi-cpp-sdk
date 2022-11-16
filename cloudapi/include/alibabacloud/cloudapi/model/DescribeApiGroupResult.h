@@ -35,13 +35,17 @@ namespace AlibabaCloud
 				struct DomainItem
 				{
 					std::string domainCNAMEStatus;
+					std::string wildcardDomainPatterns;
 					std::string domainRemark;
-					std::string domainBindingStatus;
-					std::string domainLegalStatus;
 					std::string domainName;
+					bool isHttpRedirectToHttps;
+					std::string customDomainType;
 					std::string certificateId;
 					std::string domainWebSocketStatus;
 					std::string bindStageName;
+					std::string domainLegalStatus;
+					std::string domainBindingStatus;
+					std::string wssEnable;
 					std::string certificateName;
 				};
 				struct StageInfo
@@ -56,51 +60,71 @@ namespace AlibabaCloud
 				explicit DescribeApiGroupResult(const std::string &payload);
 				~DescribeApiGroupResult();
 				std::string getGroupName()const;
-				std::string getStatus()const;
 				std::string getDescription()const;
-				std::string getCreatedTime()const;
 				std::string getHttpsPolicy()const;
-				std::string getInstanceId()const;
-				std::string getCompatibleFlags()const;
+				std::string getCreatedTime()const;
 				std::string getCustomTraceConfig()const;
+				std::string getBasePath()const;
 				std::string getUserLogConfig()const;
-				std::string getBillingStatus()const;
-				int getTrafficLimit()const;
-				std::string getGroupId()const;
+				std::string getDefaultDomain()const;
+				std::string getPassthroughHeaders()const;
 				std::string getVpcDomain()const;
 				std::string getSubDomain()const;
+				std::string getCustomerConfigs()const;
 				std::vector<DomainItem> getCustomDomains()const;
 				std::string getModifiedTime()const;
 				std::string getRpcPattern()const;
 				std::vector<StageInfo> getStageItems()const;
 				std::string getIllegalStatus()const;
-				std::string getRegionId()const;
 				std::string getInstanceType()const;
+				std::string getStatus()const;
+				std::string getInstanceId()const;
+				std::string getCompatibleFlags()const;
+				bool getCloudMarketCommodity()const;
+				std::string getInstanceVipList()const;
+				std::string getVpcSlbIntranetDomain()const;
+				std::string getBillingStatus()const;
+				int getTrafficLimit()const;
+				std::string getGroupId()const;
+				std::string getIpv6Status()const;
+				std::string getRegionId()const;
+				std::string getCmsMonitorGroup()const;
+				std::string getClassicVpcSubDomain()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string groupName_;
-				std::string status_;
 				std::string description_;
-				std::string createdTime_;
 				std::string httpsPolicy_;
-				std::string instanceId_;
-				std::string compatibleFlags_;
+				std::string createdTime_;
 				std::string customTraceConfig_;
+				std::string basePath_;
 				std::string userLogConfig_;
-				std::string billingStatus_;
-				int trafficLimit_;
-				std::string groupId_;
+				std::string defaultDomain_;
+				std::string passthroughHeaders_;
 				std::string vpcDomain_;
 				std::string subDomain_;
+				std::string customerConfigs_;
 				std::vector<DomainItem> customDomains_;
 				std::string modifiedTime_;
 				std::string rpcPattern_;
 				std::vector<StageInfo> stageItems_;
 				std::string illegalStatus_;
-				std::string regionId_;
 				std::string instanceType_;
+				std::string status_;
+				std::string instanceId_;
+				std::string compatibleFlags_;
+				bool cloudMarketCommodity_;
+				std::string instanceVipList_;
+				std::string vpcSlbIntranetDomain_;
+				std::string billingStatus_;
+				int trafficLimit_;
+				std::string groupId_;
+				std::string ipv6Status_;
+				std::string regionId_;
+				std::string cmsMonitorGroup_;
+				std::string classicVpcSubDomain_;
 
 			};
 		}

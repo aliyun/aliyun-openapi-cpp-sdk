@@ -39,14 +39,16 @@ void ModifyApiGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["BasePath"].isNull())
+		basePath_ = value["BasePath"].asString();
 	if(!value["GroupId"].isNull())
 		groupId_ = value["GroupId"].asString();
 	if(!value["GroupName"].isNull())
 		groupName_ = value["GroupName"].asString();
-	if(!value["SubDomain"].isNull())
-		subDomain_ = value["SubDomain"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
+	if(!value["SubDomain"].isNull())
+		subDomain_ = value["SubDomain"].asString();
 
 }
 
@@ -63,6 +65,11 @@ std::string ModifyApiGroupResult::getSubDomain()const
 std::string ModifyApiGroupResult::getDescription()const
 {
 	return description_;
+}
+
+std::string ModifyApiGroupResult::getBasePath()const
+{
+	return basePath_;
 }
 
 std::string ModifyApiGroupResult::getGroupId()const

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,91 @@
 
 using AlibabaCloud::CloudAPI::Model::SetDomainCertificateRequest;
 
-SetDomainCertificateRequest::SetDomainCertificateRequest() :
-	RpcServiceRequest("cloudapi", "2016-07-14", "SetDomainCertificate")
-{
-	setMethod(HttpRequest::Method::Post);
+SetDomainCertificateRequest::SetDomainCertificateRequest()
+    : RpcServiceRequest("cloudapi", "2016-07-14", "SetDomainCertificate") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SetDomainCertificateRequest::~SetDomainCertificateRequest()
-{}
+SetDomainCertificateRequest::~SetDomainCertificateRequest() {}
 
-std::string SetDomainCertificateRequest::getCertificatePrivateKey()const
-{
-	return certificatePrivateKey_;
+std::string SetDomainCertificateRequest::getCertificatePrivateKey() const {
+  return certificatePrivateKey_;
 }
 
-void SetDomainCertificateRequest::setCertificatePrivateKey(const std::string& certificatePrivateKey)
-{
-	certificatePrivateKey_ = certificatePrivateKey;
-	setParameter("CertificatePrivateKey", certificatePrivateKey);
+void SetDomainCertificateRequest::setCertificatePrivateKey(const std::string &certificatePrivateKey) {
+  certificatePrivateKey_ = certificatePrivateKey;
+  setParameter(std::string("CertificatePrivateKey"), certificatePrivateKey);
 }
 
-std::string SetDomainCertificateRequest::getGroupId()const
-{
-	return groupId_;
+std::string SetDomainCertificateRequest::getGroupId() const {
+  return groupId_;
 }
 
-void SetDomainCertificateRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+void SetDomainCertificateRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
 }
 
-std::string SetDomainCertificateRequest::getDomainName()const
-{
-	return domainName_;
+std::string SetDomainCertificateRequest::getDomainName() const {
+  return domainName_;
 }
 
-void SetDomainCertificateRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void SetDomainCertificateRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-std::string SetDomainCertificateRequest::getCertificateBody()const
-{
-	return certificateBody_;
+std::string SetDomainCertificateRequest::getCertificateBody() const {
+  return certificateBody_;
 }
 
-void SetDomainCertificateRequest::setCertificateBody(const std::string& certificateBody)
-{
-	certificateBody_ = certificateBody;
-	setParameter("CertificateBody", certificateBody);
+void SetDomainCertificateRequest::setCertificateBody(const std::string &certificateBody) {
+  certificateBody_ = certificateBody;
+  setParameter(std::string("CertificateBody"), certificateBody);
 }
 
-std::string SetDomainCertificateRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string SetDomainCertificateRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void SetDomainCertificateRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void SetDomainCertificateRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string SetDomainCertificateRequest::getCaCertificateBody()const
-{
-	return caCertificateBody_;
+std::string SetDomainCertificateRequest::getSslVerifyDepth() const {
+  return sslVerifyDepth_;
 }
 
-void SetDomainCertificateRequest::setCaCertificateBody(const std::string& caCertificateBody)
-{
-	caCertificateBody_ = caCertificateBody;
-	setParameter("CaCertificateBody", caCertificateBody);
+void SetDomainCertificateRequest::setSslVerifyDepth(const std::string &sslVerifyDepth) {
+  sslVerifyDepth_ = sslVerifyDepth;
+  setParameter(std::string("SslVerifyDepth"), sslVerifyDepth);
 }
 
-std::string SetDomainCertificateRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string SetDomainCertificateRequest::getCaCertificateBody() const {
+  return caCertificateBody_;
 }
 
-void SetDomainCertificateRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void SetDomainCertificateRequest::setCaCertificateBody(const std::string &caCertificateBody) {
+  caCertificateBody_ = caCertificateBody;
+  setParameter(std::string("CaCertificateBody"), caCertificateBody);
 }
 
-std::string SetDomainCertificateRequest::getCertificateName()const
-{
-	return certificateName_;
+std::string SetDomainCertificateRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void SetDomainCertificateRequest::setCertificateName(const std::string& certificateName)
-{
-	certificateName_ = certificateName;
-	setParameter("CertificateName", certificateName);
+void SetDomainCertificateRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
+}
+
+std::string SetDomainCertificateRequest::getCertificateName() const {
+  return certificateName_;
+}
+
+void SetDomainCertificateRequest::setCertificateName(const std::string &certificateName) {
+  certificateName_ = certificateName;
+  setParameter(std::string("CertificateName"), certificateName);
 }
 

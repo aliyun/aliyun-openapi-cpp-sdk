@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::CloudAPI::Model::DescribeTrafficControlsByApiRequest;
 
-DescribeTrafficControlsByApiRequest::DescribeTrafficControlsByApiRequest() :
-	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeTrafficControlsByApi")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeTrafficControlsByApiRequest::DescribeTrafficControlsByApiRequest()
+    : RpcServiceRequest("cloudapi", "2016-07-14", "DescribeTrafficControlsByApi") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeTrafficControlsByApiRequest::~DescribeTrafficControlsByApiRequest()
-{}
+DescribeTrafficControlsByApiRequest::~DescribeTrafficControlsByApiRequest() {}
 
-std::string DescribeTrafficControlsByApiRequest::getStageName()const
-{
-	return stageName_;
+std::string DescribeTrafficControlsByApiRequest::getStageName() const {
+  return stageName_;
 }
 
-void DescribeTrafficControlsByApiRequest::setStageName(const std::string& stageName)
-{
-	stageName_ = stageName;
-	setParameter("StageName", stageName);
+void DescribeTrafficControlsByApiRequest::setStageName(const std::string &stageName) {
+  stageName_ = stageName;
+  setParameter(std::string("StageName"), stageName);
 }
 
-std::string DescribeTrafficControlsByApiRequest::getGroupId()const
-{
-	return groupId_;
+std::string DescribeTrafficControlsByApiRequest::getGroupId() const {
+  return groupId_;
 }
 
-void DescribeTrafficControlsByApiRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+void DescribeTrafficControlsByApiRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
 }
 
-std::string DescribeTrafficControlsByApiRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeTrafficControlsByApiRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeTrafficControlsByApiRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeTrafficControlsByApiRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeTrafficControlsByApiRequest::getSecurityToken()const
-{
-	return securityToken_;
+std::string DescribeTrafficControlsByApiRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DescribeTrafficControlsByApiRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void DescribeTrafficControlsByApiRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-std::string DescribeTrafficControlsByApiRequest::getApiId()const
-{
-	return apiId_;
+std::string DescribeTrafficControlsByApiRequest::getApiId() const {
+  return apiId_;
 }
 
-void DescribeTrafficControlsByApiRequest::setApiId(const std::string& apiId)
-{
-	apiId_ = apiId;
-	setParameter("ApiId", apiId);
+void DescribeTrafficControlsByApiRequest::setApiId(const std::string &apiId) {
+  apiId_ = apiId;
+  setParameter(std::string("ApiId"), apiId);
 }
 

@@ -39,20 +39,20 @@ void SetDomainResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["GroupId"].isNull())
-		groupId_ = value["GroupId"].asString();
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["SubDomain"].isNull())
-		subDomain_ = value["SubDomain"].asString();
-	if(!value["DomainBindingStatus"].isNull())
-		domainBindingStatus_ = value["DomainBindingStatus"].asString();
 	if(!value["DomainLegalStatus"].isNull())
 		domainLegalStatus_ = value["DomainLegalStatus"].asString();
-	if(!value["DomainWebSocketStatus"].isNull())
-		domainWebSocketStatus_ = value["DomainWebSocketStatus"].asString();
+	if(!value["GroupId"].isNull())
+		groupId_ = value["GroupId"].asString();
+	if(!value["SubDomain"].isNull())
+		subDomain_ = value["SubDomain"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["DomainBindingStatus"].isNull())
+		domainBindingStatus_ = value["DomainBindingStatus"].asString();
 	if(!value["DomainRemark"].isNull())
 		domainRemark_ = value["DomainRemark"].asString();
+	if(!value["DomainWebSocketStatus"].isNull())
+		domainWebSocketStatus_ = value["DomainWebSocketStatus"].asString();
 
 }
 
@@ -66,14 +66,14 @@ std::string SetDomainResult::getDomainRemark()const
 	return domainRemark_;
 }
 
-std::string SetDomainResult::getDomainBindingStatus()const
-{
-	return domainBindingStatus_;
-}
-
 std::string SetDomainResult::getDomainLegalStatus()const
 {
 	return domainLegalStatus_;
+}
+
+std::string SetDomainResult::getDomainBindingStatus()const
+{
+	return domainBindingStatus_;
 }
 
 std::string SetDomainResult::getDomainName()const

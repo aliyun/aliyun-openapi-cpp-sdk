@@ -43,36 +43,36 @@ void DescribeAuthorizedApisResult::parse(const std::string &payload)
 	for (auto valueAuthorizedApisAuthorizedApi : allAuthorizedApisNode)
 	{
 		AuthorizedApi authorizedApisObject;
-		if(!valueAuthorizedApisAuthorizedApi["RegionId"].isNull())
-			authorizedApisObject.regionId = valueAuthorizedApisAuthorizedApi["RegionId"].asString();
-		if(!valueAuthorizedApisAuthorizedApi["GroupId"].isNull())
-			authorizedApisObject.groupId = valueAuthorizedApisAuthorizedApi["GroupId"].asString();
-		if(!valueAuthorizedApisAuthorizedApi["GroupName"].isNull())
-			authorizedApisObject.groupName = valueAuthorizedApisAuthorizedApi["GroupName"].asString();
-		if(!valueAuthorizedApisAuthorizedApi["StageName"].isNull())
-			authorizedApisObject.stageName = valueAuthorizedApisAuthorizedApi["StageName"].asString();
-		if(!valueAuthorizedApisAuthorizedApi["Operator"].isNull())
-			authorizedApisObject._operator = valueAuthorizedApisAuthorizedApi["Operator"].asString();
 		if(!valueAuthorizedApisAuthorizedApi["ApiId"].isNull())
 			authorizedApisObject.apiId = valueAuthorizedApisAuthorizedApi["ApiId"].asString();
-		if(!valueAuthorizedApisAuthorizedApi["ApiName"].isNull())
-			authorizedApisObject.apiName = valueAuthorizedApisAuthorizedApi["ApiName"].asString();
 		if(!valueAuthorizedApisAuthorizedApi["AuthorizationSource"].isNull())
 			authorizedApisObject.authorizationSource = valueAuthorizedApisAuthorizedApi["AuthorizationSource"].asString();
-		if(!valueAuthorizedApisAuthorizedApi["Description"].isNull())
-			authorizedApisObject.description = valueAuthorizedApisAuthorizedApi["Description"].asString();
-		if(!valueAuthorizedApisAuthorizedApi["AuthorizedTime"].isNull())
-			authorizedApisObject.authorizedTime = valueAuthorizedApisAuthorizedApi["AuthorizedTime"].asString();
 		if(!valueAuthorizedApisAuthorizedApi["AuthVaildTime"].isNull())
 			authorizedApisObject.authVaildTime = valueAuthorizedApisAuthorizedApi["AuthVaildTime"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["Description"].isNull())
+			authorizedApisObject.description = valueAuthorizedApisAuthorizedApi["Description"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["GroupName"].isNull())
+			authorizedApisObject.groupName = valueAuthorizedApisAuthorizedApi["GroupName"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["GroupId"].isNull())
+			authorizedApisObject.groupId = valueAuthorizedApisAuthorizedApi["GroupId"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["AuthorizedTime"].isNull())
+			authorizedApisObject.authorizedTime = valueAuthorizedApisAuthorizedApi["AuthorizedTime"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["Operator"].isNull())
+			authorizedApisObject._operator = valueAuthorizedApisAuthorizedApi["Operator"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["StageName"].isNull())
+			authorizedApisObject.stageName = valueAuthorizedApisAuthorizedApi["StageName"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["ApiName"].isNull())
+			authorizedApisObject.apiName = valueAuthorizedApisAuthorizedApi["ApiName"].asString();
+		if(!valueAuthorizedApisAuthorizedApi["RegionId"].isNull())
+			authorizedApisObject.regionId = valueAuthorizedApisAuthorizedApi["RegionId"].asString();
 		authorizedApis_.push_back(authorizedApisObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

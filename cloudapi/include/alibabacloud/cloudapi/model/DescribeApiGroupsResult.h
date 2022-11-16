@@ -34,19 +34,26 @@ namespace AlibabaCloud
 			public:
 				struct ApiGroupAttribute
 				{
+					struct TagInfo
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string groupName;
 					std::string description;
-					std::string createdTime;
 					std::string httpsPolicy;
+					std::string createdTime;
 					std::string instanceId;
-					int trafficLimit;
+					std::string basePath;
 					std::string billingStatus;
+					int trafficLimit;
 					std::string groupId;
 					std::string subDomain;
 					std::string modifiedTime;
 					std::string illegalStatus;
 					std::string regionId;
 					std::string instanceType;
+					std::vector<ApiGroupAttribute::TagInfo> tags;
 				};
 
 

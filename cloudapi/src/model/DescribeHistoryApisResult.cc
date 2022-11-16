@@ -43,34 +43,34 @@ void DescribeHistoryApisResult::parse(const std::string &payload)
 	for (auto valueApiHisItemsApiHisItem : allApiHisItemsNode)
 	{
 		ApiHisItem apiHisItemsObject;
-		if(!valueApiHisItemsApiHisItem["RegionId"].isNull())
-			apiHisItemsObject.regionId = valueApiHisItemsApiHisItem["RegionId"].asString();
+		if(!valueApiHisItemsApiHisItem["Status"].isNull())
+			apiHisItemsObject.status = valueApiHisItemsApiHisItem["Status"].asString();
 		if(!valueApiHisItemsApiHisItem["ApiId"].isNull())
 			apiHisItemsObject.apiId = valueApiHisItemsApiHisItem["ApiId"].asString();
-		if(!valueApiHisItemsApiHisItem["ApiName"].isNull())
-			apiHisItemsObject.apiName = valueApiHisItemsApiHisItem["ApiName"].asString();
-		if(!valueApiHisItemsApiHisItem["GroupId"].isNull())
-			apiHisItemsObject.groupId = valueApiHisItemsApiHisItem["GroupId"].asString();
+		if(!valueApiHisItemsApiHisItem["Description"].isNull())
+			apiHisItemsObject.description = valueApiHisItemsApiHisItem["Description"].asString();
 		if(!valueApiHisItemsApiHisItem["GroupName"].isNull())
 			apiHisItemsObject.groupName = valueApiHisItemsApiHisItem["GroupName"].asString();
+		if(!valueApiHisItemsApiHisItem["GroupId"].isNull())
+			apiHisItemsObject.groupId = valueApiHisItemsApiHisItem["GroupId"].asString();
+		if(!valueApiHisItemsApiHisItem["DeployedTime"].isNull())
+			apiHisItemsObject.deployedTime = valueApiHisItemsApiHisItem["DeployedTime"].asString();
 		if(!valueApiHisItemsApiHisItem["StageName"].isNull())
 			apiHisItemsObject.stageName = valueApiHisItemsApiHisItem["StageName"].asString();
 		if(!valueApiHisItemsApiHisItem["HistoryVersion"].isNull())
 			apiHisItemsObject.historyVersion = valueApiHisItemsApiHisItem["HistoryVersion"].asString();
-		if(!valueApiHisItemsApiHisItem["Status"].isNull())
-			apiHisItemsObject.status = valueApiHisItemsApiHisItem["Status"].asString();
-		if(!valueApiHisItemsApiHisItem["Description"].isNull())
-			apiHisItemsObject.description = valueApiHisItemsApiHisItem["Description"].asString();
-		if(!valueApiHisItemsApiHisItem["DeployedTime"].isNull())
-			apiHisItemsObject.deployedTime = valueApiHisItemsApiHisItem["DeployedTime"].asString();
+		if(!valueApiHisItemsApiHisItem["ApiName"].isNull())
+			apiHisItemsObject.apiName = valueApiHisItemsApiHisItem["ApiName"].asString();
+		if(!valueApiHisItemsApiHisItem["RegionId"].isNull())
+			apiHisItemsObject.regionId = valueApiHisItemsApiHisItem["RegionId"].asString();
 		apiHisItems_.push_back(apiHisItemsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

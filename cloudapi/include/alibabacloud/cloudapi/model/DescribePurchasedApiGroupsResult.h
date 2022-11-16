@@ -34,15 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct PurchasedApiGroupAttribute
 				{
-					std::string groupName;
 					std::string status;
+					std::string groupName;
 					std::string description;
 					long invokeTimesNow;
 					long invokeTimesMax;
 					std::string regionId;
 					std::string expireTime;
-					std::string groupId;
 					std::string purchasedTime;
+					std::string groupId;
 					std::string billingType;
 				};
 

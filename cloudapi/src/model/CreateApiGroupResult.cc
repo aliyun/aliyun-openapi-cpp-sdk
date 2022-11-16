@@ -39,20 +39,22 @@ void CreateApiGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["GroupId"].isNull())
-		groupId_ = value["GroupId"].asString();
-	if(!value["GroupName"].isNull())
-		groupName_ = value["GroupName"].asString();
-	if(!value["SubDomain"].isNull())
-		subDomain_ = value["SubDomain"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["InstanceType"].isNull())
-		instanceType_ = value["InstanceType"].asString();
 	if(!value["TagStatus"].isNull())
 		tagStatus_ = value["TagStatus"].asString() == "true";
+	if(!value["BasePath"].isNull())
+		basePath_ = value["BasePath"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["GroupName"].isNull())
+		groupName_ = value["GroupName"].asString();
+	if(!value["GroupId"].isNull())
+		groupId_ = value["GroupId"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["SubDomain"].isNull())
+		subDomain_ = value["SubDomain"].asString();
+	if(!value["InstanceType"].isNull())
+		instanceType_ = value["InstanceType"].asString();
 
 }
 
@@ -79,6 +81,11 @@ std::string CreateApiGroupResult::getInstanceId()const
 bool CreateApiGroupResult::getTagStatus()const
 {
 	return tagStatus_;
+}
+
+std::string CreateApiGroupResult::getBasePath()const
+{
+	return basePath_;
 }
 
 std::string CreateApiGroupResult::getInstanceType()const

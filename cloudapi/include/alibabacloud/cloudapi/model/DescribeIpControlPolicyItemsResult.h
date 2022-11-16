@@ -35,9 +35,9 @@ namespace AlibabaCloud
 				struct IpControlPolicyItem
 				{
 					std::string cidrIp;
-					std::string appId;
-					std::string policyItemId;
 					std::string modifiedTime;
+					std::string policyItemId;
+					std::string appId;
 					std::string createTime;
 				};
 

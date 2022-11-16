@@ -43,14 +43,14 @@ void DescribeSystemParametersResult::parse(const std::string &payload)
 	for (auto valueSystemParamsSystemParamItem : allSystemParamsNode)
 	{
 		SystemParamItem systemParamsObject;
-		if(!valueSystemParamsSystemParamItem["ParamName"].isNull())
-			systemParamsObject.paramName = valueSystemParamsSystemParamItem["ParamName"].asString();
-		if(!valueSystemParamsSystemParamItem["ParamType"].isNull())
-			systemParamsObject.paramType = valueSystemParamsSystemParamItem["ParamType"].asString();
 		if(!valueSystemParamsSystemParamItem["DemoValue"].isNull())
 			systemParamsObject.demoValue = valueSystemParamsSystemParamItem["DemoValue"].asString();
 		if(!valueSystemParamsSystemParamItem["Description"].isNull())
 			systemParamsObject.description = valueSystemParamsSystemParamItem["Description"].asString();
+		if(!valueSystemParamsSystemParamItem["ParamName"].isNull())
+			systemParamsObject.paramName = valueSystemParamsSystemParamItem["ParamName"].asString();
+		if(!valueSystemParamsSystemParamItem["ParamType"].isNull())
+			systemParamsObject.paramType = valueSystemParamsSystemParamItem["ParamType"].asString();
 		systemParams_.push_back(systemParamsObject);
 	}
 

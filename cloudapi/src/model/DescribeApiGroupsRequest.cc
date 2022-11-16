@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,116 +18,123 @@
 
 using AlibabaCloud::CloudAPI::Model::DescribeApiGroupsRequest;
 
-DescribeApiGroupsRequest::DescribeApiGroupsRequest() :
-	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiGroups")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeApiGroupsRequest::DescribeApiGroupsRequest()
+    : RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApiGroups") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeApiGroupsRequest::~DescribeApiGroupsRequest()
-{}
+DescribeApiGroupsRequest::~DescribeApiGroupsRequest() {}
 
-std::string DescribeApiGroupsRequest::getGroupId()const
-{
-	return groupId_;
+std::string DescribeApiGroupsRequest::getGroupId() const {
+  return groupId_;
 }
 
-void DescribeApiGroupsRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+void DescribeApiGroupsRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
 }
 
-bool DescribeApiGroupsRequest::getEnableTagAuth()const
-{
-	return enableTagAuth_;
+std::string DescribeApiGroupsRequest::getSort() const {
+  return sort_;
 }
 
-void DescribeApiGroupsRequest::setEnableTagAuth(bool enableTagAuth)
-{
-	enableTagAuth_ = enableTagAuth;
-	setParameter("EnableTagAuth", enableTagAuth ? "true" : "false");
+void DescribeApiGroupsRequest::setSort(const std::string &sort) {
+  sort_ = sort;
+  setParameter(std::string("Sort"), sort);
 }
 
-std::string DescribeApiGroupsRequest::getGroupName()const
-{
-	return groupName_;
+bool DescribeApiGroupsRequest::getEnableTagAuth() const {
+  return enableTagAuth_;
 }
 
-void DescribeApiGroupsRequest::setGroupName(const std::string& groupName)
-{
-	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+void DescribeApiGroupsRequest::setEnableTagAuth(bool enableTagAuth) {
+  enableTagAuth_ = enableTagAuth;
+  setParameter(std::string("EnableTagAuth"), enableTagAuth ? "true" : "false");
 }
 
-int DescribeApiGroupsRequest::getPageNumber()const
-{
-	return pageNumber_;
+std::string DescribeApiGroupsRequest::getGroupName() const {
+  return groupName_;
 }
 
-void DescribeApiGroupsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeApiGroupsRequest::setGroupName(const std::string &groupName) {
+  groupName_ = groupName;
+  setParameter(std::string("GroupName"), groupName);
 }
 
-std::string DescribeApiGroupsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+int DescribeApiGroupsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeApiGroupsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeApiGroupsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeApiGroupsRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string DescribeApiGroupsRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeApiGroupsRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void DescribeApiGroupsRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeApiGroupsRequest::getSecurityToken()const
-{
-	return securityToken_;
+bool DescribeApiGroupsRequest::getDisableAuthForConsole() const {
+  return disableAuthForConsole_;
 }
 
-void DescribeApiGroupsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void DescribeApiGroupsRequest::setDisableAuthForConsole(bool disableAuthForConsole) {
+  disableAuthForConsole_ = disableAuthForConsole;
+  setParameter(std::string("DisableAuthForConsole"), disableAuthForConsole ? "true" : "false");
 }
 
-int DescribeApiGroupsRequest::getPageSize()const
-{
-	return pageSize_;
+std::string DescribeApiGroupsRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void DescribeApiGroupsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeApiGroupsRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::vector<DescribeApiGroupsRequest::Tag> DescribeApiGroupsRequest::getTag()const
-{
-	return tag_;
+std::string DescribeApiGroupsRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DescribeApiGroupsRequest::setTag(const std::vector<Tag>& tag)
-{
-	tag_ = tag;
-	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
-		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
-		setParameter(tagObjStr + ".Value", tagObj.value);
-		setParameter(tagObjStr + ".Key", tagObj.key);
-	}
+void DescribeApiGroupsRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
+}
+
+int DescribeApiGroupsRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void DescribeApiGroupsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+bool DescribeApiGroupsRequest::getNotClassic() const {
+  return notClassic_;
+}
+
+void DescribeApiGroupsRequest::setNotClassic(bool notClassic) {
+  notClassic_ = notClassic;
+  setParameter(std::string("NotClassic"), notClassic ? "true" : "false");
+}
+
+std::vector<DescribeApiGroupsRequest::Tag> DescribeApiGroupsRequest::getTag() const {
+  return tag_;
+}
+
+void DescribeApiGroupsRequest::setTag(const std::vector<DescribeApiGroupsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 

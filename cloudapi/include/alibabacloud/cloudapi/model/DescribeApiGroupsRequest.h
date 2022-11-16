@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,62 +17,63 @@
 #ifndef ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEAPIGROUPSREQUEST_H_
 #define ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEAPIGROUPSREQUEST_H_
 
+#include <alibabacloud/cloudapi/CloudAPIExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/cloudapi/CloudAPIExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace CloudAPI
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_CLOUDAPI_EXPORT DescribeApiGroupsRequest : public RpcServiceRequest
-			{
-			public:
-				struct Tag
-				{
-					std::string value;
-					std::string key;
-				};
+namespace AlibabaCloud {
+namespace CloudAPI {
+namespace Model {
+class ALIBABACLOUD_CLOUDAPI_EXPORT DescribeApiGroupsRequest : public RpcServiceRequest {
+public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
+	DescribeApiGroupsRequest();
+	~DescribeApiGroupsRequest();
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
+	std::string getSort() const;
+	void setSort(const std::string &sort);
+	bool getEnableTagAuth() const;
+	void setEnableTagAuth(bool enableTagAuth);
+	std::string getGroupName() const;
+	void setGroupName(const std::string &groupName);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	bool getDisableAuthForConsole() const;
+	void setDisableAuthForConsole(bool disableAuthForConsole);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getSecurityToken() const;
+	void setSecurityToken(const std::string &securityToken);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	bool getNotClassic() const;
+	void setNotClassic(bool notClassic);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
-			public:
-				DescribeApiGroupsRequest();
-				~DescribeApiGroupsRequest();
-
-				std::string getGroupId()const;
-				void setGroupId(const std::string& groupId);
-				bool getEnableTagAuth()const;
-				void setEnableTagAuth(bool enableTagAuth);
-				std::string getGroupName()const;
-				void setGroupName(const std::string& groupName);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getAccessKeyId()const;
-				void setAccessKeyId(const std::string& accessKeyId);
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getSecurityToken()const;
-				void setSecurityToken(const std::string& securityToken);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::vector<Tag> getTag()const;
-				void setTag(const std::vector<Tag>& tag);
-
-            private:
-				std::string groupId_;
-				bool enableTagAuth_;
-				std::string groupName_;
-				int pageNumber_;
-				std::string accessKeyId_;
-				std::string instanceId_;
-				std::string securityToken_;
-				int pageSize_;
-				std::vector<Tag> tag_;
-
-			};
-		}
-	}
-}
+private:
+	std::string groupId_;
+	std::string sort_;
+	bool enableTagAuth_;
+	std::string groupName_;
+	int pageNumber_;
+	std::string accessKeyId_;
+	bool disableAuthForConsole_;
+	std::string instanceId_;
+	std::string securityToken_;
+	int pageSize_;
+	bool notClassic_;
+	std::vector<Tag> tag_;
+};
+} // namespace Model
+} // namespace CloudAPI
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEAPIGROUPSREQUEST_H_

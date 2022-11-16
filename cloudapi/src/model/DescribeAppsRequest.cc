@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::CloudAPI::Model::DescribeAppsRequest;
 
-DescribeAppsRequest::DescribeAppsRequest() :
-	RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApps")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeAppsRequest::DescribeAppsRequest()
+    : RpcServiceRequest("cloudapi", "2016-07-14", "DescribeApps") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeAppsRequest::~DescribeAppsRequest()
-{}
+DescribeAppsRequest::~DescribeAppsRequest() {}
 
-std::string DescribeAppsRequest::getSecurityToken()const
-{
-	return securityToken_;
+long DescribeAppsRequest::getAppOwner() const {
+  return appOwner_;
 }
 
-void DescribeAppsRequest::setSecurityToken(const std::string& securityToken)
-{
-	securityToken_ = securityToken;
-	setParameter("SecurityToken", securityToken);
+void DescribeAppsRequest::setAppOwner(long appOwner) {
+  appOwner_ = appOwner;
+  setParameter(std::string("AppOwner"), std::to_string(appOwner));
 }
 
-long DescribeAppsRequest::getAppId()const
-{
-	return appId_;
+int DescribeAppsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeAppsRequest::setAppId(long appId)
-{
-	appId_ = appId;
-	setParameter("AppId", std::to_string(appId));
+void DescribeAppsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-int DescribeAppsRequest::getPageSize()const
-{
-	return pageSize_;
+std::string DescribeAppsRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeAppsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeAppsRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-long DescribeAppsRequest::getAppOwner()const
-{
-	return appOwner_;
+std::string DescribeAppsRequest::getSecurityToken() const {
+  return securityToken_;
 }
 
-void DescribeAppsRequest::setAppOwner(long appOwner)
-{
-	appOwner_ = appOwner;
-	setParameter("AppOwner", std::to_string(appOwner));
+void DescribeAppsRequest::setSecurityToken(const std::string &securityToken) {
+  securityToken_ = securityToken;
+  setParameter(std::string("SecurityToken"), securityToken);
 }
 
-int DescribeAppsRequest::getPageNumber()const
-{
-	return pageNumber_;
+long DescribeAppsRequest::getAppId() const {
+  return appId_;
 }
 
-void DescribeAppsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeAppsRequest::setAppId(long appId) {
+  appId_ = appId;
+  setParameter(std::string("AppId"), std::to_string(appId));
 }
 
-std::string DescribeAppsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+int DescribeAppsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeAppsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeAppsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

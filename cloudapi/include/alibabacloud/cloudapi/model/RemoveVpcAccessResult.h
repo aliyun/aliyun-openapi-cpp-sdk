@@ -32,15 +32,23 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CLOUDAPI_EXPORT RemoveVpcAccessResult : public ServiceResult
 			{
 			public:
+				struct Api
+				{
+					std::string stageId;
+					std::string apiId;
+					std::string groupId;
+				};
 
 
 				RemoveVpcAccessResult();
 				explicit RemoveVpcAccessResult(const std::string &payload);
 				~RemoveVpcAccessResult();
+				std::vector<Api> getApis()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<Api> apis_;
 
 			};
 		}
