@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					int destination;
 					std::string projectOwnerBaseId;
 					std::string projectName;
@@ -42,8 +47,10 @@ namespace AlibabaCloud
 					int developmentType;
 					bool disableDevelopment;
 					bool baseProject;
+					std::string resourceManagerResourceGroupId;
 					int projectMode;
 					std::string projectDescription;
+					std::vector<Tag> tags;
 					int status;
 					std::string devStorageQuota;
 					int isDefault;

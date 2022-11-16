@@ -32,20 +32,20 @@ public:
 	~ListMetaDBRequest();
 	std::string getDataSourceType() const;
 	void setDataSourceType(const std::string &dataSourceType);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	long getProjectId() const;
 	void setProjectId(long projectId);
 
 private:
 	std::string dataSourceType_;
-	int pageSize_;
 	std::string clusterId_;
 	int pageNum_;
+	int pageSize_;
 	long projectId_;
 };
 } // namespace Model

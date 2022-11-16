@@ -74,6 +74,26 @@ void GetProjectDetailResult::parse(const std::string &payload)
 		data_.tenantId = std::stol(dataNode["TenantId"].asString());
 	if(!dataNode["SchedulerRetryInterval"].isNull())
 		data_.schedulerRetryInterval = std::stoi(dataNode["SchedulerRetryInterval"].asString());
+	if(!dataNode["ResourceManagerResourceGroupId"].isNull())
+		data_.resourceManagerResourceGroupId = dataNode["ResourceManagerResourceGroupId"].asString();
+	if(!dataNode["DisableDevelopment"].isNull())
+		data_.disableDevelopment = dataNode["DisableDevelopment"].asString() == "true";
+	if(!dataNode["UseProxyOdpsAccount"].isNull())
+		data_.useProxyOdpsAccount = dataNode["UseProxyOdpsAccount"].asString() == "true";
+	if(!dataNode["TablePrivacyMode"].isNull())
+		data_.tablePrivacyMode = std::stoi(dataNode["TablePrivacyMode"].asString());
+	if(!dataNode["IsDefault"].isNull())
+		data_.isDefault = std::stoi(dataNode["IsDefault"].asString());
+	auto allTagsNode = dataNode["Tags"]["Tag"];
+	for (auto dataNodeTagsTag : allTagsNode)
+	{
+		Data::Tag tagObject;
+		if(!dataNodeTagsTag["Key"].isNull())
+			tagObject.key = dataNodeTagsTag["Key"].asString();
+		if(!dataNodeTagsTag["Value"].isNull())
+			tagObject.value = dataNodeTagsTag["Value"].asString();
+		data_.tags.push_back(tagObject);
+	}
 		auto allEnvTypes = dataNode["EnvTypes"]["EnvTypes"];
 		for (auto value : allEnvTypes)
 			data_.envTypes.push_back(value.asString());

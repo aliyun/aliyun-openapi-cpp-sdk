@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTUSAGEFORRESOURCEGROUPREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTUSAGEFORRESOURCEGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTENABLEDEXTENSIONSFORPROJECTREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTENABLEDEXTENSIONSFORPROJECTREQUEST_H_
 
 #include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,23 @@
 namespace AlibabaCloud {
 namespace Dataworks_public {
 namespace Model {
-class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListUsageForResourceGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListEnabledExtensionsForProjectRequest : public RpcServiceRequest {
 public:
-	ListUsageForResourceGroupRequest();
-	~ListUsageForResourceGroupRequest();
-	std::string getProjectEnv() const;
-	void setProjectEnv(const std::string &projectEnv);
-	long getEndTime() const;
-	void setEndTime(long endTime);
-	std::string getResourceGroupIdentifier() const;
-	void setResourceGroupIdentifier(const std::string &resourceGroupIdentifier);
-	long getStartTime() const;
-	void setStartTime(long startTime);
+	ListEnabledExtensionsForProjectRequest();
+	~ListEnabledExtensionsForProjectRequest();
+	std::string getEventCode() const;
+	void setEventCode(const std::string &eventCode);
+	std::string getFileType() const;
+	void setFileType(const std::string &fileType);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
-	std::string projectEnv_;
-	long endTime_;
-	std::string resourceGroupIdentifier_;
-	long startTime_;
+	std::string eventCode_;
+	std::string fileType_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTUSAGEFORRESOURCEGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTENABLEDEXTENSIONSFORPROJECTREQUEST_H_

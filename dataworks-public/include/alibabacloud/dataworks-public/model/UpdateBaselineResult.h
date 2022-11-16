@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETDISYNCTASKMETRICINFORESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETDISYNCTASKMETRICINFORESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_UPDATEBASELINERESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_UPDATEBASELINERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,38 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetDISyncTaskMetricInfoResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT UpdateBaselineResult : public ServiceResult
 			{
 			public:
-				struct MetricInfo
-				{
-					std::string message;
-					long insertReaderRecords;
-					long insertWriterRecords;
-					long lastTaskDelay;
-					long updateWriterRecords;
-					long sumReaderRecords;
-					long sumWriterRecords;
-					long deleteReaderRecords;
-					long updateReaderRecords;
-					long deleteWriterRecords;
-				};
 
 
-				GetDISyncTaskMetricInfoResult();
-				explicit GetDISyncTaskMetricInfoResult(const std::string &payload);
-				~GetDISyncTaskMetricInfoResult();
-				MetricInfo getMetricInfo()const;
+				UpdateBaselineResult();
+				explicit UpdateBaselineResult(const std::string &payload);
+				~UpdateBaselineResult();
+				std::string getDynamicErrorMessage()const;
+				int getHttpStatusCode()const;
+				bool getData()const;
+				std::string getDynamicErrorCode()const;
+				std::string getErrorCode()const;
+				std::string getErrorMessage()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				MetricInfo metricInfo_;
+				std::string dynamicErrorMessage_;
+				int httpStatusCode_;
+				bool data_;
+				std::string dynamicErrorCode_;
+				std::string errorCode_;
+				std::string errorMessage_;
 				bool success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETDISYNCTASKMETRICINFORESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_UPDATEBASELINERESULT_H_

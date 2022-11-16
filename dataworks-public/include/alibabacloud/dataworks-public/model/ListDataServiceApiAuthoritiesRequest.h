@@ -32,21 +32,21 @@ public:
 	~ListDataServiceApiAuthoritiesRequest();
 	std::string getApiNameKeyword() const;
 	void setApiNameKeyword(const std::string &apiNameKeyword);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	long getTenantId() const;
 	void setTenantId(long tenantId);
 	long getProjectId() const;
 	void setProjectId(long projectId);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
 
 private:
 	std::string apiNameKeyword_;
+	int pageNumber_;
 	int pageSize_;
 	long tenantId_;
 	long projectId_;
-	int pageNumber_;
 };
 } // namespace Model
 } // namespace Dataworks_public

@@ -32,23 +32,23 @@ public:
 	~CheckMetaPartitionRequest();
 	std::string getDataSourceType() const;
 	void setDataSourceType(const std::string &dataSourceType);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 	std::string getPartition() const;
 	void setPartition(const std::string &partition);
 	std::string getTableGuid() const;
 	void setTableGuid(const std::string &tableGuid);
 	std::string getDatabaseName() const;
 	void setDatabaseName(const std::string &databaseName);
-	std::string getClusterId() const;
-	void setClusterId(const std::string &clusterId);
 	std::string getTableName() const;
 	void setTableName(const std::string &tableName);
 
 private:
 	std::string dataSourceType_;
+	std::string clusterId_;
 	std::string partition_;
 	std::string tableGuid_;
 	std::string databaseName_;
-	std::string clusterId_;
 	std::string tableName_;
 };
 } // namespace Model

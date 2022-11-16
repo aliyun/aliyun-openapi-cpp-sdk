@@ -25,15 +25,6 @@ UpdateTableThemeRequest::UpdateTableThemeRequest()
 
 UpdateTableThemeRequest::~UpdateTableThemeRequest() {}
 
-std::string UpdateTableThemeRequest::getName() const {
-  return name_;
-}
-
-void UpdateTableThemeRequest::setName(const std::string &name) {
-  name_ = name;
-  setParameter(std::string("Name"), name);
-}
-
 long UpdateTableThemeRequest::getThemeId() const {
   return themeId_;
 }
@@ -41,6 +32,15 @@ long UpdateTableThemeRequest::getThemeId() const {
 void UpdateTableThemeRequest::setThemeId(long themeId) {
   themeId_ = themeId;
   setParameter(std::string("ThemeId"), std::to_string(themeId));
+}
+
+std::string UpdateTableThemeRequest::getName() const {
+  return name_;
+}
+
+void UpdateTableThemeRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 
 long UpdateTableThemeRequest::getProjectId() const {

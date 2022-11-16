@@ -25,15 +25,6 @@ CreateQualityRuleRequest::CreateQualityRuleRequest()
 
 CreateQualityRuleRequest::~CreateQualityRuleRequest() {}
 
-std::string CreateQualityRuleRequest::getProjectName() const {
-  return projectName_;
-}
-
-void CreateQualityRuleRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setBodyParameter(std::string("ProjectName"), projectName);
-}
-
 std::string CreateQualityRuleRequest::getTrend() const {
   return trend_;
 }
@@ -41,15 +32,6 @@ std::string CreateQualityRuleRequest::getTrend() const {
 void CreateQualityRuleRequest::setTrend(const std::string &trend) {
   trend_ = trend;
   setBodyParameter(std::string("Trend"), trend);
-}
-
-int CreateQualityRuleRequest::getRuleType() const {
-  return ruleType_;
-}
-
-void CreateQualityRuleRequest::setRuleType(int ruleType) {
-  ruleType_ = ruleType;
-  setBodyParameter(std::string("RuleType"), std::to_string(ruleType));
 }
 
 int CreateQualityRuleRequest::getBlockType() const {
@@ -97,6 +79,60 @@ void CreateQualityRuleRequest::setChecker(int checker) {
   setBodyParameter(std::string("Checker"), std::to_string(checker));
 }
 
+std::string CreateQualityRuleRequest::get_Operator() const {
+  return _operator_;
+}
+
+void CreateQualityRuleRequest::set_Operator(const std::string &_operator) {
+  _operator_ = _operator;
+  setBodyParameter(std::string("Operator"), _operator);
+}
+
+std::string CreateQualityRuleRequest::getProperty() const {
+  return property_;
+}
+
+void CreateQualityRuleRequest::setProperty(const std::string &property) {
+  property_ = property;
+  setBodyParameter(std::string("Property"), property);
+}
+
+std::string CreateQualityRuleRequest::getWarningThreshold() const {
+  return warningThreshold_;
+}
+
+void CreateQualityRuleRequest::setWarningThreshold(const std::string &warningThreshold) {
+  warningThreshold_ = warningThreshold;
+  setBodyParameter(std::string("WarningThreshold"), warningThreshold);
+}
+
+std::string CreateQualityRuleRequest::getMethodName() const {
+  return methodName_;
+}
+
+void CreateQualityRuleRequest::setMethodName(const std::string &methodName) {
+  methodName_ = methodName;
+  setBodyParameter(std::string("MethodName"), methodName);
+}
+
+std::string CreateQualityRuleRequest::getProjectName() const {
+  return projectName_;
+}
+
+void CreateQualityRuleRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setBodyParameter(std::string("ProjectName"), projectName);
+}
+
+int CreateQualityRuleRequest::getRuleType() const {
+  return ruleType_;
+}
+
+void CreateQualityRuleRequest::setRuleType(int ruleType) {
+  ruleType_ = ruleType;
+  setBodyParameter(std::string("RuleType"), std::to_string(ruleType));
+}
+
 int CreateQualityRuleRequest::getTemplateId() const {
   return templateId_;
 }
@@ -113,15 +149,6 @@ std::string CreateQualityRuleRequest::getExpectValue() const {
 void CreateQualityRuleRequest::setExpectValue(const std::string &expectValue) {
   expectValue_ = expectValue;
   setBodyParameter(std::string("ExpectValue"), expectValue);
-}
-
-std::string CreateQualityRuleRequest::get_Operator() const {
-  return _operator_;
-}
-
-void CreateQualityRuleRequest::set_Operator(const std::string &_operator) {
-  _operator_ = _operator;
-  setBodyParameter(std::string("Operator"), _operator);
 }
 
 std::string CreateQualityRuleRequest::getWhereCondition() const {
@@ -142,15 +169,6 @@ void CreateQualityRuleRequest::setCriticalThreshold(const std::string &criticalT
   setBodyParameter(std::string("CriticalThreshold"), criticalThreshold);
 }
 
-std::string CreateQualityRuleRequest::getProperty() const {
-  return property_;
-}
-
-void CreateQualityRuleRequest::setProperty(const std::string &property) {
-  property_ = property;
-  setBodyParameter(std::string("Property"), property);
-}
-
 std::string CreateQualityRuleRequest::getComment() const {
   return comment_;
 }
@@ -167,23 +185,5 @@ int CreateQualityRuleRequest::getPredictType() const {
 void CreateQualityRuleRequest::setPredictType(int predictType) {
   predictType_ = predictType;
   setBodyParameter(std::string("PredictType"), std::to_string(predictType));
-}
-
-std::string CreateQualityRuleRequest::getWarningThreshold() const {
-  return warningThreshold_;
-}
-
-void CreateQualityRuleRequest::setWarningThreshold(const std::string &warningThreshold) {
-  warningThreshold_ = warningThreshold;
-  setBodyParameter(std::string("WarningThreshold"), warningThreshold);
-}
-
-std::string CreateQualityRuleRequest::getMethodName() const {
-  return methodName_;
-}
-
-void CreateQualityRuleRequest::setMethodName(const std::string &methodName) {
-  methodName_ = methodName;
-  setBodyParameter(std::string("MethodName"), methodName);
 }
 

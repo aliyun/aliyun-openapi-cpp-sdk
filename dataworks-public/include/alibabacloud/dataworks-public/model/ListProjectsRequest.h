@@ -28,15 +28,25 @@ namespace Dataworks_public {
 namespace Model {
 class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListProjectsRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string value;
+		std::string key;
+	};
 	ListProjectsRequest();
 	~ListProjectsRequest();
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
+	std::string getResourceManagerResourceGroupId() const;
+	void setResourceManagerResourceGroupId(const std::string &resourceManagerResourceGroupId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 
 private:
 	int pageNumber_;
+	std::vector<Tags> tags_;
+	std::string resourceManagerResourceGroupId_;
 	int pageSize_;
 };
 } // namespace Model

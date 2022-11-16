@@ -43,6 +43,15 @@ void ListDataServiceFoldersRequest::setGroupId(const std::string &groupId) {
   setBodyParameter(std::string("GroupId"), groupId);
 }
 
+int ListDataServiceFoldersRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void ListDataServiceFoldersRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
 int ListDataServiceFoldersRequest::getPageSize() const {
   return pageSize_;
 }
@@ -68,14 +77,5 @@ long ListDataServiceFoldersRequest::getProjectId() const {
 void ListDataServiceFoldersRequest::setProjectId(long projectId) {
   projectId_ = projectId;
   setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
-int ListDataServiceFoldersRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void ListDataServiceFoldersRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

@@ -34,15 +34,6 @@ void GetMetaDBInfoRequest::setDataSourceType(const std::string &dataSourceType) 
   setParameter(std::string("DataSourceType"), dataSourceType);
 }
 
-std::string GetMetaDBInfoRequest::getDatabaseName() const {
-  return databaseName_;
-}
-
-void GetMetaDBInfoRequest::setDatabaseName(const std::string &databaseName) {
-  databaseName_ = databaseName;
-  setParameter(std::string("DatabaseName"), databaseName);
-}
-
 std::string GetMetaDBInfoRequest::getClusterId() const {
   return clusterId_;
 }
@@ -50,6 +41,15 @@ std::string GetMetaDBInfoRequest::getClusterId() const {
 void GetMetaDBInfoRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
   setParameter(std::string("ClusterId"), clusterId);
+}
+
+std::string GetMetaDBInfoRequest::getDatabaseName() const {
+  return databaseName_;
+}
+
+void GetMetaDBInfoRequest::setDatabaseName(const std::string &databaseName) {
+  databaseName_ = databaseName;
+  setParameter(std::string("DatabaseName"), databaseName);
 }
 
 std::string GetMetaDBInfoRequest::getAppGuid() const {

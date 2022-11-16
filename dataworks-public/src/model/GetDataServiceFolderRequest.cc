@@ -25,6 +25,15 @@ GetDataServiceFolderRequest::GetDataServiceFolderRequest()
 
 GetDataServiceFolderRequest::~GetDataServiceFolderRequest() {}
 
+long GetDataServiceFolderRequest::getFolderId() const {
+  return folderId_;
+}
+
+void GetDataServiceFolderRequest::setFolderId(long folderId) {
+  folderId_ = folderId;
+  setBodyParameter(std::string("FolderId"), std::to_string(folderId));
+}
+
 long GetDataServiceFolderRequest::getTenantId() const {
   return tenantId_;
 }
@@ -41,14 +50,5 @@ long GetDataServiceFolderRequest::getProjectId() const {
 void GetDataServiceFolderRequest::setProjectId(long projectId) {
   projectId_ = projectId;
   setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
-long GetDataServiceFolderRequest::getFolderId() const {
-  return folderId_;
-}
-
-void GetDataServiceFolderRequest::setFolderId(long folderId) {
-  folderId_ = folderId;
-  setBodyParameter(std::string("FolderId"), std::to_string(folderId));
 }
 

@@ -25,6 +25,24 @@ CreateExportMigrationRequest::CreateExportMigrationRequest()
 
 CreateExportMigrationRequest::~CreateExportMigrationRequest() {}
 
+long CreateExportMigrationRequest::getIncrementalSince() const {
+  return incrementalSince_;
+}
+
+void CreateExportMigrationRequest::setIncrementalSince(long incrementalSince) {
+  incrementalSince_ = incrementalSince;
+  setBodyParameter(std::string("IncrementalSince"), std::to_string(incrementalSince));
+}
+
+std::string CreateExportMigrationRequest::getDescription() const {
+  return description_;
+}
+
+void CreateExportMigrationRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setBodyParameter(std::string("Description"), description);
+}
+
 std::string CreateExportMigrationRequest::getExportObjectStatus() const {
   return exportObjectStatus_;
 }
@@ -43,15 +61,6 @@ void CreateExportMigrationRequest::setExportMode(const std::string &exportMode) 
   setBodyParameter(std::string("ExportMode"), exportMode);
 }
 
-long CreateExportMigrationRequest::getIncrementalSince() const {
-  return incrementalSince_;
-}
-
-void CreateExportMigrationRequest::setIncrementalSince(long incrementalSince) {
-  incrementalSince_ = incrementalSince;
-  setBodyParameter(std::string("IncrementalSince"), std::to_string(incrementalSince));
-}
-
 std::string CreateExportMigrationRequest::getName() const {
   return name_;
 }
@@ -59,15 +68,6 @@ std::string CreateExportMigrationRequest::getName() const {
 void CreateExportMigrationRequest::setName(const std::string &name) {
   name_ = name;
   setBodyParameter(std::string("Name"), name);
-}
-
-std::string CreateExportMigrationRequest::getDescription() const {
-  return description_;
-}
-
-void CreateExportMigrationRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setBodyParameter(std::string("Description"), description);
 }
 
 long CreateExportMigrationRequest::getProjectId() const {

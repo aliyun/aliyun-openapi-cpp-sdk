@@ -30,16 +30,16 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetMetaTableListByCategoryRequest : p
 public:
 	GetMetaTableListByCategoryRequest();
 	~GetMetaTableListByCategoryRequest();
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	long getCategoryId() const;
 	void setCategoryId(long categoryId);
 
 private:
-	int pageSize_;
 	int pageNumber_;
+	int pageSize_;
 	long categoryId_;
 };
 } // namespace Model

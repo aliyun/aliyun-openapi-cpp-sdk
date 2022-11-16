@@ -32,17 +32,17 @@ public:
 	~GetMetaDBInfoRequest();
 	std::string getDataSourceType() const;
 	void setDataSourceType(const std::string &dataSourceType);
-	std::string getDatabaseName() const;
-	void setDatabaseName(const std::string &databaseName);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
+	std::string getDatabaseName() const;
+	void setDatabaseName(const std::string &databaseName);
 	std::string getAppGuid() const;
 	void setAppGuid(const std::string &appGuid);
 
 private:
 	std::string dataSourceType_;
-	std::string databaseName_;
 	std::string clusterId_;
+	std::string databaseName_;
 	std::string appGuid_;
 };
 } // namespace Model

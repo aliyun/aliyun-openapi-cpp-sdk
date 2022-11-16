@@ -34,6 +34,24 @@ void GetMetaDBTableListRequest::setDataSourceType(const std::string &dataSourceT
   setParameter(std::string("DataSourceType"), dataSourceType);
 }
 
+std::string GetMetaDBTableListRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void GetMetaDBTableListRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
+}
+
+int GetMetaDBTableListRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void GetMetaDBTableListRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
 std::string GetMetaDBTableListRequest::getDatabaseName() const {
   return databaseName_;
 }
@@ -52,15 +70,6 @@ void GetMetaDBTableListRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string GetMetaDBTableListRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void GetMetaDBTableListRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 std::string GetMetaDBTableListRequest::getAppGuid() const {
   return appGuid_;
 }
@@ -68,14 +77,5 @@ std::string GetMetaDBTableListRequest::getAppGuid() const {
 void GetMetaDBTableListRequest::setAppGuid(const std::string &appGuid) {
   appGuid_ = appGuid;
   setParameter(std::string("AppGuid"), appGuid);
-}
-
-int GetMetaDBTableListRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void GetMetaDBTableListRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

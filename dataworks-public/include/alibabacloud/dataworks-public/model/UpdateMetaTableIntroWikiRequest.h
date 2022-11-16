@@ -30,14 +30,14 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT UpdateMetaTableIntroWikiRequest : pub
 public:
 	UpdateMetaTableIntroWikiRequest();
 	~UpdateMetaTableIntroWikiRequest();
-	std::string getTableGuid() const;
-	void setTableGuid(const std::string &tableGuid);
 	std::string getContent() const;
 	void setContent(const std::string &content);
+	std::string getTableGuid() const;
+	void setTableGuid(const std::string &tableGuid);
 
 private:
-	std::string tableGuid_;
 	std::string content_;
+	std::string tableGuid_;
 };
 } // namespace Model
 } // namespace Dataworks_public

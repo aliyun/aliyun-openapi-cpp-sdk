@@ -32,21 +32,21 @@ public:
 	~ListMigrationsRequest();
 	std::string getOwner() const;
 	void setOwner(const std::string &owner);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getMigrationType() const;
 	void setMigrationType(const std::string &migrationType);
 	long getProjectId() const;
 	void setProjectId(long projectId);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
 
 private:
 	std::string owner_;
+	int pageNumber_;
 	int pageSize_;
 	std::string migrationType_;
 	long projectId_;
-	int pageNumber_;
 };
 } // namespace Model
 } // namespace Dataworks_public

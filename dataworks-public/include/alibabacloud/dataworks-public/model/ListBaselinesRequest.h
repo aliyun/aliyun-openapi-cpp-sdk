@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCURRENTTASKSFORRESOURCEGROUPREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCURRENTTASKSFORRESOURCEGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTBASELINESREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTBASELINESREQUEST_H_
 
 #include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,41 @@
 namespace AlibabaCloud {
 namespace Dataworks_public {
 namespace Model {
-class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListCurrentTasksForResourceGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListBaselinesRequest : public RpcServiceRequest {
 public:
-	ListCurrentTasksForResourceGroupRequest();
-	~ListCurrentTasksForResourceGroupRequest();
+	ListBaselinesRequest();
+	~ListBaselinesRequest();
+	std::string getOwner() const;
+	void setOwner(const std::string &owner);
+	std::string getSearchText() const;
+	void setSearchText(const std::string &searchText);
 	std::string getProjectEnv() const;
 	void setProjectEnv(const std::string &projectEnv);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getResourceGroupIdentifier() const;
-	void setResourceGroupIdentifier(const std::string &resourceGroupIdentifier);
+	std::string getPriority() const;
+	void setPriority(const std::string &priority);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
-	int getStatus() const;
-	void setStatus(int status);
+	bool getEnable() const;
+	void setEnable(bool enable);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	long getProjectId() const;
+	void setProjectId(long projectId);
+	std::string getBaselineTypes() const;
+	void setBaselineTypes(const std::string &baselineTypes);
 
 private:
+	std::string owner_;
+	std::string searchText_;
 	std::string projectEnv_;
-	int pageSize_;
-	std::string resourceGroupIdentifier_;
+	std::string priority_;
 	int pageNumber_;
-	int status_;
+	bool enable_;
+	int pageSize_;
+	long projectId_;
+	std::string baselineTypes_;
 };
 } // namespace Model
 } // namespace Dataworks_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCURRENTTASKSFORRESOURCEGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTBASELINESREQUEST_H_

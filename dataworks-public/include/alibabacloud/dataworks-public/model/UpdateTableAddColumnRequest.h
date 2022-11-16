@@ -36,14 +36,14 @@ public:
 	};
 	UpdateTableAddColumnRequest();
 	~UpdateTableAddColumnRequest();
-	std::string getTableGuid() const;
-	void setTableGuid(const std::string &tableGuid);
 	std::vector<Column> getColumn() const;
 	void setColumn(const std::vector<Column> &column);
+	std::string getTableGuid() const;
+	void setTableGuid(const std::string &tableGuid);
 
 private:
-	std::string tableGuid_;
 	std::vector<Column> column_;
+	std::string tableGuid_;
 };
 } // namespace Model
 } // namespace Dataworks_public

@@ -39,29 +39,6 @@ void TestDataServiceApiRequest::setPathParams(const std::vector<TestDataServiceA
   }
 }
 
-std::string TestDataServiceApiRequest::getBodyContent() const {
-  return bodyContent_;
-}
-
-void TestDataServiceApiRequest::setBodyContent(const std::string &bodyContent) {
-  bodyContent_ = bodyContent;
-  setBodyParameter(std::string("BodyContent"), bodyContent);
-}
-
-std::vector<TestDataServiceApiRequest::BodyParams> TestDataServiceApiRequest::getBodyParams() const {
-  return bodyParams_;
-}
-
-void TestDataServiceApiRequest::setBodyParams(const std::vector<TestDataServiceApiRequest::BodyParams> &bodyParams) {
-  bodyParams_ = bodyParams;
-  for(int dep1 = 0; dep1 != bodyParams.size(); dep1++) {
-  auto bodyParamsObj = bodyParams.at(dep1);
-  std::string bodyParamsObjStr = std::string("BodyParams") + "." + std::to_string(dep1 + 1);
-    setBodyParameter(bodyParamsObjStr + ".ParamKey", bodyParamsObj.paramKey);
-    setBodyParameter(bodyParamsObjStr + ".ParamValue", bodyParamsObj.paramValue);
-  }
-}
-
 std::vector<TestDataServiceApiRequest::QueryParam> TestDataServiceApiRequest::getQueryParam() const {
   return queryParam_;
 }
@@ -87,6 +64,29 @@ void TestDataServiceApiRequest::setHeadParams(const std::vector<TestDataServiceA
   std::string headParamsObjStr = std::string("HeadParams") + "." + std::to_string(dep1 + 1);
     setBodyParameter(headParamsObjStr + ".ParamKey", headParamsObj.paramKey);
     setBodyParameter(headParamsObjStr + ".ParamValue", headParamsObj.paramValue);
+  }
+}
+
+std::string TestDataServiceApiRequest::getBodyContent() const {
+  return bodyContent_;
+}
+
+void TestDataServiceApiRequest::setBodyContent(const std::string &bodyContent) {
+  bodyContent_ = bodyContent;
+  setBodyParameter(std::string("BodyContent"), bodyContent);
+}
+
+std::vector<TestDataServiceApiRequest::BodyParams> TestDataServiceApiRequest::getBodyParams() const {
+  return bodyParams_;
+}
+
+void TestDataServiceApiRequest::setBodyParams(const std::vector<TestDataServiceApiRequest::BodyParams> &bodyParams) {
+  bodyParams_ = bodyParams;
+  for(int dep1 = 0; dep1 != bodyParams.size(); dep1++) {
+  auto bodyParamsObj = bodyParams.at(dep1);
+  std::string bodyParamsObjStr = std::string("BodyParams") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(bodyParamsObjStr + ".ParamKey", bodyParamsObj.paramKey);
+    setBodyParameter(bodyParamsObjStr + ".ParamValue", bodyParamsObj.paramValue);
   }
 }
 

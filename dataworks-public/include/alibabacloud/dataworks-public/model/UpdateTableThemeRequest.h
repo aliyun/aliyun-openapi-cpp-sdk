@@ -30,16 +30,16 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT UpdateTableThemeRequest : public RpcS
 public:
 	UpdateTableThemeRequest();
 	~UpdateTableThemeRequest();
-	std::string getName() const;
-	void setName(const std::string &name);
 	long getThemeId() const;
 	void setThemeId(long themeId);
+	std::string getName() const;
+	void setName(const std::string &name);
 	long getProjectId() const;
 	void setProjectId(long projectId);
 
 private:
-	std::string name_;
 	long themeId_;
+	std::string name_;
 	long projectId_;
 };
 } // namespace Model

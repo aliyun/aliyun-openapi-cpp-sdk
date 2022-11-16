@@ -25,15 +25,6 @@ UpdateTableAddColumnRequest::UpdateTableAddColumnRequest()
 
 UpdateTableAddColumnRequest::~UpdateTableAddColumnRequest() {}
 
-std::string UpdateTableAddColumnRequest::getTableGuid() const {
-  return tableGuid_;
-}
-
-void UpdateTableAddColumnRequest::setTableGuid(const std::string &tableGuid) {
-  tableGuid_ = tableGuid;
-  setParameter(std::string("TableGuid"), tableGuid);
-}
-
 std::vector<UpdateTableAddColumnRequest::Column> UpdateTableAddColumnRequest::getColumn() const {
   return column_;
 }
@@ -48,5 +39,14 @@ void UpdateTableAddColumnRequest::setColumn(const std::vector<UpdateTableAddColu
     setBodyParameter(columnObjStr + ".ColumnName", columnObj.columnName);
     setBodyParameter(columnObjStr + ".ColumnType", columnObj.columnType);
   }
+}
+
+std::string UpdateTableAddColumnRequest::getTableGuid() const {
+  return tableGuid_;
+}
+
+void UpdateTableAddColumnRequest::setTableGuid(const std::string &tableGuid) {
+  tableGuid_ = tableGuid;
+  setParameter(std::string("TableGuid"), tableGuid);
 }
 

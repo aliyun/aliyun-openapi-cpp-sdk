@@ -34,24 +34,6 @@ void ListQualityResultsByEntityRequest::setProjectName(const std::string &projec
   setBodyParameter(std::string("ProjectName"), projectName);
 }
 
-std::string ListQualityResultsByEntityRequest::getEndDate() const {
-  return endDate_;
-}
-
-void ListQualityResultsByEntityRequest::setEndDate(const std::string &endDate) {
-  endDate_ = endDate;
-  setBodyParameter(std::string("EndDate"), endDate);
-}
-
-int ListQualityResultsByEntityRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListQualityResultsByEntityRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 int ListQualityResultsByEntityRequest::getEntityId() const {
   return entityId_;
 }
@@ -77,5 +59,23 @@ int ListQualityResultsByEntityRequest::getPageNumber() const {
 void ListQualityResultsByEntityRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+std::string ListQualityResultsByEntityRequest::getEndDate() const {
+  return endDate_;
+}
+
+void ListQualityResultsByEntityRequest::setEndDate(const std::string &endDate) {
+  endDate_ = endDate;
+  setBodyParameter(std::string("EndDate"), endDate);
+}
+
+int ListQualityResultsByEntityRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListQualityResultsByEntityRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

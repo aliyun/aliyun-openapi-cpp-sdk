@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCURRENTTASKSFORRESOURCEGROUPRESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCURRENTTASKSFORRESOURCEGROUPRESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEBASELINERESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEBASELINERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListCurrentTasksForResourceGroupResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateBaselineResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct PopTasksForResourceGroupDto
-					{
-						int status;
-						std::string taskId;
-						std::string projectName;
-						std::string concurrency;
-						std::string taskName;
-						int taskType;
-						std::string taskSource;
-					};
-					std::vector<PopTasksForResourceGroupDto> tasks;
-					int totalNum;
-					int pageNum;
-					int pageSize;
-				};
 
 
-				ListCurrentTasksForResourceGroupResult();
-				explicit ListCurrentTasksForResourceGroupResult(const std::string &payload);
-				~ListCurrentTasksForResourceGroupResult();
+				CreateBaselineResult();
+				explicit CreateBaselineResult(const std::string &payload);
+				~CreateBaselineResult();
+				std::string getDynamicErrorMessage()const;
 				int getHttpStatusCode()const;
-				Data getData()const;
+				long getData()const;
+				std::string getDynamicErrorCode()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -63,8 +48,10 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dynamicErrorMessage_;
 				int httpStatusCode_;
-				Data data_;
+				long data_;
+				std::string dynamicErrorCode_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -73,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCURRENTTASKSFORRESOURCEGROUPRESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CREATEBASELINERESULT_H_

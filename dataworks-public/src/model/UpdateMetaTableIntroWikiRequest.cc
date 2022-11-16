@@ -25,15 +25,6 @@ UpdateMetaTableIntroWikiRequest::UpdateMetaTableIntroWikiRequest()
 
 UpdateMetaTableIntroWikiRequest::~UpdateMetaTableIntroWikiRequest() {}
 
-std::string UpdateMetaTableIntroWikiRequest::getTableGuid() const {
-  return tableGuid_;
-}
-
-void UpdateMetaTableIntroWikiRequest::setTableGuid(const std::string &tableGuid) {
-  tableGuid_ = tableGuid;
-  setParameter(std::string("TableGuid"), tableGuid);
-}
-
 std::string UpdateMetaTableIntroWikiRequest::getContent() const {
   return content_;
 }
@@ -41,5 +32,14 @@ std::string UpdateMetaTableIntroWikiRequest::getContent() const {
 void UpdateMetaTableIntroWikiRequest::setContent(const std::string &content) {
   content_ = content;
   setBodyParameter(std::string("Content"), content);
+}
+
+std::string UpdateMetaTableIntroWikiRequest::getTableGuid() const {
+  return tableGuid_;
+}
+
+void UpdateMetaTableIntroWikiRequest::setTableGuid(const std::string &tableGuid) {
+  tableGuid_ = tableGuid;
+  setParameter(std::string("TableGuid"), tableGuid);
 }
 

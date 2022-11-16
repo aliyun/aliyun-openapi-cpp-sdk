@@ -34,6 +34,15 @@ void ListDataServiceApiAuthoritiesRequest::setApiNameKeyword(const std::string &
   setBodyParameter(std::string("ApiNameKeyword"), apiNameKeyword);
 }
 
+int ListDataServiceApiAuthoritiesRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void ListDataServiceApiAuthoritiesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
 int ListDataServiceApiAuthoritiesRequest::getPageSize() const {
   return pageSize_;
 }
@@ -59,14 +68,5 @@ long ListDataServiceApiAuthoritiesRequest::getProjectId() const {
 void ListDataServiceApiAuthoritiesRequest::setProjectId(long projectId) {
   projectId_ = projectId;
   setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
-int ListDataServiceApiAuthoritiesRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void ListDataServiceApiAuthoritiesRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

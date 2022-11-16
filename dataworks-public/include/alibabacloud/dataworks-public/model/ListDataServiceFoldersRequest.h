@@ -34,22 +34,22 @@ public:
 	void setFolderNameKeyword(const std::string &folderNameKeyword);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	long getTenantId() const;
 	void setTenantId(long tenantId);
 	long getProjectId() const;
 	void setProjectId(long projectId);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
 
 private:
 	std::string folderNameKeyword_;
 	std::string groupId_;
+	int pageNumber_;
 	int pageSize_;
 	long tenantId_;
 	long projectId_;
-	int pageNumber_;
 };
 } // namespace Model
 } // namespace Dataworks_public

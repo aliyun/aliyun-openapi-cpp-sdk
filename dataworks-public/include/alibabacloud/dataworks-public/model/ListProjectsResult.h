@@ -36,13 +36,24 @@ namespace AlibabaCloud
 				{
 					struct Project
 					{
+						struct Tag
+						{
+							std::string value;
+							std::string key;
+						};
 						std::string projectIdentifier;
+						int isDefault;
 						std::string projectOwnerBaseId;
 						std::string projectStatusCode;
-						int projectStatus;
 						std::string projectName;
 						long projectId;
+						bool disableDevelopment;
+						std::string resourceManagerResourceGroupId;
+						bool useProxyOdpsAccount;
+						int projectStatus;
+						int tablePrivacyMode;
 						std::string projectDescription;
+						std::vector<Project::Tag> tags;
 					};
 					int totalCount;
 					int pageSize;

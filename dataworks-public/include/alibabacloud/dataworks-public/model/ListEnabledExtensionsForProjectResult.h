@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCURRENTUSAGEFORRESOURCEGROUPRESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCURRENTUSAGEFORRESOURCEGROUPRESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTENABLEDEXTENSIONSFORPROJECTRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTENABLEDEXTENSIONSFORPROJECTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,34 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListCurrentUsageForResourceGroupResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListEnabledExtensionsForProjectResult : public ServiceResult
 			{
 			public:
-				struct Data
+				struct ExtensionsItem
 				{
-					float usage;
-					long recodeTime;
+					std::string extensionName;
+					long tenantId;
+					std::string owner;
+					long gmtCreate;
+					std::string modifyUser;
+					std::string parameterSetting;
+					std::string extensionDesc;
+					long gmtModified;
+					std::string createUser;
+					std::string extensionCode;
 				};
 
 
-				ListCurrentUsageForResourceGroupResult();
-				explicit ListCurrentUsageForResourceGroupResult(const std::string &payload);
-				~ListCurrentUsageForResourceGroupResult();
-				int getHttpStatusCode()const;
-				Data getData()const;
-				std::string getErrorMessage()const;
-				bool getSuccess()const;
+				ListEnabledExtensionsForProjectResult();
+				explicit ListEnabledExtensionsForProjectResult(const std::string &payload);
+				~ListEnabledExtensionsForProjectResult();
+				std::vector<ExtensionsItem> getExtensions()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int httpStatusCode_;
-				Data data_;
-				std::string errorMessage_;
-				bool success_;
+				std::vector<ExtensionsItem> extensions_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCURRENTUSAGEFORRESOURCEGROUPRESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTENABLEDEXTENSIONSFORPROJECTRESULT_H_

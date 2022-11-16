@@ -28,10 +28,18 @@ namespace Dataworks_public {
 namespace Model {
 class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListResourceGroupsRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string value;
+		std::string key;
+	};
 	ListResourceGroupsRequest();
 	~ListResourceGroupsRequest();
 	std::string getBizExtKey() const;
 	void setBizExtKey(const std::string &bizExtKey);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
+	std::string getResourceManagerResourceGroupId() const;
+	void setResourceManagerResourceGroupId(const std::string &resourceManagerResourceGroupId);
 	int getResourceGroupType() const;
 	void setResourceGroupType(int resourceGroupType);
 	std::string getKeyword() const;
@@ -39,6 +47,8 @@ public:
 
 private:
 	std::string bizExtKey_;
+	std::vector<Tags> tags_;
+	std::string resourceManagerResourceGroupId_;
 	int resourceGroupType_;
 	std::string keyword_;
 };

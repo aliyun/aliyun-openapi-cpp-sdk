@@ -25,6 +25,15 @@ UpdateTableModelInfoRequest::UpdateTableModelInfoRequest()
 
 UpdateTableModelInfoRequest::~UpdateTableModelInfoRequest() {}
 
+int UpdateTableModelInfoRequest::getLevelType() const {
+  return levelType_;
+}
+
+void UpdateTableModelInfoRequest::setLevelType(int levelType) {
+  levelType_ = levelType;
+  setParameter(std::string("LevelType"), std::to_string(levelType));
+}
+
 long UpdateTableModelInfoRequest::getSecondLevelThemeId() const {
   return secondLevelThemeId_;
 }
@@ -50,15 +59,6 @@ long UpdateTableModelInfoRequest::getLevelId() const {
 void UpdateTableModelInfoRequest::setLevelId(long levelId) {
   levelId_ = levelId;
   setParameter(std::string("LevelId"), std::to_string(levelId));
-}
-
-int UpdateTableModelInfoRequest::getLevelType() const {
-  return levelType_;
-}
-
-void UpdateTableModelInfoRequest::setLevelType(int levelType) {
-  levelType_ = levelType;
-  setParameter(std::string("LevelType"), std::to_string(levelType));
 }
 
 long UpdateTableModelInfoRequest::getFirstLevelThemeId() const {

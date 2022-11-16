@@ -94,6 +94,18 @@ void GetProjectResult::parse(const std::string &payload)
 		data_.gmtCreate = dataNode["GmtCreate"].asString();
 	if(!dataNode["TenantId"].isNull())
 		data_.tenantId = std::stol(dataNode["TenantId"].asString());
+	if(!dataNode["ResourceManagerResourceGroupId"].isNull())
+		data_.resourceManagerResourceGroupId = dataNode["ResourceManagerResourceGroupId"].asString();
+	auto allTagsNode = dataNode["Tags"]["Tag"];
+	for (auto dataNodeTagsTag : allTagsNode)
+	{
+		Data::Tag tagObject;
+		if(!dataNodeTagsTag["Key"].isNull())
+			tagObject.key = dataNodeTagsTag["Key"].asString();
+		if(!dataNodeTagsTag["Value"].isNull())
+			tagObject.value = dataNodeTagsTag["Value"].asString();
+		data_.tags.push_back(tagObject);
+	}
 		auto allEnvTypes = dataNode["EnvTypes"]["EnvTypes"];
 		for (auto value : allEnvTypes)
 			data_.envTypes.push_back(value.asString());

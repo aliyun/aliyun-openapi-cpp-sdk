@@ -30,22 +30,22 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT UpdateConnectionRequest : public RpcS
 public:
 	UpdateConnectionRequest();
 	~UpdateConnectionRequest();
-	int getEnvType() const;
-	void setEnvType(int envType);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
-	long getConnectionId() const;
-	void setConnectionId(long connectionId);
 	std::string getContent() const;
 	void setContent(const std::string &content);
+	int getEnvType() const;
+	void setEnvType(int envType);
+	long getConnectionId() const;
+	void setConnectionId(long connectionId);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 
 private:
-	int envType_;
 	std::string description_;
-	long connectionId_;
 	std::string content_;
+	int envType_;
+	long connectionId_;
 	std::string status_;
 };
 } // namespace Model

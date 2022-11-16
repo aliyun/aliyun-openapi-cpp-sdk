@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCURRENTUSAGEFORRESOURCEGROUPREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCURRENTUSAGEFORRESOURCEGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETBASELINEREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETBASELINEREQUEST_H_
 
 #include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,20 @@
 namespace AlibabaCloud {
 namespace Dataworks_public {
 namespace Model {
-class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListCurrentUsageForResourceGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetBaselineRequest : public RpcServiceRequest {
 public:
-	ListCurrentUsageForResourceGroupRequest();
-	~ListCurrentUsageForResourceGroupRequest();
-	std::string getProjectEnv() const;
-	void setProjectEnv(const std::string &projectEnv);
-	std::string getResourceGroupIdentifier() const;
-	void setResourceGroupIdentifier(const std::string &resourceGroupIdentifier);
+	GetBaselineRequest();
+	~GetBaselineRequest();
+	long getProjectId() const;
+	void setProjectId(long projectId);
+	long getBaselineId() const;
+	void setBaselineId(long baselineId);
 
 private:
-	std::string projectEnv_;
-	std::string resourceGroupIdentifier_;
+	long projectId_;
+	long baselineId_;
 };
 } // namespace Model
 } // namespace Dataworks_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTCURRENTUSAGEFORRESOURCEGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETBASELINEREQUEST_H_

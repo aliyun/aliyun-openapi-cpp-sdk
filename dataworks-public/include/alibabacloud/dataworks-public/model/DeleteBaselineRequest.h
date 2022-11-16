@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETDISYNCTASKMETRICINFOREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETDISYNCTASKMETRICINFOREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_DELETEBASELINEREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_DELETEBASELINEREQUEST_H_
 
 #include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,20 @@
 namespace AlibabaCloud {
 namespace Dataworks_public {
 namespace Model {
-class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetDISyncTaskMetricInfoRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT DeleteBaselineRequest : public RpcServiceRequest {
 public:
-	GetDISyncTaskMetricInfoRequest();
-	~GetDISyncTaskMetricInfoRequest();
-	long getEndDate() const;
-	void setEndDate(long endDate);
-	long getStartDate() const;
-	void setStartDate(long startDate);
+	DeleteBaselineRequest();
+	~DeleteBaselineRequest();
 	long getProjectId() const;
 	void setProjectId(long projectId);
-	long getFileId() const;
-	void setFileId(long fileId);
+	long getBaselineId() const;
+	void setBaselineId(long baselineId);
 
 private:
-	long endDate_;
-	long startDate_;
 	long projectId_;
-	long fileId_;
+	long baselineId_;
 };
 } // namespace Model
 } // namespace Dataworks_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_GETDISYNCTASKMETRICINFOREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_DELETEBASELINEREQUEST_H_

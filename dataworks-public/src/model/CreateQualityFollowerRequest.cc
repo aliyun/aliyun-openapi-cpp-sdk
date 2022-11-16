@@ -25,15 +25,6 @@ CreateQualityFollowerRequest::CreateQualityFollowerRequest()
 
 CreateQualityFollowerRequest::~CreateQualityFollowerRequest() {}
 
-int CreateQualityFollowerRequest::getAlarmMode() const {
-  return alarmMode_;
-}
-
-void CreateQualityFollowerRequest::setAlarmMode(int alarmMode) {
-  alarmMode_ = alarmMode;
-  setBodyParameter(std::string("AlarmMode"), std::to_string(alarmMode));
-}
-
 std::string CreateQualityFollowerRequest::getProjectName() const {
   return projectName_;
 }
@@ -59,5 +50,14 @@ long CreateQualityFollowerRequest::getEntityId() const {
 void CreateQualityFollowerRequest::setEntityId(long entityId) {
   entityId_ = entityId;
   setBodyParameter(std::string("EntityId"), std::to_string(entityId));
+}
+
+int CreateQualityFollowerRequest::getAlarmMode() const {
+  return alarmMode_;
+}
+
+void CreateQualityFollowerRequest::setAlarmMode(int alarmMode) {
+  alarmMode_ = alarmMode;
+  setBodyParameter(std::string("AlarmMode"), std::to_string(alarmMode));
 }
 

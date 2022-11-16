@@ -25,6 +25,24 @@ GetMetaTableOutputRequest::GetMetaTableOutputRequest()
 
 GetMetaTableOutputRequest::~GetMetaTableOutputRequest() {}
 
+std::string GetMetaTableOutputRequest::getStartDate() const {
+  return startDate_;
+}
+
+void GetMetaTableOutputRequest::setStartDate(const std::string &startDate) {
+  startDate_ = startDate;
+  setParameter(std::string("StartDate"), startDate);
+}
+
+int GetMetaTableOutputRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void GetMetaTableOutputRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
 std::string GetMetaTableOutputRequest::getEndDate() const {
   return endDate_;
 }
@@ -50,23 +68,5 @@ int GetMetaTableOutputRequest::getPageSize() const {
 void GetMetaTableOutputRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-std::string GetMetaTableOutputRequest::getStartDate() const {
-  return startDate_;
-}
-
-void GetMetaTableOutputRequest::setStartDate(const std::string &startDate) {
-  startDate_ = startDate;
-  setParameter(std::string("StartDate"), startDate);
-}
-
-int GetMetaTableOutputRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void GetMetaTableOutputRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

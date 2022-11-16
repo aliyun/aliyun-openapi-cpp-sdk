@@ -34,15 +34,6 @@ void ListTableLevelRequest::setLevelType(int levelType) {
   setParameter(std::string("LevelType"), std::to_string(levelType));
 }
 
-int ListTableLevelRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListTableLevelRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 int ListTableLevelRequest::getPageNum() const {
   return pageNum_;
 }
@@ -50,6 +41,15 @@ int ListTableLevelRequest::getPageNum() const {
 void ListTableLevelRequest::setPageNum(int pageNum) {
   pageNum_ = pageNum;
   setParameter(std::string("PageNum"), std::to_string(pageNum));
+}
+
+int ListTableLevelRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListTableLevelRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
 long ListTableLevelRequest::getProjectId() const {

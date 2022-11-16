@@ -32,24 +32,24 @@ public:
 	~ListQualityResultsByRuleRequest();
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
+	std::string getStartDate() const;
+	void setStartDate(const std::string &startDate);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	std::string getEndDate() const;
 	void setEndDate(const std::string &endDate);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	int getRuleId() const;
 	void setRuleId(int ruleId);
-	std::string getStartDate() const;
-	void setStartDate(const std::string &startDate);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
 
 private:
 	std::string projectName_;
+	std::string startDate_;
+	int pageNumber_;
 	std::string endDate_;
 	int pageSize_;
 	int ruleId_;
-	std::string startDate_;
-	int pageNumber_;
 };
 } // namespace Model
 } // namespace Dataworks_public

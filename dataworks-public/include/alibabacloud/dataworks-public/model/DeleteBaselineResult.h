@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTHISTORYTASKSFORRESOURCEGROUPRESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTHISTORYTASKSFORRESOURCEGROUPRESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_DELETEBASELINERESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_DELETEBASELINERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,18 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListHistoryTasksForResourceGroupResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT DeleteBaselineResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct PopTasksForResourceGroupDto
-					{
-						int status;
-						std::string taskId;
-						std::string projectName;
-						int concurrency;
-						std::string taskName;
-						int taskType;
-					};
-					std::vector<PopTasksForResourceGroupDto> tasks;
-					int totalNum;
-					int pageNum;
-					int pageSize;
-				};
 
 
-				ListHistoryTasksForResourceGroupResult();
-				explicit ListHistoryTasksForResourceGroupResult(const std::string &payload);
-				~ListHistoryTasksForResourceGroupResult();
+				DeleteBaselineResult();
+				explicit DeleteBaselineResult(const std::string &payload);
+				~DeleteBaselineResult();
+				std::string getDynamicErrorMessage()const;
 				int getHttpStatusCode()const;
-				Data getData()const;
+				bool getData()const;
+				std::string getDynamicErrorCode()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -62,8 +48,10 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dynamicErrorMessage_;
 				int httpStatusCode_;
-				Data data_;
+				bool data_;
+				std::string dynamicErrorCode_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -72,4 +60,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTHISTORYTASKSFORRESOURCEGROUPRESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_DELETEBASELINERESULT_H_

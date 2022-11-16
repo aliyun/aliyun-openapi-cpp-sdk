@@ -34,6 +34,27 @@ void ListResourceGroupsRequest::setBizExtKey(const std::string &bizExtKey) {
   setParameter(std::string("BizExtKey"), bizExtKey);
 }
 
+std::vector<ListResourceGroupsRequest::Tags> ListResourceGroupsRequest::getTags() const {
+  return tags_;
+}
+
+void ListResourceGroupsRequest::setTags(const std::vector<ListResourceGroupsRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+    setParameter(std::string("Tags") + "." + std::to_string(dep1 + 1) + ".Value", tags[dep1].value);
+    setParameter(std::string("Tags") + "." + std::to_string(dep1 + 1) + ".Key", tags[dep1].key);
+  }
+}
+
+std::string ListResourceGroupsRequest::getResourceManagerResourceGroupId() const {
+  return resourceManagerResourceGroupId_;
+}
+
+void ListResourceGroupsRequest::setResourceManagerResourceGroupId(const std::string &resourceManagerResourceGroupId) {
+  resourceManagerResourceGroupId_ = resourceManagerResourceGroupId;
+  setParameter(std::string("ResourceManagerResourceGroupId"), resourceManagerResourceGroupId);
+}
+
 int ListResourceGroupsRequest::getResourceGroupType() const {
   return resourceGroupType_;
 }

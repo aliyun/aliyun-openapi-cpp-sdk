@@ -34,6 +34,15 @@ void CreateTableThemeRequest::setLevel(int level) {
   setParameter(std::string("Level"), std::to_string(level));
 }
 
+long CreateTableThemeRequest::getParentId() const {
+  return parentId_;
+}
+
+void CreateTableThemeRequest::setParentId(long parentId) {
+  parentId_ = parentId;
+  setParameter(std::string("ParentId"), std::to_string(parentId));
+}
+
 std::string CreateTableThemeRequest::getName() const {
   return name_;
 }
@@ -50,14 +59,5 @@ long CreateTableThemeRequest::getProjectId() const {
 void CreateTableThemeRequest::setProjectId(long projectId) {
   projectId_ = projectId;
   setParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
-long CreateTableThemeRequest::getParentId() const {
-  return parentId_;
-}
-
-void CreateTableThemeRequest::setParentId(long parentId) {
-  parentId_ = parentId;
-  setParameter(std::string("ParentId"), std::to_string(parentId));
 }
 

@@ -25,15 +25,6 @@ UpdateWorkbenchEventResultRequest::UpdateWorkbenchEventResultRequest()
 
 UpdateWorkbenchEventResultRequest::~UpdateWorkbenchEventResultRequest() {}
 
-std::string UpdateWorkbenchEventResultRequest::getCheckResultTip() const {
-  return checkResultTip_;
-}
-
-void UpdateWorkbenchEventResultRequest::setCheckResultTip(const std::string &checkResultTip) {
-  checkResultTip_ = checkResultTip;
-  setParameter(std::string("CheckResultTip"), checkResultTip);
-}
-
 std::string UpdateWorkbenchEventResultRequest::getCheckResult() const {
   return checkResult_;
 }
@@ -50,6 +41,15 @@ std::string UpdateWorkbenchEventResultRequest::getMessageId() const {
 void UpdateWorkbenchEventResultRequest::setMessageId(const std::string &messageId) {
   messageId_ = messageId;
   setParameter(std::string("MessageId"), messageId);
+}
+
+std::string UpdateWorkbenchEventResultRequest::getCheckResultTip() const {
+  return checkResultTip_;
+}
+
+void UpdateWorkbenchEventResultRequest::setCheckResultTip(const std::string &checkResultTip) {
+  checkResultTip_ = checkResultTip;
+  setParameter(std::string("CheckResultTip"), checkResultTip);
 }
 
 std::string UpdateWorkbenchEventResultRequest::getExtensionCode() const {

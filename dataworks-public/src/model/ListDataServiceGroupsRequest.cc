@@ -25,6 +25,24 @@ ListDataServiceGroupsRequest::ListDataServiceGroupsRequest()
 
 ListDataServiceGroupsRequest::~ListDataServiceGroupsRequest() {}
 
+std::string ListDataServiceGroupsRequest::getGroupNameKeyword() const {
+  return groupNameKeyword_;
+}
+
+void ListDataServiceGroupsRequest::setGroupNameKeyword(const std::string &groupNameKeyword) {
+  groupNameKeyword_ = groupNameKeyword;
+  setBodyParameter(std::string("GroupNameKeyword"), groupNameKeyword);
+}
+
+int ListDataServiceGroupsRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void ListDataServiceGroupsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
 int ListDataServiceGroupsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -50,23 +68,5 @@ long ListDataServiceGroupsRequest::getProjectId() const {
 void ListDataServiceGroupsRequest::setProjectId(long projectId) {
   projectId_ = projectId;
   setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
-std::string ListDataServiceGroupsRequest::getGroupNameKeyword() const {
-  return groupNameKeyword_;
-}
-
-void ListDataServiceGroupsRequest::setGroupNameKeyword(const std::string &groupNameKeyword) {
-  groupNameKeyword_ = groupNameKeyword;
-  setBodyParameter(std::string("GroupNameKeyword"), groupNameKeyword);
-}
-
-int ListDataServiceGroupsRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void ListDataServiceGroupsRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

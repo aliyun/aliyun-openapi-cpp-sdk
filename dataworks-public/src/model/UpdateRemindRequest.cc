@@ -25,15 +25,6 @@ UpdateRemindRequest::UpdateRemindRequest()
 
 UpdateRemindRequest::~UpdateRemindRequest() {}
 
-std::string UpdateRemindRequest::getDndEnd() const {
-  return dndEnd_;
-}
-
-void UpdateRemindRequest::setDndEnd(const std::string &dndEnd) {
-  dndEnd_ = dndEnd;
-  setBodyParameter(std::string("DndEnd"), dndEnd);
-}
-
 std::string UpdateRemindRequest::getAlertUnit() const {
   return alertUnit_;
 }
@@ -41,15 +32,6 @@ std::string UpdateRemindRequest::getAlertUnit() const {
 void UpdateRemindRequest::setAlertUnit(const std::string &alertUnit) {
   alertUnit_ = alertUnit;
   setBodyParameter(std::string("AlertUnit"), alertUnit);
-}
-
-std::string UpdateRemindRequest::getRemindUnit() const {
-  return remindUnit_;
-}
-
-void UpdateRemindRequest::setRemindUnit(const std::string &remindUnit) {
-  remindUnit_ = remindUnit;
-  setBodyParameter(std::string("RemindUnit"), remindUnit);
 }
 
 bool UpdateRemindRequest::getUseFlag() const {
@@ -61,24 +43,6 @@ void UpdateRemindRequest::setUseFlag(bool useFlag) {
   setBodyParameter(std::string("UseFlag"), useFlag ? "true" : "false");
 }
 
-int UpdateRemindRequest::getAlertInterval() const {
-  return alertInterval_;
-}
-
-void UpdateRemindRequest::setAlertInterval(int alertInterval) {
-  alertInterval_ = alertInterval;
-  setBodyParameter(std::string("AlertInterval"), std::to_string(alertInterval));
-}
-
-std::string UpdateRemindRequest::getAlertMethods() const {
-  return alertMethods_;
-}
-
-void UpdateRemindRequest::setAlertMethods(const std::string &alertMethods) {
-  alertMethods_ = alertMethods;
-  setBodyParameter(std::string("AlertMethods"), alertMethods);
-}
-
 std::string UpdateRemindRequest::getRobotUrls() const {
   return robotUrls_;
 }
@@ -86,15 +50,6 @@ std::string UpdateRemindRequest::getRobotUrls() const {
 void UpdateRemindRequest::setRobotUrls(const std::string &robotUrls) {
   robotUrls_ = robotUrls;
   setBodyParameter(std::string("RobotUrls"), robotUrls);
-}
-
-int UpdateRemindRequest::getMaxAlertTimes() const {
-  return maxAlertTimes_;
-}
-
-void UpdateRemindRequest::setMaxAlertTimes(int maxAlertTimes) {
-  maxAlertTimes_ = maxAlertTimes;
-  setBodyParameter(std::string("MaxAlertTimes"), std::to_string(maxAlertTimes));
 }
 
 std::string UpdateRemindRequest::getBizProcessIds() const {
@@ -115,6 +70,69 @@ void UpdateRemindRequest::setRemindType(const std::string &remindType) {
   setBodyParameter(std::string("RemindType"), remindType);
 }
 
+std::string UpdateRemindRequest::getBaselineIds() const {
+  return baselineIds_;
+}
+
+void UpdateRemindRequest::setBaselineIds(const std::string &baselineIds) {
+  baselineIds_ = baselineIds;
+  setBodyParameter(std::string("BaselineIds"), baselineIds);
+}
+
+long UpdateRemindRequest::getProjectId() const {
+  return projectId_;
+}
+
+void UpdateRemindRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+
+std::string UpdateRemindRequest::getDndEnd() const {
+  return dndEnd_;
+}
+
+void UpdateRemindRequest::setDndEnd(const std::string &dndEnd) {
+  dndEnd_ = dndEnd;
+  setBodyParameter(std::string("DndEnd"), dndEnd);
+}
+
+std::string UpdateRemindRequest::getRemindUnit() const {
+  return remindUnit_;
+}
+
+void UpdateRemindRequest::setRemindUnit(const std::string &remindUnit) {
+  remindUnit_ = remindUnit;
+  setBodyParameter(std::string("RemindUnit"), remindUnit);
+}
+
+int UpdateRemindRequest::getAlertInterval() const {
+  return alertInterval_;
+}
+
+void UpdateRemindRequest::setAlertInterval(int alertInterval) {
+  alertInterval_ = alertInterval;
+  setBodyParameter(std::string("AlertInterval"), std::to_string(alertInterval));
+}
+
+std::string UpdateRemindRequest::getAlertMethods() const {
+  return alertMethods_;
+}
+
+void UpdateRemindRequest::setAlertMethods(const std::string &alertMethods) {
+  alertMethods_ = alertMethods;
+  setBodyParameter(std::string("AlertMethods"), alertMethods);
+}
+
+int UpdateRemindRequest::getMaxAlertTimes() const {
+  return maxAlertTimes_;
+}
+
+void UpdateRemindRequest::setMaxAlertTimes(int maxAlertTimes) {
+  maxAlertTimes_ = maxAlertTimes;
+  setBodyParameter(std::string("MaxAlertTimes"), std::to_string(maxAlertTimes));
+}
+
 std::string UpdateRemindRequest::getAlertTargets() const {
   return alertTargets_;
 }
@@ -124,13 +142,13 @@ void UpdateRemindRequest::setAlertTargets(const std::string &alertTargets) {
   setBodyParameter(std::string("AlertTargets"), alertTargets);
 }
 
-std::string UpdateRemindRequest::getBaselineIds() const {
-  return baselineIds_;
+std::string UpdateRemindRequest::getWebhooks() const {
+  return webhooks_;
 }
 
-void UpdateRemindRequest::setBaselineIds(const std::string &baselineIds) {
-  baselineIds_ = baselineIds;
-  setBodyParameter(std::string("BaselineIds"), baselineIds);
+void UpdateRemindRequest::setWebhooks(const std::string &webhooks) {
+  webhooks_ = webhooks;
+  setBodyParameter(std::string("Webhooks"), webhooks);
 }
 
 long UpdateRemindRequest::getRemindId() const {
@@ -158,15 +176,6 @@ std::string UpdateRemindRequest::getRemindName() const {
 void UpdateRemindRequest::setRemindName(const std::string &remindName) {
   remindName_ = remindName;
   setBodyParameter(std::string("RemindName"), remindName);
-}
-
-long UpdateRemindRequest::getProjectId() const {
-  return projectId_;
-}
-
-void UpdateRemindRequest::setProjectId(long projectId) {
-  projectId_ = projectId;
-  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
 std::string UpdateRemindRequest::getNodeIds() const {

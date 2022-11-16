@@ -35,6 +35,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/CheckMetaPartitionResult.h
 	include/alibabacloud/dataworks-public/model/CheckMetaTableRequest.h
 	include/alibabacloud/dataworks-public/model/CheckMetaTableResult.h
+	include/alibabacloud/dataworks-public/model/CreateBaselineRequest.h
+	include/alibabacloud/dataworks-public/model/CreateBaselineResult.h
 	include/alibabacloud/dataworks-public/model/CreateBusinessRequest.h
 	include/alibabacloud/dataworks-public/model/CreateBusinessResult.h
 	include/alibabacloud/dataworks-public/model/CreateConnectionRequest.h
@@ -89,6 +91,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/CreateTableThemeResult.h
 	include/alibabacloud/dataworks-public/model/CreateUdfFileRequest.h
 	include/alibabacloud/dataworks-public/model/CreateUdfFileResult.h
+	include/alibabacloud/dataworks-public/model/DeleteBaselineRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteBaselineResult.h
 	include/alibabacloud/dataworks-public/model/DeleteBusinessRequest.h
 	include/alibabacloud/dataworks-public/model/DeleteBusinessResult.h
 	include/alibabacloud/dataworks-public/model/DeleteConnectionRequest.h
@@ -141,6 +145,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/GenerateDISyncTaskConfigForCreatingResult.h
 	include/alibabacloud/dataworks-public/model/GenerateDISyncTaskConfigForUpdatingRequest.h
 	include/alibabacloud/dataworks-public/model/GenerateDISyncTaskConfigForUpdatingResult.h
+	include/alibabacloud/dataworks-public/model/GetBaselineRequest.h
+	include/alibabacloud/dataworks-public/model/GetBaselineResult.h
 	include/alibabacloud/dataworks-public/model/GetBaselineConfigRequest.h
 	include/alibabacloud/dataworks-public/model/GetBaselineConfigResult.h
 	include/alibabacloud/dataworks-public/model/GetBaselineKeyPathRequest.h
@@ -155,8 +161,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/GetDISyncInstanceInfoResult.h
 	include/alibabacloud/dataworks-public/model/GetDISyncTaskRequest.h
 	include/alibabacloud/dataworks-public/model/GetDISyncTaskResult.h
-	include/alibabacloud/dataworks-public/model/GetDISyncTaskMetricInfoRequest.h
-	include/alibabacloud/dataworks-public/model/GetDISyncTaskMetricInfoResult.h
 	include/alibabacloud/dataworks-public/model/GetDagRequest.h
 	include/alibabacloud/dataworks-public/model/GetDagResult.h
 	include/alibabacloud/dataworks-public/model/GetDataServiceApiRequest.h
@@ -283,16 +287,14 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListBaselineConfigsResult.h
 	include/alibabacloud/dataworks-public/model/ListBaselineStatusesRequest.h
 	include/alibabacloud/dataworks-public/model/ListBaselineStatusesResult.h
+	include/alibabacloud/dataworks-public/model/ListBaselinesRequest.h
+	include/alibabacloud/dataworks-public/model/ListBaselinesResult.h
 	include/alibabacloud/dataworks-public/model/ListBusinessRequest.h
 	include/alibabacloud/dataworks-public/model/ListBusinessResult.h
 	include/alibabacloud/dataworks-public/model/ListCalcEnginesRequest.h
 	include/alibabacloud/dataworks-public/model/ListCalcEnginesResult.h
 	include/alibabacloud/dataworks-public/model/ListConnectionsRequest.h
 	include/alibabacloud/dataworks-public/model/ListConnectionsResult.h
-	include/alibabacloud/dataworks-public/model/ListCurrentTasksForResourceGroupRequest.h
-	include/alibabacloud/dataworks-public/model/ListCurrentTasksForResourceGroupResult.h
-	include/alibabacloud/dataworks-public/model/ListCurrentUsageForResourceGroupRequest.h
-	include/alibabacloud/dataworks-public/model/ListCurrentUsageForResourceGroupResult.h
 	include/alibabacloud/dataworks-public/model/ListDIProjectConfigRequest.h
 	include/alibabacloud/dataworks-public/model/ListDIProjectConfigResult.h
 	include/alibabacloud/dataworks-public/model/ListDagsRequest.h
@@ -317,6 +319,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListDataSourcesResult.h
 	include/alibabacloud/dataworks-public/model/ListDeploymentsRequest.h
 	include/alibabacloud/dataworks-public/model/ListDeploymentsResult.h
+	include/alibabacloud/dataworks-public/model/ListEnabledExtensionsForProjectRequest.h
+	include/alibabacloud/dataworks-public/model/ListEnabledExtensionsForProjectResult.h
 	include/alibabacloud/dataworks-public/model/ListExtensionsRequest.h
 	include/alibabacloud/dataworks-public/model/ListExtensionsResult.h
 	include/alibabacloud/dataworks-public/model/ListFileTypeRequest.h
@@ -327,8 +331,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListFilesResult.h
 	include/alibabacloud/dataworks-public/model/ListFoldersRequest.h
 	include/alibabacloud/dataworks-public/model/ListFoldersResult.h
-	include/alibabacloud/dataworks-public/model/ListHistoryTasksForResourceGroupRequest.h
-	include/alibabacloud/dataworks-public/model/ListHistoryTasksForResourceGroupResult.h
 	include/alibabacloud/dataworks-public/model/ListInnerNodesRequest.h
 	include/alibabacloud/dataworks-public/model/ListInnerNodesResult.h
 	include/alibabacloud/dataworks-public/model/ListInstanceAmountRequest.h
@@ -389,8 +391,6 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListTableThemeResult.h
 	include/alibabacloud/dataworks-public/model/ListTopicsRequest.h
 	include/alibabacloud/dataworks-public/model/ListTopicsResult.h
-	include/alibabacloud/dataworks-public/model/ListUsageForResourceGroupRequest.h
-	include/alibabacloud/dataworks-public/model/ListUsageForResourceGroupResult.h
 	include/alibabacloud/dataworks-public/model/OfflineNodeRequest.h
 	include/alibabacloud/dataworks-public/model/OfflineNodeResult.h
 	include/alibabacloud/dataworks-public/model/PublishDataServiceApiRequest.h
@@ -449,6 +449,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/TopTenElapsedTimeInstanceResult.h
 	include/alibabacloud/dataworks-public/model/TopTenErrorTimesInstanceRequest.h
 	include/alibabacloud/dataworks-public/model/TopTenErrorTimesInstanceResult.h
+	include/alibabacloud/dataworks-public/model/UpdateBaselineRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateBaselineResult.h
 	include/alibabacloud/dataworks-public/model/UpdateBusinessRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateBusinessResult.h
 	include/alibabacloud/dataworks-public/model/UpdateConnectionRequest.h
@@ -514,6 +516,8 @@ set(dataworks-public_src
 	src/model/CheckMetaPartitionResult.cc
 	src/model/CheckMetaTableRequest.cc
 	src/model/CheckMetaTableResult.cc
+	src/model/CreateBaselineRequest.cc
+	src/model/CreateBaselineResult.cc
 	src/model/CreateBusinessRequest.cc
 	src/model/CreateBusinessResult.cc
 	src/model/CreateConnectionRequest.cc
@@ -568,6 +572,8 @@ set(dataworks-public_src
 	src/model/CreateTableThemeResult.cc
 	src/model/CreateUdfFileRequest.cc
 	src/model/CreateUdfFileResult.cc
+	src/model/DeleteBaselineRequest.cc
+	src/model/DeleteBaselineResult.cc
 	src/model/DeleteBusinessRequest.cc
 	src/model/DeleteBusinessResult.cc
 	src/model/DeleteConnectionRequest.cc
@@ -620,6 +626,8 @@ set(dataworks-public_src
 	src/model/GenerateDISyncTaskConfigForCreatingResult.cc
 	src/model/GenerateDISyncTaskConfigForUpdatingRequest.cc
 	src/model/GenerateDISyncTaskConfigForUpdatingResult.cc
+	src/model/GetBaselineRequest.cc
+	src/model/GetBaselineResult.cc
 	src/model/GetBaselineConfigRequest.cc
 	src/model/GetBaselineConfigResult.cc
 	src/model/GetBaselineKeyPathRequest.cc
@@ -634,8 +642,6 @@ set(dataworks-public_src
 	src/model/GetDISyncInstanceInfoResult.cc
 	src/model/GetDISyncTaskRequest.cc
 	src/model/GetDISyncTaskResult.cc
-	src/model/GetDISyncTaskMetricInfoRequest.cc
-	src/model/GetDISyncTaskMetricInfoResult.cc
 	src/model/GetDagRequest.cc
 	src/model/GetDagResult.cc
 	src/model/GetDataServiceApiRequest.cc
@@ -762,16 +768,14 @@ set(dataworks-public_src
 	src/model/ListBaselineConfigsResult.cc
 	src/model/ListBaselineStatusesRequest.cc
 	src/model/ListBaselineStatusesResult.cc
+	src/model/ListBaselinesRequest.cc
+	src/model/ListBaselinesResult.cc
 	src/model/ListBusinessRequest.cc
 	src/model/ListBusinessResult.cc
 	src/model/ListCalcEnginesRequest.cc
 	src/model/ListCalcEnginesResult.cc
 	src/model/ListConnectionsRequest.cc
 	src/model/ListConnectionsResult.cc
-	src/model/ListCurrentTasksForResourceGroupRequest.cc
-	src/model/ListCurrentTasksForResourceGroupResult.cc
-	src/model/ListCurrentUsageForResourceGroupRequest.cc
-	src/model/ListCurrentUsageForResourceGroupResult.cc
 	src/model/ListDIProjectConfigRequest.cc
 	src/model/ListDIProjectConfigResult.cc
 	src/model/ListDagsRequest.cc
@@ -796,6 +800,8 @@ set(dataworks-public_src
 	src/model/ListDataSourcesResult.cc
 	src/model/ListDeploymentsRequest.cc
 	src/model/ListDeploymentsResult.cc
+	src/model/ListEnabledExtensionsForProjectRequest.cc
+	src/model/ListEnabledExtensionsForProjectResult.cc
 	src/model/ListExtensionsRequest.cc
 	src/model/ListExtensionsResult.cc
 	src/model/ListFileTypeRequest.cc
@@ -806,8 +812,6 @@ set(dataworks-public_src
 	src/model/ListFilesResult.cc
 	src/model/ListFoldersRequest.cc
 	src/model/ListFoldersResult.cc
-	src/model/ListHistoryTasksForResourceGroupRequest.cc
-	src/model/ListHistoryTasksForResourceGroupResult.cc
 	src/model/ListInnerNodesRequest.cc
 	src/model/ListInnerNodesResult.cc
 	src/model/ListInstanceAmountRequest.cc
@@ -868,8 +872,6 @@ set(dataworks-public_src
 	src/model/ListTableThemeResult.cc
 	src/model/ListTopicsRequest.cc
 	src/model/ListTopicsResult.cc
-	src/model/ListUsageForResourceGroupRequest.cc
-	src/model/ListUsageForResourceGroupResult.cc
 	src/model/OfflineNodeRequest.cc
 	src/model/OfflineNodeResult.cc
 	src/model/PublishDataServiceApiRequest.cc
@@ -928,6 +930,8 @@ set(dataworks-public_src
 	src/model/TopTenElapsedTimeInstanceResult.cc
 	src/model/TopTenErrorTimesInstanceRequest.cc
 	src/model/TopTenErrorTimesInstanceResult.cc
+	src/model/UpdateBaselineRequest.cc
+	src/model/UpdateBaselineResult.cc
 	src/model/UpdateBusinessRequest.cc
 	src/model/UpdateBusinessResult.cc
 	src/model/UpdateConnectionRequest.cc

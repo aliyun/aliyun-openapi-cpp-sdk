@@ -34,15 +34,6 @@ void ListMetaDBRequest::setDataSourceType(const std::string &dataSourceType) {
   setParameter(std::string("DataSourceType"), dataSourceType);
 }
 
-int ListMetaDBRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListMetaDBRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 std::string ListMetaDBRequest::getClusterId() const {
   return clusterId_;
 }
@@ -59,6 +50,15 @@ int ListMetaDBRequest::getPageNum() const {
 void ListMetaDBRequest::setPageNum(int pageNum) {
   pageNum_ = pageNum;
   setParameter(std::string("PageNum"), std::to_string(pageNum));
+}
+
+int ListMetaDBRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListMetaDBRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
 long ListMetaDBRequest::getProjectId() const {

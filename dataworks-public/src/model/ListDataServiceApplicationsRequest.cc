@@ -25,6 +25,15 @@ ListDataServiceApplicationsRequest::ListDataServiceApplicationsRequest()
 
 ListDataServiceApplicationsRequest::~ListDataServiceApplicationsRequest() {}
 
+int ListDataServiceApplicationsRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void ListDataServiceApplicationsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
 int ListDataServiceApplicationsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -50,14 +59,5 @@ std::string ListDataServiceApplicationsRequest::getProjectIdList() const {
 void ListDataServiceApplicationsRequest::setProjectIdList(const std::string &projectIdList) {
   projectIdList_ = projectIdList;
   setBodyParameter(std::string("ProjectIdList"), projectIdList);
-}
-
-int ListDataServiceApplicationsRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void ListDataServiceApplicationsRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

@@ -34,8 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					int status;
 					std::string projectIdentifier;
+					int isDefault;
 					std::string projectOwnerBaseId;
 					int schedulerMaxRetryTimes;
 					std::string projectName;
@@ -43,13 +49,18 @@ namespace AlibabaCloud
 					int projectId;
 					std::string gmtModified;
 					int developmentType;
+					bool disableDevelopment;
 					std::string residentArea;
+					std::string resourceManagerResourceGroupId;
+					bool useProxyOdpsAccount;
 					std::string gmtCreate;
 					long tenantId;
 					int protectedMode;
+					int tablePrivacyMode;
 					int projectMode;
 					std::string projectDescription;
 					std::string defaultDiResourceGroupIdentifier;
+					std::vector<Tag> tags;
 					std::vector<std::string> envTypes;
 					int schedulerRetryInterval;
 				};

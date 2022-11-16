@@ -32,21 +32,21 @@ public:
 	~CreateDataServiceFolderRequest();
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
-	long getTenantId() const;
-	void setTenantId(long tenantId);
 	std::string getFolderName() const;
 	void setFolderName(const std::string &folderName);
-	long getProjectId() const;
-	void setProjectId(long projectId);
 	long getParentId() const;
 	void setParentId(long parentId);
+	long getTenantId() const;
+	void setTenantId(long tenantId);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
 	std::string groupId_;
-	long tenantId_;
 	std::string folderName_;
-	long projectId_;
 	long parentId_;
+	long tenantId_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

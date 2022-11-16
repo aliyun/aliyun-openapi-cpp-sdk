@@ -34,6 +34,27 @@ void ListProjectsRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::vector<ListProjectsRequest::Tags> ListProjectsRequest::getTags() const {
+  return tags_;
+}
+
+void ListProjectsRequest::setTags(const std::vector<ListProjectsRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+    setParameter(std::string("Tags") + "." + std::to_string(dep1 + 1) + ".Value", tags[dep1].value);
+    setParameter(std::string("Tags") + "." + std::to_string(dep1 + 1) + ".Key", tags[dep1].key);
+  }
+}
+
+std::string ListProjectsRequest::getResourceManagerResourceGroupId() const {
+  return resourceManagerResourceGroupId_;
+}
+
+void ListProjectsRequest::setResourceManagerResourceGroupId(const std::string &resourceManagerResourceGroupId) {
+  resourceManagerResourceGroupId_ = resourceManagerResourceGroupId;
+  setParameter(std::string("ResourceManagerResourceGroupId"), resourceManagerResourceGroupId);
+}
+
 int ListProjectsRequest::getPageSize() const {
   return pageSize_;
 }

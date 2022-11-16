@@ -25,15 +25,6 @@ ListTableThemeRequest::ListTableThemeRequest()
 
 ListTableThemeRequest::~ListTableThemeRequest() {}
 
-int ListTableThemeRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListTableThemeRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 int ListTableThemeRequest::getPageNum() const {
   return pageNum_;
 }
@@ -43,15 +34,6 @@ void ListTableThemeRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-long ListTableThemeRequest::getProjectId() const {
-  return projectId_;
-}
-
-void ListTableThemeRequest::setProjectId(long projectId) {
-  projectId_ = projectId;
-  setParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
 long ListTableThemeRequest::getParentId() const {
   return parentId_;
 }
@@ -59,5 +41,23 @@ long ListTableThemeRequest::getParentId() const {
 void ListTableThemeRequest::setParentId(long parentId) {
   parentId_ = parentId;
   setParameter(std::string("ParentId"), std::to_string(parentId));
+}
+
+int ListTableThemeRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListTableThemeRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+long ListTableThemeRequest::getProjectId() const {
+  return projectId_;
+}
+
+void ListTableThemeRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 

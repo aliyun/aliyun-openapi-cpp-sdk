@@ -73,6 +73,18 @@ void ListResourceGroupsResult::parse(const std::string &payload)
 			dataObject.id = std::stol(valueDataDataItem["Id"].asString());
 		if(!valueDataDataItem["TenantId"].isNull())
 			dataObject.tenantId = std::stol(valueDataDataItem["TenantId"].asString());
+		if(!valueDataDataItem["ResourceManagerResourceGroupId"].isNull())
+			dataObject.resourceManagerResourceGroupId = valueDataDataItem["ResourceManagerResourceGroupId"].asString();
+		auto allTagsNode = valueDataDataItem["Tags"]["Tag"];
+		for (auto valueDataDataItemTagsTag : allTagsNode)
+		{
+			DataItem::Tag tagsObject;
+			if(!valueDataDataItemTagsTag["Key"].isNull())
+				tagsObject.key = valueDataDataItemTagsTag["Key"].asString();
+			if(!valueDataDataItemTagsTag["Value"].isNull())
+				tagsObject.value = valueDataDataItemTagsTag["Value"].asString();
+			dataObject.tags.push_back(tagsObject);
+		}
 		data_.push_back(dataObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

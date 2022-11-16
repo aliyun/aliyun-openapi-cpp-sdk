@@ -25,15 +25,6 @@ UpdateTableLevelRequest::UpdateTableLevelRequest()
 
 UpdateTableLevelRequest::~UpdateTableLevelRequest() {}
 
-long UpdateTableLevelRequest::getLevelId() const {
-  return levelId_;
-}
-
-void UpdateTableLevelRequest::setLevelId(long levelId) {
-  levelId_ = levelId;
-  setParameter(std::string("LevelId"), std::to_string(levelId));
-}
-
 int UpdateTableLevelRequest::getLevelType() const {
   return levelType_;
 }
@@ -43,15 +34,6 @@ void UpdateTableLevelRequest::setLevelType(int levelType) {
   setParameter(std::string("LevelType"), std::to_string(levelType));
 }
 
-std::string UpdateTableLevelRequest::getName() const {
-  return name_;
-}
-
-void UpdateTableLevelRequest::setName(const std::string &name) {
-  name_ = name;
-  setParameter(std::string("Name"), name);
-}
-
 std::string UpdateTableLevelRequest::getDescription() const {
   return description_;
 }
@@ -59,6 +41,24 @@ std::string UpdateTableLevelRequest::getDescription() const {
 void UpdateTableLevelRequest::setDescription(const std::string &description) {
   description_ = description;
   setParameter(std::string("Description"), description);
+}
+
+long UpdateTableLevelRequest::getLevelId() const {
+  return levelId_;
+}
+
+void UpdateTableLevelRequest::setLevelId(long levelId) {
+  levelId_ = levelId;
+  setParameter(std::string("LevelId"), std::to_string(levelId));
+}
+
+std::string UpdateTableLevelRequest::getName() const {
+  return name_;
+}
+
+void UpdateTableLevelRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 
 long UpdateTableLevelRequest::getProjectId() const {

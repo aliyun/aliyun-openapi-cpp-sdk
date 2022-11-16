@@ -30,22 +30,22 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT UpdateTableModelInfoRequest : public 
 public:
 	UpdateTableModelInfoRequest();
 	~UpdateTableModelInfoRequest();
+	int getLevelType() const;
+	void setLevelType(int levelType);
 	long getSecondLevelThemeId() const;
 	void setSecondLevelThemeId(long secondLevelThemeId);
 	std::string getTableGuid() const;
 	void setTableGuid(const std::string &tableGuid);
 	long getLevelId() const;
 	void setLevelId(long levelId);
-	int getLevelType() const;
-	void setLevelType(int levelType);
 	long getFirstLevelThemeId() const;
 	void setFirstLevelThemeId(long firstLevelThemeId);
 
 private:
+	int levelType_;
 	long secondLevelThemeId_;
 	std::string tableGuid_;
 	long levelId_;
-	int levelType_;
 	long firstLevelThemeId_;
 };
 } // namespace Model

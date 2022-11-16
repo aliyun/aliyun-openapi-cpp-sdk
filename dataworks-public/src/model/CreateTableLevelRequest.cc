@@ -34,15 +34,6 @@ void CreateTableLevelRequest::setLevelType(int levelType) {
   setParameter(std::string("LevelType"), std::to_string(levelType));
 }
 
-std::string CreateTableLevelRequest::getName() const {
-  return name_;
-}
-
-void CreateTableLevelRequest::setName(const std::string &name) {
-  name_ = name;
-  setParameter(std::string("Name"), name);
-}
-
 std::string CreateTableLevelRequest::getDescription() const {
   return description_;
 }
@@ -50,6 +41,15 @@ std::string CreateTableLevelRequest::getDescription() const {
 void CreateTableLevelRequest::setDescription(const std::string &description) {
   description_ = description;
   setParameter(std::string("Description"), description);
+}
+
+std::string CreateTableLevelRequest::getName() const {
+  return name_;
+}
+
+void CreateTableLevelRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 
 long CreateTableLevelRequest::getProjectId() const {

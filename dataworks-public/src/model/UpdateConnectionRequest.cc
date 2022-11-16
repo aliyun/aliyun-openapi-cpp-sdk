@@ -25,15 +25,6 @@ UpdateConnectionRequest::UpdateConnectionRequest()
 
 UpdateConnectionRequest::~UpdateConnectionRequest() {}
 
-int UpdateConnectionRequest::getEnvType() const {
-  return envType_;
-}
-
-void UpdateConnectionRequest::setEnvType(int envType) {
-  envType_ = envType;
-  setParameter(std::string("EnvType"), std::to_string(envType));
-}
-
 std::string UpdateConnectionRequest::getDescription() const {
   return description_;
 }
@@ -43,15 +34,6 @@ void UpdateConnectionRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
-long UpdateConnectionRequest::getConnectionId() const {
-  return connectionId_;
-}
-
-void UpdateConnectionRequest::setConnectionId(long connectionId) {
-  connectionId_ = connectionId;
-  setParameter(std::string("ConnectionId"), std::to_string(connectionId));
-}
-
 std::string UpdateConnectionRequest::getContent() const {
   return content_;
 }
@@ -59,6 +41,24 @@ std::string UpdateConnectionRequest::getContent() const {
 void UpdateConnectionRequest::setContent(const std::string &content) {
   content_ = content;
   setParameter(std::string("Content"), content);
+}
+
+int UpdateConnectionRequest::getEnvType() const {
+  return envType_;
+}
+
+void UpdateConnectionRequest::setEnvType(int envType) {
+  envType_ = envType;
+  setParameter(std::string("EnvType"), std::to_string(envType));
+}
+
+long UpdateConnectionRequest::getConnectionId() const {
+  return connectionId_;
+}
+
+void UpdateConnectionRequest::setConnectionId(long connectionId) {
+  connectionId_ = connectionId;
+  setParameter(std::string("ConnectionId"), std::to_string(connectionId));
 }
 
 std::string UpdateConnectionRequest::getStatus() const {

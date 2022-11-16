@@ -72,6 +72,7 @@ namespace AlibabaCloud
 					std::vector<NodesItem> nodes;
 					std::vector<BaselinesItem> baselines;
 					long remindId;
+					std::vector<std::string> webhooks;
 					std::string remindUnit;
 					std::vector<std::string> alertTargets;
 					bool useflag;

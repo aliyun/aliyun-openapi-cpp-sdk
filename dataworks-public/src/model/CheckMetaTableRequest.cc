@@ -34,6 +34,15 @@ void CheckMetaTableRequest::setDataSourceType(const std::string &dataSourceType)
   setParameter(std::string("DataSourceType"), dataSourceType);
 }
 
+std::string CheckMetaTableRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void CheckMetaTableRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
+}
+
 std::string CheckMetaTableRequest::getTableGuid() const {
   return tableGuid_;
 }
@@ -50,15 +59,6 @@ std::string CheckMetaTableRequest::getDatabaseName() const {
 void CheckMetaTableRequest::setDatabaseName(const std::string &databaseName) {
   databaseName_ = databaseName;
   setParameter(std::string("DatabaseName"), databaseName);
-}
-
-std::string CheckMetaTableRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void CheckMetaTableRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string CheckMetaTableRequest::getTableName() const {

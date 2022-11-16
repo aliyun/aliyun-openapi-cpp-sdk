@@ -34,6 +34,15 @@ void ListMigrationsRequest::setOwner(const std::string &owner) {
   setBodyParameter(std::string("Owner"), owner);
 }
 
+int ListMigrationsRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void ListMigrationsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
 int ListMigrationsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -59,14 +68,5 @@ long ListMigrationsRequest::getProjectId() const {
 void ListMigrationsRequest::setProjectId(long projectId) {
   projectId_ = projectId;
   setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
-int ListMigrationsRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void ListMigrationsRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

@@ -30,20 +30,20 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListDataServiceApplicationsRequest : 
 public:
 	ListDataServiceApplicationsRequest();
 	~ListDataServiceApplicationsRequest();
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	long getTenantId() const;
 	void setTenantId(long tenantId);
 	std::string getProjectIdList() const;
 	void setProjectIdList(const std::string &projectIdList);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
 
 private:
+	int pageNumber_;
 	int pageSize_;
 	long tenantId_;
 	std::string projectIdList_;
-	int pageNumber_;
 };
 } // namespace Model
 } // namespace Dataworks_public

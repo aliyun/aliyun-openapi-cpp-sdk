@@ -32,10 +32,6 @@ public:
 		std::string paramKey;
 		std::string paramValue;
 	};
-	struct BodyParams {
-		std::string paramKey;
-		std::string paramValue;
-	};
 	struct QueryParam {
 		std::string paramKey;
 		std::string paramValue;
@@ -44,27 +40,31 @@ public:
 		std::string paramKey;
 		std::string paramValue;
 	};
+	struct BodyParams {
+		std::string paramKey;
+		std::string paramValue;
+	};
 	TestDataServiceApiRequest();
 	~TestDataServiceApiRequest();
 	std::vector<PathParams> getPathParams() const;
 	void setPathParams(const std::vector<PathParams> &pathParams);
-	std::string getBodyContent() const;
-	void setBodyContent(const std::string &bodyContent);
-	std::vector<BodyParams> getBodyParams() const;
-	void setBodyParams(const std::vector<BodyParams> &bodyParams);
 	std::vector<QueryParam> getQueryParam() const;
 	void setQueryParam(const std::vector<QueryParam> &queryParam);
 	std::vector<HeadParams> getHeadParams() const;
 	void setHeadParams(const std::vector<HeadParams> &headParams);
+	std::string getBodyContent() const;
+	void setBodyContent(const std::string &bodyContent);
+	std::vector<BodyParams> getBodyParams() const;
+	void setBodyParams(const std::vector<BodyParams> &bodyParams);
 	long getApiId() const;
 	void setApiId(long apiId);
 
 private:
 	std::vector<PathParams> pathParams_;
-	std::string bodyContent_;
-	std::vector<BodyParams> bodyParams_;
 	std::vector<QueryParam> queryParam_;
 	std::vector<HeadParams> headParams_;
+	std::string bodyContent_;
+	std::vector<BodyParams> bodyParams_;
 	long apiId_;
 };
 } // namespace Model

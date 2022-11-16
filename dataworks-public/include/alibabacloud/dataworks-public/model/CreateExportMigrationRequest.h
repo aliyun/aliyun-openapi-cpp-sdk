@@ -30,25 +30,25 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateExportMigrationRequest : public
 public:
 	CreateExportMigrationRequest();
 	~CreateExportMigrationRequest();
+	long getIncrementalSince() const;
+	void setIncrementalSince(long incrementalSince);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
 	std::string getExportObjectStatus() const;
 	void setExportObjectStatus(const std::string &exportObjectStatus);
 	std::string getExportMode() const;
 	void setExportMode(const std::string &exportMode);
-	long getIncrementalSince() const;
-	void setIncrementalSince(long incrementalSince);
 	std::string getName() const;
 	void setName(const std::string &name);
-	std::string getDescription() const;
-	void setDescription(const std::string &description);
 	long getProjectId() const;
 	void setProjectId(long projectId);
 
 private:
+	long incrementalSince_;
+	std::string description_;
 	std::string exportObjectStatus_;
 	std::string exportMode_;
-	long incrementalSince_;
 	std::string name_;
-	std::string description_;
 	long projectId_;
 };
 } // namespace Model

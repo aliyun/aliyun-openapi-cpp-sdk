@@ -34,15 +34,6 @@ void ListQualityRulesRequest::setProjectName(const std::string &projectName) {
   setBodyParameter(std::string("ProjectName"), projectName);
 }
 
-int ListQualityRulesRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListQualityRulesRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 long ListQualityRulesRequest::getEntityId() const {
   return entityId_;
 }
@@ -59,5 +50,14 @@ int ListQualityRulesRequest::getPageNumber() const {
 void ListQualityRulesRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+int ListQualityRulesRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListQualityRulesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

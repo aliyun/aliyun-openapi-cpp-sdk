@@ -34,6 +34,15 @@ void CheckMetaPartitionRequest::setDataSourceType(const std::string &dataSourceT
   setParameter(std::string("DataSourceType"), dataSourceType);
 }
 
+std::string CheckMetaPartitionRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void CheckMetaPartitionRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
+}
+
 std::string CheckMetaPartitionRequest::getPartition() const {
   return partition_;
 }
@@ -59,15 +68,6 @@ std::string CheckMetaPartitionRequest::getDatabaseName() const {
 void CheckMetaPartitionRequest::setDatabaseName(const std::string &databaseName) {
   databaseName_ = databaseName;
   setParameter(std::string("DatabaseName"), databaseName);
-}
-
-std::string CheckMetaPartitionRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void CheckMetaPartitionRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string CheckMetaPartitionRequest::getTableName() const {

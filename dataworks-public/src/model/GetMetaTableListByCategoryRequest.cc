@@ -25,15 +25,6 @@ GetMetaTableListByCategoryRequest::GetMetaTableListByCategoryRequest()
 
 GetMetaTableListByCategoryRequest::~GetMetaTableListByCategoryRequest() {}
 
-int GetMetaTableListByCategoryRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void GetMetaTableListByCategoryRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 int GetMetaTableListByCategoryRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -41,6 +32,15 @@ int GetMetaTableListByCategoryRequest::getPageNumber() const {
 void GetMetaTableListByCategoryRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+int GetMetaTableListByCategoryRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void GetMetaTableListByCategoryRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
 long GetMetaTableListByCategoryRequest::getCategoryId() const {

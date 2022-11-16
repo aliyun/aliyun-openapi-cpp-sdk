@@ -32,18 +32,18 @@ public:
 	~ListQualityRulesRequest();
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	long getEntityId() const;
 	void setEntityId(long entityId);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 
 private:
 	std::string projectName_;
-	int pageSize_;
 	long entityId_;
 	int pageNumber_;
+	int pageSize_;
 };
 } // namespace Model
 } // namespace Dataworks_public

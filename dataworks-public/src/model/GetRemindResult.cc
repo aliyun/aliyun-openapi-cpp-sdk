@@ -122,6 +122,9 @@ void GetRemindResult::parse(const std::string &payload)
 		auto allAlertMethods = dataNode["AlertMethods"]["AlertMethods"];
 		for (auto value : allAlertMethods)
 			data_.alertMethods.push_back(value.asString());
+		auto allWebhooks = dataNode["Webhooks"]["Webhooks"];
+		for (auto value : allWebhooks)
+			data_.webhooks.push_back(value.asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["ErrorMessage"].isNull())

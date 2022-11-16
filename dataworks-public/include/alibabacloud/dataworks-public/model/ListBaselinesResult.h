@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTUSAGEFORRESOURCEGROUPRESULT_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTUSAGEFORRESOURCEGROUPRESULT_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTBASELINESRESULT_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTBASELINESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,43 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListUsageForResourceGroupResult : public ServiceResult
+			class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListBaselinesResult : public ServiceResult
 			{
 			public:
-				struct PopUsageForResourceGroupDto
+				struct Data
 				{
-					double usage;
-					long recodeTime;
+					struct BaselinesItem
+					{
+						struct OverTimeSettingsItem
+						{
+							std::string time;
+							int cycle;
+						};
+						long baselineId;
+						std::string owner;
+						std::string baselineType;
+						int priority;
+						long projectId;
+						std::string baselineName;
+						bool enabled;
+						bool alertEnabled;
+						std::vector<BaselinesItem::OverTimeSettingsItem> overTimeSettings;
+						int alertMarginThreshold;
+					};
+					std::string totalCount;
+					std::string pageSize;
+					std::string pageNumber;
+					std::vector<BaselinesItem> baselines;
 				};
 
 
-				ListUsageForResourceGroupResult();
-				explicit ListUsageForResourceGroupResult(const std::string &payload);
-				~ListUsageForResourceGroupResult();
+				ListBaselinesResult();
+				explicit ListBaselinesResult(const std::string &payload);
+				~ListBaselinesResult();
+				std::string getDynamicErrorMessage()const;
 				int getHttpStatusCode()const;
-				std::vector<PopUsageForResourceGroupDto> getData()const;
+				Data getData()const;
+				std::string getDynamicErrorCode()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -51,8 +73,10 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dynamicErrorMessage_;
 				int httpStatusCode_;
-				std::vector<PopUsageForResourceGroupDto> data_;
+				Data data_;
+				std::string dynamicErrorCode_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -61,4 +85,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTUSAGEFORRESOURCEGROUPRESULT_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTBASELINESRESULT_H_

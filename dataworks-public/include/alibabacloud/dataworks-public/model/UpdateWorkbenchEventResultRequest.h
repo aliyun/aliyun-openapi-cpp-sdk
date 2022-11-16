@@ -30,19 +30,19 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT UpdateWorkbenchEventResultRequest : p
 public:
 	UpdateWorkbenchEventResultRequest();
 	~UpdateWorkbenchEventResultRequest();
-	std::string getCheckResultTip() const;
-	void setCheckResultTip(const std::string &checkResultTip);
 	std::string getCheckResult() const;
 	void setCheckResult(const std::string &checkResult);
 	std::string getMessageId() const;
 	void setMessageId(const std::string &messageId);
+	std::string getCheckResultTip() const;
+	void setCheckResultTip(const std::string &checkResultTip);
 	std::string getExtensionCode() const;
 	void setExtensionCode(const std::string &extensionCode);
 
 private:
-	std::string checkResultTip_;
 	std::string checkResult_;
 	std::string messageId_;
+	std::string checkResultTip_;
 	std::string extensionCode_;
 };
 } // namespace Model

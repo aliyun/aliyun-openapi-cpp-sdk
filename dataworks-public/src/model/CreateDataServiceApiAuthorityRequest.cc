@@ -34,15 +34,6 @@ void CreateDataServiceApiAuthorityRequest::setAuthorizedProjectId(long authorize
   setBodyParameter(std::string("AuthorizedProjectId"), std::to_string(authorizedProjectId));
 }
 
-long CreateDataServiceApiAuthorityRequest::getTenantId() const {
-  return tenantId_;
-}
-
-void CreateDataServiceApiAuthorityRequest::setTenantId(long tenantId) {
-  tenantId_ = tenantId;
-  setBodyParameter(std::string("TenantId"), std::to_string(tenantId));
-}
-
 long CreateDataServiceApiAuthorityRequest::getEndTime() const {
   return endTime_;
 }
@@ -50,6 +41,15 @@ long CreateDataServiceApiAuthorityRequest::getEndTime() const {
 void CreateDataServiceApiAuthorityRequest::setEndTime(long endTime) {
   endTime_ = endTime;
   setBodyParameter(std::string("EndTime"), std::to_string(endTime));
+}
+
+long CreateDataServiceApiAuthorityRequest::getTenantId() const {
+  return tenantId_;
+}
+
+void CreateDataServiceApiAuthorityRequest::setTenantId(long tenantId) {
+  tenantId_ = tenantId;
+  setBodyParameter(std::string("TenantId"), std::to_string(tenantId));
 }
 
 long CreateDataServiceApiAuthorityRequest::getProjectId() const {

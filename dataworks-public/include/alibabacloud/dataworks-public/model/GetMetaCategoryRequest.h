@@ -32,15 +32,15 @@ public:
 	~GetMetaCategoryRequest();
 	long getParentCategoryId() const;
 	void setParentCategoryId(long parentCategoryId);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 
 private:
 	long parentCategoryId_;
-	int pageSize_;
 	int pageNum_;
+	int pageSize_;
 };
 } // namespace Model
 } // namespace Dataworks_public

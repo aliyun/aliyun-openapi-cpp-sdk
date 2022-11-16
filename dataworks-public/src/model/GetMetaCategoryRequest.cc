@@ -34,15 +34,6 @@ void GetMetaCategoryRequest::setParentCategoryId(long parentCategoryId) {
   setParameter(std::string("ParentCategoryId"), std::to_string(parentCategoryId));
 }
 
-int GetMetaCategoryRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void GetMetaCategoryRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 int GetMetaCategoryRequest::getPageNum() const {
   return pageNum_;
 }
@@ -50,5 +41,14 @@ int GetMetaCategoryRequest::getPageNum() const {
 void GetMetaCategoryRequest::setPageNum(int pageNum) {
   pageNum_ = pageNum;
   setParameter(std::string("PageNum"), std::to_string(pageNum));
+}
+
+int GetMetaCategoryRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void GetMetaCategoryRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

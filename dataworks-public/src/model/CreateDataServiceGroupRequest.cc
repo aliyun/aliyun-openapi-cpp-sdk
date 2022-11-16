@@ -25,6 +25,24 @@ CreateDataServiceGroupRequest::CreateDataServiceGroupRequest()
 
 CreateDataServiceGroupRequest::~CreateDataServiceGroupRequest() {}
 
+std::string CreateDataServiceGroupRequest::getDescription() const {
+  return description_;
+}
+
+void CreateDataServiceGroupRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setBodyParameter(std::string("Description"), description);
+}
+
+std::string CreateDataServiceGroupRequest::getGroupName() const {
+  return groupName_;
+}
+
+void CreateDataServiceGroupRequest::setGroupName(const std::string &groupName) {
+  groupName_ = groupName;
+  setBodyParameter(std::string("GroupName"), groupName);
+}
+
 std::string CreateDataServiceGroupRequest::getApiGatewayGroupId() const {
   return apiGatewayGroupId_;
 }
@@ -43,15 +61,6 @@ void CreateDataServiceGroupRequest::setTenantId(long tenantId) {
   setBodyParameter(std::string("TenantId"), std::to_string(tenantId));
 }
 
-std::string CreateDataServiceGroupRequest::getDescription() const {
-  return description_;
-}
-
-void CreateDataServiceGroupRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setBodyParameter(std::string("Description"), description);
-}
-
 long CreateDataServiceGroupRequest::getProjectId() const {
   return projectId_;
 }
@@ -59,14 +68,5 @@ long CreateDataServiceGroupRequest::getProjectId() const {
 void CreateDataServiceGroupRequest::setProjectId(long projectId) {
   projectId_ = projectId;
   setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
-std::string CreateDataServiceGroupRequest::getGroupName() const {
-  return groupName_;
-}
-
-void CreateDataServiceGroupRequest::setGroupName(const std::string &groupName) {
-  groupName_ = groupName;
-  setBodyParameter(std::string("GroupName"), groupName);
 }
 

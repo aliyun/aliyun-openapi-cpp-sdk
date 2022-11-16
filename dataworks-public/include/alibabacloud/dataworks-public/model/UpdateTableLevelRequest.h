@@ -30,22 +30,22 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT UpdateTableLevelRequest : public RpcS
 public:
 	UpdateTableLevelRequest();
 	~UpdateTableLevelRequest();
-	long getLevelId() const;
-	void setLevelId(long levelId);
 	int getLevelType() const;
 	void setLevelType(int levelType);
-	std::string getName() const;
-	void setName(const std::string &name);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	long getLevelId() const;
+	void setLevelId(long levelId);
+	std::string getName() const;
+	void setName(const std::string &name);
 	long getProjectId() const;
 	void setProjectId(long projectId);
 
 private:
-	long levelId_;
 	int levelType_;
-	std::string name_;
 	std::string description_;
+	long levelId_;
+	std::string name_;
 	long projectId_;
 };
 } // namespace Model

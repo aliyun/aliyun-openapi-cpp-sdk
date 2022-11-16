@@ -20,7 +20,7 @@ using AlibabaCloud::Dataworks_public::Model::ListExtensionsRequest;
 
 ListExtensionsRequest::ListExtensionsRequest()
     : RpcServiceRequest("dataworks-public", "2020-05-18", "ListExtensions") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListExtensionsRequest::~ListExtensionsRequest() {}

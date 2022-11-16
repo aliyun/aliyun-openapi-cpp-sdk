@@ -30,20 +30,20 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListTableThemeRequest : public RpcSer
 public:
 	ListTableThemeRequest();
 	~ListTableThemeRequest();
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	long getProjectId() const;
-	void setProjectId(long projectId);
 	long getParentId() const;
 	void setParentId(long parentId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
-	int pageSize_;
 	int pageNum_;
-	long projectId_;
 	long parentId_;
+	int pageSize_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

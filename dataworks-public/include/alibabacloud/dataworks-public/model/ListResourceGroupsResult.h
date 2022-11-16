@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct DataItem
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					int status;
 					bool isDefault;
 					std::string createTime;
@@ -42,12 +47,14 @@ namespace AlibabaCloud
 					int sequence;
 					std::string resourceGroupType;
 					std::string name;
+					std::string resourceManagerResourceGroupId;
 					long tenantId;
 					std::string identifier;
 					bool enableKp;
 					std::string bizExtKey;
 					std::string updateTime;
 					long id;
+					std::vector<DataItem::Tag> tags;
 					std::string specs;
 				};
 

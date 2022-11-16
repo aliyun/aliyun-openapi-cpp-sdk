@@ -32,18 +32,18 @@ public:
 	~CreateTableThemeRequest();
 	int getLevel() const;
 	void setLevel(int level);
+	long getParentId() const;
+	void setParentId(long parentId);
 	std::string getName() const;
 	void setName(const std::string &name);
 	long getProjectId() const;
 	void setProjectId(long projectId);
-	long getParentId() const;
-	void setParentId(long parentId);
 
 private:
 	int level_;
+	long parentId_;
 	std::string name_;
 	long projectId_;
-	long parentId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

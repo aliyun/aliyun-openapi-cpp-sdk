@@ -32,10 +32,10 @@ public:
 	~CreateDataServiceApiAuthorityRequest();
 	long getAuthorizedProjectId() const;
 	void setAuthorizedProjectId(long authorizedProjectId);
-	long getTenantId() const;
-	void setTenantId(long tenantId);
 	long getEndTime() const;
 	void setEndTime(long endTime);
+	long getTenantId() const;
+	void setTenantId(long tenantId);
 	long getProjectId() const;
 	void setProjectId(long projectId);
 	long getApiId() const;
@@ -43,8 +43,8 @@ public:
 
 private:
 	long authorizedProjectId_;
-	long tenantId_;
 	long endTime_;
+	long tenantId_;
 	long projectId_;
 	long apiId_;
 };

@@ -30,23 +30,23 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListDataServiceGroupsRequest : public
 public:
 	ListDataServiceGroupsRequest();
 	~ListDataServiceGroupsRequest();
+	std::string getGroupNameKeyword() const;
+	void setGroupNameKeyword(const std::string &groupNameKeyword);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	long getTenantId() const;
 	void setTenantId(long tenantId);
 	long getProjectId() const;
 	void setProjectId(long projectId);
-	std::string getGroupNameKeyword() const;
-	void setGroupNameKeyword(const std::string &groupNameKeyword);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
 
 private:
+	std::string groupNameKeyword_;
+	int pageNumber_;
 	int pageSize_;
 	long tenantId_;
 	long projectId_;
-	std::string groupNameKeyword_;
-	int pageNumber_;
 };
 } // namespace Model
 } // namespace Dataworks_public

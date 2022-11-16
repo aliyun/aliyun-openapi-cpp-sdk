@@ -34,6 +34,24 @@ void ListQualityResultsByRuleRequest::setProjectName(const std::string &projectN
   setBodyParameter(std::string("ProjectName"), projectName);
 }
 
+std::string ListQualityResultsByRuleRequest::getStartDate() const {
+  return startDate_;
+}
+
+void ListQualityResultsByRuleRequest::setStartDate(const std::string &startDate) {
+  startDate_ = startDate;
+  setBodyParameter(std::string("StartDate"), startDate);
+}
+
+int ListQualityResultsByRuleRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void ListQualityResultsByRuleRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
 std::string ListQualityResultsByRuleRequest::getEndDate() const {
   return endDate_;
 }
@@ -59,23 +77,5 @@ int ListQualityResultsByRuleRequest::getRuleId() const {
 void ListQualityResultsByRuleRequest::setRuleId(int ruleId) {
   ruleId_ = ruleId;
   setBodyParameter(std::string("RuleId"), std::to_string(ruleId));
-}
-
-std::string ListQualityResultsByRuleRequest::getStartDate() const {
-  return startDate_;
-}
-
-void ListQualityResultsByRuleRequest::setStartDate(const std::string &startDate) {
-  startDate_ = startDate;
-  setBodyParameter(std::string("StartDate"), startDate);
-}
-
-int ListQualityResultsByRuleRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void ListQualityResultsByRuleRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setBodyParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

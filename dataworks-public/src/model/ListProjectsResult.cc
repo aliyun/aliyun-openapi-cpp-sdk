@@ -64,6 +64,26 @@ void ListProjectsResult::parse(const std::string &payload)
 			projectObject.projectDescription = pageResultNodeProjectListProject["ProjectDescription"].asString();
 		if(!pageResultNodeProjectListProject["ProjectOwnerBaseId"].isNull())
 			projectObject.projectOwnerBaseId = pageResultNodeProjectListProject["ProjectOwnerBaseId"].asString();
+		if(!pageResultNodeProjectListProject["ResourceManagerResourceGroupId"].isNull())
+			projectObject.resourceManagerResourceGroupId = pageResultNodeProjectListProject["ResourceManagerResourceGroupId"].asString();
+		if(!pageResultNodeProjectListProject["DisableDevelopment"].isNull())
+			projectObject.disableDevelopment = pageResultNodeProjectListProject["DisableDevelopment"].asString() == "true";
+		if(!pageResultNodeProjectListProject["UseProxyOdpsAccount"].isNull())
+			projectObject.useProxyOdpsAccount = pageResultNodeProjectListProject["UseProxyOdpsAccount"].asString() == "true";
+		if(!pageResultNodeProjectListProject["TablePrivacyMode"].isNull())
+			projectObject.tablePrivacyMode = std::stoi(pageResultNodeProjectListProject["TablePrivacyMode"].asString());
+		if(!pageResultNodeProjectListProject["IsDefault"].isNull())
+			projectObject.isDefault = std::stoi(pageResultNodeProjectListProject["IsDefault"].asString());
+		auto allTagsNode = pageResultNodeProjectListProject["Tags"]["Tag"];
+		for (auto pageResultNodeProjectListProjectTagsTag : allTagsNode)
+		{
+			PageResult::Project::Tag tagsObject;
+			if(!pageResultNodeProjectListProjectTagsTag["Key"].isNull())
+				tagsObject.key = pageResultNodeProjectListProjectTagsTag["Key"].asString();
+			if(!pageResultNodeProjectListProjectTagsTag["Value"].isNull())
+				tagsObject.value = pageResultNodeProjectListProjectTagsTag["Value"].asString();
+			projectObject.tags.push_back(tagsObject);
+		}
 		pageResult_.projectList.push_back(projectObject);
 	}
 

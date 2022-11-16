@@ -34,15 +34,6 @@ void CreateDataServiceFolderRequest::setGroupId(const std::string &groupId) {
   setBodyParameter(std::string("GroupId"), groupId);
 }
 
-long CreateDataServiceFolderRequest::getTenantId() const {
-  return tenantId_;
-}
-
-void CreateDataServiceFolderRequest::setTenantId(long tenantId) {
-  tenantId_ = tenantId;
-  setBodyParameter(std::string("TenantId"), std::to_string(tenantId));
-}
-
 std::string CreateDataServiceFolderRequest::getFolderName() const {
   return folderName_;
 }
@@ -52,15 +43,6 @@ void CreateDataServiceFolderRequest::setFolderName(const std::string &folderName
   setBodyParameter(std::string("FolderName"), folderName);
 }
 
-long CreateDataServiceFolderRequest::getProjectId() const {
-  return projectId_;
-}
-
-void CreateDataServiceFolderRequest::setProjectId(long projectId) {
-  projectId_ = projectId;
-  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
 long CreateDataServiceFolderRequest::getParentId() const {
   return parentId_;
 }
@@ -68,5 +50,23 @@ long CreateDataServiceFolderRequest::getParentId() const {
 void CreateDataServiceFolderRequest::setParentId(long parentId) {
   parentId_ = parentId;
   setBodyParameter(std::string("ParentId"), std::to_string(parentId));
+}
+
+long CreateDataServiceFolderRequest::getTenantId() const {
+  return tenantId_;
+}
+
+void CreateDataServiceFolderRequest::setTenantId(long tenantId) {
+  tenantId_ = tenantId;
+  setBodyParameter(std::string("TenantId"), std::to_string(tenantId));
+}
+
+long CreateDataServiceFolderRequest::getProjectId() const {
+  return projectId_;
+}
+
+void CreateDataServiceFolderRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 

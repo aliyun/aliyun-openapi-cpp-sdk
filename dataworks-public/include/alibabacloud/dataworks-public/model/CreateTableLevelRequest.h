@@ -32,17 +32,17 @@ public:
 	~CreateTableLevelRequest();
 	int getLevelType() const;
 	void setLevelType(int levelType);
-	std::string getName() const;
-	void setName(const std::string &name);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getName() const;
+	void setName(const std::string &name);
 	long getProjectId() const;
 	void setProjectId(long projectId);
 
 private:
 	int levelType_;
-	std::string name_;
 	std::string description_;
+	std::string name_;
 	long projectId_;
 };
 } // namespace Model

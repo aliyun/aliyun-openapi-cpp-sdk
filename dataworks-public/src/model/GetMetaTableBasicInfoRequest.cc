@@ -43,6 +43,15 @@ void GetMetaTableBasicInfoRequest::setExtension(bool extension) {
   setParameter(std::string("Extension"), extension ? "true" : "false");
 }
 
+std::string GetMetaTableBasicInfoRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void GetMetaTableBasicInfoRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
+}
+
 std::string GetMetaTableBasicInfoRequest::getTableGuid() const {
   return tableGuid_;
 }
@@ -59,15 +68,6 @@ std::string GetMetaTableBasicInfoRequest::getDatabaseName() const {
 void GetMetaTableBasicInfoRequest::setDatabaseName(const std::string &databaseName) {
   databaseName_ = databaseName;
   setParameter(std::string("DatabaseName"), databaseName);
-}
-
-std::string GetMetaTableBasicInfoRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void GetMetaTableBasicInfoRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string GetMetaTableBasicInfoRequest::getTableName() const {

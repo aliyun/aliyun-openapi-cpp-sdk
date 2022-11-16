@@ -43,6 +43,69 @@ void CreateDataServiceApiRequest::setRequestMethod(int requestMethod) {
   setBodyParameter(std::string("RequestMethod"), std::to_string(requestMethod));
 }
 
+std::string CreateDataServiceApiRequest::getApiDescription() const {
+  return apiDescription_;
+}
+
+void CreateDataServiceApiRequest::setApiDescription(const std::string &apiDescription) {
+  apiDescription_ = apiDescription;
+  setBodyParameter(std::string("ApiDescription"), apiDescription);
+}
+
+int CreateDataServiceApiRequest::getTimeout() const {
+  return timeout_;
+}
+
+void CreateDataServiceApiRequest::setTimeout(int timeout) {
+  timeout_ = timeout;
+  setBodyParameter(std::string("Timeout"), std::to_string(timeout));
+}
+
+long CreateDataServiceApiRequest::getFolderId() const {
+  return folderId_;
+}
+
+void CreateDataServiceApiRequest::setFolderId(long folderId) {
+  folderId_ = folderId;
+  setBodyParameter(std::string("FolderId"), std::to_string(folderId));
+}
+
+long CreateDataServiceApiRequest::getTenantId() const {
+  return tenantId_;
+}
+
+void CreateDataServiceApiRequest::setTenantId(long tenantId) {
+  tenantId_ = tenantId;
+  setBodyParameter(std::string("TenantId"), std::to_string(tenantId));
+}
+
+std::string CreateDataServiceApiRequest::getProtocols() const {
+  return protocols_;
+}
+
+void CreateDataServiceApiRequest::setProtocols(const std::string &protocols) {
+  protocols_ = protocols;
+  setBodyParameter(std::string("Protocols"), protocols);
+}
+
+long CreateDataServiceApiRequest::getProjectId() const {
+  return projectId_;
+}
+
+void CreateDataServiceApiRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+
+int CreateDataServiceApiRequest::getResponseContentType() const {
+  return responseContentType_;
+}
+
+void CreateDataServiceApiRequest::setResponseContentType(int responseContentType) {
+  responseContentType_ = responseContentType;
+  setBodyParameter(std::string("ResponseContentType"), std::to_string(responseContentType));
+}
+
 std::string CreateDataServiceApiRequest::getGroupId() const {
   return groupId_;
 }
@@ -88,33 +151,6 @@ void CreateDataServiceApiRequest::setVisibleRange(int visibleRange) {
   setBodyParameter(std::string("VisibleRange"), std::to_string(visibleRange));
 }
 
-std::string CreateDataServiceApiRequest::getApiDescription() const {
-  return apiDescription_;
-}
-
-void CreateDataServiceApiRequest::setApiDescription(const std::string &apiDescription) {
-  apiDescription_ = apiDescription;
-  setBodyParameter(std::string("ApiDescription"), apiDescription);
-}
-
-int CreateDataServiceApiRequest::getTimeout() const {
-  return timeout_;
-}
-
-void CreateDataServiceApiRequest::setTimeout(int timeout) {
-  timeout_ = timeout;
-  setBodyParameter(std::string("Timeout"), std::to_string(timeout));
-}
-
-long CreateDataServiceApiRequest::getFolderId() const {
-  return folderId_;
-}
-
-void CreateDataServiceApiRequest::setFolderId(long folderId) {
-  folderId_ = folderId;
-  setBodyParameter(std::string("FolderId"), std::to_string(folderId));
-}
-
 std::string CreateDataServiceApiRequest::getRegistrationDetails() const {
   return registrationDetails_;
 }
@@ -131,41 +167,5 @@ std::string CreateDataServiceApiRequest::getApiName() const {
 void CreateDataServiceApiRequest::setApiName(const std::string &apiName) {
   apiName_ = apiName;
   setBodyParameter(std::string("ApiName"), apiName);
-}
-
-long CreateDataServiceApiRequest::getTenantId() const {
-  return tenantId_;
-}
-
-void CreateDataServiceApiRequest::setTenantId(long tenantId) {
-  tenantId_ = tenantId;
-  setBodyParameter(std::string("TenantId"), std::to_string(tenantId));
-}
-
-std::string CreateDataServiceApiRequest::getProtocols() const {
-  return protocols_;
-}
-
-void CreateDataServiceApiRequest::setProtocols(const std::string &protocols) {
-  protocols_ = protocols;
-  setBodyParameter(std::string("Protocols"), protocols);
-}
-
-long CreateDataServiceApiRequest::getProjectId() const {
-  return projectId_;
-}
-
-void CreateDataServiceApiRequest::setProjectId(long projectId) {
-  projectId_ = projectId;
-  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
-int CreateDataServiceApiRequest::getResponseContentType() const {
-  return responseContentType_;
-}
-
-void CreateDataServiceApiRequest::setResponseContentType(int responseContentType) {
-  responseContentType_ = responseContentType;
-  setBodyParameter(std::string("ResponseContentType"), std::to_string(responseContentType));
 }
 

@@ -25,15 +25,6 @@ CreateRemindRequest::CreateRemindRequest()
 
 CreateRemindRequest::~CreateRemindRequest() {}
 
-std::string CreateRemindRequest::getDndEnd() const {
-  return dndEnd_;
-}
-
-void CreateRemindRequest::setDndEnd(const std::string &dndEnd) {
-  dndEnd_ = dndEnd;
-  setBodyParameter(std::string("DndEnd"), dndEnd);
-}
-
 std::string CreateRemindRequest::getAlertUnit() const {
   return alertUnit_;
 }
@@ -41,6 +32,60 @@ std::string CreateRemindRequest::getAlertUnit() const {
 void CreateRemindRequest::setAlertUnit(const std::string &alertUnit) {
   alertUnit_ = alertUnit;
   setBodyParameter(std::string("AlertUnit"), alertUnit);
+}
+
+std::string CreateRemindRequest::getRobotUrls() const {
+  return robotUrls_;
+}
+
+void CreateRemindRequest::setRobotUrls(const std::string &robotUrls) {
+  robotUrls_ = robotUrls;
+  setBodyParameter(std::string("RobotUrls"), robotUrls);
+}
+
+std::string CreateRemindRequest::getBizProcessIds() const {
+  return bizProcessIds_;
+}
+
+void CreateRemindRequest::setBizProcessIds(const std::string &bizProcessIds) {
+  bizProcessIds_ = bizProcessIds;
+  setBodyParameter(std::string("BizProcessIds"), bizProcessIds);
+}
+
+std::string CreateRemindRequest::getRemindType() const {
+  return remindType_;
+}
+
+void CreateRemindRequest::setRemindType(const std::string &remindType) {
+  remindType_ = remindType;
+  setBodyParameter(std::string("RemindType"), remindType);
+}
+
+std::string CreateRemindRequest::getBaselineIds() const {
+  return baselineIds_;
+}
+
+void CreateRemindRequest::setBaselineIds(const std::string &baselineIds) {
+  baselineIds_ = baselineIds;
+  setBodyParameter(std::string("BaselineIds"), baselineIds);
+}
+
+long CreateRemindRequest::getProjectId() const {
+  return projectId_;
+}
+
+void CreateRemindRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+
+std::string CreateRemindRequest::getDndEnd() const {
+  return dndEnd_;
+}
+
+void CreateRemindRequest::setDndEnd(const std::string &dndEnd) {
+  dndEnd_ = dndEnd;
+  setBodyParameter(std::string("DndEnd"), dndEnd);
 }
 
 std::string CreateRemindRequest::getRemindUnit() const {
@@ -70,15 +115,6 @@ void CreateRemindRequest::setAlertMethods(const std::string &alertMethods) {
   setBodyParameter(std::string("AlertMethods"), alertMethods);
 }
 
-std::string CreateRemindRequest::getRobotUrls() const {
-  return robotUrls_;
-}
-
-void CreateRemindRequest::setRobotUrls(const std::string &robotUrls) {
-  robotUrls_ = robotUrls;
-  setBodyParameter(std::string("RobotUrls"), robotUrls);
-}
-
 int CreateRemindRequest::getMaxAlertTimes() const {
   return maxAlertTimes_;
 }
@@ -86,24 +122,6 @@ int CreateRemindRequest::getMaxAlertTimes() const {
 void CreateRemindRequest::setMaxAlertTimes(int maxAlertTimes) {
   maxAlertTimes_ = maxAlertTimes;
   setBodyParameter(std::string("MaxAlertTimes"), std::to_string(maxAlertTimes));
-}
-
-std::string CreateRemindRequest::getBizProcessIds() const {
-  return bizProcessIds_;
-}
-
-void CreateRemindRequest::setBizProcessIds(const std::string &bizProcessIds) {
-  bizProcessIds_ = bizProcessIds;
-  setBodyParameter(std::string("BizProcessIds"), bizProcessIds);
-}
-
-std::string CreateRemindRequest::getRemindType() const {
-  return remindType_;
-}
-
-void CreateRemindRequest::setRemindType(const std::string &remindType) {
-  remindType_ = remindType;
-  setBodyParameter(std::string("RemindType"), remindType);
 }
 
 std::string CreateRemindRequest::getAlertTargets() const {
@@ -115,13 +133,13 @@ void CreateRemindRequest::setAlertTargets(const std::string &alertTargets) {
   setBodyParameter(std::string("AlertTargets"), alertTargets);
 }
 
-std::string CreateRemindRequest::getBaselineIds() const {
-  return baselineIds_;
+std::string CreateRemindRequest::getWebhooks() const {
+  return webhooks_;
 }
 
-void CreateRemindRequest::setBaselineIds(const std::string &baselineIds) {
-  baselineIds_ = baselineIds;
-  setBodyParameter(std::string("BaselineIds"), baselineIds);
+void CreateRemindRequest::setWebhooks(const std::string &webhooks) {
+  webhooks_ = webhooks;
+  setBodyParameter(std::string("Webhooks"), webhooks);
 }
 
 std::string CreateRemindRequest::getDetail() const {
@@ -140,15 +158,6 @@ std::string CreateRemindRequest::getRemindName() const {
 void CreateRemindRequest::setRemindName(const std::string &remindName) {
   remindName_ = remindName;
   setBodyParameter(std::string("RemindName"), remindName);
-}
-
-long CreateRemindRequest::getProjectId() const {
-  return projectId_;
-}
-
-void CreateRemindRequest::setProjectId(long projectId) {
-  projectId_ = projectId;
-  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
 std::string CreateRemindRequest::getNodeIds() const {

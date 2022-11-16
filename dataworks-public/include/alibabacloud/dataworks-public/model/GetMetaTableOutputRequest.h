@@ -30,23 +30,23 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetMetaTableOutputRequest : public Rp
 public:
 	GetMetaTableOutputRequest();
 	~GetMetaTableOutputRequest();
+	std::string getStartDate() const;
+	void setStartDate(const std::string &startDate);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	std::string getEndDate() const;
 	void setEndDate(const std::string &endDate);
 	std::string getTableGuid() const;
 	void setTableGuid(const std::string &tableGuid);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	std::string getStartDate() const;
-	void setStartDate(const std::string &startDate);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
 
 private:
+	std::string startDate_;
+	int pageNumber_;
 	std::string endDate_;
 	std::string tableGuid_;
 	int pageSize_;
-	std::string startDate_;
-	int pageNumber_;
 };
 } // namespace Model
 } // namespace Dataworks_public

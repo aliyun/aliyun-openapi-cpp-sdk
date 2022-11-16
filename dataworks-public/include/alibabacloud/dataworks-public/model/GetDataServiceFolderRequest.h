@@ -30,17 +30,17 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT GetDataServiceFolderRequest : public 
 public:
 	GetDataServiceFolderRequest();
 	~GetDataServiceFolderRequest();
+	long getFolderId() const;
+	void setFolderId(long folderId);
 	long getTenantId() const;
 	void setTenantId(long tenantId);
 	long getProjectId() const;
 	void setProjectId(long projectId);
-	long getFolderId() const;
-	void setFolderId(long folderId);
 
 private:
+	long folderId_;
 	long tenantId_;
 	long projectId_;
-	long folderId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

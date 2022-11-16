@@ -25,6 +25,15 @@ CreateMetaCategoryRequest::CreateMetaCategoryRequest()
 
 CreateMetaCategoryRequest::~CreateMetaCategoryRequest() {}
 
+long CreateMetaCategoryRequest::getParentId() const {
+  return parentId_;
+}
+
+void CreateMetaCategoryRequest::setParentId(long parentId) {
+  parentId_ = parentId;
+  setBodyParameter(std::string("ParentId"), std::to_string(parentId));
+}
+
 std::string CreateMetaCategoryRequest::getName() const {
   return name_;
 }
@@ -41,14 +50,5 @@ std::string CreateMetaCategoryRequest::getComment() const {
 void CreateMetaCategoryRequest::setComment(const std::string &comment) {
   comment_ = comment;
   setBodyParameter(std::string("Comment"), comment);
-}
-
-long CreateMetaCategoryRequest::getParentId() const {
-  return parentId_;
-}
-
-void CreateMetaCategoryRequest::setParentId(long parentId) {
-  parentId_ = parentId;
-  setBodyParameter(std::string("ParentId"), std::to_string(parentId));
 }
 

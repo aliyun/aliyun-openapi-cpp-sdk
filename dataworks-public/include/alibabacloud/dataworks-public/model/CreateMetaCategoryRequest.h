@@ -30,17 +30,17 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT CreateMetaCategoryRequest : public Rp
 public:
 	CreateMetaCategoryRequest();
 	~CreateMetaCategoryRequest();
+	long getParentId() const;
+	void setParentId(long parentId);
 	std::string getName() const;
 	void setName(const std::string &name);
 	std::string getComment() const;
 	void setComment(const std::string &comment);
-	long getParentId() const;
-	void setParentId(long parentId);
 
 private:
+	long parentId_;
 	std::string name_;
 	std::string comment_;
-	long parentId_;
 };
 } // namespace Model
 } // namespace Dataworks_public
