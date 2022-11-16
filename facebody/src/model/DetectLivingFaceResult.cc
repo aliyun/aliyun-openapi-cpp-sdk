@@ -48,6 +48,8 @@ void DetectLivingFaceResult::parse(const std::string &payload)
 			elementObject.imageURL = dataNodeElementsElement["ImageURL"].asString();
 		if(!dataNodeElementsElement["TaskId"].isNull())
 			elementObject.taskId = dataNodeElementsElement["TaskId"].asString();
+		if(!dataNodeElementsElement["FaceNumber"].isNull())
+			elementObject.faceNumber = std::stol(dataNodeElementsElement["FaceNumber"].asString());
 		auto allResultsNode = dataNodeElementsElement["Results"]["Result"];
 		for (auto dataNodeElementsElementResultsResult : allResultsNode)
 		{
@@ -58,6 +60,8 @@ void DetectLivingFaceResult::parse(const std::string &payload)
 				resultsObject.label = dataNodeElementsElementResultsResult["Label"].asString();
 			if(!dataNodeElementsElementResultsResult["Rate"].isNull())
 				resultsObject.rate = std::stof(dataNodeElementsElementResultsResult["Rate"].asString());
+			if(!dataNodeElementsElementResultsResult["MessageTips"].isNull())
+				resultsObject.messageTips = dataNodeElementsElementResultsResult["MessageTips"].asString();
 			auto allFramesNode = dataNodeElementsElementResultsResult["Frames"]["Frame"];
 			for (auto dataNodeElementsElementResultsResultFramesFrame : allFramesNode)
 			{
@@ -68,6 +72,15 @@ void DetectLivingFaceResult::parse(const std::string &payload)
 					framesObject.rate = std::stof(dataNodeElementsElementResultsResultFramesFrame["Rate"].asString());
 				resultsObject.frames.push_back(framesObject);
 			}
+			auto rectNode = value["Rect"];
+			if(!rectNode["Left"].isNull())
+				resultsObject.rect.left = std::stol(rectNode["Left"].asString());
+			if(!rectNode["Top"].isNull())
+				resultsObject.rect.top = std::stol(rectNode["Top"].asString());
+			if(!rectNode["Width"].isNull())
+				resultsObject.rect.width = std::stol(rectNode["Width"].asString());
+			if(!rectNode["Height"].isNull())
+				resultsObject.rect.height = std::stol(rectNode["Height"].asString());
 			elementObject.results.push_back(resultsObject);
 		}
 		data_.elements.push_back(elementObject);

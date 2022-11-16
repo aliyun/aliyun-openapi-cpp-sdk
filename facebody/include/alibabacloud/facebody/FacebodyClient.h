@@ -84,8 +84,6 @@
 #include "model/ExtractFingerPrintResult.h"
 #include "model/ExtractPedestrianFeatureAttrRequest.h"
 #include "model/ExtractPedestrianFeatureAttrResult.h"
-#include "model/ExtractPedestrianFeatureAttributeRequest.h"
-#include "model/ExtractPedestrianFeatureAttributeResult.h"
 #include "model/FaceBeautyRequest.h"
 #include "model/FaceBeautyResult.h"
 #include "model/FaceFilterRequest.h"
@@ -252,9 +250,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExtractPedestrianFeatureAttrResult> ExtractPedestrianFeatureAttrOutcome;
 			typedef std::future<ExtractPedestrianFeatureAttrOutcome> ExtractPedestrianFeatureAttrOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::ExtractPedestrianFeatureAttrRequest&, const ExtractPedestrianFeatureAttrOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExtractPedestrianFeatureAttrAsyncHandler;
-			typedef Outcome<Error, Model::ExtractPedestrianFeatureAttributeResult> ExtractPedestrianFeatureAttributeOutcome;
-			typedef std::future<ExtractPedestrianFeatureAttributeOutcome> ExtractPedestrianFeatureAttributeOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::ExtractPedestrianFeatureAttributeRequest&, const ExtractPedestrianFeatureAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExtractPedestrianFeatureAttributeAsyncHandler;
 			typedef Outcome<Error, Model::FaceBeautyResult> FaceBeautyOutcome;
 			typedef std::future<FaceBeautyOutcome> FaceBeautyOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::FaceBeautyRequest&, const FaceBeautyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FaceBeautyAsyncHandler;
@@ -449,9 +444,6 @@ namespace AlibabaCloud
 			ExtractPedestrianFeatureAttrOutcome extractPedestrianFeatureAttr(const Model::ExtractPedestrianFeatureAttrRequest &request)const;
 			void extractPedestrianFeatureAttrAsync(const Model::ExtractPedestrianFeatureAttrRequest& request, const ExtractPedestrianFeatureAttrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExtractPedestrianFeatureAttrOutcomeCallable extractPedestrianFeatureAttrCallable(const Model::ExtractPedestrianFeatureAttrRequest& request) const;
-			ExtractPedestrianFeatureAttributeOutcome extractPedestrianFeatureAttribute(const Model::ExtractPedestrianFeatureAttributeRequest &request)const;
-			void extractPedestrianFeatureAttributeAsync(const Model::ExtractPedestrianFeatureAttributeRequest& request, const ExtractPedestrianFeatureAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ExtractPedestrianFeatureAttributeOutcomeCallable extractPedestrianFeatureAttributeCallable(const Model::ExtractPedestrianFeatureAttributeRequest& request) const;
 			FaceBeautyOutcome faceBeauty(const Model::FaceBeautyRequest &request)const;
 			void faceBeautyAsync(const Model::FaceBeautyRequest& request, const FaceBeautyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FaceBeautyOutcomeCallable faceBeautyCallable(const Model::FaceBeautyRequest& request) const;

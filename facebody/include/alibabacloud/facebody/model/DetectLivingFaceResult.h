@@ -38,19 +38,29 @@ namespace AlibabaCloud
 					{
 						struct Result
 						{
+							struct Rect
+							{
+								long left;
+								long top;
+								long height;
+								long width;
+							};
 							struct Frame
 							{
 								float rate;
 								std::string url;
 							};
+							std::string messageTips;
 							std::vector<Result::Frame> frames;
 							std::string suggestion;
+							Rect rect;
 							float rate;
 							std::string label;
 						};
 						std::string taskId;
 						std::vector<Element::Result> results;
 						std::string imageURL;
+						long faceNumber;
 					};
 					std::vector<Element> elements;
 				};
