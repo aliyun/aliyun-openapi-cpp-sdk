@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				UploadPCACertResult();
 				explicit UploadPCACertResult(const std::string &payload);
 				~UploadPCACertResult();
+				std::string getIdentifier()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string identifier_;
 
 			};
 		}

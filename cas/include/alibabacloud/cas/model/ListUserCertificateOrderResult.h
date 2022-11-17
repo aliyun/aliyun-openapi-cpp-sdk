@@ -34,25 +34,41 @@ namespace AlibabaCloud
 			public:
 				struct CertificateOrderListItem
 				{
-					std::string status;
+					std::string sha2;
 					std::string productName;
-					std::string instanceId;
-					std::string productCode;
-					long certEndTime;
+					std::string issuer;
+					long certificateId;
 					std::string sourceType;
 					std::string certType;
-					long wildDomainCount;
+					bool upload;
 					std::string partnerOrderId;
-					long certStartTime;
-					long orderId;
-					std::string algorithm;
+					std::string orgName;
 					std::string rootBrand;
+					std::string name;
+					std::string startDate;
 					long aliyunOrderId;
 					std::string domainType;
 					std::string trusteeStatus;
+					std::string sans;
+					long domainCount;
+					std::string commonName;
+					std::string status;
+					std::string serialNo;
+					std::string fingerprint;
+					std::string instanceId;
+					std::string productCode;
+					long certEndTime;
+					long wildDomainCount;
+					bool expired;
+					std::string city;
+					long certStartTime;
+					long orderId;
+					std::string algorithm;
+					std::string endDate;
+					std::string province;
+					std::string country;
 					std::string domain;
 					long buyDate;
-					long domainCount;
 				};
 
 

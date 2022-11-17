@@ -14,38 +14,45 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cas/model/UploadPCACertResult.h>
+#include <alibabacloud/cas/model/GetCertWarehouseQuotaResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Cas;
 using namespace AlibabaCloud::Cas::Model;
 
-UploadPCACertResult::UploadPCACertResult() :
+GetCertWarehouseQuotaResult::GetCertWarehouseQuotaResult() :
 	ServiceResult()
 {}
 
-UploadPCACertResult::UploadPCACertResult(const std::string &payload) :
+GetCertWarehouseQuotaResult::GetCertWarehouseQuotaResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UploadPCACertResult::~UploadPCACertResult()
+GetCertWarehouseQuotaResult::~GetCertWarehouseQuotaResult()
 {}
 
-void UploadPCACertResult::parse(const std::string &payload)
+void GetCertWarehouseQuotaResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Identifier"].isNull())
-		identifier_ = value["Identifier"].asString();
+	if(!value["TotalQuota"].isNull())
+		totalQuota_ = std::stol(value["TotalQuota"].asString());
+	if(!value["UseCount"].isNull())
+		useCount_ = std::stol(value["UseCount"].asString());
 
 }
 
-std::string UploadPCACertResult::getIdentifier()const
+long GetCertWarehouseQuotaResult::getTotalQuota()const
 {
-	return identifier_;
+	return totalQuota_;
+}
+
+long GetCertWarehouseQuotaResult::getUseCount()const
+{
+	return useCount_;
 }
 

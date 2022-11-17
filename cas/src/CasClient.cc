@@ -231,42 +231,6 @@ CasClient::CreateCertificateWithCsrRequestOutcomeCallable CasClient::createCerti
 	return task->get_future();
 }
 
-CasClient::CreateWHCertificateWithExtensionOutcome CasClient::createWHCertificateWithExtension(const CreateWHCertificateWithExtensionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateWHCertificateWithExtensionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateWHCertificateWithExtensionOutcome(CreateWHCertificateWithExtensionResult(outcome.result()));
-	else
-		return CreateWHCertificateWithExtensionOutcome(outcome.error());
-}
-
-void CasClient::createWHCertificateWithExtensionAsync(const CreateWHCertificateWithExtensionRequest& request, const CreateWHCertificateWithExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createWHCertificateWithExtension(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CasClient::CreateWHCertificateWithExtensionOutcomeCallable CasClient::createWHCertificateWithExtensionCallable(const CreateWHCertificateWithExtensionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateWHCertificateWithExtensionOutcome()>>(
-			[this, request]()
-			{
-			return this->createWHCertificateWithExtension(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CasClient::CreateWHClientCertificateOutcome CasClient::createWHClientCertificate(const CreateWHClientCertificateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +477,42 @@ CasClient::EncryptOutcomeCallable CasClient::encryptCallable(const EncryptReques
 			[this, request]()
 			{
 			return this->encrypt(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CasClient::GetCertWarehouseQuotaOutcome CasClient::getCertWarehouseQuota(const GetCertWarehouseQuotaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCertWarehouseQuotaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCertWarehouseQuotaOutcome(GetCertWarehouseQuotaResult(outcome.result()));
+	else
+		return GetCertWarehouseQuotaOutcome(outcome.error());
+}
+
+void CasClient::getCertWarehouseQuotaAsync(const GetCertWarehouseQuotaRequest& request, const GetCertWarehouseQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCertWarehouseQuota(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CasClient::GetCertWarehouseQuotaOutcomeCallable CasClient::getCertWarehouseQuotaCallable(const GetCertWarehouseQuotaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCertWarehouseQuotaOutcome()>>(
+			[this, request]()
+			{
+			return this->getCertWarehouseQuota(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

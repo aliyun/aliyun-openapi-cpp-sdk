@@ -25,24 +25,6 @@ ListUserCertificateOrderRequest::ListUserCertificateOrderRequest()
 
 ListUserCertificateOrderRequest::~ListUserCertificateOrderRequest() {}
 
-std::string ListUserCertificateOrderRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void ListUserCertificateOrderRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
-}
-
-std::string ListUserCertificateOrderRequest::getKeyword() const {
-  return keyword_;
-}
-
-void ListUserCertificateOrderRequest::setKeyword(const std::string &keyword) {
-  keyword_ = keyword;
-  setParameter(std::string("Keyword"), keyword);
-}
-
 long ListUserCertificateOrderRequest::getShowSize() const {
   return showSize_;
 }
@@ -59,6 +41,24 @@ long ListUserCertificateOrderRequest::getCurrentPage() const {
 void ListUserCertificateOrderRequest::setCurrentPage(long currentPage) {
   currentPage_ = currentPage;
   setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string ListUserCertificateOrderRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void ListUserCertificateOrderRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string ListUserCertificateOrderRequest::getKeyword() const {
+  return keyword_;
+}
+
+void ListUserCertificateOrderRequest::setKeyword(const std::string &keyword) {
+  keyword_ = keyword;
+  setParameter(std::string("Keyword"), keyword);
 }
 
 std::string ListUserCertificateOrderRequest::getStatus() const {

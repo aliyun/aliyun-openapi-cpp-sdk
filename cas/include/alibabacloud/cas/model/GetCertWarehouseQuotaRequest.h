@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CAS_MODEL_LISTCERTREQUEST_H_
-#define ALIBABACLOUD_CAS_MODEL_LISTCERTREQUEST_H_
+#ifndef ALIBABACLOUD_CAS_MODEL_GETCERTWAREHOUSEQUOTAREQUEST_H_
+#define ALIBABACLOUD_CAS_MODEL_GETCERTWAREHOUSEQUOTAREQUEST_H_
 
 #include <alibabacloud/cas/CasExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,17 @@
 namespace AlibabaCloud {
 namespace Cas {
 namespace Model {
-class ALIBABACLOUD_CAS_EXPORT ListCertRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CAS_EXPORT GetCertWarehouseQuotaRequest : public RpcServiceRequest {
 public:
-	ListCertRequest();
-	~ListCertRequest();
+	GetCertWarehouseQuotaRequest();
+	~GetCertWarehouseQuotaRequest();
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	long getWarehouseId() const;
-	void setWarehouseId(long warehouseId);
-	std::string getSourceType() const;
-	void setSourceType(const std::string &sourceType);
-	std::string getKeyWord() const;
-	void setKeyWord(const std::string &keyWord);
-	long getShowSize() const;
-	void setShowSize(long showSize);
-	long getCurrentPage() const;
-	void setCurrentPage(long currentPage);
-	std::string getStatus() const;
-	void setStatus(const std::string &status);
 
 private:
 	std::string sourceIp_;
-	long warehouseId_;
-	std::string sourceType_;
-	std::string keyWord_;
-	long showSize_;
-	long currentPage_;
-	std::string status_;
 };
 } // namespace Model
 } // namespace Cas
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CAS_MODEL_LISTCERTREQUEST_H_
+#endif // !ALIBABACLOUD_CAS_MODEL_GETCERTWAREHOUSEQUOTAREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CAS_MODEL_CREATEWHCERTIFICATEWITHEXTENSIONRESULT_H_
-#define ALIBABACLOUD_CAS_MODEL_CREATEWHCERTIFICATEWITHEXTENSIONRESULT_H_
+#ifndef ALIBABACLOUD_CAS_MODEL_GETCERTWAREHOUSEQUOTARESULT_H_
+#define ALIBABACLOUD_CAS_MODEL_GETCERTWAREHOUSEQUOTARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CAS_EXPORT CreateWHCertificateWithExtensionResult : public ServiceResult
+			class ALIBABACLOUD_CAS_EXPORT GetCertWarehouseQuotaResult : public ServiceResult
 			{
 			public:
 
 
-				CreateWHCertificateWithExtensionResult();
-				explicit CreateWHCertificateWithExtensionResult(const std::string &payload);
-				~CreateWHCertificateWithExtensionResult();
-				std::string getIdentifier()const;
-				std::string getCertificateChain()const;
-				std::string getCertificate()const;
+				GetCertWarehouseQuotaResult();
+				explicit GetCertWarehouseQuotaResult(const std::string &payload);
+				~GetCertWarehouseQuotaResult();
+				long getTotalQuota()const;
+				long getUseCount()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string identifier_;
-				std::string certificateChain_;
-				std::string certificate_;
+				long totalQuota_;
+				long useCount_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CAS_MODEL_CREATEWHCERTIFICATEWITHEXTENSIONRESULT_H_
+#endif // !ALIBABACLOUD_CAS_MODEL_GETCERTWAREHOUSEQUOTARESULT_H_

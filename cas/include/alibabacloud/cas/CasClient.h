@@ -32,8 +32,6 @@
 #include "model/CreateCertificateRequestResult.h"
 #include "model/CreateCertificateWithCsrRequestRequest.h"
 #include "model/CreateCertificateWithCsrRequestResult.h"
-#include "model/CreateWHCertificateWithExtensionRequest.h"
-#include "model/CreateWHCertificateWithExtensionResult.h"
 #include "model/CreateWHClientCertificateRequest.h"
 #include "model/CreateWHClientCertificateResult.h"
 #include "model/DecryptRequest.h"
@@ -48,6 +46,8 @@
 #include "model/DescribePackageStateResult.h"
 #include "model/EncryptRequest.h"
 #include "model/EncryptResult.h"
+#include "model/GetCertWarehouseQuotaRequest.h"
+#include "model/GetCertWarehouseQuotaResult.h"
 #include "model/ListCertRequest.h"
 #include "model/ListCertResult.h"
 #include "model/ListCertWarehouseRequest.h"
@@ -88,9 +88,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCertificateWithCsrRequestResult> CreateCertificateWithCsrRequestOutcome;
 			typedef std::future<CreateCertificateWithCsrRequestOutcome> CreateCertificateWithCsrRequestOutcomeCallable;
 			typedef std::function<void(const CasClient*, const Model::CreateCertificateWithCsrRequestRequest&, const CreateCertificateWithCsrRequestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCertificateWithCsrRequestAsyncHandler;
-			typedef Outcome<Error, Model::CreateWHCertificateWithExtensionResult> CreateWHCertificateWithExtensionOutcome;
-			typedef std::future<CreateWHCertificateWithExtensionOutcome> CreateWHCertificateWithExtensionOutcomeCallable;
-			typedef std::function<void(const CasClient*, const Model::CreateWHCertificateWithExtensionRequest&, const CreateWHCertificateWithExtensionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateWHCertificateWithExtensionAsyncHandler;
 			typedef Outcome<Error, Model::CreateWHClientCertificateResult> CreateWHClientCertificateOutcome;
 			typedef std::future<CreateWHClientCertificateOutcome> CreateWHClientCertificateOutcomeCallable;
 			typedef std::function<void(const CasClient*, const Model::CreateWHClientCertificateRequest&, const CreateWHClientCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateWHClientCertificateAsyncHandler;
@@ -112,6 +109,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EncryptResult> EncryptOutcome;
 			typedef std::future<EncryptOutcome> EncryptOutcomeCallable;
 			typedef std::function<void(const CasClient*, const Model::EncryptRequest&, const EncryptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EncryptAsyncHandler;
+			typedef Outcome<Error, Model::GetCertWarehouseQuotaResult> GetCertWarehouseQuotaOutcome;
+			typedef std::future<GetCertWarehouseQuotaOutcome> GetCertWarehouseQuotaOutcomeCallable;
+			typedef std::function<void(const CasClient*, const Model::GetCertWarehouseQuotaRequest&, const GetCertWarehouseQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCertWarehouseQuotaAsyncHandler;
 			typedef Outcome<Error, Model::ListCertResult> ListCertOutcome;
 			typedef std::future<ListCertOutcome> ListCertOutcomeCallable;
 			typedef std::function<void(const CasClient*, const Model::ListCertRequest&, const ListCertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCertAsyncHandler;
@@ -156,9 +156,6 @@ namespace AlibabaCloud
 			CreateCertificateWithCsrRequestOutcome createCertificateWithCsrRequest(const Model::CreateCertificateWithCsrRequestRequest &request)const;
 			void createCertificateWithCsrRequestAsync(const Model::CreateCertificateWithCsrRequestRequest& request, const CreateCertificateWithCsrRequestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCertificateWithCsrRequestOutcomeCallable createCertificateWithCsrRequestCallable(const Model::CreateCertificateWithCsrRequestRequest& request) const;
-			CreateWHCertificateWithExtensionOutcome createWHCertificateWithExtension(const Model::CreateWHCertificateWithExtensionRequest &request)const;
-			void createWHCertificateWithExtensionAsync(const Model::CreateWHCertificateWithExtensionRequest& request, const CreateWHCertificateWithExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateWHCertificateWithExtensionOutcomeCallable createWHCertificateWithExtensionCallable(const Model::CreateWHCertificateWithExtensionRequest& request) const;
 			CreateWHClientCertificateOutcome createWHClientCertificate(const Model::CreateWHClientCertificateRequest &request)const;
 			void createWHClientCertificateAsync(const Model::CreateWHClientCertificateRequest& request, const CreateWHClientCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateWHClientCertificateOutcomeCallable createWHClientCertificateCallable(const Model::CreateWHClientCertificateRequest& request) const;
@@ -180,6 +177,9 @@ namespace AlibabaCloud
 			EncryptOutcome encrypt(const Model::EncryptRequest &request)const;
 			void encryptAsync(const Model::EncryptRequest& request, const EncryptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EncryptOutcomeCallable encryptCallable(const Model::EncryptRequest& request) const;
+			GetCertWarehouseQuotaOutcome getCertWarehouseQuota(const Model::GetCertWarehouseQuotaRequest &request)const;
+			void getCertWarehouseQuotaAsync(const Model::GetCertWarehouseQuotaRequest& request, const GetCertWarehouseQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetCertWarehouseQuotaOutcomeCallable getCertWarehouseQuotaCallable(const Model::GetCertWarehouseQuotaRequest& request) const;
 			ListCertOutcome listCert(const Model::ListCertRequest &request)const;
 			void listCertAsync(const Model::ListCertRequest& request, const ListCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCertOutcomeCallable listCertCallable(const Model::ListCertRequest& request) const;

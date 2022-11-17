@@ -30,24 +30,24 @@ class ALIBABACLOUD_CAS_EXPORT ListUserCertificateOrderRequest : public RpcServic
 public:
 	ListUserCertificateOrderRequest();
 	~ListUserCertificateOrderRequest();
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
-	std::string getKeyword() const;
-	void setKeyword(const std::string &keyword);
 	long getShowSize() const;
 	void setShowSize(long showSize);
 	long getCurrentPage() const;
 	void setCurrentPage(long currentPage);
+	std::string getSourceIp() const;
+	void setSourceIp(const std::string &sourceIp);
+	std::string getKeyword() const;
+	void setKeyword(const std::string &keyword);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 	std::string getOrderType() const;
 	void setOrderType(const std::string &orderType);
 
 private:
-	std::string sourceIp_;
-	std::string keyword_;
 	long showSize_;
 	long currentPage_;
+	std::string sourceIp_;
+	std::string keyword_;
 	std::string status_;
 	std::string orderType_;
 };

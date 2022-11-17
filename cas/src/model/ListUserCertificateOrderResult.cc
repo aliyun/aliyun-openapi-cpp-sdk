@@ -81,6 +81,38 @@ void ListUserCertificateOrderResult::parse(const std::string &payload)
 			certificateOrderListObject.trusteeStatus = valueCertificateOrderListCertificateOrderListItem["TrusteeStatus"].asString();
 		if(!valueCertificateOrderListCertificateOrderListItem["WildDomainCount"].isNull())
 			certificateOrderListObject.wildDomainCount = std::stol(valueCertificateOrderListCertificateOrderListItem["WildDomainCount"].asString());
+		if(!valueCertificateOrderListCertificateOrderListItem["CertificateId"].isNull())
+			certificateOrderListObject.certificateId = std::stol(valueCertificateOrderListCertificateOrderListItem["CertificateId"].asString());
+		if(!valueCertificateOrderListCertificateOrderListItem["Name"].isNull())
+			certificateOrderListObject.name = valueCertificateOrderListCertificateOrderListItem["Name"].asString();
+		if(!valueCertificateOrderListCertificateOrderListItem["CommonName"].isNull())
+			certificateOrderListObject.commonName = valueCertificateOrderListCertificateOrderListItem["CommonName"].asString();
+		if(!valueCertificateOrderListCertificateOrderListItem["Fingerprint"].isNull())
+			certificateOrderListObject.fingerprint = valueCertificateOrderListCertificateOrderListItem["Fingerprint"].asString();
+		if(!valueCertificateOrderListCertificateOrderListItem["Sha2"].isNull())
+			certificateOrderListObject.sha2 = valueCertificateOrderListCertificateOrderListItem["Sha2"].asString();
+		if(!valueCertificateOrderListCertificateOrderListItem["SerialNo"].isNull())
+			certificateOrderListObject.serialNo = valueCertificateOrderListCertificateOrderListItem["SerialNo"].asString();
+		if(!valueCertificateOrderListCertificateOrderListItem["Issuer"].isNull())
+			certificateOrderListObject.issuer = valueCertificateOrderListCertificateOrderListItem["Issuer"].asString();
+		if(!valueCertificateOrderListCertificateOrderListItem["OrgName"].isNull())
+			certificateOrderListObject.orgName = valueCertificateOrderListCertificateOrderListItem["OrgName"].asString();
+		if(!valueCertificateOrderListCertificateOrderListItem["Province"].isNull())
+			certificateOrderListObject.province = valueCertificateOrderListCertificateOrderListItem["Province"].asString();
+		if(!valueCertificateOrderListCertificateOrderListItem["City"].isNull())
+			certificateOrderListObject.city = valueCertificateOrderListCertificateOrderListItem["City"].asString();
+		if(!valueCertificateOrderListCertificateOrderListItem["Country"].isNull())
+			certificateOrderListObject.country = valueCertificateOrderListCertificateOrderListItem["Country"].asString();
+		if(!valueCertificateOrderListCertificateOrderListItem["Sans"].isNull())
+			certificateOrderListObject.sans = valueCertificateOrderListCertificateOrderListItem["Sans"].asString();
+		if(!valueCertificateOrderListCertificateOrderListItem["Expired"].isNull())
+			certificateOrderListObject.expired = valueCertificateOrderListCertificateOrderListItem["Expired"].asString() == "true";
+		if(!valueCertificateOrderListCertificateOrderListItem["Upload"].isNull())
+			certificateOrderListObject.upload = valueCertificateOrderListCertificateOrderListItem["Upload"].asString() == "true";
+		if(!valueCertificateOrderListCertificateOrderListItem["StartDate"].isNull())
+			certificateOrderListObject.startDate = valueCertificateOrderListCertificateOrderListItem["StartDate"].asString();
+		if(!valueCertificateOrderListCertificateOrderListItem["EndDate"].isNull())
+			certificateOrderListObject.endDate = valueCertificateOrderListCertificateOrderListItem["EndDate"].asString();
 		certificateOrderList_.push_back(certificateOrderListObject);
 	}
 	if(!value["ShowSize"].isNull())

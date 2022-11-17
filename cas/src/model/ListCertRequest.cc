@@ -25,24 +25,6 @@ ListCertRequest::ListCertRequest()
 
 ListCertRequest::~ListCertRequest() {}
 
-long ListCertRequest::getShowSize() const {
-  return showSize_;
-}
-
-void ListCertRequest::setShowSize(long showSize) {
-  showSize_ = showSize;
-  setParameter(std::string("ShowSize"), std::to_string(showSize));
-}
-
-long ListCertRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void ListCertRequest::setCurrentPage(long currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string ListCertRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -61,6 +43,15 @@ void ListCertRequest::setWarehouseId(long warehouseId) {
   setParameter(std::string("WarehouseId"), std::to_string(warehouseId));
 }
 
+std::string ListCertRequest::getSourceType() const {
+  return sourceType_;
+}
+
+void ListCertRequest::setSourceType(const std::string &sourceType) {
+  sourceType_ = sourceType;
+  setParameter(std::string("SourceType"), sourceType);
+}
+
 std::string ListCertRequest::getKeyWord() const {
   return keyWord_;
 }
@@ -68,6 +59,24 @@ std::string ListCertRequest::getKeyWord() const {
 void ListCertRequest::setKeyWord(const std::string &keyWord) {
   keyWord_ = keyWord;
   setParameter(std::string("KeyWord"), keyWord);
+}
+
+long ListCertRequest::getShowSize() const {
+  return showSize_;
+}
+
+void ListCertRequest::setShowSize(long showSize) {
+  showSize_ = showSize;
+  setParameter(std::string("ShowSize"), std::to_string(showSize));
+}
+
+long ListCertRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void ListCertRequest::setCurrentPage(long currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
 std::string ListCertRequest::getStatus() const {

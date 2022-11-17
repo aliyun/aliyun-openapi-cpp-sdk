@@ -31,8 +31,6 @@ set(cas_public_header_model
 	include/alibabacloud/cas/model/CreateCertificateRequestResult.h
 	include/alibabacloud/cas/model/CreateCertificateWithCsrRequestRequest.h
 	include/alibabacloud/cas/model/CreateCertificateWithCsrRequestResult.h
-	include/alibabacloud/cas/model/CreateWHCertificateWithExtensionRequest.h
-	include/alibabacloud/cas/model/CreateWHCertificateWithExtensionResult.h
 	include/alibabacloud/cas/model/CreateWHClientCertificateRequest.h
 	include/alibabacloud/cas/model/CreateWHClientCertificateResult.h
 	include/alibabacloud/cas/model/DecryptRequest.h
@@ -47,6 +45,8 @@ set(cas_public_header_model
 	include/alibabacloud/cas/model/DescribePackageStateResult.h
 	include/alibabacloud/cas/model/EncryptRequest.h
 	include/alibabacloud/cas/model/EncryptResult.h
+	include/alibabacloud/cas/model/GetCertWarehouseQuotaRequest.h
+	include/alibabacloud/cas/model/GetCertWarehouseQuotaResult.h
 	include/alibabacloud/cas/model/ListCertRequest.h
 	include/alibabacloud/cas/model/ListCertResult.h
 	include/alibabacloud/cas/model/ListCertWarehouseRequest.h
@@ -76,8 +76,6 @@ set(cas_src
 	src/model/CreateCertificateRequestResult.cc
 	src/model/CreateCertificateWithCsrRequestRequest.cc
 	src/model/CreateCertificateWithCsrRequestResult.cc
-	src/model/CreateWHCertificateWithExtensionRequest.cc
-	src/model/CreateWHCertificateWithExtensionResult.cc
 	src/model/CreateWHClientCertificateRequest.cc
 	src/model/CreateWHClientCertificateResult.cc
 	src/model/DecryptRequest.cc
@@ -92,6 +90,8 @@ set(cas_src
 	src/model/DescribePackageStateResult.cc
 	src/model/EncryptRequest.cc
 	src/model/EncryptResult.cc
+	src/model/GetCertWarehouseQuotaRequest.cc
+	src/model/GetCertWarehouseQuotaResult.cc
 	src/model/ListCertRequest.cc
 	src/model/ListCertResult.cc
 	src/model/ListCertWarehouseRequest.cc
