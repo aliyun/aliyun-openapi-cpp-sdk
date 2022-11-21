@@ -123,6 +123,8 @@ set(ehpc_public_header_model
 	include/alibabacloud/ehpc/model/GetHybridClusterConfigResult.h
 	include/alibabacloud/ehpc/model/GetIfEcsTypeSupportHtConfigRequest.h
 	include/alibabacloud/ehpc/model/GetIfEcsTypeSupportHtConfigResult.h
+	include/alibabacloud/ehpc/model/GetJobLogRequest.h
+	include/alibabacloud/ehpc/model/GetJobLogResult.h
 	include/alibabacloud/ehpc/model/GetPostScriptsRequest.h
 	include/alibabacloud/ehpc/model/GetPostScriptsResult.h
 	include/alibabacloud/ehpc/model/GetSchedulerInfoRequest.h
@@ -390,6 +392,8 @@ set(ehpc_src
 	src/model/GetHybridClusterConfigResult.cc
 	src/model/GetIfEcsTypeSupportHtConfigRequest.cc
 	src/model/GetIfEcsTypeSupportHtConfigResult.cc
+	src/model/GetJobLogRequest.cc
+	src/model/GetJobLogResult.cc
 	src/model/GetPostScriptsRequest.cc
 	src/model/GetPostScriptsResult.cc
 	src/model/GetSchedulerInfoRequest.cc

@@ -124,6 +124,8 @@
 #include "model/GetHybridClusterConfigResult.h"
 #include "model/GetIfEcsTypeSupportHtConfigRequest.h"
 #include "model/GetIfEcsTypeSupportHtConfigResult.h"
+#include "model/GetJobLogRequest.h"
+#include "model/GetJobLogResult.h"
 #include "model/GetPostScriptsRequest.h"
 #include "model/GetPostScriptsResult.h"
 #include "model/GetSchedulerInfoRequest.h"
@@ -448,6 +450,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetIfEcsTypeSupportHtConfigResult> GetIfEcsTypeSupportHtConfigOutcome;
 			typedef std::future<GetIfEcsTypeSupportHtConfigOutcome> GetIfEcsTypeSupportHtConfigOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetIfEcsTypeSupportHtConfigRequest&, const GetIfEcsTypeSupportHtConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetIfEcsTypeSupportHtConfigAsyncHandler;
+			typedef Outcome<Error, Model::GetJobLogResult> GetJobLogOutcome;
+			typedef std::future<GetJobLogOutcome> GetJobLogOutcomeCallable;
+			typedef std::function<void(const EHPCClient*, const Model::GetJobLogRequest&, const GetJobLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobLogAsyncHandler;
 			typedef Outcome<Error, Model::GetPostScriptsResult> GetPostScriptsOutcome;
 			typedef std::future<GetPostScriptsOutcome> GetPostScriptsOutcomeCallable;
 			typedef std::function<void(const EHPCClient*, const Model::GetPostScriptsRequest&, const GetPostScriptsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPostScriptsAsyncHandler;
@@ -849,6 +854,9 @@ namespace AlibabaCloud
 			GetIfEcsTypeSupportHtConfigOutcome getIfEcsTypeSupportHtConfig(const Model::GetIfEcsTypeSupportHtConfigRequest &request)const;
 			void getIfEcsTypeSupportHtConfigAsync(const Model::GetIfEcsTypeSupportHtConfigRequest& request, const GetIfEcsTypeSupportHtConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetIfEcsTypeSupportHtConfigOutcomeCallable getIfEcsTypeSupportHtConfigCallable(const Model::GetIfEcsTypeSupportHtConfigRequest& request) const;
+			GetJobLogOutcome getJobLog(const Model::GetJobLogRequest &request)const;
+			void getJobLogAsync(const Model::GetJobLogRequest& request, const GetJobLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetJobLogOutcomeCallable getJobLogCallable(const Model::GetJobLogRequest& request) const;
 			GetPostScriptsOutcome getPostScripts(const Model::GetPostScriptsRequest &request)const;
 			void getPostScriptsAsync(const Model::GetPostScriptsRequest& request, const GetPostScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPostScriptsOutcomeCallable getPostScriptsCallable(const Model::GetPostScriptsRequest& request) const;

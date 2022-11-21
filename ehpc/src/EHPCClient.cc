@@ -1887,6 +1887,42 @@ EHPCClient::GetIfEcsTypeSupportHtConfigOutcomeCallable EHPCClient::getIfEcsTypeS
 	return task->get_future();
 }
 
+EHPCClient::GetJobLogOutcome EHPCClient::getJobLog(const GetJobLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetJobLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetJobLogOutcome(GetJobLogResult(outcome.result()));
+	else
+		return GetJobLogOutcome(outcome.error());
+}
+
+void EHPCClient::getJobLogAsync(const GetJobLogRequest& request, const GetJobLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getJobLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EHPCClient::GetJobLogOutcomeCallable EHPCClient::getJobLogCallable(const GetJobLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetJobLogOutcome()>>(
+			[this, request]()
+			{
+			return this->getJobLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EHPCClient::GetPostScriptsOutcome EHPCClient::getPostScripts(const GetPostScriptsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
