@@ -28,6 +28,10 @@ namespace Cbn {
 namespace Model {
 class ALIBABACLOUD_CBN_EXPORT CreateCenRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateCenRequest();
 	~CreateCenRequest();
 	long getResourceOwnerId() const;
@@ -40,6 +44,8 @@ public:
 	void setDescription(const std::string &description);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -57,6 +63,7 @@ private:
 	std::string ipv6Level_;
 	std::string description_;
 	std::string resourceGroupId_;
+	std::vector<Tag> tag_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

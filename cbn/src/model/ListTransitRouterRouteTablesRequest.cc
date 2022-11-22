@@ -77,6 +77,20 @@ void ListTransitRouterRouteTablesRequest::setNextToken(const std::string &nextTo
   setParameter(std::string("NextToken"), nextToken);
 }
 
+std::vector<ListTransitRouterRouteTablesRequest::Tag> ListTransitRouterRouteTablesRequest::getTag() const {
+  return tag_;
+}
+
+void ListTransitRouterRouteTablesRequest::setTag(const std::vector<ListTransitRouterRouteTablesRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string ListTransitRouterRouteTablesRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

@@ -42,16 +42,22 @@ namespace AlibabaCloud
 						bool publishCidrRoute;
 						std::string name;
 					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
+					std::string transitRouterDescription;
+					std::string transitRouterName;
+					std::string serviceMode;
 					std::string type;
 					bool supportMulticast;
 					std::vector<TransitRouter::TransitRouterCidrListItem> transitRouterCidrList;
 					std::string creationTime;
 					std::string cenId;
-					std::string transitRouterDescription;
-					std::string transitRouterName;
 					std::string regionId;
-					std::string serviceMode;
+					std::vector<TransitRouter::Tag> tags;
 					std::string transitRouterId;
 					long aliUid;
 				};

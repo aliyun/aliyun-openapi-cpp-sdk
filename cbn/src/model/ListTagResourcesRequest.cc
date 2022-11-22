@@ -43,6 +43,15 @@ void ListTagResourcesRequest::setNextToken(const std::string &nextToken) {
   setParameter(std::string("NextToken"), nextToken);
 }
 
+std::string ListTagResourcesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ListTagResourcesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int ListTagResourcesRequest::getPageSize() const {
   return pageSize_;
 }

@@ -70,6 +70,20 @@ void CreateCenRequest::setResourceGroupId(const std::string &resourceGroupId) {
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::vector<CreateCenRequest::Tag> CreateCenRequest::getTag() const {
+  return tag_;
+}
+
+void CreateCenRequest::setTag(const std::vector<CreateCenRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string CreateCenRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

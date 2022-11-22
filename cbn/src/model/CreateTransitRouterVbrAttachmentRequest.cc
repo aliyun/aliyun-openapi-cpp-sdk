@@ -88,6 +88,20 @@ void CreateTransitRouterVbrAttachmentRequest::setRegionId(const std::string &reg
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<CreateTransitRouterVbrAttachmentRequest::Tag> CreateTransitRouterVbrAttachmentRequest::getTag() const {
+  return tag_;
+}
+
+void CreateTransitRouterVbrAttachmentRequest::setTag(const std::vector<CreateTransitRouterVbrAttachmentRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 bool CreateTransitRouterVbrAttachmentRequest::getAutoPublishRouteEnabled() const {
   return autoPublishRouteEnabled_;
 }

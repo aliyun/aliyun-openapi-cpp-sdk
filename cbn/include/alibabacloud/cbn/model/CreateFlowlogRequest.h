@@ -28,6 +28,10 @@ namespace Cbn {
 namespace Model {
 class ALIBABACLOUD_CBN_EXPORT CreateFlowlogRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateFlowlogRequest();
 	~CreateFlowlogRequest();
 	long getResourceOwnerId() const;
@@ -40,6 +44,8 @@ public:
 	void setDescription(const std::string &description);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
 	std::string getLogStoreName() const;
@@ -63,6 +69,7 @@ private:
 	std::string cenId_;
 	std::string description_;
 	std::string regionId_;
+	std::vector<Tag> tag_;
 	std::string projectName_;
 	std::string logStoreName_;
 	std::string resourceOwnerAccount_;

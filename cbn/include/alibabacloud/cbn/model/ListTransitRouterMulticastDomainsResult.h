@@ -34,10 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct TransitRouterMulticastDomain
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string transitRouterMulticastDomainId;
 					std::string transitRouterMulticastDomainName;
 					std::string transitRouterMulticastDomainDescription;
+					std::vector<TransitRouterMulticastDomain::Tag> tags;
 				};
 
 

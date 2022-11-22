@@ -31,6 +31,10 @@ public:
 	struct Zone {
 		std::string zoneId;
 	};
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateTransitRouterVpnAttachmentRequest();
 	~CreateTransitRouterVpnAttachmentRequest();
 	long getResourceOwnerId() const;
@@ -47,6 +51,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::vector<Zone> getZone() const;
 	void setZone(const std::vector<Zone> &zone);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getAutoPublishRouteEnabled() const;
 	void setAutoPublishRouteEnabled(bool autoPublishRouteEnabled);
 	bool getRouteTablePropagationEnabled() const;
@@ -80,6 +86,7 @@ private:
 	std::string transitRouterAttachmentName_;
 	std::string regionId_;
 	std::vector<Zone> zone_;
+	std::vector<Tag> tag_;
 	bool autoPublishRouteEnabled_;
 	bool routeTablePropagationEnabled_;
 	bool dryRun_;

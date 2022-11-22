@@ -61,6 +61,20 @@ void ListTransitRouterVpcAttachmentsRequest::setNextToken(const std::string &nex
   setParameter(std::string("NextToken"), nextToken);
 }
 
+std::vector<ListTransitRouterVpcAttachmentsRequest::Tag> ListTransitRouterVpcAttachmentsRequest::getTag() const {
+  return tag_;
+}
+
+void ListTransitRouterVpcAttachmentsRequest::setTag(const std::vector<ListTransitRouterVpcAttachmentsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string ListTransitRouterVpcAttachmentsRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

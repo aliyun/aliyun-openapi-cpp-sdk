@@ -70,6 +70,20 @@ void CreateFlowlogRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<CreateFlowlogRequest::Tag> CreateFlowlogRequest::getTag() const {
+  return tag_;
+}
+
+void CreateFlowlogRequest::setTag(const std::vector<CreateFlowlogRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string CreateFlowlogRequest::getProjectName() const {
   return projectName_;
 }

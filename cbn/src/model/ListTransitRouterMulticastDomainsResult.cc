@@ -51,6 +51,16 @@ void ListTransitRouterMulticastDomainsResult::parse(const std::string &payload)
 			transitRouterMulticastDomainsObject.transitRouterMulticastDomainDescription = valueTransitRouterMulticastDomainsTransitRouterMulticastDomain["TransitRouterMulticastDomainDescription"].asString();
 		if(!valueTransitRouterMulticastDomainsTransitRouterMulticastDomain["Status"].isNull())
 			transitRouterMulticastDomainsObject.status = valueTransitRouterMulticastDomainsTransitRouterMulticastDomain["Status"].asString();
+		auto allTagsNode = valueTransitRouterMulticastDomainsTransitRouterMulticastDomain["Tags"]["Tag"];
+		for (auto valueTransitRouterMulticastDomainsTransitRouterMulticastDomainTagsTag : allTagsNode)
+		{
+			TransitRouterMulticastDomain::Tag tagsObject;
+			if(!valueTransitRouterMulticastDomainsTransitRouterMulticastDomainTagsTag["Key"].isNull())
+				tagsObject.key = valueTransitRouterMulticastDomainsTransitRouterMulticastDomainTagsTag["Key"].asString();
+			if(!valueTransitRouterMulticastDomainsTransitRouterMulticastDomainTagsTag["Value"].isNull())
+				tagsObject.value = valueTransitRouterMulticastDomainsTransitRouterMulticastDomainTagsTag["Value"].asString();
+			transitRouterMulticastDomainsObject.tags.push_back(tagsObject);
+		}
 		transitRouterMulticastDomains_.push_back(transitRouterMulticastDomainsObject);
 	}
 	if(!value["TotalCount"].isNull())

@@ -140,8 +140,6 @@
 #include "model/DescribeCenRouteMapsResult.h"
 #include "model/DescribeCenVbrHealthCheckRequest.h"
 #include "model/DescribeCenVbrHealthCheckResult.h"
-#include "model/DescribeCenVpcFlowStatisticSwitchRequest.h"
-#include "model/DescribeCenVpcFlowStatisticSwitchResult.h"
 #include "model/DescribeCensRequest.h"
 #include "model/DescribeCensResult.h"
 #include "model/DescribeChildInstanceRegionsRequest.h"
@@ -164,8 +162,6 @@
 #include "model/DetachCenChildInstanceResult.h"
 #include "model/DisableCenVbrHealthCheckRequest.h"
 #include "model/DisableCenVbrHealthCheckResult.h"
-#include "model/DisableCenVpcFlowStatisticRequest.h"
-#include "model/DisableCenVpcFlowStatisticResult.h"
 #include "model/DisableTransitRouterRouteTablePropagationRequest.h"
 #include "model/DisableTransitRouterRouteTablePropagationResult.h"
 #include "model/DisassociateTransitRouterMulticastDomainRequest.h"
@@ -174,8 +170,6 @@
 #include "model/DissociateTransitRouterAttachmentFromRouteTableResult.h"
 #include "model/EnableCenVbrHealthCheckRequest.h"
 #include "model/EnableCenVbrHealthCheckResult.h"
-#include "model/EnableCenVpcFlowStatisticRequest.h"
-#include "model/EnableCenVpcFlowStatisticResult.h"
 #include "model/EnableTransitRouterRouteTablePropagationRequest.h"
 #include "model/EnableTransitRouterRouteTablePropagationResult.h"
 #include "model/GrantInstanceToTransitRouterRequest.h"
@@ -476,9 +470,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCenVbrHealthCheckResult> DescribeCenVbrHealthCheckOutcome;
 			typedef std::future<DescribeCenVbrHealthCheckOutcome> DescribeCenVbrHealthCheckOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DescribeCenVbrHealthCheckRequest&, const DescribeCenVbrHealthCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCenVbrHealthCheckAsyncHandler;
-			typedef Outcome<Error, Model::DescribeCenVpcFlowStatisticSwitchResult> DescribeCenVpcFlowStatisticSwitchOutcome;
-			typedef std::future<DescribeCenVpcFlowStatisticSwitchOutcome> DescribeCenVpcFlowStatisticSwitchOutcomeCallable;
-			typedef std::function<void(const CbnClient*, const Model::DescribeCenVpcFlowStatisticSwitchRequest&, const DescribeCenVpcFlowStatisticSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCenVpcFlowStatisticSwitchAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCensResult> DescribeCensOutcome;
 			typedef std::future<DescribeCensOutcome> DescribeCensOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DescribeCensRequest&, const DescribeCensOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCensAsyncHandler;
@@ -512,9 +503,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DisableCenVbrHealthCheckResult> DisableCenVbrHealthCheckOutcome;
 			typedef std::future<DisableCenVbrHealthCheckOutcome> DisableCenVbrHealthCheckOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DisableCenVbrHealthCheckRequest&, const DisableCenVbrHealthCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableCenVbrHealthCheckAsyncHandler;
-			typedef Outcome<Error, Model::DisableCenVpcFlowStatisticResult> DisableCenVpcFlowStatisticOutcome;
-			typedef std::future<DisableCenVpcFlowStatisticOutcome> DisableCenVpcFlowStatisticOutcomeCallable;
-			typedef std::function<void(const CbnClient*, const Model::DisableCenVpcFlowStatisticRequest&, const DisableCenVpcFlowStatisticOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableCenVpcFlowStatisticAsyncHandler;
 			typedef Outcome<Error, Model::DisableTransitRouterRouteTablePropagationResult> DisableTransitRouterRouteTablePropagationOutcome;
 			typedef std::future<DisableTransitRouterRouteTablePropagationOutcome> DisableTransitRouterRouteTablePropagationOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::DisableTransitRouterRouteTablePropagationRequest&, const DisableTransitRouterRouteTablePropagationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableTransitRouterRouteTablePropagationAsyncHandler;
@@ -527,9 +515,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnableCenVbrHealthCheckResult> EnableCenVbrHealthCheckOutcome;
 			typedef std::future<EnableCenVbrHealthCheckOutcome> EnableCenVbrHealthCheckOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::EnableCenVbrHealthCheckRequest&, const EnableCenVbrHealthCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableCenVbrHealthCheckAsyncHandler;
-			typedef Outcome<Error, Model::EnableCenVpcFlowStatisticResult> EnableCenVpcFlowStatisticOutcome;
-			typedef std::future<EnableCenVpcFlowStatisticOutcome> EnableCenVpcFlowStatisticOutcomeCallable;
-			typedef std::function<void(const CbnClient*, const Model::EnableCenVpcFlowStatisticRequest&, const EnableCenVpcFlowStatisticOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableCenVpcFlowStatisticAsyncHandler;
 			typedef Outcome<Error, Model::EnableTransitRouterRouteTablePropagationResult> EnableTransitRouterRouteTablePropagationOutcome;
 			typedef std::future<EnableTransitRouterRouteTablePropagationOutcome> EnableTransitRouterRouteTablePropagationOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::EnableTransitRouterRouteTablePropagationRequest&, const EnableTransitRouterRouteTablePropagationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableTransitRouterRouteTablePropagationAsyncHandler;
@@ -883,9 +868,6 @@ namespace AlibabaCloud
 			DescribeCenVbrHealthCheckOutcome describeCenVbrHealthCheck(const Model::DescribeCenVbrHealthCheckRequest &request)const;
 			void describeCenVbrHealthCheckAsync(const Model::DescribeCenVbrHealthCheckRequest& request, const DescribeCenVbrHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCenVbrHealthCheckOutcomeCallable describeCenVbrHealthCheckCallable(const Model::DescribeCenVbrHealthCheckRequest& request) const;
-			DescribeCenVpcFlowStatisticSwitchOutcome describeCenVpcFlowStatisticSwitch(const Model::DescribeCenVpcFlowStatisticSwitchRequest &request)const;
-			void describeCenVpcFlowStatisticSwitchAsync(const Model::DescribeCenVpcFlowStatisticSwitchRequest& request, const DescribeCenVpcFlowStatisticSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeCenVpcFlowStatisticSwitchOutcomeCallable describeCenVpcFlowStatisticSwitchCallable(const Model::DescribeCenVpcFlowStatisticSwitchRequest& request) const;
 			DescribeCensOutcome describeCens(const Model::DescribeCensRequest &request)const;
 			void describeCensAsync(const Model::DescribeCensRequest& request, const DescribeCensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCensOutcomeCallable describeCensCallable(const Model::DescribeCensRequest& request) const;
@@ -919,9 +901,6 @@ namespace AlibabaCloud
 			DisableCenVbrHealthCheckOutcome disableCenVbrHealthCheck(const Model::DisableCenVbrHealthCheckRequest &request)const;
 			void disableCenVbrHealthCheckAsync(const Model::DisableCenVbrHealthCheckRequest& request, const DisableCenVbrHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableCenVbrHealthCheckOutcomeCallable disableCenVbrHealthCheckCallable(const Model::DisableCenVbrHealthCheckRequest& request) const;
-			DisableCenVpcFlowStatisticOutcome disableCenVpcFlowStatistic(const Model::DisableCenVpcFlowStatisticRequest &request)const;
-			void disableCenVpcFlowStatisticAsync(const Model::DisableCenVpcFlowStatisticRequest& request, const DisableCenVpcFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DisableCenVpcFlowStatisticOutcomeCallable disableCenVpcFlowStatisticCallable(const Model::DisableCenVpcFlowStatisticRequest& request) const;
 			DisableTransitRouterRouteTablePropagationOutcome disableTransitRouterRouteTablePropagation(const Model::DisableTransitRouterRouteTablePropagationRequest &request)const;
 			void disableTransitRouterRouteTablePropagationAsync(const Model::DisableTransitRouterRouteTablePropagationRequest& request, const DisableTransitRouterRouteTablePropagationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableTransitRouterRouteTablePropagationOutcomeCallable disableTransitRouterRouteTablePropagationCallable(const Model::DisableTransitRouterRouteTablePropagationRequest& request) const;
@@ -934,9 +913,6 @@ namespace AlibabaCloud
 			EnableCenVbrHealthCheckOutcome enableCenVbrHealthCheck(const Model::EnableCenVbrHealthCheckRequest &request)const;
 			void enableCenVbrHealthCheckAsync(const Model::EnableCenVbrHealthCheckRequest& request, const EnableCenVbrHealthCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableCenVbrHealthCheckOutcomeCallable enableCenVbrHealthCheckCallable(const Model::EnableCenVbrHealthCheckRequest& request) const;
-			EnableCenVpcFlowStatisticOutcome enableCenVpcFlowStatistic(const Model::EnableCenVpcFlowStatisticRequest &request)const;
-			void enableCenVpcFlowStatisticAsync(const Model::EnableCenVpcFlowStatisticRequest& request, const EnableCenVpcFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			EnableCenVpcFlowStatisticOutcomeCallable enableCenVpcFlowStatisticCallable(const Model::EnableCenVpcFlowStatisticRequest& request) const;
 			EnableTransitRouterRouteTablePropagationOutcome enableTransitRouterRouteTablePropagation(const Model::EnableTransitRouterRouteTablePropagationRequest &request)const;
 			void enableTransitRouterRouteTablePropagationAsync(const Model::EnableTransitRouterRouteTablePropagationRequest& request, const EnableTransitRouterRouteTablePropagationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableTransitRouterRouteTablePropagationOutcomeCallable enableTransitRouterRouteTablePropagationCallable(const Model::EnableTransitRouterRouteTablePropagationRequest& request) const;

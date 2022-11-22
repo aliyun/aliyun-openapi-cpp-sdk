@@ -38,6 +38,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::vector<Tag> getTag() const;
@@ -56,6 +58,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string nextToken_;
+	std::string regionId_;
 	int pageSize_;
 	std::vector<Tag> tag_;
 	std::vector<std::string> resourceId_;

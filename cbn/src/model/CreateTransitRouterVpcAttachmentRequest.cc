@@ -97,6 +97,20 @@ void CreateTransitRouterVpcAttachmentRequest::setRegionId(const std::string &reg
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<CreateTransitRouterVpcAttachmentRequest::Tag> CreateTransitRouterVpcAttachmentRequest::getTag() const {
+  return tag_;
+}
+
+void CreateTransitRouterVpcAttachmentRequest::setTag(const std::vector<CreateTransitRouterVpcAttachmentRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 bool CreateTransitRouterVpcAttachmentRequest::getAutoCreateVpcRoute() const {
   return autoCreateVpcRoute_;
 }

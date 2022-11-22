@@ -40,6 +40,11 @@ namespace AlibabaCloud
 						std::string vSwitchId;
 						std::string networkInterfaceId;
 					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string transitRouterAttachmentId;
 					std::string transitRouterAttachmentName;
@@ -52,6 +57,7 @@ namespace AlibabaCloud
 					std::string chargeType;
 					std::string creationTime;
 					std::string vpcRegionId;
+					std::vector<TransitRouterAttachment::Tag> tags;
 					std::string transitRouterAttachmentDescription;
 					std::string transitRouterId;
 				};

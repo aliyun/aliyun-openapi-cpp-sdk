@@ -2175,42 +2175,6 @@ CbnClient::DescribeCenVbrHealthCheckOutcomeCallable CbnClient::describeCenVbrHea
 	return task->get_future();
 }
 
-CbnClient::DescribeCenVpcFlowStatisticSwitchOutcome CbnClient::describeCenVpcFlowStatisticSwitch(const DescribeCenVpcFlowStatisticSwitchRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeCenVpcFlowStatisticSwitchOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeCenVpcFlowStatisticSwitchOutcome(DescribeCenVpcFlowStatisticSwitchResult(outcome.result()));
-	else
-		return DescribeCenVpcFlowStatisticSwitchOutcome(outcome.error());
-}
-
-void CbnClient::describeCenVpcFlowStatisticSwitchAsync(const DescribeCenVpcFlowStatisticSwitchRequest& request, const DescribeCenVpcFlowStatisticSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeCenVpcFlowStatisticSwitch(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CbnClient::DescribeCenVpcFlowStatisticSwitchOutcomeCallable CbnClient::describeCenVpcFlowStatisticSwitchCallable(const DescribeCenVpcFlowStatisticSwitchRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeCenVpcFlowStatisticSwitchOutcome()>>(
-			[this, request]()
-			{
-			return this->describeCenVpcFlowStatisticSwitch(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CbnClient::DescribeCensOutcome CbnClient::describeCens(const DescribeCensRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2607,42 +2571,6 @@ CbnClient::DisableCenVbrHealthCheckOutcomeCallable CbnClient::disableCenVbrHealt
 	return task->get_future();
 }
 
-CbnClient::DisableCenVpcFlowStatisticOutcome CbnClient::disableCenVpcFlowStatistic(const DisableCenVpcFlowStatisticRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DisableCenVpcFlowStatisticOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DisableCenVpcFlowStatisticOutcome(DisableCenVpcFlowStatisticResult(outcome.result()));
-	else
-		return DisableCenVpcFlowStatisticOutcome(outcome.error());
-}
-
-void CbnClient::disableCenVpcFlowStatisticAsync(const DisableCenVpcFlowStatisticRequest& request, const DisableCenVpcFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, disableCenVpcFlowStatistic(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CbnClient::DisableCenVpcFlowStatisticOutcomeCallable CbnClient::disableCenVpcFlowStatisticCallable(const DisableCenVpcFlowStatisticRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DisableCenVpcFlowStatisticOutcome()>>(
-			[this, request]()
-			{
-			return this->disableCenVpcFlowStatistic(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 CbnClient::DisableTransitRouterRouteTablePropagationOutcome CbnClient::disableTransitRouterRouteTablePropagation(const DisableTransitRouterRouteTablePropagationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2781,42 +2709,6 @@ CbnClient::EnableCenVbrHealthCheckOutcomeCallable CbnClient::enableCenVbrHealthC
 			[this, request]()
 			{
 			return this->enableCenVbrHealthCheck(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-CbnClient::EnableCenVpcFlowStatisticOutcome CbnClient::enableCenVpcFlowStatistic(const EnableCenVpcFlowStatisticRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return EnableCenVpcFlowStatisticOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return EnableCenVpcFlowStatisticOutcome(EnableCenVpcFlowStatisticResult(outcome.result()));
-	else
-		return EnableCenVpcFlowStatisticOutcome(outcome.error());
-}
-
-void CbnClient::enableCenVpcFlowStatisticAsync(const EnableCenVpcFlowStatisticRequest& request, const EnableCenVpcFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, enableCenVpcFlowStatistic(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-CbnClient::EnableCenVpcFlowStatisticOutcomeCallable CbnClient::enableCenVpcFlowStatisticCallable(const EnableCenVpcFlowStatisticRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<EnableCenVpcFlowStatisticOutcome()>>(
-			[this, request]()
-			{
-			return this->enableCenVpcFlowStatistic(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

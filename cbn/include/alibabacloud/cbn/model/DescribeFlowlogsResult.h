@@ -34,17 +34,23 @@ namespace AlibabaCloud
 			public:
 				struct FlowLog
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string transitRouterAttachmentId;
-					std::string flowLogName;
 					std::string description;
+					std::string projectName;
+					std::string flowLogId;
+					std::string flowLogName;
 					std::string logStoreName;
 					std::string peerRegionId;
-					std::string projectName;
 					std::string creationTime;
 					std::string cenId;
 					std::string regionId;
-					std::string flowLogId;
+					std::vector<FlowLog::Tag> tags;
 					long interval;
 				};
 

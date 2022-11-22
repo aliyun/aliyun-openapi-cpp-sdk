@@ -36,6 +36,8 @@ public:
 	~TagResourcesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
 	std::vector<std::string> getResourceId() const;
@@ -51,6 +53,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string regionId_;
 	std::vector<Tag> tag_;
 	std::vector<std::string> resourceId_;
 	std::string resourceOwnerAccount_;

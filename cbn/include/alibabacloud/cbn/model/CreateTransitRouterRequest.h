@@ -34,6 +34,10 @@ public:
 		std::string cidr;
 		bool publishCidrRoute;
 	};
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateTransitRouterRequest();
 	~CreateTransitRouterRequest();
 	std::string getTransitRouterName() const;
@@ -52,6 +56,8 @@ public:
 	void setType(const std::string &type);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
@@ -74,6 +80,7 @@ private:
 	std::vector<TransitRouterCidrList> transitRouterCidrList_;
 	std::string type_;
 	std::string regionId_;
+	std::vector<Tag> tag_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

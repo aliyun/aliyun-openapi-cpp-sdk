@@ -32,6 +32,8 @@ public:
 	~UntagResourcesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	bool getAll() const;
 	void setAll(bool all);
 	std::vector<std::string> getResourceId() const;
@@ -49,6 +51,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string regionId_;
 	bool all_;
 	std::vector<std::string> resourceId_;
 	std::string resourceOwnerAccount_;

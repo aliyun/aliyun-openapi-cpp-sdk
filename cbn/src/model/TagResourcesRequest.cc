@@ -34,6 +34,15 @@ void TagResourcesRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string TagResourcesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void TagResourcesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag() const {
   return tag_;
 }

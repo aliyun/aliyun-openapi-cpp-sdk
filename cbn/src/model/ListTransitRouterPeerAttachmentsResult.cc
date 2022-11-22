@@ -77,6 +77,16 @@ void ListTransitRouterPeerAttachmentsResult::parse(const std::string &payload)
 			transitRouterAttachmentsObject.autoPublishRouteEnabled = valueTransitRouterAttachmentsTransitRouterAttachment["AutoPublishRouteEnabled"].asString() == "true";
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].isNull())
 			transitRouterAttachmentsObject.transitRouterAttachmentName = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].asString();
+		auto allTagsNode = valueTransitRouterAttachmentsTransitRouterAttachment["Tags"]["Tag"];
+		for (auto valueTransitRouterAttachmentsTransitRouterAttachmentTagsTag : allTagsNode)
+		{
+			TransitRouterAttachment::Tag tagsObject;
+			if(!valueTransitRouterAttachmentsTransitRouterAttachmentTagsTag["Key"].isNull())
+				tagsObject.key = valueTransitRouterAttachmentsTransitRouterAttachmentTagsTag["Key"].asString();
+			if(!valueTransitRouterAttachmentsTransitRouterAttachmentTagsTag["Value"].isNull())
+				tagsObject.value = valueTransitRouterAttachmentsTransitRouterAttachmentTagsTag["Value"].asString();
+			transitRouterAttachmentsObject.tags.push_back(tagsObject);
+		}
 		transitRouterAttachments_.push_back(transitRouterAttachmentsObject);
 	}
 	if(!value["NextToken"].isNull())

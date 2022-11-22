@@ -28,6 +28,10 @@ namespace Cbn {
 namespace Model {
 class ALIBABACLOUD_CBN_EXPORT CreateTransitRouterPeerAttachmentRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateTransitRouterPeerAttachmentRequest();
 	~CreateTransitRouterPeerAttachmentRequest();
 	long getResourceOwnerId() const;
@@ -44,6 +48,8 @@ public:
 	void setTransitRouterAttachmentName(const std::string &transitRouterAttachmentName);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getAutoPublishRouteEnabled() const;
 	void setAutoPublishRouteEnabled(bool autoPublishRouteEnabled);
 	bool getRouteTablePropagationEnabled() const;
@@ -79,6 +85,7 @@ private:
 	bool routeTableAssociationEnabled_;
 	std::string transitRouterAttachmentName_;
 	std::string regionId_;
+	std::vector<Tag> tag_;
 	bool autoPublishRouteEnabled_;
 	bool routeTablePropagationEnabled_;
 	bool dryRun_;

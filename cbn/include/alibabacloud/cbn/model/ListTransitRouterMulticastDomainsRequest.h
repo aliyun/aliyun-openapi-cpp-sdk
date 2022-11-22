@@ -28,6 +28,10 @@ namespace Cbn {
 namespace Model {
 class ALIBABACLOUD_CBN_EXPORT ListTransitRouterMulticastDomainsRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListTransitRouterMulticastDomainsRequest();
 	~ListTransitRouterMulticastDomainsRequest();
 	long getResourceOwnerId() const;
@@ -42,6 +46,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -60,6 +66,7 @@ private:
 	std::string transitRouterMulticastDomainId_;
 	std::string regionId_;
 	std::string nextToken_;
+	std::vector<Tag> tag_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

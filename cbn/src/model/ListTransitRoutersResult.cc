@@ -81,6 +81,16 @@ void ListTransitRoutersResult::parse(const std::string &payload)
 				transitRouterCidrListObject.publishCidrRoute = valueTransitRoutersTransitRouterTransitRouterCidrListTransitRouterCidrListItem["PublishCidrRoute"].asString() == "true";
 			transitRoutersObject.transitRouterCidrList.push_back(transitRouterCidrListObject);
 		}
+		auto allTagsNode = valueTransitRoutersTransitRouter["Tags"]["Tag"];
+		for (auto valueTransitRoutersTransitRouterTagsTag : allTagsNode)
+		{
+			TransitRouter::Tag tagsObject;
+			if(!valueTransitRoutersTransitRouterTagsTag["Key"].isNull())
+				tagsObject.key = valueTransitRoutersTransitRouterTagsTag["Key"].asString();
+			if(!valueTransitRoutersTransitRouterTagsTag["Value"].isNull())
+				tagsObject.value = valueTransitRoutersTransitRouterTagsTag["Value"].asString();
+			transitRoutersObject.tags.push_back(tagsObject);
+		}
 		transitRouters_.push_back(transitRoutersObject);
 	}
 	if(!value["PageSize"].isNull())

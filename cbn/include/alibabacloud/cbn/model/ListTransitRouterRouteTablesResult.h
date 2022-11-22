@@ -34,12 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct TransitRouterRouteTable
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string transitRouterRouteTableId;
 					std::string transitRouterRouteTableStatus;
 					std::string transitRouterRouteTableType;
 					std::string transitRouterRouteTableDescription;
 					std::string createTime;
 					std::string transitRouterRouteTableName;
+					std::vector<TransitRouterRouteTable::Tag> tags;
 				};
 
 

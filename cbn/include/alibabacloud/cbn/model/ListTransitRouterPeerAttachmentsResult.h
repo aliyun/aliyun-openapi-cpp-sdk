@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct TransitRouterAttachment
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string transitRouterAttachmentId;
 					std::string geographicSpanId;
@@ -48,6 +53,7 @@ namespace AlibabaCloud
 					std::string regionId;
 					std::string peerTransitRouterId;
 					std::string cenBandwidthPackageId;
+					std::vector<TransitRouterAttachment::Tag> tags;
 					std::string transitRouterAttachmentDescription;
 					std::string transitRouterId;
 					std::string peerTransitRouterRegionId;

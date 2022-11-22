@@ -67,6 +67,16 @@ void DescribeFlowlogsResult::parse(const std::string &payload)
 			flowLogsObject.transitRouterAttachmentId = valueFlowLogsFlowLog["TransitRouterAttachmentId"].asString();
 		if(!valueFlowLogsFlowLog["Interval"].isNull())
 			flowLogsObject.interval = std::stol(valueFlowLogsFlowLog["Interval"].asString());
+		auto allTagsNode = valueFlowLogsFlowLog["Tags"]["Tag"];
+		for (auto valueFlowLogsFlowLogTagsTag : allTagsNode)
+		{
+			FlowLog::Tag tagsObject;
+			if(!valueFlowLogsFlowLogTagsTag["Key"].isNull())
+				tagsObject.key = valueFlowLogsFlowLogTagsTag["Key"].asString();
+			if(!valueFlowLogsFlowLogTagsTag["Value"].isNull())
+				tagsObject.value = valueFlowLogsFlowLogTagsTag["Value"].asString();
+			flowLogsObject.tags.push_back(tagsObject);
+		}
 		flowLogs_.push_back(flowLogsObject);
 	}
 	if(!value["PageSize"].isNull())

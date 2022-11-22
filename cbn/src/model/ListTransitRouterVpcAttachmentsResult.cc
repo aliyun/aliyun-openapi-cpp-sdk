@@ -81,6 +81,16 @@ void ListTransitRouterVpcAttachmentsResult::parse(const std::string &payload)
 				zoneMappingsObject.networkInterfaceId = valueTransitRouterAttachmentsTransitRouterAttachmentZoneMappingsZoneMapping["NetworkInterfaceId"].asString();
 			transitRouterAttachmentsObject.zoneMappings.push_back(zoneMappingsObject);
 		}
+		auto allTagsNode = valueTransitRouterAttachmentsTransitRouterAttachment["Tags"]["Tag"];
+		for (auto valueTransitRouterAttachmentsTransitRouterAttachmentTagsTag : allTagsNode)
+		{
+			TransitRouterAttachment::Tag tagsObject;
+			if(!valueTransitRouterAttachmentsTransitRouterAttachmentTagsTag["Key"].isNull())
+				tagsObject.key = valueTransitRouterAttachmentsTransitRouterAttachmentTagsTag["Key"].asString();
+			if(!valueTransitRouterAttachmentsTransitRouterAttachmentTagsTag["Value"].isNull())
+				tagsObject.value = valueTransitRouterAttachmentsTransitRouterAttachmentTagsTag["Value"].asString();
+			transitRouterAttachmentsObject.tags.push_back(tagsObject);
+		}
 		transitRouterAttachments_.push_back(transitRouterAttachmentsObject);
 	}
 	if(!value["NextToken"].isNull())

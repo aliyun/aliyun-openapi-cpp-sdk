@@ -28,6 +28,10 @@ namespace Cbn {
 namespace Model {
 class ALIBABACLOUD_CBN_EXPORT CreateCenBandwidthPackageRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateCenBandwidthPackageRequest();
 	~CreateCenBandwidthPackageRequest();
 	long getResourceOwnerId() const;
@@ -42,6 +46,8 @@ public:
 	void setBandwidthPackageChargeType(const std::string &bandwidthPackageChargeType);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getGeographicRegionBId() const;
 	void setGeographicRegionBId(const std::string &geographicRegionBId);
 	int getPeriod() const;
@@ -74,6 +80,7 @@ private:
 	int autoRenewDuration_;
 	std::string bandwidthPackageChargeType_;
 	std::string resourceGroupId_;
+	std::vector<Tag> tag_;
 	std::string geographicRegionBId_;
 	int period_;
 	std::string geographicRegionAId_;

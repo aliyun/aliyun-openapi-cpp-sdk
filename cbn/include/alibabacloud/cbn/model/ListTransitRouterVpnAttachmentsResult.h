@@ -38,16 +38,22 @@ namespace AlibabaCloud
 					{
 						std::string zoneId;
 					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string transitRouterAttachmentId;
-					bool autoPublishRouteEnabled;
 					long vpnOwnerId;
-					std::string vpnRegionId;
-					std::string creationTime;
 					std::string transitRouterAttachmentName;
 					std::string resourceType;
-					std::string transitRouterAttachmentDescription;
 					std::vector<TransitRouterAttachment::ZoneMapping> zones;
+					bool autoPublishRouteEnabled;
+					std::string vpnRegionId;
+					std::string creationTime;
+					std::vector<TransitRouterAttachment::Tag> tags;
+					std::string transitRouterAttachmentDescription;
 					std::string transitRouterId;
 					std::string vpnId;
 				};

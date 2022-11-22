@@ -139,8 +139,6 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/DescribeCenRouteMapsResult.h
 	include/alibabacloud/cbn/model/DescribeCenVbrHealthCheckRequest.h
 	include/alibabacloud/cbn/model/DescribeCenVbrHealthCheckResult.h
-	include/alibabacloud/cbn/model/DescribeCenVpcFlowStatisticSwitchRequest.h
-	include/alibabacloud/cbn/model/DescribeCenVpcFlowStatisticSwitchResult.h
 	include/alibabacloud/cbn/model/DescribeCensRequest.h
 	include/alibabacloud/cbn/model/DescribeCensResult.h
 	include/alibabacloud/cbn/model/DescribeChildInstanceRegionsRequest.h
@@ -163,8 +161,6 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/DetachCenChildInstanceResult.h
 	include/alibabacloud/cbn/model/DisableCenVbrHealthCheckRequest.h
 	include/alibabacloud/cbn/model/DisableCenVbrHealthCheckResult.h
-	include/alibabacloud/cbn/model/DisableCenVpcFlowStatisticRequest.h
-	include/alibabacloud/cbn/model/DisableCenVpcFlowStatisticResult.h
 	include/alibabacloud/cbn/model/DisableTransitRouterRouteTablePropagationRequest.h
 	include/alibabacloud/cbn/model/DisableTransitRouterRouteTablePropagationResult.h
 	include/alibabacloud/cbn/model/DisassociateTransitRouterMulticastDomainRequest.h
@@ -173,8 +169,6 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/DissociateTransitRouterAttachmentFromRouteTableResult.h
 	include/alibabacloud/cbn/model/EnableCenVbrHealthCheckRequest.h
 	include/alibabacloud/cbn/model/EnableCenVbrHealthCheckResult.h
-	include/alibabacloud/cbn/model/EnableCenVpcFlowStatisticRequest.h
-	include/alibabacloud/cbn/model/EnableCenVpcFlowStatisticResult.h
 	include/alibabacloud/cbn/model/EnableTransitRouterRouteTablePropagationRequest.h
 	include/alibabacloud/cbn/model/EnableTransitRouterRouteTablePropagationResult.h
 	include/alibabacloud/cbn/model/GrantInstanceToTransitRouterRequest.h
@@ -410,8 +404,6 @@ set(cbn_src
 	src/model/DescribeCenRouteMapsResult.cc
 	src/model/DescribeCenVbrHealthCheckRequest.cc
 	src/model/DescribeCenVbrHealthCheckResult.cc
-	src/model/DescribeCenVpcFlowStatisticSwitchRequest.cc
-	src/model/DescribeCenVpcFlowStatisticSwitchResult.cc
 	src/model/DescribeCensRequest.cc
 	src/model/DescribeCensResult.cc
 	src/model/DescribeChildInstanceRegionsRequest.cc
@@ -434,8 +426,6 @@ set(cbn_src
 	src/model/DetachCenChildInstanceResult.cc
 	src/model/DisableCenVbrHealthCheckRequest.cc
 	src/model/DisableCenVbrHealthCheckResult.cc
-	src/model/DisableCenVpcFlowStatisticRequest.cc
-	src/model/DisableCenVpcFlowStatisticResult.cc
 	src/model/DisableTransitRouterRouteTablePropagationRequest.cc
 	src/model/DisableTransitRouterRouteTablePropagationResult.cc
 	src/model/DisassociateTransitRouterMulticastDomainRequest.cc
@@ -444,8 +434,6 @@ set(cbn_src
 	src/model/DissociateTransitRouterAttachmentFromRouteTableResult.cc
 	src/model/EnableCenVbrHealthCheckRequest.cc
 	src/model/EnableCenVbrHealthCheckResult.cc
-	src/model/EnableCenVpcFlowStatisticRequest.cc
-	src/model/EnableCenVpcFlowStatisticResult.cc
 	src/model/EnableTransitRouterRouteTablePropagationRequest.cc
 	src/model/EnableTransitRouterRouteTablePropagationResult.cc
 	src/model/GrantInstanceToTransitRouterRequest.cc

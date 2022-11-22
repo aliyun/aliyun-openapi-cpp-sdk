@@ -78,6 +78,20 @@ void ListTransitRoutersRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::vector<ListTransitRoutersRequest::Tag> ListTransitRoutersRequest::getTag() const {
+  return tag_;
+}
+
+void ListTransitRoutersRequest::setTag(const std::vector<ListTransitRoutersRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string ListTransitRoutersRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

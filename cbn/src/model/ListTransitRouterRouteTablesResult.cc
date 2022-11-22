@@ -55,6 +55,16 @@ void ListTransitRouterRouteTablesResult::parse(const std::string &payload)
 			transitRouterRouteTablesObject.transitRouterRouteTableName = valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableName"].asString();
 		if(!valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableDescription"].isNull())
 			transitRouterRouteTablesObject.transitRouterRouteTableDescription = valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableDescription"].asString();
+		auto allTagsNode = valueTransitRouterRouteTablesTransitRouterRouteTable["Tags"]["Tag"];
+		for (auto valueTransitRouterRouteTablesTransitRouterRouteTableTagsTag : allTagsNode)
+		{
+			TransitRouterRouteTable::Tag tagsObject;
+			if(!valueTransitRouterRouteTablesTransitRouterRouteTableTagsTag["Key"].isNull())
+				tagsObject.key = valueTransitRouterRouteTablesTransitRouterRouteTableTagsTag["Key"].asString();
+			if(!valueTransitRouterRouteTablesTransitRouterRouteTableTagsTag["Value"].isNull())
+				tagsObject.value = valueTransitRouterRouteTablesTransitRouterRouteTableTagsTag["Value"].asString();
+			transitRouterRouteTablesObject.tags.push_back(tagsObject);
+		}
 		transitRouterRouteTables_.push_back(transitRouterRouteTablesObject);
 	}
 	if(!value["NextToken"].isNull())

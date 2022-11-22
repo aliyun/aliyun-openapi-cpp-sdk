@@ -102,6 +102,20 @@ void CreateTransitRouterRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::vector<CreateTransitRouterRequest::Tag> CreateTransitRouterRequest::getTag() const {
+  return tag_;
+}
+
+void CreateTransitRouterRequest::setTag(const std::vector<CreateTransitRouterRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 bool CreateTransitRouterRequest::getDryRun() const {
   return dryRun_;
 }
