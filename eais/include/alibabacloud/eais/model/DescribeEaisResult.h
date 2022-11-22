@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					std::string zoneId;
 					std::string vSwitchId;
 					std::string securityGroupId;
+					std::string startTime;
 					std::string clientInstanceId;
 					std::string elasticAcceleratedInstanceId;
 					std::string jupyterUrl;
