@@ -25,6 +25,15 @@ ListSQLReviewOriginSQLRequest::ListSQLReviewOriginSQLRequest()
 
 ListSQLReviewOriginSQLRequest::~ListSQLReviewOriginSQLRequest() {}
 
+long ListSQLReviewOriginSQLRequest::getTid() const {
+  return tid_;
+}
+
+void ListSQLReviewOriginSQLRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
+}
+
 long ListSQLReviewOriginSQLRequest::getOrderId() const {
   return orderId_;
 }
@@ -45,15 +54,6 @@ void ListSQLReviewOriginSQLRequest::setOrderActionDetail(const ListSQLReviewOrig
   setParameter(std::string("OrderActionDetail") + ".Page.PageSize", std::to_string(orderActionDetail.page.pageSize));
   setParameter(std::string("OrderActionDetail") + ".Page.PageNumber", std::to_string(orderActionDetail.page.pageNumber));
   setParameter(std::string("OrderActionDetail") + ".FileId", std::to_string(orderActionDetail.fileId));
-}
-
-long ListSQLReviewOriginSQLRequest::getTid() const {
-  return tid_;
-}
-
-void ListSQLReviewOriginSQLRequest::setTid(long tid) {
-  tid_ = tid;
-  setParameter(std::string("Tid"), std::to_string(tid));
 }
 
 std::string ListSQLReviewOriginSQLRequest::getOrderActionName() const {

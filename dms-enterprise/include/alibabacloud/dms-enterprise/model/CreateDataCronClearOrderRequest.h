@@ -53,21 +53,21 @@ public:
 	~CreateDataCronClearOrderRequest();
 	long getTid() const;
 	void setTid(long tid);
-	std::string getAttachmentKey() const;
-	void setAttachmentKey(const std::string &attachmentKey);
 	Param getParam() const;
 	void setParam(const Param &param);
-	std::string getComment() const;
-	void setComment(const std::string &comment);
 	std::vector<long> getRelatedUserList() const;
 	void setRelatedUserList(const std::vector<long> &relatedUserList);
+	std::string getAttachmentKey() const;
+	void setAttachmentKey(const std::string &attachmentKey);
+	std::string getComment() const;
+	void setComment(const std::string &comment);
 
 private:
 	long tid_;
-	std::string attachmentKey_;
 	Param param_;
-	std::string comment_;
 	std::vector<long> relatedUserList_;
+	std::string attachmentKey_;
+	std::string comment_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

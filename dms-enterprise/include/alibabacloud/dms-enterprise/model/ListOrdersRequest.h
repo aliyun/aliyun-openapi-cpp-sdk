@@ -32,12 +32,8 @@ public:
 	~ListOrdersRequest();
 	std::string getOrderStatus() const;
 	void setOrderStatus(const std::string &orderStatus);
-	std::string getSearchContent() const;
-	void setSearchContent(const std::string &searchContent);
 	std::string getSearchDateType() const;
 	void setSearchDateType(const std::string &searchDateType);
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
 	long getTid() const;
@@ -50,18 +46,22 @@ public:
 	void setPageSize(int pageSize);
 	std::string getOrderResultType() const;
 	void setOrderResultType(const std::string &orderResultType);
+	std::string getSearchContent() const;
+	void setSearchContent(const std::string &searchContent);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
 
 private:
 	std::string orderStatus_;
-	std::string searchContent_;
 	std::string searchDateType_;
-	std::string endTime_;
 	std::string startTime_;
 	long tid_;
 	int pageNumber_;
 	std::string pluginType_;
 	int pageSize_;
 	std::string orderResultType_;
+	std::string searchContent_;
+	std::string endTime_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

@@ -38,18 +38,18 @@ public:
 	void setTid(long tid);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
-	std::string getUserState() const;
-	void setUserState(const std::string &userState);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getUserState() const;
+	void setUserState(const std::string &userState);
 
 private:
 	std::string role_;
 	std::string searchKey_;
 	long tid_;
 	int pageNumber_;
-	std::string userState_;
 	int pageSize_;
+	std::string userState_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

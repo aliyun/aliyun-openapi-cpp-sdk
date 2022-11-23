@@ -34,15 +34,6 @@ void UpdateUserRequest::setRoleNames(const std::string &roleNames) {
   setParameter(std::string("RoleNames"), roleNames);
 }
 
-long UpdateUserRequest::getMaxResultCount() const {
-  return maxResultCount_;
-}
-
-void UpdateUserRequest::setMaxResultCount(long maxResultCount) {
-  maxResultCount_ = maxResultCount;
-  setParameter(std::string("MaxResultCount"), std::to_string(maxResultCount));
-}
-
 long UpdateUserRequest::getMaxExecuteCount() const {
   return maxExecuteCount_;
 }
@@ -61,15 +52,6 @@ void UpdateUserRequest::setUserNick(const std::string &userNick) {
   setParameter(std::string("UserNick"), userNick);
 }
 
-std::string UpdateUserRequest::getMobile() const {
-  return mobile_;
-}
-
-void UpdateUserRequest::setMobile(const std::string &mobile) {
-  mobile_ = mobile;
-  setParameter(std::string("Mobile"), mobile);
-}
-
 long UpdateUserRequest::getTid() const {
   return tid_;
 }
@@ -86,5 +68,23 @@ long UpdateUserRequest::getUid() const {
 void UpdateUserRequest::setUid(long uid) {
   uid_ = uid;
   setParameter(std::string("Uid"), std::to_string(uid));
+}
+
+long UpdateUserRequest::getMaxResultCount() const {
+  return maxResultCount_;
+}
+
+void UpdateUserRequest::setMaxResultCount(long maxResultCount) {
+  maxResultCount_ = maxResultCount;
+  setParameter(std::string("MaxResultCount"), std::to_string(maxResultCount));
+}
+
+std::string UpdateUserRequest::getMobile() const {
+  return mobile_;
+}
+
+void UpdateUserRequest::setMobile(const std::string &mobile) {
+  mobile_ = mobile;
+  setParameter(std::string("Mobile"), mobile);
 }
 

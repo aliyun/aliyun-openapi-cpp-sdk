@@ -30,14 +30,14 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetLhSpaceByNameRequest : public RpcSer
 public:
 	GetLhSpaceByNameRequest();
 	~GetLhSpaceByNameRequest();
-	std::string getSpaceName() const;
-	void setSpaceName(const std::string &spaceName);
 	long getTid() const;
 	void setTid(long tid);
+	std::string getSpaceName() const;
+	void setSpaceName(const std::string &spaceName);
 
 private:
-	std::string spaceName_;
 	long tid_;
+	std::string spaceName_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

@@ -34,15 +34,6 @@ void CreateDataImportOrderRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string CreateDataImportOrderRequest::getAttachmentKey() const {
-  return attachmentKey_;
-}
-
-void CreateDataImportOrderRequest::setAttachmentKey(const std::string &attachmentKey) {
-  attachmentKey_ = attachmentKey;
-  setParameter(std::string("AttachmentKey"), attachmentKey);
-}
-
 CreateDataImportOrderRequest::Param CreateDataImportOrderRequest::getParam() const {
   return param_;
 }
@@ -67,15 +58,6 @@ void CreateDataImportOrderRequest::setParam(const CreateDataImportOrderRequest::
   setParameter(std::string("Param") + ".IgnoreError", param.ignoreError ? "true" : "false");
 }
 
-std::string CreateDataImportOrderRequest::getComment() const {
-  return comment_;
-}
-
-void CreateDataImportOrderRequest::setComment(const std::string &comment) {
-  comment_ = comment;
-  setParameter(std::string("Comment"), comment);
-}
-
 std::vector<CreateDataImportOrderRequest::long> CreateDataImportOrderRequest::getRelatedUserList() const {
   return relatedUserList_;
 }
@@ -85,5 +67,23 @@ void CreateDataImportOrderRequest::setRelatedUserList(const std::vector<CreateDa
   for(int dep1 = 0; dep1 != relatedUserList.size(); dep1++) {
     setParameter(std::string("RelatedUserList") + "." + std::to_string(dep1 + 1), std::to_string(relatedUserList[dep1]));
   }
+}
+
+std::string CreateDataImportOrderRequest::getAttachmentKey() const {
+  return attachmentKey_;
+}
+
+void CreateDataImportOrderRequest::setAttachmentKey(const std::string &attachmentKey) {
+  attachmentKey_ = attachmentKey;
+  setParameter(std::string("AttachmentKey"), attachmentKey);
+}
+
+std::string CreateDataImportOrderRequest::getComment() const {
+  return comment_;
+}
+
+void CreateDataImportOrderRequest::setComment(const std::string &comment) {
+  comment_ = comment;
+  setParameter(std::string("Comment"), comment);
 }
 

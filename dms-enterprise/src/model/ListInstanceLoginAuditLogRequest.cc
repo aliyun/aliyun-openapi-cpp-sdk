@@ -43,15 +43,6 @@ void ListInstanceLoginAuditLogRequest::setOpUserName(const std::string &opUserNa
   setParameter(std::string("OpUserName"), opUserName);
 }
 
-std::string ListInstanceLoginAuditLogRequest::getEndTime() const {
-  return endTime_;
-}
-
-void ListInstanceLoginAuditLogRequest::setEndTime(const std::string &endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), endTime);
-}
-
 std::string ListInstanceLoginAuditLogRequest::getStartTime() const {
   return startTime_;
 }
@@ -86,5 +77,14 @@ int ListInstanceLoginAuditLogRequest::getPageSize() const {
 void ListInstanceLoginAuditLogRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListInstanceLoginAuditLogRequest::getEndTime() const {
+  return endTime_;
+}
+
+void ListInstanceLoginAuditLogRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 

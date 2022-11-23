@@ -25,6 +25,42 @@ RevokeUserPermissionRequest::RevokeUserPermissionRequest()
 
 RevokeUserPermissionRequest::~RevokeUserPermissionRequest() {}
 
+std::string RevokeUserPermissionRequest::getUserId() const {
+  return userId_;
+}
+
+void RevokeUserPermissionRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
+}
+
+long RevokeUserPermissionRequest::getTid() const {
+  return tid_;
+}
+
+void RevokeUserPermissionRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string RevokeUserPermissionRequest::getTableId() const {
+  return tableId_;
+}
+
+void RevokeUserPermissionRequest::setTableId(const std::string &tableId) {
+  tableId_ = tableId;
+  setParameter(std::string("TableId"), tableId);
+}
+
+std::string RevokeUserPermissionRequest::getTableName() const {
+  return tableName_;
+}
+
+void RevokeUserPermissionRequest::setTableName(const std::string &tableName) {
+  tableName_ = tableName;
+  setParameter(std::string("TableName"), tableName);
+}
+
 std::string RevokeUserPermissionRequest::getPermTypes() const {
   return permTypes_;
 }
@@ -52,24 +88,6 @@ void RevokeUserPermissionRequest::setDsType(const std::string &dsType) {
   setParameter(std::string("DsType"), dsType);
 }
 
-std::string RevokeUserPermissionRequest::getUserId() const {
-  return userId_;
-}
-
-void RevokeUserPermissionRequest::setUserId(const std::string &userId) {
-  userId_ = userId;
-  setParameter(std::string("UserId"), userId);
-}
-
-long RevokeUserPermissionRequest::getTid() const {
-  return tid_;
-}
-
-void RevokeUserPermissionRequest::setTid(long tid) {
-  tid_ = tid;
-  setParameter(std::string("Tid"), std::to_string(tid));
-}
-
 long RevokeUserPermissionRequest::getInstanceId() const {
   return instanceId_;
 }
@@ -88,15 +106,6 @@ void RevokeUserPermissionRequest::setDbId(const std::string &dbId) {
   setParameter(std::string("DbId"), dbId);
 }
 
-std::string RevokeUserPermissionRequest::getTableId() const {
-  return tableId_;
-}
-
-void RevokeUserPermissionRequest::setTableId(const std::string &tableId) {
-  tableId_ = tableId;
-  setParameter(std::string("TableId"), tableId);
-}
-
 bool RevokeUserPermissionRequest::getLogic() const {
   return logic_;
 }
@@ -104,14 +113,5 @@ bool RevokeUserPermissionRequest::getLogic() const {
 void RevokeUserPermissionRequest::setLogic(bool logic) {
   logic_ = logic;
   setParameter(std::string("Logic"), logic ? "true" : "false");
-}
-
-std::string RevokeUserPermissionRequest::getTableName() const {
-  return tableName_;
-}
-
-void RevokeUserPermissionRequest::setTableName(const std::string &tableName) {
-  tableName_ = tableName;
-  setParameter(std::string("TableName"), tableName);
 }
 

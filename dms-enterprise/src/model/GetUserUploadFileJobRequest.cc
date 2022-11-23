@@ -25,15 +25,6 @@ GetUserUploadFileJobRequest::GetUserUploadFileJobRequest()
 
 GetUserUploadFileJobRequest::~GetUserUploadFileJobRequest() {}
 
-std::string GetUserUploadFileJobRequest::getJobKey() const {
-  return jobKey_;
-}
-
-void GetUserUploadFileJobRequest::setJobKey(const std::string &jobKey) {
-  jobKey_ = jobKey;
-  setParameter(std::string("JobKey"), jobKey);
-}
-
 long GetUserUploadFileJobRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetUserUploadFileJobRequest::getTid() const {
 void GetUserUploadFileJobRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string GetUserUploadFileJobRequest::getJobKey() const {
+  return jobKey_;
+}
+
+void GetUserUploadFileJobRequest::setJobKey(const std::string &jobKey) {
+  jobKey_ = jobKey;
+  setParameter(std::string("JobKey"), jobKey);
 }
 

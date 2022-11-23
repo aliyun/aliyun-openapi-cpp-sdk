@@ -25,15 +25,6 @@ ModifyDataCorrectExecSQLRequest::ModifyDataCorrectExecSQLRequest()
 
 ModifyDataCorrectExecSQLRequest::~ModifyDataCorrectExecSQLRequest() {}
 
-long ModifyDataCorrectExecSQLRequest::getOrderId() const {
-  return orderId_;
-}
-
-void ModifyDataCorrectExecSQLRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 std::string ModifyDataCorrectExecSQLRequest::getExecSQL() const {
   return execSQL_;
 }
@@ -50,5 +41,14 @@ long ModifyDataCorrectExecSQLRequest::getTid() const {
 void ModifyDataCorrectExecSQLRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long ModifyDataCorrectExecSQLRequest::getOrderId() const {
+  return orderId_;
+}
+
+void ModifyDataCorrectExecSQLRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

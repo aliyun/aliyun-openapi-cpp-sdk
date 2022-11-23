@@ -30,10 +30,6 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetOpLogRequest : public RpcServiceRequ
 public:
 	GetOpLogRequest();
 	~GetOpLogRequest();
-	std::string getModule() const;
-	void setModule(const std::string &module);
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
 	long getTid() const;
@@ -42,14 +38,18 @@ public:
 	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getModule() const;
+	void setModule(const std::string &module);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
 
 private:
-	std::string module_;
-	std::string endTime_;
 	std::string startTime_;
 	long tid_;
 	int pageNumber_;
 	int pageSize_;
+	std::string module_;
+	std::string endTime_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

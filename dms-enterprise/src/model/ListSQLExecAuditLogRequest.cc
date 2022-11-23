@@ -25,15 +25,6 @@ ListSQLExecAuditLogRequest::ListSQLExecAuditLogRequest()
 
 ListSQLExecAuditLogRequest::~ListSQLExecAuditLogRequest() {}
 
-std::string ListSQLExecAuditLogRequest::getSqlType() const {
-  return sqlType_;
-}
-
-void ListSQLExecAuditLogRequest::setSqlType(const std::string &sqlType) {
-  sqlType_ = sqlType;
-  setParameter(std::string("SqlType"), sqlType);
-}
-
 std::string ListSQLExecAuditLogRequest::getSearchName() const {
   return searchName_;
 }
@@ -50,15 +41,6 @@ std::string ListSQLExecAuditLogRequest::getOpUserName() const {
 void ListSQLExecAuditLogRequest::setOpUserName(const std::string &opUserName) {
   opUserName_ = opUserName;
   setParameter(std::string("OpUserName"), opUserName);
-}
-
-std::string ListSQLExecAuditLogRequest::getEndTime() const {
-  return endTime_;
-}
-
-void ListSQLExecAuditLogRequest::setEndTime(const std::string &endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), endTime);
 }
 
 std::string ListSQLExecAuditLogRequest::getStartTime() const {
@@ -95,6 +77,24 @@ int ListSQLExecAuditLogRequest::getPageSize() const {
 void ListSQLExecAuditLogRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListSQLExecAuditLogRequest::getSqlType() const {
+  return sqlType_;
+}
+
+void ListSQLExecAuditLogRequest::setSqlType(const std::string &sqlType) {
+  sqlType_ = sqlType;
+  setParameter(std::string("SqlType"), sqlType);
+}
+
+std::string ListSQLExecAuditLogRequest::getEndTime() const {
+  return endTime_;
+}
+
+void ListSQLExecAuditLogRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
 std::string ListSQLExecAuditLogRequest::getExecState() const {

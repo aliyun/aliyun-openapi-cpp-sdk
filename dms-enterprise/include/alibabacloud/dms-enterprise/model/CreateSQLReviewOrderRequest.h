@@ -40,16 +40,16 @@ public:
 	void setTid(long tid);
 	Param getParam() const;
 	void setParam(const Param &param);
-	std::string getComment() const;
-	void setComment(const std::string &comment);
 	std::vector<long> getRelatedUserList() const;
 	void setRelatedUserList(const std::vector<long> &relatedUserList);
+	std::string getComment() const;
+	void setComment(const std::string &comment);
 
 private:
 	long tid_;
 	Param param_;
-	std::string comment_;
 	std::vector<long> relatedUserList_;
+	std::string comment_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

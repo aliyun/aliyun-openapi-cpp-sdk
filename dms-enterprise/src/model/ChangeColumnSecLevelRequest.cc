@@ -25,6 +25,24 @@ ChangeColumnSecLevelRequest::ChangeColumnSecLevelRequest()
 
 ChangeColumnSecLevelRequest::~ChangeColumnSecLevelRequest() {}
 
+long ChangeColumnSecLevelRequest::getTid() const {
+  return tid_;
+}
+
+void ChangeColumnSecLevelRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string ChangeColumnSecLevelRequest::getTableName() const {
+  return tableName_;
+}
+
+void ChangeColumnSecLevelRequest::setTableName(const std::string &tableName) {
+  tableName_ = tableName;
+  setParameter(std::string("TableName"), tableName);
+}
+
 std::string ChangeColumnSecLevelRequest::getSchemaName() const {
   return schemaName_;
 }
@@ -61,15 +79,6 @@ void ChangeColumnSecLevelRequest::setColumnName(const std::string &columnName) {
   setParameter(std::string("ColumnName"), columnName);
 }
 
-long ChangeColumnSecLevelRequest::getTid() const {
-  return tid_;
-}
-
-void ChangeColumnSecLevelRequest::setTid(long tid) {
-  tid_ = tid;
-  setParameter(std::string("Tid"), std::to_string(tid));
-}
-
 long ChangeColumnSecLevelRequest::getDbId() const {
   return dbId_;
 }
@@ -77,14 +86,5 @@ long ChangeColumnSecLevelRequest::getDbId() const {
 void ChangeColumnSecLevelRequest::setDbId(long dbId) {
   dbId_ = dbId;
   setParameter(std::string("DbId"), std::to_string(dbId));
-}
-
-std::string ChangeColumnSecLevelRequest::getTableName() const {
-  return tableName_;
-}
-
-void ChangeColumnSecLevelRequest::setTableName(const std::string &tableName) {
-  tableName_ = tableName;
-  setParameter(std::string("TableName"), tableName);
 }
 

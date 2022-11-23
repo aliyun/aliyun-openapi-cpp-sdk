@@ -25,15 +25,6 @@ GetStructSyncJobDetailRequest::GetStructSyncJobDetailRequest()
 
 GetStructSyncJobDetailRequest::~GetStructSyncJobDetailRequest() {}
 
-long GetStructSyncJobDetailRequest::getOrderId() const {
-  return orderId_;
-}
-
-void GetStructSyncJobDetailRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long GetStructSyncJobDetailRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetStructSyncJobDetailRequest::getTid() const {
 void GetStructSyncJobDetailRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long GetStructSyncJobDetailRequest::getOrderId() const {
+  return orderId_;
+}
+
+void GetStructSyncJobDetailRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

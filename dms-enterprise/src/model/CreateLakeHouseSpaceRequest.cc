@@ -25,15 +25,6 @@ CreateLakeHouseSpaceRequest::CreateLakeHouseSpaceRequest()
 
 CreateLakeHouseSpaceRequest::~CreateLakeHouseSpaceRequest() {}
 
-std::string CreateLakeHouseSpaceRequest::getSpaceName() const {
-  return spaceName_;
-}
-
-void CreateLakeHouseSpaceRequest::setSpaceName(const std::string &spaceName) {
-  spaceName_ = spaceName;
-  setParameter(std::string("SpaceName"), spaceName);
-}
-
 std::string CreateLakeHouseSpaceRequest::getDescription() const {
   return description_;
 }
@@ -61,15 +52,6 @@ void CreateLakeHouseSpaceRequest::setMode(const std::string &mode) {
   setParameter(std::string("Mode"), mode);
 }
 
-std::string CreateLakeHouseSpaceRequest::getDwDbType() const {
-  return dwDbType_;
-}
-
-void CreateLakeHouseSpaceRequest::setDwDbType(const std::string &dwDbType) {
-  dwDbType_ = dwDbType;
-  setParameter(std::string("DwDbType"), dwDbType);
-}
-
 std::string CreateLakeHouseSpaceRequest::getProdDbId() const {
   return prodDbId_;
 }
@@ -86,6 +68,24 @@ std::string CreateLakeHouseSpaceRequest::getDevDbId() const {
 void CreateLakeHouseSpaceRequest::setDevDbId(const std::string &devDbId) {
   devDbId_ = devDbId;
   setParameter(std::string("DevDbId"), devDbId);
+}
+
+std::string CreateLakeHouseSpaceRequest::getSpaceName() const {
+  return spaceName_;
+}
+
+void CreateLakeHouseSpaceRequest::setSpaceName(const std::string &spaceName) {
+  spaceName_ = spaceName;
+  setParameter(std::string("SpaceName"), spaceName);
+}
+
+std::string CreateLakeHouseSpaceRequest::getDwDbType() const {
+  return dwDbType_;
+}
+
+void CreateLakeHouseSpaceRequest::setDwDbType(const std::string &dwDbType) {
+  dwDbType_ = dwDbType;
+  setParameter(std::string("DwDbType"), dwDbType);
 }
 
 std::string CreateLakeHouseSpaceRequest::getSpaceConfig() const {

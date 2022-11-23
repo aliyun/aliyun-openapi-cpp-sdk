@@ -25,15 +25,6 @@ ListDataCorrectPreCheckDBRequest::ListDataCorrectPreCheckDBRequest()
 
 ListDataCorrectPreCheckDBRequest::~ListDataCorrectPreCheckDBRequest() {}
 
-long ListDataCorrectPreCheckDBRequest::getOrderId() const {
-  return orderId_;
-}
-
-void ListDataCorrectPreCheckDBRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long ListDataCorrectPreCheckDBRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -59,5 +50,14 @@ long ListDataCorrectPreCheckDBRequest::getPageSize() const {
 void ListDataCorrectPreCheckDBRequest::setPageSize(long pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+long ListDataCorrectPreCheckDBRequest::getOrderId() const {
+  return orderId_;
+}
+
+void ListDataCorrectPreCheckDBRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

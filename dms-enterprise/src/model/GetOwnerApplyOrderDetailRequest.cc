@@ -25,15 +25,6 @@ GetOwnerApplyOrderDetailRequest::GetOwnerApplyOrderDetailRequest()
 
 GetOwnerApplyOrderDetailRequest::~GetOwnerApplyOrderDetailRequest() {}
 
-long GetOwnerApplyOrderDetailRequest::getOrderId() const {
-  return orderId_;
-}
-
-void GetOwnerApplyOrderDetailRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long GetOwnerApplyOrderDetailRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetOwnerApplyOrderDetailRequest::getTid() const {
 void GetOwnerApplyOrderDetailRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long GetOwnerApplyOrderDetailRequest::getOrderId() const {
+  return orderId_;
+}
+
+void GetOwnerApplyOrderDetailRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

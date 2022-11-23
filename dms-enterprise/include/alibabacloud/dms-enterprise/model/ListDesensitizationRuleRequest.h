@@ -30,28 +30,28 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListDesensitizationRuleRequest : public
 public:
 	ListDesensitizationRuleRequest();
 	~ListDesensitizationRuleRequest();
-	std::string getRuleType() const;
-	void setRuleType(const std::string &ruleType);
 	std::string getRuleName() const;
 	void setRuleName(const std::string &ruleName);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	long getTid() const;
 	void setTid(long tid);
-	std::string getFuncType() const;
-	void setFuncType(const std::string &funcType);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getRuleType() const;
+	void setRuleType(const std::string &ruleType);
+	std::string getFuncType() const;
+	void setFuncType(const std::string &funcType);
 	int getRuleId() const;
 	void setRuleId(int ruleId);
 
 private:
-	std::string ruleType_;
 	std::string ruleName_;
 	int pageNumber_;
 	long tid_;
-	std::string funcType_;
 	int pageSize_;
+	std::string ruleType_;
+	std::string funcType_;
 	int ruleId_;
 };
 } // namespace Model

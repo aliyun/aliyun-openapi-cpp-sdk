@@ -25,15 +25,6 @@ ChangeLhDagOwnerRequest::ChangeLhDagOwnerRequest()
 
 ChangeLhDagOwnerRequest::~ChangeLhDagOwnerRequest() {}
 
-long ChangeLhDagOwnerRequest::getOwnerUserId() const {
-  return ownerUserId_;
-}
-
-void ChangeLhDagOwnerRequest::setOwnerUserId(long ownerUserId) {
-  ownerUserId_ = ownerUserId;
-  setParameter(std::string("OwnerUserId"), std::to_string(ownerUserId));
-}
-
 long ChangeLhDagOwnerRequest::getDagId() const {
   return dagId_;
 }
@@ -50,5 +41,14 @@ long ChangeLhDagOwnerRequest::getTid() const {
 void ChangeLhDagOwnerRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long ChangeLhDagOwnerRequest::getOwnerUserId() const {
+  return ownerUserId_;
+}
+
+void ChangeLhDagOwnerRequest::setOwnerUserId(long ownerUserId) {
+  ownerUserId_ = ownerUserId;
+  setParameter(std::string("OwnerUserId"), std::to_string(ownerUserId));
 }
 

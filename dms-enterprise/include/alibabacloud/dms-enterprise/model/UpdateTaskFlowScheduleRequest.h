@@ -40,14 +40,14 @@ public:
 	void setDagId(long dagId);
 	long getTid() const;
 	void setTid(long tid);
-	bool getScheduleSwitch() const;
-	void setScheduleSwitch(bool scheduleSwitch);
-	std::string getCronEndDate() const;
-	void setCronEndDate(const std::string &cronEndDate);
 	std::string getTimeZoneId() const;
 	void setTimeZoneId(const std::string &timeZoneId);
 	std::string getCronBeginDate() const;
 	void setCronBeginDate(const std::string &cronBeginDate);
+	bool getScheduleSwitch() const;
+	void setScheduleSwitch(bool scheduleSwitch);
+	std::string getCronEndDate() const;
+	void setCronEndDate(const std::string &cronEndDate);
 	std::string getScheduleParam() const;
 	void setScheduleParam(const std::string &scheduleParam);
 
@@ -57,10 +57,10 @@ private:
 	std::string triggerType_;
 	long dagId_;
 	long tid_;
-	bool scheduleSwitch_;
-	std::string cronEndDate_;
 	std::string timeZoneId_;
 	std::string cronBeginDate_;
+	bool scheduleSwitch_;
+	std::string cronEndDate_;
 	std::string scheduleParam_;
 };
 } // namespace Model

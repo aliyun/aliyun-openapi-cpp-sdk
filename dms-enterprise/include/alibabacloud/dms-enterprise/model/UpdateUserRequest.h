@@ -32,27 +32,27 @@ public:
 	~UpdateUserRequest();
 	std::string getRoleNames() const;
 	void setRoleNames(const std::string &roleNames);
-	long getMaxResultCount() const;
-	void setMaxResultCount(long maxResultCount);
 	long getMaxExecuteCount() const;
 	void setMaxExecuteCount(long maxExecuteCount);
 	std::string getUserNick() const;
 	void setUserNick(const std::string &userNick);
-	std::string getMobile() const;
-	void setMobile(const std::string &mobile);
 	long getTid() const;
 	void setTid(long tid);
 	long getUid() const;
 	void setUid(long uid);
+	long getMaxResultCount() const;
+	void setMaxResultCount(long maxResultCount);
+	std::string getMobile() const;
+	void setMobile(const std::string &mobile);
 
 private:
 	std::string roleNames_;
-	long maxResultCount_;
 	long maxExecuteCount_;
 	std::string userNick_;
-	std::string mobile_;
 	long tid_;
 	long uid_;
+	long maxResultCount_;
+	std::string mobile_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

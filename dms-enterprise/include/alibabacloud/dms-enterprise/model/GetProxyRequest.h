@@ -32,15 +32,15 @@ public:
 	~GetProxyRequest();
 	long getTid() const;
 	void setTid(long tid);
-	long getInstanceId() const;
-	void setInstanceId(long instanceId);
 	long getProxyId() const;
 	void setProxyId(long proxyId);
+	long getInstanceId() const;
+	void setInstanceId(long instanceId);
 
 private:
 	long tid_;
-	long instanceId_;
 	long proxyId_;
+	long instanceId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

@@ -25,6 +25,15 @@ CloseOrderRequest::CloseOrderRequest()
 
 CloseOrderRequest::~CloseOrderRequest() {}
 
+long CloseOrderRequest::getTid() const {
+  return tid_;
+}
+
+void CloseOrderRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
+}
+
 long CloseOrderRequest::getOrderId() const {
   return orderId_;
 }
@@ -41,14 +50,5 @@ std::string CloseOrderRequest::getCloseReason() const {
 void CloseOrderRequest::setCloseReason(const std::string &closeReason) {
   closeReason_ = closeReason;
   setParameter(std::string("CloseReason"), closeReason);
-}
-
-long CloseOrderRequest::getTid() const {
-  return tid_;
-}
-
-void CloseOrderRequest::setTid(long tid) {
-  tid_ = tid;
-  setParameter(std::string("Tid"), std::to_string(tid));
 }
 

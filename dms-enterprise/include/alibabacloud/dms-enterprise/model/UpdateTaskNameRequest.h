@@ -32,15 +32,15 @@ public:
 	~UpdateTaskNameRequest();
 	long getTid() const;
 	void setTid(long tid);
-	std::string getNodeName() const;
-	void setNodeName(const std::string &nodeName);
 	std::string getNodeId() const;
 	void setNodeId(const std::string &nodeId);
+	std::string getNodeName() const;
+	void setNodeName(const std::string &nodeName);
 
 private:
 	long tid_;
-	std::string nodeName_;
 	std::string nodeId_;
+	std::string nodeName_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

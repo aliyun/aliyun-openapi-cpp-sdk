@@ -25,6 +25,24 @@ CreateUploadFileJobRequest::CreateUploadFileJobRequest()
 
 CreateUploadFileJobRequest::~CreateUploadFileJobRequest() {}
 
+long CreateUploadFileJobRequest::getTid() const {
+  return tid_;
+}
+
+void CreateUploadFileJobRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string CreateUploadFileJobRequest::getUploadURL() const {
+  return uploadURL_;
+}
+
+void CreateUploadFileJobRequest::setUploadURL(const std::string &uploadURL) {
+  uploadURL_ = uploadURL;
+  setParameter(std::string("UploadURL"), uploadURL);
+}
+
 std::string CreateUploadFileJobRequest::getUploadType() const {
   return uploadType_;
 }
@@ -43,15 +61,6 @@ void CreateUploadFileJobRequest::setFileSource(const std::string &fileSource) {
   setParameter(std::string("FileSource"), fileSource);
 }
 
-long CreateUploadFileJobRequest::getTid() const {
-  return tid_;
-}
-
-void CreateUploadFileJobRequest::setTid(long tid) {
-  tid_ = tid;
-  setParameter(std::string("Tid"), std::to_string(tid));
-}
-
 std::string CreateUploadFileJobRequest::getFileName() const {
   return fileName_;
 }
@@ -59,14 +68,5 @@ std::string CreateUploadFileJobRequest::getFileName() const {
 void CreateUploadFileJobRequest::setFileName(const std::string &fileName) {
   fileName_ = fileName;
   setParameter(std::string("FileName"), fileName);
-}
-
-std::string CreateUploadFileJobRequest::getUploadURL() const {
-  return uploadURL_;
-}
-
-void CreateUploadFileJobRequest::setUploadURL(const std::string &uploadURL) {
-  uploadURL_ = uploadURL;
-  setParameter(std::string("UploadURL"), uploadURL);
 }
 

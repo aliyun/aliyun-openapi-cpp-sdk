@@ -43,24 +43,6 @@ void CreateOrderRequest::setPluginType(const std::string &pluginType) {
   setParameter(std::string("PluginType"), pluginType);
 }
 
-std::string CreateOrderRequest::getAttachmentKey() const {
-  return attachmentKey_;
-}
-
-void CreateOrderRequest::setAttachmentKey(const std::string &attachmentKey) {
-  attachmentKey_ = attachmentKey;
-  setParameter(std::string("AttachmentKey"), attachmentKey);
-}
-
-std::string CreateOrderRequest::getComment() const {
-  return comment_;
-}
-
-void CreateOrderRequest::setComment(const std::string &comment) {
-  comment_ = comment;
-  setParameter(std::string("Comment"), comment);
-}
-
 std::map<std::string, std::string> CreateOrderRequest::getPluginParam() const {
   return pluginParam_;
 }
@@ -77,5 +59,23 @@ std::string CreateOrderRequest::getRelatedUserList() const {
 void CreateOrderRequest::setRelatedUserList(const std::string &relatedUserList) {
   relatedUserList_ = relatedUserList;
   setParameter(std::string("RelatedUserList"), relatedUserList);
+}
+
+std::string CreateOrderRequest::getAttachmentKey() const {
+  return attachmentKey_;
+}
+
+void CreateOrderRequest::setAttachmentKey(const std::string &attachmentKey) {
+  attachmentKey_ = attachmentKey;
+  setParameter(std::string("AttachmentKey"), attachmentKey);
+}
+
+std::string CreateOrderRequest::getComment() const {
+  return comment_;
+}
+
+void CreateOrderRequest::setComment(const std::string &comment) {
+  comment_ = comment;
+  setParameter(std::string("Comment"), comment);
 }
 

@@ -25,15 +25,6 @@ SubmitOrderApprovalRequest::SubmitOrderApprovalRequest()
 
 SubmitOrderApprovalRequest::~SubmitOrderApprovalRequest() {}
 
-long SubmitOrderApprovalRequest::getOrderId() const {
-  return orderId_;
-}
-
-void SubmitOrderApprovalRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long SubmitOrderApprovalRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long SubmitOrderApprovalRequest::getTid() const {
 void SubmitOrderApprovalRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long SubmitOrderApprovalRequest::getOrderId() const {
+  return orderId_;
+}
+
+void SubmitOrderApprovalRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

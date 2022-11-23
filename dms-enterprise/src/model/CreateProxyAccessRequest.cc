@@ -52,15 +52,6 @@ void CreateProxyAccessRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string CreateProxyAccessRequest::getIndepPassword() const {
-  return indepPassword_;
-}
-
-void CreateProxyAccessRequest::setIndepPassword(const std::string &indepPassword) {
-  indepPassword_ = indepPassword;
-  setParameter(std::string("IndepPassword"), indepPassword);
-}
-
 long CreateProxyAccessRequest::getProxyId() const {
   return proxyId_;
 }
@@ -68,5 +59,14 @@ long CreateProxyAccessRequest::getProxyId() const {
 void CreateProxyAccessRequest::setProxyId(long proxyId) {
   proxyId_ = proxyId;
   setParameter(std::string("ProxyId"), std::to_string(proxyId));
+}
+
+std::string CreateProxyAccessRequest::getIndepPassword() const {
+  return indepPassword_;
+}
+
+void CreateProxyAccessRequest::setIndepPassword(const std::string &indepPassword) {
+  indepPassword_ = indepPassword;
+  setParameter(std::string("IndepPassword"), indepPassword);
 }
 

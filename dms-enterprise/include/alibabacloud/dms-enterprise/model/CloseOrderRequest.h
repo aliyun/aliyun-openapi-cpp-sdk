@@ -30,17 +30,17 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT CloseOrderRequest : public RpcServiceRe
 public:
 	CloseOrderRequest();
 	~CloseOrderRequest();
+	long getTid() const;
+	void setTid(long tid);
 	long getOrderId() const;
 	void setOrderId(long orderId);
 	std::string getCloseReason() const;
 	void setCloseReason(const std::string &closeReason);
-	long getTid() const;
-	void setTid(long tid);
 
 private:
+	long tid_;
 	long orderId_;
 	std::string closeReason_;
-	long tid_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

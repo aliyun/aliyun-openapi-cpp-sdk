@@ -25,15 +25,6 @@ RefundPayAsYouGoOrderRequest::RefundPayAsYouGoOrderRequest()
 
 RefundPayAsYouGoOrderRequest::~RefundPayAsYouGoOrderRequest() {}
 
-std::string RefundPayAsYouGoOrderRequest::getOrderId() const {
-  return orderId_;
-}
-
-void RefundPayAsYouGoOrderRequest::setOrderId(const std::string &orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), orderId);
-}
-
 long RefundPayAsYouGoOrderRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long RefundPayAsYouGoOrderRequest::getTid() const {
 void RefundPayAsYouGoOrderRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string RefundPayAsYouGoOrderRequest::getOrderId() const {
+  return orderId_;
+}
+
+void RefundPayAsYouGoOrderRequest::setOrderId(const std::string &orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), orderId);
 }
 

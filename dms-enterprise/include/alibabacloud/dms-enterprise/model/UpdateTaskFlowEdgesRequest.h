@@ -35,17 +35,17 @@ public:
 	};
 	UpdateTaskFlowEdgesRequest();
 	~UpdateTaskFlowEdgesRequest();
-	std::vector<Edges> getEdges() const;
-	void setEdges(const std::vector<Edges> &edges);
 	long getDagId() const;
 	void setDagId(long dagId);
 	long getTid() const;
 	void setTid(long tid);
+	std::vector<Edges> getEdges() const;
+	void setEdges(const std::vector<Edges> &edges);
 
 private:
-	std::vector<Edges> edges_;
 	long dagId_;
 	long tid_;
+	std::vector<Edges> edges_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

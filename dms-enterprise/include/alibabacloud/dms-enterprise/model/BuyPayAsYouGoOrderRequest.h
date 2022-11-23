@@ -30,20 +30,20 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT BuyPayAsYouGoOrderRequest : public RpcS
 public:
 	BuyPayAsYouGoOrderRequest();
 	~BuyPayAsYouGoOrderRequest();
-	int getInsNum() const;
-	void setInsNum(int insNum);
 	long getTid() const;
 	void setTid(long tid);
-	std::string getVersionType() const;
-	void setVersionType(const std::string &versionType);
 	std::string getCommodityType() const;
 	void setCommodityType(const std::string &commodityType);
+	int getInsNum() const;
+	void setInsNum(int insNum);
+	std::string getVersionType() const;
+	void setVersionType(const std::string &versionType);
 
 private:
-	int insNum_;
 	long tid_;
-	std::string versionType_;
 	std::string commodityType_;
+	int insNum_;
+	std::string versionType_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

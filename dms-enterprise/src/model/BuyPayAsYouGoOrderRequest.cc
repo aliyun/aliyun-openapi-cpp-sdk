@@ -25,15 +25,6 @@ BuyPayAsYouGoOrderRequest::BuyPayAsYouGoOrderRequest()
 
 BuyPayAsYouGoOrderRequest::~BuyPayAsYouGoOrderRequest() {}
 
-int BuyPayAsYouGoOrderRequest::getInsNum() const {
-  return insNum_;
-}
-
-void BuyPayAsYouGoOrderRequest::setInsNum(int insNum) {
-  insNum_ = insNum;
-  setParameter(std::string("InsNum"), std::to_string(insNum));
-}
-
 long BuyPayAsYouGoOrderRequest::getTid() const {
   return tid_;
 }
@@ -43,15 +34,6 @@ void BuyPayAsYouGoOrderRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string BuyPayAsYouGoOrderRequest::getVersionType() const {
-  return versionType_;
-}
-
-void BuyPayAsYouGoOrderRequest::setVersionType(const std::string &versionType) {
-  versionType_ = versionType;
-  setParameter(std::string("VersionType"), versionType);
-}
-
 std::string BuyPayAsYouGoOrderRequest::getCommodityType() const {
   return commodityType_;
 }
@@ -59,5 +41,23 @@ std::string BuyPayAsYouGoOrderRequest::getCommodityType() const {
 void BuyPayAsYouGoOrderRequest::setCommodityType(const std::string &commodityType) {
   commodityType_ = commodityType;
   setParameter(std::string("CommodityType"), commodityType);
+}
+
+int BuyPayAsYouGoOrderRequest::getInsNum() const {
+  return insNum_;
+}
+
+void BuyPayAsYouGoOrderRequest::setInsNum(int insNum) {
+  insNum_ = insNum;
+  setParameter(std::string("InsNum"), std::to_string(insNum));
+}
+
+std::string BuyPayAsYouGoOrderRequest::getVersionType() const {
+  return versionType_;
+}
+
+void BuyPayAsYouGoOrderRequest::setVersionType(const std::string &versionType) {
+  versionType_ = versionType;
+  setParameter(std::string("VersionType"), versionType);
 }
 

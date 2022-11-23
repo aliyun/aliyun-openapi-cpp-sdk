@@ -30,38 +30,38 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT BackFillRequest : public RpcServiceRequ
 public:
 	BackFillRequest();
 	~BackFillRequest();
-	std::string getBackFillDateBegin() const;
-	void setBackFillDateBegin(const std::string &backFillDateBegin);
-	std::string getBackFillDate() const;
-	void setBackFillDate(const std::string &backFillDate);
 	long getDagId() const;
 	void setDagId(long dagId);
 	long getTid() const;
 	void setTid(long tid);
 	bool getIsTriggerSubTree() const;
 	void setIsTriggerSubTree(bool isTriggerSubTree);
-	bool getAsc() const;
-	void setAsc(bool asc);
 	std::string getBackFillDateEnd() const;
 	void setBackFillDateEnd(const std::string &backFillDateEnd);
-	int getInterval() const;
-	void setInterval(int interval);
 	long getHistoryDagId() const;
 	void setHistoryDagId(long historyDagId);
 	std::vector<long> getStartNodeIds() const;
 	void setStartNodeIds(const std::vector<long> &startNodeIds);
+	std::string getBackFillDateBegin() const;
+	void setBackFillDateBegin(const std::string &backFillDateBegin);
+	std::string getBackFillDate() const;
+	void setBackFillDate(const std::string &backFillDate);
+	bool getAsc() const;
+	void setAsc(bool asc);
+	int getInterval() const;
+	void setInterval(int interval);
 
 private:
-	std::string backFillDateBegin_;
-	std::string backFillDate_;
 	long dagId_;
 	long tid_;
 	bool isTriggerSubTree_;
-	bool asc_;
 	std::string backFillDateEnd_;
-	int interval_;
 	long historyDagId_;
 	std::vector<long> startNodeIds_;
+	std::string backFillDateBegin_;
+	std::string backFillDate_;
+	bool asc_;
+	int interval_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

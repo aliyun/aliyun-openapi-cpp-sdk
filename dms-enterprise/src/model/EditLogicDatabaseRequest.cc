@@ -43,6 +43,15 @@ void EditLogicDatabaseRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
+std::string EditLogicDatabaseRequest::getAlias() const {
+  return alias_;
+}
+
+void EditLogicDatabaseRequest::setAlias(const std::string &alias) {
+  alias_ = alias;
+  setParameter(std::string("Alias"), alias);
+}
+
 std::vector<EditLogicDatabaseRequest::long> EditLogicDatabaseRequest::getDatabaseIds() const {
   return databaseIds_;
 }
@@ -52,14 +61,5 @@ void EditLogicDatabaseRequest::setDatabaseIds(const std::vector<EditLogicDatabas
   for(int dep1 = 0; dep1 != databaseIds.size(); dep1++) {
     setParameter(std::string("DatabaseIds") + "." + std::to_string(dep1 + 1), std::to_string(databaseIds[dep1]));
   }
-}
-
-std::string EditLogicDatabaseRequest::getAlias() const {
-  return alias_;
-}
-
-void EditLogicDatabaseRequest::setAlias(const std::string &alias) {
-  alias_ = alias;
-  setParameter(std::string("Alias"), alias);
 }
 

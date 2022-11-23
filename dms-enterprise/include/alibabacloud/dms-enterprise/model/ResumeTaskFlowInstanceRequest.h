@@ -30,19 +30,19 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ResumeTaskFlowInstanceRequest : public 
 public:
 	ResumeTaskFlowInstanceRequest();
 	~ResumeTaskFlowInstanceRequest();
-	std::string getDagVersion() const;
-	void setDagVersion(const std::string &dagVersion);
 	long getDagId() const;
 	void setDagId(long dagId);
 	long getTid() const;
 	void setTid(long tid);
+	std::string getDagVersion() const;
+	void setDagVersion(const std::string &dagVersion);
 	long getDagInstanceId() const;
 	void setDagInstanceId(long dagInstanceId);
 
 private:
-	std::string dagVersion_;
 	long dagId_;
 	long tid_;
+	std::string dagVersion_;
 	long dagInstanceId_;
 };
 } // namespace Model

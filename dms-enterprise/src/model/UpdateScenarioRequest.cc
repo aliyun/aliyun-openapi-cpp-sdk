@@ -43,15 +43,6 @@ void UpdateScenarioRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string UpdateScenarioRequest::getScenarioName() const {
-  return scenarioName_;
-}
-
-void UpdateScenarioRequest::setScenarioName(const std::string &scenarioName) {
-  scenarioName_ = scenarioName;
-  setParameter(std::string("ScenarioName"), scenarioName);
-}
-
 std::string UpdateScenarioRequest::getScenarioId() const {
   return scenarioId_;
 }
@@ -59,5 +50,14 @@ std::string UpdateScenarioRequest::getScenarioId() const {
 void UpdateScenarioRequest::setScenarioId(const std::string &scenarioId) {
   scenarioId_ = scenarioId;
   setParameter(std::string("ScenarioId"), scenarioId);
+}
+
+std::string UpdateScenarioRequest::getScenarioName() const {
+  return scenarioName_;
+}
+
+void UpdateScenarioRequest::setScenarioName(const std::string &scenarioName) {
+  scenarioName_ = scenarioName;
+  setParameter(std::string("ScenarioName"), scenarioName);
 }
 

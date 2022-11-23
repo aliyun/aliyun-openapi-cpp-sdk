@@ -43,6 +43,15 @@ void ListDatabaseUserPermssionsRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+int ListDatabaseUserPermssionsRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListDatabaseUserPermssionsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
 std::string ListDatabaseUserPermssionsRequest::getPermType() const {
   return permType_;
 }
@@ -59,15 +68,6 @@ std::string ListDatabaseUserPermssionsRequest::getDbId() const {
 void ListDatabaseUserPermssionsRequest::setDbId(const std::string &dbId) {
   dbId_ = dbId;
   setParameter(std::string("DbId"), dbId);
-}
-
-int ListDatabaseUserPermssionsRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListDatabaseUserPermssionsRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
 bool ListDatabaseUserPermssionsRequest::getLogic() const {

@@ -30,14 +30,10 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListProxySQLExecAuditLogRequest : publi
 public:
 	ListProxySQLExecAuditLogRequest();
 	~ListProxySQLExecAuditLogRequest();
-	std::string getSQLType() const;
-	void setSQLType(const std::string &sQLType);
 	std::string getSearchName() const;
 	void setSearchName(const std::string &searchName);
 	std::string getOpUserName() const;
 	void setOpUserName(const std::string &opUserName);
-	long getEndTime() const;
-	void setEndTime(long endTime);
 	long getStartTime() const;
 	void setStartTime(long startTime);
 	int getPageNumber() const;
@@ -46,18 +42,22 @@ public:
 	void setTid(long tid);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getSQLType() const;
+	void setSQLType(const std::string &sQLType);
+	long getEndTime() const;
+	void setEndTime(long endTime);
 	std::string getExecState() const;
 	void setExecState(const std::string &execState);
 
 private:
-	std::string sQLType_;
 	std::string searchName_;
 	std::string opUserName_;
-	long endTime_;
 	long startTime_;
 	int pageNumber_;
 	long tid_;
 	int pageSize_;
+	std::string sQLType_;
+	long endTime_;
 	std::string execState_;
 };
 } // namespace Model

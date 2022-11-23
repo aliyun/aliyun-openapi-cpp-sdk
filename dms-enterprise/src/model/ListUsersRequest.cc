@@ -61,15 +61,6 @@ void ListUsersRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string ListUsersRequest::getUserState() const {
-  return userState_;
-}
-
-void ListUsersRequest::setUserState(const std::string &userState) {
-  userState_ = userState;
-  setParameter(std::string("UserState"), userState);
-}
-
 int ListUsersRequest::getPageSize() const {
   return pageSize_;
 }
@@ -77,5 +68,14 @@ int ListUsersRequest::getPageSize() const {
 void ListUsersRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListUsersRequest::getUserState() const {
+  return userState_;
+}
+
+void ListUsersRequest::setUserState(const std::string &userState) {
+  userState_ = userState;
+  setParameter(std::string("UserState"), userState);
 }
 

@@ -43,15 +43,6 @@ void DeleteLhMembersRequest::setObjectType(int objectType) {
   setParameter(std::string("ObjectType"), std::to_string(objectType));
 }
 
-long DeleteLhMembersRequest::getObjectId() const {
-  return objectId_;
-}
-
-void DeleteLhMembersRequest::setObjectId(long objectId) {
-  objectId_ = objectId;
-  setParameter(std::string("ObjectId"), std::to_string(objectId));
-}
-
 std::vector<DeleteLhMembersRequest::int> DeleteLhMembersRequest::getMemberIds() const {
   return memberIds_;
 }
@@ -61,5 +52,14 @@ void DeleteLhMembersRequest::setMemberIds(const std::vector<DeleteLhMembersReque
   for(int dep1 = 0; dep1 != memberIds.size(); dep1++) {
     setParameter(std::string("MemberIds") + "." + std::to_string(dep1 + 1), std::to_string(memberIds[dep1]));
   }
+}
+
+long DeleteLhMembersRequest::getObjectId() const {
+  return objectId_;
+}
+
+void DeleteLhMembersRequest::setObjectId(long objectId) {
+  objectId_ = objectId;
+  setParameter(std::string("ObjectId"), std::to_string(objectId));
 }
 

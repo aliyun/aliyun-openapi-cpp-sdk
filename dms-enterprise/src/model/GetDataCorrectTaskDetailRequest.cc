@@ -25,15 +25,6 @@ GetDataCorrectTaskDetailRequest::GetDataCorrectTaskDetailRequest()
 
 GetDataCorrectTaskDetailRequest::~GetDataCorrectTaskDetailRequest() {}
 
-long GetDataCorrectTaskDetailRequest::getOrderId() const {
-  return orderId_;
-}
-
-void GetDataCorrectTaskDetailRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long GetDataCorrectTaskDetailRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetDataCorrectTaskDetailRequest::getTid() const {
 void GetDataCorrectTaskDetailRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long GetDataCorrectTaskDetailRequest::getOrderId() const {
+  return orderId_;
+}
+
+void GetDataCorrectTaskDetailRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

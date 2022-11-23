@@ -61,6 +61,24 @@ void ListUserPermissionsRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListUserPermissionsRequest::getEnvType() const {
+  return envType_;
+}
+
+void ListUserPermissionsRequest::setEnvType(const std::string &envType) {
+  envType_ = envType;
+  setParameter(std::string("EnvType"), envType);
+}
+
+int ListUserPermissionsRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListUserPermissionsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
 std::string ListUserPermissionsRequest::getPermType() const {
   return permType_;
 }
@@ -79,15 +97,6 @@ void ListUserPermissionsRequest::setDatabaseName(const std::string &databaseName
   setParameter(std::string("DatabaseName"), databaseName);
 }
 
-std::string ListUserPermissionsRequest::getEnvType() const {
-  return envType_;
-}
-
-void ListUserPermissionsRequest::setEnvType(const std::string &envType) {
-  envType_ = envType;
-  setParameter(std::string("EnvType"), envType);
-}
-
 std::string ListUserPermissionsRequest::getDbType() const {
   return dbType_;
 }
@@ -95,15 +104,6 @@ std::string ListUserPermissionsRequest::getDbType() const {
 void ListUserPermissionsRequest::setDbType(const std::string &dbType) {
   dbType_ = dbType;
   setParameter(std::string("DbType"), dbType);
-}
-
-int ListUserPermissionsRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListUserPermissionsRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
 bool ListUserPermissionsRequest::getLogic() const {

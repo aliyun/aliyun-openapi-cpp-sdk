@@ -25,15 +25,6 @@ GetDataCorrectOrderDetailRequest::GetDataCorrectOrderDetailRequest()
 
 GetDataCorrectOrderDetailRequest::~GetDataCorrectOrderDetailRequest() {}
 
-long GetDataCorrectOrderDetailRequest::getOrderId() const {
-  return orderId_;
-}
-
-void GetDataCorrectOrderDetailRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long GetDataCorrectOrderDetailRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetDataCorrectOrderDetailRequest::getTid() const {
 void GetDataCorrectOrderDetailRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long GetDataCorrectOrderDetailRequest::getOrderId() const {
+  return orderId_;
+}
+
+void GetDataCorrectOrderDetailRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

@@ -34,16 +34,16 @@ public:
 	void setTid(long tid);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 
 private:
 	long tid_;
 	int pageNumber_;
-	std::string instanceId_;
 	int pageSize_;
+	std::string instanceId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

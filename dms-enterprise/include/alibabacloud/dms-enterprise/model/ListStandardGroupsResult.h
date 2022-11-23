@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					long lastMenderId;
 					std::string groupMode;
 					std::string dbType;
+					long groupId;
 				};
 
 

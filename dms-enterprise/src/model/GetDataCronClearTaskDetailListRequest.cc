@@ -25,15 +25,6 @@ GetDataCronClearTaskDetailListRequest::GetDataCronClearTaskDetailListRequest()
 
 GetDataCronClearTaskDetailListRequest::~GetDataCronClearTaskDetailListRequest() {}
 
-long GetDataCronClearTaskDetailListRequest::getOrderId() const {
-  return orderId_;
-}
-
-void GetDataCronClearTaskDetailListRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long GetDataCronClearTaskDetailListRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -59,5 +50,14 @@ long GetDataCronClearTaskDetailListRequest::getPageSize() const {
 void GetDataCronClearTaskDetailListRequest::setPageSize(long pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+long GetDataCronClearTaskDetailListRequest::getOrderId() const {
+  return orderId_;
+}
+
+void GetDataCronClearTaskDetailListRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

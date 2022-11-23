@@ -30,17 +30,17 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ChangeLhDagOwnerRequest : public RpcSer
 public:
 	ChangeLhDagOwnerRequest();
 	~ChangeLhDagOwnerRequest();
-	long getOwnerUserId() const;
-	void setOwnerUserId(long ownerUserId);
 	long getDagId() const;
 	void setDagId(long dagId);
 	long getTid() const;
 	void setTid(long tid);
+	long getOwnerUserId() const;
+	void setOwnerUserId(long ownerUserId);
 
 private:
-	long ownerUserId_;
 	long dagId_;
 	long tid_;
+	long ownerUserId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

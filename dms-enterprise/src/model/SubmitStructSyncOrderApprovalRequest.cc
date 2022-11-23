@@ -25,15 +25,6 @@ SubmitStructSyncOrderApprovalRequest::SubmitStructSyncOrderApprovalRequest()
 
 SubmitStructSyncOrderApprovalRequest::~SubmitStructSyncOrderApprovalRequest() {}
 
-long SubmitStructSyncOrderApprovalRequest::getOrderId() const {
-  return orderId_;
-}
-
-void SubmitStructSyncOrderApprovalRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long SubmitStructSyncOrderApprovalRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long SubmitStructSyncOrderApprovalRequest::getTid() const {
 void SubmitStructSyncOrderApprovalRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long SubmitStructSyncOrderApprovalRequest::getOrderId() const {
+  return orderId_;
+}
+
+void SubmitStructSyncOrderApprovalRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

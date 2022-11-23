@@ -32,15 +32,15 @@ public:
 	~UpdateTaskFlowCooperatorsRequest();
 	long getDagId() const;
 	void setDagId(long dagId);
-	std::vector<std::string> getCooperatorIds() const;
-	void setCooperatorIds(const std::vector<std::string> &cooperatorIds);
 	long getTid() const;
 	void setTid(long tid);
+	std::vector<std::string> getCooperatorIds() const;
+	void setCooperatorIds(const std::vector<std::string> &cooperatorIds);
 
 private:
 	long dagId_;
-	std::vector<std::string> cooperatorIds_;
 	long tid_;
+	std::vector<std::string> cooperatorIds_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

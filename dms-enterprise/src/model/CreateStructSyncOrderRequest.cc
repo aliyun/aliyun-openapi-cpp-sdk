@@ -34,15 +34,6 @@ void CreateStructSyncOrderRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string CreateStructSyncOrderRequest::getAttachmentKey() const {
-  return attachmentKey_;
-}
-
-void CreateStructSyncOrderRequest::setAttachmentKey(const std::string &attachmentKey) {
-  attachmentKey_ = attachmentKey;
-  setParameter(std::string("AttachmentKey"), attachmentKey);
-}
-
 CreateStructSyncOrderRequest::Param CreateStructSyncOrderRequest::getParam() const {
   return param_;
 }
@@ -65,15 +56,6 @@ void CreateStructSyncOrderRequest::setParam(const CreateStructSyncOrderRequest::
   setParameter(std::string("Param") + ".Target.Logic", param.target.logic ? "true" : "false");
 }
 
-std::string CreateStructSyncOrderRequest::getComment() const {
-  return comment_;
-}
-
-void CreateStructSyncOrderRequest::setComment(const std::string &comment) {
-  comment_ = comment;
-  setParameter(std::string("Comment"), comment);
-}
-
 std::vector<CreateStructSyncOrderRequest::long> CreateStructSyncOrderRequest::getRelatedUserList() const {
   return relatedUserList_;
 }
@@ -83,5 +65,23 @@ void CreateStructSyncOrderRequest::setRelatedUserList(const std::vector<CreateSt
   for(int dep1 = 0; dep1 != relatedUserList.size(); dep1++) {
     setParameter(std::string("RelatedUserList") + "." + std::to_string(dep1 + 1), std::to_string(relatedUserList[dep1]));
   }
+}
+
+std::string CreateStructSyncOrderRequest::getAttachmentKey() const {
+  return attachmentKey_;
+}
+
+void CreateStructSyncOrderRequest::setAttachmentKey(const std::string &attachmentKey) {
+  attachmentKey_ = attachmentKey;
+  setParameter(std::string("AttachmentKey"), attachmentKey);
+}
+
+std::string CreateStructSyncOrderRequest::getComment() const {
+  return comment_;
+}
+
+void CreateStructSyncOrderRequest::setComment(const std::string &comment) {
+  comment_ = comment;
+  setParameter(std::string("Comment"), comment);
 }
 

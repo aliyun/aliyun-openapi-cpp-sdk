@@ -43,15 +43,6 @@ void DeleteInstanceRequest::setSid(const std::string &sid) {
   setParameter(std::string("Sid"), sid);
 }
 
-int DeleteInstanceRequest::getPort() const {
-  return port_;
-}
-
-void DeleteInstanceRequest::setPort(int port) {
-  port_ = port;
-  setParameter(std::string("Port"), std::to_string(port));
-}
-
 std::string DeleteInstanceRequest::getHost() const {
   return host_;
 }
@@ -59,5 +50,14 @@ std::string DeleteInstanceRequest::getHost() const {
 void DeleteInstanceRequest::setHost(const std::string &host) {
   host_ = host;
   setParameter(std::string("Host"), host);
+}
+
+int DeleteInstanceRequest::getPort() const {
+  return port_;
+}
+
+void DeleteInstanceRequest::setPort(int port) {
+  port_ = port;
+  setParameter(std::string("Port"), std::to_string(port));
 }
 

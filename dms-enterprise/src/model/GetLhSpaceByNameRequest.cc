@@ -25,15 +25,6 @@ GetLhSpaceByNameRequest::GetLhSpaceByNameRequest()
 
 GetLhSpaceByNameRequest::~GetLhSpaceByNameRequest() {}
 
-std::string GetLhSpaceByNameRequest::getSpaceName() const {
-  return spaceName_;
-}
-
-void GetLhSpaceByNameRequest::setSpaceName(const std::string &spaceName) {
-  spaceName_ = spaceName;
-  setParameter(std::string("SpaceName"), spaceName);
-}
-
 long GetLhSpaceByNameRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetLhSpaceByNameRequest::getTid() const {
 void GetLhSpaceByNameRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string GetLhSpaceByNameRequest::getSpaceName() const {
+  return spaceName_;
+}
+
+void GetLhSpaceByNameRequest::setSpaceName(const std::string &spaceName) {
+  spaceName_ = spaceName;
+  setParameter(std::string("SpaceName"), spaceName);
 }
 

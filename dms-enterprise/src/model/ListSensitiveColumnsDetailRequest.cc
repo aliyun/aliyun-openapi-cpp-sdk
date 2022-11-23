@@ -25,6 +25,24 @@ ListSensitiveColumnsDetailRequest::ListSensitiveColumnsDetailRequest()
 
 ListSensitiveColumnsDetailRequest::~ListSensitiveColumnsDetailRequest() {}
 
+long ListSensitiveColumnsDetailRequest::getTid() const {
+  return tid_;
+}
+
+void ListSensitiveColumnsDetailRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string ListSensitiveColumnsDetailRequest::getTableName() const {
+  return tableName_;
+}
+
+void ListSensitiveColumnsDetailRequest::setTableName(const std::string &tableName) {
+  tableName_ = tableName;
+  setParameter(std::string("TableName"), tableName);
+}
+
 std::string ListSensitiveColumnsDetailRequest::getSchemaName() const {
   return schemaName_;
 }
@@ -43,15 +61,6 @@ void ListSensitiveColumnsDetailRequest::setColumnName(const std::string &columnN
   setParameter(std::string("ColumnName"), columnName);
 }
 
-long ListSensitiveColumnsDetailRequest::getTid() const {
-  return tid_;
-}
-
-void ListSensitiveColumnsDetailRequest::setTid(long tid) {
-  tid_ = tid;
-  setParameter(std::string("Tid"), std::to_string(tid));
-}
-
 long ListSensitiveColumnsDetailRequest::getDbId() const {
   return dbId_;
 }
@@ -68,14 +77,5 @@ bool ListSensitiveColumnsDetailRequest::getLogic() const {
 void ListSensitiveColumnsDetailRequest::setLogic(bool logic) {
   logic_ = logic;
   setParameter(std::string("Logic"), logic ? "true" : "false");
-}
-
-std::string ListSensitiveColumnsDetailRequest::getTableName() const {
-  return tableName_;
-}
-
-void ListSensitiveColumnsDetailRequest::setTableName(const std::string &tableName) {
-  tableName_ = tableName;
-  setParameter(std::string("TableName"), tableName);
 }
 

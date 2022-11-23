@@ -25,15 +25,6 @@ CreatePublishGroupTaskRequest::CreatePublishGroupTaskRequest()
 
 CreatePublishGroupTaskRequest::~CreatePublishGroupTaskRequest() {}
 
-long CreatePublishGroupTaskRequest::getOrderId() const {
-  return orderId_;
-}
-
-void CreatePublishGroupTaskRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long CreatePublishGroupTaskRequest::getTid() const {
   return tid_;
 }
@@ -41,15 +32,6 @@ long CreatePublishGroupTaskRequest::getTid() const {
 void CreatePublishGroupTaskRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
-}
-
-int CreatePublishGroupTaskRequest::getDbId() const {
-  return dbId_;
-}
-
-void CreatePublishGroupTaskRequest::setDbId(int dbId) {
-  dbId_ = dbId;
-  setParameter(std::string("DbId"), std::to_string(dbId));
 }
 
 std::string CreatePublishGroupTaskRequest::getPlanTime() const {
@@ -61,15 +43,6 @@ void CreatePublishGroupTaskRequest::setPlanTime(const std::string &planTime) {
   setParameter(std::string("PlanTime"), planTime);
 }
 
-bool CreatePublishGroupTaskRequest::getLogic() const {
-  return logic_;
-}
-
-void CreatePublishGroupTaskRequest::setLogic(bool logic) {
-  logic_ = logic;
-  setParameter(std::string("Logic"), logic ? "true" : "false");
-}
-
 std::string CreatePublishGroupTaskRequest::getPublishStrategy() const {
   return publishStrategy_;
 }
@@ -77,5 +50,32 @@ std::string CreatePublishGroupTaskRequest::getPublishStrategy() const {
 void CreatePublishGroupTaskRequest::setPublishStrategy(const std::string &publishStrategy) {
   publishStrategy_ = publishStrategy;
   setParameter(std::string("PublishStrategy"), publishStrategy);
+}
+
+long CreatePublishGroupTaskRequest::getOrderId() const {
+  return orderId_;
+}
+
+void CreatePublishGroupTaskRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
+}
+
+int CreatePublishGroupTaskRequest::getDbId() const {
+  return dbId_;
+}
+
+void CreatePublishGroupTaskRequest::setDbId(int dbId) {
+  dbId_ = dbId;
+  setParameter(std::string("DbId"), std::to_string(dbId));
+}
+
+bool CreatePublishGroupTaskRequest::getLogic() const {
+  return logic_;
+}
+
+void CreatePublishGroupTaskRequest::setLogic(bool logic) {
+  logic_ = logic;
+  setParameter(std::string("Logic"), logic ? "true" : "false");
 }
 

@@ -25,15 +25,6 @@ DeleteLogicTableRouteConfigRequest::DeleteLogicTableRouteConfigRequest()
 
 DeleteLogicTableRouteConfigRequest::~DeleteLogicTableRouteConfigRequest() {}
 
-std::string DeleteLogicTableRouteConfigRequest::getRouteKey() const {
-  return routeKey_;
-}
-
-void DeleteLogicTableRouteConfigRequest::setRouteKey(const std::string &routeKey) {
-  routeKey_ = routeKey;
-  setParameter(std::string("RouteKey"), routeKey);
-}
-
 long DeleteLogicTableRouteConfigRequest::getTid() const {
   return tid_;
 }
@@ -50,5 +41,14 @@ long DeleteLogicTableRouteConfigRequest::getTableId() const {
 void DeleteLogicTableRouteConfigRequest::setTableId(long tableId) {
   tableId_ = tableId;
   setParameter(std::string("TableId"), std::to_string(tableId));
+}
+
+std::string DeleteLogicTableRouteConfigRequest::getRouteKey() const {
+  return routeKey_;
+}
+
+void DeleteLogicTableRouteConfigRequest::setRouteKey(const std::string &routeKey) {
+  routeKey_ = routeKey;
+  setParameter(std::string("RouteKey"), routeKey);
 }
 

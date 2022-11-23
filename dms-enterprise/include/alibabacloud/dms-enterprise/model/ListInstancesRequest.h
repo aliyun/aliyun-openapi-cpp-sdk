@@ -34,31 +34,31 @@ public:
 	void setSearchKey(const std::string &searchKey);
 	long getTid() const;
 	void setTid(long tid);
-	std::string getInstanceState() const;
-	void setInstanceState(const std::string &instanceState);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
-	std::string getNetType() const;
-	void setNetType(const std::string &netType);
-	std::string getDbType() const;
-	void setDbType(const std::string &dbType);
 	std::string getEnvType() const;
 	void setEnvType(const std::string &envType);
 	std::string getInstanceSource() const;
 	void setInstanceSource(const std::string &instanceSource);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getInstanceState() const;
+	void setInstanceState(const std::string &instanceState);
+	std::string getNetType() const;
+	void setNetType(const std::string &netType);
+	std::string getDbType() const;
+	void setDbType(const std::string &dbType);
 
 private:
 	std::string searchKey_;
 	long tid_;
-	std::string instanceState_;
 	int pageNumber_;
-	std::string netType_;
-	std::string dbType_;
 	std::string envType_;
 	std::string instanceSource_;
 	int pageSize_;
+	std::string instanceState_;
+	std::string netType_;
+	std::string dbType_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

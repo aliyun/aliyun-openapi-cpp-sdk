@@ -30,18 +30,18 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ExecuteScriptRequest : public RpcServic
 public:
 	ExecuteScriptRequest();
 	~ExecuteScriptRequest();
-	std::string getScript() const;
-	void setScript(const std::string &script);
 	long getTid() const;
 	void setTid(long tid);
+	std::string getScript() const;
+	void setScript(const std::string &script);
 	int getDbId() const;
 	void setDbId(int dbId);
 	bool getLogic() const;
 	void setLogic(bool logic);
 
 private:
-	std::string script_;
 	long tid_;
+	std::string script_;
 	int dbId_;
 	bool logic_;
 };

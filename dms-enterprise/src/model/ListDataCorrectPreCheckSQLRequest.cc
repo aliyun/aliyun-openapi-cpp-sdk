@@ -25,15 +25,6 @@ ListDataCorrectPreCheckSQLRequest::ListDataCorrectPreCheckSQLRequest()
 
 ListDataCorrectPreCheckSQLRequest::~ListDataCorrectPreCheckSQLRequest() {}
 
-long ListDataCorrectPreCheckSQLRequest::getOrderId() const {
-  return orderId_;
-}
-
-void ListDataCorrectPreCheckSQLRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long ListDataCorrectPreCheckSQLRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -52,15 +43,6 @@ void ListDataCorrectPreCheckSQLRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-long ListDataCorrectPreCheckSQLRequest::getDbId() const {
-  return dbId_;
-}
-
-void ListDataCorrectPreCheckSQLRequest::setDbId(long dbId) {
-  dbId_ = dbId;
-  setParameter(std::string("DbId"), std::to_string(dbId));
-}
-
 long ListDataCorrectPreCheckSQLRequest::getPageSize() const {
   return pageSize_;
 }
@@ -68,5 +50,23 @@ long ListDataCorrectPreCheckSQLRequest::getPageSize() const {
 void ListDataCorrectPreCheckSQLRequest::setPageSize(long pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+long ListDataCorrectPreCheckSQLRequest::getOrderId() const {
+  return orderId_;
+}
+
+void ListDataCorrectPreCheckSQLRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
+}
+
+long ListDataCorrectPreCheckSQLRequest::getDbId() const {
+  return dbId_;
+}
+
+void ListDataCorrectPreCheckSQLRequest::setDbId(long dbId) {
+  dbId_ = dbId;
+  setParameter(std::string("DbId"), std::to_string(dbId));
 }
 

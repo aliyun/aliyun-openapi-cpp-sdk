@@ -30,35 +30,35 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListSensitiveColumnsRequest : public Rp
 public:
 	ListSensitiveColumnsRequest();
 	~ListSensitiveColumnsRequest();
-	std::string getSchemaName() const;
-	void setSchemaName(const std::string &schemaName);
-	std::string getColumnName() const;
-	void setColumnName(const std::string &columnName);
 	long getTid() const;
 	void setTid(long tid);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getTableName() const;
+	void setTableName(const std::string &tableName);
+	std::string getSchemaName() const;
+	void setSchemaName(const std::string &schemaName);
+	std::string getColumnName() const;
+	void setColumnName(const std::string &columnName);
 	std::string getSecurityLevel() const;
 	void setSecurityLevel(const std::string &securityLevel);
 	long getDbId() const;
 	void setDbId(long dbId);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	bool getLogic() const;
 	void setLogic(bool logic);
-	std::string getTableName() const;
-	void setTableName(const std::string &tableName);
 
 private:
-	std::string schemaName_;
-	std::string columnName_;
 	long tid_;
 	int pageNumber_;
+	int pageSize_;
+	std::string tableName_;
+	std::string schemaName_;
+	std::string columnName_;
 	std::string securityLevel_;
 	long dbId_;
-	int pageSize_;
 	bool logic_;
-	std::string tableName_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

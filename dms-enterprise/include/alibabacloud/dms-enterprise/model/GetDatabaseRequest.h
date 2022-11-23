@@ -30,23 +30,23 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetDatabaseRequest : public RpcServiceR
 public:
 	GetDatabaseRequest();
 	~GetDatabaseRequest();
-	std::string getSchemaName() const;
-	void setSchemaName(const std::string &schemaName);
 	long getTid() const;
 	void setTid(long tid);
 	std::string getSid() const;
 	void setSid(const std::string &sid);
-	int getPort() const;
-	void setPort(int port);
 	std::string getHost() const;
 	void setHost(const std::string &host);
+	std::string getSchemaName() const;
+	void setSchemaName(const std::string &schemaName);
+	int getPort() const;
+	void setPort(int port);
 
 private:
-	std::string schemaName_;
 	long tid_;
 	std::string sid_;
-	int port_;
 	std::string host_;
+	std::string schemaName_;
+	int port_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

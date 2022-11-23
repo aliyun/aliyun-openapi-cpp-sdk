@@ -43,15 +43,6 @@ void ListDatabasesRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string ListDatabasesRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ListDatabasesRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 int ListDatabasesRequest::getPageSize() const {
   return pageSize_;
 }
@@ -59,5 +50,14 @@ int ListDatabasesRequest::getPageSize() const {
 void ListDatabasesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListDatabasesRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListDatabasesRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 

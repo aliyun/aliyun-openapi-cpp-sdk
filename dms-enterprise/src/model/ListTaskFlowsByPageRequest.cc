@@ -43,15 +43,6 @@ void ListTaskFlowsByPageRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-bool ListTaskFlowsByPageRequest::getNeedLastDagInstance() const {
-  return needLastDagInstance_;
-}
-
-void ListTaskFlowsByPageRequest::setNeedLastDagInstance(bool needLastDagInstance) {
-  needLastDagInstance_ = needLastDagInstance;
-  setParameter(std::string("NeedLastDagInstance"), needLastDagInstance ? "true" : "false");
-}
-
 int ListTaskFlowsByPageRequest::getPageSize() const {
   return pageSize_;
 }
@@ -68,5 +59,14 @@ int ListTaskFlowsByPageRequest::getPageIndex() const {
 void ListTaskFlowsByPageRequest::setPageIndex(int pageIndex) {
   pageIndex_ = pageIndex;
   setParameter(std::string("PageIndex"), std::to_string(pageIndex));
+}
+
+bool ListTaskFlowsByPageRequest::getNeedLastDagInstance() const {
+  return needLastDagInstance_;
+}
+
+void ListTaskFlowsByPageRequest::setNeedLastDagInstance(bool needLastDagInstance) {
+  needLastDagInstance_ = needLastDagInstance;
+  setParameter(std::string("NeedLastDagInstance"), needLastDagInstance ? "true" : "false");
 }
 

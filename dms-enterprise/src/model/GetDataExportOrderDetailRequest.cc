@@ -25,15 +25,6 @@ GetDataExportOrderDetailRequest::GetDataExportOrderDetailRequest()
 
 GetDataExportOrderDetailRequest::~GetDataExportOrderDetailRequest() {}
 
-long GetDataExportOrderDetailRequest::getOrderId() const {
-  return orderId_;
-}
-
-void GetDataExportOrderDetailRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setBodyParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long GetDataExportOrderDetailRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetDataExportOrderDetailRequest::getTid() const {
 void GetDataExportOrderDetailRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long GetDataExportOrderDetailRequest::getOrderId() const {
+  return orderId_;
+}
+
+void GetDataExportOrderDetailRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setBodyParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

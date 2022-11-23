@@ -25,15 +25,6 @@ RestartDataCorrectSQLJobRequest::RestartDataCorrectSQLJobRequest()
 
 RestartDataCorrectSQLJobRequest::~RestartDataCorrectSQLJobRequest() {}
 
-long RestartDataCorrectSQLJobRequest::getOrderId() const {
-  return orderId_;
-}
-
-void RestartDataCorrectSQLJobRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 std::string RestartDataCorrectSQLJobRequest::getType() const {
   return type_;
 }
@@ -59,5 +50,14 @@ long RestartDataCorrectSQLJobRequest::getJobId() const {
 void RestartDataCorrectSQLJobRequest::setJobId(long jobId) {
   jobId_ = jobId;
   setParameter(std::string("JobId"), std::to_string(jobId));
+}
+
+long RestartDataCorrectSQLJobRequest::getOrderId() const {
+  return orderId_;
+}
+
+void RestartDataCorrectSQLJobRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

@@ -25,15 +25,6 @@ AddLogicTableRouteConfigRequest::AddLogicTableRouteConfigRequest()
 
 AddLogicTableRouteConfigRequest::~AddLogicTableRouteConfigRequest() {}
 
-std::string AddLogicTableRouteConfigRequest::getRouteKey() const {
-  return routeKey_;
-}
-
-void AddLogicTableRouteConfigRequest::setRouteKey(const std::string &routeKey) {
-  routeKey_ = routeKey;
-  setParameter(std::string("RouteKey"), routeKey);
-}
-
 long AddLogicTableRouteConfigRequest::getTid() const {
   return tid_;
 }
@@ -43,15 +34,6 @@ void AddLogicTableRouteConfigRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string AddLogicTableRouteConfigRequest::getRouteExpr() const {
-  return routeExpr_;
-}
-
-void AddLogicTableRouteConfigRequest::setRouteExpr(const std::string &routeExpr) {
-  routeExpr_ = routeExpr;
-  setParameter(std::string("RouteExpr"), routeExpr);
-}
-
 long AddLogicTableRouteConfigRequest::getTableId() const {
   return tableId_;
 }
@@ -59,5 +41,23 @@ long AddLogicTableRouteConfigRequest::getTableId() const {
 void AddLogicTableRouteConfigRequest::setTableId(long tableId) {
   tableId_ = tableId;
   setParameter(std::string("TableId"), std::to_string(tableId));
+}
+
+std::string AddLogicTableRouteConfigRequest::getRouteKey() const {
+  return routeKey_;
+}
+
+void AddLogicTableRouteConfigRequest::setRouteKey(const std::string &routeKey) {
+  routeKey_ = routeKey;
+  setParameter(std::string("RouteKey"), routeKey);
+}
+
+std::string AddLogicTableRouteConfigRequest::getRouteExpr() const {
+  return routeExpr_;
+}
+
+void AddLogicTableRouteConfigRequest::setRouteExpr(const std::string &routeExpr) {
+  routeExpr_ = routeExpr;
+  setParameter(std::string("RouteExpr"), routeExpr);
 }
 

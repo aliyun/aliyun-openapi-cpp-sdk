@@ -25,15 +25,6 @@ ModifyDesensitizationStrategyRequest::ModifyDesensitizationStrategyRequest()
 
 ModifyDesensitizationStrategyRequest::~ModifyDesensitizationStrategyRequest() {}
 
-std::string ModifyDesensitizationStrategyRequest::getSchemaName() const {
-  return schemaName_;
-}
-
-void ModifyDesensitizationStrategyRequest::setSchemaName(const std::string &schemaName) {
-  schemaName_ = schemaName;
-  setParameter(std::string("SchemaName"), schemaName);
-}
-
 bool ModifyDesensitizationStrategyRequest::getIsReset() const {
   return isReset_;
 }
@@ -41,6 +32,33 @@ bool ModifyDesensitizationStrategyRequest::getIsReset() const {
 void ModifyDesensitizationStrategyRequest::setIsReset(bool isReset) {
   isReset_ = isReset;
   setParameter(std::string("IsReset"), isReset ? "true" : "false");
+}
+
+long ModifyDesensitizationStrategyRequest::getTid() const {
+  return tid_;
+}
+
+void ModifyDesensitizationStrategyRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string ModifyDesensitizationStrategyRequest::getTableName() const {
+  return tableName_;
+}
+
+void ModifyDesensitizationStrategyRequest::setTableName(const std::string &tableName) {
+  tableName_ = tableName;
+  setParameter(std::string("TableName"), tableName);
+}
+
+std::string ModifyDesensitizationStrategyRequest::getSchemaName() const {
+  return schemaName_;
+}
+
+void ModifyDesensitizationStrategyRequest::setSchemaName(const std::string &schemaName) {
+  schemaName_ = schemaName;
+  setParameter(std::string("SchemaName"), schemaName);
 }
 
 bool ModifyDesensitizationStrategyRequest::getIsLogic() const {
@@ -61,15 +79,6 @@ void ModifyDesensitizationStrategyRequest::setColumnName(const std::string &colu
   setParameter(std::string("ColumnName"), columnName);
 }
 
-long ModifyDesensitizationStrategyRequest::getTid() const {
-  return tid_;
-}
-
-void ModifyDesensitizationStrategyRequest::setTid(long tid) {
-  tid_ = tid;
-  setParameter(std::string("Tid"), std::to_string(tid));
-}
-
 int ModifyDesensitizationStrategyRequest::getDbId() const {
   return dbId_;
 }
@@ -77,15 +86,6 @@ int ModifyDesensitizationStrategyRequest::getDbId() const {
 void ModifyDesensitizationStrategyRequest::setDbId(int dbId) {
   dbId_ = dbId;
   setParameter(std::string("DbId"), std::to_string(dbId));
-}
-
-std::string ModifyDesensitizationStrategyRequest::getTableName() const {
-  return tableName_;
-}
-
-void ModifyDesensitizationStrategyRequest::setTableName(const std::string &tableName) {
-  tableName_ = tableName;
-  setParameter(std::string("TableName"), tableName);
 }
 
 int ModifyDesensitizationStrategyRequest::getRuleId() const {

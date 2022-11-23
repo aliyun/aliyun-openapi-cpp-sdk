@@ -25,15 +25,6 @@ ReDeployLhDagVersionRequest::ReDeployLhDagVersionRequest()
 
 ReDeployLhDagVersionRequest::~ReDeployLhDagVersionRequest() {}
 
-long ReDeployLhDagVersionRequest::getDagVersion() const {
-  return dagVersion_;
-}
-
-void ReDeployLhDagVersionRequest::setDagVersion(long dagVersion) {
-  dagVersion_ = dagVersion;
-  setParameter(std::string("DagVersion"), std::to_string(dagVersion));
-}
-
 long ReDeployLhDagVersionRequest::getDagId() const {
   return dagId_;
 }
@@ -50,5 +41,14 @@ long ReDeployLhDagVersionRequest::getTid() const {
 void ReDeployLhDagVersionRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long ReDeployLhDagVersionRequest::getDagVersion() const {
+  return dagVersion_;
+}
+
+void ReDeployLhDagVersionRequest::setDagVersion(long dagVersion) {
+  dagVersion_ = dagVersion;
+  setParameter(std::string("DagVersion"), std::to_string(dagVersion));
 }
 

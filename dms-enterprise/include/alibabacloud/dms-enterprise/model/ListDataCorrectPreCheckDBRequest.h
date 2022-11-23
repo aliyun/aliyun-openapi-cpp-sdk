@@ -30,20 +30,20 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListDataCorrectPreCheckDBRequest : publ
 public:
 	ListDataCorrectPreCheckDBRequest();
 	~ListDataCorrectPreCheckDBRequest();
-	long getOrderId() const;
-	void setOrderId(long orderId);
 	long getPageNumber() const;
 	void setPageNumber(long pageNumber);
 	long getTid() const;
 	void setTid(long tid);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
+	long getOrderId() const;
+	void setOrderId(long orderId);
 
 private:
-	long orderId_;
 	long pageNumber_;
 	long tid_;
 	long pageSize_;
+	long orderId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

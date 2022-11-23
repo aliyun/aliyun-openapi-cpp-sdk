@@ -32,36 +32,36 @@ public:
 	~ListSensitiveDataAuditLogRequest();
 	std::string getOpUserName() const;
 	void setOpUserName(const std::string &opUserName);
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
-	std::string getColumnName() const;
-	void setColumnName(const std::string &columnName);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	long getTid() const;
 	void setTid(long tid);
-	std::string getDbName() const;
-	void setDbName(const std::string &dbName);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getModuleName() const;
 	void setModuleName(const std::string &moduleName);
 	std::string getTableName() const;
 	void setTableName(const std::string &tableName);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	std::string getColumnName() const;
+	void setColumnName(const std::string &columnName);
+	std::string getDbName() const;
+	void setDbName(const std::string &dbName);
 
 private:
 	std::string opUserName_;
-	std::string endTime_;
 	std::string startTime_;
-	std::string columnName_;
 	int pageNumber_;
 	long tid_;
-	std::string dbName_;
 	int pageSize_;
 	std::string moduleName_;
 	std::string tableName_;
+	std::string endTime_;
+	std::string columnName_;
+	std::string dbName_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

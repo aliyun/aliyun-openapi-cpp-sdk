@@ -30,32 +30,32 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT CreateTaskRequest : public RpcServiceRe
 public:
 	CreateTaskRequest();
 	~CreateTaskRequest();
-	std::string getTimeVariables() const;
-	void setTimeVariables(const std::string &timeVariables);
 	std::string getNodeType() const;
 	void setNodeType(const std::string &nodeType);
 	long getDagId() const;
 	void setDagId(long dagId);
 	long getTid() const;
 	void setTid(long tid);
-	std::string getNodeName() const;
-	void setNodeName(const std::string &nodeName);
 	std::string getNodeContent() const;
 	void setNodeContent(const std::string &nodeContent);
 	std::string getNodeOutput() const;
 	void setNodeOutput(const std::string &nodeOutput);
 	std::string getGraphParam() const;
 	void setGraphParam(const std::string &graphParam);
+	std::string getTimeVariables() const;
+	void setTimeVariables(const std::string &timeVariables);
+	std::string getNodeName() const;
+	void setNodeName(const std::string &nodeName);
 
 private:
-	std::string timeVariables_;
 	std::string nodeType_;
 	long dagId_;
 	long tid_;
-	std::string nodeName_;
 	std::string nodeContent_;
 	std::string nodeOutput_;
 	std::string graphParam_;
+	std::string timeVariables_;
+	std::string nodeName_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

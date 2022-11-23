@@ -30,20 +30,20 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT PauseDataCorrectSQLJobRequest : public 
 public:
 	PauseDataCorrectSQLJobRequest();
 	~PauseDataCorrectSQLJobRequest();
-	long getOrderId() const;
-	void setOrderId(long orderId);
 	std::string getType() const;
 	void setType(const std::string &type);
 	long getTid() const;
 	void setTid(long tid);
 	long getJobId() const;
 	void setJobId(long jobId);
+	long getOrderId() const;
+	void setOrderId(long orderId);
 
 private:
-	long orderId_;
 	std::string type_;
 	long tid_;
 	long jobId_;
+	long orderId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

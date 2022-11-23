@@ -47,15 +47,6 @@ void CreateSQLReviewOrderRequest::setParam(const CreateSQLReviewOrderRequest::Pa
   setParameter(std::string("Param") + ".DbId", std::to_string(param.dbId));
 }
 
-std::string CreateSQLReviewOrderRequest::getComment() const {
-  return comment_;
-}
-
-void CreateSQLReviewOrderRequest::setComment(const std::string &comment) {
-  comment_ = comment;
-  setParameter(std::string("Comment"), comment);
-}
-
 std::vector<CreateSQLReviewOrderRequest::long> CreateSQLReviewOrderRequest::getRelatedUserList() const {
   return relatedUserList_;
 }
@@ -65,5 +56,14 @@ void CreateSQLReviewOrderRequest::setRelatedUserList(const std::vector<CreateSQL
   for(int dep1 = 0; dep1 != relatedUserList.size(); dep1++) {
     setParameter(std::string("RelatedUserList") + "." + std::to_string(dep1 + 1), std::to_string(relatedUserList[dep1]));
   }
+}
+
+std::string CreateSQLReviewOrderRequest::getComment() const {
+  return comment_;
+}
+
+void CreateSQLReviewOrderRequest::setComment(const std::string &comment) {
+  comment_ = comment;
+  setParameter(std::string("Comment"), comment);
 }
 

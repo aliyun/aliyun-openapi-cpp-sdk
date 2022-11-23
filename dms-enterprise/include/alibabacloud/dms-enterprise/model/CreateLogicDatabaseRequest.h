@@ -32,15 +32,15 @@ public:
 	~CreateLogicDatabaseRequest();
 	long getTid() const;
 	void setTid(long tid);
-	std::vector<long> getDatabaseIds() const;
-	void setDatabaseIds(const std::vector<long> &databaseIds);
 	std::string getAlias() const;
 	void setAlias(const std::string &alias);
+	std::vector<long> getDatabaseIds() const;
+	void setDatabaseIds(const std::vector<long> &databaseIds);
 
 private:
 	long tid_;
-	std::vector<long> databaseIds_;
 	std::string alias_;
+	std::vector<long> databaseIds_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

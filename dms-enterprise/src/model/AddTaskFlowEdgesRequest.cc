@@ -25,18 +25,6 @@ AddTaskFlowEdgesRequest::AddTaskFlowEdgesRequest()
 
 AddTaskFlowEdgesRequest::~AddTaskFlowEdgesRequest() {}
 
-std::vector<AddTaskFlowEdgesRequest::Edges> AddTaskFlowEdgesRequest::getEdges() const {
-  return edges_;
-}
-
-void AddTaskFlowEdgesRequest::setEdges(const std::vector<AddTaskFlowEdgesRequest::Edges> &edges) {
-  edges_ = edges;
-  for(int dep1 = 0; dep1 != edges.size(); dep1++) {
-    setParameter(std::string("Edges") + "." + std::to_string(dep1 + 1) + ".NodeEnd", std::to_string(edges[dep1].nodeEnd));
-    setParameter(std::string("Edges") + "." + std::to_string(dep1 + 1) + ".NodeFrom", std::to_string(edges[dep1].nodeFrom));
-  }
-}
-
 long AddTaskFlowEdgesRequest::getDagId() const {
   return dagId_;
 }
@@ -53,5 +41,17 @@ long AddTaskFlowEdgesRequest::getTid() const {
 void AddTaskFlowEdgesRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::vector<AddTaskFlowEdgesRequest::Edges> AddTaskFlowEdgesRequest::getEdges() const {
+  return edges_;
+}
+
+void AddTaskFlowEdgesRequest::setEdges(const std::vector<AddTaskFlowEdgesRequest::Edges> &edges) {
+  edges_ = edges;
+  for(int dep1 = 0; dep1 != edges.size(); dep1++) {
+    setParameter(std::string("Edges") + "." + std::to_string(dep1 + 1) + ".NodeEnd", std::to_string(edges[dep1].nodeEnd));
+    setParameter(std::string("Edges") + "." + std::to_string(dep1 + 1) + ".NodeFrom", std::to_string(edges[dep1].nodeFrom));
+  }
 }
 

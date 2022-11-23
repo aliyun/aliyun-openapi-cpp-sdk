@@ -25,15 +25,6 @@ GetPermApplyOrderDetailRequest::GetPermApplyOrderDetailRequest()
 
 GetPermApplyOrderDetailRequest::~GetPermApplyOrderDetailRequest() {}
 
-long GetPermApplyOrderDetailRequest::getOrderId() const {
-  return orderId_;
-}
-
-void GetPermApplyOrderDetailRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long GetPermApplyOrderDetailRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetPermApplyOrderDetailRequest::getTid() const {
 void GetPermApplyOrderDetailRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long GetPermApplyOrderDetailRequest::getOrderId() const {
+  return orderId_;
+}
+
+void GetPermApplyOrderDetailRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

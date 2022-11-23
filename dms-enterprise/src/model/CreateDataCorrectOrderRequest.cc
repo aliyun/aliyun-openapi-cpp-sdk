@@ -34,15 +34,6 @@ void CreateDataCorrectOrderRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string CreateDataCorrectOrderRequest::getAttachmentKey() const {
-  return attachmentKey_;
-}
-
-void CreateDataCorrectOrderRequest::setAttachmentKey(const std::string &attachmentKey) {
-  attachmentKey_ = attachmentKey;
-  setParameter(std::string("AttachmentKey"), attachmentKey);
-}
-
 CreateDataCorrectOrderRequest::Param CreateDataCorrectOrderRequest::getParam() const {
   return param_;
 }
@@ -64,15 +55,6 @@ void CreateDataCorrectOrderRequest::setParam(const CreateDataCorrectOrderRequest
   setParameter(std::string("Param") + ".AttachmentName", param.attachmentName);
 }
 
-std::string CreateDataCorrectOrderRequest::getComment() const {
-  return comment_;
-}
-
-void CreateDataCorrectOrderRequest::setComment(const std::string &comment) {
-  comment_ = comment;
-  setParameter(std::string("Comment"), comment);
-}
-
 std::vector<CreateDataCorrectOrderRequest::long> CreateDataCorrectOrderRequest::getRelatedUserList() const {
   return relatedUserList_;
 }
@@ -82,5 +64,23 @@ void CreateDataCorrectOrderRequest::setRelatedUserList(const std::vector<CreateD
   for(int dep1 = 0; dep1 != relatedUserList.size(); dep1++) {
     setParameter(std::string("RelatedUserList") + "." + std::to_string(dep1 + 1), std::to_string(relatedUserList[dep1]));
   }
+}
+
+std::string CreateDataCorrectOrderRequest::getAttachmentKey() const {
+  return attachmentKey_;
+}
+
+void CreateDataCorrectOrderRequest::setAttachmentKey(const std::string &attachmentKey) {
+  attachmentKey_ = attachmentKey;
+  setParameter(std::string("AttachmentKey"), attachmentKey);
+}
+
+std::string CreateDataCorrectOrderRequest::getComment() const {
+  return comment_;
+}
+
+void CreateDataCorrectOrderRequest::setComment(const std::string &comment) {
+  comment_ = comment;
+  setParameter(std::string("Comment"), comment);
 }
 

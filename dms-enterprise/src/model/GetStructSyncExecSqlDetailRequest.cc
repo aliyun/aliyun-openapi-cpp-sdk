@@ -25,15 +25,6 @@ GetStructSyncExecSqlDetailRequest::GetStructSyncExecSqlDetailRequest()
 
 GetStructSyncExecSqlDetailRequest::~GetStructSyncExecSqlDetailRequest() {}
 
-long GetStructSyncExecSqlDetailRequest::getOrderId() const {
-  return orderId_;
-}
-
-void GetStructSyncExecSqlDetailRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long GetStructSyncExecSqlDetailRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -59,5 +50,14 @@ long GetStructSyncExecSqlDetailRequest::getPageSize() const {
 void GetStructSyncExecSqlDetailRequest::setPageSize(long pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+long GetStructSyncExecSqlDetailRequest::getOrderId() const {
+  return orderId_;
+}
+
+void GetStructSyncExecSqlDetailRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

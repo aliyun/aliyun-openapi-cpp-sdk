@@ -34,15 +34,6 @@ void ListSensitiveDataAuditLogRequest::setOpUserName(const std::string &opUserNa
   setParameter(std::string("OpUserName"), opUserName);
 }
 
-std::string ListSensitiveDataAuditLogRequest::getEndTime() const {
-  return endTime_;
-}
-
-void ListSensitiveDataAuditLogRequest::setEndTime(const std::string &endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), endTime);
-}
-
 std::string ListSensitiveDataAuditLogRequest::getStartTime() const {
   return startTime_;
 }
@@ -50,15 +41,6 @@ std::string ListSensitiveDataAuditLogRequest::getStartTime() const {
 void ListSensitiveDataAuditLogRequest::setStartTime(const std::string &startTime) {
   startTime_ = startTime;
   setParameter(std::string("StartTime"), startTime);
-}
-
-std::string ListSensitiveDataAuditLogRequest::getColumnName() const {
-  return columnName_;
-}
-
-void ListSensitiveDataAuditLogRequest::setColumnName(const std::string &columnName) {
-  columnName_ = columnName;
-  setParameter(std::string("ColumnName"), columnName);
 }
 
 int ListSensitiveDataAuditLogRequest::getPageNumber() const {
@@ -77,15 +59,6 @@ long ListSensitiveDataAuditLogRequest::getTid() const {
 void ListSensitiveDataAuditLogRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
-}
-
-std::string ListSensitiveDataAuditLogRequest::getDbName() const {
-  return dbName_;
-}
-
-void ListSensitiveDataAuditLogRequest::setDbName(const std::string &dbName) {
-  dbName_ = dbName;
-  setParameter(std::string("DbName"), dbName);
 }
 
 int ListSensitiveDataAuditLogRequest::getPageSize() const {
@@ -113,5 +86,32 @@ std::string ListSensitiveDataAuditLogRequest::getTableName() const {
 void ListSensitiveDataAuditLogRequest::setTableName(const std::string &tableName) {
   tableName_ = tableName;
   setParameter(std::string("TableName"), tableName);
+}
+
+std::string ListSensitiveDataAuditLogRequest::getEndTime() const {
+  return endTime_;
+}
+
+void ListSensitiveDataAuditLogRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
+}
+
+std::string ListSensitiveDataAuditLogRequest::getColumnName() const {
+  return columnName_;
+}
+
+void ListSensitiveDataAuditLogRequest::setColumnName(const std::string &columnName) {
+  columnName_ = columnName;
+  setParameter(std::string("ColumnName"), columnName);
+}
+
+std::string ListSensitiveDataAuditLogRequest::getDbName() const {
+  return dbName_;
+}
+
+void ListSensitiveDataAuditLogRequest::setDbName(const std::string &dbName) {
+  dbName_ = dbName;
+  setParameter(std::string("DbName"), dbName);
 }
 

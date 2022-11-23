@@ -32,17 +32,17 @@ public:
 	~CreateStandardGroupRequest();
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
-	std::string getGroupName() const;
-	void setGroupName(const std::string &groupName);
 	long getTid() const;
 	void setTid(long tid);
+	std::string getGroupName() const;
+	void setGroupName(const std::string &groupName);
 	std::string getDbType() const;
 	void setDbType(const std::string &dbType);
 
 private:
 	std::string description_;
-	std::string groupName_;
 	long tid_;
+	std::string groupName_;
 	std::string dbType_;
 };
 } // namespace Model

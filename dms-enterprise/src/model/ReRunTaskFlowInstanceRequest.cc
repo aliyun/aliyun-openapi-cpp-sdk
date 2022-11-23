@@ -25,15 +25,6 @@ ReRunTaskFlowInstanceRequest::ReRunTaskFlowInstanceRequest()
 
 ReRunTaskFlowInstanceRequest::~ReRunTaskFlowInstanceRequest() {}
 
-std::string ReRunTaskFlowInstanceRequest::getDagVersion() const {
-  return dagVersion_;
-}
-
-void ReRunTaskFlowInstanceRequest::setDagVersion(const std::string &dagVersion) {
-  dagVersion_ = dagVersion;
-  setParameter(std::string("DagVersion"), dagVersion);
-}
-
 long ReRunTaskFlowInstanceRequest::getDagId() const {
   return dagId_;
 }
@@ -50,6 +41,15 @@ long ReRunTaskFlowInstanceRequest::getTid() const {
 void ReRunTaskFlowInstanceRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string ReRunTaskFlowInstanceRequest::getDagVersion() const {
+  return dagVersion_;
+}
+
+void ReRunTaskFlowInstanceRequest::setDagVersion(const std::string &dagVersion) {
+  dagVersion_ = dagVersion;
+  setParameter(std::string("DagVersion"), dagVersion);
 }
 
 long ReRunTaskFlowInstanceRequest::getDagInstanceId() const {

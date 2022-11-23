@@ -34,8 +34,6 @@ public:
 	void setSearchName(const std::string &searchName);
 	std::string getOpUserName() const;
 	void setOpUserName(const std::string &opUserName);
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
 	int getPageNumber() const;
@@ -44,15 +42,17 @@ public:
 	void setTid(long tid);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
 
 private:
 	std::string searchName_;
 	std::string opUserName_;
-	std::string endTime_;
 	std::string startTime_;
 	int pageNumber_;
 	long tid_;
 	int pageSize_;
+	std::string endTime_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

@@ -43,15 +43,6 @@ void RegisterUserRequest::setUserNick(const std::string &userNick) {
   setParameter(std::string("UserNick"), userNick);
 }
 
-std::string RegisterUserRequest::getMobile() const {
-  return mobile_;
-}
-
-void RegisterUserRequest::setMobile(const std::string &mobile) {
-  mobile_ = mobile;
-  setParameter(std::string("Mobile"), mobile);
-}
-
 long RegisterUserRequest::getTid() const {
   return tid_;
 }
@@ -68,5 +59,14 @@ std::string RegisterUserRequest::getUid() const {
 void RegisterUserRequest::setUid(const std::string &uid) {
   uid_ = uid;
   setParameter(std::string("Uid"), uid);
+}
+
+std::string RegisterUserRequest::getMobile() const {
+  return mobile_;
+}
+
+void RegisterUserRequest::setMobile(const std::string &mobile) {
+  mobile_ = mobile;
+  setParameter(std::string("Mobile"), mobile);
 }
 

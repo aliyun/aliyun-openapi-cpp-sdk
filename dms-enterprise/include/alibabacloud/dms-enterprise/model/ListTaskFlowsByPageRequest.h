@@ -34,19 +34,19 @@ public:
 	void setSearchKey(const std::string &searchKey);
 	long getTid() const;
 	void setTid(long tid);
-	bool getNeedLastDagInstance() const;
-	void setNeedLastDagInstance(bool needLastDagInstance);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	int getPageIndex() const;
 	void setPageIndex(int pageIndex);
+	bool getNeedLastDagInstance() const;
+	void setNeedLastDagInstance(bool needLastDagInstance);
 
 private:
 	std::string searchKey_;
 	long tid_;
-	bool needLastDagInstance_;
 	int pageSize_;
 	int pageIndex_;
+	bool needLastDagInstance_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

@@ -30,17 +30,17 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT PublishAndDeployTaskFlowRequest : publi
 public:
 	PublishAndDeployTaskFlowRequest();
 	~PublishAndDeployTaskFlowRequest();
-	std::string getVersionComments() const;
-	void setVersionComments(const std::string &versionComments);
 	long getDagId() const;
 	void setDagId(long dagId);
 	long getTid() const;
 	void setTid(long tid);
+	std::string getVersionComments() const;
+	void setVersionComments(const std::string &versionComments);
 
 private:
-	std::string versionComments_;
 	long dagId_;
 	long tid_;
+	std::string versionComments_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

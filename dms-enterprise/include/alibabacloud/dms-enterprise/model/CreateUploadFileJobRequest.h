@@ -30,23 +30,23 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT CreateUploadFileJobRequest : public Rpc
 public:
 	CreateUploadFileJobRequest();
 	~CreateUploadFileJobRequest();
+	long getTid() const;
+	void setTid(long tid);
+	std::string getUploadURL() const;
+	void setUploadURL(const std::string &uploadURL);
 	std::string getUploadType() const;
 	void setUploadType(const std::string &uploadType);
 	std::string getFileSource() const;
 	void setFileSource(const std::string &fileSource);
-	long getTid() const;
-	void setTid(long tid);
 	std::string getFileName() const;
 	void setFileName(const std::string &fileName);
-	std::string getUploadURL() const;
-	void setUploadURL(const std::string &uploadURL);
 
 private:
+	long tid_;
+	std::string uploadURL_;
 	std::string uploadType_;
 	std::string fileSource_;
-	long tid_;
 	std::string fileName_;
-	std::string uploadURL_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

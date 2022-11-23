@@ -35,21 +35,21 @@ public:
 	};
 	CreateUploadOSSFileJobRequest();
 	~CreateUploadOSSFileJobRequest();
+	long getTid() const;
+	void setTid(long tid);
 	std::string getUploadType() const;
 	void setUploadType(const std::string &uploadType);
 	std::string getFileSource() const;
 	void setFileSource(const std::string &fileSource);
-	long getTid() const;
-	void setTid(long tid);
 	std::string getFileName() const;
 	void setFileName(const std::string &fileName);
 	UploadTarget getUploadTarget() const;
 	void setUploadTarget(const UploadTarget &uploadTarget);
 
 private:
+	long tid_;
 	std::string uploadType_;
 	std::string fileSource_;
-	long tid_;
 	std::string fileName_;
 	UploadTarget uploadTarget_;
 };

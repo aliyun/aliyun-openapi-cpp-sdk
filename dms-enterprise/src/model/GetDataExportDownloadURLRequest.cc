@@ -25,6 +25,15 @@ GetDataExportDownloadURLRequest::GetDataExportDownloadURLRequest()
 
 GetDataExportDownloadURLRequest::~GetDataExportDownloadURLRequest() {}
 
+long GetDataExportDownloadURLRequest::getTid() const {
+  return tid_;
+}
+
+void GetDataExportDownloadURLRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
+}
+
 long GetDataExportDownloadURLRequest::getOrderId() const {
   return orderId_;
 }
@@ -41,14 +50,5 @@ std::string GetDataExportDownloadURLRequest::getActionName() const {
 void GetDataExportDownloadURLRequest::setActionName(const std::string &actionName) {
   actionName_ = actionName;
   setParameter(std::string("ActionName"), actionName);
-}
-
-long GetDataExportDownloadURLRequest::getTid() const {
-  return tid_;
-}
-
-void GetDataExportDownloadURLRequest::setTid(long tid) {
-  tid_ = tid;
-  setParameter(std::string("Tid"), std::to_string(tid));
 }
 

@@ -38,16 +38,16 @@ public:
 	void setTid(long tid);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getEnvType() const;
+	void setEnvType(const std::string &envType);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getPermType() const;
 	void setPermType(const std::string &permType);
 	std::string getDatabaseName() const;
 	void setDatabaseName(const std::string &databaseName);
-	std::string getEnvType() const;
-	void setEnvType(const std::string &envType);
 	std::string getDbType() const;
 	void setDbType(const std::string &dbType);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	bool getLogic() const;
 	void setLogic(bool logic);
 
@@ -56,11 +56,11 @@ private:
 	std::string userId_;
 	long tid_;
 	int pageNumber_;
+	std::string envType_;
+	int pageSize_;
 	std::string permType_;
 	std::string databaseName_;
-	std::string envType_;
 	std::string dbType_;
-	int pageSize_;
 	bool logic_;
 };
 } // namespace Model

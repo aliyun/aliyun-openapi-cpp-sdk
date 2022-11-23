@@ -126,10 +126,14 @@
 #include "model/GetDataCorrectBackupFilesResult.h"
 #include "model/GetDataCorrectOrderDetailRequest.h"
 #include "model/GetDataCorrectOrderDetailResult.h"
+#include "model/GetDataCorrectRollbackFileRequest.h"
+#include "model/GetDataCorrectRollbackFileResult.h"
 #include "model/GetDataCorrectSQLFileRequest.h"
 #include "model/GetDataCorrectSQLFileResult.h"
 #include "model/GetDataCorrectTaskDetailRequest.h"
 #include "model/GetDataCorrectTaskDetailResult.h"
+#include "model/GetDataCronClearConfigRequest.h"
+#include "model/GetDataCronClearConfigResult.h"
 #include "model/GetDataCronClearTaskDetailListRequest.h"
 #include "model/GetDataCronClearTaskDetailListResult.h"
 #include "model/GetDataExportDownloadURLRequest.h"
@@ -152,6 +156,8 @@
 #include "model/GetMetaTableDetailInfoResult.h"
 #include "model/GetOpLogRequest.h"
 #include "model/GetOpLogResult.h"
+#include "model/GetOrderAttachmentFileRequest.h"
+#include "model/GetOrderAttachmentFileResult.h"
 #include "model/GetOrderBaseInfoRequest.h"
 #include "model/GetOrderBaseInfoResult.h"
 #include "model/GetOwnerApplyOrderDetailRequest.h"
@@ -543,12 +549,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDataCorrectOrderDetailResult> GetDataCorrectOrderDetailOutcome;
 			typedef std::future<GetDataCorrectOrderDetailOutcome> GetDataCorrectOrderDetailOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataCorrectOrderDetailRequest&, const GetDataCorrectOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataCorrectOrderDetailAsyncHandler;
+			typedef Outcome<Error, Model::GetDataCorrectRollbackFileResult> GetDataCorrectRollbackFileOutcome;
+			typedef std::future<GetDataCorrectRollbackFileOutcome> GetDataCorrectRollbackFileOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataCorrectRollbackFileRequest&, const GetDataCorrectRollbackFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataCorrectRollbackFileAsyncHandler;
 			typedef Outcome<Error, Model::GetDataCorrectSQLFileResult> GetDataCorrectSQLFileOutcome;
 			typedef std::future<GetDataCorrectSQLFileOutcome> GetDataCorrectSQLFileOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataCorrectSQLFileRequest&, const GetDataCorrectSQLFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataCorrectSQLFileAsyncHandler;
 			typedef Outcome<Error, Model::GetDataCorrectTaskDetailResult> GetDataCorrectTaskDetailOutcome;
 			typedef std::future<GetDataCorrectTaskDetailOutcome> GetDataCorrectTaskDetailOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataCorrectTaskDetailRequest&, const GetDataCorrectTaskDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataCorrectTaskDetailAsyncHandler;
+			typedef Outcome<Error, Model::GetDataCronClearConfigResult> GetDataCronClearConfigOutcome;
+			typedef std::future<GetDataCronClearConfigOutcome> GetDataCronClearConfigOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataCronClearConfigRequest&, const GetDataCronClearConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataCronClearConfigAsyncHandler;
 			typedef Outcome<Error, Model::GetDataCronClearTaskDetailListResult> GetDataCronClearTaskDetailListOutcome;
 			typedef std::future<GetDataCronClearTaskDetailListOutcome> GetDataCronClearTaskDetailListOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataCronClearTaskDetailListRequest&, const GetDataCronClearTaskDetailListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataCronClearTaskDetailListAsyncHandler;
@@ -582,6 +594,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetOpLogResult> GetOpLogOutcome;
 			typedef std::future<GetOpLogOutcome> GetOpLogOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetOpLogRequest&, const GetOpLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOpLogAsyncHandler;
+			typedef Outcome<Error, Model::GetOrderAttachmentFileResult> GetOrderAttachmentFileOutcome;
+			typedef std::future<GetOrderAttachmentFileOutcome> GetOrderAttachmentFileOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetOrderAttachmentFileRequest&, const GetOrderAttachmentFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOrderAttachmentFileAsyncHandler;
 			typedef Outcome<Error, Model::GetOrderBaseInfoResult> GetOrderBaseInfoOutcome;
 			typedef std::future<GetOrderBaseInfoOutcome> GetOrderBaseInfoOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetOrderBaseInfoRequest&, const GetOrderBaseInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOrderBaseInfoAsyncHandler;
@@ -1082,12 +1097,18 @@ namespace AlibabaCloud
 			GetDataCorrectOrderDetailOutcome getDataCorrectOrderDetail(const Model::GetDataCorrectOrderDetailRequest &request)const;
 			void getDataCorrectOrderDetailAsync(const Model::GetDataCorrectOrderDetailRequest& request, const GetDataCorrectOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataCorrectOrderDetailOutcomeCallable getDataCorrectOrderDetailCallable(const Model::GetDataCorrectOrderDetailRequest& request) const;
+			GetDataCorrectRollbackFileOutcome getDataCorrectRollbackFile(const Model::GetDataCorrectRollbackFileRequest &request)const;
+			void getDataCorrectRollbackFileAsync(const Model::GetDataCorrectRollbackFileRequest& request, const GetDataCorrectRollbackFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDataCorrectRollbackFileOutcomeCallable getDataCorrectRollbackFileCallable(const Model::GetDataCorrectRollbackFileRequest& request) const;
 			GetDataCorrectSQLFileOutcome getDataCorrectSQLFile(const Model::GetDataCorrectSQLFileRequest &request)const;
 			void getDataCorrectSQLFileAsync(const Model::GetDataCorrectSQLFileRequest& request, const GetDataCorrectSQLFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataCorrectSQLFileOutcomeCallable getDataCorrectSQLFileCallable(const Model::GetDataCorrectSQLFileRequest& request) const;
 			GetDataCorrectTaskDetailOutcome getDataCorrectTaskDetail(const Model::GetDataCorrectTaskDetailRequest &request)const;
 			void getDataCorrectTaskDetailAsync(const Model::GetDataCorrectTaskDetailRequest& request, const GetDataCorrectTaskDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataCorrectTaskDetailOutcomeCallable getDataCorrectTaskDetailCallable(const Model::GetDataCorrectTaskDetailRequest& request) const;
+			GetDataCronClearConfigOutcome getDataCronClearConfig(const Model::GetDataCronClearConfigRequest &request)const;
+			void getDataCronClearConfigAsync(const Model::GetDataCronClearConfigRequest& request, const GetDataCronClearConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDataCronClearConfigOutcomeCallable getDataCronClearConfigCallable(const Model::GetDataCronClearConfigRequest& request) const;
 			GetDataCronClearTaskDetailListOutcome getDataCronClearTaskDetailList(const Model::GetDataCronClearTaskDetailListRequest &request)const;
 			void getDataCronClearTaskDetailListAsync(const Model::GetDataCronClearTaskDetailListRequest& request, const GetDataCronClearTaskDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataCronClearTaskDetailListOutcomeCallable getDataCronClearTaskDetailListCallable(const Model::GetDataCronClearTaskDetailListRequest& request) const;
@@ -1121,6 +1142,9 @@ namespace AlibabaCloud
 			GetOpLogOutcome getOpLog(const Model::GetOpLogRequest &request)const;
 			void getOpLogAsync(const Model::GetOpLogRequest& request, const GetOpLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOpLogOutcomeCallable getOpLogCallable(const Model::GetOpLogRequest& request) const;
+			GetOrderAttachmentFileOutcome getOrderAttachmentFile(const Model::GetOrderAttachmentFileRequest &request)const;
+			void getOrderAttachmentFileAsync(const Model::GetOrderAttachmentFileRequest& request, const GetOrderAttachmentFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetOrderAttachmentFileOutcomeCallable getOrderAttachmentFileCallable(const Model::GetOrderAttachmentFileRequest& request) const;
 			GetOrderBaseInfoOutcome getOrderBaseInfo(const Model::GetOrderBaseInfoRequest &request)const;
 			void getOrderBaseInfoAsync(const Model::GetOrderBaseInfoRequest& request, const GetOrderBaseInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOrderBaseInfoOutcomeCallable getOrderBaseInfoCallable(const Model::GetOrderBaseInfoRequest& request) const;

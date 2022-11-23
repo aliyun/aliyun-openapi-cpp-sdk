@@ -36,17 +36,17 @@ public:
 	void setUserId(long userId);
 	long getTid() const;
 	void setTid(long tid);
-	std::string getIndepPassword() const;
-	void setIndepPassword(const std::string &indepPassword);
 	long getProxyId() const;
 	void setProxyId(long proxyId);
+	std::string getIndepPassword() const;
+	void setIndepPassword(const std::string &indepPassword);
 
 private:
 	std::string indepAccount_;
 	long userId_;
 	long tid_;
-	std::string indepPassword_;
 	long proxyId_;
+	std::string indepPassword_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

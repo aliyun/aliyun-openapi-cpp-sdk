@@ -30,17 +30,17 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ReDeployLhDagVersionRequest : public Rp
 public:
 	ReDeployLhDagVersionRequest();
 	~ReDeployLhDagVersionRequest();
-	long getDagVersion() const;
-	void setDagVersion(long dagVersion);
 	long getDagId() const;
 	void setDagId(long dagId);
 	long getTid() const;
 	void setTid(long tid);
+	long getDagVersion() const;
+	void setDagVersion(long dagVersion);
 
 private:
-	long dagVersion_;
 	long dagId_;
 	long tid_;
+	long dagVersion_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

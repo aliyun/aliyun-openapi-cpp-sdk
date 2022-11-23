@@ -70,24 +70,6 @@ void UpdateTaskFlowScheduleRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-bool UpdateTaskFlowScheduleRequest::getScheduleSwitch() const {
-  return scheduleSwitch_;
-}
-
-void UpdateTaskFlowScheduleRequest::setScheduleSwitch(bool scheduleSwitch) {
-  scheduleSwitch_ = scheduleSwitch;
-  setParameter(std::string("ScheduleSwitch"), scheduleSwitch ? "true" : "false");
-}
-
-std::string UpdateTaskFlowScheduleRequest::getCronEndDate() const {
-  return cronEndDate_;
-}
-
-void UpdateTaskFlowScheduleRequest::setCronEndDate(const std::string &cronEndDate) {
-  cronEndDate_ = cronEndDate;
-  setParameter(std::string("CronEndDate"), cronEndDate);
-}
-
 std::string UpdateTaskFlowScheduleRequest::getTimeZoneId() const {
   return timeZoneId_;
 }
@@ -104,6 +86,24 @@ std::string UpdateTaskFlowScheduleRequest::getCronBeginDate() const {
 void UpdateTaskFlowScheduleRequest::setCronBeginDate(const std::string &cronBeginDate) {
   cronBeginDate_ = cronBeginDate;
   setParameter(std::string("CronBeginDate"), cronBeginDate);
+}
+
+bool UpdateTaskFlowScheduleRequest::getScheduleSwitch() const {
+  return scheduleSwitch_;
+}
+
+void UpdateTaskFlowScheduleRequest::setScheduleSwitch(bool scheduleSwitch) {
+  scheduleSwitch_ = scheduleSwitch;
+  setParameter(std::string("ScheduleSwitch"), scheduleSwitch ? "true" : "false");
+}
+
+std::string UpdateTaskFlowScheduleRequest::getCronEndDate() const {
+  return cronEndDate_;
+}
+
+void UpdateTaskFlowScheduleRequest::setCronEndDate(const std::string &cronEndDate) {
+  cronEndDate_ = cronEndDate;
+  setParameter(std::string("CronEndDate"), cronEndDate);
 }
 
 std::string UpdateTaskFlowScheduleRequest::getScheduleParam() const {

@@ -25,15 +25,6 @@ PublishAndDeployTaskFlowRequest::PublishAndDeployTaskFlowRequest()
 
 PublishAndDeployTaskFlowRequest::~PublishAndDeployTaskFlowRequest() {}
 
-std::string PublishAndDeployTaskFlowRequest::getVersionComments() const {
-  return versionComments_;
-}
-
-void PublishAndDeployTaskFlowRequest::setVersionComments(const std::string &versionComments) {
-  versionComments_ = versionComments;
-  setParameter(std::string("VersionComments"), versionComments);
-}
-
 long PublishAndDeployTaskFlowRequest::getDagId() const {
   return dagId_;
 }
@@ -50,5 +41,14 @@ long PublishAndDeployTaskFlowRequest::getTid() const {
 void PublishAndDeployTaskFlowRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string PublishAndDeployTaskFlowRequest::getVersionComments() const {
+  return versionComments_;
+}
+
+void PublishAndDeployTaskFlowRequest::setVersionComments(const std::string &versionComments) {
+  versionComments_ = versionComments;
+  setParameter(std::string("VersionComments"), versionComments);
 }
 

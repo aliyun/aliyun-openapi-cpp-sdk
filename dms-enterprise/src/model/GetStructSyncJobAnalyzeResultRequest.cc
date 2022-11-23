@@ -25,24 +25,6 @@ GetStructSyncJobAnalyzeResultRequest::GetStructSyncJobAnalyzeResultRequest()
 
 GetStructSyncJobAnalyzeResultRequest::~GetStructSyncJobAnalyzeResultRequest() {}
 
-long GetStructSyncJobAnalyzeResultRequest::getOrderId() const {
-  return orderId_;
-}
-
-void GetStructSyncJobAnalyzeResultRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
-std::string GetStructSyncJobAnalyzeResultRequest::getCompareType() const {
-  return compareType_;
-}
-
-void GetStructSyncJobAnalyzeResultRequest::setCompareType(const std::string &compareType) {
-  compareType_ = compareType;
-  setParameter(std::string("CompareType"), compareType);
-}
-
 long GetStructSyncJobAnalyzeResultRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -68,5 +50,23 @@ long GetStructSyncJobAnalyzeResultRequest::getPageSize() const {
 void GetStructSyncJobAnalyzeResultRequest::setPageSize(long pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+long GetStructSyncJobAnalyzeResultRequest::getOrderId() const {
+  return orderId_;
+}
+
+void GetStructSyncJobAnalyzeResultRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
+}
+
+std::string GetStructSyncJobAnalyzeResultRequest::getCompareType() const {
+  return compareType_;
+}
+
+void GetStructSyncJobAnalyzeResultRequest::setCompareType(const std::string &compareType) {
+  compareType_ = compareType;
+  setParameter(std::string("CompareType"), compareType);
 }
 

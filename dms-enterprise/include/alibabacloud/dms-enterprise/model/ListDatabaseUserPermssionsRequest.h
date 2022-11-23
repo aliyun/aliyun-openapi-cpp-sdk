@@ -34,12 +34,12 @@ public:
 	void setTid(long tid);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getPermType() const;
 	void setPermType(const std::string &permType);
 	std::string getDbId() const;
 	void setDbId(const std::string &dbId);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	bool getLogic() const;
 	void setLogic(bool logic);
 	std::string getUserName() const;
@@ -48,9 +48,9 @@ public:
 private:
 	long tid_;
 	int pageNumber_;
+	int pageSize_;
 	std::string permType_;
 	std::string dbId_;
-	int pageSize_;
 	bool logic_;
 	std::string userName_;
 };

@@ -25,15 +25,6 @@ ExecuteStructSyncRequest::ExecuteStructSyncRequest()
 
 ExecuteStructSyncRequest::~ExecuteStructSyncRequest() {}
 
-long ExecuteStructSyncRequest::getOrderId() const {
-  return orderId_;
-}
-
-void ExecuteStructSyncRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long ExecuteStructSyncRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long ExecuteStructSyncRequest::getTid() const {
 void ExecuteStructSyncRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long ExecuteStructSyncRequest::getOrderId() const {
+  return orderId_;
+}
+
+void ExecuteStructSyncRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

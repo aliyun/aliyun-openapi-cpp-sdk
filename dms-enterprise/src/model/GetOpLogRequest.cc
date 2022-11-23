@@ -25,24 +25,6 @@ GetOpLogRequest::GetOpLogRequest()
 
 GetOpLogRequest::~GetOpLogRequest() {}
 
-std::string GetOpLogRequest::getModule() const {
-  return module_;
-}
-
-void GetOpLogRequest::setModule(const std::string &module) {
-  module_ = module;
-  setParameter(std::string("Module"), module);
-}
-
-std::string GetOpLogRequest::getEndTime() const {
-  return endTime_;
-}
-
-void GetOpLogRequest::setEndTime(const std::string &endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), endTime);
-}
-
 std::string GetOpLogRequest::getStartTime() const {
   return startTime_;
 }
@@ -77,5 +59,23 @@ int GetOpLogRequest::getPageSize() const {
 void GetOpLogRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string GetOpLogRequest::getModule() const {
+  return module_;
+}
+
+void GetOpLogRequest::setModule(const std::string &module) {
+  module_ = module;
+  setParameter(std::string("Module"), module);
+}
+
+std::string GetOpLogRequest::getEndTime() const {
+  return endTime_;
+}
+
+void GetOpLogRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 

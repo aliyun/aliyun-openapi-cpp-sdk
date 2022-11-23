@@ -25,24 +25,6 @@ GetDataCorrectBackupFilesRequest::GetDataCorrectBackupFilesRequest()
 
 GetDataCorrectBackupFilesRequest::~GetDataCorrectBackupFilesRequest() {}
 
-long GetDataCorrectBackupFilesRequest::getOrderId() const {
-  return orderId_;
-}
-
-void GetDataCorrectBackupFilesRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
-std::string GetDataCorrectBackupFilesRequest::getActionName() const {
-  return actionName_;
-}
-
-void GetDataCorrectBackupFilesRequest::setActionName(const std::string &actionName) {
-  actionName_ = actionName;
-  setParameter(std::string("ActionName"), actionName);
-}
-
 long GetDataCorrectBackupFilesRequest::getTid() const {
   return tid_;
 }
@@ -59,5 +41,23 @@ std::map<std::string, std::string> GetDataCorrectBackupFilesRequest::getActionDe
 void GetDataCorrectBackupFilesRequest::setActionDetail(std::map<std::string, std::string> actionDetail) {
   actionDetail_ = actionDetail;
   setParameter(std::string("ActionDetail"), actionDetail);
+}
+
+long GetDataCorrectBackupFilesRequest::getOrderId() const {
+  return orderId_;
+}
+
+void GetDataCorrectBackupFilesRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
+}
+
+std::string GetDataCorrectBackupFilesRequest::getActionName() const {
+  return actionName_;
+}
+
+void GetDataCorrectBackupFilesRequest::setActionName(const std::string &actionName) {
+  actionName_ = actionName;
+  setParameter(std::string("ActionName"), actionName);
 }
 

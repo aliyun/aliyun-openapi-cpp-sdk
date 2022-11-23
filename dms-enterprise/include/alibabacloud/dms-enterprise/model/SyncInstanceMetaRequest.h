@@ -30,16 +30,16 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT SyncInstanceMetaRequest : public RpcSer
 public:
 	SyncInstanceMetaRequest();
 	~SyncInstanceMetaRequest();
-	bool getIgnoreTable() const;
-	void setIgnoreTable(bool ignoreTable);
 	long getTid() const;
 	void setTid(long tid);
+	bool getIgnoreTable() const;
+	void setIgnoreTable(bool ignoreTable);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 
 private:
-	bool ignoreTable_;
 	long tid_;
+	bool ignoreTable_;
 	std::string instanceId_;
 };
 } // namespace Model

@@ -43,15 +43,6 @@ void ListInstancesRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string ListInstancesRequest::getInstanceState() const {
-  return instanceState_;
-}
-
-void ListInstancesRequest::setInstanceState(const std::string &instanceState) {
-  instanceState_ = instanceState;
-  setParameter(std::string("InstanceState"), instanceState);
-}
-
 int ListInstancesRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -59,24 +50,6 @@ int ListInstancesRequest::getPageNumber() const {
 void ListInstancesRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
-}
-
-std::string ListInstancesRequest::getNetType() const {
-  return netType_;
-}
-
-void ListInstancesRequest::setNetType(const std::string &netType) {
-  netType_ = netType;
-  setParameter(std::string("NetType"), netType);
-}
-
-std::string ListInstancesRequest::getDbType() const {
-  return dbType_;
-}
-
-void ListInstancesRequest::setDbType(const std::string &dbType) {
-  dbType_ = dbType;
-  setParameter(std::string("DbType"), dbType);
 }
 
 std::string ListInstancesRequest::getEnvType() const {
@@ -104,5 +77,32 @@ int ListInstancesRequest::getPageSize() const {
 void ListInstancesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListInstancesRequest::getInstanceState() const {
+  return instanceState_;
+}
+
+void ListInstancesRequest::setInstanceState(const std::string &instanceState) {
+  instanceState_ = instanceState;
+  setParameter(std::string("InstanceState"), instanceState);
+}
+
+std::string ListInstancesRequest::getNetType() const {
+  return netType_;
+}
+
+void ListInstancesRequest::setNetType(const std::string &netType) {
+  netType_ = netType;
+  setParameter(std::string("NetType"), netType);
+}
+
+std::string ListInstancesRequest::getDbType() const {
+  return dbType_;
+}
+
+void ListInstancesRequest::setDbType(const std::string &dbType) {
+  dbType_ = dbType;
+  setParameter(std::string("DbType"), dbType);
 }
 

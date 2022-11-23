@@ -25,15 +25,6 @@ ResumeTaskFlowInstanceRequest::ResumeTaskFlowInstanceRequest()
 
 ResumeTaskFlowInstanceRequest::~ResumeTaskFlowInstanceRequest() {}
 
-std::string ResumeTaskFlowInstanceRequest::getDagVersion() const {
-  return dagVersion_;
-}
-
-void ResumeTaskFlowInstanceRequest::setDagVersion(const std::string &dagVersion) {
-  dagVersion_ = dagVersion;
-  setParameter(std::string("DagVersion"), dagVersion);
-}
-
 long ResumeTaskFlowInstanceRequest::getDagId() const {
   return dagId_;
 }
@@ -50,6 +41,15 @@ long ResumeTaskFlowInstanceRequest::getTid() const {
 void ResumeTaskFlowInstanceRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string ResumeTaskFlowInstanceRequest::getDagVersion() const {
+  return dagVersion_;
+}
+
+void ResumeTaskFlowInstanceRequest::setDagVersion(const std::string &dagVersion) {
+  dagVersion_ = dagVersion;
+  setParameter(std::string("DagVersion"), dagVersion);
 }
 
 long ResumeTaskFlowInstanceRequest::getDagInstanceId() const {

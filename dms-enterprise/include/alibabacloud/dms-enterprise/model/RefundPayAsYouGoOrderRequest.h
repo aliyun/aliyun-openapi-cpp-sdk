@@ -30,14 +30,14 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT RefundPayAsYouGoOrderRequest : public R
 public:
 	RefundPayAsYouGoOrderRequest();
 	~RefundPayAsYouGoOrderRequest();
-	std::string getOrderId() const;
-	void setOrderId(const std::string &orderId);
 	long getTid() const;
 	void setTid(long tid);
+	std::string getOrderId() const;
+	void setOrderId(const std::string &orderId);
 
 private:
-	std::string orderId_;
 	long tid_;
+	std::string orderId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

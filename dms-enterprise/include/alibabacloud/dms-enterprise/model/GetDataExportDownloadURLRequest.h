@@ -30,17 +30,17 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetDataExportDownloadURLRequest : publi
 public:
 	GetDataExportDownloadURLRequest();
 	~GetDataExportDownloadURLRequest();
+	long getTid() const;
+	void setTid(long tid);
 	long getOrderId() const;
 	void setOrderId(long orderId);
 	std::string getActionName() const;
 	void setActionName(const std::string &actionName);
-	long getTid() const;
-	void setTid(long tid);
 
 private:
+	long tid_;
 	long orderId_;
 	std::string actionName_;
-	long tid_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

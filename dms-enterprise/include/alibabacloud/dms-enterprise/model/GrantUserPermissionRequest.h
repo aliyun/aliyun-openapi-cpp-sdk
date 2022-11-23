@@ -30,38 +30,38 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GrantUserPermissionRequest : public Rpc
 public:
 	GrantUserPermissionRequest();
 	~GrantUserPermissionRequest();
-	std::string getPermTypes() const;
-	void setPermTypes(const std::string &permTypes);
-	std::string getDsType() const;
-	void setDsType(const std::string &dsType);
 	std::string getExpireDate() const;
 	void setExpireDate(const std::string &expireDate);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
 	long getTid() const;
 	void setTid(long tid);
+	std::string getTableId() const;
+	void setTableId(const std::string &tableId);
+	std::string getTableName() const;
+	void setTableName(const std::string &tableName);
+	std::string getPermTypes() const;
+	void setPermTypes(const std::string &permTypes);
+	std::string getDsType() const;
+	void setDsType(const std::string &dsType);
 	long getInstanceId() const;
 	void setInstanceId(long instanceId);
 	std::string getDbId() const;
 	void setDbId(const std::string &dbId);
-	std::string getTableId() const;
-	void setTableId(const std::string &tableId);
 	bool getLogic() const;
 	void setLogic(bool logic);
-	std::string getTableName() const;
-	void setTableName(const std::string &tableName);
 
 private:
-	std::string permTypes_;
-	std::string dsType_;
 	std::string expireDate_;
 	std::string userId_;
 	long tid_;
+	std::string tableId_;
+	std::string tableName_;
+	std::string permTypes_;
+	std::string dsType_;
 	long instanceId_;
 	std::string dbId_;
-	std::string tableId_;
 	bool logic_;
-	std::string tableName_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

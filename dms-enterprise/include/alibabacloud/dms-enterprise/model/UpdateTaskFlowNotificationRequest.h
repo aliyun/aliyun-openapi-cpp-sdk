@@ -36,17 +36,17 @@ public:
 	void setTid(long tid);
 	bool getDagNotificationFail() const;
 	void setDagNotificationFail(bool dagNotificationFail);
-	bool getDagNotificationSuccess() const;
-	void setDagNotificationSuccess(bool dagNotificationSuccess);
 	bool getDagNotificationSla() const;
 	void setDagNotificationSla(bool dagNotificationSla);
+	bool getDagNotificationSuccess() const;
+	void setDagNotificationSuccess(bool dagNotificationSuccess);
 
 private:
 	long dagId_;
 	long tid_;
 	bool dagNotificationFail_;
-	bool dagNotificationSuccess_;
 	bool dagNotificationSla_;
+	bool dagNotificationSuccess_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

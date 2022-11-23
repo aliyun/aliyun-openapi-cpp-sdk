@@ -30,17 +30,17 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT UpdateTaskFlowTimeVariablesRequest : pu
 public:
 	UpdateTaskFlowTimeVariablesRequest();
 	~UpdateTaskFlowTimeVariablesRequest();
-	std::string getTimeVariables() const;
-	void setTimeVariables(const std::string &timeVariables);
 	long getDagId() const;
 	void setDagId(long dagId);
 	long getTid() const;
 	void setTid(long tid);
+	std::string getTimeVariables() const;
+	void setTimeVariables(const std::string &timeVariables);
 
 private:
-	std::string timeVariables_;
 	long dagId_;
 	long tid_;
+	std::string timeVariables_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

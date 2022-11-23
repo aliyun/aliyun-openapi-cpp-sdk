@@ -34,17 +34,17 @@ public:
 	};
 	UpdateTaskFlowConstantsRequest();
 	~UpdateTaskFlowConstantsRequest();
-	std::vector<DagConstants> getDagConstants() const;
-	void setDagConstants(const std::vector<DagConstants> &dagConstants);
 	long getDagId() const;
 	void setDagId(long dagId);
 	long getTid() const;
 	void setTid(long tid);
+	std::vector<DagConstants> getDagConstants() const;
+	void setDagConstants(const std::vector<DagConstants> &dagConstants);
 
 private:
-	std::vector<DagConstants> dagConstants_;
 	long dagId_;
 	long tid_;
+	std::vector<DagConstants> dagConstants_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

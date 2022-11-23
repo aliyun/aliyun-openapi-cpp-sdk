@@ -34,19 +34,19 @@ public:
 	void setRoleNames(const std::string &roleNames);
 	std::string getUserNick() const;
 	void setUserNick(const std::string &userNick);
-	std::string getMobile() const;
-	void setMobile(const std::string &mobile);
 	long getTid() const;
 	void setTid(long tid);
 	std::string getUid() const;
 	void setUid(const std::string &uid);
+	std::string getMobile() const;
+	void setMobile(const std::string &mobile);
 
 private:
 	std::string roleNames_;
 	std::string userNick_;
-	std::string mobile_;
 	long tid_;
 	std::string uid_;
+	std::string mobile_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

@@ -34,15 +34,6 @@ void UpdateTaskNameRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string UpdateTaskNameRequest::getNodeName() const {
-  return nodeName_;
-}
-
-void UpdateTaskNameRequest::setNodeName(const std::string &nodeName) {
-  nodeName_ = nodeName;
-  setParameter(std::string("NodeName"), nodeName);
-}
-
 std::string UpdateTaskNameRequest::getNodeId() const {
   return nodeId_;
 }
@@ -50,5 +41,14 @@ std::string UpdateTaskNameRequest::getNodeId() const {
 void UpdateTaskNameRequest::setNodeId(const std::string &nodeId) {
   nodeId_ = nodeId;
   setParameter(std::string("NodeId"), nodeId);
+}
+
+std::string UpdateTaskNameRequest::getNodeName() const {
+  return nodeName_;
+}
+
+void UpdateTaskNameRequest::setNodeName(const std::string &nodeName) {
+  nodeName_ = nodeName;
+  setParameter(std::string("NodeName"), nodeName);
 }
 

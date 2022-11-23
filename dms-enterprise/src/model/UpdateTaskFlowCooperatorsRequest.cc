@@ -34,6 +34,15 @@ void UpdateTaskFlowCooperatorsRequest::setDagId(long dagId) {
   setParameter(std::string("DagId"), std::to_string(dagId));
 }
 
+long UpdateTaskFlowCooperatorsRequest::getTid() const {
+  return tid_;
+}
+
+void UpdateTaskFlowCooperatorsRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
+}
+
 std::vector<UpdateTaskFlowCooperatorsRequest::std::string> UpdateTaskFlowCooperatorsRequest::getCooperatorIds() const {
   return cooperatorIds_;
 }
@@ -43,14 +52,5 @@ void UpdateTaskFlowCooperatorsRequest::setCooperatorIds(const std::vector<Update
   for(int dep1 = 0; dep1 != cooperatorIds.size(); dep1++) {
     setParameter(std::string("CooperatorIds") + "." + std::to_string(dep1 + 1), cooperatorIds[dep1]);
   }
-}
-
-long UpdateTaskFlowCooperatorsRequest::getTid() const {
-  return tid_;
-}
-
-void UpdateTaskFlowCooperatorsRequest::setTid(long tid) {
-  tid_ = tid;
-  setParameter(std::string("Tid"), std::to_string(tid));
 }
 

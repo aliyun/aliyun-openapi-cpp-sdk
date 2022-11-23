@@ -30,31 +30,31 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT CreateLakeHouseSpaceRequest : public Rp
 public:
 	CreateLakeHouseSpaceRequest();
 	~CreateLakeHouseSpaceRequest();
-	std::string getSpaceName() const;
-	void setSpaceName(const std::string &spaceName);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	long getTid() const;
 	void setTid(long tid);
 	std::string getMode() const;
 	void setMode(const std::string &mode);
-	std::string getDwDbType() const;
-	void setDwDbType(const std::string &dwDbType);
 	std::string getProdDbId() const;
 	void setProdDbId(const std::string &prodDbId);
 	std::string getDevDbId() const;
 	void setDevDbId(const std::string &devDbId);
+	std::string getSpaceName() const;
+	void setSpaceName(const std::string &spaceName);
+	std::string getDwDbType() const;
+	void setDwDbType(const std::string &dwDbType);
 	std::string getSpaceConfig() const;
 	void setSpaceConfig(const std::string &spaceConfig);
 
 private:
-	std::string spaceName_;
 	std::string description_;
 	long tid_;
 	std::string mode_;
-	std::string dwDbType_;
 	std::string prodDbId_;
 	std::string devDbId_;
+	std::string spaceName_;
+	std::string dwDbType_;
 	std::string spaceConfig_;
 };
 } // namespace Model

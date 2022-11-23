@@ -25,15 +25,6 @@ PauseDataCorrectSQLJobRequest::PauseDataCorrectSQLJobRequest()
 
 PauseDataCorrectSQLJobRequest::~PauseDataCorrectSQLJobRequest() {}
 
-long PauseDataCorrectSQLJobRequest::getOrderId() const {
-  return orderId_;
-}
-
-void PauseDataCorrectSQLJobRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 std::string PauseDataCorrectSQLJobRequest::getType() const {
   return type_;
 }
@@ -59,5 +50,14 @@ long PauseDataCorrectSQLJobRequest::getJobId() const {
 void PauseDataCorrectSQLJobRequest::setJobId(long jobId) {
   jobId_ = jobId;
   setParameter(std::string("JobId"), std::to_string(jobId));
+}
+
+long PauseDataCorrectSQLJobRequest::getOrderId() const {
+  return orderId_;
+}
+
+void PauseDataCorrectSQLJobRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

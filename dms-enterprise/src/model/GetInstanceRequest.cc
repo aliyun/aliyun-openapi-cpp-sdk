@@ -43,15 +43,6 @@ void GetInstanceRequest::setSid(const std::string &sid) {
   setParameter(std::string("Sid"), sid);
 }
 
-int GetInstanceRequest::getPort() const {
-  return port_;
-}
-
-void GetInstanceRequest::setPort(int port) {
-  port_ = port;
-  setParameter(std::string("Port"), std::to_string(port));
-}
-
 std::string GetInstanceRequest::getHost() const {
   return host_;
 }
@@ -59,5 +50,14 @@ std::string GetInstanceRequest::getHost() const {
 void GetInstanceRequest::setHost(const std::string &host) {
   host_ = host;
   setParameter(std::string("Host"), host);
+}
+
+int GetInstanceRequest::getPort() const {
+  return port_;
+}
+
+void GetInstanceRequest::setPort(int port) {
+  port_ = port;
+  setParameter(std::string("Port"), std::to_string(port));
 }
 

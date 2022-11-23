@@ -30,17 +30,17 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT DeleteLogicTableRouteConfigRequest : pu
 public:
 	DeleteLogicTableRouteConfigRequest();
 	~DeleteLogicTableRouteConfigRequest();
-	std::string getRouteKey() const;
-	void setRouteKey(const std::string &routeKey);
 	long getTid() const;
 	void setTid(long tid);
 	long getTableId() const;
 	void setTableId(long tableId);
+	std::string getRouteKey() const;
+	void setRouteKey(const std::string &routeKey);
 
 private:
-	std::string routeKey_;
 	long tid_;
 	long tableId_;
+	std::string routeKey_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

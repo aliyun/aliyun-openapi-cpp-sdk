@@ -25,15 +25,6 @@ UpdateTaskFlowTimeVariablesRequest::UpdateTaskFlowTimeVariablesRequest()
 
 UpdateTaskFlowTimeVariablesRequest::~UpdateTaskFlowTimeVariablesRequest() {}
 
-std::string UpdateTaskFlowTimeVariablesRequest::getTimeVariables() const {
-  return timeVariables_;
-}
-
-void UpdateTaskFlowTimeVariablesRequest::setTimeVariables(const std::string &timeVariables) {
-  timeVariables_ = timeVariables;
-  setParameter(std::string("TimeVariables"), timeVariables);
-}
-
 long UpdateTaskFlowTimeVariablesRequest::getDagId() const {
   return dagId_;
 }
@@ -50,5 +41,14 @@ long UpdateTaskFlowTimeVariablesRequest::getTid() const {
 void UpdateTaskFlowTimeVariablesRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string UpdateTaskFlowTimeVariablesRequest::getTimeVariables() const {
+  return timeVariables_;
+}
+
+void UpdateTaskFlowTimeVariablesRequest::setTimeVariables(const std::string &timeVariables) {
+  timeVariables_ = timeVariables;
+  setParameter(std::string("TimeVariables"), timeVariables);
 }
 

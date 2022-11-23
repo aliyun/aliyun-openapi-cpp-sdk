@@ -30,31 +30,31 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ModifyDesensitizationStrategyRequest : 
 public:
 	ModifyDesensitizationStrategyRequest();
 	~ModifyDesensitizationStrategyRequest();
-	std::string getSchemaName() const;
-	void setSchemaName(const std::string &schemaName);
 	bool getIsReset() const;
 	void setIsReset(bool isReset);
+	long getTid() const;
+	void setTid(long tid);
+	std::string getTableName() const;
+	void setTableName(const std::string &tableName);
+	std::string getSchemaName() const;
+	void setSchemaName(const std::string &schemaName);
 	bool getIsLogic() const;
 	void setIsLogic(bool isLogic);
 	std::string getColumnName() const;
 	void setColumnName(const std::string &columnName);
-	long getTid() const;
-	void setTid(long tid);
 	int getDbId() const;
 	void setDbId(int dbId);
-	std::string getTableName() const;
-	void setTableName(const std::string &tableName);
 	int getRuleId() const;
 	void setRuleId(int ruleId);
 
 private:
-	std::string schemaName_;
 	bool isReset_;
+	long tid_;
+	std::string tableName_;
+	std::string schemaName_;
 	bool isLogic_;
 	std::string columnName_;
-	long tid_;
 	int dbId_;
-	std::string tableName_;
 	int ruleId_;
 };
 } // namespace Model

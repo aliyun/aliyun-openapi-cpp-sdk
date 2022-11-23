@@ -34,15 +34,6 @@ void GetProxyRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-long GetProxyRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void GetProxyRequest::setInstanceId(long instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), std::to_string(instanceId));
-}
-
 long GetProxyRequest::getProxyId() const {
   return proxyId_;
 }
@@ -50,5 +41,14 @@ long GetProxyRequest::getProxyId() const {
 void GetProxyRequest::setProxyId(long proxyId) {
   proxyId_ = proxyId;
   setParameter(std::string("ProxyId"), std::to_string(proxyId));
+}
+
+long GetProxyRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void GetProxyRequest::setInstanceId(long instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), std::to_string(instanceId));
 }
 

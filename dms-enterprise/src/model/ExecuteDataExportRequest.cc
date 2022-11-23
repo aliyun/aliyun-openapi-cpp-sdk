@@ -25,24 +25,6 @@ ExecuteDataExportRequest::ExecuteDataExportRequest()
 
 ExecuteDataExportRequest::~ExecuteDataExportRequest() {}
 
-long ExecuteDataExportRequest::getOrderId() const {
-  return orderId_;
-}
-
-void ExecuteDataExportRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
-std::string ExecuteDataExportRequest::getActionName() const {
-  return actionName_;
-}
-
-void ExecuteDataExportRequest::setActionName(const std::string &actionName) {
-  actionName_ = actionName;
-  setParameter(std::string("ActionName"), actionName);
-}
-
 long ExecuteDataExportRequest::getTid() const {
   return tid_;
 }
@@ -59,5 +41,23 @@ std::map<std::string, std::string> ExecuteDataExportRequest::getActionDetail() c
 void ExecuteDataExportRequest::setActionDetail(std::map<std::string, std::string> actionDetail) {
   actionDetail_ = actionDetail;
   setParameter(std::string("ActionDetail"), actionDetail);
+}
+
+long ExecuteDataExportRequest::getOrderId() const {
+  return orderId_;
+}
+
+void ExecuteDataExportRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
+}
+
+std::string ExecuteDataExportRequest::getActionName() const {
+  return actionName_;
+}
+
+void ExecuteDataExportRequest::setActionName(const std::string &actionName) {
+  actionName_ = actionName;
+  setParameter(std::string("ActionName"), actionName);
 }
 

@@ -25,24 +25,6 @@ ExecuteDataCorrectRequest::ExecuteDataCorrectRequest()
 
 ExecuteDataCorrectRequest::~ExecuteDataCorrectRequest() {}
 
-long ExecuteDataCorrectRequest::getOrderId() const {
-  return orderId_;
-}
-
-void ExecuteDataCorrectRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
-std::string ExecuteDataCorrectRequest::getActionName() const {
-  return actionName_;
-}
-
-void ExecuteDataCorrectRequest::setActionName(const std::string &actionName) {
-  actionName_ = actionName;
-  setParameter(std::string("ActionName"), actionName);
-}
-
 std::string ExecuteDataCorrectRequest::getTid() const {
   return tid_;
 }
@@ -59,5 +41,23 @@ std::map<std::string, std::string> ExecuteDataCorrectRequest::getActionDetail() 
 void ExecuteDataCorrectRequest::setActionDetail(std::map<std::string, std::string> actionDetail) {
   actionDetail_ = actionDetail;
   setParameter(std::string("ActionDetail"), actionDetail);
+}
+
+long ExecuteDataCorrectRequest::getOrderId() const {
+  return orderId_;
+}
+
+void ExecuteDataCorrectRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
+}
+
+std::string ExecuteDataCorrectRequest::getActionName() const {
+  return actionName_;
+}
+
+void ExecuteDataCorrectRequest::setActionName(const std::string &actionName) {
+  actionName_ = actionName;
+  setParameter(std::string("ActionName"), actionName);
 }
 

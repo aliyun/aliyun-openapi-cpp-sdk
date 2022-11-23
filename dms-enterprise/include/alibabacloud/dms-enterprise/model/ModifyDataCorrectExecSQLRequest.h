@@ -30,17 +30,17 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ModifyDataCorrectExecSQLRequest : publi
 public:
 	ModifyDataCorrectExecSQLRequest();
 	~ModifyDataCorrectExecSQLRequest();
-	long getOrderId() const;
-	void setOrderId(long orderId);
 	std::string getExecSQL() const;
 	void setExecSQL(const std::string &execSQL);
 	long getTid() const;
 	void setTid(long tid);
+	long getOrderId() const;
+	void setOrderId(long orderId);
 
 private:
-	long orderId_;
 	std::string execSQL_;
 	long tid_;
+	long orderId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

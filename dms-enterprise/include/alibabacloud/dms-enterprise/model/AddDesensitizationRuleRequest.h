@@ -30,26 +30,26 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT AddDesensitizationRuleRequest : public 
 public:
 	AddDesensitizationRuleRequest();
 	~AddDesensitizationRuleRequest();
-	std::string getRuleDescription() const;
-	void setRuleDescription(const std::string &ruleDescription);
 	std::vector<std::map<std::string, std::string>> getFunctionParams() const;
 	void setFunctionParams(const std::vector<std::map<std::string, std::string>> &functionParams);
-	std::string getRuleType() const;
-	void setRuleType(const std::string &ruleType);
 	std::string getRuleName() const;
 	void setRuleName(const std::string &ruleName);
-	std::string getFunctionType() const;
-	void setFunctionType(const std::string &functionType);
 	long getTid() const;
 	void setTid(long tid);
+	std::string getRuleDescription() const;
+	void setRuleDescription(const std::string &ruleDescription);
+	std::string getRuleType() const;
+	void setRuleType(const std::string &ruleType);
+	std::string getFunctionType() const;
+	void setFunctionType(const std::string &functionType);
 
 private:
-	std::string ruleDescription_;
 	std::vector<std::map<std::string, std::string>> functionParams_;
-	std::string ruleType_;
 	std::string ruleName_;
-	std::string functionType_;
 	long tid_;
+	std::string ruleDescription_;
+	std::string ruleType_;
+	std::string functionType_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

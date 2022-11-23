@@ -34,6 +34,15 @@ void CreateLogicDatabaseRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
+std::string CreateLogicDatabaseRequest::getAlias() const {
+  return alias_;
+}
+
+void CreateLogicDatabaseRequest::setAlias(const std::string &alias) {
+  alias_ = alias;
+  setParameter(std::string("Alias"), alias);
+}
+
 std::vector<CreateLogicDatabaseRequest::long> CreateLogicDatabaseRequest::getDatabaseIds() const {
   return databaseIds_;
 }
@@ -43,14 +52,5 @@ void CreateLogicDatabaseRequest::setDatabaseIds(const std::vector<CreateLogicDat
   for(int dep1 = 0; dep1 != databaseIds.size(); dep1++) {
     setParameter(std::string("DatabaseIds") + "." + std::to_string(dep1 + 1), std::to_string(databaseIds[dep1]));
   }
-}
-
-std::string CreateLogicDatabaseRequest::getAlias() const {
-  return alias_;
-}
-
-void CreateLogicDatabaseRequest::setAlias(const std::string &alias) {
-  alias_ = alias;
-  setParameter(std::string("Alias"), alias);
 }
 

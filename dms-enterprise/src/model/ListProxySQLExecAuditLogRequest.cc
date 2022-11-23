@@ -25,15 +25,6 @@ ListProxySQLExecAuditLogRequest::ListProxySQLExecAuditLogRequest()
 
 ListProxySQLExecAuditLogRequest::~ListProxySQLExecAuditLogRequest() {}
 
-std::string ListProxySQLExecAuditLogRequest::getSQLType() const {
-  return sQLType_;
-}
-
-void ListProxySQLExecAuditLogRequest::setSQLType(const std::string &sQLType) {
-  sQLType_ = sQLType;
-  setParameter(std::string("SQLType"), sQLType);
-}
-
 std::string ListProxySQLExecAuditLogRequest::getSearchName() const {
   return searchName_;
 }
@@ -50,15 +41,6 @@ std::string ListProxySQLExecAuditLogRequest::getOpUserName() const {
 void ListProxySQLExecAuditLogRequest::setOpUserName(const std::string &opUserName) {
   opUserName_ = opUserName;
   setParameter(std::string("OpUserName"), opUserName);
-}
-
-long ListProxySQLExecAuditLogRequest::getEndTime() const {
-  return endTime_;
-}
-
-void ListProxySQLExecAuditLogRequest::setEndTime(long endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), std::to_string(endTime));
 }
 
 long ListProxySQLExecAuditLogRequest::getStartTime() const {
@@ -95,6 +77,24 @@ int ListProxySQLExecAuditLogRequest::getPageSize() const {
 void ListProxySQLExecAuditLogRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListProxySQLExecAuditLogRequest::getSQLType() const {
+  return sQLType_;
+}
+
+void ListProxySQLExecAuditLogRequest::setSQLType(const std::string &sQLType) {
+  sQLType_ = sQLType;
+  setParameter(std::string("SQLType"), sQLType);
+}
+
+long ListProxySQLExecAuditLogRequest::getEndTime() const {
+  return endTime_;
+}
+
+void ListProxySQLExecAuditLogRequest::setEndTime(long endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), std::to_string(endTime));
 }
 
 std::string ListProxySQLExecAuditLogRequest::getExecState() const {

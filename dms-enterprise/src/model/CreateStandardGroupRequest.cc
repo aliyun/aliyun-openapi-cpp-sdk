@@ -34,15 +34,6 @@ void CreateStandardGroupRequest::setDescription(const std::string &description) 
   setParameter(std::string("Description"), description);
 }
 
-std::string CreateStandardGroupRequest::getGroupName() const {
-  return groupName_;
-}
-
-void CreateStandardGroupRequest::setGroupName(const std::string &groupName) {
-  groupName_ = groupName;
-  setParameter(std::string("GroupName"), groupName);
-}
-
 long CreateStandardGroupRequest::getTid() const {
   return tid_;
 }
@@ -50,6 +41,15 @@ long CreateStandardGroupRequest::getTid() const {
 void CreateStandardGroupRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string CreateStandardGroupRequest::getGroupName() const {
+  return groupName_;
+}
+
+void CreateStandardGroupRequest::setGroupName(const std::string &groupName) {
+  groupName_ = groupName;
+  setParameter(std::string("GroupName"), groupName);
 }
 
 std::string CreateStandardGroupRequest::getDbType() const {

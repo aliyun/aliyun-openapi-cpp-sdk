@@ -25,15 +25,6 @@ GetDatabaseRequest::GetDatabaseRequest()
 
 GetDatabaseRequest::~GetDatabaseRequest() {}
 
-std::string GetDatabaseRequest::getSchemaName() const {
-  return schemaName_;
-}
-
-void GetDatabaseRequest::setSchemaName(const std::string &schemaName) {
-  schemaName_ = schemaName;
-  setParameter(std::string("SchemaName"), schemaName);
-}
-
 long GetDatabaseRequest::getTid() const {
   return tid_;
 }
@@ -52,15 +43,6 @@ void GetDatabaseRequest::setSid(const std::string &sid) {
   setParameter(std::string("Sid"), sid);
 }
 
-int GetDatabaseRequest::getPort() const {
-  return port_;
-}
-
-void GetDatabaseRequest::setPort(int port) {
-  port_ = port;
-  setParameter(std::string("Port"), std::to_string(port));
-}
-
 std::string GetDatabaseRequest::getHost() const {
   return host_;
 }
@@ -68,5 +50,23 @@ std::string GetDatabaseRequest::getHost() const {
 void GetDatabaseRequest::setHost(const std::string &host) {
   host_ = host;
   setParameter(std::string("Host"), host);
+}
+
+std::string GetDatabaseRequest::getSchemaName() const {
+  return schemaName_;
+}
+
+void GetDatabaseRequest::setSchemaName(const std::string &schemaName) {
+  schemaName_ = schemaName;
+  setParameter(std::string("SchemaName"), schemaName);
+}
+
+int GetDatabaseRequest::getPort() const {
+  return port_;
+}
+
+void GetDatabaseRequest::setPort(int port) {
+  port_ = port;
+  setParameter(std::string("Port"), std::to_string(port));
 }
 

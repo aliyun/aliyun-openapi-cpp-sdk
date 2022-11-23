@@ -30,6 +30,10 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ChangeColumnSecLevelRequest : public Rp
 public:
 	ChangeColumnSecLevelRequest();
 	~ChangeColumnSecLevelRequest();
+	long getTid() const;
+	void setTid(long tid);
+	std::string getTableName() const;
+	void setTableName(const std::string &tableName);
 	std::string getSchemaName() const;
 	void setSchemaName(const std::string &schemaName);
 	bool getIsLogic() const;
@@ -38,21 +42,17 @@ public:
 	void setNewLevel(const std::string &newLevel);
 	std::string getColumnName() const;
 	void setColumnName(const std::string &columnName);
-	long getTid() const;
-	void setTid(long tid);
 	long getDbId() const;
 	void setDbId(long dbId);
-	std::string getTableName() const;
-	void setTableName(const std::string &tableName);
 
 private:
+	long tid_;
+	std::string tableName_;
 	std::string schemaName_;
 	bool isLogic_;
 	std::string newLevel_;
 	std::string columnName_;
-	long tid_;
 	long dbId_;
-	std::string tableName_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

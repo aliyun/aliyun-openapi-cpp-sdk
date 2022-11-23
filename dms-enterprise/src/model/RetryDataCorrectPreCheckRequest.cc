@@ -25,15 +25,6 @@ RetryDataCorrectPreCheckRequest::RetryDataCorrectPreCheckRequest()
 
 RetryDataCorrectPreCheckRequest::~RetryDataCorrectPreCheckRequest() {}
 
-long RetryDataCorrectPreCheckRequest::getOrderId() const {
-  return orderId_;
-}
-
-void RetryDataCorrectPreCheckRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long RetryDataCorrectPreCheckRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long RetryDataCorrectPreCheckRequest::getTid() const {
 void RetryDataCorrectPreCheckRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long RetryDataCorrectPreCheckRequest::getOrderId() const {
+  return orderId_;
+}
+
+void RetryDataCorrectPreCheckRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

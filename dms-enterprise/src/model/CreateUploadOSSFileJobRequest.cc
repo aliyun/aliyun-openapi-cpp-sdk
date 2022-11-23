@@ -25,6 +25,15 @@ CreateUploadOSSFileJobRequest::CreateUploadOSSFileJobRequest()
 
 CreateUploadOSSFileJobRequest::~CreateUploadOSSFileJobRequest() {}
 
+long CreateUploadOSSFileJobRequest::getTid() const {
+  return tid_;
+}
+
+void CreateUploadOSSFileJobRequest::setTid(long tid) {
+  tid_ = tid;
+  setParameter(std::string("Tid"), std::to_string(tid));
+}
+
 std::string CreateUploadOSSFileJobRequest::getUploadType() const {
   return uploadType_;
 }
@@ -41,15 +50,6 @@ std::string CreateUploadOSSFileJobRequest::getFileSource() const {
 void CreateUploadOSSFileJobRequest::setFileSource(const std::string &fileSource) {
   fileSource_ = fileSource;
   setParameter(std::string("FileSource"), fileSource);
-}
-
-long CreateUploadOSSFileJobRequest::getTid() const {
-  return tid_;
-}
-
-void CreateUploadOSSFileJobRequest::setTid(long tid) {
-  tid_ = tid;
-  setParameter(std::string("Tid"), std::to_string(tid));
 }
 
 std::string CreateUploadOSSFileJobRequest::getFileName() const {

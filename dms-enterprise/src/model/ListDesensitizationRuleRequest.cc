@@ -25,15 +25,6 @@ ListDesensitizationRuleRequest::ListDesensitizationRuleRequest()
 
 ListDesensitizationRuleRequest::~ListDesensitizationRuleRequest() {}
 
-std::string ListDesensitizationRuleRequest::getRuleType() const {
-  return ruleType_;
-}
-
-void ListDesensitizationRuleRequest::setRuleType(const std::string &ruleType) {
-  ruleType_ = ruleType;
-  setParameter(std::string("RuleType"), ruleType);
-}
-
 std::string ListDesensitizationRuleRequest::getRuleName() const {
   return ruleName_;
 }
@@ -61,15 +52,6 @@ void ListDesensitizationRuleRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string ListDesensitizationRuleRequest::getFuncType() const {
-  return funcType_;
-}
-
-void ListDesensitizationRuleRequest::setFuncType(const std::string &funcType) {
-  funcType_ = funcType;
-  setParameter(std::string("FuncType"), funcType);
-}
-
 int ListDesensitizationRuleRequest::getPageSize() const {
   return pageSize_;
 }
@@ -77,6 +59,24 @@ int ListDesensitizationRuleRequest::getPageSize() const {
 void ListDesensitizationRuleRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListDesensitizationRuleRequest::getRuleType() const {
+  return ruleType_;
+}
+
+void ListDesensitizationRuleRequest::setRuleType(const std::string &ruleType) {
+  ruleType_ = ruleType;
+  setParameter(std::string("RuleType"), ruleType);
+}
+
+std::string ListDesensitizationRuleRequest::getFuncType() const {
+  return funcType_;
+}
+
+void ListDesensitizationRuleRequest::setFuncType(const std::string &funcType) {
+  funcType_ = funcType;
+  setParameter(std::string("FuncType"), funcType);
 }
 
 int ListDesensitizationRuleRequest::getRuleId() const {

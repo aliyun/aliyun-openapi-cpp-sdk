@@ -30,14 +30,14 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetUserUploadFileJobRequest : public Rp
 public:
 	GetUserUploadFileJobRequest();
 	~GetUserUploadFileJobRequest();
-	std::string getJobKey() const;
-	void setJobKey(const std::string &jobKey);
 	long getTid() const;
 	void setTid(long tid);
+	std::string getJobKey() const;
+	void setJobKey(const std::string &jobKey);
 
 private:
-	std::string jobKey_;
 	long tid_;
+	std::string jobKey_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

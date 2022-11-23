@@ -25,18 +25,6 @@ UpdateTaskFlowConstantsRequest::UpdateTaskFlowConstantsRequest()
 
 UpdateTaskFlowConstantsRequest::~UpdateTaskFlowConstantsRequest() {}
 
-std::vector<UpdateTaskFlowConstantsRequest::DagConstants> UpdateTaskFlowConstantsRequest::getDagConstants() const {
-  return dagConstants_;
-}
-
-void UpdateTaskFlowConstantsRequest::setDagConstants(const std::vector<UpdateTaskFlowConstantsRequest::DagConstants> &dagConstants) {
-  dagConstants_ = dagConstants;
-  for(int dep1 = 0; dep1 != dagConstants.size(); dep1++) {
-    setParameter(std::string("DagConstants") + "." + std::to_string(dep1 + 1) + ".Value", dagConstants[dep1].value);
-    setParameter(std::string("DagConstants") + "." + std::to_string(dep1 + 1) + ".Key", dagConstants[dep1].key);
-  }
-}
-
 long UpdateTaskFlowConstantsRequest::getDagId() const {
   return dagId_;
 }
@@ -53,5 +41,17 @@ long UpdateTaskFlowConstantsRequest::getTid() const {
 void UpdateTaskFlowConstantsRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::vector<UpdateTaskFlowConstantsRequest::DagConstants> UpdateTaskFlowConstantsRequest::getDagConstants() const {
+  return dagConstants_;
+}
+
+void UpdateTaskFlowConstantsRequest::setDagConstants(const std::vector<UpdateTaskFlowConstantsRequest::DagConstants> &dagConstants) {
+  dagConstants_ = dagConstants;
+  for(int dep1 = 0; dep1 != dagConstants.size(); dep1++) {
+    setParameter(std::string("DagConstants") + "." + std::to_string(dep1 + 1) + ".Value", dagConstants[dep1].value);
+    setParameter(std::string("DagConstants") + "." + std::to_string(dep1 + 1) + ".Key", dagConstants[dep1].key);
+  }
 }
 

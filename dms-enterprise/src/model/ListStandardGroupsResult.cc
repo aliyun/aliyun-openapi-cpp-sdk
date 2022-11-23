@@ -53,6 +53,8 @@ void ListStandardGroupsResult::parse(const std::string &payload)
 			standardGroupListObject.lastMenderId = std::stol(valueStandardGroupListStandardGroupListItem["LastMenderId"].asString());
 		if(!valueStandardGroupListStandardGroupListItem["GroupMode"].isNull())
 			standardGroupListObject.groupMode = valueStandardGroupListStandardGroupListItem["GroupMode"].asString();
+		if(!valueStandardGroupListStandardGroupListItem["GroupId"].isNull())
+			standardGroupListObject.groupId = std::stol(valueStandardGroupListStandardGroupListItem["GroupId"].asString());
 		standardGroupList_.push_back(standardGroupListObject);
 	}
 	if(!value["Success"].isNull())

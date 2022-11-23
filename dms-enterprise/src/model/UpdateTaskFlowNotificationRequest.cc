@@ -52,15 +52,6 @@ void UpdateTaskFlowNotificationRequest::setDagNotificationFail(bool dagNotificat
   setParameter(std::string("DagNotificationFail"), dagNotificationFail ? "true" : "false");
 }
 
-bool UpdateTaskFlowNotificationRequest::getDagNotificationSuccess() const {
-  return dagNotificationSuccess_;
-}
-
-void UpdateTaskFlowNotificationRequest::setDagNotificationSuccess(bool dagNotificationSuccess) {
-  dagNotificationSuccess_ = dagNotificationSuccess;
-  setParameter(std::string("DagNotificationSuccess"), dagNotificationSuccess ? "true" : "false");
-}
-
 bool UpdateTaskFlowNotificationRequest::getDagNotificationSla() const {
   return dagNotificationSla_;
 }
@@ -68,5 +59,14 @@ bool UpdateTaskFlowNotificationRequest::getDagNotificationSla() const {
 void UpdateTaskFlowNotificationRequest::setDagNotificationSla(bool dagNotificationSla) {
   dagNotificationSla_ = dagNotificationSla;
   setParameter(std::string("DagNotificationSla"), dagNotificationSla ? "true" : "false");
+}
+
+bool UpdateTaskFlowNotificationRequest::getDagNotificationSuccess() const {
+  return dagNotificationSuccess_;
+}
+
+void UpdateTaskFlowNotificationRequest::setDagNotificationSuccess(bool dagNotificationSuccess) {
+  dagNotificationSuccess_ = dagNotificationSuccess;
+  setParameter(std::string("DagNotificationSuccess"), dagNotificationSuccess ? "true" : "false");
 }
 

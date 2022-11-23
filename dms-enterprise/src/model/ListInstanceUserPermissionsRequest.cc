@@ -43,15 +43,6 @@ void ListInstanceUserPermissionsRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string ListInstanceUserPermissionsRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ListInstanceUserPermissionsRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 int ListInstanceUserPermissionsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -59,6 +50,15 @@ int ListInstanceUserPermissionsRequest::getPageSize() const {
 void ListInstanceUserPermissionsRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListInstanceUserPermissionsRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListInstanceUserPermissionsRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string ListInstanceUserPermissionsRequest::getUserName() const {

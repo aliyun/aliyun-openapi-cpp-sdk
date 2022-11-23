@@ -30,16 +30,16 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetDataCorrectSQLFileRequest : public R
 public:
 	GetDataCorrectSQLFileRequest();
 	~GetDataCorrectSQLFileRequest();
-	long getOrderId() const;
-	void setOrderId(long orderId);
 	long getTid() const;
 	void setTid(long tid);
+	long getOrderId() const;
+	void setOrderId(long orderId);
 	std::string getOrderActionName() const;
 	void setOrderActionName(const std::string &orderActionName);
 
 private:
-	long orderId_;
 	long tid_;
+	long orderId_;
 	std::string orderActionName_;
 };
 } // namespace Model

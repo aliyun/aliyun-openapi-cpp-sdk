@@ -125,10 +125,14 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectBackupFilesResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectOrderDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectOrderDetailResult.h
+	include/alibabacloud/dms-enterprise/model/GetDataCorrectRollbackFileRequest.h
+	include/alibabacloud/dms-enterprise/model/GetDataCorrectRollbackFileResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectSQLFileRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectSQLFileResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectTaskDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectTaskDetailResult.h
+	include/alibabacloud/dms-enterprise/model/GetDataCronClearConfigRequest.h
+	include/alibabacloud/dms-enterprise/model/GetDataCronClearConfigResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataCronClearTaskDetailListRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDataCronClearTaskDetailListResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataExportDownloadURLRequest.h
@@ -151,6 +155,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetMetaTableDetailInfoResult.h
 	include/alibabacloud/dms-enterprise/model/GetOpLogRequest.h
 	include/alibabacloud/dms-enterprise/model/GetOpLogResult.h
+	include/alibabacloud/dms-enterprise/model/GetOrderAttachmentFileRequest.h
+	include/alibabacloud/dms-enterprise/model/GetOrderAttachmentFileResult.h
 	include/alibabacloud/dms-enterprise/model/GetOrderBaseInfoRequest.h
 	include/alibabacloud/dms-enterprise/model/GetOrderBaseInfoResult.h
 	include/alibabacloud/dms-enterprise/model/GetOwnerApplyOrderDetailRequest.h
@@ -484,10 +490,14 @@ set(dms-enterprise_src
 	src/model/GetDataCorrectBackupFilesResult.cc
 	src/model/GetDataCorrectOrderDetailRequest.cc
 	src/model/GetDataCorrectOrderDetailResult.cc
+	src/model/GetDataCorrectRollbackFileRequest.cc
+	src/model/GetDataCorrectRollbackFileResult.cc
 	src/model/GetDataCorrectSQLFileRequest.cc
 	src/model/GetDataCorrectSQLFileResult.cc
 	src/model/GetDataCorrectTaskDetailRequest.cc
 	src/model/GetDataCorrectTaskDetailResult.cc
+	src/model/GetDataCronClearConfigRequest.cc
+	src/model/GetDataCronClearConfigResult.cc
 	src/model/GetDataCronClearTaskDetailListRequest.cc
 	src/model/GetDataCronClearTaskDetailListResult.cc
 	src/model/GetDataExportDownloadURLRequest.cc
@@ -510,6 +520,8 @@ set(dms-enterprise_src
 	src/model/GetMetaTableDetailInfoResult.cc
 	src/model/GetOpLogRequest.cc
 	src/model/GetOpLogResult.cc
+	src/model/GetOrderAttachmentFileRequest.cc
+	src/model/GetOrderAttachmentFileResult.cc
 	src/model/GetOrderBaseInfoRequest.cc
 	src/model/GetOrderBaseInfoResult.cc
 	src/model/GetOwnerApplyOrderDetailRequest.cc

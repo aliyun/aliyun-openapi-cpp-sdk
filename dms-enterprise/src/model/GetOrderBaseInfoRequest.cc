@@ -25,15 +25,6 @@ GetOrderBaseInfoRequest::GetOrderBaseInfoRequest()
 
 GetOrderBaseInfoRequest::~GetOrderBaseInfoRequest() {}
 
-long GetOrderBaseInfoRequest::getOrderId() const {
-  return orderId_;
-}
-
-void GetOrderBaseInfoRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long GetOrderBaseInfoRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long GetOrderBaseInfoRequest::getTid() const {
 void GetOrderBaseInfoRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long GetOrderBaseInfoRequest::getOrderId() const {
+  return orderId_;
+}
+
+void GetOrderBaseInfoRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

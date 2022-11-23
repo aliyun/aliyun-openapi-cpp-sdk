@@ -34,15 +34,6 @@ void ListOrdersRequest::setOrderStatus(const std::string &orderStatus) {
   setParameter(std::string("OrderStatus"), orderStatus);
 }
 
-std::string ListOrdersRequest::getSearchContent() const {
-  return searchContent_;
-}
-
-void ListOrdersRequest::setSearchContent(const std::string &searchContent) {
-  searchContent_ = searchContent;
-  setParameter(std::string("SearchContent"), searchContent);
-}
-
 std::string ListOrdersRequest::getSearchDateType() const {
   return searchDateType_;
 }
@@ -50,15 +41,6 @@ std::string ListOrdersRequest::getSearchDateType() const {
 void ListOrdersRequest::setSearchDateType(const std::string &searchDateType) {
   searchDateType_ = searchDateType;
   setParameter(std::string("SearchDateType"), searchDateType);
-}
-
-std::string ListOrdersRequest::getEndTime() const {
-  return endTime_;
-}
-
-void ListOrdersRequest::setEndTime(const std::string &endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), endTime);
 }
 
 std::string ListOrdersRequest::getStartTime() const {
@@ -113,5 +95,23 @@ std::string ListOrdersRequest::getOrderResultType() const {
 void ListOrdersRequest::setOrderResultType(const std::string &orderResultType) {
   orderResultType_ = orderResultType;
   setParameter(std::string("OrderResultType"), orderResultType);
+}
+
+std::string ListOrdersRequest::getSearchContent() const {
+  return searchContent_;
+}
+
+void ListOrdersRequest::setSearchContent(const std::string &searchContent) {
+  searchContent_ = searchContent;
+  setParameter(std::string("SearchContent"), searchContent);
+}
+
+std::string ListOrdersRequest::getEndTime() const {
+  return endTime_;
+}
+
+void ListOrdersRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 

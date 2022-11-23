@@ -30,26 +30,26 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListSensitiveColumnsDetailRequest : pub
 public:
 	ListSensitiveColumnsDetailRequest();
 	~ListSensitiveColumnsDetailRequest();
+	long getTid() const;
+	void setTid(long tid);
+	std::string getTableName() const;
+	void setTableName(const std::string &tableName);
 	std::string getSchemaName() const;
 	void setSchemaName(const std::string &schemaName);
 	std::string getColumnName() const;
 	void setColumnName(const std::string &columnName);
-	long getTid() const;
-	void setTid(long tid);
 	long getDbId() const;
 	void setDbId(long dbId);
 	bool getLogic() const;
 	void setLogic(bool logic);
-	std::string getTableName() const;
-	void setTableName(const std::string &tableName);
 
 private:
+	long tid_;
+	std::string tableName_;
 	std::string schemaName_;
 	std::string columnName_;
-	long tid_;
 	long dbId_;
 	bool logic_;
-	std::string tableName_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

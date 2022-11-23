@@ -25,15 +25,6 @@ AddDesensitizationRuleRequest::AddDesensitizationRuleRequest()
 
 AddDesensitizationRuleRequest::~AddDesensitizationRuleRequest() {}
 
-std::string AddDesensitizationRuleRequest::getRuleDescription() const {
-  return ruleDescription_;
-}
-
-void AddDesensitizationRuleRequest::setRuleDescription(const std::string &ruleDescription) {
-  ruleDescription_ = ruleDescription;
-  setParameter(std::string("RuleDescription"), ruleDescription);
-}
-
 std::vector<AddDesensitizationRuleRequest::std::map<std::string, std::string>> AddDesensitizationRuleRequest::getFunctionParams() const {
   return functionParams_;
 }
@@ -47,15 +38,6 @@ void AddDesensitizationRuleRequest::setFunctionParams(const std::vector<AddDesen
   }
 }
 
-std::string AddDesensitizationRuleRequest::getRuleType() const {
-  return ruleType_;
-}
-
-void AddDesensitizationRuleRequest::setRuleType(const std::string &ruleType) {
-  ruleType_ = ruleType;
-  setParameter(std::string("RuleType"), ruleType);
-}
-
 std::string AddDesensitizationRuleRequest::getRuleName() const {
   return ruleName_;
 }
@@ -65,15 +47,6 @@ void AddDesensitizationRuleRequest::setRuleName(const std::string &ruleName) {
   setParameter(std::string("RuleName"), ruleName);
 }
 
-std::string AddDesensitizationRuleRequest::getFunctionType() const {
-  return functionType_;
-}
-
-void AddDesensitizationRuleRequest::setFunctionType(const std::string &functionType) {
-  functionType_ = functionType;
-  setParameter(std::string("FunctionType"), functionType);
-}
-
 long AddDesensitizationRuleRequest::getTid() const {
   return tid_;
 }
@@ -81,5 +54,32 @@ long AddDesensitizationRuleRequest::getTid() const {
 void AddDesensitizationRuleRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string AddDesensitizationRuleRequest::getRuleDescription() const {
+  return ruleDescription_;
+}
+
+void AddDesensitizationRuleRequest::setRuleDescription(const std::string &ruleDescription) {
+  ruleDescription_ = ruleDescription;
+  setParameter(std::string("RuleDescription"), ruleDescription);
+}
+
+std::string AddDesensitizationRuleRequest::getRuleType() const {
+  return ruleType_;
+}
+
+void AddDesensitizationRuleRequest::setRuleType(const std::string &ruleType) {
+  ruleType_ = ruleType;
+  setParameter(std::string("RuleType"), ruleType);
+}
+
+std::string AddDesensitizationRuleRequest::getFunctionType() const {
+  return functionType_;
+}
+
+void AddDesensitizationRuleRequest::setFunctionType(const std::string &functionType) {
+  functionType_ = functionType;
+  setParameter(std::string("FunctionType"), functionType);
 }
 

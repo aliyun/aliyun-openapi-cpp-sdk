@@ -25,15 +25,6 @@ UpdateTaskTimeVariablesRequest::UpdateTaskTimeVariablesRequest()
 
 UpdateTaskTimeVariablesRequest::~UpdateTaskTimeVariablesRequest() {}
 
-std::string UpdateTaskTimeVariablesRequest::getTimeVariables() const {
-  return timeVariables_;
-}
-
-void UpdateTaskTimeVariablesRequest::setTimeVariables(const std::string &timeVariables) {
-  timeVariables_ = timeVariables;
-  setParameter(std::string("TimeVariables"), timeVariables);
-}
-
 long UpdateTaskTimeVariablesRequest::getTid() const {
   return tid_;
 }
@@ -50,5 +41,14 @@ std::string UpdateTaskTimeVariablesRequest::getNodeId() const {
 void UpdateTaskTimeVariablesRequest::setNodeId(const std::string &nodeId) {
   nodeId_ = nodeId;
   setParameter(std::string("NodeId"), nodeId);
+}
+
+std::string UpdateTaskTimeVariablesRequest::getTimeVariables() const {
+  return timeVariables_;
+}
+
+void UpdateTaskTimeVariablesRequest::setTimeVariables(const std::string &timeVariables) {
+  timeVariables_ = timeVariables;
+  setParameter(std::string("TimeVariables"), timeVariables);
 }
 

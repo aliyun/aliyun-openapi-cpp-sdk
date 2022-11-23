@@ -30,26 +30,26 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT CreatePublishGroupTaskRequest : public 
 public:
 	CreatePublishGroupTaskRequest();
 	~CreatePublishGroupTaskRequest();
-	long getOrderId() const;
-	void setOrderId(long orderId);
 	long getTid() const;
 	void setTid(long tid);
-	int getDbId() const;
-	void setDbId(int dbId);
 	std::string getPlanTime() const;
 	void setPlanTime(const std::string &planTime);
-	bool getLogic() const;
-	void setLogic(bool logic);
 	std::string getPublishStrategy() const;
 	void setPublishStrategy(const std::string &publishStrategy);
+	long getOrderId() const;
+	void setOrderId(long orderId);
+	int getDbId() const;
+	void setDbId(int dbId);
+	bool getLogic() const;
+	void setLogic(bool logic);
 
 private:
-	long orderId_;
 	long tid_;
-	int dbId_;
 	std::string planTime_;
-	bool logic_;
 	std::string publishStrategy_;
+	long orderId_;
+	int dbId_;
+	bool logic_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

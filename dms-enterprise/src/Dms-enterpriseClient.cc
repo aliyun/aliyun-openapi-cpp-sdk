@@ -1923,6 +1923,42 @@ Dms_enterpriseClient::GetDataCorrectOrderDetailOutcomeCallable Dms_enterpriseCli
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetDataCorrectRollbackFileOutcome Dms_enterpriseClient::getDataCorrectRollbackFile(const GetDataCorrectRollbackFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataCorrectRollbackFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataCorrectRollbackFileOutcome(GetDataCorrectRollbackFileResult(outcome.result()));
+	else
+		return GetDataCorrectRollbackFileOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataCorrectRollbackFileAsync(const GetDataCorrectRollbackFileRequest& request, const GetDataCorrectRollbackFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataCorrectRollbackFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataCorrectRollbackFileOutcomeCallable Dms_enterpriseClient::getDataCorrectRollbackFileCallable(const GetDataCorrectRollbackFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataCorrectRollbackFileOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataCorrectRollbackFile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetDataCorrectSQLFileOutcome Dms_enterpriseClient::getDataCorrectSQLFile(const GetDataCorrectSQLFileRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,6 +2025,42 @@ Dms_enterpriseClient::GetDataCorrectTaskDetailOutcomeCallable Dms_enterpriseClie
 			[this, request]()
 			{
 			return this->getDataCorrectTaskDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetDataCronClearConfigOutcome Dms_enterpriseClient::getDataCronClearConfig(const GetDataCronClearConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataCronClearConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataCronClearConfigOutcome(GetDataCronClearConfigResult(outcome.result()));
+	else
+		return GetDataCronClearConfigOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataCronClearConfigAsync(const GetDataCronClearConfigRequest& request, const GetDataCronClearConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataCronClearConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataCronClearConfigOutcomeCallable Dms_enterpriseClient::getDataCronClearConfigCallable(const GetDataCronClearConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataCronClearConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataCronClearConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2385,6 +2457,42 @@ Dms_enterpriseClient::GetOpLogOutcomeCallable Dms_enterpriseClient::getOpLogCall
 			[this, request]()
 			{
 			return this->getOpLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetOrderAttachmentFileOutcome Dms_enterpriseClient::getOrderAttachmentFile(const GetOrderAttachmentFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOrderAttachmentFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOrderAttachmentFileOutcome(GetOrderAttachmentFileResult(outcome.result()));
+	else
+		return GetOrderAttachmentFileOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getOrderAttachmentFileAsync(const GetOrderAttachmentFileRequest& request, const GetOrderAttachmentFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOrderAttachmentFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetOrderAttachmentFileOutcomeCallable Dms_enterpriseClient::getOrderAttachmentFileCallable(const GetOrderAttachmentFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOrderAttachmentFileOutcome()>>(
+			[this, request]()
+			{
+			return this->getOrderAttachmentFile(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

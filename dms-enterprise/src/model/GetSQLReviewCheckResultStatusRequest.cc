@@ -25,15 +25,6 @@ GetSQLReviewCheckResultStatusRequest::GetSQLReviewCheckResultStatusRequest()
 
 GetSQLReviewCheckResultStatusRequest::~GetSQLReviewCheckResultStatusRequest() {}
 
-long GetSQLReviewCheckResultStatusRequest::getOrderId() const {
-  return orderId_;
-}
-
-void GetSQLReviewCheckResultStatusRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long GetSQLReviewCheckResultStatusRequest::getTid() const {
   return tid_;
 }
@@ -41,6 +32,15 @@ long GetSQLReviewCheckResultStatusRequest::getTid() const {
 void GetSQLReviewCheckResultStatusRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long GetSQLReviewCheckResultStatusRequest::getOrderId() const {
+  return orderId_;
+}
+
+void GetSQLReviewCheckResultStatusRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 
 std::string GetSQLReviewCheckResultStatusRequest::getOrderActionName() const {

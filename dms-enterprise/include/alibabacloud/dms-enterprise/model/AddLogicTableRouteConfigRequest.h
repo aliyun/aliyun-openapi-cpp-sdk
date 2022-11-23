@@ -30,20 +30,20 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT AddLogicTableRouteConfigRequest : publi
 public:
 	AddLogicTableRouteConfigRequest();
 	~AddLogicTableRouteConfigRequest();
-	std::string getRouteKey() const;
-	void setRouteKey(const std::string &routeKey);
 	long getTid() const;
 	void setTid(long tid);
-	std::string getRouteExpr() const;
-	void setRouteExpr(const std::string &routeExpr);
 	long getTableId() const;
 	void setTableId(long tableId);
+	std::string getRouteKey() const;
+	void setRouteKey(const std::string &routeKey);
+	std::string getRouteExpr() const;
+	void setRouteExpr(const std::string &routeExpr);
 
 private:
-	std::string routeKey_;
 	long tid_;
-	std::string routeExpr_;
 	long tableId_;
+	std::string routeKey_;
+	std::string routeExpr_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

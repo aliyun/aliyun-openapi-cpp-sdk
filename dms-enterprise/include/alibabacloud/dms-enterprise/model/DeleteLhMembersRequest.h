@@ -34,16 +34,16 @@ public:
 	void setTid(long tid);
 	int getObjectType() const;
 	void setObjectType(int objectType);
-	long getObjectId() const;
-	void setObjectId(long objectId);
 	std::vector<int> getMemberIds() const;
 	void setMemberIds(const std::vector<int> &memberIds);
+	long getObjectId() const;
+	void setObjectId(long objectId);
 
 private:
 	long tid_;
 	int objectType_;
-	long objectId_;
 	std::vector<int> memberIds_;
+	long objectId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

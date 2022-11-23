@@ -40,19 +40,19 @@ public:
 	};
 	ListSQLReviewOriginSQLRequest();
 	~ListSQLReviewOriginSQLRequest();
+	long getTid() const;
+	void setTid(long tid);
 	long getOrderId() const;
 	void setOrderId(long orderId);
 	OrderActionDetail getOrderActionDetail() const;
 	void setOrderActionDetail(const OrderActionDetail &orderActionDetail);
-	long getTid() const;
-	void setTid(long tid);
 	std::string getOrderActionName() const;
 	void setOrderActionName(const std::string &orderActionName);
 
 private:
+	long tid_;
 	long orderId_;
 	OrderActionDetail orderActionDetail_;
-	long tid_;
 	std::string orderActionName_;
 };
 } // namespace Model

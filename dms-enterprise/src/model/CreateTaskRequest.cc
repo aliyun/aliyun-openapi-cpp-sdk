@@ -25,15 +25,6 @@ CreateTaskRequest::CreateTaskRequest()
 
 CreateTaskRequest::~CreateTaskRequest() {}
 
-std::string CreateTaskRequest::getTimeVariables() const {
-  return timeVariables_;
-}
-
-void CreateTaskRequest::setTimeVariables(const std::string &timeVariables) {
-  timeVariables_ = timeVariables;
-  setParameter(std::string("TimeVariables"), timeVariables);
-}
-
 std::string CreateTaskRequest::getNodeType() const {
   return nodeType_;
 }
@@ -61,15 +52,6 @@ void CreateTaskRequest::setTid(long tid) {
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-std::string CreateTaskRequest::getNodeName() const {
-  return nodeName_;
-}
-
-void CreateTaskRequest::setNodeName(const std::string &nodeName) {
-  nodeName_ = nodeName;
-  setParameter(std::string("NodeName"), nodeName);
-}
-
 std::string CreateTaskRequest::getNodeContent() const {
   return nodeContent_;
 }
@@ -95,5 +77,23 @@ std::string CreateTaskRequest::getGraphParam() const {
 void CreateTaskRequest::setGraphParam(const std::string &graphParam) {
   graphParam_ = graphParam;
   setParameter(std::string("GraphParam"), graphParam);
+}
+
+std::string CreateTaskRequest::getTimeVariables() const {
+  return timeVariables_;
+}
+
+void CreateTaskRequest::setTimeVariables(const std::string &timeVariables) {
+  timeVariables_ = timeVariables;
+  setParameter(std::string("TimeVariables"), timeVariables);
+}
+
+std::string CreateTaskRequest::getNodeName() const {
+  return nodeName_;
+}
+
+void CreateTaskRequest::setNodeName(const std::string &nodeName) {
+  nodeName_ = nodeName;
+  setParameter(std::string("NodeName"), nodeName);
 }
 

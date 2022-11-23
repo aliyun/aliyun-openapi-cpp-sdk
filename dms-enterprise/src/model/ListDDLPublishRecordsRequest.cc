@@ -25,15 +25,6 @@ ListDDLPublishRecordsRequest::ListDDLPublishRecordsRequest()
 
 ListDDLPublishRecordsRequest::~ListDDLPublishRecordsRequest() {}
 
-long ListDDLPublishRecordsRequest::getOrderId() const {
-  return orderId_;
-}
-
-void ListDDLPublishRecordsRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long ListDDLPublishRecordsRequest::getTid() const {
   return tid_;
 }
@@ -41,5 +32,14 @@ long ListDDLPublishRecordsRequest::getTid() const {
 void ListDDLPublishRecordsRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long ListDDLPublishRecordsRequest::getOrderId() const {
+  return orderId_;
+}
+
+void ListDDLPublishRecordsRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

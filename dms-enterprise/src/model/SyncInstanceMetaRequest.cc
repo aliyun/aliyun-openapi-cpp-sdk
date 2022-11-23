@@ -25,15 +25,6 @@ SyncInstanceMetaRequest::SyncInstanceMetaRequest()
 
 SyncInstanceMetaRequest::~SyncInstanceMetaRequest() {}
 
-bool SyncInstanceMetaRequest::getIgnoreTable() const {
-  return ignoreTable_;
-}
-
-void SyncInstanceMetaRequest::setIgnoreTable(bool ignoreTable) {
-  ignoreTable_ = ignoreTable;
-  setParameter(std::string("IgnoreTable"), ignoreTable ? "true" : "false");
-}
-
 long SyncInstanceMetaRequest::getTid() const {
   return tid_;
 }
@@ -41,6 +32,15 @@ long SyncInstanceMetaRequest::getTid() const {
 void SyncInstanceMetaRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+bool SyncInstanceMetaRequest::getIgnoreTable() const {
+  return ignoreTable_;
+}
+
+void SyncInstanceMetaRequest::setIgnoreTable(bool ignoreTable) {
+  ignoreTable_ = ignoreTable;
+  setParameter(std::string("IgnoreTable"), ignoreTable ? "true" : "false");
 }
 
 std::string SyncInstanceMetaRequest::getInstanceId() const {

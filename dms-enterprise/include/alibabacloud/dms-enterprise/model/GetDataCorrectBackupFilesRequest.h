@@ -30,20 +30,20 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetDataCorrectBackupFilesRequest : publ
 public:
 	GetDataCorrectBackupFilesRequest();
 	~GetDataCorrectBackupFilesRequest();
-	long getOrderId() const;
-	void setOrderId(long orderId);
-	std::string getActionName() const;
-	void setActionName(const std::string &actionName);
 	long getTid() const;
 	void setTid(long tid);
 	std::map<std::string, std::string> getActionDetail() const;
 	void setActionDetail(std::map<std::string, std::string> actionDetail);
+	long getOrderId() const;
+	void setOrderId(long orderId);
+	std::string getActionName() const;
+	void setActionName(const std::string &actionName);
 
 private:
-	long orderId_;
-	std::string actionName_;
 	long tid_;
 	std::map<std::string, std::string> actionDetail_;
+	long orderId_;
+	std::string actionName_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

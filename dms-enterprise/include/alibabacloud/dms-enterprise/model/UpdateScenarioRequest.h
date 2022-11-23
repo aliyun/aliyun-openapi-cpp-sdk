@@ -34,16 +34,16 @@ public:
 	void setDescription(const std::string &description);
 	long getTid() const;
 	void setTid(long tid);
-	std::string getScenarioName() const;
-	void setScenarioName(const std::string &scenarioName);
 	std::string getScenarioId() const;
 	void setScenarioId(const std::string &scenarioId);
+	std::string getScenarioName() const;
+	void setScenarioName(const std::string &scenarioName);
 
 private:
 	std::string description_;
 	long tid_;
-	std::string scenarioName_;
 	std::string scenarioId_;
+	std::string scenarioName_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

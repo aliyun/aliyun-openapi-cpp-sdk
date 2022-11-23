@@ -25,15 +25,6 @@ GetDataCorrectSQLFileRequest::GetDataCorrectSQLFileRequest()
 
 GetDataCorrectSQLFileRequest::~GetDataCorrectSQLFileRequest() {}
 
-long GetDataCorrectSQLFileRequest::getOrderId() const {
-  return orderId_;
-}
-
-void GetDataCorrectSQLFileRequest::setOrderId(long orderId) {
-  orderId_ = orderId;
-  setParameter(std::string("OrderId"), std::to_string(orderId));
-}
-
 long GetDataCorrectSQLFileRequest::getTid() const {
   return tid_;
 }
@@ -41,6 +32,15 @@ long GetDataCorrectSQLFileRequest::getTid() const {
 void GetDataCorrectSQLFileRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+long GetDataCorrectSQLFileRequest::getOrderId() const {
+  return orderId_;
+}
+
+void GetDataCorrectSQLFileRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 
 std::string GetDataCorrectSQLFileRequest::getOrderActionName() const {

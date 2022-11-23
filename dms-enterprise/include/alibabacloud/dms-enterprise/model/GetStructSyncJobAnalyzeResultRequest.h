@@ -30,23 +30,23 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetStructSyncJobAnalyzeResultRequest : 
 public:
 	GetStructSyncJobAnalyzeResultRequest();
 	~GetStructSyncJobAnalyzeResultRequest();
-	long getOrderId() const;
-	void setOrderId(long orderId);
-	std::string getCompareType() const;
-	void setCompareType(const std::string &compareType);
 	long getPageNumber() const;
 	void setPageNumber(long pageNumber);
 	long getTid() const;
 	void setTid(long tid);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
+	long getOrderId() const;
+	void setOrderId(long orderId);
+	std::string getCompareType() const;
+	void setCompareType(const std::string &compareType);
 
 private:
-	long orderId_;
-	std::string compareType_;
 	long pageNumber_;
 	long tid_;
 	long pageSize_;
+	long orderId_;
+	std::string compareType_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

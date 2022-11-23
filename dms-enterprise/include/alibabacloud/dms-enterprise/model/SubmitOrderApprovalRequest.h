@@ -30,14 +30,14 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT SubmitOrderApprovalRequest : public Rpc
 public:
 	SubmitOrderApprovalRequest();
 	~SubmitOrderApprovalRequest();
-	long getOrderId() const;
-	void setOrderId(long orderId);
 	long getTid() const;
 	void setTid(long tid);
+	long getOrderId() const;
+	void setOrderId(long orderId);
 
 private:
-	long orderId_;
 	long tid_;
+	long orderId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

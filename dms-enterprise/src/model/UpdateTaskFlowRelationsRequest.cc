@@ -25,20 +25,6 @@ UpdateTaskFlowRelationsRequest::UpdateTaskFlowRelationsRequest()
 
 UpdateTaskFlowRelationsRequest::~UpdateTaskFlowRelationsRequest() {}
 
-std::vector<UpdateTaskFlowRelationsRequest::Edges> UpdateTaskFlowRelationsRequest::getEdges() const {
-  return edges_;
-}
-
-void UpdateTaskFlowRelationsRequest::setEdges(const std::vector<UpdateTaskFlowRelationsRequest::Edges> &edges) {
-  edges_ = edges;
-  for(int dep1 = 0; dep1 != edges.size(); dep1++) {
-    setParameter(std::string("Edges") + "." + std::to_string(dep1 + 1) + ".NodeEnd", std::to_string(edges[dep1].nodeEnd));
-    setParameter(std::string("Edges") + "." + std::to_string(dep1 + 1) + ".NodeFrom", std::to_string(edges[dep1].nodeFrom));
-    setParameter(std::string("Edges") + "." + std::to_string(dep1 + 1) + ".EdgeType", std::to_string(edges[dep1].edgeType));
-    setParameter(std::string("Edges") + "." + std::to_string(dep1 + 1) + ".Id", std::to_string(edges[dep1].id));
-  }
-}
-
 long UpdateTaskFlowRelationsRequest::getDagId() const {
   return dagId_;
 }
@@ -55,5 +41,19 @@ long UpdateTaskFlowRelationsRequest::getTid() const {
 void UpdateTaskFlowRelationsRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::vector<UpdateTaskFlowRelationsRequest::Edges> UpdateTaskFlowRelationsRequest::getEdges() const {
+  return edges_;
+}
+
+void UpdateTaskFlowRelationsRequest::setEdges(const std::vector<UpdateTaskFlowRelationsRequest::Edges> &edges) {
+  edges_ = edges;
+  for(int dep1 = 0; dep1 != edges.size(); dep1++) {
+    setParameter(std::string("Edges") + "." + std::to_string(dep1 + 1) + ".NodeEnd", std::to_string(edges[dep1].nodeEnd));
+    setParameter(std::string("Edges") + "." + std::to_string(dep1 + 1) + ".NodeFrom", std::to_string(edges[dep1].nodeFrom));
+    setParameter(std::string("Edges") + "." + std::to_string(dep1 + 1) + ".EdgeType", std::to_string(edges[dep1].edgeType));
+    setParameter(std::string("Edges") + "." + std::to_string(dep1 + 1) + ".Id", std::to_string(edges[dep1].id));
+  }
 }
 

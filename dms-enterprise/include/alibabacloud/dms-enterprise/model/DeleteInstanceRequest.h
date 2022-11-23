@@ -34,16 +34,16 @@ public:
 	void setTid(long tid);
 	std::string getSid() const;
 	void setSid(const std::string &sid);
-	int getPort() const;
-	void setPort(int port);
 	std::string getHost() const;
 	void setHost(const std::string &host);
+	int getPort() const;
+	void setPort(int port);
 
 private:
 	long tid_;
 	std::string sid_;
-	int port_;
 	std::string host_;
+	int port_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

@@ -25,15 +25,6 @@ SetOwnersRequest::SetOwnersRequest()
 
 SetOwnersRequest::~SetOwnersRequest() {}
 
-std::string SetOwnersRequest::getResourceId() const {
-  return resourceId_;
-}
-
-void SetOwnersRequest::setResourceId(const std::string &resourceId) {
-  resourceId_ = resourceId;
-  setParameter(std::string("ResourceId"), resourceId);
-}
-
 std::string SetOwnersRequest::getOwnerIds() const {
   return ownerIds_;
 }
@@ -50,6 +41,15 @@ long SetOwnersRequest::getTid() const {
 void SetOwnersRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string SetOwnersRequest::getResourceId() const {
+  return resourceId_;
+}
+
+void SetOwnersRequest::setResourceId(const std::string &resourceId) {
+  resourceId_ = resourceId;
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
 std::string SetOwnersRequest::getOwnerType() const {

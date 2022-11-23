@@ -25,15 +25,6 @@ ExecuteScriptRequest::ExecuteScriptRequest()
 
 ExecuteScriptRequest::~ExecuteScriptRequest() {}
 
-std::string ExecuteScriptRequest::getScript() const {
-  return script_;
-}
-
-void ExecuteScriptRequest::setScript(const std::string &script) {
-  script_ = script;
-  setParameter(std::string("Script"), script);
-}
-
 long ExecuteScriptRequest::getTid() const {
   return tid_;
 }
@@ -41,6 +32,15 @@ long ExecuteScriptRequest::getTid() const {
 void ExecuteScriptRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
+}
+
+std::string ExecuteScriptRequest::getScript() const {
+  return script_;
+}
+
+void ExecuteScriptRequest::setScript(const std::string &script) {
+  script_ = script;
+  setParameter(std::string("Script"), script);
 }
 
 int ExecuteScriptRequest::getDbId() const {

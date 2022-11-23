@@ -25,24 +25,6 @@ BackFillRequest::BackFillRequest()
 
 BackFillRequest::~BackFillRequest() {}
 
-std::string BackFillRequest::getBackFillDateBegin() const {
-  return backFillDateBegin_;
-}
-
-void BackFillRequest::setBackFillDateBegin(const std::string &backFillDateBegin) {
-  backFillDateBegin_ = backFillDateBegin;
-  setParameter(std::string("BackFillDateBegin"), backFillDateBegin);
-}
-
-std::string BackFillRequest::getBackFillDate() const {
-  return backFillDate_;
-}
-
-void BackFillRequest::setBackFillDate(const std::string &backFillDate) {
-  backFillDate_ = backFillDate;
-  setParameter(std::string("BackFillDate"), backFillDate);
-}
-
 long BackFillRequest::getDagId() const {
   return dagId_;
 }
@@ -70,15 +52,6 @@ void BackFillRequest::setIsTriggerSubTree(bool isTriggerSubTree) {
   setParameter(std::string("IsTriggerSubTree"), isTriggerSubTree ? "true" : "false");
 }
 
-bool BackFillRequest::getAsc() const {
-  return asc_;
-}
-
-void BackFillRequest::setAsc(bool asc) {
-  asc_ = asc;
-  setParameter(std::string("Asc"), asc ? "true" : "false");
-}
-
 std::string BackFillRequest::getBackFillDateEnd() const {
   return backFillDateEnd_;
 }
@@ -86,15 +59,6 @@ std::string BackFillRequest::getBackFillDateEnd() const {
 void BackFillRequest::setBackFillDateEnd(const std::string &backFillDateEnd) {
   backFillDateEnd_ = backFillDateEnd;
   setParameter(std::string("BackFillDateEnd"), backFillDateEnd);
-}
-
-int BackFillRequest::getInterval() const {
-  return interval_;
-}
-
-void BackFillRequest::setInterval(int interval) {
-  interval_ = interval;
-  setParameter(std::string("Interval"), std::to_string(interval));
 }
 
 long BackFillRequest::getHistoryDagId() const {
@@ -115,5 +79,41 @@ void BackFillRequest::setStartNodeIds(const std::vector<BackFillRequest::long> &
   for(int dep1 = 0; dep1 != startNodeIds.size(); dep1++) {
     setParameter(std::string("StartNodeIds") + "." + std::to_string(dep1 + 1), std::to_string(startNodeIds[dep1]));
   }
+}
+
+std::string BackFillRequest::getBackFillDateBegin() const {
+  return backFillDateBegin_;
+}
+
+void BackFillRequest::setBackFillDateBegin(const std::string &backFillDateBegin) {
+  backFillDateBegin_ = backFillDateBegin;
+  setParameter(std::string("BackFillDateBegin"), backFillDateBegin);
+}
+
+std::string BackFillRequest::getBackFillDate() const {
+  return backFillDate_;
+}
+
+void BackFillRequest::setBackFillDate(const std::string &backFillDate) {
+  backFillDate_ = backFillDate;
+  setParameter(std::string("BackFillDate"), backFillDate);
+}
+
+bool BackFillRequest::getAsc() const {
+  return asc_;
+}
+
+void BackFillRequest::setAsc(bool asc) {
+  asc_ = asc;
+  setParameter(std::string("Asc"), asc ? "true" : "false");
+}
+
+int BackFillRequest::getInterval() const {
+  return interval_;
+}
+
+void BackFillRequest::setInterval(int interval) {
+  interval_ = interval;
+  setParameter(std::string("Interval"), std::to_string(interval));
 }
 
