@@ -39,6 +39,8 @@ set(cas_public_header_model
 	include/alibabacloud/cas/model/DeleteCertificateRequestResult.h
 	include/alibabacloud/cas/model/DeletePCACertRequest.h
 	include/alibabacloud/cas/model/DeletePCACertResult.h
+	include/alibabacloud/cas/model/DeleteUserCertificateRequest.h
+	include/alibabacloud/cas/model/DeleteUserCertificateResult.h
 	include/alibabacloud/cas/model/DescribeCertificateStateRequest.h
 	include/alibabacloud/cas/model/DescribeCertificateStateResult.h
 	include/alibabacloud/cas/model/DescribePackageStateRequest.h
@@ -47,6 +49,8 @@ set(cas_public_header_model
 	include/alibabacloud/cas/model/EncryptResult.h
 	include/alibabacloud/cas/model/GetCertWarehouseQuotaRequest.h
 	include/alibabacloud/cas/model/GetCertWarehouseQuotaResult.h
+	include/alibabacloud/cas/model/GetUserCertificateDetailRequest.h
+	include/alibabacloud/cas/model/GetUserCertificateDetailResult.h
 	include/alibabacloud/cas/model/ListCertRequest.h
 	include/alibabacloud/cas/model/ListCertResult.h
 	include/alibabacloud/cas/model/ListCertWarehouseRequest.h
@@ -61,6 +65,8 @@ set(cas_public_header_model
 	include/alibabacloud/cas/model/SignResult.h
 	include/alibabacloud/cas/model/UploadPCACertRequest.h
 	include/alibabacloud/cas/model/UploadPCACertResult.h
+	include/alibabacloud/cas/model/UploadUserCertificateRequest.h
+	include/alibabacloud/cas/model/UploadUserCertificateResult.h
 	include/alibabacloud/cas/model/VerifyRequest.h
 	include/alibabacloud/cas/model/VerifyResult.h )
 
@@ -84,6 +90,8 @@ set(cas_src
 	src/model/DeleteCertificateRequestResult.cc
 	src/model/DeletePCACertRequest.cc
 	src/model/DeletePCACertResult.cc
+	src/model/DeleteUserCertificateRequest.cc
+	src/model/DeleteUserCertificateResult.cc
 	src/model/DescribeCertificateStateRequest.cc
 	src/model/DescribeCertificateStateResult.cc
 	src/model/DescribePackageStateRequest.cc
@@ -92,6 +100,8 @@ set(cas_src
 	src/model/EncryptResult.cc
 	src/model/GetCertWarehouseQuotaRequest.cc
 	src/model/GetCertWarehouseQuotaResult.cc
+	src/model/GetUserCertificateDetailRequest.cc
+	src/model/GetUserCertificateDetailResult.cc
 	src/model/ListCertRequest.cc
 	src/model/ListCertResult.cc
 	src/model/ListCertWarehouseRequest.cc
@@ -106,6 +116,8 @@ set(cas_src
 	src/model/SignResult.cc
 	src/model/UploadPCACertRequest.cc
 	src/model/UploadPCACertResult.cc
+	src/model/UploadUserCertificateRequest.cc
+	src/model/UploadUserCertificateResult.cc
 	src/model/VerifyRequest.cc
 	src/model/VerifyResult.cc )
 

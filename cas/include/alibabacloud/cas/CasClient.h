@@ -40,6 +40,8 @@
 #include "model/DeleteCertificateRequestResult.h"
 #include "model/DeletePCACertRequest.h"
 #include "model/DeletePCACertResult.h"
+#include "model/DeleteUserCertificateRequest.h"
+#include "model/DeleteUserCertificateResult.h"
 #include "model/DescribeCertificateStateRequest.h"
 #include "model/DescribeCertificateStateResult.h"
 #include "model/DescribePackageStateRequest.h"
@@ -48,6 +50,8 @@
 #include "model/EncryptResult.h"
 #include "model/GetCertWarehouseQuotaRequest.h"
 #include "model/GetCertWarehouseQuotaResult.h"
+#include "model/GetUserCertificateDetailRequest.h"
+#include "model/GetUserCertificateDetailResult.h"
 #include "model/ListCertRequest.h"
 #include "model/ListCertResult.h"
 #include "model/ListCertWarehouseRequest.h"
@@ -62,6 +66,8 @@
 #include "model/SignResult.h"
 #include "model/UploadPCACertRequest.h"
 #include "model/UploadPCACertResult.h"
+#include "model/UploadUserCertificateRequest.h"
+#include "model/UploadUserCertificateResult.h"
 #include "model/VerifyRequest.h"
 #include "model/VerifyResult.h"
 
@@ -100,6 +106,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeletePCACertResult> DeletePCACertOutcome;
 			typedef std::future<DeletePCACertOutcome> DeletePCACertOutcomeCallable;
 			typedef std::function<void(const CasClient*, const Model::DeletePCACertRequest&, const DeletePCACertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeletePCACertAsyncHandler;
+			typedef Outcome<Error, Model::DeleteUserCertificateResult> DeleteUserCertificateOutcome;
+			typedef std::future<DeleteUserCertificateOutcome> DeleteUserCertificateOutcomeCallable;
+			typedef std::function<void(const CasClient*, const Model::DeleteUserCertificateRequest&, const DeleteUserCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserCertificateAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCertificateStateResult> DescribeCertificateStateOutcome;
 			typedef std::future<DescribeCertificateStateOutcome> DescribeCertificateStateOutcomeCallable;
 			typedef std::function<void(const CasClient*, const Model::DescribeCertificateStateRequest&, const DescribeCertificateStateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCertificateStateAsyncHandler;
@@ -112,6 +121,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCertWarehouseQuotaResult> GetCertWarehouseQuotaOutcome;
 			typedef std::future<GetCertWarehouseQuotaOutcome> GetCertWarehouseQuotaOutcomeCallable;
 			typedef std::function<void(const CasClient*, const Model::GetCertWarehouseQuotaRequest&, const GetCertWarehouseQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCertWarehouseQuotaAsyncHandler;
+			typedef Outcome<Error, Model::GetUserCertificateDetailResult> GetUserCertificateDetailOutcome;
+			typedef std::future<GetUserCertificateDetailOutcome> GetUserCertificateDetailOutcomeCallable;
+			typedef std::function<void(const CasClient*, const Model::GetUserCertificateDetailRequest&, const GetUserCertificateDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserCertificateDetailAsyncHandler;
 			typedef Outcome<Error, Model::ListCertResult> ListCertOutcome;
 			typedef std::future<ListCertOutcome> ListCertOutcomeCallable;
 			typedef std::function<void(const CasClient*, const Model::ListCertRequest&, const ListCertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCertAsyncHandler;
@@ -133,6 +145,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UploadPCACertResult> UploadPCACertOutcome;
 			typedef std::future<UploadPCACertOutcome> UploadPCACertOutcomeCallable;
 			typedef std::function<void(const CasClient*, const Model::UploadPCACertRequest&, const UploadPCACertOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadPCACertAsyncHandler;
+			typedef Outcome<Error, Model::UploadUserCertificateResult> UploadUserCertificateOutcome;
+			typedef std::future<UploadUserCertificateOutcome> UploadUserCertificateOutcomeCallable;
+			typedef std::function<void(const CasClient*, const Model::UploadUserCertificateRequest&, const UploadUserCertificateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadUserCertificateAsyncHandler;
 			typedef Outcome<Error, Model::VerifyResult> VerifyOutcome;
 			typedef std::future<VerifyOutcome> VerifyOutcomeCallable;
 			typedef std::function<void(const CasClient*, const Model::VerifyRequest&, const VerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyAsyncHandler;
@@ -168,6 +183,9 @@ namespace AlibabaCloud
 			DeletePCACertOutcome deletePCACert(const Model::DeletePCACertRequest &request)const;
 			void deletePCACertAsync(const Model::DeletePCACertRequest& request, const DeletePCACertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeletePCACertOutcomeCallable deletePCACertCallable(const Model::DeletePCACertRequest& request) const;
+			DeleteUserCertificateOutcome deleteUserCertificate(const Model::DeleteUserCertificateRequest &request)const;
+			void deleteUserCertificateAsync(const Model::DeleteUserCertificateRequest& request, const DeleteUserCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteUserCertificateOutcomeCallable deleteUserCertificateCallable(const Model::DeleteUserCertificateRequest& request) const;
 			DescribeCertificateStateOutcome describeCertificateState(const Model::DescribeCertificateStateRequest &request)const;
 			void describeCertificateStateAsync(const Model::DescribeCertificateStateRequest& request, const DescribeCertificateStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCertificateStateOutcomeCallable describeCertificateStateCallable(const Model::DescribeCertificateStateRequest& request) const;
@@ -180,6 +198,9 @@ namespace AlibabaCloud
 			GetCertWarehouseQuotaOutcome getCertWarehouseQuota(const Model::GetCertWarehouseQuotaRequest &request)const;
 			void getCertWarehouseQuotaAsync(const Model::GetCertWarehouseQuotaRequest& request, const GetCertWarehouseQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCertWarehouseQuotaOutcomeCallable getCertWarehouseQuotaCallable(const Model::GetCertWarehouseQuotaRequest& request) const;
+			GetUserCertificateDetailOutcome getUserCertificateDetail(const Model::GetUserCertificateDetailRequest &request)const;
+			void getUserCertificateDetailAsync(const Model::GetUserCertificateDetailRequest& request, const GetUserCertificateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetUserCertificateDetailOutcomeCallable getUserCertificateDetailCallable(const Model::GetUserCertificateDetailRequest& request) const;
 			ListCertOutcome listCert(const Model::ListCertRequest &request)const;
 			void listCertAsync(const Model::ListCertRequest& request, const ListCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCertOutcomeCallable listCertCallable(const Model::ListCertRequest& request) const;
@@ -201,6 +222,9 @@ namespace AlibabaCloud
 			UploadPCACertOutcome uploadPCACert(const Model::UploadPCACertRequest &request)const;
 			void uploadPCACertAsync(const Model::UploadPCACertRequest& request, const UploadPCACertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UploadPCACertOutcomeCallable uploadPCACertCallable(const Model::UploadPCACertRequest& request) const;
+			UploadUserCertificateOutcome uploadUserCertificate(const Model::UploadUserCertificateRequest &request)const;
+			void uploadUserCertificateAsync(const Model::UploadUserCertificateRequest& request, const UploadUserCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UploadUserCertificateOutcomeCallable uploadUserCertificateCallable(const Model::UploadUserCertificateRequest& request) const;
 			VerifyOutcome verify(const Model::VerifyRequest &request)const;
 			void verifyAsync(const Model::VerifyRequest& request, const VerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyOutcomeCallable verifyCallable(const Model::VerifyRequest& request) const;

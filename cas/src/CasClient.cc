@@ -375,6 +375,42 @@ CasClient::DeletePCACertOutcomeCallable CasClient::deletePCACertCallable(const D
 	return task->get_future();
 }
 
+CasClient::DeleteUserCertificateOutcome CasClient::deleteUserCertificate(const DeleteUserCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteUserCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteUserCertificateOutcome(DeleteUserCertificateResult(outcome.result()));
+	else
+		return DeleteUserCertificateOutcome(outcome.error());
+}
+
+void CasClient::deleteUserCertificateAsync(const DeleteUserCertificateRequest& request, const DeleteUserCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteUserCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CasClient::DeleteUserCertificateOutcomeCallable CasClient::deleteUserCertificateCallable(const DeleteUserCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteUserCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteUserCertificate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CasClient::DescribeCertificateStateOutcome CasClient::describeCertificateState(const DescribeCertificateStateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,6 +549,42 @@ CasClient::GetCertWarehouseQuotaOutcomeCallable CasClient::getCertWarehouseQuota
 			[this, request]()
 			{
 			return this->getCertWarehouseQuota(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CasClient::GetUserCertificateDetailOutcome CasClient::getUserCertificateDetail(const GetUserCertificateDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUserCertificateDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUserCertificateDetailOutcome(GetUserCertificateDetailResult(outcome.result()));
+	else
+		return GetUserCertificateDetailOutcome(outcome.error());
+}
+
+void CasClient::getUserCertificateDetailAsync(const GetUserCertificateDetailRequest& request, const GetUserCertificateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUserCertificateDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CasClient::GetUserCertificateDetailOutcomeCallable CasClient::getUserCertificateDetailCallable(const GetUserCertificateDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUserCertificateDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getUserCertificateDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -765,6 +837,42 @@ CasClient::UploadPCACertOutcomeCallable CasClient::uploadPCACertCallable(const U
 			[this, request]()
 			{
 			return this->uploadPCACert(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CasClient::UploadUserCertificateOutcome CasClient::uploadUserCertificate(const UploadUserCertificateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadUserCertificateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadUserCertificateOutcome(UploadUserCertificateResult(outcome.result()));
+	else
+		return UploadUserCertificateOutcome(outcome.error());
+}
+
+void CasClient::uploadUserCertificateAsync(const UploadUserCertificateRequest& request, const UploadUserCertificateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadUserCertificate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CasClient::UploadUserCertificateOutcomeCallable CasClient::uploadUserCertificateCallable(const UploadUserCertificateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadUserCertificateOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadUserCertificate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
