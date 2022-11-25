@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "Viapi_regenExport.h"
+#include "model/CheckDatasetOssBucketCORSRequest.h"
+#include "model/CheckDatasetOssBucketCORSResult.h"
 #include "model/CreateDatasetRequest.h"
 #include "model/CreateDatasetResult.h"
 #include "model/CreateLabelsetRequest.h"
@@ -90,6 +92,8 @@
 #include "model/GetTrainTaskEstimatedTimeResult.h"
 #include "model/GetUploadPolicyRequest.h"
 #include "model/GetUploadPolicyResult.h"
+#include "model/GetUserInfoRequest.h"
+#include "model/GetUserInfoResult.h"
 #include "model/GetWorkspaceRequest.h"
 #include "model/GetWorkspaceResult.h"
 #include "model/ListDataReflowDatasRequest.h"
@@ -137,6 +141,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_VIAPI_REGEN_EXPORT Viapi_regenClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::CheckDatasetOssBucketCORSResult> CheckDatasetOssBucketCORSOutcome;
+			typedef std::future<CheckDatasetOssBucketCORSOutcome> CheckDatasetOssBucketCORSOutcomeCallable;
+			typedef std::function<void(const Viapi_regenClient*, const Model::CheckDatasetOssBucketCORSRequest&, const CheckDatasetOssBucketCORSOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDatasetOssBucketCORSAsyncHandler;
 			typedef Outcome<Error, Model::CreateDatasetResult> CreateDatasetOutcome;
 			typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
 			typedef std::function<void(const Viapi_regenClient*, const Model::CreateDatasetRequest&, const CreateDatasetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatasetAsyncHandler;
@@ -239,6 +246,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetUploadPolicyResult> GetUploadPolicyOutcome;
 			typedef std::future<GetUploadPolicyOutcome> GetUploadPolicyOutcomeCallable;
 			typedef std::function<void(const Viapi_regenClient*, const Model::GetUploadPolicyRequest&, const GetUploadPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUploadPolicyAsyncHandler;
+			typedef Outcome<Error, Model::GetUserInfoResult> GetUserInfoOutcome;
+			typedef std::future<GetUserInfoOutcome> GetUserInfoOutcomeCallable;
+			typedef std::function<void(const Viapi_regenClient*, const Model::GetUserInfoRequest&, const GetUserInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserInfoAsyncHandler;
 			typedef Outcome<Error, Model::GetWorkspaceResult> GetWorkspaceOutcome;
 			typedef std::future<GetWorkspaceOutcome> GetWorkspaceOutcomeCallable;
 			typedef std::function<void(const Viapi_regenClient*, const Model::GetWorkspaceRequest&, const GetWorkspaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWorkspaceAsyncHandler;
@@ -301,6 +311,9 @@ namespace AlibabaCloud
 			Viapi_regenClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			Viapi_regenClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~Viapi_regenClient();
+			CheckDatasetOssBucketCORSOutcome checkDatasetOssBucketCORS(const Model::CheckDatasetOssBucketCORSRequest &request)const;
+			void checkDatasetOssBucketCORSAsync(const Model::CheckDatasetOssBucketCORSRequest& request, const CheckDatasetOssBucketCORSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckDatasetOssBucketCORSOutcomeCallable checkDatasetOssBucketCORSCallable(const Model::CheckDatasetOssBucketCORSRequest& request) const;
 			CreateDatasetOutcome createDataset(const Model::CreateDatasetRequest &request)const;
 			void createDatasetAsync(const Model::CreateDatasetRequest& request, const CreateDatasetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDatasetOutcomeCallable createDatasetCallable(const Model::CreateDatasetRequest& request) const;
@@ -403,6 +416,9 @@ namespace AlibabaCloud
 			GetUploadPolicyOutcome getUploadPolicy(const Model::GetUploadPolicyRequest &request)const;
 			void getUploadPolicyAsync(const Model::GetUploadPolicyRequest& request, const GetUploadPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUploadPolicyOutcomeCallable getUploadPolicyCallable(const Model::GetUploadPolicyRequest& request) const;
+			GetUserInfoOutcome getUserInfo(const Model::GetUserInfoRequest &request)const;
+			void getUserInfoAsync(const Model::GetUserInfoRequest& request, const GetUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetUserInfoOutcomeCallable getUserInfoCallable(const Model::GetUserInfoRequest& request) const;
 			GetWorkspaceOutcome getWorkspace(const Model::GetWorkspaceRequest &request)const;
 			void getWorkspaceAsync(const Model::GetWorkspaceRequest& request, const GetWorkspaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetWorkspaceOutcomeCallable getWorkspaceCallable(const Model::GetWorkspaceRequest& request) const;

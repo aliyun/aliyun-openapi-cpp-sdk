@@ -21,6 +21,8 @@ set(viapi-regen_public_header
 	include/alibabacloud/viapi-regen/Viapi_regenExport.h )
 
 set(viapi-regen_public_header_model 
+	include/alibabacloud/viapi-regen/model/CheckDatasetOssBucketCORSRequest.h
+	include/alibabacloud/viapi-regen/model/CheckDatasetOssBucketCORSResult.h
 	include/alibabacloud/viapi-regen/model/CreateDatasetRequest.h
 	include/alibabacloud/viapi-regen/model/CreateDatasetResult.h
 	include/alibabacloud/viapi-regen/model/CreateLabelsetRequest.h
@@ -89,6 +91,8 @@ set(viapi-regen_public_header_model
 	include/alibabacloud/viapi-regen/model/GetTrainTaskEstimatedTimeResult.h
 	include/alibabacloud/viapi-regen/model/GetUploadPolicyRequest.h
 	include/alibabacloud/viapi-regen/model/GetUploadPolicyResult.h
+	include/alibabacloud/viapi-regen/model/GetUserInfoRequest.h
+	include/alibabacloud/viapi-regen/model/GetUserInfoResult.h
 	include/alibabacloud/viapi-regen/model/GetWorkspaceRequest.h
 	include/alibabacloud/viapi-regen/model/GetWorkspaceResult.h
 	include/alibabacloud/viapi-regen/model/ListDataReflowDatasRequest.h
@@ -130,6 +134,8 @@ set(viapi-regen_public_header_model
 
 set(viapi-regen_src 
 	src/Viapi-regenClient.cc
+	src/model/CheckDatasetOssBucketCORSRequest.cc
+	src/model/CheckDatasetOssBucketCORSResult.cc
 	src/model/CreateDatasetRequest.cc
 	src/model/CreateDatasetResult.cc
 	src/model/CreateLabelsetRequest.cc
@@ -198,6 +204,8 @@ set(viapi-regen_src
 	src/model/GetTrainTaskEstimatedTimeResult.cc
 	src/model/GetUploadPolicyRequest.cc
 	src/model/GetUploadPolicyResult.cc
+	src/model/GetUserInfoRequest.cc
+	src/model/GetUserInfoResult.cc
 	src/model/GetWorkspaceRequest.cc
 	src/model/GetWorkspaceResult.cc
 	src/model/ListDataReflowDatasRequest.cc

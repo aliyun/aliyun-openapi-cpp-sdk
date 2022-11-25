@@ -51,6 +51,42 @@ Viapi_regenClient::Viapi_regenClient(const std::string & accessKeyId, const std:
 Viapi_regenClient::~Viapi_regenClient()
 {}
 
+Viapi_regenClient::CheckDatasetOssBucketCORSOutcome Viapi_regenClient::checkDatasetOssBucketCORS(const CheckDatasetOssBucketCORSRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckDatasetOssBucketCORSOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckDatasetOssBucketCORSOutcome(CheckDatasetOssBucketCORSResult(outcome.result()));
+	else
+		return CheckDatasetOssBucketCORSOutcome(outcome.error());
+}
+
+void Viapi_regenClient::checkDatasetOssBucketCORSAsync(const CheckDatasetOssBucketCORSRequest& request, const CheckDatasetOssBucketCORSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkDatasetOssBucketCORS(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Viapi_regenClient::CheckDatasetOssBucketCORSOutcomeCallable Viapi_regenClient::checkDatasetOssBucketCORSCallable(const CheckDatasetOssBucketCORSRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckDatasetOssBucketCORSOutcome()>>(
+			[this, request]()
+			{
+			return this->checkDatasetOssBucketCORS(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Viapi_regenClient::CreateDatasetOutcome Viapi_regenClient::createDataset(const CreateDatasetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1269,6 +1305,42 @@ Viapi_regenClient::GetUploadPolicyOutcomeCallable Viapi_regenClient::getUploadPo
 			[this, request]()
 			{
 			return this->getUploadPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Viapi_regenClient::GetUserInfoOutcome Viapi_regenClient::getUserInfo(const GetUserInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUserInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUserInfoOutcome(GetUserInfoResult(outcome.result()));
+	else
+		return GetUserInfoOutcome(outcome.error());
+}
+
+void Viapi_regenClient::getUserInfoAsync(const GetUserInfoRequest& request, const GetUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUserInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Viapi_regenClient::GetUserInfoOutcomeCallable Viapi_regenClient::getUserInfoCallable(const GetUserInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUserInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getUserInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
