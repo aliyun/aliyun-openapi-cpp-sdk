@@ -699,6 +699,42 @@ CbnClient::CreateTransitRouterOutcomeCallable CbnClient::createTransitRouterCall
 	return task->get_future();
 }
 
+CbnClient::CreateTransitRouterCidrOutcome CbnClient::createTransitRouterCidr(const CreateTransitRouterCidrRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTransitRouterCidrOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTransitRouterCidrOutcome(CreateTransitRouterCidrResult(outcome.result()));
+	else
+		return CreateTransitRouterCidrOutcome(outcome.error());
+}
+
+void CbnClient::createTransitRouterCidrAsync(const CreateTransitRouterCidrRequest& request, const CreateTransitRouterCidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTransitRouterCidr(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateTransitRouterCidrOutcomeCallable CbnClient::createTransitRouterCidrCallable(const CreateTransitRouterCidrRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTransitRouterCidrOutcome()>>(
+			[this, request]()
+			{
+			return this->createTransitRouterCidr(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::CreateTransitRouterMulticastDomainOutcome CbnClient::createTransitRouterMulticastDomain(const CreateTransitRouterMulticastDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1413,6 +1449,42 @@ CbnClient::DeleteTransitRouterOutcomeCallable CbnClient::deleteTransitRouterCall
 			[this, request]()
 			{
 			return this->deleteTransitRouter(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DeleteTransitRouterCidrOutcome CbnClient::deleteTransitRouterCidr(const DeleteTransitRouterCidrRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTransitRouterCidrOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTransitRouterCidrOutcome(DeleteTransitRouterCidrResult(outcome.result()));
+	else
+		return DeleteTransitRouterCidrOutcome(outcome.error());
+}
+
+void CbnClient::deleteTransitRouterCidrAsync(const DeleteTransitRouterCidrRequest& request, const DeleteTransitRouterCidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTransitRouterCidr(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeleteTransitRouterCidrOutcomeCallable CbnClient::deleteTransitRouterCidrCallable(const DeleteTransitRouterCidrRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTransitRouterCidrOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTransitRouterCidr(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3003,6 +3075,78 @@ CbnClient::ListTransitRouterAvailableResourceOutcomeCallable CbnClient::listTran
 	return task->get_future();
 }
 
+CbnClient::ListTransitRouterCidrOutcome CbnClient::listTransitRouterCidr(const ListTransitRouterCidrRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterCidrOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterCidrOutcome(ListTransitRouterCidrResult(outcome.result()));
+	else
+		return ListTransitRouterCidrOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterCidrAsync(const ListTransitRouterCidrRequest& request, const ListTransitRouterCidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterCidr(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterCidrOutcomeCallable CbnClient::listTransitRouterCidrCallable(const ListTransitRouterCidrRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterCidrOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterCidr(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListTransitRouterCidrAllocationOutcome CbnClient::listTransitRouterCidrAllocation(const ListTransitRouterCidrAllocationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTransitRouterCidrAllocationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTransitRouterCidrAllocationOutcome(ListTransitRouterCidrAllocationResult(outcome.result()));
+	else
+		return ListTransitRouterCidrAllocationOutcome(outcome.error());
+}
+
+void CbnClient::listTransitRouterCidrAllocationAsync(const ListTransitRouterCidrAllocationRequest& request, const ListTransitRouterCidrAllocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTransitRouterCidrAllocation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListTransitRouterCidrAllocationOutcomeCallable CbnClient::listTransitRouterCidrAllocationCallable(const ListTransitRouterCidrAllocationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTransitRouterCidrAllocationOutcome()>>(
+			[this, request]()
+			{
+			return this->listTransitRouterCidrAllocation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::ListTransitRouterMulticastDomainAssociationsOutcome CbnClient::listTransitRouterMulticastDomainAssociations(const ListTransitRouterMulticastDomainAssociationsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3681,6 +3825,42 @@ CbnClient::ModifyFlowLogAttributeOutcomeCallable CbnClient::modifyFlowLogAttribu
 			[this, request]()
 			{
 			return this->modifyFlowLogAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ModifyTransitRouterCidrOutcome CbnClient::modifyTransitRouterCidr(const ModifyTransitRouterCidrRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyTransitRouterCidrOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyTransitRouterCidrOutcome(ModifyTransitRouterCidrResult(outcome.result()));
+	else
+		return ModifyTransitRouterCidrOutcome(outcome.error());
+}
+
+void CbnClient::modifyTransitRouterCidrAsync(const ModifyTransitRouterCidrRequest& request, const ModifyTransitRouterCidrAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyTransitRouterCidr(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ModifyTransitRouterCidrOutcomeCallable CbnClient::modifyTransitRouterCidrCallable(const ModifyTransitRouterCidrRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyTransitRouterCidrOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyTransitRouterCidr(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

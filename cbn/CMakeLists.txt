@@ -57,6 +57,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/CreateTrafficMarkingPolicyResult.h
 	include/alibabacloud/cbn/model/CreateTransitRouterRequest.h
 	include/alibabacloud/cbn/model/CreateTransitRouterResult.h
+	include/alibabacloud/cbn/model/CreateTransitRouterCidrRequest.h
+	include/alibabacloud/cbn/model/CreateTransitRouterCidrResult.h
 	include/alibabacloud/cbn/model/CreateTransitRouterMulticastDomainRequest.h
 	include/alibabacloud/cbn/model/CreateTransitRouterMulticastDomainResult.h
 	include/alibabacloud/cbn/model/CreateTransitRouterPeerAttachmentRequest.h
@@ -97,6 +99,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/DeleteTrafficMarkingPolicyResult.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterRequest.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterResult.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterCidrRequest.h
+	include/alibabacloud/cbn/model/DeleteTransitRouterCidrResult.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterMulticastDomainRequest.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterMulticastDomainResult.h
 	include/alibabacloud/cbn/model/DeleteTransitRouterPeerAttachmentRequest.h
@@ -185,6 +189,10 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/ListTrafficMarkingPoliciesResult.h
 	include/alibabacloud/cbn/model/ListTransitRouterAvailableResourceRequest.h
 	include/alibabacloud/cbn/model/ListTransitRouterAvailableResourceResult.h
+	include/alibabacloud/cbn/model/ListTransitRouterCidrRequest.h
+	include/alibabacloud/cbn/model/ListTransitRouterCidrResult.h
+	include/alibabacloud/cbn/model/ListTransitRouterCidrAllocationRequest.h
+	include/alibabacloud/cbn/model/ListTransitRouterCidrAllocationResult.h
 	include/alibabacloud/cbn/model/ListTransitRouterMulticastDomainAssociationsRequest.h
 	include/alibabacloud/cbn/model/ListTransitRouterMulticastDomainAssociationsResult.h
 	include/alibabacloud/cbn/model/ListTransitRouterMulticastDomainVSwitchesRequest.h
@@ -223,6 +231,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/ModifyCenRouteMapResult.h
 	include/alibabacloud/cbn/model/ModifyFlowLogAttributeRequest.h
 	include/alibabacloud/cbn/model/ModifyFlowLogAttributeResult.h
+	include/alibabacloud/cbn/model/ModifyTransitRouterCidrRequest.h
+	include/alibabacloud/cbn/model/ModifyTransitRouterCidrResult.h
 	include/alibabacloud/cbn/model/ModifyTransitRouterMulticastDomainRequest.h
 	include/alibabacloud/cbn/model/ModifyTransitRouterMulticastDomainResult.h
 	include/alibabacloud/cbn/model/MoveResourceGroupRequest.h
@@ -322,6 +332,8 @@ set(cbn_src
 	src/model/CreateTrafficMarkingPolicyResult.cc
 	src/model/CreateTransitRouterRequest.cc
 	src/model/CreateTransitRouterResult.cc
+	src/model/CreateTransitRouterCidrRequest.cc
+	src/model/CreateTransitRouterCidrResult.cc
 	src/model/CreateTransitRouterMulticastDomainRequest.cc
 	src/model/CreateTransitRouterMulticastDomainResult.cc
 	src/model/CreateTransitRouterPeerAttachmentRequest.cc
@@ -362,6 +374,8 @@ set(cbn_src
 	src/model/DeleteTrafficMarkingPolicyResult.cc
 	src/model/DeleteTransitRouterRequest.cc
 	src/model/DeleteTransitRouterResult.cc
+	src/model/DeleteTransitRouterCidrRequest.cc
+	src/model/DeleteTransitRouterCidrResult.cc
 	src/model/DeleteTransitRouterMulticastDomainRequest.cc
 	src/model/DeleteTransitRouterMulticastDomainResult.cc
 	src/model/DeleteTransitRouterPeerAttachmentRequest.cc
@@ -450,6 +464,10 @@ set(cbn_src
 	src/model/ListTrafficMarkingPoliciesResult.cc
 	src/model/ListTransitRouterAvailableResourceRequest.cc
 	src/model/ListTransitRouterAvailableResourceResult.cc
+	src/model/ListTransitRouterCidrRequest.cc
+	src/model/ListTransitRouterCidrResult.cc
+	src/model/ListTransitRouterCidrAllocationRequest.cc
+	src/model/ListTransitRouterCidrAllocationResult.cc
 	src/model/ListTransitRouterMulticastDomainAssociationsRequest.cc
 	src/model/ListTransitRouterMulticastDomainAssociationsResult.cc
 	src/model/ListTransitRouterMulticastDomainVSwitchesRequest.cc
@@ -488,6 +506,8 @@ set(cbn_src
 	src/model/ModifyCenRouteMapResult.cc
 	src/model/ModifyFlowLogAttributeRequest.cc
 	src/model/ModifyFlowLogAttributeResult.cc
+	src/model/ModifyTransitRouterCidrRequest.cc
+	src/model/ModifyTransitRouterCidrResult.cc
 	src/model/ModifyTransitRouterMulticastDomainRequest.cc
 	src/model/ModifyTransitRouterMulticastDomainResult.cc
 	src/model/MoveResourceGroupRequest.cc

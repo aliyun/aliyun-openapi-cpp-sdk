@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					std::vector<TransitRouterAttachment::ZoneMapping> zones;
 					bool autoPublishRouteEnabled;
 					std::string vpnRegionId;
+					std::string chargeType;
 					std::string creationTime;
 					std::vector<TransitRouterAttachment::Tag> tags;
 					std::string transitRouterAttachmentDescription;
