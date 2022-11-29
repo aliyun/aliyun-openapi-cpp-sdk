@@ -47,12 +47,14 @@ namespace AlibabaCloud
 					std::string zoneLocalName;
 					std::string instanceChargeType;
 					int instanceRpsLimit;
+					std::string iPV6AclName;
 					bool vpcSlbIntranetEnable;
 					std::string intranetSegments;
 					std::string userVpcId;
 					std::string expiredTime;
 					std::string instanceType;
 					std::string userVswitchId;
+					std::string iPV6AclId;
 					std::string status;
 					std::string vpcEgressAddress;
 					std::string zoneId;
@@ -60,11 +62,13 @@ namespace AlibabaCloud
 					std::string aclId;
 					long vpcOwnerId;
 					std::string aclName;
+					std::string iPV6AclStatus;
 					std::string instanceName;
 					bool egressIpv6Enable;
 					std::string aclStatus;
 					bool vpcIntranetEnable;
 					std::string httpsPolicies;
+					std::string iPV6AclType;
 					bool supportIpv6;
 					std::string aclType;
 					std::string regionId;

@@ -207,6 +207,8 @@ set(cloudapi_public_header_model
 	include/alibabacloud/cloudapi/model/DescribeMarketRemainsQuotaResult.h
 	include/alibabacloud/cloudapi/model/DescribeModelsRequest.h
 	include/alibabacloud/cloudapi/model/DescribeModelsResult.h
+	include/alibabacloud/cloudapi/model/DescribePluginApisRequest.h
+	include/alibabacloud/cloudapi/model/DescribePluginApisResult.h
 	include/alibabacloud/cloudapi/model/DescribePluginSchemasRequest.h
 	include/alibabacloud/cloudapi/model/DescribePluginSchemasResult.h
 	include/alibabacloud/cloudapi/model/DescribePluginTemplatesRequest.h
@@ -542,6 +544,8 @@ set(cloudapi_src
 	src/model/DescribeMarketRemainsQuotaResult.cc
 	src/model/DescribeModelsRequest.cc
 	src/model/DescribeModelsResult.cc
+	src/model/DescribePluginApisRequest.cc
+	src/model/DescribePluginApisResult.cc
 	src/model/DescribePluginSchemasRequest.cc
 	src/model/DescribePluginSchemasResult.cc
 	src/model/DescribePluginTemplatesRequest.cc

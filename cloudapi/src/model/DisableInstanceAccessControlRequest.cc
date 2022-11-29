@@ -34,6 +34,15 @@ void DisableInstanceAccessControlRequest::setAclId(const std::string &aclId) {
   setParameter(std::string("AclId"), aclId);
 }
 
+std::string DisableInstanceAccessControlRequest::getAddressIPVersion() const {
+  return addressIPVersion_;
+}
+
+void DisableInstanceAccessControlRequest::setAddressIPVersion(const std::string &addressIPVersion) {
+  addressIPVersion_ = addressIPVersion;
+  setParameter(std::string("AddressIPVersion"), addressIPVersion);
+}
+
 std::string DisableInstanceAccessControlRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

@@ -34,6 +34,15 @@ void CreateAppRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
+long CreateAppRequest::getAppOwnerUserId() const {
+  return appOwnerUserId_;
+}
+
+void CreateAppRequest::setAppOwnerUserId(long appOwnerUserId) {
+  appOwnerUserId_ = appOwnerUserId;
+  setParameter(std::string("AppOwnerUserId"), std::to_string(appOwnerUserId));
+}
+
 std::string CreateAppRequest::getSource() const {
   return source_;
 }

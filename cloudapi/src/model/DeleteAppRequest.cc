@@ -25,6 +25,15 @@ DeleteAppRequest::DeleteAppRequest()
 
 DeleteAppRequest::~DeleteAppRequest() {}
 
+long DeleteAppRequest::getAppOwnerUserId() const {
+  return appOwnerUserId_;
+}
+
+void DeleteAppRequest::setAppOwnerUserId(long appOwnerUserId) {
+  appOwnerUserId_ = appOwnerUserId;
+  setParameter(std::string("AppOwnerUserId"), std::to_string(appOwnerUserId));
+}
+
 std::string DeleteAppRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

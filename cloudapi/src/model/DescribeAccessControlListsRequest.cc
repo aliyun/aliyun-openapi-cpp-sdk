@@ -34,6 +34,15 @@ void DescribeAccessControlListsRequest::setAclName(const std::string &aclName) {
   setParameter(std::string("AclName"), aclName);
 }
 
+std::string DescribeAccessControlListsRequest::getAddressIPVersion() const {
+  return addressIPVersion_;
+}
+
+void DescribeAccessControlListsRequest::setAddressIPVersion(const std::string &addressIPVersion) {
+  addressIPVersion_ = addressIPVersion;
+  setParameter(std::string("AddressIPVersion"), addressIPVersion);
+}
+
 int DescribeAccessControlListsRequest::getPageNumber() const {
   return pageNumber_;
 }

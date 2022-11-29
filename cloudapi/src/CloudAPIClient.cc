@@ -3399,6 +3399,42 @@ CloudAPIClient::DescribeModelsOutcomeCallable CloudAPIClient::describeModelsCall
 	return task->get_future();
 }
 
+CloudAPIClient::DescribePluginApisOutcome CloudAPIClient::describePluginApis(const DescribePluginApisRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribePluginApisOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribePluginApisOutcome(DescribePluginApisResult(outcome.result()));
+	else
+		return DescribePluginApisOutcome(outcome.error());
+}
+
+void CloudAPIClient::describePluginApisAsync(const DescribePluginApisRequest& request, const DescribePluginApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describePluginApis(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribePluginApisOutcomeCallable CloudAPIClient::describePluginApisCallable(const DescribePluginApisRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribePluginApisOutcome()>>(
+			[this, request]()
+			{
+			return this->describePluginApis(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::DescribePluginSchemasOutcome CloudAPIClient::describePluginSchemas(const DescribePluginSchemasRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

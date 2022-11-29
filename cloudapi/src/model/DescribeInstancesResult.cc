@@ -101,6 +101,14 @@ void DescribeInstancesResult::parse(const std::string &payload)
 			instancesObject.aclId = valueInstancesInstanceAttribute["AclId"].asString();
 		if(!valueInstancesInstanceAttribute["IntranetSegments"].isNull())
 			instancesObject.intranetSegments = valueInstancesInstanceAttribute["IntranetSegments"].asString();
+		if(!valueInstancesInstanceAttribute["IPV6AclName"].isNull())
+			instancesObject.iPV6AclName = valueInstancesInstanceAttribute["IPV6AclName"].asString();
+		if(!valueInstancesInstanceAttribute["IPV6AclId"].isNull())
+			instancesObject.iPV6AclId = valueInstancesInstanceAttribute["IPV6AclId"].asString();
+		if(!valueInstancesInstanceAttribute["IPV6AclType"].isNull())
+			instancesObject.iPV6AclType = valueInstancesInstanceAttribute["IPV6AclType"].asString();
+		if(!valueInstancesInstanceAttribute["IPV6AclStatus"].isNull())
+			instancesObject.iPV6AclStatus = valueInstancesInstanceAttribute["IPV6AclStatus"].asString();
 		auto allInstanceSpecAttributesNode = valueInstancesInstanceAttribute["InstanceSpecAttributes"]["SpecAttribute"];
 		for (auto valueInstancesInstanceAttributeInstanceSpecAttributesSpecAttribute : allInstanceSpecAttributesNode)
 		{

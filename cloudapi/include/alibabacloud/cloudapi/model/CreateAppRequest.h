@@ -36,6 +36,8 @@ public:
 	~CreateAppRequest();
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	long getAppOwnerUserId() const;
+	void setAppOwnerUserId(long appOwnerUserId);
 	std::string getSource() const;
 	void setSource(const std::string &source);
 	std::string getAccessKeyId() const;
@@ -55,6 +57,7 @@ public:
 
 private:
 	std::string description_;
+	long appOwnerUserId_;
 	std::string source_;
 	std::string accessKeyId_;
 	std::string appName_;

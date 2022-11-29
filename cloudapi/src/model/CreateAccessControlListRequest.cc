@@ -34,6 +34,15 @@ void CreateAccessControlListRequest::setAclName(const std::string &aclName) {
   setParameter(std::string("AclName"), aclName);
 }
 
+std::string CreateAccessControlListRequest::getAddressIPVersion() const {
+  return addressIPVersion_;
+}
+
+void CreateAccessControlListRequest::setAddressIPVersion(const std::string &addressIPVersion) {
+  addressIPVersion_ = addressIPVersion;
+  setParameter(std::string("AddressIPVersion"), addressIPVersion);
+}
+
 std::string CreateAccessControlListRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

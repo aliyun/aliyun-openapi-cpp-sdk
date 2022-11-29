@@ -208,6 +208,8 @@
 #include "model/DescribeMarketRemainsQuotaResult.h"
 #include "model/DescribeModelsRequest.h"
 #include "model/DescribeModelsResult.h"
+#include "model/DescribePluginApisRequest.h"
+#include "model/DescribePluginApisResult.h"
 #include "model/DescribePluginSchemasRequest.h"
 #include "model/DescribePluginSchemasResult.h"
 #include "model/DescribePluginTemplatesRequest.h"
@@ -642,6 +644,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeModelsResult> DescribeModelsOutcome;
 			typedef std::future<DescribeModelsOutcome> DescribeModelsOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeModelsRequest&, const DescribeModelsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelsAsyncHandler;
+			typedef Outcome<Error, Model::DescribePluginApisResult> DescribePluginApisOutcome;
+			typedef std::future<DescribePluginApisOutcome> DescribePluginApisOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::DescribePluginApisRequest&, const DescribePluginApisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginApisAsyncHandler;
 			typedef Outcome<Error, Model::DescribePluginSchemasResult> DescribePluginSchemasOutcome;
 			typedef std::future<DescribePluginSchemasOutcome> DescribePluginSchemasOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribePluginSchemasRequest&, const DescribePluginSchemasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginSchemasAsyncHandler;
@@ -1145,6 +1150,9 @@ namespace AlibabaCloud
 			DescribeModelsOutcome describeModels(const Model::DescribeModelsRequest &request)const;
 			void describeModelsAsync(const Model::DescribeModelsRequest& request, const DescribeModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeModelsOutcomeCallable describeModelsCallable(const Model::DescribeModelsRequest& request) const;
+			DescribePluginApisOutcome describePluginApis(const Model::DescribePluginApisRequest &request)const;
+			void describePluginApisAsync(const Model::DescribePluginApisRequest& request, const DescribePluginApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePluginApisOutcomeCallable describePluginApisCallable(const Model::DescribePluginApisRequest& request) const;
 			DescribePluginSchemasOutcome describePluginSchemas(const Model::DescribePluginSchemasRequest &request)const;
 			void describePluginSchemasAsync(const Model::DescribePluginSchemasRequest& request, const DescribePluginSchemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePluginSchemasOutcomeCallable describePluginSchemasCallable(const Model::DescribePluginSchemasRequest& request) const;

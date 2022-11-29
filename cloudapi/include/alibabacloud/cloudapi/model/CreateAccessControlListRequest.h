@@ -32,6 +32,8 @@ public:
 	~CreateAccessControlListRequest();
 	std::string getAclName() const;
 	void setAclName(const std::string &aclName);
+	std::string getAddressIPVersion() const;
+	void setAddressIPVersion(const std::string &addressIPVersion);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string aclName_;
+	std::string addressIPVersion_;
 	std::string accessKeyId_;
 	std::string securityToken_;
 };

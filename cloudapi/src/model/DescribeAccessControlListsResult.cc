@@ -47,6 +47,8 @@ void DescribeAccessControlListsResult::parse(const std::string &payload)
 			aclsObject.aclName = valueAclsAcl["AclName"].asString();
 		if(!valueAclsAcl["AclId"].isNull())
 			aclsObject.aclId = valueAclsAcl["AclId"].asString();
+		if(!valueAclsAcl["AddressIPVersion"].isNull())
+			aclsObject.addressIPVersion = valueAclsAcl["AddressIPVersion"].asString();
 		acls_.push_back(aclsObject);
 	}
 	if(!value["PageNumber"].isNull())

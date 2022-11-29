@@ -32,6 +32,8 @@ public:
 	~DisableInstanceAccessControlRequest();
 	std::string getAclId() const;
 	void setAclId(const std::string &aclId);
+	std::string getAddressIPVersion() const;
+	void setAddressIPVersion(const std::string &addressIPVersion);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getInstanceId() const;
@@ -41,6 +43,7 @@ public:
 
 private:
 	std::string aclId_;
+	std::string addressIPVersion_;
 	std::string accessKeyId_;
 	std::string instanceId_;
 	std::string securityToken_;

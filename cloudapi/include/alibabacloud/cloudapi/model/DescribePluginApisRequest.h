@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEACCESSCONTROLLISTSREQUEST_H_
-#define ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEACCESSCONTROLLISTSREQUEST_H_
+#ifndef ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEPLUGINAPISREQUEST_H_
+#define ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEPLUGINAPISREQUEST_H_
 
 #include <alibabacloud/cloudapi/CloudAPIExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,47 @@
 namespace AlibabaCloud {
 namespace CloudAPI {
 namespace Model {
-class ALIBABACLOUD_CLOUDAPI_EXPORT DescribeAccessControlListsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CLOUDAPI_EXPORT DescribePluginApisRequest : public RpcServiceRequest {
 public:
-	DescribeAccessControlListsRequest();
-	~DescribeAccessControlListsRequest();
-	std::string getAclName() const;
-	void setAclName(const std::string &aclName);
-	std::string getAddressIPVersion() const;
-	void setAddressIPVersion(const std::string &addressIPVersion);
+	DescribePluginApisRequest();
+	~DescribePluginApisRequest();
+	std::string getMethod() const;
+	void setMethod(const std::string &method);
+	std::string getPluginId() const;
+	void setPluginId(const std::string &pluginId);
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getPath() const;
+	void setPath(const std::string &path);
+	std::string getApiName() const;
+	void setApiName(const std::string &apiName);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getApiId() const;
+	void setApiId(const std::string &apiId);
 
 private:
-	std::string aclName_;
-	std::string addressIPVersion_;
+	std::string method_;
+	std::string pluginId_;
+	std::string groupId_;
+	std::string description_;
 	int pageNumber_;
 	std::string accessKeyId_;
+	std::string path_;
+	std::string apiName_;
 	std::string securityToken_;
 	int pageSize_;
+	std::string apiId_;
 };
 } // namespace Model
 } // namespace CloudAPI
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEACCESSCONTROLLISTSREQUEST_H_
+#endif // !ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEPLUGINAPISREQUEST_H_

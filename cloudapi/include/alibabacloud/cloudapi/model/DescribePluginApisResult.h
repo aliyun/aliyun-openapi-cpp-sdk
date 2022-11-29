@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEACCESSCONTROLLISTSRESULT_H_
-#define ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEACCESSCONTROLLISTSRESULT_H_
+#ifndef ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEPLUGINAPISRESULT_H_
+#define ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEPLUGINAPISRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,24 +29,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAPI_EXPORT DescribeAccessControlListsResult : public ServiceResult
+			class ALIBABACLOUD_CLOUDAPI_EXPORT DescribePluginApisResult : public ServiceResult
 			{
 			public:
-				struct Acl
+				struct ApiPluginSummary
 				{
-					std::string aclId;
-					std::string addressIPVersion;
-					std::string aclName;
+					std::string groupName;
+					std::string path;
+					std::string description;
+					std::string stageName;
+					std::string apiName;
+					std::string method;
+					std::string regionId;
+					std::string apiId;
+					std::string groupId;
 				};
 
 
-				DescribeAccessControlListsResult();
-				explicit DescribeAccessControlListsResult(const std::string &payload);
-				~DescribeAccessControlListsResult();
+				DescribePluginApisResult();
+				explicit DescribePluginApisResult(const std::string &payload);
+				~DescribePluginApisResult();
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
-				std::vector<Acl> getAcls()const;
+				std::vector<ApiPluginSummary> getApiSummarys()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -54,10 +60,10 @@ namespace AlibabaCloud
 				int totalCount_;
 				int pageSize_;
 				int pageNumber_;
-				std::vector<Acl> acls_;
+				std::vector<ApiPluginSummary> apiSummarys_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEACCESSCONTROLLISTSRESULT_H_
+#endif // !ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEPLUGINAPISRESULT_H_

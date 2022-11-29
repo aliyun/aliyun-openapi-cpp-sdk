@@ -34,6 +34,8 @@ public:
 	};
 	DeleteAppRequest();
 	~DeleteAppRequest();
+	long getAppOwnerUserId() const;
+	void setAppOwnerUserId(long appOwnerUserId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
@@ -44,6 +46,7 @@ public:
 	void setTag(const std::vector<Tag> &tag);
 
 private:
+	long appOwnerUserId_;
 	std::string accessKeyId_;
 	std::string securityToken_;
 	long appId_;
