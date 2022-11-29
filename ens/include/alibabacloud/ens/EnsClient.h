@@ -66,6 +66,8 @@
 #include "model/CreateImageResult.h"
 #include "model/CreateInstanceRequest.h"
 #include "model/CreateInstanceResult.h"
+#include "model/CreateInstanceActiveOpsTaskRequest.h"
+#include "model/CreateInstanceActiveOpsTaskResult.h"
 #include "model/CreateKeyPairRequest.h"
 #include "model/CreateKeyPairResult.h"
 #include "model/CreateLoadBalancerRequest.h"
@@ -485,6 +487,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateInstanceResult> CreateInstanceOutcome;
 			typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::CreateInstanceRequest&, const CreateInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateInstanceActiveOpsTaskResult> CreateInstanceActiveOpsTaskOutcome;
+			typedef std::future<CreateInstanceActiveOpsTaskOutcome> CreateInstanceActiveOpsTaskOutcomeCallable;
+			typedef std::function<void(const EnsClient*, const Model::CreateInstanceActiveOpsTaskRequest&, const CreateInstanceActiveOpsTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceActiveOpsTaskAsyncHandler;
 			typedef Outcome<Error, Model::CreateKeyPairResult> CreateKeyPairOutcome;
 			typedef std::future<CreateKeyPairOutcome> CreateKeyPairOutcomeCallable;
 			typedef std::function<void(const EnsClient*, const Model::CreateKeyPairRequest&, const CreateKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateKeyPairAsyncHandler;
@@ -1072,6 +1077,9 @@ namespace AlibabaCloud
 			CreateInstanceOutcome createInstance(const Model::CreateInstanceRequest &request)const;
 			void createInstanceAsync(const Model::CreateInstanceRequest& request, const CreateInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstanceOutcomeCallable createInstanceCallable(const Model::CreateInstanceRequest& request) const;
+			CreateInstanceActiveOpsTaskOutcome createInstanceActiveOpsTask(const Model::CreateInstanceActiveOpsTaskRequest &request)const;
+			void createInstanceActiveOpsTaskAsync(const Model::CreateInstanceActiveOpsTaskRequest& request, const CreateInstanceActiveOpsTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateInstanceActiveOpsTaskOutcomeCallable createInstanceActiveOpsTaskCallable(const Model::CreateInstanceActiveOpsTaskRequest& request) const;
 			CreateKeyPairOutcome createKeyPair(const Model::CreateKeyPairRequest &request)const;
 			void createKeyPairAsync(const Model::CreateKeyPairRequest& request, const CreateKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateKeyPairOutcomeCallable createKeyPairCallable(const Model::CreateKeyPairRequest& request) const;

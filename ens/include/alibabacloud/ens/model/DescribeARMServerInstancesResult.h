@@ -65,11 +65,17 @@ namespace AlibabaCloud
 				DescribeARMServerInstancesResult();
 				explicit DescribeARMServerInstancesResult(const std::string &payload);
 				~DescribeARMServerInstancesResult();
+				int getTotalCount()const;
+				int getPageSize()const;
+				int getPageNumber()const;
 				std::vector<ServersItem> getServers()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int totalCount_;
+				int pageSize_;
+				int pageNumber_;
 				std::vector<ServersItem> servers_;
 
 			};

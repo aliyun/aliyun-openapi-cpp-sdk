@@ -65,6 +65,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/CreateImageResult.h
 	include/alibabacloud/ens/model/CreateInstanceRequest.h
 	include/alibabacloud/ens/model/CreateInstanceResult.h
+	include/alibabacloud/ens/model/CreateInstanceActiveOpsTaskRequest.h
+	include/alibabacloud/ens/model/CreateInstanceActiveOpsTaskResult.h
 	include/alibabacloud/ens/model/CreateKeyPairRequest.h
 	include/alibabacloud/ens/model/CreateKeyPairResult.h
 	include/alibabacloud/ens/model/CreateLoadBalancerRequest.h
@@ -456,6 +458,8 @@ set(ens_src
 	src/model/CreateImageResult.cc
 	src/model/CreateInstanceRequest.cc
 	src/model/CreateInstanceResult.cc
+	src/model/CreateInstanceActiveOpsTaskRequest.cc
+	src/model/CreateInstanceActiveOpsTaskResult.cc
 	src/model/CreateKeyPairRequest.cc
 	src/model/CreateKeyPairResult.cc
 	src/model/CreateLoadBalancerRequest.cc

@@ -843,6 +843,42 @@ EnsClient::CreateInstanceOutcomeCallable EnsClient::createInstanceCallable(const
 	return task->get_future();
 }
 
+EnsClient::CreateInstanceActiveOpsTaskOutcome EnsClient::createInstanceActiveOpsTask(const CreateInstanceActiveOpsTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateInstanceActiveOpsTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateInstanceActiveOpsTaskOutcome(CreateInstanceActiveOpsTaskResult(outcome.result()));
+	else
+		return CreateInstanceActiveOpsTaskOutcome(outcome.error());
+}
+
+void EnsClient::createInstanceActiveOpsTaskAsync(const CreateInstanceActiveOpsTaskRequest& request, const CreateInstanceActiveOpsTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createInstanceActiveOpsTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateInstanceActiveOpsTaskOutcomeCallable EnsClient::createInstanceActiveOpsTaskCallable(const CreateInstanceActiveOpsTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateInstanceActiveOpsTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->createInstanceActiveOpsTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::CreateKeyPairOutcome EnsClient::createKeyPair(const CreateKeyPairRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
