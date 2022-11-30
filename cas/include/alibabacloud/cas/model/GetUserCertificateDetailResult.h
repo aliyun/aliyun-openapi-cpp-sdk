@@ -37,11 +37,15 @@ namespace AlibabaCloud
 				GetUserCertificateDetailResult();
 				explicit GetUserCertificateDetailResult(const std::string &payload);
 				~GetUserCertificateDetailResult();
+				std::string getSignCert()const;
 				std::string getFingerprint()const;
+				std::string getResourceGroupId()const;
 				std::string getIssuer()const;
+				std::string getEncryptCert()const;
 				std::string getOrgName()const;
 				bool getExpired()const;
 				std::string getCity()const;
+				long getOrderId()const;
 				std::string getEndDate()const;
 				std::string getProvince()const;
 				std::string getName()const;
@@ -50,18 +54,24 @@ namespace AlibabaCloud
 				std::string getStartDate()const;
 				std::string getSans()const;
 				std::string getCountry()const;
+				std::string getSignPrivateKey()const;
 				std::string getCert()const;
+				std::string getEncryptPrivateKey()const;
 				long getId()const;
 				std::string getKey()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string signCert_;
 				std::string fingerprint_;
+				std::string resourceGroupId_;
 				std::string issuer_;
+				std::string encryptCert_;
 				std::string orgName_;
 				bool expired_;
 				std::string city_;
+				long orderId_;
 				std::string endDate_;
 				std::string province_;
 				std::string name_;
@@ -70,7 +80,9 @@ namespace AlibabaCloud
 				std::string startDate_;
 				std::string sans_;
 				std::string country_;
+				std::string signPrivateKey_;
 				std::string cert_;
+				std::string encryptPrivateKey_;
 				long id_;
 				std::string key_;
 

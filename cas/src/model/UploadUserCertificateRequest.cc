@@ -43,6 +43,15 @@ void UploadUserCertificateRequest::setCert(const std::string &cert) {
   setParameter(std::string("Cert"), cert);
 }
 
+std::string UploadUserCertificateRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void UploadUserCertificateRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string UploadUserCertificateRequest::getSourceIp() const {
   return sourceIp_;
 }

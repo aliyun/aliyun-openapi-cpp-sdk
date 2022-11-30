@@ -43,6 +43,14 @@ void GetUserCertificateDetailResult::parse(const std::string &payload)
 		cert_ = value["Cert"].asString();
 	if(!value["Key"].isNull())
 		key_ = value["Key"].asString();
+	if(!value["EncryptCert"].isNull())
+		encryptCert_ = value["EncryptCert"].asString();
+	if(!value["EncryptPrivateKey"].isNull())
+		encryptPrivateKey_ = value["EncryptPrivateKey"].asString();
+	if(!value["SignCert"].isNull())
+		signCert_ = value["SignCert"].asString();
+	if(!value["SignPrivateKey"].isNull())
+		signPrivateKey_ = value["SignPrivateKey"].asString();
 	if(!value["Id"].isNull())
 		id_ = std::stol(value["Id"].asString());
 	if(!value["Name"].isNull())
@@ -71,7 +79,16 @@ void GetUserCertificateDetailResult::parse(const std::string &payload)
 		expired_ = value["Expired"].asString() == "true";
 	if(!value["BuyInAliyun"].isNull())
 		buyInAliyun_ = value["BuyInAliyun"].asString() == "true";
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
+}
+
+std::string GetUserCertificateDetailResult::getSignCert()const
+{
+	return signCert_;
 }
 
 std::string GetUserCertificateDetailResult::getFingerprint()const
@@ -79,9 +96,19 @@ std::string GetUserCertificateDetailResult::getFingerprint()const
 	return fingerprint_;
 }
 
+std::string GetUserCertificateDetailResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
 std::string GetUserCertificateDetailResult::getIssuer()const
 {
 	return issuer_;
+}
+
+std::string GetUserCertificateDetailResult::getEncryptCert()const
+{
+	return encryptCert_;
 }
 
 std::string GetUserCertificateDetailResult::getOrgName()const
@@ -97,6 +124,11 @@ bool GetUserCertificateDetailResult::getExpired()const
 std::string GetUserCertificateDetailResult::getCity()const
 {
 	return city_;
+}
+
+long GetUserCertificateDetailResult::getOrderId()const
+{
+	return orderId_;
 }
 
 std::string GetUserCertificateDetailResult::getEndDate()const
@@ -139,9 +171,19 @@ std::string GetUserCertificateDetailResult::getCountry()const
 	return country_;
 }
 
+std::string GetUserCertificateDetailResult::getSignPrivateKey()const
+{
+	return signPrivateKey_;
+}
+
 std::string GetUserCertificateDetailResult::getCert()const
 {
 	return cert_;
+}
+
+std::string GetUserCertificateDetailResult::getEncryptPrivateKey()const
+{
+	return encryptPrivateKey_;
 }
 
 long GetUserCertificateDetailResult::getId()const

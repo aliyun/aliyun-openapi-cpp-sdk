@@ -113,6 +113,8 @@ void ListUserCertificateOrderResult::parse(const std::string &payload)
 			certificateOrderListObject.startDate = valueCertificateOrderListCertificateOrderListItem["StartDate"].asString();
 		if(!valueCertificateOrderListCertificateOrderListItem["EndDate"].isNull())
 			certificateOrderListObject.endDate = valueCertificateOrderListCertificateOrderListItem["EndDate"].asString();
+		if(!valueCertificateOrderListCertificateOrderListItem["ResourceGroupId"].isNull())
+			certificateOrderListObject.resourceGroupId = valueCertificateOrderListCertificateOrderListItem["ResourceGroupId"].asString();
 		certificateOrderList_.push_back(certificateOrderListObject);
 	}
 	if(!value["ShowSize"].isNull())

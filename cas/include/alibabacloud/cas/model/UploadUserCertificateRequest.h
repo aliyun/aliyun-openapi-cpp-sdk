@@ -34,6 +34,8 @@ public:
 	void setEncryptCert(const std::string &encryptCert);
 	std::string getCert() const;
 	void setCert(const std::string &cert);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getKey() const;
@@ -50,6 +52,7 @@ public:
 private:
 	std::string encryptCert_;
 	std::string cert_;
+	std::string resourceGroupId_;
 	std::string sourceIp_;
 	std::string key_;
 	std::string encryptPrivateKey_;

@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string sha2;
 					std::string productName;
+					std::string resourceGroupId;
 					std::string issuer;
 					long certificateId;
 					std::string sourceType;

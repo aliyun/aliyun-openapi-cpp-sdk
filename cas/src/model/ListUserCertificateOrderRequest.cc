@@ -25,22 +25,13 @@ ListUserCertificateOrderRequest::ListUserCertificateOrderRequest()
 
 ListUserCertificateOrderRequest::~ListUserCertificateOrderRequest() {}
 
-long ListUserCertificateOrderRequest::getShowSize() const {
-  return showSize_;
+std::string ListUserCertificateOrderRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void ListUserCertificateOrderRequest::setShowSize(long showSize) {
-  showSize_ = showSize;
-  setParameter(std::string("ShowSize"), std::to_string(showSize));
-}
-
-long ListUserCertificateOrderRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void ListUserCertificateOrderRequest::setCurrentPage(long currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+void ListUserCertificateOrderRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string ListUserCertificateOrderRequest::getSourceIp() const {
@@ -59,6 +50,24 @@ std::string ListUserCertificateOrderRequest::getKeyword() const {
 void ListUserCertificateOrderRequest::setKeyword(const std::string &keyword) {
   keyword_ = keyword;
   setParameter(std::string("Keyword"), keyword);
+}
+
+long ListUserCertificateOrderRequest::getShowSize() const {
+  return showSize_;
+}
+
+void ListUserCertificateOrderRequest::setShowSize(long showSize) {
+  showSize_ = showSize;
+  setParameter(std::string("ShowSize"), std::to_string(showSize));
+}
+
+long ListUserCertificateOrderRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void ListUserCertificateOrderRequest::setCurrentPage(long currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
 std::string ListUserCertificateOrderRequest::getStatus() const {
