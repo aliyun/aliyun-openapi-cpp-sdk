@@ -56,6 +56,8 @@ void DetectRibFractureResult::parse(const std::string &payload)
 			detectionsItemObject.fractureLocation = dataNodeDetectionsDetectionsItem["FractureLocation"].asString();
 		if(!dataNodeDetectionsDetectionsItem["FractureSegment"].isNull())
 			detectionsItemObject.fractureSegment = std::stol(dataNodeDetectionsDetectionsItem["FractureSegment"].asString());
+		if(!dataNodeDetectionsDetectionsItem["FracSOPInstanceUID"].isNull())
+			detectionsItemObject.fracSOPInstanceUID = dataNodeDetectionsDetectionsItem["FracSOPInstanceUID"].asString();
 		auto allCoordinates = value["Coordinates"]["Coordinates"];
 		for (auto value : allCoordinates)
 			detectionsItemObject.coordinates.push_back(value.asString());

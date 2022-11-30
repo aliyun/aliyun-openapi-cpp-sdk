@@ -39,6 +39,7 @@ namespace AlibabaCloud
 						float fractureConfidence;
 						std::string fractureCategory;
 						std::vector<std::string> coordinateImage;
+						std::string fracSOPInstanceUID;
 						std::vector<std::string> coordinates;
 						std::string fractureLocation;
 						long fractureSegment;
