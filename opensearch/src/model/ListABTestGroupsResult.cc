@@ -43,16 +43,16 @@ void ListABTestGroupsResult::parse(const std::string &payload)
 	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueresultresultItem["id"].isNull())
-			resultObject.id = valueresultresultItem["id"].asString();
-		if(!valueresultresultItem["name"].isNull())
-			resultObject.name = valueresultresultItem["name"].asString();
-		if(!valueresultresultItem["status"].isNull())
-			resultObject.status = std::stoi(valueresultresultItem["status"].asString());
 		if(!valueresultresultItem["created"].isNull())
 			resultObject.created = std::stoi(valueresultresultItem["created"].asString());
+		if(!valueresultresultItem["status"].isNull())
+			resultObject.status = std::stoi(valueresultresultItem["status"].asString());
 		if(!valueresultresultItem["updated"].isNull())
 			resultObject.updated = std::stoi(valueresultresultItem["updated"].asString());
+		if(!valueresultresultItem["name"].isNull())
+			resultObject.name = valueresultresultItem["name"].asString();
+		if(!valueresultresultItem["id"].isNull())
+			resultObject.id = valueresultresultItem["id"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["requestId"].isNull())

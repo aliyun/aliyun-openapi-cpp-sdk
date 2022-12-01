@@ -35,8 +35,9 @@ namespace AlibabaCloud
 				struct FileInfos
 				{
 					std::string modifyTime;
-					std::string fileName;
 					std::string createTime;
+					std::string fileName;
+					std::string pathName;
 				};
 
 

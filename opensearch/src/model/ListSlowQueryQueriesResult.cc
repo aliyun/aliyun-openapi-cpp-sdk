@@ -40,14 +40,14 @@ void ListSlowQueryQueriesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["result"];
-	if(!resultNode["start"].isNull())
-		result_.start = std::stoi(resultNode["start"].asString());
-	if(!resultNode["end"].isNull())
-		result_.end = std::stoi(resultNode["end"].asString());
 	if(!resultNode["index"].isNull())
 		result_.index = std::stoi(resultNode["index"].asString());
 	if(!resultNode["appQuery"].isNull())
 		result_.appQuery = resultNode["appQuery"].asString();
+	if(!resultNode["start"].isNull())
+		result_.start = std::stoi(resultNode["start"].asString());
+	if(!resultNode["end"].isNull())
+		result_.end = std::stoi(resultNode["end"].asString());
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,38 @@
 
 using AlibabaCloud::OpenSearch::Model::DescribeSecondRankRequest;
 
-DescribeSecondRankRequest::DescribeSecondRankRequest() :
-	RoaServiceRequest("opensearch", "2017-12-25")
-{
-	setResourcePath("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks/[name]");
-	setMethod(HttpRequest::Method::Get);
+DescribeSecondRankRequest::DescribeSecondRankRequest()
+    : RoaServiceRequest("opensearch", "2017-12-25") {
+  setResourcePath("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/second-ranks/[name]"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-DescribeSecondRankRequest::~DescribeSecondRankRequest()
-{}
+DescribeSecondRankRequest::~DescribeSecondRankRequest() {}
 
-int DescribeSecondRankRequest::getAppId()const
-{
-	return appId_;
+int DescribeSecondRankRequest::getAppId() const {
+  return appId_;
 }
 
-void DescribeSecondRankRequest::setAppId(int appId)
-{
-	appId_ = appId;
-	setParameter("AppId", std::to_string(appId));
+void DescribeSecondRankRequest::setAppId(int appId) {
+  appId_ = appId;
+  setParameter(std::string("appId"), std::to_string(appId));
 }
 
-std::string DescribeSecondRankRequest::getName()const
-{
-	return name_;
+std::string DescribeSecondRankRequest::getName() const {
+  return name_;
 }
 
-void DescribeSecondRankRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
+void DescribeSecondRankRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("name"), name);
 }
 
-std::string DescribeSecondRankRequest::getAppGroupIdentity()const
-{
-	return appGroupIdentity_;
+std::string DescribeSecondRankRequest::getAppGroupIdentity() const {
+  return appGroupIdentity_;
 }
 
-void DescribeSecondRankRequest::setAppGroupIdentity(const std::string& appGroupIdentity)
-{
-	appGroupIdentity_ = appGroupIdentity;
-	setParameter("AppGroupIdentity", appGroupIdentity);
+void DescribeSecondRankRequest::setAppGroupIdentity(const std::string &appGroupIdentity) {
+  appGroupIdentity_ = appGroupIdentity;
+  setParameter(std::string("appGroupIdentity"), appGroupIdentity);
 }
 

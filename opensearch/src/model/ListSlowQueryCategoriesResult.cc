@@ -40,10 +40,10 @@ void ListSlowQueryCategoriesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["result"];
-	if(!resultNode["analyzeStatus"].isNull())
-		result_.analyzeStatus = resultNode["analyzeStatus"].asString();
 	if(!resultNode["start"].isNull())
 		result_.start = std::stoi(resultNode["start"].asString());
+	if(!resultNode["analyzeStatus"].isNull())
+		result_.analyzeStatus = resultNode["analyzeStatus"].asString();
 	if(!resultNode["end"].isNull())
 		result_.end = std::stoi(resultNode["end"].asString());
 	if(!value["requestId"].isNull())

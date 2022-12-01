@@ -40,16 +40,16 @@ void GetSortScriptResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["result"];
-	if(!resultNode["type"].isNull())
-		result_.type = resultNode["type"].asString();
 	if(!resultNode["scope"].isNull())
 		result_.scope = resultNode["scope"].asString();
-	if(!resultNode["status"].isNull())
-		result_.status = resultNode["status"].asString();
 	if(!resultNode["createTime"].isNull())
 		result_.createTime = resultNode["createTime"].asString();
+	if(!resultNode["status"].isNull())
+		result_.status = resultNode["status"].asString();
 	if(!resultNode["modifyTime"].isNull())
 		result_.modifyTime = resultNode["modifyTime"].asString();
+	if(!resultNode["type"].isNull())
+		result_.type = resultNode["type"].asString();
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
 

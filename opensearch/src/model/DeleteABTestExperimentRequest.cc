@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,57 +18,47 @@
 
 using AlibabaCloud::OpenSearch::Model::DeleteABTestExperimentRequest;
 
-DeleteABTestExperimentRequest::DeleteABTestExperimentRequest() :
-	RoaServiceRequest("opensearch", "2017-12-25")
-{
-	setResourcePath("/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/experiments/[experimentId]");
-	setMethod(HttpRequest::Method::Delete);
+DeleteABTestExperimentRequest::DeleteABTestExperimentRequest()
+    : RoaServiceRequest("opensearch", "2017-12-25") {
+  setResourcePath("/v4/openapi/app-groups/[appGroupIdentity]/scenes/[sceneId]/groups/[groupId]/experiments/[experimentId]"};
+  setMethod(HttpRequest::Method::Delete);
 }
 
-DeleteABTestExperimentRequest::~DeleteABTestExperimentRequest()
-{}
+DeleteABTestExperimentRequest::~DeleteABTestExperimentRequest() {}
 
-int DeleteABTestExperimentRequest::getGroupId()const
-{
-	return groupId_;
+int DeleteABTestExperimentRequest::getGroupId() const {
+  return groupId_;
 }
 
-void DeleteABTestExperimentRequest::setGroupId(int groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", std::to_string(groupId));
+void DeleteABTestExperimentRequest::setGroupId(int groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("groupId"), std::to_string(groupId));
 }
 
-int DeleteABTestExperimentRequest::getSceneId()const
-{
-	return sceneId_;
+int DeleteABTestExperimentRequest::getSceneId() const {
+  return sceneId_;
 }
 
-void DeleteABTestExperimentRequest::setSceneId(int sceneId)
-{
-	sceneId_ = sceneId;
-	setParameter("SceneId", std::to_string(sceneId));
+void DeleteABTestExperimentRequest::setSceneId(int sceneId) {
+  sceneId_ = sceneId;
+  setParameter(std::string("sceneId"), std::to_string(sceneId));
 }
 
-int DeleteABTestExperimentRequest::getExperimentId()const
-{
-	return experimentId_;
+int DeleteABTestExperimentRequest::getExperimentId() const {
+  return experimentId_;
 }
 
-void DeleteABTestExperimentRequest::setExperimentId(int experimentId)
-{
-	experimentId_ = experimentId;
-	setParameter("ExperimentId", std::to_string(experimentId));
+void DeleteABTestExperimentRequest::setExperimentId(int experimentId) {
+  experimentId_ = experimentId;
+  setParameter(std::string("experimentId"), std::to_string(experimentId));
 }
 
-std::string DeleteABTestExperimentRequest::getAppGroupIdentity()const
-{
-	return appGroupIdentity_;
+std::string DeleteABTestExperimentRequest::getAppGroupIdentity() const {
+  return appGroupIdentity_;
 }
 
-void DeleteABTestExperimentRequest::setAppGroupIdentity(const std::string& appGroupIdentity)
-{
-	appGroupIdentity_ = appGroupIdentity;
-	setParameter("AppGroupIdentity", appGroupIdentity);
+void DeleteABTestExperimentRequest::setAppGroupIdentity(const std::string &appGroupIdentity) {
+  appGroupIdentity_ = appGroupIdentity;
+  setParameter(std::string("appGroupIdentity"), appGroupIdentity);
 }
 

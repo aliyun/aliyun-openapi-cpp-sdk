@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					int updated;
 					int id;
 					std::string analyzer;
-					std::string name;
 					int created;
+					std::string name;
 				};
 
 

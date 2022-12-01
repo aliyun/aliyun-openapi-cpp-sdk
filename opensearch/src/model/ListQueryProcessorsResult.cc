@@ -43,16 +43,16 @@ void ListQueryProcessorsResult::parse(const std::string &payload)
 	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueresultresultItem["name"].isNull())
-			resultObject.name = valueresultresultItem["name"].asString();
-		if(!valueresultresultItem["active"].isNull())
-			resultObject.active = valueresultresultItem["active"].asString() == "true";
-		if(!valueresultresultItem["domain"].isNull())
-			resultObject.domain = valueresultresultItem["domain"].asString();
 		if(!valueresultresultItem["created"].isNull())
 			resultObject.created = std::stoi(valueresultresultItem["created"].asString());
+		if(!valueresultresultItem["active"].isNull())
+			resultObject.active = valueresultresultItem["active"].asString() == "true";
 		if(!valueresultresultItem["updated"].isNull())
 			resultObject.updated = std::stoi(valueresultresultItem["updated"].asString());
+		if(!valueresultresultItem["name"].isNull())
+			resultObject.name = valueresultresultItem["name"].asString();
+		if(!valueresultresultItem["domain"].isNull())
+			resultObject.domain = valueresultresultItem["domain"].asString();
 		auto allIndexes = value["indexes"]["indexes"];
 		for (auto value : allIndexes)
 			resultObject.indexes.push_back(value.asString());

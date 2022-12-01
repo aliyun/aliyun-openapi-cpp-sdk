@@ -43,44 +43,44 @@ void ListUserAnalyzersResult::parse(const std::string &payload)
 	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueresultresultItem["id"].isNull())
-			resultObject.id = valueresultresultItem["id"].asString();
-		if(!valueresultresultItem["name"].isNull())
-			resultObject.name = valueresultresultItem["name"].asString();
-		if(!valueresultresultItem["business"].isNull())
-			resultObject.business = valueresultresultItem["business"].asString();
-		if(!valueresultresultItem["available"].isNull())
-			resultObject.available = valueresultresultItem["available"].asString() == "true";
 		if(!valueresultresultItem["created"].isNull())
 			resultObject.created = std::stoi(valueresultresultItem["created"].asString());
+		if(!valueresultresultItem["available"].isNull())
+			resultObject.available = valueresultresultItem["available"].asString() == "true";
+		if(!valueresultresultItem["name"].isNull())
+			resultObject.name = valueresultresultItem["name"].asString();
 		if(!valueresultresultItem["updated"].isNull())
 			resultObject.updated = std::stoi(valueresultresultItem["updated"].asString());
+		if(!valueresultresultItem["id"].isNull())
+			resultObject.id = valueresultresultItem["id"].asString();
+		if(!valueresultresultItem["business"].isNull())
+			resultObject.business = valueresultresultItem["business"].asString();
 		auto alldictsNode = valueresultresultItem["dicts"]["dictsItem"];
 		for (auto valueresultresultItemdictsdictsItem : alldictsNode)
 		{
 			ResultItem::DictsItem dictsObject;
-			if(!valueresultresultItemdictsdictsItem["id"].isNull())
-				dictsObject.id = valueresultresultItemdictsdictsItem["id"].asString();
+			if(!valueresultresultItemdictsdictsItem["created"].isNull())
+				dictsObject.created = std::stoi(valueresultresultItemdictsdictsItem["created"].asString());
+			if(!valueresultresultItemdictsdictsItem["entriesCount"].isNull())
+				dictsObject.entriesCount = std::stoi(valueresultresultItemdictsdictsItem["entriesCount"].asString());
 			if(!valueresultresultItemdictsdictsItem["type"].isNull())
 				dictsObject.type = valueresultresultItemdictsdictsItem["type"].asString();
 			if(!valueresultresultItemdictsdictsItem["entriesLimit"].isNull())
 				dictsObject.entriesLimit = std::stoi(valueresultresultItemdictsdictsItem["entriesLimit"].asString());
-			if(!valueresultresultItemdictsdictsItem["entriesCount"].isNull())
-				dictsObject.entriesCount = std::stoi(valueresultresultItemdictsdictsItem["entriesCount"].asString());
 			if(!valueresultresultItemdictsdictsItem["available"].isNull())
 				dictsObject.available = valueresultresultItemdictsdictsItem["available"].asString() == "true";
-			if(!valueresultresultItemdictsdictsItem["created"].isNull())
-				dictsObject.created = std::stoi(valueresultresultItemdictsdictsItem["created"].asString());
 			if(!valueresultresultItemdictsdictsItem["updated"].isNull())
 				dictsObject.updated = std::stoi(valueresultresultItemdictsdictsItem["updated"].asString());
+			if(!valueresultresultItemdictsdictsItem["id"].isNull())
+				dictsObject.id = valueresultresultItemdictsdictsItem["id"].asString();
 			resultObject.dicts.push_back(dictsObject);
 		}
 		result_.push_back(resultObject);
 	}
-	if(!value["requestId"].isNull())
-		requestId_ = value["requestId"].asString();
 	if(!value["totalCount"].isNull())
 		totalCount_ = std::stoi(value["totalCount"].asString());
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
 }
 

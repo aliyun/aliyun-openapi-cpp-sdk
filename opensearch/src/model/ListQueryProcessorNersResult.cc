@@ -45,10 +45,10 @@ void ListQueryProcessorNersResult::parse(const std::string &payload)
 		ResultItem resultObject;
 		if(!valueresultresultItem["tag"].isNull())
 			resultObject.tag = valueresultresultItem["tag"].asString();
-		if(!valueresultresultItem["priority"].isNull())
-			resultObject.priority = valueresultresultItem["priority"].asString();
 		if(!valueresultresultItem["order"].isNull())
 			resultObject.order = std::stoi(valueresultresultItem["order"].asString());
+		if(!valueresultresultItem["priority"].isNull())
+			resultObject.priority = valueresultresultItem["priority"].asString();
 		if(!valueresultresultItem["label"].isNull())
 			resultObject.label = valueresultresultItem["label"].asString();
 		result_.push_back(resultObject);

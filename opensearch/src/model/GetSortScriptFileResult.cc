@@ -42,12 +42,12 @@ void GetSortScriptFileResult::parse(const std::string &payload)
 	auto resultNode = value["result"];
 	if(!resultNode["content"].isNull())
 		result_.content = resultNode["content"].asString();
-	if(!resultNode["version"].isNull())
-		result_.version = std::stol(resultNode["version"].asString());
 	if(!resultNode["createTime"].isNull())
 		result_.createTime = resultNode["createTime"].asString();
 	if(!resultNode["modifyTime"].isNull())
 		result_.modifyTime = resultNode["modifyTime"].asString();
+	if(!resultNode["version"].isNull())
+		result_.version = std::stol(resultNode["version"].asString());
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
 

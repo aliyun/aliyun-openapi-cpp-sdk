@@ -40,18 +40,18 @@ void DescribeABTestExperimentResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["result"];
-	if(!resultNode["id"].isNull())
-		result_.id = resultNode["id"].asString();
-	if(!resultNode["name"].isNull())
-		result_.name = resultNode["name"].asString();
 	if(!resultNode["created"].isNull())
 		result_.created = std::stoi(resultNode["created"].asString());
-	if(!resultNode["updated"].isNull())
-		result_.updated = std::stoi(resultNode["updated"].asString());
-	if(!resultNode["online"].isNull())
-		result_.online = resultNode["online"].asString() == "true";
 	if(!resultNode["traffic"].isNull())
 		result_.traffic = std::stoi(resultNode["traffic"].asString());
+	if(!resultNode["online"].isNull())
+		result_.online = resultNode["online"].asString() == "true";
+	if(!resultNode["name"].isNull())
+		result_.name = resultNode["name"].asString();
+	if(!resultNode["updated"].isNull())
+		result_.updated = std::stoi(resultNode["updated"].asString());
+	if(!resultNode["id"].isNull())
+		result_.id = resultNode["id"].asString();
 	auto paramsNode = resultNode["params"];
 	if(!paramsNode["first_formula_name"].isNull())
 		result_.params.first_formula_name = paramsNode["first_formula_name"].asString();

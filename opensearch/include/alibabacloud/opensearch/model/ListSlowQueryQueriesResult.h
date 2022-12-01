@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					int start;
 					std::string appQuery;
-					int end;
 					int index;
+					int end;
 				};
 
 

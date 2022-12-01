@@ -45,16 +45,16 @@ void ListInterventionDictionaryEntriesResult::parse(const std::string &payload)
 		WordItem resultObject;
 		if(!valueresultwordItem["cmd"].isNull())
 			resultObject.cmd = valueresultwordItem["cmd"].asString();
-		if(!valueresultwordItem["word"].isNull())
-			resultObject.word = valueresultwordItem["word"].asString();
 		if(!valueresultwordItem["created"].isNull())
 			resultObject.created = std::stol(valueresultwordItem["created"].asString());
-		if(!valueresultwordItem["updated"].isNull())
-			resultObject.updated = std::stol(valueresultwordItem["updated"].asString());
-		if(!valueresultwordItem["status"].isNull())
-			resultObject.status = valueresultwordItem["status"].asString();
+		if(!valueresultwordItem["word"].isNull())
+			resultObject.word = valueresultwordItem["word"].asString();
 		if(!valueresultwordItem["relevance"].isNull())
 			resultObject.relevance = valueresultwordItem["relevance"].asString();
+		if(!valueresultwordItem["status"].isNull())
+			resultObject.status = valueresultwordItem["status"].asString();
+		if(!valueresultwordItem["updated"].isNull())
+			resultObject.updated = std::stol(valueresultwordItem["updated"].asString());
 		auto alltokensNode = valueresultwordItem["tokens"]["token"];
 		for (auto valueresultwordItemtokenstoken : alltokensNode)
 		{
@@ -71,10 +71,10 @@ void ListInterventionDictionaryEntriesResult::parse(const std::string &payload)
 		}
 		result_.push_back(resultObject);
 	}
-	if(!value["requestId"].isNull())
-		requestId_ = value["requestId"].asString();
 	if(!value["totalCount"].isNull())
 		totalCount_ = std::stoi(value["totalCount"].asString());
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
 }
 

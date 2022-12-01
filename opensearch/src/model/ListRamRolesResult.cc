@@ -43,14 +43,14 @@ void ListRamRolesResult::parse(const std::string &payload)
 	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueresultresultItem["name"].isNull())
-			resultObject.name = valueresultresultItem["name"].asString();
-		if(!valueresultresultItem["service"].isNull())
-			resultObject.service = valueresultresultItem["service"].asString();
 		if(!valueresultresultItem["template_id"].isNull())
 			resultObject.template_id = valueresultresultItem["template_id"].asString();
+		if(!valueresultresultItem["service"].isNull())
+			resultObject.service = valueresultresultItem["service"].asString();
 		if(!valueresultresultItem["assumed"].isNull())
 			resultObject.assumed = valueresultresultItem["assumed"].asString() == "true";
+		if(!valueresultresultItem["name"].isNull())
+			resultObject.name = valueresultresultItem["name"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["requestId"].isNull())

@@ -40,16 +40,16 @@ void DescribeABTestGroupResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["result"];
-	if(!resultNode["id"].isNull())
-		result_.id = resultNode["id"].asString();
-	if(!resultNode["name"].isNull())
-		result_.name = resultNode["name"].asString();
-	if(!resultNode["status"].isNull())
-		result_.status = std::stoi(resultNode["status"].asString());
 	if(!resultNode["created"].isNull())
 		result_.created = std::stoi(resultNode["created"].asString());
+	if(!resultNode["status"].isNull())
+		result_.status = std::stoi(resultNode["status"].asString());
 	if(!resultNode["updated"].isNull())
 		result_.updated = std::stoi(resultNode["updated"].asString());
+	if(!resultNode["name"].isNull())
+		result_.name = resultNode["name"].asString();
+	if(!resultNode["id"].isNull())
+		result_.id = resultNode["id"].asString();
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,38 @@
 
 using AlibabaCloud::OpenSearch::Model::ListDataCollectionsRequest;
 
-ListDataCollectionsRequest::ListDataCollectionsRequest() :
-	RoaServiceRequest("opensearch", "2017-12-25")
-{
-	setResourcePath("/v4/openapi/app-groups/[appGroupIdentity]/data-collections");
-	setMethod(HttpRequest::Method::Get);
+ListDataCollectionsRequest::ListDataCollectionsRequest()
+    : RoaServiceRequest("opensearch", "2017-12-25") {
+  setResourcePath("/v4/openapi/app-groups/[appGroupIdentity]/data-collections"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListDataCollectionsRequest::~ListDataCollectionsRequest()
-{}
+ListDataCollectionsRequest::~ListDataCollectionsRequest() {}
 
-int ListDataCollectionsRequest::getPageSize()const
-{
-	return pageSize_;
+int ListDataCollectionsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListDataCollectionsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListDataCollectionsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("pageSize"), std::to_string(pageSize));
 }
 
-std::string ListDataCollectionsRequest::getAppGroupIdentity()const
-{
-	return appGroupIdentity_;
+std::string ListDataCollectionsRequest::getAppGroupIdentity() const {
+  return appGroupIdentity_;
 }
 
-void ListDataCollectionsRequest::setAppGroupIdentity(const std::string& appGroupIdentity)
-{
-	appGroupIdentity_ = appGroupIdentity;
-	setParameter("AppGroupIdentity", appGroupIdentity);
+void ListDataCollectionsRequest::setAppGroupIdentity(const std::string &appGroupIdentity) {
+  appGroupIdentity_ = appGroupIdentity;
+  setParameter(std::string("appGroupIdentity"), appGroupIdentity);
 }
 
-int ListDataCollectionsRequest::getPageNumber()const
-{
-	return pageNumber_;
+int ListDataCollectionsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListDataCollectionsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void ListDataCollectionsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("pageNumber"), std::to_string(pageNumber));
 }
 

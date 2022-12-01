@@ -40,12 +40,12 @@ void GenerateMergedTableResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["result"];
+	if(!resultNode["primaryKey"].isNull())
+		result_.primaryKey = resultNode["primaryKey"].asString();
 	if(!resultNode["mergeTable"].isNull())
 		result_.mergeTable = resultNode["mergeTable"].asString();
 	if(!resultNode["fromTable"].isNull())
 		result_.fromTable = resultNode["fromTable"].asString();
-	if(!resultNode["primaryKey"].isNull())
-		result_.primaryKey = resultNode["primaryKey"].asString();
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
 

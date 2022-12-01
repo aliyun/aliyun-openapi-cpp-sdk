@@ -43,30 +43,30 @@ void ListSecondRanksResult::parse(const std::string &payload)
 	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueresultresultItem["id"].isNull())
-			resultObject.id = valueresultresultItem["id"].asString();
-		if(!valueresultresultItem["name"].isNull())
-			resultObject.name = valueresultresultItem["name"].asString();
-		if(!valueresultresultItem["meta"].isNull())
-			resultObject.meta = valueresultresultItem["meta"].asString();
-		if(!valueresultresultItem["active"].isNull())
-			resultObject.active = valueresultresultItem["active"].asString() == "true";
-		if(!valueresultresultItem["description"].isNull())
-			resultObject.description = valueresultresultItem["description"].asString();
 		if(!valueresultresultItem["created"].isNull())
 			resultObject.created = std::stoi(valueresultresultItem["created"].asString());
-		if(!valueresultresultItem["updated"].isNull())
-			resultObject.updated = std::stoi(valueresultresultItem["updated"].asString());
+		if(!valueresultresultItem["active"].isNull())
+			resultObject.active = valueresultresultItem["active"].asString() == "true";
 		if(!valueresultresultItem["isDefault"].isNull())
 			resultObject.isDefault = valueresultresultItem["isDefault"].asString();
 		if(!valueresultresultItem["isSys"].isNull())
 			resultObject.isSys = valueresultresultItem["isSys"].asString();
+		if(!valueresultresultItem["description"].isNull())
+			resultObject.description = valueresultresultItem["description"].asString();
+		if(!valueresultresultItem["updated"].isNull())
+			resultObject.updated = std::stoi(valueresultresultItem["updated"].asString());
+		if(!valueresultresultItem["name"].isNull())
+			resultObject.name = valueresultresultItem["name"].asString();
+		if(!valueresultresultItem["meta"].isNull())
+			resultObject.meta = valueresultresultItem["meta"].asString();
+		if(!valueresultresultItem["id"].isNull())
+			resultObject.id = valueresultresultItem["id"].asString();
 		result_.push_back(resultObject);
 	}
-	if(!value["requestId"].isNull())
-		requestId_ = value["requestId"].asString();
 	if(!value["totalCount"].isNull())
 		totalCount_ = std::stoi(value["totalCount"].asString());
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
 }
 

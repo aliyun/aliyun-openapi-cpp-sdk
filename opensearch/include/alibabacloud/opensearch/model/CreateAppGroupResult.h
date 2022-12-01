@@ -47,10 +47,10 @@ namespace AlibabaCloud
 					std::string expireOn;
 					std::string currentVersion;
 					int switchedTime;
-					std::string name;
 					int created;
-					std::string commodityCode;
+					std::string name;
 					int hasPendingQuotaReviewTask;
+					std::string commodityCode;
 					std::string status;
 					int produced;
 					int updated;

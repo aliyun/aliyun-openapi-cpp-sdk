@@ -36,9 +36,9 @@ namespace AlibabaCloud
 				{
 					std::string appGroupType;
 					std::string oldSpec;
-					std::string newSpec;
 					bool approved;
 					std::string gmtModified;
+					std::string newSpec;
 					int oldComputeResource;
 					std::string gmtCreate;
 					int newComputeResource;
@@ -48,8 +48,8 @@ namespace AlibabaCloud
 					int id;
 					std::string appGroupName;
 					int newSocSize;
-					std::string memo;
 					bool pending;
+					std::string memo;
 				};
 
 

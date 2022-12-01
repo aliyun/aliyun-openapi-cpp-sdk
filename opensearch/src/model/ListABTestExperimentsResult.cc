@@ -43,20 +43,20 @@ void ListABTestExperimentsResult::parse(const std::string &payload)
 	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueresultresultItem["id"].isNull())
-			resultObject.id = valueresultresultItem["id"].asString();
-		if(!valueresultresultItem["name"].isNull())
-			resultObject.name = valueresultresultItem["name"].asString();
-		if(!valueresultresultItem["params"].isNull())
-			resultObject.params = valueresultresultItem["params"].asString();
 		if(!valueresultresultItem["created"].isNull())
 			resultObject.created = std::stoi(valueresultresultItem["created"].asString());
-		if(!valueresultresultItem["updated"].isNull())
-			resultObject.updated = std::stoi(valueresultresultItem["updated"].asString());
-		if(!valueresultresultItem["online"].isNull())
-			resultObject.online = valueresultresultItem["online"].asString() == "true";
+		if(!valueresultresultItem["params"].isNull())
+			resultObject.params = valueresultresultItem["params"].asString();
 		if(!valueresultresultItem["traffic"].isNull())
 			resultObject.traffic = std::stoi(valueresultresultItem["traffic"].asString());
+		if(!valueresultresultItem["online"].isNull())
+			resultObject.online = valueresultresultItem["online"].asString() == "true";
+		if(!valueresultresultItem["name"].isNull())
+			resultObject.name = valueresultresultItem["name"].asString();
+		if(!valueresultresultItem["updated"].isNull())
+			resultObject.updated = std::stoi(valueresultresultItem["updated"].asString());
+		if(!valueresultresultItem["id"].isNull())
+			resultObject.id = valueresultresultItem["id"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["requestId"].isNull())

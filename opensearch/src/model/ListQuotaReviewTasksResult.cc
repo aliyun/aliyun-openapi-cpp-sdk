@@ -43,44 +43,44 @@ void ListQuotaReviewTasksResult::parse(const std::string &payload)
 	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueresultresultItem["id"].isNull())
-			resultObject.id = std::stoi(valueresultresultItem["id"].asString());
-		if(!valueresultresultItem["appGroupId"].isNull())
-			resultObject.appGroupId = std::stoi(valueresultresultItem["appGroupId"].asString());
-		if(!valueresultresultItem["appGroupName"].isNull())
-			resultObject.appGroupName = valueresultresultItem["appGroupName"].asString();
-		if(!valueresultresultItem["appGroupType"].isNull())
-			resultObject.appGroupType = valueresultresultItem["appGroupType"].asString();
+		if(!valueresultresultItem["oldDocSize"].isNull())
+			resultObject.oldDocSize = std::stoi(valueresultresultItem["oldDocSize"].asString());
+		if(!valueresultresultItem["pending"].isNull())
+			resultObject.pending = valueresultresultItem["pending"].asString() == "true";
+		if(!valueresultresultItem["memo"].isNull())
+			resultObject.memo = valueresultresultItem["memo"].asString();
+		if(!valueresultresultItem["approved"].isNull())
+			resultObject.approved = valueresultresultItem["approved"].asString() == "true";
 		if(!valueresultresultItem["oldSpec"].isNull())
 			resultObject.oldSpec = valueresultresultItem["oldSpec"].asString();
 		if(!valueresultresultItem["oldComputeResource"].isNull())
 			resultObject.oldComputeResource = std::stoi(valueresultresultItem["oldComputeResource"].asString());
-		if(!valueresultresultItem["oldDocSize"].isNull())
-			resultObject.oldDocSize = std::stoi(valueresultresultItem["oldDocSize"].asString());
-		if(!valueresultresultItem["newSpec"].isNull())
-			resultObject.newSpec = valueresultresultItem["newSpec"].asString();
-		if(!valueresultresultItem["newComputeResource"].isNull())
-			resultObject.newComputeResource = std::stoi(valueresultresultItem["newComputeResource"].asString());
-		if(!valueresultresultItem["newSocSize"].isNull())
-			resultObject.newSocSize = std::stoi(valueresultresultItem["newSocSize"].asString());
-		if(!valueresultresultItem["memo"].isNull())
-			resultObject.memo = valueresultresultItem["memo"].asString();
+		if(!valueresultresultItem["appGroupType"].isNull())
+			resultObject.appGroupType = valueresultresultItem["appGroupType"].asString();
 		if(!valueresultresultItem["available"].isNull())
 			resultObject.available = valueresultresultItem["available"].asString() == "true";
-		if(!valueresultresultItem["pending"].isNull())
-			resultObject.pending = valueresultresultItem["pending"].asString() == "true";
-		if(!valueresultresultItem["approved"].isNull())
-			resultObject.approved = valueresultresultItem["approved"].asString() == "true";
 		if(!valueresultresultItem["gmtCreate"].isNull())
 			resultObject.gmtCreate = valueresultresultItem["gmtCreate"].asString();
+		if(!valueresultresultItem["newSocSize"].isNull())
+			resultObject.newSocSize = std::stoi(valueresultresultItem["newSocSize"].asString());
+		if(!valueresultresultItem["id"].isNull())
+			resultObject.id = std::stoi(valueresultresultItem["id"].asString());
+		if(!valueresultresultItem["appGroupId"].isNull())
+			resultObject.appGroupId = std::stoi(valueresultresultItem["appGroupId"].asString());
+		if(!valueresultresultItem["newComputeResource"].isNull())
+			resultObject.newComputeResource = std::stoi(valueresultresultItem["newComputeResource"].asString());
+		if(!valueresultresultItem["appGroupName"].isNull())
+			resultObject.appGroupName = valueresultresultItem["appGroupName"].asString();
 		if(!valueresultresultItem["gmtModified"].isNull())
 			resultObject.gmtModified = valueresultresultItem["gmtModified"].asString();
+		if(!valueresultresultItem["newSpec"].isNull())
+			resultObject.newSpec = valueresultresultItem["newSpec"].asString();
 		result_.push_back(resultObject);
 	}
-	if(!value["requestId"].isNull())
-		requestId_ = value["requestId"].asString();
 	if(!value["totalCount"].isNull())
 		totalCount_ = std::stoi(value["totalCount"].asString());
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
 }
 

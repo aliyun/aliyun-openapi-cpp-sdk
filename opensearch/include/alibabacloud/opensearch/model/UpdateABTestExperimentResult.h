@@ -39,8 +39,8 @@ namespace AlibabaCloud
 					std::string params;
 					std::string id;
 					bool online;
-					std::string name;
 					int created;
+					std::string name;
 				};
 
 

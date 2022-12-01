@@ -43,22 +43,22 @@ void ListABTestMetricsResult::parse(const std::string &payload)
 	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
+		if(!valueresultresultItem["zeroHitRate"].isNull())
+			resultObject.zeroHitRate = std::stof(valueresultresultItem["zeroHitRate"].asString());
+		if(!valueresultresultItem["ctr"].isNull())
+			resultObject.ctr = std::stof(valueresultresultItem["ctr"].asString());
 		if(!valueresultresultItem["experimentName"].isNull())
 			resultObject.experimentName = valueresultresultItem["experimentName"].asString();
 		if(!valueresultresultItem["date"].isNull())
 			resultObject.date = valueresultresultItem["date"].asString();
-		if(!valueresultresultItem["pv"].isNull())
-			resultObject.pv = std::stoi(valueresultresultItem["pv"].asString());
+		if(!valueresultresultItem["ipvUv"].isNull())
+			resultObject.ipvUv = std::stoi(valueresultresultItem["ipvUv"].asString());
 		if(!valueresultresultItem["ipv"].isNull())
 			resultObject.ipv = std::stoi(valueresultresultItem["ipv"].asString());
 		if(!valueresultresultItem["uv"].isNull())
 			resultObject.uv = std::stoi(valueresultresultItem["uv"].asString());
-		if(!valueresultresultItem["ipvUv"].isNull())
-			resultObject.ipvUv = std::stoi(valueresultresultItem["ipvUv"].asString());
-		if(!valueresultresultItem["ctr"].isNull())
-			resultObject.ctr = std::stof(valueresultresultItem["ctr"].asString());
-		if(!valueresultresultItem["zeroHitRate"].isNull())
-			resultObject.zeroHitRate = std::stof(valueresultresultItem["zeroHitRate"].asString());
+		if(!valueresultresultItem["pv"].isNull())
+			resultObject.pv = std::stoi(valueresultresultItem["pv"].asString());
 		result_.push_back(resultObject);
 	}
 	if(!value["requestId"].isNull())

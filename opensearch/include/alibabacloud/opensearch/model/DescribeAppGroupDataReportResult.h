@@ -46,8 +46,8 @@ namespace AlibabaCloud
 							std::string sdkVersion;
 							int eventId;
 							std::string page;
-							std::string clientIp;
 							std::string sessionId;
+							std::string clientIp;
 						};
 						Message message;
 						long receivedTimeMs;

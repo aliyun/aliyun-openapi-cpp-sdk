@@ -40,16 +40,16 @@ void DescribeQueryProcessorResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["result"];
-	if(!resultNode["name"].isNull())
-		result_.name = resultNode["name"].asString();
-	if(!resultNode["active"].isNull())
-		result_.active = resultNode["active"].asString() == "true";
-	if(!resultNode["domain"].isNull())
-		result_.domain = resultNode["domain"].asString();
 	if(!resultNode["created"].isNull())
 		result_.created = std::stoi(resultNode["created"].asString());
+	if(!resultNode["active"].isNull())
+		result_.active = resultNode["active"].asString() == "true";
 	if(!resultNode["updated"].isNull())
 		result_.updated = std::stoi(resultNode["updated"].asString());
+	if(!resultNode["name"].isNull())
+		result_.name = resultNode["name"].asString();
+	if(!resultNode["domain"].isNull())
+		result_.domain = resultNode["domain"].asString();
 		auto allIndexes = resultNode["indexes"]["indexes"];
 		for (auto value : allIndexes)
 			result_.indexes.push_back(value.asString());

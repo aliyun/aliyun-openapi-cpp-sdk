@@ -49,26 +49,26 @@ void DescribeAppGroupDataReportResult::parse(const std::string &payload)
 		if(!resultNodereceivedSamplereceivedSampleItem["receivedTimeMs"].isNull())
 			receivedSampleItemObject.receivedTimeMs = std::stol(resultNodereceivedSamplereceivedSampleItem["receivedTimeMs"].asString());
 		auto messageNode = value["message"];
-		if(!messageNode["clientIp"].isNull())
-			receivedSampleItemObject.message.clientIp = messageNode["clientIp"].asString();
-		if(!messageNode["arg3"].isNull())
-			receivedSampleItemObject.message.arg3 = messageNode["arg3"].asString();
-		if(!messageNode["userId"].isNull())
-			receivedSampleItemObject.message.userId = messageNode["userId"].asString();
-		if(!messageNode["args"].isNull())
-			receivedSampleItemObject.message.args = messageNode["args"].asString();
-		if(!messageNode["arg1"].isNull())
-			receivedSampleItemObject.message.arg1 = messageNode["arg1"].asString();
-		if(!messageNode["sdkType"].isNull())
-			receivedSampleItemObject.message.sdkType = messageNode["sdkType"].asString();
-		if(!messageNode["sessionId"].isNull())
-			receivedSampleItemObject.message.sessionId = messageNode["sessionId"].asString();
 		if(!messageNode["eventId"].isNull())
 			receivedSampleItemObject.message.eventId = std::stoi(messageNode["eventId"].asString());
+		if(!messageNode["arg3"].isNull())
+			receivedSampleItemObject.message.arg3 = messageNode["arg3"].asString();
+		if(!messageNode["arg1"].isNull())
+			receivedSampleItemObject.message.arg1 = messageNode["arg1"].asString();
 		if(!messageNode["sdkVersion"].isNull())
 			receivedSampleItemObject.message.sdkVersion = messageNode["sdkVersion"].asString();
+		if(!messageNode["userId"].isNull())
+			receivedSampleItemObject.message.userId = messageNode["userId"].asString();
 		if(!messageNode["page"].isNull())
 			receivedSampleItemObject.message.page = messageNode["page"].asString();
+		if(!messageNode["args"].isNull())
+			receivedSampleItemObject.message.args = messageNode["args"].asString();
+		if(!messageNode["sessionId"].isNull())
+			receivedSampleItemObject.message.sessionId = messageNode["sessionId"].asString();
+		if(!messageNode["sdkType"].isNull())
+			receivedSampleItemObject.message.sdkType = messageNode["sdkType"].asString();
+		if(!messageNode["clientIp"].isNull())
+			receivedSampleItemObject.message.clientIp = messageNode["clientIp"].asString();
 		result_.receivedSample.push_back(receivedSampleItemObject);
 	}
 	if(!value["requestId"].isNull())

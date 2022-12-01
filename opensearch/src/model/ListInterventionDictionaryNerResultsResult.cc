@@ -45,12 +45,12 @@ void ListInterventionDictionaryNerResultsResult::parse(const std::string &payloa
 		NerItem resultObject;
 		if(!valueresultnerItem["tag"].isNull())
 			resultObject.tag = valueresultnerItem["tag"].asString();
-		if(!valueresultnerItem["tagLabel"].isNull())
-			resultObject.tagLabel = valueresultnerItem["tagLabel"].asString();
 		if(!valueresultnerItem["token"].isNull())
 			resultObject.token = valueresultnerItem["token"].asString();
 		if(!valueresultnerItem["order"].isNull())
 			resultObject.order = std::stoi(valueresultnerItem["order"].asString());
+		if(!valueresultnerItem["tagLabel"].isNull())
+			resultObject.tagLabel = valueresultnerItem["tagLabel"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["requestId"].isNull())

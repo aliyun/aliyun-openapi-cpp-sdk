@@ -38,11 +38,13 @@ namespace AlibabaCloud
 				explicit RenewAppGroupResult(const std::string &payload);
 				~RenewAppGroupResult();
 				std::string getRequestId()const;
+				bool getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string requestId_;
+				bool result_;
 
 			};
 		}

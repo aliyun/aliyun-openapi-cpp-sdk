@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					struct Quota
 					{
-						int docSize;
 						int qps;
+						int docSize;
 						int computeResource;
 						std::string spec;
 					};
@@ -63,8 +63,8 @@ namespace AlibabaCloud
 					Quota quota;
 					std::vector<std::string> fetchFields;
 					std::string clusterName;
-					std::string id;
 					int algoDeploymentId;
+					std::string id;
 					Domain domain;
 				};
 

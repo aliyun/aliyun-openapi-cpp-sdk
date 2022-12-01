@@ -41,11 +41,18 @@ void RenewAppGroupResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
+	if(!value["result"].isNull())
+		result_ = value["result"].asString() == "true";
 
 }
 
 std::string RenewAppGroupResult::getRequestId()const
 {
 	return requestId_;
+}
+
+bool RenewAppGroupResult::getResult()const
+{
+	return result_;
 }
 

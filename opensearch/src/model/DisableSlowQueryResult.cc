@@ -39,10 +39,10 @@ void DisableSlowQueryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["requestId"].isNull())
-		requestId_ = value["requestId"].asString();
 	if(!value["result"].isNull())
 		result_ = value["result"].asString();
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
 }
 

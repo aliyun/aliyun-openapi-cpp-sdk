@@ -43,24 +43,24 @@ void ListInterventionDictionariesResult::parse(const std::string &payload)
 	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueresultresultItem["id"].isNull())
-			resultObject.id = std::stoi(valueresultresultItem["id"].asString());
-		if(!valueresultresultItem["name"].isNull())
-			resultObject.name = valueresultresultItem["name"].asString();
+		if(!valueresultresultItem["created"].isNull())
+			resultObject.created = std::stoi(valueresultresultItem["created"].asString());
 		if(!valueresultresultItem["type"].isNull())
 			resultObject.type = valueresultresultItem["type"].asString();
 		if(!valueresultresultItem["analyzer"].isNull())
 			resultObject.analyzer = valueresultresultItem["analyzer"].asString();
-		if(!valueresultresultItem["created"].isNull())
-			resultObject.created = std::stoi(valueresultresultItem["created"].asString());
+		if(!valueresultresultItem["name"].isNull())
+			resultObject.name = valueresultresultItem["name"].asString();
 		if(!valueresultresultItem["updated"].isNull())
 			resultObject.updated = std::stoi(valueresultresultItem["updated"].asString());
+		if(!valueresultresultItem["id"].isNull())
+			resultObject.id = std::stoi(valueresultresultItem["id"].asString());
 		result_.push_back(resultObject);
 	}
-	if(!value["requestId"].isNull())
-		requestId_ = value["requestId"].asString();
 	if(!value["totalCount"].isNull())
 		totalCount_ = std::stoi(value["totalCount"].asString());
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
 }
 

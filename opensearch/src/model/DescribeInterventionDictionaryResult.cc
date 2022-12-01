@@ -40,16 +40,16 @@ void DescribeInterventionDictionaryResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["result"];
-	if(!resultNode["name"].isNull())
-		result_.name = resultNode["name"].asString();
-	if(!resultNode["type"].isNull())
-		result_.type = resultNode["type"].asString();
-	if(!resultNode["analyzer"].isNull())
-		result_.analyzer = resultNode["analyzer"].asString();
 	if(!resultNode["created"].isNull())
 		result_.created = resultNode["created"].asString();
+	if(!resultNode["analyzer"].isNull())
+		result_.analyzer = resultNode["analyzer"].asString();
 	if(!resultNode["updated"].isNull())
 		result_.updated = resultNode["updated"].asString();
+	if(!resultNode["type"].isNull())
+		result_.type = resultNode["type"].asString();
+	if(!resultNode["name"].isNull())
+		result_.name = resultNode["name"].asString();
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
 

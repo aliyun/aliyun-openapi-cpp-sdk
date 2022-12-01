@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,57 +18,47 @@
 
 using AlibabaCloud::OpenSearch::Model::ListInterventionDictionaryEntriesRequest;
 
-ListInterventionDictionaryEntriesRequest::ListInterventionDictionaryEntriesRequest() :
-	RoaServiceRequest("opensearch", "2017-12-25")
-{
-	setResourcePath("/v4/openapi/intervention-dictionaries/[name]/entries");
-	setMethod(HttpRequest::Method::Get);
+ListInterventionDictionaryEntriesRequest::ListInterventionDictionaryEntriesRequest()
+    : RoaServiceRequest("opensearch", "2017-12-25") {
+  setResourcePath("/v4/openapi/intervention-dictionaries/[name]/entries"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListInterventionDictionaryEntriesRequest::~ListInterventionDictionaryEntriesRequest()
-{}
+ListInterventionDictionaryEntriesRequest::~ListInterventionDictionaryEntriesRequest() {}
 
-std::string ListInterventionDictionaryEntriesRequest::getName()const
-{
-	return name_;
+std::string ListInterventionDictionaryEntriesRequest::getName() const {
+  return name_;
 }
 
-void ListInterventionDictionaryEntriesRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
+void ListInterventionDictionaryEntriesRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("name"), name);
 }
 
-int ListInterventionDictionaryEntriesRequest::getPageSize()const
-{
-	return pageSize_;
+int ListInterventionDictionaryEntriesRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void ListInterventionDictionaryEntriesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void ListInterventionDictionaryEntriesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("pageSize"), std::to_string(pageSize));
 }
 
-std::string ListInterventionDictionaryEntriesRequest::getWord()const
-{
-	return word_;
+std::string ListInterventionDictionaryEntriesRequest::getWord() const {
+  return word_;
 }
 
-void ListInterventionDictionaryEntriesRequest::setWord(const std::string& word)
-{
-	word_ = word;
-	setParameter("Word", word);
+void ListInterventionDictionaryEntriesRequest::setWord(const std::string &word) {
+  word_ = word;
+  setParameter(std::string("word"), word);
 }
 
-int ListInterventionDictionaryEntriesRequest::getPageNumber()const
-{
-	return pageNumber_;
+int ListInterventionDictionaryEntriesRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void ListInterventionDictionaryEntriesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void ListInterventionDictionaryEntriesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("pageNumber"), std::to_string(pageNumber));
 }
 

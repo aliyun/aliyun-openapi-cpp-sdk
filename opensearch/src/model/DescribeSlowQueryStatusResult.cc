@@ -42,10 +42,10 @@ void DescribeSlowQueryStatusResult::parse(const std::string &payload)
 	auto resultNode = value["result"];
 	if(!resultNode["region"].isNull())
 		result_.region = resultNode["region"].asString();
-	if(!resultNode["appGroupId"].isNull())
-		result_.appGroupId = resultNode["appGroupId"].asString();
 	if(!resultNode["status"].isNull())
 		result_.status = resultNode["status"].asString();
+	if(!resultNode["appGroupId"].isNull())
+		result_.appGroupId = resultNode["appGroupId"].asString();
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
 

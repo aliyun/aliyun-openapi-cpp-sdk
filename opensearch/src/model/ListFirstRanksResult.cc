@@ -43,24 +43,24 @@ void ListFirstRanksResult::parse(const std::string &payload)
 	for (auto valueresultfirstRankItem : allresultNode)
 	{
 		FirstRankItem resultObject;
-		if(!valueresultfirstRankItem["name"].isNull())
-			resultObject.name = valueresultfirstRankItem["name"].asString();
-		if(!valueresultfirstRankItem["description"].isNull())
-			resultObject.description = valueresultfirstRankItem["description"].asString();
-		if(!valueresultfirstRankItem["active"].isNull())
-			resultObject.active = valueresultfirstRankItem["active"].asString() == "true";
 		if(!valueresultfirstRankItem["created"].isNull())
 			resultObject.created = std::stoi(valueresultfirstRankItem["created"].asString());
+		if(!valueresultfirstRankItem["active"].isNull())
+			resultObject.active = valueresultfirstRankItem["active"].asString() == "true";
+		if(!valueresultfirstRankItem["description"].isNull())
+			resultObject.description = valueresultfirstRankItem["description"].asString();
 		if(!valueresultfirstRankItem["updated"].isNull())
 			resultObject.updated = std::stoi(valueresultfirstRankItem["updated"].asString());
+		if(!valueresultfirstRankItem["name"].isNull())
+			resultObject.name = valueresultfirstRankItem["name"].asString();
 		auto allmetaNode = valueresultfirstRankItem["meta"]["metaItem"];
 		for (auto valueresultfirstRankItemmetametaItem : allmetaNode)
 		{
 			FirstRankItem::MetaItem metaObject;
-			if(!valueresultfirstRankItemmetametaItem["attribute"].isNull())
-				metaObject.attribute = valueresultfirstRankItemmetametaItem["attribute"].asString();
 			if(!valueresultfirstRankItemmetametaItem["arg"].isNull())
 				metaObject.arg = valueresultfirstRankItemmetametaItem["arg"].asString();
+			if(!valueresultfirstRankItemmetametaItem["attribute"].isNull())
+				metaObject.attribute = valueresultfirstRankItemmetametaItem["attribute"].asString();
 			if(!valueresultfirstRankItemmetametaItem["weight"].isNull())
 				metaObject.weight = std::stoi(valueresultfirstRankItemmetametaItem["weight"].asString());
 			resultObject.meta.push_back(metaObject);

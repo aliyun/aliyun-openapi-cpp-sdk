@@ -39,8 +39,8 @@ namespace AlibabaCloud
 					std::string domain;
 					std::vector<std::string> indexes;
 					std::vector<std::string> processors;
-					std::string name;
 					int created;
+					std::string name;
 				};
 
 

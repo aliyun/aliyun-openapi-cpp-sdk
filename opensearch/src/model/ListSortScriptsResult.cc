@@ -43,18 +43,18 @@ void ListSortScriptsResult::parse(const std::string &payload)
 	for (auto valueresultscriptInfo : allresultNode)
 	{
 		ScriptInfo resultObject;
-		if(!valueresultscriptInfo["scriptName"].isNull())
-			resultObject.scriptName = valueresultscriptInfo["scriptName"].asString();
 		if(!valueresultscriptInfo["type"].isNull())
 			resultObject.type = valueresultscriptInfo["type"].asString();
 		if(!valueresultscriptInfo["scope"].isNull())
 			resultObject.scope = valueresultscriptInfo["scope"].asString();
-		if(!valueresultscriptInfo["status"].isNull())
-			resultObject.status = valueresultscriptInfo["status"].asString();
 		if(!valueresultscriptInfo["createTime"].isNull())
 			resultObject.createTime = valueresultscriptInfo["createTime"].asString();
+		if(!valueresultscriptInfo["status"].isNull())
+			resultObject.status = valueresultscriptInfo["status"].asString();
 		if(!valueresultscriptInfo["modifyTime"].isNull())
 			resultObject.modifyTime = valueresultscriptInfo["modifyTime"].asString();
+		if(!valueresultscriptInfo["scriptName"].isNull())
+			resultObject.scriptName = valueresultscriptInfo["scriptName"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["requestId"].isNull())

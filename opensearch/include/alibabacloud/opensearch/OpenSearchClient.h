@@ -22,6 +22,10 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RoaServiceClient.h>
 #include "OpenSearchExport.h"
+#include "model/BindESUserAnalyzerRequest.h"
+#include "model/BindESUserAnalyzerResult.h"
+#include "model/BindEsInstanceRequest.h"
+#include "model/BindEsInstanceResult.h"
 #include "model/CompileSortScriptRequest.h"
 #include "model/CompileSortScriptResult.h"
 #include "model/CreateABTestExperimentRequest.h"
@@ -38,6 +42,10 @@
 #include "model/CreateDataCollectionResult.h"
 #include "model/CreateFirstRankRequest.h"
 #include "model/CreateFirstRankResult.h"
+#include "model/CreateFunctionInstanceRequest.h"
+#include "model/CreateFunctionInstanceResult.h"
+#include "model/CreateFunctionTaskRequest.h"
+#include "model/CreateFunctionTaskResult.h"
 #include "model/CreateInterventionDictionaryRequest.h"
 #include "model/CreateInterventionDictionaryResult.h"
 #include "model/CreateModelRequest.h"
@@ -46,6 +54,8 @@
 #include "model/CreateQueryProcessorResult.h"
 #include "model/CreateScheduledTaskRequest.h"
 #include "model/CreateScheduledTaskResult.h"
+#include "model/CreateSearchStrategyRequest.h"
+#include "model/CreateSearchStrategyResult.h"
 #include "model/CreateSecondRankRequest.h"
 #include "model/CreateSecondRankResult.h"
 #include "model/CreateSortScriptRequest.h"
@@ -58,6 +68,10 @@
 #include "model/DeleteABTestGroupResult.h"
 #include "model/DeleteABTestSceneRequest.h"
 #include "model/DeleteABTestSceneResult.h"
+#include "model/DeleteFunctionInstanceRequest.h"
+#include "model/DeleteFunctionInstanceResult.h"
+#include "model/DeleteFunctionTaskRequest.h"
+#include "model/DeleteFunctionTaskResult.h"
 #include "model/DeleteModelRequest.h"
 #include "model/DeleteModelResult.h"
 #include "model/DeleteSortScriptRequest.h"
@@ -76,6 +90,8 @@
 #include "model/DescribeAppGroupResult.h"
 #include "model/DescribeAppGroupDataReportRequest.h"
 #include "model/DescribeAppGroupDataReportResult.h"
+#include "model/DescribeAppGroupStatisticsRequest.h"
+#include "model/DescribeAppGroupStatisticsResult.h"
 #include "model/DescribeAppStatisticsRequest.h"
 #include "model/DescribeAppStatisticsResult.h"
 #include "model/DescribeAppsRequest.h"
@@ -110,12 +126,24 @@
 #include "model/GenerateMergedTableResult.h"
 #include "model/GetDomainRequest.h"
 #include "model/GetDomainResult.h"
+#include "model/GetFunctionCurrentVersionRequest.h"
+#include "model/GetFunctionCurrentVersionResult.h"
+#include "model/GetFunctionDefaultInstanceRequest.h"
+#include "model/GetFunctionDefaultInstanceResult.h"
+#include "model/GetFunctionInstanceRequest.h"
+#include "model/GetFunctionInstanceResult.h"
+#include "model/GetFunctionTaskRequest.h"
+#include "model/GetFunctionTaskResult.h"
+#include "model/GetFunctionVersionRequest.h"
+#include "model/GetFunctionVersionResult.h"
 #include "model/GetModelProgressRequest.h"
 #include "model/GetModelProgressResult.h"
 #include "model/GetModelReportRequest.h"
 #include "model/GetModelReportResult.h"
 #include "model/GetScriptFileNamesRequest.h"
 #include "model/GetScriptFileNamesResult.h"
+#include "model/GetSearchStrategyRequest.h"
+#include "model/GetSearchStrategyResult.h"
 #include "model/GetSortScriptRequest.h"
 #include "model/GetSortScriptResult.h"
 #include "model/GetSortScriptFileRequest.h"
@@ -152,6 +180,10 @@
 #include "model/ListDeployedAlgorithmModelsResult.h"
 #include "model/ListFirstRanksRequest.h"
 #include "model/ListFirstRanksResult.h"
+#include "model/ListFunctionInstancesRequest.h"
+#include "model/ListFunctionInstancesResult.h"
+#include "model/ListFunctionTasksRequest.h"
+#include "model/ListFunctionTasksResult.h"
 #include "model/ListInterventionDictionariesRequest.h"
 #include "model/ListInterventionDictionariesResult.h"
 #include "model/ListInterventionDictionaryEntriesRequest.h"
@@ -162,6 +194,10 @@
 #include "model/ListInterventionDictionaryRelatedEntitiesResult.h"
 #include "model/ListModelsRequest.h"
 #include "model/ListModelsResult.h"
+#include "model/ListProceedingsRequest.h"
+#include "model/ListProceedingsResult.h"
+#include "model/ListQueryProcessorAnalyzerResultsRequest.h"
+#include "model/ListQueryProcessorAnalyzerResultsResult.h"
 #include "model/ListQueryProcessorNersRequest.h"
 #include "model/ListQueryProcessorNersResult.h"
 #include "model/ListQueryProcessorsRequest.h"
@@ -172,6 +208,8 @@
 #include "model/ListRamRolesResult.h"
 #include "model/ListScheduledTasksRequest.h"
 #include "model/ListScheduledTasksResult.h"
+#include "model/ListSearchStrategiesRequest.h"
+#include "model/ListSearchStrategiesResult.h"
 #include "model/ListSecondRanksRequest.h"
 #include "model/ListSecondRanksResult.h"
 #include "model/ListSlowQueryCategoriesRequest.h"
@@ -186,6 +224,8 @@
 #include "model/ListStatisticLogsResult.h"
 #include "model/ListStatisticReportRequest.h"
 #include "model/ListStatisticReportResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
 #include "model/ListUserAnalyzerEntriesRequest.h"
 #include "model/ListUserAnalyzerEntriesResult.h"
 #include "model/ListUserAnalyzersRequest.h"
@@ -228,6 +268,8 @@
 #include "model/RemoveQueryProcessorResult.h"
 #include "model/RemoveScheduledTaskRequest.h"
 #include "model/RemoveScheduledTaskResult.h"
+#include "model/RemoveSearchStrategyRequest.h"
+#include "model/RemoveSearchStrategyResult.h"
 #include "model/RemoveSecondRankRequest.h"
 #include "model/RemoveSecondRankResult.h"
 #include "model/RemoveUserAnalyzerRequest.h"
@@ -240,8 +282,16 @@
 #include "model/SaveSortScriptFileResult.h"
 #include "model/StartSlowQueryAnalyzerRequest.h"
 #include "model/StartSlowQueryAnalyzerResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
 #include "model/TrainModelRequest.h"
 #include "model/TrainModelResult.h"
+#include "model/UnbindESUserAnalyzerRequest.h"
+#include "model/UnbindESUserAnalyzerResult.h"
+#include "model/UnbindEsInstanceRequest.h"
+#include "model/UnbindEsInstanceResult.h"
+#include "model/UntagResourcesRequest.h"
+#include "model/UntagResourcesResult.h"
 #include "model/UpdateABTestExperimentRequest.h"
 #include "model/UpdateABTestExperimentResult.h"
 #include "model/UpdateABTestFixedFlowDividersRequest.h"
@@ -252,10 +302,18 @@
 #include "model/UpdateABTestSceneResult.h"
 #include "model/UpdateFetchFieldsRequest.h"
 #include "model/UpdateFetchFieldsResult.h"
+#include "model/UpdateFunctionDefaultInstanceRequest.h"
+#include "model/UpdateFunctionDefaultInstanceResult.h"
+#include "model/UpdateFunctionInstanceRequest.h"
+#include "model/UpdateFunctionInstanceResult.h"
+#include "model/UpdateSearchStrategyRequest.h"
+#include "model/UpdateSearchStrategyResult.h"
 #include "model/UpdateSortScriptRequest.h"
 #include "model/UpdateSortScriptResult.h"
 #include "model/UpdateSummariesRequest.h"
 #include "model/UpdateSummariesResult.h"
+#include "model/ValidateDataSourcesRequest.h"
+#include "model/ValidateDataSourcesResult.h"
 
 
 namespace AlibabaCloud
@@ -265,6 +323,12 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_OPENSEARCH_EXPORT OpenSearchClient : public RoaServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::BindESUserAnalyzerResult> BindESUserAnalyzerOutcome;
+			typedef std::future<BindESUserAnalyzerOutcome> BindESUserAnalyzerOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::BindESUserAnalyzerRequest&, const BindESUserAnalyzerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindESUserAnalyzerAsyncHandler;
+			typedef Outcome<Error, Model::BindEsInstanceResult> BindEsInstanceOutcome;
+			typedef std::future<BindEsInstanceOutcome> BindEsInstanceOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::BindEsInstanceRequest&, const BindEsInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindEsInstanceAsyncHandler;
 			typedef Outcome<Error, Model::CompileSortScriptResult> CompileSortScriptOutcome;
 			typedef std::future<CompileSortScriptOutcome> CompileSortScriptOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::CompileSortScriptRequest&, const CompileSortScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompileSortScriptAsyncHandler;
@@ -289,6 +353,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateFirstRankResult> CreateFirstRankOutcome;
 			typedef std::future<CreateFirstRankOutcome> CreateFirstRankOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::CreateFirstRankRequest&, const CreateFirstRankOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirstRankAsyncHandler;
+			typedef Outcome<Error, Model::CreateFunctionInstanceResult> CreateFunctionInstanceOutcome;
+			typedef std::future<CreateFunctionInstanceOutcome> CreateFunctionInstanceOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::CreateFunctionInstanceRequest&, const CreateFunctionInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFunctionInstanceAsyncHandler;
+			typedef Outcome<Error, Model::CreateFunctionTaskResult> CreateFunctionTaskOutcome;
+			typedef std::future<CreateFunctionTaskOutcome> CreateFunctionTaskOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::CreateFunctionTaskRequest&, const CreateFunctionTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFunctionTaskAsyncHandler;
 			typedef Outcome<Error, Model::CreateInterventionDictionaryResult> CreateInterventionDictionaryOutcome;
 			typedef std::future<CreateInterventionDictionaryOutcome> CreateInterventionDictionaryOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::CreateInterventionDictionaryRequest&, const CreateInterventionDictionaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInterventionDictionaryAsyncHandler;
@@ -301,6 +371,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateScheduledTaskResult> CreateScheduledTaskOutcome;
 			typedef std::future<CreateScheduledTaskOutcome> CreateScheduledTaskOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::CreateScheduledTaskRequest&, const CreateScheduledTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateScheduledTaskAsyncHandler;
+			typedef Outcome<Error, Model::CreateSearchStrategyResult> CreateSearchStrategyOutcome;
+			typedef std::future<CreateSearchStrategyOutcome> CreateSearchStrategyOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::CreateSearchStrategyRequest&, const CreateSearchStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSearchStrategyAsyncHandler;
 			typedef Outcome<Error, Model::CreateSecondRankResult> CreateSecondRankOutcome;
 			typedef std::future<CreateSecondRankOutcome> CreateSecondRankOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::CreateSecondRankRequest&, const CreateSecondRankOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecondRankAsyncHandler;
@@ -319,6 +392,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteABTestSceneResult> DeleteABTestSceneOutcome;
 			typedef std::future<DeleteABTestSceneOutcome> DeleteABTestSceneOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::DeleteABTestSceneRequest&, const DeleteABTestSceneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteABTestSceneAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFunctionInstanceResult> DeleteFunctionInstanceOutcome;
+			typedef std::future<DeleteFunctionInstanceOutcome> DeleteFunctionInstanceOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::DeleteFunctionInstanceRequest&, const DeleteFunctionInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteFunctionTaskResult> DeleteFunctionTaskOutcome;
+			typedef std::future<DeleteFunctionTaskOutcome> DeleteFunctionTaskOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::DeleteFunctionTaskRequest&, const DeleteFunctionTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFunctionTaskAsyncHandler;
 			typedef Outcome<Error, Model::DeleteModelResult> DeleteModelOutcome;
 			typedef std::future<DeleteModelOutcome> DeleteModelOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::DeleteModelRequest&, const DeleteModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteModelAsyncHandler;
@@ -346,6 +425,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAppGroupDataReportResult> DescribeAppGroupDataReportOutcome;
 			typedef std::future<DescribeAppGroupDataReportOutcome> DescribeAppGroupDataReportOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::DescribeAppGroupDataReportRequest&, const DescribeAppGroupDataReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppGroupDataReportAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAppGroupStatisticsResult> DescribeAppGroupStatisticsOutcome;
+			typedef std::future<DescribeAppGroupStatisticsOutcome> DescribeAppGroupStatisticsOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::DescribeAppGroupStatisticsRequest&, const DescribeAppGroupStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppGroupStatisticsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAppStatisticsResult> DescribeAppStatisticsOutcome;
 			typedef std::future<DescribeAppStatisticsOutcome> DescribeAppStatisticsOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::DescribeAppStatisticsRequest&, const DescribeAppStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppStatisticsAsyncHandler;
@@ -397,6 +479,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDomainResult> GetDomainOutcome;
 			typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::GetDomainRequest&, const GetDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDomainAsyncHandler;
+			typedef Outcome<Error, Model::GetFunctionCurrentVersionResult> GetFunctionCurrentVersionOutcome;
+			typedef std::future<GetFunctionCurrentVersionOutcome> GetFunctionCurrentVersionOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::GetFunctionCurrentVersionRequest&, const GetFunctionCurrentVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionCurrentVersionAsyncHandler;
+			typedef Outcome<Error, Model::GetFunctionDefaultInstanceResult> GetFunctionDefaultInstanceOutcome;
+			typedef std::future<GetFunctionDefaultInstanceOutcome> GetFunctionDefaultInstanceOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::GetFunctionDefaultInstanceRequest&, const GetFunctionDefaultInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionDefaultInstanceAsyncHandler;
+			typedef Outcome<Error, Model::GetFunctionInstanceResult> GetFunctionInstanceOutcome;
+			typedef std::future<GetFunctionInstanceOutcome> GetFunctionInstanceOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::GetFunctionInstanceRequest&, const GetFunctionInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionInstanceAsyncHandler;
+			typedef Outcome<Error, Model::GetFunctionTaskResult> GetFunctionTaskOutcome;
+			typedef std::future<GetFunctionTaskOutcome> GetFunctionTaskOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::GetFunctionTaskRequest&, const GetFunctionTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionTaskAsyncHandler;
+			typedef Outcome<Error, Model::GetFunctionVersionResult> GetFunctionVersionOutcome;
+			typedef std::future<GetFunctionVersionOutcome> GetFunctionVersionOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::GetFunctionVersionRequest&, const GetFunctionVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFunctionVersionAsyncHandler;
 			typedef Outcome<Error, Model::GetModelProgressResult> GetModelProgressOutcome;
 			typedef std::future<GetModelProgressOutcome> GetModelProgressOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::GetModelProgressRequest&, const GetModelProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetModelProgressAsyncHandler;
@@ -406,6 +503,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetScriptFileNamesResult> GetScriptFileNamesOutcome;
 			typedef std::future<GetScriptFileNamesOutcome> GetScriptFileNamesOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::GetScriptFileNamesRequest&, const GetScriptFileNamesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetScriptFileNamesAsyncHandler;
+			typedef Outcome<Error, Model::GetSearchStrategyResult> GetSearchStrategyOutcome;
+			typedef std::future<GetSearchStrategyOutcome> GetSearchStrategyOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::GetSearchStrategyRequest&, const GetSearchStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSearchStrategyAsyncHandler;
 			typedef Outcome<Error, Model::GetSortScriptResult> GetSortScriptOutcome;
 			typedef std::future<GetSortScriptOutcome> GetSortScriptOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::GetSortScriptRequest&, const GetSortScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSortScriptAsyncHandler;
@@ -460,6 +560,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListFirstRanksResult> ListFirstRanksOutcome;
 			typedef std::future<ListFirstRanksOutcome> ListFirstRanksOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::ListFirstRanksRequest&, const ListFirstRanksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFirstRanksAsyncHandler;
+			typedef Outcome<Error, Model::ListFunctionInstancesResult> ListFunctionInstancesOutcome;
+			typedef std::future<ListFunctionInstancesOutcome> ListFunctionInstancesOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::ListFunctionInstancesRequest&, const ListFunctionInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFunctionInstancesAsyncHandler;
+			typedef Outcome<Error, Model::ListFunctionTasksResult> ListFunctionTasksOutcome;
+			typedef std::future<ListFunctionTasksOutcome> ListFunctionTasksOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::ListFunctionTasksRequest&, const ListFunctionTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFunctionTasksAsyncHandler;
 			typedef Outcome<Error, Model::ListInterventionDictionariesResult> ListInterventionDictionariesOutcome;
 			typedef std::future<ListInterventionDictionariesOutcome> ListInterventionDictionariesOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::ListInterventionDictionariesRequest&, const ListInterventionDictionariesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInterventionDictionariesAsyncHandler;
@@ -475,6 +581,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListModelsResult> ListModelsOutcome;
 			typedef std::future<ListModelsOutcome> ListModelsOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::ListModelsRequest&, const ListModelsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListModelsAsyncHandler;
+			typedef Outcome<Error, Model::ListProceedingsResult> ListProceedingsOutcome;
+			typedef std::future<ListProceedingsOutcome> ListProceedingsOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::ListProceedingsRequest&, const ListProceedingsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListProceedingsAsyncHandler;
+			typedef Outcome<Error, Model::ListQueryProcessorAnalyzerResultsResult> ListQueryProcessorAnalyzerResultsOutcome;
+			typedef std::future<ListQueryProcessorAnalyzerResultsOutcome> ListQueryProcessorAnalyzerResultsOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::ListQueryProcessorAnalyzerResultsRequest&, const ListQueryProcessorAnalyzerResultsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQueryProcessorAnalyzerResultsAsyncHandler;
 			typedef Outcome<Error, Model::ListQueryProcessorNersResult> ListQueryProcessorNersOutcome;
 			typedef std::future<ListQueryProcessorNersOutcome> ListQueryProcessorNersOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::ListQueryProcessorNersRequest&, const ListQueryProcessorNersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListQueryProcessorNersAsyncHandler;
@@ -490,6 +602,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListScheduledTasksResult> ListScheduledTasksOutcome;
 			typedef std::future<ListScheduledTasksOutcome> ListScheduledTasksOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::ListScheduledTasksRequest&, const ListScheduledTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScheduledTasksAsyncHandler;
+			typedef Outcome<Error, Model::ListSearchStrategiesResult> ListSearchStrategiesOutcome;
+			typedef std::future<ListSearchStrategiesOutcome> ListSearchStrategiesOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::ListSearchStrategiesRequest&, const ListSearchStrategiesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSearchStrategiesAsyncHandler;
 			typedef Outcome<Error, Model::ListSecondRanksResult> ListSecondRanksOutcome;
 			typedef std::future<ListSecondRanksOutcome> ListSecondRanksOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::ListSecondRanksRequest&, const ListSecondRanksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSecondRanksAsyncHandler;
@@ -511,6 +626,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListStatisticReportResult> ListStatisticReportOutcome;
 			typedef std::future<ListStatisticReportOutcome> ListStatisticReportOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::ListStatisticReportRequest&, const ListStatisticReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListStatisticReportAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::ListUserAnalyzerEntriesResult> ListUserAnalyzerEntriesOutcome;
 			typedef std::future<ListUserAnalyzerEntriesOutcome> ListUserAnalyzerEntriesOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::ListUserAnalyzerEntriesRequest&, const ListUserAnalyzerEntriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListUserAnalyzerEntriesAsyncHandler;
@@ -574,6 +692,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RemoveScheduledTaskResult> RemoveScheduledTaskOutcome;
 			typedef std::future<RemoveScheduledTaskOutcome> RemoveScheduledTaskOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::RemoveScheduledTaskRequest&, const RemoveScheduledTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveScheduledTaskAsyncHandler;
+			typedef Outcome<Error, Model::RemoveSearchStrategyResult> RemoveSearchStrategyOutcome;
+			typedef std::future<RemoveSearchStrategyOutcome> RemoveSearchStrategyOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::RemoveSearchStrategyRequest&, const RemoveSearchStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveSearchStrategyAsyncHandler;
 			typedef Outcome<Error, Model::RemoveSecondRankResult> RemoveSecondRankOutcome;
 			typedef std::future<RemoveSecondRankOutcome> RemoveSecondRankOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::RemoveSecondRankRequest&, const RemoveSecondRankOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveSecondRankAsyncHandler;
@@ -592,9 +713,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartSlowQueryAnalyzerResult> StartSlowQueryAnalyzerOutcome;
 			typedef std::future<StartSlowQueryAnalyzerOutcome> StartSlowQueryAnalyzerOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::StartSlowQueryAnalyzerRequest&, const StartSlowQueryAnalyzerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartSlowQueryAnalyzerAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::TrainModelResult> TrainModelOutcome;
 			typedef std::future<TrainModelOutcome> TrainModelOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::TrainModelRequest&, const TrainModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TrainModelAsyncHandler;
+			typedef Outcome<Error, Model::UnbindESUserAnalyzerResult> UnbindESUserAnalyzerOutcome;
+			typedef std::future<UnbindESUserAnalyzerOutcome> UnbindESUserAnalyzerOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::UnbindESUserAnalyzerRequest&, const UnbindESUserAnalyzerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindESUserAnalyzerAsyncHandler;
+			typedef Outcome<Error, Model::UnbindEsInstanceResult> UnbindEsInstanceOutcome;
+			typedef std::future<UnbindEsInstanceOutcome> UnbindEsInstanceOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::UnbindEsInstanceRequest&, const UnbindEsInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindEsInstanceAsyncHandler;
+			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
+			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateABTestExperimentResult> UpdateABTestExperimentOutcome;
 			typedef std::future<UpdateABTestExperimentOutcome> UpdateABTestExperimentOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::UpdateABTestExperimentRequest&, const UpdateABTestExperimentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateABTestExperimentAsyncHandler;
@@ -610,17 +743,35 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateFetchFieldsResult> UpdateFetchFieldsOutcome;
 			typedef std::future<UpdateFetchFieldsOutcome> UpdateFetchFieldsOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::UpdateFetchFieldsRequest&, const UpdateFetchFieldsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFetchFieldsAsyncHandler;
+			typedef Outcome<Error, Model::UpdateFunctionDefaultInstanceResult> UpdateFunctionDefaultInstanceOutcome;
+			typedef std::future<UpdateFunctionDefaultInstanceOutcome> UpdateFunctionDefaultInstanceOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::UpdateFunctionDefaultInstanceRequest&, const UpdateFunctionDefaultInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFunctionDefaultInstanceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateFunctionInstanceResult> UpdateFunctionInstanceOutcome;
+			typedef std::future<UpdateFunctionInstanceOutcome> UpdateFunctionInstanceOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::UpdateFunctionInstanceRequest&, const UpdateFunctionInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateFunctionInstanceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateSearchStrategyResult> UpdateSearchStrategyOutcome;
+			typedef std::future<UpdateSearchStrategyOutcome> UpdateSearchStrategyOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::UpdateSearchStrategyRequest&, const UpdateSearchStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSearchStrategyAsyncHandler;
 			typedef Outcome<Error, Model::UpdateSortScriptResult> UpdateSortScriptOutcome;
 			typedef std::future<UpdateSortScriptOutcome> UpdateSortScriptOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::UpdateSortScriptRequest&, const UpdateSortScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSortScriptAsyncHandler;
 			typedef Outcome<Error, Model::UpdateSummariesResult> UpdateSummariesOutcome;
 			typedef std::future<UpdateSummariesOutcome> UpdateSummariesOutcomeCallable;
 			typedef std::function<void(const OpenSearchClient*, const Model::UpdateSummariesRequest&, const UpdateSummariesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSummariesAsyncHandler;
+			typedef Outcome<Error, Model::ValidateDataSourcesResult> ValidateDataSourcesOutcome;
+			typedef std::future<ValidateDataSourcesOutcome> ValidateDataSourcesOutcomeCallable;
+			typedef std::function<void(const OpenSearchClient*, const Model::ValidateDataSourcesRequest&, const ValidateDataSourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateDataSourcesAsyncHandler;
 
 			OpenSearchClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			OpenSearchClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			OpenSearchClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~OpenSearchClient();
+			BindESUserAnalyzerOutcome bindESUserAnalyzer(const Model::BindESUserAnalyzerRequest &request)const;
+			void bindESUserAnalyzerAsync(const Model::BindESUserAnalyzerRequest& request, const BindESUserAnalyzerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindESUserAnalyzerOutcomeCallable bindESUserAnalyzerCallable(const Model::BindESUserAnalyzerRequest& request) const;
+			BindEsInstanceOutcome bindEsInstance(const Model::BindEsInstanceRequest &request)const;
+			void bindEsInstanceAsync(const Model::BindEsInstanceRequest& request, const BindEsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindEsInstanceOutcomeCallable bindEsInstanceCallable(const Model::BindEsInstanceRequest& request) const;
 			CompileSortScriptOutcome compileSortScript(const Model::CompileSortScriptRequest &request)const;
 			void compileSortScriptAsync(const Model::CompileSortScriptRequest& request, const CompileSortScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CompileSortScriptOutcomeCallable compileSortScriptCallable(const Model::CompileSortScriptRequest& request) const;
@@ -645,6 +796,12 @@ namespace AlibabaCloud
 			CreateFirstRankOutcome createFirstRank(const Model::CreateFirstRankRequest &request)const;
 			void createFirstRankAsync(const Model::CreateFirstRankRequest& request, const CreateFirstRankAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFirstRankOutcomeCallable createFirstRankCallable(const Model::CreateFirstRankRequest& request) const;
+			CreateFunctionInstanceOutcome createFunctionInstance(const Model::CreateFunctionInstanceRequest &request)const;
+			void createFunctionInstanceAsync(const Model::CreateFunctionInstanceRequest& request, const CreateFunctionInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFunctionInstanceOutcomeCallable createFunctionInstanceCallable(const Model::CreateFunctionInstanceRequest& request) const;
+			CreateFunctionTaskOutcome createFunctionTask(const Model::CreateFunctionTaskRequest &request)const;
+			void createFunctionTaskAsync(const Model::CreateFunctionTaskRequest& request, const CreateFunctionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFunctionTaskOutcomeCallable createFunctionTaskCallable(const Model::CreateFunctionTaskRequest& request) const;
 			CreateInterventionDictionaryOutcome createInterventionDictionary(const Model::CreateInterventionDictionaryRequest &request)const;
 			void createInterventionDictionaryAsync(const Model::CreateInterventionDictionaryRequest& request, const CreateInterventionDictionaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInterventionDictionaryOutcomeCallable createInterventionDictionaryCallable(const Model::CreateInterventionDictionaryRequest& request) const;
@@ -657,6 +814,9 @@ namespace AlibabaCloud
 			CreateScheduledTaskOutcome createScheduledTask(const Model::CreateScheduledTaskRequest &request)const;
 			void createScheduledTaskAsync(const Model::CreateScheduledTaskRequest& request, const CreateScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateScheduledTaskOutcomeCallable createScheduledTaskCallable(const Model::CreateScheduledTaskRequest& request) const;
+			CreateSearchStrategyOutcome createSearchStrategy(const Model::CreateSearchStrategyRequest &request)const;
+			void createSearchStrategyAsync(const Model::CreateSearchStrategyRequest& request, const CreateSearchStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSearchStrategyOutcomeCallable createSearchStrategyCallable(const Model::CreateSearchStrategyRequest& request) const;
 			CreateSecondRankOutcome createSecondRank(const Model::CreateSecondRankRequest &request)const;
 			void createSecondRankAsync(const Model::CreateSecondRankRequest& request, const CreateSecondRankAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSecondRankOutcomeCallable createSecondRankCallable(const Model::CreateSecondRankRequest& request) const;
@@ -675,6 +835,12 @@ namespace AlibabaCloud
 			DeleteABTestSceneOutcome deleteABTestScene(const Model::DeleteABTestSceneRequest &request)const;
 			void deleteABTestSceneAsync(const Model::DeleteABTestSceneRequest& request, const DeleteABTestSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteABTestSceneOutcomeCallable deleteABTestSceneCallable(const Model::DeleteABTestSceneRequest& request) const;
+			DeleteFunctionInstanceOutcome deleteFunctionInstance(const Model::DeleteFunctionInstanceRequest &request)const;
+			void deleteFunctionInstanceAsync(const Model::DeleteFunctionInstanceRequest& request, const DeleteFunctionInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFunctionInstanceOutcomeCallable deleteFunctionInstanceCallable(const Model::DeleteFunctionInstanceRequest& request) const;
+			DeleteFunctionTaskOutcome deleteFunctionTask(const Model::DeleteFunctionTaskRequest &request)const;
+			void deleteFunctionTaskAsync(const Model::DeleteFunctionTaskRequest& request, const DeleteFunctionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteFunctionTaskOutcomeCallable deleteFunctionTaskCallable(const Model::DeleteFunctionTaskRequest& request) const;
 			DeleteModelOutcome deleteModel(const Model::DeleteModelRequest &request)const;
 			void deleteModelAsync(const Model::DeleteModelRequest& request, const DeleteModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteModelOutcomeCallable deleteModelCallable(const Model::DeleteModelRequest& request) const;
@@ -702,6 +868,9 @@ namespace AlibabaCloud
 			DescribeAppGroupDataReportOutcome describeAppGroupDataReport(const Model::DescribeAppGroupDataReportRequest &request)const;
 			void describeAppGroupDataReportAsync(const Model::DescribeAppGroupDataReportRequest& request, const DescribeAppGroupDataReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAppGroupDataReportOutcomeCallable describeAppGroupDataReportCallable(const Model::DescribeAppGroupDataReportRequest& request) const;
+			DescribeAppGroupStatisticsOutcome describeAppGroupStatistics(const Model::DescribeAppGroupStatisticsRequest &request)const;
+			void describeAppGroupStatisticsAsync(const Model::DescribeAppGroupStatisticsRequest& request, const DescribeAppGroupStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAppGroupStatisticsOutcomeCallable describeAppGroupStatisticsCallable(const Model::DescribeAppGroupStatisticsRequest& request) const;
 			DescribeAppStatisticsOutcome describeAppStatistics(const Model::DescribeAppStatisticsRequest &request)const;
 			void describeAppStatisticsAsync(const Model::DescribeAppStatisticsRequest& request, const DescribeAppStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAppStatisticsOutcomeCallable describeAppStatisticsCallable(const Model::DescribeAppStatisticsRequest& request) const;
@@ -753,6 +922,21 @@ namespace AlibabaCloud
 			GetDomainOutcome getDomain(const Model::GetDomainRequest &request)const;
 			void getDomainAsync(const Model::GetDomainRequest& request, const GetDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDomainOutcomeCallable getDomainCallable(const Model::GetDomainRequest& request) const;
+			GetFunctionCurrentVersionOutcome getFunctionCurrentVersion(const Model::GetFunctionCurrentVersionRequest &request)const;
+			void getFunctionCurrentVersionAsync(const Model::GetFunctionCurrentVersionRequest& request, const GetFunctionCurrentVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetFunctionCurrentVersionOutcomeCallable getFunctionCurrentVersionCallable(const Model::GetFunctionCurrentVersionRequest& request) const;
+			GetFunctionDefaultInstanceOutcome getFunctionDefaultInstance(const Model::GetFunctionDefaultInstanceRequest &request)const;
+			void getFunctionDefaultInstanceAsync(const Model::GetFunctionDefaultInstanceRequest& request, const GetFunctionDefaultInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetFunctionDefaultInstanceOutcomeCallable getFunctionDefaultInstanceCallable(const Model::GetFunctionDefaultInstanceRequest& request) const;
+			GetFunctionInstanceOutcome getFunctionInstance(const Model::GetFunctionInstanceRequest &request)const;
+			void getFunctionInstanceAsync(const Model::GetFunctionInstanceRequest& request, const GetFunctionInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetFunctionInstanceOutcomeCallable getFunctionInstanceCallable(const Model::GetFunctionInstanceRequest& request) const;
+			GetFunctionTaskOutcome getFunctionTask(const Model::GetFunctionTaskRequest &request)const;
+			void getFunctionTaskAsync(const Model::GetFunctionTaskRequest& request, const GetFunctionTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetFunctionTaskOutcomeCallable getFunctionTaskCallable(const Model::GetFunctionTaskRequest& request) const;
+			GetFunctionVersionOutcome getFunctionVersion(const Model::GetFunctionVersionRequest &request)const;
+			void getFunctionVersionAsync(const Model::GetFunctionVersionRequest& request, const GetFunctionVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetFunctionVersionOutcomeCallable getFunctionVersionCallable(const Model::GetFunctionVersionRequest& request) const;
 			GetModelProgressOutcome getModelProgress(const Model::GetModelProgressRequest &request)const;
 			void getModelProgressAsync(const Model::GetModelProgressRequest& request, const GetModelProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetModelProgressOutcomeCallable getModelProgressCallable(const Model::GetModelProgressRequest& request) const;
@@ -762,6 +946,9 @@ namespace AlibabaCloud
 			GetScriptFileNamesOutcome getScriptFileNames(const Model::GetScriptFileNamesRequest &request)const;
 			void getScriptFileNamesAsync(const Model::GetScriptFileNamesRequest& request, const GetScriptFileNamesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetScriptFileNamesOutcomeCallable getScriptFileNamesCallable(const Model::GetScriptFileNamesRequest& request) const;
+			GetSearchStrategyOutcome getSearchStrategy(const Model::GetSearchStrategyRequest &request)const;
+			void getSearchStrategyAsync(const Model::GetSearchStrategyRequest& request, const GetSearchStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSearchStrategyOutcomeCallable getSearchStrategyCallable(const Model::GetSearchStrategyRequest& request) const;
 			GetSortScriptOutcome getSortScript(const Model::GetSortScriptRequest &request)const;
 			void getSortScriptAsync(const Model::GetSortScriptRequest& request, const GetSortScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSortScriptOutcomeCallable getSortScriptCallable(const Model::GetSortScriptRequest& request) const;
@@ -816,6 +1003,12 @@ namespace AlibabaCloud
 			ListFirstRanksOutcome listFirstRanks(const Model::ListFirstRanksRequest &request)const;
 			void listFirstRanksAsync(const Model::ListFirstRanksRequest& request, const ListFirstRanksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListFirstRanksOutcomeCallable listFirstRanksCallable(const Model::ListFirstRanksRequest& request) const;
+			ListFunctionInstancesOutcome listFunctionInstances(const Model::ListFunctionInstancesRequest &request)const;
+			void listFunctionInstancesAsync(const Model::ListFunctionInstancesRequest& request, const ListFunctionInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFunctionInstancesOutcomeCallable listFunctionInstancesCallable(const Model::ListFunctionInstancesRequest& request) const;
+			ListFunctionTasksOutcome listFunctionTasks(const Model::ListFunctionTasksRequest &request)const;
+			void listFunctionTasksAsync(const Model::ListFunctionTasksRequest& request, const ListFunctionTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFunctionTasksOutcomeCallable listFunctionTasksCallable(const Model::ListFunctionTasksRequest& request) const;
 			ListInterventionDictionariesOutcome listInterventionDictionaries(const Model::ListInterventionDictionariesRequest &request)const;
 			void listInterventionDictionariesAsync(const Model::ListInterventionDictionariesRequest& request, const ListInterventionDictionariesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInterventionDictionariesOutcomeCallable listInterventionDictionariesCallable(const Model::ListInterventionDictionariesRequest& request) const;
@@ -831,6 +1024,12 @@ namespace AlibabaCloud
 			ListModelsOutcome listModels(const Model::ListModelsRequest &request)const;
 			void listModelsAsync(const Model::ListModelsRequest& request, const ListModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListModelsOutcomeCallable listModelsCallable(const Model::ListModelsRequest& request) const;
+			ListProceedingsOutcome listProceedings(const Model::ListProceedingsRequest &request)const;
+			void listProceedingsAsync(const Model::ListProceedingsRequest& request, const ListProceedingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListProceedingsOutcomeCallable listProceedingsCallable(const Model::ListProceedingsRequest& request) const;
+			ListQueryProcessorAnalyzerResultsOutcome listQueryProcessorAnalyzerResults(const Model::ListQueryProcessorAnalyzerResultsRequest &request)const;
+			void listQueryProcessorAnalyzerResultsAsync(const Model::ListQueryProcessorAnalyzerResultsRequest& request, const ListQueryProcessorAnalyzerResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListQueryProcessorAnalyzerResultsOutcomeCallable listQueryProcessorAnalyzerResultsCallable(const Model::ListQueryProcessorAnalyzerResultsRequest& request) const;
 			ListQueryProcessorNersOutcome listQueryProcessorNers(const Model::ListQueryProcessorNersRequest &request)const;
 			void listQueryProcessorNersAsync(const Model::ListQueryProcessorNersRequest& request, const ListQueryProcessorNersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListQueryProcessorNersOutcomeCallable listQueryProcessorNersCallable(const Model::ListQueryProcessorNersRequest& request) const;
@@ -846,6 +1045,9 @@ namespace AlibabaCloud
 			ListScheduledTasksOutcome listScheduledTasks(const Model::ListScheduledTasksRequest &request)const;
 			void listScheduledTasksAsync(const Model::ListScheduledTasksRequest& request, const ListScheduledTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListScheduledTasksOutcomeCallable listScheduledTasksCallable(const Model::ListScheduledTasksRequest& request) const;
+			ListSearchStrategiesOutcome listSearchStrategies(const Model::ListSearchStrategiesRequest &request)const;
+			void listSearchStrategiesAsync(const Model::ListSearchStrategiesRequest& request, const ListSearchStrategiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSearchStrategiesOutcomeCallable listSearchStrategiesCallable(const Model::ListSearchStrategiesRequest& request) const;
 			ListSecondRanksOutcome listSecondRanks(const Model::ListSecondRanksRequest &request)const;
 			void listSecondRanksAsync(const Model::ListSecondRanksRequest& request, const ListSecondRanksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSecondRanksOutcomeCallable listSecondRanksCallable(const Model::ListSecondRanksRequest& request) const;
@@ -867,6 +1069,9 @@ namespace AlibabaCloud
 			ListStatisticReportOutcome listStatisticReport(const Model::ListStatisticReportRequest &request)const;
 			void listStatisticReportAsync(const Model::ListStatisticReportRequest& request, const ListStatisticReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListStatisticReportOutcomeCallable listStatisticReportCallable(const Model::ListStatisticReportRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
 			ListUserAnalyzerEntriesOutcome listUserAnalyzerEntries(const Model::ListUserAnalyzerEntriesRequest &request)const;
 			void listUserAnalyzerEntriesAsync(const Model::ListUserAnalyzerEntriesRequest& request, const ListUserAnalyzerEntriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListUserAnalyzerEntriesOutcomeCallable listUserAnalyzerEntriesCallable(const Model::ListUserAnalyzerEntriesRequest& request) const;
@@ -930,6 +1135,9 @@ namespace AlibabaCloud
 			RemoveScheduledTaskOutcome removeScheduledTask(const Model::RemoveScheduledTaskRequest &request)const;
 			void removeScheduledTaskAsync(const Model::RemoveScheduledTaskRequest& request, const RemoveScheduledTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveScheduledTaskOutcomeCallable removeScheduledTaskCallable(const Model::RemoveScheduledTaskRequest& request) const;
+			RemoveSearchStrategyOutcome removeSearchStrategy(const Model::RemoveSearchStrategyRequest &request)const;
+			void removeSearchStrategyAsync(const Model::RemoveSearchStrategyRequest& request, const RemoveSearchStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveSearchStrategyOutcomeCallable removeSearchStrategyCallable(const Model::RemoveSearchStrategyRequest& request) const;
 			RemoveSecondRankOutcome removeSecondRank(const Model::RemoveSecondRankRequest &request)const;
 			void removeSecondRankAsync(const Model::RemoveSecondRankRequest& request, const RemoveSecondRankAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveSecondRankOutcomeCallable removeSecondRankCallable(const Model::RemoveSecondRankRequest& request) const;
@@ -948,9 +1156,21 @@ namespace AlibabaCloud
 			StartSlowQueryAnalyzerOutcome startSlowQueryAnalyzer(const Model::StartSlowQueryAnalyzerRequest &request)const;
 			void startSlowQueryAnalyzerAsync(const Model::StartSlowQueryAnalyzerRequest& request, const StartSlowQueryAnalyzerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartSlowQueryAnalyzerOutcomeCallable startSlowQueryAnalyzerCallable(const Model::StartSlowQueryAnalyzerRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
 			TrainModelOutcome trainModel(const Model::TrainModelRequest &request)const;
 			void trainModelAsync(const Model::TrainModelRequest& request, const TrainModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TrainModelOutcomeCallable trainModelCallable(const Model::TrainModelRequest& request) const;
+			UnbindESUserAnalyzerOutcome unbindESUserAnalyzer(const Model::UnbindESUserAnalyzerRequest &request)const;
+			void unbindESUserAnalyzerAsync(const Model::UnbindESUserAnalyzerRequest& request, const UnbindESUserAnalyzerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindESUserAnalyzerOutcomeCallable unbindESUserAnalyzerCallable(const Model::UnbindESUserAnalyzerRequest& request) const;
+			UnbindEsInstanceOutcome unbindEsInstance(const Model::UnbindEsInstanceRequest &request)const;
+			void unbindEsInstanceAsync(const Model::UnbindEsInstanceRequest& request, const UnbindEsInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindEsInstanceOutcomeCallable unbindEsInstanceCallable(const Model::UnbindEsInstanceRequest& request) const;
+			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
+			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 			UpdateABTestExperimentOutcome updateABTestExperiment(const Model::UpdateABTestExperimentRequest &request)const;
 			void updateABTestExperimentAsync(const Model::UpdateABTestExperimentRequest& request, const UpdateABTestExperimentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateABTestExperimentOutcomeCallable updateABTestExperimentCallable(const Model::UpdateABTestExperimentRequest& request) const;
@@ -966,12 +1186,24 @@ namespace AlibabaCloud
 			UpdateFetchFieldsOutcome updateFetchFields(const Model::UpdateFetchFieldsRequest &request)const;
 			void updateFetchFieldsAsync(const Model::UpdateFetchFieldsRequest& request, const UpdateFetchFieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateFetchFieldsOutcomeCallable updateFetchFieldsCallable(const Model::UpdateFetchFieldsRequest& request) const;
+			UpdateFunctionDefaultInstanceOutcome updateFunctionDefaultInstance(const Model::UpdateFunctionDefaultInstanceRequest &request)const;
+			void updateFunctionDefaultInstanceAsync(const Model::UpdateFunctionDefaultInstanceRequest& request, const UpdateFunctionDefaultInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateFunctionDefaultInstanceOutcomeCallable updateFunctionDefaultInstanceCallable(const Model::UpdateFunctionDefaultInstanceRequest& request) const;
+			UpdateFunctionInstanceOutcome updateFunctionInstance(const Model::UpdateFunctionInstanceRequest &request)const;
+			void updateFunctionInstanceAsync(const Model::UpdateFunctionInstanceRequest& request, const UpdateFunctionInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateFunctionInstanceOutcomeCallable updateFunctionInstanceCallable(const Model::UpdateFunctionInstanceRequest& request) const;
+			UpdateSearchStrategyOutcome updateSearchStrategy(const Model::UpdateSearchStrategyRequest &request)const;
+			void updateSearchStrategyAsync(const Model::UpdateSearchStrategyRequest& request, const UpdateSearchStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateSearchStrategyOutcomeCallable updateSearchStrategyCallable(const Model::UpdateSearchStrategyRequest& request) const;
 			UpdateSortScriptOutcome updateSortScript(const Model::UpdateSortScriptRequest &request)const;
 			void updateSortScriptAsync(const Model::UpdateSortScriptRequest& request, const UpdateSortScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateSortScriptOutcomeCallable updateSortScriptCallable(const Model::UpdateSortScriptRequest& request) const;
 			UpdateSummariesOutcome updateSummaries(const Model::UpdateSummariesRequest &request)const;
 			void updateSummariesAsync(const Model::UpdateSummariesRequest& request, const UpdateSummariesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateSummariesOutcomeCallable updateSummariesCallable(const Model::UpdateSummariesRequest& request) const;
+			ValidateDataSourcesOutcome validateDataSources(const Model::ValidateDataSourcesRequest &request)const;
+			void validateDataSourcesAsync(const Model::ValidateDataSourcesRequest& request, const ValidateDataSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ValidateDataSourcesOutcomeCallable validateDataSourcesCallable(const Model::ValidateDataSourcesRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,35 +18,29 @@
 
 using AlibabaCloud::OpenSearch::Model::DescribeAppStatisticsRequest;
 
-DescribeAppStatisticsRequest::DescribeAppStatisticsRequest() :
-	RoaServiceRequest("opensearch", "2017-12-25")
-{
-	setResourcePath("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/statistics");
-	setMethod(HttpRequest::Method::Get);
+DescribeAppStatisticsRequest::DescribeAppStatisticsRequest()
+    : RoaServiceRequest("opensearch", "2017-12-25") {
+  setResourcePath("/v4/openapi/app-groups/[appGroupIdentity]/apps/[appId]/statistics"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-DescribeAppStatisticsRequest::~DescribeAppStatisticsRequest()
-{}
+DescribeAppStatisticsRequest::~DescribeAppStatisticsRequest() {}
 
-std::string DescribeAppStatisticsRequest::getAppId()const
-{
-	return appId_;
+std::string DescribeAppStatisticsRequest::getAppId() const {
+  return appId_;
 }
 
-void DescribeAppStatisticsRequest::setAppId(const std::string& appId)
-{
-	appId_ = appId;
-	setParameter("AppId", appId);
+void DescribeAppStatisticsRequest::setAppId(const std::string &appId) {
+  appId_ = appId;
+  setParameter(std::string("appId"), appId);
 }
 
-std::string DescribeAppStatisticsRequest::getAppGroupIdentity()const
-{
-	return appGroupIdentity_;
+std::string DescribeAppStatisticsRequest::getAppGroupIdentity() const {
+  return appGroupIdentity_;
 }
 
-void DescribeAppStatisticsRequest::setAppGroupIdentity(const std::string& appGroupIdentity)
-{
-	appGroupIdentity_ = appGroupIdentity;
-	setParameter("AppGroupIdentity", appGroupIdentity);
+void DescribeAppStatisticsRequest::setAppGroupIdentity(const std::string &appGroupIdentity) {
+  appGroupIdentity_ = appGroupIdentity;
+  setParameter(std::string("appGroupIdentity"), appGroupIdentity);
 }
 

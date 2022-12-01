@@ -41,8 +41,8 @@ namespace AlibabaCloud
 					std::string dataCollectionType;
 					std::string id;
 					std::string industryName;
-					std::string name;
 					int created;
+					std::string name;
 				};
 
 

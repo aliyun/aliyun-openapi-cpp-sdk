@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,46 +18,38 @@
 
 using AlibabaCloud::OpenSearch::Model::ListDeployedAlgorithmModelsRequest;
 
-ListDeployedAlgorithmModelsRequest::ListDeployedAlgorithmModelsRequest() :
-	RoaServiceRequest("opensearch", "2017-12-25")
-{
-	setResourcePath("/v4/openapi/app-groups/[appGroupIdentity]/deployed-algorithm-models");
-	setMethod(HttpRequest::Method::Get);
+ListDeployedAlgorithmModelsRequest::ListDeployedAlgorithmModelsRequest()
+    : RoaServiceRequest("opensearch", "2017-12-25") {
+  setResourcePath("/v4/openapi/app-groups/[appGroupIdentity]/deployed-algorithm-models"};
+  setMethod(HttpRequest::Method::Get);
 }
 
-ListDeployedAlgorithmModelsRequest::~ListDeployedAlgorithmModelsRequest()
-{}
+ListDeployedAlgorithmModelsRequest::~ListDeployedAlgorithmModelsRequest() {}
 
-std::string ListDeployedAlgorithmModelsRequest::getAlgorithmType()const
-{
-	return algorithmType_;
+std::string ListDeployedAlgorithmModelsRequest::getAlgorithmType() const {
+  return algorithmType_;
 }
 
-void ListDeployedAlgorithmModelsRequest::setAlgorithmType(const std::string& algorithmType)
-{
-	algorithmType_ = algorithmType;
-	setParameter("AlgorithmType", algorithmType);
+void ListDeployedAlgorithmModelsRequest::setAlgorithmType(const std::string &algorithmType) {
+  algorithmType_ = algorithmType;
+  setParameter(std::string("algorithmType"), algorithmType);
 }
 
-bool ListDeployedAlgorithmModelsRequest::getInServiceOnly()const
-{
-	return inServiceOnly_;
+bool ListDeployedAlgorithmModelsRequest::getInServiceOnly() const {
+  return inServiceOnly_;
 }
 
-void ListDeployedAlgorithmModelsRequest::setInServiceOnly(bool inServiceOnly)
-{
-	inServiceOnly_ = inServiceOnly;
-	setParameter("InServiceOnly", inServiceOnly ? "true" : "false");
+void ListDeployedAlgorithmModelsRequest::setInServiceOnly(bool inServiceOnly) {
+  inServiceOnly_ = inServiceOnly;
+  setParameter(std::string("inServiceOnly"), inServiceOnly ? "true" : "false");
 }
 
-std::string ListDeployedAlgorithmModelsRequest::getAppGroupIdentity()const
-{
-	return appGroupIdentity_;
+std::string ListDeployedAlgorithmModelsRequest::getAppGroupIdentity() const {
+  return appGroupIdentity_;
 }
 
-void ListDeployedAlgorithmModelsRequest::setAppGroupIdentity(const std::string& appGroupIdentity)
-{
-	appGroupIdentity_ = appGroupIdentity;
-	setParameter("AppGroupIdentity", appGroupIdentity);
+void ListDeployedAlgorithmModelsRequest::setAppGroupIdentity(const std::string &appGroupIdentity) {
+  appGroupIdentity_ = appGroupIdentity;
+  setParameter(std::string("appGroupIdentity"), appGroupIdentity);
 }
 

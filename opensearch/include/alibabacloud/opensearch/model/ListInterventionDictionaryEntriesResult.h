@@ -41,8 +41,8 @@ namespace AlibabaCloud
 						std::string token;
 						std::string tag;
 					};
-					std::string status;
 					std::string relevance;
+					std::string status;
 					std::string word;
 					long updated;
 					std::vector<WordItem::Token> tokens;

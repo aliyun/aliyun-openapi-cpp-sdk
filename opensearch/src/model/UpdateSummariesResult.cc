@@ -39,10 +39,10 @@ void UpdateSummariesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["requestId"].isNull())
-		requestId_ = value["requestId"].asString();
 	if(!value["result"].isNull())
 		result_ = value["result"].asString() == "true";
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
 }
 

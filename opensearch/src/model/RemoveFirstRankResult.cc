@@ -40,20 +40,20 @@ void RemoveFirstRankResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["result"];
-	if(!resultNode["name"].isNull())
-		result_.name = resultNode["name"].asString();
 	if(!resultNode["description"].isNull())
 		result_.description = resultNode["description"].asString();
 	if(!resultNode["active"].isNull())
 		result_.active = resultNode["active"].asString() == "true";
+	if(!resultNode["name"].isNull())
+		result_.name = resultNode["name"].asString();
 	auto allmetaNode = resultNode["meta"]["metaItem"];
 	for (auto resultNodemetametaItem : allmetaNode)
 	{
 		Result::MetaItem metaItemObject;
-		if(!resultNodemetametaItem["attribute"].isNull())
-			metaItemObject.attribute = resultNodemetametaItem["attribute"].asString();
 		if(!resultNodemetametaItem["arg"].isNull())
 			metaItemObject.arg = resultNodemetametaItem["arg"].asString();
+		if(!resultNodemetametaItem["attribute"].isNull())
+			metaItemObject.attribute = resultNodemetametaItem["attribute"].asString();
 		if(!resultNodemetametaItem["weight"].isNull())
 			metaItemObject.weight = std::stof(resultNodemetametaItem["weight"].asString());
 		result_.meta.push_back(metaItemObject);

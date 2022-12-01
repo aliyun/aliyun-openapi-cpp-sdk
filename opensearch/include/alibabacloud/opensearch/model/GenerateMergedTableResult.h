@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct Result
 				{
 					std::string mergeTable;
-					std::string fromTable;
 					std::string primaryKey;
+					std::string fromTable;
 				};
 
 

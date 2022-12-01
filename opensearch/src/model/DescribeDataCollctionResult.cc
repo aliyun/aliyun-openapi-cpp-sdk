@@ -40,24 +40,24 @@ void DescribeDataCollctionResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["result"];
-	if(!resultNode["id"].isNull())
-		result_.id = resultNode["id"].asString();
-	if(!resultNode["name"].isNull())
-		result_.name = resultNode["name"].asString();
-	if(!resultNode["type"].isNull())
-		result_.type = resultNode["type"].asString();
-	if(!resultNode["status"].isNull())
-		result_.status = std::stoi(resultNode["status"].asString());
-	if(!resultNode["dataCollectionType"].isNull())
-		result_.dataCollectionType = resultNode["dataCollectionType"].asString();
-	if(!resultNode["industryName"].isNull())
-		result_.industryName = resultNode["industryName"].asString();
 	if(!resultNode["created"].isNull())
 		result_.created = std::stoi(resultNode["created"].asString());
+	if(!resultNode["dataCollectionType"].isNull())
+		result_.dataCollectionType = resultNode["dataCollectionType"].asString();
+	if(!resultNode["type"].isNull())
+		result_.type = resultNode["type"].asString();
+	if(!resultNode["industryName"].isNull())
+		result_.industryName = resultNode["industryName"].asString();
+	if(!resultNode["status"].isNull())
+		result_.status = std::stoi(resultNode["status"].asString());
 	if(!resultNode["updated"].isNull())
 		result_.updated = std::stoi(resultNode["updated"].asString());
+	if(!resultNode["name"].isNull())
+		result_.name = resultNode["name"].asString();
 	if(!resultNode["sundialId"].isNull())
 		result_.sundialId = resultNode["sundialId"].asString();
+	if(!resultNode["id"].isNull())
+		result_.id = resultNode["id"].asString();
 	if(!value["requestId"].isNull())
 		requestId_ = value["requestId"].asString();
 

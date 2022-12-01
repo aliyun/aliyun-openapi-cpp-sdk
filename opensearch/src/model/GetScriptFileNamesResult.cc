@@ -43,12 +43,14 @@ void GetScriptFileNamesResult::parse(const std::string &payload)
 	for (auto valueresultfileInfos : allresultNode)
 	{
 		FileInfos resultObject;
-		if(!valueresultfileInfos["fileName"].isNull())
-			resultObject.fileName = valueresultfileInfos["fileName"].asString();
 		if(!valueresultfileInfos["createTime"].isNull())
 			resultObject.createTime = valueresultfileInfos["createTime"].asString();
+		if(!valueresultfileInfos["fileName"].isNull())
+			resultObject.fileName = valueresultfileInfos["fileName"].asString();
 		if(!valueresultfileInfos["modifyTime"].isNull())
 			resultObject.modifyTime = valueresultfileInfos["modifyTime"].asString();
+		if(!valueresultfileInfos["pathName"].isNull())
+			resultObject.pathName = valueresultfileInfos["pathName"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["requestId"].isNull())

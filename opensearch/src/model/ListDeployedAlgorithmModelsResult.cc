@@ -43,36 +43,36 @@ void ListDeployedAlgorithmModelsResult::parse(const std::string &payload)
 	for (auto valueresultresultItem : allresultNode)
 	{
 		ResultItem resultObject;
-		if(!valueresultresultItem["id"].isNull())
-			resultObject.id = valueresultresultItem["id"].asString();
 		if(!valueresultresultItem["appGroupName"].isNull())
 			resultObject.appGroupName = valueresultresultItem["appGroupName"].asString();
-		if(!valueresultresultItem["scene"].isNull())
-			resultObject.scene = valueresultresultItem["scene"].asString();
-		if(!valueresultresultItem["desc"].isNull())
-			resultObject.desc = valueresultresultItem["desc"].asString();
-		if(!valueresultresultItem["gmtCreate"].isNull())
-			resultObject.gmtCreate = valueresultresultItem["gmtCreate"].asString();
 		if(!valueresultresultItem["gmtModified"].isNull())
 			resultObject.gmtModified = valueresultresultItem["gmtModified"].asString();
 		if(!valueresultresultItem["status"].isNull())
 			resultObject.status = valueresultresultItem["status"].asString();
+		if(!valueresultresultItem["scene"].isNull())
+			resultObject.scene = valueresultresultItem["scene"].asString();
+		if(!valueresultresultItem["gmtCreate"].isNull())
+			resultObject.gmtCreate = valueresultresultItem["gmtCreate"].asString();
+		if(!valueresultresultItem["id"].isNull())
+			resultObject.id = valueresultresultItem["id"].asString();
+		if(!valueresultresultItem["desc"].isNull())
+			resultObject.desc = valueresultresultItem["desc"].asString();
 		auto allmodelsNode = valueresultresultItem["models"]["modelsItem"];
 		for (auto valueresultresultItemmodelsmodelsItem : allmodelsNode)
 		{
 			ResultItem::ModelsItem modelsObject;
 			if(!valueresultresultItemmodelsmodelsItem["modelName"].isNull())
 				modelsObject.modelName = valueresultresultItemmodelsmodelsItem["modelName"].asString();
-			if(!valueresultresultItemmodelsmodelsItem["modelId"].isNull())
-				modelsObject.modelId = std::stoi(valueresultresultItemmodelsmodelsItem["modelId"].asString());
-			if(!valueresultresultItemmodelsmodelsItem["progress"].isNull())
-				modelsObject.progress = std::stoi(valueresultresultItemmodelsmodelsItem["progress"].asString());
-			if(!valueresultresultItemmodelsmodelsItem["status"].isNull())
-				modelsObject.status = valueresultresultItemmodelsmodelsItem["status"].asString();
 			if(!valueresultresultItemmodelsmodelsItem["projectId"].isNull())
 				modelsObject.projectId = std::stoi(valueresultresultItemmodelsmodelsItem["projectId"].asString());
+			if(!valueresultresultItemmodelsmodelsItem["modelId"].isNull())
+				modelsObject.modelId = std::stoi(valueresultresultItemmodelsmodelsItem["modelId"].asString());
 			if(!valueresultresultItemmodelsmodelsItem["algorithmType"].isNull())
 				modelsObject.algorithmType = valueresultresultItemmodelsmodelsItem["algorithmType"].asString();
+			if(!valueresultresultItemmodelsmodelsItem["status"].isNull())
+				modelsObject.status = valueresultresultItemmodelsmodelsItem["status"].asString();
+			if(!valueresultresultItemmodelsmodelsItem["progress"].isNull())
+				modelsObject.progress = std::stoi(valueresultresultItemmodelsmodelsItem["progress"].asString());
 			resultObject.models.push_back(modelsObject);
 		}
 		auto allApps = value["apps"]["apps"];

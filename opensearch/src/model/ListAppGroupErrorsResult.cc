@@ -42,10 +42,10 @@ void ListAppGroupErrorsResult::parse(const std::string &payload)
 	auto allresult = value["result"]["result"];
 	for (const auto &item : allresult)
 		result_.push_back(item.asString());
-	if(!value["requestId"].isNull())
-		requestId_ = value["requestId"].asString();
 	if(!value["totalCount"].isNull())
 		totalCount_ = std::stol(value["totalCount"].asString());
+	if(!value["requestId"].isNull())
+		requestId_ = value["requestId"].asString();
 
 }
 

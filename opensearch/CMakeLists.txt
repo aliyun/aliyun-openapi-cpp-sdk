@@ -21,6 +21,10 @@ set(opensearch_public_header
 	include/alibabacloud/opensearch/OpenSearchExport.h )
 
 set(opensearch_public_header_model 
+	include/alibabacloud/opensearch/model/BindESUserAnalyzerRequest.h
+	include/alibabacloud/opensearch/model/BindESUserAnalyzerResult.h
+	include/alibabacloud/opensearch/model/BindEsInstanceRequest.h
+	include/alibabacloud/opensearch/model/BindEsInstanceResult.h
 	include/alibabacloud/opensearch/model/CompileSortScriptRequest.h
 	include/alibabacloud/opensearch/model/CompileSortScriptResult.h
 	include/alibabacloud/opensearch/model/CreateABTestExperimentRequest.h
@@ -37,6 +41,10 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/CreateDataCollectionResult.h
 	include/alibabacloud/opensearch/model/CreateFirstRankRequest.h
 	include/alibabacloud/opensearch/model/CreateFirstRankResult.h
+	include/alibabacloud/opensearch/model/CreateFunctionInstanceRequest.h
+	include/alibabacloud/opensearch/model/CreateFunctionInstanceResult.h
+	include/alibabacloud/opensearch/model/CreateFunctionTaskRequest.h
+	include/alibabacloud/opensearch/model/CreateFunctionTaskResult.h
 	include/alibabacloud/opensearch/model/CreateInterventionDictionaryRequest.h
 	include/alibabacloud/opensearch/model/CreateInterventionDictionaryResult.h
 	include/alibabacloud/opensearch/model/CreateModelRequest.h
@@ -45,6 +53,8 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/CreateQueryProcessorResult.h
 	include/alibabacloud/opensearch/model/CreateScheduledTaskRequest.h
 	include/alibabacloud/opensearch/model/CreateScheduledTaskResult.h
+	include/alibabacloud/opensearch/model/CreateSearchStrategyRequest.h
+	include/alibabacloud/opensearch/model/CreateSearchStrategyResult.h
 	include/alibabacloud/opensearch/model/CreateSecondRankRequest.h
 	include/alibabacloud/opensearch/model/CreateSecondRankResult.h
 	include/alibabacloud/opensearch/model/CreateSortScriptRequest.h
@@ -57,6 +67,10 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/DeleteABTestGroupResult.h
 	include/alibabacloud/opensearch/model/DeleteABTestSceneRequest.h
 	include/alibabacloud/opensearch/model/DeleteABTestSceneResult.h
+	include/alibabacloud/opensearch/model/DeleteFunctionInstanceRequest.h
+	include/alibabacloud/opensearch/model/DeleteFunctionInstanceResult.h
+	include/alibabacloud/opensearch/model/DeleteFunctionTaskRequest.h
+	include/alibabacloud/opensearch/model/DeleteFunctionTaskResult.h
 	include/alibabacloud/opensearch/model/DeleteModelRequest.h
 	include/alibabacloud/opensearch/model/DeleteModelResult.h
 	include/alibabacloud/opensearch/model/DeleteSortScriptRequest.h
@@ -75,6 +89,8 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/DescribeAppGroupResult.h
 	include/alibabacloud/opensearch/model/DescribeAppGroupDataReportRequest.h
 	include/alibabacloud/opensearch/model/DescribeAppGroupDataReportResult.h
+	include/alibabacloud/opensearch/model/DescribeAppGroupStatisticsRequest.h
+	include/alibabacloud/opensearch/model/DescribeAppGroupStatisticsResult.h
 	include/alibabacloud/opensearch/model/DescribeAppStatisticsRequest.h
 	include/alibabacloud/opensearch/model/DescribeAppStatisticsResult.h
 	include/alibabacloud/opensearch/model/DescribeAppsRequest.h
@@ -109,12 +125,24 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/GenerateMergedTableResult.h
 	include/alibabacloud/opensearch/model/GetDomainRequest.h
 	include/alibabacloud/opensearch/model/GetDomainResult.h
+	include/alibabacloud/opensearch/model/GetFunctionCurrentVersionRequest.h
+	include/alibabacloud/opensearch/model/GetFunctionCurrentVersionResult.h
+	include/alibabacloud/opensearch/model/GetFunctionDefaultInstanceRequest.h
+	include/alibabacloud/opensearch/model/GetFunctionDefaultInstanceResult.h
+	include/alibabacloud/opensearch/model/GetFunctionInstanceRequest.h
+	include/alibabacloud/opensearch/model/GetFunctionInstanceResult.h
+	include/alibabacloud/opensearch/model/GetFunctionTaskRequest.h
+	include/alibabacloud/opensearch/model/GetFunctionTaskResult.h
+	include/alibabacloud/opensearch/model/GetFunctionVersionRequest.h
+	include/alibabacloud/opensearch/model/GetFunctionVersionResult.h
 	include/alibabacloud/opensearch/model/GetModelProgressRequest.h
 	include/alibabacloud/opensearch/model/GetModelProgressResult.h
 	include/alibabacloud/opensearch/model/GetModelReportRequest.h
 	include/alibabacloud/opensearch/model/GetModelReportResult.h
 	include/alibabacloud/opensearch/model/GetScriptFileNamesRequest.h
 	include/alibabacloud/opensearch/model/GetScriptFileNamesResult.h
+	include/alibabacloud/opensearch/model/GetSearchStrategyRequest.h
+	include/alibabacloud/opensearch/model/GetSearchStrategyResult.h
 	include/alibabacloud/opensearch/model/GetSortScriptRequest.h
 	include/alibabacloud/opensearch/model/GetSortScriptResult.h
 	include/alibabacloud/opensearch/model/GetSortScriptFileRequest.h
@@ -151,6 +179,10 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/ListDeployedAlgorithmModelsResult.h
 	include/alibabacloud/opensearch/model/ListFirstRanksRequest.h
 	include/alibabacloud/opensearch/model/ListFirstRanksResult.h
+	include/alibabacloud/opensearch/model/ListFunctionInstancesRequest.h
+	include/alibabacloud/opensearch/model/ListFunctionInstancesResult.h
+	include/alibabacloud/opensearch/model/ListFunctionTasksRequest.h
+	include/alibabacloud/opensearch/model/ListFunctionTasksResult.h
 	include/alibabacloud/opensearch/model/ListInterventionDictionariesRequest.h
 	include/alibabacloud/opensearch/model/ListInterventionDictionariesResult.h
 	include/alibabacloud/opensearch/model/ListInterventionDictionaryEntriesRequest.h
@@ -161,6 +193,10 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/ListInterventionDictionaryRelatedEntitiesResult.h
 	include/alibabacloud/opensearch/model/ListModelsRequest.h
 	include/alibabacloud/opensearch/model/ListModelsResult.h
+	include/alibabacloud/opensearch/model/ListProceedingsRequest.h
+	include/alibabacloud/opensearch/model/ListProceedingsResult.h
+	include/alibabacloud/opensearch/model/ListQueryProcessorAnalyzerResultsRequest.h
+	include/alibabacloud/opensearch/model/ListQueryProcessorAnalyzerResultsResult.h
 	include/alibabacloud/opensearch/model/ListQueryProcessorNersRequest.h
 	include/alibabacloud/opensearch/model/ListQueryProcessorNersResult.h
 	include/alibabacloud/opensearch/model/ListQueryProcessorsRequest.h
@@ -171,6 +207,8 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/ListRamRolesResult.h
 	include/alibabacloud/opensearch/model/ListScheduledTasksRequest.h
 	include/alibabacloud/opensearch/model/ListScheduledTasksResult.h
+	include/alibabacloud/opensearch/model/ListSearchStrategiesRequest.h
+	include/alibabacloud/opensearch/model/ListSearchStrategiesResult.h
 	include/alibabacloud/opensearch/model/ListSecondRanksRequest.h
 	include/alibabacloud/opensearch/model/ListSecondRanksResult.h
 	include/alibabacloud/opensearch/model/ListSlowQueryCategoriesRequest.h
@@ -185,6 +223,8 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/ListStatisticLogsResult.h
 	include/alibabacloud/opensearch/model/ListStatisticReportRequest.h
 	include/alibabacloud/opensearch/model/ListStatisticReportResult.h
+	include/alibabacloud/opensearch/model/ListTagResourcesRequest.h
+	include/alibabacloud/opensearch/model/ListTagResourcesResult.h
 	include/alibabacloud/opensearch/model/ListUserAnalyzerEntriesRequest.h
 	include/alibabacloud/opensearch/model/ListUserAnalyzerEntriesResult.h
 	include/alibabacloud/opensearch/model/ListUserAnalyzersRequest.h
@@ -227,6 +267,8 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/RemoveQueryProcessorResult.h
 	include/alibabacloud/opensearch/model/RemoveScheduledTaskRequest.h
 	include/alibabacloud/opensearch/model/RemoveScheduledTaskResult.h
+	include/alibabacloud/opensearch/model/RemoveSearchStrategyRequest.h
+	include/alibabacloud/opensearch/model/RemoveSearchStrategyResult.h
 	include/alibabacloud/opensearch/model/RemoveSecondRankRequest.h
 	include/alibabacloud/opensearch/model/RemoveSecondRankResult.h
 	include/alibabacloud/opensearch/model/RemoveUserAnalyzerRequest.h
@@ -239,8 +281,16 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/SaveSortScriptFileResult.h
 	include/alibabacloud/opensearch/model/StartSlowQueryAnalyzerRequest.h
 	include/alibabacloud/opensearch/model/StartSlowQueryAnalyzerResult.h
+	include/alibabacloud/opensearch/model/TagResourcesRequest.h
+	include/alibabacloud/opensearch/model/TagResourcesResult.h
 	include/alibabacloud/opensearch/model/TrainModelRequest.h
 	include/alibabacloud/opensearch/model/TrainModelResult.h
+	include/alibabacloud/opensearch/model/UnbindESUserAnalyzerRequest.h
+	include/alibabacloud/opensearch/model/UnbindESUserAnalyzerResult.h
+	include/alibabacloud/opensearch/model/UnbindEsInstanceRequest.h
+	include/alibabacloud/opensearch/model/UnbindEsInstanceResult.h
+	include/alibabacloud/opensearch/model/UntagResourcesRequest.h
+	include/alibabacloud/opensearch/model/UntagResourcesResult.h
 	include/alibabacloud/opensearch/model/UpdateABTestExperimentRequest.h
 	include/alibabacloud/opensearch/model/UpdateABTestExperimentResult.h
 	include/alibabacloud/opensearch/model/UpdateABTestFixedFlowDividersRequest.h
@@ -251,13 +301,25 @@ set(opensearch_public_header_model
 	include/alibabacloud/opensearch/model/UpdateABTestSceneResult.h
 	include/alibabacloud/opensearch/model/UpdateFetchFieldsRequest.h
 	include/alibabacloud/opensearch/model/UpdateFetchFieldsResult.h
+	include/alibabacloud/opensearch/model/UpdateFunctionDefaultInstanceRequest.h
+	include/alibabacloud/opensearch/model/UpdateFunctionDefaultInstanceResult.h
+	include/alibabacloud/opensearch/model/UpdateFunctionInstanceRequest.h
+	include/alibabacloud/opensearch/model/UpdateFunctionInstanceResult.h
+	include/alibabacloud/opensearch/model/UpdateSearchStrategyRequest.h
+	include/alibabacloud/opensearch/model/UpdateSearchStrategyResult.h
 	include/alibabacloud/opensearch/model/UpdateSortScriptRequest.h
 	include/alibabacloud/opensearch/model/UpdateSortScriptResult.h
 	include/alibabacloud/opensearch/model/UpdateSummariesRequest.h
-	include/alibabacloud/opensearch/model/UpdateSummariesResult.h )
+	include/alibabacloud/opensearch/model/UpdateSummariesResult.h
+	include/alibabacloud/opensearch/model/ValidateDataSourcesRequest.h
+	include/alibabacloud/opensearch/model/ValidateDataSourcesResult.h )
 
 set(opensearch_src 
 	src/OpenSearchClient.cc
+	src/model/BindESUserAnalyzerRequest.cc
+	src/model/BindESUserAnalyzerResult.cc
+	src/model/BindEsInstanceRequest.cc
+	src/model/BindEsInstanceResult.cc
 	src/model/CompileSortScriptRequest.cc
 	src/model/CompileSortScriptResult.cc
 	src/model/CreateABTestExperimentRequest.cc
@@ -274,6 +336,10 @@ set(opensearch_src
 	src/model/CreateDataCollectionResult.cc
 	src/model/CreateFirstRankRequest.cc
 	src/model/CreateFirstRankResult.cc
+	src/model/CreateFunctionInstanceRequest.cc
+	src/model/CreateFunctionInstanceResult.cc
+	src/model/CreateFunctionTaskRequest.cc
+	src/model/CreateFunctionTaskResult.cc
 	src/model/CreateInterventionDictionaryRequest.cc
 	src/model/CreateInterventionDictionaryResult.cc
 	src/model/CreateModelRequest.cc
@@ -282,6 +348,8 @@ set(opensearch_src
 	src/model/CreateQueryProcessorResult.cc
 	src/model/CreateScheduledTaskRequest.cc
 	src/model/CreateScheduledTaskResult.cc
+	src/model/CreateSearchStrategyRequest.cc
+	src/model/CreateSearchStrategyResult.cc
 	src/model/CreateSecondRankRequest.cc
 	src/model/CreateSecondRankResult.cc
 	src/model/CreateSortScriptRequest.cc
@@ -294,6 +362,10 @@ set(opensearch_src
 	src/model/DeleteABTestGroupResult.cc
 	src/model/DeleteABTestSceneRequest.cc
 	src/model/DeleteABTestSceneResult.cc
+	src/model/DeleteFunctionInstanceRequest.cc
+	src/model/DeleteFunctionInstanceResult.cc
+	src/model/DeleteFunctionTaskRequest.cc
+	src/model/DeleteFunctionTaskResult.cc
 	src/model/DeleteModelRequest.cc
 	src/model/DeleteModelResult.cc
 	src/model/DeleteSortScriptRequest.cc
@@ -312,6 +384,8 @@ set(opensearch_src
 	src/model/DescribeAppGroupResult.cc
 	src/model/DescribeAppGroupDataReportRequest.cc
 	src/model/DescribeAppGroupDataReportResult.cc
+	src/model/DescribeAppGroupStatisticsRequest.cc
+	src/model/DescribeAppGroupStatisticsResult.cc
 	src/model/DescribeAppStatisticsRequest.cc
 	src/model/DescribeAppStatisticsResult.cc
 	src/model/DescribeAppsRequest.cc
@@ -346,12 +420,24 @@ set(opensearch_src
 	src/model/GenerateMergedTableResult.cc
 	src/model/GetDomainRequest.cc
 	src/model/GetDomainResult.cc
+	src/model/GetFunctionCurrentVersionRequest.cc
+	src/model/GetFunctionCurrentVersionResult.cc
+	src/model/GetFunctionDefaultInstanceRequest.cc
+	src/model/GetFunctionDefaultInstanceResult.cc
+	src/model/GetFunctionInstanceRequest.cc
+	src/model/GetFunctionInstanceResult.cc
+	src/model/GetFunctionTaskRequest.cc
+	src/model/GetFunctionTaskResult.cc
+	src/model/GetFunctionVersionRequest.cc
+	src/model/GetFunctionVersionResult.cc
 	src/model/GetModelProgressRequest.cc
 	src/model/GetModelProgressResult.cc
 	src/model/GetModelReportRequest.cc
 	src/model/GetModelReportResult.cc
 	src/model/GetScriptFileNamesRequest.cc
 	src/model/GetScriptFileNamesResult.cc
+	src/model/GetSearchStrategyRequest.cc
+	src/model/GetSearchStrategyResult.cc
 	src/model/GetSortScriptRequest.cc
 	src/model/GetSortScriptResult.cc
 	src/model/GetSortScriptFileRequest.cc
@@ -388,6 +474,10 @@ set(opensearch_src
 	src/model/ListDeployedAlgorithmModelsResult.cc
 	src/model/ListFirstRanksRequest.cc
 	src/model/ListFirstRanksResult.cc
+	src/model/ListFunctionInstancesRequest.cc
+	src/model/ListFunctionInstancesResult.cc
+	src/model/ListFunctionTasksRequest.cc
+	src/model/ListFunctionTasksResult.cc
 	src/model/ListInterventionDictionariesRequest.cc
 	src/model/ListInterventionDictionariesResult.cc
 	src/model/ListInterventionDictionaryEntriesRequest.cc
@@ -398,6 +488,10 @@ set(opensearch_src
 	src/model/ListInterventionDictionaryRelatedEntitiesResult.cc
 	src/model/ListModelsRequest.cc
 	src/model/ListModelsResult.cc
+	src/model/ListProceedingsRequest.cc
+	src/model/ListProceedingsResult.cc
+	src/model/ListQueryProcessorAnalyzerResultsRequest.cc
+	src/model/ListQueryProcessorAnalyzerResultsResult.cc
 	src/model/ListQueryProcessorNersRequest.cc
 	src/model/ListQueryProcessorNersResult.cc
 	src/model/ListQueryProcessorsRequest.cc
@@ -408,6 +502,8 @@ set(opensearch_src
 	src/model/ListRamRolesResult.cc
 	src/model/ListScheduledTasksRequest.cc
 	src/model/ListScheduledTasksResult.cc
+	src/model/ListSearchStrategiesRequest.cc
+	src/model/ListSearchStrategiesResult.cc
 	src/model/ListSecondRanksRequest.cc
 	src/model/ListSecondRanksResult.cc
 	src/model/ListSlowQueryCategoriesRequest.cc
@@ -422,6 +518,8 @@ set(opensearch_src
 	src/model/ListStatisticLogsResult.cc
 	src/model/ListStatisticReportRequest.cc
 	src/model/ListStatisticReportResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
 	src/model/ListUserAnalyzerEntriesRequest.cc
 	src/model/ListUserAnalyzerEntriesResult.cc
 	src/model/ListUserAnalyzersRequest.cc
@@ -464,6 +562,8 @@ set(opensearch_src
 	src/model/RemoveQueryProcessorResult.cc
 	src/model/RemoveScheduledTaskRequest.cc
 	src/model/RemoveScheduledTaskResult.cc
+	src/model/RemoveSearchStrategyRequest.cc
+	src/model/RemoveSearchStrategyResult.cc
 	src/model/RemoveSecondRankRequest.cc
 	src/model/RemoveSecondRankResult.cc
 	src/model/RemoveUserAnalyzerRequest.cc
@@ -476,8 +576,16 @@ set(opensearch_src
 	src/model/SaveSortScriptFileResult.cc
 	src/model/StartSlowQueryAnalyzerRequest.cc
 	src/model/StartSlowQueryAnalyzerResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
 	src/model/TrainModelRequest.cc
 	src/model/TrainModelResult.cc
+	src/model/UnbindESUserAnalyzerRequest.cc
+	src/model/UnbindESUserAnalyzerResult.cc
+	src/model/UnbindEsInstanceRequest.cc
+	src/model/UnbindEsInstanceResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
 	src/model/UpdateABTestExperimentRequest.cc
 	src/model/UpdateABTestExperimentResult.cc
 	src/model/UpdateABTestFixedFlowDividersRequest.cc
@@ -488,10 +596,18 @@ set(opensearch_src
 	src/model/UpdateABTestSceneResult.cc
 	src/model/UpdateFetchFieldsRequest.cc
 	src/model/UpdateFetchFieldsResult.cc
+	src/model/UpdateFunctionDefaultInstanceRequest.cc
+	src/model/UpdateFunctionDefaultInstanceResult.cc
+	src/model/UpdateFunctionInstanceRequest.cc
+	src/model/UpdateFunctionInstanceResult.cc
+	src/model/UpdateSearchStrategyRequest.cc
+	src/model/UpdateSearchStrategyResult.cc
 	src/model/UpdateSortScriptRequest.cc
 	src/model/UpdateSortScriptResult.cc
 	src/model/UpdateSummariesRequest.cc
-	src/model/UpdateSummariesResult.cc )
+	src/model/UpdateSummariesResult.cc
+	src/model/ValidateDataSourcesRequest.cc
+	src/model/ValidateDataSourcesResult.cc )
 
 add_library(opensearch ${LIB_TYPE}
 	${opensearch_public_header}

@@ -48,9 +48,9 @@ namespace AlibabaCloud
 					bool available;
 					std::string id;
 					std::vector<ResultItem::DictsItem> dicts;
+					int created;
 					std::string name;
 					std::string business;
-					int created;
 				};
 
 

@@ -40,6 +40,11 @@ namespace AlibabaCloud
 						int computeResource;
 						std::string spec;
 					};
+					struct TagsItem
+					{
+						std::string value;
+						std::string key;
+					};
 					int secondRankAlgoDeploymentId;
 					int firstRankAlgoDeploymentId;
 					std::string description;
@@ -47,16 +52,17 @@ namespace AlibabaCloud
 					std::string expireOn;
 					std::string currentVersion;
 					int switchedTime;
-					std::string name;
 					int created;
-					std::string commodityCode;
+					std::string name;
 					int hasPendingQuotaReviewTask;
+					std::string commodityCode;
 					std::string status;
 					int produced;
 					int updated;
 					std::string instanceId;
 					std::string projectId;
 					std::string lockMode;
+					std::vector<ResultItem::TagsItem> tags;
 					int chargingWay;
 					std::string type;
 					Quota quota;
