@@ -546,6 +546,10 @@
 #include "model/QueryDeviceSubTopicResult.h"
 #include "model/QueryDeviceTunnelRequest.h"
 #include "model/QueryDeviceTunnelResult.h"
+#include "model/QueryDevicesHotStorageDataRequest.h"
+#include "model/QueryDevicesHotStorageDataResult.h"
+#include "model/QueryDevicesHotStorageDataStatusRequest.h"
+#include "model/QueryDevicesHotStorageDataStatusResult.h"
 #include "model/QueryDynamicGroupDevicesRequest.h"
 #include "model/QueryDynamicGroupDevicesResult.h"
 #include "model/QueryEdgeDriverRequest.h"
@@ -798,6 +802,8 @@
 #include "model/UpdateThingModelResult.h"
 #include "model/UpdateThingScriptRequest.h"
 #include "model/UpdateThingScriptResult.h"
+#include "model/WriteDevicesHotStorageDataRequest.h"
+#include "model/WriteDevicesHotStorageDataResult.h"
 
 
 namespace AlibabaCloud
@@ -1593,6 +1599,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryDeviceTunnelResult> QueryDeviceTunnelOutcome;
 			typedef std::future<QueryDeviceTunnelOutcome> QueryDeviceTunnelOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceTunnelRequest&, const QueryDeviceTunnelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceTunnelAsyncHandler;
+			typedef Outcome<Error, Model::QueryDevicesHotStorageDataResult> QueryDevicesHotStorageDataOutcome;
+			typedef std::future<QueryDevicesHotStorageDataOutcome> QueryDevicesHotStorageDataOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryDevicesHotStorageDataRequest&, const QueryDevicesHotStorageDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDevicesHotStorageDataAsyncHandler;
+			typedef Outcome<Error, Model::QueryDevicesHotStorageDataStatusResult> QueryDevicesHotStorageDataStatusOutcome;
+			typedef std::future<QueryDevicesHotStorageDataStatusOutcome> QueryDevicesHotStorageDataStatusOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryDevicesHotStorageDataStatusRequest&, const QueryDevicesHotStorageDataStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDevicesHotStorageDataStatusAsyncHandler;
 			typedef Outcome<Error, Model::QueryDynamicGroupDevicesResult> QueryDynamicGroupDevicesOutcome;
 			typedef std::future<QueryDynamicGroupDevicesOutcome> QueryDynamicGroupDevicesOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDynamicGroupDevicesRequest&, const QueryDynamicGroupDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDynamicGroupDevicesAsyncHandler;
@@ -1971,6 +1983,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateThingScriptResult> UpdateThingScriptOutcome;
 			typedef std::future<UpdateThingScriptOutcome> UpdateThingScriptOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UpdateThingScriptRequest&, const UpdateThingScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateThingScriptAsyncHandler;
+			typedef Outcome<Error, Model::WriteDevicesHotStorageDataResult> WriteDevicesHotStorageDataOutcome;
+			typedef std::future<WriteDevicesHotStorageDataOutcome> WriteDevicesHotStorageDataOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::WriteDevicesHotStorageDataRequest&, const WriteDevicesHotStorageDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> WriteDevicesHotStorageDataAsyncHandler;
 
 			IotClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			IotClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -2762,6 +2777,12 @@ namespace AlibabaCloud
 			QueryDeviceTunnelOutcome queryDeviceTunnel(const Model::QueryDeviceTunnelRequest &request)const;
 			void queryDeviceTunnelAsync(const Model::QueryDeviceTunnelRequest& request, const QueryDeviceTunnelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceTunnelOutcomeCallable queryDeviceTunnelCallable(const Model::QueryDeviceTunnelRequest& request) const;
+			QueryDevicesHotStorageDataOutcome queryDevicesHotStorageData(const Model::QueryDevicesHotStorageDataRequest &request)const;
+			void queryDevicesHotStorageDataAsync(const Model::QueryDevicesHotStorageDataRequest& request, const QueryDevicesHotStorageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDevicesHotStorageDataOutcomeCallable queryDevicesHotStorageDataCallable(const Model::QueryDevicesHotStorageDataRequest& request) const;
+			QueryDevicesHotStorageDataStatusOutcome queryDevicesHotStorageDataStatus(const Model::QueryDevicesHotStorageDataStatusRequest &request)const;
+			void queryDevicesHotStorageDataStatusAsync(const Model::QueryDevicesHotStorageDataStatusRequest& request, const QueryDevicesHotStorageDataStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDevicesHotStorageDataStatusOutcomeCallable queryDevicesHotStorageDataStatusCallable(const Model::QueryDevicesHotStorageDataStatusRequest& request) const;
 			QueryDynamicGroupDevicesOutcome queryDynamicGroupDevices(const Model::QueryDynamicGroupDevicesRequest &request)const;
 			void queryDynamicGroupDevicesAsync(const Model::QueryDynamicGroupDevicesRequest& request, const QueryDynamicGroupDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDynamicGroupDevicesOutcomeCallable queryDynamicGroupDevicesCallable(const Model::QueryDynamicGroupDevicesRequest& request) const;
@@ -3140,6 +3161,9 @@ namespace AlibabaCloud
 			UpdateThingScriptOutcome updateThingScript(const Model::UpdateThingScriptRequest &request)const;
 			void updateThingScriptAsync(const Model::UpdateThingScriptRequest& request, const UpdateThingScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateThingScriptOutcomeCallable updateThingScriptCallable(const Model::UpdateThingScriptRequest& request) const;
+			WriteDevicesHotStorageDataOutcome writeDevicesHotStorageData(const Model::WriteDevicesHotStorageDataRequest &request)const;
+			void writeDevicesHotStorageDataAsync(const Model::WriteDevicesHotStorageDataRequest& request, const WriteDevicesHotStorageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			WriteDevicesHotStorageDataOutcomeCallable writeDevicesHotStorageDataCallable(const Model::WriteDevicesHotStorageDataRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

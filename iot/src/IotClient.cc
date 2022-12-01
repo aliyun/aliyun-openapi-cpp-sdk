@@ -9483,6 +9483,78 @@ IotClient::QueryDeviceTunnelOutcomeCallable IotClient::queryDeviceTunnelCallable
 	return task->get_future();
 }
 
+IotClient::QueryDevicesHotStorageDataOutcome IotClient::queryDevicesHotStorageData(const QueryDevicesHotStorageDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDevicesHotStorageDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDevicesHotStorageDataOutcome(QueryDevicesHotStorageDataResult(outcome.result()));
+	else
+		return QueryDevicesHotStorageDataOutcome(outcome.error());
+}
+
+void IotClient::queryDevicesHotStorageDataAsync(const QueryDevicesHotStorageDataRequest& request, const QueryDevicesHotStorageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDevicesHotStorageData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryDevicesHotStorageDataOutcomeCallable IotClient::queryDevicesHotStorageDataCallable(const QueryDevicesHotStorageDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDevicesHotStorageDataOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDevicesHotStorageData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryDevicesHotStorageDataStatusOutcome IotClient::queryDevicesHotStorageDataStatus(const QueryDevicesHotStorageDataStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDevicesHotStorageDataStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDevicesHotStorageDataStatusOutcome(QueryDevicesHotStorageDataStatusResult(outcome.result()));
+	else
+		return QueryDevicesHotStorageDataStatusOutcome(outcome.error());
+}
+
+void IotClient::queryDevicesHotStorageDataStatusAsync(const QueryDevicesHotStorageDataStatusRequest& request, const QueryDevicesHotStorageDataStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDevicesHotStorageDataStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryDevicesHotStorageDataStatusOutcomeCallable IotClient::queryDevicesHotStorageDataStatusCallable(const QueryDevicesHotStorageDataStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDevicesHotStorageDataStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDevicesHotStorageDataStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::QueryDynamicGroupDevicesOutcome IotClient::queryDynamicGroupDevices(const QueryDynamicGroupDevicesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -14013,6 +14085,42 @@ IotClient::UpdateThingScriptOutcomeCallable IotClient::updateThingScriptCallable
 			[this, request]()
 			{
 			return this->updateThingScript(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::WriteDevicesHotStorageDataOutcome IotClient::writeDevicesHotStorageData(const WriteDevicesHotStorageDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return WriteDevicesHotStorageDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return WriteDevicesHotStorageDataOutcome(WriteDevicesHotStorageDataResult(outcome.result()));
+	else
+		return WriteDevicesHotStorageDataOutcome(outcome.error());
+}
+
+void IotClient::writeDevicesHotStorageDataAsync(const WriteDevicesHotStorageDataRequest& request, const WriteDevicesHotStorageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, writeDevicesHotStorageData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::WriteDevicesHotStorageDataOutcomeCallable IotClient::writeDevicesHotStorageDataCallable(const WriteDevicesHotStorageDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<WriteDevicesHotStorageDataOutcome()>>(
+			[this, request]()
+			{
+			return this->writeDevicesHotStorageData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

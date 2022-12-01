@@ -545,6 +545,10 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryDeviceSubTopicResult.h
 	include/alibabacloud/iot/model/QueryDeviceTunnelRequest.h
 	include/alibabacloud/iot/model/QueryDeviceTunnelResult.h
+	include/alibabacloud/iot/model/QueryDevicesHotStorageDataRequest.h
+	include/alibabacloud/iot/model/QueryDevicesHotStorageDataResult.h
+	include/alibabacloud/iot/model/QueryDevicesHotStorageDataStatusRequest.h
+	include/alibabacloud/iot/model/QueryDevicesHotStorageDataStatusResult.h
 	include/alibabacloud/iot/model/QueryDynamicGroupDevicesRequest.h
 	include/alibabacloud/iot/model/QueryDynamicGroupDevicesResult.h
 	include/alibabacloud/iot/model/QueryEdgeDriverRequest.h
@@ -796,7 +800,9 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/UpdateThingModelRequest.h
 	include/alibabacloud/iot/model/UpdateThingModelResult.h
 	include/alibabacloud/iot/model/UpdateThingScriptRequest.h
-	include/alibabacloud/iot/model/UpdateThingScriptResult.h )
+	include/alibabacloud/iot/model/UpdateThingScriptResult.h
+	include/alibabacloud/iot/model/WriteDevicesHotStorageDataRequest.h
+	include/alibabacloud/iot/model/WriteDevicesHotStorageDataResult.h )
 
 set(iot_src 
 	src/IotClient.cc
@@ -1324,6 +1330,10 @@ set(iot_src
 	src/model/QueryDeviceSubTopicResult.cc
 	src/model/QueryDeviceTunnelRequest.cc
 	src/model/QueryDeviceTunnelResult.cc
+	src/model/QueryDevicesHotStorageDataRequest.cc
+	src/model/QueryDevicesHotStorageDataResult.cc
+	src/model/QueryDevicesHotStorageDataStatusRequest.cc
+	src/model/QueryDevicesHotStorageDataStatusResult.cc
 	src/model/QueryDynamicGroupDevicesRequest.cc
 	src/model/QueryDynamicGroupDevicesResult.cc
 	src/model/QueryEdgeDriverRequest.cc
@@ -1575,7 +1585,9 @@ set(iot_src
 	src/model/UpdateThingModelRequest.cc
 	src/model/UpdateThingModelResult.cc
 	src/model/UpdateThingScriptRequest.cc
-	src/model/UpdateThingScriptResult.cc )
+	src/model/UpdateThingScriptResult.cc
+	src/model/WriteDevicesHotStorageDataRequest.cc
+	src/model/WriteDevicesHotStorageDataResult.cc )
 
 add_library(iot ${LIB_TYPE}
 	${iot_public_header}

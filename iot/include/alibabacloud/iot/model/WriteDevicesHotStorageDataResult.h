@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_BATCHGETDEVICEBINDSTATUSRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_BATCHGETDEVICEBINDSTATUSRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_WRITEDEVICESHOTSTORAGEDATARESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_WRITEDEVICESHOTSTORAGEDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,21 +29,14 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT BatchGetDeviceBindStatusResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT WriteDevicesHotStorageDataResult : public ServiceResult
 			{
 			public:
-				struct DeviceStatus
-				{
-					std::string iotId;
-					std::string instanceId;
-					int bindStatus;
-				};
 
 
-				BatchGetDeviceBindStatusResult();
-				explicit BatchGetDeviceBindStatusResult(const std::string &payload);
-				~BatchGetDeviceBindStatusResult();
-				std::vector<DeviceStatus> getData()const;
+				WriteDevicesHotStorageDataResult();
+				explicit WriteDevicesHotStorageDataResult(const std::string &payload);
+				~WriteDevicesHotStorageDataResult();
 				std::string getErrorMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -51,7 +44,6 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DeviceStatus> data_;
 				std::string errorMessage_;
 				std::string code_;
 				bool success_;
@@ -60,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_BATCHGETDEVICEBINDSTATUSRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_WRITEDEVICESHOTSTORAGEDATARESULT_H_

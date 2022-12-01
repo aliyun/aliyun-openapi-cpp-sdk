@@ -47,6 +47,8 @@ void BatchGetDeviceBindStatusResult::parse(const std::string &payload)
 			dataObject.iotId = valueDataDeviceStatus["IotId"].asString();
 		if(!valueDataDeviceStatus["BindStatus"].isNull())
 			dataObject.bindStatus = std::stoi(valueDataDeviceStatus["BindStatus"].asString());
+		if(!valueDataDeviceStatus["InstanceId"].isNull())
+			dataObject.instanceId = valueDataDeviceStatus["InstanceId"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())
