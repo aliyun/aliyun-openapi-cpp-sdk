@@ -58,6 +58,8 @@
 #include "model/CreateSuspEventNoteResult.h"
 #include "model/CreateVulAutoRepairConfigRequest.h"
 #include "model/CreateVulAutoRepairConfigResult.h"
+#include "model/DeleteAntiBruteForceRuleRequest.h"
+#include "model/DeleteAntiBruteForceRuleResult.h"
 #include "model/DeleteBackupPolicyRequest.h"
 #include "model/DeleteBackupPolicyResult.h"
 #include "model/DeleteBackupPolicyMachineRequest.h"
@@ -72,6 +74,8 @@
 #include "model/DeleteTagWithUuidResult.h"
 #include "model/DeleteVpcHoneyPotRequest.h"
 #include "model/DeleteVpcHoneyPotResult.h"
+#include "model/DeleteVulWhitelistRequest.h"
+#include "model/DeleteVulWhitelistResult.h"
 #include "model/DescribeAccessKeyLeakDetailRequest.h"
 #include "model/DescribeAccessKeyLeakDetailResult.h"
 #include "model/DescribeAccesskeyLeakListRequest.h"
@@ -106,6 +110,8 @@
 #include "model/DescribeBackupFilesResult.h"
 #include "model/DescribeBackupPoliciesRequest.h"
 #include "model/DescribeBackupPoliciesResult.h"
+#include "model/DescribeBackupPolicyRequest.h"
+#include "model/DescribeBackupPolicyResult.h"
 #include "model/DescribeBackupRestoreCountRequest.h"
 #include "model/DescribeBackupRestoreCountResult.h"
 #include "model/DescribeBruteForceSummaryRequest.h"
@@ -124,6 +130,8 @@
 #include "model/DescribeCloudProductFieldStatisticsResult.h"
 #include "model/DescribeCommonOverallConfigRequest.h"
 #include "model/DescribeCommonOverallConfigResult.h"
+#include "model/DescribeCommonTargetResultListRequest.h"
+#include "model/DescribeCommonTargetResultListResult.h"
 #include "model/DescribeConcernNecessityRequest.h"
 #include "model/DescribeConcernNecessityResult.h"
 #include "model/DescribeContainerStatisticsRequest.h"
@@ -176,10 +184,16 @@
 #include "model/DescribeImageFixTaskResult.h"
 #include "model/DescribeImageGroupedVulListRequest.h"
 #include "model/DescribeImageGroupedVulListResult.h"
+#include "model/DescribeImageListBySensitiveFileRequest.h"
+#include "model/DescribeImageListBySensitiveFileResult.h"
 #include "model/DescribeImageListWithBaselineNameRequest.h"
 #include "model/DescribeImageListWithBaselineNameResult.h"
 #include "model/DescribeImageScanAuthCountRequest.h"
 #include "model/DescribeImageScanAuthCountResult.h"
+#include "model/DescribeImageSensitiveFileByKeyRequest.h"
+#include "model/DescribeImageSensitiveFileByKeyResult.h"
+#include "model/DescribeImageSensitiveFileListRequest.h"
+#include "model/DescribeImageSensitiveFileListResult.h"
 #include "model/DescribeImageStatisticsRequest.h"
 #include "model/DescribeImageStatisticsResult.h"
 #include "model/DescribeImageVulListRequest.h"
@@ -194,6 +208,8 @@
 #include "model/DescribeInstanceRebootStatusResult.h"
 #include "model/DescribeInstanceStatisticsRequest.h"
 #include "model/DescribeInstanceStatisticsResult.h"
+#include "model/DescribeLogMetaRequest.h"
+#include "model/DescribeLogMetaResult.h"
 #include "model/DescribeLoginBaseConfigsRequest.h"
 #include "model/DescribeLoginBaseConfigsResult.h"
 #include "model/DescribeLogstoreStorageRequest.h"
@@ -202,6 +218,10 @@
 #include "model/DescribeModuleConfigResult.h"
 #include "model/DescribeNoticeConfigRequest.h"
 #include "model/DescribeNoticeConfigResult.h"
+#include "model/DescribeNsasSuspEventTypeRequest.h"
+#include "model/DescribeNsasSuspEventTypeResult.h"
+#include "model/DescribeOfflineMachinesRequest.h"
+#include "model/DescribeOfflineMachinesResult.h"
 #include "model/DescribeOnceTaskRequest.h"
 #include "model/DescribeOnceTaskResult.h"
 #include "model/DescribePropertyCountRequest.h"
@@ -218,6 +238,8 @@
 #include "model/DescribePropertyProcItemResult.h"
 #include "model/DescribePropertyScaDetailRequest.h"
 #include "model/DescribePropertyScaDetailResult.h"
+#include "model/DescribePropertyScheduleConfigRequest.h"
+#include "model/DescribePropertyScheduleConfigResult.h"
 #include "model/DescribePropertySoftwareDetailRequest.h"
 #include "model/DescribePropertySoftwareDetailResult.h"
 #include "model/DescribePropertySoftwareItemRequest.h"
@@ -302,6 +324,8 @@
 #include "model/DescribeVpcHoneyPotListResult.h"
 #include "model/DescribeVpcListRequest.h"
 #include "model/DescribeVpcListResult.h"
+#include "model/DescribeVulConfigRequest.h"
+#include "model/DescribeVulConfigResult.h"
 #include "model/DescribeVulDetailsRequest.h"
 #include "model/DescribeVulDetailsResult.h"
 #include "model/DescribeVulExportInfoRequest.h"
@@ -340,6 +364,8 @@
 #include "model/GetSuspiciousStatisticsResult.h"
 #include "model/GetVulStatisticsRequest.h"
 #include "model/GetVulStatisticsResult.h"
+#include "model/GetVulWhitelistRequest.h"
+#include "model/GetVulWhitelistResult.h"
 #include "model/HandleSecurityEventsRequest.h"
 #include "model/HandleSecurityEventsResult.h"
 #include "model/HandleSimilarSecurityEventsRequest.h"
@@ -422,6 +448,8 @@
 #include "model/ModifyWebLockStatusResult.h"
 #include "model/ModifyWebLockUpdateConfigRequest.h"
 #include "model/ModifyWebLockUpdateConfigResult.h"
+#include "model/OpenSensitiveFileScanRequest.h"
+#include "model/OpenSensitiveFileScanResult.h"
 #include "model/OperateAgentClientInstallRequest.h"
 #include "model/OperateAgentClientInstallResult.h"
 #include "model/OperateCommonOverallConfigRequest.h"
@@ -531,6 +559,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateVulAutoRepairConfigResult> CreateVulAutoRepairConfigOutcome;
 			typedef std::future<CreateVulAutoRepairConfigOutcome> CreateVulAutoRepairConfigOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::CreateVulAutoRepairConfigRequest&, const CreateVulAutoRepairConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVulAutoRepairConfigAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAntiBruteForceRuleResult> DeleteAntiBruteForceRuleOutcome;
+			typedef std::future<DeleteAntiBruteForceRuleOutcome> DeleteAntiBruteForceRuleOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DeleteAntiBruteForceRuleRequest&, const DeleteAntiBruteForceRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAntiBruteForceRuleAsyncHandler;
 			typedef Outcome<Error, Model::DeleteBackupPolicyResult> DeleteBackupPolicyOutcome;
 			typedef std::future<DeleteBackupPolicyOutcome> DeleteBackupPolicyOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DeleteBackupPolicyRequest&, const DeleteBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupPolicyAsyncHandler;
@@ -552,6 +583,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteVpcHoneyPotResult> DeleteVpcHoneyPotOutcome;
 			typedef std::future<DeleteVpcHoneyPotOutcome> DeleteVpcHoneyPotOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DeleteVpcHoneyPotRequest&, const DeleteVpcHoneyPotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVpcHoneyPotAsyncHandler;
+			typedef Outcome<Error, Model::DeleteVulWhitelistResult> DeleteVulWhitelistOutcome;
+			typedef std::future<DeleteVulWhitelistOutcome> DeleteVulWhitelistOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DeleteVulWhitelistRequest&, const DeleteVulWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteVulWhitelistAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccessKeyLeakDetailResult> DescribeAccessKeyLeakDetailOutcome;
 			typedef std::future<DescribeAccessKeyLeakDetailOutcome> DescribeAccessKeyLeakDetailOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeAccessKeyLeakDetailRequest&, const DescribeAccessKeyLeakDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccessKeyLeakDetailAsyncHandler;
@@ -603,6 +637,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeBackupPoliciesResult> DescribeBackupPoliciesOutcome;
 			typedef std::future<DescribeBackupPoliciesOutcome> DescribeBackupPoliciesOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeBackupPoliciesRequest&, const DescribeBackupPoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupPoliciesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeBackupPolicyResult> DescribeBackupPolicyOutcome;
+			typedef std::future<DescribeBackupPolicyOutcome> DescribeBackupPolicyOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeBackupPolicyRequest&, const DescribeBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupPolicyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBackupRestoreCountResult> DescribeBackupRestoreCountOutcome;
 			typedef std::future<DescribeBackupRestoreCountOutcome> DescribeBackupRestoreCountOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeBackupRestoreCountRequest&, const DescribeBackupRestoreCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupRestoreCountAsyncHandler;
@@ -630,6 +667,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCommonOverallConfigResult> DescribeCommonOverallConfigOutcome;
 			typedef std::future<DescribeCommonOverallConfigOutcome> DescribeCommonOverallConfigOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeCommonOverallConfigRequest&, const DescribeCommonOverallConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCommonOverallConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCommonTargetResultListResult> DescribeCommonTargetResultListOutcome;
+			typedef std::future<DescribeCommonTargetResultListOutcome> DescribeCommonTargetResultListOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeCommonTargetResultListRequest&, const DescribeCommonTargetResultListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCommonTargetResultListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeConcernNecessityResult> DescribeConcernNecessityOutcome;
 			typedef std::future<DescribeConcernNecessityOutcome> DescribeConcernNecessityOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeConcernNecessityRequest&, const DescribeConcernNecessityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConcernNecessityAsyncHandler;
@@ -708,12 +748,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeImageGroupedVulListResult> DescribeImageGroupedVulListOutcome;
 			typedef std::future<DescribeImageGroupedVulListOutcome> DescribeImageGroupedVulListOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeImageGroupedVulListRequest&, const DescribeImageGroupedVulListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageGroupedVulListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeImageListBySensitiveFileResult> DescribeImageListBySensitiveFileOutcome;
+			typedef std::future<DescribeImageListBySensitiveFileOutcome> DescribeImageListBySensitiveFileOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeImageListBySensitiveFileRequest&, const DescribeImageListBySensitiveFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageListBySensitiveFileAsyncHandler;
 			typedef Outcome<Error, Model::DescribeImageListWithBaselineNameResult> DescribeImageListWithBaselineNameOutcome;
 			typedef std::future<DescribeImageListWithBaselineNameOutcome> DescribeImageListWithBaselineNameOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeImageListWithBaselineNameRequest&, const DescribeImageListWithBaselineNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageListWithBaselineNameAsyncHandler;
 			typedef Outcome<Error, Model::DescribeImageScanAuthCountResult> DescribeImageScanAuthCountOutcome;
 			typedef std::future<DescribeImageScanAuthCountOutcome> DescribeImageScanAuthCountOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeImageScanAuthCountRequest&, const DescribeImageScanAuthCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageScanAuthCountAsyncHandler;
+			typedef Outcome<Error, Model::DescribeImageSensitiveFileByKeyResult> DescribeImageSensitiveFileByKeyOutcome;
+			typedef std::future<DescribeImageSensitiveFileByKeyOutcome> DescribeImageSensitiveFileByKeyOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeImageSensitiveFileByKeyRequest&, const DescribeImageSensitiveFileByKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageSensitiveFileByKeyAsyncHandler;
+			typedef Outcome<Error, Model::DescribeImageSensitiveFileListResult> DescribeImageSensitiveFileListOutcome;
+			typedef std::future<DescribeImageSensitiveFileListOutcome> DescribeImageSensitiveFileListOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeImageSensitiveFileListRequest&, const DescribeImageSensitiveFileListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageSensitiveFileListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeImageStatisticsResult> DescribeImageStatisticsOutcome;
 			typedef std::future<DescribeImageStatisticsOutcome> DescribeImageStatisticsOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeImageStatisticsRequest&, const DescribeImageStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageStatisticsAsyncHandler;
@@ -735,6 +784,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceStatisticsResult> DescribeInstanceStatisticsOutcome;
 			typedef std::future<DescribeInstanceStatisticsOutcome> DescribeInstanceStatisticsOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeInstanceStatisticsRequest&, const DescribeInstanceStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceStatisticsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLogMetaResult> DescribeLogMetaOutcome;
+			typedef std::future<DescribeLogMetaOutcome> DescribeLogMetaOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeLogMetaRequest&, const DescribeLogMetaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogMetaAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLoginBaseConfigsResult> DescribeLoginBaseConfigsOutcome;
 			typedef std::future<DescribeLoginBaseConfigsOutcome> DescribeLoginBaseConfigsOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeLoginBaseConfigsRequest&, const DescribeLoginBaseConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginBaseConfigsAsyncHandler;
@@ -747,6 +799,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeNoticeConfigResult> DescribeNoticeConfigOutcome;
 			typedef std::future<DescribeNoticeConfigOutcome> DescribeNoticeConfigOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeNoticeConfigRequest&, const DescribeNoticeConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNoticeConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeNsasSuspEventTypeResult> DescribeNsasSuspEventTypeOutcome;
+			typedef std::future<DescribeNsasSuspEventTypeOutcome> DescribeNsasSuspEventTypeOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeNsasSuspEventTypeRequest&, const DescribeNsasSuspEventTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNsasSuspEventTypeAsyncHandler;
+			typedef Outcome<Error, Model::DescribeOfflineMachinesResult> DescribeOfflineMachinesOutcome;
+			typedef std::future<DescribeOfflineMachinesOutcome> DescribeOfflineMachinesOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeOfflineMachinesRequest&, const DescribeOfflineMachinesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOfflineMachinesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeOnceTaskResult> DescribeOnceTaskOutcome;
 			typedef std::future<DescribeOnceTaskOutcome> DescribeOnceTaskOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeOnceTaskRequest&, const DescribeOnceTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOnceTaskAsyncHandler;
@@ -771,6 +829,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribePropertyScaDetailResult> DescribePropertyScaDetailOutcome;
 			typedef std::future<DescribePropertyScaDetailOutcome> DescribePropertyScaDetailOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribePropertyScaDetailRequest&, const DescribePropertyScaDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePropertyScaDetailAsyncHandler;
+			typedef Outcome<Error, Model::DescribePropertyScheduleConfigResult> DescribePropertyScheduleConfigOutcome;
+			typedef std::future<DescribePropertyScheduleConfigOutcome> DescribePropertyScheduleConfigOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribePropertyScheduleConfigRequest&, const DescribePropertyScheduleConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePropertyScheduleConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribePropertySoftwareDetailResult> DescribePropertySoftwareDetailOutcome;
 			typedef std::future<DescribePropertySoftwareDetailOutcome> DescribePropertySoftwareDetailOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribePropertySoftwareDetailRequest&, const DescribePropertySoftwareDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePropertySoftwareDetailAsyncHandler;
@@ -897,6 +958,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVpcListResult> DescribeVpcListOutcome;
 			typedef std::future<DescribeVpcListOutcome> DescribeVpcListOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeVpcListRequest&, const DescribeVpcListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVpcListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVulConfigResult> DescribeVulConfigOutcome;
+			typedef std::future<DescribeVulConfigOutcome> DescribeVulConfigOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::DescribeVulConfigRequest&, const DescribeVulConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVulDetailsResult> DescribeVulDetailsOutcome;
 			typedef std::future<DescribeVulDetailsOutcome> DescribeVulDetailsOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::DescribeVulDetailsRequest&, const DescribeVulDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulDetailsAsyncHandler;
@@ -954,6 +1018,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetVulStatisticsResult> GetVulStatisticsOutcome;
 			typedef std::future<GetVulStatisticsOutcome> GetVulStatisticsOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::GetVulStatisticsRequest&, const GetVulStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVulStatisticsAsyncHandler;
+			typedef Outcome<Error, Model::GetVulWhitelistResult> GetVulWhitelistOutcome;
+			typedef std::future<GetVulWhitelistOutcome> GetVulWhitelistOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::GetVulWhitelistRequest&, const GetVulWhitelistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVulWhitelistAsyncHandler;
 			typedef Outcome<Error, Model::HandleSecurityEventsResult> HandleSecurityEventsOutcome;
 			typedef std::future<HandleSecurityEventsOutcome> HandleSecurityEventsOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::HandleSecurityEventsRequest&, const HandleSecurityEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> HandleSecurityEventsAsyncHandler;
@@ -1077,6 +1144,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyWebLockUpdateConfigResult> ModifyWebLockUpdateConfigOutcome;
 			typedef std::future<ModifyWebLockUpdateConfigOutcome> ModifyWebLockUpdateConfigOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::ModifyWebLockUpdateConfigRequest&, const ModifyWebLockUpdateConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyWebLockUpdateConfigAsyncHandler;
+			typedef Outcome<Error, Model::OpenSensitiveFileScanResult> OpenSensitiveFileScanOutcome;
+			typedef std::future<OpenSensitiveFileScanOutcome> OpenSensitiveFileScanOutcomeCallable;
+			typedef std::function<void(const SasClient*, const Model::OpenSensitiveFileScanRequest&, const OpenSensitiveFileScanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenSensitiveFileScanAsyncHandler;
 			typedef Outcome<Error, Model::OperateAgentClientInstallResult> OperateAgentClientInstallOutcome;
 			typedef std::future<OperateAgentClientInstallOutcome> OperateAgentClientInstallOutcomeCallable;
 			typedef std::function<void(const SasClient*, const Model::OperateAgentClientInstallRequest&, const OperateAgentClientInstallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateAgentClientInstallAsyncHandler;
@@ -1205,6 +1275,9 @@ namespace AlibabaCloud
 			CreateVulAutoRepairConfigOutcome createVulAutoRepairConfig(const Model::CreateVulAutoRepairConfigRequest &request)const;
 			void createVulAutoRepairConfigAsync(const Model::CreateVulAutoRepairConfigRequest& request, const CreateVulAutoRepairConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVulAutoRepairConfigOutcomeCallable createVulAutoRepairConfigCallable(const Model::CreateVulAutoRepairConfigRequest& request) const;
+			DeleteAntiBruteForceRuleOutcome deleteAntiBruteForceRule(const Model::DeleteAntiBruteForceRuleRequest &request)const;
+			void deleteAntiBruteForceRuleAsync(const Model::DeleteAntiBruteForceRuleRequest& request, const DeleteAntiBruteForceRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAntiBruteForceRuleOutcomeCallable deleteAntiBruteForceRuleCallable(const Model::DeleteAntiBruteForceRuleRequest& request) const;
 			DeleteBackupPolicyOutcome deleteBackupPolicy(const Model::DeleteBackupPolicyRequest &request)const;
 			void deleteBackupPolicyAsync(const Model::DeleteBackupPolicyRequest& request, const DeleteBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteBackupPolicyOutcomeCallable deleteBackupPolicyCallable(const Model::DeleteBackupPolicyRequest& request) const;
@@ -1226,6 +1299,9 @@ namespace AlibabaCloud
 			DeleteVpcHoneyPotOutcome deleteVpcHoneyPot(const Model::DeleteVpcHoneyPotRequest &request)const;
 			void deleteVpcHoneyPotAsync(const Model::DeleteVpcHoneyPotRequest& request, const DeleteVpcHoneyPotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteVpcHoneyPotOutcomeCallable deleteVpcHoneyPotCallable(const Model::DeleteVpcHoneyPotRequest& request) const;
+			DeleteVulWhitelistOutcome deleteVulWhitelist(const Model::DeleteVulWhitelistRequest &request)const;
+			void deleteVulWhitelistAsync(const Model::DeleteVulWhitelistRequest& request, const DeleteVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteVulWhitelistOutcomeCallable deleteVulWhitelistCallable(const Model::DeleteVulWhitelistRequest& request) const;
 			DescribeAccessKeyLeakDetailOutcome describeAccessKeyLeakDetail(const Model::DescribeAccessKeyLeakDetailRequest &request)const;
 			void describeAccessKeyLeakDetailAsync(const Model::DescribeAccessKeyLeakDetailRequest& request, const DescribeAccessKeyLeakDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccessKeyLeakDetailOutcomeCallable describeAccessKeyLeakDetailCallable(const Model::DescribeAccessKeyLeakDetailRequest& request) const;
@@ -1277,6 +1353,9 @@ namespace AlibabaCloud
 			DescribeBackupPoliciesOutcome describeBackupPolicies(const Model::DescribeBackupPoliciesRequest &request)const;
 			void describeBackupPoliciesAsync(const Model::DescribeBackupPoliciesRequest& request, const DescribeBackupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupPoliciesOutcomeCallable describeBackupPoliciesCallable(const Model::DescribeBackupPoliciesRequest& request) const;
+			DescribeBackupPolicyOutcome describeBackupPolicy(const Model::DescribeBackupPolicyRequest &request)const;
+			void describeBackupPolicyAsync(const Model::DescribeBackupPolicyRequest& request, const DescribeBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeBackupPolicyOutcomeCallable describeBackupPolicyCallable(const Model::DescribeBackupPolicyRequest& request) const;
 			DescribeBackupRestoreCountOutcome describeBackupRestoreCount(const Model::DescribeBackupRestoreCountRequest &request)const;
 			void describeBackupRestoreCountAsync(const Model::DescribeBackupRestoreCountRequest& request, const DescribeBackupRestoreCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupRestoreCountOutcomeCallable describeBackupRestoreCountCallable(const Model::DescribeBackupRestoreCountRequest& request) const;
@@ -1304,6 +1383,9 @@ namespace AlibabaCloud
 			DescribeCommonOverallConfigOutcome describeCommonOverallConfig(const Model::DescribeCommonOverallConfigRequest &request)const;
 			void describeCommonOverallConfigAsync(const Model::DescribeCommonOverallConfigRequest& request, const DescribeCommonOverallConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCommonOverallConfigOutcomeCallable describeCommonOverallConfigCallable(const Model::DescribeCommonOverallConfigRequest& request) const;
+			DescribeCommonTargetResultListOutcome describeCommonTargetResultList(const Model::DescribeCommonTargetResultListRequest &request)const;
+			void describeCommonTargetResultListAsync(const Model::DescribeCommonTargetResultListRequest& request, const DescribeCommonTargetResultListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCommonTargetResultListOutcomeCallable describeCommonTargetResultListCallable(const Model::DescribeCommonTargetResultListRequest& request) const;
 			DescribeConcernNecessityOutcome describeConcernNecessity(const Model::DescribeConcernNecessityRequest &request)const;
 			void describeConcernNecessityAsync(const Model::DescribeConcernNecessityRequest& request, const DescribeConcernNecessityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeConcernNecessityOutcomeCallable describeConcernNecessityCallable(const Model::DescribeConcernNecessityRequest& request) const;
@@ -1382,12 +1464,21 @@ namespace AlibabaCloud
 			DescribeImageGroupedVulListOutcome describeImageGroupedVulList(const Model::DescribeImageGroupedVulListRequest &request)const;
 			void describeImageGroupedVulListAsync(const Model::DescribeImageGroupedVulListRequest& request, const DescribeImageGroupedVulListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeImageGroupedVulListOutcomeCallable describeImageGroupedVulListCallable(const Model::DescribeImageGroupedVulListRequest& request) const;
+			DescribeImageListBySensitiveFileOutcome describeImageListBySensitiveFile(const Model::DescribeImageListBySensitiveFileRequest &request)const;
+			void describeImageListBySensitiveFileAsync(const Model::DescribeImageListBySensitiveFileRequest& request, const DescribeImageListBySensitiveFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeImageListBySensitiveFileOutcomeCallable describeImageListBySensitiveFileCallable(const Model::DescribeImageListBySensitiveFileRequest& request) const;
 			DescribeImageListWithBaselineNameOutcome describeImageListWithBaselineName(const Model::DescribeImageListWithBaselineNameRequest &request)const;
 			void describeImageListWithBaselineNameAsync(const Model::DescribeImageListWithBaselineNameRequest& request, const DescribeImageListWithBaselineNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeImageListWithBaselineNameOutcomeCallable describeImageListWithBaselineNameCallable(const Model::DescribeImageListWithBaselineNameRequest& request) const;
 			DescribeImageScanAuthCountOutcome describeImageScanAuthCount(const Model::DescribeImageScanAuthCountRequest &request)const;
 			void describeImageScanAuthCountAsync(const Model::DescribeImageScanAuthCountRequest& request, const DescribeImageScanAuthCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeImageScanAuthCountOutcomeCallable describeImageScanAuthCountCallable(const Model::DescribeImageScanAuthCountRequest& request) const;
+			DescribeImageSensitiveFileByKeyOutcome describeImageSensitiveFileByKey(const Model::DescribeImageSensitiveFileByKeyRequest &request)const;
+			void describeImageSensitiveFileByKeyAsync(const Model::DescribeImageSensitiveFileByKeyRequest& request, const DescribeImageSensitiveFileByKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeImageSensitiveFileByKeyOutcomeCallable describeImageSensitiveFileByKeyCallable(const Model::DescribeImageSensitiveFileByKeyRequest& request) const;
+			DescribeImageSensitiveFileListOutcome describeImageSensitiveFileList(const Model::DescribeImageSensitiveFileListRequest &request)const;
+			void describeImageSensitiveFileListAsync(const Model::DescribeImageSensitiveFileListRequest& request, const DescribeImageSensitiveFileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeImageSensitiveFileListOutcomeCallable describeImageSensitiveFileListCallable(const Model::DescribeImageSensitiveFileListRequest& request) const;
 			DescribeImageStatisticsOutcome describeImageStatistics(const Model::DescribeImageStatisticsRequest &request)const;
 			void describeImageStatisticsAsync(const Model::DescribeImageStatisticsRequest& request, const DescribeImageStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeImageStatisticsOutcomeCallable describeImageStatisticsCallable(const Model::DescribeImageStatisticsRequest& request) const;
@@ -1409,6 +1500,9 @@ namespace AlibabaCloud
 			DescribeInstanceStatisticsOutcome describeInstanceStatistics(const Model::DescribeInstanceStatisticsRequest &request)const;
 			void describeInstanceStatisticsAsync(const Model::DescribeInstanceStatisticsRequest& request, const DescribeInstanceStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceStatisticsOutcomeCallable describeInstanceStatisticsCallable(const Model::DescribeInstanceStatisticsRequest& request) const;
+			DescribeLogMetaOutcome describeLogMeta(const Model::DescribeLogMetaRequest &request)const;
+			void describeLogMetaAsync(const Model::DescribeLogMetaRequest& request, const DescribeLogMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLogMetaOutcomeCallable describeLogMetaCallable(const Model::DescribeLogMetaRequest& request) const;
 			DescribeLoginBaseConfigsOutcome describeLoginBaseConfigs(const Model::DescribeLoginBaseConfigsRequest &request)const;
 			void describeLoginBaseConfigsAsync(const Model::DescribeLoginBaseConfigsRequest& request, const DescribeLoginBaseConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLoginBaseConfigsOutcomeCallable describeLoginBaseConfigsCallable(const Model::DescribeLoginBaseConfigsRequest& request) const;
@@ -1421,6 +1515,12 @@ namespace AlibabaCloud
 			DescribeNoticeConfigOutcome describeNoticeConfig(const Model::DescribeNoticeConfigRequest &request)const;
 			void describeNoticeConfigAsync(const Model::DescribeNoticeConfigRequest& request, const DescribeNoticeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNoticeConfigOutcomeCallable describeNoticeConfigCallable(const Model::DescribeNoticeConfigRequest& request) const;
+			DescribeNsasSuspEventTypeOutcome describeNsasSuspEventType(const Model::DescribeNsasSuspEventTypeRequest &request)const;
+			void describeNsasSuspEventTypeAsync(const Model::DescribeNsasSuspEventTypeRequest& request, const DescribeNsasSuspEventTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeNsasSuspEventTypeOutcomeCallable describeNsasSuspEventTypeCallable(const Model::DescribeNsasSuspEventTypeRequest& request) const;
+			DescribeOfflineMachinesOutcome describeOfflineMachines(const Model::DescribeOfflineMachinesRequest &request)const;
+			void describeOfflineMachinesAsync(const Model::DescribeOfflineMachinesRequest& request, const DescribeOfflineMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeOfflineMachinesOutcomeCallable describeOfflineMachinesCallable(const Model::DescribeOfflineMachinesRequest& request) const;
 			DescribeOnceTaskOutcome describeOnceTask(const Model::DescribeOnceTaskRequest &request)const;
 			void describeOnceTaskAsync(const Model::DescribeOnceTaskRequest& request, const DescribeOnceTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeOnceTaskOutcomeCallable describeOnceTaskCallable(const Model::DescribeOnceTaskRequest& request) const;
@@ -1445,6 +1545,9 @@ namespace AlibabaCloud
 			DescribePropertyScaDetailOutcome describePropertyScaDetail(const Model::DescribePropertyScaDetailRequest &request)const;
 			void describePropertyScaDetailAsync(const Model::DescribePropertyScaDetailRequest& request, const DescribePropertyScaDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePropertyScaDetailOutcomeCallable describePropertyScaDetailCallable(const Model::DescribePropertyScaDetailRequest& request) const;
+			DescribePropertyScheduleConfigOutcome describePropertyScheduleConfig(const Model::DescribePropertyScheduleConfigRequest &request)const;
+			void describePropertyScheduleConfigAsync(const Model::DescribePropertyScheduleConfigRequest& request, const DescribePropertyScheduleConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribePropertyScheduleConfigOutcomeCallable describePropertyScheduleConfigCallable(const Model::DescribePropertyScheduleConfigRequest& request) const;
 			DescribePropertySoftwareDetailOutcome describePropertySoftwareDetail(const Model::DescribePropertySoftwareDetailRequest &request)const;
 			void describePropertySoftwareDetailAsync(const Model::DescribePropertySoftwareDetailRequest& request, const DescribePropertySoftwareDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePropertySoftwareDetailOutcomeCallable describePropertySoftwareDetailCallable(const Model::DescribePropertySoftwareDetailRequest& request) const;
@@ -1571,6 +1674,9 @@ namespace AlibabaCloud
 			DescribeVpcListOutcome describeVpcList(const Model::DescribeVpcListRequest &request)const;
 			void describeVpcListAsync(const Model::DescribeVpcListRequest& request, const DescribeVpcListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVpcListOutcomeCallable describeVpcListCallable(const Model::DescribeVpcListRequest& request) const;
+			DescribeVulConfigOutcome describeVulConfig(const Model::DescribeVulConfigRequest &request)const;
+			void describeVulConfigAsync(const Model::DescribeVulConfigRequest& request, const DescribeVulConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVulConfigOutcomeCallable describeVulConfigCallable(const Model::DescribeVulConfigRequest& request) const;
 			DescribeVulDetailsOutcome describeVulDetails(const Model::DescribeVulDetailsRequest &request)const;
 			void describeVulDetailsAsync(const Model::DescribeVulDetailsRequest& request, const DescribeVulDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVulDetailsOutcomeCallable describeVulDetailsCallable(const Model::DescribeVulDetailsRequest& request) const;
@@ -1628,6 +1734,9 @@ namespace AlibabaCloud
 			GetVulStatisticsOutcome getVulStatistics(const Model::GetVulStatisticsRequest &request)const;
 			void getVulStatisticsAsync(const Model::GetVulStatisticsRequest& request, const GetVulStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetVulStatisticsOutcomeCallable getVulStatisticsCallable(const Model::GetVulStatisticsRequest& request) const;
+			GetVulWhitelistOutcome getVulWhitelist(const Model::GetVulWhitelistRequest &request)const;
+			void getVulWhitelistAsync(const Model::GetVulWhitelistRequest& request, const GetVulWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetVulWhitelistOutcomeCallable getVulWhitelistCallable(const Model::GetVulWhitelistRequest& request) const;
 			HandleSecurityEventsOutcome handleSecurityEvents(const Model::HandleSecurityEventsRequest &request)const;
 			void handleSecurityEventsAsync(const Model::HandleSecurityEventsRequest& request, const HandleSecurityEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			HandleSecurityEventsOutcomeCallable handleSecurityEventsCallable(const Model::HandleSecurityEventsRequest& request) const;
@@ -1751,6 +1860,9 @@ namespace AlibabaCloud
 			ModifyWebLockUpdateConfigOutcome modifyWebLockUpdateConfig(const Model::ModifyWebLockUpdateConfigRequest &request)const;
 			void modifyWebLockUpdateConfigAsync(const Model::ModifyWebLockUpdateConfigRequest& request, const ModifyWebLockUpdateConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyWebLockUpdateConfigOutcomeCallable modifyWebLockUpdateConfigCallable(const Model::ModifyWebLockUpdateConfigRequest& request) const;
+			OpenSensitiveFileScanOutcome openSensitiveFileScan(const Model::OpenSensitiveFileScanRequest &request)const;
+			void openSensitiveFileScanAsync(const Model::OpenSensitiveFileScanRequest& request, const OpenSensitiveFileScanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OpenSensitiveFileScanOutcomeCallable openSensitiveFileScanCallable(const Model::OpenSensitiveFileScanRequest& request) const;
 			OperateAgentClientInstallOutcome operateAgentClientInstall(const Model::OperateAgentClientInstallRequest &request)const;
 			void operateAgentClientInstallAsync(const Model::OperateAgentClientInstallRequest& request, const OperateAgentClientInstallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OperateAgentClientInstallOutcomeCallable operateAgentClientInstallCallable(const Model::OperateAgentClientInstallRequest& request) const;

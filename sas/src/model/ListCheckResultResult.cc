@@ -63,6 +63,8 @@ void ListCheckResultResult::parse(const std::string &payload)
 			checksObject.taskId = valueChecksChecksItem["TaskId"].asString();
 		if(!valueChecksChecksItem["LastCheckTime"].isNull())
 			checksObject.lastCheckTime = std::stol(valueChecksChecksItem["LastCheckTime"].asString());
+		if(!valueChecksChecksItem["TrialPermission"].isNull())
+			checksObject.trialPermission = valueChecksChecksItem["TrialPermission"].asString() == "true";
 		auto allCheckPoliciesNode = valueChecksChecksItem["CheckPolicies"]["CheckPolicie"];
 		for (auto valueChecksChecksItemCheckPoliciesCheckPolicie : allCheckPoliciesNode)
 		{

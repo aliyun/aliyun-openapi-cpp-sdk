@@ -47,6 +47,10 @@ void DescribeGroupedVulResult::parse(const std::string &payload)
 			groupedVulItemsObject.type = valueGroupedVulItemsGroupedVulItem["Type"].asString();
 		if(!valueGroupedVulItemsGroupedVulItem["NntfCount"].isNull())
 			groupedVulItemsObject.nntfCount = std::stoi(valueGroupedVulItemsGroupedVulItem["NntfCount"].asString());
+		if(!valueGroupedVulItemsGroupedVulItem["RaspDefend"].isNull())
+			groupedVulItemsObject.raspDefend = std::stoi(valueGroupedVulItemsGroupedVulItem["RaspDefend"].asString());
+		if(!valueGroupedVulItemsGroupedVulItem["Status"].isNull())
+			groupedVulItemsObject.status = std::stoi(valueGroupedVulItemsGroupedVulItem["Status"].asString());
 		if(!valueGroupedVulItemsGroupedVulItem["HandledCount"].isNull())
 			groupedVulItemsObject.handledCount = std::stoi(valueGroupedVulItemsGroupedVulItem["HandledCount"].asString());
 		if(!valueGroupedVulItemsGroupedVulItem["GmtLast"].isNull())
@@ -63,6 +67,8 @@ void DescribeGroupedVulResult::parse(const std::string &payload)
 			groupedVulItemsObject.totalFixCount = std::stol(valueGroupedVulItemsGroupedVulItem["TotalFixCount"].asString());
 		if(!valueGroupedVulItemsGroupedVulItem["AsapCount"].isNull())
 			groupedVulItemsObject.asapCount = std::stoi(valueGroupedVulItemsGroupedVulItem["AsapCount"].asString());
+		if(!valueGroupedVulItemsGroupedVulItem["Related"].isNull())
+			groupedVulItemsObject.related = valueGroupedVulItemsGroupedVulItem["Related"].asString();
 		if(!valueGroupedVulItemsGroupedVulItem["RuleModifyTime"].isNull())
 			groupedVulItemsObject.ruleModifyTime = std::stol(valueGroupedVulItemsGroupedVulItem["RuleModifyTime"].asString());
 		groupedVulItems_.push_back(groupedVulItemsObject);

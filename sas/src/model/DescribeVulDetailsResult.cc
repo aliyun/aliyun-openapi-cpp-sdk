@@ -81,6 +81,16 @@ void DescribeVulDetailsResult::parse(const std::string &payload)
 			cvesObject.poc = valueCvesCve["Poc"].asString();
 		if(!valueCvesCve["OtherId"].isNull())
 			cvesObject.otherId = valueCvesCve["OtherId"].asString();
+		if(!valueCvesCve["InstanceName"].isNull())
+			cvesObject.instanceName = valueCvesCve["InstanceName"].asString();
+		if(!valueCvesCve["InternetIp"].isNull())
+			cvesObject.internetIp = valueCvesCve["InternetIp"].asString();
+		if(!valueCvesCve["IntranetIp"].isNull())
+			cvesObject.intranetIp = valueCvesCve["IntranetIp"].asString();
+		if(!valueCvesCve["TargetId"].isNull())
+			cvesObject.targetId = valueCvesCve["TargetId"].asString();
+		if(!valueCvesCve["TargetName"].isNull())
+			cvesObject.targetName = valueCvesCve["TargetName"].asString();
 		auto allClassifysNode = valueCvesCve["Classifys"]["Classify"];
 		for (auto valueCvesCveClassifysClassify : allClassifysNode)
 		{

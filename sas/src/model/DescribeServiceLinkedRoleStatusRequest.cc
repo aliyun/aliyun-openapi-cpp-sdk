@@ -34,3 +34,12 @@ void DescribeServiceLinkedRoleStatusRequest::setSourceIp(const std::string &sour
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string DescribeServiceLinkedRoleStatusRequest::getServiceLinkedRole() const {
+  return serviceLinkedRole_;
+}
+
+void DescribeServiceLinkedRoleStatusRequest::setServiceLinkedRole(const std::string &serviceLinkedRole) {
+  serviceLinkedRole_ = serviceLinkedRole;
+  setParameter(std::string("ServiceLinkedRole"), serviceLinkedRole);
+}
+

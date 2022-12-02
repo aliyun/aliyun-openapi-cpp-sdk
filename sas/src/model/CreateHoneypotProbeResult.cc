@@ -39,6 +39,9 @@ void CreateHoneypotProbeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto honeypotProbeNode = value["HoneypotProbe"];
+	if(!honeypotProbeNode["ProbeId"].isNull())
+		honeypotProbe_.probeId = honeypotProbeNode["ProbeId"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -58,6 +61,11 @@ std::string CreateHoneypotProbeResult::getMessage()const
 int CreateHoneypotProbeResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
+}
+
+CreateHoneypotProbeResult::HoneypotProbe CreateHoneypotProbeResult::getHoneypotProbe()const
+{
+	return honeypotProbe_;
 }
 
 std::string CreateHoneypotProbeResult::getCode()const

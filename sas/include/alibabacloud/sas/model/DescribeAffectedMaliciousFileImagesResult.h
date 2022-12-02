@@ -41,10 +41,21 @@ namespace AlibabaCloud
 				};
 				struct AffectedMaliciousFileImage
 				{
+					std::string repoRegionId;
+					std::string image;
+					std::string targetName;
+					std::string imageUuid;
+					std::string intranetIp;
+					std::string internetIp;
+					std::string containerId;
+					long latestVerifyTimestamp;
+					std::string targetType;
+					std::string clusterName;
+					long firstScanTimestamp;
+					std::string downloadUrl;
 					int status;
 					std::string filePath;
 					std::string highLight;
-					std::string repoRegionId;
 					long latestScanTimestamp;
 					std::string pod;
 					std::string digest;
@@ -52,19 +63,15 @@ namespace AlibabaCloud
 					std::string maliciousSource;
 					std::string repoName;
 					std::string _namespace;
-					std::string image;
-					std::string imageUuid;
 					std::string layer;
+					std::string targetId;
+					std::string instanceName;
 					std::string repoInstanceId;
-					std::string containerId;
-					long latestVerifyTimestamp;
-					std::string clusterName;
+					std::string uuid;
 					std::string level;
 					std::string tag;
 					std::string repoId;
-					long firstScanTimestamp;
 					std::string maliciousMd5;
-					std::string downloadUrl;
 				};
 
 

@@ -32,6 +32,8 @@ public:
 	~CreateBackupPolicyRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getServerType() const;
+	void setServerType(const std::string &serverType);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::vector<std::string> getUuidList() const;
@@ -47,6 +49,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string serverType_;
 	std::string sourceIp_;
 	std::vector<std::string> uuidList_;
 	std::string policy_;

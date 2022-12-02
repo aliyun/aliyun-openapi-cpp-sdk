@@ -25,6 +25,15 @@ ModifyStrategyRequest::ModifyStrategyRequest()
 
 ModifyStrategyRequest::~ModifyStrategyRequest() {}
 
+std::string ModifyStrategyRequest::getTargetType() const {
+  return targetType_;
+}
+
+void ModifyStrategyRequest::setTargetType(const std::string &targetType) {
+  targetType_ = targetType;
+  setParameter(std::string("TargetType"), targetType);
+}
+
 std::string ModifyStrategyRequest::getCycleDays() const {
   return cycleDays_;
 }
@@ -32,6 +41,15 @@ std::string ModifyStrategyRequest::getCycleDays() const {
 void ModifyStrategyRequest::setCycleDays(const std::string &cycleDays) {
   cycleDays_ = cycleDays;
   setParameter(std::string("CycleDays"), cycleDays);
+}
+
+std::string ModifyStrategyRequest::getStartTime() const {
+  return startTime_;
+}
+
+void ModifyStrategyRequest::setStartTime(const std::string &startTime) {
+  startTime_ = startTime;
+  setParameter(std::string("StartTime"), startTime);
 }
 
 std::string ModifyStrategyRequest::getRiskSubTypeName() const {
@@ -77,6 +95,15 @@ std::string ModifyStrategyRequest::getRiskCustomParams() const {
 void ModifyStrategyRequest::setRiskCustomParams(const std::string &riskCustomParams) {
   riskCustomParams_ = riskCustomParams;
   setParameter(std::string("RiskCustomParams"), riskCustomParams);
+}
+
+std::string ModifyStrategyRequest::getEndTime() const {
+  return endTime_;
+}
+
+void ModifyStrategyRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
 std::string ModifyStrategyRequest::getCustomType() const {

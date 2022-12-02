@@ -44,22 +44,27 @@ namespace AlibabaCloud
 					std::string cvssScore;
 					std::string classify;
 					long pocDisclosureTime;
+					std::string product;
+					std::string cveId;
+					std::string otherId;
+					std::string targetName;
+					std::string intranetIp;
+					std::string complexity;
+					std::string internetIp;
+					std::string solution;
+					std::string vulLevel;
 					std::string poc;
 					std::string reference;
 					std::vector<Cve::Classify> classifys;
-					std::string product;
 					std::string title;
-					std::string cveId;
 					std::string vendor;
-					std::string otherId;
 					std::string cnvdId;
-					std::string complexity;
+					std::string targetId;
+					std::string instanceName;
 					long pocCreateTime;
 					long releaseTime;
 					std::string content;
 					std::string summary;
-					std::string solution;
-					std::string vulLevel;
 				};
 
 

@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeLogstoreStorageResult(const std::string &payload);
 				~DescribeLogstoreStorageResult();
 				long getUsed()const;
+				std::string getUserProject()const;
 				std::string getLogstore()const;
 				int getTtl()const;
 				long getPreserve()const;
@@ -46,6 +47,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				long used_;
+				std::string userProject_;
 				std::string logstore_;
 				int ttl_;
 				long preserve_;

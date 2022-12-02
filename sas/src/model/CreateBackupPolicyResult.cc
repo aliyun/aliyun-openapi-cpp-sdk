@@ -39,6 +39,23 @@ void CreateBackupPolicyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto backupPolicyNode = value["BackupPolicy"];
+	if(!backupPolicyNode["Id"].isNull())
+		backupPolicy_.id = backupPolicyNode["Id"].asString();
+	if(!backupPolicyNode["Status"].isNull())
+		backupPolicy_.status = backupPolicyNode["Status"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 
+}
+
+std::string CreateBackupPolicyResult::getCode()const
+{
+	return code_;
+}
+
+CreateBackupPolicyResult::BackupPolicy CreateBackupPolicyResult::getBackupPolicy()const
+{
+	return backupPolicy_;
 }
 

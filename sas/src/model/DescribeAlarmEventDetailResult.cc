@@ -42,6 +42,8 @@ void DescribeAlarmEventDetailResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Type"].isNull())
 		data_.type = dataNode["Type"].asString();
+	if(!dataNode["Dealed"].isNull())
+		data_.dealed = dataNode["Dealed"].asString() == "true";
 	if(!dataNode["InternetIp"].isNull())
 		data_.internetIp = dataNode["InternetIp"].asString();
 	if(!dataNode["K8sClusterName"].isNull())
@@ -62,6 +64,8 @@ void DescribeAlarmEventDetailResult::parse(const std::string &payload)
 		data_.containerImageName = dataNode["ContainerImageName"].asString();
 	if(!dataNode["K8sClusterId"].isNull())
 		data_.k8sClusterId = dataNode["K8sClusterId"].asString();
+	if(!dataNode["AccessCode"].isNull())
+		data_.accessCode = dataNode["AccessCode"].asString();
 	if(!dataNode["ContainHwMode"].isNull())
 		data_.containHwMode = dataNode["ContainHwMode"].asString() == "true";
 	if(!dataNode["InstanceName"].isNull())
@@ -72,6 +76,8 @@ void DescribeAlarmEventDetailResult::parse(const std::string &payload)
 		data_.solution = dataNode["Solution"].asString();
 	if(!dataNode["DataSource"].isNull())
 		data_.dataSource = dataNode["DataSource"].asString();
+	if(!dataNode["HasTraceInfo"].isNull())
+		data_.hasTraceInfo = dataNode["HasTraceInfo"].asString() == "true";
 	if(!dataNode["IntranetIp"].isNull())
 		data_.intranetIp = dataNode["IntranetIp"].asString();
 	if(!dataNode["AlarmEventAliasName"].isNull())

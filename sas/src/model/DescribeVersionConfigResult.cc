@@ -105,6 +105,8 @@ void DescribeVersionConfigResult::parse(const std::string &payload)
 		openTime_ = std::stol(value["OpenTime"].asString());
 	if(!value["IsNewContainerVersion"].isNull())
 		isNewContainerVersion_ = value["IsNewContainerVersion"].asString() == "true";
+	if(!value["ThreatAnalysisCapacity"].isNull())
+		threatAnalysisCapacity_ = std::stol(value["ThreatAnalysisCapacity"].asString());
 
 }
 
@@ -181,6 +183,11 @@ int DescribeVersionConfigResult::getAllowPartialBuy()const
 int DescribeVersionConfigResult::getWebLock()const
 {
 	return webLock_;
+}
+
+long DescribeVersionConfigResult::getThreatAnalysisCapacity()const
+{
+	return threatAnalysisCapacity_;
 }
 
 bool DescribeVersionConfigResult::getIsOverBalance()const

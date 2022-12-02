@@ -59,6 +59,7 @@ namespace AlibabaCloud
 					long checkId;
 					std::string vendorShowName;
 					std::string checkShowName;
+					bool trialPermission;
 					std::string vendor;
 					std::vector<ChecksItem::CheckPolicie> checkPolicies;
 					std::string instanceType;

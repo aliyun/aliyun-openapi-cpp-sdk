@@ -67,6 +67,10 @@ void DescribeStrategyResult::parse(const std::string &payload)
 			strategiesObject.name = valueStrategiesStrategy["Name"].asString();
 		if(!valueStrategiesStrategy["Id"].isNull())
 			strategiesObject.id = std::stoi(valueStrategiesStrategy["Id"].asString());
+		if(!valueStrategiesStrategy["StartTime"].isNull())
+			strategiesObject.startTime = valueStrategiesStrategy["StartTime"].asString();
+		if(!valueStrategiesStrategy["EndTime"].isNull())
+			strategiesObject.endTime = valueStrategiesStrategy["EndTime"].asString();
 		auto allConfigTargetsNode = valueStrategiesStrategy["ConfigTargets"]["ConfigTarget"];
 		for (auto valueStrategiesStrategyConfigTargetsConfigTarget : allConfigTargetsNode)
 		{

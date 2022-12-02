@@ -48,6 +48,8 @@ public:
 	void setCurrentPage(int currentPage);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
+	std::string getRiskLevel() const;
+	void setRiskLevel(const std::string &riskLevel);
 	int getRiskStatus() const;
 	void setRiskStatus(int riskStatus);
 	long getStrategyId() const;
@@ -69,6 +71,7 @@ private:
 	std::string lang_;
 	int currentPage_;
 	std::string clusterId_;
+	std::string riskLevel_;
 	int riskStatus_;
 	long strategyId_;
 	std::string typeName_;

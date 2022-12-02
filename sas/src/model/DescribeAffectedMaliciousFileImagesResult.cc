@@ -91,6 +91,20 @@ void DescribeAffectedMaliciousFileImagesResult::parse(const std::string &payload
 			affectedMaliciousFileImagesResponseObject.clusterName = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["ClusterName"].asString();
 		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["MaliciousSource"].isNull())
 			affectedMaliciousFileImagesResponseObject.maliciousSource = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["MaliciousSource"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["InstanceName"].isNull())
+			affectedMaliciousFileImagesResponseObject.instanceName = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["InstanceName"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["InternetIp"].isNull())
+			affectedMaliciousFileImagesResponseObject.internetIp = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["InternetIp"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["IntranetIp"].isNull())
+			affectedMaliciousFileImagesResponseObject.intranetIp = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["IntranetIp"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["TargetId"].isNull())
+			affectedMaliciousFileImagesResponseObject.targetId = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["TargetId"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["TargetName"].isNull())
+			affectedMaliciousFileImagesResponseObject.targetName = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["TargetName"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["TargetType"].isNull())
+			affectedMaliciousFileImagesResponseObject.targetType = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["TargetType"].asString();
+		if(!valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Uuid"].isNull())
+			affectedMaliciousFileImagesResponseObject.uuid = valueAffectedMaliciousFileImagesResponseAffectedMaliciousFileImage["Uuid"].asString();
 		affectedMaliciousFileImagesResponse_.push_back(affectedMaliciousFileImagesResponseObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

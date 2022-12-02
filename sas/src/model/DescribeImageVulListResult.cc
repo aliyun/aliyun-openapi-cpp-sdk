@@ -93,6 +93,22 @@ void DescribeImageVulListResult::parse(const std::string &payload)
 			vulRecordsObject.image = valueVulRecordsVulRecord["Image"].asString();
 		if(!valueVulRecordsVulRecord["ContainerId"].isNull())
 			vulRecordsObject.containerId = valueVulRecordsVulRecord["ContainerId"].asString();
+		if(!valueVulRecordsVulRecord["InternetIp"].isNull())
+			vulRecordsObject.internetIp = valueVulRecordsVulRecord["InternetIp"].asString();
+		if(!valueVulRecordsVulRecord["IntranetIp"].isNull())
+			vulRecordsObject.intranetIp = valueVulRecordsVulRecord["IntranetIp"].asString();
+		if(!valueVulRecordsVulRecord["InstanceName"].isNull())
+			vulRecordsObject.instanceName = valueVulRecordsVulRecord["InstanceName"].asString();
+		if(!valueVulRecordsVulRecord["TargetId"].isNull())
+			vulRecordsObject.targetId = valueVulRecordsVulRecord["TargetId"].asString();
+		if(!valueVulRecordsVulRecord["TargetName"].isNull())
+			vulRecordsObject.targetName = valueVulRecordsVulRecord["TargetName"].asString();
+		if(!valueVulRecordsVulRecord["MaliciousSource"].isNull())
+			vulRecordsObject.maliciousSource = valueVulRecordsVulRecord["MaliciousSource"].asString();
+		if(!valueVulRecordsVulRecord["TargetType"].isNull())
+			vulRecordsObject.targetType = valueVulRecordsVulRecord["TargetType"].asString();
+		if(!valueVulRecordsVulRecord["ScanTime"].isNull())
+			vulRecordsObject.scanTime = std::stol(valueVulRecordsVulRecord["ScanTime"].asString());
 		auto extendContentJsonNode = value["ExtendContentJson"];
 		if(!extendContentJsonNode["OsRelease"].isNull())
 			vulRecordsObject.extendContentJson.osRelease = extendContentJsonNode["OsRelease"].asString();

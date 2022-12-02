@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string uuid;
 					std::string instanceId;
 					std::string clientId;
+					std::string clientVersion;
 				};
 
 

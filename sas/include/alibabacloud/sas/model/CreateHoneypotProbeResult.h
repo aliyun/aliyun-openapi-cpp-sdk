@@ -32,6 +32,10 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SAS_EXPORT CreateHoneypotProbeResult : public ServiceResult
 			{
 			public:
+				struct HoneypotProbe
+				{
+					std::string probeId;
+				};
 
 
 				CreateHoneypotProbeResult();
@@ -39,6 +43,7 @@ namespace AlibabaCloud
 				~CreateHoneypotProbeResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
+				HoneypotProbe getHoneypotProbe()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -47,6 +52,7 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				int httpStatusCode_;
+				HoneypotProbe honeypotProbe_;
 				std::string code_;
 				bool success_;
 

@@ -52,6 +52,7 @@ namespace AlibabaCloud
 				int getUserDefinedAlarms()const;
 				int getAllowPartialBuy()const;
 				int getWebLock()const;
+				long getThreatAnalysisCapacity()const;
 				bool getIsOverBalance()const;
 				int getVmCores()const;
 				long getHoneypotCapacity()const;
@@ -89,6 +90,7 @@ namespace AlibabaCloud
 				int userDefinedAlarms_;
 				int allowPartialBuy_;
 				int webLock_;
+				long threatAnalysisCapacity_;
 				bool isOverBalance_;
 				int vmCores_;
 				long honeypotCapacity_;

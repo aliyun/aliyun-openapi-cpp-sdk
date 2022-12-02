@@ -51,6 +51,8 @@ void DescribeBackupClientsResult::parse(const std::string &payload)
 			clientsObject.clientStatus = valueClientsBackupMachineDTO["ClientStatus"].asString();
 		if(!valueClientsBackupMachineDTO["ClientId"].isNull())
 			clientsObject.clientId = valueClientsBackupMachineDTO["ClientId"].asString();
+		if(!valueClientsBackupMachineDTO["ClientVersion"].isNull())
+			clientsObject.clientVersion = valueClientsBackupMachineDTO["ClientVersion"].asString();
 		clients_.push_back(clientsObject);
 	}
 

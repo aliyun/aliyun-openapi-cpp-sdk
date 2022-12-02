@@ -105,6 +105,15 @@ void DescribeGroupedMaliciousFilesRequest::setImageTag(const std::string &imageT
   setParameter(std::string("ImageTag"), imageTag);
 }
 
+std::string DescribeGroupedMaliciousFilesRequest::getMaliciousMd5() const {
+  return maliciousMd5_;
+}
+
+void DescribeGroupedMaliciousFilesRequest::setMaliciousMd5(const std::string &maliciousMd5) {
+  maliciousMd5_ = maliciousMd5;
+  setParameter(std::string("MaliciousMd5"), maliciousMd5);
+}
+
 int DescribeGroupedMaliciousFilesRequest::getCurrentPage() const {
   return currentPage_;
 }

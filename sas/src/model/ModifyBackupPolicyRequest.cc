@@ -34,6 +34,15 @@ void ModifyBackupPolicyRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifyBackupPolicyRequest::getServerType() const {
+  return serverType_;
+}
+
+void ModifyBackupPolicyRequest::setServerType(const std::string &serverType) {
+  serverType_ = serverType;
+  setParameter(std::string("ServerType"), serverType);
+}
+
 std::string ModifyBackupPolicyRequest::getSourceIp() const {
   return sourceIp_;
 }

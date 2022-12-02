@@ -44,10 +44,14 @@ namespace AlibabaCloud
 					int imageSize;
 					int totalItemCount;
 					std::string image;
+					std::string targetName;
+					std::string intranetIp;
 					std::string endpoints;
+					std::string internetIp;
 					std::string containerId;
 					int middleRiskImage;
 					std::string imageId;
+					std::string targetType;
 					long imageUpdate;
 					std::string clusterName;
 					int noRiskImage;
@@ -58,7 +62,10 @@ namespace AlibabaCloud
 					std::string clusterId;
 					std::string repoName;
 					std::string _namespace;
+					long lastScanTime;
 					std::string riskStatus;
+					std::string targetId;
+					std::string instanceName;
 					std::string uuid;
 					long imageCreate;
 					int lowRiskImage;

@@ -75,8 +75,12 @@ namespace AlibabaCloud
 						bool on;
 					};
 					int cycleStartTime;
+					std::string customType;
 					int type;
+					std::string endTime;
 					int cycleDays;
+					std::string startTime;
+					std::string targetType;
 					int id;
 					std::vector<RiskTypeWhiteListQueryResult> riskTypeWhiteListQueryResultList;
 					std::string name;

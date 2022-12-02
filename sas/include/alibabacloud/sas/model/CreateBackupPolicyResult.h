@@ -32,15 +32,24 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SAS_EXPORT CreateBackupPolicyResult : public ServiceResult
 			{
 			public:
+				struct BackupPolicy
+				{
+					std::string status;
+					std::string id;
+				};
 
 
 				CreateBackupPolicyResult();
 				explicit CreateBackupPolicyResult(const std::string &payload);
 				~CreateBackupPolicyResult();
+				std::string getCode()const;
+				BackupPolicy getBackupPolicy()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string code_;
+				BackupPolicy backupPolicy_;
 
 			};
 		}

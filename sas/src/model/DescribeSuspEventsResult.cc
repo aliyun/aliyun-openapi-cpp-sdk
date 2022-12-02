@@ -135,6 +135,8 @@ void DescribeSuspEventsResult::parse(const std::string &payload)
 			suspEventsObject.level = valueSuspEventsWarningSummary["Level"].asString();
 		if(!valueSuspEventsWarningSummary["Id"].isNull())
 			suspEventsObject.id = std::stol(valueSuspEventsWarningSummary["Id"].asString());
+		if(!valueSuspEventsWarningSummary["clusterId"].isNull())
+			suspEventsObject.clusterId = valueSuspEventsWarningSummary["clusterId"].asString();
 		if(!valueSuspEventsWarningSummary["DisplaySandboxResult"].isNull())
 			suspEventsObject.displaySandboxResult = valueSuspEventsWarningSummary["DisplaySandboxResult"].asString() == "true";
 		auto allTacticItemsNode = valueSuspEventsWarningSummary["TacticItems"]["TacticItem"];

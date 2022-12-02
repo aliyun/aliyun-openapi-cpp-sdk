@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					bool containHwMode;
 					long endTime;
 					std::string k8sNodeName;
+					bool hasTraceInfo;
 					std::string intranetIp;
 					std::string k8sClusterId;
 					std::string appName;
@@ -60,7 +61,9 @@ namespace AlibabaCloud
 					bool canCancelFault;
 					std::vector<CauseDetail> causeDetails;
 					long startTime;
+					std::string accessCode;
 					std::string k8sPodName;
+					bool dealed;
 					std::string containerImageId;
 					std::string dataSource;
 					std::string instanceName;

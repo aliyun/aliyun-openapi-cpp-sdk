@@ -32,11 +32,16 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SAS_EXPORT CreateHoneypotNodeResult : public ServiceResult
 			{
 			public:
+				struct HoneypotNode
+				{
+					std::string nodeId;
+				};
 
 
 				CreateHoneypotNodeResult();
 				explicit CreateHoneypotNodeResult(const std::string &payload);
 				~CreateHoneypotNodeResult();
+				HoneypotNode getHoneypotNode()const;
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
@@ -45,6 +50,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				HoneypotNode honeypotNode_;
 				std::string message_;
 				int httpStatusCode_;
 				std::string code_;

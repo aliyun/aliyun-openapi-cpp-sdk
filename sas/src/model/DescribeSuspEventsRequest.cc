@@ -169,6 +169,15 @@ void DescribeSuspEventsRequest::setTargetType(const std::string &targetType) {
   setParameter(std::string("TargetType"), targetType);
 }
 
+std::string DescribeSuspEventsRequest::getSortType() const {
+  return sortType_;
+}
+
+void DescribeSuspEventsRequest::setSortType(const std::string &sortType) {
+  sortType_ = sortType;
+  setParameter(std::string("SortType"), sortType);
+}
+
 std::string DescribeSuspEventsRequest::getRemark() const {
   return remark_;
 }
@@ -238,6 +247,23 @@ std::vector<std::string> DescribeSuspEventsRequest::getOperateErrorCodeList() co
 
 void DescribeSuspEventsRequest::setOperateErrorCodeList(const std::vector<std::string> &operateErrorCodeList) {
   operateErrorCodeList_ = operateErrorCodeList;
+}
+
+std::string DescribeSuspEventsRequest::getSortColumn() const {
+  return sortColumn_;
+}
+
+void DescribeSuspEventsRequest::setSortColumn(const std::string &sortColumn) {
+  sortColumn_ = sortColumn;
+  setParameter(std::string("SortColumn"), sortColumn);
+}
+
+std::vector<std::string> DescribeSuspEventsRequest::getAssetsTypeList() const {
+  return assetsTypeList_;
+}
+
+void DescribeSuspEventsRequest::setAssetsTypeList(const std::vector<std::string> &assetsTypeList) {
+  assetsTypeList_ = assetsTypeList;
 }
 
 std::string DescribeSuspEventsRequest::getOperateTimeStart() const {

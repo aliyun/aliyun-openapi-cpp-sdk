@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					std::string presetId;
 					std::string honeypotImageDisplayName;
 					std::string nodeId;
+					std::string honeypotImageId;
 					std::string honeypotName;
 				};
 

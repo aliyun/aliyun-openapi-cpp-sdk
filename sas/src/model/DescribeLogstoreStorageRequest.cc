@@ -25,6 +25,15 @@ DescribeLogstoreStorageRequest::DescribeLogstoreStorageRequest()
 
 DescribeLogstoreStorageRequest::~DescribeLogstoreStorageRequest() {}
 
+std::string DescribeLogstoreStorageRequest::getLogVersion() const {
+  return logVersion_;
+}
+
+void DescribeLogstoreStorageRequest::setLogVersion(const std::string &logVersion) {
+  logVersion_ = logVersion;
+  setParameter(std::string("LogVersion"), logVersion);
+}
+
 std::string DescribeLogstoreStorageRequest::getSourceIp() const {
   return sourceIp_;
 }

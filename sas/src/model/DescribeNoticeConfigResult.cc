@@ -53,6 +53,12 @@ void DescribeNoticeConfigResult::parse(const std::string &payload)
 			noticeConfigListObject.project = valueNoticeConfigListNoticeConfig["Project"].asString();
 		if(!valueNoticeConfigListNoticeConfig["Route"].isNull())
 			noticeConfigListObject.route = std::stoi(valueNoticeConfigListNoticeConfig["Route"].asString());
+		if(!valueNoticeConfigListNoticeConfig["AllFocusLevel"].isNull())
+			noticeConfigListObject.allFocusLevel = valueNoticeConfigListNoticeConfig["AllFocusLevel"].asString();
+		if(!valueNoticeConfigListNoticeConfig["FocusLevel"].isNull())
+			noticeConfigListObject.focusLevel = valueNoticeConfigListNoticeConfig["FocusLevel"].asString();
+		if(!valueNoticeConfigListNoticeConfig["CustomThreshold"].isNull())
+			noticeConfigListObject.customThreshold = std::stoi(valueNoticeConfigListNoticeConfig["CustomThreshold"].asString());
 		noticeConfigList_.push_back(noticeConfigListObject);
 	}
 

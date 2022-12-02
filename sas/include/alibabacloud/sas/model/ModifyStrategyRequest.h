@@ -30,8 +30,12 @@ class ALIBABACLOUD_SAS_EXPORT ModifyStrategyRequest : public RpcServiceRequest {
 public:
 	ModifyStrategyRequest();
 	~ModifyStrategyRequest();
+	std::string getTargetType() const;
+	void setTargetType(const std::string &targetType);
 	std::string getCycleDays() const;
 	void setCycleDays(const std::string &cycleDays);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
 	std::string getRiskSubTypeName() const;
 	void setRiskSubTypeName(const std::string &riskSubTypeName);
 	std::string getSourceIp() const;
@@ -42,6 +46,8 @@ public:
 	void setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId);
 	std::string getRiskCustomParams() const;
 	void setRiskCustomParams(const std::string &riskCustomParams);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
 	std::string getCustomType() const;
 	void setCustomType(const std::string &customType);
 	std::string getCycleStartTime() const;
@@ -50,12 +56,15 @@ public:
 	void setName(const std::string &name);
 
 private:
+	std::string targetType_;
 	std::string cycleDays_;
+	std::string startTime_;
 	std::string riskSubTypeName_;
 	std::string sourceIp_;
 	std::string id_;
 	std::string resourceDirectoryAccountId_;
 	std::string riskCustomParams_;
+	std::string endTime_;
 	std::string customType_;
 	std::string cycleStartTime_;
 	std::string name_;

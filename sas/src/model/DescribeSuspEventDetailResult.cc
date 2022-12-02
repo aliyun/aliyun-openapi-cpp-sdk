@@ -47,6 +47,8 @@ void DescribeSuspEventDetailResult::parse(const std::string &payload)
 			detailsObject.type = valueDetailsQuaraFile["Type"].asString();
 		if(!valueDetailsQuaraFile["Value"].isNull())
 			detailsObject.value = valueDetailsQuaraFile["Value"].asString();
+		if(!valueDetailsQuaraFile["ValueDisplay"].isNull())
+			detailsObject.valueDisplay = valueDetailsQuaraFile["ValueDisplay"].asString();
 		if(!valueDetailsQuaraFile["InfoType"].isNull())
 			detailsObject.infoType = valueDetailsQuaraFile["InfoType"].asString();
 		if(!valueDetailsQuaraFile["NameDisplay"].isNull())
@@ -54,6 +56,18 @@ void DescribeSuspEventDetailResult::parse(const std::string &payload)
 		if(!valueDetailsQuaraFile["Name"].isNull())
 			detailsObject.name = valueDetailsQuaraFile["Name"].asString();
 		details_.push_back(detailsObject);
+	}
+	auto allEventNotesNode = value["EventNotes"]["EventNote"];
+	for (auto valueEventNotesEventNote : allEventNotesNode)
+	{
+		EventNote eventNotesObject;
+		if(!valueEventNotesEventNote["Note"].isNull())
+			eventNotesObject.note = valueEventNotesEventNote["Note"].asString();
+		if(!valueEventNotesEventNote["NoteId"].isNull())
+			eventNotesObject.noteId = std::stol(valueEventNotesEventNote["NoteId"].asString());
+		if(!valueEventNotesEventNote["NoteTime"].isNull())
+			eventNotesObject.noteTime = valueEventNotesEventNote["NoteTime"].asString();
+		eventNotes_.push_back(eventNotesObject);
 	}
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
@@ -63,6 +77,8 @@ void DescribeSuspEventDetailResult::parse(const std::string &payload)
 		eventName_ = value["EventName"].asString();
 	if(!value["InternetIp"].isNull())
 		internetIp_ = value["InternetIp"].asString();
+	if(!value["AlarmUniqueInfo"].isNull())
+		alarmUniqueInfo_ = value["AlarmUniqueInfo"].asString();
 	if(!value["IntranetIp"].isNull())
 		intranetIp_ = value["IntranetIp"].asString();
 	if(!value["LastTime"].isNull())
@@ -73,6 +89,8 @@ void DescribeSuspEventDetailResult::parse(const std::string &payload)
 		uuid_ = value["Uuid"].asString();
 	if(!value["CanBeDealOnLine"].isNull())
 		canBeDealOnLine_ = value["CanBeDealOnLine"].asString() == "true";
+	if(!value["AccessCode"].isNull())
+		accessCode_ = value["AccessCode"].asString();
 	if(!value["EventTypeDesc"].isNull())
 		eventTypeDesc_ = value["EventTypeDesc"].asString();
 	if(!value["EventDesc"].isNull())
@@ -112,6 +130,16 @@ std::string DescribeSuspEventDetailResult::getOperateErrorCode()const
 std::string DescribeSuspEventDetailResult::getEventStatus()const
 {
 	return eventStatus_;
+}
+
+std::string DescribeSuspEventDetailResult::getAccessCode()const
+{
+	return accessCode_;
+}
+
+std::vector<DescribeSuspEventDetailResult::EventNote> DescribeSuspEventDetailResult::getEventNotes()const
+{
+	return eventNotes_;
 }
 
 std::string DescribeSuspEventDetailResult::getEventName()const
@@ -167,6 +195,11 @@ std::string DescribeSuspEventDetailResult::getUuid()const
 std::string DescribeSuspEventDetailResult::getInternetIp()const
 {
 	return internetIp_;
+}
+
+std::string DescribeSuspEventDetailResult::getAlarmUniqueInfo()const
+{
+	return alarmUniqueInfo_;
 }
 
 std::string DescribeSuspEventDetailResult::getLevel()const

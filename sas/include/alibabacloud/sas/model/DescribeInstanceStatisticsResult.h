@@ -39,6 +39,9 @@ namespace AlibabaCloud
 					int emgNum;
 					int appNum;
 					int vul;
+					int agentlessVulSca;
+					int agentlessAll;
+					int agentlessVulCve;
 					std::string uuid;
 					int suspicious;
 					int cveNum;
@@ -47,6 +50,8 @@ namespace AlibabaCloud
 					int cmsNum;
 					int sysNum;
 					int weakPWNum;
+					int agentlessBaseline;
+					int agentlessMalicious;
 				};
 
 

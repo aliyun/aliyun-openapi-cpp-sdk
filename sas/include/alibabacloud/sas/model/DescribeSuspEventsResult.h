@@ -96,6 +96,7 @@ namespace AlibabaCloud
 					std::string appName;
 					long lastTimeStamp;
 					std::string alarmEventTypeDisplay;
+					std::string clusterId;
 					std::string stages;
 					std::string markMisRules;
 					std::vector<WarningSummary::EventNote> eventNotes;

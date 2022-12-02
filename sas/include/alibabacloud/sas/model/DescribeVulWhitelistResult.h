@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string type;
 					std::string targetInfo;
 					std::string aliasName;
+					std::string whitelist;
 					std::string id;
 					std::string reason;
 					std::string name;
@@ -50,6 +51,7 @@ namespace AlibabaCloud
 				std::vector<VulWhitelist> getVulWhitelists()const;
 				int getPageSize()const;
 				int getCurrentPage()const;
+				int getCount()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -58,6 +60,7 @@ namespace AlibabaCloud
 				std::vector<VulWhitelist> vulWhitelists_;
 				int pageSize_;
 				int currentPage_;
+				int count_;
 
 			};
 		}

@@ -97,6 +97,15 @@ void ExportVulRequest::setContainerFieldName(const std::string &containerFieldNa
   setParameter(std::string("ContainerFieldName"), containerFieldName);
 }
 
+int ExportVulRequest::getCheckType() const {
+  return checkType_;
+}
+
+void ExportVulRequest::setCheckType(int checkType) {
+  checkType_ = checkType;
+  setParameter(std::string("CheckType"), std::to_string(checkType));
+}
+
 std::string ExportVulRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -115,6 +124,15 @@ void ExportVulRequest::setContainerFieldValue(const std::string &containerFieldV
   setParameter(std::string("ContainerFieldValue"), containerFieldValue);
 }
 
+long ExportVulRequest::getModifyTsStart() const {
+  return modifyTsStart_;
+}
+
+void ExportVulRequest::setModifyTsStart(long modifyTsStart) {
+  modifyTsStart_ = modifyTsStart;
+  setParameter(std::string("ModifyTsStart"), std::to_string(modifyTsStart));
+}
+
 std::string ExportVulRequest::getLang() const {
   return lang_;
 }
@@ -122,6 +140,15 @@ std::string ExportVulRequest::getLang() const {
 void ExportVulRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+long ExportVulRequest::getModifyTsEnd() const {
+  return modifyTsEnd_;
+}
+
+void ExportVulRequest::setModifyTsEnd(long modifyTsEnd) {
+  modifyTsEnd_ = modifyTsEnd;
+  setParameter(std::string("ModifyTsEnd"), std::to_string(modifyTsEnd));
 }
 
 std::string ExportVulRequest::getLevel() const {

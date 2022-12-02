@@ -34,6 +34,15 @@ void OperateAgentClientInstallRequest::setSourceIp(const std::string &sourceIp) 
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string OperateAgentClientInstallRequest::getLang() const {
+  return lang_;
+}
+
+void OperateAgentClientInstallRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 std::string OperateAgentClientInstallRequest::getInstanceIds() const {
   return instanceIds_;
 }

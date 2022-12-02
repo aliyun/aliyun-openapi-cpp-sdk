@@ -57,6 +57,8 @@ void ListHoneypotResult::parse(const std::string &payload)
 			listObject.honeypotImageDisplayName = valueListListItem["HoneypotImageDisplayName"].asString();
 		if(!valueListListItem["NodeId"].isNull())
 			listObject.nodeId = valueListListItem["NodeId"].asString();
+		if(!valueListListItem["HoneypotImageId"].isNull())
+			listObject.honeypotImageId = valueListListItem["HoneypotImageId"].asString();
 		auto allState = value["State"]["State"];
 		for (auto value : allState)
 			listObject.state.push_back(value.asString());

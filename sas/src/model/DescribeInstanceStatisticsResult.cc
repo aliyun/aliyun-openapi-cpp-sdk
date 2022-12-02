@@ -69,6 +69,16 @@ void DescribeInstanceStatisticsResult::parse(const std::string &payload)
 			dataObject.sysNum = std::stoi(valueDataDataItem["SysNum"].asString());
 		if(!valueDataDataItem["WeakPWNum"].isNull())
 			dataObject.weakPWNum = std::stoi(valueDataDataItem["WeakPWNum"].asString());
+		if(!valueDataDataItem["AgentlessAll"].isNull())
+			dataObject.agentlessAll = std::stoi(valueDataDataItem["AgentlessAll"].asString());
+		if(!valueDataDataItem["AgentlessMalicious"].isNull())
+			dataObject.agentlessMalicious = std::stoi(valueDataDataItem["AgentlessMalicious"].asString());
+		if(!valueDataDataItem["AgentlessVulCve"].isNull())
+			dataObject.agentlessVulCve = std::stoi(valueDataDataItem["AgentlessVulCve"].asString());
+		if(!valueDataDataItem["AgentlessVulSca"].isNull())
+			dataObject.agentlessVulSca = std::stoi(valueDataDataItem["AgentlessVulSca"].asString());
+		if(!valueDataDataItem["AgentlessBaseline"].isNull())
+			dataObject.agentlessBaseline = std::stoi(valueDataDataItem["AgentlessBaseline"].asString());
 		data_.push_back(dataObject);
 	}
 

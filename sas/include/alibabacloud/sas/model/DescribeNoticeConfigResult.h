@@ -35,7 +35,10 @@ namespace AlibabaCloud
 				struct NoticeConfig
 				{
 					std::string project;
+					std::string allFocusLevel;
 					int currentPage;
+					std::string focusLevel;
+					int customThreshold;
 					int timeLimit;
 					int route;
 					long aliUid;

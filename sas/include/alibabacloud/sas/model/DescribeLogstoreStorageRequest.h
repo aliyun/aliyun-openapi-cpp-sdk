@@ -30,6 +30,8 @@ class ALIBABACLOUD_SAS_EXPORT DescribeLogstoreStorageRequest : public RpcService
 public:
 	DescribeLogstoreStorageRequest();
 	~DescribeLogstoreStorageRequest();
+	std::string getLogVersion() const;
+	void setLogVersion(const std::string &logVersion);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getFrom() const;
@@ -38,6 +40,7 @@ public:
 	void setLang(const std::string &lang);
 
 private:
+	std::string logVersion_;
 	std::string sourceIp_;
 	std::string from_;
 	std::string lang_;

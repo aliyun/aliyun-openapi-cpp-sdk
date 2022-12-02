@@ -54,6 +54,7 @@ namespace AlibabaCloud
 					int probeUsedCount;
 					std::string nodeId;
 					bool defaultNode;
+					bool upgradeAvailable;
 					int honeypotUsedCount;
 					int totalStatus;
 				};

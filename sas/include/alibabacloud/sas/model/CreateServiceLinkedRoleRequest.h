@@ -32,9 +32,12 @@ public:
 	~CreateServiceLinkedRoleRequest();
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getServiceLinkedRole() const;
+	void setServiceLinkedRole(const std::string &serviceLinkedRole);
 
 private:
 	std::string sourceIp_;
+	std::string serviceLinkedRole_;
 };
 } // namespace Model
 } // namespace Sas

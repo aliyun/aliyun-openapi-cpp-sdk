@@ -47,12 +47,19 @@ void DescribeLogstoreStorageResult::parse(const std::string &payload)
 		logstore_ = value["Logstore"].asString();
 	if(!value["Preserve"].isNull())
 		preserve_ = std::stol(value["Preserve"].asString());
+	if(!value["UserProject"].isNull())
+		userProject_ = value["UserProject"].asString();
 
 }
 
 long DescribeLogstoreStorageResult::getUsed()const
 {
 	return used_;
+}
+
+std::string DescribeLogstoreStorageResult::getUserProject()const
+{
+	return userProject_;
 }
 
 std::string DescribeLogstoreStorageResult::getLogstore()const

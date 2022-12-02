@@ -45,6 +45,12 @@ void DescribeVulListResult::parse(const std::string &payload)
 		VulRecord vulRecordsObject;
 		if(!valueVulRecordsVulRecord["Status"].isNull())
 			vulRecordsObject.status = std::stoi(valueVulRecordsVulRecord["Status"].asString());
+		if(!valueVulRecordsVulRecord["IsPoc"].isNull())
+			vulRecordsObject.isPoc = std::stoi(valueVulRecordsVulRecord["IsPoc"].asString());
+		if(!valueVulRecordsVulRecord["RaspDefend"].isNull())
+			vulRecordsObject.raspDefend = std::stoi(valueVulRecordsVulRecord["RaspDefend"].asString());
+		if(!valueVulRecordsVulRecord["RaspStatus"].isNull())
+			vulRecordsObject.raspStatus = std::stoi(valueVulRecordsVulRecord["RaspStatus"].asString());
 		if(!valueVulRecordsVulRecord["Type"].isNull())
 			vulRecordsObject.type = valueVulRecordsVulRecord["Type"].asString();
 		if(!valueVulRecordsVulRecord["ModifyTs"].isNull())
@@ -127,6 +133,8 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.osName = valueVulRecordsVulRecord["OsName"].asString();
 		if(!valueVulRecordsVulRecord["AuthVersion"].isNull())
 			vulRecordsObject.authVersion = valueVulRecordsVulRecord["AuthVersion"].asString();
+		if(!valueVulRecordsVulRecord["Product"].isNull())
+			vulRecordsObject.product = valueVulRecordsVulRecord["Product"].asString();
 		auto extendContentJsonNode = value["ExtendContentJson"];
 		if(!extendContentJsonNode["Status"].isNull())
 			vulRecordsObject.extendContentJson.status = extendContentJsonNode["Status"].asString();
@@ -172,6 +180,10 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.extendContentJson.proof = extendContentJsonNode["Proof"].asString();
 		if(!extendContentJsonNode["Reason"].isNull())
 			vulRecordsObject.extendContentJson.reason = extendContentJsonNode["Reason"].asString();
+		if(!extendContentJsonNode["Level"].isNull())
+			vulRecordsObject.extendContentJson.level = extendContentJsonNode["Level"].asString();
+		if(!extendContentJsonNode["RenderData"].isNull())
+			vulRecordsObject.extendContentJson.renderData = extendContentJsonNode["RenderData"].asString();
 		auto allRpmEntityListNode = extendContentJsonNode["RpmEntityList"]["RpmEntity"];
 		for (auto extendContentJsonNodeRpmEntityListRpmEntity : allRpmEntityListNode)
 		{
@@ -194,6 +206,8 @@ void DescribeVulListResult::parse(const std::string &payload)
 				rpmEntityObject.updateCmd = extendContentJsonNodeRpmEntityListRpmEntity["UpdateCmd"].asString();
 			if(!extendContentJsonNodeRpmEntityListRpmEntity["Pid"].isNull())
 				rpmEntityObject.pid = extendContentJsonNodeRpmEntityListRpmEntity["Pid"].asString();
+			if(!extendContentJsonNodeRpmEntityListRpmEntity["ExtendField"].isNull())
+				rpmEntityObject.extendField = extendContentJsonNodeRpmEntityListRpmEntity["ExtendField"].asString();
 			auto allMatchList = value["MatchList"]["Match"];
 			for (auto value : allMatchList)
 				rpmEntityObject.matchList.push_back(value.asString());
@@ -216,6 +230,18 @@ void DescribeVulListResult::parse(const std::string &payload)
 			vulRecordsObject.extendContentJson.necessity.cvss_factor = necessityNode["Cvss_factor"].asString();
 		if(!necessityNode["Assets_factor"].isNull())
 			vulRecordsObject.extendContentJson.necessity.assets_factor = necessityNode["Assets_factor"].asString();
+		auto preCheckNode = extendContentJsonNode["PreCheck"];
+		if(!preCheckNode["Msg"].isNull())
+			vulRecordsObject.extendContentJson.preCheck.msg = preCheckNode["Msg"].asString();
+		if(!preCheckNode["Code"].isNull())
+			vulRecordsObject.extendContentJson.preCheck.code = std::stol(preCheckNode["Code"].asString());
+		auto agentScanVulNode = extendContentJsonNode["AgentScanVul"];
+		if(!agentScanVulNode["Poc"].isNull())
+			vulRecordsObject.extendContentJson.agentScanVul.poc = agentScanVulNode["Poc"].asString();
+		if(!agentScanVulNode["Proof"].isNull())
+			vulRecordsObject.extendContentJson.agentScanVul.proof = agentScanVulNode["Proof"].asString();
+		if(!agentScanVulNode["Target"].isNull())
+			vulRecordsObject.extendContentJson.agentScanVul.target = agentScanVulNode["Target"].asString();
 			auto allCveList = extendContentJsonNode["cveList"]["Cve"];
 			for (auto value : allCveList)
 				vulRecordsObject.extendContentJson.cveList.push_back(value.asString());

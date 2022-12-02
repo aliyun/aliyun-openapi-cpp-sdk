@@ -102,10 +102,10 @@ void DescribeAssetDetailByUuidResult::parse(const std::string &payload)
 		assetDetail_.flag = std::stoi(assetDetailNode["Flag"].asString());
 	if(!assetDetailNode["ClientVersion"].isNull())
 		assetDetail_.clientVersion = assetDetailNode["ClientVersion"].asString();
-		auto allIpList = assetDetailNode["IpList"]["Ip"];
+		auto allIpList = assetDetailNode["IpList"]["IpListArr"];
 		for (auto value : allIpList)
 			assetDetail_.ipList.push_back(value.asString());
-		auto allMacList = assetDetailNode["MacList"]["Mac"];
+		auto allMacList = assetDetailNode["MacList"]["MacListArr"];
 		for (auto value : allMacList)
 			assetDetail_.macList.push_back(value.asString());
 		auto allDiskInfoList = assetDetailNode["DiskInfoList"]["DiskInfo"];

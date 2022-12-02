@@ -97,6 +97,20 @@ void DescribeImageListWithBaselineNameResult::parse(const std::string &payload)
 			imageInfosObject.image = valueImageInfosImageInfosItem["Image"].asString();
 		if(!valueImageInfosImageInfosItem["BaselineType"].isNull())
 			imageInfosObject.baselineType = valueImageInfosImageInfosItem["BaselineType"].asString();
+		if(!valueImageInfosImageInfosItem["InstanceName"].isNull())
+			imageInfosObject.instanceName = valueImageInfosImageInfosItem["InstanceName"].asString();
+		if(!valueImageInfosImageInfosItem["InternetIp"].isNull())
+			imageInfosObject.internetIp = valueImageInfosImageInfosItem["InternetIp"].asString();
+		if(!valueImageInfosImageInfosItem["IntranetIp"].isNull())
+			imageInfosObject.intranetIp = valueImageInfosImageInfosItem["IntranetIp"].asString();
+		if(!valueImageInfosImageInfosItem["TargetName"].isNull())
+			imageInfosObject.targetName = valueImageInfosImageInfosItem["TargetName"].asString();
+		if(!valueImageInfosImageInfosItem["TargetId"].isNull())
+			imageInfosObject.targetId = valueImageInfosImageInfosItem["TargetId"].asString();
+		if(!valueImageInfosImageInfosItem["TargetType"].isNull())
+			imageInfosObject.targetType = valueImageInfosImageInfosItem["TargetType"].asString();
+		if(!valueImageInfosImageInfosItem["LastScanTime"].isNull())
+			imageInfosObject.lastScanTime = std::stol(valueImageInfosImageInfosItem["LastScanTime"].asString());
 		imageInfos_.push_back(imageInfosObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

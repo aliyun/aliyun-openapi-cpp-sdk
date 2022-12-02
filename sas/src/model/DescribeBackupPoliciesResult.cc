@@ -65,6 +65,8 @@ void DescribeBackupPoliciesResult::parse(const std::string &payload)
 			policiesObject.healthClientCount = std::stoi(valuePoliciesBackupPolicy["HealthClientCount"].asString());
 		if(!valuePoliciesBackupPolicy["Id"].isNull())
 			policiesObject.id = std::stol(valuePoliciesBackupPolicy["Id"].asString());
+		if(!valuePoliciesBackupPolicy["ServerType"].isNull())
+			policiesObject.serverType = valuePoliciesBackupPolicy["ServerType"].asString();
 		auto allClientErrorUuidList = value["ClientErrorUuidList"]["StringItem"];
 		for (auto value : allClientErrorUuidList)
 			policiesObject.clientErrorUuidList.push_back(value.asString());

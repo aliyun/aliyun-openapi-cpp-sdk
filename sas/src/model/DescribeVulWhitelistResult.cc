@@ -55,6 +55,8 @@ void DescribeVulWhitelistResult::parse(const std::string &payload)
 			vulWhitelistsObject.reason = valueVulWhitelistsVulWhitelist["Reason"].asString();
 		if(!valueVulWhitelistsVulWhitelist["Id"].isNull())
 			vulWhitelistsObject.id = valueVulWhitelistsVulWhitelist["Id"].asString();
+		if(!valueVulWhitelistsVulWhitelist["Whitelist"].isNull())
+			vulWhitelistsObject.whitelist = valueVulWhitelistsVulWhitelist["Whitelist"].asString();
 		vulWhitelists_.push_back(vulWhitelistsObject);
 	}
 	if(!value["CurrentPage"].isNull())
@@ -63,6 +65,8 @@ void DescribeVulWhitelistResult::parse(const std::string &payload)
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["Count"].isNull())
+		count_ = std::stoi(value["Count"].asString());
 
 }
 
@@ -84,5 +88,10 @@ int DescribeVulWhitelistResult::getPageSize()const
 int DescribeVulWhitelistResult::getCurrentPage()const
 {
 	return currentPage_;
+}
+
+int DescribeVulWhitelistResult::getCount()const
+{
+	return count_;
 }
 

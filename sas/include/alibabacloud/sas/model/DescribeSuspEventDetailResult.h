@@ -36,9 +36,16 @@ namespace AlibabaCloud
 				{
 					std::string type;
 					std::string value;
+					std::string valueDisplay;
 					std::string infoType;
 					std::string nameDisplay;
 					std::string name;
+				};
+				struct EventNote
+				{
+					long noteId;
+					std::string note;
+					std::string noteTime;
 				};
 
 
@@ -49,6 +56,8 @@ namespace AlibabaCloud
 				std::string getEventTypeDesc()const;
 				std::string getOperateErrorCode()const;
 				std::string getEventStatus()const;
+				std::string getAccessCode()const;
+				std::vector<EventNote> getEventNotes()const;
 				std::string getEventName()const;
 				std::string getSaleVersion()const;
 				std::string getIntranetIp()const;
@@ -60,6 +69,7 @@ namespace AlibabaCloud
 				std::vector<QuaraFile> getDetails()const;
 				std::string getUuid()const;
 				std::string getInternetIp()const;
+				std::string getAlarmUniqueInfo()const;
 				std::string getLevel()const;
 				int getId()const;
 				std::string getLastTime()const;
@@ -72,6 +82,8 @@ namespace AlibabaCloud
 				std::string eventTypeDesc_;
 				std::string operateErrorCode_;
 				std::string eventStatus_;
+				std::string accessCode_;
+				std::vector<EventNote> eventNotes_;
 				std::string eventName_;
 				std::string saleVersion_;
 				std::string intranetIp_;
@@ -83,6 +95,7 @@ namespace AlibabaCloud
 				std::vector<QuaraFile> details_;
 				std::string uuid_;
 				std::string internetIp_;
+				std::string alarmUniqueInfo_;
 				std::string level_;
 				int id_;
 				std::string lastTime_;

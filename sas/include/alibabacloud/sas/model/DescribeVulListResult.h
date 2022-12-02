@@ -47,6 +47,17 @@ namespace AlibabaCloud
 							std::string enviroment_factor;
 							std::string assets_factor;
 						};
+						struct PreCheck
+						{
+							std::string msg;
+							long code;
+						};
+						struct AgentScanVul
+						{
+							std::string target;
+							std::string poc;
+							std::string proof;
+						};
 						struct RpmEntity
 						{
 							std::string path;
@@ -55,6 +66,7 @@ namespace AlibabaCloud
 							std::vector<std::string> matchList;
 							std::string version;
 							std::string containerName;
+							std::string extendField;
 							std::string pid;
 							std::string fullVersion;
 							std::string matchDetail;
@@ -63,11 +75,13 @@ namespace AlibabaCloud
 						std::string description;
 						std::string os;
 						std::string ip;
+						AgentScanVul agentScanVul;
 						std::string reason;
 						std::string cwe;
 						std::string target;
 						std::string wasc;
 						std::string aliasName;
+						PreCheck preCheck;
 						std::string osRelease;
 						std::string solution;
 						std::string vulType;
@@ -80,8 +94,10 @@ namespace AlibabaCloud
 						std::vector<RpmEntity> rpmEntityList;
 						std::string title;
 						std::string absolutePath;
+						std::string renderData;
 						std::string proof;
 						std::string effect;
+						std::string level;
 						std::string tag;
 						std::string emgProof;
 						long primaryId;
@@ -111,6 +127,7 @@ namespace AlibabaCloud
 					std::string osVersion;
 					std::string ip;
 					std::string containerInnerPath;
+					std::string product;
 					std::string intranetIp;
 					std::string k8sClusterId;
 					std::string name;
@@ -123,8 +140,10 @@ namespace AlibabaCloud
 					std::string aliasName;
 					long recordId;
 					std::string canFix;
+					int raspDefend;
 					ExtendContentJson extendContentJson;
 					int status;
+					int isPoc;
 					int progress;
 					std::string instanceId;
 					std::string osName;
@@ -142,6 +161,7 @@ namespace AlibabaCloud
 					std::string related;
 					std::string uuid;
 					std::string containerImageName;
+					int raspStatus;
 					std::string level;
 					std::string tag;
 					std::string regionId;

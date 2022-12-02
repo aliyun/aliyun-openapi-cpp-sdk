@@ -32,15 +32,21 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SAS_EXPORT ModifyCreateVulWhitelistResult : public ServiceResult
 			{
 			public:
+				struct VulWhitelist
+				{
+					long id;
+				};
 
 
 				ModifyCreateVulWhitelistResult();
 				explicit ModifyCreateVulWhitelistResult(const std::string &payload);
 				~ModifyCreateVulWhitelistResult();
+				std::vector<VulWhitelist> getVulWhitelistList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<VulWhitelist> vulWhitelistList_;
 
 			};
 		}

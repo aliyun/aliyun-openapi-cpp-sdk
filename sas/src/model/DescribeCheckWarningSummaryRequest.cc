@@ -106,6 +106,15 @@ void DescribeCheckWarningSummaryRequest::setClusterId(const std::string &cluster
   setParameter(std::string("ClusterId"), clusterId);
 }
 
+std::string DescribeCheckWarningSummaryRequest::getRiskLevel() const {
+  return riskLevel_;
+}
+
+void DescribeCheckWarningSummaryRequest::setRiskLevel(const std::string &riskLevel) {
+  riskLevel_ = riskLevel;
+  setParameter(std::string("RiskLevel"), riskLevel);
+}
+
 int DescribeCheckWarningSummaryRequest::getRiskStatus() const {
   return riskStatus_;
 }

@@ -39,6 +39,19 @@ void ModifyCreateVulWhitelistResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allVulWhitelistListNode = value["VulWhitelistList"]["VulWhitelist"];
+	for (auto valueVulWhitelistListVulWhitelist : allVulWhitelistListNode)
+	{
+		VulWhitelist vulWhitelistListObject;
+		if(!valueVulWhitelistListVulWhitelist["Id"].isNull())
+			vulWhitelistListObject.id = std::stol(valueVulWhitelistListVulWhitelist["Id"].asString());
+		vulWhitelistList_.push_back(vulWhitelistListObject);
+	}
 
+}
+
+std::vector<ModifyCreateVulWhitelistResult::VulWhitelist> ModifyCreateVulWhitelistResult::getVulWhitelistList()const
+{
+	return vulWhitelistList_;
 }
 

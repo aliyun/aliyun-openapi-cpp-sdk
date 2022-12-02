@@ -39,6 +39,9 @@ void CreateHoneypotNodeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto honeypotNodeNode = value["HoneypotNode"];
+	if(!honeypotNodeNode["NodeId"].isNull())
+		honeypotNode_.nodeId = honeypotNodeNode["NodeId"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -48,6 +51,11 @@ void CreateHoneypotNodeResult::parse(const std::string &payload)
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 
+}
+
+CreateHoneypotNodeResult::HoneypotNode CreateHoneypotNodeResult::getHoneypotNode()const
+{
+	return honeypotNode_;
 }
 
 std::string CreateHoneypotNodeResult::getMessage()const

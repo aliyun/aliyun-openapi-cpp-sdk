@@ -34,6 +34,8 @@ public:
 	void setTimeEnd(const std::string &timeEnd);
 	std::string getTargetType() const;
 	void setTargetType(const std::string &targetType);
+	std::string getSortType() const;
+	void setSortType(const std::string &sortType);
 	std::string getAlarmEventType() const;
 	void setAlarmEventType(const std::string &alarmEventType);
 	std::string getRemark() const;
@@ -70,6 +72,8 @@ public:
 	void setOperateTimeEnd(const std::string &operateTimeEnd);
 	std::vector<std::string> getOperateErrorCodeList() const;
 	void setOperateErrorCodeList(const std::vector<std::string> &operateErrorCodeList);
+	std::string getSortColumn() const;
+	void setSortColumn(const std::string &sortColumn);
 	std::string getOperateTimeStart() const;
 	void setOperateTimeStart(const std::string &operateTimeStart);
 	std::string getTimeStart() const;
@@ -82,6 +86,7 @@ public:
 private:
 	std::string timeEnd_;
 	std::string targetType_;
+	std::string sortType_;
 	std::string alarmEventType_;
 	std::string remark_;
 	std::string containerFieldName_;
@@ -100,6 +105,7 @@ private:
 	std::string clusterId_;
 	std::string operateTimeEnd_;
 	std::vector<std::string> operateErrorCodeList_;
+	std::string sortColumn_;
 	std::string operateTimeStart_;
 	std::string timeStart_;
 	std::string levels_;

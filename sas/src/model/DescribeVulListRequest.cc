@@ -79,6 +79,15 @@ void DescribeVulListRequest::setContainerFieldName(const std::string &containerF
   setParameter(std::string("ContainerFieldName"), containerFieldName);
 }
 
+std::string DescribeVulListRequest::getPath() const {
+  return path_;
+}
+
+void DescribeVulListRequest::setPath(const std::string &path) {
+  path_ = path;
+  setParameter(std::string("Path"), path);
+}
+
 std::string DescribeVulListRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -196,6 +205,24 @@ void DescribeVulListRequest::setTargetType(const std::string &targetType) {
   setParameter(std::string("TargetType"), targetType);
 }
 
+std::string DescribeVulListRequest::getContainerName() const {
+  return containerName_;
+}
+
+void DescribeVulListRequest::setContainerName(const std::string &containerName) {
+  containerName_ = containerName;
+  setParameter(std::string("ContainerName"), containerName);
+}
+
+std::string DescribeVulListRequest::getCveId() const {
+  return cveId_;
+}
+
+void DescribeVulListRequest::setCveId(const std::string &cveId) {
+  cveId_ = cveId;
+  setParameter(std::string("CveId"), cveId);
+}
+
 std::string DescribeVulListRequest::getRemark() const {
   return remark_;
 }
@@ -212,6 +239,15 @@ std::string DescribeVulListRequest::getContainerFieldValue() const {
 void DescribeVulListRequest::setContainerFieldValue(const std::string &containerFieldValue) {
   containerFieldValue_ = containerFieldValue;
   setParameter(std::string("ContainerFieldValue"), containerFieldValue);
+}
+
+std::string DescribeVulListRequest::getImageName() const {
+  return imageName_;
+}
+
+void DescribeVulListRequest::setImageName(const std::string &imageName) {
+  imageName_ = imageName;
+  setParameter(std::string("ImageName"), imageName);
 }
 
 int DescribeVulListRequest::getPageSize() const {
@@ -239,6 +275,15 @@ std::string DescribeVulListRequest::getLang() const {
 void DescribeVulListRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeVulListRequest::getAssetType() const {
+  return assetType_;
+}
+
+void DescribeVulListRequest::setAssetType(const std::string &assetType) {
+  assetType_ = assetType;
+  setParameter(std::string("AssetType"), assetType);
 }
 
 std::string DescribeVulListRequest::getDealed() const {

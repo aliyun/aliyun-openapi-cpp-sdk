@@ -48,6 +48,8 @@ public:
 	void setLang(const std::string &lang);
 	std::string getImageTag() const;
 	void setImageTag(const std::string &imageTag);
+	std::string getMaliciousMd5() const;
+	void setMaliciousMd5(const std::string &maliciousMd5);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
 	std::string getClusterId() const;
@@ -75,6 +77,7 @@ private:
 	std::string pageSize_;
 	std::string lang_;
 	std::string imageTag_;
+	std::string maliciousMd5_;
 	int currentPage_;
 	std::string clusterId_;
 	std::string repoName_;

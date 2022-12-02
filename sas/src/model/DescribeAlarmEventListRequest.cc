@@ -43,6 +43,15 @@ void DescribeAlarmEventListRequest::setTargetType(const std::string &targetType)
   setParameter(std::string("TargetType"), targetType);
 }
 
+std::string DescribeAlarmEventListRequest::getSortType() const {
+  return sortType_;
+}
+
+void DescribeAlarmEventListRequest::setSortType(const std::string &sortType) {
+  sortType_ = sortType;
+  setParameter(std::string("SortType"), sortType);
+}
+
 std::string DescribeAlarmEventListRequest::getAlarmEventType() const {
   return alarmEventType_;
 }
@@ -202,6 +211,15 @@ std::vector<std::string> DescribeAlarmEventListRequest::getOperateErrorCodeList(
 
 void DescribeAlarmEventListRequest::setOperateErrorCodeList(const std::vector<std::string> &operateErrorCodeList) {
   operateErrorCodeList_ = operateErrorCodeList;
+}
+
+std::string DescribeAlarmEventListRequest::getSortColumn() const {
+  return sortColumn_;
+}
+
+void DescribeAlarmEventListRequest::setSortColumn(const std::string &sortColumn) {
+  sortColumn_ = sortColumn;
+  setParameter(std::string("SortColumn"), sortColumn);
 }
 
 std::string DescribeAlarmEventListRequest::getOperateTimeStart() const {

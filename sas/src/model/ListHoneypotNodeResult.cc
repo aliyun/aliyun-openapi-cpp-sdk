@@ -69,6 +69,8 @@ void ListHoneypotNodeResult::parse(const std::string &payload)
 			honeypotNodeListObject.defaultNode = valueHoneypotNodeListHoneypotNode["DefaultNode"].asString() == "true";
 		if(!valueHoneypotNodeListHoneypotNode["NodeIp"].isNull())
 			honeypotNodeListObject.nodeIp = valueHoneypotNodeListHoneypotNode["NodeIp"].asString();
+		if(!valueHoneypotNodeListHoneypotNode["UpgradeAvailable"].isNull())
+			honeypotNodeListObject.upgradeAvailable = valueHoneypotNodeListHoneypotNode["UpgradeAvailable"].asString() == "true";
 		auto allSecurityGroupProbeIpList = value["SecurityGroupProbeIpList"]["SecurityGroupProbeIp"];
 		for (auto value : allSecurityGroupProbeIpList)
 			honeypotNodeListObject.securityGroupProbeIpList.push_back(value.asString());

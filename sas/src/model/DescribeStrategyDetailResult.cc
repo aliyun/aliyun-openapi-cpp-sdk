@@ -50,6 +50,14 @@ void DescribeStrategyDetailResult::parse(const std::string &payload)
 		strategy_.id = std::stoi(strategyNode["Id"].asString());
 	if(!strategyNode["CycleStartTime"].isNull())
 		strategy_.cycleStartTime = std::stoi(strategyNode["CycleStartTime"].asString());
+	if(!strategyNode["StartTime"].isNull())
+		strategy_.startTime = strategyNode["StartTime"].asString();
+	if(!strategyNode["EndTime"].isNull())
+		strategy_.endTime = strategyNode["EndTime"].asString();
+	if(!strategyNode["CustomType"].isNull())
+		strategy_.customType = strategyNode["CustomType"].asString();
+	if(!strategyNode["TargetType"].isNull())
+		strategy_.targetType = strategyNode["TargetType"].asString();
 	auto allRiskTypeWhiteListQueryResultListNode = strategyNode["RiskTypeWhiteListQueryResultList"]["RiskTypeWhiteListQueryResult"];
 	for (auto strategyNodeRiskTypeWhiteListQueryResultListRiskTypeWhiteListQueryResult : allRiskTypeWhiteListQueryResultListNode)
 	{

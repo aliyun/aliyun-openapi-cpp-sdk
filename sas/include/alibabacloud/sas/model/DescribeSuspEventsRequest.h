@@ -62,6 +62,8 @@ public:
 	void setTimeEnd(const std::string &timeEnd);
 	std::string getTargetType() const;
 	void setTargetType(const std::string &targetType);
+	std::string getSortType() const;
+	void setSortType(const std::string &sortType);
 	std::string getRemark() const;
 	void setRemark(const std::string &remark);
 	std::string getContainerFieldValue() const;
@@ -78,6 +80,10 @@ public:
 	void setClusterId(const std::string &clusterId);
 	std::vector<std::string> getOperateErrorCodeList() const;
 	void setOperateErrorCodeList(const std::vector<std::string> &operateErrorCodeList);
+	std::string getSortColumn() const;
+	void setSortColumn(const std::string &sortColumn);
+	std::vector<std::string> getAssetsTypeList() const;
+	void setAssetsTypeList(const std::vector<std::string> &assetsTypeList);
 	std::string getOperateTimeStart() const;
 	void setOperateTimeStart(const std::string &operateTimeStart);
 	std::string getTimeStart() const;
@@ -104,6 +110,7 @@ private:
 	std::string uuids_;
 	std::string timeEnd_;
 	std::string targetType_;
+	std::string sortType_;
 	std::string remark_;
 	std::string containerFieldValue_;
 	std::string pageSize_;
@@ -112,6 +119,8 @@ private:
 	std::string currentPage_;
 	std::string clusterId_;
 	std::vector<std::string> operateErrorCodeList_;
+	std::string sortColumn_;
+	std::vector<std::string> assetsTypeList_;
 	std::string operateTimeStart_;
 	std::string timeStart_;
 	std::string levels_;

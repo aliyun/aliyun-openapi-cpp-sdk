@@ -55,6 +55,7 @@ namespace AlibabaCloud
 					std::string alarmEventName;
 					std::string securityEventIds;
 					long gmtModified;
+					std::vector<std::string> traceBackInfoList;
 					bool hasTraceInfo;
 					std::string intranetIp;
 					std::string k8sClusterId;
@@ -77,12 +78,15 @@ namespace AlibabaCloud
 					std::string instanceName;
 					long operateTime;
 					bool canBeDealOnLine;
+					int assetType;
 					std::string k8sClusterName;
 					std::string uuid;
 					std::string containerImageName;
 					int suspiciousEventCount;
 					std::string alarmUniqueInfo;
+					bool autoBreaking;
 					std::string level;
+					std::string regionId;
 					std::vector<SuspEventsItem::TacticItem> tacticItems;
 				};
 

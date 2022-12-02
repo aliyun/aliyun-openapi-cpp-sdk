@@ -32,6 +32,8 @@ public:
 	~OperateAgentClientInstallRequest();
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	std::string getInstanceIds() const;
 	void setInstanceIds(const std::string &instanceIds);
 	std::string getUuids() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string sourceIp_;
+	std::string lang_;
 	std::string instanceIds_;
 	std::string uuids_;
 };

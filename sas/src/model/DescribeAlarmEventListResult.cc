@@ -97,6 +97,10 @@ void DescribeAlarmEventListResult::parse(const std::string &payload)
 			suspEventsObject.instanceId = valueSuspEventsSuspEventsItem["InstanceId"].asString();
 		if(!valueSuspEventsSuspEventsItem["IntranetIp"].isNull())
 			suspEventsObject.intranetIp = valueSuspEventsSuspEventsItem["IntranetIp"].asString();
+		if(!valueSuspEventsSuspEventsItem["AssetType"].isNull())
+			suspEventsObject.assetType = std::stoi(valueSuspEventsSuspEventsItem["AssetType"].asString());
+		if(!valueSuspEventsSuspEventsItem["RegionId"].isNull())
+			suspEventsObject.regionId = valueSuspEventsSuspEventsItem["RegionId"].asString();
 		if(!valueSuspEventsSuspEventsItem["EndTime"].isNull())
 			suspEventsObject.endTime = std::stol(valueSuspEventsSuspEventsItem["EndTime"].asString());
 		if(!valueSuspEventsSuspEventsItem["Uuid"].isNull())
@@ -111,6 +115,8 @@ void DescribeAlarmEventListResult::parse(const std::string &payload)
 			suspEventsObject.alarmEventType = valueSuspEventsSuspEventsItem["AlarmEventType"].asString();
 		if(!valueSuspEventsSuspEventsItem["K8sNamespace"].isNull())
 			suspEventsObject.k8sNamespace = valueSuspEventsSuspEventsItem["K8sNamespace"].asString();
+		if(!valueSuspEventsSuspEventsItem["AutoBreaking"].isNull())
+			suspEventsObject.autoBreaking = valueSuspEventsSuspEventsItem["AutoBreaking"].asString() == "true";
 		if(!valueSuspEventsSuspEventsItem["K8sNodeName"].isNull())
 			suspEventsObject.k8sNodeName = valueSuspEventsSuspEventsItem["K8sNodeName"].asString();
 		if(!valueSuspEventsSuspEventsItem["AlarmEventName"].isNull())
@@ -127,6 +133,9 @@ void DescribeAlarmEventListResult::parse(const std::string &payload)
 				tacticItemsObject.tacticDisplayName = valueSuspEventsSuspEventsItemTacticItemsTacticItem["TacticDisplayName"].asString();
 			suspEventsObject.tacticItems.push_back(tacticItemsObject);
 		}
+		auto allTraceBackInfoList = value["TraceBackInfoList"]["StringItem"];
+		for (auto value : allTraceBackInfoList)
+			suspEventsObject.traceBackInfoList.push_back(value.asString());
 		suspEvents_.push_back(suspEventsObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
