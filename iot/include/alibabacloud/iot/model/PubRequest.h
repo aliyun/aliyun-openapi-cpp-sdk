@@ -57,8 +57,12 @@ namespace AlibabaCloud
 				void setResponseTopic(const std::string& responseTopic);
 				std::string getTopicFullName()const;
 				void setTopicFullName(const std::string& topicFullName);
+				int getPayloadFormatIndicator()const;
+				void setPayloadFormatIndicator(int payloadFormatIndicator);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
+				std::string getContentType()const;
+				void setContentType(const std::string& contentType);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
@@ -75,7 +79,9 @@ namespace AlibabaCloud
 				std::string iotInstanceId_;
 				std::string responseTopic_;
 				std::string topicFullName_;
+				int payloadFormatIndicator_;
 				std::string productKey_;
+				std::string contentType_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 				std::string deviceName_;

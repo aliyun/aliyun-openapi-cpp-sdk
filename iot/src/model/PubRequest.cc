@@ -120,6 +120,17 @@ void PubRequest::setTopicFullName(const std::string& topicFullName)
 	setParameter("TopicFullName", topicFullName);
 }
 
+int PubRequest::getPayloadFormatIndicator()const
+{
+	return payloadFormatIndicator_;
+}
+
+void PubRequest::setPayloadFormatIndicator(int payloadFormatIndicator)
+{
+	payloadFormatIndicator_ = payloadFormatIndicator;
+	setParameter("PayloadFormatIndicator", std::to_string(payloadFormatIndicator));
+}
+
 std::string PubRequest::getProductKey()const
 {
 	return productKey_;
@@ -129,6 +140,17 @@ void PubRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
 	setParameter("ProductKey", productKey);
+}
+
+std::string PubRequest::getContentType()const
+{
+	return contentType_;
+}
+
+void PubRequest::setContentType(const std::string& contentType)
+{
+	contentType_ = contentType;
+	setParameter("ContentType", contentType);
 }
 
 std::string PubRequest::getApiProduct()const
