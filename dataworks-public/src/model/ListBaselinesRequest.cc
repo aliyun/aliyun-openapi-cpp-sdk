@@ -43,15 +43,6 @@ void ListBaselinesRequest::setSearchText(const std::string &searchText) {
   setBodyParameter(std::string("SearchText"), searchText);
 }
 
-std::string ListBaselinesRequest::getProjectEnv() const {
-  return projectEnv_;
-}
-
-void ListBaselinesRequest::setProjectEnv(const std::string &projectEnv) {
-  projectEnv_ = projectEnv;
-  setBodyParameter(std::string("ProjectEnv"), projectEnv);
-}
-
 std::string ListBaselinesRequest::getPriority() const {
   return priority_;
 }

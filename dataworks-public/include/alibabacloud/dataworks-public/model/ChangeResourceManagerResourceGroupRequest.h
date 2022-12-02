@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTRESOURCEGROUPSREQUEST_H_
-#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTRESOURCEGROUPSREQUEST_H_
+#ifndef ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CHANGERESOURCEMANAGERRESOURCEGROUPREQUEST_H_
+#define ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CHANGERESOURCEMANAGERRESOURCEGROUPREQUEST_H_
 
 #include <alibabacloud/dataworks-public/Dataworks_publicExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,36 +26,23 @@
 namespace AlibabaCloud {
 namespace Dataworks_public {
 namespace Model {
-class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ListResourceGroupsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT ChangeResourceManagerResourceGroupRequest : public RpcServiceRequest {
 public:
-	struct Tags {
-		std::string value;
-		std::string key;
-	};
-	ListResourceGroupsRequest();
-	~ListResourceGroupsRequest();
-	std::string getBizExtKey() const;
-	void setBizExtKey(const std::string &bizExtKey);
-	std::vector<Tags> getTags() const;
-	void setTags(const std::vector<Tags> &tags);
-	std::string getTypeNames() const;
-	void setTypeNames(const std::string &typeNames);
+	ChangeResourceManagerResourceGroupRequest();
+	~ChangeResourceManagerResourceGroupRequest();
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
 	std::string getResourceManagerResourceGroupId() const;
 	void setResourceManagerResourceGroupId(const std::string &resourceManagerResourceGroupId);
-	int getResourceGroupType() const;
-	void setResourceGroupType(int resourceGroupType);
-	std::string getKeyword() const;
-	void setKeyword(const std::string &keyword);
 
 private:
-	std::string bizExtKey_;
-	std::vector<Tags> tags_;
-	std::string typeNames_;
+	std::string resourceId_;
+	std::string resourceType_;
 	std::string resourceManagerResourceGroupId_;
-	int resourceGroupType_;
-	std::string keyword_;
 };
 } // namespace Model
 } // namespace Dataworks_public
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_LISTRESOURCEGROUPSREQUEST_H_
+#endif // !ALIBABACLOUD_DATAWORKS_PUBLIC_MODEL_CHANGERESOURCEMANAGERRESOURCEGROUPREQUEST_H_

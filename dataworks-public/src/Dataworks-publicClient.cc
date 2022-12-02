@@ -195,6 +195,42 @@ Dataworks_publicClient::ApprovePermissionApplyOrderOutcomeCallable Dataworks_pub
 	return task->get_future();
 }
 
+Dataworks_publicClient::ChangeResourceManagerResourceGroupOutcome Dataworks_publicClient::changeResourceManagerResourceGroup(const ChangeResourceManagerResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeResourceManagerResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeResourceManagerResourceGroupOutcome(ChangeResourceManagerResourceGroupResult(outcome.result()));
+	else
+		return ChangeResourceManagerResourceGroupOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::changeResourceManagerResourceGroupAsync(const ChangeResourceManagerResourceGroupRequest& request, const ChangeResourceManagerResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeResourceManagerResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ChangeResourceManagerResourceGroupOutcomeCallable Dataworks_publicClient::changeResourceManagerResourceGroupCallable(const ChangeResourceManagerResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeResourceManagerResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->changeResourceManagerResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::CheckFileDeploymentOutcome Dataworks_publicClient::checkFileDeployment(const CheckFileDeploymentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

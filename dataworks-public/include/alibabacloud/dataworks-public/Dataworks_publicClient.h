@@ -30,6 +30,8 @@
 #include "model/AddToMetaCategoryResult.h"
 #include "model/ApprovePermissionApplyOrderRequest.h"
 #include "model/ApprovePermissionApplyOrderResult.h"
+#include "model/ChangeResourceManagerResourceGroupRequest.h"
+#include "model/ChangeResourceManagerResourceGroupResult.h"
 #include "model/CheckFileDeploymentRequest.h"
 #include "model/CheckFileDeploymentResult.h"
 #include "model/CheckMetaPartitionRequest.h"
@@ -521,6 +523,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ApprovePermissionApplyOrderResult> ApprovePermissionApplyOrderOutcome;
 			typedef std::future<ApprovePermissionApplyOrderOutcome> ApprovePermissionApplyOrderOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ApprovePermissionApplyOrderRequest&, const ApprovePermissionApplyOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApprovePermissionApplyOrderAsyncHandler;
+			typedef Outcome<Error, Model::ChangeResourceManagerResourceGroupResult> ChangeResourceManagerResourceGroupOutcome;
+			typedef std::future<ChangeResourceManagerResourceGroupOutcome> ChangeResourceManagerResourceGroupOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ChangeResourceManagerResourceGroupRequest&, const ChangeResourceManagerResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeResourceManagerResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::CheckFileDeploymentResult> CheckFileDeploymentOutcome;
 			typedef std::future<CheckFileDeploymentOutcome> CheckFileDeploymentOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::CheckFileDeploymentRequest&, const CheckFileDeploymentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckFileDeploymentAsyncHandler;
@@ -1243,6 +1248,9 @@ namespace AlibabaCloud
 			ApprovePermissionApplyOrderOutcome approvePermissionApplyOrder(const Model::ApprovePermissionApplyOrderRequest &request)const;
 			void approvePermissionApplyOrderAsync(const Model::ApprovePermissionApplyOrderRequest& request, const ApprovePermissionApplyOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ApprovePermissionApplyOrderOutcomeCallable approvePermissionApplyOrderCallable(const Model::ApprovePermissionApplyOrderRequest& request) const;
+			ChangeResourceManagerResourceGroupOutcome changeResourceManagerResourceGroup(const Model::ChangeResourceManagerResourceGroupRequest &request)const;
+			void changeResourceManagerResourceGroupAsync(const Model::ChangeResourceManagerResourceGroupRequest& request, const ChangeResourceManagerResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeResourceManagerResourceGroupOutcomeCallable changeResourceManagerResourceGroupCallable(const Model::ChangeResourceManagerResourceGroupRequest& request) const;
 			CheckFileDeploymentOutcome checkFileDeployment(const Model::CheckFileDeploymentRequest &request)const;
 			void checkFileDeploymentAsync(const Model::CheckFileDeploymentRequest& request, const CheckFileDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckFileDeploymentOutcomeCallable checkFileDeploymentCallable(const Model::CheckFileDeploymentRequest& request) const;

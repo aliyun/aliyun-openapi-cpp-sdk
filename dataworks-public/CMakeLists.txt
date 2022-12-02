@@ -29,6 +29,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/AddToMetaCategoryResult.h
 	include/alibabacloud/dataworks-public/model/ApprovePermissionApplyOrderRequest.h
 	include/alibabacloud/dataworks-public/model/ApprovePermissionApplyOrderResult.h
+	include/alibabacloud/dataworks-public/model/ChangeResourceManagerResourceGroupRequest.h
+	include/alibabacloud/dataworks-public/model/ChangeResourceManagerResourceGroupResult.h
 	include/alibabacloud/dataworks-public/model/CheckFileDeploymentRequest.h
 	include/alibabacloud/dataworks-public/model/CheckFileDeploymentResult.h
 	include/alibabacloud/dataworks-public/model/CheckMetaPartitionRequest.h
@@ -510,6 +512,8 @@ set(dataworks-public_src
 	src/model/AddToMetaCategoryResult.cc
 	src/model/ApprovePermissionApplyOrderRequest.cc
 	src/model/ApprovePermissionApplyOrderResult.cc
+	src/model/ChangeResourceManagerResourceGroupRequest.cc
+	src/model/ChangeResourceManagerResourceGroupResult.cc
 	src/model/CheckFileDeploymentRequest.cc
 	src/model/CheckFileDeploymentResult.cc
 	src/model/CheckMetaPartitionRequest.cc

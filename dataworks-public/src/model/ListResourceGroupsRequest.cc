@@ -46,6 +46,15 @@ void ListResourceGroupsRequest::setTags(const std::vector<ListResourceGroupsRequ
   }
 }
 
+std::string ListResourceGroupsRequest::getTypeNames() const {
+  return typeNames_;
+}
+
+void ListResourceGroupsRequest::setTypeNames(const std::string &typeNames) {
+  typeNames_ = typeNames;
+  setParameter(std::string("TypeNames"), typeNames);
+}
+
 std::string ListResourceGroupsRequest::getResourceManagerResourceGroupId() const {
   return resourceManagerResourceGroupId_;
 }

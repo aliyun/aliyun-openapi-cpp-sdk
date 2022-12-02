@@ -34,8 +34,6 @@ public:
 	void setOwner(const std::string &owner);
 	std::string getSearchText() const;
 	void setSearchText(const std::string &searchText);
-	std::string getProjectEnv() const;
-	void setProjectEnv(const std::string &projectEnv);
 	std::string getPriority() const;
 	void setPriority(const std::string &priority);
 	int getPageNumber() const;
@@ -52,7 +50,6 @@ public:
 private:
 	std::string owner_;
 	std::string searchText_;
-	std::string projectEnv_;
 	std::string priority_;
 	int pageNumber_;
 	bool enable_;
