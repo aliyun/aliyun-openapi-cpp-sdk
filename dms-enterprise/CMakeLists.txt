@@ -153,6 +153,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetMetaTableColumnResult.h
 	include/alibabacloud/dms-enterprise/model/GetMetaTableDetailInfoRequest.h
 	include/alibabacloud/dms-enterprise/model/GetMetaTableDetailInfoResult.h
+	include/alibabacloud/dms-enterprise/model/GetOnlineDDLProgressRequest.h
+	include/alibabacloud/dms-enterprise/model/GetOnlineDDLProgressResult.h
 	include/alibabacloud/dms-enterprise/model/GetOpLogRequest.h
 	include/alibabacloud/dms-enterprise/model/GetOpLogResult.h
 	include/alibabacloud/dms-enterprise/model/GetOrderAttachmentFileRequest.h
@@ -518,6 +520,8 @@ set(dms-enterprise_src
 	src/model/GetMetaTableColumnResult.cc
 	src/model/GetMetaTableDetailInfoRequest.cc
 	src/model/GetMetaTableDetailInfoResult.cc
+	src/model/GetOnlineDDLProgressRequest.cc
+	src/model/GetOnlineDDLProgressResult.cc
 	src/model/GetOpLogRequest.cc
 	src/model/GetOpLogResult.cc
 	src/model/GetOrderAttachmentFileRequest.cc

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTLOGICDATABASESRESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTLOGICDATABASESRESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETONLINEDDLPROGRESSRESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETONLINEDDLPROGRESSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,31 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListLogicDatabasesResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetOnlineDDLProgressResult : public ServiceResult
 			{
 			public:
-				struct LogicDatabase
+				struct OnlineDDLTaskDetail
 				{
-					std::string searchName;
-					std::string alias;
-					std::string databaseId;
-					std::vector<std::string> ownerNameList;
-					bool logic;
-					std::string dbType;
-					std::string schemaName;
-					std::string envType;
-					std::vector<std::string> ownerIdList;
-					std::vector<std::string> databaseIds;
+					std::string cleanStrategy;
+					long cutoverLockTimeSeconds;
+					long copyChunkSize;
+					std::string copyChunkMode;
+					std::string cutoverWindowEndTime;
+					std::string cutoverWindowStartTime;
+					std::string jobStatus;
+					std::string statusDesc;
+					std::string progressRatio;
+					long delaySeconds;
+					long cutoverFailRetryTimes;
+					long copyTotal;
+					long copyCount;
 				};
 
 
-				ListLogicDatabasesResult();
-				explicit ListLogicDatabasesResult(const std::string &payload);
-				~ListLogicDatabasesResult();
-				std::vector<LogicDatabase> getLogicDatabaseList()const;
-				long getTotalCount()const;
+				GetOnlineDDLProgressResult();
+				explicit GetOnlineDDLProgressResult(const std::string &payload);
+				~GetOnlineDDLProgressResult();
+				OnlineDDLTaskDetail getOnlineDDLTaskDetail()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -59,8 +61,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<LogicDatabase> logicDatabaseList_;
-				long totalCount_;
+				OnlineDDLTaskDetail onlineDDLTaskDetail_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -69,4 +70,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTLOGICDATABASESRESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETONLINEDDLPROGRESSRESULT_H_

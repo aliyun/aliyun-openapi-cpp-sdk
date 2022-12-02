@@ -2427,6 +2427,42 @@ Dms_enterpriseClient::GetMetaTableDetailInfoOutcomeCallable Dms_enterpriseClient
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetOnlineDDLProgressOutcome Dms_enterpriseClient::getOnlineDDLProgress(const GetOnlineDDLProgressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOnlineDDLProgressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOnlineDDLProgressOutcome(GetOnlineDDLProgressResult(outcome.result()));
+	else
+		return GetOnlineDDLProgressOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getOnlineDDLProgressAsync(const GetOnlineDDLProgressRequest& request, const GetOnlineDDLProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOnlineDDLProgress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetOnlineDDLProgressOutcomeCallable Dms_enterpriseClient::getOnlineDDLProgressCallable(const GetOnlineDDLProgressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOnlineDDLProgressOutcome()>>(
+			[this, request]()
+			{
+			return this->getOnlineDDLProgress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetOpLogOutcome Dms_enterpriseClient::getOpLog(const GetOpLogRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

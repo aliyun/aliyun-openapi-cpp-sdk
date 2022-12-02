@@ -63,6 +63,9 @@ void ListLogicDatabasesResult::parse(const std::string &payload)
 		auto allOwnerNameList = value["OwnerNameList"]["OwnerNames"];
 		for (auto value : allOwnerNameList)
 			logicDatabaseListObject.ownerNameList.push_back(value.asString());
+		auto allDatabaseIds = value["DatabaseIds"]["DatabaseIds"];
+		for (auto value : allDatabaseIds)
+			logicDatabaseListObject.databaseIds.push_back(value.asString());
 		logicDatabaseList_.push_back(logicDatabaseListObject);
 	}
 	if(!value["TotalCount"].isNull())

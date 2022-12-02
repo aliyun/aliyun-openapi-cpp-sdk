@@ -154,6 +154,8 @@
 #include "model/GetMetaTableColumnResult.h"
 #include "model/GetMetaTableDetailInfoRequest.h"
 #include "model/GetMetaTableDetailInfoResult.h"
+#include "model/GetOnlineDDLProgressRequest.h"
+#include "model/GetOnlineDDLProgressResult.h"
 #include "model/GetOpLogRequest.h"
 #include "model/GetOpLogResult.h"
 #include "model/GetOrderAttachmentFileRequest.h"
@@ -591,6 +593,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetMetaTableDetailInfoResult> GetMetaTableDetailInfoOutcome;
 			typedef std::future<GetMetaTableDetailInfoOutcome> GetMetaTableDetailInfoOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetMetaTableDetailInfoRequest&, const GetMetaTableDetailInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMetaTableDetailInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetOnlineDDLProgressResult> GetOnlineDDLProgressOutcome;
+			typedef std::future<GetOnlineDDLProgressOutcome> GetOnlineDDLProgressOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetOnlineDDLProgressRequest&, const GetOnlineDDLProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOnlineDDLProgressAsyncHandler;
 			typedef Outcome<Error, Model::GetOpLogResult> GetOpLogOutcome;
 			typedef std::future<GetOpLogOutcome> GetOpLogOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetOpLogRequest&, const GetOpLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOpLogAsyncHandler;
@@ -1139,6 +1144,9 @@ namespace AlibabaCloud
 			GetMetaTableDetailInfoOutcome getMetaTableDetailInfo(const Model::GetMetaTableDetailInfoRequest &request)const;
 			void getMetaTableDetailInfoAsync(const Model::GetMetaTableDetailInfoRequest& request, const GetMetaTableDetailInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetMetaTableDetailInfoOutcomeCallable getMetaTableDetailInfoCallable(const Model::GetMetaTableDetailInfoRequest& request) const;
+			GetOnlineDDLProgressOutcome getOnlineDDLProgress(const Model::GetOnlineDDLProgressRequest &request)const;
+			void getOnlineDDLProgressAsync(const Model::GetOnlineDDLProgressRequest& request, const GetOnlineDDLProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetOnlineDDLProgressOutcomeCallable getOnlineDDLProgressCallable(const Model::GetOnlineDDLProgressRequest& request) const;
 			GetOpLogOutcome getOpLog(const Model::GetOpLogRequest &request)const;
 			void getOpLogAsync(const Model::GetOpLogRequest& request, const GetOpLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOpLogOutcomeCallable getOpLogCallable(const Model::GetOpLogRequest& request) const;

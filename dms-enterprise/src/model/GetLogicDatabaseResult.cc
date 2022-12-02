@@ -60,6 +60,9 @@ void GetLogicDatabaseResult::parse(const std::string &payload)
 		auto allOwnerNameList = logicDatabaseNode["OwnerNameList"]["OwnerNames"];
 		for (auto value : allOwnerNameList)
 			logicDatabase_.ownerNameList.push_back(value.asString());
+		auto allDatabaseIds = logicDatabaseNode["DatabaseIds"]["DatabaseIds"];
+		for (auto value : allDatabaseIds)
+			logicDatabase_.databaseIds.push_back(value.asString());
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
