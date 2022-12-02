@@ -14,40 +14,48 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/GetMessageUserInfoResult.h>
+#include <alibabacloud/live/model/GetMessageAppResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-GetMessageUserInfoResult::GetMessageUserInfoResult() :
+GetMessageAppResult::GetMessageAppResult() :
 	ServiceResult()
 {}
 
-GetMessageUserInfoResult::GetMessageUserInfoResult(const std::string &payload) :
+GetMessageAppResult::GetMessageAppResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetMessageUserInfoResult::~GetMessageUserInfoResult()
+GetMessageAppResult::~GetMessageAppResult()
 {}
 
-void GetMessageUserInfoResult::parse(const std::string &payload)
+void GetMessageAppResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto resultNode = value["Result"];
-	if(!resultNode["IsNewIMUser"].isNull())
-		result_.isNewIMUser = resultNode["IsNewIMUser"].asString() == "true";
-	if(!resultNode["HasOrderedIM"].isNull())
-		result_.hasOrderedIM = resultNode["HasOrderedIM"].asString() == "true";
+	if(!resultNode["AppId"].isNull())
+		result_.appId = resultNode["AppId"].asString();
+	if(!resultNode["AppName"].isNull())
+		result_.appName = resultNode["AppName"].asString();
+	if(!resultNode["CreateTime"].isNull())
+		result_.createTime = std::stol(resultNode["CreateTime"].asString());
+	if(!resultNode["Status"].isNull())
+		result_.status = std::stoi(resultNode["Status"].asString());
+	if(!resultNode["AppConfig"].isNull())
+		result_.appConfig = resultNode["AppConfig"].asString();
+	if(!resultNode["Extension"].isNull())
+		result_.extension = resultNode["Extension"].asString();
 
 }
 
-GetMessageUserInfoResult::Result GetMessageUserInfoResult::getResult()const
+GetMessageAppResult::Result GetMessageAppResult::getResult()const
 {
 	return result_;
 }

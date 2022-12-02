@@ -34,15 +34,6 @@ void ListMessageRequest::setSortType(int sortType) {
   setBodyParameter(std::string("SortType"), std::to_string(sortType));
 }
 
-std::string ListMessageRequest::getGroupId() const {
-  return groupId_;
-}
-
-void ListMessageRequest::setGroupId(const std::string &groupId) {
-  groupId_ = groupId;
-  setBodyParameter(std::string("GroupId"), groupId);
-}
-
 int ListMessageRequest::getType() const {
   return type_;
 }
@@ -68,5 +59,23 @@ int ListMessageRequest::getPageSize() const {
 void ListMessageRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListMessageRequest::getGroupId() const {
+  return groupId_;
+}
+
+void ListMessageRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setBodyParameter(std::string("GroupId"), groupId);
+}
+
+std::string ListMessageRequest::getAppId() const {
+  return appId_;
+}
+
+void ListMessageRequest::setAppId(const std::string &appId) {
+  appId_ = appId;
+  setBodyParameter(std::string("AppId"), appId);
 }
 

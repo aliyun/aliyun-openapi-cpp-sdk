@@ -25,6 +25,24 @@ LeaveMessageGroupRequest::LeaveMessageGroupRequest()
 
 LeaveMessageGroupRequest::~LeaveMessageGroupRequest() {}
 
+std::string LeaveMessageGroupRequest::getUserId() const {
+  return userId_;
+}
+
+void LeaveMessageGroupRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setBodyParameter(std::string("UserId"), userId);
+}
+
+int LeaveMessageGroupRequest::getBroadCastType() const {
+  return broadCastType_;
+}
+
+void LeaveMessageGroupRequest::setBroadCastType(int broadCastType) {
+  broadCastType_ = broadCastType;
+  setBodyParameter(std::string("BroadCastType"), std::to_string(broadCastType));
+}
+
 bool LeaveMessageGroupRequest::getBroadCastStatistics() const {
   return broadCastStatistics_;
 }
@@ -43,15 +61,6 @@ void LeaveMessageGroupRequest::setGroupId(const std::string &groupId) {
   setBodyParameter(std::string("GroupId"), groupId);
 }
 
-std::string LeaveMessageGroupRequest::getUserId() const {
-  return userId_;
-}
-
-void LeaveMessageGroupRequest::setUserId(const std::string &userId) {
-  userId_ = userId;
-  setBodyParameter(std::string("UserId"), userId);
-}
-
 std::string LeaveMessageGroupRequest::getAppId() const {
   return appId_;
 }
@@ -59,14 +68,5 @@ std::string LeaveMessageGroupRequest::getAppId() const {
 void LeaveMessageGroupRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setBodyParameter(std::string("AppId"), appId);
-}
-
-int LeaveMessageGroupRequest::getBroadCastType() const {
-  return broadCastType_;
-}
-
-void LeaveMessageGroupRequest::setBroadCastType(int broadCastType) {
-  broadCastType_ = broadCastType;
-  setBodyParameter(std::string("BroadCastType"), std::to_string(broadCastType));
 }
 

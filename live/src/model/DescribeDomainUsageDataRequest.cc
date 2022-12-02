@@ -43,6 +43,15 @@ void DescribeDomainUsageDataRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
+std::string DescribeDomainUsageDataRequest::getDataProtocol() const {
+  return dataProtocol_;
+}
+
+void DescribeDomainUsageDataRequest::setDataProtocol(const std::string &dataProtocol) {
+  dataProtocol_ = dataProtocol;
+  setParameter(std::string("DataProtocol"), dataProtocol);
+}
+
 std::string DescribeDomainUsageDataRequest::getArea() const {
   return area_;
 }

@@ -14,39 +14,45 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/CloseMessageGroupResult.h>
+#include <alibabacloud/live/model/DescribeLiveStreamAuthCheckingResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Live;
 using namespace AlibabaCloud::Live::Model;
 
-CloseMessageGroupResult::CloseMessageGroupResult() :
+DescribeLiveStreamAuthCheckingResult::DescribeLiveStreamAuthCheckingResult() :
 	ServiceResult()
 {}
 
-CloseMessageGroupResult::CloseMessageGroupResult(const std::string &payload) :
+DescribeLiveStreamAuthCheckingResult::DescribeLiveStreamAuthCheckingResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CloseMessageGroupResult::~CloseMessageGroupResult()
+DescribeLiveStreamAuthCheckingResult::~DescribeLiveStreamAuthCheckingResult()
 {}
 
-void CloseMessageGroupResult::parse(const std::string &payload)
+void DescribeLiveStreamAuthCheckingResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto resultNode = value["Result"];
-	if(!resultNode["Success"].isNull())
-		result_.success = resultNode["Success"].asString() == "true";
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
 
 }
 
-CloseMessageGroupResult::Result CloseMessageGroupResult::getResult()const
+std::string DescribeLiveStreamAuthCheckingResult::getStatus()const
 {
-	return result_;
+	return status_;
+}
+
+std::string DescribeLiveStreamAuthCheckingResult::getDescription()const
+{
+	return description_;
 }
 

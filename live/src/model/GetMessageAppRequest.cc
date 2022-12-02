@@ -14,31 +14,22 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/CloseMessageGroupRequest.h>
+#include <alibabacloud/live/model/GetMessageAppRequest.h>
 
-using AlibabaCloud::Live::Model::CloseMessageGroupRequest;
+using AlibabaCloud::Live::Model::GetMessageAppRequest;
 
-CloseMessageGroupRequest::CloseMessageGroupRequest()
-    : RpcServiceRequest("live", "2016-11-01", "CloseMessageGroup") {
+GetMessageAppRequest::GetMessageAppRequest()
+    : RpcServiceRequest("live", "2016-11-01", "GetMessageApp") {
   setMethod(HttpRequest::Method::Post);
 }
 
-CloseMessageGroupRequest::~CloseMessageGroupRequest() {}
+GetMessageAppRequest::~GetMessageAppRequest() {}
 
-std::string CloseMessageGroupRequest::getGroupId() const {
-  return groupId_;
-}
-
-void CloseMessageGroupRequest::setGroupId(const std::string &groupId) {
-  groupId_ = groupId;
-  setBodyParameter(std::string("GroupId"), groupId);
-}
-
-std::string CloseMessageGroupRequest::getAppId() const {
+std::string GetMessageAppRequest::getAppId() const {
   return appId_;
 }
 
-void CloseMessageGroupRequest::setAppId(const std::string &appId) {
+void GetMessageAppRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setBodyParameter(std::string("AppId"), appId);
 }

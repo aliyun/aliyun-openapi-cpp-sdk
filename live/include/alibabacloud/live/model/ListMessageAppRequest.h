@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_GETMESSAGEUSERINFOREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_GETMESSAGEUSERINFOREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_LISTMESSAGEAPPREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_LISTMESSAGEAPPREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,17 +26,23 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT GetMessageUserInfoRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT ListMessageAppRequest : public RpcServiceRequest {
 public:
-	GetMessageUserInfoRequest();
-	~GetMessageUserInfoRequest();
-	std::string getCloudUid() const;
-	void setCloudUid(const std::string &cloudUid);
+	ListMessageAppRequest();
+	~ListMessageAppRequest();
+	int getSortType() const;
+	void setSortType(int sortType);
+	int getPageNum() const;
+	void setPageNum(int pageNum);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 
 private:
-	std::string cloudUid_;
+	int sortType_;
+	int pageNum_;
+	int pageSize_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_GETMESSAGEUSERINFOREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_LISTMESSAGEAPPREQUEST_H_

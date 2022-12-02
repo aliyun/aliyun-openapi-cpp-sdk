@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_CLOSEMESSAGEGROUPRESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_CLOSEMESSAGEGROUPRESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_QUERYMESSAGEAPPRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_QUERYMESSAGEAPPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,38 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT CloseMessageGroupResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT QueryMessageAppResult : public ServiceResult
 			{
 			public:
-				struct Result
+				struct ResultItem
 				{
-					bool success;
+					struct AppListItem
+					{
+						int status;
+						std::string extension;
+						std::string appConfig;
+						std::string appId;
+						long createTime;
+						std::string appName;
+					};
+					bool hasMore;
+					int totalCount;
+					std::vector<ResultItem::AppListItem> appList;
 				};
 
 
-				CloseMessageGroupResult();
-				explicit CloseMessageGroupResult(const std::string &payload);
-				~CloseMessageGroupResult();
-				Result getResult()const;
+				QueryMessageAppResult();
+				explicit QueryMessageAppResult(const std::string &payload);
+				~QueryMessageAppResult();
+				std::vector<ResultItem> getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Result result_;
+				std::vector<ResultItem> result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_CLOSEMESSAGEGROUPRESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_QUERYMESSAGEAPPRESULT_H_

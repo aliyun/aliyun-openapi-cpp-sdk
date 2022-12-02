@@ -25,6 +25,24 @@ JoinMessageGroupRequest::JoinMessageGroupRequest()
 
 JoinMessageGroupRequest::~JoinMessageGroupRequest() {}
 
+std::string JoinMessageGroupRequest::getUserId() const {
+  return userId_;
+}
+
+void JoinMessageGroupRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setBodyParameter(std::string("UserId"), userId);
+}
+
+int JoinMessageGroupRequest::getBroadCastType() const {
+  return broadCastType_;
+}
+
+void JoinMessageGroupRequest::setBroadCastType(int broadCastType) {
+  broadCastType_ = broadCastType;
+  setBodyParameter(std::string("BroadCastType"), std::to_string(broadCastType));
+}
+
 bool JoinMessageGroupRequest::getBroadCastStatistics() const {
   return broadCastStatistics_;
 }
@@ -43,15 +61,6 @@ void JoinMessageGroupRequest::setGroupId(const std::string &groupId) {
   setBodyParameter(std::string("GroupId"), groupId);
 }
 
-std::string JoinMessageGroupRequest::getUserId() const {
-  return userId_;
-}
-
-void JoinMessageGroupRequest::setUserId(const std::string &userId) {
-  userId_ = userId;
-  setBodyParameter(std::string("UserId"), userId);
-}
-
 std::string JoinMessageGroupRequest::getAppId() const {
   return appId_;
 }
@@ -59,14 +68,5 @@ std::string JoinMessageGroupRequest::getAppId() const {
 void JoinMessageGroupRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setBodyParameter(std::string("AppId"), appId);
-}
-
-int JoinMessageGroupRequest::getBroadCastType() const {
-  return broadCastType_;
-}
-
-void JoinMessageGroupRequest::setBroadCastType(int broadCastType) {
-  broadCastType_ = broadCastType;
-  setBodyParameter(std::string("BroadCastType"), std::to_string(broadCastType));
 }
 

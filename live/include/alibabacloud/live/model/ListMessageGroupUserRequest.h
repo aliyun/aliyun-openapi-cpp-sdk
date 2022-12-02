@@ -32,24 +32,21 @@ public:
 	~ListMessageGroupUserRequest();
 	int getSortType() const;
 	void setSortType(int sortType);
-	std::string getGroupId() const;
-	void setGroupId(const std::string &groupId);
-	int getType() const;
-	void setType(int type);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	std::string getAppId() const;
-	void setAppId(const std::string &appId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
 
 private:
 	int sortType_;
-	std::string groupId_;
-	int type_;
 	int pageNum_;
-	std::string appId_;
 	int pageSize_;
+	std::string groupId_;
+	std::string appId_;
 };
 } // namespace Model
 } // namespace Live

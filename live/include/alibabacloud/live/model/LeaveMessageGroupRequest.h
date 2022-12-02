@@ -30,23 +30,23 @@ class ALIBABACLOUD_LIVE_EXPORT LeaveMessageGroupRequest : public RpcServiceReque
 public:
 	LeaveMessageGroupRequest();
 	~LeaveMessageGroupRequest();
+	std::string getUserId() const;
+	void setUserId(const std::string &userId);
+	int getBroadCastType() const;
+	void setBroadCastType(int broadCastType);
 	bool getBroadCastStatistics() const;
 	void setBroadCastStatistics(bool broadCastStatistics);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
-	std::string getUserId() const;
-	void setUserId(const std::string &userId);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
-	int getBroadCastType() const;
-	void setBroadCastType(int broadCastType);
 
 private:
+	std::string userId_;
+	int broadCastType_;
 	bool broadCastStatistics_;
 	std::string groupId_;
-	std::string userId_;
 	std::string appId_;
-	int broadCastType_;
 };
 } // namespace Model
 } // namespace Live

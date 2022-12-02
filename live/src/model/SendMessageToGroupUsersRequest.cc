@@ -14,23 +14,14 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/live/model/GetMessageUserInfoRequest.h>
+#include <alibabacloud/live/model/SendMessageToGroupUsersRequest.h>
 
-using AlibabaCloud::Live::Model::GetMessageUserInfoRequest;
+using AlibabaCloud::Live::Model::SendMessageToGroupUsersRequest;
 
-GetMessageUserInfoRequest::GetMessageUserInfoRequest()
-    : RpcServiceRequest("live", "2016-11-01", "GetMessageUserInfo") {
+SendMessageToGroupUsersRequest::SendMessageToGroupUsersRequest()
+    : RpcServiceRequest("live", "2016-11-01", "SendMessageToGroupUsers") {
   setMethod(HttpRequest::Method::Post);
 }
 
-GetMessageUserInfoRequest::~GetMessageUserInfoRequest() {}
-
-std::string GetMessageUserInfoRequest::getCloudUid() const {
-  return cloudUid_;
-}
-
-void GetMessageUserInfoRequest::setCloudUid(const std::string &cloudUid) {
-  cloudUid_ = cloudUid;
-  setBodyParameter(std::string("CloudUid"), cloudUid);
-}
+SendMessageToGroupUsersRequest::~SendMessageToGroupUsersRequest() {}
 

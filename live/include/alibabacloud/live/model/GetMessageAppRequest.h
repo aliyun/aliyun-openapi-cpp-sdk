@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_CLOSEMESSAGEGROUPREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_CLOSEMESSAGEGROUPREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_GETMESSAGEAPPREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_GETMESSAGEAPPREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,17 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT CloseMessageGroupRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT GetMessageAppRequest : public RpcServiceRequest {
 public:
-	CloseMessageGroupRequest();
-	~CloseMessageGroupRequest();
-	std::string getGroupId() const;
-	void setGroupId(const std::string &groupId);
+	GetMessageAppRequest();
+	~GetMessageAppRequest();
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
 
 private:
-	std::string groupId_;
 	std::string appId_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_CLOSEMESSAGEGROUPREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_GETMESSAGEAPPREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_GETMESSAGEUSERINFORESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_GETMESSAGEUSERINFORESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DELETELIVESNAPSHOTNOTIFYCONFIGRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DELETELIVESNAPSHOTNOTIFYCONFIGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,28 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT GetMessageUserInfoResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DeleteLiveSnapshotNotifyConfigResult : public ServiceResult
 			{
 			public:
-				struct Result
-				{
-					bool isNewIMUser;
-					bool hasOrderedIM;
-				};
 
 
-				GetMessageUserInfoResult();
-				explicit GetMessageUserInfoResult(const std::string &payload);
-				~GetMessageUserInfoResult();
-				Result getResult()const;
+				DeleteLiveSnapshotNotifyConfigResult();
+				explicit DeleteLiveSnapshotNotifyConfigResult(const std::string &payload);
+				~DeleteLiveSnapshotNotifyConfigResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_GETMESSAGEUSERINFORESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DELETELIVESNAPSHOTNOTIFYCONFIGRESULT_H_

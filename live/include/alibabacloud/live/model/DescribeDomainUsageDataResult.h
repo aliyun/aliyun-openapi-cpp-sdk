@@ -43,7 +43,7 @@ namespace AlibabaCloud
 				explicit DescribeDomainUsageDataResult(const std::string &payload);
 				~DescribeDomainUsageDataResult();
 				std::vector<DataModule> getUsageDataPerInterval()const;
-				std::string getField()const;
+				std::string getType()const;
 				std::string getArea()const;
 				std::string getEndTime()const;
 				std::string getDomainName()const;
@@ -54,7 +54,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::vector<DataModule> usageDataPerInterval_;
-				std::string field_;
+				std::string type_;
 				std::string area_;
 				std::string endTime_;
 				std::string domainName_;

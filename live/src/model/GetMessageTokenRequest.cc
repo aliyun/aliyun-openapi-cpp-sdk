@@ -25,15 +25,6 @@ GetMessageTokenRequest::GetMessageTokenRequest()
 
 GetMessageTokenRequest::~GetMessageTokenRequest() {}
 
-std::string GetMessageTokenRequest::getDeviceId() const {
-  return deviceId_;
-}
-
-void GetMessageTokenRequest::setDeviceId(const std::string &deviceId) {
-  deviceId_ = deviceId;
-  setBodyParameter(std::string("DeviceId"), deviceId);
-}
-
 std::string GetMessageTokenRequest::getUserId() const {
   return userId_;
 }
@@ -50,6 +41,15 @@ std::string GetMessageTokenRequest::getDeviceType() const {
 void GetMessageTokenRequest::setDeviceType(const std::string &deviceType) {
   deviceType_ = deviceType;
   setBodyParameter(std::string("DeviceType"), deviceType);
+}
+
+std::string GetMessageTokenRequest::getDeviceId() const {
+  return deviceId_;
+}
+
+void GetMessageTokenRequest::setDeviceId(const std::string &deviceId) {
+  deviceId_ = deviceId;
+  setBodyParameter(std::string("DeviceId"), deviceId);
 }
 
 std::string GetMessageTokenRequest::getAppId() const {

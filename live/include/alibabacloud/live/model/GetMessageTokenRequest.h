@@ -30,19 +30,19 @@ class ALIBABACLOUD_LIVE_EXPORT GetMessageTokenRequest : public RpcServiceRequest
 public:
 	GetMessageTokenRequest();
 	~GetMessageTokenRequest();
-	std::string getDeviceId() const;
-	void setDeviceId(const std::string &deviceId);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
 	std::string getDeviceType() const;
 	void setDeviceType(const std::string &deviceType);
+	std::string getDeviceId() const;
+	void setDeviceId(const std::string &deviceId);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
 
 private:
-	std::string deviceId_;
 	std::string userId_;
 	std::string deviceType_;
+	std::string deviceId_;
 	std::string appId_;
 };
 } // namespace Model

@@ -25,6 +25,15 @@ CancelMuteAllGroupUserRequest::CancelMuteAllGroupUserRequest()
 
 CancelMuteAllGroupUserRequest::~CancelMuteAllGroupUserRequest() {}
 
+std::string CancelMuteAllGroupUserRequest::getOperatorUserId() const {
+  return operatorUserId_;
+}
+
+void CancelMuteAllGroupUserRequest::setOperatorUserId(const std::string &operatorUserId) {
+  operatorUserId_ = operatorUserId;
+  setBodyParameter(std::string("OperatorUserId"), operatorUserId);
+}
+
 std::string CancelMuteAllGroupUserRequest::getGroupId() const {
   return groupId_;
 }
@@ -41,14 +50,5 @@ std::string CancelMuteAllGroupUserRequest::getAppId() const {
 void CancelMuteAllGroupUserRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setBodyParameter(std::string("AppId"), appId);
-}
-
-std::string CancelMuteAllGroupUserRequest::getOperatorUserId() const {
-  return operatorUserId_;
-}
-
-void CancelMuteAllGroupUserRequest::setOperatorUserId(const std::string &operatorUserId) {
-  operatorUserId_ = operatorUserId;
-  setBodyParameter(std::string("OperatorUserId"), operatorUserId);
 }
 

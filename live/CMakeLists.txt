@@ -61,6 +61,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/AddLiveRecordVodConfigResult.h
 	include/alibabacloud/live/model/AddLiveSnapshotDetectPornConfigRequest.h
 	include/alibabacloud/live/model/AddLiveSnapshotDetectPornConfigResult.h
+	include/alibabacloud/live/model/AddLiveSnapshotNotifyConfigRequest.h
+	include/alibabacloud/live/model/AddLiveSnapshotNotifyConfigResult.h
 	include/alibabacloud/live/model/AddLiveStreamTranscodeRequest.h
 	include/alibabacloud/live/model/AddLiveStreamTranscodeResult.h
 	include/alibabacloud/live/model/AddLiveStreamWatermarkRequest.h
@@ -89,8 +91,6 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CancelMuteAllGroupUserResult.h
 	include/alibabacloud/live/model/CloseLiveShiftRequest.h
 	include/alibabacloud/live/model/CloseLiveShiftResult.h
-	include/alibabacloud/live/model/CloseMessageGroupRequest.h
-	include/alibabacloud/live/model/CloseMessageGroupResult.h
 	include/alibabacloud/live/model/CopyCasterRequest.h
 	include/alibabacloud/live/model/CopyCasterResult.h
 	include/alibabacloud/live/model/CopyCasterSceneConfigRequest.h
@@ -107,6 +107,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CreateLiveStreamRecordIndexFilesResult.h
 	include/alibabacloud/live/model/CreateLiveTranscodeTemplateRequest.h
 	include/alibabacloud/live/model/CreateLiveTranscodeTemplateResult.h
+	include/alibabacloud/live/model/CreateMessageAppRequest.h
+	include/alibabacloud/live/model/CreateMessageAppResult.h
 	include/alibabacloud/live/model/CreateMessageGroupRequest.h
 	include/alibabacloud/live/model/CreateMessageGroupResult.h
 	include/alibabacloud/live/model/CreateMixStreamRequest.h
@@ -161,6 +163,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteLiveRecordVodConfigResult.h
 	include/alibabacloud/live/model/DeleteLiveSnapshotDetectPornConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveSnapshotDetectPornConfigResult.h
+	include/alibabacloud/live/model/DeleteLiveSnapshotNotifyConfigRequest.h
+	include/alibabacloud/live/model/DeleteLiveSnapshotNotifyConfigResult.h
 	include/alibabacloud/live/model/DeleteLiveSpecificStagingConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveSpecificStagingConfigResult.h
 	include/alibabacloud/live/model/DeleteLiveStreamMonitorRequest.h
@@ -315,6 +319,10 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveSnapshotConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveSnapshotDetectPornConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveSnapshotDetectPornConfigResult.h
+	include/alibabacloud/live/model/DescribeLiveSnapshotNotifyConfigRequest.h
+	include/alibabacloud/live/model/DescribeLiveSnapshotNotifyConfigResult.h
+	include/alibabacloud/live/model/DescribeLiveStreamAuthCheckingRequest.h
+	include/alibabacloud/live/model/DescribeLiveStreamAuthCheckingResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamBitRateDataRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamBitRateDataResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamCountRequest.h
@@ -351,6 +359,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveStreamsBlockListResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamsControlHistoryRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamsControlHistoryResult.h
+	include/alibabacloud/live/model/DescribeLiveStreamsNotifyRecordsRequest.h
+	include/alibabacloud/live/model/DescribeLiveStreamsNotifyRecordsResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamsNotifyUrlConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveStreamsNotifyUrlConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveStreamsOnlineListRequest.h
@@ -425,12 +435,12 @@ set(live_public_header_model
 	include/alibabacloud/live/model/GetCustomTemplateResult.h
 	include/alibabacloud/live/model/GetEditingJobInfoRequest.h
 	include/alibabacloud/live/model/GetEditingJobInfoResult.h
+	include/alibabacloud/live/model/GetMessageAppRequest.h
+	include/alibabacloud/live/model/GetMessageAppResult.h
 	include/alibabacloud/live/model/GetMessageGroupRequest.h
 	include/alibabacloud/live/model/GetMessageGroupResult.h
 	include/alibabacloud/live/model/GetMessageTokenRequest.h
 	include/alibabacloud/live/model/GetMessageTokenResult.h
-	include/alibabacloud/live/model/GetMessageUserInfoRequest.h
-	include/alibabacloud/live/model/GetMessageUserInfoResult.h
 	include/alibabacloud/live/model/GetMultiRateConfigRequest.h
 	include/alibabacloud/live/model/GetMultiRateConfigResult.h
 	include/alibabacloud/live/model/GetMultiRateConfigListRequest.h
@@ -451,10 +461,14 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ListLiveRealtimeLogDeliveryInfosResult.h
 	include/alibabacloud/live/model/ListMessageRequest.h
 	include/alibabacloud/live/model/ListMessageResult.h
+	include/alibabacloud/live/model/ListMessageAppRequest.h
+	include/alibabacloud/live/model/ListMessageAppResult.h
 	include/alibabacloud/live/model/ListMessageGroupRequest.h
 	include/alibabacloud/live/model/ListMessageGroupResult.h
 	include/alibabacloud/live/model/ListMessageGroupUserRequest.h
 	include/alibabacloud/live/model/ListMessageGroupUserResult.h
+	include/alibabacloud/live/model/ListMessageGroupUserByIdRequest.h
+	include/alibabacloud/live/model/ListMessageGroupUserByIdResult.h
 	include/alibabacloud/live/model/ListPlaylistRequest.h
 	include/alibabacloud/live/model/ListPlaylistResult.h
 	include/alibabacloud/live/model/ListPlaylistItemsRequest.h
@@ -483,6 +497,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/PlayChoosenShowResult.h
 	include/alibabacloud/live/model/PublishLiveStagingConfigToProductionRequest.h
 	include/alibabacloud/live/model/PublishLiveStagingConfigToProductionResult.h
+	include/alibabacloud/live/model/QueryMessageAppRequest.h
+	include/alibabacloud/live/model/QueryMessageAppResult.h
 	include/alibabacloud/live/model/QuerySnapshotCallbackAuthRequest.h
 	include/alibabacloud/live/model/QuerySnapshotCallbackAuthResult.h
 	include/alibabacloud/live/model/RealTimeRecordCommandRequest.h
@@ -491,10 +507,18 @@ set(live_public_header_model
 	include/alibabacloud/live/model/RealTimeSnapshotCommandResult.h
 	include/alibabacloud/live/model/RemoveShowFromShowListRequest.h
 	include/alibabacloud/live/model/RemoveShowFromShowListResult.h
+	include/alibabacloud/live/model/RestartCasterRequest.h
+	include/alibabacloud/live/model/RestartCasterResult.h
 	include/alibabacloud/live/model/ResumeLiveStreamRequest.h
 	include/alibabacloud/live/model/ResumeLiveStreamResult.h
 	include/alibabacloud/live/model/RollbackLiveStagingConfigRequest.h
 	include/alibabacloud/live/model/RollbackLiveStagingConfigResult.h
+	include/alibabacloud/live/model/SendLikeRequest.h
+	include/alibabacloud/live/model/SendLikeResult.h
+	include/alibabacloud/live/model/SendMessageToGroupRequest.h
+	include/alibabacloud/live/model/SendMessageToGroupResult.h
+	include/alibabacloud/live/model/SendMessageToGroupUsersRequest.h
+	include/alibabacloud/live/model/SendMessageToGroupUsersResult.h
 	include/alibabacloud/live/model/SendRoomNotificationRequest.h
 	include/alibabacloud/live/model/SendRoomNotificationResult.h
 	include/alibabacloud/live/model/SendRoomUserNotificationRequest.h
@@ -567,6 +591,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/UpdateLiveRecordNotifyConfigResult.h
 	include/alibabacloud/live/model/UpdateLiveSnapshotDetectPornConfigRequest.h
 	include/alibabacloud/live/model/UpdateLiveSnapshotDetectPornConfigResult.h
+	include/alibabacloud/live/model/UpdateLiveSnapshotNotifyConfigRequest.h
+	include/alibabacloud/live/model/UpdateLiveSnapshotNotifyConfigResult.h
 	include/alibabacloud/live/model/UpdateLiveStreamMonitorRequest.h
 	include/alibabacloud/live/model/UpdateLiveStreamMonitorResult.h
 	include/alibabacloud/live/model/UpdateLiveStreamWatermarkRequest.h
@@ -575,6 +601,10 @@ set(live_public_header_model
 	include/alibabacloud/live/model/UpdateLiveStreamWatermarkRuleResult.h
 	include/alibabacloud/live/model/UpdateLiveTopLevelDomainRequest.h
 	include/alibabacloud/live/model/UpdateLiveTopLevelDomainResult.h
+	include/alibabacloud/live/model/UpdateMessageAppRequest.h
+	include/alibabacloud/live/model/UpdateMessageAppResult.h
+	include/alibabacloud/live/model/UpdateMessageGroupRequest.h
+	include/alibabacloud/live/model/UpdateMessageGroupResult.h
 	include/alibabacloud/live/model/UpdateMixStreamRequest.h
 	include/alibabacloud/live/model/UpdateMixStreamResult.h
 	include/alibabacloud/live/model/VerifyLiveDomainOwnerRequest.h
@@ -622,6 +652,8 @@ set(live_src
 	src/model/AddLiveRecordVodConfigResult.cc
 	src/model/AddLiveSnapshotDetectPornConfigRequest.cc
 	src/model/AddLiveSnapshotDetectPornConfigResult.cc
+	src/model/AddLiveSnapshotNotifyConfigRequest.cc
+	src/model/AddLiveSnapshotNotifyConfigResult.cc
 	src/model/AddLiveStreamTranscodeRequest.cc
 	src/model/AddLiveStreamTranscodeResult.cc
 	src/model/AddLiveStreamWatermarkRequest.cc
@@ -650,8 +682,6 @@ set(live_src
 	src/model/CancelMuteAllGroupUserResult.cc
 	src/model/CloseLiveShiftRequest.cc
 	src/model/CloseLiveShiftResult.cc
-	src/model/CloseMessageGroupRequest.cc
-	src/model/CloseMessageGroupResult.cc
 	src/model/CopyCasterRequest.cc
 	src/model/CopyCasterResult.cc
 	src/model/CopyCasterSceneConfigRequest.cc
@@ -668,6 +698,8 @@ set(live_src
 	src/model/CreateLiveStreamRecordIndexFilesResult.cc
 	src/model/CreateLiveTranscodeTemplateRequest.cc
 	src/model/CreateLiveTranscodeTemplateResult.cc
+	src/model/CreateMessageAppRequest.cc
+	src/model/CreateMessageAppResult.cc
 	src/model/CreateMessageGroupRequest.cc
 	src/model/CreateMessageGroupResult.cc
 	src/model/CreateMixStreamRequest.cc
@@ -722,6 +754,8 @@ set(live_src
 	src/model/DeleteLiveRecordVodConfigResult.cc
 	src/model/DeleteLiveSnapshotDetectPornConfigRequest.cc
 	src/model/DeleteLiveSnapshotDetectPornConfigResult.cc
+	src/model/DeleteLiveSnapshotNotifyConfigRequest.cc
+	src/model/DeleteLiveSnapshotNotifyConfigResult.cc
 	src/model/DeleteLiveSpecificStagingConfigRequest.cc
 	src/model/DeleteLiveSpecificStagingConfigResult.cc
 	src/model/DeleteLiveStreamMonitorRequest.cc
@@ -876,6 +910,10 @@ set(live_src
 	src/model/DescribeLiveSnapshotConfigResult.cc
 	src/model/DescribeLiveSnapshotDetectPornConfigRequest.cc
 	src/model/DescribeLiveSnapshotDetectPornConfigResult.cc
+	src/model/DescribeLiveSnapshotNotifyConfigRequest.cc
+	src/model/DescribeLiveSnapshotNotifyConfigResult.cc
+	src/model/DescribeLiveStreamAuthCheckingRequest.cc
+	src/model/DescribeLiveStreamAuthCheckingResult.cc
 	src/model/DescribeLiveStreamBitRateDataRequest.cc
 	src/model/DescribeLiveStreamBitRateDataResult.cc
 	src/model/DescribeLiveStreamCountRequest.cc
@@ -912,6 +950,8 @@ set(live_src
 	src/model/DescribeLiveStreamsBlockListResult.cc
 	src/model/DescribeLiveStreamsControlHistoryRequest.cc
 	src/model/DescribeLiveStreamsControlHistoryResult.cc
+	src/model/DescribeLiveStreamsNotifyRecordsRequest.cc
+	src/model/DescribeLiveStreamsNotifyRecordsResult.cc
 	src/model/DescribeLiveStreamsNotifyUrlConfigRequest.cc
 	src/model/DescribeLiveStreamsNotifyUrlConfigResult.cc
 	src/model/DescribeLiveStreamsOnlineListRequest.cc
@@ -986,12 +1026,12 @@ set(live_src
 	src/model/GetCustomTemplateResult.cc
 	src/model/GetEditingJobInfoRequest.cc
 	src/model/GetEditingJobInfoResult.cc
+	src/model/GetMessageAppRequest.cc
+	src/model/GetMessageAppResult.cc
 	src/model/GetMessageGroupRequest.cc
 	src/model/GetMessageGroupResult.cc
 	src/model/GetMessageTokenRequest.cc
 	src/model/GetMessageTokenResult.cc
-	src/model/GetMessageUserInfoRequest.cc
-	src/model/GetMessageUserInfoResult.cc
 	src/model/GetMultiRateConfigRequest.cc
 	src/model/GetMultiRateConfigResult.cc
 	src/model/GetMultiRateConfigListRequest.cc
@@ -1012,10 +1052,14 @@ set(live_src
 	src/model/ListLiveRealtimeLogDeliveryInfosResult.cc
 	src/model/ListMessageRequest.cc
 	src/model/ListMessageResult.cc
+	src/model/ListMessageAppRequest.cc
+	src/model/ListMessageAppResult.cc
 	src/model/ListMessageGroupRequest.cc
 	src/model/ListMessageGroupResult.cc
 	src/model/ListMessageGroupUserRequest.cc
 	src/model/ListMessageGroupUserResult.cc
+	src/model/ListMessageGroupUserByIdRequest.cc
+	src/model/ListMessageGroupUserByIdResult.cc
 	src/model/ListPlaylistRequest.cc
 	src/model/ListPlaylistResult.cc
 	src/model/ListPlaylistItemsRequest.cc
@@ -1044,6 +1088,8 @@ set(live_src
 	src/model/PlayChoosenShowResult.cc
 	src/model/PublishLiveStagingConfigToProductionRequest.cc
 	src/model/PublishLiveStagingConfigToProductionResult.cc
+	src/model/QueryMessageAppRequest.cc
+	src/model/QueryMessageAppResult.cc
 	src/model/QuerySnapshotCallbackAuthRequest.cc
 	src/model/QuerySnapshotCallbackAuthResult.cc
 	src/model/RealTimeRecordCommandRequest.cc
@@ -1052,10 +1098,18 @@ set(live_src
 	src/model/RealTimeSnapshotCommandResult.cc
 	src/model/RemoveShowFromShowListRequest.cc
 	src/model/RemoveShowFromShowListResult.cc
+	src/model/RestartCasterRequest.cc
+	src/model/RestartCasterResult.cc
 	src/model/ResumeLiveStreamRequest.cc
 	src/model/ResumeLiveStreamResult.cc
 	src/model/RollbackLiveStagingConfigRequest.cc
 	src/model/RollbackLiveStagingConfigResult.cc
+	src/model/SendLikeRequest.cc
+	src/model/SendLikeResult.cc
+	src/model/SendMessageToGroupRequest.cc
+	src/model/SendMessageToGroupResult.cc
+	src/model/SendMessageToGroupUsersRequest.cc
+	src/model/SendMessageToGroupUsersResult.cc
 	src/model/SendRoomNotificationRequest.cc
 	src/model/SendRoomNotificationResult.cc
 	src/model/SendRoomUserNotificationRequest.cc
@@ -1128,6 +1182,8 @@ set(live_src
 	src/model/UpdateLiveRecordNotifyConfigResult.cc
 	src/model/UpdateLiveSnapshotDetectPornConfigRequest.cc
 	src/model/UpdateLiveSnapshotDetectPornConfigResult.cc
+	src/model/UpdateLiveSnapshotNotifyConfigRequest.cc
+	src/model/UpdateLiveSnapshotNotifyConfigResult.cc
 	src/model/UpdateLiveStreamMonitorRequest.cc
 	src/model/UpdateLiveStreamMonitorResult.cc
 	src/model/UpdateLiveStreamWatermarkRequest.cc
@@ -1136,6 +1192,10 @@ set(live_src
 	src/model/UpdateLiveStreamWatermarkRuleResult.cc
 	src/model/UpdateLiveTopLevelDomainRequest.cc
 	src/model/UpdateLiveTopLevelDomainResult.cc
+	src/model/UpdateMessageAppRequest.cc
+	src/model/UpdateMessageAppResult.cc
+	src/model/UpdateMessageGroupRequest.cc
+	src/model/UpdateMessageGroupResult.cc
 	src/model/UpdateMixStreamRequest.cc
 	src/model/UpdateMixStreamResult.cc
 	src/model/VerifyLiveDomainOwnerRequest.cc

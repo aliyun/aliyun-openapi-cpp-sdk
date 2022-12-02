@@ -30,17 +30,17 @@ class ALIBABACLOUD_LIVE_EXPORT CancelMuteAllGroupUserRequest : public RpcService
 public:
 	CancelMuteAllGroupUserRequest();
 	~CancelMuteAllGroupUserRequest();
+	std::string getOperatorUserId() const;
+	void setOperatorUserId(const std::string &operatorUserId);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
-	std::string getOperatorUserId() const;
-	void setOperatorUserId(const std::string &operatorUserId);
 
 private:
+	std::string operatorUserId_;
 	std::string groupId_;
 	std::string appId_;
-	std::string operatorUserId_;
 };
 } // namespace Model
 } // namespace Live
