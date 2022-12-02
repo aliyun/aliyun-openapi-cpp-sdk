@@ -43,34 +43,34 @@ void DescribeConsumerChannelResult::parse(const std::string &payload)
 	for (auto valueConsumerChannelsConsumerChannel : allConsumerChannelsNode)
 	{
 		ConsumerChannel consumerChannelsObject;
+		if(!valueConsumerChannelsConsumerChannel["ConsumerGroupUserName"].isNull())
+			consumerChannelsObject.consumerGroupUserName = valueConsumerChannelsConsumerChannel["ConsumerGroupUserName"].asString();
 		if(!valueConsumerChannelsConsumerChannel["ConsumerGroupId"].isNull())
 			consumerChannelsObject.consumerGroupId = valueConsumerChannelsConsumerChannel["ConsumerGroupId"].asString();
+		if(!valueConsumerChannelsConsumerChannel["MessageDelay"].isNull())
+			consumerChannelsObject.messageDelay = std::stol(valueConsumerChannelsConsumerChannel["MessageDelay"].asString());
 		if(!valueConsumerChannelsConsumerChannel["ConsumerGroupName"].isNull())
 			consumerChannelsObject.consumerGroupName = valueConsumerChannelsConsumerChannel["ConsumerGroupName"].asString();
 		if(!valueConsumerChannelsConsumerChannel["ConsumptionCheckpoint"].isNull())
 			consumerChannelsObject.consumptionCheckpoint = valueConsumerChannelsConsumerChannel["ConsumptionCheckpoint"].asString();
 		if(!valueConsumerChannelsConsumerChannel["UnconsumedData"].isNull())
 			consumerChannelsObject.unconsumedData = std::stol(valueConsumerChannelsConsumerChannel["UnconsumedData"].asString());
-		if(!valueConsumerChannelsConsumerChannel["MessageDelay"].isNull())
-			consumerChannelsObject.messageDelay = std::stol(valueConsumerChannelsConsumerChannel["MessageDelay"].asString());
-		if(!valueConsumerChannelsConsumerChannel["ConsumerGroupUserName"].isNull())
-			consumerChannelsObject.consumerGroupUserName = valueConsumerChannelsConsumerChannel["ConsumerGroupUserName"].asString();
 		consumerChannels_.push_back(consumerChannelsObject);
 	}
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = value["HttpStatusCode"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = std::stol(value["TotalRecordCount"].asString());
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

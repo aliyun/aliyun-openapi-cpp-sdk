@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Dts::Model::UpgradeTwoWayRequest;
 
-UpgradeTwoWayRequest::UpgradeTwoWayRequest() :
-	RpcServiceRequest("dts", "2020-01-01", "UpgradeTwoWay")
-{
-	setMethod(HttpRequest::Method::Post);
+UpgradeTwoWayRequest::UpgradeTwoWayRequest()
+    : RpcServiceRequest("dts", "2020-01-01", "UpgradeTwoWay") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpgradeTwoWayRequest::~UpgradeTwoWayRequest()
-{}
+UpgradeTwoWayRequest::~UpgradeTwoWayRequest() {}
 
-std::string UpgradeTwoWayRequest::getInstanceClass()const
-{
-	return instanceClass_;
+std::string UpgradeTwoWayRequest::getInstanceClass() const {
+  return instanceClass_;
 }
 
-void UpgradeTwoWayRequest::setInstanceClass(const std::string& instanceClass)
-{
-	instanceClass_ = instanceClass;
-	setParameter("InstanceClass", instanceClass);
+void UpgradeTwoWayRequest::setInstanceClass(const std::string &instanceClass) {
+  instanceClass_ = instanceClass;
+  setParameter(std::string("InstanceClass"), instanceClass);
 }
 
-std::string UpgradeTwoWayRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string UpgradeTwoWayRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void UpgradeTwoWayRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void UpgradeTwoWayRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string UpgradeTwoWayRequest::getRegionId()const
-{
-	return regionId_;
+std::string UpgradeTwoWayRequest::getRegionId() const {
+  return regionId_;
 }
 
-void UpgradeTwoWayRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void UpgradeTwoWayRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 

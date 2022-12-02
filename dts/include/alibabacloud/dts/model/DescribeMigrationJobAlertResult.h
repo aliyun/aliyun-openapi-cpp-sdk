@@ -39,12 +39,12 @@ namespace AlibabaCloud
 				~DescribeMigrationJobAlertResult();
 				std::string getErrorAlertPhone()const;
 				std::string getDelayAlertPhone()const;
-				std::string getErrorAlertStatus()const;
 				std::string getMigrationJobName()const;
+				std::string getErrorAlertStatus()const;
 				std::string getErrMessage()const;
 				std::string getDelayAlertStatus()const;
-				std::string getDelayOverSeconds()const;
 				std::string getSuccess()const;
+				std::string getDelayOverSeconds()const;
 				std::string getErrCode()const;
 				std::string getMigrationJobId()const;
 
@@ -53,12 +53,12 @@ namespace AlibabaCloud
 			private:
 				std::string errorAlertPhone_;
 				std::string delayAlertPhone_;
-				std::string errorAlertStatus_;
 				std::string migrationJobName_;
+				std::string errorAlertStatus_;
 				std::string errMessage_;
 				std::string delayAlertStatus_;
-				std::string delayOverSeconds_;
 				std::string success_;
+				std::string delayOverSeconds_;
 				std::string errCode_;
 				std::string migrationJobId_;
 

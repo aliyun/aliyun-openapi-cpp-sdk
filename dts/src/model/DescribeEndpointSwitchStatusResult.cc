@@ -39,16 +39,16 @@ void DescribeEndpointSwitchStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
 
 }
 
@@ -57,14 +57,14 @@ std::string DescribeEndpointSwitchStatusResult::getStatus()const
 	return status_;
 }
 
-std::string DescribeEndpointSwitchStatusResult::getErrMessage()const
-{
-	return errMessage_;
-}
-
 std::string DescribeEndpointSwitchStatusResult::getErrorMessage()const
 {
 	return errorMessage_;
+}
+
+std::string DescribeEndpointSwitchStatusResult::getErrMessage()const
+{
+	return errMessage_;
 }
 
 std::string DescribeEndpointSwitchStatusResult::getSuccess()const

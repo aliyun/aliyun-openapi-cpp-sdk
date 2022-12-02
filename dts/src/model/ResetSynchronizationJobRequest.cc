@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Dts::Model::ResetSynchronizationJobRequest;
 
-ResetSynchronizationJobRequest::ResetSynchronizationJobRequest() :
-	RpcServiceRequest("dts", "2020-01-01", "ResetSynchronizationJob")
-{
-	setMethod(HttpRequest::Method::Post);
+ResetSynchronizationJobRequest::ResetSynchronizationJobRequest()
+    : RpcServiceRequest("dts", "2020-01-01", "ResetSynchronizationJob") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ResetSynchronizationJobRequest::~ResetSynchronizationJobRequest()
-{}
+ResetSynchronizationJobRequest::~ResetSynchronizationJobRequest() {}
 
-std::string ResetSynchronizationJobRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string ResetSynchronizationJobRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ResetSynchronizationJobRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void ResetSynchronizationJobRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string ResetSynchronizationJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ResetSynchronizationJobRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ResetSynchronizationJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ResetSynchronizationJobRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ResetSynchronizationJobRequest::getSynchronizationJobId()const
-{
-	return synchronizationJobId_;
+std::string ResetSynchronizationJobRequest::getSynchronizationJobId() const {
+  return synchronizationJobId_;
 }
 
-void ResetSynchronizationJobRequest::setSynchronizationJobId(const std::string& synchronizationJobId)
-{
-	synchronizationJobId_ = synchronizationJobId;
-	setParameter("SynchronizationJobId", synchronizationJobId);
+void ResetSynchronizationJobRequest::setSynchronizationJobId(const std::string &synchronizationJobId) {
+  synchronizationJobId_ = synchronizationJobId;
+  setParameter(std::string("SynchronizationJobId"), synchronizationJobId);
 }
 
-std::string ResetSynchronizationJobRequest::getAccountId()const
-{
-	return accountId_;
+std::string ResetSynchronizationJobRequest::getAccountId() const {
+  return accountId_;
 }
 
-void ResetSynchronizationJobRequest::setAccountId(const std::string& accountId)
-{
-	accountId_ = accountId;
-	setParameter("AccountId", accountId);
+void ResetSynchronizationJobRequest::setAccountId(const std::string &accountId) {
+  accountId_ = accountId;
+  setParameter(std::string("AccountId"), accountId);
 }
 
-std::string ResetSynchronizationJobRequest::getRegionId()const
-{
-	return regionId_;
+std::string ResetSynchronizationJobRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ResetSynchronizationJobRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ResetSynchronizationJobRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ResetSynchronizationJobRequest::getSynchronizationDirection()const
-{
-	return synchronizationDirection_;
+std::string ResetSynchronizationJobRequest::getSynchronizationDirection() const {
+  return synchronizationDirection_;
 }
 
-void ResetSynchronizationJobRequest::setSynchronizationDirection(const std::string& synchronizationDirection)
-{
-	synchronizationDirection_ = synchronizationDirection;
-	setParameter("SynchronizationDirection", synchronizationDirection);
+void ResetSynchronizationJobRequest::setSynchronizationDirection(const std::string &synchronizationDirection) {
+  synchronizationDirection_ = synchronizationDirection;
+  setParameter(std::string("SynchronizationDirection"), synchronizationDirection);
 }
 

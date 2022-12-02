@@ -39,14 +39,14 @@ void DescribeSynchronizationJobReplicatorCompareResult::parse(const std::string 
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
 	if(!value["SynchronizationReplicatorCompareEnable"].isNull())
 		synchronizationReplicatorCompareEnable_ = value["SynchronizationReplicatorCompareEnable"].asString() == "true";
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
 
 }
 

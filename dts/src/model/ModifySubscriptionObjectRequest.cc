@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Dts::Model::ModifySubscriptionObjectRequest;
 
-ModifySubscriptionObjectRequest::ModifySubscriptionObjectRequest() :
-	RpcServiceRequest("dts", "2020-01-01", "ModifySubscriptionObject")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifySubscriptionObjectRequest::ModifySubscriptionObjectRequest()
+    : RpcServiceRequest("dts", "2020-01-01", "ModifySubscriptionObject") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifySubscriptionObjectRequest::~ModifySubscriptionObjectRequest()
-{}
+ModifySubscriptionObjectRequest::~ModifySubscriptionObjectRequest() {}
 
-std::string ModifySubscriptionObjectRequest::getSubscriptionInstanceId()const
-{
-	return subscriptionInstanceId_;
+std::string ModifySubscriptionObjectRequest::getSubscriptionInstanceId() const {
+  return subscriptionInstanceId_;
 }
 
-void ModifySubscriptionObjectRequest::setSubscriptionInstanceId(const std::string& subscriptionInstanceId)
-{
-	subscriptionInstanceId_ = subscriptionInstanceId;
-	setParameter("SubscriptionInstanceId", subscriptionInstanceId);
+void ModifySubscriptionObjectRequest::setSubscriptionInstanceId(const std::string &subscriptionInstanceId) {
+  subscriptionInstanceId_ = subscriptionInstanceId;
+  setParameter(std::string("SubscriptionInstanceId"), subscriptionInstanceId);
 }
 
-std::string ModifySubscriptionObjectRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string ModifySubscriptionObjectRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifySubscriptionObjectRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void ModifySubscriptionObjectRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string ModifySubscriptionObjectRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ModifySubscriptionObjectRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ModifySubscriptionObjectRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ModifySubscriptionObjectRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifySubscriptionObjectRequest::getAccountId()const
-{
-	return accountId_;
+std::string ModifySubscriptionObjectRequest::getAccountId() const {
+  return accountId_;
 }
 
-void ModifySubscriptionObjectRequest::setAccountId(const std::string& accountId)
-{
-	accountId_ = accountId;
-	setParameter("AccountId", accountId);
+void ModifySubscriptionObjectRequest::setAccountId(const std::string &accountId) {
+  accountId_ = accountId;
+  setParameter(std::string("AccountId"), accountId);
 }
 
-std::string ModifySubscriptionObjectRequest::getRegionId()const
-{
-	return regionId_;
+std::string ModifySubscriptionObjectRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifySubscriptionObjectRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ModifySubscriptionObjectRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ModifySubscriptionObjectRequest::getSubscriptionObject()const
-{
-	return subscriptionObject_;
+std::string ModifySubscriptionObjectRequest::getSubscriptionObject() const {
+  return subscriptionObject_;
 }
 
-void ModifySubscriptionObjectRequest::setSubscriptionObject(const std::string& subscriptionObject)
-{
-	subscriptionObject_ = subscriptionObject;
-	setParameter("SubscriptionObject", subscriptionObject);
+void ModifySubscriptionObjectRequest::setSubscriptionObject(const std::string &subscriptionObject) {
+  subscriptionObject_ = subscriptionObject;
+  setParameter(std::string("SubscriptionObject"), subscriptionObject);
 }
 

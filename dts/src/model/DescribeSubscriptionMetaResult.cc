@@ -43,26 +43,26 @@ void DescribeSubscriptionMetaResult::parse(const std::string &payload)
 	for (auto valueSubscriptionMetaListSubscriptionMetaListItem : allSubscriptionMetaListNode)
 	{
 		SubscriptionMetaListItem subscriptionMetaListObject;
-		if(!valueSubscriptionMetaListSubscriptionMetaListItem["DProxyUrl"].isNull())
-			subscriptionMetaListObject.dProxyUrl = valueSubscriptionMetaListSubscriptionMetaListItem["DProxyUrl"].asString();
-		if(!valueSubscriptionMetaListSubscriptionMetaListItem["Topic"].isNull())
-			subscriptionMetaListObject.topic = valueSubscriptionMetaListSubscriptionMetaListItem["Topic"].asString();
 		if(!valueSubscriptionMetaListSubscriptionMetaListItem["Sid"].isNull())
 			subscriptionMetaListObject.sid = valueSubscriptionMetaListSubscriptionMetaListItem["Sid"].asString();
 		if(!valueSubscriptionMetaListSubscriptionMetaListItem["Checkpoint"].isNull())
 			subscriptionMetaListObject.checkpoint = std::stol(valueSubscriptionMetaListSubscriptionMetaListItem["Checkpoint"].asString());
+		if(!valueSubscriptionMetaListSubscriptionMetaListItem["DProxyUrl"].isNull())
+			subscriptionMetaListObject.dProxyUrl = valueSubscriptionMetaListSubscriptionMetaListItem["DProxyUrl"].asString();
 		if(!valueSubscriptionMetaListSubscriptionMetaListItem["DBList"].isNull())
 			subscriptionMetaListObject.dBList = valueSubscriptionMetaListSubscriptionMetaListItem["DBList"].asString();
+		if(!valueSubscriptionMetaListSubscriptionMetaListItem["Topic"].isNull())
+			subscriptionMetaListObject.topic = valueSubscriptionMetaListSubscriptionMetaListItem["Topic"].asString();
 		subscriptionMetaList_.push_back(subscriptionMetaListObject);
 	}
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = value["HttpStatusCode"].asString();
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
 
 }
 

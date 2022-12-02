@@ -43,20 +43,20 @@ void DescribeMigrationJobsResult::parse(const std::string &payload)
 	for (auto valueMigrationJobsMigrationJob : allMigrationJobsNode)
 	{
 		MigrationJob migrationJobsObject;
-		if(!valueMigrationJobsMigrationJob["MigrationJobClass"].isNull())
-			migrationJobsObject.migrationJobClass = valueMigrationJobsMigrationJob["MigrationJobClass"].asString();
-		if(!valueMigrationJobsMigrationJob["MigrationJobID"].isNull())
-			migrationJobsObject.migrationJobID = valueMigrationJobsMigrationJob["MigrationJobID"].asString();
 		if(!valueMigrationJobsMigrationJob["MigrationJobName"].isNull())
 			migrationJobsObject.migrationJobName = valueMigrationJobsMigrationJob["MigrationJobName"].asString();
 		if(!valueMigrationJobsMigrationJob["MigrationJobStatus"].isNull())
 			migrationJobsObject.migrationJobStatus = valueMigrationJobsMigrationJob["MigrationJobStatus"].asString();
 		if(!valueMigrationJobsMigrationJob["PayType"].isNull())
 			migrationJobsObject.payType = valueMigrationJobsMigrationJob["PayType"].asString();
-		if(!valueMigrationJobsMigrationJob["JobCreateTime"].isNull())
-			migrationJobsObject.jobCreateTime = valueMigrationJobsMigrationJob["JobCreateTime"].asString();
+		if(!valueMigrationJobsMigrationJob["MigrationJobClass"].isNull())
+			migrationJobsObject.migrationJobClass = valueMigrationJobsMigrationJob["MigrationJobClass"].asString();
 		if(!valueMigrationJobsMigrationJob["InstanceCreateTime"].isNull())
 			migrationJobsObject.instanceCreateTime = valueMigrationJobsMigrationJob["InstanceCreateTime"].asString();
+		if(!valueMigrationJobsMigrationJob["MigrationJobID"].isNull())
+			migrationJobsObject.migrationJobID = valueMigrationJobsMigrationJob["MigrationJobID"].asString();
+		if(!valueMigrationJobsMigrationJob["JobCreateTime"].isNull())
+			migrationJobsObject.jobCreateTime = valueMigrationJobsMigrationJob["JobCreateTime"].asString();
 		auto allMigrationObjectNode = valueMigrationJobsMigrationJob["MigrationObject"]["SynchronousObject"];
 		for (auto valueMigrationJobsMigrationJobMigrationObjectSynchronousObject : allMigrationObjectNode)
 		{
@@ -81,40 +81,40 @@ void DescribeMigrationJobsResult::parse(const std::string &payload)
 			migrationJobsObject.tags.push_back(tagsObject);
 		}
 		auto dataInitializationNode = value["DataInitialization"];
-		if(!dataInitializationNode["ErrorMessage"].isNull())
-			migrationJobsObject.dataInitialization.errorMessage = dataInitializationNode["ErrorMessage"].asString();
 		if(!dataInitializationNode["Percent"].isNull())
 			migrationJobsObject.dataInitialization.percent = dataInitializationNode["Percent"].asString();
-		if(!dataInitializationNode["Progress"].isNull())
-			migrationJobsObject.dataInitialization.progress = dataInitializationNode["Progress"].asString();
 		if(!dataInitializationNode["status"].isNull())
 			migrationJobsObject.dataInitialization.status = dataInitializationNode["status"].asString();
+		if(!dataInitializationNode["ErrorMessage"].isNull())
+			migrationJobsObject.dataInitialization.errorMessage = dataInitializationNode["ErrorMessage"].asString();
+		if(!dataInitializationNode["Progress"].isNull())
+			migrationJobsObject.dataInitialization.progress = dataInitializationNode["Progress"].asString();
 		auto dataSynchronizationNode = value["DataSynchronization"];
 		if(!dataSynchronizationNode["Delay"].isNull())
 			migrationJobsObject.dataSynchronization.delay = dataSynchronizationNode["Delay"].asString();
-		if(!dataSynchronizationNode["ErrorMessage"].isNull())
-			migrationJobsObject.dataSynchronization.errorMessage = dataSynchronizationNode["ErrorMessage"].asString();
 		if(!dataSynchronizationNode["Percent"].isNull())
 			migrationJobsObject.dataSynchronization.percent = dataSynchronizationNode["Percent"].asString();
 		if(!dataSynchronizationNode["status"].isNull())
 			migrationJobsObject.dataSynchronization.status = dataSynchronizationNode["status"].asString();
+		if(!dataSynchronizationNode["ErrorMessage"].isNull())
+			migrationJobsObject.dataSynchronization.errorMessage = dataSynchronizationNode["ErrorMessage"].asString();
 		auto destinationEndpointNode = value["DestinationEndpoint"];
-		if(!destinationEndpointNode["DatabaseName"].isNull())
-			migrationJobsObject.destinationEndpoint.databaseName = destinationEndpointNode["DatabaseName"].asString();
-		if(!destinationEndpointNode["EngineName"].isNull())
-			migrationJobsObject.destinationEndpoint.engineName = destinationEndpointNode["EngineName"].asString();
-		if(!destinationEndpointNode["IP"].isNull())
-			migrationJobsObject.destinationEndpoint.iP = destinationEndpointNode["IP"].asString();
-		if(!destinationEndpointNode["InstanceID"].isNull())
-			migrationJobsObject.destinationEndpoint.instanceID = destinationEndpointNode["InstanceID"].asString();
-		if(!destinationEndpointNode["InstanceType"].isNull())
-			migrationJobsObject.destinationEndpoint.instanceType = destinationEndpointNode["InstanceType"].asString();
 		if(!destinationEndpointNode["OracleSID"].isNull())
 			migrationJobsObject.destinationEndpoint.oracleSID = destinationEndpointNode["OracleSID"].asString();
+		if(!destinationEndpointNode["DatabaseName"].isNull())
+			migrationJobsObject.destinationEndpoint.databaseName = destinationEndpointNode["DatabaseName"].asString();
+		if(!destinationEndpointNode["InstanceID"].isNull())
+			migrationJobsObject.destinationEndpoint.instanceID = destinationEndpointNode["InstanceID"].asString();
 		if(!destinationEndpointNode["Port"].isNull())
 			migrationJobsObject.destinationEndpoint.port = destinationEndpointNode["Port"].asString();
+		if(!destinationEndpointNode["IP"].isNull())
+			migrationJobsObject.destinationEndpoint.iP = destinationEndpointNode["IP"].asString();
+		if(!destinationEndpointNode["InstanceType"].isNull())
+			migrationJobsObject.destinationEndpoint.instanceType = destinationEndpointNode["InstanceType"].asString();
 		if(!destinationEndpointNode["UserName"].isNull())
 			migrationJobsObject.destinationEndpoint.userName = destinationEndpointNode["UserName"].asString();
+		if(!destinationEndpointNode["EngineName"].isNull())
+			migrationJobsObject.destinationEndpoint.engineName = destinationEndpointNode["EngineName"].asString();
 		auto migrationModeNode = value["MigrationMode"];
 		if(!migrationModeNode["DataInitialization"].isNull())
 			migrationJobsObject.migrationMode.dataInitialization = migrationModeNode["DataInitialization"].asString() == "true";
@@ -123,50 +123,50 @@ void DescribeMigrationJobsResult::parse(const std::string &payload)
 		if(!migrationModeNode["StructureInitialization"].isNull())
 			migrationJobsObject.migrationMode.structureInitialization = migrationModeNode["StructureInitialization"].asString() == "true";
 		auto precheckNode = value["Precheck"];
-		if(!precheckNode["Percent"].isNull())
-			migrationJobsObject.precheck.percent = precheckNode["Percent"].asString();
 		if(!precheckNode["Status"].isNull())
 			migrationJobsObject.precheck.status = precheckNode["Status"].asString();
+		if(!precheckNode["Percent"].isNull())
+			migrationJobsObject.precheck.percent = precheckNode["Percent"].asString();
 		auto sourceEndpointNode = value["SourceEndpoint"];
-		if(!sourceEndpointNode["DatabaseName"].isNull())
-			migrationJobsObject.sourceEndpoint.databaseName = sourceEndpointNode["DatabaseName"].asString();
-		if(!sourceEndpointNode["EngineName"].isNull())
-			migrationJobsObject.sourceEndpoint.engineName = sourceEndpointNode["EngineName"].asString();
-		if(!sourceEndpointNode["IP"].isNull())
-			migrationJobsObject.sourceEndpoint.iP = sourceEndpointNode["IP"].asString();
-		if(!sourceEndpointNode["InstanceID"].isNull())
-			migrationJobsObject.sourceEndpoint.instanceID = sourceEndpointNode["InstanceID"].asString();
-		if(!sourceEndpointNode["InstanceType"].isNull())
-			migrationJobsObject.sourceEndpoint.instanceType = sourceEndpointNode["InstanceType"].asString();
 		if(!sourceEndpointNode["OracleSID"].isNull())
 			migrationJobsObject.sourceEndpoint.oracleSID = sourceEndpointNode["OracleSID"].asString();
+		if(!sourceEndpointNode["DatabaseName"].isNull())
+			migrationJobsObject.sourceEndpoint.databaseName = sourceEndpointNode["DatabaseName"].asString();
+		if(!sourceEndpointNode["InstanceID"].isNull())
+			migrationJobsObject.sourceEndpoint.instanceID = sourceEndpointNode["InstanceID"].asString();
 		if(!sourceEndpointNode["Port"].isNull())
 			migrationJobsObject.sourceEndpoint.port = sourceEndpointNode["Port"].asString();
+		if(!sourceEndpointNode["IP"].isNull())
+			migrationJobsObject.sourceEndpoint.iP = sourceEndpointNode["IP"].asString();
+		if(!sourceEndpointNode["InstanceType"].isNull())
+			migrationJobsObject.sourceEndpoint.instanceType = sourceEndpointNode["InstanceType"].asString();
 		if(!sourceEndpointNode["UserName"].isNull())
 			migrationJobsObject.sourceEndpoint.userName = sourceEndpointNode["UserName"].asString();
+		if(!sourceEndpointNode["EngineName"].isNull())
+			migrationJobsObject.sourceEndpoint.engineName = sourceEndpointNode["EngineName"].asString();
 		auto structureInitializationNode = value["StructureInitialization"];
-		if(!structureInitializationNode["ErrorMessage"].isNull())
-			migrationJobsObject.structureInitialization.errorMessage = structureInitializationNode["ErrorMessage"].asString();
 		if(!structureInitializationNode["Percent"].isNull())
 			migrationJobsObject.structureInitialization.percent = structureInitializationNode["Percent"].asString();
-		if(!structureInitializationNode["Progress"].isNull())
-			migrationJobsObject.structureInitialization.progress = structureInitializationNode["Progress"].asString();
 		if(!structureInitializationNode["status"].isNull())
 			migrationJobsObject.structureInitialization.status = structureInitializationNode["status"].asString();
+		if(!structureInitializationNode["ErrorMessage"].isNull())
+			migrationJobsObject.structureInitialization.errorMessage = structureInitializationNode["ErrorMessage"].asString();
+		if(!structureInitializationNode["Progress"].isNull())
+			migrationJobsObject.structureInitialization.progress = structureInitializationNode["Progress"].asString();
 		migrationJobs_.push_back(migrationJobsObject);
 	}
 	if(!value["ErrCode"].isNull())
 		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = std::stol(value["TotalRecordCount"].asString());
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

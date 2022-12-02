@@ -53,8 +53,8 @@ namespace AlibabaCloud
 						std::string oracleSID;
 						std::string userName;
 						std::string instanceID;
-						std::string iP;
 						std::string port;
+						std::string iP;
 						std::string databaseName;
 						std::string instanceType;
 						std::string engineName;
@@ -75,8 +75,8 @@ namespace AlibabaCloud
 						std::string oracleSID;
 						std::string userName;
 						std::string instanceID;
-						std::string iP;
 						std::string port;
+						std::string iP;
 						std::string databaseName;
 						std::string instanceType;
 						std::string engineName;

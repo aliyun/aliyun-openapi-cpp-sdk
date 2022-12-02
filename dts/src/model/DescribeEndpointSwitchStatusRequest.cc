@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Dts::Model::DescribeEndpointSwitchStatusRequest;
 
-DescribeEndpointSwitchStatusRequest::DescribeEndpointSwitchStatusRequest() :
-	RpcServiceRequest("dts", "2020-01-01", "DescribeEndpointSwitchStatus")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeEndpointSwitchStatusRequest::DescribeEndpointSwitchStatusRequest()
+    : RpcServiceRequest("dts", "2020-01-01", "DescribeEndpointSwitchStatus") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeEndpointSwitchStatusRequest::~DescribeEndpointSwitchStatusRequest()
-{}
+DescribeEndpointSwitchStatusRequest::~DescribeEndpointSwitchStatusRequest() {}
 
-std::string DescribeEndpointSwitchStatusRequest::getClientToken()const
-{
-	return clientToken_;
+std::string DescribeEndpointSwitchStatusRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void DescribeEndpointSwitchStatusRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void DescribeEndpointSwitchStatusRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string DescribeEndpointSwitchStatusRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string DescribeEndpointSwitchStatusRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeEndpointSwitchStatusRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void DescribeEndpointSwitchStatusRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string DescribeEndpointSwitchStatusRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeEndpointSwitchStatusRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeEndpointSwitchStatusRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeEndpointSwitchStatusRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeEndpointSwitchStatusRequest::getAccountId()const
-{
-	return accountId_;
+std::string DescribeEndpointSwitchStatusRequest::getAccountId() const {
+  return accountId_;
 }
 
-void DescribeEndpointSwitchStatusRequest::setAccountId(const std::string& accountId)
-{
-	accountId_ = accountId;
-	setParameter("AccountId", accountId);
+void DescribeEndpointSwitchStatusRequest::setAccountId(const std::string &accountId) {
+  accountId_ = accountId;
+  setParameter(std::string("AccountId"), accountId);
 }
 
-std::string DescribeEndpointSwitchStatusRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeEndpointSwitchStatusRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeEndpointSwitchStatusRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeEndpointSwitchStatusRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DescribeEndpointSwitchStatusRequest::getTaskId()const
-{
-	return taskId_;
+std::string DescribeEndpointSwitchStatusRequest::getTaskId() const {
+  return taskId_;
 }
 
-void DescribeEndpointSwitchStatusRequest::setTaskId(const std::string& taskId)
-{
-	taskId_ = taskId;
-	setParameter("TaskId", taskId);
+void DescribeEndpointSwitchStatusRequest::setTaskId(const std::string &taskId) {
+  taskId_ = taskId;
+  setParameter(std::string("TaskId"), taskId);
 }
 

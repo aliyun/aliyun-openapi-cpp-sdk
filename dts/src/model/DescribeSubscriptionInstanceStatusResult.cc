@@ -53,48 +53,48 @@ void DescribeSubscriptionInstanceStatusResult::parse(const std::string &payload)
 		subscriptionObject_.push_back(subscriptionObjectObject);
 	}
 	auto sourceEndpointNode = value["SourceEndpoint"];
-	if(!sourceEndpointNode["InstanceID"].isNull())
-		sourceEndpoint_.instanceID = sourceEndpointNode["InstanceID"].asString();
 	if(!sourceEndpointNode["InstanceType"].isNull())
 		sourceEndpoint_.instanceType = sourceEndpointNode["InstanceType"].asString();
+	if(!sourceEndpointNode["InstanceID"].isNull())
+		sourceEndpoint_.instanceID = sourceEndpointNode["InstanceID"].asString();
 	auto subscriptionDataTypeNode = value["SubscriptionDataType"];
-	if(!subscriptionDataTypeNode["DDL"].isNull())
-		subscriptionDataType_.dDL = subscriptionDataTypeNode["DDL"].asString() == "true";
 	if(!subscriptionDataTypeNode["DML"].isNull())
 		subscriptionDataType_.dML = subscriptionDataTypeNode["DML"].asString() == "true";
+	if(!subscriptionDataTypeNode["DDL"].isNull())
+		subscriptionDataType_.dDL = subscriptionDataTypeNode["DDL"].asString() == "true";
 	auto subscriptionHostNode = value["SubscriptionHost"];
-	if(!subscriptionHostNode["PrivateHost"].isNull())
-		subscriptionHost_.privateHost = subscriptionHostNode["PrivateHost"].asString();
-	if(!subscriptionHostNode["PublicHost"].isNull())
-		subscriptionHost_.publicHost = subscriptionHostNode["PublicHost"].asString();
 	if(!subscriptionHostNode["VPCHost"].isNull())
 		subscriptionHost_.vPCHost = subscriptionHostNode["VPCHost"].asString();
-	if(!value["BeginTimestamp"].isNull())
-		beginTimestamp_ = value["BeginTimestamp"].asString();
-	if(!value["ConsumptionCheckpoint"].isNull())
-		consumptionCheckpoint_ = value["ConsumptionCheckpoint"].asString();
-	if(!value["ConsumptionClient"].isNull())
-		consumptionClient_ = value["ConsumptionClient"].asString();
-	if(!value["EndTimestamp"].isNull())
-		endTimestamp_ = value["EndTimestamp"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
-	if(!value["PayType"].isNull())
-		payType_ = value["PayType"].asString();
+	if(!subscriptionHostNode["PublicHost"].isNull())
+		subscriptionHost_.publicHost = subscriptionHostNode["PublicHost"].asString();
+	if(!subscriptionHostNode["PrivateHost"].isNull())
+		subscriptionHost_.privateHost = subscriptionHostNode["PrivateHost"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["SubscribeTopic"].isNull())
-		subscribeTopic_ = value["SubscribeTopic"].asString();
-	if(!value["SubscriptionInstanceID"].isNull())
-		subscriptionInstanceID_ = value["SubscriptionInstanceID"].asString();
-	if(!value["SubscriptionInstanceName"].isNull())
-		subscriptionInstanceName_ = value["SubscriptionInstanceName"].asString();
+	if(!value["ErrorMessage"].isNull())
+		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["ErrCode"].isNull())
 		errCode_ = value["ErrCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
+	if(!value["PayType"].isNull())
+		payType_ = value["PayType"].asString();
+	if(!value["ConsumptionClient"].isNull())
+		consumptionClient_ = value["ConsumptionClient"].asString();
+	if(!value["ConsumptionCheckpoint"].isNull())
+		consumptionCheckpoint_ = value["ConsumptionCheckpoint"].asString();
+	if(!value["EndTimestamp"].isNull())
+		endTimestamp_ = value["EndTimestamp"].asString();
+	if(!value["BeginTimestamp"].isNull())
+		beginTimestamp_ = value["BeginTimestamp"].asString();
+	if(!value["SubscribeTopic"].isNull())
+		subscribeTopic_ = value["SubscribeTopic"].asString();
+	if(!value["SubscriptionInstanceName"].isNull())
+		subscriptionInstanceName_ = value["SubscriptionInstanceName"].asString();
+	if(!value["SubscriptionInstanceID"].isNull())
+		subscriptionInstanceID_ = value["SubscriptionInstanceID"].asString();
 	if(!value["TaskId"].isNull())
 		taskId_ = value["TaskId"].asString();
 

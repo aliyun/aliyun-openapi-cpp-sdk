@@ -41,14 +41,14 @@ void CreateDtsInstanceResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["ErrCode"].isNull())
 		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
 	if(!value["JobId"].isNull())
 		jobId_ = value["JobId"].asString();
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
 
 }
 

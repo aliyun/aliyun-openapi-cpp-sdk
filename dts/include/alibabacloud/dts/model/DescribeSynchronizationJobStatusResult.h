@@ -42,8 +42,8 @@ namespace AlibabaCloud
 				struct DataSynchronizationStatus
 				{
 					std::string status;
-					std::string checkpoint;
 					long delayMillis;
+					std::string checkpoint;
 					std::string percent;
 					std::string errorMessage;
 					std::string delay;
@@ -126,8 +126,8 @@ namespace AlibabaCloud
 				std::string getErrMessage()const;
 				std::string getErrCode()const;
 				PrecheckStatus getPrecheckStatus()const;
-				std::string getCheckpoint()const;
 				std::string getSynchronizationJobId()const;
+				std::string getCheckpoint()const;
 				DestinationEndpoint getDestinationEndpoint()const;
 				SourceEndpoint getSourceEndpoint()const;
 				std::string getStructureInitialization()const;
@@ -155,8 +155,8 @@ namespace AlibabaCloud
 				std::string errMessage_;
 				std::string errCode_;
 				PrecheckStatus precheckStatus_;
-				std::string checkpoint_;
 				std::string synchronizationJobId_;
+				std::string checkpoint_;
 				DestinationEndpoint destinationEndpoint_;
 				SourceEndpoint sourceEndpoint_;
 				std::string structureInitialization_;

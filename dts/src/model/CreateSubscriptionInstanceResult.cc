@@ -39,25 +39,25 @@ void CreateSubscriptionInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["SubscriptionInstanceId"].isNull())
 		subscriptionInstanceId_ = value["SubscriptionInstanceId"].asString();
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
 
-}
-
-std::string CreateSubscriptionInstanceResult::getErrMessage()const
-{
-	return errMessage_;
 }
 
 std::string CreateSubscriptionInstanceResult::getSubscriptionInstanceId()const
 {
 	return subscriptionInstanceId_;
+}
+
+std::string CreateSubscriptionInstanceResult::getErrMessage()const
+{
+	return errMessage_;
 }
 
 std::string CreateSubscriptionInstanceResult::getSuccess()const

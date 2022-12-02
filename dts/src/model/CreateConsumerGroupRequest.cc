@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Dts::Model::CreateConsumerGroupRequest;
 
-CreateConsumerGroupRequest::CreateConsumerGroupRequest() :
-	RpcServiceRequest("dts", "2020-01-01", "CreateConsumerGroup")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateConsumerGroupRequest::CreateConsumerGroupRequest()
+    : RpcServiceRequest("dts", "2020-01-01", "CreateConsumerGroup") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateConsumerGroupRequest::~CreateConsumerGroupRequest()
-{}
+CreateConsumerGroupRequest::~CreateConsumerGroupRequest() {}
 
-std::string CreateConsumerGroupRequest::getConsumerGroupName()const
-{
-	return consumerGroupName_;
+std::string CreateConsumerGroupRequest::getConsumerGroupPassword() const {
+  return consumerGroupPassword_;
 }
 
-void CreateConsumerGroupRequest::setConsumerGroupName(const std::string& consumerGroupName)
-{
-	consumerGroupName_ = consumerGroupName;
-	setParameter("ConsumerGroupName", consumerGroupName);
+void CreateConsumerGroupRequest::setConsumerGroupPassword(const std::string &consumerGroupPassword) {
+  consumerGroupPassword_ = consumerGroupPassword;
+  setParameter(std::string("ConsumerGroupPassword"), consumerGroupPassword);
 }
 
-std::string CreateConsumerGroupRequest::getSubscriptionInstanceId()const
-{
-	return subscriptionInstanceId_;
+std::string CreateConsumerGroupRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void CreateConsumerGroupRequest::setSubscriptionInstanceId(const std::string& subscriptionInstanceId)
-{
-	subscriptionInstanceId_ = subscriptionInstanceId;
-	setParameter("SubscriptionInstanceId", subscriptionInstanceId);
+void CreateConsumerGroupRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string CreateConsumerGroupRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string CreateConsumerGroupRequest::getAccountId() const {
+  return accountId_;
 }
 
-void CreateConsumerGroupRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void CreateConsumerGroupRequest::setAccountId(const std::string &accountId) {
+  accountId_ = accountId;
+  setParameter(std::string("AccountId"), accountId);
 }
 
-std::string CreateConsumerGroupRequest::getConsumerGroupPassword()const
-{
-	return consumerGroupPassword_;
+std::string CreateConsumerGroupRequest::getConsumerGroupUserName() const {
+  return consumerGroupUserName_;
 }
 
-void CreateConsumerGroupRequest::setConsumerGroupPassword(const std::string& consumerGroupPassword)
-{
-	consumerGroupPassword_ = consumerGroupPassword;
-	setParameter("ConsumerGroupPassword", consumerGroupPassword);
+void CreateConsumerGroupRequest::setConsumerGroupUserName(const std::string &consumerGroupUserName) {
+  consumerGroupUserName_ = consumerGroupUserName;
+  setParameter(std::string("ConsumerGroupUserName"), consumerGroupUserName);
 }
 
-std::string CreateConsumerGroupRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string CreateConsumerGroupRequest::getRegionId() const {
+  return regionId_;
 }
 
-void CreateConsumerGroupRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void CreateConsumerGroupRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string CreateConsumerGroupRequest::getAccountId()const
-{
-	return accountId_;
+std::string CreateConsumerGroupRequest::getConsumerGroupName() const {
+  return consumerGroupName_;
 }
 
-void CreateConsumerGroupRequest::setAccountId(const std::string& accountId)
-{
-	accountId_ = accountId;
-	setParameter("AccountId", accountId);
+void CreateConsumerGroupRequest::setConsumerGroupName(const std::string &consumerGroupName) {
+  consumerGroupName_ = consumerGroupName;
+  setParameter(std::string("ConsumerGroupName"), consumerGroupName);
 }
 
-std::string CreateConsumerGroupRequest::getConsumerGroupUserName()const
-{
-	return consumerGroupUserName_;
+std::string CreateConsumerGroupRequest::getSubscriptionInstanceId() const {
+  return subscriptionInstanceId_;
 }
 
-void CreateConsumerGroupRequest::setConsumerGroupUserName(const std::string& consumerGroupUserName)
-{
-	consumerGroupUserName_ = consumerGroupUserName;
-	setParameter("ConsumerGroupUserName", consumerGroupUserName);
+void CreateConsumerGroupRequest::setSubscriptionInstanceId(const std::string &subscriptionInstanceId) {
+  subscriptionInstanceId_ = subscriptionInstanceId;
+  setParameter(std::string("SubscriptionInstanceId"), subscriptionInstanceId);
 }
 
-std::string CreateConsumerGroupRequest::getRegionId()const
-{
-	return regionId_;
+std::string CreateConsumerGroupRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void CreateConsumerGroupRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void CreateConsumerGroupRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

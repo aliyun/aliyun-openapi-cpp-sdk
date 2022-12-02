@@ -74,8 +74,8 @@ namespace AlibabaCloud
 				std::string getStatus()const;
 				PrecheckStatus getPrecheckStatus()const;
 				DataInitializationStatus getDataInitializationStatus()const;
-				std::string getErrMessage()const;
 				std::string getErrorMessage()const;
+				std::string getErrMessage()const;
 				std::string getSuccess()const;
 				DataSynchronizationStatus getDataSynchronizationStatus()const;
 				StructureInitializationStatus getStructureInitializationStatus()const;
@@ -87,8 +87,8 @@ namespace AlibabaCloud
 				std::string status_;
 				PrecheckStatus precheckStatus_;
 				DataInitializationStatus dataInitializationStatus_;
-				std::string errMessage_;
 				std::string errorMessage_;
+				std::string errMessage_;
 				std::string success_;
 				DataSynchronizationStatus dataSynchronizationStatus_;
 				StructureInitializationStatus structureInitializationStatus_;

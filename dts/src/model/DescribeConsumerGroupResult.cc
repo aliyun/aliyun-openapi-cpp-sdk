@@ -43,32 +43,32 @@ void DescribeConsumerGroupResult::parse(const std::string &payload)
 	for (auto valueConsumerChannelsDescribeConsumerChannel : allConsumerChannelsNode)
 	{
 		DescribeConsumerChannel consumerChannelsObject;
-		if(!valueConsumerChannelsDescribeConsumerChannel["ConsumerGroupID"].isNull())
-			consumerChannelsObject.consumerGroupID = valueConsumerChannelsDescribeConsumerChannel["ConsumerGroupID"].asString();
-		if(!valueConsumerChannelsDescribeConsumerChannel["ConsumerGroupName"].isNull())
-			consumerChannelsObject.consumerGroupName = valueConsumerChannelsDescribeConsumerChannel["ConsumerGroupName"].asString();
 		if(!valueConsumerChannelsDescribeConsumerChannel["ConsumerGroupUserName"].isNull())
 			consumerChannelsObject.consumerGroupUserName = valueConsumerChannelsDescribeConsumerChannel["ConsumerGroupUserName"].asString();
-		if(!valueConsumerChannelsDescribeConsumerChannel["ConsumptionCheckpoint"].isNull())
-			consumerChannelsObject.consumptionCheckpoint = valueConsumerChannelsDescribeConsumerChannel["ConsumptionCheckpoint"].asString();
+		if(!valueConsumerChannelsDescribeConsumerChannel["ConsumerGroupID"].isNull())
+			consumerChannelsObject.consumerGroupID = valueConsumerChannelsDescribeConsumerChannel["ConsumerGroupID"].asString();
 		if(!valueConsumerChannelsDescribeConsumerChannel["MessageDelay"].isNull())
 			consumerChannelsObject.messageDelay = std::stol(valueConsumerChannelsDescribeConsumerChannel["MessageDelay"].asString());
+		if(!valueConsumerChannelsDescribeConsumerChannel["ConsumerGroupName"].isNull())
+			consumerChannelsObject.consumerGroupName = valueConsumerChannelsDescribeConsumerChannel["ConsumerGroupName"].asString();
+		if(!valueConsumerChannelsDescribeConsumerChannel["ConsumptionCheckpoint"].isNull())
+			consumerChannelsObject.consumptionCheckpoint = valueConsumerChannelsDescribeConsumerChannel["ConsumptionCheckpoint"].asString();
 		if(!valueConsumerChannelsDescribeConsumerChannel["UnconsumedData"].isNull())
 			consumerChannelsObject.unconsumedData = std::stol(valueConsumerChannelsDescribeConsumerChannel["UnconsumedData"].asString());
 		consumerChannels_.push_back(consumerChannelsObject);
 	}
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = std::stoi(value["TotalRecordCount"].asString());
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
 	if(!value["ErrMessage"].isNull())
 		errMessage_ = value["ErrMessage"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

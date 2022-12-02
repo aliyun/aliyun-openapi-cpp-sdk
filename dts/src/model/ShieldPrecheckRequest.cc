@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Dts::Model::ShieldPrecheckRequest;
 
-ShieldPrecheckRequest::ShieldPrecheckRequest() :
-	RpcServiceRequest("dts", "2020-01-01", "ShieldPrecheck")
-{
-	setMethod(HttpRequest::Method::Post);
+ShieldPrecheckRequest::ShieldPrecheckRequest()
+    : RpcServiceRequest("dts", "2020-01-01", "ShieldPrecheck") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ShieldPrecheckRequest::~ShieldPrecheckRequest()
-{}
+ShieldPrecheckRequest::~ShieldPrecheckRequest() {}
 
-std::string ShieldPrecheckRequest::getPrecheckItems()const
-{
-	return precheckItems_;
+std::string ShieldPrecheckRequest::getPrecheckItems() const {
+  return precheckItems_;
 }
 
-void ShieldPrecheckRequest::setPrecheckItems(const std::string& precheckItems)
-{
-	precheckItems_ = precheckItems;
-	setParameter("PrecheckItems", precheckItems);
+void ShieldPrecheckRequest::setPrecheckItems(const std::string &precheckItems) {
+  precheckItems_ = precheckItems;
+  setParameter(std::string("PrecheckItems"), precheckItems);
 }
 
-std::string ShieldPrecheckRequest::getRegionId()const
-{
-	return regionId_;
+std::string ShieldPrecheckRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ShieldPrecheckRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ShieldPrecheckRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ShieldPrecheckRequest::getDtsInstanceId()const
-{
-	return dtsInstanceId_;
+std::string ShieldPrecheckRequest::getDtsInstanceId() const {
+  return dtsInstanceId_;
 }
 
-void ShieldPrecheckRequest::setDtsInstanceId(const std::string& dtsInstanceId)
-{
-	dtsInstanceId_ = dtsInstanceId;
-	setParameter("DtsInstanceId", dtsInstanceId);
+void ShieldPrecheckRequest::setDtsInstanceId(const std::string &dtsInstanceId) {
+  dtsInstanceId_ = dtsInstanceId;
+  setParameter(std::string("DtsInstanceId"), dtsInstanceId);
 }
 

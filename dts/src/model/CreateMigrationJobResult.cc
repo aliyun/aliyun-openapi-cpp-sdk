@@ -39,14 +39,14 @@ void CreateMigrationJobResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["MigrationJobId"].isNull())
 		migrationJobId_ = value["MigrationJobId"].asString();
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
 
 }
 
@@ -60,13 +60,13 @@ std::string CreateMigrationJobResult::getSuccess()const
 	return success_;
 }
 
-std::string CreateMigrationJobResult::getErrCode()const
-{
-	return errCode_;
-}
-
 std::string CreateMigrationJobResult::getMigrationJobId()const
 {
 	return migrationJobId_;
+}
+
+std::string CreateMigrationJobResult::getErrCode()const
+{
+	return errCode_;
 }
 

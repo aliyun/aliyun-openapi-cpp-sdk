@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Dts::Model::SuspendMigrationJobRequest;
 
-SuspendMigrationJobRequest::SuspendMigrationJobRequest() :
-	RpcServiceRequest("dts", "2020-01-01", "SuspendMigrationJob")
-{
-	setMethod(HttpRequest::Method::Post);
+SuspendMigrationJobRequest::SuspendMigrationJobRequest()
+    : RpcServiceRequest("dts", "2020-01-01", "SuspendMigrationJob") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SuspendMigrationJobRequest::~SuspendMigrationJobRequest()
-{}
+SuspendMigrationJobRequest::~SuspendMigrationJobRequest() {}
 
-std::string SuspendMigrationJobRequest::getClientToken()const
-{
-	return clientToken_;
+std::string SuspendMigrationJobRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void SuspendMigrationJobRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void SuspendMigrationJobRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string SuspendMigrationJobRequest::getMigrationJobId()const
-{
-	return migrationJobId_;
+std::string SuspendMigrationJobRequest::getMigrationJobId() const {
+  return migrationJobId_;
 }
 
-void SuspendMigrationJobRequest::setMigrationJobId(const std::string& migrationJobId)
-{
-	migrationJobId_ = migrationJobId;
-	setParameter("MigrationJobId", migrationJobId);
+void SuspendMigrationJobRequest::setMigrationJobId(const std::string &migrationJobId) {
+  migrationJobId_ = migrationJobId;
+  setParameter(std::string("MigrationJobId"), migrationJobId);
 }
 
-std::string SuspendMigrationJobRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string SuspendMigrationJobRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void SuspendMigrationJobRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void SuspendMigrationJobRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string SuspendMigrationJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string SuspendMigrationJobRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void SuspendMigrationJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void SuspendMigrationJobRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string SuspendMigrationJobRequest::getAccountId()const
-{
-	return accountId_;
+std::string SuspendMigrationJobRequest::getAccountId() const {
+  return accountId_;
 }
 
-void SuspendMigrationJobRequest::setAccountId(const std::string& accountId)
-{
-	accountId_ = accountId;
-	setParameter("AccountId", accountId);
+void SuspendMigrationJobRequest::setAccountId(const std::string &accountId) {
+  accountId_ = accountId;
+  setParameter(std::string("AccountId"), accountId);
 }
 
-std::string SuspendMigrationJobRequest::getRegionId()const
-{
-	return regionId_;
+std::string SuspendMigrationJobRequest::getRegionId() const {
+  return regionId_;
 }
 
-void SuspendMigrationJobRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void SuspendMigrationJobRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 

@@ -49,28 +49,28 @@ void DescribeSynchronizationJobStatusListResult::parse(const std::string &payloa
 		for (auto valueSynchronizationJobListStatusListSynchronizationJobStatusInfoSynchronizationDirectionInfoListSynchronizationDirectionInfo : allSynchronizationDirectionInfoListNode)
 		{
 			SynchronizationJobStatusInfo::SynchronizationDirectionInfo synchronizationDirectionInfoListObject;
-			if(!valueSynchronizationJobListStatusListSynchronizationJobStatusInfoSynchronizationDirectionInfoListSynchronizationDirectionInfo["Checkpoint"].isNull())
-				synchronizationDirectionInfoListObject.checkpoint = valueSynchronizationJobListStatusListSynchronizationJobStatusInfoSynchronizationDirectionInfoListSynchronizationDirectionInfo["Checkpoint"].asString();
 			if(!valueSynchronizationJobListStatusListSynchronizationJobStatusInfoSynchronizationDirectionInfoListSynchronizationDirectionInfo["Status"].isNull())
 				synchronizationDirectionInfoListObject.status = valueSynchronizationJobListStatusListSynchronizationJobStatusInfoSynchronizationDirectionInfoListSynchronizationDirectionInfo["Status"].asString();
 			if(!valueSynchronizationJobListStatusListSynchronizationJobStatusInfoSynchronizationDirectionInfoListSynchronizationDirectionInfo["SynchronizationDirection"].isNull())
 				synchronizationDirectionInfoListObject.synchronizationDirection = valueSynchronizationJobListStatusListSynchronizationJobStatusInfoSynchronizationDirectionInfoListSynchronizationDirectionInfo["SynchronizationDirection"].asString();
+			if(!valueSynchronizationJobListStatusListSynchronizationJobStatusInfoSynchronizationDirectionInfoListSynchronizationDirectionInfo["Checkpoint"].isNull())
+				synchronizationDirectionInfoListObject.checkpoint = valueSynchronizationJobListStatusListSynchronizationJobStatusInfoSynchronizationDirectionInfoListSynchronizationDirectionInfo["Checkpoint"].asString();
 			synchronizationJobListStatusListObject.synchronizationDirectionInfoList.push_back(synchronizationDirectionInfoListObject);
 		}
 		synchronizationJobListStatusList_.push_back(synchronizationJobListStatusListObject);
 	}
 	if(!value["ErrCode"].isNull())
 		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = std::stol(value["TotalRecordCount"].asString());
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

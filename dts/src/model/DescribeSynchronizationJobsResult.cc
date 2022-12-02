@@ -43,34 +43,34 @@ void DescribeSynchronizationJobsResult::parse(const std::string &payload)
 	for (auto valueSynchronizationInstancesSynchronizationInstance : allSynchronizationInstancesNode)
 	{
 		SynchronizationInstance synchronizationInstancesObject;
-		if(!valueSynchronizationInstancesSynchronizationInstance["CreateTime"].isNull())
-			synchronizationInstancesObject.createTime = valueSynchronizationInstancesSynchronizationInstance["CreateTime"].asString();
 		if(!valueSynchronizationInstancesSynchronizationInstance["DataInitialization"].isNull())
 			synchronizationInstancesObject.dataInitialization = valueSynchronizationInstancesSynchronizationInstance["DataInitialization"].asString();
+		if(!valueSynchronizationInstancesSynchronizationInstance["Status"].isNull())
+			synchronizationInstancesObject.status = valueSynchronizationInstancesSynchronizationInstance["Status"].asString();
+		if(!valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobName"].isNull())
+			synchronizationInstancesObject.synchronizationJobName = valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobName"].asString();
 		if(!valueSynchronizationInstancesSynchronizationInstance["Delay"].isNull())
 			synchronizationInstancesObject.delay = valueSynchronizationInstancesSynchronizationInstance["Delay"].asString();
 		if(!valueSynchronizationInstancesSynchronizationInstance["ErrorMessage"].isNull())
 			synchronizationInstancesObject.errorMessage = valueSynchronizationInstancesSynchronizationInstance["ErrorMessage"].asString();
 		if(!valueSynchronizationInstancesSynchronizationInstance["ExpireTime"].isNull())
 			synchronizationInstancesObject.expireTime = valueSynchronizationInstancesSynchronizationInstance["ExpireTime"].asString();
+		if(!valueSynchronizationInstancesSynchronizationInstance["CreateTime"].isNull())
+			synchronizationInstancesObject.createTime = valueSynchronizationInstancesSynchronizationInstance["CreateTime"].asString();
 		if(!valueSynchronizationInstancesSynchronizationInstance["PayType"].isNull())
 			synchronizationInstancesObject.payType = valueSynchronizationInstancesSynchronizationInstance["PayType"].asString();
-		if(!valueSynchronizationInstancesSynchronizationInstance["Status"].isNull())
-			synchronizationInstancesObject.status = valueSynchronizationInstancesSynchronizationInstance["Status"].asString();
 		if(!valueSynchronizationInstancesSynchronizationInstance["StructureInitialization"].isNull())
 			synchronizationInstancesObject.structureInitialization = valueSynchronizationInstancesSynchronizationInstance["StructureInitialization"].asString();
-		if(!valueSynchronizationInstancesSynchronizationInstance["SynchronizationDirection"].isNull())
-			synchronizationInstancesObject.synchronizationDirection = valueSynchronizationInstancesSynchronizationInstance["SynchronizationDirection"].asString();
 		if(!valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobClass"].isNull())
 			synchronizationInstancesObject.synchronizationJobClass = valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobClass"].asString();
-		if(!valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobId"].isNull())
-			synchronizationInstancesObject.synchronizationJobId = valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobId"].asString();
-		if(!valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobName"].isNull())
-			synchronizationInstancesObject.synchronizationJobName = valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobName"].asString();
-		if(!valueSynchronizationInstancesSynchronizationInstance["JobCreateTime"].isNull())
-			synchronizationInstancesObject.jobCreateTime = valueSynchronizationInstancesSynchronizationInstance["JobCreateTime"].asString();
 		if(!valueSynchronizationInstancesSynchronizationInstance["InstanceCreateTime"].isNull())
 			synchronizationInstancesObject.instanceCreateTime = valueSynchronizationInstancesSynchronizationInstance["InstanceCreateTime"].asString();
+		if(!valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobId"].isNull())
+			synchronizationInstancesObject.synchronizationJobId = valueSynchronizationInstancesSynchronizationInstance["SynchronizationJobId"].asString();
+		if(!valueSynchronizationInstancesSynchronizationInstance["SynchronizationDirection"].isNull())
+			synchronizationInstancesObject.synchronizationDirection = valueSynchronizationInstancesSynchronizationInstance["SynchronizationDirection"].asString();
+		if(!valueSynchronizationInstancesSynchronizationInstance["JobCreateTime"].isNull())
+			synchronizationInstancesObject.jobCreateTime = valueSynchronizationInstancesSynchronizationInstance["JobCreateTime"].asString();
 		auto allTagsNode = valueSynchronizationInstancesSynchronizationInstance["Tags"]["Tag"];
 		for (auto valueSynchronizationInstancesSynchronizationInstanceTagsTag : allTagsNode)
 		{
@@ -108,46 +108,46 @@ void DescribeSynchronizationJobsResult::parse(const std::string &payload)
 			synchronizationInstancesObject.synchronizationObjects.push_back(synchronizationObjectsObject);
 		}
 		auto dataInitializationStatusNode = value["DataInitializationStatus"];
-		if(!dataInitializationStatusNode["ErrorMessage"].isNull())
-			synchronizationInstancesObject.dataInitializationStatus.errorMessage = dataInitializationStatusNode["ErrorMessage"].asString();
-		if(!dataInitializationStatusNode["Percent"].isNull())
-			synchronizationInstancesObject.dataInitializationStatus.percent = dataInitializationStatusNode["Percent"].asString();
-		if(!dataInitializationStatusNode["Progress"].isNull())
-			synchronizationInstancesObject.dataInitializationStatus.progress = dataInitializationStatusNode["Progress"].asString();
 		if(!dataInitializationStatusNode["Status"].isNull())
 			synchronizationInstancesObject.dataInitializationStatus.status = dataInitializationStatusNode["Status"].asString();
+		if(!dataInitializationStatusNode["Percent"].isNull())
+			synchronizationInstancesObject.dataInitializationStatus.percent = dataInitializationStatusNode["Percent"].asString();
+		if(!dataInitializationStatusNode["ErrorMessage"].isNull())
+			synchronizationInstancesObject.dataInitializationStatus.errorMessage = dataInitializationStatusNode["ErrorMessage"].asString();
+		if(!dataInitializationStatusNode["Progress"].isNull())
+			synchronizationInstancesObject.dataInitializationStatus.progress = dataInitializationStatusNode["Progress"].asString();
 		auto dataSynchronizationStatusNode = value["DataSynchronizationStatus"];
-		if(!dataSynchronizationStatusNode["Delay"].isNull())
-			synchronizationInstancesObject.dataSynchronizationStatus.delay = dataSynchronizationStatusNode["Delay"].asString();
-		if(!dataSynchronizationStatusNode["ErrorMessage"].isNull())
-			synchronizationInstancesObject.dataSynchronizationStatus.errorMessage = dataSynchronizationStatusNode["ErrorMessage"].asString();
-		if(!dataSynchronizationStatusNode["Percent"].isNull())
-			synchronizationInstancesObject.dataSynchronizationStatus.percent = dataSynchronizationStatusNode["Percent"].asString();
 		if(!dataSynchronizationStatusNode["Status"].isNull())
 			synchronizationInstancesObject.dataSynchronizationStatus.status = dataSynchronizationStatusNode["Status"].asString();
+		if(!dataSynchronizationStatusNode["Delay"].isNull())
+			synchronizationInstancesObject.dataSynchronizationStatus.delay = dataSynchronizationStatusNode["Delay"].asString();
+		if(!dataSynchronizationStatusNode["Percent"].isNull())
+			synchronizationInstancesObject.dataSynchronizationStatus.percent = dataSynchronizationStatusNode["Percent"].asString();
+		if(!dataSynchronizationStatusNode["ErrorMessage"].isNull())
+			synchronizationInstancesObject.dataSynchronizationStatus.errorMessage = dataSynchronizationStatusNode["ErrorMessage"].asString();
 		auto destinationEndpointNode = value["DestinationEndpoint"];
-		if(!destinationEndpointNode["EngineName"].isNull())
-			synchronizationInstancesObject.destinationEndpoint.engineName = destinationEndpointNode["EngineName"].asString();
-		if(!destinationEndpointNode["IP"].isNull())
-			synchronizationInstancesObject.destinationEndpoint.iP = destinationEndpointNode["IP"].asString();
 		if(!destinationEndpointNode["InstanceId"].isNull())
 			synchronizationInstancesObject.destinationEndpoint.instanceId = destinationEndpointNode["InstanceId"].asString();
+		if(!destinationEndpointNode["IP"].isNull())
+			synchronizationInstancesObject.destinationEndpoint.iP = destinationEndpointNode["IP"].asString();
 		if(!destinationEndpointNode["InstanceType"].isNull())
 			synchronizationInstancesObject.destinationEndpoint.instanceType = destinationEndpointNode["InstanceType"].asString();
 		if(!destinationEndpointNode["Port"].isNull())
 			synchronizationInstancesObject.destinationEndpoint.port = destinationEndpointNode["Port"].asString();
 		if(!destinationEndpointNode["UserName"].isNull())
 			synchronizationInstancesObject.destinationEndpoint.userName = destinationEndpointNode["UserName"].asString();
+		if(!destinationEndpointNode["EngineName"].isNull())
+			synchronizationInstancesObject.destinationEndpoint.engineName = destinationEndpointNode["EngineName"].asString();
 		auto performanceNode = value["Performance"];
-		if(!performanceNode["FLOW"].isNull())
-			synchronizationInstancesObject.performance.fLOW = performanceNode["FLOW"].asString();
 		if(!performanceNode["RPS"].isNull())
 			synchronizationInstancesObject.performance.rPS = performanceNode["RPS"].asString();
+		if(!performanceNode["FLOW"].isNull())
+			synchronizationInstancesObject.performance.fLOW = performanceNode["FLOW"].asString();
 		auto precheckStatusNode = value["PrecheckStatus"];
-		if(!precheckStatusNode["Percent"].isNull())
-			synchronizationInstancesObject.precheckStatus.percent = precheckStatusNode["Percent"].asString();
 		if(!precheckStatusNode["Status"].isNull())
 			synchronizationInstancesObject.precheckStatus.status = precheckStatusNode["Status"].asString();
+		if(!precheckStatusNode["Percent"].isNull())
+			synchronizationInstancesObject.precheckStatus.percent = precheckStatusNode["Percent"].asString();
 		auto allDetailNode = precheckStatusNode["Detail"]["CheckItem"];
 		for (auto precheckStatusNodeDetailCheckItem : allDetailNode)
 		{
@@ -163,27 +163,27 @@ void DescribeSynchronizationJobsResult::parse(const std::string &payload)
 			synchronizationInstancesObject.precheckStatus.detail.push_back(checkItemObject);
 		}
 		auto sourceEndpointNode = value["SourceEndpoint"];
-		if(!sourceEndpointNode["EngineName"].isNull())
-			synchronizationInstancesObject.sourceEndpoint.engineName = sourceEndpointNode["EngineName"].asString();
-		if(!sourceEndpointNode["IP"].isNull())
-			synchronizationInstancesObject.sourceEndpoint.iP = sourceEndpointNode["IP"].asString();
 		if(!sourceEndpointNode["InstanceId"].isNull())
 			synchronizationInstancesObject.sourceEndpoint.instanceId = sourceEndpointNode["InstanceId"].asString();
+		if(!sourceEndpointNode["IP"].isNull())
+			synchronizationInstancesObject.sourceEndpoint.iP = sourceEndpointNode["IP"].asString();
 		if(!sourceEndpointNode["InstanceType"].isNull())
 			synchronizationInstancesObject.sourceEndpoint.instanceType = sourceEndpointNode["InstanceType"].asString();
 		if(!sourceEndpointNode["Port"].isNull())
 			synchronizationInstancesObject.sourceEndpoint.port = sourceEndpointNode["Port"].asString();
 		if(!sourceEndpointNode["UserName"].isNull())
 			synchronizationInstancesObject.sourceEndpoint.userName = sourceEndpointNode["UserName"].asString();
+		if(!sourceEndpointNode["EngineName"].isNull())
+			synchronizationInstancesObject.sourceEndpoint.engineName = sourceEndpointNode["EngineName"].asString();
 		auto structureInitializationStatusNode = value["StructureInitializationStatus"];
-		if(!structureInitializationStatusNode["ErrorMessage"].isNull())
-			synchronizationInstancesObject.structureInitializationStatus.errorMessage = structureInitializationStatusNode["ErrorMessage"].asString();
-		if(!structureInitializationStatusNode["Percent"].isNull())
-			synchronizationInstancesObject.structureInitializationStatus.percent = structureInitializationStatusNode["Percent"].asString();
-		if(!structureInitializationStatusNode["Progress"].isNull())
-			synchronizationInstancesObject.structureInitializationStatus.progress = structureInitializationStatusNode["Progress"].asString();
 		if(!structureInitializationStatusNode["Status"].isNull())
 			synchronizationInstancesObject.structureInitializationStatus.status = structureInitializationStatusNode["Status"].asString();
+		if(!structureInitializationStatusNode["Percent"].isNull())
+			synchronizationInstancesObject.structureInitializationStatus.percent = structureInitializationStatusNode["Percent"].asString();
+		if(!structureInitializationStatusNode["ErrorMessage"].isNull())
+			synchronizationInstancesObject.structureInitializationStatus.errorMessage = structureInitializationStatusNode["ErrorMessage"].asString();
+		if(!structureInitializationStatusNode["Progress"].isNull())
+			synchronizationInstancesObject.structureInitializationStatus.progress = structureInitializationStatusNode["Progress"].asString();
 		synchronizationInstances_.push_back(synchronizationInstancesObject);
 	}
 	if(!value["PageNumber"].isNull())

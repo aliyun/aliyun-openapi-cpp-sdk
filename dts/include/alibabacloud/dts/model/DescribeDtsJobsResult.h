@@ -138,7 +138,7 @@ namespace AlibabaCloud
 						};
 						struct PrecheckStatus6
 						{
-							struct PrecheckDetail10
+							struct PrecheckDetail12
 							{
 								std::string repairMethod;
 								std::string checkItem;
@@ -148,8 +148,8 @@ namespace AlibabaCloud
 							};
 							std::string status;
 							std::string percent;
-							std::vector<PrecheckDetail10> detail9;
 							std::string errorMessage;
+							std::vector<PrecheckDetail12> detail11;
 						};
 						struct SourceEndpoint7
 						{
@@ -171,24 +171,34 @@ namespace AlibabaCloud
 							std::string percent;
 							std::string errorMessage;
 						};
-						std::string status;
+						struct ErrorDetail10
+						{
+							std::string errorCode;
+							std::string helpUrl;
+						};
+						long duUsage;
 						SourceEndpoint7 sourceEndpoint7;
-						std::string dbObject;
-						std::string createTime;
 						std::string dtsJobName;
 						PrecheckStatus6 precheckStatus6;
-						std::string payType;
+						std::vector<ErrorDetail10> errorDetails9;
+						std::string cpuUsage;
 						MigrationMode4 migrationMode4;
 						StructureInitializationStatus8 structureInitializationStatus8;
 						std::string dtsInstanceID;
-						DestinationEndpoint3 destinationEndpoint3;
 						long delay;
 						Performance5 performance5;
 						std::string dtsJobClass;
-						std::string checkpoint;
 						std::string dtsJobId;
-						std::string dtsJobDirection;
 						DataInitializationStatus1 dataInitializationStatus1;
+						std::string memUsage;
+						std::string status;
+						std::string dedicatedClusterId;
+						std::string dbObject;
+						std::string createTime;
+						std::string payType;
+						DestinationEndpoint3 destinationEndpoint3;
+						std::string checkpoint;
+						std::string dtsJobDirection;
 						std::string errorMessage;
 						std::string expireTime;
 						DataSynchronizationStatus2 dataSynchronizationStatus2;
@@ -218,27 +228,59 @@ namespace AlibabaCloud
 					{
 						int maxRetryTime;
 						std::string retryTarget;
+						std::string migrationErrCode;
+						std::string migrationErrWorkaround;
+						std::string errMessage;
+						std::string migrationErrHelpDocKey;
 						int retryCount;
 						int retryTime;
-						std::string errMessage;
+						std::string module;
+						bool retrying;
+						std::string migrationErrHelpDocId;
+						std::string jobId;
+						std::string migrationErrMsg;
+					};
+					struct DataCloudStatus
+					{
+						std::string status;
+						std::string progress;
+						std::string percent;
+						bool needUpgrade;
+						std::string errorMessage;
 					};
 					struct DtsTag
 					{
 						std::string tagKey;
 						std::string tagValue;
 					};
+					struct ErrorDetail
+					{
+						std::string errorCode;
+						std::string helpUrl;
+					};
+					long duUsage;
 					DataInitializationStatus dataInitializationStatus;
+					std::string resourceGroupId;
 					std::string dtsJobName;
+					std::string migrationErrWorkaround;
+					std::string migrationErrCode;
 					std::string endTimestamp;
+					std::string cpuUsage;
+					std::vector<DtsJobStatus::ErrorDetail> errorDetails;
 					std::string dtsInstanceID;
 					MigrationMode migrationMode;
 					long delay;
 					std::string appName;
 					std::string dtsJobClass;
+					DataCloudStatus dataCloudStatus;
 					std::string dtsJobId;
 					std::vector<DtsJobStatus::DtsTag> tagList;
+					std::string migrationErrHelpDocId;
 					DataSynchronizationStatus dataSynchronizationStatus;
+					std::string memUsage;
 					std::string status;
+					std::string originType;
+					std::string dedicatedClusterId;
 					DataEtlStatus dataEtlStatus;
 					std::string dbObject;
 					std::string createTime;
@@ -247,16 +289,254 @@ namespace AlibabaCloud
 					PrecheckStatus precheckStatus;
 					std::string consumptionCheckpoint;
 					std::string checkpoint;
+					std::string migrationErrHelpDocKey;
 					std::string dtsJobDirection;
+					std::string jobType;
 					DestinationEndpoint destinationEndpoint;
 					std::string consumptionClient;
 					SourceEndpoint sourceEndpoint;
 					Performance performance;
 					std::string errorMessage;
 					std::string expireTime;
+					std::string resourceGroupDisplayName;
 					std::string beginTimestamp;
+					std::string migrationErrMsg;
 					StructureInitializationStatus structureInitializationStatus;
 					RetryState retryState;
+					std::string reserved;
+				};
+				struct DtsJobStatus13
+				{
+					struct DataInitializationStatus14
+					{
+						std::string status;
+						std::string progress;
+						std::string percent;
+						std::string errorMessage;
+					};
+					struct DataSynchronizationStatus15
+					{
+						std::string status;
+						std::string progress;
+						std::string percent;
+						bool needUpgrade;
+						std::string errorMessage;
+					};
+					struct DataEtlStatus16
+					{
+						std::string status;
+						std::string progress;
+						std::string percent;
+						std::string errorMessage;
+					};
+					struct DestinationEndpoint17
+					{
+						std::string oracleSID;
+						std::string userName;
+						std::string instanceID;
+						std::string sslSolutionEnum;
+						std::string ip;
+						std::string port;
+						std::string databaseName;
+						std::string region;
+						std::string instanceType;
+						std::string engineName;
+					};
+					struct MigrationMode18
+					{
+						bool dataInitialization;
+						bool dataSynchronization;
+						bool structureInitialization;
+					};
+					struct Performance19
+					{
+						std::string rps;
+						std::string flow;
+					};
+					struct PrecheckStatus20
+					{
+						struct PrecheckDetail
+						{
+							std::string repairMethod;
+							std::string checkItem;
+							std::string checkResult;
+							std::string failedReason;
+							std::string checkItemDescription;
+						};
+						std::string status;
+						std::string percent;
+						std::string errorMessage;
+						std::vector<PrecheckDetail> detail;
+					};
+					struct ReverseJob21
+					{
+						struct DataInitializationStatus26
+						{
+							std::string status;
+							std::string progress;
+							std::string percent;
+							std::string errorMessage;
+						};
+						struct DataSynchronizationStatus27
+						{
+							std::string status;
+							std::string progress;
+							std::string percent;
+							bool needUpgrade;
+							std::string errorMessage;
+						};
+						struct DestinationEndpoint28
+						{
+							std::string oracleSID;
+							std::string userName;
+							std::string instanceID;
+							std::string sslSolutionEnum;
+							std::string ip;
+							std::string port;
+							std::string databaseName;
+							std::string region;
+							std::string instanceType;
+							std::string engineName;
+						};
+						struct MigrationMode29
+						{
+							bool dataInitialization;
+							bool dataSynchronization;
+							bool structureInitialization;
+						};
+						struct Performance30
+						{
+							std::string rps;
+							std::string flow;
+						};
+						struct PrecheckStatus31
+						{
+							struct PrecheckDetail35
+							{
+								std::string repairMethod;
+								std::string checkItem;
+								std::string checkResult;
+								std::string failedReason;
+								std::string checkItemDescription;
+							};
+							std::string status;
+							std::string percent;
+							std::string errorMessage;
+							std::vector<PrecheckDetail35> detail34;
+						};
+						struct SourceEndpoint32
+						{
+							std::string oracleSID;
+							std::string userName;
+							std::string instanceID;
+							std::string sslSolutionEnum;
+							std::string ip;
+							std::string port;
+							std::string databaseName;
+							std::string region;
+							std::string instanceType;
+							std::string engineName;
+						};
+						struct StructureInitializationStatus33
+						{
+							std::string status;
+							std::string progress;
+							std::string percent;
+							std::string errorMessage;
+						};
+						DataSynchronizationStatus27 dataSynchronizationStatus27;
+						std::string status;
+						PrecheckStatus31 precheckStatus31;
+						DestinationEndpoint28 destinationEndpoint28;
+						std::string dbObject;
+						std::string createTime;
+						std::string dtsJobName;
+						DataInitializationStatus26 dataInitializationStatus26;
+						std::string payType;
+						std::string dtsInstanceID;
+						long delay;
+						MigrationMode29 migrationMode29;
+						std::string dtsJobClass;
+						std::string checkpoint;
+						Performance30 performance30;
+						std::string dtsJobId;
+						std::string dtsJobDirection;
+						SourceEndpoint32 sourceEndpoint32;
+						StructureInitializationStatus33 structureInitializationStatus33;
+						std::string errorMessage;
+						std::string expireTime;
+						std::string reserved;
+					};
+					struct SourceEndpoint22
+					{
+						std::string oracleSID;
+						std::string userName;
+						std::string instanceID;
+						std::string sslSolutionEnum;
+						std::string ip;
+						std::string port;
+						std::string databaseName;
+						std::string region;
+						std::string instanceType;
+						std::string engineName;
+					};
+					struct StructureInitializationStatus23
+					{
+						std::string status;
+						std::string progress;
+						std::string percent;
+						std::string errorMessage;
+					};
+					struct RetryState24
+					{
+						int maxRetryTime;
+						std::string retryTarget;
+						int retryCount;
+						int retryTime;
+						std::string errMessage;
+						std::string module;
+						bool retrying;
+						std::string jobId;
+					};
+					struct DtsTag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
+					std::string resourceGroupId;
+					std::string dtsJobName;
+					std::string endTimestamp;
+					std::string dtsInstanceID;
+					long delay;
+					std::string appName;
+					MigrationMode18 migrationMode18;
+					std::string dtsJobClass;
+					std::string dtsJobId;
+					DataEtlStatus16 dataEtlStatus16;
+					ReverseJob21 reverseJob21;
+					StructureInitializationStatus23 structureInitializationStatus23;
+					RetryState24 retryState24;
+					std::string status;
+					DataSynchronizationStatus15 dataSynchronizationStatus15;
+					std::string originType;
+					PrecheckStatus20 precheckStatus20;
+					DestinationEndpoint17 destinationEndpoint17;
+					std::string dbObject;
+					Performance19 performance19;
+					std::string createTime;
+					SourceEndpoint22 sourceEndpoint22;
+					std::string payType;
+					std::vector<DtsJobStatus13::DtsTag> tagList25;
+					std::string consumptionCheckpoint;
+					std::string checkpoint;
+					std::string dtsJobDirection;
+					std::string jobType;
+					DataInitializationStatus14 dataInitializationStatus14;
+					std::string consumptionClient;
+					std::string errorMessage;
+					std::string expireTime;
+					std::string resourceGroupDisplayName;
+					std::string beginTimestamp;
 					std::string reserved;
 				};
 
@@ -272,6 +552,7 @@ namespace AlibabaCloud
 				std::string getDynamicCode()const;
 				std::string getDynamicMessage()const;
 				std::string getErrMessage()const;
+				std::vector<DtsJobStatus13> getEtlDemoList()const;
 				bool getSuccess()const;
 				std::string getErrCode()const;
 
@@ -286,6 +567,7 @@ namespace AlibabaCloud
 				std::string dynamicCode_;
 				std::string dynamicMessage_;
 				std::string errMessage_;
+				std::vector<DtsJobStatus13> etlDemoList_;
 				bool success_;
 				std::string errCode_;
 

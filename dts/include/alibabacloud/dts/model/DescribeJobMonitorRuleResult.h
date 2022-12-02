@@ -35,15 +35,21 @@ namespace AlibabaCloud
 				struct MonitorRule
 				{
 					std::string type;
-					std::string phone;
+					std::string jobType;
 					std::string state;
+					std::string phone;
+					int times;
+					int period;
+					int noticeValue;
 					long delayRuleTime;
+					std::string jobId;
 				};
 
 
 				DescribeJobMonitorRuleResult();
 				explicit DescribeJobMonitorRuleResult(const std::string &payload);
 				~DescribeJobMonitorRuleResult();
+				std::vector<std::string> getTopics()const;
 				std::string getDtsJobId()const;
 				int getHttpStatusCode()const;
 				std::vector<MonitorRule> getMonitorRules()const;
@@ -56,6 +62,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<std::string> topics_;
 				std::string dtsJobId_;
 				int httpStatusCode_;
 				std::vector<MonitorRule> monitorRules_;

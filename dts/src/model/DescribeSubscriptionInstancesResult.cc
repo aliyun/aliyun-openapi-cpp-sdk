@@ -43,30 +43,30 @@ void DescribeSubscriptionInstancesResult::parse(const std::string &payload)
 	for (auto valueSubscriptionInstancesSubscriptionInstance : allSubscriptionInstancesNode)
 	{
 		SubscriptionInstance subscriptionInstancesObject;
-		if(!valueSubscriptionInstancesSubscriptionInstance["BeginTimestamp"].isNull())
-			subscriptionInstancesObject.beginTimestamp = valueSubscriptionInstancesSubscriptionInstance["BeginTimestamp"].asString();
-		if(!valueSubscriptionInstancesSubscriptionInstance["ConsumptionCheckpoint"].isNull())
-			subscriptionInstancesObject.consumptionCheckpoint = valueSubscriptionInstancesSubscriptionInstance["ConsumptionCheckpoint"].asString();
-		if(!valueSubscriptionInstancesSubscriptionInstance["ConsumptionClient"].isNull())
-			subscriptionInstancesObject.consumptionClient = valueSubscriptionInstancesSubscriptionInstance["ConsumptionClient"].asString();
-		if(!valueSubscriptionInstancesSubscriptionInstance["EndTimestamp"].isNull())
-			subscriptionInstancesObject.endTimestamp = valueSubscriptionInstancesSubscriptionInstance["EndTimestamp"].asString();
+		if(!valueSubscriptionInstancesSubscriptionInstance["Status"].isNull())
+			subscriptionInstancesObject.status = valueSubscriptionInstancesSubscriptionInstance["Status"].asString();
 		if(!valueSubscriptionInstancesSubscriptionInstance["ErrorMessage"].isNull())
 			subscriptionInstancesObject.errorMessage = valueSubscriptionInstancesSubscriptionInstance["ErrorMessage"].asString();
 		if(!valueSubscriptionInstancesSubscriptionInstance["PayType"].isNull())
 			subscriptionInstancesObject.payType = valueSubscriptionInstancesSubscriptionInstance["PayType"].asString();
-		if(!valueSubscriptionInstancesSubscriptionInstance["Status"].isNull())
-			subscriptionInstancesObject.status = valueSubscriptionInstancesSubscriptionInstance["Status"].asString();
-		if(!valueSubscriptionInstancesSubscriptionInstance["SubscribeTopic"].isNull())
-			subscriptionInstancesObject.subscribeTopic = valueSubscriptionInstancesSubscriptionInstance["SubscribeTopic"].asString();
-		if(!valueSubscriptionInstancesSubscriptionInstance["SubscriptionInstanceID"].isNull())
-			subscriptionInstancesObject.subscriptionInstanceID = valueSubscriptionInstancesSubscriptionInstance["SubscriptionInstanceID"].asString();
-		if(!valueSubscriptionInstancesSubscriptionInstance["SubscriptionInstanceName"].isNull())
-			subscriptionInstancesObject.subscriptionInstanceName = valueSubscriptionInstancesSubscriptionInstance["SubscriptionInstanceName"].asString();
-		if(!valueSubscriptionInstancesSubscriptionInstance["JobCreateTime"].isNull())
-			subscriptionInstancesObject.jobCreateTime = valueSubscriptionInstancesSubscriptionInstance["JobCreateTime"].asString();
+		if(!valueSubscriptionInstancesSubscriptionInstance["ConsumptionClient"].isNull())
+			subscriptionInstancesObject.consumptionClient = valueSubscriptionInstancesSubscriptionInstance["ConsumptionClient"].asString();
+		if(!valueSubscriptionInstancesSubscriptionInstance["ConsumptionCheckpoint"].isNull())
+			subscriptionInstancesObject.consumptionCheckpoint = valueSubscriptionInstancesSubscriptionInstance["ConsumptionCheckpoint"].asString();
+		if(!valueSubscriptionInstancesSubscriptionInstance["EndTimestamp"].isNull())
+			subscriptionInstancesObject.endTimestamp = valueSubscriptionInstancesSubscriptionInstance["EndTimestamp"].asString();
 		if(!valueSubscriptionInstancesSubscriptionInstance["InstanceCreateTime"].isNull())
 			subscriptionInstancesObject.instanceCreateTime = valueSubscriptionInstancesSubscriptionInstance["InstanceCreateTime"].asString();
+		if(!valueSubscriptionInstancesSubscriptionInstance["BeginTimestamp"].isNull())
+			subscriptionInstancesObject.beginTimestamp = valueSubscriptionInstancesSubscriptionInstance["BeginTimestamp"].asString();
+		if(!valueSubscriptionInstancesSubscriptionInstance["SubscribeTopic"].isNull())
+			subscriptionInstancesObject.subscribeTopic = valueSubscriptionInstancesSubscriptionInstance["SubscribeTopic"].asString();
+		if(!valueSubscriptionInstancesSubscriptionInstance["SubscriptionInstanceName"].isNull())
+			subscriptionInstancesObject.subscriptionInstanceName = valueSubscriptionInstancesSubscriptionInstance["SubscriptionInstanceName"].asString();
+		if(!valueSubscriptionInstancesSubscriptionInstance["SubscriptionInstanceID"].isNull())
+			subscriptionInstancesObject.subscriptionInstanceID = valueSubscriptionInstancesSubscriptionInstance["SubscriptionInstanceID"].asString();
+		if(!valueSubscriptionInstancesSubscriptionInstance["JobCreateTime"].isNull())
+			subscriptionInstancesObject.jobCreateTime = valueSubscriptionInstancesSubscriptionInstance["JobCreateTime"].asString();
 		auto allSubscriptionObjectNode = valueSubscriptionInstancesSubscriptionInstance["SubscriptionObject"]["SynchronousObject"];
 		for (auto valueSubscriptionInstancesSubscriptionInstanceSubscriptionObjectSynchronousObject : allSubscriptionObjectNode)
 		{
@@ -91,36 +91,36 @@ void DescribeSubscriptionInstancesResult::parse(const std::string &payload)
 			subscriptionInstancesObject.tags.push_back(tagsObject);
 		}
 		auto sourceEndpointNode = value["SourceEndpoint"];
-		if(!sourceEndpointNode["InstanceID"].isNull())
-			subscriptionInstancesObject.sourceEndpoint.instanceID = sourceEndpointNode["InstanceID"].asString();
 		if(!sourceEndpointNode["InstanceType"].isNull())
 			subscriptionInstancesObject.sourceEndpoint.instanceType = sourceEndpointNode["InstanceType"].asString();
+		if(!sourceEndpointNode["InstanceID"].isNull())
+			subscriptionInstancesObject.sourceEndpoint.instanceID = sourceEndpointNode["InstanceID"].asString();
 		auto subscriptionDataTypeNode = value["SubscriptionDataType"];
-		if(!subscriptionDataTypeNode["DDL"].isNull())
-			subscriptionInstancesObject.subscriptionDataType.dDL = subscriptionDataTypeNode["DDL"].asString() == "true";
 		if(!subscriptionDataTypeNode["DML"].isNull())
 			subscriptionInstancesObject.subscriptionDataType.dML = subscriptionDataTypeNode["DML"].asString() == "true";
+		if(!subscriptionDataTypeNode["DDL"].isNull())
+			subscriptionInstancesObject.subscriptionDataType.dDL = subscriptionDataTypeNode["DDL"].asString() == "true";
 		auto subscriptionHostNode = value["SubscriptionHost"];
-		if(!subscriptionHostNode["PrivateHost"].isNull())
-			subscriptionInstancesObject.subscriptionHost.privateHost = subscriptionHostNode["PrivateHost"].asString();
-		if(!subscriptionHostNode["PublicHost"].isNull())
-			subscriptionInstancesObject.subscriptionHost.publicHost = subscriptionHostNode["PublicHost"].asString();
 		if(!subscriptionHostNode["VPCHost"].isNull())
 			subscriptionInstancesObject.subscriptionHost.vPCHost = subscriptionHostNode["VPCHost"].asString();
+		if(!subscriptionHostNode["PublicHost"].isNull())
+			subscriptionInstancesObject.subscriptionHost.publicHost = subscriptionHostNode["PublicHost"].asString();
+		if(!subscriptionHostNode["PrivateHost"].isNull())
+			subscriptionInstancesObject.subscriptionHost.privateHost = subscriptionHostNode["PrivateHost"].asString();
 		subscriptionInstances_.push_back(subscriptionInstancesObject);
 	}
 	if(!value["ErrCode"].isNull())
 		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = std::stol(value["TotalRecordCount"].asString());
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

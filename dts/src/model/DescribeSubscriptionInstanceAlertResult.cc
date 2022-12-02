@@ -39,26 +39,26 @@ void DescribeSubscriptionInstanceAlertResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DelayAlertPhone"].isNull())
-		delayAlertPhone_ = value["DelayAlertPhone"].asString();
-	if(!value["DelayAlertStatus"].isNull())
-		delayAlertStatus_ = value["DelayAlertStatus"].asString();
-	if(!value["DelayOverSeconds"].isNull())
-		delayOverSeconds_ = value["DelayOverSeconds"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
-	if(!value["ErrorAlertPhone"].isNull())
-		errorAlertPhone_ = value["ErrorAlertPhone"].asString();
 	if(!value["ErrorAlertStatus"].isNull())
 		errorAlertStatus_ = value["ErrorAlertStatus"].asString();
-	if(!value["SubscriptionInstanceID"].isNull())
-		subscriptionInstanceID_ = value["SubscriptionInstanceID"].asString();
-	if(!value["SubscriptionInstanceName"].isNull())
-		subscriptionInstanceName_ = value["SubscriptionInstanceName"].asString();
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
+	if(!value["ErrorAlertPhone"].isNull())
+		errorAlertPhone_ = value["ErrorAlertPhone"].asString();
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
+	if(!value["DelayAlertStatus"].isNull())
+		delayAlertStatus_ = value["DelayAlertStatus"].asString();
+	if(!value["SubscriptionInstanceName"].isNull())
+		subscriptionInstanceName_ = value["SubscriptionInstanceName"].asString();
+	if(!value["DelayAlertPhone"].isNull())
+		delayAlertPhone_ = value["DelayAlertPhone"].asString();
+	if(!value["SubscriptionInstanceID"].isNull())
+		subscriptionInstanceID_ = value["SubscriptionInstanceID"].asString();
+	if(!value["DelayOverSeconds"].isNull())
+		delayOverSeconds_ = value["DelayOverSeconds"].asString();
 
 }
 
@@ -97,14 +97,14 @@ std::string DescribeSubscriptionInstanceAlertResult::getDelayAlertStatus()const
 	return delayAlertStatus_;
 }
 
-std::string DescribeSubscriptionInstanceAlertResult::getDelayOverSeconds()const
-{
-	return delayOverSeconds_;
-}
-
 std::string DescribeSubscriptionInstanceAlertResult::getSuccess()const
 {
 	return success_;
+}
+
+std::string DescribeSubscriptionInstanceAlertResult::getDelayOverSeconds()const
+{
+	return delayOverSeconds_;
 }
 
 std::string DescribeSubscriptionInstanceAlertResult::getErrCode()const

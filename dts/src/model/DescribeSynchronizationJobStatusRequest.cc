@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Dts::Model::DescribeSynchronizationJobStatusRequest;
 
-DescribeSynchronizationJobStatusRequest::DescribeSynchronizationJobStatusRequest() :
-	RpcServiceRequest("dts", "2020-01-01", "DescribeSynchronizationJobStatus")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeSynchronizationJobStatusRequest::DescribeSynchronizationJobStatusRequest()
+    : RpcServiceRequest("dts", "2020-01-01", "DescribeSynchronizationJobStatus") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSynchronizationJobStatusRequest::~DescribeSynchronizationJobStatusRequest()
-{}
+DescribeSynchronizationJobStatusRequest::~DescribeSynchronizationJobStatusRequest() {}
 
-std::string DescribeSynchronizationJobStatusRequest::getClientToken()const
-{
-	return clientToken_;
+std::string DescribeSynchronizationJobStatusRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void DescribeSynchronizationJobStatusRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void DescribeSynchronizationJobStatusRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string DescribeSynchronizationJobStatusRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string DescribeSynchronizationJobStatusRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeSynchronizationJobStatusRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void DescribeSynchronizationJobStatusRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string DescribeSynchronizationJobStatusRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeSynchronizationJobStatusRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeSynchronizationJobStatusRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeSynchronizationJobStatusRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeSynchronizationJobStatusRequest::getSynchronizationJobId()const
-{
-	return synchronizationJobId_;
+std::string DescribeSynchronizationJobStatusRequest::getSynchronizationJobId() const {
+  return synchronizationJobId_;
 }
 
-void DescribeSynchronizationJobStatusRequest::setSynchronizationJobId(const std::string& synchronizationJobId)
-{
-	synchronizationJobId_ = synchronizationJobId;
-	setParameter("SynchronizationJobId", synchronizationJobId);
+void DescribeSynchronizationJobStatusRequest::setSynchronizationJobId(const std::string &synchronizationJobId) {
+  synchronizationJobId_ = synchronizationJobId;
+  setParameter(std::string("SynchronizationJobId"), synchronizationJobId);
 }
 
-std::string DescribeSynchronizationJobStatusRequest::getAccountId()const
-{
-	return accountId_;
+std::string DescribeSynchronizationJobStatusRequest::getAccountId() const {
+  return accountId_;
 }
 
-void DescribeSynchronizationJobStatusRequest::setAccountId(const std::string& accountId)
-{
-	accountId_ = accountId;
-	setParameter("AccountId", accountId);
+void DescribeSynchronizationJobStatusRequest::setAccountId(const std::string &accountId) {
+  accountId_ = accountId;
+  setParameter(std::string("AccountId"), accountId);
 }
 
-std::string DescribeSynchronizationJobStatusRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeSynchronizationJobStatusRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeSynchronizationJobStatusRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeSynchronizationJobStatusRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DescribeSynchronizationJobStatusRequest::getSynchronizationDirection()const
-{
-	return synchronizationDirection_;
+std::string DescribeSynchronizationJobStatusRequest::getSynchronizationDirection() const {
+  return synchronizationDirection_;
 }
 
-void DescribeSynchronizationJobStatusRequest::setSynchronizationDirection(const std::string& synchronizationDirection)
-{
-	synchronizationDirection_ = synchronizationDirection;
-	setParameter("SynchronizationDirection", synchronizationDirection);
+void DescribeSynchronizationJobStatusRequest::setSynchronizationDirection(const std::string &synchronizationDirection) {
+  synchronizationDirection_ = synchronizationDirection;
+  setParameter(std::string("SynchronizationDirection"), synchronizationDirection);
 }
 

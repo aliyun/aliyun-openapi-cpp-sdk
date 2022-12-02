@@ -45,6 +45,8 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/CreateConsumerChannelResult.h
 	include/alibabacloud/dts/model/CreateConsumerGroupRequest.h
 	include/alibabacloud/dts/model/CreateConsumerGroupResult.h
+	include/alibabacloud/dts/model/CreateDedicatedClusterMonitorRuleRequest.h
+	include/alibabacloud/dts/model/CreateDedicatedClusterMonitorRuleResult.h
 	include/alibabacloud/dts/model/CreateDtsInstanceRequest.h
 	include/alibabacloud/dts/model/CreateDtsInstanceResult.h
 	include/alibabacloud/dts/model/CreateJobMonitorRuleRequest.h
@@ -61,12 +63,20 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/DeleteConsumerGroupResult.h
 	include/alibabacloud/dts/model/DeleteDtsJobRequest.h
 	include/alibabacloud/dts/model/DeleteDtsJobResult.h
+	include/alibabacloud/dts/model/DeleteDtsJobsRequest.h
+	include/alibabacloud/dts/model/DeleteDtsJobsResult.h
 	include/alibabacloud/dts/model/DeleteMigrationJobRequest.h
 	include/alibabacloud/dts/model/DeleteMigrationJobResult.h
 	include/alibabacloud/dts/model/DeleteSubscriptionInstanceRequest.h
 	include/alibabacloud/dts/model/DeleteSubscriptionInstanceResult.h
 	include/alibabacloud/dts/model/DeleteSynchronizationJobRequest.h
 	include/alibabacloud/dts/model/DeleteSynchronizationJobResult.h
+	include/alibabacloud/dts/model/DescribeCheckJobsRequest.h
+	include/alibabacloud/dts/model/DescribeCheckJobsResult.h
+	include/alibabacloud/dts/model/DescribeClusterOperateLogsRequest.h
+	include/alibabacloud/dts/model/DescribeClusterOperateLogsResult.h
+	include/alibabacloud/dts/model/DescribeClusterUsedUtilizationRequest.h
+	include/alibabacloud/dts/model/DescribeClusterUsedUtilizationResult.h
 	include/alibabacloud/dts/model/DescribeConnectionStatusRequest.h
 	include/alibabacloud/dts/model/DescribeConnectionStatusResult.h
 	include/alibabacloud/dts/model/DescribeConsumerChannelRequest.h
@@ -75,16 +85,34 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/DescribeConsumerGroupResult.h
 	include/alibabacloud/dts/model/DescribeDTSIPRequest.h
 	include/alibabacloud/dts/model/DescribeDTSIPResult.h
+	include/alibabacloud/dts/model/DescribeDataCheckReportUrlRequest.h
+	include/alibabacloud/dts/model/DescribeDataCheckReportUrlResult.h
+	include/alibabacloud/dts/model/DescribeDataCheckTableDetailsRequest.h
+	include/alibabacloud/dts/model/DescribeDataCheckTableDetailsResult.h
+	include/alibabacloud/dts/model/DescribeDataCheckTableDiffDetailsRequest.h
+	include/alibabacloud/dts/model/DescribeDataCheckTableDiffDetailsResult.h
+	include/alibabacloud/dts/model/DescribeDedicatedClusterRequest.h
+	include/alibabacloud/dts/model/DescribeDedicatedClusterResult.h
+	include/alibabacloud/dts/model/DescribeDedicatedClusterMonitorRuleRequest.h
+	include/alibabacloud/dts/model/DescribeDedicatedClusterMonitorRuleResult.h
+	include/alibabacloud/dts/model/DescribeDtsEtlJobVersionInfoRequest.h
+	include/alibabacloud/dts/model/DescribeDtsEtlJobVersionInfoResult.h
 	include/alibabacloud/dts/model/DescribeDtsJobDetailRequest.h
 	include/alibabacloud/dts/model/DescribeDtsJobDetailResult.h
 	include/alibabacloud/dts/model/DescribeDtsJobsRequest.h
 	include/alibabacloud/dts/model/DescribeDtsJobsResult.h
+	include/alibabacloud/dts/model/DescribeDtsServiceLogRequest.h
+	include/alibabacloud/dts/model/DescribeDtsServiceLogResult.h
 	include/alibabacloud/dts/model/DescribeEndpointSwitchStatusRequest.h
 	include/alibabacloud/dts/model/DescribeEndpointSwitchStatusResult.h
+	include/alibabacloud/dts/model/DescribeEtlJobLogsRequest.h
+	include/alibabacloud/dts/model/DescribeEtlJobLogsResult.h
 	include/alibabacloud/dts/model/DescribeInitializationStatusRequest.h
 	include/alibabacloud/dts/model/DescribeInitializationStatusResult.h
 	include/alibabacloud/dts/model/DescribeJobMonitorRuleRequest.h
 	include/alibabacloud/dts/model/DescribeJobMonitorRuleResult.h
+	include/alibabacloud/dts/model/DescribeMetricListRequest.h
+	include/alibabacloud/dts/model/DescribeMetricListResult.h
 	include/alibabacloud/dts/model/DescribeMigrationJobAlertRequest.h
 	include/alibabacloud/dts/model/DescribeMigrationJobAlertResult.h
 	include/alibabacloud/dts/model/DescribeMigrationJobDetailRequest.h
@@ -115,8 +143,14 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/DescribeSynchronizationJobsResult.h
 	include/alibabacloud/dts/model/DescribeSynchronizationObjectModifyStatusRequest.h
 	include/alibabacloud/dts/model/DescribeSynchronizationObjectModifyStatusResult.h
+	include/alibabacloud/dts/model/DescribeTagKeysRequest.h
+	include/alibabacloud/dts/model/DescribeTagKeysResult.h
+	include/alibabacloud/dts/model/DescribeTagValuesRequest.h
+	include/alibabacloud/dts/model/DescribeTagValuesResult.h
 	include/alibabacloud/dts/model/InitDtsRdsInstanceRequest.h
 	include/alibabacloud/dts/model/InitDtsRdsInstanceResult.h
+	include/alibabacloud/dts/model/ListDedicatedClusterRequest.h
+	include/alibabacloud/dts/model/ListDedicatedClusterResult.h
 	include/alibabacloud/dts/model/ListTagResourcesRequest.h
 	include/alibabacloud/dts/model/ListTagResourcesResult.h
 	include/alibabacloud/dts/model/ModifyConsumerChannelRequest.h
@@ -125,8 +159,14 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/ModifyConsumerGroupPasswordResult.h
 	include/alibabacloud/dts/model/ModifyConsumptionTimestampRequest.h
 	include/alibabacloud/dts/model/ModifyConsumptionTimestampResult.h
+	include/alibabacloud/dts/model/ModifyDedicatedClusterRequest.h
+	include/alibabacloud/dts/model/ModifyDedicatedClusterResult.h
 	include/alibabacloud/dts/model/ModifyDtsJobRequest.h
 	include/alibabacloud/dts/model/ModifyDtsJobResult.h
+	include/alibabacloud/dts/model/ModifyDtsJobDedicatedClusterRequest.h
+	include/alibabacloud/dts/model/ModifyDtsJobDedicatedClusterResult.h
+	include/alibabacloud/dts/model/ModifyDtsJobDuLimitRequest.h
+	include/alibabacloud/dts/model/ModifyDtsJobDuLimitResult.h
 	include/alibabacloud/dts/model/ModifyDtsJobNameRequest.h
 	include/alibabacloud/dts/model/ModifyDtsJobNameResult.h
 	include/alibabacloud/dts/model/ModifyDtsJobPasswordRequest.h
@@ -149,22 +189,34 @@ set(dts_public_header_model
 	include/alibabacloud/dts/model/SkipPreCheckResult.h
 	include/alibabacloud/dts/model/StartDtsJobRequest.h
 	include/alibabacloud/dts/model/StartDtsJobResult.h
+	include/alibabacloud/dts/model/StartDtsJobsRequest.h
+	include/alibabacloud/dts/model/StartDtsJobsResult.h
 	include/alibabacloud/dts/model/StartMigrationJobRequest.h
 	include/alibabacloud/dts/model/StartMigrationJobResult.h
 	include/alibabacloud/dts/model/StartSubscriptionInstanceRequest.h
 	include/alibabacloud/dts/model/StartSubscriptionInstanceResult.h
 	include/alibabacloud/dts/model/StartSynchronizationJobRequest.h
 	include/alibabacloud/dts/model/StartSynchronizationJobResult.h
+	include/alibabacloud/dts/model/StopDedicatedClusterRequest.h
+	include/alibabacloud/dts/model/StopDedicatedClusterResult.h
 	include/alibabacloud/dts/model/StopDtsJobRequest.h
 	include/alibabacloud/dts/model/StopDtsJobResult.h
+	include/alibabacloud/dts/model/StopDtsJobsRequest.h
+	include/alibabacloud/dts/model/StopDtsJobsResult.h
 	include/alibabacloud/dts/model/StopMigrationJobRequest.h
 	include/alibabacloud/dts/model/StopMigrationJobResult.h
+	include/alibabacloud/dts/model/SummaryJobDetailRequest.h
+	include/alibabacloud/dts/model/SummaryJobDetailResult.h
 	include/alibabacloud/dts/model/SuspendDtsJobRequest.h
 	include/alibabacloud/dts/model/SuspendDtsJobResult.h
+	include/alibabacloud/dts/model/SuspendDtsJobsRequest.h
+	include/alibabacloud/dts/model/SuspendDtsJobsResult.h
 	include/alibabacloud/dts/model/SuspendMigrationJobRequest.h
 	include/alibabacloud/dts/model/SuspendMigrationJobResult.h
 	include/alibabacloud/dts/model/SuspendSynchronizationJobRequest.h
 	include/alibabacloud/dts/model/SuspendSynchronizationJobResult.h
+	include/alibabacloud/dts/model/SwitchPhysicalDtsJobToCloudRequest.h
+	include/alibabacloud/dts/model/SwitchPhysicalDtsJobToCloudResult.h
 	include/alibabacloud/dts/model/SwitchSynchronizationEndpointRequest.h
 	include/alibabacloud/dts/model/SwitchSynchronizationEndpointResult.h
 	include/alibabacloud/dts/model/TagResourcesRequest.h
@@ -206,6 +258,8 @@ set(dts_src
 	src/model/CreateConsumerChannelResult.cc
 	src/model/CreateConsumerGroupRequest.cc
 	src/model/CreateConsumerGroupResult.cc
+	src/model/CreateDedicatedClusterMonitorRuleRequest.cc
+	src/model/CreateDedicatedClusterMonitorRuleResult.cc
 	src/model/CreateDtsInstanceRequest.cc
 	src/model/CreateDtsInstanceResult.cc
 	src/model/CreateJobMonitorRuleRequest.cc
@@ -222,12 +276,20 @@ set(dts_src
 	src/model/DeleteConsumerGroupResult.cc
 	src/model/DeleteDtsJobRequest.cc
 	src/model/DeleteDtsJobResult.cc
+	src/model/DeleteDtsJobsRequest.cc
+	src/model/DeleteDtsJobsResult.cc
 	src/model/DeleteMigrationJobRequest.cc
 	src/model/DeleteMigrationJobResult.cc
 	src/model/DeleteSubscriptionInstanceRequest.cc
 	src/model/DeleteSubscriptionInstanceResult.cc
 	src/model/DeleteSynchronizationJobRequest.cc
 	src/model/DeleteSynchronizationJobResult.cc
+	src/model/DescribeCheckJobsRequest.cc
+	src/model/DescribeCheckJobsResult.cc
+	src/model/DescribeClusterOperateLogsRequest.cc
+	src/model/DescribeClusterOperateLogsResult.cc
+	src/model/DescribeClusterUsedUtilizationRequest.cc
+	src/model/DescribeClusterUsedUtilizationResult.cc
 	src/model/DescribeConnectionStatusRequest.cc
 	src/model/DescribeConnectionStatusResult.cc
 	src/model/DescribeConsumerChannelRequest.cc
@@ -236,16 +298,34 @@ set(dts_src
 	src/model/DescribeConsumerGroupResult.cc
 	src/model/DescribeDTSIPRequest.cc
 	src/model/DescribeDTSIPResult.cc
+	src/model/DescribeDataCheckReportUrlRequest.cc
+	src/model/DescribeDataCheckReportUrlResult.cc
+	src/model/DescribeDataCheckTableDetailsRequest.cc
+	src/model/DescribeDataCheckTableDetailsResult.cc
+	src/model/DescribeDataCheckTableDiffDetailsRequest.cc
+	src/model/DescribeDataCheckTableDiffDetailsResult.cc
+	src/model/DescribeDedicatedClusterRequest.cc
+	src/model/DescribeDedicatedClusterResult.cc
+	src/model/DescribeDedicatedClusterMonitorRuleRequest.cc
+	src/model/DescribeDedicatedClusterMonitorRuleResult.cc
+	src/model/DescribeDtsEtlJobVersionInfoRequest.cc
+	src/model/DescribeDtsEtlJobVersionInfoResult.cc
 	src/model/DescribeDtsJobDetailRequest.cc
 	src/model/DescribeDtsJobDetailResult.cc
 	src/model/DescribeDtsJobsRequest.cc
 	src/model/DescribeDtsJobsResult.cc
+	src/model/DescribeDtsServiceLogRequest.cc
+	src/model/DescribeDtsServiceLogResult.cc
 	src/model/DescribeEndpointSwitchStatusRequest.cc
 	src/model/DescribeEndpointSwitchStatusResult.cc
+	src/model/DescribeEtlJobLogsRequest.cc
+	src/model/DescribeEtlJobLogsResult.cc
 	src/model/DescribeInitializationStatusRequest.cc
 	src/model/DescribeInitializationStatusResult.cc
 	src/model/DescribeJobMonitorRuleRequest.cc
 	src/model/DescribeJobMonitorRuleResult.cc
+	src/model/DescribeMetricListRequest.cc
+	src/model/DescribeMetricListResult.cc
 	src/model/DescribeMigrationJobAlertRequest.cc
 	src/model/DescribeMigrationJobAlertResult.cc
 	src/model/DescribeMigrationJobDetailRequest.cc
@@ -276,8 +356,14 @@ set(dts_src
 	src/model/DescribeSynchronizationJobsResult.cc
 	src/model/DescribeSynchronizationObjectModifyStatusRequest.cc
 	src/model/DescribeSynchronizationObjectModifyStatusResult.cc
+	src/model/DescribeTagKeysRequest.cc
+	src/model/DescribeTagKeysResult.cc
+	src/model/DescribeTagValuesRequest.cc
+	src/model/DescribeTagValuesResult.cc
 	src/model/InitDtsRdsInstanceRequest.cc
 	src/model/InitDtsRdsInstanceResult.cc
+	src/model/ListDedicatedClusterRequest.cc
+	src/model/ListDedicatedClusterResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/ModifyConsumerChannelRequest.cc
@@ -286,8 +372,14 @@ set(dts_src
 	src/model/ModifyConsumerGroupPasswordResult.cc
 	src/model/ModifyConsumptionTimestampRequest.cc
 	src/model/ModifyConsumptionTimestampResult.cc
+	src/model/ModifyDedicatedClusterRequest.cc
+	src/model/ModifyDedicatedClusterResult.cc
 	src/model/ModifyDtsJobRequest.cc
 	src/model/ModifyDtsJobResult.cc
+	src/model/ModifyDtsJobDedicatedClusterRequest.cc
+	src/model/ModifyDtsJobDedicatedClusterResult.cc
+	src/model/ModifyDtsJobDuLimitRequest.cc
+	src/model/ModifyDtsJobDuLimitResult.cc
 	src/model/ModifyDtsJobNameRequest.cc
 	src/model/ModifyDtsJobNameResult.cc
 	src/model/ModifyDtsJobPasswordRequest.cc
@@ -310,22 +402,34 @@ set(dts_src
 	src/model/SkipPreCheckResult.cc
 	src/model/StartDtsJobRequest.cc
 	src/model/StartDtsJobResult.cc
+	src/model/StartDtsJobsRequest.cc
+	src/model/StartDtsJobsResult.cc
 	src/model/StartMigrationJobRequest.cc
 	src/model/StartMigrationJobResult.cc
 	src/model/StartSubscriptionInstanceRequest.cc
 	src/model/StartSubscriptionInstanceResult.cc
 	src/model/StartSynchronizationJobRequest.cc
 	src/model/StartSynchronizationJobResult.cc
+	src/model/StopDedicatedClusterRequest.cc
+	src/model/StopDedicatedClusterResult.cc
 	src/model/StopDtsJobRequest.cc
 	src/model/StopDtsJobResult.cc
+	src/model/StopDtsJobsRequest.cc
+	src/model/StopDtsJobsResult.cc
 	src/model/StopMigrationJobRequest.cc
 	src/model/StopMigrationJobResult.cc
+	src/model/SummaryJobDetailRequest.cc
+	src/model/SummaryJobDetailResult.cc
 	src/model/SuspendDtsJobRequest.cc
 	src/model/SuspendDtsJobResult.cc
+	src/model/SuspendDtsJobsRequest.cc
+	src/model/SuspendDtsJobsResult.cc
 	src/model/SuspendMigrationJobRequest.cc
 	src/model/SuspendMigrationJobResult.cc
 	src/model/SuspendSynchronizationJobRequest.cc
 	src/model/SuspendSynchronizationJobResult.cc
+	src/model/SwitchPhysicalDtsJobToCloudRequest.cc
+	src/model/SwitchPhysicalDtsJobToCloudResult.cc
 	src/model/SwitchSynchronizationEndpointRequest.cc
 	src/model/SwitchSynchronizationEndpointResult.cc
 	src/model/TagResourcesRequest.cc

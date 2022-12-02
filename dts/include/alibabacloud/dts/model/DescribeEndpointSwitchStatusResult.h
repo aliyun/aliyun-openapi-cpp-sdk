@@ -38,8 +38,8 @@ namespace AlibabaCloud
 				explicit DescribeEndpointSwitchStatusResult(const std::string &payload);
 				~DescribeEndpointSwitchStatusResult();
 				std::string getStatus()const;
-				std::string getErrMessage()const;
 				std::string getErrorMessage()const;
+				std::string getErrMessage()const;
 				std::string getSuccess()const;
 				std::string getErrCode()const;
 
@@ -47,8 +47,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
-				std::string errMessage_;
 				std::string errorMessage_;
+				std::string errMessage_;
 				std::string success_;
 				std::string errCode_;
 

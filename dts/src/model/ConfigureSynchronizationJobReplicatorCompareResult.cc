@@ -41,10 +41,10 @@ void ConfigureSynchronizationJobReplicatorCompareResult::parse(const std::string
 	setRequestId(value["RequestId"].asString());
 	if(!value["ErrCode"].isNull())
 		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
 
 }
 

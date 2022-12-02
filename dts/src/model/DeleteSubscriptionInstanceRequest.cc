@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Dts::Model::DeleteSubscriptionInstanceRequest;
 
-DeleteSubscriptionInstanceRequest::DeleteSubscriptionInstanceRequest() :
-	RpcServiceRequest("dts", "2020-01-01", "DeleteSubscriptionInstance")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteSubscriptionInstanceRequest::DeleteSubscriptionInstanceRequest()
+    : RpcServiceRequest("dts", "2020-01-01", "DeleteSubscriptionInstance") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteSubscriptionInstanceRequest::~DeleteSubscriptionInstanceRequest()
-{}
+DeleteSubscriptionInstanceRequest::~DeleteSubscriptionInstanceRequest() {}
 
-std::string DeleteSubscriptionInstanceRequest::getSubscriptionInstanceId()const
-{
-	return subscriptionInstanceId_;
+std::string DeleteSubscriptionInstanceRequest::getSubscriptionInstanceId() const {
+  return subscriptionInstanceId_;
 }
 
-void DeleteSubscriptionInstanceRequest::setSubscriptionInstanceId(const std::string& subscriptionInstanceId)
-{
-	subscriptionInstanceId_ = subscriptionInstanceId;
-	setParameter("SubscriptionInstanceId", subscriptionInstanceId);
+void DeleteSubscriptionInstanceRequest::setSubscriptionInstanceId(const std::string &subscriptionInstanceId) {
+  subscriptionInstanceId_ = subscriptionInstanceId;
+  setParameter(std::string("SubscriptionInstanceId"), subscriptionInstanceId);
 }
 
-std::string DeleteSubscriptionInstanceRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string DeleteSubscriptionInstanceRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DeleteSubscriptionInstanceRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void DeleteSubscriptionInstanceRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string DeleteSubscriptionInstanceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DeleteSubscriptionInstanceRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DeleteSubscriptionInstanceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DeleteSubscriptionInstanceRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DeleteSubscriptionInstanceRequest::getAccountId()const
-{
-	return accountId_;
+std::string DeleteSubscriptionInstanceRequest::getAccountId() const {
+  return accountId_;
 }
 
-void DeleteSubscriptionInstanceRequest::setAccountId(const std::string& accountId)
-{
-	accountId_ = accountId;
-	setParameter("AccountId", accountId);
+void DeleteSubscriptionInstanceRequest::setAccountId(const std::string &accountId) {
+  accountId_ = accountId;
+  setParameter(std::string("AccountId"), accountId);
 }
 
-std::string DeleteSubscriptionInstanceRequest::getRegionId()const
-{
-	return regionId_;
+std::string DeleteSubscriptionInstanceRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DeleteSubscriptionInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DeleteSubscriptionInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 

@@ -37,16 +37,16 @@ namespace AlibabaCloud
 				CreateSubscriptionInstanceResult();
 				explicit CreateSubscriptionInstanceResult(const std::string &payload);
 				~CreateSubscriptionInstanceResult();
-				std::string getErrMessage()const;
 				std::string getSubscriptionInstanceId()const;
+				std::string getErrMessage()const;
 				std::string getSuccess()const;
 				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string errMessage_;
 				std::string subscriptionInstanceId_;
+				std::string errMessage_;
 				std::string success_;
 				std::string errCode_;
 

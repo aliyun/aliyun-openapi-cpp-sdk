@@ -57,8 +57,8 @@ namespace AlibabaCloud
 					{
 						std::string status;
 						std::string objectType;
-						std::string objectDefinition;
 						std::string sourceOwnerDBName;
+						std::string objectDefinition;
 						std::string errorMessage;
 						std::string destinationOwnerDBName;
 						std::string objectName;
@@ -66,8 +66,8 @@ namespace AlibabaCloud
 					std::string status;
 					std::string objectType;
 					std::vector<StructureInitializationDetail::StructureInitializationDetail1> constraintList;
-					std::string objectDefinition;
 					std::string sourceOwnerDBName;
+					std::string objectDefinition;
 					std::string errorMessage;
 					std::string destinationOwnerDBName;
 					std::string objectName;

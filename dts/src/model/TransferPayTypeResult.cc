@@ -39,26 +39,26 @@ void TransferPayTypeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["DtsJobId"].isNull())
+		dtsJobId_ = value["DtsJobId"].asString();
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["ChargeType"].isNull())
+		chargeType_ = value["ChargeType"].asString();
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["DynamicMessage"].isNull())
 		dynamicMessage_ = value["DynamicMessage"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
-	if(!value["HttpStatusCode"].isNull())
-		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["DtsJobId"].isNull())
-		dtsJobId_ = value["DtsJobId"].asString();
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
-	if(!value["ChargeType"].isNull())
-		chargeType_ = value["ChargeType"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
 
 }
 

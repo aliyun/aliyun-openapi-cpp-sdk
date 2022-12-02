@@ -39,26 +39,26 @@ void SkipPreCheckResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["DynamicMessage"].isNull())
-		dynamicMessage_ = value["DynamicMessage"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
-	if(!value["MigrationJobId"].isNull())
-		migrationJobId_ = value["MigrationJobId"].asString();
-	if(!value["ScheduleJobId"].isNull())
-		scheduleJobId_ = value["ScheduleJobId"].asString();
-	if(!value["SkipItems"].isNull())
-		skipItems_ = value["SkipItems"].asString();
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
 	if(!value["SkipNames"].isNull())
 		skipNames_ = value["SkipNames"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["ScheduleJobId"].isNull())
+		scheduleJobId_ = value["ScheduleJobId"].asString();
+	if(!value["DynamicMessage"].isNull())
+		dynamicMessage_ = value["DynamicMessage"].asString();
+	if(!value["MigrationJobId"].isNull())
+		migrationJobId_ = value["MigrationJobId"].asString();
+	if(!value["SkipItems"].isNull())
+		skipItems_ = value["SkipItems"].asString();
 
 }
 

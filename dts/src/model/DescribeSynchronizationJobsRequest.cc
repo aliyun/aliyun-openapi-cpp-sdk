@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,127 +18,105 @@
 
 using AlibabaCloud::Dts::Model::DescribeSynchronizationJobsRequest;
 
-DescribeSynchronizationJobsRequest::DescribeSynchronizationJobsRequest() :
-	RpcServiceRequest("dts", "2020-01-01", "DescribeSynchronizationJobs")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeSynchronizationJobsRequest::DescribeSynchronizationJobsRequest()
+    : RpcServiceRequest("dts", "2020-01-01", "DescribeSynchronizationJobs") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSynchronizationJobsRequest::~DescribeSynchronizationJobsRequest()
-{}
+DescribeSynchronizationJobsRequest::~DescribeSynchronizationJobsRequest() {}
 
-std::string DescribeSynchronizationJobsRequest::getClientToken()const
-{
-	return clientToken_;
+std::string DescribeSynchronizationJobsRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void DescribeSynchronizationJobsRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void DescribeSynchronizationJobsRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string DescribeSynchronizationJobsRequest::getInstFilterRegion()const
-{
-	return instFilterRegion_;
+int DescribeSynchronizationJobsRequest::getPageNum() const {
+  return pageNum_;
 }
 
-void DescribeSynchronizationJobsRequest::setInstFilterRegion(const std::string& instFilterRegion)
-{
-	instFilterRegion_ = instFilterRegion;
-	setParameter("InstFilterRegion", instFilterRegion);
+void DescribeSynchronizationJobsRequest::setPageNum(int pageNum) {
+  pageNum_ = pageNum;
+  setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-int DescribeSynchronizationJobsRequest::getPageNum()const
-{
-	return pageNum_;
+std::string DescribeSynchronizationJobsRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeSynchronizationJobsRequest::setPageNum(int pageNum)
-{
-	pageNum_ = pageNum;
-	setParameter("PageNum", std::to_string(pageNum));
+void DescribeSynchronizationJobsRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeSynchronizationJobsRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string DescribeSynchronizationJobsRequest::getSynchronizationJobName() const {
+  return synchronizationJobName_;
 }
 
-void DescribeSynchronizationJobsRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void DescribeSynchronizationJobsRequest::setSynchronizationJobName(const std::string &synchronizationJobName) {
+  synchronizationJobName_ = synchronizationJobName;
+  setParameter(std::string("SynchronizationJobName"), synchronizationJobName);
 }
 
-std::string DescribeSynchronizationJobsRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeSynchronizationJobsRequest::getAccountId() const {
+  return accountId_;
 }
 
-void DescribeSynchronizationJobsRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeSynchronizationJobsRequest::setAccountId(const std::string &accountId) {
+  accountId_ = accountId;
+  setParameter(std::string("AccountId"), accountId);
 }
 
-std::string DescribeSynchronizationJobsRequest::getSynchronizationJobName()const
-{
-	return synchronizationJobName_;
+std::string DescribeSynchronizationJobsRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeSynchronizationJobsRequest::setSynchronizationJobName(const std::string& synchronizationJobName)
-{
-	synchronizationJobName_ = synchronizationJobName;
-	setParameter("SynchronizationJobName", synchronizationJobName);
+void DescribeSynchronizationJobsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DescribeSynchronizationJobsRequest::getAccountId()const
-{
-	return accountId_;
+int DescribeSynchronizationJobsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeSynchronizationJobsRequest::setAccountId(const std::string& accountId)
-{
-	accountId_ = accountId;
-	setParameter("AccountId", accountId);
+void DescribeSynchronizationJobsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeSynchronizationJobsRequest::getRegionId()const
-{
-	return regionId_;
+std::vector<DescribeSynchronizationJobsRequest::Tag> DescribeSynchronizationJobsRequest::getTag() const {
+  return tag_;
 }
 
-void DescribeSynchronizationJobsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeSynchronizationJobsRequest::setTag(const std::vector<DescribeSynchronizationJobsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
-int DescribeSynchronizationJobsRequest::getPageSize()const
-{
-	return pageSize_;
+std::string DescribeSynchronizationJobsRequest::getInstFilterRegion() const {
+  return instFilterRegion_;
 }
 
-void DescribeSynchronizationJobsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeSynchronizationJobsRequest::setInstFilterRegion(const std::string &instFilterRegion) {
+  instFilterRegion_ = instFilterRegion;
+  setParameter(std::string("InstFilterRegion"), instFilterRegion);
 }
 
-std::vector<DescribeSynchronizationJobsRequest::Tag> DescribeSynchronizationJobsRequest::getTag()const
-{
-	return tag_;
+std::string DescribeSynchronizationJobsRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeSynchronizationJobsRequest::setTag(const std::vector<Tag>& tag)
-{
-	tag_ = tag;
-	for(int dep1 = 0; dep1!= tag.size(); dep1++) {
-		auto tagObj = tag.at(dep1);
-		std::string tagObjStr = "Tag." + std::to_string(dep1 + 1);
-		setParameter(tagObjStr + ".Value", tagObj.value);
-		setParameter(tagObjStr + ".Key", tagObj.key);
-	}
+void DescribeSynchronizationJobsRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

@@ -39,16 +39,16 @@ namespace AlibabaCloud
 				~CreateMigrationJobResult();
 				std::string getErrMessage()const;
 				std::string getSuccess()const;
-				std::string getErrCode()const;
 				std::string getMigrationJobId()const;
+				std::string getErrCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string errMessage_;
 				std::string success_;
-				std::string errCode_;
 				std::string migrationJobId_;
+				std::string errCode_;
 
 			};
 		}

@@ -39,16 +39,16 @@ void DescribeConnectionStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
 	if(!value["SourceConnectionStatus"].isNull())
 		sourceConnectionStatus_ = value["SourceConnectionStatus"].asString();
 	if(!value["DestinationConnectionStatus"].isNull())
 		destinationConnectionStatus_ = value["DestinationConnectionStatus"].asString();
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
 
 }
 
@@ -57,14 +57,14 @@ std::string DescribeConnectionStatusResult::getSourceConnectionStatus()const
 	return sourceConnectionStatus_;
 }
 
-std::string DescribeConnectionStatusResult::getErrMessage()const
-{
-	return errMessage_;
-}
-
 std::string DescribeConnectionStatusResult::getDestinationConnectionStatus()const
 {
 	return destinationConnectionStatus_;
+}
+
+std::string DescribeConnectionStatusResult::getErrMessage()const
+{
+	return errMessage_;
 }
 
 std::string DescribeConnectionStatusResult::getSuccess()const

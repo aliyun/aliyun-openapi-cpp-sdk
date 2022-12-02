@@ -43,31 +43,49 @@ void DescribeJobMonitorRuleResult::parse(const std::string &payload)
 	for (auto valueMonitorRulesMonitorRule : allMonitorRulesNode)
 	{
 		MonitorRule monitorRulesObject;
-		if(!valueMonitorRulesMonitorRule["Phone"].isNull())
-			monitorRulesObject.phone = valueMonitorRulesMonitorRule["Phone"].asString();
+		if(!valueMonitorRulesMonitorRule["Type"].isNull())
+			monitorRulesObject.type = valueMonitorRulesMonitorRule["Type"].asString();
 		if(!valueMonitorRulesMonitorRule["DelayRuleTime"].isNull())
 			monitorRulesObject.delayRuleTime = std::stol(valueMonitorRulesMonitorRule["DelayRuleTime"].asString());
 		if(!valueMonitorRulesMonitorRule["State"].isNull())
 			monitorRulesObject.state = valueMonitorRulesMonitorRule["State"].asString();
-		if(!valueMonitorRulesMonitorRule["Type"].isNull())
-			monitorRulesObject.type = valueMonitorRulesMonitorRule["Type"].asString();
+		if(!valueMonitorRulesMonitorRule["Phone"].isNull())
+			monitorRulesObject.phone = valueMonitorRulesMonitorRule["Phone"].asString();
+		if(!valueMonitorRulesMonitorRule["JobType"].isNull())
+			monitorRulesObject.jobType = valueMonitorRulesMonitorRule["JobType"].asString();
+		if(!valueMonitorRulesMonitorRule["Period"].isNull())
+			monitorRulesObject.period = std::stoi(valueMonitorRulesMonitorRule["Period"].asString());
+		if(!valueMonitorRulesMonitorRule["Times"].isNull())
+			monitorRulesObject.times = std::stoi(valueMonitorRulesMonitorRule["Times"].asString());
+		if(!valueMonitorRulesMonitorRule["NoticeValue"].isNull())
+			monitorRulesObject.noticeValue = std::stoi(valueMonitorRulesMonitorRule["NoticeValue"].asString());
+		if(!valueMonitorRulesMonitorRule["JobId"].isNull())
+			monitorRulesObject.jobId = valueMonitorRulesMonitorRule["JobId"].asString();
 		monitorRules_.push_back(monitorRulesObject);
 	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["DtsJobId"].isNull())
-		dtsJobId_ = value["DtsJobId"].asString();
-	if(!value["DynamicMessage"].isNull())
-		dynamicMessage_ = value["DynamicMessage"].asString();
-	if(!value["ErrCode"].isNull())
-		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
+	auto allTopics = value["Topics"]["Topics"];
+	for (const auto &item : allTopics)
+		topics_.push_back(item.asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["DtsJobId"].isNull())
+		dtsJobId_ = value["DtsJobId"].asString();
+	if(!value["ErrCode"].isNull())
+		errCode_ = value["ErrCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["DynamicMessage"].isNull())
+		dynamicMessage_ = value["DynamicMessage"].asString();
 
+}
+
+std::vector<std::string> DescribeJobMonitorRuleResult::getTopics()const
+{
+	return topics_;
 }
 
 std::string DescribeJobMonitorRuleResult::getDtsJobId()const

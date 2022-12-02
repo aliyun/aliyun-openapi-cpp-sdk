@@ -38,8 +38,8 @@ namespace AlibabaCloud
 				explicit DescribeConnectionStatusResult(const std::string &payload);
 				~DescribeConnectionStatusResult();
 				std::string getSourceConnectionStatus()const;
-				std::string getErrMessage()const;
 				std::string getDestinationConnectionStatus()const;
+				std::string getErrMessage()const;
 				std::string getSuccess()const;
 				std::string getErrCode()const;
 
@@ -47,8 +47,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string sourceConnectionStatus_;
-				std::string errMessage_;
 				std::string destinationConnectionStatus_;
+				std::string errMessage_;
 				std::string success_;
 				std::string errCode_;
 

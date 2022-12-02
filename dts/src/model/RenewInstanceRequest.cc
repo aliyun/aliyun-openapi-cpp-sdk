@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Dts::Model::RenewInstanceRequest;
 
-RenewInstanceRequest::RenewInstanceRequest() :
-	RpcServiceRequest("dts", "2020-01-01", "RenewInstance")
-{
-	setMethod(HttpRequest::Method::Post);
+RenewInstanceRequest::RenewInstanceRequest()
+    : RpcServiceRequest("dts", "2020-01-01", "RenewInstance") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-RenewInstanceRequest::~RenewInstanceRequest()
-{}
+RenewInstanceRequest::~RenewInstanceRequest() {}
 
-std::string RenewInstanceRequest::getPeriod()const
-{
-	return period_;
+std::string RenewInstanceRequest::getPeriod() const {
+  return period_;
 }
 
-void RenewInstanceRequest::setPeriod(const std::string& period)
-{
-	period_ = period;
-	setParameter("Period", period);
+void RenewInstanceRequest::setPeriod(const std::string &period) {
+  period_ = period;
+  setParameter(std::string("Period"), period);
 }
 
-std::string RenewInstanceRequest::getBuyCount()const
-{
-	return buyCount_;
+std::string RenewInstanceRequest::getBuyCount() const {
+  return buyCount_;
 }
 
-void RenewInstanceRequest::setBuyCount(const std::string& buyCount)
-{
-	buyCount_ = buyCount;
-	setParameter("BuyCount", buyCount);
+void RenewInstanceRequest::setBuyCount(const std::string &buyCount) {
+  buyCount_ = buyCount;
+  setParameter(std::string("BuyCount"), buyCount);
 }
 
-std::string RenewInstanceRequest::getRegionId()const
-{
-	return regionId_;
+std::string RenewInstanceRequest::getRegionId() const {
+  return regionId_;
 }
 
-void RenewInstanceRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void RenewInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string RenewInstanceRequest::getDtsJobId()const
-{
-	return dtsJobId_;
+std::string RenewInstanceRequest::getDtsJobId() const {
+  return dtsJobId_;
 }
 
-void RenewInstanceRequest::setDtsJobId(const std::string& dtsJobId)
-{
-	dtsJobId_ = dtsJobId;
-	setParameter("DtsJobId", dtsJobId);
+void RenewInstanceRequest::setDtsJobId(const std::string &dtsJobId) {
+  dtsJobId_ = dtsJobId;
+  setParameter(std::string("DtsJobId"), dtsJobId);
 }
 
-std::string RenewInstanceRequest::getChargeType()const
-{
-	return chargeType_;
+std::string RenewInstanceRequest::getChargeType() const {
+  return chargeType_;
 }
 
-void RenewInstanceRequest::setChargeType(const std::string& chargeType)
-{
-	chargeType_ = chargeType;
-	setParameter("ChargeType", chargeType);
+void RenewInstanceRequest::setChargeType(const std::string &chargeType) {
+  chargeType_ = chargeType;
+  setParameter(std::string("ChargeType"), chargeType);
 }
 

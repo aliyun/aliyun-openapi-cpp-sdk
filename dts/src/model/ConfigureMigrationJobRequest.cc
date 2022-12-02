@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,386 +18,316 @@
 
 using AlibabaCloud::Dts::Model::ConfigureMigrationJobRequest;
 
-ConfigureMigrationJobRequest::ConfigureMigrationJobRequest() :
-	RpcServiceRequest("dts", "2020-01-01", "ConfigureMigrationJob")
-{
-	setMethod(HttpRequest::Method::Post);
+ConfigureMigrationJobRequest::ConfigureMigrationJobRequest()
+    : RpcServiceRequest("dts", "2020-01-01", "ConfigureMigrationJob") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ConfigureMigrationJobRequest::~ConfigureMigrationJobRequest()
-{}
+ConfigureMigrationJobRequest::~ConfigureMigrationJobRequest() {}
 
-std::string ConfigureMigrationJobRequest::getSourceEndpointInstanceID()const
-{
-	return sourceEndpointInstanceID_;
+std::string ConfigureMigrationJobRequest::getSourceEndpointInstanceID() const {
+  return sourceEndpointInstanceID_;
 }
 
-void ConfigureMigrationJobRequest::setSourceEndpointInstanceID(const std::string& sourceEndpointInstanceID)
-{
-	sourceEndpointInstanceID_ = sourceEndpointInstanceID;
-	setParameter("SourceEndpointInstanceID", sourceEndpointInstanceID);
+void ConfigureMigrationJobRequest::setSourceEndpointInstanceID(const std::string &sourceEndpointInstanceID) {
+  sourceEndpointInstanceID_ = sourceEndpointInstanceID;
+  setParameter(std::string("SourceEndpoint.InstanceID"), sourceEndpointInstanceID);
 }
 
-std::string ConfigureMigrationJobRequest::getCheckpoint()const
-{
-	return checkpoint_;
+std::string ConfigureMigrationJobRequest::getCheckpoint() const {
+  return checkpoint_;
 }
 
-void ConfigureMigrationJobRequest::setCheckpoint(const std::string& checkpoint)
-{
-	checkpoint_ = checkpoint;
-	setParameter("Checkpoint", checkpoint);
+void ConfigureMigrationJobRequest::setCheckpoint(const std::string &checkpoint) {
+  checkpoint_ = checkpoint;
+  setParameter(std::string("Checkpoint"), checkpoint);
 }
 
-std::string ConfigureMigrationJobRequest::getSourceEndpointEngineName()const
-{
-	return sourceEndpointEngineName_;
+std::string ConfigureMigrationJobRequest::getDestinationEndpointInstanceID() const {
+  return destinationEndpointInstanceID_;
 }
 
-void ConfigureMigrationJobRequest::setSourceEndpointEngineName(const std::string& sourceEndpointEngineName)
-{
-	sourceEndpointEngineName_ = sourceEndpointEngineName;
-	setParameter("SourceEndpointEngineName", sourceEndpointEngineName);
+void ConfigureMigrationJobRequest::setDestinationEndpointInstanceID(const std::string &destinationEndpointInstanceID) {
+  destinationEndpointInstanceID_ = destinationEndpointInstanceID;
+  setParameter(std::string("DestinationEndpoint.InstanceID"), destinationEndpointInstanceID);
 }
 
-std::string ConfigureMigrationJobRequest::getSourceEndpointOracleSID()const
-{
-	return sourceEndpointOracleSID_;
+std::string ConfigureMigrationJobRequest::getSourceEndpointIP() const {
+  return sourceEndpointIP_;
 }
 
-void ConfigureMigrationJobRequest::setSourceEndpointOracleSID(const std::string& sourceEndpointOracleSID)
-{
-	sourceEndpointOracleSID_ = sourceEndpointOracleSID;
-	setParameter("SourceEndpointOracleSID", sourceEndpointOracleSID);
+void ConfigureMigrationJobRequest::setSourceEndpointIP(const std::string &sourceEndpointIP) {
+  sourceEndpointIP_ = sourceEndpointIP;
+  setParameter(std::string("SourceEndpoint.IP"), sourceEndpointIP);
 }
 
-std::string ConfigureMigrationJobRequest::getDestinationEndpointInstanceID()const
-{
-	return destinationEndpointInstanceID_;
+std::string ConfigureMigrationJobRequest::getDestinationEndpointPassword() const {
+  return destinationEndpointPassword_;
 }
 
-void ConfigureMigrationJobRequest::setDestinationEndpointInstanceID(const std::string& destinationEndpointInstanceID)
-{
-	destinationEndpointInstanceID_ = destinationEndpointInstanceID;
-	setParameter("DestinationEndpointInstanceID", destinationEndpointInstanceID);
+void ConfigureMigrationJobRequest::setDestinationEndpointPassword(const std::string &destinationEndpointPassword) {
+  destinationEndpointPassword_ = destinationEndpointPassword;
+  setParameter(std::string("DestinationEndpoint.Password"), destinationEndpointPassword);
 }
 
-std::string ConfigureMigrationJobRequest::getSourceEndpointIP()const
-{
-	return sourceEndpointIP_;
+bool ConfigureMigrationJobRequest::getMigrationModeDataIntialization() const {
+  return migrationModeDataIntialization_;
 }
 
-void ConfigureMigrationJobRequest::setSourceEndpointIP(const std::string& sourceEndpointIP)
-{
-	sourceEndpointIP_ = sourceEndpointIP;
-	setParameter("SourceEndpointIP", sourceEndpointIP);
+void ConfigureMigrationJobRequest::setMigrationModeDataIntialization(bool migrationModeDataIntialization) {
+  migrationModeDataIntialization_ = migrationModeDataIntialization;
+  setParameter(std::string("MigrationMode.DataIntialization"), migrationModeDataIntialization ? "true" : "false");
 }
 
-std::string ConfigureMigrationJobRequest::getDestinationEndpointPassword()const
-{
-	return destinationEndpointPassword_;
+std::string ConfigureMigrationJobRequest::getAccountId() const {
+  return accountId_;
 }
 
-void ConfigureMigrationJobRequest::setDestinationEndpointPassword(const std::string& destinationEndpointPassword)
-{
-	destinationEndpointPassword_ = destinationEndpointPassword;
-	setParameter("DestinationEndpointPassword", destinationEndpointPassword);
+void ConfigureMigrationJobRequest::setAccountId(const std::string &accountId) {
+  accountId_ = accountId;
+  setParameter(std::string("AccountId"), accountId);
 }
 
-std::string ConfigureMigrationJobRequest::getMigrationObject()const
-{
-	return migrationObject_;
+bool ConfigureMigrationJobRequest::getMigrationModeStructureIntialization() const {
+  return migrationModeStructureIntialization_;
 }
 
-void ConfigureMigrationJobRequest::setMigrationObject(const std::string& migrationObject)
-{
-	migrationObject_ = migrationObject;
-	setBodyParameter("MigrationObject", migrationObject);
+void ConfigureMigrationJobRequest::setMigrationModeStructureIntialization(bool migrationModeStructureIntialization) {
+  migrationModeStructureIntialization_ = migrationModeStructureIntialization;
+  setParameter(std::string("MigrationMode.StructureIntialization"), migrationModeStructureIntialization ? "true" : "false");
 }
 
-bool ConfigureMigrationJobRequest::getMigrationModeDataIntialization()const
-{
-	return migrationModeDataIntialization_;
+bool ConfigureMigrationJobRequest::getMigrationModeDataSynchronization() const {
+  return migrationModeDataSynchronization_;
 }
 
-void ConfigureMigrationJobRequest::setMigrationModeDataIntialization(bool migrationModeDataIntialization)
-{
-	migrationModeDataIntialization_ = migrationModeDataIntialization;
-	setParameter("MigrationModeDataIntialization", migrationModeDataIntialization ? "true" : "false");
+void ConfigureMigrationJobRequest::setMigrationModeDataSynchronization(bool migrationModeDataSynchronization) {
+  migrationModeDataSynchronization_ = migrationModeDataSynchronization;
+  setParameter(std::string("MigrationMode.DataSynchronization"), migrationModeDataSynchronization ? "true" : "false");
 }
 
-std::string ConfigureMigrationJobRequest::getMigrationJobId()const
-{
-	return migrationJobId_;
+std::string ConfigureMigrationJobRequest::getDestinationEndpointRegion() const {
+  return destinationEndpointRegion_;
 }
 
-void ConfigureMigrationJobRequest::setMigrationJobId(const std::string& migrationJobId)
-{
-	migrationJobId_ = migrationJobId;
-	setParameter("MigrationJobId", migrationJobId);
+void ConfigureMigrationJobRequest::setDestinationEndpointRegion(const std::string &destinationEndpointRegion) {
+  destinationEndpointRegion_ = destinationEndpointRegion;
+  setParameter(std::string("DestinationEndpoint.Region"), destinationEndpointRegion);
 }
 
-std::string ConfigureMigrationJobRequest::getSourceEndpointInstanceType()const
-{
-	return sourceEndpointInstanceType_;
+std::string ConfigureMigrationJobRequest::getSourceEndpointUserName() const {
+  return sourceEndpointUserName_;
 }
 
-void ConfigureMigrationJobRequest::setSourceEndpointInstanceType(const std::string& sourceEndpointInstanceType)
-{
-	sourceEndpointInstanceType_ = sourceEndpointInstanceType;
-	setParameter("SourceEndpointInstanceType", sourceEndpointInstanceType);
+void ConfigureMigrationJobRequest::setSourceEndpointUserName(const std::string &sourceEndpointUserName) {
+  sourceEndpointUserName_ = sourceEndpointUserName;
+  setParameter(std::string("SourceEndpoint.UserName"), sourceEndpointUserName);
 }
 
-std::string ConfigureMigrationJobRequest::getDestinationEndpointEngineName()const
-{
-	return destinationEndpointEngineName_;
+std::string ConfigureMigrationJobRequest::getSourceEndpointDatabaseName() const {
+  return sourceEndpointDatabaseName_;
 }
 
-void ConfigureMigrationJobRequest::setDestinationEndpointEngineName(const std::string& destinationEndpointEngineName)
-{
-	destinationEndpointEngineName_ = destinationEndpointEngineName;
-	setParameter("DestinationEndpointEngineName", destinationEndpointEngineName);
+void ConfigureMigrationJobRequest::setSourceEndpointDatabaseName(const std::string &sourceEndpointDatabaseName) {
+  sourceEndpointDatabaseName_ = sourceEndpointDatabaseName;
+  setParameter(std::string("SourceEndpoint.DatabaseName"), sourceEndpointDatabaseName);
 }
 
-std::string ConfigureMigrationJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ConfigureMigrationJobRequest::getSourceEndpointPort() const {
+  return sourceEndpointPort_;
 }
 
-void ConfigureMigrationJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ConfigureMigrationJobRequest::setSourceEndpointPort(const std::string &sourceEndpointPort) {
+  sourceEndpointPort_ = sourceEndpointPort;
+  setParameter(std::string("SourceEndpoint.Port"), sourceEndpointPort);
 }
 
-std::string ConfigureMigrationJobRequest::getAccountId()const
-{
-	return accountId_;
+std::string ConfigureMigrationJobRequest::getSourceEndpointOwnerID() const {
+  return sourceEndpointOwnerID_;
 }
 
-void ConfigureMigrationJobRequest::setAccountId(const std::string& accountId)
-{
-	accountId_ = accountId;
-	setParameter("AccountId", accountId);
+void ConfigureMigrationJobRequest::setSourceEndpointOwnerID(const std::string &sourceEndpointOwnerID) {
+  sourceEndpointOwnerID_ = sourceEndpointOwnerID;
+  setParameter(std::string("SourceEndpoint.OwnerID"), sourceEndpointOwnerID);
 }
 
-bool ConfigureMigrationJobRequest::getMigrationModeStructureIntialization()const
-{
-	return migrationModeStructureIntialization_;
+std::string ConfigureMigrationJobRequest::getDestinationEndpointPort() const {
+  return destinationEndpointPort_;
 }
 
-void ConfigureMigrationJobRequest::setMigrationModeStructureIntialization(bool migrationModeStructureIntialization)
-{
-	migrationModeStructureIntialization_ = migrationModeStructureIntialization;
-	setParameter("MigrationModeStructureIntialization", migrationModeStructureIntialization ? "true" : "false");
+void ConfigureMigrationJobRequest::setDestinationEndpointPort(const std::string &destinationEndpointPort) {
+  destinationEndpointPort_ = destinationEndpointPort;
+  setParameter(std::string("DestinationEndpoint.Port"), destinationEndpointPort);
 }
 
-bool ConfigureMigrationJobRequest::getMigrationModeDataSynchronization()const
-{
-	return migrationModeDataSynchronization_;
+std::string ConfigureMigrationJobRequest::getSourceEndpointRole() const {
+  return sourceEndpointRole_;
 }
 
-void ConfigureMigrationJobRequest::setMigrationModeDataSynchronization(bool migrationModeDataSynchronization)
-{
-	migrationModeDataSynchronization_ = migrationModeDataSynchronization;
-	setParameter("MigrationModeDataSynchronization", migrationModeDataSynchronization ? "true" : "false");
+void ConfigureMigrationJobRequest::setSourceEndpointRole(const std::string &sourceEndpointRole) {
+  sourceEndpointRole_ = sourceEndpointRole;
+  setParameter(std::string("SourceEndpoint.Role"), sourceEndpointRole);
 }
 
-std::string ConfigureMigrationJobRequest::getRegionId()const
-{
-	return regionId_;
+std::string ConfigureMigrationJobRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ConfigureMigrationJobRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ConfigureMigrationJobRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string ConfigureMigrationJobRequest::getDestinationEndpointRegion()const
-{
-	return destinationEndpointRegion_;
+std::string ConfigureMigrationJobRequest::getSourceEndpointPassword() const {
+  return sourceEndpointPassword_;
 }
 
-void ConfigureMigrationJobRequest::setDestinationEndpointRegion(const std::string& destinationEndpointRegion)
-{
-	destinationEndpointRegion_ = destinationEndpointRegion;
-	setParameter("DestinationEndpointRegion", destinationEndpointRegion);
+void ConfigureMigrationJobRequest::setSourceEndpointPassword(const std::string &sourceEndpointPassword) {
+  sourceEndpointPassword_ = sourceEndpointPassword;
+  setParameter(std::string("SourceEndpoint.Password"), sourceEndpointPassword);
 }
 
-std::string ConfigureMigrationJobRequest::getSourceEndpointUserName()const
-{
-	return sourceEndpointUserName_;
+std::string ConfigureMigrationJobRequest::getDestinationEndpointIP() const {
+  return destinationEndpointIP_;
 }
 
-void ConfigureMigrationJobRequest::setSourceEndpointUserName(const std::string& sourceEndpointUserName)
-{
-	sourceEndpointUserName_ = sourceEndpointUserName;
-	setParameter("SourceEndpointUserName", sourceEndpointUserName);
+void ConfigureMigrationJobRequest::setDestinationEndpointIP(const std::string &destinationEndpointIP) {
+  destinationEndpointIP_ = destinationEndpointIP;
+  setParameter(std::string("DestinationEndpoint.IP"), destinationEndpointIP);
 }
 
-std::string ConfigureMigrationJobRequest::getSourceEndpointDatabaseName()const
-{
-	return sourceEndpointDatabaseName_;
+std::string ConfigureMigrationJobRequest::getMigrationJobName() const {
+  return migrationJobName_;
 }
 
-void ConfigureMigrationJobRequest::setSourceEndpointDatabaseName(const std::string& sourceEndpointDatabaseName)
-{
-	sourceEndpointDatabaseName_ = sourceEndpointDatabaseName;
-	setParameter("SourceEndpointDatabaseName", sourceEndpointDatabaseName);
+void ConfigureMigrationJobRequest::setMigrationJobName(const std::string &migrationJobName) {
+  migrationJobName_ = migrationJobName;
+  setParameter(std::string("MigrationJobName"), migrationJobName);
 }
 
-std::string ConfigureMigrationJobRequest::getSourceEndpointPort()const
-{
-	return sourceEndpointPort_;
+std::string ConfigureMigrationJobRequest::getDestinationEndpointInstanceType() const {
+  return destinationEndpointInstanceType_;
 }
 
-void ConfigureMigrationJobRequest::setSourceEndpointPort(const std::string& sourceEndpointPort)
-{
-	sourceEndpointPort_ = sourceEndpointPort;
-	setParameter("SourceEndpointPort", sourceEndpointPort);
+void ConfigureMigrationJobRequest::setDestinationEndpointInstanceType(const std::string &destinationEndpointInstanceType) {
+  destinationEndpointInstanceType_ = destinationEndpointInstanceType;
+  setParameter(std::string("DestinationEndpoint.InstanceType"), destinationEndpointInstanceType);
 }
 
-std::string ConfigureMigrationJobRequest::getSourceEndpointOwnerID()const
-{
-	return sourceEndpointOwnerID_;
+std::string ConfigureMigrationJobRequest::getSourceEndpointEngineName() const {
+  return sourceEndpointEngineName_;
 }
 
-void ConfigureMigrationJobRequest::setSourceEndpointOwnerID(const std::string& sourceEndpointOwnerID)
-{
-	sourceEndpointOwnerID_ = sourceEndpointOwnerID;
-	setParameter("SourceEndpointOwnerID", sourceEndpointOwnerID);
+void ConfigureMigrationJobRequest::setSourceEndpointEngineName(const std::string &sourceEndpointEngineName) {
+  sourceEndpointEngineName_ = sourceEndpointEngineName;
+  setParameter(std::string("SourceEndpoint.EngineName"), sourceEndpointEngineName);
 }
 
-std::string ConfigureMigrationJobRequest::getDestinationEndpointUserName()const
-{
-	return destinationEndpointUserName_;
+std::string ConfigureMigrationJobRequest::getSourceEndpointOracleSID() const {
+  return sourceEndpointOracleSID_;
 }
 
-void ConfigureMigrationJobRequest::setDestinationEndpointUserName(const std::string& destinationEndpointUserName)
-{
-	destinationEndpointUserName_ = destinationEndpointUserName;
-	setParameter("DestinationEndpointUserName", destinationEndpointUserName);
+void ConfigureMigrationJobRequest::setSourceEndpointOracleSID(const std::string &sourceEndpointOracleSID) {
+  sourceEndpointOracleSID_ = sourceEndpointOracleSID;
+  setParameter(std::string("SourceEndpoint.OracleSID"), sourceEndpointOracleSID);
 }
 
-std::string ConfigureMigrationJobRequest::getDestinationEndpointOracleSID()const
-{
-	return destinationEndpointOracleSID_;
+std::string ConfigureMigrationJobRequest::getMigrationObject() const {
+  return migrationObject_;
 }
 
-void ConfigureMigrationJobRequest::setDestinationEndpointOracleSID(const std::string& destinationEndpointOracleSID)
-{
-	destinationEndpointOracleSID_ = destinationEndpointOracleSID;
-	setParameter("DestinationEndpointOracleSID", destinationEndpointOracleSID);
+void ConfigureMigrationJobRequest::setMigrationObject(const std::string &migrationObject) {
+  migrationObject_ = migrationObject;
+  setBodyParameter(std::string("MigrationObject"), migrationObject);
 }
 
-std::string ConfigureMigrationJobRequest::getDestinationEndpointPort()const
-{
-	return destinationEndpointPort_;
+std::string ConfigureMigrationJobRequest::getMigrationJobId() const {
+  return migrationJobId_;
 }
 
-void ConfigureMigrationJobRequest::setDestinationEndpointPort(const std::string& destinationEndpointPort)
-{
-	destinationEndpointPort_ = destinationEndpointPort;
-	setParameter("DestinationEndpointPort", destinationEndpointPort);
+void ConfigureMigrationJobRequest::setMigrationJobId(const std::string &migrationJobId) {
+  migrationJobId_ = migrationJobId;
+  setParameter(std::string("MigrationJobId"), migrationJobId);
 }
 
-std::string ConfigureMigrationJobRequest::getSourceEndpointRegion()const
-{
-	return sourceEndpointRegion_;
+std::string ConfigureMigrationJobRequest::getSourceEndpointInstanceType() const {
+  return sourceEndpointInstanceType_;
 }
 
-void ConfigureMigrationJobRequest::setSourceEndpointRegion(const std::string& sourceEndpointRegion)
-{
-	sourceEndpointRegion_ = sourceEndpointRegion;
-	setParameter("SourceEndpointRegion", sourceEndpointRegion);
+void ConfigureMigrationJobRequest::setSourceEndpointInstanceType(const std::string &sourceEndpointInstanceType) {
+  sourceEndpointInstanceType_ = sourceEndpointInstanceType;
+  setParameter(std::string("SourceEndpoint.InstanceType"), sourceEndpointInstanceType);
 }
 
-std::string ConfigureMigrationJobRequest::getSourceEndpointRole()const
-{
-	return sourceEndpointRole_;
+std::string ConfigureMigrationJobRequest::getDestinationEndpointEngineName() const {
+  return destinationEndpointEngineName_;
 }
 
-void ConfigureMigrationJobRequest::setSourceEndpointRole(const std::string& sourceEndpointRole)
-{
-	sourceEndpointRole_ = sourceEndpointRole;
-	setParameter("SourceEndpointRole", sourceEndpointRole);
+void ConfigureMigrationJobRequest::setDestinationEndpointEngineName(const std::string &destinationEndpointEngineName) {
+  destinationEndpointEngineName_ = destinationEndpointEngineName;
+  setParameter(std::string("DestinationEndpoint.EngineName"), destinationEndpointEngineName);
 }
 
-std::string ConfigureMigrationJobRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string ConfigureMigrationJobRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ConfigureMigrationJobRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void ConfigureMigrationJobRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ConfigureMigrationJobRequest::getDestinationEndpointDataBaseName()const
-{
-	return destinationEndpointDataBaseName_;
+std::string ConfigureMigrationJobRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ConfigureMigrationJobRequest::setDestinationEndpointDataBaseName(const std::string& destinationEndpointDataBaseName)
-{
-	destinationEndpointDataBaseName_ = destinationEndpointDataBaseName;
-	setParameter("DestinationEndpointDataBaseName", destinationEndpointDataBaseName);
+void ConfigureMigrationJobRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ConfigureMigrationJobRequest::getSourceEndpointPassword()const
-{
-	return sourceEndpointPassword_;
+std::string ConfigureMigrationJobRequest::getDestinationEndpointUserName() const {
+  return destinationEndpointUserName_;
 }
 
-void ConfigureMigrationJobRequest::setSourceEndpointPassword(const std::string& sourceEndpointPassword)
-{
-	sourceEndpointPassword_ = sourceEndpointPassword;
-	setParameter("SourceEndpointPassword", sourceEndpointPassword);
+void ConfigureMigrationJobRequest::setDestinationEndpointUserName(const std::string &destinationEndpointUserName) {
+  destinationEndpointUserName_ = destinationEndpointUserName;
+  setParameter(std::string("DestinationEndpoint.UserName"), destinationEndpointUserName);
 }
 
-std::string ConfigureMigrationJobRequest::getMigrationReserved()const
-{
-	return migrationReserved_;
+std::string ConfigureMigrationJobRequest::getDestinationEndpointOracleSID() const {
+  return destinationEndpointOracleSID_;
 }
 
-void ConfigureMigrationJobRequest::setMigrationReserved(const std::string& migrationReserved)
-{
-	migrationReserved_ = migrationReserved;
-	setParameter("MigrationReserved", migrationReserved);
+void ConfigureMigrationJobRequest::setDestinationEndpointOracleSID(const std::string &destinationEndpointOracleSID) {
+  destinationEndpointOracleSID_ = destinationEndpointOracleSID;
+  setParameter(std::string("DestinationEndpoint.OracleSID"), destinationEndpointOracleSID);
 }
 
-std::string ConfigureMigrationJobRequest::getDestinationEndpointIP()const
-{
-	return destinationEndpointIP_;
+std::string ConfigureMigrationJobRequest::getSourceEndpointRegion() const {
+  return sourceEndpointRegion_;
 }
 
-void ConfigureMigrationJobRequest::setDestinationEndpointIP(const std::string& destinationEndpointIP)
-{
-	destinationEndpointIP_ = destinationEndpointIP;
-	setParameter("DestinationEndpointIP", destinationEndpointIP);
+void ConfigureMigrationJobRequest::setSourceEndpointRegion(const std::string &sourceEndpointRegion) {
+  sourceEndpointRegion_ = sourceEndpointRegion;
+  setParameter(std::string("SourceEndpoint.Region"), sourceEndpointRegion);
 }
 
-std::string ConfigureMigrationJobRequest::getMigrationJobName()const
-{
-	return migrationJobName_;
+std::string ConfigureMigrationJobRequest::getDestinationEndpointDataBaseName() const {
+  return destinationEndpointDataBaseName_;
 }
 
-void ConfigureMigrationJobRequest::setMigrationJobName(const std::string& migrationJobName)
-{
-	migrationJobName_ = migrationJobName;
-	setParameter("MigrationJobName", migrationJobName);
+void ConfigureMigrationJobRequest::setDestinationEndpointDataBaseName(const std::string &destinationEndpointDataBaseName) {
+  destinationEndpointDataBaseName_ = destinationEndpointDataBaseName;
+  setParameter(std::string("DestinationEndpoint.DataBaseName"), destinationEndpointDataBaseName);
 }
 
-std::string ConfigureMigrationJobRequest::getDestinationEndpointInstanceType()const
-{
-	return destinationEndpointInstanceType_;
+std::string ConfigureMigrationJobRequest::getMigrationReserved() const {
+  return migrationReserved_;
 }
 
-void ConfigureMigrationJobRequest::setDestinationEndpointInstanceType(const std::string& destinationEndpointInstanceType)
-{
-	destinationEndpointInstanceType_ = destinationEndpointInstanceType;
-	setParameter("DestinationEndpointInstanceType", destinationEndpointInstanceType);
+void ConfigureMigrationJobRequest::setMigrationReserved(const std::string &migrationReserved) {
+  migrationReserved_ = migrationReserved;
+  setParameter(std::string("MigrationReserved"), migrationReserved);
 }
 

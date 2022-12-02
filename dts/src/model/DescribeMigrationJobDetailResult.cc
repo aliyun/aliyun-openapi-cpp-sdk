@@ -43,20 +43,20 @@ void DescribeMigrationJobDetailResult::parse(const std::string &payload)
 	for (auto valueDataInitializationDetailListDataInitializationDetail : allDataInitializationDetailListNode)
 	{
 		DataInitializationDetail dataInitializationDetailListObject;
-		if(!valueDataInitializationDetailListDataInitializationDetail["DestinationOwnerDBName"].isNull())
-			dataInitializationDetailListObject.destinationOwnerDBName = valueDataInitializationDetailListDataInitializationDetail["DestinationOwnerDBName"].asString();
-		if(!valueDataInitializationDetailListDataInitializationDetail["ErrorMessage"].isNull())
-			dataInitializationDetailListObject.errorMessage = valueDataInitializationDetailListDataInitializationDetail["ErrorMessage"].asString();
-		if(!valueDataInitializationDetailListDataInitializationDetail["FinishRowNum"].isNull())
-			dataInitializationDetailListObject.finishRowNum = valueDataInitializationDetailListDataInitializationDetail["FinishRowNum"].asString();
-		if(!valueDataInitializationDetailListDataInitializationDetail["MigrationTime"].isNull())
-			dataInitializationDetailListObject.migrationTime = valueDataInitializationDetailListDataInitializationDetail["MigrationTime"].asString();
 		if(!valueDataInitializationDetailListDataInitializationDetail["SourceOwnerDBName"].isNull())
 			dataInitializationDetailListObject.sourceOwnerDBName = valueDataInitializationDetailListDataInitializationDetail["SourceOwnerDBName"].asString();
 		if(!valueDataInitializationDetailListDataInitializationDetail["Status"].isNull())
 			dataInitializationDetailListObject.status = valueDataInitializationDetailListDataInitializationDetail["Status"].asString();
 		if(!valueDataInitializationDetailListDataInitializationDetail["TableName"].isNull())
 			dataInitializationDetailListObject.tableName = valueDataInitializationDetailListDataInitializationDetail["TableName"].asString();
+		if(!valueDataInitializationDetailListDataInitializationDetail["ErrorMessage"].isNull())
+			dataInitializationDetailListObject.errorMessage = valueDataInitializationDetailListDataInitializationDetail["ErrorMessage"].asString();
+		if(!valueDataInitializationDetailListDataInitializationDetail["FinishRowNum"].isNull())
+			dataInitializationDetailListObject.finishRowNum = valueDataInitializationDetailListDataInitializationDetail["FinishRowNum"].asString();
+		if(!valueDataInitializationDetailListDataInitializationDetail["MigrationTime"].isNull())
+			dataInitializationDetailListObject.migrationTime = valueDataInitializationDetailListDataInitializationDetail["MigrationTime"].asString();
+		if(!valueDataInitializationDetailListDataInitializationDetail["DestinationOwnerDBName"].isNull())
+			dataInitializationDetailListObject.destinationOwnerDBName = valueDataInitializationDetailListDataInitializationDetail["DestinationOwnerDBName"].asString();
 		if(!valueDataInitializationDetailListDataInitializationDetail["TotalRowNum"].isNull())
 			dataInitializationDetailListObject.totalRowNum = valueDataInitializationDetailListDataInitializationDetail["TotalRowNum"].asString();
 		dataInitializationDetailList_.push_back(dataInitializationDetailListObject);
@@ -65,70 +65,70 @@ void DescribeMigrationJobDetailResult::parse(const std::string &payload)
 	for (auto valueDataSynchronizationDetailListDataSynchronizationDetail : allDataSynchronizationDetailListNode)
 	{
 		DataSynchronizationDetail dataSynchronizationDetailListObject;
-		if(!valueDataSynchronizationDetailListDataSynchronizationDetail["DestinationOwnerDBName"].isNull())
-			dataSynchronizationDetailListObject.destinationOwnerDBName = valueDataSynchronizationDetailListDataSynchronizationDetail["DestinationOwnerDBName"].asString();
-		if(!valueDataSynchronizationDetailListDataSynchronizationDetail["ErrorMessage"].isNull())
-			dataSynchronizationDetailListObject.errorMessage = valueDataSynchronizationDetailListDataSynchronizationDetail["ErrorMessage"].asString();
-		if(!valueDataSynchronizationDetailListDataSynchronizationDetail["SourceOwnerDBName"].isNull())
-			dataSynchronizationDetailListObject.sourceOwnerDBName = valueDataSynchronizationDetailListDataSynchronizationDetail["SourceOwnerDBName"].asString();
 		if(!valueDataSynchronizationDetailListDataSynchronizationDetail["Status"].isNull())
 			dataSynchronizationDetailListObject.status = valueDataSynchronizationDetailListDataSynchronizationDetail["Status"].asString();
+		if(!valueDataSynchronizationDetailListDataSynchronizationDetail["SourceOwnerDBName"].isNull())
+			dataSynchronizationDetailListObject.sourceOwnerDBName = valueDataSynchronizationDetailListDataSynchronizationDetail["SourceOwnerDBName"].asString();
 		if(!valueDataSynchronizationDetailListDataSynchronizationDetail["TableName"].isNull())
 			dataSynchronizationDetailListObject.tableName = valueDataSynchronizationDetailListDataSynchronizationDetail["TableName"].asString();
+		if(!valueDataSynchronizationDetailListDataSynchronizationDetail["ErrorMessage"].isNull())
+			dataSynchronizationDetailListObject.errorMessage = valueDataSynchronizationDetailListDataSynchronizationDetail["ErrorMessage"].asString();
+		if(!valueDataSynchronizationDetailListDataSynchronizationDetail["DestinationOwnerDBName"].isNull())
+			dataSynchronizationDetailListObject.destinationOwnerDBName = valueDataSynchronizationDetailListDataSynchronizationDetail["DestinationOwnerDBName"].asString();
 		dataSynchronizationDetailList_.push_back(dataSynchronizationDetailListObject);
 	}
 	auto allStructureInitializationDetailListNode = value["StructureInitializationDetailList"]["StructureInitializationDetail"];
 	for (auto valueStructureInitializationDetailListStructureInitializationDetail : allStructureInitializationDetailListNode)
 	{
 		StructureInitializationDetail structureInitializationDetailListObject;
-		if(!valueStructureInitializationDetailListStructureInitializationDetail["DestinationOwnerDBName"].isNull())
-			structureInitializationDetailListObject.destinationOwnerDBName = valueStructureInitializationDetailListStructureInitializationDetail["DestinationOwnerDBName"].asString();
-		if(!valueStructureInitializationDetailListStructureInitializationDetail["ErrorMessage"].isNull())
-			structureInitializationDetailListObject.errorMessage = valueStructureInitializationDetailListStructureInitializationDetail["ErrorMessage"].asString();
-		if(!valueStructureInitializationDetailListStructureInitializationDetail["ObjectDefinition"].isNull())
-			structureInitializationDetailListObject.objectDefinition = valueStructureInitializationDetailListStructureInitializationDetail["ObjectDefinition"].asString();
-		if(!valueStructureInitializationDetailListStructureInitializationDetail["ObjectName"].isNull())
-			structureInitializationDetailListObject.objectName = valueStructureInitializationDetailListStructureInitializationDetail["ObjectName"].asString();
-		if(!valueStructureInitializationDetailListStructureInitializationDetail["ObjectType"].isNull())
-			structureInitializationDetailListObject.objectType = valueStructureInitializationDetailListStructureInitializationDetail["ObjectType"].asString();
-		if(!valueStructureInitializationDetailListStructureInitializationDetail["SourceOwnerDBName"].isNull())
-			structureInitializationDetailListObject.sourceOwnerDBName = valueStructureInitializationDetailListStructureInitializationDetail["SourceOwnerDBName"].asString();
 		if(!valueStructureInitializationDetailListStructureInitializationDetail["Status"].isNull())
 			structureInitializationDetailListObject.status = valueStructureInitializationDetailListStructureInitializationDetail["Status"].asString();
+		if(!valueStructureInitializationDetailListStructureInitializationDetail["SourceOwnerDBName"].isNull())
+			structureInitializationDetailListObject.sourceOwnerDBName = valueStructureInitializationDetailListStructureInitializationDetail["SourceOwnerDBName"].asString();
+		if(!valueStructureInitializationDetailListStructureInitializationDetail["ObjectDefinition"].isNull())
+			structureInitializationDetailListObject.objectDefinition = valueStructureInitializationDetailListStructureInitializationDetail["ObjectDefinition"].asString();
+		if(!valueStructureInitializationDetailListStructureInitializationDetail["ObjectType"].isNull())
+			structureInitializationDetailListObject.objectType = valueStructureInitializationDetailListStructureInitializationDetail["ObjectType"].asString();
+		if(!valueStructureInitializationDetailListStructureInitializationDetail["ErrorMessage"].isNull())
+			structureInitializationDetailListObject.errorMessage = valueStructureInitializationDetailListStructureInitializationDetail["ErrorMessage"].asString();
+		if(!valueStructureInitializationDetailListStructureInitializationDetail["DestinationOwnerDBName"].isNull())
+			structureInitializationDetailListObject.destinationOwnerDBName = valueStructureInitializationDetailListStructureInitializationDetail["DestinationOwnerDBName"].asString();
+		if(!valueStructureInitializationDetailListStructureInitializationDetail["ObjectName"].isNull())
+			structureInitializationDetailListObject.objectName = valueStructureInitializationDetailListStructureInitializationDetail["ObjectName"].asString();
 		auto allConstraintListNode = valueStructureInitializationDetailListStructureInitializationDetail["ConstraintList"]["StructureInitializationDetail"];
 		for (auto valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail : allConstraintListNode)
 		{
 			StructureInitializationDetail::StructureInitializationDetail1 constraintListObject;
-			if(!valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["DestinationOwnerDBName"].isNull())
-				constraintListObject.destinationOwnerDBName = valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["DestinationOwnerDBName"].asString();
-			if(!valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ErrorMessage"].isNull())
-				constraintListObject.errorMessage = valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ErrorMessage"].asString();
-			if(!valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ObjectDefinition"].isNull())
-				constraintListObject.objectDefinition = valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ObjectDefinition"].asString();
-			if(!valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ObjectName"].isNull())
-				constraintListObject.objectName = valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ObjectName"].asString();
-			if(!valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ObjectType"].isNull())
-				constraintListObject.objectType = valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ObjectType"].asString();
-			if(!valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["SourceOwnerDBName"].isNull())
-				constraintListObject.sourceOwnerDBName = valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["SourceOwnerDBName"].asString();
 			if(!valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["Status"].isNull())
 				constraintListObject.status = valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["Status"].asString();
+			if(!valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["SourceOwnerDBName"].isNull())
+				constraintListObject.sourceOwnerDBName = valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["SourceOwnerDBName"].asString();
+			if(!valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ObjectDefinition"].isNull())
+				constraintListObject.objectDefinition = valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ObjectDefinition"].asString();
+			if(!valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ObjectType"].isNull())
+				constraintListObject.objectType = valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ObjectType"].asString();
+			if(!valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ErrorMessage"].isNull())
+				constraintListObject.errorMessage = valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ErrorMessage"].asString();
+			if(!valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["DestinationOwnerDBName"].isNull())
+				constraintListObject.destinationOwnerDBName = valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["DestinationOwnerDBName"].asString();
+			if(!valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ObjectName"].isNull())
+				constraintListObject.objectName = valueStructureInitializationDetailListStructureInitializationDetailConstraintListStructureInitializationDetail["ObjectName"].asString();
 			structureInitializationDetailListObject.constraintList.push_back(constraintListObject);
 		}
 		structureInitializationDetailList_.push_back(structureInitializationDetailListObject);
 	}
 	if(!value["ErrCode"].isNull())
 		errCode_ = value["ErrCode"].asString();
-	if(!value["ErrMessage"].isNull())
-		errMessage_ = value["ErrMessage"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageRecordCount"].isNull())
 		pageRecordCount_ = std::stoi(value["PageRecordCount"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
 	if(!value["TotalRecordCount"].isNull())
 		totalRecordCount_ = std::stol(value["TotalRecordCount"].asString());
+	if(!value["ErrMessage"].isNull())
+		errMessage_ = value["ErrMessage"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 
 }
 

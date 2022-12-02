@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,118 @@
 
 using AlibabaCloud::Dts::Model::ModifyDtsJobRequest;
 
-ModifyDtsJobRequest::ModifyDtsJobRequest() :
-	RpcServiceRequest("dts", "2020-01-01", "ModifyDtsJob")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyDtsJobRequest::ModifyDtsJobRequest()
+    : RpcServiceRequest("dts", "2020-01-01", "ModifyDtsJob") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyDtsJobRequest::~ModifyDtsJobRequest()
-{}
+ModifyDtsJobRequest::~ModifyDtsJobRequest() {}
 
-std::string ModifyDtsJobRequest::getDbList()const
-{
-	return dbList_;
+std::string ModifyDtsJobRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void ModifyDtsJobRequest::setDbList(const std::string& dbList)
-{
-	dbList_ = dbList;
-	setBodyParameter("DbList", dbList);
+void ModifyDtsJobRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string ModifyDtsJobRequest::getClientToken()const
-{
-	return clientToken_;
+std::string ModifyDtsJobRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ModifyDtsJobRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void ModifyDtsJobRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyDtsJobRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string ModifyDtsJobRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifyDtsJobRequest::setOwnerId(const std::string& ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", ownerId);
+void ModifyDtsJobRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ModifyDtsJobRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ModifyDtsJobRequest::getEtlOperatorColumnReference() const {
+  return etlOperatorColumnReference_;
 }
 
-void ModifyDtsJobRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ModifyDtsJobRequest::setEtlOperatorColumnReference(const std::string &etlOperatorColumnReference) {
+  etlOperatorColumnReference_ = etlOperatorColumnReference;
+  setBodyParameter(std::string("EtlOperatorColumnReference"), etlOperatorColumnReference);
 }
 
-std::string ModifyDtsJobRequest::getRegionId()const
-{
-	return regionId_;
+std::string ModifyDtsJobRequest::getDbList() const {
+  return dbList_;
 }
 
-void ModifyDtsJobRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ModifyDtsJobRequest::setDbList(const std::string &dbList) {
+  dbList_ = dbList;
+  setBodyParameter(std::string("DbList"), dbList);
 }
 
-std::string ModifyDtsJobRequest::getEtlOperatorColumnReference()const
-{
-	return etlOperatorColumnReference_;
+std::string ModifyDtsJobRequest::getFileOssUrl() const {
+  return fileOssUrl_;
 }
 
-void ModifyDtsJobRequest::setEtlOperatorColumnReference(const std::string& etlOperatorColumnReference)
-{
-	etlOperatorColumnReference_ = etlOperatorColumnReference;
-	setBodyParameter("EtlOperatorColumnReference", etlOperatorColumnReference);
+void ModifyDtsJobRequest::setFileOssUrl(const std::string &fileOssUrl) {
+  fileOssUrl_ = fileOssUrl;
+  setParameter(std::string("FileOssUrl"), fileOssUrl);
 }
 
-std::string ModifyDtsJobRequest::getDtsInstanceId()const
-{
-	return dtsInstanceId_;
+std::string ModifyDtsJobRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifyDtsJobRequest::setDtsInstanceId(const std::string& dtsInstanceId)
-{
-	dtsInstanceId_ = dtsInstanceId;
-	setParameter("DtsInstanceId", dtsInstanceId);
+void ModifyDtsJobRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
-std::string ModifyDtsJobRequest::getSynchronizationDirection()const
-{
-	return synchronizationDirection_;
+std::string ModifyDtsJobRequest::getModifyTypeEnum() const {
+  return modifyTypeEnum_;
 }
 
-void ModifyDtsJobRequest::setSynchronizationDirection(const std::string& synchronizationDirection)
-{
-	synchronizationDirection_ = synchronizationDirection;
-	setParameter("SynchronizationDirection", synchronizationDirection);
+void ModifyDtsJobRequest::setModifyTypeEnum(const std::string &modifyTypeEnum) {
+  modifyTypeEnum_ = modifyTypeEnum;
+  setBodyParameter(std::string("ModifyTypeEnum"), modifyTypeEnum);
+}
+
+std::string ModifyDtsJobRequest::getReserved() const {
+  return reserved_;
+}
+
+void ModifyDtsJobRequest::setReserved(const std::string &reserved) {
+  reserved_ = reserved;
+  setBodyParameter(std::string("Reserved"), reserved);
+}
+
+std::string ModifyDtsJobRequest::getFilterTableName() const {
+  return filterTableName_;
+}
+
+void ModifyDtsJobRequest::setFilterTableName(const std::string &filterTableName) {
+  filterTableName_ = filterTableName;
+  setBodyParameter(std::string("FilterTableName"), filterTableName);
+}
+
+std::string ModifyDtsJobRequest::getDtsInstanceId() const {
+  return dtsInstanceId_;
+}
+
+void ModifyDtsJobRequest::setDtsInstanceId(const std::string &dtsInstanceId) {
+  dtsInstanceId_ = dtsInstanceId;
+  setParameter(std::string("DtsInstanceId"), dtsInstanceId);
+}
+
+std::string ModifyDtsJobRequest::getSynchronizationDirection() const {
+  return synchronizationDirection_;
+}
+
+void ModifyDtsJobRequest::setSynchronizationDirection(const std::string &synchronizationDirection) {
+  synchronizationDirection_ = synchronizationDirection;
+  setParameter(std::string("SynchronizationDirection"), synchronizationDirection);
 }
 
