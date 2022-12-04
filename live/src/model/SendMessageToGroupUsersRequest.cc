@@ -25,3 +25,59 @@ SendMessageToGroupUsersRequest::SendMessageToGroupUsersRequest()
 
 SendMessageToGroupUsersRequest::~SendMessageToGroupUsersRequest() {}
 
+std::string SendMessageToGroupUsersRequest::getData() const {
+  return data_;
+}
+
+void SendMessageToGroupUsersRequest::setData(const std::string &data) {
+  data_ = data;
+  setBodyParameter(std::string("Data"), data);
+}
+
+int SendMessageToGroupUsersRequest::getType() const {
+  return type_;
+}
+
+void SendMessageToGroupUsersRequest::setType(int type) {
+  type_ = type;
+  setBodyParameter(std::string("Type"), std::to_string(type));
+}
+
+std::string SendMessageToGroupUsersRequest::getOperatorUserId() const {
+  return operatorUserId_;
+}
+
+void SendMessageToGroupUsersRequest::setOperatorUserId(const std::string &operatorUserId) {
+  operatorUserId_ = operatorUserId;
+  setBodyParameter(std::string("OperatorUserId"), operatorUserId);
+}
+
+std::vector<SendMessageToGroupUsersRequest::std::string> SendMessageToGroupUsersRequest::getReceiverIdList() const {
+  return receiverIdList_;
+}
+
+void SendMessageToGroupUsersRequest::setReceiverIdList(const std::vector<SendMessageToGroupUsersRequest::std::string> &receiverIdList) {
+  receiverIdList_ = receiverIdList;
+  for(int dep1 = 0; dep1 != receiverIdList.size(); dep1++) {
+    setBodyParameter(std::string("ReceiverIdList") + "." + std::to_string(dep1 + 1), receiverIdList[dep1]);
+  }
+}
+
+std::string SendMessageToGroupUsersRequest::getGroupId() const {
+  return groupId_;
+}
+
+void SendMessageToGroupUsersRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setBodyParameter(std::string("GroupId"), groupId);
+}
+
+std::string SendMessageToGroupUsersRequest::getAppId() const {
+  return appId_;
+}
+
+void SendMessageToGroupUsersRequest::setAppId(const std::string &appId) {
+  appId_ = appId;
+  setBodyParameter(std::string("AppId"), appId);
+}
+

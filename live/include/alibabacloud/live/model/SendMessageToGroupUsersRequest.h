@@ -30,8 +30,26 @@ class ALIBABACLOUD_LIVE_EXPORT SendMessageToGroupUsersRequest : public RpcServic
 public:
 	SendMessageToGroupUsersRequest();
 	~SendMessageToGroupUsersRequest();
+	std::string getData() const;
+	void setData(const std::string &data);
+	int getType() const;
+	void setType(int type);
+	std::string getOperatorUserId() const;
+	void setOperatorUserId(const std::string &operatorUserId);
+	std::vector<std::string> getReceiverIdList() const;
+	void setReceiverIdList(const std::vector<std::string> &receiverIdList);
+	std::string getGroupId() const;
+	void setGroupId(const std::string &groupId);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
 
 private:
+	std::string data_;
+	int type_;
+	std::string operatorUserId_;
+	std::vector<std::string> receiverIdList_;
+	std::string groupId_;
+	std::string appId_;
 };
 } // namespace Model
 } // namespace Live
