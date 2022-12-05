@@ -41,7 +41,7 @@ void UpdateSecretResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
 	if(!dataNode["SecretId"].isNull())
-		data_.secretId = dataNode["SecretId"].asString();
+		data_.secretId = std::stol(dataNode["SecretId"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["TraceId"].isNull())
