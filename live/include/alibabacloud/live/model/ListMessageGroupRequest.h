@@ -38,12 +38,15 @@ public:
 	void setUserId(const std::string &userId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
 
 private:
 	int sortType_;
 	int pageNum_;
 	std::string userId_;
 	int pageSize_;
+	std::string appId_;
 };
 } // namespace Model
 } // namespace Live

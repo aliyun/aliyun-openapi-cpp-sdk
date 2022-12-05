@@ -50,6 +50,8 @@ void ListMessageGroupResult::parse(const std::string &payload)
 		Result::GroupListItem groupListItemObject;
 		if(!resultNodeGroupListgroupListItem["GroupId"].isNull())
 			groupListItemObject.groupId = resultNodeGroupListgroupListItem["GroupId"].asString();
+		if(!resultNodeGroupListgroupListItem["AppId"].isNull())
+			groupListItemObject.appId = resultNodeGroupListgroupListItem["AppId"].asString();
 		if(!resultNodeGroupListgroupListItem["CreateTime"].isNull())
 			groupListItemObject.createTime = std::stol(resultNodeGroupListgroupListItem["CreateTime"].asString());
 		if(!resultNodeGroupListgroupListItem["Status"].isNull())

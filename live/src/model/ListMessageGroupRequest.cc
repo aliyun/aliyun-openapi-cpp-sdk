@@ -61,3 +61,12 @@ void ListMessageGroupRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::string ListMessageGroupRequest::getAppId() const {
+  return appId_;
+}
+
+void ListMessageGroupRequest::setAppId(const std::string &appId) {
+  appId_ = appId;
+  setBodyParameter(std::string("AppId"), appId);
+}
+

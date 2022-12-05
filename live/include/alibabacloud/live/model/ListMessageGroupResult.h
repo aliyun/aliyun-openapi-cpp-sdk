@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						int status;
 						std::string extension;
+						std::string appId;
 						std::string creatorId;
 						long createTime;
 						std::string groupId;
