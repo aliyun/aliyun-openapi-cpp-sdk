@@ -86,7 +86,7 @@ void QueryRequestLogsResult::parse(const std::string &payload)
 		if(!valueRequestLogsRequestLog["StatusCode"].isNull())
 			requestLogsObject.statusCode = valueRequestLogsRequestLog["StatusCode"].asString();
 		if(!valueRequestLogsRequestLog["ClientIp"].isNull())
-			requestLogsObject.clientIp = std::stoi(valueRequestLogsRequestLog["ClientIp"].asString());
+			requestLogsObject.clientIp = valueRequestLogsRequestLog["ClientIp"].asString();
 		if(!valueRequestLogsRequestLog["ServiceLatency"].isNull())
 			requestLogsObject.serviceLatency = valueRequestLogsRequestLog["ServiceLatency"].asString();
 		if(!valueRequestLogsRequestLog["RequestTime"].isNull())

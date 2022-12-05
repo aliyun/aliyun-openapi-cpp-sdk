@@ -43,7 +43,7 @@ namespace AlibabaCloud
 					std::string requestProtocol;
 					std::string customTraceId;
 					std::string statusCode;
-					int clientIp;
+					std::string clientIp;
 					std::string requestQueryString;
 					std::string responseSize;
 					std::string serviceLatency;
