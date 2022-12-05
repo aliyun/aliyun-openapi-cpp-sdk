@@ -51,42 +51,6 @@ FacebodyClient::FacebodyClient(const std::string & accessKeyId, const std::strin
 FacebodyClient::~FacebodyClient()
 {}
 
-FacebodyClient::AddBodyTraceOutcome FacebodyClient::addBodyTrace(const AddBodyTraceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddBodyTraceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddBodyTraceOutcome(AddBodyTraceResult(outcome.result()));
-	else
-		return AddBodyTraceOutcome(outcome.error());
-}
-
-void FacebodyClient::addBodyTraceAsync(const AddBodyTraceRequest& request, const AddBodyTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addBodyTrace(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FacebodyClient::AddBodyTraceOutcomeCallable FacebodyClient::addBodyTraceCallable(const AddBodyTraceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddBodyTraceOutcome()>>(
-			[this, request]()
-			{
-			return this->addBodyTrace(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 FacebodyClient::AddFaceOutcome FacebodyClient::addFace(const AddFaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -411,78 +375,6 @@ FacebodyClient::CountCrowdOutcomeCallable FacebodyClient::countCrowdCallable(con
 	return task->get_future();
 }
 
-FacebodyClient::CreateBodyDbOutcome FacebodyClient::createBodyDb(const CreateBodyDbRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateBodyDbOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateBodyDbOutcome(CreateBodyDbResult(outcome.result()));
-	else
-		return CreateBodyDbOutcome(outcome.error());
-}
-
-void FacebodyClient::createBodyDbAsync(const CreateBodyDbRequest& request, const CreateBodyDbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createBodyDb(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FacebodyClient::CreateBodyDbOutcomeCallable FacebodyClient::createBodyDbCallable(const CreateBodyDbRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateBodyDbOutcome()>>(
-			[this, request]()
-			{
-			return this->createBodyDb(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-FacebodyClient::CreateBodyPersonOutcome FacebodyClient::createBodyPerson(const CreateBodyPersonRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateBodyPersonOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateBodyPersonOutcome(CreateBodyPersonResult(outcome.result()));
-	else
-		return CreateBodyPersonOutcome(outcome.error());
-}
-
-void FacebodyClient::createBodyPersonAsync(const CreateBodyPersonRequest& request, const CreateBodyPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createBodyPerson(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FacebodyClient::CreateBodyPersonOutcomeCallable FacebodyClient::createBodyPersonCallable(const CreateBodyPersonRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateBodyPersonOutcome()>>(
-			[this, request]()
-			{
-			return this->createBodyPerson(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 FacebodyClient::CreateFaceDbOutcome FacebodyClient::createFaceDb(const CreateFaceDbRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,78 +405,6 @@ FacebodyClient::CreateFaceDbOutcomeCallable FacebodyClient::createFaceDbCallable
 			[this, request]()
 			{
 			return this->createFaceDb(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-FacebodyClient::DeleteBodyDbOutcome FacebodyClient::deleteBodyDb(const DeleteBodyDbRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteBodyDbOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteBodyDbOutcome(DeleteBodyDbResult(outcome.result()));
-	else
-		return DeleteBodyDbOutcome(outcome.error());
-}
-
-void FacebodyClient::deleteBodyDbAsync(const DeleteBodyDbRequest& request, const DeleteBodyDbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteBodyDb(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FacebodyClient::DeleteBodyDbOutcomeCallable FacebodyClient::deleteBodyDbCallable(const DeleteBodyDbRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteBodyDbOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteBodyDb(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-FacebodyClient::DeleteBodyPersonOutcome FacebodyClient::deleteBodyPerson(const DeleteBodyPersonRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteBodyPersonOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteBodyPersonOutcome(DeleteBodyPersonResult(outcome.result()));
-	else
-		return DeleteBodyPersonOutcome(outcome.error());
-}
-
-void FacebodyClient::deleteBodyPersonAsync(const DeleteBodyPersonRequest& request, const DeleteBodyPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteBodyPerson(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FacebodyClient::DeleteBodyPersonOutcomeCallable FacebodyClient::deleteBodyPersonCallable(const DeleteBodyPersonRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteBodyPersonOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteBodyPerson(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1419,42 +1239,6 @@ FacebodyClient::GenerateHumanSketchStyleOutcomeCallable FacebodyClient::generate
 	return task->get_future();
 }
 
-FacebodyClient::GetBodyPersonOutcome FacebodyClient::getBodyPerson(const GetBodyPersonRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetBodyPersonOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetBodyPersonOutcome(GetBodyPersonResult(outcome.result()));
-	else
-		return GetBodyPersonOutcome(outcome.error());
-}
-
-void FacebodyClient::getBodyPersonAsync(const GetBodyPersonRequest& request, const GetBodyPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getBodyPerson(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FacebodyClient::GetBodyPersonOutcomeCallable FacebodyClient::getBodyPersonCallable(const GetBodyPersonRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetBodyPersonOutcome()>>(
-			[this, request]()
-			{
-			return this->getBodyPerson(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 FacebodyClient::GetFaceEntityOutcome FacebodyClient::getFaceEntity(const GetFaceEntityRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1593,78 +1377,6 @@ FacebodyClient::LiquifyFaceOutcomeCallable FacebodyClient::liquifyFaceCallable(c
 			[this, request]()
 			{
 			return this->liquifyFace(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-FacebodyClient::ListBodyDbsOutcome FacebodyClient::listBodyDbs(const ListBodyDbsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListBodyDbsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListBodyDbsOutcome(ListBodyDbsResult(outcome.result()));
-	else
-		return ListBodyDbsOutcome(outcome.error());
-}
-
-void FacebodyClient::listBodyDbsAsync(const ListBodyDbsRequest& request, const ListBodyDbsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listBodyDbs(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FacebodyClient::ListBodyDbsOutcomeCallable FacebodyClient::listBodyDbsCallable(const ListBodyDbsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListBodyDbsOutcome()>>(
-			[this, request]()
-			{
-			return this->listBodyDbs(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-FacebodyClient::ListBodyPersonOutcome FacebodyClient::listBodyPerson(const ListBodyPersonRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListBodyPersonOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListBodyPersonOutcome(ListBodyPersonResult(outcome.result()));
-	else
-		return ListBodyPersonOutcome(outcome.error());
-}
-
-void FacebodyClient::listBodyPersonAsync(const ListBodyPersonRequest& request, const ListBodyPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listBodyPerson(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FacebodyClient::ListBodyPersonOutcomeCallable FacebodyClient::listBodyPersonCallable(const ListBodyPersonRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListBodyPersonOutcome()>>(
-			[this, request]()
-			{
-			return this->listBodyPerson(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2133,42 +1845,6 @@ FacebodyClient::RetouchSkinOutcomeCallable FacebodyClient::retouchSkinCallable(c
 			[this, request]()
 			{
 			return this->retouchSkin(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-FacebodyClient::SearchBodyTraceOutcome FacebodyClient::searchBodyTrace(const SearchBodyTraceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SearchBodyTraceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SearchBodyTraceOutcome(SearchBodyTraceResult(outcome.result()));
-	else
-		return SearchBodyTraceOutcome(outcome.error());
-}
-
-void FacebodyClient::searchBodyTraceAsync(const SearchBodyTraceRequest& request, const SearchBodyTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, searchBodyTrace(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-FacebodyClient::SearchBodyTraceOutcomeCallable FacebodyClient::searchBodyTraceCallable(const SearchBodyTraceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SearchBodyTraceOutcome()>>(
-			[this, request]()
-			{
-			return this->searchBodyTrace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

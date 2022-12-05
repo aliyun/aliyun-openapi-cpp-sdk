@@ -22,8 +22,6 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "FacebodyExport.h"
-#include "model/AddBodyTraceRequest.h"
-#include "model/AddBodyTraceResult.h"
 #include "model/AddFaceRequest.h"
 #include "model/AddFaceResult.h"
 #include "model/AddFaceEntityRequest.h"
@@ -42,16 +40,8 @@
 #include "model/CompareFaceResult.h"
 #include "model/CountCrowdRequest.h"
 #include "model/CountCrowdResult.h"
-#include "model/CreateBodyDbRequest.h"
-#include "model/CreateBodyDbResult.h"
-#include "model/CreateBodyPersonRequest.h"
-#include "model/CreateBodyPersonResult.h"
 #include "model/CreateFaceDbRequest.h"
 #include "model/CreateFaceDbResult.h"
-#include "model/DeleteBodyDbRequest.h"
-#include "model/DeleteBodyDbResult.h"
-#include "model/DeleteBodyPersonRequest.h"
-#include "model/DeleteBodyPersonResult.h"
 #include "model/DeleteFaceRequest.h"
 #include "model/DeleteFaceResult.h"
 #include "model/DeleteFaceDbRequest.h"
@@ -98,8 +88,6 @@
 #include "model/GenerateHumanAnimeStyleResult.h"
 #include "model/GenerateHumanSketchStyleRequest.h"
 #include "model/GenerateHumanSketchStyleResult.h"
-#include "model/GetBodyPersonRequest.h"
-#include "model/GetBodyPersonResult.h"
 #include "model/GetFaceEntityRequest.h"
 #include "model/GetFaceEntityResult.h"
 #include "model/GetRealPersonVerificationResultRequest.h"
@@ -108,10 +96,6 @@
 #include "model/HandPostureResult.h"
 #include "model/LiquifyFaceRequest.h"
 #include "model/LiquifyFaceResult.h"
-#include "model/ListBodyDbsRequest.h"
-#include "model/ListBodyDbsResult.h"
-#include "model/ListBodyPersonRequest.h"
-#include "model/ListBodyPersonResult.h"
 #include "model/ListFaceDbsRequest.h"
 #include "model/ListFaceDbsResult.h"
 #include "model/ListFaceEntitiesRequest.h"
@@ -138,8 +122,6 @@
 #include "model/RetouchBodyResult.h"
 #include "model/RetouchSkinRequest.h"
 #include "model/RetouchSkinResult.h"
-#include "model/SearchBodyTraceRequest.h"
-#include "model/SearchBodyTraceResult.h"
 #include "model/SearchFaceRequest.h"
 #include "model/SearchFaceResult.h"
 #include "model/SwapFacialFeaturesRequest.h"
@@ -157,9 +139,6 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_FACEBODY_EXPORT FacebodyClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::AddBodyTraceResult> AddBodyTraceOutcome;
-			typedef std::future<AddBodyTraceOutcome> AddBodyTraceOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::AddBodyTraceRequest&, const AddBodyTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddBodyTraceAsyncHandler;
 			typedef Outcome<Error, Model::AddFaceResult> AddFaceOutcome;
 			typedef std::future<AddFaceOutcome> AddFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::AddFaceRequest&, const AddFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddFaceAsyncHandler;
@@ -187,21 +166,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CountCrowdResult> CountCrowdOutcome;
 			typedef std::future<CountCrowdOutcome> CountCrowdOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::CountCrowdRequest&, const CountCrowdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CountCrowdAsyncHandler;
-			typedef Outcome<Error, Model::CreateBodyDbResult> CreateBodyDbOutcome;
-			typedef std::future<CreateBodyDbOutcome> CreateBodyDbOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::CreateBodyDbRequest&, const CreateBodyDbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBodyDbAsyncHandler;
-			typedef Outcome<Error, Model::CreateBodyPersonResult> CreateBodyPersonOutcome;
-			typedef std::future<CreateBodyPersonOutcome> CreateBodyPersonOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::CreateBodyPersonRequest&, const CreateBodyPersonOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBodyPersonAsyncHandler;
 			typedef Outcome<Error, Model::CreateFaceDbResult> CreateFaceDbOutcome;
 			typedef std::future<CreateFaceDbOutcome> CreateFaceDbOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::CreateFaceDbRequest&, const CreateFaceDbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFaceDbAsyncHandler;
-			typedef Outcome<Error, Model::DeleteBodyDbResult> DeleteBodyDbOutcome;
-			typedef std::future<DeleteBodyDbOutcome> DeleteBodyDbOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::DeleteBodyDbRequest&, const DeleteBodyDbOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBodyDbAsyncHandler;
-			typedef Outcome<Error, Model::DeleteBodyPersonResult> DeleteBodyPersonOutcome;
-			typedef std::future<DeleteBodyPersonOutcome> DeleteBodyPersonOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::DeleteBodyPersonRequest&, const DeleteBodyPersonOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBodyPersonAsyncHandler;
 			typedef Outcome<Error, Model::DeleteFaceResult> DeleteFaceOutcome;
 			typedef std::future<DeleteFaceOutcome> DeleteFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DeleteFaceRequest&, const DeleteFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFaceAsyncHandler;
@@ -271,9 +238,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GenerateHumanSketchStyleResult> GenerateHumanSketchStyleOutcome;
 			typedef std::future<GenerateHumanSketchStyleOutcome> GenerateHumanSketchStyleOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::GenerateHumanSketchStyleRequest&, const GenerateHumanSketchStyleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateHumanSketchStyleAsyncHandler;
-			typedef Outcome<Error, Model::GetBodyPersonResult> GetBodyPersonOutcome;
-			typedef std::future<GetBodyPersonOutcome> GetBodyPersonOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::GetBodyPersonRequest&, const GetBodyPersonOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBodyPersonAsyncHandler;
 			typedef Outcome<Error, Model::GetFaceEntityResult> GetFaceEntityOutcome;
 			typedef std::future<GetFaceEntityOutcome> GetFaceEntityOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::GetFaceEntityRequest&, const GetFaceEntityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFaceEntityAsyncHandler;
@@ -286,12 +250,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::LiquifyFaceResult> LiquifyFaceOutcome;
 			typedef std::future<LiquifyFaceOutcome> LiquifyFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::LiquifyFaceRequest&, const LiquifyFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LiquifyFaceAsyncHandler;
-			typedef Outcome<Error, Model::ListBodyDbsResult> ListBodyDbsOutcome;
-			typedef std::future<ListBodyDbsOutcome> ListBodyDbsOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::ListBodyDbsRequest&, const ListBodyDbsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBodyDbsAsyncHandler;
-			typedef Outcome<Error, Model::ListBodyPersonResult> ListBodyPersonOutcome;
-			typedef std::future<ListBodyPersonOutcome> ListBodyPersonOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::ListBodyPersonRequest&, const ListBodyPersonOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBodyPersonAsyncHandler;
 			typedef Outcome<Error, Model::ListFaceDbsResult> ListFaceDbsOutcome;
 			typedef std::future<ListFaceDbsOutcome> ListFaceDbsOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::ListFaceDbsRequest&, const ListFaceDbsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFaceDbsAsyncHandler;
@@ -331,9 +289,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RetouchSkinResult> RetouchSkinOutcome;
 			typedef std::future<RetouchSkinOutcome> RetouchSkinOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::RetouchSkinRequest&, const RetouchSkinOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RetouchSkinAsyncHandler;
-			typedef Outcome<Error, Model::SearchBodyTraceResult> SearchBodyTraceOutcome;
-			typedef std::future<SearchBodyTraceOutcome> SearchBodyTraceOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::SearchBodyTraceRequest&, const SearchBodyTraceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchBodyTraceAsyncHandler;
 			typedef Outcome<Error, Model::SearchFaceResult> SearchFaceOutcome;
 			typedef std::future<SearchFaceOutcome> SearchFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::SearchFaceRequest&, const SearchFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchFaceAsyncHandler;
@@ -351,9 +306,6 @@ namespace AlibabaCloud
 			FacebodyClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			FacebodyClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~FacebodyClient();
-			AddBodyTraceOutcome addBodyTrace(const Model::AddBodyTraceRequest &request)const;
-			void addBodyTraceAsync(const Model::AddBodyTraceRequest& request, const AddBodyTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			AddBodyTraceOutcomeCallable addBodyTraceCallable(const Model::AddBodyTraceRequest& request) const;
 			AddFaceOutcome addFace(const Model::AddFaceRequest &request)const;
 			void addFaceAsync(const Model::AddFaceRequest& request, const AddFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddFaceOutcomeCallable addFaceCallable(const Model::AddFaceRequest& request) const;
@@ -381,21 +333,9 @@ namespace AlibabaCloud
 			CountCrowdOutcome countCrowd(const Model::CountCrowdRequest &request)const;
 			void countCrowdAsync(const Model::CountCrowdRequest& request, const CountCrowdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CountCrowdOutcomeCallable countCrowdCallable(const Model::CountCrowdRequest& request) const;
-			CreateBodyDbOutcome createBodyDb(const Model::CreateBodyDbRequest &request)const;
-			void createBodyDbAsync(const Model::CreateBodyDbRequest& request, const CreateBodyDbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateBodyDbOutcomeCallable createBodyDbCallable(const Model::CreateBodyDbRequest& request) const;
-			CreateBodyPersonOutcome createBodyPerson(const Model::CreateBodyPersonRequest &request)const;
-			void createBodyPersonAsync(const Model::CreateBodyPersonRequest& request, const CreateBodyPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateBodyPersonOutcomeCallable createBodyPersonCallable(const Model::CreateBodyPersonRequest& request) const;
 			CreateFaceDbOutcome createFaceDb(const Model::CreateFaceDbRequest &request)const;
 			void createFaceDbAsync(const Model::CreateFaceDbRequest& request, const CreateFaceDbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFaceDbOutcomeCallable createFaceDbCallable(const Model::CreateFaceDbRequest& request) const;
-			DeleteBodyDbOutcome deleteBodyDb(const Model::DeleteBodyDbRequest &request)const;
-			void deleteBodyDbAsync(const Model::DeleteBodyDbRequest& request, const DeleteBodyDbAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteBodyDbOutcomeCallable deleteBodyDbCallable(const Model::DeleteBodyDbRequest& request) const;
-			DeleteBodyPersonOutcome deleteBodyPerson(const Model::DeleteBodyPersonRequest &request)const;
-			void deleteBodyPersonAsync(const Model::DeleteBodyPersonRequest& request, const DeleteBodyPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteBodyPersonOutcomeCallable deleteBodyPersonCallable(const Model::DeleteBodyPersonRequest& request) const;
 			DeleteFaceOutcome deleteFace(const Model::DeleteFaceRequest &request)const;
 			void deleteFaceAsync(const Model::DeleteFaceRequest& request, const DeleteFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteFaceOutcomeCallable deleteFaceCallable(const Model::DeleteFaceRequest& request) const;
@@ -465,9 +405,6 @@ namespace AlibabaCloud
 			GenerateHumanSketchStyleOutcome generateHumanSketchStyle(const Model::GenerateHumanSketchStyleRequest &request)const;
 			void generateHumanSketchStyleAsync(const Model::GenerateHumanSketchStyleRequest& request, const GenerateHumanSketchStyleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateHumanSketchStyleOutcomeCallable generateHumanSketchStyleCallable(const Model::GenerateHumanSketchStyleRequest& request) const;
-			GetBodyPersonOutcome getBodyPerson(const Model::GetBodyPersonRequest &request)const;
-			void getBodyPersonAsync(const Model::GetBodyPersonRequest& request, const GetBodyPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetBodyPersonOutcomeCallable getBodyPersonCallable(const Model::GetBodyPersonRequest& request) const;
 			GetFaceEntityOutcome getFaceEntity(const Model::GetFaceEntityRequest &request)const;
 			void getFaceEntityAsync(const Model::GetFaceEntityRequest& request, const GetFaceEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetFaceEntityOutcomeCallable getFaceEntityCallable(const Model::GetFaceEntityRequest& request) const;
@@ -480,12 +417,6 @@ namespace AlibabaCloud
 			LiquifyFaceOutcome liquifyFace(const Model::LiquifyFaceRequest &request)const;
 			void liquifyFaceAsync(const Model::LiquifyFaceRequest& request, const LiquifyFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			LiquifyFaceOutcomeCallable liquifyFaceCallable(const Model::LiquifyFaceRequest& request) const;
-			ListBodyDbsOutcome listBodyDbs(const Model::ListBodyDbsRequest &request)const;
-			void listBodyDbsAsync(const Model::ListBodyDbsRequest& request, const ListBodyDbsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListBodyDbsOutcomeCallable listBodyDbsCallable(const Model::ListBodyDbsRequest& request) const;
-			ListBodyPersonOutcome listBodyPerson(const Model::ListBodyPersonRequest &request)const;
-			void listBodyPersonAsync(const Model::ListBodyPersonRequest& request, const ListBodyPersonAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListBodyPersonOutcomeCallable listBodyPersonCallable(const Model::ListBodyPersonRequest& request) const;
 			ListFaceDbsOutcome listFaceDbs(const Model::ListFaceDbsRequest &request)const;
 			void listFaceDbsAsync(const Model::ListFaceDbsRequest& request, const ListFaceDbsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListFaceDbsOutcomeCallable listFaceDbsCallable(const Model::ListFaceDbsRequest& request) const;
@@ -525,9 +456,6 @@ namespace AlibabaCloud
 			RetouchSkinOutcome retouchSkin(const Model::RetouchSkinRequest &request)const;
 			void retouchSkinAsync(const Model::RetouchSkinRequest& request, const RetouchSkinAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RetouchSkinOutcomeCallable retouchSkinCallable(const Model::RetouchSkinRequest& request) const;
-			SearchBodyTraceOutcome searchBodyTrace(const Model::SearchBodyTraceRequest &request)const;
-			void searchBodyTraceAsync(const Model::SearchBodyTraceRequest& request, const SearchBodyTraceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SearchBodyTraceOutcomeCallable searchBodyTraceCallable(const Model::SearchBodyTraceRequest& request) const;
 			SearchFaceOutcome searchFace(const Model::SearchFaceRequest &request)const;
 			void searchFaceAsync(const Model::SearchFaceRequest& request, const SearchFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchFaceOutcomeCallable searchFaceCallable(const Model::SearchFaceRequest& request) const;

@@ -21,8 +21,6 @@ set(facebody_public_header
 	include/alibabacloud/facebody/FacebodyExport.h )
 
 set(facebody_public_header_model 
-	include/alibabacloud/facebody/model/AddBodyTraceRequest.h
-	include/alibabacloud/facebody/model/AddBodyTraceResult.h
 	include/alibabacloud/facebody/model/AddFaceRequest.h
 	include/alibabacloud/facebody/model/AddFaceResult.h
 	include/alibabacloud/facebody/model/AddFaceEntityRequest.h
@@ -41,16 +39,8 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/CompareFaceResult.h
 	include/alibabacloud/facebody/model/CountCrowdRequest.h
 	include/alibabacloud/facebody/model/CountCrowdResult.h
-	include/alibabacloud/facebody/model/CreateBodyDbRequest.h
-	include/alibabacloud/facebody/model/CreateBodyDbResult.h
-	include/alibabacloud/facebody/model/CreateBodyPersonRequest.h
-	include/alibabacloud/facebody/model/CreateBodyPersonResult.h
 	include/alibabacloud/facebody/model/CreateFaceDbRequest.h
 	include/alibabacloud/facebody/model/CreateFaceDbResult.h
-	include/alibabacloud/facebody/model/DeleteBodyDbRequest.h
-	include/alibabacloud/facebody/model/DeleteBodyDbResult.h
-	include/alibabacloud/facebody/model/DeleteBodyPersonRequest.h
-	include/alibabacloud/facebody/model/DeleteBodyPersonResult.h
 	include/alibabacloud/facebody/model/DeleteFaceRequest.h
 	include/alibabacloud/facebody/model/DeleteFaceResult.h
 	include/alibabacloud/facebody/model/DeleteFaceDbRequest.h
@@ -97,8 +87,6 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/GenerateHumanAnimeStyleResult.h
 	include/alibabacloud/facebody/model/GenerateHumanSketchStyleRequest.h
 	include/alibabacloud/facebody/model/GenerateHumanSketchStyleResult.h
-	include/alibabacloud/facebody/model/GetBodyPersonRequest.h
-	include/alibabacloud/facebody/model/GetBodyPersonResult.h
 	include/alibabacloud/facebody/model/GetFaceEntityRequest.h
 	include/alibabacloud/facebody/model/GetFaceEntityResult.h
 	include/alibabacloud/facebody/model/GetRealPersonVerificationResultRequest.h
@@ -107,10 +95,6 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/HandPostureResult.h
 	include/alibabacloud/facebody/model/LiquifyFaceRequest.h
 	include/alibabacloud/facebody/model/LiquifyFaceResult.h
-	include/alibabacloud/facebody/model/ListBodyDbsRequest.h
-	include/alibabacloud/facebody/model/ListBodyDbsResult.h
-	include/alibabacloud/facebody/model/ListBodyPersonRequest.h
-	include/alibabacloud/facebody/model/ListBodyPersonResult.h
 	include/alibabacloud/facebody/model/ListFaceDbsRequest.h
 	include/alibabacloud/facebody/model/ListFaceDbsResult.h
 	include/alibabacloud/facebody/model/ListFaceEntitiesRequest.h
@@ -137,8 +121,6 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/RetouchBodyResult.h
 	include/alibabacloud/facebody/model/RetouchSkinRequest.h
 	include/alibabacloud/facebody/model/RetouchSkinResult.h
-	include/alibabacloud/facebody/model/SearchBodyTraceRequest.h
-	include/alibabacloud/facebody/model/SearchBodyTraceResult.h
 	include/alibabacloud/facebody/model/SearchFaceRequest.h
 	include/alibabacloud/facebody/model/SearchFaceResult.h
 	include/alibabacloud/facebody/model/SwapFacialFeaturesRequest.h
@@ -150,8 +132,6 @@ set(facebody_public_header_model
 
 set(facebody_src 
 	src/FacebodyClient.cc
-	src/model/AddBodyTraceRequest.cc
-	src/model/AddBodyTraceResult.cc
 	src/model/AddFaceRequest.cc
 	src/model/AddFaceResult.cc
 	src/model/AddFaceEntityRequest.cc
@@ -170,16 +150,8 @@ set(facebody_src
 	src/model/CompareFaceResult.cc
 	src/model/CountCrowdRequest.cc
 	src/model/CountCrowdResult.cc
-	src/model/CreateBodyDbRequest.cc
-	src/model/CreateBodyDbResult.cc
-	src/model/CreateBodyPersonRequest.cc
-	src/model/CreateBodyPersonResult.cc
 	src/model/CreateFaceDbRequest.cc
 	src/model/CreateFaceDbResult.cc
-	src/model/DeleteBodyDbRequest.cc
-	src/model/DeleteBodyDbResult.cc
-	src/model/DeleteBodyPersonRequest.cc
-	src/model/DeleteBodyPersonResult.cc
 	src/model/DeleteFaceRequest.cc
 	src/model/DeleteFaceResult.cc
 	src/model/DeleteFaceDbRequest.cc
@@ -226,8 +198,6 @@ set(facebody_src
 	src/model/GenerateHumanAnimeStyleResult.cc
 	src/model/GenerateHumanSketchStyleRequest.cc
 	src/model/GenerateHumanSketchStyleResult.cc
-	src/model/GetBodyPersonRequest.cc
-	src/model/GetBodyPersonResult.cc
 	src/model/GetFaceEntityRequest.cc
 	src/model/GetFaceEntityResult.cc
 	src/model/GetRealPersonVerificationResultRequest.cc
@@ -236,10 +206,6 @@ set(facebody_src
 	src/model/HandPostureResult.cc
 	src/model/LiquifyFaceRequest.cc
 	src/model/LiquifyFaceResult.cc
-	src/model/ListBodyDbsRequest.cc
-	src/model/ListBodyDbsResult.cc
-	src/model/ListBodyPersonRequest.cc
-	src/model/ListBodyPersonResult.cc
 	src/model/ListFaceDbsRequest.cc
 	src/model/ListFaceDbsResult.cc
 	src/model/ListFaceEntitiesRequest.cc
@@ -266,8 +232,6 @@ set(facebody_src
 	src/model/RetouchBodyResult.cc
 	src/model/RetouchSkinRequest.cc
 	src/model/RetouchSkinResult.cc
-	src/model/SearchBodyTraceRequest.cc
-	src/model/SearchBodyTraceResult.cc
 	src/model/SearchFaceRequest.cc
 	src/model/SearchFaceResult.cc
 	src/model/SwapFacialFeaturesRequest.cc
