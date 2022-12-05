@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Polardb::Model::ModifyDBClusterDeletionRequest;
 
-ModifyDBClusterDeletionRequest::ModifyDBClusterDeletionRequest() :
-	RpcServiceRequest("polardb", "2017-08-01", "ModifyDBClusterDeletion")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyDBClusterDeletionRequest::ModifyDBClusterDeletionRequest()
+    : RpcServiceRequest("polardb", "2017-08-01", "ModifyDBClusterDeletion") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyDBClusterDeletionRequest::~ModifyDBClusterDeletionRequest()
-{}
+ModifyDBClusterDeletionRequest::~ModifyDBClusterDeletionRequest() {}
 
-long ModifyDBClusterDeletionRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ModifyDBClusterDeletionRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifyDBClusterDeletionRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifyDBClusterDeletionRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-bool ModifyDBClusterDeletionRequest::getProtection()const
-{
-	return protection_;
+bool ModifyDBClusterDeletionRequest::getProtection() const {
+  return protection_;
 }
 
-void ModifyDBClusterDeletionRequest::setProtection(bool protection)
-{
-	protection_ = protection;
-	setParameter("Protection", protection ? "true" : "false");
+void ModifyDBClusterDeletionRequest::setProtection(bool protection) {
+  protection_ = protection;
+  setParameter(std::string("Protection"), protection ? "true" : "false");
 }
 
-std::string ModifyDBClusterDeletionRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string ModifyDBClusterDeletionRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void ModifyDBClusterDeletionRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void ModifyDBClusterDeletionRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyDBClusterDeletionRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ModifyDBClusterDeletionRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifyDBClusterDeletionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifyDBClusterDeletionRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string ModifyDBClusterDeletionRequest::getDBClusterId()const
-{
-	return dBClusterId_;
+std::string ModifyDBClusterDeletionRequest::getDBClusterId() const {
+  return dBClusterId_;
 }
 
-void ModifyDBClusterDeletionRequest::setDBClusterId(const std::string& dBClusterId)
-{
-	dBClusterId_ = dBClusterId;
-	setParameter("DBClusterId", dBClusterId);
+void ModifyDBClusterDeletionRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
 }
 
-std::string ModifyDBClusterDeletionRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ModifyDBClusterDeletionRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ModifyDBClusterDeletionRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ModifyDBClusterDeletionRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long ModifyDBClusterDeletionRequest::getOwnerId()const
-{
-	return ownerId_;
+long ModifyDBClusterDeletionRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifyDBClusterDeletionRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifyDBClusterDeletionRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

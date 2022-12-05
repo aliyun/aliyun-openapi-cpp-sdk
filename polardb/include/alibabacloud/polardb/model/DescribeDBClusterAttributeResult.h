@@ -48,6 +48,7 @@ namespace AlibabaCloud
 					std::string masterId;
 					int failoverPriority;
 					std::string hotReplicaMode;
+					std::string serverWeight;
 				};
 				struct Tag
 				{

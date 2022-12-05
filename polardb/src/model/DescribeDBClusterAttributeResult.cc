@@ -71,6 +71,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 			dBNodesObject.masterId = valueDBNodesDBNode["MasterId"].asString();
 		if(!valueDBNodesDBNode["SccMode"].isNull())
 			dBNodesObject.sccMode = valueDBNodesDBNode["SccMode"].asString();
+		if(!valueDBNodesDBNode["ServerWeight"].isNull())
+			dBNodesObject.serverWeight = valueDBNodesDBNode["ServerWeight"].asString();
 		dBNodes_.push_back(dBNodesObject);
 	}
 	auto allTagsNode = value["Tags"]["Tag"];
