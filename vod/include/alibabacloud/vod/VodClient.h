@@ -116,6 +116,10 @@
 #include "model/DescribeVodDomainDetailResult.h"
 #include "model/DescribeVodDomainLogRequest.h"
 #include "model/DescribeVodDomainLogResult.h"
+#include "model/DescribeVodDomainSrcBpsDataRequest.h"
+#include "model/DescribeVodDomainSrcBpsDataResult.h"
+#include "model/DescribeVodDomainSrcTrafficDataRequest.h"
+#include "model/DescribeVodDomainSrcTrafficDataResult.h"
 #include "model/DescribeVodDomainTrafficDataRequest.h"
 #include "model/DescribeVodDomainTrafficDataResult.h"
 #include "model/DescribeVodDomainUsageDataRequest.h"
@@ -462,6 +466,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeVodDomainLogResult> DescribeVodDomainLogOutcome;
 			typedef std::future<DescribeVodDomainLogOutcome> DescribeVodDomainLogOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainLogRequest&, const DescribeVodDomainLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainLogAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodDomainSrcBpsDataResult> DescribeVodDomainSrcBpsDataOutcome;
+			typedef std::future<DescribeVodDomainSrcBpsDataOutcome> DescribeVodDomainSrcBpsDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainSrcBpsDataRequest&, const DescribeVodDomainSrcBpsDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainSrcBpsDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVodDomainSrcTrafficDataResult> DescribeVodDomainSrcTrafficDataOutcome;
+			typedef std::future<DescribeVodDomainSrcTrafficDataOutcome> DescribeVodDomainSrcTrafficDataOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainSrcTrafficDataRequest&, const DescribeVodDomainSrcTrafficDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainSrcTrafficDataAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVodDomainTrafficDataResult> DescribeVodDomainTrafficDataOutcome;
 			typedef std::future<DescribeVodDomainTrafficDataOutcome> DescribeVodDomainTrafficDataOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::DescribeVodDomainTrafficDataRequest&, const DescribeVodDomainTrafficDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVodDomainTrafficDataAsyncHandler;
@@ -902,6 +912,12 @@ namespace AlibabaCloud
 			DescribeVodDomainLogOutcome describeVodDomainLog(const Model::DescribeVodDomainLogRequest &request)const;
 			void describeVodDomainLogAsync(const Model::DescribeVodDomainLogRequest& request, const DescribeVodDomainLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodDomainLogOutcomeCallable describeVodDomainLogCallable(const Model::DescribeVodDomainLogRequest& request) const;
+			DescribeVodDomainSrcBpsDataOutcome describeVodDomainSrcBpsData(const Model::DescribeVodDomainSrcBpsDataRequest &request)const;
+			void describeVodDomainSrcBpsDataAsync(const Model::DescribeVodDomainSrcBpsDataRequest& request, const DescribeVodDomainSrcBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodDomainSrcBpsDataOutcomeCallable describeVodDomainSrcBpsDataCallable(const Model::DescribeVodDomainSrcBpsDataRequest& request) const;
+			DescribeVodDomainSrcTrafficDataOutcome describeVodDomainSrcTrafficData(const Model::DescribeVodDomainSrcTrafficDataRequest &request)const;
+			void describeVodDomainSrcTrafficDataAsync(const Model::DescribeVodDomainSrcTrafficDataRequest& request, const DescribeVodDomainSrcTrafficDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVodDomainSrcTrafficDataOutcomeCallable describeVodDomainSrcTrafficDataCallable(const Model::DescribeVodDomainSrcTrafficDataRequest& request) const;
 			DescribeVodDomainTrafficDataOutcome describeVodDomainTrafficData(const Model::DescribeVodDomainTrafficDataRequest &request)const;
 			void describeVodDomainTrafficDataAsync(const Model::DescribeVodDomainTrafficDataRequest& request, const DescribeVodDomainTrafficDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVodDomainTrafficDataOutcomeCallable describeVodDomainTrafficDataCallable(const Model::DescribeVodDomainTrafficDataRequest& request) const;

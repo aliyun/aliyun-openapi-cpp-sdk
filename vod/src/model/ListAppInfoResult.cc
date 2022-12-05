@@ -57,6 +57,8 @@ void ListAppInfoResult::parse(const std::string &payload)
 			appInfoListObject.appId = valueAppInfoListAppInfo["AppId"].asString();
 		if(!valueAppInfoListAppInfo["ModificationTime"].isNull())
 			appInfoListObject.modificationTime = valueAppInfoListAppInfo["ModificationTime"].asString();
+		if(!valueAppInfoListAppInfo["RegionId"].isNull())
+			appInfoListObject.regionId = valueAppInfoListAppInfo["RegionId"].asString();
 		auto allTagsNode = valueAppInfoListAppInfo["Tags"]["tagsItem"];
 		for (auto valueAppInfoListAppInfoTagstagsItem : allTagsNode)
 		{

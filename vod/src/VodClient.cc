@@ -1743,6 +1743,78 @@ VodClient::DescribeVodDomainLogOutcomeCallable VodClient::describeVodDomainLogCa
 	return task->get_future();
 }
 
+VodClient::DescribeVodDomainSrcBpsDataOutcome VodClient::describeVodDomainSrcBpsData(const DescribeVodDomainSrcBpsDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainSrcBpsDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainSrcBpsDataOutcome(DescribeVodDomainSrcBpsDataResult(outcome.result()));
+	else
+		return DescribeVodDomainSrcBpsDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainSrcBpsDataAsync(const DescribeVodDomainSrcBpsDataRequest& request, const DescribeVodDomainSrcBpsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainSrcBpsData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainSrcBpsDataOutcomeCallable VodClient::describeVodDomainSrcBpsDataCallable(const DescribeVodDomainSrcBpsDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainSrcBpsDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainSrcBpsData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::DescribeVodDomainSrcTrafficDataOutcome VodClient::describeVodDomainSrcTrafficData(const DescribeVodDomainSrcTrafficDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVodDomainSrcTrafficDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVodDomainSrcTrafficDataOutcome(DescribeVodDomainSrcTrafficDataResult(outcome.result()));
+	else
+		return DescribeVodDomainSrcTrafficDataOutcome(outcome.error());
+}
+
+void VodClient::describeVodDomainSrcTrafficDataAsync(const DescribeVodDomainSrcTrafficDataRequest& request, const DescribeVodDomainSrcTrafficDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVodDomainSrcTrafficData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::DescribeVodDomainSrcTrafficDataOutcomeCallable VodClient::describeVodDomainSrcTrafficDataCallable(const DescribeVodDomainSrcTrafficDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVodDomainSrcTrafficDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVodDomainSrcTrafficData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::DescribeVodDomainTrafficDataOutcome VodClient::describeVodDomainTrafficData(const DescribeVodDomainTrafficDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

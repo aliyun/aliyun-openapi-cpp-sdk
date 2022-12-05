@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VOD_MODEL_LISTAPPINFORESULT_H_
-#define ALIBABACLOUD_VOD_MODEL_LISTAPPINFORESULT_H_
+#ifndef ALIBABACLOUD_VOD_MODEL_DESCRIBEVODDOMAINSRCBPSDATARESULT_H_
+#define ALIBABACLOUD_VOD_MODEL_DESCRIBEVODDOMAINSRCBPSDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VOD_EXPORT ListAppInfoResult : public ServiceResult
+			class ALIBABACLOUD_VOD_EXPORT DescribeVodDomainSrcBpsDataResult : public ServiceResult
 			{
 			public:
-				struct AppInfo
+				struct DataModule
 				{
-					struct TagsItem
-					{
-						std::string tagKey;
-						std::string tagValue;
-					};
-					std::string status;
-					std::string type;
-					std::string description;
-					std::string appId;
-					std::string creationTime;
-					std::string modificationTime;
-					std::string regionId;
-					std::vector<AppInfo::TagsItem> tags;
-					std::string appName;
+					std::string httpsValue;
+					std::string value;
+					std::string timeStamp;
 				};
 
 
-				ListAppInfoResult();
-				explicit ListAppInfoResult(const std::string &payload);
-				~ListAppInfoResult();
-				int getTotal()const;
-				std::vector<AppInfo> getAppInfoList()const;
+				DescribeVodDomainSrcBpsDataResult();
+				explicit DescribeVodDomainSrcBpsDataResult(const std::string &payload);
+				~DescribeVodDomainSrcBpsDataResult();
+				std::vector<DataModule> getSrcBpsDataPerInterval()const;
+				std::string getEndTime()const;
+				std::string getDomainName()const;
+				std::string getStartTime()const;
+				std::string getDataInterval()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int total_;
-				std::vector<AppInfo> appInfoList_;
+				std::vector<DataModule> srcBpsDataPerInterval_;
+				std::string endTime_;
+				std::string domainName_;
+				std::string startTime_;
+				std::string dataInterval_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VOD_MODEL_LISTAPPINFORESULT_H_
+#endif // !ALIBABACLOUD_VOD_MODEL_DESCRIBEVODDOMAINSRCBPSDATARESULT_H_

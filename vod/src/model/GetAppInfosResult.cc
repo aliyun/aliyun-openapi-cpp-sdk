@@ -62,12 +62,19 @@ void GetAppInfosResult::parse(const std::string &payload)
 	auto allNonExistAppIds = value["NonExistAppIds"]["AppId"];
 	for (const auto &item : allNonExistAppIds)
 		nonExistAppIds_.push_back(item.asString());
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 
 }
 
 std::vector<GetAppInfosResult::AppInfo> GetAppInfosResult::getAppInfoList()const
 {
 	return appInfoList_;
+}
+
+std::string GetAppInfosResult::getCode()const
+{
+	return code_;
 }
 
 std::vector<std::string> GetAppInfosResult::getNonExistAppIds()const
