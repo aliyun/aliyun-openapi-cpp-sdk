@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					std::string vpcName;
 					std::string vSwitchName;
 					std::string namespaceId;
+					std::string jumpServerIp;
 					std::string lastChangeOrderStatus;
 					std::string jumpServerAppId;
 				};

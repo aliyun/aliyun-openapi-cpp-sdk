@@ -60,6 +60,8 @@ void DescribeApplicationConfigResult::parse(const std::string &payload)
 		data_.packageUrl = dataNode["PackageUrl"].asString();
 	if(!dataNode["PackageType"].isNull())
 		data_.packageType = dataNode["PackageType"].asString();
+	if(!dataNode["PackageRuntimeCustomBuild"].isNull())
+		data_.packageRuntimeCustomBuild = dataNode["PackageRuntimeCustomBuild"].asString();
 	if(!dataNode["PreStop"].isNull())
 		data_.preStop = dataNode["PreStop"].asString();
 	if(!dataNode["PackageVersion"].isNull())
@@ -144,12 +146,26 @@ void DescribeApplicationConfigResult::parse(const std::string &payload)
 		data_.acrInstanceId = dataNode["AcrInstanceId"].asString();
 	if(!dataNode["AcrAssumeRoleArn"].isNull())
 		data_.acrAssumeRoleArn = dataNode["AcrAssumeRoleArn"].asString();
+	if(!dataNode["ImagePullSecrets"].isNull())
+		data_.imagePullSecrets = dataNode["ImagePullSecrets"].asString();
+	if(!dataNode["EnableImageAccl"].isNull())
+		data_.enableImageAccl = dataNode["EnableImageAccl"].asString() == "true";
 	if(!dataNode["AssociateEip"].isNull())
 		data_.associateEip = dataNode["AssociateEip"].asString() == "true";
 	if(!dataNode["KafkaConfigs"].isNull())
 		data_.kafkaConfigs = dataNode["KafkaConfigs"].asString();
 	if(!dataNode["ProgrammingLanguage"].isNull())
 		data_.programmingLanguage = dataNode["ProgrammingLanguage"].asString();
+	if(!dataNode["PvtzDiscovery"].isNull())
+		data_.pvtzDiscovery = dataNode["PvtzDiscovery"].asString();
+	if(!dataNode["MicroRegistration"].isNull())
+		data_.microRegistration = dataNode["MicroRegistration"].asString();
+	if(!dataNode["NasConfigs"].isNull())
+		data_.nasConfigs = dataNode["NasConfigs"].asString();
+	if(!dataNode["Python"].isNull())
+		data_.python = dataNode["Python"].asString();
+	if(!dataNode["PythonModules"].isNull())
+		data_.pythonModules = dataNode["PythonModules"].asString();
 	auto allConfigMapMountDescNode = dataNode["ConfigMapMountDesc"]["ConfigMapMountDescItem"];
 	for (auto dataNodeConfigMapMountDescConfigMapMountDescItem : allConfigMapMountDescNode)
 	{

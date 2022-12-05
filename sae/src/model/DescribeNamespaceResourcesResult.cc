@@ -74,6 +74,8 @@ void DescribeNamespaceResourcesResult::parse(const std::string &payload)
 		data_.tenantId = dataNode["TenantId"].asString();
 	if(!dataNode["JumpServerAppId"].isNull())
 		data_.jumpServerAppId = dataNode["JumpServerAppId"].asString();
+	if(!dataNode["JumpServerIp"].isNull())
+		data_.jumpServerIp = dataNode["JumpServerIp"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["TraceId"].isNull())

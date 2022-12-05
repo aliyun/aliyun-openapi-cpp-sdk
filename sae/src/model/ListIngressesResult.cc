@@ -56,6 +56,8 @@ void ListIngressesResult::parse(const std::string &payload)
 			ingressObject.slbType = dataNodeIngressListIngress["SlbType"].asString();
 		if(!dataNodeIngressListIngress["CertId"].isNull())
 			ingressObject.certId = dataNodeIngressListIngress["CertId"].asString();
+		if(!dataNodeIngressListIngress["CertIds"].isNull())
+			ingressObject.certIds = dataNodeIngressListIngress["CertIds"].asString();
 		if(!dataNodeIngressListIngress["Name"].isNull())
 			ingressObject.name = dataNodeIngressListIngress["Name"].asString();
 		if(!dataNodeIngressListIngress["Id"].isNull())

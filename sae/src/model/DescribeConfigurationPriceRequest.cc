@@ -44,3 +44,12 @@ void DescribeConfigurationPriceRequest::setCpu(int cpu) {
   setParameter(std::string("Cpu"), std::to_string(cpu));
 }
 
+std::string DescribeConfigurationPriceRequest::getWorkload() const {
+  return workload_;
+}
+
+void DescribeConfigurationPriceRequest::setWorkload(const std::string &workload) {
+  workload_ = workload;
+  setParameter(std::string("Workload"), workload);
+}
+

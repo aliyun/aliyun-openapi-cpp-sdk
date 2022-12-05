@@ -48,6 +48,10 @@ void DescribeApplicationSlbsResult::parse(const std::string &payload)
 		data_.intranetSlbId = dataNode["IntranetSlbId"].asString();
 	if(!dataNode["IntranetIp"].isNull())
 		data_.intranetIp = dataNode["IntranetIp"].asString();
+	if(!dataNode["InternetSlbExpired"].isNull())
+		data_.internetSlbExpired = dataNode["InternetSlbExpired"].asString() == "true";
+	if(!dataNode["IntranetSlbExpired"].isNull())
+		data_.intranetSlbExpired = dataNode["IntranetSlbExpired"].asString() == "true";
 	auto allIntranetNode = dataNode["Intranet"]["IntranetItem"];
 	for (auto dataNodeIntranetIntranetItem : allIntranetNode)
 	{

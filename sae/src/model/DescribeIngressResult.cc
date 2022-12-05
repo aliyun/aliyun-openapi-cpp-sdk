@@ -52,6 +52,8 @@ void DescribeIngressResult::parse(const std::string &payload)
 		data_.slbType = dataNode["SlbType"].asString();
 	if(!dataNode["CertId"].isNull())
 		data_.certId = dataNode["CertId"].asString();
+	if(!dataNode["CertIds"].isNull())
+		data_.certIds = dataNode["CertIds"].asString();
 	if(!dataNode["Name"].isNull())
 		data_.name = dataNode["Name"].asString();
 	if(!dataNode["Id"].isNull())
@@ -74,6 +76,8 @@ void DescribeIngressResult::parse(const std::string &payload)
 			ruleObject.appId = dataNodeRulesRule["AppId"].asString();
 		if(!dataNodeRulesRule["Path"].isNull())
 			ruleObject.path = dataNodeRulesRule["Path"].asString();
+		if(!dataNodeRulesRule["BackendProtocol"].isNull())
+			ruleObject.backendProtocol = dataNodeRulesRule["BackendProtocol"].asString();
 		data_.rules.push_back(ruleObject);
 	}
 	auto defaultRuleNode = dataNode["DefaultRule"];
@@ -83,6 +87,8 @@ void DescribeIngressResult::parse(const std::string &payload)
 		data_.defaultRule.appName = defaultRuleNode["AppName"].asString();
 	if(!defaultRuleNode["AppId"].isNull())
 		data_.defaultRule.appId = defaultRuleNode["AppId"].asString();
+	if(!defaultRuleNode["BackendProtocol"].isNull())
+		data_.defaultRule.backendProtocol = defaultRuleNode["BackendProtocol"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["TraceId"].isNull())

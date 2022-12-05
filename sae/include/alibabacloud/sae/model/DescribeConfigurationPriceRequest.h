@@ -34,10 +34,13 @@ public:
 	void setMemory(int memory);
 	int getCpu() const;
 	void setCpu(int cpu);
+	std::string getWorkload() const;
+	void setWorkload(const std::string &workload);
 
 private:
 	int memory_;
 	int cpu_;
+	std::string workload_;
 };
 } // namespace Model
 } // namespace Sae

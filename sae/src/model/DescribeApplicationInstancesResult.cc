@@ -74,6 +74,8 @@ void DescribeApplicationInstancesResult::parse(const std::string &payload)
 			instanceObject.eip = dataNodeInstancesInstance["Eip"].asString();
 		if(!dataNodeInstancesInstance["FinishTimeStamp"].isNull())
 			instanceObject.finishTimeStamp = std::stol(dataNodeInstancesInstance["FinishTimeStamp"].asString());
+		if(!dataNodeInstancesInstance["DebugStatus"].isNull())
+			instanceObject.debugStatus = dataNodeInstancesInstance["DebugStatus"].asString() == "true";
 		data_.instances.push_back(instanceObject);
 	}
 	if(!value["Message"].isNull())

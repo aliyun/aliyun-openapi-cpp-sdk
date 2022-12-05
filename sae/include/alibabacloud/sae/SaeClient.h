@@ -44,8 +44,12 @@
 #include "model/CreateGreyTagRouteResult.h"
 #include "model/CreateIngressRequest.h"
 #include "model/CreateIngressResult.h"
+#include "model/CreateJobRequest.h"
+#include "model/CreateJobResult.h"
 #include "model/CreateNamespaceRequest.h"
 #include "model/CreateNamespaceResult.h"
+#include "model/CreateSecretRequest.h"
+#include "model/CreateSecretResult.h"
 #include "model/DeleteApplicationRequest.h"
 #include "model/DeleteApplicationResult.h"
 #include "model/DeleteApplicationScalingRuleRequest.h"
@@ -54,10 +58,16 @@
 #include "model/DeleteConfigMapResult.h"
 #include "model/DeleteGreyTagRouteRequest.h"
 #include "model/DeleteGreyTagRouteResult.h"
+#include "model/DeleteHistoryJobRequest.h"
+#include "model/DeleteHistoryJobResult.h"
 #include "model/DeleteIngressRequest.h"
 #include "model/DeleteIngressResult.h"
+#include "model/DeleteJobRequest.h"
+#include "model/DeleteJobResult.h"
 #include "model/DeleteNamespaceRequest.h"
 #include "model/DeleteNamespaceResult.h"
+#include "model/DeleteSecretRequest.h"
+#include "model/DeleteSecretResult.h"
 #include "model/DeployApplicationRequest.h"
 #include "model/DeployApplicationResult.h"
 #include "model/DescribeAppServiceDetailRequest.h"
@@ -96,6 +106,12 @@
 #include "model/DescribeInstanceLogResult.h"
 #include "model/DescribeInstanceSpecificationsRequest.h"
 #include "model/DescribeInstanceSpecificationsResult.h"
+#include "model/DescribeJobRequest.h"
+#include "model/DescribeJobResult.h"
+#include "model/DescribeJobHistoryRequest.h"
+#include "model/DescribeJobHistoryResult.h"
+#include "model/DescribeJobStatusRequest.h"
+#include "model/DescribeJobStatusResult.h"
 #include "model/DescribeNamespaceRequest.h"
 #include "model/DescribeNamespaceResult.h"
 #include "model/DescribeNamespaceListRequest.h"
@@ -108,10 +124,14 @@
 #include "model/DescribePipelineResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
+#include "model/DescribeSecretRequest.h"
+#include "model/DescribeSecretResult.h"
 #include "model/DisableApplicationScalingRuleRequest.h"
 #include "model/DisableApplicationScalingRuleResult.h"
 #include "model/EnableApplicationScalingRuleRequest.h"
 #include "model/EnableApplicationScalingRuleResult.h"
+#include "model/ExecJobRequest.h"
+#include "model/ExecJobResult.h"
 #include "model/ListAppEventsRequest.h"
 #include "model/ListAppEventsResult.h"
 #include "model/ListAppServicesPageRequest.h"
@@ -128,6 +148,8 @@
 #include "model/ListGreyTagRouteResult.h"
 #include "model/ListIngressesRequest.h"
 #include "model/ListIngressesResult.h"
+#include "model/ListJobsRequest.h"
+#include "model/ListJobsResult.h"
 #include "model/ListLogConfigsRequest.h"
 #include "model/ListLogConfigsResult.h"
 #include "model/ListNamespaceChangeOrdersRequest.h"
@@ -136,6 +158,8 @@
 #include "model/ListNamespacedConfigMapsResult.h"
 #include "model/ListPublishedServicesRequest.h"
 #include "model/ListPublishedServicesResult.h"
+#include "model/ListSecretsRequest.h"
+#include "model/ListSecretsResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
 #include "model/OpenSaeServiceRequest.h"
@@ -158,6 +182,8 @@
 #include "model/StartApplicationResult.h"
 #include "model/StopApplicationRequest.h"
 #include "model/StopApplicationResult.h"
+#include "model/SuspendJobRequest.h"
+#include "model/SuspendJobResult.h"
 #include "model/TagResourcesRequest.h"
 #include "model/TagResourcesResult.h"
 #include "model/UnbindSlbRequest.h"
@@ -178,10 +204,14 @@
 #include "model/UpdateGreyTagRouteResult.h"
 #include "model/UpdateIngressRequest.h"
 #include "model/UpdateIngressResult.h"
+#include "model/UpdateJobRequest.h"
+#include "model/UpdateJobResult.h"
 #include "model/UpdateNamespaceRequest.h"
 #include "model/UpdateNamespaceResult.h"
 #include "model/UpdateNamespaceVpcRequest.h"
 #include "model/UpdateNamespaceVpcResult.h"
+#include "model/UpdateSecretRequest.h"
+#include "model/UpdateSecretResult.h"
 
 
 namespace AlibabaCloud
@@ -224,9 +254,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateIngressResult> CreateIngressOutcome;
 			typedef std::future<CreateIngressOutcome> CreateIngressOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::CreateIngressRequest&, const CreateIngressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateIngressAsyncHandler;
+			typedef Outcome<Error, Model::CreateJobResult> CreateJobOutcome;
+			typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::CreateJobRequest&, const CreateJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateJobAsyncHandler;
 			typedef Outcome<Error, Model::CreateNamespaceResult> CreateNamespaceOutcome;
 			typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::CreateNamespaceRequest&, const CreateNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNamespaceAsyncHandler;
+			typedef Outcome<Error, Model::CreateSecretResult> CreateSecretOutcome;
+			typedef std::future<CreateSecretOutcome> CreateSecretOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::CreateSecretRequest&, const CreateSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecretAsyncHandler;
 			typedef Outcome<Error, Model::DeleteApplicationResult> DeleteApplicationOutcome;
 			typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DeleteApplicationRequest&, const DeleteApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteApplicationAsyncHandler;
@@ -239,12 +275,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteGreyTagRouteResult> DeleteGreyTagRouteOutcome;
 			typedef std::future<DeleteGreyTagRouteOutcome> DeleteGreyTagRouteOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DeleteGreyTagRouteRequest&, const DeleteGreyTagRouteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGreyTagRouteAsyncHandler;
+			typedef Outcome<Error, Model::DeleteHistoryJobResult> DeleteHistoryJobOutcome;
+			typedef std::future<DeleteHistoryJobOutcome> DeleteHistoryJobOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DeleteHistoryJobRequest&, const DeleteHistoryJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHistoryJobAsyncHandler;
 			typedef Outcome<Error, Model::DeleteIngressResult> DeleteIngressOutcome;
 			typedef std::future<DeleteIngressOutcome> DeleteIngressOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DeleteIngressRequest&, const DeleteIngressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIngressAsyncHandler;
+			typedef Outcome<Error, Model::DeleteJobResult> DeleteJobOutcome;
+			typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DeleteJobRequest&, const DeleteJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJobAsyncHandler;
 			typedef Outcome<Error, Model::DeleteNamespaceResult> DeleteNamespaceOutcome;
 			typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DeleteNamespaceRequest&, const DeleteNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNamespaceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSecretResult> DeleteSecretOutcome;
+			typedef std::future<DeleteSecretOutcome> DeleteSecretOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DeleteSecretRequest&, const DeleteSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecretAsyncHandler;
 			typedef Outcome<Error, Model::DeployApplicationResult> DeployApplicationOutcome;
 			typedef std::future<DeployApplicationOutcome> DeployApplicationOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DeployApplicationRequest&, const DeployApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeployApplicationAsyncHandler;
@@ -302,6 +347,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceSpecificationsResult> DescribeInstanceSpecificationsOutcome;
 			typedef std::future<DescribeInstanceSpecificationsOutcome> DescribeInstanceSpecificationsOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DescribeInstanceSpecificationsRequest&, const DescribeInstanceSpecificationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceSpecificationsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeJobResult> DescribeJobOutcome;
+			typedef std::future<DescribeJobOutcome> DescribeJobOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DescribeJobRequest&, const DescribeJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobAsyncHandler;
+			typedef Outcome<Error, Model::DescribeJobHistoryResult> DescribeJobHistoryOutcome;
+			typedef std::future<DescribeJobHistoryOutcome> DescribeJobHistoryOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DescribeJobHistoryRequest&, const DescribeJobHistoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobHistoryAsyncHandler;
+			typedef Outcome<Error, Model::DescribeJobStatusResult> DescribeJobStatusOutcome;
+			typedef std::future<DescribeJobStatusOutcome> DescribeJobStatusOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DescribeJobStatusRequest&, const DescribeJobStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeJobStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeNamespaceResult> DescribeNamespaceOutcome;
 			typedef std::future<DescribeNamespaceOutcome> DescribeNamespaceOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DescribeNamespaceRequest&, const DescribeNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNamespaceAsyncHandler;
@@ -320,12 +374,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSecretResult> DescribeSecretOutcome;
+			typedef std::future<DescribeSecretOutcome> DescribeSecretOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::DescribeSecretRequest&, const DescribeSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecretAsyncHandler;
 			typedef Outcome<Error, Model::DisableApplicationScalingRuleResult> DisableApplicationScalingRuleOutcome;
 			typedef std::future<DisableApplicationScalingRuleOutcome> DisableApplicationScalingRuleOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::DisableApplicationScalingRuleRequest&, const DisableApplicationScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableApplicationScalingRuleAsyncHandler;
 			typedef Outcome<Error, Model::EnableApplicationScalingRuleResult> EnableApplicationScalingRuleOutcome;
 			typedef std::future<EnableApplicationScalingRuleOutcome> EnableApplicationScalingRuleOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::EnableApplicationScalingRuleRequest&, const EnableApplicationScalingRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableApplicationScalingRuleAsyncHandler;
+			typedef Outcome<Error, Model::ExecJobResult> ExecJobOutcome;
+			typedef std::future<ExecJobOutcome> ExecJobOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::ExecJobRequest&, const ExecJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecJobAsyncHandler;
 			typedef Outcome<Error, Model::ListAppEventsResult> ListAppEventsOutcome;
 			typedef std::future<ListAppEventsOutcome> ListAppEventsOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::ListAppEventsRequest&, const ListAppEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAppEventsAsyncHandler;
@@ -350,6 +410,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListIngressesResult> ListIngressesOutcome;
 			typedef std::future<ListIngressesOutcome> ListIngressesOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::ListIngressesRequest&, const ListIngressesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListIngressesAsyncHandler;
+			typedef Outcome<Error, Model::ListJobsResult> ListJobsOutcome;
+			typedef std::future<ListJobsOutcome> ListJobsOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::ListJobsRequest&, const ListJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListJobsAsyncHandler;
 			typedef Outcome<Error, Model::ListLogConfigsResult> ListLogConfigsOutcome;
 			typedef std::future<ListLogConfigsOutcome> ListLogConfigsOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::ListLogConfigsRequest&, const ListLogConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLogConfigsAsyncHandler;
@@ -362,6 +425,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListPublishedServicesResult> ListPublishedServicesOutcome;
 			typedef std::future<ListPublishedServicesOutcome> ListPublishedServicesOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::ListPublishedServicesRequest&, const ListPublishedServicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListPublishedServicesAsyncHandler;
+			typedef Outcome<Error, Model::ListSecretsResult> ListSecretsOutcome;
+			typedef std::future<ListSecretsOutcome> ListSecretsOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::ListSecretsRequest&, const ListSecretsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSecretsAsyncHandler;
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
@@ -395,6 +461,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopApplicationResult> StopApplicationOutcome;
 			typedef std::future<StopApplicationOutcome> StopApplicationOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::StopApplicationRequest&, const StopApplicationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopApplicationAsyncHandler;
+			typedef Outcome<Error, Model::SuspendJobResult> SuspendJobOutcome;
+			typedef std::future<SuspendJobOutcome> SuspendJobOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::SuspendJobRequest&, const SuspendJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SuspendJobAsyncHandler;
 			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
 			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
@@ -425,12 +494,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateIngressResult> UpdateIngressOutcome;
 			typedef std::future<UpdateIngressOutcome> UpdateIngressOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::UpdateIngressRequest&, const UpdateIngressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateIngressAsyncHandler;
+			typedef Outcome<Error, Model::UpdateJobResult> UpdateJobOutcome;
+			typedef std::future<UpdateJobOutcome> UpdateJobOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::UpdateJobRequest&, const UpdateJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateJobAsyncHandler;
 			typedef Outcome<Error, Model::UpdateNamespaceResult> UpdateNamespaceOutcome;
 			typedef std::future<UpdateNamespaceOutcome> UpdateNamespaceOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::UpdateNamespaceRequest&, const UpdateNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNamespaceAsyncHandler;
 			typedef Outcome<Error, Model::UpdateNamespaceVpcResult> UpdateNamespaceVpcOutcome;
 			typedef std::future<UpdateNamespaceVpcOutcome> UpdateNamespaceVpcOutcomeCallable;
 			typedef std::function<void(const SaeClient*, const Model::UpdateNamespaceVpcRequest&, const UpdateNamespaceVpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNamespaceVpcAsyncHandler;
+			typedef Outcome<Error, Model::UpdateSecretResult> UpdateSecretOutcome;
+			typedef std::future<UpdateSecretOutcome> UpdateSecretOutcomeCallable;
+			typedef std::function<void(const SaeClient*, const Model::UpdateSecretRequest&, const UpdateSecretOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSecretAsyncHandler;
 
 			SaeClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			SaeClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -469,9 +544,15 @@ namespace AlibabaCloud
 			CreateIngressOutcome createIngress(const Model::CreateIngressRequest &request)const;
 			void createIngressAsync(const Model::CreateIngressRequest& request, const CreateIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateIngressOutcomeCallable createIngressCallable(const Model::CreateIngressRequest& request) const;
+			CreateJobOutcome createJob(const Model::CreateJobRequest &request)const;
+			void createJobAsync(const Model::CreateJobRequest& request, const CreateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateJobOutcomeCallable createJobCallable(const Model::CreateJobRequest& request) const;
 			CreateNamespaceOutcome createNamespace(const Model::CreateNamespaceRequest &request)const;
 			void createNamespaceAsync(const Model::CreateNamespaceRequest& request, const CreateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateNamespaceOutcomeCallable createNamespaceCallable(const Model::CreateNamespaceRequest& request) const;
+			CreateSecretOutcome createSecret(const Model::CreateSecretRequest &request)const;
+			void createSecretAsync(const Model::CreateSecretRequest& request, const CreateSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSecretOutcomeCallable createSecretCallable(const Model::CreateSecretRequest& request) const;
 			DeleteApplicationOutcome deleteApplication(const Model::DeleteApplicationRequest &request)const;
 			void deleteApplicationAsync(const Model::DeleteApplicationRequest& request, const DeleteApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteApplicationOutcomeCallable deleteApplicationCallable(const Model::DeleteApplicationRequest& request) const;
@@ -484,12 +565,21 @@ namespace AlibabaCloud
 			DeleteGreyTagRouteOutcome deleteGreyTagRoute(const Model::DeleteGreyTagRouteRequest &request)const;
 			void deleteGreyTagRouteAsync(const Model::DeleteGreyTagRouteRequest& request, const DeleteGreyTagRouteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteGreyTagRouteOutcomeCallable deleteGreyTagRouteCallable(const Model::DeleteGreyTagRouteRequest& request) const;
+			DeleteHistoryJobOutcome deleteHistoryJob(const Model::DeleteHistoryJobRequest &request)const;
+			void deleteHistoryJobAsync(const Model::DeleteHistoryJobRequest& request, const DeleteHistoryJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteHistoryJobOutcomeCallable deleteHistoryJobCallable(const Model::DeleteHistoryJobRequest& request) const;
 			DeleteIngressOutcome deleteIngress(const Model::DeleteIngressRequest &request)const;
 			void deleteIngressAsync(const Model::DeleteIngressRequest& request, const DeleteIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteIngressOutcomeCallable deleteIngressCallable(const Model::DeleteIngressRequest& request) const;
+			DeleteJobOutcome deleteJob(const Model::DeleteJobRequest &request)const;
+			void deleteJobAsync(const Model::DeleteJobRequest& request, const DeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteJobOutcomeCallable deleteJobCallable(const Model::DeleteJobRequest& request) const;
 			DeleteNamespaceOutcome deleteNamespace(const Model::DeleteNamespaceRequest &request)const;
 			void deleteNamespaceAsync(const Model::DeleteNamespaceRequest& request, const DeleteNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteNamespaceOutcomeCallable deleteNamespaceCallable(const Model::DeleteNamespaceRequest& request) const;
+			DeleteSecretOutcome deleteSecret(const Model::DeleteSecretRequest &request)const;
+			void deleteSecretAsync(const Model::DeleteSecretRequest& request, const DeleteSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSecretOutcomeCallable deleteSecretCallable(const Model::DeleteSecretRequest& request) const;
 			DeployApplicationOutcome deployApplication(const Model::DeployApplicationRequest &request)const;
 			void deployApplicationAsync(const Model::DeployApplicationRequest& request, const DeployApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeployApplicationOutcomeCallable deployApplicationCallable(const Model::DeployApplicationRequest& request) const;
@@ -547,6 +637,15 @@ namespace AlibabaCloud
 			DescribeInstanceSpecificationsOutcome describeInstanceSpecifications(const Model::DescribeInstanceSpecificationsRequest &request)const;
 			void describeInstanceSpecificationsAsync(const Model::DescribeInstanceSpecificationsRequest& request, const DescribeInstanceSpecificationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceSpecificationsOutcomeCallable describeInstanceSpecificationsCallable(const Model::DescribeInstanceSpecificationsRequest& request) const;
+			DescribeJobOutcome describeJob(const Model::DescribeJobRequest &request)const;
+			void describeJobAsync(const Model::DescribeJobRequest& request, const DescribeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeJobOutcomeCallable describeJobCallable(const Model::DescribeJobRequest& request) const;
+			DescribeJobHistoryOutcome describeJobHistory(const Model::DescribeJobHistoryRequest &request)const;
+			void describeJobHistoryAsync(const Model::DescribeJobHistoryRequest& request, const DescribeJobHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeJobHistoryOutcomeCallable describeJobHistoryCallable(const Model::DescribeJobHistoryRequest& request) const;
+			DescribeJobStatusOutcome describeJobStatus(const Model::DescribeJobStatusRequest &request)const;
+			void describeJobStatusAsync(const Model::DescribeJobStatusRequest& request, const DescribeJobStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeJobStatusOutcomeCallable describeJobStatusCallable(const Model::DescribeJobStatusRequest& request) const;
 			DescribeNamespaceOutcome describeNamespace(const Model::DescribeNamespaceRequest &request)const;
 			void describeNamespaceAsync(const Model::DescribeNamespaceRequest& request, const DescribeNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeNamespaceOutcomeCallable describeNamespaceCallable(const Model::DescribeNamespaceRequest& request) const;
@@ -565,12 +664,18 @@ namespace AlibabaCloud
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
+			DescribeSecretOutcome describeSecret(const Model::DescribeSecretRequest &request)const;
+			void describeSecretAsync(const Model::DescribeSecretRequest& request, const DescribeSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSecretOutcomeCallable describeSecretCallable(const Model::DescribeSecretRequest& request) const;
 			DisableApplicationScalingRuleOutcome disableApplicationScalingRule(const Model::DisableApplicationScalingRuleRequest &request)const;
 			void disableApplicationScalingRuleAsync(const Model::DisableApplicationScalingRuleRequest& request, const DisableApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableApplicationScalingRuleOutcomeCallable disableApplicationScalingRuleCallable(const Model::DisableApplicationScalingRuleRequest& request) const;
 			EnableApplicationScalingRuleOutcome enableApplicationScalingRule(const Model::EnableApplicationScalingRuleRequest &request)const;
 			void enableApplicationScalingRuleAsync(const Model::EnableApplicationScalingRuleRequest& request, const EnableApplicationScalingRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableApplicationScalingRuleOutcomeCallable enableApplicationScalingRuleCallable(const Model::EnableApplicationScalingRuleRequest& request) const;
+			ExecJobOutcome execJob(const Model::ExecJobRequest &request)const;
+			void execJobAsync(const Model::ExecJobRequest& request, const ExecJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ExecJobOutcomeCallable execJobCallable(const Model::ExecJobRequest& request) const;
 			ListAppEventsOutcome listAppEvents(const Model::ListAppEventsRequest &request)const;
 			void listAppEventsAsync(const Model::ListAppEventsRequest& request, const ListAppEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAppEventsOutcomeCallable listAppEventsCallable(const Model::ListAppEventsRequest& request) const;
@@ -595,6 +700,9 @@ namespace AlibabaCloud
 			ListIngressesOutcome listIngresses(const Model::ListIngressesRequest &request)const;
 			void listIngressesAsync(const Model::ListIngressesRequest& request, const ListIngressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListIngressesOutcomeCallable listIngressesCallable(const Model::ListIngressesRequest& request) const;
+			ListJobsOutcome listJobs(const Model::ListJobsRequest &request)const;
+			void listJobsAsync(const Model::ListJobsRequest& request, const ListJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListJobsOutcomeCallable listJobsCallable(const Model::ListJobsRequest& request) const;
 			ListLogConfigsOutcome listLogConfigs(const Model::ListLogConfigsRequest &request)const;
 			void listLogConfigsAsync(const Model::ListLogConfigsRequest& request, const ListLogConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListLogConfigsOutcomeCallable listLogConfigsCallable(const Model::ListLogConfigsRequest& request) const;
@@ -607,6 +715,9 @@ namespace AlibabaCloud
 			ListPublishedServicesOutcome listPublishedServices(const Model::ListPublishedServicesRequest &request)const;
 			void listPublishedServicesAsync(const Model::ListPublishedServicesRequest& request, const ListPublishedServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListPublishedServicesOutcomeCallable listPublishedServicesCallable(const Model::ListPublishedServicesRequest& request) const;
+			ListSecretsOutcome listSecrets(const Model::ListSecretsRequest &request)const;
+			void listSecretsAsync(const Model::ListSecretsRequest& request, const ListSecretsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSecretsOutcomeCallable listSecretsCallable(const Model::ListSecretsRequest& request) const;
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
@@ -640,6 +751,9 @@ namespace AlibabaCloud
 			StopApplicationOutcome stopApplication(const Model::StopApplicationRequest &request)const;
 			void stopApplicationAsync(const Model::StopApplicationRequest& request, const StopApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopApplicationOutcomeCallable stopApplicationCallable(const Model::StopApplicationRequest& request) const;
+			SuspendJobOutcome suspendJob(const Model::SuspendJobRequest &request)const;
+			void suspendJobAsync(const Model::SuspendJobRequest& request, const SuspendJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SuspendJobOutcomeCallable suspendJobCallable(const Model::SuspendJobRequest& request) const;
 			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
 			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
@@ -670,12 +784,18 @@ namespace AlibabaCloud
 			UpdateIngressOutcome updateIngress(const Model::UpdateIngressRequest &request)const;
 			void updateIngressAsync(const Model::UpdateIngressRequest& request, const UpdateIngressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateIngressOutcomeCallable updateIngressCallable(const Model::UpdateIngressRequest& request) const;
+			UpdateJobOutcome updateJob(const Model::UpdateJobRequest &request)const;
+			void updateJobAsync(const Model::UpdateJobRequest& request, const UpdateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateJobOutcomeCallable updateJobCallable(const Model::UpdateJobRequest& request) const;
 			UpdateNamespaceOutcome updateNamespace(const Model::UpdateNamespaceRequest &request)const;
 			void updateNamespaceAsync(const Model::UpdateNamespaceRequest& request, const UpdateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateNamespaceOutcomeCallable updateNamespaceCallable(const Model::UpdateNamespaceRequest& request) const;
 			UpdateNamespaceVpcOutcome updateNamespaceVpc(const Model::UpdateNamespaceVpcRequest &request)const;
 			void updateNamespaceVpcAsync(const Model::UpdateNamespaceVpcRequest& request, const UpdateNamespaceVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateNamespaceVpcOutcomeCallable updateNamespaceVpcCallable(const Model::UpdateNamespaceVpcRequest& request) const;
+			UpdateSecretOutcome updateSecret(const Model::UpdateSecretRequest &request)const;
+			void updateSecretAsync(const Model::UpdateSecretRequest& request, const UpdateSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateSecretOutcomeCallable updateSecretCallable(const Model::UpdateSecretRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

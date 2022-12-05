@@ -80,6 +80,15 @@ void UpdateIngressRequest::setCertId(const std::string &certId) {
   setParameter(std::string("CertId"), certId);
 }
 
+std::string UpdateIngressRequest::getCertIds() const {
+  return certIds_;
+}
+
+void UpdateIngressRequest::setCertIds(const std::string &certIds) {
+  certIds_ = certIds;
+  setParameter(std::string("CertIds"), certIds);
+}
+
 std::string UpdateIngressRequest::getListenerProtocol() const {
   return listenerProtocol_;
 }

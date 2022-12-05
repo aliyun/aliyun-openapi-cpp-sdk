@@ -89,6 +89,15 @@ void CreateIngressRequest::setCertId(const std::string &certId) {
   setParameter(std::string("CertId"), certId);
 }
 
+std::string CreateIngressRequest::getCertIds() const {
+  return certIds_;
+}
+
+void CreateIngressRequest::setCertIds(const std::string &certIds) {
+  certIds_ = certIds;
+  setParameter(std::string("CertIds"), certIds);
+}
+
 std::string CreateIngressRequest::getListenerProtocol() const {
   return listenerProtocol_;
 }

@@ -44,6 +44,8 @@ public:
 	void setRules(const std::string &rules);
 	std::string getCertId() const;
 	void setCertId(const std::string &certId);
+	std::string getCertIds() const;
+	void setCertIds(const std::string &certIds);
 	std::string getListenerProtocol() const;
 	void setListenerProtocol(const std::string &listenerProtocol);
 	std::string getDefaultRule() const;
@@ -57,6 +59,7 @@ private:
 	std::string loadBalanceType_;
 	std::string rules_;
 	std::string certId_;
+	std::string certIds_;
 	std::string listenerProtocol_;
 	std::string defaultRule_;
 };

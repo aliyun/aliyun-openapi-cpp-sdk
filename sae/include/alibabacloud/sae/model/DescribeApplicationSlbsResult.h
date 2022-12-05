@@ -50,8 +50,10 @@ namespace AlibabaCloud
 					};
 					std::string internetSlbId;
 					std::string internetIp;
+					bool internetSlbExpired;
 					std::vector<IntranetItem> intranet;
 					std::string intranetSlbId;
+					bool intranetSlbExpired;
 					std::vector<InternetItem> internet;
 					std::string intranetIp;
 				};

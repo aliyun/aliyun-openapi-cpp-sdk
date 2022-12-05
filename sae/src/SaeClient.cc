@@ -447,6 +447,42 @@ SaeClient::CreateIngressOutcomeCallable SaeClient::createIngressCallable(const C
 	return task->get_future();
 }
 
+SaeClient::CreateJobOutcome SaeClient::createJob(const CreateJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateJobOutcome(CreateJobResult(outcome.result()));
+	else
+		return CreateJobOutcome(outcome.error());
+}
+
+void SaeClient::createJobAsync(const CreateJobRequest& request, const CreateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::CreateJobOutcomeCallable SaeClient::createJobCallable(const CreateJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateJobOutcome()>>(
+			[this, request]()
+			{
+			return this->createJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::CreateNamespaceOutcome SaeClient::createNamespace(const CreateNamespaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +513,42 @@ SaeClient::CreateNamespaceOutcomeCallable SaeClient::createNamespaceCallable(con
 			[this, request]()
 			{
 			return this->createNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::CreateSecretOutcome SaeClient::createSecret(const CreateSecretRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSecretOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSecretOutcome(CreateSecretResult(outcome.result()));
+	else
+		return CreateSecretOutcome(outcome.error());
+}
+
+void SaeClient::createSecretAsync(const CreateSecretRequest& request, const CreateSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSecret(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::CreateSecretOutcomeCallable SaeClient::createSecretCallable(const CreateSecretRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSecretOutcome()>>(
+			[this, request]()
+			{
+			return this->createSecret(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -627,6 +699,42 @@ SaeClient::DeleteGreyTagRouteOutcomeCallable SaeClient::deleteGreyTagRouteCallab
 	return task->get_future();
 }
 
+SaeClient::DeleteHistoryJobOutcome SaeClient::deleteHistoryJob(const DeleteHistoryJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteHistoryJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteHistoryJobOutcome(DeleteHistoryJobResult(outcome.result()));
+	else
+		return DeleteHistoryJobOutcome(outcome.error());
+}
+
+void SaeClient::deleteHistoryJobAsync(const DeleteHistoryJobRequest& request, const DeleteHistoryJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteHistoryJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DeleteHistoryJobOutcomeCallable SaeClient::deleteHistoryJobCallable(const DeleteHistoryJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteHistoryJobOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteHistoryJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::DeleteIngressOutcome SaeClient::deleteIngress(const DeleteIngressRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -663,6 +771,42 @@ SaeClient::DeleteIngressOutcomeCallable SaeClient::deleteIngressCallable(const D
 	return task->get_future();
 }
 
+SaeClient::DeleteJobOutcome SaeClient::deleteJob(const DeleteJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteJobOutcome(DeleteJobResult(outcome.result()));
+	else
+		return DeleteJobOutcome(outcome.error());
+}
+
+void SaeClient::deleteJobAsync(const DeleteJobRequest& request, const DeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DeleteJobOutcomeCallable SaeClient::deleteJobCallable(const DeleteJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteJobOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::DeleteNamespaceOutcome SaeClient::deleteNamespace(const DeleteNamespaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +837,42 @@ SaeClient::DeleteNamespaceOutcomeCallable SaeClient::deleteNamespaceCallable(con
 			[this, request]()
 			{
 			return this->deleteNamespace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DeleteSecretOutcome SaeClient::deleteSecret(const DeleteSecretRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSecretOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSecretOutcome(DeleteSecretResult(outcome.result()));
+	else
+		return DeleteSecretOutcome(outcome.error());
+}
+
+void SaeClient::deleteSecretAsync(const DeleteSecretRequest& request, const DeleteSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSecret(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DeleteSecretOutcomeCallable SaeClient::deleteSecretCallable(const DeleteSecretRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSecretOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSecret(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1383,6 +1563,114 @@ SaeClient::DescribeInstanceSpecificationsOutcomeCallable SaeClient::describeInst
 	return task->get_future();
 }
 
+SaeClient::DescribeJobOutcome SaeClient::describeJob(const DescribeJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeJobOutcome(DescribeJobResult(outcome.result()));
+	else
+		return DescribeJobOutcome(outcome.error());
+}
+
+void SaeClient::describeJobAsync(const DescribeJobRequest& request, const DescribeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeJobOutcomeCallable SaeClient::describeJobCallable(const DescribeJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeJobOutcome()>>(
+			[this, request]()
+			{
+			return this->describeJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeJobHistoryOutcome SaeClient::describeJobHistory(const DescribeJobHistoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeJobHistoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeJobHistoryOutcome(DescribeJobHistoryResult(outcome.result()));
+	else
+		return DescribeJobHistoryOutcome(outcome.error());
+}
+
+void SaeClient::describeJobHistoryAsync(const DescribeJobHistoryRequest& request, const DescribeJobHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeJobHistory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeJobHistoryOutcomeCallable SaeClient::describeJobHistoryCallable(const DescribeJobHistoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeJobHistoryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeJobHistory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::DescribeJobStatusOutcome SaeClient::describeJobStatus(const DescribeJobStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeJobStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeJobStatusOutcome(DescribeJobStatusResult(outcome.result()));
+	else
+		return DescribeJobStatusOutcome(outcome.error());
+}
+
+void SaeClient::describeJobStatusAsync(const DescribeJobStatusRequest& request, const DescribeJobStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeJobStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeJobStatusOutcomeCallable SaeClient::describeJobStatusCallable(const DescribeJobStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeJobStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeJobStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::DescribeNamespaceOutcome SaeClient::describeNamespace(const DescribeNamespaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1599,6 +1887,42 @@ SaeClient::DescribeRegionsOutcomeCallable SaeClient::describeRegionsCallable(con
 	return task->get_future();
 }
 
+SaeClient::DescribeSecretOutcome SaeClient::describeSecret(const DescribeSecretRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSecretOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSecretOutcome(DescribeSecretResult(outcome.result()));
+	else
+		return DescribeSecretOutcome(outcome.error());
+}
+
+void SaeClient::describeSecretAsync(const DescribeSecretRequest& request, const DescribeSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSecret(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::DescribeSecretOutcomeCallable SaeClient::describeSecretCallable(const DescribeSecretRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSecretOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSecret(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::DisableApplicationScalingRuleOutcome SaeClient::disableApplicationScalingRule(const DisableApplicationScalingRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1665,6 +1989,42 @@ SaeClient::EnableApplicationScalingRuleOutcomeCallable SaeClient::enableApplicat
 			[this, request]()
 			{
 			return this->enableApplicationScalingRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ExecJobOutcome SaeClient::execJob(const ExecJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExecJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExecJobOutcome(ExecJobResult(outcome.result()));
+	else
+		return ExecJobOutcome(outcome.error());
+}
+
+void SaeClient::execJobAsync(const ExecJobRequest& request, const ExecJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, execJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ExecJobOutcomeCallable SaeClient::execJobCallable(const ExecJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExecJobOutcome()>>(
+			[this, request]()
+			{
+			return this->execJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1959,6 +2319,42 @@ SaeClient::ListIngressesOutcomeCallable SaeClient::listIngressesCallable(const L
 	return task->get_future();
 }
 
+SaeClient::ListJobsOutcome SaeClient::listJobs(const ListJobsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListJobsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListJobsOutcome(ListJobsResult(outcome.result()));
+	else
+		return ListJobsOutcome(outcome.error());
+}
+
+void SaeClient::listJobsAsync(const ListJobsRequest& request, const ListJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listJobs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListJobsOutcomeCallable SaeClient::listJobsCallable(const ListJobsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListJobsOutcome()>>(
+			[this, request]()
+			{
+			return this->listJobs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::ListLogConfigsOutcome SaeClient::listLogConfigs(const ListLogConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2097,6 +2493,42 @@ SaeClient::ListPublishedServicesOutcomeCallable SaeClient::listPublishedServices
 			[this, request]()
 			{
 			return this->listPublishedServices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::ListSecretsOutcome SaeClient::listSecrets(const ListSecretsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSecretsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSecretsOutcome(ListSecretsResult(outcome.result()));
+	else
+		return ListSecretsOutcome(outcome.error());
+}
+
+void SaeClient::listSecretsAsync(const ListSecretsRequest& request, const ListSecretsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSecrets(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::ListSecretsOutcomeCallable SaeClient::listSecretsCallable(const ListSecretsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSecretsOutcome()>>(
+			[this, request]()
+			{
+			return this->listSecrets(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2499,6 +2931,42 @@ SaeClient::StopApplicationOutcomeCallable SaeClient::stopApplicationCallable(con
 	return task->get_future();
 }
 
+SaeClient::SuspendJobOutcome SaeClient::suspendJob(const SuspendJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SuspendJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SuspendJobOutcome(SuspendJobResult(outcome.result()));
+	else
+		return SuspendJobOutcome(outcome.error());
+}
+
+void SaeClient::suspendJobAsync(const SuspendJobRequest& request, const SuspendJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, suspendJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::SuspendJobOutcomeCallable SaeClient::suspendJobCallable(const SuspendJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SuspendJobOutcome()>>(
+			[this, request]()
+			{
+			return this->suspendJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::TagResourcesOutcome SaeClient::tagResources(const TagResourcesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2859,6 +3327,42 @@ SaeClient::UpdateIngressOutcomeCallable SaeClient::updateIngressCallable(const U
 	return task->get_future();
 }
 
+SaeClient::UpdateJobOutcome SaeClient::updateJob(const UpdateJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateJobOutcome(UpdateJobResult(outcome.result()));
+	else
+		return UpdateJobOutcome(outcome.error());
+}
+
+void SaeClient::updateJobAsync(const UpdateJobRequest& request, const UpdateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::UpdateJobOutcomeCallable SaeClient::updateJobCallable(const UpdateJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateJobOutcome()>>(
+			[this, request]()
+			{
+			return this->updateJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SaeClient::UpdateNamespaceOutcome SaeClient::updateNamespace(const UpdateNamespaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2925,6 +3429,42 @@ SaeClient::UpdateNamespaceVpcOutcomeCallable SaeClient::updateNamespaceVpcCallab
 			[this, request]()
 			{
 			return this->updateNamespaceVpc(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SaeClient::UpdateSecretOutcome SaeClient::updateSecret(const UpdateSecretRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSecretOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSecretOutcome(UpdateSecretResult(outcome.result()));
+	else
+		return UpdateSecretOutcome(outcome.error());
+}
+
+void SaeClient::updateSecretAsync(const UpdateSecretRequest& request, const UpdateSecretAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSecret(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SaeClient::UpdateSecretOutcomeCallable SaeClient::updateSecretCallable(const UpdateSecretRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSecretOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSecret(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

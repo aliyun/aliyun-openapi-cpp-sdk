@@ -53,6 +53,15 @@ void CreateApplicationRequest::setOssAkSecret(const std::string &ossAkSecret) {
   setBodyParameter(std::string("OssAkSecret"), ossAkSecret);
 }
 
+std::string CreateApplicationRequest::getNasConfigs() const {
+  return nasConfigs_;
+}
+
+void CreateApplicationRequest::setNasConfigs(const std::string &nasConfigs) {
+  nasConfigs_ = nasConfigs;
+  setParameter(std::string("NasConfigs"), nasConfigs);
+}
+
 std::string CreateApplicationRequest::getMountHost() const {
   return mountHost_;
 }
@@ -78,15 +87,6 @@ std::string CreateApplicationRequest::getEnvs() const {
 void CreateApplicationRequest::setEnvs(const std::string &envs) {
   envs_ = envs;
   setParameter(std::string("Envs"), envs);
-}
-
-std::string CreateApplicationRequest::getKafkaInstanceId() const {
-  return kafkaInstanceId_;
-}
-
-void CreateApplicationRequest::setKafkaInstanceId(const std::string &kafkaInstanceId) {
-  kafkaInstanceId_ = kafkaInstanceId;
-  setParameter(std::string("KafkaInstanceId"), kafkaInstanceId);
 }
 
 std::string CreateApplicationRequest::getPhpPECLExtensions() const {
@@ -170,6 +170,15 @@ void CreateApplicationRequest::setPurchaseEip(bool purchaseEip) {
   setParameter(std::string("PurchaseEip"), purchaseEip ? "true" : "false");
 }
 
+std::string CreateApplicationRequest::getPvtzDiscoverySvc() const {
+  return pvtzDiscoverySvc_;
+}
+
+void CreateApplicationRequest::setPvtzDiscoverySvc(const std::string &pvtzDiscoverySvc) {
+  pvtzDiscoverySvc_ = pvtzDiscoverySvc;
+  setParameter(std::string("PvtzDiscoverySvc"), pvtzDiscoverySvc);
+}
+
 std::string CreateApplicationRequest::getConfigMapMountDesc() const {
   return configMapMountDesc_;
 }
@@ -188,13 +197,13 @@ void CreateApplicationRequest::setOssMountDescs(const std::string &ossMountDescs
   setBodyParameter(std::string("OssMountDescs"), ossMountDescs);
 }
 
-std::string CreateApplicationRequest::getKafkaEndpoint() const {
-  return kafkaEndpoint_;
+std::string CreateApplicationRequest::getImagePullSecrets() const {
+  return imagePullSecrets_;
 }
 
-void CreateApplicationRequest::setKafkaEndpoint(const std::string &kafkaEndpoint) {
-  kafkaEndpoint_ = kafkaEndpoint;
-  setParameter(std::string("KafkaEndpoint"), kafkaEndpoint);
+void CreateApplicationRequest::setImagePullSecrets(const std::string &imagePullSecrets) {
+  imagePullSecrets_ = imagePullSecrets;
+  setParameter(std::string("ImagePullSecrets"), imagePullSecrets);
 }
 
 std::string CreateApplicationRequest::getPreStop() const {
@@ -204,6 +213,15 @@ std::string CreateApplicationRequest::getPreStop() const {
 void CreateApplicationRequest::setPreStop(const std::string &preStop) {
   preStop_ = preStop;
   setParameter(std::string("PreStop"), preStop);
+}
+
+std::string CreateApplicationRequest::getPython() const {
+  return python_;
+}
+
+void CreateApplicationRequest::setPython(const std::string &python) {
+  python_ = python;
+  setParameter(std::string("Python"), python);
 }
 
 int CreateApplicationRequest::getCpu() const {
@@ -296,15 +314,6 @@ void CreateApplicationRequest::setKafkaConfigs(const std::string &kafkaConfigs) 
   setParameter(std::string("KafkaConfigs"), kafkaConfigs);
 }
 
-bool CreateApplicationRequest::getOpenCollectToKafka() const {
-  return openCollectToKafka_;
-}
-
-void CreateApplicationRequest::setOpenCollectToKafka(bool openCollectToKafka) {
-  openCollectToKafka_ = openCollectToKafka;
-  setParameter(std::string("OpenCollectToKafka"), openCollectToKafka ? "true" : "false");
-}
-
 std::string CreateApplicationRequest::getCommandArgs() const {
   return commandArgs_;
 }
@@ -395,6 +404,15 @@ void CreateApplicationRequest::setWarStartOptions(const std::string &warStartOpt
   setParameter(std::string("WarStartOptions"), warStartOptions);
 }
 
+std::string CreateApplicationRequest::getPackageRuntimeCustomBuild() const {
+  return packageRuntimeCustomBuild_;
+}
+
+void CreateApplicationRequest::setPackageRuntimeCustomBuild(const std::string &packageRuntimeCustomBuild) {
+  packageRuntimeCustomBuild_ = packageRuntimeCustomBuild;
+  setBodyParameter(std::string("PackageRuntimeCustomBuild"), packageRuntimeCustomBuild);
+}
+
 std::string CreateApplicationRequest::getEdasContainerVersion() const {
   return edasContainerVersion_;
 }
@@ -429,6 +447,24 @@ std::string CreateApplicationRequest::getPhpConfig() const {
 void CreateApplicationRequest::setPhpConfig(const std::string &phpConfig) {
   phpConfig_ = phpConfig;
   setBodyParameter(std::string("PhpConfig"), phpConfig);
+}
+
+bool CreateApplicationRequest::getEnableImageAccl() const {
+  return enableImageAccl_;
+}
+
+void CreateApplicationRequest::setEnableImageAccl(bool enableImageAccl) {
+  enableImageAccl_ = enableImageAccl;
+  setBodyParameter(std::string("EnableImageAccl"), enableImageAccl ? "true" : "false");
+}
+
+std::string CreateApplicationRequest::getMicroRegistration() const {
+  return microRegistration_;
+}
+
+void CreateApplicationRequest::setMicroRegistration(const std::string &microRegistration) {
+  microRegistration_ = microRegistration;
+  setParameter(std::string("MicroRegistration"), microRegistration);
 }
 
 int CreateApplicationRequest::getReplicas() const {
@@ -476,15 +512,6 @@ void CreateApplicationRequest::setAppDescription(const std::string &appDescripti
   setParameter(std::string("AppDescription"), appDescription);
 }
 
-std::string CreateApplicationRequest::getKafkaLogfileConfig() const {
-  return kafkaLogfileConfig_;
-}
-
-void CreateApplicationRequest::setKafkaLogfileConfig(const std::string &kafkaLogfileConfig) {
-  kafkaLogfileConfig_ = kafkaLogfileConfig;
-  setParameter(std::string("KafkaLogfileConfig"), kafkaLogfileConfig);
-}
-
 std::string CreateApplicationRequest::getAcrInstanceId() const {
   return acrInstanceId_;
 }
@@ -519,6 +546,15 @@ std::string CreateApplicationRequest::getPhp() const {
 void CreateApplicationRequest::setPhp(const std::string &php) {
   php_ = php;
   setBodyParameter(std::string("Php"), php);
+}
+
+std::string CreateApplicationRequest::getPythonModules() const {
+  return pythonModules_;
+}
+
+void CreateApplicationRequest::setPythonModules(const std::string &pythonModules) {
+  pythonModules_ = pythonModules;
+  setParameter(std::string("PythonModules"), pythonModules);
 }
 
 std::string CreateApplicationRequest::getPhpConfigLocation() const {

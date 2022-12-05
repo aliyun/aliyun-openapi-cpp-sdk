@@ -43,8 +43,12 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/CreateGreyTagRouteResult.h
 	include/alibabacloud/sae/model/CreateIngressRequest.h
 	include/alibabacloud/sae/model/CreateIngressResult.h
+	include/alibabacloud/sae/model/CreateJobRequest.h
+	include/alibabacloud/sae/model/CreateJobResult.h
 	include/alibabacloud/sae/model/CreateNamespaceRequest.h
 	include/alibabacloud/sae/model/CreateNamespaceResult.h
+	include/alibabacloud/sae/model/CreateSecretRequest.h
+	include/alibabacloud/sae/model/CreateSecretResult.h
 	include/alibabacloud/sae/model/DeleteApplicationRequest.h
 	include/alibabacloud/sae/model/DeleteApplicationResult.h
 	include/alibabacloud/sae/model/DeleteApplicationScalingRuleRequest.h
@@ -53,10 +57,16 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/DeleteConfigMapResult.h
 	include/alibabacloud/sae/model/DeleteGreyTagRouteRequest.h
 	include/alibabacloud/sae/model/DeleteGreyTagRouteResult.h
+	include/alibabacloud/sae/model/DeleteHistoryJobRequest.h
+	include/alibabacloud/sae/model/DeleteHistoryJobResult.h
 	include/alibabacloud/sae/model/DeleteIngressRequest.h
 	include/alibabacloud/sae/model/DeleteIngressResult.h
+	include/alibabacloud/sae/model/DeleteJobRequest.h
+	include/alibabacloud/sae/model/DeleteJobResult.h
 	include/alibabacloud/sae/model/DeleteNamespaceRequest.h
 	include/alibabacloud/sae/model/DeleteNamespaceResult.h
+	include/alibabacloud/sae/model/DeleteSecretRequest.h
+	include/alibabacloud/sae/model/DeleteSecretResult.h
 	include/alibabacloud/sae/model/DeployApplicationRequest.h
 	include/alibabacloud/sae/model/DeployApplicationResult.h
 	include/alibabacloud/sae/model/DescribeAppServiceDetailRequest.h
@@ -95,6 +105,12 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/DescribeInstanceLogResult.h
 	include/alibabacloud/sae/model/DescribeInstanceSpecificationsRequest.h
 	include/alibabacloud/sae/model/DescribeInstanceSpecificationsResult.h
+	include/alibabacloud/sae/model/DescribeJobRequest.h
+	include/alibabacloud/sae/model/DescribeJobResult.h
+	include/alibabacloud/sae/model/DescribeJobHistoryRequest.h
+	include/alibabacloud/sae/model/DescribeJobHistoryResult.h
+	include/alibabacloud/sae/model/DescribeJobStatusRequest.h
+	include/alibabacloud/sae/model/DescribeJobStatusResult.h
 	include/alibabacloud/sae/model/DescribeNamespaceRequest.h
 	include/alibabacloud/sae/model/DescribeNamespaceResult.h
 	include/alibabacloud/sae/model/DescribeNamespaceListRequest.h
@@ -107,10 +123,14 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/DescribePipelineResult.h
 	include/alibabacloud/sae/model/DescribeRegionsRequest.h
 	include/alibabacloud/sae/model/DescribeRegionsResult.h
+	include/alibabacloud/sae/model/DescribeSecretRequest.h
+	include/alibabacloud/sae/model/DescribeSecretResult.h
 	include/alibabacloud/sae/model/DisableApplicationScalingRuleRequest.h
 	include/alibabacloud/sae/model/DisableApplicationScalingRuleResult.h
 	include/alibabacloud/sae/model/EnableApplicationScalingRuleRequest.h
 	include/alibabacloud/sae/model/EnableApplicationScalingRuleResult.h
+	include/alibabacloud/sae/model/ExecJobRequest.h
+	include/alibabacloud/sae/model/ExecJobResult.h
 	include/alibabacloud/sae/model/ListAppEventsRequest.h
 	include/alibabacloud/sae/model/ListAppEventsResult.h
 	include/alibabacloud/sae/model/ListAppServicesPageRequest.h
@@ -127,6 +147,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/ListGreyTagRouteResult.h
 	include/alibabacloud/sae/model/ListIngressesRequest.h
 	include/alibabacloud/sae/model/ListIngressesResult.h
+	include/alibabacloud/sae/model/ListJobsRequest.h
+	include/alibabacloud/sae/model/ListJobsResult.h
 	include/alibabacloud/sae/model/ListLogConfigsRequest.h
 	include/alibabacloud/sae/model/ListLogConfigsResult.h
 	include/alibabacloud/sae/model/ListNamespaceChangeOrdersRequest.h
@@ -135,6 +157,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/ListNamespacedConfigMapsResult.h
 	include/alibabacloud/sae/model/ListPublishedServicesRequest.h
 	include/alibabacloud/sae/model/ListPublishedServicesResult.h
+	include/alibabacloud/sae/model/ListSecretsRequest.h
+	include/alibabacloud/sae/model/ListSecretsResult.h
 	include/alibabacloud/sae/model/ListTagResourcesRequest.h
 	include/alibabacloud/sae/model/ListTagResourcesResult.h
 	include/alibabacloud/sae/model/OpenSaeServiceRequest.h
@@ -157,6 +181,8 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/StartApplicationResult.h
 	include/alibabacloud/sae/model/StopApplicationRequest.h
 	include/alibabacloud/sae/model/StopApplicationResult.h
+	include/alibabacloud/sae/model/SuspendJobRequest.h
+	include/alibabacloud/sae/model/SuspendJobResult.h
 	include/alibabacloud/sae/model/TagResourcesRequest.h
 	include/alibabacloud/sae/model/TagResourcesResult.h
 	include/alibabacloud/sae/model/UnbindSlbRequest.h
@@ -177,10 +203,14 @@ set(sae_public_header_model
 	include/alibabacloud/sae/model/UpdateGreyTagRouteResult.h
 	include/alibabacloud/sae/model/UpdateIngressRequest.h
 	include/alibabacloud/sae/model/UpdateIngressResult.h
+	include/alibabacloud/sae/model/UpdateJobRequest.h
+	include/alibabacloud/sae/model/UpdateJobResult.h
 	include/alibabacloud/sae/model/UpdateNamespaceRequest.h
 	include/alibabacloud/sae/model/UpdateNamespaceResult.h
 	include/alibabacloud/sae/model/UpdateNamespaceVpcRequest.h
-	include/alibabacloud/sae/model/UpdateNamespaceVpcResult.h )
+	include/alibabacloud/sae/model/UpdateNamespaceVpcResult.h
+	include/alibabacloud/sae/model/UpdateSecretRequest.h
+	include/alibabacloud/sae/model/UpdateSecretResult.h )
 
 set(sae_src 
 	src/SaeClient.cc
@@ -206,8 +236,12 @@ set(sae_src
 	src/model/CreateGreyTagRouteResult.cc
 	src/model/CreateIngressRequest.cc
 	src/model/CreateIngressResult.cc
+	src/model/CreateJobRequest.cc
+	src/model/CreateJobResult.cc
 	src/model/CreateNamespaceRequest.cc
 	src/model/CreateNamespaceResult.cc
+	src/model/CreateSecretRequest.cc
+	src/model/CreateSecretResult.cc
 	src/model/DeleteApplicationRequest.cc
 	src/model/DeleteApplicationResult.cc
 	src/model/DeleteApplicationScalingRuleRequest.cc
@@ -216,10 +250,16 @@ set(sae_src
 	src/model/DeleteConfigMapResult.cc
 	src/model/DeleteGreyTagRouteRequest.cc
 	src/model/DeleteGreyTagRouteResult.cc
+	src/model/DeleteHistoryJobRequest.cc
+	src/model/DeleteHistoryJobResult.cc
 	src/model/DeleteIngressRequest.cc
 	src/model/DeleteIngressResult.cc
+	src/model/DeleteJobRequest.cc
+	src/model/DeleteJobResult.cc
 	src/model/DeleteNamespaceRequest.cc
 	src/model/DeleteNamespaceResult.cc
+	src/model/DeleteSecretRequest.cc
+	src/model/DeleteSecretResult.cc
 	src/model/DeployApplicationRequest.cc
 	src/model/DeployApplicationResult.cc
 	src/model/DescribeAppServiceDetailRequest.cc
@@ -258,6 +298,12 @@ set(sae_src
 	src/model/DescribeInstanceLogResult.cc
 	src/model/DescribeInstanceSpecificationsRequest.cc
 	src/model/DescribeInstanceSpecificationsResult.cc
+	src/model/DescribeJobRequest.cc
+	src/model/DescribeJobResult.cc
+	src/model/DescribeJobHistoryRequest.cc
+	src/model/DescribeJobHistoryResult.cc
+	src/model/DescribeJobStatusRequest.cc
+	src/model/DescribeJobStatusResult.cc
 	src/model/DescribeNamespaceRequest.cc
 	src/model/DescribeNamespaceResult.cc
 	src/model/DescribeNamespaceListRequest.cc
@@ -270,10 +316,14 @@ set(sae_src
 	src/model/DescribePipelineResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
+	src/model/DescribeSecretRequest.cc
+	src/model/DescribeSecretResult.cc
 	src/model/DisableApplicationScalingRuleRequest.cc
 	src/model/DisableApplicationScalingRuleResult.cc
 	src/model/EnableApplicationScalingRuleRequest.cc
 	src/model/EnableApplicationScalingRuleResult.cc
+	src/model/ExecJobRequest.cc
+	src/model/ExecJobResult.cc
 	src/model/ListAppEventsRequest.cc
 	src/model/ListAppEventsResult.cc
 	src/model/ListAppServicesPageRequest.cc
@@ -290,6 +340,8 @@ set(sae_src
 	src/model/ListGreyTagRouteResult.cc
 	src/model/ListIngressesRequest.cc
 	src/model/ListIngressesResult.cc
+	src/model/ListJobsRequest.cc
+	src/model/ListJobsResult.cc
 	src/model/ListLogConfigsRequest.cc
 	src/model/ListLogConfigsResult.cc
 	src/model/ListNamespaceChangeOrdersRequest.cc
@@ -298,6 +350,8 @@ set(sae_src
 	src/model/ListNamespacedConfigMapsResult.cc
 	src/model/ListPublishedServicesRequest.cc
 	src/model/ListPublishedServicesResult.cc
+	src/model/ListSecretsRequest.cc
+	src/model/ListSecretsResult.cc
 	src/model/ListTagResourcesRequest.cc
 	src/model/ListTagResourcesResult.cc
 	src/model/OpenSaeServiceRequest.cc
@@ -320,6 +374,8 @@ set(sae_src
 	src/model/StartApplicationResult.cc
 	src/model/StopApplicationRequest.cc
 	src/model/StopApplicationResult.cc
+	src/model/SuspendJobRequest.cc
+	src/model/SuspendJobResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
 	src/model/UnbindSlbRequest.cc
@@ -340,10 +396,14 @@ set(sae_src
 	src/model/UpdateGreyTagRouteResult.cc
 	src/model/UpdateIngressRequest.cc
 	src/model/UpdateIngressResult.cc
+	src/model/UpdateJobRequest.cc
+	src/model/UpdateJobResult.cc
 	src/model/UpdateNamespaceRequest.cc
 	src/model/UpdateNamespaceResult.cc
 	src/model/UpdateNamespaceVpcRequest.cc
-	src/model/UpdateNamespaceVpcResult.cc )
+	src/model/UpdateNamespaceVpcResult.cc
+	src/model/UpdateSecretRequest.cc
+	src/model/UpdateSecretResult.cc )
 
 add_library(sae ${LIB_TYPE}
 	${sae_public_header}

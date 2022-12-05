@@ -53,6 +53,15 @@ void DeployApplicationRequest::setOssAkSecret(const std::string &ossAkSecret) {
   setBodyParameter(std::string("OssAkSecret"), ossAkSecret);
 }
 
+std::string DeployApplicationRequest::getNasConfigs() const {
+  return nasConfigs_;
+}
+
+void DeployApplicationRequest::setNasConfigs(const std::string &nasConfigs) {
+  nasConfigs_ = nasConfigs;
+  setParameter(std::string("NasConfigs"), nasConfigs);
+}
+
 std::string DeployApplicationRequest::getMountHost() const {
   return mountHost_;
 }
@@ -78,15 +87,6 @@ std::string DeployApplicationRequest::getEnvs() const {
 void DeployApplicationRequest::setEnvs(const std::string &envs) {
   envs_ = envs;
   setParameter(std::string("Envs"), envs);
-}
-
-std::string DeployApplicationRequest::getKafkaInstanceId() const {
-  return kafkaInstanceId_;
-}
-
-void DeployApplicationRequest::setKafkaInstanceId(const std::string &kafkaInstanceId) {
-  kafkaInstanceId_ = kafkaInstanceId;
-  setParameter(std::string("KafkaInstanceId"), kafkaInstanceId);
 }
 
 std::string DeployApplicationRequest::getPhpPECLExtensions() const {
@@ -116,6 +116,15 @@ void DeployApplicationRequest::setCustomHostAlias(const std::string &customHostA
   setParameter(std::string("CustomHostAlias"), customHostAlias);
 }
 
+std::string DeployApplicationRequest::getDeploy() const {
+  return deploy_;
+}
+
+void DeployApplicationRequest::setDeploy(const std::string &deploy) {
+  deploy_ = deploy;
+  setParameter(std::string("Deploy"), deploy);
+}
+
 std::string DeployApplicationRequest::getJarStartOptions() const {
   return jarStartOptions_;
 }
@@ -123,6 +132,15 @@ std::string DeployApplicationRequest::getJarStartOptions() const {
 void DeployApplicationRequest::setJarStartOptions(const std::string &jarStartOptions) {
   jarStartOptions_ = jarStartOptions;
   setParameter(std::string("JarStartOptions"), jarStartOptions);
+}
+
+std::string DeployApplicationRequest::getPvtzDiscoverySvc() const {
+  return pvtzDiscoverySvc_;
+}
+
+void DeployApplicationRequest::setPvtzDiscoverySvc(const std::string &pvtzDiscoverySvc) {
+  pvtzDiscoverySvc_ = pvtzDiscoverySvc;
+  setParameter(std::string("PvtzDiscoverySvc"), pvtzDiscoverySvc);
 }
 
 std::string DeployApplicationRequest::getConfigMapMountDesc() const {
@@ -143,13 +161,13 @@ void DeployApplicationRequest::setOssMountDescs(const std::string &ossMountDescs
   setBodyParameter(std::string("OssMountDescs"), ossMountDescs);
 }
 
-std::string DeployApplicationRequest::getKafkaEndpoint() const {
-  return kafkaEndpoint_;
+std::string DeployApplicationRequest::getImagePullSecrets() const {
+  return imagePullSecrets_;
 }
 
-void DeployApplicationRequest::setKafkaEndpoint(const std::string &kafkaEndpoint) {
-  kafkaEndpoint_ = kafkaEndpoint;
-  setParameter(std::string("KafkaEndpoint"), kafkaEndpoint);
+void DeployApplicationRequest::setImagePullSecrets(const std::string &imagePullSecrets) {
+  imagePullSecrets_ = imagePullSecrets;
+  setParameter(std::string("ImagePullSecrets"), imagePullSecrets);
 }
 
 std::string DeployApplicationRequest::getPreStop() const {
@@ -159,6 +177,15 @@ std::string DeployApplicationRequest::getPreStop() const {
 void DeployApplicationRequest::setPreStop(const std::string &preStop) {
   preStop_ = preStop;
   setParameter(std::string("PreStop"), preStop);
+}
+
+std::string DeployApplicationRequest::getPython() const {
+  return python_;
+}
+
+void DeployApplicationRequest::setPython(const std::string &python) {
+  python_ = python;
+  setParameter(std::string("Python"), python);
 }
 
 std::string DeployApplicationRequest::getUpdateStrategy() const {
@@ -260,15 +287,6 @@ void DeployApplicationRequest::setKafkaConfigs(const std::string &kafkaConfigs) 
   setParameter(std::string("KafkaConfigs"), kafkaConfigs);
 }
 
-bool DeployApplicationRequest::getOpenCollectToKafka() const {
-  return openCollectToKafka_;
-}
-
-void DeployApplicationRequest::setOpenCollectToKafka(bool openCollectToKafka) {
-  openCollectToKafka_ = openCollectToKafka;
-  setParameter(std::string("OpenCollectToKafka"), openCollectToKafka ? "true" : "false");
-}
-
 std::string DeployApplicationRequest::getCommandArgs() const {
   return commandArgs_;
 }
@@ -350,6 +368,15 @@ void DeployApplicationRequest::setWarStartOptions(const std::string &warStartOpt
   setParameter(std::string("WarStartOptions"), warStartOptions);
 }
 
+std::string DeployApplicationRequest::getPackageRuntimeCustomBuild() const {
+  return packageRuntimeCustomBuild_;
+}
+
+void DeployApplicationRequest::setPackageRuntimeCustomBuild(const std::string &packageRuntimeCustomBuild) {
+  packageRuntimeCustomBuild_ = packageRuntimeCustomBuild;
+  setBodyParameter(std::string("PackageRuntimeCustomBuild"), packageRuntimeCustomBuild);
+}
+
 std::string DeployApplicationRequest::getEdasContainerVersion() const {
   return edasContainerVersion_;
 }
@@ -384,6 +411,24 @@ std::string DeployApplicationRequest::getPhpConfig() const {
 void DeployApplicationRequest::setPhpConfig(const std::string &phpConfig) {
   phpConfig_ = phpConfig;
   setBodyParameter(std::string("PhpConfig"), phpConfig);
+}
+
+bool DeployApplicationRequest::getEnableImageAccl() const {
+  return enableImageAccl_;
+}
+
+void DeployApplicationRequest::setEnableImageAccl(bool enableImageAccl) {
+  enableImageAccl_ = enableImageAccl;
+  setBodyParameter(std::string("EnableImageAccl"), enableImageAccl ? "true" : "false");
+}
+
+std::string DeployApplicationRequest::getMicroRegistration() const {
+  return microRegistration_;
+}
+
+void DeployApplicationRequest::setMicroRegistration(const std::string &microRegistration) {
+  microRegistration_ = microRegistration;
+  setParameter(std::string("MicroRegistration"), microRegistration);
 }
 
 bool DeployApplicationRequest::getEnableGreyTagRoute() const {
@@ -431,15 +476,6 @@ void DeployApplicationRequest::setMinReadyInstances(int minReadyInstances) {
   setParameter(std::string("MinReadyInstances"), std::to_string(minReadyInstances));
 }
 
-std::string DeployApplicationRequest::getKafkaLogfileConfig() const {
-  return kafkaLogfileConfig_;
-}
-
-void DeployApplicationRequest::setKafkaLogfileConfig(const std::string &kafkaLogfileConfig) {
-  kafkaLogfileConfig_ = kafkaLogfileConfig;
-  setParameter(std::string("KafkaLogfileConfig"), kafkaLogfileConfig);
-}
-
 std::string DeployApplicationRequest::getAcrInstanceId() const {
   return acrInstanceId_;
 }
@@ -474,6 +510,15 @@ std::string DeployApplicationRequest::getPhp() const {
 void DeployApplicationRequest::setPhp(const std::string &php) {
   php_ = php;
   setBodyParameter(std::string("Php"), php);
+}
+
+std::string DeployApplicationRequest::getPythonModules() const {
+  return pythonModules_;
+}
+
+void DeployApplicationRequest::setPythonModules(const std::string &pythonModules) {
+  pythonModules_ = pythonModules;
+  setParameter(std::string("PythonModules"), pythonModules);
 }
 
 std::string DeployApplicationRequest::getPhpConfigLocation() const {
