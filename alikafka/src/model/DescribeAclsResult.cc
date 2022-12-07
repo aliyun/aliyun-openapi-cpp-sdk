@@ -43,26 +43,26 @@ void DescribeAclsResult::parse(const std::string &payload)
 	for (auto valueKafkaAclListKafkaAclVO : allKafkaAclListNode)
 	{
 		KafkaAclVO kafkaAclListObject;
-		if(!valueKafkaAclListKafkaAclVO["Username"].isNull())
-			kafkaAclListObject.username = valueKafkaAclListKafkaAclVO["Username"].asString();
 		if(!valueKafkaAclListKafkaAclVO["AclResourceType"].isNull())
 			kafkaAclListObject.aclResourceType = valueKafkaAclListKafkaAclVO["AclResourceType"].asString();
-		if(!valueKafkaAclListKafkaAclVO["AclResourceName"].isNull())
-			kafkaAclListObject.aclResourceName = valueKafkaAclListKafkaAclVO["AclResourceName"].asString();
-		if(!valueKafkaAclListKafkaAclVO["AclResourcePatternType"].isNull())
-			kafkaAclListObject.aclResourcePatternType = valueKafkaAclListKafkaAclVO["AclResourcePatternType"].asString();
 		if(!valueKafkaAclListKafkaAclVO["Host"].isNull())
 			kafkaAclListObject.host = valueKafkaAclListKafkaAclVO["Host"].asString();
 		if(!valueKafkaAclListKafkaAclVO["AclOperationType"].isNull())
 			kafkaAclListObject.aclOperationType = valueKafkaAclListKafkaAclVO["AclOperationType"].asString();
+		if(!valueKafkaAclListKafkaAclVO["AclResourceName"].isNull())
+			kafkaAclListObject.aclResourceName = valueKafkaAclListKafkaAclVO["AclResourceName"].asString();
+		if(!valueKafkaAclListKafkaAclVO["AclResourcePatternType"].isNull())
+			kafkaAclListObject.aclResourcePatternType = valueKafkaAclListKafkaAclVO["AclResourcePatternType"].asString();
+		if(!valueKafkaAclListKafkaAclVO["Username"].isNull())
+			kafkaAclListObject.username = valueKafkaAclListKafkaAclVO["Username"].asString();
 		kafkaAclList_.push_back(kafkaAclListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

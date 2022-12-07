@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_DELETEACLREQUEST_H_
-#define ALIBABACLOUD_ALIKAFKA_MODEL_DELETEACLREQUEST_H_
+#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_GETQUOTATIPREQUEST_H_
+#define ALIBABACLOUD_ALIKAFKA_MODEL_GETQUOTATIPREQUEST_H_
 
 #include <alibabacloud/alikafka/AlikafkaExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,20 @@
 namespace AlibabaCloud {
 namespace Alikafka {
 namespace Model {
-class ALIBABACLOUD_ALIKAFKA_EXPORT DeleteAclRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ALIKAFKA_EXPORT GetQuotaTipRequest : public RpcServiceRequest {
 public:
-	DeleteAclRequest();
-	~DeleteAclRequest();
-	std::string getAclResourcePatternType() const;
-	void setAclResourcePatternType(const std::string &aclResourcePatternType);
-	std::string getAclResourceType() const;
-	void setAclResourceType(const std::string &aclResourceType);
-	std::string getAclOperationType() const;
-	void setAclOperationType(const std::string &aclOperationType);
-	std::string getAclResourceName() const;
-	void setAclResourceName(const std::string &aclResourceName);
+	GetQuotaTipRequest();
+	~GetQuotaTipRequest();
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getUsername() const;
-	void setUsername(const std::string &username);
 
 private:
-	std::string aclResourcePatternType_;
-	std::string aclResourceType_;
-	std::string aclOperationType_;
-	std::string aclResourceName_;
 	std::string instanceId_;
 	std::string regionId_;
-	std::string username_;
 };
 } // namespace Model
 } // namespace Alikafka
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_DELETEACLREQUEST_H_
+#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_GETQUOTATIPREQUEST_H_

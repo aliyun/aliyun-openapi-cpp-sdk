@@ -14,59 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alikafka/model/DescribeNodeStatusResult.h>
+#include <alibabacloud/alikafka/model/ChangeResourceGroupResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Alikafka;
 using namespace AlibabaCloud::Alikafka::Model;
 
-DescribeNodeStatusResult::DescribeNodeStatusResult() :
+ChangeResourceGroupResult::ChangeResourceGroupResult() :
 	ServiceResult()
 {}
 
-DescribeNodeStatusResult::DescribeNodeStatusResult(const std::string &payload) :
+ChangeResourceGroupResult::ChangeResourceGroupResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeNodeStatusResult::~DescribeNodeStatusResult()
+ChangeResourceGroupResult::~ChangeResourceGroupResult()
 {}
 
-void DescribeNodeStatusResult::parse(const std::string &payload)
+void ChangeResourceGroupResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allStatusList = value["StatusList"]["Status"];
-	for (const auto &item : allStatusList)
-		statusList_.push_back(item.asString());
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = std::stol(value["Success"].asString());
+	if(!value["NewResourceGroupId"].isNull())
+		newResourceGroupId_ = value["NewResourceGroupId"].asString();
 
 }
 
-std::string DescribeNodeStatusResult::getMessage()const
+std::string ChangeResourceGroupResult::getNewResourceGroupId()const
+{
+	return newResourceGroupId_;
+}
+
+std::string ChangeResourceGroupResult::getMessage()const
 {
 	return message_;
 }
 
-std::vector<std::string> DescribeNodeStatusResult::getStatusList()const
-{
-	return statusList_;
-}
-
-int DescribeNodeStatusResult::getCode()const
+int ChangeResourceGroupResult::getCode()const
 {
 	return code_;
 }
 
-bool DescribeNodeStatusResult::getSuccess()const
+long ChangeResourceGroupResult::getSuccess()const
 {
 	return success_;
 }

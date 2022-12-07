@@ -40,42 +40,42 @@ void GetConsumerProgressResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto consumerProgressNode = value["ConsumerProgress"];
-	if(!consumerProgressNode["TotalDiff"].isNull())
-		consumerProgress_.totalDiff = std::stol(consumerProgressNode["TotalDiff"].asString());
 	if(!consumerProgressNode["LastTimestamp"].isNull())
 		consumerProgress_.lastTimestamp = std::stol(consumerProgressNode["LastTimestamp"].asString());
+	if(!consumerProgressNode["TotalDiff"].isNull())
+		consumerProgress_.totalDiff = std::stol(consumerProgressNode["TotalDiff"].asString());
 	auto allTopicListNode = consumerProgressNode["TopicList"]["TopicListItem"];
 	for (auto consumerProgressNodeTopicListTopicListItem : allTopicListNode)
 	{
 		ConsumerProgress::TopicListItem topicListItemObject;
-		if(!consumerProgressNodeTopicListTopicListItem["Topic"].isNull())
-			topicListItemObject.topic = consumerProgressNodeTopicListTopicListItem["Topic"].asString();
 		if(!consumerProgressNodeTopicListTopicListItem["TotalDiff"].isNull())
 			topicListItemObject.totalDiff = std::stol(consumerProgressNodeTopicListTopicListItem["TotalDiff"].asString());
 		if(!consumerProgressNodeTopicListTopicListItem["LastTimestamp"].isNull())
 			topicListItemObject.lastTimestamp = std::stol(consumerProgressNodeTopicListTopicListItem["LastTimestamp"].asString());
+		if(!consumerProgressNodeTopicListTopicListItem["Topic"].isNull())
+			topicListItemObject.topic = consumerProgressNodeTopicListTopicListItem["Topic"].asString();
 		auto allOffsetListNode = consumerProgressNodeTopicListTopicListItem["OffsetList"]["OffsetListItem"];
 		for (auto consumerProgressNodeTopicListTopicListItemOffsetListOffsetListItem : allOffsetListNode)
 		{
 			ConsumerProgress::TopicListItem::OffsetListItem offsetListObject;
+			if(!consumerProgressNodeTopicListTopicListItemOffsetListOffsetListItem["Partition"].isNull())
+				offsetListObject.partition = std::stoi(consumerProgressNodeTopicListTopicListItemOffsetListOffsetListItem["Partition"].asString());
 			if(!consumerProgressNodeTopicListTopicListItemOffsetListOffsetListItem["BrokerOffset"].isNull())
 				offsetListObject.brokerOffset = std::stol(consumerProgressNodeTopicListTopicListItemOffsetListOffsetListItem["BrokerOffset"].asString());
 			if(!consumerProgressNodeTopicListTopicListItemOffsetListOffsetListItem["ConsumerOffset"].isNull())
 				offsetListObject.consumerOffset = std::stol(consumerProgressNodeTopicListTopicListItemOffsetListOffsetListItem["ConsumerOffset"].asString());
 			if(!consumerProgressNodeTopicListTopicListItemOffsetListOffsetListItem["LastTimestamp"].isNull())
 				offsetListObject.lastTimestamp = std::stol(consumerProgressNodeTopicListTopicListItemOffsetListOffsetListItem["LastTimestamp"].asString());
-			if(!consumerProgressNodeTopicListTopicListItemOffsetListOffsetListItem["Partition"].isNull())
-				offsetListObject.partition = std::stoi(consumerProgressNodeTopicListTopicListItemOffsetListOffsetListItem["Partition"].asString());
 			topicListItemObject.offsetList.push_back(offsetListObject);
 		}
 		consumerProgress_.topicList.push_back(topicListItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

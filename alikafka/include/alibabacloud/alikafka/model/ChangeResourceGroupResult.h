@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_DESCRIBENODESTATUSREQUEST_H_
-#define ALIBABACLOUD_ALIKAFKA_MODEL_DESCRIBENODESTATUSREQUEST_H_
+#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_CHANGERESOURCEGROUPRESULT_H_
+#define ALIBABACLOUD_ALIKAFKA_MODEL_CHANGERESOURCEGROUPRESULT_H_
 
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
 #include <alibabacloud/alikafka/AlikafkaExport.h>
 
 namespace AlibabaCloud
@@ -28,24 +29,29 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIKAFKA_EXPORT DescribeNodeStatusRequest : public RpcServiceRequest
+			class ALIBABACLOUD_ALIKAFKA_EXPORT ChangeResourceGroupResult : public ServiceResult
 			{
-
 			public:
-				DescribeNodeStatusRequest();
-				~DescribeNodeStatusRequest();
 
-				std::string getInstanceId()const;
-				void setInstanceId(const std::string& instanceId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
 
-            private:
-				std::string instanceId_;
-				std::string regionId_;
+				ChangeResourceGroupResult();
+				explicit ChangeResourceGroupResult(const std::string &payload);
+				~ChangeResourceGroupResult();
+				std::string getNewResourceGroupId()const;
+				std::string getMessage()const;
+				int getCode()const;
+				long getSuccess()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				std::string newResourceGroupId_;
+				std::string message_;
+				int code_;
+				long success_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_DESCRIBENODESTATUSREQUEST_H_
+#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_CHANGERESOURCEGROUPRESULT_H_

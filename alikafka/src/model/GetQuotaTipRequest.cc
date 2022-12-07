@@ -14,31 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alikafka/model/DescribeSaslUsersRequest.h>
+#include <alibabacloud/alikafka/model/GetQuotaTipRequest.h>
 
-using AlibabaCloud::Alikafka::Model::DescribeSaslUsersRequest;
+using AlibabaCloud::Alikafka::Model::GetQuotaTipRequest;
 
-DescribeSaslUsersRequest::DescribeSaslUsersRequest()
-    : RpcServiceRequest("alikafka", "2019-09-16", "DescribeSaslUsers") {
+GetQuotaTipRequest::GetQuotaTipRequest()
+    : RpcServiceRequest("alikafka", "2019-09-16", "GetQuotaTip") {
   setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSaslUsersRequest::~DescribeSaslUsersRequest() {}
+GetQuotaTipRequest::~GetQuotaTipRequest() {}
 
-std::string DescribeSaslUsersRequest::getInstanceId() const {
+std::string GetQuotaTipRequest::getInstanceId() const {
   return instanceId_;
 }
 
-void DescribeSaslUsersRequest::setInstanceId(const std::string &instanceId) {
+void GetQuotaTipRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string DescribeSaslUsersRequest::getRegionId() const {
+std::string GetQuotaTipRequest::getRegionId() const {
   return regionId_;
 }
 
-void DescribeSaslUsersRequest::setRegionId(const std::string &regionId) {
+void GetQuotaTipRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
 }

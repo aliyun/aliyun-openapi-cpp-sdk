@@ -14,31 +14,22 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alikafka/model/DescribeSaslUsersRequest.h>
+#include <alibabacloud/alikafka/model/GetAllInstanceIdListRequest.h>
 
-using AlibabaCloud::Alikafka::Model::DescribeSaslUsersRequest;
+using AlibabaCloud::Alikafka::Model::GetAllInstanceIdListRequest;
 
-DescribeSaslUsersRequest::DescribeSaslUsersRequest()
-    : RpcServiceRequest("alikafka", "2019-09-16", "DescribeSaslUsers") {
+GetAllInstanceIdListRequest::GetAllInstanceIdListRequest()
+    : RpcServiceRequest("alikafka", "2019-09-16", "GetAllInstanceIdList") {
   setMethod(HttpRequest::Method::Post);
 }
 
-DescribeSaslUsersRequest::~DescribeSaslUsersRequest() {}
+GetAllInstanceIdListRequest::~GetAllInstanceIdListRequest() {}
 
-std::string DescribeSaslUsersRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void DescribeSaslUsersRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string DescribeSaslUsersRequest::getRegionId() const {
+std::string GetAllInstanceIdListRequest::getRegionId() const {
   return regionId_;
 }
 
-void DescribeSaslUsersRequest::setRegionId(const std::string &regionId) {
+void GetAllInstanceIdListRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
 }

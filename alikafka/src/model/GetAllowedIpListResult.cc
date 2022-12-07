@@ -48,6 +48,8 @@ void GetAllowedIpListResult::parse(const std::string &payload)
 		AllowedList::IPListVO iPListVOObject;
 		if(!allowedListNodeVpcListIPListVO["PortRange"].isNull())
 			iPListVOObject.portRange = allowedListNodeVpcListIPListVO["PortRange"].asString();
+		if(!allowedListNodeVpcListIPListVO["AllowedIpGroup"].isNull())
+			iPListVOObject.allowedIpGroup = allowedListNodeVpcListIPListVO["AllowedIpGroup"].asString();
 		auto allAllowedIpList = value["AllowedIpList"]["IPVO"];
 		for (auto value : allAllowedIpList)
 			iPListVOObject.allowedIpList.push_back(value.asString());
@@ -59,17 +61,19 @@ void GetAllowedIpListResult::parse(const std::string &payload)
 		AllowedList::IPListVO iPListVOObject;
 		if(!allowedListNodeInternetListIPListVO["PortRange"].isNull())
 			iPListVOObject.portRange = allowedListNodeInternetListIPListVO["PortRange"].asString();
+		if(!allowedListNodeInternetListIPListVO["AllowedIpGroup"].isNull())
+			iPListVOObject.allowedIpGroup = allowedListNodeInternetListIPListVO["AllowedIpGroup"].asString();
 		auto allAllowedIpList = value["AllowedIpList"]["IPVO"];
 		for (auto value : allAllowedIpList)
 			iPListVOObject.allowedIpList.push_back(value.asString());
 		allowedList_.internetList.push_back(iPListVOObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

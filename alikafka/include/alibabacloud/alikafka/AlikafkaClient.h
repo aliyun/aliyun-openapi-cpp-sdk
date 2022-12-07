@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "AlikafkaExport.h"
+#include "model/ChangeResourceGroupRequest.h"
+#include "model/ChangeResourceGroupResult.h"
 #include "model/ConvertPostPayOrderRequest.h"
 #include "model/ConvertPostPayOrderResult.h"
 #include "model/CreateAclRequest.h"
@@ -48,10 +50,10 @@
 #include "model/DeleteTopicResult.h"
 #include "model/DescribeAclsRequest.h"
 #include "model/DescribeAclsResult.h"
-#include "model/DescribeNodeStatusRequest.h"
-#include "model/DescribeNodeStatusResult.h"
 #include "model/DescribeSaslUsersRequest.h"
 #include "model/DescribeSaslUsersResult.h"
+#include "model/GetAllInstanceIdListRequest.h"
+#include "model/GetAllInstanceIdListResult.h"
 #include "model/GetAllowedIpListRequest.h"
 #include "model/GetAllowedIpListResult.h"
 #include "model/GetConsumerListRequest.h"
@@ -60,8 +62,8 @@
 #include "model/GetConsumerProgressResult.h"
 #include "model/GetInstanceListRequest.h"
 #include "model/GetInstanceListResult.h"
-#include "model/GetMetaProductListRequest.h"
-#include "model/GetMetaProductListResult.h"
+#include "model/GetQuotaTipRequest.h"
+#include "model/GetQuotaTipResult.h"
 #include "model/GetTopicListRequest.h"
 #include "model/GetTopicListResult.h"
 #include "model/GetTopicStatusRequest.h"
@@ -101,6 +103,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_ALIKAFKA_EXPORT AlikafkaClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::ChangeResourceGroupResult> ChangeResourceGroupOutcome;
+			typedef std::future<ChangeResourceGroupOutcome> ChangeResourceGroupOutcomeCallable;
+			typedef std::function<void(const AlikafkaClient*, const Model::ChangeResourceGroupRequest&, const ChangeResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::ConvertPostPayOrderResult> ConvertPostPayOrderOutcome;
 			typedef std::future<ConvertPostPayOrderOutcome> ConvertPostPayOrderOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::ConvertPostPayOrderRequest&, const ConvertPostPayOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConvertPostPayOrderAsyncHandler;
@@ -140,12 +145,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAclsResult> DescribeAclsOutcome;
 			typedef std::future<DescribeAclsOutcome> DescribeAclsOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::DescribeAclsRequest&, const DescribeAclsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAclsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeNodeStatusResult> DescribeNodeStatusOutcome;
-			typedef std::future<DescribeNodeStatusOutcome> DescribeNodeStatusOutcomeCallable;
-			typedef std::function<void(const AlikafkaClient*, const Model::DescribeNodeStatusRequest&, const DescribeNodeStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNodeStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSaslUsersResult> DescribeSaslUsersOutcome;
 			typedef std::future<DescribeSaslUsersOutcome> DescribeSaslUsersOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::DescribeSaslUsersRequest&, const DescribeSaslUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSaslUsersAsyncHandler;
+			typedef Outcome<Error, Model::GetAllInstanceIdListResult> GetAllInstanceIdListOutcome;
+			typedef std::future<GetAllInstanceIdListOutcome> GetAllInstanceIdListOutcomeCallable;
+			typedef std::function<void(const AlikafkaClient*, const Model::GetAllInstanceIdListRequest&, const GetAllInstanceIdListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAllInstanceIdListAsyncHandler;
 			typedef Outcome<Error, Model::GetAllowedIpListResult> GetAllowedIpListOutcome;
 			typedef std::future<GetAllowedIpListOutcome> GetAllowedIpListOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::GetAllowedIpListRequest&, const GetAllowedIpListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAllowedIpListAsyncHandler;
@@ -158,9 +163,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetInstanceListResult> GetInstanceListOutcome;
 			typedef std::future<GetInstanceListOutcome> GetInstanceListOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::GetInstanceListRequest&, const GetInstanceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceListAsyncHandler;
-			typedef Outcome<Error, Model::GetMetaProductListResult> GetMetaProductListOutcome;
-			typedef std::future<GetMetaProductListOutcome> GetMetaProductListOutcomeCallable;
-			typedef std::function<void(const AlikafkaClient*, const Model::GetMetaProductListRequest&, const GetMetaProductListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMetaProductListAsyncHandler;
+			typedef Outcome<Error, Model::GetQuotaTipResult> GetQuotaTipOutcome;
+			typedef std::future<GetQuotaTipOutcome> GetQuotaTipOutcomeCallable;
+			typedef std::function<void(const AlikafkaClient*, const Model::GetQuotaTipRequest&, const GetQuotaTipOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetQuotaTipAsyncHandler;
 			typedef Outcome<Error, Model::GetTopicListResult> GetTopicListOutcome;
 			typedef std::future<GetTopicListOutcome> GetTopicListOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::GetTopicListRequest&, const GetTopicListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTopicListAsyncHandler;
@@ -211,6 +216,9 @@ namespace AlibabaCloud
 			AlikafkaClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			AlikafkaClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~AlikafkaClient();
+			ChangeResourceGroupOutcome changeResourceGroup(const Model::ChangeResourceGroupRequest &request)const;
+			void changeResourceGroupAsync(const Model::ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeResourceGroupOutcomeCallable changeResourceGroupCallable(const Model::ChangeResourceGroupRequest& request) const;
 			ConvertPostPayOrderOutcome convertPostPayOrder(const Model::ConvertPostPayOrderRequest &request)const;
 			void convertPostPayOrderAsync(const Model::ConvertPostPayOrderRequest& request, const ConvertPostPayOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConvertPostPayOrderOutcomeCallable convertPostPayOrderCallable(const Model::ConvertPostPayOrderRequest& request) const;
@@ -250,12 +258,12 @@ namespace AlibabaCloud
 			DescribeAclsOutcome describeAcls(const Model::DescribeAclsRequest &request)const;
 			void describeAclsAsync(const Model::DescribeAclsRequest& request, const DescribeAclsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAclsOutcomeCallable describeAclsCallable(const Model::DescribeAclsRequest& request) const;
-			DescribeNodeStatusOutcome describeNodeStatus(const Model::DescribeNodeStatusRequest &request)const;
-			void describeNodeStatusAsync(const Model::DescribeNodeStatusRequest& request, const DescribeNodeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeNodeStatusOutcomeCallable describeNodeStatusCallable(const Model::DescribeNodeStatusRequest& request) const;
 			DescribeSaslUsersOutcome describeSaslUsers(const Model::DescribeSaslUsersRequest &request)const;
 			void describeSaslUsersAsync(const Model::DescribeSaslUsersRequest& request, const DescribeSaslUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSaslUsersOutcomeCallable describeSaslUsersCallable(const Model::DescribeSaslUsersRequest& request) const;
+			GetAllInstanceIdListOutcome getAllInstanceIdList(const Model::GetAllInstanceIdListRequest &request)const;
+			void getAllInstanceIdListAsync(const Model::GetAllInstanceIdListRequest& request, const GetAllInstanceIdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAllInstanceIdListOutcomeCallable getAllInstanceIdListCallable(const Model::GetAllInstanceIdListRequest& request) const;
 			GetAllowedIpListOutcome getAllowedIpList(const Model::GetAllowedIpListRequest &request)const;
 			void getAllowedIpListAsync(const Model::GetAllowedIpListRequest& request, const GetAllowedIpListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAllowedIpListOutcomeCallable getAllowedIpListCallable(const Model::GetAllowedIpListRequest& request) const;
@@ -268,9 +276,9 @@ namespace AlibabaCloud
 			GetInstanceListOutcome getInstanceList(const Model::GetInstanceListRequest &request)const;
 			void getInstanceListAsync(const Model::GetInstanceListRequest& request, const GetInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceListOutcomeCallable getInstanceListCallable(const Model::GetInstanceListRequest& request) const;
-			GetMetaProductListOutcome getMetaProductList(const Model::GetMetaProductListRequest &request)const;
-			void getMetaProductListAsync(const Model::GetMetaProductListRequest& request, const GetMetaProductListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetMetaProductListOutcomeCallable getMetaProductListCallable(const Model::GetMetaProductListRequest& request) const;
+			GetQuotaTipOutcome getQuotaTip(const Model::GetQuotaTipRequest &request)const;
+			void getQuotaTipAsync(const Model::GetQuotaTipRequest& request, const GetQuotaTipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetQuotaTipOutcomeCallable getQuotaTipCallable(const Model::GetQuotaTipRequest& request) const;
 			GetTopicListOutcome getTopicList(const Model::GetTopicListRequest &request)const;
 			void getTopicListAsync(const Model::GetTopicListRequest& request, const GetTopicListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTopicListOutcomeCallable getTopicListCallable(const Model::GetTopicListRequest& request) const;

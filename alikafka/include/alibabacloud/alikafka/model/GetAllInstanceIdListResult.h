@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_DESCRIBENODESTATUSRESULT_H_
-#define ALIBABACLOUD_ALIKAFKA_MODEL_DESCRIBENODESTATUSRESULT_H_
+#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_GETALLINSTANCEIDLISTRESULT_H_
+#define ALIBABACLOUD_ALIKAFKA_MODEL_GETALLINSTANCEIDLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,16 +29,16 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIKAFKA_EXPORT DescribeNodeStatusResult : public ServiceResult
+			class ALIBABACLOUD_ALIKAFKA_EXPORT GetAllInstanceIdListResult : public ServiceResult
 			{
 			public:
 
 
-				DescribeNodeStatusResult();
-				explicit DescribeNodeStatusResult(const std::string &payload);
-				~DescribeNodeStatusResult();
+				GetAllInstanceIdListResult();
+				explicit GetAllInstanceIdListResult(const std::string &payload);
+				~GetAllInstanceIdListResult();
 				std::string getMessage()const;
-				std::vector<std::string> getStatusList()const;
+				std::string getInstanceIds()const;
 				int getCode()const;
 				bool getSuccess()const;
 
@@ -46,7 +46,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::vector<std::string> statusList_;
+				std::string instanceIds_;
 				int code_;
 				bool success_;
 
@@ -54,4 +54,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_DESCRIBENODESTATUSRESULT_H_
+#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_GETALLINSTANCEIDLISTRESULT_H_

@@ -21,6 +21,8 @@ set(alikafka_public_header
 	include/alibabacloud/alikafka/AlikafkaExport.h )
 
 set(alikafka_public_header_model 
+	include/alibabacloud/alikafka/model/ChangeResourceGroupRequest.h
+	include/alibabacloud/alikafka/model/ChangeResourceGroupResult.h
 	include/alibabacloud/alikafka/model/ConvertPostPayOrderRequest.h
 	include/alibabacloud/alikafka/model/ConvertPostPayOrderResult.h
 	include/alibabacloud/alikafka/model/CreateAclRequest.h
@@ -47,10 +49,10 @@ set(alikafka_public_header_model
 	include/alibabacloud/alikafka/model/DeleteTopicResult.h
 	include/alibabacloud/alikafka/model/DescribeAclsRequest.h
 	include/alibabacloud/alikafka/model/DescribeAclsResult.h
-	include/alibabacloud/alikafka/model/DescribeNodeStatusRequest.h
-	include/alibabacloud/alikafka/model/DescribeNodeStatusResult.h
 	include/alibabacloud/alikafka/model/DescribeSaslUsersRequest.h
 	include/alibabacloud/alikafka/model/DescribeSaslUsersResult.h
+	include/alibabacloud/alikafka/model/GetAllInstanceIdListRequest.h
+	include/alibabacloud/alikafka/model/GetAllInstanceIdListResult.h
 	include/alibabacloud/alikafka/model/GetAllowedIpListRequest.h
 	include/alibabacloud/alikafka/model/GetAllowedIpListResult.h
 	include/alibabacloud/alikafka/model/GetConsumerListRequest.h
@@ -59,8 +61,8 @@ set(alikafka_public_header_model
 	include/alibabacloud/alikafka/model/GetConsumerProgressResult.h
 	include/alibabacloud/alikafka/model/GetInstanceListRequest.h
 	include/alibabacloud/alikafka/model/GetInstanceListResult.h
-	include/alibabacloud/alikafka/model/GetMetaProductListRequest.h
-	include/alibabacloud/alikafka/model/GetMetaProductListResult.h
+	include/alibabacloud/alikafka/model/GetQuotaTipRequest.h
+	include/alibabacloud/alikafka/model/GetQuotaTipResult.h
 	include/alibabacloud/alikafka/model/GetTopicListRequest.h
 	include/alibabacloud/alikafka/model/GetTopicListResult.h
 	include/alibabacloud/alikafka/model/GetTopicStatusRequest.h
@@ -94,6 +96,8 @@ set(alikafka_public_header_model
 
 set(alikafka_src 
 	src/AlikafkaClient.cc
+	src/model/ChangeResourceGroupRequest.cc
+	src/model/ChangeResourceGroupResult.cc
 	src/model/ConvertPostPayOrderRequest.cc
 	src/model/ConvertPostPayOrderResult.cc
 	src/model/CreateAclRequest.cc
@@ -120,10 +124,10 @@ set(alikafka_src
 	src/model/DeleteTopicResult.cc
 	src/model/DescribeAclsRequest.cc
 	src/model/DescribeAclsResult.cc
-	src/model/DescribeNodeStatusRequest.cc
-	src/model/DescribeNodeStatusResult.cc
 	src/model/DescribeSaslUsersRequest.cc
 	src/model/DescribeSaslUsersResult.cc
+	src/model/GetAllInstanceIdListRequest.cc
+	src/model/GetAllInstanceIdListResult.cc
 	src/model/GetAllowedIpListRequest.cc
 	src/model/GetAllowedIpListResult.cc
 	src/model/GetConsumerListRequest.cc
@@ -132,8 +136,8 @@ set(alikafka_src
 	src/model/GetConsumerProgressResult.cc
 	src/model/GetInstanceListRequest.cc
 	src/model/GetInstanceListResult.cc
-	src/model/GetMetaProductListRequest.cc
-	src/model/GetMetaProductListResult.cc
+	src/model/GetQuotaTipRequest.cc
+	src/model/GetQuotaTipResult.cc
 	src/model/GetTopicListRequest.cc
 	src/model/GetTopicListResult.cc
 	src/model/GetTopicStatusRequest.cc

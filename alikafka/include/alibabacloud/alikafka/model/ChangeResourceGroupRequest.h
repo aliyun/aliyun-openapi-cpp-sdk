@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_LISTTAGRESOURCESREQUEST_H_
-#define ALIBABACLOUD_ALIKAFKA_MODEL_LISTTAGRESOURCESREQUEST_H_
+#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_CHANGERESOURCEGROUPREQUEST_H_
+#define ALIBABACLOUD_ALIKAFKA_MODEL_CHANGERESOURCEGROUPREQUEST_H_
 
 #include <alibabacloud/alikafka/AlikafkaExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,33 +26,23 @@
 namespace AlibabaCloud {
 namespace Alikafka {
 namespace Model {
-class ALIBABACLOUD_ALIKAFKA_EXPORT ListTagResourcesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ALIKAFKA_EXPORT ChangeResourceGroupRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string value;
-		std::string key;
-	};
-	ListTagResourcesRequest();
-	~ListTagResourcesRequest();
-	std::vector<std::string> getResourceId() const;
-	void setResourceId(const std::vector<std::string> &resourceId);
-	std::string getResourceType() const;
-	void setResourceType(const std::string &resourceType);
+	ChangeResourceGroupRequest();
+	~ChangeResourceGroupRequest();
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	std::string getNewResourceGroupId() const;
+	void setNewResourceGroupId(const std::string &newResourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getNextToken() const;
-	void setNextToken(const std::string &nextToken);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
 
 private:
-	std::vector<std::string> resourceId_;
-	std::string resourceType_;
+	std::string resourceId_;
+	std::string newResourceGroupId_;
 	std::string regionId_;
-	std::string nextToken_;
-	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace Alikafka
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_LISTTAGRESOURCESREQUEST_H_
+#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_CHANGERESOURCEGROUPREQUEST_H_

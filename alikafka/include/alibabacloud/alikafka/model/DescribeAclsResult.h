@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					std::string username;
 					std::string aclResourceType;
 					std::string aclOperationType;
-					std::string aclResourcePatternType;
 					std::string host;
+					std::string aclResourcePatternType;
 				};
 
 

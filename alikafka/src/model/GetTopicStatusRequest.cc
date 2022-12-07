@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Alikafka::Model::GetTopicStatusRequest;
 
-GetTopicStatusRequest::GetTopicStatusRequest() :
-	RpcServiceRequest("alikafka", "2019-09-16", "GetTopicStatus")
-{
-	setMethod(HttpRequest::Method::Post);
+GetTopicStatusRequest::GetTopicStatusRequest()
+    : RpcServiceRequest("alikafka", "2019-09-16", "GetTopicStatus") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetTopicStatusRequest::~GetTopicStatusRequest()
-{}
+GetTopicStatusRequest::~GetTopicStatusRequest() {}
 
-std::string GetTopicStatusRequest::getInstanceId()const
-{
-	return instanceId_;
+std::string GetTopicStatusRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void GetTopicStatusRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void GetTopicStatusRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string GetTopicStatusRequest::getRegionId()const
-{
-	return regionId_;
+std::string GetTopicStatusRequest::getRegionId() const {
+  return regionId_;
 }
 
-void GetTopicStatusRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void GetTopicStatusRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string GetTopicStatusRequest::getTopic()const
-{
-	return topic_;
+std::string GetTopicStatusRequest::getTopic() const {
+  return topic_;
 }
 
-void GetTopicStatusRequest::setTopic(const std::string& topic)
-{
-	topic_ = topic;
-	setParameter("Topic", topic);
+void GetTopicStatusRequest::setTopic(const std::string &topic) {
+  topic_ = topic;
+  setParameter(std::string("Topic"), topic);
 }
 

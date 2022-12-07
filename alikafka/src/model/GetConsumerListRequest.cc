@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,55 @@
 
 using AlibabaCloud::Alikafka::Model::GetConsumerListRequest;
 
-GetConsumerListRequest::GetConsumerListRequest() :
-	RpcServiceRequest("alikafka", "2019-09-16", "GetConsumerList")
-{
-	setMethod(HttpRequest::Method::Post);
+GetConsumerListRequest::GetConsumerListRequest()
+    : RpcServiceRequest("alikafka", "2019-09-16", "GetConsumerList") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetConsumerListRequest::~GetConsumerListRequest()
-{}
+GetConsumerListRequest::~GetConsumerListRequest() {}
 
-int GetConsumerListRequest::getCurrentPage()const
-{
-	return currentPage_;
+std::string GetConsumerListRequest::getConsumerId() const {
+  return consumerId_;
 }
 
-void GetConsumerListRequest::setCurrentPage(int currentPage)
-{
-	currentPage_ = currentPage;
-	setParameter("CurrentPage", std::to_string(currentPage));
+void GetConsumerListRequest::setConsumerId(const std::string &consumerId) {
+  consumerId_ = consumerId;
+  setParameter(std::string("ConsumerId"), consumerId);
 }
 
-std::string GetConsumerListRequest::getInstanceId()const
-{
-	return instanceId_;
+int GetConsumerListRequest::getCurrentPage() const {
+  return currentPage_;
 }
 
-void GetConsumerListRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void GetConsumerListRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
-std::string GetConsumerListRequest::getRegionId()const
-{
-	return regionId_;
+std::string GetConsumerListRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void GetConsumerListRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void GetConsumerListRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-int GetConsumerListRequest::getPageSize()const
-{
-	return pageSize_;
+std::string GetConsumerListRequest::getRegionId() const {
+  return regionId_;
 }
 
-void GetConsumerListRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void GetConsumerListRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+int GetConsumerListRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void GetConsumerListRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

@@ -43,20 +43,20 @@ void DescribeSaslUsersResult::parse(const std::string &payload)
 	for (auto valueSaslUserListSaslUserVO : allSaslUserListNode)
 	{
 		SaslUserVO saslUserListObject;
-		if(!valueSaslUserListSaslUserVO["Username"].isNull())
-			saslUserListObject.username = valueSaslUserListSaslUserVO["Username"].asString();
-		if(!valueSaslUserListSaslUserVO["Password"].isNull())
-			saslUserListObject.password = valueSaslUserListSaslUserVO["Password"].asString();
 		if(!valueSaslUserListSaslUserVO["Type"].isNull())
 			saslUserListObject.type = valueSaslUserListSaslUserVO["Type"].asString();
+		if(!valueSaslUserListSaslUserVO["Password"].isNull())
+			saslUserListObject.password = valueSaslUserListSaslUserVO["Password"].asString();
+		if(!valueSaslUserListSaslUserVO["Username"].isNull())
+			saslUserListObject.username = valueSaslUserListSaslUserVO["Username"].asString();
 		saslUserList_.push_back(saslUserListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

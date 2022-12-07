@@ -43,26 +43,26 @@ void GetTopicListResult::parse(const std::string &payload)
 	for (auto valueTopicListTopicVO : allTopicListNode)
 	{
 		TopicVO topicListObject;
-		if(!valueTopicListTopicVO["Topic"].isNull())
-			topicListObject.topic = valueTopicListTopicVO["Topic"].asString();
-		if(!valueTopicListTopicVO["CreateTime"].isNull())
-			topicListObject.createTime = std::stol(valueTopicListTopicVO["CreateTime"].asString());
-		if(!valueTopicListTopicVO["Remark"].isNull())
-			topicListObject.remark = valueTopicListTopicVO["Remark"].asString();
 		if(!valueTopicListTopicVO["Status"].isNull())
 			topicListObject.status = std::stoi(valueTopicListTopicVO["Status"].asString());
-		if(!valueTopicListTopicVO["InstanceId"].isNull())
-			topicListObject.instanceId = valueTopicListTopicVO["InstanceId"].asString();
-		if(!valueTopicListTopicVO["RegionId"].isNull())
-			topicListObject.regionId = valueTopicListTopicVO["RegionId"].asString();
+		if(!valueTopicListTopicVO["PartitionNum"].isNull())
+			topicListObject.partitionNum = std::stoi(valueTopicListTopicVO["PartitionNum"].asString());
+		if(!valueTopicListTopicVO["Remark"].isNull())
+			topicListObject.remark = valueTopicListTopicVO["Remark"].asString();
+		if(!valueTopicListTopicVO["CreateTime"].isNull())
+			topicListObject.createTime = std::stol(valueTopicListTopicVO["CreateTime"].asString());
+		if(!valueTopicListTopicVO["Topic"].isNull())
+			topicListObject.topic = valueTopicListTopicVO["Topic"].asString();
 		if(!valueTopicListTopicVO["StatusName"].isNull())
 			topicListObject.statusName = valueTopicListTopicVO["StatusName"].asString();
 		if(!valueTopicListTopicVO["CompactTopic"].isNull())
 			topicListObject.compactTopic = valueTopicListTopicVO["CompactTopic"].asString() == "true";
+		if(!valueTopicListTopicVO["InstanceId"].isNull())
+			topicListObject.instanceId = valueTopicListTopicVO["InstanceId"].asString();
 		if(!valueTopicListTopicVO["LocalTopic"].isNull())
 			topicListObject.localTopic = valueTopicListTopicVO["LocalTopic"].asString() == "true";
-		if(!valueTopicListTopicVO["PartitionNum"].isNull())
-			topicListObject.partitionNum = std::stoi(valueTopicListTopicVO["PartitionNum"].asString());
+		if(!valueTopicListTopicVO["RegionId"].isNull())
+			topicListObject.regionId = valueTopicListTopicVO["RegionId"].asString();
 		auto allTagsNode = valueTopicListTopicVO["Tags"]["TagVO"];
 		for (auto valueTopicListTopicVOTagsTagVO : allTagsNode)
 		{
@@ -75,18 +75,18 @@ void GetTopicListResult::parse(const std::string &payload)
 		}
 		topicList_.push_back(topicListObject);
 	}
+	if(!value["CurrentPage"].isNull())
+		currentPage_ = std::stoi(value["CurrentPage"].asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Total"].isNull())
-		total_ = std::stoi(value["Total"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
-	if(!value["CurrentPage"].isNull())
-		currentPage_ = std::stoi(value["CurrentPage"].asString());
+	if(!value["Total"].isNull())
+		total_ = std::stoi(value["Total"].asString());
 
 }
 

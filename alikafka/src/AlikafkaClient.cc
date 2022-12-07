@@ -51,6 +51,42 @@ AlikafkaClient::AlikafkaClient(const std::string & accessKeyId, const std::strin
 AlikafkaClient::~AlikafkaClient()
 {}
 
+AlikafkaClient::ChangeResourceGroupOutcome AlikafkaClient::changeResourceGroup(const ChangeResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeResourceGroupOutcome(ChangeResourceGroupResult(outcome.result()));
+	else
+		return ChangeResourceGroupOutcome(outcome.error());
+}
+
+void AlikafkaClient::changeResourceGroupAsync(const ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlikafkaClient::ChangeResourceGroupOutcomeCallable AlikafkaClient::changeResourceGroupCallable(const ChangeResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->changeResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlikafkaClient::ConvertPostPayOrderOutcome AlikafkaClient::convertPostPayOrder(const ConvertPostPayOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,42 +555,6 @@ AlikafkaClient::DescribeAclsOutcomeCallable AlikafkaClient::describeAclsCallable
 	return task->get_future();
 }
 
-AlikafkaClient::DescribeNodeStatusOutcome AlikafkaClient::describeNodeStatus(const DescribeNodeStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeNodeStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeNodeStatusOutcome(DescribeNodeStatusResult(outcome.result()));
-	else
-		return DescribeNodeStatusOutcome(outcome.error());
-}
-
-void AlikafkaClient::describeNodeStatusAsync(const DescribeNodeStatusRequest& request, const DescribeNodeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeNodeStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AlikafkaClient::DescribeNodeStatusOutcomeCallable AlikafkaClient::describeNodeStatusCallable(const DescribeNodeStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeNodeStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describeNodeStatus(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AlikafkaClient::DescribeSaslUsersOutcome AlikafkaClient::describeSaslUsers(const DescribeSaslUsersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +585,42 @@ AlikafkaClient::DescribeSaslUsersOutcomeCallable AlikafkaClient::describeSaslUse
 			[this, request]()
 			{
 			return this->describeSaslUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlikafkaClient::GetAllInstanceIdListOutcome AlikafkaClient::getAllInstanceIdList(const GetAllInstanceIdListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAllInstanceIdListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAllInstanceIdListOutcome(GetAllInstanceIdListResult(outcome.result()));
+	else
+		return GetAllInstanceIdListOutcome(outcome.error());
+}
+
+void AlikafkaClient::getAllInstanceIdListAsync(const GetAllInstanceIdListRequest& request, const GetAllInstanceIdListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAllInstanceIdList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlikafkaClient::GetAllInstanceIdListOutcomeCallable AlikafkaClient::getAllInstanceIdListCallable(const GetAllInstanceIdListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAllInstanceIdListOutcome()>>(
+			[this, request]()
+			{
+			return this->getAllInstanceIdList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -735,36 +771,36 @@ AlikafkaClient::GetInstanceListOutcomeCallable AlikafkaClient::getInstanceListCa
 	return task->get_future();
 }
 
-AlikafkaClient::GetMetaProductListOutcome AlikafkaClient::getMetaProductList(const GetMetaProductListRequest &request) const
+AlikafkaClient::GetQuotaTipOutcome AlikafkaClient::getQuotaTip(const GetQuotaTipRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GetMetaProductListOutcome(endpointOutcome.error());
+		return GetQuotaTipOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GetMetaProductListOutcome(GetMetaProductListResult(outcome.result()));
+		return GetQuotaTipOutcome(GetQuotaTipResult(outcome.result()));
 	else
-		return GetMetaProductListOutcome(outcome.error());
+		return GetQuotaTipOutcome(outcome.error());
 }
 
-void AlikafkaClient::getMetaProductListAsync(const GetMetaProductListRequest& request, const GetMetaProductListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AlikafkaClient::getQuotaTipAsync(const GetQuotaTipRequest& request, const GetQuotaTipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, getMetaProductList(request), context);
+		handler(this, request, getQuotaTip(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AlikafkaClient::GetMetaProductListOutcomeCallable AlikafkaClient::getMetaProductListCallable(const GetMetaProductListRequest &request) const
+AlikafkaClient::GetQuotaTipOutcomeCallable AlikafkaClient::getQuotaTipCallable(const GetQuotaTipRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GetMetaProductListOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetQuotaTipOutcome()>>(
 			[this, request]()
 			{
-			return this->getMetaProductList(request);
+			return this->getQuotaTip(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

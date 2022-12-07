@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						std::string portRange;
 						std::vector<std::string> allowedIpList;
+						std::string allowedIpGroup;
 					};
 					int deployType;
 					std::vector<IPListVO> internetList;

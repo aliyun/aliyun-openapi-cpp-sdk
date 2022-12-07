@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Alikafka::Model::ModifyPartitionNumRequest;
 
-ModifyPartitionNumRequest::ModifyPartitionNumRequest() :
-	RpcServiceRequest("alikafka", "2019-09-16", "ModifyPartitionNum")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyPartitionNumRequest::ModifyPartitionNumRequest()
+    : RpcServiceRequest("alikafka", "2019-09-16", "ModifyPartitionNum") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyPartitionNumRequest::~ModifyPartitionNumRequest()
-{}
+ModifyPartitionNumRequest::~ModifyPartitionNumRequest() {}
 
-std::string ModifyPartitionNumRequest::getInstanceId()const
-{
-	return instanceId_;
+int ModifyPartitionNumRequest::getAddPartitionNum() const {
+  return addPartitionNum_;
 }
 
-void ModifyPartitionNumRequest::setInstanceId(const std::string& instanceId)
-{
-	instanceId_ = instanceId;
-	setParameter("InstanceId", instanceId);
+void ModifyPartitionNumRequest::setAddPartitionNum(int addPartitionNum) {
+  addPartitionNum_ = addPartitionNum;
+  setParameter(std::string("AddPartitionNum"), std::to_string(addPartitionNum));
 }
 
-std::string ModifyPartitionNumRequest::getRegionId()const
-{
-	return regionId_;
+std::string ModifyPartitionNumRequest::getInstanceId() const {
+  return instanceId_;
 }
 
-void ModifyPartitionNumRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ModifyPartitionNumRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
 }
 
-std::string ModifyPartitionNumRequest::getTopic()const
-{
-	return topic_;
+std::string ModifyPartitionNumRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifyPartitionNumRequest::setTopic(const std::string& topic)
-{
-	topic_ = topic;
-	setParameter("Topic", topic);
+void ModifyPartitionNumRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-int ModifyPartitionNumRequest::getAddPartitionNum()const
-{
-	return addPartitionNum_;
+std::string ModifyPartitionNumRequest::getTopic() const {
+  return topic_;
 }
 
-void ModifyPartitionNumRequest::setAddPartitionNum(int addPartitionNum)
-{
-	addPartitionNum_ = addPartitionNum;
-	setParameter("AddPartitionNum", std::to_string(addPartitionNum));
+void ModifyPartitionNumRequest::setTopic(const std::string &topic) {
+  topic_ = topic;
+  setParameter(std::string("Topic"), topic);
 }
 

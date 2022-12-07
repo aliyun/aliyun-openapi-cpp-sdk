@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_GETMETAPRODUCTLISTRESULT_H_
-#define ALIBABACLOUD_ALIKAFKA_MODEL_GETMETAPRODUCTLISTRESULT_H_
+#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_GETQUOTATIPRESULT_H_
+#define ALIBABACLOUD_ALIKAFKA_MODEL_GETQUOTATIPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,45 +29,43 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIKAFKA_EXPORT GetMetaProductListResult : public ServiceResult
+			class ALIBABACLOUD_ALIKAFKA_EXPORT GetQuotaTipResult : public ServiceResult
 			{
 			public:
-				struct MetaData
+				struct QuotaData
 				{
-					struct SpecVO
-					{
-						std::string diskType;
-						std::string deployType;
-						std::string specType;
-						long ioMax;
-						std::string diskSize;
-						std::string topicQuota;
-						std::string regionId;
-					};
-					std::string names;
-					std::vector<SpecVO> productsNormal;
-					std::vector<SpecVO> productsProfessional;
+					int isPartitionBuy;
+					int topicLeft;
+					int groupUsed;
+					int partitionQuata;
+					int topicUsed;
+					int partitionNumOfBuy;
+					int partitionLeft;
+					int topicQuota;
+					int topicNumOfBuy;
+					int partitionUsed;
+					int groupLeft;
 				};
 
 
-				GetMetaProductListResult();
-				explicit GetMetaProductListResult(const std::string &payload);
-				~GetMetaProductListResult();
+				GetQuotaTipResult();
+				explicit GetQuotaTipResult(const std::string &payload);
+				~GetQuotaTipResult();
 				std::string getMessage()const;
-				MetaData getMetaData()const;
 				int getCode()const;
 				bool getSuccess()const;
+				QuotaData getQuotaData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				MetaData metaData_;
 				int code_;
 				bool success_;
+				QuotaData quotaData_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_GETMETAPRODUCTLISTRESULT_H_
+#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_GETQUOTATIPRESULT_H_

@@ -43,50 +43,68 @@ void GetInstanceListResult::parse(const std::string &payload)
 	for (auto valueInstanceListInstanceVO : allInstanceListNode)
 	{
 		InstanceVO instanceListObject;
-		if(!valueInstanceListInstanceVO["InstanceId"].isNull())
-			instanceListObject.instanceId = valueInstanceListInstanceVO["InstanceId"].asString();
-		if(!valueInstanceListInstanceVO["RegionId"].isNull())
-			instanceListObject.regionId = valueInstanceListInstanceVO["RegionId"].asString();
-		if(!valueInstanceListInstanceVO["ServiceStatus"].isNull())
-			instanceListObject.serviceStatus = std::stoi(valueInstanceListInstanceVO["ServiceStatus"].asString());
 		if(!valueInstanceListInstanceVO["VpcId"].isNull())
 			instanceListObject.vpcId = valueInstanceListInstanceVO["VpcId"].asString();
-		if(!valueInstanceListInstanceVO["VSwitchId"].isNull())
-			instanceListObject.vSwitchId = valueInstanceListInstanceVO["VSwitchId"].asString();
-		if(!valueInstanceListInstanceVO["EndPoint"].isNull())
-			instanceListObject.endPoint = valueInstanceListInstanceVO["EndPoint"].asString();
-		if(!valueInstanceListInstanceVO["CreateTime"].isNull())
-			instanceListObject.createTime = std::stol(valueInstanceListInstanceVO["CreateTime"].asString());
-		if(!valueInstanceListInstanceVO["ExpiredTime"].isNull())
-			instanceListObject.expiredTime = std::stol(valueInstanceListInstanceVO["ExpiredTime"].asString());
+		if(!valueInstanceListInstanceVO["SpecType"].isNull())
+			instanceListObject.specType = valueInstanceListInstanceVO["SpecType"].asString();
 		if(!valueInstanceListInstanceVO["DeployType"].isNull())
 			instanceListObject.deployType = std::stoi(valueInstanceListInstanceVO["DeployType"].asString());
-		if(!valueInstanceListInstanceVO["SslEndPoint"].isNull())
-			instanceListObject.sslEndPoint = valueInstanceListInstanceVO["SslEndPoint"].asString();
-		if(!valueInstanceListInstanceVO["Name"].isNull())
-			instanceListObject.name = valueInstanceListInstanceVO["Name"].asString();
-		if(!valueInstanceListInstanceVO["IoMax"].isNull())
-			instanceListObject.ioMax = std::stoi(valueInstanceListInstanceVO["IoMax"].asString());
-		if(!valueInstanceListInstanceVO["EipMax"].isNull())
-			instanceListObject.eipMax = std::stoi(valueInstanceListInstanceVO["EipMax"].asString());
-		if(!valueInstanceListInstanceVO["DiskType"].isNull())
-			instanceListObject.diskType = std::stoi(valueInstanceListInstanceVO["DiskType"].asString());
+		if(!valueInstanceListInstanceVO["CreateTime"].isNull())
+			instanceListObject.createTime = std::stol(valueInstanceListInstanceVO["CreateTime"].asString());
 		if(!valueInstanceListInstanceVO["DiskSize"].isNull())
 			instanceListObject.diskSize = std::stoi(valueInstanceListInstanceVO["DiskSize"].asString());
+		if(!valueInstanceListInstanceVO["DiskType"].isNull())
+			instanceListObject.diskType = std::stoi(valueInstanceListInstanceVO["DiskType"].asString());
+		if(!valueInstanceListInstanceVO["SecurityGroup"].isNull())
+			instanceListObject.securityGroup = valueInstanceListInstanceVO["SecurityGroup"].asString();
+		if(!valueInstanceListInstanceVO["SslEndPoint"].isNull())
+			instanceListObject.sslEndPoint = valueInstanceListInstanceVO["SslEndPoint"].asString();
+		if(!valueInstanceListInstanceVO["InstanceId"].isNull())
+			instanceListObject.instanceId = valueInstanceListInstanceVO["InstanceId"].asString();
+		if(!valueInstanceListInstanceVO["AllConfig"].isNull())
+			instanceListObject.allConfig = valueInstanceListInstanceVO["AllConfig"].asString();
+		if(!valueInstanceListInstanceVO["ServiceStatus"].isNull())
+			instanceListObject.serviceStatus = std::stoi(valueInstanceListInstanceVO["ServiceStatus"].asString());
+		if(!valueInstanceListInstanceVO["EipMax"].isNull())
+			instanceListObject.eipMax = std::stoi(valueInstanceListInstanceVO["EipMax"].asString());
+		if(!valueInstanceListInstanceVO["RegionId"].isNull())
+			instanceListObject.regionId = valueInstanceListInstanceVO["RegionId"].asString();
 		if(!valueInstanceListInstanceVO["MsgRetain"].isNull())
 			instanceListObject.msgRetain = std::stoi(valueInstanceListInstanceVO["MsgRetain"].asString());
+		if(!valueInstanceListInstanceVO["VSwitchId"].isNull())
+			instanceListObject.vSwitchId = valueInstanceListInstanceVO["VSwitchId"].asString();
+		if(!valueInstanceListInstanceVO["ExpiredTime"].isNull())
+			instanceListObject.expiredTime = std::stol(valueInstanceListInstanceVO["ExpiredTime"].asString());
 		if(!valueInstanceListInstanceVO["TopicNumLimit"].isNull())
 			instanceListObject.topicNumLimit = std::stoi(valueInstanceListInstanceVO["TopicNumLimit"].asString());
 		if(!valueInstanceListInstanceVO["ZoneId"].isNull())
 			instanceListObject.zoneId = valueInstanceListInstanceVO["ZoneId"].asString();
+		if(!valueInstanceListInstanceVO["IoMax"].isNull())
+			instanceListObject.ioMax = std::stoi(valueInstanceListInstanceVO["IoMax"].asString());
 		if(!valueInstanceListInstanceVO["PaidType"].isNull())
 			instanceListObject.paidType = std::stoi(valueInstanceListInstanceVO["PaidType"].asString());
-		if(!valueInstanceListInstanceVO["SpecType"].isNull())
-			instanceListObject.specType = valueInstanceListInstanceVO["SpecType"].asString();
-		if(!valueInstanceListInstanceVO["SecurityGroup"].isNull())
-			instanceListObject.securityGroup = valueInstanceListInstanceVO["SecurityGroup"].asString();
-		if(!valueInstanceListInstanceVO["AllConfig"].isNull())
-			instanceListObject.allConfig = valueInstanceListInstanceVO["AllConfig"].asString();
+		if(!valueInstanceListInstanceVO["Name"].isNull())
+			instanceListObject.name = valueInstanceListInstanceVO["Name"].asString();
+		if(!valueInstanceListInstanceVO["EndPoint"].isNull())
+			instanceListObject.endPoint = valueInstanceListInstanceVO["EndPoint"].asString();
+		if(!valueInstanceListInstanceVO["DomainEndpoint"].isNull())
+			instanceListObject.domainEndpoint = valueInstanceListInstanceVO["DomainEndpoint"].asString();
+		if(!valueInstanceListInstanceVO["SslDomainEndpoint"].isNull())
+			instanceListObject.sslDomainEndpoint = valueInstanceListInstanceVO["SslDomainEndpoint"].asString();
+		if(!valueInstanceListInstanceVO["SaslDomainEndpoint"].isNull())
+			instanceListObject.saslDomainEndpoint = valueInstanceListInstanceVO["SaslDomainEndpoint"].asString();
+		if(!valueInstanceListInstanceVO["ResourceGroupId"].isNull())
+			instanceListObject.resourceGroupId = valueInstanceListInstanceVO["ResourceGroupId"].asString();
+		if(!valueInstanceListInstanceVO["UsedTopicCount"].isNull())
+			instanceListObject.usedTopicCount = std::stoi(valueInstanceListInstanceVO["UsedTopicCount"].asString());
+		if(!valueInstanceListInstanceVO["UsedGroupCount"].isNull())
+			instanceListObject.usedGroupCount = std::stoi(valueInstanceListInstanceVO["UsedGroupCount"].asString());
+		if(!valueInstanceListInstanceVO["UsedPartitionCount"].isNull())
+			instanceListObject.usedPartitionCount = std::stoi(valueInstanceListInstanceVO["UsedPartitionCount"].asString());
+		if(!valueInstanceListInstanceVO["KmsKeyId"].isNull())
+			instanceListObject.kmsKeyId = valueInstanceListInstanceVO["KmsKeyId"].asString();
+		if(!valueInstanceListInstanceVO["StandardZoneId"].isNull())
+			instanceListObject.standardZoneId = valueInstanceListInstanceVO["StandardZoneId"].asString();
 		auto allTagsNode = valueInstanceListInstanceVO["Tags"]["TagVO"];
 		for (auto valueInstanceListInstanceVOTagsTagVO : allTagsNode)
 		{
@@ -102,12 +120,12 @@ void GetInstanceListResult::parse(const std::string &payload)
 			instanceListObject.upgradeServiceDetailInfo.current2OpenSourceVersion = upgradeServiceDetailInfoNode["Current2OpenSourceVersion"].asString();
 		instanceList_.push_back(instanceListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

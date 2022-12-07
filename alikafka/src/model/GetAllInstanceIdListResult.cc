@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alikafka/model/UpgradePostPayOrderResult.h>
+#include <alibabacloud/alikafka/model/GetAllInstanceIdListResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Alikafka;
 using namespace AlibabaCloud::Alikafka::Model;
 
-UpgradePostPayOrderResult::UpgradePostPayOrderResult() :
+GetAllInstanceIdListResult::GetAllInstanceIdListResult() :
 	ServiceResult()
 {}
 
-UpgradePostPayOrderResult::UpgradePostPayOrderResult(const std::string &payload) :
+GetAllInstanceIdListResult::GetAllInstanceIdListResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-UpgradePostPayOrderResult::~UpgradePostPayOrderResult()
+GetAllInstanceIdListResult::~GetAllInstanceIdListResult()
 {}
 
-void UpgradePostPayOrderResult::parse(const std::string &payload)
+void GetAllInstanceIdListResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -43,22 +43,29 @@ void UpgradePostPayOrderResult::parse(const std::string &payload)
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["InstanceIds"].isNull())
+		instanceIds_ = value["InstanceIds"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 
 }
 
-std::string UpgradePostPayOrderResult::getMessage()const
+std::string GetAllInstanceIdListResult::getMessage()const
 {
 	return message_;
 }
 
-int UpgradePostPayOrderResult::getCode()const
+std::string GetAllInstanceIdListResult::getInstanceIds()const
+{
+	return instanceIds_;
+}
+
+int GetAllInstanceIdListResult::getCode()const
 {
 	return code_;
 }
 
-bool UpgradePostPayOrderResult::getSuccess()const
+bool GetAllInstanceIdListResult::getSuccess()const
 {
 	return success_;
 }

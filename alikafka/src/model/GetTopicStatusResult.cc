@@ -48,24 +48,24 @@ void GetTopicStatusResult::parse(const std::string &payload)
 	for (auto topicStatusNodeOffsetTableOffsetTableItem : allOffsetTableNode)
 	{
 		TopicStatus::OffsetTableItem offsetTableItemObject;
-		if(!topicStatusNodeOffsetTableOffsetTableItem["MinOffset"].isNull())
-			offsetTableItemObject.minOffset = std::stol(topicStatusNodeOffsetTableOffsetTableItem["MinOffset"].asString());
-		if(!topicStatusNodeOffsetTableOffsetTableItem["MaxOffset"].isNull())
-			offsetTableItemObject.maxOffset = std::stol(topicStatusNodeOffsetTableOffsetTableItem["MaxOffset"].asString());
-		if(!topicStatusNodeOffsetTableOffsetTableItem["LastUpdateTimestamp"].isNull())
-			offsetTableItemObject.lastUpdateTimestamp = std::stol(topicStatusNodeOffsetTableOffsetTableItem["LastUpdateTimestamp"].asString());
-		if(!topicStatusNodeOffsetTableOffsetTableItem["Topic"].isNull())
-			offsetTableItemObject.topic = topicStatusNodeOffsetTableOffsetTableItem["Topic"].asString();
 		if(!topicStatusNodeOffsetTableOffsetTableItem["Partition"].isNull())
 			offsetTableItemObject.partition = std::stoi(topicStatusNodeOffsetTableOffsetTableItem["Partition"].asString());
+		if(!topicStatusNodeOffsetTableOffsetTableItem["MinOffset"].isNull())
+			offsetTableItemObject.minOffset = std::stol(topicStatusNodeOffsetTableOffsetTableItem["MinOffset"].asString());
+		if(!topicStatusNodeOffsetTableOffsetTableItem["LastUpdateTimestamp"].isNull())
+			offsetTableItemObject.lastUpdateTimestamp = std::stol(topicStatusNodeOffsetTableOffsetTableItem["LastUpdateTimestamp"].asString());
+		if(!topicStatusNodeOffsetTableOffsetTableItem["MaxOffset"].isNull())
+			offsetTableItemObject.maxOffset = std::stol(topicStatusNodeOffsetTableOffsetTableItem["MaxOffset"].asString());
+		if(!topicStatusNodeOffsetTableOffsetTableItem["Topic"].isNull())
+			offsetTableItemObject.topic = topicStatusNodeOffsetTableOffsetTableItem["Topic"].asString();
 		topicStatus_.offsetTable.push_back(offsetTableItemObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 

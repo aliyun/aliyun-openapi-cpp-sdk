@@ -43,14 +43,14 @@ void GetConsumerListResult::parse(const std::string &payload)
 	for (auto valueConsumerListConsumerVO : allConsumerListNode)
 	{
 		ConsumerVO consumerListObject;
-		if(!valueConsumerListConsumerVO["RegionId"].isNull())
-			consumerListObject.regionId = valueConsumerListConsumerVO["RegionId"].asString();
-		if(!valueConsumerListConsumerVO["InstanceId"].isNull())
-			consumerListObject.instanceId = valueConsumerListConsumerVO["InstanceId"].asString();
 		if(!valueConsumerListConsumerVO["ConsumerId"].isNull())
 			consumerListObject.consumerId = valueConsumerListConsumerVO["ConsumerId"].asString();
+		if(!valueConsumerListConsumerVO["InstanceId"].isNull())
+			consumerListObject.instanceId = valueConsumerListConsumerVO["InstanceId"].asString();
 		if(!valueConsumerListConsumerVO["Remark"].isNull())
 			consumerListObject.remark = valueConsumerListConsumerVO["Remark"].asString();
+		if(!valueConsumerListConsumerVO["RegionId"].isNull())
+			consumerListObject.regionId = valueConsumerListConsumerVO["RegionId"].asString();
 		auto allTagsNode = valueConsumerListConsumerVO["Tags"]["TagVO"];
 		for (auto valueConsumerListConsumerVOTagsTagVO : allTagsNode)
 		{
@@ -63,12 +63,12 @@ void GetConsumerListResult::parse(const std::string &payload)
 		}
 		consumerList_.push_back(consumerListObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 
 }
 
