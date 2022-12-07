@@ -52,3 +52,12 @@ void StopJobsRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+bool StopJobsRequest::getAsync() const {
+  return async_;
+}
+
+void StopJobsRequest::setAsync(bool async) {
+  async_ = async;
+  setParameter(std::string("Async"), async ? "true" : "false");
+}
+

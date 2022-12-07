@@ -42,6 +42,8 @@ public:
 	void setContent(const std::string &content);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	bool getAsync() const;
+	void setAsync(bool async);
 
 private:
 	std::string targetFile_;
@@ -50,6 +52,7 @@ private:
 	std::string clusterId_;
 	std::string content_;
 	std::string accessKeyId_;
+	bool async_;
 };
 } // namespace Model
 } // namespace EHPC

@@ -151,6 +151,15 @@ void SubmitJobRequest::setRunasUser(const std::string &runasUser) {
   setParameter(std::string("RunasUser"), runasUser);
 }
 
+int SubmitJobRequest::getCpu() const {
+  return cpu_;
+}
+
+void SubmitJobRequest::setCpu(int cpu) {
+  cpu_ = cpu;
+  setParameter(std::string("Cpu"), std::to_string(cpu));
+}
+
 std::string SubmitJobRequest::getClusterId() const {
   return clusterId_;
 }
@@ -203,6 +212,15 @@ int SubmitJobRequest::getNode() const {
 void SubmitJobRequest::setNode(int node) {
   node_ = node;
   setParameter(std::string("Node"), std::to_string(node));
+}
+
+bool SubmitJobRequest::getAsync() const {
+  return async_;
+}
+
+void SubmitJobRequest::setAsync(bool async) {
+  async_ = async;
+  setParameter(std::string("Async"), async ? "true" : "false");
 }
 
 int SubmitJobRequest::getTask() const {

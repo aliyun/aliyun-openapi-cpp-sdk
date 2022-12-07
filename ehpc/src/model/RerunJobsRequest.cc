@@ -52,3 +52,12 @@ void RerunJobsRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+bool RerunJobsRequest::getAsync() const {
+  return async_;
+}
+
+void RerunJobsRequest::setAsync(bool async) {
+  async_ = async;
+  setParameter(std::string("Async"), async ? "true" : "false");
+}
+

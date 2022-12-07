@@ -58,6 +58,8 @@ public:
 	void setPostCmdLine(const std::string &postCmdLine);
 	std::string getRunasUser() const;
 	void setRunasUser(const std::string &runasUser);
+	int getCpu() const;
+	void setCpu(int cpu);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	bool getReRunable() const;
@@ -70,6 +72,8 @@ public:
 	void setGpu(int gpu);
 	int getNode() const;
 	void setNode(int node);
+	bool getAsync() const;
+	void setAsync(bool async);
 	int getTask() const;
 	void setTask(int task);
 	std::string getInputFileUrl() const;
@@ -94,12 +98,14 @@ private:
 	std::string variables_;
 	std::string postCmdLine_;
 	std::string runasUser_;
+	int cpu_;
 	std::string clusterId_;
 	bool reRunable_;
 	int thread_;
 	int priority_;
 	int gpu_;
 	int node_;
+	bool async_;
 	int task_;
 	std::string inputFileUrl_;
 	std::string name_;

@@ -79,3 +79,12 @@ void CreateJobFileRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+bool CreateJobFileRequest::getAsync() const {
+  return async_;
+}
+
+void CreateJobFileRequest::setAsync(bool async) {
+  async_ = async;
+  setParameter(std::string("Async"), async ? "true" : "false");
+}
+

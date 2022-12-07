@@ -52,3 +52,12 @@ void DeleteJobsRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+bool DeleteJobsRequest::getAsync() const {
+  return async_;
+}
+
+void DeleteJobsRequest::setAsync(bool async) {
+  async_ = async;
+  setParameter(std::string("Async"), async ? "true" : "false");
+}
+

@@ -36,11 +36,14 @@ public:
 	void setClusterId(const std::string &clusterId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	bool getAsync() const;
+	void setAsync(bool async);
 
 private:
 	std::string jobs_;
 	std::string clusterId_;
 	std::string accessKeyId_;
+	bool async_;
 };
 } // namespace Model
 } // namespace EHPC
