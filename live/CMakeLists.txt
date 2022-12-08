@@ -89,6 +89,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/BatchSetLiveDomainConfigsResult.h
 	include/alibabacloud/live/model/CancelMuteAllGroupUserRequest.h
 	include/alibabacloud/live/model/CancelMuteAllGroupUserResult.h
+	include/alibabacloud/live/model/CancelMuteGroupUserRequest.h
+	include/alibabacloud/live/model/CancelMuteGroupUserResult.h
 	include/alibabacloud/live/model/CloseLiveShiftRequest.h
 	include/alibabacloud/live/model/CloseLiveShiftResult.h
 	include/alibabacloud/live/model/CopyCasterRequest.h
@@ -377,6 +379,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveUserDomainsResult.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsRequest.h
 	include/alibabacloud/live/model/DescribeLiveUserTagsResult.h
+	include/alibabacloud/live/model/DescribeMeterLiveInteractionDauRequest.h
+	include/alibabacloud/live/model/DescribeMeterLiveInteractionDauResult.h
 	include/alibabacloud/live/model/DescribeMeterLiveRtcDurationRequest.h
 	include/alibabacloud/live/model/DescribeMeterLiveRtcDurationResult.h
 	include/alibabacloud/live/model/DescribeMixStreamListRequest.h
@@ -491,6 +495,10 @@ set(live_public_header_model
 	include/alibabacloud/live/model/ModifyShowListResult.h
 	include/alibabacloud/live/model/ModifyStudioLayoutRequest.h
 	include/alibabacloud/live/model/ModifyStudioLayoutResult.h
+	include/alibabacloud/live/model/MuteAllGroupUserRequest.h
+	include/alibabacloud/live/model/MuteAllGroupUserResult.h
+	include/alibabacloud/live/model/MuteGroupUserRequest.h
+	include/alibabacloud/live/model/MuteGroupUserResult.h
 	include/alibabacloud/live/model/OpenLiveShiftRequest.h
 	include/alibabacloud/live/model/OpenLiveShiftResult.h
 	include/alibabacloud/live/model/PlayChoosenShowRequest.h
@@ -680,6 +688,8 @@ set(live_src
 	src/model/BatchSetLiveDomainConfigsResult.cc
 	src/model/CancelMuteAllGroupUserRequest.cc
 	src/model/CancelMuteAllGroupUserResult.cc
+	src/model/CancelMuteGroupUserRequest.cc
+	src/model/CancelMuteGroupUserResult.cc
 	src/model/CloseLiveShiftRequest.cc
 	src/model/CloseLiveShiftResult.cc
 	src/model/CopyCasterRequest.cc
@@ -968,6 +978,8 @@ set(live_src
 	src/model/DescribeLiveUserDomainsResult.cc
 	src/model/DescribeLiveUserTagsRequest.cc
 	src/model/DescribeLiveUserTagsResult.cc
+	src/model/DescribeMeterLiveInteractionDauRequest.cc
+	src/model/DescribeMeterLiveInteractionDauResult.cc
 	src/model/DescribeMeterLiveRtcDurationRequest.cc
 	src/model/DescribeMeterLiveRtcDurationResult.cc
 	src/model/DescribeMixStreamListRequest.cc
@@ -1082,6 +1094,10 @@ set(live_src
 	src/model/ModifyShowListResult.cc
 	src/model/ModifyStudioLayoutRequest.cc
 	src/model/ModifyStudioLayoutResult.cc
+	src/model/MuteAllGroupUserRequest.cc
+	src/model/MuteAllGroupUserResult.cc
+	src/model/MuteGroupUserRequest.cc
+	src/model/MuteGroupUserResult.cc
 	src/model/OpenLiveShiftRequest.cc
 	src/model/OpenLiveShiftResult.cc
 	src/model/PlayChoosenShowRequest.cc

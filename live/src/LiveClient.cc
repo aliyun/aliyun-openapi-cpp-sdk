@@ -1275,6 +1275,42 @@ LiveClient::CancelMuteAllGroupUserOutcomeCallable LiveClient::cancelMuteAllGroup
 	return task->get_future();
 }
 
+LiveClient::CancelMuteGroupUserOutcome LiveClient::cancelMuteGroupUser(const CancelMuteGroupUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelMuteGroupUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelMuteGroupUserOutcome(CancelMuteGroupUserResult(outcome.result()));
+	else
+		return CancelMuteGroupUserOutcome(outcome.error());
+}
+
+void LiveClient::cancelMuteGroupUserAsync(const CancelMuteGroupUserRequest& request, const CancelMuteGroupUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelMuteGroupUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CancelMuteGroupUserOutcomeCallable LiveClient::cancelMuteGroupUserCallable(const CancelMuteGroupUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelMuteGroupUserOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelMuteGroupUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::CloseLiveShiftOutcome LiveClient::closeLiveShift(const CloseLiveShiftRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6459,6 +6495,42 @@ LiveClient::DescribeLiveUserTagsOutcomeCallable LiveClient::describeLiveUserTags
 	return task->get_future();
 }
 
+LiveClient::DescribeMeterLiveInteractionDauOutcome LiveClient::describeMeterLiveInteractionDau(const DescribeMeterLiveInteractionDauRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMeterLiveInteractionDauOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMeterLiveInteractionDauOutcome(DescribeMeterLiveInteractionDauResult(outcome.result()));
+	else
+		return DescribeMeterLiveInteractionDauOutcome(outcome.error());
+}
+
+void LiveClient::describeMeterLiveInteractionDauAsync(const DescribeMeterLiveInteractionDauRequest& request, const DescribeMeterLiveInteractionDauAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMeterLiveInteractionDau(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeMeterLiveInteractionDauOutcomeCallable LiveClient::describeMeterLiveInteractionDauCallable(const DescribeMeterLiveInteractionDauRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMeterLiveInteractionDauOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMeterLiveInteractionDau(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeMeterLiveRtcDurationOutcome LiveClient::describeMeterLiveRtcDuration(const DescribeMeterLiveRtcDurationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8505,6 +8577,78 @@ LiveClient::ModifyStudioLayoutOutcomeCallable LiveClient::modifyStudioLayoutCall
 			[this, request]()
 			{
 			return this->modifyStudioLayout(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::MuteAllGroupUserOutcome LiveClient::muteAllGroupUser(const MuteAllGroupUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MuteAllGroupUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MuteAllGroupUserOutcome(MuteAllGroupUserResult(outcome.result()));
+	else
+		return MuteAllGroupUserOutcome(outcome.error());
+}
+
+void LiveClient::muteAllGroupUserAsync(const MuteAllGroupUserRequest& request, const MuteAllGroupUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, muteAllGroupUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::MuteAllGroupUserOutcomeCallable LiveClient::muteAllGroupUserCallable(const MuteAllGroupUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MuteAllGroupUserOutcome()>>(
+			[this, request]()
+			{
+			return this->muteAllGroupUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::MuteGroupUserOutcome LiveClient::muteGroupUser(const MuteGroupUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MuteGroupUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MuteGroupUserOutcome(MuteGroupUserResult(outcome.result()));
+	else
+		return MuteGroupUserOutcome(outcome.error());
+}
+
+void LiveClient::muteGroupUserAsync(const MuteGroupUserRequest& request, const MuteGroupUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, muteGroupUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::MuteGroupUserOutcomeCallable LiveClient::muteGroupUserCallable(const MuteGroupUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MuteGroupUserOutcome()>>(
+			[this, request]()
+			{
+			return this->muteGroupUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

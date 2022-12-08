@@ -90,6 +90,8 @@
 #include "model/BatchSetLiveDomainConfigsResult.h"
 #include "model/CancelMuteAllGroupUserRequest.h"
 #include "model/CancelMuteAllGroupUserResult.h"
+#include "model/CancelMuteGroupUserRequest.h"
+#include "model/CancelMuteGroupUserResult.h"
 #include "model/CloseLiveShiftRequest.h"
 #include "model/CloseLiveShiftResult.h"
 #include "model/CopyCasterRequest.h"
@@ -378,6 +380,8 @@
 #include "model/DescribeLiveUserDomainsResult.h"
 #include "model/DescribeLiveUserTagsRequest.h"
 #include "model/DescribeLiveUserTagsResult.h"
+#include "model/DescribeMeterLiveInteractionDauRequest.h"
+#include "model/DescribeMeterLiveInteractionDauResult.h"
 #include "model/DescribeMeterLiveRtcDurationRequest.h"
 #include "model/DescribeMeterLiveRtcDurationResult.h"
 #include "model/DescribeMixStreamListRequest.h"
@@ -492,6 +496,10 @@
 #include "model/ModifyShowListResult.h"
 #include "model/ModifyStudioLayoutRequest.h"
 #include "model/ModifyStudioLayoutResult.h"
+#include "model/MuteAllGroupUserRequest.h"
+#include "model/MuteAllGroupUserResult.h"
+#include "model/MuteGroupUserRequest.h"
+#include "model/MuteGroupUserResult.h"
 #include "model/OpenLiveShiftRequest.h"
 #include "model/OpenLiveShiftResult.h"
 #include "model/PlayChoosenShowRequest.h"
@@ -721,6 +729,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelMuteAllGroupUserResult> CancelMuteAllGroupUserOutcome;
 			typedef std::future<CancelMuteAllGroupUserOutcome> CancelMuteAllGroupUserOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::CancelMuteAllGroupUserRequest&, const CancelMuteAllGroupUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelMuteAllGroupUserAsyncHandler;
+			typedef Outcome<Error, Model::CancelMuteGroupUserResult> CancelMuteGroupUserOutcome;
+			typedef std::future<CancelMuteGroupUserOutcome> CancelMuteGroupUserOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::CancelMuteGroupUserRequest&, const CancelMuteGroupUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelMuteGroupUserAsyncHandler;
 			typedef Outcome<Error, Model::CloseLiveShiftResult> CloseLiveShiftOutcome;
 			typedef std::future<CloseLiveShiftOutcome> CloseLiveShiftOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::CloseLiveShiftRequest&, const CloseLiveShiftOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseLiveShiftAsyncHandler;
@@ -1153,6 +1164,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveUserTagsResult> DescribeLiveUserTagsOutcome;
 			typedef std::future<DescribeLiveUserTagsOutcome> DescribeLiveUserTagsOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveUserTagsRequest&, const DescribeLiveUserTagsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveUserTagsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMeterLiveInteractionDauResult> DescribeMeterLiveInteractionDauOutcome;
+			typedef std::future<DescribeMeterLiveInteractionDauOutcome> DescribeMeterLiveInteractionDauOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeMeterLiveInteractionDauRequest&, const DescribeMeterLiveInteractionDauOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMeterLiveInteractionDauAsyncHandler;
 			typedef Outcome<Error, Model::DescribeMeterLiveRtcDurationResult> DescribeMeterLiveRtcDurationOutcome;
 			typedef std::future<DescribeMeterLiveRtcDurationOutcome> DescribeMeterLiveRtcDurationOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeMeterLiveRtcDurationRequest&, const DescribeMeterLiveRtcDurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMeterLiveRtcDurationAsyncHandler;
@@ -1324,6 +1338,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyStudioLayoutResult> ModifyStudioLayoutOutcome;
 			typedef std::future<ModifyStudioLayoutOutcome> ModifyStudioLayoutOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::ModifyStudioLayoutRequest&, const ModifyStudioLayoutOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStudioLayoutAsyncHandler;
+			typedef Outcome<Error, Model::MuteAllGroupUserResult> MuteAllGroupUserOutcome;
+			typedef std::future<MuteAllGroupUserOutcome> MuteAllGroupUserOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::MuteAllGroupUserRequest&, const MuteAllGroupUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MuteAllGroupUserAsyncHandler;
+			typedef Outcome<Error, Model::MuteGroupUserResult> MuteGroupUserOutcome;
+			typedef std::future<MuteGroupUserOutcome> MuteGroupUserOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::MuteGroupUserRequest&, const MuteGroupUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MuteGroupUserAsyncHandler;
 			typedef Outcome<Error, Model::OpenLiveShiftResult> OpenLiveShiftOutcome;
 			typedef std::future<OpenLiveShiftOutcome> OpenLiveShiftOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::OpenLiveShiftRequest&, const OpenLiveShiftOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenLiveShiftAsyncHandler;
@@ -1608,6 +1628,9 @@ namespace AlibabaCloud
 			CancelMuteAllGroupUserOutcome cancelMuteAllGroupUser(const Model::CancelMuteAllGroupUserRequest &request)const;
 			void cancelMuteAllGroupUserAsync(const Model::CancelMuteAllGroupUserRequest& request, const CancelMuteAllGroupUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelMuteAllGroupUserOutcomeCallable cancelMuteAllGroupUserCallable(const Model::CancelMuteAllGroupUserRequest& request) const;
+			CancelMuteGroupUserOutcome cancelMuteGroupUser(const Model::CancelMuteGroupUserRequest &request)const;
+			void cancelMuteGroupUserAsync(const Model::CancelMuteGroupUserRequest& request, const CancelMuteGroupUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelMuteGroupUserOutcomeCallable cancelMuteGroupUserCallable(const Model::CancelMuteGroupUserRequest& request) const;
 			CloseLiveShiftOutcome closeLiveShift(const Model::CloseLiveShiftRequest &request)const;
 			void closeLiveShiftAsync(const Model::CloseLiveShiftRequest& request, const CloseLiveShiftAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseLiveShiftOutcomeCallable closeLiveShiftCallable(const Model::CloseLiveShiftRequest& request) const;
@@ -2040,6 +2063,9 @@ namespace AlibabaCloud
 			DescribeLiveUserTagsOutcome describeLiveUserTags(const Model::DescribeLiveUserTagsRequest &request)const;
 			void describeLiveUserTagsAsync(const Model::DescribeLiveUserTagsRequest& request, const DescribeLiveUserTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveUserTagsOutcomeCallable describeLiveUserTagsCallable(const Model::DescribeLiveUserTagsRequest& request) const;
+			DescribeMeterLiveInteractionDauOutcome describeMeterLiveInteractionDau(const Model::DescribeMeterLiveInteractionDauRequest &request)const;
+			void describeMeterLiveInteractionDauAsync(const Model::DescribeMeterLiveInteractionDauRequest& request, const DescribeMeterLiveInteractionDauAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMeterLiveInteractionDauOutcomeCallable describeMeterLiveInteractionDauCallable(const Model::DescribeMeterLiveInteractionDauRequest& request) const;
 			DescribeMeterLiveRtcDurationOutcome describeMeterLiveRtcDuration(const Model::DescribeMeterLiveRtcDurationRequest &request)const;
 			void describeMeterLiveRtcDurationAsync(const Model::DescribeMeterLiveRtcDurationRequest& request, const DescribeMeterLiveRtcDurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeMeterLiveRtcDurationOutcomeCallable describeMeterLiveRtcDurationCallable(const Model::DescribeMeterLiveRtcDurationRequest& request) const;
@@ -2211,6 +2237,12 @@ namespace AlibabaCloud
 			ModifyStudioLayoutOutcome modifyStudioLayout(const Model::ModifyStudioLayoutRequest &request)const;
 			void modifyStudioLayoutAsync(const Model::ModifyStudioLayoutRequest& request, const ModifyStudioLayoutAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyStudioLayoutOutcomeCallable modifyStudioLayoutCallable(const Model::ModifyStudioLayoutRequest& request) const;
+			MuteAllGroupUserOutcome muteAllGroupUser(const Model::MuteAllGroupUserRequest &request)const;
+			void muteAllGroupUserAsync(const Model::MuteAllGroupUserRequest& request, const MuteAllGroupUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MuteAllGroupUserOutcomeCallable muteAllGroupUserCallable(const Model::MuteAllGroupUserRequest& request) const;
+			MuteGroupUserOutcome muteGroupUser(const Model::MuteGroupUserRequest &request)const;
+			void muteGroupUserAsync(const Model::MuteGroupUserRequest& request, const MuteGroupUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MuteGroupUserOutcomeCallable muteGroupUserCallable(const Model::MuteGroupUserRequest& request) const;
 			OpenLiveShiftOutcome openLiveShift(const Model::OpenLiveShiftRequest &request)const;
 			void openLiveShiftAsync(const Model::OpenLiveShiftRequest& request, const OpenLiveShiftAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenLiveShiftOutcomeCallable openLiveShiftCallable(const Model::OpenLiveShiftRequest& request) const;
