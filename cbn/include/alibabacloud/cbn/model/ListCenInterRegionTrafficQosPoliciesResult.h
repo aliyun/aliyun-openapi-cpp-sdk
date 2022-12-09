@@ -42,11 +42,13 @@ namespace AlibabaCloud
 						std::string qosQueueName;
 						std::string qosQueueDescription;
 					};
+					std::string transitRouterAttachmentId;
 					std::vector<TrafficQosPolicy::TrafficQosQueue> trafficQosQueues;
 					std::string trafficQosPolicyStatus;
 					std::string trafficQosPolicyName;
 					std::string trafficQosPolicyId;
 					std::string trafficQosPolicyDescription;
+					std::string transitRouterId;
 				};
 
 

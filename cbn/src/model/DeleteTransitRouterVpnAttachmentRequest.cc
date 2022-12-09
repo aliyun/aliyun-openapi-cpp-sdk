@@ -97,3 +97,12 @@ void DeleteTransitRouterVpnAttachmentRequest::setTransitRouterAttachmentId(const
   setParameter(std::string("TransitRouterAttachmentId"), transitRouterAttachmentId);
 }
 
+bool DeleteTransitRouterVpnAttachmentRequest::getForce() const {
+  return force_;
+}
+
+void DeleteTransitRouterVpnAttachmentRequest::setForce(bool force) {
+  force_ = force;
+  setParameter(std::string("Force"), force ? "true" : "false");
+}
+

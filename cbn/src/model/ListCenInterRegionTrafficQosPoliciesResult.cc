@@ -51,6 +51,10 @@ void ListCenInterRegionTrafficQosPoliciesResult::parse(const std::string &payloa
 			trafficQosPoliciesObject.trafficQosPolicyId = valueTrafficQosPoliciesTrafficQosPolicy["TrafficQosPolicyId"].asString();
 		if(!valueTrafficQosPoliciesTrafficQosPolicy["TrafficQosPolicyDescription"].isNull())
 			trafficQosPoliciesObject.trafficQosPolicyDescription = valueTrafficQosPoliciesTrafficQosPolicy["TrafficQosPolicyDescription"].asString();
+		if(!valueTrafficQosPoliciesTrafficQosPolicy["TransitRouterId"].isNull())
+			trafficQosPoliciesObject.transitRouterId = valueTrafficQosPoliciesTrafficQosPolicy["TransitRouterId"].asString();
+		if(!valueTrafficQosPoliciesTrafficQosPolicy["TransitRouterAttachmentId"].isNull())
+			trafficQosPoliciesObject.transitRouterAttachmentId = valueTrafficQosPoliciesTrafficQosPolicy["TransitRouterAttachmentId"].asString();
 		auto allTrafficQosQueuesNode = valueTrafficQosPoliciesTrafficQosPolicy["TrafficQosQueues"]["TrafficQosQueue"];
 		for (auto valueTrafficQosPoliciesTrafficQosPolicyTrafficQosQueuesTrafficQosQueue : allTrafficQosQueuesNode)
 		{

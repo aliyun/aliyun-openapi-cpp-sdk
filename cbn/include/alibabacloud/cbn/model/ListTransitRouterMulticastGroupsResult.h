@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string peerTransitRouterMulticastDomainId;
 					std::string memberType;
 					std::string resourceId;
+					std::string transitRouterMulticastDomainId;
 					bool groupSource;
 				};
 

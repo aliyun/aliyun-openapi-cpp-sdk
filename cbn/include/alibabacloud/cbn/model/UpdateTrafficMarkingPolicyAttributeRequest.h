@@ -28,12 +28,30 @@ namespace Cbn {
 namespace Model {
 class ALIBABACLOUD_CBN_EXPORT UpdateTrafficMarkingPolicyAttributeRequest : public RpcServiceRequest {
 public:
+	struct AddTrafficMatchRules {
+		int matchDscp;
+		std::string protocol;
+		std::string trafficMatchRuleDescription;
+		std::string dstCidr;
+		std::string trafficMatchRuleName;
+		std::string srcCidr;
+	};
+	struct DeleteTrafficMatchRules {
+		int matchDscp;
+		std::string protocol;
+		std::string trafficMatchRuleDescription;
+		std::string dstCidr;
+		std::string trafficMatchRuleName;
+		std::string srcCidr;
+	};
 	UpdateTrafficMarkingPolicyAttributeRequest();
 	~UpdateTrafficMarkingPolicyAttributeRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::vector<AddTrafficMatchRules> getAddTrafficMatchRules() const;
+	void setAddTrafficMatchRules(const std::vector<AddTrafficMatchRules> &addTrafficMatchRules);
 	std::string getTrafficMarkingPolicyDescription() const;
 	void setTrafficMarkingPolicyDescription(const std::string &trafficMarkingPolicyDescription);
 	std::string getTrafficMarkingPolicyId() const;
@@ -48,10 +66,13 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::vector<DeleteTrafficMatchRules> getDeleteTrafficMatchRules() const;
+	void setDeleteTrafficMatchRules(const std::vector<DeleteTrafficMatchRules> &deleteTrafficMatchRules);
 
 private:
 	long resourceOwnerId_;
 	std::string clientToken_;
+	std::vector<AddTrafficMatchRules> addTrafficMatchRules_;
 	std::string trafficMarkingPolicyDescription_;
 	std::string trafficMarkingPolicyId_;
 	std::string trafficMarkingPolicyName_;
@@ -59,6 +80,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::vector<DeleteTrafficMatchRules> deleteTrafficMatchRules_;
 };
 } // namespace Model
 } // namespace Cbn

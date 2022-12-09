@@ -54,6 +54,7 @@ namespace AlibabaCloud
 					int priority;
 					std::string trafficMarkingPolicyId;
 					std::string trafficMarkingPolicyDescription;
+					std::string transitRouterId;
 				};
 
 

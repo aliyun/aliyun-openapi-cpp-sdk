@@ -51,6 +51,8 @@ void ListTransitRouterMulticastDomainsResult::parse(const std::string &payload)
 			transitRouterMulticastDomainsObject.transitRouterMulticastDomainDescription = valueTransitRouterMulticastDomainsTransitRouterMulticastDomain["TransitRouterMulticastDomainDescription"].asString();
 		if(!valueTransitRouterMulticastDomainsTransitRouterMulticastDomain["Status"].isNull())
 			transitRouterMulticastDomainsObject.status = valueTransitRouterMulticastDomainsTransitRouterMulticastDomain["Status"].asString();
+		if(!valueTransitRouterMulticastDomainsTransitRouterMulticastDomain["TransitRouterId"].isNull())
+			transitRouterMulticastDomainsObject.transitRouterId = valueTransitRouterMulticastDomainsTransitRouterMulticastDomain["TransitRouterId"].asString();
 		auto allTagsNode = valueTransitRouterMulticastDomainsTransitRouterMulticastDomain["Tags"]["Tag"];
 		for (auto valueTransitRouterMulticastDomainsTransitRouterMulticastDomainTagsTag : allTagsNode)
 		{

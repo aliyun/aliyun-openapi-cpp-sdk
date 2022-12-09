@@ -56,6 +56,8 @@ public:
 	void setResourceType(const std::string &resourceType);
 	std::string getTransitRouterAttachmentId() const;
 	void setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId);
+	std::string getVpcId() const;
+	void setVpcId(const std::string &vpcId);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
 
@@ -71,6 +73,7 @@ private:
 	std::string transitRouterId_;
 	std::string resourceType_;
 	std::string transitRouterAttachmentId_;
+	std::string vpcId_;
 	int maxResults_;
 };
 } // namespace Model

@@ -43,6 +43,24 @@ void UpdateTrafficMarkingPolicyAttributeRequest::setClientToken(const std::strin
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::vector<UpdateTrafficMarkingPolicyAttributeRequest::AddTrafficMatchRules> UpdateTrafficMarkingPolicyAttributeRequest::getAddTrafficMatchRules() const {
+  return addTrafficMatchRules_;
+}
+
+void UpdateTrafficMarkingPolicyAttributeRequest::setAddTrafficMatchRules(const std::vector<UpdateTrafficMarkingPolicyAttributeRequest::AddTrafficMatchRules> &addTrafficMatchRules) {
+  addTrafficMatchRules_ = addTrafficMatchRules;
+  for(int dep1 = 0; dep1 != addTrafficMatchRules.size(); dep1++) {
+  auto addTrafficMatchRulesObj = addTrafficMatchRules.at(dep1);
+  std::string addTrafficMatchRulesObjStr = std::string("AddTrafficMatchRules") + "." + std::to_string(dep1 + 1);
+    setParameter(addTrafficMatchRulesObjStr + ".MatchDscp", std::to_string(addTrafficMatchRulesObj.matchDscp));
+    setParameter(addTrafficMatchRulesObjStr + ".Protocol", addTrafficMatchRulesObj.protocol);
+    setParameter(addTrafficMatchRulesObjStr + ".TrafficMatchRuleDescription", addTrafficMatchRulesObj.trafficMatchRuleDescription);
+    setParameter(addTrafficMatchRulesObjStr + ".DstCidr", addTrafficMatchRulesObj.dstCidr);
+    setParameter(addTrafficMatchRulesObjStr + ".TrafficMatchRuleName", addTrafficMatchRulesObj.trafficMatchRuleName);
+    setParameter(addTrafficMatchRulesObjStr + ".SrcCidr", addTrafficMatchRulesObj.srcCidr);
+  }
+}
+
 std::string UpdateTrafficMarkingPolicyAttributeRequest::getTrafficMarkingPolicyDescription() const {
   return trafficMarkingPolicyDescription_;
 }
@@ -104,5 +122,23 @@ long UpdateTrafficMarkingPolicyAttributeRequest::getOwnerId() const {
 void UpdateTrafficMarkingPolicyAttributeRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::vector<UpdateTrafficMarkingPolicyAttributeRequest::DeleteTrafficMatchRules> UpdateTrafficMarkingPolicyAttributeRequest::getDeleteTrafficMatchRules() const {
+  return deleteTrafficMatchRules_;
+}
+
+void UpdateTrafficMarkingPolicyAttributeRequest::setDeleteTrafficMatchRules(const std::vector<UpdateTrafficMarkingPolicyAttributeRequest::DeleteTrafficMatchRules> &deleteTrafficMatchRules) {
+  deleteTrafficMatchRules_ = deleteTrafficMatchRules;
+  for(int dep1 = 0; dep1 != deleteTrafficMatchRules.size(); dep1++) {
+  auto deleteTrafficMatchRulesObj = deleteTrafficMatchRules.at(dep1);
+  std::string deleteTrafficMatchRulesObjStr = std::string("DeleteTrafficMatchRules") + "." + std::to_string(dep1 + 1);
+    setParameter(deleteTrafficMatchRulesObjStr + ".MatchDscp", std::to_string(deleteTrafficMatchRulesObj.matchDscp));
+    setParameter(deleteTrafficMatchRulesObjStr + ".Protocol", deleteTrafficMatchRulesObj.protocol);
+    setParameter(deleteTrafficMatchRulesObjStr + ".TrafficMatchRuleDescription", deleteTrafficMatchRulesObj.trafficMatchRuleDescription);
+    setParameter(deleteTrafficMatchRulesObjStr + ".DstCidr", deleteTrafficMatchRulesObj.dstCidr);
+    setParameter(deleteTrafficMatchRulesObjStr + ".TrafficMatchRuleName", deleteTrafficMatchRulesObj.trafficMatchRuleName);
+    setParameter(deleteTrafficMatchRulesObjStr + ".SrcCidr", deleteTrafficMatchRulesObj.srcCidr);
+  }
 }
 

@@ -147,6 +147,15 @@ void DescribeFlowlogsRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeFlowlogsRequest::getTransitRouterAttachmentId() const {
+  return transitRouterAttachmentId_;
+}
+
+void DescribeFlowlogsRequest::setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId) {
+  transitRouterAttachmentId_ = transitRouterAttachmentId;
+  setParameter(std::string("TransitRouterAttachmentId"), transitRouterAttachmentId);
+}
+
 std::string DescribeFlowlogsRequest::getFlowLogId() const {
   return flowLogId_;
 }

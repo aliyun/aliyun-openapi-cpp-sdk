@@ -28,16 +28,25 @@ namespace Cbn {
 namespace Model {
 class ALIBABACLOUD_CBN_EXPORT ListTransitRoutersRequest : public RpcServiceRequest {
 public:
+	struct FeatureFilter {
+		std::string key;
+	};
 	struct Tag {
 		std::string value;
 		std::string key;
 	};
 	ListTransitRoutersRequest();
 	~ListTransitRoutersRequest();
+	std::string getTransitRouterName() const;
+	void setTransitRouterName(const std::string &transitRouterName);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getCenId() const;
 	void setCenId(const std::string &cenId);
+	std::vector<FeatureFilter> getFeatureFilter() const;
+	void setFeatureFilter(const std::vector<FeatureFilter> &featureFilter);
+	std::string getType() const;
+	void setType(const std::string &type);
 	std::vector<std::string> getTransitRouterIds() const;
 	void setTransitRouterIds(const std::vector<std::string> &transitRouterIds);
 	int getPageNumber() const;
@@ -56,10 +65,15 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getTransitRouterId() const;
 	void setTransitRouterId(const std::string &transitRouterId);
+	std::string getStatus() const;
+	void setStatus(const std::string &status);
 
 private:
+	std::string transitRouterName_;
 	long resourceOwnerId_;
 	std::string cenId_;
+	std::vector<FeatureFilter> featureFilter_;
+	std::string type_;
 	std::vector<std::string> transitRouterIds_;
 	int pageNumber_;
 	std::string regionId_;
@@ -69,6 +83,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string transitRouterId_;
+	std::string status_;
 };
 } // namespace Model
 } // namespace Cbn

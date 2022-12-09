@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					std::string transitRouterMulticastDomainName;
 					std::string transitRouterMulticastDomainDescription;
 					std::vector<TransitRouterMulticastDomain::Tag> tags;
+					std::string transitRouterId;
 				};
 
 

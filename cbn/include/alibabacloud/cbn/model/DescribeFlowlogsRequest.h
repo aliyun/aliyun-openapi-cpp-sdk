@@ -60,6 +60,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getTransitRouterAttachmentId() const;
+	void setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId);
 	std::string getFlowLogId() const;
 	void setFlowLogId(const std::string &flowLogId);
 	std::string getFlowLogName() const;
@@ -81,6 +83,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string transitRouterAttachmentId_;
 	std::string flowLogId_;
 	std::string flowLogName_;
 	std::string status_;

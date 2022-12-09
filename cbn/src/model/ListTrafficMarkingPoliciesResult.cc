@@ -55,6 +55,8 @@ void ListTrafficMarkingPoliciesResult::parse(const std::string &payload)
 			trafficMarkingPoliciesObject.priority = std::stoi(valueTrafficMarkingPoliciesTrafficMarkingPolicy["Priority"].asString());
 		if(!valueTrafficMarkingPoliciesTrafficMarkingPolicy["TrafficMarkingPolicyDescription"].isNull())
 			trafficMarkingPoliciesObject.trafficMarkingPolicyDescription = valueTrafficMarkingPoliciesTrafficMarkingPolicy["TrafficMarkingPolicyDescription"].asString();
+		if(!valueTrafficMarkingPoliciesTrafficMarkingPolicy["TransitRouterId"].isNull())
+			trafficMarkingPoliciesObject.transitRouterId = valueTrafficMarkingPoliciesTrafficMarkingPolicy["TransitRouterId"].asString();
 		auto allTrafficMatchRulesNode = valueTrafficMarkingPoliciesTrafficMarkingPolicy["TrafficMatchRules"]["TrafficMatchRule"];
 		for (auto valueTrafficMarkingPoliciesTrafficMarkingPolicyTrafficMatchRulesTrafficMatchRule : allTrafficMatchRulesNode)
 		{

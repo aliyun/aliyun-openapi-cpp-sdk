@@ -34,10 +34,14 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::vector<std::string> getNetworkInterfaceIds() const;
+	void setNetworkInterfaceIds(const std::vector<std::string> &networkInterfaceIds);
 	std::vector<std::string> getVSwitchIds() const;
 	void setVSwitchIds(const std::vector<std::string> &vSwitchIds);
 	std::string getTransitRouterMulticastDomainId() const;
 	void setTransitRouterMulticastDomainId(const std::string &transitRouterMulticastDomainId);
+	bool getIsGroupSource() const;
+	void setIsGroupSource(bool isGroupSource);
 	std::vector<std::string> getConnectPeerIds() const;
 	void setConnectPeerIds(const std::vector<std::string> &connectPeerIds);
 	std::string getNextToken() const;
@@ -60,12 +64,16 @@ public:
 	void setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId);
 	long getMaxResults() const;
 	void setMaxResults(long maxResults);
+	bool getIsGroupMember() const;
+	void setIsGroupMember(bool isGroupMember);
 
 private:
 	long resourceOwnerId_;
 	std::string clientToken_;
+	std::vector<std::string> networkInterfaceIds_;
 	std::vector<std::string> vSwitchIds_;
 	std::string transitRouterMulticastDomainId_;
+	bool isGroupSource_;
 	std::vector<std::string> connectPeerIds_;
 	std::string nextToken_;
 	std::string groupIpAddress_;
@@ -77,6 +85,7 @@ private:
 	std::string resourceType_;
 	std::string transitRouterAttachmentId_;
 	long maxResults_;
+	bool isGroupMember_;
 };
 } // namespace Model
 } // namespace Cbn

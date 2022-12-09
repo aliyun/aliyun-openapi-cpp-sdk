@@ -25,6 +25,15 @@ ListTransitRoutersRequest::ListTransitRoutersRequest()
 
 ListTransitRoutersRequest::~ListTransitRoutersRequest() {}
 
+std::string ListTransitRoutersRequest::getTransitRouterName() const {
+  return transitRouterName_;
+}
+
+void ListTransitRoutersRequest::setTransitRouterName(const std::string &transitRouterName) {
+  transitRouterName_ = transitRouterName;
+  setParameter(std::string("TransitRouterName"), transitRouterName);
+}
+
 long ListTransitRoutersRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
@@ -41,6 +50,28 @@ std::string ListTransitRoutersRequest::getCenId() const {
 void ListTransitRoutersRequest::setCenId(const std::string &cenId) {
   cenId_ = cenId;
   setParameter(std::string("CenId"), cenId);
+}
+
+std::vector<ListTransitRoutersRequest::FeatureFilter> ListTransitRoutersRequest::getFeatureFilter() const {
+  return featureFilter_;
+}
+
+void ListTransitRoutersRequest::setFeatureFilter(const std::vector<ListTransitRoutersRequest::FeatureFilter> &featureFilter) {
+  featureFilter_ = featureFilter;
+  for(int dep1 = 0; dep1 != featureFilter.size(); dep1++) {
+  auto featureFilterObj = featureFilter.at(dep1);
+  std::string featureFilterObjStr = std::string("FeatureFilter") + "." + std::to_string(dep1 + 1);
+    setParameter(featureFilterObjStr + ".Key", featureFilterObj.key);
+  }
+}
+
+std::string ListTransitRoutersRequest::getType() const {
+  return type_;
+}
+
+void ListTransitRoutersRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
 }
 
 std::vector<std::string> ListTransitRoutersRequest::getTransitRouterIds() const {
@@ -126,5 +157,14 @@ std::string ListTransitRoutersRequest::getTransitRouterId() const {
 void ListTransitRoutersRequest::setTransitRouterId(const std::string &transitRouterId) {
   transitRouterId_ = transitRouterId;
   setParameter(std::string("TransitRouterId"), transitRouterId);
+}
+
+std::string ListTransitRoutersRequest::getStatus() const {
+  return status_;
+}
+
+void ListTransitRoutersRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
 }
 

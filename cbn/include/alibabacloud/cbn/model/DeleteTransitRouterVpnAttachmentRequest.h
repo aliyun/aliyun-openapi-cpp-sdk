@@ -46,6 +46,8 @@ public:
 	void setResourceType(const std::string &resourceType);
 	std::string getTransitRouterAttachmentId() const;
 	void setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId);
+	bool getForce() const;
+	void setForce(bool force);
 
 private:
 	long resourceOwnerId_;
@@ -56,6 +58,7 @@ private:
 	long ownerId_;
 	std::string resourceType_;
 	std::string transitRouterAttachmentId_;
+	bool force_;
 };
 } // namespace Model
 } // namespace Cbn

@@ -97,3 +97,12 @@ void DeleteTransitRouterVpcAttachmentRequest::setTransitRouterAttachmentId(const
   setParameter(std::string("TransitRouterAttachmentId"), transitRouterAttachmentId);
 }
 
+bool DeleteTransitRouterVpcAttachmentRequest::getForce() const {
+  return force_;
+}
+
+void DeleteTransitRouterVpcAttachmentRequest::setForce(bool force) {
+  force_ = force;
+  setParameter(std::string("Force"), force ? "true" : "false");
+}
+

@@ -43,6 +43,14 @@ void ListTransitRouterMulticastGroupsRequest::setClientToken(const std::string &
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::vector<std::string> ListTransitRouterMulticastGroupsRequest::getNetworkInterfaceIds() const {
+  return networkInterfaceIds_;
+}
+
+void ListTransitRouterMulticastGroupsRequest::setNetworkInterfaceIds(const std::vector<std::string> &networkInterfaceIds) {
+  networkInterfaceIds_ = networkInterfaceIds;
+}
+
 std::vector<std::string> ListTransitRouterMulticastGroupsRequest::getVSwitchIds() const {
   return vSwitchIds_;
 }
@@ -58,6 +66,15 @@ std::string ListTransitRouterMulticastGroupsRequest::getTransitRouterMulticastDo
 void ListTransitRouterMulticastGroupsRequest::setTransitRouterMulticastDomainId(const std::string &transitRouterMulticastDomainId) {
   transitRouterMulticastDomainId_ = transitRouterMulticastDomainId;
   setParameter(std::string("TransitRouterMulticastDomainId"), transitRouterMulticastDomainId);
+}
+
+bool ListTransitRouterMulticastGroupsRequest::getIsGroupSource() const {
+  return isGroupSource_;
+}
+
+void ListTransitRouterMulticastGroupsRequest::setIsGroupSource(bool isGroupSource) {
+  isGroupSource_ = isGroupSource;
+  setParameter(std::string("IsGroupSource"), isGroupSource ? "true" : "false");
 }
 
 std::vector<std::string> ListTransitRouterMulticastGroupsRequest::getConnectPeerIds() const {
@@ -155,5 +172,14 @@ long ListTransitRouterMulticastGroupsRequest::getMaxResults() const {
 void ListTransitRouterMulticastGroupsRequest::setMaxResults(long maxResults) {
   maxResults_ = maxResults;
   setParameter(std::string("MaxResults"), std::to_string(maxResults));
+}
+
+bool ListTransitRouterMulticastGroupsRequest::getIsGroupMember() const {
+  return isGroupMember_;
+}
+
+void ListTransitRouterMulticastGroupsRequest::setIsGroupMember(bool isGroupMember) {
+  isGroupMember_ = isGroupMember;
+  setParameter(std::string("IsGroupMember"), isGroupMember ? "true" : "false");
 }
 

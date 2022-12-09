@@ -129,6 +129,15 @@ void ListTransitRouterVpcAttachmentsRequest::setTransitRouterAttachmentId(const 
   setParameter(std::string("TransitRouterAttachmentId"), transitRouterAttachmentId);
 }
 
+std::string ListTransitRouterVpcAttachmentsRequest::getVpcId() const {
+  return vpcId_;
+}
+
+void ListTransitRouterVpcAttachmentsRequest::setVpcId(const std::string &vpcId) {
+  vpcId_ = vpcId;
+  setParameter(std::string("VpcId"), vpcId);
+}
+
 int ListTransitRouterVpcAttachmentsRequest::getMaxResults() const {
   return maxResults_;
 }

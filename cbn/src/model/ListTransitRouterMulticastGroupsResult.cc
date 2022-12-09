@@ -71,6 +71,8 @@ void ListTransitRouterMulticastGroupsResult::parse(const std::string &payload)
 			transitRouterMulticastGroupsObject.resourceId = valueTransitRouterMulticastGroupsTransitRouterMulticastGroup["ResourceId"].asString();
 		if(!valueTransitRouterMulticastGroupsTransitRouterMulticastGroup["ConnectPeerId"].isNull())
 			transitRouterMulticastGroupsObject.connectPeerId = valueTransitRouterMulticastGroupsTransitRouterMulticastGroup["ConnectPeerId"].asString();
+		if(!valueTransitRouterMulticastGroupsTransitRouterMulticastGroup["TransitRouterMulticastDomainId"].isNull())
+			transitRouterMulticastGroupsObject.transitRouterMulticastDomainId = valueTransitRouterMulticastGroupsTransitRouterMulticastGroup["TransitRouterMulticastDomainId"].asString();
 		transitRouterMulticastGroups_.push_back(transitRouterMulticastGroupsObject);
 	}
 	if(!value["TotalCount"].isNull())
