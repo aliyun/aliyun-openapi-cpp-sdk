@@ -123,6 +123,78 @@ DBFSClient::AttachDbfsOutcomeCallable DBFSClient::attachDbfsCallable(const Attac
 	return task->get_future();
 }
 
+DBFSClient::CancelAutoSnapshotPolicyOutcome DBFSClient::cancelAutoSnapshotPolicy(const CancelAutoSnapshotPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelAutoSnapshotPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelAutoSnapshotPolicyOutcome(CancelAutoSnapshotPolicyResult(outcome.result()));
+	else
+		return CancelAutoSnapshotPolicyOutcome(outcome.error());
+}
+
+void DBFSClient::cancelAutoSnapshotPolicyAsync(const CancelAutoSnapshotPolicyRequest& request, const CancelAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelAutoSnapshotPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::CancelAutoSnapshotPolicyOutcomeCallable DBFSClient::cancelAutoSnapshotPolicyCallable(const CancelAutoSnapshotPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelAutoSnapshotPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelAutoSnapshotPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DBFSClient::CreateAutoSnapshotPolicyOutcome DBFSClient::createAutoSnapshotPolicy(const CreateAutoSnapshotPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAutoSnapshotPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAutoSnapshotPolicyOutcome(CreateAutoSnapshotPolicyResult(outcome.result()));
+	else
+		return CreateAutoSnapshotPolicyOutcome(outcome.error());
+}
+
+void DBFSClient::createAutoSnapshotPolicyAsync(const CreateAutoSnapshotPolicyRequest& request, const CreateAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAutoSnapshotPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::CreateAutoSnapshotPolicyOutcomeCallable DBFSClient::createAutoSnapshotPolicyCallable(const CreateAutoSnapshotPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAutoSnapshotPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->createAutoSnapshotPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DBFSClient::CreateDbfsOutcome DBFSClient::createDbfs(const CreateDbfsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

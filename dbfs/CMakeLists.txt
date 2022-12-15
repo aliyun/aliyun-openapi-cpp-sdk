@@ -25,6 +25,10 @@ set(dbfs_public_header_model
 	include/alibabacloud/dbfs/model/AddTagsBatchResult.h
 	include/alibabacloud/dbfs/model/AttachDbfsRequest.h
 	include/alibabacloud/dbfs/model/AttachDbfsResult.h
+	include/alibabacloud/dbfs/model/CancelAutoSnapshotPolicyRequest.h
+	include/alibabacloud/dbfs/model/CancelAutoSnapshotPolicyResult.h
+	include/alibabacloud/dbfs/model/CreateAutoSnapshotPolicyRequest.h
+	include/alibabacloud/dbfs/model/CreateAutoSnapshotPolicyResult.h
 	include/alibabacloud/dbfs/model/CreateDbfsRequest.h
 	include/alibabacloud/dbfs/model/CreateDbfsResult.h
 	include/alibabacloud/dbfs/model/CreateServiceLinkedRoleRequest.h
@@ -74,6 +78,10 @@ set(dbfs_src
 	src/model/AddTagsBatchResult.cc
 	src/model/AttachDbfsRequest.cc
 	src/model/AttachDbfsResult.cc
+	src/model/CancelAutoSnapshotPolicyRequest.cc
+	src/model/CancelAutoSnapshotPolicyResult.cc
+	src/model/CreateAutoSnapshotPolicyRequest.cc
+	src/model/CreateAutoSnapshotPolicyResult.cc
 	src/model/CreateDbfsRequest.cc
 	src/model/CreateDbfsResult.cc
 	src/model/CreateServiceLinkedRoleRequest.cc
