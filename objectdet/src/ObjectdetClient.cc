@@ -375,42 +375,6 @@ ObjectdetClient::DetectVehicleIllegalParkingOutcomeCallable ObjectdetClient::det
 	return task->get_future();
 }
 
-ObjectdetClient::DetectVideoFrameOutcome ObjectdetClient::detectVideoFrame(const DetectVideoFrameRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DetectVideoFrameOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DetectVideoFrameOutcome(DetectVideoFrameResult(outcome.result()));
-	else
-		return DetectVideoFrameOutcome(outcome.error());
-}
-
-void ObjectdetClient::detectVideoFrameAsync(const DetectVideoFrameRequest& request, const DetectVideoFrameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, detectVideoFrame(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ObjectdetClient::DetectVideoFrameOutcomeCallable ObjectdetClient::detectVideoFrameCallable(const DetectVideoFrameRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DetectVideoFrameOutcome()>>(
-			[this, request]()
-			{
-			return this->detectVideoFrame(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ObjectdetClient::DetectVideoIPCObjectOutcome ObjectdetClient::detectVideoIPCObject(const DetectVideoIPCObjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,42 +483,6 @@ ObjectdetClient::DetectWorkwearOutcomeCallable ObjectdetClient::detectWorkwearCa
 	return task->get_future();
 }
 
-ObjectdetClient::GenerateVehicleRepairPlanOutcome ObjectdetClient::generateVehicleRepairPlan(const GenerateVehicleRepairPlanRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GenerateVehicleRepairPlanOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GenerateVehicleRepairPlanOutcome(GenerateVehicleRepairPlanResult(outcome.result()));
-	else
-		return GenerateVehicleRepairPlanOutcome(outcome.error());
-}
-
-void ObjectdetClient::generateVehicleRepairPlanAsync(const GenerateVehicleRepairPlanRequest& request, const GenerateVehicleRepairPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, generateVehicleRepairPlan(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ObjectdetClient::GenerateVehicleRepairPlanOutcomeCallable ObjectdetClient::generateVehicleRepairPlanCallable(const GenerateVehicleRepairPlanRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GenerateVehicleRepairPlanOutcome()>>(
-			[this, request]()
-			{
-			return this->generateVehicleRepairPlan(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ObjectdetClient::GetAsyncJobResultOutcome ObjectdetClient::getAsyncJobResult(const GetAsyncJobResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,42 +513,6 @@ ObjectdetClient::GetAsyncJobResultOutcomeCallable ObjectdetClient::getAsyncJobRe
 			[this, request]()
 			{
 			return this->getAsyncJobResult(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ObjectdetClient::GetVehicleRepairPlanOutcome ObjectdetClient::getVehicleRepairPlan(const GetVehicleRepairPlanRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetVehicleRepairPlanOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetVehicleRepairPlanOutcome(GetVehicleRepairPlanResult(outcome.result()));
-	else
-		return GetVehicleRepairPlanOutcome(outcome.error());
-}
-
-void ObjectdetClient::getVehicleRepairPlanAsync(const GetVehicleRepairPlanRequest& request, const GetVehicleRepairPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getVehicleRepairPlan(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ObjectdetClient::GetVehicleRepairPlanOutcomeCallable ObjectdetClient::getVehicleRepairPlanCallable(const GetVehicleRepairPlanRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetVehicleRepairPlanOutcome()>>(
-			[this, request]()
-			{
-			return this->getVehicleRepairPlan(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

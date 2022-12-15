@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Objectdet::Model::RecognizeVehicleDashboardRequest;
 
-RecognizeVehicleDashboardRequest::RecognizeVehicleDashboardRequest() :
-	RpcServiceRequest("objectdet", "2019-12-30", "RecognizeVehicleDashboard")
-{
-	setMethod(HttpRequest::Method::Post);
+RecognizeVehicleDashboardRequest::RecognizeVehicleDashboardRequest()
+    : RpcServiceRequest("objectdet", "2019-12-30", "RecognizeVehicleDashboard") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-RecognizeVehicleDashboardRequest::~RecognizeVehicleDashboardRequest()
-{}
+RecognizeVehicleDashboardRequest::~RecognizeVehicleDashboardRequest() {}
 
-bool RecognizeVehicleDashboardRequest::getFormatResultToJson()const
-{
-	return formatResultToJson_;
+bool RecognizeVehicleDashboardRequest::getFormatResultToJson() const {
+  return formatResultToJson_;
 }
 
-void RecognizeVehicleDashboardRequest::setFormatResultToJson(bool formatResultToJson)
-{
-	formatResultToJson_ = formatResultToJson;
-	setParameter("FormatResultToJson", formatResultToJson ? "true" : "false");
+void RecognizeVehicleDashboardRequest::setFormatResultToJson(bool formatResultToJson) {
+  formatResultToJson_ = formatResultToJson;
+  setParameter(std::string("FormatResultToJson"), formatResultToJson ? "true" : "false");
 }
 
-std::string RecognizeVehicleDashboardRequest::getOssFile()const
-{
-	return ossFile_;
+std::string RecognizeVehicleDashboardRequest::getOssFile() const {
+  return ossFile_;
 }
 
-void RecognizeVehicleDashboardRequest::setOssFile(const std::string& ossFile)
-{
-	ossFile_ = ossFile;
-	setParameter("OssFile", ossFile);
+void RecognizeVehicleDashboardRequest::setOssFile(const std::string &ossFile) {
+  ossFile_ = ossFile;
+  setParameter(std::string("OssFile"), ossFile);
 }
 
-std::string RecognizeVehicleDashboardRequest::getRequestProxyBy()const
-{
-	return requestProxyBy_;
+std::string RecognizeVehicleDashboardRequest::getRequestProxyBy() const {
+  return requestProxyBy_;
 }
 
-void RecognizeVehicleDashboardRequest::setRequestProxyBy(const std::string& requestProxyBy)
-{
-	requestProxyBy_ = requestProxyBy;
-	setParameter("RequestProxyBy", requestProxyBy);
+void RecognizeVehicleDashboardRequest::setRequestProxyBy(const std::string &requestProxyBy) {
+  requestProxyBy_ = requestProxyBy;
+  setParameter(std::string("RequestProxyBy"), requestProxyBy);
 }
 
-std::string RecognizeVehicleDashboardRequest::getImageURL()const
-{
-	return imageURL_;
+std::string RecognizeVehicleDashboardRequest::getImageURL() const {
+  return imageURL_;
 }
 
-void RecognizeVehicleDashboardRequest::setImageURL(const std::string& imageURL)
-{
-	imageURL_ = imageURL;
-	setBodyParameter("ImageURL", imageURL);
+void RecognizeVehicleDashboardRequest::setImageURL(const std::string &imageURL) {
+  imageURL_ = imageURL;
+  setBodyParameter(std::string("ImageURL"), imageURL);
 }
 
