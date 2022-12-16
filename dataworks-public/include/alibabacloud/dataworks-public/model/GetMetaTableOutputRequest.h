@@ -40,6 +40,8 @@ public:
 	void setTableGuid(const std::string &tableGuid);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getTaskId() const;
+	void setTaskId(const std::string &taskId);
 
 private:
 	std::string startDate_;
@@ -47,6 +49,7 @@ private:
 	std::string endDate_;
 	std::string tableGuid_;
 	int pageSize_;
+	std::string taskId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

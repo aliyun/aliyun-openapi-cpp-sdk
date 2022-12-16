@@ -70,3 +70,12 @@ void GetMetaTableOutputRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::string GetMetaTableOutputRequest::getTaskId() const {
+  return taskId_;
+}
+
+void GetMetaTableOutputRequest::setTaskId(const std::string &taskId) {
+  taskId_ = taskId;
+  setParameter(std::string("TaskId"), taskId);
+}
+
