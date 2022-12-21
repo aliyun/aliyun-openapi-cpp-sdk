@@ -2715,6 +2715,42 @@ Dms_enterpriseClient::GetProxyOutcomeCallable Dms_enterpriseClient::getProxyCall
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetProxyAccessOutcome Dms_enterpriseClient::getProxyAccess(const GetProxyAccessRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetProxyAccessOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetProxyAccessOutcome(GetProxyAccessResult(outcome.result()));
+	else
+		return GetProxyAccessOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getProxyAccessAsync(const GetProxyAccessRequest& request, const GetProxyAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getProxyAccess(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetProxyAccessOutcomeCallable Dms_enterpriseClient::getProxyAccessCallable(const GetProxyAccessRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetProxyAccessOutcome()>>(
+			[this, request]()
+			{
+			return this->getProxyAccess(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetRuleNumLimitOfSLAOutcome Dms_enterpriseClient::getRuleNumLimitOfSLA(const GetRuleNumLimitOfSLARequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

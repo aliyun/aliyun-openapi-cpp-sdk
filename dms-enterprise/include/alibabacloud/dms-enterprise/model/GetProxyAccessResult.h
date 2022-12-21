@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTASKFLOWCOOPERATORSRESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTASKFLOWCOOPERATORSRESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYACCESSRESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYACCESSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,23 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListTaskFlowCooperatorsResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetProxyAccessResult : public ServiceResult
 			{
 			public:
-				struct Cooperator
+				struct ProxyAccess
 				{
-					std::string loginName;
-					std::string email;
-					std::string userId;
-					std::string realName;
-					std::string nickName;
+					std::string gmtCreate;
+					std::string userName;
+					std::string accessId;
+					long instanceId;
+					long userId;
+					std::string userUid;
+					long proxyId;
+					long proxyAccessId;
+					std::string originInfo;
+					std::string indepAccount;
 				};
 
 
-				ListTaskFlowCooperatorsResult();
-				explicit ListTaskFlowCooperatorsResult(const std::string &payload);
-				~ListTaskFlowCooperatorsResult();
-				std::vector<Cooperator> getCooperatorList()const;
+				GetProxyAccessResult();
+				explicit GetProxyAccessResult(const std::string &payload);
+				~GetProxyAccessResult();
+				ProxyAccess getProxyAccess()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -53,7 +58,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Cooperator> cooperatorList_;
+				ProxyAccess proxyAccess_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -62,4 +67,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTASKFLOWCOOPERATORSRESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYACCESSRESULT_H_

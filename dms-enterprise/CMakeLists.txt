@@ -169,6 +169,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetPhysicalDatabaseResult.h
 	include/alibabacloud/dms-enterprise/model/GetProxyRequest.h
 	include/alibabacloud/dms-enterprise/model/GetProxyResult.h
+	include/alibabacloud/dms-enterprise/model/GetProxyAccessRequest.h
+	include/alibabacloud/dms-enterprise/model/GetProxyAccessResult.h
 	include/alibabacloud/dms-enterprise/model/GetRuleNumLimitOfSLARequest.h
 	include/alibabacloud/dms-enterprise/model/GetRuleNumLimitOfSLAResult.h
 	include/alibabacloud/dms-enterprise/model/GetSQLReviewCheckResultStatusRequest.h
@@ -536,6 +538,8 @@ set(dms-enterprise_src
 	src/model/GetPhysicalDatabaseResult.cc
 	src/model/GetProxyRequest.cc
 	src/model/GetProxyResult.cc
+	src/model/GetProxyAccessRequest.cc
+	src/model/GetProxyAccessResult.cc
 	src/model/GetRuleNumLimitOfSLARequest.cc
 	src/model/GetRuleNumLimitOfSLAResult.cc
 	src/model/GetSQLReviewCheckResultStatusRequest.cc

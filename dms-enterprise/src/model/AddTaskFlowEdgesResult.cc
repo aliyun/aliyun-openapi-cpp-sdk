@@ -39,6 +39,9 @@ void AddTaskFlowEdgesResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allEdgeIds = value["EdgeIds"]["EdgeId"];
+	for (const auto &item : allEdgeIds)
+		edgeIds_.push_back(item.asString());
 	if(!value["ErrorCode"].isNull())
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["ErrorMessage"].isNull())
@@ -46,6 +49,11 @@ void AddTaskFlowEdgesResult::parse(const std::string &payload)
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 
+}
+
+std::vector<std::string> AddTaskFlowEdgesResult::getEdgeIds()const
+{
+	return edgeIds_;
 }
 
 std::string AddTaskFlowEdgesResult::getErrorCode()const

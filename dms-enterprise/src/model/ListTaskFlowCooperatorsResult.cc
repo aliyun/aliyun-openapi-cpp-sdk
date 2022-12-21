@@ -51,6 +51,8 @@ void ListTaskFlowCooperatorsResult::parse(const std::string &payload)
 			cooperatorListObject.loginName = valueCooperatorListCooperator["LoginName"].asString();
 		if(!valueCooperatorListCooperator["RealName"].isNull())
 			cooperatorListObject.realName = valueCooperatorListCooperator["RealName"].asString();
+		if(!valueCooperatorListCooperator["UserId"].isNull())
+			cooperatorListObject.userId = valueCooperatorListCooperator["UserId"].asString();
 		cooperatorList_.push_back(cooperatorListObject);
 	}
 	if(!value["ErrorCode"].isNull())

@@ -170,6 +170,8 @@
 #include "model/GetPhysicalDatabaseResult.h"
 #include "model/GetProxyRequest.h"
 #include "model/GetProxyResult.h"
+#include "model/GetProxyAccessRequest.h"
+#include "model/GetProxyAccessResult.h"
 #include "model/GetRuleNumLimitOfSLARequest.h"
 #include "model/GetRuleNumLimitOfSLAResult.h"
 #include "model/GetSQLReviewCheckResultStatusRequest.h"
@@ -617,6 +619,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetProxyResult> GetProxyOutcome;
 			typedef std::future<GetProxyOutcome> GetProxyOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetProxyRequest&, const GetProxyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProxyAsyncHandler;
+			typedef Outcome<Error, Model::GetProxyAccessResult> GetProxyAccessOutcome;
+			typedef std::future<GetProxyAccessOutcome> GetProxyAccessOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetProxyAccessRequest&, const GetProxyAccessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetProxyAccessAsyncHandler;
 			typedef Outcome<Error, Model::GetRuleNumLimitOfSLAResult> GetRuleNumLimitOfSLAOutcome;
 			typedef std::future<GetRuleNumLimitOfSLAOutcome> GetRuleNumLimitOfSLAOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetRuleNumLimitOfSLARequest&, const GetRuleNumLimitOfSLAOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRuleNumLimitOfSLAAsyncHandler;
@@ -1168,6 +1173,9 @@ namespace AlibabaCloud
 			GetProxyOutcome getProxy(const Model::GetProxyRequest &request)const;
 			void getProxyAsync(const Model::GetProxyRequest& request, const GetProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetProxyOutcomeCallable getProxyCallable(const Model::GetProxyRequest& request) const;
+			GetProxyAccessOutcome getProxyAccess(const Model::GetProxyAccessRequest &request)const;
+			void getProxyAccessAsync(const Model::GetProxyAccessRequest& request, const GetProxyAccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetProxyAccessOutcomeCallable getProxyAccessCallable(const Model::GetProxyAccessRequest& request) const;
 			GetRuleNumLimitOfSLAOutcome getRuleNumLimitOfSLA(const Model::GetRuleNumLimitOfSLARequest &request)const;
 			void getRuleNumLimitOfSLAAsync(const Model::GetRuleNumLimitOfSLARequest& request, const GetRuleNumLimitOfSLAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRuleNumLimitOfSLAOutcomeCallable getRuleNumLimitOfSLACallable(const Model::GetRuleNumLimitOfSLARequest& request) const;

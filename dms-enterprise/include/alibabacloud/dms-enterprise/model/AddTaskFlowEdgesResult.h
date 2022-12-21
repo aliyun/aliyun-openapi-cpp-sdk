@@ -37,6 +37,7 @@ namespace AlibabaCloud
 				AddTaskFlowEdgesResult();
 				explicit AddTaskFlowEdgesResult(const std::string &payload);
 				~AddTaskFlowEdgesResult();
+				std::vector<std::string> getEdgeIds()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -44,6 +45,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<std::string> edgeIds_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
