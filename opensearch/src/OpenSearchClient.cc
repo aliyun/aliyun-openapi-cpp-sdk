@@ -339,42 +339,6 @@ OpenSearchClient::CreateAppGroupOutcomeCallable OpenSearchClient::createAppGroup
 	return task->get_future();
 }
 
-OpenSearchClient::CreateDataCollectionOutcome OpenSearchClient::createDataCollection(const CreateDataCollectionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDataCollectionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDataCollectionOutcome(CreateDataCollectionResult(outcome.result()));
-	else
-		return CreateDataCollectionOutcome(outcome.error());
-}
-
-void OpenSearchClient::createDataCollectionAsync(const CreateDataCollectionRequest& request, const CreateDataCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDataCollection(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::CreateDataCollectionOutcomeCallable OpenSearchClient::createDataCollectionCallable(const CreateDataCollectionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDataCollectionOutcome()>>(
-			[this, request]()
-			{
-			return this->createDataCollection(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OpenSearchClient::CreateFirstRankOutcome OpenSearchClient::createFirstRank(const CreateFirstRankRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,42 +477,6 @@ OpenSearchClient::CreateInterventionDictionaryOutcomeCallable OpenSearchClient::
 			[this, request]()
 			{
 			return this->createInterventionDictionary(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OpenSearchClient::CreateModelOutcome OpenSearchClient::createModel(const CreateModelRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateModelOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateModelOutcome(CreateModelResult(outcome.result()));
-	else
-		return CreateModelOutcome(outcome.error());
-}
-
-void OpenSearchClient::createModelAsync(const CreateModelRequest& request, const CreateModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createModel(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::CreateModelOutcomeCallable OpenSearchClient::createModelCallable(const CreateModelRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateModelOutcome()>>(
-			[this, request]()
-			{
-			return this->createModel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -951,42 +879,6 @@ OpenSearchClient::DeleteFunctionTaskOutcomeCallable OpenSearchClient::deleteFunc
 	return task->get_future();
 }
 
-OpenSearchClient::DeleteModelOutcome OpenSearchClient::deleteModel(const DeleteModelRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteModelOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteModelOutcome(DeleteModelResult(outcome.result()));
-	else
-		return DeleteModelOutcome(outcome.error());
-}
-
-void OpenSearchClient::deleteModelAsync(const DeleteModelRequest& request, const DeleteModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteModel(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::DeleteModelOutcomeCallable OpenSearchClient::deleteModelCallable(const DeleteModelRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteModelOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteModel(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OpenSearchClient::DeleteSortScriptOutcome OpenSearchClient::deleteSortScript(const DeleteSortScriptRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1239,78 +1131,6 @@ OpenSearchClient::DescribeAppGroupOutcomeCallable OpenSearchClient::describeAppG
 	return task->get_future();
 }
 
-OpenSearchClient::DescribeAppGroupDataReportOutcome OpenSearchClient::describeAppGroupDataReport(const DescribeAppGroupDataReportRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAppGroupDataReportOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAppGroupDataReportOutcome(DescribeAppGroupDataReportResult(outcome.result()));
-	else
-		return DescribeAppGroupDataReportOutcome(outcome.error());
-}
-
-void OpenSearchClient::describeAppGroupDataReportAsync(const DescribeAppGroupDataReportRequest& request, const DescribeAppGroupDataReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAppGroupDataReport(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::DescribeAppGroupDataReportOutcomeCallable OpenSearchClient::describeAppGroupDataReportCallable(const DescribeAppGroupDataReportRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAppGroupDataReportOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAppGroupDataReport(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OpenSearchClient::DescribeAppGroupStatisticsOutcome OpenSearchClient::describeAppGroupStatistics(const DescribeAppGroupStatisticsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAppGroupStatisticsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAppGroupStatisticsOutcome(DescribeAppGroupStatisticsResult(outcome.result()));
-	else
-		return DescribeAppGroupStatisticsOutcome(outcome.error());
-}
-
-void OpenSearchClient::describeAppGroupStatisticsAsync(const DescribeAppGroupStatisticsRequest& request, const DescribeAppGroupStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAppGroupStatistics(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::DescribeAppGroupStatisticsOutcomeCallable OpenSearchClient::describeAppGroupStatisticsCallable(const DescribeAppGroupStatisticsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAppGroupStatisticsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAppGroupStatistics(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OpenSearchClient::DescribeAppStatisticsOutcome OpenSearchClient::describeAppStatistics(const DescribeAppStatisticsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1485,42 +1305,6 @@ OpenSearchClient::DescribeInterventionDictionaryOutcomeCallable OpenSearchClient
 			[this, request]()
 			{
 			return this->describeInterventionDictionary(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OpenSearchClient::DescribeModelOutcome OpenSearchClient::describeModel(const DescribeModelRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeModelOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeModelOutcome(DescribeModelResult(outcome.result()));
-	else
-		return DescribeModelOutcome(outcome.error());
-}
-
-void OpenSearchClient::describeModelAsync(const DescribeModelRequest& request, const DescribeModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeModel(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::DescribeModelOutcomeCallable OpenSearchClient::describeModelCallable(const DescribeModelRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeModelOutcome()>>(
-			[this, request]()
-			{
-			return this->describeModel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2103,42 +1887,6 @@ OpenSearchClient::GetFunctionVersionOutcomeCallable OpenSearchClient::getFunctio
 	return task->get_future();
 }
 
-OpenSearchClient::GetModelProgressOutcome OpenSearchClient::getModelProgress(const GetModelProgressRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetModelProgressOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetModelProgressOutcome(GetModelProgressResult(outcome.result()));
-	else
-		return GetModelProgressOutcome(outcome.error());
-}
-
-void OpenSearchClient::getModelProgressAsync(const GetModelProgressRequest& request, const GetModelProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getModelProgress(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::GetModelProgressOutcomeCallable OpenSearchClient::getModelProgressCallable(const GetModelProgressRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetModelProgressOutcome()>>(
-			[this, request]()
-			{
-			return this->getModelProgress(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OpenSearchClient::GetModelReportOutcome OpenSearchClient::getModelReport(const GetModelReportRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2319,78 +2067,6 @@ OpenSearchClient::GetSortScriptFileOutcomeCallable OpenSearchClient::getSortScri
 	return task->get_future();
 }
 
-OpenSearchClient::GetValidationErrorOutcome OpenSearchClient::getValidationError(const GetValidationErrorRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetValidationErrorOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetValidationErrorOutcome(GetValidationErrorResult(outcome.result()));
-	else
-		return GetValidationErrorOutcome(outcome.error());
-}
-
-void OpenSearchClient::getValidationErrorAsync(const GetValidationErrorRequest& request, const GetValidationErrorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getValidationError(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::GetValidationErrorOutcomeCallable OpenSearchClient::getValidationErrorCallable(const GetValidationErrorRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetValidationErrorOutcome()>>(
-			[this, request]()
-			{
-			return this->getValidationError(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OpenSearchClient::GetValidationReportOutcome OpenSearchClient::getValidationReport(const GetValidationReportRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetValidationReportOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetValidationReportOutcome(GetValidationReportResult(outcome.result()));
-	else
-		return GetValidationReportOutcome(outcome.error());
-}
-
-void OpenSearchClient::getValidationReportAsync(const GetValidationReportRequest& request, const GetValidationReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getValidationReport(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::GetValidationReportOutcomeCallable OpenSearchClient::getValidationReportCallable(const GetValidationReportRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetValidationReportOutcome()>>(
-			[this, request]()
-			{
-			return this->getValidationReport(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OpenSearchClient::ListABTestExperimentsOutcome OpenSearchClient::listABTestExperiments(const ListABTestExperimentsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2499,42 +2175,6 @@ OpenSearchClient::ListABTestGroupsOutcomeCallable OpenSearchClient::listABTestGr
 	return task->get_future();
 }
 
-OpenSearchClient::ListABTestMetricsOutcome OpenSearchClient::listABTestMetrics(const ListABTestMetricsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListABTestMetricsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListABTestMetricsOutcome(ListABTestMetricsResult(outcome.result()));
-	else
-		return ListABTestMetricsOutcome(outcome.error());
-}
-
-void OpenSearchClient::listABTestMetricsAsync(const ListABTestMetricsRequest& request, const ListABTestMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listABTestMetrics(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::ListABTestMetricsOutcomeCallable OpenSearchClient::listABTestMetricsCallable(const ListABTestMetricsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListABTestMetricsOutcome()>>(
-			[this, request]()
-			{
-			return this->listABTestMetrics(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OpenSearchClient::ListABTestScenesOutcome OpenSearchClient::listABTestScenes(const ListABTestScenesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2565,78 +2205,6 @@ OpenSearchClient::ListABTestScenesOutcomeCallable OpenSearchClient::listABTestSc
 			[this, request]()
 			{
 			return this->listABTestScenes(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OpenSearchClient::ListAppGroupErrorsOutcome OpenSearchClient::listAppGroupErrors(const ListAppGroupErrorsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListAppGroupErrorsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListAppGroupErrorsOutcome(ListAppGroupErrorsResult(outcome.result()));
-	else
-		return ListAppGroupErrorsOutcome(outcome.error());
-}
-
-void OpenSearchClient::listAppGroupErrorsAsync(const ListAppGroupErrorsRequest& request, const ListAppGroupErrorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listAppGroupErrors(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::ListAppGroupErrorsOutcomeCallable OpenSearchClient::listAppGroupErrorsCallable(const ListAppGroupErrorsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListAppGroupErrorsOutcome()>>(
-			[this, request]()
-			{
-			return this->listAppGroupErrors(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OpenSearchClient::ListAppGroupMetricsOutcome OpenSearchClient::listAppGroupMetrics(const ListAppGroupMetricsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListAppGroupMetricsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListAppGroupMetricsOutcome(ListAppGroupMetricsResult(outcome.result()));
-	else
-		return ListAppGroupMetricsOutcome(outcome.error());
-}
-
-void OpenSearchClient::listAppGroupMetricsAsync(const ListAppGroupMetricsRequest& request, const ListAppGroupMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listAppGroupMetrics(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::ListAppGroupMetricsOutcomeCallable OpenSearchClient::listAppGroupMetricsCallable(const ListAppGroupMetricsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListAppGroupMetricsOutcome()>>(
-			[this, request]()
-			{
-			return this->listAppGroupMetrics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2817,42 +2385,6 @@ OpenSearchClient::ListDataSourceTablesOutcomeCallable OpenSearchClient::listData
 			[this, request]()
 			{
 			return this->listDataSourceTables(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OpenSearchClient::ListDeployedAlgorithmModelsOutcome OpenSearchClient::listDeployedAlgorithmModels(const ListDeployedAlgorithmModelsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListDeployedAlgorithmModelsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListDeployedAlgorithmModelsOutcome(ListDeployedAlgorithmModelsResult(outcome.result()));
-	else
-		return ListDeployedAlgorithmModelsOutcome(outcome.error());
-}
-
-void OpenSearchClient::listDeployedAlgorithmModelsAsync(const ListDeployedAlgorithmModelsRequest& request, const ListDeployedAlgorithmModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listDeployedAlgorithmModels(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::ListDeployedAlgorithmModelsOutcomeCallable OpenSearchClient::listDeployedAlgorithmModelsCallable(const ListDeployedAlgorithmModelsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListDeployedAlgorithmModelsOutcome()>>(
-			[this, request]()
-			{
-			return this->listDeployedAlgorithmModels(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3321,42 +2853,6 @@ OpenSearchClient::ListQuotaReviewTasksOutcomeCallable OpenSearchClient::listQuot
 			[this, request]()
 			{
 			return this->listQuotaReviewTasks(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OpenSearchClient::ListRamRolesOutcome OpenSearchClient::listRamRoles(const ListRamRolesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListRamRolesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListRamRolesOutcome(ListRamRolesResult(outcome.result()));
-	else
-		return ListRamRolesOutcome(outcome.error());
-}
-
-void OpenSearchClient::listRamRolesAsync(const ListRamRolesRequest& request, const ListRamRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listRamRoles(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::ListRamRolesOutcomeCallable OpenSearchClient::listRamRolesCallable(const ListRamRolesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListRamRolesOutcome()>>(
-			[this, request]()
-			{
-			return this->listRamRoles(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3897,42 +3393,6 @@ OpenSearchClient::ModifyFirstRankOutcomeCallable OpenSearchClient::modifyFirstRa
 			[this, request]()
 			{
 			return this->modifyFirstRank(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OpenSearchClient::ModifyModelOutcome OpenSearchClient::modifyModel(const ModifyModelRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyModelOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyModelOutcome(ModifyModelResult(outcome.result()));
-	else
-		return ModifyModelOutcome(outcome.error());
-}
-
-void OpenSearchClient::modifyModelAsync(const ModifyModelRequest& request, const ModifyModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyModel(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::ModifyModelOutcomeCallable OpenSearchClient::modifyModelCallable(const ModifyModelRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyModelOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyModel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4761,42 +4221,6 @@ OpenSearchClient::TagResourcesOutcomeCallable OpenSearchClient::tagResourcesCall
 			[this, request]()
 			{
 			return this->tagResources(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OpenSearchClient::TrainModelOutcome OpenSearchClient::trainModel(const TrainModelRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TrainModelOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TrainModelOutcome(TrainModelResult(outcome.result()));
-	else
-		return TrainModelOutcome(outcome.error());
-}
-
-void OpenSearchClient::trainModelAsync(const TrainModelRequest& request, const TrainModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, trainModel(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OpenSearchClient::TrainModelOutcomeCallable OpenSearchClient::trainModelCallable(const TrainModelRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TrainModelOutcome()>>(
-			[this, request]()
-			{
-			return this->trainModel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
