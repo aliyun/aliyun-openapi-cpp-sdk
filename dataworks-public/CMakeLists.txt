@@ -23,6 +23,8 @@ set(dataworks-public_public_header
 set(dataworks-public_public_header_model 
 	include/alibabacloud/dataworks-public/model/AbolishDataServiceApiRequest.h
 	include/alibabacloud/dataworks-public/model/AbolishDataServiceApiResult.h
+	include/alibabacloud/dataworks-public/model/AddMetaCollectionEntityRequest.h
+	include/alibabacloud/dataworks-public/model/AddMetaCollectionEntityResult.h
 	include/alibabacloud/dataworks-public/model/AddProjectMemberToRoleRequest.h
 	include/alibabacloud/dataworks-public/model/AddProjectMemberToRoleResult.h
 	include/alibabacloud/dataworks-public/model/AddToMetaCategoryRequest.h
@@ -71,6 +73,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/CreateManualDagResult.h
 	include/alibabacloud/dataworks-public/model/CreateMetaCategoryRequest.h
 	include/alibabacloud/dataworks-public/model/CreateMetaCategoryResult.h
+	include/alibabacloud/dataworks-public/model/CreateMetaCollectionRequest.h
+	include/alibabacloud/dataworks-public/model/CreateMetaCollectionResult.h
 	include/alibabacloud/dataworks-public/model/CreatePermissionApplyOrderRequest.h
 	include/alibabacloud/dataworks-public/model/CreatePermissionApplyOrderResult.h
 	include/alibabacloud/dataworks-public/model/CreateProjectMemberRequest.h
@@ -115,6 +119,10 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/DeleteFromMetaCategoryResult.h
 	include/alibabacloud/dataworks-public/model/DeleteMetaCategoryRequest.h
 	include/alibabacloud/dataworks-public/model/DeleteMetaCategoryResult.h
+	include/alibabacloud/dataworks-public/model/DeleteMetaCollectionRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteMetaCollectionResult.h
+	include/alibabacloud/dataworks-public/model/DeleteMetaCollectionEntityRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteMetaCollectionEntityResult.h
 	include/alibabacloud/dataworks-public/model/DeleteProjectMemberRequest.h
 	include/alibabacloud/dataworks-public/model/DeleteProjectMemberResult.h
 	include/alibabacloud/dataworks-public/model/DeleteQualityEntityRequest.h
@@ -211,6 +219,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/GetManualDagInstancesResult.h
 	include/alibabacloud/dataworks-public/model/GetMetaCategoryRequest.h
 	include/alibabacloud/dataworks-public/model/GetMetaCategoryResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaCollectionDetailRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaCollectionDetailResult.h
 	include/alibabacloud/dataworks-public/model/GetMetaColumnLineageRequest.h
 	include/alibabacloud/dataworks-public/model/GetMetaColumnLineageResult.h
 	include/alibabacloud/dataworks-public/model/GetMetaDBInfoRequest.h
@@ -235,6 +245,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/GetMetaTableOutputResult.h
 	include/alibabacloud/dataworks-public/model/GetMetaTablePartitionRequest.h
 	include/alibabacloud/dataworks-public/model/GetMetaTablePartitionResult.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableProducingTasksRequest.h
+	include/alibabacloud/dataworks-public/model/GetMetaTableProducingTasksResult.h
 	include/alibabacloud/dataworks-public/model/GetMetaTableThemeLevelRequest.h
 	include/alibabacloud/dataworks-public/model/GetMetaTableThemeLevelResult.h
 	include/alibabacloud/dataworks-public/model/GetMigrationProcessRequest.h
@@ -343,6 +355,10 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListInstancesResult.h
 	include/alibabacloud/dataworks-public/model/ListManualDagInstancesRequest.h
 	include/alibabacloud/dataworks-public/model/ListManualDagInstancesResult.h
+	include/alibabacloud/dataworks-public/model/ListMetaCollectionEntitiesRequest.h
+	include/alibabacloud/dataworks-public/model/ListMetaCollectionEntitiesResult.h
+	include/alibabacloud/dataworks-public/model/ListMetaCollectionsRequest.h
+	include/alibabacloud/dataworks-public/model/ListMetaCollectionsResult.h
 	include/alibabacloud/dataworks-public/model/ListMetaDBRequest.h
 	include/alibabacloud/dataworks-public/model/ListMetaDBResult.h
 	include/alibabacloud/dataworks-public/model/ListMigrationsRequest.h
@@ -473,6 +489,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/UpdateIDEEventResultResult.h
 	include/alibabacloud/dataworks-public/model/UpdateMetaCategoryRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateMetaCategoryResult.h
+	include/alibabacloud/dataworks-public/model/UpdateMetaCollectionRequest.h
+	include/alibabacloud/dataworks-public/model/UpdateMetaCollectionResult.h
 	include/alibabacloud/dataworks-public/model/UpdateMetaTableRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateMetaTableResult.h
 	include/alibabacloud/dataworks-public/model/UpdateMetaTableIntroWikiRequest.h
@@ -506,6 +524,8 @@ set(dataworks-public_src
 	src/Dataworks-publicClient.cc
 	src/model/AbolishDataServiceApiRequest.cc
 	src/model/AbolishDataServiceApiResult.cc
+	src/model/AddMetaCollectionEntityRequest.cc
+	src/model/AddMetaCollectionEntityResult.cc
 	src/model/AddProjectMemberToRoleRequest.cc
 	src/model/AddProjectMemberToRoleResult.cc
 	src/model/AddToMetaCategoryRequest.cc
@@ -554,6 +574,8 @@ set(dataworks-public_src
 	src/model/CreateManualDagResult.cc
 	src/model/CreateMetaCategoryRequest.cc
 	src/model/CreateMetaCategoryResult.cc
+	src/model/CreateMetaCollectionRequest.cc
+	src/model/CreateMetaCollectionResult.cc
 	src/model/CreatePermissionApplyOrderRequest.cc
 	src/model/CreatePermissionApplyOrderResult.cc
 	src/model/CreateProjectMemberRequest.cc
@@ -598,6 +620,10 @@ set(dataworks-public_src
 	src/model/DeleteFromMetaCategoryResult.cc
 	src/model/DeleteMetaCategoryRequest.cc
 	src/model/DeleteMetaCategoryResult.cc
+	src/model/DeleteMetaCollectionRequest.cc
+	src/model/DeleteMetaCollectionResult.cc
+	src/model/DeleteMetaCollectionEntityRequest.cc
+	src/model/DeleteMetaCollectionEntityResult.cc
 	src/model/DeleteProjectMemberRequest.cc
 	src/model/DeleteProjectMemberResult.cc
 	src/model/DeleteQualityEntityRequest.cc
@@ -694,6 +720,8 @@ set(dataworks-public_src
 	src/model/GetManualDagInstancesResult.cc
 	src/model/GetMetaCategoryRequest.cc
 	src/model/GetMetaCategoryResult.cc
+	src/model/GetMetaCollectionDetailRequest.cc
+	src/model/GetMetaCollectionDetailResult.cc
 	src/model/GetMetaColumnLineageRequest.cc
 	src/model/GetMetaColumnLineageResult.cc
 	src/model/GetMetaDBInfoRequest.cc
@@ -718,6 +746,8 @@ set(dataworks-public_src
 	src/model/GetMetaTableOutputResult.cc
 	src/model/GetMetaTablePartitionRequest.cc
 	src/model/GetMetaTablePartitionResult.cc
+	src/model/GetMetaTableProducingTasksRequest.cc
+	src/model/GetMetaTableProducingTasksResult.cc
 	src/model/GetMetaTableThemeLevelRequest.cc
 	src/model/GetMetaTableThemeLevelResult.cc
 	src/model/GetMigrationProcessRequest.cc
@@ -826,6 +856,10 @@ set(dataworks-public_src
 	src/model/ListInstancesResult.cc
 	src/model/ListManualDagInstancesRequest.cc
 	src/model/ListManualDagInstancesResult.cc
+	src/model/ListMetaCollectionEntitiesRequest.cc
+	src/model/ListMetaCollectionEntitiesResult.cc
+	src/model/ListMetaCollectionsRequest.cc
+	src/model/ListMetaCollectionsResult.cc
 	src/model/ListMetaDBRequest.cc
 	src/model/ListMetaDBResult.cc
 	src/model/ListMigrationsRequest.cc
@@ -956,6 +990,8 @@ set(dataworks-public_src
 	src/model/UpdateIDEEventResultResult.cc
 	src/model/UpdateMetaCategoryRequest.cc
 	src/model/UpdateMetaCategoryResult.cc
+	src/model/UpdateMetaCollectionRequest.cc
+	src/model/UpdateMetaCollectionResult.cc
 	src/model/UpdateMetaTableRequest.cc
 	src/model/UpdateMetaTableResult.cc
 	src/model/UpdateMetaTableIntroWikiRequest.cc

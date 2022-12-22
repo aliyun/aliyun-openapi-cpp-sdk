@@ -87,6 +87,42 @@ Dataworks_publicClient::AbolishDataServiceApiOutcomeCallable Dataworks_publicCli
 	return task->get_future();
 }
 
+Dataworks_publicClient::AddMetaCollectionEntityOutcome Dataworks_publicClient::addMetaCollectionEntity(const AddMetaCollectionEntityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddMetaCollectionEntityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddMetaCollectionEntityOutcome(AddMetaCollectionEntityResult(outcome.result()));
+	else
+		return AddMetaCollectionEntityOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::addMetaCollectionEntityAsync(const AddMetaCollectionEntityRequest& request, const AddMetaCollectionEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addMetaCollectionEntity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::AddMetaCollectionEntityOutcomeCallable Dataworks_publicClient::addMetaCollectionEntityCallable(const AddMetaCollectionEntityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddMetaCollectionEntityOutcome()>>(
+			[this, request]()
+			{
+			return this->addMetaCollectionEntity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::AddProjectMemberToRoleOutcome Dataworks_publicClient::addProjectMemberToRole(const AddProjectMemberToRoleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -951,6 +987,42 @@ Dataworks_publicClient::CreateMetaCategoryOutcomeCallable Dataworks_publicClient
 	return task->get_future();
 }
 
+Dataworks_publicClient::CreateMetaCollectionOutcome Dataworks_publicClient::createMetaCollection(const CreateMetaCollectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateMetaCollectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateMetaCollectionOutcome(CreateMetaCollectionResult(outcome.result()));
+	else
+		return CreateMetaCollectionOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::createMetaCollectionAsync(const CreateMetaCollectionRequest& request, const CreateMetaCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createMetaCollection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::CreateMetaCollectionOutcomeCallable Dataworks_publicClient::createMetaCollectionCallable(const CreateMetaCollectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateMetaCollectionOutcome()>>(
+			[this, request]()
+			{
+			return this->createMetaCollection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::CreatePermissionApplyOrderOutcome Dataworks_publicClient::createPermissionApplyOrder(const CreatePermissionApplyOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1737,6 +1809,78 @@ Dataworks_publicClient::DeleteMetaCategoryOutcomeCallable Dataworks_publicClient
 			[this, request]()
 			{
 			return this->deleteMetaCategory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::DeleteMetaCollectionOutcome Dataworks_publicClient::deleteMetaCollection(const DeleteMetaCollectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMetaCollectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMetaCollectionOutcome(DeleteMetaCollectionResult(outcome.result()));
+	else
+		return DeleteMetaCollectionOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::deleteMetaCollectionAsync(const DeleteMetaCollectionRequest& request, const DeleteMetaCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMetaCollection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::DeleteMetaCollectionOutcomeCallable Dataworks_publicClient::deleteMetaCollectionCallable(const DeleteMetaCollectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMetaCollectionOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMetaCollection(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::DeleteMetaCollectionEntityOutcome Dataworks_publicClient::deleteMetaCollectionEntity(const DeleteMetaCollectionEntityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMetaCollectionEntityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMetaCollectionEntityOutcome(DeleteMetaCollectionEntityResult(outcome.result()));
+	else
+		return DeleteMetaCollectionEntityOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::deleteMetaCollectionEntityAsync(const DeleteMetaCollectionEntityRequest& request, const DeleteMetaCollectionEntityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMetaCollectionEntity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::DeleteMetaCollectionEntityOutcomeCallable Dataworks_publicClient::deleteMetaCollectionEntityCallable(const DeleteMetaCollectionEntityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMetaCollectionEntityOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMetaCollectionEntity(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3471,6 +3615,42 @@ Dataworks_publicClient::GetMetaCategoryOutcomeCallable Dataworks_publicClient::g
 	return task->get_future();
 }
 
+Dataworks_publicClient::GetMetaCollectionDetailOutcome Dataworks_publicClient::getMetaCollectionDetail(const GetMetaCollectionDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMetaCollectionDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMetaCollectionDetailOutcome(GetMetaCollectionDetailResult(outcome.result()));
+	else
+		return GetMetaCollectionDetailOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getMetaCollectionDetailAsync(const GetMetaCollectionDetailRequest& request, const GetMetaCollectionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMetaCollectionDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetMetaCollectionDetailOutcomeCallable Dataworks_publicClient::getMetaCollectionDetailCallable(const GetMetaCollectionDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMetaCollectionDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getMetaCollectionDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::GetMetaColumnLineageOutcome Dataworks_publicClient::getMetaColumnLineage(const GetMetaColumnLineageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3897,6 +4077,42 @@ Dataworks_publicClient::GetMetaTablePartitionOutcomeCallable Dataworks_publicCli
 			[this, request]()
 			{
 			return this->getMetaTablePartition(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::GetMetaTableProducingTasksOutcome Dataworks_publicClient::getMetaTableProducingTasks(const GetMetaTableProducingTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetMetaTableProducingTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetMetaTableProducingTasksOutcome(GetMetaTableProducingTasksResult(outcome.result()));
+	else
+		return GetMetaTableProducingTasksOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::getMetaTableProducingTasksAsync(const GetMetaTableProducingTasksRequest& request, const GetMetaTableProducingTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getMetaTableProducingTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::GetMetaTableProducingTasksOutcomeCallable Dataworks_publicClient::getMetaTableProducingTasksCallable(const GetMetaTableProducingTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetMetaTableProducingTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->getMetaTableProducingTasks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5841,6 +6057,78 @@ Dataworks_publicClient::ListManualDagInstancesOutcomeCallable Dataworks_publicCl
 			[this, request]()
 			{
 			return this->listManualDagInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListMetaCollectionEntitiesOutcome Dataworks_publicClient::listMetaCollectionEntities(const ListMetaCollectionEntitiesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMetaCollectionEntitiesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMetaCollectionEntitiesOutcome(ListMetaCollectionEntitiesResult(outcome.result()));
+	else
+		return ListMetaCollectionEntitiesOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listMetaCollectionEntitiesAsync(const ListMetaCollectionEntitiesRequest& request, const ListMetaCollectionEntitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMetaCollectionEntities(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListMetaCollectionEntitiesOutcomeCallable Dataworks_publicClient::listMetaCollectionEntitiesCallable(const ListMetaCollectionEntitiesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMetaCollectionEntitiesOutcome()>>(
+			[this, request]()
+			{
+			return this->listMetaCollectionEntities(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::ListMetaCollectionsOutcome Dataworks_publicClient::listMetaCollections(const ListMetaCollectionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMetaCollectionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMetaCollectionsOutcome(ListMetaCollectionsResult(outcome.result()));
+	else
+		return ListMetaCollectionsOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listMetaCollectionsAsync(const ListMetaCollectionsRequest& request, const ListMetaCollectionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMetaCollections(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListMetaCollectionsOutcomeCallable Dataworks_publicClient::listMetaCollectionsCallable(const ListMetaCollectionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMetaCollectionsOutcome()>>(
+			[this, request]()
+			{
+			return this->listMetaCollections(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8181,6 +8469,42 @@ Dataworks_publicClient::UpdateMetaCategoryOutcomeCallable Dataworks_publicClient
 			[this, request]()
 			{
 			return this->updateMetaCategory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::UpdateMetaCollectionOutcome Dataworks_publicClient::updateMetaCollection(const UpdateMetaCollectionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateMetaCollectionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateMetaCollectionOutcome(UpdateMetaCollectionResult(outcome.result()));
+	else
+		return UpdateMetaCollectionOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::updateMetaCollectionAsync(const UpdateMetaCollectionRequest& request, const UpdateMetaCollectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateMetaCollection(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::UpdateMetaCollectionOutcomeCallable Dataworks_publicClient::updateMetaCollectionCallable(const UpdateMetaCollectionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateMetaCollectionOutcome()>>(
+			[this, request]()
+			{
+			return this->updateMetaCollection(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
