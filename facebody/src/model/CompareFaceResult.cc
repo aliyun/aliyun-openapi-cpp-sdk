@@ -48,6 +48,10 @@ void CompareFaceResult::parse(const std::string &payload)
 		data_.qualityScoreB = std::stof(dataNode["QualityScoreB"].asString());
 	if(!dataNode["MessageTips"].isNull())
 		data_.messageTips = dataNode["MessageTips"].asString();
+	if(!dataNode["IsMaskA"].isNull())
+		data_.isMaskA = std::stol(dataNode["IsMaskA"].asString());
+	if(!dataNode["IsMaskB"].isNull())
+		data_.isMaskB = std::stol(dataNode["IsMaskB"].asString());
 		auto allThresholds = dataNode["Thresholds"]["Threshold"];
 		for (auto value : allThresholds)
 			data_.thresholds.push_back(value.asString());
@@ -57,6 +61,12 @@ void CompareFaceResult::parse(const std::string &payload)
 		auto allRectAList = dataNode["RectAList"]["RectA"];
 		for (auto value : allRectAList)
 			data_.rectAList.push_back(value.asString());
+		auto allLandmarksAList = dataNode["LandmarksAList"]["landmarksAList"];
+		for (auto value : allLandmarksAList)
+			data_.landmarksAList.push_back(value.asString());
+		auto allLandmarksBList = dataNode["LandmarksBList"]["landmarksBList"];
+		for (auto value : allLandmarksBList)
+			data_.landmarksBList.push_back(value.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 

@@ -37,8 +37,12 @@ namespace AlibabaCloud
 					float qualityScoreA;
 					std::string messageTips;
 					float qualityScoreB;
+					long isMaskB;
+					long isMaskA;
 					std::vector<std::string> thresholds;
 					float confidence;
+					std::vector<std::string> landmarksAList;
+					std::vector<std::string> landmarksBList;
 					std::vector<std::string> rectAList;
 					std::vector<std::string> rectBList;
 				};

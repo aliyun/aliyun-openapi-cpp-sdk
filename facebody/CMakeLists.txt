@@ -59,8 +59,6 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/DetectFaceResult.h
 	include/alibabacloud/facebody/model/DetectIPCPedestrianRequest.h
 	include/alibabacloud/facebody/model/DetectIPCPedestrianResult.h
-	include/alibabacloud/facebody/model/DetectIPCPedestrianOptimizedRequest.h
-	include/alibabacloud/facebody/model/DetectIPCPedestrianOptimizedResult.h
 	include/alibabacloud/facebody/model/DetectLivingFaceRequest.h
 	include/alibabacloud/facebody/model/DetectLivingFaceResult.h
 	include/alibabacloud/facebody/model/DetectPedestrianRequest.h
@@ -71,8 +69,6 @@ set(facebody_public_header_model
 	include/alibabacloud/facebody/model/DetectVideoLivingFaceResult.h
 	include/alibabacloud/facebody/model/EnhanceFaceRequest.h
 	include/alibabacloud/facebody/model/EnhanceFaceResult.h
-	include/alibabacloud/facebody/model/ExecuteServerSideVerificationRequest.h
-	include/alibabacloud/facebody/model/ExecuteServerSideVerificationResult.h
 	include/alibabacloud/facebody/model/ExtractFingerPrintRequest.h
 	include/alibabacloud/facebody/model/ExtractFingerPrintResult.h
 	include/alibabacloud/facebody/model/ExtractPedestrianFeatureAttrRequest.h
@@ -174,8 +170,6 @@ set(facebody_src
 	src/model/DetectFaceResult.cc
 	src/model/DetectIPCPedestrianRequest.cc
 	src/model/DetectIPCPedestrianResult.cc
-	src/model/DetectIPCPedestrianOptimizedRequest.cc
-	src/model/DetectIPCPedestrianOptimizedResult.cc
 	src/model/DetectLivingFaceRequest.cc
 	src/model/DetectLivingFaceResult.cc
 	src/model/DetectPedestrianRequest.cc
@@ -186,8 +180,6 @@ set(facebody_src
 	src/model/DetectVideoLivingFaceResult.cc
 	src/model/EnhanceFaceRequest.cc
 	src/model/EnhanceFaceResult.cc
-	src/model/ExecuteServerSideVerificationRequest.cc
-	src/model/ExecuteServerSideVerificationResult.cc
 	src/model/ExtractFingerPrintRequest.cc
 	src/model/ExtractFingerPrintResult.cc
 	src/model/ExtractPedestrianFeatureAttrRequest.cc

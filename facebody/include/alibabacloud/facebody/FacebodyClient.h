@@ -60,8 +60,6 @@
 #include "model/DetectFaceResult.h"
 #include "model/DetectIPCPedestrianRequest.h"
 #include "model/DetectIPCPedestrianResult.h"
-#include "model/DetectIPCPedestrianOptimizedRequest.h"
-#include "model/DetectIPCPedestrianOptimizedResult.h"
 #include "model/DetectLivingFaceRequest.h"
 #include "model/DetectLivingFaceResult.h"
 #include "model/DetectPedestrianRequest.h"
@@ -72,8 +70,6 @@
 #include "model/DetectVideoLivingFaceResult.h"
 #include "model/EnhanceFaceRequest.h"
 #include "model/EnhanceFaceResult.h"
-#include "model/ExecuteServerSideVerificationRequest.h"
-#include "model/ExecuteServerSideVerificationResult.h"
 #include "model/ExtractFingerPrintRequest.h"
 #include "model/ExtractFingerPrintResult.h"
 #include "model/ExtractPedestrianFeatureAttrRequest.h"
@@ -200,9 +196,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectIPCPedestrianResult> DetectIPCPedestrianOutcome;
 			typedef std::future<DetectIPCPedestrianOutcome> DetectIPCPedestrianOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectIPCPedestrianRequest&, const DetectIPCPedestrianOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectIPCPedestrianAsyncHandler;
-			typedef Outcome<Error, Model::DetectIPCPedestrianOptimizedResult> DetectIPCPedestrianOptimizedOutcome;
-			typedef std::future<DetectIPCPedestrianOptimizedOutcome> DetectIPCPedestrianOptimizedOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::DetectIPCPedestrianOptimizedRequest&, const DetectIPCPedestrianOptimizedOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectIPCPedestrianOptimizedAsyncHandler;
 			typedef Outcome<Error, Model::DetectLivingFaceResult> DetectLivingFaceOutcome;
 			typedef std::future<DetectLivingFaceOutcome> DetectLivingFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectLivingFaceRequest&, const DetectLivingFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectLivingFaceAsyncHandler;
@@ -218,9 +211,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EnhanceFaceResult> EnhanceFaceOutcome;
 			typedef std::future<EnhanceFaceOutcome> EnhanceFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::EnhanceFaceRequest&, const EnhanceFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnhanceFaceAsyncHandler;
-			typedef Outcome<Error, Model::ExecuteServerSideVerificationResult> ExecuteServerSideVerificationOutcome;
-			typedef std::future<ExecuteServerSideVerificationOutcome> ExecuteServerSideVerificationOutcomeCallable;
-			typedef std::function<void(const FacebodyClient*, const Model::ExecuteServerSideVerificationRequest&, const ExecuteServerSideVerificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteServerSideVerificationAsyncHandler;
 			typedef Outcome<Error, Model::ExtractFingerPrintResult> ExtractFingerPrintOutcome;
 			typedef std::future<ExtractFingerPrintOutcome> ExtractFingerPrintOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::ExtractFingerPrintRequest&, const ExtractFingerPrintOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExtractFingerPrintAsyncHandler;
@@ -373,9 +363,6 @@ namespace AlibabaCloud
 			DetectIPCPedestrianOutcome detectIPCPedestrian(const Model::DetectIPCPedestrianRequest &request)const;
 			void detectIPCPedestrianAsync(const Model::DetectIPCPedestrianRequest& request, const DetectIPCPedestrianAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectIPCPedestrianOutcomeCallable detectIPCPedestrianCallable(const Model::DetectIPCPedestrianRequest& request) const;
-			DetectIPCPedestrianOptimizedOutcome detectIPCPedestrianOptimized(const Model::DetectIPCPedestrianOptimizedRequest &request)const;
-			void detectIPCPedestrianOptimizedAsync(const Model::DetectIPCPedestrianOptimizedRequest& request, const DetectIPCPedestrianOptimizedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DetectIPCPedestrianOptimizedOutcomeCallable detectIPCPedestrianOptimizedCallable(const Model::DetectIPCPedestrianOptimizedRequest& request) const;
 			DetectLivingFaceOutcome detectLivingFace(const Model::DetectLivingFaceRequest &request)const;
 			void detectLivingFaceAsync(const Model::DetectLivingFaceRequest& request, const DetectLivingFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectLivingFaceOutcomeCallable detectLivingFaceCallable(const Model::DetectLivingFaceRequest& request) const;
@@ -391,9 +378,6 @@ namespace AlibabaCloud
 			EnhanceFaceOutcome enhanceFace(const Model::EnhanceFaceRequest &request)const;
 			void enhanceFaceAsync(const Model::EnhanceFaceRequest& request, const EnhanceFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnhanceFaceOutcomeCallable enhanceFaceCallable(const Model::EnhanceFaceRequest& request) const;
-			ExecuteServerSideVerificationOutcome executeServerSideVerification(const Model::ExecuteServerSideVerificationRequest &request)const;
-			void executeServerSideVerificationAsync(const Model::ExecuteServerSideVerificationRequest& request, const ExecuteServerSideVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ExecuteServerSideVerificationOutcomeCallable executeServerSideVerificationCallable(const Model::ExecuteServerSideVerificationRequest& request) const;
 			ExtractFingerPrintOutcome extractFingerPrint(const Model::ExtractFingerPrintRequest &request)const;
 			void extractFingerPrintAsync(const Model::ExtractFingerPrintRequest& request, const ExtractFingerPrintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExtractFingerPrintOutcomeCallable extractFingerPrintCallable(const Model::ExtractFingerPrintRequest& request) const;
