@@ -735,6 +735,42 @@ FacebodyClient::DetectIPCPedestrianOutcomeCallable FacebodyClient::detectIPCPede
 	return task->get_future();
 }
 
+FacebodyClient::DetectIPCPedestrianOptimizedOutcome FacebodyClient::detectIPCPedestrianOptimized(const DetectIPCPedestrianOptimizedRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectIPCPedestrianOptimizedOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectIPCPedestrianOptimizedOutcome(DetectIPCPedestrianOptimizedResult(outcome.result()));
+	else
+		return DetectIPCPedestrianOptimizedOutcome(outcome.error());
+}
+
+void FacebodyClient::detectIPCPedestrianOptimizedAsync(const DetectIPCPedestrianOptimizedRequest& request, const DetectIPCPedestrianOptimizedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectIPCPedestrianOptimized(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::DetectIPCPedestrianOptimizedOutcomeCallable FacebodyClient::detectIPCPedestrianOptimizedCallable(const DetectIPCPedestrianOptimizedRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectIPCPedestrianOptimizedOutcome()>>(
+			[this, request]()
+			{
+			return this->detectIPCPedestrianOptimized(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FacebodyClient::DetectLivingFaceOutcome FacebodyClient::detectLivingFace(const DetectLivingFaceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -909,6 +945,42 @@ FacebodyClient::EnhanceFaceOutcomeCallable FacebodyClient::enhanceFaceCallable(c
 			[this, request]()
 			{
 			return this->enhanceFace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FacebodyClient::ExecuteServerSideVerificationOutcome FacebodyClient::executeServerSideVerification(const ExecuteServerSideVerificationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ExecuteServerSideVerificationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ExecuteServerSideVerificationOutcome(ExecuteServerSideVerificationResult(outcome.result()));
+	else
+		return ExecuteServerSideVerificationOutcome(outcome.error());
+}
+
+void FacebodyClient::executeServerSideVerificationAsync(const ExecuteServerSideVerificationRequest& request, const ExecuteServerSideVerificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, executeServerSideVerification(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::ExecuteServerSideVerificationOutcomeCallable FacebodyClient::executeServerSideVerificationCallable(const ExecuteServerSideVerificationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ExecuteServerSideVerificationOutcome()>>(
+			[this, request]()
+			{
+			return this->executeServerSideVerification(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
