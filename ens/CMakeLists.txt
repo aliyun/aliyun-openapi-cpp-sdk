@@ -239,6 +239,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeMeasurementDataResult.h
 	include/alibabacloud/ens/model/DescribeMountTargetsRequest.h
 	include/alibabacloud/ens/model/DescribeMountTargetsResult.h
+	include/alibabacloud/ens/model/DescribeNCInformationRequest.h
+	include/alibabacloud/ens/model/DescribeNCInformationResult.h
 	include/alibabacloud/ens/model/DescribeNatGatewaysRequest.h
 	include/alibabacloud/ens/model/DescribeNatGatewaysResult.h
 	include/alibabacloud/ens/model/DescribeNetworkAclsRequest.h
@@ -255,8 +257,12 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribePriceResult.h
 	include/alibabacloud/ens/model/DescribeRegionIspsRequest.h
 	include/alibabacloud/ens/model/DescribeRegionIspsResult.h
+	include/alibabacloud/ens/model/DescribeRegionResourceRequest.h
+	include/alibabacloud/ens/model/DescribeRegionResourceResult.h
 	include/alibabacloud/ens/model/DescribeReservedResourceRequest.h
 	include/alibabacloud/ens/model/DescribeReservedResourceResult.h
+	include/alibabacloud/ens/model/DescribeResourceTimelineRequest.h
+	include/alibabacloud/ens/model/DescribeResourceTimelineResult.h
 	include/alibabacloud/ens/model/DescribeSecurityGroupAttributeRequest.h
 	include/alibabacloud/ens/model/DescribeSecurityGroupAttributeResult.h
 	include/alibabacloud/ens/model/DescribeSecurityGroupsRequest.h
@@ -335,8 +341,12 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/RebootARMServerInstanceResult.h
 	include/alibabacloud/ens/model/RebootInstanceRequest.h
 	include/alibabacloud/ens/model/RebootInstanceResult.h
+	include/alibabacloud/ens/model/RebootInstancesRequest.h
+	include/alibabacloud/ens/model/RebootInstancesResult.h
 	include/alibabacloud/ens/model/ReinitInstanceRequest.h
 	include/alibabacloud/ens/model/ReinitInstanceResult.h
+	include/alibabacloud/ens/model/ReinitInstancesRequest.h
+	include/alibabacloud/ens/model/ReinitInstancesResult.h
 	include/alibabacloud/ens/model/ReleaseARMServerInstanceRequest.h
 	include/alibabacloud/ens/model/ReleaseARMServerInstanceResult.h
 	include/alibabacloud/ens/model/ReleaseInstanceRequest.h
@@ -393,12 +403,16 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/StartEpnInstanceResult.h
 	include/alibabacloud/ens/model/StartInstanceRequest.h
 	include/alibabacloud/ens/model/StartInstanceResult.h
+	include/alibabacloud/ens/model/StartInstancesRequest.h
+	include/alibabacloud/ens/model/StartInstancesResult.h
 	include/alibabacloud/ens/model/StartLoadBalancerListenerRequest.h
 	include/alibabacloud/ens/model/StartLoadBalancerListenerResult.h
 	include/alibabacloud/ens/model/StopEpnInstanceRequest.h
 	include/alibabacloud/ens/model/StopEpnInstanceResult.h
 	include/alibabacloud/ens/model/StopInstanceRequest.h
 	include/alibabacloud/ens/model/StopInstanceResult.h
+	include/alibabacloud/ens/model/StopInstancesRequest.h
+	include/alibabacloud/ens/model/StopInstancesResult.h
 	include/alibabacloud/ens/model/StopLoadBalancerListenerRequest.h
 	include/alibabacloud/ens/model/StopLoadBalancerListenerResult.h
 	include/alibabacloud/ens/model/UnAssociateEnsEipAddressRequest.h
@@ -632,6 +646,8 @@ set(ens_src
 	src/model/DescribeMeasurementDataResult.cc
 	src/model/DescribeMountTargetsRequest.cc
 	src/model/DescribeMountTargetsResult.cc
+	src/model/DescribeNCInformationRequest.cc
+	src/model/DescribeNCInformationResult.cc
 	src/model/DescribeNatGatewaysRequest.cc
 	src/model/DescribeNatGatewaysResult.cc
 	src/model/DescribeNetworkAclsRequest.cc
@@ -648,8 +664,12 @@ set(ens_src
 	src/model/DescribePriceResult.cc
 	src/model/DescribeRegionIspsRequest.cc
 	src/model/DescribeRegionIspsResult.cc
+	src/model/DescribeRegionResourceRequest.cc
+	src/model/DescribeRegionResourceResult.cc
 	src/model/DescribeReservedResourceRequest.cc
 	src/model/DescribeReservedResourceResult.cc
+	src/model/DescribeResourceTimelineRequest.cc
+	src/model/DescribeResourceTimelineResult.cc
 	src/model/DescribeSecurityGroupAttributeRequest.cc
 	src/model/DescribeSecurityGroupAttributeResult.cc
 	src/model/DescribeSecurityGroupsRequest.cc
@@ -728,8 +748,12 @@ set(ens_src
 	src/model/RebootARMServerInstanceResult.cc
 	src/model/RebootInstanceRequest.cc
 	src/model/RebootInstanceResult.cc
+	src/model/RebootInstancesRequest.cc
+	src/model/RebootInstancesResult.cc
 	src/model/ReinitInstanceRequest.cc
 	src/model/ReinitInstanceResult.cc
+	src/model/ReinitInstancesRequest.cc
+	src/model/ReinitInstancesResult.cc
 	src/model/ReleaseARMServerInstanceRequest.cc
 	src/model/ReleaseARMServerInstanceResult.cc
 	src/model/ReleaseInstanceRequest.cc
@@ -786,12 +810,16 @@ set(ens_src
 	src/model/StartEpnInstanceResult.cc
 	src/model/StartInstanceRequest.cc
 	src/model/StartInstanceResult.cc
+	src/model/StartInstancesRequest.cc
+	src/model/StartInstancesResult.cc
 	src/model/StartLoadBalancerListenerRequest.cc
 	src/model/StartLoadBalancerListenerResult.cc
 	src/model/StopEpnInstanceRequest.cc
 	src/model/StopEpnInstanceResult.cc
 	src/model/StopInstanceRequest.cc
 	src/model/StopInstanceResult.cc
+	src/model/StopInstancesRequest.cc
+	src/model/StopInstancesResult.cc
 	src/model/StopLoadBalancerListenerRequest.cc
 	src/model/StopLoadBalancerListenerResult.cc
 	src/model/UnAssociateEnsEipAddressRequest.cc

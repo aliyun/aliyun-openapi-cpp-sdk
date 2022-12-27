@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_MODIFYINSTANCEATTRIBUTEREQUEST_H_
-#define ALIBABACLOUD_ENS_MODEL_MODIFYINSTANCEATTRIBUTEREQUEST_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_STARTINSTANCESREQUEST_H_
+#define ALIBABACLOUD_ENS_MODEL_STARTINSTANCESREQUEST_H_
 
 #include <alibabacloud/ens/EnsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,17 @@
 namespace AlibabaCloud {
 namespace Ens {
 namespace Model {
-class ALIBABACLOUD_ENS_EXPORT ModifyInstanceAttributeRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ENS_EXPORT StartInstancesRequest : public RpcServiceRequest {
 public:
-	ModifyInstanceAttributeRequest();
-	~ModifyInstanceAttributeRequest();
-	std::string getUserData() const;
-	void setUserData(const std::string &userData);
-	std::string getPassword() const;
-	void setPassword(const std::string &password);
-	std::string getHostName() const;
-	void setHostName(const std::string &hostName);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
-	std::string getInstanceName() const;
-	void setInstanceName(const std::string &instanceName);
+	StartInstancesRequest();
+	~StartInstancesRequest();
+	std::vector<std::string> getInstanceIds() const;
+	void setInstanceIds(const std::vector<std::string> &instanceIds);
 
 private:
-	std::string userData_;
-	std::string password_;
-	std::string hostName_;
-	std::string instanceId_;
-	std::string instanceName_;
+	std::vector<std::string> instanceIds_;
 };
 } // namespace Model
 } // namespace Ens
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ENS_MODEL_MODIFYINSTANCEATTRIBUTEREQUEST_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_STARTINSTANCESREQUEST_H_

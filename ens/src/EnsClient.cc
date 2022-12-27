@@ -3975,6 +3975,42 @@ EnsClient::DescribeMountTargetsOutcomeCallable EnsClient::describeMountTargetsCa
 	return task->get_future();
 }
 
+EnsClient::DescribeNCInformationOutcome EnsClient::describeNCInformation(const DescribeNCInformationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeNCInformationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeNCInformationOutcome(DescribeNCInformationResult(outcome.result()));
+	else
+		return DescribeNCInformationOutcome(outcome.error());
+}
+
+void EnsClient::describeNCInformationAsync(const DescribeNCInformationRequest& request, const DescribeNCInformationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeNCInformation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeNCInformationOutcomeCallable EnsClient::describeNCInformationCallable(const DescribeNCInformationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeNCInformationOutcome()>>(
+			[this, request]()
+			{
+			return this->describeNCInformation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeNatGatewaysOutcome EnsClient::describeNatGateways(const DescribeNatGatewaysRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4263,6 +4299,42 @@ EnsClient::DescribeRegionIspsOutcomeCallable EnsClient::describeRegionIspsCallab
 	return task->get_future();
 }
 
+EnsClient::DescribeRegionResourceOutcome EnsClient::describeRegionResource(const DescribeRegionResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRegionResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRegionResourceOutcome(DescribeRegionResourceResult(outcome.result()));
+	else
+		return DescribeRegionResourceOutcome(outcome.error());
+}
+
+void EnsClient::describeRegionResourceAsync(const DescribeRegionResourceRequest& request, const DescribeRegionResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRegionResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeRegionResourceOutcomeCallable EnsClient::describeRegionResourceCallable(const DescribeRegionResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRegionResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRegionResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeReservedResourceOutcome EnsClient::describeReservedResource(const DescribeReservedResourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4293,6 +4365,42 @@ EnsClient::DescribeReservedResourceOutcomeCallable EnsClient::describeReservedRe
 			[this, request]()
 			{
 			return this->describeReservedResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeResourceTimelineOutcome EnsClient::describeResourceTimeline(const DescribeResourceTimelineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeResourceTimelineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeResourceTimelineOutcome(DescribeResourceTimelineResult(outcome.result()));
+	else
+		return DescribeResourceTimelineOutcome(outcome.error());
+}
+
+void EnsClient::describeResourceTimelineAsync(const DescribeResourceTimelineRequest& request, const DescribeResourceTimelineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeResourceTimeline(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeResourceTimelineOutcomeCallable EnsClient::describeResourceTimelineCallable(const DescribeResourceTimelineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeResourceTimelineOutcome()>>(
+			[this, request]()
+			{
+			return this->describeResourceTimeline(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5703,6 +5811,42 @@ EnsClient::RebootInstanceOutcomeCallable EnsClient::rebootInstanceCallable(const
 	return task->get_future();
 }
 
+EnsClient::RebootInstancesOutcome EnsClient::rebootInstances(const RebootInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RebootInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RebootInstancesOutcome(RebootInstancesResult(outcome.result()));
+	else
+		return RebootInstancesOutcome(outcome.error());
+}
+
+void EnsClient::rebootInstancesAsync(const RebootInstancesRequest& request, const RebootInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rebootInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::RebootInstancesOutcomeCallable EnsClient::rebootInstancesCallable(const RebootInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RebootInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->rebootInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::ReinitInstanceOutcome EnsClient::reinitInstance(const ReinitInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5733,6 +5877,42 @@ EnsClient::ReinitInstanceOutcomeCallable EnsClient::reinitInstanceCallable(const
 			[this, request]()
 			{
 			return this->reinitInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::ReinitInstancesOutcome EnsClient::reinitInstances(const ReinitInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReinitInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReinitInstancesOutcome(ReinitInstancesResult(outcome.result()));
+	else
+		return ReinitInstancesOutcome(outcome.error());
+}
+
+void EnsClient::reinitInstancesAsync(const ReinitInstancesRequest& request, const ReinitInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reinitInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ReinitInstancesOutcomeCallable EnsClient::reinitInstancesCallable(const ReinitInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReinitInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->reinitInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6747,6 +6927,42 @@ EnsClient::StartInstanceOutcomeCallable EnsClient::startInstanceCallable(const S
 	return task->get_future();
 }
 
+EnsClient::StartInstancesOutcome EnsClient::startInstances(const StartInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartInstancesOutcome(StartInstancesResult(outcome.result()));
+	else
+		return StartInstancesOutcome(outcome.error());
+}
+
+void EnsClient::startInstancesAsync(const StartInstancesRequest& request, const StartInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::StartInstancesOutcomeCallable EnsClient::startInstancesCallable(const StartInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->startInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::StartLoadBalancerListenerOutcome EnsClient::startLoadBalancerListener(const StartLoadBalancerListenerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6849,6 +7065,42 @@ EnsClient::StopInstanceOutcomeCallable EnsClient::stopInstanceCallable(const Sto
 			[this, request]()
 			{
 			return this->stopInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::StopInstancesOutcome EnsClient::stopInstances(const StopInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopInstancesOutcome(StopInstancesResult(outcome.result()));
+	else
+		return StopInstancesOutcome(outcome.error());
+}
+
+void EnsClient::stopInstancesAsync(const StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::StopInstancesOutcomeCallable EnsClient::stopInstancesCallable(const StopInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->stopInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

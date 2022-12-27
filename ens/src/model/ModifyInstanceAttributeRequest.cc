@@ -25,6 +25,15 @@ ModifyInstanceAttributeRequest::ModifyInstanceAttributeRequest()
 
 ModifyInstanceAttributeRequest::~ModifyInstanceAttributeRequest() {}
 
+std::string ModifyInstanceAttributeRequest::getUserData() const {
+  return userData_;
+}
+
+void ModifyInstanceAttributeRequest::setUserData(const std::string &userData) {
+  userData_ = userData;
+  setParameter(std::string("UserData"), userData);
+}
+
 std::string ModifyInstanceAttributeRequest::getPassword() const {
   return password_;
 }
@@ -32,6 +41,15 @@ std::string ModifyInstanceAttributeRequest::getPassword() const {
 void ModifyInstanceAttributeRequest::setPassword(const std::string &password) {
   password_ = password;
   setParameter(std::string("Password"), password);
+}
+
+std::string ModifyInstanceAttributeRequest::getHostName() const {
+  return hostName_;
+}
+
+void ModifyInstanceAttributeRequest::setHostName(const std::string &hostName) {
+  hostName_ = hostName;
+  setParameter(std::string("HostName"), hostName);
 }
 
 std::string ModifyInstanceAttributeRequest::getInstanceId() const {
