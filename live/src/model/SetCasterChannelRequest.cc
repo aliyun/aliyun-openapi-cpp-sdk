@@ -70,6 +70,15 @@ void SetCasterChannelRequest::setCasterId(const std::string &casterId) {
   setParameter(std::string("CasterId"), casterId);
 }
 
+bool SetCasterChannelRequest::getEnableSeekResume() const {
+  return enableSeekResume_;
+}
+
+void SetCasterChannelRequest::setEnableSeekResume(bool enableSeekResume) {
+  enableSeekResume_ = enableSeekResume;
+  setParameter(std::string("EnableSeekResume"), enableSeekResume ? "true" : "false");
+}
+
 long SetCasterChannelRequest::getOwnerId() const {
   return ownerId_;
 }

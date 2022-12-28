@@ -142,6 +142,8 @@
 #include "model/DeleteLiveAudioAuditConfigResult.h"
 #include "model/DeleteLiveAudioAuditNotifyConfigRequest.h"
 #include "model/DeleteLiveAudioAuditNotifyConfigResult.h"
+#include "model/DeleteLiveCenterTransferRequest.h"
+#include "model/DeleteLiveCenterTransferResult.h"
 #include "model/DeleteLiveDetectNotifyConfigRequest.h"
 #include "model/DeleteLiveDetectNotifyConfigResult.h"
 #include "model/DeleteLiveDomainRequest.h"
@@ -236,6 +238,8 @@
 #include "model/DescribeLiveAudioAuditConfigResult.h"
 #include "model/DescribeLiveAudioAuditNotifyConfigRequest.h"
 #include "model/DescribeLiveAudioAuditNotifyConfigResult.h"
+#include "model/DescribeLiveCenterTransferRequest.h"
+#include "model/DescribeLiveCenterTransferResult.h"
 #include "model/DescribeLiveCertificateDetailRequest.h"
 #include "model/DescribeLiveCertificateDetailResult.h"
 #include "model/DescribeLiveCertificateListRequest.h"
@@ -592,6 +596,8 @@
 #include "model/UpdateLiveAudioAuditConfigResult.h"
 #include "model/UpdateLiveAudioAuditNotifyConfigRequest.h"
 #include "model/UpdateLiveAudioAuditNotifyConfigResult.h"
+#include "model/UpdateLiveCenterTransferRequest.h"
+#include "model/UpdateLiveCenterTransferResult.h"
 #include "model/UpdateLiveDetectNotifyConfigRequest.h"
 #include "model/UpdateLiveDetectNotifyConfigResult.h"
 #include "model/UpdateLivePullStreamInfoConfigRequest.h"
@@ -807,6 +813,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteLiveAudioAuditNotifyConfigResult> DeleteLiveAudioAuditNotifyConfigOutcome;
 			typedef std::future<DeleteLiveAudioAuditNotifyConfigOutcome> DeleteLiveAudioAuditNotifyConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveAudioAuditNotifyConfigRequest&, const DeleteLiveAudioAuditNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAudioAuditNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLiveCenterTransferResult> DeleteLiveCenterTransferOutcome;
+			typedef std::future<DeleteLiveCenterTransferOutcome> DeleteLiveCenterTransferOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteLiveCenterTransferRequest&, const DeleteLiveCenterTransferOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveCenterTransferAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLiveDetectNotifyConfigResult> DeleteLiveDetectNotifyConfigOutcome;
 			typedef std::future<DeleteLiveDetectNotifyConfigOutcome> DeleteLiveDetectNotifyConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveDetectNotifyConfigRequest&, const DeleteLiveDetectNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveDetectNotifyConfigAsyncHandler;
@@ -948,6 +957,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveAudioAuditNotifyConfigResult> DescribeLiveAudioAuditNotifyConfigOutcome;
 			typedef std::future<DescribeLiveAudioAuditNotifyConfigOutcome> DescribeLiveAudioAuditNotifyConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveAudioAuditNotifyConfigRequest&, const DescribeLiveAudioAuditNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveAudioAuditNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveCenterTransferResult> DescribeLiveCenterTransferOutcome;
+			typedef std::future<DescribeLiveCenterTransferOutcome> DescribeLiveCenterTransferOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveCenterTransferRequest&, const DescribeLiveCenterTransferOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveCenterTransferAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveCertificateDetailResult> DescribeLiveCertificateDetailOutcome;
 			typedef std::future<DescribeLiveCertificateDetailOutcome> DescribeLiveCertificateDetailOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveCertificateDetailRequest&, const DescribeLiveCertificateDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveCertificateDetailAsyncHandler;
@@ -1482,6 +1494,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateLiveAudioAuditNotifyConfigResult> UpdateLiveAudioAuditNotifyConfigOutcome;
 			typedef std::future<UpdateLiveAudioAuditNotifyConfigOutcome> UpdateLiveAudioAuditNotifyConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateLiveAudioAuditNotifyConfigRequest&, const UpdateLiveAudioAuditNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveAudioAuditNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::UpdateLiveCenterTransferResult> UpdateLiveCenterTransferOutcome;
+			typedef std::future<UpdateLiveCenterTransferOutcome> UpdateLiveCenterTransferOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::UpdateLiveCenterTransferRequest&, const UpdateLiveCenterTransferOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveCenterTransferAsyncHandler;
 			typedef Outcome<Error, Model::UpdateLiveDetectNotifyConfigResult> UpdateLiveDetectNotifyConfigOutcome;
 			typedef std::future<UpdateLiveDetectNotifyConfigOutcome> UpdateLiveDetectNotifyConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::UpdateLiveDetectNotifyConfigRequest&, const UpdateLiveDetectNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateLiveDetectNotifyConfigAsyncHandler;
@@ -1706,6 +1721,9 @@ namespace AlibabaCloud
 			DeleteLiveAudioAuditNotifyConfigOutcome deleteLiveAudioAuditNotifyConfig(const Model::DeleteLiveAudioAuditNotifyConfigRequest &request)const;
 			void deleteLiveAudioAuditNotifyConfigAsync(const Model::DeleteLiveAudioAuditNotifyConfigRequest& request, const DeleteLiveAudioAuditNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveAudioAuditNotifyConfigOutcomeCallable deleteLiveAudioAuditNotifyConfigCallable(const Model::DeleteLiveAudioAuditNotifyConfigRequest& request) const;
+			DeleteLiveCenterTransferOutcome deleteLiveCenterTransfer(const Model::DeleteLiveCenterTransferRequest &request)const;
+			void deleteLiveCenterTransferAsync(const Model::DeleteLiveCenterTransferRequest& request, const DeleteLiveCenterTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLiveCenterTransferOutcomeCallable deleteLiveCenterTransferCallable(const Model::DeleteLiveCenterTransferRequest& request) const;
 			DeleteLiveDetectNotifyConfigOutcome deleteLiveDetectNotifyConfig(const Model::DeleteLiveDetectNotifyConfigRequest &request)const;
 			void deleteLiveDetectNotifyConfigAsync(const Model::DeleteLiveDetectNotifyConfigRequest& request, const DeleteLiveDetectNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveDetectNotifyConfigOutcomeCallable deleteLiveDetectNotifyConfigCallable(const Model::DeleteLiveDetectNotifyConfigRequest& request) const;
@@ -1847,6 +1865,9 @@ namespace AlibabaCloud
 			DescribeLiveAudioAuditNotifyConfigOutcome describeLiveAudioAuditNotifyConfig(const Model::DescribeLiveAudioAuditNotifyConfigRequest &request)const;
 			void describeLiveAudioAuditNotifyConfigAsync(const Model::DescribeLiveAudioAuditNotifyConfigRequest& request, const DescribeLiveAudioAuditNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveAudioAuditNotifyConfigOutcomeCallable describeLiveAudioAuditNotifyConfigCallable(const Model::DescribeLiveAudioAuditNotifyConfigRequest& request) const;
+			DescribeLiveCenterTransferOutcome describeLiveCenterTransfer(const Model::DescribeLiveCenterTransferRequest &request)const;
+			void describeLiveCenterTransferAsync(const Model::DescribeLiveCenterTransferRequest& request, const DescribeLiveCenterTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveCenterTransferOutcomeCallable describeLiveCenterTransferCallable(const Model::DescribeLiveCenterTransferRequest& request) const;
 			DescribeLiveCertificateDetailOutcome describeLiveCertificateDetail(const Model::DescribeLiveCertificateDetailRequest &request)const;
 			void describeLiveCertificateDetailAsync(const Model::DescribeLiveCertificateDetailRequest& request, const DescribeLiveCertificateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveCertificateDetailOutcomeCallable describeLiveCertificateDetailCallable(const Model::DescribeLiveCertificateDetailRequest& request) const;
@@ -2381,6 +2402,9 @@ namespace AlibabaCloud
 			UpdateLiveAudioAuditNotifyConfigOutcome updateLiveAudioAuditNotifyConfig(const Model::UpdateLiveAudioAuditNotifyConfigRequest &request)const;
 			void updateLiveAudioAuditNotifyConfigAsync(const Model::UpdateLiveAudioAuditNotifyConfigRequest& request, const UpdateLiveAudioAuditNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLiveAudioAuditNotifyConfigOutcomeCallable updateLiveAudioAuditNotifyConfigCallable(const Model::UpdateLiveAudioAuditNotifyConfigRequest& request) const;
+			UpdateLiveCenterTransferOutcome updateLiveCenterTransfer(const Model::UpdateLiveCenterTransferRequest &request)const;
+			void updateLiveCenterTransferAsync(const Model::UpdateLiveCenterTransferRequest& request, const UpdateLiveCenterTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateLiveCenterTransferOutcomeCallable updateLiveCenterTransferCallable(const Model::UpdateLiveCenterTransferRequest& request) const;
 			UpdateLiveDetectNotifyConfigOutcome updateLiveDetectNotifyConfig(const Model::UpdateLiveDetectNotifyConfigRequest &request)const;
 			void updateLiveDetectNotifyConfigAsync(const Model::UpdateLiveDetectNotifyConfigRequest& request, const UpdateLiveDetectNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateLiveDetectNotifyConfigOutcomeCallable updateLiveDetectNotifyConfigCallable(const Model::UpdateLiveDetectNotifyConfigRequest& request) const;

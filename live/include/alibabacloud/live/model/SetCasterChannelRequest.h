@@ -40,6 +40,8 @@ public:
 	void setResourceId(const std::string &resourceId);
 	std::string getCasterId() const;
 	void setCasterId(const std::string &casterId);
+	bool getEnableSeekResume() const;
+	void setEnableSeekResume(bool enableSeekResume);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	int getReloadFlag() const;
@@ -53,6 +55,7 @@ private:
 	int playStatus_;
 	std::string resourceId_;
 	std::string casterId_;
+	bool enableSeekResume_;
 	long ownerId_;
 	int reloadFlag_;
 	std::string channelId_;

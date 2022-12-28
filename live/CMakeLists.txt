@@ -141,6 +141,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteLiveAudioAuditConfigResult.h
 	include/alibabacloud/live/model/DeleteLiveAudioAuditNotifyConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveAudioAuditNotifyConfigResult.h
+	include/alibabacloud/live/model/DeleteLiveCenterTransferRequest.h
+	include/alibabacloud/live/model/DeleteLiveCenterTransferResult.h
 	include/alibabacloud/live/model/DeleteLiveDetectNotifyConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveDetectNotifyConfigResult.h
 	include/alibabacloud/live/model/DeleteLiveDomainRequest.h
@@ -235,6 +237,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveAudioAuditConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveAudioAuditNotifyConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveAudioAuditNotifyConfigResult.h
+	include/alibabacloud/live/model/DescribeLiveCenterTransferRequest.h
+	include/alibabacloud/live/model/DescribeLiveCenterTransferResult.h
 	include/alibabacloud/live/model/DescribeLiveCertificateDetailRequest.h
 	include/alibabacloud/live/model/DescribeLiveCertificateDetailResult.h
 	include/alibabacloud/live/model/DescribeLiveCertificateListRequest.h
@@ -591,6 +595,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/UpdateLiveAudioAuditConfigResult.h
 	include/alibabacloud/live/model/UpdateLiveAudioAuditNotifyConfigRequest.h
 	include/alibabacloud/live/model/UpdateLiveAudioAuditNotifyConfigResult.h
+	include/alibabacloud/live/model/UpdateLiveCenterTransferRequest.h
+	include/alibabacloud/live/model/UpdateLiveCenterTransferResult.h
 	include/alibabacloud/live/model/UpdateLiveDetectNotifyConfigRequest.h
 	include/alibabacloud/live/model/UpdateLiveDetectNotifyConfigResult.h
 	include/alibabacloud/live/model/UpdateLivePullStreamInfoConfigRequest.h
@@ -740,6 +746,8 @@ set(live_src
 	src/model/DeleteLiveAudioAuditConfigResult.cc
 	src/model/DeleteLiveAudioAuditNotifyConfigRequest.cc
 	src/model/DeleteLiveAudioAuditNotifyConfigResult.cc
+	src/model/DeleteLiveCenterTransferRequest.cc
+	src/model/DeleteLiveCenterTransferResult.cc
 	src/model/DeleteLiveDetectNotifyConfigRequest.cc
 	src/model/DeleteLiveDetectNotifyConfigResult.cc
 	src/model/DeleteLiveDomainRequest.cc
@@ -834,6 +842,8 @@ set(live_src
 	src/model/DescribeLiveAudioAuditConfigResult.cc
 	src/model/DescribeLiveAudioAuditNotifyConfigRequest.cc
 	src/model/DescribeLiveAudioAuditNotifyConfigResult.cc
+	src/model/DescribeLiveCenterTransferRequest.cc
+	src/model/DescribeLiveCenterTransferResult.cc
 	src/model/DescribeLiveCertificateDetailRequest.cc
 	src/model/DescribeLiveCertificateDetailResult.cc
 	src/model/DescribeLiveCertificateListRequest.cc
@@ -1190,6 +1200,8 @@ set(live_src
 	src/model/UpdateLiveAudioAuditConfigResult.cc
 	src/model/UpdateLiveAudioAuditNotifyConfigRequest.cc
 	src/model/UpdateLiveAudioAuditNotifyConfigResult.cc
+	src/model/UpdateLiveCenterTransferRequest.cc
+	src/model/UpdateLiveCenterTransferResult.cc
 	src/model/UpdateLiveDetectNotifyConfigRequest.cc
 	src/model/UpdateLiveDetectNotifyConfigResult.cc
 	src/model/UpdateLivePullStreamInfoConfigRequest.cc

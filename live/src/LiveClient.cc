@@ -2211,6 +2211,42 @@ LiveClient::DeleteLiveAudioAuditNotifyConfigOutcomeCallable LiveClient::deleteLi
 	return task->get_future();
 }
 
+LiveClient::DeleteLiveCenterTransferOutcome LiveClient::deleteLiveCenterTransfer(const DeleteLiveCenterTransferRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveCenterTransferOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveCenterTransferOutcome(DeleteLiveCenterTransferResult(outcome.result()));
+	else
+		return DeleteLiveCenterTransferOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveCenterTransferAsync(const DeleteLiveCenterTransferRequest& request, const DeleteLiveCenterTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveCenterTransfer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveCenterTransferOutcomeCallable LiveClient::deleteLiveCenterTransferCallable(const DeleteLiveCenterTransferRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveCenterTransferOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveCenterTransfer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DeleteLiveDetectNotifyConfigOutcome LiveClient::deleteLiveDetectNotifyConfig(const DeleteLiveDetectNotifyConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3897,6 +3933,42 @@ LiveClient::DescribeLiveAudioAuditNotifyConfigOutcomeCallable LiveClient::descri
 			[this, request]()
 			{
 			return this->describeLiveAudioAuditNotifyConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveCenterTransferOutcome LiveClient::describeLiveCenterTransfer(const DescribeLiveCenterTransferRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveCenterTransferOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveCenterTransferOutcome(DescribeLiveCenterTransferResult(outcome.result()));
+	else
+		return DescribeLiveCenterTransferOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveCenterTransferAsync(const DescribeLiveCenterTransferRequest& request, const DescribeLiveCenterTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveCenterTransfer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveCenterTransferOutcomeCallable LiveClient::describeLiveCenterTransferCallable(const DescribeLiveCenterTransferRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveCenterTransferOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveCenterTransfer(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -10305,6 +10377,42 @@ LiveClient::UpdateLiveAudioAuditNotifyConfigOutcomeCallable LiveClient::updateLi
 			[this, request]()
 			{
 			return this->updateLiveAudioAuditNotifyConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateLiveCenterTransferOutcome LiveClient::updateLiveCenterTransfer(const UpdateLiveCenterTransferRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLiveCenterTransferOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLiveCenterTransferOutcome(UpdateLiveCenterTransferResult(outcome.result()));
+	else
+		return UpdateLiveCenterTransferOutcome(outcome.error());
+}
+
+void LiveClient::updateLiveCenterTransferAsync(const UpdateLiveCenterTransferRequest& request, const UpdateLiveCenterTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLiveCenterTransfer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateLiveCenterTransferOutcomeCallable LiveClient::updateLiveCenterTransferCallable(const UpdateLiveCenterTransferRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLiveCenterTransferOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLiveCenterTransfer(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
