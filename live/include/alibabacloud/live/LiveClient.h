@@ -46,6 +46,8 @@
 #include "model/AddLiveAudioAuditConfigResult.h"
 #include "model/AddLiveAudioAuditNotifyConfigRequest.h"
 #include "model/AddLiveAudioAuditNotifyConfigResult.h"
+#include "model/AddLiveCenterTransferRequest.h"
+#include "model/AddLiveCenterTransferResult.h"
 #include "model/AddLiveDetectNotifyConfigRequest.h"
 #include "model/AddLiveDetectNotifyConfigResult.h"
 #include "model/AddLiveDomainRequest.h"
@@ -669,6 +671,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddLiveAudioAuditNotifyConfigResult> AddLiveAudioAuditNotifyConfigOutcome;
 			typedef std::future<AddLiveAudioAuditNotifyConfigOutcome> AddLiveAudioAuditNotifyConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::AddLiveAudioAuditNotifyConfigRequest&, const AddLiveAudioAuditNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveAudioAuditNotifyConfigAsyncHandler;
+			typedef Outcome<Error, Model::AddLiveCenterTransferResult> AddLiveCenterTransferOutcome;
+			typedef std::future<AddLiveCenterTransferOutcome> AddLiveCenterTransferOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::AddLiveCenterTransferRequest&, const AddLiveCenterTransferOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveCenterTransferAsyncHandler;
 			typedef Outcome<Error, Model::AddLiveDetectNotifyConfigResult> AddLiveDetectNotifyConfigOutcome;
 			typedef std::future<AddLiveDetectNotifyConfigOutcome> AddLiveDetectNotifyConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::AddLiveDetectNotifyConfigRequest&, const AddLiveDetectNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddLiveDetectNotifyConfigAsyncHandler;
@@ -1577,6 +1582,9 @@ namespace AlibabaCloud
 			AddLiveAudioAuditNotifyConfigOutcome addLiveAudioAuditNotifyConfig(const Model::AddLiveAudioAuditNotifyConfigRequest &request)const;
 			void addLiveAudioAuditNotifyConfigAsync(const Model::AddLiveAudioAuditNotifyConfigRequest& request, const AddLiveAudioAuditNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddLiveAudioAuditNotifyConfigOutcomeCallable addLiveAudioAuditNotifyConfigCallable(const Model::AddLiveAudioAuditNotifyConfigRequest& request) const;
+			AddLiveCenterTransferOutcome addLiveCenterTransfer(const Model::AddLiveCenterTransferRequest &request)const;
+			void addLiveCenterTransferAsync(const Model::AddLiveCenterTransferRequest& request, const AddLiveCenterTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddLiveCenterTransferOutcomeCallable addLiveCenterTransferCallable(const Model::AddLiveCenterTransferRequest& request) const;
 			AddLiveDetectNotifyConfigOutcome addLiveDetectNotifyConfig(const Model::AddLiveDetectNotifyConfigRequest &request)const;
 			void addLiveDetectNotifyConfigAsync(const Model::AddLiveDetectNotifyConfigRequest& request, const AddLiveDetectNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddLiveDetectNotifyConfigOutcomeCallable addLiveDetectNotifyConfigCallable(const Model::AddLiveDetectNotifyConfigRequest& request) const;
