@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_TRANSFORMTOPREPAIDREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_TRANSFORMTOPREPAIDREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_TRANSFORMINSTANCECHARGETYPEREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_TRANSFORMINSTANCECHARGETYPEREQUEST_H_
 
 #include <alibabacloud/dds/DdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,10 +26,10 @@
 namespace AlibabaCloud {
 namespace Dds {
 namespace Model {
-class ALIBABACLOUD_DDS_EXPORT TransformToPrePaidRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DDS_EXPORT TransformInstanceChargeTypeRequest : public RpcServiceRequest {
 public:
-	TransformToPrePaidRequest();
-	~TransformToPrePaidRequest();
+	TransformInstanceChargeTypeRequest();
+	~TransformInstanceChargeTypeRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getCouponNo() const;
@@ -78,4 +78,4 @@ private:
 } // namespace Model
 } // namespace Dds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DDS_MODEL_TRANSFORMTOPREPAIDREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_TRANSFORMINSTANCECHARGETYPEREQUEST_H_

@@ -189,6 +189,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/SwitchDBInstanceHAResult.h
 	include/alibabacloud/dds/model/TagResourcesRequest.h
 	include/alibabacloud/dds/model/TagResourcesResult.h
+	include/alibabacloud/dds/model/TransformInstanceChargeTypeRequest.h
+	include/alibabacloud/dds/model/TransformInstanceChargeTypeResult.h
 	include/alibabacloud/dds/model/TransformToPrePaidRequest.h
 	include/alibabacloud/dds/model/TransformToPrePaidResult.h
 	include/alibabacloud/dds/model/UntagResourcesRequest.h
@@ -368,6 +370,8 @@ set(dds_src
 	src/model/SwitchDBInstanceHAResult.cc
 	src/model/TagResourcesRequest.cc
 	src/model/TagResourcesResult.cc
+	src/model/TransformInstanceChargeTypeRequest.cc
+	src/model/TransformInstanceChargeTypeResult.cc
 	src/model/TransformToPrePaidRequest.cc
 	src/model/TransformToPrePaidResult.cc
 	src/model/UntagResourcesRequest.cc

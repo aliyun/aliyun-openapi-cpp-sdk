@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	bool getIsOnlyGetCluster() const;
+	void setIsOnlyGetCluster(bool isOnlyGetCluster);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSecurityToken() const;
@@ -54,6 +56,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
+	bool isOnlyGetCluster_;
 	std::string resourceGroupId_;
 	std::string securityToken_;
 	std::string engine_;

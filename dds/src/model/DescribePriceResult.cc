@@ -89,6 +89,26 @@ void DescribePriceResult::parse(const std::string &payload)
 			couponObject.couponNo = orderNodeCouponsCoupon["CouponNo"].asString();
 		if(!orderNodeCouponsCoupon["Name"].isNull())
 			couponObject.name = orderNodeCouponsCoupon["Name"].asString();
+		if(!orderNodeCouponsCoupon["CanPromFee"].isNull())
+			couponObject.canPromFee = orderNodeCouponsCoupon["CanPromFee"].asString();
+		if(!orderNodeCouponsCoupon["PromotionOptionCode"].isNull())
+			couponObject.promotionOptionCode = orderNodeCouponsCoupon["PromotionOptionCode"].asString();
+		if(!orderNodeCouponsCoupon["LackForPriceBreak"].isNull())
+			couponObject.lackForPriceBreak = orderNodeCouponsCoupon["LackForPriceBreak"].asString();
+		if(!orderNodeCouponsCoupon["PriceBreakThreshold"].isNull())
+			couponObject.priceBreakThreshold = orderNodeCouponsCoupon["PriceBreakThreshold"].asString();
+		if(!orderNodeCouponsCoupon["PriceBreakReduceValue"].isNull())
+			couponObject.priceBreakReduceValue = orderNodeCouponsCoupon["PriceBreakReduceValue"].asString();
+		if(!orderNodeCouponsCoupon["OptionCode"].isNull())
+			couponObject.optionCode = orderNodeCouponsCoupon["OptionCode"].asString();
+		if(!orderNodeCouponsCoupon["ActivityCategory"].isNull())
+			couponObject.activityCategory = orderNodeCouponsCoupon["ActivityCategory"].asString();
+		auto allPromotionRuleIdList = value["PromotionRuleIdList"]["PromotionRuleId"];
+		for (auto value : allPromotionRuleIdList)
+			couponObject.promotionRuleIdList.push_back(value.asString());
+		auto allTargetArticleItemCodes = value["TargetArticleItemCodes"]["TargetArticleItemCode"];
+		for (auto value : allTargetArticleItemCodes)
+			couponObject.targetArticleItemCodes.push_back(value.asString());
 		order_.coupons.push_back(couponObject);
 	}
 		auto allRuleIds1 = orderNode["RuleIds"]["RuleId"];

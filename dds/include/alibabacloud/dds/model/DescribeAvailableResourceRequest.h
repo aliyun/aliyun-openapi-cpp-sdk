@@ -48,8 +48,12 @@ public:
 	void setLevel(const std::string &level);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getMongoType() const;
+	void setMongoType(const std::string &mongoType);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getStorageSupport() const;
+	void setStorageSupport(const std::string &storageSupport);
 	std::string getDbType() const;
 	void setDbType(const std::string &dbType);
 	std::string getZoneId() const;
@@ -65,7 +69,9 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string level_;
 	std::string ownerAccount_;
+	std::string mongoType_;
 	long ownerId_;
+	std::string storageSupport_;
 	std::string dbType_;
 	std::string zoneId_;
 };

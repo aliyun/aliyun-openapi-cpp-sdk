@@ -3075,6 +3075,42 @@ DdsClient::TagResourcesOutcomeCallable DdsClient::tagResourcesCallable(const Tag
 	return task->get_future();
 }
 
+DdsClient::TransformInstanceChargeTypeOutcome DdsClient::transformInstanceChargeType(const TransformInstanceChargeTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TransformInstanceChargeTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TransformInstanceChargeTypeOutcome(TransformInstanceChargeTypeResult(outcome.result()));
+	else
+		return TransformInstanceChargeTypeOutcome(outcome.error());
+}
+
+void DdsClient::transformInstanceChargeTypeAsync(const TransformInstanceChargeTypeRequest& request, const TransformInstanceChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, transformInstanceChargeType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DdsClient::TransformInstanceChargeTypeOutcomeCallable DdsClient::transformInstanceChargeTypeCallable(const TransformInstanceChargeTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TransformInstanceChargeTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->transformInstanceChargeType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DdsClient::TransformToPrePaidOutcome DdsClient::transformToPrePaid(const TransformToPrePaidRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

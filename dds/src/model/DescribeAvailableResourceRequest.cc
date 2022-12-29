@@ -106,6 +106,15 @@ void DescribeAvailableResourceRequest::setOwnerAccount(const std::string &ownerA
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+std::string DescribeAvailableResourceRequest::getMongoType() const {
+  return mongoType_;
+}
+
+void DescribeAvailableResourceRequest::setMongoType(const std::string &mongoType) {
+  mongoType_ = mongoType;
+  setParameter(std::string("MongoType"), mongoType);
+}
+
 long DescribeAvailableResourceRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -113,6 +122,15 @@ long DescribeAvailableResourceRequest::getOwnerId() const {
 void DescribeAvailableResourceRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DescribeAvailableResourceRequest::getStorageSupport() const {
+  return storageSupport_;
+}
+
+void DescribeAvailableResourceRequest::setStorageSupport(const std::string &storageSupport) {
+  storageSupport_ = storageSupport;
+  setParameter(std::string("StorageSupport"), storageSupport);
 }
 
 std::string DescribeAvailableResourceRequest::getDbType() const {

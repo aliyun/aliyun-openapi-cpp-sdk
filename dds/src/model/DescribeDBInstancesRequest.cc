@@ -133,6 +133,15 @@ void DescribeDBInstancesRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::string DescribeDBInstancesRequest::getDBNodeType() const {
+  return dBNodeType_;
+}
+
+void DescribeDBInstancesRequest::setDBNodeType(const std::string &dBNodeType) {
+  dBNodeType_ = dBNodeType;
+  setParameter(std::string("DBNodeType"), dBNodeType);
+}
+
 std::string DescribeDBInstancesRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

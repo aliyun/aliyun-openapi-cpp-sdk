@@ -142,3 +142,12 @@ void TransformToPrePaidRequest::setAutoRenew(const std::string &autoRenew) {
   setParameter(std::string("AutoRenew"), autoRenew);
 }
 
+std::string TransformToPrePaidRequest::getChargeType() const {
+  return chargeType_;
+}
+
+void TransformToPrePaidRequest::setChargeType(const std::string &chargeType) {
+  chargeType_ = chargeType;
+  setParameter(std::string("ChargeType"), chargeType);
+}
+

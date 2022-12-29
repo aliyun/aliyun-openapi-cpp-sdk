@@ -43,6 +43,15 @@ void DescribeDBInstanceAttributeRequest::setAccessKeyId(const std::string &acces
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+bool DescribeDBInstanceAttributeRequest::getIsOnlyGetCluster() const {
+  return isOnlyGetCluster_;
+}
+
+void DescribeDBInstanceAttributeRequest::setIsOnlyGetCluster(bool isOnlyGetCluster) {
+  isOnlyGetCluster_ = isOnlyGetCluster;
+  setParameter(std::string("IsOnlyGetCluster"), isOnlyGetCluster ? "true" : "false");
+}
+
 std::string DescribeDBInstanceAttributeRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }

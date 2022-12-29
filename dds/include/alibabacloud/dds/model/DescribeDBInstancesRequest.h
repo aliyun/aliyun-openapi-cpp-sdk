@@ -58,6 +58,8 @@ public:
 	void setEngine(const std::string &engine);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getDBNodeType() const;
+	void setDBNodeType(const std::string &dBNodeType);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getDBInstanceDescription() const;
@@ -102,6 +104,7 @@ private:
 	std::string regionId_;
 	std::string engine_;
 	int pageSize_;
+	std::string dBNodeType_;
 	std::string dBInstanceId_;
 	std::string dBInstanceDescription_;
 	std::string dBInstanceStatus_;

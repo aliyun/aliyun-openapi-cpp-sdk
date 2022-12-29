@@ -37,9 +37,18 @@ namespace AlibabaCloud
 					struct Coupon
 					{
 						std::string couponNo;
+						std::string activityCategory;
 						std::string description;
+						std::vector<std::string> promotionRuleIdList;
+						double priceBreakReduceValue;
+						double canPromFee;
+						std::string promotionOptionCode;
 						std::string isSelected;
+						std::string optionCode;
+						std::vector<std::string> targetArticleItemCodes;
 						std::string name;
+						double priceBreakThreshold;
+						double lackForPriceBreak;
 					};
 					std::vector<std::string> ruleIds1;
 					std::string currency;
