@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_RRPCREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_RRPCREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_BATCHIMPORTVEHICLEDEVICEREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_BATCHIMPORTVEHICLEDEVICEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,48 +28,43 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT RRpcRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT BatchImportVehicleDeviceRequest : public RpcServiceRequest
 			{
+			public:
+				struct DeviceList
+				{
+					std::string deviceId;
+					std::string manufacturer;
+					std::string deviceModel;
+				};
 
 			public:
-				RRpcRequest();
-				~RRpcRequest();
+				BatchImportVehicleDeviceRequest();
+				~BatchImportVehicleDeviceRequest();
 
-				int getTimeout()const;
-				void setTimeout(int timeout);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getRequestBase64Byte()const;
-				void setRequestBase64Byte(const std::string& requestBase64Byte);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
-				std::string getContentType()const;
-				void setContentType(const std::string& contentType);
+				std::vector<DeviceList> getDeviceList()const;
+				void setDeviceList(const std::vector<DeviceList>& deviceList);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
-				std::string getTopic()const;
-				void setTopic(const std::string& topic);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
-				std::string getDeviceName()const;
-				void setDeviceName(const std::string& deviceName);
 
             private:
-				int timeout_;
 				std::string accessKeyId_;
 				std::string iotInstanceId_;
-				std::string requestBase64Byte_;
 				std::string productKey_;
-				std::string contentType_;
+				std::vector<DeviceList> deviceList_;
 				std::string apiProduct_;
-				std::string topic_;
 				std::string apiRevision_;
-				std::string deviceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_RRPCREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_BATCHIMPORTVEHICLEDEVICEREQUEST_H_

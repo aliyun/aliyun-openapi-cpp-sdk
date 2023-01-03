@@ -483,6 +483,42 @@ IotClient::BatchCheckImportDeviceOutcomeCallable IotClient::batchCheckImportDevi
 	return task->get_future();
 }
 
+IotClient::BatchCheckVehicleDeviceOutcome IotClient::batchCheckVehicleDevice(const BatchCheckVehicleDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchCheckVehicleDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchCheckVehicleDeviceOutcome(BatchCheckVehicleDeviceResult(outcome.result()));
+	else
+		return BatchCheckVehicleDeviceOutcome(outcome.error());
+}
+
+void IotClient::batchCheckVehicleDeviceAsync(const BatchCheckVehicleDeviceRequest& request, const BatchCheckVehicleDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchCheckVehicleDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::BatchCheckVehicleDeviceOutcomeCallable IotClient::batchCheckVehicleDeviceCallable(const BatchCheckVehicleDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchCheckVehicleDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->batchCheckVehicleDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::BatchClearEdgeInstanceDeviceConfigOutcome IotClient::batchClearEdgeInstanceDeviceConfig(const BatchClearEdgeInstanceDeviceConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -981,6 +1017,42 @@ IotClient::BatchImportDeviceOutcomeCallable IotClient::batchImportDeviceCallable
 			[this, request]()
 			{
 			return this->batchImportDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::BatchImportVehicleDeviceOutcome IotClient::batchImportVehicleDevice(const BatchImportVehicleDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchImportVehicleDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchImportVehicleDeviceOutcome(BatchImportVehicleDeviceResult(outcome.result()));
+	else
+		return BatchImportVehicleDeviceOutcome(outcome.error());
+}
+
+void IotClient::batchImportVehicleDeviceAsync(const BatchImportVehicleDeviceRequest& request, const BatchImportVehicleDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchImportVehicleDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::BatchImportVehicleDeviceOutcomeCallable IotClient::batchImportVehicleDeviceCallable(const BatchImportVehicleDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchImportVehicleDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->batchImportVehicleDevice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -11565,6 +11637,42 @@ IotClient::QueryTopicRouteTableOutcomeCallable IotClient::queryTopicRouteTableCa
 			[this, request]()
 			{
 			return this->queryTopicRouteTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryVehicleDeviceOutcome IotClient::queryVehicleDevice(const QueryVehicleDeviceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryVehicleDeviceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryVehicleDeviceOutcome(QueryVehicleDeviceResult(outcome.result()));
+	else
+		return QueryVehicleDeviceOutcome(outcome.error());
+}
+
+void IotClient::queryVehicleDeviceAsync(const QueryVehicleDeviceRequest& request, const QueryVehicleDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryVehicleDevice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryVehicleDeviceOutcomeCallable IotClient::queryVehicleDeviceCallable(const QueryVehicleDeviceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryVehicleDeviceOutcome()>>(
+			[this, request]()
+			{
+			return this->queryVehicleDevice(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

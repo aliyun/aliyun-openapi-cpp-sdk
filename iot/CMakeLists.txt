@@ -45,6 +45,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/BatchCheckDeviceNamesResult.h
 	include/alibabacloud/iot/model/BatchCheckImportDeviceRequest.h
 	include/alibabacloud/iot/model/BatchCheckImportDeviceResult.h
+	include/alibabacloud/iot/model/BatchCheckVehicleDeviceRequest.h
+	include/alibabacloud/iot/model/BatchCheckVehicleDeviceResult.h
 	include/alibabacloud/iot/model/BatchClearEdgeInstanceDeviceConfigRequest.h
 	include/alibabacloud/iot/model/BatchClearEdgeInstanceDeviceConfigResult.h
 	include/alibabacloud/iot/model/BatchCreateSoundCodeLabelRequest.h
@@ -73,6 +75,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/BatchGetEdgeInstanceDriverConfigsResult.h
 	include/alibabacloud/iot/model/BatchImportDeviceRequest.h
 	include/alibabacloud/iot/model/BatchImportDeviceResult.h
+	include/alibabacloud/iot/model/BatchImportVehicleDeviceRequest.h
+	include/alibabacloud/iot/model/BatchImportVehicleDeviceResult.h
 	include/alibabacloud/iot/model/BatchPubRequest.h
 	include/alibabacloud/iot/model/BatchPubResult.h
 	include/alibabacloud/iot/model/BatchQueryDeviceDetailRequest.h
@@ -661,6 +665,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryTopicReverseRouteTableResult.h
 	include/alibabacloud/iot/model/QueryTopicRouteTableRequest.h
 	include/alibabacloud/iot/model/QueryTopicRouteTableResult.h
+	include/alibabacloud/iot/model/QueryVehicleDeviceRequest.h
+	include/alibabacloud/iot/model/QueryVehicleDeviceResult.h
 	include/alibabacloud/iot/model/RRpcRequest.h
 	include/alibabacloud/iot/model/RRpcResult.h
 	include/alibabacloud/iot/model/ReBindLicenseDeviceRequest.h
@@ -830,6 +836,8 @@ set(iot_src
 	src/model/BatchCheckDeviceNamesResult.cc
 	src/model/BatchCheckImportDeviceRequest.cc
 	src/model/BatchCheckImportDeviceResult.cc
+	src/model/BatchCheckVehicleDeviceRequest.cc
+	src/model/BatchCheckVehicleDeviceResult.cc
 	src/model/BatchClearEdgeInstanceDeviceConfigRequest.cc
 	src/model/BatchClearEdgeInstanceDeviceConfigResult.cc
 	src/model/BatchCreateSoundCodeLabelRequest.cc
@@ -858,6 +866,8 @@ set(iot_src
 	src/model/BatchGetEdgeInstanceDriverConfigsResult.cc
 	src/model/BatchImportDeviceRequest.cc
 	src/model/BatchImportDeviceResult.cc
+	src/model/BatchImportVehicleDeviceRequest.cc
+	src/model/BatchImportVehicleDeviceResult.cc
 	src/model/BatchPubRequest.cc
 	src/model/BatchPubResult.cc
 	src/model/BatchQueryDeviceDetailRequest.cc
@@ -1446,6 +1456,8 @@ set(iot_src
 	src/model/QueryTopicReverseRouteTableResult.cc
 	src/model/QueryTopicRouteTableRequest.cc
 	src/model/QueryTopicRouteTableResult.cc
+	src/model/QueryVehicleDeviceRequest.cc
+	src/model/QueryVehicleDeviceResult.cc
 	src/model/RRpcRequest.cc
 	src/model/RRpcResult.cc
 	src/model/ReBindLicenseDeviceRequest.cc

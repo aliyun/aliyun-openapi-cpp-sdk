@@ -82,6 +82,17 @@ void RRpcRequest::setProductKey(const std::string& productKey)
 	setParameter("ProductKey", productKey);
 }
 
+std::string RRpcRequest::getContentType()const
+{
+	return contentType_;
+}
+
+void RRpcRequest::setContentType(const std::string& contentType)
+{
+	contentType_ = contentType;
+	setParameter("ContentType", contentType);
+}
+
 std::string RRpcRequest::getApiProduct()const
 {
 	return apiProduct_;

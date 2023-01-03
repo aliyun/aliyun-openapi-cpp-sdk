@@ -46,6 +46,8 @@
 #include "model/BatchCheckDeviceNamesResult.h"
 #include "model/BatchCheckImportDeviceRequest.h"
 #include "model/BatchCheckImportDeviceResult.h"
+#include "model/BatchCheckVehicleDeviceRequest.h"
+#include "model/BatchCheckVehicleDeviceResult.h"
 #include "model/BatchClearEdgeInstanceDeviceConfigRequest.h"
 #include "model/BatchClearEdgeInstanceDeviceConfigResult.h"
 #include "model/BatchCreateSoundCodeLabelRequest.h"
@@ -74,6 +76,8 @@
 #include "model/BatchGetEdgeInstanceDriverConfigsResult.h"
 #include "model/BatchImportDeviceRequest.h"
 #include "model/BatchImportDeviceResult.h"
+#include "model/BatchImportVehicleDeviceRequest.h"
+#include "model/BatchImportVehicleDeviceResult.h"
 #include "model/BatchPubRequest.h"
 #include "model/BatchPubResult.h"
 #include "model/BatchQueryDeviceDetailRequest.h"
@@ -662,6 +666,8 @@
 #include "model/QueryTopicReverseRouteTableResult.h"
 #include "model/QueryTopicRouteTableRequest.h"
 #include "model/QueryTopicRouteTableResult.h"
+#include "model/QueryVehicleDeviceRequest.h"
+#include "model/QueryVehicleDeviceResult.h"
 #include "model/RRpcRequest.h"
 #include "model/RRpcResult.h"
 #include "model/ReBindLicenseDeviceRequest.h"
@@ -849,6 +855,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchCheckImportDeviceResult> BatchCheckImportDeviceOutcome;
 			typedef std::future<BatchCheckImportDeviceOutcome> BatchCheckImportDeviceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::BatchCheckImportDeviceRequest&, const BatchCheckImportDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchCheckImportDeviceAsyncHandler;
+			typedef Outcome<Error, Model::BatchCheckVehicleDeviceResult> BatchCheckVehicleDeviceOutcome;
+			typedef std::future<BatchCheckVehicleDeviceOutcome> BatchCheckVehicleDeviceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::BatchCheckVehicleDeviceRequest&, const BatchCheckVehicleDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchCheckVehicleDeviceAsyncHandler;
 			typedef Outcome<Error, Model::BatchClearEdgeInstanceDeviceConfigResult> BatchClearEdgeInstanceDeviceConfigOutcome;
 			typedef std::future<BatchClearEdgeInstanceDeviceConfigOutcome> BatchClearEdgeInstanceDeviceConfigOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::BatchClearEdgeInstanceDeviceConfigRequest&, const BatchClearEdgeInstanceDeviceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchClearEdgeInstanceDeviceConfigAsyncHandler;
@@ -891,6 +900,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchImportDeviceResult> BatchImportDeviceOutcome;
 			typedef std::future<BatchImportDeviceOutcome> BatchImportDeviceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::BatchImportDeviceRequest&, const BatchImportDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchImportDeviceAsyncHandler;
+			typedef Outcome<Error, Model::BatchImportVehicleDeviceResult> BatchImportVehicleDeviceOutcome;
+			typedef std::future<BatchImportVehicleDeviceOutcome> BatchImportVehicleDeviceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::BatchImportVehicleDeviceRequest&, const BatchImportVehicleDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchImportVehicleDeviceAsyncHandler;
 			typedef Outcome<Error, Model::BatchPubResult> BatchPubOutcome;
 			typedef std::future<BatchPubOutcome> BatchPubOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::BatchPubRequest&, const BatchPubOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchPubAsyncHandler;
@@ -1773,6 +1785,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryTopicRouteTableResult> QueryTopicRouteTableOutcome;
 			typedef std::future<QueryTopicRouteTableOutcome> QueryTopicRouteTableOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryTopicRouteTableRequest&, const QueryTopicRouteTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryTopicRouteTableAsyncHandler;
+			typedef Outcome<Error, Model::QueryVehicleDeviceResult> QueryVehicleDeviceOutcome;
+			typedef std::future<QueryVehicleDeviceOutcome> QueryVehicleDeviceOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryVehicleDeviceRequest&, const QueryVehicleDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryVehicleDeviceAsyncHandler;
 			typedef Outcome<Error, Model::RRpcResult> RRpcOutcome;
 			typedef std::future<RRpcOutcome> RRpcOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::RRpcRequest&, const RRpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RRpcAsyncHandler;
@@ -2027,6 +2042,9 @@ namespace AlibabaCloud
 			BatchCheckImportDeviceOutcome batchCheckImportDevice(const Model::BatchCheckImportDeviceRequest &request)const;
 			void batchCheckImportDeviceAsync(const Model::BatchCheckImportDeviceRequest& request, const BatchCheckImportDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchCheckImportDeviceOutcomeCallable batchCheckImportDeviceCallable(const Model::BatchCheckImportDeviceRequest& request) const;
+			BatchCheckVehicleDeviceOutcome batchCheckVehicleDevice(const Model::BatchCheckVehicleDeviceRequest &request)const;
+			void batchCheckVehicleDeviceAsync(const Model::BatchCheckVehicleDeviceRequest& request, const BatchCheckVehicleDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchCheckVehicleDeviceOutcomeCallable batchCheckVehicleDeviceCallable(const Model::BatchCheckVehicleDeviceRequest& request) const;
 			BatchClearEdgeInstanceDeviceConfigOutcome batchClearEdgeInstanceDeviceConfig(const Model::BatchClearEdgeInstanceDeviceConfigRequest &request)const;
 			void batchClearEdgeInstanceDeviceConfigAsync(const Model::BatchClearEdgeInstanceDeviceConfigRequest& request, const BatchClearEdgeInstanceDeviceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchClearEdgeInstanceDeviceConfigOutcomeCallable batchClearEdgeInstanceDeviceConfigCallable(const Model::BatchClearEdgeInstanceDeviceConfigRequest& request) const;
@@ -2069,6 +2087,9 @@ namespace AlibabaCloud
 			BatchImportDeviceOutcome batchImportDevice(const Model::BatchImportDeviceRequest &request)const;
 			void batchImportDeviceAsync(const Model::BatchImportDeviceRequest& request, const BatchImportDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchImportDeviceOutcomeCallable batchImportDeviceCallable(const Model::BatchImportDeviceRequest& request) const;
+			BatchImportVehicleDeviceOutcome batchImportVehicleDevice(const Model::BatchImportVehicleDeviceRequest &request)const;
+			void batchImportVehicleDeviceAsync(const Model::BatchImportVehicleDeviceRequest& request, const BatchImportVehicleDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchImportVehicleDeviceOutcomeCallable batchImportVehicleDeviceCallable(const Model::BatchImportVehicleDeviceRequest& request) const;
 			BatchPubOutcome batchPub(const Model::BatchPubRequest &request)const;
 			void batchPubAsync(const Model::BatchPubRequest& request, const BatchPubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchPubOutcomeCallable batchPubCallable(const Model::BatchPubRequest& request) const;
@@ -2951,6 +2972,9 @@ namespace AlibabaCloud
 			QueryTopicRouteTableOutcome queryTopicRouteTable(const Model::QueryTopicRouteTableRequest &request)const;
 			void queryTopicRouteTableAsync(const Model::QueryTopicRouteTableRequest& request, const QueryTopicRouteTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryTopicRouteTableOutcomeCallable queryTopicRouteTableCallable(const Model::QueryTopicRouteTableRequest& request) const;
+			QueryVehicleDeviceOutcome queryVehicleDevice(const Model::QueryVehicleDeviceRequest &request)const;
+			void queryVehicleDeviceAsync(const Model::QueryVehicleDeviceRequest& request, const QueryVehicleDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryVehicleDeviceOutcomeCallable queryVehicleDeviceCallable(const Model::QueryVehicleDeviceRequest& request) const;
 			RRpcOutcome rRpc(const Model::RRpcRequest &request)const;
 			void rRpcAsync(const Model::RRpcRequest& request, const RRpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RRpcOutcomeCallable rRpcCallable(const Model::RRpcRequest& request) const;

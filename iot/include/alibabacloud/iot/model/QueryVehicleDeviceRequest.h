@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_PUBREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_PUBREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_QUERYVEHICLEDEVICEREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_QUERYVEHICLEDEVICEREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,45 +28,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT PubRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT QueryVehicleDeviceRequest : public RpcServiceRequest
 			{
-			public:
-				struct UserProp
-				{
-					std::string value;
-					std::string key;
-				};
 
 			public:
-				PubRequest();
-				~PubRequest();
+				QueryVehicleDeviceRequest();
+				~QueryVehicleDeviceRequest();
 
-				std::vector<UserProp> getUserProp()const;
-				void setUserProp(const std::vector<UserProp>& userProp);
-				std::string getMessageContent()const;
-				void setMessageContent(const std::string& messageContent);
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
 				std::string getAccessKeyId()const;
 				void setAccessKeyId(const std::string& accessKeyId);
-				int getQos()const;
-				void setQos(int qos);
-				std::string getCorrelationData()const;
-				void setCorrelationData(const std::string& correlationData);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				long getMessageExpiryInterval()const;
-				void setMessageExpiryInterval(long messageExpiryInterval);
-				std::string getResponseTopic()const;
-				void setResponseTopic(const std::string& responseTopic);
-				std::string getTopicFullName()const;
-				void setTopicFullName(const std::string& topicFullName);
-				int getPayloadFormatIndicator()const;
-				void setPayloadFormatIndicator(int payloadFormatIndicator);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
-				std::string getContentType()const;
-				void setContentType(const std::string& contentType);
-				bool getRetained()const;
-				void setRetained(bool retained);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
@@ -75,19 +53,11 @@ namespace AlibabaCloud
 				void setDeviceName(const std::string& deviceName);
 
             private:
-				std::vector<UserProp> userProp_;
-				std::string messageContent_;
+				std::string realTenantId_;
 				std::string accessKeyId_;
-				int qos_;
-				std::string correlationData_;
+				std::string realTripartiteKey_;
 				std::string iotInstanceId_;
-				long messageExpiryInterval_;
-				std::string responseTopic_;
-				std::string topicFullName_;
-				int payloadFormatIndicator_;
 				std::string productKey_;
-				std::string contentType_;
-				bool retained_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 				std::string deviceName_;
@@ -96,4 +66,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_PUBREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_QUERYVEHICLEDEVICEREQUEST_H_

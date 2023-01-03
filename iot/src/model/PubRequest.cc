@@ -98,6 +98,17 @@ void PubRequest::setIotInstanceId(const std::string& iotInstanceId)
 	setParameter("IotInstanceId", iotInstanceId);
 }
 
+long PubRequest::getMessageExpiryInterval()const
+{
+	return messageExpiryInterval_;
+}
+
+void PubRequest::setMessageExpiryInterval(long messageExpiryInterval)
+{
+	messageExpiryInterval_ = messageExpiryInterval;
+	setParameter("MessageExpiryInterval", std::to_string(messageExpiryInterval));
+}
+
 std::string PubRequest::getResponseTopic()const
 {
 	return responseTopic_;
@@ -151,6 +162,17 @@ void PubRequest::setContentType(const std::string& contentType)
 {
 	contentType_ = contentType;
 	setParameter("ContentType", contentType);
+}
+
+bool PubRequest::getRetained()const
+{
+	return retained_;
+}
+
+void PubRequest::setRetained(bool retained)
+{
+	retained_ = retained;
+	setParameter("Retained", retained ? "true" : "false");
 }
 
 std::string PubRequest::getApiProduct()const
