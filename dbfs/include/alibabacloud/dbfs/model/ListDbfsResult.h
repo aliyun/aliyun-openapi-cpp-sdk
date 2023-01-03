@@ -34,6 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct Info
 				{
+					struct SnapshotInfo
+					{
+						int snapshotCount;
+						long totalSize;
+						std::string linkId;
+						std::string policyId;
+					};
 					struct TagList
 					{
 						std::string tagKey;
@@ -49,30 +56,31 @@ namespace AlibabaCloud
 						int sizeG;
 						std::string ebsId;
 					};
-					std::string status;
-					std::string lastFailed;
 					std::string category;
 					std::string createdTime;
 					std::string kMSKeyId;
-					std::string zoneId;
-					bool enableRaid;
 					std::vector<Info::EcsListItem> ecsList;
 					int sizeG;
-					std::string performanceLevel;
 					std::string fsId;
 					std::string dBFSClusterId;
 					bool encryption;
-					std::string payType;
 					std::string lastUmountTime;
-					std::string fsName;
 					std::vector<Info::EbsListItem> ebsList;
-					std::string usedScene;
 					int raidStrip;
 					std::string lastMountTime;
-					std::string regionId;
-					int attachNodeNumber;
 					std::string instanceType;
 					std::vector<Info::TagList> tags;
+					std::string status;
+					std::string lastFailed;
+					std::string zoneId;
+					bool enableRaid;
+					std::string performanceLevel;
+					std::string payType;
+					SnapshotInfo snapshotInfo;
+					std::string fsName;
+					std::string usedScene;
+					std::string regionId;
+					int attachNodeNumber;
 				};
 
 

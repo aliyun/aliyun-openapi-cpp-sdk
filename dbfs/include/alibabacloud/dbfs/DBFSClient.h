@@ -24,6 +24,8 @@
 #include "DBFSExport.h"
 #include "model/AddTagsBatchRequest.h"
 #include "model/AddTagsBatchResult.h"
+#include "model/ApplyAutoSnapshotPolicyRequest.h"
+#include "model/ApplyAutoSnapshotPolicyResult.h"
 #include "model/AttachDbfsRequest.h"
 #include "model/AttachDbfsResult.h"
 #include "model/CancelAutoSnapshotPolicyRequest.h"
@@ -36,6 +38,8 @@
 #include "model/CreateServiceLinkedRoleResult.h"
 #include "model/CreateSnapshotRequest.h"
 #include "model/CreateSnapshotResult.h"
+#include "model/DeleteAutoSnapshotPolicyRequest.h"
+#include "model/DeleteAutoSnapshotPolicyResult.h"
 #include "model/DeleteDbfsRequest.h"
 #include "model/DeleteDbfsResult.h"
 #include "model/DeleteSnapshotRequest.h"
@@ -48,10 +52,18 @@
 #include "model/DescribeInstanceTypesResult.h"
 #include "model/DetachDbfsRequest.h"
 #include "model/DetachDbfsResult.h"
+#include "model/GetAutoSnapshotPolicyRequest.h"
+#include "model/GetAutoSnapshotPolicyResult.h"
 #include "model/GetDbfsRequest.h"
 #include "model/GetDbfsResult.h"
 #include "model/GetServiceLinkedRoleRequest.h"
 #include "model/GetServiceLinkedRoleResult.h"
+#include "model/ListAutoSnapshotPoliciesRequest.h"
+#include "model/ListAutoSnapshotPoliciesResult.h"
+#include "model/ListAutoSnapshotPolicyAppliedDbfsRequest.h"
+#include "model/ListAutoSnapshotPolicyAppliedDbfsResult.h"
+#include "model/ListAutoSnapshotPolicyUnappliedDbfsRequest.h"
+#include "model/ListAutoSnapshotPolicyUnappliedDbfsResult.h"
 #include "model/ListDbfsRequest.h"
 #include "model/ListDbfsResult.h"
 #include "model/ListDbfsAttachableEcsInstancesRequest.h"
@@ -64,6 +76,10 @@
 #include "model/ListTagKeysResult.h"
 #include "model/ListTagValuesRequest.h"
 #include "model/ListTagValuesResult.h"
+#include "model/ModifyAutoSnapshotPolicyRequest.h"
+#include "model/ModifyAutoSnapshotPolicyResult.h"
+#include "model/ModifySnapshotAttributeRequest.h"
+#include "model/ModifySnapshotAttributeResult.h"
 #include "model/RenameDbfsRequest.h"
 #include "model/RenameDbfsResult.h"
 #include "model/ResizeDbfsRequest.h"
@@ -84,6 +100,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddTagsBatchResult> AddTagsBatchOutcome;
 			typedef std::future<AddTagsBatchOutcome> AddTagsBatchOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::AddTagsBatchRequest&, const AddTagsBatchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddTagsBatchAsyncHandler;
+			typedef Outcome<Error, Model::ApplyAutoSnapshotPolicyResult> ApplyAutoSnapshotPolicyOutcome;
+			typedef std::future<ApplyAutoSnapshotPolicyOutcome> ApplyAutoSnapshotPolicyOutcomeCallable;
+			typedef std::function<void(const DBFSClient*, const Model::ApplyAutoSnapshotPolicyRequest&, const ApplyAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyAutoSnapshotPolicyAsyncHandler;
 			typedef Outcome<Error, Model::AttachDbfsResult> AttachDbfsOutcome;
 			typedef std::future<AttachDbfsOutcome> AttachDbfsOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::AttachDbfsRequest&, const AttachDbfsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachDbfsAsyncHandler;
@@ -102,6 +121,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateSnapshotResult> CreateSnapshotOutcome;
 			typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::CreateSnapshotRequest&, const CreateSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAutoSnapshotPolicyResult> DeleteAutoSnapshotPolicyOutcome;
+			typedef std::future<DeleteAutoSnapshotPolicyOutcome> DeleteAutoSnapshotPolicyOutcomeCallable;
+			typedef std::function<void(const DBFSClient*, const Model::DeleteAutoSnapshotPolicyRequest&, const DeleteAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoSnapshotPolicyAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDbfsResult> DeleteDbfsOutcome;
 			typedef std::future<DeleteDbfsOutcome> DeleteDbfsOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::DeleteDbfsRequest&, const DeleteDbfsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDbfsAsyncHandler;
@@ -120,12 +142,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetachDbfsResult> DetachDbfsOutcome;
 			typedef std::future<DetachDbfsOutcome> DetachDbfsOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::DetachDbfsRequest&, const DetachDbfsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachDbfsAsyncHandler;
+			typedef Outcome<Error, Model::GetAutoSnapshotPolicyResult> GetAutoSnapshotPolicyOutcome;
+			typedef std::future<GetAutoSnapshotPolicyOutcome> GetAutoSnapshotPolicyOutcomeCallable;
+			typedef std::function<void(const DBFSClient*, const Model::GetAutoSnapshotPolicyRequest&, const GetAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAutoSnapshotPolicyAsyncHandler;
 			typedef Outcome<Error, Model::GetDbfsResult> GetDbfsOutcome;
 			typedef std::future<GetDbfsOutcome> GetDbfsOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::GetDbfsRequest&, const GetDbfsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDbfsAsyncHandler;
 			typedef Outcome<Error, Model::GetServiceLinkedRoleResult> GetServiceLinkedRoleOutcome;
 			typedef std::future<GetServiceLinkedRoleOutcome> GetServiceLinkedRoleOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::GetServiceLinkedRoleRequest&, const GetServiceLinkedRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceLinkedRoleAsyncHandler;
+			typedef Outcome<Error, Model::ListAutoSnapshotPoliciesResult> ListAutoSnapshotPoliciesOutcome;
+			typedef std::future<ListAutoSnapshotPoliciesOutcome> ListAutoSnapshotPoliciesOutcomeCallable;
+			typedef std::function<void(const DBFSClient*, const Model::ListAutoSnapshotPoliciesRequest&, const ListAutoSnapshotPoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAutoSnapshotPoliciesAsyncHandler;
+			typedef Outcome<Error, Model::ListAutoSnapshotPolicyAppliedDbfsResult> ListAutoSnapshotPolicyAppliedDbfsOutcome;
+			typedef std::future<ListAutoSnapshotPolicyAppliedDbfsOutcome> ListAutoSnapshotPolicyAppliedDbfsOutcomeCallable;
+			typedef std::function<void(const DBFSClient*, const Model::ListAutoSnapshotPolicyAppliedDbfsRequest&, const ListAutoSnapshotPolicyAppliedDbfsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAutoSnapshotPolicyAppliedDbfsAsyncHandler;
+			typedef Outcome<Error, Model::ListAutoSnapshotPolicyUnappliedDbfsResult> ListAutoSnapshotPolicyUnappliedDbfsOutcome;
+			typedef std::future<ListAutoSnapshotPolicyUnappliedDbfsOutcome> ListAutoSnapshotPolicyUnappliedDbfsOutcomeCallable;
+			typedef std::function<void(const DBFSClient*, const Model::ListAutoSnapshotPolicyUnappliedDbfsRequest&, const ListAutoSnapshotPolicyUnappliedDbfsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAutoSnapshotPolicyUnappliedDbfsAsyncHandler;
 			typedef Outcome<Error, Model::ListDbfsResult> ListDbfsOutcome;
 			typedef std::future<ListDbfsOutcome> ListDbfsOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::ListDbfsRequest&, const ListDbfsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDbfsAsyncHandler;
@@ -144,6 +178,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTagValuesResult> ListTagValuesOutcome;
 			typedef std::future<ListTagValuesOutcome> ListTagValuesOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::ListTagValuesRequest&, const ListTagValuesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagValuesAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAutoSnapshotPolicyResult> ModifyAutoSnapshotPolicyOutcome;
+			typedef std::future<ModifyAutoSnapshotPolicyOutcome> ModifyAutoSnapshotPolicyOutcomeCallable;
+			typedef std::function<void(const DBFSClient*, const Model::ModifyAutoSnapshotPolicyRequest&, const ModifyAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoSnapshotPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ModifySnapshotAttributeResult> ModifySnapshotAttributeOutcome;
+			typedef std::future<ModifySnapshotAttributeOutcome> ModifySnapshotAttributeOutcomeCallable;
+			typedef std::function<void(const DBFSClient*, const Model::ModifySnapshotAttributeRequest&, const ModifySnapshotAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotAttributeAsyncHandler;
 			typedef Outcome<Error, Model::RenameDbfsResult> RenameDbfsOutcome;
 			typedef std::future<RenameDbfsOutcome> RenameDbfsOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::RenameDbfsRequest&, const RenameDbfsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RenameDbfsAsyncHandler;
@@ -164,6 +204,9 @@ namespace AlibabaCloud
 			AddTagsBatchOutcome addTagsBatch(const Model::AddTagsBatchRequest &request)const;
 			void addTagsBatchAsync(const Model::AddTagsBatchRequest& request, const AddTagsBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddTagsBatchOutcomeCallable addTagsBatchCallable(const Model::AddTagsBatchRequest& request) const;
+			ApplyAutoSnapshotPolicyOutcome applyAutoSnapshotPolicy(const Model::ApplyAutoSnapshotPolicyRequest &request)const;
+			void applyAutoSnapshotPolicyAsync(const Model::ApplyAutoSnapshotPolicyRequest& request, const ApplyAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ApplyAutoSnapshotPolicyOutcomeCallable applyAutoSnapshotPolicyCallable(const Model::ApplyAutoSnapshotPolicyRequest& request) const;
 			AttachDbfsOutcome attachDbfs(const Model::AttachDbfsRequest &request)const;
 			void attachDbfsAsync(const Model::AttachDbfsRequest& request, const AttachDbfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachDbfsOutcomeCallable attachDbfsCallable(const Model::AttachDbfsRequest& request) const;
@@ -182,6 +225,9 @@ namespace AlibabaCloud
 			CreateSnapshotOutcome createSnapshot(const Model::CreateSnapshotRequest &request)const;
 			void createSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSnapshotOutcomeCallable createSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
+			DeleteAutoSnapshotPolicyOutcome deleteAutoSnapshotPolicy(const Model::DeleteAutoSnapshotPolicyRequest &request)const;
+			void deleteAutoSnapshotPolicyAsync(const Model::DeleteAutoSnapshotPolicyRequest& request, const DeleteAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAutoSnapshotPolicyOutcomeCallable deleteAutoSnapshotPolicyCallable(const Model::DeleteAutoSnapshotPolicyRequest& request) const;
 			DeleteDbfsOutcome deleteDbfs(const Model::DeleteDbfsRequest &request)const;
 			void deleteDbfsAsync(const Model::DeleteDbfsRequest& request, const DeleteDbfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDbfsOutcomeCallable deleteDbfsCallable(const Model::DeleteDbfsRequest& request) const;
@@ -200,12 +246,24 @@ namespace AlibabaCloud
 			DetachDbfsOutcome detachDbfs(const Model::DetachDbfsRequest &request)const;
 			void detachDbfsAsync(const Model::DetachDbfsRequest& request, const DetachDbfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachDbfsOutcomeCallable detachDbfsCallable(const Model::DetachDbfsRequest& request) const;
+			GetAutoSnapshotPolicyOutcome getAutoSnapshotPolicy(const Model::GetAutoSnapshotPolicyRequest &request)const;
+			void getAutoSnapshotPolicyAsync(const Model::GetAutoSnapshotPolicyRequest& request, const GetAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAutoSnapshotPolicyOutcomeCallable getAutoSnapshotPolicyCallable(const Model::GetAutoSnapshotPolicyRequest& request) const;
 			GetDbfsOutcome getDbfs(const Model::GetDbfsRequest &request)const;
 			void getDbfsAsync(const Model::GetDbfsRequest& request, const GetDbfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDbfsOutcomeCallable getDbfsCallable(const Model::GetDbfsRequest& request) const;
 			GetServiceLinkedRoleOutcome getServiceLinkedRole(const Model::GetServiceLinkedRoleRequest &request)const;
 			void getServiceLinkedRoleAsync(const Model::GetServiceLinkedRoleRequest& request, const GetServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetServiceLinkedRoleOutcomeCallable getServiceLinkedRoleCallable(const Model::GetServiceLinkedRoleRequest& request) const;
+			ListAutoSnapshotPoliciesOutcome listAutoSnapshotPolicies(const Model::ListAutoSnapshotPoliciesRequest &request)const;
+			void listAutoSnapshotPoliciesAsync(const Model::ListAutoSnapshotPoliciesRequest& request, const ListAutoSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAutoSnapshotPoliciesOutcomeCallable listAutoSnapshotPoliciesCallable(const Model::ListAutoSnapshotPoliciesRequest& request) const;
+			ListAutoSnapshotPolicyAppliedDbfsOutcome listAutoSnapshotPolicyAppliedDbfs(const Model::ListAutoSnapshotPolicyAppliedDbfsRequest &request)const;
+			void listAutoSnapshotPolicyAppliedDbfsAsync(const Model::ListAutoSnapshotPolicyAppliedDbfsRequest& request, const ListAutoSnapshotPolicyAppliedDbfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAutoSnapshotPolicyAppliedDbfsOutcomeCallable listAutoSnapshotPolicyAppliedDbfsCallable(const Model::ListAutoSnapshotPolicyAppliedDbfsRequest& request) const;
+			ListAutoSnapshotPolicyUnappliedDbfsOutcome listAutoSnapshotPolicyUnappliedDbfs(const Model::ListAutoSnapshotPolicyUnappliedDbfsRequest &request)const;
+			void listAutoSnapshotPolicyUnappliedDbfsAsync(const Model::ListAutoSnapshotPolicyUnappliedDbfsRequest& request, const ListAutoSnapshotPolicyUnappliedDbfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListAutoSnapshotPolicyUnappliedDbfsOutcomeCallable listAutoSnapshotPolicyUnappliedDbfsCallable(const Model::ListAutoSnapshotPolicyUnappliedDbfsRequest& request) const;
 			ListDbfsOutcome listDbfs(const Model::ListDbfsRequest &request)const;
 			void listDbfsAsync(const Model::ListDbfsRequest& request, const ListDbfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDbfsOutcomeCallable listDbfsCallable(const Model::ListDbfsRequest& request) const;
@@ -224,6 +282,12 @@ namespace AlibabaCloud
 			ListTagValuesOutcome listTagValues(const Model::ListTagValuesRequest &request)const;
 			void listTagValuesAsync(const Model::ListTagValuesRequest& request, const ListTagValuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagValuesOutcomeCallable listTagValuesCallable(const Model::ListTagValuesRequest& request) const;
+			ModifyAutoSnapshotPolicyOutcome modifyAutoSnapshotPolicy(const Model::ModifyAutoSnapshotPolicyRequest &request)const;
+			void modifyAutoSnapshotPolicyAsync(const Model::ModifyAutoSnapshotPolicyRequest& request, const ModifyAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAutoSnapshotPolicyOutcomeCallable modifyAutoSnapshotPolicyCallable(const Model::ModifyAutoSnapshotPolicyRequest& request) const;
+			ModifySnapshotAttributeOutcome modifySnapshotAttribute(const Model::ModifySnapshotAttributeRequest &request)const;
+			void modifySnapshotAttributeAsync(const Model::ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifySnapshotAttributeOutcomeCallable modifySnapshotAttributeCallable(const Model::ModifySnapshotAttributeRequest& request) const;
 			RenameDbfsOutcome renameDbfs(const Model::RenameDbfsRequest &request)const;
 			void renameDbfsAsync(const Model::RenameDbfsRequest& request, const RenameDbfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RenameDbfsOutcomeCallable renameDbfsCallable(const Model::RenameDbfsRequest& request) const;

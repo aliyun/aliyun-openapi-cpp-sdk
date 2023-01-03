@@ -114,6 +114,15 @@ void GetDbfsResult::parse(const std::string &payload)
 			ebsListItemObject.sizeG = std::stoi(dBFSInfoNodeEbsListEbsListItem["SizeG"].asString());
 		dBFSInfo_.ebsList.push_back(ebsListItemObject);
 	}
+	auto snapshotInfoNode = dBFSInfoNode["SnapshotInfo"];
+	if(!snapshotInfoNode["SnapshotCount"].isNull())
+		dBFSInfo_.snapshotInfo.snapshotCount = std::stoi(snapshotInfoNode["SnapshotCount"].asString());
+	if(!snapshotInfoNode["LinkId"].isNull())
+		dBFSInfo_.snapshotInfo.linkId = snapshotInfoNode["LinkId"].asString();
+	if(!snapshotInfoNode["totalSize"].isNull())
+		dBFSInfo_.snapshotInfo.totalSize = std::stol(snapshotInfoNode["totalSize"].asString());
+	if(!snapshotInfoNode["PolicyId"].isNull())
+		dBFSInfo_.snapshotInfo.policyId = snapshotInfoNode["PolicyId"].asString();
 
 }
 

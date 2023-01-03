@@ -34,6 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct DBFSInfo
 				{
+					struct SnapshotInfo
+					{
+						int snapshotCount;
+						long totalSize;
+						std::string linkId;
+						std::string policyId;
+					};
 					struct TagList
 					{
 						std::string tagKey;
@@ -70,6 +77,7 @@ namespace AlibabaCloud
 					bool enableRaid;
 					std::string performanceLevel;
 					std::string payType;
+					SnapshotInfo snapshotInfo;
 					std::string fsName;
 					std::string usedScene;
 					std::string regionId;

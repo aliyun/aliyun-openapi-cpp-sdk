@@ -23,6 +23,8 @@ set(dbfs_public_header
 set(dbfs_public_header_model 
 	include/alibabacloud/dbfs/model/AddTagsBatchRequest.h
 	include/alibabacloud/dbfs/model/AddTagsBatchResult.h
+	include/alibabacloud/dbfs/model/ApplyAutoSnapshotPolicyRequest.h
+	include/alibabacloud/dbfs/model/ApplyAutoSnapshotPolicyResult.h
 	include/alibabacloud/dbfs/model/AttachDbfsRequest.h
 	include/alibabacloud/dbfs/model/AttachDbfsResult.h
 	include/alibabacloud/dbfs/model/CancelAutoSnapshotPolicyRequest.h
@@ -35,6 +37,8 @@ set(dbfs_public_header_model
 	include/alibabacloud/dbfs/model/CreateServiceLinkedRoleResult.h
 	include/alibabacloud/dbfs/model/CreateSnapshotRequest.h
 	include/alibabacloud/dbfs/model/CreateSnapshotResult.h
+	include/alibabacloud/dbfs/model/DeleteAutoSnapshotPolicyRequest.h
+	include/alibabacloud/dbfs/model/DeleteAutoSnapshotPolicyResult.h
 	include/alibabacloud/dbfs/model/DeleteDbfsRequest.h
 	include/alibabacloud/dbfs/model/DeleteDbfsResult.h
 	include/alibabacloud/dbfs/model/DeleteSnapshotRequest.h
@@ -47,10 +51,18 @@ set(dbfs_public_header_model
 	include/alibabacloud/dbfs/model/DescribeInstanceTypesResult.h
 	include/alibabacloud/dbfs/model/DetachDbfsRequest.h
 	include/alibabacloud/dbfs/model/DetachDbfsResult.h
+	include/alibabacloud/dbfs/model/GetAutoSnapshotPolicyRequest.h
+	include/alibabacloud/dbfs/model/GetAutoSnapshotPolicyResult.h
 	include/alibabacloud/dbfs/model/GetDbfsRequest.h
 	include/alibabacloud/dbfs/model/GetDbfsResult.h
 	include/alibabacloud/dbfs/model/GetServiceLinkedRoleRequest.h
 	include/alibabacloud/dbfs/model/GetServiceLinkedRoleResult.h
+	include/alibabacloud/dbfs/model/ListAutoSnapshotPoliciesRequest.h
+	include/alibabacloud/dbfs/model/ListAutoSnapshotPoliciesResult.h
+	include/alibabacloud/dbfs/model/ListAutoSnapshotPolicyAppliedDbfsRequest.h
+	include/alibabacloud/dbfs/model/ListAutoSnapshotPolicyAppliedDbfsResult.h
+	include/alibabacloud/dbfs/model/ListAutoSnapshotPolicyUnappliedDbfsRequest.h
+	include/alibabacloud/dbfs/model/ListAutoSnapshotPolicyUnappliedDbfsResult.h
 	include/alibabacloud/dbfs/model/ListDbfsRequest.h
 	include/alibabacloud/dbfs/model/ListDbfsResult.h
 	include/alibabacloud/dbfs/model/ListDbfsAttachableEcsInstancesRequest.h
@@ -63,6 +75,10 @@ set(dbfs_public_header_model
 	include/alibabacloud/dbfs/model/ListTagKeysResult.h
 	include/alibabacloud/dbfs/model/ListTagValuesRequest.h
 	include/alibabacloud/dbfs/model/ListTagValuesResult.h
+	include/alibabacloud/dbfs/model/ModifyAutoSnapshotPolicyRequest.h
+	include/alibabacloud/dbfs/model/ModifyAutoSnapshotPolicyResult.h
+	include/alibabacloud/dbfs/model/ModifySnapshotAttributeRequest.h
+	include/alibabacloud/dbfs/model/ModifySnapshotAttributeResult.h
 	include/alibabacloud/dbfs/model/RenameDbfsRequest.h
 	include/alibabacloud/dbfs/model/RenameDbfsResult.h
 	include/alibabacloud/dbfs/model/ResizeDbfsRequest.h
@@ -76,6 +92,8 @@ set(dbfs_src
 	src/DBFSClient.cc
 	src/model/AddTagsBatchRequest.cc
 	src/model/AddTagsBatchResult.cc
+	src/model/ApplyAutoSnapshotPolicyRequest.cc
+	src/model/ApplyAutoSnapshotPolicyResult.cc
 	src/model/AttachDbfsRequest.cc
 	src/model/AttachDbfsResult.cc
 	src/model/CancelAutoSnapshotPolicyRequest.cc
@@ -88,6 +106,8 @@ set(dbfs_src
 	src/model/CreateServiceLinkedRoleResult.cc
 	src/model/CreateSnapshotRequest.cc
 	src/model/CreateSnapshotResult.cc
+	src/model/DeleteAutoSnapshotPolicyRequest.cc
+	src/model/DeleteAutoSnapshotPolicyResult.cc
 	src/model/DeleteDbfsRequest.cc
 	src/model/DeleteDbfsResult.cc
 	src/model/DeleteSnapshotRequest.cc
@@ -100,10 +120,18 @@ set(dbfs_src
 	src/model/DescribeInstanceTypesResult.cc
 	src/model/DetachDbfsRequest.cc
 	src/model/DetachDbfsResult.cc
+	src/model/GetAutoSnapshotPolicyRequest.cc
+	src/model/GetAutoSnapshotPolicyResult.cc
 	src/model/GetDbfsRequest.cc
 	src/model/GetDbfsResult.cc
 	src/model/GetServiceLinkedRoleRequest.cc
 	src/model/GetServiceLinkedRoleResult.cc
+	src/model/ListAutoSnapshotPoliciesRequest.cc
+	src/model/ListAutoSnapshotPoliciesResult.cc
+	src/model/ListAutoSnapshotPolicyAppliedDbfsRequest.cc
+	src/model/ListAutoSnapshotPolicyAppliedDbfsResult.cc
+	src/model/ListAutoSnapshotPolicyUnappliedDbfsRequest.cc
+	src/model/ListAutoSnapshotPolicyUnappliedDbfsResult.cc
 	src/model/ListDbfsRequest.cc
 	src/model/ListDbfsResult.cc
 	src/model/ListDbfsAttachableEcsInstancesRequest.cc
@@ -116,6 +144,10 @@ set(dbfs_src
 	src/model/ListTagKeysResult.cc
 	src/model/ListTagValuesRequest.cc
 	src/model/ListTagValuesResult.cc
+	src/model/ModifyAutoSnapshotPolicyRequest.cc
+	src/model/ModifyAutoSnapshotPolicyResult.cc
+	src/model/ModifySnapshotAttributeRequest.cc
+	src/model/ModifySnapshotAttributeResult.cc
 	src/model/RenameDbfsRequest.cc
 	src/model/RenameDbfsResult.cc
 	src/model/ResizeDbfsRequest.cc

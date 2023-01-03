@@ -87,6 +87,42 @@ DBFSClient::AddTagsBatchOutcomeCallable DBFSClient::addTagsBatchCallable(const A
 	return task->get_future();
 }
 
+DBFSClient::ApplyAutoSnapshotPolicyOutcome DBFSClient::applyAutoSnapshotPolicy(const ApplyAutoSnapshotPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ApplyAutoSnapshotPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ApplyAutoSnapshotPolicyOutcome(ApplyAutoSnapshotPolicyResult(outcome.result()));
+	else
+		return ApplyAutoSnapshotPolicyOutcome(outcome.error());
+}
+
+void DBFSClient::applyAutoSnapshotPolicyAsync(const ApplyAutoSnapshotPolicyRequest& request, const ApplyAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, applyAutoSnapshotPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::ApplyAutoSnapshotPolicyOutcomeCallable DBFSClient::applyAutoSnapshotPolicyCallable(const ApplyAutoSnapshotPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ApplyAutoSnapshotPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->applyAutoSnapshotPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DBFSClient::AttachDbfsOutcome DBFSClient::attachDbfs(const AttachDbfsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +333,42 @@ DBFSClient::CreateSnapshotOutcomeCallable DBFSClient::createSnapshotCallable(con
 			[this, request]()
 			{
 			return this->createSnapshot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DBFSClient::DeleteAutoSnapshotPolicyOutcome DBFSClient::deleteAutoSnapshotPolicy(const DeleteAutoSnapshotPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAutoSnapshotPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAutoSnapshotPolicyOutcome(DeleteAutoSnapshotPolicyResult(outcome.result()));
+	else
+		return DeleteAutoSnapshotPolicyOutcome(outcome.error());
+}
+
+void DBFSClient::deleteAutoSnapshotPolicyAsync(const DeleteAutoSnapshotPolicyRequest& request, const DeleteAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAutoSnapshotPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::DeleteAutoSnapshotPolicyOutcomeCallable DBFSClient::deleteAutoSnapshotPolicyCallable(const DeleteAutoSnapshotPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAutoSnapshotPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAutoSnapshotPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -519,6 +591,42 @@ DBFSClient::DetachDbfsOutcomeCallable DBFSClient::detachDbfsCallable(const Detac
 	return task->get_future();
 }
 
+DBFSClient::GetAutoSnapshotPolicyOutcome DBFSClient::getAutoSnapshotPolicy(const GetAutoSnapshotPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAutoSnapshotPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAutoSnapshotPolicyOutcome(GetAutoSnapshotPolicyResult(outcome.result()));
+	else
+		return GetAutoSnapshotPolicyOutcome(outcome.error());
+}
+
+void DBFSClient::getAutoSnapshotPolicyAsync(const GetAutoSnapshotPolicyRequest& request, const GetAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAutoSnapshotPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::GetAutoSnapshotPolicyOutcomeCallable DBFSClient::getAutoSnapshotPolicyCallable(const GetAutoSnapshotPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAutoSnapshotPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->getAutoSnapshotPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DBFSClient::GetDbfsOutcome DBFSClient::getDbfs(const GetDbfsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -585,6 +693,114 @@ DBFSClient::GetServiceLinkedRoleOutcomeCallable DBFSClient::getServiceLinkedRole
 			[this, request]()
 			{
 			return this->getServiceLinkedRole(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DBFSClient::ListAutoSnapshotPoliciesOutcome DBFSClient::listAutoSnapshotPolicies(const ListAutoSnapshotPoliciesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAutoSnapshotPoliciesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAutoSnapshotPoliciesOutcome(ListAutoSnapshotPoliciesResult(outcome.result()));
+	else
+		return ListAutoSnapshotPoliciesOutcome(outcome.error());
+}
+
+void DBFSClient::listAutoSnapshotPoliciesAsync(const ListAutoSnapshotPoliciesRequest& request, const ListAutoSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAutoSnapshotPolicies(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::ListAutoSnapshotPoliciesOutcomeCallable DBFSClient::listAutoSnapshotPoliciesCallable(const ListAutoSnapshotPoliciesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAutoSnapshotPoliciesOutcome()>>(
+			[this, request]()
+			{
+			return this->listAutoSnapshotPolicies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DBFSClient::ListAutoSnapshotPolicyAppliedDbfsOutcome DBFSClient::listAutoSnapshotPolicyAppliedDbfs(const ListAutoSnapshotPolicyAppliedDbfsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAutoSnapshotPolicyAppliedDbfsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAutoSnapshotPolicyAppliedDbfsOutcome(ListAutoSnapshotPolicyAppliedDbfsResult(outcome.result()));
+	else
+		return ListAutoSnapshotPolicyAppliedDbfsOutcome(outcome.error());
+}
+
+void DBFSClient::listAutoSnapshotPolicyAppliedDbfsAsync(const ListAutoSnapshotPolicyAppliedDbfsRequest& request, const ListAutoSnapshotPolicyAppliedDbfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAutoSnapshotPolicyAppliedDbfs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::ListAutoSnapshotPolicyAppliedDbfsOutcomeCallable DBFSClient::listAutoSnapshotPolicyAppliedDbfsCallable(const ListAutoSnapshotPolicyAppliedDbfsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAutoSnapshotPolicyAppliedDbfsOutcome()>>(
+			[this, request]()
+			{
+			return this->listAutoSnapshotPolicyAppliedDbfs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DBFSClient::ListAutoSnapshotPolicyUnappliedDbfsOutcome DBFSClient::listAutoSnapshotPolicyUnappliedDbfs(const ListAutoSnapshotPolicyUnappliedDbfsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAutoSnapshotPolicyUnappliedDbfsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAutoSnapshotPolicyUnappliedDbfsOutcome(ListAutoSnapshotPolicyUnappliedDbfsResult(outcome.result()));
+	else
+		return ListAutoSnapshotPolicyUnappliedDbfsOutcome(outcome.error());
+}
+
+void DBFSClient::listAutoSnapshotPolicyUnappliedDbfsAsync(const ListAutoSnapshotPolicyUnappliedDbfsRequest& request, const ListAutoSnapshotPolicyUnappliedDbfsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAutoSnapshotPolicyUnappliedDbfs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::ListAutoSnapshotPolicyUnappliedDbfsOutcomeCallable DBFSClient::listAutoSnapshotPolicyUnappliedDbfsCallable(const ListAutoSnapshotPolicyUnappliedDbfsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAutoSnapshotPolicyUnappliedDbfsOutcome()>>(
+			[this, request]()
+			{
+			return this->listAutoSnapshotPolicyUnappliedDbfs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -801,6 +1017,78 @@ DBFSClient::ListTagValuesOutcomeCallable DBFSClient::listTagValuesCallable(const
 			[this, request]()
 			{
 			return this->listTagValues(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DBFSClient::ModifyAutoSnapshotPolicyOutcome DBFSClient::modifyAutoSnapshotPolicy(const ModifyAutoSnapshotPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAutoSnapshotPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAutoSnapshotPolicyOutcome(ModifyAutoSnapshotPolicyResult(outcome.result()));
+	else
+		return ModifyAutoSnapshotPolicyOutcome(outcome.error());
+}
+
+void DBFSClient::modifyAutoSnapshotPolicyAsync(const ModifyAutoSnapshotPolicyRequest& request, const ModifyAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAutoSnapshotPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::ModifyAutoSnapshotPolicyOutcomeCallable DBFSClient::modifyAutoSnapshotPolicyCallable(const ModifyAutoSnapshotPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAutoSnapshotPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAutoSnapshotPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DBFSClient::ModifySnapshotAttributeOutcome DBFSClient::modifySnapshotAttribute(const ModifySnapshotAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifySnapshotAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifySnapshotAttributeOutcome(ModifySnapshotAttributeResult(outcome.result()));
+	else
+		return ModifySnapshotAttributeOutcome(outcome.error());
+}
+
+void DBFSClient::modifySnapshotAttributeAsync(const ModifySnapshotAttributeRequest& request, const ModifySnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifySnapshotAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::ModifySnapshotAttributeOutcomeCallable DBFSClient::modifySnapshotAttributeCallable(const ModifySnapshotAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifySnapshotAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifySnapshotAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
