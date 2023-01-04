@@ -158,9 +158,11 @@ void SetAutoScaleConfigRequest::setQueues(const std::vector<SetAutoScaleConfigRe
     std::string instanceTypesObjStr = queuesObjStr + ".InstanceTypes" + "." + std::to_string(dep2 + 1);
       setParameter(instanceTypesObjStr + ".VSwitchId", instanceTypesObj.vSwitchId);
       setParameter(instanceTypesObjStr + ".SpotStrategy", instanceTypesObj.spotStrategy);
+      setParameter(instanceTypesObjStr + ".SpotInterruptionBehavior", instanceTypesObj.spotInterruptionBehavior);
       setParameter(instanceTypesObjStr + ".ZoneId", instanceTypesObj.zoneId);
       setParameter(instanceTypesObjStr + ".InstanceType", instanceTypesObj.instanceType);
       setParameter(instanceTypesObjStr + ".SpotPriceLimit", std::to_string(instanceTypesObj.spotPriceLimit));
+      setParameter(instanceTypesObjStr + ".SpotDuration", std::to_string(instanceTypesObj.spotDuration));
     }
     setParameter(queuesObjStr + ".EnableAutoGrow", queuesObj.enableAutoGrow ? "true" : "false");
     setParameter(queuesObjStr + ".HostNameSuffix", queuesObj.hostNameSuffix);

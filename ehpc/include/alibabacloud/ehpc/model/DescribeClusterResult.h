@@ -81,11 +81,13 @@ namespace AlibabaCloud
 					std::string volumeProtocol;
 					std::string imageOwnerAlias;
 					std::string description;
+					std::string ramNodeTypes;
 					std::string clientVersion;
 					std::vector<OnPremiseInfoItem> onPremiseInfo;
 					std::string name;
 					std::string volumeId;
 					std::string volumeType;
+					std::string ramRoleName;
 					std::string deployMode;
 					std::string imageId;
 					std::string status;

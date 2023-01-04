@@ -66,6 +66,8 @@ public:
 	void setInstanceType(const std::string &instanceType);
 	std::string getHostNamePrefix() const;
 	void setHostNamePrefix(const std::string &hostNamePrefix);
+	std::string getComputeSpotInterruptionBehavior() const;
+	void setComputeSpotInterruptionBehavior(const std::string &computeSpotInterruptionBehavior);
 	std::string getComputeSpotPriceLimit() const;
 	void setComputeSpotPriceLimit(const std::string &computeSpotPriceLimit);
 	int getAutoRenewPeriod() const;
@@ -84,6 +86,8 @@ public:
 	void setSync(bool sync);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
+	int getComputeSpotDuration() const;
+	void setComputeSpotDuration(int computeSpotDuration);
 	std::string getPeriodUnit() const;
 	void setPeriodUnit(const std::string &periodUnit);
 	bool getComputeEnableHt() const;
@@ -116,6 +120,7 @@ private:
 	int systemDiskSize_;
 	std::string instanceType_;
 	std::string hostNamePrefix_;
+	std::string computeSpotInterruptionBehavior_;
 	std::string computeSpotPriceLimit_;
 	int autoRenewPeriod_;
 	int period_;
@@ -125,6 +130,7 @@ private:
 	std::string hostNameSuffix_;
 	bool sync_;
 	std::string vSwitchId_;
+	int computeSpotDuration_;
 	std::string periodUnit_;
 	bool computeEnableHt_;
 	std::string autoRenew_;

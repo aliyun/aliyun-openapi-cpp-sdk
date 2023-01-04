@@ -93,6 +93,10 @@ void GetAutoScaleConfigResult::parse(const std::string &payload)
 				instanceTypesObject.instanceType = valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["InstanceType"].asString();
 			if(!valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["SpotStrategy"].isNull())
 				instanceTypesObject.spotStrategy = valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["SpotStrategy"].asString();
+			if(!valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["SpotDuration"].isNull())
+				instanceTypesObject.spotDuration = std::stoi(valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["SpotDuration"].asString());
+			if(!valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["SpotInterruptionBehavior"].isNull())
+				instanceTypesObject.spotInterruptionBehavior = valueQueuesQueueInfoInstanceTypesInstanceTypeInfo["SpotInterruptionBehavior"].asString();
 			queuesObject.instanceTypes.push_back(instanceTypesObject);
 		}
 		auto allDataDisksNode = valueQueuesQueueInfo["DataDisks"]["DataDisksInfo"];

@@ -160,6 +160,15 @@ void AddNodesRequest::setHostNamePrefix(const std::string &hostNamePrefix) {
   setParameter(std::string("HostNamePrefix"), hostNamePrefix);
 }
 
+std::string AddNodesRequest::getComputeSpotInterruptionBehavior() const {
+  return computeSpotInterruptionBehavior_;
+}
+
+void AddNodesRequest::setComputeSpotInterruptionBehavior(const std::string &computeSpotInterruptionBehavior) {
+  computeSpotInterruptionBehavior_ = computeSpotInterruptionBehavior;
+  setParameter(std::string("ComputeSpotInterruptionBehavior"), computeSpotInterruptionBehavior);
+}
+
 std::string AddNodesRequest::getComputeSpotPriceLimit() const {
   return computeSpotPriceLimit_;
 }
@@ -239,6 +248,15 @@ std::string AddNodesRequest::getVSwitchId() const {
 void AddNodesRequest::setVSwitchId(const std::string &vSwitchId) {
   vSwitchId_ = vSwitchId;
   setParameter(std::string("VSwitchId"), vSwitchId);
+}
+
+int AddNodesRequest::getComputeSpotDuration() const {
+  return computeSpotDuration_;
+}
+
+void AddNodesRequest::setComputeSpotDuration(int computeSpotDuration) {
+  computeSpotDuration_ = computeSpotDuration;
+  setParameter(std::string("ComputeSpotDuration"), std::to_string(computeSpotDuration));
 }
 
 std::string AddNodesRequest::getPeriodUnit() const {

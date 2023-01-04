@@ -43,6 +43,15 @@ void ModifyClusterAttributesRequest::setDescription(const std::string &descripti
   setParameter(std::string("Description"), description);
 }
 
+std::string ModifyClusterAttributesRequest::getRamRoleName() const {
+  return ramRoleName_;
+}
+
+void ModifyClusterAttributesRequest::setRamRoleName(const std::string &ramRoleName) {
+  ramRoleName_ = ramRoleName;
+  setParameter(std::string("RamRoleName"), ramRoleName);
+}
+
 std::string ModifyClusterAttributesRequest::getClusterId() const {
   return clusterId_;
 }
@@ -68,6 +77,23 @@ std::string ModifyClusterAttributesRequest::getImageOwnerAlias() const {
 void ModifyClusterAttributesRequest::setImageOwnerAlias(const std::string &imageOwnerAlias) {
   imageOwnerAlias_ = imageOwnerAlias;
   setParameter(std::string("ImageOwnerAlias"), imageOwnerAlias);
+}
+
+std::vector<std::string> ModifyClusterAttributesRequest::getRamNodeTypes() const {
+  return ramNodeTypes_;
+}
+
+void ModifyClusterAttributesRequest::setRamNodeTypes(const std::vector<std::string> &ramNodeTypes) {
+  ramNodeTypes_ = ramNodeTypes;
+}
+
+std::string ModifyClusterAttributesRequest::getPassword() const {
+  return password_;
+}
+
+void ModifyClusterAttributesRequest::setPassword(const std::string &password) {
+  password_ = password;
+  setParameter(std::string("Password"), password);
 }
 
 std::string ModifyClusterAttributesRequest::getName() const {

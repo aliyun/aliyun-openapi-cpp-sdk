@@ -34,9 +34,11 @@ public:
 		struct InstanceTypes {
 			std::string vSwitchId;
 			std::string spotStrategy;
+			std::string spotInterruptionBehavior;
 			std::string zoneId;
 			std::string instanceType;
 			float spotPriceLimit;
+			int spotDuration;
 		};
 		std::vector<InstanceTypes> instanceTypes;
 		bool enableAutoGrow;

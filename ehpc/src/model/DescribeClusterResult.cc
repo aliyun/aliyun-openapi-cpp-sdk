@@ -96,6 +96,10 @@ void DescribeClusterResult::parse(const std::string &payload)
 		clusterInfo_.id = clusterInfoNode["Id"].asString();
 	if(!clusterInfoNode["ClientVersion"].isNull())
 		clusterInfo_.clientVersion = clusterInfoNode["ClientVersion"].asString();
+	if(!clusterInfoNode["RamRoleName"].isNull())
+		clusterInfo_.ramRoleName = clusterInfoNode["RamRoleName"].asString();
+	if(!clusterInfoNode["RamNodeTypes"].isNull())
+		clusterInfo_.ramNodeTypes = clusterInfoNode["RamNodeTypes"].asString();
 	auto allApplicationsNode = clusterInfoNode["Applications"]["ApplicationInfo"];
 	for (auto clusterInfoNodeApplicationsApplicationInfo : allApplicationsNode)
 	{
