@@ -34,6 +34,15 @@ void UpdateLiveStreamMonitorRequest::setMonitorId(const std::string &monitorId) 
   setParameter(std::string("MonitorId"), monitorId);
 }
 
+std::string UpdateLiveStreamMonitorRequest::getMonitorConfig() const {
+  return monitorConfig_;
+}
+
+void UpdateLiveStreamMonitorRequest::setMonitorConfig(const std::string &monitorConfig) {
+  monitorConfig_ = monitorConfig;
+  setParameter(std::string("MonitorConfig"), monitorConfig);
+}
+
 std::string UpdateLiveStreamMonitorRequest::getMonitorName() const {
   return monitorName_;
 }

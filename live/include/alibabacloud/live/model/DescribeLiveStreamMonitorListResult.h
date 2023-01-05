@@ -69,6 +69,7 @@ namespace AlibabaCloud
 					std::string region;
 					std::string domain;
 					std::string monitorId;
+					std::string monitorConfig;
 					std::string stopTime;
 				};
 

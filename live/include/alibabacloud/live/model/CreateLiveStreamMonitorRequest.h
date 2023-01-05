@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT CreateLiveStreamMonitorRequest : public RpcServic
 public:
 	CreateLiveStreamMonitorRequest();
 	~CreateLiveStreamMonitorRequest();
+	std::string getMonitorConfig() const;
+	void setMonitorConfig(const std::string &monitorConfig);
 	std::string getMonitorName() const;
 	void setMonitorName(const std::string &monitorName);
 	std::string getStream() const;
@@ -46,6 +48,7 @@ public:
 	void setDomain(const std::string &domain);
 
 private:
+	std::string monitorConfig_;
 	std::string monitorName_;
 	std::string stream_;
 	std::string outputTemplate_;

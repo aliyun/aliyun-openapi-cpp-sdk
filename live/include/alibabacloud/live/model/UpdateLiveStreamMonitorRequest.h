@@ -32,6 +32,8 @@ public:
 	~UpdateLiveStreamMonitorRequest();
 	std::string getMonitorId() const;
 	void setMonitorId(const std::string &monitorId);
+	std::string getMonitorConfig() const;
+	void setMonitorConfig(const std::string &monitorConfig);
 	std::string getMonitorName() const;
 	void setMonitorName(const std::string &monitorName);
 	std::string getStream() const;
@@ -49,6 +51,7 @@ public:
 
 private:
 	std::string monitorId_;
+	std::string monitorConfig_;
 	std::string monitorName_;
 	std::string stream_;
 	std::string outputTemplate_;

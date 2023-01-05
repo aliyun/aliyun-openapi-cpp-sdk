@@ -45,6 +45,8 @@ void DescribeLiveStreamMonitorListResult::parse(const std::string &payload)
 		LiveStreamMonitorInfo liveStreamMonitorListObject;
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["Status"].isNull())
 			liveStreamMonitorListObject.status = std::stoi(valueLiveStreamMonitorListLiveStreamMonitorInfo["Status"].asString());
+		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorConfig"].isNull())
+			liveStreamMonitorListObject.monitorConfig = valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorConfig"].asString();
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["StartTime"].isNull())
 			liveStreamMonitorListObject.startTime = valueLiveStreamMonitorListLiveStreamMonitorInfo["StartTime"].asString();
 		if(!valueLiveStreamMonitorListLiveStreamMonitorInfo["MonitorId"].isNull())

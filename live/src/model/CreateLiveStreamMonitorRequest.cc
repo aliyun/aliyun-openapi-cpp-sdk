@@ -25,6 +25,15 @@ CreateLiveStreamMonitorRequest::CreateLiveStreamMonitorRequest()
 
 CreateLiveStreamMonitorRequest::~CreateLiveStreamMonitorRequest() {}
 
+std::string CreateLiveStreamMonitorRequest::getMonitorConfig() const {
+  return monitorConfig_;
+}
+
+void CreateLiveStreamMonitorRequest::setMonitorConfig(const std::string &monitorConfig) {
+  monitorConfig_ = monitorConfig;
+  setParameter(std::string("MonitorConfig"), monitorConfig);
+}
+
 std::string CreateLiveStreamMonitorRequest::getMonitorName() const {
   return monitorName_;
 }
