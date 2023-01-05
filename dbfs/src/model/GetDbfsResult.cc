@@ -119,8 +119,8 @@ void GetDbfsResult::parse(const std::string &payload)
 		dBFSInfo_.snapshotInfo.snapshotCount = std::stoi(snapshotInfoNode["SnapshotCount"].asString());
 	if(!snapshotInfoNode["LinkId"].isNull())
 		dBFSInfo_.snapshotInfo.linkId = snapshotInfoNode["LinkId"].asString();
-	if(!snapshotInfoNode["totalSize"].isNull())
-		dBFSInfo_.snapshotInfo.totalSize = std::stol(snapshotInfoNode["totalSize"].asString());
+	if(!snapshotInfoNode["TotalSize"].isNull())
+		dBFSInfo_.snapshotInfo.totalSize = std::stol(snapshotInfoNode["TotalSize"].asString());
 	if(!snapshotInfoNode["PolicyId"].isNull())
 		dBFSInfo_.snapshotInfo.policyId = snapshotInfoNode["PolicyId"].asString();
 

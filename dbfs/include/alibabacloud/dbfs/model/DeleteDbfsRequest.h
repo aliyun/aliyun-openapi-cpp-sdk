@@ -34,10 +34,13 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getFsId() const;
 	void setFsId(const std::string &fsId);
+	bool getForce() const;
+	void setForce(bool force);
 
 private:
 	std::string regionId_;
 	std::string fsId_;
+	bool force_;
 };
 } // namespace Model
 } // namespace DBFS

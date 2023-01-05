@@ -43,3 +43,12 @@ void DeleteDbfsRequest::setFsId(const std::string &fsId) {
   setParameter(std::string("FsId"), fsId);
 }
 
+bool DeleteDbfsRequest::getForce() const {
+  return force_;
+}
+
+void DeleteDbfsRequest::setForce(bool force) {
+  force_ = force;
+  setParameter(std::string("Force"), force ? "true" : "false");
+}
+
