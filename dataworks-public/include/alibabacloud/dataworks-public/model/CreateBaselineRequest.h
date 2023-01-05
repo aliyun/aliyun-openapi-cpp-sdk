@@ -42,24 +42,24 @@ public:
 	void setOvertimeSettings(const std::vector<OvertimeSettings> &overtimeSettings);
 	int getPriority() const;
 	void setPriority(int priority);
-	std::string getTaskIds() const;
-	void setTaskIds(const std::string &taskIds);
 	std::string getBaselineType() const;
 	void setBaselineType(const std::string &baselineType);
 	std::string getBaselineName() const;
 	void setBaselineName(const std::string &baselineName);
 	long getProjectId() const;
 	void setProjectId(long projectId);
+	std::string getNodeIds() const;
+	void setNodeIds(const std::string &nodeIds);
 
 private:
 	std::string owner_;
 	int alertMarginThreshold_;
 	std::vector<OvertimeSettings> overtimeSettings_;
 	int priority_;
-	std::string taskIds_;
 	std::string baselineType_;
 	std::string baselineName_;
 	long projectId_;
+	std::string nodeIds_;
 };
 } // namespace Model
 } // namespace Dataworks_public

@@ -66,15 +66,6 @@ void CreateBaselineRequest::setPriority(int priority) {
   setBodyParameter(std::string("Priority"), std::to_string(priority));
 }
 
-std::string CreateBaselineRequest::getTaskIds() const {
-  return taskIds_;
-}
-
-void CreateBaselineRequest::setTaskIds(const std::string &taskIds) {
-  taskIds_ = taskIds;
-  setBodyParameter(std::string("TaskIds"), taskIds);
-}
-
 std::string CreateBaselineRequest::getBaselineType() const {
   return baselineType_;
 }
@@ -100,5 +91,14 @@ long CreateBaselineRequest::getProjectId() const {
 void CreateBaselineRequest::setProjectId(long projectId) {
   projectId_ = projectId;
   setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+
+std::string CreateBaselineRequest::getNodeIds() const {
+  return nodeIds_;
+}
+
+void CreateBaselineRequest::setNodeIds(const std::string &nodeIds) {
+  nodeIds_ = nodeIds;
+  setBodyParameter(std::string("NodeIds"), nodeIds);
 }
 

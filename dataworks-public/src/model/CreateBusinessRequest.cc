@@ -34,15 +34,6 @@ void CreateBusinessRequest::setOwner(const std::string &owner) {
   setBodyParameter(std::string("Owner"), owner);
 }
 
-std::string CreateBusinessRequest::getBusinessName() const {
-  return businessName_;
-}
-
-void CreateBusinessRequest::setBusinessName(const std::string &businessName) {
-  businessName_ = businessName;
-  setBodyParameter(std::string("BusinessName"), businessName);
-}
-
 std::string CreateBusinessRequest::getDescription() const {
   return description_;
 }
@@ -50,6 +41,24 @@ std::string CreateBusinessRequest::getDescription() const {
 void CreateBusinessRequest::setDescription(const std::string &description) {
   description_ = description;
   setBodyParameter(std::string("Description"), description);
+}
+
+std::string CreateBusinessRequest::getProjectIdentifier() const {
+  return projectIdentifier_;
+}
+
+void CreateBusinessRequest::setProjectIdentifier(const std::string &projectIdentifier) {
+  projectIdentifier_ = projectIdentifier;
+  setBodyParameter(std::string("ProjectIdentifier"), projectIdentifier);
+}
+
+std::string CreateBusinessRequest::getBusinessName() const {
+  return businessName_;
+}
+
+void CreateBusinessRequest::setBusinessName(const std::string &businessName) {
+  businessName_ = businessName;
+  setBodyParameter(std::string("BusinessName"), businessName);
 }
 
 long CreateBusinessRequest::getProjectId() const {
@@ -68,14 +77,5 @@ std::string CreateBusinessRequest::getUseType() const {
 void CreateBusinessRequest::setUseType(const std::string &useType) {
   useType_ = useType;
   setBodyParameter(std::string("UseType"), useType);
-}
-
-std::string CreateBusinessRequest::getProjectIdentifier() const {
-  return projectIdentifier_;
-}
-
-void CreateBusinessRequest::setProjectIdentifier(const std::string &projectIdentifier) {
-  projectIdentifier_ = projectIdentifier;
-  setBodyParameter(std::string("ProjectIdentifier"), projectIdentifier);
 }
 

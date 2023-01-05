@@ -43,15 +43,6 @@ void UpdateBusinessRequest::setBusinessId(long businessId) {
   setBodyParameter(std::string("BusinessId"), std::to_string(businessId));
 }
 
-std::string UpdateBusinessRequest::getBusinessName() const {
-  return businessName_;
-}
-
-void UpdateBusinessRequest::setBusinessName(const std::string &businessName) {
-  businessName_ = businessName;
-  setBodyParameter(std::string("BusinessName"), businessName);
-}
-
 std::string UpdateBusinessRequest::getDescription() const {
   return description_;
 }
@@ -61,15 +52,6 @@ void UpdateBusinessRequest::setDescription(const std::string &description) {
   setBodyParameter(std::string("Description"), description);
 }
 
-long UpdateBusinessRequest::getProjectId() const {
-  return projectId_;
-}
-
-void UpdateBusinessRequest::setProjectId(long projectId) {
-  projectId_ = projectId;
-  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
-}
-
 std::string UpdateBusinessRequest::getProjectIdentifier() const {
   return projectIdentifier_;
 }
@@ -77,5 +59,23 @@ std::string UpdateBusinessRequest::getProjectIdentifier() const {
 void UpdateBusinessRequest::setProjectIdentifier(const std::string &projectIdentifier) {
   projectIdentifier_ = projectIdentifier;
   setBodyParameter(std::string("ProjectIdentifier"), projectIdentifier);
+}
+
+std::string UpdateBusinessRequest::getBusinessName() const {
+  return businessName_;
+}
+
+void UpdateBusinessRequest::setBusinessName(const std::string &businessName) {
+  businessName_ = businessName;
+  setBodyParameter(std::string("BusinessName"), businessName);
+}
+
+long UpdateBusinessRequest::getProjectId() const {
+  return projectId_;
+}
+
+void UpdateBusinessRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 

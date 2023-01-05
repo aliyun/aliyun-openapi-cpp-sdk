@@ -7035,6 +7035,42 @@ Dataworks_publicClient::ListTopicsOutcomeCallable Dataworks_publicClient::listTo
 	return task->get_future();
 }
 
+Dataworks_publicClient::MountDirectoryOutcome Dataworks_publicClient::mountDirectory(const MountDirectoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MountDirectoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MountDirectoryOutcome(MountDirectoryResult(outcome.result()));
+	else
+		return MountDirectoryOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::mountDirectoryAsync(const MountDirectoryRequest& request, const MountDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, mountDirectory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::MountDirectoryOutcomeCallable Dataworks_publicClient::mountDirectoryCallable(const MountDirectoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MountDirectoryOutcome()>>(
+			[this, request]()
+			{
+			return this->mountDirectory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::OfflineNodeOutcome Dataworks_publicClient::offlineNode(const OfflineNodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -8073,6 +8109,42 @@ Dataworks_publicClient::TopTenErrorTimesInstanceOutcomeCallable Dataworks_public
 			[this, request]()
 			{
 			return this->topTenErrorTimesInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::UmountDirectoryOutcome Dataworks_publicClient::umountDirectory(const UmountDirectoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UmountDirectoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UmountDirectoryOutcome(UmountDirectoryResult(outcome.result()));
+	else
+		return UmountDirectoryOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::umountDirectoryAsync(const UmountDirectoryRequest& request, const UmountDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, umountDirectory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::UmountDirectoryOutcomeCallable Dataworks_publicClient::umountDirectoryCallable(const UmountDirectoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UmountDirectoryOutcome()>>(
+			[this, request]()
+			{
+			return this->umountDirectory(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -34,22 +34,22 @@ public:
 	void setOwner(const std::string &owner);
 	long getBusinessId() const;
 	void setBusinessId(long businessId);
-	std::string getBusinessName() const;
-	void setBusinessName(const std::string &businessName);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
-	long getProjectId() const;
-	void setProjectId(long projectId);
 	std::string getProjectIdentifier() const;
 	void setProjectIdentifier(const std::string &projectIdentifier);
+	std::string getBusinessName() const;
+	void setBusinessName(const std::string &businessName);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
 	std::string owner_;
 	long businessId_;
-	std::string businessName_;
 	std::string description_;
-	long projectId_;
 	std::string projectIdentifier_;
+	std::string businessName_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

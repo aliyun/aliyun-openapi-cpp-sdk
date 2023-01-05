@@ -409,6 +409,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListTableThemeResult.h
 	include/alibabacloud/dataworks-public/model/ListTopicsRequest.h
 	include/alibabacloud/dataworks-public/model/ListTopicsResult.h
+	include/alibabacloud/dataworks-public/model/MountDirectoryRequest.h
+	include/alibabacloud/dataworks-public/model/MountDirectoryResult.h
 	include/alibabacloud/dataworks-public/model/OfflineNodeRequest.h
 	include/alibabacloud/dataworks-public/model/OfflineNodeResult.h
 	include/alibabacloud/dataworks-public/model/PublishDataServiceApiRequest.h
@@ -467,6 +469,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/TopTenElapsedTimeInstanceResult.h
 	include/alibabacloud/dataworks-public/model/TopTenErrorTimesInstanceRequest.h
 	include/alibabacloud/dataworks-public/model/TopTenErrorTimesInstanceResult.h
+	include/alibabacloud/dataworks-public/model/UmountDirectoryRequest.h
+	include/alibabacloud/dataworks-public/model/UmountDirectoryResult.h
 	include/alibabacloud/dataworks-public/model/UpdateBaselineRequest.h
 	include/alibabacloud/dataworks-public/model/UpdateBaselineResult.h
 	include/alibabacloud/dataworks-public/model/UpdateBusinessRequest.h
@@ -910,6 +914,8 @@ set(dataworks-public_src
 	src/model/ListTableThemeResult.cc
 	src/model/ListTopicsRequest.cc
 	src/model/ListTopicsResult.cc
+	src/model/MountDirectoryRequest.cc
+	src/model/MountDirectoryResult.cc
 	src/model/OfflineNodeRequest.cc
 	src/model/OfflineNodeResult.cc
 	src/model/PublishDataServiceApiRequest.cc
@@ -968,6 +974,8 @@ set(dataworks-public_src
 	src/model/TopTenElapsedTimeInstanceResult.cc
 	src/model/TopTenErrorTimesInstanceRequest.cc
 	src/model/TopTenErrorTimesInstanceResult.cc
+	src/model/UmountDirectoryRequest.cc
+	src/model/UmountDirectoryResult.cc
 	src/model/UpdateBaselineRequest.cc
 	src/model/UpdateBaselineResult.cc
 	src/model/UpdateBusinessRequest.cc

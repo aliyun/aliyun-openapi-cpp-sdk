@@ -34,6 +34,15 @@ void UpdateBaselineRequest::setOwner(const std::string &owner) {
   setBodyParameter(std::string("Owner"), owner);
 }
 
+std::string UpdateBaselineRequest::getRemoveNodeIds() const {
+  return removeNodeIds_;
+}
+
+void UpdateBaselineRequest::setRemoveNodeIds(const std::string &removeNodeIds) {
+  removeNodeIds_ = removeNodeIds;
+  setBodyParameter(std::string("RemoveNodeIds"), removeNodeIds);
+}
+
 int UpdateBaselineRequest::getAlertMarginThreshold() const {
   return alertMarginThreshold_;
 }
@@ -41,15 +50,6 @@ int UpdateBaselineRequest::getAlertMarginThreshold() const {
 void UpdateBaselineRequest::setAlertMarginThreshold(int alertMarginThreshold) {
   alertMarginThreshold_ = alertMarginThreshold;
   setBodyParameter(std::string("AlertMarginThreshold"), std::to_string(alertMarginThreshold));
-}
-
-std::string UpdateBaselineRequest::getRemoveTaskIds() const {
-  return removeTaskIds_;
-}
-
-void UpdateBaselineRequest::setRemoveTaskIds(const std::string &removeTaskIds) {
-  removeTaskIds_ = removeTaskIds;
-  setBodyParameter(std::string("RemoveTaskIds"), removeTaskIds);
 }
 
 std::vector<UpdateBaselineRequest::OvertimeSettings> UpdateBaselineRequest::getOvertimeSettings() const {
@@ -71,15 +71,6 @@ int UpdateBaselineRequest::getPriority() const {
 void UpdateBaselineRequest::setPriority(int priority) {
   priority_ = priority;
   setBodyParameter(std::string("Priority"), std::to_string(priority));
-}
-
-std::string UpdateBaselineRequest::getTaskIds() const {
-  return taskIds_;
-}
-
-void UpdateBaselineRequest::setTaskIds(const std::string &taskIds) {
-  taskIds_ = taskIds;
-  setBodyParameter(std::string("TaskIds"), taskIds);
 }
 
 long UpdateBaselineRequest::getBaselineId() const {
@@ -165,5 +156,14 @@ long UpdateBaselineRequest::getProjectId() const {
 void UpdateBaselineRequest::setProjectId(long projectId) {
   projectId_ = projectId;
   setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+
+std::string UpdateBaselineRequest::getNodeIds() const {
+  return nodeIds_;
+}
+
+void UpdateBaselineRequest::setNodeIds(const std::string &nodeIds) {
+  nodeIds_ = nodeIds;
+  setBodyParameter(std::string("NodeIds"), nodeIds);
 }
 

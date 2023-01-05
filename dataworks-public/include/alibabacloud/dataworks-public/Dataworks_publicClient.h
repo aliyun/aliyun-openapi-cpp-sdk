@@ -410,6 +410,8 @@
 #include "model/ListTableThemeResult.h"
 #include "model/ListTopicsRequest.h"
 #include "model/ListTopicsResult.h"
+#include "model/MountDirectoryRequest.h"
+#include "model/MountDirectoryResult.h"
 #include "model/OfflineNodeRequest.h"
 #include "model/OfflineNodeResult.h"
 #include "model/PublishDataServiceApiRequest.h"
@@ -468,6 +470,8 @@
 #include "model/TopTenElapsedTimeInstanceResult.h"
 #include "model/TopTenErrorTimesInstanceRequest.h"
 #include "model/TopTenErrorTimesInstanceResult.h"
+#include "model/UmountDirectoryRequest.h"
+#include "model/UmountDirectoryResult.h"
 #include "model/UpdateBaselineRequest.h"
 #include "model/UpdateBaselineResult.h"
 #include "model/UpdateBusinessRequest.h"
@@ -1111,6 +1115,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTopicsResult> ListTopicsOutcome;
 			typedef std::future<ListTopicsOutcome> ListTopicsOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListTopicsRequest&, const ListTopicsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTopicsAsyncHandler;
+			typedef Outcome<Error, Model::MountDirectoryResult> MountDirectoryOutcome;
+			typedef std::future<MountDirectoryOutcome> MountDirectoryOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::MountDirectoryRequest&, const MountDirectoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MountDirectoryAsyncHandler;
 			typedef Outcome<Error, Model::OfflineNodeResult> OfflineNodeOutcome;
 			typedef std::future<OfflineNodeOutcome> OfflineNodeOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::OfflineNodeRequest&, const OfflineNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OfflineNodeAsyncHandler;
@@ -1198,6 +1205,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TopTenErrorTimesInstanceResult> TopTenErrorTimesInstanceOutcome;
 			typedef std::future<TopTenErrorTimesInstanceOutcome> TopTenErrorTimesInstanceOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::TopTenErrorTimesInstanceRequest&, const TopTenErrorTimesInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TopTenErrorTimesInstanceAsyncHandler;
+			typedef Outcome<Error, Model::UmountDirectoryResult> UmountDirectoryOutcome;
+			typedef std::future<UmountDirectoryOutcome> UmountDirectoryOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::UmountDirectoryRequest&, const UmountDirectoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UmountDirectoryAsyncHandler;
 			typedef Outcome<Error, Model::UpdateBaselineResult> UpdateBaselineOutcome;
 			typedef std::future<UpdateBaselineOutcome> UpdateBaselineOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::UpdateBaselineRequest&, const UpdateBaselineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateBaselineAsyncHandler;
@@ -1863,6 +1873,9 @@ namespace AlibabaCloud
 			ListTopicsOutcome listTopics(const Model::ListTopicsRequest &request)const;
 			void listTopicsAsync(const Model::ListTopicsRequest& request, const ListTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTopicsOutcomeCallable listTopicsCallable(const Model::ListTopicsRequest& request) const;
+			MountDirectoryOutcome mountDirectory(const Model::MountDirectoryRequest &request)const;
+			void mountDirectoryAsync(const Model::MountDirectoryRequest& request, const MountDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MountDirectoryOutcomeCallable mountDirectoryCallable(const Model::MountDirectoryRequest& request) const;
 			OfflineNodeOutcome offlineNode(const Model::OfflineNodeRequest &request)const;
 			void offlineNodeAsync(const Model::OfflineNodeRequest& request, const OfflineNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OfflineNodeOutcomeCallable offlineNodeCallable(const Model::OfflineNodeRequest& request) const;
@@ -1950,6 +1963,9 @@ namespace AlibabaCloud
 			TopTenErrorTimesInstanceOutcome topTenErrorTimesInstance(const Model::TopTenErrorTimesInstanceRequest &request)const;
 			void topTenErrorTimesInstanceAsync(const Model::TopTenErrorTimesInstanceRequest& request, const TopTenErrorTimesInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TopTenErrorTimesInstanceOutcomeCallable topTenErrorTimesInstanceCallable(const Model::TopTenErrorTimesInstanceRequest& request) const;
+			UmountDirectoryOutcome umountDirectory(const Model::UmountDirectoryRequest &request)const;
+			void umountDirectoryAsync(const Model::UmountDirectoryRequest& request, const UmountDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UmountDirectoryOutcomeCallable umountDirectoryCallable(const Model::UmountDirectoryRequest& request) const;
 			UpdateBaselineOutcome updateBaseline(const Model::UpdateBaselineRequest &request)const;
 			void updateBaselineAsync(const Model::UpdateBaselineRequest& request, const UpdateBaselineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateBaselineOutcomeCallable updateBaselineCallable(const Model::UpdateBaselineRequest& request) const;

@@ -58,16 +58,14 @@ public:
 	~UpdateBaselineRequest();
 	std::string getOwner() const;
 	void setOwner(const std::string &owner);
+	std::string getRemoveNodeIds() const;
+	void setRemoveNodeIds(const std::string &removeNodeIds);
 	int getAlertMarginThreshold() const;
 	void setAlertMarginThreshold(int alertMarginThreshold);
-	std::string getRemoveTaskIds() const;
-	void setRemoveTaskIds(const std::string &removeTaskIds);
 	std::vector<OvertimeSettings> getOvertimeSettings() const;
 	void setOvertimeSettings(const std::vector<OvertimeSettings> &overtimeSettings);
 	int getPriority() const;
 	void setPriority(int priority);
-	std::string getTaskIds() const;
-	void setTaskIds(const std::string &taskIds);
 	long getBaselineId() const;
 	void setBaselineId(long baselineId);
 	bool getEnabled() const;
@@ -82,14 +80,15 @@ public:
 	void setBaselineName(const std::string &baselineName);
 	long getProjectId() const;
 	void setProjectId(long projectId);
+	std::string getNodeIds() const;
+	void setNodeIds(const std::string &nodeIds);
 
 private:
 	std::string owner_;
+	std::string removeNodeIds_;
 	int alertMarginThreshold_;
-	std::string removeTaskIds_;
 	std::vector<OvertimeSettings> overtimeSettings_;
 	int priority_;
-	std::string taskIds_;
 	long baselineId_;
 	bool enabled_;
 	std::string baselineType_;
@@ -97,6 +96,7 @@ private:
 	std::vector<AlertSettings> alertSettings_;
 	std::string baselineName_;
 	long projectId_;
+	std::string nodeIds_;
 };
 } // namespace Model
 } // namespace Dataworks_public

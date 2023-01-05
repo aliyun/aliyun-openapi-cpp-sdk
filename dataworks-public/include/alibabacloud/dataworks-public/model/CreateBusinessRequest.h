@@ -32,24 +32,24 @@ public:
 	~CreateBusinessRequest();
 	std::string getOwner() const;
 	void setOwner(const std::string &owner);
-	std::string getBusinessName() const;
-	void setBusinessName(const std::string &businessName);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getProjectIdentifier() const;
+	void setProjectIdentifier(const std::string &projectIdentifier);
+	std::string getBusinessName() const;
+	void setBusinessName(const std::string &businessName);
 	long getProjectId() const;
 	void setProjectId(long projectId);
 	std::string getUseType() const;
 	void setUseType(const std::string &useType);
-	std::string getProjectIdentifier() const;
-	void setProjectIdentifier(const std::string &projectIdentifier);
 
 private:
 	std::string owner_;
-	std::string businessName_;
 	std::string description_;
+	std::string projectIdentifier_;
+	std::string businessName_;
 	long projectId_;
 	std::string useType_;
-	std::string projectIdentifier_;
 };
 } // namespace Model
 } // namespace Dataworks_public
