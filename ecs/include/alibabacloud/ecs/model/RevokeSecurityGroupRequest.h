@@ -93,6 +93,8 @@ public:
 	void setDestCidrIp(const std::string &destCidrIp);
 	std::string getSourceGroupId() const;
 	void setSourceGroupId(const std::string &sourceGroupId);
+	std::vector<std::string> getSecurityGroupRuleId() const;
+	void setSecurityGroupRuleId(const std::vector<std::string> &securityGroupRuleId);
 
 private:
 	std::string nicType_;
@@ -118,6 +120,7 @@ private:
 	std::string priority_;
 	std::string destCidrIp_;
 	std::string sourceGroupId_;
+	std::vector<std::string> securityGroupRuleId_;
 };
 } // namespace Model
 } // namespace Ecs

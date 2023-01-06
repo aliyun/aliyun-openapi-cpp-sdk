@@ -46,6 +46,14 @@ namespace AlibabaCloud
 				{
 					std::string ipv6Address;
 				};
+				struct Ipv4PrefixSet
+				{
+					std::string ipv4Prefix;
+				};
+				struct Ipv6PrefixSet
+				{
+					std::string ipv6Prefix;
+				};
 
 
 				CreateNetworkInterfaceResult();
@@ -67,7 +75,9 @@ namespace AlibabaCloud
 				std::vector<Ipv6Set> getIpv6Sets()const;
 				std::string getVpcId()const;
 				std::string getOwnerId()const;
+				std::vector<Ipv6PrefixSet> getIpv6PrefixSets()const;
 				std::vector<Tag> getTags()const;
+				std::vector<Ipv4PrefixSet> getIpv4PrefixSets()const;
 				std::vector<PrivateIpSet> getPrivateIpSets()const;
 
 			protected:
@@ -89,7 +99,9 @@ namespace AlibabaCloud
 				std::vector<Ipv6Set> ipv6Sets_;
 				std::string vpcId_;
 				std::string ownerId_;
+				std::vector<Ipv6PrefixSet> ipv6PrefixSets_;
 				std::vector<Tag> tags_;
+				std::vector<Ipv4PrefixSet> ipv4PrefixSets_;
 				std::vector<PrivateIpSet> privateIpSets_;
 
 			};

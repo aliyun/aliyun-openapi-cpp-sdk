@@ -32,6 +32,11 @@ public:
 		std::string key;
 		std::string value;
 	};
+	struct Arn {
+		std::string roleType;
+		std::string rolearn;
+		long assumeRoleFor;
+	};
 	CopySnapshotRequest();
 	~CopySnapshotRequest();
 	long getResourceOwnerId() const;
@@ -46,6 +51,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	std::vector<Arn> getArn() const;
+	void setArn(const std::vector<Arn> &arn);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
@@ -54,8 +61,12 @@ public:
 	void setDestinationSnapshotName(const std::string &destinationSnapshotName);
 	std::string getDestinationSnapshotDescription() const;
 	void setDestinationSnapshotDescription(const std::string &destinationSnapshotDescription);
+	bool getEncrypted() const;
+	void setEncrypted(bool encrypted);
 	int getRetentionDays() const;
 	void setRetentionDays(int retentionDays);
+	std::string getKMSKeyId() const;
+	void setKMSKeyId(const std::string &kMSKeyId);
 
 private:
 	long resourceOwnerId_;
@@ -64,11 +75,14 @@ private:
 	std::string resourceGroupId_;
 	std::string regionId_;
 	std::vector<Tag> tag_;
+	std::vector<Arn> arn_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
 	std::string destinationSnapshotName_;
 	std::string destinationSnapshotDescription_;
+	bool encrypted_;
 	int retentionDays_;
+	std::string kMSKeyId_;
 };
 } // namespace Model
 } // namespace Ecs

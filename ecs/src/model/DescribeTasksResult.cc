@@ -55,6 +55,8 @@ void DescribeTasksResult::parse(const std::string &payload)
 			taskSetObject.taskId = valueTaskSetTask["TaskId"].asString();
 		if(!valueTaskSetTask["TaskAction"].isNull())
 			taskSetObject.taskAction = valueTaskSetTask["TaskAction"].asString();
+		if(!valueTaskSetTask["ResourceId"].isNull())
+			taskSetObject.resourceId = valueTaskSetTask["ResourceId"].asString();
 		taskSet_.push_back(taskSetObject);
 	}
 	if(!value["PageSize"].isNull())

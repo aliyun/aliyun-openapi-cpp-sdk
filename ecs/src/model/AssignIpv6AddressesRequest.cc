@@ -34,6 +34,23 @@ void AssignIpv6AddressesRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::vector<std::string> AssignIpv6AddressesRequest::getIpv6Prefix() const {
+  return ipv6Prefix_;
+}
+
+void AssignIpv6AddressesRequest::setIpv6Prefix(const std::vector<std::string> &ipv6Prefix) {
+  ipv6Prefix_ = ipv6Prefix;
+}
+
+int AssignIpv6AddressesRequest::getIpv6PrefixCount() const {
+  return ipv6PrefixCount_;
+}
+
+void AssignIpv6AddressesRequest::setIpv6PrefixCount(int ipv6PrefixCount) {
+  ipv6PrefixCount_ = ipv6PrefixCount;
+  setParameter(std::string("Ipv6PrefixCount"), std::to_string(ipv6PrefixCount));
+}
+
 std::string AssignIpv6AddressesRequest::getRegionId() const {
   return regionId_;
 }

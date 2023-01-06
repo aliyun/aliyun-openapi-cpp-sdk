@@ -545,3 +545,12 @@ void CreateLaunchTemplateRequest::setSystemDiskDescription(const std::string &sy
   setParameter(std::string("SystemDisk.Description"), systemDiskDescription);
 }
 
+std::string CreateLaunchTemplateRequest::getSystemDiskEncrypted() const {
+  return systemDiskEncrypted_;
+}
+
+void CreateLaunchTemplateRequest::setSystemDiskEncrypted(const std::string &systemDiskEncrypted) {
+  systemDiskEncrypted_ = systemDiskEncrypted;
+  setParameter(std::string("SystemDisk.Encrypted"), systemDiskEncrypted);
+}
+

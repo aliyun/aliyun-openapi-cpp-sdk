@@ -43,6 +43,8 @@ void DescribeSecurityGroupAttributeResult::parse(const std::string &payload)
 	for (auto valuePermissionsPermission : allPermissionsNode)
 	{
 		Permission permissionsObject;
+		if(!valuePermissionsPermission["SecurityGroupRuleId"].isNull())
+			permissionsObject.securityGroupRuleId = valuePermissionsPermission["SecurityGroupRuleId"].asString();
 		if(!valuePermissionsPermission["Direction"].isNull())
 			permissionsObject.direction = valuePermissionsPermission["Direction"].asString();
 		if(!valuePermissionsPermission["SourceGroupId"].isNull())

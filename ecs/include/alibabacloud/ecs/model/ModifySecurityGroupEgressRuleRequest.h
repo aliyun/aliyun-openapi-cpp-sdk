@@ -74,6 +74,8 @@ public:
 	void setDestCidrIp(const std::string &destCidrIp);
 	long getDestGroupOwnerId() const;
 	void setDestGroupOwnerId(long destGroupOwnerId);
+	std::string getSecurityGroupRuleId() const;
+	void setSecurityGroupRuleId(const std::string &securityGroupRuleId);
 
 private:
 	std::string nicType_;
@@ -98,6 +100,7 @@ private:
 	std::string destGroupOwnerAccount_;
 	std::string destCidrIp_;
 	long destGroupOwnerId_;
+	std::string securityGroupRuleId_;
 };
 } // namespace Model
 } // namespace Ecs

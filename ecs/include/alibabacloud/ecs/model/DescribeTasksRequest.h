@@ -54,6 +54,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getTaskAction() const;
 	void setTaskAction(const std::string &taskAction);
+	std::vector<std::string> getResourceIds() const;
+	void setResourceIds(const std::vector<std::string> &resourceIds);
 
 private:
 	long resourceOwnerId_;
@@ -68,6 +70,7 @@ private:
 	std::string endTime_;
 	long ownerId_;
 	std::string taskAction_;
+	std::vector<std::string> resourceIds_;
 };
 } // namespace Model
 } // namespace Ecs

@@ -34,6 +34,14 @@ void AssignPrivateIpAddressesRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::vector<std::string> AssignPrivateIpAddressesRequest::getIpv4Prefix() const {
+  return ipv4Prefix_;
+}
+
+void AssignPrivateIpAddressesRequest::setIpv4Prefix(const std::vector<std::string> &ipv4Prefix) {
+  ipv4Prefix_ = ipv4Prefix;
+}
+
 std::string AssignPrivateIpAddressesRequest::getClientToken() const {
   return clientToken_;
 }
@@ -86,6 +94,15 @@ long AssignPrivateIpAddressesRequest::getOwnerId() const {
 void AssignPrivateIpAddressesRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+int AssignPrivateIpAddressesRequest::getIpv4PrefixCount() const {
+  return ipv4PrefixCount_;
+}
+
+void AssignPrivateIpAddressesRequest::setIpv4PrefixCount(int ipv4PrefixCount) {
+  ipv4PrefixCount_ = ipv4PrefixCount;
+  setParameter(std::string("Ipv4PrefixCount"), std::to_string(ipv4PrefixCount));
 }
 
 std::vector<std::string> AssignPrivateIpAddressesRequest::getPrivateIpAddress() const {

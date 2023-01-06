@@ -38,6 +38,8 @@ public:
 	void setTimeout(long timeout);
 	std::string getContent() const;
 	void setContent(const std::string &content);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getFileOwner() const;
@@ -68,6 +70,7 @@ private:
 	std::string description_;
 	long timeout_;
 	std::string content_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string fileOwner_;
 	bool overwrite_;

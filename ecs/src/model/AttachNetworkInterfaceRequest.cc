@@ -88,6 +88,15 @@ void AttachNetworkInterfaceRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+int AttachNetworkInterfaceRequest::getNetworkCardIndex() const {
+  return networkCardIndex_;
+}
+
+void AttachNetworkInterfaceRequest::setNetworkCardIndex(int networkCardIndex) {
+  networkCardIndex_ = networkCardIndex;
+  setParameter(std::string("NetworkCardIndex"), std::to_string(networkCardIndex));
+}
+
 std::string AttachNetworkInterfaceRequest::getInstanceId() const {
   return instanceId_;
 }

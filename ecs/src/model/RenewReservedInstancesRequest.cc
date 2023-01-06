@@ -52,6 +52,15 @@ void RenewReservedInstancesRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+int RenewReservedInstancesRequest::getAutoRenewPeriod() const {
+  return autoRenewPeriod_;
+}
+
+void RenewReservedInstancesRequest::setAutoRenewPeriod(int autoRenewPeriod) {
+  autoRenewPeriod_ = autoRenewPeriod;
+  setParameter(std::string("AutoRenewPeriod"), std::to_string(autoRenewPeriod));
+}
+
 int RenewReservedInstancesRequest::getPeriod() const {
   return period_;
 }
@@ -103,5 +112,14 @@ std::vector<std::string> RenewReservedInstancesRequest::getReservedInstanceId() 
 
 void RenewReservedInstancesRequest::setReservedInstanceId(const std::vector<std::string> &reservedInstanceId) {
   reservedInstanceId_ = reservedInstanceId;
+}
+
+bool RenewReservedInstancesRequest::getAutoRenew() const {
+  return autoRenew_;
+}
+
+void RenewReservedInstancesRequest::setAutoRenew(bool autoRenew) {
+  autoRenew_ = autoRenew;
+  setParameter(std::string("AutoRenew"), autoRenew ? "true" : "false");
 }
 

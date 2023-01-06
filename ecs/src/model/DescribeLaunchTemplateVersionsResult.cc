@@ -142,6 +142,8 @@ void DescribeLaunchTemplateVersionsResult::parse(const std::string &payload)
 			launchTemplateVersionSetsObject.launchTemplateData.systemDiskProvisionedIops = std::stol(launchTemplateDataNode["SystemDisk.ProvisionedIops"].asString());
 		if(!launchTemplateDataNode["SystemDisk.BurstingEnabled"].isNull())
 			launchTemplateVersionSetsObject.launchTemplateData.systemDiskBurstingEnabled = launchTemplateDataNode["SystemDisk.BurstingEnabled"].asString() == "true";
+		if(!launchTemplateDataNode["SystemDisk.Encrypted"].isNull())
+			launchTemplateVersionSetsObject.launchTemplateData.systemDiskEncrypted = launchTemplateDataNode["SystemDisk.Encrypted"].asString();
 		auto allDataDisksNode = launchTemplateDataNode["DataDisks"]["DataDisk"];
 		for (auto launchTemplateDataNodeDataDisksDataDisk : allDataDisksNode)
 		{

@@ -223,3 +223,12 @@ void ModifySecurityGroupEgressRuleRequest::setDestGroupOwnerId(long destGroupOwn
   setParameter(std::string("DestGroupOwnerId"), std::to_string(destGroupOwnerId));
 }
 
+std::string ModifySecurityGroupEgressRuleRequest::getSecurityGroupRuleId() const {
+  return securityGroupRuleId_;
+}
+
+void ModifySecurityGroupEgressRuleRequest::setSecurityGroupRuleId(const std::string &securityGroupRuleId) {
+  securityGroupRuleId_ = securityGroupRuleId;
+  setParameter(std::string("SecurityGroupRuleId"), securityGroupRuleId);
+}
+

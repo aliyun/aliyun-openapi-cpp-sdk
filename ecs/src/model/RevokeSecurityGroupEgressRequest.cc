@@ -248,3 +248,11 @@ void RevokeSecurityGroupEgressRequest::setDestGroupOwnerId(long destGroupOwnerId
   setParameter(std::string("DestGroupOwnerId"), std::to_string(destGroupOwnerId));
 }
 
+std::vector<std::string> RevokeSecurityGroupEgressRequest::getSecurityGroupRuleId() const {
+  return securityGroupRuleId_;
+}
+
+void RevokeSecurityGroupEgressRequest::setSecurityGroupRuleId(const std::vector<std::string> &securityGroupRuleId) {
+  securityGroupRuleId_ = securityGroupRuleId;
+}
+

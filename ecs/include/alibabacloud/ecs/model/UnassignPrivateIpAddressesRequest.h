@@ -32,6 +32,8 @@ public:
 	~UnassignPrivateIpAddressesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::vector<std::string> getIpv4Prefix() const;
+	void setIpv4Prefix(const std::vector<std::string> &ipv4Prefix);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
@@ -47,6 +49,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::vector<std::string> ipv4Prefix_;
 	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

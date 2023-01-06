@@ -43,6 +43,15 @@ void DescribeSendFileResultsRequest::setPageNumber(long pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeSendFileResultsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeSendFileResultsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeSendFileResultsRequest::getRegionId() const {
   return regionId_;
 }

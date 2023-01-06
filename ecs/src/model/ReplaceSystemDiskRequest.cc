@@ -52,6 +52,15 @@ void ReplaceSystemDiskRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string ReplaceSystemDiskRequest::getEncryptAlgorithm() const {
+  return encryptAlgorithm_;
+}
+
+void ReplaceSystemDiskRequest::setEncryptAlgorithm(const std::string &encryptAlgorithm) {
+  encryptAlgorithm_ = encryptAlgorithm;
+  setParameter(std::string("EncryptAlgorithm"), encryptAlgorithm);
+}
+
 std::string ReplaceSystemDiskRequest::getSecurityEnhancementStrategy() const {
   return securityEnhancementStrategy_;
 }
@@ -115,6 +124,21 @@ void ReplaceSystemDiskRequest::setDiskId(const std::string &diskId) {
   setParameter(std::string("DiskId"), diskId);
 }
 
+std::vector<ReplaceSystemDiskRequest::Arn> ReplaceSystemDiskRequest::getArn() const {
+  return arn_;
+}
+
+void ReplaceSystemDiskRequest::setArn(const std::vector<ReplaceSystemDiskRequest::Arn> &arn) {
+  arn_ = arn;
+  for(int dep1 = 0; dep1 != arn.size(); dep1++) {
+  auto arnObj = arn.at(dep1);
+  std::string arnObjStr = std::string("Arn") + "." + std::to_string(dep1 + 1);
+    setParameter(arnObjStr + ".Rolearn", arnObj.rolearn);
+    setParameter(arnObjStr + ".RoleType", arnObj.roleType);
+    setParameter(arnObjStr + ".AssumeRoleFor", std::to_string(arnObj.assumeRoleFor));
+  }
+}
+
 std::string ReplaceSystemDiskRequest::getArchitecture() const {
   return architecture_;
 }
@@ -167,6 +191,24 @@ int ReplaceSystemDiskRequest::getSystemDiskSize() const {
 void ReplaceSystemDiskRequest::setSystemDiskSize(int systemDiskSize) {
   systemDiskSize_ = systemDiskSize;
   setParameter(std::string("SystemDisk.Size"), std::to_string(systemDiskSize));
+}
+
+bool ReplaceSystemDiskRequest::getEncrypted() const {
+  return encrypted_;
+}
+
+void ReplaceSystemDiskRequest::setEncrypted(bool encrypted) {
+  encrypted_ = encrypted;
+  setParameter(std::string("Encrypted"), encrypted ? "true" : "false");
+}
+
+std::string ReplaceSystemDiskRequest::getKMSKeyId() const {
+  return kMSKeyId_;
+}
+
+void ReplaceSystemDiskRequest::setKMSKeyId(const std::string &kMSKeyId) {
+  kMSKeyId_ = kMSKeyId;
+  setParameter(std::string("KMSKeyId"), kMSKeyId);
 }
 
 bool ReplaceSystemDiskRequest::getUseAdditionalService() const {

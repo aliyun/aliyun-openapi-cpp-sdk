@@ -28,10 +28,21 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT CreateCommandRequest : public RpcServiceRequest {
 public:
+	struct SystemTag {
+		std::string key;
+		std::string value;
+		std::string scope;
+	};
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	CreateCommandRequest();
 	~CreateCommandRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::vector<SystemTag> getSystemTag() const;
+	void setSystemTag(const std::vector<SystemTag> &systemTag);
 	std::string getWorkingDir() const;
 	void setWorkingDir(const std::string &workingDir);
 	std::string getDescription() const;
@@ -46,6 +57,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getContentEncoding() const;
 	void setContentEncoding(const std::string &contentEncoding);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -59,6 +72,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::vector<SystemTag> systemTag_;
 	std::string workingDir_;
 	std::string description_;
 	std::string type_;
@@ -66,6 +80,7 @@ private:
 	long timeout_;
 	std::string regionId_;
 	std::string contentEncoding_;
+	std::vector<Tag> tag_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

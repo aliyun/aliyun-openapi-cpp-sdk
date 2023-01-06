@@ -68,6 +68,21 @@ void CreateImageRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::vector<CreateImageRequest::SystemTag> CreateImageRequest::getSystemTag() const {
+  return systemTag_;
+}
+
+void CreateImageRequest::setSystemTag(const std::vector<CreateImageRequest::SystemTag> &systemTag) {
+  systemTag_ = systemTag;
+  for(int dep1 = 0; dep1 != systemTag.size(); dep1++) {
+  auto systemTagObj = systemTag.at(dep1);
+  std::string systemTagObjStr = std::string("SystemTag") + "." + std::to_string(dep1 + 1);
+    setParameter(systemTagObjStr + ".Scope", systemTagObj.scope);
+    setParameter(systemTagObjStr + ".Value", systemTagObj.value);
+    setParameter(systemTagObjStr + ".Key", systemTagObj.key);
+  }
+}
+
 std::string CreateImageRequest::getDescription() const {
   return description_;
 }
@@ -122,6 +137,15 @@ void CreateImageRequest::setImageName(const std::string &imageName) {
   setParameter(std::string("ImageName"), imageName);
 }
 
+std::string CreateImageRequest::getStorageLocationArn() const {
+  return storageLocationArn_;
+}
+
+void CreateImageRequest::setStorageLocationArn(const std::string &storageLocationArn) {
+  storageLocationArn_ = storageLocationArn;
+  setParameter(std::string("StorageLocationArn"), storageLocationArn);
+}
+
 std::vector<CreateImageRequest::Tag> CreateImageRequest::getTag() const {
   return tag_;
 }
@@ -143,6 +167,15 @@ std::string CreateImageRequest::getArchitecture() const {
 void CreateImageRequest::setArchitecture(const std::string &architecture) {
   architecture_ = architecture;
   setParameter(std::string("Architecture"), architecture);
+}
+
+std::string CreateImageRequest::getDetectionStrategy() const {
+  return detectionStrategy_;
+}
+
+void CreateImageRequest::setDetectionStrategy(const std::string &detectionStrategy) {
+  detectionStrategy_ = detectionStrategy;
+  setParameter(std::string("DetectionStrategy"), detectionStrategy);
 }
 
 std::string CreateImageRequest::getResourceOwnerAccount() const {

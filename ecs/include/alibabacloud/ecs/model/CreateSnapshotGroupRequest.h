@@ -48,6 +48,8 @@ public:
 	void setInstantAccessRetentionDays(int instantAccessRetentionDays);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getStorageLocationArn() const;
+	void setStorageLocationArn(const std::string &storageLocationArn);
 	std::vector<std::string> getDiskId() const;
 	void setDiskId(const std::vector<std::string> &diskId);
 	std::vector<Tag> getTag() const;
@@ -71,6 +73,7 @@ private:
 	std::string resourceGroupId_;
 	int instantAccessRetentionDays_;
 	std::string regionId_;
+	std::string storageLocationArn_;
 	std::vector<std::string> diskId_;
 	std::vector<Tag> tag_;
 	std::string resourceOwnerAccount_;

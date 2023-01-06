@@ -61,6 +61,15 @@ void SendFileRequest::setContent(const std::string &content) {
   setParameter(std::string("Content"), content);
 }
 
+std::string SendFileRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void SendFileRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string SendFileRequest::getRegionId() const {
   return regionId_;
 }

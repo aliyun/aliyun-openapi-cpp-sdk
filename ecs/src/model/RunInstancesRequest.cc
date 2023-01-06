@@ -723,6 +723,7 @@ void RunInstancesRequest::setNetworkInterface(const std::vector<RunInstancesRequ
     setParameter(networkInterfaceObjStr + ".QueuePairNumber", std::to_string(networkInterfaceObj.queuePairNumber));
     setParameter(networkInterfaceObjStr + ".InstanceType", networkInterfaceObj.instanceType);
     setParameter(networkInterfaceObjStr + ".Ipv6AddressCount", std::to_string(networkInterfaceObj.ipv6AddressCount));
+    setParameter(networkInterfaceObjStr + ".NetworkCardIndex", std::to_string(networkInterfaceObj.networkCardIndex));
   }
 }
 

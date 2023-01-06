@@ -84,6 +84,21 @@ void CopySnapshotRequest::setTag(const std::vector<CopySnapshotRequest::Tag> &ta
   }
 }
 
+std::vector<CopySnapshotRequest::Arn> CopySnapshotRequest::getArn() const {
+  return arn_;
+}
+
+void CopySnapshotRequest::setArn(const std::vector<CopySnapshotRequest::Arn> &arn) {
+  arn_ = arn;
+  for(int dep1 = 0; dep1 != arn.size(); dep1++) {
+  auto arnObj = arn.at(dep1);
+  std::string arnObjStr = std::string("Arn") + "." + std::to_string(dep1 + 1);
+    setParameter(arnObjStr + ".RoleType", arnObj.roleType);
+    setParameter(arnObjStr + ".Rolearn", arnObj.rolearn);
+    setParameter(arnObjStr + ".AssumeRoleFor", std::to_string(arnObj.assumeRoleFor));
+  }
+}
+
 std::string CopySnapshotRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -120,6 +135,15 @@ void CopySnapshotRequest::setDestinationSnapshotDescription(const std::string &d
   setParameter(std::string("DestinationSnapshotDescription"), destinationSnapshotDescription);
 }
 
+bool CopySnapshotRequest::getEncrypted() const {
+  return encrypted_;
+}
+
+void CopySnapshotRequest::setEncrypted(bool encrypted) {
+  encrypted_ = encrypted;
+  setParameter(std::string("Encrypted"), encrypted ? "true" : "false");
+}
+
 int CopySnapshotRequest::getRetentionDays() const {
   return retentionDays_;
 }
@@ -127,5 +151,14 @@ int CopySnapshotRequest::getRetentionDays() const {
 void CopySnapshotRequest::setRetentionDays(int retentionDays) {
   retentionDays_ = retentionDays;
   setParameter(std::string("RetentionDays"), std::to_string(retentionDays));
+}
+
+std::string CopySnapshotRequest::getKMSKeyId() const {
+  return kMSKeyId_;
+}
+
+void CopySnapshotRequest::setKMSKeyId(const std::string &kMSKeyId) {
+  kMSKeyId_ = kMSKeyId;
+  setParameter(std::string("KMSKeyId"), kMSKeyId);
 }
 

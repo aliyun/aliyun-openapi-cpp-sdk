@@ -78,6 +78,7 @@ namespace AlibabaCloud
 						std::string instanceChargeType;
 						long systemDiskProvisionedIops;
 						int spotDuration;
+						std::string systemDiskEncrypted;
 						std::string systemDiskAutoSnapshotPolicyId;
 						std::string ramRoleName;
 						std::string systemDiskPerformanceLevel;

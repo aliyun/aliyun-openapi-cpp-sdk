@@ -43,6 +43,15 @@ void ModifyPrepayInstanceSpecRequest::setClientToken(const std::string &clientTo
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string ModifyPrepayInstanceSpecRequest::getCouponNo() const {
+  return couponNo_;
+}
+
+void ModifyPrepayInstanceSpecRequest::setCouponNo(const std::string &couponNo) {
+  couponNo_ = couponNo;
+  setParameter(std::string("CouponNo"), couponNo);
+}
+
 std::string ModifyPrepayInstanceSpecRequest::getOperatorType() const {
   return operatorType_;
 }

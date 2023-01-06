@@ -248,3 +248,11 @@ void RevokeSecurityGroupRequest::setSourceGroupId(const std::string &sourceGroup
   setParameter(std::string("SourceGroupId"), sourceGroupId);
 }
 
+std::vector<std::string> RevokeSecurityGroupRequest::getSecurityGroupRuleId() const {
+  return securityGroupRuleId_;
+}
+
+void RevokeSecurityGroupRequest::setSecurityGroupRuleId(const std::vector<std::string> &securityGroupRuleId) {
+  securityGroupRuleId_ = securityGroupRuleId;
+}
+

@@ -46,6 +46,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getStorageLocationArn() const;
+	void setStorageLocationArn(const std::string &storageLocationArn);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
 	bool getEnableCrossRegionCopy() const;
@@ -68,6 +70,7 @@ private:
 	std::string repeatWeekdays_;
 	std::string resourceGroupId_;
 	std::string regionId_;
+	std::string storageLocationArn_;
 	std::vector<Tag> tag_;
 	bool enableCrossRegionCopy_;
 	std::string resourceOwnerAccount_;

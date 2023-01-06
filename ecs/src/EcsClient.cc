@@ -31,21 +31,21 @@ EcsClient::EcsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ecs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 EcsClient::EcsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ecs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 EcsClient::EcsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ecs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 EcsClient::~EcsClient()
@@ -1269,42 +1269,6 @@ EcsClient::CreateCommandOutcomeCallable EcsClient::createCommandCallable(const C
 			[this, request]()
 			{
 			return this->createCommand(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcsClient::CreateDedicatedBlockStorageClusterOutcome EcsClient::createDedicatedBlockStorageCluster(const CreateDedicatedBlockStorageClusterRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDedicatedBlockStorageClusterOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDedicatedBlockStorageClusterOutcome(CreateDedicatedBlockStorageClusterResult(outcome.result()));
-	else
-		return CreateDedicatedBlockStorageClusterOutcome(outcome.error());
-}
-
-void EcsClient::createDedicatedBlockStorageClusterAsync(const CreateDedicatedBlockStorageClusterRequest& request, const CreateDedicatedBlockStorageClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDedicatedBlockStorageCluster(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::CreateDedicatedBlockStorageClusterOutcomeCallable EcsClient::createDedicatedBlockStorageClusterCallable(const CreateDedicatedBlockStorageClusterRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDedicatedBlockStorageClusterOutcome()>>(
-			[this, request]()
-			{
-			return this->createDedicatedBlockStorageCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4407,42 +4371,6 @@ EcsClient::DescribeCommandsOutcomeCallable EcsClient::describeCommandsCallable(c
 	return task->get_future();
 }
 
-EcsClient::DescribeDedicatedBlockStorageClustersOutcome EcsClient::describeDedicatedBlockStorageClusters(const DescribeDedicatedBlockStorageClustersRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDedicatedBlockStorageClustersOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDedicatedBlockStorageClustersOutcome(DescribeDedicatedBlockStorageClustersResult(outcome.result()));
-	else
-		return DescribeDedicatedBlockStorageClustersOutcome(outcome.error());
-}
-
-void EcsClient::describeDedicatedBlockStorageClustersAsync(const DescribeDedicatedBlockStorageClustersRequest& request, const DescribeDedicatedBlockStorageClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDedicatedBlockStorageClusters(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcsClient::DescribeDedicatedBlockStorageClustersOutcomeCallable EcsClient::describeDedicatedBlockStorageClustersCallable(const DescribeDedicatedBlockStorageClustersRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDedicatedBlockStorageClustersOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDedicatedBlockStorageClusters(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EcsClient::DescribeDedicatedHostAutoRenewOutcome EcsClient::describeDedicatedHostAutoRenew(const DescribeDedicatedHostAutoRenewRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4761,6 +4689,42 @@ EcsClient::DescribeDiagnosticMetricsOutcomeCallable EcsClient::describeDiagnosti
 			[this, request]()
 			{
 			return this->describeDiagnosticMetrics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::DescribeDiagnosticReportAttributesOutcome EcsClient::describeDiagnosticReportAttributes(const DescribeDiagnosticReportAttributesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDiagnosticReportAttributesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDiagnosticReportAttributesOutcome(DescribeDiagnosticReportAttributesResult(outcome.result()));
+	else
+		return DescribeDiagnosticReportAttributesOutcome(outcome.error());
+}
+
+void EcsClient::describeDiagnosticReportAttributesAsync(const DescribeDiagnosticReportAttributesRequest& request, const DescribeDiagnosticReportAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDiagnosticReportAttributes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeDiagnosticReportAttributesOutcomeCallable EcsClient::describeDiagnosticReportAttributesCallable(const DescribeDiagnosticReportAttributesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDiagnosticReportAttributesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDiagnosticReportAttributes(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

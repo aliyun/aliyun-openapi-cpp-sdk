@@ -89,8 +89,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/CreateCapacityReservationResult.h
 	include/alibabacloud/ecs/model/CreateCommandRequest.h
 	include/alibabacloud/ecs/model/CreateCommandResult.h
-	include/alibabacloud/ecs/model/CreateDedicatedBlockStorageClusterRequest.h
-	include/alibabacloud/ecs/model/CreateDedicatedBlockStorageClusterResult.h
 	include/alibabacloud/ecs/model/CreateDedicatedHostClusterRequest.h
 	include/alibabacloud/ecs/model/CreateDedicatedHostClusterResult.h
 	include/alibabacloud/ecs/model/CreateDemandRequest.h
@@ -263,8 +261,6 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeClustersResult.h
 	include/alibabacloud/ecs/model/DescribeCommandsRequest.h
 	include/alibabacloud/ecs/model/DescribeCommandsResult.h
-	include/alibabacloud/ecs/model/DescribeDedicatedBlockStorageClustersRequest.h
-	include/alibabacloud/ecs/model/DescribeDedicatedBlockStorageClustersResult.h
 	include/alibabacloud/ecs/model/DescribeDedicatedHostAutoRenewRequest.h
 	include/alibabacloud/ecs/model/DescribeDedicatedHostAutoRenewResult.h
 	include/alibabacloud/ecs/model/DescribeDedicatedHostClustersRequest.h
@@ -283,6 +279,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeDiagnosticMetricSetsResult.h
 	include/alibabacloud/ecs/model/DescribeDiagnosticMetricsRequest.h
 	include/alibabacloud/ecs/model/DescribeDiagnosticMetricsResult.h
+	include/alibabacloud/ecs/model/DescribeDiagnosticReportAttributesRequest.h
+	include/alibabacloud/ecs/model/DescribeDiagnosticReportAttributesResult.h
 	include/alibabacloud/ecs/model/DescribeDiagnosticReportsRequest.h
 	include/alibabacloud/ecs/model/DescribeDiagnosticReportsResult.h
 	include/alibabacloud/ecs/model/DescribeDiskMonitorDataRequest.h
@@ -782,8 +780,6 @@ set(ecs_src
 	src/model/CreateCapacityReservationResult.cc
 	src/model/CreateCommandRequest.cc
 	src/model/CreateCommandResult.cc
-	src/model/CreateDedicatedBlockStorageClusterRequest.cc
-	src/model/CreateDedicatedBlockStorageClusterResult.cc
 	src/model/CreateDedicatedHostClusterRequest.cc
 	src/model/CreateDedicatedHostClusterResult.cc
 	src/model/CreateDemandRequest.cc
@@ -956,8 +952,6 @@ set(ecs_src
 	src/model/DescribeClustersResult.cc
 	src/model/DescribeCommandsRequest.cc
 	src/model/DescribeCommandsResult.cc
-	src/model/DescribeDedicatedBlockStorageClustersRequest.cc
-	src/model/DescribeDedicatedBlockStorageClustersResult.cc
 	src/model/DescribeDedicatedHostAutoRenewRequest.cc
 	src/model/DescribeDedicatedHostAutoRenewResult.cc
 	src/model/DescribeDedicatedHostClustersRequest.cc
@@ -976,6 +970,8 @@ set(ecs_src
 	src/model/DescribeDiagnosticMetricSetsResult.cc
 	src/model/DescribeDiagnosticMetricsRequest.cc
 	src/model/DescribeDiagnosticMetricsResult.cc
+	src/model/DescribeDiagnosticReportAttributesRequest.cc
+	src/model/DescribeDiagnosticReportAttributesResult.cc
 	src/model/DescribeDiagnosticReportsRequest.cc
 	src/model/DescribeDiagnosticReportsResult.cc
 	src/model/DescribeDiskMonitorDataRequest.cc

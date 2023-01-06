@@ -28,6 +28,11 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT ReplaceSystemDiskRequest : public RpcServiceRequest {
 public:
+	struct Arn {
+		std::string rolearn;
+		std::string roleType;
+		long assumeRoleFor;
+	};
 	ReplaceSystemDiskRequest();
 	~ReplaceSystemDiskRequest();
 	long getResourceOwnerId() const;
@@ -36,6 +41,8 @@ public:
 	void setImageId(const std::string &imageId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getEncryptAlgorithm() const;
+	void setEncryptAlgorithm(const std::string &encryptAlgorithm);
 	std::string getSecurityEnhancementStrategy() const;
 	void setSecurityEnhancementStrategy(const std::string &securityEnhancementStrategy);
 	std::string getKeyPairName() const;
@@ -50,6 +57,8 @@ public:
 	void setPasswordInherit(bool passwordInherit);
 	std::string getDiskId() const;
 	void setDiskId(const std::string &diskId);
+	std::vector<Arn> getArn() const;
+	void setArn(const std::vector<Arn> &arn);
 	std::string getArchitecture() const;
 	void setArchitecture(const std::string &architecture);
 	std::string getResourceOwnerAccount() const;
@@ -62,6 +71,10 @@ public:
 	void setInstanceId(const std::string &instanceId);
 	int getSystemDiskSize() const;
 	void setSystemDiskSize(int systemDiskSize);
+	bool getEncrypted() const;
+	void setEncrypted(bool encrypted);
+	std::string getKMSKeyId() const;
+	void setKMSKeyId(const std::string &kMSKeyId);
 	bool getUseAdditionalService() const;
 	void setUseAdditionalService(bool useAdditionalService);
 
@@ -69,6 +82,7 @@ private:
 	long resourceOwnerId_;
 	std::string imageId_;
 	std::string clientToken_;
+	std::string encryptAlgorithm_;
 	std::string securityEnhancementStrategy_;
 	std::string keyPairName_;
 	std::string platform_;
@@ -76,12 +90,15 @@ private:
 	bool loginAsNonRoot_;
 	bool passwordInherit_;
 	std::string diskId_;
+	std::vector<Arn> arn_;
 	std::string architecture_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string instanceId_;
 	int systemDiskSize_;
+	bool encrypted_;
+	std::string kMSKeyId_;
 	bool useAdditionalService_;
 };
 } // namespace Model

@@ -39,6 +39,13 @@ void ReleasePublicIpAddressResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["RemainTimes"].isNull())
+		remainTimes_ = value["RemainTimes"].asString();
 
+}
+
+std::string ReleasePublicIpAddressResult::getRemainTimes()const
+{
+	return remainTimes_;
 }
 

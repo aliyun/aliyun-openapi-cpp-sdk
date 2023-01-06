@@ -79,6 +79,15 @@ void CreateAutoSnapshotPolicyRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("regionId"), regionId);
 }
 
+std::string CreateAutoSnapshotPolicyRequest::getStorageLocationArn() const {
+  return storageLocationArn_;
+}
+
+void CreateAutoSnapshotPolicyRequest::setStorageLocationArn(const std::string &storageLocationArn) {
+  storageLocationArn_ = storageLocationArn;
+  setParameter(std::string("StorageLocationArn"), storageLocationArn);
+}
+
 std::vector<CreateAutoSnapshotPolicyRequest::Tag> CreateAutoSnapshotPolicyRequest::getTag() const {
   return tag_;
 }

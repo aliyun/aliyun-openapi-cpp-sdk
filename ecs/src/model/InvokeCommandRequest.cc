@@ -43,6 +43,21 @@ void InvokeCommandRequest::setContainerName(const std::string &containerName) {
   setParameter(std::string("ContainerName"), containerName);
 }
 
+std::vector<InvokeCommandRequest::SystemTag> InvokeCommandRequest::getSystemTag() const {
+  return systemTag_;
+}
+
+void InvokeCommandRequest::setSystemTag(const std::vector<InvokeCommandRequest::SystemTag> &systemTag) {
+  systemTag_ = systemTag;
+  for(int dep1 = 0; dep1 != systemTag.size(); dep1++) {
+  auto systemTagObj = systemTag.at(dep1);
+  std::string systemTagObjStr = std::string("SystemTag") + "." + std::to_string(dep1 + 1);
+    setParameter(systemTagObjStr + ".Key", systemTagObj.key);
+    setParameter(systemTagObjStr + ".Value", systemTagObj.value);
+    setParameter(systemTagObjStr + ".Scope", systemTagObj.scope);
+  }
+}
+
 std::string InvokeCommandRequest::getCommandId() const {
   return commandId_;
 }
@@ -52,6 +67,15 @@ void InvokeCommandRequest::setCommandId(const std::string &commandId) {
   setParameter(std::string("CommandId"), commandId);
 }
 
+long InvokeCommandRequest::getTimeout() const {
+  return timeout_;
+}
+
+void InvokeCommandRequest::setTimeout(long timeout) {
+  timeout_ = timeout;
+  setParameter(std::string("Timeout"), std::to_string(timeout));
+}
+
 std::string InvokeCommandRequest::getFrequency() const {
   return frequency_;
 }
@@ -59,6 +83,15 @@ std::string InvokeCommandRequest::getFrequency() const {
 void InvokeCommandRequest::setFrequency(const std::string &frequency) {
   frequency_ = frequency;
   setParameter(std::string("Frequency"), frequency);
+}
+
+std::string InvokeCommandRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void InvokeCommandRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string InvokeCommandRequest::getRegionId() const {
@@ -86,6 +119,20 @@ std::string InvokeCommandRequest::getWindowsPasswordName() const {
 void InvokeCommandRequest::setWindowsPasswordName(const std::string &windowsPasswordName) {
   windowsPasswordName_ = windowsPasswordName;
   setParameter(std::string("WindowsPasswordName"), windowsPasswordName);
+}
+
+std::vector<InvokeCommandRequest::Tag> InvokeCommandRequest::getTag() const {
+  return tag_;
+}
+
+void InvokeCommandRequest::setTag(const std::vector<InvokeCommandRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
 }
 
 bool InvokeCommandRequest::getTimed() const {

@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Task
 				{
 					std::string taskId;
+					std::string resourceId;
 					std::string supportCancel;
 					std::string taskAction;
 					std::string creationTime;

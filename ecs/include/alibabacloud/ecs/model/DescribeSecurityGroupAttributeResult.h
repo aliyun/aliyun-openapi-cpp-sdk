@@ -52,6 +52,7 @@ namespace AlibabaCloud
 					std::string sourceCidrIp;
 					std::string sourcePrefixListName;
 					std::string ipProtocol;
+					std::string securityGroupRuleId;
 					std::string destCidrIp;
 					std::string destGroupName;
 					std::string ipv6DestCidrIp;

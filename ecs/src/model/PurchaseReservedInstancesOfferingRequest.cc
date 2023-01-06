@@ -111,6 +111,15 @@ void PurchaseReservedInstancesOfferingRequest::setTag(const std::vector<Purchase
   }
 }
 
+int PurchaseReservedInstancesOfferingRequest::getAutoRenewPeriod() const {
+  return autoRenewPeriod_;
+}
+
+void PurchaseReservedInstancesOfferingRequest::setAutoRenewPeriod(int autoRenewPeriod) {
+  autoRenewPeriod_ = autoRenewPeriod;
+  setParameter(std::string("AutoRenewPeriod"), std::to_string(autoRenewPeriod));
+}
+
 int PurchaseReservedInstancesOfferingRequest::getPeriod() const {
   return period_;
 }
@@ -163,6 +172,15 @@ std::string PurchaseReservedInstancesOfferingRequest::getOfferingType() const {
 void PurchaseReservedInstancesOfferingRequest::setOfferingType(const std::string &offeringType) {
   offeringType_ = offeringType;
   setParameter(std::string("OfferingType"), offeringType);
+}
+
+bool PurchaseReservedInstancesOfferingRequest::getAutoRenew() const {
+  return autoRenew_;
+}
+
+void PurchaseReservedInstancesOfferingRequest::setAutoRenew(bool autoRenew) {
+  autoRenew_ = autoRenew;
+  setParameter(std::string("AutoRenew"), autoRenew ? "true" : "false");
 }
 
 std::string PurchaseReservedInstancesOfferingRequest::getZoneId() const {

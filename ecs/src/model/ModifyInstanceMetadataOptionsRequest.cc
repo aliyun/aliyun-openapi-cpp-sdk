@@ -34,6 +34,15 @@ void ModifyInstanceMetadataOptionsRequest::setResourceOwnerId(long resourceOwner
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifyInstanceMetadataOptionsRequest::getInstanceMetadataTags() const {
+  return instanceMetadataTags_;
+}
+
+void ModifyInstanceMetadataOptionsRequest::setInstanceMetadataTags(const std::string &instanceMetadataTags) {
+  instanceMetadataTags_ = instanceMetadataTags;
+  setParameter(std::string("InstanceMetadataTags"), instanceMetadataTags);
+}
+
 int ModifyInstanceMetadataOptionsRequest::getHttpPutResponseHopLimit() const {
   return httpPutResponseHopLimit_;
 }

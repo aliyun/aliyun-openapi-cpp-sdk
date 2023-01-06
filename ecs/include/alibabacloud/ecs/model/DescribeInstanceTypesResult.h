@@ -34,6 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct InstanceType
 				{
+					struct NetworkCardInfo
+					{
+						int networkCardIndex;
+					};
 					long instancePpsTx;
 					std::string nvmeSupport;
 					int primaryEniQueueNumber;
@@ -60,6 +64,7 @@ namespace AlibabaCloud
 					int eniTotalQuantity;
 					int cpuCoreCount;
 					int initialCredit;
+					int networkCardQuantity;
 					std::string instanceCategory;
 					int eniQuantity;
 					int gPUAmount;
@@ -68,6 +73,7 @@ namespace AlibabaCloud
 					int queuePairNumber;
 					int baselineCredit;
 					std::string instanceFamilyLevel;
+					std::vector<InstanceType::NetworkCardInfo> networkCards;
 					float cpuTurboFrequency;
 					int eniPrivateIpAddressQuantity;
 				};

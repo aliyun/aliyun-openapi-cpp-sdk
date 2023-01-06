@@ -167,6 +167,22 @@ void DescribeInstancesResult::parse(const std::string &payload)
 					ipv6SetsObject.ipv6Address = valueInstancesInstanceNetworkInterfacesNetworkInterfaceIpv6SetsIpv6Set["Ipv6Address"].asString();
 				networkInterfacesObject.ipv6Sets.push_back(ipv6SetsObject);
 			}
+			auto allIpv4PrefixSetsNode = valueInstancesInstanceNetworkInterfacesNetworkInterface["Ipv4PrefixSets"]["Ipv4PrefixSet"];
+			for (auto valueInstancesInstanceNetworkInterfacesNetworkInterfaceIpv4PrefixSetsIpv4PrefixSet : allIpv4PrefixSetsNode)
+			{
+				Instance::NetworkInterface::Ipv4PrefixSet ipv4PrefixSetsObject;
+				if(!valueInstancesInstanceNetworkInterfacesNetworkInterfaceIpv4PrefixSetsIpv4PrefixSet["Ipv4Prefix"].isNull())
+					ipv4PrefixSetsObject.ipv4Prefix = valueInstancesInstanceNetworkInterfacesNetworkInterfaceIpv4PrefixSetsIpv4PrefixSet["Ipv4Prefix"].asString();
+				networkInterfacesObject.ipv4PrefixSets.push_back(ipv4PrefixSetsObject);
+			}
+			auto allIpv6PrefixSetsNode = valueInstancesInstanceNetworkInterfacesNetworkInterface["Ipv6PrefixSets"]["Ipv6PrefixSet"];
+			for (auto valueInstancesInstanceNetworkInterfacesNetworkInterfaceIpv6PrefixSetsIpv6PrefixSet : allIpv6PrefixSetsNode)
+			{
+				Instance::NetworkInterface::Ipv6PrefixSet ipv6PrefixSetsObject;
+				if(!valueInstancesInstanceNetworkInterfacesNetworkInterfaceIpv6PrefixSetsIpv6PrefixSet["Ipv6Prefix"].isNull())
+					ipv6PrefixSetsObject.ipv6Prefix = valueInstancesInstanceNetworkInterfacesNetworkInterfaceIpv6PrefixSetsIpv6PrefixSet["Ipv6Prefix"].asString();
+				networkInterfacesObject.ipv6PrefixSets.push_back(ipv6PrefixSetsObject);
+			}
 			instancesObject.networkInterfaces.push_back(networkInterfacesObject);
 		}
 		auto allOperationLocksNode = valueInstancesInstance["OperationLocks"]["LockReason"];

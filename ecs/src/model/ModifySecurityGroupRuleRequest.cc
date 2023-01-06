@@ -223,3 +223,12 @@ void ModifySecurityGroupRuleRequest::setSourceGroupId(const std::string &sourceG
   setParameter(std::string("SourceGroupId"), sourceGroupId);
 }
 
+std::string ModifySecurityGroupRuleRequest::getSecurityGroupRuleId() const {
+  return securityGroupRuleId_;
+}
+
+void ModifySecurityGroupRuleRequest::setSecurityGroupRuleId(const std::string &securityGroupRuleId) {
+  securityGroupRuleId_ = securityGroupRuleId;
+  setParameter(std::string("SecurityGroupRuleId"), securityGroupRuleId);
+}
+

@@ -97,6 +97,15 @@ void RunCommandRequest::setFrequency(const std::string &frequency) {
   setParameter(std::string("Frequency"), frequency);
 }
 
+std::string RunCommandRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void RunCommandRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string RunCommandRequest::getRegionId() const {
   return regionId_;
 }

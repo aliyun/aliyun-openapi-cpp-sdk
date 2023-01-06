@@ -44,6 +44,8 @@ public:
 	void setWaitForNetworkConfigurationReady(bool waitForNetworkConfigurationReady);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	int getNetworkCardIndex() const;
+	void setNetworkCardIndex(int networkCardIndex);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getNetworkInterfaceId() const;
@@ -57,6 +59,7 @@ private:
 	std::string ownerAccount_;
 	bool waitForNetworkConfigurationReady_;
 	long ownerId_;
+	int networkCardIndex_;
 	std::string instanceId_;
 	std::string networkInterfaceId_;
 };

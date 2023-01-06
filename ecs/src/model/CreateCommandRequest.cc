@@ -34,6 +34,21 @@ void CreateCommandRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::vector<CreateCommandRequest::SystemTag> CreateCommandRequest::getSystemTag() const {
+  return systemTag_;
+}
+
+void CreateCommandRequest::setSystemTag(const std::vector<CreateCommandRequest::SystemTag> &systemTag) {
+  systemTag_ = systemTag;
+  for(int dep1 = 0; dep1 != systemTag.size(); dep1++) {
+  auto systemTagObj = systemTag.at(dep1);
+  std::string systemTagObjStr = std::string("SystemTag") + "." + std::to_string(dep1 + 1);
+    setParameter(systemTagObjStr + ".Key", systemTagObj.key);
+    setParameter(systemTagObjStr + ".Value", systemTagObj.value);
+    setParameter(systemTagObjStr + ".Scope", systemTagObj.scope);
+  }
+}
+
 std::string CreateCommandRequest::getWorkingDir() const {
   return workingDir_;
 }
@@ -95,6 +110,20 @@ std::string CreateCommandRequest::getContentEncoding() const {
 void CreateCommandRequest::setContentEncoding(const std::string &contentEncoding) {
   contentEncoding_ = contentEncoding;
   setParameter(std::string("ContentEncoding"), contentEncoding);
+}
+
+std::vector<CreateCommandRequest::Tag> CreateCommandRequest::getTag() const {
+  return tag_;
+}
+
+void CreateCommandRequest::setTag(const std::vector<CreateCommandRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
 }
 
 std::string CreateCommandRequest::getResourceOwnerAccount() const {

@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getCouponNo() const;
+	void setCouponNo(const std::string &couponNo);
 	std::string getOperatorType() const;
 	void setOperatorType(const std::string &operatorType);
 	std::string getSystemDiskCategory() const;
@@ -64,6 +66,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string clientToken_;
+	std::string couponNo_;
 	std::string operatorType_;
 	std::string systemDiskCategory_;
 	std::string rebootTime_;

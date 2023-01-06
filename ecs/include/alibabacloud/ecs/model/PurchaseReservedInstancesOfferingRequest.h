@@ -52,6 +52,8 @@ public:
 	void setInstanceType(const std::string &instanceType);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	int getAutoRenewPeriod() const;
+	void setAutoRenewPeriod(int autoRenewPeriod);
 	int getPeriod() const;
 	void setPeriod(int period);
 	std::string getResourceOwnerAccount() const;
@@ -64,6 +66,8 @@ public:
 	void setPeriodUnit(const std::string &periodUnit);
 	std::string getOfferingType() const;
 	void setOfferingType(const std::string &offeringType);
+	bool getAutoRenew() const;
+	void setAutoRenew(bool autoRenew);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
 	std::string getReservedInstanceName() const;
@@ -81,12 +85,14 @@ private:
 	std::string scope_;
 	std::string instanceType_;
 	std::vector<Tag> tag_;
+	int autoRenewPeriod_;
 	int period_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string periodUnit_;
 	std::string offeringType_;
+	bool autoRenew_;
 	std::string zoneId_;
 	std::string reservedInstanceName_;
 	int instanceAmount_;

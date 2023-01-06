@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_RELEASEPUBLICIPADDRESSREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_RELEASEPUBLICIPADDRESSREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBEDIAGNOSTICREPORTATTRIBUTESREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBEDIAGNOSTICREPORTATTRIBUTESREQUEST_H_
 
 #include <alibabacloud/ecs/EcsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,20 @@
 namespace AlibabaCloud {
 namespace Ecs {
 namespace Model {
-class ALIBABACLOUD_ECS_EXPORT ReleasePublicIpAddressRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ECS_EXPORT DescribeDiagnosticReportAttributesRequest : public RpcServiceRequest {
 public:
-	ReleasePublicIpAddressRequest();
-	~ReleasePublicIpAddressRequest();
+	DescribeDiagnosticReportAttributesRequest();
+	~DescribeDiagnosticReportAttributesRequest();
+	std::string getReportId() const;
+	void setReportId(const std::string &reportId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	bool getDryRun() const;
-	void setDryRun(bool dryRun);
-	std::string getPublicIpAddress() const;
-	void setPublicIpAddress(const std::string &publicIpAddress);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 
 private:
+	std::string reportId_;
 	std::string regionId_;
-	bool dryRun_;
-	std::string publicIpAddress_;
-	std::string instanceId_;
 };
 } // namespace Model
 } // namespace Ecs
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ECS_MODEL_RELEASEPUBLICIPADDRESSREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBEDIAGNOSTICREPORTATTRIBUTESREQUEST_H_

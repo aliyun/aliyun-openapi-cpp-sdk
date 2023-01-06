@@ -87,6 +87,15 @@ void CreateSnapshotGroupRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string CreateSnapshotGroupRequest::getStorageLocationArn() const {
+  return storageLocationArn_;
+}
+
+void CreateSnapshotGroupRequest::setStorageLocationArn(const std::string &storageLocationArn) {
+  storageLocationArn_ = storageLocationArn;
+  setParameter(std::string("StorageLocationArn"), storageLocationArn);
+}
+
 std::vector<std::string> CreateSnapshotGroupRequest::getDiskId() const {
   return diskId_;
 }

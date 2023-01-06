@@ -169,6 +169,8 @@ public:
 	void setVpcId(const std::string &vpcId);
 	std::string getSystemDiskDescription() const;
 	void setSystemDiskDescription(const std::string &systemDiskDescription);
+	std::string getSystemDiskEncrypted() const;
+	void setSystemDiskEncrypted(const std::string &systemDiskEncrypted);
 
 private:
 	std::string launchTemplateName_;
@@ -225,6 +227,7 @@ private:
 	int systemDiskSize_;
 	std::string vpcId_;
 	std::string systemDiskDescription_;
+	std::string systemDiskEncrypted_;
 };
 } // namespace Model
 } // namespace Ecs

@@ -25,40 +25,22 @@ ReleasePublicIpAddressRequest::ReleasePublicIpAddressRequest()
 
 ReleasePublicIpAddressRequest::~ReleasePublicIpAddressRequest() {}
 
-long ReleasePublicIpAddressRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+std::string ReleasePublicIpAddressRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ReleasePublicIpAddressRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void ReleasePublicIpAddressRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ReleasePublicIpAddressRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+bool ReleasePublicIpAddressRequest::getDryRun() const {
+  return dryRun_;
 }
 
-void ReleasePublicIpAddressRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string ReleasePublicIpAddressRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void ReleasePublicIpAddressRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-long ReleasePublicIpAddressRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void ReleasePublicIpAddressRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void ReleasePublicIpAddressRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
 std::string ReleasePublicIpAddressRequest::getPublicIpAddress() const {

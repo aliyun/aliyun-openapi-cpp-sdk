@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::vector<std::string> privateIpSet;
 					std::string networkInterfaceId;
+					std::vector<std::string> ipv4PrefixSet;
 				};
 
 

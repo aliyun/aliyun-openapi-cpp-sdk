@@ -45,6 +45,9 @@ void AssignPrivateIpAddressesResult::parse(const std::string &payload)
 		auto allPrivateIpSet = assignedPrivateIpAddressesSetNode["PrivateIpSet"]["PrivateIpAddress"];
 		for (auto value : allPrivateIpSet)
 			assignedPrivateIpAddressesSet_.privateIpSet.push_back(value.asString());
+		auto allIpv4PrefixSet = assignedPrivateIpAddressesSetNode["Ipv4PrefixSet"]["Ipv4Prefixes"];
+		for (auto value : allIpv4PrefixSet)
+			assignedPrivateIpAddressesSet_.ipv4PrefixSet.push_back(value.asString());
 
 }
 

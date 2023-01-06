@@ -59,6 +59,7 @@ public:
 		long queuePairNumber;
 		std::string instanceType;
 		long ipv6AddressCount;
+		int networkCardIndex;
 	};
 	struct DataDisk {
 		std::string performanceLevel;

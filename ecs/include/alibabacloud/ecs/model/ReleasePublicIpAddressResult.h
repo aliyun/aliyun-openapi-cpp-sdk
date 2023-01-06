@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				ReleasePublicIpAddressResult();
 				explicit ReleasePublicIpAddressResult(const std::string &payload);
 				~ReleasePublicIpAddressResult();
+				std::string getRemainTimes()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string remainTimes_;
 
 			};
 		}

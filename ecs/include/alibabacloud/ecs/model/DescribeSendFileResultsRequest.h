@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	long getPageNumber() const;
 	void setPageNumber(long pageNumber);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	long getPageSize() const;
@@ -54,6 +56,7 @@ public:
 private:
 	long resourceOwnerId_;
 	long pageNumber_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	long pageSize_;
 	std::string invokeId_;

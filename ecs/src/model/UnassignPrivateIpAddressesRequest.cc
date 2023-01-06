@@ -34,6 +34,14 @@ void UnassignPrivateIpAddressesRequest::setResourceOwnerId(long resourceOwnerId)
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::vector<std::string> UnassignPrivateIpAddressesRequest::getIpv4Prefix() const {
+  return ipv4Prefix_;
+}
+
+void UnassignPrivateIpAddressesRequest::setIpv4Prefix(const std::vector<std::string> &ipv4Prefix) {
+  ipv4Prefix_ = ipv4Prefix;
+}
+
 std::string UnassignPrivateIpAddressesRequest::getRegionId() const {
   return regionId_;
 }

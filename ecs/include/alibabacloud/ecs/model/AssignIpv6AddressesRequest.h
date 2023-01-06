@@ -32,6 +32,10 @@ public:
 	~AssignIpv6AddressesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::vector<std::string> getIpv6Prefix() const;
+	void setIpv6Prefix(const std::vector<std::string> &ipv6Prefix);
+	int getIpv6PrefixCount() const;
+	void setIpv6PrefixCount(int ipv6PrefixCount);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
@@ -49,6 +53,8 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::vector<std::string> ipv6Prefix_;
+	int ipv6PrefixCount_;
 	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	int ipv6AddressCount_;

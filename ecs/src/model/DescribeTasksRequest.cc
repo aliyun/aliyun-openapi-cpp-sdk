@@ -133,3 +133,11 @@ void DescribeTasksRequest::setTaskAction(const std::string &taskAction) {
   setParameter(std::string("TaskAction"), taskAction);
 }
 
+std::vector<std::string> DescribeTasksRequest::getResourceIds() const {
+  return resourceIds_;
+}
+
+void DescribeTasksRequest::setResourceIds(const std::vector<std::string> &resourceIds) {
+  resourceIds_ = resourceIds;
+}
+

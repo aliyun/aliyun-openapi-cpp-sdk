@@ -36,6 +36,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	int getAutoRenewPeriod() const;
+	void setAutoRenewPeriod(int autoRenewPeriod);
 	int getPeriod() const;
 	void setPeriod(int period);
 	std::string getResourceOwnerAccount() const;
@@ -48,17 +50,21 @@ public:
 	void setPeriodUnit(const std::string &periodUnit);
 	std::vector<std::string> getReservedInstanceId() const;
 	void setReservedInstanceId(const std::vector<std::string> &reservedInstanceId);
+	bool getAutoRenew() const;
+	void setAutoRenew(bool autoRenew);
 
 private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	std::string regionId_;
+	int autoRenewPeriod_;
 	int period_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string periodUnit_;
 	std::vector<std::string> reservedInstanceId_;
+	bool autoRenew_;
 };
 } // namespace Model
 } // namespace Ecs

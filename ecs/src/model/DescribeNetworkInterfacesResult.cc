@@ -104,6 +104,22 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 				ipv6SetsObject.ipv6Address = valueNetworkInterfaceSetsNetworkInterfaceSetIpv6SetsIpv6Set["Ipv6Address"].asString();
 			networkInterfaceSetsObject.ipv6Sets.push_back(ipv6SetsObject);
 		}
+		auto allIpv4PrefixSetsNode = valueNetworkInterfaceSetsNetworkInterfaceSet["Ipv4PrefixSets"]["Ipv4PrefixSet"];
+		for (auto valueNetworkInterfaceSetsNetworkInterfaceSetIpv4PrefixSetsIpv4PrefixSet : allIpv4PrefixSetsNode)
+		{
+			NetworkInterfaceSet::Ipv4PrefixSet ipv4PrefixSetsObject;
+			if(!valueNetworkInterfaceSetsNetworkInterfaceSetIpv4PrefixSetsIpv4PrefixSet["Ipv4Prefix"].isNull())
+				ipv4PrefixSetsObject.ipv4Prefix = valueNetworkInterfaceSetsNetworkInterfaceSetIpv4PrefixSetsIpv4PrefixSet["Ipv4Prefix"].asString();
+			networkInterfaceSetsObject.ipv4PrefixSets.push_back(ipv4PrefixSetsObject);
+		}
+		auto allIpv6PrefixSetsNode = valueNetworkInterfaceSetsNetworkInterfaceSet["Ipv6PrefixSets"]["Ipv6PrefixSet"];
+		for (auto valueNetworkInterfaceSetsNetworkInterfaceSetIpv6PrefixSetsIpv6PrefixSet : allIpv6PrefixSetsNode)
+		{
+			NetworkInterfaceSet::Ipv6PrefixSet ipv6PrefixSetsObject;
+			if(!valueNetworkInterfaceSetsNetworkInterfaceSetIpv6PrefixSetsIpv6PrefixSet["Ipv6Prefix"].isNull())
+				ipv6PrefixSetsObject.ipv6Prefix = valueNetworkInterfaceSetsNetworkInterfaceSetIpv6PrefixSetsIpv6PrefixSet["Ipv6Prefix"].asString();
+			networkInterfaceSetsObject.ipv6PrefixSets.push_back(ipv6PrefixSetsObject);
+		}
 		auto allTagsNode = valueNetworkInterfaceSetsNetworkInterfaceSet["Tags"]["Tag"];
 		for (auto valueNetworkInterfaceSetsNetworkInterfaceSetTagsTag : allTagsNode)
 		{
@@ -126,6 +142,8 @@ void DescribeNetworkInterfacesResult::parse(const std::string &payload)
 			networkInterfaceSetsObject.attachment.instanceId = attachmentNode["InstanceId"].asString();
 		if(!attachmentNode["TrunkNetworkInterfaceId"].isNull())
 			networkInterfaceSetsObject.attachment.trunkNetworkInterfaceId = attachmentNode["TrunkNetworkInterfaceId"].asString();
+		if(!attachmentNode["NetworkCardIndex"].isNull())
+			networkInterfaceSetsObject.attachment.networkCardIndex = std::stoi(attachmentNode["NetworkCardIndex"].asString());
 		auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 		for (auto value : allSecurityGroupIds)
 			networkInterfaceSetsObject.securityGroupIds.push_back(value.asString());

@@ -70,6 +70,15 @@ void DescribeInvocationsRequest::setPageNumber(long pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeInvocationsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeInvocationsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeInvocationsRequest::getRegionId() const {
   return regionId_;
 }

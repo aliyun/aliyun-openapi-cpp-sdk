@@ -32,6 +32,8 @@ public:
 	~ModifyInstanceMetadataOptionsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getInstanceMetadataTags() const;
+	void setInstanceMetadataTags(const std::string &instanceMetadataTags);
 	int getHttpPutResponseHopLimit() const;
 	void setHttpPutResponseHopLimit(int httpPutResponseHopLimit);
 	std::string getRegionId() const;
@@ -49,6 +51,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string instanceMetadataTags_;
 	int httpPutResponseHopLimit_;
 	std::string regionId_;
 	std::string httpEndpoint_;

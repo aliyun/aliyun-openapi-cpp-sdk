@@ -34,6 +34,11 @@ public:
 		std::string diskType;
 		std::string device;
 	};
+	struct SystemTag {
+		std::string scope;
+		std::string value;
+		std::string key;
+	};
 	struct Tag {
 		std::string value;
 		std::string key;
@@ -48,6 +53,8 @@ public:
 	void setSnapshotId(const std::string &snapshotId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::vector<SystemTag> getSystemTag() const;
+	void setSystemTag(const std::vector<SystemTag> &systemTag);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getPlatform() const;
@@ -60,10 +67,14 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getImageName() const;
 	void setImageName(const std::string &imageName);
+	std::string getStorageLocationArn() const;
+	void setStorageLocationArn(const std::string &storageLocationArn);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
 	std::string getArchitecture() const;
 	void setArchitecture(const std::string &architecture);
+	std::string getDetectionStrategy() const;
+	void setDetectionStrategy(const std::string &detectionStrategy);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -82,14 +93,17 @@ private:
 	long resourceOwnerId_;
 	std::string snapshotId_;
 	std::string clientToken_;
+	std::vector<SystemTag> systemTag_;
 	std::string description_;
 	std::string platform_;
 	std::string resourceGroupId_;
 	std::string bootMode_;
 	std::string regionId_;
 	std::string imageName_;
+	std::string storageLocationArn_;
 	std::vector<Tag> tag_;
 	std::string architecture_;
+	std::string detectionStrategy_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

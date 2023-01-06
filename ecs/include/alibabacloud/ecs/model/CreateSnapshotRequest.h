@@ -28,6 +28,11 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT CreateSnapshotRequest : public RpcServiceRequest {
 public:
+	struct SystemTag {
+		std::string scope;
+		std::string value;
+		std::string key;
+	};
 	struct Tag {
 		std::string value;
 		std::string key;
@@ -40,6 +45,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	bool getInstantAccess() const;
 	void setInstantAccess(bool instantAccess);
+	std::vector<SystemTag> getSystemTag() const;
+	void setSystemTag(const std::vector<SystemTag> &systemTag);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getSnapshotName() const;
@@ -48,6 +55,8 @@ public:
 	void setResourceGroupId(const std::string &resourceGroupId);
 	int getInstantAccessRetentionDays() const;
 	void setInstantAccessRetentionDays(int instantAccessRetentionDays);
+	std::string getStorageLocationArn() const;
+	void setStorageLocationArn(const std::string &storageLocationArn);
 	std::string getDiskId() const;
 	void setDiskId(const std::string &diskId);
 	std::vector<Tag> getTag() const;
@@ -67,10 +76,12 @@ private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	bool instantAccess_;
+	std::vector<SystemTag> systemTag_;
 	std::string description_;
 	std::string snapshotName_;
 	std::string resourceGroupId_;
 	int instantAccessRetentionDays_;
+	std::string storageLocationArn_;
 	std::string diskId_;
 	std::vector<Tag> tag_;
 	std::string resourceOwnerAccount_;

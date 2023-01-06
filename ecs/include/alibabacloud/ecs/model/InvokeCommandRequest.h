@@ -28,22 +28,39 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT InvokeCommandRequest : public RpcServiceRequest {
 public:
+	struct SystemTag {
+		std::string key;
+		std::string value;
+		std::string scope;
+	};
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	InvokeCommandRequest();
 	~InvokeCommandRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getContainerName() const;
 	void setContainerName(const std::string &containerName);
+	std::vector<SystemTag> getSystemTag() const;
+	void setSystemTag(const std::vector<SystemTag> &systemTag);
 	std::string getCommandId() const;
 	void setCommandId(const std::string &commandId);
+	long getTimeout() const;
+	void setTimeout(long timeout);
 	std::string getFrequency() const;
 	void setFrequency(const std::string &frequency);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getRepeatMode() const;
 	void setRepeatMode(const std::string &repeatMode);
 	std::string getWindowsPasswordName() const;
 	void setWindowsPasswordName(const std::string &windowsPasswordName);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getTimed() const;
 	void setTimed(bool timed);
 	std::string getResourceOwnerAccount() const;
@@ -64,11 +81,15 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string containerName_;
+	std::vector<SystemTag> systemTag_;
 	std::string commandId_;
+	long timeout_;
 	std::string frequency_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string repeatMode_;
 	std::string windowsPasswordName_;
+	std::vector<Tag> tag_;
 	bool timed_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

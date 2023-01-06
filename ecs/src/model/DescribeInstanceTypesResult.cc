@@ -115,6 +115,16 @@ void DescribeInstanceTypesResult::parse(const std::string &payload)
 			instanceTypesObject.cpuArchitecture = valueInstanceTypesInstanceType["CpuArchitecture"].asString();
 		if(!valueInstanceTypesInstanceType["GPUMemorySize"].isNull())
 			instanceTypesObject.gPUMemorySize = std::stof(valueInstanceTypesInstanceType["GPUMemorySize"].asString());
+		if(!valueInstanceTypesInstanceType["NetworkCardQuantity"].isNull())
+			instanceTypesObject.networkCardQuantity = std::stoi(valueInstanceTypesInstanceType["NetworkCardQuantity"].asString());
+		auto allNetworkCardsNode = valueInstanceTypesInstanceType["NetworkCards"]["NetworkCardInfo"];
+		for (auto valueInstanceTypesInstanceTypeNetworkCardsNetworkCardInfo : allNetworkCardsNode)
+		{
+			InstanceType::NetworkCardInfo networkCardsObject;
+			if(!valueInstanceTypesInstanceTypeNetworkCardsNetworkCardInfo["NetworkCardIndex"].isNull())
+				networkCardsObject.networkCardIndex = std::stoi(valueInstanceTypesInstanceTypeNetworkCardsNetworkCardInfo["NetworkCardIndex"].asString());
+			instanceTypesObject.networkCards.push_back(networkCardsObject);
+		}
 		instanceTypes_.push_back(instanceTypesObject);
 	}
 	if(!value["NextToken"].isNull())

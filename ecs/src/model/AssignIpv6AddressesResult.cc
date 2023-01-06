@@ -42,6 +42,9 @@ void AssignIpv6AddressesResult::parse(const std::string &payload)
 	auto allIpv6Sets = value["Ipv6Sets"]["Ipv6Address"];
 	for (const auto &item : allIpv6Sets)
 		ipv6Sets_.push_back(item.asString());
+	auto allIpv6PrefixSets = value["Ipv6PrefixSets"]["Ipv6Prefix"];
+	for (const auto &item : allIpv6PrefixSets)
+		ipv6PrefixSets_.push_back(item.asString());
 	if(!value["NetworkInterfaceId"].isNull())
 		networkInterfaceId_ = value["NetworkInterfaceId"].asString();
 
@@ -50,6 +53,11 @@ void AssignIpv6AddressesResult::parse(const std::string &payload)
 std::vector<std::string> AssignIpv6AddressesResult::getIpv6Sets()const
 {
 	return ipv6Sets_;
+}
+
+std::vector<std::string> AssignIpv6AddressesResult::getIpv6PrefixSets()const
+{
+	return ipv6PrefixSets_;
 }
 
 std::string AssignIpv6AddressesResult::getNetworkInterfaceId()const

@@ -52,6 +52,21 @@ void CreateSnapshotRequest::setInstantAccess(bool instantAccess) {
   setParameter(std::string("InstantAccess"), instantAccess ? "true" : "false");
 }
 
+std::vector<CreateSnapshotRequest::SystemTag> CreateSnapshotRequest::getSystemTag() const {
+  return systemTag_;
+}
+
+void CreateSnapshotRequest::setSystemTag(const std::vector<CreateSnapshotRequest::SystemTag> &systemTag) {
+  systemTag_ = systemTag;
+  for(int dep1 = 0; dep1 != systemTag.size(); dep1++) {
+  auto systemTagObj = systemTag.at(dep1);
+  std::string systemTagObjStr = std::string("SystemTag") + "." + std::to_string(dep1 + 1);
+    setParameter(systemTagObjStr + ".Scope", systemTagObj.scope);
+    setParameter(systemTagObjStr + ".Value", systemTagObj.value);
+    setParameter(systemTagObjStr + ".Key", systemTagObj.key);
+  }
+}
+
 std::string CreateSnapshotRequest::getDescription() const {
   return description_;
 }
@@ -86,6 +101,15 @@ int CreateSnapshotRequest::getInstantAccessRetentionDays() const {
 void CreateSnapshotRequest::setInstantAccessRetentionDays(int instantAccessRetentionDays) {
   instantAccessRetentionDays_ = instantAccessRetentionDays;
   setParameter(std::string("InstantAccessRetentionDays"), std::to_string(instantAccessRetentionDays));
+}
+
+std::string CreateSnapshotRequest::getStorageLocationArn() const {
+  return storageLocationArn_;
+}
+
+void CreateSnapshotRequest::setStorageLocationArn(const std::string &storageLocationArn) {
+  storageLocationArn_ = storageLocationArn;
+  setParameter(std::string("StorageLocationArn"), storageLocationArn);
 }
 
 std::string CreateSnapshotRequest::getDiskId() const {

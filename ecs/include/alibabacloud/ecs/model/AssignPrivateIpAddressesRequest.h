@@ -32,6 +32,8 @@ public:
 	~AssignPrivateIpAddressesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::vector<std::string> getIpv4Prefix() const;
+	void setIpv4Prefix(const std::vector<std::string> &ipv4Prefix);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	int getSecondaryPrivateIpAddressCount() const;
@@ -44,6 +46,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	int getIpv4PrefixCount() const;
+	void setIpv4PrefixCount(int ipv4PrefixCount);
 	std::vector<std::string> getPrivateIpAddress() const;
 	void setPrivateIpAddress(const std::vector<std::string> &privateIpAddress);
 	std::string getNetworkInterfaceId() const;
@@ -51,12 +55,14 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::vector<std::string> ipv4Prefix_;
 	std::string clientToken_;
 	int secondaryPrivateIpAddressCount_;
 	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	int ipv4PrefixCount_;
 	std::vector<std::string> privateIpAddress_;
 	std::string networkInterfaceId_;
 };

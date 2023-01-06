@@ -67,6 +67,22 @@ void CreateNetworkInterfaceResult::parse(const std::string &payload)
 			ipv6SetsObject.ipv6Address = valueIpv6SetsIpv6Set["Ipv6Address"].asString();
 		ipv6Sets_.push_back(ipv6SetsObject);
 	}
+	auto allIpv4PrefixSetsNode = value["Ipv4PrefixSets"]["Ipv4PrefixSet"];
+	for (auto valueIpv4PrefixSetsIpv4PrefixSet : allIpv4PrefixSetsNode)
+	{
+		Ipv4PrefixSet ipv4PrefixSetsObject;
+		if(!valueIpv4PrefixSetsIpv4PrefixSet["Ipv4Prefix"].isNull())
+			ipv4PrefixSetsObject.ipv4Prefix = valueIpv4PrefixSetsIpv4PrefixSet["Ipv4Prefix"].asString();
+		ipv4PrefixSets_.push_back(ipv4PrefixSetsObject);
+	}
+	auto allIpv6PrefixSetsNode = value["Ipv6PrefixSets"]["Ipv6PrefixSet"];
+	for (auto valueIpv6PrefixSetsIpv6PrefixSet : allIpv6PrefixSetsNode)
+	{
+		Ipv6PrefixSet ipv6PrefixSetsObject;
+		if(!valueIpv6PrefixSetsIpv6PrefixSet["Ipv6Prefix"].isNull())
+			ipv6PrefixSetsObject.ipv6Prefix = valueIpv6PrefixSetsIpv6PrefixSet["Ipv6Prefix"].asString();
+		ipv6PrefixSets_.push_back(ipv6PrefixSetsObject);
+	}
 	auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
 	for (const auto &item : allSecurityGroupIds)
 		securityGroupIds_.push_back(item.asString());
@@ -181,9 +197,19 @@ std::string CreateNetworkInterfaceResult::getOwnerId()const
 	return ownerId_;
 }
 
+std::vector<CreateNetworkInterfaceResult::Ipv6PrefixSet> CreateNetworkInterfaceResult::getIpv6PrefixSets()const
+{
+	return ipv6PrefixSets_;
+}
+
 std::vector<CreateNetworkInterfaceResult::Tag> CreateNetworkInterfaceResult::getTags()const
 {
 	return tags_;
+}
+
+std::vector<CreateNetworkInterfaceResult::Ipv4PrefixSet> CreateNetworkInterfaceResult::getIpv4PrefixSets()const
+{
+	return ipv4PrefixSets_;
 }
 
 std::vector<CreateNetworkInterfaceResult::PrivateIpSet> CreateNetworkInterfaceResult::getPrivateIpSets()const
