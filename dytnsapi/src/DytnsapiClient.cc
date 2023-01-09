@@ -447,6 +447,42 @@ DytnsapiClient::PhoneNumberStatusForAccountOutcomeCallable DytnsapiClient::phone
 	return task->get_future();
 }
 
+DytnsapiClient::PhoneNumberStatusForPublicOutcome DytnsapiClient::phoneNumberStatusForPublic(const PhoneNumberStatusForPublicRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PhoneNumberStatusForPublicOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PhoneNumberStatusForPublicOutcome(PhoneNumberStatusForPublicResult(outcome.result()));
+	else
+		return PhoneNumberStatusForPublicOutcome(outcome.error());
+}
+
+void DytnsapiClient::phoneNumberStatusForPublicAsync(const PhoneNumberStatusForPublicRequest& request, const PhoneNumberStatusForPublicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, phoneNumberStatusForPublic(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DytnsapiClient::PhoneNumberStatusForPublicOutcomeCallable DytnsapiClient::phoneNumberStatusForPublicCallable(const PhoneNumberStatusForPublicRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PhoneNumberStatusForPublicOutcome()>>(
+			[this, request]()
+			{
+			return this->phoneNumberStatusForPublic(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DytnsapiClient::PhoneNumberStatusForRealOutcome DytnsapiClient::phoneNumberStatusForReal(const PhoneNumberStatusForRealRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

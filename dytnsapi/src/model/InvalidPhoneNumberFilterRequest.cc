@@ -52,6 +52,15 @@ void InvalidPhoneNumberFilterRequest::setMask(const std::string &mask) {
   setParameter(std::string("Mask"), mask);
 }
 
+std::string InvalidPhoneNumberFilterRequest::getOfferType() const {
+  return offerType_;
+}
+
+void InvalidPhoneNumberFilterRequest::setOfferType(const std::string &offerType) {
+  offerType_ = offerType;
+  setParameter(std::string("OfferType"), offerType);
+}
+
 std::string InvalidPhoneNumberFilterRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

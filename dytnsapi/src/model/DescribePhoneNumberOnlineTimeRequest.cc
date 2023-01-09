@@ -43,6 +43,15 @@ void DescribePhoneNumberOnlineTimeRequest::setAccessKeyId(const std::string &acc
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribePhoneNumberOnlineTimeRequest::getRouteName() const {
+  return routeName_;
+}
+
+void DescribePhoneNumberOnlineTimeRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
+}
+
 std::string DescribePhoneNumberOnlineTimeRequest::getMask() const {
   return mask_;
 }
@@ -59,6 +68,15 @@ std::string DescribePhoneNumberOnlineTimeRequest::getOfferType() const {
 void DescribePhoneNumberOnlineTimeRequest::setOfferType(const std::string &offerType) {
   offerType_ = offerType;
   setParameter(std::string("OfferType"), offerType);
+}
+
+int DescribePhoneNumberOnlineTimeRequest::getResultCount() const {
+  return resultCount_;
+}
+
+void DescribePhoneNumberOnlineTimeRequest::setResultCount(int resultCount) {
+  resultCount_ = resultCount;
+  setParameter(std::string("ResultCount"), std::to_string(resultCount));
 }
 
 std::string DescribePhoneNumberOnlineTimeRequest::getResourceOwnerAccount() const {

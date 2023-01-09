@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYTNSAPI_MODEL_PHONENUMBERENCRYPTREQUEST_H_
-#define ALIBABACLOUD_DYTNSAPI_MODEL_PHONENUMBERENCRYPTREQUEST_H_
+#ifndef ALIBABACLOUD_DYTNSAPI_MODEL_PHONENUMBERSTATUSFORPUBLICREQUEST_H_
+#define ALIBABACLOUD_DYTNSAPI_MODEL_PHONENUMBERSTATUSFORPUBLICREQUEST_H_
 
 #include <alibabacloud/dytnsapi/DytnsapiExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,10 +26,10 @@
 namespace AlibabaCloud {
 namespace Dytnsapi {
 namespace Model {
-class ALIBABACLOUD_DYTNSAPI_EXPORT PhoneNumberEncryptRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DYTNSAPI_EXPORT PhoneNumberStatusForPublicRequest : public RpcServiceRequest {
 public:
-	PhoneNumberEncryptRequest();
-	~PhoneNumberEncryptRequest();
+	PhoneNumberStatusForPublicRequest();
+	~PhoneNumberStatusForPublicRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
@@ -60,4 +60,4 @@ private:
 } // namespace Model
 } // namespace Dytnsapi
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DYTNSAPI_MODEL_PHONENUMBERENCRYPTREQUEST_H_
+#endif // !ALIBABACLOUD_DYTNSAPI_MODEL_PHONENUMBERSTATUSFORPUBLICREQUEST_H_

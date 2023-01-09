@@ -44,6 +44,8 @@
 #include "model/PhoneNumberEncryptResult.h"
 #include "model/PhoneNumberStatusForAccountRequest.h"
 #include "model/PhoneNumberStatusForAccountResult.h"
+#include "model/PhoneNumberStatusForPublicRequest.h"
+#include "model/PhoneNumberStatusForPublicResult.h"
 #include "model/PhoneNumberStatusForRealRequest.h"
 #include "model/PhoneNumberStatusForRealResult.h"
 #include "model/PhoneNumberStatusForSmsRequest.h"
@@ -98,6 +100,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PhoneNumberStatusForAccountResult> PhoneNumberStatusForAccountOutcome;
 			typedef std::future<PhoneNumberStatusForAccountOutcome> PhoneNumberStatusForAccountOutcomeCallable;
 			typedef std::function<void(const DytnsapiClient*, const Model::PhoneNumberStatusForAccountRequest&, const PhoneNumberStatusForAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PhoneNumberStatusForAccountAsyncHandler;
+			typedef Outcome<Error, Model::PhoneNumberStatusForPublicResult> PhoneNumberStatusForPublicOutcome;
+			typedef std::future<PhoneNumberStatusForPublicOutcome> PhoneNumberStatusForPublicOutcomeCallable;
+			typedef std::function<void(const DytnsapiClient*, const Model::PhoneNumberStatusForPublicRequest&, const PhoneNumberStatusForPublicOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PhoneNumberStatusForPublicAsyncHandler;
 			typedef Outcome<Error, Model::PhoneNumberStatusForRealResult> PhoneNumberStatusForRealOutcome;
 			typedef std::future<PhoneNumberStatusForRealOutcome> PhoneNumberStatusForRealOutcomeCallable;
 			typedef std::function<void(const DytnsapiClient*, const Model::PhoneNumberStatusForRealRequest&, const PhoneNumberStatusForRealOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PhoneNumberStatusForRealAsyncHandler;
@@ -154,6 +159,9 @@ namespace AlibabaCloud
 			PhoneNumberStatusForAccountOutcome phoneNumberStatusForAccount(const Model::PhoneNumberStatusForAccountRequest &request)const;
 			void phoneNumberStatusForAccountAsync(const Model::PhoneNumberStatusForAccountRequest& request, const PhoneNumberStatusForAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PhoneNumberStatusForAccountOutcomeCallable phoneNumberStatusForAccountCallable(const Model::PhoneNumberStatusForAccountRequest& request) const;
+			PhoneNumberStatusForPublicOutcome phoneNumberStatusForPublic(const Model::PhoneNumberStatusForPublicRequest &request)const;
+			void phoneNumberStatusForPublicAsync(const Model::PhoneNumberStatusForPublicRequest& request, const PhoneNumberStatusForPublicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PhoneNumberStatusForPublicOutcomeCallable phoneNumberStatusForPublicCallable(const Model::PhoneNumberStatusForPublicRequest& request) const;
 			PhoneNumberStatusForRealOutcome phoneNumberStatusForReal(const Model::PhoneNumberStatusForRealRequest &request)const;
 			void phoneNumberStatusForRealAsync(const Model::PhoneNumberStatusForRealRequest& request, const PhoneNumberStatusForRealAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PhoneNumberStatusForRealOutcomeCallable phoneNumberStatusForRealCallable(const Model::PhoneNumberStatusForRealRequest& request) const;

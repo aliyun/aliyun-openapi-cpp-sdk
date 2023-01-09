@@ -36,6 +36,8 @@ public:
 	void setStartTime(const std::string &startTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRouteName() const;
+	void setRouteName(const std::string &routeName);
 	std::string getMask() const;
 	void setMask(const std::string &mask);
 	std::string getOfferType() const;
@@ -57,6 +59,7 @@ private:
 	long resourceOwnerId_;
 	std::string startTime_;
 	std::string accessKeyId_;
+	std::string routeName_;
 	std::string mask_;
 	std::string offerType_;
 	int resultCount_;

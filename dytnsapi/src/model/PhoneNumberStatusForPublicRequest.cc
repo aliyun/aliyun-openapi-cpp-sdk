@@ -14,85 +14,85 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dytnsapi/model/PhoneNumberEncryptRequest.h>
+#include <alibabacloud/dytnsapi/model/PhoneNumberStatusForPublicRequest.h>
 
-using AlibabaCloud::Dytnsapi::Model::PhoneNumberEncryptRequest;
+using AlibabaCloud::Dytnsapi::Model::PhoneNumberStatusForPublicRequest;
 
-PhoneNumberEncryptRequest::PhoneNumberEncryptRequest()
-    : RpcServiceRequest("dytnsapi", "2020-02-17", "PhoneNumberEncrypt") {
+PhoneNumberStatusForPublicRequest::PhoneNumberStatusForPublicRequest()
+    : RpcServiceRequest("dytnsapi", "2020-02-17", "PhoneNumberStatusForPublic") {
   setMethod(HttpRequest::Method::Post);
 }
 
-PhoneNumberEncryptRequest::~PhoneNumberEncryptRequest() {}
+PhoneNumberStatusForPublicRequest::~PhoneNumberStatusForPublicRequest() {}
 
-long PhoneNumberEncryptRequest::getResourceOwnerId() const {
+long PhoneNumberStatusForPublicRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
 
-void PhoneNumberEncryptRequest::setResourceOwnerId(long resourceOwnerId) {
+void PhoneNumberStatusForPublicRequest::setResourceOwnerId(long resourceOwnerId) {
   resourceOwnerId_ = resourceOwnerId;
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string PhoneNumberEncryptRequest::getAccessKeyId() const {
+std::string PhoneNumberStatusForPublicRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
 
-void PhoneNumberEncryptRequest::setAccessKeyId(const std::string &accessKeyId) {
+void PhoneNumberStatusForPublicRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string PhoneNumberEncryptRequest::getRouteName() const {
+std::string PhoneNumberStatusForPublicRequest::getRouteName() const {
   return routeName_;
 }
 
-void PhoneNumberEncryptRequest::setRouteName(const std::string &routeName) {
+void PhoneNumberStatusForPublicRequest::setRouteName(const std::string &routeName) {
   routeName_ = routeName;
   setParameter(std::string("RouteName"), routeName);
 }
 
-std::string PhoneNumberEncryptRequest::getMask() const {
+std::string PhoneNumberStatusForPublicRequest::getMask() const {
   return mask_;
 }
 
-void PhoneNumberEncryptRequest::setMask(const std::string &mask) {
+void PhoneNumberStatusForPublicRequest::setMask(const std::string &mask) {
   mask_ = mask;
   setParameter(std::string("Mask"), mask);
 }
 
-std::string PhoneNumberEncryptRequest::getResourceOwnerAccount() const {
+std::string PhoneNumberStatusForPublicRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
 
-void PhoneNumberEncryptRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+void PhoneNumberStatusForPublicRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
   resourceOwnerAccount_ = resourceOwnerAccount;
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-long PhoneNumberEncryptRequest::getOwnerId() const {
+long PhoneNumberStatusForPublicRequest::getOwnerId() const {
   return ownerId_;
 }
 
-void PhoneNumberEncryptRequest::setOwnerId(long ownerId) {
+void PhoneNumberStatusForPublicRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string PhoneNumberEncryptRequest::getAuthCode() const {
+std::string PhoneNumberStatusForPublicRequest::getAuthCode() const {
   return authCode_;
 }
 
-void PhoneNumberEncryptRequest::setAuthCode(const std::string &authCode) {
+void PhoneNumberStatusForPublicRequest::setAuthCode(const std::string &authCode) {
   authCode_ = authCode;
   setParameter(std::string("AuthCode"), authCode);
 }
 
-std::string PhoneNumberEncryptRequest::getInputNumber() const {
+std::string PhoneNumberStatusForPublicRequest::getInputNumber() const {
   return inputNumber_;
 }
 
-void PhoneNumberEncryptRequest::setInputNumber(const std::string &inputNumber) {
+void PhoneNumberStatusForPublicRequest::setInputNumber(const std::string &inputNumber) {
   inputNumber_ = inputNumber;
   setParameter(std::string("InputNumber"), inputNumber);
 }

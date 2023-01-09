@@ -36,6 +36,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getMask() const;
 	void setMask(const std::string &mask);
+	std::string getOfferType() const;
+	void setOfferType(const std::string &offerType);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
@@ -49,6 +51,7 @@ private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string mask_;
+	std::string offerType_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
 	std::string authCode_;

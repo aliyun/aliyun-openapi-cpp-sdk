@@ -43,6 +43,8 @@ set(dytnsapi_public_header_model
 	include/alibabacloud/dytnsapi/model/PhoneNumberEncryptResult.h
 	include/alibabacloud/dytnsapi/model/PhoneNumberStatusForAccountRequest.h
 	include/alibabacloud/dytnsapi/model/PhoneNumberStatusForAccountResult.h
+	include/alibabacloud/dytnsapi/model/PhoneNumberStatusForPublicRequest.h
+	include/alibabacloud/dytnsapi/model/PhoneNumberStatusForPublicResult.h
 	include/alibabacloud/dytnsapi/model/PhoneNumberStatusForRealRequest.h
 	include/alibabacloud/dytnsapi/model/PhoneNumberStatusForRealResult.h
 	include/alibabacloud/dytnsapi/model/PhoneNumberStatusForSmsRequest.h
@@ -80,6 +82,8 @@ set(dytnsapi_src
 	src/model/PhoneNumberEncryptResult.cc
 	src/model/PhoneNumberStatusForAccountRequest.cc
 	src/model/PhoneNumberStatusForAccountResult.cc
+	src/model/PhoneNumberStatusForPublicRequest.cc
+	src/model/PhoneNumberStatusForPublicResult.cc
 	src/model/PhoneNumberStatusForRealRequest.cc
 	src/model/PhoneNumberStatusForRealResult.cc
 	src/model/PhoneNumberStatusForSmsRequest.cc

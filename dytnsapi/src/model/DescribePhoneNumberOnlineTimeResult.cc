@@ -42,6 +42,8 @@ void DescribePhoneNumberOnlineTimeResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["VerifyResult"].isNull())
 		data_.verifyResult = dataNode["VerifyResult"].asString();
+	if(!dataNode["CarrierCode"].isNull())
+		data_.carrierCode = dataNode["CarrierCode"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

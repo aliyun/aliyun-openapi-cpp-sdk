@@ -52,6 +52,15 @@ void DescribePhoneTwiceTelVerifyRequest::setAccessKeyId(const std::string &acces
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribePhoneTwiceTelVerifyRequest::getRouteName() const {
+  return routeName_;
+}
+
+void DescribePhoneTwiceTelVerifyRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
+}
+
 std::string DescribePhoneTwiceTelVerifyRequest::getMask() const {
   return mask_;
 }

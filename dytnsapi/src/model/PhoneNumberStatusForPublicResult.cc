@@ -14,43 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dytnsapi/model/PhoneNumberEncryptResult.h>
+#include <alibabacloud/dytnsapi/model/PhoneNumberStatusForPublicResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Dytnsapi;
 using namespace AlibabaCloud::Dytnsapi::Model;
 
-PhoneNumberEncryptResult::PhoneNumberEncryptResult() :
+PhoneNumberStatusForPublicResult::PhoneNumberStatusForPublicResult() :
 	ServiceResult()
 {}
 
-PhoneNumberEncryptResult::PhoneNumberEncryptResult(const std::string &payload) :
+PhoneNumberStatusForPublicResult::PhoneNumberStatusForPublicResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-PhoneNumberEncryptResult::~PhoneNumberEncryptResult()
+PhoneNumberStatusForPublicResult::~PhoneNumberStatusForPublicResult()
 {}
 
-void PhoneNumberEncryptResult::parse(const std::string &payload)
+void PhoneNumberStatusForPublicResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataNode = value["Data"]["DataItem"];
-	for (auto valueDataDataItem : allDataNode)
-	{
-		DataItem dataObject;
-		if(!valueDataDataItem["OriginalNumber"].isNull())
-			dataObject.originalNumber = valueDataDataItem["OriginalNumber"].asString();
-		if(!valueDataDataItem["EncryptedNumber"].isNull())
-			dataObject.encryptedNumber = valueDataDataItem["EncryptedNumber"].asString();
-		if(!valueDataDataItem["ExpireTime"].isNull())
-			dataObject.expireTime = valueDataDataItem["ExpireTime"].asString();
-		data_.push_back(dataObject);
-	}
+	auto dataNode = value["Data"];
+	if(!dataNode["Status"].isNull())
+		data_.status = dataNode["Status"].asString();
+	if(!dataNode["Carrier"].isNull())
+		data_.carrier = dataNode["Carrier"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())
@@ -58,17 +51,17 @@ void PhoneNumberEncryptResult::parse(const std::string &payload)
 
 }
 
-std::string PhoneNumberEncryptResult::getMessage()const
+std::string PhoneNumberStatusForPublicResult::getMessage()const
 {
 	return message_;
 }
 
-std::vector<PhoneNumberEncryptResult::DataItem> PhoneNumberEncryptResult::getData()const
+PhoneNumberStatusForPublicResult::Data PhoneNumberStatusForPublicResult::getData()const
 {
 	return data_;
 }
 
-std::string PhoneNumberEncryptResult::getCode()const
+std::string PhoneNumberStatusForPublicResult::getCode()const
 {
 	return code_;
 }

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYTNSAPI_MODEL_DESCRIBEPHONENUMBERONLINETIMERESULT_H_
-#define ALIBABACLOUD_DYTNSAPI_MODEL_DESCRIBEPHONENUMBERONLINETIMERESULT_H_
+#ifndef ALIBABACLOUD_DYTNSAPI_MODEL_PHONENUMBERSTATUSFORPUBLICRESULT_H_
+#define ALIBABACLOUD_DYTNSAPI_MODEL_PHONENUMBERSTATUSFORPUBLICRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,19 +29,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DYTNSAPI_EXPORT DescribePhoneNumberOnlineTimeResult : public ServiceResult
+			class ALIBABACLOUD_DYTNSAPI_EXPORT PhoneNumberStatusForPublicResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					std::string carrierCode;
-					std::string verifyResult;
+					std::string status;
+					std::string carrier;
 				};
 
 
-				DescribePhoneNumberOnlineTimeResult();
-				explicit DescribePhoneNumberOnlineTimeResult(const std::string &payload);
-				~DescribePhoneNumberOnlineTimeResult();
+				PhoneNumberStatusForPublicResult();
+				explicit PhoneNumberStatusForPublicResult(const std::string &payload);
+				~PhoneNumberStatusForPublicResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -57,4 +57,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DYTNSAPI_MODEL_DESCRIBEPHONENUMBERONLINETIMERESULT_H_
+#endif // !ALIBABACLOUD_DYTNSAPI_MODEL_PHONENUMBERSTATUSFORPUBLICRESULT_H_
