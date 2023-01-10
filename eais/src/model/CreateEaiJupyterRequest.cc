@@ -61,6 +61,15 @@ void CreateEaiJupyterRequest::setVSwitchId(const std::string &vSwitchId) {
   setParameter(std::string("VSwitchId"), vSwitchId);
 }
 
+std::string CreateEaiJupyterRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateEaiJupyterRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateEaiJupyterRequest::getRegionId() const {
   return regionId_;
 }

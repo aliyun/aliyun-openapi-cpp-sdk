@@ -75,6 +75,8 @@ void DescribeEaisResult::parse(const std::string &payload)
 			instancesObject.securityGroupId = valueInstancesInstance["SecurityGroupId"].asString();
 		if(!valueInstancesInstance["StartTime"].isNull())
 			instancesObject.startTime = valueInstancesInstance["StartTime"].asString();
+		if(!valueInstancesInstance["ResourceGroupId"].isNull())
+			instancesObject.resourceGroupId = valueInstancesInstance["ResourceGroupId"].asString();
 		auto allTagsNode = valueInstancesInstance["Tags"]["Tag"];
 		for (auto valueInstancesInstanceTagsTag : allTagsNode)
 		{

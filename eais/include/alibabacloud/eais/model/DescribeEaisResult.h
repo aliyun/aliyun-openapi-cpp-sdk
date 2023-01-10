@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::string category;
 					std::string zoneId;
+					std::string resourceGroupId;
 					std::string vSwitchId;
 					std::string securityGroupId;
 					std::string startTime;

@@ -34,6 +34,8 @@ public:
 	void setElasticAcceleratedInstanceIds(const std::string &elasticAcceleratedInstanceIds);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getInstanceName() const;
 	void setInstanceName(const std::string &instanceName);
 	std::string getRegionId() const;
@@ -48,6 +50,7 @@ public:
 private:
 	std::string elasticAcceleratedInstanceIds_;
 	int pageNumber_;
+	std::string resourceGroupId_;
 	std::string instanceName_;
 	std::string regionId_;
 	int pageSize_;

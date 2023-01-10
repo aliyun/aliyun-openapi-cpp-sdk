@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EAIS_MODEL_CREATEEAIJUPYTERREQUEST_H_
-#define ALIBABACLOUD_EAIS_MODEL_CREATEEAIJUPYTERREQUEST_H_
+#ifndef ALIBABACLOUD_EAIS_MODEL_CREATEEAIECSREQUEST_H_
+#define ALIBABACLOUD_EAIS_MODEL_CREATEEAIECSREQUEST_H_
 
 #include <alibabacloud/eais/EaisExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,14 +26,21 @@
 namespace AlibabaCloud {
 namespace Eais {
 namespace Model {
-class ALIBABACLOUD_EAIS_EXPORT CreateEaiJupyterRequest : public RpcServiceRequest {
+class ALIBABACLOUD_EAIS_EXPORT CreateEaiEcsRequest : public RpcServiceRequest {
 public:
-	struct EnvironmentVar {
-		std::string value;
-		std::string key;
+	struct Ecs {
+		std::string password;
+		std::string imageId;
+		std::string systemDiskCategory;
+		std::string internetMaxBandwidthOut;
+		std::string name;
+		long systemDiskSize;
+		std::string zoneId;
+		std::string type;
+		std::string internetMaxBandwidthIn;
 	};
-	CreateEaiJupyterRequest();
-	~CreateEaiJupyterRequest();
+	CreateEaiEcsRequest();
+	~CreateEaiEcsRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getSecurityGroupId() const;
@@ -44,10 +51,12 @@ public:
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	Ecs getEcs() const;
+	void setEcs(const Ecs &ecs);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::vector<EnvironmentVar> getEnvironmentVar() const;
-	void setEnvironmentVar(const std::vector<EnvironmentVar> &environmentVar);
+	std::string getEaisName() const;
+	void setEaisName(const std::string &eaisName);
 
 private:
 	std::string clientToken_;
@@ -55,10 +64,11 @@ private:
 	std::string eaisType_;
 	std::string vSwitchId_;
 	std::string resourceGroupId_;
+	Ecs ecs_;
 	std::string regionId_;
-	std::vector<EnvironmentVar> environmentVar_;
+	std::string eaisName_;
 };
 } // namespace Model
 } // namespace Eais
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_EAIS_MODEL_CREATEEAIJUPYTERREQUEST_H_
+#endif // !ALIBABACLOUD_EAIS_MODEL_CREATEEAIECSREQUEST_H_

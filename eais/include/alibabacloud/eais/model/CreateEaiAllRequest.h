@@ -38,6 +38,8 @@ public:
 	void setClientInternetMaxBandwidthOut(int clientInternetMaxBandwidthOut);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getClientInstanceName() const;
 	void setClientInstanceName(const std::string &clientInstanceName);
 	int getClientInternetMaxBandwidthIn() const;
@@ -66,6 +68,7 @@ private:
 	std::string clientSystemDiskCategory_;
 	int clientInternetMaxBandwidthOut_;
 	std::string clientToken_;
+	std::string resourceGroupId_;
 	std::string clientInstanceName_;
 	int clientInternetMaxBandwidthIn_;
 	std::string regionId_;

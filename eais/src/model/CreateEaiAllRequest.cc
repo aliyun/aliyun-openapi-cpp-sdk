@@ -61,6 +61,15 @@ void CreateEaiAllRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string CreateEaiAllRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateEaiAllRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateEaiAllRequest::getClientInstanceName() const {
   return clientInstanceName_;
 }

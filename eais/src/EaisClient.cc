@@ -87,6 +87,42 @@ EaisClient::AttachEaiOutcomeCallable EaisClient::attachEaiCallable(const AttachE
 	return task->get_future();
 }
 
+EaisClient::ChangeResourceGroupOutcome EaisClient::changeResourceGroup(const ChangeResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeResourceGroupOutcome(ChangeResourceGroupResult(outcome.result()));
+	else
+		return ChangeResourceGroupOutcome(outcome.error());
+}
+
+void EaisClient::changeResourceGroupAsync(const ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EaisClient::ChangeResourceGroupOutcomeCallable EaisClient::changeResourceGroupCallable(const ChangeResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->changeResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EaisClient::CreateEaiOutcome EaisClient::createEai(const CreateEaiRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,6 +189,78 @@ EaisClient::CreateEaiAllOutcomeCallable EaisClient::createEaiAllCallable(const C
 			[this, request]()
 			{
 			return this->createEaiAll(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EaisClient::CreateEaiEciOutcome EaisClient::createEaiEci(const CreateEaiEciRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateEaiEciOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateEaiEciOutcome(CreateEaiEciResult(outcome.result()));
+	else
+		return CreateEaiEciOutcome(outcome.error());
+}
+
+void EaisClient::createEaiEciAsync(const CreateEaiEciRequest& request, const CreateEaiEciAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createEaiEci(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EaisClient::CreateEaiEciOutcomeCallable EaisClient::createEaiEciCallable(const CreateEaiEciRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateEaiEciOutcome()>>(
+			[this, request]()
+			{
+			return this->createEaiEci(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EaisClient::CreateEaiEcsOutcome EaisClient::createEaiEcs(const CreateEaiEcsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateEaiEcsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateEaiEcsOutcome(CreateEaiEcsResult(outcome.result()));
+	else
+		return CreateEaiEcsOutcome(outcome.error());
+}
+
+void EaisClient::createEaiEcsAsync(const CreateEaiEcsRequest& request, const CreateEaiEcsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createEaiEcs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EaisClient::CreateEaiEcsOutcomeCallable EaisClient::createEaiEcsCallable(const CreateEaiEcsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateEaiEcsOutcome()>>(
+			[this, request]()
+			{
+			return this->createEaiEcs(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -369,6 +477,42 @@ EaisClient::DetachEaiOutcomeCallable EaisClient::detachEaiCallable(const DetachE
 			[this, request]()
 			{
 			return this->detachEai(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EaisClient::GetInstanceMetricsOutcome EaisClient::getInstanceMetrics(const GetInstanceMetricsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetInstanceMetricsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetInstanceMetricsOutcome(GetInstanceMetricsResult(outcome.result()));
+	else
+		return GetInstanceMetricsOutcome(outcome.error());
+}
+
+void EaisClient::getInstanceMetricsAsync(const GetInstanceMetricsRequest& request, const GetInstanceMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getInstanceMetrics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EaisClient::GetInstanceMetricsOutcomeCallable EaisClient::getInstanceMetricsCallable(const GetInstanceMetricsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetInstanceMetricsOutcome()>>(
+			[this, request]()
+			{
+			return this->getInstanceMetrics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

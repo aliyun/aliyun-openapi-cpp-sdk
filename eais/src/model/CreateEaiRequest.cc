@@ -52,6 +52,15 @@ void CreateEaiRequest::setVSwitchId(const std::string &vSwitchId) {
   setParameter(std::string("VSwitchId"), vSwitchId);
 }
 
+std::string CreateEaiRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateEaiRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateEaiRequest::getInstanceName() const {
   return instanceName_;
 }

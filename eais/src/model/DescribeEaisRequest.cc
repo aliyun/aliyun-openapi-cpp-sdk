@@ -43,6 +43,15 @@ void DescribeEaisRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeEaisRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeEaisRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeEaisRequest::getInstanceName() const {
   return instanceName_;
 }

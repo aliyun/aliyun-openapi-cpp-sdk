@@ -23,10 +23,16 @@ set(eais_public_header
 set(eais_public_header_model 
 	include/alibabacloud/eais/model/AttachEaiRequest.h
 	include/alibabacloud/eais/model/AttachEaiResult.h
+	include/alibabacloud/eais/model/ChangeResourceGroupRequest.h
+	include/alibabacloud/eais/model/ChangeResourceGroupResult.h
 	include/alibabacloud/eais/model/CreateEaiRequest.h
 	include/alibabacloud/eais/model/CreateEaiResult.h
 	include/alibabacloud/eais/model/CreateEaiAllRequest.h
 	include/alibabacloud/eais/model/CreateEaiAllResult.h
+	include/alibabacloud/eais/model/CreateEaiEciRequest.h
+	include/alibabacloud/eais/model/CreateEaiEciResult.h
+	include/alibabacloud/eais/model/CreateEaiEcsRequest.h
+	include/alibabacloud/eais/model/CreateEaiEcsResult.h
 	include/alibabacloud/eais/model/CreateEaiJupyterRequest.h
 	include/alibabacloud/eais/model/CreateEaiJupyterResult.h
 	include/alibabacloud/eais/model/DeleteEaiRequest.h
@@ -38,16 +44,24 @@ set(eais_public_header_model
 	include/alibabacloud/eais/model/DescribeRegionsRequest.h
 	include/alibabacloud/eais/model/DescribeRegionsResult.h
 	include/alibabacloud/eais/model/DetachEaiRequest.h
-	include/alibabacloud/eais/model/DetachEaiResult.h )
+	include/alibabacloud/eais/model/DetachEaiResult.h
+	include/alibabacloud/eais/model/GetInstanceMetricsRequest.h
+	include/alibabacloud/eais/model/GetInstanceMetricsResult.h )
 
 set(eais_src 
 	src/EaisClient.cc
 	src/model/AttachEaiRequest.cc
 	src/model/AttachEaiResult.cc
+	src/model/ChangeResourceGroupRequest.cc
+	src/model/ChangeResourceGroupResult.cc
 	src/model/CreateEaiRequest.cc
 	src/model/CreateEaiResult.cc
 	src/model/CreateEaiAllRequest.cc
 	src/model/CreateEaiAllResult.cc
+	src/model/CreateEaiEciRequest.cc
+	src/model/CreateEaiEciResult.cc
+	src/model/CreateEaiEcsRequest.cc
+	src/model/CreateEaiEcsResult.cc
 	src/model/CreateEaiJupyterRequest.cc
 	src/model/CreateEaiJupyterResult.cc
 	src/model/DeleteEaiRequest.cc
@@ -59,7 +73,9 @@ set(eais_src
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DetachEaiRequest.cc
-	src/model/DetachEaiResult.cc )
+	src/model/DetachEaiResult.cc
+	src/model/GetInstanceMetricsRequest.cc
+	src/model/GetInstanceMetricsResult.cc )
 
 add_library(eais ${LIB_TYPE}
 	${eais_public_header}

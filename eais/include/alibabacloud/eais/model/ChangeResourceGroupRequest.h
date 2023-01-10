@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EAIS_MODEL_CREATEEAIREQUEST_H_
-#define ALIBABACLOUD_EAIS_MODEL_CREATEEAIREQUEST_H_
+#ifndef ALIBABACLOUD_EAIS_MODEL_CHANGERESOURCEGROUPREQUEST_H_
+#define ALIBABACLOUD_EAIS_MODEL_CHANGERESOURCEGROUPREQUEST_H_
 
 #include <alibabacloud/eais/EaisExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,29 @@
 namespace AlibabaCloud {
 namespace Eais {
 namespace Model {
-class ALIBABACLOUD_EAIS_EXPORT CreateEaiRequest : public RpcServiceRequest {
+class ALIBABACLOUD_EAIS_EXPORT ChangeResourceGroupRequest : public RpcServiceRequest {
 public:
-	CreateEaiRequest();
-	~CreateEaiRequest();
-	std::string getClientToken() const;
-	void setClientToken(const std::string &clientToken);
-	std::string getSecurityGroupId() const;
-	void setSecurityGroupId(const std::string &securityGroupId);
-	std::string getVSwitchId() const;
-	void setVSwitchId(const std::string &vSwitchId);
+	ChangeResourceGroupRequest();
+	~ChangeResourceGroupRequest();
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
-	std::string getInstanceName() const;
-	void setInstanceName(const std::string &instanceName);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
-	std::string getInstanceType() const;
-	void setInstanceType(const std::string &instanceType);
+	std::string getResourceRegionId() const;
+	void setResourceRegionId(const std::string &resourceRegionId);
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getService() const;
+	void setService(const std::string &service);
 
 private:
-	std::string clientToken_;
-	std::string securityGroupId_;
-	std::string vSwitchId_;
 	std::string resourceGroupId_;
-	std::string instanceName_;
-	std::string regionId_;
-	std::string instanceType_;
+	std::string resourceRegionId_;
+	std::string resourceId_;
+	std::string resourceType_;
+	std::string service_;
 };
 } // namespace Model
 } // namespace Eais
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_EAIS_MODEL_CREATEEAIREQUEST_H_
+#endif // !ALIBABACLOUD_EAIS_MODEL_CHANGERESOURCEGROUPREQUEST_H_
