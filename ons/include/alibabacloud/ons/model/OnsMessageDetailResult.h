@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ONS_MODEL_ONSINSTANCEINSERVICELISTRESULT_H_
-#define ALIBABACLOUD_ONS_MODEL_ONSINSTANCEINSERVICELISTRESULT_H_
+#ifndef ALIBABACLOUD_ONS_MODEL_ONSMESSAGEDETAILRESULT_H_
+#define ALIBABACLOUD_ONS_MODEL_ONSMESSAGEDETAILRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,47 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ONS_EXPORT OnsInstanceInServiceListResult : public ServiceResult
+			class ALIBABACLOUD_ONS_EXPORT OnsMessageDetailResult : public ServiceResult
 			{
 			public:
-				struct InstanceVO
+				struct Data
 				{
-					struct Tag
+					struct MessageProperty
 					{
 						std::string value;
-						std::string key;
+						std::string name;
 					};
-					std::string instanceName;
-					long releaseTime;
+					long bornTimestamp;
+					std::string offsetId;
 					std::string instanceId;
-					int instanceStatus;
-					long createTime;
-					bool independentNaming;
-					int instanceType;
-					std::vector<InstanceVO::Tag> tags;
+					int storeSize;
+					std::string bornHost;
+					int bodyCRC;
+					int flag;
+					std::string msgId;
+					long storeTimestamp;
+					std::string storeHost;
+					std::vector<MessageProperty> propertyList;
+					std::string topic;
+					int reconsumeTimes;
+					std::string body;
 				};
 
 
-				OnsInstanceInServiceListResult();
-				explicit OnsInstanceInServiceListResult(const std::string &payload);
-				~OnsInstanceInServiceListResult();
-				std::vector<InstanceVO> getData()const;
+				OnsMessageDetailResult();
+				explicit OnsMessageDetailResult(const std::string &payload);
+				~OnsMessageDetailResult();
+				Data getData()const;
 				std::string getHelpUrl()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<InstanceVO> data_;
+				Data data_;
 				std::string helpUrl_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ONS_MODEL_ONSINSTANCEINSERVICELISTRESULT_H_
+#endif // !ALIBABACLOUD_ONS_MODEL_ONSMESSAGEDETAILRESULT_H_

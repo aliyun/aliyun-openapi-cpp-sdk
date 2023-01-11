@@ -43,6 +43,15 @@ void OnsGroupCreateRequest::setRemark(const std::string &remark) {
   setParameter(std::string("Remark"), remark);
 }
 
+std::string OnsGroupCreateRequest::getUserId() const {
+  return userId_;
+}
+
+void OnsGroupCreateRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
+}
+
 std::string OnsGroupCreateRequest::getInstanceId() const {
   return instanceId_;
 }

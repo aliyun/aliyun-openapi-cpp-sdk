@@ -735,6 +735,42 @@ OnsClient::OnsInstanceUpdateOutcomeCallable OnsClient::onsInstanceUpdateCallable
 	return task->get_future();
 }
 
+OnsClient::OnsMessageDetailOutcome OnsClient::onsMessageDetail(const OnsMessageDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OnsMessageDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OnsMessageDetailOutcome(OnsMessageDetailResult(outcome.result()));
+	else
+		return OnsMessageDetailOutcome(outcome.error());
+}
+
+void OnsClient::onsMessageDetailAsync(const OnsMessageDetailRequest& request, const OnsMessageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, onsMessageDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OnsClient::OnsMessageDetailOutcomeCallable OnsClient::onsMessageDetailCallable(const OnsMessageDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OnsMessageDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->onsMessageDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OnsClient::OnsMessageGetByKeyOutcome OnsClient::onsMessageGetByKey(const OnsMessageGetByKeyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

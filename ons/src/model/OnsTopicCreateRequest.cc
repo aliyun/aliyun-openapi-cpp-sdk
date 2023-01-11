@@ -43,6 +43,15 @@ void OnsTopicCreateRequest::setRemark(const std::string &remark) {
   setParameter(std::string("Remark"), remark);
 }
 
+std::string OnsTopicCreateRequest::getUserId() const {
+  return userId_;
+}
+
+void OnsTopicCreateRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
+}
+
 std::string OnsTopicCreateRequest::getInstanceId() const {
   return instanceId_;
 }

@@ -55,6 +55,8 @@ void OnsInstanceInServiceListResult::parse(const std::string &payload)
 			dataObject.instanceId = valueDataInstanceVO["InstanceId"].asString();
 		if(!valueDataInstanceVO["InstanceType"].isNull())
 			dataObject.instanceType = std::stoi(valueDataInstanceVO["InstanceType"].asString());
+		if(!valueDataInstanceVO["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataInstanceVO["CreateTime"].asString());
 		auto allTagsNode = valueDataInstanceVO["Tags"]["Tag"];
 		for (auto valueDataInstanceVOTagsTag : allTagsNode)
 		{

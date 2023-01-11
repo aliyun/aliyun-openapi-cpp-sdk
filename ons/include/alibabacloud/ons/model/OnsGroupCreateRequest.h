@@ -34,6 +34,8 @@ public:
 	void setGroupId(const std::string &groupId);
 	std::string getRemark() const;
 	void setRemark(const std::string &remark);
+	std::string getUserId() const;
+	void setUserId(const std::string &userId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getGroupType() const;
@@ -42,6 +44,7 @@ public:
 private:
 	std::string groupId_;
 	std::string remark_;
+	std::string userId_;
 	std::string instanceId_;
 	std::string groupType_;
 };

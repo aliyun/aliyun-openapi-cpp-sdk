@@ -59,6 +59,8 @@ set(ons_public_header_model
 	include/alibabacloud/ons/model/OnsInstanceInServiceListResult.h
 	include/alibabacloud/ons/model/OnsInstanceUpdateRequest.h
 	include/alibabacloud/ons/model/OnsInstanceUpdateResult.h
+	include/alibabacloud/ons/model/OnsMessageDetailRequest.h
+	include/alibabacloud/ons/model/OnsMessageDetailResult.h
 	include/alibabacloud/ons/model/OnsMessageGetByKeyRequest.h
 	include/alibabacloud/ons/model/OnsMessageGetByKeyResult.h
 	include/alibabacloud/ons/model/OnsMessageGetByMsgIdRequest.h
@@ -140,6 +142,8 @@ set(ons_src
 	src/model/OnsInstanceInServiceListResult.cc
 	src/model/OnsInstanceUpdateRequest.cc
 	src/model/OnsInstanceUpdateResult.cc
+	src/model/OnsMessageDetailRequest.cc
+	src/model/OnsMessageDetailResult.cc
 	src/model/OnsMessageGetByKeyRequest.cc
 	src/model/OnsMessageGetByKeyResult.cc
 	src/model/OnsMessageGetByMsgIdRequest.cc

@@ -30,10 +30,13 @@ class ALIBABACLOUD_ONS_EXPORT OnsInstanceBaseInfoRequest : public RpcServiceRequ
 public:
 	OnsInstanceBaseInfoRequest();
 	~OnsInstanceBaseInfoRequest();
+	std::string getUserId() const;
+	void setUserId(const std::string &userId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 
 private:
+	std::string userId_;
 	std::string instanceId_;
 };
 } // namespace Model

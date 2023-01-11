@@ -60,6 +60,8 @@
 #include "model/OnsInstanceInServiceListResult.h"
 #include "model/OnsInstanceUpdateRequest.h"
 #include "model/OnsInstanceUpdateResult.h"
+#include "model/OnsMessageDetailRequest.h"
+#include "model/OnsMessageDetailResult.h"
 #include "model/OnsMessageGetByKeyRequest.h"
 #include "model/OnsMessageGetByKeyResult.h"
 #include "model/OnsMessageGetByMsgIdRequest.h"
@@ -166,6 +168,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OnsInstanceUpdateResult> OnsInstanceUpdateOutcome;
 			typedef std::future<OnsInstanceUpdateOutcome> OnsInstanceUpdateOutcomeCallable;
 			typedef std::function<void(const OnsClient*, const Model::OnsInstanceUpdateRequest&, const OnsInstanceUpdateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsInstanceUpdateAsyncHandler;
+			typedef Outcome<Error, Model::OnsMessageDetailResult> OnsMessageDetailOutcome;
+			typedef std::future<OnsMessageDetailOutcome> OnsMessageDetailOutcomeCallable;
+			typedef std::function<void(const OnsClient*, const Model::OnsMessageDetailRequest&, const OnsMessageDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsMessageDetailAsyncHandler;
 			typedef Outcome<Error, Model::OnsMessageGetByKeyResult> OnsMessageGetByKeyOutcome;
 			typedef std::future<OnsMessageGetByKeyOutcome> OnsMessageGetByKeyOutcomeCallable;
 			typedef std::function<void(const OnsClient*, const Model::OnsMessageGetByKeyRequest&, const OnsMessageGetByKeyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OnsMessageGetByKeyAsyncHandler;
@@ -288,6 +293,9 @@ namespace AlibabaCloud
 			OnsInstanceUpdateOutcome onsInstanceUpdate(const Model::OnsInstanceUpdateRequest &request)const;
 			void onsInstanceUpdateAsync(const Model::OnsInstanceUpdateRequest& request, const OnsInstanceUpdateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OnsInstanceUpdateOutcomeCallable onsInstanceUpdateCallable(const Model::OnsInstanceUpdateRequest& request) const;
+			OnsMessageDetailOutcome onsMessageDetail(const Model::OnsMessageDetailRequest &request)const;
+			void onsMessageDetailAsync(const Model::OnsMessageDetailRequest& request, const OnsMessageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			OnsMessageDetailOutcomeCallable onsMessageDetailCallable(const Model::OnsMessageDetailRequest& request) const;
 			OnsMessageGetByKeyOutcome onsMessageGetByKey(const Model::OnsMessageGetByKeyRequest &request)const;
 			void onsMessageGetByKeyAsync(const Model::OnsMessageGetByKeyRequest& request, const OnsMessageGetByKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OnsMessageGetByKeyOutcomeCallable onsMessageGetByKeyCallable(const Model::OnsMessageGetByKeyRequest& request) const;

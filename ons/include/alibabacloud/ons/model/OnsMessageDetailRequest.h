@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ONS_MODEL_ONSTOPICCREATEREQUEST_H_
-#define ALIBABACLOUD_ONS_MODEL_ONSTOPICCREATEREQUEST_H_
+#ifndef ALIBABACLOUD_ONS_MODEL_ONSMESSAGEDETAILREQUEST_H_
+#define ALIBABACLOUD_ONS_MODEL_ONSMESSAGEDETAILREQUEST_H_
 
 #include <alibabacloud/ons/OnsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,23 @@
 namespace AlibabaCloud {
 namespace Ons {
 namespace Model {
-class ALIBABACLOUD_ONS_EXPORT OnsTopicCreateRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ONS_EXPORT OnsMessageDetailRequest : public RpcServiceRequest {
 public:
-	OnsTopicCreateRequest();
-	~OnsTopicCreateRequest();
-	int getMessageType() const;
-	void setMessageType(int messageType);
-	std::string getRemark() const;
-	void setRemark(const std::string &remark);
-	std::string getUserId() const;
-	void setUserId(const std::string &userId);
+	OnsMessageDetailRequest();
+	~OnsMessageDetailRequest();
+	std::string getMsgId() const;
+	void setMsgId(const std::string &msgId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getTopic() const;
 	void setTopic(const std::string &topic);
 
 private:
-	int messageType_;
-	std::string remark_;
-	std::string userId_;
+	std::string msgId_;
 	std::string instanceId_;
 	std::string topic_;
 };
 } // namespace Model
 } // namespace Ons
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ONS_MODEL_ONSTOPICCREATEREQUEST_H_
+#endif // !ALIBABACLOUD_ONS_MODEL_ONSMESSAGEDETAILREQUEST_H_

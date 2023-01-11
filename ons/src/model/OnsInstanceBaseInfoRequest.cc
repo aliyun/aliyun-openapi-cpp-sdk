@@ -25,6 +25,15 @@ OnsInstanceBaseInfoRequest::OnsInstanceBaseInfoRequest()
 
 OnsInstanceBaseInfoRequest::~OnsInstanceBaseInfoRequest() {}
 
+std::string OnsInstanceBaseInfoRequest::getUserId() const {
+  return userId_;
+}
+
+void OnsInstanceBaseInfoRequest::setUserId(const std::string &userId) {
+  userId_ = userId;
+  setParameter(std::string("UserId"), userId);
+}
+
 std::string OnsInstanceBaseInfoRequest::getInstanceId() const {
   return instanceId_;
 }
