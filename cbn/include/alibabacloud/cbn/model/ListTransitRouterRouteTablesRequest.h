@@ -28,6 +28,9 @@ namespace Cbn {
 namespace Model {
 class ALIBABACLOUD_CBN_EXPORT ListTransitRouterRouteTablesRequest : public RpcServiceRequest {
 public:
+	struct RouteTableOptions {
+		std::string multiRegionECMP;
+	};
 	struct Tag {
 		std::string value;
 		std::string key;
@@ -38,6 +41,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::vector<std::string> getTransitRouterRouteTableNames() const;
 	void setTransitRouterRouteTableNames(const std::vector<std::string> &transitRouterRouteTableNames);
+	RouteTableOptions getRouteTableOptions() const;
+	void setRouteTableOptions(const RouteTableOptions &routeTableOptions);
 	std::string getTransitRouterRouteTableType() const;
 	void setTransitRouterRouteTableType(const std::string &transitRouterRouteTableType);
 	std::string getTransitRouterRouteTableStatus() const;
@@ -56,12 +61,15 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getTransitRouterId() const;
 	void setTransitRouterId(const std::string &transitRouterId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
 
 private:
 	long resourceOwnerId_;
 	std::vector<std::string> transitRouterRouteTableNames_;
+	RouteTableOptions routeTableOptions_;
 	std::string transitRouterRouteTableType_;
 	std::string transitRouterRouteTableStatus_;
 	std::vector<std::string> transitRouterRouteTableIds_;
@@ -71,6 +79,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string transitRouterId_;
+	std::string version_;
 	int maxResults_;
 };
 } // namespace Model

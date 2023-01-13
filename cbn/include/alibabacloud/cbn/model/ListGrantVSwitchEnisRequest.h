@@ -44,6 +44,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getVpcId() const;
@@ -57,6 +59,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string version_;
 	std::string vSwitchId_;
 	std::string vpcId_;
 };

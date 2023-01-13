@@ -61,6 +61,15 @@ void DeleteCenBandwidthPackageRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DeleteCenBandwidthPackageRequest::getVersion() const {
+  return version_;
+}
+
+void DeleteCenBandwidthPackageRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DeleteCenBandwidthPackageRequest::getCenBandwidthPackageId() const {
   return cenBandwidthPackageId_;
 }

@@ -97,6 +97,15 @@ void DescribeCenRegionDomainRouteEntriesRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeCenRegionDomainRouteEntriesRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeCenRegionDomainRouteEntriesRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DescribeCenRegionDomainRouteEntriesRequest::getCenRegionId() const {
   return cenRegionId_;
 }

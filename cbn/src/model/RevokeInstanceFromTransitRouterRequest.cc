@@ -97,6 +97,15 @@ void RevokeInstanceFromTransitRouterRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string RevokeInstanceFromTransitRouterRequest::getVersion() const {
+  return version_;
+}
+
+void RevokeInstanceFromTransitRouterRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string RevokeInstanceFromTransitRouterRequest::getInstanceId() const {
   return instanceId_;
 }

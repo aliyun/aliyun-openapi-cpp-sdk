@@ -96,3 +96,12 @@ void RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest::setOwnerId(long owne
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest::getVersion() const {
+  return version_;
+}
+
+void RemoveTrafficMatchRuleFromTrafficMarkingPolicyRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

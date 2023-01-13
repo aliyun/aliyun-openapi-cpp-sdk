@@ -88,6 +88,15 @@ void AttachCenChildInstanceRequest::setChildInstanceType(const std::string &chil
   setParameter(std::string("ChildInstanceType"), childInstanceType);
 }
 
+std::string AttachCenChildInstanceRequest::getVersion() const {
+  return version_;
+}
+
+void AttachCenChildInstanceRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 long AttachCenChildInstanceRequest::getChildInstanceOwnerId() const {
   return childInstanceOwnerId_;
 }

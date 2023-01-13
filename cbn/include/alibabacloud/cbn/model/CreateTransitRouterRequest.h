@@ -70,6 +70,8 @@ public:
 	void setTransitRouterDescription(const std::string &transitRouterDescription);
 	bool getSupportMulticast() const;
 	void setSupportMulticast(bool supportMulticast);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 
 private:
 	std::string transitRouterName_;
@@ -87,6 +89,7 @@ private:
 	long ownerId_;
 	std::string transitRouterDescription_;
 	bool supportMulticast_;
+	std::string version_;
 };
 } // namespace Model
 } // namespace Cbn

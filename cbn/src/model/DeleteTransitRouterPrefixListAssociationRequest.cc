@@ -124,6 +124,15 @@ void DeleteTransitRouterPrefixListAssociationRequest::setTransitRouterTableId(co
   setParameter(std::string("TransitRouterTableId"), transitRouterTableId);
 }
 
+std::string DeleteTransitRouterPrefixListAssociationRequest::getVersion() const {
+  return version_;
+}
+
+void DeleteTransitRouterPrefixListAssociationRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DeleteTransitRouterPrefixListAssociationRequest::getNextHop() const {
   return nextHop_;
 }

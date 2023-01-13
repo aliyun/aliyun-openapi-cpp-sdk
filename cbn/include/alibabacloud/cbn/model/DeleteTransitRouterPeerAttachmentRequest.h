@@ -44,6 +44,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getTransitRouterAttachmentId() const;
 	void setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId);
 
@@ -55,6 +57,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string resourceType_;
+	std::string version_;
 	std::string transitRouterAttachmentId_;
 };
 } // namespace Model

@@ -163,6 +163,15 @@ void CreateCenRouteMapRequest::setPriority(int priority) {
   setParameter(std::string("Priority"), std::to_string(priority));
 }
 
+std::string CreateCenRouteMapRequest::getVersion() const {
+  return version_;
+}
+
+void CreateCenRouteMapRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::vector<std::string> CreateCenRouteMapRequest::getDestinationChildInstanceTypes() const {
   return destinationChildInstanceTypes_;
 }

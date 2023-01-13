@@ -102,6 +102,15 @@ void DescribeCensRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeCensRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeCensRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::vector<DescribeCensRequest::Filter> DescribeCensRequest::getFilter() const {
   return filter_;
 }

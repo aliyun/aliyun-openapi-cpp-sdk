@@ -70,6 +70,15 @@ void DescribeChildInstanceRegionsRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeChildInstanceRegionsRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeChildInstanceRegionsRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 long DescribeChildInstanceRegionsRequest::getChildInstanceOwnerId() const {
   return childInstanceOwnerId_;
 }

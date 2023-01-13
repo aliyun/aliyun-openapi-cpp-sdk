@@ -48,6 +48,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getTransitRouterId() const;
 	void setTransitRouterId(const std::string &transitRouterId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getTransitRouterAttachmentId() const;
 	void setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId);
 	int getMaxResults() const;
@@ -63,6 +65,7 @@ private:
 	std::string trafficQosPolicyDescription_;
 	long ownerId_;
 	std::string transitRouterId_;
+	std::string version_;
 	std::string transitRouterAttachmentId_;
 	int maxResults_;
 };

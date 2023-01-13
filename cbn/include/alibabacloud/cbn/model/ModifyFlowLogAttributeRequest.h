@@ -46,6 +46,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	long getInterval() const;
 	void setInterval(long interval);
 	std::string getFlowLogId() const;
@@ -62,6 +64,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string version_;
 	long interval_;
 	std::string flowLogId_;
 	std::string flowLogName_;

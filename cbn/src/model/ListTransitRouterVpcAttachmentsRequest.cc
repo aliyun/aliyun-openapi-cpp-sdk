@@ -120,6 +120,15 @@ void ListTransitRouterVpcAttachmentsRequest::setResourceType(const std::string &
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string ListTransitRouterVpcAttachmentsRequest::getVersion() const {
+  return version_;
+}
+
+void ListTransitRouterVpcAttachmentsRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string ListTransitRouterVpcAttachmentsRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }
@@ -145,5 +154,23 @@ int ListTransitRouterVpcAttachmentsRequest::getMaxResults() const {
 void ListTransitRouterVpcAttachmentsRequest::setMaxResults(int maxResults) {
   maxResults_ = maxResults;
   setParameter(std::string("MaxResults"), std::to_string(maxResults));
+}
+
+std::string ListTransitRouterVpcAttachmentsRequest::getOrderType() const {
+  return orderType_;
+}
+
+void ListTransitRouterVpcAttachmentsRequest::setOrderType(const std::string &orderType) {
+  orderType_ = orderType;
+  setParameter(std::string("OrderType"), orderType);
+}
+
+std::string ListTransitRouterVpcAttachmentsRequest::getStatus() const {
+  return status_;
+}
+
+void ListTransitRouterVpcAttachmentsRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
 }
 

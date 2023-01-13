@@ -97,6 +97,15 @@ void DescribeCenAttachedChildInstanceAttributeRequest::setChildInstanceType(cons
   setParameter(std::string("ChildInstanceType"), childInstanceType);
 }
 
+std::string DescribeCenAttachedChildInstanceAttributeRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeCenAttachedChildInstanceAttributeRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DescribeCenAttachedChildInstanceAttributeRequest::getChildInstanceId() const {
   return childInstanceId_;
 }

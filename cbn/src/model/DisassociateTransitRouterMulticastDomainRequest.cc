@@ -96,6 +96,15 @@ void DisassociateTransitRouterMulticastDomainRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DisassociateTransitRouterMulticastDomainRequest::getVersion() const {
+  return version_;
+}
+
+void DisassociateTransitRouterMulticastDomainRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DisassociateTransitRouterMulticastDomainRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }

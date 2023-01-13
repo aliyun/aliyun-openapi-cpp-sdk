@@ -129,6 +129,15 @@ void ListTransitRouterMulticastDomainsRequest::setTransitRouterId(const std::str
   setParameter(std::string("TransitRouterId"), transitRouterId);
 }
 
+std::string ListTransitRouterMulticastDomainsRequest::getVersion() const {
+  return version_;
+}
+
+void ListTransitRouterMulticastDomainsRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 long ListTransitRouterMulticastDomainsRequest::getMaxResults() const {
   return maxResults_;
 }

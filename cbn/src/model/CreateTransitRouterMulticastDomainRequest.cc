@@ -147,3 +147,12 @@ void CreateTransitRouterMulticastDomainRequest::setTransitRouterId(const std::st
   setParameter(std::string("TransitRouterId"), transitRouterId);
 }
 
+std::string CreateTransitRouterMulticastDomainRequest::getVersion() const {
+  return version_;
+}
+
+void CreateTransitRouterMulticastDomainRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

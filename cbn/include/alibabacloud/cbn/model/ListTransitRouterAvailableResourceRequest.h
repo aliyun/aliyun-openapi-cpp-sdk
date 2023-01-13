@@ -46,6 +46,8 @@ public:
 	void setOwnerId(long ownerId);
 	bool getSupportMulticast() const;
 	void setSupportMulticast(bool supportMulticast);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 
 private:
 	long resourceOwnerId_;
@@ -56,6 +58,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	bool supportMulticast_;
+	std::string version_;
 };
 } // namespace Model
 } // namespace Cbn

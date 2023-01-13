@@ -124,3 +124,12 @@ void UpdateTransitRouterRequest::setSupportMulticast(bool supportMulticast) {
   setParameter(std::string("SupportMulticast"), supportMulticast ? "true" : "false");
 }
 
+std::string UpdateTransitRouterRequest::getVersion() const {
+  return version_;
+}
+
+void UpdateTransitRouterRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

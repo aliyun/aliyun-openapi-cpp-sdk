@@ -88,6 +88,15 @@ void ModifyCenAttributeRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ModifyCenAttributeRequest::getVersion() const {
+  return version_;
+}
+
+void ModifyCenAttributeRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string ModifyCenAttributeRequest::getProtectionLevel() const {
   return protectionLevel_;
 }

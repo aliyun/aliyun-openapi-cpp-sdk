@@ -46,6 +46,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getNewResourceGroupId() const;
 	void setNewResourceGroupId(const std::string &newResourceGroupId);
 
@@ -58,6 +60,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string resourceType_;
+	std::string version_;
 	std::string newResourceGroupId_;
 };
 } // namespace Model

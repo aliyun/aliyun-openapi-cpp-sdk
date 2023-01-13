@@ -54,6 +54,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 
 private:
 	long resourceOwnerId_;
@@ -64,6 +66,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string version_;
 };
 } // namespace Model
 } // namespace Cbn

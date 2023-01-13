@@ -120,6 +120,15 @@ void ListTransitRouterVbrAttachmentsRequest::setResourceType(const std::string &
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string ListTransitRouterVbrAttachmentsRequest::getVersion() const {
+  return version_;
+}
+
+void ListTransitRouterVbrAttachmentsRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string ListTransitRouterVbrAttachmentsRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }

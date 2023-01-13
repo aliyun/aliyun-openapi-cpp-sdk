@@ -44,6 +44,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getChildInstanceType() const;
 	void setChildInstanceType(const std::string &childInstanceType);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	long getChildInstanceOwnerId() const;
 	void setChildInstanceOwnerId(long childInstanceOwnerId);
 	std::string getChildInstanceId() const;
@@ -57,6 +59,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string childInstanceType_;
+	std::string version_;
 	long childInstanceOwnerId_;
 	std::string childInstanceId_;
 };

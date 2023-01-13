@@ -79,6 +79,15 @@ void TempUpgradeCenBandwidthPackageSpecRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string TempUpgradeCenBandwidthPackageSpecRequest::getVersion() const {
+  return version_;
+}
+
+void TempUpgradeCenBandwidthPackageSpecRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string TempUpgradeCenBandwidthPackageSpecRequest::getCenBandwidthPackageId() const {
   return cenBandwidthPackageId_;
 }

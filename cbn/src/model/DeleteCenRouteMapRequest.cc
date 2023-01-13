@@ -79,6 +79,15 @@ void DeleteCenRouteMapRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DeleteCenRouteMapRequest::getVersion() const {
+  return version_;
+}
+
+void DeleteCenRouteMapRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DeleteCenRouteMapRequest::getCenRegionId() const {
   return cenRegionId_;
 }

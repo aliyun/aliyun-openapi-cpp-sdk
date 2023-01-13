@@ -44,6 +44,8 @@ public:
 	void setHostRegionId(const std::string &hostRegionId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 
 private:
 	long resourceOwnerId_;
@@ -53,6 +55,7 @@ private:
 	int pageSize_;
 	std::string hostRegionId_;
 	std::string resourceOwnerAccount_;
+	std::string version_;
 };
 } // namespace Model
 } // namespace Cbn

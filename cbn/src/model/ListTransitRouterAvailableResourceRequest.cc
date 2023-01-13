@@ -97,3 +97,12 @@ void ListTransitRouterAvailableResourceRequest::setSupportMulticast(bool support
   setParameter(std::string("SupportMulticast"), supportMulticast ? "true" : "false");
 }
 
+std::string ListTransitRouterAvailableResourceRequest::getVersion() const {
+  return version_;
+}
+
+void ListTransitRouterAvailableResourceRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

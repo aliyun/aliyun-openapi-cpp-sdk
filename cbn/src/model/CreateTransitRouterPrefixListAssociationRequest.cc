@@ -133,6 +133,15 @@ void CreateTransitRouterPrefixListAssociationRequest::setTransitRouterTableId(co
   setParameter(std::string("TransitRouterTableId"), transitRouterTableId);
 }
 
+std::string CreateTransitRouterPrefixListAssociationRequest::getVersion() const {
+  return version_;
+}
+
+void CreateTransitRouterPrefixListAssociationRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string CreateTransitRouterPrefixListAssociationRequest::getNextHop() const {
   return nextHop_;
 }

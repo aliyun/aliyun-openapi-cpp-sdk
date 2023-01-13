@@ -54,6 +54,8 @@ public:
 	void setTransitRouterId(const std::string &transitRouterId);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getTransitRouterAttachmentId() const;
 	void setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId);
 	int getMaxResults() const;
@@ -70,6 +72,7 @@ private:
 	long ownerId_;
 	std::string transitRouterId_;
 	std::string resourceType_;
+	std::string version_;
 	std::string transitRouterAttachmentId_;
 	int maxResults_;
 };

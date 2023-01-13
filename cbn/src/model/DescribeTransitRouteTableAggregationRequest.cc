@@ -1,0 +1,117 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/cbn/model/DescribeTransitRouteTableAggregationRequest.h>
+
+using AlibabaCloud::Cbn::Model::DescribeTransitRouteTableAggregationRequest;
+
+DescribeTransitRouteTableAggregationRequest::DescribeTransitRouteTableAggregationRequest()
+    : RpcServiceRequest("cbn", "2017-09-12", "DescribeTransitRouteTableAggregation") {
+  setMethod(HttpRequest::Method::Post);
+}
+
+DescribeTransitRouteTableAggregationRequest::~DescribeTransitRouteTableAggregationRequest() {}
+
+long DescribeTransitRouteTableAggregationRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void DescribeTransitRouteTableAggregationRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
+std::string DescribeTransitRouteTableAggregationRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void DescribeTransitRouteTableAggregationRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string DescribeTransitRouteTableAggregationRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void DescribeTransitRouteTableAggregationRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
+std::string DescribeTransitRouteTableAggregationRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeTransitRouteTableAggregationRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string DescribeTransitRouteTableAggregationRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void DescribeTransitRouteTableAggregationRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+long DescribeTransitRouteTableAggregationRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeTransitRouteTableAggregationRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DescribeTransitRouteTableAggregationRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeTransitRouteTableAggregationRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
+std::string DescribeTransitRouteTableAggregationRequest::getTransitRouteTableId() const {
+  return transitRouteTableId_;
+}
+
+void DescribeTransitRouteTableAggregationRequest::setTransitRouteTableId(const std::string &transitRouteTableId) {
+  transitRouteTableId_ = transitRouteTableId;
+  setParameter(std::string("TransitRouteTableId"), transitRouteTableId);
+}
+
+std::string DescribeTransitRouteTableAggregationRequest::getTransitRouteTableAggregationCidr() const {
+  return transitRouteTableAggregationCidr_;
+}
+
+void DescribeTransitRouteTableAggregationRequest::setTransitRouteTableAggregationCidr(const std::string &transitRouteTableAggregationCidr) {
+  transitRouteTableAggregationCidr_ = transitRouteTableAggregationCidr;
+  setParameter(std::string("TransitRouteTableAggregationCidr"), transitRouteTableAggregationCidr);
+}
+
+long DescribeTransitRouteTableAggregationRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void DescribeTransitRouteTableAggregationRequest::setMaxResults(long maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
+}
+

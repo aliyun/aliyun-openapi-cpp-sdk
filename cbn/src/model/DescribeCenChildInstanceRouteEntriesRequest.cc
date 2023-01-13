@@ -115,6 +115,15 @@ void DescribeCenChildInstanceRouteEntriesRequest::setChildInstanceType(const std
   setParameter(std::string("ChildInstanceType"), childInstanceType);
 }
 
+std::string DescribeCenChildInstanceRouteEntriesRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeCenChildInstanceRouteEntriesRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DescribeCenChildInstanceRouteEntriesRequest::getChildInstanceId() const {
   return childInstanceId_;
 }

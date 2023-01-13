@@ -133,6 +133,15 @@ void CreateTrafficMarkingPolicyRequest::setPriority(int priority) {
   setParameter(std::string("Priority"), std::to_string(priority));
 }
 
+std::string CreateTrafficMarkingPolicyRequest::getVersion() const {
+  return version_;
+}
+
+void CreateTrafficMarkingPolicyRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 int CreateTrafficMarkingPolicyRequest::getMarkingDscp() const {
   return markingDscp_;
 }

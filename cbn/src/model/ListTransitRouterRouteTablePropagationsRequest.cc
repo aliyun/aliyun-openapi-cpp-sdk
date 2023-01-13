@@ -52,6 +52,24 @@ void ListTransitRouterRouteTablePropagationsRequest::setNextToken(const std::str
   setParameter(std::string("NextToken"), nextToken);
 }
 
+std::string ListTransitRouterRouteTablePropagationsRequest::getTransitRouterAttachmentResourceId() const {
+  return transitRouterAttachmentResourceId_;
+}
+
+void ListTransitRouterRouteTablePropagationsRequest::setTransitRouterAttachmentResourceId(const std::string &transitRouterAttachmentResourceId) {
+  transitRouterAttachmentResourceId_ = transitRouterAttachmentResourceId;
+  setParameter(std::string("TransitRouterAttachmentResourceId"), transitRouterAttachmentResourceId);
+}
+
+std::string ListTransitRouterRouteTablePropagationsRequest::getTransitRouterAttachmentResourceType() const {
+  return transitRouterAttachmentResourceType_;
+}
+
+void ListTransitRouterRouteTablePropagationsRequest::setTransitRouterAttachmentResourceType(const std::string &transitRouterAttachmentResourceType) {
+  transitRouterAttachmentResourceType_ = transitRouterAttachmentResourceType;
+  setParameter(std::string("TransitRouterAttachmentResourceType"), transitRouterAttachmentResourceType);
+}
+
 std::string ListTransitRouterRouteTablePropagationsRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -79,6 +97,15 @@ void ListTransitRouterRouteTablePropagationsRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ListTransitRouterRouteTablePropagationsRequest::getVersion() const {
+  return version_;
+}
+
+void ListTransitRouterRouteTablePropagationsRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string ListTransitRouterRouteTablePropagationsRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }
@@ -103,5 +130,14 @@ std::vector<std::string> ListTransitRouterRouteTablePropagationsRequest::getTran
 
 void ListTransitRouterRouteTablePropagationsRequest::setTransitRouterAttachmentIds(const std::vector<std::string> &transitRouterAttachmentIds) {
   transitRouterAttachmentIds_ = transitRouterAttachmentIds;
+}
+
+std::string ListTransitRouterRouteTablePropagationsRequest::getStatus() const {
+  return status_;
+}
+
+void ListTransitRouterRouteTablePropagationsRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
 }
 

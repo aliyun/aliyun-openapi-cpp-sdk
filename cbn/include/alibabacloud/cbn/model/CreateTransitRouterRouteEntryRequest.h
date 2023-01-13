@@ -54,6 +54,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getTransitRouterRouteEntryName() const;
 	void setTransitRouterRouteEntryName(const std::string &transitRouterRouteEntryName);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 
 private:
 	long resourceOwnerId_;
@@ -68,6 +70,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string transitRouterRouteEntryName_;
+	std::string version_;
 };
 } // namespace Model
 } // namespace Cbn

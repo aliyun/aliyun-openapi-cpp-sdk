@@ -55,6 +55,8 @@ void ListTransitRouterRouteTablesResult::parse(const std::string &payload)
 			transitRouterRouteTablesObject.transitRouterRouteTableName = valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableName"].asString();
 		if(!valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableDescription"].isNull())
 			transitRouterRouteTablesObject.transitRouterRouteTableDescription = valueTransitRouterRouteTablesTransitRouterRouteTable["TransitRouterRouteTableDescription"].asString();
+		if(!valueTransitRouterRouteTablesTransitRouterRouteTable["RegionId"].isNull())
+			transitRouterRouteTablesObject.regionId = valueTransitRouterRouteTablesTransitRouterRouteTable["RegionId"].asString();
 		auto allTagsNode = valueTransitRouterRouteTablesTransitRouterRouteTable["Tags"]["Tag"];
 		for (auto valueTransitRouterRouteTablesTransitRouterRouteTableTagsTag : allTagsNode)
 		{
@@ -65,6 +67,9 @@ void ListTransitRouterRouteTablesResult::parse(const std::string &payload)
 				tagsObject.value = valueTransitRouterRouteTablesTransitRouterRouteTableTagsTag["Value"].asString();
 			transitRouterRouteTablesObject.tags.push_back(tagsObject);
 		}
+		auto routeTableOptionsNode = value["RouteTableOptions"];
+		if(!routeTableOptionsNode["MultiRegionECMP"].isNull())
+			transitRouterRouteTablesObject.routeTableOptions.multiRegionECMP = routeTableOptionsNode["MultiRegionECMP"].asString();
 		transitRouterRouteTables_.push_back(transitRouterRouteTablesObject);
 	}
 	if(!value["NextToken"].isNull())

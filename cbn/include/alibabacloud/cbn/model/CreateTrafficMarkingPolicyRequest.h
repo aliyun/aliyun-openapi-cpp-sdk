@@ -60,6 +60,8 @@ public:
 	void setTransitRouterId(const std::string &transitRouterId);
 	int getPriority() const;
 	void setPriority(int priority);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	int getMarkingDscp() const;
 	void setMarkingDscp(int markingDscp);
 
@@ -75,6 +77,7 @@ private:
 	long ownerId_;
 	std::string transitRouterId_;
 	int priority_;
+	std::string version_;
 	int markingDscp_;
 };
 } // namespace Model

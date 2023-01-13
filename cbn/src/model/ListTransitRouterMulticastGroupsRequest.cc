@@ -156,6 +156,15 @@ void ListTransitRouterMulticastGroupsRequest::setResourceType(const std::string 
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string ListTransitRouterMulticastGroupsRequest::getVersion() const {
+  return version_;
+}
+
+void ListTransitRouterMulticastGroupsRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string ListTransitRouterMulticastGroupsRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }

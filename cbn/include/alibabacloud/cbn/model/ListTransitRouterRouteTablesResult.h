@@ -34,6 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct TransitRouterRouteTable
 				{
+					struct RouteTableOptions
+					{
+						std::string multiRegionECMP;
+					};
 					struct Tag
 					{
 						std::string value;
@@ -45,6 +49,8 @@ namespace AlibabaCloud
 					std::string transitRouterRouteTableDescription;
 					std::string createTime;
 					std::string transitRouterRouteTableName;
+					std::string regionId;
+					RouteTableOptions routeTableOptions;
 					std::vector<TransitRouterRouteTable::Tag> tags;
 				};
 

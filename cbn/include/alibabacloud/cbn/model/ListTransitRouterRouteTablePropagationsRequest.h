@@ -36,29 +36,41 @@ public:
 	void setTransitRouterRouteTableId(const std::string &transitRouterRouteTableId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::string getTransitRouterAttachmentResourceId() const;
+	void setTransitRouterAttachmentResourceId(const std::string &transitRouterAttachmentResourceId);
+	std::string getTransitRouterAttachmentResourceType() const;
+	void setTransitRouterAttachmentResourceType(const std::string &transitRouterAttachmentResourceType);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getTransitRouterAttachmentId() const;
 	void setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
 	std::vector<std::string> getTransitRouterAttachmentIds() const;
 	void setTransitRouterAttachmentIds(const std::vector<std::string> &transitRouterAttachmentIds);
+	std::string getStatus() const;
+	void setStatus(const std::string &status);
 
 private:
 	long resourceOwnerId_;
 	std::string transitRouterRouteTableId_;
 	std::string nextToken_;
+	std::string transitRouterAttachmentResourceId_;
+	std::string transitRouterAttachmentResourceType_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string version_;
 	std::string transitRouterAttachmentId_;
 	int maxResults_;
 	std::vector<std::string> transitRouterAttachmentIds_;
+	std::string status_;
 };
 } // namespace Model
 } // namespace Cbn

@@ -113,6 +113,15 @@ void ListTransitRouterRouteEntriesRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ListTransitRouterRouteEntriesRequest::getVersion() const {
+  return version_;
+}
+
+void ListTransitRouterRouteEntriesRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 int ListTransitRouterRouteEntriesRequest::getMaxResults() const {
   return maxResults_;
 }

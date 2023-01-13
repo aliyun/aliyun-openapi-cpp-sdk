@@ -62,6 +62,8 @@ public:
 	void setOwnerId(long ownerId);
 	int getPriority() const;
 	void setPriority(int priority);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::vector<std::string> getDestinationChildInstanceTypes() const;
 	void setDestinationChildInstanceTypes(const std::vector<std::string> &destinationChildInstanceTypes);
 	std::vector<std::string> getSourceRouteTableIds() const;
@@ -126,6 +128,7 @@ private:
 	int preference_;
 	long ownerId_;
 	int priority_;
+	std::string version_;
 	std::vector<std::string> destinationChildInstanceTypes_;
 	std::vector<std::string> sourceRouteTableIds_;
 	std::vector<std::string> sourceChildInstanceTypes_;

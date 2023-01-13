@@ -38,6 +38,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getCenBandwidthPackageId() const;
 	void setCenBandwidthPackageId(const std::string &cenBandwidthPackageId);
 
@@ -46,6 +48,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string version_;
 	std::string cenBandwidthPackageId_;
 };
 } // namespace Model

@@ -79,6 +79,15 @@ void DescribeGeographicRegionMembershipRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeGeographicRegionMembershipRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeGeographicRegionMembershipRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DescribeGeographicRegionMembershipRequest::getGeographicRegionId() const {
   return geographicRegionId_;
 }

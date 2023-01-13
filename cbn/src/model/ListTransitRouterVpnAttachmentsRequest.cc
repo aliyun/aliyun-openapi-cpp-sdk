@@ -120,6 +120,15 @@ void ListTransitRouterVpnAttachmentsRequest::setResourceType(const std::string &
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string ListTransitRouterVpnAttachmentsRequest::getVersion() const {
+  return version_;
+}
+
+void ListTransitRouterVpnAttachmentsRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string ListTransitRouterVpnAttachmentsRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }

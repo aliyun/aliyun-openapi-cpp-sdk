@@ -106,6 +106,15 @@ void ListCenInterRegionTrafficQosPoliciesRequest::setTransitRouterId(const std::
   setParameter(std::string("TransitRouterId"), transitRouterId);
 }
 
+std::string ListCenInterRegionTrafficQosPoliciesRequest::getVersion() const {
+  return version_;
+}
+
+void ListCenInterRegionTrafficQosPoliciesRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string ListCenInterRegionTrafficQosPoliciesRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }

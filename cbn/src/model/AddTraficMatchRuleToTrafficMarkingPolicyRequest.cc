@@ -106,3 +106,12 @@ void AddTraficMatchRuleToTrafficMarkingPolicyRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string AddTraficMatchRuleToTrafficMarkingPolicyRequest::getVersion() const {
+  return version_;
+}
+
+void AddTraficMatchRuleToTrafficMarkingPolicyRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

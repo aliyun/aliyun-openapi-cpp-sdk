@@ -53,6 +53,8 @@ public:
 	void setRouteMapId(const std::string &routeMapId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::vector<Filter> getFilter() const;
 	void setFilter(const std::vector<Filter> &filter);
 	std::string getCenRegionId() const;
@@ -69,6 +71,7 @@ private:
 	std::string ownerAccount_;
 	std::string routeMapId_;
 	long ownerId_;
+	std::string version_;
 	std::vector<Filter> filter_;
 	std::string cenRegionId_;
 };

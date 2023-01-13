@@ -120,6 +120,15 @@ void DescribeCenBandwidthPackagesRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeCenBandwidthPackagesRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeCenBandwidthPackagesRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::vector<DescribeCenBandwidthPackagesRequest::Filter> DescribeCenBandwidthPackagesRequest::getFilter() const {
   return filter_;
 }

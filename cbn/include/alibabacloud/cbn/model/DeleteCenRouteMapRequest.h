@@ -42,6 +42,8 @@ public:
 	void setRouteMapId(const std::string &routeMapId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getCenRegionId() const;
 	void setCenRegionId(const std::string &cenRegionId);
 
@@ -52,6 +54,7 @@ private:
 	std::string ownerAccount_;
 	std::string routeMapId_;
 	long ownerId_;
+	std::string version_;
 	std::string cenRegionId_;
 };
 } // namespace Model

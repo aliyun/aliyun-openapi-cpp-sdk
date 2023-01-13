@@ -53,6 +53,7 @@ namespace AlibabaCloud
 					std::string serviceMode;
 					long vpcOwnerId;
 					bool autoPublishRouteEnabled;
+					std::string orderType;
 					std::string vpcId;
 					std::string chargeType;
 					std::string creationTime;

@@ -44,6 +44,8 @@ public:
 	void setOppositeRegionId(const std::string &oppositeRegionId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getLocalRegionId() const;
 	void setLocalRegionId(const std::string &localRegionId);
 	long getBandwidthLimit() const;
@@ -57,6 +59,7 @@ private:
 	std::string ownerAccount_;
 	std::string oppositeRegionId_;
 	long ownerId_;
+	std::string version_;
 	std::string localRegionId_;
 	long bandwidthLimit_;
 };

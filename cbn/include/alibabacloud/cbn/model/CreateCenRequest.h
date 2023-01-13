@@ -52,6 +52,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getProtectionLevel() const;
 	void setProtectionLevel(const std::string &protectionLevel);
 	std::string getName() const;
@@ -67,6 +69,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string version_;
 	std::string protectionLevel_;
 	std::string name_;
 };

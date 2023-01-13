@@ -88,3 +88,12 @@ void DeleteTransitRouterRequest::setTransitRouterId(const std::string &transitRo
   setParameter(std::string("TransitRouterId"), transitRouterId);
 }
 
+std::string DeleteTransitRouterRequest::getVersion() const {
+  return version_;
+}
+
+void DeleteTransitRouterRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

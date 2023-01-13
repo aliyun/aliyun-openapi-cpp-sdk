@@ -43,6 +43,15 @@ void CreateTransitRouterRouteTableRequest::setClientToken(const std::string &cli
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+CreateTransitRouterRouteTableRequest::RouteTableOptions CreateTransitRouterRouteTableRequest::getRouteTableOptions() const {
+  return routeTableOptions_;
+}
+
+void CreateTransitRouterRouteTableRequest::setRouteTableOptions(const CreateTransitRouterRouteTableRequest::RouteTableOptions &routeTableOptions) {
+  routeTableOptions_ = routeTableOptions;
+  setParameter(std::string("RouteTableOptions") + ".MultiRegionECMP", routeTableOptions.multiRegionECMP);
+}
+
 std::string CreateTransitRouterRouteTableRequest::getTransitRouterRouteTableDescription() const {
   return transitRouterRouteTableDescription_;
 }
@@ -118,5 +127,14 @@ std::string CreateTransitRouterRouteTableRequest::getTransitRouterId() const {
 void CreateTransitRouterRouteTableRequest::setTransitRouterId(const std::string &transitRouterId) {
   transitRouterId_ = transitRouterId;
   setParameter(std::string("TransitRouterId"), transitRouterId);
+}
+
+std::string CreateTransitRouterRouteTableRequest::getVersion() const {
+  return version_;
+}
+
+void CreateTransitRouterRouteTableRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
 }
 

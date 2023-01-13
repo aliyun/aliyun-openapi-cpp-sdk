@@ -97,6 +97,15 @@ void DescribeGrantRulesToCenRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeGrantRulesToCenRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeGrantRulesToCenRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 long DescribeGrantRulesToCenRequest::getMaxResults() const {
   return maxResults_;
 }

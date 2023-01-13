@@ -52,6 +52,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getTransitRouterId() const;
 	void setTransitRouterId(const std::string &transitRouterId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getName() const;
 	void setName(const std::string &name);
 
@@ -67,6 +69,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string transitRouterId_;
+	std::string version_;
 	std::string name_;
 };
 } // namespace Model

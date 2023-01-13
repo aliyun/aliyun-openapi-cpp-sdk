@@ -115,6 +115,15 @@ void DescribeCenRouteMapsRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeCenRouteMapsRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeCenRouteMapsRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::vector<DescribeCenRouteMapsRequest::Filter> DescribeCenRouteMapsRequest::getFilter() const {
   return filter_;
 }

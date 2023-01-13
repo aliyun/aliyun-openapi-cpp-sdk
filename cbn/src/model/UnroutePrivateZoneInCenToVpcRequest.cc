@@ -79,3 +79,12 @@ void UnroutePrivateZoneInCenToVpcRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string UnroutePrivateZoneInCenToVpcRequest::getVersion() const {
+  return version_;
+}
+
+void UnroutePrivateZoneInCenToVpcRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

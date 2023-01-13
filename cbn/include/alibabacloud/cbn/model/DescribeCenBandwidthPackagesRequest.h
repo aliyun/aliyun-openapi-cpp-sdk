@@ -57,6 +57,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::vector<Filter> getFilter() const;
 	void setFilter(const std::vector<Filter> &filter);
 
@@ -71,6 +73,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string version_;
 	std::vector<Filter> filter_;
 };
 } // namespace Model

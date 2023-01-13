@@ -79,6 +79,15 @@ void DeleteCenInterRegionTrafficQosQueueRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DeleteCenInterRegionTrafficQosQueueRequest::getVersion() const {
+  return version_;
+}
+
+void DeleteCenInterRegionTrafficQosQueueRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DeleteCenInterRegionTrafficQosQueueRequest::getQosQueueId() const {
   return qosQueueId_;
 }

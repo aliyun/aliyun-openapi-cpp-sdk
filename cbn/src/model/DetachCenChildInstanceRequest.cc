@@ -97,6 +97,15 @@ void DetachCenChildInstanceRequest::setChildInstanceType(const std::string &chil
   setParameter(std::string("ChildInstanceType"), childInstanceType);
 }
 
+std::string DetachCenChildInstanceRequest::getVersion() const {
+  return version_;
+}
+
+void DetachCenChildInstanceRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 long DetachCenChildInstanceRequest::getChildInstanceOwnerId() const {
   return childInstanceOwnerId_;
 }

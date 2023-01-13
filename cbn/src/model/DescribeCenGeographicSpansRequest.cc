@@ -88,3 +88,12 @@ void DescribeCenGeographicSpansRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeCenGeographicSpansRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeCenGeographicSpansRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

@@ -52,6 +52,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::vector<std::string> getAccessRegionIds() const;
 	void setAccessRegionIds(const std::vector<std::string> &accessRegionIds);
 
@@ -67,6 +69,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string version_;
 	std::vector<std::string> accessRegionIds_;
 };
 } // namespace Model

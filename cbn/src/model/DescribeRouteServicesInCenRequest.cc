@@ -124,3 +124,12 @@ void DescribeRouteServicesInCenRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeRouteServicesInCenRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeRouteServicesInCenRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

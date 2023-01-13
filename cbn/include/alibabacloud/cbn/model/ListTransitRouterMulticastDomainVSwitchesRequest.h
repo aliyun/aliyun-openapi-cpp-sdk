@@ -44,6 +44,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
 	int getMaxResults() const;
@@ -57,6 +59,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string version_;
 	std::string vpcId_;
 	int maxResults_;
 };

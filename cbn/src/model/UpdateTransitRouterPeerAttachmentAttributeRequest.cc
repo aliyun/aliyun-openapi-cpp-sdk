@@ -124,6 +124,15 @@ void UpdateTransitRouterPeerAttachmentAttributeRequest::setResourceType(const st
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string UpdateTransitRouterPeerAttachmentAttributeRequest::getVersion() const {
+  return version_;
+}
+
+void UpdateTransitRouterPeerAttachmentAttributeRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string UpdateTransitRouterPeerAttachmentAttributeRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }

@@ -79,6 +79,15 @@ void PublishRouteEntriesRequest::setChildInstanceType(const std::string &childIn
   setParameter(std::string("ChildInstanceType"), childInstanceType);
 }
 
+std::string PublishRouteEntriesRequest::getVersion() const {
+  return version_;
+}
+
+void PublishRouteEntriesRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string PublishRouteEntriesRequest::getChildInstanceId() const {
   return childInstanceId_;
 }

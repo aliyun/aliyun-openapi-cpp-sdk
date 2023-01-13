@@ -46,6 +46,8 @@ public:
 	void setDestinationCidrBlock(const std::string &destinationCidrBlock);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getCenRegionId() const;
 	void setCenRegionId(const std::string &cenRegionId);
 	std::string getStatus() const;
@@ -60,6 +62,7 @@ private:
 	std::string ownerAccount_;
 	std::string destinationCidrBlock_;
 	long ownerId_;
+	std::string version_;
 	std::string cenRegionId_;
 	std::string status_;
 };

@@ -96,6 +96,15 @@ void UntagResourcesRequest::setResourceType(const std::string &resourceType) {
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string UntagResourcesRequest::getVersion() const {
+  return version_;
+}
+
+void UntagResourcesRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::vector<std::string> UntagResourcesRequest::getTagKey() const {
   return tagKey_;
 }

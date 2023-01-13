@@ -31,21 +31,21 @@ CbnClient::CbnClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cbn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CbnClient::CbnClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cbn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CbnClient::CbnClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "cbn");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 CbnClient::~CbnClient()
@@ -657,6 +657,42 @@ CbnClient::CreateTrafficMarkingPolicyOutcomeCallable CbnClient::createTrafficMar
 			[this, request]()
 			{
 			return this->createTrafficMarkingPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::CreateTransitRouteTableAggregationOutcome CbnClient::createTransitRouteTableAggregation(const CreateTransitRouteTableAggregationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateTransitRouteTableAggregationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateTransitRouteTableAggregationOutcome(CreateTransitRouteTableAggregationResult(outcome.result()));
+	else
+		return CreateTransitRouteTableAggregationOutcome(outcome.error());
+}
+
+void CbnClient::createTransitRouteTableAggregationAsync(const CreateTransitRouteTableAggregationRequest& request, const CreateTransitRouteTableAggregationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createTransitRouteTableAggregation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::CreateTransitRouteTableAggregationOutcomeCallable CbnClient::createTransitRouteTableAggregationCallable(const CreateTransitRouteTableAggregationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateTransitRouteTableAggregationOutcome()>>(
+			[this, request]()
+			{
+			return this->createTransitRouteTableAggregation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1413,6 +1449,42 @@ CbnClient::DeleteTrafficMarkingPolicyOutcomeCallable CbnClient::deleteTrafficMar
 			[this, request]()
 			{
 			return this->deleteTrafficMarkingPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DeleteTransitRouteTableAggregationOutcome CbnClient::deleteTransitRouteTableAggregation(const DeleteTransitRouteTableAggregationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteTransitRouteTableAggregationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteTransitRouteTableAggregationOutcome(DeleteTransitRouteTableAggregationResult(outcome.result()));
+	else
+		return DeleteTransitRouteTableAggregationOutcome(outcome.error());
+}
+
+void CbnClient::deleteTransitRouteTableAggregationAsync(const DeleteTransitRouteTableAggregationRequest& request, const DeleteTransitRouteTableAggregationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteTransitRouteTableAggregation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DeleteTransitRouteTableAggregationOutcomeCallable CbnClient::deleteTransitRouteTableAggregationCallable(const DeleteTransitRouteTableAggregationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteTransitRouteTableAggregationOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteTransitRouteTableAggregation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2571,6 +2643,78 @@ CbnClient::DescribeRouteServicesInCenOutcomeCallable CbnClient::describeRouteSer
 	return task->get_future();
 }
 
+CbnClient::DescribeTransitRouteTableAggregationOutcome CbnClient::describeTransitRouteTableAggregation(const DescribeTransitRouteTableAggregationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTransitRouteTableAggregationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTransitRouteTableAggregationOutcome(DescribeTransitRouteTableAggregationResult(outcome.result()));
+	else
+		return DescribeTransitRouteTableAggregationOutcome(outcome.error());
+}
+
+void CbnClient::describeTransitRouteTableAggregationAsync(const DescribeTransitRouteTableAggregationRequest& request, const DescribeTransitRouteTableAggregationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTransitRouteTableAggregation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DescribeTransitRouteTableAggregationOutcomeCallable CbnClient::describeTransitRouteTableAggregationCallable(const DescribeTransitRouteTableAggregationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTransitRouteTableAggregationOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTransitRouteTableAggregation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::DescribeTransitRouteTableAggregationDetailOutcome CbnClient::describeTransitRouteTableAggregationDetail(const DescribeTransitRouteTableAggregationDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeTransitRouteTableAggregationDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeTransitRouteTableAggregationDetailOutcome(DescribeTransitRouteTableAggregationDetailResult(outcome.result()));
+	else
+		return DescribeTransitRouteTableAggregationDetailOutcome(outcome.error());
+}
+
+void CbnClient::describeTransitRouteTableAggregationDetailAsync(const DescribeTransitRouteTableAggregationDetailRequest& request, const DescribeTransitRouteTableAggregationDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeTransitRouteTableAggregationDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::DescribeTransitRouteTableAggregationDetailOutcomeCallable CbnClient::describeTransitRouteTableAggregationDetailCallable(const DescribeTransitRouteTableAggregationDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeTransitRouteTableAggregationDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->describeTransitRouteTableAggregationDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::DetachCenChildInstanceOutcome CbnClient::detachCenChildInstance(const DetachCenChildInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2889,6 +3033,42 @@ CbnClient::ListCenInterRegionTrafficQosPoliciesOutcomeCallable CbnClient::listCe
 			[this, request]()
 			{
 			return this->listCenInterRegionTrafficQosPolicies(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::ListCenInterRegionTrafficQosQueuesOutcome CbnClient::listCenInterRegionTrafficQosQueues(const ListCenInterRegionTrafficQosQueuesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCenInterRegionTrafficQosQueuesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCenInterRegionTrafficQosQueuesOutcome(ListCenInterRegionTrafficQosQueuesResult(outcome.result()));
+	else
+		return ListCenInterRegionTrafficQosQueuesOutcome(outcome.error());
+}
+
+void CbnClient::listCenInterRegionTrafficQosQueuesAsync(const ListCenInterRegionTrafficQosQueuesRequest& request, const ListCenInterRegionTrafficQosQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCenInterRegionTrafficQosQueues(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListCenInterRegionTrafficQosQueuesOutcomeCallable CbnClient::listCenInterRegionTrafficQosQueuesCallable(const ListCenInterRegionTrafficQosQueuesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCenInterRegionTrafficQosQueuesOutcome()>>(
+			[this, request]()
+			{
+			return this->listCenInterRegionTrafficQosQueues(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4005,6 +4185,42 @@ CbnClient::PublishRouteEntriesOutcomeCallable CbnClient::publishRouteEntriesCall
 			[this, request]()
 			{
 			return this->publishRouteEntries(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+CbnClient::RefreshTransitRouteTableAggregationOutcome CbnClient::refreshTransitRouteTableAggregation(const RefreshTransitRouteTableAggregationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RefreshTransitRouteTableAggregationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RefreshTransitRouteTableAggregationOutcome(RefreshTransitRouteTableAggregationResult(outcome.result()));
+	else
+		return RefreshTransitRouteTableAggregationOutcome(outcome.error());
+}
+
+void CbnClient::refreshTransitRouteTableAggregationAsync(const RefreshTransitRouteTableAggregationRequest& request, const RefreshTransitRouteTableAggregationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, refreshTransitRouteTableAggregation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::RefreshTransitRouteTableAggregationOutcomeCallable CbnClient::refreshTransitRouteTableAggregationCallable(const RefreshTransitRouteTableAggregationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RefreshTransitRouteTableAggregationOutcome()>>(
+			[this, request]()
+			{
+			return this->refreshTransitRouteTableAggregation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

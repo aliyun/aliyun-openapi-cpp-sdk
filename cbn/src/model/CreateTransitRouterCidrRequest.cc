@@ -124,6 +124,15 @@ void CreateTransitRouterCidrRequest::setTransitRouterId(const std::string &trans
   setParameter(std::string("TransitRouterId"), transitRouterId);
 }
 
+std::string CreateTransitRouterCidrRequest::getVersion() const {
+  return version_;
+}
+
+void CreateTransitRouterCidrRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string CreateTransitRouterCidrRequest::getName() const {
   return name_;
 }

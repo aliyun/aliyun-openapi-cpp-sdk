@@ -124,6 +124,15 @@ void UpdateTrafficMarkingPolicyAttributeRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string UpdateTrafficMarkingPolicyAttributeRequest::getVersion() const {
+  return version_;
+}
+
+void UpdateTrafficMarkingPolicyAttributeRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::vector<UpdateTrafficMarkingPolicyAttributeRequest::DeleteTrafficMatchRules> UpdateTrafficMarkingPolicyAttributeRequest::getDeleteTrafficMatchRules() const {
   return deleteTrafficMatchRules_;
 }

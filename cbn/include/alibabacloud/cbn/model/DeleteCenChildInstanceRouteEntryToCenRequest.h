@@ -48,6 +48,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getChildInstanceType() const;
 	void setChildInstanceType(const std::string &childInstanceType);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getChildInstanceId() const;
 	void setChildInstanceId(const std::string &childInstanceId);
 	long getChildInstanceAliUid() const;
@@ -63,6 +65,7 @@ private:
 	std::string destinationCidrBlock_;
 	long ownerId_;
 	std::string childInstanceType_;
+	std::string version_;
 	std::string childInstanceId_;
 	long childInstanceAliUid_;
 };

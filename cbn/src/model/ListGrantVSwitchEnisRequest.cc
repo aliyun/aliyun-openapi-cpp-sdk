@@ -88,6 +88,15 @@ void ListGrantVSwitchEnisRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ListGrantVSwitchEnisRequest::getVersion() const {
+  return version_;
+}
+
+void ListGrantVSwitchEnisRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string ListGrantVSwitchEnisRequest::getVSwitchId() const {
   return vSwitchId_;
 }

@@ -101,3 +101,12 @@ void TagResourcesRequest::setResourceType(const std::string &resourceType) {
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string TagResourcesRequest::getVersion() const {
+  return version_;
+}
+
+void TagResourcesRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

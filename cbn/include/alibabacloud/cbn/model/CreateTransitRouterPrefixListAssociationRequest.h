@@ -54,6 +54,8 @@ public:
 	void setTransitRouterId(const std::string &transitRouterId);
 	std::string getTransitRouterTableId() const;
 	void setTransitRouterTableId(const std::string &transitRouterTableId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getNextHop() const;
 	void setNextHop(const std::string &nextHop);
 
@@ -70,6 +72,7 @@ private:
 	long ownerId_;
 	std::string transitRouterId_;
 	std::string transitRouterTableId_;
+	std::string version_;
 	std::string nextHop_;
 };
 } // namespace Model

@@ -66,6 +66,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::vector<DeleteTrafficMatchRules> getDeleteTrafficMatchRules() const;
 	void setDeleteTrafficMatchRules(const std::vector<DeleteTrafficMatchRules> &deleteTrafficMatchRules);
 
@@ -80,6 +82,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string version_;
 	std::vector<DeleteTrafficMatchRules> deleteTrafficMatchRules_;
 };
 } // namespace Model

@@ -46,6 +46,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
 
@@ -58,6 +60,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string version_;
 	int maxResults_;
 };
 } // namespace Model

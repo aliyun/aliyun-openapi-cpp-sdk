@@ -124,3 +124,12 @@ void DeleteTransitRouterRouteEntryRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DeleteTransitRouterRouteEntryRequest::getVersion() const {
+  return version_;
+}
+
+void DeleteTransitRouterRouteEntryRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

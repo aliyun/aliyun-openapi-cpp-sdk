@@ -114,6 +114,15 @@ void CreateCenInterRegionTrafficQosQueueRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string CreateCenInterRegionTrafficQosQueueRequest::getVersion() const {
+  return version_;
+}
+
+void CreateCenInterRegionTrafficQosQueueRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string CreateCenInterRegionTrafficQosQueueRequest::getQosQueueDescription() const {
   return qosQueueDescription_;
 }

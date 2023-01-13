@@ -88,3 +88,12 @@ void DeleteTransitRouterMulticastDomainRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DeleteTransitRouterMulticastDomainRequest::getVersion() const {
+  return version_;
+}
+
+void DeleteTransitRouterMulticastDomainRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

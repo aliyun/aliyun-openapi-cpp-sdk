@@ -97,6 +97,15 @@ void DescribeGrantRulesToResourceRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeGrantRulesToResourceRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeGrantRulesToResourceRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 int DescribeGrantRulesToResourceRequest::getMaxResults() const {
   return maxResults_;
 }

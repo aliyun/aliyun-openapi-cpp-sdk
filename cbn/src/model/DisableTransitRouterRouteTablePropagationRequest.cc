@@ -88,6 +88,15 @@ void DisableTransitRouterRouteTablePropagationRequest::setOwnerId(long ownerId) 
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DisableTransitRouterRouteTablePropagationRequest::getVersion() const {
+  return version_;
+}
+
+void DisableTransitRouterRouteTablePropagationRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DisableTransitRouterRouteTablePropagationRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }

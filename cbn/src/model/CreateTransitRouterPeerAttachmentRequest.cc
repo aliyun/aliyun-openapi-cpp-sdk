@@ -183,6 +183,15 @@ void CreateTransitRouterPeerAttachmentRequest::setResourceType(const std::string
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string CreateTransitRouterPeerAttachmentRequest::getVersion() const {
+  return version_;
+}
+
+void CreateTransitRouterPeerAttachmentRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string CreateTransitRouterPeerAttachmentRequest::getTransitRouterAttachmentDescription() const {
   return transitRouterAttachmentDescription_;
 }

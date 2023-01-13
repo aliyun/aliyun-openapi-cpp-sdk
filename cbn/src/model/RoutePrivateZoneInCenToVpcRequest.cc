@@ -97,3 +97,12 @@ void RoutePrivateZoneInCenToVpcRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string RoutePrivateZoneInCenToVpcRequest::getVersion() const {
+  return version_;
+}
+
+void RoutePrivateZoneInCenToVpcRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

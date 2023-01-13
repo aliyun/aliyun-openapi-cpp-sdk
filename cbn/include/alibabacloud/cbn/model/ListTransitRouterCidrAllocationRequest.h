@@ -56,6 +56,8 @@ public:
 	void setTransitRouterId(const std::string &transitRouterId);
 	std::string getAttachmentName() const;
 	void setAttachmentName(const std::string &attachmentName);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getCidrBlock() const;
 	void setCidrBlock(const std::string &cidrBlock);
 	int getMaxResults() const;
@@ -77,6 +79,7 @@ private:
 	long ownerId_;
 	std::string transitRouterId_;
 	std::string attachmentName_;
+	std::string version_;
 	std::string cidrBlock_;
 	int maxResults_;
 	std::string attachmentId_;

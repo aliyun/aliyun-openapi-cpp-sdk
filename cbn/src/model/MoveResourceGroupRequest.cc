@@ -97,6 +97,15 @@ void MoveResourceGroupRequest::setResourceType(const std::string &resourceType) 
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string MoveResourceGroupRequest::getVersion() const {
+  return version_;
+}
+
+void MoveResourceGroupRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string MoveResourceGroupRequest::getNewResourceGroupId() const {
   return newResourceGroupId_;
 }

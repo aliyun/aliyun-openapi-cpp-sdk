@@ -106,6 +106,15 @@ void DeleteCenChildInstanceRouteEntryToCenRequest::setChildInstanceType(const st
   setParameter(std::string("ChildInstanceType"), childInstanceType);
 }
 
+std::string DeleteCenChildInstanceRouteEntryToCenRequest::getVersion() const {
+  return version_;
+}
+
+void DeleteCenChildInstanceRouteEntryToCenRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DeleteCenChildInstanceRouteEntryToCenRequest::getChildInstanceId() const {
   return childInstanceId_;
 }

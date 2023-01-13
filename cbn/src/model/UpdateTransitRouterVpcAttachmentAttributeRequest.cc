@@ -106,6 +106,15 @@ void UpdateTransitRouterVpcAttachmentAttributeRequest::setResourceType(const std
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string UpdateTransitRouterVpcAttachmentAttributeRequest::getVersion() const {
+  return version_;
+}
+
+void UpdateTransitRouterVpcAttachmentAttributeRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string UpdateTransitRouterVpcAttachmentAttributeRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }

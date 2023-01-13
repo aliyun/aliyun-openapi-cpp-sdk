@@ -48,6 +48,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getQosQueueId() const;
 	void setQosQueueId(const std::string &qosQueueId);
 	std::string getQosQueueDescription() const;
@@ -63,6 +65,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string version_;
 	std::string qosQueueId_;
 	std::string qosQueueDescription_;
 };

@@ -42,6 +42,8 @@ public:
 	void setDestinationCidrBlock(const std::string &destinationCidrBlock);
 	std::string getChildInstanceType() const;
 	void setChildInstanceType(const std::string &childInstanceType);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getChildInstanceId() const;
 	void setChildInstanceId(const std::string &childInstanceId);
 	std::string getChildInstanceRouteTableId() const;
@@ -54,6 +56,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string destinationCidrBlock_;
 	std::string childInstanceType_;
+	std::string version_;
 	std::string childInstanceId_;
 	std::string childInstanceRouteTableId_;
 };

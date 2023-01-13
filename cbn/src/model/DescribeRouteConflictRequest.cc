@@ -106,6 +106,15 @@ void DescribeRouteConflictRequest::setChildInstanceType(const std::string &child
   setParameter(std::string("ChildInstanceType"), childInstanceType);
 }
 
+std::string DescribeRouteConflictRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeRouteConflictRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DescribeRouteConflictRequest::getChildInstanceId() const {
   return childInstanceId_;
 }

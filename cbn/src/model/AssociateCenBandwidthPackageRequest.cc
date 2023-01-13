@@ -70,6 +70,15 @@ void AssociateCenBandwidthPackageRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string AssociateCenBandwidthPackageRequest::getVersion() const {
+  return version_;
+}
+
+void AssociateCenBandwidthPackageRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string AssociateCenBandwidthPackageRequest::getCenBandwidthPackageId() const {
   return cenBandwidthPackageId_;
 }

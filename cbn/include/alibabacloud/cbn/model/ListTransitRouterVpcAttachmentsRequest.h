@@ -54,12 +54,18 @@ public:
 	void setTransitRouterId(const std::string &transitRouterId);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getTransitRouterAttachmentId() const;
 	void setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
+	std::string getOrderType() const;
+	void setOrderType(const std::string &orderType);
+	std::string getStatus() const;
+	void setStatus(const std::string &status);
 
 private:
 	long resourceOwnerId_;
@@ -72,9 +78,12 @@ private:
 	long ownerId_;
 	std::string transitRouterId_;
 	std::string resourceType_;
+	std::string version_;
 	std::string transitRouterAttachmentId_;
 	std::string vpcId_;
 	int maxResults_;
+	std::string orderType_;
+	std::string status_;
 };
 } // namespace Model
 } // namespace Cbn

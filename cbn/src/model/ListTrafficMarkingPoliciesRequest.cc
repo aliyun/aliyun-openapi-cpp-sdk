@@ -106,6 +106,15 @@ void ListTrafficMarkingPoliciesRequest::setTransitRouterId(const std::string &tr
   setParameter(std::string("TransitRouterId"), transitRouterId);
 }
 
+std::string ListTrafficMarkingPoliciesRequest::getVersion() const {
+  return version_;
+}
+
+void ListTrafficMarkingPoliciesRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 int ListTrafficMarkingPoliciesRequest::getMaxResults() const {
   return maxResults_;
 }

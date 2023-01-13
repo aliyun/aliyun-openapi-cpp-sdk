@@ -133,3 +133,12 @@ void CreateTransitRouterRouteEntryRequest::setTransitRouterRouteEntryName(const 
   setParameter(std::string("TransitRouterRouteEntryName"), transitRouterRouteEntryName);
 }
 
+std::string CreateTransitRouterRouteEntryRequest::getVersion() const {
+  return version_;
+}
+
+void CreateTransitRouterRouteEntryRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

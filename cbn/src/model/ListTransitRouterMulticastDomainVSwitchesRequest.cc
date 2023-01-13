@@ -87,6 +87,15 @@ void ListTransitRouterMulticastDomainVSwitchesRequest::setOwnerId(long ownerId) 
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ListTransitRouterMulticastDomainVSwitchesRequest::getVersion() const {
+  return version_;
+}
+
+void ListTransitRouterMulticastDomainVSwitchesRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string ListTransitRouterMulticastDomainVSwitchesRequest::getVpcId() const {
   return vpcId_;
 }

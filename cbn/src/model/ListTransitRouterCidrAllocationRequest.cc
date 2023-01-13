@@ -142,6 +142,15 @@ void ListTransitRouterCidrAllocationRequest::setAttachmentName(const std::string
   setParameter(std::string("AttachmentName"), attachmentName);
 }
 
+std::string ListTransitRouterCidrAllocationRequest::getVersion() const {
+  return version_;
+}
+
+void ListTransitRouterCidrAllocationRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string ListTransitRouterCidrAllocationRequest::getCidrBlock() const {
   return cidrBlock_;
 }

@@ -88,3 +88,12 @@ void DescribeCenPrivateZoneRoutesRequest::setResourceOwnerAccount(const std::str
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
+std::string DescribeCenPrivateZoneRoutesRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeCenPrivateZoneRoutesRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

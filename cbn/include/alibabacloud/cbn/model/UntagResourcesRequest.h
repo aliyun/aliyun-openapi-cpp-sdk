@@ -46,6 +46,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::vector<std::string> getTagKey() const;
 	void setTagKey(const std::vector<std::string> &tagKey);
 
@@ -58,6 +60,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string resourceType_;
+	std::string version_;
 	std::vector<std::string> tagKey_;
 };
 } // namespace Model

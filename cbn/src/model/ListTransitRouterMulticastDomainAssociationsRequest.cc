@@ -114,6 +114,15 @@ void ListTransitRouterMulticastDomainAssociationsRequest::setResourceType(const 
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string ListTransitRouterMulticastDomainAssociationsRequest::getVersion() const {
+  return version_;
+}
+
+void ListTransitRouterMulticastDomainAssociationsRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string ListTransitRouterMulticastDomainAssociationsRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }

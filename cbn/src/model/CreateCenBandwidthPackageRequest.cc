@@ -165,6 +165,15 @@ void CreateCenBandwidthPackageRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string CreateCenBandwidthPackageRequest::getVersion() const {
+  return version_;
+}
+
+void CreateCenBandwidthPackageRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string CreateCenBandwidthPackageRequest::getServiceType() const {
   return serviceType_;
 }

@@ -79,6 +79,15 @@ void WithdrawPublishedRouteEntriesRequest::setChildInstanceType(const std::strin
   setParameter(std::string("ChildInstanceType"), childInstanceType);
 }
 
+std::string WithdrawPublishedRouteEntriesRequest::getVersion() const {
+  return version_;
+}
+
+void WithdrawPublishedRouteEntriesRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string WithdrawPublishedRouteEntriesRequest::getChildInstanceId() const {
   return childInstanceId_;
 }

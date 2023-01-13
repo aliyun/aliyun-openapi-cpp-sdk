@@ -129,6 +129,15 @@ void CreateFlowlogRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string CreateFlowlogRequest::getVersion() const {
+  return version_;
+}
+
+void CreateFlowlogRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string CreateFlowlogRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }

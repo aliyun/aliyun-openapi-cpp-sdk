@@ -97,6 +97,15 @@ void GrantInstanceToTransitRouterRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string GrantInstanceToTransitRouterRequest::getVersion() const {
+  return version_;
+}
+
+void GrantInstanceToTransitRouterRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string GrantInstanceToTransitRouterRequest::getInstanceId() const {
   return instanceId_;
 }

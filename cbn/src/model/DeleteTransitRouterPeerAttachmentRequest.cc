@@ -88,6 +88,15 @@ void DeleteTransitRouterPeerAttachmentRequest::setResourceType(const std::string
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string DeleteTransitRouterPeerAttachmentRequest::getVersion() const {
+  return version_;
+}
+
+void DeleteTransitRouterPeerAttachmentRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DeleteTransitRouterPeerAttachmentRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }

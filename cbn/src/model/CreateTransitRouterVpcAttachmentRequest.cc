@@ -206,6 +206,15 @@ void CreateTransitRouterVpcAttachmentRequest::setResourceType(const std::string 
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string CreateTransitRouterVpcAttachmentRequest::getVersion() const {
+  return version_;
+}
+
+void CreateTransitRouterVpcAttachmentRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string CreateTransitRouterVpcAttachmentRequest::getTransitRouterAttachmentDescription() const {
   return transitRouterAttachmentDescription_;
 }

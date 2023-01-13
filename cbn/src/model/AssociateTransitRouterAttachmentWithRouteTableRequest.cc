@@ -88,6 +88,15 @@ void AssociateTransitRouterAttachmentWithRouteTableRequest::setOwnerId(long owne
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string AssociateTransitRouterAttachmentWithRouteTableRequest::getVersion() const {
+  return version_;
+}
+
+void AssociateTransitRouterAttachmentWithRouteTableRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string AssociateTransitRouterAttachmentWithRouteTableRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }

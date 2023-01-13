@@ -106,3 +106,12 @@ void DescribeCenGeographicSpanRemainingBandwidthRequest::setOwnerId(long ownerId
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeCenGeographicSpanRemainingBandwidthRequest::getVersion() const {
+  return version_;
+}
+
+void DescribeCenGeographicSpanRemainingBandwidthRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

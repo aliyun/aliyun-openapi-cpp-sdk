@@ -145,6 +145,15 @@ void ModifyCenRouteMapRequest::setPriority(int priority) {
   setParameter(std::string("Priority"), std::to_string(priority));
 }
 
+std::string ModifyCenRouteMapRequest::getVersion() const {
+  return version_;
+}
+
+void ModifyCenRouteMapRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::vector<std::string> ModifyCenRouteMapRequest::getDestinationChildInstanceTypes() const {
   return destinationChildInstanceTypes_;
 }

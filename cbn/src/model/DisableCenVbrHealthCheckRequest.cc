@@ -88,6 +88,15 @@ void DisableCenVbrHealthCheckRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DisableCenVbrHealthCheckRequest::getVersion() const {
+  return version_;
+}
+
+void DisableCenVbrHealthCheckRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DisableCenVbrHealthCheckRequest::getVbrInstanceId() const {
   return vbrInstanceId_;
 }

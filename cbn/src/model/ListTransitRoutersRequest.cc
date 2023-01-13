@@ -159,6 +159,15 @@ void ListTransitRoutersRequest::setTransitRouterId(const std::string &transitRou
   setParameter(std::string("TransitRouterId"), transitRouterId);
 }
 
+std::string ListTransitRoutersRequest::getVersion() const {
+  return version_;
+}
+
+void ListTransitRoutersRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string ListTransitRoutersRequest::getStatus() const {
   return status_;
 }

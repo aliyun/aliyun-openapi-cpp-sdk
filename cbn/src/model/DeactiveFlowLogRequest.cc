@@ -88,6 +88,15 @@ void DeactiveFlowLogRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DeactiveFlowLogRequest::getVersion() const {
+  return version_;
+}
+
+void DeactiveFlowLogRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string DeactiveFlowLogRequest::getFlowLogId() const {
   return flowLogId_;
 }

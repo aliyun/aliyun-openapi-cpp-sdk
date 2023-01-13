@@ -124,6 +124,15 @@ void CreateCenChildInstanceRouteEntryToCenRequest::setChildInstanceType(const st
   setParameter(std::string("ChildInstanceType"), childInstanceType);
 }
 
+std::string CreateCenChildInstanceRouteEntryToCenRequest::getVersion() const {
+  return version_;
+}
+
+void CreateCenChildInstanceRouteEntryToCenRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string CreateCenChildInstanceRouteEntryToCenRequest::getChildInstanceId() const {
   return childInstanceId_;
 }

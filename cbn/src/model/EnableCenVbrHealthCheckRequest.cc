@@ -115,6 +115,15 @@ void EnableCenVbrHealthCheckRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string EnableCenVbrHealthCheckRequest::getVersion() const {
+  return version_;
+}
+
+void EnableCenVbrHealthCheckRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string EnableCenVbrHealthCheckRequest::getHealthCheckSourceIp() const {
   return healthCheckSourceIp_;
 }

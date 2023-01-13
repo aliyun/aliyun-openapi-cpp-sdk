@@ -121,3 +121,12 @@ void DeregisterTransitRouterMulticastGroupMembersRequest::setOwnerId(long ownerI
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DeregisterTransitRouterMulticastGroupMembersRequest::getVersion() const {
+  return version_;
+}
+
+void DeregisterTransitRouterMulticastGroupMembersRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

@@ -106,6 +106,15 @@ void CreateCenChildInstanceRouteEntryToAttachmentRequest::setOwnerId(long ownerI
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string CreateCenChildInstanceRouteEntryToAttachmentRequest::getVersion() const {
+  return version_;
+}
+
+void CreateCenChildInstanceRouteEntryToAttachmentRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string CreateCenChildInstanceRouteEntryToAttachmentRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }

@@ -42,6 +42,15 @@ void ListTransitRouterRouteTablesRequest::setTransitRouterRouteTableNames(const 
   transitRouterRouteTableNames_ = transitRouterRouteTableNames;
 }
 
+ListTransitRouterRouteTablesRequest::RouteTableOptions ListTransitRouterRouteTablesRequest::getRouteTableOptions() const {
+  return routeTableOptions_;
+}
+
+void ListTransitRouterRouteTablesRequest::setRouteTableOptions(const ListTransitRouterRouteTablesRequest::RouteTableOptions &routeTableOptions) {
+  routeTableOptions_ = routeTableOptions;
+  setParameter(std::string("RouteTableOptions") + ".MultiRegionECMP", routeTableOptions.multiRegionECMP);
+}
+
 std::string ListTransitRouterRouteTablesRequest::getTransitRouterRouteTableType() const {
   return transitRouterRouteTableType_;
 }
@@ -125,6 +134,15 @@ std::string ListTransitRouterRouteTablesRequest::getTransitRouterId() const {
 void ListTransitRouterRouteTablesRequest::setTransitRouterId(const std::string &transitRouterId) {
   transitRouterId_ = transitRouterId;
   setParameter(std::string("TransitRouterId"), transitRouterId);
+}
+
+std::string ListTransitRouterRouteTablesRequest::getVersion() const {
+  return version_;
+}
+
+void ListTransitRouterRouteTablesRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
 }
 
 int ListTransitRouterRouteTablesRequest::getMaxResults() const {

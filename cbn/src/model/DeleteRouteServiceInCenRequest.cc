@@ -106,3 +106,12 @@ void DeleteRouteServiceInCenRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DeleteRouteServiceInCenRequest::getVersion() const {
+  return version_;
+}
+
+void DeleteRouteServiceInCenRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

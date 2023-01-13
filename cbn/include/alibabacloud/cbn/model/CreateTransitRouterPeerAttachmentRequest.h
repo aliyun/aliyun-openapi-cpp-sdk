@@ -68,6 +68,8 @@ public:
 	void setTransitRouterId(const std::string &transitRouterId);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 	std::string getTransitRouterAttachmentDescription() const;
 	void setTransitRouterAttachmentDescription(const std::string &transitRouterAttachmentDescription);
 	std::string getPeerTransitRouterRegionId() const;
@@ -95,6 +97,7 @@ private:
 	long ownerId_;
 	std::string transitRouterId_;
 	std::string resourceType_;
+	std::string version_;
 	std::string transitRouterAttachmentDescription_;
 	std::string peerTransitRouterRegionId_;
 	std::string cenBandwidthPackageId_;

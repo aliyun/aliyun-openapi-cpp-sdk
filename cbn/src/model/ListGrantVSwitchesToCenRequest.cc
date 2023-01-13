@@ -97,6 +97,15 @@ void ListGrantVSwitchesToCenRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ListGrantVSwitchesToCenRequest::getVersion() const {
+  return version_;
+}
+
+void ListGrantVSwitchesToCenRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string ListGrantVSwitchesToCenRequest::getVpcId() const {
   return vpcId_;
 }

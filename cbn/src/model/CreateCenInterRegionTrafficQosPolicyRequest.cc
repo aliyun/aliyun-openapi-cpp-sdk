@@ -121,6 +121,15 @@ void CreateCenInterRegionTrafficQosPolicyRequest::setTransitRouterId(const std::
   setParameter(std::string("TransitRouterId"), transitRouterId);
 }
 
+std::string CreateCenInterRegionTrafficQosPolicyRequest::getVersion() const {
+  return version_;
+}
+
+void CreateCenInterRegionTrafficQosPolicyRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+
 std::string CreateCenInterRegionTrafficQosPolicyRequest::getTransitRouterAttachmentId() const {
   return transitRouterAttachmentId_;
 }

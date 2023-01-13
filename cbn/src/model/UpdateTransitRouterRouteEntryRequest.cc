@@ -106,3 +106,12 @@ void UpdateTransitRouterRouteEntryRequest::setTransitRouterRouteEntryName(const 
   setParameter(std::string("TransitRouterRouteEntryName"), transitRouterRouteEntryName);
 }
 
+std::string UpdateTransitRouterRouteEntryRequest::getVersion() const {
+  return version_;
+}
+
+void UpdateTransitRouterRouteEntryRequest::setVersion(const std::string &version) {
+  version_ = version;
+  setParameter(std::string("Version"), version);
+}
+

@@ -48,6 +48,8 @@ public:
 	void setTrafficQosPolicyDescription(const std::string &trafficQosPolicyDescription);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getVersion() const;
+	void setVersion(const std::string &version);
 
 private:
 	long resourceOwnerId_;
@@ -59,6 +61,7 @@ private:
 	std::string ownerAccount_;
 	std::string trafficQosPolicyDescription_;
 	long ownerId_;
+	std::string version_;
 };
 } // namespace Model
 } // namespace Cbn
