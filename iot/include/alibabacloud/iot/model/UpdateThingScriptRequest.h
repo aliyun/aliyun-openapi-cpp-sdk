@@ -35,6 +35,10 @@ namespace AlibabaCloud
 				UpdateThingScriptRequest();
 				~UpdateThingScriptRequest();
 
+				std::string getRealTenantId()const;
+				void setRealTenantId(const std::string& realTenantId);
+				std::string getRealTripartiteKey()const;
+				void setRealTripartiteKey(const std::string& realTripartiteKey);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getScriptType()const;
@@ -49,6 +53,8 @@ namespace AlibabaCloud
 				void setScriptContent(const std::string& scriptContent);
 
             private:
+				std::string realTenantId_;
+				std::string realTripartiteKey_;
 				std::string iotInstanceId_;
 				std::string scriptType_;
 				std::string productKey_;

@@ -194,6 +194,17 @@ void CreateSubscribeRelationRequest::setOtaJobFlag(bool otaJobFlag)
 	setParameter("OtaJobFlag", otaJobFlag ? "true" : "false");
 }
 
+std::string CreateSubscribeRelationRequest::getSubscribeFlags()const
+{
+	return subscribeFlags_;
+}
+
+void CreateSubscribeRelationRequest::setSubscribeFlags(const std::string& subscribeFlags)
+{
+	subscribeFlags_ = subscribeFlags;
+	setParameter("SubscribeFlags", subscribeFlags);
+}
+
 std::string CreateSubscribeRelationRequest::getApiProduct()const
 {
 	return apiProduct_;

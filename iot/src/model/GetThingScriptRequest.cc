@@ -27,15 +27,26 @@ GetThingScriptRequest::GetThingScriptRequest() :
 GetThingScriptRequest::~GetThingScriptRequest()
 {}
 
-std::string GetThingScriptRequest::getProductKey()const
+std::string GetThingScriptRequest::getRealTenantId()const
 {
-	return productKey_;
+	return realTenantId_;
 }
 
-void GetThingScriptRequest::setProductKey(const std::string& productKey)
+void GetThingScriptRequest::setRealTenantId(const std::string& realTenantId)
 {
-	productKey_ = productKey;
-	setParameter("ProductKey", productKey);
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
+std::string GetThingScriptRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void GetThingScriptRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
 }
 
 std::string GetThingScriptRequest::getIotInstanceId()const
@@ -47,6 +58,17 @@ void GetThingScriptRequest::setIotInstanceId(const std::string& iotInstanceId)
 {
 	iotInstanceId_ = iotInstanceId;
 	setParameter("IotInstanceId", iotInstanceId);
+}
+
+std::string GetThingScriptRequest::getProductKey()const
+{
+	return productKey_;
+}
+
+void GetThingScriptRequest::setProductKey(const std::string& productKey)
+{
+	productKey_ = productKey;
+	setParameter("ProductKey", productKey);
 }
 
 std::string GetThingScriptRequest::getApiProduct()const

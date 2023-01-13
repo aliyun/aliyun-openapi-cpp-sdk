@@ -124,6 +124,8 @@
 #include "model/CancelReleaseProductResult.h"
 #include "model/CheckBindLicenseDeviceProgressRequest.h"
 #include "model/CheckBindLicenseDeviceProgressResult.h"
+#include "model/ClearDeviceDesiredPropertyRequest.h"
+#include "model/ClearDeviceDesiredPropertyResult.h"
 #include "model/ClearEdgeInstanceDriverConfigsRequest.h"
 #include "model/ClearEdgeInstanceDriverConfigsResult.h"
 #include "model/CloseDeviceTunnelRequest.h"
@@ -972,6 +974,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckBindLicenseDeviceProgressResult> CheckBindLicenseDeviceProgressOutcome;
 			typedef std::future<CheckBindLicenseDeviceProgressOutcome> CheckBindLicenseDeviceProgressOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CheckBindLicenseDeviceProgressRequest&, const CheckBindLicenseDeviceProgressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckBindLicenseDeviceProgressAsyncHandler;
+			typedef Outcome<Error, Model::ClearDeviceDesiredPropertyResult> ClearDeviceDesiredPropertyOutcome;
+			typedef std::future<ClearDeviceDesiredPropertyOutcome> ClearDeviceDesiredPropertyOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ClearDeviceDesiredPropertyRequest&, const ClearDeviceDesiredPropertyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ClearDeviceDesiredPropertyAsyncHandler;
 			typedef Outcome<Error, Model::ClearEdgeInstanceDriverConfigsResult> ClearEdgeInstanceDriverConfigsOutcome;
 			typedef std::future<ClearEdgeInstanceDriverConfigsOutcome> ClearEdgeInstanceDriverConfigsOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ClearEdgeInstanceDriverConfigsRequest&, const ClearEdgeInstanceDriverConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ClearEdgeInstanceDriverConfigsAsyncHandler;
@@ -2159,6 +2164,9 @@ namespace AlibabaCloud
 			CheckBindLicenseDeviceProgressOutcome checkBindLicenseDeviceProgress(const Model::CheckBindLicenseDeviceProgressRequest &request)const;
 			void checkBindLicenseDeviceProgressAsync(const Model::CheckBindLicenseDeviceProgressRequest& request, const CheckBindLicenseDeviceProgressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckBindLicenseDeviceProgressOutcomeCallable checkBindLicenseDeviceProgressCallable(const Model::CheckBindLicenseDeviceProgressRequest& request) const;
+			ClearDeviceDesiredPropertyOutcome clearDeviceDesiredProperty(const Model::ClearDeviceDesiredPropertyRequest &request)const;
+			void clearDeviceDesiredPropertyAsync(const Model::ClearDeviceDesiredPropertyRequest& request, const ClearDeviceDesiredPropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ClearDeviceDesiredPropertyOutcomeCallable clearDeviceDesiredPropertyCallable(const Model::ClearDeviceDesiredPropertyRequest& request) const;
 			ClearEdgeInstanceDriverConfigsOutcome clearEdgeInstanceDriverConfigs(const Model::ClearEdgeInstanceDriverConfigsRequest &request)const;
 			void clearEdgeInstanceDriverConfigsAsync(const Model::ClearEdgeInstanceDriverConfigsRequest& request, const ClearEdgeInstanceDriverConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ClearEdgeInstanceDriverConfigsOutcomeCallable clearEdgeInstanceDriverConfigsCallable(const Model::ClearEdgeInstanceDriverConfigsRequest& request) const;

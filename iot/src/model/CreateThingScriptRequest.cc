@@ -27,6 +27,28 @@ CreateThingScriptRequest::CreateThingScriptRequest() :
 CreateThingScriptRequest::~CreateThingScriptRequest()
 {}
 
+std::string CreateThingScriptRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void CreateThingScriptRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
+std::string CreateThingScriptRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void CreateThingScriptRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string CreateThingScriptRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

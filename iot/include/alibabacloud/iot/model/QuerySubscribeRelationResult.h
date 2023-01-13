@@ -46,6 +46,7 @@ namespace AlibabaCloud
 				std::string getCode()const;
 				bool getSuccess()const;
 				bool getThingHistoryFlag()const;
+				std::string getSubscribeFlags()const;
 				std::string getType()const;
 				bool getFoundDeviceListFlag()const;
 				bool getOtaJobFlag()const;
@@ -67,6 +68,7 @@ namespace AlibabaCloud
 				std::string code_;
 				bool success_;
 				bool thingHistoryFlag_;
+				std::string subscribeFlags_;
 				std::string type_;
 				bool foundDeviceListFlag_;
 				bool otaJobFlag_;

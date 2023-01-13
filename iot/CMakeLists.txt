@@ -123,6 +123,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CancelReleaseProductResult.h
 	include/alibabacloud/iot/model/CheckBindLicenseDeviceProgressRequest.h
 	include/alibabacloud/iot/model/CheckBindLicenseDeviceProgressResult.h
+	include/alibabacloud/iot/model/ClearDeviceDesiredPropertyRequest.h
+	include/alibabacloud/iot/model/ClearDeviceDesiredPropertyResult.h
 	include/alibabacloud/iot/model/ClearEdgeInstanceDriverConfigsRequest.h
 	include/alibabacloud/iot/model/ClearEdgeInstanceDriverConfigsResult.h
 	include/alibabacloud/iot/model/CloseDeviceTunnelRequest.h
@@ -914,6 +916,8 @@ set(iot_src
 	src/model/CancelReleaseProductResult.cc
 	src/model/CheckBindLicenseDeviceProgressRequest.cc
 	src/model/CheckBindLicenseDeviceProgressResult.cc
+	src/model/ClearDeviceDesiredPropertyRequest.cc
+	src/model/ClearDeviceDesiredPropertyResult.cc
 	src/model/ClearEdgeInstanceDriverConfigsRequest.cc
 	src/model/ClearEdgeInstanceDriverConfigsResult.cc
 	src/model/CloseDeviceTunnelRequest.cc

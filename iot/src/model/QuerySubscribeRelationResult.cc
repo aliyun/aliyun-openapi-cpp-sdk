@@ -74,6 +74,8 @@ void QuerySubscribeRelationResult::parse(const std::string &payload)
 		otaVersionFlag_ = value["OtaVersionFlag"].asString() == "true";
 	if(!value["OtaJobFlag"].isNull())
 		otaJobFlag_ = value["OtaJobFlag"].asString() == "true";
+	if(!value["SubscribeFlags"].isNull())
+		subscribeFlags_ = value["SubscribeFlags"].asString();
 
 }
 
@@ -120,6 +122,11 @@ bool QuerySubscribeRelationResult::getSuccess()const
 bool QuerySubscribeRelationResult::getThingHistoryFlag()const
 {
 	return thingHistoryFlag_;
+}
+
+std::string QuerySubscribeRelationResult::getSubscribeFlags()const
+{
+	return subscribeFlags_;
 }
 
 std::string QuerySubscribeRelationResult::getType()const

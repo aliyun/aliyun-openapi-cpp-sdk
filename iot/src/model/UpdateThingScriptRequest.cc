@@ -27,6 +27,28 @@ UpdateThingScriptRequest::UpdateThingScriptRequest() :
 UpdateThingScriptRequest::~UpdateThingScriptRequest()
 {}
 
+std::string UpdateThingScriptRequest::getRealTenantId()const
+{
+	return realTenantId_;
+}
+
+void UpdateThingScriptRequest::setRealTenantId(const std::string& realTenantId)
+{
+	realTenantId_ = realTenantId;
+	setParameter("RealTenantId", realTenantId);
+}
+
+std::string UpdateThingScriptRequest::getRealTripartiteKey()const
+{
+	return realTripartiteKey_;
+}
+
+void UpdateThingScriptRequest::setRealTripartiteKey(const std::string& realTripartiteKey)
+{
+	realTripartiteKey_ = realTripartiteKey;
+	setParameter("RealTripartiteKey", realTripartiteKey);
+}
+
 std::string UpdateThingScriptRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;

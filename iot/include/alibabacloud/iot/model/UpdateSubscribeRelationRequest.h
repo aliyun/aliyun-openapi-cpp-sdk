@@ -61,6 +61,8 @@ namespace AlibabaCloud
 				void setFoundDeviceListFlag(bool foundDeviceListFlag);
 				bool getOtaJobFlag()const;
 				void setOtaJobFlag(bool otaJobFlag);
+				std::string getSubscribeFlags()const;
+				void setSubscribeFlags(const std::string& subscribeFlags);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				bool getDeviceDataFlag()const;
@@ -84,6 +86,7 @@ namespace AlibabaCloud
 				bool thingHistoryFlag_;
 				bool foundDeviceListFlag_;
 				bool otaJobFlag_;
+				std::string subscribeFlags_;
 				std::string apiProduct_;
 				bool deviceDataFlag_;
 				std::string apiRevision_;

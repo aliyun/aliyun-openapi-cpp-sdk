@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_CREATETHINGSCRIPTREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_CREATETHINGSCRIPTREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_CLEARDEVICEDESIREDPROPERTYREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_CLEARDEVICEDESIREDPROPERTYREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,48 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT CreateThingScriptRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT ClearDeviceDesiredPropertyRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateThingScriptRequest();
-				~CreateThingScriptRequest();
+				ClearDeviceDesiredPropertyRequest();
+				~ClearDeviceDesiredPropertyRequest();
 
 				std::string getRealTenantId()const;
 				void setRealTenantId(const std::string& realTenantId);
+				std::string getAccessKeyId()const;
+				void setAccessKeyId(const std::string& accessKeyId);
 				std::string getRealTripartiteKey()const;
 				void setRealTripartiteKey(const std::string& realTripartiteKey);
+				std::string getIotId()const;
+				void setIotId(const std::string& iotId);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getScriptType()const;
-				void setScriptType(const std::string& scriptType);
+				std::vector<std::string> getIdentifies()const;
+				void setIdentifies(const std::vector<std::string>& identifies);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
-				std::string getScriptContent()const;
-				void setScriptContent(const std::string& scriptContent);
+				std::string getDeviceName()const;
+				void setDeviceName(const std::string& deviceName);
 
             private:
 				std::string realTenantId_;
+				std::string accessKeyId_;
 				std::string realTripartiteKey_;
+				std::string iotId_;
 				std::string iotInstanceId_;
-				std::string scriptType_;
+				std::vector<std::string> identifies_;
 				std::string productKey_;
 				std::string apiProduct_;
 				std::string apiRevision_;
-				std::string scriptContent_;
+				std::string deviceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_CREATETHINGSCRIPTREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_CLEARDEVICEDESIREDPROPERTYREQUEST_H_
