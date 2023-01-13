@@ -43,6 +43,15 @@ void QueryJobsWithResultRequest::setHasAnsweredFilter(bool hasAnsweredFilter) {
   setParameter(std::string("HasAnsweredFilter"), hasAnsweredFilter ? "true" : "false");
 }
 
+std::string QueryJobsWithResultRequest::getTaskStatusFilter() const {
+  return taskStatusFilter_;
+}
+
+void QueryJobsWithResultRequest::setTaskStatusFilter(const std::string &taskStatusFilter) {
+  taskStatusFilter_ = taskStatusFilter;
+  setParameter(std::string("TaskStatusFilter"), taskStatusFilter);
+}
+
 int QueryJobsWithResultRequest::getPageNumber() const {
   return pageNumber_;
 }

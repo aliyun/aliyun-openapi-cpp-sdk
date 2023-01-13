@@ -34,6 +34,8 @@ public:
 	void setHasReachedEndOfFlowFilter(bool hasReachedEndOfFlowFilter);
 	bool getHasAnsweredFilter() const;
 	void setHasAnsweredFilter(bool hasAnsweredFilter);
+	std::string getTaskStatusFilter() const;
+	void setTaskStatusFilter(const std::string &taskStatusFilter);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getQueryText() const;
@@ -52,6 +54,7 @@ public:
 private:
 	bool hasReachedEndOfFlowFilter_;
 	bool hasAnsweredFilter_;
+	std::string taskStatusFilter_;
 	int pageNumber_;
 	std::string queryText_;
 	bool hasHangUpByRejectionFilter_;

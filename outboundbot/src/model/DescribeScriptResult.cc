@@ -72,6 +72,8 @@ void DescribeScriptResult::parse(const std::string &payload)
 		script_.newBargeInEnable = scriptNode["NewBargeInEnable"].asString() == "true";
 	if(!scriptNode["LongWaitEnable"].isNull())
 		script_.longWaitEnable = scriptNode["LongWaitEnable"].asString() == "true";
+	if(!scriptNode["EmotionEnable"].isNull())
+		script_.emotionEnable = scriptNode["EmotionEnable"].asString() == "true";
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Success"].isNull())

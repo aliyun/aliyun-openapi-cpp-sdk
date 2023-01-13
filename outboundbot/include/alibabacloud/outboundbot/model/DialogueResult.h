@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					bool interruptible;
 					std::string content;
 					std::string actionParams;
+					std::string contentParams;
 				};
 
 

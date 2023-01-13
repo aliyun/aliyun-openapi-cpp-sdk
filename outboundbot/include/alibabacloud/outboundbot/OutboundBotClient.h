@@ -86,6 +86,8 @@
 #include "model/DeleteOutboundCallNumberResult.h"
 #include "model/DeleteScriptRequest.h"
 #include "model/DeleteScriptResult.h"
+#include "model/DeleteScriptRecordingRequest.h"
+#include "model/DeleteScriptRecordingResult.h"
 #include "model/DeleteScriptWaveformRequest.h"
 #include "model/DeleteScriptWaveformResult.h"
 #include "model/DescribeDialogueNodeStatisticsRequest.h"
@@ -130,6 +132,8 @@
 #include "model/DismissNumberDistrictInfoParsingResultResult.h"
 #include "model/DownloadRecordingRequest.h"
 #include "model/DownloadRecordingResult.h"
+#include "model/DownloadScriptRecordingRequest.h"
+#include "model/DownloadScriptRecordingResult.h"
 #include "model/DuplicateScriptRequest.h"
 #include "model/DuplicateScriptResult.h"
 #include "model/ExportScriptRequest.h"
@@ -198,6 +202,8 @@
 #include "model/ListSchedulerInstancesResult.h"
 #include "model/ListScriptPublishHistoriesRequest.h"
 #include "model/ListScriptPublishHistoriesResult.h"
+#include "model/ListScriptRecordingRequest.h"
+#include "model/ListScriptRecordingResult.h"
 #include "model/ListScriptVoiceConfigsRequest.h"
 #include "model/ListScriptVoiceConfigsResult.h"
 #include "model/ListScriptsRequest.h"
@@ -284,6 +290,8 @@
 #include "model/TerminateCallResult.h"
 #include "model/UntagResourcesRequest.h"
 #include "model/UntagResourcesResult.h"
+#include "model/UploadScriptRecordingRequest.h"
+#include "model/UploadScriptRecordingResult.h"
 #include "model/WithdrawScriptReviewRequest.h"
 #include "model/WithdrawScriptReviewResult.h"
 
@@ -391,6 +399,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteScriptResult> DeleteScriptOutcome;
 			typedef std::future<DeleteScriptOutcome> DeleteScriptOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DeleteScriptRequest&, const DeleteScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScriptAsyncHandler;
+			typedef Outcome<Error, Model::DeleteScriptRecordingResult> DeleteScriptRecordingOutcome;
+			typedef std::future<DeleteScriptRecordingOutcome> DeleteScriptRecordingOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::DeleteScriptRecordingRequest&, const DeleteScriptRecordingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScriptRecordingAsyncHandler;
 			typedef Outcome<Error, Model::DeleteScriptWaveformResult> DeleteScriptWaveformOutcome;
 			typedef std::future<DeleteScriptWaveformOutcome> DeleteScriptWaveformOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DeleteScriptWaveformRequest&, const DeleteScriptWaveformOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScriptWaveformAsyncHandler;
@@ -457,6 +468,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DownloadRecordingResult> DownloadRecordingOutcome;
 			typedef std::future<DownloadRecordingOutcome> DownloadRecordingOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DownloadRecordingRequest&, const DownloadRecordingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DownloadRecordingAsyncHandler;
+			typedef Outcome<Error, Model::DownloadScriptRecordingResult> DownloadScriptRecordingOutcome;
+			typedef std::future<DownloadScriptRecordingOutcome> DownloadScriptRecordingOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::DownloadScriptRecordingRequest&, const DownloadScriptRecordingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DownloadScriptRecordingAsyncHandler;
 			typedef Outcome<Error, Model::DuplicateScriptResult> DuplicateScriptOutcome;
 			typedef std::future<DuplicateScriptOutcome> DuplicateScriptOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::DuplicateScriptRequest&, const DuplicateScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DuplicateScriptAsyncHandler;
@@ -559,6 +573,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListScriptPublishHistoriesResult> ListScriptPublishHistoriesOutcome;
 			typedef std::future<ListScriptPublishHistoriesOutcome> ListScriptPublishHistoriesOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListScriptPublishHistoriesRequest&, const ListScriptPublishHistoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScriptPublishHistoriesAsyncHandler;
+			typedef Outcome<Error, Model::ListScriptRecordingResult> ListScriptRecordingOutcome;
+			typedef std::future<ListScriptRecordingOutcome> ListScriptRecordingOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::ListScriptRecordingRequest&, const ListScriptRecordingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScriptRecordingAsyncHandler;
 			typedef Outcome<Error, Model::ListScriptVoiceConfigsResult> ListScriptVoiceConfigsOutcome;
 			typedef std::future<ListScriptVoiceConfigsOutcome> ListScriptVoiceConfigsOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::ListScriptVoiceConfigsRequest&, const ListScriptVoiceConfigsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListScriptVoiceConfigsAsyncHandler;
@@ -688,6 +705,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
 			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::UploadScriptRecordingResult> UploadScriptRecordingOutcome;
+			typedef std::future<UploadScriptRecordingOutcome> UploadScriptRecordingOutcomeCallable;
+			typedef std::function<void(const OutboundBotClient*, const Model::UploadScriptRecordingRequest&, const UploadScriptRecordingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadScriptRecordingAsyncHandler;
 			typedef Outcome<Error, Model::WithdrawScriptReviewResult> WithdrawScriptReviewOutcome;
 			typedef std::future<WithdrawScriptReviewOutcome> WithdrawScriptReviewOutcomeCallable;
 			typedef std::function<void(const OutboundBotClient*, const Model::WithdrawScriptReviewRequest&, const WithdrawScriptReviewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawScriptReviewAsyncHandler;
@@ -792,6 +812,9 @@ namespace AlibabaCloud
 			DeleteScriptOutcome deleteScript(const Model::DeleteScriptRequest &request)const;
 			void deleteScriptAsync(const Model::DeleteScriptRequest& request, const DeleteScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteScriptOutcomeCallable deleteScriptCallable(const Model::DeleteScriptRequest& request) const;
+			DeleteScriptRecordingOutcome deleteScriptRecording(const Model::DeleteScriptRecordingRequest &request)const;
+			void deleteScriptRecordingAsync(const Model::DeleteScriptRecordingRequest& request, const DeleteScriptRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteScriptRecordingOutcomeCallable deleteScriptRecordingCallable(const Model::DeleteScriptRecordingRequest& request) const;
 			DeleteScriptWaveformOutcome deleteScriptWaveform(const Model::DeleteScriptWaveformRequest &request)const;
 			void deleteScriptWaveformAsync(const Model::DeleteScriptWaveformRequest& request, const DeleteScriptWaveformAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteScriptWaveformOutcomeCallable deleteScriptWaveformCallable(const Model::DeleteScriptWaveformRequest& request) const;
@@ -858,6 +881,9 @@ namespace AlibabaCloud
 			DownloadRecordingOutcome downloadRecording(const Model::DownloadRecordingRequest &request)const;
 			void downloadRecordingAsync(const Model::DownloadRecordingRequest& request, const DownloadRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DownloadRecordingOutcomeCallable downloadRecordingCallable(const Model::DownloadRecordingRequest& request) const;
+			DownloadScriptRecordingOutcome downloadScriptRecording(const Model::DownloadScriptRecordingRequest &request)const;
+			void downloadScriptRecordingAsync(const Model::DownloadScriptRecordingRequest& request, const DownloadScriptRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DownloadScriptRecordingOutcomeCallable downloadScriptRecordingCallable(const Model::DownloadScriptRecordingRequest& request) const;
 			DuplicateScriptOutcome duplicateScript(const Model::DuplicateScriptRequest &request)const;
 			void duplicateScriptAsync(const Model::DuplicateScriptRequest& request, const DuplicateScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DuplicateScriptOutcomeCallable duplicateScriptCallable(const Model::DuplicateScriptRequest& request) const;
@@ -960,6 +986,9 @@ namespace AlibabaCloud
 			ListScriptPublishHistoriesOutcome listScriptPublishHistories(const Model::ListScriptPublishHistoriesRequest &request)const;
 			void listScriptPublishHistoriesAsync(const Model::ListScriptPublishHistoriesRequest& request, const ListScriptPublishHistoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListScriptPublishHistoriesOutcomeCallable listScriptPublishHistoriesCallable(const Model::ListScriptPublishHistoriesRequest& request) const;
+			ListScriptRecordingOutcome listScriptRecording(const Model::ListScriptRecordingRequest &request)const;
+			void listScriptRecordingAsync(const Model::ListScriptRecordingRequest& request, const ListScriptRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListScriptRecordingOutcomeCallable listScriptRecordingCallable(const Model::ListScriptRecordingRequest& request) const;
 			ListScriptVoiceConfigsOutcome listScriptVoiceConfigs(const Model::ListScriptVoiceConfigsRequest &request)const;
 			void listScriptVoiceConfigsAsync(const Model::ListScriptVoiceConfigsRequest& request, const ListScriptVoiceConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListScriptVoiceConfigsOutcomeCallable listScriptVoiceConfigsCallable(const Model::ListScriptVoiceConfigsRequest& request) const;
@@ -1089,6 +1118,9 @@ namespace AlibabaCloud
 			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
 			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
+			UploadScriptRecordingOutcome uploadScriptRecording(const Model::UploadScriptRecordingRequest &request)const;
+			void uploadScriptRecordingAsync(const Model::UploadScriptRecordingRequest& request, const UploadScriptRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UploadScriptRecordingOutcomeCallable uploadScriptRecordingCallable(const Model::UploadScriptRecordingRequest& request) const;
 			WithdrawScriptReviewOutcome withdrawScriptReview(const Model::WithdrawScriptReviewRequest &request)const;
 			void withdrawScriptReviewAsync(const Model::WithdrawScriptReviewRequest& request, const WithdrawScriptReviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			WithdrawScriptReviewOutcomeCallable withdrawScriptReviewCallable(const Model::WithdrawScriptReviewRequest& request) const;

@@ -46,6 +46,8 @@ public:
 	void setAsrConfig(const std::string &asrConfig);
 	std::string getMiniPlaybackConfigListJsonString() const;
 	void setMiniPlaybackConfigListJsonString(const std::string &miniPlaybackConfigListJsonString);
+	bool getEmotionEnable() const;
+	void setEmotionEnable(bool emotionEnable);
 	std::string getNlsConfig() const;
 	void setNlsConfig(const std::string &nlsConfig);
 	bool getNewBargeInEnable() const;
@@ -72,6 +74,7 @@ private:
 	std::vector<std::string> scriptWaveform_;
 	std::string asrConfig_;
 	std::string miniPlaybackConfigListJsonString_;
+	bool emotionEnable_;
 	std::string nlsConfig_;
 	bool newBargeInEnable_;
 	bool miniPlaybackEnable_;

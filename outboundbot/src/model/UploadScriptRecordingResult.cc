@@ -14,74 +14,65 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/outboundbot/model/DialogueResult.h>
+#include <alibabacloud/outboundbot/model/UploadScriptRecordingResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::OutboundBot;
 using namespace AlibabaCloud::OutboundBot::Model;
 
-DialogueResult::DialogueResult() :
+UploadScriptRecordingResult::UploadScriptRecordingResult() :
 	ServiceResult()
 {}
 
-DialogueResult::DialogueResult(const std::string &payload) :
+UploadScriptRecordingResult::UploadScriptRecordingResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DialogueResult::~DialogueResult()
+UploadScriptRecordingResult::~UploadScriptRecordingResult()
 {}
 
-void DialogueResult::parse(const std::string &payload)
+void UploadScriptRecordingResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto feedbackNode = value["Feedback"];
-	if(!feedbackNode["Action"].isNull())
-		feedback_.action = feedbackNode["Action"].asString();
-	if(!feedbackNode["ActionParams"].isNull())
-		feedback_.actionParams = feedbackNode["ActionParams"].asString();
-	if(!feedbackNode["Content"].isNull())
-		feedback_.content = feedbackNode["Content"].asString();
-	if(!feedbackNode["Interruptible"].isNull())
-		feedback_.interruptible = feedbackNode["Interruptible"].asString() == "true";
-	if(!feedbackNode["ContentParams"].isNull())
-		feedback_.contentParams = feedbackNode["ContentParams"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
+	if(!value["Uuid"].isNull())
+		uuid_ = value["Uuid"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 
 }
 
-std::string DialogueResult::getMessage()const
+std::string UploadScriptRecordingResult::getUuid()const
+{
+	return uuid_;
+}
+
+std::string UploadScriptRecordingResult::getMessage()const
 {
 	return message_;
 }
 
-DialogueResult::Feedback DialogueResult::getFeedback()const
-{
-	return feedback_;
-}
-
-int DialogueResult::getHttpStatusCode()const
+int UploadScriptRecordingResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string DialogueResult::getCode()const
+std::string UploadScriptRecordingResult::getCode()const
 {
 	return code_;
 }
 
-bool DialogueResult::getSuccess()const
+bool UploadScriptRecordingResult::getSuccess()const
 {
 	return success_;
 }

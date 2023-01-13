@@ -96,6 +96,15 @@ void ModifyScriptRequest::setMiniPlaybackConfigListJsonString(const std::string 
   setParameter(std::string("MiniPlaybackConfigListJsonString"), miniPlaybackConfigListJsonString);
 }
 
+bool ModifyScriptRequest::getEmotionEnable() const {
+  return emotionEnable_;
+}
+
+void ModifyScriptRequest::setEmotionEnable(bool emotionEnable) {
+  emotionEnable_ = emotionEnable;
+  setParameter(std::string("EmotionEnable"), emotionEnable ? "true" : "false");
+}
+
 std::string ModifyScriptRequest::getNlsConfig() const {
   return nlsConfig_;
 }

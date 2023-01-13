@@ -55,6 +55,7 @@ namespace AlibabaCloud
 					std::string callCenterInstanceId;
 					std::string instanceName;
 					int maxConcurrentConversation;
+					bool isPreset;
 					long creationTime;
 					std::string instanceDescription;
 					std::string nluServiceType;

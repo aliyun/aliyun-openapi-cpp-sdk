@@ -50,6 +50,7 @@ namespace AlibabaCloud
 					std::string ttsConfig;
 					bool longWaitEnable;
 					bool miniPlaybackEnable;
+					bool emotionEnable;
 				};
 
 

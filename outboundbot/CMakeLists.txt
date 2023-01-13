@@ -85,6 +85,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/DeleteOutboundCallNumberResult.h
 	include/alibabacloud/outboundbot/model/DeleteScriptRequest.h
 	include/alibabacloud/outboundbot/model/DeleteScriptResult.h
+	include/alibabacloud/outboundbot/model/DeleteScriptRecordingRequest.h
+	include/alibabacloud/outboundbot/model/DeleteScriptRecordingResult.h
 	include/alibabacloud/outboundbot/model/DeleteScriptWaveformRequest.h
 	include/alibabacloud/outboundbot/model/DeleteScriptWaveformResult.h
 	include/alibabacloud/outboundbot/model/DescribeDialogueNodeStatisticsRequest.h
@@ -129,6 +131,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/DismissNumberDistrictInfoParsingResultResult.h
 	include/alibabacloud/outboundbot/model/DownloadRecordingRequest.h
 	include/alibabacloud/outboundbot/model/DownloadRecordingResult.h
+	include/alibabacloud/outboundbot/model/DownloadScriptRecordingRequest.h
+	include/alibabacloud/outboundbot/model/DownloadScriptRecordingResult.h
 	include/alibabacloud/outboundbot/model/DuplicateScriptRequest.h
 	include/alibabacloud/outboundbot/model/DuplicateScriptResult.h
 	include/alibabacloud/outboundbot/model/ExportScriptRequest.h
@@ -197,6 +201,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/ListSchedulerInstancesResult.h
 	include/alibabacloud/outboundbot/model/ListScriptPublishHistoriesRequest.h
 	include/alibabacloud/outboundbot/model/ListScriptPublishHistoriesResult.h
+	include/alibabacloud/outboundbot/model/ListScriptRecordingRequest.h
+	include/alibabacloud/outboundbot/model/ListScriptRecordingResult.h
 	include/alibabacloud/outboundbot/model/ListScriptVoiceConfigsRequest.h
 	include/alibabacloud/outboundbot/model/ListScriptVoiceConfigsResult.h
 	include/alibabacloud/outboundbot/model/ListScriptsRequest.h
@@ -283,6 +289,8 @@ set(outboundbot_public_header_model
 	include/alibabacloud/outboundbot/model/TerminateCallResult.h
 	include/alibabacloud/outboundbot/model/UntagResourcesRequest.h
 	include/alibabacloud/outboundbot/model/UntagResourcesResult.h
+	include/alibabacloud/outboundbot/model/UploadScriptRecordingRequest.h
+	include/alibabacloud/outboundbot/model/UploadScriptRecordingResult.h
 	include/alibabacloud/outboundbot/model/WithdrawScriptReviewRequest.h
 	include/alibabacloud/outboundbot/model/WithdrawScriptReviewResult.h )
 
@@ -352,6 +360,8 @@ set(outboundbot_src
 	src/model/DeleteOutboundCallNumberResult.cc
 	src/model/DeleteScriptRequest.cc
 	src/model/DeleteScriptResult.cc
+	src/model/DeleteScriptRecordingRequest.cc
+	src/model/DeleteScriptRecordingResult.cc
 	src/model/DeleteScriptWaveformRequest.cc
 	src/model/DeleteScriptWaveformResult.cc
 	src/model/DescribeDialogueNodeStatisticsRequest.cc
@@ -396,6 +406,8 @@ set(outboundbot_src
 	src/model/DismissNumberDistrictInfoParsingResultResult.cc
 	src/model/DownloadRecordingRequest.cc
 	src/model/DownloadRecordingResult.cc
+	src/model/DownloadScriptRecordingRequest.cc
+	src/model/DownloadScriptRecordingResult.cc
 	src/model/DuplicateScriptRequest.cc
 	src/model/DuplicateScriptResult.cc
 	src/model/ExportScriptRequest.cc
@@ -464,6 +476,8 @@ set(outboundbot_src
 	src/model/ListSchedulerInstancesResult.cc
 	src/model/ListScriptPublishHistoriesRequest.cc
 	src/model/ListScriptPublishHistoriesResult.cc
+	src/model/ListScriptRecordingRequest.cc
+	src/model/ListScriptRecordingResult.cc
 	src/model/ListScriptVoiceConfigsRequest.cc
 	src/model/ListScriptVoiceConfigsResult.cc
 	src/model/ListScriptsRequest.cc
@@ -550,6 +564,8 @@ set(outboundbot_src
 	src/model/TerminateCallResult.cc
 	src/model/UntagResourcesRequest.cc
 	src/model/UntagResourcesResult.cc
+	src/model/UploadScriptRecordingRequest.cc
+	src/model/UploadScriptRecordingResult.cc
 	src/model/WithdrawScriptReviewRequest.cc
 	src/model/WithdrawScriptReviewResult.cc )
 

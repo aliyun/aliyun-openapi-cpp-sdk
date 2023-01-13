@@ -69,6 +69,8 @@ void ListInstancesResult::parse(const std::string &payload)
 			instancesObject.creatorName = valueInstancesInstance["CreatorName"].asString();
 		if(!valueInstancesInstance["MaxConcurrentConversation"].isNull())
 			instancesObject.maxConcurrentConversation = std::stoi(valueInstancesInstance["MaxConcurrentConversation"].asString());
+		if(!valueInstancesInstance["IsPreset"].isNull())
+			instancesObject.isPreset = valueInstancesInstance["IsPreset"].asString() == "true";
 		auto allResourceTagsNode = valueInstancesInstance["ResourceTags"]["ResourceTag"];
 		for (auto valueInstancesInstanceResourceTagsResourceTag : allResourceTagsNode)
 		{

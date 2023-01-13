@@ -80,6 +80,10 @@ void ListScriptsResult::parse(const std::string &payload)
 			scriptObject.newBargeInEnable = scriptsNodeListScript["NewBargeInEnable"].asString() == "true";
 		if(!scriptsNodeListScript["LongWaitEnable"].isNull())
 			scriptObject.longWaitEnable = scriptsNodeListScript["LongWaitEnable"].asString() == "true";
+		if(!scriptsNodeListScript["EmotionEnable"].isNull())
+			scriptObject.emotionEnable = scriptsNodeListScript["EmotionEnable"].asString() == "true";
+		if(!scriptsNodeListScript["IsPreset"].isNull())
+			scriptObject.isPreset = scriptsNodeListScript["IsPreset"].asString() == "true";
 		scripts_.list.push_back(scriptObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

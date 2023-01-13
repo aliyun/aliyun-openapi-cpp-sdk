@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTSCRIPTSRESULT_H_
-#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTSCRIPTSRESULT_H_
+#ifndef ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTSCRIPTRECORDINGRESULT_H_
+#define ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTSCRIPTRECORDINGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,43 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT ListScriptsResult : public ServiceResult
+			class ALIBABACLOUD_OUTBOUNDBOT_EXPORT ListScriptRecordingResult : public ServiceResult
 			{
 			public:
-				struct Scripts
+				struct ScriptRecording
 				{
-					struct Script
-					{
-						std::string status;
-						std::string scriptDescription;
-						std::string scriptId;
-						bool newBargeInEnable;
-						std::string failReason;
-						std::string debugStatus;
-						std::string scene;
-						bool isDebugDrafted;
-						std::string industry;
-						bool isDrafted;
-						bool isPreset;
-						std::string scriptName;
-						long updateTime;
-						std::string rejectReason;
-						bool longWaitEnable;
-						bool miniPlaybackEnable;
-						bool emotionEnable;
-					};
-					int totalCount;
-					int pageSize;
-					int pageNumber;
-					std::vector<Script> list;
+					std::string storageUuid;
+					std::string stateExtend;
+					std::string instanceId;
+					std::string recordingName;
+					std::string recordingContent;
+					long gmtModified;
+					std::string innerId;
+					std::string scriptId;
+					long gmtCreate;
+					std::string uuid;
+					int state;
+					long gmtUpload;
+					int recordingDuration;
 				};
 
 
-				ListScriptsResult();
-				explicit ListScriptsResult(const std::string &payload);
-				~ListScriptsResult();
-				Scripts getScripts()const;
+				ListScriptRecordingResult();
+				explicit ListScriptRecordingResult(const std::string &payload);
+				~ListScriptRecordingResult();
+				long getTotalCount()const;
 				std::string getMessage()const;
+				int getPageSize()const;
+				std::vector<ScriptRecording> getScriptRecordings()const;
+				int getPageNumber()const;
 				int getHttpStatusCode()const;
 				std::string getCode()const;
 				bool getSuccess()const;
@@ -73,8 +65,11 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Scripts scripts_;
+				long totalCount_;
 				std::string message_;
+				int pageSize_;
+				std::vector<ScriptRecording> scriptRecordings_;
+				int pageNumber_;
 				int httpStatusCode_;
 				std::string code_;
 				bool success_;
@@ -83,4 +78,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTSCRIPTSRESULT_H_
+#endif // !ALIBABACLOUD_OUTBOUNDBOT_MODEL_LISTSCRIPTRECORDINGRESULT_H_

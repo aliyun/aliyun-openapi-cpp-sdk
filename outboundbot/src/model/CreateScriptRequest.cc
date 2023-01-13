@@ -87,6 +87,15 @@ void CreateScriptRequest::setMiniPlaybackConfigListJsonString(const std::string 
   setParameter(std::string("MiniPlaybackConfigListJsonString"), miniPlaybackConfigListJsonString);
 }
 
+bool CreateScriptRequest::getEmotionEnable() const {
+  return emotionEnable_;
+}
+
+void CreateScriptRequest::setEmotionEnable(bool emotionEnable) {
+  emotionEnable_ = emotionEnable;
+  setParameter(std::string("EmotionEnable"), emotionEnable ? "true" : "false");
+}
+
 bool CreateScriptRequest::getNewBargeInEnable() const {
   return newBargeInEnable_;
 }

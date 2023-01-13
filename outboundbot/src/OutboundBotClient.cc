@@ -31,21 +31,21 @@ OutboundBotClient::OutboundBotClient(const Credentials &credentials, const Clien
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "outboundbot");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 OutboundBotClient::OutboundBotClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "outboundbot");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 OutboundBotClient::OutboundBotClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "outboundbot");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 OutboundBotClient::~OutboundBotClient()
@@ -1203,6 +1203,42 @@ OutboundBotClient::DeleteScriptOutcomeCallable OutboundBotClient::deleteScriptCa
 	return task->get_future();
 }
 
+OutboundBotClient::DeleteScriptRecordingOutcome OutboundBotClient::deleteScriptRecording(const DeleteScriptRecordingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteScriptRecordingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteScriptRecordingOutcome(DeleteScriptRecordingResult(outcome.result()));
+	else
+		return DeleteScriptRecordingOutcome(outcome.error());
+}
+
+void OutboundBotClient::deleteScriptRecordingAsync(const DeleteScriptRecordingRequest& request, const DeleteScriptRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteScriptRecording(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::DeleteScriptRecordingOutcomeCallable OutboundBotClient::deleteScriptRecordingCallable(const DeleteScriptRecordingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteScriptRecordingOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteScriptRecording(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 OutboundBotClient::DeleteScriptWaveformOutcome OutboundBotClient::deleteScriptWaveform(const DeleteScriptWaveformRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,6 +2025,42 @@ OutboundBotClient::DownloadRecordingOutcomeCallable OutboundBotClient::downloadR
 			[this, request]()
 			{
 			return this->downloadRecording(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::DownloadScriptRecordingOutcome OutboundBotClient::downloadScriptRecording(const DownloadScriptRecordingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DownloadScriptRecordingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DownloadScriptRecordingOutcome(DownloadScriptRecordingResult(outcome.result()));
+	else
+		return DownloadScriptRecordingOutcome(outcome.error());
+}
+
+void OutboundBotClient::downloadScriptRecordingAsync(const DownloadScriptRecordingRequest& request, const DownloadScriptRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, downloadScriptRecording(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::DownloadScriptRecordingOutcomeCallable OutboundBotClient::downloadScriptRecordingCallable(const DownloadScriptRecordingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DownloadScriptRecordingOutcome()>>(
+			[this, request]()
+			{
+			return this->downloadScriptRecording(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3213,6 +3285,42 @@ OutboundBotClient::ListScriptPublishHistoriesOutcomeCallable OutboundBotClient::
 			[this, request]()
 			{
 			return this->listScriptPublishHistories(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::ListScriptRecordingOutcome OutboundBotClient::listScriptRecording(const ListScriptRecordingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListScriptRecordingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListScriptRecordingOutcome(ListScriptRecordingResult(outcome.result()));
+	else
+		return ListScriptRecordingOutcome(outcome.error());
+}
+
+void OutboundBotClient::listScriptRecordingAsync(const ListScriptRecordingRequest& request, const ListScriptRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listScriptRecording(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::ListScriptRecordingOutcomeCallable OutboundBotClient::listScriptRecordingCallable(const ListScriptRecordingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListScriptRecordingOutcome()>>(
+			[this, request]()
+			{
+			return this->listScriptRecording(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4761,6 +4869,42 @@ OutboundBotClient::UntagResourcesOutcomeCallable OutboundBotClient::untagResourc
 			[this, request]()
 			{
 			return this->untagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+OutboundBotClient::UploadScriptRecordingOutcome OutboundBotClient::uploadScriptRecording(const UploadScriptRecordingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadScriptRecordingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadScriptRecordingOutcome(UploadScriptRecordingResult(outcome.result()));
+	else
+		return UploadScriptRecordingOutcome(outcome.error());
+}
+
+void OutboundBotClient::uploadScriptRecordingAsync(const UploadScriptRecordingRequest& request, const UploadScriptRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadScriptRecording(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+OutboundBotClient::UploadScriptRecordingOutcomeCallable OutboundBotClient::uploadScriptRecordingCallable(const UploadScriptRecordingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadScriptRecordingOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadScriptRecording(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

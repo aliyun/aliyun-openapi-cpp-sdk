@@ -14,42 +14,36 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/outboundbot/model/DialogueResult.h>
+#include <alibabacloud/outboundbot/model/DownloadScriptRecordingResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::OutboundBot;
 using namespace AlibabaCloud::OutboundBot::Model;
 
-DialogueResult::DialogueResult() :
+DownloadScriptRecordingResult::DownloadScriptRecordingResult() :
 	ServiceResult()
 {}
 
-DialogueResult::DialogueResult(const std::string &payload) :
+DownloadScriptRecordingResult::DownloadScriptRecordingResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DialogueResult::~DialogueResult()
+DownloadScriptRecordingResult::~DownloadScriptRecordingResult()
 {}
 
-void DialogueResult::parse(const std::string &payload)
+void DownloadScriptRecordingResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto feedbackNode = value["Feedback"];
-	if(!feedbackNode["Action"].isNull())
-		feedback_.action = feedbackNode["Action"].asString();
-	if(!feedbackNode["ActionParams"].isNull())
-		feedback_.actionParams = feedbackNode["ActionParams"].asString();
-	if(!feedbackNode["Content"].isNull())
-		feedback_.content = feedbackNode["Content"].asString();
-	if(!feedbackNode["Interruptible"].isNull())
-		feedback_.interruptible = feedbackNode["Interruptible"].asString() == "true";
-	if(!feedbackNode["ContentParams"].isNull())
-		feedback_.contentParams = feedbackNode["ContentParams"].asString();
+	auto downloadParamsNode = value["DownloadParams"];
+	if(!downloadParamsNode["SignatureUrl"].isNull())
+		downloadParams_.signatureUrl = downloadParamsNode["SignatureUrl"].asString();
+	if(!downloadParamsNode["FileName"].isNull())
+		downloadParams_.fileName = downloadParamsNode["FileName"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
@@ -61,27 +55,27 @@ void DialogueResult::parse(const std::string &payload)
 
 }
 
-std::string DialogueResult::getMessage()const
+DownloadScriptRecordingResult::DownloadParams DownloadScriptRecordingResult::getDownloadParams()const
+{
+	return downloadParams_;
+}
+
+std::string DownloadScriptRecordingResult::getMessage()const
 {
 	return message_;
 }
 
-DialogueResult::Feedback DialogueResult::getFeedback()const
-{
-	return feedback_;
-}
-
-int DialogueResult::getHttpStatusCode()const
+int DownloadScriptRecordingResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
 }
 
-std::string DialogueResult::getCode()const
+std::string DownloadScriptRecordingResult::getCode()const
 {
 	return code_;
 }
 
-bool DialogueResult::getSuccess()const
+bool DownloadScriptRecordingResult::getSuccess()const
 {
 	return success_;
 }
