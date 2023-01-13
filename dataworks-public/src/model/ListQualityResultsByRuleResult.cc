@@ -67,7 +67,7 @@ void ListQualityResultsByRuleResult::parse(const std::string &payload)
 		if(!dataNodeRuleChecksRuleChecksItem["CheckerName"].isNull())
 			ruleChecksItemObject.checkerName = dataNodeRuleChecksRuleChecksItem["CheckerName"].asString();
 		if(!dataNodeRuleChecksRuleChecksItem["RuleId"].isNull())
-			ruleChecksItemObject.ruleId = std::stoi(dataNodeRuleChecksRuleChecksItem["RuleId"].asString());
+			ruleChecksItemObject.ruleId = std::stol(dataNodeRuleChecksRuleChecksItem["RuleId"].asString());
 		if(!dataNodeRuleChecksRuleChecksItem["FixedCheck"].isNull())
 			ruleChecksItemObject.fixedCheck = dataNodeRuleChecksRuleChecksItem["FixedCheck"].asString() == "true";
 		if(!dataNodeRuleChecksRuleChecksItem["Op"].isNull())
@@ -117,7 +117,7 @@ void ListQualityResultsByRuleResult::parse(const std::string &payload)
 		if(!dataNodeRuleChecksRuleChecksItem["LowerValue"].isNull())
 			ruleChecksItemObject.lowerValue = std::stof(dataNodeRuleChecksRuleChecksItem["LowerValue"].asString());
 		if(!dataNodeRuleChecksRuleChecksItem["EntityId"].isNull())
-			ruleChecksItemObject.entityId = std::stoi(dataNodeRuleChecksRuleChecksItem["EntityId"].asString());
+			ruleChecksItemObject.entityId = std::stol(dataNodeRuleChecksRuleChecksItem["EntityId"].asString());
 		if(!dataNodeRuleChecksRuleChecksItem["WhereCondition"].isNull())
 			ruleChecksItemObject.whereCondition = dataNodeRuleChecksRuleChecksItem["WhereCondition"].asString();
 		if(!dataNodeRuleChecksRuleChecksItem["ExpectValue"].isNull())
@@ -127,7 +127,9 @@ void ListQualityResultsByRuleResult::parse(const std::string &payload)
 		if(!dataNodeRuleChecksRuleChecksItem["TaskId"].isNull())
 			ruleChecksItemObject.taskId = dataNodeRuleChecksRuleChecksItem["TaskId"].asString();
 		if(!dataNodeRuleChecksRuleChecksItem["Id"].isNull())
-			ruleChecksItemObject.id = std::stoi(dataNodeRuleChecksRuleChecksItem["Id"].asString());
+			ruleChecksItemObject.id = std::stol(dataNodeRuleChecksRuleChecksItem["Id"].asString());
+		if(!dataNodeRuleChecksRuleChecksItem["Open"].isNull())
+			ruleChecksItemObject.open = dataNodeRuleChecksRuleChecksItem["Open"].asString() == "true";
 		auto allReferenceValueNode = dataNodeRuleChecksRuleChecksItem["ReferenceValue"]["ReferenceValueItem"];
 		for (auto dataNodeRuleChecksRuleChecksItemReferenceValueReferenceValueItem : allReferenceValueNode)
 		{

@@ -70,11 +70,11 @@ void ListQualityResultsByRuleRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-int ListQualityResultsByRuleRequest::getRuleId() const {
+long ListQualityResultsByRuleRequest::getRuleId() const {
   return ruleId_;
 }
 
-void ListQualityResultsByRuleRequest::setRuleId(int ruleId) {
+void ListQualityResultsByRuleRequest::setRuleId(long ruleId) {
   ruleId_ = ruleId;
   setBodyParameter(std::string("RuleId"), std::to_string(ruleId));
 }

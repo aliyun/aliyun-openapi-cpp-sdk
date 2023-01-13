@@ -57,6 +57,10 @@ void GetQualityFollowerResult::parse(const std::string &payload)
 			dataObject.id = std::stol(valueDataFollower["Id"].asString());
 		if(!valueDataFollower["Follower"].isNull())
 			dataObject.follower = valueDataFollower["Follower"].asString();
+		if(!valueDataFollower["CreateTime"].isNull())
+			dataObject.createTime = std::stol(valueDataFollower["CreateTime"].asString());
+		if(!valueDataFollower["ModifyTime"].isNull())
+			dataObject.modifyTime = std::stol(valueDataFollower["ModifyTime"].asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

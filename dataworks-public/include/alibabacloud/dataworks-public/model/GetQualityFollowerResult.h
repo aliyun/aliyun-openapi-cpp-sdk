@@ -37,7 +37,9 @@ namespace AlibabaCloud
 					std::string entityId;
 					std::string followerAccountName;
 					std::string tableName;
+					long modifyTime;
 					std::string projectName;
+					long createTime;
 					std::string follower;
 					long id;
 					int alarmMode;

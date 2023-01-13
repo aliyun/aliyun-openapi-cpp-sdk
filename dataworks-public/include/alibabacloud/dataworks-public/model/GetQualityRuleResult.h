@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Data
 				{
 					std::string comment;
+					bool openSwitch;
 					int checker;
 					std::string criticalThreshold;
 					std::string checkerName;

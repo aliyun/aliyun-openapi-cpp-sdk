@@ -60,11 +60,12 @@ namespace AlibabaCloud
 						float expectValue;
 						std::vector<RuleChecksItem::ReferenceValueItem> referenceValue;
 						float warningThreshold;
-						int ruleId;
+						long ruleId;
 						long beginTime;
 						std::string whereCondition;
 						int checkResultStatus;
 						std::string matchExpression;
+						bool open;
 						float upperValue;
 						bool isPrediction;
 						int checkResult;
@@ -85,11 +86,11 @@ namespace AlibabaCloud
 						int checkerType;
 						std::string externalType;
 						int checkerId;
-						int entityId;
+						long entityId;
 						std::string tableName;
 						int blockType;
 						std::string actualExpression;
-						int id;
+						long id;
 						float lowerValue;
 					};
 					long totalCount;
