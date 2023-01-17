@@ -140,8 +140,6 @@
 #include "model/StartScdnDomainResult.h"
 #include "model/StopScdnDomainRequest.h"
 #include "model/StopScdnDomainResult.h"
-#include "model/TestAmpDescribeScdnDomainIspDataRequest.h"
-#include "model/TestAmpDescribeScdnDomainIspDataResult.h"
 #include "model/UpdateScdnDomainRequest.h"
 #include "model/UpdateScdnDomainResult.h"
 #include "model/VerifyScdnDomainOwnerRequest.h"
@@ -332,9 +330,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopScdnDomainResult> StopScdnDomainOutcome;
 			typedef std::future<StopScdnDomainOutcome> StopScdnDomainOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::StopScdnDomainRequest&, const StopScdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopScdnDomainAsyncHandler;
-			typedef Outcome<Error, Model::TestAmpDescribeScdnDomainIspDataResult> TestAmpDescribeScdnDomainIspDataOutcome;
-			typedef std::future<TestAmpDescribeScdnDomainIspDataOutcome> TestAmpDescribeScdnDomainIspDataOutcomeCallable;
-			typedef std::function<void(const ScdnClient*, const Model::TestAmpDescribeScdnDomainIspDataRequest&, const TestAmpDescribeScdnDomainIspDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TestAmpDescribeScdnDomainIspDataAsyncHandler;
 			typedef Outcome<Error, Model::UpdateScdnDomainResult> UpdateScdnDomainOutcome;
 			typedef std::future<UpdateScdnDomainOutcome> UpdateScdnDomainOutcomeCallable;
 			typedef std::function<void(const ScdnClient*, const Model::UpdateScdnDomainRequest&, const UpdateScdnDomainOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateScdnDomainAsyncHandler;
@@ -523,9 +518,6 @@ namespace AlibabaCloud
 			StopScdnDomainOutcome stopScdnDomain(const Model::StopScdnDomainRequest &request)const;
 			void stopScdnDomainAsync(const Model::StopScdnDomainRequest& request, const StopScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopScdnDomainOutcomeCallable stopScdnDomainCallable(const Model::StopScdnDomainRequest& request) const;
-			TestAmpDescribeScdnDomainIspDataOutcome testAmpDescribeScdnDomainIspData(const Model::TestAmpDescribeScdnDomainIspDataRequest &request)const;
-			void testAmpDescribeScdnDomainIspDataAsync(const Model::TestAmpDescribeScdnDomainIspDataRequest& request, const TestAmpDescribeScdnDomainIspDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			TestAmpDescribeScdnDomainIspDataOutcomeCallable testAmpDescribeScdnDomainIspDataCallable(const Model::TestAmpDescribeScdnDomainIspDataRequest& request) const;
 			UpdateScdnDomainOutcome updateScdnDomain(const Model::UpdateScdnDomainRequest &request)const;
 			void updateScdnDomainAsync(const Model::UpdateScdnDomainRequest& request, const UpdateScdnDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateScdnDomainOutcomeCallable updateScdnDomainCallable(const Model::UpdateScdnDomainRequest& request) const;

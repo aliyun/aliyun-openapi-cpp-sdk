@@ -2175,42 +2175,6 @@ ScdnClient::StopScdnDomainOutcomeCallable ScdnClient::stopScdnDomainCallable(con
 	return task->get_future();
 }
 
-ScdnClient::TestAmpDescribeScdnDomainIspDataOutcome ScdnClient::testAmpDescribeScdnDomainIspData(const TestAmpDescribeScdnDomainIspDataRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TestAmpDescribeScdnDomainIspDataOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TestAmpDescribeScdnDomainIspDataOutcome(TestAmpDescribeScdnDomainIspDataResult(outcome.result()));
-	else
-		return TestAmpDescribeScdnDomainIspDataOutcome(outcome.error());
-}
-
-void ScdnClient::testAmpDescribeScdnDomainIspDataAsync(const TestAmpDescribeScdnDomainIspDataRequest& request, const TestAmpDescribeScdnDomainIspDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, testAmpDescribeScdnDomainIspData(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ScdnClient::TestAmpDescribeScdnDomainIspDataOutcomeCallable ScdnClient::testAmpDescribeScdnDomainIspDataCallable(const TestAmpDescribeScdnDomainIspDataRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TestAmpDescribeScdnDomainIspDataOutcome()>>(
-			[this, request]()
-			{
-			return this->testAmpDescribeScdnDomainIspData(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ScdnClient::UpdateScdnDomainOutcome ScdnClient::updateScdnDomain(const UpdateScdnDomainRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

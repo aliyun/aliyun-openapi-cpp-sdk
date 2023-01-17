@@ -38,6 +38,8 @@ public:
 	void setL2Preload(bool l2Preload);
 	std::string getArea() const;
 	void setArea(const std::string &area);
+	std::string getWithHeader() const;
+	void setWithHeader(const std::string &withHeader);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 
@@ -46,6 +48,7 @@ private:
 	std::string securityToken_;
 	bool l2Preload_;
 	std::string area_;
+	std::string withHeader_;
 	long ownerId_;
 };
 } // namespace Model

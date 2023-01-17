@@ -61,6 +61,15 @@ void PreloadScdnObjectCachesRequest::setArea(const std::string &area) {
   setParameter(std::string("Area"), area);
 }
 
+std::string PreloadScdnObjectCachesRequest::getWithHeader() const {
+  return withHeader_;
+}
+
+void PreloadScdnObjectCachesRequest::setWithHeader(const std::string &withHeader) {
+  withHeader_ = withHeader;
+  setParameter(std::string("WithHeader"), withHeader);
+}
+
 long PreloadScdnObjectCachesRequest::getOwnerId() const {
   return ownerId_;
 }
