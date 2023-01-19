@@ -30,25 +30,25 @@ class ALIBABACLOUD_SAS_EXPORT AddInstallCodeRequest : public RpcServiceRequest {
 public:
 	AddInstallCodeRequest();
 	~AddInstallCodeRequest();
-	long getExpiredDate() const;
-	void setExpiredDate(long expiredDate);
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
 	std::string getOs() const;
 	void setOs(const std::string &os);
 	long getGroupId() const;
 	void setGroupId(long groupId);
 	bool getOnlyImage() const;
 	void setOnlyImage(bool onlyImage);
+	long getExpiredDate() const;
+	void setExpiredDate(long expiredDate);
+	std::string getSourceIp() const;
+	void setSourceIp(const std::string &sourceIp);
 	std::string getVendorName() const;
 	void setVendorName(const std::string &vendorName);
 
 private:
-	long expiredDate_;
-	std::string sourceIp_;
 	std::string os_;
 	long groupId_;
 	bool onlyImage_;
+	long expiredDate_;
+	std::string sourceIp_;
 	std::string vendorName_;
 };
 } // namespace Model

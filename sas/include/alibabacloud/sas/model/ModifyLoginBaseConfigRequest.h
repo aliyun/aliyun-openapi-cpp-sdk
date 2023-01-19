@@ -30,6 +30,8 @@ class ALIBABACLOUD_SAS_EXPORT ModifyLoginBaseConfigRequest : public RpcServiceRe
 public:
 	ModifyLoginBaseConfigRequest();
 	~ModifyLoginBaseConfigRequest();
+	std::string getConfigs() const;
+	void setConfigs(const std::string &configs);
 	std::string getType() const;
 	void setType(const std::string &type);
 	std::string getTarget() const;
@@ -40,6 +42,7 @@ public:
 	void setConfig(const std::string &config);
 
 private:
+	std::string configs_;
 	std::string type_;
 	std::string target_;
 	std::string sourceIp_;

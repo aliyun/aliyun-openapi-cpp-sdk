@@ -25,24 +25,6 @@ AddInstallCodeRequest::AddInstallCodeRequest()
 
 AddInstallCodeRequest::~AddInstallCodeRequest() {}
 
-long AddInstallCodeRequest::getExpiredDate() const {
-  return expiredDate_;
-}
-
-void AddInstallCodeRequest::setExpiredDate(long expiredDate) {
-  expiredDate_ = expiredDate;
-  setParameter(std::string("ExpiredDate"), std::to_string(expiredDate));
-}
-
-std::string AddInstallCodeRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void AddInstallCodeRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
-}
-
 std::string AddInstallCodeRequest::getOs() const {
   return os_;
 }
@@ -68,6 +50,24 @@ bool AddInstallCodeRequest::getOnlyImage() const {
 void AddInstallCodeRequest::setOnlyImage(bool onlyImage) {
   onlyImage_ = onlyImage;
   setParameter(std::string("OnlyImage"), onlyImage ? "true" : "false");
+}
+
+long AddInstallCodeRequest::getExpiredDate() const {
+  return expiredDate_;
+}
+
+void AddInstallCodeRequest::setExpiredDate(long expiredDate) {
+  expiredDate_ = expiredDate;
+  setParameter(std::string("ExpiredDate"), std::to_string(expiredDate));
+}
+
+std::string AddInstallCodeRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void AddInstallCodeRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
 }
 
 std::string AddInstallCodeRequest::getVendorName() const {

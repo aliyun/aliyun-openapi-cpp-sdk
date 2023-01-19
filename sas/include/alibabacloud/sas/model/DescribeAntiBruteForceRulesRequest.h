@@ -34,10 +34,13 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	long getId() const;
+	void setId(long id);
 
 private:
 	long resourceOwnerId_;
 	std::string sourceIp_;
+	long id_;
 };
 } // namespace Model
 } // namespace Sas

@@ -61,6 +61,15 @@ void DescribeGroupedInstancesRequest::setNoPage(bool noPage) {
   setParameter(std::string("NoPage"), noPage ? "true" : "false");
 }
 
+int DescribeGroupedInstancesRequest::getVendor() const {
+  return vendor_;
+}
+
+void DescribeGroupedInstancesRequest::setVendor(int vendor) {
+  vendor_ = vendor;
+  setParameter(std::string("Vendor"), std::to_string(vendor));
+}
+
 int DescribeGroupedInstancesRequest::getPageSize() const {
   return pageSize_;
 }
@@ -77,6 +86,15 @@ std::string DescribeGroupedInstancesRequest::getLang() const {
 void DescribeGroupedInstancesRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeGroupedInstancesRequest::getVendors() const {
+  return vendors_;
+}
+
+void DescribeGroupedInstancesRequest::setVendors(const std::string &vendors) {
+  vendors_ = vendors;
+  setParameter(std::string("Vendors"), vendors);
 }
 
 std::string DescribeGroupedInstancesRequest::getFieldValue() const {

@@ -25,6 +25,15 @@ RefreshContainerAssetsRequest::RefreshContainerAssetsRequest()
 
 RefreshContainerAssetsRequest::~RefreshContainerAssetsRequest() {}
 
+bool RefreshContainerAssetsRequest::getRefreshImmediately() const {
+  return refreshImmediately_;
+}
+
+void RefreshContainerAssetsRequest::setRefreshImmediately(bool refreshImmediately) {
+  refreshImmediately_ = refreshImmediately;
+  setParameter(std::string("RefreshImmediately"), refreshImmediately ? "true" : "false");
+}
+
 std::string RefreshContainerAssetsRequest::getSourceIp() const {
   return sourceIp_;
 }

@@ -58,6 +58,8 @@ void DescribeStrategyDetailResult::parse(const std::string &payload)
 		strategy_.customType = strategyNode["CustomType"].asString();
 	if(!strategyNode["TargetType"].isNull())
 		strategy_.targetType = strategyNode["TargetType"].asString();
+	if(!strategyNode["RiskSubTypeName"].isNull())
+		strategy_.riskSubTypeName = strategyNode["RiskSubTypeName"].asString();
 	auto allRiskTypeWhiteListQueryResultListNode = strategyNode["RiskTypeWhiteListQueryResultList"]["RiskTypeWhiteListQueryResult"];
 	for (auto strategyNodeRiskTypeWhiteListQueryResultListRiskTypeWhiteListQueryResult : allRiskTypeWhiteListQueryResultListNode)
 	{

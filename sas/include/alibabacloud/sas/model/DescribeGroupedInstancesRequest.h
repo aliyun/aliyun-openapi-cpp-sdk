@@ -38,10 +38,14 @@ public:
 	void setGroupField(const std::string &groupField);
 	bool getNoPage() const;
 	void setNoPage(bool noPage);
+	int getVendor() const;
+	void setVendor(int vendor);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getVendors() const;
+	void setVendors(const std::string &vendors);
 	std::string getFieldValue() const;
 	void setFieldValue(const std::string &fieldValue);
 	int getCurrentPage() const;
@@ -54,8 +58,10 @@ private:
 	std::string sourceIp_;
 	std::string groupField_;
 	bool noPage_;
+	int vendor_;
 	int pageSize_;
 	std::string lang_;
+	std::string vendors_;
 	std::string fieldValue_;
 	int currentPage_;
 	std::string machineTypes_;

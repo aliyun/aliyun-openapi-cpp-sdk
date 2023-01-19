@@ -70,6 +70,15 @@ void DescribeBackupFilesRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string DescribeBackupFilesRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void DescribeBackupFilesRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
 std::string DescribeBackupFilesRequest::getPageSize() const {
   return pageSize_;
 }
@@ -86,5 +95,14 @@ std::string DescribeBackupFilesRequest::getCurrentPage() const {
 void DescribeBackupFilesRequest::setCurrentPage(const std::string &currentPage) {
   currentPage_ = currentPage;
   setParameter(std::string("CurrentPage"), currentPage);
+}
+
+int DescribeBackupFilesRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void DescribeBackupFilesRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

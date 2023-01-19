@@ -46,6 +46,8 @@ public:
 	void setLang(const std::string &lang);
 	int getHaveRisk() const;
 	void setHaveRisk(int haveRisk);
+	long getGroupId() const;
+	void setGroupId(long groupId);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
 	std::string getClusterId() const;
@@ -66,6 +68,7 @@ private:
 	std::string machineName_;
 	std::string lang_;
 	int haveRisk_;
+	long groupId_;
 	int currentPage_;
 	std::string clusterId_;
 	long riskId_;

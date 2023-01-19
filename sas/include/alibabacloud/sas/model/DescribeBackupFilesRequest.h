@@ -40,10 +40,14 @@ public:
 	void setSnapshotHash(const std::string &snapshotHash);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
 	std::string getPageSize() const;
 	void setPageSize(const std::string &pageSize);
 	std::string getCurrentPage() const;
 	void setCurrentPage(const std::string &currentPage);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 
 private:
 	long resourceOwnerId_;
@@ -51,8 +55,10 @@ private:
 	std::string path_;
 	std::string snapshotHash_;
 	std::string sourceIp_;
+	std::string nextToken_;
 	std::string pageSize_;
 	std::string currentPage_;
+	int maxResults_;
 };
 } // namespace Model
 } // namespace Sas

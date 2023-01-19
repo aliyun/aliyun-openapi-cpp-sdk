@@ -97,6 +97,15 @@ void DescribeWarningMachinesRequest::setHaveRisk(int haveRisk) {
   setParameter(std::string("HaveRisk"), std::to_string(haveRisk));
 }
 
+long DescribeWarningMachinesRequest::getGroupId() const {
+  return groupId_;
+}
+
+void DescribeWarningMachinesRequest::setGroupId(long groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), std::to_string(groupId));
+}
+
 int DescribeWarningMachinesRequest::getCurrentPage() const {
   return currentPage_;
 }

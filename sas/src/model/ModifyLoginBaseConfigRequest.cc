@@ -25,6 +25,15 @@ ModifyLoginBaseConfigRequest::ModifyLoginBaseConfigRequest()
 
 ModifyLoginBaseConfigRequest::~ModifyLoginBaseConfigRequest() {}
 
+std::string ModifyLoginBaseConfigRequest::getConfigs() const {
+  return configs_;
+}
+
+void ModifyLoginBaseConfigRequest::setConfigs(const std::string &configs) {
+  configs_ = configs;
+  setParameter(std::string("Configs"), configs);
+}
+
 std::string ModifyLoginBaseConfigRequest::getType() const {
   return type_;
 }

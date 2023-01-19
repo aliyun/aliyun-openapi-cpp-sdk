@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				DeleteGroupResult();
 				explicit DeleteGroupResult(const std::string &payload);
 				~DeleteGroupResult();
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string code_;
 
 			};
 		}

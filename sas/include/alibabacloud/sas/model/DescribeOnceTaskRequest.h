@@ -44,6 +44,8 @@ public:
 	void setPageSize(int pageSize);
 	int getFinish() const;
 	void setFinish(int finish);
+	std::string getTaskId() const;
+	void setTaskId(const std::string &taskId);
 	std::string getTaskType() const;
 	void setTaskType(const std::string &taskType);
 	long getStartTimeQuery() const;
@@ -61,6 +63,7 @@ private:
 	long endTimeQuery_;
 	int pageSize_;
 	int finish_;
+	std::string taskId_;
 	std::string taskType_;
 	long startTimeQuery_;
 	int currentPage_;

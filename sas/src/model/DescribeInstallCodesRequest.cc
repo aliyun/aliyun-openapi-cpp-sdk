@@ -34,6 +34,15 @@ void DescribeInstallCodesRequest::setSubAccountName(const std::string &subAccoun
   setParameter(std::string("SubAccountName"), subAccountName);
 }
 
+int DescribeInstallCodesRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeInstallCodesRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
 std::string DescribeInstallCodesRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -50,15 +59,6 @@ int DescribeInstallCodesRequest::getPageSize() const {
 void DescribeInstallCodesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-int DescribeInstallCodesRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeInstallCodesRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
 int DescribeInstallCodesRequest::getStatus() const {

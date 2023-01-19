@@ -44,6 +44,8 @@ public:
 	void setPageSize(int pageSize);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	long getGroupId() const;
+	void setGroupId(long groupId);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
 	std::string getClusterId() const;
@@ -69,6 +71,7 @@ private:
 	std::string containerFieldValue_;
 	int pageSize_;
 	std::string lang_;
+	long groupId_;
 	int currentPage_;
 	std::string clusterId_;
 	std::string riskLevel_;

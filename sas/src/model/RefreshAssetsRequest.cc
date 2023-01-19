@@ -25,6 +25,15 @@ RefreshAssetsRequest::RefreshAssetsRequest()
 
 RefreshAssetsRequest::~RefreshAssetsRequest() {}
 
+int RefreshAssetsRequest::getCloudAssetType() const {
+  return cloudAssetType_;
+}
+
+void RefreshAssetsRequest::setCloudAssetType(int cloudAssetType) {
+  cloudAssetType_ = cloudAssetType;
+  setParameter(std::string("CloudAssetType"), std::to_string(cloudAssetType));
+}
+
 std::string RefreshAssetsRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -50,14 +59,5 @@ std::string RefreshAssetsRequest::getAssetType() const {
 void RefreshAssetsRequest::setAssetType(const std::string &assetType) {
   assetType_ = assetType;
   setParameter(std::string("AssetType"), assetType);
-}
-
-int RefreshAssetsRequest::getCloudAssetType() const {
-  return cloudAssetType_;
-}
-
-void RefreshAssetsRequest::setCloudAssetType(int cloudAssetType) {
-  cloudAssetType_ = cloudAssetType;
-  setParameter(std::string("CloudAssetType"), std::to_string(cloudAssetType));
 }
 

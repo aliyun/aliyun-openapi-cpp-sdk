@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					int totalCount;
 					int pageSize;
+					std::string nextToken;
 					int currentPage;
 					int count;
 				};

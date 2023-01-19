@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct GroupedFields
 				{
 					int huaweiInstanceCount;
+					int unKnowStatusInstanceCount;
 					int exposedInstanceCount;
 					int groupCount;
 					int tencentInstanceCount;
@@ -51,9 +52,11 @@ namespace AlibabaCloud
 					int offlineInstanceCount;
 					int vpcCount;
 					int aliYunInstanceCount;
+					int tripartiteInstanceCount;
 					int regionCount;
 					int notRunningStatusCount;
 					int newInstanceCount;
+					int noRiskInstanceCount;
 					int pauseInstanceCount;
 				};
 

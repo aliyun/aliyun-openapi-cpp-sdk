@@ -43,23 +43,6 @@ void InstallCloudMonitorRequest::setAgentSecretKey(const std::string &agentSecre
   setParameter(std::string("AgentSecretKey"), agentSecretKey);
 }
 
-std::string InstallCloudMonitorRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void InstallCloudMonitorRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
-}
-
-std::vector<std::string> InstallCloudMonitorRequest::getUuidList() const {
-  return uuidList_;
-}
-
-void InstallCloudMonitorRequest::setUuidList(const std::vector<std::string> &uuidList) {
-  uuidList_ = uuidList;
-}
-
 std::string InstallCloudMonitorRequest::getArgusVersion() const {
   return argusVersion_;
 }
@@ -69,11 +52,28 @@ void InstallCloudMonitorRequest::setArgusVersion(const std::string &argusVersion
   setParameter(std::string("ArgusVersion"), argusVersion);
 }
 
+std::string InstallCloudMonitorRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void InstallCloudMonitorRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
 std::vector<std::string> InstallCloudMonitorRequest::getInstanceIdList() const {
   return instanceIdList_;
 }
 
 void InstallCloudMonitorRequest::setInstanceIdList(const std::vector<std::string> &instanceIdList) {
   instanceIdList_ = instanceIdList;
+}
+
+std::vector<std::string> InstallCloudMonitorRequest::getUuidList() const {
+  return uuidList_;
+}
+
+void InstallCloudMonitorRequest::setUuidList(const std::vector<std::string> &uuidList) {
+  uuidList_ = uuidList;
 }
 

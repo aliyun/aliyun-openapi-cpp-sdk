@@ -88,6 +88,15 @@ void DescribeCheckWarningSummaryRequest::setLang(const std::string &lang) {
   setParameter(std::string("Lang"), lang);
 }
 
+long DescribeCheckWarningSummaryRequest::getGroupId() const {
+  return groupId_;
+}
+
+void DescribeCheckWarningSummaryRequest::setGroupId(long groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), std::to_string(groupId));
+}
+
 int DescribeCheckWarningSummaryRequest::getCurrentPage() const {
   return currentPage_;
 }

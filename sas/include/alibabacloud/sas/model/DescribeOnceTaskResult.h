@@ -44,14 +44,17 @@ namespace AlibabaCloud
 					std::string context;
 					std::string progress;
 					std::string taskId;
-					std::string taskName;
 					long taskEndTime;
-					std::string taskType;
 					int taskStatus;
+					int successCount;
 					std::string taskStatusText;
-					std::string detailData;
 					long taskStartTime;
 					std::string source;
+					std::string taskName;
+					std::string taskType;
+					int failCount;
+					std::string resultInfo;
+					std::string detailData;
 				};
 
 

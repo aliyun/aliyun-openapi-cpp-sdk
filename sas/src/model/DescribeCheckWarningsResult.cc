@@ -61,6 +61,8 @@ void DescribeCheckWarningsResult::parse(const std::string &payload)
 			checkWarningsObject.reason = valueCheckWarningsCheckWarning["Reason"].asString();
 		if(!valueCheckWarningsCheckWarning["FixStatus"].isNull())
 			checkWarningsObject.fixStatus = std::stoi(valueCheckWarningsCheckWarning["FixStatus"].asString());
+		if(!valueCheckWarningsCheckWarning["ExecErrorMessage"].isNull())
+			checkWarningsObject.execErrorMessage = valueCheckWarningsCheckWarning["ExecErrorMessage"].asString();
 		checkWarnings_.push_back(checkWarningsObject);
 	}
 	if(!value["CurrentPage"].isNull())

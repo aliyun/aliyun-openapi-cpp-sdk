@@ -65,6 +65,12 @@ void DescribeOnceTaskResult::parse(const std::string &payload)
 			taskManageResponseListObject.source = valueTaskManageResponseListTaskManageResponse["Source"].asString();
 		if(!valueTaskManageResponseListTaskManageResponse["Context"].isNull())
 			taskManageResponseListObject.context = valueTaskManageResponseListTaskManageResponse["Context"].asString();
+		if(!valueTaskManageResponseListTaskManageResponse["SuccessCount"].isNull())
+			taskManageResponseListObject.successCount = std::stoi(valueTaskManageResponseListTaskManageResponse["SuccessCount"].asString());
+		if(!valueTaskManageResponseListTaskManageResponse["FailCount"].isNull())
+			taskManageResponseListObject.failCount = std::stoi(valueTaskManageResponseListTaskManageResponse["FailCount"].asString());
+		if(!valueTaskManageResponseListTaskManageResponse["ResultInfo"].isNull())
+			taskManageResponseListObject.resultInfo = valueTaskManageResponseListTaskManageResponse["ResultInfo"].asString();
 		taskManageResponseList_.push_back(taskManageResponseListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

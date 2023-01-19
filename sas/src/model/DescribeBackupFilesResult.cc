@@ -62,6 +62,8 @@ void DescribeBackupFilesResult::parse(const std::string &payload)
 		pageInfo_.totalCount = std::stoi(pageInfoNode["TotalCount"].asString());
 	if(!pageInfoNode["Count"].isNull())
 		pageInfo_.count = std::stoi(pageInfoNode["Count"].asString());
+	if(!pageInfoNode["NextToken"].isNull())
+		pageInfo_.nextToken = pageInfoNode["NextToken"].asString();
 
 }
 

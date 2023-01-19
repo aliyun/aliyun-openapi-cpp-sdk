@@ -87,6 +87,15 @@ void DescribeOnceTaskRequest::setFinish(int finish) {
   setParameter(std::string("Finish"), std::to_string(finish));
 }
 
+std::string DescribeOnceTaskRequest::getTaskId() const {
+  return taskId_;
+}
+
+void DescribeOnceTaskRequest::setTaskId(const std::string &taskId) {
+  taskId_ = taskId;
+  setParameter(std::string("TaskId"), taskId);
+}
+
 std::string DescribeOnceTaskRequest::getTaskType() const {
   return taskType_;
 }

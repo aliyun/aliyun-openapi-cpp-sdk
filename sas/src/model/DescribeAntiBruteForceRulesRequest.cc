@@ -43,3 +43,12 @@ void DescribeAntiBruteForceRulesRequest::setSourceIp(const std::string &sourceIp
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+long DescribeAntiBruteForceRulesRequest::getId() const {
+  return id_;
+}
+
+void DescribeAntiBruteForceRulesRequest::setId(long id) {
+  id_ = id;
+  setParameter(std::string("Id"), std::to_string(id));
+}
+

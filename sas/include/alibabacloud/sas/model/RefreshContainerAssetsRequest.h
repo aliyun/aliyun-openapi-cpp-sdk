@@ -30,12 +30,15 @@ class ALIBABACLOUD_SAS_EXPORT RefreshContainerAssetsRequest : public RpcServiceR
 public:
 	RefreshContainerAssetsRequest();
 	~RefreshContainerAssetsRequest();
+	bool getRefreshImmediately() const;
+	void setRefreshImmediately(bool refreshImmediately);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getAssetType() const;
 	void setAssetType(const std::string &assetType);
 
 private:
+	bool refreshImmediately_;
 	std::string sourceIp_;
 	std::string assetType_;
 };

@@ -37,10 +37,16 @@ namespace AlibabaCloud
 				ModifyLoginBaseConfigResult();
 				explicit ModifyLoginBaseConfigResult(const std::string &payload);
 				~ModifyLoginBaseConfigResult();
+				std::string getMessage()const;
+				std::string getCode()const;
+				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string message_;
+				std::string code_;
+				bool success_;
 
 			};
 		}

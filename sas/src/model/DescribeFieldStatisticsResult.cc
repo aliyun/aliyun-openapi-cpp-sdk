@@ -42,6 +42,10 @@ void DescribeFieldStatisticsResult::parse(const std::string &payload)
 	auto groupedFieldsNode = value["GroupedFields"];
 	if(!groupedFieldsNode["OfflineInstanceCount"].isNull())
 		groupedFields_.offlineInstanceCount = std::stoi(groupedFieldsNode["OfflineInstanceCount"].asString());
+	if(!groupedFieldsNode["NoRiskInstanceCount"].isNull())
+		groupedFields_.noRiskInstanceCount = std::stoi(groupedFieldsNode["NoRiskInstanceCount"].asString());
+	if(!groupedFieldsNode["UnKnowStatusInstanceCount"].isNull())
+		groupedFields_.unKnowStatusInstanceCount = std::stoi(groupedFieldsNode["UnKnowStatusInstanceCount"].asString());
 	if(!groupedFieldsNode["RegionCount"].isNull())
 		groupedFields_.regionCount = std::stoi(groupedFieldsNode["RegionCount"].asString());
 	if(!groupedFieldsNode["NewInstanceCount"].isNull())
@@ -82,6 +86,8 @@ void DescribeFieldStatisticsResult::parse(const std::string &payload)
 		groupedFields_.awsInstanceCount = std::stoi(groupedFieldsNode["AwsInstanceCount"].asString());
 	if(!groupedFieldsNode["OutMachineInstanceCount"].isNull())
 		groupedFields_.outMachineInstanceCount = std::stoi(groupedFieldsNode["OutMachineInstanceCount"].asString());
+	if(!groupedFieldsNode["TripartiteInstanceCount"].isNull())
+		groupedFields_.tripartiteInstanceCount = std::stoi(groupedFieldsNode["TripartiteInstanceCount"].asString());
 
 }
 
