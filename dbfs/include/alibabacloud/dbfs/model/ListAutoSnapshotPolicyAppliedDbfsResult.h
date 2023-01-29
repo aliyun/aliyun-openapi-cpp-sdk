@@ -35,12 +35,12 @@ namespace AlibabaCloud
 				struct DbfsListItem
 				{
 					std::string status;
-					std::string snapshotCount;
+					int snapshotCount;
 					std::string fsName;
 					long sizeG;
 					std::string fsId;
 					std::string regionId;
-					std::string totalSize;
+					long totalSize;
 				};
 
 

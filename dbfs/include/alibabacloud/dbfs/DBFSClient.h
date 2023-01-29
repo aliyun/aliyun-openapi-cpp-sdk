@@ -58,6 +58,8 @@
 #include "model/GetDbfsResult.h"
 #include "model/GetServiceLinkedRoleRequest.h"
 #include "model/GetServiceLinkedRoleResult.h"
+#include "model/GetSnapshotLinkRequest.h"
+#include "model/GetSnapshotLinkResult.h"
 #include "model/ListAutoSnapshotPoliciesRequest.h"
 #include "model/ListAutoSnapshotPoliciesResult.h"
 #include "model/ListAutoSnapshotPolicyAppliedDbfsRequest.h"
@@ -72,6 +74,8 @@
 #include "model/ListDbfsAttachedEcsInstancesResult.h"
 #include "model/ListSnapshotRequest.h"
 #include "model/ListSnapshotResult.h"
+#include "model/ListSnapshotLinksRequest.h"
+#include "model/ListSnapshotLinksResult.h"
 #include "model/ListTagKeysRequest.h"
 #include "model/ListTagKeysResult.h"
 #include "model/ListTagValuesRequest.h"
@@ -151,6 +155,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetServiceLinkedRoleResult> GetServiceLinkedRoleOutcome;
 			typedef std::future<GetServiceLinkedRoleOutcome> GetServiceLinkedRoleOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::GetServiceLinkedRoleRequest&, const GetServiceLinkedRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceLinkedRoleAsyncHandler;
+			typedef Outcome<Error, Model::GetSnapshotLinkResult> GetSnapshotLinkOutcome;
+			typedef std::future<GetSnapshotLinkOutcome> GetSnapshotLinkOutcomeCallable;
+			typedef std::function<void(const DBFSClient*, const Model::GetSnapshotLinkRequest&, const GetSnapshotLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSnapshotLinkAsyncHandler;
 			typedef Outcome<Error, Model::ListAutoSnapshotPoliciesResult> ListAutoSnapshotPoliciesOutcome;
 			typedef std::future<ListAutoSnapshotPoliciesOutcome> ListAutoSnapshotPoliciesOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::ListAutoSnapshotPoliciesRequest&, const ListAutoSnapshotPoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListAutoSnapshotPoliciesAsyncHandler;
@@ -172,6 +179,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSnapshotResult> ListSnapshotOutcome;
 			typedef std::future<ListSnapshotOutcome> ListSnapshotOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::ListSnapshotRequest&, const ListSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSnapshotAsyncHandler;
+			typedef Outcome<Error, Model::ListSnapshotLinksResult> ListSnapshotLinksOutcome;
+			typedef std::future<ListSnapshotLinksOutcome> ListSnapshotLinksOutcomeCallable;
+			typedef std::function<void(const DBFSClient*, const Model::ListSnapshotLinksRequest&, const ListSnapshotLinksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSnapshotLinksAsyncHandler;
 			typedef Outcome<Error, Model::ListTagKeysResult> ListTagKeysOutcome;
 			typedef std::future<ListTagKeysOutcome> ListTagKeysOutcomeCallable;
 			typedef std::function<void(const DBFSClient*, const Model::ListTagKeysRequest&, const ListTagKeysOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagKeysAsyncHandler;
@@ -255,6 +265,9 @@ namespace AlibabaCloud
 			GetServiceLinkedRoleOutcome getServiceLinkedRole(const Model::GetServiceLinkedRoleRequest &request)const;
 			void getServiceLinkedRoleAsync(const Model::GetServiceLinkedRoleRequest& request, const GetServiceLinkedRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetServiceLinkedRoleOutcomeCallable getServiceLinkedRoleCallable(const Model::GetServiceLinkedRoleRequest& request) const;
+			GetSnapshotLinkOutcome getSnapshotLink(const Model::GetSnapshotLinkRequest &request)const;
+			void getSnapshotLinkAsync(const Model::GetSnapshotLinkRequest& request, const GetSnapshotLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSnapshotLinkOutcomeCallable getSnapshotLinkCallable(const Model::GetSnapshotLinkRequest& request) const;
 			ListAutoSnapshotPoliciesOutcome listAutoSnapshotPolicies(const Model::ListAutoSnapshotPoliciesRequest &request)const;
 			void listAutoSnapshotPoliciesAsync(const Model::ListAutoSnapshotPoliciesRequest& request, const ListAutoSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListAutoSnapshotPoliciesOutcomeCallable listAutoSnapshotPoliciesCallable(const Model::ListAutoSnapshotPoliciesRequest& request) const;
@@ -276,6 +289,9 @@ namespace AlibabaCloud
 			ListSnapshotOutcome listSnapshot(const Model::ListSnapshotRequest &request)const;
 			void listSnapshotAsync(const Model::ListSnapshotRequest& request, const ListSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSnapshotOutcomeCallable listSnapshotCallable(const Model::ListSnapshotRequest& request) const;
+			ListSnapshotLinksOutcome listSnapshotLinks(const Model::ListSnapshotLinksRequest &request)const;
+			void listSnapshotLinksAsync(const Model::ListSnapshotLinksRequest& request, const ListSnapshotLinksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSnapshotLinksOutcomeCallable listSnapshotLinksCallable(const Model::ListSnapshotLinksRequest& request) const;
 			ListTagKeysOutcome listTagKeys(const Model::ListTagKeysRequest &request)const;
 			void listTagKeysAsync(const Model::ListTagKeysRequest& request, const ListTagKeysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagKeysOutcomeCallable listTagKeysCallable(const Model::ListTagKeysRequest& request) const;

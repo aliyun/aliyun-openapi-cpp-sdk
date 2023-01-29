@@ -57,6 +57,8 @@ set(dbfs_public_header_model
 	include/alibabacloud/dbfs/model/GetDbfsResult.h
 	include/alibabacloud/dbfs/model/GetServiceLinkedRoleRequest.h
 	include/alibabacloud/dbfs/model/GetServiceLinkedRoleResult.h
+	include/alibabacloud/dbfs/model/GetSnapshotLinkRequest.h
+	include/alibabacloud/dbfs/model/GetSnapshotLinkResult.h
 	include/alibabacloud/dbfs/model/ListAutoSnapshotPoliciesRequest.h
 	include/alibabacloud/dbfs/model/ListAutoSnapshotPoliciesResult.h
 	include/alibabacloud/dbfs/model/ListAutoSnapshotPolicyAppliedDbfsRequest.h
@@ -71,6 +73,8 @@ set(dbfs_public_header_model
 	include/alibabacloud/dbfs/model/ListDbfsAttachedEcsInstancesResult.h
 	include/alibabacloud/dbfs/model/ListSnapshotRequest.h
 	include/alibabacloud/dbfs/model/ListSnapshotResult.h
+	include/alibabacloud/dbfs/model/ListSnapshotLinksRequest.h
+	include/alibabacloud/dbfs/model/ListSnapshotLinksResult.h
 	include/alibabacloud/dbfs/model/ListTagKeysRequest.h
 	include/alibabacloud/dbfs/model/ListTagKeysResult.h
 	include/alibabacloud/dbfs/model/ListTagValuesRequest.h
@@ -126,6 +130,8 @@ set(dbfs_src
 	src/model/GetDbfsResult.cc
 	src/model/GetServiceLinkedRoleRequest.cc
 	src/model/GetServiceLinkedRoleResult.cc
+	src/model/GetSnapshotLinkRequest.cc
+	src/model/GetSnapshotLinkResult.cc
 	src/model/ListAutoSnapshotPoliciesRequest.cc
 	src/model/ListAutoSnapshotPoliciesResult.cc
 	src/model/ListAutoSnapshotPolicyAppliedDbfsRequest.cc
@@ -140,6 +146,8 @@ set(dbfs_src
 	src/model/ListDbfsAttachedEcsInstancesResult.cc
 	src/model/ListSnapshotRequest.cc
 	src/model/ListSnapshotResult.cc
+	src/model/ListSnapshotLinksRequest.cc
+	src/model/ListSnapshotLinksResult.cc
 	src/model/ListTagKeysRequest.cc
 	src/model/ListTagKeysResult.cc
 	src/model/ListTagValuesRequest.cc

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DBFS_MODEL_LISTAUTOSNAPSHOTPOLICYUNAPPLIEDDBFSRESULT_H_
-#define ALIBABACLOUD_DBFS_MODEL_LISTAUTOSNAPSHOTPOLICYUNAPPLIEDDBFSRESULT_H_
+#ifndef ALIBABACLOUD_DBFS_MODEL_LISTSNAPSHOTLINKSRESULT_H_
+#define ALIBABACLOUD_DBFS_MODEL_LISTSNAPSHOTLINKSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DBFS_EXPORT ListAutoSnapshotPolicyUnappliedDbfsResult : public ServiceResult
+			class ALIBABACLOUD_DBFS_EXPORT ListSnapshotLinksResult : public ServiceResult
 			{
 			public:
-				struct DbfsListItem
+				struct Info
 				{
+					struct EcsListItem
+					{
+						std::string ecsId;
+					};
 					std::string status;
 					int snapshotCount;
 					std::string fsName;
-					long sizeG;
+					std::vector<Info::EcsListItem> ecsList;
 					std::string fsId;
-					std::string regionId;
 					long totalSize;
+					int sourceSize;
+					std::string linkId;
 				};
 
 
-				ListAutoSnapshotPolicyUnappliedDbfsResult();
-				explicit ListAutoSnapshotPolicyUnappliedDbfsResult(const std::string &payload);
-				~ListAutoSnapshotPolicyUnappliedDbfsResult();
-				std::vector<DbfsListItem> getDbfsList()const;
+				ListSnapshotLinksResult();
+				explicit ListSnapshotLinksResult(const std::string &payload);
+				~ListSnapshotLinksResult();
+				std::vector<Info> getSnapshotLinks()const;
 				int getTotalCount()const;
 				int getPageSize()const;
 				int getPageNumber()const;
@@ -55,7 +60,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<DbfsListItem> dbfsList_;
+				std::vector<Info> snapshotLinks_;
 				int totalCount_;
 				int pageSize_;
 				int pageNumber_;
@@ -64,4 +69,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DBFS_MODEL_LISTAUTOSNAPSHOTPOLICYUNAPPLIEDDBFSRESULT_H_
+#endif // !ALIBABACLOUD_DBFS_MODEL_LISTSNAPSHOTLINKSRESULT_H_

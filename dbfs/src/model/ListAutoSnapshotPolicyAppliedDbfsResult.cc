@@ -54,9 +54,9 @@ void ListAutoSnapshotPolicyAppliedDbfsResult::parse(const std::string &payload)
 		if(!valueDbfsListDbfsListItem["RegionId"].isNull())
 			dbfsListObject.regionId = valueDbfsListDbfsListItem["RegionId"].asString();
 		if(!valueDbfsListDbfsListItem["SnapshotCount"].isNull())
-			dbfsListObject.snapshotCount = valueDbfsListDbfsListItem["SnapshotCount"].asString();
+			dbfsListObject.snapshotCount = std::stoi(valueDbfsListDbfsListItem["SnapshotCount"].asString());
 		if(!valueDbfsListDbfsListItem["TotalSize"].isNull())
-			dbfsListObject.totalSize = valueDbfsListDbfsListItem["TotalSize"].asString();
+			dbfsListObject.totalSize = std::stol(valueDbfsListDbfsListItem["TotalSize"].asString());
 		dbfsList_.push_back(dbfsListObject);
 	}
 	if(!value["PageNumber"].isNull())

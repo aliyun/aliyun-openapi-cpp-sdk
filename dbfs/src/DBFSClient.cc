@@ -31,21 +31,21 @@ DBFSClient::DBFSClient(const Credentials &credentials, const ClientConfiguration
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dbfs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DBFSClient::DBFSClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dbfs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DBFSClient::DBFSClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "dbfs");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 DBFSClient::~DBFSClient()
@@ -699,6 +699,42 @@ DBFSClient::GetServiceLinkedRoleOutcomeCallable DBFSClient::getServiceLinkedRole
 	return task->get_future();
 }
 
+DBFSClient::GetSnapshotLinkOutcome DBFSClient::getSnapshotLink(const GetSnapshotLinkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSnapshotLinkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSnapshotLinkOutcome(GetSnapshotLinkResult(outcome.result()));
+	else
+		return GetSnapshotLinkOutcome(outcome.error());
+}
+
+void DBFSClient::getSnapshotLinkAsync(const GetSnapshotLinkRequest& request, const GetSnapshotLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSnapshotLink(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::GetSnapshotLinkOutcomeCallable DBFSClient::getSnapshotLinkCallable(const GetSnapshotLinkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSnapshotLinkOutcome()>>(
+			[this, request]()
+			{
+			return this->getSnapshotLink(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DBFSClient::ListAutoSnapshotPoliciesOutcome DBFSClient::listAutoSnapshotPolicies(const ListAutoSnapshotPoliciesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -945,6 +981,42 @@ DBFSClient::ListSnapshotOutcomeCallable DBFSClient::listSnapshotCallable(const L
 			[this, request]()
 			{
 			return this->listSnapshot(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DBFSClient::ListSnapshotLinksOutcome DBFSClient::listSnapshotLinks(const ListSnapshotLinksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSnapshotLinksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSnapshotLinksOutcome(ListSnapshotLinksResult(outcome.result()));
+	else
+		return ListSnapshotLinksOutcome(outcome.error());
+}
+
+void DBFSClient::listSnapshotLinksAsync(const ListSnapshotLinksRequest& request, const ListSnapshotLinksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSnapshotLinks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DBFSClient::ListSnapshotLinksOutcomeCallable DBFSClient::listSnapshotLinksCallable(const ListSnapshotLinksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSnapshotLinksOutcome()>>(
+			[this, request]()
+			{
+			return this->listSnapshotLinks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
