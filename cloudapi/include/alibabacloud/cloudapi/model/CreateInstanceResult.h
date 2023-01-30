@@ -38,11 +38,13 @@ namespace AlibabaCloud
 				explicit CreateInstanceResult(const std::string &payload);
 				~CreateInstanceResult();
 				std::string getInstanceId()const;
+				bool getTagStatus()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string instanceId_;
+				bool tagStatus_;
 
 			};
 		}

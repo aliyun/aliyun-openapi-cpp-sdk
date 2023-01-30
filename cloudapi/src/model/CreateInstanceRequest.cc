@@ -25,15 +25,6 @@ CreateInstanceRequest::CreateInstanceRequest()
 
 CreateInstanceRequest::~CreateInstanceRequest() {}
 
-bool CreateInstanceRequest::getAutoPay() const {
-  return autoPay_;
-}
-
-void CreateInstanceRequest::setAutoPay(bool autoPay) {
-  autoPay_ = autoPay;
-  setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
-}
-
 std::string CreateInstanceRequest::getInstanceSpec() const {
   return instanceSpec_;
 }
@@ -52,15 +43,6 @@ void CreateInstanceRequest::setHttpsPolicy(const std::string &httpsPolicy) {
   setParameter(std::string("HttpsPolicy"), httpsPolicy);
 }
 
-std::string CreateInstanceRequest::getToken() const {
-  return token_;
-}
-
-void CreateInstanceRequest::setToken(const std::string &token) {
-  token_ = token;
-  setParameter(std::string("Token"), token);
-}
-
 int CreateInstanceRequest::getDuration() const {
   return duration_;
 }
@@ -68,6 +50,38 @@ int CreateInstanceRequest::getDuration() const {
 void CreateInstanceRequest::setDuration(int duration) {
   duration_ = duration;
   setParameter(std::string("Duration"), std::to_string(duration));
+}
+
+std::vector<CreateInstanceRequest::Tag> CreateInstanceRequest::getTag() const {
+  return tag_;
+}
+
+void CreateInstanceRequest::setTag(const std::vector<CreateInstanceRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
+bool CreateInstanceRequest::getAutoPay() const {
+  return autoPay_;
+}
+
+void CreateInstanceRequest::setAutoPay(bool autoPay) {
+  autoPay_ = autoPay;
+  setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
+}
+
+std::string CreateInstanceRequest::getToken() const {
+  return token_;
+}
+
+void CreateInstanceRequest::setToken(const std::string &token) {
+  token_ = token;
+  setParameter(std::string("Token"), token);
 }
 
 std::string CreateInstanceRequest::getInstanceName() const {

@@ -3183,6 +3183,42 @@ CloudAPIClient::DescribeHistoryApisOutcomeCallable CloudAPIClient::describeHisto
 	return task->get_future();
 }
 
+CloudAPIClient::DescribeImportOASTaskOutcome CloudAPIClient::describeImportOASTask(const DescribeImportOASTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeImportOASTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeImportOASTaskOutcome(DescribeImportOASTaskResult(outcome.result()));
+	else
+		return DescribeImportOASTaskOutcome(outcome.error());
+}
+
+void CloudAPIClient::describeImportOASTaskAsync(const DescribeImportOASTaskRequest& request, const DescribeImportOASTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeImportOASTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CloudAPIClient::DescribeImportOASTaskOutcomeCallable CloudAPIClient::describeImportOASTaskCallable(const DescribeImportOASTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeImportOASTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->describeImportOASTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CloudAPIClient::DescribeInstancesOutcome CloudAPIClient::describeInstances(const DescribeInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

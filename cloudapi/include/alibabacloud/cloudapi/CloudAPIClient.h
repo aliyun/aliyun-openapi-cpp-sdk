@@ -196,6 +196,8 @@
 #include "model/DescribeDomainResult.h"
 #include "model/DescribeHistoryApisRequest.h"
 #include "model/DescribeHistoryApisResult.h"
+#include "model/DescribeImportOASTaskRequest.h"
+#include "model/DescribeImportOASTaskResult.h"
 #include "model/DescribeInstancesRequest.h"
 #include "model/DescribeInstancesResult.h"
 #include "model/DescribeIpControlPolicyItemsRequest.h"
@@ -626,6 +628,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeHistoryApisResult> DescribeHistoryApisOutcome;
 			typedef std::future<DescribeHistoryApisOutcome> DescribeHistoryApisOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeHistoryApisRequest&, const DescribeHistoryApisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHistoryApisAsyncHandler;
+			typedef Outcome<Error, Model::DescribeImportOASTaskResult> DescribeImportOASTaskOutcome;
+			typedef std::future<DescribeImportOASTaskOutcome> DescribeImportOASTaskOutcomeCallable;
+			typedef std::function<void(const CloudAPIClient*, const Model::DescribeImportOASTaskRequest&, const DescribeImportOASTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImportOASTaskAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstancesResult> DescribeInstancesOutcome;
 			typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
 			typedef std::function<void(const CloudAPIClient*, const Model::DescribeInstancesRequest&, const DescribeInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
@@ -1132,6 +1137,9 @@ namespace AlibabaCloud
 			DescribeHistoryApisOutcome describeHistoryApis(const Model::DescribeHistoryApisRequest &request)const;
 			void describeHistoryApisAsync(const Model::DescribeHistoryApisRequest& request, const DescribeHistoryApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeHistoryApisOutcomeCallable describeHistoryApisCallable(const Model::DescribeHistoryApisRequest& request) const;
+			DescribeImportOASTaskOutcome describeImportOASTask(const Model::DescribeImportOASTaskRequest &request)const;
+			void describeImportOASTaskAsync(const Model::DescribeImportOASTaskRequest& request, const DescribeImportOASTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeImportOASTaskOutcomeCallable describeImportOASTaskCallable(const Model::DescribeImportOASTaskRequest& request) const;
 			DescribeInstancesOutcome describeInstances(const Model::DescribeInstancesRequest &request)const;
 			void describeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstancesOutcomeCallable describeInstancesCallable(const Model::DescribeInstancesRequest& request) const;

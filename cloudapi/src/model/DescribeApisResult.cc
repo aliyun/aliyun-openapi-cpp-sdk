@@ -65,6 +65,18 @@ void DescribeApisResult::parse(const std::string &payload)
 			apiSummarysObject.apiPath = valueApiSummarysApiSummary["ApiPath"].asString();
 		if(!valueApiSummarysApiSummary["ApiMethod"].isNull())
 			apiSummarysObject.apiMethod = valueApiSummarysApiSummary["ApiMethod"].asString();
+		auto allDeployedInfosNode = valueApiSummarysApiSummary["DeployedInfos"]["DeployedInfo"];
+		for (auto valueApiSummarysApiSummaryDeployedInfosDeployedInfo : allDeployedInfosNode)
+		{
+			ApiSummary::DeployedInfo deployedInfosObject;
+			if(!valueApiSummarysApiSummaryDeployedInfosDeployedInfo["StageName"].isNull())
+				deployedInfosObject.stageName = valueApiSummarysApiSummaryDeployedInfosDeployedInfo["StageName"].asString();
+			if(!valueApiSummarysApiSummaryDeployedInfosDeployedInfo["EffectiveVersion"].isNull())
+				deployedInfosObject.effectiveVersion = valueApiSummarysApiSummaryDeployedInfosDeployedInfo["EffectiveVersion"].asString();
+			if(!valueApiSummarysApiSummaryDeployedInfosDeployedInfo["DeployedStatus"].isNull())
+				deployedInfosObject.deployedStatus = valueApiSummarysApiSummaryDeployedInfosDeployedInfo["DeployedStatus"].asString();
+			apiSummarysObject.deployedInfos.push_back(deployedInfosObject);
+		}
 		apiSummarys_.push_back(apiSummarysObject);
 	}
 	if(!value["PageNumber"].isNull())

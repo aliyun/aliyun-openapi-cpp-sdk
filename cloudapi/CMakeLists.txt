@@ -195,6 +195,8 @@ set(cloudapi_public_header_model
 	include/alibabacloud/cloudapi/model/DescribeDomainResult.h
 	include/alibabacloud/cloudapi/model/DescribeHistoryApisRequest.h
 	include/alibabacloud/cloudapi/model/DescribeHistoryApisResult.h
+	include/alibabacloud/cloudapi/model/DescribeImportOASTaskRequest.h
+	include/alibabacloud/cloudapi/model/DescribeImportOASTaskResult.h
 	include/alibabacloud/cloudapi/model/DescribeInstancesRequest.h
 	include/alibabacloud/cloudapi/model/DescribeInstancesResult.h
 	include/alibabacloud/cloudapi/model/DescribeIpControlPolicyItemsRequest.h
@@ -532,6 +534,8 @@ set(cloudapi_src
 	src/model/DescribeDomainResult.cc
 	src/model/DescribeHistoryApisRequest.cc
 	src/model/DescribeHistoryApisResult.cc
+	src/model/DescribeImportOASTaskRequest.cc
+	src/model/DescribeImportOASTaskResult.cc
 	src/model/DescribeInstancesRequest.cc
 	src/model/DescribeInstancesResult.cc
 	src/model/DescribeIpControlPolicyItemsRequest.cc

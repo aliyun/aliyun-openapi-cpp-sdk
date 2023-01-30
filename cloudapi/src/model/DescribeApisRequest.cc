@@ -25,6 +25,15 @@ DescribeApisRequest::DescribeApisRequest()
 
 DescribeApisRequest::~DescribeApisRequest() {}
 
+std::string DescribeApisRequest::getStageName() const {
+  return stageName_;
+}
+
+void DescribeApisRequest::setStageName(const std::string &stageName) {
+  stageName_ = stageName;
+  setParameter(std::string("StageName"), stageName);
+}
+
 int DescribeApisRequest::getPageNumber() const {
   return pageNumber_;
 }

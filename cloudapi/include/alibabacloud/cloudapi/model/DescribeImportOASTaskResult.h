@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEAPISRESULT_H_
-#define ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEAPISRESULT_H_
+#ifndef ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEIMPORTOASTASKRESULT_H_
+#define ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEIMPORTOASTASKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,50 +29,46 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CLOUDAPI_EXPORT DescribeApisResult : public ServiceResult
+			class ALIBABACLOUD_CLOUDAPI_EXPORT DescribeImportOASTaskResult : public ServiceResult
 			{
 			public:
-				struct ApiSummary
+				struct ApiResult
 				{
-					struct DeployedInfo
-					{
-						std::string stageName;
-						std::string effectiveVersion;
-						std::string deployedStatus;
-					};
-					std::string groupName;
+					std::string path;
 					std::string description;
-					std::string createdTime;
-					std::string modifiedTime;
-					std::vector<ApiSummary::DeployedInfo> deployedInfos;
+					std::string updateStatus;
 					std::string apiName;
-					std::string apiMethod;
-					std::string visibility;
-					std::string regionId;
+					std::string method;
+					std::string errorMessage;
 					std::string apiId;
-					std::string apiPath;
+					std::string groupId;
+				};
+				struct ModelResult
+				{
+					std::string modelName;
+					std::string updateStatus;
+					std::string errorMessage;
+					std::string modelId;
 					std::string groupId;
 				};
 
 
-				DescribeApisResult();
-				explicit DescribeApisResult(const std::string &payload);
-				~DescribeApisResult();
-				int getTotalCount()const;
-				int getPageSize()const;
-				int getPageNumber()const;
-				std::vector<ApiSummary> getApiSummarys()const;
+				DescribeImportOASTaskResult();
+				explicit DescribeImportOASTaskResult(const std::string &payload);
+				~DescribeImportOASTaskResult();
+				std::vector<ModelResult> getModelResults()const;
+				std::vector<ApiResult> getApiResults()const;
+				std::string getTaskStatus()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				int pageSize_;
-				int pageNumber_;
-				std::vector<ApiSummary> apiSummarys_;
+				std::vector<ModelResult> modelResults_;
+				std::vector<ApiResult> apiResults_;
+				std::string taskStatus_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEAPISRESULT_H_
+#endif // !ALIBABACLOUD_CLOUDAPI_MODEL_DESCRIBEIMPORTOASTASKRESULT_H_

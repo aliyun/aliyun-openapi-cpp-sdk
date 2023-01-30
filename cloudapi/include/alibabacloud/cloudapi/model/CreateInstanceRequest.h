@@ -28,18 +28,24 @@ namespace CloudAPI {
 namespace Model {
 class ALIBABACLOUD_CLOUDAPI_EXPORT CreateInstanceRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateInstanceRequest();
 	~CreateInstanceRequest();
-	bool getAutoPay() const;
-	void setAutoPay(bool autoPay);
 	std::string getInstanceSpec() const;
 	void setInstanceSpec(const std::string &instanceSpec);
 	std::string getHttpsPolicy() const;
 	void setHttpsPolicy(const std::string &httpsPolicy);
-	std::string getToken() const;
-	void setToken(const std::string &token);
 	int getDuration() const;
 	void setDuration(int duration);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
+	bool getAutoPay() const;
+	void setAutoPay(bool autoPay);
+	std::string getToken() const;
+	void setToken(const std::string &token);
 	std::string getInstanceName() const;
 	void setInstanceName(const std::string &instanceName);
 	std::string getZoneId() const;
@@ -50,11 +56,12 @@ public:
 	void setPricingCycle(const std::string &pricingCycle);
 
 private:
-	bool autoPay_;
 	std::string instanceSpec_;
 	std::string httpsPolicy_;
-	std::string token_;
 	int duration_;
+	std::vector<Tag> tag_;
+	bool autoPay_;
+	std::string token_;
 	std::string instanceName_;
 	std::string zoneId_;
 	std::string chargeType_;

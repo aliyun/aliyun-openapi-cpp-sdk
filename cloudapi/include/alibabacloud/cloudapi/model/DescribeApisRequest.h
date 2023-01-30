@@ -34,6 +34,8 @@ public:
 	};
 	DescribeApisRequest();
 	~DescribeApisRequest();
+	std::string getStageName() const;
+	void setStageName(const std::string &stageName);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
@@ -64,6 +66,7 @@ public:
 	void setApiId(const std::string &apiId);
 
 private:
+	std::string stageName_;
 	int pageNumber_;
 	std::string accessKeyId_;
 	std::string securityToken_;

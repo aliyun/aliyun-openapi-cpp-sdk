@@ -39,6 +39,8 @@ void CreateInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["TagStatus"].isNull())
+		tagStatus_ = value["TagStatus"].asString() == "true";
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
 
@@ -47,5 +49,10 @@ void CreateInstanceResult::parse(const std::string &payload)
 std::string CreateInstanceResult::getInstanceId()const
 {
 	return instanceId_;
+}
+
+bool CreateInstanceResult::getTagStatus()const
+{
+	return tagStatus_;
 }
 
