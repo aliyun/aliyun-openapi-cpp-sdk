@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string resourceId;
 					std::string tagKey;
 					std::string resourceType;
-					std::string tagValue;
 					std::string resourcId;
+					std::string tagValue;
 				};
 
 

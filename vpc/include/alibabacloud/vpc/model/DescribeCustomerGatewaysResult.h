@@ -34,11 +34,18 @@ namespace AlibabaCloud
 			public:
 				struct CustomerGateway
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string description;
 					std::string customerGatewayId;
 					long createTime;
+					std::string authKey;
 					std::string ipAddress;
-					int asn;
+					long asn;
+					std::vector<CustomerGateway::Tag> tags;
 					std::string name;
 				};
 

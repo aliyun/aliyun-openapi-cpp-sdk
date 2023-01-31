@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Vpc::Model::DescribeVpnConnectionRequest;
 
-DescribeVpnConnectionRequest::DescribeVpnConnectionRequest() :
-	RpcServiceRequest("vpc", "2016-04-28", "DescribeVpnConnection")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeVpnConnectionRequest::DescribeVpnConnectionRequest()
+    : RpcServiceRequest("vpc", "2016-04-28", "DescribeVpnConnection") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeVpnConnectionRequest::~DescribeVpnConnectionRequest()
-{}
+DescribeVpnConnectionRequest::~DescribeVpnConnectionRequest() {}
 
-long DescribeVpnConnectionRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeVpnConnectionRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeVpnConnectionRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeVpnConnectionRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeVpnConnectionRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeVpnConnectionRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeVpnConnectionRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeVpnConnectionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DescribeVpnConnectionRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeVpnConnectionRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeVpnConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeVpnConnectionRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeVpnConnectionRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeVpnConnectionRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeVpnConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeVpnConnectionRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DescribeVpnConnectionRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeVpnConnectionRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeVpnConnectionRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeVpnConnectionRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeVpnConnectionRequest::getVpnConnectionId()const
-{
-	return vpnConnectionId_;
+std::string DescribeVpnConnectionRequest::getVpnConnectionId() const {
+  return vpnConnectionId_;
 }
 
-void DescribeVpnConnectionRequest::setVpnConnectionId(const std::string& vpnConnectionId)
-{
-	vpnConnectionId_ = vpnConnectionId;
-	setParameter("VpnConnectionId", vpnConnectionId);
+void DescribeVpnConnectionRequest::setVpnConnectionId(const std::string &vpnConnectionId) {
+  vpnConnectionId_ = vpnConnectionId;
+  setParameter(std::string("VpnConnectionId"), vpnConnectionId);
 }
 

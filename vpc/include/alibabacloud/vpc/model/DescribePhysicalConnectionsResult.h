@@ -36,10 +36,14 @@ namespace AlibabaCloud
 				{
 					std::string description;
 					std::string endTime;
+					int virtualPhysicalConnectionCount;
+					std::string resourceGroupId;
 					std::string lineOperator;
 					std::string physicalConnectionId;
+					long parentPhysicalConnectionAliUid;
 					std::string peerLocation;
 					std::string redundantPhysicalConnectionId;
+					std::string parentPhysicalConnectionId;
 					std::string businessStatus;
 					std::string name;
 					std::string reservationOrderType;
@@ -47,18 +51,23 @@ namespace AlibabaCloud
 					std::string adLocation;
 					long bandwidth;
 					std::string reservationActiveTime;
+					std::string vlanId;
 					std::string status;
 					std::string circuitCode;
+					std::string orderMode;
+					std::string expectSpec;
 					std::string hasReservationData;
+					std::string productType;
+					std::string vpconnStatus;
+					std::string accessPointType;
 					std::string reservationInternetChargeType;
-					std::string spec1;
 					std::string type;
 					std::string chargeType;
-					std::string accessPointId;
 					std::string creationTime;
+					std::string accessPointId;
 					std::string enabledTime;
-					std::string spec;
 					std::string portNumber;
+					std::string spec;
 					std::string portType;
 				};
 

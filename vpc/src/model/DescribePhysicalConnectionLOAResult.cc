@@ -40,40 +40,40 @@ void DescribePhysicalConnectionLOAResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto physicalConnectionLOATypeNode = value["PhysicalConnectionLOAType"];
-	if(!physicalConnectionLOATypeNode["InstanceId"].isNull())
-		physicalConnectionLOAType_.instanceId = physicalConnectionLOATypeNode["InstanceId"].asString();
-	if(!physicalConnectionLOATypeNode["CompanyName"].isNull())
-		physicalConnectionLOAType_.companyName = physicalConnectionLOATypeNode["CompanyName"].asString();
-	if(!physicalConnectionLOATypeNode["CompanyLocalizedName"].isNull())
-		physicalConnectionLOAType_.companyLocalizedName = physicalConnectionLOATypeNode["CompanyLocalizedName"].asString();
-	if(!physicalConnectionLOATypeNode["LineType"].isNull())
-		physicalConnectionLOAType_.lineType = physicalConnectionLOATypeNode["LineType"].asString();
-	if(!physicalConnectionLOATypeNode["LineCode"].isNull())
-		physicalConnectionLOAType_.lineCode = physicalConnectionLOATypeNode["LineCode"].asString();
-	if(!physicalConnectionLOATypeNode["LineLabel"].isNull())
-		physicalConnectionLOAType_.lineLabel = physicalConnectionLOATypeNode["LineLabel"].asString();
-	if(!physicalConnectionLOATypeNode["ConstructionTime"].isNull())
-		physicalConnectionLOAType_.constructionTime = physicalConnectionLOATypeNode["ConstructionTime"].asString();
 	if(!physicalConnectionLOATypeNode["Status"].isNull())
 		physicalConnectionLOAType_.status = physicalConnectionLOATypeNode["Status"].asString();
-	if(!physicalConnectionLOATypeNode["LoaUrl"].isNull())
-		physicalConnectionLOAType_.loaUrl = physicalConnectionLOATypeNode["LoaUrl"].asString();
+	if(!physicalConnectionLOATypeNode["LineLabel"].isNull())
+		physicalConnectionLOAType_.lineLabel = physicalConnectionLOATypeNode["LineLabel"].asString();
+	if(!physicalConnectionLOATypeNode["LineCode"].isNull())
+		physicalConnectionLOAType_.lineCode = physicalConnectionLOATypeNode["LineCode"].asString();
+	if(!physicalConnectionLOATypeNode["ConstructionTime"].isNull())
+		physicalConnectionLOAType_.constructionTime = physicalConnectionLOATypeNode["ConstructionTime"].asString();
 	if(!physicalConnectionLOATypeNode["SI"].isNull())
 		physicalConnectionLOAType_.sI = physicalConnectionLOATypeNode["SI"].asString();
+	if(!physicalConnectionLOATypeNode["LoaUrl"].isNull())
+		physicalConnectionLOAType_.loaUrl = physicalConnectionLOATypeNode["LoaUrl"].asString();
+	if(!physicalConnectionLOATypeNode["CompanyLocalizedName"].isNull())
+		physicalConnectionLOAType_.companyLocalizedName = physicalConnectionLOATypeNode["CompanyLocalizedName"].asString();
+	if(!physicalConnectionLOATypeNode["InstanceId"].isNull())
+		physicalConnectionLOAType_.instanceId = physicalConnectionLOATypeNode["InstanceId"].asString();
+	if(!physicalConnectionLOATypeNode["LineType"].isNull())
+		physicalConnectionLOAType_.lineType = physicalConnectionLOATypeNode["LineType"].asString();
+	if(!physicalConnectionLOATypeNode["CompanyName"].isNull())
+		physicalConnectionLOAType_.companyName = physicalConnectionLOATypeNode["CompanyName"].asString();
 	auto allPMInfoNode = physicalConnectionLOATypeNode["PMInfo"]["PMInfoItem"];
 	for (auto physicalConnectionLOATypeNodePMInfoPMInfoItem : allPMInfoNode)
 	{
 		PhysicalConnectionLOAType::PMInfoItem pMInfoItemObject;
-		if(!physicalConnectionLOATypeNodePMInfoPMInfoItem["PMName"].isNull())
-			pMInfoItemObject.pMName = physicalConnectionLOATypeNodePMInfoPMInfoItem["PMName"].asString();
-		if(!physicalConnectionLOATypeNodePMInfoPMInfoItem["PMContactInfo"].isNull())
-			pMInfoItemObject.pMContactInfo = physicalConnectionLOATypeNodePMInfoPMInfoItem["PMContactInfo"].asString();
-		if(!physicalConnectionLOATypeNodePMInfoPMInfoItem["PMCertificateType"].isNull())
-			pMInfoItemObject.pMCertificateType = physicalConnectionLOATypeNodePMInfoPMInfoItem["PMCertificateType"].asString();
-		if(!physicalConnectionLOATypeNodePMInfoPMInfoItem["PMCertificateNo"].isNull())
-			pMInfoItemObject.pMCertificateNo = physicalConnectionLOATypeNodePMInfoPMInfoItem["PMCertificateNo"].asString();
 		if(!physicalConnectionLOATypeNodePMInfoPMInfoItem["PMGender"].isNull())
 			pMInfoItemObject.pMGender = physicalConnectionLOATypeNodePMInfoPMInfoItem["PMGender"].asString();
+		if(!physicalConnectionLOATypeNodePMInfoPMInfoItem["PMCertificateNo"].isNull())
+			pMInfoItemObject.pMCertificateNo = physicalConnectionLOATypeNodePMInfoPMInfoItem["PMCertificateNo"].asString();
+		if(!physicalConnectionLOATypeNodePMInfoPMInfoItem["PMName"].isNull())
+			pMInfoItemObject.pMName = physicalConnectionLOATypeNodePMInfoPMInfoItem["PMName"].asString();
+		if(!physicalConnectionLOATypeNodePMInfoPMInfoItem["PMCertificateType"].isNull())
+			pMInfoItemObject.pMCertificateType = physicalConnectionLOATypeNodePMInfoPMInfoItem["PMCertificateType"].asString();
+		if(!physicalConnectionLOATypeNodePMInfoPMInfoItem["PMContactInfo"].isNull())
+			pMInfoItemObject.pMContactInfo = physicalConnectionLOATypeNodePMInfoPMInfoItem["PMContactInfo"].asString();
 		physicalConnectionLOAType_.pMInfo.push_back(pMInfoItemObject);
 	}
 

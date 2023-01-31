@@ -39,16 +39,16 @@ void CreateIpsecServerResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
+	if(!value["CreationTime"].isNull())
+		creationTime_ = value["CreationTime"].asString();
 	if(!value["IpsecServerId"].isNull())
 		ipsecServerId_ = value["IpsecServerId"].asString();
 	if(!value["IpsecServerName"].isNull())
 		ipsecServerName_ = value["IpsecServerName"].asString();
 	if(!value["VpnGatewayId"].isNull())
 		vpnGatewayId_ = value["VpnGatewayId"].asString();
-	if(!value["CreationTime"].isNull())
-		creationTime_ = value["CreationTime"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 

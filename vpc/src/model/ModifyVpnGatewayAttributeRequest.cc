@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,122 +18,100 @@
 
 using AlibabaCloud::Vpc::Model::ModifyVpnGatewayAttributeRequest;
 
-ModifyVpnGatewayAttributeRequest::ModifyVpnGatewayAttributeRequest() :
-	RpcServiceRequest("vpc", "2016-04-28", "ModifyVpnGatewayAttribute")
-{
-	setMethod(HttpRequest::Method::Post);
+ModifyVpnGatewayAttributeRequest::ModifyVpnGatewayAttributeRequest()
+    : RpcServiceRequest("vpc", "2016-04-28", "ModifyVpnGatewayAttribute") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-ModifyVpnGatewayAttributeRequest::~ModifyVpnGatewayAttributeRequest()
-{}
+ModifyVpnGatewayAttributeRequest::~ModifyVpnGatewayAttributeRequest() {}
 
-long ModifyVpnGatewayAttributeRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long ModifyVpnGatewayAttributeRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifyVpnGatewayAttributeRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void ModifyVpnGatewayAttributeRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ModifyVpnGatewayAttributeRequest::getClientToken()const
-{
-	return clientToken_;
+std::string ModifyVpnGatewayAttributeRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void ModifyVpnGatewayAttributeRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void ModifyVpnGatewayAttributeRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string ModifyVpnGatewayAttributeRequest::getDescription()const
-{
-	return description_;
+std::string ModifyVpnGatewayAttributeRequest::getDescription() const {
+  return description_;
 }
 
-void ModifyVpnGatewayAttributeRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void ModifyVpnGatewayAttributeRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
-std::string ModifyVpnGatewayAttributeRequest::getRegionId()const
-{
-	return regionId_;
+std::string ModifyVpnGatewayAttributeRequest::getRegionId() const {
+  return regionId_;
 }
 
-void ModifyVpnGatewayAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void ModifyVpnGatewayAttributeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string ModifyVpnGatewayAttributeRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string ModifyVpnGatewayAttributeRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void ModifyVpnGatewayAttributeRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void ModifyVpnGatewayAttributeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-bool ModifyVpnGatewayAttributeRequest::getAutoPropagate()const
-{
-	return autoPropagate_;
+bool ModifyVpnGatewayAttributeRequest::getAutoPropagate() const {
+  return autoPropagate_;
 }
 
-void ModifyVpnGatewayAttributeRequest::setAutoPropagate(bool autoPropagate)
-{
-	autoPropagate_ = autoPropagate;
-	setParameter("AutoPropagate", autoPropagate ? "true" : "false");
+void ModifyVpnGatewayAttributeRequest::setAutoPropagate(bool autoPropagate) {
+  autoPropagate_ = autoPropagate;
+  setParameter(std::string("AutoPropagate"), autoPropagate ? "true" : "false");
 }
 
-std::string ModifyVpnGatewayAttributeRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string ModifyVpnGatewayAttributeRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ModifyVpnGatewayAttributeRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void ModifyVpnGatewayAttributeRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string ModifyVpnGatewayAttributeRequest::getVpnGatewayId()const
-{
-	return vpnGatewayId_;
+std::string ModifyVpnGatewayAttributeRequest::getVpnGatewayId() const {
+  return vpnGatewayId_;
 }
 
-void ModifyVpnGatewayAttributeRequest::setVpnGatewayId(const std::string& vpnGatewayId)
-{
-	vpnGatewayId_ = vpnGatewayId;
-	setParameter("VpnGatewayId", vpnGatewayId);
+void ModifyVpnGatewayAttributeRequest::setVpnGatewayId(const std::string &vpnGatewayId) {
+  vpnGatewayId_ = vpnGatewayId;
+  setParameter(std::string("VpnGatewayId"), vpnGatewayId);
 }
 
-long ModifyVpnGatewayAttributeRequest::getOwnerId()const
-{
-	return ownerId_;
+long ModifyVpnGatewayAttributeRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void ModifyVpnGatewayAttributeRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void ModifyVpnGatewayAttributeRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string ModifyVpnGatewayAttributeRequest::getName()const
-{
-	return name_;
+std::string ModifyVpnGatewayAttributeRequest::getName() const {
+  return name_;
 }
 
-void ModifyVpnGatewayAttributeRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
+void ModifyVpnGatewayAttributeRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 

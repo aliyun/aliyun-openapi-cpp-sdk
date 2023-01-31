@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,199 +18,163 @@
 
 using AlibabaCloud::Vpc::Model::DescribeFlowLogsRequest;
 
-DescribeFlowLogsRequest::DescribeFlowLogsRequest() :
-	RpcServiceRequest("vpc", "2016-04-28", "DescribeFlowLogs")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeFlowLogsRequest::DescribeFlowLogsRequest()
+    : RpcServiceRequest("vpc", "2016-04-28", "DescribeFlowLogs") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeFlowLogsRequest::~DescribeFlowLogsRequest()
-{}
+DescribeFlowLogsRequest::~DescribeFlowLogsRequest() {}
 
-long DescribeFlowLogsRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeFlowLogsRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeFlowLogsRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeFlowLogsRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeFlowLogsRequest::getDescription()const
-{
-	return description_;
+std::string DescribeFlowLogsRequest::getDescription() const {
+  return description_;
 }
 
-void DescribeFlowLogsRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void DescribeFlowLogsRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
-int DescribeFlowLogsRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeFlowLogsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeFlowLogsRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeFlowLogsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeFlowLogsRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeFlowLogsRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeFlowLogsRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeFlowLogsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-int DescribeFlowLogsRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeFlowLogsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeFlowLogsRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeFlowLogsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeFlowLogsRequest::getResourceId()const
-{
-	return resourceId_;
+std::string DescribeFlowLogsRequest::getResourceId() const {
+  return resourceId_;
 }
 
-void DescribeFlowLogsRequest::setResourceId(const std::string& resourceId)
-{
-	resourceId_ = resourceId;
-	setParameter("ResourceId", resourceId);
+void DescribeFlowLogsRequest::setResourceId(const std::string &resourceId) {
+  resourceId_ = resourceId;
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-std::string DescribeFlowLogsRequest::getProjectName()const
-{
-	return projectName_;
+std::string DescribeFlowLogsRequest::getProjectName() const {
+  return projectName_;
 }
 
-void DescribeFlowLogsRequest::setProjectName(const std::string& projectName)
-{
-	projectName_ = projectName;
-	setParameter("ProjectName", projectName);
+void DescribeFlowLogsRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
-std::string DescribeFlowLogsRequest::getLogStoreName()const
-{
-	return logStoreName_;
+std::string DescribeFlowLogsRequest::getLogStoreName() const {
+  return logStoreName_;
 }
 
-void DescribeFlowLogsRequest::setLogStoreName(const std::string& logStoreName)
-{
-	logStoreName_ = logStoreName;
-	setParameter("LogStoreName", logStoreName);
+void DescribeFlowLogsRequest::setLogStoreName(const std::string &logStoreName) {
+  logStoreName_ = logStoreName;
+  setParameter(std::string("LogStoreName"), logStoreName);
 }
 
-std::string DescribeFlowLogsRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeFlowLogsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeFlowLogsRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeFlowLogsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeFlowLogsRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeFlowLogsRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeFlowLogsRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeFlowLogsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DescribeFlowLogsRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeFlowLogsRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeFlowLogsRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeFlowLogsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string DescribeFlowLogsRequest::getResourceType()const
-{
-	return resourceType_;
+std::string DescribeFlowLogsRequest::getResourceType() const {
+  return resourceType_;
 }
 
-void DescribeFlowLogsRequest::setResourceType(const std::string& resourceType)
-{
-	resourceType_ = resourceType;
-	setParameter("ResourceType", resourceType);
+void DescribeFlowLogsRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
 }
 
-std::string DescribeFlowLogsRequest::getVpcId()const
-{
-	return vpcId_;
+std::string DescribeFlowLogsRequest::getVpcId() const {
+  return vpcId_;
 }
 
-void DescribeFlowLogsRequest::setVpcId(const std::string& vpcId)
-{
-	vpcId_ = vpcId;
-	setParameter("VpcId", vpcId);
+void DescribeFlowLogsRequest::setVpcId(const std::string &vpcId) {
+  vpcId_ = vpcId;
+  setParameter(std::string("VpcId"), vpcId);
 }
 
-std::string DescribeFlowLogsRequest::getTrafficType()const
-{
-	return trafficType_;
+std::string DescribeFlowLogsRequest::getTrafficType() const {
+  return trafficType_;
 }
 
-void DescribeFlowLogsRequest::setTrafficType(const std::string& trafficType)
-{
-	trafficType_ = trafficType;
-	setParameter("TrafficType", trafficType);
+void DescribeFlowLogsRequest::setTrafficType(const std::string &trafficType) {
+  trafficType_ = trafficType;
+  setParameter(std::string("TrafficType"), trafficType);
 }
 
-std::string DescribeFlowLogsRequest::getFlowLogId()const
-{
-	return flowLogId_;
+std::string DescribeFlowLogsRequest::getFlowLogId() const {
+  return flowLogId_;
 }
 
-void DescribeFlowLogsRequest::setFlowLogId(const std::string& flowLogId)
-{
-	flowLogId_ = flowLogId;
-	setParameter("FlowLogId", flowLogId);
+void DescribeFlowLogsRequest::setFlowLogId(const std::string &flowLogId) {
+  flowLogId_ = flowLogId;
+  setParameter(std::string("FlowLogId"), flowLogId);
 }
 
-std::string DescribeFlowLogsRequest::getFlowLogName()const
-{
-	return flowLogName_;
+std::string DescribeFlowLogsRequest::getFlowLogName() const {
+  return flowLogName_;
 }
 
-void DescribeFlowLogsRequest::setFlowLogName(const std::string& flowLogName)
-{
-	flowLogName_ = flowLogName;
-	setParameter("FlowLogName", flowLogName);
+void DescribeFlowLogsRequest::setFlowLogName(const std::string &flowLogName) {
+  flowLogName_ = flowLogName;
+  setParameter(std::string("FlowLogName"), flowLogName);
 }
 
-std::string DescribeFlowLogsRequest::getStatus()const
-{
-	return status_;
+std::string DescribeFlowLogsRequest::getStatus() const {
+  return status_;
 }
 
-void DescribeFlowLogsRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setParameter("Status", status);
+void DescribeFlowLogsRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
 }
 

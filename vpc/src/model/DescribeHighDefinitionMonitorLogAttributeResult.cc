@@ -39,22 +39,17 @@ void DescribeHighDefinitionMonitorLogAttributeResult::parse(const std::string &p
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["LogProject"].isNull())
+		logProject_ = value["LogProject"].asString();
+	if(!value["LogStore"].isNull())
+		logStore_ = value["LogStore"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString();
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
 	if(!value["InstanceType"].isNull())
 		instanceType_ = value["InstanceType"].asString();
-	if(!value["LogProject"].isNull())
-		logProject_ = value["LogProject"].asString();
-	if(!value["LogStore"].isNull())
-		logStore_ = value["LogStore"].asString();
 
-}
-
-std::string DescribeHighDefinitionMonitorLogAttributeResult::getInstanceId()const
-{
-	return instanceId_;
 }
 
 std::string DescribeHighDefinitionMonitorLogAttributeResult::getLogStore()const
@@ -62,18 +57,23 @@ std::string DescribeHighDefinitionMonitorLogAttributeResult::getLogStore()const
 	return logStore_;
 }
 
+std::string DescribeHighDefinitionMonitorLogAttributeResult::getInstanceId()const
+{
+	return instanceId_;
+}
+
 std::string DescribeHighDefinitionMonitorLogAttributeResult::getInstanceType()const
 {
 	return instanceType_;
 }
 
-std::string DescribeHighDefinitionMonitorLogAttributeResult::getSuccess()const
-{
-	return success_;
-}
-
 std::string DescribeHighDefinitionMonitorLogAttributeResult::getLogProject()const
 {
 	return logProject_;
+}
+
+std::string DescribeHighDefinitionMonitorLogAttributeResult::getSuccess()const
+{
+	return success_;
 }
 

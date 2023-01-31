@@ -36,37 +36,37 @@ namespace AlibabaCloud
 				{
 					struct TrafficMirrorRule
 					{
-						std::string trafficMirrorFilterRuleId;
 						std::string destinationPortRange;
+						std::string trafficMirrorFilterRuleId;
 						std::string action;
 						std::string sourcePortRange;
 						int priority;
-						std::string sourceCidrBlock;
 						std::string trafficMirrorFilterRuleStatus;
+						std::string sourceCidrBlock;
 						std::string destinationCidrBlock;
-						std::string trafficMirrorFilterId;
 						std::string trafficDirection;
 						std::string protocol;
+						std::string trafficMirrorFilterId;
 					};
 					struct TrafficMirrorRule
 					{
-						std::string trafficMirrorFilterRuleId;
 						std::string destinationPortRange;
+						std::string trafficMirrorFilterRuleId;
 						std::string action;
 						std::string sourcePortRange;
 						int priority;
-						std::string sourceCidrBlock;
 						std::string trafficMirrorFilterRuleStatus;
+						std::string sourceCidrBlock;
 						std::string destinationCidrBlock;
-						std::string trafficMirrorFilterId;
 						std::string trafficDirection;
 						std::string protocol;
+						std::string trafficMirrorFilterId;
 					};
 					std::string trafficMirrorFilterDescription;
 					std::vector<TrafficMirrorFilter::TrafficMirrorRule> egressRules;
 					std::string trafficMirrorFilterStatus;
-					std::string trafficMirrorFilterName;
 					std::string trafficMirrorFilterId;
+					std::string trafficMirrorFilterName;
 					std::vector<TrafficMirrorFilter::TrafficMirrorRule> ingressRules;
 				};
 

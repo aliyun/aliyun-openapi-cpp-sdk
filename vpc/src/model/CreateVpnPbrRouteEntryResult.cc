@@ -39,30 +39,27 @@ void CreateVpnPbrRouteEntryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["VpnInstanceId"].isNull())
-		vpnInstanceId_ = value["VpnInstanceId"].asString();
-	if(!value["RouteSource"].isNull())
-		routeSource_ = value["RouteSource"].asString();
-	if(!value["RouteDest"].isNull())
-		routeDest_ = value["RouteDest"].asString();
 	if(!value["NextHop"].isNull())
 		nextHop_ = value["NextHop"].asString();
 	if(!value["Weight"].isNull())
 		weight_ = std::stoi(value["Weight"].asString());
-	if(!value["OverlayMode"].isNull())
-		overlayMode_ = value["OverlayMode"].asString();
+	if(!value["RouteDest"].isNull())
+		routeDest_ = value["RouteDest"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
 	if(!value["State"].isNull())
 		state_ = value["State"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = std::stol(value["CreateTime"].asString());
+	if(!value["OverlayMode"].isNull())
+		overlayMode_ = value["OverlayMode"].asString();
+	if(!value["RouteSource"].isNull())
+		routeSource_ = value["RouteSource"].asString();
+	if(!value["VpnInstanceId"].isNull())
+		vpnInstanceId_ = value["VpnInstanceId"].asString();
+	if(!value["Priority"].isNull())
+		priority_ = std::stoi(value["Priority"].asString());
 
-}
-
-std::string CreateVpnPbrRouteEntryResult::getVpnInstanceId()const
-{
-	return vpnInstanceId_;
 }
 
 std::string CreateVpnPbrRouteEntryResult::getRouteDest()const
@@ -73,6 +70,11 @@ std::string CreateVpnPbrRouteEntryResult::getRouteDest()const
 std::string CreateVpnPbrRouteEntryResult::getDescription()const
 {
 	return description_;
+}
+
+std::string CreateVpnPbrRouteEntryResult::getVpnInstanceId()const
+{
+	return vpnInstanceId_;
 }
 
 std::string CreateVpnPbrRouteEntryResult::getOverlayMode()const
@@ -90,14 +92,19 @@ std::string CreateVpnPbrRouteEntryResult::getState()const
 	return state_;
 }
 
-std::string CreateVpnPbrRouteEntryResult::getRouteSource()const
+int CreateVpnPbrRouteEntryResult::getPriority()const
 {
-	return routeSource_;
+	return priority_;
 }
 
 long CreateVpnPbrRouteEntryResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+std::string CreateVpnPbrRouteEntryResult::getRouteSource()const
+{
+	return routeSource_;
 }
 
 int CreateVpnPbrRouteEntryResult::getWeight()const

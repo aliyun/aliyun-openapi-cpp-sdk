@@ -32,6 +32,11 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VPC_EXPORT DescribeCustomerGatewayResult : public ServiceResult
 			{
 			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 
 				DescribeCustomerGatewayResult();
@@ -40,8 +45,10 @@ namespace AlibabaCloud
 				std::string getDescription()const;
 				std::string getCustomerGatewayId()const;
 				long getCreateTime()const;
+				std::string getAuthKey()const;
 				std::string getIpAddress()const;
-				int getAsn()const;
+				long getAsn()const;
+				std::vector<Tag> getTags()const;
 				std::string getName()const;
 
 			protected:
@@ -50,8 +57,10 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string customerGatewayId_;
 				long createTime_;
+				std::string authKey_;
 				std::string ipAddress_;
-				int asn_;
+				long asn_;
+				std::vector<Tag> tags_;
 				std::string name_;
 
 			};

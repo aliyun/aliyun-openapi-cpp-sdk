@@ -39,6 +39,14 @@ void CreatePhysicalConnectionOccupancyOrderResult::parse(const std::string &payl
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto dataNode = value["Data"];
+	if(!dataNode["OrderId"].isNull())
+		data_.orderId = dataNode["OrderId"].asString();
 
+}
+
+CreatePhysicalConnectionOccupancyOrderResult::Data CreatePhysicalConnectionOccupancyOrderResult::getData()const
+{
+	return data_;
 }
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Vpc::Model::DeleteForwardEntryRequest;
 
-DeleteForwardEntryRequest::DeleteForwardEntryRequest() :
-	RpcServiceRequest("vpc", "2016-04-28", "DeleteForwardEntry")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteForwardEntryRequest::DeleteForwardEntryRequest()
+    : RpcServiceRequest("vpc", "2016-04-28", "DeleteForwardEntry") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteForwardEntryRequest::~DeleteForwardEntryRequest()
-{}
+DeleteForwardEntryRequest::~DeleteForwardEntryRequest() {}
 
-long DeleteForwardEntryRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DeleteForwardEntryRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DeleteForwardEntryRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DeleteForwardEntryRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DeleteForwardEntryRequest::getClientToken()const
-{
-	return clientToken_;
+std::string DeleteForwardEntryRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void DeleteForwardEntryRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void DeleteForwardEntryRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string DeleteForwardEntryRequest::getForwardTableId()const
-{
-	return forwardTableId_;
+std::string DeleteForwardEntryRequest::getForwardTableId() const {
+  return forwardTableId_;
 }
 
-void DeleteForwardEntryRequest::setForwardTableId(const std::string& forwardTableId)
-{
-	forwardTableId_ = forwardTableId;
-	setParameter("ForwardTableId", forwardTableId);
+void DeleteForwardEntryRequest::setForwardTableId(const std::string &forwardTableId) {
+  forwardTableId_ = forwardTableId;
+  setParameter(std::string("ForwardTableId"), forwardTableId);
 }
 
-std::string DeleteForwardEntryRequest::getRegionId()const
-{
-	return regionId_;
+std::string DeleteForwardEntryRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DeleteForwardEntryRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DeleteForwardEntryRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DeleteForwardEntryRequest::getForwardEntryId()const
-{
-	return forwardEntryId_;
+std::string DeleteForwardEntryRequest::getForwardEntryId() const {
+  return forwardEntryId_;
 }
 
-void DeleteForwardEntryRequest::setForwardEntryId(const std::string& forwardEntryId)
-{
-	forwardEntryId_ = forwardEntryId;
-	setParameter("ForwardEntryId", forwardEntryId);
+void DeleteForwardEntryRequest::setForwardEntryId(const std::string &forwardEntryId) {
+  forwardEntryId_ = forwardEntryId;
+  setParameter(std::string("ForwardEntryId"), forwardEntryId);
 }
 
-std::string DeleteForwardEntryRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DeleteForwardEntryRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DeleteForwardEntryRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DeleteForwardEntryRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DeleteForwardEntryRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DeleteForwardEntryRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DeleteForwardEntryRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DeleteForwardEntryRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DeleteForwardEntryRequest::getOwnerId()const
-{
-	return ownerId_;
+long DeleteForwardEntryRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DeleteForwardEntryRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DeleteForwardEntryRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

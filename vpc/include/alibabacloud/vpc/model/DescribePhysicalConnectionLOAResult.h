@@ -50,8 +50,8 @@ namespace AlibabaCloud
 					std::string companyLocalizedName;
 					std::vector<PMInfoItem> pMInfo;
 					std::string loaUrl;
-					std::string lineType;
 					std::string lineCode;
+					std::string lineType;
 					std::string lineLabel;
 				};
 

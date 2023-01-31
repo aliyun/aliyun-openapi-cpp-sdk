@@ -36,7 +36,7 @@ namespace AlibabaCloud
 				{
 					int eipPackets;
 					int eipBandwidth;
-					int eipFlow;
+					long eipFlow;
 					long eipTX;
 					std::string timeStamp;
 					long eipRX;

@@ -45,26 +45,28 @@ void DescribeRouteTableListResult::parse(const std::string &payload)
 		RouterTableListType routerTableListObject;
 		if(!valueRouterTableListRouterTableListType["VpcId"].isNull())
 			routerTableListObject.vpcId = valueRouterTableListRouterTableListType["VpcId"].asString();
-		if(!valueRouterTableListRouterTableListType["RouterType"].isNull())
-			routerTableListObject.routerType = valueRouterTableListRouterTableListType["RouterType"].asString();
-		if(!valueRouterTableListRouterTableListType["RouterId"].isNull())
-			routerTableListObject.routerId = valueRouterTableListRouterTableListType["RouterId"].asString();
-		if(!valueRouterTableListRouterTableListType["RouteTableId"].isNull())
-			routerTableListObject.routeTableId = valueRouterTableListRouterTableListType["RouteTableId"].asString();
-		if(!valueRouterTableListRouterTableListType["RouteTableName"].isNull())
-			routerTableListObject.routeTableName = valueRouterTableListRouterTableListType["RouteTableName"].asString();
-		if(!valueRouterTableListRouterTableListType["RouteTableType"].isNull())
-			routerTableListObject.routeTableType = valueRouterTableListRouterTableListType["RouteTableType"].asString();
-		if(!valueRouterTableListRouterTableListType["Description"].isNull())
-			routerTableListObject.description = valueRouterTableListRouterTableListType["Description"].asString();
-		if(!valueRouterTableListRouterTableListType["ResourceGroupId"].isNull())
-			routerTableListObject.resourceGroupId = valueRouterTableListRouterTableListType["ResourceGroupId"].asString();
 		if(!valueRouterTableListRouterTableListType["CreationTime"].isNull())
 			routerTableListObject.creationTime = valueRouterTableListRouterTableListType["CreationTime"].asString();
 		if(!valueRouterTableListRouterTableListType["Status"].isNull())
 			routerTableListObject.status = valueRouterTableListRouterTableListType["Status"].asString();
+		if(!valueRouterTableListRouterTableListType["RouterId"].isNull())
+			routerTableListObject.routerId = valueRouterTableListRouterTableListType["RouterId"].asString();
+		if(!valueRouterTableListRouterTableListType["AssociateType"].isNull())
+			routerTableListObject.associateType = valueRouterTableListRouterTableListType["AssociateType"].asString();
+		if(!valueRouterTableListRouterTableListType["RouteTableId"].isNull())
+			routerTableListObject.routeTableId = valueRouterTableListRouterTableListType["RouteTableId"].asString();
 		if(!valueRouterTableListRouterTableListType["OwnerId"].isNull())
 			routerTableListObject.ownerId = std::stol(valueRouterTableListRouterTableListType["OwnerId"].asString());
+		if(!valueRouterTableListRouterTableListType["Description"].isNull())
+			routerTableListObject.description = valueRouterTableListRouterTableListType["Description"].asString();
+		if(!valueRouterTableListRouterTableListType["RouteTableType"].isNull())
+			routerTableListObject.routeTableType = valueRouterTableListRouterTableListType["RouteTableType"].asString();
+		if(!valueRouterTableListRouterTableListType["ResourceGroupId"].isNull())
+			routerTableListObject.resourceGroupId = valueRouterTableListRouterTableListType["ResourceGroupId"].asString();
+		if(!valueRouterTableListRouterTableListType["RouterType"].isNull())
+			routerTableListObject.routerType = valueRouterTableListRouterTableListType["RouterType"].asString();
+		if(!valueRouterTableListRouterTableListType["RouteTableName"].isNull())
+			routerTableListObject.routeTableName = valueRouterTableListRouterTableListType["RouteTableName"].asString();
 		auto allTagsNode = valueRouterTableListRouterTableListType["Tags"]["Tag"];
 		for (auto valueRouterTableListRouterTableListTypeTagsTag : allTagsNode)
 		{
@@ -78,14 +80,17 @@ void DescribeRouteTableListResult::parse(const std::string &payload)
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
 			routerTableListObject.vSwitchIds.push_back(value.asString());
+		auto allGatewayIds = value["GatewayIds"]["GatewayIds"];
+		for (auto value : allGatewayIds)
+			routerTableListObject.gatewayIds.push_back(value.asString());
 		routerTableList_.push_back(routerTableListObject);
 	}
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())

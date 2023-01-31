@@ -51,12 +51,12 @@ void DescribeGrantRulesToCenResult::parse(const std::string &payload)
 			cenGrantRulesObject.creationTime = valueCenGrantRulesCbnGrantRule["CreationTime"].asString();
 		cenGrantRules_.push_back(cenGrantRulesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

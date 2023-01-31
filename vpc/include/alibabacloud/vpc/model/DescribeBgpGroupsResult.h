@@ -42,10 +42,11 @@ namespace AlibabaCloud
 					std::string peerAsn;
 					std::string name;
 					std::string localAsn;
-					std::string authKey;
 					std::string isFake;
+					std::string authKey;
 					std::string routeLimit;
 					std::string regionId;
+					int routeQuota;
 					std::string hold;
 					std::string bgpGroupId;
 				};

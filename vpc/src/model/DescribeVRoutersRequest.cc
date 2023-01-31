@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,100 +18,82 @@
 
 using AlibabaCloud::Vpc::Model::DescribeVRoutersRequest;
 
-DescribeVRoutersRequest::DescribeVRoutersRequest() :
-	RpcServiceRequest("vpc", "2016-04-28", "DescribeVRouters")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeVRoutersRequest::DescribeVRoutersRequest()
+    : RpcServiceRequest("vpc", "2016-04-28", "DescribeVRouters") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeVRoutersRequest::~DescribeVRoutersRequest()
-{}
+DescribeVRoutersRequest::~DescribeVRoutersRequest() {}
 
-long DescribeVRoutersRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long DescribeVRoutersRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeVRoutersRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void DescribeVRoutersRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeVRoutersRequest::getVRouterId()const
-{
-	return vRouterId_;
+std::string DescribeVRoutersRequest::getVRouterId() const {
+  return vRouterId_;
 }
 
-void DescribeVRoutersRequest::setVRouterId(const std::string& vRouterId)
-{
-	vRouterId_ = vRouterId;
-	setParameter("VRouterId", vRouterId);
+void DescribeVRoutersRequest::setVRouterId(const std::string &vRouterId) {
+  vRouterId_ = vRouterId;
+  setParameter(std::string("VRouterId"), vRouterId);
 }
 
-int DescribeVRoutersRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeVRoutersRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeVRoutersRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeVRoutersRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeVRoutersRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeVRoutersRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeVRoutersRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeVRoutersRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-int DescribeVRoutersRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeVRoutersRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeVRoutersRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeVRoutersRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeVRoutersRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string DescribeVRoutersRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void DescribeVRoutersRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void DescribeVRoutersRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string DescribeVRoutersRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string DescribeVRoutersRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void DescribeVRoutersRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void DescribeVRoutersRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long DescribeVRoutersRequest::getOwnerId()const
-{
-	return ownerId_;
+long DescribeVRoutersRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void DescribeVRoutersRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void DescribeVRoutersRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

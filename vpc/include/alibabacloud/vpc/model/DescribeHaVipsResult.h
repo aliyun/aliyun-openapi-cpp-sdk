@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					std::string status;
 					std::string description;
 					std::vector<std::string> associatedEipAddresses;
-					std::string vSwitchId;
 					std::string createTime;
+					std::string vSwitchId;
 					std::string haVipId;
 					std::string name;
 					std::vector<std::string> associatedInstances;

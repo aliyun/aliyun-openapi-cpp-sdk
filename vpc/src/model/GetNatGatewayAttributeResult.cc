@@ -43,12 +43,12 @@ void GetNatGatewayAttributeResult::parse(const std::string &payload)
 	for (auto valueIpListIpListItem : allIpListNode)
 	{
 		IpListItem ipListObject;
+		if(!valueIpListIpListItem["UsingStatus"].isNull())
+			ipListObject.usingStatus = valueIpListIpListItem["UsingStatus"].asString();
 		if(!valueIpListIpListItem["IpAddress"].isNull())
 			ipListObject.ipAddress = valueIpListIpListItem["IpAddress"].asString();
 		if(!valueIpListIpListItem["AllocationId"].isNull())
 			ipListObject.allocationId = valueIpListIpListItem["AllocationId"].asString();
-		if(!valueIpListIpListItem["UsingStatus"].isNull())
-			ipListObject.usingStatus = valueIpListIpListItem["UsingStatus"].asString();
 		ipList_.push_back(ipListObject);
 	}
 	auto forwardTableNode = value["ForwardTable"];
@@ -57,57 +57,68 @@ void GetNatGatewayAttributeResult::parse(const std::string &payload)
 	if(!forwardTableNode["ForwardEntryCount"].isNull())
 		forwardTable_.forwardEntryCount = std::stoi(forwardTableNode["ForwardEntryCount"].asString());
 	auto snatTableNode = value["SnatTable"];
-	if(!snatTableNode["SnatTableId"].isNull())
-		snatTable_.snatTableId = snatTableNode["SnatTableId"].asString();
 	if(!snatTableNode["SnatEntryCount"].isNull())
 		snatTable_.snatEntryCount = std::stoi(snatTableNode["SnatEntryCount"].asString());
+	if(!snatTableNode["SnatTableId"].isNull())
+		snatTable_.snatTableId = snatTableNode["SnatTableId"].asString();
+	auto fullNatTableNode = value["FullNatTable"];
+	if(!fullNatTableNode["FullNatEntryCount"].isNull())
+		fullNatTable_.fullNatEntryCount = std::stol(fullNatTableNode["FullNatEntryCount"].asString());
+	if(!fullNatTableNode["FullNatTableId"].isNull())
+		fullNatTable_.fullNatTableId = fullNatTableNode["FullNatTableId"].asString();
 	auto billingConfigNode = value["BillingConfig"];
-	if(!billingConfigNode["Spec"].isNull())
-		billingConfig_.spec = billingConfigNode["Spec"].asString();
 	if(!billingConfigNode["InternetChargeType"].isNull())
 		billingConfig_.internetChargeType = billingConfigNode["InternetChargeType"].asString();
-	if(!billingConfigNode["InstanceChargeType"].isNull())
-		billingConfig_.instanceChargeType = billingConfigNode["InstanceChargeType"].asString();
 	if(!billingConfigNode["AutoPay"].isNull())
 		billingConfig_.autoPay = billingConfigNode["AutoPay"].asString();
+	if(!billingConfigNode["Spec"].isNull())
+		billingConfig_.spec = billingConfigNode["Spec"].asString();
+	if(!billingConfigNode["InstanceChargeType"].isNull())
+		billingConfig_.instanceChargeType = billingConfigNode["InstanceChargeType"].asString();
 	auto privateInfoNode = value["PrivateInfo"];
-	if(!privateInfoNode["EniInstanceId"].isNull())
-		privateInfo_.eniInstanceId = privateInfoNode["EniInstanceId"].asString();
-	if(!privateInfoNode["IzNo"].isNull())
-		privateInfo_.izNo = privateInfoNode["IzNo"].asString();
 	if(!privateInfoNode["MaxBandwidth"].isNull())
 		privateInfo_.maxBandwidth = std::stoi(privateInfoNode["MaxBandwidth"].asString());
-	if(!privateInfoNode["PrivateIpAddress"].isNull())
-		privateInfo_.privateIpAddress = privateInfoNode["PrivateIpAddress"].asString();
 	if(!privateInfoNode["VswitchId"].isNull())
 		privateInfo_.vswitchId = privateInfoNode["VswitchId"].asString();
+	if(!privateInfoNode["PrivateIpAddress"].isNull())
+		privateInfo_.privateIpAddress = privateInfoNode["PrivateIpAddress"].asString();
+	if(!privateInfoNode["IzNo"].isNull())
+		privateInfo_.izNo = privateInfoNode["IzNo"].asString();
+	if(!privateInfoNode["EniInstanceId"].isNull())
+		privateInfo_.eniInstanceId = privateInfoNode["EniInstanceId"].asString();
 	auto deletionProtectionInfoNode = value["DeletionProtectionInfo"];
 	if(!deletionProtectionInfoNode["Enabled"].isNull())
 		deletionProtectionInfo_.enabled = deletionProtectionInfoNode["Enabled"].asString() == "true";
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["NatType"].isNull())
-		natType_ = value["NatType"].asString();
-	if(!value["EcsMetricEnabled"].isNull())
-		ecsMetricEnabled_ = value["EcsMetricEnabled"].asString() == "true";
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
-	if(!value["NatGatewayId"].isNull())
-		natGatewayId_ = value["NatGatewayId"].asString();
 	if(!value["CreationTime"].isNull())
 		creationTime_ = value["CreationTime"].asString();
-	if(!value["ExpiredTime"].isNull())
-		expiredTime_ = value["ExpiredTime"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["BusinessStatus"].isNull())
-		businessStatus_ = value["BusinessStatus"].asString();
+	if(!value["NatType"].isNull())
+		natType_ = value["NatType"].asString();
+	if(!value["NetworkType"].isNull())
+		networkType_ = value["NetworkType"].asString();
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
+	if(!value["EcsMetricEnabled"].isNull())
+		ecsMetricEnabled_ = value["EcsMetricEnabled"].asString() == "true";
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["ExpiredTime"].isNull())
+		expiredTime_ = value["ExpiredTime"].asString();
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["NatGatewayId"].isNull())
+		natGatewayId_ = value["NatGatewayId"].asString();
+	if(!value["BusinessStatus"].isNull())
+		businessStatus_ = value["BusinessStatus"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["PrivateLinkEnabled"].isNull())
+		privateLinkEnabled_ = value["PrivateLinkEnabled"].asString() == "true";
+	if(!value["PrivateLinkMode"].isNull())
+		privateLinkMode_ = value["PrivateLinkMode"].asString();
 
 }
 
@@ -134,6 +145,16 @@ std::string GetNatGatewayAttributeResult::getResourceGroupId()const
 std::vector<GetNatGatewayAttributeResult::IpListItem> GetNatGatewayAttributeResult::getIpList()const
 {
 	return ipList_;
+}
+
+bool GetNatGatewayAttributeResult::getPrivateLinkEnabled()const
+{
+	return privateLinkEnabled_;
+}
+
+std::string GetNatGatewayAttributeResult::getPrivateLinkMode()const
+{
+	return privateLinkMode_;
 }
 
 GetNatGatewayAttributeResult::BillingConfig GetNatGatewayAttributeResult::getBillingConfig()const
@@ -174,6 +195,16 @@ bool GetNatGatewayAttributeResult::getEcsMetricEnabled()const
 std::string GetNatGatewayAttributeResult::getVpcId()const
 {
 	return vpcId_;
+}
+
+std::string GetNatGatewayAttributeResult::getNetworkType()const
+{
+	return networkType_;
+}
+
+GetNatGatewayAttributeResult::FullNatTable GetNatGatewayAttributeResult::getFullNatTable()const
+{
+	return fullNatTable_;
 }
 
 std::string GetNatGatewayAttributeResult::getExpiredTime()const

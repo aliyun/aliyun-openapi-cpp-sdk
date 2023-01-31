@@ -40,42 +40,42 @@ void DownloadVpnConnectionConfigResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto vpnConnectionConfigNode = value["VpnConnectionConfig"];
-	if(!vpnConnectionConfigNode["LocalSubnet"].isNull())
-		vpnConnectionConfig_.localSubnet = vpnConnectionConfigNode["LocalSubnet"].asString();
-	if(!vpnConnectionConfigNode["RemoteSubnet"].isNull())
-		vpnConnectionConfig_.remoteSubnet = vpnConnectionConfigNode["RemoteSubnet"].asString();
-	if(!vpnConnectionConfigNode["Local"].isNull())
-		vpnConnectionConfig_.local = vpnConnectionConfigNode["Local"].asString();
 	if(!vpnConnectionConfigNode["Remote"].isNull())
 		vpnConnectionConfig_.remote = vpnConnectionConfigNode["Remote"].asString();
+	if(!vpnConnectionConfigNode["Local"].isNull())
+		vpnConnectionConfig_.local = vpnConnectionConfigNode["Local"].asString();
+	if(!vpnConnectionConfigNode["RemoteSubnet"].isNull())
+		vpnConnectionConfig_.remoteSubnet = vpnConnectionConfigNode["RemoteSubnet"].asString();
+	if(!vpnConnectionConfigNode["LocalSubnet"].isNull())
+		vpnConnectionConfig_.localSubnet = vpnConnectionConfigNode["LocalSubnet"].asString();
 	auto ikeConfigNode = vpnConnectionConfigNode["IkeConfig"];
-	if(!ikeConfigNode["Psk"].isNull())
-		vpnConnectionConfig_.ikeConfig.psk = ikeConfigNode["Psk"].asString();
-	if(!ikeConfigNode["IkeVersion"].isNull())
-		vpnConnectionConfig_.ikeConfig.ikeVersion = ikeConfigNode["IkeVersion"].asString();
-	if(!ikeConfigNode["IkeMode"].isNull())
-		vpnConnectionConfig_.ikeConfig.ikeMode = ikeConfigNode["IkeMode"].asString();
-	if(!ikeConfigNode["IkeEncAlg"].isNull())
-		vpnConnectionConfig_.ikeConfig.ikeEncAlg = ikeConfigNode["IkeEncAlg"].asString();
-	if(!ikeConfigNode["IkeAuthAlg"].isNull())
-		vpnConnectionConfig_.ikeConfig.ikeAuthAlg = ikeConfigNode["IkeAuthAlg"].asString();
-	if(!ikeConfigNode["IkePfs"].isNull())
-		vpnConnectionConfig_.ikeConfig.ikePfs = ikeConfigNode["IkePfs"].asString();
-	if(!ikeConfigNode["IkeLifetime"].isNull())
-		vpnConnectionConfig_.ikeConfig.ikeLifetime = std::stol(ikeConfigNode["IkeLifetime"].asString());
-	if(!ikeConfigNode["LocalId"].isNull())
-		vpnConnectionConfig_.ikeConfig.localId = ikeConfigNode["LocalId"].asString();
 	if(!ikeConfigNode["RemoteId"].isNull())
 		vpnConnectionConfig_.ikeConfig.remoteId = ikeConfigNode["RemoteId"].asString();
+	if(!ikeConfigNode["IkeLifetime"].isNull())
+		vpnConnectionConfig_.ikeConfig.ikeLifetime = std::stol(ikeConfigNode["IkeLifetime"].asString());
+	if(!ikeConfigNode["IkeEncAlg"].isNull())
+		vpnConnectionConfig_.ikeConfig.ikeEncAlg = ikeConfigNode["IkeEncAlg"].asString();
+	if(!ikeConfigNode["LocalId"].isNull())
+		vpnConnectionConfig_.ikeConfig.localId = ikeConfigNode["LocalId"].asString();
+	if(!ikeConfigNode["IkeMode"].isNull())
+		vpnConnectionConfig_.ikeConfig.ikeMode = ikeConfigNode["IkeMode"].asString();
+	if(!ikeConfigNode["IkeVersion"].isNull())
+		vpnConnectionConfig_.ikeConfig.ikeVersion = ikeConfigNode["IkeVersion"].asString();
+	if(!ikeConfigNode["IkePfs"].isNull())
+		vpnConnectionConfig_.ikeConfig.ikePfs = ikeConfigNode["IkePfs"].asString();
+	if(!ikeConfigNode["Psk"].isNull())
+		vpnConnectionConfig_.ikeConfig.psk = ikeConfigNode["Psk"].asString();
+	if(!ikeConfigNode["IkeAuthAlg"].isNull())
+		vpnConnectionConfig_.ikeConfig.ikeAuthAlg = ikeConfigNode["IkeAuthAlg"].asString();
 	auto ipsecConfigNode = vpnConnectionConfigNode["IpsecConfig"];
-	if(!ipsecConfigNode["IpsecEncAlg"].isNull())
-		vpnConnectionConfig_.ipsecConfig.ipsecEncAlg = ipsecConfigNode["IpsecEncAlg"].asString();
 	if(!ipsecConfigNode["IpsecAuthAlg"].isNull())
 		vpnConnectionConfig_.ipsecConfig.ipsecAuthAlg = ipsecConfigNode["IpsecAuthAlg"].asString();
-	if(!ipsecConfigNode["IpsecPfs"].isNull())
-		vpnConnectionConfig_.ipsecConfig.ipsecPfs = ipsecConfigNode["IpsecPfs"].asString();
 	if(!ipsecConfigNode["IpsecLifetime"].isNull())
 		vpnConnectionConfig_.ipsecConfig.ipsecLifetime = std::stol(ipsecConfigNode["IpsecLifetime"].asString());
+	if(!ipsecConfigNode["IpsecEncAlg"].isNull())
+		vpnConnectionConfig_.ipsecConfig.ipsecEncAlg = ipsecConfigNode["IpsecEncAlg"].asString();
+	if(!ipsecConfigNode["IpsecPfs"].isNull())
+		vpnConnectionConfig_.ipsecConfig.ipsecPfs = ipsecConfigNode["IpsecPfs"].asString();
 
 }
 

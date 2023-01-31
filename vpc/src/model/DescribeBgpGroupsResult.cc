@@ -43,42 +43,44 @@ void DescribeBgpGroupsResult::parse(const std::string &payload)
 	for (auto valueBgpGroupsBgpGroup : allBgpGroupsNode)
 	{
 		BgpGroup bgpGroupsObject;
-		if(!valueBgpGroupsBgpGroup["Name"].isNull())
-			bgpGroupsObject.name = valueBgpGroupsBgpGroup["Name"].asString();
-		if(!valueBgpGroupsBgpGroup["Description"].isNull())
-			bgpGroupsObject.description = valueBgpGroupsBgpGroup["Description"].asString();
-		if(!valueBgpGroupsBgpGroup["BgpGroupId"].isNull())
-			bgpGroupsObject.bgpGroupId = valueBgpGroupsBgpGroup["BgpGroupId"].asString();
-		if(!valueBgpGroupsBgpGroup["PeerAsn"].isNull())
-			bgpGroupsObject.peerAsn = valueBgpGroupsBgpGroup["PeerAsn"].asString();
-		if(!valueBgpGroupsBgpGroup["AuthKey"].isNull())
-			bgpGroupsObject.authKey = valueBgpGroupsBgpGroup["AuthKey"].asString();
-		if(!valueBgpGroupsBgpGroup["RouterId"].isNull())
-			bgpGroupsObject.routerId = valueBgpGroupsBgpGroup["RouterId"].asString();
 		if(!valueBgpGroupsBgpGroup["Status"].isNull())
 			bgpGroupsObject.status = valueBgpGroupsBgpGroup["Status"].asString();
-		if(!valueBgpGroupsBgpGroup["Keepalive"].isNull())
-			bgpGroupsObject.keepalive = valueBgpGroupsBgpGroup["Keepalive"].asString();
+		if(!valueBgpGroupsBgpGroup["BgpGroupId"].isNull())
+			bgpGroupsObject.bgpGroupId = valueBgpGroupsBgpGroup["BgpGroupId"].asString();
+		if(!valueBgpGroupsBgpGroup["RouterId"].isNull())
+			bgpGroupsObject.routerId = valueBgpGroupsBgpGroup["RouterId"].asString();
+		if(!valueBgpGroupsBgpGroup["PeerAsn"].isNull())
+			bgpGroupsObject.peerAsn = valueBgpGroupsBgpGroup["PeerAsn"].asString();
 		if(!valueBgpGroupsBgpGroup["LocalAsn"].isNull())
 			bgpGroupsObject.localAsn = valueBgpGroupsBgpGroup["LocalAsn"].asString();
+		if(!valueBgpGroupsBgpGroup["RegionId"].isNull())
+			bgpGroupsObject.regionId = valueBgpGroupsBgpGroup["RegionId"].asString();
 		if(!valueBgpGroupsBgpGroup["Hold"].isNull())
 			bgpGroupsObject.hold = valueBgpGroupsBgpGroup["Hold"].asString();
+		if(!valueBgpGroupsBgpGroup["IpVersion"].isNull())
+			bgpGroupsObject.ipVersion = valueBgpGroupsBgpGroup["IpVersion"].asString();
+		if(!valueBgpGroupsBgpGroup["Description"].isNull())
+			bgpGroupsObject.description = valueBgpGroupsBgpGroup["Description"].asString();
+		if(!valueBgpGroupsBgpGroup["Keepalive"].isNull())
+			bgpGroupsObject.keepalive = valueBgpGroupsBgpGroup["Keepalive"].asString();
 		if(!valueBgpGroupsBgpGroup["IsFake"].isNull())
 			bgpGroupsObject.isFake = valueBgpGroupsBgpGroup["IsFake"].asString();
 		if(!valueBgpGroupsBgpGroup["RouteLimit"].isNull())
 			bgpGroupsObject.routeLimit = valueBgpGroupsBgpGroup["RouteLimit"].asString();
-		if(!valueBgpGroupsBgpGroup["RegionId"].isNull())
-			bgpGroupsObject.regionId = valueBgpGroupsBgpGroup["RegionId"].asString();
-		if(!valueBgpGroupsBgpGroup["IpVersion"].isNull())
-			bgpGroupsObject.ipVersion = valueBgpGroupsBgpGroup["IpVersion"].asString();
+		if(!valueBgpGroupsBgpGroup["RouteQuota"].isNull())
+			bgpGroupsObject.routeQuota = std::stoi(valueBgpGroupsBgpGroup["RouteQuota"].asString());
+		if(!valueBgpGroupsBgpGroup["Name"].isNull())
+			bgpGroupsObject.name = valueBgpGroupsBgpGroup["Name"].asString();
+		if(!valueBgpGroupsBgpGroup["AuthKey"].isNull())
+			bgpGroupsObject.authKey = valueBgpGroupsBgpGroup["AuthKey"].asString();
 		bgpGroups_.push_back(bgpGroupsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

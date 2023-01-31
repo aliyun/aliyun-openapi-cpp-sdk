@@ -57,14 +57,14 @@ namespace AlibabaCloud
 						std::string nextHopOppsiteType;
 						std::string destinationCidrBlock;
 						std::string nextHopType;
-						std::string routeEntryId;
 						std::string nextHopRegionId;
+						std::string routeEntryId;
 						std::string type;
 						std::string routeEntryName;
 						std::string nextHopOppsiteInstanceId;
 					};
-					std::string vRouterId;
 					std::string status;
+					std::string vRouterId;
 					std::string routeTableId;
 					std::string resourceGroupId;
 					std::vector<std::string> vSwitchIds;

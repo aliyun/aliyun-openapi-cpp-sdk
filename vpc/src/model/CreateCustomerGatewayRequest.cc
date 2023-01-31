@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,122 +18,123 @@
 
 using AlibabaCloud::Vpc::Model::CreateCustomerGatewayRequest;
 
-CreateCustomerGatewayRequest::CreateCustomerGatewayRequest() :
-	RpcServiceRequest("vpc", "2016-04-28", "CreateCustomerGateway")
-{
-	setMethod(HttpRequest::Method::Post);
+CreateCustomerGatewayRequest::CreateCustomerGatewayRequest()
+    : RpcServiceRequest("vpc", "2016-04-28", "CreateCustomerGateway") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreateCustomerGatewayRequest::~CreateCustomerGatewayRequest()
-{}
+CreateCustomerGatewayRequest::~CreateCustomerGatewayRequest() {}
 
-std::string CreateCustomerGatewayRequest::getIpAddress()const
-{
-	return ipAddress_;
+std::string CreateCustomerGatewayRequest::getIpAddress() const {
+  return ipAddress_;
 }
 
-void CreateCustomerGatewayRequest::setIpAddress(const std::string& ipAddress)
-{
-	ipAddress_ = ipAddress;
-	setParameter("IpAddress", ipAddress);
+void CreateCustomerGatewayRequest::setIpAddress(const std::string &ipAddress) {
+  ipAddress_ = ipAddress;
+  setParameter(std::string("IpAddress"), ipAddress);
 }
 
-long CreateCustomerGatewayRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+std::string CreateCustomerGatewayRequest::getAuthKey() const {
+  return authKey_;
 }
 
-void CreateCustomerGatewayRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void CreateCustomerGatewayRequest::setAuthKey(const std::string &authKey) {
+  authKey_ = authKey;
+  setParameter(std::string("AuthKey"), authKey);
 }
 
-std::string CreateCustomerGatewayRequest::getClientToken()const
-{
-	return clientToken_;
+long CreateCustomerGatewayRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void CreateCustomerGatewayRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void CreateCustomerGatewayRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string CreateCustomerGatewayRequest::getDescription()const
-{
-	return description_;
+std::string CreateCustomerGatewayRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void CreateCustomerGatewayRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void CreateCustomerGatewayRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string CreateCustomerGatewayRequest::getRegionId()const
-{
-	return regionId_;
+std::string CreateCustomerGatewayRequest::getDescription() const {
+  return description_;
 }
 
-void CreateCustomerGatewayRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void CreateCustomerGatewayRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
-std::string CreateCustomerGatewayRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string CreateCustomerGatewayRequest::getRegionId() const {
+  return regionId_;
 }
 
-void CreateCustomerGatewayRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void CreateCustomerGatewayRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string CreateCustomerGatewayRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string CreateCustomerGatewayRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void CreateCustomerGatewayRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void CreateCustomerGatewayRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-long CreateCustomerGatewayRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string CreateCustomerGatewayRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void CreateCustomerGatewayRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void CreateCustomerGatewayRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string CreateCustomerGatewayRequest::getName()const
-{
-	return name_;
+long CreateCustomerGatewayRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void CreateCustomerGatewayRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
+void CreateCustomerGatewayRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string CreateCustomerGatewayRequest::getAsn()const
-{
-	return asn_;
+std::vector<CreateCustomerGatewayRequest::Tags> CreateCustomerGatewayRequest::getTags() const {
+  return tags_;
 }
 
-void CreateCustomerGatewayRequest::setAsn(const std::string& asn)
-{
-	asn_ = asn;
-	setParameter("Asn", asn);
+void CreateCustomerGatewayRequest::setTags(const std::vector<CreateCustomerGatewayRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
+}
+
+std::string CreateCustomerGatewayRequest::getName() const {
+  return name_;
+}
+
+void CreateCustomerGatewayRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
+}
+
+std::string CreateCustomerGatewayRequest::getAsn() const {
+  return asn_;
+}
+
+void CreateCustomerGatewayRequest::setAsn(const std::string &asn) {
+  asn_ = asn;
+  setParameter(std::string("Asn"), asn);
 }
 

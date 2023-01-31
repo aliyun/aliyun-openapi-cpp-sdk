@@ -39,34 +39,34 @@ void ModifyVpnGatewayAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["VpnGatewayId"].isNull())
-		vpnGatewayId_ = value["VpnGatewayId"].asString();
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
-	if(!value["VSwitchId"].isNull())
-		vSwitchId_ = value["VSwitchId"].asString();
-	if(!value["InternetIp"].isNull())
-		internetIp_ = value["InternetIp"].asString();
-	if(!value["IntranetIp"].isNull())
-		intranetIp_ = value["IntranetIp"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = std::stol(value["CreateTime"].asString());
-	if(!value["EndTime"].isNull())
-		endTime_ = std::stol(value["EndTime"].asString());
-	if(!value["Spec"].isNull())
-		spec_ = value["Spec"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["BusinessStatus"].isNull())
-		businessStatus_ = value["BusinessStatus"].asString();
-	if(!value["EnableBgp"].isNull())
-		enableBgp_ = value["EnableBgp"].asString() == "true";
+	if(!value["InternetIp"].isNull())
+		internetIp_ = value["InternetIp"].asString();
+	if(!value["Spec"].isNull())
+		spec_ = value["Spec"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = std::stol(value["CreateTime"].asString());
 	if(!value["AutoPropagate"].isNull())
 		autoPropagate_ = value["AutoPropagate"].asString() == "true";
+	if(!value["VpnGatewayId"].isNull())
+		vpnGatewayId_ = value["VpnGatewayId"].asString();
+	if(!value["IntranetIp"].isNull())
+		intranetIp_ = value["IntranetIp"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = std::stol(value["EndTime"].asString());
+	if(!value["VSwitchId"].isNull())
+		vSwitchId_ = value["VSwitchId"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["EnableBgp"].isNull())
+		enableBgp_ = value["EnableBgp"].asString() == "true";
+	if(!value["BusinessStatus"].isNull())
+		businessStatus_ = value["BusinessStatus"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 
 }
 
@@ -90,14 +90,14 @@ long ModifyVpnGatewayAttributeResult::getEndTime()const
 	return endTime_;
 }
 
-std::string ModifyVpnGatewayAttributeResult::getVSwitchId()const
-{
-	return vSwitchId_;
-}
-
 long ModifyVpnGatewayAttributeResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+std::string ModifyVpnGatewayAttributeResult::getVSwitchId()const
+{
+	return vSwitchId_;
 }
 
 bool ModifyVpnGatewayAttributeResult::getAutoPropagate()const

@@ -37,13 +37,13 @@ namespace AlibabaCloud
 				DescribeSslVpnClientCertResult();
 				explicit DescribeSslVpnClientCertResult(const std::string &payload);
 				~DescribeSslVpnClientCertResult();
-				std::string getClientCert()const;
 				std::string getStatus()const;
+				std::string getClientCert()const;
 				long getEndTime()const;
+				long getCreateTime()const;
+				std::string getClientKey()const;
 				std::string getSslVpnClientCertId()const;
 				std::string getSslVpnServerId()const;
-				std::string getClientKey()const;
-				long getCreateTime()const;
 				std::string getCaCert()const;
 				std::string getRegionId()const;
 				std::string getClientConfig()const;
@@ -52,13 +52,13 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string clientCert_;
 				std::string status_;
+				std::string clientCert_;
 				long endTime_;
+				long createTime_;
+				std::string clientKey_;
 				std::string sslVpnClientCertId_;
 				std::string sslVpnServerId_;
-				std::string clientKey_;
-				long createTime_;
 				std::string caCert_;
 				std::string regionId_;
 				std::string clientConfig_;

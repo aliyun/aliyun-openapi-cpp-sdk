@@ -32,15 +32,21 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VPC_EXPORT CreatePhysicalConnectionOccupancyOrderResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					std::string orderId;
+				};
 
 
 				CreatePhysicalConnectionOccupancyOrderResult();
 				explicit CreatePhysicalConnectionOccupancyOrderResult(const std::string &payload);
 				~CreatePhysicalConnectionOccupancyOrderResult();
+				Data getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				Data data_;
 
 			};
 		}

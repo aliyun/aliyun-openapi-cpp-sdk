@@ -43,14 +43,14 @@ void DescribeServerRelatedGlobalAccelerationInstancesResult::parse(const std::st
 	for (auto valueGlobalAccelerationInstancesGlobalAccelerationInstance : allGlobalAccelerationInstancesNode)
 	{
 		GlobalAccelerationInstance globalAccelerationInstancesObject;
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["RegionId"].isNull())
-			globalAccelerationInstancesObject.regionId = valueGlobalAccelerationInstancesGlobalAccelerationInstance["RegionId"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ServerIpAddress"].isNull())
+			globalAccelerationInstancesObject.serverIpAddress = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ServerIpAddress"].asString();
 		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["GlobalAccelerationInstanceId"].isNull())
 			globalAccelerationInstancesObject.globalAccelerationInstanceId = valueGlobalAccelerationInstancesGlobalAccelerationInstance["GlobalAccelerationInstanceId"].asString();
 		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["IpAddress"].isNull())
 			globalAccelerationInstancesObject.ipAddress = valueGlobalAccelerationInstancesGlobalAccelerationInstance["IpAddress"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ServerIpAddress"].isNull())
-			globalAccelerationInstancesObject.serverIpAddress = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ServerIpAddress"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["RegionId"].isNull())
+			globalAccelerationInstancesObject.regionId = valueGlobalAccelerationInstancesGlobalAccelerationInstance["RegionId"].asString();
 		globalAccelerationInstances_.push_back(globalAccelerationInstancesObject);
 	}
 

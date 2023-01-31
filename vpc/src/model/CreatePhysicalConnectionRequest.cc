@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,188 +18,172 @@
 
 using AlibabaCloud::Vpc::Model::CreatePhysicalConnectionRequest;
 
-CreatePhysicalConnectionRequest::CreatePhysicalConnectionRequest() :
-	RpcServiceRequest("vpc", "2016-04-28", "CreatePhysicalConnection")
-{
-	setMethod(HttpRequest::Method::Post);
+CreatePhysicalConnectionRequest::CreatePhysicalConnectionRequest()
+    : RpcServiceRequest("vpc", "2016-04-28", "CreatePhysicalConnection") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CreatePhysicalConnectionRequest::~CreatePhysicalConnectionRequest()
-{}
+CreatePhysicalConnectionRequest::~CreatePhysicalConnectionRequest() {}
 
-std::string CreatePhysicalConnectionRequest::getAccessPointId()const
-{
-	return accessPointId_;
+std::string CreatePhysicalConnectionRequest::getAccessPointId() const {
+  return accessPointId_;
 }
 
-void CreatePhysicalConnectionRequest::setAccessPointId(const std::string& accessPointId)
-{
-	accessPointId_ = accessPointId;
-	setParameter("AccessPointId", accessPointId);
+void CreatePhysicalConnectionRequest::setAccessPointId(const std::string &accessPointId) {
+  accessPointId_ = accessPointId;
+  setParameter(std::string("AccessPointId"), accessPointId);
 }
 
-long CreatePhysicalConnectionRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+std::string CreatePhysicalConnectionRequest::getCloudBoxInstanceId() const {
+  return cloudBoxInstanceId_;
 }
 
-void CreatePhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void CreatePhysicalConnectionRequest::setCloudBoxInstanceId(const std::string &cloudBoxInstanceId) {
+  cloudBoxInstanceId_ = cloudBoxInstanceId;
+  setParameter(std::string("CloudBoxInstanceId"), cloudBoxInstanceId);
 }
 
-std::string CreatePhysicalConnectionRequest::getPortType()const
-{
-	return portType_;
+long CreatePhysicalConnectionRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void CreatePhysicalConnectionRequest::setPortType(const std::string& portType)
-{
-	portType_ = portType;
-	setParameter("PortType", portType);
+void CreatePhysicalConnectionRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string CreatePhysicalConnectionRequest::getCircuitCode()const
-{
-	return circuitCode_;
+std::string CreatePhysicalConnectionRequest::getPortType() const {
+  return portType_;
 }
 
-void CreatePhysicalConnectionRequest::setCircuitCode(const std::string& circuitCode)
-{
-	circuitCode_ = circuitCode;
-	setParameter("CircuitCode", circuitCode);
+void CreatePhysicalConnectionRequest::setPortType(const std::string &portType) {
+  portType_ = portType;
+  setParameter(std::string("PortType"), portType);
 }
 
-std::string CreatePhysicalConnectionRequest::getClientToken()const
-{
-	return clientToken_;
+std::string CreatePhysicalConnectionRequest::getCircuitCode() const {
+  return circuitCode_;
 }
 
-void CreatePhysicalConnectionRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void CreatePhysicalConnectionRequest::setCircuitCode(const std::string &circuitCode) {
+  circuitCode_ = circuitCode;
+  setParameter(std::string("CircuitCode"), circuitCode);
 }
 
-std::string CreatePhysicalConnectionRequest::getDescription()const
-{
-	return description_;
+std::string CreatePhysicalConnectionRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void CreatePhysicalConnectionRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void CreatePhysicalConnectionRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string CreatePhysicalConnectionRequest::getType()const
-{
-	return type_;
+std::string CreatePhysicalConnectionRequest::getDescription() const {
+  return description_;
 }
 
-void CreatePhysicalConnectionRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setParameter("Type", type);
+void CreatePhysicalConnectionRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
-std::string CreatePhysicalConnectionRequest::getRegionId()const
-{
-	return regionId_;
+std::string CreatePhysicalConnectionRequest::getType() const {
+  return type_;
 }
 
-void CreatePhysicalConnectionRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void CreatePhysicalConnectionRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
 }
 
-std::string CreatePhysicalConnectionRequest::getRedundantPhysicalConnectionId()const
-{
-	return redundantPhysicalConnectionId_;
+std::string CreatePhysicalConnectionRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void CreatePhysicalConnectionRequest::setRedundantPhysicalConnectionId(const std::string& redundantPhysicalConnectionId)
-{
-	redundantPhysicalConnectionId_ = redundantPhysicalConnectionId;
-	setParameter("RedundantPhysicalConnectionId", redundantPhysicalConnectionId);
+void CreatePhysicalConnectionRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string CreatePhysicalConnectionRequest::getPeerLocation()const
-{
-	return peerLocation_;
+std::string CreatePhysicalConnectionRequest::getRegionId() const {
+  return regionId_;
 }
 
-void CreatePhysicalConnectionRequest::setPeerLocation(const std::string& peerLocation)
-{
-	peerLocation_ = peerLocation;
-	setParameter("PeerLocation", peerLocation);
+void CreatePhysicalConnectionRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-int CreatePhysicalConnectionRequest::getBandwidth()const
-{
-	return bandwidth_;
+std::string CreatePhysicalConnectionRequest::getRedundantPhysicalConnectionId() const {
+  return redundantPhysicalConnectionId_;
 }
 
-void CreatePhysicalConnectionRequest::setBandwidth(int bandwidth)
-{
-	bandwidth_ = bandwidth;
-	setParameter("Bandwidth", std::to_string(bandwidth));
+void CreatePhysicalConnectionRequest::setRedundantPhysicalConnectionId(const std::string &redundantPhysicalConnectionId) {
+  redundantPhysicalConnectionId_ = redundantPhysicalConnectionId;
+  setParameter(std::string("RedundantPhysicalConnectionId"), redundantPhysicalConnectionId);
 }
 
-std::string CreatePhysicalConnectionRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string CreatePhysicalConnectionRequest::getPeerLocation() const {
+  return peerLocation_;
 }
 
-void CreatePhysicalConnectionRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void CreatePhysicalConnectionRequest::setPeerLocation(const std::string &peerLocation) {
+  peerLocation_ = peerLocation;
+  setParameter(std::string("PeerLocation"), peerLocation);
 }
 
-std::string CreatePhysicalConnectionRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+int CreatePhysicalConnectionRequest::getBandwidth() const {
+  return bandwidth_;
 }
 
-void CreatePhysicalConnectionRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void CreatePhysicalConnectionRequest::setBandwidth(int bandwidth) {
+  bandwidth_ = bandwidth;
+  setParameter(std::string("bandwidth"), std::to_string(bandwidth));
 }
 
-long CreatePhysicalConnectionRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string CreatePhysicalConnectionRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void CreatePhysicalConnectionRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void CreatePhysicalConnectionRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string CreatePhysicalConnectionRequest::getLineOperator()const
-{
-	return lineOperator_;
+std::string CreatePhysicalConnectionRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void CreatePhysicalConnectionRequest::setLineOperator(const std::string& lineOperator)
-{
-	lineOperator_ = lineOperator;
-	setParameter("LineOperator", lineOperator);
+void CreatePhysicalConnectionRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-std::string CreatePhysicalConnectionRequest::getName()const
-{
-	return name_;
+long CreatePhysicalConnectionRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void CreatePhysicalConnectionRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
+void CreatePhysicalConnectionRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string CreatePhysicalConnectionRequest::getLineOperator() const {
+  return lineOperator_;
+}
+
+void CreatePhysicalConnectionRequest::setLineOperator(const std::string &lineOperator) {
+  lineOperator_ = lineOperator;
+  setParameter(std::string("LineOperator"), lineOperator);
+}
+
+std::string CreatePhysicalConnectionRequest::getName() const {
+  return name_;
+}
+
+void CreatePhysicalConnectionRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 

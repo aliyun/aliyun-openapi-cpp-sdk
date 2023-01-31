@@ -43,26 +43,38 @@ void DescribeCustomerGatewaysResult::parse(const std::string &payload)
 	for (auto valueCustomerGatewaysCustomerGateway : allCustomerGatewaysNode)
 	{
 		CustomerGateway customerGatewaysObject;
-		if(!valueCustomerGatewaysCustomerGateway["CustomerGatewayId"].isNull())
-			customerGatewaysObject.customerGatewayId = valueCustomerGatewaysCustomerGateway["CustomerGatewayId"].asString();
-		if(!valueCustomerGatewaysCustomerGateway["Name"].isNull())
-			customerGatewaysObject.name = valueCustomerGatewaysCustomerGateway["Name"].asString();
 		if(!valueCustomerGatewaysCustomerGateway["IpAddress"].isNull())
 			customerGatewaysObject.ipAddress = valueCustomerGatewaysCustomerGateway["IpAddress"].asString();
+		if(!valueCustomerGatewaysCustomerGateway["Asn"].isNull())
+			customerGatewaysObject.asn = std::stol(valueCustomerGatewaysCustomerGateway["Asn"].asString());
 		if(!valueCustomerGatewaysCustomerGateway["Description"].isNull())
 			customerGatewaysObject.description = valueCustomerGatewaysCustomerGateway["Description"].asString();
+		if(!valueCustomerGatewaysCustomerGateway["CustomerGatewayId"].isNull())
+			customerGatewaysObject.customerGatewayId = valueCustomerGatewaysCustomerGateway["CustomerGatewayId"].asString();
 		if(!valueCustomerGatewaysCustomerGateway["CreateTime"].isNull())
 			customerGatewaysObject.createTime = std::stol(valueCustomerGatewaysCustomerGateway["CreateTime"].asString());
-		if(!valueCustomerGatewaysCustomerGateway["Asn"].isNull())
-			customerGatewaysObject.asn = std::stoi(valueCustomerGatewaysCustomerGateway["Asn"].asString());
+		if(!valueCustomerGatewaysCustomerGateway["Name"].isNull())
+			customerGatewaysObject.name = valueCustomerGatewaysCustomerGateway["Name"].asString();
+		if(!valueCustomerGatewaysCustomerGateway["AuthKey"].isNull())
+			customerGatewaysObject.authKey = valueCustomerGatewaysCustomerGateway["AuthKey"].asString();
+		auto allTagsNode = valueCustomerGatewaysCustomerGateway["Tags"]["Tag"];
+		for (auto valueCustomerGatewaysCustomerGatewayTagsTag : allTagsNode)
+		{
+			CustomerGateway::Tag tagsObject;
+			if(!valueCustomerGatewaysCustomerGatewayTagsTag["Key"].isNull())
+				tagsObject.key = valueCustomerGatewaysCustomerGatewayTagsTag["Key"].asString();
+			if(!valueCustomerGatewaysCustomerGatewayTagsTag["Value"].isNull())
+				tagsObject.value = valueCustomerGatewaysCustomerGatewayTagsTag["Value"].asString();
+			customerGatewaysObject.tags.push_back(tagsObject);
+		}
 		customerGateways_.push_back(customerGatewaysObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

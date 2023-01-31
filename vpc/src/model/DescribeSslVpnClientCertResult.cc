@@ -39,34 +39,29 @@ void DescribeSslVpnClientCertResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
-	if(!value["SslVpnClientCertId"].isNull())
-		sslVpnClientCertId_ = value["SslVpnClientCertId"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["SslVpnServerId"].isNull())
-		sslVpnServerId_ = value["SslVpnServerId"].asString();
-	if(!value["CaCert"].isNull())
-		caCert_ = value["CaCert"].asString();
-	if(!value["ClientCert"].isNull())
-		clientCert_ = value["ClientCert"].asString();
-	if(!value["ClientKey"].isNull())
-		clientKey_ = value["ClientKey"].asString();
-	if(!value["ClientConfig"].isNull())
-		clientConfig_ = value["ClientConfig"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = std::stol(value["CreateTime"].asString());
-	if(!value["EndTime"].isNull())
-		endTime_ = std::stol(value["EndTime"].asString());
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = std::stol(value["CreateTime"].asString());
+	if(!value["ClientKey"].isNull())
+		clientKey_ = value["ClientKey"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["ClientConfig"].isNull())
+		clientConfig_ = value["ClientConfig"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = std::stol(value["EndTime"].asString());
+	if(!value["ClientCert"].isNull())
+		clientCert_ = value["ClientCert"].asString();
+	if(!value["CaCert"].isNull())
+		caCert_ = value["CaCert"].asString();
+	if(!value["SslVpnClientCertId"].isNull())
+		sslVpnClientCertId_ = value["SslVpnClientCertId"].asString();
+	if(!value["SslVpnServerId"].isNull())
+		sslVpnServerId_ = value["SslVpnServerId"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 
-}
-
-std::string DescribeSslVpnClientCertResult::getClientCert()const
-{
-	return clientCert_;
 }
 
 std::string DescribeSslVpnClientCertResult::getStatus()const
@@ -74,9 +69,24 @@ std::string DescribeSslVpnClientCertResult::getStatus()const
 	return status_;
 }
 
+std::string DescribeSslVpnClientCertResult::getClientCert()const
+{
+	return clientCert_;
+}
+
 long DescribeSslVpnClientCertResult::getEndTime()const
 {
 	return endTime_;
+}
+
+long DescribeSslVpnClientCertResult::getCreateTime()const
+{
+	return createTime_;
+}
+
+std::string DescribeSslVpnClientCertResult::getClientKey()const
+{
+	return clientKey_;
 }
 
 std::string DescribeSslVpnClientCertResult::getSslVpnClientCertId()const
@@ -87,16 +97,6 @@ std::string DescribeSslVpnClientCertResult::getSslVpnClientCertId()const
 std::string DescribeSslVpnClientCertResult::getSslVpnServerId()const
 {
 	return sslVpnServerId_;
-}
-
-std::string DescribeSslVpnClientCertResult::getClientKey()const
-{
-	return clientKey_;
-}
-
-long DescribeSslVpnClientCertResult::getCreateTime()const
-{
-	return createTime_;
 }
 
 std::string DescribeSslVpnClientCertResult::getCaCert()const

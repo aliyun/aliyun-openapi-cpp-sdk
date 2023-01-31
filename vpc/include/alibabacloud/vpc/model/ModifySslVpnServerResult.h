@@ -37,19 +37,19 @@ namespace AlibabaCloud
 				ModifySslVpnServerResult();
 				explicit ModifySslVpnServerResult(const std::string &payload);
 				~ModifySslVpnServerResult();
-				std::string getLocalSubnet()const;
 				bool getCompress()const;
+				std::string getLocalSubnet()const;
 				int getConnections()const;
 				std::string getClientIpPool()const;
 				std::string getIDaaSInstanceId()const;
 				int getMaxConnections()const;
 				bool getEnableMultiFactorAuth()const;
-				std::string getSslVpnServerId()const;
 				long getCreateTime()const;
 				int getPort()const;
+				std::string getSslVpnServerId()const;
 				std::string getName()const;
-				std::string getProto()const;
 				std::string getInternetIp()const;
+				std::string getProto()const;
 				std::string getVpnGatewayId()const;
 				std::string getRegionId()const;
 				std::string getCipher()const;
@@ -57,19 +57,19 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string localSubnet_;
 				bool compress_;
+				std::string localSubnet_;
 				int connections_;
 				std::string clientIpPool_;
 				std::string iDaaSInstanceId_;
 				int maxConnections_;
 				bool enableMultiFactorAuth_;
-				std::string sslVpnServerId_;
 				long createTime_;
 				int port_;
+				std::string sslVpnServerId_;
 				std::string name_;
-				std::string proto_;
 				std::string internetIp_;
+				std::string proto_;
 				std::string vpnGatewayId_;
 				std::string regionId_;
 				std::string cipher_;

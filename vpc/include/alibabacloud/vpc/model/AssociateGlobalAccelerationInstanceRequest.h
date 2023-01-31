@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,56 +17,50 @@
 #ifndef ALIBABACLOUD_VPC_MODEL_ASSOCIATEGLOBALACCELERATIONINSTANCEREQUEST_H_
 #define ALIBABACLOUD_VPC_MODEL_ASSOCIATEGLOBALACCELERATIONINSTANCEREQUEST_H_
 
+#include <alibabacloud/vpc/VpcExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/vpc/VpcExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Vpc
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_VPC_EXPORT AssociateGlobalAccelerationInstanceRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Vpc {
+namespace Model {
+class ALIBABACLOUD_VPC_EXPORT AssociateGlobalAccelerationInstanceRequest : public RpcServiceRequest {
+public:
+	AssociateGlobalAccelerationInstanceRequest();
+	~AssociateGlobalAccelerationInstanceRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
+	std::string getGlobalAccelerationInstanceId() const;
+	void setGlobalAccelerationInstanceId(const std::string &globalAccelerationInstanceId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getBackendServerId() const;
+	void setBackendServerId(const std::string &backendServerId);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getBackendServerRegionId() const;
+	void setBackendServerRegionId(const std::string &backendServerRegionId);
+	std::string getBackendServerType() const;
+	void setBackendServerType(const std::string &backendServerType);
 
-			public:
-				AssociateGlobalAccelerationInstanceRequest();
-				~AssociateGlobalAccelerationInstanceRequest();
-
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getGlobalAccelerationInstanceId()const;
-				void setGlobalAccelerationInstanceId(const std::string& globalAccelerationInstanceId);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getBackendServerId()const;
-				void setBackendServerId(const std::string& backendServerId);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getBackendServerRegionId()const;
-				void setBackendServerRegionId(const std::string& backendServerRegionId);
-				std::string getBackendServerType()const;
-				void setBackendServerType(const std::string& backendServerType);
-
-            private:
-				long resourceOwnerId_;
-				std::string globalAccelerationInstanceId_;
-				std::string regionId_;
-				std::string backendServerId_;
-				std::string resourceOwnerAccount_;
-				std::string ownerAccount_;
-				long ownerId_;
-				std::string backendServerRegionId_;
-				std::string backendServerType_;
-
-			};
-		}
-	}
-}
+private:
+	long resourceOwnerId_;
+	std::string globalAccelerationInstanceId_;
+	std::string regionId_;
+	std::string backendServerId_;
+	std::string resourceOwnerAccount_;
+	std::string ownerAccount_;
+	long ownerId_;
+	std::string backendServerRegionId_;
+	std::string backendServerType_;
+};
+} // namespace Model
+} // namespace Vpc
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_VPC_MODEL_ASSOCIATEGLOBALACCELERATIONINSTANCEREQUEST_H_

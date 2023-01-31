@@ -40,8 +40,8 @@ namespace AlibabaCloud
 					std::string ikeVersion;
 					std::string ikeMode;
 					long ikeLifetime;
-					std::string psk;
 					std::string remoteId;
+					std::string psk;
 					std::string ikePfs;
 				};
 				struct IpsecConfig
@@ -55,8 +55,8 @@ namespace AlibabaCloud
 				{
 					std::string enable;
 					std::string dip;
-					std::string sip;
 					int retry;
+					std::string sip;
 					int interval;
 				};
 				struct VpnBgpConfig

@@ -43,26 +43,26 @@ void DescribeIpv6EgressOnlyRulesResult::parse(const std::string &payload)
 	for (auto valueIpv6EgressOnlyRulesIpv6EgressOnlyRule : allIpv6EgressOnlyRulesNode)
 	{
 		Ipv6EgressOnlyRule ipv6EgressOnlyRulesObject;
-		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Ipv6EgressOnlyRuleId"].isNull())
-			ipv6EgressOnlyRulesObject.ipv6EgressOnlyRuleId = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Ipv6EgressOnlyRuleId"].asString();
-		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["InstanceType"].isNull())
-			ipv6EgressOnlyRulesObject.instanceType = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["InstanceType"].asString();
-		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["InstanceId"].isNull())
-			ipv6EgressOnlyRulesObject.instanceId = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["InstanceId"].asString();
 		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Status"].isNull())
 			ipv6EgressOnlyRulesObject.status = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Status"].asString();
-		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Name"].isNull())
-			ipv6EgressOnlyRulesObject.name = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Name"].asString();
 		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Description"].isNull())
 			ipv6EgressOnlyRulesObject.description = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Description"].asString();
+		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Ipv6EgressOnlyRuleId"].isNull())
+			ipv6EgressOnlyRulesObject.ipv6EgressOnlyRuleId = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Ipv6EgressOnlyRuleId"].asString();
+		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["InstanceId"].isNull())
+			ipv6EgressOnlyRulesObject.instanceId = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["InstanceId"].asString();
+		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["InstanceType"].isNull())
+			ipv6EgressOnlyRulesObject.instanceType = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["InstanceType"].asString();
+		if(!valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Name"].isNull())
+			ipv6EgressOnlyRulesObject.name = valueIpv6EgressOnlyRulesIpv6EgressOnlyRule["Name"].asString();
 		ipv6EgressOnlyRules_.push_back(ipv6EgressOnlyRulesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

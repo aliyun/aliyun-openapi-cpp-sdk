@@ -42,14 +42,14 @@ void DescribeVpnSslServerLogsResult::parse(const std::string &payload)
 	auto allData = value["Data"]["Logs"];
 	for (const auto &item : allData)
 		data_.push_back(item.asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["Count"].isNull())
 		count_ = std::stoi(value["Count"].asString());
 	if(!value["IsCompleted"].isNull())
 		isCompleted_ = value["IsCompleted"].asString() == "true";
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 

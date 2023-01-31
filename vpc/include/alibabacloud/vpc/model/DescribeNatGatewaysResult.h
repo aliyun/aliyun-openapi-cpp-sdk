@@ -36,8 +36,10 @@ namespace AlibabaCloud
 				{
 					struct NatGatewayPrivateInfo
 					{
+						int maxSessionEstablishRate;
 						std::string izNo;
 						std::string privateIpAddress;
+						int maxSessionQuota;
 						int maxBandwidth;
 						std::string eniInstanceId;
 						std::string eniType;
@@ -52,25 +54,38 @@ namespace AlibabaCloud
 						std::string allocationId;
 						std::string ipAddress;
 					};
-					std::string status;
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string description;
 					std::string resourceGroupId;
 					std::string instanceChargeType;
+					std::string eipBindMode;
+					bool privateLinkEnabled;
+					std::vector<std::string> fullNatTableIds;
+					std::vector<std::string> bandwidthPackageIds;
+					std::string businessStatus;
+					std::string name;
+					std::string networkType;
+					std::string expiredTime;
+					std::vector<NatGateway::Tag> tags;
+					std::string status;
 					std::vector<std::string> forwardTableIds;
 					std::vector<NatGateway::IpList> ipLists;
-					std::vector<std::string> bandwidthPackageIds;
+					bool securityProtectionEnabled;
+					std::string privateLinkMode;
 					bool autoPay;
 					bool deletionProtection;
-					std::string businessStatus;
 					std::string natType;
-					std::string name;
 					std::string internetChargeType;
 					NatGatewayPrivateInfo natGatewayPrivateInfo;
 					bool ecsMetricEnabled;
 					std::string vpcId;
 					std::vector<std::string> snatTableIds;
-					std::string expiredTime;
 					std::string creationTime;
+					bool icmpReplyEnabled;
 					std::string regionId;
 					std::string spec;
 					std::string natGatewayId;

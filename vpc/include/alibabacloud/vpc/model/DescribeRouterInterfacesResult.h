@@ -47,9 +47,10 @@ namespace AlibabaCloud
 					int oppositeBandwidth;
 					int bandwidth;
 					std::string connectedTime;
+					bool fastLinkMode;
 					std::string reservationActiveTime;
-					std::string reservationBandwidth;
 					int hcThreshold;
+					std::string reservationBandwidth;
 					std::string status;
 					std::string oppositeInterfaceOwnerId;
 					std::string oppositeRegionId;
@@ -58,19 +59,20 @@ namespace AlibabaCloud
 					bool crossBorder;
 					int hcRate;
 					std::string reservationInternetChargeType;
-					std::string role;
 					std::string oppositeInterfaceSpec;
+					std::string role;
 					std::string oppositeVpcInstanceId;
 					std::string routerType;
 					std::string chargeType;
+					std::string ipv6Status;
 					std::string creationTime;
 					std::string accessPointId;
-					std::string oppositeInterfaceBusinessStatus;
 					std::string vpcInstanceId;
+					std::string oppositeInterfaceBusinessStatus;
 					std::string oppositeAccessPointId;
 					std::string spec;
-					std::string routerInterfaceId;
 					std::string healthCheckTargetIp;
+					std::string routerInterfaceId;
 				};
 
 

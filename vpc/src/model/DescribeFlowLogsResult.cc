@@ -43,38 +43,47 @@ void DescribeFlowLogsResult::parse(const std::string &payload)
 	for (auto valueFlowLogsFlowLog : allFlowLogsNode)
 	{
 		FlowLog flowLogsObject;
-		if(!valueFlowLogsFlowLog["FlowLogId"].isNull())
-			flowLogsObject.flowLogId = valueFlowLogsFlowLog["FlowLogId"].asString();
-		if(!valueFlowLogsFlowLog["FlowLogName"].isNull())
-			flowLogsObject.flowLogName = valueFlowLogsFlowLog["FlowLogName"].asString();
-		if(!valueFlowLogsFlowLog["Description"].isNull())
-			flowLogsObject.description = valueFlowLogsFlowLog["Description"].asString();
+		if(!valueFlowLogsFlowLog["Status"].isNull())
+			flowLogsObject.status = valueFlowLogsFlowLog["Status"].asString();
 		if(!valueFlowLogsFlowLog["CreationTime"].isNull())
 			flowLogsObject.creationTime = valueFlowLogsFlowLog["CreationTime"].asString();
+		if(!valueFlowLogsFlowLog["FlowLogName"].isNull())
+			flowLogsObject.flowLogName = valueFlowLogsFlowLog["FlowLogName"].asString();
+		if(!valueFlowLogsFlowLog["TrafficType"].isNull())
+			flowLogsObject.trafficType = valueFlowLogsFlowLog["TrafficType"].asString();
 		if(!valueFlowLogsFlowLog["ResourceType"].isNull())
 			flowLogsObject.resourceType = valueFlowLogsFlowLog["ResourceType"].asString();
-		if(!valueFlowLogsFlowLog["ResourceId"].isNull())
-			flowLogsObject.resourceId = valueFlowLogsFlowLog["ResourceId"].asString();
+		if(!valueFlowLogsFlowLog["Description"].isNull())
+			flowLogsObject.description = valueFlowLogsFlowLog["Description"].asString();
 		if(!valueFlowLogsFlowLog["ProjectName"].isNull())
 			flowLogsObject.projectName = valueFlowLogsFlowLog["ProjectName"].asString();
 		if(!valueFlowLogsFlowLog["LogStoreName"].isNull())
 			flowLogsObject.logStoreName = valueFlowLogsFlowLog["LogStoreName"].asString();
-		if(!valueFlowLogsFlowLog["Status"].isNull())
-			flowLogsObject.status = valueFlowLogsFlowLog["Status"].asString();
-		if(!valueFlowLogsFlowLog["TrafficType"].isNull())
-			flowLogsObject.trafficType = valueFlowLogsFlowLog["TrafficType"].asString();
+		if(!valueFlowLogsFlowLog["ResourceId"].isNull())
+			flowLogsObject.resourceId = valueFlowLogsFlowLog["ResourceId"].asString();
 		if(!valueFlowLogsFlowLog["RegionId"].isNull())
 			flowLogsObject.regionId = valueFlowLogsFlowLog["RegionId"].asString();
+		if(!valueFlowLogsFlowLog["FlowLogId"].isNull())
+			flowLogsObject.flowLogId = valueFlowLogsFlowLog["FlowLogId"].asString();
+		if(!valueFlowLogsFlowLog["BusinessStatus"].isNull())
+			flowLogsObject.businessStatus = valueFlowLogsFlowLog["BusinessStatus"].asString();
+		if(!valueFlowLogsFlowLog["AggregationInterval"].isNull())
+			flowLogsObject.aggregationInterval = std::stoi(valueFlowLogsFlowLog["AggregationInterval"].asString());
+		if(!valueFlowLogsFlowLog["ServiceType"].isNull())
+			flowLogsObject.serviceType = valueFlowLogsFlowLog["ServiceType"].asString();
+		auto allTrafficPath = value["TrafficPath"]["trafficPathList"];
+		for (auto value : allTrafficPath)
+			flowLogsObject.trafficPath.push_back(value.asString());
 		flowLogs_.push_back(flowLogsObject);
 	}
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString();
-	if(!value["TotalCount"].isNull())
-		totalCount_ = value["TotalCount"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = value["PageNumber"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = value["PageSize"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = value["TotalCount"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString();
 
 }
 

@@ -39,6 +39,7 @@ namespace AlibabaCloud
 				~CreateNatGatewayResult();
 				std::vector<std::string> getSnatTableIds()const;
 				std::vector<std::string> getForwardTableIds()const;
+				std::vector<std::string> getFullNatTableIds()const;
 				std::vector<std::string> getBandwidthPackageIds()const;
 				std::string getNatGatewayId()const;
 
@@ -47,6 +48,7 @@ namespace AlibabaCloud
 			private:
 				std::vector<std::string> snatTableIds_;
 				std::vector<std::string> forwardTableIds_;
+				std::vector<std::string> fullNatTableIds_;
 				std::vector<std::string> bandwidthPackageIds_;
 				std::string natGatewayId_;
 

@@ -43,24 +43,24 @@ void DescribeIPv6TranslatorAclListAttributesResult::parse(const std::string &pay
 	for (auto valueAclEntriesAclEntry : allAclEntriesNode)
 	{
 		AclEntry aclEntriesObject;
+		if(!valueAclEntriesAclEntry["AclEntryComment"].isNull())
+			aclEntriesObject.aclEntryComment = valueAclEntriesAclEntry["AclEntryComment"].asString();
 		if(!valueAclEntriesAclEntry["AclEntryId"].isNull())
 			aclEntriesObject.aclEntryId = valueAclEntriesAclEntry["AclEntryId"].asString();
 		if(!valueAclEntriesAclEntry["AclEntryIp"].isNull())
 			aclEntriesObject.aclEntryIp = valueAclEntriesAclEntry["AclEntryIp"].asString();
-		if(!valueAclEntriesAclEntry["AclEntryComment"].isNull())
-			aclEntriesObject.aclEntryComment = valueAclEntriesAclEntry["AclEntryComment"].asString();
 		aclEntries_.push_back(aclEntriesObject);
 	}
 	if(!value["AclId"].isNull())
 		aclId_ = value["AclId"].asString();
-	if(!value["AclName"].isNull())
-		aclName_ = value["AclName"].asString();
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["AclName"].isNull())
+		aclName_ = value["AclName"].asString();
 
 }
 

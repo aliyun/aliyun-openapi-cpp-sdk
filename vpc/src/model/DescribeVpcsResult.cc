@@ -43,42 +43,42 @@ void DescribeVpcsResult::parse(const std::string &payload)
 	for (auto valueVpcsVpc : allVpcsNode)
 	{
 		Vpc vpcsObject;
-		if(!valueVpcsVpc["VpcId"].isNull())
-			vpcsObject.vpcId = valueVpcsVpc["VpcId"].asString();
-		if(!valueVpcsVpc["RegionId"].isNull())
-			vpcsObject.regionId = valueVpcsVpc["RegionId"].asString();
-		if(!valueVpcsVpc["Status"].isNull())
-			vpcsObject.status = valueVpcsVpc["Status"].asString();
-		if(!valueVpcsVpc["VpcName"].isNull())
-			vpcsObject.vpcName = valueVpcsVpc["VpcName"].asString();
 		if(!valueVpcsVpc["CreationTime"].isNull())
 			vpcsObject.creationTime = valueVpcsVpc["CreationTime"].asString();
-		if(!valueVpcsVpc["CidrBlock"].isNull())
-			vpcsObject.cidrBlock = valueVpcsVpc["CidrBlock"].asString();
-		if(!valueVpcsVpc["Ipv6CidrBlock"].isNull())
-			vpcsObject.ipv6CidrBlock = valueVpcsVpc["Ipv6CidrBlock"].asString();
-		if(!valueVpcsVpc["VRouterId"].isNull())
-			vpcsObject.vRouterId = valueVpcsVpc["VRouterId"].asString();
-		if(!valueVpcsVpc["Description"].isNull())
-			vpcsObject.description = valueVpcsVpc["Description"].asString();
+		if(!valueVpcsVpc["Status"].isNull())
+			vpcsObject.status = valueVpcsVpc["Status"].asString();
+		if(!valueVpcsVpc["VpcId"].isNull())
+			vpcsObject.vpcId = valueVpcsVpc["VpcId"].asString();
 		if(!valueVpcsVpc["IsDefault"].isNull())
 			vpcsObject.isDefault = valueVpcsVpc["IsDefault"].asString() == "true";
-		if(!valueVpcsVpc["NetworkAclNum"].isNull())
-			vpcsObject.networkAclNum = valueVpcsVpc["NetworkAclNum"].asString();
-		if(!valueVpcsVpc["ResourceGroupId"].isNull())
-			vpcsObject.resourceGroupId = valueVpcsVpc["ResourceGroupId"].asString();
-		if(!valueVpcsVpc["CenStatus"].isNull())
-			vpcsObject.cenStatus = valueVpcsVpc["CenStatus"].asString();
-		if(!valueVpcsVpc["OwnerId"].isNull())
-			vpcsObject.ownerId = std::stol(valueVpcsVpc["OwnerId"].asString());
-		if(!valueVpcsVpc["SupportAdvancedFeature"].isNull())
-			vpcsObject.supportAdvancedFeature = valueVpcsVpc["SupportAdvancedFeature"].asString() == "true";
 		if(!valueVpcsVpc["AdvancedResource"].isNull())
 			vpcsObject.advancedResource = valueVpcsVpc["AdvancedResource"].asString() == "true";
-		if(!valueVpcsVpc["DhcpOptionsSetId"].isNull())
-			vpcsObject.dhcpOptionsSetId = valueVpcsVpc["DhcpOptionsSetId"].asString();
+		if(!valueVpcsVpc["OwnerId"].isNull())
+			vpcsObject.ownerId = std::stol(valueVpcsVpc["OwnerId"].asString());
+		if(!valueVpcsVpc["RegionId"].isNull())
+			vpcsObject.regionId = valueVpcsVpc["RegionId"].asString();
+		if(!valueVpcsVpc["VpcName"].isNull())
+			vpcsObject.vpcName = valueVpcsVpc["VpcName"].asString();
+		if(!valueVpcsVpc["VRouterId"].isNull())
+			vpcsObject.vRouterId = valueVpcsVpc["VRouterId"].asString();
 		if(!valueVpcsVpc["DhcpOptionsSetStatus"].isNull())
 			vpcsObject.dhcpOptionsSetStatus = valueVpcsVpc["DhcpOptionsSetStatus"].asString();
+		if(!valueVpcsVpc["CidrBlock"].isNull())
+			vpcsObject.cidrBlock = valueVpcsVpc["CidrBlock"].asString();
+		if(!valueVpcsVpc["Description"].isNull())
+			vpcsObject.description = valueVpcsVpc["Description"].asString();
+		if(!valueVpcsVpc["NetworkAclNum"].isNull())
+			vpcsObject.networkAclNum = valueVpcsVpc["NetworkAclNum"].asString();
+		if(!valueVpcsVpc["SupportAdvancedFeature"].isNull())
+			vpcsObject.supportAdvancedFeature = valueVpcsVpc["SupportAdvancedFeature"].asString() == "true";
+		if(!valueVpcsVpc["ResourceGroupId"].isNull())
+			vpcsObject.resourceGroupId = valueVpcsVpc["ResourceGroupId"].asString();
+		if(!valueVpcsVpc["DhcpOptionsSetId"].isNull())
+			vpcsObject.dhcpOptionsSetId = valueVpcsVpc["DhcpOptionsSetId"].asString();
+		if(!valueVpcsVpc["Ipv6CidrBlock"].isNull())
+			vpcsObject.ipv6CidrBlock = valueVpcsVpc["Ipv6CidrBlock"].asString();
+		if(!valueVpcsVpc["CenStatus"].isNull())
+			vpcsObject.cenStatus = valueVpcsVpc["CenStatus"].asString();
 		auto allTagsNode = valueVpcsVpc["Tags"]["Tag"];
 		for (auto valueVpcsVpcTagsTag : allTagsNode)
 		{
@@ -93,15 +93,18 @@ void DescribeVpcsResult::parse(const std::string &payload)
 		for (auto valueVpcsVpcIpv6CidrBlocksIpv6CidrBlock : allIpv6CidrBlocksNode)
 		{
 			Vpc::Ipv6CidrBlock ipv6CidrBlocksObject;
-			if(!valueVpcsVpcIpv6CidrBlocksIpv6CidrBlock["Ipv6CidrBlock"].isNull())
-				ipv6CidrBlocksObject.ipv6CidrBlock = valueVpcsVpcIpv6CidrBlocksIpv6CidrBlock["Ipv6CidrBlock"].asString();
 			if(!valueVpcsVpcIpv6CidrBlocksIpv6CidrBlock["Ipv6Isp"].isNull())
 				ipv6CidrBlocksObject.ipv6Isp = valueVpcsVpcIpv6CidrBlocksIpv6CidrBlock["Ipv6Isp"].asString();
+			if(!valueVpcsVpcIpv6CidrBlocksIpv6CidrBlock["Ipv6CidrBlock"].isNull())
+				ipv6CidrBlocksObject.ipv6CidrBlock = valueVpcsVpcIpv6CidrBlocksIpv6CidrBlock["Ipv6CidrBlock"].asString();
 			vpcsObject.ipv6CidrBlocks.push_back(ipv6CidrBlocksObject);
 		}
 		auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
 		for (auto value : allVSwitchIds)
 			vpcsObject.vSwitchIds.push_back(value.asString());
+		auto allSecondaryCidrBlocks = value["SecondaryCidrBlocks"]["SecondaryCidrBlock"];
+		for (auto value : allSecondaryCidrBlocks)
+			vpcsObject.secondaryCidrBlocks.push_back(value.asString());
 		auto allUserCidrs = value["UserCidrs"]["UserCidr"];
 		for (auto value : allUserCidrs)
 			vpcsObject.userCidrs.push_back(value.asString());
@@ -111,17 +114,14 @@ void DescribeVpcsResult::parse(const std::string &payload)
 		auto allRouterTableIds = value["RouterTableIds"]["RouterTableIds"];
 		for (auto value : allRouterTableIds)
 			vpcsObject.routerTableIds.push_back(value.asString());
-		auto allSecondaryCidrBlocks = value["SecondaryCidrBlocks"]["SecondaryCidrBlock"];
-		for (auto value : allSecondaryCidrBlocks)
-			vpcsObject.secondaryCidrBlocks.push_back(value.asString());
 		vpcs_.push_back(vpcsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

@@ -43,18 +43,18 @@ void DescribeIPv6TranslatorAclListsResult::parse(const std::string &payload)
 	for (auto valueIpv6TranslatorAclsIPv6TranslatorAcl : allIpv6TranslatorAclsNode)
 	{
 		IPv6TranslatorAcl ipv6TranslatorAclsObject;
-		if(!valueIpv6TranslatorAclsIPv6TranslatorAcl["AclId"].isNull())
-			ipv6TranslatorAclsObject.aclId = valueIpv6TranslatorAclsIPv6TranslatorAcl["AclId"].asString();
 		if(!valueIpv6TranslatorAclsIPv6TranslatorAcl["AclName"].isNull())
 			ipv6TranslatorAclsObject.aclName = valueIpv6TranslatorAclsIPv6TranslatorAcl["AclName"].asString();
+		if(!valueIpv6TranslatorAclsIPv6TranslatorAcl["AclId"].isNull())
+			ipv6TranslatorAclsObject.aclId = valueIpv6TranslatorAclsIPv6TranslatorAcl["AclId"].asString();
 		ipv6TranslatorAcls_.push_back(ipv6TranslatorAclsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

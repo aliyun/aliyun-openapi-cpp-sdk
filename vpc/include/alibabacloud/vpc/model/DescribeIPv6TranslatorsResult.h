@@ -40,13 +40,13 @@ namespace AlibabaCloud
 					std::string availableBandwidth;
 					long createTime;
 					std::vector<std::string> ipv6TranslatorEntryIds;
-					std::string ipv6TranslatorId;
 					std::string payType;
+					std::string ipv6TranslatorId;
 					std::string businessStatus;
 					std::string name;
 					std::string allocateIpv6Addr;
-					int bandwidth;
 					std::string allocateIpv4Addr;
+					int bandwidth;
 					std::string regionId;
 					std::string spec;
 				};

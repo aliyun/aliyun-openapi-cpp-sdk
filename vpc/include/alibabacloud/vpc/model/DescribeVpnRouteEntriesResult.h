@@ -35,11 +35,11 @@ namespace AlibabaCloud
 				struct VpnRouteEntry
 				{
 					std::string asPath;
-					std::string vpnInstanceId;
 					std::string routeDest;
+					std::string vpnInstanceId;
+					std::string routeEntryType;
 					std::string nextHop;
 					std::string state;
-					std::string routeEntryType;
 					long createTime;
 					int weight;
 					std::string community;

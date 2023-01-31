@@ -52,56 +52,58 @@ void DescribeVpnGatewayResult::parse(const std::string &payload)
 	auto reservationDataNode = value["ReservationData"];
 	if(!reservationDataNode["Status"].isNull())
 		reservationData_.status = reservationDataNode["Status"].asString();
-	if(!reservationDataNode["ReservationEndTime"].isNull())
-		reservationData_.reservationEndTime = reservationDataNode["ReservationEndTime"].asString();
 	if(!reservationDataNode["ReservationOrderType"].isNull())
 		reservationData_.reservationOrderType = reservationDataNode["ReservationOrderType"].asString();
-	if(!reservationDataNode["ReservationSpec"].isNull())
-		reservationData_.reservationSpec = reservationDataNode["ReservationSpec"].asString();
 	if(!reservationDataNode["ReservationIpsec"].isNull())
 		reservationData_.reservationIpsec = reservationDataNode["ReservationIpsec"].asString();
+	if(!reservationDataNode["ReservationSpec"].isNull())
+		reservationData_.reservationSpec = reservationDataNode["ReservationSpec"].asString();
 	if(!reservationDataNode["ReservationSsl"].isNull())
 		reservationData_.reservationSsl = reservationDataNode["ReservationSsl"].asString();
 	if(!reservationDataNode["ReservationMaxConnections"].isNull())
 		reservationData_.reservationMaxConnections = std::stoi(reservationDataNode["ReservationMaxConnections"].asString());
-	if(!value["VpnGatewayId"].isNull())
-		vpnGatewayId_ = value["VpnGatewayId"].asString();
+	if(!reservationDataNode["ReservationEndTime"].isNull())
+		reservationData_.reservationEndTime = reservationDataNode["ReservationEndTime"].asString();
+	if(!value["VpnType"].isNull())
+		vpnType_ = value["VpnType"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
-	if(!value["VSwitchId"].isNull())
-		vSwitchId_ = value["VSwitchId"].asString();
+	if(!value["SslMaxConnections"].isNull())
+		sslMaxConnections_ = std::stol(value["SslMaxConnections"].asString());
+	if(!value["Spec"].isNull())
+		spec_ = value["Spec"].asString();
 	if(!value["InternetIp"].isNull())
 		internetIp_ = value["InternetIp"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = std::stol(value["CreateTime"].asString());
-	if(!value["EndTime"].isNull())
-		endTime_ = std::stol(value["EndTime"].asString());
-	if(!value["Spec"].isNull())
-		spec_ = value["Spec"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
-	if(!value["BusinessStatus"].isNull())
-		businessStatus_ = value["BusinessStatus"].asString();
-	if(!value["ChargeType"].isNull())
-		chargeType_ = value["ChargeType"].asString();
-	if(!value["IpsecVpn"].isNull())
-		ipsecVpn_ = value["IpsecVpn"].asString();
-	if(!value["SslVpn"].isNull())
-		sslVpn_ = value["SslVpn"].asString();
-	if(!value["SslMaxConnections"].isNull())
-		sslMaxConnections_ = std::stol(value["SslMaxConnections"].asString());
-	if(!value["Tag"].isNull())
-		tag_ = value["Tag"].asString();
-	if(!value["EnableBgp"].isNull())
-		enableBgp_ = value["EnableBgp"].asString() == "true";
 	if(!value["AutoPropagate"].isNull())
 		autoPropagate_ = value["AutoPropagate"].asString() == "true";
-	if(!value["VpnType"].isNull())
-		vpnType_ = value["VpnType"].asString();
+	if(!value["ChargeType"].isNull())
+		chargeType_ = value["ChargeType"].asString();
+	if(!value["VpnGatewayId"].isNull())
+		vpnGatewayId_ = value["VpnGatewayId"].asString();
+	if(!value["Tag"].isNull())
+		tag_ = value["Tag"].asString();
+	if(!value["IpsecVpn"].isNull())
+		ipsecVpn_ = value["IpsecVpn"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = std::stol(value["EndTime"].asString());
+	if(!value["VSwitchId"].isNull())
+		vSwitchId_ = value["VSwitchId"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["EnableBgp"].isNull())
+		enableBgp_ = value["EnableBgp"].asString() == "true";
+	if(!value["BusinessStatus"].isNull())
+		businessStatus_ = value["BusinessStatus"].asString();
+	if(!value["SslVpn"].isNull())
+		sslVpn_ = value["SslVpn"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["NetworkType"].isNull())
+		networkType_ = value["NetworkType"].asString();
 
 }
 
@@ -140,14 +142,14 @@ long DescribeVpnGatewayResult::getEndTime()const
 	return endTime_;
 }
 
-std::string DescribeVpnGatewayResult::getVSwitchId()const
-{
-	return vSwitchId_;
-}
-
 long DescribeVpnGatewayResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+std::string DescribeVpnGatewayResult::getVSwitchId()const
+{
+	return vSwitchId_;
 }
 
 bool DescribeVpnGatewayResult::getAutoPropagate()const
@@ -183,6 +185,11 @@ std::string DescribeVpnGatewayResult::getVpnGatewayId()const
 std::string DescribeVpnGatewayResult::getChargeType()const
 {
 	return chargeType_;
+}
+
+std::string DescribeVpnGatewayResult::getNetworkType()const
+{
+	return networkType_;
 }
 
 std::string DescribeVpnGatewayResult::getTag()const

@@ -43,22 +43,22 @@ void GetNatGatewayConvertStatusResult::parse(const std::string &payload)
 	for (auto valueConvertStepsConvertStep : allConvertStepsNode)
 	{
 		ConvertStep convertStepsObject;
+		if(!valueConvertStepsConvertStep["StepStartTime"].isNull())
+			convertStepsObject.stepStartTime = valueConvertStepsConvertStep["StepStartTime"].asString();
 		if(!valueConvertStepsConvertStep["StepName"].isNull())
 			convertStepsObject.stepName = valueConvertStepsConvertStep["StepName"].asString();
 		if(!valueConvertStepsConvertStep["StepStatus"].isNull())
 			convertStepsObject.stepStatus = valueConvertStepsConvertStep["StepStatus"].asString();
-		if(!valueConvertStepsConvertStep["StepStartTime"].isNull())
-			convertStepsObject.stepStartTime = valueConvertStepsConvertStep["StepStartTime"].asString();
 		convertSteps_.push_back(convertStepsObject);
 	}
-	if(!value["NatGatewayId"].isNull())
-		natGatewayId_ = value["NatGatewayId"].asString();
-	if(!value["Bid"].isNull())
-		bid_ = value["Bid"].asString();
 	if(!value["AliUid"].isNull())
 		aliUid_ = std::stol(value["AliUid"].asString());
 	if(!value["DstNatType"].isNull())
 		dstNatType_ = value["DstNatType"].asString();
+	if(!value["Bid"].isNull())
+		bid_ = value["Bid"].asString();
+	if(!value["NatGatewayId"].isNull())
+		natGatewayId_ = value["NatGatewayId"].asString();
 
 }
 

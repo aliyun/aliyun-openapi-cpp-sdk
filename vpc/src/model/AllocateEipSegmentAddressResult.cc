@@ -39,10 +39,10 @@ void AllocateEipSegmentAddressResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["EipSegmentInstanceId"].isNull())
-		eipSegmentInstanceId_ = value["EipSegmentInstanceId"].asString();
 	if(!value["OrderId"].isNull())
 		orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["EipSegmentInstanceId"].isNull())
+		eipSegmentInstanceId_ = value["EipSegmentInstanceId"].asString();
 
 }
 

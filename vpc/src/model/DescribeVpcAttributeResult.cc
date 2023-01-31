@@ -43,10 +43,10 @@ void DescribeVpcAttributeResult::parse(const std::string &payload)
 	for (auto valueAssociatedCensAssociatedCen : allAssociatedCensNode)
 	{
 		AssociatedCen associatedCensObject;
-		if(!valueAssociatedCensAssociatedCen["CenId"].isNull())
-			associatedCensObject.cenId = valueAssociatedCensAssociatedCen["CenId"].asString();
 		if(!valueAssociatedCensAssociatedCen["CenOwnerId"].isNull())
 			associatedCensObject.cenOwnerId = std::stol(valueAssociatedCensAssociatedCen["CenOwnerId"].asString());
+		if(!valueAssociatedCensAssociatedCen["CenId"].isNull())
+			associatedCensObject.cenId = valueAssociatedCensAssociatedCen["CenId"].asString();
 		if(!valueAssociatedCensAssociatedCen["CenStatus"].isNull())
 			associatedCensObject.cenStatus = valueAssociatedCensAssociatedCen["CenStatus"].asString();
 		associatedCens_.push_back(associatedCensObject);
@@ -55,20 +55,20 @@ void DescribeVpcAttributeResult::parse(const std::string &payload)
 	for (auto valueCloudResourcesCloudResourceSetType : allCloudResourcesNode)
 	{
 		CloudResourceSetType cloudResourcesObject;
-		if(!valueCloudResourcesCloudResourceSetType["ResourceType"].isNull())
-			cloudResourcesObject.resourceType = valueCloudResourcesCloudResourceSetType["ResourceType"].asString();
 		if(!valueCloudResourcesCloudResourceSetType["ResourceCount"].isNull())
 			cloudResourcesObject.resourceCount = std::stoi(valueCloudResourcesCloudResourceSetType["ResourceCount"].asString());
+		if(!valueCloudResourcesCloudResourceSetType["ResourceType"].isNull())
+			cloudResourcesObject.resourceType = valueCloudResourcesCloudResourceSetType["ResourceType"].asString();
 		cloudResources_.push_back(cloudResourcesObject);
 	}
 	auto allIpv6CidrBlocksNode = value["Ipv6CidrBlocks"]["Ipv6CidrBlock"];
 	for (auto valueIpv6CidrBlocksIpv6CidrBlock : allIpv6CidrBlocksNode)
 	{
 		Ipv6CidrBlock ipv6CidrBlocksObject;
-		if(!valueIpv6CidrBlocksIpv6CidrBlock["Ipv6CidrBlock"].isNull())
-			ipv6CidrBlocksObject.ipv6CidrBlock = valueIpv6CidrBlocksIpv6CidrBlock["Ipv6CidrBlock"].asString();
 		if(!valueIpv6CidrBlocksIpv6CidrBlock["Ipv6Isp"].isNull())
 			ipv6CidrBlocksObject.ipv6Isp = valueIpv6CidrBlocksIpv6CidrBlock["Ipv6Isp"].asString();
+		if(!valueIpv6CidrBlocksIpv6CidrBlock["Ipv6CidrBlock"].isNull())
+			ipv6CidrBlocksObject.ipv6CidrBlock = valueIpv6CidrBlocksIpv6CidrBlock["Ipv6CidrBlock"].asString();
 		ipv6CidrBlocks_.push_back(ipv6CidrBlocksObject);
 	}
 	auto allVSwitchIds = value["VSwitchIds"]["VSwitchId"];
@@ -80,38 +80,42 @@ void DescribeVpcAttributeResult::parse(const std::string &payload)
 	auto allSecondaryCidrBlocks = value["SecondaryCidrBlocks"]["SecondaryCidrBlock"];
 	for (const auto &item : allSecondaryCidrBlocks)
 		secondaryCidrBlocks_.push_back(item.asString());
-	if(!value["VpcId"].isNull())
-		vpcId_ = value["VpcId"].asString();
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
-	if(!value["VpcName"].isNull())
-		vpcName_ = value["VpcName"].asString();
 	if(!value["CreationTime"].isNull())
 		creationTime_ = value["CreationTime"].asString();
-	if(!value["CidrBlock"].isNull())
-		cidrBlock_ = value["CidrBlock"].asString();
-	if(!value["Ipv6CidrBlock"].isNull())
-		ipv6CidrBlock_ = value["Ipv6CidrBlock"].asString();
-	if(!value["VRouterId"].isNull())
-		vRouterId_ = value["VRouterId"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["VpcId"].isNull())
+		vpcId_ = value["VpcId"].asString();
 	if(!value["IsDefault"].isNull())
 		isDefault_ = value["IsDefault"].asString() == "true";
 	if(!value["ClassicLinkEnabled"].isNull())
 		classicLinkEnabled_ = value["ClassicLinkEnabled"].asString() == "true";
-	if(!value["ResourceGroupId"].isNull())
-		resourceGroupId_ = value["ResourceGroupId"].asString();
-	if(!value["NetworkAclNum"].isNull())
-		networkAclNum_ = value["NetworkAclNum"].asString();
 	if(!value["OwnerId"].isNull())
 		ownerId_ = std::stol(value["OwnerId"].asString());
-	if(!value["DhcpOptionsSetId"].isNull())
-		dhcpOptionsSetId_ = value["DhcpOptionsSetId"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["VpcName"].isNull())
+		vpcName_ = value["VpcName"].asString();
+	if(!value["VRouterId"].isNull())
+		vRouterId_ = value["VRouterId"].asString();
 	if(!value["DhcpOptionsSetStatus"].isNull())
 		dhcpOptionsSetStatus_ = value["DhcpOptionsSetStatus"].asString();
+	if(!value["CidrBlock"].isNull())
+		cidrBlock_ = value["CidrBlock"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["NetworkAclNum"].isNull())
+		networkAclNum_ = value["NetworkAclNum"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["DhcpOptionsSetId"].isNull())
+		dhcpOptionsSetId_ = value["DhcpOptionsSetId"].asString();
+	if(!value["Ipv6CidrBlock"].isNull())
+		ipv6CidrBlock_ = value["Ipv6CidrBlock"].asString();
+	if(!value["SupportIpv4Gateway"].isNull())
+		supportIpv4Gateway_ = value["SupportIpv4Gateway"].asString() == "true";
+	if(!value["Ipv4GatewayId"].isNull())
+		ipv4GatewayId_ = value["Ipv4GatewayId"].asString();
 
 }
 
@@ -125,14 +129,14 @@ bool DescribeVpcAttributeResult::getIsDefault()const
 	return isDefault_;
 }
 
-std::string DescribeVpcAttributeResult::getDescription()const
-{
-	return description_;
-}
-
 std::string DescribeVpcAttributeResult::getDhcpOptionsSetStatus()const
 {
 	return dhcpOptionsSetStatus_;
+}
+
+std::string DescribeVpcAttributeResult::getDescription()const
+{
+	return description_;
 }
 
 bool DescribeVpcAttributeResult::getClassicLinkEnabled()const
@@ -143,6 +147,16 @@ bool DescribeVpcAttributeResult::getClassicLinkEnabled()const
 std::string DescribeVpcAttributeResult::getResourceGroupId()const
 {
 	return resourceGroupId_;
+}
+
+bool DescribeVpcAttributeResult::getSupportIpv4Gateway()const
+{
+	return supportIpv4Gateway_;
+}
+
+std::string DescribeVpcAttributeResult::getIpv4GatewayId()const
+{
+	return ipv4GatewayId_;
 }
 
 std::vector<std::string> DescribeVpcAttributeResult::getVSwitchIds()const

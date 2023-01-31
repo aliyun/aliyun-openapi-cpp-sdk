@@ -35,9 +35,11 @@ namespace AlibabaCloud
 				struct DhcpOptions
 				{
 					std::string domainName;
+					std::string ipv6LeaseTime;
 					std::string tFTPServerName;
 					std::string bootFileName;
 					std::string domainNameServers;
+					std::string leaseTime;
 				};
 				struct AssociateVpc
 				{

@@ -43,34 +43,34 @@ void DescribeVSwitchesResult::parse(const std::string &payload)
 	for (auto valueVSwitchesVSwitch : allVSwitchesNode)
 	{
 		VSwitch vSwitchesObject;
-		if(!valueVSwitchesVSwitch["VSwitchId"].isNull())
-			vSwitchesObject.vSwitchId = valueVSwitchesVSwitch["VSwitchId"].asString();
 		if(!valueVSwitchesVSwitch["VpcId"].isNull())
 			vSwitchesObject.vpcId = valueVSwitchesVSwitch["VpcId"].asString();
 		if(!valueVSwitchesVSwitch["Status"].isNull())
 			vSwitchesObject.status = valueVSwitchesVSwitch["Status"].asString();
-		if(!valueVSwitchesVSwitch["CidrBlock"].isNull())
-			vSwitchesObject.cidrBlock = valueVSwitchesVSwitch["CidrBlock"].asString();
-		if(!valueVSwitchesVSwitch["Ipv6CidrBlock"].isNull())
-			vSwitchesObject.ipv6CidrBlock = valueVSwitchesVSwitch["Ipv6CidrBlock"].asString();
-		if(!valueVSwitchesVSwitch["ZoneId"].isNull())
-			vSwitchesObject.zoneId = valueVSwitchesVSwitch["ZoneId"].asString();
-		if(!valueVSwitchesVSwitch["AvailableIpAddressCount"].isNull())
-			vSwitchesObject.availableIpAddressCount = std::stol(valueVSwitchesVSwitch["AvailableIpAddressCount"].asString());
-		if(!valueVSwitchesVSwitch["Description"].isNull())
-			vSwitchesObject.description = valueVSwitchesVSwitch["Description"].asString();
-		if(!valueVSwitchesVSwitch["VSwitchName"].isNull())
-			vSwitchesObject.vSwitchName = valueVSwitchesVSwitch["VSwitchName"].asString();
 		if(!valueVSwitchesVSwitch["CreationTime"].isNull())
 			vSwitchesObject.creationTime = valueVSwitchesVSwitch["CreationTime"].asString();
 		if(!valueVSwitchesVSwitch["IsDefault"].isNull())
 			vSwitchesObject.isDefault = valueVSwitchesVSwitch["IsDefault"].asString() == "true";
-		if(!valueVSwitchesVSwitch["ResourceGroupId"].isNull())
-			vSwitchesObject.resourceGroupId = valueVSwitchesVSwitch["ResourceGroupId"].asString();
+		if(!valueVSwitchesVSwitch["AvailableIpAddressCount"].isNull())
+			vSwitchesObject.availableIpAddressCount = std::stol(valueVSwitchesVSwitch["AvailableIpAddressCount"].asString());
 		if(!valueVSwitchesVSwitch["NetworkAclId"].isNull())
 			vSwitchesObject.networkAclId = valueVSwitchesVSwitch["NetworkAclId"].asString();
 		if(!valueVSwitchesVSwitch["OwnerId"].isNull())
 			vSwitchesObject.ownerId = std::stol(valueVSwitchesVSwitch["OwnerId"].asString());
+		if(!valueVSwitchesVSwitch["VSwitchId"].isNull())
+			vSwitchesObject.vSwitchId = valueVSwitchesVSwitch["VSwitchId"].asString();
+		if(!valueVSwitchesVSwitch["CidrBlock"].isNull())
+			vSwitchesObject.cidrBlock = valueVSwitchesVSwitch["CidrBlock"].asString();
+		if(!valueVSwitchesVSwitch["Description"].isNull())
+			vSwitchesObject.description = valueVSwitchesVSwitch["Description"].asString();
+		if(!valueVSwitchesVSwitch["ResourceGroupId"].isNull())
+			vSwitchesObject.resourceGroupId = valueVSwitchesVSwitch["ResourceGroupId"].asString();
+		if(!valueVSwitchesVSwitch["ZoneId"].isNull())
+			vSwitchesObject.zoneId = valueVSwitchesVSwitch["ZoneId"].asString();
+		if(!valueVSwitchesVSwitch["Ipv6CidrBlock"].isNull())
+			vSwitchesObject.ipv6CidrBlock = valueVSwitchesVSwitch["Ipv6CidrBlock"].asString();
+		if(!valueVSwitchesVSwitch["VSwitchName"].isNull())
+			vSwitchesObject.vSwitchName = valueVSwitchesVSwitch["VSwitchName"].asString();
 		if(!valueVSwitchesVSwitch["ShareType"].isNull())
 			vSwitchesObject.shareType = valueVSwitchesVSwitch["ShareType"].asString();
 		auto allTagsNode = valueVSwitchesVSwitch["Tags"]["Tag"];
@@ -90,12 +90,12 @@ void DescribeVSwitchesResult::parse(const std::string &payload)
 			vSwitchesObject.routeTable.routeTableType = routeTableNode["RouteTableType"].asString();
 		vSwitches_.push_back(vSwitchesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

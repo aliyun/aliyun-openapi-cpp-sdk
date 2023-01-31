@@ -39,22 +39,22 @@ void DescribeVbrHaResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["VbrHaId"].isNull())
-		vbrHaId_ = value["VbrHaId"].asString();
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
-	if(!value["VbrId"].isNull())
-		vbrId_ = value["VbrId"].asString();
 	if(!value["CreationTime"].isNull())
 		creationTime_ = value["CreationTime"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["VbrHaId"].isNull())
+		vbrHaId_ = value["VbrHaId"].asString();
 	if(!value["PeerVbrId"].isNull())
 		peerVbrId_ = value["PeerVbrId"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["VbrId"].isNull())
+		vbrId_ = value["VbrId"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 
@@ -78,14 +78,14 @@ std::string DescribeVbrHaResult::getCreationTime()const
 	return creationTime_;
 }
 
-std::string DescribeVbrHaResult::getRegionId()const
-{
-	return regionId_;
-}
-
 std::string DescribeVbrHaResult::getVbrId()const
 {
 	return vbrId_;
+}
+
+std::string DescribeVbrHaResult::getRegionId()const
+{
+	return regionId_;
 }
 
 std::string DescribeVbrHaResult::getPeerVbrId()const

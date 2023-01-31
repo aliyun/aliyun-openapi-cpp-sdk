@@ -43,30 +43,30 @@ void DescribeEipSegmentResult::parse(const std::string &payload)
 	for (auto valueEipSegmentsEipSegment : allEipSegmentsNode)
 	{
 		EipSegment eipSegmentsObject;
-		if(!valueEipSegmentsEipSegment["InstanceId"].isNull())
-			eipSegmentsObject.instanceId = valueEipSegmentsEipSegment["InstanceId"].asString();
-		if(!valueEipSegmentsEipSegment["Segment"].isNull())
-			eipSegmentsObject.segment = valueEipSegmentsEipSegment["Segment"].asString();
+		if(!valueEipSegmentsEipSegment["CreationTime"].isNull())
+			eipSegmentsObject.creationTime = valueEipSegmentsEipSegment["CreationTime"].asString();
 		if(!valueEipSegmentsEipSegment["Status"].isNull())
 			eipSegmentsObject.status = valueEipSegmentsEipSegment["Status"].asString();
-		if(!valueEipSegmentsEipSegment["RegionId"].isNull())
-			eipSegmentsObject.regionId = valueEipSegmentsEipSegment["RegionId"].asString();
+		if(!valueEipSegmentsEipSegment["Descritpion"].isNull())
+			eipSegmentsObject.descritpion = valueEipSegmentsEipSegment["Descritpion"].asString();
+		if(!valueEipSegmentsEipSegment["InstanceId"].isNull())
+			eipSegmentsObject.instanceId = valueEipSegmentsEipSegment["InstanceId"].asString();
 		if(!valueEipSegmentsEipSegment["IpCount"].isNull())
 			eipSegmentsObject.ipCount = valueEipSegmentsEipSegment["IpCount"].asString();
 		if(!valueEipSegmentsEipSegment["Name"].isNull())
 			eipSegmentsObject.name = valueEipSegmentsEipSegment["Name"].asString();
-		if(!valueEipSegmentsEipSegment["Descritpion"].isNull())
-			eipSegmentsObject.descritpion = valueEipSegmentsEipSegment["Descritpion"].asString();
-		if(!valueEipSegmentsEipSegment["CreationTime"].isNull())
-			eipSegmentsObject.creationTime = valueEipSegmentsEipSegment["CreationTime"].asString();
+		if(!valueEipSegmentsEipSegment["Segment"].isNull())
+			eipSegmentsObject.segment = valueEipSegmentsEipSegment["Segment"].asString();
+		if(!valueEipSegmentsEipSegment["RegionId"].isNull())
+			eipSegmentsObject.regionId = valueEipSegmentsEipSegment["RegionId"].asString();
 		eipSegments_.push_back(eipSegmentsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

@@ -43,31 +43,35 @@ void GetDhcpOptionsSetResult::parse(const std::string &payload)
 	for (auto valueAssociateVpcsAssociateVpc : allAssociateVpcsNode)
 	{
 		AssociateVpc associateVpcsObject;
-		if(!valueAssociateVpcsAssociateVpc["VpcId"].isNull())
-			associateVpcsObject.vpcId = valueAssociateVpcsAssociateVpc["VpcId"].asString();
 		if(!valueAssociateVpcsAssociateVpc["AssociateStatus"].isNull())
 			associateVpcsObject.associateStatus = valueAssociateVpcsAssociateVpc["AssociateStatus"].asString();
+		if(!valueAssociateVpcsAssociateVpc["VpcId"].isNull())
+			associateVpcsObject.vpcId = valueAssociateVpcsAssociateVpc["VpcId"].asString();
 		associateVpcs_.push_back(associateVpcsObject);
 	}
 	auto dhcpOptionsNode = value["DhcpOptions"];
+	if(!dhcpOptionsNode["TFTPServerName"].isNull())
+		dhcpOptions_.tFTPServerName = dhcpOptionsNode["TFTPServerName"].asString();
 	if(!dhcpOptionsNode["DomainNameServers"].isNull())
 		dhcpOptions_.domainNameServers = dhcpOptionsNode["DomainNameServers"].asString();
 	if(!dhcpOptionsNode["DomainName"].isNull())
 		dhcpOptions_.domainName = dhcpOptionsNode["DomainName"].asString();
-	if(!dhcpOptionsNode["TFTPServerName"].isNull())
-		dhcpOptions_.tFTPServerName = dhcpOptionsNode["TFTPServerName"].asString();
 	if(!dhcpOptionsNode["BootFileName"].isNull())
 		dhcpOptions_.bootFileName = dhcpOptionsNode["BootFileName"].asString();
-	if(!value["DhcpOptionsSetName"].isNull())
-		dhcpOptionsSetName_ = value["DhcpOptionsSetName"].asString();
+	if(!dhcpOptionsNode["LeaseTime"].isNull())
+		dhcpOptions_.leaseTime = dhcpOptionsNode["LeaseTime"].asString();
+	if(!dhcpOptionsNode["Ipv6LeaseTime"].isNull())
+		dhcpOptions_.ipv6LeaseTime = dhcpOptionsNode["Ipv6LeaseTime"].asString();
 	if(!value["DhcpOptionsSetDescription"].isNull())
 		dhcpOptionsSetDescription_ = value["DhcpOptionsSetDescription"].asString();
-	if(!value["DhcpOptionsSetId"].isNull())
-		dhcpOptionsSetId_ = value["DhcpOptionsSetId"].asString();
-	if(!value["OwnerId"].isNull())
-		ownerId_ = std::stol(value["OwnerId"].asString());
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
+	if(!value["DhcpOptionsSetId"].isNull())
+		dhcpOptionsSetId_ = value["DhcpOptionsSetId"].asString();
+	if(!value["DhcpOptionsSetName"].isNull())
+		dhcpOptionsSetName_ = value["DhcpOptionsSetName"].asString();
+	if(!value["OwnerId"].isNull())
+		ownerId_ = std::stol(value["OwnerId"].asString());
 
 }
 

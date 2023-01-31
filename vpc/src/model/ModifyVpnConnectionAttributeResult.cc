@@ -40,81 +40,81 @@ void ModifyVpnConnectionAttributeResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto ikeConfigNode = value["IkeConfig"];
-	if(!ikeConfigNode["Psk"].isNull())
-		ikeConfig_.psk = ikeConfigNode["Psk"].asString();
-	if(!ikeConfigNode["IkeVersion"].isNull())
-		ikeConfig_.ikeVersion = ikeConfigNode["IkeVersion"].asString();
-	if(!ikeConfigNode["IkeMode"].isNull())
-		ikeConfig_.ikeMode = ikeConfigNode["IkeMode"].asString();
-	if(!ikeConfigNode["IkeEncAlg"].isNull())
-		ikeConfig_.ikeEncAlg = ikeConfigNode["IkeEncAlg"].asString();
-	if(!ikeConfigNode["IkeAuthAlg"].isNull())
-		ikeConfig_.ikeAuthAlg = ikeConfigNode["IkeAuthAlg"].asString();
-	if(!ikeConfigNode["IkePfs"].isNull())
-		ikeConfig_.ikePfs = ikeConfigNode["IkePfs"].asString();
-	if(!ikeConfigNode["IkeLifetime"].isNull())
-		ikeConfig_.ikeLifetime = std::stol(ikeConfigNode["IkeLifetime"].asString());
-	if(!ikeConfigNode["LocalId"].isNull())
-		ikeConfig_.localId = ikeConfigNode["LocalId"].asString();
 	if(!ikeConfigNode["RemoteId"].isNull())
 		ikeConfig_.remoteId = ikeConfigNode["RemoteId"].asString();
+	if(!ikeConfigNode["IkeLifetime"].isNull())
+		ikeConfig_.ikeLifetime = std::stol(ikeConfigNode["IkeLifetime"].asString());
+	if(!ikeConfigNode["IkeEncAlg"].isNull())
+		ikeConfig_.ikeEncAlg = ikeConfigNode["IkeEncAlg"].asString();
+	if(!ikeConfigNode["LocalId"].isNull())
+		ikeConfig_.localId = ikeConfigNode["LocalId"].asString();
+	if(!ikeConfigNode["IkeMode"].isNull())
+		ikeConfig_.ikeMode = ikeConfigNode["IkeMode"].asString();
+	if(!ikeConfigNode["IkeVersion"].isNull())
+		ikeConfig_.ikeVersion = ikeConfigNode["IkeVersion"].asString();
+	if(!ikeConfigNode["IkePfs"].isNull())
+		ikeConfig_.ikePfs = ikeConfigNode["IkePfs"].asString();
+	if(!ikeConfigNode["Psk"].isNull())
+		ikeConfig_.psk = ikeConfigNode["Psk"].asString();
+	if(!ikeConfigNode["IkeAuthAlg"].isNull())
+		ikeConfig_.ikeAuthAlg = ikeConfigNode["IkeAuthAlg"].asString();
 	auto ipsecConfigNode = value["IpsecConfig"];
-	if(!ipsecConfigNode["IpsecEncAlg"].isNull())
-		ipsecConfig_.ipsecEncAlg = ipsecConfigNode["IpsecEncAlg"].asString();
 	if(!ipsecConfigNode["IpsecAuthAlg"].isNull())
 		ipsecConfig_.ipsecAuthAlg = ipsecConfigNode["IpsecAuthAlg"].asString();
-	if(!ipsecConfigNode["IpsecPfs"].isNull())
-		ipsecConfig_.ipsecPfs = ipsecConfigNode["IpsecPfs"].asString();
 	if(!ipsecConfigNode["IpsecLifetime"].isNull())
 		ipsecConfig_.ipsecLifetime = std::stol(ipsecConfigNode["IpsecLifetime"].asString());
+	if(!ipsecConfigNode["IpsecEncAlg"].isNull())
+		ipsecConfig_.ipsecEncAlg = ipsecConfigNode["IpsecEncAlg"].asString();
+	if(!ipsecConfigNode["IpsecPfs"].isNull())
+		ipsecConfig_.ipsecPfs = ipsecConfigNode["IpsecPfs"].asString();
 	auto vcoHealthCheckNode = value["VcoHealthCheck"];
-	if(!vcoHealthCheckNode["Enable"].isNull())
-		vcoHealthCheck_.enable = vcoHealthCheckNode["Enable"].asString();
-	if(!vcoHealthCheckNode["Sip"].isNull())
-		vcoHealthCheck_.sip = vcoHealthCheckNode["Sip"].asString();
 	if(!vcoHealthCheckNode["Dip"].isNull())
 		vcoHealthCheck_.dip = vcoHealthCheckNode["Dip"].asString();
 	if(!vcoHealthCheckNode["Interval"].isNull())
 		vcoHealthCheck_.interval = std::stoi(vcoHealthCheckNode["Interval"].asString());
 	if(!vcoHealthCheckNode["Retry"].isNull())
 		vcoHealthCheck_.retry = std::stoi(vcoHealthCheckNode["Retry"].asString());
+	if(!vcoHealthCheckNode["Sip"].isNull())
+		vcoHealthCheck_.sip = vcoHealthCheckNode["Sip"].asString();
+	if(!vcoHealthCheckNode["Enable"].isNull())
+		vcoHealthCheck_.enable = vcoHealthCheckNode["Enable"].asString();
 	auto vpnBgpConfigNode = value["VpnBgpConfig"];
-	if(!vpnBgpConfigNode["EnableBgp"].isNull())
-		vpnBgpConfig_.enableBgp = vpnBgpConfigNode["EnableBgp"].asString();
-	if(!vpnBgpConfigNode["TunnelCidr"].isNull())
-		vpnBgpConfig_.tunnelCidr = vpnBgpConfigNode["TunnelCidr"].asString();
-	if(!vpnBgpConfigNode["LocalBgpIp"].isNull())
-		vpnBgpConfig_.localBgpIp = vpnBgpConfigNode["LocalBgpIp"].asString();
-	if(!vpnBgpConfigNode["PeerBgpIp"].isNull())
-		vpnBgpConfig_.peerBgpIp = vpnBgpConfigNode["PeerBgpIp"].asString();
-	if(!vpnBgpConfigNode["LocalAsn"].isNull())
-		vpnBgpConfig_.localAsn = std::stoi(vpnBgpConfigNode["LocalAsn"].asString());
-	if(!vpnBgpConfigNode["PeerAsn"].isNull())
-		vpnBgpConfig_.peerAsn = std::stoi(vpnBgpConfigNode["PeerAsn"].asString());
 	if(!vpnBgpConfigNode["Status"].isNull())
 		vpnBgpConfig_.status = vpnBgpConfigNode["Status"].asString();
-	if(!value["VpnConnectionId"].isNull())
-		vpnConnectionId_ = value["VpnConnectionId"].asString();
-	if(!value["CustomerGatewayId"].isNull())
-		customerGatewayId_ = value["CustomerGatewayId"].asString();
-	if(!value["VpnGatewayId"].isNull())
-		vpnGatewayId_ = value["VpnGatewayId"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["LocalSubnet"].isNull())
-		localSubnet_ = value["LocalSubnet"].asString();
-	if(!value["RemoteSubnet"].isNull())
-		remoteSubnet_ = value["RemoteSubnet"].asString();
+	if(!vpnBgpConfigNode["PeerBgpIp"].isNull())
+		vpnBgpConfig_.peerBgpIp = vpnBgpConfigNode["PeerBgpIp"].asString();
+	if(!vpnBgpConfigNode["TunnelCidr"].isNull())
+		vpnBgpConfig_.tunnelCidr = vpnBgpConfigNode["TunnelCidr"].asString();
+	if(!vpnBgpConfigNode["EnableBgp"].isNull())
+		vpnBgpConfig_.enableBgp = vpnBgpConfigNode["EnableBgp"].asString();
+	if(!vpnBgpConfigNode["LocalBgpIp"].isNull())
+		vpnBgpConfig_.localBgpIp = vpnBgpConfigNode["LocalBgpIp"].asString();
+	if(!vpnBgpConfigNode["PeerAsn"].isNull())
+		vpnBgpConfig_.peerAsn = std::stoi(vpnBgpConfigNode["PeerAsn"].asString());
+	if(!vpnBgpConfigNode["LocalAsn"].isNull())
+		vpnBgpConfig_.localAsn = std::stoi(vpnBgpConfigNode["LocalAsn"].asString());
+	if(!value["EnableNatTraversal"].isNull())
+		enableNatTraversal_ = value["EnableNatTraversal"].asString() == "true";
 	if(!value["CreateTime"].isNull())
 		createTime_ = std::stol(value["CreateTime"].asString());
 	if(!value["EffectImmediately"].isNull())
 		effectImmediately_ = value["EffectImmediately"].asString() == "true";
+	if(!value["VpnGatewayId"].isNull())
+		vpnGatewayId_ = value["VpnGatewayId"].asString();
+	if(!value["LocalSubnet"].isNull())
+		localSubnet_ = value["LocalSubnet"].asString();
+	if(!value["VpnConnectionId"].isNull())
+		vpnConnectionId_ = value["VpnConnectionId"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["RemoteSubnet"].isNull())
+		remoteSubnet_ = value["RemoteSubnet"].asString();
+	if(!value["CustomerGatewayId"].isNull())
+		customerGatewayId_ = value["CustomerGatewayId"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 	if(!value["EnableDpd"].isNull())
 		enableDpd_ = value["EnableDpd"].asString() == "true";
-	if(!value["EnableNatTraversal"].isNull())
-		enableNatTraversal_ = value["EnableNatTraversal"].asString() == "true";
 
 }
 

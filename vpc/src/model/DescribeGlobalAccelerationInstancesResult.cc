@@ -43,44 +43,44 @@ void DescribeGlobalAccelerationInstancesResult::parse(const std::string &payload
 	for (auto valueGlobalAccelerationInstancesGlobalAccelerationInstance : allGlobalAccelerationInstancesNode)
 	{
 		GlobalAccelerationInstance globalAccelerationInstancesObject;
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["RegionId"].isNull())
-			globalAccelerationInstancesObject.regionId = valueGlobalAccelerationInstancesGlobalAccelerationInstance["RegionId"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["GlobalAccelerationInstanceId"].isNull())
-			globalAccelerationInstancesObject.globalAccelerationInstanceId = valueGlobalAccelerationInstancesGlobalAccelerationInstance["GlobalAccelerationInstanceId"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["IpAddress"].isNull())
-			globalAccelerationInstancesObject.ipAddress = valueGlobalAccelerationInstancesGlobalAccelerationInstance["IpAddress"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["Status"].isNull())
-			globalAccelerationInstancesObject.status = valueGlobalAccelerationInstancesGlobalAccelerationInstance["Status"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["Bandwidth"].isNull())
-			globalAccelerationInstancesObject.bandwidth = valueGlobalAccelerationInstancesGlobalAccelerationInstance["Bandwidth"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["InternetChargeType"].isNull())
-			globalAccelerationInstancesObject.internetChargeType = valueGlobalAccelerationInstancesGlobalAccelerationInstance["InternetChargeType"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ChargeType"].isNull())
-			globalAccelerationInstancesObject.chargeType = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ChargeType"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["BandwidthType"].isNull())
-			globalAccelerationInstancesObject.bandwidthType = valueGlobalAccelerationInstancesGlobalAccelerationInstance["BandwidthType"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["AccelerationLocation"].isNull())
-			globalAccelerationInstancesObject.accelerationLocation = valueGlobalAccelerationInstancesGlobalAccelerationInstance["AccelerationLocation"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ServiceLocation"].isNull())
-			globalAccelerationInstancesObject.serviceLocation = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ServiceLocation"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["Name"].isNull())
-			globalAccelerationInstancesObject.name = valueGlobalAccelerationInstancesGlobalAccelerationInstance["Name"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["Description"].isNull())
-			globalAccelerationInstancesObject.description = valueGlobalAccelerationInstancesGlobalAccelerationInstance["Description"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ExpiredTime"].isNull())
-			globalAccelerationInstancesObject.expiredTime = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ExpiredTime"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["CreationTime"].isNull())
-			globalAccelerationInstancesObject.creationTime = valueGlobalAccelerationInstancesGlobalAccelerationInstance["CreationTime"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["HasReservationData"].isNull())
-			globalAccelerationInstancesObject.hasReservationData = valueGlobalAccelerationInstancesGlobalAccelerationInstance["HasReservationData"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationBandwidth"].isNull())
-			globalAccelerationInstancesObject.reservationBandwidth = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationBandwidth"].asString();
-		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationInternetChargeType"].isNull())
-			globalAccelerationInstancesObject.reservationInternetChargeType = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationInternetChargeType"].asString();
 		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationActiveTime"].isNull())
 			globalAccelerationInstancesObject.reservationActiveTime = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationActiveTime"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["CreationTime"].isNull())
+			globalAccelerationInstancesObject.creationTime = valueGlobalAccelerationInstancesGlobalAccelerationInstance["CreationTime"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["Status"].isNull())
+			globalAccelerationInstancesObject.status = valueGlobalAccelerationInstancesGlobalAccelerationInstance["Status"].asString();
 		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationOrderType"].isNull())
 			globalAccelerationInstancesObject.reservationOrderType = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationOrderType"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["BandwidthType"].isNull())
+			globalAccelerationInstancesObject.bandwidthType = valueGlobalAccelerationInstancesGlobalAccelerationInstance["BandwidthType"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ChargeType"].isNull())
+			globalAccelerationInstancesObject.chargeType = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ChargeType"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["GlobalAccelerationInstanceId"].isNull())
+			globalAccelerationInstancesObject.globalAccelerationInstanceId = valueGlobalAccelerationInstancesGlobalAccelerationInstance["GlobalAccelerationInstanceId"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ServiceLocation"].isNull())
+			globalAccelerationInstancesObject.serviceLocation = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ServiceLocation"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationInternetChargeType"].isNull())
+			globalAccelerationInstancesObject.reservationInternetChargeType = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationInternetChargeType"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["RegionId"].isNull())
+			globalAccelerationInstancesObject.regionId = valueGlobalAccelerationInstancesGlobalAccelerationInstance["RegionId"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["AccelerationLocation"].isNull())
+			globalAccelerationInstancesObject.accelerationLocation = valueGlobalAccelerationInstancesGlobalAccelerationInstance["AccelerationLocation"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["IpAddress"].isNull())
+			globalAccelerationInstancesObject.ipAddress = valueGlobalAccelerationInstancesGlobalAccelerationInstance["IpAddress"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["Description"].isNull())
+			globalAccelerationInstancesObject.description = valueGlobalAccelerationInstancesGlobalAccelerationInstance["Description"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["Bandwidth"].isNull())
+			globalAccelerationInstancesObject.bandwidth = valueGlobalAccelerationInstancesGlobalAccelerationInstance["Bandwidth"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ExpiredTime"].isNull())
+			globalAccelerationInstancesObject.expiredTime = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ExpiredTime"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationBandwidth"].isNull())
+			globalAccelerationInstancesObject.reservationBandwidth = valueGlobalAccelerationInstancesGlobalAccelerationInstance["ReservationBandwidth"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["InternetChargeType"].isNull())
+			globalAccelerationInstancesObject.internetChargeType = valueGlobalAccelerationInstancesGlobalAccelerationInstance["InternetChargeType"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["Name"].isNull())
+			globalAccelerationInstancesObject.name = valueGlobalAccelerationInstancesGlobalAccelerationInstance["Name"].asString();
+		if(!valueGlobalAccelerationInstancesGlobalAccelerationInstance["HasReservationData"].isNull())
+			globalAccelerationInstancesObject.hasReservationData = valueGlobalAccelerationInstancesGlobalAccelerationInstance["HasReservationData"].asString();
 		auto allOperationLocksNode = valueGlobalAccelerationInstancesGlobalAccelerationInstance["OperationLocks"]["LockReason"];
 		for (auto valueGlobalAccelerationInstancesGlobalAccelerationInstanceOperationLocksLockReason : allOperationLocksNode)
 		{
@@ -93,34 +93,34 @@ void DescribeGlobalAccelerationInstancesResult::parse(const std::string &payload
 		for (auto valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer : allBackendServersNode)
 		{
 			GlobalAccelerationInstance::BackendServer backendServersObject;
-			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["RegionId"].isNull())
-				backendServersObject.regionId = valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["RegionId"].asString();
-			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["ServerId"].isNull())
-				backendServersObject.serverId = valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["ServerId"].asString();
 			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["ServerIpAddress"].isNull())
 				backendServersObject.serverIpAddress = valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["ServerIpAddress"].asString();
+			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["ServerId"].isNull())
+				backendServersObject.serverId = valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["ServerId"].asString();
 			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["ServerType"].isNull())
 				backendServersObject.serverType = valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["ServerType"].asString();
+			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["RegionId"].isNull())
+				backendServersObject.regionId = valueGlobalAccelerationInstancesGlobalAccelerationInstanceBackendServersBackendServer["RegionId"].asString();
 			globalAccelerationInstancesObject.backendServers.push_back(backendServersObject);
 		}
 		auto allPublicIpAddressesNode = valueGlobalAccelerationInstancesGlobalAccelerationInstance["PublicIpAddresses"]["PublicIpAddress"];
 		for (auto valueGlobalAccelerationInstancesGlobalAccelerationInstancePublicIpAddressesPublicIpAddress : allPublicIpAddressesNode)
 		{
 			GlobalAccelerationInstance::PublicIpAddress publicIpAddressesObject;
-			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstancePublicIpAddressesPublicIpAddress["AllocationId"].isNull())
-				publicIpAddressesObject.allocationId = valueGlobalAccelerationInstancesGlobalAccelerationInstancePublicIpAddressesPublicIpAddress["AllocationId"].asString();
 			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstancePublicIpAddressesPublicIpAddress["IpAddress"].isNull())
 				publicIpAddressesObject.ipAddress = valueGlobalAccelerationInstancesGlobalAccelerationInstancePublicIpAddressesPublicIpAddress["IpAddress"].asString();
+			if(!valueGlobalAccelerationInstancesGlobalAccelerationInstancePublicIpAddressesPublicIpAddress["AllocationId"].isNull())
+				publicIpAddressesObject.allocationId = valueGlobalAccelerationInstancesGlobalAccelerationInstancePublicIpAddressesPublicIpAddress["AllocationId"].asString();
 			globalAccelerationInstancesObject.publicIpAddresses.push_back(publicIpAddressesObject);
 		}
 		globalAccelerationInstances_.push_back(globalAccelerationInstancesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

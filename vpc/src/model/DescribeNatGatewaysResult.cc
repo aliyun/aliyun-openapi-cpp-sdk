@@ -43,69 +43,95 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 	for (auto valueNatGatewaysNatGateway : allNatGatewaysNode)
 	{
 		NatGateway natGatewaysObject;
-		if(!valueNatGatewaysNatGateway["NatGatewayId"].isNull())
-			natGatewaysObject.natGatewayId = valueNatGatewaysNatGateway["NatGatewayId"].asString();
-		if(!valueNatGatewaysNatGateway["RegionId"].isNull())
-			natGatewaysObject.regionId = valueNatGatewaysNatGateway["RegionId"].asString();
-		if(!valueNatGatewaysNatGateway["Name"].isNull())
-			natGatewaysObject.name = valueNatGatewaysNatGateway["Name"].asString();
-		if(!valueNatGatewaysNatGateway["Description"].isNull())
-			natGatewaysObject.description = valueNatGatewaysNatGateway["Description"].asString();
-		if(!valueNatGatewaysNatGateway["VpcId"].isNull())
-			natGatewaysObject.vpcId = valueNatGatewaysNatGateway["VpcId"].asString();
-		if(!valueNatGatewaysNatGateway["Spec"].isNull())
-			natGatewaysObject.spec = valueNatGatewaysNatGateway["Spec"].asString();
-		if(!valueNatGatewaysNatGateway["InstanceChargeType"].isNull())
-			natGatewaysObject.instanceChargeType = valueNatGatewaysNatGateway["InstanceChargeType"].asString();
-		if(!valueNatGatewaysNatGateway["ExpiredTime"].isNull())
-			natGatewaysObject.expiredTime = valueNatGatewaysNatGateway["ExpiredTime"].asString();
-		if(!valueNatGatewaysNatGateway["AutoPay"].isNull())
-			natGatewaysObject.autoPay = valueNatGatewaysNatGateway["AutoPay"].asString() == "true";
-		if(!valueNatGatewaysNatGateway["BusinessStatus"].isNull())
-			natGatewaysObject.businessStatus = valueNatGatewaysNatGateway["BusinessStatus"].asString();
-		if(!valueNatGatewaysNatGateway["CreationTime"].isNull())
-			natGatewaysObject.creationTime = valueNatGatewaysNatGateway["CreationTime"].asString();
 		if(!valueNatGatewaysNatGateway["Status"].isNull())
 			natGatewaysObject.status = valueNatGatewaysNatGateway["Status"].asString();
+		if(!valueNatGatewaysNatGateway["CreationTime"].isNull())
+			natGatewaysObject.creationTime = valueNatGatewaysNatGateway["CreationTime"].asString();
+		if(!valueNatGatewaysNatGateway["VpcId"].isNull())
+			natGatewaysObject.vpcId = valueNatGatewaysNatGateway["VpcId"].asString();
 		if(!valueNatGatewaysNatGateway["NatType"].isNull())
 			natGatewaysObject.natType = valueNatGatewaysNatGateway["NatType"].asString();
-		if(!valueNatGatewaysNatGateway["InternetChargeType"].isNull())
-			natGatewaysObject.internetChargeType = valueNatGatewaysNatGateway["InternetChargeType"].asString();
-		if(!valueNatGatewaysNatGateway["ResourceGroupId"].isNull())
-			natGatewaysObject.resourceGroupId = valueNatGatewaysNatGateway["ResourceGroupId"].asString();
+		if(!valueNatGatewaysNatGateway["AutoPay"].isNull())
+			natGatewaysObject.autoPay = valueNatGatewaysNatGateway["AutoPay"].asString() == "true";
+		if(!valueNatGatewaysNatGateway["Spec"].isNull())
+			natGatewaysObject.spec = valueNatGatewaysNatGateway["Spec"].asString();
 		if(!valueNatGatewaysNatGateway["DeletionProtection"].isNull())
 			natGatewaysObject.deletionProtection = valueNatGatewaysNatGateway["DeletionProtection"].asString() == "true";
+		if(!valueNatGatewaysNatGateway["NetworkType"].isNull())
+			natGatewaysObject.networkType = valueNatGatewaysNatGateway["NetworkType"].asString();
+		if(!valueNatGatewaysNatGateway["SecurityProtectionEnabled"].isNull())
+			natGatewaysObject.securityProtectionEnabled = valueNatGatewaysNatGateway["SecurityProtectionEnabled"].asString() == "true";
+		if(!valueNatGatewaysNatGateway["InstanceChargeType"].isNull())
+			natGatewaysObject.instanceChargeType = valueNatGatewaysNatGateway["InstanceChargeType"].asString();
+		if(!valueNatGatewaysNatGateway["RegionId"].isNull())
+			natGatewaysObject.regionId = valueNatGatewaysNatGateway["RegionId"].asString();
 		if(!valueNatGatewaysNatGateway["EcsMetricEnabled"].isNull())
 			natGatewaysObject.ecsMetricEnabled = valueNatGatewaysNatGateway["EcsMetricEnabled"].asString() == "true";
+		if(!valueNatGatewaysNatGateway["IcmpReplyEnabled"].isNull())
+			natGatewaysObject.icmpReplyEnabled = valueNatGatewaysNatGateway["IcmpReplyEnabled"].asString() == "true";
+		if(!valueNatGatewaysNatGateway["Description"].isNull())
+			natGatewaysObject.description = valueNatGatewaysNatGateway["Description"].asString();
+		if(!valueNatGatewaysNatGateway["ExpiredTime"].isNull())
+			natGatewaysObject.expiredTime = valueNatGatewaysNatGateway["ExpiredTime"].asString();
+		if(!valueNatGatewaysNatGateway["ResourceGroupId"].isNull())
+			natGatewaysObject.resourceGroupId = valueNatGatewaysNatGateway["ResourceGroupId"].asString();
+		if(!valueNatGatewaysNatGateway["NatGatewayId"].isNull())
+			natGatewaysObject.natGatewayId = valueNatGatewaysNatGateway["NatGatewayId"].asString();
+		if(!valueNatGatewaysNatGateway["InternetChargeType"].isNull())
+			natGatewaysObject.internetChargeType = valueNatGatewaysNatGateway["InternetChargeType"].asString();
+		if(!valueNatGatewaysNatGateway["BusinessStatus"].isNull())
+			natGatewaysObject.businessStatus = valueNatGatewaysNatGateway["BusinessStatus"].asString();
+		if(!valueNatGatewaysNatGateway["Name"].isNull())
+			natGatewaysObject.name = valueNatGatewaysNatGateway["Name"].asString();
+		if(!valueNatGatewaysNatGateway["PrivateLinkEnabled"].isNull())
+			natGatewaysObject.privateLinkEnabled = valueNatGatewaysNatGateway["PrivateLinkEnabled"].asString() == "true";
+		if(!valueNatGatewaysNatGateway["PrivateLinkMode"].isNull())
+			natGatewaysObject.privateLinkMode = valueNatGatewaysNatGateway["PrivateLinkMode"].asString();
+		if(!valueNatGatewaysNatGateway["EipBindMode"].isNull())
+			natGatewaysObject.eipBindMode = valueNatGatewaysNatGateway["EipBindMode"].asString();
 		auto allIpListsNode = valueNatGatewaysNatGateway["IpLists"]["IpList"];
 		for (auto valueNatGatewaysNatGatewayIpListsIpList : allIpListsNode)
 		{
 			NatGateway::IpList ipListsObject;
-			if(!valueNatGatewaysNatGatewayIpListsIpList["AllocationId"].isNull())
-				ipListsObject.allocationId = valueNatGatewaysNatGatewayIpListsIpList["AllocationId"].asString();
-			if(!valueNatGatewaysNatGatewayIpListsIpList["IpAddress"].isNull())
-				ipListsObject.ipAddress = valueNatGatewaysNatGatewayIpListsIpList["IpAddress"].asString();
 			if(!valueNatGatewaysNatGatewayIpListsIpList["UsingStatus"].isNull())
 				ipListsObject.usingStatus = valueNatGatewaysNatGatewayIpListsIpList["UsingStatus"].asString();
-			if(!valueNatGatewaysNatGatewayIpListsIpList["ApAccessEnabled"].isNull())
-				ipListsObject.apAccessEnabled = valueNatGatewaysNatGatewayIpListsIpList["ApAccessEnabled"].asString() == "true";
+			if(!valueNatGatewaysNatGatewayIpListsIpList["IpAddress"].isNull())
+				ipListsObject.ipAddress = valueNatGatewaysNatGatewayIpListsIpList["IpAddress"].asString();
 			if(!valueNatGatewaysNatGatewayIpListsIpList["SnatEntryEnabled"].isNull())
 				ipListsObject.snatEntryEnabled = valueNatGatewaysNatGatewayIpListsIpList["SnatEntryEnabled"].asString() == "true";
+			if(!valueNatGatewaysNatGatewayIpListsIpList["AllocationId"].isNull())
+				ipListsObject.allocationId = valueNatGatewaysNatGatewayIpListsIpList["AllocationId"].asString();
+			if(!valueNatGatewaysNatGatewayIpListsIpList["ApAccessEnabled"].isNull())
+				ipListsObject.apAccessEnabled = valueNatGatewaysNatGatewayIpListsIpList["ApAccessEnabled"].asString() == "true";
 			if(!valueNatGatewaysNatGatewayIpListsIpList["PrivateIpAddress"].isNull())
 				ipListsObject.privateIpAddress = valueNatGatewaysNatGatewayIpListsIpList["PrivateIpAddress"].asString();
 			natGatewaysObject.ipLists.push_back(ipListsObject);
 		}
+		auto allTagsNode = valueNatGatewaysNatGateway["Tags"]["Tag"];
+		for (auto valueNatGatewaysNatGatewayTagsTag : allTagsNode)
+		{
+			NatGateway::Tag tagsObject;
+			if(!valueNatGatewaysNatGatewayTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueNatGatewaysNatGatewayTagsTag["TagKey"].asString();
+			if(!valueNatGatewaysNatGatewayTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueNatGatewaysNatGatewayTagsTag["TagValue"].asString();
+			natGatewaysObject.tags.push_back(tagsObject);
+		}
 		auto natGatewayPrivateInfoNode = value["NatGatewayPrivateInfo"];
-		if(!natGatewayPrivateInfoNode["EniInstanceId"].isNull())
-			natGatewaysObject.natGatewayPrivateInfo.eniInstanceId = natGatewayPrivateInfoNode["EniInstanceId"].asString();
-		if(!natGatewayPrivateInfoNode["PrivateIpAddress"].isNull())
-			natGatewaysObject.natGatewayPrivateInfo.privateIpAddress = natGatewayPrivateInfoNode["PrivateIpAddress"].asString();
 		if(!natGatewayPrivateInfoNode["VswitchId"].isNull())
 			natGatewaysObject.natGatewayPrivateInfo.vswitchId = natGatewayPrivateInfoNode["VswitchId"].asString();
-		if(!natGatewayPrivateInfoNode["IzNo"].isNull())
-			natGatewaysObject.natGatewayPrivateInfo.izNo = natGatewayPrivateInfoNode["IzNo"].asString();
+		if(!natGatewayPrivateInfoNode["EniInstanceId"].isNull())
+			natGatewaysObject.natGatewayPrivateInfo.eniInstanceId = natGatewayPrivateInfoNode["EniInstanceId"].asString();
 		if(!natGatewayPrivateInfoNode["MaxBandwidth"].isNull())
 			natGatewaysObject.natGatewayPrivateInfo.maxBandwidth = std::stoi(natGatewayPrivateInfoNode["MaxBandwidth"].asString());
+		if(!natGatewayPrivateInfoNode["MaxSessionQuota"].isNull())
+			natGatewaysObject.natGatewayPrivateInfo.maxSessionQuota = std::stoi(natGatewayPrivateInfoNode["MaxSessionQuota"].asString());
+		if(!natGatewayPrivateInfoNode["MaxSessionEstablishRate"].isNull())
+			natGatewaysObject.natGatewayPrivateInfo.maxSessionEstablishRate = std::stoi(natGatewayPrivateInfoNode["MaxSessionEstablishRate"].asString());
+		if(!natGatewayPrivateInfoNode["PrivateIpAddress"].isNull())
+			natGatewaysObject.natGatewayPrivateInfo.privateIpAddress = natGatewayPrivateInfoNode["PrivateIpAddress"].asString();
+		if(!natGatewayPrivateInfoNode["IzNo"].isNull())
+			natGatewaysObject.natGatewayPrivateInfo.izNo = natGatewayPrivateInfoNode["IzNo"].asString();
 		if(!natGatewayPrivateInfoNode["EniType"].isNull())
 			natGatewaysObject.natGatewayPrivateInfo.eniType = natGatewayPrivateInfoNode["EniType"].asString();
 		auto allForwardTableIds = value["ForwardTableIds"]["ForwardTableId"];
@@ -114,17 +140,20 @@ void DescribeNatGatewaysResult::parse(const std::string &payload)
 		auto allSnatTableIds = value["SnatTableIds"]["SnatTableId"];
 		for (auto value : allSnatTableIds)
 			natGatewaysObject.snatTableIds.push_back(value.asString());
+		auto allFullNatTableIds = value["FullNatTableIds"]["FullNatTableId"];
+		for (auto value : allFullNatTableIds)
+			natGatewaysObject.fullNatTableIds.push_back(value.asString());
 		auto allBandwidthPackageIds = value["BandwidthPackageIds"]["BandwidthPackageId"];
 		for (auto value : allBandwidthPackageIds)
 			natGatewaysObject.bandwidthPackageIds.push_back(value.asString());
 		natGateways_.push_back(natGatewaysObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

@@ -43,48 +43,48 @@ void DescribeSslVpnServersResult::parse(const std::string &payload)
 	for (auto valueSslVpnServersSslVpnServer : allSslVpnServersNode)
 	{
 		SslVpnServer sslVpnServersObject;
-		if(!valueSslVpnServersSslVpnServer["RegionId"].isNull())
-			sslVpnServersObject.regionId = valueSslVpnServersSslVpnServer["RegionId"].asString();
-		if(!valueSslVpnServersSslVpnServer["SslVpnServerId"].isNull())
-			sslVpnServersObject.sslVpnServerId = valueSslVpnServersSslVpnServer["SslVpnServerId"].asString();
-		if(!valueSslVpnServersSslVpnServer["VpnGatewayId"].isNull())
-			sslVpnServersObject.vpnGatewayId = valueSslVpnServersSslVpnServer["VpnGatewayId"].asString();
-		if(!valueSslVpnServersSslVpnServer["Name"].isNull())
-			sslVpnServersObject.name = valueSslVpnServersSslVpnServer["Name"].asString();
-		if(!valueSslVpnServersSslVpnServer["LocalSubnet"].isNull())
-			sslVpnServersObject.localSubnet = valueSslVpnServersSslVpnServer["LocalSubnet"].asString();
-		if(!valueSslVpnServersSslVpnServer["ClientIpPool"].isNull())
-			sslVpnServersObject.clientIpPool = valueSslVpnServersSslVpnServer["ClientIpPool"].asString();
-		if(!valueSslVpnServersSslVpnServer["CreateTime"].isNull())
-			sslVpnServersObject.createTime = std::stol(valueSslVpnServersSslVpnServer["CreateTime"].asString());
-		if(!valueSslVpnServersSslVpnServer["Cipher"].isNull())
-			sslVpnServersObject.cipher = valueSslVpnServersSslVpnServer["Cipher"].asString();
-		if(!valueSslVpnServersSslVpnServer["Proto"].isNull())
-			sslVpnServersObject.proto = valueSslVpnServersSslVpnServer["Proto"].asString();
-		if(!valueSslVpnServersSslVpnServer["Port"].isNull())
-			sslVpnServersObject.port = std::stoi(valueSslVpnServersSslVpnServer["Port"].asString());
-		if(!valueSslVpnServersSslVpnServer["Compress"].isNull())
-			sslVpnServersObject.compress = valueSslVpnServersSslVpnServer["Compress"].asString() == "true";
-		if(!valueSslVpnServersSslVpnServer["Connections"].isNull())
-			sslVpnServersObject.connections = std::stoi(valueSslVpnServersSslVpnServer["Connections"].asString());
-		if(!valueSslVpnServersSslVpnServer["MaxConnections"].isNull())
-			sslVpnServersObject.maxConnections = std::stoi(valueSslVpnServersSslVpnServer["MaxConnections"].asString());
 		if(!valueSslVpnServersSslVpnServer["InternetIp"].isNull())
 			sslVpnServersObject.internetIp = valueSslVpnServersSslVpnServer["InternetIp"].asString();
-		if(!valueSslVpnServersSslVpnServer["EnableMultiFactorAuth"].isNull())
-			sslVpnServersObject.enableMultiFactorAuth = valueSslVpnServersSslVpnServer["EnableMultiFactorAuth"].asString() == "true";
 		if(!valueSslVpnServersSslVpnServer["IDaaSInstanceId"].isNull())
 			sslVpnServersObject.iDaaSInstanceId = valueSslVpnServersSslVpnServer["IDaaSInstanceId"].asString();
+		if(!valueSslVpnServersSslVpnServer["CreateTime"].isNull())
+			sslVpnServersObject.createTime = std::stol(valueSslVpnServersSslVpnServer["CreateTime"].asString());
+		if(!valueSslVpnServersSslVpnServer["VpnGatewayId"].isNull())
+			sslVpnServersObject.vpnGatewayId = valueSslVpnServersSslVpnServer["VpnGatewayId"].asString();
 		if(!valueSslVpnServersSslVpnServer["IDaaSRegionId"].isNull())
 			sslVpnServersObject.iDaaSRegionId = valueSslVpnServersSslVpnServer["IDaaSRegionId"].asString();
+		if(!valueSslVpnServersSslVpnServer["Compress"].isNull())
+			sslVpnServersObject.compress = valueSslVpnServersSslVpnServer["Compress"].asString() == "true";
+		if(!valueSslVpnServersSslVpnServer["Port"].isNull())
+			sslVpnServersObject.port = std::stoi(valueSslVpnServersSslVpnServer["Port"].asString());
+		if(!valueSslVpnServersSslVpnServer["LocalSubnet"].isNull())
+			sslVpnServersObject.localSubnet = valueSslVpnServersSslVpnServer["LocalSubnet"].asString();
+		if(!valueSslVpnServersSslVpnServer["RegionId"].isNull())
+			sslVpnServersObject.regionId = valueSslVpnServersSslVpnServer["RegionId"].asString();
+		if(!valueSslVpnServersSslVpnServer["Cipher"].isNull())
+			sslVpnServersObject.cipher = valueSslVpnServersSslVpnServer["Cipher"].asString();
+		if(!valueSslVpnServersSslVpnServer["Connections"].isNull())
+			sslVpnServersObject.connections = std::stoi(valueSslVpnServersSslVpnServer["Connections"].asString());
+		if(!valueSslVpnServersSslVpnServer["SslVpnServerId"].isNull())
+			sslVpnServersObject.sslVpnServerId = valueSslVpnServersSslVpnServer["SslVpnServerId"].asString();
+		if(!valueSslVpnServersSslVpnServer["MaxConnections"].isNull())
+			sslVpnServersObject.maxConnections = std::stoi(valueSslVpnServersSslVpnServer["MaxConnections"].asString());
+		if(!valueSslVpnServersSslVpnServer["Name"].isNull())
+			sslVpnServersObject.name = valueSslVpnServersSslVpnServer["Name"].asString();
+		if(!valueSslVpnServersSslVpnServer["EnableMultiFactorAuth"].isNull())
+			sslVpnServersObject.enableMultiFactorAuth = valueSslVpnServersSslVpnServer["EnableMultiFactorAuth"].asString() == "true";
+		if(!valueSslVpnServersSslVpnServer["ClientIpPool"].isNull())
+			sslVpnServersObject.clientIpPool = valueSslVpnServersSslVpnServer["ClientIpPool"].asString();
+		if(!valueSslVpnServersSslVpnServer["Proto"].isNull())
+			sslVpnServersObject.proto = valueSslVpnServersSslVpnServer["Proto"].asString();
 		sslVpnServers_.push_back(sslVpnServersObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

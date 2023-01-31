@@ -41,10 +41,10 @@ void CreateIPv6TranslatorResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Ipv6TranslatorId"].isNull())
 		ipv6TranslatorId_ = value["Ipv6TranslatorId"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
 	if(!value["Spec"].isNull())
 		spec_ = value["Spec"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 	if(!value["OrderId"].isNull())
 		orderId_ = std::stol(value["OrderId"].asString());
 

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,74 +17,71 @@
 #ifndef ALIBABACLOUD_VPC_MODEL_DESCRIBEFORWARDTABLEENTRIESREQUEST_H_
 #define ALIBABACLOUD_VPC_MODEL_DESCRIBEFORWARDTABLEENTRIESREQUEST_H_
 
+#include <alibabacloud/vpc/VpcExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/vpc/VpcExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Vpc
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_VPC_EXPORT DescribeForwardTableEntriesRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Vpc {
+namespace Model {
+class ALIBABACLOUD_VPC_EXPORT DescribeForwardTableEntriesRequest : public RpcServiceRequest {
+public:
+	DescribeForwardTableEntriesRequest();
+	~DescribeForwardTableEntriesRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
+	std::string getForwardTableId() const;
+	void setForwardTableId(const std::string &forwardTableId);
+	std::string getInternalIp() const;
+	void setInternalIp(const std::string &internalIp);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getForwardEntryId() const;
+	void setForwardEntryId(const std::string &forwardEntryId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getNatGatewayId() const;
+	void setNatGatewayId(const std::string &natGatewayId);
+	std::string getExternalIp() const;
+	void setExternalIp(const std::string &externalIp);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getIpProtocol() const;
+	void setIpProtocol(const std::string &ipProtocol);
+	std::string getForwardEntryName() const;
+	void setForwardEntryName(const std::string &forwardEntryName);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getInternalPort() const;
+	void setInternalPort(const std::string &internalPort);
+	std::string getExternalPort() const;
+	void setExternalPort(const std::string &externalPort);
 
-			public:
-				DescribeForwardTableEntriesRequest();
-				~DescribeForwardTableEntriesRequest();
-
-				long getResourceOwnerId()const;
-				void setResourceOwnerId(long resourceOwnerId);
-				std::string getForwardTableId()const;
-				void setForwardTableId(const std::string& forwardTableId);
-				std::string getInternalIp()const;
-				void setInternalIp(const std::string& internalIp);
-				int getPageNumber()const;
-				void setPageNumber(int pageNumber);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getForwardEntryId()const;
-				void setForwardEntryId(const std::string& forwardEntryId);
-				int getPageSize()const;
-				void setPageSize(int pageSize);
-				std::string getExternalIp()const;
-				void setExternalIp(const std::string& externalIp);
-				std::string getResourceOwnerAccount()const;
-				void setResourceOwnerAccount(const std::string& resourceOwnerAccount);
-				std::string getIpProtocol()const;
-				void setIpProtocol(const std::string& ipProtocol);
-				std::string getForwardEntryName()const;
-				void setForwardEntryName(const std::string& forwardEntryName);
-				std::string getOwnerAccount()const;
-				void setOwnerAccount(const std::string& ownerAccount);
-				long getOwnerId()const;
-				void setOwnerId(long ownerId);
-				std::string getInternalPort()const;
-				void setInternalPort(const std::string& internalPort);
-				std::string getExternalPort()const;
-				void setExternalPort(const std::string& externalPort);
-
-            private:
-				long resourceOwnerId_;
-				std::string forwardTableId_;
-				std::string internalIp_;
-				int pageNumber_;
-				std::string regionId_;
-				std::string forwardEntryId_;
-				int pageSize_;
-				std::string externalIp_;
-				std::string resourceOwnerAccount_;
-				std::string ipProtocol_;
-				std::string forwardEntryName_;
-				std::string ownerAccount_;
-				long ownerId_;
-				std::string internalPort_;
-				std::string externalPort_;
-
-			};
-		}
-	}
-}
+private:
+	long resourceOwnerId_;
+	std::string forwardTableId_;
+	std::string internalIp_;
+	int pageNumber_;
+	std::string regionId_;
+	std::string forwardEntryId_;
+	int pageSize_;
+	std::string natGatewayId_;
+	std::string externalIp_;
+	std::string resourceOwnerAccount_;
+	std::string ipProtocol_;
+	std::string forwardEntryName_;
+	std::string ownerAccount_;
+	long ownerId_;
+	std::string internalPort_;
+	std::string externalPort_;
+};
+} // namespace Model
+} // namespace Vpc
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_VPC_MODEL_DESCRIBEFORWARDTABLEENTRIESREQUEST_H_

@@ -42,8 +42,8 @@ namespace AlibabaCloud
 							std::string regionId;
 							std::string instanceType;
 						};
-						std::string nextHopType;
 						std::string nextHopRegionId;
+						std::string nextHopType;
 						std::string nextHopId;
 						int enabled;
 						NextHopRelatedInfo nextHopRelatedInfo;
@@ -52,11 +52,13 @@ namespace AlibabaCloud
 					std::string status;
 					std::string routeEntryId;
 					std::string type;
-					std::string routeTableId;
 					std::string description;
+					std::string routeTableId;
 					std::string ipVersion;
 					std::vector<RouteEntry::NextHop> nextHops;
 					std::string routeEntryName;
+					std::string serviceType;
+					std::string gmtModified;
 					std::string destinationCidrBlock;
 				};
 

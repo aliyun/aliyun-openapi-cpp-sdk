@@ -43,10 +43,10 @@ void DescribeVSwitchAttributesResult::parse(const std::string &payload)
 	for (auto valueCloudResourcesCloudResourceSetType : allCloudResourcesNode)
 	{
 		CloudResourceSetType cloudResourcesObject;
-		if(!valueCloudResourcesCloudResourceSetType["ResourceType"].isNull())
-			cloudResourcesObject.resourceType = valueCloudResourcesCloudResourceSetType["ResourceType"].asString();
 		if(!valueCloudResourcesCloudResourceSetType["ResourceCount"].isNull())
 			cloudResourcesObject.resourceCount = std::stoi(valueCloudResourcesCloudResourceSetType["ResourceCount"].asString());
+		if(!valueCloudResourcesCloudResourceSetType["ResourceType"].isNull())
+			cloudResourcesObject.resourceType = valueCloudResourcesCloudResourceSetType["ResourceType"].asString();
 		cloudResources_.push_back(cloudResourcesObject);
 	}
 	auto routeTableNode = value["RouteTable"];
@@ -54,34 +54,34 @@ void DescribeVSwitchAttributesResult::parse(const std::string &payload)
 		routeTable_.routeTableId = routeTableNode["RouteTableId"].asString();
 	if(!routeTableNode["RouteTableType"].isNull())
 		routeTable_.routeTableType = routeTableNode["RouteTableType"].asString();
-	if(!value["VSwitchId"].isNull())
-		vSwitchId_ = value["VSwitchId"].asString();
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["CidrBlock"].isNull())
-		cidrBlock_ = value["CidrBlock"].asString();
-	if(!value["Ipv6CidrBlock"].isNull())
-		ipv6CidrBlock_ = value["Ipv6CidrBlock"].asString();
-	if(!value["ZoneId"].isNull())
-		zoneId_ = value["ZoneId"].asString();
-	if(!value["AvailableIpAddressCount"].isNull())
-		availableIpAddressCount_ = std::stol(value["AvailableIpAddressCount"].asString());
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["VSwitchName"].isNull())
-		vSwitchName_ = value["VSwitchName"].asString();
 	if(!value["CreationTime"].isNull())
 		creationTime_ = value["CreationTime"].asString();
 	if(!value["IsDefault"].isNull())
 		isDefault_ = value["IsDefault"].asString() == "true";
-	if(!value["ResourceGroupId"].isNull())
-		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["AvailableIpAddressCount"].isNull())
+		availableIpAddressCount_ = std::stol(value["AvailableIpAddressCount"].asString());
 	if(!value["NetworkAclId"].isNull())
 		networkAclId_ = value["NetworkAclId"].asString();
 	if(!value["OwnerId"].isNull())
 		ownerId_ = std::stol(value["OwnerId"].asString());
+	if(!value["VSwitchId"].isNull())
+		vSwitchId_ = value["VSwitchId"].asString();
+	if(!value["CidrBlock"].isNull())
+		cidrBlock_ = value["CidrBlock"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["ZoneId"].isNull())
+		zoneId_ = value["ZoneId"].asString();
+	if(!value["Ipv6CidrBlock"].isNull())
+		ipv6CidrBlock_ = value["Ipv6CidrBlock"].asString();
+	if(!value["VSwitchName"].isNull())
+		vSwitchName_ = value["VSwitchName"].asString();
 	if(!value["ShareType"].isNull())
 		shareType_ = value["ShareType"].asString();
 
@@ -102,9 +102,9 @@ std::string DescribeVSwitchAttributesResult::getDescription()const
 	return description_;
 }
 
-std::string DescribeVSwitchAttributesResult::getZoneId()const
+std::string DescribeVSwitchAttributesResult::getNetworkAclId()const
 {
-	return zoneId_;
+	return networkAclId_;
 }
 
 std::string DescribeVSwitchAttributesResult::getResourceGroupId()const
@@ -112,19 +112,19 @@ std::string DescribeVSwitchAttributesResult::getResourceGroupId()const
 	return resourceGroupId_;
 }
 
-std::string DescribeVSwitchAttributesResult::getNetworkAclId()const
+std::string DescribeVSwitchAttributesResult::getZoneId()const
 {
-	return networkAclId_;
-}
-
-std::string DescribeVSwitchAttributesResult::getVSwitchId()const
-{
-	return vSwitchId_;
+	return zoneId_;
 }
 
 long DescribeVSwitchAttributesResult::getAvailableIpAddressCount()const
 {
 	return availableIpAddressCount_;
+}
+
+std::string DescribeVSwitchAttributesResult::getVSwitchId()const
+{
+	return vSwitchId_;
 }
 
 std::string DescribeVSwitchAttributesResult::getCidrBlock()const

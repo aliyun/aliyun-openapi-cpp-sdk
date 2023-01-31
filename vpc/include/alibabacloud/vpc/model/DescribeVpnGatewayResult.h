@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string reservationOrderType;
-					std::string reservationEndTime;
 					std::string reservationSsl;
+					std::string reservationEndTime;
 					int reservationMaxConnections;
 					std::string reservationSpec;
 					std::string reservationIpsec;
@@ -59,8 +59,8 @@ namespace AlibabaCloud
 				std::string getDescription()const;
 				bool getEnableBgp()const;
 				long getEndTime()const;
-				std::string getVSwitchId()const;
 				long getCreateTime()const;
+				std::string getVSwitchId()const;
 				bool getAutoPropagate()const;
 				std::string getBusinessStatus()const;
 				std::string getName()const;
@@ -68,6 +68,7 @@ namespace AlibabaCloud
 				std::string getInternetIp()const;
 				std::string getVpnGatewayId()const;
 				std::string getChargeType()const;
+				std::string getNetworkType()const;
 				std::string getTag()const;
 				std::string getSpec()const;
 				long getSslMaxConnections()const;
@@ -84,8 +85,8 @@ namespace AlibabaCloud
 				std::string description_;
 				bool enableBgp_;
 				long endTime_;
-				std::string vSwitchId_;
 				long createTime_;
+				std::string vSwitchId_;
 				bool autoPropagate_;
 				std::string businessStatus_;
 				std::string name_;
@@ -93,6 +94,7 @@ namespace AlibabaCloud
 				std::string internetIp_;
 				std::string vpnGatewayId_;
 				std::string chargeType_;
+				std::string networkType_;
 				std::string tag_;
 				std::string spec_;
 				long sslMaxConnections_;

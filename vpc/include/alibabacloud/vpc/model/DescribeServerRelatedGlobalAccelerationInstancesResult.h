@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct GlobalAccelerationInstance
 				{
 					std::string ipAddress;
-					std::string regionId;
 					std::string globalAccelerationInstanceId;
+					std::string regionId;
 					std::string serverIpAddress;
 				};
 

@@ -41,11 +41,18 @@ void CreateRouteTableResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["RouteTableId"].isNull())
 		routeTableId_ = value["RouteTableId"].asString();
+	if(!value["AssociateType"].isNull())
+		associateType_ = value["AssociateType"].asString();
 
 }
 
 std::string CreateRouteTableResult::getRouteTableId()const
 {
 	return routeTableId_;
+}
+
+std::string CreateRouteTableResult::getAssociateType()const
+{
+	return associateType_;
 }
 

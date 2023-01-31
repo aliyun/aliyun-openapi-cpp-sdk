@@ -38,7 +38,7 @@ namespace AlibabaCloud
 				explicit UpdateVirtualBorderBandwidthResult(const std::string &payload);
 				~UpdateVirtualBorderBandwidthResult();
 				std::string getMessage()const;
-				std::string getHttpStatusCode()const;
+				int getHttpStatusCode()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -46,7 +46,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string httpStatusCode_;
+				int httpStatusCode_;
 				std::string code_;
 				bool success_;
 

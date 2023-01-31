@@ -43,28 +43,30 @@ void DescribeVpnPbrRouteEntriesResult::parse(const std::string &payload)
 	for (auto valueVpnPbrRouteEntriesVpnPbrRouteEntry : allVpnPbrRouteEntriesNode)
 	{
 		VpnPbrRouteEntry vpnPbrRouteEntriesObject;
-		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["VpnInstanceId"].isNull())
-			vpnPbrRouteEntriesObject.vpnInstanceId = valueVpnPbrRouteEntriesVpnPbrRouteEntry["VpnInstanceId"].asString();
-		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["RouteSource"].isNull())
-			vpnPbrRouteEntriesObject.routeSource = valueVpnPbrRouteEntriesVpnPbrRouteEntry["RouteSource"].asString();
-		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["RouteDest"].isNull())
-			vpnPbrRouteEntriesObject.routeDest = valueVpnPbrRouteEntriesVpnPbrRouteEntry["RouteDest"].asString();
 		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["NextHop"].isNull())
 			vpnPbrRouteEntriesObject.nextHop = valueVpnPbrRouteEntriesVpnPbrRouteEntry["NextHop"].asString();
 		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["Weight"].isNull())
 			vpnPbrRouteEntriesObject.weight = std::stoi(valueVpnPbrRouteEntriesVpnPbrRouteEntry["Weight"].asString());
-		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["CreateTime"].isNull())
-			vpnPbrRouteEntriesObject.createTime = std::stol(valueVpnPbrRouteEntriesVpnPbrRouteEntry["CreateTime"].asString());
+		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["RouteDest"].isNull())
+			vpnPbrRouteEntriesObject.routeDest = valueVpnPbrRouteEntriesVpnPbrRouteEntry["RouteDest"].asString();
 		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["State"].isNull())
 			vpnPbrRouteEntriesObject.state = valueVpnPbrRouteEntriesVpnPbrRouteEntry["State"].asString();
+		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["CreateTime"].isNull())
+			vpnPbrRouteEntriesObject.createTime = std::stol(valueVpnPbrRouteEntriesVpnPbrRouteEntry["CreateTime"].asString());
+		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["VpnInstanceId"].isNull())
+			vpnPbrRouteEntriesObject.vpnInstanceId = valueVpnPbrRouteEntriesVpnPbrRouteEntry["VpnInstanceId"].asString();
+		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["RouteSource"].isNull())
+			vpnPbrRouteEntriesObject.routeSource = valueVpnPbrRouteEntriesVpnPbrRouteEntry["RouteSource"].asString();
+		if(!valueVpnPbrRouteEntriesVpnPbrRouteEntry["Priority"].isNull())
+			vpnPbrRouteEntriesObject.priority = std::stoi(valueVpnPbrRouteEntriesVpnPbrRouteEntry["Priority"].asString());
 		vpnPbrRouteEntries_.push_back(vpnPbrRouteEntriesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

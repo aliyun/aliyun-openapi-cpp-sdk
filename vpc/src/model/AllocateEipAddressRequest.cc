@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,210 +18,189 @@
 
 using AlibabaCloud::Vpc::Model::AllocateEipAddressRequest;
 
-AllocateEipAddressRequest::AllocateEipAddressRequest() :
-	RpcServiceRequest("vpc", "2016-04-28", "AllocateEipAddress")
-{
-	setMethod(HttpRequest::Method::Post);
+AllocateEipAddressRequest::AllocateEipAddressRequest()
+    : RpcServiceRequest("vpc", "2016-04-28", "AllocateEipAddress") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-AllocateEipAddressRequest::~AllocateEipAddressRequest()
-{}
+AllocateEipAddressRequest::~AllocateEipAddressRequest() {}
 
-long AllocateEipAddressRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long AllocateEipAddressRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void AllocateEipAddressRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void AllocateEipAddressRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string AllocateEipAddressRequest::getClientToken()const
-{
-	return clientToken_;
+std::string AllocateEipAddressRequest::getPublicIpAddressPoolId() const {
+  return publicIpAddressPoolId_;
 }
 
-void AllocateEipAddressRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void AllocateEipAddressRequest::setPublicIpAddressPoolId(const std::string &publicIpAddressPoolId) {
+  publicIpAddressPoolId_ = publicIpAddressPoolId;
+  setParameter(std::string("PublicIpAddressPoolId"), publicIpAddressPoolId);
 }
 
-std::string AllocateEipAddressRequest::getISP()const
-{
-	return iSP_;
+std::string AllocateEipAddressRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void AllocateEipAddressRequest::setISP(const std::string& iSP)
-{
-	iSP_ = iSP;
-	setParameter("ISP", iSP);
+void AllocateEipAddressRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string AllocateEipAddressRequest::getDescription()const
-{
-	return description_;
+std::string AllocateEipAddressRequest::getISP() const {
+  return iSP_;
 }
 
-void AllocateEipAddressRequest::setDescription(const std::string& description)
-{
-	description_ = description;
-	setParameter("Description", description);
+void AllocateEipAddressRequest::setISP(const std::string &iSP) {
+  iSP_ = iSP;
+  setParameter(std::string("ISP"), iSP);
 }
 
-std::string AllocateEipAddressRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
+std::string AllocateEipAddressRequest::getDescription() const {
+  return description_;
 }
 
-void AllocateEipAddressRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+void AllocateEipAddressRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
-std::string AllocateEipAddressRequest::getRegionId()const
-{
-	return regionId_;
+std::string AllocateEipAddressRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void AllocateEipAddressRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void AllocateEipAddressRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string AllocateEipAddressRequest::getNetmode()const
-{
-	return netmode_;
+std::string AllocateEipAddressRequest::getRegionId() const {
+  return regionId_;
 }
 
-void AllocateEipAddressRequest::setNetmode(const std::string& netmode)
-{
-	netmode_ = netmode;
-	setParameter("Netmode", netmode);
+void AllocateEipAddressRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string AllocateEipAddressRequest::getInstanceChargeType()const
-{
-	return instanceChargeType_;
+std::string AllocateEipAddressRequest::getNetmode() const {
+  return netmode_;
 }
 
-void AllocateEipAddressRequest::setInstanceChargeType(const std::string& instanceChargeType)
-{
-	instanceChargeType_ = instanceChargeType;
-	setParameter("InstanceChargeType", instanceChargeType);
+void AllocateEipAddressRequest::setNetmode(const std::string &netmode) {
+  netmode_ = netmode;
+  setParameter(std::string("Netmode"), netmode);
 }
 
-int AllocateEipAddressRequest::getPeriod()const
-{
-	return period_;
+std::string AllocateEipAddressRequest::getInstanceChargeType() const {
+  return instanceChargeType_;
 }
 
-void AllocateEipAddressRequest::setPeriod(int period)
-{
-	period_ = period;
-	setParameter("Period", std::to_string(period));
+void AllocateEipAddressRequest::setInstanceChargeType(const std::string &instanceChargeType) {
+  instanceChargeType_ = instanceChargeType;
+  setParameter(std::string("InstanceChargeType"), instanceChargeType);
 }
 
-bool AllocateEipAddressRequest::getAutoPay()const
-{
-	return autoPay_;
+int AllocateEipAddressRequest::getPeriod() const {
+  return period_;
 }
 
-void AllocateEipAddressRequest::setAutoPay(bool autoPay)
-{
-	autoPay_ = autoPay;
-	setParameter("AutoPay", autoPay ? "true" : "false");
+void AllocateEipAddressRequest::setPeriod(int period) {
+  period_ = period;
+  setParameter(std::string("Period"), std::to_string(period));
 }
 
-std::string AllocateEipAddressRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+bool AllocateEipAddressRequest::getAutoPay() const {
+  return autoPay_;
 }
 
-void AllocateEipAddressRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void AllocateEipAddressRequest::setAutoPay(bool autoPay) {
+  autoPay_ = autoPay;
+  setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
 }
 
-std::string AllocateEipAddressRequest::getBandwidth()const
-{
-	return bandwidth_;
+std::string AllocateEipAddressRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void AllocateEipAddressRequest::setBandwidth(const std::string& bandwidth)
-{
-	bandwidth_ = bandwidth;
-	setParameter("Bandwidth", bandwidth);
+void AllocateEipAddressRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-std::string AllocateEipAddressRequest::getOwnerAccount()const
-{
-	return ownerAccount_;
+std::string AllocateEipAddressRequest::getBandwidth() const {
+  return bandwidth_;
 }
 
-void AllocateEipAddressRequest::setOwnerAccount(const std::string& ownerAccount)
-{
-	ownerAccount_ = ownerAccount;
-	setParameter("OwnerAccount", ownerAccount);
+void AllocateEipAddressRequest::setBandwidth(const std::string &bandwidth) {
+  bandwidth_ = bandwidth;
+  setParameter(std::string("Bandwidth"), bandwidth);
 }
 
-long AllocateEipAddressRequest::getOwnerId()const
-{
-	return ownerId_;
+std::string AllocateEipAddressRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void AllocateEipAddressRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void AllocateEipAddressRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
-long AllocateEipAddressRequest::getActivityId()const
-{
-	return activityId_;
+long AllocateEipAddressRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void AllocateEipAddressRequest::setActivityId(long activityId)
-{
-	activityId_ = activityId;
-	setParameter("ActivityId", std::to_string(activityId));
+void AllocateEipAddressRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string AllocateEipAddressRequest::getInternetChargeType()const
-{
-	return internetChargeType_;
+long AllocateEipAddressRequest::getActivityId() const {
+  return activityId_;
 }
 
-void AllocateEipAddressRequest::setInternetChargeType(const std::string& internetChargeType)
-{
-	internetChargeType_ = internetChargeType;
-	setParameter("InternetChargeType", internetChargeType);
+void AllocateEipAddressRequest::setActivityId(long activityId) {
+  activityId_ = activityId;
+  setParameter(std::string("ActivityId"), std::to_string(activityId));
 }
 
-std::string AllocateEipAddressRequest::getName()const
-{
-	return name_;
+std::string AllocateEipAddressRequest::getInternetChargeType() const {
+  return internetChargeType_;
 }
 
-void AllocateEipAddressRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
+void AllocateEipAddressRequest::setInternetChargeType(const std::string &internetChargeType) {
+  internetChargeType_ = internetChargeType;
+  setParameter(std::string("InternetChargeType"), internetChargeType);
 }
 
-std::string AllocateEipAddressRequest::getPricingCycle()const
-{
-	return pricingCycle_;
+std::string AllocateEipAddressRequest::getName() const {
+  return name_;
 }
 
-void AllocateEipAddressRequest::setPricingCycle(const std::string& pricingCycle)
-{
-	pricingCycle_ = pricingCycle;
-	setParameter("PricingCycle", pricingCycle);
+void AllocateEipAddressRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
+}
+
+std::vector<std::string> AllocateEipAddressRequest::getSecurityProtectionTypes() const {
+  return securityProtectionTypes_;
+}
+
+void AllocateEipAddressRequest::setSecurityProtectionTypes(const std::vector<std::string> &securityProtectionTypes) {
+  securityProtectionTypes_ = securityProtectionTypes;
+}
+
+std::string AllocateEipAddressRequest::getPricingCycle() const {
+  return pricingCycle_;
+}
+
+void AllocateEipAddressRequest::setPricingCycle(const std::string &pricingCycle) {
+  pricingCycle_ = pricingCycle;
+  setParameter(std::string("PricingCycle"), pricingCycle);
 }
 

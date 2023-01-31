@@ -43,68 +43,68 @@ void ListTrafficMirrorFiltersResult::parse(const std::string &payload)
 	for (auto valueTrafficMirrorFiltersTrafficMirrorFilter : allTrafficMirrorFiltersNode)
 	{
 		TrafficMirrorFilter trafficMirrorFiltersObject;
-		if(!valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterName"].isNull())
-			trafficMirrorFiltersObject.trafficMirrorFilterName = valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterName"].asString();
+		if(!valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterStatus"].isNull())
+			trafficMirrorFiltersObject.trafficMirrorFilterStatus = valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterStatus"].asString();
 		if(!valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterDescription"].isNull())
 			trafficMirrorFiltersObject.trafficMirrorFilterDescription = valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterDescription"].asString();
 		if(!valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterId"].isNull())
 			trafficMirrorFiltersObject.trafficMirrorFilterId = valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterId"].asString();
-		if(!valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterStatus"].isNull())
-			trafficMirrorFiltersObject.trafficMirrorFilterStatus = valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterStatus"].asString();
+		if(!valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterName"].isNull())
+			trafficMirrorFiltersObject.trafficMirrorFilterName = valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterName"].asString();
 		auto allIngressRulesNode = valueTrafficMirrorFiltersTrafficMirrorFilter["IngressRules"]["TrafficMirrorRule"];
 		for (auto valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule : allIngressRulesNode)
 		{
 			TrafficMirrorFilter::TrafficMirrorRule ingressRulesObject;
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficMirrorFilterRuleId"].isNull())
-				ingressRulesObject.trafficMirrorFilterRuleId = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficMirrorFilterRuleId"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficMirrorFilterId"].isNull())
-				ingressRulesObject.trafficMirrorFilterId = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficMirrorFilterId"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficDirection"].isNull())
-				ingressRulesObject.trafficDirection = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficDirection"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["Priority"].isNull())
-				ingressRulesObject.priority = std::stoi(valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["Priority"].asString());
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["Protocol"].isNull())
-				ingressRulesObject.protocol = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["Protocol"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["Action"].isNull())
-				ingressRulesObject.action = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["Action"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["DestinationCidrBlock"].isNull())
-				ingressRulesObject.destinationCidrBlock = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["DestinationCidrBlock"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["DestinationPortRange"].isNull())
-				ingressRulesObject.destinationPortRange = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["DestinationPortRange"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["SourceCidrBlock"].isNull())
-				ingressRulesObject.sourceCidrBlock = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["SourceCidrBlock"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["SourcePortRange"].isNull())
-				ingressRulesObject.sourcePortRange = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["SourcePortRange"].asString();
 			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficMirrorFilterRuleStatus"].isNull())
 				ingressRulesObject.trafficMirrorFilterRuleStatus = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficMirrorFilterRuleStatus"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["Action"].isNull())
+				ingressRulesObject.action = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["Action"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["SourceCidrBlock"].isNull())
+				ingressRulesObject.sourceCidrBlock = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["SourceCidrBlock"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficDirection"].isNull())
+				ingressRulesObject.trafficDirection = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficDirection"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["Protocol"].isNull())
+				ingressRulesObject.protocol = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["Protocol"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["DestinationPortRange"].isNull())
+				ingressRulesObject.destinationPortRange = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["DestinationPortRange"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficMirrorFilterRuleId"].isNull())
+				ingressRulesObject.trafficMirrorFilterRuleId = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficMirrorFilterRuleId"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["DestinationCidrBlock"].isNull())
+				ingressRulesObject.destinationCidrBlock = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["DestinationCidrBlock"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["Priority"].isNull())
+				ingressRulesObject.priority = std::stoi(valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["Priority"].asString());
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficMirrorFilterId"].isNull())
+				ingressRulesObject.trafficMirrorFilterId = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["TrafficMirrorFilterId"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["SourcePortRange"].isNull())
+				ingressRulesObject.sourcePortRange = valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule["SourcePortRange"].asString();
 			trafficMirrorFiltersObject.ingressRules.push_back(ingressRulesObject);
 		}
 		auto allEgressRulesNode = valueTrafficMirrorFiltersTrafficMirrorFilter["EgressRules"]["TrafficMirrorRule"];
 		for (auto valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule : allEgressRulesNode)
 		{
 			TrafficMirrorFilter::TrafficMirrorRule egressRulesObject;
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficMirrorFilterRuleId"].isNull())
-				egressRulesObject.trafficMirrorFilterRuleId = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficMirrorFilterRuleId"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficMirrorFilterId"].isNull())
-				egressRulesObject.trafficMirrorFilterId = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficMirrorFilterId"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficDirection"].isNull())
-				egressRulesObject.trafficDirection = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficDirection"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["Priority"].isNull())
-				egressRulesObject.priority = std::stoi(valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["Priority"].asString());
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["Protocol"].isNull())
-				egressRulesObject.protocol = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["Protocol"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["Action"].isNull())
-				egressRulesObject.action = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["Action"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["DestinationCidrBlock"].isNull())
-				egressRulesObject.destinationCidrBlock = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["DestinationCidrBlock"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["DestinationPortRange"].isNull())
-				egressRulesObject.destinationPortRange = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["DestinationPortRange"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["SourceCidrBlock"].isNull())
-				egressRulesObject.sourceCidrBlock = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["SourceCidrBlock"].asString();
-			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["SourcePortRange"].isNull())
-				egressRulesObject.sourcePortRange = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["SourcePortRange"].asString();
 			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficMirrorFilterRuleStatus"].isNull())
 				egressRulesObject.trafficMirrorFilterRuleStatus = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficMirrorFilterRuleStatus"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["Action"].isNull())
+				egressRulesObject.action = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["Action"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["SourceCidrBlock"].isNull())
+				egressRulesObject.sourceCidrBlock = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["SourceCidrBlock"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficDirection"].isNull())
+				egressRulesObject.trafficDirection = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficDirection"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["Protocol"].isNull())
+				egressRulesObject.protocol = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["Protocol"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["DestinationPortRange"].isNull())
+				egressRulesObject.destinationPortRange = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["DestinationPortRange"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficMirrorFilterRuleId"].isNull())
+				egressRulesObject.trafficMirrorFilterRuleId = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficMirrorFilterRuleId"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["DestinationCidrBlock"].isNull())
+				egressRulesObject.destinationCidrBlock = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["DestinationCidrBlock"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["Priority"].isNull())
+				egressRulesObject.priority = std::stoi(valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["Priority"].asString());
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficMirrorFilterId"].isNull())
+				egressRulesObject.trafficMirrorFilterId = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["TrafficMirrorFilterId"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["SourcePortRange"].isNull())
+				egressRulesObject.sourcePortRange = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["SourcePortRange"].asString();
 			trafficMirrorFiltersObject.egressRules.push_back(egressRulesObject);
 		}
 		trafficMirrorFilters_.push_back(trafficMirrorFiltersObject);

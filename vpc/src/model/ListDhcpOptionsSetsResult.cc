@@ -43,23 +43,27 @@ void ListDhcpOptionsSetsResult::parse(const std::string &payload)
 	for (auto valueDhcpOptionsSetsDhcpOptionsSet : allDhcpOptionsSetsNode)
 	{
 		DhcpOptionsSet dhcpOptionsSetsObject;
-		if(!valueDhcpOptionsSetsDhcpOptionsSet["DhcpOptionsSetName"].isNull())
-			dhcpOptionsSetsObject.dhcpOptionsSetName = valueDhcpOptionsSetsDhcpOptionsSet["DhcpOptionsSetName"].asString();
 		if(!valueDhcpOptionsSetsDhcpOptionsSet["DhcpOptionsSetDescription"].isNull())
 			dhcpOptionsSetsObject.dhcpOptionsSetDescription = valueDhcpOptionsSetsDhcpOptionsSet["DhcpOptionsSetDescription"].asString();
-		if(!valueDhcpOptionsSetsDhcpOptionsSet["OwnerId"].isNull())
-			dhcpOptionsSetsObject.ownerId = std::stol(valueDhcpOptionsSetsDhcpOptionsSet["OwnerId"].asString());
 		if(!valueDhcpOptionsSetsDhcpOptionsSet["Status"].isNull())
 			dhcpOptionsSetsObject.status = valueDhcpOptionsSetsDhcpOptionsSet["Status"].asString();
 		if(!valueDhcpOptionsSetsDhcpOptionsSet["DhcpOptionsSetId"].isNull())
 			dhcpOptionsSetsObject.dhcpOptionsSetId = valueDhcpOptionsSetsDhcpOptionsSet["DhcpOptionsSetId"].asString();
+		if(!valueDhcpOptionsSetsDhcpOptionsSet["DhcpOptionsSetName"].isNull())
+			dhcpOptionsSetsObject.dhcpOptionsSetName = valueDhcpOptionsSetsDhcpOptionsSet["DhcpOptionsSetName"].asString();
 		if(!valueDhcpOptionsSetsDhcpOptionsSet["AssociateVpcCount"].isNull())
 			dhcpOptionsSetsObject.associateVpcCount = std::stoi(valueDhcpOptionsSetsDhcpOptionsSet["AssociateVpcCount"].asString());
+		if(!valueDhcpOptionsSetsDhcpOptionsSet["OwnerId"].isNull())
+			dhcpOptionsSetsObject.ownerId = std::stol(valueDhcpOptionsSetsDhcpOptionsSet["OwnerId"].asString());
 		auto dhcpOptionsNode = value["DhcpOptions"];
 		if(!dhcpOptionsNode["DomainNameServers"].isNull())
 			dhcpOptionsSetsObject.dhcpOptions.domainNameServers = dhcpOptionsNode["DomainNameServers"].asString();
 		if(!dhcpOptionsNode["DomainName"].isNull())
 			dhcpOptionsSetsObject.dhcpOptions.domainName = dhcpOptionsNode["DomainName"].asString();
+		if(!dhcpOptionsNode["LeaseTime"].isNull())
+			dhcpOptionsSetsObject.dhcpOptions.leaseTime = dhcpOptionsNode["LeaseTime"].asString();
+		if(!dhcpOptionsNode["Ipv6LeaseTime"].isNull())
+			dhcpOptionsSetsObject.dhcpOptions.ipv6LeaseTime = dhcpOptionsNode["Ipv6LeaseTime"].asString();
 		dhcpOptionsSets_.push_back(dhcpOptionsSetsObject);
 	}
 	if(!value["NextToken"].isNull())

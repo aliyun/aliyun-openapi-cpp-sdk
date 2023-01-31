@@ -55,10 +55,12 @@ namespace AlibabaCloud
 				~DescribeVpcAttributeResult();
 				std::string getStatus()const;
 				bool getIsDefault()const;
-				std::string getDescription()const;
 				std::string getDhcpOptionsSetStatus()const;
+				std::string getDescription()const;
 				bool getClassicLinkEnabled()const;
 				std::string getResourceGroupId()const;
+				bool getSupportIpv4Gateway()const;
+				std::string getIpv4GatewayId()const;
 				std::vector<std::string> getVSwitchIds()const;
 				std::vector<std::string> getSecondaryCidrBlocks()const;
 				std::string getCidrBlock()const;
@@ -81,10 +83,12 @@ namespace AlibabaCloud
 			private:
 				std::string status_;
 				bool isDefault_;
-				std::string description_;
 				std::string dhcpOptionsSetStatus_;
+				std::string description_;
 				bool classicLinkEnabled_;
 				std::string resourceGroupId_;
+				bool supportIpv4Gateway_;
+				std::string ipv4GatewayId_;
 				std::vector<std::string> vSwitchIds_;
 				std::vector<std::string> secondaryCidrBlocks_;
 				std::string cidrBlock_;

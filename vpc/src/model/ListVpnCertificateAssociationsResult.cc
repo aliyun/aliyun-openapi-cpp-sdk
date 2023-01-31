@@ -43,24 +43,24 @@ void ListVpnCertificateAssociationsResult::parse(const std::string &payload)
 	for (auto valueVpnCertificateRelationsVpnCertificateRelation : allVpnCertificateRelationsNode)
 	{
 		VpnCertificateRelation vpnCertificateRelationsObject;
-		if(!valueVpnCertificateRelationsVpnCertificateRelation["RegionId"].isNull())
-			vpnCertificateRelationsObject.regionId = valueVpnCertificateRelationsVpnCertificateRelation["RegionId"].asString();
 		if(!valueVpnCertificateRelationsVpnCertificateRelation["VpnGatewayId"].isNull())
 			vpnCertificateRelationsObject.vpnGatewayId = valueVpnCertificateRelationsVpnCertificateRelation["VpnGatewayId"].asString();
-		if(!valueVpnCertificateRelationsVpnCertificateRelation["CertificateId"].isNull())
-			vpnCertificateRelationsObject.certificateId = valueVpnCertificateRelationsVpnCertificateRelation["CertificateId"].asString();
 		if(!valueVpnCertificateRelationsVpnCertificateRelation["CertificateType"].isNull())
 			vpnCertificateRelationsObject.certificateType = valueVpnCertificateRelationsVpnCertificateRelation["CertificateType"].asString();
+		if(!valueVpnCertificateRelationsVpnCertificateRelation["CertificateId"].isNull())
+			vpnCertificateRelationsObject.certificateId = valueVpnCertificateRelationsVpnCertificateRelation["CertificateId"].asString();
 		if(!valueVpnCertificateRelationsVpnCertificateRelation["AssociationTime"].isNull())
 			vpnCertificateRelationsObject.associationTime = valueVpnCertificateRelationsVpnCertificateRelation["AssociationTime"].asString();
+		if(!valueVpnCertificateRelationsVpnCertificateRelation["RegionId"].isNull())
+			vpnCertificateRelationsObject.regionId = valueVpnCertificateRelationsVpnCertificateRelation["RegionId"].asString();
 		vpnCertificateRelations_.push_back(vpnCertificateRelationsObject);
 	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
-	if(!value["MaxResults"].isNull())
-		maxResults_ = std::stoi(value["MaxResults"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["MaxResults"].isNull())
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 

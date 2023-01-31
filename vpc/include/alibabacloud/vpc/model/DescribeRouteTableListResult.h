@@ -44,12 +44,14 @@ namespace AlibabaCloud
 					std::string description;
 					std::string resourceGroupId;
 					std::vector<std::string> vSwitchIds;
+					std::string associateType;
 					std::string routerId;
 					std::string routeTableType;
 					std::string vpcId;
 					long ownerId;
 					std::string routerType;
 					std::string creationTime;
+					std::vector<std::string> gatewayIds;
 					std::vector<RouterTableListType::Tag> tags;
 					std::string routeTableName;
 				};

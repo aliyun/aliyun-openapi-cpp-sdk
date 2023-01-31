@@ -43,30 +43,30 @@ void ListTrafficMirrorSessionsResult::parse(const std::string &payload)
 	for (auto valueTrafficMirrorSessionsTrafficMirrorSession : allTrafficMirrorSessionsNode)
 	{
 		TrafficMirrorSession trafficMirrorSessionsObject;
-		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionName"].isNull())
-			trafficMirrorSessionsObject.trafficMirrorSessionName = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionName"].asString();
-		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionDescription"].isNull())
-			trafficMirrorSessionsObject.trafficMirrorSessionDescription = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionDescription"].asString();
-		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionId"].isNull())
-			trafficMirrorSessionsObject.trafficMirrorSessionId = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionId"].asString();
-		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionStatus"].isNull())
-			trafficMirrorSessionsObject.trafficMirrorSessionStatus = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionStatus"].asString();
 		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorTargetId"].isNull())
 			trafficMirrorSessionsObject.trafficMirrorTargetId = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorTargetId"].asString();
-		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorTargetType"].isNull())
-			trafficMirrorSessionsObject.trafficMirrorTargetType = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorTargetType"].asString();
-		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorFilterId"].isNull())
-			trafficMirrorSessionsObject.trafficMirrorFilterId = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorFilterId"].asString();
-		if(!valueTrafficMirrorSessionsTrafficMirrorSession["VirtualNetworkId"].isNull())
-			trafficMirrorSessionsObject.virtualNetworkId = std::stoi(valueTrafficMirrorSessionsTrafficMirrorSession["VirtualNetworkId"].asString());
+		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionId"].isNull())
+			trafficMirrorSessionsObject.trafficMirrorSessionId = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionId"].asString();
 		if(!valueTrafficMirrorSessionsTrafficMirrorSession["Priority"].isNull())
 			trafficMirrorSessionsObject.priority = std::stoi(valueTrafficMirrorSessionsTrafficMirrorSession["Priority"].asString());
-		if(!valueTrafficMirrorSessionsTrafficMirrorSession["Enabled"].isNull())
-			trafficMirrorSessionsObject.enabled = valueTrafficMirrorSessionsTrafficMirrorSession["Enabled"].asString() == "true";
+		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorTargetType"].isNull())
+			trafficMirrorSessionsObject.trafficMirrorTargetType = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorTargetType"].asString();
 		if(!valueTrafficMirrorSessionsTrafficMirrorSession["PacketLength"].isNull())
 			trafficMirrorSessionsObject.packetLength = std::stoi(valueTrafficMirrorSessionsTrafficMirrorSession["PacketLength"].asString());
+		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionDescription"].isNull())
+			trafficMirrorSessionsObject.trafficMirrorSessionDescription = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionDescription"].asString();
+		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionStatus"].isNull())
+			trafficMirrorSessionsObject.trafficMirrorSessionStatus = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionStatus"].asString();
+		if(!valueTrafficMirrorSessionsTrafficMirrorSession["Enabled"].isNull())
+			trafficMirrorSessionsObject.enabled = valueTrafficMirrorSessionsTrafficMirrorSession["Enabled"].asString() == "true";
 		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionBusinessStatus"].isNull())
 			trafficMirrorSessionsObject.trafficMirrorSessionBusinessStatus = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionBusinessStatus"].asString();
+		if(!valueTrafficMirrorSessionsTrafficMirrorSession["VirtualNetworkId"].isNull())
+			trafficMirrorSessionsObject.virtualNetworkId = std::stoi(valueTrafficMirrorSessionsTrafficMirrorSession["VirtualNetworkId"].asString());
+		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorFilterId"].isNull())
+			trafficMirrorSessionsObject.trafficMirrorFilterId = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorFilterId"].asString();
+		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionName"].isNull())
+			trafficMirrorSessionsObject.trafficMirrorSessionName = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionName"].asString();
 		auto allTrafficMirrorSourceIds = value["TrafficMirrorSourceIds"]["TrafficMirrorSourceId"];
 		for (auto value : allTrafficMirrorSourceIds)
 			trafficMirrorSessionsObject.trafficMirrorSourceIds.push_back(value.asString());

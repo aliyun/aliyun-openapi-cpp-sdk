@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,23 +18,19 @@
 
 using AlibabaCloud::Vpc::Model::OpenTrafficMirrorServiceRequest;
 
-OpenTrafficMirrorServiceRequest::OpenTrafficMirrorServiceRequest() :
-	RpcServiceRequest("vpc", "2016-04-28", "OpenTrafficMirrorService")
-{
-	setMethod(HttpRequest::Method::Post);
+OpenTrafficMirrorServiceRequest::OpenTrafficMirrorServiceRequest()
+    : RpcServiceRequest("vpc", "2016-04-28", "OpenTrafficMirrorService") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-OpenTrafficMirrorServiceRequest::~OpenTrafficMirrorServiceRequest()
-{}
+OpenTrafficMirrorServiceRequest::~OpenTrafficMirrorServiceRequest() {}
 
-long OpenTrafficMirrorServiceRequest::getOwnerId()const
-{
-	return ownerId_;
+long OpenTrafficMirrorServiceRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void OpenTrafficMirrorServiceRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void OpenTrafficMirrorServiceRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

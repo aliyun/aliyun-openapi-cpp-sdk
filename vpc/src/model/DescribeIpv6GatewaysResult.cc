@@ -43,36 +43,36 @@ void DescribeIpv6GatewaysResult::parse(const std::string &payload)
 	for (auto valueIpv6GatewaysIpv6Gateway : allIpv6GatewaysNode)
 	{
 		Ipv6Gateway ipv6GatewaysObject;
-		if(!valueIpv6GatewaysIpv6Gateway["RegionId"].isNull())
-			ipv6GatewaysObject.regionId = valueIpv6GatewaysIpv6Gateway["RegionId"].asString();
-		if(!valueIpv6GatewaysIpv6Gateway["Ipv6GatewayId"].isNull())
-			ipv6GatewaysObject.ipv6GatewayId = valueIpv6GatewaysIpv6Gateway["Ipv6GatewayId"].asString();
-		if(!valueIpv6GatewaysIpv6Gateway["VpcId"].isNull())
-			ipv6GatewaysObject.vpcId = valueIpv6GatewaysIpv6Gateway["VpcId"].asString();
-		if(!valueIpv6GatewaysIpv6Gateway["Status"].isNull())
-			ipv6GatewaysObject.status = valueIpv6GatewaysIpv6Gateway["Status"].asString();
-		if(!valueIpv6GatewaysIpv6Gateway["Name"].isNull())
-			ipv6GatewaysObject.name = valueIpv6GatewaysIpv6Gateway["Name"].asString();
-		if(!valueIpv6GatewaysIpv6Gateway["Description"].isNull())
-			ipv6GatewaysObject.description = valueIpv6GatewaysIpv6Gateway["Description"].asString();
-		if(!valueIpv6GatewaysIpv6Gateway["Spec"].isNull())
-			ipv6GatewaysObject.spec = valueIpv6GatewaysIpv6Gateway["Spec"].asString();
-		if(!valueIpv6GatewaysIpv6Gateway["InstanceChargeType"].isNull())
-			ipv6GatewaysObject.instanceChargeType = valueIpv6GatewaysIpv6Gateway["InstanceChargeType"].asString();
-		if(!valueIpv6GatewaysIpv6Gateway["BusinessStatus"].isNull())
-			ipv6GatewaysObject.businessStatus = valueIpv6GatewaysIpv6Gateway["BusinessStatus"].asString();
-		if(!valueIpv6GatewaysIpv6Gateway["ExpiredTime"].isNull())
-			ipv6GatewaysObject.expiredTime = valueIpv6GatewaysIpv6Gateway["ExpiredTime"].asString();
 		if(!valueIpv6GatewaysIpv6Gateway["CreationTime"].isNull())
 			ipv6GatewaysObject.creationTime = valueIpv6GatewaysIpv6Gateway["CreationTime"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["Status"].isNull())
+			ipv6GatewaysObject.status = valueIpv6GatewaysIpv6Gateway["Status"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["VpcId"].isNull())
+			ipv6GatewaysObject.vpcId = valueIpv6GatewaysIpv6Gateway["VpcId"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["Spec"].isNull())
+			ipv6GatewaysObject.spec = valueIpv6GatewaysIpv6Gateway["Spec"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["Description"].isNull())
+			ipv6GatewaysObject.description = valueIpv6GatewaysIpv6Gateway["Description"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["Ipv6GatewayId"].isNull())
+			ipv6GatewaysObject.ipv6GatewayId = valueIpv6GatewaysIpv6Gateway["Ipv6GatewayId"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["ExpiredTime"].isNull())
+			ipv6GatewaysObject.expiredTime = valueIpv6GatewaysIpv6Gateway["ExpiredTime"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["BusinessStatus"].isNull())
+			ipv6GatewaysObject.businessStatus = valueIpv6GatewaysIpv6Gateway["BusinessStatus"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["Name"].isNull())
+			ipv6GatewaysObject.name = valueIpv6GatewaysIpv6Gateway["Name"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["InstanceChargeType"].isNull())
+			ipv6GatewaysObject.instanceChargeType = valueIpv6GatewaysIpv6Gateway["InstanceChargeType"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["RegionId"].isNull())
+			ipv6GatewaysObject.regionId = valueIpv6GatewaysIpv6Gateway["RegionId"].asString();
 		ipv6Gateways_.push_back(ipv6GatewaysObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

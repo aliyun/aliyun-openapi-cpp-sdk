@@ -48,6 +48,9 @@ void CreateNatGatewayResult::parse(const std::string &payload)
 	auto allBandwidthPackageIds = value["BandwidthPackageIds"]["BandwidthPackageId"];
 	for (const auto &item : allBandwidthPackageIds)
 		bandwidthPackageIds_.push_back(item.asString());
+	auto allFullNatTableIds = value["FullNatTableIds"]["FullNatTableId"];
+	for (const auto &item : allFullNatTableIds)
+		fullNatTableIds_.push_back(item.asString());
 	if(!value["NatGatewayId"].isNull())
 		natGatewayId_ = value["NatGatewayId"].asString();
 
@@ -61,6 +64,11 @@ std::vector<std::string> CreateNatGatewayResult::getSnatTableIds()const
 std::vector<std::string> CreateNatGatewayResult::getForwardTableIds()const
 {
 	return forwardTableIds_;
+}
+
+std::vector<std::string> CreateNatGatewayResult::getFullNatTableIds()const
+{
+	return fullNatTableIds_;
 }
 
 std::vector<std::string> CreateNatGatewayResult::getBandwidthPackageIds()const

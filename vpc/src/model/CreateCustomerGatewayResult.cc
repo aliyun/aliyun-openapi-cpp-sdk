@@ -39,16 +39,16 @@ void CreateCustomerGatewayResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CustomerGatewayId"].isNull())
-		customerGatewayId_ = value["CustomerGatewayId"].asString();
 	if(!value["IpAddress"].isNull())
 		ipAddress_ = value["IpAddress"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
+	if(!value["CustomerGatewayId"].isNull())
+		customerGatewayId_ = value["CustomerGatewayId"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = std::stol(value["CreateTime"].asString());
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 
 }
 

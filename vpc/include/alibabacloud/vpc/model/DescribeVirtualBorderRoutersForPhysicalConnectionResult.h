@@ -36,23 +36,23 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string peerGatewayIp;
-					long vbrOwnerUid;
 					std::string activationTime;
+					long vbrOwnerUid;
 					std::string circuitCode;
 					std::string peerIpv6GatewayIp;
 					std::string vbrId;
 					std::string pConnVbrChargeType;
-					std::string terminationTime;
 					std::string peeringSubnetMask;
+					std::string terminationTime;
+					bool enableIpv6;
 					std::string recoveryTime;
 					std::string peeringIpv6SubnetMask;
-					bool enableIpv6;
 					std::string type;
 					std::string localGatewayIp;
 					std::string bandwidth;
 					std::string creationTime;
-					std::string eccId;
 					std::string bandwidthStatus;
+					std::string eccId;
 					std::string pConnVbrExpireTime;
 					std::string localIpv6GatewayIp;
 					int vlanId;

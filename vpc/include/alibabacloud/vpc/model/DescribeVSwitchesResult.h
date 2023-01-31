@@ -47,11 +47,11 @@ namespace AlibabaCloud
 					std::string status;
 					bool isDefault;
 					std::string description;
-					std::string zoneId;
-					std::string resourceGroupId;
 					std::string networkAclId;
-					std::string vSwitchId;
+					std::string resourceGroupId;
+					std::string zoneId;
 					long availableIpAddressCount;
+					std::string vSwitchId;
 					std::string cidrBlock;
 					RouteTable routeTable;
 					std::string vpcId;

@@ -34,12 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct VpnPbrRouteEntry
 				{
-					std::string vpnInstanceId;
 					std::string routeDest;
+					std::string vpnInstanceId;
 					std::string nextHop;
 					std::string state;
-					std::string routeSource;
+					int priority;
 					long createTime;
+					std::string routeSource;
 					int weight;
 				};
 

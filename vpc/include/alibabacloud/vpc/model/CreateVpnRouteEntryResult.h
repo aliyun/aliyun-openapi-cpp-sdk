@@ -37,9 +37,9 @@ namespace AlibabaCloud
 				CreateVpnRouteEntryResult();
 				explicit CreateVpnRouteEntryResult(const std::string &payload);
 				~CreateVpnRouteEntryResult();
-				std::string getVpnInstanceId()const;
 				std::string getRouteDest()const;
 				std::string getDescription()const;
+				std::string getVpnInstanceId()const;
 				std::string getOverlayMode()const;
 				std::string getNextHop()const;
 				std::string getState()const;
@@ -49,9 +49,9 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string vpnInstanceId_;
 				std::string routeDest_;
 				std::string description_;
+				std::string vpnInstanceId_;
 				std::string overlayMode_;
 				std::string nextHop_;
 				std::string state_;

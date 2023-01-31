@@ -43,22 +43,24 @@ void DescribeBgpNetworksResult::parse(const std::string &payload)
 	for (auto valueBgpNetworksBgpNetwork : allBgpNetworksNode)
 	{
 		BgpNetwork bgpNetworksObject;
+		if(!valueBgpNetworksBgpNetwork["Status"].isNull())
+			bgpNetworksObject.status = valueBgpNetworksBgpNetwork["Status"].asString();
 		if(!valueBgpNetworksBgpNetwork["VpcId"].isNull())
 			bgpNetworksObject.vpcId = valueBgpNetworksBgpNetwork["VpcId"].asString();
 		if(!valueBgpNetworksBgpNetwork["DstCidrBlock"].isNull())
 			bgpNetworksObject.dstCidrBlock = valueBgpNetworksBgpNetwork["DstCidrBlock"].asString();
 		if(!valueBgpNetworksBgpNetwork["RouterId"].isNull())
 			bgpNetworksObject.routerId = valueBgpNetworksBgpNetwork["RouterId"].asString();
-		if(!valueBgpNetworksBgpNetwork["Status"].isNull())
-			bgpNetworksObject.status = valueBgpNetworksBgpNetwork["Status"].asString();
+		if(!valueBgpNetworksBgpNetwork["IpVersion"].isNull())
+			bgpNetworksObject.ipVersion = valueBgpNetworksBgpNetwork["IpVersion"].asString();
 		bgpNetworks_.push_back(bgpNetworksObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

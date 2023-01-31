@@ -41,19 +41,19 @@ namespace AlibabaCloud
 						std::string description;
 						std::string sourceCidrIp;
 						std::string port;
-						std::string protocol;
 						std::string networkAclEntryName;
+						std::string protocol;
 						std::string networkAclEntryId;
 					};
 					struct EgressAclEntry
 					{
 						std::string policy;
-						std::string destinationCidrIp;
 						std::string entryType;
 						std::string description;
+						std::string destinationCidrIp;
 						std::string port;
-						std::string protocol;
 						std::string networkAclEntryName;
+						std::string protocol;
 						std::string networkAclEntryId;
 					};
 					struct Resource
@@ -65,8 +65,8 @@ namespace AlibabaCloud
 					std::vector<NetworkAcl::IngressAclEntry> ingressAclEntries;
 					std::string status;
 					std::string description;
-					std::string networkAclId;
 					std::string vpcId;
+					std::string networkAclId;
 					long ownerId;
 					std::vector<NetworkAcl::EgressAclEntry> egressAclEntries;
 					std::string creationTime;

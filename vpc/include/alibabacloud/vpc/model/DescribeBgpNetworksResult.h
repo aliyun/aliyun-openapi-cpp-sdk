@@ -34,9 +34,10 @@ namespace AlibabaCloud
 			public:
 				struct BgpNetwork
 				{
-					std::string dstCidrBlock;
 					std::string status;
+					std::string dstCidrBlock;
 					std::string vpcId;
+					std::string ipVersion;
 					std::string routerId;
 				};
 

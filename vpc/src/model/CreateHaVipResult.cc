@@ -39,10 +39,10 @@ void CreateHaVipResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["HaVipId"].isNull())
-		haVipId_ = value["HaVipId"].asString();
 	if(!value["IpAddress"].isNull())
 		ipAddress_ = value["IpAddress"].asString();
+	if(!value["HaVipId"].isNull())
+		haVipId_ = value["HaVipId"].asString();
 
 }
 

@@ -39,18 +39,30 @@ void DescribeCustomerGatewayResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["CustomerGatewayId"].isNull())
-		customerGatewayId_ = value["CustomerGatewayId"].asString();
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
+	{
+		Tag tagsObject;
+		if(!valueTagsTag["Key"].isNull())
+			tagsObject.key = valueTagsTag["Key"].asString();
+		if(!valueTagsTag["Value"].isNull())
+			tagsObject.value = valueTagsTag["Value"].asString();
+		tags_.push_back(tagsObject);
+	}
+	if(!value["Asn"].isNull())
+		asn_ = std::stol(value["Asn"].asString());
 	if(!value["IpAddress"].isNull())
 		ipAddress_ = value["IpAddress"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
+	if(!value["CustomerGatewayId"].isNull())
+		customerGatewayId_ = value["CustomerGatewayId"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = std::stol(value["CreateTime"].asString());
-	if(!value["Asn"].isNull())
-		asn_ = std::stoi(value["Asn"].asString());
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["AuthKey"].isNull())
+		authKey_ = value["AuthKey"].asString();
 
 }
 
@@ -69,14 +81,24 @@ long DescribeCustomerGatewayResult::getCreateTime()const
 	return createTime_;
 }
 
+std::string DescribeCustomerGatewayResult::getAuthKey()const
+{
+	return authKey_;
+}
+
 std::string DescribeCustomerGatewayResult::getIpAddress()const
 {
 	return ipAddress_;
 }
 
-int DescribeCustomerGatewayResult::getAsn()const
+long DescribeCustomerGatewayResult::getAsn()const
 {
 	return asn_;
+}
+
+std::vector<DescribeCustomerGatewayResult::Tag> DescribeCustomerGatewayResult::getTags()const
+{
+	return tags_;
 }
 
 std::string DescribeCustomerGatewayResult::getName()const

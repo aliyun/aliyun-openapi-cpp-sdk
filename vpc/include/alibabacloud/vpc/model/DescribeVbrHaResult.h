@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				std::string getVbrHaId()const;
 				std::string getDescription()const;
 				std::string getCreationTime()const;
-				std::string getRegionId()const;
 				std::string getVbrId()const;
+				std::string getRegionId()const;
 				std::string getPeerVbrId()const;
 				std::string getName()const;
 
@@ -53,8 +53,8 @@ namespace AlibabaCloud
 				std::string vbrHaId_;
 				std::string description_;
 				std::string creationTime_;
-				std::string regionId_;
 				std::string vbrId_;
+				std::string regionId_;
 				std::string peerVbrId_;
 				std::string name_;
 

@@ -39,28 +39,28 @@ void DescribeIpv6GatewayAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RegionId"].isNull())
-		regionId_ = value["RegionId"].asString();
-	if(!value["Ipv6GatewayId"].isNull())
-		ipv6GatewayId_ = value["Ipv6GatewayId"].asString();
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
+	if(!value["CreationTime"].isNull())
+		creationTime_ = value["CreationTime"].asString();
+	if(!value["Spec"].isNull())
+		spec_ = value["Spec"].asString();
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
+	if(!value["InstanceChargeType"].isNull())
+		instanceChargeType_ = value["InstanceChargeType"].asString();
+	if(!value["Ipv6GatewayId"].isNull())
+		ipv6GatewayId_ = value["Ipv6GatewayId"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
+	if(!value["ExpiredTime"].isNull())
+		expiredTime_ = value["ExpiredTime"].asString();
 	if(!value["BusinessStatus"].isNull())
 		businessStatus_ = value["BusinessStatus"].asString();
 	if(!value["Name"].isNull())
 		name_ = value["Name"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["Spec"].isNull())
-		spec_ = value["Spec"].asString();
-	if(!value["InstanceChargeType"].isNull())
-		instanceChargeType_ = value["InstanceChargeType"].asString();
-	if(!value["ExpiredTime"].isNull())
-		expiredTime_ = value["ExpiredTime"].asString();
-	if(!value["CreationTime"].isNull())
-		creationTime_ = value["CreationTime"].asString();
 
 }
 

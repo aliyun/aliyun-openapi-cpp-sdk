@@ -39,14 +39,14 @@ void AllocateEipAddressProResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["AllocationId"].isNull())
-		allocationId_ = value["AllocationId"].asString();
-	if(!value["EipAddress"].isNull())
-		eipAddress_ = value["EipAddress"].asString();
 	if(!value["OrderId"].isNull())
 		orderId_ = std::stol(value["OrderId"].asString());
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["EipAddress"].isNull())
+		eipAddress_ = value["EipAddress"].asString();
+	if(!value["AllocationId"].isNull())
+		allocationId_ = value["AllocationId"].asString();
 
 }
 

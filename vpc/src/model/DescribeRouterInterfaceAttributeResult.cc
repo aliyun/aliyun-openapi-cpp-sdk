@@ -39,90 +39,90 @@ void DescribeRouterInterfaceAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
-	if(!value["Message"].isNull())
-		message_ = value["Message"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
-	if(!value["RouterInterfaceId"].isNull())
-		routerInterfaceId_ = value["RouterInterfaceId"].asString();
-	if(!value["OppositeRegionId"].isNull())
-		oppositeRegionId_ = value["OppositeRegionId"].asString();
-	if(!value["Role"].isNull())
-		role_ = value["Role"].asString();
-	if(!value["Spec"].isNull())
-		spec_ = value["Spec"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
-	if(!value["RouterId"].isNull())
-		routerId_ = value["RouterId"].asString();
-	if(!value["RouterType"].isNull())
-		routerType_ = value["RouterType"].asString();
-	if(!value["CreationTime"].isNull())
-		creationTime_ = value["CreationTime"].asString();
-	if(!value["GmtModified"].isNull())
-		gmtModified_ = value["GmtModified"].asString();
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
-	if(!value["ChargeType"].isNull())
-		chargeType_ = value["ChargeType"].asString();
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
-	if(!value["BusinessStatus"].isNull())
-		businessStatus_ = value["BusinessStatus"].asString();
-	if(!value["ConnectedTime"].isNull())
-		connectedTime_ = value["ConnectedTime"].asString();
-	if(!value["OppositeInterfaceId"].isNull())
-		oppositeInterfaceId_ = value["OppositeInterfaceId"].asString();
-	if(!value["OppositeInterfaceSpec"].isNull())
-		oppositeInterfaceSpec_ = value["OppositeInterfaceSpec"].asString();
-	if(!value["OppositeInterfaceStatus"].isNull())
-		oppositeInterfaceStatus_ = value["OppositeInterfaceStatus"].asString();
-	if(!value["OppositeInterfaceBusinessStatus"].isNull())
-		oppositeInterfaceBusinessStatus_ = value["OppositeInterfaceBusinessStatus"].asString();
-	if(!value["OppositeRouterId"].isNull())
-		oppositeRouterId_ = value["OppositeRouterId"].asString();
-	if(!value["OppositeRouterType"].isNull())
-		oppositeRouterType_ = value["OppositeRouterType"].asString();
-	if(!value["OppositeInterfaceOwnerId"].isNull())
-		oppositeInterfaceOwnerId_ = value["OppositeInterfaceOwnerId"].asString();
-	if(!value["AccessPointId"].isNull())
-		accessPointId_ = value["AccessPointId"].asString();
-	if(!value["OppositeAccessPointId"].isNull())
-		oppositeAccessPointId_ = value["OppositeAccessPointId"].asString();
-	if(!value["HealthCheckSourceIp"].isNull())
-		healthCheckSourceIp_ = value["HealthCheckSourceIp"].asString();
-	if(!value["HealthCheckTargetIp"].isNull())
-		healthCheckTargetIp_ = value["HealthCheckTargetIp"].asString();
-	if(!value["OppositeVpcInstanceId"].isNull())
-		oppositeVpcInstanceId_ = value["OppositeVpcInstanceId"].asString();
-	if(!value["Bandwidth"].isNull())
-		bandwidth_ = std::stoi(value["Bandwidth"].asString());
-	if(!value["VpcInstanceId"].isNull())
-		vpcInstanceId_ = value["VpcInstanceId"].asString();
-	if(!value["OppositeBandwidth"].isNull())
-		oppositeBandwidth_ = std::stoi(value["OppositeBandwidth"].asString());
-	if(!value["HasReservationData"].isNull())
-		hasReservationData_ = value["HasReservationData"].asString();
-	if(!value["ReservationBandwidth"].isNull())
-		reservationBandwidth_ = value["ReservationBandwidth"].asString();
-	if(!value["ReservationInternetChargeType"].isNull())
-		reservationInternetChargeType_ = value["ReservationInternetChargeType"].asString();
 	if(!value["ReservationActiveTime"].isNull())
 		reservationActiveTime_ = value["ReservationActiveTime"].asString();
+	if(!value["HealthCheckTargetIp"].isNull())
+		healthCheckTargetIp_ = value["HealthCheckTargetIp"].asString();
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["CreationTime"].isNull())
+		creationTime_ = value["CreationTime"].asString();
 	if(!value["ReservationOrderType"].isNull())
 		reservationOrderType_ = value["ReservationOrderType"].asString();
-	if(!value["CrossBorder"].isNull())
-		crossBorder_ = value["CrossBorder"].asString() == "true";
+	if(!value["OppositeInterfaceId"].isNull())
+		oppositeInterfaceId_ = value["OppositeInterfaceId"].asString();
+	if(!value["Spec"].isNull())
+		spec_ = value["Spec"].asString();
+	if(!value["ChargeType"].isNull())
+		chargeType_ = value["ChargeType"].asString();
+	if(!value["RouterInterfaceId"].isNull())
+		routerInterfaceId_ = value["RouterInterfaceId"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 	if(!value["HcThreshold"].isNull())
 		hcThreshold_ = std::stoi(value["HcThreshold"].asString());
+	if(!value["OppositeRouterType"].isNull())
+		oppositeRouterType_ = value["OppositeRouterType"].asString();
+	if(!value["GmtModified"].isNull())
+		gmtModified_ = value["GmtModified"].asString();
+	if(!value["VpcInstanceId"].isNull())
+		vpcInstanceId_ = value["VpcInstanceId"].asString();
+	if(!value["OppositeInterfaceOwnerId"].isNull())
+		oppositeInterfaceOwnerId_ = value["OppositeInterfaceOwnerId"].asString();
+	if(!value["OppositeVpcInstanceId"].isNull())
+		oppositeVpcInstanceId_ = value["OppositeVpcInstanceId"].asString();
+	if(!value["ReservationInternetChargeType"].isNull())
+		reservationInternetChargeType_ = value["ReservationInternetChargeType"].asString();
+	if(!value["CrossBorder"].isNull())
+		crossBorder_ = value["CrossBorder"].asString() == "true";
+	if(!value["Bandwidth"].isNull())
+		bandwidth_ = std::stoi(value["Bandwidth"].asString());
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
 	if(!value["HcRate"].isNull())
 		hcRate_ = std::stoi(value["HcRate"].asString());
+	if(!value["ReservationBandwidth"].isNull())
+		reservationBandwidth_ = value["ReservationBandwidth"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["OppositeRouterId"].isNull())
+		oppositeRouterId_ = value["OppositeRouterId"].asString();
+	if(!value["OppositeInterfaceSpec"].isNull())
+		oppositeInterfaceSpec_ = value["OppositeInterfaceSpec"].asString();
+	if(!value["RouterId"].isNull())
+		routerId_ = value["RouterId"].asString();
+	if(!value["Success"].isNull())
+		success_ = value["Success"].asString() == "true";
+	if(!value["OppositeInterfaceBusinessStatus"].isNull())
+		oppositeInterfaceBusinessStatus_ = value["OppositeInterfaceBusinessStatus"].asString();
+	if(!value["ConnectedTime"].isNull())
+		connectedTime_ = value["ConnectedTime"].asString();
+	if(!value["HealthCheckSourceIp"].isNull())
+		healthCheckSourceIp_ = value["HealthCheckSourceIp"].asString();
+	if(!value["OppositeInterfaceStatus"].isNull())
+		oppositeInterfaceStatus_ = value["OppositeInterfaceStatus"].asString();
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["OppositeRegionId"].isNull())
+		oppositeRegionId_ = value["OppositeRegionId"].asString();
+	if(!value["OppositeAccessPointId"].isNull())
+		oppositeAccessPointId_ = value["OppositeAccessPointId"].asString();
+	if(!value["BusinessStatus"].isNull())
+		businessStatus_ = value["BusinessStatus"].asString();
 	if(!value["HealthCheckStatus"].isNull())
 		healthCheckStatus_ = value["HealthCheckStatus"].asString();
+	if(!value["OppositeBandwidth"].isNull())
+		oppositeBandwidth_ = std::stoi(value["OppositeBandwidth"].asString());
+	if(!value["RouterType"].isNull())
+		routerType_ = value["RouterType"].asString();
+	if(!value["Role"].isNull())
+		role_ = value["Role"].asString();
+	if(!value["HasReservationData"].isNull())
+		hasReservationData_ = value["HasReservationData"].asString();
+	if(!value["AccessPointId"].isNull())
+		accessPointId_ = value["AccessPointId"].asString();
 
 }
 
@@ -211,14 +211,14 @@ std::string DescribeRouterInterfaceAttributeResult::getReservationActiveTime()co
 	return reservationActiveTime_;
 }
 
-std::string DescribeRouterInterfaceAttributeResult::getReservationBandwidth()const
-{
-	return reservationBandwidth_;
-}
-
 int DescribeRouterInterfaceAttributeResult::getHcThreshold()const
 {
 	return hcThreshold_;
+}
+
+std::string DescribeRouterInterfaceAttributeResult::getReservationBandwidth()const
+{
+	return reservationBandwidth_;
 }
 
 std::string DescribeRouterInterfaceAttributeResult::getStatus()const
@@ -251,14 +251,14 @@ bool DescribeRouterInterfaceAttributeResult::getCrossBorder()const
 	return crossBorder_;
 }
 
-std::string DescribeRouterInterfaceAttributeResult::getCode()const
-{
-	return code_;
-}
-
 int DescribeRouterInterfaceAttributeResult::getHcRate()const
 {
 	return hcRate_;
+}
+
+std::string DescribeRouterInterfaceAttributeResult::getCode()const
+{
+	return code_;
 }
 
 std::string DescribeRouterInterfaceAttributeResult::getReservationInternetChargeType()const
@@ -266,14 +266,14 @@ std::string DescribeRouterInterfaceAttributeResult::getReservationInternetCharge
 	return reservationInternetChargeType_;
 }
 
-std::string DescribeRouterInterfaceAttributeResult::getRole()const
-{
-	return role_;
-}
-
 std::string DescribeRouterInterfaceAttributeResult::getOppositeInterfaceSpec()const
 {
 	return oppositeInterfaceSpec_;
+}
+
+std::string DescribeRouterInterfaceAttributeResult::getRole()const
+{
+	return role_;
 }
 
 std::string DescribeRouterInterfaceAttributeResult::getOppositeVpcInstanceId()const
@@ -301,14 +301,14 @@ std::string DescribeRouterInterfaceAttributeResult::getAccessPointId()const
 	return accessPointId_;
 }
 
-std::string DescribeRouterInterfaceAttributeResult::getOppositeInterfaceBusinessStatus()const
-{
-	return oppositeInterfaceBusinessStatus_;
-}
-
 std::string DescribeRouterInterfaceAttributeResult::getVpcInstanceId()const
 {
 	return vpcInstanceId_;
+}
+
+std::string DescribeRouterInterfaceAttributeResult::getOppositeInterfaceBusinessStatus()const
+{
+	return oppositeInterfaceBusinessStatus_;
 }
 
 std::string DescribeRouterInterfaceAttributeResult::getOppositeAccessPointId()const
@@ -326,13 +326,13 @@ std::string DescribeRouterInterfaceAttributeResult::getHealthCheckStatus()const
 	return healthCheckStatus_;
 }
 
-std::string DescribeRouterInterfaceAttributeResult::getRouterInterfaceId()const
-{
-	return routerInterfaceId_;
-}
-
 std::string DescribeRouterInterfaceAttributeResult::getHealthCheckTargetIp()const
 {
 	return healthCheckTargetIp_;
+}
+
+std::string DescribeRouterInterfaceAttributeResult::getRouterInterfaceId()const
+{
+	return routerInterfaceId_;
 }
 

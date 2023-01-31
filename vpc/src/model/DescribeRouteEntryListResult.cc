@@ -43,43 +43,47 @@ void DescribeRouteEntryListResult::parse(const std::string &payload)
 	for (auto valueRouteEntrysRouteEntry : allRouteEntrysNode)
 	{
 		RouteEntry routeEntrysObject;
-		if(!valueRouteEntrysRouteEntry["RouteTableId"].isNull())
-			routeEntrysObject.routeTableId = valueRouteEntrysRouteEntry["RouteTableId"].asString();
-		if(!valueRouteEntrysRouteEntry["DestinationCidrBlock"].isNull())
-			routeEntrysObject.destinationCidrBlock = valueRouteEntrysRouteEntry["DestinationCidrBlock"].asString();
-		if(!valueRouteEntrysRouteEntry["Type"].isNull())
-			routeEntrysObject.type = valueRouteEntrysRouteEntry["Type"].asString();
-		if(!valueRouteEntrysRouteEntry["RouteEntryId"].isNull())
-			routeEntrysObject.routeEntryId = valueRouteEntrysRouteEntry["RouteEntryId"].asString();
-		if(!valueRouteEntrysRouteEntry["RouteEntryName"].isNull())
-			routeEntrysObject.routeEntryName = valueRouteEntrysRouteEntry["RouteEntryName"].asString();
-		if(!valueRouteEntrysRouteEntry["Description"].isNull())
-			routeEntrysObject.description = valueRouteEntrysRouteEntry["Description"].asString();
 		if(!valueRouteEntrysRouteEntry["Status"].isNull())
 			routeEntrysObject.status = valueRouteEntrysRouteEntry["Status"].asString();
+		if(!valueRouteEntrysRouteEntry["Type"].isNull())
+			routeEntrysObject.type = valueRouteEntrysRouteEntry["Type"].asString();
 		if(!valueRouteEntrysRouteEntry["IpVersion"].isNull())
 			routeEntrysObject.ipVersion = valueRouteEntrysRouteEntry["IpVersion"].asString();
+		if(!valueRouteEntrysRouteEntry["Description"].isNull())
+			routeEntrysObject.description = valueRouteEntrysRouteEntry["Description"].asString();
+		if(!valueRouteEntrysRouteEntry["RouteEntryName"].isNull())
+			routeEntrysObject.routeEntryName = valueRouteEntrysRouteEntry["RouteEntryName"].asString();
+		if(!valueRouteEntrysRouteEntry["DestinationCidrBlock"].isNull())
+			routeEntrysObject.destinationCidrBlock = valueRouteEntrysRouteEntry["DestinationCidrBlock"].asString();
+		if(!valueRouteEntrysRouteEntry["RouteEntryId"].isNull())
+			routeEntrysObject.routeEntryId = valueRouteEntrysRouteEntry["RouteEntryId"].asString();
+		if(!valueRouteEntrysRouteEntry["RouteTableId"].isNull())
+			routeEntrysObject.routeTableId = valueRouteEntrysRouteEntry["RouteTableId"].asString();
+		if(!valueRouteEntrysRouteEntry["GmtModified"].isNull())
+			routeEntrysObject.gmtModified = valueRouteEntrysRouteEntry["GmtModified"].asString();
+		if(!valueRouteEntrysRouteEntry["ServiceType"].isNull())
+			routeEntrysObject.serviceType = valueRouteEntrysRouteEntry["ServiceType"].asString();
 		auto allNextHopsNode = valueRouteEntrysRouteEntry["NextHops"]["NextHop"];
 		for (auto valueRouteEntrysRouteEntryNextHopsNextHop : allNextHopsNode)
 		{
 			RouteEntry::NextHop nextHopsObject;
-			if(!valueRouteEntrysRouteEntryNextHopsNextHop["NextHopType"].isNull())
-				nextHopsObject.nextHopType = valueRouteEntrysRouteEntryNextHopsNextHop["NextHopType"].asString();
+			if(!valueRouteEntrysRouteEntryNextHopsNextHop["NextHopRegionId"].isNull())
+				nextHopsObject.nextHopRegionId = valueRouteEntrysRouteEntryNextHopsNextHop["NextHopRegionId"].asString();
+			if(!valueRouteEntrysRouteEntryNextHopsNextHop["Weight"].isNull())
+				nextHopsObject.weight = std::stoi(valueRouteEntrysRouteEntryNextHopsNextHop["Weight"].asString());
 			if(!valueRouteEntrysRouteEntryNextHopsNextHop["NextHopId"].isNull())
 				nextHopsObject.nextHopId = valueRouteEntrysRouteEntryNextHopsNextHop["NextHopId"].asString();
 			if(!valueRouteEntrysRouteEntryNextHopsNextHop["Enabled"].isNull())
 				nextHopsObject.enabled = std::stoi(valueRouteEntrysRouteEntryNextHopsNextHop["Enabled"].asString());
-			if(!valueRouteEntrysRouteEntryNextHopsNextHop["Weight"].isNull())
-				nextHopsObject.weight = std::stoi(valueRouteEntrysRouteEntryNextHopsNextHop["Weight"].asString());
-			if(!valueRouteEntrysRouteEntryNextHopsNextHop["NextHopRegionId"].isNull())
-				nextHopsObject.nextHopRegionId = valueRouteEntrysRouteEntryNextHopsNextHop["NextHopRegionId"].asString();
+			if(!valueRouteEntrysRouteEntryNextHopsNextHop["NextHopType"].isNull())
+				nextHopsObject.nextHopType = valueRouteEntrysRouteEntryNextHopsNextHop["NextHopType"].asString();
 			auto nextHopRelatedInfoNode = value["NextHopRelatedInfo"];
+			if(!nextHopRelatedInfoNode["InstanceId"].isNull())
+				nextHopsObject.nextHopRelatedInfo.instanceId = nextHopRelatedInfoNode["InstanceId"].asString();
 			if(!nextHopRelatedInfoNode["InstanceType"].isNull())
 				nextHopsObject.nextHopRelatedInfo.instanceType = nextHopRelatedInfoNode["InstanceType"].asString();
 			if(!nextHopRelatedInfoNode["RegionId"].isNull())
 				nextHopsObject.nextHopRelatedInfo.regionId = nextHopRelatedInfoNode["RegionId"].asString();
-			if(!nextHopRelatedInfoNode["InstanceId"].isNull())
-				nextHopsObject.nextHopRelatedInfo.instanceId = nextHopRelatedInfoNode["InstanceId"].asString();
 			routeEntrysObject.nextHops.push_back(nextHopsObject);
 		}
 		routeEntrys_.push_back(routeEntrysObject);

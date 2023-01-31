@@ -37,20 +37,20 @@ namespace AlibabaCloud
 				DescribeHighDefinitionMonitorLogAttributeResult();
 				explicit DescribeHighDefinitionMonitorLogAttributeResult(const std::string &payload);
 				~DescribeHighDefinitionMonitorLogAttributeResult();
-				std::string getInstanceId()const;
 				std::string getLogStore()const;
+				std::string getInstanceId()const;
 				std::string getInstanceType()const;
-				std::string getSuccess()const;
 				std::string getLogProject()const;
+				std::string getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string instanceId_;
 				std::string logStore_;
+				std::string instanceId_;
 				std::string instanceType_;
-				std::string success_;
 				std::string logProject_;
+				std::string success_;
 
 			};
 		}

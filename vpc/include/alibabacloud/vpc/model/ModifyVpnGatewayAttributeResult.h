@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				std::string getDescription()const;
 				bool getEnableBgp()const;
 				long getEndTime()const;
-				std::string getVSwitchId()const;
 				long getCreateTime()const;
+				std::string getVSwitchId()const;
 				bool getAutoPropagate()const;
 				std::string getIntranetIp()const;
 				std::string getBusinessStatus()const;
@@ -59,8 +59,8 @@ namespace AlibabaCloud
 				std::string description_;
 				bool enableBgp_;
 				long endTime_;
-				std::string vSwitchId_;
 				long createTime_;
+				std::string vSwitchId_;
 				bool autoPropagate_;
 				std::string intranetIp_;
 				std::string businessStatus_;

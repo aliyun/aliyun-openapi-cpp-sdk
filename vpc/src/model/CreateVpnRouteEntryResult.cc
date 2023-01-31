@@ -39,28 +39,23 @@ void CreateVpnRouteEntryResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["VpnInstanceId"].isNull())
-		vpnInstanceId_ = value["VpnInstanceId"].asString();
-	if(!value["RouteDest"].isNull())
-		routeDest_ = value["RouteDest"].asString();
 	if(!value["NextHop"].isNull())
 		nextHop_ = value["NextHop"].asString();
 	if(!value["Weight"].isNull())
 		weight_ = std::stoi(value["Weight"].asString());
-	if(!value["OverlayMode"].isNull())
-		overlayMode_ = value["OverlayMode"].asString();
+	if(!value["RouteDest"].isNull())
+		routeDest_ = value["RouteDest"].asString();
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
 	if(!value["State"].isNull())
 		state_ = value["State"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = std::stol(value["CreateTime"].asString());
+	if(!value["OverlayMode"].isNull())
+		overlayMode_ = value["OverlayMode"].asString();
+	if(!value["VpnInstanceId"].isNull())
+		vpnInstanceId_ = value["VpnInstanceId"].asString();
 
-}
-
-std::string CreateVpnRouteEntryResult::getVpnInstanceId()const
-{
-	return vpnInstanceId_;
 }
 
 std::string CreateVpnRouteEntryResult::getRouteDest()const
@@ -71,6 +66,11 @@ std::string CreateVpnRouteEntryResult::getRouteDest()const
 std::string CreateVpnRouteEntryResult::getDescription()const
 {
 	return description_;
+}
+
+std::string CreateVpnRouteEntryResult::getVpnInstanceId()const
+{
+	return vpnInstanceId_;
 }
 
 std::string CreateVpnRouteEntryResult::getOverlayMode()const

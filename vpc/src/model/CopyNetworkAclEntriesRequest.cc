@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,73 @@
 
 using AlibabaCloud::Vpc::Model::CopyNetworkAclEntriesRequest;
 
-CopyNetworkAclEntriesRequest::CopyNetworkAclEntriesRequest() :
-	RpcServiceRequest("vpc", "2016-04-28", "CopyNetworkAclEntries")
-{
-	setMethod(HttpRequest::Method::Post);
+CopyNetworkAclEntriesRequest::CopyNetworkAclEntriesRequest()
+    : RpcServiceRequest("vpc", "2016-04-28", "CopyNetworkAclEntries") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-CopyNetworkAclEntriesRequest::~CopyNetworkAclEntriesRequest()
-{}
+CopyNetworkAclEntriesRequest::~CopyNetworkAclEntriesRequest() {}
 
-long CopyNetworkAclEntriesRequest::getResourceOwnerId()const
-{
-	return resourceOwnerId_;
+long CopyNetworkAclEntriesRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void CopyNetworkAclEntriesRequest::setResourceOwnerId(long resourceOwnerId)
-{
-	resourceOwnerId_ = resourceOwnerId;
-	setParameter("ResourceOwnerId", std::to_string(resourceOwnerId));
+void CopyNetworkAclEntriesRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string CopyNetworkAclEntriesRequest::getClientToken()const
-{
-	return clientToken_;
+std::string CopyNetworkAclEntriesRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void CopyNetworkAclEntriesRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void CopyNetworkAclEntriesRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string CopyNetworkAclEntriesRequest::getRegionId()const
-{
-	return regionId_;
+std::string CopyNetworkAclEntriesRequest::getRegionId() const {
+  return regionId_;
 }
 
-void CopyNetworkAclEntriesRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void CopyNetworkAclEntriesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string CopyNetworkAclEntriesRequest::getNetworkAclId()const
-{
-	return networkAclId_;
+std::string CopyNetworkAclEntriesRequest::getNetworkAclId() const {
+  return networkAclId_;
 }
 
-void CopyNetworkAclEntriesRequest::setNetworkAclId(const std::string& networkAclId)
-{
-	networkAclId_ = networkAclId;
-	setParameter("NetworkAclId", networkAclId);
+void CopyNetworkAclEntriesRequest::setNetworkAclId(const std::string &networkAclId) {
+  networkAclId_ = networkAclId;
+  setParameter(std::string("NetworkAclId"), networkAclId);
 }
 
-std::string CopyNetworkAclEntriesRequest::getSourceNetworkAclId()const
-{
-	return sourceNetworkAclId_;
+std::string CopyNetworkAclEntriesRequest::getSourceNetworkAclId() const {
+  return sourceNetworkAclId_;
 }
 
-void CopyNetworkAclEntriesRequest::setSourceNetworkAclId(const std::string& sourceNetworkAclId)
-{
-	sourceNetworkAclId_ = sourceNetworkAclId;
-	setParameter("SourceNetworkAclId", sourceNetworkAclId);
+void CopyNetworkAclEntriesRequest::setSourceNetworkAclId(const std::string &sourceNetworkAclId) {
+  sourceNetworkAclId_ = sourceNetworkAclId;
+  setParameter(std::string("SourceNetworkAclId"), sourceNetworkAclId);
 }
 
-std::string CopyNetworkAclEntriesRequest::getResourceOwnerAccount()const
-{
-	return resourceOwnerAccount_;
+std::string CopyNetworkAclEntriesRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
 }
 
-void CopyNetworkAclEntriesRequest::setResourceOwnerAccount(const std::string& resourceOwnerAccount)
-{
-	resourceOwnerAccount_ = resourceOwnerAccount;
-	setParameter("ResourceOwnerAccount", resourceOwnerAccount);
+void CopyNetworkAclEntriesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
-long CopyNetworkAclEntriesRequest::getOwnerId()const
-{
-	return ownerId_;
+long CopyNetworkAclEntriesRequest::getOwnerId() const {
+  return ownerId_;
 }
 
-void CopyNetworkAclEntriesRequest::setOwnerId(long ownerId)
-{
-	ownerId_ = ownerId;
-	setParameter("OwnerId", std::to_string(ownerId));
+void CopyNetworkAclEntriesRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

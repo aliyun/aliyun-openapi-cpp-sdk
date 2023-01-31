@@ -34,20 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct SslVpnServer
 				{
-					std::string localSubnet;
 					bool compress;
+					std::string localSubnet;
 					int connections;
 					std::string clientIpPool;
 					std::string iDaaSInstanceId;
 					int maxConnections;
 					bool enableMultiFactorAuth;
-					std::string sslVpnServerId;
 					long createTime;
 					int port;
+					std::string sslVpnServerId;
 					std::string iDaaSRegionId;
 					std::string name;
-					std::string proto;
 					std::string internetIp;
+					std::string proto;
 					std::string vpnGatewayId;
 					std::string regionId;
 					std::string cipher;

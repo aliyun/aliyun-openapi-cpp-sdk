@@ -40,8 +40,8 @@ namespace AlibabaCloud
 					std::string ikeVersion;
 					std::string ikeMode;
 					long ikeLifetime;
-					std::string psk;
 					std::string remoteId;
+					std::string psk;
 					std::string ikePfs;
 				};
 				struct IpsecConfig
@@ -54,63 +54,92 @@ namespace AlibabaCloud
 				struct VcoHealthCheck
 				{
 					std::string status;
+					std::string policy;
 					std::string enable;
 					std::string dip;
-					std::string sip;
 					int retry;
+					std::string sip;
 					int interval;
 				};
 				struct VpnBgpConfig
 				{
 					std::string status;
 					std::string enableBgp;
-					std::string localAsn;
+					long localAsn;
 					std::string tunnelCidr;
+					std::string authKey;
 					std::string peerBgpIp;
-					std::string peerAsn;
+					long peerAsn;
 					std::string localBgpIp;
+				};
+				struct Tag
+				{
+					std::string value;
+					std::string key;
 				};
 
 
 				DescribeVpnConnectionResult();
 				explicit DescribeVpnConnectionResult(const std::string &payload);
 				~DescribeVpnConnectionResult();
-				std::string getLocalSubnet()const;
-				std::string getStatus()const;
-				std::string getCustomerGatewayId()const;
-				long getCreateTime()const;
+				std::string getAttachType()const;
+				bool getCrossAccountAuthorized()const;
+				std::string getZoneNo()const;
 				std::string getName()const;
 				bool getEffectImmediately()const;
-				VcoHealthCheck getVcoHealthCheck()const;
 				std::string getRemoteSubnet()const;
-				std::string getVpnGatewayId()const;
+				std::string getInternetIp()const;
 				IpsecConfig getIpsecConfig()const;
+				std::string getNetworkType()const;
 				std::string getRemoteCaCertificate()const;
-				std::string getVpnConnectionId()const;
 				bool getEnableNatTraversal()const;
 				IkeConfig getIkeConfig()const;
-				bool getEnableDpd()const;
+				std::vector<Tag> getTags()const;
+				std::string getAttachInstanceId()const;
 				VpnBgpConfig getVpnBgpConfig()const;
+				std::string getTransitRouterId()const;
+				std::string getStatus()const;
+				std::string getLocalSubnet()const;
+				std::string getCustomerGatewayId()const;
+				long getCreateTime()const;
+				std::string getTransitRouterName()const;
+				VcoHealthCheck getVcoHealthCheck()const;
+				std::string getVpnGatewayId()const;
+				std::string getState()const;
+				std::string getVpnConnectionId()const;
+				std::string getSpec()const;
+				bool getEnableDpd()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string localSubnet_;
-				std::string status_;
-				std::string customerGatewayId_;
-				long createTime_;
+				std::string attachType_;
+				bool crossAccountAuthorized_;
+				std::string zoneNo_;
 				std::string name_;
 				bool effectImmediately_;
-				VcoHealthCheck vcoHealthCheck_;
 				std::string remoteSubnet_;
-				std::string vpnGatewayId_;
+				std::string internetIp_;
 				IpsecConfig ipsecConfig_;
+				std::string networkType_;
 				std::string remoteCaCertificate_;
-				std::string vpnConnectionId_;
 				bool enableNatTraversal_;
 				IkeConfig ikeConfig_;
-				bool enableDpd_;
+				std::vector<Tag> tags_;
+				std::string attachInstanceId_;
 				VpnBgpConfig vpnBgpConfig_;
+				std::string transitRouterId_;
+				std::string status_;
+				std::string localSubnet_;
+				std::string customerGatewayId_;
+				long createTime_;
+				std::string transitRouterName_;
+				VcoHealthCheck vcoHealthCheck_;
+				std::string vpnGatewayId_;
+				std::string state_;
+				std::string vpnConnectionId_;
+				std::string spec_;
+				bool enableDpd_;
 
 			};
 		}

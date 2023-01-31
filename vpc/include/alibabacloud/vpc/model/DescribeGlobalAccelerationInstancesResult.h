@@ -56,9 +56,9 @@ namespace AlibabaCloud
 					std::string globalAccelerationInstanceId;
 					std::vector<GlobalAccelerationInstance::BackendServer> backendServers;
 					std::vector<GlobalAccelerationInstance::LockReason> operationLocks;
+					std::string reservationInternetChargeType;
 					std::string internetChargeType;
 					std::string name;
-					std::string reservationInternetChargeType;
 					std::string reservationOrderType;
 					std::string bandwidthType;
 					std::string accelerationLocation;

@@ -36,9 +36,9 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					long endTime;
+					long createTime;
 					std::string sslVpnClientCertId;
 					std::string sslVpnServerId;
-					long createTime;
 					std::string regionId;
 					std::string name;
 				};

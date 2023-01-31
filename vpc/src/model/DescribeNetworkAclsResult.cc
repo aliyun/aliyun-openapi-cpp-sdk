@@ -43,42 +43,42 @@ void DescribeNetworkAclsResult::parse(const std::string &payload)
 	for (auto valueNetworkAclsNetworkAcl : allNetworkAclsNode)
 	{
 		NetworkAcl networkAclsObject;
-		if(!valueNetworkAclsNetworkAcl["NetworkAclId"].isNull())
-			networkAclsObject.networkAclId = valueNetworkAclsNetworkAcl["NetworkAclId"].asString();
-		if(!valueNetworkAclsNetworkAcl["RegionId"].isNull())
-			networkAclsObject.regionId = valueNetworkAclsNetworkAcl["RegionId"].asString();
-		if(!valueNetworkAclsNetworkAcl["NetworkAclName"].isNull())
-			networkAclsObject.networkAclName = valueNetworkAclsNetworkAcl["NetworkAclName"].asString();
-		if(!valueNetworkAclsNetworkAcl["Description"].isNull())
-			networkAclsObject.description = valueNetworkAclsNetworkAcl["Description"].asString();
+		if(!valueNetworkAclsNetworkAcl["Status"].isNull())
+			networkAclsObject.status = valueNetworkAclsNetworkAcl["Status"].asString();
 		if(!valueNetworkAclsNetworkAcl["VpcId"].isNull())
 			networkAclsObject.vpcId = valueNetworkAclsNetworkAcl["VpcId"].asString();
 		if(!valueNetworkAclsNetworkAcl["CreationTime"].isNull())
 			networkAclsObject.creationTime = valueNetworkAclsNetworkAcl["CreationTime"].asString();
-		if(!valueNetworkAclsNetworkAcl["Status"].isNull())
-			networkAclsObject.status = valueNetworkAclsNetworkAcl["Status"].asString();
+		if(!valueNetworkAclsNetworkAcl["Description"].isNull())
+			networkAclsObject.description = valueNetworkAclsNetworkAcl["Description"].asString();
+		if(!valueNetworkAclsNetworkAcl["NetworkAclName"].isNull())
+			networkAclsObject.networkAclName = valueNetworkAclsNetworkAcl["NetworkAclName"].asString();
+		if(!valueNetworkAclsNetworkAcl["NetworkAclId"].isNull())
+			networkAclsObject.networkAclId = valueNetworkAclsNetworkAcl["NetworkAclId"].asString();
 		if(!valueNetworkAclsNetworkAcl["OwnerId"].isNull())
 			networkAclsObject.ownerId = std::stol(valueNetworkAclsNetworkAcl["OwnerId"].asString());
+		if(!valueNetworkAclsNetworkAcl["RegionId"].isNull())
+			networkAclsObject.regionId = valueNetworkAclsNetworkAcl["RegionId"].asString();
 		auto allIngressAclEntriesNode = valueNetworkAclsNetworkAcl["IngressAclEntries"]["IngressAclEntry"];
 		for (auto valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry : allIngressAclEntriesNode)
 		{
 			NetworkAcl::IngressAclEntry ingressAclEntriesObject;
 			if(!valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["NetworkAclEntryId"].isNull())
 				ingressAclEntriesObject.networkAclEntryId = valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["NetworkAclEntryId"].asString();
-			if(!valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["Policy"].isNull())
-				ingressAclEntriesObject.policy = valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["Policy"].asString();
-			if(!valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["Protocol"].isNull())
-				ingressAclEntriesObject.protocol = valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["Protocol"].asString();
-			if(!valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["SourceCidrIp"].isNull())
-				ingressAclEntriesObject.sourceCidrIp = valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["SourceCidrIp"].asString();
-			if(!valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["Port"].isNull())
-				ingressAclEntriesObject.port = valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["Port"].asString();
 			if(!valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["EntryType"].isNull())
 				ingressAclEntriesObject.entryType = valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["EntryType"].asString();
 			if(!valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["NetworkAclEntryName"].isNull())
 				ingressAclEntriesObject.networkAclEntryName = valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["NetworkAclEntryName"].asString();
+			if(!valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["Policy"].isNull())
+				ingressAclEntriesObject.policy = valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["Policy"].asString();
 			if(!valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["Description"].isNull())
 				ingressAclEntriesObject.description = valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["Description"].asString();
+			if(!valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["SourceCidrIp"].isNull())
+				ingressAclEntriesObject.sourceCidrIp = valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["SourceCidrIp"].asString();
+			if(!valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["Protocol"].isNull())
+				ingressAclEntriesObject.protocol = valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["Protocol"].asString();
+			if(!valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["Port"].isNull())
+				ingressAclEntriesObject.port = valueNetworkAclsNetworkAclIngressAclEntriesIngressAclEntry["Port"].asString();
 			networkAclsObject.ingressAclEntries.push_back(ingressAclEntriesObject);
 		}
 		auto allEgressAclEntriesNode = valueNetworkAclsNetworkAcl["EgressAclEntries"]["EgressAclEntry"];
@@ -87,42 +87,42 @@ void DescribeNetworkAclsResult::parse(const std::string &payload)
 			NetworkAcl::EgressAclEntry egressAclEntriesObject;
 			if(!valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["NetworkAclEntryId"].isNull())
 				egressAclEntriesObject.networkAclEntryId = valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["NetworkAclEntryId"].asString();
+			if(!valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["EntryType"].isNull())
+				egressAclEntriesObject.entryType = valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["EntryType"].asString();
+			if(!valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["NetworkAclEntryName"].isNull())
+				egressAclEntriesObject.networkAclEntryName = valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["NetworkAclEntryName"].asString();
 			if(!valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["Policy"].isNull())
 				egressAclEntriesObject.policy = valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["Policy"].asString();
+			if(!valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["Description"].isNull())
+				egressAclEntriesObject.description = valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["Description"].asString();
 			if(!valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["Protocol"].isNull())
 				egressAclEntriesObject.protocol = valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["Protocol"].asString();
 			if(!valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["DestinationCidrIp"].isNull())
 				egressAclEntriesObject.destinationCidrIp = valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["DestinationCidrIp"].asString();
 			if(!valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["Port"].isNull())
 				egressAclEntriesObject.port = valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["Port"].asString();
-			if(!valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["EntryType"].isNull())
-				egressAclEntriesObject.entryType = valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["EntryType"].asString();
-			if(!valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["Description"].isNull())
-				egressAclEntriesObject.description = valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["Description"].asString();
-			if(!valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["NetworkAclEntryName"].isNull())
-				egressAclEntriesObject.networkAclEntryName = valueNetworkAclsNetworkAclEgressAclEntriesEgressAclEntry["NetworkAclEntryName"].asString();
 			networkAclsObject.egressAclEntries.push_back(egressAclEntriesObject);
 		}
 		auto allResourcesNode = valueNetworkAclsNetworkAcl["Resources"]["Resource"];
 		for (auto valueNetworkAclsNetworkAclResourcesResource : allResourcesNode)
 		{
 			NetworkAcl::Resource resourcesObject;
-			if(!valueNetworkAclsNetworkAclResourcesResource["ResourceId"].isNull())
-				resourcesObject.resourceId = valueNetworkAclsNetworkAclResourcesResource["ResourceId"].asString();
-			if(!valueNetworkAclsNetworkAclResourcesResource["ResourceType"].isNull())
-				resourcesObject.resourceType = valueNetworkAclsNetworkAclResourcesResource["ResourceType"].asString();
 			if(!valueNetworkAclsNetworkAclResourcesResource["Status"].isNull())
 				resourcesObject.status = valueNetworkAclsNetworkAclResourcesResource["Status"].asString();
+			if(!valueNetworkAclsNetworkAclResourcesResource["ResourceType"].isNull())
+				resourcesObject.resourceType = valueNetworkAclsNetworkAclResourcesResource["ResourceType"].asString();
+			if(!valueNetworkAclsNetworkAclResourcesResource["ResourceId"].isNull())
+				resourcesObject.resourceId = valueNetworkAclsNetworkAclResourcesResource["ResourceId"].asString();
 			networkAclsObject.resources.push_back(resourcesObject);
 		}
 		networkAcls_.push_back(networkAclsObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = value["TotalCount"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = value["PageNumber"].asString();
 	if(!value["PageSize"].isNull())
 		pageSize_ = value["PageSize"].asString();
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = value["PageNumber"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = value["TotalCount"].asString();
 
 }
 

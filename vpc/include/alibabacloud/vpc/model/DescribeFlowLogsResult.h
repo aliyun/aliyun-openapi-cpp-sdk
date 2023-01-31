@@ -35,15 +35,19 @@ namespace AlibabaCloud
 				struct FlowLog
 				{
 					std::string status;
-					std::string flowLogName;
 					std::string description;
+					std::vector<std::string> trafficPath;
+					std::string projectName;
+					std::string resourceType;
+					std::string flowLogId;
+					std::string businessStatus;
+					std::string flowLogName;
 					std::string logStoreName;
 					std::string resourceId;
-					std::string projectName;
+					std::string serviceType;
 					std::string creationTime;
-					std::string resourceType;
 					std::string regionId;
-					std::string flowLogId;
+					int aggregationInterval;
 					std::string trafficType;
 				};
 

@@ -51,16 +51,16 @@ namespace AlibabaCloud
 					std::vector<std::string> routerTableIds;
 					std::vector<std::string> userCidrs;
 					std::string networkAclNum;
-					std::string vRouterId;
 					bool advancedResource;
+					std::string vRouterId;
 					std::string dhcpOptionsSetId;
 					std::vector<std::string> natGatewayIds;
 					long ownerId;
 					std::vector<Vpc::Tag> tags;
 					std::string status;
 					bool isDefault;
-					std::string cenStatus;
 					bool supportAdvancedFeature;
+					std::string cenStatus;
 					std::string dhcpOptionsSetStatus;
 					std::vector<std::string> vSwitchIds;
 					std::string vpcId;

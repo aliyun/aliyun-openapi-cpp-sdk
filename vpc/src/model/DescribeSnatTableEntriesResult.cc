@@ -43,28 +43,28 @@ void DescribeSnatTableEntriesResult::parse(const std::string &payload)
 	for (auto valueSnatTableEntriesSnatTableEntry : allSnatTableEntriesNode)
 	{
 		SnatTableEntry snatTableEntriesObject;
-		if(!valueSnatTableEntriesSnatTableEntry["SnatTableId"].isNull())
-			snatTableEntriesObject.snatTableId = valueSnatTableEntriesSnatTableEntry["SnatTableId"].asString();
-		if(!valueSnatTableEntriesSnatTableEntry["SnatEntryId"].isNull())
-			snatTableEntriesObject.snatEntryId = valueSnatTableEntriesSnatTableEntry["SnatEntryId"].asString();
-		if(!valueSnatTableEntriesSnatTableEntry["SourceVSwitchId"].isNull())
-			snatTableEntriesObject.sourceVSwitchId = valueSnatTableEntriesSnatTableEntry["SourceVSwitchId"].asString();
-		if(!valueSnatTableEntriesSnatTableEntry["SourceCIDR"].isNull())
-			snatTableEntriesObject.sourceCIDR = valueSnatTableEntriesSnatTableEntry["SourceCIDR"].asString();
-		if(!valueSnatTableEntriesSnatTableEntry["SnatIp"].isNull())
-			snatTableEntriesObject.snatIp = valueSnatTableEntriesSnatTableEntry["SnatIp"].asString();
 		if(!valueSnatTableEntriesSnatTableEntry["Status"].isNull())
 			snatTableEntriesObject.status = valueSnatTableEntriesSnatTableEntry["Status"].asString();
 		if(!valueSnatTableEntriesSnatTableEntry["SnatEntryName"].isNull())
 			snatTableEntriesObject.snatEntryName = valueSnatTableEntriesSnatTableEntry["SnatEntryName"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["SourceVSwitchId"].isNull())
+			snatTableEntriesObject.sourceVSwitchId = valueSnatTableEntriesSnatTableEntry["SourceVSwitchId"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["SourceCIDR"].isNull())
+			snatTableEntriesObject.sourceCIDR = valueSnatTableEntriesSnatTableEntry["SourceCIDR"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["SnatEntryId"].isNull())
+			snatTableEntriesObject.snatEntryId = valueSnatTableEntriesSnatTableEntry["SnatEntryId"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["SnatTableId"].isNull())
+			snatTableEntriesObject.snatTableId = valueSnatTableEntriesSnatTableEntry["SnatTableId"].asString();
+		if(!valueSnatTableEntriesSnatTableEntry["SnatIp"].isNull())
+			snatTableEntriesObject.snatIp = valueSnatTableEntriesSnatTableEntry["SnatIp"].asString();
 		snatTableEntries_.push_back(snatTableEntriesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 

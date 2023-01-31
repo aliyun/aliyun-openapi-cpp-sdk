@@ -42,8 +42,8 @@ namespace AlibabaCloud
 						std::string ikeVersion;
 						std::string ikeMode;
 						long ikeLifetime;
-						std::string psk;
 						std::string remoteId;
+						std::string psk;
 						std::string ikePfs;
 					};
 					struct IpsecConfig
@@ -56,37 +56,54 @@ namespace AlibabaCloud
 					struct VcoHealthCheck
 					{
 						std::string status;
+						std::string policy;
 						std::string enable;
 						std::string dip;
-						std::string sip;
 						int retry;
+						std::string sip;
 						int interval;
 					};
 					struct VpnBgpConfig
 					{
 						std::string status;
-						std::string localAsn;
+						long localAsn;
 						std::string tunnelCidr;
+						std::string authKey;
 						std::string peerBgpIp;
-						std::string peerAsn;
+						long peerAsn;
 						std::string localBgpIp;
 					};
-					std::string localSubnet;
-					std::string status;
-					std::string customerGatewayId;
-					long createTime;
+					struct TagItem
+					{
+						std::string value;
+						std::string key;
+					};
+					std::string attachType;
+					bool crossAccountAuthorized;
 					std::string name;
 					bool effectImmediately;
-					VcoHealthCheck vcoHealthCheck;
 					std::string remoteSubnet;
-					std::string vpnGatewayId;
+					std::string internetIp;
 					IpsecConfig ipsecConfig;
+					std::string networkType;
 					std::string remoteCaCertificate;
-					std::string vpnConnectionId;
 					bool enableNatTraversal;
 					IkeConfig ikeConfig;
-					bool enableDpd;
+					std::string attachInstanceId;
 					VpnBgpConfig vpnBgpConfig;
+					std::string transitRouterId;
+					std::string status;
+					std::string localSubnet;
+					std::string customerGatewayId;
+					long createTime;
+					std::string transitRouterName;
+					VcoHealthCheck vcoHealthCheck;
+					std::string vpnGatewayId;
+					std::string state;
+					std::vector<VpnConnection::TagItem> tag;
+					std::string vpnConnectionId;
+					std::string spec;
+					bool enableDpd;
 				};
 
 

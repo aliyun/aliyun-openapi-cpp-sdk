@@ -42,6 +42,11 @@ namespace AlibabaCloud
 					int snatEntryCount;
 					std::string snatTableId;
 				};
+				struct FullNatTable
+				{
+					long fullNatEntryCount;
+					std::string fullNatTableId;
+				};
 				struct BillingConfig
 				{
 					std::string instanceChargeType;
@@ -77,6 +82,8 @@ namespace AlibabaCloud
 				std::string getDescription()const;
 				std::string getResourceGroupId()const;
 				std::vector<IpListItem> getIpList()const;
+				bool getPrivateLinkEnabled()const;
+				std::string getPrivateLinkMode()const;
 				BillingConfig getBillingConfig()const;
 				DeletionProtectionInfo getDeletionProtectionInfo()const;
 				SnatTable getSnatTable()const;
@@ -85,6 +92,8 @@ namespace AlibabaCloud
 				std::string getName()const;
 				bool getEcsMetricEnabled()const;
 				std::string getVpcId()const;
+				std::string getNetworkType()const;
+				FullNatTable getFullNatTable()const;
 				std::string getExpiredTime()const;
 				PrivateInfo getPrivateInfo()const;
 				std::string getCreationTime()const;
@@ -99,6 +108,8 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string resourceGroupId_;
 				std::vector<IpListItem> ipList_;
+				bool privateLinkEnabled_;
+				std::string privateLinkMode_;
 				BillingConfig billingConfig_;
 				DeletionProtectionInfo deletionProtectionInfo_;
 				SnatTable snatTable_;
@@ -107,6 +118,8 @@ namespace AlibabaCloud
 				std::string name_;
 				bool ecsMetricEnabled_;
 				std::string vpcId_;
+				std::string networkType_;
+				FullNatTable fullNatTable_;
 				std::string expiredTime_;
 				PrivateInfo privateInfo_;
 				std::string creationTime_;

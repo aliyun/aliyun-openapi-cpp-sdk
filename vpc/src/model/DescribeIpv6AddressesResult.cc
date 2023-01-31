@@ -43,51 +43,51 @@ void DescribeIpv6AddressesResult::parse(const std::string &payload)
 	for (auto valueIpv6AddressesIpv6Address : allIpv6AddressesNode)
 	{
 		Ipv6Address ipv6AddressesObject;
-		if(!valueIpv6AddressesIpv6Address["Ipv6AddressId"].isNull())
-			ipv6AddressesObject.ipv6AddressId = valueIpv6AddressesIpv6Address["Ipv6AddressId"].asString();
-		if(!valueIpv6AddressesIpv6Address["Ipv6AddressName"].isNull())
-			ipv6AddressesObject.ipv6AddressName = valueIpv6AddressesIpv6Address["Ipv6AddressName"].asString();
-		if(!valueIpv6AddressesIpv6Address["VSwitchId"].isNull())
-			ipv6AddressesObject.vSwitchId = valueIpv6AddressesIpv6Address["VSwitchId"].asString();
 		if(!valueIpv6AddressesIpv6Address["VpcId"].isNull())
 			ipv6AddressesObject.vpcId = valueIpv6AddressesIpv6Address["VpcId"].asString();
-		if(!valueIpv6AddressesIpv6Address["Ipv6GatewayId"].isNull())
-			ipv6AddressesObject.ipv6GatewayId = valueIpv6AddressesIpv6Address["Ipv6GatewayId"].asString();
-		if(!valueIpv6AddressesIpv6Address["Ipv6Address"].isNull())
-			ipv6AddressesObject.ipv6Address = valueIpv6AddressesIpv6Address["Ipv6Address"].asString();
-		if(!valueIpv6AddressesIpv6Address["AssociatedInstanceId"].isNull())
-			ipv6AddressesObject.associatedInstanceId = valueIpv6AddressesIpv6Address["AssociatedInstanceId"].asString();
-		if(!valueIpv6AddressesIpv6Address["AssociatedInstanceType"].isNull())
-			ipv6AddressesObject.associatedInstanceType = valueIpv6AddressesIpv6Address["AssociatedInstanceType"].asString();
 		if(!valueIpv6AddressesIpv6Address["Status"].isNull())
 			ipv6AddressesObject.status = valueIpv6AddressesIpv6Address["Status"].asString();
-		if(!valueIpv6AddressesIpv6Address["NetworkType"].isNull())
-			ipv6AddressesObject.networkType = valueIpv6AddressesIpv6Address["NetworkType"].asString();
-		if(!valueIpv6AddressesIpv6Address["RealBandwidth"].isNull())
-			ipv6AddressesObject.realBandwidth = std::stoi(valueIpv6AddressesIpv6Address["RealBandwidth"].asString());
+		if(!valueIpv6AddressesIpv6Address["Ipv6AddressId"].isNull())
+			ipv6AddressesObject.ipv6AddressId = valueIpv6AddressesIpv6Address["Ipv6AddressId"].asString();
 		if(!valueIpv6AddressesIpv6Address["AllocationTime"].isNull())
 			ipv6AddressesObject.allocationTime = valueIpv6AddressesIpv6Address["AllocationTime"].asString();
+		if(!valueIpv6AddressesIpv6Address["Ipv6AddressName"].isNull())
+			ipv6AddressesObject.ipv6AddressName = valueIpv6AddressesIpv6Address["Ipv6AddressName"].asString();
+		if(!valueIpv6AddressesIpv6Address["AssociatedInstanceType"].isNull())
+			ipv6AddressesObject.associatedInstanceType = valueIpv6AddressesIpv6Address["AssociatedInstanceType"].asString();
+		if(!valueIpv6AddressesIpv6Address["AssociatedInstanceId"].isNull())
+			ipv6AddressesObject.associatedInstanceId = valueIpv6AddressesIpv6Address["AssociatedInstanceId"].asString();
+		if(!valueIpv6AddressesIpv6Address["NetworkType"].isNull())
+			ipv6AddressesObject.networkType = valueIpv6AddressesIpv6Address["NetworkType"].asString();
+		if(!valueIpv6AddressesIpv6Address["Ipv6Address"].isNull())
+			ipv6AddressesObject.ipv6Address = valueIpv6AddressesIpv6Address["Ipv6Address"].asString();
 		if(!valueIpv6AddressesIpv6Address["Ipv6Isp"].isNull())
 			ipv6AddressesObject.ipv6Isp = valueIpv6AddressesIpv6Address["Ipv6Isp"].asString();
+		if(!valueIpv6AddressesIpv6Address["VSwitchId"].isNull())
+			ipv6AddressesObject.vSwitchId = valueIpv6AddressesIpv6Address["VSwitchId"].asString();
+		if(!valueIpv6AddressesIpv6Address["Ipv6GatewayId"].isNull())
+			ipv6AddressesObject.ipv6GatewayId = valueIpv6AddressesIpv6Address["Ipv6GatewayId"].asString();
+		if(!valueIpv6AddressesIpv6Address["RealBandwidth"].isNull())
+			ipv6AddressesObject.realBandwidth = std::stoi(valueIpv6AddressesIpv6Address["RealBandwidth"].asString());
 		auto ipv6InternetBandwidthNode = value["Ipv6InternetBandwidth"];
-		if(!ipv6InternetBandwidthNode["Bandwidth"].isNull())
-			ipv6AddressesObject.ipv6InternetBandwidth.bandwidth = std::stoi(ipv6InternetBandwidthNode["Bandwidth"].asString());
-		if(!ipv6InternetBandwidthNode["InstanceChargeType"].isNull())
-			ipv6AddressesObject.ipv6InternetBandwidth.instanceChargeType = ipv6InternetBandwidthNode["InstanceChargeType"].asString();
 		if(!ipv6InternetBandwidthNode["InternetChargeType"].isNull())
 			ipv6AddressesObject.ipv6InternetBandwidth.internetChargeType = ipv6InternetBandwidthNode["InternetChargeType"].asString();
 		if(!ipv6InternetBandwidthNode["BusinessStatus"].isNull())
 			ipv6AddressesObject.ipv6InternetBandwidth.businessStatus = ipv6InternetBandwidthNode["BusinessStatus"].asString();
+		if(!ipv6InternetBandwidthNode["Bandwidth"].isNull())
+			ipv6AddressesObject.ipv6InternetBandwidth.bandwidth = std::stoi(ipv6InternetBandwidthNode["Bandwidth"].asString());
 		if(!ipv6InternetBandwidthNode["Ipv6InternetBandwidthId"].isNull())
 			ipv6AddressesObject.ipv6InternetBandwidth.ipv6InternetBandwidthId = ipv6InternetBandwidthNode["Ipv6InternetBandwidthId"].asString();
+		if(!ipv6InternetBandwidthNode["InstanceChargeType"].isNull())
+			ipv6AddressesObject.ipv6InternetBandwidth.instanceChargeType = ipv6InternetBandwidthNode["InstanceChargeType"].asString();
 		ipv6Addresses_.push_back(ipv6AddressesObject);
 	}
-	if(!value["TotalCount"].isNull())
-		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
