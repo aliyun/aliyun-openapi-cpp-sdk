@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Nlp_automl::Model::GetPredictResultRequest;
 
-GetPredictResultRequest::GetPredictResultRequest() :
-	RpcServiceRequest("nlp-automl", "2019-11-11", "GetPredictResult")
-{
-	setMethod(HttpRequest::Method::Post);
+GetPredictResultRequest::GetPredictResultRequest()
+    : RpcServiceRequest("nlp-automl", "2019-11-11", "GetPredictResult") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetPredictResultRequest::~GetPredictResultRequest()
-{}
+GetPredictResultRequest::~GetPredictResultRequest() {}
 
-int GetPredictResultRequest::getTopK()const
-{
-	return topK_;
+int GetPredictResultRequest::getTopK() const {
+  return topK_;
 }
 
-void GetPredictResultRequest::setTopK(int topK)
-{
-	topK_ = topK;
-	setBodyParameter("TopK", std::to_string(topK));
+void GetPredictResultRequest::setTopK(int topK) {
+  topK_ = topK;
+  setBodyParameter(std::string("TopK"), std::to_string(topK));
 }
 
-std::string GetPredictResultRequest::getProduct()const
-{
-	return product_;
+std::string GetPredictResultRequest::getProduct() const {
+  return product_;
 }
 
-void GetPredictResultRequest::setProduct(const std::string& product)
-{
-	product_ = product;
-	setBodyParameter("Product", product);
+void GetPredictResultRequest::setProduct(const std::string &product) {
+  product_ = product;
+  setBodyParameter(std::string("Product"), product);
 }
 
-int GetPredictResultRequest::getModelId()const
-{
-	return modelId_;
+int GetPredictResultRequest::getModelId() const {
+  return modelId_;
 }
 
-void GetPredictResultRequest::setModelId(int modelId)
-{
-	modelId_ = modelId;
-	setBodyParameter("ModelId", std::to_string(modelId));
+void GetPredictResultRequest::setModelId(int modelId) {
+  modelId_ = modelId;
+  setBodyParameter(std::string("ModelId"), std::to_string(modelId));
 }
 
-std::string GetPredictResultRequest::getDetailTag()const
-{
-	return detailTag_;
+std::string GetPredictResultRequest::getDetailTag() const {
+  return detailTag_;
 }
 
-void GetPredictResultRequest::setDetailTag(const std::string& detailTag)
-{
-	detailTag_ = detailTag;
-	setBodyParameter("DetailTag", detailTag);
+void GetPredictResultRequest::setDetailTag(const std::string &detailTag) {
+  detailTag_ = detailTag;
+  setBodyParameter(std::string("DetailTag"), detailTag);
 }
 
-std::string GetPredictResultRequest::getContent()const
-{
-	return content_;
+std::string GetPredictResultRequest::getContent() const {
+  return content_;
 }
 
-void GetPredictResultRequest::setContent(const std::string& content)
-{
-	content_ = content;
-	setBodyParameter("Content", content);
+void GetPredictResultRequest::setContent(const std::string &content) {
+  content_ = content;
+  setBodyParameter(std::string("Content"), content);
 }
 
-std::string GetPredictResultRequest::getModelVersion()const
-{
-	return modelVersion_;
+std::string GetPredictResultRequest::getModelVersion() const {
+  return modelVersion_;
 }
 
-void GetPredictResultRequest::setModelVersion(const std::string& modelVersion)
-{
-	modelVersion_ = modelVersion;
-	setBodyParameter("ModelVersion", modelVersion);
+void GetPredictResultRequest::setModelVersion(const std::string &modelVersion) {
+  modelVersion_ = modelVersion;
+  setBodyParameter(std::string("ModelVersion"), modelVersion);
 }
 
