@@ -36,6 +36,8 @@ public:
 	void setReadonlyReplicas(const std::string &readonlyReplicas);
 	std::string getEngineVersion() const;
 	void setEngineVersion(const std::string &engineVersion);
+	std::string getStorage() const;
+	void setStorage(const std::string &storage);
 	std::string getShardsInfo() const;
 	void setShardsInfo(const std::string &shardsInfo);
 	std::string getReplicationFactor() const;
@@ -65,6 +67,7 @@ private:
 	long resourceOwnerId_;
 	std::string readonlyReplicas_;
 	std::string engineVersion_;
+	std::string storage_;
 	std::string shardsInfo_;
 	std::string replicationFactor_;
 	std::string accessKeyId_;

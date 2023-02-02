@@ -52,6 +52,15 @@ void EvaluateResourceRequest::setEngineVersion(const std::string &engineVersion)
   setParameter(std::string("EngineVersion"), engineVersion);
 }
 
+std::string EvaluateResourceRequest::getStorage() const {
+  return storage_;
+}
+
+void EvaluateResourceRequest::setStorage(const std::string &storage) {
+  storage_ = storage;
+  setParameter(std::string("Storage"), storage);
+}
+
 std::string EvaluateResourceRequest::getShardsInfo() const {
   return shardsInfo_;
 }

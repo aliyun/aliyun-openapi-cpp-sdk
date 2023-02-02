@@ -52,6 +52,15 @@ void ModifyDBInstanceSpecRequest::setReadonlyReplicas(const std::string &readonl
   setParameter(std::string("ReadonlyReplicas"), readonlyReplicas);
 }
 
+std::string ModifyDBInstanceSpecRequest::getExtraParam() const {
+  return extraParam_;
+}
+
+void ModifyDBInstanceSpecRequest::setExtraParam(const std::string &extraParam) {
+  extraParam_ = extraParam;
+  setParameter(std::string("ExtraParam"), extraParam);
+}
+
 std::string ModifyDBInstanceSpecRequest::getCouponNo() const {
   return couponNo_;
 }

@@ -36,6 +36,8 @@ public:
 	void setDBInstanceStorage(const std::string &dBInstanceStorage);
 	std::string getReadonlyReplicas() const;
 	void setReadonlyReplicas(const std::string &readonlyReplicas);
+	std::string getExtraParam() const;
+	void setExtraParam(const std::string &extraParam);
 	std::string getCouponNo() const;
 	void setCouponNo(const std::string &couponNo);
 	std::string getReplicationFactor() const;
@@ -69,6 +71,7 @@ private:
 	long resourceOwnerId_;
 	std::string dBInstanceStorage_;
 	std::string readonlyReplicas_;
+	std::string extraParam_;
 	std::string couponNo_;
 	std::string replicationFactor_;
 	std::string accessKeyId_;

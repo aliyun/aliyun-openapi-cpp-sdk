@@ -1131,42 +1131,6 @@ DdsClient::DescribeDBInstancesOverviewOutcomeCallable DdsClient::describeDBInsta
 	return task->get_future();
 }
 
-DdsClient::DescribeDedicatedClusterInstanceListOutcome DdsClient::describeDedicatedClusterInstanceList(const DescribeDedicatedClusterInstanceListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDedicatedClusterInstanceListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDedicatedClusterInstanceListOutcome(DescribeDedicatedClusterInstanceListResult(outcome.result()));
-	else
-		return DescribeDedicatedClusterInstanceListOutcome(outcome.error());
-}
-
-void DdsClient::describeDedicatedClusterInstanceListAsync(const DescribeDedicatedClusterInstanceListRequest& request, const DescribeDedicatedClusterInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDedicatedClusterInstanceList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DdsClient::DescribeDedicatedClusterInstanceListOutcomeCallable DdsClient::describeDedicatedClusterInstanceListCallable(const DescribeDedicatedClusterInstanceListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDedicatedClusterInstanceListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDedicatedClusterInstanceList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DdsClient::DescribeErrorLogRecordsOutcome DdsClient::describeErrorLogRecords(const DescribeErrorLogRecordsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
