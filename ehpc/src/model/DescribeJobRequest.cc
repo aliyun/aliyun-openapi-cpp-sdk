@@ -52,3 +52,12 @@ void DescribeJobRequest::setJobId(const std::string &jobId) {
   setParameter(std::string("JobId"), jobId);
 }
 
+bool DescribeJobRequest::getAsync() const {
+  return async_;
+}
+
+void DescribeJobRequest::setAsync(bool async) {
+  async_ = async;
+  setParameter(std::string("Async"), async ? "true" : "false");
+}
+

@@ -38,12 +38,15 @@ public:
 	void setClusterId(const std::string &clusterId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	bool getAsync() const;
+	void setAsync(bool async);
 	std::vector<User> getUser() const;
 	void setUser(const std::vector<User> &user);
 
 private:
 	std::string clusterId_;
 	std::string accessKeyId_;
+	bool async_;
 	std::vector<User> user_;
 };
 } // namespace Model

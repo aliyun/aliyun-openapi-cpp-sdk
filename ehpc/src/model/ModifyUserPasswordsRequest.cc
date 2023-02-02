@@ -43,6 +43,15 @@ void ModifyUserPasswordsRequest::setAccessKeyId(const std::string &accessKeyId) 
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+bool ModifyUserPasswordsRequest::getAsync() const {
+  return async_;
+}
+
+void ModifyUserPasswordsRequest::setAsync(bool async) {
+  async_ = async;
+  setParameter(std::string("Async"), async ? "true" : "false");
+}
+
 std::vector<ModifyUserPasswordsRequest::User> ModifyUserPasswordsRequest::getUser() const {
   return user_;
 }

@@ -43,6 +43,15 @@ void ModifyUserGroupsRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+bool ModifyUserGroupsRequest::getAsync() const {
+  return async_;
+}
+
+void ModifyUserGroupsRequest::setAsync(bool async) {
+  async_ = async;
+  setParameter(std::string("Async"), async ? "true" : "false");
+}
+
 std::vector<ModifyUserGroupsRequest::User> ModifyUserGroupsRequest::getUser() const {
   return user_;
 }

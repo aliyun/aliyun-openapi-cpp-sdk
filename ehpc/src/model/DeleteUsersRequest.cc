@@ -43,6 +43,15 @@ void DeleteUsersRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+bool DeleteUsersRequest::getAsync() const {
+  return async_;
+}
+
+void DeleteUsersRequest::setAsync(bool async) {
+  async_ = async;
+  setParameter(std::string("Async"), async ? "true" : "false");
+}
+
 std::vector<DeleteUsersRequest::User> DeleteUsersRequest::getUser() const {
   return user_;
 }
