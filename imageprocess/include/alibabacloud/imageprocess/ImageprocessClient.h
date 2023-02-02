@@ -62,6 +62,8 @@
 #include "model/ScreenECResult.h"
 #include "model/SegmentOARRequest.h"
 #include "model/SegmentOARResult.h"
+#include "model/TargetVolumeSegmentRequest.h"
+#include "model/TargetVolumeSegmentResult.h"
 #include "model/TranslateMedRequest.h"
 #include "model/TranslateMedResult.h"
 
@@ -133,6 +135,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SegmentOARResult> SegmentOAROutcome;
 			typedef std::future<SegmentOAROutcome> SegmentOAROutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::SegmentOARRequest&, const SegmentOAROutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentOARAsyncHandler;
+			typedef Outcome<Error, Model::TargetVolumeSegmentResult> TargetVolumeSegmentOutcome;
+			typedef std::future<TargetVolumeSegmentOutcome> TargetVolumeSegmentOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::TargetVolumeSegmentRequest&, const TargetVolumeSegmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TargetVolumeSegmentAsyncHandler;
 			typedef Outcome<Error, Model::TranslateMedResult> TranslateMedOutcome;
 			typedef std::future<TranslateMedOutcome> TranslateMedOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::TranslateMedRequest&, const TranslateMedOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TranslateMedAsyncHandler;
@@ -201,6 +206,9 @@ namespace AlibabaCloud
 			SegmentOAROutcome segmentOAR(const Model::SegmentOARRequest &request)const;
 			void segmentOARAsync(const Model::SegmentOARRequest& request, const SegmentOARAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentOAROutcomeCallable segmentOARCallable(const Model::SegmentOARRequest& request) const;
+			TargetVolumeSegmentOutcome targetVolumeSegment(const Model::TargetVolumeSegmentRequest &request)const;
+			void targetVolumeSegmentAsync(const Model::TargetVolumeSegmentRequest& request, const TargetVolumeSegmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TargetVolumeSegmentOutcomeCallable targetVolumeSegmentCallable(const Model::TargetVolumeSegmentRequest& request) const;
 			TranslateMedOutcome translateMed(const Model::TranslateMedRequest &request)const;
 			void translateMedAsync(const Model::TranslateMedRequest& request, const TranslateMedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TranslateMedOutcomeCallable translateMedCallable(const Model::TranslateMedRequest& request) const;

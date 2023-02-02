@@ -771,6 +771,42 @@ ImageprocessClient::SegmentOAROutcomeCallable ImageprocessClient::segmentOARCall
 	return task->get_future();
 }
 
+ImageprocessClient::TargetVolumeSegmentOutcome ImageprocessClient::targetVolumeSegment(const TargetVolumeSegmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TargetVolumeSegmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TargetVolumeSegmentOutcome(TargetVolumeSegmentResult(outcome.result()));
+	else
+		return TargetVolumeSegmentOutcome(outcome.error());
+}
+
+void ImageprocessClient::targetVolumeSegmentAsync(const TargetVolumeSegmentRequest& request, const TargetVolumeSegmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, targetVolumeSegment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::TargetVolumeSegmentOutcomeCallable ImageprocessClient::targetVolumeSegmentCallable(const TargetVolumeSegmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TargetVolumeSegmentOutcome()>>(
+			[this, request]()
+			{
+			return this->targetVolumeSegment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageprocessClient::TranslateMedOutcome ImageprocessClient::translateMed(const TranslateMedRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
