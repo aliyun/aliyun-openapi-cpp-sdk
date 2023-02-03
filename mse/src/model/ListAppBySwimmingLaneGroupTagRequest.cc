@@ -25,6 +25,15 @@ ListAppBySwimmingLaneGroupTagRequest::ListAppBySwimmingLaneGroupTagRequest()
 
 ListAppBySwimmingLaneGroupTagRequest::~ListAppBySwimmingLaneGroupTagRequest() {}
 
+std::string ListAppBySwimmingLaneGroupTagRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListAppBySwimmingLaneGroupTagRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 long ListAppBySwimmingLaneGroupTagRequest::getGroupId() const {
   return groupId_;
 }

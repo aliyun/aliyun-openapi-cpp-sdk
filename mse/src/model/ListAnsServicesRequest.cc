@@ -25,13 +25,13 @@ ListAnsServicesRequest::ListAnsServicesRequest()
 
 ListAnsServicesRequest::~ListAnsServicesRequest() {}
 
-std::string ListAnsServicesRequest::getClusterId() const {
-  return clusterId_;
+std::string ListAnsServicesRequest::getMseSessionId() const {
+  return mseSessionId_;
 }
 
-void ListAnsServicesRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
+void ListAnsServicesRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
 int ListAnsServicesRequest::getPageNum() const {
@@ -41,33 +41,6 @@ int ListAnsServicesRequest::getPageNum() const {
 void ListAnsServicesRequest::setPageNum(int pageNum) {
   pageNum_ = pageNum;
   setParameter(std::string("PageNum"), std::to_string(pageNum));
-}
-
-std::string ListAnsServicesRequest::getGroupName() const {
-  return groupName_;
-}
-
-void ListAnsServicesRequest::setGroupName(const std::string &groupName) {
-  groupName_ = groupName;
-  setParameter(std::string("GroupName"), groupName);
-}
-
-std::string ListAnsServicesRequest::getHasIpCount() const {
-  return hasIpCount_;
-}
-
-void ListAnsServicesRequest::setHasIpCount(const std::string &hasIpCount) {
-  hasIpCount_ = hasIpCount;
-  setParameter(std::string("HasIpCount"), hasIpCount);
-}
-
-std::string ListAnsServicesRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ListAnsServicesRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string ListAnsServicesRequest::getNamespaceId() const {
@@ -97,15 +70,6 @@ void ListAnsServicesRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string ListAnsServicesRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void ListAnsServicesRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::string ListAnsServicesRequest::getServiceName() const {
   return serviceName_;
 }
@@ -113,5 +77,50 @@ std::string ListAnsServicesRequest::getServiceName() const {
 void ListAnsServicesRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
   setParameter(std::string("ServiceName"), serviceName);
+}
+
+std::string ListAnsServicesRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void ListAnsServicesRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
+}
+
+std::string ListAnsServicesRequest::getGroupName() const {
+  return groupName_;
+}
+
+void ListAnsServicesRequest::setGroupName(const std::string &groupName) {
+  groupName_ = groupName;
+  setParameter(std::string("GroupName"), groupName);
+}
+
+std::string ListAnsServicesRequest::getHasIpCount() const {
+  return hasIpCount_;
+}
+
+void ListAnsServicesRequest::setHasIpCount(const std::string &hasIpCount) {
+  hasIpCount_ = hasIpCount;
+  setParameter(std::string("HasIpCount"), hasIpCount);
+}
+
+std::string ListAnsServicesRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListAnsServicesRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string ListAnsServicesRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void ListAnsServicesRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

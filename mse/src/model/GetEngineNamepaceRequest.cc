@@ -25,6 +25,15 @@ GetEngineNamepaceRequest::GetEngineNamepaceRequest()
 
 GetEngineNamepaceRequest::~GetEngineNamepaceRequest() {}
 
+std::string GetEngineNamepaceRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetEngineNamepaceRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string GetEngineNamepaceRequest::getClusterId() const {
   return clusterId_;
 }

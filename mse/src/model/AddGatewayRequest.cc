@@ -25,6 +25,15 @@ AddGatewayRequest::AddGatewayRequest()
 
 AddGatewayRequest::~AddGatewayRequest() {}
 
+std::string AddGatewayRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void AddGatewayRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string AddGatewayRequest::getInternetSlbSpec() const {
   return internetSlbSpec_;
 }
@@ -32,6 +41,24 @@ std::string AddGatewayRequest::getInternetSlbSpec() const {
 void AddGatewayRequest::setInternetSlbSpec(const std::string &internetSlbSpec) {
   internetSlbSpec_ = internetSlbSpec;
   setParameter(std::string("InternetSlbSpec"), internetSlbSpec);
+}
+
+bool AddGatewayRequest::getEnableXtrace() const {
+  return enableXtrace_;
+}
+
+void AddGatewayRequest::setEnableXtrace(bool enableXtrace) {
+  enableXtrace_ = enableXtrace;
+  setParameter(std::string("EnableXtrace"), enableXtrace ? "true" : "false");
+}
+
+std::string AddGatewayRequest::getXtraceRatio() const {
+  return xtraceRatio_;
+}
+
+void AddGatewayRequest::setXtraceRatio(const std::string &xtraceRatio) {
+  xtraceRatio_ = xtraceRatio;
+  setParameter(std::string("XtraceRatio"), xtraceRatio);
 }
 
 int AddGatewayRequest::getReplica() const {
@@ -52,6 +79,24 @@ void AddGatewayRequest::setVSwitchId2(const std::string &vSwitchId2) {
   setParameter(std::string("VSwitchId2"), vSwitchId2);
 }
 
+bool AddGatewayRequest::getEnableHardwareAcceleration() const {
+  return enableHardwareAcceleration_;
+}
+
+void AddGatewayRequest::setEnableHardwareAcceleration(bool enableHardwareAcceleration) {
+  enableHardwareAcceleration_ = enableHardwareAcceleration;
+  setParameter(std::string("EnableHardwareAcceleration"), enableHardwareAcceleration ? "true" : "false");
+}
+
+bool AddGatewayRequest::getEnableSls() const {
+  return enableSls_;
+}
+
+void AddGatewayRequest::setEnableSls(bool enableSls) {
+  enableSls_ = enableSls;
+  setParameter(std::string("EnableSls"), enableSls ? "true" : "false");
+}
+
 std::string AddGatewayRequest::getSpec() const {
   return spec_;
 }
@@ -61,6 +106,15 @@ void AddGatewayRequest::setSpec(const std::string &spec) {
   setParameter(std::string("Spec"), spec);
 }
 
+std::string AddGatewayRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void AddGatewayRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 bool AddGatewayRequest::getEnterpriseSecurityGroup() const {
   return enterpriseSecurityGroup_;
 }
@@ -68,6 +122,20 @@ bool AddGatewayRequest::getEnterpriseSecurityGroup() const {
 void AddGatewayRequest::setEnterpriseSecurityGroup(bool enterpriseSecurityGroup) {
   enterpriseSecurityGroup_ = enterpriseSecurityGroup;
   setParameter(std::string("EnterpriseSecurityGroup"), enterpriseSecurityGroup ? "true" : "false");
+}
+
+std::vector<AddGatewayRequest::Tag> AddGatewayRequest::getTag() const {
+  return tag_;
+}
+
+void AddGatewayRequest::setTag(const std::vector<AddGatewayRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
 std::string AddGatewayRequest::getVpc() const {

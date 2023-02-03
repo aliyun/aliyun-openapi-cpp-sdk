@@ -30,22 +30,25 @@ class ALIBABACLOUD_MSE_EXPORT AddSecurityGroupRuleRequest : public RpcServiceReq
 public:
 	AddSecurityGroupRuleRequest();
 	~AddSecurityGroupRuleRequest();
-	std::string getPortRange() const;
-	void setPortRange(const std::string &portRange);
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	std::string getSecurityGroupId() const;
 	void setSecurityGroupId(const std::string &securityGroupId);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getPortRange() const;
+	void setPortRange(const std::string &portRange);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
-	std::string portRange_;
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
 	std::string securityGroupId_;
 	std::string description_;
+	std::string portRange_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

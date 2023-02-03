@@ -34,6 +34,15 @@ void UpdateConfigRequest::setOpenSuperAcl(const std::string &openSuperAcl) {
   setBodyParameter(std::string("OpenSuperAcl"), openSuperAcl);
 }
 
+std::string UpdateConfigRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateConfigRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 bool UpdateConfigRequest::getConfigAuthEnabled() const {
   return configAuthEnabled_;
 }
@@ -50,6 +59,15 @@ std::string UpdateConfigRequest::getPassWord() const {
 void UpdateConfigRequest::setPassWord(const std::string &passWord) {
   passWord_ = passWord;
   setParameter(std::string("PassWord"), passWord);
+}
+
+std::string UpdateConfigRequest::getSnapshotCount() const {
+  return snapshotCount_;
+}
+
+void UpdateConfigRequest::setSnapshotCount(const std::string &snapshotCount) {
+  snapshotCount_ = snapshotCount;
+  setParameter(std::string("SnapshotCount"), snapshotCount);
 }
 
 std::string UpdateConfigRequest::getMinSessionTimeout() const {
@@ -88,6 +106,15 @@ void UpdateConfigRequest::setJuteMaxbuffer(const std::string &juteMaxbuffer) {
   setParameter(std::string("JuteMaxbuffer"), juteMaxbuffer);
 }
 
+bool UpdateConfigRequest::getNamingAuthEnabled() const {
+  return namingAuthEnabled_;
+}
+
+void UpdateConfigRequest::setNamingAuthEnabled(bool namingAuthEnabled) {
+  namingAuthEnabled_ = namingAuthEnabled;
+  setParameter(std::string("NamingAuthEnabled"), namingAuthEnabled ? "true" : "false");
+}
+
 std::string UpdateConfigRequest::getConfigType() const {
   return configType_;
 }
@@ -95,6 +122,15 @@ std::string UpdateConfigRequest::getConfigType() const {
 void UpdateConfigRequest::setConfigType(const std::string &configType) {
   configType_ = configType;
   setParameter(std::string("ConfigType"), configType);
+}
+
+std::string UpdateConfigRequest::getExtendedTypesEnable() const {
+  return extendedTypesEnable_;
+}
+
+void UpdateConfigRequest::setExtendedTypesEnable(const std::string &extendedTypesEnable) {
+  extendedTypesEnable_ = extendedTypesEnable;
+  setParameter(std::string("ExtendedTypesEnable"), extendedTypesEnable);
 }
 
 std::string UpdateConfigRequest::getAutopurgeSnapRetainCount() const {

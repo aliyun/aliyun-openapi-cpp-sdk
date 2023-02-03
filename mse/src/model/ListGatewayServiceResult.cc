@@ -80,6 +80,10 @@ void ListGatewayServiceResult::parse(const std::string &payload)
 			servicesObject.servicePort = std::stol(dataNodeResultServices["ServicePort"].asString());
 		if(!dataNodeResultServices["HealehStatus"].isNull())
 			servicesObject.healehStatus = dataNodeResultServices["HealehStatus"].asString();
+		if(!dataNodeResultServices["HealthStatus"].isNull())
+			servicesObject.healthStatus = dataNodeResultServices["HealthStatus"].asString();
+		if(!dataNodeResultServices["HealthCheck"].isNull())
+			servicesObject.healthCheck = dataNodeResultServices["HealthCheck"].asString() == "true";
 		auto allVersionsNode = dataNodeResultServices["Versions"]["VersionsItem"];
 		for (auto dataNodeResultServicesVersionsVersionsItem : allVersionsNode)
 		{
@@ -88,9 +92,69 @@ void ListGatewayServiceResult::parse(const std::string &payload)
 				versionsObject.name = dataNodeResultServicesVersionsVersionsItem["Name"].asString();
 			servicesObject.versions.push_back(versionsObject);
 		}
+		auto healthCheckInfoNode = value["HealthCheckInfo"];
+		if(!healthCheckInfoNode["Check"].isNull())
+			servicesObject.healthCheckInfo.check = healthCheckInfoNode["Check"].asString() == "true";
+		if(!healthCheckInfoNode["Protocol"].isNull())
+			servicesObject.healthCheckInfo.protocol = healthCheckInfoNode["Protocol"].asString();
+		if(!healthCheckInfoNode["Timeout"].isNull())
+			servicesObject.healthCheckInfo.timeout = std::stoi(healthCheckInfoNode["Timeout"].asString());
+		if(!healthCheckInfoNode["Interval"].isNull())
+			servicesObject.healthCheckInfo.interval = std::stoi(healthCheckInfoNode["Interval"].asString());
+		if(!healthCheckInfoNode["HealthyThreshold"].isNull())
+			servicesObject.healthCheckInfo.healthyThreshold = std::stoi(healthCheckInfoNode["HealthyThreshold"].asString());
+		if(!healthCheckInfoNode["UnhealthyThreshold"].isNull())
+			servicesObject.healthCheckInfo.unhealthyThreshold = std::stoi(healthCheckInfoNode["UnhealthyThreshold"].asString());
+		if(!healthCheckInfoNode["HttpPath"].isNull())
+			servicesObject.healthCheckInfo.httpPath = healthCheckInfoNode["HttpPath"].asString();
+		if(!healthCheckInfoNode["HttpHost"].isNull())
+			servicesObject.healthCheckInfo.httpHost = healthCheckInfoNode["HttpHost"].asString();
+			auto allExpectedStatuses = healthCheckInfoNode["ExpectedStatuses"]["expectedStatuses"];
+			for (auto value : allExpectedStatuses)
+				servicesObject.healthCheckInfo.expectedStatuses.push_back(value.asString());
+		auto gatewayTrafficPolicyNode = value["GatewayTrafficPolicy"];
+		auto tlsNode = gatewayTrafficPolicyNode["Tls"];
+		if(!tlsNode["Mode"].isNull())
+			servicesObject.gatewayTrafficPolicy.tls.mode = tlsNode["Mode"].asString();
+		if(!tlsNode["CertId"].isNull())
+			servicesObject.gatewayTrafficPolicy.tls.certId = tlsNode["CertId"].asString();
+		if(!tlsNode["CaCertId"].isNull())
+			servicesObject.gatewayTrafficPolicy.tls.caCertId = tlsNode["CaCertId"].asString();
+		if(!tlsNode["CaCertContent"].isNull())
+			servicesObject.gatewayTrafficPolicy.tls.caCertContent = tlsNode["CaCertContent"].asString();
+		if(!tlsNode["Sni"].isNull())
+			servicesObject.gatewayTrafficPolicy.tls.sni = tlsNode["Sni"].asString();
+			auto allSubjectAltNames = tlsNode["SubjectAltNames"]["SubjectAltName"];
+			for (auto value : allSubjectAltNames)
+				servicesObject.gatewayTrafficPolicy.tls.subjectAltNames.push_back(value.asString());
+		auto loadBalancerSettingsNode = gatewayTrafficPolicyNode["LoadBalancerSettings"];
+		if(!loadBalancerSettingsNode["LoadbalancerType"].isNull())
+			servicesObject.gatewayTrafficPolicy.loadBalancerSettings.loadbalancerType = loadBalancerSettingsNode["LoadbalancerType"].asString();
+		if(!loadBalancerSettingsNode["WarmupDuration"].isNull())
+			servicesObject.gatewayTrafficPolicy.loadBalancerSettings.warmupDuration = std::stoi(loadBalancerSettingsNode["WarmupDuration"].asString());
+		auto consistentHashLBConfigNode = loadBalancerSettingsNode["ConsistentHashLBConfig"];
+		if(!consistentHashLBConfigNode["ParameterName"].isNull())
+			servicesObject.gatewayTrafficPolicy.loadBalancerSettings.consistentHashLBConfig.parameterName = consistentHashLBConfigNode["ParameterName"].asString();
+		if(!consistentHashLBConfigNode["MinimumRingSize"].isNull())
+			servicesObject.gatewayTrafficPolicy.loadBalancerSettings.consistentHashLBConfig.minimumRingSize = std::stol(consistentHashLBConfigNode["MinimumRingSize"].asString());
+		if(!consistentHashLBConfigNode["ConsistentHashLBType"].isNull())
+			servicesObject.gatewayTrafficPolicy.loadBalancerSettings.consistentHashLBConfig.consistentHashLBType = consistentHashLBConfigNode["ConsistentHashLBType"].asString();
+		auto httpCookieNode = consistentHashLBConfigNode["HttpCookie"];
+		if(!httpCookieNode["Name"].isNull())
+			servicesObject.gatewayTrafficPolicy.loadBalancerSettings.consistentHashLBConfig.httpCookie.name = httpCookieNode["Name"].asString();
+		if(!httpCookieNode["Path"].isNull())
+			servicesObject.gatewayTrafficPolicy.loadBalancerSettings.consistentHashLBConfig.httpCookie.path = httpCookieNode["Path"].asString();
+		if(!httpCookieNode["Ttl"].isNull())
+			servicesObject.gatewayTrafficPolicy.loadBalancerSettings.consistentHashLBConfig.httpCookie.ttl = httpCookieNode["Ttl"].asString();
 		auto allIps = value["Ips"]["Ips"];
 		for (auto value : allIps)
 			servicesObject.ips.push_back(value.asString());
+		auto allUnhealthyEndpoints = value["UnhealthyEndpoints"]["unhealthyEndpoints"];
+		for (auto value : allUnhealthyEndpoints)
+			servicesObject.unhealthyEndpoints.push_back(value.asString());
+		auto allPorts = value["Ports"]["ports"];
+		for (auto value : allPorts)
+			servicesObject.ports.push_back(value.asString());
 		data_.result.push_back(servicesObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

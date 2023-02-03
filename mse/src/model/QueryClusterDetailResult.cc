@@ -108,6 +108,12 @@ void QueryClusterDetailResult::parse(const std::string &payload)
 		data_.mseVersion = dataNode["MseVersion"].asString();
 	if(!dataNode["ChargeType"].isNull())
 		data_.chargeType = dataNode["ChargeType"].asString();
+	if(!dataNode["OrderClusterVersion"].isNull())
+		data_.orderClusterVersion = dataNode["OrderClusterVersion"].asString();
+	if(!dataNode["Tags"].isNull())
+		data_.tags = dataNode["Tags"].asString();
+	if(!dataNode["ResourceGroupId"].isNull())
+		data_.resourceGroupId = dataNode["ResourceGroupId"].asString();
 	auto allInstanceModelsNode = dataNode["InstanceModels"]["InstanceModel"];
 	for (auto dataNodeInstanceModelsInstanceModel : allInstanceModelsNode)
 	{

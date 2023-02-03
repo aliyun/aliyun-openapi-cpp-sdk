@@ -30,17 +30,23 @@ class ALIBABACLOUD_MSE_EXPORT PullServicesRequest : public RpcServiceRequest {
 public:
 	PullServicesRequest();
 	~PullServicesRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getSourceType() const;
 	void setSourceType(const std::string &sourceType);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
-	std::string acceptLanguage_;
 	std::string sourceType_;
+	std::string _namespace_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

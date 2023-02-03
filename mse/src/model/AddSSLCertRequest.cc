@@ -25,6 +25,15 @@ AddSSLCertRequest::AddSSLCertRequest()
 
 AddSSLCertRequest::~AddSSLCertRequest() {}
 
+std::string AddSSLCertRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void AddSSLCertRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string AddSSLCertRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

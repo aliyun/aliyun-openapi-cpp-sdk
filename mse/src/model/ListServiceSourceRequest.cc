@@ -25,6 +25,15 @@ ListServiceSourceRequest::ListServiceSourceRequest()
 
 ListServiceSourceRequest::~ListServiceSourceRequest() {}
 
+std::string ListServiceSourceRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListServiceSourceRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListServiceSourceRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

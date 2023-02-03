@@ -34,6 +34,15 @@ void DeleteServiceSourceRequest::setSourceId(long sourceId) {
   setParameter(std::string("SourceId"), std::to_string(sourceId));
 }
 
+std::string DeleteServiceSourceRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteServiceSourceRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string DeleteServiceSourceRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

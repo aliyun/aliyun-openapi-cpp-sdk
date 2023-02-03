@@ -30,23 +30,26 @@ class ALIBABACLOUD_MSE_EXPORT UpdateGatewayRouteHeaderOpRequest : public RpcServ
 public:
 	UpdateGatewayRouteHeaderOpRequest();
 	~UpdateGatewayRouteHeaderOpRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	std::string getHeaderOpJSON() const;
 	void setHeaderOpJSON(const std::string &headerOpJSON);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	long getId() const;
 	void setId(long id);
 	long getGatewayId() const;
 	void setGatewayId(long gatewayId);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
 	std::string headerOpJSON_;
-	std::string acceptLanguage_;
 	long id_;
 	long gatewayId_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

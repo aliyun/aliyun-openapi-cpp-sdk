@@ -25,6 +25,15 @@ UpdateGatewayRouteHTTPRewriteRequest::UpdateGatewayRouteHTTPRewriteRequest()
 
 UpdateGatewayRouteHTTPRewriteRequest::~UpdateGatewayRouteHTTPRewriteRequest() {}
 
+std::string UpdateGatewayRouteHTTPRewriteRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateGatewayRouteHTTPRewriteRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateGatewayRouteHTTPRewriteRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -32,24 +41,6 @@ std::string UpdateGatewayRouteHTTPRewriteRequest::getGatewayUniqueId() const {
 void UpdateGatewayRouteHTTPRewriteRequest::setGatewayUniqueId(const std::string &gatewayUniqueId) {
   gatewayUniqueId_ = gatewayUniqueId;
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
-}
-
-std::string UpdateGatewayRouteHTTPRewriteRequest::getHttpRewriteJSON() const {
-  return httpRewriteJSON_;
-}
-
-void UpdateGatewayRouteHTTPRewriteRequest::setHttpRewriteJSON(const std::string &httpRewriteJSON) {
-  httpRewriteJSON_ = httpRewriteJSON;
-  setParameter(std::string("HttpRewriteJSON"), httpRewriteJSON);
-}
-
-std::string UpdateGatewayRouteHTTPRewriteRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void UpdateGatewayRouteHTTPRewriteRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 
 long UpdateGatewayRouteHTTPRewriteRequest::getId() const {
@@ -68,5 +59,23 @@ long UpdateGatewayRouteHTTPRewriteRequest::getGatewayId() const {
 void UpdateGatewayRouteHTTPRewriteRequest::setGatewayId(long gatewayId) {
   gatewayId_ = gatewayId;
   setParameter(std::string("GatewayId"), std::to_string(gatewayId));
+}
+
+std::string UpdateGatewayRouteHTTPRewriteRequest::getHttpRewriteJSON() const {
+  return httpRewriteJSON_;
+}
+
+void UpdateGatewayRouteHTTPRewriteRequest::setHttpRewriteJSON(const std::string &httpRewriteJSON) {
+  httpRewriteJSON_ = httpRewriteJSON;
+  setParameter(std::string("HttpRewriteJSON"), httpRewriteJSON);
+}
+
+std::string UpdateGatewayRouteHTTPRewriteRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void UpdateGatewayRouteHTTPRewriteRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

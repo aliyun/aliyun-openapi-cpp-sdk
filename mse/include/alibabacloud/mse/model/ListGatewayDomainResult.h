@@ -40,16 +40,19 @@ namespace AlibabaCloud
 					};
 					int status;
 					Comment comment;
-					std::string gmtCreate;
-					std::string type;
+					std::string http2;
 					bool mustHttps;
 					std::string gmtModified;
+					std::string tlsMin;
+					long gatewayId;
+					std::string name;
+					std::string gmtCreate;
+					std::string type;
+					std::string tlsMax;
 					std::string certIdentifier;
 					long id;
 					std::string protocol;
-					long gatewayId;
 					std::string certBeforeDate;
-					std::string name;
 				};
 
 

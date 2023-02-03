@@ -57,6 +57,7 @@ namespace AlibabaCloud
 								std::string parameterName;
 								HttpCookie httpCookie;
 							};
+							long warmupDuration;
 							ConsistentHashLBConfig consistentHashLBConfig;
 							std::string loadbalancerType;
 						};

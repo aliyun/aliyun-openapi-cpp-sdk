@@ -303,6 +303,42 @@ MseClient::AddGatewaySlbOutcomeCallable MseClient::addGatewaySlbCallable(const A
 	return task->get_future();
 }
 
+MseClient::AddMigrationTaskOutcome MseClient::addMigrationTask(const AddMigrationTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddMigrationTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddMigrationTaskOutcome(AddMigrationTaskResult(outcome.result()));
+	else
+		return AddMigrationTaskOutcome(outcome.error());
+}
+
+void MseClient::addMigrationTaskAsync(const AddMigrationTaskRequest& request, const AddMigrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addMigrationTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::AddMigrationTaskOutcomeCallable MseClient::addMigrationTaskCallable(const AddMigrationTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddMigrationTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->addMigrationTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::AddMockRuleOutcome MseClient::addMockRule(const AddMockRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -375,42 +411,6 @@ MseClient::AddSSLCertOutcomeCallable MseClient::addSSLCertCallable(const AddSSLC
 	return task->get_future();
 }
 
-MseClient::AddSeataServerOutcome MseClient::addSeataServer(const AddSeataServerRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddSeataServerOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddSeataServerOutcome(AddSeataServerResult(outcome.result()));
-	else
-		return AddSeataServerOutcome(outcome.error());
-}
-
-void MseClient::addSeataServerAsync(const AddSeataServerRequest& request, const AddSeataServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addSeataServer(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MseClient::AddSeataServerOutcomeCallable MseClient::addSeataServerCallable(const AddSeataServerRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddSeataServerOutcome()>>(
-			[this, request]()
-			{
-			return this->addSeataServer(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MseClient::AddSecurityGroupRuleOutcome MseClient::addSecurityGroupRule(const AddSecurityGroupRuleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,42 +477,6 @@ MseClient::AddServiceSourceOutcomeCallable MseClient::addServiceSourceCallable(c
 			[this, request]()
 			{
 			return this->addServiceSource(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-MseClient::AddTestOutcome MseClient::addTest(const AddTestRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return AddTestOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return AddTestOutcome(AddTestResult(outcome.result()));
-	else
-		return AddTestOutcome(outcome.error());
-}
-
-void MseClient::addTestAsync(const AddTestRequest& request, const AddTestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, addTest(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MseClient::AddTestOutcomeCallable MseClient::addTestCallable(const AddTestRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<AddTestOutcome()>>(
-			[this, request]()
-			{
-			return this->addTest(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -735,6 +699,42 @@ MseClient::CreateEngineNamespaceOutcomeCallable MseClient::createEngineNamespace
 	return task->get_future();
 }
 
+MseClient::CreateMseServiceApplicationOutcome MseClient::createMseServiceApplication(const CreateMseServiceApplicationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateMseServiceApplicationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateMseServiceApplicationOutcome(CreateMseServiceApplicationResult(outcome.result()));
+	else
+		return CreateMseServiceApplicationOutcome(outcome.error());
+}
+
+void MseClient::createMseServiceApplicationAsync(const CreateMseServiceApplicationRequest& request, const CreateMseServiceApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createMseServiceApplication(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::CreateMseServiceApplicationOutcomeCallable MseClient::createMseServiceApplicationCallable(const CreateMseServiceApplicationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateMseServiceApplicationOutcome()>>(
+			[this, request]()
+			{
+			return this->createMseServiceApplication(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::CreateNacosConfigOutcome MseClient::createNacosConfig(const CreateNacosConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -909,42 +909,6 @@ MseClient::CreateOrUpdateSwimmingLaneGroupOutcomeCallable MseClient::createOrUpd
 			[this, request]()
 			{
 			return this->createOrUpdateSwimmingLaneGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-MseClient::CreateVGroupOutcome MseClient::createVGroup(const CreateVGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateVGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateVGroupOutcome(CreateVGroupResult(outcome.result()));
-	else
-		return CreateVGroupOutcome(outcome.error());
-}
-
-void MseClient::createVGroupAsync(const CreateVGroupRequest& request, const CreateVGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createVGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MseClient::CreateVGroupOutcomeCallable MseClient::createVGroupCallable(const CreateVGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateVGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->createVGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1311,6 +1275,42 @@ MseClient::DeleteGatewaySlbOutcomeCallable MseClient::deleteGatewaySlbCallable(c
 	return task->get_future();
 }
 
+MseClient::DeleteMigrationTaskOutcome MseClient::deleteMigrationTask(const DeleteMigrationTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteMigrationTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteMigrationTaskOutcome(DeleteMigrationTaskResult(outcome.result()));
+	else
+		return DeleteMigrationTaskOutcome(outcome.error());
+}
+
+void MseClient::deleteMigrationTaskAsync(const DeleteMigrationTaskRequest& request, const DeleteMigrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteMigrationTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::DeleteMigrationTaskOutcomeCallable MseClient::deleteMigrationTaskCallable(const DeleteMigrationTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteMigrationTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteMigrationTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::DeleteNacosConfigOutcome MseClient::deleteNacosConfig(const DeleteNacosConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1449,42 +1449,6 @@ MseClient::DeleteNacosServiceOutcomeCallable MseClient::deleteNacosServiceCallab
 			[this, request]()
 			{
 			return this->deleteNacosService(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-MseClient::DeleteSeataServerOutcome MseClient::deleteSeataServer(const DeleteSeataServerRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteSeataServerOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteSeataServerOutcome(DeleteSeataServerResult(outcome.result()));
-	else
-		return DeleteSeataServerOutcome(outcome.error());
-}
-
-void MseClient::deleteSeataServerAsync(const DeleteSeataServerRequest& request, const DeleteSeataServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteSeataServer(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MseClient::DeleteSeataServerOutcomeCallable MseClient::deleteSeataServerCallable(const DeleteSeataServerRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteSeataServerOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteSeataServer(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1635,42 +1599,6 @@ MseClient::DeleteSwimmingLaneGroupOutcomeCallable MseClient::deleteSwimmingLaneG
 	return task->get_future();
 }
 
-MseClient::DeleteVGroupOutcome MseClient::deleteVGroup(const DeleteVGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteVGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteVGroupOutcome(DeleteVGroupResult(outcome.result()));
-	else
-		return DeleteVGroupOutcome(outcome.error());
-}
-
-void MseClient::deleteVGroupAsync(const DeleteVGroupRequest& request, const DeleteVGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteVGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MseClient::DeleteVGroupOutcomeCallable MseClient::deleteVGroupCallable(const DeleteVGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteVGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteVGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MseClient::DeleteZnodeOutcome MseClient::deleteZnode(const DeleteZnodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1815,6 +1743,42 @@ MseClient::GetApplicationListOutcomeCallable MseClient::getApplicationListCallab
 	return task->get_future();
 }
 
+MseClient::GetApplicationListWithMetircsOutcome MseClient::getApplicationListWithMetircs(const GetApplicationListWithMetircsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetApplicationListWithMetircsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetApplicationListWithMetircsOutcome(GetApplicationListWithMetircsResult(outcome.result()));
+	else
+		return GetApplicationListWithMetircsOutcome(outcome.error());
+}
+
+void MseClient::getApplicationListWithMetircsAsync(const GetApplicationListWithMetircsRequest& request, const GetApplicationListWithMetircsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getApplicationListWithMetircs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::GetApplicationListWithMetircsOutcomeCallable MseClient::getApplicationListWithMetircsCallable(const GetApplicationListWithMetircsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetApplicationListWithMetircsOutcome()>>(
+			[this, request]()
+			{
+			return this->getApplicationListWithMetircs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::GetBlackWhiteListOutcome MseClient::getBlackWhiteList(const GetBlackWhiteListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1845,42 +1809,6 @@ MseClient::GetBlackWhiteListOutcomeCallable MseClient::getBlackWhiteListCallable
 			[this, request]()
 			{
 			return this->getBlackWhiteList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-MseClient::GetDashBoardUrlOutcome MseClient::getDashBoardUrl(const GetDashBoardUrlRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetDashBoardUrlOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetDashBoardUrlOutcome(GetDashBoardUrlResult(outcome.result()));
-	else
-		return GetDashBoardUrlOutcome(outcome.error());
-}
-
-void MseClient::getDashBoardUrlAsync(const GetDashBoardUrlRequest& request, const GetDashBoardUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getDashBoardUrl(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MseClient::GetDashBoardUrlOutcomeCallable MseClient::getDashBoardUrlCallable(const GetDashBoardUrlRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetDashBoardUrlOutcome()>>(
-			[this, request]()
-			{
-			return this->getDashBoardUrl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2133,42 +2061,6 @@ MseClient::GetGovernanceKubernetesClusterOutcomeCallable MseClient::getGovernanc
 			[this, request]()
 			{
 			return this->getGovernanceKubernetesCluster(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-MseClient::GetGovernanceKubernetesClusterListOutcome MseClient::getGovernanceKubernetesClusterList(const GetGovernanceKubernetesClusterListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetGovernanceKubernetesClusterListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetGovernanceKubernetesClusterListOutcome(GetGovernanceKubernetesClusterListResult(outcome.result()));
-	else
-		return GetGovernanceKubernetesClusterListOutcome(outcome.error());
-}
-
-void MseClient::getGovernanceKubernetesClusterListAsync(const GetGovernanceKubernetesClusterListRequest& request, const GetGovernanceKubernetesClusterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getGovernanceKubernetesClusterList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MseClient::GetGovernanceKubernetesClusterListOutcomeCallable MseClient::getGovernanceKubernetesClusterListCallable(const GetGovernanceKubernetesClusterListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetGovernanceKubernetesClusterListOutcome()>>(
-			[this, request]()
-			{
-			return this->getGovernanceKubernetesClusterList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2463,6 +2355,78 @@ MseClient::GetOverviewOutcomeCallable MseClient::getOverviewCallable(const GetOv
 	return task->get_future();
 }
 
+MseClient::GetPluginConfigOutcome MseClient::getPluginConfig(const GetPluginConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPluginConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPluginConfigOutcome(GetPluginConfigResult(outcome.result()));
+	else
+		return GetPluginConfigOutcome(outcome.error());
+}
+
+void MseClient::getPluginConfigAsync(const GetPluginConfigRequest& request, const GetPluginConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPluginConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::GetPluginConfigOutcomeCallable MseClient::getPluginConfigCallable(const GetPluginConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPluginConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getPluginConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::GetPluginsOutcome MseClient::getPlugins(const GetPluginsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPluginsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPluginsOutcome(GetPluginsResult(outcome.result()));
+	else
+		return GetPluginsOutcome(outcome.error());
+}
+
+void MseClient::getPluginsAsync(const GetPluginsRequest& request, const GetPluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPlugins(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::GetPluginsOutcomeCallable MseClient::getPluginsCallable(const GetPluginsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPluginsOutcome()>>(
+			[this, request]()
+			{
+			return this->getPlugins(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::GetServiceListOutcome MseClient::getServiceList(const GetServiceListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2499,6 +2463,42 @@ MseClient::GetServiceListOutcomeCallable MseClient::getServiceListCallable(const
 	return task->get_future();
 }
 
+MseClient::GetServiceListenersOutcome MseClient::getServiceListeners(const GetServiceListenersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetServiceListenersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetServiceListenersOutcome(GetServiceListenersResult(outcome.result()));
+	else
+		return GetServiceListenersOutcome(outcome.error());
+}
+
+void MseClient::getServiceListenersAsync(const GetServiceListenersRequest& request, const GetServiceListenersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getServiceListeners(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::GetServiceListenersOutcomeCallable MseClient::getServiceListenersCallable(const GetServiceListenersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetServiceListenersOutcome()>>(
+			[this, request]()
+			{
+			return this->getServiceListeners(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::GetTagsBySwimmingLaneGroupIdOutcome MseClient::getTagsBySwimmingLaneGroupId(const GetTagsBySwimmingLaneGroupIdRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2529,6 +2529,42 @@ MseClient::GetTagsBySwimmingLaneGroupIdOutcomeCallable MseClient::getTagsBySwimm
 			[this, request]()
 			{
 			return this->getTagsBySwimmingLaneGroupId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::GetZookeeperDataImportUrlOutcome MseClient::getZookeeperDataImportUrl(const GetZookeeperDataImportUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetZookeeperDataImportUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetZookeeperDataImportUrlOutcome(GetZookeeperDataImportUrlResult(outcome.result()));
+	else
+		return GetZookeeperDataImportUrlOutcome(outcome.error());
+}
+
+void MseClient::getZookeeperDataImportUrlAsync(const GetZookeeperDataImportUrlRequest& request, const GetZookeeperDataImportUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getZookeeperDataImportUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::GetZookeeperDataImportUrlOutcomeCallable MseClient::getZookeeperDataImportUrlCallable(const GetZookeeperDataImportUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetZookeeperDataImportUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->getZookeeperDataImportUrl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2601,6 +2637,42 @@ MseClient::ImportServicesOutcomeCallable MseClient::importServicesCallable(const
 			[this, request]()
 			{
 			return this->importServices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::ImportZookeeperDataOutcome MseClient::importZookeeperData(const ImportZookeeperDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ImportZookeeperDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ImportZookeeperDataOutcome(ImportZookeeperDataResult(outcome.result()));
+	else
+		return ImportZookeeperDataOutcome(outcome.error());
+}
+
+void MseClient::importZookeeperDataAsync(const ImportZookeeperDataRequest& request, const ImportZookeeperDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, importZookeeperData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ImportZookeeperDataOutcomeCallable MseClient::importZookeeperDataCallable(const ImportZookeeperDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ImportZookeeperDataOutcome()>>(
+			[this, request]()
+			{
+			return this->importZookeeperData(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2823,36 +2895,36 @@ MseClient::ListClusterConnectionTypesOutcomeCallable MseClient::listClusterConne
 	return task->get_future();
 }
 
-MseClient::ListClusterDetailFeatureOutcome MseClient::listClusterDetailFeature(const ListClusterDetailFeatureRequest &request) const
+MseClient::ListClusterHealthCheckTaskOutcome MseClient::listClusterHealthCheckTask(const ListClusterHealthCheckTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListClusterDetailFeatureOutcome(endpointOutcome.error());
+		return ListClusterHealthCheckTaskOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListClusterDetailFeatureOutcome(ListClusterDetailFeatureResult(outcome.result()));
+		return ListClusterHealthCheckTaskOutcome(ListClusterHealthCheckTaskResult(outcome.result()));
 	else
-		return ListClusterDetailFeatureOutcome(outcome.error());
+		return ListClusterHealthCheckTaskOutcome(outcome.error());
 }
 
-void MseClient::listClusterDetailFeatureAsync(const ListClusterDetailFeatureRequest& request, const ListClusterDetailFeatureAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MseClient::listClusterHealthCheckTaskAsync(const ListClusterHealthCheckTaskRequest& request, const ListClusterHealthCheckTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listClusterDetailFeature(request), context);
+		handler(this, request, listClusterHealthCheckTask(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MseClient::ListClusterDetailFeatureOutcomeCallable MseClient::listClusterDetailFeatureCallable(const ListClusterDetailFeatureRequest &request) const
+MseClient::ListClusterHealthCheckTaskOutcomeCallable MseClient::listClusterHealthCheckTaskCallable(const ListClusterHealthCheckTaskRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListClusterDetailFeatureOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListClusterHealthCheckTaskOutcome()>>(
 			[this, request]()
 			{
-			return this->listClusterDetailFeature(request);
+			return this->listClusterHealthCheckTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2961,6 +3033,42 @@ MseClient::ListClustersOutcomeCallable MseClient::listClustersCallable(const Lis
 			[this, request]()
 			{
 			return this->listClusters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::ListConfigTrackOutcome MseClient::listConfigTrack(const ListConfigTrackRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListConfigTrackOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListConfigTrackOutcome(ListConfigTrackResult(outcome.result()));
+	else
+		return ListConfigTrackOutcome(outcome.error());
+}
+
+void MseClient::listConfigTrackAsync(const ListConfigTrackRequest& request, const ListConfigTrackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listConfigTrack(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListConfigTrackOutcomeCallable MseClient::listConfigTrackCallable(const ListConfigTrackRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListConfigTrackOutcome()>>(
+			[this, request]()
+			{
+			return this->listConfigTrack(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3255,36 +3363,36 @@ MseClient::ListGatewaySlbOutcomeCallable MseClient::listGatewaySlbCallable(const
 	return task->get_future();
 }
 
-MseClient::ListInstancesOutcome MseClient::listInstances(const ListInstancesRequest &request) const
+MseClient::ListInstanceCountOutcome MseClient::listInstanceCount(const ListInstanceCountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListInstancesOutcome(endpointOutcome.error());
+		return ListInstanceCountOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListInstancesOutcome(ListInstancesResult(outcome.result()));
+		return ListInstanceCountOutcome(ListInstanceCountResult(outcome.result()));
 	else
-		return ListInstancesOutcome(outcome.error());
+		return ListInstanceCountOutcome(outcome.error());
 }
 
-void MseClient::listInstancesAsync(const ListInstancesRequest& request, const ListInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MseClient::listInstanceCountAsync(const ListInstanceCountRequest& request, const ListInstanceCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listInstances(request), context);
+		handler(this, request, listInstanceCount(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MseClient::ListInstancesOutcomeCallable MseClient::listInstancesCallable(const ListInstancesRequest &request) const
+MseClient::ListInstanceCountOutcomeCallable MseClient::listInstanceCountCallable(const ListInstanceCountRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListInstancesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ListInstanceCountOutcome()>>(
 			[this, request]()
 			{
-			return this->listInstances(request);
+			return this->listInstanceCount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3363,6 +3471,42 @@ MseClient::ListListenersByIpOutcomeCallable MseClient::listListenersByIpCallable
 	return task->get_future();
 }
 
+MseClient::ListMigrationTaskOutcome MseClient::listMigrationTask(const ListMigrationTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListMigrationTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListMigrationTaskOutcome(ListMigrationTaskResult(outcome.result()));
+	else
+		return ListMigrationTaskOutcome(outcome.error());
+}
+
+void MseClient::listMigrationTaskAsync(const ListMigrationTaskRequest& request, const ListMigrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listMigrationTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListMigrationTaskOutcomeCallable MseClient::listMigrationTaskCallable(const ListMigrationTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListMigrationTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->listMigrationTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::ListNacosConfigsOutcome MseClient::listNacosConfigs(const ListNacosConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3429,6 +3573,42 @@ MseClient::ListNacosHistoryConfigsOutcomeCallable MseClient::listNacosHistoryCon
 			[this, request]()
 			{
 			return this->listNacosHistoryConfigs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::ListNamingTrackOutcome MseClient::listNamingTrack(const ListNamingTrackRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListNamingTrackOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListNamingTrackOutcome(ListNamingTrackResult(outcome.result()));
+	else
+		return ListNamingTrackOutcome(outcome.error());
+}
+
+void MseClient::listNamingTrackAsync(const ListNamingTrackRequest& request, const ListNamingTrackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listNamingTrack(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListNamingTrackOutcomeCallable MseClient::listNamingTrackCallable(const ListNamingTrackRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListNamingTrackOutcome()>>(
+			[this, request]()
+			{
+			return this->listNamingTrack(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3579,6 +3759,78 @@ MseClient::ListServiceSourceOutcomeCallable MseClient::listServiceSourceCallable
 	return task->get_future();
 }
 
+MseClient::ListTagResourcesOutcome MseClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void MseClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListTagResourcesOutcomeCallable MseClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::ListZkTrackOutcome MseClient::listZkTrack(const ListZkTrackRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListZkTrackOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListZkTrackOutcome(ListZkTrackResult(outcome.result()));
+	else
+		return ListZkTrackOutcome(outcome.error());
+}
+
+void MseClient::listZkTrackAsync(const ListZkTrackRequest& request, const ListZkTrackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listZkTrack(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ListZkTrackOutcomeCallable MseClient::listZkTrackCallable(const ListZkTrackRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListZkTrackOutcome()>>(
+			[this, request]()
+			{
+			return this->listZkTrack(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::ListZnodeChildrenOutcome MseClient::listZnodeChildren(const ListZnodeChildrenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3651,6 +3903,42 @@ MseClient::ModifyGovernanceKubernetesClusterOutcomeCallable MseClient::modifyGov
 	return task->get_future();
 }
 
+MseClient::ModifyLosslessRuleOutcome MseClient::modifyLosslessRule(const ModifyLosslessRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyLosslessRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyLosslessRuleOutcome(ModifyLosslessRuleResult(outcome.result()));
+	else
+		return ModifyLosslessRuleOutcome(outcome.error());
+}
+
+void MseClient::modifyLosslessRuleAsync(const ModifyLosslessRuleRequest& request, const ModifyLosslessRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyLosslessRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::ModifyLosslessRuleOutcomeCallable MseClient::modifyLosslessRuleCallable(const ModifyLosslessRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyLosslessRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyLosslessRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::OfflineGatewayRouteOutcome MseClient::offlineGatewayRoute(const OfflineGatewayRouteRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3687,6 +3975,42 @@ MseClient::OfflineGatewayRouteOutcomeCallable MseClient::offlineGatewayRouteCall
 	return task->get_future();
 }
 
+MseClient::OrderClusterHealthCheckRiskNoticeOutcome MseClient::orderClusterHealthCheckRiskNotice(const OrderClusterHealthCheckRiskNoticeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return OrderClusterHealthCheckRiskNoticeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return OrderClusterHealthCheckRiskNoticeOutcome(OrderClusterHealthCheckRiskNoticeResult(outcome.result()));
+	else
+		return OrderClusterHealthCheckRiskNoticeOutcome(outcome.error());
+}
+
+void MseClient::orderClusterHealthCheckRiskNoticeAsync(const OrderClusterHealthCheckRiskNoticeRequest& request, const OrderClusterHealthCheckRiskNoticeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, orderClusterHealthCheckRiskNotice(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::OrderClusterHealthCheckRiskNoticeOutcomeCallable MseClient::orderClusterHealthCheckRiskNoticeCallable(const OrderClusterHealthCheckRiskNoticeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<OrderClusterHealthCheckRiskNoticeOutcome()>>(
+			[this, request]()
+			{
+			return this->orderClusterHealthCheckRiskNotice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::PullServicesOutcome MseClient::pullServices(const PullServicesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3717,6 +4041,42 @@ MseClient::PullServicesOutcomeCallable MseClient::pullServicesCallable(const Pul
 			[this, request]()
 			{
 			return this->pullServices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::PutClusterHealthCheckTaskOutcome MseClient::putClusterHealthCheckTask(const PutClusterHealthCheckTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PutClusterHealthCheckTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PutClusterHealthCheckTaskOutcome(PutClusterHealthCheckTaskResult(outcome.result()));
+	else
+		return PutClusterHealthCheckTaskOutcome(outcome.error());
+}
+
+void MseClient::putClusterHealthCheckTaskAsync(const PutClusterHealthCheckTaskRequest& request, const PutClusterHealthCheckTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, putClusterHealthCheckTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::PutClusterHealthCheckTaskOutcomeCallable MseClient::putClusterHealthCheckTaskCallable(const PutClusterHealthCheckTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PutClusterHealthCheckTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->putClusterHealthCheckTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3903,6 +4263,42 @@ MseClient::QueryClusterDiskSpecificationOutcomeCallable MseClient::queryClusterD
 	return task->get_future();
 }
 
+MseClient::QueryClusterInfoOutcome MseClient::queryClusterInfo(const QueryClusterInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryClusterInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryClusterInfoOutcome(QueryClusterInfoResult(outcome.result()));
+	else
+		return QueryClusterInfoOutcome(outcome.error());
+}
+
+void MseClient::queryClusterInfoAsync(const QueryClusterInfoRequest& request, const QueryClusterInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryClusterInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::QueryClusterInfoOutcomeCallable MseClient::queryClusterInfoCallable(const QueryClusterInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryClusterInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->queryClusterInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::QueryClusterSpecificationOutcome MseClient::queryClusterSpecification(const QueryClusterSpecificationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4083,6 +4479,42 @@ MseClient::QueryGovernanceKubernetesClusterOutcomeCallable MseClient::queryGover
 	return task->get_future();
 }
 
+MseClient::QueryInstancesInfoOutcome MseClient::queryInstancesInfo(const QueryInstancesInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryInstancesInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryInstancesInfoOutcome(QueryInstancesInfoResult(outcome.result()));
+	else
+		return QueryInstancesInfoOutcome(outcome.error());
+}
+
+void MseClient::queryInstancesInfoAsync(const QueryInstancesInfoRequest& request, const QueryInstancesInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryInstancesInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::QueryInstancesInfoOutcomeCallable MseClient::queryInstancesInfoCallable(const QueryInstancesInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryInstancesInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->queryInstancesInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::QueryMonitorOutcome MseClient::queryMonitor(const QueryMonitorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4191,42 +4623,6 @@ MseClient::QuerySwimmingLaneByIdOutcomeCallable MseClient::querySwimmingLaneById
 	return task->get_future();
 }
 
-MseClient::QueryUserVpcOutcome MseClient::queryUserVpc(const QueryUserVpcRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return QueryUserVpcOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return QueryUserVpcOutcome(QueryUserVpcResult(outcome.result()));
-	else
-		return QueryUserVpcOutcome(outcome.error());
-}
-
-void MseClient::queryUserVpcAsync(const QueryUserVpcRequest& request, const QueryUserVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, queryUserVpc(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MseClient::QueryUserVpcOutcomeCallable MseClient::queryUserVpcCallable(const QueryUserVpcRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<QueryUserVpcOutcome()>>(
-			[this, request]()
-			{
-			return this->queryUserVpc(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MseClient::QueryZnodeDetailOutcome MseClient::queryZnodeDetail(const QueryZnodeDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4299,42 +4695,6 @@ MseClient::RestartClusterOutcomeCallable MseClient::restartClusterCallable(const
 	return task->get_future();
 }
 
-MseClient::RestartSeataServerOutcome MseClient::restartSeataServer(const RestartSeataServerRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RestartSeataServerOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RestartSeataServerOutcome(RestartSeataServerResult(outcome.result()));
-	else
-		return RestartSeataServerOutcome(outcome.error());
-}
-
-void MseClient::restartSeataServerAsync(const RestartSeataServerRequest& request, const RestartSeataServerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, restartSeataServer(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MseClient::RestartSeataServerOutcomeCallable MseClient::restartSeataServerCallable(const RestartSeataServerRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RestartSeataServerOutcome()>>(
-			[this, request]()
-			{
-			return this->restartSeataServer(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 MseClient::RetryClusterOutcome MseClient::retryCluster(const RetryClusterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4401,6 +4761,78 @@ MseClient::SelectGatewaySlbOutcomeCallable MseClient::selectGatewaySlbCallable(c
 			[this, request]()
 			{
 			return this->selectGatewaySlb(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::TagResourcesOutcome MseClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void MseClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::TagResourcesOutcomeCallable MseClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::UntagResourcesOutcome MseClient::untagResources(const UntagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+	else
+		return UntagResourcesOutcome(outcome.error());
+}
+
+void MseClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UntagResourcesOutcomeCallable MseClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4509,6 +4941,42 @@ MseClient::UpdateClusterOutcomeCallable MseClient::updateClusterCallable(const U
 			[this, request]()
 			{
 			return this->updateCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::UpdateClusterSpecOutcome MseClient::updateClusterSpec(const UpdateClusterSpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateClusterSpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateClusterSpecOutcome(UpdateClusterSpecResult(outcome.result()));
+	else
+		return UpdateClusterSpecOutcome(outcome.error());
+}
+
+void MseClient::updateClusterSpecAsync(const UpdateClusterSpecRequest& request, const UpdateClusterSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateClusterSpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateClusterSpecOutcomeCallable MseClient::updateClusterSpecCallable(const UpdateClusterSpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateClusterSpecOutcome()>>(
+			[this, request]()
+			{
+			return this->updateClusterSpec(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5019,6 +5487,42 @@ MseClient::UpdateGatewayServiceVersionOutcomeCallable MseClient::updateGatewaySe
 	return task->get_future();
 }
 
+MseClient::UpdateGatewaySpecOutcome MseClient::updateGatewaySpec(const UpdateGatewaySpecRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateGatewaySpecOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateGatewaySpecOutcome(UpdateGatewaySpecResult(outcome.result()));
+	else
+		return UpdateGatewaySpecOutcome(outcome.error());
+}
+
+void MseClient::updateGatewaySpecAsync(const UpdateGatewaySpecRequest& request, const UpdateGatewaySpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateGatewaySpec(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateGatewaySpecOutcomeCallable MseClient::updateGatewaySpecCallable(const UpdateGatewaySpecRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateGatewaySpecOutcome()>>(
+			[this, request]()
+			{
+			return this->updateGatewaySpec(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::UpdateImageOutcome MseClient::updateImage(const UpdateImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5085,6 +5589,42 @@ MseClient::UpdateMessageQueueRouteOutcomeCallable MseClient::updateMessageQueueR
 			[this, request]()
 			{
 			return this->updateMessageQueueRoute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::UpdateMigrationTaskOutcome MseClient::updateMigrationTask(const UpdateMigrationTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateMigrationTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateMigrationTaskOutcome(UpdateMigrationTaskResult(outcome.result()));
+	else
+		return UpdateMigrationTaskOutcome(outcome.error());
+}
+
+void MseClient::updateMigrationTaskAsync(const UpdateMigrationTaskRequest& request, const UpdateMigrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateMigrationTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateMigrationTaskOutcomeCallable MseClient::updateMigrationTaskCallable(const UpdateMigrationTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateMigrationTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->updateMigrationTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5235,6 +5775,42 @@ MseClient::UpdateNacosServiceOutcomeCallable MseClient::updateNacosServiceCallab
 	return task->get_future();
 }
 
+MseClient::UpdatePluginConfigOutcome MseClient::updatePluginConfig(const UpdatePluginConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdatePluginConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdatePluginConfigOutcome(UpdatePluginConfigResult(outcome.result()));
+	else
+		return UpdatePluginConfigOutcome(outcome.error());
+}
+
+void MseClient::updatePluginConfigAsync(const UpdatePluginConfigRequest& request, const UpdatePluginConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updatePluginConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdatePluginConfigOutcomeCallable MseClient::updatePluginConfigCallable(const UpdatePluginConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdatePluginConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updatePluginConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MseClient::UpdateSSLCertOutcome MseClient::updateSSLCert(const UpdateSSLCertRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5265,6 +5841,42 @@ MseClient::UpdateSSLCertOutcomeCallable MseClient::updateSSLCertCallable(const U
 			[this, request]()
 			{
 			return this->updateSSLCert(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MseClient::UpdateServiceSourceOutcome MseClient::updateServiceSource(const UpdateServiceSourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateServiceSourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateServiceSourceOutcome(UpdateServiceSourceResult(outcome.result()));
+	else
+		return UpdateServiceSourceOutcome(outcome.error());
+}
+
+void MseClient::updateServiceSourceAsync(const UpdateServiceSourceRequest& request, const UpdateServiceSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateServiceSource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MseClient::UpdateServiceSourceOutcomeCallable MseClient::updateServiceSourceCallable(const UpdateServiceSourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateServiceSourceOutcome()>>(
+			[this, request]()
+			{
+			return this->updateServiceSource(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

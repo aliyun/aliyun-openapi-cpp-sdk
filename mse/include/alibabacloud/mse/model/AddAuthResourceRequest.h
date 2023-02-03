@@ -28,24 +28,41 @@ namespace Mse {
 namespace Model {
 class ALIBABACLOUD_MSE_EXPORT AddAuthResourceRequest : public RpcServiceRequest {
 public:
+	struct AuthResourceHeaderList {
+		std::string headerValue;
+		std::string headerMethod;
+		std::string headerKey;
+	};
 	AddAuthResourceRequest();
 	~AddAuthResourceRequest();
+	bool getIgnoreCase() const;
+	void setIgnoreCase(bool ignoreCase);
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
-	long getAuthId() const;
-	void setAuthId(long authId);
 	long getDomainId() const;
 	void setDomainId(long domainId);
 	std::string getPath() const;
 	void setPath(const std::string &path);
+	std::string getMatchType() const;
+	void setMatchType(const std::string &matchType);
+	long getAuthId() const;
+	void setAuthId(long authId);
+	std::vector<AuthResourceHeaderList> getAuthResourceHeaderList() const;
+	void setAuthResourceHeaderList(const std::vector<AuthResourceHeaderList> &authResourceHeaderList);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	bool ignoreCase_;
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
-	long authId_;
 	long domainId_;
 	std::string path_;
+	std::string matchType_;
+	long authId_;
+	std::vector<AuthResourceHeaderList> authResourceHeaderList_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

@@ -25,6 +25,15 @@ AddMockRuleRequest::AddMockRuleRequest()
 
 AddMockRuleRequest::~AddMockRuleRequest() {}
 
+std::string AddMockRuleRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void AddMockRuleRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string AddMockRuleRequest::getExtraJson() const {
   return extraJson_;
 }

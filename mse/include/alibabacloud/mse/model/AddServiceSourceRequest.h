@@ -29,6 +29,7 @@ namespace Model {
 class ALIBABACLOUD_MSE_EXPORT AddServiceSourceRequest : public RpcServiceRequest {
 public:
 	struct IngressOptionsRequest {
+		bool enableStatus;
 		bool enableIngress;
 		std::string watchNamespace;
 		std::string ingressClass;
@@ -37,27 +38,36 @@ public:
 	~AddServiceSourceRequest();
 	IngressOptionsRequest getIngressOptionsRequest() const;
 	void setIngressOptionsRequest(const IngressOptionsRequest &ingressOptionsRequest);
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	std::string getSource() const;
 	void setSource(const std::string &source);
 	std::string getType() const;
 	void setType(const std::string &type);
+	std::vector<std::string> getPathList() const;
+	void setPathList(const std::vector<std::string> &pathList);
 	std::string getAddress() const;
 	void setAddress(const std::string &address);
 	std::string getName() const;
 	void setName(const std::string &name);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
+	std::vector<std::string> getGroupList() const;
+	void setGroupList(const std::vector<std::string> &groupList);
 
 private:
 	IngressOptionsRequest ingressOptionsRequest_;
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
 	std::string source_;
 	std::string type_;
+	std::vector<std::string> pathList_;
 	std::string address_;
 	std::string name_;
 	std::string acceptLanguage_;
+	std::vector<std::string> groupList_;
 };
 } // namespace Model
 } // namespace Mse

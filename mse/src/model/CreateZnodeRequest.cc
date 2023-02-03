@@ -25,6 +25,15 @@ CreateZnodeRequest::CreateZnodeRequest()
 
 CreateZnodeRequest::~CreateZnodeRequest() {}
 
+std::string CreateZnodeRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void CreateZnodeRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string CreateZnodeRequest::getData() const {
   return data_;
 }

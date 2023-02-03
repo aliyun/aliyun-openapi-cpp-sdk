@@ -34,6 +34,15 @@ void UpgradeClusterRequest::setUpgradeVersion(const std::string &upgradeVersion)
   setParameter(std::string("UpgradeVersion"), upgradeVersion);
 }
 
+std::string UpgradeClusterRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpgradeClusterRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpgradeClusterRequest::getInstanceId() const {
   return instanceId_;
 }

@@ -70,6 +70,8 @@ void GetApplicationListResult::parse(const std::string &payload)
 			applicationListObject.language = dataNodeResultApplicationList["Language"].asString();
 		if(!dataNodeResultApplicationList["RegionId"].isNull())
 			applicationListObject.regionId = dataNodeResultApplicationList["RegionId"].asString();
+		if(!dataNodeResultApplicationList["Namespace"].isNull())
+			applicationListObject._namespace = dataNodeResultApplicationList["Namespace"].asString();
 		data_.result.push_back(applicationListObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

@@ -25,6 +25,15 @@ UpdateNacosClusterRequest::UpdateNacosClusterRequest()
 
 UpdateNacosClusterRequest::~UpdateNacosClusterRequest() {}
 
+std::string UpdateNacosClusterRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateNacosClusterRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateNacosClusterRequest::getClusterName() const {
   return clusterName_;
 }

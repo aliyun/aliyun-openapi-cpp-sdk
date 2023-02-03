@@ -25,6 +25,15 @@ ListGatewayServiceRequest::ListGatewayServiceRequest()
 
 ListGatewayServiceRequest::~ListGatewayServiceRequest() {}
 
+std::string ListGatewayServiceRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListGatewayServiceRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 int ListGatewayServiceRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -68,6 +77,7 @@ ListGatewayServiceRequest::FilterParams ListGatewayServiceRequest::getFilterPara
 void ListGatewayServiceRequest::setFilterParams(const ListGatewayServiceRequest::FilterParams &filterParams) {
   filterParams_ = filterParams;
   setParameter(std::string("FilterParams") + ".GatewayUniqueId", filterParams.gatewayUniqueId);
+  setParameter(std::string("FilterParams") + ".ServiceProtocol", filterParams.serviceProtocol);
   setParameter(std::string("FilterParams") + ".Name", filterParams.name);
   setParameter(std::string("FilterParams") + ".Namespace", filterParams._namespace);
   setParameter(std::string("FilterParams") + ".SourceType", filterParams.sourceType);

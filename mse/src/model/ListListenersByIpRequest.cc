@@ -25,6 +25,15 @@ ListListenersByIpRequest::ListListenersByIpRequest()
 
 ListListenersByIpRequest::~ListListenersByIpRequest() {}
 
+std::string ListListenersByIpRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListListenersByIpRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListListenersByIpRequest::getIp() const {
   return ip_;
 }

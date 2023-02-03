@@ -30,12 +30,15 @@ class ALIBABACLOUD_MSE_EXPORT ListSSLCertRequest : public RpcServiceRequest {
 public:
 	ListSSLCertRequest();
 	~ListSSLCertRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
 	std::string acceptLanguage_;
 };

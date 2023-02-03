@@ -46,6 +46,7 @@ namespace AlibabaCloud
 						std::string healthStatus;
 					};
 					std::string internetAddress;
+					std::string resourceGroupId;
 					std::string aclEntryList;
 					int cpu;
 					std::string internetPort;
@@ -57,6 +58,7 @@ namespace AlibabaCloud
 					std::string clusterName;
 					std::string intranetDomain;
 					std::string netType;
+					std::string tags;
 					std::string mseVersion;
 					std::string clusterVersion;
 					std::string connectionType;
@@ -70,6 +72,7 @@ namespace AlibabaCloud
 					std::string healthStatus;
 					long memoryCapacity;
 					std::string clusterType;
+					std::string orderClusterVersion;
 					std::vector<InstanceModel> instanceModels;
 					std::string clusterAliasName;
 					int instanceCount;

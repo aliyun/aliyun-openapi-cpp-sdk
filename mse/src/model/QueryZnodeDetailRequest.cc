@@ -25,6 +25,15 @@ QueryZnodeDetailRequest::QueryZnodeDetailRequest()
 
 QueryZnodeDetailRequest::~QueryZnodeDetailRequest() {}
 
+std::string QueryZnodeDetailRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void QueryZnodeDetailRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string QueryZnodeDetailRequest::getClusterId() const {
   return clusterId_;
 }

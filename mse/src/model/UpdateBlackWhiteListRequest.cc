@@ -25,6 +25,24 @@ UpdateBlackWhiteListRequest::UpdateBlackWhiteListRequest()
 
 UpdateBlackWhiteListRequest::~UpdateBlackWhiteListRequest() {}
 
+std::string UpdateBlackWhiteListRequest::getNote() const {
+  return note_;
+}
+
+void UpdateBlackWhiteListRequest::setNote(const std::string &note) {
+  note_ = note;
+  setParameter(std::string("Note"), note);
+}
+
+std::string UpdateBlackWhiteListRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateBlackWhiteListRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateBlackWhiteListRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -61,6 +79,15 @@ void UpdateBlackWhiteListRequest::setIsWhite(bool isWhite) {
   setParameter(std::string("IsWhite"), isWhite ? "true" : "false");
 }
 
+std::string UpdateBlackWhiteListRequest::getResourceIdJsonList() const {
+  return resourceIdJsonList_;
+}
+
+void UpdateBlackWhiteListRequest::setResourceIdJsonList(const std::string &resourceIdJsonList) {
+  resourceIdJsonList_ = resourceIdJsonList;
+  setParameter(std::string("ResourceIdJsonList"), resourceIdJsonList);
+}
+
 long UpdateBlackWhiteListRequest::getId() const {
   return id_;
 }
@@ -77,6 +104,15 @@ std::string UpdateBlackWhiteListRequest::getResourceType() const {
 void UpdateBlackWhiteListRequest::setResourceType(const std::string &resourceType) {
   resourceType_ = resourceType;
   setParameter(std::string("ResourceType"), resourceType);
+}
+
+std::string UpdateBlackWhiteListRequest::getName() const {
+  return name_;
+}
+
+void UpdateBlackWhiteListRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 
 std::string UpdateBlackWhiteListRequest::getAcceptLanguage() const {

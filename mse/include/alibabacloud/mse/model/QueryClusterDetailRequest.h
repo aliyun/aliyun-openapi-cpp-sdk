@@ -32,6 +32,8 @@ public:
 	~QueryClusterDetailRequest();
 	bool getAclSwitch() const;
 	void setAclSwitch(bool aclSwitch);
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getOrderId() const;
 	void setOrderId(const std::string &orderId);
 	std::string getClusterId() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	bool aclSwitch_;
+	std::string mseSessionId_;
 	std::string orderId_;
 	std::string clusterId_;
 	std::string instanceId_;

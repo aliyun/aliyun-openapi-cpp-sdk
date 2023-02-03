@@ -25,6 +25,15 @@ ListEurekaServicesRequest::ListEurekaServicesRequest()
 
 ListEurekaServicesRequest::~ListEurekaServicesRequest() {}
 
+std::string ListEurekaServicesRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListEurekaServicesRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListEurekaServicesRequest::getClusterId() const {
   return clusterId_;
 }

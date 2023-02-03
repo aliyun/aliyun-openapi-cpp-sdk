@@ -25,13 +25,13 @@ UpdateGatewayRouteWafStatusRequest::UpdateGatewayRouteWafStatusRequest()
 
 UpdateGatewayRouteWafStatusRequest::~UpdateGatewayRouteWafStatusRequest() {}
 
-bool UpdateGatewayRouteWafStatusRequest::getEnableWaf() const {
-  return enableWaf_;
+std::string UpdateGatewayRouteWafStatusRequest::getMseSessionId() const {
+  return mseSessionId_;
 }
 
-void UpdateGatewayRouteWafStatusRequest::setEnableWaf(bool enableWaf) {
-  enableWaf_ = enableWaf;
-  setParameter(std::string("EnableWaf"), enableWaf ? "true" : "false");
+void UpdateGatewayRouteWafStatusRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
 std::string UpdateGatewayRouteWafStatusRequest::getGatewayUniqueId() const {
@@ -41,6 +41,15 @@ std::string UpdateGatewayRouteWafStatusRequest::getGatewayUniqueId() const {
 void UpdateGatewayRouteWafStatusRequest::setGatewayUniqueId(const std::string &gatewayUniqueId) {
   gatewayUniqueId_ = gatewayUniqueId;
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
+}
+
+bool UpdateGatewayRouteWafStatusRequest::getEnableWaf() const {
+  return enableWaf_;
+}
+
+void UpdateGatewayRouteWafStatusRequest::setEnableWaf(bool enableWaf) {
+  enableWaf_ = enableWaf;
+  setParameter(std::string("EnableWaf"), enableWaf ? "true" : "false");
 }
 
 long UpdateGatewayRouteWafStatusRequest::getRouteId() const {

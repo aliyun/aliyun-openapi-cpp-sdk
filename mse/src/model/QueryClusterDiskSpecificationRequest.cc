@@ -25,6 +25,15 @@ QueryClusterDiskSpecificationRequest::QueryClusterDiskSpecificationRequest()
 
 QueryClusterDiskSpecificationRequest::~QueryClusterDiskSpecificationRequest() {}
 
+std::string QueryClusterDiskSpecificationRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void QueryClusterDiskSpecificationRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string QueryClusterDiskSpecificationRequest::getClusterType() const {
   return clusterType_;
 }

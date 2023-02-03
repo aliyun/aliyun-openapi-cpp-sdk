@@ -25,6 +25,15 @@ GetGovernanceKubernetesClusterRequest::GetGovernanceKubernetesClusterRequest()
 
 GetGovernanceKubernetesClusterRequest::~GetGovernanceKubernetesClusterRequest() {}
 
+std::string GetGovernanceKubernetesClusterRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetGovernanceKubernetesClusterRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string GetGovernanceKubernetesClusterRequest::getClusterId() const {
   return clusterId_;
 }

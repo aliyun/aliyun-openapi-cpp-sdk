@@ -30,10 +30,18 @@ class ALIBABACLOUD_MSE_EXPORT CreateNacosConfigRequest : public RpcServiceReques
 public:
 	CreateNacosConfigRequest();
 	~CreateNacosConfigRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getType() const;
 	void setType(const std::string &type);
 	std::string getContent() const;
 	void setContent(const std::string &content);
+	std::string getAppName() const;
+	void setAppName(const std::string &appName);
+	std::string getNamespaceId() const;
+	void setNamespaceId(const std::string &namespaceId);
+	std::string getGroup() const;
+	void setGroup(const std::string &group);
 	std::string getTags() const;
 	void setTags(const std::string &tags);
 	std::string getBetaIps() const;
@@ -42,28 +50,23 @@ public:
 	void setInstanceId(const std::string &instanceId);
 	std::string getDataId() const;
 	void setDataId(const std::string &dataId);
-	std::string getAppName() const;
-	void setAppName(const std::string &appName);
-	std::string getNamespaceId() const;
-	void setNamespaceId(const std::string &namespaceId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
-	std::string getGroup() const;
-	void setGroup(const std::string &group);
 	std::string getDesc() const;
 	void setDesc(const std::string &desc);
 
 private:
+	std::string mseSessionId_;
 	std::string type_;
 	std::string content_;
+	std::string appName_;
+	std::string namespaceId_;
+	std::string group_;
 	std::string tags_;
 	std::string betaIps_;
 	std::string instanceId_;
 	std::string dataId_;
-	std::string appName_;
-	std::string namespaceId_;
 	std::string acceptLanguage_;
-	std::string group_;
 	std::string desc_;
 };
 } // namespace Model

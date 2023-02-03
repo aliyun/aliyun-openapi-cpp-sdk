@@ -25,6 +25,15 @@ UpdateNacosConfigRequest::UpdateNacosConfigRequest()
 
 UpdateNacosConfigRequest::~UpdateNacosConfigRequest() {}
 
+std::string UpdateNacosConfigRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateNacosConfigRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateNacosConfigRequest::getEncryptedDataKey() const {
   return encryptedDataKey_;
 }

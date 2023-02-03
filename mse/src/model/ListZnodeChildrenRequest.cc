@@ -25,6 +25,15 @@ ListZnodeChildrenRequest::ListZnodeChildrenRequest()
 
 ListZnodeChildrenRequest::~ListZnodeChildrenRequest() {}
 
+std::string ListZnodeChildrenRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListZnodeChildrenRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListZnodeChildrenRequest::getClusterId() const {
   return clusterId_;
 }

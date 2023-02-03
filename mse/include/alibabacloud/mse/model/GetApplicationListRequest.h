@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT GetApplicationListRequest : public RpcServiceReque
 public:
 	GetApplicationListRequest();
 	~GetApplicationListRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getLanguage() const;
 	void setLanguage(const std::string &language);
 	std::string getSource() const;
@@ -44,6 +46,8 @@ public:
 	void setSwitchEnable(bool switchEnable);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	bool getSentinelEnable() const;
@@ -52,6 +56,7 @@ public:
 	void setRegion(const std::string &region);
 
 private:
+	std::string mseSessionId_;
 	std::string language_;
 	std::string source_;
 	int pageNumber_;
@@ -59,6 +64,7 @@ private:
 	int pageSize_;
 	bool switchEnable_;
 	std::string appId_;
+	std::string _namespace_;
 	std::string acceptLanguage_;
 	bool sentinelEnable_;
 	std::string region_;

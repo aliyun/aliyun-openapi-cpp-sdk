@@ -25,6 +25,15 @@ GetApplicationListRequest::GetApplicationListRequest()
 
 GetApplicationListRequest::~GetApplicationListRequest() {}
 
+std::string GetApplicationListRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetApplicationListRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string GetApplicationListRequest::getLanguage() const {
   return language_;
 }
@@ -86,6 +95,15 @@ std::string GetApplicationListRequest::getAppId() const {
 void GetApplicationListRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setParameter(std::string("AppId"), appId);
+}
+
+std::string GetApplicationListRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void GetApplicationListRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
 }
 
 std::string GetApplicationListRequest::getAcceptLanguage() const {

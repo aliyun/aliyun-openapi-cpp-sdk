@@ -34,6 +34,15 @@ void CreateClusterRequest::setClusterSpecification(const std::string &clusterSpe
   setParameter(std::string("ClusterSpecification"), clusterSpecification);
 }
 
+std::string CreateClusterRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void CreateClusterRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string CreateClusterRequest::getPubSlbSpecification() const {
   return pubSlbSpecification_;
 }
@@ -52,6 +61,15 @@ void CreateClusterRequest::setPrivateSlbSpecification(const std::string &private
   setParameter(std::string("PrivateSlbSpecification"), privateSlbSpecification);
 }
 
+std::string CreateClusterRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateClusterRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 int CreateClusterRequest::getInstanceCount() const {
   return instanceCount_;
 }
@@ -68,6 +86,20 @@ std::string CreateClusterRequest::getRequestPars() const {
 void CreateClusterRequest::setRequestPars(const std::string &requestPars) {
   requestPars_ = requestPars;
   setParameter(std::string("RequestPars"), requestPars);
+}
+
+std::vector<CreateClusterRequest::Tag> CreateClusterRequest::getTag() const {
+  return tag_;
+}
+
+void CreateClusterRequest::setTag(const std::vector<CreateClusterRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 
 std::string CreateClusterRequest::getConnectionType() const {
@@ -122,6 +154,15 @@ std::string CreateClusterRequest::getClusterType() const {
 void CreateClusterRequest::setClusterType(const std::string &clusterType) {
   clusterType_ = clusterType;
   setParameter(std::string("ClusterType"), clusterType);
+}
+
+std::string CreateClusterRequest::getInstanceName() const {
+  return instanceName_;
+}
+
+void CreateClusterRequest::setInstanceName(const std::string &instanceName) {
+  instanceName_ = instanceName;
+  setParameter(std::string("InstanceName"), instanceName);
 }
 
 std::string CreateClusterRequest::getPubNetworkFlow() const {

@@ -32,6 +32,8 @@ public:
 	~DeleteGatewayRequest();
 	bool getDeleteSlb() const;
 	void setDeleteSlb(bool deleteSlb);
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	std::string getAcceptLanguage() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	bool deleteSlb_;
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
 	std::string acceptLanguage_;
 };

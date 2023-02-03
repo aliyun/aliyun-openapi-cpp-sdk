@@ -36,6 +36,51 @@ namespace AlibabaCloud
 				{
 					struct Services
 					{
+						struct HealthCheckInfo
+						{
+							std::string httpPath;
+							int unhealthyThreshold;
+							int timeout;
+							std::string httpHost;
+							int healthyThreshold;
+							bool check;
+							std::vector<std::string> expectedStatuses;
+							std::string protocol;
+							int interval;
+						};
+						struct GatewayTrafficPolicy
+						{
+							struct Tls
+							{
+								std::string certId;
+								std::string mode;
+								std::string caCertContent;
+								std::vector<std::string> subjectAltNames;
+								std::string caCertId;
+								std::string sni;
+							};
+							struct LoadBalancerSettings
+							{
+								struct ConsistentHashLBConfig
+								{
+									struct HttpCookie
+									{
+										std::string path;
+										std::string ttl;
+										std::string name;
+									};
+									std::string consistentHashLBType;
+									long minimumRingSize;
+									std::string parameterName;
+									HttpCookie httpCookie;
+								};
+								int warmupDuration;
+								ConsistentHashLBConfig consistentHashLBConfig;
+								std::string loadbalancerType;
+							};
+							LoadBalancerSettings loadBalancerSettings;
+							Tls tls;
+						};
 						struct VersionsItem
 						{
 							std::string name;
@@ -44,9 +89,14 @@ namespace AlibabaCloud
 						long servicePort;
 						std::string sourceType;
 						long sourceId;
+						std::vector<std::string> unhealthyEndpoints;
 						std::string metaInfo;
 						std::string gmtModified;
 						std::string healehStatus;
+						std::string healthStatus;
+						bool healthCheck;
+						HealthCheckInfo healthCheckInfo;
+						std::vector<std::string> ports;
 						std::string _namespace;
 						long gatewayId;
 						std::vector<std::string> ips;
@@ -57,6 +107,7 @@ namespace AlibabaCloud
 						std::string serviceNameInRegistry;
 						std::string serviceProtocol;
 						long id;
+						GatewayTrafficPolicy gatewayTrafficPolicy;
 					};
 					int pageSize;
 					int pageNumber;

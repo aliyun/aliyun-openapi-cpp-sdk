@@ -28,18 +28,28 @@ namespace Mse {
 namespace Model {
 class ALIBABACLOUD_MSE_EXPORT CreateClusterRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	CreateClusterRequest();
 	~CreateClusterRequest();
 	std::string getClusterSpecification() const;
 	void setClusterSpecification(const std::string &clusterSpecification);
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getPubSlbSpecification() const;
 	void setPubSlbSpecification(const std::string &pubSlbSpecification);
 	std::string getPrivateSlbSpecification() const;
 	void setPrivateSlbSpecification(const std::string &privateSlbSpecification);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	int getInstanceCount() const;
 	void setInstanceCount(int instanceCount);
 	std::string getRequestPars() const;
 	void setRequestPars(const std::string &requestPars);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getConnectionType() const;
 	void setConnectionType(const std::string &connectionType);
 	std::string getClusterVersion() const;
@@ -52,6 +62,8 @@ public:
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getClusterType() const;
 	void setClusterType(const std::string &clusterType);
+	std::string getInstanceName() const;
+	void setInstanceName(const std::string &instanceName);
 	std::string getPubNetworkFlow() const;
 	void setPubNetworkFlow(const std::string &pubNetworkFlow);
 	std::string getVpcId() const;
@@ -67,16 +79,20 @@ public:
 
 private:
 	std::string clusterSpecification_;
+	std::string mseSessionId_;
 	std::string pubSlbSpecification_;
 	std::string privateSlbSpecification_;
+	std::string resourceGroupId_;
 	int instanceCount_;
 	std::string requestPars_;
+	std::vector<Tag> tag_;
 	std::string connectionType_;
 	std::string clusterVersion_;
 	int diskCapacity_;
 	std::string diskType_;
 	std::string vSwitchId_;
 	std::string clusterType_;
+	std::string instanceName_;
 	std::string pubNetworkFlow_;
 	std::string vpcId_;
 	std::string netType_;

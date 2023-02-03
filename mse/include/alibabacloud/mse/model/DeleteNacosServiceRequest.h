@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT DeleteNacosServiceRequest : public RpcServiceReque
 public:
 	DeleteNacosServiceRequest();
 	~DeleteNacosServiceRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGroupName() const;
 	void setGroupName(const std::string &groupName);
 	std::string getInstanceId() const;
@@ -42,6 +44,7 @@ public:
 	void setServiceName(const std::string &serviceName);
 
 private:
+	std::string mseSessionId_;
 	std::string groupName_;
 	std::string instanceId_;
 	std::string namespaceId_;

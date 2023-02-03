@@ -25,6 +25,15 @@ DeleteGatewayServiceVersionRequest::DeleteGatewayServiceVersionRequest()
 
 DeleteGatewayServiceVersionRequest::~DeleteGatewayServiceVersionRequest() {}
 
+std::string DeleteGatewayServiceVersionRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteGatewayServiceVersionRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string DeleteGatewayServiceVersionRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

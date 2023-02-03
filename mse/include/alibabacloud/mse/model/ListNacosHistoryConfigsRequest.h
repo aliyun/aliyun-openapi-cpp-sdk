@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT ListNacosHistoryConfigsRequest : public RpcService
 public:
 	ListNacosHistoryConfigsRequest();
 	~ListNacosHistoryConfigsRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
 	std::string getInstanceId() const;
@@ -50,6 +52,7 @@ public:
 	void setGroup(const std::string &group);
 
 private:
+	std::string mseSessionId_;
 	int pageNum_;
 	std::string instanceId_;
 	std::string dataId_;

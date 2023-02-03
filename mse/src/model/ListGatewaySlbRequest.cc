@@ -25,6 +25,15 @@ ListGatewaySlbRequest::ListGatewaySlbRequest()
 
 ListGatewaySlbRequest::~ListGatewaySlbRequest() {}
 
+std::string ListGatewaySlbRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListGatewaySlbRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListGatewaySlbRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

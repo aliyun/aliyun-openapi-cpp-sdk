@@ -34,6 +34,15 @@ void DeleteGatewaySlbRequest::setDeleteSlb(bool deleteSlb) {
   setParameter(std::string("DeleteSlb"), deleteSlb ? "true" : "false");
 }
 
+std::string DeleteGatewaySlbRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteGatewaySlbRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string DeleteGatewaySlbRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -43,15 +52,6 @@ void DeleteGatewaySlbRequest::setGatewayUniqueId(const std::string &gatewayUniqu
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
 }
 
-std::string DeleteGatewaySlbRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void DeleteGatewaySlbRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::string DeleteGatewaySlbRequest::getId() const {
   return id_;
 }
@@ -59,5 +59,14 @@ std::string DeleteGatewaySlbRequest::getId() const {
 void DeleteGatewaySlbRequest::setId(const std::string &id) {
   id_ = id;
   setParameter(std::string("Id"), id);
+}
+
+std::string DeleteGatewaySlbRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void DeleteGatewaySlbRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

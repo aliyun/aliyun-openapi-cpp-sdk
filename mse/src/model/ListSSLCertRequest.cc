@@ -25,6 +25,15 @@ ListSSLCertRequest::ListSSLCertRequest()
 
 ListSSLCertRequest::~ListSSLCertRequest() {}
 
+std::string ListSSLCertRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListSSLCertRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListSSLCertRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

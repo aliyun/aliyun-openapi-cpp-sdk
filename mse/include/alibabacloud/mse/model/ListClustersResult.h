@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string mseVersion;
 					std::string internetAddress;
+					std::string resourceGroupId;
 					std::string instanceId;
 					std::string clusterId;
 					std::string internetDomain;
@@ -52,6 +53,7 @@ namespace AlibabaCloud
 					std::string clusterName;
 					std::string initStatus;
 					std::string intranetDomain;
+					std::string tags;
 				};
 
 

@@ -25,13 +25,13 @@ ImportServicesRequest::ImportServicesRequest()
 
 ImportServicesRequest::~ImportServicesRequest() {}
 
-std::string ImportServicesRequest::getSourceId() const {
-  return sourceId_;
+std::string ImportServicesRequest::getMseSessionId() const {
+  return mseSessionId_;
 }
 
-void ImportServicesRequest::setSourceId(const std::string &sourceId) {
-  sourceId_ = sourceId;
-  setParameter(std::string("SourceId"), sourceId);
+void ImportServicesRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
 std::string ImportServicesRequest::getGatewayUniqueId() const {
@@ -61,13 +61,13 @@ void ImportServicesRequest::setServiceList(const std::vector<ImportServicesReque
   }
 }
 
-std::string ImportServicesRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
+std::string ImportServicesRequest::getTlsSetting() const {
+  return tlsSetting_;
 }
 
-void ImportServicesRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
+void ImportServicesRequest::setTlsSetting(const std::string &tlsSetting) {
+  tlsSetting_ = tlsSetting;
+  setParameter(std::string("TlsSetting"), tlsSetting);
 }
 
 std::string ImportServicesRequest::getSourceType() const {
@@ -77,5 +77,14 @@ std::string ImportServicesRequest::getSourceType() const {
 void ImportServicesRequest::setSourceType(const std::string &sourceType) {
   sourceType_ = sourceType;
   setParameter(std::string("SourceType"), sourceType);
+}
+
+std::string ImportServicesRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void ImportServicesRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

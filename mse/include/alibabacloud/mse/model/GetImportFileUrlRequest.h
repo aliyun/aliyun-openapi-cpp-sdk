@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT GetImportFileUrlRequest : public RpcServiceRequest
 public:
 	GetImportFileUrlRequest();
 	~GetImportFileUrlRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getContentType() const;
 	void setContentType(const std::string &contentType);
 	std::string getInstanceId() const;
@@ -40,6 +42,7 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string contentType_;
 	std::string instanceId_;
 	std::string namespaceId_;

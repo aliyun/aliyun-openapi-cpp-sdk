@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT AddSSLCertRequest : public RpcServiceRequest {
 public:
 	AddSSLCertRequest();
 	~AddSSLCertRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	long getDomainId() const;
@@ -40,6 +42,7 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
 	long domainId_;
 	std::string certIdentifier_;

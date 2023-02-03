@@ -25,6 +25,15 @@ PullServicesRequest::PullServicesRequest()
 
 PullServicesRequest::~PullServicesRequest() {}
 
+std::string PullServicesRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void PullServicesRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string PullServicesRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -34,15 +43,6 @@ void PullServicesRequest::setGatewayUniqueId(const std::string &gatewayUniqueId)
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
 }
 
-std::string PullServicesRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void PullServicesRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::string PullServicesRequest::getSourceType() const {
   return sourceType_;
 }
@@ -50,5 +50,23 @@ std::string PullServicesRequest::getSourceType() const {
 void PullServicesRequest::setSourceType(const std::string &sourceType) {
   sourceType_ = sourceType;
   setParameter(std::string("SourceType"), sourceType);
+}
+
+std::string PullServicesRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void PullServicesRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
+}
+
+std::string PullServicesRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void PullServicesRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

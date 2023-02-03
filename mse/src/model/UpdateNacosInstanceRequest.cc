@@ -25,6 +25,15 @@ UpdateNacosInstanceRequest::UpdateNacosInstanceRequest()
 
 UpdateNacosInstanceRequest::~UpdateNacosInstanceRequest() {}
 
+std::string UpdateNacosInstanceRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateNacosInstanceRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateNacosInstanceRequest::getMetadata() const {
   return metadata_;
 }

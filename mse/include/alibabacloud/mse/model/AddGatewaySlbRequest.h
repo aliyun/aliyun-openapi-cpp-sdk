@@ -30,20 +30,38 @@ class ALIBABACLOUD_MSE_EXPORT AddGatewaySlbRequest : public RpcServiceRequest {
 public:
 	AddGatewaySlbRequest();
 	~AddGatewaySlbRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getSlbId() const;
 	void setSlbId(const std::string &slbId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	std::string getType() const;
 	void setType(const std::string &type);
+	int getHttpPort() const;
+	void setHttpPort(int httpPort);
+	int getServiceWeight() const;
+	void setServiceWeight(int serviceWeight);
+	std::string getVServerGroupId() const;
+	void setVServerGroupId(const std::string &vServerGroupId);
+	std::string getHttpsVServerGroupId() const;
+	void setHttpsVServerGroupId(const std::string &httpsVServerGroupId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
+	int getHttpsPort() const;
+	void setHttpsPort(int httpsPort);
 
 private:
+	std::string mseSessionId_;
 	std::string slbId_;
 	std::string gatewayUniqueId_;
 	std::string type_;
+	int httpPort_;
+	int serviceWeight_;
+	std::string vServerGroupId_;
+	std::string httpsVServerGroupId_;
 	std::string acceptLanguage_;
+	int httpsPort_;
 };
 } // namespace Model
 } // namespace Mse

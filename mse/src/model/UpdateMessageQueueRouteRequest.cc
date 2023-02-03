@@ -25,15 +25,22 @@ UpdateMessageQueueRouteRequest::UpdateMessageQueueRouteRequest()
 
 UpdateMessageQueueRouteRequest::~UpdateMessageQueueRouteRequest() {}
 
-std::vector<UpdateMessageQueueRouteRequest::std::string> UpdateMessageQueueRouteRequest::getTags() const {
-  return tags_;
+std::string UpdateMessageQueueRouteRequest::getMseSessionId() const {
+  return mseSessionId_;
 }
 
-void UpdateMessageQueueRouteRequest::setTags(const std::vector<UpdateMessageQueueRouteRequest::std::string> &tags) {
-  tags_ = tags;
-  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
-    setParameter(std::string("Tags") + "." + std::to_string(dep1 + 1), tags[dep1]);
-  }
+void UpdateMessageQueueRouteRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
+std::string UpdateMessageQueueRouteRequest::getAppName() const {
+  return appName_;
+}
+
+void UpdateMessageQueueRouteRequest::setAppName(const std::string &appName) {
+  appName_ = appName;
+  setParameter(std::string("AppName"), appName);
 }
 
 bool UpdateMessageQueueRouteRequest::getEnable() const {
@@ -45,6 +52,26 @@ void UpdateMessageQueueRouteRequest::setEnable(bool enable) {
   setParameter(std::string("Enable"), enable ? "true" : "false");
 }
 
+std::vector<UpdateMessageQueueRouteRequest::std::string> UpdateMessageQueueRouteRequest::getTags() const {
+  return tags_;
+}
+
+void UpdateMessageQueueRouteRequest::setTags(const std::vector<UpdateMessageQueueRouteRequest::std::string> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+    setParameter(std::string("Tags") + "." + std::to_string(dep1 + 1), tags[dep1]);
+  }
+}
+
+std::string UpdateMessageQueueRouteRequest::getFilterSide() const {
+  return filterSide_;
+}
+
+void UpdateMessageQueueRouteRequest::setFilterSide(const std::string &filterSide) {
+  filterSide_ = filterSide;
+  setParameter(std::string("FilterSide"), filterSide);
+}
+
 std::string UpdateMessageQueueRouteRequest::getAppId() const {
   return appId_;
 }
@@ -52,6 +79,15 @@ std::string UpdateMessageQueueRouteRequest::getAppId() const {
 void UpdateMessageQueueRouteRequest::setAppId(const std::string &appId) {
   appId_ = appId;
   setParameter(std::string("AppId"), appId);
+}
+
+std::string UpdateMessageQueueRouteRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void UpdateMessageQueueRouteRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
 }
 
 std::string UpdateMessageQueueRouteRequest::getAcceptLanguage() const {

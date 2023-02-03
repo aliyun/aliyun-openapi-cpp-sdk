@@ -30,10 +30,13 @@ class ALIBABACLOUD_MSE_EXPORT QueryBusinessLocationsRequest : public RpcServiceR
 public:
 	QueryBusinessLocationsRequest();
 	~QueryBusinessLocationsRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

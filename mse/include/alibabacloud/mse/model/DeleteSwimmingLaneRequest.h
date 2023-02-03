@@ -30,12 +30,15 @@ class ALIBABACLOUD_MSE_EXPORT DeleteSwimmingLaneRequest : public RpcServiceReque
 public:
 	DeleteSwimmingLaneRequest();
 	~DeleteSwimmingLaneRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	long getLaneId() const;
 	void setLaneId(long laneId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	long laneId_;
 	std::string acceptLanguage_;
 };

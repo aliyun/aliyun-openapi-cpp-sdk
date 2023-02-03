@@ -84,6 +84,8 @@ void ListGatewayRouteResult::parse(const std::string &payload)
 			routesObject.type = dataNodeResultRoutes["Type"].asString();
 		if(!dataNodeResultRoutes["EnableWaf"].isNull())
 			routesObject.enableWaf = dataNodeResultRoutes["EnableWaf"].asString();
+		if(!dataNodeResultRoutes["Fallback"].isNull())
+			routesObject.fallback = dataNodeResultRoutes["Fallback"].asString() == "true";
 		auto allRouteServicesNode = dataNodeResultRoutes["RouteServices"]["RouteServicesItem"];
 		for (auto dataNodeResultRoutesRouteServicesRouteServicesItem : allRouteServicesNode)
 		{
@@ -104,7 +106,73 @@ void ListGatewayRouteResult::parse(const std::string &payload)
 				routeServicesObject._namespace = dataNodeResultRoutesRouteServicesRouteServicesItem["Namespace"].asString();
 			if(!dataNodeResultRoutesRouteServicesRouteServicesItem["GroupName"].isNull())
 				routeServicesObject.groupName = dataNodeResultRoutesRouteServicesRouteServicesItem["GroupName"].asString();
+			if(!dataNodeResultRoutesRouteServicesRouteServicesItem["AgreementType"].isNull())
+				routeServicesObject.agreementType = dataNodeResultRoutesRouteServicesRouteServicesItem["AgreementType"].asString();
+			if(!dataNodeResultRoutesRouteServicesRouteServicesItem["ServicePort"].isNull())
+				routeServicesObject.servicePort = std::stoi(dataNodeResultRoutesRouteServicesRouteServicesItem["ServicePort"].asString());
+			auto httpDubboTranscoderNode = value["HttpDubboTranscoder"];
+			if(!httpDubboTranscoderNode["DubboServiceName"].isNull())
+				routeServicesObject.httpDubboTranscoder.dubboServiceName = httpDubboTranscoderNode["DubboServiceName"].asString();
+			if(!httpDubboTranscoderNode["DubboServiceVersion"].isNull())
+				routeServicesObject.httpDubboTranscoder.dubboServiceVersion = httpDubboTranscoderNode["DubboServiceVersion"].asString();
+			if(!httpDubboTranscoderNode["DubboServiceGroup"].isNull())
+				routeServicesObject.httpDubboTranscoder.dubboServiceGroup = httpDubboTranscoderNode["DubboServiceGroup"].asString();
+			auto allMothedMapListNode = httpDubboTranscoderNode["MothedMapList"]["MothedMapListItem"];
+			for (auto httpDubboTranscoderNodeMothedMapListMothedMapListItem : allMothedMapListNode)
+			{
+				Data::Routes::RouteServicesItem::HttpDubboTranscoder::MothedMapListItem mothedMapListItemObject;
+				if(!httpDubboTranscoderNodeMothedMapListMothedMapListItem["DubboMothedName"].isNull())
+					mothedMapListItemObject.dubboMothedName = httpDubboTranscoderNodeMothedMapListMothedMapListItem["DubboMothedName"].asString();
+				if(!httpDubboTranscoderNodeMothedMapListMothedMapListItem["HttpMothed"].isNull())
+					mothedMapListItemObject.httpMothed = httpDubboTranscoderNodeMothedMapListMothedMapListItem["HttpMothed"].asString();
+				if(!httpDubboTranscoderNodeMothedMapListMothedMapListItem["Mothedpath"].isNull())
+					mothedMapListItemObject.mothedpath = httpDubboTranscoderNodeMothedMapListMothedMapListItem["Mothedpath"].asString();
+				if(!httpDubboTranscoderNodeMothedMapListMothedMapListItem["PassThroughAllHeaders"].isNull())
+					mothedMapListItemObject.passThroughAllHeaders = httpDubboTranscoderNodeMothedMapListMothedMapListItem["PassThroughAllHeaders"].asString();
+				auto allParamMapsListNode = httpDubboTranscoderNodeMothedMapListMothedMapListItem["ParamMapsList"]["ParamMapsListItem"];
+				for (auto httpDubboTranscoderNodeMothedMapListMothedMapListItemParamMapsListParamMapsListItem : allParamMapsListNode)
+				{
+					Data::Routes::RouteServicesItem::HttpDubboTranscoder::MothedMapListItem::ParamMapsListItem paramMapsListObject;
+					if(!httpDubboTranscoderNodeMothedMapListMothedMapListItemParamMapsListParamMapsListItem["ExtractKeySpec"].isNull())
+						paramMapsListObject.extractKeySpec = httpDubboTranscoderNodeMothedMapListMothedMapListItemParamMapsListParamMapsListItem["ExtractKeySpec"].asString();
+					if(!httpDubboTranscoderNodeMothedMapListMothedMapListItemParamMapsListParamMapsListItem["ExtractKey"].isNull())
+						paramMapsListObject.extractKey = httpDubboTranscoderNodeMothedMapListMothedMapListItemParamMapsListParamMapsListItem["ExtractKey"].asString();
+					if(!httpDubboTranscoderNodeMothedMapListMothedMapListItemParamMapsListParamMapsListItem["MappingType"].isNull())
+						paramMapsListObject.mappingType = httpDubboTranscoderNodeMothedMapListMothedMapListItemParamMapsListParamMapsListItem["MappingType"].asString();
+					mothedMapListItemObject.paramMapsList.push_back(paramMapsListObject);
+				}
+				auto allPassThroughList = value["PassThroughList"]["PassThroughList"];
+				for (auto value : allPassThroughList)
+					mothedMapListItemObject.passThroughList.push_back(value.asString());
+				routeServicesObject.httpDubboTranscoder.mothedMapList.push_back(mothedMapListItemObject);
+			}
 			routesObject.routeServices.push_back(routeServicesObject);
+		}
+		auto allFallbackServicesNode = dataNodeResultRoutes["FallbackServices"]["FallbackServicesItem"];
+		for (auto dataNodeResultRoutesFallbackServicesFallbackServicesItem : allFallbackServicesNode)
+		{
+			Data::Routes::FallbackServicesItem fallbackServicesObject;
+			if(!dataNodeResultRoutesFallbackServicesFallbackServicesItem["ServiceId"].isNull())
+				fallbackServicesObject.serviceId = std::stol(dataNodeResultRoutesFallbackServicesFallbackServicesItem["ServiceId"].asString());
+			if(!dataNodeResultRoutesFallbackServicesFallbackServicesItem["ServiceName"].isNull())
+				fallbackServicesObject.serviceName = dataNodeResultRoutesFallbackServicesFallbackServicesItem["ServiceName"].asString();
+			if(!dataNodeResultRoutesFallbackServicesFallbackServicesItem["Percent"].isNull())
+				fallbackServicesObject.percent = std::stoi(dataNodeResultRoutesFallbackServicesFallbackServicesItem["Percent"].asString());
+			if(!dataNodeResultRoutesFallbackServicesFallbackServicesItem["Version"].isNull())
+				fallbackServicesObject.version = dataNodeResultRoutesFallbackServicesFallbackServicesItem["Version"].asString();
+			if(!dataNodeResultRoutesFallbackServicesFallbackServicesItem["Name"].isNull())
+				fallbackServicesObject.name = dataNodeResultRoutesFallbackServicesFallbackServicesItem["Name"].asString();
+			if(!dataNodeResultRoutesFallbackServicesFallbackServicesItem["SourceType"].isNull())
+				fallbackServicesObject.sourceType = dataNodeResultRoutesFallbackServicesFallbackServicesItem["SourceType"].asString();
+			if(!dataNodeResultRoutesFallbackServicesFallbackServicesItem["Namespace"].isNull())
+				fallbackServicesObject._namespace = dataNodeResultRoutesFallbackServicesFallbackServicesItem["Namespace"].asString();
+			if(!dataNodeResultRoutesFallbackServicesFallbackServicesItem["GroupName"].isNull())
+				fallbackServicesObject.groupName = dataNodeResultRoutesFallbackServicesFallbackServicesItem["GroupName"].asString();
+			if(!dataNodeResultRoutesFallbackServicesFallbackServicesItem["AgreementType"].isNull())
+				fallbackServicesObject.agreementType = dataNodeResultRoutesFallbackServicesFallbackServicesItem["AgreementType"].asString();
+			if(!dataNodeResultRoutesFallbackServicesFallbackServicesItem["ServicePort"].isNull())
+				fallbackServicesObject.servicePort = std::stoi(dataNodeResultRoutesFallbackServicesFallbackServicesItem["ServicePort"].asString());
+			routesObject.fallbackServices.push_back(fallbackServicesObject);
 		}
 		auto routePredicatesNode = value["RoutePredicates"];
 		auto allHeaderPredicatesNode = routePredicatesNode["HeaderPredicates"]["HeaderPredicatesItem"];

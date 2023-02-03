@@ -25,6 +25,15 @@ UpdateGatewayServiceTrafficPolicyRequest::UpdateGatewayServiceTrafficPolicyReque
 
 UpdateGatewayServiceTrafficPolicyRequest::~UpdateGatewayServiceTrafficPolicyRequest() {}
 
+std::string UpdateGatewayServiceTrafficPolicyRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateGatewayServiceTrafficPolicyRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateGatewayServiceTrafficPolicyRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -32,6 +41,15 @@ std::string UpdateGatewayServiceTrafficPolicyRequest::getGatewayUniqueId() const
 void UpdateGatewayServiceTrafficPolicyRequest::setGatewayUniqueId(const std::string &gatewayUniqueId) {
   gatewayUniqueId_ = gatewayUniqueId;
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
+}
+
+long UpdateGatewayServiceTrafficPolicyRequest::getGatewayId() const {
+  return gatewayId_;
+}
+
+void UpdateGatewayServiceTrafficPolicyRequest::setGatewayId(long gatewayId) {
+  gatewayId_ = gatewayId;
+  setParameter(std::string("GatewayId"), std::to_string(gatewayId));
 }
 
 UpdateGatewayServiceTrafficPolicyRequest::GatewayTrafficPolicy UpdateGatewayServiceTrafficPolicyRequest::getGatewayTrafficPolicy() const {
@@ -44,6 +62,7 @@ void UpdateGatewayServiceTrafficPolicyRequest::setGatewayTrafficPolicy(const Upd
   setParameter(std::string("GatewayTrafficPolicy") + ".TlsSetting.CaCertContent", gatewayTrafficPolicy.tlsSetting.caCertContent);
   setParameter(std::string("GatewayTrafficPolicy") + ".TlsSetting.CertId", gatewayTrafficPolicy.tlsSetting.certId);
   setParameter(std::string("GatewayTrafficPolicy") + ".TlsSetting.Sni", gatewayTrafficPolicy.tlsSetting.sni);
+  setParameter(std::string("GatewayTrafficPolicy") + ".LoadBalancerSettings.WarmupDuration", std::to_string(gatewayTrafficPolicy.loadBalancerSettings.warmupDuration));
   setParameter(std::string("GatewayTrafficPolicy") + ".LoadBalancerSettings.LoadbalancerType", gatewayTrafficPolicy.loadBalancerSettings.loadbalancerType);
   setParameter(std::string("GatewayTrafficPolicy") + ".LoadBalancerSettings.ConsistentHashLBConfig.HttpCookie.Path", gatewayTrafficPolicy.loadBalancerSettings.consistentHashLBConfig.httpCookie.path);
   setParameter(std::string("GatewayTrafficPolicy") + ".LoadBalancerSettings.ConsistentHashLBConfig.HttpCookie.Name", gatewayTrafficPolicy.loadBalancerSettings.consistentHashLBConfig.httpCookie.name);
@@ -68,14 +87,5 @@ long UpdateGatewayServiceTrafficPolicyRequest::getServiceId() const {
 void UpdateGatewayServiceTrafficPolicyRequest::setServiceId(long serviceId) {
   serviceId_ = serviceId;
   setParameter(std::string("ServiceId"), std::to_string(serviceId));
-}
-
-long UpdateGatewayServiceTrafficPolicyRequest::getGatewayId() const {
-  return gatewayId_;
-}
-
-void UpdateGatewayServiceTrafficPolicyRequest::setGatewayId(long gatewayId) {
-  gatewayId_ = gatewayId;
-  setParameter(std::string("GatewayId"), std::to_string(gatewayId));
 }
 

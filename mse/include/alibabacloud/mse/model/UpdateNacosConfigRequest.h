@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT UpdateNacosConfigRequest : public RpcServiceReques
 public:
 	UpdateNacosConfigRequest();
 	~UpdateNacosConfigRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getEncryptedDataKey() const;
 	void setEncryptedDataKey(const std::string &encryptedDataKey);
 	std::string getType() const;
@@ -58,6 +60,7 @@ public:
 	void setMd5(const std::string &md5);
 
 private:
+	std::string mseSessionId_;
 	std::string encryptedDataKey_;
 	std::string type_;
 	std::string content_;

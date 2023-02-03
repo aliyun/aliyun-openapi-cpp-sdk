@@ -79,7 +79,7 @@ void ListApplicationsWithTagRulesResult::parse(const std::string &payload)
 			if(!dataNodeResultApplicationListRouteRulesRouteRule["Rate"].isNull())
 				routeRulesObject.rate = std::stoi(dataNodeResultApplicationListRouteRulesRouteRule["Rate"].asString());
 			if(!dataNodeResultApplicationListRouteRulesRouteRule["GmtModified"].isNull())
-				routeRulesObject.gmtModified = std::stol(dataNodeResultApplicationListRouteRulesRouteRule["GmtModified"].asString());
+				routeRulesObject.gmtModified = dataNodeResultApplicationListRouteRulesRouteRule["GmtModified"].asString();
 			if(!dataNodeResultApplicationListRouteRulesRouteRule["Enable"].isNull())
 				routeRulesObject.enable = dataNodeResultApplicationListRouteRulesRouteRule["Enable"].asString() == "true";
 			applicationListObject.routeRules.push_back(routeRulesObject);

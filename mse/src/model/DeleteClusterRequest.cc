@@ -25,6 +25,15 @@ DeleteClusterRequest::DeleteClusterRequest()
 
 DeleteClusterRequest::~DeleteClusterRequest() {}
 
+std::string DeleteClusterRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteClusterRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string DeleteClusterRequest::getClusterId() const {
   return clusterId_;
 }

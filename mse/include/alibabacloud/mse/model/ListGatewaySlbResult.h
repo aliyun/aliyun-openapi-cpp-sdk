@@ -35,15 +35,21 @@ namespace AlibabaCloud
 				struct Sources
 				{
 					std::string slbId;
+					int httpPort;
+					std::string vServerGroupId;
+					bool editEnable;
+					std::string gatewaySlbStatus;
+					std::string gatewayId;
+					std::string httpsVServerGroupId;
 					std::string slbPort;
 					std::string statusDesc;
 					std::string type;
 					std::string gmtCreate;
 					std::string gatewaySlbMode;
 					std::string slbIp;
-					std::string gatewaySlbStatus;
+					int serviceWeight;
 					std::string id;
-					std::string gatewayId;
+					int httpsPort;
 				};
 
 

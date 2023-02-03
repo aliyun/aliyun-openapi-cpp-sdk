@@ -30,12 +30,20 @@ class ALIBABACLOUD_MSE_EXPORT AddGatewayDomainRequest : public RpcServiceRequest
 public:
 	AddGatewayDomainRequest();
 	~AddGatewayDomainRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
+	std::string getTlsMax() const;
+	void setTlsMax(const std::string &tlsMax);
 	std::string getProtocol() const;
 	void setProtocol(const std::string &protocol);
 	bool getMustHttps() const;
 	void setMustHttps(bool mustHttps);
+	std::string getHttp2() const;
+	void setHttp2(const std::string &http2);
+	std::string getTlsMin() const;
+	void setTlsMin(const std::string &tlsMin);
 	std::string getCertIdentifier() const;
 	void setCertIdentifier(const std::string &certIdentifier);
 	std::string getName() const;
@@ -44,9 +52,13 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
+	std::string tlsMax_;
 	std::string protocol_;
 	bool mustHttps_;
+	std::string http2_;
+	std::string tlsMin_;
 	std::string certIdentifier_;
 	std::string name_;
 	std::string acceptLanguage_;

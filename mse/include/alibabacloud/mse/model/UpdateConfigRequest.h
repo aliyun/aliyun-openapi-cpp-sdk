@@ -32,10 +32,14 @@ public:
 	~UpdateConfigRequest();
 	std::string getOpenSuperAcl() const;
 	void setOpenSuperAcl(const std::string &openSuperAcl);
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	bool getConfigAuthEnabled() const;
 	void setConfigAuthEnabled(bool configAuthEnabled);
 	std::string getPassWord() const;
 	void setPassWord(const std::string &passWord);
+	std::string getSnapshotCount() const;
+	void setSnapshotCount(const std::string &snapshotCount);
 	std::string getMinSessionTimeout() const;
 	void setMinSessionTimeout(const std::string &minSessionTimeout);
 	std::string getMaxClientCnxns() const;
@@ -44,8 +48,12 @@ public:
 	void setRequestPars(const std::string &requestPars);
 	std::string getJuteMaxbuffer() const;
 	void setJuteMaxbuffer(const std::string &juteMaxbuffer);
+	bool getNamingAuthEnabled() const;
+	void setNamingAuthEnabled(bool namingAuthEnabled);
 	std::string getConfigType() const;
 	void setConfigType(const std::string &configType);
+	std::string getExtendedTypesEnable() const;
+	void setExtendedTypesEnable(const std::string &extendedTypesEnable);
 	std::string getAutopurgeSnapRetainCount() const;
 	void setAutopurgeSnapRetainCount(const std::string &autopurgeSnapRetainCount);
 	std::string getMaxSessionTimeout() const;
@@ -73,13 +81,17 @@ public:
 
 private:
 	std::string openSuperAcl_;
+	std::string mseSessionId_;
 	bool configAuthEnabled_;
 	std::string passWord_;
+	std::string snapshotCount_;
 	std::string minSessionTimeout_;
 	std::string maxClientCnxns_;
 	std::string requestPars_;
 	std::string juteMaxbuffer_;
+	bool namingAuthEnabled_;
 	std::string configType_;
+	std::string extendedTypesEnable_;
 	std::string autopurgeSnapRetainCount_;
 	std::string maxSessionTimeout_;
 	bool configSecretEnabled_;

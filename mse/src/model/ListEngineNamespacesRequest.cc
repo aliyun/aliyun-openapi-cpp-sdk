@@ -25,6 +25,15 @@ ListEngineNamespacesRequest::ListEngineNamespacesRequest()
 
 ListEngineNamespacesRequest::~ListEngineNamespacesRequest() {}
 
+std::string ListEngineNamespacesRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListEngineNamespacesRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListEngineNamespacesRequest::getClusterId() const {
   return clusterId_;
 }

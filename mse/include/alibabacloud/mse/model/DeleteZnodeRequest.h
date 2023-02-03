@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT DeleteZnodeRequest : public RpcServiceRequest {
 public:
 	DeleteZnodeRequest();
 	~DeleteZnodeRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getPath() const;
@@ -40,6 +42,7 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string clusterId_;
 	std::string path_;
 	std::string requestPars_;

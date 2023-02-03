@@ -78,12 +78,25 @@ void QueryConfigResult::parse(const std::string &payload)
 		data_.configSecretSupported = dataNode["ConfigSecretSupported"].asString() == "true";
 	if(!dataNode["ConfigSecretEnabled"].isNull())
 		data_.configSecretEnabled = dataNode["ConfigSecretEnabled"].asString() == "true";
+	if(!dataNode["NamingAuthEnabled"].isNull())
+		data_.namingAuthEnabled = dataNode["NamingAuthEnabled"].asString() == "true";
+	if(!dataNode["NamingAuthSupported"].isNull())
+		data_.namingAuthSupported = dataNode["NamingAuthSupported"].asString() == "true";
 	if(!dataNode["NamingCreateServiceSupported"].isNull())
 		data_.namingCreateServiceSupported = dataNode["NamingCreateServiceSupported"].asString() == "true";
 	if(!dataNode["MinSessionTimeout"].isNull())
 		data_.minSessionTimeout = dataNode["MinSessionTimeout"].asString();
 	if(!dataNode["MaxSessionTimeout"].isNull())
 		data_.maxSessionTimeout = dataNode["MaxSessionTimeout"].asString();
+	if(!dataNode["SnapshotCount"].isNull())
+		data_.snapshotCount = dataNode["SnapshotCount"].asString();
+	if(!dataNode["ConfigContentLimit"].isNull())
+		data_.configContentLimit = std::stol(dataNode["ConfigContentLimit"].asString());
+	if(!dataNode["ExtendedTypesEnable"].isNull())
+		data_.extendedTypesEnable = dataNode["ExtendedTypesEnable"].asString() == "true";
+	auto nacosRunningEnvNode = dataNode["NacosRunningEnv"];
+	if(!nacosRunningEnvNode["emptyProtect"].isNull())
+		data_.nacosRunningEnv.emptyProtect = nacosRunningEnvNode["emptyProtect"].asString() == "true";
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Success"].isNull())

@@ -25,6 +25,15 @@ GetImageRequest::GetImageRequest()
 
 GetImageRequest::~GetImageRequest() {}
 
+std::string GetImageRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetImageRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string GetImageRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit UpdateClusterResult(const std::string &payload);
 				~UpdateClusterResult();
 				std::string getMessage()const;
+				std::string getHttpStatusCode()const;
 				std::string getErrorCode()const;
 				bool getSuccess()const;
 
@@ -45,6 +46,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::string httpStatusCode_;
 				std::string errorCode_;
 				bool success_;
 

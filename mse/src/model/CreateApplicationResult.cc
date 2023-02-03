@@ -62,6 +62,10 @@ void CreateApplicationResult::parse(const std::string &payload)
 		data_.language = dataNode["Language"].asString();
 	if(!dataNode["RegionId"].isNull())
 		data_.regionId = dataNode["RegionId"].asString();
+	if(!dataNode["Namespace"].isNull())
+		data_._namespace = dataNode["Namespace"].asString();
+	if(!dataNode["Version"].isNull())
+		data_.version = dataNode["Version"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
 	if(!value["Code"].isNull())

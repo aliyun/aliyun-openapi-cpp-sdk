@@ -46,6 +46,8 @@ void GetAppMessageQueueRouteResult::parse(const std::string &payload)
 		data_.region = dataNode["Region"].asString();
 	if(!dataNode["Enable"].isNull())
 		data_.enable = dataNode["Enable"].asString() == "true";
+	if(!dataNode["FilterSide"].isNull())
+		data_.filterSide = dataNode["FilterSide"].asString();
 		auto allTags = dataNode["Tags"]["tag"];
 		for (auto value : allTags)
 			data_.tags.push_back(value.asString());

@@ -28,12 +28,20 @@ namespace Mse {
 namespace Model {
 class ALIBABACLOUD_MSE_EXPORT ListClustersRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	ListClustersRequest();
 	~ListClustersRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getClusterAliasName() const;
 	void setClusterAliasName(const std::string &clusterAliasName);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getRequestPars() const;
@@ -42,14 +50,19 @@ public:
 	void setPageSize(int pageSize);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
 private:
+	std::string mseSessionId_;
 	std::string clusterAliasName_;
 	int pageNum_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string requestPars_;
 	int pageSize_;
 	std::string acceptLanguage_;
+	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace Mse

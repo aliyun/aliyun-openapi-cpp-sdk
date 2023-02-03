@@ -25,6 +25,15 @@ UpdateSSLCertRequest::UpdateSSLCertRequest()
 
 UpdateSSLCertRequest::~UpdateSSLCertRequest() {}
 
+std::string UpdateSSLCertRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateSSLCertRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateSSLCertRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

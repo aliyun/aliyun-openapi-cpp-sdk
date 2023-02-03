@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT UpdateEngineNamespaceRequest : public RpcServiceRe
 public:
 	UpdateEngineNamespaceRequest();
 	~UpdateEngineNamespaceRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getInstanceId() const;
@@ -46,6 +48,7 @@ public:
 	void setDesc(const std::string &desc);
 
 private:
+	std::string mseSessionId_;
 	std::string clusterId_;
 	std::string instanceId_;
 	int serviceCount_;

@@ -79,6 +79,10 @@ void ListClustersResult::parse(const std::string &payload)
 			dataObject.clusterName = valueDataClusterForListModel["ClusterName"].asString();
 		if(!valueDataClusterForListModel["MseVersion"].isNull())
 			dataObject.mseVersion = valueDataClusterForListModel["MseVersion"].asString();
+		if(!valueDataClusterForListModel["Tags"].isNull())
+			dataObject.tags = valueDataClusterForListModel["Tags"].asString();
+		if(!valueDataClusterForListModel["ResourceGroupId"].isNull())
+			dataObject.resourceGroupId = valueDataClusterForListModel["ResourceGroupId"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["HttpCode"].isNull())

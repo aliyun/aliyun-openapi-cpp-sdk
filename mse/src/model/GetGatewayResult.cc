@@ -74,6 +74,12 @@ void GetGatewayResult::parse(const std::string &payload)
 		data_.chargeType = dataNode["ChargeType"].asString();
 	if(!dataNode["EndDate"].isNull())
 		data_.endDate = dataNode["EndDate"].asString();
+	if(!dataNode["StatusDesc"].isNull())
+		data_.statusDesc = dataNode["StatusDesc"].asString();
+	if(!dataNode["MseTag"].isNull())
+		data_.mseTag = dataNode["MseTag"].asString();
+	if(!dataNode["ResourceGroupId"].isNull())
+		data_.resourceGroupId = dataNode["ResourceGroupId"].asString();
 	auto xtraceDetailsNode = dataNode["XtraceDetails"];
 	if(!xtraceDetailsNode["Sample"].isNull())
 		data_.xtraceDetails.sample = std::stoi(xtraceDetailsNode["Sample"].asString());

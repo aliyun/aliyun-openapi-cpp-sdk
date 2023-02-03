@@ -25,6 +25,15 @@ DeleteGatewayRouteRequest::DeleteGatewayRouteRequest()
 
 DeleteGatewayRouteRequest::~DeleteGatewayRouteRequest() {}
 
+std::string DeleteGatewayRouteRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteGatewayRouteRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string DeleteGatewayRouteRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

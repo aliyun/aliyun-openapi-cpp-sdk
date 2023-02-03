@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT GetServiceListRequest : public RpcServiceRequest {
 public:
 	GetServiceListRequest();
 	~GetServiceListRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getServiceName() const;
 	void setServiceName(const std::string &serviceName);
 	std::string getIp() const;
@@ -44,6 +46,7 @@ public:
 	void setRegion(const std::string &region);
 
 private:
+	std::string mseSessionId_;
 	std::string serviceName_;
 	std::string ip_;
 	std::string serviceType_;

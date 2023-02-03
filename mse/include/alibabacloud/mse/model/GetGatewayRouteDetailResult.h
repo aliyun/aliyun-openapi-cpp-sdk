@@ -118,6 +118,21 @@ namespace AlibabaCloud
 					struct RouteServicesItem
 					{
 						std::string groupName;
+						std::string agreementType;
+						int servicePort;
+						std::string serviceName;
+						int percent;
+						std::string version;
+						std::string sourceType;
+						std::string _namespace;
+						long serviceId;
+						std::string name;
+					};
+					struct FallbackServicesItem
+					{
+						std::string groupName;
+						std::string agreementType;
+						int servicePort;
 						std::string serviceName;
 						int percent;
 						std::string version;
@@ -131,6 +146,7 @@ namespace AlibabaCloud
 					HeaderOp headerOp;
 					std::string name;
 					std::vector<std::string> domainIdList;
+					std::vector<FallbackServicesItem> fallbackServices;
 					std::vector<std::string> domainNameList;
 					DirectResponse directResponse;
 					std::string defaultServiceName;
@@ -142,12 +158,14 @@ namespace AlibabaCloud
 					Redirect redirect;
 					long gatewayId;
 					Cors cors;
+					int ahasStatus;
 					std::string gatewayUniqueId;
 					std::string services;
 					std::string gmtCreate;
 					bool enableWaf;
 					int routeOrder;
 					long domainId;
+					bool fallback;
 					Retry retry;
 					long id;
 					HTTPRewrite hTTPRewrite;

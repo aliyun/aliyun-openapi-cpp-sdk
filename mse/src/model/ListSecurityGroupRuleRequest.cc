@@ -20,10 +20,19 @@ using AlibabaCloud::Mse::Model::ListSecurityGroupRuleRequest;
 
 ListSecurityGroupRuleRequest::ListSecurityGroupRuleRequest()
     : RpcServiceRequest("mse", "2019-05-31", "ListSecurityGroupRule") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListSecurityGroupRuleRequest::~ListSecurityGroupRuleRequest() {}
+
+std::string ListSecurityGroupRuleRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListSecurityGroupRuleRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
 
 std::string ListSecurityGroupRuleRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;

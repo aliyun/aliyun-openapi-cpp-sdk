@@ -25,13 +25,13 @@ AddSecurityGroupRuleRequest::AddSecurityGroupRuleRequest()
 
 AddSecurityGroupRuleRequest::~AddSecurityGroupRuleRequest() {}
 
-std::string AddSecurityGroupRuleRequest::getPortRange() const {
-  return portRange_;
+std::string AddSecurityGroupRuleRequest::getMseSessionId() const {
+  return mseSessionId_;
 }
 
-void AddSecurityGroupRuleRequest::setPortRange(const std::string &portRange) {
-  portRange_ = portRange;
-  setParameter(std::string("PortRange"), portRange);
+void AddSecurityGroupRuleRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
 std::string AddSecurityGroupRuleRequest::getGatewayUniqueId() const {
@@ -59,6 +59,15 @@ std::string AddSecurityGroupRuleRequest::getDescription() const {
 void AddSecurityGroupRuleRequest::setDescription(const std::string &description) {
   description_ = description;
   setParameter(std::string("Description"), description);
+}
+
+std::string AddSecurityGroupRuleRequest::getPortRange() const {
+  return portRange_;
+}
+
+void AddSecurityGroupRuleRequest::setPortRange(const std::string &portRange) {
+  portRange_ = portRange;
+  setParameter(std::string("PortRange"), portRange);
 }
 
 std::string AddSecurityGroupRuleRequest::getAcceptLanguage() const {

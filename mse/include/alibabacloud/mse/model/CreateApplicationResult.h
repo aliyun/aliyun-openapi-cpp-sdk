@@ -35,15 +35,17 @@ namespace AlibabaCloud
 				struct Data
 				{
 					int status;
-					std::string appId;
-					std::string language;
-					std::string userId;
 					long createTime;
-					long updateTime;
 					std::string extraInfo;
-					std::string regionId;
+					std::string _namespace;
 					std::string source;
 					std::string appName;
+					std::string appId;
+					std::string language;
+					std::string version;
+					std::string userId;
+					long updateTime;
+					std::string regionId;
 					std::string licenseKey;
 				};
 

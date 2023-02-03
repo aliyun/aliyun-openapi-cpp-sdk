@@ -25,6 +25,24 @@ QueryAllSwimmingLaneGroupRequest::QueryAllSwimmingLaneGroupRequest()
 
 QueryAllSwimmingLaneGroupRequest::~QueryAllSwimmingLaneGroupRequest() {}
 
+std::string QueryAllSwimmingLaneGroupRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void QueryAllSwimmingLaneGroupRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
+std::string QueryAllSwimmingLaneGroupRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void QueryAllSwimmingLaneGroupRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
+}
+
 std::string QueryAllSwimmingLaneGroupRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

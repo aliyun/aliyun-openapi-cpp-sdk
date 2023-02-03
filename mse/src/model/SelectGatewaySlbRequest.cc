@@ -20,10 +20,19 @@ using AlibabaCloud::Mse::Model::SelectGatewaySlbRequest;
 
 SelectGatewaySlbRequest::SelectGatewaySlbRequest()
     : RpcServiceRequest("mse", "2019-05-31", "SelectGatewaySlb") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 SelectGatewaySlbRequest::~SelectGatewaySlbRequest() {}
+
+std::string SelectGatewaySlbRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void SelectGatewaySlbRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
 
 std::string SelectGatewaySlbRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;

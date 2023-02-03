@@ -25,6 +25,15 @@ DeleteSwimmingLaneRequest::DeleteSwimmingLaneRequest()
 
 DeleteSwimmingLaneRequest::~DeleteSwimmingLaneRequest() {}
 
+std::string DeleteSwimmingLaneRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteSwimmingLaneRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 long DeleteSwimmingLaneRequest::getLaneId() const {
   return laneId_;
 }

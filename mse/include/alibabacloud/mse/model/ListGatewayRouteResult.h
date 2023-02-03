@@ -78,7 +78,45 @@ namespace AlibabaCloud
 						};
 						struct RouteServicesItem
 						{
+							struct HttpDubboTranscoder
+							{
+								struct MothedMapListItem
+								{
+									struct ParamMapsListItem
+									{
+										std::string extractKeySpec;
+										std::string mappingType;
+										std::string extractKey;
+									};
+									std::string dubboMothedName;
+									std::string mothedpath;
+									std::vector<std::string> passThroughList;
+									std::string httpMothed;
+									std::vector<MothedMapListItem::ParamMapsListItem> paramMapsList;
+									std::string passThroughAllHeaders;
+								};
+								std::string dubboServiceName;
+								std::vector<MothedMapListItem> mothedMapList;
+								std::string dubboServiceGroup;
+								std::string dubboServiceVersion;
+							};
 							std::string groupName;
+							std::string agreementType;
+							int servicePort;
+							std::string serviceName;
+							int percent;
+							std::string version;
+							std::string sourceType;
+							std::string _namespace;
+							HttpDubboTranscoder httpDubboTranscoder;
+							long serviceId;
+							std::string name;
+						};
+						struct FallbackServicesItem
+						{
+							std::string groupName;
+							std::string agreementType;
+							int servicePort;
 							std::string serviceName;
 							int percent;
 							std::string version;
@@ -87,29 +125,31 @@ namespace AlibabaCloud
 							long serviceId;
 							std::string name;
 						};
+						std::string gmtModified;
+						std::string destinationType;
+						std::string name;
+						std::vector<std::string> domainIdList;
+						std::vector<Routes::FallbackServicesItem> fallbackServices;
+						std::vector<std::string> domainNameList;
+						DirectResponse directResponse;
 						int status;
 						std::string defaultServiceName;
 						Comment comment;
 						std::string domainName;
-						std::string gmtModified;
 						long defaultServiceId;
 						RoutePredicates routePredicates;
 						Redirect redirect;
 						long gatewayId;
-						std::string destinationType;
-						std::string name;
 						std::string gatewayUniqueId;
 						std::string services;
-						std::vector<std::string> domainIdList;
 						std::string gmtCreate;
 						std::string type;
 						std::string enableWaf;
 						int routeOrder;
 						long domainId;
-						std::vector<std::string> domainNameList;
+						bool fallback;
 						long id;
 						std::string predicates;
-						DirectResponse directResponse;
 						std::vector<Routes::RouteServicesItem> routeServices;
 					};
 					int pageSize;

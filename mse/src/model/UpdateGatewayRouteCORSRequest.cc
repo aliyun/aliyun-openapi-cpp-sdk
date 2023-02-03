@@ -25,20 +25,13 @@ UpdateGatewayRouteCORSRequest::UpdateGatewayRouteCORSRequest()
 
 UpdateGatewayRouteCORSRequest::~UpdateGatewayRouteCORSRequest() {}
 
-UpdateGatewayRouteCORSRequest::CorsJSON UpdateGatewayRouteCORSRequest::getCorsJSON() const {
-  return corsJSON_;
+std::string UpdateGatewayRouteCORSRequest::getMseSessionId() const {
+  return mseSessionId_;
 }
 
-void UpdateGatewayRouteCORSRequest::setCorsJSON(const UpdateGatewayRouteCORSRequest::CorsJSON &corsJSON) {
-  corsJSON_ = corsJSON;
-  setParameter(std::string("CorsJSON") + ".AllowCredentials", corsJSON.allowCredentials ? "true" : "false");
-  setParameter(std::string("CorsJSON") + ".AllowOrigins", corsJSON.allowOrigins);
-  setParameter(std::string("CorsJSON") + ".AllowMethods", corsJSON.allowMethods);
-  setParameter(std::string("CorsJSON") + ".AllowHeaders", corsJSON.allowHeaders);
-  setParameter(std::string("CorsJSON") + ".ExposeHeaders", corsJSON.exposeHeaders);
-  setParameter(std::string("CorsJSON") + ".TimeUnit", corsJSON.timeUnit);
-  setParameter(std::string("CorsJSON") + ".UnitNum", std::to_string(corsJSON.unitNum));
-  setParameter(std::string("CorsJSON") + ".Status", corsJSON.status);
+void UpdateGatewayRouteCORSRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
 }
 
 std::string UpdateGatewayRouteCORSRequest::getGatewayUniqueId() const {
@@ -48,15 +41,6 @@ std::string UpdateGatewayRouteCORSRequest::getGatewayUniqueId() const {
 void UpdateGatewayRouteCORSRequest::setGatewayUniqueId(const std::string &gatewayUniqueId) {
   gatewayUniqueId_ = gatewayUniqueId;
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
-}
-
-std::string UpdateGatewayRouteCORSRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void UpdateGatewayRouteCORSRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 
 long UpdateGatewayRouteCORSRequest::getId() const {
@@ -75,5 +59,30 @@ long UpdateGatewayRouteCORSRequest::getGatewayId() const {
 void UpdateGatewayRouteCORSRequest::setGatewayId(long gatewayId) {
   gatewayId_ = gatewayId;
   setParameter(std::string("GatewayId"), std::to_string(gatewayId));
+}
+
+UpdateGatewayRouteCORSRequest::CorsJSON UpdateGatewayRouteCORSRequest::getCorsJSON() const {
+  return corsJSON_;
+}
+
+void UpdateGatewayRouteCORSRequest::setCorsJSON(const UpdateGatewayRouteCORSRequest::CorsJSON &corsJSON) {
+  corsJSON_ = corsJSON;
+  setParameter(std::string("CorsJSON") + ".AllowCredentials", corsJSON.allowCredentials ? "true" : "false");
+  setParameter(std::string("CorsJSON") + ".AllowOrigins", corsJSON.allowOrigins);
+  setParameter(std::string("CorsJSON") + ".AllowMethods", corsJSON.allowMethods);
+  setParameter(std::string("CorsJSON") + ".AllowHeaders", corsJSON.allowHeaders);
+  setParameter(std::string("CorsJSON") + ".ExposeHeaders", corsJSON.exposeHeaders);
+  setParameter(std::string("CorsJSON") + ".TimeUnit", corsJSON.timeUnit);
+  setParameter(std::string("CorsJSON") + ".UnitNum", std::to_string(corsJSON.unitNum));
+  setParameter(std::string("CorsJSON") + ".Status", corsJSON.status);
+}
+
+std::string UpdateGatewayRouteCORSRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void UpdateGatewayRouteCORSRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

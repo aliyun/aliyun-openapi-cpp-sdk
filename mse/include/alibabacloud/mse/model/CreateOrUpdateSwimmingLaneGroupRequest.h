@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT CreateOrUpdateSwimmingLaneGroupRequest : public Rp
 public:
 	CreateOrUpdateSwimmingLaneGroupRequest();
 	~CreateOrUpdateSwimmingLaneGroupRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getSource() const;
 	void setSource(const std::string &source);
 	std::string getGmtModified() const;
@@ -40,6 +42,10 @@ public:
 	void setLicenseKey(const std::string &licenseKey);
 	std::string getAppIds() const;
 	void setAppIds(const std::string &appIds);
+	bool getMessageQueueGrayEnable() const;
+	void setMessageQueueGrayEnable(bool messageQueueGrayEnable);
+	bool getDbGrayEnable() const;
+	void setDbGrayEnable(bool dbGrayEnable);
 	bool getEnable() const;
 	void setEnable(bool enable);
 	std::string getEntryApp() const;
@@ -50,6 +56,10 @@ public:
 	void setGmtCreate(const std::string &gmtCreate);
 	std::string getName() const;
 	void setName(const std::string &name);
+	std::string getMessageQueueFilterSide() const;
+	void setMessageQueueFilterSide(const std::string &messageQueueFilterSide);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getRegion() const;
@@ -58,16 +68,21 @@ public:
 	void setStatus(int status);
 
 private:
+	std::string mseSessionId_;
 	std::string source_;
 	std::string gmtModified_;
 	std::string userId_;
 	std::string licenseKey_;
 	std::string appIds_;
+	bool messageQueueGrayEnable_;
+	bool dbGrayEnable_;
 	bool enable_;
 	std::string entryApp_;
 	long id_;
 	std::string gmtCreate_;
 	std::string name_;
+	std::string messageQueueFilterSide_;
+	std::string _namespace_;
 	std::string acceptLanguage_;
 	std::string region_;
 	int status_;

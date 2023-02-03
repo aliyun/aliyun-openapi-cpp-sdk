@@ -25,6 +25,15 @@ ListClusterVersionsRequest::ListClusterVersionsRequest()
 
 ListClusterVersionsRequest::~ListClusterVersionsRequest() {}
 
+std::string ListClusterVersionsRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListClusterVersionsRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListClusterVersionsRequest::getClusterType() const {
   return clusterType_;
 }
@@ -32,6 +41,15 @@ std::string ListClusterVersionsRequest::getClusterType() const {
 void ListClusterVersionsRequest::setClusterType(const std::string &clusterType) {
   clusterType_ = clusterType;
   setParameter(std::string("ClusterType"), clusterType);
+}
+
+std::string ListClusterVersionsRequest::getMseVersion() const {
+  return mseVersion_;
+}
+
+void ListClusterVersionsRequest::setMseVersion(const std::string &mseVersion) {
+  mseVersion_ = mseVersion;
+  setParameter(std::string("MseVersion"), mseVersion);
 }
 
 std::string ListClusterVersionsRequest::getAcceptLanguage() const {

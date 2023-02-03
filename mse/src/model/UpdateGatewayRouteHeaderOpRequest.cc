@@ -25,6 +25,15 @@ UpdateGatewayRouteHeaderOpRequest::UpdateGatewayRouteHeaderOpRequest()
 
 UpdateGatewayRouteHeaderOpRequest::~UpdateGatewayRouteHeaderOpRequest() {}
 
+std::string UpdateGatewayRouteHeaderOpRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateGatewayRouteHeaderOpRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateGatewayRouteHeaderOpRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -43,15 +52,6 @@ void UpdateGatewayRouteHeaderOpRequest::setHeaderOpJSON(const std::string &heade
   setParameter(std::string("HeaderOpJSON"), headerOpJSON);
 }
 
-std::string UpdateGatewayRouteHeaderOpRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void UpdateGatewayRouteHeaderOpRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 long UpdateGatewayRouteHeaderOpRequest::getId() const {
   return id_;
 }
@@ -68,5 +68,14 @@ long UpdateGatewayRouteHeaderOpRequest::getGatewayId() const {
 void UpdateGatewayRouteHeaderOpRequest::setGatewayId(long gatewayId) {
   gatewayId_ = gatewayId;
   setParameter(std::string("GatewayId"), std::to_string(gatewayId));
+}
+
+std::string UpdateGatewayRouteHeaderOpRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void UpdateGatewayRouteHeaderOpRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

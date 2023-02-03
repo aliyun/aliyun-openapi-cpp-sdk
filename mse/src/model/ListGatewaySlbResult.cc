@@ -63,6 +63,18 @@ void ListGatewaySlbResult::parse(const std::string &payload)
 			dataObject.gatewaySlbStatus = valueDataSources["GatewaySlbStatus"].asString();
 		if(!valueDataSources["StatusDesc"].isNull())
 			dataObject.statusDesc = valueDataSources["StatusDesc"].asString();
+		if(!valueDataSources["VServerGroupId"].isNull())
+			dataObject.vServerGroupId = valueDataSources["VServerGroupId"].asString();
+		if(!valueDataSources["HttpPort"].isNull())
+			dataObject.httpPort = std::stoi(valueDataSources["HttpPort"].asString());
+		if(!valueDataSources["HttpsPort"].isNull())
+			dataObject.httpsPort = std::stoi(valueDataSources["HttpsPort"].asString());
+		if(!valueDataSources["ServiceWeight"].isNull())
+			dataObject.serviceWeight = std::stoi(valueDataSources["ServiceWeight"].asString());
+		if(!valueDataSources["EditEnable"].isNull())
+			dataObject.editEnable = valueDataSources["EditEnable"].asString() == "true";
+		if(!valueDataSources["HttpsVServerGroupId"].isNull())
+			dataObject.httpsVServerGroupId = valueDataSources["HttpsVServerGroupId"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

@@ -32,6 +32,8 @@ public:
 	~QueryMonitorRequest();
 	std::string getMonitorType() const;
 	void setMonitorType(const std::string &monitorType);
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	long getEndTime() const;
 	void setEndTime(long endTime);
 	std::string getClusterId() const;
@@ -49,6 +51,7 @@ public:
 
 private:
 	std::string monitorType_;
+	std::string mseSessionId_;
 	long endTime_;
 	std::string clusterId_;
 	long startTime_;

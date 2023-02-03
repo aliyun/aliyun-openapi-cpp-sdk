@@ -25,6 +25,15 @@ GetGatewayOptionRequest::GetGatewayOptionRequest()
 
 GetGatewayOptionRequest::~GetGatewayOptionRequest() {}
 
+std::string GetGatewayOptionRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetGatewayOptionRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string GetGatewayOptionRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -34,15 +43,6 @@ void GetGatewayOptionRequest::setGatewayUniqueId(const std::string &gatewayUniqu
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
 }
 
-std::string GetGatewayOptionRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void GetGatewayOptionRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 long GetGatewayOptionRequest::getGatewayId() const {
   return gatewayId_;
 }
@@ -50,5 +50,14 @@ long GetGatewayOptionRequest::getGatewayId() const {
 void GetGatewayOptionRequest::setGatewayId(long gatewayId) {
   gatewayId_ = gatewayId;
   setParameter(std::string("GatewayId"), std::to_string(gatewayId));
+}
+
+std::string GetGatewayOptionRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void GetGatewayOptionRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

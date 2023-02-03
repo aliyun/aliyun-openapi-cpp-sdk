@@ -25,6 +25,15 @@ AddGatewaySlbRequest::AddGatewaySlbRequest()
 
 AddGatewaySlbRequest::~AddGatewaySlbRequest() {}
 
+std::string AddGatewaySlbRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void AddGatewaySlbRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string AddGatewaySlbRequest::getSlbId() const {
   return slbId_;
 }
@@ -52,6 +61,42 @@ void AddGatewaySlbRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
+int AddGatewaySlbRequest::getHttpPort() const {
+  return httpPort_;
+}
+
+void AddGatewaySlbRequest::setHttpPort(int httpPort) {
+  httpPort_ = httpPort;
+  setParameter(std::string("HttpPort"), std::to_string(httpPort));
+}
+
+int AddGatewaySlbRequest::getServiceWeight() const {
+  return serviceWeight_;
+}
+
+void AddGatewaySlbRequest::setServiceWeight(int serviceWeight) {
+  serviceWeight_ = serviceWeight;
+  setParameter(std::string("ServiceWeight"), std::to_string(serviceWeight));
+}
+
+std::string AddGatewaySlbRequest::getVServerGroupId() const {
+  return vServerGroupId_;
+}
+
+void AddGatewaySlbRequest::setVServerGroupId(const std::string &vServerGroupId) {
+  vServerGroupId_ = vServerGroupId;
+  setParameter(std::string("VServerGroupId"), vServerGroupId);
+}
+
+std::string AddGatewaySlbRequest::getHttpsVServerGroupId() const {
+  return httpsVServerGroupId_;
+}
+
+void AddGatewaySlbRequest::setHttpsVServerGroupId(const std::string &httpsVServerGroupId) {
+  httpsVServerGroupId_ = httpsVServerGroupId;
+  setParameter(std::string("HttpsVServerGroupId"), httpsVServerGroupId);
+}
+
 std::string AddGatewaySlbRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }
@@ -59,5 +104,14 @@ std::string AddGatewaySlbRequest::getAcceptLanguage() const {
 void AddGatewaySlbRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
+}
+
+int AddGatewaySlbRequest::getHttpsPort() const {
+  return httpsPort_;
+}
+
+void AddGatewaySlbRequest::setHttpsPort(int httpsPort) {
+  httpsPort_ = httpsPort;
+  setParameter(std::string("HttpsPort"), std::to_string(httpsPort));
 }
 

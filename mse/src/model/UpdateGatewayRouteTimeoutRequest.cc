@@ -36,6 +36,15 @@ void UpdateGatewayRouteTimeoutRequest::setTimeoutJSON(const UpdateGatewayRouteTi
   setParameter(std::string("TimeoutJSON") + ".Status", timeoutJSON.status);
 }
 
+std::string UpdateGatewayRouteTimeoutRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateGatewayRouteTimeoutRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateGatewayRouteTimeoutRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -43,15 +52,6 @@ std::string UpdateGatewayRouteTimeoutRequest::getGatewayUniqueId() const {
 void UpdateGatewayRouteTimeoutRequest::setGatewayUniqueId(const std::string &gatewayUniqueId) {
   gatewayUniqueId_ = gatewayUniqueId;
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
-}
-
-std::string UpdateGatewayRouteTimeoutRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void UpdateGatewayRouteTimeoutRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 
 long UpdateGatewayRouteTimeoutRequest::getId() const {
@@ -70,5 +70,14 @@ long UpdateGatewayRouteTimeoutRequest::getGatewayId() const {
 void UpdateGatewayRouteTimeoutRequest::setGatewayId(long gatewayId) {
   gatewayId_ = gatewayId;
   setParameter(std::string("GatewayId"), std::to_string(gatewayId));
+}
+
+std::string UpdateGatewayRouteTimeoutRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void UpdateGatewayRouteTimeoutRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

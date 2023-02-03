@@ -25,6 +25,15 @@ ListGatewayRouteRequest::ListGatewayRouteRequest()
 
 ListGatewayRouteRequest::~ListGatewayRouteRequest() {}
 
+std::string ListGatewayRouteRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListGatewayRouteRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 int ListGatewayRouteRequest::getPageNumber() const {
   return pageNumber_;
 }

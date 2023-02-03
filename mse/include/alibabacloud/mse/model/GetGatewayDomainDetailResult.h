@@ -37,14 +37,17 @@ namespace AlibabaCloud
 					long afterDate;
 					std::string gmtBefore;
 					std::string issuer;
+					std::string http2;
 					bool mustHttps;
 					std::string gmtModified;
+					std::string tlsMin;
 					long gatewayId;
 					std::string algorithm;
 					std::string name;
 					std::string gatewayUniqueId;
 					std::string gmtCreate;
 					std::string sans;
+					std::string tlsMax;
 					std::string certIdentifier;
 					long id;
 					std::string certName;

@@ -25,6 +25,15 @@ AddGatewayServiceVersionRequest::AddGatewayServiceVersionRequest()
 
 AddGatewayServiceVersionRequest::~AddGatewayServiceVersionRequest() {}
 
+std::string AddGatewayServiceVersionRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void AddGatewayServiceVersionRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string AddGatewayServiceVersionRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

@@ -25,6 +25,15 @@ ListGatewayRequest::ListGatewayRequest()
 
 ListGatewayRequest::~ListGatewayRequest() {}
 
+std::string ListGatewayRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListGatewayRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 int ListGatewayRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -67,11 +76,13 @@ ListGatewayRequest::FilterParams ListGatewayRequest::getFilterParams() const {
 
 void ListGatewayRequest::setFilterParams(const ListGatewayRequest::FilterParams &filterParams) {
   filterParams_ = filterParams;
+  setParameter(std::string("FilterParams") + ".ResourceGroupId", filterParams.resourceGroupId);
   setParameter(std::string("FilterParams") + ".GatewayType", filterParams.gatewayType);
   setParameter(std::string("FilterParams") + ".InstanceId", filterParams.instanceId);
   setParameter(std::string("FilterParams") + ".GatewayUniqueId", filterParams.gatewayUniqueId);
   setParameter(std::string("FilterParams") + ".Name", filterParams.name);
   setParameter(std::string("FilterParams") + ".Vpc", filterParams.vpc);
+  setParameter(std::string("FilterParams") + ".MseTag", filterParams.mseTag);
 }
 
 std::string ListGatewayRequest::getAcceptLanguage() const {

@@ -25,6 +25,15 @@ DeleteNacosInstanceRequest::DeleteNacosInstanceRequest()
 
 DeleteNacosInstanceRequest::~DeleteNacosInstanceRequest() {}
 
+std::string DeleteNacosInstanceRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteNacosInstanceRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string DeleteNacosInstanceRequest::getClusterName() const {
   return clusterName_;
 }

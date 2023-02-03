@@ -25,6 +25,24 @@ AddAuthResourceRequest::AddAuthResourceRequest()
 
 AddAuthResourceRequest::~AddAuthResourceRequest() {}
 
+bool AddAuthResourceRequest::getIgnoreCase() const {
+  return ignoreCase_;
+}
+
+void AddAuthResourceRequest::setIgnoreCase(bool ignoreCase) {
+  ignoreCase_ = ignoreCase;
+  setParameter(std::string("IgnoreCase"), ignoreCase ? "true" : "false");
+}
+
+std::string AddAuthResourceRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void AddAuthResourceRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string AddAuthResourceRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -32,15 +50,6 @@ std::string AddAuthResourceRequest::getGatewayUniqueId() const {
 void AddAuthResourceRequest::setGatewayUniqueId(const std::string &gatewayUniqueId) {
   gatewayUniqueId_ = gatewayUniqueId;
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
-}
-
-long AddAuthResourceRequest::getAuthId() const {
-  return authId_;
-}
-
-void AddAuthResourceRequest::setAuthId(long authId) {
-  authId_ = authId;
-  setParameter(std::string("AuthId"), std::to_string(authId));
 }
 
 long AddAuthResourceRequest::getDomainId() const {
@@ -59,6 +68,37 @@ std::string AddAuthResourceRequest::getPath() const {
 void AddAuthResourceRequest::setPath(const std::string &path) {
   path_ = path;
   setParameter(std::string("Path"), path);
+}
+
+std::string AddAuthResourceRequest::getMatchType() const {
+  return matchType_;
+}
+
+void AddAuthResourceRequest::setMatchType(const std::string &matchType) {
+  matchType_ = matchType;
+  setParameter(std::string("MatchType"), matchType);
+}
+
+long AddAuthResourceRequest::getAuthId() const {
+  return authId_;
+}
+
+void AddAuthResourceRequest::setAuthId(long authId) {
+  authId_ = authId;
+  setParameter(std::string("AuthId"), std::to_string(authId));
+}
+
+std::vector<AddAuthResourceRequest::AuthResourceHeaderList> AddAuthResourceRequest::getAuthResourceHeaderList() const {
+  return authResourceHeaderList_;
+}
+
+void AddAuthResourceRequest::setAuthResourceHeaderList(const std::vector<AddAuthResourceRequest::AuthResourceHeaderList> &authResourceHeaderList) {
+  authResourceHeaderList_ = authResourceHeaderList;
+  for(int dep1 = 0; dep1 != authResourceHeaderList.size(); dep1++) {
+    setParameter(std::string("AuthResourceHeaderList") + "." + std::to_string(dep1 + 1) + ".HeaderValue", authResourceHeaderList[dep1].headerValue);
+    setParameter(std::string("AuthResourceHeaderList") + "." + std::to_string(dep1 + 1) + ".HeaderMethod", authResourceHeaderList[dep1].headerMethod);
+    setParameter(std::string("AuthResourceHeaderList") + "." + std::to_string(dep1 + 1) + ".HeaderKey", authResourceHeaderList[dep1].headerKey);
+  }
 }
 
 std::string AddAuthResourceRequest::getAcceptLanguage() const {

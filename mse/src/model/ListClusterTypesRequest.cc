@@ -25,6 +25,15 @@ ListClusterTypesRequest::ListClusterTypesRequest()
 
 ListClusterTypesRequest::~ListClusterTypesRequest() {}
 
+std::string ListClusterTypesRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListClusterTypesRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListClusterTypesRequest::getConnectType() const {
   return connectType_;
 }
@@ -41,6 +50,15 @@ std::string ListClusterTypesRequest::getRegionId() const {
 void ListClusterTypesRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string ListClusterTypesRequest::getMseVersion() const {
+  return mseVersion_;
+}
+
+void ListClusterTypesRequest::setMseVersion(const std::string &mseVersion) {
+  mseVersion_ = mseVersion;
+  setParameter(std::string("MseVersion"), mseVersion);
 }
 
 std::string ListClusterTypesRequest::getAcceptLanguage() const {

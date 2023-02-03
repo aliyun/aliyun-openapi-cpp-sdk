@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT GetEngineNamepaceRequest : public RpcServiceReques
 public:
 	GetEngineNamepaceRequest();
 	~GetEngineNamepaceRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getInstanceId() const;
@@ -40,6 +42,7 @@ public:
 	void setId(const std::string &id);
 
 private:
+	std::string mseSessionId_;
 	std::string clusterId_;
 	std::string instanceId_;
 	std::string acceptLanguage_;

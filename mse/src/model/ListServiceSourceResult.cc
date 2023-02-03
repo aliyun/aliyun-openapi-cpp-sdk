@@ -63,6 +63,8 @@ void ListServiceSourceResult::parse(const std::string &payload)
 			dataObject.gmtModified = valueDataSources["GmtModified"].asString();
 		if(!valueDataSources["SourceUniqueId"].isNull())
 			dataObject.sourceUniqueId = valueDataSources["SourceUniqueId"].asString();
+		if(!valueDataSources["GatewayUniqueId"].isNull())
+			dataObject.gatewayUniqueId = valueDataSources["GatewayUniqueId"].asString();
 		auto ingressOptionsNode = value["IngressOptions"];
 		if(!ingressOptionsNode["EnableIngress"].isNull())
 			dataObject.ingressOptions.enableIngress = ingressOptionsNode["EnableIngress"].asString() == "true";
@@ -70,6 +72,14 @@ void ListServiceSourceResult::parse(const std::string &payload)
 			dataObject.ingressOptions.ingressClass = ingressOptionsNode["IngressClass"].asString();
 		if(!ingressOptionsNode["WatchNamespace"].isNull())
 			dataObject.ingressOptions.watchNamespace = ingressOptionsNode["WatchNamespace"].asString();
+		if(!ingressOptionsNode["EnableStatus"].isNull())
+			dataObject.ingressOptions.enableStatus = ingressOptionsNode["EnableStatus"].asString() == "true";
+		auto allGroupList = value["GroupList"]["groupList"];
+		for (auto value : allGroupList)
+			dataObject.groupList.push_back(value.asString());
+		auto allPathList = value["PathList"]["pathList"];
+		for (auto value : allPathList)
+			dataObject.pathList.push_back(value.asString());
 		data_.push_back(dataObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

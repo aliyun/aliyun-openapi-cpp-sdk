@@ -25,6 +25,15 @@ GetImportFileUrlRequest::GetImportFileUrlRequest()
 
 GetImportFileUrlRequest::~GetImportFileUrlRequest() {}
 
+std::string GetImportFileUrlRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetImportFileUrlRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string GetImportFileUrlRequest::getContentType() const {
   return contentType_;
 }

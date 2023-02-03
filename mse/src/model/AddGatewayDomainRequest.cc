@@ -25,6 +25,15 @@ AddGatewayDomainRequest::AddGatewayDomainRequest()
 
 AddGatewayDomainRequest::~AddGatewayDomainRequest() {}
 
+std::string AddGatewayDomainRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void AddGatewayDomainRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string AddGatewayDomainRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -32,6 +41,15 @@ std::string AddGatewayDomainRequest::getGatewayUniqueId() const {
 void AddGatewayDomainRequest::setGatewayUniqueId(const std::string &gatewayUniqueId) {
   gatewayUniqueId_ = gatewayUniqueId;
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
+}
+
+std::string AddGatewayDomainRequest::getTlsMax() const {
+  return tlsMax_;
+}
+
+void AddGatewayDomainRequest::setTlsMax(const std::string &tlsMax) {
+  tlsMax_ = tlsMax;
+  setParameter(std::string("TlsMax"), tlsMax);
 }
 
 std::string AddGatewayDomainRequest::getProtocol() const {
@@ -50,6 +68,24 @@ bool AddGatewayDomainRequest::getMustHttps() const {
 void AddGatewayDomainRequest::setMustHttps(bool mustHttps) {
   mustHttps_ = mustHttps;
   setParameter(std::string("MustHttps"), mustHttps ? "true" : "false");
+}
+
+std::string AddGatewayDomainRequest::getHttp2() const {
+  return http2_;
+}
+
+void AddGatewayDomainRequest::setHttp2(const std::string &http2) {
+  http2_ = http2;
+  setParameter(std::string("Http2"), http2);
+}
+
+std::string AddGatewayDomainRequest::getTlsMin() const {
+  return tlsMin_;
+}
+
+void AddGatewayDomainRequest::setTlsMin(const std::string &tlsMin) {
+  tlsMin_ = tlsMin;
+  setParameter(std::string("TlsMin"), tlsMin);
 }
 
 std::string AddGatewayDomainRequest::getCertIdentifier() const {

@@ -28,6 +28,20 @@ namespace Mse {
 namespace Model {
 class ALIBABACLOUD_MSE_EXPORT CreateOrUpdateSwimmingLaneRequest : public RpcServiceRequest {
 public:
+	struct GatewaySwimmingLaneRouteJson {
+		std::string gatewayUniqueId;
+		long long;
+		std::vector<long> routeIdList;
+		struct ConditionsItem {
+			std::string name;
+			std::string type;
+			std::string cond;
+			std::string value;
+		};
+		ConditionsItem conditionsItem;
+		std::vector<ConditionsItem> conditions;
+		long gatewayId;
+	};
 	struct EntryRules {
 		struct RestItems {
 			std::string datum;
@@ -48,6 +62,8 @@ public:
 	};
 	CreateOrUpdateSwimmingLaneRequest();
 	~CreateOrUpdateSwimmingLaneRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getSource() const;
 	void setSource(const std::string &source);
 	std::string getGmtModified() const;
@@ -56,6 +72,8 @@ public:
 	void setUserId(const std::string &userId);
 	std::string getLicenseKey() const;
 	void setLicenseKey(const std::string &licenseKey);
+	GatewaySwimmingLaneRouteJson getGatewaySwimmingLaneRouteJson() const;
+	void setGatewaySwimmingLaneRouteJson(const GatewaySwimmingLaneRouteJson &gatewaySwimmingLaneRouteJson);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getEntryRule() const;
@@ -82,10 +100,12 @@ public:
 	void setStatus(int status);
 
 private:
+	std::string mseSessionId_;
 	std::string source_;
 	std::string gmtModified_;
 	std::string userId_;
 	std::string licenseKey_;
+	GatewaySwimmingLaneRouteJson gatewaySwimmingLaneRouteJson_;
 	std::string regionId_;
 	std::string entryRule_;
 	bool enable_;

@@ -25,6 +25,15 @@ ExportNacosConfigRequest::ExportNacosConfigRequest()
 
 ExportNacosConfigRequest::~ExportNacosConfigRequest() {}
 
+std::string ExportNacosConfigRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ExportNacosConfigRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ExportNacosConfigRequest::getInstanceId() const {
   return instanceId_;
 }

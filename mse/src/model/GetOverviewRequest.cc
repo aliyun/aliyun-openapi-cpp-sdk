@@ -25,6 +25,15 @@ GetOverviewRequest::GetOverviewRequest()
 
 GetOverviewRequest::~GetOverviewRequest() {}
 
+std::string GetOverviewRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetOverviewRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 int GetOverviewRequest::getPeriod() const {
   return period_;
 }

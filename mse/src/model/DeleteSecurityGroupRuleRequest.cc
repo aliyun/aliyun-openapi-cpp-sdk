@@ -25,6 +25,15 @@ DeleteSecurityGroupRuleRequest::DeleteSecurityGroupRuleRequest()
 
 DeleteSecurityGroupRuleRequest::~DeleteSecurityGroupRuleRequest() {}
 
+std::string DeleteSecurityGroupRuleRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteSecurityGroupRuleRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string DeleteSecurityGroupRuleRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

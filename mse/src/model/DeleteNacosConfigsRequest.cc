@@ -25,6 +25,15 @@ DeleteNacosConfigsRequest::DeleteNacosConfigsRequest()
 
 DeleteNacosConfigsRequest::~DeleteNacosConfigsRequest() {}
 
+std::string DeleteNacosConfigsRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteNacosConfigsRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string DeleteNacosConfigsRequest::getInstanceId() const {
   return instanceId_;
 }

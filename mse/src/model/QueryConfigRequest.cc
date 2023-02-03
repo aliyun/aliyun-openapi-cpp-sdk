@@ -25,6 +25,24 @@ QueryConfigRequest::QueryConfigRequest()
 
 QueryConfigRequest::~QueryConfigRequest() {}
 
+bool QueryConfigRequest::getNeedRunningConf() const {
+  return needRunningConf_;
+}
+
+void QueryConfigRequest::setNeedRunningConf(bool needRunningConf) {
+  needRunningConf_ = needRunningConf;
+  setParameter(std::string("NeedRunningConf"), needRunningConf ? "true" : "false");
+}
+
+std::string QueryConfigRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void QueryConfigRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string QueryConfigRequest::getConfigType() const {
   return configType_;
 }

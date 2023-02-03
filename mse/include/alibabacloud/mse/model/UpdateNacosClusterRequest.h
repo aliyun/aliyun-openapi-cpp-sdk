@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT UpdateNacosClusterRequest : public RpcServiceReque
 public:
 	UpdateNacosClusterRequest();
 	~UpdateNacosClusterRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getClusterName() const;
 	void setClusterName(const std::string &clusterName);
 	int getCheckPort() const;
@@ -50,6 +52,7 @@ public:
 	void setUseInstancePortForCheck(bool useInstancePortForCheck);
 
 private:
+	std::string mseSessionId_;
 	std::string clusterName_;
 	int checkPort_;
 	std::string groupName_;

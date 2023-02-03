@@ -42,6 +42,7 @@ namespace AlibabaCloud
 						std::string language;
 						std::string userId;
 						std::string extraInfo;
+						std::string _namespace;
 						std::string regionId;
 						std::string source;
 						std::string appName;

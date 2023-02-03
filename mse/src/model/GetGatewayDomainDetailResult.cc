@@ -76,6 +76,12 @@ void GetGatewayDomainDetailResult::parse(const std::string &payload)
 		data_.gmtBefore = dataNode["GmtBefore"].asString();
 	if(!dataNode["GmtAfter"].isNull())
 		data_.gmtAfter = dataNode["GmtAfter"].asString();
+	if(!dataNode["Http2"].isNull())
+		data_.http2 = dataNode["Http2"].asString();
+	if(!dataNode["TlsMax"].isNull())
+		data_.tlsMax = dataNode["TlsMax"].asString();
+	if(!dataNode["TlsMin"].isNull())
+		data_.tlsMin = dataNode["TlsMin"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Message"].isNull())

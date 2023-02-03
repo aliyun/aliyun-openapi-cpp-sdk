@@ -25,6 +25,15 @@ QueryGatewayRegionRequest::QueryGatewayRegionRequest()
 
 QueryGatewayRegionRequest::~QueryGatewayRegionRequest() {}
 
+std::string QueryGatewayRegionRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void QueryGatewayRegionRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string QueryGatewayRegionRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

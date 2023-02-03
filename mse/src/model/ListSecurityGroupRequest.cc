@@ -25,6 +25,15 @@ ListSecurityGroupRequest::ListSecurityGroupRequest()
 
 ListSecurityGroupRequest::~ListSecurityGroupRequest() {}
 
+std::string ListSecurityGroupRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListSecurityGroupRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListSecurityGroupRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

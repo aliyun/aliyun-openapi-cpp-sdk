@@ -65,6 +65,12 @@ void ListGatewayDomainResult::parse(const std::string &payload)
 			dataObject.status = std::stoi(valueDataDomains["Status"].asString());
 		if(!valueDataDomains["Type"].isNull())
 			dataObject.type = valueDataDomains["Type"].asString();
+		if(!valueDataDomains["Http2"].isNull())
+			dataObject.http2 = valueDataDomains["Http2"].asString();
+		if(!valueDataDomains["TlsMax"].isNull())
+			dataObject.tlsMax = valueDataDomains["TlsMax"].asString();
+		if(!valueDataDomains["TlsMin"].isNull())
+			dataObject.tlsMin = valueDataDomains["TlsMin"].asString();
 		auto commentNode = value["Comment"];
 		if(!commentNode["Status"].isNull())
 			dataObject.comment.status = commentNode["Status"].asString();

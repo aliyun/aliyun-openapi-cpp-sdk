@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT ListListenersByIpRequest : public RpcServiceReques
 public:
 	ListListenersByIpRequest();
 	~ListListenersByIpRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getIp() const;
 	void setIp(const std::string &ip);
 	std::string getInstanceId() const;
@@ -42,6 +44,7 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string ip_;
 	std::string instanceId_;
 	std::string namespaceId_;

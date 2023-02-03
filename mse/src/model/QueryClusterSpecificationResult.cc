@@ -45,16 +45,8 @@ void QueryClusterSpecificationResult::parse(const std::string &payload)
 		DataItem dataObject;
 		if(!valueDataDataItem["ClusterSpecificationName"].isNull())
 			dataObject.clusterSpecificationName = valueDataDataItem["ClusterSpecificationName"].asString();
-		if(!valueDataDataItem["DiskCapacity"].isNull())
-			dataObject.diskCapacity = valueDataDataItem["DiskCapacity"].asString();
 		if(!valueDataDataItem["MemoryCapacity"].isNull())
 			dataObject.memoryCapacity = valueDataDataItem["MemoryCapacity"].asString();
-		if(!valueDataDataItem["InstanceCount"].isNull())
-			dataObject.instanceCount = valueDataDataItem["InstanceCount"].asString();
-		if(!valueDataDataItem["MaxTps"].isNull())
-			dataObject.maxTps = valueDataDataItem["MaxTps"].asString();
-		if(!valueDataDataItem["MaxCon"].isNull())
-			dataObject.maxCon = valueDataDataItem["MaxCon"].asString();
 		if(!valueDataDataItem["CpuCapacity"].isNull())
 			dataObject.cpuCapacity = valueDataDataItem["CpuCapacity"].asString();
 		data_.push_back(dataObject);

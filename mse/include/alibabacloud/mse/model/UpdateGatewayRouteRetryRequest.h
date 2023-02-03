@@ -38,23 +38,26 @@ public:
 	};
 	UpdateGatewayRouteRetryRequest();
 	~UpdateGatewayRouteRetryRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	RetryJSON getRetryJSON() const;
 	void setRetryJSON(const RetryJSON &retryJSON);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	long getId() const;
 	void setId(long id);
 	long getGatewayId() const;
 	void setGatewayId(long gatewayId);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
 	RetryJSON retryJSON_;
-	std::string acceptLanguage_;
 	long id_;
 	long gatewayId_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

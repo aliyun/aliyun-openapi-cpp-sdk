@@ -25,6 +25,15 @@ DeleteGatewayServiceRequest::DeleteGatewayServiceRequest()
 
 DeleteGatewayServiceRequest::~DeleteGatewayServiceRequest() {}
 
+std::string DeleteGatewayServiceRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteGatewayServiceRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string DeleteGatewayServiceRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -32,6 +41,15 @@ std::string DeleteGatewayServiceRequest::getGatewayUniqueId() const {
 void DeleteGatewayServiceRequest::setGatewayUniqueId(const std::string &gatewayUniqueId) {
   gatewayUniqueId_ = gatewayUniqueId;
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
+}
+
+long DeleteGatewayServiceRequest::getGatewayId() const {
+  return gatewayId_;
+}
+
+void DeleteGatewayServiceRequest::setGatewayId(long gatewayId) {
+  gatewayId_ = gatewayId;
+  setParameter(std::string("GatewayId"), std::to_string(gatewayId));
 }
 
 std::string DeleteGatewayServiceRequest::getAcceptLanguage() const {
@@ -50,14 +68,5 @@ std::string DeleteGatewayServiceRequest::getServiceId() const {
 void DeleteGatewayServiceRequest::setServiceId(const std::string &serviceId) {
   serviceId_ = serviceId;
   setParameter(std::string("ServiceId"), serviceId);
-}
-
-long DeleteGatewayServiceRequest::getGatewayId() const {
-  return gatewayId_;
-}
-
-void DeleteGatewayServiceRequest::setGatewayId(long gatewayId) {
-  gatewayId_ = gatewayId;
-  setParameter(std::string("GatewayId"), std::to_string(gatewayId));
 }
 

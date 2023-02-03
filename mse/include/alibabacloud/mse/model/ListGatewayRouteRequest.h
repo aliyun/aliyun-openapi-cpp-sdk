@@ -40,6 +40,8 @@ public:
 	};
 	ListGatewayRouteRequest();
 	~ListGatewayRouteRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getOrderItem() const;
@@ -54,6 +56,7 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	int pageNumber_;
 	std::string orderItem_;
 	int pageSize_;

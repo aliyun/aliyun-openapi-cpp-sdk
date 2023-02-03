@@ -25,6 +25,15 @@ CreateOrUpdateSwimmingLaneGroupRequest::CreateOrUpdateSwimmingLaneGroupRequest()
 
 CreateOrUpdateSwimmingLaneGroupRequest::~CreateOrUpdateSwimmingLaneGroupRequest() {}
 
+std::string CreateOrUpdateSwimmingLaneGroupRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void CreateOrUpdateSwimmingLaneGroupRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string CreateOrUpdateSwimmingLaneGroupRequest::getSource() const {
   return source_;
 }
@@ -70,6 +79,24 @@ void CreateOrUpdateSwimmingLaneGroupRequest::setAppIds(const std::string &appIds
   setParameter(std::string("AppIds"), appIds);
 }
 
+bool CreateOrUpdateSwimmingLaneGroupRequest::getMessageQueueGrayEnable() const {
+  return messageQueueGrayEnable_;
+}
+
+void CreateOrUpdateSwimmingLaneGroupRequest::setMessageQueueGrayEnable(bool messageQueueGrayEnable) {
+  messageQueueGrayEnable_ = messageQueueGrayEnable;
+  setParameter(std::string("MessageQueueGrayEnable"), messageQueueGrayEnable ? "true" : "false");
+}
+
+bool CreateOrUpdateSwimmingLaneGroupRequest::getDbGrayEnable() const {
+  return dbGrayEnable_;
+}
+
+void CreateOrUpdateSwimmingLaneGroupRequest::setDbGrayEnable(bool dbGrayEnable) {
+  dbGrayEnable_ = dbGrayEnable;
+  setParameter(std::string("DbGrayEnable"), dbGrayEnable ? "true" : "false");
+}
+
 bool CreateOrUpdateSwimmingLaneGroupRequest::getEnable() const {
   return enable_;
 }
@@ -113,6 +140,24 @@ std::string CreateOrUpdateSwimmingLaneGroupRequest::getName() const {
 void CreateOrUpdateSwimmingLaneGroupRequest::setName(const std::string &name) {
   name_ = name;
   setParameter(std::string("Name"), name);
+}
+
+std::string CreateOrUpdateSwimmingLaneGroupRequest::getMessageQueueFilterSide() const {
+  return messageQueueFilterSide_;
+}
+
+void CreateOrUpdateSwimmingLaneGroupRequest::setMessageQueueFilterSide(const std::string &messageQueueFilterSide) {
+  messageQueueFilterSide_ = messageQueueFilterSide;
+  setParameter(std::string("MessageQueueFilterSide"), messageQueueFilterSide);
+}
+
+std::string CreateOrUpdateSwimmingLaneGroupRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void CreateOrUpdateSwimmingLaneGroupRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
 }
 
 std::string CreateOrUpdateSwimmingLaneGroupRequest::getAcceptLanguage() const {

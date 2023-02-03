@@ -25,6 +25,15 @@ QueryGovernanceKubernetesClusterRequest::QueryGovernanceKubernetesClusterRequest
 
 QueryGovernanceKubernetesClusterRequest::~QueryGovernanceKubernetesClusterRequest() {}
 
+std::string QueryGovernanceKubernetesClusterRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void QueryGovernanceKubernetesClusterRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string QueryGovernanceKubernetesClusterRequest::getClusterName() const {
   return clusterName_;
 }

@@ -25,6 +25,15 @@ QueryBusinessLocationsRequest::QueryBusinessLocationsRequest()
 
 QueryBusinessLocationsRequest::~QueryBusinessLocationsRequest() {}
 
+std::string QueryBusinessLocationsRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void QueryBusinessLocationsRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string QueryBusinessLocationsRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

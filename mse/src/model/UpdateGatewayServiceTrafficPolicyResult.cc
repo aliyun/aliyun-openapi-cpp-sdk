@@ -67,6 +67,8 @@ void UpdateGatewayServiceTrafficPolicyResult::parse(const std::string &payload)
 	auto loadBalancerSettingsNode = gatewayTrafficPolicyNode["LoadBalancerSettings"];
 	if(!loadBalancerSettingsNode["LoadbalancerType"].isNull())
 		data_.gatewayTrafficPolicy.loadBalancerSettings.loadbalancerType = loadBalancerSettingsNode["LoadbalancerType"].asString();
+	if(!loadBalancerSettingsNode["WarmupDuration"].isNull())
+		data_.gatewayTrafficPolicy.loadBalancerSettings.warmupDuration = std::stol(loadBalancerSettingsNode["WarmupDuration"].asString());
 	auto consistentHashLBConfigNode = loadBalancerSettingsNode["ConsistentHashLBConfig"];
 	if(!consistentHashLBConfigNode["ParameterName"].isNull())
 		data_.gatewayTrafficPolicy.loadBalancerSettings.consistentHashLBConfig.parameterName = consistentHashLBConfigNode["ParameterName"].asString();

@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT ModifyGovernanceKubernetesClusterRequest : public 
 public:
 	ModifyGovernanceKubernetesClusterRequest();
 	~ModifyGovernanceKubernetesClusterRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getNamespaceInfos() const;
 	void setNamespaceInfos(const std::string &namespaceInfos);
 	std::string getClusterId() const;
@@ -40,6 +42,7 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string namespaceInfos_;
 	std::string clusterId_;
 	std::string regionId_;

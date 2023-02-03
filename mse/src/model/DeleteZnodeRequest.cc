@@ -25,6 +25,15 @@ DeleteZnodeRequest::DeleteZnodeRequest()
 
 DeleteZnodeRequest::~DeleteZnodeRequest() {}
 
+std::string DeleteZnodeRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteZnodeRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string DeleteZnodeRequest::getClusterId() const {
   return clusterId_;
 }

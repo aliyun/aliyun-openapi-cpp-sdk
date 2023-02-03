@@ -25,6 +25,15 @@ OfflineGatewayRouteRequest::OfflineGatewayRouteRequest()
 
 OfflineGatewayRouteRequest::~OfflineGatewayRouteRequest() {}
 
+std::string OfflineGatewayRouteRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void OfflineGatewayRouteRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string OfflineGatewayRouteRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

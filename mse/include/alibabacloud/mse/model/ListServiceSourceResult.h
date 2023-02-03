@@ -37,20 +37,24 @@ namespace AlibabaCloud
 					struct IngressOptions
 					{
 						std::string ingressClass;
+						bool enableStatus;
 						std::string watchNamespace;
 						bool enableIngress;
 					};
+					std::string address;
+					std::string gmtModified;
+					int bindingWithGateway;
+					std::vector<std::string> pathList;
+					long gatewayId;
+					std::string source;
+					std::string name;
+					std::string gatewayUniqueId;
 					std::string type;
 					std::string gmtCreate;
 					IngressOptions ingressOptions;
 					std::string sourceUniqueId;
-					std::string address;
-					std::string gmtModified;
-					int bindingWithGateway;
+					std::vector<std::string> groupList;
 					long id;
-					long gatewayId;
-					std::string source;
-					std::string name;
 				};
 
 

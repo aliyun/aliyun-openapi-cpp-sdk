@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT ListEurekaInstancesRequest : public RpcServiceRequ
 public:
 	ListEurekaInstancesRequest();
 	~ListEurekaInstancesRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	int getPageNum() const;
@@ -44,6 +46,7 @@ public:
 	void setServiceName(const std::string &serviceName);
 
 private:
+	std::string mseSessionId_;
 	std::string clusterId_;
 	int pageNum_;
 	std::string requestPars_;

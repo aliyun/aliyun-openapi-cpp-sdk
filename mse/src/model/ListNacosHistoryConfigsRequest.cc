@@ -25,6 +25,15 @@ ListNacosHistoryConfigsRequest::ListNacosHistoryConfigsRequest()
 
 ListNacosHistoryConfigsRequest::~ListNacosHistoryConfigsRequest() {}
 
+std::string ListNacosHistoryConfigsRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListNacosHistoryConfigsRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 int ListNacosHistoryConfigsRequest::getPageNum() const {
   return pageNum_;
 }

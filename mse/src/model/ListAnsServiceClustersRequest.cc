@@ -25,6 +25,15 @@ ListAnsServiceClustersRequest::ListAnsServiceClustersRequest()
 
 ListAnsServiceClustersRequest::~ListAnsServiceClustersRequest() {}
 
+std::string ListAnsServiceClustersRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListAnsServiceClustersRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListAnsServiceClustersRequest::getClusterName() const {
   return clusterName_;
 }
@@ -34,15 +43,6 @@ void ListAnsServiceClustersRequest::setClusterName(const std::string &clusterNam
   setParameter(std::string("ClusterName"), clusterName);
 }
 
-std::string ListAnsServiceClustersRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void ListAnsServiceClustersRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 int ListAnsServiceClustersRequest::getPageNum() const {
   return pageNum_;
 }
@@ -50,24 +50,6 @@ int ListAnsServiceClustersRequest::getPageNum() const {
 void ListAnsServiceClustersRequest::setPageNum(int pageNum) {
   pageNum_ = pageNum;
   setParameter(std::string("PageNum"), std::to_string(pageNum));
-}
-
-std::string ListAnsServiceClustersRequest::getGroupName() const {
-  return groupName_;
-}
-
-void ListAnsServiceClustersRequest::setGroupName(const std::string &groupName) {
-  groupName_ = groupName;
-  setParameter(std::string("GroupName"), groupName);
-}
-
-std::string ListAnsServiceClustersRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ListAnsServiceClustersRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
 }
 
 std::string ListAnsServiceClustersRequest::getNamespaceId() const {
@@ -97,15 +79,6 @@ void ListAnsServiceClustersRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string ListAnsServiceClustersRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void ListAnsServiceClustersRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::string ListAnsServiceClustersRequest::getServiceName() const {
   return serviceName_;
 }
@@ -113,5 +86,41 @@ std::string ListAnsServiceClustersRequest::getServiceName() const {
 void ListAnsServiceClustersRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
   setParameter(std::string("ServiceName"), serviceName);
+}
+
+std::string ListAnsServiceClustersRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void ListAnsServiceClustersRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
+}
+
+std::string ListAnsServiceClustersRequest::getGroupName() const {
+  return groupName_;
+}
+
+void ListAnsServiceClustersRequest::setGroupName(const std::string &groupName) {
+  groupName_ = groupName;
+  setParameter(std::string("GroupName"), groupName);
+}
+
+std::string ListAnsServiceClustersRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListAnsServiceClustersRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string ListAnsServiceClustersRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void ListAnsServiceClustersRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

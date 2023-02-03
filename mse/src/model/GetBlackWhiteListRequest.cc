@@ -25,6 +25,15 @@ GetBlackWhiteListRequest::GetBlackWhiteListRequest()
 
 GetBlackWhiteListRequest::~GetBlackWhiteListRequest() {}
 
+std::string GetBlackWhiteListRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetBlackWhiteListRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string GetBlackWhiteListRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -43,15 +52,6 @@ void GetBlackWhiteListRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
-std::string GetBlackWhiteListRequest::getResourceType() const {
-  return resourceType_;
-}
-
-void GetBlackWhiteListRequest::setResourceType(const std::string &resourceType) {
-  resourceType_ = resourceType;
-  setParameter(std::string("ResourceType"), resourceType);
-}
-
 bool GetBlackWhiteListRequest::getIsWhite() const {
   return isWhite_;
 }
@@ -59,6 +59,15 @@ bool GetBlackWhiteListRequest::getIsWhite() const {
 void GetBlackWhiteListRequest::setIsWhite(bool isWhite) {
   isWhite_ = isWhite;
   setParameter(std::string("IsWhite"), isWhite ? "true" : "false");
+}
+
+std::string GetBlackWhiteListRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void GetBlackWhiteListRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
 }
 
 std::string GetBlackWhiteListRequest::getAcceptLanguage() const {

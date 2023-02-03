@@ -25,6 +25,15 @@ GetGatewayDomainDetailRequest::GetGatewayDomainDetailRequest()
 
 GetGatewayDomainDetailRequest::~GetGatewayDomainDetailRequest() {}
 
+std::string GetGatewayDomainDetailRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetGatewayDomainDetailRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string GetGatewayDomainDetailRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

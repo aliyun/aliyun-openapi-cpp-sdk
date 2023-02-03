@@ -25,6 +25,15 @@ ListClusterConnectionTypesRequest::ListClusterConnectionTypesRequest()
 
 ListClusterConnectionTypesRequest::~ListClusterConnectionTypesRequest() {}
 
+std::string ListClusterConnectionTypesRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListClusterConnectionTypesRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListClusterConnectionTypesRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

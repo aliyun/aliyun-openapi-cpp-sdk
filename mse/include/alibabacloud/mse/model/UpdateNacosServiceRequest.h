@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT UpdateNacosServiceRequest : public RpcServiceReque
 public:
 	UpdateNacosServiceRequest();
 	~UpdateNacosServiceRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getGroupName() const;
@@ -46,6 +48,7 @@ public:
 	void setProtectThreshold(const std::string &protectThreshold);
 
 private:
+	std::string mseSessionId_;
 	std::string clusterId_;
 	std::string groupName_;
 	std::string instanceId_;

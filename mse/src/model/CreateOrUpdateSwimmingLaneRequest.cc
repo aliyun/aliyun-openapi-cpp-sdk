@@ -25,6 +25,15 @@ CreateOrUpdateSwimmingLaneRequest::CreateOrUpdateSwimmingLaneRequest()
 
 CreateOrUpdateSwimmingLaneRequest::~CreateOrUpdateSwimmingLaneRequest() {}
 
+std::string CreateOrUpdateSwimmingLaneRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void CreateOrUpdateSwimmingLaneRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string CreateOrUpdateSwimmingLaneRequest::getSource() const {
   return source_;
 }
@@ -59,6 +68,25 @@ std::string CreateOrUpdateSwimmingLaneRequest::getLicenseKey() const {
 void CreateOrUpdateSwimmingLaneRequest::setLicenseKey(const std::string &licenseKey) {
   licenseKey_ = licenseKey;
   setParameter(std::string("LicenseKey"), licenseKey);
+}
+
+CreateOrUpdateSwimmingLaneRequest::GatewaySwimmingLaneRouteJson CreateOrUpdateSwimmingLaneRequest::getGatewaySwimmingLaneRouteJson() const {
+  return gatewaySwimmingLaneRouteJson_;
+}
+
+void CreateOrUpdateSwimmingLaneRequest::setGatewaySwimmingLaneRouteJson(const CreateOrUpdateSwimmingLaneRequest::GatewaySwimmingLaneRouteJson &gatewaySwimmingLaneRouteJson) {
+  gatewaySwimmingLaneRouteJson_ = gatewaySwimmingLaneRouteJson;
+  setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".GatewayUniqueId", gatewaySwimmingLaneRouteJson.gatewayUniqueId);
+  for(int dep1 = 0; dep1 != gatewaySwimmingLaneRouteJson.routeIdList.size(); dep1++) {
+    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".RouteIdList." + std::to_string(dep1 + 1), std::to_string(gatewaySwimmingLaneRouteJson.routeIdList[dep1]));
+  }
+  for(int dep1 = 0; dep1 != gatewaySwimmingLaneRouteJson.conditions.size(); dep1++) {
+    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".Conditions." + std::to_string(dep1 + 1) + ".Name", gatewaySwimmingLaneRouteJson.conditions[dep1].name);
+    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".Conditions." + std::to_string(dep1 + 1) + ".Type", gatewaySwimmingLaneRouteJson.conditions[dep1].type);
+    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".Conditions." + std::to_string(dep1 + 1) + ".Cond", gatewaySwimmingLaneRouteJson.conditions[dep1].cond);
+    setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".Conditions." + std::to_string(dep1 + 1) + ".Value", gatewaySwimmingLaneRouteJson.conditions[dep1].value);
+  }
+  setParameter(std::string("GatewaySwimmingLaneRouteJson") + ".GatewayId", std::to_string(gatewaySwimmingLaneRouteJson.gatewayId));
 }
 
 std::string CreateOrUpdateSwimmingLaneRequest::getRegionId() const {

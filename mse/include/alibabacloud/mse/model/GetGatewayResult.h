@@ -46,6 +46,7 @@ namespace AlibabaCloud
 						bool logEnabled;
 					};
 					int status;
+					std::string resourceGroupId;
 					std::string instanceId;
 					XtraceDetails xtraceDetails;
 					std::string vpc;
@@ -56,7 +57,9 @@ namespace AlibabaCloud
 					std::string endDate;
 					std::string name;
 					std::string gatewayUniqueId;
+					std::string statusDesc;
 					std::string gmtCreate;
+					std::string mseTag;
 					std::string chargeType;
 					std::string region;
 					std::string primaryUser;

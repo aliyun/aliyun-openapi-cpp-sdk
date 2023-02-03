@@ -32,6 +32,8 @@ public:
 	~UpgradeClusterRequest();
 	std::string getUpgradeVersion() const;
 	void setUpgradeVersion(const std::string &upgradeVersion);
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getRequestPars() const;
@@ -41,6 +43,7 @@ public:
 
 private:
 	std::string upgradeVersion_;
+	std::string mseSessionId_;
 	std::string instanceId_;
 	std::string requestPars_;
 	std::string acceptLanguage_;

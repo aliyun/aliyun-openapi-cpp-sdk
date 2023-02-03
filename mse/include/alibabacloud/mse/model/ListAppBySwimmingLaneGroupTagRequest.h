@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT ListAppBySwimmingLaneGroupTagRequest : public RpcS
 public:
 	ListAppBySwimmingLaneGroupTagRequest();
 	~ListAppBySwimmingLaneGroupTagRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	long getGroupId() const;
 	void setGroupId(long groupId);
 	std::string getAcceptLanguage() const;
@@ -38,6 +40,7 @@ public:
 	void setTag(const std::string &tag);
 
 private:
+	std::string mseSessionId_;
 	long groupId_;
 	std::string acceptLanguage_;
 	std::string tag_;

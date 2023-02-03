@@ -25,6 +25,15 @@ UpdateImageRequest::UpdateImageRequest()
 
 UpdateImageRequest::~UpdateImageRequest() {}
 
+std::string UpdateImageRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateImageRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateImageRequest::getClusterId() const {
   return clusterId_;
 }

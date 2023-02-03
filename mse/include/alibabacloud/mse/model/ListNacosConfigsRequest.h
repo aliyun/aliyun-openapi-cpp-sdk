@@ -30,14 +30,10 @@ class ALIBABACLOUD_MSE_EXPORT ListNacosConfigsRequest : public RpcServiceRequest
 public:
 	ListNacosConfigsRequest();
 	~ListNacosConfigsRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	std::string getTags() const;
-	void setTags(const std::string &tags);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
-	std::string getDataId() const;
-	void setDataId(const std::string &dataId);
 	std::string getAppName() const;
 	void setAppName(const std::string &appName);
 	std::string getRegionId() const;
@@ -48,23 +44,30 @@ public:
 	void setRequestPars(const std::string &requestPars);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getGroup() const;
 	void setGroup(const std::string &group);
+	std::string getTags() const;
+	void setTags(const std::string &tags);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getDataId() const;
+	void setDataId(const std::string &dataId);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	int pageNum_;
-	std::string tags_;
-	std::string instanceId_;
-	std::string dataId_;
 	std::string appName_;
 	std::string regionId_;
 	std::string namespaceId_;
 	std::string requestPars_;
 	int pageSize_;
-	std::string acceptLanguage_;
 	std::string group_;
+	std::string tags_;
+	std::string instanceId_;
+	std::string dataId_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT AddMockRuleRequest : public RpcServiceRequest {
 public:
 	AddMockRuleRequest();
 	~AddMockRuleRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getExtraJson() const;
 	void setExtraJson(const std::string &extraJson);
 	std::string getProviderAppId() const;
@@ -56,6 +58,7 @@ public:
 	void setRegion(const std::string &region);
 
 private:
+	std::string mseSessionId_;
 	std::string extraJson_;
 	std::string providerAppId_;
 	std::string source_;

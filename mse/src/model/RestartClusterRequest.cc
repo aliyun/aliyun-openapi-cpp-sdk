@@ -25,6 +25,15 @@ RestartClusterRequest::RestartClusterRequest()
 
 RestartClusterRequest::~RestartClusterRequest() {}
 
+std::string RestartClusterRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void RestartClusterRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string RestartClusterRequest::getClusterId() const {
   return clusterId_;
 }

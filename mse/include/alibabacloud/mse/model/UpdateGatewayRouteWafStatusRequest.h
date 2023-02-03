@@ -30,18 +30,21 @@ class ALIBABACLOUD_MSE_EXPORT UpdateGatewayRouteWafStatusRequest : public RpcSer
 public:
 	UpdateGatewayRouteWafStatusRequest();
 	~UpdateGatewayRouteWafStatusRequest();
-	bool getEnableWaf() const;
-	void setEnableWaf(bool enableWaf);
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
+	bool getEnableWaf() const;
+	void setEnableWaf(bool enableWaf);
 	long getRouteId() const;
 	void setRouteId(long routeId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
-	bool enableWaf_;
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
+	bool enableWaf_;
 	long routeId_;
 	std::string acceptLanguage_;
 };

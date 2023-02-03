@@ -37,6 +37,7 @@ public:
 		};
 		TlsSetting tlsSetting;
 		struct LoadBalancerSettings {
+			long warmupDuration;
 			std::string loadbalancerType;
 			struct ConsistentHashLBConfig {
 				struct HttpCookie {
@@ -54,23 +55,26 @@ public:
 	};
 	UpdateGatewayServiceTrafficPolicyRequest();
 	~UpdateGatewayServiceTrafficPolicyRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
+	long getGatewayId() const;
+	void setGatewayId(long gatewayId);
 	GatewayTrafficPolicy getGatewayTrafficPolicy() const;
 	void setGatewayTrafficPolicy(const GatewayTrafficPolicy &gatewayTrafficPolicy);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	long getServiceId() const;
 	void setServiceId(long serviceId);
-	long getGatewayId() const;
-	void setGatewayId(long gatewayId);
 
 private:
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
+	long gatewayId_;
 	GatewayTrafficPolicy gatewayTrafficPolicy_;
 	std::string acceptLanguage_;
 	long serviceId_;
-	long gatewayId_;
 };
 } // namespace Model
 } // namespace Mse

@@ -25,6 +25,15 @@ QueryAllSwimmingLaneRequest::QueryAllSwimmingLaneRequest()
 
 QueryAllSwimmingLaneRequest::~QueryAllSwimmingLaneRequest() {}
 
+std::string QueryAllSwimmingLaneRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void QueryAllSwimmingLaneRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 long QueryAllSwimmingLaneRequest::getGroupId() const {
   return groupId_;
 }

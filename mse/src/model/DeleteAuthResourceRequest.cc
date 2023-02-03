@@ -25,6 +25,15 @@ DeleteAuthResourceRequest::DeleteAuthResourceRequest()
 
 DeleteAuthResourceRequest::~DeleteAuthResourceRequest() {}
 
+std::string DeleteAuthResourceRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteAuthResourceRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string DeleteAuthResourceRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

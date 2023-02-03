@@ -25,6 +25,15 @@ DeleteNacosServiceRequest::DeleteNacosServiceRequest()
 
 DeleteNacosServiceRequest::~DeleteNacosServiceRequest() {}
 
+std::string DeleteNacosServiceRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteNacosServiceRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string DeleteNacosServiceRequest::getGroupName() const {
   return groupName_;
 }

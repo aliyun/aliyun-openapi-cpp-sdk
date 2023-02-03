@@ -25,6 +25,15 @@ ApplyTagPoliciesRequest::ApplyTagPoliciesRequest()
 
 ApplyTagPoliciesRequest::~ApplyTagPoliciesRequest() {}
 
+std::string ApplyTagPoliciesRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ApplyTagPoliciesRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ApplyTagPoliciesRequest::getRules() const {
   return rules_;
 }

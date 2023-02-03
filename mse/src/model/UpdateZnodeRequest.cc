@@ -25,6 +25,15 @@ UpdateZnodeRequest::UpdateZnodeRequest()
 
 UpdateZnodeRequest::~UpdateZnodeRequest() {}
 
+std::string UpdateZnodeRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateZnodeRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateZnodeRequest::getData() const {
   return data_;
 }

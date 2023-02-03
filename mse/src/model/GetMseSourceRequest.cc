@@ -20,10 +20,19 @@ using AlibabaCloud::Mse::Model::GetMseSourceRequest;
 
 GetMseSourceRequest::GetMseSourceRequest()
     : RpcServiceRequest("mse", "2019-05-31", "GetMseSource") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 GetMseSourceRequest::~GetMseSourceRequest() {}
+
+std::string GetMseSourceRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetMseSourceRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
 
 std::string GetMseSourceRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
@@ -32,6 +41,15 @@ std::string GetMseSourceRequest::getGatewayUniqueId() const {
 void GetMseSourceRequest::setGatewayUniqueId(const std::string &gatewayUniqueId) {
   gatewayUniqueId_ = gatewayUniqueId;
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
+}
+
+std::string GetMseSourceRequest::getType() const {
+  return type_;
+}
+
+void GetMseSourceRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
 }
 
 std::string GetMseSourceRequest::getAcceptLanguage() const {

@@ -34,13 +34,9 @@ namespace AlibabaCloud
 			public:
 				struct DataItem
 				{
-					std::string maxTps;
 					std::string cpuCapacity;
-					std::string instanceCount;
-					std::string diskCapacity;
 					std::string clusterSpecificationName;
 					std::string memoryCapacity;
-					std::string maxCon;
 				};
 
 

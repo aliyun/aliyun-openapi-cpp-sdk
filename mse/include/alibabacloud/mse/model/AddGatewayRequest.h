@@ -28,18 +28,36 @@ namespace Mse {
 namespace Model {
 class ALIBABACLOUD_MSE_EXPORT AddGatewayRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	AddGatewayRequest();
 	~AddGatewayRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getInternetSlbSpec() const;
 	void setInternetSlbSpec(const std::string &internetSlbSpec);
+	bool getEnableXtrace() const;
+	void setEnableXtrace(bool enableXtrace);
+	std::string getXtraceRatio() const;
+	void setXtraceRatio(const std::string &xtraceRatio);
 	int getReplica() const;
 	void setReplica(int replica);
 	std::string getVSwitchId2() const;
 	void setVSwitchId2(const std::string &vSwitchId2);
+	bool getEnableHardwareAcceleration() const;
+	void setEnableHardwareAcceleration(bool enableHardwareAcceleration);
+	bool getEnableSls() const;
+	void setEnableSls(bool enableSls);
 	std::string getSpec() const;
 	void setSpec(const std::string &spec);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	bool getEnterpriseSecurityGroup() const;
 	void setEnterpriseSecurityGroup(bool enterpriseSecurityGroup);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getVpc() const;
 	void setVpc(const std::string &vpc);
 	std::string getVSwitchId() const;
@@ -54,11 +72,18 @@ public:
 	void setRegion(const std::string &region);
 
 private:
+	std::string mseSessionId_;
 	std::string internetSlbSpec_;
+	bool enableXtrace_;
+	std::string xtraceRatio_;
 	int replica_;
 	std::string vSwitchId2_;
+	bool enableHardwareAcceleration_;
+	bool enableSls_;
 	std::string spec_;
+	std::string resourceGroupId_;
 	bool enterpriseSecurityGroup_;
+	std::vector<Tag> tag_;
 	std::string vpc_;
 	std::string vSwitchId_;
 	std::string slbSpec_;

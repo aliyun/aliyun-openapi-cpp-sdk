@@ -25,6 +25,15 @@ GetAppMessageQueueRouteRequest::GetAppMessageQueueRouteRequest()
 
 GetAppMessageQueueRouteRequest::~GetAppMessageQueueRouteRequest() {}
 
+std::string GetAppMessageQueueRouteRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetAppMessageQueueRouteRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string GetAppMessageQueueRouteRequest::getAppId() const {
   return appId_;
 }

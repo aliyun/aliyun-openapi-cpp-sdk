@@ -30,6 +30,7 @@ class ALIBABACLOUD_MSE_EXPORT ListGatewayServiceRequest : public RpcServiceReque
 public:
 	struct FilterParams {
 		std::string gatewayUniqueId;
+		std::string serviceProtocol;
 		std::string name;
 		std::string _namespace;
 		std::string sourceType;
@@ -37,6 +38,8 @@ public:
 	};
 	ListGatewayServiceRequest();
 	~ListGatewayServiceRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getOrderItem() const;
@@ -51,6 +54,7 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	int pageNumber_;
 	std::string orderItem_;
 	int pageSize_;

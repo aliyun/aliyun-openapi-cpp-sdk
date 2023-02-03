@@ -25,6 +25,15 @@ CreateNacosServiceRequest::CreateNacosServiceRequest()
 
 CreateNacosServiceRequest::~CreateNacosServiceRequest() {}
 
+std::string CreateNacosServiceRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void CreateNacosServiceRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 bool CreateNacosServiceRequest::getEphemeral() const {
   return ephemeral_;
 }

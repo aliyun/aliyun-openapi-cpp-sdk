@@ -25,6 +25,15 @@ QuerySlbSpecRequest::QuerySlbSpecRequest()
 
 QuerySlbSpecRequest::~QuerySlbSpecRequest() {}
 
+std::string QuerySlbSpecRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void QuerySlbSpecRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string QuerySlbSpecRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

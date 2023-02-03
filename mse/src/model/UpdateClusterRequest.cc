@@ -25,6 +25,15 @@ UpdateClusterRequest::UpdateClusterRequest()
 
 UpdateClusterRequest::~UpdateClusterRequest() {}
 
+std::string UpdateClusterRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateClusterRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateClusterRequest::getClusterAliasName() const {
   return clusterAliasName_;
 }

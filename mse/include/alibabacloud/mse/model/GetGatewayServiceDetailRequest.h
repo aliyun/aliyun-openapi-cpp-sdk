@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT GetGatewayServiceDetailRequest : public RpcService
 public:
 	GetGatewayServiceDetailRequest();
 	~GetGatewayServiceDetailRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	std::string getAcceptLanguage() const;
@@ -38,6 +40,7 @@ public:
 	void setServiceId(long serviceId);
 
 private:
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
 	std::string acceptLanguage_;
 	long serviceId_;

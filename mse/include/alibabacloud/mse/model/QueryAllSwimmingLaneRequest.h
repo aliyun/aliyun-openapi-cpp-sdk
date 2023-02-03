@@ -30,12 +30,15 @@ class ALIBABACLOUD_MSE_EXPORT QueryAllSwimmingLaneRequest : public RpcServiceReq
 public:
 	QueryAllSwimmingLaneRequest();
 	~QueryAllSwimmingLaneRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	long getGroupId() const;
 	void setGroupId(long groupId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	long groupId_;
 	std::string acceptLanguage_;
 };

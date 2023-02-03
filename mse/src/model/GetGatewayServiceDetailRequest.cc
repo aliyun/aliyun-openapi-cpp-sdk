@@ -25,6 +25,15 @@ GetGatewayServiceDetailRequest::GetGatewayServiceDetailRequest()
 
 GetGatewayServiceDetailRequest::~GetGatewayServiceDetailRequest() {}
 
+std::string GetGatewayServiceDetailRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetGatewayServiceDetailRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string GetGatewayServiceDetailRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

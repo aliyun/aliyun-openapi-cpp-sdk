@@ -30,20 +30,23 @@ class ALIBABACLOUD_MSE_EXPORT DeleteGatewayServiceRequest : public RpcServiceReq
 public:
 	DeleteGatewayServiceRequest();
 	~DeleteGatewayServiceRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
+	long getGatewayId() const;
+	void setGatewayId(long gatewayId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getServiceId() const;
 	void setServiceId(const std::string &serviceId);
-	long getGatewayId() const;
-	void setGatewayId(long gatewayId);
 
 private:
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
+	long gatewayId_;
 	std::string acceptLanguage_;
 	std::string serviceId_;
-	long gatewayId_;
 };
 } // namespace Model
 } // namespace Mse

@@ -29,6 +29,30 @@ namespace Model {
 class ALIBABACLOUD_MSE_EXPORT UpdateGatewayRouteRequest : public RpcServiceRequest {
 public:
 	struct Services {
+		struct HttpDubboTranscoder {
+			std::string dubboServiceName;
+			struct MothedMapListItem {
+				std::string httpMothed;
+				struct ParamMapsListItem {
+					std::string extractKeySpec;
+					std::string extractKey;
+					std::string mappingType;
+				};
+				ParamMapsListItem paramMapsListItem;
+				std::vector<ParamMapsListItem> paramMapsList;
+				std::string mothedpath;
+				std::string dubboMothedName;
+				std::string passThroughAllHeaders;
+				std::string string;
+				std::vector<std::string> passThroughList;
+			};
+			MothedMapListItem mothedMapListItem;
+			std::vector<MothedMapListItem> mothedMapList;
+			std::string dubboServiceVersion;
+			std::string dubboServiceGroup;
+		};
+		HttpDubboTranscoder httpDubboTranscoder;
+		std::string agreementType;
 		std::string name;
 		std::string _namespace;
 		std::string sourceType;
@@ -36,6 +60,7 @@ public:
 		int percent;
 		std::string version;
 		std::string groupName;
+		int servicePort;
 	};
 	struct Predicates {
 		struct PathPredicates {
@@ -70,8 +95,21 @@ public:
 		long code;
 		std::string body;
 	};
+	struct FallbackServices {
+		std::string agreementType;
+		std::string name;
+		std::string _namespace;
+		std::string sourceType;
+		long serviceId;
+		int percent;
+		std::string version;
+		std::string groupName;
+		int servicePort;
+	};
 	UpdateGatewayRouteRequest();
 	~UpdateGatewayRouteRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	std::string getDestinationType() const;
@@ -98,8 +136,13 @@ public:
 	void setName(const std::string &name);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
+	std::vector<FallbackServices> getFallbackServices() const;
+	void setFallbackServices(const std::vector<FallbackServices> &fallbackServices);
+	bool getFallback() const;
+	void setFallback(bool fallback);
 
 private:
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
 	std::string destinationType_;
 	std::string domainIdListJSON_;
@@ -113,6 +156,8 @@ private:
 	DirectResponseJSON directResponseJSON_;
 	std::string name_;
 	std::string acceptLanguage_;
+	std::vector<FallbackServices> fallbackServices_;
+	bool fallback_;
 };
 } // namespace Model
 } // namespace Mse

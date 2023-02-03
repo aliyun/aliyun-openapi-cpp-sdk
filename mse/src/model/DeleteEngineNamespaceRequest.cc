@@ -25,6 +25,15 @@ DeleteEngineNamespaceRequest::DeleteEngineNamespaceRequest()
 
 DeleteEngineNamespaceRequest::~DeleteEngineNamespaceRequest() {}
 
+std::string DeleteEngineNamespaceRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteEngineNamespaceRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string DeleteEngineNamespaceRequest::getClusterId() const {
   return clusterId_;
 }

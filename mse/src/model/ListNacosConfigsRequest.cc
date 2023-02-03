@@ -25,6 +25,15 @@ ListNacosConfigsRequest::ListNacosConfigsRequest()
 
 ListNacosConfigsRequest::~ListNacosConfigsRequest() {}
 
+std::string ListNacosConfigsRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListNacosConfigsRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 int ListNacosConfigsRequest::getPageNum() const {
   return pageNum_;
 }
@@ -32,33 +41,6 @@ int ListNacosConfigsRequest::getPageNum() const {
 void ListNacosConfigsRequest::setPageNum(int pageNum) {
   pageNum_ = pageNum;
   setParameter(std::string("PageNum"), std::to_string(pageNum));
-}
-
-std::string ListNacosConfigsRequest::getTags() const {
-  return tags_;
-}
-
-void ListNacosConfigsRequest::setTags(const std::string &tags) {
-  tags_ = tags;
-  setParameter(std::string("Tags"), tags);
-}
-
-std::string ListNacosConfigsRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ListNacosConfigsRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
-std::string ListNacosConfigsRequest::getDataId() const {
-  return dataId_;
-}
-
-void ListNacosConfigsRequest::setDataId(const std::string &dataId) {
-  dataId_ = dataId;
-  setParameter(std::string("DataId"), dataId);
 }
 
 std::string ListNacosConfigsRequest::getAppName() const {
@@ -106,15 +88,6 @@ void ListNacosConfigsRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string ListNacosConfigsRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void ListNacosConfigsRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 std::string ListNacosConfigsRequest::getGroup() const {
   return group_;
 }
@@ -122,5 +95,41 @@ std::string ListNacosConfigsRequest::getGroup() const {
 void ListNacosConfigsRequest::setGroup(const std::string &group) {
   group_ = group;
   setParameter(std::string("Group"), group);
+}
+
+std::string ListNacosConfigsRequest::getTags() const {
+  return tags_;
+}
+
+void ListNacosConfigsRequest::setTags(const std::string &tags) {
+  tags_ = tags;
+  setParameter(std::string("Tags"), tags);
+}
+
+std::string ListNacosConfigsRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListNacosConfigsRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string ListNacosConfigsRequest::getDataId() const {
+  return dataId_;
+}
+
+void ListNacosConfigsRequest::setDataId(const std::string &dataId) {
+  dataId_ = dataId;
+  setParameter(std::string("DataId"), dataId);
+}
+
+std::string ListNacosConfigsRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void ListNacosConfigsRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

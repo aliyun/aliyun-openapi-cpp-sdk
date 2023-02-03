@@ -30,12 +30,15 @@ class ALIBABACLOUD_MSE_EXPORT QueryClusterDiskSpecificationRequest : public RpcS
 public:
 	QueryClusterDiskSpecificationRequest();
 	~QueryClusterDiskSpecificationRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getClusterType() const;
 	void setClusterType(const std::string &clusterType);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string clusterType_;
 	std::string acceptLanguage_;
 };

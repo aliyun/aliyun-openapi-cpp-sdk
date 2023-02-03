@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT DeleteAuthResourceRequest : public RpcServiceReque
 public:
 	DeleteAuthResourceRequest();
 	~DeleteAuthResourceRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	std::string getAcceptLanguage() const;
@@ -38,6 +40,7 @@ public:
 	void setId(long id);
 
 private:
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
 	std::string acceptLanguage_;
 	long id_;

@@ -64,6 +64,12 @@ void GetGatewayServiceDetailResult::parse(const std::string &payload)
 		data_.gmtCreate = dataNode["GmtCreate"].asString();
 	if(!dataNode["GmtModified"].isNull())
 		data_.gmtModified = dataNode["GmtModified"].asString();
+	if(!dataNode["HealthStatus"].isNull())
+		data_.healthStatus = dataNode["HealthStatus"].asString();
+	if(!dataNode["HealthCheck"].isNull())
+		data_.healthCheck = dataNode["HealthCheck"].asString();
+	if(!dataNode["ServiceProtocol"].isNull())
+		data_.serviceProtocol = dataNode["ServiceProtocol"].asString();
 	auto allVersionsNode = dataNode["Versions"]["VersionsItem"];
 	for (auto dataNodeVersionsVersionsItem : allVersionsNode)
 	{
@@ -110,34 +116,84 @@ void GetGatewayServiceDetailResult::parse(const std::string &payload)
 		}
 		data_.versionDetails.push_back(versionDetailsItemObject);
 	}
+	auto allPortTrafficPolicyListNode = dataNode["PortTrafficPolicyList"]["PortTrafficPolicyListItem"];
+	for (auto dataNodePortTrafficPolicyListPortTrafficPolicyListItem : allPortTrafficPolicyListNode)
+	{
+		Data::PortTrafficPolicyListItem portTrafficPolicyListItemObject;
+		if(!dataNodePortTrafficPolicyListPortTrafficPolicyListItem["Id"].isNull())
+			portTrafficPolicyListItemObject.id = std::stol(dataNodePortTrafficPolicyListPortTrafficPolicyListItem["Id"].asString());
+		if(!dataNodePortTrafficPolicyListPortTrafficPolicyListItem["ServiceId"].isNull())
+			portTrafficPolicyListItemObject.serviceId = std::stol(dataNodePortTrafficPolicyListPortTrafficPolicyListItem["ServiceId"].asString());
+		if(!dataNodePortTrafficPolicyListPortTrafficPolicyListItem["ServicePort"].isNull())
+			portTrafficPolicyListItemObject.servicePort = std::stoi(dataNodePortTrafficPolicyListPortTrafficPolicyListItem["ServicePort"].asString());
+		if(!dataNodePortTrafficPolicyListPortTrafficPolicyListItem["GatewayUniqueId"].isNull())
+			portTrafficPolicyListItemObject.gatewayUniqueId = dataNodePortTrafficPolicyListPortTrafficPolicyListItem["GatewayUniqueId"].asString();
+		if(!dataNodePortTrafficPolicyListPortTrafficPolicyListItem["GmtCreate"].isNull())
+			portTrafficPolicyListItemObject.gmtCreate = dataNodePortTrafficPolicyListPortTrafficPolicyListItem["GmtCreate"].asString();
+		if(!dataNodePortTrafficPolicyListPortTrafficPolicyListItem["GmtModified"].isNull())
+			portTrafficPolicyListItemObject.gmtModified = dataNodePortTrafficPolicyListPortTrafficPolicyListItem["GmtModified"].asString();
+		auto trafficPolicyNode = value["TrafficPolicy"];
+		auto tlsSettingNode = trafficPolicyNode["TlsSetting"];
+		if(!tlsSettingNode["TlsMode"].isNull())
+			portTrafficPolicyListItemObject.trafficPolicy.tlsSetting.tlsMode = tlsSettingNode["TlsMode"].asString();
+		if(!tlsSettingNode["CertId"].isNull())
+			portTrafficPolicyListItemObject.trafficPolicy.tlsSetting.certId = tlsSettingNode["CertId"].asString();
+		if(!tlsSettingNode["CaCertContent"].isNull())
+			portTrafficPolicyListItemObject.trafficPolicy.tlsSetting.caCertContent = tlsSettingNode["CaCertContent"].asString();
+		if(!tlsSettingNode["Sni"].isNull())
+			portTrafficPolicyListItemObject.trafficPolicy.tlsSetting.sni = tlsSettingNode["Sni"].asString();
+		auto loadBalancerSettingsNode = trafficPolicyNode["LoadBalancerSettings"];
+		if(!loadBalancerSettingsNode["LoadbalancerType"].isNull())
+			portTrafficPolicyListItemObject.trafficPolicy.loadBalancerSettings.loadbalancerType = loadBalancerSettingsNode["LoadbalancerType"].asString();
+		if(!loadBalancerSettingsNode["WarmupDuration"].isNull())
+			portTrafficPolicyListItemObject.trafficPolicy.loadBalancerSettings.warmupDuration = std::stol(loadBalancerSettingsNode["WarmupDuration"].asString());
+		auto consistentHashLBConfigNode = loadBalancerSettingsNode["ConsistentHashLBConfig"];
+		if(!consistentHashLBConfigNode["ParameterName"].isNull())
+			portTrafficPolicyListItemObject.trafficPolicy.loadBalancerSettings.consistentHashLBConfig.parameterName = consistentHashLBConfigNode["ParameterName"].asString();
+		if(!consistentHashLBConfigNode["ConsistentHashLBType"].isNull())
+			portTrafficPolicyListItemObject.trafficPolicy.loadBalancerSettings.consistentHashLBConfig.consistentHashLBType = consistentHashLBConfigNode["ConsistentHashLBType"].asString();
+		auto httpCookieNode = consistentHashLBConfigNode["HttpCookie"];
+		if(!httpCookieNode["Name"].isNull())
+			portTrafficPolicyListItemObject.trafficPolicy.loadBalancerSettings.consistentHashLBConfig.httpCookie.name = httpCookieNode["Name"].asString();
+		if(!httpCookieNode["Path"].isNull())
+			portTrafficPolicyListItemObject.trafficPolicy.loadBalancerSettings.consistentHashLBConfig.httpCookie.path = httpCookieNode["Path"].asString();
+		if(!httpCookieNode["TTL"].isNull())
+			portTrafficPolicyListItemObject.trafficPolicy.loadBalancerSettings.consistentHashLBConfig.httpCookie.tTL = httpCookieNode["TTL"].asString();
+		data_.portTrafficPolicyList.push_back(portTrafficPolicyListItemObject);
+	}
 	auto gatewayTrafficPolicyNode = dataNode["GatewayTrafficPolicy"];
-	auto tlsSettingNode = gatewayTrafficPolicyNode["TlsSetting"];
-	if(!tlsSettingNode["TlsMode"].isNull())
-		data_.gatewayTrafficPolicy.tlsSetting.tlsMode = tlsSettingNode["TlsMode"].asString();
-	if(!tlsSettingNode["CertId"].isNull())
-		data_.gatewayTrafficPolicy.tlsSetting.certId = tlsSettingNode["CertId"].asString();
-	if(!tlsSettingNode["CaCertContent"].isNull())
-		data_.gatewayTrafficPolicy.tlsSetting.caCertContent = tlsSettingNode["CaCertContent"].asString();
-	if(!tlsSettingNode["Sni"].isNull())
-		data_.gatewayTrafficPolicy.tlsSetting.sni = tlsSettingNode["Sni"].asString();
-	auto loadBalancerSettingsNode = gatewayTrafficPolicyNode["LoadBalancerSettings"];
-	if(!loadBalancerSettingsNode["LoadbalancerType"].isNull())
-		data_.gatewayTrafficPolicy.loadBalancerSettings.loadbalancerType = loadBalancerSettingsNode["LoadbalancerType"].asString();
-	auto consistentHashLBConfigNode = loadBalancerSettingsNode["ConsistentHashLBConfig"];
-	if(!consistentHashLBConfigNode["ParameterName"].isNull())
-		data_.gatewayTrafficPolicy.loadBalancerSettings.consistentHashLBConfig.parameterName = consistentHashLBConfigNode["ParameterName"].asString();
-	if(!consistentHashLBConfigNode["ConsistentHashLBType"].isNull())
-		data_.gatewayTrafficPolicy.loadBalancerSettings.consistentHashLBConfig.consistentHashLBType = consistentHashLBConfigNode["ConsistentHashLBType"].asString();
-	auto httpCookieNode = consistentHashLBConfigNode["HttpCookie"];
-	if(!httpCookieNode["Name"].isNull())
-		data_.gatewayTrafficPolicy.loadBalancerSettings.consistentHashLBConfig.httpCookie.name = httpCookieNode["Name"].asString();
-	if(!httpCookieNode["Path"].isNull())
-		data_.gatewayTrafficPolicy.loadBalancerSettings.consistentHashLBConfig.httpCookie.path = httpCookieNode["Path"].asString();
-	if(!httpCookieNode["TTL"].isNull())
-		data_.gatewayTrafficPolicy.loadBalancerSettings.consistentHashLBConfig.httpCookie.tTL = httpCookieNode["TTL"].asString();
+	auto tlsSetting1Node = gatewayTrafficPolicyNode["TlsSetting"];
+	if(!tlsSetting1Node["TlsMode"].isNull())
+		data_.gatewayTrafficPolicy.tlsSetting1.tlsMode = tlsSetting1Node["TlsMode"].asString();
+	if(!tlsSetting1Node["CertId"].isNull())
+		data_.gatewayTrafficPolicy.tlsSetting1.certId = tlsSetting1Node["CertId"].asString();
+	if(!tlsSetting1Node["CaCertContent"].isNull())
+		data_.gatewayTrafficPolicy.tlsSetting1.caCertContent = tlsSetting1Node["CaCertContent"].asString();
+	if(!tlsSetting1Node["Sni"].isNull())
+		data_.gatewayTrafficPolicy.tlsSetting1.sni = tlsSetting1Node["Sni"].asString();
+	auto loadBalancerSettings2Node = gatewayTrafficPolicyNode["LoadBalancerSettings"];
+	if(!loadBalancerSettings2Node["LoadbalancerType"].isNull())
+		data_.gatewayTrafficPolicy.loadBalancerSettings2.loadbalancerType = loadBalancerSettings2Node["LoadbalancerType"].asString();
+	if(!loadBalancerSettings2Node["WarmupDuration"].isNull())
+		data_.gatewayTrafficPolicy.loadBalancerSettings2.warmupDuration = std::stol(loadBalancerSettings2Node["WarmupDuration"].asString());
+	auto consistentHashLBConfig3Node = loadBalancerSettings2Node["ConsistentHashLBConfig"];
+	if(!consistentHashLBConfig3Node["ParameterName"].isNull())
+		data_.gatewayTrafficPolicy.loadBalancerSettings2.consistentHashLBConfig3.parameterName = consistentHashLBConfig3Node["ParameterName"].asString();
+	if(!consistentHashLBConfig3Node["ConsistentHashLBType"].isNull())
+		data_.gatewayTrafficPolicy.loadBalancerSettings2.consistentHashLBConfig3.consistentHashLBType = consistentHashLBConfig3Node["ConsistentHashLBType"].asString();
+	auto httpCookie4Node = consistentHashLBConfig3Node["HttpCookie"];
+	if(!httpCookie4Node["Name"].isNull())
+		data_.gatewayTrafficPolicy.loadBalancerSettings2.consistentHashLBConfig3.httpCookie4.name = httpCookie4Node["Name"].asString();
+	if(!httpCookie4Node["Path"].isNull())
+		data_.gatewayTrafficPolicy.loadBalancerSettings2.consistentHashLBConfig3.httpCookie4.path = httpCookie4Node["Path"].asString();
+	if(!httpCookie4Node["TTL"].isNull())
+		data_.gatewayTrafficPolicy.loadBalancerSettings2.consistentHashLBConfig3.httpCookie4.tTL = httpCookie4Node["TTL"].asString();
 		auto allIps = dataNode["Ips"]["Ips"];
 		for (auto value : allIps)
 			data_.ips.push_back(value.asString());
+		auto allPorts = dataNode["Ports"]["ports"];
+		for (auto value : allPorts)
+			data_.ports.push_back(value.asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Message"].isNull())

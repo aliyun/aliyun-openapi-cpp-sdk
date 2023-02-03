@@ -34,6 +34,15 @@ void QueryClusterDetailRequest::setAclSwitch(bool aclSwitch) {
   setParameter(std::string("AclSwitch"), aclSwitch ? "true" : "false");
 }
 
+std::string QueryClusterDetailRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void QueryClusterDetailRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string QueryClusterDetailRequest::getOrderId() const {
   return orderId_;
 }

@@ -25,6 +25,15 @@ UpdateGatewayNameRequest::UpdateGatewayNameRequest()
 
 UpdateGatewayNameRequest::~UpdateGatewayNameRequest() {}
 
+std::string UpdateGatewayNameRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateGatewayNameRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateGatewayNameRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

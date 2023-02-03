@@ -25,6 +25,15 @@ GetServiceListRequest::GetServiceListRequest()
 
 GetServiceListRequest::~GetServiceListRequest() {}
 
+std::string GetServiceListRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetServiceListRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string GetServiceListRequest::getServiceName() const {
   return serviceName_;
 }

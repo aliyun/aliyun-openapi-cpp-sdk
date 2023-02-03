@@ -25,6 +25,15 @@ QueryGatewayTypeRequest::QueryGatewayTypeRequest()
 
 QueryGatewayTypeRequest::~QueryGatewayTypeRequest() {}
 
+std::string QueryGatewayTypeRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void QueryGatewayTypeRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string QueryGatewayTypeRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

@@ -25,6 +25,15 @@ CreateApplicationRequest::CreateApplicationRequest()
 
 CreateApplicationRequest::~CreateApplicationRequest() {}
 
+std::string CreateApplicationRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void CreateApplicationRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string CreateApplicationRequest::getLanguage() const {
   return language_;
 }
@@ -68,6 +77,15 @@ std::string CreateApplicationRequest::getSwitchEnable() const {
 void CreateApplicationRequest::setSwitchEnable(const std::string &switchEnable) {
   switchEnable_ = switchEnable;
   setParameter(std::string("SwitchEnable"), switchEnable);
+}
+
+std::string CreateApplicationRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void CreateApplicationRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
 }
 
 std::string CreateApplicationRequest::getAcceptLanguage() const {

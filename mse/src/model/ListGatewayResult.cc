@@ -100,6 +100,14 @@ void ListGatewayResult::parse(const std::string &payload)
 			gatewaysObject.endDate = dataNodeResultGateways["EndDate"].asString();
 		if(!dataNodeResultGateways["Tag"].isNull())
 			gatewaysObject.tag = dataNodeResultGateways["Tag"].asString();
+		if(!dataNodeResultGateways["GatewayVersion"].isNull())
+			gatewaysObject.gatewayVersion = dataNodeResultGateways["GatewayVersion"].asString();
+		if(!dataNodeResultGateways["RollBack"].isNull())
+			gatewaysObject.rollBack = dataNodeResultGateways["RollBack"].asString() == "true";
+		if(!dataNodeResultGateways["MseTag"].isNull())
+			gatewaysObject.mseTag = dataNodeResultGateways["MseTag"].asString();
+		if(!dataNodeResultGateways["ResourceGroupId"].isNull())
+			gatewaysObject.resourceGroupId = dataNodeResultGateways["ResourceGroupId"].asString();
 		auto allSlbNode = dataNodeResultGateways["Slb"]["slbItem"];
 		for (auto dataNodeResultGatewaysSlbslbItem : allSlbNode)
 		{

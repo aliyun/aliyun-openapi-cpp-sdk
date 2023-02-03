@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT UpdateClusterRequest : public RpcServiceRequest {
 public:
 	UpdateClusterRequest();
 	~UpdateClusterRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getClusterAliasName() const;
 	void setClusterAliasName(const std::string &clusterAliasName);
 	std::string getClusterId() const;
@@ -42,6 +44,7 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string clusterAliasName_;
 	std::string clusterId_;
 	std::string instanceId_;

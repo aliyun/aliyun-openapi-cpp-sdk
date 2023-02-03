@@ -34,6 +34,15 @@ void QueryMonitorRequest::setMonitorType(const std::string &monitorType) {
   setParameter(std::string("MonitorType"), monitorType);
 }
 
+std::string QueryMonitorRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void QueryMonitorRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 long QueryMonitorRequest::getEndTime() const {
   return endTime_;
 }

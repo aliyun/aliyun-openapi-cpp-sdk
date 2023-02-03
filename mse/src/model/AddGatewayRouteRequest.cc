@@ -25,6 +25,15 @@ AddGatewayRouteRequest::AddGatewayRouteRequest()
 
 AddGatewayRouteRequest::~AddGatewayRouteRequest() {}
 
+std::string AddGatewayRouteRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void AddGatewayRouteRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string AddGatewayRouteRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -95,6 +104,24 @@ std::vector<AddGatewayRouteRequest::Services> AddGatewayRouteRequest::getService
 void AddGatewayRouteRequest::setServices(const std::vector<AddGatewayRouteRequest::Services> &services) {
   services_ = services;
   for(int dep1 = 0; dep1 != services.size(); dep1++) {
+    setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".HttpDubboTranscoder.DubboServiceName", services[dep1].httpDubboTranscoder.dubboServiceName);
+    for(int dep2 = 0; dep2 != services[dep1].httpDubboTranscoder.mothedMapList.size(); dep2++) {
+      setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".HttpDubboTranscoder.MothedMapList." + std::to_string(dep2 + 1) + ".HttpMothed", services[dep1].httpDubboTranscoder.mothedMapList[dep2].httpMothed);
+      for(int dep3 = 0; dep3 != services[dep1].httpDubboTranscoder.mothedMapList[dep2].paramMapsList.size(); dep3++) {
+        setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".HttpDubboTranscoder.MothedMapList." + std::to_string(dep2 + 1) + ".ParamMapsList." + std::to_string(dep3 + 1) + ".ExtractKeySpec", services[dep1].httpDubboTranscoder.mothedMapList[dep2].paramMapsList[dep3].extractKeySpec);
+        setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".HttpDubboTranscoder.MothedMapList." + std::to_string(dep2 + 1) + ".ParamMapsList." + std::to_string(dep3 + 1) + ".ExtractKey", services[dep1].httpDubboTranscoder.mothedMapList[dep2].paramMapsList[dep3].extractKey);
+        setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".HttpDubboTranscoder.MothedMapList." + std::to_string(dep2 + 1) + ".ParamMapsList." + std::to_string(dep3 + 1) + ".MappingType", services[dep1].httpDubboTranscoder.mothedMapList[dep2].paramMapsList[dep3].mappingType);
+      }
+      setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".HttpDubboTranscoder.MothedMapList." + std::to_string(dep2 + 1) + ".Mothedpath", services[dep1].httpDubboTranscoder.mothedMapList[dep2].mothedpath);
+      setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".HttpDubboTranscoder.MothedMapList." + std::to_string(dep2 + 1) + ".DubboMothedName", services[dep1].httpDubboTranscoder.mothedMapList[dep2].dubboMothedName);
+      setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".HttpDubboTranscoder.MothedMapList." + std::to_string(dep2 + 1) + ".PassThroughAllHeaders", services[dep1].httpDubboTranscoder.mothedMapList[dep2].passThroughAllHeaders);
+      for(int dep3 = 0; dep3 != services[dep1].httpDubboTranscoder.mothedMapList[dep2].passThroughList.size(); dep3++) {
+        setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".HttpDubboTranscoder.MothedMapList." + std::to_string(dep2 + 1) + ".PassThroughList." + std::to_string(dep3 + 1), services[dep1].httpDubboTranscoder.mothedMapList[dep2].passThroughList[dep3]);
+      }
+    }
+    setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".HttpDubboTranscoder.DubboServiceVersion", services[dep1].httpDubboTranscoder.dubboServiceVersion);
+    setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".HttpDubboTranscoder.DubboServiceGroup", services[dep1].httpDubboTranscoder.dubboServiceGroup);
+    setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".AgreementType", services[dep1].agreementType);
     setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".Name", services[dep1].name);
     setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".Namespace", services[dep1]._namespace);
     setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".SourceType", services[dep1].sourceType);
@@ -102,6 +129,7 @@ void AddGatewayRouteRequest::setServices(const std::vector<AddGatewayRouteReques
     setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".Percent", std::to_string(services[dep1].percent));
     setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".Version", services[dep1].version);
     setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".GroupName", services[dep1].groupName);
+    setParameter(std::string("Services") + "." + std::to_string(dep1 + 1) + ".ServicePort", std::to_string(services[dep1].servicePort));
   }
 }
 
@@ -166,5 +194,33 @@ std::string AddGatewayRouteRequest::getAcceptLanguage() const {
 void AddGatewayRouteRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
+}
+
+std::vector<AddGatewayRouteRequest::FallbackServices> AddGatewayRouteRequest::getFallbackServices() const {
+  return fallbackServices_;
+}
+
+void AddGatewayRouteRequest::setFallbackServices(const std::vector<AddGatewayRouteRequest::FallbackServices> &fallbackServices) {
+  fallbackServices_ = fallbackServices;
+  for(int dep1 = 0; dep1 != fallbackServices.size(); dep1++) {
+    setParameter(std::string("FallbackServices") + "." + std::to_string(dep1 + 1) + ".AgreementType", fallbackServices[dep1].agreementType);
+    setParameter(std::string("FallbackServices") + "." + std::to_string(dep1 + 1) + ".Name", fallbackServices[dep1].name);
+    setParameter(std::string("FallbackServices") + "." + std::to_string(dep1 + 1) + ".Namespace", fallbackServices[dep1]._namespace);
+    setParameter(std::string("FallbackServices") + "." + std::to_string(dep1 + 1) + ".SourceType", fallbackServices[dep1].sourceType);
+    setParameter(std::string("FallbackServices") + "." + std::to_string(dep1 + 1) + ".ServiceId", std::to_string(fallbackServices[dep1].serviceId));
+    setParameter(std::string("FallbackServices") + "." + std::to_string(dep1 + 1) + ".Percent", std::to_string(fallbackServices[dep1].percent));
+    setParameter(std::string("FallbackServices") + "." + std::to_string(dep1 + 1) + ".Version", fallbackServices[dep1].version);
+    setParameter(std::string("FallbackServices") + "." + std::to_string(dep1 + 1) + ".GroupName", fallbackServices[dep1].groupName);
+    setParameter(std::string("FallbackServices") + "." + std::to_string(dep1 + 1) + ".ServicePort", std::to_string(fallbackServices[dep1].servicePort));
+  }
+}
+
+bool AddGatewayRouteRequest::getFallback() const {
+  return fallback_;
+}
+
+void AddGatewayRouteRequest::setFallback(bool fallback) {
+  fallback_ = fallback;
+  setParameter(std::string("Fallback"), fallback ? "true" : "false");
 }
 

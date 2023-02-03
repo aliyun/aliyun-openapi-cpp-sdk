@@ -25,6 +25,15 @@ CreateNacosConfigRequest::CreateNacosConfigRequest()
 
 CreateNacosConfigRequest::~CreateNacosConfigRequest() {}
 
+std::string CreateNacosConfigRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void CreateNacosConfigRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string CreateNacosConfigRequest::getType() const {
   return type_;
 }
@@ -41,6 +50,33 @@ std::string CreateNacosConfigRequest::getContent() const {
 void CreateNacosConfigRequest::setContent(const std::string &content) {
   content_ = content;
   setParameter(std::string("Content"), content);
+}
+
+std::string CreateNacosConfigRequest::getAppName() const {
+  return appName_;
+}
+
+void CreateNacosConfigRequest::setAppName(const std::string &appName) {
+  appName_ = appName;
+  setParameter(std::string("AppName"), appName);
+}
+
+std::string CreateNacosConfigRequest::getNamespaceId() const {
+  return namespaceId_;
+}
+
+void CreateNacosConfigRequest::setNamespaceId(const std::string &namespaceId) {
+  namespaceId_ = namespaceId;
+  setParameter(std::string("NamespaceId"), namespaceId);
+}
+
+std::string CreateNacosConfigRequest::getGroup() const {
+  return group_;
+}
+
+void CreateNacosConfigRequest::setGroup(const std::string &group) {
+  group_ = group;
+  setParameter(std::string("Group"), group);
 }
 
 std::string CreateNacosConfigRequest::getTags() const {
@@ -79,24 +115,6 @@ void CreateNacosConfigRequest::setDataId(const std::string &dataId) {
   setParameter(std::string("DataId"), dataId);
 }
 
-std::string CreateNacosConfigRequest::getAppName() const {
-  return appName_;
-}
-
-void CreateNacosConfigRequest::setAppName(const std::string &appName) {
-  appName_ = appName;
-  setParameter(std::string("AppName"), appName);
-}
-
-std::string CreateNacosConfigRequest::getNamespaceId() const {
-  return namespaceId_;
-}
-
-void CreateNacosConfigRequest::setNamespaceId(const std::string &namespaceId) {
-  namespaceId_ = namespaceId;
-  setParameter(std::string("NamespaceId"), namespaceId);
-}
-
 std::string CreateNacosConfigRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }
@@ -104,15 +122,6 @@ std::string CreateNacosConfigRequest::getAcceptLanguage() const {
 void CreateNacosConfigRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
-std::string CreateNacosConfigRequest::getGroup() const {
-  return group_;
-}
-
-void CreateNacosConfigRequest::setGroup(const std::string &group) {
-  group_ = group;
-  setParameter(std::string("Group"), group);
 }
 
 std::string CreateNacosConfigRequest::getDesc() const {

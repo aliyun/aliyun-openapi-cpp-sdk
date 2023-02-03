@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					std::string filterSide;
 					std::string appId;
 					std::string region;
 					bool enable;

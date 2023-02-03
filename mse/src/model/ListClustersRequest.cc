@@ -25,6 +25,15 @@ ListClustersRequest::ListClustersRequest()
 
 ListClustersRequest::~ListClustersRequest() {}
 
+std::string ListClustersRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListClustersRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListClustersRequest::getClusterAliasName() const {
   return clusterAliasName_;
 }
@@ -41,6 +50,15 @@ int ListClustersRequest::getPageNum() const {
 void ListClustersRequest::setPageNum(int pageNum) {
   pageNum_ = pageNum;
   setParameter(std::string("PageNum"), std::to_string(pageNum));
+}
+
+std::string ListClustersRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListClustersRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string ListClustersRequest::getRegionId() const {
@@ -77,5 +95,19 @@ std::string ListClustersRequest::getAcceptLanguage() const {
 void ListClustersRequest::setAcceptLanguage(const std::string &acceptLanguage) {
   acceptLanguage_ = acceptLanguage;
   setParameter(std::string("AcceptLanguage"), acceptLanguage);
+}
+
+std::vector<ListClustersRequest::Tag> ListClustersRequest::getTag() const {
+  return tag_;
+}
+
+void ListClustersRequest::setTag(const std::vector<ListClustersRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
 }
 

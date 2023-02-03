@@ -25,6 +25,15 @@ DeleteGatewayDomainRequest::DeleteGatewayDomainRequest()
 
 DeleteGatewayDomainRequest::~DeleteGatewayDomainRequest() {}
 
+std::string DeleteGatewayDomainRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void DeleteGatewayDomainRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string DeleteGatewayDomainRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

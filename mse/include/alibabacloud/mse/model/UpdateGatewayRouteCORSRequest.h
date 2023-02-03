@@ -40,23 +40,26 @@ public:
 	};
 	UpdateGatewayRouteCORSRequest();
 	~UpdateGatewayRouteCORSRequest();
-	CorsJSON getCorsJSON() const;
-	void setCorsJSON(const CorsJSON &corsJSON);
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	long getId() const;
 	void setId(long id);
 	long getGatewayId() const;
 	void setGatewayId(long gatewayId);
+	CorsJSON getCorsJSON() const;
+	void setCorsJSON(const CorsJSON &corsJSON);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
-	CorsJSON corsJSON_;
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
-	std::string acceptLanguage_;
 	long id_;
 	long gatewayId_;
+	CorsJSON corsJSON_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

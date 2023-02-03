@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT ListApplicationsWithTagRulesRequest : public RpcSe
 public:
 	ListApplicationsWithTagRulesRequest();
 	~ListApplicationsWithTagRulesRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getSource() const;
 	void setSource(const std::string &source);
 	int getPageNumber() const;
@@ -46,6 +48,7 @@ public:
 	void setRegion(const std::string &region);
 
 private:
+	std::string mseSessionId_;
 	std::string source_;
 	int pageNumber_;
 	std::string appName_;

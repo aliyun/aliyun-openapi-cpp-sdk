@@ -25,6 +25,15 @@ CloneNacosConfigRequest::CloneNacosConfigRequest()
 
 CloneNacosConfigRequest::~CloneNacosConfigRequest() {}
 
+std::string CloneNacosConfigRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void CloneNacosConfigRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string CloneNacosConfigRequest::getTargetNamespaceId() const {
   return targetNamespaceId_;
 }

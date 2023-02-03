@@ -45,12 +45,19 @@ void UpdateClusterResult::parse(const std::string &payload)
 		errorCode_ = value["ErrorCode"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["HttpStatusCode"].isNull())
+		httpStatusCode_ = value["HttpStatusCode"].asString();
 
 }
 
 std::string UpdateClusterResult::getMessage()const
 {
 	return message_;
+}
+
+std::string UpdateClusterResult::getHttpStatusCode()const
+{
+	return httpStatusCode_;
 }
 
 std::string UpdateClusterResult::getErrorCode()const

@@ -41,7 +41,7 @@ namespace AlibabaCloud
 							int status;
 							bool carryData;
 							int rate;
-							long gmtModified;
+							std::string gmtModified;
 							bool enable;
 							bool remove;
 							std::string tag;

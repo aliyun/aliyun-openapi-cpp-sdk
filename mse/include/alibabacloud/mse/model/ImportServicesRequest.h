@@ -39,23 +39,26 @@ public:
 	};
 	ImportServicesRequest();
 	~ImportServicesRequest();
-	std::string getSourceId() const;
-	void setSourceId(const std::string &sourceId);
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	std::vector<ServiceList> getServiceList() const;
 	void setServiceList(const std::vector<ServiceList> &serviceList);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
+	std::string getTlsSetting() const;
+	void setTlsSetting(const std::string &tlsSetting);
 	std::string getSourceType() const;
 	void setSourceType(const std::string &sourceType);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
-	std::string sourceId_;
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
 	std::vector<ServiceList> serviceList_;
-	std::string acceptLanguage_;
+	std::string tlsSetting_;
 	std::string sourceType_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

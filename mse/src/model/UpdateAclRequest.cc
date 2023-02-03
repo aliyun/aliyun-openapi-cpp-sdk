@@ -25,6 +25,15 @@ UpdateAclRequest::UpdateAclRequest()
 
 UpdateAclRequest::~UpdateAclRequest() {}
 
+std::string UpdateAclRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateAclRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateAclRequest::getClusterId() const {
   return clusterId_;
 }

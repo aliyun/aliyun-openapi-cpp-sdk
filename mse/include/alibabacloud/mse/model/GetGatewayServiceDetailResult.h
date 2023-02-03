@@ -36,32 +36,33 @@ namespace AlibabaCloud
 				{
 					struct GatewayTrafficPolicy
 					{
-						struct TlsSetting
+						struct TlsSetting1
 						{
 							std::string certId;
 							std::string caCertContent;
 							std::string tlsMode;
 							std::string sni;
 						};
-						struct LoadBalancerSettings
+						struct LoadBalancerSettings2
 						{
-							struct ConsistentHashLBConfig
+							struct ConsistentHashLBConfig3
 							{
-								struct HttpCookie
+								struct HttpCookie4
 								{
 									std::string path;
 									std::string tTL;
 									std::string name;
 								};
+								HttpCookie4 httpCookie4;
 								std::string consistentHashLBType;
 								std::string parameterName;
-								HttpCookie httpCookie;
 							};
-							ConsistentHashLBConfig consistentHashLBConfig;
+							long warmupDuration;
+							ConsistentHashLBConfig3 consistentHashLBConfig3;
 							std::string loadbalancerType;
 						};
-						TlsSetting tlsSetting;
-						LoadBalancerSettings loadBalancerSettings;
+						LoadBalancerSettings2 loadBalancerSettings2;
+						TlsSetting1 tlsSetting1;
 					};
 					struct VersionsItem
 					{
@@ -90,12 +91,55 @@ namespace AlibabaCloud
 						ServiceVersion serviceVersion;
 						std::string endpointNumPercent;
 					};
+					struct PortTrafficPolicyListItem
+					{
+						struct TrafficPolicy
+						{
+							struct TlsSetting
+							{
+								std::string certId;
+								std::string caCertContent;
+								std::string tlsMode;
+								std::string sni;
+							};
+							struct LoadBalancerSettings
+							{
+								struct ConsistentHashLBConfig
+								{
+									struct HttpCookie
+									{
+										std::string path;
+										std::string tTL;
+										std::string name;
+									};
+									std::string consistentHashLBType;
+									std::string parameterName;
+									HttpCookie httpCookie;
+								};
+								long warmupDuration;
+								ConsistentHashLBConfig consistentHashLBConfig;
+								std::string loadbalancerType;
+							};
+							TlsSetting tlsSetting;
+							LoadBalancerSettings loadBalancerSettings;
+						};
+						TrafficPolicy trafficPolicy;
+						int servicePort;
+						std::string gatewayUniqueId;
+						std::string gmtCreate;
+						std::string gmtModified;
+						long id;
+						long serviceId;
+					};
 					std::string groupName;
 					std::vector<VersionDetailsItem> versionDetails;
 					std::string sourceType;
 					long sourceId;
 					std::string metaInfo;
 					std::string gmtModified;
+					std::string healthStatus;
+					std::string healthCheck;
+					std::vector<std::string> ports;
 					std::string _namespace;
 					long gatewayId;
 					std::vector<std::string> ips;
@@ -104,9 +148,11 @@ namespace AlibabaCloud
 					std::string gmtCreate;
 					std::vector<VersionsItem> versions;
 					std::string serviceNameInRegistry;
+					std::string serviceProtocol;
 					long id;
 					std::vector<LabelDetailsItem> labelDetails;
 					GatewayTrafficPolicy gatewayTrafficPolicy;
+					std::vector<PortTrafficPolicyListItem> portTrafficPolicyList;
 				};
 
 

@@ -25,6 +25,15 @@ ListGatewayDomainRequest::ListGatewayDomainRequest()
 
 ListGatewayDomainRequest::~ListGatewayDomainRequest() {}
 
+std::string ListGatewayDomainRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListGatewayDomainRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListGatewayDomainRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

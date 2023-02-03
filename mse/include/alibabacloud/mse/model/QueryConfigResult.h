@@ -34,28 +34,38 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string maxClientCnxns;
+					struct NacosRunningEnv
+					{
+						bool emptyProtect;
+					};
+					bool extendedTypesEnable;
 					bool mCPEnabled;
 					std::string maxSessionTimeout;
-					std::string userName;
 					bool openSuperAcl;
-					std::string tickTime;
 					bool namingCreateServiceSupported;
 					bool configSecretSupported;
-					std::string autopurgeSnapRetainCount;
-					std::string initLimit;
 					std::string passWord;
 					std::string jvmFlagsCustom;
 					bool configAuthEnabled;
-					bool restartFlag;
 					std::string autopurgePurgeInterval;
-					std::string juteMaxbuffer;
 					bool mCPSupported;
-					std::string minSessionTimeout;
+					bool namingAuthSupported;
 					std::string clusterName;
 					bool configSecretEnabled;
-					bool configAuthSupported;
+					NacosRunningEnv nacosRunningEnv;
 					std::string syncLimit;
+					std::string maxClientCnxns;
+					std::string userName;
+					std::string tickTime;
+					bool namingAuthEnabled;
+					long configContentLimit;
+					std::string autopurgeSnapRetainCount;
+					std::string initLimit;
+					std::string snapshotCount;
+					bool restartFlag;
+					std::string juteMaxbuffer;
+					std::string minSessionTimeout;
+					bool configAuthSupported;
 				};
 
 

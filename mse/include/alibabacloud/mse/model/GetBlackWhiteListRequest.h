@@ -30,22 +30,25 @@ class ALIBABACLOUD_MSE_EXPORT GetBlackWhiteListRequest : public RpcServiceReques
 public:
 	GetBlackWhiteListRequest();
 	~GetBlackWhiteListRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	std::string getType() const;
 	void setType(const std::string &type);
-	std::string getResourceType() const;
-	void setResourceType(const std::string &resourceType);
 	bool getIsWhite() const;
 	void setIsWhite(bool isWhite);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
 	std::string type_;
-	std::string resourceType_;
 	bool isWhite_;
+	std::string resourceType_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

@@ -25,6 +25,15 @@ GetTagsBySwimmingLaneGroupIdRequest::GetTagsBySwimmingLaneGroupIdRequest()
 
 GetTagsBySwimmingLaneGroupIdRequest::~GetTagsBySwimmingLaneGroupIdRequest() {}
 
+std::string GetTagsBySwimmingLaneGroupIdRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetTagsBySwimmingLaneGroupIdRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 long GetTagsBySwimmingLaneGroupIdRequest::getGroupId() const {
   return groupId_;
 }

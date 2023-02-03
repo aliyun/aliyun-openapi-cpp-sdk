@@ -72,6 +72,10 @@ void GetGatewayRouteDetailResult::parse(const std::string &payload)
 		data_.destinationType = dataNode["DestinationType"].asString();
 	if(!dataNode["EnableWaf"].isNull())
 		data_.enableWaf = dataNode["EnableWaf"].asString() == "true";
+	if(!dataNode["AhasStatus"].isNull())
+		data_.ahasStatus = std::stoi(dataNode["AhasStatus"].asString());
+	if(!dataNode["Fallback"].isNull())
+		data_.fallback = dataNode["Fallback"].asString() == "true";
 	auto allRouteServicesNode = dataNode["RouteServices"]["RouteServicesItem"];
 	for (auto dataNodeRouteServicesRouteServicesItem : allRouteServicesNode)
 	{
@@ -92,7 +96,37 @@ void GetGatewayRouteDetailResult::parse(const std::string &payload)
 			routeServicesItemObject._namespace = dataNodeRouteServicesRouteServicesItem["Namespace"].asString();
 		if(!dataNodeRouteServicesRouteServicesItem["GroupName"].isNull())
 			routeServicesItemObject.groupName = dataNodeRouteServicesRouteServicesItem["GroupName"].asString();
+		if(!dataNodeRouteServicesRouteServicesItem["AgreementType"].isNull())
+			routeServicesItemObject.agreementType = dataNodeRouteServicesRouteServicesItem["AgreementType"].asString();
+		if(!dataNodeRouteServicesRouteServicesItem["ServicePort"].isNull())
+			routeServicesItemObject.servicePort = std::stoi(dataNodeRouteServicesRouteServicesItem["ServicePort"].asString());
 		data_.routeServices.push_back(routeServicesItemObject);
+	}
+	auto allFallbackServicesNode = dataNode["FallbackServices"]["FallbackServicesItem"];
+	for (auto dataNodeFallbackServicesFallbackServicesItem : allFallbackServicesNode)
+	{
+		Data::FallbackServicesItem fallbackServicesItemObject;
+		if(!dataNodeFallbackServicesFallbackServicesItem["ServiceId"].isNull())
+			fallbackServicesItemObject.serviceId = std::stol(dataNodeFallbackServicesFallbackServicesItem["ServiceId"].asString());
+		if(!dataNodeFallbackServicesFallbackServicesItem["ServiceName"].isNull())
+			fallbackServicesItemObject.serviceName = dataNodeFallbackServicesFallbackServicesItem["ServiceName"].asString();
+		if(!dataNodeFallbackServicesFallbackServicesItem["Percent"].isNull())
+			fallbackServicesItemObject.percent = std::stoi(dataNodeFallbackServicesFallbackServicesItem["Percent"].asString());
+		if(!dataNodeFallbackServicesFallbackServicesItem["Version"].isNull())
+			fallbackServicesItemObject.version = dataNodeFallbackServicesFallbackServicesItem["Version"].asString();
+		if(!dataNodeFallbackServicesFallbackServicesItem["Name"].isNull())
+			fallbackServicesItemObject.name = dataNodeFallbackServicesFallbackServicesItem["Name"].asString();
+		if(!dataNodeFallbackServicesFallbackServicesItem["SourceType"].isNull())
+			fallbackServicesItemObject.sourceType = dataNodeFallbackServicesFallbackServicesItem["SourceType"].asString();
+		if(!dataNodeFallbackServicesFallbackServicesItem["Namespace"].isNull())
+			fallbackServicesItemObject._namespace = dataNodeFallbackServicesFallbackServicesItem["Namespace"].asString();
+		if(!dataNodeFallbackServicesFallbackServicesItem["GroupName"].isNull())
+			fallbackServicesItemObject.groupName = dataNodeFallbackServicesFallbackServicesItem["GroupName"].asString();
+		if(!dataNodeFallbackServicesFallbackServicesItem["AgreementType"].isNull())
+			fallbackServicesItemObject.agreementType = dataNodeFallbackServicesFallbackServicesItem["AgreementType"].asString();
+		if(!dataNodeFallbackServicesFallbackServicesItem["ServicePort"].isNull())
+			fallbackServicesItemObject.servicePort = std::stoi(dataNodeFallbackServicesFallbackServicesItem["ServicePort"].asString());
+		data_.fallbackServices.push_back(fallbackServicesItemObject);
 	}
 	auto routePredicatesNode = dataNode["RoutePredicates"];
 	auto allHeaderPredicatesNode = routePredicatesNode["HeaderPredicates"]["HeaderPredicatesItem"];

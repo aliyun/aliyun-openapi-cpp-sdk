@@ -30,13 +30,19 @@ class ALIBABACLOUD_MSE_EXPORT GetKubernetesSourceRequest : public RpcServiceRequ
 public:
 	GetKubernetesSourceRequest();
 	~GetKubernetesSourceRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
+	std::string getVpcId() const;
+	void setVpcId(const std::string &vpcId);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
+	std::string vpcId_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

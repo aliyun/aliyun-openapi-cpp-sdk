@@ -25,6 +25,15 @@ UpdateGatewayRouteRetryRequest::UpdateGatewayRouteRetryRequest()
 
 UpdateGatewayRouteRetryRequest::~UpdateGatewayRouteRetryRequest() {}
 
+std::string UpdateGatewayRouteRetryRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateGatewayRouteRetryRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateGatewayRouteRetryRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -50,15 +59,6 @@ void UpdateGatewayRouteRetryRequest::setRetryJSON(const UpdateGatewayRouteRetryR
   setParameter(std::string("RetryJSON") + ".Status", retryJSON.status);
 }
 
-std::string UpdateGatewayRouteRetryRequest::getAcceptLanguage() const {
-  return acceptLanguage_;
-}
-
-void UpdateGatewayRouteRetryRequest::setAcceptLanguage(const std::string &acceptLanguage) {
-  acceptLanguage_ = acceptLanguage;
-  setParameter(std::string("AcceptLanguage"), acceptLanguage);
-}
-
 long UpdateGatewayRouteRetryRequest::getId() const {
   return id_;
 }
@@ -75,5 +75,14 @@ long UpdateGatewayRouteRetryRequest::getGatewayId() const {
 void UpdateGatewayRouteRetryRequest::setGatewayId(long gatewayId) {
   gatewayId_ = gatewayId;
   setParameter(std::string("GatewayId"), std::to_string(gatewayId));
+}
+
+std::string UpdateGatewayRouteRetryRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void UpdateGatewayRouteRetryRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
 }
 

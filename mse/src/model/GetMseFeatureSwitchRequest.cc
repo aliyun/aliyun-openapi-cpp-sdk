@@ -25,6 +25,15 @@ GetMseFeatureSwitchRequest::GetMseFeatureSwitchRequest()
 
 GetMseFeatureSwitchRequest::~GetMseFeatureSwitchRequest() {}
 
+std::string GetMseFeatureSwitchRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetMseFeatureSwitchRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string GetMseFeatureSwitchRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

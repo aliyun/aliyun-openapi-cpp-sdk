@@ -25,6 +25,15 @@ UpdateGatewayOptionRequest::UpdateGatewayOptionRequest()
 
 UpdateGatewayOptionRequest::~UpdateGatewayOptionRequest() {}
 
+std::string UpdateGatewayOptionRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void UpdateGatewayOptionRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string UpdateGatewayOptionRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }

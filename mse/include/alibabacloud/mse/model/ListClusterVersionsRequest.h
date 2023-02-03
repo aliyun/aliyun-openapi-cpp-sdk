@@ -30,13 +30,19 @@ class ALIBABACLOUD_MSE_EXPORT ListClusterVersionsRequest : public RpcServiceRequ
 public:
 	ListClusterVersionsRequest();
 	~ListClusterVersionsRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getClusterType() const;
 	void setClusterType(const std::string &clusterType);
+	std::string getMseVersion() const;
+	void setMseVersion(const std::string &mseVersion);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string clusterType_;
+	std::string mseVersion_;
 	std::string acceptLanguage_;
 };
 } // namespace Model

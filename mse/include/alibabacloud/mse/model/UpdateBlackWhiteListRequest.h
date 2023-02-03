@@ -30,6 +30,10 @@ class ALIBABACLOUD_MSE_EXPORT UpdateBlackWhiteListRequest : public RpcServiceReq
 public:
 	UpdateBlackWhiteListRequest();
 	~UpdateBlackWhiteListRequest();
+	std::string getNote() const;
+	void setNote(const std::string &note);
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getGatewayUniqueId() const;
 	void setGatewayUniqueId(const std::string &gatewayUniqueId);
 	std::string getType() const;
@@ -38,22 +42,30 @@ public:
 	void setContent(const std::string &content);
 	bool getIsWhite() const;
 	void setIsWhite(bool isWhite);
+	std::string getResourceIdJsonList() const;
+	void setResourceIdJsonList(const std::string &resourceIdJsonList);
 	long getId() const;
 	void setId(long id);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
+	std::string getName() const;
+	void setName(const std::string &name);
 	std::string getAcceptLanguage() const;
 	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 
 private:
+	std::string note_;
+	std::string mseSessionId_;
 	std::string gatewayUniqueId_;
 	std::string type_;
 	std::string content_;
 	bool isWhite_;
+	std::string resourceIdJsonList_;
 	long id_;
 	std::string resourceType_;
+	std::string name_;
 	std::string acceptLanguage_;
 	std::string status_;
 };

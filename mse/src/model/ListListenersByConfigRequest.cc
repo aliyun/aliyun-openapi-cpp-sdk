@@ -25,6 +25,15 @@ ListListenersByConfigRequest::ListListenersByConfigRequest()
 
 ListListenersByConfigRequest::~ListListenersByConfigRequest() {}
 
+std::string ListListenersByConfigRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListListenersByConfigRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListListenersByConfigRequest::getInstanceId() const {
   return instanceId_;
 }

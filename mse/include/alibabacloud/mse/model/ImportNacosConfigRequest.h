@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT ImportNacosConfigRequest : public RpcServiceReques
 public:
 	ImportNacosConfigRequest();
 	~ImportNacosConfigRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getNamespaceId() const;
@@ -42,6 +44,7 @@ public:
 	void setPolicy(const std::string &policy);
 
 private:
+	std::string mseSessionId_;
 	std::string instanceId_;
 	std::string namespaceId_;
 	std::string acceptLanguage_;

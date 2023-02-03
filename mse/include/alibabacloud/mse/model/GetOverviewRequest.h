@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT GetOverviewRequest : public RpcServiceRequest {
 public:
 	GetOverviewRequest();
 	~GetOverviewRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	int getPeriod() const;
 	void setPeriod(int period);
 	std::string getAcceptLanguage() const;
@@ -38,6 +40,7 @@ public:
 	void setRegion(const std::string &region);
 
 private:
+	std::string mseSessionId_;
 	int period_;
 	std::string acceptLanguage_;
 	std::string region_;

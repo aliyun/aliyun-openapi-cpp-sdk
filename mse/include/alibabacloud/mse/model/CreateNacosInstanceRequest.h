@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT CreateNacosInstanceRequest : public RpcServiceRequ
 public:
 	CreateNacosInstanceRequest();
 	~CreateNacosInstanceRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getMetadata() const;
 	void setMetadata(const std::string &metadata);
 	std::string getClusterName() const;
@@ -56,6 +58,7 @@ public:
 	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string metadata_;
 	std::string clusterName_;
 	bool ephemeral_;

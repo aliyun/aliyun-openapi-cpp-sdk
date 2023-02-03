@@ -64,6 +64,7 @@ namespace AlibabaCloud
 							std::string slbSpec;
 							std::string internetNetworkFlow;
 						};
+						std::string resourceGroupId;
 						std::string currentVersion;
 						std::vector<Gateways::SlbItem> slb;
 						std::string gmtModified;
@@ -74,7 +75,9 @@ namespace AlibabaCloud
 						std::string appVersion;
 						std::string statusDesc;
 						bool armsOn;
+						std::string mseTag;
 						std::vector<Gateways::InternetSlbItem> internetSlb;
+						std::string gatewayVersion;
 						int status;
 						bool supportWasm;
 						bool mustUpgrade;
@@ -84,6 +87,7 @@ namespace AlibabaCloud
 						std::string endDate;
 						std::string gatewayUniqueId;
 						std::string gmtCreate;
+						bool rollBack;
 						std::string latestVersion;
 						std::string chargeType;
 						InitConfig initConfig;

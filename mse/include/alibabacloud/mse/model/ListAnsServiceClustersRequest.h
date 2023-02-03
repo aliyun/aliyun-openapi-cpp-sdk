@@ -30,38 +30,41 @@ class ALIBABACLOUD_MSE_EXPORT ListAnsServiceClustersRequest : public RpcServiceR
 public:
 	ListAnsServiceClustersRequest();
 	~ListAnsServiceClustersRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getClusterName() const;
 	void setClusterName(const std::string &clusterName);
-	std::string getClusterId() const;
-	void setClusterId(const std::string &clusterId);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	std::string getGroupName() const;
-	void setGroupName(const std::string &groupName);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 	std::string getNamespaceId() const;
 	void setNamespaceId(const std::string &namespaceId);
 	std::string getRequestPars() const;
 	void setRequestPars(const std::string &requestPars);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
 	std::string getServiceName() const;
 	void setServiceName(const std::string &serviceName);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
+	std::string getGroupName() const;
+	void setGroupName(const std::string &groupName);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	std::string getAcceptLanguage() const;
+	void setAcceptLanguage(const std::string &acceptLanguage);
 
 private:
+	std::string mseSessionId_;
 	std::string clusterName_;
-	std::string clusterId_;
 	int pageNum_;
-	std::string groupName_;
-	std::string instanceId_;
 	std::string namespaceId_;
 	std::string requestPars_;
 	int pageSize_;
-	std::string acceptLanguage_;
 	std::string serviceName_;
+	std::string clusterId_;
+	std::string groupName_;
+	std::string instanceId_;
+	std::string acceptLanguage_;
 };
 } // namespace Model
 } // namespace Mse

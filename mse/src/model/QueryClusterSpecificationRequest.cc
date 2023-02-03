@@ -25,6 +25,15 @@ QueryClusterSpecificationRequest::QueryClusterSpecificationRequest()
 
 QueryClusterSpecificationRequest::~QueryClusterSpecificationRequest() {}
 
+std::string QueryClusterSpecificationRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void QueryClusterSpecificationRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string QueryClusterSpecificationRequest::getConnectType() const {
   return connectType_;
 }
@@ -32,6 +41,15 @@ std::string QueryClusterSpecificationRequest::getConnectType() const {
 void QueryClusterSpecificationRequest::setConnectType(const std::string &connectType) {
   connectType_ = connectType;
   setParameter(std::string("ConnectType"), connectType);
+}
+
+std::string QueryClusterSpecificationRequest::getMseVersion() const {
+  return mseVersion_;
+}
+
+void QueryClusterSpecificationRequest::setMseVersion(const std::string &mseVersion) {
+  mseVersion_ = mseVersion;
+  setParameter(std::string("MseVersion"), mseVersion);
 }
 
 std::string QueryClusterSpecificationRequest::getAcceptLanguage() const {

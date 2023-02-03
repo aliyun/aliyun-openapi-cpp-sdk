@@ -25,6 +25,15 @@ GetKubernetesSourceRequest::GetKubernetesSourceRequest()
 
 GetKubernetesSourceRequest::~GetKubernetesSourceRequest() {}
 
+std::string GetKubernetesSourceRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetKubernetesSourceRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string GetKubernetesSourceRequest::getGatewayUniqueId() const {
   return gatewayUniqueId_;
 }
@@ -32,6 +41,15 @@ std::string GetKubernetesSourceRequest::getGatewayUniqueId() const {
 void GetKubernetesSourceRequest::setGatewayUniqueId(const std::string &gatewayUniqueId) {
   gatewayUniqueId_ = gatewayUniqueId;
   setParameter(std::string("GatewayUniqueId"), gatewayUniqueId);
+}
+
+std::string GetKubernetesSourceRequest::getVpcId() const {
+  return vpcId_;
+}
+
+void GetKubernetesSourceRequest::setVpcId(const std::string &vpcId) {
+  vpcId_ = vpcId;
+  setParameter(std::string("VpcId"), vpcId);
 }
 
 std::string GetKubernetesSourceRequest::getAcceptLanguage() const {

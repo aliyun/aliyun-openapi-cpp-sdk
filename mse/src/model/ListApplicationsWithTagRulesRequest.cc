@@ -25,6 +25,15 @@ ListApplicationsWithTagRulesRequest::ListApplicationsWithTagRulesRequest()
 
 ListApplicationsWithTagRulesRequest::~ListApplicationsWithTagRulesRequest() {}
 
+std::string ListApplicationsWithTagRulesRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void ListApplicationsWithTagRulesRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string ListApplicationsWithTagRulesRequest::getSource() const {
   return source_;
 }

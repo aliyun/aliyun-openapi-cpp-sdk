@@ -30,6 +30,8 @@ class ALIBABACLOUD_MSE_EXPORT GetAppMessageQueueRouteRequest : public RpcService
 public:
 	GetAppMessageQueueRouteRequest();
 	~GetAppMessageQueueRouteRequest();
+	std::string getMseSessionId() const;
+	void setMseSessionId(const std::string &mseSessionId);
 	std::string getAppId() const;
 	void setAppId(const std::string &appId);
 	std::string getAcceptLanguage() const;
@@ -38,6 +40,7 @@ public:
 	void setRegion(const std::string &region);
 
 private:
+	std::string mseSessionId_;
 	std::string appId_;
 	std::string acceptLanguage_;
 	std::string region_;

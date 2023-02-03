@@ -25,6 +25,15 @@ GetNacosConfigRequest::GetNacosConfigRequest()
 
 GetNacosConfigRequest::~GetNacosConfigRequest() {}
 
+std::string GetNacosConfigRequest::getMseSessionId() const {
+  return mseSessionId_;
+}
+
+void GetNacosConfigRequest::setMseSessionId(const std::string &mseSessionId) {
+  mseSessionId_ = mseSessionId;
+  setParameter(std::string("MseSessionId"), mseSessionId);
+}
+
 std::string GetNacosConfigRequest::getInstanceId() const {
   return instanceId_;
 }
