@@ -38,6 +38,8 @@
 #include "model/BodyPostureResult.h"
 #include "model/CompareFaceRequest.h"
 #include "model/CompareFaceResult.h"
+#include "model/CompareFaceWithMaskRequest.h"
+#include "model/CompareFaceWithMaskResult.h"
 #include "model/CountCrowdRequest.h"
 #include "model/CountCrowdResult.h"
 #include "model/CreateFaceDbRequest.h"
@@ -60,6 +62,8 @@
 #include "model/DetectFaceResult.h"
 #include "model/DetectIPCPedestrianRequest.h"
 #include "model/DetectIPCPedestrianResult.h"
+#include "model/DetectInfraredLivingFaceRequest.h"
+#include "model/DetectInfraredLivingFaceResult.h"
 #include "model/DetectLivingFaceRequest.h"
 #include "model/DetectLivingFaceResult.h"
 #include "model/DetectPedestrianRequest.h"
@@ -163,6 +167,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CompareFaceResult> CompareFaceOutcome;
 			typedef std::future<CompareFaceOutcome> CompareFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::CompareFaceRequest&, const CompareFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompareFaceAsyncHandler;
+			typedef Outcome<Error, Model::CompareFaceWithMaskResult> CompareFaceWithMaskOutcome;
+			typedef std::future<CompareFaceWithMaskOutcome> CompareFaceWithMaskOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::CompareFaceWithMaskRequest&, const CompareFaceWithMaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompareFaceWithMaskAsyncHandler;
 			typedef Outcome<Error, Model::CountCrowdResult> CountCrowdOutcome;
 			typedef std::future<CountCrowdOutcome> CountCrowdOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::CountCrowdRequest&, const CountCrowdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CountCrowdAsyncHandler;
@@ -196,6 +203,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectIPCPedestrianResult> DetectIPCPedestrianOutcome;
 			typedef std::future<DetectIPCPedestrianOutcome> DetectIPCPedestrianOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectIPCPedestrianRequest&, const DetectIPCPedestrianOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectIPCPedestrianAsyncHandler;
+			typedef Outcome<Error, Model::DetectInfraredLivingFaceResult> DetectInfraredLivingFaceOutcome;
+			typedef std::future<DetectInfraredLivingFaceOutcome> DetectInfraredLivingFaceOutcomeCallable;
+			typedef std::function<void(const FacebodyClient*, const Model::DetectInfraredLivingFaceRequest&, const DetectInfraredLivingFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectInfraredLivingFaceAsyncHandler;
 			typedef Outcome<Error, Model::DetectLivingFaceResult> DetectLivingFaceOutcome;
 			typedef std::future<DetectLivingFaceOutcome> DetectLivingFaceOutcomeCallable;
 			typedef std::function<void(const FacebodyClient*, const Model::DetectLivingFaceRequest&, const DetectLivingFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectLivingFaceAsyncHandler;
@@ -330,6 +340,9 @@ namespace AlibabaCloud
 			CompareFaceOutcome compareFace(const Model::CompareFaceRequest &request)const;
 			void compareFaceAsync(const Model::CompareFaceRequest& request, const CompareFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CompareFaceOutcomeCallable compareFaceCallable(const Model::CompareFaceRequest& request) const;
+			CompareFaceWithMaskOutcome compareFaceWithMask(const Model::CompareFaceWithMaskRequest &request)const;
+			void compareFaceWithMaskAsync(const Model::CompareFaceWithMaskRequest& request, const CompareFaceWithMaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CompareFaceWithMaskOutcomeCallable compareFaceWithMaskCallable(const Model::CompareFaceWithMaskRequest& request) const;
 			CountCrowdOutcome countCrowd(const Model::CountCrowdRequest &request)const;
 			void countCrowdAsync(const Model::CountCrowdRequest& request, const CountCrowdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CountCrowdOutcomeCallable countCrowdCallable(const Model::CountCrowdRequest& request) const;
@@ -363,6 +376,9 @@ namespace AlibabaCloud
 			DetectIPCPedestrianOutcome detectIPCPedestrian(const Model::DetectIPCPedestrianRequest &request)const;
 			void detectIPCPedestrianAsync(const Model::DetectIPCPedestrianRequest& request, const DetectIPCPedestrianAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectIPCPedestrianOutcomeCallable detectIPCPedestrianCallable(const Model::DetectIPCPedestrianRequest& request) const;
+			DetectInfraredLivingFaceOutcome detectInfraredLivingFace(const Model::DetectInfraredLivingFaceRequest &request)const;
+			void detectInfraredLivingFaceAsync(const Model::DetectInfraredLivingFaceRequest& request, const DetectInfraredLivingFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetectInfraredLivingFaceOutcomeCallable detectInfraredLivingFaceCallable(const Model::DetectInfraredLivingFaceRequest& request) const;
 			DetectLivingFaceOutcome detectLivingFace(const Model::DetectLivingFaceRequest &request)const;
 			void detectLivingFaceAsync(const Model::DetectLivingFaceRequest& request, const DetectLivingFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectLivingFaceOutcomeCallable detectLivingFaceCallable(const Model::DetectLivingFaceRequest& request) const;

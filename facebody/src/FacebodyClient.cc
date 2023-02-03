@@ -339,6 +339,42 @@ FacebodyClient::CompareFaceOutcomeCallable FacebodyClient::compareFaceCallable(c
 	return task->get_future();
 }
 
+FacebodyClient::CompareFaceWithMaskOutcome FacebodyClient::compareFaceWithMask(const CompareFaceWithMaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CompareFaceWithMaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CompareFaceWithMaskOutcome(CompareFaceWithMaskResult(outcome.result()));
+	else
+		return CompareFaceWithMaskOutcome(outcome.error());
+}
+
+void FacebodyClient::compareFaceWithMaskAsync(const CompareFaceWithMaskRequest& request, const CompareFaceWithMaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, compareFaceWithMask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::CompareFaceWithMaskOutcomeCallable FacebodyClient::compareFaceWithMaskCallable(const CompareFaceWithMaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CompareFaceWithMaskOutcome()>>(
+			[this, request]()
+			{
+			return this->compareFaceWithMask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 FacebodyClient::CountCrowdOutcome FacebodyClient::countCrowd(const CountCrowdRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -729,6 +765,42 @@ FacebodyClient::DetectIPCPedestrianOutcomeCallable FacebodyClient::detectIPCPede
 			[this, request]()
 			{
 			return this->detectIPCPedestrian(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+FacebodyClient::DetectInfraredLivingFaceOutcome FacebodyClient::detectInfraredLivingFace(const DetectInfraredLivingFaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectInfraredLivingFaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectInfraredLivingFaceOutcome(DetectInfraredLivingFaceResult(outcome.result()));
+	else
+		return DetectInfraredLivingFaceOutcome(outcome.error());
+}
+
+void FacebodyClient::detectInfraredLivingFaceAsync(const DetectInfraredLivingFaceRequest& request, const DetectInfraredLivingFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectInfraredLivingFace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+FacebodyClient::DetectInfraredLivingFaceOutcomeCallable FacebodyClient::detectInfraredLivingFaceCallable(const DetectInfraredLivingFaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectInfraredLivingFaceOutcome()>>(
+			[this, request]()
+			{
+			return this->detectInfraredLivingFace(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
