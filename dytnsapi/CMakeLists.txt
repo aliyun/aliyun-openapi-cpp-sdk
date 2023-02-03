@@ -21,6 +21,8 @@ set(dytnsapi_public_header
 	include/alibabacloud/dytnsapi/DytnsapiExport.h )
 
 set(dytnsapi_public_header_model 
+	include/alibabacloud/dytnsapi/model/DescribeEmptyNumberRequest.h
+	include/alibabacloud/dytnsapi/model/DescribeEmptyNumberResult.h
 	include/alibabacloud/dytnsapi/model/DescribeEmptyNumberDetectRequest.h
 	include/alibabacloud/dytnsapi/model/DescribeEmptyNumberDetectResult.h
 	include/alibabacloud/dytnsapi/model/DescribePhoneNumberAnalysisRequest.h
@@ -60,6 +62,8 @@ set(dytnsapi_public_header_model
 
 set(dytnsapi_src 
 	src/DytnsapiClient.cc
+	src/model/DescribeEmptyNumberRequest.cc
+	src/model/DescribeEmptyNumberResult.cc
 	src/model/DescribeEmptyNumberDetectRequest.cc
 	src/model/DescribeEmptyNumberDetectResult.cc
 	src/model/DescribePhoneNumberAnalysisRequest.cc

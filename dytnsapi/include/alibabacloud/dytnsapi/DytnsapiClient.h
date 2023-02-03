@@ -22,6 +22,8 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "DytnsapiExport.h"
+#include "model/DescribeEmptyNumberRequest.h"
+#include "model/DescribeEmptyNumberResult.h"
 #include "model/DescribeEmptyNumberDetectRequest.h"
 #include "model/DescribeEmptyNumberDetectResult.h"
 #include "model/DescribePhoneNumberAnalysisRequest.h"
@@ -67,6 +69,9 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_DYTNSAPI_EXPORT DytnsapiClient : public RpcServiceClient
 		{
 		public:
+			typedef Outcome<Error, Model::DescribeEmptyNumberResult> DescribeEmptyNumberOutcome;
+			typedef std::future<DescribeEmptyNumberOutcome> DescribeEmptyNumberOutcomeCallable;
+			typedef std::function<void(const DytnsapiClient*, const Model::DescribeEmptyNumberRequest&, const DescribeEmptyNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmptyNumberAsyncHandler;
 			typedef Outcome<Error, Model::DescribeEmptyNumberDetectResult> DescribeEmptyNumberDetectOutcome;
 			typedef std::future<DescribeEmptyNumberDetectOutcome> DescribeEmptyNumberDetectOutcomeCallable;
 			typedef std::function<void(const DytnsapiClient*, const Model::DescribeEmptyNumberDetectRequest&, const DescribeEmptyNumberDetectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmptyNumberDetectAsyncHandler;
@@ -126,6 +131,9 @@ namespace AlibabaCloud
 			DytnsapiClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			DytnsapiClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~DytnsapiClient();
+			DescribeEmptyNumberOutcome describeEmptyNumber(const Model::DescribeEmptyNumberRequest &request)const;
+			void describeEmptyNumberAsync(const Model::DescribeEmptyNumberRequest& request, const DescribeEmptyNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeEmptyNumberOutcomeCallable describeEmptyNumberCallable(const Model::DescribeEmptyNumberRequest& request) const;
 			DescribeEmptyNumberDetectOutcome describeEmptyNumberDetect(const Model::DescribeEmptyNumberDetectRequest &request)const;
 			void describeEmptyNumberDetectAsync(const Model::DescribeEmptyNumberDetectRequest& request, const DescribeEmptyNumberDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEmptyNumberDetectOutcomeCallable describeEmptyNumberDetectCallable(const Model::DescribeEmptyNumberDetectRequest& request) const;
