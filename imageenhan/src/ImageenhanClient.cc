@@ -375,6 +375,78 @@ ImageenhanClient::GenerateDynamicImageOutcomeCallable ImageenhanClient::generate
 	return task->get_future();
 }
 
+ImageenhanClient::GenerateImageWithTextOutcome ImageenhanClient::generateImageWithText(const GenerateImageWithTextRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateImageWithTextOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateImageWithTextOutcome(GenerateImageWithTextResult(outcome.result()));
+	else
+		return GenerateImageWithTextOutcome(outcome.error());
+}
+
+void ImageenhanClient::generateImageWithTextAsync(const GenerateImageWithTextRequest& request, const GenerateImageWithTextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateImageWithText(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageenhanClient::GenerateImageWithTextOutcomeCallable ImageenhanClient::generateImageWithTextCallable(const GenerateImageWithTextRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateImageWithTextOutcome()>>(
+			[this, request]()
+			{
+			return this->generateImageWithText(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImageenhanClient::GenerateImageWithTextAndImageOutcome ImageenhanClient::generateImageWithTextAndImage(const GenerateImageWithTextAndImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateImageWithTextAndImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateImageWithTextAndImageOutcome(GenerateImageWithTextAndImageResult(outcome.result()));
+	else
+		return GenerateImageWithTextAndImageOutcome(outcome.error());
+}
+
+void ImageenhanClient::generateImageWithTextAndImageAsync(const GenerateImageWithTextAndImageRequest& request, const GenerateImageWithTextAndImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateImageWithTextAndImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageenhanClient::GenerateImageWithTextAndImageOutcomeCallable ImageenhanClient::generateImageWithTextAndImageCallable(const GenerateImageWithTextAndImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateImageWithTextAndImageOutcome()>>(
+			[this, request]()
+			{
+			return this->generateImageWithTextAndImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageenhanClient::GetAsyncJobResultOutcome ImageenhanClient::getAsyncJobResult(const GetAsyncJobResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

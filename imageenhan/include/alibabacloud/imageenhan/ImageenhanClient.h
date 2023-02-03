@@ -40,6 +40,10 @@
 #include "model/ExtendImageStyleResult.h"
 #include "model/GenerateDynamicImageRequest.h"
 #include "model/GenerateDynamicImageResult.h"
+#include "model/GenerateImageWithTextRequest.h"
+#include "model/GenerateImageWithTextResult.h"
+#include "model/GenerateImageWithTextAndImageRequest.h"
+#include "model/GenerateImageWithTextAndImageResult.h"
 #include "model/GetAsyncJobResultRequest.h"
 #include "model/GetAsyncJobResultResult.h"
 #include "model/ImageBlindCharacterWatermarkRequest.h"
@@ -96,6 +100,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GenerateDynamicImageResult> GenerateDynamicImageOutcome;
 			typedef std::future<GenerateDynamicImageOutcome> GenerateDynamicImageOutcomeCallable;
 			typedef std::function<void(const ImageenhanClient*, const Model::GenerateDynamicImageRequest&, const GenerateDynamicImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateDynamicImageAsyncHandler;
+			typedef Outcome<Error, Model::GenerateImageWithTextResult> GenerateImageWithTextOutcome;
+			typedef std::future<GenerateImageWithTextOutcome> GenerateImageWithTextOutcomeCallable;
+			typedef std::function<void(const ImageenhanClient*, const Model::GenerateImageWithTextRequest&, const GenerateImageWithTextOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateImageWithTextAsyncHandler;
+			typedef Outcome<Error, Model::GenerateImageWithTextAndImageResult> GenerateImageWithTextAndImageOutcome;
+			typedef std::future<GenerateImageWithTextAndImageOutcome> GenerateImageWithTextAndImageOutcomeCallable;
+			typedef std::function<void(const ImageenhanClient*, const Model::GenerateImageWithTextAndImageRequest&, const GenerateImageWithTextAndImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateImageWithTextAndImageAsyncHandler;
 			typedef Outcome<Error, Model::GetAsyncJobResultResult> GetAsyncJobResultOutcome;
 			typedef std::future<GetAsyncJobResultOutcome> GetAsyncJobResultOutcomeCallable;
 			typedef std::function<void(const ImageenhanClient*, const Model::GetAsyncJobResultRequest&, const GetAsyncJobResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncJobResultAsyncHandler;
@@ -158,6 +168,12 @@ namespace AlibabaCloud
 			GenerateDynamicImageOutcome generateDynamicImage(const Model::GenerateDynamicImageRequest &request)const;
 			void generateDynamicImageAsync(const Model::GenerateDynamicImageRequest& request, const GenerateDynamicImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateDynamicImageOutcomeCallable generateDynamicImageCallable(const Model::GenerateDynamicImageRequest& request) const;
+			GenerateImageWithTextOutcome generateImageWithText(const Model::GenerateImageWithTextRequest &request)const;
+			void generateImageWithTextAsync(const Model::GenerateImageWithTextRequest& request, const GenerateImageWithTextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GenerateImageWithTextOutcomeCallable generateImageWithTextCallable(const Model::GenerateImageWithTextRequest& request) const;
+			GenerateImageWithTextAndImageOutcome generateImageWithTextAndImage(const Model::GenerateImageWithTextAndImageRequest &request)const;
+			void generateImageWithTextAndImageAsync(const Model::GenerateImageWithTextAndImageRequest& request, const GenerateImageWithTextAndImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GenerateImageWithTextAndImageOutcomeCallable generateImageWithTextAndImageCallable(const Model::GenerateImageWithTextAndImageRequest& request) const;
 			GetAsyncJobResultOutcome getAsyncJobResult(const Model::GetAsyncJobResultRequest &request)const;
 			void getAsyncJobResultAsync(const Model::GetAsyncJobResultRequest& request, const GetAsyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAsyncJobResultOutcomeCallable getAsyncJobResultCallable(const Model::GetAsyncJobResultRequest& request) const;
