@@ -79,6 +79,8 @@ void ListServiceInstancesResult::parse(const std::string &payload)
 			serviceInstancesObject.serviceType = valueServiceInstancesServiceInstance["ServiceType"].asString();
 		if(!valueServiceInstancesServiceInstance["PayType"].isNull())
 			serviceInstancesObject.payType = valueServiceInstancesServiceInstance["PayType"].asString();
+		if(!valueServiceInstancesServiceInstance["IsOperated"].isNull())
+			serviceInstancesObject.isOperated = valueServiceInstancesServiceInstance["IsOperated"].asString() == "true";
 		auto allTagsNode = valueServiceInstancesServiceInstance["Tags"]["Tag"];
 		for (auto valueServiceInstancesServiceInstanceTagsTag : allTagsNode)
 		{

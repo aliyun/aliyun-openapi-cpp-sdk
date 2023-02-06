@@ -339,6 +339,42 @@ ComputeNestSupplierClient::ListServiceInstancesOutcomeCallable ComputeNestSuppli
 	return task->get_future();
 }
 
+ComputeNestSupplierClient::ListServiceUsagesOutcome ComputeNestSupplierClient::listServiceUsages(const ListServiceUsagesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListServiceUsagesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListServiceUsagesOutcome(ListServiceUsagesResult(outcome.result()));
+	else
+		return ListServiceUsagesOutcome(outcome.error());
+}
+
+void ComputeNestSupplierClient::listServiceUsagesAsync(const ListServiceUsagesRequest& request, const ListServiceUsagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listServiceUsages(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ComputeNestSupplierClient::ListServiceUsagesOutcomeCallable ComputeNestSupplierClient::listServiceUsagesCallable(const ListServiceUsagesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListServiceUsagesOutcome()>>(
+			[this, request]()
+			{
+			return this->listServiceUsages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ComputeNestSupplierClient::ReleaseArtifactOutcome ComputeNestSupplierClient::releaseArtifact(const ReleaseArtifactRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

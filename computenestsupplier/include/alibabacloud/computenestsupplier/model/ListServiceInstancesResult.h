@@ -79,6 +79,7 @@ namespace AlibabaCloud
 					std::string statusDetail;
 					std::string updateTime;
 					std::string templateName;
+					bool isOperated;
 					std::vector<ServiceInstance::Tag> tags;
 				};
 

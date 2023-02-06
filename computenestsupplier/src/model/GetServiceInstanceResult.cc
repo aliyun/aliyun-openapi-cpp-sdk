@@ -101,6 +101,29 @@ void GetServiceInstanceResult::parse(const std::string &payload)
 			privateVpcConnectionObject.endpointId = networkConfigNodePrivateVpcConnectionsPrivateVpcConnection["EndpointId"].asString();
 		if(!networkConfigNodePrivateVpcConnectionsPrivateVpcConnection["EndpointServiceId"].isNull())
 			privateVpcConnectionObject.endpointServiceId = networkConfigNodePrivateVpcConnectionsPrivateVpcConnection["EndpointServiceId"].asString();
+		if(!networkConfigNodePrivateVpcConnectionsPrivateVpcConnection["PrivateZoneName"].isNull())
+			privateVpcConnectionObject.privateZoneName = networkConfigNodePrivateVpcConnectionsPrivateVpcConnection["PrivateZoneName"].asString();
+		auto allConnectionConfigsNode = networkConfigNodePrivateVpcConnectionsPrivateVpcConnection["ConnectionConfigs"]["ConnectionConfig"];
+		for (auto networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig : allConnectionConfigsNode)
+		{
+			NetworkConfig::PrivateVpcConnection::ConnectionConfig connectionConfigsObject;
+			if(!networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["VpcId"].isNull())
+				connectionConfigsObject.vpcId = networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["VpcId"].asString();
+			if(!networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["IngressEndpointStatus"].isNull())
+				connectionConfigsObject.ingressEndpointStatus = networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["IngressEndpointStatus"].asString();
+			if(!networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["NetworkServiceStatus"].isNull())
+				connectionConfigsObject.networkServiceStatus = networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["NetworkServiceStatus"].asString();
+			auto allSecurityGroups = value["SecurityGroups"]["SecurityGroup"];
+			for (auto value : allSecurityGroups)
+				connectionConfigsObject.securityGroups.push_back(value.asString());
+			auto allVSwitches = value["VSwitches"]["VSwitch"];
+			for (auto value : allVSwitches)
+				connectionConfigsObject.vSwitches.push_back(value.asString());
+			auto allEndpointIps = value["EndpointIps"]["EndpointIp"];
+			for (auto value : allEndpointIps)
+				connectionConfigsObject.endpointIps.push_back(value.asString());
+			privateVpcConnectionObject.connectionConfigs.push_back(connectionConfigsObject);
+		}
 		networkConfig_.privateVpcConnections.push_back(privateVpcConnectionObject);
 	}
 	auto allReversePrivateVpcConnectionsNode = networkConfigNode["ReversePrivateVpcConnections"]["ReversePrivateVpcConnection"];

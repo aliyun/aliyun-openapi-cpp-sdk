@@ -38,6 +38,8 @@
 #include "model/ListArtifactsResult.h"
 #include "model/ListServiceInstancesRequest.h"
 #include "model/ListServiceInstancesResult.h"
+#include "model/ListServiceUsagesRequest.h"
+#include "model/ListServiceUsagesResult.h"
 #include "model/ReleaseArtifactRequest.h"
 #include "model/ReleaseArtifactResult.h"
 #include "model/UpdateArtifactRequest.h"
@@ -75,6 +77,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListServiceInstancesResult> ListServiceInstancesOutcome;
 			typedef std::future<ListServiceInstancesOutcome> ListServiceInstancesOutcomeCallable;
 			typedef std::function<void(const ComputeNestSupplierClient*, const Model::ListServiceInstancesRequest&, const ListServiceInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListServiceInstancesAsyncHandler;
+			typedef Outcome<Error, Model::ListServiceUsagesResult> ListServiceUsagesOutcome;
+			typedef std::future<ListServiceUsagesOutcome> ListServiceUsagesOutcomeCallable;
+			typedef std::function<void(const ComputeNestSupplierClient*, const Model::ListServiceUsagesRequest&, const ListServiceUsagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListServiceUsagesAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseArtifactResult> ReleaseArtifactOutcome;
 			typedef std::future<ReleaseArtifactOutcome> ReleaseArtifactOutcomeCallable;
 			typedef std::function<void(const ComputeNestSupplierClient*, const Model::ReleaseArtifactRequest&, const ReleaseArtifactOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseArtifactAsyncHandler;
@@ -110,6 +115,9 @@ namespace AlibabaCloud
 			ListServiceInstancesOutcome listServiceInstances(const Model::ListServiceInstancesRequest &request)const;
 			void listServiceInstancesAsync(const Model::ListServiceInstancesRequest& request, const ListServiceInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListServiceInstancesOutcomeCallable listServiceInstancesCallable(const Model::ListServiceInstancesRequest& request) const;
+			ListServiceUsagesOutcome listServiceUsages(const Model::ListServiceUsagesRequest &request)const;
+			void listServiceUsagesAsync(const Model::ListServiceUsagesRequest& request, const ListServiceUsagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListServiceUsagesOutcomeCallable listServiceUsagesCallable(const Model::ListServiceUsagesRequest& request) const;
 			ReleaseArtifactOutcome releaseArtifact(const Model::ReleaseArtifactRequest &request)const;
 			void releaseArtifactAsync(const Model::ReleaseArtifactRequest& request, const ReleaseArtifactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseArtifactOutcomeCallable releaseArtifactCallable(const Model::ReleaseArtifactRequest& request) const;

@@ -59,7 +59,18 @@ namespace AlibabaCloud
 				{
 					struct PrivateVpcConnection
 					{
+						struct ConnectionConfig
+						{
+							std::vector<std::string> securityGroups;
+							std::vector<std::string> endpointIps;
+							std::string ingressEndpointStatus;
+							std::string vpcId;
+							std::string networkServiceStatus;
+							std::vector<std::string> vSwitches;
+						};
 						std::string endpointServiceId;
+						std::string privateZoneName;
+						std::vector<PrivateVpcConnection::ConnectionConfig> connectionConfigs;
 						std::string endpointId;
 					};
 					struct ReversePrivateVpcConnection
