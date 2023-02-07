@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYMONTHLYINSTANCECONSUMPTIONRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYMONTHLYINSTANCECONSUMPTIONRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYPRICEENTITYLISTRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYPRICEENTITYLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,42 +29,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryMonthlyInstanceConsumptionResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryPriceEntityListResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Item
+					struct PriceEntityInfoDTO
 					{
-						float afterTaxAmount;
-						std::string instanceID;
-						std::string productCode;
-						std::string productType;
-						std::string paymentCurrency;
-						float tax;
-						std::string payerAccount;
-						float discountAmount;
-						std::string subscriptionType;
-						float pretaxGrossAmount;
-						float pretaxAmount;
-						std::string ownerID;
-						std::string currency;
-						std::string region;
-						std::string tag;
-						std::string resourceGroup;
-						float pretaxAmountLocal;
+						struct PriceFactorDTO
+						{
+							std::vector<std::string> priceFactorValueList;
+							std::string priceFactorName;
+							std::string priceFactorCode;
+						};
+						std::vector<PriceEntityInfoDTO::PriceFactorDTO> priceFactorList;
+						std::string priceEntityCode;
+						std::string priceEntityName;
 					};
-					std::string billingCycle;
-					int totalCount;
-					int pageNum;
-					int pageSize;
-					std::vector<Item> items;
+					std::vector<PriceEntityInfoDTO> priceEntityInfoList;
 				};
 
 
-				QueryMonthlyInstanceConsumptionResult();
-				explicit QueryMonthlyInstanceConsumptionResult(const std::string &payload);
-				~QueryMonthlyInstanceConsumptionResult();
+				QueryPriceEntityListResult();
+				explicit QueryPriceEntityListResult(const std::string &payload);
+				~QueryPriceEntityListResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -82,4 +70,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYMONTHLYINSTANCECONSUMPTIONRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYPRICEENTITYLISTRESULT_H_

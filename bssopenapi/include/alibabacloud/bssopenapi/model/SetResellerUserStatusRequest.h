@@ -30,6 +30,8 @@ class ALIBABACLOUD_BSSOPENAPI_EXPORT SetResellerUserStatusRequest : public RpcSe
 public:
 	SetResellerUserStatusRequest();
 	~SetResellerUserStatusRequest();
+	std::string getStopMode() const;
+	void setStopMode(const std::string &stopMode);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
 	std::string getBusinessType() const;
@@ -38,6 +40,7 @@ public:
 	void setStatus(const std::string &status);
 
 private:
+	std::string stopMode_;
 	std::string ownerId_;
 	std::string businessType_;
 	std::string status_;

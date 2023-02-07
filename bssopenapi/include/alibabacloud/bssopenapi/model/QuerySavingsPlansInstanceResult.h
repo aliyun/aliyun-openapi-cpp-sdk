@@ -61,6 +61,7 @@ namespace AlibabaCloud
 						std::string region;
 						std::vector<SavingsPlansDetailResponse::Tag> tags;
 						std::string savingsType;
+						std::string deductCycleType;
 					};
 					int totalCount;
 					int pageNum;

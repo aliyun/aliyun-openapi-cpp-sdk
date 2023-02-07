@@ -76,6 +76,8 @@ void QueryResourcePackageInstancesResult::parse(const std::string &payload)
 			instanceObject.totalAmountUnit = dataNodeInstancesInstance["TotalAmountUnit"].asString();
 		if(!dataNodeInstancesInstance["RemainingAmount"].isNull())
 			instanceObject.remainingAmount = dataNodeInstancesInstance["RemainingAmount"].asString();
+		if(!dataNodeInstancesInstance["CommodityCode"].isNull())
+			instanceObject.commodityCode = dataNodeInstancesInstance["CommodityCode"].asString();
 		auto allApplicableProducts = value["ApplicableProducts"]["Product"];
 		for (auto value : allApplicableProducts)
 			instanceObject.applicableProducts.push_back(value.asString());

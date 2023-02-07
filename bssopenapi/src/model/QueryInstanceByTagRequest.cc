@@ -33,6 +33,15 @@ void QueryInstanceByTagRequest::setResourceId(const std::vector<std::string> &re
   resourceId_ = resourceId;
 }
 
+std::string QueryInstanceByTagRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void QueryInstanceByTagRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
+}
+
 std::vector<QueryInstanceByTagRequest::Tag> QueryInstanceByTagRequest::getTag() const {
   return tag_;
 }
@@ -45,14 +54,5 @@ void QueryInstanceByTagRequest::setTag(const std::vector<QueryInstanceByTagReque
     setParameter(tagObjStr + ".Value", tagObj.value);
     setParameter(tagObjStr + ".Key", tagObj.key);
   }
-}
-
-std::string QueryInstanceByTagRequest::getResourceType() const {
-  return resourceType_;
-}
-
-void QueryInstanceByTagRequest::setResourceType(const std::string &resourceType) {
-  resourceType_ = resourceType;
-  setParameter(std::string("ResourceType"), resourceType);
 }
 

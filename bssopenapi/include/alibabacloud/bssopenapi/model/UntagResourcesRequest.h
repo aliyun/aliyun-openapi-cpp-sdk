@@ -34,16 +34,16 @@ public:
 	void setAll(bool all);
 	std::vector<std::string> getResourceId() const;
 	void setResourceId(const std::vector<std::string> &resourceId);
-	std::vector<std::string> getTagKey() const;
-	void setTagKey(const std::vector<std::string> &tagKey);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
+	std::vector<std::string> getTagKey() const;
+	void setTagKey(const std::vector<std::string> &tagKey);
 
 private:
 	bool all_;
 	std::vector<std::string> resourceId_;
-	std::vector<std::string> tagKey_;
 	std::string resourceType_;
+	std::vector<std::string> tagKey_;
 };
 } // namespace Model
 } // namespace BssOpenApi

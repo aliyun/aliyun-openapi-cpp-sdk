@@ -25,6 +25,15 @@ SetResellerUserStatusRequest::SetResellerUserStatusRequest()
 
 SetResellerUserStatusRequest::~SetResellerUserStatusRequest() {}
 
+std::string SetResellerUserStatusRequest::getStopMode() const {
+  return stopMode_;
+}
+
+void SetResellerUserStatusRequest::setStopMode(const std::string &stopMode) {
+  stopMode_ = stopMode;
+  setParameter(std::string("StopMode"), stopMode);
+}
+
 std::string SetResellerUserStatusRequest::getOwnerId() const {
   return ownerId_;
 }

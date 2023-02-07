@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYRESOURCEPACKAGEINSTANCESRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYRESOURCEPACKAGEINSTANCESRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSDISCOUNTRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSDISCOUNTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryResourcePackageInstancesResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QuerySavingsPlansDiscountResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Instance
+					struct SavingsPlansDiscountResponse
 					{
-						std::string status;
-						std::string instanceId;
-						std::string effectiveTime;
-						std::string expiryTime;
-						std::string totalAmount;
-						std::string remark;
-						std::string remainingAmountUnit;
-						std::string packageType;
-						std::string deductType;
-						std::string totalAmountUnit;
-						std::string commodityCode;
+						std::string spnType;
+						std::string moduleName;
+						std::string contractDiscountRate;
 						std::string region;
-						std::vector<std::string> applicableProducts;
-						std::string remainingAmount;
+						std::string spec;
+						std::string payMode;
+						std::string discountRate;
+						std::string commodityName;
+						std::string cycle;
 					};
-					std::vector<Instance> instances;
-					std::string totalCount;
-					std::string pageNum;
-					std::string pageSize;
+					std::vector<SavingsPlansDiscountResponse> items;
 					std::string hostId;
 				};
 
 
-				QueryResourcePackageInstancesResult();
-				explicit QueryResourcePackageInstancesResult(const std::string &payload);
-				~QueryResourcePackageInstancesResult();
+				QuerySavingsPlansDiscountResult();
+				explicit QuerySavingsPlansDiscountResult(const std::string &payload);
+				~QuerySavingsPlansDiscountResult();
 				std::string getMessage()const;
-				int getPageSize()const;
-				int getTotal()const;
 				Data getData()const;
-				int getPage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -74,10 +63,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				int pageSize_;
-				int total_;
 				Data data_;
-				int page_;
 				std::string code_;
 				bool success_;
 
@@ -85,4 +71,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYRESOURCEPACKAGEINSTANCESRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYSAVINGSPLANSDISCOUNTRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYMONTHLYBILLREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYMONTHLYBILLREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYPRICEENTITYLISTREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYPRICEENTITYLISTREQUEST_H_
 
 #include <alibabacloud/bssopenapi/BssOpenApiExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,17 +26,17 @@
 namespace AlibabaCloud {
 namespace BssOpenApi {
 namespace Model {
-class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryMonthlyBillRequest : public RpcServiceRequest {
+class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryPriceEntityListRequest : public RpcServiceRequest {
 public:
-	QueryMonthlyBillRequest();
-	~QueryMonthlyBillRequest();
-	std::string getBillingCycle() const;
-	void setBillingCycle(const std::string &billingCycle);
+	QueryPriceEntityListRequest();
+	~QueryPriceEntityListRequest();
+	std::string getCommodityCode() const;
+	void setCommodityCode(const std::string &commodityCode);
 
 private:
-	std::string billingCycle_;
+	std::string commodityCode_;
 };
 } // namespace Model
 } // namespace BssOpenApi
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYMONTHLYBILLREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYPRICEENTITYLISTREQUEST_H_

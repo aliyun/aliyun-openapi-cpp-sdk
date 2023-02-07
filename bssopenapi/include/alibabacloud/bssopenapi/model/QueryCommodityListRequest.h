@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYMONTHLYINSTANCECONSUMPTIONREQUEST_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYMONTHLYINSTANCECONSUMPTIONREQUEST_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOMMODITYLISTREQUEST_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOMMODITYLISTREQUEST_H_
 
 #include <alibabacloud/bssopenapi/BssOpenApiExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,17 @@
 namespace AlibabaCloud {
 namespace BssOpenApi {
 namespace Model {
-class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryMonthlyInstanceConsumptionRequest : public RpcServiceRequest {
+class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryCommodityListRequest : public RpcServiceRequest {
 public:
-	QueryMonthlyInstanceConsumptionRequest();
-	~QueryMonthlyInstanceConsumptionRequest();
+	QueryCommodityListRequest();
+	~QueryCommodityListRequest();
 	std::string getProductCode() const;
 	void setProductCode(const std::string &productCode);
-	std::string getSubscriptionType() const;
-	void setSubscriptionType(const std::string &subscriptionType);
-	std::string getBillingCycle() const;
-	void setBillingCycle(const std::string &billingCycle);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
-	int getPageNum() const;
-	void setPageNum(int pageNum);
-	std::string getProductType() const;
-	void setProductType(const std::string &productType);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 
 private:
 	std::string productCode_;
-	std::string subscriptionType_;
-	std::string billingCycle_;
-	long ownerId_;
-	int pageNum_;
-	std::string productType_;
-	int pageSize_;
 };
 } // namespace Model
 } // namespace BssOpenApi
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYMONTHLYINSTANCECONSUMPTIONREQUEST_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOMMODITYLISTREQUEST_H_

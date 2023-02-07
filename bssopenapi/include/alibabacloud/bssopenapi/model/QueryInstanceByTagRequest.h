@@ -36,15 +36,15 @@ public:
 	~QueryInstanceByTagRequest();
 	std::vector<std::string> getResourceId() const;
 	void setResourceId(const std::vector<std::string> &resourceId);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
 	std::string getResourceType() const;
 	void setResourceType(const std::string &resourceType);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
 private:
 	std::vector<std::string> resourceId_;
-	std::vector<Tag> tag_;
 	std::string resourceType_;
+	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace BssOpenApi

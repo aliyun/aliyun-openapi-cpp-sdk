@@ -33,6 +33,15 @@ void TagResourcesRequest::setResourceId(const std::vector<std::string> &resource
   resourceId_ = resourceId;
 }
 
+std::string TagResourcesRequest::getResourceType() const {
+  return resourceType_;
+}
+
+void TagResourcesRequest::setResourceType(const std::string &resourceType) {
+  resourceType_ = resourceType;
+  setParameter(std::string("ResourceType"), resourceType);
+}
+
 std::vector<TagResourcesRequest::Tag> TagResourcesRequest::getTag() const {
   return tag_;
 }
@@ -45,14 +54,5 @@ void TagResourcesRequest::setTag(const std::vector<TagResourcesRequest::Tag> &ta
     setParameter(tagObjStr + ".Value", tagObj.value);
     setParameter(tagObjStr + ".Key", tagObj.key);
   }
-}
-
-std::string TagResourcesRequest::getResourceType() const {
-  return resourceType_;
-}
-
-void TagResourcesRequest::setResourceType(const std::string &resourceType) {
-  resourceType_ = resourceType;
-  setParameter(std::string("ResourceType"), resourceType);
 }
 

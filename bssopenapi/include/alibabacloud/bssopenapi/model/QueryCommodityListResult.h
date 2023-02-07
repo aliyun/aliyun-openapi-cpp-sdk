@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYMONTHLYBILLRESULT_H_
-#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYMONTHLYBILLRESULT_H_
+#ifndef ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOMMODITYLISTRESULT_H_
+#define ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOMMODITYLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,24 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryMonthlyBillResult : public ServiceResult
+			class ALIBABACLOUD_BSSOPENAPI_EXPORT QueryCommodityListResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct Item
+					struct CommodityDTO
 					{
-						float deductedByCoupons;
-						float afterTaxAmount;
-						std::string productCode;
-						std::string productType;
-						float deductedByCashCoupons;
-						float outstandingAmount;
-						std::string paymentCurrency;
-						float tax;
-						float paymentAmount;
-						float deductedByPrepaidCard;
-						float invoiceDiscount;
-						std::string item;
-						std::string subscriptionType;
-						float pretaxGrossAmount;
-						float pretaxAmount;
-						std::string solutionCode;
-						std::string currency;
-						std::string solutionName;
-						float pretaxAmountLocal;
+						std::string chargeType;
+						std::string commodityCode;
+						std::string commodityName;
 					};
-					float totalOutstandingAmount;
-					std::string billingCycle;
-					float outstandingAmount;
-					std::vector<Item> items;
-					float newInvoiceAmount;
+					std::vector<CommodityDTO> commodityList;
 				};
 
 
-				QueryMonthlyBillResult();
-				explicit QueryMonthlyBillResult(const std::string &payload);
-				~QueryMonthlyBillResult();
+				QueryCommodityListResult();
+				explicit QueryCommodityListResult(const std::string &payload);
+				~QueryCommodityListResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -84,4 +64,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYMONTHLYBILLRESULT_H_
+#endif // !ALIBABACLOUD_BSSOPENAPI_MODEL_QUERYCOMMODITYLISTRESULT_H_

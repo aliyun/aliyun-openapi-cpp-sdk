@@ -42,14 +42,6 @@ void UntagResourcesRequest::setResourceId(const std::vector<std::string> &resour
   resourceId_ = resourceId;
 }
 
-std::vector<std::string> UntagResourcesRequest::getTagKey() const {
-  return tagKey_;
-}
-
-void UntagResourcesRequest::setTagKey(const std::vector<std::string> &tagKey) {
-  tagKey_ = tagKey;
-}
-
 std::string UntagResourcesRequest::getResourceType() const {
   return resourceType_;
 }
@@ -57,5 +49,13 @@ std::string UntagResourcesRequest::getResourceType() const {
 void UntagResourcesRequest::setResourceType(const std::string &resourceType) {
   resourceType_ = resourceType;
   setParameter(std::string("ResourceType"), resourceType);
+}
+
+std::vector<std::string> UntagResourcesRequest::getTagKey() const {
+  return tagKey_;
+}
+
+void UntagResourcesRequest::setTagKey(const std::vector<std::string> &tagKey) {
+  tagKey_ = tagKey;
 }
 

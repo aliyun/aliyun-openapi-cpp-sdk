@@ -14,23 +14,23 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/bssopenapi/model/QueryMonthlyBillRequest.h>
+#include <alibabacloud/bssopenapi/model/QueryCommodityListRequest.h>
 
-using AlibabaCloud::BssOpenApi::Model::QueryMonthlyBillRequest;
+using AlibabaCloud::BssOpenApi::Model::QueryCommodityListRequest;
 
-QueryMonthlyBillRequest::QueryMonthlyBillRequest()
-    : RpcServiceRequest("bssopenapi", "2017-12-14", "QueryMonthlyBill") {
-  setMethod(HttpRequest::Method::Post);
+QueryCommodityListRequest::QueryCommodityListRequest()
+    : RpcServiceRequest("bssopenapi", "2017-12-14", "QueryCommodityList") {
+  setMethod(HttpRequest::Method::Get);
 }
 
-QueryMonthlyBillRequest::~QueryMonthlyBillRequest() {}
+QueryCommodityListRequest::~QueryCommodityListRequest() {}
 
-std::string QueryMonthlyBillRequest::getBillingCycle() const {
-  return billingCycle_;
+std::string QueryCommodityListRequest::getProductCode() const {
+  return productCode_;
 }
 
-void QueryMonthlyBillRequest::setBillingCycle(const std::string &billingCycle) {
-  billingCycle_ = billingCycle;
-  setParameter(std::string("BillingCycle"), billingCycle);
+void QueryCommodityListRequest::setProductCode(const std::string &productCode) {
+  productCode_ = productCode;
+  setParameter(std::string("ProductCode"), productCode);
 }
 

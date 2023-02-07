@@ -49,10 +49,20 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/CreateSavingsPlansInstanceResult.h
 	include/alibabacloud/bssopenapi/model/DeleteCostUnitRequest.h
 	include/alibabacloud/bssopenapi/model/DeleteCostUnitResult.h
+	include/alibabacloud/bssopenapi/model/DescribeCostBudgetsSummaryRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeCostBudgetsSummaryResult.h
+	include/alibabacloud/bssopenapi/model/DescribeInstanceAmortizedCostByAmortizationPeriodRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeInstanceAmortizedCostByAmortizationPeriodResult.h
+	include/alibabacloud/bssopenapi/model/DescribeInstanceAmortizedCostByConsumePeriodRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeInstanceAmortizedCostByConsumePeriodResult.h
 	include/alibabacloud/bssopenapi/model/DescribeInstanceBillRequest.h
 	include/alibabacloud/bssopenapi/model/DescribeInstanceBillResult.h
 	include/alibabacloud/bssopenapi/model/DescribePricingModuleRequest.h
 	include/alibabacloud/bssopenapi/model/DescribePricingModuleResult.h
+	include/alibabacloud/bssopenapi/model/DescribeProductAmortizedCostByAmortizationPeriodRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeProductAmortizedCostByAmortizationPeriodResult.h
+	include/alibabacloud/bssopenapi/model/DescribeProductAmortizedCostByConsumePeriodRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeProductAmortizedCostByConsumePeriodResult.h
 	include/alibabacloud/bssopenapi/model/DescribeResourceCoverageDetailRequest.h
 	include/alibabacloud/bssopenapi/model/DescribeResourceCoverageDetailResult.h
 	include/alibabacloud/bssopenapi/model/DescribeResourceCoverageTotalRequest.h
@@ -115,6 +125,8 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryBillToOSSSubscriptionResult.h
 	include/alibabacloud/bssopenapi/model/QueryCashCouponsRequest.h
 	include/alibabacloud/bssopenapi/model/QueryCashCouponsResult.h
+	include/alibabacloud/bssopenapi/model/QueryCommodityListRequest.h
+	include/alibabacloud/bssopenapi/model/QueryCommodityListResult.h
 	include/alibabacloud/bssopenapi/model/QueryCostUnitRequest.h
 	include/alibabacloud/bssopenapi/model/QueryCostUnitResult.h
 	include/alibabacloud/bssopenapi/model/QueryCostUnitResourceRequest.h
@@ -135,16 +147,14 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryInstanceGaapCostResult.h
 	include/alibabacloud/bssopenapi/model/QueryInvoicingCustomerListRequest.h
 	include/alibabacloud/bssopenapi/model/QueryInvoicingCustomerListResult.h
-	include/alibabacloud/bssopenapi/model/QueryMonthlyBillRequest.h
-	include/alibabacloud/bssopenapi/model/QueryMonthlyBillResult.h
-	include/alibabacloud/bssopenapi/model/QueryMonthlyInstanceConsumptionRequest.h
-	include/alibabacloud/bssopenapi/model/QueryMonthlyInstanceConsumptionResult.h
 	include/alibabacloud/bssopenapi/model/QueryOrdersRequest.h
 	include/alibabacloud/bssopenapi/model/QueryOrdersResult.h
 	include/alibabacloud/bssopenapi/model/QueryPermissionListRequest.h
 	include/alibabacloud/bssopenapi/model/QueryPermissionListResult.h
 	include/alibabacloud/bssopenapi/model/QueryPrepaidCardsRequest.h
 	include/alibabacloud/bssopenapi/model/QueryPrepaidCardsResult.h
+	include/alibabacloud/bssopenapi/model/QueryPriceEntityListRequest.h
+	include/alibabacloud/bssopenapi/model/QueryPriceEntityListResult.h
 	include/alibabacloud/bssopenapi/model/QueryProductListRequest.h
 	include/alibabacloud/bssopenapi/model/QueryProductListResult.h
 	include/alibabacloud/bssopenapi/model/QueryRIUtilizationDetailRequest.h
@@ -159,12 +169,14 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryResourcePackageInstancesResult.h
 	include/alibabacloud/bssopenapi/model/QuerySavingsPlansDeductLogRequest.h
 	include/alibabacloud/bssopenapi/model/QuerySavingsPlansDeductLogResult.h
+	include/alibabacloud/bssopenapi/model/QuerySavingsPlansDiscountRequest.h
+	include/alibabacloud/bssopenapi/model/QuerySavingsPlansDiscountResult.h
 	include/alibabacloud/bssopenapi/model/QuerySavingsPlansInstanceRequest.h
 	include/alibabacloud/bssopenapi/model/QuerySavingsPlansInstanceResult.h
 	include/alibabacloud/bssopenapi/model/QuerySettleBillRequest.h
 	include/alibabacloud/bssopenapi/model/QuerySettleBillResult.h
-	include/alibabacloud/bssopenapi/model/QuerySettlementBillRequest.h
-	include/alibabacloud/bssopenapi/model/QuerySettlementBillResult.h
+	include/alibabacloud/bssopenapi/model/QuerySkuPriceListRequest.h
+	include/alibabacloud/bssopenapi/model/QuerySkuPriceListResult.h
 	include/alibabacloud/bssopenapi/model/QuerySplitItemBillRequest.h
 	include/alibabacloud/bssopenapi/model/QuerySplitItemBillResult.h
 	include/alibabacloud/bssopenapi/model/QueryUserOmsDataRequest.h
@@ -234,10 +246,20 @@ set(bssopenapi_src
 	src/model/CreateSavingsPlansInstanceResult.cc
 	src/model/DeleteCostUnitRequest.cc
 	src/model/DeleteCostUnitResult.cc
+	src/model/DescribeCostBudgetsSummaryRequest.cc
+	src/model/DescribeCostBudgetsSummaryResult.cc
+	src/model/DescribeInstanceAmortizedCostByAmortizationPeriodRequest.cc
+	src/model/DescribeInstanceAmortizedCostByAmortizationPeriodResult.cc
+	src/model/DescribeInstanceAmortizedCostByConsumePeriodRequest.cc
+	src/model/DescribeInstanceAmortizedCostByConsumePeriodResult.cc
 	src/model/DescribeInstanceBillRequest.cc
 	src/model/DescribeInstanceBillResult.cc
 	src/model/DescribePricingModuleRequest.cc
 	src/model/DescribePricingModuleResult.cc
+	src/model/DescribeProductAmortizedCostByAmortizationPeriodRequest.cc
+	src/model/DescribeProductAmortizedCostByAmortizationPeriodResult.cc
+	src/model/DescribeProductAmortizedCostByConsumePeriodRequest.cc
+	src/model/DescribeProductAmortizedCostByConsumePeriodResult.cc
 	src/model/DescribeResourceCoverageDetailRequest.cc
 	src/model/DescribeResourceCoverageDetailResult.cc
 	src/model/DescribeResourceCoverageTotalRequest.cc
@@ -300,6 +322,8 @@ set(bssopenapi_src
 	src/model/QueryBillToOSSSubscriptionResult.cc
 	src/model/QueryCashCouponsRequest.cc
 	src/model/QueryCashCouponsResult.cc
+	src/model/QueryCommodityListRequest.cc
+	src/model/QueryCommodityListResult.cc
 	src/model/QueryCostUnitRequest.cc
 	src/model/QueryCostUnitResult.cc
 	src/model/QueryCostUnitResourceRequest.cc
@@ -320,16 +344,14 @@ set(bssopenapi_src
 	src/model/QueryInstanceGaapCostResult.cc
 	src/model/QueryInvoicingCustomerListRequest.cc
 	src/model/QueryInvoicingCustomerListResult.cc
-	src/model/QueryMonthlyBillRequest.cc
-	src/model/QueryMonthlyBillResult.cc
-	src/model/QueryMonthlyInstanceConsumptionRequest.cc
-	src/model/QueryMonthlyInstanceConsumptionResult.cc
 	src/model/QueryOrdersRequest.cc
 	src/model/QueryOrdersResult.cc
 	src/model/QueryPermissionListRequest.cc
 	src/model/QueryPermissionListResult.cc
 	src/model/QueryPrepaidCardsRequest.cc
 	src/model/QueryPrepaidCardsResult.cc
+	src/model/QueryPriceEntityListRequest.cc
+	src/model/QueryPriceEntityListResult.cc
 	src/model/QueryProductListRequest.cc
 	src/model/QueryProductListResult.cc
 	src/model/QueryRIUtilizationDetailRequest.cc
@@ -344,12 +366,14 @@ set(bssopenapi_src
 	src/model/QueryResourcePackageInstancesResult.cc
 	src/model/QuerySavingsPlansDeductLogRequest.cc
 	src/model/QuerySavingsPlansDeductLogResult.cc
+	src/model/QuerySavingsPlansDiscountRequest.cc
+	src/model/QuerySavingsPlansDiscountResult.cc
 	src/model/QuerySavingsPlansInstanceRequest.cc
 	src/model/QuerySavingsPlansInstanceResult.cc
 	src/model/QuerySettleBillRequest.cc
 	src/model/QuerySettleBillResult.cc
-	src/model/QuerySettlementBillRequest.cc
-	src/model/QuerySettlementBillResult.cc
+	src/model/QuerySkuPriceListRequest.cc
+	src/model/QuerySkuPriceListResult.cc
 	src/model/QuerySplitItemBillRequest.cc
 	src/model/QuerySplitItemBillResult.cc
 	src/model/QueryUserOmsDataRequest.cc
