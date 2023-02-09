@@ -37,6 +37,8 @@ set(imageenhan_public_header_model
 	include/alibabacloud/imageenhan/model/ErasePersonResult.h
 	include/alibabacloud/imageenhan/model/ExtendImageStyleRequest.h
 	include/alibabacloud/imageenhan/model/ExtendImageStyleResult.h
+	include/alibabacloud/imageenhan/model/GenerateCartoonizedImageRequest.h
+	include/alibabacloud/imageenhan/model/GenerateCartoonizedImageResult.h
 	include/alibabacloud/imageenhan/model/GenerateDynamicImageRequest.h
 	include/alibabacloud/imageenhan/model/GenerateDynamicImageResult.h
 	include/alibabacloud/imageenhan/model/GenerateImageWithTextRequest.h
@@ -82,6 +84,8 @@ set(imageenhan_src
 	src/model/ErasePersonResult.cc
 	src/model/ExtendImageStyleRequest.cc
 	src/model/ExtendImageStyleResult.cc
+	src/model/GenerateCartoonizedImageRequest.cc
+	src/model/GenerateCartoonizedImageResult.cc
 	src/model/GenerateDynamicImageRequest.cc
 	src/model/GenerateDynamicImageResult.cc
 	src/model/GenerateImageWithTextRequest.cc

@@ -38,6 +38,8 @@
 #include "model/ErasePersonResult.h"
 #include "model/ExtendImageStyleRequest.h"
 #include "model/ExtendImageStyleResult.h"
+#include "model/GenerateCartoonizedImageRequest.h"
+#include "model/GenerateCartoonizedImageResult.h"
 #include "model/GenerateDynamicImageRequest.h"
 #include "model/GenerateDynamicImageResult.h"
 #include "model/GenerateImageWithTextRequest.h"
@@ -97,6 +99,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExtendImageStyleResult> ExtendImageStyleOutcome;
 			typedef std::future<ExtendImageStyleOutcome> ExtendImageStyleOutcomeCallable;
 			typedef std::function<void(const ImageenhanClient*, const Model::ExtendImageStyleRequest&, const ExtendImageStyleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExtendImageStyleAsyncHandler;
+			typedef Outcome<Error, Model::GenerateCartoonizedImageResult> GenerateCartoonizedImageOutcome;
+			typedef std::future<GenerateCartoonizedImageOutcome> GenerateCartoonizedImageOutcomeCallable;
+			typedef std::function<void(const ImageenhanClient*, const Model::GenerateCartoonizedImageRequest&, const GenerateCartoonizedImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateCartoonizedImageAsyncHandler;
 			typedef Outcome<Error, Model::GenerateDynamicImageResult> GenerateDynamicImageOutcome;
 			typedef std::future<GenerateDynamicImageOutcome> GenerateDynamicImageOutcomeCallable;
 			typedef std::function<void(const ImageenhanClient*, const Model::GenerateDynamicImageRequest&, const GenerateDynamicImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateDynamicImageAsyncHandler;
@@ -165,6 +170,9 @@ namespace AlibabaCloud
 			ExtendImageStyleOutcome extendImageStyle(const Model::ExtendImageStyleRequest &request)const;
 			void extendImageStyleAsync(const Model::ExtendImageStyleRequest& request, const ExtendImageStyleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExtendImageStyleOutcomeCallable extendImageStyleCallable(const Model::ExtendImageStyleRequest& request) const;
+			GenerateCartoonizedImageOutcome generateCartoonizedImage(const Model::GenerateCartoonizedImageRequest &request)const;
+			void generateCartoonizedImageAsync(const Model::GenerateCartoonizedImageRequest& request, const GenerateCartoonizedImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GenerateCartoonizedImageOutcomeCallable generateCartoonizedImageCallable(const Model::GenerateCartoonizedImageRequest& request) const;
 			GenerateDynamicImageOutcome generateDynamicImage(const Model::GenerateDynamicImageRequest &request)const;
 			void generateDynamicImageAsync(const Model::GenerateDynamicImageRequest& request, const GenerateDynamicImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateDynamicImageOutcomeCallable generateDynamicImageCallable(const Model::GenerateDynamicImageRequest& request) const;

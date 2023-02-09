@@ -339,6 +339,42 @@ ImageenhanClient::ExtendImageStyleOutcomeCallable ImageenhanClient::extendImageS
 	return task->get_future();
 }
 
+ImageenhanClient::GenerateCartoonizedImageOutcome ImageenhanClient::generateCartoonizedImage(const GenerateCartoonizedImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateCartoonizedImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateCartoonizedImageOutcome(GenerateCartoonizedImageResult(outcome.result()));
+	else
+		return GenerateCartoonizedImageOutcome(outcome.error());
+}
+
+void ImageenhanClient::generateCartoonizedImageAsync(const GenerateCartoonizedImageRequest& request, const GenerateCartoonizedImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateCartoonizedImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageenhanClient::GenerateCartoonizedImageOutcomeCallable ImageenhanClient::generateCartoonizedImageCallable(const GenerateCartoonizedImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateCartoonizedImageOutcome()>>(
+			[this, request]()
+			{
+			return this->generateCartoonizedImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageenhanClient::GenerateDynamicImageOutcome ImageenhanClient::generateDynamicImage(const GenerateDynamicImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
