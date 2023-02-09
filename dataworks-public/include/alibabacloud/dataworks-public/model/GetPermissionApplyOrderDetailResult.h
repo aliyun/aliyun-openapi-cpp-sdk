@@ -43,6 +43,7 @@ namespace AlibabaCloud
 								struct ColumnMetaListItem
 								{
 									std::string columnName;
+									std::string securityLevel;
 									std::string columnComment;
 								};
 								std::vector<ObjectMetaListItem::ColumnMetaListItem> columnMetaList;

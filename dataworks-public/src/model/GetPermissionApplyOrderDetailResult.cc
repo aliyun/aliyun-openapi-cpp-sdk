@@ -96,6 +96,8 @@ void GetPermissionApplyOrderDetailResult::parse(const std::string &payload)
 				columnMetaListObject.columnName = projectMetaNodeObjectMetaListObjectMetaListItemColumnMetaListColumnMetaListItem["ColumnName"].asString();
 			if(!projectMetaNodeObjectMetaListObjectMetaListItemColumnMetaListColumnMetaListItem["ColumnComment"].isNull())
 				columnMetaListObject.columnComment = projectMetaNodeObjectMetaListObjectMetaListItemColumnMetaListColumnMetaListItem["ColumnComment"].asString();
+			if(!projectMetaNodeObjectMetaListObjectMetaListItemColumnMetaListColumnMetaListItem["SecurityLevel"].isNull())
+				columnMetaListObject.securityLevel = projectMetaNodeObjectMetaListObjectMetaListItemColumnMetaListColumnMetaListItem["SecurityLevel"].asString();
 			objectMetaListItemObject.columnMetaList.push_back(columnMetaListObject);
 		}
 		applyOrderDetail_.approveContent.projectMeta.objectMetaList.push_back(objectMetaListItemObject);
