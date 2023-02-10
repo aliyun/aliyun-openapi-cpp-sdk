@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATARESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATARESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDELAYEDSTREAMINGUSAGERESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDELAYEDSTREAMINGUSAGERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,35 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainRecordUsageDataResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDelayedStreamingUsageResult : public ServiceResult
 			{
 			public:
-				struct DataModule
+				struct DelayDataItem
 				{
-					std::string type;
+					std::string streamName;
+					std::string domainName;
+					std::string region;
 					long duration;
-					long count;
-					std::string domain;
 					std::string timeStamp;
 				};
 
 
-				DescribeLiveDomainRecordUsageDataResult();
-				explicit DescribeLiveDomainRecordUsageDataResult(const std::string &payload);
-				~DescribeLiveDomainRecordUsageDataResult();
+				DescribeLiveDelayedStreamingUsageResult();
+				explicit DescribeLiveDelayedStreamingUsageResult(const std::string &payload);
+				~DescribeLiveDelayedStreamingUsageResult();
 				std::string getEndTime()const;
 				std::string getStartTime()const;
-				std::vector<DataModule> getRecordUsageData()const;
+				std::vector<DelayDataItem> getDelayData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string endTime_;
 				std::string startTime_;
-				std::vector<DataModule> recordUsageData_;
+				std::vector<DelayDataItem> delayData_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATARESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDELAYEDSTREAMINGUSAGERESULT_H_

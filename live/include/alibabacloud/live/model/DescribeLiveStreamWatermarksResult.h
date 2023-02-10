@@ -34,18 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct Watermark
 				{
+					int ruleCount;
 					int refHeight;
-					int type;
 					int transparency;
 					std::string description;
-					std::string pictureUrl;
 					float yOffset;
-					int height;
 					std::string offsetCorner;
 					float xOffset;
 					int refWidth;
-					std::string templateId;
 					std::string name;
+					int type;
+					std::string pictureUrl;
+					int height;
+					std::string templateId;
 				};
 
 
@@ -53,11 +54,13 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamWatermarksResult(const std::string &payload);
 				~DescribeLiveStreamWatermarksResult();
 				std::vector<Watermark> getWatermarkList()const;
+				int getTotal()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<Watermark> watermarkList_;
+				int total_;
 
 			};
 		}

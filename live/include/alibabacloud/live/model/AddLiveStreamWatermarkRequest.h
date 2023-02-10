@@ -48,6 +48,8 @@ public:
 	void setRefWidth(int refWidth);
 	int getTransparency() const;
 	void setTransparency(int transparency);
+	std::string getDomain() const;
+	void setDomain(const std::string &domain);
 	std::string getName() const;
 	void setName(const std::string &name);
 	std::string getOffsetCorner() const;
@@ -65,6 +67,7 @@ private:
 	long ownerId_;
 	int refWidth_;
 	int transparency_;
+	std::string domain_;
 	std::string name_;
 	std::string offsetCorner_;
 	int refHeight_;

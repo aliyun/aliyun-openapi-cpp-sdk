@@ -246,6 +246,8 @@
 #include "model/DescribeLiveCertificateDetailResult.h"
 #include "model/DescribeLiveCertificateListRequest.h"
 #include "model/DescribeLiveCertificateListResult.h"
+#include "model/DescribeLiveDelayedStreamingUsageRequest.h"
+#include "model/DescribeLiveDelayedStreamingUsageResult.h"
 #include "model/DescribeLiveDetectNotifyConfigRequest.h"
 #include "model/DescribeLiveDetectNotifyConfigResult.h"
 #include "model/DescribeLiveDetectPornDataRequest.h"
@@ -556,6 +558,8 @@
 #include "model/SetLiveEdgeTransferResult.h"
 #include "model/SetLiveLazyPullStreamInfoConfigRequest.h"
 #include "model/SetLiveLazyPullStreamInfoConfigResult.h"
+#include "model/SetLiveMpuTaskSeiRequest.h"
+#include "model/SetLiveMpuTaskSeiResult.h"
 #include "model/SetLiveStreamDelayConfigRequest.h"
 #include "model/SetLiveStreamDelayConfigResult.h"
 #include "model/SetLiveStreamOptimizedFeatureConfigRequest.h"
@@ -971,6 +975,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeLiveCertificateListResult> DescribeLiveCertificateListOutcome;
 			typedef std::future<DescribeLiveCertificateListOutcome> DescribeLiveCertificateListOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveCertificateListRequest&, const DescribeLiveCertificateListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveCertificateListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeLiveDelayedStreamingUsageResult> DescribeLiveDelayedStreamingUsageOutcome;
+			typedef std::future<DescribeLiveDelayedStreamingUsageOutcome> DescribeLiveDelayedStreamingUsageOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDelayedStreamingUsageRequest&, const DescribeLiveDelayedStreamingUsageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDelayedStreamingUsageAsyncHandler;
 			typedef Outcome<Error, Model::DescribeLiveDetectNotifyConfigResult> DescribeLiveDetectNotifyConfigOutcome;
 			typedef std::future<DescribeLiveDetectNotifyConfigOutcome> DescribeLiveDetectNotifyConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeLiveDetectNotifyConfigRequest&, const DescribeLiveDetectNotifyConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveDetectNotifyConfigAsyncHandler;
@@ -1436,6 +1443,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetLiveLazyPullStreamInfoConfigResult> SetLiveLazyPullStreamInfoConfigOutcome;
 			typedef std::future<SetLiveLazyPullStreamInfoConfigOutcome> SetLiveLazyPullStreamInfoConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::SetLiveLazyPullStreamInfoConfigRequest&, const SetLiveLazyPullStreamInfoConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLiveLazyPullStreamInfoConfigAsyncHandler;
+			typedef Outcome<Error, Model::SetLiveMpuTaskSeiResult> SetLiveMpuTaskSeiOutcome;
+			typedef std::future<SetLiveMpuTaskSeiOutcome> SetLiveMpuTaskSeiOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::SetLiveMpuTaskSeiRequest&, const SetLiveMpuTaskSeiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLiveMpuTaskSeiAsyncHandler;
 			typedef Outcome<Error, Model::SetLiveStreamDelayConfigResult> SetLiveStreamDelayConfigOutcome;
 			typedef std::future<SetLiveStreamDelayConfigOutcome> SetLiveStreamDelayConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::SetLiveStreamDelayConfigRequest&, const SetLiveStreamDelayConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetLiveStreamDelayConfigAsyncHandler;
@@ -1882,6 +1892,9 @@ namespace AlibabaCloud
 			DescribeLiveCertificateListOutcome describeLiveCertificateList(const Model::DescribeLiveCertificateListRequest &request)const;
 			void describeLiveCertificateListAsync(const Model::DescribeLiveCertificateListRequest& request, const DescribeLiveCertificateListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveCertificateListOutcomeCallable describeLiveCertificateListCallable(const Model::DescribeLiveCertificateListRequest& request) const;
+			DescribeLiveDelayedStreamingUsageOutcome describeLiveDelayedStreamingUsage(const Model::DescribeLiveDelayedStreamingUsageRequest &request)const;
+			void describeLiveDelayedStreamingUsageAsync(const Model::DescribeLiveDelayedStreamingUsageRequest& request, const DescribeLiveDelayedStreamingUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeLiveDelayedStreamingUsageOutcomeCallable describeLiveDelayedStreamingUsageCallable(const Model::DescribeLiveDelayedStreamingUsageRequest& request) const;
 			DescribeLiveDetectNotifyConfigOutcome describeLiveDetectNotifyConfig(const Model::DescribeLiveDetectNotifyConfigRequest &request)const;
 			void describeLiveDetectNotifyConfigAsync(const Model::DescribeLiveDetectNotifyConfigRequest& request, const DescribeLiveDetectNotifyConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeLiveDetectNotifyConfigOutcomeCallable describeLiveDetectNotifyConfigCallable(const Model::DescribeLiveDetectNotifyConfigRequest& request) const;
@@ -2347,6 +2360,9 @@ namespace AlibabaCloud
 			SetLiveLazyPullStreamInfoConfigOutcome setLiveLazyPullStreamInfoConfig(const Model::SetLiveLazyPullStreamInfoConfigRequest &request)const;
 			void setLiveLazyPullStreamInfoConfigAsync(const Model::SetLiveLazyPullStreamInfoConfigRequest& request, const SetLiveLazyPullStreamInfoConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetLiveLazyPullStreamInfoConfigOutcomeCallable setLiveLazyPullStreamInfoConfigCallable(const Model::SetLiveLazyPullStreamInfoConfigRequest& request) const;
+			SetLiveMpuTaskSeiOutcome setLiveMpuTaskSei(const Model::SetLiveMpuTaskSeiRequest &request)const;
+			void setLiveMpuTaskSeiAsync(const Model::SetLiveMpuTaskSeiRequest& request, const SetLiveMpuTaskSeiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetLiveMpuTaskSeiOutcomeCallable setLiveMpuTaskSeiCallable(const Model::SetLiveMpuTaskSeiRequest& request) const;
 			SetLiveStreamDelayConfigOutcome setLiveStreamDelayConfig(const Model::SetLiveStreamDelayConfigRequest &request)const;
 			void setLiveStreamDelayConfigAsync(const Model::SetLiveStreamDelayConfigRequest& request, const SetLiveStreamDelayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetLiveStreamDelayConfigOutcomeCallable setLiveStreamDelayConfigCallable(const Model::SetLiveStreamDelayConfigRequest& request) const;

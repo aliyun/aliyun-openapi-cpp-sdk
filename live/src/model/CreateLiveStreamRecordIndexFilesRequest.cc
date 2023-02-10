@@ -70,6 +70,15 @@ void CreateLiveStreamRecordIndexFilesRequest::setSecurityToken(const std::string
   setParameter(std::string("SecurityToken"), securityToken);
 }
 
+bool CreateLiveStreamRecordIndexFilesRequest::getEndTimeIncluded() const {
+  return endTimeIncluded_;
+}
+
+void CreateLiveStreamRecordIndexFilesRequest::setEndTimeIncluded(bool endTimeIncluded) {
+  endTimeIncluded_ = endTimeIncluded;
+  setParameter(std::string("EndTimeIncluded"), endTimeIncluded ? "true" : "false");
+}
+
 std::string CreateLiveStreamRecordIndexFilesRequest::getStreamName() const {
   return streamName_;
 }

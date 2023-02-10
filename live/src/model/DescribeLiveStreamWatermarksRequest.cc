@@ -43,6 +43,15 @@ void DescribeLiveStreamWatermarksRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::string DescribeLiveStreamWatermarksRequest::getKeyWord() const {
+  return keyWord_;
+}
+
+void DescribeLiveStreamWatermarksRequest::setKeyWord(const std::string &keyWord) {
+  keyWord_ = keyWord;
+  setParameter(std::string("KeyWord"), keyWord);
+}
+
 long DescribeLiveStreamWatermarksRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -50,5 +59,14 @@ long DescribeLiveStreamWatermarksRequest::getOwnerId() const {
 void DescribeLiveStreamWatermarksRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DescribeLiveStreamWatermarksRequest::getDomain() const {
+  return domain_;
+}
+
+void DescribeLiveStreamWatermarksRequest::setDomain(const std::string &domain) {
+  domain_ = domain;
+  setParameter(std::string("Domain"), domain);
 }
 

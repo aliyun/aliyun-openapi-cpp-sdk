@@ -63,17 +63,26 @@ void DescribeLiveStreamWatermarksResult::parse(const std::string &payload)
 			watermarkListObject.description = valueWatermarkListWatermark["Description"].asString();
 		if(!valueWatermarkListWatermark["OffsetCorner"].isNull())
 			watermarkListObject.offsetCorner = valueWatermarkListWatermark["OffsetCorner"].asString();
+		if(!valueWatermarkListWatermark["RuleCount"].isNull())
+			watermarkListObject.ruleCount = std::stoi(valueWatermarkListWatermark["RuleCount"].asString());
 		if(!valueWatermarkListWatermark["Name"].isNull())
 			watermarkListObject.name = valueWatermarkListWatermark["Name"].asString();
 		if(!valueWatermarkListWatermark["TemplateId"].isNull())
 			watermarkListObject.templateId = valueWatermarkListWatermark["TemplateId"].asString();
 		watermarkList_.push_back(watermarkListObject);
 	}
+	if(!value["Total"].isNull())
+		total_ = std::stoi(value["Total"].asString());
 
 }
 
 std::vector<DescribeLiveStreamWatermarksResult::Watermark> DescribeLiveStreamWatermarksResult::getWatermarkList()const
 {
 	return watermarkList_;
+}
+
+int DescribeLiveStreamWatermarksResult::getTotal()const
+{
+	return total_;
 }
 

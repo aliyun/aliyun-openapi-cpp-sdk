@@ -245,6 +245,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveCertificateDetailResult.h
 	include/alibabacloud/live/model/DescribeLiveCertificateListRequest.h
 	include/alibabacloud/live/model/DescribeLiveCertificateListResult.h
+	include/alibabacloud/live/model/DescribeLiveDelayedStreamingUsageRequest.h
+	include/alibabacloud/live/model/DescribeLiveDelayedStreamingUsageResult.h
 	include/alibabacloud/live/model/DescribeLiveDetectNotifyConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveDetectNotifyConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveDetectPornDataRequest.h
@@ -555,6 +557,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/SetLiveEdgeTransferResult.h
 	include/alibabacloud/live/model/SetLiveLazyPullStreamInfoConfigRequest.h
 	include/alibabacloud/live/model/SetLiveLazyPullStreamInfoConfigResult.h
+	include/alibabacloud/live/model/SetLiveMpuTaskSeiRequest.h
+	include/alibabacloud/live/model/SetLiveMpuTaskSeiResult.h
 	include/alibabacloud/live/model/SetLiveStreamDelayConfigRequest.h
 	include/alibabacloud/live/model/SetLiveStreamDelayConfigResult.h
 	include/alibabacloud/live/model/SetLiveStreamOptimizedFeatureConfigRequest.h
@@ -852,6 +856,8 @@ set(live_src
 	src/model/DescribeLiveCertificateDetailResult.cc
 	src/model/DescribeLiveCertificateListRequest.cc
 	src/model/DescribeLiveCertificateListResult.cc
+	src/model/DescribeLiveDelayedStreamingUsageRequest.cc
+	src/model/DescribeLiveDelayedStreamingUsageResult.cc
 	src/model/DescribeLiveDetectNotifyConfigRequest.cc
 	src/model/DescribeLiveDetectNotifyConfigResult.cc
 	src/model/DescribeLiveDetectPornDataRequest.cc
@@ -1162,6 +1168,8 @@ set(live_src
 	src/model/SetLiveEdgeTransferResult.cc
 	src/model/SetLiveLazyPullStreamInfoConfigRequest.cc
 	src/model/SetLiveLazyPullStreamInfoConfigResult.cc
+	src/model/SetLiveMpuTaskSeiRequest.cc
+	src/model/SetLiveMpuTaskSeiResult.cc
 	src/model/SetLiveStreamDelayConfigRequest.cc
 	src/model/SetLiveStreamDelayConfigResult.cc
 	src/model/SetLiveStreamOptimizedFeatureConfigRequest.cc

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATAREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATAREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDELAYEDSTREAMINGUSAGEREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDELAYEDSTREAMINGUSAGEREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,12 +26,14 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainRecordUsageDataRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDelayedStreamingUsageRequest : public RpcServiceRequest {
 public:
-	DescribeLiveDomainRecordUsageDataRequest();
-	~DescribeLiveDomainRecordUsageDataRequest();
+	DescribeLiveDelayedStreamingUsageRequest();
+	~DescribeLiveDelayedStreamingUsageRequest();
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getStreamName() const;
+	void setStreamName(const std::string &streamName);
 	std::string getSplitBy() const;
 	void setSplitBy(const std::string &splitBy);
 	std::string getDomainName() const;
@@ -40,18 +42,19 @@ public:
 	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getInterval() const;
-	void setInterval(const std::string &interval);
+	std::string getRegion() const;
+	void setRegion(const std::string &region);
 
 private:
 	std::string startTime_;
+	std::string streamName_;
 	std::string splitBy_;
 	std::string domainName_;
 	std::string endTime_;
 	long ownerId_;
-	std::string interval_;
+	std::string region_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATAREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDELAYEDSTREAMINGUSAGEREQUEST_H_

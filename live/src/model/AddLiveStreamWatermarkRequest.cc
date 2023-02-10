@@ -106,6 +106,15 @@ void AddLiveStreamWatermarkRequest::setTransparency(int transparency) {
   setParameter(std::string("Transparency"), std::to_string(transparency));
 }
 
+std::string AddLiveStreamWatermarkRequest::getDomain() const {
+  return domain_;
+}
+
+void AddLiveStreamWatermarkRequest::setDomain(const std::string &domain) {
+  domain_ = domain;
+  setParameter(std::string("Domain"), domain);
+}
+
 std::string AddLiveStreamWatermarkRequest::getName() const {
   return name_;
 }

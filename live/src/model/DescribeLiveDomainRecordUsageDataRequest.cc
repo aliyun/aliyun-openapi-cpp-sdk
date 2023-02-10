@@ -70,3 +70,12 @@ void DescribeLiveDomainRecordUsageDataRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeLiveDomainRecordUsageDataRequest::getInterval() const {
+  return interval_;
+}
+
+void DescribeLiveDomainRecordUsageDataRequest::setInterval(const std::string &interval) {
+  interval_ = interval;
+  setParameter(std::string("Interval"), interval);
+}
+

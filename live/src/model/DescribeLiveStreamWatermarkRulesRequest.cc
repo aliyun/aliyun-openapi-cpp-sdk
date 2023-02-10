@@ -52,3 +52,12 @@ void DescribeLiveStreamWatermarkRulesRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeLiveStreamWatermarkRulesRequest::getDomain() const {
+  return domain_;
+}
+
+void DescribeLiveStreamWatermarkRulesRequest::setDomain(const std::string &domain) {
+  domain_ = domain;
+  setParameter(std::string("Domain"), domain);
+}
+

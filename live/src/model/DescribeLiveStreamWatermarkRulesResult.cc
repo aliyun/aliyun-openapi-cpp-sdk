@@ -59,11 +59,18 @@ void DescribeLiveStreamWatermarkRulesResult::parse(const std::string &payload)
 			ruleInfoListObject.ruleId = valueRuleInfoListRuleInfo["RuleId"].asString();
 		ruleInfoList_.push_back(ruleInfoListObject);
 	}
+	if(!value["Total"].isNull())
+		total_ = std::stoi(value["Total"].asString());
 
 }
 
 std::vector<DescribeLiveStreamWatermarkRulesResult::RuleInfo> DescribeLiveStreamWatermarkRulesResult::getRuleInfoList()const
 {
 	return ruleInfoList_;
+}
+
+int DescribeLiveStreamWatermarkRulesResult::getTotal()const
+{
+	return total_;
 }
 

@@ -40,6 +40,8 @@ public:
 	void setAppName(const std::string &appName);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
+	bool getEndTimeIncluded() const;
+	void setEndTimeIncluded(bool endTimeIncluded);
 	std::string getStreamName() const;
 	void setStreamName(const std::string &streamName);
 	std::string getOssBucket() const;
@@ -57,6 +59,7 @@ private:
 	std::string ossObject_;
 	std::string appName_;
 	std::string securityToken_;
+	bool endTimeIncluded_;
 	std::string streamName_;
 	std::string ossBucket_;
 	std::string domainName_;

@@ -34,24 +34,6 @@ void DescribeLiveUserBillPredictionRequest::setStartTime(const std::string &star
   setParameter(std::string("StartTime"), startTime);
 }
 
-std::string DescribeLiveUserBillPredictionRequest::getDimension() const {
-  return dimension_;
-}
-
-void DescribeLiveUserBillPredictionRequest::setDimension(const std::string &dimension) {
-  dimension_ = dimension;
-  setParameter(std::string("Dimension"), dimension);
-}
-
-std::string DescribeLiveUserBillPredictionRequest::getArea() const {
-  return area_;
-}
-
-void DescribeLiveUserBillPredictionRequest::setArea(const std::string &area) {
-  area_ = area;
-  setParameter(std::string("Area"), area);
-}
-
 std::string DescribeLiveUserBillPredictionRequest::getEndTime() const {
   return endTime_;
 }

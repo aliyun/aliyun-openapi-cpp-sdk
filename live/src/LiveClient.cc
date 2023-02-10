@@ -4083,6 +4083,42 @@ LiveClient::DescribeLiveCertificateListOutcomeCallable LiveClient::describeLiveC
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveDelayedStreamingUsageOutcome LiveClient::describeLiveDelayedStreamingUsage(const DescribeLiveDelayedStreamingUsageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDelayedStreamingUsageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDelayedStreamingUsageOutcome(DescribeLiveDelayedStreamingUsageResult(outcome.result()));
+	else
+		return DescribeLiveDelayedStreamingUsageOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDelayedStreamingUsageAsync(const DescribeLiveDelayedStreamingUsageRequest& request, const DescribeLiveDelayedStreamingUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDelayedStreamingUsage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDelayedStreamingUsageOutcomeCallable LiveClient::describeLiveDelayedStreamingUsageCallable(const DescribeLiveDelayedStreamingUsageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDelayedStreamingUsageOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDelayedStreamingUsage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveDetectNotifyConfigOutcome LiveClient::describeLiveDetectNotifyConfig(const DescribeLiveDetectNotifyConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -9657,6 +9693,42 @@ LiveClient::SetLiveLazyPullStreamInfoConfigOutcomeCallable LiveClient::setLiveLa
 			[this, request]()
 			{
 			return this->setLiveLazyPullStreamInfoConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::SetLiveMpuTaskSeiOutcome LiveClient::setLiveMpuTaskSei(const SetLiveMpuTaskSeiRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetLiveMpuTaskSeiOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetLiveMpuTaskSeiOutcome(SetLiveMpuTaskSeiResult(outcome.result()));
+	else
+		return SetLiveMpuTaskSeiOutcome(outcome.error());
+}
+
+void LiveClient::setLiveMpuTaskSeiAsync(const SetLiveMpuTaskSeiRequest& request, const SetLiveMpuTaskSeiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setLiveMpuTaskSei(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::SetLiveMpuTaskSeiOutcomeCallable LiveClient::setLiveMpuTaskSeiCallable(const SetLiveMpuTaskSeiRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetLiveMpuTaskSeiOutcome()>>(
+			[this, request]()
+			{
+			return this->setLiveMpuTaskSei(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

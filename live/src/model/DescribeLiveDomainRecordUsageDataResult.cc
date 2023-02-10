@@ -55,7 +55,21 @@ void DescribeLiveDomainRecordUsageDataResult::parse(const std::string &payload)
 			recordUsageDataObject.count = std::stol(valueRecordUsageDataDataModule["Count"].asString());
 		recordUsageData_.push_back(recordUsageDataObject);
 	}
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
 
+}
+
+std::string DescribeLiveDomainRecordUsageDataResult::getEndTime()const
+{
+	return endTime_;
+}
+
+std::string DescribeLiveDomainRecordUsageDataResult::getStartTime()const
+{
+	return startTime_;
 }
 
 std::vector<DescribeLiveDomainRecordUsageDataResult::DataModule> DescribeLiveDomainRecordUsageDataResult::getRecordUsageData()const

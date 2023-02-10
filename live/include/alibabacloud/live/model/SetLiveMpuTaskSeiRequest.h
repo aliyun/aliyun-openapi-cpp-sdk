@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERBILLPREDICTIONREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERBILLPREDICTIONREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_SETLIVEMPUTASKSEIREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_SETLIVEMPUTASKSEIREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,23 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT DescribeLiveUserBillPredictionRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT SetLiveMpuTaskSeiRequest : public RpcServiceRequest {
 public:
-	DescribeLiveUserBillPredictionRequest();
-	~DescribeLiveUserBillPredictionRequest();
-	std::string getStartTime() const;
-	void setStartTime(const std::string &startTime);
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
+	SetLiveMpuTaskSeiRequest();
+	~SetLiveMpuTaskSeiRequest();
+	std::string getCustomSei() const;
+	void setCustomSei(const std::string &customSei);
+	std::string getAppId() const;
+	void setAppId(const std::string &appId);
+	std::string getTaskId() const;
+	void setTaskId(const std::string &taskId);
 
 private:
-	std::string startTime_;
-	std::string endTime_;
-	long ownerId_;
+	std::string customSei_;
+	std::string appId_;
+	std::string taskId_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEUSERBILLPREDICTIONREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_SETLIVEMPUTASKSEIREQUEST_H_

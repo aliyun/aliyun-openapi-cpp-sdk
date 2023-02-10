@@ -48,11 +48,13 @@ namespace AlibabaCloud
 				explicit DescribeLiveStreamWatermarkRulesResult(const std::string &payload);
 				~DescribeLiveStreamWatermarkRulesResult();
 				std::vector<RuleInfo> getRuleInfoList()const;
+				int getTotal()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<RuleInfo> ruleInfoList_;
+				int total_;
 
 			};
 		}

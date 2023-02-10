@@ -36,11 +36,14 @@ public:
 	void setPageSize(int pageSize);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getDomain() const;
+	void setDomain(const std::string &domain);
 
 private:
 	int pageNumber_;
 	int pageSize_;
 	long ownerId_;
+	std::string domain_;
 };
 } // namespace Model
 } // namespace Live
