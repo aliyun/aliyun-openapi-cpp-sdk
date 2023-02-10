@@ -25,6 +25,24 @@ AddInstallCodeRequest::AddInstallCodeRequest()
 
 AddInstallCodeRequest::~AddInstallCodeRequest() {}
 
+long AddInstallCodeRequest::getExpiredDate() const {
+  return expiredDate_;
+}
+
+void AddInstallCodeRequest::setExpiredDate(long expiredDate) {
+  expiredDate_ = expiredDate;
+  setParameter(std::string("ExpiredDate"), std::to_string(expiredDate));
+}
+
+std::string AddInstallCodeRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void AddInstallCodeRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
 std::string AddInstallCodeRequest::getOs() const {
   return os_;
 }
@@ -43,6 +61,15 @@ void AddInstallCodeRequest::setGroupId(long groupId) {
   setParameter(std::string("GroupId"), std::to_string(groupId));
 }
 
+std::string AddInstallCodeRequest::getProxyCluster() const {
+  return proxyCluster_;
+}
+
+void AddInstallCodeRequest::setProxyCluster(const std::string &proxyCluster) {
+  proxyCluster_ = proxyCluster;
+  setParameter(std::string("ProxyCluster"), proxyCluster);
+}
+
 bool AddInstallCodeRequest::getOnlyImage() const {
   return onlyImage_;
 }
@@ -50,24 +77,6 @@ bool AddInstallCodeRequest::getOnlyImage() const {
 void AddInstallCodeRequest::setOnlyImage(bool onlyImage) {
   onlyImage_ = onlyImage;
   setParameter(std::string("OnlyImage"), onlyImage ? "true" : "false");
-}
-
-long AddInstallCodeRequest::getExpiredDate() const {
-  return expiredDate_;
-}
-
-void AddInstallCodeRequest::setExpiredDate(long expiredDate) {
-  expiredDate_ = expiredDate;
-  setParameter(std::string("ExpiredDate"), std::to_string(expiredDate));
-}
-
-std::string AddInstallCodeRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void AddInstallCodeRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
 }
 
 std::string AddInstallCodeRequest::getVendorName() const {

@@ -25,6 +25,24 @@ PageImageRegistryRequest::PageImageRegistryRequest()
 
 PageImageRegistryRequest::~PageImageRegistryRequest() {}
 
+std::string PageImageRegistryRequest::getRegistryNameLike() const {
+  return registryNameLike_;
+}
+
+void PageImageRegistryRequest::setRegistryNameLike(const std::string &registryNameLike) {
+  registryNameLike_ = registryNameLike;
+  setBodyParameter(std::string("RegistryNameLike"), registryNameLike);
+}
+
+int PageImageRegistryRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void PageImageRegistryRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setBodyParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
 std::vector<std::string> PageImageRegistryRequest::getRegistryTypeNotInList() const {
   return registryTypeNotInList_;
 }
@@ -49,24 +67,6 @@ int PageImageRegistryRequest::getPageSize() const {
 void PageImageRegistryRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-std::string PageImageRegistryRequest::getRegistryNameLike() const {
-  return registryNameLike_;
-}
-
-void PageImageRegistryRequest::setRegistryNameLike(const std::string &registryNameLike) {
-  registryNameLike_ = registryNameLike;
-  setBodyParameter(std::string("RegistryNameLike"), registryNameLike);
-}
-
-int PageImageRegistryRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void PageImageRegistryRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setBodyParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
 std::vector<std::string> PageImageRegistryRequest::getRegistryTypeInList() const {

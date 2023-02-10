@@ -195,6 +195,42 @@ SasClient::AddInstallCodeOutcomeCallable SasClient::addInstallCodeCallable(const
 	return task->get_future();
 }
 
+SasClient::AddPrivateRegistryOutcome SasClient::addPrivateRegistry(const AddPrivateRegistryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddPrivateRegistryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddPrivateRegistryOutcome(AddPrivateRegistryResult(outcome.result()));
+	else
+		return AddPrivateRegistryOutcome(outcome.error());
+}
+
+void SasClient::addPrivateRegistryAsync(const AddPrivateRegistryRequest& request, const AddPrivateRegistryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addPrivateRegistry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::AddPrivateRegistryOutcomeCallable SasClient::addPrivateRegistryCallable(const AddPrivateRegistryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddPrivateRegistryOutcome()>>(
+			[this, request]()
+			{
+			return this->addPrivateRegistry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::AddTagWithUuidOutcome SasClient::addTagWithUuid(const AddTagWithUuidRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1017,6 +1053,78 @@ SasClient::CreateHoneypotProbeOutcomeCallable SasClient::createHoneypotProbeCall
 			[this, request]()
 			{
 			return this->createHoneypotProbe(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::CreateInterceptionRuleOutcome SasClient::createInterceptionRule(const CreateInterceptionRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateInterceptionRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateInterceptionRuleOutcome(CreateInterceptionRuleResult(outcome.result()));
+	else
+		return CreateInterceptionRuleOutcome(outcome.error());
+}
+
+void SasClient::createInterceptionRuleAsync(const CreateInterceptionRuleRequest& request, const CreateInterceptionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createInterceptionRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::CreateInterceptionRuleOutcomeCallable SasClient::createInterceptionRuleCallable(const CreateInterceptionRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateInterceptionRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->createInterceptionRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::CreateInterceptionTargetOutcome SasClient::createInterceptionTarget(const CreateInterceptionTargetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateInterceptionTargetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateInterceptionTargetOutcome(CreateInterceptionTargetResult(outcome.result()));
+	else
+		return CreateInterceptionTargetOutcome(outcome.error());
+}
+
+void SasClient::createInterceptionTargetAsync(const CreateInterceptionTargetRequest& request, const CreateInterceptionTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createInterceptionTarget(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::CreateInterceptionTargetOutcomeCallable SasClient::createInterceptionTargetCallable(const CreateInterceptionTargetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateInterceptionTargetOutcome()>>(
+			[this, request]()
+			{
+			return this->createInterceptionTarget(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1887,6 +1995,42 @@ SasClient::DeleteLoginBaseConfigOutcomeCallable SasClient::deleteLoginBaseConfig
 	return task->get_future();
 }
 
+SasClient::DeletePrivateRegistryOutcome SasClient::deletePrivateRegistry(const DeletePrivateRegistryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeletePrivateRegistryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeletePrivateRegistryOutcome(DeletePrivateRegistryResult(outcome.result()));
+	else
+		return DeletePrivateRegistryOutcome(outcome.error());
+}
+
+void SasClient::deletePrivateRegistryAsync(const DeletePrivateRegistryRequest& request, const DeletePrivateRegistryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deletePrivateRegistry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DeletePrivateRegistryOutcomeCallable SasClient::deletePrivateRegistryCallable(const DeletePrivateRegistryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeletePrivateRegistryOutcome()>>(
+			[this, request]()
+			{
+			return this->deletePrivateRegistry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DeleteSecurityEventMarkMissListOutcome SasClient::deleteSecurityEventMarkMissList(const DeleteSecurityEventMarkMissListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2709,6 +2853,42 @@ SasClient::DescribeAssetSummaryOutcomeCallable SasClient::describeAssetSummaryCa
 			[this, request]()
 			{
 			return this->describeAssetSummary(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DescribeAssetsSecurityEventSummaryOutcome SasClient::describeAssetsSecurityEventSummary(const DescribeAssetsSecurityEventSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAssetsSecurityEventSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAssetsSecurityEventSummaryOutcome(DescribeAssetsSecurityEventSummaryResult(outcome.result()));
+	else
+		return DescribeAssetsSecurityEventSummaryOutcome(outcome.error());
+}
+
+void SasClient::describeAssetsSecurityEventSummaryAsync(const DescribeAssetsSecurityEventSummaryRequest& request, const DescribeAssetsSecurityEventSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAssetsSecurityEventSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeAssetsSecurityEventSummaryOutcomeCallable SasClient::describeAssetsSecurityEventSummaryCallable(const DescribeAssetsSecurityEventSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAssetsSecurityEventSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAssetsSecurityEventSummary(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3903,6 +4083,42 @@ SasClient::DescribeContainerStatisticsOutcomeCallable SasClient::describeContain
 	return task->get_future();
 }
 
+SasClient::DescribeContainerTagsOutcome SasClient::describeContainerTags(const DescribeContainerTagsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeContainerTagsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeContainerTagsOutcome(DescribeContainerTagsResult(outcome.result()));
+	else
+		return DescribeContainerTagsOutcome(outcome.error());
+}
+
+void SasClient::describeContainerTagsAsync(const DescribeContainerTagsRequest& request, const DescribeContainerTagsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeContainerTags(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeContainerTagsOutcomeCallable SasClient::describeContainerTagsCallable(const DescribeContainerTagsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeContainerTagsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeContainerTags(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::DescribeCountNotScannedImageOutcome SasClient::describeCountNotScannedImage(const DescribeCountNotScannedImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4725,6 +4941,42 @@ SasClient::DescribeFrontVulPatchListOutcomeCallable SasClient::describeFrontVulP
 			[this, request]()
 			{
 			return this->describeFrontVulPatchList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::DescribeGroupStructOutcome SasClient::describeGroupStruct(const DescribeGroupStructRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGroupStructOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGroupStructOutcome(DescribeGroupStructResult(outcome.result()));
+	else
+		return DescribeGroupStructOutcome(outcome.error());
+}
+
+void SasClient::describeGroupStructAsync(const DescribeGroupStructRequest& request, const DescribeGroupStructAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGroupStruct(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::DescribeGroupStructOutcomeCallable SasClient::describeGroupStructCallable(const DescribeGroupStructRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGroupStructOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGroupStruct(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -10491,6 +10743,42 @@ SasClient::GetAlarmMachineCountOutcomeCallable SasClient::getAlarmMachineCountCa
 	return task->get_future();
 }
 
+SasClient::GetAppNetworkOutcome SasClient::getAppNetwork(const GetAppNetworkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAppNetworkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAppNetworkOutcome(GetAppNetworkResult(outcome.result()));
+	else
+		return GetAppNetworkOutcome(outcome.error());
+}
+
+void SasClient::getAppNetworkAsync(const GetAppNetworkRequest& request, const GetAppNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAppNetwork(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::GetAppNetworkOutcomeCallable SasClient::getAppNetworkCallable(const GetAppNetworkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAppNetworkOutcome()>>(
+			[this, request]()
+			{
+			return this->getAppNetwork(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::GetAssetsPropertyDetailOutcome SasClient::getAssetsPropertyDetail(const GetAssetsPropertyDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -10815,6 +11103,42 @@ SasClient::GetClientUserDefineRuleOutcomeCallable SasClient::getClientUserDefine
 	return task->get_future();
 }
 
+SasClient::GetCloudAssetCriteriaOutcome SasClient::getCloudAssetCriteria(const GetCloudAssetCriteriaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetCloudAssetCriteriaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetCloudAssetCriteriaOutcome(GetCloudAssetCriteriaResult(outcome.result()));
+	else
+		return GetCloudAssetCriteriaOutcome(outcome.error());
+}
+
+void SasClient::getCloudAssetCriteriaAsync(const GetCloudAssetCriteriaRequest& request, const GetCloudAssetCriteriaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getCloudAssetCriteria(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::GetCloudAssetCriteriaOutcomeCallable SasClient::getCloudAssetCriteriaCallable(const GetCloudAssetCriteriaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetCloudAssetCriteriaOutcome()>>(
+			[this, request]()
+			{
+			return this->getCloudAssetCriteria(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::GetCloudAssetDetailOutcome SasClient::getCloudAssetDetail(const GetCloudAssetDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -10917,6 +11241,42 @@ SasClient::GetClusterCheckItemWarningStatisticsOutcomeCallable SasClient::getClu
 			[this, request]()
 			{
 			return this->getClusterCheckItemWarningStatistics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::GetClusterRuleSummaryOutcome SasClient::getClusterRuleSummary(const GetClusterRuleSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetClusterRuleSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetClusterRuleSummaryOutcome(GetClusterRuleSummaryResult(outcome.result()));
+	else
+		return GetClusterRuleSummaryOutcome(outcome.error());
+}
+
+void SasClient::getClusterRuleSummaryAsync(const GetClusterRuleSummaryRequest& request, const GetClusterRuleSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getClusterRuleSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::GetClusterRuleSummaryOutcomeCallable SasClient::getClusterRuleSummaryCallable(const GetClusterRuleSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetClusterRuleSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->getClusterRuleSummary(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -11169,6 +11529,42 @@ SasClient::GetImageScanNumInPeriodOutcomeCallable SasClient::getImageScanNumInPe
 			[this, request]()
 			{
 			return this->getImageScanNumInPeriod(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::GetInterceptionRuleDetailOutcome SasClient::getInterceptionRuleDetail(const GetInterceptionRuleDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetInterceptionRuleDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetInterceptionRuleDetailOutcome(GetInterceptionRuleDetailResult(outcome.result()));
+	else
+		return GetInterceptionRuleDetailOutcome(outcome.error());
+}
+
+void SasClient::getInterceptionRuleDetailAsync(const GetInterceptionRuleDetailRequest& request, const GetInterceptionRuleDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getInterceptionRuleDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::GetInterceptionRuleDetailOutcomeCallable SasClient::getInterceptionRuleDetailCallable(const GetInterceptionRuleDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetInterceptionRuleDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getInterceptionRuleDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -11751,6 +12147,42 @@ SasClient::InstallCloudMonitorOutcomeCallable SasClient::installCloudMonitorCall
 	return task->get_future();
 }
 
+SasClient::InstallPmAgentOutcome SasClient::installPmAgent(const InstallPmAgentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InstallPmAgentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InstallPmAgentOutcome(InstallPmAgentResult(outcome.result()));
+	else
+		return InstallPmAgentOutcome(outcome.error());
+}
+
+void SasClient::installPmAgentAsync(const InstallPmAgentRequest& request, const InstallPmAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, installPmAgent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::InstallPmAgentOutcomeCallable SasClient::installPmAgentCallable(const InstallPmAgentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InstallPmAgentOutcome()>>(
+			[this, request]()
+			{
+			return this->installPmAgent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::InstallUniBackupAgentOutcome SasClient::installUniBackupAgent(const InstallUniBackupAgentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -12111,6 +12543,42 @@ SasClient::ListClientUserDefineRulesOutcomeCallable SasClient::listClientUserDef
 	return task->get_future();
 }
 
+SasClient::ListCloudAssetInstancesOutcome SasClient::listCloudAssetInstances(const ListCloudAssetInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCloudAssetInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCloudAssetInstancesOutcome(ListCloudAssetInstancesResult(outcome.result()));
+	else
+		return ListCloudAssetInstancesOutcome(outcome.error());
+}
+
+void SasClient::listCloudAssetInstancesAsync(const ListCloudAssetInstancesRequest& request, const ListCloudAssetInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCloudAssetInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListCloudAssetInstancesOutcomeCallable SasClient::listCloudAssetInstancesCallable(const ListCloudAssetInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCloudAssetInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->listCloudAssetInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::ListClusterCnnfStatusDetailOutcome SasClient::listClusterCnnfStatusDetail(const ListClusterCnnfStatusDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -12363,6 +12831,150 @@ SasClient::ListHoneypotProbeOutcomeCallable SasClient::listHoneypotProbeCallable
 	return task->get_future();
 }
 
+SasClient::ListImageRegistryRegionOutcome SasClient::listImageRegistryRegion(const ListImageRegistryRegionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListImageRegistryRegionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListImageRegistryRegionOutcome(ListImageRegistryRegionResult(outcome.result()));
+	else
+		return ListImageRegistryRegionOutcome(outcome.error());
+}
+
+void SasClient::listImageRegistryRegionAsync(const ListImageRegistryRegionRequest& request, const ListImageRegistryRegionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listImageRegistryRegion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListImageRegistryRegionOutcomeCallable SasClient::listImageRegistryRegionCallable(const ListImageRegistryRegionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListImageRegistryRegionOutcome()>>(
+			[this, request]()
+			{
+			return this->listImageRegistryRegion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ListImageRiskOutcome SasClient::listImageRisk(const ListImageRiskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListImageRiskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListImageRiskOutcome(ListImageRiskResult(outcome.result()));
+	else
+		return ListImageRiskOutcome(outcome.error());
+}
+
+void SasClient::listImageRiskAsync(const ListImageRiskRequest& request, const ListImageRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listImageRisk(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListImageRiskOutcomeCallable SasClient::listImageRiskCallable(const ListImageRiskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListImageRiskOutcome()>>(
+			[this, request]()
+			{
+			return this->listImageRisk(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ListInstanceCatalogOutcome SasClient::listInstanceCatalog(const ListInstanceCatalogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInstanceCatalogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInstanceCatalogOutcome(ListInstanceCatalogResult(outcome.result()));
+	else
+		return ListInstanceCatalogOutcome(outcome.error());
+}
+
+void SasClient::listInstanceCatalogAsync(const ListInstanceCatalogRequest& request, const ListInstanceCatalogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInstanceCatalog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListInstanceCatalogOutcomeCallable SasClient::listInstanceCatalogCallable(const ListInstanceCatalogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInstanceCatalogOutcome()>>(
+			[this, request]()
+			{
+			return this->listInstanceCatalog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ListInterceptionHistoryOutcome SasClient::listInterceptionHistory(const ListInterceptionHistoryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInterceptionHistoryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInterceptionHistoryOutcome(ListInterceptionHistoryResult(outcome.result()));
+	else
+		return ListInterceptionHistoryOutcome(outcome.error());
+}
+
+void SasClient::listInterceptionHistoryAsync(const ListInterceptionHistoryRequest& request, const ListInterceptionHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInterceptionHistory(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListInterceptionHistoryOutcomeCallable SasClient::listInterceptionHistoryCallable(const ListInterceptionHistoryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInterceptionHistoryOutcome()>>(
+			[this, request]()
+			{
+			return this->listInterceptionHistory(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::ListInterceptionImageOutcome SasClient::listInterceptionImage(const ListInterceptionImageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -12435,6 +13047,42 @@ SasClient::ListInterceptionRulePageOutcomeCallable SasClient::listInterceptionRu
 	return task->get_future();
 }
 
+SasClient::ListInterceptionTargetPageOutcome SasClient::listInterceptionTargetPage(const ListInterceptionTargetPageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInterceptionTargetPageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInterceptionTargetPageOutcome(ListInterceptionTargetPageResult(outcome.result()));
+	else
+		return ListInterceptionTargetPageOutcome(outcome.error());
+}
+
+void SasClient::listInterceptionTargetPageAsync(const ListInterceptionTargetPageRequest& request, const ListInterceptionTargetPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInterceptionTargetPage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListInterceptionTargetPageOutcomeCallable SasClient::listInterceptionTargetPageCallable(const ListInterceptionTargetPageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInterceptionTargetPageOutcome()>>(
+			[this, request]()
+			{
+			return this->listInterceptionTargetPage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::ListPluginForUuidOutcome SasClient::listPluginForUuid(const ListPluginForUuidRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -12465,6 +13113,42 @@ SasClient::ListPluginForUuidOutcomeCallable SasClient::listPluginForUuidCallable
 			[this, request]()
 			{
 			return this->listPluginForUuid(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ListPodRiskOutcome SasClient::listPodRisk(const ListPodRiskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListPodRiskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListPodRiskOutcome(ListPodRiskResult(outcome.result()));
+	else
+		return ListPodRiskOutcome(outcome.error());
+}
+
+void SasClient::listPodRiskAsync(const ListPodRiskRequest& request, const ListPodRiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listPodRisk(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListPodRiskOutcomeCallable SasClient::listPodRiskCallable(const ListPodRiskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListPodRiskOutcome()>>(
+			[this, request]()
+			{
+			return this->listPodRisk(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -12537,6 +13221,42 @@ SasClient::ListPrivateRegistryTypeOutcomeCallable SasClient::listPrivateRegistry
 			[this, request]()
 			{
 			return this->listPrivateRegistryType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ListRuleTargetAllOutcome SasClient::listRuleTargetAll(const ListRuleTargetAllRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListRuleTargetAllOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListRuleTargetAllOutcome(ListRuleTargetAllResult(outcome.result()));
+	else
+		return ListRuleTargetAllOutcome(outcome.error());
+}
+
+void SasClient::listRuleTargetAllAsync(const ListRuleTargetAllRequest& request, const ListRuleTargetAllAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listRuleTargetAll(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListRuleTargetAllOutcomeCallable SasClient::listRuleTargetAllCallable(const ListRuleTargetAllRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListRuleTargetAllOutcome()>>(
+			[this, request]()
+			{
+			return this->listRuleTargetAll(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -13227,6 +13947,42 @@ SasClient::ModifyClientUserDefineRuleOutcomeCallable SasClient::modifyClientUser
 	return task->get_future();
 }
 
+SasClient::ModifyClusterCnnfStatusUserConfirmOutcome SasClient::modifyClusterCnnfStatusUserConfirm(const ModifyClusterCnnfStatusUserConfirmRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyClusterCnnfStatusUserConfirmOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyClusterCnnfStatusUserConfirmOutcome(ModifyClusterCnnfStatusUserConfirmResult(outcome.result()));
+	else
+		return ModifyClusterCnnfStatusUserConfirmOutcome(outcome.error());
+}
+
+void SasClient::modifyClusterCnnfStatusUserConfirmAsync(const ModifyClusterCnnfStatusUserConfirmRequest& request, const ModifyClusterCnnfStatusUserConfirmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyClusterCnnfStatusUserConfirm(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ModifyClusterCnnfStatusUserConfirmOutcomeCallable SasClient::modifyClusterCnnfStatusUserConfirmCallable(const ModifyClusterCnnfStatusUserConfirmRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyClusterCnnfStatusUserConfirmOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyClusterCnnfStatusUserConfirm(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::ModifyConcernNecessityOutcome SasClient::modifyConcernNecessity(const ModifyConcernNecessityRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -13473,6 +14229,114 @@ SasClient::ModifyInstanceAntiBruteForceRuleOutcomeCallable SasClient::modifyInst
 			[this, request]()
 			{
 			return this->modifyInstanceAntiBruteForceRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ModifyInterceptionRuleOutcome SasClient::modifyInterceptionRule(const ModifyInterceptionRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInterceptionRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInterceptionRuleOutcome(ModifyInterceptionRuleResult(outcome.result()));
+	else
+		return ModifyInterceptionRuleOutcome(outcome.error());
+}
+
+void SasClient::modifyInterceptionRuleAsync(const ModifyInterceptionRuleRequest& request, const ModifyInterceptionRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInterceptionRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ModifyInterceptionRuleOutcomeCallable SasClient::modifyInterceptionRuleCallable(const ModifyInterceptionRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInterceptionRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInterceptionRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ModifyInterceptionRuleSwitchOutcome SasClient::modifyInterceptionRuleSwitch(const ModifyInterceptionRuleSwitchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInterceptionRuleSwitchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInterceptionRuleSwitchOutcome(ModifyInterceptionRuleSwitchResult(outcome.result()));
+	else
+		return ModifyInterceptionRuleSwitchOutcome(outcome.error());
+}
+
+void SasClient::modifyInterceptionRuleSwitchAsync(const ModifyInterceptionRuleSwitchRequest& request, const ModifyInterceptionRuleSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInterceptionRuleSwitch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ModifyInterceptionRuleSwitchOutcomeCallable SasClient::modifyInterceptionRuleSwitchCallable(const ModifyInterceptionRuleSwitchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInterceptionRuleSwitchOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInterceptionRuleSwitch(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ModifyInterceptionTargetOutcome SasClient::modifyInterceptionTarget(const ModifyInterceptionTargetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInterceptionTargetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInterceptionTargetOutcome(ModifyInterceptionTargetResult(outcome.result()));
+	else
+		return ModifyInterceptionTargetOutcome(outcome.error());
+}
+
+void SasClient::modifyInterceptionTargetAsync(const ModifyInterceptionTargetRequest& request, const ModifyInterceptionTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInterceptionTarget(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ModifyInterceptionTargetOutcomeCallable SasClient::modifyInterceptionTargetCallable(const ModifyInterceptionTargetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInterceptionTargetOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInterceptionTarget(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -15705,6 +16569,42 @@ SasClient::SaveSuspEventUserSettingOutcomeCallable SasClient::saveSuspEventUserS
 			[this, request]()
 			{
 			return this->saveSuspEventUserSetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::SetClusterInterceptionConfigOutcome SasClient::setClusterInterceptionConfig(const SetClusterInterceptionConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetClusterInterceptionConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetClusterInterceptionConfigOutcome(SetClusterInterceptionConfigResult(outcome.result()));
+	else
+		return SetClusterInterceptionConfigOutcome(outcome.error());
+}
+
+void SasClient::setClusterInterceptionConfigAsync(const SetClusterInterceptionConfigRequest& request, const SetClusterInterceptionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setClusterInterceptionConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::SetClusterInterceptionConfigOutcomeCallable SasClient::setClusterInterceptionConfigCallable(const SetClusterInterceptionConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetClusterInterceptionConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->setClusterInterceptionConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

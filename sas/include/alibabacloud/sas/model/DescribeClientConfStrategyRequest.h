@@ -30,20 +30,20 @@ class ALIBABACLOUD_SAS_EXPORT DescribeClientConfStrategyRequest : public RpcServ
 public:
 	DescribeClientConfStrategyRequest();
 	~DescribeClientConfStrategyRequest();
+	std::string getTagValue() const;
+	void setTagValue(const std::string &tagValue);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getTag() const;
 	void setTag(const std::string &tag);
 	std::string getResourceDirectoryAccountId() const;
 	void setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId);
-	std::string getTagValue() const;
-	void setTagValue(const std::string &tagValue);
 
 private:
+	std::string tagValue_;
 	std::string sourceIp_;
 	std::string tag_;
 	std::string resourceDirectoryAccountId_;
-	std::string tagValue_;
 };
 } // namespace Model
 } // namespace Sas

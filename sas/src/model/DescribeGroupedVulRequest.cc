@@ -25,6 +25,24 @@ DescribeGroupedVulRequest::DescribeGroupedVulRequest()
 
 DescribeGroupedVulRequest::~DescribeGroupedVulRequest() {}
 
+std::string DescribeGroupedVulRequest::getStatusList() const {
+  return statusList_;
+}
+
+void DescribeGroupedVulRequest::setStatusList(const std::string &statusList) {
+  statusList_ = statusList;
+  setParameter(std::string("StatusList"), statusList);
+}
+
+std::string DescribeGroupedVulRequest::getTargetType() const {
+  return targetType_;
+}
+
+void DescribeGroupedVulRequest::setTargetType(const std::string &targetType) {
+  targetType_ = targetType;
+  setParameter(std::string("TargetType"), targetType);
+}
+
 int DescribeGroupedVulRequest::getMinScore() const {
   return minScore_;
 }
@@ -32,6 +50,15 @@ int DescribeGroupedVulRequest::getMinScore() const {
 void DescribeGroupedVulRequest::setMinScore(int minScore) {
   minScore_ = minScore;
   setParameter(std::string("MinScore"), std::to_string(minScore));
+}
+
+std::string DescribeGroupedVulRequest::getCveId() const {
+  return cveId_;
+}
+
+void DescribeGroupedVulRequest::setCveId(const std::string &cveId) {
+  cveId_ = cveId;
+  setParameter(std::string("CveId"), cveId);
 }
 
 std::string DescribeGroupedVulRequest::getAttachTypes() const {
@@ -97,114 +124,6 @@ void DescribeGroupedVulRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string DescribeGroupedVulRequest::getLevel() const {
-  return level_;
-}
-
-void DescribeGroupedVulRequest::setLevel(const std::string &level) {
-  level_ = level;
-  setParameter(std::string("Level"), level);
-}
-
-std::string DescribeGroupedVulRequest::getGroupId() const {
-  return groupId_;
-}
-
-void DescribeGroupedVulRequest::setGroupId(const std::string &groupId) {
-  groupId_ = groupId;
-  setParameter(std::string("GroupId"), groupId);
-}
-
-std::string DescribeGroupedVulRequest::getOrderBy() const {
-  return orderBy_;
-}
-
-void DescribeGroupedVulRequest::setOrderBy(const std::string &orderBy) {
-  orderBy_ = orderBy;
-  setParameter(std::string("OrderBy"), orderBy);
-}
-
-long DescribeGroupedVulRequest::getPatchId() const {
-  return patchId_;
-}
-
-void DescribeGroupedVulRequest::setPatchId(long patchId) {
-  patchId_ = patchId;
-  setParameter(std::string("PatchId"), std::to_string(patchId));
-}
-
-std::string DescribeGroupedVulRequest::getAliasName() const {
-  return aliasName_;
-}
-
-void DescribeGroupedVulRequest::setAliasName(const std::string &aliasName) {
-  aliasName_ = aliasName;
-  setParameter(std::string("AliasName"), aliasName);
-}
-
-std::string DescribeGroupedVulRequest::getName() const {
-  return name_;
-}
-
-void DescribeGroupedVulRequest::setName(const std::string &name) {
-  name_ = name;
-  setParameter(std::string("Name"), name);
-}
-
-long DescribeGroupedVulRequest::getCreateTsEnd() const {
-  return createTsEnd_;
-}
-
-void DescribeGroupedVulRequest::setCreateTsEnd(long createTsEnd) {
-  createTsEnd_ = createTsEnd;
-  setParameter(std::string("CreateTsEnd"), std::to_string(createTsEnd));
-}
-
-std::string DescribeGroupedVulRequest::getNecessity() const {
-  return necessity_;
-}
-
-void DescribeGroupedVulRequest::setNecessity(const std::string &necessity) {
-  necessity_ = necessity;
-  setParameter(std::string("Necessity"), necessity);
-}
-
-std::string DescribeGroupedVulRequest::getUuids() const {
-  return uuids_;
-}
-
-void DescribeGroupedVulRequest::setUuids(const std::string &uuids) {
-  uuids_ = uuids;
-  setParameter(std::string("Uuids"), uuids);
-}
-
-std::string DescribeGroupedVulRequest::getStatusList() const {
-  return statusList_;
-}
-
-void DescribeGroupedVulRequest::setStatusList(const std::string &statusList) {
-  statusList_ = statusList;
-  setParameter(std::string("StatusList"), statusList);
-}
-
-std::string DescribeGroupedVulRequest::getTargetType() const {
-  return targetType_;
-}
-
-void DescribeGroupedVulRequest::setTargetType(const std::string &targetType) {
-  targetType_ = targetType;
-  setParameter(std::string("TargetType"), targetType);
-}
-
-std::string DescribeGroupedVulRequest::getCveId() const {
-  return cveId_;
-}
-
-void DescribeGroupedVulRequest::setCveId(const std::string &cveId) {
-  cveId_ = cveId;
-  setParameter(std::string("CveId"), cveId);
-}
-
 std::string DescribeGroupedVulRequest::getContainerFieldValue() const {
   return containerFieldValue_;
 }
@@ -259,6 +178,33 @@ void DescribeGroupedVulRequest::setDirection(const std::string &direction) {
   setParameter(std::string("Direction"), direction);
 }
 
+std::string DescribeGroupedVulRequest::getLevel() const {
+  return level_;
+}
+
+void DescribeGroupedVulRequest::setLevel(const std::string &level) {
+  level_ = level;
+  setParameter(std::string("Level"), level);
+}
+
+std::string DescribeGroupedVulRequest::getGroupId() const {
+  return groupId_;
+}
+
+void DescribeGroupedVulRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
+}
+
+std::string DescribeGroupedVulRequest::getOrderBy() const {
+  return orderBy_;
+}
+
+void DescribeGroupedVulRequest::setOrderBy(const std::string &orderBy) {
+  orderBy_ = orderBy;
+  setParameter(std::string("OrderBy"), orderBy);
+}
+
 std::string DescribeGroupedVulRequest::getDealed() const {
   return dealed_;
 }
@@ -286,6 +232,24 @@ void DescribeGroupedVulRequest::setClusterId(const std::string &clusterId) {
   setParameter(std::string("ClusterId"), clusterId);
 }
 
+long DescribeGroupedVulRequest::getPatchId() const {
+  return patchId_;
+}
+
+void DescribeGroupedVulRequest::setPatchId(long patchId) {
+  patchId_ = patchId;
+  setParameter(std::string("PatchId"), std::to_string(patchId));
+}
+
+std::string DescribeGroupedVulRequest::getAliasName() const {
+  return aliasName_;
+}
+
+void DescribeGroupedVulRequest::setAliasName(const std::string &aliasName) {
+  aliasName_ = aliasName;
+  setParameter(std::string("AliasName"), aliasName);
+}
+
 std::string DescribeGroupedVulRequest::getSearchTags() const {
   return searchTags_;
 }
@@ -293,5 +257,41 @@ std::string DescribeGroupedVulRequest::getSearchTags() const {
 void DescribeGroupedVulRequest::setSearchTags(const std::string &searchTags) {
   searchTags_ = searchTags;
   setParameter(std::string("SearchTags"), searchTags);
+}
+
+std::string DescribeGroupedVulRequest::getName() const {
+  return name_;
+}
+
+void DescribeGroupedVulRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
+}
+
+long DescribeGroupedVulRequest::getCreateTsEnd() const {
+  return createTsEnd_;
+}
+
+void DescribeGroupedVulRequest::setCreateTsEnd(long createTsEnd) {
+  createTsEnd_ = createTsEnd;
+  setParameter(std::string("CreateTsEnd"), std::to_string(createTsEnd));
+}
+
+std::string DescribeGroupedVulRequest::getNecessity() const {
+  return necessity_;
+}
+
+void DescribeGroupedVulRequest::setNecessity(const std::string &necessity) {
+  necessity_ = necessity;
+  setParameter(std::string("Necessity"), necessity);
+}
+
+std::string DescribeGroupedVulRequest::getUuids() const {
+  return uuids_;
+}
+
+void DescribeGroupedVulRequest::setUuids(const std::string &uuids) {
+  uuids_ = uuids;
+  setParameter(std::string("Uuids"), uuids);
 }
 

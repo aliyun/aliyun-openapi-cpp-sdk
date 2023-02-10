@@ -25,6 +25,15 @@ DescribeCheckWarningMachinesRequest::DescribeCheckWarningMachinesRequest()
 
 DescribeCheckWarningMachinesRequest::~DescribeCheckWarningMachinesRequest() {}
 
+long DescribeCheckWarningMachinesRequest::getRiskId() const {
+  return riskId_;
+}
+
+void DescribeCheckWarningMachinesRequest::setRiskId(long riskId) {
+  riskId_ = riskId;
+  setParameter(std::string("RiskId"), std::to_string(riskId));
+}
+
 std::string DescribeCheckWarningMachinesRequest::getLang() const {
   return lang_;
 }
@@ -41,15 +50,6 @@ long DescribeCheckWarningMachinesRequest::getCheckId() const {
 void DescribeCheckWarningMachinesRequest::setCheckId(long checkId) {
   checkId_ = checkId;
   setParameter(std::string("CheckId"), std::to_string(checkId));
-}
-
-long DescribeCheckWarningMachinesRequest::getRiskId() const {
-  return riskId_;
-}
-
-void DescribeCheckWarningMachinesRequest::setRiskId(long riskId) {
-  riskId_ = riskId;
-  setParameter(std::string("RiskId"), std::to_string(riskId));
 }
 
 int DescribeCheckWarningMachinesRequest::getStatus() const {

@@ -25,6 +25,15 @@ DescribeStrategyExecDetailRequest::DescribeStrategyExecDetailRequest()
 
 DescribeStrategyExecDetailRequest::~DescribeStrategyExecDetailRequest() {}
 
+int DescribeStrategyExecDetailRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeStrategyExecDetailRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
 std::string DescribeStrategyExecDetailRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -41,15 +50,6 @@ int DescribeStrategyExecDetailRequest::getPageSize() const {
 void DescribeStrategyExecDetailRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-int DescribeStrategyExecDetailRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeStrategyExecDetailRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
 int DescribeStrategyExecDetailRequest::getStrategyId() const {

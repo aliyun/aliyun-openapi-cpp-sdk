@@ -25,6 +25,15 @@ DescribeClientConfStrategyRequest::DescribeClientConfStrategyRequest()
 
 DescribeClientConfStrategyRequest::~DescribeClientConfStrategyRequest() {}
 
+std::string DescribeClientConfStrategyRequest::getTagValue() const {
+  return tagValue_;
+}
+
+void DescribeClientConfStrategyRequest::setTagValue(const std::string &tagValue) {
+  tagValue_ = tagValue;
+  setParameter(std::string("TagValue"), tagValue);
+}
+
 std::string DescribeClientConfStrategyRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -50,14 +59,5 @@ std::string DescribeClientConfStrategyRequest::getResourceDirectoryAccountId() c
 void DescribeClientConfStrategyRequest::setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId) {
   resourceDirectoryAccountId_ = resourceDirectoryAccountId;
   setParameter(std::string("ResourceDirectoryAccountId"), resourceDirectoryAccountId);
-}
-
-std::string DescribeClientConfStrategyRequest::getTagValue() const {
-  return tagValue_;
-}
-
-void DescribeClientConfStrategyRequest::setTagValue(const std::string &tagValue) {
-  tagValue_ = tagValue;
-  setParameter(std::string("TagValue"), tagValue);
 }
 

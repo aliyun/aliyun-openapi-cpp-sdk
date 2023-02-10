@@ -79,6 +79,8 @@ void DescribeInstanceStatisticsResult::parse(const std::string &payload)
 			dataObject.agentlessVulSca = std::stoi(valueDataDataItem["AgentlessVulSca"].asString());
 		if(!valueDataDataItem["AgentlessBaseline"].isNull())
 			dataObject.agentlessBaseline = std::stoi(valueDataDataItem["AgentlessBaseline"].asString());
+		if(!valueDataDataItem["CspmNum"].isNull())
+			dataObject.cspmNum = std::stoi(valueDataDataItem["CspmNum"].asString());
 		data_.push_back(dataObject);
 	}
 

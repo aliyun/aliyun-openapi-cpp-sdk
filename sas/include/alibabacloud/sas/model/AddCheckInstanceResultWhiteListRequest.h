@@ -32,18 +32,18 @@ public:
 	~AddCheckInstanceResultWhiteListRequest();
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	long getCheckId() const;
-	void setCheckId(long checkId);
 	std::string getCheckGroupId() const;
 	void setCheckGroupId(const std::string &checkGroupId);
 	std::vector<std::string> getInstanceIds() const;
 	void setInstanceIds(const std::vector<std::string> &instanceIds);
+	long getCheckId() const;
+	void setCheckId(long checkId);
 
 private:
 	std::string sourceIp_;
-	long checkId_;
 	std::string checkGroupId_;
 	std::vector<std::string> instanceIds_;
+	long checkId_;
 };
 } // namespace Model
 } // namespace Sas

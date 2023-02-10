@@ -30,20 +30,20 @@ class ALIBABACLOUD_SAS_EXPORT OpenSensitiveFileScanRequest : public RpcServiceRe
 public:
 	OpenSensitiveFileScanRequest();
 	~OpenSensitiveFileScanRequest();
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getLang() const;
-	void setLang(const std::string &lang);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	std::string getSwitchOn() const;
 	void setSwitchOn(const std::string &switchOn);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 
 private:
-	int pageSize_;
-	std::string lang_;
 	int currentPage_;
+	int pageSize_;
 	std::string switchOn_;
+	std::string lang_;
 };
 } // namespace Model
 } // namespace Sas

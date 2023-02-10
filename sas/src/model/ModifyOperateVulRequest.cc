@@ -52,15 +52,6 @@ void ModifyOperateVulRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string ModifyOperateVulRequest::getInfo() const {
-  return info_;
-}
-
-void ModifyOperateVulRequest::setInfo(const std::string &info) {
-  info_ = info;
-  setParameter(std::string("Info"), info);
-}
-
 std::string ModifyOperateVulRequest::getOperateType() const {
   return operateType_;
 }
@@ -68,5 +59,14 @@ std::string ModifyOperateVulRequest::getOperateType() const {
 void ModifyOperateVulRequest::setOperateType(const std::string &operateType) {
   operateType_ = operateType;
   setParameter(std::string("OperateType"), operateType);
+}
+
+std::string ModifyOperateVulRequest::getInfo() const {
+  return info_;
+}
+
+void ModifyOperateVulRequest::setInfo(const std::string &info) {
+  info_ = info;
+  setParameter(std::string("Info"), info);
 }
 

@@ -25,6 +25,14 @@ DescribeVulCheckTaskStatusDetailRequest::DescribeVulCheckTaskStatusDetailRequest
 
 DescribeVulCheckTaskStatusDetailRequest::~DescribeVulCheckTaskStatusDetailRequest() {}
 
+std::vector<std::string> DescribeVulCheckTaskStatusDetailRequest::getTypes() const {
+  return types_;
+}
+
+void DescribeVulCheckTaskStatusDetailRequest::setTypes(const std::vector<std::string> &types) {
+  types_ = types;
+}
+
 std::vector<std::string> DescribeVulCheckTaskStatusDetailRequest::getTaskIds() const {
   return taskIds_;
 }
@@ -49,13 +57,5 @@ std::string DescribeVulCheckTaskStatusDetailRequest::getSourceIp() const {
 void DescribeVulCheckTaskStatusDetailRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
-}
-
-std::vector<std::string> DescribeVulCheckTaskStatusDetailRequest::getTypes() const {
-  return types_;
-}
-
-void DescribeVulCheckTaskStatusDetailRequest::setTypes(const std::vector<std::string> &types) {
-  types_ = types;
 }
 

@@ -34,24 +34,6 @@ void ModifyStrategyTargetRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
-std::string ModifyStrategyTargetRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void ModifyStrategyTargetRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
-}
-
-std::string ModifyStrategyTargetRequest::getResourceDirectoryAccountId() const {
-  return resourceDirectoryAccountId_;
-}
-
-void ModifyStrategyTargetRequest::setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId) {
-  resourceDirectoryAccountId_ = resourceDirectoryAccountId;
-  setParameter(std::string("ResourceDirectoryAccountId"), resourceDirectoryAccountId);
-}
-
 std::string ModifyStrategyTargetRequest::getTarget() const {
   return target_;
 }
@@ -61,6 +43,15 @@ void ModifyStrategyTargetRequest::setTarget(const std::string &target) {
   setParameter(std::string("Target"), target);
 }
 
+std::string ModifyStrategyTargetRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void ModifyStrategyTargetRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
 std::string ModifyStrategyTargetRequest::getConfig() const {
   return config_;
 }
@@ -68,5 +59,14 @@ std::string ModifyStrategyTargetRequest::getConfig() const {
 void ModifyStrategyTargetRequest::setConfig(const std::string &config) {
   config_ = config;
   setParameter(std::string("Config"), config);
+}
+
+std::string ModifyStrategyTargetRequest::getResourceDirectoryAccountId() const {
+  return resourceDirectoryAccountId_;
+}
+
+void ModifyStrategyTargetRequest::setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId) {
+  resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+  setParameter(std::string("ResourceDirectoryAccountId"), resourceDirectoryAccountId);
 }
 

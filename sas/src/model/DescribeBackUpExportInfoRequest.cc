@@ -25,6 +25,24 @@ DescribeBackUpExportInfoRequest::DescribeBackUpExportInfoRequest()
 
 DescribeBackUpExportInfoRequest::~DescribeBackUpExportInfoRequest() {}
 
+std::string DescribeBackUpExportInfoRequest::getExportType() const {
+  return exportType_;
+}
+
+void DescribeBackUpExportInfoRequest::setExportType(const std::string &exportType) {
+  exportType_ = exportType;
+  setParameter(std::string("ExportType"), exportType);
+}
+
+int DescribeBackUpExportInfoRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeBackUpExportInfoRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
 std::string DescribeBackUpExportInfoRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -50,23 +68,5 @@ std::string DescribeBackUpExportInfoRequest::getLang() const {
 void DescribeBackUpExportInfoRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
-}
-
-std::string DescribeBackUpExportInfoRequest::getExportType() const {
-  return exportType_;
-}
-
-void DescribeBackUpExportInfoRequest::setExportType(const std::string &exportType) {
-  exportType_ = exportType;
-  setParameter(std::string("ExportType"), exportType);
-}
-
-int DescribeBackUpExportInfoRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeBackUpExportInfoRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 

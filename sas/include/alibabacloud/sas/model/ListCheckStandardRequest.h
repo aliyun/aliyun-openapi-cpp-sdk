@@ -36,20 +36,20 @@ public:
 	void setInstanceTypes(const std::vector<std::string> &instanceTypes);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::vector<std::string> getInstanceIds() const;
+	void setInstanceIds(const std::vector<std::string> &instanceIds);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
 	std::vector<std::string> getVendors() const;
 	void setVendors(const std::vector<std::string> &vendors);
-	std::vector<std::string> getInstanceIds() const;
-	void setInstanceIds(const std::vector<std::string> &instanceIds);
 
 private:
 	std::vector<std::string> instanceSubTypes_;
 	std::vector<std::string> instanceTypes_;
 	std::string sourceIp_;
+	std::vector<std::string> instanceIds_;
 	std::string lang_;
 	std::vector<std::string> vendors_;
-	std::vector<std::string> instanceIds_;
 };
 } // namespace Model
 } // namespace Sas

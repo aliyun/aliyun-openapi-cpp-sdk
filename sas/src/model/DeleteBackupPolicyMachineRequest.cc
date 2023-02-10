@@ -34,6 +34,15 @@ void DeleteBackupPolicyMachineRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DeleteBackupPolicyMachineRequest::getPolicyVersion() const {
+  return policyVersion_;
+}
+
+void DeleteBackupPolicyMachineRequest::setPolicyVersion(const std::string &policyVersion) {
+  policyVersion_ = policyVersion;
+  setParameter(std::string("PolicyVersion"), policyVersion);
+}
+
 std::string DeleteBackupPolicyMachineRequest::getUuid() const {
   return uuid_;
 }
@@ -67,14 +76,5 @@ std::vector<std::string> DeleteBackupPolicyMachineRequest::getUuidList() const {
 
 void DeleteBackupPolicyMachineRequest::setUuidList(const std::vector<std::string> &uuidList) {
   uuidList_ = uuidList;
-}
-
-std::string DeleteBackupPolicyMachineRequest::getPolicyVersion() const {
-  return policyVersion_;
-}
-
-void DeleteBackupPolicyMachineRequest::setPolicyVersion(const std::string &policyVersion) {
-  policyVersion_ = policyVersion;
-  setParameter(std::string("PolicyVersion"), policyVersion);
 }
 

@@ -30,20 +30,20 @@ class ALIBABACLOUD_SAS_EXPORT DescribeRisksRequest : public RpcServiceRequest {
 public:
 	DescribeRisksRequest();
 	~DescribeRisksRequest();
+	long getRiskId() const;
+	void setRiskId(long riskId);
 	std::string getRiskName() const;
 	void setRiskName(const std::string &riskName);
 	int getLimit() const;
 	void setLimit(int limit);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
-	long getRiskId() const;
-	void setRiskId(long riskId);
 
 private:
+	long riskId_;
 	std::string riskName_;
 	int limit_;
 	std::string lang_;
-	long riskId_;
 };
 } // namespace Model
 } // namespace Sas

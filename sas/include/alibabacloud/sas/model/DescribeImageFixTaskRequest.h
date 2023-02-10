@@ -30,25 +30,25 @@ class ALIBABACLOUD_SAS_EXPORT DescribeImageFixTaskRequest : public RpcServiceReq
 public:
 	DescribeImageFixTaskRequest();
 	~DescribeImageFixTaskRequest();
+	long getEndTime() const;
+	void setEndTime(long endTime);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 	long getStartTime() const;
 	void setStartTime(long startTime);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	long getEndTime() const;
-	void setEndTime(long endTime);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 
 private:
+	long endTime_;
+	int currentPage_;
 	long startTime_;
 	std::string sourceIp_;
 	int pageSize_;
-	long endTime_;
-	int currentPage_;
 	std::string status_;
 };
 } // namespace Model

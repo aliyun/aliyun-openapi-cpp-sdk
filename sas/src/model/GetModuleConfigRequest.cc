@@ -25,6 +25,15 @@ GetModuleConfigRequest::GetModuleConfigRequest()
 
 GetModuleConfigRequest::~GetModuleConfigRequest() {}
 
+std::string GetModuleConfigRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void GetModuleConfigRequest::setCurrentPage(const std::string &currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), currentPage);
+}
+
 std::string GetModuleConfigRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -50,14 +59,5 @@ std::string GetModuleConfigRequest::getResourceDirectoryAccountId() const {
 void GetModuleConfigRequest::setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId) {
   resourceDirectoryAccountId_ = resourceDirectoryAccountId;
   setParameter(std::string("ResourceDirectoryAccountId"), resourceDirectoryAccountId);
-}
-
-std::string GetModuleConfigRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void GetModuleConfigRequest::setCurrentPage(const std::string &currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), currentPage);
 }
 

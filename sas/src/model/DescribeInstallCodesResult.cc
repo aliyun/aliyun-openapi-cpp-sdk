@@ -61,6 +61,8 @@ void DescribeInstallCodesResult::parse(const std::string &payload)
 			installCodesObject.tag = valueInstallCodesInstallCode["Tag"].asString();
 		if(!valueInstallCodesInstallCode["Vendor"].isNull())
 			installCodesObject.vendor = std::stoi(valueInstallCodesInstallCode["Vendor"].asString());
+		if(!valueInstallCodesInstallCode["ProxyCluster"].isNull())
+			installCodesObject.proxyCluster = valueInstallCodesInstallCode["ProxyCluster"].asString();
 		installCodes_.push_back(installCodesObject);
 	}
 

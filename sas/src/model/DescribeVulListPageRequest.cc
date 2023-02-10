@@ -34,24 +34,6 @@ void DescribeVulListPageRequest::setCveId(const std::string &cveId) {
   setParameter(std::string("CveId"), cveId);
 }
 
-std::string DescribeVulListPageRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void DescribeVulListPageRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
-}
-
-int DescribeVulListPageRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void DescribeVulListPageRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 int DescribeVulListPageRequest::getCurrentPage() const {
   return currentPage_;
 }
@@ -61,6 +43,15 @@ void DescribeVulListPageRequest::setCurrentPage(int currentPage) {
   setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
+std::string DescribeVulListPageRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void DescribeVulListPageRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
 std::string DescribeVulListPageRequest::getVulNameLike() const {
   return vulNameLike_;
 }
@@ -68,5 +59,14 @@ std::string DescribeVulListPageRequest::getVulNameLike() const {
 void DescribeVulListPageRequest::setVulNameLike(const std::string &vulNameLike) {
   vulNameLike_ = vulNameLike;
   setParameter(std::string("VulNameLike"), vulNameLike);
+}
+
+int DescribeVulListPageRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void DescribeVulListPageRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

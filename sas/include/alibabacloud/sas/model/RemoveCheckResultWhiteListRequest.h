@@ -30,19 +30,19 @@ class ALIBABACLOUD_SAS_EXPORT RemoveCheckResultWhiteListRequest : public RpcServ
 public:
 	RemoveCheckResultWhiteListRequest();
 	~RemoveCheckResultWhiteListRequest();
+	std::vector<long> getCheckIds() const;
+	void setCheckIds(const std::vector<long> &checkIds);
 	std::string getType() const;
 	void setType(const std::string &type);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	std::vector<long> getCheckIds() const;
-	void setCheckIds(const std::vector<long> &checkIds);
 	std::string getCheckGroupId() const;
 	void setCheckGroupId(const std::string &checkGroupId);
 
 private:
+	std::vector<long> checkIds_;
 	std::string type_;
 	std::string sourceIp_;
-	std::vector<long> checkIds_;
 	std::string checkGroupId_;
 };
 } // namespace Model

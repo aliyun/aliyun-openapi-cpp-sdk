@@ -25,24 +25,6 @@ ModifyVulTargetRequest::ModifyVulTargetRequest()
 
 ModifyVulTargetRequest::~ModifyVulTargetRequest() {}
 
-std::string ModifyVulTargetRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void ModifyVulTargetRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
-}
-
-std::string ModifyVulTargetRequest::getResourceDirectoryAccountId() const {
-  return resourceDirectoryAccountId_;
-}
-
-void ModifyVulTargetRequest::setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId) {
-  resourceDirectoryAccountId_ = resourceDirectoryAccountId;
-  setParameter(std::string("ResourceDirectoryAccountId"), resourceDirectoryAccountId);
-}
-
 std::string ModifyVulTargetRequest::getTarget() const {
   return target_;
 }
@@ -52,6 +34,15 @@ void ModifyVulTargetRequest::setTarget(const std::string &target) {
   setParameter(std::string("Target"), target);
 }
 
+std::string ModifyVulTargetRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void ModifyVulTargetRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
 std::string ModifyVulTargetRequest::getConfig() const {
   return config_;
 }
@@ -59,5 +50,14 @@ std::string ModifyVulTargetRequest::getConfig() const {
 void ModifyVulTargetRequest::setConfig(const std::string &config) {
   config_ = config;
   setParameter(std::string("Config"), config);
+}
+
+std::string ModifyVulTargetRequest::getResourceDirectoryAccountId() const {
+  return resourceDirectoryAccountId_;
+}
+
+void ModifyVulTargetRequest::setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId) {
+  resourceDirectoryAccountId_ = resourceDirectoryAccountId;
+  setParameter(std::string("ResourceDirectoryAccountId"), resourceDirectoryAccountId);
 }
 

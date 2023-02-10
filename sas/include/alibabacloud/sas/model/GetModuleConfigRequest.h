@@ -30,20 +30,20 @@ class ALIBABACLOUD_SAS_EXPORT GetModuleConfigRequest : public RpcServiceRequest 
 public:
 	GetModuleConfigRequest();
 	~GetModuleConfigRequest();
+	std::string getCurrentPage() const;
+	void setCurrentPage(const std::string &currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getPageSize() const;
 	void setPageSize(const std::string &pageSize);
 	std::string getResourceDirectoryAccountId() const;
 	void setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId);
-	std::string getCurrentPage() const;
-	void setCurrentPage(const std::string &currentPage);
 
 private:
+	std::string currentPage_;
 	std::string sourceIp_;
 	std::string pageSize_;
 	std::string resourceDirectoryAccountId_;
-	std::string currentPage_;
 };
 } // namespace Model
 } // namespace Sas

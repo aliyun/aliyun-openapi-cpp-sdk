@@ -34,6 +34,15 @@ void ModifyClientConfSetupRequest::setStrategyConfig(const std::string &strategy
   setParameter(std::string("StrategyConfig"), strategyConfig);
 }
 
+std::string ModifyClientConfSetupRequest::getStrategyTagValue() const {
+  return strategyTagValue_;
+}
+
+void ModifyClientConfSetupRequest::setStrategyTagValue(const std::string &strategyTagValue) {
+  strategyTagValue_ = strategyTagValue;
+  setParameter(std::string("StrategyTagValue"), strategyTagValue);
+}
+
 std::string ModifyClientConfSetupRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,14 +68,5 @@ std::string ModifyClientConfSetupRequest::getResourceDirectoryAccountId() const 
 void ModifyClientConfSetupRequest::setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId) {
   resourceDirectoryAccountId_ = resourceDirectoryAccountId;
   setParameter(std::string("ResourceDirectoryAccountId"), resourceDirectoryAccountId);
-}
-
-std::string ModifyClientConfSetupRequest::getStrategyTagValue() const {
-  return strategyTagValue_;
-}
-
-void ModifyClientConfSetupRequest::setStrategyTagValue(const std::string &strategyTagValue) {
-  strategyTagValue_ = strategyTagValue;
-  setParameter(std::string("StrategyTagValue"), strategyTagValue);
 }
 

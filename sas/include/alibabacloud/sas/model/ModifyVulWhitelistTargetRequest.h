@@ -34,16 +34,16 @@ public:
 	void setReason(const std::string &reason);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	long getId() const;
-	void setId(long id);
 	std::string getTargetInfo() const;
 	void setTargetInfo(const std::string &targetInfo);
+	long getId() const;
+	void setId(long id);
 
 private:
 	std::string reason_;
 	std::string sourceIp_;
-	long id_;
 	std::string targetInfo_;
+	long id_;
 };
 } // namespace Model
 } // namespace Sas

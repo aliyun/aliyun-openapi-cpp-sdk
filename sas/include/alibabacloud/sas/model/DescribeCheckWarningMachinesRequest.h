@@ -30,19 +30,19 @@ class ALIBABACLOUD_SAS_EXPORT DescribeCheckWarningMachinesRequest : public RpcSe
 public:
 	DescribeCheckWarningMachinesRequest();
 	~DescribeCheckWarningMachinesRequest();
+	long getRiskId() const;
+	void setRiskId(long riskId);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
 	long getCheckId() const;
 	void setCheckId(long checkId);
-	long getRiskId() const;
-	void setRiskId(long riskId);
 	int getStatus() const;
 	void setStatus(int status);
 
 private:
+	long riskId_;
 	std::string lang_;
 	long checkId_;
-	long riskId_;
 	int status_;
 };
 } // namespace Model

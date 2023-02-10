@@ -30,20 +30,20 @@ class ALIBABACLOUD_SAS_EXPORT ModifyVulTargetRequest : public RpcServiceRequest 
 public:
 	ModifyVulTargetRequest();
 	~ModifyVulTargetRequest();
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
-	std::string getResourceDirectoryAccountId() const;
-	void setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId);
 	std::string getTarget() const;
 	void setTarget(const std::string &target);
+	std::string getSourceIp() const;
+	void setSourceIp(const std::string &sourceIp);
 	std::string getConfig() const;
 	void setConfig(const std::string &config);
+	std::string getResourceDirectoryAccountId() const;
+	void setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId);
 
 private:
-	std::string sourceIp_;
-	std::string resourceDirectoryAccountId_;
 	std::string target_;
+	std::string sourceIp_;
 	std::string config_;
+	std::string resourceDirectoryAccountId_;
 };
 } // namespace Model
 } // namespace Sas

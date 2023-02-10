@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string groupName;
 					std::string vendorName;
 					std::string os;
+					std::string proxyCluster;
 					std::string captchaCode;
 					std::string tag;
 					int vendor;

@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct DataItem
 				{
 					int account;
+					int cspmNum;
 					int health;
 					int emgNum;
 					int appNum;

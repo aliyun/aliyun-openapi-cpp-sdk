@@ -34,6 +34,15 @@ void DescribeRestoreJobsRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+int DescribeRestoreJobsRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeRestoreJobsRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
 std::string DescribeRestoreJobsRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,15 +68,6 @@ int DescribeRestoreJobsRequest::getPageSize() const {
 void DescribeRestoreJobsRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-int DescribeRestoreJobsRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeRestoreJobsRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
 std::string DescribeRestoreJobsRequest::getStatus() const {

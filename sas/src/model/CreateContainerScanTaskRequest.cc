@@ -25,15 +25,6 @@ CreateContainerScanTaskRequest::CreateContainerScanTaskRequest()
 
 CreateContainerScanTaskRequest::~CreateContainerScanTaskRequest() {}
 
-std::string CreateContainerScanTaskRequest::getLang() const {
-  return lang_;
-}
-
-void CreateContainerScanTaskRequest::setLang(const std::string &lang) {
-  lang_ = lang;
-  setParameter(std::string("Lang"), lang);
-}
-
 std::string CreateContainerScanTaskRequest::getClusterId() const {
   return clusterId_;
 }
@@ -50,5 +41,14 @@ std::string CreateContainerScanTaskRequest::getContainerIds() const {
 void CreateContainerScanTaskRequest::setContainerIds(const std::string &containerIds) {
   containerIds_ = containerIds;
   setParameter(std::string("ContainerIds"), containerIds);
+}
+
+std::string CreateContainerScanTaskRequest::getLang() const {
+  return lang_;
+}
+
+void CreateContainerScanTaskRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

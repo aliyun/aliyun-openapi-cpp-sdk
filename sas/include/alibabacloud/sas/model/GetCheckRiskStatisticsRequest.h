@@ -30,17 +30,17 @@ class ALIBABACLOUD_SAS_EXPORT GetCheckRiskStatisticsRequest : public RpcServiceR
 public:
 	GetCheckRiskStatisticsRequest();
 	~GetCheckRiskStatisticsRequest();
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 
 private:
+	int currentPage_;
 	int pageSize_;
 	std::string lang_;
-	int currentPage_;
 };
 } // namespace Model
 } // namespace Sas

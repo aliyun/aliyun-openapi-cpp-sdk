@@ -32,6 +32,8 @@ public:
 	~ChangeCheckConfigRequest();
 	std::vector<long> getStandardIds() const;
 	void setStandardIds(const std::vector<long> &standardIds);
+	int getEndTime() const;
+	void setEndTime(int endTime);
 	std::vector<int> getCycleDays() const;
 	void setCycleDays(const std::vector<int> &cycleDays);
 	int getStartTime() const;
@@ -40,16 +42,14 @@ public:
 	void setSourceIp(const std::string &sourceIp);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	int getEndTime() const;
-	void setEndTime(int endTime);
 
 private:
 	std::vector<long> standardIds_;
+	int endTime_;
 	std::vector<int> cycleDays_;
 	int startTime_;
 	std::string sourceIp_;
 	std::string regionId_;
-	int endTime_;
 };
 } // namespace Model
 } // namespace Sas
