@@ -14235,6 +14235,42 @@ IotClient::UpdateThingScriptOutcomeCallable IotClient::updateThingScriptCallable
 	return task->get_future();
 }
 
+IotClient::UpdateTopicConfigOutcome IotClient::updateTopicConfig(const UpdateTopicConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateTopicConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateTopicConfigOutcome(UpdateTopicConfigResult(outcome.result()));
+	else
+		return UpdateTopicConfigOutcome(outcome.error());
+}
+
+void IotClient::updateTopicConfigAsync(const UpdateTopicConfigRequest& request, const UpdateTopicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateTopicConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::UpdateTopicConfigOutcomeCallable IotClient::updateTopicConfigCallable(const UpdateTopicConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateTopicConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateTopicConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::WriteDevicesHotStorageDataOutcome IotClient::writeDevicesHotStorageData(const WriteDevicesHotStorageDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

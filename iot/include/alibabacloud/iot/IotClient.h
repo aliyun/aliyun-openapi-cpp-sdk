@@ -810,6 +810,8 @@
 #include "model/UpdateThingModelResult.h"
 #include "model/UpdateThingScriptRequest.h"
 #include "model/UpdateThingScriptResult.h"
+#include "model/UpdateTopicConfigRequest.h"
+#include "model/UpdateTopicConfigResult.h"
 #include "model/WriteDevicesHotStorageDataRequest.h"
 #include "model/WriteDevicesHotStorageDataResult.h"
 
@@ -2003,6 +2005,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateThingScriptResult> UpdateThingScriptOutcome;
 			typedef std::future<UpdateThingScriptOutcome> UpdateThingScriptOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::UpdateThingScriptRequest&, const UpdateThingScriptOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateThingScriptAsyncHandler;
+			typedef Outcome<Error, Model::UpdateTopicConfigResult> UpdateTopicConfigOutcome;
+			typedef std::future<UpdateTopicConfigOutcome> UpdateTopicConfigOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::UpdateTopicConfigRequest&, const UpdateTopicConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTopicConfigAsyncHandler;
 			typedef Outcome<Error, Model::WriteDevicesHotStorageDataResult> WriteDevicesHotStorageDataOutcome;
 			typedef std::future<WriteDevicesHotStorageDataOutcome> WriteDevicesHotStorageDataOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::WriteDevicesHotStorageDataRequest&, const WriteDevicesHotStorageDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> WriteDevicesHotStorageDataAsyncHandler;
@@ -3193,6 +3198,9 @@ namespace AlibabaCloud
 			UpdateThingScriptOutcome updateThingScript(const Model::UpdateThingScriptRequest &request)const;
 			void updateThingScriptAsync(const Model::UpdateThingScriptRequest& request, const UpdateThingScriptAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateThingScriptOutcomeCallable updateThingScriptCallable(const Model::UpdateThingScriptRequest& request) const;
+			UpdateTopicConfigOutcome updateTopicConfig(const Model::UpdateTopicConfigRequest &request)const;
+			void updateTopicConfigAsync(const Model::UpdateTopicConfigRequest& request, const UpdateTopicConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateTopicConfigOutcomeCallable updateTopicConfigCallable(const Model::UpdateTopicConfigRequest& request) const;
 			WriteDevicesHotStorageDataOutcome writeDevicesHotStorageData(const Model::WriteDevicesHotStorageDataRequest &request)const;
 			void writeDevicesHotStorageDataAsync(const Model::WriteDevicesHotStorageDataRequest& request, const WriteDevicesHotStorageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			WriteDevicesHotStorageDataOutcomeCallable writeDevicesHotStorageDataCallable(const Model::WriteDevicesHotStorageDataRequest& request) const;

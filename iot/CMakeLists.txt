@@ -809,6 +809,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/UpdateThingModelResult.h
 	include/alibabacloud/iot/model/UpdateThingScriptRequest.h
 	include/alibabacloud/iot/model/UpdateThingScriptResult.h
+	include/alibabacloud/iot/model/UpdateTopicConfigRequest.h
+	include/alibabacloud/iot/model/UpdateTopicConfigResult.h
 	include/alibabacloud/iot/model/WriteDevicesHotStorageDataRequest.h
 	include/alibabacloud/iot/model/WriteDevicesHotStorageDataResult.h )
 
@@ -1602,6 +1604,8 @@ set(iot_src
 	src/model/UpdateThingModelResult.cc
 	src/model/UpdateThingScriptRequest.cc
 	src/model/UpdateThingScriptResult.cc
+	src/model/UpdateTopicConfigRequest.cc
+	src/model/UpdateTopicConfigResult.cc
 	src/model/WriteDevicesHotStorageDataRequest.cc
 	src/model/WriteDevicesHotStorageDataResult.cc )
 
