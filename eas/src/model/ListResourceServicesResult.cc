@@ -81,10 +81,14 @@ void ListResourceServicesResult::parse(const std::string &payload)
 			servicesObject.reason = valueServicesServicesItem["Reason"].asString();
 		if(!valueServicesServicesItem["Resource"].isNull())
 			servicesObject.resource = valueServicesServicesItem["Resource"].asString();
+		if(!valueServicesServicesItem["ResourceAlias"].isNull())
+			servicesObject.resourceAlias = valueServicesServicesItem["ResourceAlias"].asString();
 		if(!valueServicesServicesItem["ServiceConfig"].isNull())
 			servicesObject.serviceConfig = valueServicesServicesItem["ServiceConfig"].asString();
 		if(!valueServicesServicesItem["ServiceName"].isNull())
 			servicesObject.serviceName = valueServicesServicesItem["ServiceName"].asString();
+		if(!valueServicesServicesItem["ServiceGroup"].isNull())
+			servicesObject.serviceGroup = valueServicesServicesItem["ServiceGroup"].asString();
 		if(!valueServicesServicesItem["Status"].isNull())
 			servicesObject.status = valueServicesServicesItem["Status"].asString();
 		if(!valueServicesServicesItem["CreateTime"].isNull())
@@ -95,10 +99,30 @@ void ListResourceServicesResult::parse(const std::string &payload)
 			servicesObject.weight = std::stoi(valueServicesServicesItem["Weight"].asString());
 		if(!valueServicesServicesItem["ServiceId"].isNull())
 			servicesObject.serviceId = valueServicesServicesItem["ServiceId"].asString();
+		if(!valueServicesServicesItem["ServiceUid"].isNull())
+			servicesObject.serviceUid = valueServicesServicesItem["ServiceUid"].asString();
 		if(!valueServicesServicesItem["AccessToken"].isNull())
 			servicesObject.accessToken = valueServicesServicesItem["AccessToken"].asString();
 		if(!valueServicesServicesItem["Source"].isNull())
 			servicesObject.source = valueServicesServicesItem["Source"].asString();
+		if(!valueServicesServicesItem["ExtraData"].isNull())
+			servicesObject.extraData = valueServicesServicesItem["ExtraData"].asString();
+		if(!valueServicesServicesItem["Role"].isNull())
+			servicesObject.role = valueServicesServicesItem["Role"].asString();
+		if(!valueServicesServicesItem["RoleAttrs"].isNull())
+			servicesObject.roleAttrs = valueServicesServicesItem["RoleAttrs"].asString();
+		if(!valueServicesServicesItem["SafetyLock"].isNull())
+			servicesObject.safetyLock = valueServicesServicesItem["SafetyLock"].asString();
+		auto allLabelsNode = valueServicesServicesItem["Labels"]["LabelsItem"];
+		for (auto valueServicesServicesItemLabelsLabelsItem : allLabelsNode)
+		{
+			ServicesItem::LabelsItem labelsObject;
+			if(!valueServicesServicesItemLabelsLabelsItem["LabelKey"].isNull())
+				labelsObject.labelKey = valueServicesServicesItemLabelsLabelsItem["LabelKey"].asString();
+			if(!valueServicesServicesItemLabelsLabelsItem["LabelValue"].isNull())
+				labelsObject.labelValue = valueServicesServicesItemLabelsLabelsItem["LabelValue"].asString();
+			servicesObject.labels.push_back(labelsObject);
+		}
 		services_.push_back(servicesObject);
 	}
 	if(!value["PageNumber"].isNull())

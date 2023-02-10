@@ -26,47 +26,47 @@ ListResourceInstanceWorkerRequest::ListResourceInstanceWorkerRequest()
 
 ListResourceInstanceWorkerRequest::~ListResourceInstanceWorkerRequest() {}
 
-string ListResourceInstanceWorkerRequest::getResourceId() const {
+std::string ListResourceInstanceWorkerRequest::getResourceId() const {
   return resourceId_;
 }
 
-void ListResourceInstanceWorkerRequest::setResourceId(string resourceId) {
+void ListResourceInstanceWorkerRequest::setResourceId(const std::string &resourceId) {
   resourceId_ = resourceId;
-  setParameter(std::string("ResourceId"), std::to_string(resourceId));
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-string ListResourceInstanceWorkerRequest::getInstanceName() const {
+std::string ListResourceInstanceWorkerRequest::getInstanceName() const {
   return instanceName_;
 }
 
-void ListResourceInstanceWorkerRequest::setInstanceName(string instanceName) {
+void ListResourceInstanceWorkerRequest::setInstanceName(const std::string &instanceName) {
   instanceName_ = instanceName;
-  setParameter(std::string("InstanceName"), std::to_string(instanceName));
+  setParameter(std::string("InstanceName"), instanceName);
 }
 
-integer ListResourceInstanceWorkerRequest::getPageSize() const {
+int ListResourceInstanceWorkerRequest::getPageSize() const {
   return pageSize_;
 }
 
-void ListResourceInstanceWorkerRequest::setPageSize(integer pageSize) {
+void ListResourceInstanceWorkerRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-string ListResourceInstanceWorkerRequest::getClusterId() const {
+std::string ListResourceInstanceWorkerRequest::getClusterId() const {
   return clusterId_;
 }
 
-void ListResourceInstanceWorkerRequest::setClusterId(string clusterId) {
+void ListResourceInstanceWorkerRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
-integer ListResourceInstanceWorkerRequest::getPageNumber() const {
+int ListResourceInstanceWorkerRequest::getPageNumber() const {
   return pageNumber_;
 }
 
-void ListResourceInstanceWorkerRequest::setPageNumber(integer pageNumber) {
+void ListResourceInstanceWorkerRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }

@@ -30,8 +30,20 @@ class ALIBABACLOUD_EAS_EXPORT ListBenchmarkTaskRequest : public RoaServiceReques
 public:
 	ListBenchmarkTaskRequest();
 	~ListBenchmarkTaskRequest();
+	std::string getFilter() const;
+	void setFilter(const std::string &filter);
+	std::string getPageSize() const;
+	void setPageSize(const std::string &pageSize);
+	std::string getServiceName() const;
+	void setServiceName(const std::string &serviceName);
+	std::string getPageNumber() const;
+	void setPageNumber(const std::string &pageNumber);
 
 private:
+	std::string filter_;
+	std::string pageSize_;
+	std::string serviceName_;
+	std::string pageNumber_;
 };
 } // namespace Model
 } // namespace Eas

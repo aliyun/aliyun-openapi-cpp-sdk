@@ -26,21 +26,21 @@ DescribeServiceMirrorRequest::DescribeServiceMirrorRequest()
 
 DescribeServiceMirrorRequest::~DescribeServiceMirrorRequest() {}
 
-string DescribeServiceMirrorRequest::getServiceName() const {
+std::string DescribeServiceMirrorRequest::getServiceName() const {
   return serviceName_;
 }
 
-void DescribeServiceMirrorRequest::setServiceName(string serviceName) {
+void DescribeServiceMirrorRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string DescribeServiceMirrorRequest::getClusterId() const {
+std::string DescribeServiceMirrorRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DescribeServiceMirrorRequest::setClusterId(string clusterId) {
+void DescribeServiceMirrorRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

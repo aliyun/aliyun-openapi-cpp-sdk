@@ -26,21 +26,21 @@ DescribeResourceRequest::DescribeResourceRequest()
 
 DescribeResourceRequest::~DescribeResourceRequest() {}
 
-string DescribeResourceRequest::getResourceId() const {
+std::string DescribeResourceRequest::getResourceId() const {
   return resourceId_;
 }
 
-void DescribeResourceRequest::setResourceId(string resourceId) {
+void DescribeResourceRequest::setResourceId(const std::string &resourceId) {
   resourceId_ = resourceId;
-  setParameter(std::string("ResourceId"), std::to_string(resourceId));
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-string DescribeResourceRequest::getClusterId() const {
+std::string DescribeResourceRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DescribeResourceRequest::setClusterId(string clusterId) {
+void DescribeResourceRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

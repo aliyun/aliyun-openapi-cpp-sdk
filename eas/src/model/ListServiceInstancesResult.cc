@@ -67,6 +67,14 @@ void ListServiceInstancesResult::parse(const std::string &payload)
 			instancesObject.readyProcesses = std::stoi(valueInstancesInstancesItem["ReadyProcesses"].asString());
 		if(!valueInstancesInstancesItem["StartAt"].isNull())
 			instancesObject.startAt = valueInstancesInstancesItem["StartAt"].asString();
+		if(!valueInstancesInstancesItem["Role"].isNull())
+			instancesObject.role = valueInstancesInstancesItem["Role"].asString();
+		if(!valueInstancesInstancesItem["ResourceType"].isNull())
+			instancesObject.resourceType = valueInstancesInstancesItem["ResourceType"].asString();
+		if(!valueInstancesInstancesItem["TenantInstanceIP"].isNull())
+			instancesObject.tenantInstanceIP = valueInstancesInstancesItem["TenantInstanceIP"].asString();
+		if(!valueInstancesInstancesItem["TenantHostIP"].isNull())
+			instancesObject.tenantHostIP = valueInstancesInstancesItem["TenantHostIP"].asString();
 		auto allLastState = value["LastState"]["null"];
 		for (auto value : allLastState)
 			instancesObject.lastState.push_back(value.asString());

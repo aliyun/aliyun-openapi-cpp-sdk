@@ -32,25 +32,39 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_EAS_EXPORT DescribeServiceAutoScalerResult : public ServiceResult
 			{
 			public:
+				struct ScaleStrategy
+				{
+					std::string metricName;
+					std::string service;
+					float threshold;
+				};
+				struct CurrentMetric
+				{
+					std::string metricName;
+					float value;
+					std::string service;
+				};
 
 
 				DescribeServiceAutoScalerResult();
 				explicit DescribeServiceAutoScalerResult(const std::string &payload);
 				~DescribeServiceAutoScalerResult();
+				std::vector<CurrentMetric> getCurrentMetrics()const;
 				int getMaxReplica()const;
 				std::string getServiceName()const;
-				std::string getStrategies()const;
 				int getMinReplica()const;
-				std::string getCurrentValues()const;
+				std::vector<ScaleStrategy> getScaleStrategies()const;
+				std::string getBehavior()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<CurrentMetric> currentMetrics_;
 				int maxReplica_;
 				std::string serviceName_;
-				std::string strategies_;
 				int minReplica_;
-				std::string currentValues_;
+				std::vector<ScaleStrategy> scaleStrategies_;
+				std::string behavior_;
 
 			};
 		}

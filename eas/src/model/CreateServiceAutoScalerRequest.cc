@@ -26,22 +26,22 @@ CreateServiceAutoScalerRequest::CreateServiceAutoScalerRequest()
 
 CreateServiceAutoScalerRequest::~CreateServiceAutoScalerRequest() {}
 
-string CreateServiceAutoScalerRequest::getServiceName() const {
+std::string CreateServiceAutoScalerRequest::getServiceName() const {
   return serviceName_;
 }
 
-void CreateServiceAutoScalerRequest::setServiceName(string serviceName) {
+void CreateServiceAutoScalerRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string CreateServiceAutoScalerRequest::getClusterId() const {
+std::string CreateServiceAutoScalerRequest::getClusterId() const {
   return clusterId_;
 }
 
-void CreateServiceAutoScalerRequest::setClusterId(string clusterId) {
+void CreateServiceAutoScalerRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string CreateServiceAutoScalerRequest::getBody() const {

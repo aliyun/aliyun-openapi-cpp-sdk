@@ -30,16 +30,16 @@ class ALIBABACLOUD_EAS_EXPORT CreateServiceAutoScalerRequest : public RoaService
 public:
 	CreateServiceAutoScalerRequest();
 	~CreateServiceAutoScalerRequest();
-	string getServiceName() const;
-	void setServiceName(string serviceName);
-	string getClusterId() const;
-	void setClusterId(string clusterId);
+	std::string getServiceName() const;
+	void setServiceName(const std::string &serviceName);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 	std::string getBody() const;
 	void setBody(const std::string &body);
 
 private:
-	string serviceName_;
-	string clusterId_;
+	std::string serviceName_;
+	std::string clusterId_;
 	std::string body_;
 };
 } // namespace Model

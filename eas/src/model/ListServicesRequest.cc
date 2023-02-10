@@ -26,48 +26,84 @@ ListServicesRequest::ListServicesRequest()
 
 ListServicesRequest::~ListServicesRequest() {}
 
-string ListServicesRequest::getFilter() const {
+std::string ListServicesRequest::getFilter() const {
   return filter_;
 }
 
-void ListServicesRequest::setFilter(string filter) {
+void ListServicesRequest::setFilter(const std::string &filter) {
   filter_ = filter;
-  setParameter(std::string("Filter"), std::to_string(filter));
+  setParameter(std::string("Filter"), filter);
 }
 
-integer ListServicesRequest::getPageSize() const {
+std::string ListServicesRequest::getServiceType() const {
+  return serviceType_;
+}
+
+void ListServicesRequest::setServiceType(const std::string &serviceType) {
+  serviceType_ = serviceType;
+  setParameter(std::string("ServiceType"), serviceType);
+}
+
+std::string ListServicesRequest::getParentServiceUid() const {
+  return parentServiceUid_;
+}
+
+void ListServicesRequest::setParentServiceUid(const std::string &parentServiceUid) {
+  parentServiceUid_ = parentServiceUid;
+  setParameter(std::string("ParentServiceUid"), parentServiceUid);
+}
+
+int ListServicesRequest::getPageSize() const {
   return pageSize_;
 }
 
-void ListServicesRequest::setPageSize(integer pageSize) {
+void ListServicesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-string ListServicesRequest::getSort() const {
+std::string ListServicesRequest::getSort() const {
   return sort_;
 }
 
-void ListServicesRequest::setSort(string sort) {
+void ListServicesRequest::setSort(const std::string &sort) {
   sort_ = sort;
-  setParameter(std::string("Sort"), std::to_string(sort));
+  setParameter(std::string("Sort"), sort);
 }
 
-integer ListServicesRequest::getPageNumber() const {
+std::string ListServicesRequest::getLabel() const {
+  return label_;
+}
+
+void ListServicesRequest::setLabel(const std::string &label) {
+  label_ = label;
+  setParameter(std::string("Label"), label);
+}
+
+std::string ListServicesRequest::getGroupName() const {
+  return groupName_;
+}
+
+void ListServicesRequest::setGroupName(const std::string &groupName) {
+  groupName_ = groupName;
+  setParameter(std::string("GroupName"), groupName);
+}
+
+int ListServicesRequest::getPageNumber() const {
   return pageNumber_;
 }
 
-void ListServicesRequest::setPageNumber(integer pageNumber) {
+void ListServicesRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-string ListServicesRequest::getOrder() const {
+std::string ListServicesRequest::getOrder() const {
   return order_;
 }
 
-void ListServicesRequest::setOrder(string order) {
+void ListServicesRequest::setOrder(const std::string &order) {
   order_ = order;
-  setParameter(std::string("Order"), std::to_string(order));
+  setParameter(std::string("Order"), order);
 }
 

@@ -63,11 +63,32 @@ void ListBenchmarkTaskResult::parse(const std::string &payload)
 			tasksObject.updateTime = valueTasksTask["UpdateTime"].asString();
 		tasks_.push_back(tasksObject);
 	}
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
 
+}
+
+int ListBenchmarkTaskResult::getTotalCount()const
+{
+	return totalCount_;
 }
 
 std::vector<ListBenchmarkTaskResult::Task> ListBenchmarkTaskResult::getTasks()const
 {
 	return tasks_;
+}
+
+int ListBenchmarkTaskResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int ListBenchmarkTaskResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 

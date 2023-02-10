@@ -26,3 +26,39 @@ ListBenchmarkTaskRequest::ListBenchmarkTaskRequest()
 
 ListBenchmarkTaskRequest::~ListBenchmarkTaskRequest() {}
 
+std::string ListBenchmarkTaskRequest::getFilter() const {
+  return filter_;
+}
+
+void ListBenchmarkTaskRequest::setFilter(const std::string &filter) {
+  filter_ = filter;
+  setParameter(std::string("Filter"), filter);
+}
+
+std::string ListBenchmarkTaskRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListBenchmarkTaskRequest::setPageSize(const std::string &pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), pageSize);
+}
+
+std::string ListBenchmarkTaskRequest::getServiceName() const {
+  return serviceName_;
+}
+
+void ListBenchmarkTaskRequest::setServiceName(const std::string &serviceName) {
+  serviceName_ = serviceName;
+  setParameter(std::string("ServiceName"), serviceName);
+}
+
+std::string ListBenchmarkTaskRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void ListBenchmarkTaskRequest::setPageNumber(const std::string &pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), pageNumber);
+}
+

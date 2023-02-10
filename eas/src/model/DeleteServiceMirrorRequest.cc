@@ -26,21 +26,21 @@ DeleteServiceMirrorRequest::DeleteServiceMirrorRequest()
 
 DeleteServiceMirrorRequest::~DeleteServiceMirrorRequest() {}
 
-string DeleteServiceMirrorRequest::getServiceName() const {
+std::string DeleteServiceMirrorRequest::getServiceName() const {
   return serviceName_;
 }
 
-void DeleteServiceMirrorRequest::setServiceName(string serviceName) {
+void DeleteServiceMirrorRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string DeleteServiceMirrorRequest::getClusterId() const {
+std::string DeleteServiceMirrorRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DeleteServiceMirrorRequest::setClusterId(string clusterId) {
+void DeleteServiceMirrorRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

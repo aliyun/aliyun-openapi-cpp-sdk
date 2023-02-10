@@ -30,17 +30,17 @@ class ALIBABACLOUD_EAS_EXPORT UpdateBenchmarkTaskRequest : public RoaServiceRequ
 public:
 	UpdateBenchmarkTaskRequest();
 	~UpdateBenchmarkTaskRequest();
-	string getTaskName() const;
-	void setTaskName(string taskName);
-	string getClusterId() const;
-	void setClusterId(string clusterId);
-	string getBody() const;
-	void setBody(string body);
+	std::string getTaskName() const;
+	void setTaskName(const std::string &taskName);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string taskName_;
-	string clusterId_;
-	string body_;
+	std::string taskName_;
+	std::string clusterId_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Eas

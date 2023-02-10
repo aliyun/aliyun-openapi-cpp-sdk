@@ -26,21 +26,21 @@ DeleteServiceCronScalerRequest::DeleteServiceCronScalerRequest()
 
 DeleteServiceCronScalerRequest::~DeleteServiceCronScalerRequest() {}
 
-string DeleteServiceCronScalerRequest::getServiceName() const {
+std::string DeleteServiceCronScalerRequest::getServiceName() const {
   return serviceName_;
 }
 
-void DeleteServiceCronScalerRequest::setServiceName(string serviceName) {
+void DeleteServiceCronScalerRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string DeleteServiceCronScalerRequest::getClusterId() const {
+std::string DeleteServiceCronScalerRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DeleteServiceCronScalerRequest::setClusterId(string clusterId) {
+void DeleteServiceCronScalerRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

@@ -26,75 +26,75 @@ DescribeServiceLogRequest::DescribeServiceLogRequest()
 
 DescribeServiceLogRequest::~DescribeServiceLogRequest() {}
 
-string DescribeServiceLogRequest::getIp() const {
+std::string DescribeServiceLogRequest::getIp() const {
   return ip_;
 }
 
-void DescribeServiceLogRequest::setIp(string ip) {
+void DescribeServiceLogRequest::setIp(const std::string &ip) {
   ip_ = ip;
-  setParameter(std::string("Ip"), std::to_string(ip));
+  setParameter(std::string("Ip"), ip);
 }
 
-integer DescribeServiceLogRequest::getPageSize() const {
+long DescribeServiceLogRequest::getPageSize() const {
   return pageSize_;
 }
 
-void DescribeServiceLogRequest::setPageSize(integer pageSize) {
+void DescribeServiceLogRequest::setPageSize(long pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-string DescribeServiceLogRequest::getEndTime() const {
+std::string DescribeServiceLogRequest::getEndTime() const {
   return endTime_;
 }
 
-void DescribeServiceLogRequest::setEndTime(string endTime) {
+void DescribeServiceLogRequest::setEndTime(const std::string &endTime) {
   endTime_ = endTime;
-  setParameter(std::string("EndTime"), std::to_string(endTime));
+  setParameter(std::string("EndTime"), endTime);
 }
 
-string DescribeServiceLogRequest::getServiceName() const {
+std::string DescribeServiceLogRequest::getServiceName() const {
   return serviceName_;
 }
 
-void DescribeServiceLogRequest::setServiceName(string serviceName) {
+void DescribeServiceLogRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string DescribeServiceLogRequest::getStartTime() const {
+std::string DescribeServiceLogRequest::getStartTime() const {
   return startTime_;
 }
 
-void DescribeServiceLogRequest::setStartTime(string startTime) {
+void DescribeServiceLogRequest::setStartTime(const std::string &startTime) {
   startTime_ = startTime;
-  setParameter(std::string("StartTime"), std::to_string(startTime));
+  setParameter(std::string("StartTime"), startTime);
 }
 
-string DescribeServiceLogRequest::getClusterId() const {
+std::string DescribeServiceLogRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DescribeServiceLogRequest::setClusterId(string clusterId) {
+void DescribeServiceLogRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
-integer DescribeServiceLogRequest::getPageNum() const {
+long DescribeServiceLogRequest::getPageNum() const {
   return pageNum_;
 }
 
-void DescribeServiceLogRequest::setPageNum(integer pageNum) {
+void DescribeServiceLogRequest::setPageNum(long pageNum) {
   pageNum_ = pageNum;
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-string DescribeServiceLogRequest::getKeyword() const {
+std::string DescribeServiceLogRequest::getKeyword() const {
   return keyword_;
 }
 
-void DescribeServiceLogRequest::setKeyword(string keyword) {
+void DescribeServiceLogRequest::setKeyword(const std::string &keyword) {
   keyword_ = keyword;
-  setParameter(std::string("Keyword"), std::to_string(keyword));
+  setParameter(std::string("Keyword"), keyword);
 }
 

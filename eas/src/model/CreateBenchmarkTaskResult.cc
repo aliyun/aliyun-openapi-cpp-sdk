@@ -39,8 +39,8 @@ void CreateBenchmarkTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
+	if(!value["TaskName"].isNull())
+		taskName_ = value["TaskName"].asString();
 	if(!value["Region"].isNull())
 		region_ = value["Region"].asString();
 	if(!value["Message"].isNull())
@@ -53,13 +53,13 @@ std::string CreateBenchmarkTaskResult::getMessage()const
 	return message_;
 }
 
+std::string CreateBenchmarkTaskResult::getTaskName()const
+{
+	return taskName_;
+}
+
 std::string CreateBenchmarkTaskResult::getRegion()const
 {
 	return region_;
-}
-
-std::string CreateBenchmarkTaskResult::getName()const
-{
-	return name_;
 }
 

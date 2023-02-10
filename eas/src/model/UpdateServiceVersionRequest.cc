@@ -26,22 +26,22 @@ UpdateServiceVersionRequest::UpdateServiceVersionRequest()
 
 UpdateServiceVersionRequest::~UpdateServiceVersionRequest() {}
 
-string UpdateServiceVersionRequest::getServiceName() const {
+std::string UpdateServiceVersionRequest::getServiceName() const {
   return serviceName_;
 }
 
-void UpdateServiceVersionRequest::setServiceName(string serviceName) {
+void UpdateServiceVersionRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string UpdateServiceVersionRequest::getClusterId() const {
+std::string UpdateServiceVersionRequest::getClusterId() const {
   return clusterId_;
 }
 
-void UpdateServiceVersionRequest::setClusterId(string clusterId) {
+void UpdateServiceVersionRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string UpdateServiceVersionRequest::getBody() const {

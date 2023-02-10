@@ -26,39 +26,39 @@ DeleteResourceInstancesRequest::DeleteResourceInstancesRequest()
 
 DeleteResourceInstancesRequest::~DeleteResourceInstancesRequest() {}
 
-string DeleteResourceInstancesRequest::getInstanceList() const {
+std::string DeleteResourceInstancesRequest::getInstanceList() const {
   return instanceList_;
 }
 
-void DeleteResourceInstancesRequest::setInstanceList(string instanceList) {
+void DeleteResourceInstancesRequest::setInstanceList(const std::string &instanceList) {
   instanceList_ = instanceList;
-  setParameter(std::string("InstanceList"), std::to_string(instanceList));
+  setParameter(std::string("InstanceList"), instanceList);
 }
 
-string DeleteResourceInstancesRequest::getResourceId() const {
+std::string DeleteResourceInstancesRequest::getResourceId() const {
   return resourceId_;
 }
 
-void DeleteResourceInstancesRequest::setResourceId(string resourceId) {
+void DeleteResourceInstancesRequest::setResourceId(const std::string &resourceId) {
   resourceId_ = resourceId;
-  setParameter(std::string("ResourceId"), std::to_string(resourceId));
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-boolean DeleteResourceInstancesRequest::getAllFailed() const {
+bool DeleteResourceInstancesRequest::getAllFailed() const {
   return allFailed_;
 }
 
-void DeleteResourceInstancesRequest::setAllFailed(boolean allFailed) {
+void DeleteResourceInstancesRequest::setAllFailed(bool allFailed) {
   allFailed_ = allFailed;
-  setParameter(std::string("AllFailed"), std::to_string(allFailed));
+  setParameter(std::string("AllFailed"), allFailed ? "true" : "false");
 }
 
-string DeleteResourceInstancesRequest::getClusterId() const {
+std::string DeleteResourceInstancesRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DeleteResourceInstancesRequest::setClusterId(string clusterId) {
+void DeleteResourceInstancesRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

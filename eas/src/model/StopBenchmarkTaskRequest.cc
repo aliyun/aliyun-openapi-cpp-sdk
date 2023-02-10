@@ -26,21 +26,21 @@ StopBenchmarkTaskRequest::StopBenchmarkTaskRequest()
 
 StopBenchmarkTaskRequest::~StopBenchmarkTaskRequest() {}
 
-string StopBenchmarkTaskRequest::getTaskName() const {
+std::string StopBenchmarkTaskRequest::getTaskName() const {
   return taskName_;
 }
 
-void StopBenchmarkTaskRequest::setTaskName(string taskName) {
+void StopBenchmarkTaskRequest::setTaskName(const std::string &taskName) {
   taskName_ = taskName;
-  setParameter(std::string("TaskName"), std::to_string(taskName));
+  setParameter(std::string("TaskName"), taskName);
 }
 
-string StopBenchmarkTaskRequest::getClusterId() const {
+std::string StopBenchmarkTaskRequest::getClusterId() const {
   return clusterId_;
 }
 
-void StopBenchmarkTaskRequest::setClusterId(string clusterId) {
+void StopBenchmarkTaskRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

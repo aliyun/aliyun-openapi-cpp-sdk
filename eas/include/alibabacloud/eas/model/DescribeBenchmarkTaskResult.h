@@ -41,6 +41,7 @@ namespace AlibabaCloud
 				long getAvailableAgent()const;
 				std::string getTaskId()const;
 				std::string getMessage()const;
+				std::string getEndpoint()const;
 				std::string getTaskName()const;
 				std::string getServiceName()const;
 				long getDesiredAgent()const;
@@ -56,6 +57,7 @@ namespace AlibabaCloud
 				long availableAgent_;
 				std::string taskId_;
 				std::string message_;
+				std::string endpoint_;
 				std::string taskName_;
 				std::string serviceName_;
 				long desiredAgent_;

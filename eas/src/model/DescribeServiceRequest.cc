@@ -26,21 +26,21 @@ DescribeServiceRequest::DescribeServiceRequest()
 
 DescribeServiceRequest::~DescribeServiceRequest() {}
 
-string DescribeServiceRequest::getServiceName() const {
+std::string DescribeServiceRequest::getServiceName() const {
   return serviceName_;
 }
 
-void DescribeServiceRequest::setServiceName(string serviceName) {
+void DescribeServiceRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string DescribeServiceRequest::getClusterId() const {
+std::string DescribeServiceRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DescribeServiceRequest::setClusterId(string clusterId) {
+void DescribeServiceRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

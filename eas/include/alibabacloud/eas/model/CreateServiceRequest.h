@@ -30,11 +30,17 @@ class ALIBABACLOUD_EAS_EXPORT CreateServiceRequest : public RoaServiceRequest {
 public:
 	CreateServiceRequest();
 	~CreateServiceRequest();
-	string getBody() const;
-	void setBody(string body);
+	std::string getDevelop() const;
+	void setDevelop(const std::string &develop);
+	std::string getBody() const;
+	void setBody(const std::string &body);
+	std::string getLabels() const;
+	void setLabels(const std::string &labels);
 
 private:
-	string body_;
+	std::string develop_;
+	std::string body_;
+	std::string labels_;
 };
 } // namespace Model
 } // namespace Eas

@@ -41,11 +41,18 @@ void DescribeBenchmarkTaskReportResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["ReportUrl"].isNull())
 		reportUrl_ = value["ReportUrl"].asString();
+	if(!value["Data"].isNull())
+		data_ = value["Data"].asString();
 
 }
 
 std::string DescribeBenchmarkTaskReportResult::getReportUrl()const
 {
 	return reportUrl_;
+}
+
+ObjectOfAny DescribeBenchmarkTaskReportResult::getData()const
+{
+	return data_;
 }
 

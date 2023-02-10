@@ -51,6 +51,42 @@ EasClient::EasClient(const std::string & accessKeyId, const std::string & access
 EasClient::~EasClient()
 {}
 
+EasClient::CommitServiceOutcome EasClient::commitService(const CommitServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CommitServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CommitServiceOutcome(CommitServiceResult(outcome.result()));
+	else
+		return CommitServiceOutcome(outcome.error());
+}
+
+void EasClient::commitServiceAsync(const CommitServiceRequest& request, const CommitServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, commitService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EasClient::CommitServiceOutcomeCallable EasClient::commitServiceCallable(const CommitServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CommitServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->commitService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EasClient::CreateBenchmarkTaskOutcome EasClient::createBenchmarkTask(const CreateBenchmarkTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -663,6 +699,42 @@ EasClient::DeleteServiceInstancesOutcomeCallable EasClient::deleteServiceInstanc
 	return task->get_future();
 }
 
+EasClient::DeleteServiceLabelOutcome EasClient::deleteServiceLabel(const DeleteServiceLabelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteServiceLabelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteServiceLabelOutcome(DeleteServiceLabelResult(outcome.result()));
+	else
+		return DeleteServiceLabelOutcome(outcome.error());
+}
+
+void EasClient::deleteServiceLabelAsync(const DeleteServiceLabelRequest& request, const DeleteServiceLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteServiceLabel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EasClient::DeleteServiceLabelOutcomeCallable EasClient::deleteServiceLabelCallable(const DeleteServiceLabelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteServiceLabelOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteServiceLabel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EasClient::DeleteServiceMirrorOutcome EasClient::deleteServiceMirror(const DeleteServiceMirrorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,6 +837,42 @@ EasClient::DescribeBenchmarkTaskReportOutcomeCallable EasClient::describeBenchma
 			[this, request]()
 			{
 			return this->describeBenchmarkTaskReport(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EasClient::DescribeGroupOutcome EasClient::describeGroup(const DescribeGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeGroupOutcome(DescribeGroupResult(outcome.result()));
+	else
+		return DescribeGroupOutcome(outcome.error());
+}
+
+void EasClient::describeGroupAsync(const DescribeGroupRequest& request, const DescribeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EasClient::DescribeGroupOutcomeCallable EasClient::describeGroupCallable(const DescribeGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->describeGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -987,6 +1095,42 @@ EasClient::DescribeServiceCronScalerOutcomeCallable EasClient::describeServiceCr
 	return task->get_future();
 }
 
+EasClient::DescribeServiceEventOutcome EasClient::describeServiceEvent(const DescribeServiceEventRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeServiceEventOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeServiceEventOutcome(DescribeServiceEventResult(outcome.result()));
+	else
+		return DescribeServiceEventOutcome(outcome.error());
+}
+
+void EasClient::describeServiceEventAsync(const DescribeServiceEventRequest& request, const DescribeServiceEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeServiceEvent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EasClient::DescribeServiceEventOutcomeCallable EasClient::describeServiceEventCallable(const DescribeServiceEventRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeServiceEventOutcome()>>(
+			[this, request]()
+			{
+			return this->describeServiceEvent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EasClient::DescribeServiceLogOutcome EasClient::describeServiceLog(const DescribeServiceLogRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1059,6 +1203,42 @@ EasClient::DescribeServiceMirrorOutcomeCallable EasClient::describeServiceMirror
 	return task->get_future();
 }
 
+EasClient::DevelopServiceOutcome EasClient::developService(const DevelopServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DevelopServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DevelopServiceOutcome(DevelopServiceResult(outcome.result()));
+	else
+		return DevelopServiceOutcome(outcome.error());
+}
+
+void EasClient::developServiceAsync(const DevelopServiceRequest& request, const DevelopServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, developService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EasClient::DevelopServiceOutcomeCallable EasClient::developServiceCallable(const DevelopServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DevelopServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->developService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EasClient::ListBenchmarkTaskOutcome EasClient::listBenchmarkTask(const ListBenchmarkTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,6 +1269,42 @@ EasClient::ListBenchmarkTaskOutcomeCallable EasClient::listBenchmarkTaskCallable
 			[this, request]()
 			{
 			return this->listBenchmarkTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EasClient::ListGroupsOutcome EasClient::listGroups(const ListGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListGroupsOutcome(ListGroupsResult(outcome.result()));
+	else
+		return ListGroupsOutcome(outcome.error());
+}
+
+void EasClient::listGroupsAsync(const ListGroupsRequest& request, const ListGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EasClient::ListGroupsOutcomeCallable EasClient::listGroupsCallable(const ListGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->listGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1269,6 +1485,42 @@ EasClient::ListServiceInstancesOutcomeCallable EasClient::listServiceInstancesCa
 			[this, request]()
 			{
 			return this->listServiceInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EasClient::ListServiceVersionsOutcome EasClient::listServiceVersions(const ListServiceVersionsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListServiceVersionsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListServiceVersionsOutcome(ListServiceVersionsResult(outcome.result()));
+	else
+		return ListServiceVersionsOutcome(outcome.error());
+}
+
+void EasClient::listServiceVersionsAsync(const ListServiceVersionsRequest& request, const ListServiceVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listServiceVersions(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EasClient::ListServiceVersionsOutcomeCallable EasClient::listServiceVersionsCallable(const ListServiceVersionsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListServiceVersionsOutcome()>>(
+			[this, request]()
+			{
+			return this->listServiceVersions(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1599,6 +1851,42 @@ EasClient::UpdateResourceDLinkOutcomeCallable EasClient::updateResourceDLinkCall
 	return task->get_future();
 }
 
+EasClient::UpdateResourceInstanceOutcome EasClient::updateResourceInstance(const UpdateResourceInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateResourceInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateResourceInstanceOutcome(UpdateResourceInstanceResult(outcome.result()));
+	else
+		return UpdateResourceInstanceOutcome(outcome.error());
+}
+
+void EasClient::updateResourceInstanceAsync(const UpdateResourceInstanceRequest& request, const UpdateResourceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateResourceInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EasClient::UpdateResourceInstanceOutcomeCallable EasClient::updateResourceInstanceCallable(const UpdateResourceInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateResourceInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->updateResourceInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EasClient::UpdateServiceOutcome EasClient::updateService(const UpdateServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1707,6 +1995,42 @@ EasClient::UpdateServiceCronScalerOutcomeCallable EasClient::updateServiceCronSc
 	return task->get_future();
 }
 
+EasClient::UpdateServiceLabelOutcome EasClient::updateServiceLabel(const UpdateServiceLabelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateServiceLabelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateServiceLabelOutcome(UpdateServiceLabelResult(outcome.result()));
+	else
+		return UpdateServiceLabelOutcome(outcome.error());
+}
+
+void EasClient::updateServiceLabelAsync(const UpdateServiceLabelRequest& request, const UpdateServiceLabelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateServiceLabel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EasClient::UpdateServiceLabelOutcomeCallable EasClient::updateServiceLabelCallable(const UpdateServiceLabelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateServiceLabelOutcome()>>(
+			[this, request]()
+			{
+			return this->updateServiceLabel(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EasClient::UpdateServiceMirrorOutcome EasClient::updateServiceMirror(const UpdateServiceMirrorRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1737,6 +2061,42 @@ EasClient::UpdateServiceMirrorOutcomeCallable EasClient::updateServiceMirrorCall
 			[this, request]()
 			{
 			return this->updateServiceMirror(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EasClient::UpdateServiceSafetyLockOutcome EasClient::updateServiceSafetyLock(const UpdateServiceSafetyLockRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateServiceSafetyLockOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateServiceSafetyLockOutcome(UpdateServiceSafetyLockResult(outcome.result()));
+	else
+		return UpdateServiceSafetyLockOutcome(outcome.error());
+}
+
+void EasClient::updateServiceSafetyLockAsync(const UpdateServiceSafetyLockRequest& request, const UpdateServiceSafetyLockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateServiceSafetyLock(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EasClient::UpdateServiceSafetyLockOutcomeCallable EasClient::updateServiceSafetyLockCallable(const UpdateServiceSafetyLockRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateServiceSafetyLockOutcome()>>(
+			[this, request]()
+			{
+			return this->updateServiceSafetyLock(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

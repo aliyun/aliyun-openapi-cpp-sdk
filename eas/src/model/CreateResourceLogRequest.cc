@@ -26,22 +26,22 @@ CreateResourceLogRequest::CreateResourceLogRequest()
 
 CreateResourceLogRequest::~CreateResourceLogRequest() {}
 
-string CreateResourceLogRequest::getResourceId() const {
+std::string CreateResourceLogRequest::getResourceId() const {
   return resourceId_;
 }
 
-void CreateResourceLogRequest::setResourceId(string resourceId) {
+void CreateResourceLogRequest::setResourceId(const std::string &resourceId) {
   resourceId_ = resourceId;
-  setParameter(std::string("ResourceId"), std::to_string(resourceId));
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-string CreateResourceLogRequest::getClusterId() const {
+std::string CreateResourceLogRequest::getClusterId() const {
   return clusterId_;
 }
 
-void CreateResourceLogRequest::setClusterId(string clusterId) {
+void CreateResourceLogRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string CreateResourceLogRequest::getBody() const {

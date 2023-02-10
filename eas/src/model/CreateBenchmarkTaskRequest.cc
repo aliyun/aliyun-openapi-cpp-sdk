@@ -26,12 +26,12 @@ CreateBenchmarkTaskRequest::CreateBenchmarkTaskRequest()
 
 CreateBenchmarkTaskRequest::~CreateBenchmarkTaskRequest() {}
 
-string CreateBenchmarkTaskRequest::getBody() const {
+std::string CreateBenchmarkTaskRequest::getBody() const {
   return body_;
 }
 
-void CreateBenchmarkTaskRequest::setBody(string body) {
+void CreateBenchmarkTaskRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

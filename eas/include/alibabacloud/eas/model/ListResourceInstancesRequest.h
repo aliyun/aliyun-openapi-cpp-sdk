@@ -30,23 +30,29 @@ class ALIBABACLOUD_EAS_EXPORT ListResourceInstancesRequest : public RoaServiceRe
 public:
 	ListResourceInstancesRequest();
 	~ListResourceInstancesRequest();
-	string getResourceId() const;
-	void setResourceId(string resourceId);
-	integer getPageSize() const;
-	void setPageSize(integer pageSize);
-	string getClusterId() const;
-	void setClusterId(string clusterId);
-	string getChargeType() const;
-	void setChargeType(string chargeType);
-	integer getPageNumber() const;
-	void setPageNumber(integer pageNumber);
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	std::string getInstanceName() const;
+	void setInstanceName(const std::string &instanceName);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
+	std::string getChargeType() const;
+	void setChargeType(const std::string &chargeType);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 
 private:
-	string resourceId_;
-	integer pageSize_;
-	string clusterId_;
-	string chargeType_;
-	integer pageNumber_;
+	std::string resourceId_;
+	std::string instanceName_;
+	std::string instanceId_;
+	int pageSize_;
+	std::string clusterId_;
+	std::string chargeType_;
+	int pageNumber_;
 };
 } // namespace Model
 } // namespace Eas

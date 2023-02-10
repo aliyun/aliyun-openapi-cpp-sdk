@@ -26,21 +26,21 @@ DeleteResourceDLinkRequest::DeleteResourceDLinkRequest()
 
 DeleteResourceDLinkRequest::~DeleteResourceDLinkRequest() {}
 
-string DeleteResourceDLinkRequest::getResourceId() const {
+std::string DeleteResourceDLinkRequest::getResourceId() const {
   return resourceId_;
 }
 
-void DeleteResourceDLinkRequest::setResourceId(string resourceId) {
+void DeleteResourceDLinkRequest::setResourceId(const std::string &resourceId) {
   resourceId_ = resourceId;
-  setParameter(std::string("ResourceId"), std::to_string(resourceId));
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-string DeleteResourceDLinkRequest::getClusterId() const {
+std::string DeleteResourceDLinkRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DeleteResourceDLinkRequest::setClusterId(string clusterId) {
+void DeleteResourceDLinkRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

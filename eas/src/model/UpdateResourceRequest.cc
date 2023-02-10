@@ -26,22 +26,22 @@ UpdateResourceRequest::UpdateResourceRequest()
 
 UpdateResourceRequest::~UpdateResourceRequest() {}
 
-string UpdateResourceRequest::getResourceId() const {
+std::string UpdateResourceRequest::getResourceId() const {
   return resourceId_;
 }
 
-void UpdateResourceRequest::setResourceId(string resourceId) {
+void UpdateResourceRequest::setResourceId(const std::string &resourceId) {
   resourceId_ = resourceId;
-  setParameter(std::string("ResourceId"), std::to_string(resourceId));
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-string UpdateResourceRequest::getClusterId() const {
+std::string UpdateResourceRequest::getClusterId() const {
   return clusterId_;
 }
 
-void UpdateResourceRequest::setClusterId(string clusterId) {
+void UpdateResourceRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string UpdateResourceRequest::getBody() const {

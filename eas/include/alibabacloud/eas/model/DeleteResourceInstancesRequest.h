@@ -30,20 +30,20 @@ class ALIBABACLOUD_EAS_EXPORT DeleteResourceInstancesRequest : public RoaService
 public:
 	DeleteResourceInstancesRequest();
 	~DeleteResourceInstancesRequest();
-	string getInstanceList() const;
-	void setInstanceList(string instanceList);
-	string getResourceId() const;
-	void setResourceId(string resourceId);
-	boolean getAllFailed() const;
-	void setAllFailed(boolean allFailed);
-	string getClusterId() const;
-	void setClusterId(string clusterId);
+	std::string getInstanceList() const;
+	void setInstanceList(const std::string &instanceList);
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	bool getAllFailed() const;
+	void setAllFailed(bool allFailed);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 
 private:
-	string instanceList_;
-	string resourceId_;
-	boolean allFailed_;
-	string clusterId_;
+	std::string instanceList_;
+	std::string resourceId_;
+	bool allFailed_;
+	std::string clusterId_;
 };
 } // namespace Model
 } // namespace Eas

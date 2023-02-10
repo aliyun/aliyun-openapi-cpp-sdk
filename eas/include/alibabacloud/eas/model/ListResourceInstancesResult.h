@@ -35,18 +35,24 @@ namespace AlibabaCloud
 				struct InstancesItem
 				{
 					std::string instanceId;
+					std::string zone;
 					std::string createTime;
 					std::string instanceUsedMemory;
 					std::string instanceIp;
+					std::string arch;
+					std::string instanceGpuMemory;
 					int instanceGpuCount;
 					std::string instanceName;
 					std::string instanceMemory;
+					std::string instanceUsedGpuMemory;
 					int instanceCpuCount;
-					int instanceUsedGpu;
+					float instanceUsedGpu;
 					bool autoRenewal;
+					std::string instanceTenantIp;
 					std::string instanceStatus;
 					std::string chargeType;
 					std::string expiredTime;
+					std::string region;
 					std::string instanceType;
 					float instanceUsedCpu;
 				};

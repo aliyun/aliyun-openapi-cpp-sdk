@@ -34,7 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct ServicesItem
 				{
+					struct LabelsItem
+					{
+						std::string labelValue;
+						std::string labelKey;
+					};
 					std::string message;
+					std::string serviceGroup;
 					int memory;
 					int currentVersion;
 					int runningInstance;
@@ -49,19 +55,26 @@ namespace AlibabaCloud
 					std::string serviceConfig;
 					std::string accessToken;
 					std::string internetEndpoint;
+					std::string resourceAlias;
 					std::string status;
 					std::string requestId;
 					std::string createTime;
 					std::string resource;
+					std::vector<ServicesItem::LabelsItem> labels;
 					std::string _namespace;
+					std::string extraData;
 					int weight;
+					std::string role;
 					int pendingInstance;
 					int latestVersion;
 					std::string serviceName;
+					std::string safetyLock;
 					std::string updateTime;
+					std::string serviceUid;
 					std::string region;
 					std::string parentUid;
 					std::string intranetEndpoint;
+					std::string roleAttrs;
 				};
 
 

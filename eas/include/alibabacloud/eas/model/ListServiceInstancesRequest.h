@@ -30,20 +30,20 @@ class ALIBABACLOUD_EAS_EXPORT ListServiceInstancesRequest : public RoaServiceReq
 public:
 	ListServiceInstancesRequest();
 	~ListServiceInstancesRequest();
-	integer getPageSize() const;
-	void setPageSize(integer pageSize);
-	string getServiceName() const;
-	void setServiceName(string serviceName);
-	string getClusterId() const;
-	void setClusterId(string clusterId);
-	integer getPageNumber() const;
-	void setPageNumber(integer pageNumber);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getServiceName() const;
+	void setServiceName(const std::string &serviceName);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 
 private:
-	integer pageSize_;
-	string serviceName_;
-	string clusterId_;
-	integer pageNumber_;
+	int pageSize_;
+	std::string serviceName_;
+	std::string clusterId_;
+	int pageNumber_;
 };
 } // namespace Model
 } // namespace Eas

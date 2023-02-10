@@ -38,15 +38,15 @@ namespace AlibabaCloud
 				explicit CreateBenchmarkTaskResult(const std::string &payload);
 				~CreateBenchmarkTaskResult();
 				std::string getMessage()const;
+				std::string getTaskName()const;
 				std::string getRegion()const;
-				std::string getName()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::string taskName_;
 				std::string region_;
-				std::string name_;
 
 			};
 		}

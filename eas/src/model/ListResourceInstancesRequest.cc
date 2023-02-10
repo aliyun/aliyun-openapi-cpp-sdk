@@ -26,47 +26,65 @@ ListResourceInstancesRequest::ListResourceInstancesRequest()
 
 ListResourceInstancesRequest::~ListResourceInstancesRequest() {}
 
-string ListResourceInstancesRequest::getResourceId() const {
+std::string ListResourceInstancesRequest::getResourceId() const {
   return resourceId_;
 }
 
-void ListResourceInstancesRequest::setResourceId(string resourceId) {
+void ListResourceInstancesRequest::setResourceId(const std::string &resourceId) {
   resourceId_ = resourceId;
-  setParameter(std::string("ResourceId"), std::to_string(resourceId));
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-integer ListResourceInstancesRequest::getPageSize() const {
+std::string ListResourceInstancesRequest::getInstanceName() const {
+  return instanceName_;
+}
+
+void ListResourceInstancesRequest::setInstanceName(const std::string &instanceName) {
+  instanceName_ = instanceName;
+  setParameter(std::string("InstanceName"), instanceName);
+}
+
+std::string ListResourceInstancesRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void ListResourceInstancesRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
+int ListResourceInstancesRequest::getPageSize() const {
   return pageSize_;
 }
 
-void ListResourceInstancesRequest::setPageSize(integer pageSize) {
+void ListResourceInstancesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-string ListResourceInstancesRequest::getClusterId() const {
+std::string ListResourceInstancesRequest::getClusterId() const {
   return clusterId_;
 }
 
-void ListResourceInstancesRequest::setClusterId(string clusterId) {
+void ListResourceInstancesRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
-string ListResourceInstancesRequest::getChargeType() const {
+std::string ListResourceInstancesRequest::getChargeType() const {
   return chargeType_;
 }
 
-void ListResourceInstancesRequest::setChargeType(string chargeType) {
+void ListResourceInstancesRequest::setChargeType(const std::string &chargeType) {
   chargeType_ = chargeType;
-  setParameter(std::string("ChargeType"), std::to_string(chargeType));
+  setParameter(std::string("ChargeType"), chargeType);
 }
 
-integer ListResourceInstancesRequest::getPageNumber() const {
+int ListResourceInstancesRequest::getPageNumber() const {
   return pageNumber_;
 }
 
-void ListResourceInstancesRequest::setPageNumber(integer pageNumber) {
+void ListResourceInstancesRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }

@@ -26,21 +26,21 @@ StartBenchmarkTaskRequest::StartBenchmarkTaskRequest()
 
 StartBenchmarkTaskRequest::~StartBenchmarkTaskRequest() {}
 
-string StartBenchmarkTaskRequest::getTaskName() const {
+std::string StartBenchmarkTaskRequest::getTaskName() const {
   return taskName_;
 }
 
-void StartBenchmarkTaskRequest::setTaskName(string taskName) {
+void StartBenchmarkTaskRequest::setTaskName(const std::string &taskName) {
   taskName_ = taskName;
-  setParameter(std::string("TaskName"), std::to_string(taskName));
+  setParameter(std::string("TaskName"), taskName);
 }
 
-string StartBenchmarkTaskRequest::getClusterId() const {
+std::string StartBenchmarkTaskRequest::getClusterId() const {
   return clusterId_;
 }
 
-void StartBenchmarkTaskRequest::setClusterId(string clusterId) {
+void StartBenchmarkTaskRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

@@ -21,6 +21,8 @@ set(eas_public_header
 	include/alibabacloud/eas/EasExport.h )
 
 set(eas_public_header_model 
+	include/alibabacloud/eas/model/CommitServiceRequest.h
+	include/alibabacloud/eas/model/CommitServiceResult.h
 	include/alibabacloud/eas/model/CreateBenchmarkTaskRequest.h
 	include/alibabacloud/eas/model/CreateBenchmarkTaskResult.h
 	include/alibabacloud/eas/model/CreateResourceRequest.h
@@ -55,12 +57,16 @@ set(eas_public_header_model
 	include/alibabacloud/eas/model/DeleteServiceCronScalerResult.h
 	include/alibabacloud/eas/model/DeleteServiceInstancesRequest.h
 	include/alibabacloud/eas/model/DeleteServiceInstancesResult.h
+	include/alibabacloud/eas/model/DeleteServiceLabelRequest.h
+	include/alibabacloud/eas/model/DeleteServiceLabelResult.h
 	include/alibabacloud/eas/model/DeleteServiceMirrorRequest.h
 	include/alibabacloud/eas/model/DeleteServiceMirrorResult.h
 	include/alibabacloud/eas/model/DescribeBenchmarkTaskRequest.h
 	include/alibabacloud/eas/model/DescribeBenchmarkTaskResult.h
 	include/alibabacloud/eas/model/DescribeBenchmarkTaskReportRequest.h
 	include/alibabacloud/eas/model/DescribeBenchmarkTaskReportResult.h
+	include/alibabacloud/eas/model/DescribeGroupRequest.h
+	include/alibabacloud/eas/model/DescribeGroupResult.h
 	include/alibabacloud/eas/model/DescribeResourceRequest.h
 	include/alibabacloud/eas/model/DescribeResourceResult.h
 	include/alibabacloud/eas/model/DescribeResourceDLinkRequest.h
@@ -73,12 +79,18 @@ set(eas_public_header_model
 	include/alibabacloud/eas/model/DescribeServiceAutoScalerResult.h
 	include/alibabacloud/eas/model/DescribeServiceCronScalerRequest.h
 	include/alibabacloud/eas/model/DescribeServiceCronScalerResult.h
+	include/alibabacloud/eas/model/DescribeServiceEventRequest.h
+	include/alibabacloud/eas/model/DescribeServiceEventResult.h
 	include/alibabacloud/eas/model/DescribeServiceLogRequest.h
 	include/alibabacloud/eas/model/DescribeServiceLogResult.h
 	include/alibabacloud/eas/model/DescribeServiceMirrorRequest.h
 	include/alibabacloud/eas/model/DescribeServiceMirrorResult.h
+	include/alibabacloud/eas/model/DevelopServiceRequest.h
+	include/alibabacloud/eas/model/DevelopServiceResult.h
 	include/alibabacloud/eas/model/ListBenchmarkTaskRequest.h
 	include/alibabacloud/eas/model/ListBenchmarkTaskResult.h
+	include/alibabacloud/eas/model/ListGroupsRequest.h
+	include/alibabacloud/eas/model/ListGroupsResult.h
 	include/alibabacloud/eas/model/ListResourceInstanceWorkerRequest.h
 	include/alibabacloud/eas/model/ListResourceInstanceWorkerResult.h
 	include/alibabacloud/eas/model/ListResourceInstancesRequest.h
@@ -89,6 +101,8 @@ set(eas_public_header_model
 	include/alibabacloud/eas/model/ListResourcesResult.h
 	include/alibabacloud/eas/model/ListServiceInstancesRequest.h
 	include/alibabacloud/eas/model/ListServiceInstancesResult.h
+	include/alibabacloud/eas/model/ListServiceVersionsRequest.h
+	include/alibabacloud/eas/model/ListServiceVersionsResult.h
 	include/alibabacloud/eas/model/ListServicesRequest.h
 	include/alibabacloud/eas/model/ListServicesResult.h
 	include/alibabacloud/eas/model/ReleaseServiceRequest.h
@@ -107,19 +121,27 @@ set(eas_public_header_model
 	include/alibabacloud/eas/model/UpdateResourceResult.h
 	include/alibabacloud/eas/model/UpdateResourceDLinkRequest.h
 	include/alibabacloud/eas/model/UpdateResourceDLinkResult.h
+	include/alibabacloud/eas/model/UpdateResourceInstanceRequest.h
+	include/alibabacloud/eas/model/UpdateResourceInstanceResult.h
 	include/alibabacloud/eas/model/UpdateServiceRequest.h
 	include/alibabacloud/eas/model/UpdateServiceResult.h
 	include/alibabacloud/eas/model/UpdateServiceAutoScalerRequest.h
 	include/alibabacloud/eas/model/UpdateServiceAutoScalerResult.h
 	include/alibabacloud/eas/model/UpdateServiceCronScalerRequest.h
 	include/alibabacloud/eas/model/UpdateServiceCronScalerResult.h
+	include/alibabacloud/eas/model/UpdateServiceLabelRequest.h
+	include/alibabacloud/eas/model/UpdateServiceLabelResult.h
 	include/alibabacloud/eas/model/UpdateServiceMirrorRequest.h
 	include/alibabacloud/eas/model/UpdateServiceMirrorResult.h
+	include/alibabacloud/eas/model/UpdateServiceSafetyLockRequest.h
+	include/alibabacloud/eas/model/UpdateServiceSafetyLockResult.h
 	include/alibabacloud/eas/model/UpdateServiceVersionRequest.h
 	include/alibabacloud/eas/model/UpdateServiceVersionResult.h )
 
 set(eas_src 
 	src/EasClient.cc
+	src/model/CommitServiceRequest.cc
+	src/model/CommitServiceResult.cc
 	src/model/CreateBenchmarkTaskRequest.cc
 	src/model/CreateBenchmarkTaskResult.cc
 	src/model/CreateResourceRequest.cc
@@ -154,12 +176,16 @@ set(eas_src
 	src/model/DeleteServiceCronScalerResult.cc
 	src/model/DeleteServiceInstancesRequest.cc
 	src/model/DeleteServiceInstancesResult.cc
+	src/model/DeleteServiceLabelRequest.cc
+	src/model/DeleteServiceLabelResult.cc
 	src/model/DeleteServiceMirrorRequest.cc
 	src/model/DeleteServiceMirrorResult.cc
 	src/model/DescribeBenchmarkTaskRequest.cc
 	src/model/DescribeBenchmarkTaskResult.cc
 	src/model/DescribeBenchmarkTaskReportRequest.cc
 	src/model/DescribeBenchmarkTaskReportResult.cc
+	src/model/DescribeGroupRequest.cc
+	src/model/DescribeGroupResult.cc
 	src/model/DescribeResourceRequest.cc
 	src/model/DescribeResourceResult.cc
 	src/model/DescribeResourceDLinkRequest.cc
@@ -172,12 +198,18 @@ set(eas_src
 	src/model/DescribeServiceAutoScalerResult.cc
 	src/model/DescribeServiceCronScalerRequest.cc
 	src/model/DescribeServiceCronScalerResult.cc
+	src/model/DescribeServiceEventRequest.cc
+	src/model/DescribeServiceEventResult.cc
 	src/model/DescribeServiceLogRequest.cc
 	src/model/DescribeServiceLogResult.cc
 	src/model/DescribeServiceMirrorRequest.cc
 	src/model/DescribeServiceMirrorResult.cc
+	src/model/DevelopServiceRequest.cc
+	src/model/DevelopServiceResult.cc
 	src/model/ListBenchmarkTaskRequest.cc
 	src/model/ListBenchmarkTaskResult.cc
+	src/model/ListGroupsRequest.cc
+	src/model/ListGroupsResult.cc
 	src/model/ListResourceInstanceWorkerRequest.cc
 	src/model/ListResourceInstanceWorkerResult.cc
 	src/model/ListResourceInstancesRequest.cc
@@ -188,6 +220,8 @@ set(eas_src
 	src/model/ListResourcesResult.cc
 	src/model/ListServiceInstancesRequest.cc
 	src/model/ListServiceInstancesResult.cc
+	src/model/ListServiceVersionsRequest.cc
+	src/model/ListServiceVersionsResult.cc
 	src/model/ListServicesRequest.cc
 	src/model/ListServicesResult.cc
 	src/model/ReleaseServiceRequest.cc
@@ -206,14 +240,20 @@ set(eas_src
 	src/model/UpdateResourceResult.cc
 	src/model/UpdateResourceDLinkRequest.cc
 	src/model/UpdateResourceDLinkResult.cc
+	src/model/UpdateResourceInstanceRequest.cc
+	src/model/UpdateResourceInstanceResult.cc
 	src/model/UpdateServiceRequest.cc
 	src/model/UpdateServiceResult.cc
 	src/model/UpdateServiceAutoScalerRequest.cc
 	src/model/UpdateServiceAutoScalerResult.cc
 	src/model/UpdateServiceCronScalerRequest.cc
 	src/model/UpdateServiceCronScalerResult.cc
+	src/model/UpdateServiceLabelRequest.cc
+	src/model/UpdateServiceLabelResult.cc
 	src/model/UpdateServiceMirrorRequest.cc
 	src/model/UpdateServiceMirrorResult.cc
+	src/model/UpdateServiceSafetyLockRequest.cc
+	src/model/UpdateServiceSafetyLockResult.cc
 	src/model/UpdateServiceVersionRequest.cc
 	src/model/UpdateServiceVersionResult.cc )
 

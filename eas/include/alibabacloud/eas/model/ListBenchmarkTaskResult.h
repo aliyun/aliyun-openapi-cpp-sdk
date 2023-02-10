@@ -49,12 +49,18 @@ namespace AlibabaCloud
 				ListBenchmarkTaskResult();
 				explicit ListBenchmarkTaskResult(const std::string &payload);
 				~ListBenchmarkTaskResult();
+				int getTotalCount()const;
 				std::vector<Task> getTasks()const;
+				int getPageSize()const;
+				int getPageNumber()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int totalCount_;
 				std::vector<Task> tasks_;
+				int pageSize_;
+				int pageNumber_;
 
 			};
 		}

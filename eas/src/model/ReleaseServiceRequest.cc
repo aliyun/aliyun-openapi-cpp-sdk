@@ -26,22 +26,22 @@ ReleaseServiceRequest::ReleaseServiceRequest()
 
 ReleaseServiceRequest::~ReleaseServiceRequest() {}
 
-string ReleaseServiceRequest::getServiceName() const {
+std::string ReleaseServiceRequest::getServiceName() const {
   return serviceName_;
 }
 
-void ReleaseServiceRequest::setServiceName(string serviceName) {
+void ReleaseServiceRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string ReleaseServiceRequest::getClusterId() const {
+std::string ReleaseServiceRequest::getClusterId() const {
   return clusterId_;
 }
 
-void ReleaseServiceRequest::setClusterId(string clusterId) {
+void ReleaseServiceRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string ReleaseServiceRequest::getBody() const {

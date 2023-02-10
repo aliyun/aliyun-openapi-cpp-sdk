@@ -26,22 +26,22 @@ CreateServiceMirrorRequest::CreateServiceMirrorRequest()
 
 CreateServiceMirrorRequest::~CreateServiceMirrorRequest() {}
 
-string CreateServiceMirrorRequest::getServiceName() const {
+std::string CreateServiceMirrorRequest::getServiceName() const {
   return serviceName_;
 }
 
-void CreateServiceMirrorRequest::setServiceName(string serviceName) {
+void CreateServiceMirrorRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string CreateServiceMirrorRequest::getClusterId() const {
+std::string CreateServiceMirrorRequest::getClusterId() const {
   return clusterId_;
 }
 
-void CreateServiceMirrorRequest::setClusterId(string clusterId) {
+void CreateServiceMirrorRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string CreateServiceMirrorRequest::getBody() const {

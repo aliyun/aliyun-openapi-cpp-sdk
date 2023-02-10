@@ -26,20 +26,38 @@ ListResourcesRequest::ListResourcesRequest()
 
 ListResourcesRequest::~ListResourcesRequest() {}
 
-integer ListResourcesRequest::getPageSize() const {
+std::string ListResourcesRequest::getResourceId() const {
+  return resourceId_;
+}
+
+void ListResourcesRequest::setResourceId(const std::string &resourceId) {
+  resourceId_ = resourceId;
+  setParameter(std::string("ResourceId"), resourceId);
+}
+
+int ListResourcesRequest::getPageSize() const {
   return pageSize_;
 }
 
-void ListResourcesRequest::setPageSize(integer pageSize) {
+void ListResourcesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-integer ListResourcesRequest::getPageNumber() const {
+std::string ListResourcesRequest::getResourceName() const {
+  return resourceName_;
+}
+
+void ListResourcesRequest::setResourceName(const std::string &resourceName) {
+  resourceName_ = resourceName;
+  setParameter(std::string("ResourceName"), resourceName);
+}
+
+int ListResourcesRequest::getPageNumber() const {
   return pageNumber_;
 }
 
-void ListResourcesRequest::setPageNumber(integer pageNumber) {
+void ListResourcesRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }

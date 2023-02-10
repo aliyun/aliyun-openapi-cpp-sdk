@@ -38,11 +38,13 @@ namespace AlibabaCloud
 				explicit DescribeBenchmarkTaskReportResult(const std::string &payload);
 				~DescribeBenchmarkTaskReportResult();
 				std::string getReportUrl()const;
+				ObjectOfAny getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string reportUrl_;
+				ObjectOfAny data_;
 
 			};
 		}

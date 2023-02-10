@@ -39,13 +39,17 @@ namespace AlibabaCloud
 					std::string innerIP;
 					int instancePort;
 					std::string _namespace;
+					std::string resourceType;
+					std::string tenantInstanceIP;
 					std::string reason;
 					std::string instanceName;
 					int restartCount;
 					int totalProcesses;
+					std::string role;
 					std::vector<std::string> lastState;
 					int readyProcesses;
 					std::string startAt;
+					std::string tenantHostIP;
 					std::string hostName;
 				};
 

@@ -26,21 +26,21 @@ DeleteResourceLogRequest::DeleteResourceLogRequest()
 
 DeleteResourceLogRequest::~DeleteResourceLogRequest() {}
 
-string DeleteResourceLogRequest::getResourceId() const {
+std::string DeleteResourceLogRequest::getResourceId() const {
   return resourceId_;
 }
 
-void DeleteResourceLogRequest::setResourceId(string resourceId) {
+void DeleteResourceLogRequest::setResourceId(const std::string &resourceId) {
   resourceId_ = resourceId;
-  setParameter(std::string("ResourceId"), std::to_string(resourceId));
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-string DeleteResourceLogRequest::getClusterId() const {
+std::string DeleteResourceLogRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DeleteResourceLogRequest::setClusterId(string clusterId) {
+void DeleteResourceLogRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

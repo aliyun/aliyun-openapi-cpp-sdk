@@ -57,10 +57,12 @@ void ListResourceInstancesResult::parse(const std::string &payload)
 			instancesObject.instanceGpuCount = std::stoi(valueInstancesInstancesItem["InstanceGpuCount"].asString());
 		if(!valueInstancesInstancesItem["InstanceMemory"].isNull())
 			instancesObject.instanceMemory = valueInstancesInstancesItem["InstanceMemory"].asString();
+		if(!valueInstancesInstancesItem["InstanceGpuMemory"].isNull())
+			instancesObject.instanceGpuMemory = valueInstancesInstancesItem["InstanceGpuMemory"].asString();
 		if(!valueInstancesInstancesItem["InstanceUsedCpu"].isNull())
 			instancesObject.instanceUsedCpu = std::stof(valueInstancesInstancesItem["InstanceUsedCpu"].asString());
 		if(!valueInstancesInstancesItem["InstanceUsedGpu"].isNull())
-			instancesObject.instanceUsedGpu = std::stoi(valueInstancesInstancesItem["InstanceUsedGpu"].asString());
+			instancesObject.instanceUsedGpu = std::stof(valueInstancesInstancesItem["InstanceUsedGpu"].asString());
 		if(!valueInstancesInstancesItem["InstanceUsedMemory"].isNull())
 			instancesObject.instanceUsedMemory = valueInstancesInstancesItem["InstanceUsedMemory"].asString();
 		if(!valueInstancesInstancesItem["InstanceType"].isNull())
@@ -73,6 +75,16 @@ void ListResourceInstancesResult::parse(const std::string &payload)
 			instancesObject.expiredTime = valueInstancesInstancesItem["ExpiredTime"].asString();
 		if(!valueInstancesInstancesItem["AutoRenewal"].isNull())
 			instancesObject.autoRenewal = valueInstancesInstancesItem["AutoRenewal"].asString() == "true";
+		if(!valueInstancesInstancesItem["Arch"].isNull())
+			instancesObject.arch = valueInstancesInstancesItem["Arch"].asString();
+		if(!valueInstancesInstancesItem["Region"].isNull())
+			instancesObject.region = valueInstancesInstancesItem["Region"].asString();
+		if(!valueInstancesInstancesItem["Zone"].isNull())
+			instancesObject.zone = valueInstancesInstancesItem["Zone"].asString();
+		if(!valueInstancesInstancesItem["InstanceTenantIp"].isNull())
+			instancesObject.instanceTenantIp = valueInstancesInstancesItem["InstanceTenantIp"].asString();
+		if(!valueInstancesInstancesItem["InstanceUsedGpuMemory"].isNull())
+			instancesObject.instanceUsedGpuMemory = valueInstancesInstancesItem["InstanceUsedGpuMemory"].asString();
 		instances_.push_back(instancesObject);
 	}
 	if(!value["PageNumber"].isNull())

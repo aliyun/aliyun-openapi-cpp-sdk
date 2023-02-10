@@ -26,12 +26,30 @@ CreateServiceRequest::CreateServiceRequest()
 
 CreateServiceRequest::~CreateServiceRequest() {}
 
-string CreateServiceRequest::getBody() const {
+std::string CreateServiceRequest::getDevelop() const {
+  return develop_;
+}
+
+void CreateServiceRequest::setDevelop(const std::string &develop) {
+  develop_ = develop;
+  setParameter(std::string("Develop"), develop);
+}
+
+std::string CreateServiceRequest::getBody() const {
   return body_;
 }
 
-void CreateServiceRequest::setBody(string body) {
+void CreateServiceRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
+}
+
+std::string CreateServiceRequest::getLabels() const {
+  return labels_;
+}
+
+void CreateServiceRequest::setLabels(const std::string &labels) {
+  labels_ = labels;
+  setParameter(std::string("Labels"), labels);
 }
 

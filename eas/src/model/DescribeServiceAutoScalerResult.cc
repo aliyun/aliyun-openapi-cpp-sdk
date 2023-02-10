@@ -39,17 +39,44 @@ void DescribeServiceAutoScalerResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allScaleStrategiesNode = value["ScaleStrategies"]["ScaleStrategy"];
+	for (auto valueScaleStrategiesScaleStrategy : allScaleStrategiesNode)
+	{
+		ScaleStrategy scaleStrategiesObject;
+		if(!valueScaleStrategiesScaleStrategy["metricName"].isNull())
+			scaleStrategiesObject.metricName = valueScaleStrategiesScaleStrategy["metricName"].asString();
+		if(!valueScaleStrategiesScaleStrategy["threshold"].isNull())
+			scaleStrategiesObject.threshold = std::stof(valueScaleStrategiesScaleStrategy["threshold"].asString());
+		if(!valueScaleStrategiesScaleStrategy["service"].isNull())
+			scaleStrategiesObject.service = valueScaleStrategiesScaleStrategy["service"].asString();
+		scaleStrategies_.push_back(scaleStrategiesObject);
+	}
+	auto allCurrentMetricsNode = value["CurrentMetrics"]["CurrentMetric"];
+	for (auto valueCurrentMetricsCurrentMetric : allCurrentMetricsNode)
+	{
+		CurrentMetric currentMetricsObject;
+		if(!valueCurrentMetricsCurrentMetric["metricName"].isNull())
+			currentMetricsObject.metricName = valueCurrentMetricsCurrentMetric["metricName"].asString();
+		if(!valueCurrentMetricsCurrentMetric["value"].isNull())
+			currentMetricsObject.value = std::stof(valueCurrentMetricsCurrentMetric["value"].asString());
+		if(!valueCurrentMetricsCurrentMetric["service"].isNull())
+			currentMetricsObject.service = valueCurrentMetricsCurrentMetric["service"].asString();
+		currentMetrics_.push_back(currentMetricsObject);
+	}
 	if(!value["ServiceName"].isNull())
 		serviceName_ = value["ServiceName"].asString();
 	if(!value["MinReplica"].isNull())
 		minReplica_ = std::stoi(value["MinReplica"].asString());
 	if(!value["MaxReplica"].isNull())
 		maxReplica_ = std::stoi(value["MaxReplica"].asString());
-	if(!value["Strategies"].isNull())
-		strategies_ = value["Strategies"].asString();
-	if(!value["CurrentValues"].isNull())
-		currentValues_ = value["CurrentValues"].asString();
+	if(!value["Behavior"].isNull())
+		behavior_ = value["Behavior"].asString();
 
+}
+
+std::vector<DescribeServiceAutoScalerResult::CurrentMetric> DescribeServiceAutoScalerResult::getCurrentMetrics()const
+{
+	return currentMetrics_;
 }
 
 int DescribeServiceAutoScalerResult::getMaxReplica()const
@@ -62,18 +89,18 @@ std::string DescribeServiceAutoScalerResult::getServiceName()const
 	return serviceName_;
 }
 
-std::string DescribeServiceAutoScalerResult::getStrategies()const
-{
-	return strategies_;
-}
-
 int DescribeServiceAutoScalerResult::getMinReplica()const
 {
 	return minReplica_;
 }
 
-std::string DescribeServiceAutoScalerResult::getCurrentValues()const
+std::vector<DescribeServiceAutoScalerResult::ScaleStrategy> DescribeServiceAutoScalerResult::getScaleStrategies()const
 {
-	return currentValues_;
+	return scaleStrategies_;
+}
+
+std::string DescribeServiceAutoScalerResult::getBehavior()const
+{
+	return behavior_;
 }
 

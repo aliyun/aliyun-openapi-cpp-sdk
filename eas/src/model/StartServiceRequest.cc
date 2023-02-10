@@ -26,21 +26,21 @@ StartServiceRequest::StartServiceRequest()
 
 StartServiceRequest::~StartServiceRequest() {}
 
-string StartServiceRequest::getServiceName() const {
+std::string StartServiceRequest::getServiceName() const {
   return serviceName_;
 }
 
-void StartServiceRequest::setServiceName(string serviceName) {
+void StartServiceRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string StartServiceRequest::getClusterId() const {
+std::string StartServiceRequest::getClusterId() const {
   return clusterId_;
 }
 
-void StartServiceRequest::setClusterId(string clusterId) {
+void StartServiceRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

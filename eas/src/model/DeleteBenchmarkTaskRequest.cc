@@ -26,21 +26,21 @@ DeleteBenchmarkTaskRequest::DeleteBenchmarkTaskRequest()
 
 DeleteBenchmarkTaskRequest::~DeleteBenchmarkTaskRequest() {}
 
-string DeleteBenchmarkTaskRequest::getTaskName() const {
+std::string DeleteBenchmarkTaskRequest::getTaskName() const {
   return taskName_;
 }
 
-void DeleteBenchmarkTaskRequest::setTaskName(string taskName) {
+void DeleteBenchmarkTaskRequest::setTaskName(const std::string &taskName) {
   taskName_ = taskName;
-  setParameter(std::string("TaskName"), std::to_string(taskName));
+  setParameter(std::string("TaskName"), taskName);
 }
 
-string DeleteBenchmarkTaskRequest::getClusterId() const {
+std::string DeleteBenchmarkTaskRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DeleteBenchmarkTaskRequest::setClusterId(string clusterId) {
+void DeleteBenchmarkTaskRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

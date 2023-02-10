@@ -26,21 +26,21 @@ DescribeResourceDLinkRequest::DescribeResourceDLinkRequest()
 
 DescribeResourceDLinkRequest::~DescribeResourceDLinkRequest() {}
 
-string DescribeResourceDLinkRequest::getResourceId() const {
+std::string DescribeResourceDLinkRequest::getResourceId() const {
   return resourceId_;
 }
 
-void DescribeResourceDLinkRequest::setResourceId(string resourceId) {
+void DescribeResourceDLinkRequest::setResourceId(const std::string &resourceId) {
   resourceId_ = resourceId;
-  setParameter(std::string("ResourceId"), std::to_string(resourceId));
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-string DescribeResourceDLinkRequest::getClusterId() const {
+std::string DescribeResourceDLinkRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DescribeResourceDLinkRequest::setClusterId(string clusterId) {
+void DescribeResourceDLinkRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

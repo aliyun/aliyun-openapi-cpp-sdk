@@ -32,12 +32,18 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_EAS_EXPORT DescribeServiceResult : public ServiceResult
 			{
 			public:
+				struct LabelsItem
+				{
+					std::string labelValue;
+					std::string labelKey;
+				};
 
 
 				DescribeServiceResult();
 				explicit DescribeServiceResult(const std::string &payload);
 				~DescribeServiceResult();
 				std::string getMessage()const;
+				std::string getServiceGroup()const;
 				int getMemory()const;
 				int getCurrentVersion()const;
 				int getRunningInstance()const;
@@ -52,23 +58,31 @@ namespace AlibabaCloud
 				std::string getServiceConfig()const;
 				std::string getAccessToken()const;
 				std::string getInternetEndpoint()const;
+				std::string getResourceAlias()const;
 				std::string getStatus()const;
 				std::string getCreateTime()const;
 				std::string getResource()const;
+				std::vector<LabelsItem> getLabels()const;
 				std::string get_Namespace()const;
+				std::string getExtraData()const;
 				int getWeight()const;
+				std::string getRole()const;
 				int getPendingInstance()const;
 				int getLatestVersion()const;
 				std::string getServiceName()const;
+				std::string getSafetyLock()const;
 				std::string getUpdateTime()const;
+				std::string getServiceUid()const;
 				std::string getRegion()const;
 				std::string getParentUid()const;
 				std::string getIntranetEndpoint()const;
+				std::string getRoleAttrs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
+				std::string serviceGroup_;
 				int memory_;
 				int currentVersion_;
 				int runningInstance_;
@@ -83,18 +97,25 @@ namespace AlibabaCloud
 				std::string serviceConfig_;
 				std::string accessToken_;
 				std::string internetEndpoint_;
+				std::string resourceAlias_;
 				std::string status_;
 				std::string createTime_;
 				std::string resource_;
+				std::vector<LabelsItem> labels_;
 				std::string _namespace_;
+				std::string extraData_;
 				int weight_;
+				std::string role_;
 				int pendingInstance_;
 				int latestVersion_;
 				std::string serviceName_;
+				std::string safetyLock_;
 				std::string updateTime_;
+				std::string serviceUid_;
 				std::string region_;
 				std::string parentUid_;
 				std::string intranetEndpoint_;
+				std::string roleAttrs_;
 
 			};
 		}

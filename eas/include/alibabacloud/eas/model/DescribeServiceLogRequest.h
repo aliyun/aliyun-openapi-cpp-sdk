@@ -30,32 +30,32 @@ class ALIBABACLOUD_EAS_EXPORT DescribeServiceLogRequest : public RoaServiceReque
 public:
 	DescribeServiceLogRequest();
 	~DescribeServiceLogRequest();
-	string getIp() const;
-	void setIp(string ip);
-	integer getPageSize() const;
-	void setPageSize(integer pageSize);
-	string getEndTime() const;
-	void setEndTime(string endTime);
-	string getServiceName() const;
-	void setServiceName(string serviceName);
-	string getStartTime() const;
-	void setStartTime(string startTime);
-	string getClusterId() const;
-	void setClusterId(string clusterId);
-	integer getPageNum() const;
-	void setPageNum(integer pageNum);
-	string getKeyword() const;
-	void setKeyword(string keyword);
+	std::string getIp() const;
+	void setIp(const std::string &ip);
+	long getPageSize() const;
+	void setPageSize(long pageSize);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	std::string getServiceName() const;
+	void setServiceName(const std::string &serviceName);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
+	long getPageNum() const;
+	void setPageNum(long pageNum);
+	std::string getKeyword() const;
+	void setKeyword(const std::string &keyword);
 
 private:
-	string ip_;
-	integer pageSize_;
-	string endTime_;
-	string serviceName_;
-	string startTime_;
-	string clusterId_;
-	integer pageNum_;
-	string keyword_;
+	std::string ip_;
+	long pageSize_;
+	std::string endTime_;
+	std::string serviceName_;
+	std::string startTime_;
+	std::string clusterId_;
+	long pageNum_;
+	std::string keyword_;
 };
 } // namespace Model
 } // namespace Eas

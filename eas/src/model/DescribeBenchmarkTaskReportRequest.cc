@@ -26,21 +26,30 @@ DescribeBenchmarkTaskReportRequest::DescribeBenchmarkTaskReportRequest()
 
 DescribeBenchmarkTaskReportRequest::~DescribeBenchmarkTaskReportRequest() {}
 
-string DescribeBenchmarkTaskReportRequest::getTaskName() const {
+std::string DescribeBenchmarkTaskReportRequest::getReportType() const {
+  return reportType_;
+}
+
+void DescribeBenchmarkTaskReportRequest::setReportType(const std::string &reportType) {
+  reportType_ = reportType;
+  setParameter(std::string("ReportType"), reportType);
+}
+
+std::string DescribeBenchmarkTaskReportRequest::getTaskName() const {
   return taskName_;
 }
 
-void DescribeBenchmarkTaskReportRequest::setTaskName(string taskName) {
+void DescribeBenchmarkTaskReportRequest::setTaskName(const std::string &taskName) {
   taskName_ = taskName;
-  setParameter(std::string("TaskName"), std::to_string(taskName));
+  setParameter(std::string("TaskName"), taskName);
 }
 
-string DescribeBenchmarkTaskReportRequest::getClusterId() const {
+std::string DescribeBenchmarkTaskReportRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DescribeBenchmarkTaskReportRequest::setClusterId(string clusterId) {
+void DescribeBenchmarkTaskReportRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

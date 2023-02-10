@@ -30,14 +30,14 @@ class ALIBABACLOUD_EAS_EXPORT DeleteServiceMirrorRequest : public RoaServiceRequ
 public:
 	DeleteServiceMirrorRequest();
 	~DeleteServiceMirrorRequest();
-	string getServiceName() const;
-	void setServiceName(string serviceName);
-	string getClusterId() const;
-	void setClusterId(string clusterId);
+	std::string getServiceName() const;
+	void setServiceName(const std::string &serviceName);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 
 private:
-	string serviceName_;
-	string clusterId_;
+	std::string serviceName_;
+	std::string clusterId_;
 };
 } // namespace Model
 } // namespace Eas

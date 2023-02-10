@@ -26,21 +26,21 @@ DescribeServiceAutoScalerRequest::DescribeServiceAutoScalerRequest()
 
 DescribeServiceAutoScalerRequest::~DescribeServiceAutoScalerRequest() {}
 
-string DescribeServiceAutoScalerRequest::getServiceName() const {
+std::string DescribeServiceAutoScalerRequest::getServiceName() const {
   return serviceName_;
 }
 
-void DescribeServiceAutoScalerRequest::setServiceName(string serviceName) {
+void DescribeServiceAutoScalerRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string DescribeServiceAutoScalerRequest::getClusterId() const {
+std::string DescribeServiceAutoScalerRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DescribeServiceAutoScalerRequest::setClusterId(string clusterId) {
+void DescribeServiceAutoScalerRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

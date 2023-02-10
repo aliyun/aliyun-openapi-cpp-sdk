@@ -30,16 +30,16 @@ class ALIBABACLOUD_EAS_EXPORT UpdateResourceDLinkRequest : public RoaServiceRequ
 public:
 	UpdateResourceDLinkRequest();
 	~UpdateResourceDLinkRequest();
-	string getResourceId() const;
-	void setResourceId(string resourceId);
-	string getClusterId() const;
-	void setClusterId(string clusterId);
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 	std::string getBody() const;
 	void setBody(const std::string &body);
 
 private:
-	string resourceId_;
-	string clusterId_;
+	std::string resourceId_;
+	std::string clusterId_;
 	std::string body_;
 };
 } // namespace Model

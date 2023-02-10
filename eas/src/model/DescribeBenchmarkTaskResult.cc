@@ -61,6 +61,8 @@ void DescribeBenchmarkTaskResult::parse(const std::string &payload)
 		reason_ = value["Reason"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Endpoint"].isNull())
+		endpoint_ = value["Endpoint"].asString();
 
 }
 
@@ -82,6 +84,11 @@ std::string DescribeBenchmarkTaskResult::getTaskId()const
 std::string DescribeBenchmarkTaskResult::getMessage()const
 {
 	return message_;
+}
+
+std::string DescribeBenchmarkTaskResult::getEndpoint()const
+{
+	return endpoint_;
 }
 
 std::string DescribeBenchmarkTaskResult::getTaskName()const

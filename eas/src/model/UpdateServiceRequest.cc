@@ -26,30 +26,30 @@ UpdateServiceRequest::UpdateServiceRequest()
 
 UpdateServiceRequest::~UpdateServiceRequest() {}
 
-string UpdateServiceRequest::getServiceName() const {
+std::string UpdateServiceRequest::getServiceName() const {
   return serviceName_;
 }
 
-void UpdateServiceRequest::setServiceName(string serviceName) {
+void UpdateServiceRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string UpdateServiceRequest::getClusterId() const {
+std::string UpdateServiceRequest::getClusterId() const {
   return clusterId_;
 }
 
-void UpdateServiceRequest::setClusterId(string clusterId) {
+void UpdateServiceRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
-string UpdateServiceRequest::getBody() const {
+std::string UpdateServiceRequest::getBody() const {
   return body_;
 }
 
-void UpdateServiceRequest::setBody(string body) {
+void UpdateServiceRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

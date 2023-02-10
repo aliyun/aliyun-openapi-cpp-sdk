@@ -26,21 +26,21 @@ DeleteServiceRequest::DeleteServiceRequest()
 
 DeleteServiceRequest::~DeleteServiceRequest() {}
 
-string DeleteServiceRequest::getServiceName() const {
+std::string DeleteServiceRequest::getServiceName() const {
   return serviceName_;
 }
 
-void DeleteServiceRequest::setServiceName(string serviceName) {
+void DeleteServiceRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string DeleteServiceRequest::getClusterId() const {
+std::string DeleteServiceRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DeleteServiceRequest::setClusterId(string clusterId) {
+void DeleteServiceRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

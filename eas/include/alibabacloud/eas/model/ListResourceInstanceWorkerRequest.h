@@ -30,23 +30,23 @@ class ALIBABACLOUD_EAS_EXPORT ListResourceInstanceWorkerRequest : public RoaServ
 public:
 	ListResourceInstanceWorkerRequest();
 	~ListResourceInstanceWorkerRequest();
-	string getResourceId() const;
-	void setResourceId(string resourceId);
-	string getInstanceName() const;
-	void setInstanceName(string instanceName);
-	integer getPageSize() const;
-	void setPageSize(integer pageSize);
-	string getClusterId() const;
-	void setClusterId(string clusterId);
-	integer getPageNumber() const;
-	void setPageNumber(integer pageNumber);
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	std::string getInstanceName() const;
+	void setInstanceName(const std::string &instanceName);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 
 private:
-	string resourceId_;
-	string instanceName_;
-	integer pageSize_;
-	string clusterId_;
-	integer pageNumber_;
+	std::string resourceId_;
+	std::string instanceName_;
+	int pageSize_;
+	std::string clusterId_;
+	int pageNumber_;
 };
 } // namespace Model
 } // namespace Eas

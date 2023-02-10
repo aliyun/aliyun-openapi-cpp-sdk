@@ -26,30 +26,30 @@ UpdateBenchmarkTaskRequest::UpdateBenchmarkTaskRequest()
 
 UpdateBenchmarkTaskRequest::~UpdateBenchmarkTaskRequest() {}
 
-string UpdateBenchmarkTaskRequest::getTaskName() const {
+std::string UpdateBenchmarkTaskRequest::getTaskName() const {
   return taskName_;
 }
 
-void UpdateBenchmarkTaskRequest::setTaskName(string taskName) {
+void UpdateBenchmarkTaskRequest::setTaskName(const std::string &taskName) {
   taskName_ = taskName;
-  setParameter(std::string("TaskName"), std::to_string(taskName));
+  setParameter(std::string("TaskName"), taskName);
 }
 
-string UpdateBenchmarkTaskRequest::getClusterId() const {
+std::string UpdateBenchmarkTaskRequest::getClusterId() const {
   return clusterId_;
 }
 
-void UpdateBenchmarkTaskRequest::setClusterId(string clusterId) {
+void UpdateBenchmarkTaskRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
-string UpdateBenchmarkTaskRequest::getBody() const {
+std::string UpdateBenchmarkTaskRequest::getBody() const {
   return body_;
 }
 
-void UpdateBenchmarkTaskRequest::setBody(string body) {
+void UpdateBenchmarkTaskRequest::setBody(const std::string &body) {
   body_ = body;
-  setBodyParameter(std::string("body"), std::to_string(body));
+  setBodyParameter(std::string("body"), body);
 }
 

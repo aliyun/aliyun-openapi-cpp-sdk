@@ -39,6 +39,16 @@ void DescribeServiceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allLabelsNode = value["Labels"]["LabelsItem"];
+	for (auto valueLabelsLabelsItem : allLabelsNode)
+	{
+		LabelsItem labelsObject;
+		if(!valueLabelsLabelsItem["LabelKey"].isNull())
+			labelsObject.labelKey = valueLabelsLabelsItem["LabelKey"].asString();
+		if(!valueLabelsLabelsItem["LabelValue"].isNull())
+			labelsObject.labelValue = valueLabelsLabelsItem["LabelValue"].asString();
+		labels_.push_back(labelsObject);
+	}
 	if(!value["Region"].isNull())
 		region_ = value["Region"].asString();
 	if(!value["CallerUid"].isNull())
@@ -75,10 +85,14 @@ void DescribeServiceResult::parse(const std::string &payload)
 		reason_ = value["Reason"].asString();
 	if(!value["Resource"].isNull())
 		resource_ = value["Resource"].asString();
+	if(!value["ResourceAlias"].isNull())
+		resourceAlias_ = value["ResourceAlias"].asString();
 	if(!value["ServiceConfig"].isNull())
 		serviceConfig_ = value["ServiceConfig"].asString();
 	if(!value["ServiceName"].isNull())
 		serviceName_ = value["ServiceName"].asString();
+	if(!value["ServiceGroup"].isNull())
+		serviceGroup_ = value["ServiceGroup"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
 	if(!value["CreateTime"].isNull())
@@ -89,16 +103,31 @@ void DescribeServiceResult::parse(const std::string &payload)
 		weight_ = std::stoi(value["Weight"].asString());
 	if(!value["ServiceId"].isNull())
 		serviceId_ = value["ServiceId"].asString();
+	if(!value["ServiceUid"].isNull())
+		serviceUid_ = value["ServiceUid"].asString();
 	if(!value["AccessToken"].isNull())
 		accessToken_ = value["AccessToken"].asString();
 	if(!value["Source"].isNull())
 		source_ = value["Source"].asString();
+	if(!value["ExtraData"].isNull())
+		extraData_ = value["ExtraData"].asString();
+	if(!value["Role"].isNull())
+		role_ = value["Role"].asString();
+	if(!value["RoleAttrs"].isNull())
+		roleAttrs_ = value["RoleAttrs"].asString();
+	if(!value["SafetyLock"].isNull())
+		safetyLock_ = value["SafetyLock"].asString();
 
 }
 
 std::string DescribeServiceResult::getMessage()const
 {
 	return message_;
+}
+
+std::string DescribeServiceResult::getServiceGroup()const
+{
+	return serviceGroup_;
 }
 
 int DescribeServiceResult::getMemory()const
@@ -171,6 +200,11 @@ std::string DescribeServiceResult::getInternetEndpoint()const
 	return internetEndpoint_;
 }
 
+std::string DescribeServiceResult::getResourceAlias()const
+{
+	return resourceAlias_;
+}
+
 std::string DescribeServiceResult::getStatus()const
 {
 	return status_;
@@ -186,14 +220,29 @@ std::string DescribeServiceResult::getResource()const
 	return resource_;
 }
 
+std::vector<DescribeServiceResult::LabelsItem> DescribeServiceResult::getLabels()const
+{
+	return labels_;
+}
+
 std::string DescribeServiceResult::get_Namespace()const
 {
 	return _namespace_;
 }
 
+std::string DescribeServiceResult::getExtraData()const
+{
+	return extraData_;
+}
+
 int DescribeServiceResult::getWeight()const
 {
 	return weight_;
+}
+
+std::string DescribeServiceResult::getRole()const
+{
+	return role_;
 }
 
 int DescribeServiceResult::getPendingInstance()const
@@ -211,9 +260,19 @@ std::string DescribeServiceResult::getServiceName()const
 	return serviceName_;
 }
 
+std::string DescribeServiceResult::getSafetyLock()const
+{
+	return safetyLock_;
+}
+
 std::string DescribeServiceResult::getUpdateTime()const
 {
 	return updateTime_;
+}
+
+std::string DescribeServiceResult::getServiceUid()const
+{
+	return serviceUid_;
 }
 
 std::string DescribeServiceResult::getRegion()const
@@ -229,5 +288,10 @@ std::string DescribeServiceResult::getParentUid()const
 std::string DescribeServiceResult::getIntranetEndpoint()const
 {
 	return intranetEndpoint_;
+}
+
+std::string DescribeServiceResult::getRoleAttrs()const
+{
+	return roleAttrs_;
 }
 

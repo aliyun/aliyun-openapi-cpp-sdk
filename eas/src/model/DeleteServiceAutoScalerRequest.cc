@@ -26,21 +26,21 @@ DeleteServiceAutoScalerRequest::DeleteServiceAutoScalerRequest()
 
 DeleteServiceAutoScalerRequest::~DeleteServiceAutoScalerRequest() {}
 
-string DeleteServiceAutoScalerRequest::getServiceName() const {
+std::string DeleteServiceAutoScalerRequest::getServiceName() const {
   return serviceName_;
 }
 
-void DeleteServiceAutoScalerRequest::setServiceName(string serviceName) {
+void DeleteServiceAutoScalerRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string DeleteServiceAutoScalerRequest::getClusterId() const {
+std::string DeleteServiceAutoScalerRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DeleteServiceAutoScalerRequest::setClusterId(string clusterId) {
+void DeleteServiceAutoScalerRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

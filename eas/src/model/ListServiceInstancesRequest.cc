@@ -26,38 +26,38 @@ ListServiceInstancesRequest::ListServiceInstancesRequest()
 
 ListServiceInstancesRequest::~ListServiceInstancesRequest() {}
 
-integer ListServiceInstancesRequest::getPageSize() const {
+int ListServiceInstancesRequest::getPageSize() const {
   return pageSize_;
 }
 
-void ListServiceInstancesRequest::setPageSize(integer pageSize) {
+void ListServiceInstancesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-string ListServiceInstancesRequest::getServiceName() const {
+std::string ListServiceInstancesRequest::getServiceName() const {
   return serviceName_;
 }
 
-void ListServiceInstancesRequest::setServiceName(string serviceName) {
+void ListServiceInstancesRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string ListServiceInstancesRequest::getClusterId() const {
+std::string ListServiceInstancesRequest::getClusterId() const {
   return clusterId_;
 }
 
-void ListServiceInstancesRequest::setClusterId(string clusterId) {
+void ListServiceInstancesRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
-integer ListServiceInstancesRequest::getPageNumber() const {
+int ListServiceInstancesRequest::getPageNumber() const {
   return pageNumber_;
 }
 
-void ListServiceInstancesRequest::setPageNumber(integer pageNumber) {
+void ListServiceInstancesRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }

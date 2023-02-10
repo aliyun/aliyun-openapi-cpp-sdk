@@ -26,22 +26,22 @@ CreateResourceInstancesRequest::CreateResourceInstancesRequest()
 
 CreateResourceInstancesRequest::~CreateResourceInstancesRequest() {}
 
-string CreateResourceInstancesRequest::getResourceId() const {
+std::string CreateResourceInstancesRequest::getResourceId() const {
   return resourceId_;
 }
 
-void CreateResourceInstancesRequest::setResourceId(string resourceId) {
+void CreateResourceInstancesRequest::setResourceId(const std::string &resourceId) {
   resourceId_ = resourceId;
-  setParameter(std::string("ResourceId"), std::to_string(resourceId));
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-string CreateResourceInstancesRequest::getClusterId() const {
+std::string CreateResourceInstancesRequest::getClusterId() const {
   return clusterId_;
 }
 
-void CreateResourceInstancesRequest::setClusterId(string clusterId) {
+void CreateResourceInstancesRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string CreateResourceInstancesRequest::getBody() const {

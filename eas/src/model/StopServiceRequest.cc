@@ -26,21 +26,21 @@ StopServiceRequest::StopServiceRequest()
 
 StopServiceRequest::~StopServiceRequest() {}
 
-string StopServiceRequest::getServiceName() const {
+std::string StopServiceRequest::getServiceName() const {
   return serviceName_;
 }
 
-void StopServiceRequest::setServiceName(string serviceName) {
+void StopServiceRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string StopServiceRequest::getClusterId() const {
+std::string StopServiceRequest::getClusterId() const {
   return clusterId_;
 }
 
-void StopServiceRequest::setClusterId(string clusterId) {
+void StopServiceRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

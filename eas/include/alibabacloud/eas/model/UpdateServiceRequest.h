@@ -30,17 +30,17 @@ class ALIBABACLOUD_EAS_EXPORT UpdateServiceRequest : public RoaServiceRequest {
 public:
 	UpdateServiceRequest();
 	~UpdateServiceRequest();
-	string getServiceName() const;
-	void setServiceName(string serviceName);
-	string getClusterId() const;
-	void setClusterId(string clusterId);
-	string getBody() const;
-	void setBody(string body);
+	std::string getServiceName() const;
+	void setServiceName(const std::string &serviceName);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
+	std::string getBody() const;
+	void setBody(const std::string &body);
 
 private:
-	string serviceName_;
-	string clusterId_;
-	string body_;
+	std::string serviceName_;
+	std::string clusterId_;
+	std::string body_;
 };
 } // namespace Model
 } // namespace Eas

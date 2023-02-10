@@ -26,38 +26,38 @@ ListResourceServicesRequest::ListResourceServicesRequest()
 
 ListResourceServicesRequest::~ListResourceServicesRequest() {}
 
-string ListResourceServicesRequest::getResourceId() const {
+std::string ListResourceServicesRequest::getResourceId() const {
   return resourceId_;
 }
 
-void ListResourceServicesRequest::setResourceId(string resourceId) {
+void ListResourceServicesRequest::setResourceId(const std::string &resourceId) {
   resourceId_ = resourceId;
-  setParameter(std::string("ResourceId"), std::to_string(resourceId));
+  setParameter(std::string("ResourceId"), resourceId);
 }
 
-integer ListResourceServicesRequest::getPageSize() const {
+int ListResourceServicesRequest::getPageSize() const {
   return pageSize_;
 }
 
-void ListResourceServicesRequest::setPageSize(integer pageSize) {
+void ListResourceServicesRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-string ListResourceServicesRequest::getClusterId() const {
+std::string ListResourceServicesRequest::getClusterId() const {
   return clusterId_;
 }
 
-void ListResourceServicesRequest::setClusterId(string clusterId) {
+void ListResourceServicesRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
-integer ListResourceServicesRequest::getPageNumber() const {
+int ListResourceServicesRequest::getPageNumber() const {
   return pageNumber_;
 }
 
-void ListResourceServicesRequest::setPageNumber(integer pageNumber) {
+void ListResourceServicesRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }

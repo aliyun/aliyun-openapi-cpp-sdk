@@ -30,14 +30,20 @@ class ALIBABACLOUD_EAS_EXPORT ListResourcesRequest : public RoaServiceRequest {
 public:
 	ListResourcesRequest();
 	~ListResourcesRequest();
-	integer getPageSize() const;
-	void setPageSize(integer pageSize);
-	integer getPageNumber() const;
-	void setPageNumber(integer pageNumber);
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getResourceName() const;
+	void setResourceName(const std::string &resourceName);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 
 private:
-	integer pageSize_;
-	integer pageNumber_;
+	std::string resourceId_;
+	int pageSize_;
+	std::string resourceName_;
+	int pageNumber_;
 };
 } // namespace Model
 } // namespace Eas

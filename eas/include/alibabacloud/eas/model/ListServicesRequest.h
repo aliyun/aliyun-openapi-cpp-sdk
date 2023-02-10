@@ -30,23 +30,35 @@ class ALIBABACLOUD_EAS_EXPORT ListServicesRequest : public RoaServiceRequest {
 public:
 	ListServicesRequest();
 	~ListServicesRequest();
-	string getFilter() const;
-	void setFilter(string filter);
-	integer getPageSize() const;
-	void setPageSize(integer pageSize);
-	string getSort() const;
-	void setSort(string sort);
-	integer getPageNumber() const;
-	void setPageNumber(integer pageNumber);
-	string getOrder() const;
-	void setOrder(string order);
+	std::string getFilter() const;
+	void setFilter(const std::string &filter);
+	std::string getServiceType() const;
+	void setServiceType(const std::string &serviceType);
+	std::string getParentServiceUid() const;
+	void setParentServiceUid(const std::string &parentServiceUid);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getSort() const;
+	void setSort(const std::string &sort);
+	std::string getLabel() const;
+	void setLabel(const std::string &label);
+	std::string getGroupName() const;
+	void setGroupName(const std::string &groupName);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
+	std::string getOrder() const;
+	void setOrder(const std::string &order);
 
 private:
-	string filter_;
-	integer pageSize_;
-	string sort_;
-	integer pageNumber_;
-	string order_;
+	std::string filter_;
+	std::string serviceType_;
+	std::string parentServiceUid_;
+	int pageSize_;
+	std::string sort_;
+	std::string label_;
+	std::string groupName_;
+	int pageNumber_;
+	std::string order_;
 };
 } // namespace Model
 } // namespace Eas

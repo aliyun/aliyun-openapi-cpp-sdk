@@ -26,30 +26,30 @@ DeleteServiceInstancesRequest::DeleteServiceInstancesRequest()
 
 DeleteServiceInstancesRequest::~DeleteServiceInstancesRequest() {}
 
-string DeleteServiceInstancesRequest::getInstanceList() const {
+std::string DeleteServiceInstancesRequest::getInstanceList() const {
   return instanceList_;
 }
 
-void DeleteServiceInstancesRequest::setInstanceList(string instanceList) {
+void DeleteServiceInstancesRequest::setInstanceList(const std::string &instanceList) {
   instanceList_ = instanceList;
-  setParameter(std::string("InstanceList"), std::to_string(instanceList));
+  setParameter(std::string("InstanceList"), instanceList);
 }
 
-string DeleteServiceInstancesRequest::getServiceName() const {
+std::string DeleteServiceInstancesRequest::getServiceName() const {
   return serviceName_;
 }
 
-void DeleteServiceInstancesRequest::setServiceName(string serviceName) {
+void DeleteServiceInstancesRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string DeleteServiceInstancesRequest::getClusterId() const {
+std::string DeleteServiceInstancesRequest::getClusterId() const {
   return clusterId_;
 }
 
-void DeleteServiceInstancesRequest::setClusterId(string clusterId) {
+void DeleteServiceInstancesRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

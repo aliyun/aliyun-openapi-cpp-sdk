@@ -26,22 +26,22 @@ UpdateServiceMirrorRequest::UpdateServiceMirrorRequest()
 
 UpdateServiceMirrorRequest::~UpdateServiceMirrorRequest() {}
 
-string UpdateServiceMirrorRequest::getServiceName() const {
+std::string UpdateServiceMirrorRequest::getServiceName() const {
   return serviceName_;
 }
 
-void UpdateServiceMirrorRequest::setServiceName(string serviceName) {
+void UpdateServiceMirrorRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string UpdateServiceMirrorRequest::getClusterId() const {
+std::string UpdateServiceMirrorRequest::getClusterId() const {
   return clusterId_;
 }
 
-void UpdateServiceMirrorRequest::setClusterId(string clusterId) {
+void UpdateServiceMirrorRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string UpdateServiceMirrorRequest::getBody() const {

@@ -26,22 +26,22 @@ UpdateServiceCronScalerRequest::UpdateServiceCronScalerRequest()
 
 UpdateServiceCronScalerRequest::~UpdateServiceCronScalerRequest() {}
 
-string UpdateServiceCronScalerRequest::getServiceName() const {
+std::string UpdateServiceCronScalerRequest::getServiceName() const {
   return serviceName_;
 }
 
-void UpdateServiceCronScalerRequest::setServiceName(string serviceName) {
+void UpdateServiceCronScalerRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
-  setParameter(std::string("ServiceName"), std::to_string(serviceName));
+  setParameter(std::string("ServiceName"), serviceName);
 }
 
-string UpdateServiceCronScalerRequest::getClusterId() const {
+std::string UpdateServiceCronScalerRequest::getClusterId() const {
   return clusterId_;
 }
 
-void UpdateServiceCronScalerRequest::setClusterId(string clusterId) {
+void UpdateServiceCronScalerRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), std::to_string(clusterId));
+  setParameter(std::string("ClusterId"), clusterId);
 }
 
 std::string UpdateServiceCronScalerRequest::getBody() const {
