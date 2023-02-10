@@ -43,6 +43,24 @@ void GetJobInstanceListRequest::setGroupId(const std::string &groupId) {
   setParameter(std::string("GroupId"), groupId);
 }
 
+long GetJobInstanceListRequest::getStartTimestamp() const {
+  return startTimestamp_;
+}
+
+void GetJobInstanceListRequest::setStartTimestamp(long startTimestamp) {
+  startTimestamp_ = startTimestamp;
+  setParameter(std::string("StartTimestamp"), std::to_string(startTimestamp));
+}
+
+long GetJobInstanceListRequest::getEndTimestamp() const {
+  return endTimestamp_;
+}
+
+void GetJobInstanceListRequest::setEndTimestamp(long endTimestamp) {
+  endTimestamp_ = endTimestamp;
+  setParameter(std::string("EndTimestamp"), std::to_string(endTimestamp));
+}
+
 long GetJobInstanceListRequest::getJobId() const {
   return jobId_;
 }
@@ -68,5 +86,14 @@ std::string GetJobInstanceListRequest::get_Namespace() const {
 void GetJobInstanceListRequest::set_Namespace(const std::string &_namespace) {
   _namespace_ = _namespace;
   setParameter(std::string("Namespace"), _namespace);
+}
+
+int GetJobInstanceListRequest::getStatus() const {
+  return status_;
+}
+
+void GetJobInstanceListRequest::setStatus(int status) {
+  status_ = status;
+  setParameter(std::string("Status"), std::to_string(status));
 }
 

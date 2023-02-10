@@ -52,8 +52,6 @@ public:
 	void setMetricsThresholdJson(const std::string &metricsThresholdJson);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
-	int getAppType() const;
-	void setAppType(int appType);
 	std::string getMonitorConfigJson() const;
 	void setMonitorConfigJson(const std::string &monitorConfigJson);
 	std::string get_Namespace() const;
@@ -73,7 +71,6 @@ private:
 	int maxJobs_;
 	std::string metricsThresholdJson_;
 	std::string groupId_;
-	int appType_;
 	std::string monitorConfigJson_;
 	std::string _namespace_;
 	std::string appKey_;

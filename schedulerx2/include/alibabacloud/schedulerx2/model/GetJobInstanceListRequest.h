@@ -34,19 +34,28 @@ public:
 	void setNamespaceSource(const std::string &namespaceSource);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
+	long getStartTimestamp() const;
+	void setStartTimestamp(long startTimestamp);
+	long getEndTimestamp() const;
+	void setEndTimestamp(long endTimestamp);
 	long getJobId() const;
 	void setJobId(long jobId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string get_Namespace() const;
 	void set_Namespace(const std::string &_namespace);
+	int getStatus() const;
+	void setStatus(int status);
 
 private:
 	std::string namespaceSource_;
 	std::string groupId_;
+	long startTimestamp_;
+	long endTimestamp_;
 	long jobId_;
 	std::string regionId_;
 	std::string _namespace_;
+	int status_;
 };
 } // namespace Model
 } // namespace Schedulerx2

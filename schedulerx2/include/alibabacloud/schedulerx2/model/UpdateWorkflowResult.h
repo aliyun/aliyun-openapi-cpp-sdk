@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_LISTGROUPSRESULT_H_
-#define ALIBABACLOUD_SCHEDULERX2_MODEL_LISTGROUPSRESULT_H_
+#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_UPDATEWORKFLOWRESULT_H_
+#define ALIBABACLOUD_SCHEDULERX2_MODEL_UPDATEWORKFLOWRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,28 +29,15 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCHEDULERX2_EXPORT ListGroupsResult : public ServiceResult
+			class ALIBABACLOUD_SCHEDULERX2_EXPORT UpdateWorkflowResult : public ServiceResult
 			{
 			public:
-				struct Data
-				{
-					struct AppGroup
-					{
-						std::string description;
-						long appGroupId;
-						std::string appKey;
-						std::string appName;
-						std::string groupId;
-					};
-					std::vector<AppGroup> appGroups;
-				};
 
 
-				ListGroupsResult();
-				explicit ListGroupsResult(const std::string &payload);
-				~ListGroupsResult();
+				UpdateWorkflowResult();
+				explicit UpdateWorkflowResult(const std::string &payload);
+				~UpdateWorkflowResult();
 				std::string getMessage()const;
-				Data getData()const;
 				int getCode()const;
 				bool getSuccess()const;
 
@@ -58,7 +45,6 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				Data data_;
 				int code_;
 				bool success_;
 
@@ -66,4 +52,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_LISTGROUPSRESULT_H_
+#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_UPDATEWORKFLOWRESULT_H_

@@ -43,6 +43,15 @@ void ExecuteWorkflowRequest::setGroupId(const std::string &groupId) {
   setParameter(std::string("GroupId"), groupId);
 }
 
+std::string ExecuteWorkflowRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ExecuteWorkflowRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ExecuteWorkflowRequest::get_Namespace() const {
   return _namespace_;
 }

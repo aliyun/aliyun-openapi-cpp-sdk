@@ -44,6 +44,8 @@ void ListGroupsResult::parse(const std::string &payload)
 	for (auto dataNodeAppGroupsAppGroup : allAppGroupsNode)
 	{
 		Data::AppGroup appGroupObject;
+		if(!dataNodeAppGroupsAppGroup["AppGroupId"].isNull())
+			appGroupObject.appGroupId = std::stol(dataNodeAppGroupsAppGroup["AppGroupId"].asString());
 		if(!dataNodeAppGroupsAppGroup["AppName"].isNull())
 			appGroupObject.appName = dataNodeAppGroupsAppGroup["AppName"].asString();
 		if(!dataNodeAppGroupsAppGroup["AppKey"].isNull())

@@ -38,14 +38,16 @@ public:
 	~CreateJobRequest();
 	int getAttemptInterval() const;
 	void setAttemptInterval(int attemptInterval);
+	int getFailTimes() const;
+	void setFailTimes(int failTimes);
 	int getConsumerSize() const;
 	void setConsumerSize(int consumerSize);
 	std::string getJarUrl() const;
 	void setJarUrl(const std::string &jarUrl);
-	int getDataOffset() const;
-	void setDataOffset(int dataOffset);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
+	int getDataOffset() const;
+	void setDataOffset(int dataOffset);
 	int getTaskMaxAttempt() const;
 	void setTaskMaxAttempt(int taskMaxAttempt);
 	int getDispatcherSize() const;
@@ -94,6 +96,8 @@ public:
 	void setMaxAttempt(int maxAttempt);
 	bool getMissWorkerEnable() const;
 	void setMissWorkerEnable(bool missWorkerEnable);
+	bool getSuccessNoticeEnable() const;
+	void setSuccessNoticeEnable(bool successNoticeEnable);
 	int getQueueSize() const;
 	void setQueueSize(int queueSize);
 	std::string getClassName() const;
@@ -107,10 +111,11 @@ public:
 
 private:
 	int attemptInterval_;
+	int failTimes_;
 	int consumerSize_;
 	std::string jarUrl_;
-	int dataOffset_;
 	std::string groupId_;
+	int dataOffset_;
 	int taskMaxAttempt_;
 	int dispatcherSize_;
 	std::string jobType_;
@@ -135,6 +140,7 @@ private:
 	std::string sendChannel_;
 	int maxAttempt_;
 	bool missWorkerEnable_;
+	bool successNoticeEnable_;
 	int queueSize_;
 	std::string className_;
 	std::string _namespace_;

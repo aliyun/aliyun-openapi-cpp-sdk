@@ -33,6 +33,8 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/CreateJobResult.h
 	include/alibabacloud/schedulerx2/model/CreateNamespaceRequest.h
 	include/alibabacloud/schedulerx2/model/CreateNamespaceResult.h
+	include/alibabacloud/schedulerx2/model/CreateWorkflowRequest.h
+	include/alibabacloud/schedulerx2/model/CreateWorkflowResult.h
 	include/alibabacloud/schedulerx2/model/DeleteJobRequest.h
 	include/alibabacloud/schedulerx2/model/DeleteJobResult.h
 	include/alibabacloud/schedulerx2/model/DeleteWorkflowRequest.h
@@ -59,10 +61,14 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/GetJobInstanceResult.h
 	include/alibabacloud/schedulerx2/model/GetJobInstanceListRequest.h
 	include/alibabacloud/schedulerx2/model/GetJobInstanceListResult.h
+	include/alibabacloud/schedulerx2/model/GetLogRequest.h
+	include/alibabacloud/schedulerx2/model/GetLogResult.h
 	include/alibabacloud/schedulerx2/model/GetWorkFlowRequest.h
 	include/alibabacloud/schedulerx2/model/GetWorkFlowResult.h
 	include/alibabacloud/schedulerx2/model/GetWorkerListRequest.h
 	include/alibabacloud/schedulerx2/model/GetWorkerListResult.h
+	include/alibabacloud/schedulerx2/model/GetWorkflowInstanceRequest.h
+	include/alibabacloud/schedulerx2/model/GetWorkflowInstanceResult.h
 	include/alibabacloud/schedulerx2/model/GrantPermissionRequest.h
 	include/alibabacloud/schedulerx2/model/GrantPermissionResult.h
 	include/alibabacloud/schedulerx2/model/ListGroupsRequest.h
@@ -71,12 +77,26 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/ListJobsResult.h
 	include/alibabacloud/schedulerx2/model/ListNamespacesRequest.h
 	include/alibabacloud/schedulerx2/model/ListNamespacesResult.h
+	include/alibabacloud/schedulerx2/model/ListWorkflowInstanceRequest.h
+	include/alibabacloud/schedulerx2/model/ListWorkflowInstanceResult.h
+	include/alibabacloud/schedulerx2/model/RerunJobRequest.h
+	include/alibabacloud/schedulerx2/model/RerunJobResult.h
+	include/alibabacloud/schedulerx2/model/RetryJobInstanceRequest.h
+	include/alibabacloud/schedulerx2/model/RetryJobInstanceResult.h
 	include/alibabacloud/schedulerx2/model/RevokePermissionRequest.h
 	include/alibabacloud/schedulerx2/model/RevokePermissionResult.h
+	include/alibabacloud/schedulerx2/model/SetJobInstanceSuccessRequest.h
+	include/alibabacloud/schedulerx2/model/SetJobInstanceSuccessResult.h
+	include/alibabacloud/schedulerx2/model/SetWfInstanceSuccessRequest.h
+	include/alibabacloud/schedulerx2/model/SetWfInstanceSuccessResult.h
 	include/alibabacloud/schedulerx2/model/StopInstanceRequest.h
 	include/alibabacloud/schedulerx2/model/StopInstanceResult.h
 	include/alibabacloud/schedulerx2/model/UpdateJobRequest.h
-	include/alibabacloud/schedulerx2/model/UpdateJobResult.h )
+	include/alibabacloud/schedulerx2/model/UpdateJobResult.h
+	include/alibabacloud/schedulerx2/model/UpdateWorkflowRequest.h
+	include/alibabacloud/schedulerx2/model/UpdateWorkflowResult.h
+	include/alibabacloud/schedulerx2/model/UpdateWorkflowDagRequest.h
+	include/alibabacloud/schedulerx2/model/UpdateWorkflowDagResult.h )
 
 set(schedulerx2_src 
 	src/Schedulerx2Client.cc
@@ -92,6 +112,8 @@ set(schedulerx2_src
 	src/model/CreateJobResult.cc
 	src/model/CreateNamespaceRequest.cc
 	src/model/CreateNamespaceResult.cc
+	src/model/CreateWorkflowRequest.cc
+	src/model/CreateWorkflowResult.cc
 	src/model/DeleteJobRequest.cc
 	src/model/DeleteJobResult.cc
 	src/model/DeleteWorkflowRequest.cc
@@ -118,10 +140,14 @@ set(schedulerx2_src
 	src/model/GetJobInstanceResult.cc
 	src/model/GetJobInstanceListRequest.cc
 	src/model/GetJobInstanceListResult.cc
+	src/model/GetLogRequest.cc
+	src/model/GetLogResult.cc
 	src/model/GetWorkFlowRequest.cc
 	src/model/GetWorkFlowResult.cc
 	src/model/GetWorkerListRequest.cc
 	src/model/GetWorkerListResult.cc
+	src/model/GetWorkflowInstanceRequest.cc
+	src/model/GetWorkflowInstanceResult.cc
 	src/model/GrantPermissionRequest.cc
 	src/model/GrantPermissionResult.cc
 	src/model/ListGroupsRequest.cc
@@ -130,12 +156,26 @@ set(schedulerx2_src
 	src/model/ListJobsResult.cc
 	src/model/ListNamespacesRequest.cc
 	src/model/ListNamespacesResult.cc
+	src/model/ListWorkflowInstanceRequest.cc
+	src/model/ListWorkflowInstanceResult.cc
+	src/model/RerunJobRequest.cc
+	src/model/RerunJobResult.cc
+	src/model/RetryJobInstanceRequest.cc
+	src/model/RetryJobInstanceResult.cc
 	src/model/RevokePermissionRequest.cc
 	src/model/RevokePermissionResult.cc
+	src/model/SetJobInstanceSuccessRequest.cc
+	src/model/SetJobInstanceSuccessResult.cc
+	src/model/SetWfInstanceSuccessRequest.cc
+	src/model/SetWfInstanceSuccessResult.cc
 	src/model/StopInstanceRequest.cc
 	src/model/StopInstanceResult.cc
 	src/model/UpdateJobRequest.cc
-	src/model/UpdateJobResult.cc )
+	src/model/UpdateJobResult.cc
+	src/model/UpdateWorkflowRequest.cc
+	src/model/UpdateWorkflowResult.cc
+	src/model/UpdateWorkflowDagRequest.cc
+	src/model/UpdateWorkflowDagResult.cc )
 
 add_library(schedulerx2 ${LIB_TYPE}
 	${schedulerx2_public_header}

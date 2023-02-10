@@ -34,6 +34,8 @@
 #include "model/CreateJobResult.h"
 #include "model/CreateNamespaceRequest.h"
 #include "model/CreateNamespaceResult.h"
+#include "model/CreateWorkflowRequest.h"
+#include "model/CreateWorkflowResult.h"
 #include "model/DeleteJobRequest.h"
 #include "model/DeleteJobResult.h"
 #include "model/DeleteWorkflowRequest.h"
@@ -60,10 +62,14 @@
 #include "model/GetJobInstanceResult.h"
 #include "model/GetJobInstanceListRequest.h"
 #include "model/GetJobInstanceListResult.h"
+#include "model/GetLogRequest.h"
+#include "model/GetLogResult.h"
 #include "model/GetWorkFlowRequest.h"
 #include "model/GetWorkFlowResult.h"
 #include "model/GetWorkerListRequest.h"
 #include "model/GetWorkerListResult.h"
+#include "model/GetWorkflowInstanceRequest.h"
+#include "model/GetWorkflowInstanceResult.h"
 #include "model/GrantPermissionRequest.h"
 #include "model/GrantPermissionResult.h"
 #include "model/ListGroupsRequest.h"
@@ -72,12 +78,26 @@
 #include "model/ListJobsResult.h"
 #include "model/ListNamespacesRequest.h"
 #include "model/ListNamespacesResult.h"
+#include "model/ListWorkflowInstanceRequest.h"
+#include "model/ListWorkflowInstanceResult.h"
+#include "model/RerunJobRequest.h"
+#include "model/RerunJobResult.h"
+#include "model/RetryJobInstanceRequest.h"
+#include "model/RetryJobInstanceResult.h"
 #include "model/RevokePermissionRequest.h"
 #include "model/RevokePermissionResult.h"
+#include "model/SetJobInstanceSuccessRequest.h"
+#include "model/SetJobInstanceSuccessResult.h"
+#include "model/SetWfInstanceSuccessRequest.h"
+#include "model/SetWfInstanceSuccessResult.h"
 #include "model/StopInstanceRequest.h"
 #include "model/StopInstanceResult.h"
 #include "model/UpdateJobRequest.h"
 #include "model/UpdateJobResult.h"
+#include "model/UpdateWorkflowRequest.h"
+#include "model/UpdateWorkflowResult.h"
+#include "model/UpdateWorkflowDagRequest.h"
+#include "model/UpdateWorkflowDagResult.h"
 
 
 namespace AlibabaCloud
@@ -105,6 +125,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateNamespaceResult> CreateNamespaceOutcome;
 			typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::CreateNamespaceRequest&, const CreateNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNamespaceAsyncHandler;
+			typedef Outcome<Error, Model::CreateWorkflowResult> CreateWorkflowOutcome;
+			typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::CreateWorkflowRequest&, const CreateWorkflowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkflowAsyncHandler;
 			typedef Outcome<Error, Model::DeleteJobResult> DeleteJobOutcome;
 			typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::DeleteJobRequest&, const DeleteJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJobAsyncHandler;
@@ -144,12 +167,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetJobInstanceListResult> GetJobInstanceListOutcome;
 			typedef std::future<GetJobInstanceListOutcome> GetJobInstanceListOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::GetJobInstanceListRequest&, const GetJobInstanceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobInstanceListAsyncHandler;
+			typedef Outcome<Error, Model::GetLogResult> GetLogOutcome;
+			typedef std::future<GetLogOutcome> GetLogOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::GetLogRequest&, const GetLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLogAsyncHandler;
 			typedef Outcome<Error, Model::GetWorkFlowResult> GetWorkFlowOutcome;
 			typedef std::future<GetWorkFlowOutcome> GetWorkFlowOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::GetWorkFlowRequest&, const GetWorkFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWorkFlowAsyncHandler;
 			typedef Outcome<Error, Model::GetWorkerListResult> GetWorkerListOutcome;
 			typedef std::future<GetWorkerListOutcome> GetWorkerListOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::GetWorkerListRequest&, const GetWorkerListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWorkerListAsyncHandler;
+			typedef Outcome<Error, Model::GetWorkflowInstanceResult> GetWorkflowInstanceOutcome;
+			typedef std::future<GetWorkflowInstanceOutcome> GetWorkflowInstanceOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::GetWorkflowInstanceRequest&, const GetWorkflowInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWorkflowInstanceAsyncHandler;
 			typedef Outcome<Error, Model::GrantPermissionResult> GrantPermissionOutcome;
 			typedef std::future<GrantPermissionOutcome> GrantPermissionOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::GrantPermissionRequest&, const GrantPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GrantPermissionAsyncHandler;
@@ -162,15 +191,36 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListNamespacesResult> ListNamespacesOutcome;
 			typedef std::future<ListNamespacesOutcome> ListNamespacesOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::ListNamespacesRequest&, const ListNamespacesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListNamespacesAsyncHandler;
+			typedef Outcome<Error, Model::ListWorkflowInstanceResult> ListWorkflowInstanceOutcome;
+			typedef std::future<ListWorkflowInstanceOutcome> ListWorkflowInstanceOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::ListWorkflowInstanceRequest&, const ListWorkflowInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListWorkflowInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RerunJobResult> RerunJobOutcome;
+			typedef std::future<RerunJobOutcome> RerunJobOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::RerunJobRequest&, const RerunJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RerunJobAsyncHandler;
+			typedef Outcome<Error, Model::RetryJobInstanceResult> RetryJobInstanceOutcome;
+			typedef std::future<RetryJobInstanceOutcome> RetryJobInstanceOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::RetryJobInstanceRequest&, const RetryJobInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RetryJobInstanceAsyncHandler;
 			typedef Outcome<Error, Model::RevokePermissionResult> RevokePermissionOutcome;
 			typedef std::future<RevokePermissionOutcome> RevokePermissionOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::RevokePermissionRequest&, const RevokePermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RevokePermissionAsyncHandler;
+			typedef Outcome<Error, Model::SetJobInstanceSuccessResult> SetJobInstanceSuccessOutcome;
+			typedef std::future<SetJobInstanceSuccessOutcome> SetJobInstanceSuccessOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::SetJobInstanceSuccessRequest&, const SetJobInstanceSuccessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetJobInstanceSuccessAsyncHandler;
+			typedef Outcome<Error, Model::SetWfInstanceSuccessResult> SetWfInstanceSuccessOutcome;
+			typedef std::future<SetWfInstanceSuccessOutcome> SetWfInstanceSuccessOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::SetWfInstanceSuccessRequest&, const SetWfInstanceSuccessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetWfInstanceSuccessAsyncHandler;
 			typedef Outcome<Error, Model::StopInstanceResult> StopInstanceOutcome;
 			typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::StopInstanceRequest&, const StopInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopInstanceAsyncHandler;
 			typedef Outcome<Error, Model::UpdateJobResult> UpdateJobOutcome;
 			typedef std::future<UpdateJobOutcome> UpdateJobOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::UpdateJobRequest&, const UpdateJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateJobAsyncHandler;
+			typedef Outcome<Error, Model::UpdateWorkflowResult> UpdateWorkflowOutcome;
+			typedef std::future<UpdateWorkflowOutcome> UpdateWorkflowOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::UpdateWorkflowRequest&, const UpdateWorkflowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkflowAsyncHandler;
+			typedef Outcome<Error, Model::UpdateWorkflowDagResult> UpdateWorkflowDagOutcome;
+			typedef std::future<UpdateWorkflowDagOutcome> UpdateWorkflowDagOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::UpdateWorkflowDagRequest&, const UpdateWorkflowDagOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateWorkflowDagAsyncHandler;
 
 			Schedulerx2Client(const Credentials &credentials, const ClientConfiguration &configuration);
 			Schedulerx2Client(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -194,6 +244,9 @@ namespace AlibabaCloud
 			CreateNamespaceOutcome createNamespace(const Model::CreateNamespaceRequest &request)const;
 			void createNamespaceAsync(const Model::CreateNamespaceRequest& request, const CreateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateNamespaceOutcomeCallable createNamespaceCallable(const Model::CreateNamespaceRequest& request) const;
+			CreateWorkflowOutcome createWorkflow(const Model::CreateWorkflowRequest &request)const;
+			void createWorkflowAsync(const Model::CreateWorkflowRequest& request, const CreateWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateWorkflowOutcomeCallable createWorkflowCallable(const Model::CreateWorkflowRequest& request) const;
 			DeleteJobOutcome deleteJob(const Model::DeleteJobRequest &request)const;
 			void deleteJobAsync(const Model::DeleteJobRequest& request, const DeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteJobOutcomeCallable deleteJobCallable(const Model::DeleteJobRequest& request) const;
@@ -233,12 +286,18 @@ namespace AlibabaCloud
 			GetJobInstanceListOutcome getJobInstanceList(const Model::GetJobInstanceListRequest &request)const;
 			void getJobInstanceListAsync(const Model::GetJobInstanceListRequest& request, const GetJobInstanceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetJobInstanceListOutcomeCallable getJobInstanceListCallable(const Model::GetJobInstanceListRequest& request) const;
+			GetLogOutcome getLog(const Model::GetLogRequest &request)const;
+			void getLogAsync(const Model::GetLogRequest& request, const GetLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetLogOutcomeCallable getLogCallable(const Model::GetLogRequest& request) const;
 			GetWorkFlowOutcome getWorkFlow(const Model::GetWorkFlowRequest &request)const;
 			void getWorkFlowAsync(const Model::GetWorkFlowRequest& request, const GetWorkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetWorkFlowOutcomeCallable getWorkFlowCallable(const Model::GetWorkFlowRequest& request) const;
 			GetWorkerListOutcome getWorkerList(const Model::GetWorkerListRequest &request)const;
 			void getWorkerListAsync(const Model::GetWorkerListRequest& request, const GetWorkerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetWorkerListOutcomeCallable getWorkerListCallable(const Model::GetWorkerListRequest& request) const;
+			GetWorkflowInstanceOutcome getWorkflowInstance(const Model::GetWorkflowInstanceRequest &request)const;
+			void getWorkflowInstanceAsync(const Model::GetWorkflowInstanceRequest& request, const GetWorkflowInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetWorkflowInstanceOutcomeCallable getWorkflowInstanceCallable(const Model::GetWorkflowInstanceRequest& request) const;
 			GrantPermissionOutcome grantPermission(const Model::GrantPermissionRequest &request)const;
 			void grantPermissionAsync(const Model::GrantPermissionRequest& request, const GrantPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GrantPermissionOutcomeCallable grantPermissionCallable(const Model::GrantPermissionRequest& request) const;
@@ -251,15 +310,36 @@ namespace AlibabaCloud
 			ListNamespacesOutcome listNamespaces(const Model::ListNamespacesRequest &request)const;
 			void listNamespacesAsync(const Model::ListNamespacesRequest& request, const ListNamespacesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListNamespacesOutcomeCallable listNamespacesCallable(const Model::ListNamespacesRequest& request) const;
+			ListWorkflowInstanceOutcome listWorkflowInstance(const Model::ListWorkflowInstanceRequest &request)const;
+			void listWorkflowInstanceAsync(const Model::ListWorkflowInstanceRequest& request, const ListWorkflowInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListWorkflowInstanceOutcomeCallable listWorkflowInstanceCallable(const Model::ListWorkflowInstanceRequest& request) const;
+			RerunJobOutcome rerunJob(const Model::RerunJobRequest &request)const;
+			void rerunJobAsync(const Model::RerunJobRequest& request, const RerunJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RerunJobOutcomeCallable rerunJobCallable(const Model::RerunJobRequest& request) const;
+			RetryJobInstanceOutcome retryJobInstance(const Model::RetryJobInstanceRequest &request)const;
+			void retryJobInstanceAsync(const Model::RetryJobInstanceRequest& request, const RetryJobInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RetryJobInstanceOutcomeCallable retryJobInstanceCallable(const Model::RetryJobInstanceRequest& request) const;
 			RevokePermissionOutcome revokePermission(const Model::RevokePermissionRequest &request)const;
 			void revokePermissionAsync(const Model::RevokePermissionRequest& request, const RevokePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RevokePermissionOutcomeCallable revokePermissionCallable(const Model::RevokePermissionRequest& request) const;
+			SetJobInstanceSuccessOutcome setJobInstanceSuccess(const Model::SetJobInstanceSuccessRequest &request)const;
+			void setJobInstanceSuccessAsync(const Model::SetJobInstanceSuccessRequest& request, const SetJobInstanceSuccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetJobInstanceSuccessOutcomeCallable setJobInstanceSuccessCallable(const Model::SetJobInstanceSuccessRequest& request) const;
+			SetWfInstanceSuccessOutcome setWfInstanceSuccess(const Model::SetWfInstanceSuccessRequest &request)const;
+			void setWfInstanceSuccessAsync(const Model::SetWfInstanceSuccessRequest& request, const SetWfInstanceSuccessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetWfInstanceSuccessOutcomeCallable setWfInstanceSuccessCallable(const Model::SetWfInstanceSuccessRequest& request) const;
 			StopInstanceOutcome stopInstance(const Model::StopInstanceRequest &request)const;
 			void stopInstanceAsync(const Model::StopInstanceRequest& request, const StopInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopInstanceOutcomeCallable stopInstanceCallable(const Model::StopInstanceRequest& request) const;
 			UpdateJobOutcome updateJob(const Model::UpdateJobRequest &request)const;
 			void updateJobAsync(const Model::UpdateJobRequest& request, const UpdateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateJobOutcomeCallable updateJobCallable(const Model::UpdateJobRequest& request) const;
+			UpdateWorkflowOutcome updateWorkflow(const Model::UpdateWorkflowRequest &request)const;
+			void updateWorkflowAsync(const Model::UpdateWorkflowRequest& request, const UpdateWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateWorkflowOutcomeCallable updateWorkflowCallable(const Model::UpdateWorkflowRequest& request) const;
+			UpdateWorkflowDagOutcome updateWorkflowDag(const Model::UpdateWorkflowDagRequest &request)const;
+			void updateWorkflowDagAsync(const Model::UpdateWorkflowDagRequest& request, const UpdateWorkflowDagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateWorkflowDagOutcomeCallable updateWorkflowDagCallable(const Model::UpdateWorkflowDagRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

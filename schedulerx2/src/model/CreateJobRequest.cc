@@ -34,6 +34,15 @@ void CreateJobRequest::setAttemptInterval(int attemptInterval) {
   setBodyParameter(std::string("AttemptInterval"), std::to_string(attemptInterval));
 }
 
+int CreateJobRequest::getFailTimes() const {
+  return failTimes_;
+}
+
+void CreateJobRequest::setFailTimes(int failTimes) {
+  failTimes_ = failTimes;
+  setBodyParameter(std::string("FailTimes"), std::to_string(failTimes));
+}
+
 int CreateJobRequest::getConsumerSize() const {
   return consumerSize_;
 }
@@ -52,15 +61,6 @@ void CreateJobRequest::setJarUrl(const std::string &jarUrl) {
   setBodyParameter(std::string("JarUrl"), jarUrl);
 }
 
-int CreateJobRequest::getDataOffset() const {
-  return dataOffset_;
-}
-
-void CreateJobRequest::setDataOffset(int dataOffset) {
-  dataOffset_ = dataOffset;
-  setBodyParameter(std::string("DataOffset"), std::to_string(dataOffset));
-}
-
 std::string CreateJobRequest::getGroupId() const {
   return groupId_;
 }
@@ -68,6 +68,15 @@ std::string CreateJobRequest::getGroupId() const {
 void CreateJobRequest::setGroupId(const std::string &groupId) {
   groupId_ = groupId;
   setBodyParameter(std::string("GroupId"), groupId);
+}
+
+int CreateJobRequest::getDataOffset() const {
+  return dataOffset_;
+}
+
+void CreateJobRequest::setDataOffset(int dataOffset) {
+  dataOffset_ = dataOffset;
+  setBodyParameter(std::string("DataOffset"), std::to_string(dataOffset));
 }
 
 int CreateJobRequest::getTaskMaxAttempt() const {
@@ -291,6 +300,15 @@ bool CreateJobRequest::getMissWorkerEnable() const {
 void CreateJobRequest::setMissWorkerEnable(bool missWorkerEnable) {
   missWorkerEnable_ = missWorkerEnable;
   setBodyParameter(std::string("MissWorkerEnable"), missWorkerEnable ? "true" : "false");
+}
+
+bool CreateJobRequest::getSuccessNoticeEnable() const {
+  return successNoticeEnable_;
+}
+
+void CreateJobRequest::setSuccessNoticeEnable(bool successNoticeEnable) {
+  successNoticeEnable_ = successNoticeEnable;
+  setBodyParameter(std::string("SuccessNoticeEnable"), successNoticeEnable ? "true" : "false");
 }
 
 int CreateJobRequest::getQueueSize() const {

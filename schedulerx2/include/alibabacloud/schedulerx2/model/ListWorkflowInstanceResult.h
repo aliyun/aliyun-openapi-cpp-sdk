@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_LISTGROUPSRESULT_H_
-#define ALIBABACLOUD_SCHEDULERX2_MODEL_LISTGROUPSRESULT_H_
+#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_LISTWORKFLOWINSTANCERESULT_H_
+#define ALIBABACLOUD_SCHEDULERX2_MODEL_LISTWORKFLOWINSTANCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,26 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCHEDULERX2_EXPORT ListGroupsResult : public ServiceResult
+			class ALIBABACLOUD_SCHEDULERX2_EXPORT ListWorkflowInstanceResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct AppGroup
+					struct WfInstanceInfosItem
 					{
-						std::string description;
-						long appGroupId;
-						std::string appKey;
-						std::string appName;
-						std::string groupId;
+						int status;
+						std::string endTime;
+						std::string scheduleTime;
+						std::string startTime;
+						std::string dataTime;
+						long wfInstanceId;
+						long workflowId;
 					};
-					std::vector<AppGroup> appGroups;
+					std::vector<WfInstanceInfosItem> wfInstanceInfos;
 				};
 
 
-				ListGroupsResult();
-				explicit ListGroupsResult(const std::string &payload);
-				~ListGroupsResult();
+				ListWorkflowInstanceResult();
+				explicit ListWorkflowInstanceResult(const std::string &payload);
+				~ListWorkflowInstanceResult();
 				std::string getMessage()const;
 				Data getData()const;
 				int getCode()const;
@@ -66,4 +68,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_LISTGROUPSRESULT_H_
+#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_LISTWORKFLOWINSTANCERESULT_H_

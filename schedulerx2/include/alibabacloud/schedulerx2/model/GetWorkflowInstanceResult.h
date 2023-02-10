@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_LISTGROUPSRESULT_H_
-#define ALIBABACLOUD_SCHEDULERX2_MODEL_LISTGROUPSRESULT_H_
+#ifndef ALIBABACLOUD_SCHEDULERX2_MODEL_GETWORKFLOWINSTANCERESULT_H_
+#define ALIBABACLOUD_SCHEDULERX2_MODEL_GETWORKFLOWINSTANCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,26 +29,49 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SCHEDULERX2_EXPORT ListGroupsResult : public ServiceResult
+			class ALIBABACLOUD_SCHEDULERX2_EXPORT GetWorkflowInstanceResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct AppGroup
+					struct WfInstanceInfo
 					{
-						std::string description;
-						long appGroupId;
-						std::string appKey;
-						std::string appName;
-						std::string groupId;
+						int status;
+						std::string endTime;
+						std::string scheduleTime;
+						std::string startTime;
+						std::string dataTime;
 					};
-					std::vector<AppGroup> appGroups;
+					struct WfInstanceDag
+					{
+						struct Node
+						{
+							std::string endTime;
+							std::string scheduleTime;
+							int attempt;
+							long jobInstanceId;
+							std::string workAddr;
+							std::string startTime;
+							std::string dataTime;
+							long jobId;
+							std::string result;
+						};
+						struct Edge
+						{
+							long target;
+							long source;
+						};
+						std::vector<Edge> edges;
+						std::vector<Node> nodes;
+					};
+					WfInstanceInfo wfInstanceInfo;
+					WfInstanceDag wfInstanceDag;
 				};
 
 
-				ListGroupsResult();
-				explicit ListGroupsResult(const std::string &payload);
-				~ListGroupsResult();
+				GetWorkflowInstanceResult();
+				explicit GetWorkflowInstanceResult(const std::string &payload);
+				~GetWorkflowInstanceResult();
 				std::string getMessage()const;
 				Data getData()const;
 				int getCode()const;
@@ -66,4 +89,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_LISTGROUPSRESULT_H_
+#endif // !ALIBABACLOUD_SCHEDULERX2_MODEL_GETWORKFLOWINSTANCERESULT_H_
