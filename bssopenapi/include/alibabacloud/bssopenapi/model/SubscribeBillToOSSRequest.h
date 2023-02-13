@@ -40,6 +40,8 @@ public:
 	void setBucketPath(const std::string &bucketPath);
 	std::string getBeginBillingCycle() const;
 	void setBeginBillingCycle(const std::string &beginBillingCycle);
+	int getRowLimitPerFile() const;
+	void setRowLimitPerFile(int rowLimitPerFile);
 	std::string getMultAccountRelSubscribe() const;
 	void setMultAccountRelSubscribe(const std::string &multAccountRelSubscribe);
 
@@ -49,6 +51,7 @@ private:
 	std::string subscribeBucket_;
 	std::string bucketPath_;
 	std::string beginBillingCycle_;
+	int rowLimitPerFile_;
 	std::string multAccountRelSubscribe_;
 };
 } // namespace Model

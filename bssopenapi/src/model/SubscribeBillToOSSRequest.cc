@@ -70,6 +70,15 @@ void SubscribeBillToOSSRequest::setBeginBillingCycle(const std::string &beginBil
   setParameter(std::string("BeginBillingCycle"), beginBillingCycle);
 }
 
+int SubscribeBillToOSSRequest::getRowLimitPerFile() const {
+  return rowLimitPerFile_;
+}
+
+void SubscribeBillToOSSRequest::setRowLimitPerFile(int rowLimitPerFile) {
+  rowLimitPerFile_ = rowLimitPerFile;
+  setParameter(std::string("RowLimitPerFile"), std::to_string(rowLimitPerFile));
+}
+
 std::string SubscribeBillToOSSRequest::getMultAccountRelSubscribe() const {
   return multAccountRelSubscribe_;
 }

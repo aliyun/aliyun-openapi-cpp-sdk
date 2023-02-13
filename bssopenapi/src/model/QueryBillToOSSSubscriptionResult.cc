@@ -62,6 +62,8 @@ void QueryBillToOSSSubscriptionResult::parse(const std::string &payload)
 			itemObject.multAccountRelSubscribe = dataNodeItemsItem["MultAccountRelSubscribe"].asString();
 		if(!dataNodeItemsItem["BucketPath"].isNull())
 			itemObject.bucketPath = dataNodeItemsItem["BucketPath"].asString();
+		if(!dataNodeItemsItem["RowLimitPerFile"].isNull())
+			itemObject.rowLimitPerFile = std::stoi(dataNodeItemsItem["RowLimitPerFile"].asString());
 		data_.items.push_back(itemObject);
 	}
 	if(!value["Code"].isNull())

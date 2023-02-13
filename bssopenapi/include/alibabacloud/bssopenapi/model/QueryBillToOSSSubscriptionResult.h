@@ -43,6 +43,7 @@ namespace AlibabaCloud
 						long bucketOwnerId;
 						std::string multAccountRelSubscribe;
 						std::string subscribeLanguage;
+						int rowLimitPerFile;
 					};
 					std::string accountID;
 					std::vector<Item> items;
