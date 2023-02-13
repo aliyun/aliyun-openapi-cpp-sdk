@@ -28,6 +28,10 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT DescribeManagedInstancesRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	DescribeManagedInstancesRequest();
 	~DescribeManagedInstancesRequest();
 	long getResourceOwnerId() const;
@@ -38,6 +42,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -60,6 +66,7 @@ private:
 	long pageNumber_;
 	std::string regionId_;
 	long pageSize_;
+	std::vector<Tag> tag_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string osType_;

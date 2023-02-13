@@ -39,6 +39,11 @@ public:
 	struct ImageOptions {
 		bool loginAsNonRoot;
 	};
+	struct SystemTag {
+		std::string key;
+		std::string value;
+		std::string scope;
+	};
 	struct Arn {
 		std::string roleType;
 		std::string rolearn;
@@ -134,6 +139,8 @@ public:
 	void setSpotInterruptionBehavior(const std::string &spotInterruptionBehavior);
 	int getNetworkInterfaceQueueNumber() const;
 	void setNetworkInterfaceQueueNumber(int networkInterfaceQueueNumber);
+	std::vector<SystemTag> getSystemTag() const;
+	void setSystemTag(const std::vector<SystemTag> &systemTag);
 	std::string getIoOptimized() const;
 	void setIoOptimized(const std::string &ioOptimized);
 	std::string getSecurityGroupId() const;
@@ -283,6 +290,7 @@ private:
 	std::string imageId_;
 	std::string spotInterruptionBehavior_;
 	int networkInterfaceQueueNumber_;
+	std::vector<SystemTag> systemTag_;
 	std::string ioOptimized_;
 	std::string securityGroupId_;
 	bool hibernationOptionsConfigured_;

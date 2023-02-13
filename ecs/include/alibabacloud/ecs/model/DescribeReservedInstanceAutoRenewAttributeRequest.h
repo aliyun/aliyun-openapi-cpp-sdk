@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_CREATEACTIVATIONREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_CREATEACTIVATIONREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_DESCRIBERESERVEDINSTANCEAUTORENEWATTRIBUTEREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_DESCRIBERESERVEDINSTANCEAUTORENEWATTRIBUTEREQUEST_H_
 
 #include <alibabacloud/ecs/EcsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,51 +26,32 @@
 namespace AlibabaCloud {
 namespace Ecs {
 namespace Model {
-class ALIBABACLOUD_ECS_EXPORT CreateActivationRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ECS_EXPORT DescribeReservedInstanceAutoRenewAttributeRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string key;
-		std::string value;
-	};
-	CreateActivationRequest();
-	~CreateActivationRequest();
+	DescribeReservedInstanceAutoRenewAttributeRequest();
+	~DescribeReservedInstanceAutoRenewAttributeRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getDescription() const;
-	void setDescription(const std::string &description);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	int getInstanceCount() const;
-	void setInstanceCount(int instanceCount);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getInstanceName() const;
-	void setInstanceName(const std::string &instanceName);
-	long getTimeToLiveInHours() const;
-	void setTimeToLiveInHours(long timeToLiveInHours);
-	std::string getIpAddressRange() const;
-	void setIpAddressRange(const std::string &ipAddressRange);
+	std::vector<std::string> getReservedInstanceId() const;
+	void setReservedInstanceId(const std::vector<std::string> &reservedInstanceId);
 
 private:
 	long resourceOwnerId_;
-	std::string description_;
 	std::string regionId_;
-	int instanceCount_;
-	std::vector<Tag> tag_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string instanceName_;
-	long timeToLiveInHours_;
-	std::string ipAddressRange_;
+	std::vector<std::string> reservedInstanceId_;
 };
 } // namespace Model
 } // namespace Ecs
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ECS_MODEL_CREATEACTIVATIONREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_DESCRIBERESERVEDINSTANCEAUTORENEWATTRIBUTEREQUEST_H_

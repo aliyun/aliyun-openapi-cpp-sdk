@@ -391,6 +391,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/DescribeRegionsResult.h
 	include/alibabacloud/ecs/model/DescribeRenewalPriceRequest.h
 	include/alibabacloud/ecs/model/DescribeRenewalPriceResult.h
+	include/alibabacloud/ecs/model/DescribeReservedInstanceAutoRenewAttributeRequest.h
+	include/alibabacloud/ecs/model/DescribeReservedInstanceAutoRenewAttributeResult.h
 	include/alibabacloud/ecs/model/DescribeReservedInstancesRequest.h
 	include/alibabacloud/ecs/model/DescribeReservedInstancesResult.h
 	include/alibabacloud/ecs/model/DescribeResourceByTagsRequest.h
@@ -589,6 +591,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyPrepayInstanceSpecResult.h
 	include/alibabacloud/ecs/model/ModifyReservedInstanceAttributeRequest.h
 	include/alibabacloud/ecs/model/ModifyReservedInstanceAttributeResult.h
+	include/alibabacloud/ecs/model/ModifyReservedInstanceAutoRenewAttributeRequest.h
+	include/alibabacloud/ecs/model/ModifyReservedInstanceAutoRenewAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyReservedInstancesRequest.h
 	include/alibabacloud/ecs/model/ModifyReservedInstancesResult.h
 	include/alibabacloud/ecs/model/ModifyRouterInterfaceAttributeRequest.h
@@ -1082,6 +1086,8 @@ set(ecs_src
 	src/model/DescribeRegionsResult.cc
 	src/model/DescribeRenewalPriceRequest.cc
 	src/model/DescribeRenewalPriceResult.cc
+	src/model/DescribeReservedInstanceAutoRenewAttributeRequest.cc
+	src/model/DescribeReservedInstanceAutoRenewAttributeResult.cc
 	src/model/DescribeReservedInstancesRequest.cc
 	src/model/DescribeReservedInstancesResult.cc
 	src/model/DescribeResourceByTagsRequest.cc
@@ -1280,6 +1286,8 @@ set(ecs_src
 	src/model/ModifyPrepayInstanceSpecResult.cc
 	src/model/ModifyReservedInstanceAttributeRequest.cc
 	src/model/ModifyReservedInstanceAttributeResult.cc
+	src/model/ModifyReservedInstanceAutoRenewAttributeRequest.cc
+	src/model/ModifyReservedInstanceAutoRenewAttributeResult.cc
 	src/model/ModifyReservedInstancesRequest.cc
 	src/model/ModifyReservedInstancesResult.cc
 	src/model/ModifyRouterInterfaceAttributeRequest.cc

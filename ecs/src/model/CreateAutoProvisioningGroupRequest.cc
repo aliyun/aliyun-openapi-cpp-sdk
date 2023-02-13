@@ -435,6 +435,9 @@ void CreateAutoProvisioningGroupRequest::setLaunchTemplateConfig(const std::vect
     setParameter(launchTemplateConfigObjStr + ".Priority", std::to_string(launchTemplateConfigObj.priority));
     setParameter(launchTemplateConfigObjStr + ".InstanceType", launchTemplateConfigObj.instanceType);
     setParameter(launchTemplateConfigObjStr + ".WeightedCapacity", std::to_string(launchTemplateConfigObj.weightedCapacity));
+    setParameter(launchTemplateConfigObjStr + ".MaxQuantity", std::to_string(launchTemplateConfigObj.maxQuantity));
+    setParameter(launchTemplateConfigObjStr + ".InstanceFamilyLevel", launchTemplateConfigObj.instanceFamilyLevel);
+    setParameter(launchTemplateConfigObjStr + ".BurstablePerformance", launchTemplateConfigObj.burstablePerformance);
   }
 }
 

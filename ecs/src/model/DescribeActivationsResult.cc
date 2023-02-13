@@ -63,6 +63,16 @@ void DescribeActivationsResult::parse(const std::string &payload)
 			activationListObject.timeToLiveInHours = std::stol(valueActivationListActivation["TimeToLiveInHours"].asString());
 		if(!valueActivationListActivation["ActivationId"].isNull())
 			activationListObject.activationId = valueActivationListActivation["ActivationId"].asString();
+		auto allTagsNode = valueActivationListActivation["Tags"]["Tag"];
+		for (auto valueActivationListActivationTagsTag : allTagsNode)
+		{
+			Activation::Tag tagsObject;
+			if(!valueActivationListActivationTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueActivationListActivationTagsTag["TagKey"].asString();
+			if(!valueActivationListActivationTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueActivationListActivationTagsTag["TagValue"].asString();
+			activationListObject.tags.push_back(tagsObject);
+		}
 		activationList_.push_back(activationListObject);
 	}
 	if(!value["PageSize"].isNull())

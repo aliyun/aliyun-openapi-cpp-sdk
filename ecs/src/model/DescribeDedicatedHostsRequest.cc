@@ -43,6 +43,15 @@ void DescribeDedicatedHostsRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeDedicatedHostsRequest::getSocketDetails() const {
+  return socketDetails_;
+}
+
+void DescribeDedicatedHostsRequest::setSocketDetails(const std::string &socketDetails) {
+  socketDetails_ = socketDetails;
+  setParameter(std::string("SocketDetails"), socketDetails);
+}
+
 int DescribeDedicatedHostsRequest::getPageNumber() const {
   return pageNumber_;
 }

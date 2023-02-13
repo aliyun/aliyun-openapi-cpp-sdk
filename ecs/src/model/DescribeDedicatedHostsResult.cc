@@ -97,6 +97,8 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 				instancesObject.instanceType = valueDedicatedHostsDedicatedHostInstancesInstance["InstanceType"].asString();
 			if(!valueDedicatedHostsDedicatedHostInstancesInstance["InstanceId"].isNull())
 				instancesObject.instanceId = valueDedicatedHostsDedicatedHostInstancesInstance["InstanceId"].asString();
+			if(!valueDedicatedHostsDedicatedHostInstancesInstance["SocketId"].isNull())
+				instancesObject.socketId = valueDedicatedHostsDedicatedHostInstancesInstance["SocketId"].asString();
 			dedicatedHostsObject.instances.push_back(instancesObject);
 		}
 		auto allOperationLocksNode = valueDedicatedHostsDedicatedHost["OperationLocks"]["OperationLock"];
@@ -136,6 +138,22 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 			dedicatedHostsObject.capacity.availableVcpus = std::stoi(capacityNode["AvailableVcpus"].asString());
 		if(!capacityNode["AvailableVgpus"].isNull())
 			dedicatedHostsObject.capacity.availableVgpus = std::stoi(capacityNode["AvailableVgpus"].asString());
+		auto allSocketCapacitiesNode = capacityNode["SocketCapacities"]["SocketCapacity"];
+		for (auto capacityNodeSocketCapacitiesSocketCapacity : allSocketCapacitiesNode)
+		{
+			DedicatedHost::Capacity::SocketCapacity socketCapacityObject;
+			if(!capacityNodeSocketCapacitiesSocketCapacity["SocketId"].isNull())
+				socketCapacityObject.socketId = std::stoi(capacityNodeSocketCapacitiesSocketCapacity["SocketId"].asString());
+			if(!capacityNodeSocketCapacitiesSocketCapacity["AvailableMemory"].isNull())
+				socketCapacityObject.availableMemory = std::stof(capacityNodeSocketCapacitiesSocketCapacity["AvailableMemory"].asString());
+			if(!capacityNodeSocketCapacitiesSocketCapacity["TotalMemory"].isNull())
+				socketCapacityObject.totalMemory = std::stof(capacityNodeSocketCapacitiesSocketCapacity["TotalMemory"].asString());
+			if(!capacityNodeSocketCapacitiesSocketCapacity["AvailableVcpu"].isNull())
+				socketCapacityObject.availableVcpu = std::stoi(capacityNodeSocketCapacitiesSocketCapacity["AvailableVcpu"].asString());
+			if(!capacityNodeSocketCapacitiesSocketCapacity["TotalVcpu"].isNull())
+				socketCapacityObject.totalVcpu = std::stoi(capacityNodeSocketCapacitiesSocketCapacity["TotalVcpu"].asString());
+			dedicatedHostsObject.capacity.socketCapacities.push_back(socketCapacityObject);
+		}
 		auto networkAttributesNode = value["NetworkAttributes"];
 		if(!networkAttributesNode["UdpTimeout"].isNull())
 			dedicatedHostsObject.networkAttributes.udpTimeout = std::stoi(networkAttributesNode["UdpTimeout"].asString());

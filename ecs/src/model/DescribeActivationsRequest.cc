@@ -61,6 +61,20 @@ void DescribeActivationsRequest::setPageSize(long pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::vector<DescribeActivationsRequest::Tag> DescribeActivationsRequest::getTag() const {
+  return tag_;
+}
+
+void DescribeActivationsRequest::setTag(const std::vector<DescribeActivationsRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
 std::string DescribeActivationsRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

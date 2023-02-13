@@ -71,6 +71,16 @@ void DescribeManagedInstancesResult::parse(const std::string &payload)
 			instancesObject.invocationCount = std::stol(valueInstancesInstance["InvocationCount"].asString());
 		if(!valueInstancesInstance["MachineId"].isNull())
 			instancesObject.machineId = valueInstancesInstance["MachineId"].asString();
+		auto allTagsNode = valueInstancesInstance["Tags"]["Tag"];
+		for (auto valueInstancesInstanceTagsTag : allTagsNode)
+		{
+			Instance::Tag tagsObject;
+			if(!valueInstancesInstanceTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueInstancesInstanceTagsTag["TagKey"].asString();
+			if(!valueInstancesInstanceTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueInstancesInstanceTagsTag["TagValue"].asString();
+			instancesObject.tags.push_back(tagsObject);
+		}
 		instances_.push_back(instancesObject);
 	}
 	if(!value["PageSize"].isNull())

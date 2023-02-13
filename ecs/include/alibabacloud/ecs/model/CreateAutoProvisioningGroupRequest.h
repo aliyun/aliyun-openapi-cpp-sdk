@@ -62,6 +62,9 @@ public:
 		int priority;
 		std::string instanceType;
 		double weightedCapacity;
+		int maxQuantity;
+		std::string instanceFamilyLevel;
+		std::string burstablePerformance;
 	};
 	struct LaunchConfigurationTag {
 		std::string key;

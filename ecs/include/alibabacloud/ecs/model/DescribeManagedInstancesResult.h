@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Instance
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string machineId;
 					bool connected;
 					std::string instanceId;
@@ -48,6 +53,7 @@ namespace AlibabaCloud
 					std::string internetIp;
 					std::string osType;
 					std::string lastInvokedTime;
+					std::vector<Instance::Tag> tags;
 				};
 
 

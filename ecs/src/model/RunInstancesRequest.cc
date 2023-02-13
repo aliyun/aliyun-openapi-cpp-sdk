@@ -273,6 +273,21 @@ void RunInstancesRequest::setNetworkInterfaceQueueNumber(int networkInterfaceQue
   setParameter(std::string("NetworkInterfaceQueueNumber"), std::to_string(networkInterfaceQueueNumber));
 }
 
+std::vector<RunInstancesRequest::SystemTag> RunInstancesRequest::getSystemTag() const {
+  return systemTag_;
+}
+
+void RunInstancesRequest::setSystemTag(const std::vector<RunInstancesRequest::SystemTag> &systemTag) {
+  systemTag_ = systemTag;
+  for(int dep1 = 0; dep1 != systemTag.size(); dep1++) {
+  auto systemTagObj = systemTag.at(dep1);
+  std::string systemTagObjStr = std::string("SystemTag") + "." + std::to_string(dep1 + 1);
+    setParameter(systemTagObjStr + ".Key", systemTagObj.key);
+    setParameter(systemTagObjStr + ".Value", systemTagObj.value);
+    setParameter(systemTagObjStr + ".Scope", systemTagObj.scope);
+  }
+}
+
 std::string RunInstancesRequest::getIoOptimized() const {
   return ioOptimized_;
 }

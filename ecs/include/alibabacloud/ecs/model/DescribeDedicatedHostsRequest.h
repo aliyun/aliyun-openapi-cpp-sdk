@@ -38,6 +38,8 @@ public:
 	void setDedicatedHostIds(const std::string &dedicatedHostIds);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getSocketDetails() const;
+	void setSocketDetails(const std::string &socketDetails);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getResourceGroupId() const;
@@ -72,6 +74,7 @@ public:
 private:
 	std::string dedicatedHostIds_;
 	long resourceOwnerId_;
+	std::string socketDetails_;
 	int pageNumber_;
 	std::string resourceGroupId_;
 	std::string lockReason_;

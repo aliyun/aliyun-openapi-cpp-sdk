@@ -45,6 +45,11 @@ namespace AlibabaCloud
 						std::string updateTime;
 						std::string errorCode;
 					};
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string fileMode;
 					std::string invocationStatus;
 					std::string overwrite;
@@ -58,6 +63,7 @@ namespace AlibabaCloud
 					std::string name;
 					std::string content;
 					std::string creationTime;
+					std::vector<Invocation::Tag> tags;
 					std::string invokeId;
 				};
 

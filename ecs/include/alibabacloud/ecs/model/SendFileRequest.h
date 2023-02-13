@@ -28,6 +28,10 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT SendFileRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	SendFileRequest();
 	~SendFileRequest();
 	long getResourceOwnerId() const;
@@ -44,6 +48,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getFileOwner() const;
 	void setFileOwner(const std::string &fileOwner);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getOverwrite() const;
 	void setOverwrite(bool overwrite);
 	std::string getResourceOwnerAccount() const;
@@ -73,6 +79,7 @@ private:
 	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string fileOwner_;
+	std::vector<Tag> tag_;
 	bool overwrite_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

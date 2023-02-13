@@ -36,9 +36,18 @@ namespace AlibabaCloud
 				{
 					struct Capacity
 					{
+						struct SocketCapacity
+						{
+							int socketId;
+							float availableMemory;
+							float totalMemory;
+							int totalVcpu;
+							int availableVcpu;
+						};
 						std::string localStorageCategory;
 						int availableVgpus;
 						int totalVgpus;
+						std::vector<SocketCapacity> socketCapacities;
 						float availableMemory;
 						float totalMemory;
 						int availableVcpus;
@@ -58,6 +67,7 @@ namespace AlibabaCloud
 					struct Instance
 					{
 						std::string instanceId;
+						std::string socketId;
 						std::string instanceType;
 					};
 					struct OperationLock

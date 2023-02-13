@@ -88,6 +88,20 @@ void SendFileRequest::setFileOwner(const std::string &fileOwner) {
   setParameter(std::string("FileOwner"), fileOwner);
 }
 
+std::vector<SendFileRequest::Tag> SendFileRequest::getTag() const {
+  return tag_;
+}
+
+void SendFileRequest::setTag(const std::vector<SendFileRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
 bool SendFileRequest::getOverwrite() const {
   return overwrite_;
 }

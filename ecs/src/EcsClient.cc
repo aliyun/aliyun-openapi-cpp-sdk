@@ -31,21 +31,21 @@ EcsClient::EcsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ecs");
 }
 
 EcsClient::EcsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ecs");
 }
 
 EcsClient::EcsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "ecs");
 }
 
 EcsClient::~EcsClient()
@@ -6711,6 +6711,42 @@ EcsClient::DescribeRenewalPriceOutcomeCallable EcsClient::describeRenewalPriceCa
 	return task->get_future();
 }
 
+EcsClient::DescribeReservedInstanceAutoRenewAttributeOutcome EcsClient::describeReservedInstanceAutoRenewAttribute(const DescribeReservedInstanceAutoRenewAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeReservedInstanceAutoRenewAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeReservedInstanceAutoRenewAttributeOutcome(DescribeReservedInstanceAutoRenewAttributeResult(outcome.result()));
+	else
+		return DescribeReservedInstanceAutoRenewAttributeOutcome(outcome.error());
+}
+
+void EcsClient::describeReservedInstanceAutoRenewAttributeAsync(const DescribeReservedInstanceAutoRenewAttributeRequest& request, const DescribeReservedInstanceAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeReservedInstanceAutoRenewAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::DescribeReservedInstanceAutoRenewAttributeOutcomeCallable EcsClient::describeReservedInstanceAutoRenewAttributeCallable(const DescribeReservedInstanceAutoRenewAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeReservedInstanceAutoRenewAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeReservedInstanceAutoRenewAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::DescribeReservedInstancesOutcome EcsClient::describeReservedInstances(const DescribeReservedInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -10269,6 +10305,42 @@ EcsClient::ModifyReservedInstanceAttributeOutcomeCallable EcsClient::modifyReser
 			[this, request]()
 			{
 			return this->modifyReservedInstanceAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcsClient::ModifyReservedInstanceAutoRenewAttributeOutcome EcsClient::modifyReservedInstanceAutoRenewAttribute(const ModifyReservedInstanceAutoRenewAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyReservedInstanceAutoRenewAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyReservedInstanceAutoRenewAttributeOutcome(ModifyReservedInstanceAutoRenewAttributeResult(outcome.result()));
+	else
+		return ModifyReservedInstanceAutoRenewAttributeOutcome(outcome.error());
+}
+
+void EcsClient::modifyReservedInstanceAutoRenewAttributeAsync(const ModifyReservedInstanceAutoRenewAttributeRequest& request, const ModifyReservedInstanceAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyReservedInstanceAutoRenewAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyReservedInstanceAutoRenewAttributeOutcomeCallable EcsClient::modifyReservedInstanceAutoRenewAttributeCallable(const ModifyReservedInstanceAutoRenewAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyReservedInstanceAutoRenewAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyReservedInstanceAutoRenewAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

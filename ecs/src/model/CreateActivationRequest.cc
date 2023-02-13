@@ -61,6 +61,20 @@ void CreateActivationRequest::setInstanceCount(int instanceCount) {
   setParameter(std::string("InstanceCount"), std::to_string(instanceCount));
 }
 
+std::vector<CreateActivationRequest::Tag> CreateActivationRequest::getTag() const {
+  return tag_;
+}
+
+void CreateActivationRequest::setTag(const std::vector<CreateActivationRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
+}
+
 std::string CreateActivationRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

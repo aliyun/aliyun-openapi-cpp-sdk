@@ -285,6 +285,15 @@ void DescribePriceRequest::setScope(const std::string &scope) {
   setParameter(std::string("Scope"), scope);
 }
 
+std::string DescribePriceRequest::getSchedulerOptionsDedicatedHostId() const {
+  return schedulerOptionsDedicatedHostId_;
+}
+
+void DescribePriceRequest::setSchedulerOptionsDedicatedHostId(const std::string &schedulerOptionsDedicatedHostId) {
+  schedulerOptionsDedicatedHostId_ = schedulerOptionsDedicatedHostId;
+  setParameter(std::string("SchedulerOptions.DedicatedHostId"), schedulerOptionsDedicatedHostId);
+}
+
 std::string DescribePriceRequest::getInstanceType() const {
   return instanceType_;
 }

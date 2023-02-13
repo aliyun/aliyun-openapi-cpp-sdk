@@ -34,6 +34,11 @@ namespace AlibabaCloud
 			public:
 				struct Activation
 				{
+					struct Tag
+					{
+						std::string tagKey;
+						std::string tagValue;
+					};
 					std::string instanceName;
 					int deregisteredCount;
 					int instanceCount;
@@ -44,6 +49,7 @@ namespace AlibabaCloud
 					long timeToLiveInHours;
 					bool disabled;
 					std::string ipAddressRange;
+					std::vector<Activation::Tag> tags;
 				};
 
 

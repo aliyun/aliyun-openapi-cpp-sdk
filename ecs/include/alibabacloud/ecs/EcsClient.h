@@ -392,6 +392,8 @@
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeRenewalPriceRequest.h"
 #include "model/DescribeRenewalPriceResult.h"
+#include "model/DescribeReservedInstanceAutoRenewAttributeRequest.h"
+#include "model/DescribeReservedInstanceAutoRenewAttributeResult.h"
 #include "model/DescribeReservedInstancesRequest.h"
 #include "model/DescribeReservedInstancesResult.h"
 #include "model/DescribeResourceByTagsRequest.h"
@@ -590,6 +592,8 @@
 #include "model/ModifyPrepayInstanceSpecResult.h"
 #include "model/ModifyReservedInstanceAttributeRequest.h"
 #include "model/ModifyReservedInstanceAttributeResult.h"
+#include "model/ModifyReservedInstanceAutoRenewAttributeRequest.h"
+#include "model/ModifyReservedInstanceAutoRenewAttributeResult.h"
 #include "model/ModifyReservedInstancesRequest.h"
 #include "model/ModifyReservedInstancesResult.h"
 #include "model/ModifyRouterInterfaceAttributeRequest.h"
@@ -1274,6 +1278,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRenewalPriceResult> DescribeRenewalPriceOutcome;
 			typedef std::future<DescribeRenewalPriceOutcome> DescribeRenewalPriceOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeRenewalPriceRequest&, const DescribeRenewalPriceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRenewalPriceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeReservedInstanceAutoRenewAttributeResult> DescribeReservedInstanceAutoRenewAttributeOutcome;
+			typedef std::future<DescribeReservedInstanceAutoRenewAttributeOutcome> DescribeReservedInstanceAutoRenewAttributeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::DescribeReservedInstanceAutoRenewAttributeRequest&, const DescribeReservedInstanceAutoRenewAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReservedInstanceAutoRenewAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeReservedInstancesResult> DescribeReservedInstancesOutcome;
 			typedef std::future<DescribeReservedInstancesOutcome> DescribeReservedInstancesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::DescribeReservedInstancesRequest&, const DescribeReservedInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReservedInstancesAsyncHandler;
@@ -1571,6 +1578,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyReservedInstanceAttributeResult> ModifyReservedInstanceAttributeOutcome;
 			typedef std::future<ModifyReservedInstanceAttributeOutcome> ModifyReservedInstanceAttributeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyReservedInstanceAttributeRequest&, const ModifyReservedInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReservedInstanceAttributeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyReservedInstanceAutoRenewAttributeResult> ModifyReservedInstanceAutoRenewAttributeOutcome;
+			typedef std::future<ModifyReservedInstanceAutoRenewAttributeOutcome> ModifyReservedInstanceAutoRenewAttributeOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyReservedInstanceAutoRenewAttributeRequest&, const ModifyReservedInstanceAutoRenewAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReservedInstanceAutoRenewAttributeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyReservedInstancesResult> ModifyReservedInstancesOutcome;
 			typedef std::future<ModifyReservedInstancesOutcome> ModifyReservedInstancesOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyReservedInstancesRequest&, const ModifyReservedInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReservedInstancesAsyncHandler;
@@ -2311,6 +2321,9 @@ namespace AlibabaCloud
 			DescribeRenewalPriceOutcome describeRenewalPrice(const Model::DescribeRenewalPriceRequest &request)const;
 			void describeRenewalPriceAsync(const Model::DescribeRenewalPriceRequest& request, const DescribeRenewalPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRenewalPriceOutcomeCallable describeRenewalPriceCallable(const Model::DescribeRenewalPriceRequest& request) const;
+			DescribeReservedInstanceAutoRenewAttributeOutcome describeReservedInstanceAutoRenewAttribute(const Model::DescribeReservedInstanceAutoRenewAttributeRequest &request)const;
+			void describeReservedInstanceAutoRenewAttributeAsync(const Model::DescribeReservedInstanceAutoRenewAttributeRequest& request, const DescribeReservedInstanceAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeReservedInstanceAutoRenewAttributeOutcomeCallable describeReservedInstanceAutoRenewAttributeCallable(const Model::DescribeReservedInstanceAutoRenewAttributeRequest& request) const;
 			DescribeReservedInstancesOutcome describeReservedInstances(const Model::DescribeReservedInstancesRequest &request)const;
 			void describeReservedInstancesAsync(const Model::DescribeReservedInstancesRequest& request, const DescribeReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeReservedInstancesOutcomeCallable describeReservedInstancesCallable(const Model::DescribeReservedInstancesRequest& request) const;
@@ -2608,6 +2621,9 @@ namespace AlibabaCloud
 			ModifyReservedInstanceAttributeOutcome modifyReservedInstanceAttribute(const Model::ModifyReservedInstanceAttributeRequest &request)const;
 			void modifyReservedInstanceAttributeAsync(const Model::ModifyReservedInstanceAttributeRequest& request, const ModifyReservedInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyReservedInstanceAttributeOutcomeCallable modifyReservedInstanceAttributeCallable(const Model::ModifyReservedInstanceAttributeRequest& request) const;
+			ModifyReservedInstanceAutoRenewAttributeOutcome modifyReservedInstanceAutoRenewAttribute(const Model::ModifyReservedInstanceAutoRenewAttributeRequest &request)const;
+			void modifyReservedInstanceAutoRenewAttributeAsync(const Model::ModifyReservedInstanceAutoRenewAttributeRequest& request, const ModifyReservedInstanceAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyReservedInstanceAutoRenewAttributeOutcomeCallable modifyReservedInstanceAutoRenewAttributeCallable(const Model::ModifyReservedInstanceAutoRenewAttributeRequest& request) const;
 			ModifyReservedInstancesOutcome modifyReservedInstances(const Model::ModifyReservedInstancesRequest &request)const;
 			void modifyReservedInstancesAsync(const Model::ModifyReservedInstancesRequest& request, const ModifyReservedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyReservedInstancesOutcomeCallable modifyReservedInstancesCallable(const Model::ModifyReservedInstancesRequest& request) const;

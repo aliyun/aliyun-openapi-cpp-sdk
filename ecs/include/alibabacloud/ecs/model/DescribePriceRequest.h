@@ -93,6 +93,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getScope() const;
 	void setScope(const std::string &scope);
+	std::string getSchedulerOptionsDedicatedHostId() const;
+	void setSchedulerOptionsDedicatedHostId(const std::string &schedulerOptionsDedicatedHostId);
 	std::string getInstanceType() const;
 	void setInstanceType(const std::string &instanceType);
 	std::string getDedicatedHostType() const;
@@ -154,6 +156,7 @@ private:
 	std::string dataDisk4PerformanceLevel_;
 	std::string regionId_;
 	std::string scope_;
+	std::string schedulerOptionsDedicatedHostId_;
 	std::string instanceType_;
 	std::string dedicatedHostType_;
 	std::string dataDisk2Category_;

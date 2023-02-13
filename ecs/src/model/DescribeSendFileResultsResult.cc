@@ -91,6 +91,16 @@ void DescribeSendFileResultsResult::parse(const std::string &payload)
 				invokeInstancesObject.instanceId = valueInvocationsInvocationInvokeInstancesInvokeInstance["InstanceId"].asString();
 			invocationsObject.invokeInstances.push_back(invokeInstancesObject);
 		}
+		auto allTagsNode = valueInvocationsInvocation["Tags"]["Tag"];
+		for (auto valueInvocationsInvocationTagsTag : allTagsNode)
+		{
+			Invocation::Tag tagsObject;
+			if(!valueInvocationsInvocationTagsTag["TagKey"].isNull())
+				tagsObject.tagKey = valueInvocationsInvocationTagsTag["TagKey"].asString();
+			if(!valueInvocationsInvocationTagsTag["TagValue"].isNull())
+				tagsObject.tagValue = valueInvocationsInvocationTagsTag["TagValue"].asString();
+			invocationsObject.tags.push_back(tagsObject);
+		}
 		invocations_.push_back(invocationsObject);
 	}
 	if(!value["PageSize"].isNull())
