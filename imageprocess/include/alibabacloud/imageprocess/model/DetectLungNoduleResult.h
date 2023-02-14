@@ -44,10 +44,14 @@ namespace AlibabaCloud
 							float imageX;
 							std::string category;
 							std::string lung;
+							float risk;
 							float meanValue;
+							std::vector<std::string> majorAxis;
+							std::string recistSOPInstanceUID;
 							float confidence;
 							float volume;
 							float x;
+							std::vector<std::string> minorAxis;
 							float y;
 							float z;
 							std::string sOPInstanceUID;

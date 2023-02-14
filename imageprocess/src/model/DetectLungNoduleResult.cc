@@ -80,6 +80,16 @@ void DetectLungNoduleResult::parse(const std::string &payload)
 				elementsObject.diameter = std::stof(dataNodeSeriesSerieElementsElement["Diameter"].asString());
 			if(!dataNodeSeriesSerieElementsElement["X"].isNull())
 				elementsObject.x = std::stof(dataNodeSeriesSerieElementsElement["X"].asString());
+			if(!dataNodeSeriesSerieElementsElement["RecistSOPInstanceUID"].isNull())
+				elementsObject.recistSOPInstanceUID = dataNodeSeriesSerieElementsElement["RecistSOPInstanceUID"].asString();
+			if(!dataNodeSeriesSerieElementsElement["Risk"].isNull())
+				elementsObject.risk = std::stof(dataNodeSeriesSerieElementsElement["Risk"].asString());
+			auto allMajorAxis = value["MajorAxis"]["MajorAxis"];
+			for (auto value : allMajorAxis)
+				elementsObject.majorAxis.push_back(value.asString());
+			auto allMinorAxis = value["MinorAxis"]["MinorAxis"];
+			for (auto value : allMinorAxis)
+				elementsObject.minorAxis.push_back(value.asString());
 			serieObject.elements.push_back(elementsObject);
 		}
 		auto allOrigin = value["Origin"]["Origin"];
