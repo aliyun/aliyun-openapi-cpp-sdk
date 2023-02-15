@@ -447,42 +447,6 @@ OcrClient::RecognizeIdentityCardOutcomeCallable OcrClient::recognizeIdentityCard
 	return task->get_future();
 }
 
-OcrClient::RecognizeIndonesiaIdentityCardOutcome OcrClient::recognizeIndonesiaIdentityCard(const RecognizeIndonesiaIdentityCardRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizeIndonesiaIdentityCardOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizeIndonesiaIdentityCardOutcome(RecognizeIndonesiaIdentityCardResult(outcome.result()));
-	else
-		return RecognizeIndonesiaIdentityCardOutcome(outcome.error());
-}
-
-void OcrClient::recognizeIndonesiaIdentityCardAsync(const RecognizeIndonesiaIdentityCardRequest& request, const RecognizeIndonesiaIdentityCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizeIndonesiaIdentityCard(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizeIndonesiaIdentityCardOutcomeCallable OcrClient::recognizeIndonesiaIdentityCardCallable(const RecognizeIndonesiaIdentityCardRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizeIndonesiaIdentityCardOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizeIndonesiaIdentityCard(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OcrClient::RecognizeLicensePlateOutcome OcrClient::recognizeLicensePlate(const RecognizeLicensePlateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,42 +477,6 @@ OcrClient::RecognizeLicensePlateOutcomeCallable OcrClient::recognizeLicensePlate
 			[this, request]()
 			{
 			return this->recognizeLicensePlate(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OcrClient::RecognizeMalaysiaIdentityCardOutcome OcrClient::recognizeMalaysiaIdentityCard(const RecognizeMalaysiaIdentityCardRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizeMalaysiaIdentityCardOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizeMalaysiaIdentityCardOutcome(RecognizeMalaysiaIdentityCardResult(outcome.result()));
-	else
-		return RecognizeMalaysiaIdentityCardOutcome(outcome.error());
-}
-
-void OcrClient::recognizeMalaysiaIdentityCardAsync(const RecognizeMalaysiaIdentityCardRequest& request, const RecognizeMalaysiaIdentityCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizeMalaysiaIdentityCard(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizeMalaysiaIdentityCardOutcomeCallable OcrClient::recognizeMalaysiaIdentityCardCallable(const RecognizeMalaysiaIdentityCardRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizeMalaysiaIdentityCardOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizeMalaysiaIdentityCard(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -729,42 +657,6 @@ OcrClient::RecognizeQuotaInvoiceOutcomeCallable OcrClient::recognizeQuotaInvoice
 			[this, request]()
 			{
 			return this->recognizeQuotaInvoice(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OcrClient::RecognizeRussiaIdentityCardOutcome OcrClient::recognizeRussiaIdentityCard(const RecognizeRussiaIdentityCardRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizeRussiaIdentityCardOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizeRussiaIdentityCardOutcome(RecognizeRussiaIdentityCardResult(outcome.result()));
-	else
-		return RecognizeRussiaIdentityCardOutcome(outcome.error());
-}
-
-void OcrClient::recognizeRussiaIdentityCardAsync(const RecognizeRussiaIdentityCardRequest& request, const RecognizeRussiaIdentityCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizeRussiaIdentityCard(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizeRussiaIdentityCardOutcomeCallable OcrClient::recognizeRussiaIdentityCardCallable(const RecognizeRussiaIdentityCardRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizeRussiaIdentityCardOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizeRussiaIdentityCard(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -987,78 +879,6 @@ OcrClient::RecognizeTrainTicketOutcomeCallable OcrClient::recognizeTrainTicketCa
 	return task->get_future();
 }
 
-OcrClient::RecognizeTurkeyIdentityCardOutcome OcrClient::recognizeTurkeyIdentityCard(const RecognizeTurkeyIdentityCardRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizeTurkeyIdentityCardOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizeTurkeyIdentityCardOutcome(RecognizeTurkeyIdentityCardResult(outcome.result()));
-	else
-		return RecognizeTurkeyIdentityCardOutcome(outcome.error());
-}
-
-void OcrClient::recognizeTurkeyIdentityCardAsync(const RecognizeTurkeyIdentityCardRequest& request, const RecognizeTurkeyIdentityCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizeTurkeyIdentityCard(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizeTurkeyIdentityCardOutcomeCallable OcrClient::recognizeTurkeyIdentityCardCallable(const RecognizeTurkeyIdentityCardRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizeTurkeyIdentityCardOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizeTurkeyIdentityCard(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OcrClient::RecognizeUkraineIdentityCardOutcome OcrClient::recognizeUkraineIdentityCard(const RecognizeUkraineIdentityCardRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizeUkraineIdentityCardOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizeUkraineIdentityCardOutcome(RecognizeUkraineIdentityCardResult(outcome.result()));
-	else
-		return RecognizeUkraineIdentityCardOutcome(outcome.error());
-}
-
-void OcrClient::recognizeUkraineIdentityCardAsync(const RecognizeUkraineIdentityCardRequest& request, const RecognizeUkraineIdentityCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizeUkraineIdentityCard(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizeUkraineIdentityCardOutcomeCallable OcrClient::recognizeUkraineIdentityCardCallable(const RecognizeUkraineIdentityCardRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizeUkraineIdentityCardOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizeUkraineIdentityCard(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OcrClient::RecognizeVATInvoiceOutcome OcrClient::recognizeVATInvoice(const RecognizeVATInvoiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1167,42 +987,6 @@ OcrClient::RecognizeVerificationcodeOutcomeCallable OcrClient::recognizeVerifica
 	return task->get_future();
 }
 
-OcrClient::RecognizeVideoCastCrewListOutcome OcrClient::recognizeVideoCastCrewList(const RecognizeVideoCastCrewListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizeVideoCastCrewListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizeVideoCastCrewListOutcome(RecognizeVideoCastCrewListResult(outcome.result()));
-	else
-		return RecognizeVideoCastCrewListOutcome(outcome.error());
-}
-
-void OcrClient::recognizeVideoCastCrewListAsync(const RecognizeVideoCastCrewListRequest& request, const RecognizeVideoCastCrewListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizeVideoCastCrewList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizeVideoCastCrewListOutcomeCallable OcrClient::recognizeVideoCastCrewListCallable(const RecognizeVideoCastCrewListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizeVideoCastCrewListOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizeVideoCastCrewList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OcrClient::RecognizeVideoCharacterOutcome OcrClient::recognizeVideoCharacter(const RecognizeVideoCharacterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1233,42 +1017,6 @@ OcrClient::RecognizeVideoCharacterOutcomeCallable OcrClient::recognizeVideoChara
 			[this, request]()
 			{
 			return this->recognizeVideoCharacter(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OcrClient::RecognizeVietnamIdentityCardOutcome OcrClient::recognizeVietnamIdentityCard(const RecognizeVietnamIdentityCardRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizeVietnamIdentityCardOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizeVietnamIdentityCardOutcome(RecognizeVietnamIdentityCardResult(outcome.result()));
-	else
-		return RecognizeVietnamIdentityCardOutcome(outcome.error());
-}
-
-void OcrClient::recognizeVietnamIdentityCardAsync(const RecognizeVietnamIdentityCardRequest& request, const RecognizeVietnamIdentityCardAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizeVietnamIdentityCard(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizeVietnamIdentityCardOutcomeCallable OcrClient::recognizeVietnamIdentityCardCallable(const RecognizeVietnamIdentityCardRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizeVietnamIdentityCardOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizeVietnamIdentityCard(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

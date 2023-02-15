@@ -43,12 +43,8 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/RecognizeDrivingLicenseResult.h
 	include/alibabacloud/ocr/model/RecognizeIdentityCardRequest.h
 	include/alibabacloud/ocr/model/RecognizeIdentityCardResult.h
-	include/alibabacloud/ocr/model/RecognizeIndonesiaIdentityCardRequest.h
-	include/alibabacloud/ocr/model/RecognizeIndonesiaIdentityCardResult.h
 	include/alibabacloud/ocr/model/RecognizeLicensePlateRequest.h
 	include/alibabacloud/ocr/model/RecognizeLicensePlateResult.h
-	include/alibabacloud/ocr/model/RecognizeMalaysiaIdentityCardRequest.h
-	include/alibabacloud/ocr/model/RecognizeMalaysiaIdentityCardResult.h
 	include/alibabacloud/ocr/model/RecognizePassportMRZRequest.h
 	include/alibabacloud/ocr/model/RecognizePassportMRZResult.h
 	include/alibabacloud/ocr/model/RecognizePdfRequest.h
@@ -59,8 +55,6 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/RecognizeQrCodeResult.h
 	include/alibabacloud/ocr/model/RecognizeQuotaInvoiceRequest.h
 	include/alibabacloud/ocr/model/RecognizeQuotaInvoiceResult.h
-	include/alibabacloud/ocr/model/RecognizeRussiaIdentityCardRequest.h
-	include/alibabacloud/ocr/model/RecognizeRussiaIdentityCardResult.h
 	include/alibabacloud/ocr/model/RecognizeStampRequest.h
 	include/alibabacloud/ocr/model/RecognizeStampResult.h
 	include/alibabacloud/ocr/model/RecognizeTableRequest.h
@@ -73,22 +67,14 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/RecognizeTicketInvoiceResult.h
 	include/alibabacloud/ocr/model/RecognizeTrainTicketRequest.h
 	include/alibabacloud/ocr/model/RecognizeTrainTicketResult.h
-	include/alibabacloud/ocr/model/RecognizeTurkeyIdentityCardRequest.h
-	include/alibabacloud/ocr/model/RecognizeTurkeyIdentityCardResult.h
-	include/alibabacloud/ocr/model/RecognizeUkraineIdentityCardRequest.h
-	include/alibabacloud/ocr/model/RecognizeUkraineIdentityCardResult.h
 	include/alibabacloud/ocr/model/RecognizeVATInvoiceRequest.h
 	include/alibabacloud/ocr/model/RecognizeVATInvoiceResult.h
 	include/alibabacloud/ocr/model/RecognizeVINCodeRequest.h
 	include/alibabacloud/ocr/model/RecognizeVINCodeResult.h
 	include/alibabacloud/ocr/model/RecognizeVerificationcodeRequest.h
 	include/alibabacloud/ocr/model/RecognizeVerificationcodeResult.h
-	include/alibabacloud/ocr/model/RecognizeVideoCastCrewListRequest.h
-	include/alibabacloud/ocr/model/RecognizeVideoCastCrewListResult.h
 	include/alibabacloud/ocr/model/RecognizeVideoCharacterRequest.h
 	include/alibabacloud/ocr/model/RecognizeVideoCharacterResult.h
-	include/alibabacloud/ocr/model/RecognizeVietnamIdentityCardRequest.h
-	include/alibabacloud/ocr/model/RecognizeVietnamIdentityCardResult.h
 	include/alibabacloud/ocr/model/TrimDocumentRequest.h
 	include/alibabacloud/ocr/model/TrimDocumentResult.h )
 
@@ -116,12 +102,8 @@ set(ocr_src
 	src/model/RecognizeDrivingLicenseResult.cc
 	src/model/RecognizeIdentityCardRequest.cc
 	src/model/RecognizeIdentityCardResult.cc
-	src/model/RecognizeIndonesiaIdentityCardRequest.cc
-	src/model/RecognizeIndonesiaIdentityCardResult.cc
 	src/model/RecognizeLicensePlateRequest.cc
 	src/model/RecognizeLicensePlateResult.cc
-	src/model/RecognizeMalaysiaIdentityCardRequest.cc
-	src/model/RecognizeMalaysiaIdentityCardResult.cc
 	src/model/RecognizePassportMRZRequest.cc
 	src/model/RecognizePassportMRZResult.cc
 	src/model/RecognizePdfRequest.cc
@@ -132,8 +114,6 @@ set(ocr_src
 	src/model/RecognizeQrCodeResult.cc
 	src/model/RecognizeQuotaInvoiceRequest.cc
 	src/model/RecognizeQuotaInvoiceResult.cc
-	src/model/RecognizeRussiaIdentityCardRequest.cc
-	src/model/RecognizeRussiaIdentityCardResult.cc
 	src/model/RecognizeStampRequest.cc
 	src/model/RecognizeStampResult.cc
 	src/model/RecognizeTableRequest.cc
@@ -146,22 +126,14 @@ set(ocr_src
 	src/model/RecognizeTicketInvoiceResult.cc
 	src/model/RecognizeTrainTicketRequest.cc
 	src/model/RecognizeTrainTicketResult.cc
-	src/model/RecognizeTurkeyIdentityCardRequest.cc
-	src/model/RecognizeTurkeyIdentityCardResult.cc
-	src/model/RecognizeUkraineIdentityCardRequest.cc
-	src/model/RecognizeUkraineIdentityCardResult.cc
 	src/model/RecognizeVATInvoiceRequest.cc
 	src/model/RecognizeVATInvoiceResult.cc
 	src/model/RecognizeVINCodeRequest.cc
 	src/model/RecognizeVINCodeResult.cc
 	src/model/RecognizeVerificationcodeRequest.cc
 	src/model/RecognizeVerificationcodeResult.cc
-	src/model/RecognizeVideoCastCrewListRequest.cc
-	src/model/RecognizeVideoCastCrewListResult.cc
 	src/model/RecognizeVideoCharacterRequest.cc
 	src/model/RecognizeVideoCharacterResult.cc
-	src/model/RecognizeVietnamIdentityCardRequest.cc
-	src/model/RecognizeVietnamIdentityCardResult.cc
 	src/model/TrimDocumentRequest.cc
 	src/model/TrimDocumentResult.cc )
 
