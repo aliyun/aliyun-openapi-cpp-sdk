@@ -125,6 +125,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.destroyTime = valueDBInstancesDBInstance["DestroyTime"].asString();
 		if(!valueDBInstancesDBInstance["PaymentType"].isNull())
 			dBInstancesObject.paymentType = valueDBInstancesDBInstance["PaymentType"].asString();
+		if(!valueDBInstancesDBInstance["DBInstanceOrderStatus"].isNull())
+			dBInstancesObject.dBInstanceOrderStatus = valueDBInstancesDBInstance["DBInstanceOrderStatus"].asString();
 		auto allReplicaSetsNode = valueDBInstancesDBInstance["ReplicaSets"]["ReplicaSet"];
 		for (auto valueDBInstancesDBInstanceReplicaSetsReplicaSet : allReplicaSetsNode)
 		{

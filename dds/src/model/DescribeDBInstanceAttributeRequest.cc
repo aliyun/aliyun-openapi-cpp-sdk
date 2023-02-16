@@ -124,3 +124,12 @@ void DescribeDBInstanceAttributeRequest::setChargeType(const std::string &charge
   setParameter(std::string("ChargeType"), chargeType);
 }
 
+bool DescribeDBInstanceAttributeRequest::getIsDelete() const {
+  return isDelete_;
+}
+
+void DescribeDBInstanceAttributeRequest::setIsDelete(bool isDelete) {
+  isDelete_ = isDelete;
+  setParameter(std::string("IsDelete"), isDelete ? "true" : "false");
+}
+

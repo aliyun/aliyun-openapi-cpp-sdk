@@ -52,6 +52,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getChargeType() const;
 	void setChargeType(const std::string &chargeType);
+	bool getIsDelete() const;
+	void setIsDelete(bool isDelete);
 
 private:
 	long resourceOwnerId_;
@@ -65,6 +67,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string chargeType_;
+	bool isDelete_;
 };
 } // namespace Model
 } // namespace Dds

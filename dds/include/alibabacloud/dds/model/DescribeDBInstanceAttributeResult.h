@@ -133,6 +133,7 @@ namespace AlibabaCloud
 					std::string cloudType;
 					std::string vPCId;
 					std::string dBInstanceClass;
+					std::string dBInstanceOrderStatus;
 					std::string vSwitchId;
 					std::vector<DBInstance::ShardAttribute> shardList;
 					std::string lockMode;
