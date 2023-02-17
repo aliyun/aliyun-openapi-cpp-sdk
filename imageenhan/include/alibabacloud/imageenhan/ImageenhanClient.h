@@ -46,6 +46,8 @@
 #include "model/GenerateImageWithTextResult.h"
 #include "model/GenerateImageWithTextAndImageRequest.h"
 #include "model/GenerateImageWithTextAndImageResult.h"
+#include "model/GenerateSuperResolutionImageRequest.h"
+#include "model/GenerateSuperResolutionImageResult.h"
 #include "model/GetAsyncJobResultRequest.h"
 #include "model/GetAsyncJobResultResult.h"
 #include "model/ImageBlindCharacterWatermarkRequest.h"
@@ -111,6 +113,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GenerateImageWithTextAndImageResult> GenerateImageWithTextAndImageOutcome;
 			typedef std::future<GenerateImageWithTextAndImageOutcome> GenerateImageWithTextAndImageOutcomeCallable;
 			typedef std::function<void(const ImageenhanClient*, const Model::GenerateImageWithTextAndImageRequest&, const GenerateImageWithTextAndImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateImageWithTextAndImageAsyncHandler;
+			typedef Outcome<Error, Model::GenerateSuperResolutionImageResult> GenerateSuperResolutionImageOutcome;
+			typedef std::future<GenerateSuperResolutionImageOutcome> GenerateSuperResolutionImageOutcomeCallable;
+			typedef std::function<void(const ImageenhanClient*, const Model::GenerateSuperResolutionImageRequest&, const GenerateSuperResolutionImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateSuperResolutionImageAsyncHandler;
 			typedef Outcome<Error, Model::GetAsyncJobResultResult> GetAsyncJobResultOutcome;
 			typedef std::future<GetAsyncJobResultOutcome> GetAsyncJobResultOutcomeCallable;
 			typedef std::function<void(const ImageenhanClient*, const Model::GetAsyncJobResultRequest&, const GetAsyncJobResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncJobResultAsyncHandler;
@@ -182,6 +187,9 @@ namespace AlibabaCloud
 			GenerateImageWithTextAndImageOutcome generateImageWithTextAndImage(const Model::GenerateImageWithTextAndImageRequest &request)const;
 			void generateImageWithTextAndImageAsync(const Model::GenerateImageWithTextAndImageRequest& request, const GenerateImageWithTextAndImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateImageWithTextAndImageOutcomeCallable generateImageWithTextAndImageCallable(const Model::GenerateImageWithTextAndImageRequest& request) const;
+			GenerateSuperResolutionImageOutcome generateSuperResolutionImage(const Model::GenerateSuperResolutionImageRequest &request)const;
+			void generateSuperResolutionImageAsync(const Model::GenerateSuperResolutionImageRequest& request, const GenerateSuperResolutionImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GenerateSuperResolutionImageOutcomeCallable generateSuperResolutionImageCallable(const Model::GenerateSuperResolutionImageRequest& request) const;
 			GetAsyncJobResultOutcome getAsyncJobResult(const Model::GetAsyncJobResultRequest &request)const;
 			void getAsyncJobResultAsync(const Model::GetAsyncJobResultRequest& request, const GetAsyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAsyncJobResultOutcomeCallable getAsyncJobResultCallable(const Model::GetAsyncJobResultRequest& request) const;

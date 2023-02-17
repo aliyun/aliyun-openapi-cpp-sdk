@@ -45,6 +45,8 @@ set(imageenhan_public_header_model
 	include/alibabacloud/imageenhan/model/GenerateImageWithTextResult.h
 	include/alibabacloud/imageenhan/model/GenerateImageWithTextAndImageRequest.h
 	include/alibabacloud/imageenhan/model/GenerateImageWithTextAndImageResult.h
+	include/alibabacloud/imageenhan/model/GenerateSuperResolutionImageRequest.h
+	include/alibabacloud/imageenhan/model/GenerateSuperResolutionImageResult.h
 	include/alibabacloud/imageenhan/model/GetAsyncJobResultRequest.h
 	include/alibabacloud/imageenhan/model/GetAsyncJobResultResult.h
 	include/alibabacloud/imageenhan/model/ImageBlindCharacterWatermarkRequest.h
@@ -92,6 +94,8 @@ set(imageenhan_src
 	src/model/GenerateImageWithTextResult.cc
 	src/model/GenerateImageWithTextAndImageRequest.cc
 	src/model/GenerateImageWithTextAndImageResult.cc
+	src/model/GenerateSuperResolutionImageRequest.cc
+	src/model/GenerateSuperResolutionImageResult.cc
 	src/model/GetAsyncJobResultRequest.cc
 	src/model/GetAsyncJobResultResult.cc
 	src/model/ImageBlindCharacterWatermarkRequest.cc

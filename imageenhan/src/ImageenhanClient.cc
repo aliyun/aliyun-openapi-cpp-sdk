@@ -483,6 +483,42 @@ ImageenhanClient::GenerateImageWithTextAndImageOutcomeCallable ImageenhanClient:
 	return task->get_future();
 }
 
+ImageenhanClient::GenerateSuperResolutionImageOutcome ImageenhanClient::generateSuperResolutionImage(const GenerateSuperResolutionImageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateSuperResolutionImageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateSuperResolutionImageOutcome(GenerateSuperResolutionImageResult(outcome.result()));
+	else
+		return GenerateSuperResolutionImageOutcome(outcome.error());
+}
+
+void ImageenhanClient::generateSuperResolutionImageAsync(const GenerateSuperResolutionImageRequest& request, const GenerateSuperResolutionImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateSuperResolutionImage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageenhanClient::GenerateSuperResolutionImageOutcomeCallable ImageenhanClient::generateSuperResolutionImageCallable(const GenerateSuperResolutionImageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateSuperResolutionImageOutcome()>>(
+			[this, request]()
+			{
+			return this->generateSuperResolutionImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageenhanClient::GetAsyncJobResultOutcome ImageenhanClient::getAsyncJobResult(const GetAsyncJobResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
