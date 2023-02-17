@@ -36,7 +36,6 @@ namespace AlibabaCloud
 				{
 					struct PageDataItem
 					{
-						std::string subscriptionURL;
 						std::string topicOwner;
 						std::string endpoint;
 						long createTime;

@@ -52,12 +52,8 @@ void GetTopicAttributesResult::parse(const std::string &payload)
 		data_.createTime = std::stol(dataNode["CreateTime"].asString());
 	if(!dataNode["LastModifyTime"].isNull())
 		data_.lastModifyTime = std::stol(dataNode["LastModifyTime"].asString());
-	if(!dataNode["TopicUrl"].isNull())
-		data_.topicUrl = dataNode["TopicUrl"].asString();
 	if(!dataNode["LoggingEnabled"].isNull())
 		data_.loggingEnabled = dataNode["LoggingEnabled"].asString() == "true";
-	if(!dataNode["TopicInnerUrl"].isNull())
-		data_.topicInnerUrl = dataNode["TopicInnerUrl"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stol(value["Code"].asString());
 	if(!value["Status"].isNull())

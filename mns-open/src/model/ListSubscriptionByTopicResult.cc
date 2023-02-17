@@ -72,8 +72,6 @@ void ListSubscriptionByTopicResult::parse(const std::string &payload)
 			pageDataItemObject.notifyStrategy = dataNodePageDatapageDataItem["NotifyStrategy"].asString();
 		if(!dataNodePageDatapageDataItem["NotifyContentFormat"].isNull())
 			pageDataItemObject.notifyContentFormat = dataNodePageDatapageDataItem["NotifyContentFormat"].asString();
-		if(!dataNodePageDatapageDataItem["SubscriptionURL"].isNull())
-			pageDataItemObject.subscriptionURL = dataNodePageDatapageDataItem["SubscriptionURL"].asString();
 		data_.pageData.push_back(pageDataItemObject);
 	}
 	if(!value["Code"].isNull())

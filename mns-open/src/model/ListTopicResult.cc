@@ -62,10 +62,6 @@ void ListTopicResult::parse(const std::string &payload)
 			pageDataItemObject.createTime = std::stol(dataNodePageDatapageDataItem["CreateTime"].asString());
 		if(!dataNodePageDatapageDataItem["LastModifyTime"].isNull())
 			pageDataItemObject.lastModifyTime = std::stol(dataNodePageDatapageDataItem["LastModifyTime"].asString());
-		if(!dataNodePageDatapageDataItem["TopicUrl"].isNull())
-			pageDataItemObject.topicUrl = dataNodePageDatapageDataItem["TopicUrl"].asString();
-		if(!dataNodePageDatapageDataItem["TopicInnerUrl"].isNull())
-			pageDataItemObject.topicInnerUrl = dataNodePageDatapageDataItem["TopicInnerUrl"].asString();
 		if(!dataNodePageDatapageDataItem["LoggingEnabled"].isNull())
 			pageDataItemObject.loggingEnabled = dataNodePageDatapageDataItem["LoggingEnabled"].asString() == "true";
 		data_.pageData.push_back(pageDataItemObject);

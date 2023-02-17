@@ -34,7 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string subscriptionURL;
 					std::string topicOwner;
 					std::string endpoint;
 					long createTime;

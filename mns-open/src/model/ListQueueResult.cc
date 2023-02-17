@@ -54,10 +54,6 @@ void ListQueueResult::parse(const std::string &payload)
 	for (auto dataNodePageDatapageDataItem : allPageDataNode)
 	{
 		Data::PageDataItem pageDataItemObject;
-		if(!dataNodePageDatapageDataItem["QueueUrl"].isNull())
-			pageDataItemObject.queueUrl = dataNodePageDatapageDataItem["QueueUrl"].asString();
-		if(!dataNodePageDatapageDataItem["QueueInternalUrl"].isNull())
-			pageDataItemObject.queueInternalUrl = dataNodePageDatapageDataItem["QueueInternalUrl"].asString();
 		if(!dataNodePageDatapageDataItem["QueueName"].isNull())
 			pageDataItemObject.queueName = dataNodePageDatapageDataItem["QueueName"].asString();
 		if(!dataNodePageDatapageDataItem["CreateTime"].isNull())

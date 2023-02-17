@@ -35,19 +35,17 @@ namespace AlibabaCloud
 				struct Data
 				{
 					long activeMessages;
+					long delaySeconds;
+					long delayMessages;
 					long pollingWaitSeconds;
+					long messageRetentionPeriod;
 					long createTime;
 					long maximumMessageSize;
 					long visibilityTimeout;
-					std::string queueInternalUrl;
 					long lastModifyTime;
-					std::string queueUrl;
-					bool loggingEnabled;
-					long delaySeconds;
-					long delayMessages;
-					long messageRetentionPeriod;
 					std::string queueName;
 					long inactiveMessages;
+					bool loggingEnabled;
 				};
 
 

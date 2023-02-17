@@ -37,10 +37,8 @@ namespace AlibabaCloud
 					long messageRetentionPeriod;
 					long createTime;
 					long maxMessageSize;
-					std::string topicUrl;
 					long lastModifyTime;
 					long messageCount;
-					std::string topicInnerUrl;
 					std::string topicName;
 					bool loggingEnabled;
 				};

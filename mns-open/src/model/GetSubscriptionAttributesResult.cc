@@ -58,8 +58,6 @@ void GetSubscriptionAttributesResult::parse(const std::string &payload)
 		data_.notifyStrategy = dataNode["NotifyStrategy"].asString();
 	if(!dataNode["NotifyContentFormat"].isNull())
 		data_.notifyContentFormat = dataNode["NotifyContentFormat"].asString();
-	if(!dataNode["SubscriptionURL"].isNull())
-		data_.subscriptionURL = dataNode["SubscriptionURL"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stol(value["Code"].asString());
 	if(!value["Status"].isNull())

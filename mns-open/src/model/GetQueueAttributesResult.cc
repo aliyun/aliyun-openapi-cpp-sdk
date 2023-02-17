@@ -40,10 +40,6 @@ void GetQueueAttributesResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
-	if(!dataNode["QueueUrl"].isNull())
-		data_.queueUrl = dataNode["QueueUrl"].asString();
-	if(!dataNode["QueueInternalUrl"].isNull())
-		data_.queueInternalUrl = dataNode["QueueInternalUrl"].asString();
 	if(!dataNode["QueueName"].isNull())
 		data_.queueName = dataNode["QueueName"].asString();
 	if(!dataNode["CreateTime"].isNull())
