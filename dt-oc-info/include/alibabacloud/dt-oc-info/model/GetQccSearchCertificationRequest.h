@@ -1,0 +1,51 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef ALIBABACLOUD_DT_OC_INFO_MODEL_GETQCCSEARCHCERTIFICATIONREQUEST_H_
+#define ALIBABACLOUD_DT_OC_INFO_MODEL_GETQCCSEARCHCERTIFICATIONREQUEST_H_
+
+#include <alibabacloud/dt-oc-info/Dt_oc_infoExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <string>
+#include <vector>
+#include <map>
+
+namespace AlibabaCloud {
+namespace Dt_oc_info {
+namespace Model {
+class ALIBABACLOUD_DT_OC_INFO_EXPORT GetQccSearchCertificationRequest : public RpcServiceRequest {
+public:
+	GetQccSearchCertificationRequest();
+	~GetQccSearchCertificationRequest();
+	std::string getCertCategory() const;
+	void setCertCategory(const std::string &certCategory);
+	std::string getEntName() const;
+	void setEntName(const std::string &entName);
+	int getPageNo() const;
+	void setPageNo(int pageNo);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+
+private:
+	std::string certCategory_;
+	std::string entName_;
+	int pageNo_;
+	int pageSize_;
+};
+} // namespace Model
+} // namespace Dt_oc_info
+} // namespace AlibabaCloud
+#endif // !ALIBABACLOUD_DT_OC_INFO_MODEL_GETQCCSEARCHCERTIFICATIONREQUEST_H_
