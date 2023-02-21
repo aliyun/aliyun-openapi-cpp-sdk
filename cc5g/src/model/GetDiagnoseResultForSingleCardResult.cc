@@ -47,6 +47,8 @@ void GetDiagnoseResultForSingleCardResult::parse(const std::string &payload)
 			errorResultObject.errorLevel = valueErrorResultdiagnoseResult["ErrorLevel"].asString();
 		if(!valueErrorResultdiagnoseResult["ErrorPart"].isNull())
 			errorResultObject.errorPart = valueErrorResultdiagnoseResult["ErrorPart"].asString();
+		if(!valueErrorResultdiagnoseResult["ErrorItem"].isNull())
+			errorResultObject.errorItem = valueErrorResultdiagnoseResult["ErrorItem"].asString();
 		if(!valueErrorResultdiagnoseResult["ErrorDesc"].isNull())
 			errorResultObject.errorDesc = valueErrorResultdiagnoseResult["ErrorDesc"].asString();
 		if(!valueErrorResultdiagnoseResult["ErrorSuggestion"].isNull())
@@ -61,6 +63,18 @@ void GetDiagnoseResultForSingleCardResult::parse(const std::string &payload)
 			diagnoseItemObject.part = valueDiagnoseItemdiagnoseItemItem["Part"].asString();
 		if(!valueDiagnoseItemdiagnoseItemItem["Status"].isNull())
 			diagnoseItemObject.status = valueDiagnoseItemdiagnoseItemItem["Status"].asString();
+		auto allSubItemsNode = valueDiagnoseItemdiagnoseItemItem["SubItems"]["subItemsItem"];
+		for (auto valueDiagnoseItemdiagnoseItemItemSubItemssubItemsItem : allSubItemsNode)
+		{
+			DiagnoseItemItem::SubItemsItem subItemsObject;
+			if(!valueDiagnoseItemdiagnoseItemItemSubItemssubItemsItem["SubItem"].isNull())
+				subItemsObject.subItem = valueDiagnoseItemdiagnoseItemItemSubItemssubItemsItem["SubItem"].asString();
+			if(!valueDiagnoseItemdiagnoseItemItemSubItemssubItemsItem["SubItemStatus"].isNull())
+				subItemsObject.subItemStatus = valueDiagnoseItemdiagnoseItemItemSubItemssubItemsItem["SubItemStatus"].asString();
+			if(!valueDiagnoseItemdiagnoseItemItemSubItemssubItemsItem["SubItemInfo"].isNull())
+				subItemsObject.subItemInfo = valueDiagnoseItemdiagnoseItemItemSubItemssubItemsItem["SubItemInfo"].asString();
+			diagnoseItemObject.subItems.push_back(subItemsObject);
+		}
 		diagnoseItem_.push_back(diagnoseItemObject);
 	}
 	if(!value["WirelessCloudConnectorId"].isNull())

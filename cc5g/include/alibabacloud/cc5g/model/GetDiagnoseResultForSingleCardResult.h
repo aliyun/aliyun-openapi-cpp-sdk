@@ -37,10 +37,18 @@ namespace AlibabaCloud
 					std::string errorDesc;
 					std::string errorSuggestion;
 					std::string errorLevel;
+					std::string errorItem;
 					std::string errorPart;
 				};
 				struct DiagnoseItemItem
 				{
+					struct SubItemsItem
+					{
+						std::string subItem;
+						std::string subItemStatus;
+						std::string subItemInfo;
+					};
+					std::vector<DiagnoseItemItem::SubItemsItem> subItems;
 					std::string status;
 					std::string part;
 				};

@@ -14,46 +14,53 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/cc5g/model/ListRegionsResult.h>
+#include <alibabacloud/cc5g/model/ListCardUsagesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::CC5G;
 using namespace AlibabaCloud::CC5G::Model;
 
-ListRegionsResult::ListRegionsResult() :
+ListCardUsagesResult::ListCardUsagesResult() :
 	ServiceResult()
 {}
 
-ListRegionsResult::ListRegionsResult(const std::string &payload) :
+ListCardUsagesResult::ListCardUsagesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListRegionsResult::~ListRegionsResult()
+ListCardUsagesResult::~ListCardUsagesResult()
 {}
 
-void ListRegionsResult::parse(const std::string &payload)
+void ListCardUsagesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allRegionsNode = value["Regions"]["Region"];
-	for (auto valueRegionsRegion : allRegionsNode)
+	auto allCardsNode = value["Cards"]["Card"];
+	for (auto valueCardsCard : allCardsNode)
 	{
-		Region regionsObject;
-		if(!valueRegionsRegion["RegionId"].isNull())
-			regionsObject.regionId = valueRegionsRegion["RegionId"].asString();
-		if(!valueRegionsRegion["LocalName"].isNull())
-			regionsObject.localName = valueRegionsRegion["LocalName"].asString();
-		regions_.push_back(regionsObject);
+		Card cardsObject;
+		if(!valueCardsCard["Iccid"].isNull())
+			cardsObject.iccid = valueCardsCard["Iccid"].asString();
+		if(!valueCardsCard["UsageDataMonth"].isNull())
+			cardsObject.usageDataMonth = std::stol(valueCardsCard["UsageDataMonth"].asString());
+		cards_.push_back(cardsObject);
 	}
+	if(!value["TotalCount"].isNull())
+		totalCount_ = value["TotalCount"].asString();
 
 }
 
-std::vector<ListRegionsResult::Region> ListRegionsResult::getRegions()const
+std::string ListCardUsagesResult::getTotalCount()const
 {
-	return regions_;
+	return totalCount_;
+}
+
+std::vector<ListCardUsagesResult::Card> ListCardUsagesResult::getCards()const
+{
+	return cards_;
 }
 

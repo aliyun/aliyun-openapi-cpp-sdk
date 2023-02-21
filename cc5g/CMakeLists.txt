@@ -75,6 +75,8 @@ set(cc5g_public_header_model
 	include/alibabacloud/cc5g/model/ListAuthorizationRulesResult.h
 	include/alibabacloud/cc5g/model/ListBatchOperateCardsTasksRequest.h
 	include/alibabacloud/cc5g/model/ListBatchOperateCardsTasksResult.h
+	include/alibabacloud/cc5g/model/ListCardUsagesRequest.h
+	include/alibabacloud/cc5g/model/ListCardUsagesResult.h
 	include/alibabacloud/cc5g/model/ListCardsRequest.h
 	include/alibabacloud/cc5g/model/ListCardsResult.h
 	include/alibabacloud/cc5g/model/ListDataPackagesRequest.h
@@ -188,6 +190,8 @@ set(cc5g_src
 	src/model/ListAuthorizationRulesResult.cc
 	src/model/ListBatchOperateCardsTasksRequest.cc
 	src/model/ListBatchOperateCardsTasksResult.cc
+	src/model/ListCardUsagesRequest.cc
+	src/model/ListCardUsagesResult.cc
 	src/model/ListCardsRequest.cc
 	src/model/ListCardsResult.cc
 	src/model/ListDataPackagesRequest.cc

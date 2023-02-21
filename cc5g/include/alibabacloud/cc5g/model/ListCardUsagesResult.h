@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CC5G_MODEL_LISTREGIONSRESULT_H_
-#define ALIBABACLOUD_CC5G_MODEL_LISTREGIONSRESULT_H_
+#ifndef ALIBABACLOUD_CC5G_MODEL_LISTCARDUSAGESRESULT_H_
+#define ALIBABACLOUD_CC5G_MODEL_LISTCARDUSAGESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,28 +29,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CC5G_EXPORT ListRegionsResult : public ServiceResult
+			class ALIBABACLOUD_CC5G_EXPORT ListCardUsagesResult : public ServiceResult
 			{
 			public:
-				struct Region
+				struct Card
 				{
-					std::string regionId;
-					std::string localName;
+					long usageDataMonth;
+					std::string iccid;
 				};
 
 
-				ListRegionsResult();
-				explicit ListRegionsResult(const std::string &payload);
-				~ListRegionsResult();
-				std::vector<Region> getRegions()const;
+				ListCardUsagesResult();
+				explicit ListCardUsagesResult(const std::string &payload);
+				~ListCardUsagesResult();
+				std::string getTotalCount()const;
+				std::vector<Card> getCards()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Region> regions_;
+				std::string totalCount_;
+				std::vector<Card> cards_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CC5G_MODEL_LISTREGIONSRESULT_H_
+#endif // !ALIBABACLOUD_CC5G_MODEL_LISTCARDUSAGESRESULT_H_

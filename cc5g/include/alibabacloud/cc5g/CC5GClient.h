@@ -76,6 +76,8 @@
 #include "model/ListAuthorizationRulesResult.h"
 #include "model/ListBatchOperateCardsTasksRequest.h"
 #include "model/ListBatchOperateCardsTasksResult.h"
+#include "model/ListCardUsagesRequest.h"
+#include "model/ListCardUsagesResult.h"
 #include "model/ListCardsRequest.h"
 #include "model/ListCardsResult.h"
 #include "model/ListDataPackagesRequest.h"
@@ -222,6 +224,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListBatchOperateCardsTasksResult> ListBatchOperateCardsTasksOutcome;
 			typedef std::future<ListBatchOperateCardsTasksOutcome> ListBatchOperateCardsTasksOutcomeCallable;
 			typedef std::function<void(const CC5GClient*, const Model::ListBatchOperateCardsTasksRequest&, const ListBatchOperateCardsTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListBatchOperateCardsTasksAsyncHandler;
+			typedef Outcome<Error, Model::ListCardUsagesResult> ListCardUsagesOutcome;
+			typedef std::future<ListCardUsagesOutcome> ListCardUsagesOutcomeCallable;
+			typedef std::function<void(const CC5GClient*, const Model::ListCardUsagesRequest&, const ListCardUsagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCardUsagesAsyncHandler;
 			typedef Outcome<Error, Model::ListCardsResult> ListCardsOutcome;
 			typedef std::future<ListCardsOutcome> ListCardsOutcomeCallable;
 			typedef std::function<void(const CC5GClient*, const Model::ListCardsRequest&, const ListCardsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCardsAsyncHandler;
@@ -392,6 +397,9 @@ namespace AlibabaCloud
 			ListBatchOperateCardsTasksOutcome listBatchOperateCardsTasks(const Model::ListBatchOperateCardsTasksRequest &request)const;
 			void listBatchOperateCardsTasksAsync(const Model::ListBatchOperateCardsTasksRequest& request, const ListBatchOperateCardsTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListBatchOperateCardsTasksOutcomeCallable listBatchOperateCardsTasksCallable(const Model::ListBatchOperateCardsTasksRequest& request) const;
+			ListCardUsagesOutcome listCardUsages(const Model::ListCardUsagesRequest &request)const;
+			void listCardUsagesAsync(const Model::ListCardUsagesRequest& request, const ListCardUsagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCardUsagesOutcomeCallable listCardUsagesCallable(const Model::ListCardUsagesRequest& request) const;
 			ListCardsOutcome listCards(const Model::ListCardsRequest &request)const;
 			void listCardsAsync(const Model::ListCardsRequest& request, const ListCardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCardsOutcomeCallable listCardsCallable(const Model::ListCardsRequest& request) const;
