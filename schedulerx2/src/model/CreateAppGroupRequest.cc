@@ -124,6 +124,15 @@ void CreateAppGroupRequest::setGroupId(const std::string &groupId) {
   setParameter(std::string("GroupId"), groupId);
 }
 
+int CreateAppGroupRequest::getAppType() const {
+  return appType_;
+}
+
+void CreateAppGroupRequest::setAppType(int appType) {
+  appType_ = appType;
+  setParameter(std::string("AppType"), std::to_string(appType));
+}
+
 std::string CreateAppGroupRequest::getMonitorConfigJson() const {
   return monitorConfigJson_;
 }
@@ -140,6 +149,24 @@ std::string CreateAppGroupRequest::get_Namespace() const {
 void CreateAppGroupRequest::set_Namespace(const std::string &_namespace) {
   _namespace_ = _namespace;
   setParameter(std::string("Namespace"), _namespace);
+}
+
+std::string CreateAppGroupRequest::getXattrs() const {
+  return xattrs_;
+}
+
+void CreateAppGroupRequest::setXattrs(const std::string &xattrs) {
+  xattrs_ = xattrs;
+  setParameter(std::string("Xattrs"), xattrs);
+}
+
+bool CreateAppGroupRequest::getEnableLog() const {
+  return enableLog_;
+}
+
+void CreateAppGroupRequest::setEnableLog(bool enableLog) {
+  enableLog_ = enableLog;
+  setParameter(std::string("EnableLog"), enableLog ? "true" : "false");
 }
 
 std::string CreateAppGroupRequest::getAppKey() const {

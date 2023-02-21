@@ -54,6 +54,8 @@ void ListGroupsResult::parse(const std::string &payload)
 			appGroupObject.description = dataNodeAppGroupsAppGroup["Description"].asString();
 		if(!dataNodeAppGroupsAppGroup["GroupId"].isNull())
 			appGroupObject.groupId = dataNodeAppGroupsAppGroup["GroupId"].asString();
+		if(!dataNodeAppGroupsAppGroup["Xattrs"].isNull())
+			appGroupObject.xattrs = dataNodeAppGroupsAppGroup["Xattrs"].asString();
 		data_.appGroups.push_back(appGroupObject);
 	}
 	if(!value["Code"].isNull())

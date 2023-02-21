@@ -87,6 +87,42 @@ Schedulerx2Client::BatchDeleteJobsOutcomeCallable Schedulerx2Client::batchDelete
 	return task->get_future();
 }
 
+Schedulerx2Client::BatchDeleteRouteStrategyOutcome Schedulerx2Client::batchDeleteRouteStrategy(const BatchDeleteRouteStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchDeleteRouteStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchDeleteRouteStrategyOutcome(BatchDeleteRouteStrategyResult(outcome.result()));
+	else
+		return BatchDeleteRouteStrategyOutcome(outcome.error());
+}
+
+void Schedulerx2Client::batchDeleteRouteStrategyAsync(const BatchDeleteRouteStrategyRequest& request, const BatchDeleteRouteStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchDeleteRouteStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::BatchDeleteRouteStrategyOutcomeCallable Schedulerx2Client::batchDeleteRouteStrategyCallable(const BatchDeleteRouteStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchDeleteRouteStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->batchDeleteRouteStrategy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Schedulerx2Client::BatchDisableJobsOutcome Schedulerx2Client::batchDisableJobs(const BatchDisableJobsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -267,6 +303,42 @@ Schedulerx2Client::CreateNamespaceOutcomeCallable Schedulerx2Client::createNames
 	return task->get_future();
 }
 
+Schedulerx2Client::CreateRouteStrategyOutcome Schedulerx2Client::createRouteStrategy(const CreateRouteStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateRouteStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateRouteStrategyOutcome(CreateRouteStrategyResult(outcome.result()));
+	else
+		return CreateRouteStrategyOutcome(outcome.error());
+}
+
+void Schedulerx2Client::createRouteStrategyAsync(const CreateRouteStrategyRequest& request, const CreateRouteStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createRouteStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::CreateRouteStrategyOutcomeCallable Schedulerx2Client::createRouteStrategyCallable(const CreateRouteStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateRouteStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->createRouteStrategy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Schedulerx2Client::CreateWorkflowOutcome Schedulerx2Client::createWorkflow(const CreateWorkflowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -303,6 +375,42 @@ Schedulerx2Client::CreateWorkflowOutcomeCallable Schedulerx2Client::createWorkfl
 	return task->get_future();
 }
 
+Schedulerx2Client::DeleteAppGroupOutcome Schedulerx2Client::deleteAppGroup(const DeleteAppGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAppGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAppGroupOutcome(DeleteAppGroupResult(outcome.result()));
+	else
+		return DeleteAppGroupOutcome(outcome.error());
+}
+
+void Schedulerx2Client::deleteAppGroupAsync(const DeleteAppGroupRequest& request, const DeleteAppGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAppGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::DeleteAppGroupOutcomeCallable Schedulerx2Client::deleteAppGroupCallable(const DeleteAppGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAppGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAppGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Schedulerx2Client::DeleteJobOutcome Schedulerx2Client::deleteJob(const DeleteJobRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -333,6 +441,42 @@ Schedulerx2Client::DeleteJobOutcomeCallable Schedulerx2Client::deleteJobCallable
 			[this, request]()
 			{
 			return this->deleteJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Schedulerx2Client::DeleteRouteStrategyOutcome Schedulerx2Client::deleteRouteStrategy(const DeleteRouteStrategyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteRouteStrategyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteRouteStrategyOutcome(DeleteRouteStrategyResult(outcome.result()));
+	else
+		return DeleteRouteStrategyOutcome(outcome.error());
+}
+
+void Schedulerx2Client::deleteRouteStrategyAsync(const DeleteRouteStrategyRequest& request, const DeleteRouteStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteRouteStrategy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::DeleteRouteStrategyOutcomeCallable Schedulerx2Client::deleteRouteStrategyCallable(const DeleteRouteStrategyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteRouteStrategyOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteRouteStrategy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -657,6 +801,42 @@ Schedulerx2Client::ExecuteWorkflowOutcomeCallable Schedulerx2Client::executeWork
 			[this, request]()
 			{
 			return this->executeWorkflow(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Schedulerx2Client::GetAppGroupOutcome Schedulerx2Client::getAppGroup(const GetAppGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAppGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAppGroupOutcome(GetAppGroupResult(outcome.result()));
+	else
+		return GetAppGroupOutcome(outcome.error());
+}
+
+void Schedulerx2Client::getAppGroupAsync(const GetAppGroupRequest& request, const GetAppGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAppGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::GetAppGroupOutcomeCallable Schedulerx2Client::getAppGroupCallable(const GetAppGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAppGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->getAppGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1305,6 +1485,42 @@ Schedulerx2Client::StopInstanceOutcomeCallable Schedulerx2Client::stopInstanceCa
 			[this, request]()
 			{
 			return this->stopInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Schedulerx2Client::UpdateAppGroupOutcome Schedulerx2Client::updateAppGroup(const UpdateAppGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAppGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAppGroupOutcome(UpdateAppGroupResult(outcome.result()));
+	else
+		return UpdateAppGroupOutcome(outcome.error());
+}
+
+void Schedulerx2Client::updateAppGroupAsync(const UpdateAppGroupRequest& request, const UpdateAppGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAppGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::UpdateAppGroupOutcomeCallable Schedulerx2Client::updateAppGroupCallable(const UpdateAppGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAppGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAppGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

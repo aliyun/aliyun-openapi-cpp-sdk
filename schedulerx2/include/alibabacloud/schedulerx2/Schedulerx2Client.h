@@ -24,6 +24,8 @@
 #include "Schedulerx2Export.h"
 #include "model/BatchDeleteJobsRequest.h"
 #include "model/BatchDeleteJobsResult.h"
+#include "model/BatchDeleteRouteStrategyRequest.h"
+#include "model/BatchDeleteRouteStrategyResult.h"
 #include "model/BatchDisableJobsRequest.h"
 #include "model/BatchDisableJobsResult.h"
 #include "model/BatchEnableJobsRequest.h"
@@ -34,10 +36,16 @@
 #include "model/CreateJobResult.h"
 #include "model/CreateNamespaceRequest.h"
 #include "model/CreateNamespaceResult.h"
+#include "model/CreateRouteStrategyRequest.h"
+#include "model/CreateRouteStrategyResult.h"
 #include "model/CreateWorkflowRequest.h"
 #include "model/CreateWorkflowResult.h"
+#include "model/DeleteAppGroupRequest.h"
+#include "model/DeleteAppGroupResult.h"
 #include "model/DeleteJobRequest.h"
 #include "model/DeleteJobResult.h"
+#include "model/DeleteRouteStrategyRequest.h"
+#include "model/DeleteRouteStrategyResult.h"
 #include "model/DeleteWorkflowRequest.h"
 #include "model/DeleteWorkflowResult.h"
 #include "model/DescribeRegionsRequest.h"
@@ -56,6 +64,8 @@
 #include "model/ExecuteJobResult.h"
 #include "model/ExecuteWorkflowRequest.h"
 #include "model/ExecuteWorkflowResult.h"
+#include "model/GetAppGroupRequest.h"
+#include "model/GetAppGroupResult.h"
 #include "model/GetJobInfoRequest.h"
 #include "model/GetJobInfoResult.h"
 #include "model/GetJobInstanceRequest.h"
@@ -92,6 +102,8 @@
 #include "model/SetWfInstanceSuccessResult.h"
 #include "model/StopInstanceRequest.h"
 #include "model/StopInstanceResult.h"
+#include "model/UpdateAppGroupRequest.h"
+#include "model/UpdateAppGroupResult.h"
 #include "model/UpdateJobRequest.h"
 #include "model/UpdateJobResult.h"
 #include "model/UpdateWorkflowRequest.h"
@@ -110,6 +122,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BatchDeleteJobsResult> BatchDeleteJobsOutcome;
 			typedef std::future<BatchDeleteJobsOutcome> BatchDeleteJobsOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::BatchDeleteJobsRequest&, const BatchDeleteJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteJobsAsyncHandler;
+			typedef Outcome<Error, Model::BatchDeleteRouteStrategyResult> BatchDeleteRouteStrategyOutcome;
+			typedef std::future<BatchDeleteRouteStrategyOutcome> BatchDeleteRouteStrategyOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::BatchDeleteRouteStrategyRequest&, const BatchDeleteRouteStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteRouteStrategyAsyncHandler;
 			typedef Outcome<Error, Model::BatchDisableJobsResult> BatchDisableJobsOutcome;
 			typedef std::future<BatchDisableJobsOutcome> BatchDisableJobsOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::BatchDisableJobsRequest&, const BatchDisableJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BatchDisableJobsAsyncHandler;
@@ -125,12 +140,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateNamespaceResult> CreateNamespaceOutcome;
 			typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::CreateNamespaceRequest&, const CreateNamespaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateNamespaceAsyncHandler;
+			typedef Outcome<Error, Model::CreateRouteStrategyResult> CreateRouteStrategyOutcome;
+			typedef std::future<CreateRouteStrategyOutcome> CreateRouteStrategyOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::CreateRouteStrategyRequest&, const CreateRouteStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateRouteStrategyAsyncHandler;
 			typedef Outcome<Error, Model::CreateWorkflowResult> CreateWorkflowOutcome;
 			typedef std::future<CreateWorkflowOutcome> CreateWorkflowOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::CreateWorkflowRequest&, const CreateWorkflowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkflowAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAppGroupResult> DeleteAppGroupOutcome;
+			typedef std::future<DeleteAppGroupOutcome> DeleteAppGroupOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::DeleteAppGroupRequest&, const DeleteAppGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteJobResult> DeleteJobOutcome;
 			typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::DeleteJobRequest&, const DeleteJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteJobAsyncHandler;
+			typedef Outcome<Error, Model::DeleteRouteStrategyResult> DeleteRouteStrategyOutcome;
+			typedef std::future<DeleteRouteStrategyOutcome> DeleteRouteStrategyOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::DeleteRouteStrategyRequest&, const DeleteRouteStrategyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRouteStrategyAsyncHandler;
 			typedef Outcome<Error, Model::DeleteWorkflowResult> DeleteWorkflowOutcome;
 			typedef std::future<DeleteWorkflowOutcome> DeleteWorkflowOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::DeleteWorkflowRequest&, const DeleteWorkflowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWorkflowAsyncHandler;
@@ -158,6 +182,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ExecuteWorkflowResult> ExecuteWorkflowOutcome;
 			typedef std::future<ExecuteWorkflowOutcome> ExecuteWorkflowOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::ExecuteWorkflowRequest&, const ExecuteWorkflowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ExecuteWorkflowAsyncHandler;
+			typedef Outcome<Error, Model::GetAppGroupResult> GetAppGroupOutcome;
+			typedef std::future<GetAppGroupOutcome> GetAppGroupOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::GetAppGroupRequest&, const GetAppGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAppGroupAsyncHandler;
 			typedef Outcome<Error, Model::GetJobInfoResult> GetJobInfoOutcome;
 			typedef std::future<GetJobInfoOutcome> GetJobInfoOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::GetJobInfoRequest&, const GetJobInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetJobInfoAsyncHandler;
@@ -212,6 +239,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopInstanceResult> StopInstanceOutcome;
 			typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::StopInstanceRequest&, const StopInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopInstanceAsyncHandler;
+			typedef Outcome<Error, Model::UpdateAppGroupResult> UpdateAppGroupOutcome;
+			typedef std::future<UpdateAppGroupOutcome> UpdateAppGroupOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::UpdateAppGroupRequest&, const UpdateAppGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAppGroupAsyncHandler;
 			typedef Outcome<Error, Model::UpdateJobResult> UpdateJobOutcome;
 			typedef std::future<UpdateJobOutcome> UpdateJobOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::UpdateJobRequest&, const UpdateJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateJobAsyncHandler;
@@ -229,6 +259,9 @@ namespace AlibabaCloud
 			BatchDeleteJobsOutcome batchDeleteJobs(const Model::BatchDeleteJobsRequest &request)const;
 			void batchDeleteJobsAsync(const Model::BatchDeleteJobsRequest& request, const BatchDeleteJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchDeleteJobsOutcomeCallable batchDeleteJobsCallable(const Model::BatchDeleteJobsRequest& request) const;
+			BatchDeleteRouteStrategyOutcome batchDeleteRouteStrategy(const Model::BatchDeleteRouteStrategyRequest &request)const;
+			void batchDeleteRouteStrategyAsync(const Model::BatchDeleteRouteStrategyRequest& request, const BatchDeleteRouteStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BatchDeleteRouteStrategyOutcomeCallable batchDeleteRouteStrategyCallable(const Model::BatchDeleteRouteStrategyRequest& request) const;
 			BatchDisableJobsOutcome batchDisableJobs(const Model::BatchDisableJobsRequest &request)const;
 			void batchDisableJobsAsync(const Model::BatchDisableJobsRequest& request, const BatchDisableJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BatchDisableJobsOutcomeCallable batchDisableJobsCallable(const Model::BatchDisableJobsRequest& request) const;
@@ -244,12 +277,21 @@ namespace AlibabaCloud
 			CreateNamespaceOutcome createNamespace(const Model::CreateNamespaceRequest &request)const;
 			void createNamespaceAsync(const Model::CreateNamespaceRequest& request, const CreateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateNamespaceOutcomeCallable createNamespaceCallable(const Model::CreateNamespaceRequest& request) const;
+			CreateRouteStrategyOutcome createRouteStrategy(const Model::CreateRouteStrategyRequest &request)const;
+			void createRouteStrategyAsync(const Model::CreateRouteStrategyRequest& request, const CreateRouteStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateRouteStrategyOutcomeCallable createRouteStrategyCallable(const Model::CreateRouteStrategyRequest& request) const;
 			CreateWorkflowOutcome createWorkflow(const Model::CreateWorkflowRequest &request)const;
 			void createWorkflowAsync(const Model::CreateWorkflowRequest& request, const CreateWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateWorkflowOutcomeCallable createWorkflowCallable(const Model::CreateWorkflowRequest& request) const;
+			DeleteAppGroupOutcome deleteAppGroup(const Model::DeleteAppGroupRequest &request)const;
+			void deleteAppGroupAsync(const Model::DeleteAppGroupRequest& request, const DeleteAppGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAppGroupOutcomeCallable deleteAppGroupCallable(const Model::DeleteAppGroupRequest& request) const;
 			DeleteJobOutcome deleteJob(const Model::DeleteJobRequest &request)const;
 			void deleteJobAsync(const Model::DeleteJobRequest& request, const DeleteJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteJobOutcomeCallable deleteJobCallable(const Model::DeleteJobRequest& request) const;
+			DeleteRouteStrategyOutcome deleteRouteStrategy(const Model::DeleteRouteStrategyRequest &request)const;
+			void deleteRouteStrategyAsync(const Model::DeleteRouteStrategyRequest& request, const DeleteRouteStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteRouteStrategyOutcomeCallable deleteRouteStrategyCallable(const Model::DeleteRouteStrategyRequest& request) const;
 			DeleteWorkflowOutcome deleteWorkflow(const Model::DeleteWorkflowRequest &request)const;
 			void deleteWorkflowAsync(const Model::DeleteWorkflowRequest& request, const DeleteWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteWorkflowOutcomeCallable deleteWorkflowCallable(const Model::DeleteWorkflowRequest& request) const;
@@ -277,6 +319,9 @@ namespace AlibabaCloud
 			ExecuteWorkflowOutcome executeWorkflow(const Model::ExecuteWorkflowRequest &request)const;
 			void executeWorkflowAsync(const Model::ExecuteWorkflowRequest& request, const ExecuteWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ExecuteWorkflowOutcomeCallable executeWorkflowCallable(const Model::ExecuteWorkflowRequest& request) const;
+			GetAppGroupOutcome getAppGroup(const Model::GetAppGroupRequest &request)const;
+			void getAppGroupAsync(const Model::GetAppGroupRequest& request, const GetAppGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetAppGroupOutcomeCallable getAppGroupCallable(const Model::GetAppGroupRequest& request) const;
 			GetJobInfoOutcome getJobInfo(const Model::GetJobInfoRequest &request)const;
 			void getJobInfoAsync(const Model::GetJobInfoRequest& request, const GetJobInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetJobInfoOutcomeCallable getJobInfoCallable(const Model::GetJobInfoRequest& request) const;
@@ -331,6 +376,9 @@ namespace AlibabaCloud
 			StopInstanceOutcome stopInstance(const Model::StopInstanceRequest &request)const;
 			void stopInstanceAsync(const Model::StopInstanceRequest& request, const StopInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopInstanceOutcomeCallable stopInstanceCallable(const Model::StopInstanceRequest& request) const;
+			UpdateAppGroupOutcome updateAppGroup(const Model::UpdateAppGroupRequest &request)const;
+			void updateAppGroupAsync(const Model::UpdateAppGroupRequest& request, const UpdateAppGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateAppGroupOutcomeCallable updateAppGroupCallable(const Model::UpdateAppGroupRequest& request) const;
 			UpdateJobOutcome updateJob(const Model::UpdateJobRequest &request)const;
 			void updateJobAsync(const Model::UpdateJobRequest& request, const UpdateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateJobOutcomeCallable updateJobCallable(const Model::UpdateJobRequest& request) const;

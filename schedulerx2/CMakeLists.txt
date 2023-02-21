@@ -23,6 +23,8 @@ set(schedulerx2_public_header
 set(schedulerx2_public_header_model 
 	include/alibabacloud/schedulerx2/model/BatchDeleteJobsRequest.h
 	include/alibabacloud/schedulerx2/model/BatchDeleteJobsResult.h
+	include/alibabacloud/schedulerx2/model/BatchDeleteRouteStrategyRequest.h
+	include/alibabacloud/schedulerx2/model/BatchDeleteRouteStrategyResult.h
 	include/alibabacloud/schedulerx2/model/BatchDisableJobsRequest.h
 	include/alibabacloud/schedulerx2/model/BatchDisableJobsResult.h
 	include/alibabacloud/schedulerx2/model/BatchEnableJobsRequest.h
@@ -33,10 +35,16 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/CreateJobResult.h
 	include/alibabacloud/schedulerx2/model/CreateNamespaceRequest.h
 	include/alibabacloud/schedulerx2/model/CreateNamespaceResult.h
+	include/alibabacloud/schedulerx2/model/CreateRouteStrategyRequest.h
+	include/alibabacloud/schedulerx2/model/CreateRouteStrategyResult.h
 	include/alibabacloud/schedulerx2/model/CreateWorkflowRequest.h
 	include/alibabacloud/schedulerx2/model/CreateWorkflowResult.h
+	include/alibabacloud/schedulerx2/model/DeleteAppGroupRequest.h
+	include/alibabacloud/schedulerx2/model/DeleteAppGroupResult.h
 	include/alibabacloud/schedulerx2/model/DeleteJobRequest.h
 	include/alibabacloud/schedulerx2/model/DeleteJobResult.h
+	include/alibabacloud/schedulerx2/model/DeleteRouteStrategyRequest.h
+	include/alibabacloud/schedulerx2/model/DeleteRouteStrategyResult.h
 	include/alibabacloud/schedulerx2/model/DeleteWorkflowRequest.h
 	include/alibabacloud/schedulerx2/model/DeleteWorkflowResult.h
 	include/alibabacloud/schedulerx2/model/DescribeRegionsRequest.h
@@ -55,6 +63,8 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/ExecuteJobResult.h
 	include/alibabacloud/schedulerx2/model/ExecuteWorkflowRequest.h
 	include/alibabacloud/schedulerx2/model/ExecuteWorkflowResult.h
+	include/alibabacloud/schedulerx2/model/GetAppGroupRequest.h
+	include/alibabacloud/schedulerx2/model/GetAppGroupResult.h
 	include/alibabacloud/schedulerx2/model/GetJobInfoRequest.h
 	include/alibabacloud/schedulerx2/model/GetJobInfoResult.h
 	include/alibabacloud/schedulerx2/model/GetJobInstanceRequest.h
@@ -91,6 +101,8 @@ set(schedulerx2_public_header_model
 	include/alibabacloud/schedulerx2/model/SetWfInstanceSuccessResult.h
 	include/alibabacloud/schedulerx2/model/StopInstanceRequest.h
 	include/alibabacloud/schedulerx2/model/StopInstanceResult.h
+	include/alibabacloud/schedulerx2/model/UpdateAppGroupRequest.h
+	include/alibabacloud/schedulerx2/model/UpdateAppGroupResult.h
 	include/alibabacloud/schedulerx2/model/UpdateJobRequest.h
 	include/alibabacloud/schedulerx2/model/UpdateJobResult.h
 	include/alibabacloud/schedulerx2/model/UpdateWorkflowRequest.h
@@ -102,6 +114,8 @@ set(schedulerx2_src
 	src/Schedulerx2Client.cc
 	src/model/BatchDeleteJobsRequest.cc
 	src/model/BatchDeleteJobsResult.cc
+	src/model/BatchDeleteRouteStrategyRequest.cc
+	src/model/BatchDeleteRouteStrategyResult.cc
 	src/model/BatchDisableJobsRequest.cc
 	src/model/BatchDisableJobsResult.cc
 	src/model/BatchEnableJobsRequest.cc
@@ -112,10 +126,16 @@ set(schedulerx2_src
 	src/model/CreateJobResult.cc
 	src/model/CreateNamespaceRequest.cc
 	src/model/CreateNamespaceResult.cc
+	src/model/CreateRouteStrategyRequest.cc
+	src/model/CreateRouteStrategyResult.cc
 	src/model/CreateWorkflowRequest.cc
 	src/model/CreateWorkflowResult.cc
+	src/model/DeleteAppGroupRequest.cc
+	src/model/DeleteAppGroupResult.cc
 	src/model/DeleteJobRequest.cc
 	src/model/DeleteJobResult.cc
+	src/model/DeleteRouteStrategyRequest.cc
+	src/model/DeleteRouteStrategyResult.cc
 	src/model/DeleteWorkflowRequest.cc
 	src/model/DeleteWorkflowResult.cc
 	src/model/DescribeRegionsRequest.cc
@@ -134,6 +154,8 @@ set(schedulerx2_src
 	src/model/ExecuteJobResult.cc
 	src/model/ExecuteWorkflowRequest.cc
 	src/model/ExecuteWorkflowResult.cc
+	src/model/GetAppGroupRequest.cc
+	src/model/GetAppGroupResult.cc
 	src/model/GetJobInfoRequest.cc
 	src/model/GetJobInfoResult.cc
 	src/model/GetJobInstanceRequest.cc
@@ -170,6 +192,8 @@ set(schedulerx2_src
 	src/model/SetWfInstanceSuccessResult.cc
 	src/model/StopInstanceRequest.cc
 	src/model/StopInstanceResult.cc
+	src/model/UpdateAppGroupRequest.cc
+	src/model/UpdateAppGroupResult.cc
 	src/model/UpdateJobRequest.cc
 	src/model/UpdateJobResult.cc
 	src/model/UpdateWorkflowRequest.cc

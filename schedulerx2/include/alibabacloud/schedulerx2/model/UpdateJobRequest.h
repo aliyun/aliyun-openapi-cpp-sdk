@@ -84,6 +84,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getTaskDispatchMode() const;
+	void setTaskDispatchMode(const std::string &taskDispatchMode);
 	std::string getCalendar() const;
 	void setCalendar(const std::string &calendar);
 	bool getFailEnable() const;
@@ -130,6 +132,7 @@ private:
 	bool timeoutKillEnable_;
 	std::string regionId_;
 	int pageSize_;
+	std::string taskDispatchMode_;
 	std::string calendar_;
 	bool failEnable_;
 	std::string sendChannel_;

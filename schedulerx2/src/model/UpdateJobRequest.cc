@@ -248,6 +248,15 @@ void UpdateJobRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::string UpdateJobRequest::getTaskDispatchMode() const {
+  return taskDispatchMode_;
+}
+
+void UpdateJobRequest::setTaskDispatchMode(const std::string &taskDispatchMode) {
+  taskDispatchMode_ = taskDispatchMode;
+  setBodyParameter(std::string("TaskDispatchMode"), taskDispatchMode);
+}
+
 std::string UpdateJobRequest::getCalendar() const {
   return calendar_;
 }
