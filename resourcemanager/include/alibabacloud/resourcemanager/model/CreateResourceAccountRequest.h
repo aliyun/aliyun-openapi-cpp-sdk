@@ -34,22 +34,34 @@ public:
 	};
 	CreateResourceAccountRequest();
 	~CreateResourceAccountRequest();
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
+	std::string getVerificationCode() const;
+	void setVerificationCode(const std::string &verificationCode);
 	std::string getAccountNamePrefix() const;
 	void setAccountNamePrefix(const std::string &accountNamePrefix);
+	std::string getInheritSecureMobilePhoneFrom() const;
+	void setInheritSecureMobilePhoneFrom(const std::string &inheritSecureMobilePhoneFrom);
+	std::string getSecureMobilePhone() const;
+	void setSecureMobilePhone(const std::string &secureMobilePhone);
+	std::string getResellAccountType() const;
+	void setResellAccountType(const std::string &resellAccountType);
 	std::string getParentFolderId() const;
 	void setParentFolderId(const std::string &parentFolderId);
 	std::string getDisplayName() const;
 	void setDisplayName(const std::string &displayName);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
 	std::string getPayerAccountId() const;
 	void setPayerAccountId(const std::string &payerAccountId);
 
 private:
+	std::vector<Tag> tag_;
+	std::string verificationCode_;
 	std::string accountNamePrefix_;
+	std::string inheritSecureMobilePhoneFrom_;
+	std::string secureMobilePhone_;
+	std::string resellAccountType_;
 	std::string parentFolderId_;
 	std::string displayName_;
-	std::vector<Tag> tag_;
 	std::string payerAccountId_;
 };
 } // namespace Model

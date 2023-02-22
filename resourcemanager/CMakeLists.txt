@@ -29,12 +29,16 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/AttachPolicyResult.h
 	include/alibabacloud/resourcemanager/model/BindSecureMobilePhoneRequest.h
 	include/alibabacloud/resourcemanager/model/BindSecureMobilePhoneResult.h
+	include/alibabacloud/resourcemanager/model/CancelChangeAccountEmailRequest.h
+	include/alibabacloud/resourcemanager/model/CancelChangeAccountEmailResult.h
 	include/alibabacloud/resourcemanager/model/CancelCreateCloudAccountRequest.h
 	include/alibabacloud/resourcemanager/model/CancelCreateCloudAccountResult.h
 	include/alibabacloud/resourcemanager/model/CancelHandshakeRequest.h
 	include/alibabacloud/resourcemanager/model/CancelHandshakeResult.h
 	include/alibabacloud/resourcemanager/model/CancelPromoteResourceAccountRequest.h
 	include/alibabacloud/resourcemanager/model/CancelPromoteResourceAccountResult.h
+	include/alibabacloud/resourcemanager/model/ChangeAccountEmailRequest.h
+	include/alibabacloud/resourcemanager/model/ChangeAccountEmailResult.h
 	include/alibabacloud/resourcemanager/model/CheckAccountDeleteRequest.h
 	include/alibabacloud/resourcemanager/model/CheckAccountDeleteResult.h
 	include/alibabacloud/resourcemanager/model/CreateCloudAccountRequest.h
@@ -177,6 +181,8 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/ResendCreateCloudAccountEmailResult.h
 	include/alibabacloud/resourcemanager/model/ResendPromoteResourceAccountEmailRequest.h
 	include/alibabacloud/resourcemanager/model/ResendPromoteResourceAccountEmailResult.h
+	include/alibabacloud/resourcemanager/model/RetryChangeAccountEmailRequest.h
+	include/alibabacloud/resourcemanager/model/RetryChangeAccountEmailResult.h
 	include/alibabacloud/resourcemanager/model/SendVerificationCodeForBindSecureMobilePhoneRequest.h
 	include/alibabacloud/resourcemanager/model/SendVerificationCodeForBindSecureMobilePhoneResult.h
 	include/alibabacloud/resourcemanager/model/SendVerificationCodeForEnableRDRequest.h
@@ -210,12 +216,16 @@ set(resourcemanager_src
 	src/model/AttachPolicyResult.cc
 	src/model/BindSecureMobilePhoneRequest.cc
 	src/model/BindSecureMobilePhoneResult.cc
+	src/model/CancelChangeAccountEmailRequest.cc
+	src/model/CancelChangeAccountEmailResult.cc
 	src/model/CancelCreateCloudAccountRequest.cc
 	src/model/CancelCreateCloudAccountResult.cc
 	src/model/CancelHandshakeRequest.cc
 	src/model/CancelHandshakeResult.cc
 	src/model/CancelPromoteResourceAccountRequest.cc
 	src/model/CancelPromoteResourceAccountResult.cc
+	src/model/ChangeAccountEmailRequest.cc
+	src/model/ChangeAccountEmailResult.cc
 	src/model/CheckAccountDeleteRequest.cc
 	src/model/CheckAccountDeleteResult.cc
 	src/model/CreateCloudAccountRequest.cc
@@ -358,6 +368,8 @@ set(resourcemanager_src
 	src/model/ResendCreateCloudAccountEmailResult.cc
 	src/model/ResendPromoteResourceAccountEmailRequest.cc
 	src/model/ResendPromoteResourceAccountEmailResult.cc
+	src/model/RetryChangeAccountEmailRequest.cc
+	src/model/RetryChangeAccountEmailResult.cc
 	src/model/SendVerificationCodeForBindSecureMobilePhoneRequest.cc
 	src/model/SendVerificationCodeForBindSecureMobilePhoneResult.cc
 	src/model/SendVerificationCodeForEnableRDRequest.cc

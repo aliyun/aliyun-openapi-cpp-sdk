@@ -25,6 +25,15 @@ BindSecureMobilePhoneRequest::BindSecureMobilePhoneRequest()
 
 BindSecureMobilePhoneRequest::~BindSecureMobilePhoneRequest() {}
 
+std::string BindSecureMobilePhoneRequest::getInheritSecureMobilePhoneFrom() const {
+  return inheritSecureMobilePhoneFrom_;
+}
+
+void BindSecureMobilePhoneRequest::setInheritSecureMobilePhoneFrom(const std::string &inheritSecureMobilePhoneFrom) {
+  inheritSecureMobilePhoneFrom_ = inheritSecureMobilePhoneFrom;
+  setParameter(std::string("InheritSecureMobilePhoneFrom"), inheritSecureMobilePhoneFrom);
+}
+
 std::string BindSecureMobilePhoneRequest::getSecureMobilePhone() const {
   return secureMobilePhone_;
 }

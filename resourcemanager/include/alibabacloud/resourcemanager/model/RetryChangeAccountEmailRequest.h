@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_BINDSECUREMOBILEPHONEREQUEST_H_
-#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_BINDSECUREMOBILEPHONEREQUEST_H_
+#ifndef ALIBABACLOUD_RESOURCEMANAGER_MODEL_RETRYCHANGEACCOUNTEMAILREQUEST_H_
+#define ALIBABACLOUD_RESOURCEMANAGER_MODEL_RETRYCHANGEACCOUNTEMAILREQUEST_H_
 
 #include <alibabacloud/resourcemanager/ResourceManagerExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,17 @@
 namespace AlibabaCloud {
 namespace ResourceManager {
 namespace Model {
-class ALIBABACLOUD_RESOURCEMANAGER_EXPORT BindSecureMobilePhoneRequest : public RpcServiceRequest {
+class ALIBABACLOUD_RESOURCEMANAGER_EXPORT RetryChangeAccountEmailRequest : public RpcServiceRequest {
 public:
-	BindSecureMobilePhoneRequest();
-	~BindSecureMobilePhoneRequest();
-	std::string getInheritSecureMobilePhoneFrom() const;
-	void setInheritSecureMobilePhoneFrom(const std::string &inheritSecureMobilePhoneFrom);
-	std::string getSecureMobilePhone() const;
-	void setSecureMobilePhone(const std::string &secureMobilePhone);
+	RetryChangeAccountEmailRequest();
+	~RetryChangeAccountEmailRequest();
 	std::string getAccountId() const;
 	void setAccountId(const std::string &accountId);
-	std::string getVerificationCode() const;
-	void setVerificationCode(const std::string &verificationCode);
 
 private:
-	std::string inheritSecureMobilePhoneFrom_;
-	std::string secureMobilePhone_;
 	std::string accountId_;
-	std::string verificationCode_;
 };
 } // namespace Model
 } // namespace ResourceManager
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_BINDSECUREMOBILEPHONEREQUEST_H_
+#endif // !ALIBABACLOUD_RESOURCEMANAGER_MODEL_RETRYCHANGEACCOUNTEMAILREQUEST_H_

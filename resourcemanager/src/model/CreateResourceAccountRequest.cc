@@ -25,6 +25,27 @@ CreateResourceAccountRequest::CreateResourceAccountRequest()
 
 CreateResourceAccountRequest::~CreateResourceAccountRequest() {}
 
+std::vector<CreateResourceAccountRequest::Tag> CreateResourceAccountRequest::getTag() const {
+  return tag_;
+}
+
+void CreateResourceAccountRequest::setTag(const std::vector<CreateResourceAccountRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+  }
+}
+
+std::string CreateResourceAccountRequest::getVerificationCode() const {
+  return verificationCode_;
+}
+
+void CreateResourceAccountRequest::setVerificationCode(const std::string &verificationCode) {
+  verificationCode_ = verificationCode;
+  setParameter(std::string("VerificationCode"), verificationCode);
+}
+
 std::string CreateResourceAccountRequest::getAccountNamePrefix() const {
   return accountNamePrefix_;
 }
@@ -32,6 +53,33 @@ std::string CreateResourceAccountRequest::getAccountNamePrefix() const {
 void CreateResourceAccountRequest::setAccountNamePrefix(const std::string &accountNamePrefix) {
   accountNamePrefix_ = accountNamePrefix;
   setParameter(std::string("AccountNamePrefix"), accountNamePrefix);
+}
+
+std::string CreateResourceAccountRequest::getInheritSecureMobilePhoneFrom() const {
+  return inheritSecureMobilePhoneFrom_;
+}
+
+void CreateResourceAccountRequest::setInheritSecureMobilePhoneFrom(const std::string &inheritSecureMobilePhoneFrom) {
+  inheritSecureMobilePhoneFrom_ = inheritSecureMobilePhoneFrom;
+  setParameter(std::string("InheritSecureMobilePhoneFrom"), inheritSecureMobilePhoneFrom);
+}
+
+std::string CreateResourceAccountRequest::getSecureMobilePhone() const {
+  return secureMobilePhone_;
+}
+
+void CreateResourceAccountRequest::setSecureMobilePhone(const std::string &secureMobilePhone) {
+  secureMobilePhone_ = secureMobilePhone;
+  setParameter(std::string("SecureMobilePhone"), secureMobilePhone);
+}
+
+std::string CreateResourceAccountRequest::getResellAccountType() const {
+  return resellAccountType_;
+}
+
+void CreateResourceAccountRequest::setResellAccountType(const std::string &resellAccountType) {
+  resellAccountType_ = resellAccountType;
+  setParameter(std::string("ResellAccountType"), resellAccountType);
 }
 
 std::string CreateResourceAccountRequest::getParentFolderId() const {
@@ -50,18 +98,6 @@ std::string CreateResourceAccountRequest::getDisplayName() const {
 void CreateResourceAccountRequest::setDisplayName(const std::string &displayName) {
   displayName_ = displayName;
   setParameter(std::string("DisplayName"), displayName);
-}
-
-std::vector<CreateResourceAccountRequest::Tag> CreateResourceAccountRequest::getTag() const {
-  return tag_;
-}
-
-void CreateResourceAccountRequest::setTag(const std::vector<CreateResourceAccountRequest::Tag> &tag) {
-  tag_ = tag;
-  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
-    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
-    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
-  }
 }
 
 std::string CreateResourceAccountRequest::getPayerAccountId() const {

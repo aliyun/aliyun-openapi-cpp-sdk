@@ -30,12 +30,16 @@
 #include "model/AttachPolicyResult.h"
 #include "model/BindSecureMobilePhoneRequest.h"
 #include "model/BindSecureMobilePhoneResult.h"
+#include "model/CancelChangeAccountEmailRequest.h"
+#include "model/CancelChangeAccountEmailResult.h"
 #include "model/CancelCreateCloudAccountRequest.h"
 #include "model/CancelCreateCloudAccountResult.h"
 #include "model/CancelHandshakeRequest.h"
 #include "model/CancelHandshakeResult.h"
 #include "model/CancelPromoteResourceAccountRequest.h"
 #include "model/CancelPromoteResourceAccountResult.h"
+#include "model/ChangeAccountEmailRequest.h"
+#include "model/ChangeAccountEmailResult.h"
 #include "model/CheckAccountDeleteRequest.h"
 #include "model/CheckAccountDeleteResult.h"
 #include "model/CreateCloudAccountRequest.h"
@@ -178,6 +182,8 @@
 #include "model/ResendCreateCloudAccountEmailResult.h"
 #include "model/ResendPromoteResourceAccountEmailRequest.h"
 #include "model/ResendPromoteResourceAccountEmailResult.h"
+#include "model/RetryChangeAccountEmailRequest.h"
+#include "model/RetryChangeAccountEmailResult.h"
 #include "model/SendVerificationCodeForBindSecureMobilePhoneRequest.h"
 #include "model/SendVerificationCodeForBindSecureMobilePhoneResult.h"
 #include "model/SendVerificationCodeForEnableRDRequest.h"
@@ -221,6 +227,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BindSecureMobilePhoneResult> BindSecureMobilePhoneOutcome;
 			typedef std::future<BindSecureMobilePhoneOutcome> BindSecureMobilePhoneOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::BindSecureMobilePhoneRequest&, const BindSecureMobilePhoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindSecureMobilePhoneAsyncHandler;
+			typedef Outcome<Error, Model::CancelChangeAccountEmailResult> CancelChangeAccountEmailOutcome;
+			typedef std::future<CancelChangeAccountEmailOutcome> CancelChangeAccountEmailOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::CancelChangeAccountEmailRequest&, const CancelChangeAccountEmailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelChangeAccountEmailAsyncHandler;
 			typedef Outcome<Error, Model::CancelCreateCloudAccountResult> CancelCreateCloudAccountOutcome;
 			typedef std::future<CancelCreateCloudAccountOutcome> CancelCreateCloudAccountOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::CancelCreateCloudAccountRequest&, const CancelCreateCloudAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelCreateCloudAccountAsyncHandler;
@@ -230,6 +239,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelPromoteResourceAccountResult> CancelPromoteResourceAccountOutcome;
 			typedef std::future<CancelPromoteResourceAccountOutcome> CancelPromoteResourceAccountOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::CancelPromoteResourceAccountRequest&, const CancelPromoteResourceAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelPromoteResourceAccountAsyncHandler;
+			typedef Outcome<Error, Model::ChangeAccountEmailResult> ChangeAccountEmailOutcome;
+			typedef std::future<ChangeAccountEmailOutcome> ChangeAccountEmailOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::ChangeAccountEmailRequest&, const ChangeAccountEmailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeAccountEmailAsyncHandler;
 			typedef Outcome<Error, Model::CheckAccountDeleteResult> CheckAccountDeleteOutcome;
 			typedef std::future<CheckAccountDeleteOutcome> CheckAccountDeleteOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::CheckAccountDeleteRequest&, const CheckAccountDeleteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckAccountDeleteAsyncHandler;
@@ -443,6 +455,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResendPromoteResourceAccountEmailResult> ResendPromoteResourceAccountEmailOutcome;
 			typedef std::future<ResendPromoteResourceAccountEmailOutcome> ResendPromoteResourceAccountEmailOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::ResendPromoteResourceAccountEmailRequest&, const ResendPromoteResourceAccountEmailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResendPromoteResourceAccountEmailAsyncHandler;
+			typedef Outcome<Error, Model::RetryChangeAccountEmailResult> RetryChangeAccountEmailOutcome;
+			typedef std::future<RetryChangeAccountEmailOutcome> RetryChangeAccountEmailOutcomeCallable;
+			typedef std::function<void(const ResourceManagerClient*, const Model::RetryChangeAccountEmailRequest&, const RetryChangeAccountEmailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RetryChangeAccountEmailAsyncHandler;
 			typedef Outcome<Error, Model::SendVerificationCodeForBindSecureMobilePhoneResult> SendVerificationCodeForBindSecureMobilePhoneOutcome;
 			typedef std::future<SendVerificationCodeForBindSecureMobilePhoneOutcome> SendVerificationCodeForBindSecureMobilePhoneOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::SendVerificationCodeForBindSecureMobilePhoneRequest&, const SendVerificationCodeForBindSecureMobilePhoneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendVerificationCodeForBindSecureMobilePhoneAsyncHandler;
@@ -493,6 +508,9 @@ namespace AlibabaCloud
 			BindSecureMobilePhoneOutcome bindSecureMobilePhone(const Model::BindSecureMobilePhoneRequest &request)const;
 			void bindSecureMobilePhoneAsync(const Model::BindSecureMobilePhoneRequest& request, const BindSecureMobilePhoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BindSecureMobilePhoneOutcomeCallable bindSecureMobilePhoneCallable(const Model::BindSecureMobilePhoneRequest& request) const;
+			CancelChangeAccountEmailOutcome cancelChangeAccountEmail(const Model::CancelChangeAccountEmailRequest &request)const;
+			void cancelChangeAccountEmailAsync(const Model::CancelChangeAccountEmailRequest& request, const CancelChangeAccountEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelChangeAccountEmailOutcomeCallable cancelChangeAccountEmailCallable(const Model::CancelChangeAccountEmailRequest& request) const;
 			CancelCreateCloudAccountOutcome cancelCreateCloudAccount(const Model::CancelCreateCloudAccountRequest &request)const;
 			void cancelCreateCloudAccountAsync(const Model::CancelCreateCloudAccountRequest& request, const CancelCreateCloudAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelCreateCloudAccountOutcomeCallable cancelCreateCloudAccountCallable(const Model::CancelCreateCloudAccountRequest& request) const;
@@ -502,6 +520,9 @@ namespace AlibabaCloud
 			CancelPromoteResourceAccountOutcome cancelPromoteResourceAccount(const Model::CancelPromoteResourceAccountRequest &request)const;
 			void cancelPromoteResourceAccountAsync(const Model::CancelPromoteResourceAccountRequest& request, const CancelPromoteResourceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelPromoteResourceAccountOutcomeCallable cancelPromoteResourceAccountCallable(const Model::CancelPromoteResourceAccountRequest& request) const;
+			ChangeAccountEmailOutcome changeAccountEmail(const Model::ChangeAccountEmailRequest &request)const;
+			void changeAccountEmailAsync(const Model::ChangeAccountEmailRequest& request, const ChangeAccountEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeAccountEmailOutcomeCallable changeAccountEmailCallable(const Model::ChangeAccountEmailRequest& request) const;
 			CheckAccountDeleteOutcome checkAccountDelete(const Model::CheckAccountDeleteRequest &request)const;
 			void checkAccountDeleteAsync(const Model::CheckAccountDeleteRequest& request, const CheckAccountDeleteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckAccountDeleteOutcomeCallable checkAccountDeleteCallable(const Model::CheckAccountDeleteRequest& request) const;
@@ -715,6 +736,9 @@ namespace AlibabaCloud
 			ResendPromoteResourceAccountEmailOutcome resendPromoteResourceAccountEmail(const Model::ResendPromoteResourceAccountEmailRequest &request)const;
 			void resendPromoteResourceAccountEmailAsync(const Model::ResendPromoteResourceAccountEmailRequest& request, const ResendPromoteResourceAccountEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResendPromoteResourceAccountEmailOutcomeCallable resendPromoteResourceAccountEmailCallable(const Model::ResendPromoteResourceAccountEmailRequest& request) const;
+			RetryChangeAccountEmailOutcome retryChangeAccountEmail(const Model::RetryChangeAccountEmailRequest &request)const;
+			void retryChangeAccountEmailAsync(const Model::RetryChangeAccountEmailRequest& request, const RetryChangeAccountEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RetryChangeAccountEmailOutcomeCallable retryChangeAccountEmailCallable(const Model::RetryChangeAccountEmailRequest& request) const;
 			SendVerificationCodeForBindSecureMobilePhoneOutcome sendVerificationCodeForBindSecureMobilePhone(const Model::SendVerificationCodeForBindSecureMobilePhoneRequest &request)const;
 			void sendVerificationCodeForBindSecureMobilePhoneAsync(const Model::SendVerificationCodeForBindSecureMobilePhoneRequest& request, const SendVerificationCodeForBindSecureMobilePhoneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SendVerificationCodeForBindSecureMobilePhoneOutcomeCallable sendVerificationCodeForBindSecureMobilePhoneCallable(const Model::SendVerificationCodeForBindSecureMobilePhoneRequest& request) const;

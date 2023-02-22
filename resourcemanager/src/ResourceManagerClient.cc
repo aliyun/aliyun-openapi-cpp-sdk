@@ -195,6 +195,42 @@ ResourceManagerClient::BindSecureMobilePhoneOutcomeCallable ResourceManagerClien
 	return task->get_future();
 }
 
+ResourceManagerClient::CancelChangeAccountEmailOutcome ResourceManagerClient::cancelChangeAccountEmail(const CancelChangeAccountEmailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelChangeAccountEmailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelChangeAccountEmailOutcome(CancelChangeAccountEmailResult(outcome.result()));
+	else
+		return CancelChangeAccountEmailOutcome(outcome.error());
+}
+
+void ResourceManagerClient::cancelChangeAccountEmailAsync(const CancelChangeAccountEmailRequest& request, const CancelChangeAccountEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelChangeAccountEmail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::CancelChangeAccountEmailOutcomeCallable ResourceManagerClient::cancelChangeAccountEmailCallable(const CancelChangeAccountEmailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelChangeAccountEmailOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelChangeAccountEmail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ResourceManagerClient::CancelCreateCloudAccountOutcome ResourceManagerClient::cancelCreateCloudAccount(const CancelCreateCloudAccountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -297,6 +333,42 @@ ResourceManagerClient::CancelPromoteResourceAccountOutcomeCallable ResourceManag
 			[this, request]()
 			{
 			return this->cancelPromoteResourceAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::ChangeAccountEmailOutcome ResourceManagerClient::changeAccountEmail(const ChangeAccountEmailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeAccountEmailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeAccountEmailOutcome(ChangeAccountEmailResult(outcome.result()));
+	else
+		return ChangeAccountEmailOutcome(outcome.error());
+}
+
+void ResourceManagerClient::changeAccountEmailAsync(const ChangeAccountEmailRequest& request, const ChangeAccountEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeAccountEmail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::ChangeAccountEmailOutcomeCallable ResourceManagerClient::changeAccountEmailCallable(const ChangeAccountEmailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeAccountEmailOutcome()>>(
+			[this, request]()
+			{
+			return this->changeAccountEmail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2853,6 +2925,42 @@ ResourceManagerClient::ResendPromoteResourceAccountEmailOutcomeCallable Resource
 			[this, request]()
 			{
 			return this->resendPromoteResourceAccountEmail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ResourceManagerClient::RetryChangeAccountEmailOutcome ResourceManagerClient::retryChangeAccountEmail(const RetryChangeAccountEmailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RetryChangeAccountEmailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RetryChangeAccountEmailOutcome(RetryChangeAccountEmailResult(outcome.result()));
+	else
+		return RetryChangeAccountEmailOutcome(outcome.error());
+}
+
+void ResourceManagerClient::retryChangeAccountEmailAsync(const RetryChangeAccountEmailRequest& request, const RetryChangeAccountEmailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, retryChangeAccountEmail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceManagerClient::RetryChangeAccountEmailOutcomeCallable ResourceManagerClient::retryChangeAccountEmailCallable(const RetryChangeAccountEmailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RetryChangeAccountEmailOutcome()>>(
+			[this, request]()
+			{
+			return this->retryChangeAccountEmail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

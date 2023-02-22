@@ -66,6 +66,8 @@ void GetAccountResult::parse(const std::string &payload)
 		account_.resourceDirectoryPath = accountNode["ResourceDirectoryPath"].asString();
 	if(!accountNode["Location"].isNull())
 		account_.location = accountNode["Location"].asString();
+	if(!accountNode["EmailStatus"].isNull())
+		account_.emailStatus = accountNode["EmailStatus"].asString();
 	auto allTagsNode = accountNode["Tags"]["Tag"];
 	for (auto accountNodeTagsTag : allTagsNode)
 	{
