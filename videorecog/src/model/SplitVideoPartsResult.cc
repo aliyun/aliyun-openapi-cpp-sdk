@@ -52,6 +52,22 @@ void SplitVideoPartsResult::parse(const std::string &payload)
 			elementsItemObject.index = std::stol(dataNodeElementselementsItem["Index"].asString());
 		data_.elements.push_back(elementsItemObject);
 	}
+	auto allSplitVideoPartResultsNode = dataNode["SplitVideoPartResults"]["splitVideoPartResultsItem"];
+	for (auto dataNodeSplitVideoPartResultssplitVideoPartResultsItem : allSplitVideoPartResultsNode)
+	{
+		Data::SplitVideoPartResultsItem splitVideoPartResultsItemObject;
+		if(!dataNodeSplitVideoPartResultssplitVideoPartResultsItem["BeginTime"].isNull())
+			splitVideoPartResultsItemObject.beginTime = std::stof(dataNodeSplitVideoPartResultssplitVideoPartResultsItem["BeginTime"].asString());
+		if(!dataNodeSplitVideoPartResultssplitVideoPartResultsItem["EndTime"].isNull())
+			splitVideoPartResultsItemObject.endTime = std::stof(dataNodeSplitVideoPartResultssplitVideoPartResultsItem["EndTime"].asString());
+		if(!dataNodeSplitVideoPartResultssplitVideoPartResultsItem["Theme"].isNull())
+			splitVideoPartResultsItemObject.theme = dataNodeSplitVideoPartResultssplitVideoPartResultsItem["Theme"].asString();
+		if(!dataNodeSplitVideoPartResultssplitVideoPartResultsItem["Type"].isNull())
+			splitVideoPartResultsItemObject.type = dataNodeSplitVideoPartResultssplitVideoPartResultsItem["Type"].asString();
+		if(!dataNodeSplitVideoPartResultssplitVideoPartResultsItem["By"].isNull())
+			splitVideoPartResultsItemObject.by = dataNodeSplitVideoPartResultssplitVideoPartResultsItem["By"].asString();
+		data_.splitVideoPartResults.push_back(splitVideoPartResultsItemObject);
+	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

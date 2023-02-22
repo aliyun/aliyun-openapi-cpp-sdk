@@ -40,6 +40,15 @@ namespace AlibabaCloud
 						float beginTime;
 						long index;
 					};
+					struct SplitVideoPartResultsItem
+					{
+						std::string type;
+						float endTime;
+						std::string by;
+						float beginTime;
+						std::string theme;
+					};
+					std::vector<SplitVideoPartResultsItem> splitVideoPartResults;
 					std::vector<ElementsItem> elements;
 				};
 
