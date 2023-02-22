@@ -42,6 +42,8 @@
 #include "model/EraseVideoLogoResult.h"
 #include "model/EraseVideoSubtitlesRequest.h"
 #include "model/EraseVideoSubtitlesResult.h"
+#include "model/GenerateHumanAnimeStyleVideoRequest.h"
+#include "model/GenerateHumanAnimeStyleVideoResult.h"
 #include "model/GenerateVideoRequest.h"
 #include "model/GenerateVideoResult.h"
 #include "model/GetAsyncJobResultRequest.h"
@@ -97,6 +99,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::EraseVideoSubtitlesResult> EraseVideoSubtitlesOutcome;
 			typedef std::future<EraseVideoSubtitlesOutcome> EraseVideoSubtitlesOutcomeCallable;
 			typedef std::function<void(const VideoenhanClient*, const Model::EraseVideoSubtitlesRequest&, const EraseVideoSubtitlesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EraseVideoSubtitlesAsyncHandler;
+			typedef Outcome<Error, Model::GenerateHumanAnimeStyleVideoResult> GenerateHumanAnimeStyleVideoOutcome;
+			typedef std::future<GenerateHumanAnimeStyleVideoOutcome> GenerateHumanAnimeStyleVideoOutcomeCallable;
+			typedef std::function<void(const VideoenhanClient*, const Model::GenerateHumanAnimeStyleVideoRequest&, const GenerateHumanAnimeStyleVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateHumanAnimeStyleVideoAsyncHandler;
 			typedef Outcome<Error, Model::GenerateVideoResult> GenerateVideoOutcome;
 			typedef std::future<GenerateVideoOutcome> GenerateVideoOutcomeCallable;
 			typedef std::function<void(const VideoenhanClient*, const Model::GenerateVideoRequest&, const GenerateVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateVideoAsyncHandler;
@@ -156,6 +161,9 @@ namespace AlibabaCloud
 			EraseVideoSubtitlesOutcome eraseVideoSubtitles(const Model::EraseVideoSubtitlesRequest &request)const;
 			void eraseVideoSubtitlesAsync(const Model::EraseVideoSubtitlesRequest& request, const EraseVideoSubtitlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EraseVideoSubtitlesOutcomeCallable eraseVideoSubtitlesCallable(const Model::EraseVideoSubtitlesRequest& request) const;
+			GenerateHumanAnimeStyleVideoOutcome generateHumanAnimeStyleVideo(const Model::GenerateHumanAnimeStyleVideoRequest &request)const;
+			void generateHumanAnimeStyleVideoAsync(const Model::GenerateHumanAnimeStyleVideoRequest& request, const GenerateHumanAnimeStyleVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GenerateHumanAnimeStyleVideoOutcomeCallable generateHumanAnimeStyleVideoCallable(const Model::GenerateHumanAnimeStyleVideoRequest& request) const;
 			GenerateVideoOutcome generateVideo(const Model::GenerateVideoRequest &request)const;
 			void generateVideoAsync(const Model::GenerateVideoRequest& request, const GenerateVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateVideoOutcomeCallable generateVideoCallable(const Model::GenerateVideoRequest& request) const;

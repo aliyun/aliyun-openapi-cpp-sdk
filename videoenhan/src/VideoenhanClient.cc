@@ -411,6 +411,42 @@ VideoenhanClient::EraseVideoSubtitlesOutcomeCallable VideoenhanClient::eraseVide
 	return task->get_future();
 }
 
+VideoenhanClient::GenerateHumanAnimeStyleVideoOutcome VideoenhanClient::generateHumanAnimeStyleVideo(const GenerateHumanAnimeStyleVideoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GenerateHumanAnimeStyleVideoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GenerateHumanAnimeStyleVideoOutcome(GenerateHumanAnimeStyleVideoResult(outcome.result()));
+	else
+		return GenerateHumanAnimeStyleVideoOutcome(outcome.error());
+}
+
+void VideoenhanClient::generateHumanAnimeStyleVideoAsync(const GenerateHumanAnimeStyleVideoRequest& request, const GenerateHumanAnimeStyleVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, generateHumanAnimeStyleVideo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideoenhanClient::GenerateHumanAnimeStyleVideoOutcomeCallable VideoenhanClient::generateHumanAnimeStyleVideoCallable(const GenerateHumanAnimeStyleVideoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GenerateHumanAnimeStyleVideoOutcome()>>(
+			[this, request]()
+			{
+			return this->generateHumanAnimeStyleVideo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VideoenhanClient::GenerateVideoOutcome VideoenhanClient::generateVideo(const GenerateVideoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

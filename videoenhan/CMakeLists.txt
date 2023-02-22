@@ -41,6 +41,8 @@ set(videoenhan_public_header_model
 	include/alibabacloud/videoenhan/model/EraseVideoLogoResult.h
 	include/alibabacloud/videoenhan/model/EraseVideoSubtitlesRequest.h
 	include/alibabacloud/videoenhan/model/EraseVideoSubtitlesResult.h
+	include/alibabacloud/videoenhan/model/GenerateHumanAnimeStyleVideoRequest.h
+	include/alibabacloud/videoenhan/model/GenerateHumanAnimeStyleVideoResult.h
 	include/alibabacloud/videoenhan/model/GenerateVideoRequest.h
 	include/alibabacloud/videoenhan/model/GenerateVideoResult.h
 	include/alibabacloud/videoenhan/model/GetAsyncJobResultRequest.h
@@ -80,6 +82,8 @@ set(videoenhan_src
 	src/model/EraseVideoLogoResult.cc
 	src/model/EraseVideoSubtitlesRequest.cc
 	src/model/EraseVideoSubtitlesResult.cc
+	src/model/GenerateHumanAnimeStyleVideoRequest.cc
+	src/model/GenerateHumanAnimeStyleVideoResult.cc
 	src/model/GenerateVideoRequest.cc
 	src/model/GenerateVideoResult.cc
 	src/model/GetAsyncJobResultRequest.cc
