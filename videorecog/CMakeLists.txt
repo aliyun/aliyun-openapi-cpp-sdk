@@ -23,6 +23,8 @@ set(videorecog_public_header
 set(videorecog_public_header_model 
 	include/alibabacloud/videorecog/model/DetectVideoShotRequest.h
 	include/alibabacloud/videorecog/model/DetectVideoShotResult.h
+	include/alibabacloud/videorecog/model/EvaluateVideoQualityRequest.h
+	include/alibabacloud/videorecog/model/EvaluateVideoQualityResult.h
 	include/alibabacloud/videorecog/model/GenerateVideoCoverRequest.h
 	include/alibabacloud/videorecog/model/GenerateVideoCoverResult.h
 	include/alibabacloud/videorecog/model/GetAsyncJobResultRequest.h
@@ -38,6 +40,8 @@ set(videorecog_src
 	src/VideorecogClient.cc
 	src/model/DetectVideoShotRequest.cc
 	src/model/DetectVideoShotResult.cc
+	src/model/EvaluateVideoQualityRequest.cc
+	src/model/EvaluateVideoQualityResult.cc
 	src/model/GenerateVideoCoverRequest.cc
 	src/model/GenerateVideoCoverResult.cc
 	src/model/GetAsyncJobResultRequest.cc

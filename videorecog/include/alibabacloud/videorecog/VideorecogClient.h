@@ -24,6 +24,8 @@
 #include "VideorecogExport.h"
 #include "model/DetectVideoShotRequest.h"
 #include "model/DetectVideoShotResult.h"
+#include "model/EvaluateVideoQualityRequest.h"
+#include "model/EvaluateVideoQualityResult.h"
 #include "model/GenerateVideoCoverRequest.h"
 #include "model/GenerateVideoCoverResult.h"
 #include "model/GetAsyncJobResultRequest.h"
@@ -46,6 +48,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectVideoShotResult> DetectVideoShotOutcome;
 			typedef std::future<DetectVideoShotOutcome> DetectVideoShotOutcomeCallable;
 			typedef std::function<void(const VideorecogClient*, const Model::DetectVideoShotRequest&, const DetectVideoShotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectVideoShotAsyncHandler;
+			typedef Outcome<Error, Model::EvaluateVideoQualityResult> EvaluateVideoQualityOutcome;
+			typedef std::future<EvaluateVideoQualityOutcome> EvaluateVideoQualityOutcomeCallable;
+			typedef std::function<void(const VideorecogClient*, const Model::EvaluateVideoQualityRequest&, const EvaluateVideoQualityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EvaluateVideoQualityAsyncHandler;
 			typedef Outcome<Error, Model::GenerateVideoCoverResult> GenerateVideoCoverOutcome;
 			typedef std::future<GenerateVideoCoverOutcome> GenerateVideoCoverOutcomeCallable;
 			typedef std::function<void(const VideorecogClient*, const Model::GenerateVideoCoverRequest&, const GenerateVideoCoverOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateVideoCoverAsyncHandler;
@@ -69,6 +74,9 @@ namespace AlibabaCloud
 			DetectVideoShotOutcome detectVideoShot(const Model::DetectVideoShotRequest &request)const;
 			void detectVideoShotAsync(const Model::DetectVideoShotRequest& request, const DetectVideoShotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectVideoShotOutcomeCallable detectVideoShotCallable(const Model::DetectVideoShotRequest& request) const;
+			EvaluateVideoQualityOutcome evaluateVideoQuality(const Model::EvaluateVideoQualityRequest &request)const;
+			void evaluateVideoQualityAsync(const Model::EvaluateVideoQualityRequest& request, const EvaluateVideoQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EvaluateVideoQualityOutcomeCallable evaluateVideoQualityCallable(const Model::EvaluateVideoQualityRequest& request) const;
 			GenerateVideoCoverOutcome generateVideoCover(const Model::GenerateVideoCoverRequest &request)const;
 			void generateVideoCoverAsync(const Model::GenerateVideoCoverRequest& request, const GenerateVideoCoverAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateVideoCoverOutcomeCallable generateVideoCoverCallable(const Model::GenerateVideoCoverRequest& request) const;

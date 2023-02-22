@@ -87,6 +87,42 @@ VideorecogClient::DetectVideoShotOutcomeCallable VideorecogClient::detectVideoSh
 	return task->get_future();
 }
 
+VideorecogClient::EvaluateVideoQualityOutcome VideorecogClient::evaluateVideoQuality(const EvaluateVideoQualityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EvaluateVideoQualityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EvaluateVideoQualityOutcome(EvaluateVideoQualityResult(outcome.result()));
+	else
+		return EvaluateVideoQualityOutcome(outcome.error());
+}
+
+void VideorecogClient::evaluateVideoQualityAsync(const EvaluateVideoQualityRequest& request, const EvaluateVideoQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, evaluateVideoQuality(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideorecogClient::EvaluateVideoQualityOutcomeCallable VideorecogClient::evaluateVideoQualityCallable(const EvaluateVideoQualityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EvaluateVideoQualityOutcome()>>(
+			[this, request]()
+			{
+			return this->evaluateVideoQuality(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VideorecogClient::GenerateVideoCoverOutcome VideorecogClient::generateVideoCover(const GenerateVideoCoverRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
