@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getRouteName() const;
+	void setRouteName(const std::string &routeName);
 	std::string getMask() const;
 	void setMask(const std::string &mask);
 	std::string getResultCount() const;
@@ -56,6 +58,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
+	std::string routeName_;
 	std::string mask_;
 	std::string resultCount_;
 	std::string resourceOwnerAccount_;

@@ -52,6 +52,15 @@ void ThreeElementsVerificationRequest::setCertCode(const std::string &certCode) 
   setParameter(std::string("CertCode"), certCode);
 }
 
+std::string ThreeElementsVerificationRequest::getRouteName() const {
+  return routeName_;
+}
+
+void ThreeElementsVerificationRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
+}
+
 std::string ThreeElementsVerificationRequest::getMask() const {
   return mask_;
 }

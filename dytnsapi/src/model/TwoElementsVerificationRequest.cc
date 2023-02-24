@@ -43,6 +43,15 @@ void TwoElementsVerificationRequest::setAccessKeyId(const std::string &accessKey
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string TwoElementsVerificationRequest::getRouteName() const {
+  return routeName_;
+}
+
+void TwoElementsVerificationRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
+}
+
 std::string TwoElementsVerificationRequest::getMask() const {
   return mask_;
 }
