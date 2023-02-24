@@ -74,6 +74,24 @@ void CreatePickUpWaybillRequest::setRemark(const std::string &remark) {
   setParameter(std::string("Remark"), remark);
 }
 
+std::string CreatePickUpWaybillRequest::getAppointGotStartTime() const {
+  return appointGotStartTime_;
+}
+
+void CreatePickUpWaybillRequest::setAppointGotStartTime(const std::string &appointGotStartTime) {
+  appointGotStartTime_ = appointGotStartTime;
+  setParameter(std::string("AppointGotStartTime"), appointGotStartTime);
+}
+
+std::string CreatePickUpWaybillRequest::getAppointGotEndTime() const {
+  return appointGotEndTime_;
+}
+
+void CreatePickUpWaybillRequest::setAppointGotEndTime(const std::string &appointGotEndTime) {
+  appointGotEndTime_ = appointGotEndTime;
+  setParameter(std::string("AppointGotEndTime"), appointGotEndTime);
+}
+
 std::string CreatePickUpWaybillRequest::getCpCode() const {
   return cpCode_;
 }
@@ -143,6 +161,15 @@ void CreatePickUpWaybillRequest::setGoodsInfos(const std::vector<CreatePickUpWay
     setParameter(std::string("GoodsInfos") + "." + std::to_string(dep1 + 1) + ".Weight", goodsInfos[dep1].weight);
     setParameter(std::string("GoodsInfos") + "." + std::to_string(dep1 + 1) + ".Quantity", goodsInfos[dep1].quantity);
   }
+}
+
+int CreatePickUpWaybillRequest::getBizType() const {
+  return bizType_;
+}
+
+void CreatePickUpWaybillRequest::setBizType(int bizType) {
+  bizType_ = bizType;
+  setParameter(std::string("BizType"), std::to_string(bizType));
 }
 
 std::string CreatePickUpWaybillRequest::getSendName() const {

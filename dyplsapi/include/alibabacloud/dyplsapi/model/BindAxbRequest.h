@@ -52,6 +52,8 @@ public:
 	void setExpectCity(const std::string &expectCity);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getDtmfConfig() const;
+	void setDtmfConfig(const std::string &dtmfConfig);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getOutOrderId() const;
@@ -81,6 +83,7 @@ private:
 	std::string phoneNoA_;
 	std::string expectCity_;
 	std::string resourceOwnerAccount_;
+	std::string dtmfConfig_;
 	long ownerId_;
 	std::string outOrderId_;
 	std::string poolKey_;

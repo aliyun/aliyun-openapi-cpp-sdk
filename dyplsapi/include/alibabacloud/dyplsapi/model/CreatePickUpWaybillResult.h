@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string errorMsg;
 					std::string errorCode;
 					std::string success;
+					std::string gotCode;
 				};
 
 

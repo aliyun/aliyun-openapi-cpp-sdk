@@ -38,34 +38,24 @@
 #include "model/BuySecretNoResult.h"
 #include "model/CancelPickUpWaybillRequest.h"
 #include "model/CancelPickUpWaybillResult.h"
-#include "model/ConfirmSendSmsRequest.h"
-#include "model/ConfirmSendSmsResult.h"
 #include "model/CreateAxgGroupRequest.h"
 #include "model/CreateAxgGroupResult.h"
 #include "model/CreatePickUpWaybillRequest.h"
 #include "model/CreatePickUpWaybillResult.h"
-#include "model/CreateSubscriptionRequest.h"
-#include "model/CreateSubscriptionResult.h"
+#include "model/CreatePickUpWaybillPreQueryRequest.h"
+#include "model/CreatePickUpWaybillPreQueryResult.h"
 #include "model/DeleteSecretBlacklistRequest.h"
 #include "model/DeleteSecretBlacklistResult.h"
-#include "model/GetFaceVerifyRequest.h"
-#include "model/GetFaceVerifyResult.h"
 #include "model/GetSecretAsrDetailRequest.h"
 #include "model/GetSecretAsrDetailResult.h"
-#include "model/GetSubscriptionDetailRequest.h"
-#include "model/GetSubscriptionDetailResult.h"
 #include "model/GetTotalPublicUrlRequest.h"
 #include "model/GetTotalPublicUrlResult.h"
-#include "model/InitFaceVerifyRequest.h"
-#include "model/InitFaceVerifyResult.h"
 #include "model/LockSecretNoRequest.h"
 #include "model/LockSecretNoResult.h"
 #include "model/OperateAxgGroupRequest.h"
 #include "model/OperateAxgGroupResult.h"
 #include "model/OperateBlackNoRequest.h"
 #include "model/OperateBlackNoResult.h"
-#include "model/QueryCallStatusRequest.h"
-#include "model/QueryCallStatusResult.h"
 #include "model/QueryPhoneNoAByTrackNoRequest.h"
 #include "model/QueryPhoneNoAByTrackNoResult.h"
 #include "model/QueryRecordFileDownloadUrlRequest.h"
@@ -84,12 +74,6 @@
 #include "model/UnbindSubscriptionResult.h"
 #include "model/UnlockSecretNoRequest.h"
 #include "model/UnlockSecretNoResult.h"
-#include "model/UpdateDefaultBRequest.h"
-#include "model/UpdateDefaultBResult.h"
-#include "model/UpdatePhoneNumberRequest.h"
-#include "model/UpdatePhoneNumberResult.h"
-#include "model/UpdatePhoneSwitchRequest.h"
-#include "model/UpdatePhoneSwitchResult.h"
 #include "model/UpdateSubscriptionRequest.h"
 #include "model/UpdateSubscriptionResult.h"
 
@@ -125,36 +109,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CancelPickUpWaybillResult> CancelPickUpWaybillOutcome;
 			typedef std::future<CancelPickUpWaybillOutcome> CancelPickUpWaybillOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::CancelPickUpWaybillRequest&, const CancelPickUpWaybillOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelPickUpWaybillAsyncHandler;
-			typedef Outcome<Error, Model::ConfirmSendSmsResult> ConfirmSendSmsOutcome;
-			typedef std::future<ConfirmSendSmsOutcome> ConfirmSendSmsOutcomeCallable;
-			typedef std::function<void(const DyplsapiClient*, const Model::ConfirmSendSmsRequest&, const ConfirmSendSmsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfirmSendSmsAsyncHandler;
 			typedef Outcome<Error, Model::CreateAxgGroupResult> CreateAxgGroupOutcome;
 			typedef std::future<CreateAxgGroupOutcome> CreateAxgGroupOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::CreateAxgGroupRequest&, const CreateAxgGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAxgGroupAsyncHandler;
 			typedef Outcome<Error, Model::CreatePickUpWaybillResult> CreatePickUpWaybillOutcome;
 			typedef std::future<CreatePickUpWaybillOutcome> CreatePickUpWaybillOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::CreatePickUpWaybillRequest&, const CreatePickUpWaybillOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePickUpWaybillAsyncHandler;
-			typedef Outcome<Error, Model::CreateSubscriptionResult> CreateSubscriptionOutcome;
-			typedef std::future<CreateSubscriptionOutcome> CreateSubscriptionOutcomeCallable;
-			typedef std::function<void(const DyplsapiClient*, const Model::CreateSubscriptionRequest&, const CreateSubscriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubscriptionAsyncHandler;
+			typedef Outcome<Error, Model::CreatePickUpWaybillPreQueryResult> CreatePickUpWaybillPreQueryOutcome;
+			typedef std::future<CreatePickUpWaybillPreQueryOutcome> CreatePickUpWaybillPreQueryOutcomeCallable;
+			typedef std::function<void(const DyplsapiClient*, const Model::CreatePickUpWaybillPreQueryRequest&, const CreatePickUpWaybillPreQueryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePickUpWaybillPreQueryAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSecretBlacklistResult> DeleteSecretBlacklistOutcome;
 			typedef std::future<DeleteSecretBlacklistOutcome> DeleteSecretBlacklistOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::DeleteSecretBlacklistRequest&, const DeleteSecretBlacklistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecretBlacklistAsyncHandler;
-			typedef Outcome<Error, Model::GetFaceVerifyResult> GetFaceVerifyOutcome;
-			typedef std::future<GetFaceVerifyOutcome> GetFaceVerifyOutcomeCallable;
-			typedef std::function<void(const DyplsapiClient*, const Model::GetFaceVerifyRequest&, const GetFaceVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetFaceVerifyAsyncHandler;
 			typedef Outcome<Error, Model::GetSecretAsrDetailResult> GetSecretAsrDetailOutcome;
 			typedef std::future<GetSecretAsrDetailOutcome> GetSecretAsrDetailOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::GetSecretAsrDetailRequest&, const GetSecretAsrDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSecretAsrDetailAsyncHandler;
-			typedef Outcome<Error, Model::GetSubscriptionDetailResult> GetSubscriptionDetailOutcome;
-			typedef std::future<GetSubscriptionDetailOutcome> GetSubscriptionDetailOutcomeCallable;
-			typedef std::function<void(const DyplsapiClient*, const Model::GetSubscriptionDetailRequest&, const GetSubscriptionDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSubscriptionDetailAsyncHandler;
 			typedef Outcome<Error, Model::GetTotalPublicUrlResult> GetTotalPublicUrlOutcome;
 			typedef std::future<GetTotalPublicUrlOutcome> GetTotalPublicUrlOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::GetTotalPublicUrlRequest&, const GetTotalPublicUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTotalPublicUrlAsyncHandler;
-			typedef Outcome<Error, Model::InitFaceVerifyResult> InitFaceVerifyOutcome;
-			typedef std::future<InitFaceVerifyOutcome> InitFaceVerifyOutcomeCallable;
-			typedef std::function<void(const DyplsapiClient*, const Model::InitFaceVerifyRequest&, const InitFaceVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InitFaceVerifyAsyncHandler;
 			typedef Outcome<Error, Model::LockSecretNoResult> LockSecretNoOutcome;
 			typedef std::future<LockSecretNoOutcome> LockSecretNoOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::LockSecretNoRequest&, const LockSecretNoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LockSecretNoAsyncHandler;
@@ -164,9 +136,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OperateBlackNoResult> OperateBlackNoOutcome;
 			typedef std::future<OperateBlackNoOutcome> OperateBlackNoOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::OperateBlackNoRequest&, const OperateBlackNoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateBlackNoAsyncHandler;
-			typedef Outcome<Error, Model::QueryCallStatusResult> QueryCallStatusOutcome;
-			typedef std::future<QueryCallStatusOutcome> QueryCallStatusOutcomeCallable;
-			typedef std::function<void(const DyplsapiClient*, const Model::QueryCallStatusRequest&, const QueryCallStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryCallStatusAsyncHandler;
 			typedef Outcome<Error, Model::QueryPhoneNoAByTrackNoResult> QueryPhoneNoAByTrackNoOutcome;
 			typedef std::future<QueryPhoneNoAByTrackNoOutcome> QueryPhoneNoAByTrackNoOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::QueryPhoneNoAByTrackNoRequest&, const QueryPhoneNoAByTrackNoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryPhoneNoAByTrackNoAsyncHandler;
@@ -194,15 +163,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UnlockSecretNoResult> UnlockSecretNoOutcome;
 			typedef std::future<UnlockSecretNoOutcome> UnlockSecretNoOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::UnlockSecretNoRequest&, const UnlockSecretNoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnlockSecretNoAsyncHandler;
-			typedef Outcome<Error, Model::UpdateDefaultBResult> UpdateDefaultBOutcome;
-			typedef std::future<UpdateDefaultBOutcome> UpdateDefaultBOutcomeCallable;
-			typedef std::function<void(const DyplsapiClient*, const Model::UpdateDefaultBRequest&, const UpdateDefaultBOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDefaultBAsyncHandler;
-			typedef Outcome<Error, Model::UpdatePhoneNumberResult> UpdatePhoneNumberOutcome;
-			typedef std::future<UpdatePhoneNumberOutcome> UpdatePhoneNumberOutcomeCallable;
-			typedef std::function<void(const DyplsapiClient*, const Model::UpdatePhoneNumberRequest&, const UpdatePhoneNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePhoneNumberAsyncHandler;
-			typedef Outcome<Error, Model::UpdatePhoneSwitchResult> UpdatePhoneSwitchOutcome;
-			typedef std::future<UpdatePhoneSwitchOutcome> UpdatePhoneSwitchOutcomeCallable;
-			typedef std::function<void(const DyplsapiClient*, const Model::UpdatePhoneSwitchRequest&, const UpdatePhoneSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePhoneSwitchAsyncHandler;
 			typedef Outcome<Error, Model::UpdateSubscriptionResult> UpdateSubscriptionOutcome;
 			typedef std::future<UpdateSubscriptionOutcome> UpdateSubscriptionOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::UpdateSubscriptionRequest&, const UpdateSubscriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSubscriptionAsyncHandler;
@@ -235,36 +195,24 @@ namespace AlibabaCloud
 			CancelPickUpWaybillOutcome cancelPickUpWaybill(const Model::CancelPickUpWaybillRequest &request)const;
 			void cancelPickUpWaybillAsync(const Model::CancelPickUpWaybillRequest& request, const CancelPickUpWaybillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelPickUpWaybillOutcomeCallable cancelPickUpWaybillCallable(const Model::CancelPickUpWaybillRequest& request) const;
-			ConfirmSendSmsOutcome confirmSendSms(const Model::ConfirmSendSmsRequest &request)const;
-			void confirmSendSmsAsync(const Model::ConfirmSendSmsRequest& request, const ConfirmSendSmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ConfirmSendSmsOutcomeCallable confirmSendSmsCallable(const Model::ConfirmSendSmsRequest& request) const;
 			CreateAxgGroupOutcome createAxgGroup(const Model::CreateAxgGroupRequest &request)const;
 			void createAxgGroupAsync(const Model::CreateAxgGroupRequest& request, const CreateAxgGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAxgGroupOutcomeCallable createAxgGroupCallable(const Model::CreateAxgGroupRequest& request) const;
 			CreatePickUpWaybillOutcome createPickUpWaybill(const Model::CreatePickUpWaybillRequest &request)const;
 			void createPickUpWaybillAsync(const Model::CreatePickUpWaybillRequest& request, const CreatePickUpWaybillAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePickUpWaybillOutcomeCallable createPickUpWaybillCallable(const Model::CreatePickUpWaybillRequest& request) const;
-			CreateSubscriptionOutcome createSubscription(const Model::CreateSubscriptionRequest &request)const;
-			void createSubscriptionAsync(const Model::CreateSubscriptionRequest& request, const CreateSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateSubscriptionOutcomeCallable createSubscriptionCallable(const Model::CreateSubscriptionRequest& request) const;
+			CreatePickUpWaybillPreQueryOutcome createPickUpWaybillPreQuery(const Model::CreatePickUpWaybillPreQueryRequest &request)const;
+			void createPickUpWaybillPreQueryAsync(const Model::CreatePickUpWaybillPreQueryRequest& request, const CreatePickUpWaybillPreQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreatePickUpWaybillPreQueryOutcomeCallable createPickUpWaybillPreQueryCallable(const Model::CreatePickUpWaybillPreQueryRequest& request) const;
 			DeleteSecretBlacklistOutcome deleteSecretBlacklist(const Model::DeleteSecretBlacklistRequest &request)const;
 			void deleteSecretBlacklistAsync(const Model::DeleteSecretBlacklistRequest& request, const DeleteSecretBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSecretBlacklistOutcomeCallable deleteSecretBlacklistCallable(const Model::DeleteSecretBlacklistRequest& request) const;
-			GetFaceVerifyOutcome getFaceVerify(const Model::GetFaceVerifyRequest &request)const;
-			void getFaceVerifyAsync(const Model::GetFaceVerifyRequest& request, const GetFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetFaceVerifyOutcomeCallable getFaceVerifyCallable(const Model::GetFaceVerifyRequest& request) const;
 			GetSecretAsrDetailOutcome getSecretAsrDetail(const Model::GetSecretAsrDetailRequest &request)const;
 			void getSecretAsrDetailAsync(const Model::GetSecretAsrDetailRequest& request, const GetSecretAsrDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSecretAsrDetailOutcomeCallable getSecretAsrDetailCallable(const Model::GetSecretAsrDetailRequest& request) const;
-			GetSubscriptionDetailOutcome getSubscriptionDetail(const Model::GetSubscriptionDetailRequest &request)const;
-			void getSubscriptionDetailAsync(const Model::GetSubscriptionDetailRequest& request, const GetSubscriptionDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetSubscriptionDetailOutcomeCallable getSubscriptionDetailCallable(const Model::GetSubscriptionDetailRequest& request) const;
 			GetTotalPublicUrlOutcome getTotalPublicUrl(const Model::GetTotalPublicUrlRequest &request)const;
 			void getTotalPublicUrlAsync(const Model::GetTotalPublicUrlRequest& request, const GetTotalPublicUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTotalPublicUrlOutcomeCallable getTotalPublicUrlCallable(const Model::GetTotalPublicUrlRequest& request) const;
-			InitFaceVerifyOutcome initFaceVerify(const Model::InitFaceVerifyRequest &request)const;
-			void initFaceVerifyAsync(const Model::InitFaceVerifyRequest& request, const InitFaceVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			InitFaceVerifyOutcomeCallable initFaceVerifyCallable(const Model::InitFaceVerifyRequest& request) const;
 			LockSecretNoOutcome lockSecretNo(const Model::LockSecretNoRequest &request)const;
 			void lockSecretNoAsync(const Model::LockSecretNoRequest& request, const LockSecretNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			LockSecretNoOutcomeCallable lockSecretNoCallable(const Model::LockSecretNoRequest& request) const;
@@ -274,9 +222,6 @@ namespace AlibabaCloud
 			OperateBlackNoOutcome operateBlackNo(const Model::OperateBlackNoRequest &request)const;
 			void operateBlackNoAsync(const Model::OperateBlackNoRequest& request, const OperateBlackNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OperateBlackNoOutcomeCallable operateBlackNoCallable(const Model::OperateBlackNoRequest& request) const;
-			QueryCallStatusOutcome queryCallStatus(const Model::QueryCallStatusRequest &request)const;
-			void queryCallStatusAsync(const Model::QueryCallStatusRequest& request, const QueryCallStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryCallStatusOutcomeCallable queryCallStatusCallable(const Model::QueryCallStatusRequest& request) const;
 			QueryPhoneNoAByTrackNoOutcome queryPhoneNoAByTrackNo(const Model::QueryPhoneNoAByTrackNoRequest &request)const;
 			void queryPhoneNoAByTrackNoAsync(const Model::QueryPhoneNoAByTrackNoRequest& request, const QueryPhoneNoAByTrackNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryPhoneNoAByTrackNoOutcomeCallable queryPhoneNoAByTrackNoCallable(const Model::QueryPhoneNoAByTrackNoRequest& request) const;
@@ -304,15 +249,6 @@ namespace AlibabaCloud
 			UnlockSecretNoOutcome unlockSecretNo(const Model::UnlockSecretNoRequest &request)const;
 			void unlockSecretNoAsync(const Model::UnlockSecretNoRequest& request, const UnlockSecretNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UnlockSecretNoOutcomeCallable unlockSecretNoCallable(const Model::UnlockSecretNoRequest& request) const;
-			UpdateDefaultBOutcome updateDefaultB(const Model::UpdateDefaultBRequest &request)const;
-			void updateDefaultBAsync(const Model::UpdateDefaultBRequest& request, const UpdateDefaultBAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdateDefaultBOutcomeCallable updateDefaultBCallable(const Model::UpdateDefaultBRequest& request) const;
-			UpdatePhoneNumberOutcome updatePhoneNumber(const Model::UpdatePhoneNumberRequest &request)const;
-			void updatePhoneNumberAsync(const Model::UpdatePhoneNumberRequest& request, const UpdatePhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdatePhoneNumberOutcomeCallable updatePhoneNumberCallable(const Model::UpdatePhoneNumberRequest& request) const;
-			UpdatePhoneSwitchOutcome updatePhoneSwitch(const Model::UpdatePhoneSwitchRequest &request)const;
-			void updatePhoneSwitchAsync(const Model::UpdatePhoneSwitchRequest& request, const UpdatePhoneSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UpdatePhoneSwitchOutcomeCallable updatePhoneSwitchCallable(const Model::UpdatePhoneSwitchRequest& request) const;
 			UpdateSubscriptionOutcome updateSubscription(const Model::UpdateSubscriptionRequest &request)const;
 			void updateSubscriptionAsync(const Model::UpdateSubscriptionRequest& request, const UpdateSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateSubscriptionOutcomeCallable updateSubscriptionCallable(const Model::UpdateSubscriptionRequest& request) const;

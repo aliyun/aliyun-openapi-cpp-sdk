@@ -124,6 +124,15 @@ void BindAxbRequest::setResourceOwnerAccount(const std::string &resourceOwnerAcc
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
+std::string BindAxbRequest::getDtmfConfig() const {
+  return dtmfConfig_;
+}
+
+void BindAxbRequest::setDtmfConfig(const std::string &dtmfConfig) {
+  dtmfConfig_ = dtmfConfig;
+  setParameter(std::string("DtmfConfig"), dtmfConfig);
+}
+
 long BindAxbRequest::getOwnerId() const {
   return ownerId_;
 }

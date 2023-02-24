@@ -50,6 +50,8 @@ void CreatePickUpWaybillResult::parse(const std::string &payload)
 		data_.errorCode = dataNode["ErrorCode"].asString();
 	if(!dataNode["ErrorMsg"].isNull())
 		data_.errorMsg = dataNode["ErrorMsg"].asString();
+	if(!dataNode["GotCode"].isNull())
+		data_.gotCode = dataNode["GotCode"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Message"].isNull())

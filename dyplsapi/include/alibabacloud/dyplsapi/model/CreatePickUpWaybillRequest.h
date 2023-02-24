@@ -59,6 +59,10 @@ public:
 	void setOuterOrderCode(const std::string &outerOrderCode);
 	std::string getRemark() const;
 	void setRemark(const std::string &remark);
+	std::string getAppointGotStartTime() const;
+	void setAppointGotStartTime(const std::string &appointGotStartTime);
+	std::string getAppointGotEndTime() const;
+	void setAppointGotEndTime(const std::string &appointGotEndTime);
 	std::string getCpCode() const;
 	void setCpCode(const std::string &cpCode);
 	std::string getSendMobile() const;
@@ -73,6 +77,8 @@ public:
 	void setSendPhone(const std::string &sendPhone);
 	std::vector<GoodsInfos> getGoodsInfos() const;
 	void setGoodsInfos(const std::vector<GoodsInfos> &goodsInfos);
+	int getBizType() const;
+	void setBizType(int bizType);
 	std::string getSendName() const;
 	void setSendName(const std::string &sendName);
 	std::string getConsigneePhone() const;
@@ -84,6 +90,8 @@ private:
 	SendAddress sendAddress_;
 	std::string outerOrderCode_;
 	std::string remark_;
+	std::string appointGotStartTime_;
+	std::string appointGotEndTime_;
 	std::string cpCode_;
 	std::string sendMobile_;
 	std::string consigneeMobile_;
@@ -91,6 +99,7 @@ private:
 	ConsigneeAddress consigneeAddress_;
 	std::string sendPhone_;
 	std::vector<GoodsInfos> goodsInfos_;
+	int bizType_;
 	std::string sendName_;
 	std::string consigneePhone_;
 };
