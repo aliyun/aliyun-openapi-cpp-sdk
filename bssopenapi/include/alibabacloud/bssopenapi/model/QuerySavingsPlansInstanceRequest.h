@@ -48,6 +48,8 @@ public:
 	void setPageSize(int pageSize);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	std::string getStatus() const;
+	void setStatus(const std::string &status);
 
 private:
 	std::string endTime_;
@@ -57,6 +59,7 @@ private:
 	std::string instanceId_;
 	int pageSize_;
 	std::vector<Tag> tag_;
+	std::string status_;
 };
 } // namespace Model
 } // namespace BssOpenApi

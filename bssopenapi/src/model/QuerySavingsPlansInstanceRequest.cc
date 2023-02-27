@@ -93,3 +93,12 @@ void QuerySavingsPlansInstanceRequest::setTag(const std::vector<QuerySavingsPlan
   }
 }
 
+std::string QuerySavingsPlansInstanceRequest::getStatus() const {
+  return status_;
+}
+
+void QuerySavingsPlansInstanceRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
+}
+
