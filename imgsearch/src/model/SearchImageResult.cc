@@ -44,16 +44,16 @@ void SearchImageResult::parse(const std::string &payload)
 	for (auto dataNodeMatchListMatchListItem : allMatchListNode)
 	{
 		Data::MatchListItem matchListItemObject;
+		if(!dataNodeMatchListMatchListItem["ImageUrl"].isNull())
+			matchListItemObject.imageUrl = dataNodeMatchListMatchListItem["ImageUrl"].asString();
+		if(!dataNodeMatchListMatchListItem["EntityId"].isNull())
+			matchListItemObject.entityId = dataNodeMatchListMatchListItem["EntityId"].asString();
+		if(!dataNodeMatchListMatchListItem["Score"].isNull())
+			matchListItemObject.score = std::stof(dataNodeMatchListMatchListItem["Score"].asString());
 		if(!dataNodeMatchListMatchListItem["DataId"].isNull())
 			matchListItemObject.dataId = dataNodeMatchListMatchListItem["DataId"].asString();
 		if(!dataNodeMatchListMatchListItem["ExtraData"].isNull())
 			matchListItemObject.extraData = dataNodeMatchListMatchListItem["ExtraData"].asString();
-		if(!dataNodeMatchListMatchListItem["EntityId"].isNull())
-			matchListItemObject.entityId = dataNodeMatchListMatchListItem["EntityId"].asString();
-		if(!dataNodeMatchListMatchListItem["ImageUrl"].isNull())
-			matchListItemObject.imageUrl = dataNodeMatchListMatchListItem["ImageUrl"].asString();
-		if(!dataNodeMatchListMatchListItem["Score"].isNull())
-			matchListItemObject.score = std::stof(dataNodeMatchListMatchListItem["Score"].asString());
 		data_.matchList.push_back(matchListItemObject);
 	}
 

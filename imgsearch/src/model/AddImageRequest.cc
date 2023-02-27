@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Imgsearch::Model::AddImageRequest;
 
-AddImageRequest::AddImageRequest() :
-	RpcServiceRequest("imgsearch", "2020-03-20", "AddImage")
-{
-	setMethod(HttpRequest::Method::Post);
+AddImageRequest::AddImageRequest()
+    : RpcServiceRequest("imgsearch", "2020-03-20", "AddImage") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-AddImageRequest::~AddImageRequest()
-{}
+AddImageRequest::~AddImageRequest() {}
 
-std::string AddImageRequest::getEntityId()const
-{
-	return entityId_;
+std::string AddImageRequest::getEntityId() const {
+  return entityId_;
 }
 
-void AddImageRequest::setEntityId(const std::string& entityId)
-{
-	entityId_ = entityId;
-	setBodyParameter("EntityId", entityId);
+void AddImageRequest::setEntityId(const std::string &entityId) {
+  entityId_ = entityId;
+  setBodyParameter(std::string("EntityId"), entityId);
 }
 
-std::string AddImageRequest::getDbName()const
-{
-	return dbName_;
+std::string AddImageRequest::getDbName() const {
+  return dbName_;
 }
 
-void AddImageRequest::setDbName(const std::string& dbName)
-{
-	dbName_ = dbName;
-	setBodyParameter("DbName", dbName);
+void AddImageRequest::setDbName(const std::string &dbName) {
+  dbName_ = dbName;
+  setBodyParameter(std::string("DbName"), dbName);
 }
 
-std::string AddImageRequest::getImageUrl()const
-{
-	return imageUrl_;
+std::string AddImageRequest::getImageUrl() const {
+  return imageUrl_;
 }
 
-void AddImageRequest::setImageUrl(const std::string& imageUrl)
-{
-	imageUrl_ = imageUrl;
-	setBodyParameter("ImageUrl", imageUrl);
+void AddImageRequest::setImageUrl(const std::string &imageUrl) {
+  imageUrl_ = imageUrl;
+  setBodyParameter(std::string("ImageUrl"), imageUrl);
 }
 
-std::string AddImageRequest::getExtraData()const
-{
-	return extraData_;
+std::string AddImageRequest::getExtraData() const {
+  return extraData_;
 }
 
-void AddImageRequest::setExtraData(const std::string& extraData)
-{
-	extraData_ = extraData;
-	setBodyParameter("ExtraData", extraData);
+void AddImageRequest::setExtraData(const std::string &extraData) {
+  extraData_ = extraData;
+  setBodyParameter(std::string("ExtraData"), extraData);
 }
 

@@ -48,16 +48,16 @@ void ListImagesResult::parse(const std::string &payload)
 	for (auto dataNodeImageListImageListItem : allImageListNode)
 	{
 		Data::ImageListItem imageListItemObject;
+		if(!dataNodeImageListImageListItem["EntityId"].isNull())
+			imageListItemObject.entityId = dataNodeImageListImageListItem["EntityId"].asString();
+		if(!dataNodeImageListImageListItem["CreatedAt"].isNull())
+			imageListItemObject.createdAt = std::stol(dataNodeImageListImageListItem["CreatedAt"].asString());
+		if(!dataNodeImageListImageListItem["UpdatedAt"].isNull())
+			imageListItemObject.updatedAt = std::stol(dataNodeImageListImageListItem["UpdatedAt"].asString());
 		if(!dataNodeImageListImageListItem["DataId"].isNull())
 			imageListItemObject.dataId = dataNodeImageListImageListItem["DataId"].asString();
 		if(!dataNodeImageListImageListItem["ExtraData"].isNull())
 			imageListItemObject.extraData = dataNodeImageListImageListItem["ExtraData"].asString();
-		if(!dataNodeImageListImageListItem["EntityId"].isNull())
-			imageListItemObject.entityId = dataNodeImageListImageListItem["EntityId"].asString();
-		if(!dataNodeImageListImageListItem["UpdatedAt"].isNull())
-			imageListItemObject.updatedAt = std::stol(dataNodeImageListImageListItem["UpdatedAt"].asString());
-		if(!dataNodeImageListImageListItem["CreatedAt"].isNull())
-			imageListItemObject.createdAt = std::stol(dataNodeImageListImageListItem["CreatedAt"].asString());
 		data_.imageList.push_back(imageListItemObject);
 	}
 
