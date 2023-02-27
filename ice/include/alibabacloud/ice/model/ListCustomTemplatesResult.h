@@ -1,0 +1,69 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef ALIBABACLOUD_ICE_MODEL_LISTCUSTOMTEMPLATESRESULT_H_
+#define ALIBABACLOUD_ICE_MODEL_LISTCUSTOMTEMPLATESRESULT_H_
+
+#include <string>
+#include <vector>
+#include <utility>
+#include <alibabacloud/core/ServiceResult.h>
+#include <alibabacloud/ice/ICEExport.h>
+
+namespace AlibabaCloud
+{
+	namespace ICE
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_ICE_EXPORT ListCustomTemplatesResult : public ServiceResult
+			{
+			public:
+				struct CustomTemplate
+				{
+					std::string status;
+					bool isDefault;
+					std::string typeName;
+					std::string createTime;
+					std::string templateConfig;
+					int type;
+					std::string subtypeName;
+					std::string appId;
+					std::string modifiedTime;
+					int version;
+					std::string templateName;
+					int subtype;
+					std::string templateId;
+				};
+
+
+				ListCustomTemplatesResult();
+				explicit ListCustomTemplatesResult(const std::string &payload);
+				~ListCustomTemplatesResult();
+				int getTotal()const;
+				std::vector<CustomTemplate> getCustomTemplateList()const;
+
+			protected:
+				void parse(const std::string &payload);
+			private:
+				int total_;
+				std::vector<CustomTemplate> customTemplateList_;
+
+			};
+		}
+	}
+}
+#endif // !ALIBABACLOUD_ICE_MODEL_LISTCUSTOMTEMPLATESRESULT_H_

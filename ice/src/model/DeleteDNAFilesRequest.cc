@@ -1,0 +1,90 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/ice/model/DeleteDNAFilesRequest.h>
+
+using AlibabaCloud::ICE::Model::DeleteDNAFilesRequest;
+
+DeleteDNAFilesRequest::DeleteDNAFilesRequest()
+    : RpcServiceRequest("ice", "2020-11-09", "DeleteDNAFiles") {
+  setMethod(HttpRequest::Method::Post);
+}
+
+DeleteDNAFilesRequest::~DeleteDNAFilesRequest() {}
+
+long DeleteDNAFilesRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void DeleteDNAFilesRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
+std::string DeleteDNAFilesRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DeleteDNAFilesRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DeleteDNAFilesRequest::getPrimaryKeys() const {
+  return primaryKeys_;
+}
+
+void DeleteDNAFilesRequest::setPrimaryKeys(const std::string &primaryKeys) {
+  primaryKeys_ = primaryKeys;
+  setParameter(std::string("PrimaryKeys"), primaryKeys);
+}
+
+std::string DeleteDNAFilesRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DeleteDNAFilesRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string DeleteDNAFilesRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void DeleteDNAFilesRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+long DeleteDNAFilesRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DeleteDNAFilesRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string DeleteDNAFilesRequest::getDBId() const {
+  return dBId_;
+}
+
+void DeleteDNAFilesRequest::setDBId(const std::string &dBId) {
+  dBId_ = dBId;
+  setParameter(std::string("DBId"), dBId);
+}
+
