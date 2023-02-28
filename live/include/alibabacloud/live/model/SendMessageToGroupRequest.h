@@ -32,6 +32,8 @@ public:
 	~SendMessageToGroupRequest();
 	std::string getData() const;
 	void setData(const std::string &data);
+	bool getSkipAudit() const;
+	void setSkipAudit(bool skipAudit);
 	int getType() const;
 	void setType(int type);
 	std::string getOperatorUserId() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string data_;
+	bool skipAudit_;
 	int type_;
 	std::string operatorUserId_;
 	std::string groupId_;

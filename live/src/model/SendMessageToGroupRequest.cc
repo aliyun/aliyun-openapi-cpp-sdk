@@ -34,6 +34,15 @@ void SendMessageToGroupRequest::setData(const std::string &data) {
   setBodyParameter(std::string("Data"), data);
 }
 
+bool SendMessageToGroupRequest::getSkipAudit() const {
+  return skipAudit_;
+}
+
+void SendMessageToGroupRequest::setSkipAudit(bool skipAudit) {
+  skipAudit_ = skipAudit;
+  setParameter(std::string("SkipAudit"), skipAudit ? "true" : "false");
+}
+
 int SendMessageToGroupRequest::getType() const {
   return type_;
 }

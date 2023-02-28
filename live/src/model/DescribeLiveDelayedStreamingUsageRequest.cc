@@ -79,6 +79,15 @@ void DescribeLiveDelayedStreamingUsageRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeLiveDelayedStreamingUsageRequest::getInterval() const {
+  return interval_;
+}
+
+void DescribeLiveDelayedStreamingUsageRequest::setInterval(const std::string &interval) {
+  interval_ = interval;
+  setParameter(std::string("Interval"), interval);
+}
+
 std::string DescribeLiveDelayedStreamingUsageRequest::getRegion() const {
   return region_;
 }

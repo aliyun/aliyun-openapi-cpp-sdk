@@ -34,6 +34,15 @@ void SendMessageToGroupUsersRequest::setData(const std::string &data) {
   setBodyParameter(std::string("Data"), data);
 }
 
+bool SendMessageToGroupUsersRequest::getSkipAudit() const {
+  return skipAudit_;
+}
+
+void SendMessageToGroupUsersRequest::setSkipAudit(bool skipAudit) {
+  skipAudit_ = skipAudit;
+  setParameter(std::string("SkipAudit"), skipAudit ? "true" : "false");
+}
+
 int SendMessageToGroupUsersRequest::getType() const {
   return type_;
 }

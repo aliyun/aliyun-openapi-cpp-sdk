@@ -25,6 +25,15 @@ ModifyCasterVideoResourceRequest::ModifyCasterVideoResourceRequest()
 
 ModifyCasterVideoResourceRequest::~ModifyCasterVideoResourceRequest() {}
 
+int ModifyCasterVideoResourceRequest::getInputType() const {
+  return inputType_;
+}
+
+void ModifyCasterVideoResourceRequest::setInputType(int inputType) {
+  inputType_ = inputType;
+  setParameter(std::string("InputType"), std::to_string(inputType));
+}
+
 int ModifyCasterVideoResourceRequest::getEndOffset() const {
   return endOffset_;
 }
