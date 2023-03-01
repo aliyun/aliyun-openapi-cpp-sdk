@@ -25,15 +25,6 @@ QuerySmarttagJobRequest::QuerySmarttagJobRequest()
 
 QuerySmarttagJobRequest::~QuerySmarttagJobRequest() {}
 
-std::string QuerySmarttagJobRequest::getParams() const {
-  return params_;
-}
-
-void QuerySmarttagJobRequest::setParams(const std::string &params) {
-  params_ = params;
-  setParameter(std::string("Params"), params);
-}
-
 std::string QuerySmarttagJobRequest::getJobId() const {
   return jobId_;
 }
@@ -41,5 +32,14 @@ std::string QuerySmarttagJobRequest::getJobId() const {
 void QuerySmarttagJobRequest::setJobId(const std::string &jobId) {
   jobId_ = jobId;
   setParameter(std::string("JobId"), jobId);
+}
+
+std::string QuerySmarttagJobRequest::getParams() const {
+  return params_;
+}
+
+void QuerySmarttagJobRequest::setParams(const std::string &params) {
+  params_ = params;
+  setParameter(std::string("Params"), params);
 }
 

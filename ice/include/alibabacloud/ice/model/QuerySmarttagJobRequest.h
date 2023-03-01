@@ -30,14 +30,14 @@ class ALIBABACLOUD_ICE_EXPORT QuerySmarttagJobRequest : public RpcServiceRequest
 public:
 	QuerySmarttagJobRequest();
 	~QuerySmarttagJobRequest();
-	std::string getParams() const;
-	void setParams(const std::string &params);
 	std::string getJobId() const;
 	void setJobId(const std::string &jobId);
+	std::string getParams() const;
+	void setParams(const std::string &params);
 
 private:
-	std::string params_;
 	std::string jobId_;
+	std::string params_;
 };
 } // namespace Model
 } // namespace ICE
