@@ -61,6 +61,15 @@ void DescribeGlobalDatabaseNetworksRequest::setResourceGroupId(const std::string
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string DescribeGlobalDatabaseNetworksRequest::getFilterRegion() const {
+  return filterRegion_;
+}
+
+void DescribeGlobalDatabaseNetworksRequest::setFilterRegion(const std::string &filterRegion) {
+  filterRegion_ = filterRegion;
+  setParameter(std::string("FilterRegion"), filterRegion);
+}
+
 std::string DescribeGlobalDatabaseNetworksRequest::getSecurityToken() const {
   return securityToken_;
 }

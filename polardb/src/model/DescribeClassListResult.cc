@@ -43,8 +43,8 @@ void DescribeClassListResult::parse(const std::string &payload)
 	for (auto valueItemsItemsItem : allItemsNode)
 	{
 		ItemsItem itemsObject;
-		if(!valueItemsItemsItem["MaxIOPS"].isNull())
-			itemsObject.maxIOPS = valueItemsItemsItem["MaxIOPS"].asString();
+		if(!valueItemsItemsItem["Psl4MaxIOPS"].isNull())
+			itemsObject.psl4MaxIOPS = valueItemsItemsItem["Psl4MaxIOPS"].asString();
 		if(!valueItemsItemsItem["ClassTypeLevel"].isNull())
 			itemsObject.classTypeLevel = valueItemsItemsItem["ClassTypeLevel"].asString();
 		if(!valueItemsItemsItem["Cpu"].isNull())
@@ -59,6 +59,18 @@ void DescribeClassListResult::parse(const std::string &payload)
 			itemsObject.classCode = valueItemsItemsItem["ClassCode"].asString();
 		if(!valueItemsItemsItem["ClassGroup"].isNull())
 			itemsObject.classGroup = valueItemsItemsItem["ClassGroup"].asString();
+		if(!valueItemsItemsItem["Psl5MaxIOPS"].isNull())
+			itemsObject.psl5MaxIOPS = valueItemsItemsItem["Psl5MaxIOPS"].asString();
+		if(!valueItemsItemsItem["MaxIOPS"].isNull())
+			itemsObject.maxIOPS = valueItemsItemsItem["MaxIOPS"].asString();
+		if(!valueItemsItemsItem["MaxStorageCapacity"].isNull())
+			itemsObject.maxStorageCapacity = valueItemsItemsItem["MaxStorageCapacity"].asString();
+		if(!valueItemsItemsItem["Pl1MaxIOPS"].isNull())
+			itemsObject.pl1MaxIOPS = valueItemsItemsItem["Pl1MaxIOPS"].asString();
+		if(!valueItemsItemsItem["Pl2MaxIOPS"].isNull())
+			itemsObject.pl2MaxIOPS = valueItemsItemsItem["Pl2MaxIOPS"].asString();
+		if(!valueItemsItemsItem["Pl3MaxIOPS"].isNull())
+			itemsObject.pl3MaxIOPS = valueItemsItemsItem["Pl3MaxIOPS"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["RegionId"].isNull())

@@ -176,10 +176,10 @@
 #include "model/DescribeSlowLogRecordsResult.h"
 #include "model/DescribeSlowLogsRequest.h"
 #include "model/DescribeSlowLogsResult.h"
-#include "model/DescribeStoragePlanRequest.h"
-#include "model/DescribeStoragePlanResult.h"
 #include "model/DescribeTasksRequest.h"
 #include "model/DescribeTasksResult.h"
+#include "model/DescribeVSwitchesRequest.h"
+#include "model/DescribeVSwitchesResult.h"
 #include "model/EnableFirewallRulesRequest.h"
 #include "model/EnableFirewallRulesResult.h"
 #include "model/EvaluateRegionResourceRequest.h"
@@ -520,12 +520,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSlowLogsResult> DescribeSlowLogsOutcome;
 			typedef std::future<DescribeSlowLogsOutcome> DescribeSlowLogsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeSlowLogsRequest&, const DescribeSlowLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeStoragePlanResult> DescribeStoragePlanOutcome;
-			typedef std::future<DescribeStoragePlanOutcome> DescribeStoragePlanOutcomeCallable;
-			typedef std::function<void(const PolardbClient*, const Model::DescribeStoragePlanRequest&, const DescribeStoragePlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStoragePlanAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTasksResult> DescribeTasksOutcome;
 			typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeTasksRequest&, const DescribeTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeVSwitchesResult> DescribeVSwitchesOutcome;
+			typedef std::future<DescribeVSwitchesOutcome> DescribeVSwitchesOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeVSwitchesRequest&, const DescribeVSwitchesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVSwitchesAsyncHandler;
 			typedef Outcome<Error, Model::EnableFirewallRulesResult> EnableFirewallRulesOutcome;
 			typedef std::future<EnableFirewallRulesOutcome> EnableFirewallRulesOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::EnableFirewallRulesRequest&, const EnableFirewallRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableFirewallRulesAsyncHandler;
@@ -912,12 +912,12 @@ namespace AlibabaCloud
 			DescribeSlowLogsOutcome describeSlowLogs(const Model::DescribeSlowLogsRequest &request)const;
 			void describeSlowLogsAsync(const Model::DescribeSlowLogsRequest& request, const DescribeSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSlowLogsOutcomeCallable describeSlowLogsCallable(const Model::DescribeSlowLogsRequest& request) const;
-			DescribeStoragePlanOutcome describeStoragePlan(const Model::DescribeStoragePlanRequest &request)const;
-			void describeStoragePlanAsync(const Model::DescribeStoragePlanRequest& request, const DescribeStoragePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeStoragePlanOutcomeCallable describeStoragePlanCallable(const Model::DescribeStoragePlanRequest& request) const;
 			DescribeTasksOutcome describeTasks(const Model::DescribeTasksRequest &request)const;
 			void describeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTasksOutcomeCallable describeTasksCallable(const Model::DescribeTasksRequest& request) const;
+			DescribeVSwitchesOutcome describeVSwitches(const Model::DescribeVSwitchesRequest &request)const;
+			void describeVSwitchesAsync(const Model::DescribeVSwitchesRequest& request, const DescribeVSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeVSwitchesOutcomeCallable describeVSwitchesCallable(const Model::DescribeVSwitchesRequest& request) const;
 			EnableFirewallRulesOutcome enableFirewallRules(const Model::EnableFirewallRulesRequest &request)const;
 			void enableFirewallRulesAsync(const Model::EnableFirewallRulesRequest& request, const EnableFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableFirewallRulesOutcomeCallable enableFirewallRulesCallable(const Model::EnableFirewallRulesRequest& request) const;

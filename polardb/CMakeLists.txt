@@ -175,10 +175,10 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/DescribeSlowLogRecordsResult.h
 	include/alibabacloud/polardb/model/DescribeSlowLogsRequest.h
 	include/alibabacloud/polardb/model/DescribeSlowLogsResult.h
-	include/alibabacloud/polardb/model/DescribeStoragePlanRequest.h
-	include/alibabacloud/polardb/model/DescribeStoragePlanResult.h
 	include/alibabacloud/polardb/model/DescribeTasksRequest.h
 	include/alibabacloud/polardb/model/DescribeTasksResult.h
+	include/alibabacloud/polardb/model/DescribeVSwitchesRequest.h
+	include/alibabacloud/polardb/model/DescribeVSwitchesResult.h
 	include/alibabacloud/polardb/model/EnableFirewallRulesRequest.h
 	include/alibabacloud/polardb/model/EnableFirewallRulesResult.h
 	include/alibabacloud/polardb/model/EvaluateRegionResourceRequest.h
@@ -436,10 +436,10 @@ set(polardb_src
 	src/model/DescribeSlowLogRecordsResult.cc
 	src/model/DescribeSlowLogsRequest.cc
 	src/model/DescribeSlowLogsResult.cc
-	src/model/DescribeStoragePlanRequest.cc
-	src/model/DescribeStoragePlanResult.cc
 	src/model/DescribeTasksRequest.cc
 	src/model/DescribeTasksResult.cc
+	src/model/DescribeVSwitchesRequest.cc
+	src/model/DescribeVSwitchesResult.cc
 	src/model/EnableFirewallRulesRequest.cc
 	src/model/EnableFirewallRulesResult.cc
 	src/model/EvaluateRegionResourceRequest.cc

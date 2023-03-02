@@ -2823,42 +2823,6 @@ PolardbClient::DescribeSlowLogsOutcomeCallable PolardbClient::describeSlowLogsCa
 	return task->get_future();
 }
 
-PolardbClient::DescribeStoragePlanOutcome PolardbClient::describeStoragePlan(const DescribeStoragePlanRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeStoragePlanOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeStoragePlanOutcome(DescribeStoragePlanResult(outcome.result()));
-	else
-		return DescribeStoragePlanOutcome(outcome.error());
-}
-
-void PolardbClient::describeStoragePlanAsync(const DescribeStoragePlanRequest& request, const DescribeStoragePlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeStoragePlan(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-PolardbClient::DescribeStoragePlanOutcomeCallable PolardbClient::describeStoragePlanCallable(const DescribeStoragePlanRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeStoragePlanOutcome()>>(
-			[this, request]()
-			{
-			return this->describeStoragePlan(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 PolardbClient::DescribeTasksOutcome PolardbClient::describeTasks(const DescribeTasksRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2889,6 +2853,42 @@ PolardbClient::DescribeTasksOutcomeCallable PolardbClient::describeTasksCallable
 			[this, request]()
 			{
 			return this->describeTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::DescribeVSwitchesOutcome PolardbClient::describeVSwitches(const DescribeVSwitchesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeVSwitchesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeVSwitchesOutcome(DescribeVSwitchesResult(outcome.result()));
+	else
+		return DescribeVSwitchesOutcome(outcome.error());
+}
+
+void PolardbClient::describeVSwitchesAsync(const DescribeVSwitchesRequest& request, const DescribeVSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeVSwitches(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeVSwitchesOutcomeCallable PolardbClient::describeVSwitchesCallable(const DescribeVSwitchesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeVSwitchesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeVSwitches(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

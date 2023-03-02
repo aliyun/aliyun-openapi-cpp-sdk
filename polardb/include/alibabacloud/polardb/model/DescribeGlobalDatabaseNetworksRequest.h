@@ -38,6 +38,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getFilterRegion() const;
+	void setFilterRegion(const std::string &filterRegion);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
 	std::string getGDNId() const;
@@ -60,6 +62,7 @@ private:
 	int pageNumber_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
+	std::string filterRegion_;
 	std::string securityToken_;
 	std::string gDNId_;
 	int pageSize_;

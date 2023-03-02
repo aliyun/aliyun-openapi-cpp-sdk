@@ -76,7 +76,9 @@ namespace AlibabaCloud
 				std::string getGDNStatus()const;
 				std::string getDBVersion()const;
 				std::string getGDNId()const;
+				std::string getResourceGroupId()const;
 				std::string getCreateTime()const;
+				std::string getDBClusterId()const;
 				std::string getDBType()const;
 				std::string getGDNDescription()const;
 				std::vector<DBCluster> getDBClusters()const;
@@ -88,7 +90,9 @@ namespace AlibabaCloud
 				std::string gDNStatus_;
 				std::string dBVersion_;
 				std::string gDNId_;
+				std::string resourceGroupId_;
 				std::string createTime_;
+				std::string dBClusterId_;
 				std::string dBType_;
 				std::string gDNDescription_;
 				std::vector<DBCluster> dBClusters_;

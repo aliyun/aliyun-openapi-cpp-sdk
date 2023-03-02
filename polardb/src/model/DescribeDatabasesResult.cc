@@ -51,6 +51,8 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 			databasesObject.dBName = valueDatabasesDatabase["DBName"].asString();
 		if(!valueDatabasesDatabase["Engine"].isNull())
 			databasesObject.engine = valueDatabasesDatabase["Engine"].asString();
+		if(!valueDatabasesDatabase["MasterID"].isNull())
+			databasesObject.masterID = valueDatabasesDatabase["MasterID"].asString();
 		if(!valueDatabasesDatabase["CharacterSetName"].isNull())
 			databasesObject.characterSetName = valueDatabasesDatabase["CharacterSetName"].asString();
 		auto allAccountsNode = valueDatabasesDatabase["Accounts"]["Account"];

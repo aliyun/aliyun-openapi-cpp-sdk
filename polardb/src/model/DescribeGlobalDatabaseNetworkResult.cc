@@ -119,6 +119,10 @@ void DescribeGlobalDatabaseNetworkResult::parse(const std::string &payload)
 		dBType_ = value["DBType"].asString();
 	if(!value["GDNDescription"].isNull())
 		gDNDescription_ = value["GDNDescription"].asString();
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -142,9 +146,19 @@ std::string DescribeGlobalDatabaseNetworkResult::getGDNId()const
 	return gDNId_;
 }
 
+std::string DescribeGlobalDatabaseNetworkResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
 std::string DescribeGlobalDatabaseNetworkResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+std::string DescribeGlobalDatabaseNetworkResult::getDBClusterId()const
+{
+	return dBClusterId_;
 }
 
 std::string DescribeGlobalDatabaseNetworkResult::getDBType()const

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDATABASESRESULT_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDATABASESRESULT_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEVSWITCHESRESULT_H_
+#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEVSWITCHESRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,45 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_POLARDB_EXPORT DescribeDatabasesResult : public ServiceResult
+			class ALIBABACLOUD_POLARDB_EXPORT DescribeVSwitchesResult : public ServiceResult
 			{
 			public:
-				struct Database
+				struct VSwitch
 				{
-					struct Account
-					{
-						std::string accountStatus;
-						std::string accountPrivilege;
-						std::string privilegeStatus;
-						std::string accountName;
-					};
-					std::string characterSetName;
-					std::string dBDescription;
-					std::string dBName;
-					std::string masterID;
-					std::string dBStatus;
-					std::vector<Database::Account> accounts;
-					std::string engine;
+					bool isDefault;
+					std::string status;
+					std::string regionNo;
+					std::string description;
+					std::string vSwitchId;
+					long availableIpAddressCount;
+					std::string gmtModified;
+					std::string cidrBlock;
+					std::string izNo;
+					std::string gmtCreate;
+					std::string vSwitchName;
+					std::string bid;
+					std::string aliUid;
 				};
 
 
-				DescribeDatabasesResult();
-				explicit DescribeDatabasesResult(const std::string &payload);
-				~DescribeDatabasesResult();
-				std::vector<Database> getDatabases()const;
-				int getPageRecordCount()const;
+				DescribeVSwitchesResult();
+				explicit DescribeVSwitchesResult(const std::string &payload);
+				~DescribeVSwitchesResult();
+				std::vector<VSwitch> getVSwitchs()const;
+				int getTotalCount()const;
+				int getPageSize()const;
 				int getPageNumber()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Database> databases_;
-				int pageRecordCount_;
+				std::vector<VSwitch> vSwitchs_;
+				int totalCount_;
+				int pageSize_;
 				int pageNumber_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDATABASESRESULT_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEVSWITCHESRESULT_H_

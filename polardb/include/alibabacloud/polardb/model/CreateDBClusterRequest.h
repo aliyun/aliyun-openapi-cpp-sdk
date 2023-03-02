@@ -70,6 +70,8 @@ public:
 	void setDBMinorVersion(const std::string &dBMinorVersion);
 	bool getAutoRenew() const;
 	void setAutoRenew(bool autoRenew);
+	std::string getHotStandbyCluster() const;
+	void setHotStandbyCluster(const std::string &hotStandbyCluster);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
 	bool getTDEStatus() const;
@@ -114,6 +116,8 @@ public:
 	void setCloneDataPoint(const std::string &cloneDataPoint);
 	std::string getPayType() const;
 	void setPayType(const std::string &payType);
+	long getStorageSpace() const;
+	void setStorageSpace(long storageSpace);
 	std::string getServerlessType() const;
 	void setServerlessType(const std::string &serverlessType);
 
@@ -136,6 +140,7 @@ private:
 	std::string securityIPList_;
 	std::string dBMinorVersion_;
 	bool autoRenew_;
+	std::string hotStandbyCluster_;
 	std::string zoneId_;
 	bool tDEStatus_;
 	std::string allowShutDown_;
@@ -158,6 +163,7 @@ private:
 	std::string dBVersion_;
 	std::string cloneDataPoint_;
 	std::string payType_;
+	long storageSpace_;
 	std::string serverlessType_;
 };
 } // namespace Model

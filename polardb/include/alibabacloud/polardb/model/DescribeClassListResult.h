@@ -35,13 +35,19 @@ namespace AlibabaCloud
 				struct ItemsItem
 				{
 					std::string classTypeLevel;
-					std::string classCode;
 					std::string maxConnections;
-					std::string classGroup;
+					std::string pl2MaxIOPS;
+					std::string pl3MaxIOPS;
 					std::string cpu;
-					std::string memoryClass;
 					std::string referencePrice;
 					std::string maxIOPS;
+					std::string classCode;
+					std::string psl4MaxIOPS;
+					std::string classGroup;
+					std::string psl5MaxIOPS;
+					std::string pl1MaxIOPS;
+					std::string memoryClass;
+					std::string maxStorageCapacity;
 				};
 
 

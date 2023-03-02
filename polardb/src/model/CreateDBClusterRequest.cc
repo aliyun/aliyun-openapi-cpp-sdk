@@ -192,6 +192,15 @@ void CreateDBClusterRequest::setAutoRenew(bool autoRenew) {
   setParameter(std::string("AutoRenew"), autoRenew ? "true" : "false");
 }
 
+std::string CreateDBClusterRequest::getHotStandbyCluster() const {
+  return hotStandbyCluster_;
+}
+
+void CreateDBClusterRequest::setHotStandbyCluster(const std::string &hotStandbyCluster) {
+  hotStandbyCluster_ = hotStandbyCluster;
+  setParameter(std::string("HotStandbyCluster"), hotStandbyCluster);
+}
+
 std::string CreateDBClusterRequest::getZoneId() const {
   return zoneId_;
 }
@@ -388,6 +397,15 @@ std::string CreateDBClusterRequest::getPayType() const {
 void CreateDBClusterRequest::setPayType(const std::string &payType) {
   payType_ = payType;
   setParameter(std::string("PayType"), payType);
+}
+
+long CreateDBClusterRequest::getStorageSpace() const {
+  return storageSpace_;
+}
+
+void CreateDBClusterRequest::setStorageSpace(long storageSpace) {
+  storageSpace_ = storageSpace;
+  setParameter(std::string("StorageSpace"), std::to_string(storageSpace));
 }
 
 std::string CreateDBClusterRequest::getServerlessType() const {
