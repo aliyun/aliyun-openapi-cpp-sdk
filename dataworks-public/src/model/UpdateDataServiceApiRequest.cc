@@ -43,33 +43,6 @@ void UpdateDataServiceApiRequest::setRequestMethod(int requestMethod) {
   setBodyParameter(std::string("RequestMethod"), std::to_string(requestMethod));
 }
 
-std::string UpdateDataServiceApiRequest::getApiPath() const {
-  return apiPath_;
-}
-
-void UpdateDataServiceApiRequest::setApiPath(const std::string &apiPath) {
-  apiPath_ = apiPath;
-  setBodyParameter(std::string("ApiPath"), apiPath);
-}
-
-std::string UpdateDataServiceApiRequest::getWizardDetails() const {
-  return wizardDetails_;
-}
-
-void UpdateDataServiceApiRequest::setWizardDetails(const std::string &wizardDetails) {
-  wizardDetails_ = wizardDetails;
-  setBodyParameter(std::string("WizardDetails"), wizardDetails);
-}
-
-int UpdateDataServiceApiRequest::getVisibleRange() const {
-  return visibleRange_;
-}
-
-void UpdateDataServiceApiRequest::setVisibleRange(int visibleRange) {
-  visibleRange_ = visibleRange;
-  setBodyParameter(std::string("VisibleRange"), std::to_string(visibleRange));
-}
-
 std::string UpdateDataServiceApiRequest::getApiDescription() const {
   return apiDescription_;
 }
@@ -88,13 +61,13 @@ void UpdateDataServiceApiRequest::setTimeout(int timeout) {
   setBodyParameter(std::string("Timeout"), std::to_string(timeout));
 }
 
-std::string UpdateDataServiceApiRequest::getRegistrationDetails() const {
-  return registrationDetails_;
+long UpdateDataServiceApiRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void UpdateDataServiceApiRequest::setRegistrationDetails(const std::string &registrationDetails) {
-  registrationDetails_ = registrationDetails;
-  setBodyParameter(std::string("RegistrationDetails"), registrationDetails);
+void UpdateDataServiceApiRequest::setResourceGroupId(long resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), std::to_string(resourceGroupId));
 }
 
 long UpdateDataServiceApiRequest::getTenantId() const {
@@ -124,15 +97,6 @@ void UpdateDataServiceApiRequest::setProjectId(long projectId) {
   setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 
-long UpdateDataServiceApiRequest::getApiId() const {
-  return apiId_;
-}
-
-void UpdateDataServiceApiRequest::setApiId(long apiId) {
-  apiId_ = apiId;
-  setBodyParameter(std::string("ApiId"), std::to_string(apiId));
-}
-
 int UpdateDataServiceApiRequest::getResponseContentType() const {
   return responseContentType_;
 }
@@ -140,5 +104,50 @@ int UpdateDataServiceApiRequest::getResponseContentType() const {
 void UpdateDataServiceApiRequest::setResponseContentType(int responseContentType) {
   responseContentType_ = responseContentType;
   setBodyParameter(std::string("ResponseContentType"), std::to_string(responseContentType));
+}
+
+std::string UpdateDataServiceApiRequest::getApiPath() const {
+  return apiPath_;
+}
+
+void UpdateDataServiceApiRequest::setApiPath(const std::string &apiPath) {
+  apiPath_ = apiPath;
+  setBodyParameter(std::string("ApiPath"), apiPath);
+}
+
+std::string UpdateDataServiceApiRequest::getWizardDetails() const {
+  return wizardDetails_;
+}
+
+void UpdateDataServiceApiRequest::setWizardDetails(const std::string &wizardDetails) {
+  wizardDetails_ = wizardDetails;
+  setBodyParameter(std::string("WizardDetails"), wizardDetails);
+}
+
+int UpdateDataServiceApiRequest::getVisibleRange() const {
+  return visibleRange_;
+}
+
+void UpdateDataServiceApiRequest::setVisibleRange(int visibleRange) {
+  visibleRange_ = visibleRange;
+  setBodyParameter(std::string("VisibleRange"), std::to_string(visibleRange));
+}
+
+std::string UpdateDataServiceApiRequest::getRegistrationDetails() const {
+  return registrationDetails_;
+}
+
+void UpdateDataServiceApiRequest::setRegistrationDetails(const std::string &registrationDetails) {
+  registrationDetails_ = registrationDetails;
+  setBodyParameter(std::string("RegistrationDetails"), registrationDetails);
+}
+
+long UpdateDataServiceApiRequest::getApiId() const {
+  return apiId_;
+}
+
+void UpdateDataServiceApiRequest::setApiId(long apiId) {
+  apiId_ = apiId;
+  setBodyParameter(std::string("ApiId"), std::to_string(apiId));
 }
 

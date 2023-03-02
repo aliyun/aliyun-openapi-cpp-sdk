@@ -70,6 +70,24 @@ void CreateDataServiceApiRequest::setFolderId(long folderId) {
   setBodyParameter(std::string("FolderId"), std::to_string(folderId));
 }
 
+long CreateDataServiceApiRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateDataServiceApiRequest::setResourceGroupId(long resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setBodyParameter(std::string("ResourceGroupId"), std::to_string(resourceGroupId));
+}
+
+long CreateDataServiceApiRequest::getSqlMode() const {
+  return sqlMode_;
+}
+
+void CreateDataServiceApiRequest::setSqlMode(long sqlMode) {
+  sqlMode_ = sqlMode;
+  setBodyParameter(std::string("SqlMode"), std::to_string(sqlMode));
+}
+
 long CreateDataServiceApiRequest::getTenantId() const {
   return tenantId_;
 }

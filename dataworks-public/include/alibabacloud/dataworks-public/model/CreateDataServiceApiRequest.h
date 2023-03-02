@@ -40,6 +40,10 @@ public:
 	void setTimeout(int timeout);
 	long getFolderId() const;
 	void setFolderId(long folderId);
+	long getResourceGroupId() const;
+	void setResourceGroupId(long resourceGroupId);
+	long getSqlMode() const;
+	void setSqlMode(long sqlMode);
 	long getTenantId() const;
 	void setTenantId(long tenantId);
 	std::string getProtocols() const;
@@ -69,6 +73,8 @@ private:
 	std::string apiDescription_;
 	int timeout_;
 	long folderId_;
+	long resourceGroupId_;
+	long sqlMode_;
 	long tenantId_;
 	std::string protocols_;
 	long projectId_;
