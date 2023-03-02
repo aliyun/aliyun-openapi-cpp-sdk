@@ -60,17 +60,6 @@ void CreateDownloadDataJobRequest::setIotInstanceId(const std::string& iotInstan
 	setBodyParameter("IotInstanceId", iotInstanceId);
 }
 
-std::string CreateDownloadDataJobRequest::getContext()const
-{
-	return context_;
-}
-
-void CreateDownloadDataJobRequest::setContext(const std::string& context)
-{
-	context_ = context;
-	setBodyParameter("Context", context);
-}
-
 std::string CreateDownloadDataJobRequest::getTableName()const
 {
 	return tableName_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_CREATEDOWNLOADDATAJOBREQUEST_H_
-#define ALIBABACLOUD_IOT_MODEL_CREATEDOWNLOADDATAJOBREQUEST_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_QUERYDEVICEPROVISIONINGREQUEST_H_
+#define ALIBABACLOUD_IOT_MODEL_QUERYDEVICEPROVISIONINGREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -28,42 +28,30 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT CreateDownloadDataJobRequest : public RpcServiceRequest
+			class ALIBABACLOUD_IOT_EXPORT QueryDeviceProvisioningRequest : public RpcServiceRequest
 			{
 
 			public:
-				CreateDownloadDataJobRequest();
-				~CreateDownloadDataJobRequest();
+				QueryDeviceProvisioningRequest();
+				~QueryDeviceProvisioningRequest();
 
-				long getStartTime()const;
-				void setStartTime(long startTime);
-				std::string getFileConfig()const;
-				void setFileConfig(const std::string& fileConfig);
-				std::string getIotInstanceId()const;
-				void setIotInstanceId(const std::string& iotInstanceId);
-				std::string getTableName()const;
-				void setTableName(const std::string& tableName);
-				long getEndTime()const;
-				void setEndTime(long endTime);
-				std::string getDownloadDataType()const;
-				void setDownloadDataType(const std::string& downloadDataType);
+				std::string getProductKey()const;
+				void setProductKey(const std::string& productKey);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
+				std::string getDeviceName()const;
+				void setDeviceName(const std::string& deviceName);
 
             private:
-				long startTime_;
-				std::string fileConfig_;
-				std::string iotInstanceId_;
-				std::string tableName_;
-				long endTime_;
-				std::string downloadDataType_;
+				std::string productKey_;
 				std::string apiProduct_;
 				std::string apiRevision_;
+				std::string deviceName_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_CREATEDOWNLOADDATAJOBREQUEST_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_QUERYDEVICEPROVISIONINGREQUEST_H_

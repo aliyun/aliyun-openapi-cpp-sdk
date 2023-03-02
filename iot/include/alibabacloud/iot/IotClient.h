@@ -542,6 +542,8 @@
 #include "model/QueryDevicePropertyDataResult.h"
 #include "model/QueryDevicePropertyStatusRequest.h"
 #include "model/QueryDevicePropertyStatusResult.h"
+#include "model/QueryDeviceProvisioningRequest.h"
+#include "model/QueryDeviceProvisioningResult.h"
 #include "model/QueryDeviceServiceDataRequest.h"
 #include "model/QueryDeviceServiceDataResult.h"
 #include "model/QueryDeviceSpeechRequest.h"
@@ -1603,6 +1605,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryDevicePropertyStatusResult> QueryDevicePropertyStatusOutcome;
 			typedef std::future<QueryDevicePropertyStatusOutcome> QueryDevicePropertyStatusOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDevicePropertyStatusRequest&, const QueryDevicePropertyStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDevicePropertyStatusAsyncHandler;
+			typedef Outcome<Error, Model::QueryDeviceProvisioningResult> QueryDeviceProvisioningOutcome;
+			typedef std::future<QueryDeviceProvisioningOutcome> QueryDeviceProvisioningOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QueryDeviceProvisioningRequest&, const QueryDeviceProvisioningOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceProvisioningAsyncHandler;
 			typedef Outcome<Error, Model::QueryDeviceServiceDataResult> QueryDeviceServiceDataOutcome;
 			typedef std::future<QueryDeviceServiceDataOutcome> QueryDeviceServiceDataOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryDeviceServiceDataRequest&, const QueryDeviceServiceDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDeviceServiceDataAsyncHandler;
@@ -2796,6 +2801,9 @@ namespace AlibabaCloud
 			QueryDevicePropertyStatusOutcome queryDevicePropertyStatus(const Model::QueryDevicePropertyStatusRequest &request)const;
 			void queryDevicePropertyStatusAsync(const Model::QueryDevicePropertyStatusRequest& request, const QueryDevicePropertyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDevicePropertyStatusOutcomeCallable queryDevicePropertyStatusCallable(const Model::QueryDevicePropertyStatusRequest& request) const;
+			QueryDeviceProvisioningOutcome queryDeviceProvisioning(const Model::QueryDeviceProvisioningRequest &request)const;
+			void queryDeviceProvisioningAsync(const Model::QueryDeviceProvisioningRequest& request, const QueryDeviceProvisioningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDeviceProvisioningOutcomeCallable queryDeviceProvisioningCallable(const Model::QueryDeviceProvisioningRequest& request) const;
 			QueryDeviceServiceDataOutcome queryDeviceServiceData(const Model::QueryDeviceServiceDataRequest &request)const;
 			void queryDeviceServiceDataAsync(const Model::QueryDeviceServiceDataRequest& request, const QueryDeviceServiceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryDeviceServiceDataOutcomeCallable queryDeviceServiceDataCallable(const Model::QueryDeviceServiceDataRequest& request) const;

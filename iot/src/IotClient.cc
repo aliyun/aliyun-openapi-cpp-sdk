@@ -31,21 +31,21 @@ IotClient::IotClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
 }
 
 IotClient::IotClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
 }
 
 IotClient::IotClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
 }
 
 IotClient::~IotClient()
@@ -9405,6 +9405,42 @@ IotClient::QueryDevicePropertyStatusOutcomeCallable IotClient::queryDeviceProper
 			[this, request]()
 			{
 			return this->queryDevicePropertyStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QueryDeviceProvisioningOutcome IotClient::queryDeviceProvisioning(const QueryDeviceProvisioningRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDeviceProvisioningOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDeviceProvisioningOutcome(QueryDeviceProvisioningResult(outcome.result()));
+	else
+		return QueryDeviceProvisioningOutcome(outcome.error());
+}
+
+void IotClient::queryDeviceProvisioningAsync(const QueryDeviceProvisioningRequest& request, const QueryDeviceProvisioningAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDeviceProvisioning(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QueryDeviceProvisioningOutcomeCallable IotClient::queryDeviceProvisioningCallable(const QueryDeviceProvisioningRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDeviceProvisioningOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDeviceProvisioning(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

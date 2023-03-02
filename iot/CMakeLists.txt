@@ -541,6 +541,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QueryDevicePropertyDataResult.h
 	include/alibabacloud/iot/model/QueryDevicePropertyStatusRequest.h
 	include/alibabacloud/iot/model/QueryDevicePropertyStatusResult.h
+	include/alibabacloud/iot/model/QueryDeviceProvisioningRequest.h
+	include/alibabacloud/iot/model/QueryDeviceProvisioningResult.h
 	include/alibabacloud/iot/model/QueryDeviceServiceDataRequest.h
 	include/alibabacloud/iot/model/QueryDeviceServiceDataResult.h
 	include/alibabacloud/iot/model/QueryDeviceSpeechRequest.h
@@ -1336,6 +1338,8 @@ set(iot_src
 	src/model/QueryDevicePropertyDataResult.cc
 	src/model/QueryDevicePropertyStatusRequest.cc
 	src/model/QueryDevicePropertyStatusResult.cc
+	src/model/QueryDeviceProvisioningRequest.cc
+	src/model/QueryDeviceProvisioningResult.cc
 	src/model/QueryDeviceServiceDataRequest.cc
 	src/model/QueryDeviceServiceDataResult.cc
 	src/model/QueryDeviceSpeechRequest.cc

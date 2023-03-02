@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_IOT_MODEL_CREATEDOWNLOADDATAJOBRESULT_H_
-#define ALIBABACLOUD_IOT_MODEL_CREATEDOWNLOADDATAJOBRESULT_H_
+#ifndef ALIBABACLOUD_IOT_MODEL_QUERYDEVICEPROVISIONINGRESULT_H_
+#define ALIBABACLOUD_IOT_MODEL_QUERYDEVICEPROVISIONINGRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,22 +29,26 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_IOT_EXPORT CreateDownloadDataJobResult : public ServiceResult
+			class ALIBABACLOUD_IOT_EXPORT QueryDeviceProvisioningResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					int status;
-					bool asyncExecute;
-					std::string longJobId;
-					std::string csvUrl;
-					std::string csvFileName;
+					std::string targetRegion;
+					long gmtCreate;
+					std::string targetIotInstanceId;
+					std::string aliyunUid;
+					long gmtModified;
+					std::string sourceIotInstanceId;
+					std::string sourceRegion;
+					std::string productKey;
+					std::string deviceName;
 				};
 
 
-				CreateDownloadDataJobResult();
-				explicit CreateDownloadDataJobResult(const std::string &payload);
-				~CreateDownloadDataJobResult();
+				QueryDeviceProvisioningResult();
+				explicit QueryDeviceProvisioningResult(const std::string &payload);
+				~QueryDeviceProvisioningResult();
 				Data getData()const;
 				std::string getErrorMessage()const;
 				std::string getCode()const;
@@ -62,4 +66,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_IOT_MODEL_CREATEDOWNLOADDATAJOBRESULT_H_
+#endif // !ALIBABACLOUD_IOT_MODEL_QUERYDEVICEPROVISIONINGRESULT_H_
