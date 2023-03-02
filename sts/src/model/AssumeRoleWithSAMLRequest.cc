@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Sts::Model::AssumeRoleWithSAMLRequest;
 
-AssumeRoleWithSAMLRequest::AssumeRoleWithSAMLRequest() :
-	RpcServiceRequest("sts", "2015-04-01", "AssumeRoleWithSAML")
-{
-	setMethod(HttpRequest::Method::Post);
+AssumeRoleWithSAMLRequest::AssumeRoleWithSAMLRequest()
+    : RpcServiceRequest("sts", "2015-04-01", "AssumeRoleWithSAML") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-AssumeRoleWithSAMLRequest::~AssumeRoleWithSAMLRequest()
-{}
+AssumeRoleWithSAMLRequest::~AssumeRoleWithSAMLRequest() {}
 
-std::string AssumeRoleWithSAMLRequest::getSAMLAssertion()const
-{
-	return sAMLAssertion_;
+std::string AssumeRoleWithSAMLRequest::getSAMLAssertion() const {
+  return sAMLAssertion_;
 }
 
-void AssumeRoleWithSAMLRequest::setSAMLAssertion(const std::string& sAMLAssertion)
-{
-	sAMLAssertion_ = sAMLAssertion;
-	setParameter("SAMLAssertion", sAMLAssertion);
+void AssumeRoleWithSAMLRequest::setSAMLAssertion(const std::string &sAMLAssertion) {
+  sAMLAssertion_ = sAMLAssertion;
+  setParameter(std::string("SAMLAssertion"), sAMLAssertion);
 }
 
-std::string AssumeRoleWithSAMLRequest::getRoleArn()const
-{
-	return roleArn_;
+std::string AssumeRoleWithSAMLRequest::getRoleArn() const {
+  return roleArn_;
 }
 
-void AssumeRoleWithSAMLRequest::setRoleArn(const std::string& roleArn)
-{
-	roleArn_ = roleArn;
-	setParameter("RoleArn", roleArn);
+void AssumeRoleWithSAMLRequest::setRoleArn(const std::string &roleArn) {
+  roleArn_ = roleArn;
+  setParameter(std::string("RoleArn"), roleArn);
 }
 
-std::string AssumeRoleWithSAMLRequest::getSAMLProviderArn()const
-{
-	return sAMLProviderArn_;
+std::string AssumeRoleWithSAMLRequest::getSAMLProviderArn() const {
+  return sAMLProviderArn_;
 }
 
-void AssumeRoleWithSAMLRequest::setSAMLProviderArn(const std::string& sAMLProviderArn)
-{
-	sAMLProviderArn_ = sAMLProviderArn;
-	setParameter("SAMLProviderArn", sAMLProviderArn);
+void AssumeRoleWithSAMLRequest::setSAMLProviderArn(const std::string &sAMLProviderArn) {
+  sAMLProviderArn_ = sAMLProviderArn;
+  setParameter(std::string("SAMLProviderArn"), sAMLProviderArn);
 }
 
-long AssumeRoleWithSAMLRequest::getDurationSeconds()const
-{
-	return durationSeconds_;
+long AssumeRoleWithSAMLRequest::getDurationSeconds() const {
+  return durationSeconds_;
 }
 
-void AssumeRoleWithSAMLRequest::setDurationSeconds(long durationSeconds)
-{
-	durationSeconds_ = durationSeconds;
-	setParameter("DurationSeconds", std::to_string(durationSeconds));
+void AssumeRoleWithSAMLRequest::setDurationSeconds(long durationSeconds) {
+  durationSeconds_ = durationSeconds;
+  setParameter(std::string("DurationSeconds"), std::to_string(durationSeconds));
 }
 
-std::string AssumeRoleWithSAMLRequest::getPolicy()const
-{
-	return policy_;
+std::string AssumeRoleWithSAMLRequest::getPolicy() const {
+  return policy_;
 }
 
-void AssumeRoleWithSAMLRequest::setPolicy(const std::string& policy)
-{
-	policy_ = policy;
-	setParameter("Policy", policy);
+void AssumeRoleWithSAMLRequest::setPolicy(const std::string &policy) {
+  policy_ = policy;
+  setParameter(std::string("Policy"), policy);
 }
 

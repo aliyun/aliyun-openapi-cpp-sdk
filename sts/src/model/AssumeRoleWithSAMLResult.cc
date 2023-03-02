@@ -42,26 +42,26 @@ void AssumeRoleWithSAMLResult::parse(const std::string &payload)
 	auto sAMLAssertionInfoNode = value["SAMLAssertionInfo"];
 	if(!sAMLAssertionInfoNode["SubjectType"].isNull())
 		sAMLAssertionInfo_.subjectType = sAMLAssertionInfoNode["SubjectType"].asString();
+	if(!sAMLAssertionInfoNode["Subject"].isNull())
+		sAMLAssertionInfo_.subject = sAMLAssertionInfoNode["Subject"].asString();
 	if(!sAMLAssertionInfoNode["Issuer"].isNull())
 		sAMLAssertionInfo_.issuer = sAMLAssertionInfoNode["Issuer"].asString();
 	if(!sAMLAssertionInfoNode["Recipient"].isNull())
 		sAMLAssertionInfo_.recipient = sAMLAssertionInfoNode["Recipient"].asString();
-	if(!sAMLAssertionInfoNode["Subject"].isNull())
-		sAMLAssertionInfo_.subject = sAMLAssertionInfoNode["Subject"].asString();
 	auto assumedRoleUserNode = value["AssumedRoleUser"];
-	if(!assumedRoleUserNode["Arn"].isNull())
-		assumedRoleUser_.arn = assumedRoleUserNode["Arn"].asString();
 	if(!assumedRoleUserNode["AssumedRoleId"].isNull())
 		assumedRoleUser_.assumedRoleId = assumedRoleUserNode["AssumedRoleId"].asString();
+	if(!assumedRoleUserNode["Arn"].isNull())
+		assumedRoleUser_.arn = assumedRoleUserNode["Arn"].asString();
 	auto credentialsNode = value["Credentials"];
 	if(!credentialsNode["SecurityToken"].isNull())
 		credentials_.securityToken = credentialsNode["SecurityToken"].asString();
-	if(!credentialsNode["AccessKeyId"].isNull())
-		credentials_.accessKeyId = credentialsNode["AccessKeyId"].asString();
-	if(!credentialsNode["AccessKeySecret"].isNull())
-		credentials_.accessKeySecret = credentialsNode["AccessKeySecret"].asString();
 	if(!credentialsNode["Expiration"].isNull())
 		credentials_.expiration = credentialsNode["Expiration"].asString();
+	if(!credentialsNode["AccessKeySecret"].isNull())
+		credentials_.accessKeySecret = credentialsNode["AccessKeySecret"].asString();
+	if(!credentialsNode["AccessKeyId"].isNull())
+		credentials_.accessKeyId = credentialsNode["AccessKeyId"].asString();
 
 }
 
