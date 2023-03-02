@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::string resGroupName;
 					std::string nodeName;
+					std::string resGroupIdentifier;
 					int priority;
 					int dqcType;
 					std::string paramValues;
@@ -48,6 +49,7 @@ namespace AlibabaCloud
 					std::string cronExpress;
 					std::string repeatability;
 					std::string ownerId;
+					int fileType;
 					std::string dqcDescription;
 					long nodeId;
 					std::string programType;

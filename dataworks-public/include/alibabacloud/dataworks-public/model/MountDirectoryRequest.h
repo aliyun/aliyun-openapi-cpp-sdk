@@ -34,10 +34,13 @@ public:
 	void setTargetType(const std::string &targetType);
 	std::string getTargetId() const;
 	void setTargetId(const std::string &targetId);
+	std::string getTargetUserId() const;
+	void setTargetUserId(const std::string &targetUserId);
 
 private:
 	std::string targetType_;
 	std::string targetId_;
+	std::string targetUserId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

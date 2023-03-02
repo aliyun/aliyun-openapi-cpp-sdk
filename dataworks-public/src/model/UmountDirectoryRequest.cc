@@ -43,3 +43,12 @@ void UmountDirectoryRequest::setTargetId(const std::string &targetId) {
   setBodyParameter(std::string("TargetId"), targetId);
 }
 
+std::string UmountDirectoryRequest::getTargetUserId() const {
+  return targetUserId_;
+}
+
+void UmountDirectoryRequest::setTargetUserId(const std::string &targetUserId) {
+  targetUserId_ = targetUserId;
+  setBodyParameter(std::string("TargetUserId"), targetUserId);
+}
+

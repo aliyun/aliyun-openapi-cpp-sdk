@@ -78,6 +78,10 @@ void GetNodeResult::parse(const std::string &payload)
 		data_.cronExpress = dataNode["CronExpress"].asString();
 	if(!dataNode["NodeId"].isNull())
 		data_.nodeId = std::stol(dataNode["NodeId"].asString());
+	if(!dataNode["ResGroupIdentifier"].isNull())
+		data_.resGroupIdentifier = dataNode["ResGroupIdentifier"].asString();
+	if(!dataNode["FileType"].isNull())
+		data_.fileType = std::stoi(dataNode["FileType"].asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["ErrorMessage"].isNull())

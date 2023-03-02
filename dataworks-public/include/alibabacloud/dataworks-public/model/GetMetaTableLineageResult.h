@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					{
 						std::string tableName;
 						std::string tableGuid;
+						std::string databaseName;
 						long createTimestamp;
 					};
 					std::vector<DataEntityListItem> dataEntityList;

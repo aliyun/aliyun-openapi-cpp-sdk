@@ -54,6 +54,8 @@ void GetMetaTableLineageResult::parse(const std::string &payload)
 			dataEntityListItemObject.tableGuid = dataNodeDataEntityListDataEntityListItem["TableGuid"].asString();
 		if(!dataNodeDataEntityListDataEntityListItem["CreateTimestamp"].isNull())
 			dataEntityListItemObject.createTimestamp = std::stol(dataNodeDataEntityListDataEntityListItem["CreateTimestamp"].asString());
+		if(!dataNodeDataEntityListDataEntityListItem["DatabaseName"].isNull())
+			dataEntityListItemObject.databaseName = dataNodeDataEntityListDataEntityListItem["DatabaseName"].asString();
 		data_.dataEntityList.push_back(dataEntityListItemObject);
 	}
 	if(!value["HttpStatusCode"].isNull())
