@@ -88,3 +88,12 @@ void DescribeVodDomainUsageDataRequest::setField(const std::string &field) {
   setParameter(std::string("Field"), field);
 }
 
+std::string DescribeVodDomainUsageDataRequest::getInterval() const {
+  return interval_;
+}
+
+void DescribeVodDomainUsageDataRequest::setInterval(const std::string &interval) {
+  interval_ = interval;
+  setParameter(std::string("Interval"), interval);
+}
+

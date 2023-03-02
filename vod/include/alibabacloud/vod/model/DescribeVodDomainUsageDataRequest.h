@@ -44,6 +44,8 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getField() const;
 	void setField(const std::string &field);
+	std::string getInterval() const;
+	void setInterval(const std::string &interval);
 
 private:
 	std::string startTime_;
@@ -53,6 +55,7 @@ private:
 	std::string endTime_;
 	long ownerId_;
 	std::string field_;
+	std::string interval_;
 };
 } // namespace Model
 } // namespace Vod
