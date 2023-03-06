@@ -31,21 +31,21 @@ IotClient::IotClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IotClient::IotClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IotClient::IotClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "iot");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 IotClient::~IotClient()
@@ -6171,6 +6171,42 @@ IotClient::GetSceneRuleOutcomeCallable IotClient::getSceneRuleCallable(const Get
 	return task->get_future();
 }
 
+IotClient::GetShareSpeechModelAudioOutcome IotClient::getShareSpeechModelAudio(const GetShareSpeechModelAudioRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetShareSpeechModelAudioOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetShareSpeechModelAudioOutcome(GetShareSpeechModelAudioResult(outcome.result()));
+	else
+		return GetShareSpeechModelAudioOutcome(outcome.error());
+}
+
+void IotClient::getShareSpeechModelAudioAsync(const GetShareSpeechModelAudioRequest& request, const GetShareSpeechModelAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getShareSpeechModelAudio(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::GetShareSpeechModelAudioOutcomeCallable IotClient::getShareSpeechModelAudioCallable(const GetShareSpeechModelAudioRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetShareSpeechModelAudioOutcome()>>(
+			[this, request]()
+			{
+			return this->getShareSpeechModelAudio(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::GetShareTaskByDeviceOpenOutcome IotClient::getShareTaskByDeviceOpen(const GetShareTaskByDeviceOpenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -11025,6 +11061,42 @@ IotClient::QuerySpeechDeviceOutcomeCallable IotClient::querySpeechDeviceCallable
 			[this, request]()
 			{
 			return this->querySpeechDevice(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QuerySpeechLicenseAvailableQuotaOutcome IotClient::querySpeechLicenseAvailableQuota(const QuerySpeechLicenseAvailableQuotaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySpeechLicenseAvailableQuotaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySpeechLicenseAvailableQuotaOutcome(QuerySpeechLicenseAvailableQuotaResult(outcome.result()));
+	else
+		return QuerySpeechLicenseAvailableQuotaOutcome(outcome.error());
+}
+
+void IotClient::querySpeechLicenseAvailableQuotaAsync(const QuerySpeechLicenseAvailableQuotaRequest& request, const QuerySpeechLicenseAvailableQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySpeechLicenseAvailableQuota(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySpeechLicenseAvailableQuotaOutcomeCallable IotClient::querySpeechLicenseAvailableQuotaCallable(const QuerySpeechLicenseAvailableQuotaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySpeechLicenseAvailableQuotaOutcome()>>(
+			[this, request]()
+			{
+			return this->querySpeechLicenseAvailableQuota(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

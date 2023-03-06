@@ -14,42 +14,34 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/AddShareTaskDeviceResult.h>
+#include <alibabacloud/iot/model/GetShareSpeechModelAudioResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Iot;
 using namespace AlibabaCloud::Iot::Model;
 
-AddShareTaskDeviceResult::AddShareTaskDeviceResult() :
+GetShareSpeechModelAudioResult::GetShareSpeechModelAudioResult() :
 	ServiceResult()
 {}
 
-AddShareTaskDeviceResult::AddShareTaskDeviceResult(const std::string &payload) :
+GetShareSpeechModelAudioResult::GetShareSpeechModelAudioResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-AddShareTaskDeviceResult::~AddShareTaskDeviceResult()
+GetShareSpeechModelAudioResult::~GetShareSpeechModelAudioResult()
 {}
 
-void AddShareTaskDeviceResult::parse(const std::string &payload)
+void GetShareSpeechModelAudioResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["Progress"].isNull())
-		data_.progress = std::stoi(dataNode["Progress"].asString());
-	if(!dataNode["ProgressId"].isNull())
-		data_.progressId = dataNode["ProgressId"].asString();
-	if(!dataNode["SuccessSum"].isNull())
-		data_.successSum = std::stoi(dataNode["SuccessSum"].asString());
-	if(!dataNode["FailSum"].isNull())
-		data_.failSum = std::stoi(dataNode["FailSum"].asString());
-	if(!dataNode["FailedResultCsvFile"].isNull())
-		data_.failedResultCsvFile = dataNode["FailedResultCsvFile"].asString();
+	auto allData = value["Data"]["data"];
+	for (const auto &item : allData)
+		data_.push_back(item.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
@@ -59,22 +51,22 @@ void AddShareTaskDeviceResult::parse(const std::string &payload)
 
 }
 
-AddShareTaskDeviceResult::Data AddShareTaskDeviceResult::getData()const
+std::vector<std::string> GetShareSpeechModelAudioResult::getData()const
 {
 	return data_;
 }
 
-std::string AddShareTaskDeviceResult::getErrorMessage()const
+std::string GetShareSpeechModelAudioResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string AddShareTaskDeviceResult::getCode()const
+std::string GetShareSpeechModelAudioResult::getCode()const
 {
 	return code_;
 }
 
-bool AddShareTaskDeviceResult::getSuccess()const
+bool GetShareSpeechModelAudioResult::getSuccess()const
 {
 	return success_;
 }

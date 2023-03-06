@@ -14,67 +14,58 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/iot/model/AddShareTaskDeviceResult.h>
+#include <alibabacloud/iot/model/QuerySpeechLicenseAvailableQuotaResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Iot;
 using namespace AlibabaCloud::Iot::Model;
 
-AddShareTaskDeviceResult::AddShareTaskDeviceResult() :
+QuerySpeechLicenseAvailableQuotaResult::QuerySpeechLicenseAvailableQuotaResult() :
 	ServiceResult()
 {}
 
-AddShareTaskDeviceResult::AddShareTaskDeviceResult(const std::string &payload) :
+QuerySpeechLicenseAvailableQuotaResult::QuerySpeechLicenseAvailableQuotaResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-AddShareTaskDeviceResult::~AddShareTaskDeviceResult()
+QuerySpeechLicenseAvailableQuotaResult::~QuerySpeechLicenseAvailableQuotaResult()
 {}
 
-void AddShareTaskDeviceResult::parse(const std::string &payload)
+void QuerySpeechLicenseAvailableQuotaResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto dataNode = value["Data"];
-	if(!dataNode["Progress"].isNull())
-		data_.progress = std::stoi(dataNode["Progress"].asString());
-	if(!dataNode["ProgressId"].isNull())
-		data_.progressId = dataNode["ProgressId"].asString();
-	if(!dataNode["SuccessSum"].isNull())
-		data_.successSum = std::stoi(dataNode["SuccessSum"].asString());
-	if(!dataNode["FailSum"].isNull())
-		data_.failSum = std::stoi(dataNode["FailSum"].asString());
-	if(!dataNode["FailedResultCsvFile"].isNull())
-		data_.failedResultCsvFile = dataNode["FailedResultCsvFile"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["ErrorMessage"].isNull())
 		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Data"].isNull())
+		data_ = std::stol(value["Data"].asString());
 
 }
 
-AddShareTaskDeviceResult::Data AddShareTaskDeviceResult::getData()const
+long QuerySpeechLicenseAvailableQuotaResult::getData()const
 {
 	return data_;
 }
 
-std::string AddShareTaskDeviceResult::getErrorMessage()const
+std::string QuerySpeechLicenseAvailableQuotaResult::getErrorMessage()const
 {
 	return errorMessage_;
 }
 
-std::string AddShareTaskDeviceResult::getCode()const
+std::string QuerySpeechLicenseAvailableQuotaResult::getCode()const
 {
 	return code_;
 }
 
-bool AddShareTaskDeviceResult::getSuccess()const
+bool QuerySpeechLicenseAvailableQuotaResult::getSuccess()const
 {
 	return success_;
 }

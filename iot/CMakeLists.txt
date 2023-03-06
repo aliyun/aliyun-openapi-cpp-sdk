@@ -361,6 +361,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/GetRuleActionResult.h
 	include/alibabacloud/iot/model/GetSceneRuleRequest.h
 	include/alibabacloud/iot/model/GetSceneRuleResult.h
+	include/alibabacloud/iot/model/GetShareSpeechModelAudioRequest.h
+	include/alibabacloud/iot/model/GetShareSpeechModelAudioResult.h
 	include/alibabacloud/iot/model/GetShareTaskByDeviceOpenRequest.h
 	include/alibabacloud/iot/model/GetShareTaskByDeviceOpenResult.h
 	include/alibabacloud/iot/model/GetSoundCodeAudioRequest.h
@@ -631,6 +633,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QuerySpeechResult.h
 	include/alibabacloud/iot/model/QuerySpeechDeviceRequest.h
 	include/alibabacloud/iot/model/QuerySpeechDeviceResult.h
+	include/alibabacloud/iot/model/QuerySpeechLicenseAvailableQuotaRequest.h
+	include/alibabacloud/iot/model/QuerySpeechLicenseAvailableQuotaResult.h
 	include/alibabacloud/iot/model/QuerySpeechLicenseDeviceListRequest.h
 	include/alibabacloud/iot/model/QuerySpeechLicenseDeviceListResult.h
 	include/alibabacloud/iot/model/QuerySpeechListRequest.h
@@ -1158,6 +1162,8 @@ set(iot_src
 	src/model/GetRuleActionResult.cc
 	src/model/GetSceneRuleRequest.cc
 	src/model/GetSceneRuleResult.cc
+	src/model/GetShareSpeechModelAudioRequest.cc
+	src/model/GetShareSpeechModelAudioResult.cc
 	src/model/GetShareTaskByDeviceOpenRequest.cc
 	src/model/GetShareTaskByDeviceOpenResult.cc
 	src/model/GetSoundCodeAudioRequest.cc
@@ -1428,6 +1434,8 @@ set(iot_src
 	src/model/QuerySpeechResult.cc
 	src/model/QuerySpeechDeviceRequest.cc
 	src/model/QuerySpeechDeviceResult.cc
+	src/model/QuerySpeechLicenseAvailableQuotaRequest.cc
+	src/model/QuerySpeechLicenseAvailableQuotaResult.cc
 	src/model/QuerySpeechLicenseDeviceListRequest.cc
 	src/model/QuerySpeechLicenseDeviceListResult.cc
 	src/model/QuerySpeechListRequest.cc

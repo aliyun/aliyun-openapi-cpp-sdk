@@ -362,6 +362,8 @@
 #include "model/GetRuleActionResult.h"
 #include "model/GetSceneRuleRequest.h"
 #include "model/GetSceneRuleResult.h"
+#include "model/GetShareSpeechModelAudioRequest.h"
+#include "model/GetShareSpeechModelAudioResult.h"
 #include "model/GetShareTaskByDeviceOpenRequest.h"
 #include "model/GetShareTaskByDeviceOpenResult.h"
 #include "model/GetSoundCodeAudioRequest.h"
@@ -632,6 +634,8 @@
 #include "model/QuerySpeechResult.h"
 #include "model/QuerySpeechDeviceRequest.h"
 #include "model/QuerySpeechDeviceResult.h"
+#include "model/QuerySpeechLicenseAvailableQuotaRequest.h"
+#include "model/QuerySpeechLicenseAvailableQuotaResult.h"
 #include "model/QuerySpeechLicenseDeviceListRequest.h"
 #include "model/QuerySpeechLicenseDeviceListResult.h"
 #include "model/QuerySpeechListRequest.h"
@@ -1335,6 +1339,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetSceneRuleResult> GetSceneRuleOutcome;
 			typedef std::future<GetSceneRuleOutcome> GetSceneRuleOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetSceneRuleRequest&, const GetSceneRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSceneRuleAsyncHandler;
+			typedef Outcome<Error, Model::GetShareSpeechModelAudioResult> GetShareSpeechModelAudioOutcome;
+			typedef std::future<GetShareSpeechModelAudioOutcome> GetShareSpeechModelAudioOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::GetShareSpeechModelAudioRequest&, const GetShareSpeechModelAudioOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetShareSpeechModelAudioAsyncHandler;
 			typedef Outcome<Error, Model::GetShareTaskByDeviceOpenResult> GetShareTaskByDeviceOpenOutcome;
 			typedef std::future<GetShareTaskByDeviceOpenOutcome> GetShareTaskByDeviceOpenOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::GetShareTaskByDeviceOpenRequest&, const GetShareTaskByDeviceOpenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetShareTaskByDeviceOpenAsyncHandler;
@@ -1740,6 +1747,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QuerySpeechDeviceResult> QuerySpeechDeviceOutcome;
 			typedef std::future<QuerySpeechDeviceOutcome> QuerySpeechDeviceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QuerySpeechDeviceRequest&, const QuerySpeechDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySpeechDeviceAsyncHandler;
+			typedef Outcome<Error, Model::QuerySpeechLicenseAvailableQuotaResult> QuerySpeechLicenseAvailableQuotaOutcome;
+			typedef std::future<QuerySpeechLicenseAvailableQuotaOutcome> QuerySpeechLicenseAvailableQuotaOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QuerySpeechLicenseAvailableQuotaRequest&, const QuerySpeechLicenseAvailableQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySpeechLicenseAvailableQuotaAsyncHandler;
 			typedef Outcome<Error, Model::QuerySpeechLicenseDeviceListResult> QuerySpeechLicenseDeviceListOutcome;
 			typedef std::future<QuerySpeechLicenseDeviceListOutcome> QuerySpeechLicenseDeviceListOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QuerySpeechLicenseDeviceListRequest&, const QuerySpeechLicenseDeviceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySpeechLicenseDeviceListAsyncHandler;
@@ -2531,6 +2541,9 @@ namespace AlibabaCloud
 			GetSceneRuleOutcome getSceneRule(const Model::GetSceneRuleRequest &request)const;
 			void getSceneRuleAsync(const Model::GetSceneRuleRequest& request, const GetSceneRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSceneRuleOutcomeCallable getSceneRuleCallable(const Model::GetSceneRuleRequest& request) const;
+			GetShareSpeechModelAudioOutcome getShareSpeechModelAudio(const Model::GetShareSpeechModelAudioRequest &request)const;
+			void getShareSpeechModelAudioAsync(const Model::GetShareSpeechModelAudioRequest& request, const GetShareSpeechModelAudioAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetShareSpeechModelAudioOutcomeCallable getShareSpeechModelAudioCallable(const Model::GetShareSpeechModelAudioRequest& request) const;
 			GetShareTaskByDeviceOpenOutcome getShareTaskByDeviceOpen(const Model::GetShareTaskByDeviceOpenRequest &request)const;
 			void getShareTaskByDeviceOpenAsync(const Model::GetShareTaskByDeviceOpenRequest& request, const GetShareTaskByDeviceOpenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetShareTaskByDeviceOpenOutcomeCallable getShareTaskByDeviceOpenCallable(const Model::GetShareTaskByDeviceOpenRequest& request) const;
@@ -2936,6 +2949,9 @@ namespace AlibabaCloud
 			QuerySpeechDeviceOutcome querySpeechDevice(const Model::QuerySpeechDeviceRequest &request)const;
 			void querySpeechDeviceAsync(const Model::QuerySpeechDeviceRequest& request, const QuerySpeechDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySpeechDeviceOutcomeCallable querySpeechDeviceCallable(const Model::QuerySpeechDeviceRequest& request) const;
+			QuerySpeechLicenseAvailableQuotaOutcome querySpeechLicenseAvailableQuota(const Model::QuerySpeechLicenseAvailableQuotaRequest &request)const;
+			void querySpeechLicenseAvailableQuotaAsync(const Model::QuerySpeechLicenseAvailableQuotaRequest& request, const QuerySpeechLicenseAvailableQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySpeechLicenseAvailableQuotaOutcomeCallable querySpeechLicenseAvailableQuotaCallable(const Model::QuerySpeechLicenseAvailableQuotaRequest& request) const;
 			QuerySpeechLicenseDeviceListOutcome querySpeechLicenseDeviceList(const Model::QuerySpeechLicenseDeviceListRequest &request)const;
 			void querySpeechLicenseDeviceListAsync(const Model::QuerySpeechLicenseDeviceListRequest& request, const QuerySpeechLicenseDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySpeechLicenseDeviceListOutcomeCallable querySpeechLicenseDeviceListCallable(const Model::QuerySpeechLicenseDeviceListRequest& request) const;
