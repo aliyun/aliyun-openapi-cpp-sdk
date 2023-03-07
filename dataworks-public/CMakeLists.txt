@@ -437,6 +437,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/RunSmokeTestResult.h
 	include/alibabacloud/dataworks-public/model/RunTriggerNodeRequest.h
 	include/alibabacloud/dataworks-public/model/RunTriggerNodeResult.h
+	include/alibabacloud/dataworks-public/model/SaveDataServiceApiTestResultRequest.h
+	include/alibabacloud/dataworks-public/model/SaveDataServiceApiTestResultResult.h
 	include/alibabacloud/dataworks-public/model/ScanSensitiveDataRequest.h
 	include/alibabacloud/dataworks-public/model/ScanSensitiveDataResult.h
 	include/alibabacloud/dataworks-public/model/SearchMetaTablesRequest.h
@@ -944,6 +946,8 @@ set(dataworks-public_src
 	src/model/RunSmokeTestResult.cc
 	src/model/RunTriggerNodeRequest.cc
 	src/model/RunTriggerNodeResult.cc
+	src/model/SaveDataServiceApiTestResultRequest.cc
+	src/model/SaveDataServiceApiTestResultResult.cc
 	src/model/ScanSensitiveDataRequest.cc
 	src/model/ScanSensitiveDataResult.cc
 	src/model/SearchMetaTablesRequest.cc

@@ -7539,6 +7539,42 @@ Dataworks_publicClient::RunTriggerNodeOutcomeCallable Dataworks_publicClient::ru
 	return task->get_future();
 }
 
+Dataworks_publicClient::SaveDataServiceApiTestResultOutcome Dataworks_publicClient::saveDataServiceApiTestResult(const SaveDataServiceApiTestResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SaveDataServiceApiTestResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SaveDataServiceApiTestResultOutcome(SaveDataServiceApiTestResultResult(outcome.result()));
+	else
+		return SaveDataServiceApiTestResultOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::saveDataServiceApiTestResultAsync(const SaveDataServiceApiTestResultRequest& request, const SaveDataServiceApiTestResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, saveDataServiceApiTestResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::SaveDataServiceApiTestResultOutcomeCallable Dataworks_publicClient::saveDataServiceApiTestResultCallable(const SaveDataServiceApiTestResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SaveDataServiceApiTestResultOutcome()>>(
+			[this, request]()
+			{
+			return this->saveDataServiceApiTestResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ScanSensitiveDataOutcome Dataworks_publicClient::scanSensitiveData(const ScanSensitiveDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

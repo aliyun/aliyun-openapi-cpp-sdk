@@ -438,6 +438,8 @@
 #include "model/RunSmokeTestResult.h"
 #include "model/RunTriggerNodeRequest.h"
 #include "model/RunTriggerNodeResult.h"
+#include "model/SaveDataServiceApiTestResultRequest.h"
+#include "model/SaveDataServiceApiTestResultResult.h"
 #include "model/ScanSensitiveDataRequest.h"
 #include "model/ScanSensitiveDataResult.h"
 #include "model/SearchMetaTablesRequest.h"
@@ -1159,6 +1161,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RunTriggerNodeResult> RunTriggerNodeOutcome;
 			typedef std::future<RunTriggerNodeOutcome> RunTriggerNodeOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::RunTriggerNodeRequest&, const RunTriggerNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunTriggerNodeAsyncHandler;
+			typedef Outcome<Error, Model::SaveDataServiceApiTestResultResult> SaveDataServiceApiTestResultOutcome;
+			typedef std::future<SaveDataServiceApiTestResultOutcome> SaveDataServiceApiTestResultOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::SaveDataServiceApiTestResultRequest&, const SaveDataServiceApiTestResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SaveDataServiceApiTestResultAsyncHandler;
 			typedef Outcome<Error, Model::ScanSensitiveDataResult> ScanSensitiveDataOutcome;
 			typedef std::future<ScanSensitiveDataOutcome> ScanSensitiveDataOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ScanSensitiveDataRequest&, const ScanSensitiveDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ScanSensitiveDataAsyncHandler;
@@ -1920,6 +1925,9 @@ namespace AlibabaCloud
 			RunTriggerNodeOutcome runTriggerNode(const Model::RunTriggerNodeRequest &request)const;
 			void runTriggerNodeAsync(const Model::RunTriggerNodeRequest& request, const RunTriggerNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RunTriggerNodeOutcomeCallable runTriggerNodeCallable(const Model::RunTriggerNodeRequest& request) const;
+			SaveDataServiceApiTestResultOutcome saveDataServiceApiTestResult(const Model::SaveDataServiceApiTestResultRequest &request)const;
+			void saveDataServiceApiTestResultAsync(const Model::SaveDataServiceApiTestResultRequest& request, const SaveDataServiceApiTestResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SaveDataServiceApiTestResultOutcomeCallable saveDataServiceApiTestResultCallable(const Model::SaveDataServiceApiTestResultRequest& request) const;
 			ScanSensitiveDataOutcome scanSensitiveData(const Model::ScanSensitiveDataRequest &request)const;
 			void scanSensitiveDataAsync(const Model::ScanSensitiveDataRequest& request, const ScanSensitiveDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ScanSensitiveDataOutcomeCallable scanSensitiveDataCallable(const Model::ScanSensitiveDataRequest& request) const;
