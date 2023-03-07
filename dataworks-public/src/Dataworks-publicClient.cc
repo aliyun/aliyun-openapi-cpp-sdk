@@ -7863,6 +7863,42 @@ Dataworks_publicClient::StopInstanceOutcomeCallable Dataworks_publicClient::stop
 	return task->get_future();
 }
 
+Dataworks_publicClient::SubmitDataServiceApiOutcome Dataworks_publicClient::submitDataServiceApi(const SubmitDataServiceApiRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitDataServiceApiOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitDataServiceApiOutcome(SubmitDataServiceApiResult(outcome.result()));
+	else
+		return SubmitDataServiceApiOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::submitDataServiceApiAsync(const SubmitDataServiceApiRequest& request, const SubmitDataServiceApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitDataServiceApi(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::SubmitDataServiceApiOutcomeCallable Dataworks_publicClient::submitDataServiceApiCallable(const SubmitDataServiceApiRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitDataServiceApiOutcome()>>(
+			[this, request]()
+			{
+			return this->submitDataServiceApi(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::SubmitFileOutcome Dataworks_publicClient::submitFile(const SubmitFileRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

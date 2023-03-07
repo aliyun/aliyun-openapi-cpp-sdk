@@ -456,6 +456,8 @@
 #include "model/StopDISyncInstanceResult.h"
 #include "model/StopInstanceRequest.h"
 #include "model/StopInstanceResult.h"
+#include "model/SubmitDataServiceApiRequest.h"
+#include "model/SubmitDataServiceApiResult.h"
 #include "model/SubmitFileRequest.h"
 #include "model/SubmitFileResult.h"
 #include "model/SuspendInstanceRequest.h"
@@ -1184,6 +1186,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopInstanceResult> StopInstanceOutcome;
 			typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::StopInstanceRequest&, const StopInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopInstanceAsyncHandler;
+			typedef Outcome<Error, Model::SubmitDataServiceApiResult> SubmitDataServiceApiOutcome;
+			typedef std::future<SubmitDataServiceApiOutcome> SubmitDataServiceApiOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::SubmitDataServiceApiRequest&, const SubmitDataServiceApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitDataServiceApiAsyncHandler;
 			typedef Outcome<Error, Model::SubmitFileResult> SubmitFileOutcome;
 			typedef std::future<SubmitFileOutcome> SubmitFileOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::SubmitFileRequest&, const SubmitFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitFileAsyncHandler;
@@ -1942,6 +1947,9 @@ namespace AlibabaCloud
 			StopInstanceOutcome stopInstance(const Model::StopInstanceRequest &request)const;
 			void stopInstanceAsync(const Model::StopInstanceRequest& request, const StopInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopInstanceOutcomeCallable stopInstanceCallable(const Model::StopInstanceRequest& request) const;
+			SubmitDataServiceApiOutcome submitDataServiceApi(const Model::SubmitDataServiceApiRequest &request)const;
+			void submitDataServiceApiAsync(const Model::SubmitDataServiceApiRequest& request, const SubmitDataServiceApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitDataServiceApiOutcomeCallable submitDataServiceApiCallable(const Model::SubmitDataServiceApiRequest& request) const;
 			SubmitFileOutcome submitFile(const Model::SubmitFileRequest &request)const;
 			void submitFileAsync(const Model::SubmitFileRequest& request, const SubmitFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitFileOutcomeCallable submitFileCallable(const Model::SubmitFileRequest& request) const;

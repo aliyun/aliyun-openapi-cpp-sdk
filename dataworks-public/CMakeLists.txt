@@ -455,6 +455,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/StopDISyncInstanceResult.h
 	include/alibabacloud/dataworks-public/model/StopInstanceRequest.h
 	include/alibabacloud/dataworks-public/model/StopInstanceResult.h
+	include/alibabacloud/dataworks-public/model/SubmitDataServiceApiRequest.h
+	include/alibabacloud/dataworks-public/model/SubmitDataServiceApiResult.h
 	include/alibabacloud/dataworks-public/model/SubmitFileRequest.h
 	include/alibabacloud/dataworks-public/model/SubmitFileResult.h
 	include/alibabacloud/dataworks-public/model/SuspendInstanceRequest.h
@@ -960,6 +962,8 @@ set(dataworks-public_src
 	src/model/StopDISyncInstanceResult.cc
 	src/model/StopInstanceRequest.cc
 	src/model/StopInstanceResult.cc
+	src/model/SubmitDataServiceApiRequest.cc
+	src/model/SubmitDataServiceApiResult.cc
 	src/model/SubmitFileRequest.cc
 	src/model/SubmitFileResult.cc
 	src/model/SuspendInstanceRequest.cc
