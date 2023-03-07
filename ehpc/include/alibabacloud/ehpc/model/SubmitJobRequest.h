@@ -36,6 +36,8 @@ public:
 	void setRunasUserPassword(const std::string &runasUserPassword);
 	std::string getClockTime() const;
 	void setClockTime(const std::string &clockTime);
+	int getJobRetryPriority() const;
+	void setJobRetryPriority(int jobRetryPriority);
 	std::string getCommandLine() const;
 	void setCommandLine(const std::string &commandLine);
 	std::string getJobQueue() const;
@@ -50,6 +52,8 @@ public:
 	void setPackagePath(const std::string &packagePath);
 	std::string getMem() const;
 	void setMem(const std::string &mem);
+	int getJobRetryCount() const;
+	void setJobRetryCount(int jobRetryCount);
 	std::string getStdoutRedirectPath() const;
 	void setStdoutRedirectPath(const std::string &stdoutRedirectPath);
 	std::string getVariables() const;
@@ -70,6 +74,8 @@ public:
 	void setPriority(int priority);
 	int getGpu() const;
 	void setGpu(int gpu);
+	int getJobRetryOnExitCode() const;
+	void setJobRetryOnExitCode(int jobRetryOnExitCode);
 	int getNode() const;
 	void setNode(int node);
 	bool getAsync() const;
@@ -87,6 +93,7 @@ private:
 	std::string stderrRedirectPath_;
 	std::string runasUserPassword_;
 	std::string clockTime_;
+	int jobRetryPriority_;
 	std::string commandLine_;
 	std::string jobQueue_;
 	std::string accessKeyId_;
@@ -94,6 +101,7 @@ private:
 	std::string unzipCmd_;
 	std::string packagePath_;
 	std::string mem_;
+	int jobRetryCount_;
 	std::string stdoutRedirectPath_;
 	std::string variables_;
 	std::string postCmdLine_;
@@ -104,6 +112,7 @@ private:
 	int thread_;
 	int priority_;
 	int gpu_;
+	int jobRetryOnExitCode_;
 	int node_;
 	bool async_;
 	int task_;

@@ -156,6 +156,8 @@ public:
 	void setIsComputeEss(bool isComputeEss);
 	std::string getRamRoleName() const;
 	void setRamRoleName(const std::string &ramRoleName);
+	std::string getNetworkInterfaceTrafficMode() const;
+	void setNetworkInterfaceTrafficMode(const std::string &networkInterfaceTrafficMode);
 	std::string getPlugin() const;
 	void setPlugin(const std::string &plugin);
 	std::vector<Application> getApplication() const;
@@ -228,6 +230,7 @@ private:
 	std::string clusterVersion_;
 	bool isComputeEss_;
 	std::string ramRoleName_;
+	std::string networkInterfaceTrafficMode_;
 	std::string plugin_;
 	std::vector<Application> application_;
 	std::string ecsChargeType_;

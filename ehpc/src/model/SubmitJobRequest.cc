@@ -52,6 +52,15 @@ void SubmitJobRequest::setClockTime(const std::string &clockTime) {
   setParameter(std::string("ClockTime"), clockTime);
 }
 
+int SubmitJobRequest::getJobRetryPriority() const {
+  return jobRetryPriority_;
+}
+
+void SubmitJobRequest::setJobRetryPriority(int jobRetryPriority) {
+  jobRetryPriority_ = jobRetryPriority;
+  setParameter(std::string("JobRetry.Priority"), std::to_string(jobRetryPriority));
+}
+
 std::string SubmitJobRequest::getCommandLine() const {
   return commandLine_;
 }
@@ -113,6 +122,15 @@ std::string SubmitJobRequest::getMem() const {
 void SubmitJobRequest::setMem(const std::string &mem) {
   mem_ = mem;
   setParameter(std::string("Mem"), mem);
+}
+
+int SubmitJobRequest::getJobRetryCount() const {
+  return jobRetryCount_;
+}
+
+void SubmitJobRequest::setJobRetryCount(int jobRetryCount) {
+  jobRetryCount_ = jobRetryCount;
+  setParameter(std::string("JobRetry.Count"), std::to_string(jobRetryCount));
 }
 
 std::string SubmitJobRequest::getStdoutRedirectPath() const {
@@ -203,6 +221,15 @@ int SubmitJobRequest::getGpu() const {
 void SubmitJobRequest::setGpu(int gpu) {
   gpu_ = gpu;
   setParameter(std::string("Gpu"), std::to_string(gpu));
+}
+
+int SubmitJobRequest::getJobRetryOnExitCode() const {
+  return jobRetryOnExitCode_;
+}
+
+void SubmitJobRequest::setJobRetryOnExitCode(int jobRetryOnExitCode) {
+  jobRetryOnExitCode_ = jobRetryOnExitCode;
+  setParameter(std::string("JobRetry.OnExitCode"), std::to_string(jobRetryOnExitCode));
 }
 
 int SubmitJobRequest::getNode() const {

@@ -84,6 +84,8 @@ public:
 	void setHostNameSuffix(const std::string &hostNameSuffix);
 	bool getSync() const;
 	void setSync(bool sync);
+	std::string getNetworkInterfaceTrafficMode() const;
+	void setNetworkInterfaceTrafficMode(const std::string &networkInterfaceTrafficMode);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	int getComputeSpotDuration() const;
@@ -129,6 +131,7 @@ private:
 	std::string computeSpotStrategy_;
 	std::string hostNameSuffix_;
 	bool sync_;
+	std::string networkInterfaceTrafficMode_;
 	std::string vSwitchId_;
 	int computeSpotDuration_;
 	std::string periodUnit_;

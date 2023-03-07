@@ -501,6 +501,15 @@ void CreateClusterRequest::setRamRoleName(const std::string &ramRoleName) {
   setParameter(std::string("RamRoleName"), ramRoleName);
 }
 
+std::string CreateClusterRequest::getNetworkInterfaceTrafficMode() const {
+  return networkInterfaceTrafficMode_;
+}
+
+void CreateClusterRequest::setNetworkInterfaceTrafficMode(const std::string &networkInterfaceTrafficMode) {
+  networkInterfaceTrafficMode_ = networkInterfaceTrafficMode;
+  setParameter(std::string("NetworkInterfaceTrafficMode"), networkInterfaceTrafficMode);
+}
+
 std::string CreateClusterRequest::getPlugin() const {
   return plugin_;
 }

@@ -241,6 +241,15 @@ void AddNodesRequest::setSync(bool sync) {
   setParameter(std::string("Sync"), sync ? "true" : "false");
 }
 
+std::string AddNodesRequest::getNetworkInterfaceTrafficMode() const {
+  return networkInterfaceTrafficMode_;
+}
+
+void AddNodesRequest::setNetworkInterfaceTrafficMode(const std::string &networkInterfaceTrafficMode) {
+  networkInterfaceTrafficMode_ = networkInterfaceTrafficMode;
+  setParameter(std::string("NetworkInterfaceTrafficMode"), networkInterfaceTrafficMode);
+}
+
 std::string AddNodesRequest::getVSwitchId() const {
   return vSwitchId_;
 }

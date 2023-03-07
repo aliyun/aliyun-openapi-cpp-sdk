@@ -55,6 +55,10 @@ void ListImagesResult::parse(const std::string &payload)
 			osTagsObject.imageId = valueOsTagsOsInfo["ImageId"].asString();
 		if(!valueOsTagsOsInfo["Architecture"].isNull())
 			osTagsObject.architecture = valueOsTagsOsInfo["Architecture"].asString();
+		if(!valueOsTagsOsInfo["OSName"].isNull())
+			osTagsObject.oSName = valueOsTagsOsInfo["OSName"].asString();
+		if(!valueOsTagsOsInfo["OSNameEn"].isNull())
+			osTagsObject.oSNameEn = valueOsTagsOsInfo["OSNameEn"].asString();
 		osTags_.push_back(osTagsObject);
 	}
 
