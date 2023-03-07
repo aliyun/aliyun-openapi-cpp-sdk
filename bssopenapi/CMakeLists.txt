@@ -165,6 +165,8 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/QueryRelationListResult.h
 	include/alibabacloud/bssopenapi/model/QueryResellerAvailableQuotaRequest.h
 	include/alibabacloud/bssopenapi/model/QueryResellerAvailableQuotaResult.h
+	include/alibabacloud/bssopenapi/model/QueryResellerUserAlarmThresholdRequest.h
+	include/alibabacloud/bssopenapi/model/QueryResellerUserAlarmThresholdResult.h
 	include/alibabacloud/bssopenapi/model/QueryResourcePackageInstancesRequest.h
 	include/alibabacloud/bssopenapi/model/QueryResourcePackageInstancesResult.h
 	include/alibabacloud/bssopenapi/model/QuerySavingsPlansDeductLogRequest.h
@@ -362,6 +364,8 @@ set(bssopenapi_src
 	src/model/QueryRelationListResult.cc
 	src/model/QueryResellerAvailableQuotaRequest.cc
 	src/model/QueryResellerAvailableQuotaResult.cc
+	src/model/QueryResellerUserAlarmThresholdRequest.cc
+	src/model/QueryResellerUserAlarmThresholdResult.cc
 	src/model/QueryResourcePackageInstancesRequest.cc
 	src/model/QueryResourcePackageInstancesResult.cc
 	src/model/QuerySavingsPlansDeductLogRequest.cc

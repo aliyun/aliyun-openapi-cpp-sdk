@@ -2643,6 +2643,42 @@ BssOpenApiClient::QueryResellerAvailableQuotaOutcomeCallable BssOpenApiClient::q
 	return task->get_future();
 }
 
+BssOpenApiClient::QueryResellerUserAlarmThresholdOutcome BssOpenApiClient::queryResellerUserAlarmThreshold(const QueryResellerUserAlarmThresholdRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryResellerUserAlarmThresholdOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryResellerUserAlarmThresholdOutcome(QueryResellerUserAlarmThresholdResult(outcome.result()));
+	else
+		return QueryResellerUserAlarmThresholdOutcome(outcome.error());
+}
+
+void BssOpenApiClient::queryResellerUserAlarmThresholdAsync(const QueryResellerUserAlarmThresholdRequest& request, const QueryResellerUserAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryResellerUserAlarmThreshold(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::QueryResellerUserAlarmThresholdOutcomeCallable BssOpenApiClient::queryResellerUserAlarmThresholdCallable(const QueryResellerUserAlarmThresholdRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryResellerUserAlarmThresholdOutcome()>>(
+			[this, request]()
+			{
+			return this->queryResellerUserAlarmThreshold(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 BssOpenApiClient::QueryResourcePackageInstancesOutcome BssOpenApiClient::queryResourcePackageInstances(const QueryResourcePackageInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

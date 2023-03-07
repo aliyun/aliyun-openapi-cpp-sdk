@@ -166,6 +166,8 @@
 #include "model/QueryRelationListResult.h"
 #include "model/QueryResellerAvailableQuotaRequest.h"
 #include "model/QueryResellerAvailableQuotaResult.h"
+#include "model/QueryResellerUserAlarmThresholdRequest.h"
+#include "model/QueryResellerUserAlarmThresholdResult.h"
 #include "model/QueryResourcePackageInstancesRequest.h"
 #include "model/QueryResourcePackageInstancesResult.h"
 #include "model/QuerySavingsPlansDeductLogRequest.h"
@@ -441,6 +443,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryResellerAvailableQuotaResult> QueryResellerAvailableQuotaOutcome;
 			typedef std::future<QueryResellerAvailableQuotaOutcome> QueryResellerAvailableQuotaOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryResellerAvailableQuotaRequest&, const QueryResellerAvailableQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryResellerAvailableQuotaAsyncHandler;
+			typedef Outcome<Error, Model::QueryResellerUserAlarmThresholdResult> QueryResellerUserAlarmThresholdOutcome;
+			typedef std::future<QueryResellerUserAlarmThresholdOutcome> QueryResellerUserAlarmThresholdOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::QueryResellerUserAlarmThresholdRequest&, const QueryResellerUserAlarmThresholdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryResellerUserAlarmThresholdAsyncHandler;
 			typedef Outcome<Error, Model::QueryResourcePackageInstancesResult> QueryResourcePackageInstancesOutcome;
 			typedef std::future<QueryResourcePackageInstancesOutcome> QueryResourcePackageInstancesOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::QueryResourcePackageInstancesRequest&, const QueryResourcePackageInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryResourcePackageInstancesAsyncHandler;
@@ -737,6 +742,9 @@ namespace AlibabaCloud
 			QueryResellerAvailableQuotaOutcome queryResellerAvailableQuota(const Model::QueryResellerAvailableQuotaRequest &request)const;
 			void queryResellerAvailableQuotaAsync(const Model::QueryResellerAvailableQuotaRequest& request, const QueryResellerAvailableQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryResellerAvailableQuotaOutcomeCallable queryResellerAvailableQuotaCallable(const Model::QueryResellerAvailableQuotaRequest& request) const;
+			QueryResellerUserAlarmThresholdOutcome queryResellerUserAlarmThreshold(const Model::QueryResellerUserAlarmThresholdRequest &request)const;
+			void queryResellerUserAlarmThresholdAsync(const Model::QueryResellerUserAlarmThresholdRequest& request, const QueryResellerUserAlarmThresholdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryResellerUserAlarmThresholdOutcomeCallable queryResellerUserAlarmThresholdCallable(const Model::QueryResellerUserAlarmThresholdRequest& request) const;
 			QueryResourcePackageInstancesOutcome queryResourcePackageInstances(const Model::QueryResourcePackageInstancesRequest &request)const;
 			void queryResourcePackageInstancesAsync(const Model::QueryResourcePackageInstancesRequest& request, const QueryResourcePackageInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryResourcePackageInstancesOutcomeCallable queryResourcePackageInstancesCallable(const Model::QueryResourcePackageInstancesRequest& request) const;
