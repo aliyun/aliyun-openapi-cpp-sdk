@@ -45,16 +45,22 @@ void DescribeDBResourceGroupResult::parse(const std::string &payload)
 		PoolInfo groupsInfoObject;
 		if(!valueGroupsInfoPoolInfo["GroupType"].isNull())
 			groupsInfoObject.groupType = valueGroupsInfoPoolInfo["GroupType"].asString();
-		if(!valueGroupsInfoPoolInfo["UpdateTime"].isNull())
-			groupsInfoObject.updateTime = valueGroupsInfoPoolInfo["UpdateTime"].asString();
 		if(!valueGroupsInfoPoolInfo["GroupName"].isNull())
 			groupsInfoObject.groupName = valueGroupsInfoPoolInfo["GroupName"].asString();
-		if(!valueGroupsInfoPoolInfo["CreateTime"].isNull())
-			groupsInfoObject.createTime = valueGroupsInfoPoolInfo["CreateTime"].asString();
+		if(!valueGroupsInfoPoolInfo["MinComputeResource"].isNull())
+			groupsInfoObject.minComputeResource = valueGroupsInfoPoolInfo["MinComputeResource"].asString();
+		if(!valueGroupsInfoPoolInfo["MaxComputeResource"].isNull())
+			groupsInfoObject.maxComputeResource = valueGroupsInfoPoolInfo["MaxComputeResource"].asString();
+		if(!valueGroupsInfoPoolInfo["ElasticMinComputeResource"].isNull())
+			groupsInfoObject.elasticMinComputeResource = valueGroupsInfoPoolInfo["ElasticMinComputeResource"].asString();
 		if(!valueGroupsInfoPoolInfo["GroupUsers"].isNull())
 			groupsInfoObject.groupUsers = valueGroupsInfoPoolInfo["GroupUsers"].asString();
-		if(!valueGroupsInfoPoolInfo["NodeNum"].isNull())
-			groupsInfoObject.nodeNum = std::stoi(valueGroupsInfoPoolInfo["NodeNum"].asString());
+		if(!valueGroupsInfoPoolInfo["CreateTime"].isNull())
+			groupsInfoObject.createTime = valueGroupsInfoPoolInfo["CreateTime"].asString();
+		if(!valueGroupsInfoPoolInfo["UpdateTime"].isNull())
+			groupsInfoObject.updateTime = valueGroupsInfoPoolInfo["UpdateTime"].asString();
+		if(!valueGroupsInfoPoolInfo["Status"].isNull())
+			groupsInfoObject.status = valueGroupsInfoPoolInfo["Status"].asString();
 		groupsInfo_.push_back(groupsInfoObject);
 	}
 

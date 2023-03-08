@@ -24,178 +24,186 @@
 #include "AdbExport.h"
 #include "model/AllocateClusterPublicConnectionRequest.h"
 #include "model/AllocateClusterPublicConnectionResult.h"
-#include "model/BindDBResourceGroupWithUserRequest.h"
-#include "model/BindDBResourceGroupWithUserResult.h"
-#include "model/BindDBResourcePoolWithUserRequest.h"
-#include "model/BindDBResourcePoolWithUserResult.h"
+#include "model/BindAccountRequest.h"
+#include "model/BindAccountResult.h"
+#include "model/CheckBindRamUserRequest.h"
+#include "model/CheckBindRamUserResult.h"
 #include "model/CreateAccountRequest.h"
 #include "model/CreateAccountResult.h"
 #include "model/CreateDBClusterRequest.h"
 #include "model/CreateDBClusterResult.h"
 #include "model/CreateDBResourceGroupRequest.h"
 #include "model/CreateDBResourceGroupResult.h"
-#include "model/CreateDBResourcePoolRequest.h"
-#include "model/CreateDBResourcePoolResult.h"
-#include "model/CreateElasticPlanRequest.h"
-#include "model/CreateElasticPlanResult.h"
+#include "model/CreateOssSubDirectoryRequest.h"
+#include "model/CreateOssSubDirectoryResult.h"
+#include "model/CreateSparkTemplateRequest.h"
+#include "model/CreateSparkTemplateResult.h"
 #include "model/DeleteAccountRequest.h"
 #include "model/DeleteAccountResult.h"
 #include "model/DeleteDBClusterRequest.h"
 #include "model/DeleteDBClusterResult.h"
 #include "model/DeleteDBResourceGroupRequest.h"
 #include "model/DeleteDBResourceGroupResult.h"
-#include "model/DeleteDBResourcePoolRequest.h"
-#include "model/DeleteDBResourcePoolResult.h"
-#include "model/DeleteElasticPlanRequest.h"
-#include "model/DeleteElasticPlanResult.h"
+#include "model/DeleteProcessInstanceRequest.h"
+#include "model/DeleteProcessInstanceResult.h"
+#include "model/DeleteSparkTemplateRequest.h"
+#include "model/DeleteSparkTemplateResult.h"
+#include "model/DeleteSparkTemplateFileRequest.h"
+#include "model/DeleteSparkTemplateFileResult.h"
 #include "model/DescribeAccountsRequest.h"
 #include "model/DescribeAccountsResult.h"
-#include "model/DescribeAllAccountsRequest.h"
-#include "model/DescribeAllAccountsResult.h"
-#include "model/DescribeAllDataSourceRequest.h"
-#include "model/DescribeAllDataSourceResult.h"
+#include "model/DescribeAdbMySqlColumnsRequest.h"
+#include "model/DescribeAdbMySqlColumnsResult.h"
+#include "model/DescribeAdbMySqlSchemasRequest.h"
+#include "model/DescribeAdbMySqlSchemasResult.h"
+#include "model/DescribeAdbMySqlTablesRequest.h"
+#include "model/DescribeAdbMySqlTablesResult.h"
+#include "model/DescribeApsActionLogsRequest.h"
+#include "model/DescribeApsActionLogsResult.h"
+#include "model/DescribeApsResourceGroupsRequest.h"
+#include "model/DescribeApsResourceGroupsResult.h"
 #include "model/DescribeAuditLogConfigRequest.h"
 #include "model/DescribeAuditLogConfigResult.h"
 #include "model/DescribeAuditLogRecordsRequest.h"
 #include "model/DescribeAuditLogRecordsResult.h"
-#include "model/DescribeAutoRenewAttributeRequest.h"
-#include "model/DescribeAutoRenewAttributeResult.h"
-#include "model/DescribeAvailableResourceRequest.h"
-#include "model/DescribeAvailableResourceResult.h"
 #include "model/DescribeBackupPolicyRequest.h"
 #include "model/DescribeBackupPolicyResult.h"
 #include "model/DescribeBackupsRequest.h"
 #include "model/DescribeBackupsResult.h"
-#include "model/DescribeColumnsRequest.h"
-#include "model/DescribeColumnsResult.h"
-#include "model/DescribeConnectionCountRecordsRequest.h"
-#include "model/DescribeConnectionCountRecordsResult.h"
-#include "model/DescribeDBClusterAccessWhiteListRequest.h"
-#include "model/DescribeDBClusterAccessWhiteListResult.h"
+#include "model/DescribeClusterAccessWhiteListRequest.h"
+#include "model/DescribeClusterAccessWhiteListResult.h"
+#include "model/DescribeClusterNetInfoRequest.h"
+#include "model/DescribeClusterNetInfoResult.h"
 #include "model/DescribeDBClusterAttributeRequest.h"
 #include "model/DescribeDBClusterAttributeResult.h"
 #include "model/DescribeDBClusterForecastRequest.h"
 #include "model/DescribeDBClusterForecastResult.h"
-#include "model/DescribeDBClusterHealthReportRequest.h"
-#include "model/DescribeDBClusterHealthReportResult.h"
-#include "model/DescribeDBClusterNetInfoRequest.h"
-#include "model/DescribeDBClusterNetInfoResult.h"
+#include "model/DescribeDBClusterHealthStatusRequest.h"
+#include "model/DescribeDBClusterHealthStatusResult.h"
 #include "model/DescribeDBClusterPerformanceRequest.h"
 #include "model/DescribeDBClusterPerformanceResult.h"
-#include "model/DescribeDBClusterResourcePoolPerformanceRequest.h"
-#include "model/DescribeDBClusterResourcePoolPerformanceResult.h"
 #include "model/DescribeDBClustersRequest.h"
 #include "model/DescribeDBClustersResult.h"
 #include "model/DescribeDBResourceGroupRequest.h"
 #include "model/DescribeDBResourceGroupResult.h"
-#include "model/DescribeDBResourcePoolRequest.h"
-#include "model/DescribeDBResourcePoolResult.h"
 #include "model/DescribeDiagnosisDimensionsRequest.h"
 #include "model/DescribeDiagnosisDimensionsResult.h"
 #include "model/DescribeDiagnosisRecordsRequest.h"
 #include "model/DescribeDiagnosisRecordsResult.h"
+#include "model/DescribeDiagnosisSQLInfoRequest.h"
+#include "model/DescribeDiagnosisSQLInfoResult.h"
 #include "model/DescribeDownloadRecordsRequest.h"
 #include "model/DescribeDownloadRecordsResult.h"
-#include "model/DescribeElasticDailyPlanRequest.h"
-#include "model/DescribeElasticDailyPlanResult.h"
-#include "model/DescribeElasticPlanRequest.h"
-#include "model/DescribeElasticPlanResult.h"
-#include "model/DescribeInclinedTablesRequest.h"
-#include "model/DescribeInclinedTablesResult.h"
-#include "model/DescribeLoadTasksRecordsRequest.h"
-#include "model/DescribeLoadTasksRecordsResult.h"
-#include "model/DescribeMaintenanceActionRequest.h"
-#include "model/DescribeMaintenanceActionResult.h"
-#include "model/DescribeOperatorPermissionRequest.h"
-#include "model/DescribeOperatorPermissionResult.h"
 #include "model/DescribePatternPerformanceRequest.h"
 #include "model/DescribePatternPerformanceResult.h"
-#include "model/DescribeProcessListRequest.h"
-#include "model/DescribeProcessListResult.h"
 #include "model/DescribeRegionsRequest.h"
 #include "model/DescribeRegionsResult.h"
 #include "model/DescribeSQLPatternAttributeRequest.h"
 #include "model/DescribeSQLPatternAttributeResult.h"
 #include "model/DescribeSQLPatternsRequest.h"
 #include "model/DescribeSQLPatternsResult.h"
-#include "model/DescribeSQLPlanRequest.h"
-#include "model/DescribeSQLPlanResult.h"
-#include "model/DescribeSQLPlanTaskRequest.h"
-#include "model/DescribeSQLPlanTaskResult.h"
-#include "model/DescribeSchemasRequest.h"
-#include "model/DescribeSchemasResult.h"
-#include "model/DescribeSlowLogRecordsRequest.h"
-#include "model/DescribeSlowLogRecordsResult.h"
-#include "model/DescribeSlowLogTrendRequest.h"
-#include "model/DescribeSlowLogTrendResult.h"
+#include "model/DescribeSparkCodeLogRequest.h"
+#include "model/DescribeSparkCodeLogResult.h"
+#include "model/DescribeSparkCodeOutputRequest.h"
+#include "model/DescribeSparkCodeOutputResult.h"
+#include "model/DescribeSparkCodeWebUiRequest.h"
+#include "model/DescribeSparkCodeWebUiResult.h"
 #include "model/DescribeSqlPatternRequest.h"
 #include "model/DescribeSqlPatternResult.h"
 #include "model/DescribeTableAccessCountRequest.h"
 #include "model/DescribeTableAccessCountResult.h"
-#include "model/DescribeTableDetailRequest.h"
-#include "model/DescribeTableDetailResult.h"
-#include "model/DescribeTablePartitionDiagnoseRequest.h"
-#include "model/DescribeTablePartitionDiagnoseResult.h"
-#include "model/DescribeTableStatisticsRequest.h"
-#include "model/DescribeTableStatisticsResult.h"
-#include "model/DescribeTablesRequest.h"
-#include "model/DescribeTablesResult.h"
-#include "model/DescribeTaskInfoRequest.h"
-#include "model/DescribeTaskInfoResult.h"
 #include "model/DownloadDiagnosisRecordsRequest.h"
 #include "model/DownloadDiagnosisRecordsResult.h"
-#include "model/GrantOperatorPermissionRequest.h"
-#include "model/GrantOperatorPermissionResult.h"
-#include "model/KillProcessRequest.h"
-#include "model/KillProcessResult.h"
-#include "model/ListTagResourcesRequest.h"
-#include "model/ListTagResourcesResult.h"
+#include "model/GetDatabaseObjectsRequest.h"
+#include "model/GetDatabaseObjectsResult.h"
+#include "model/GetLakehouseValidResourceGroupsRequest.h"
+#include "model/GetLakehouseValidResourceGroupsResult.h"
+#include "model/GetSparkAppAttemptLogRequest.h"
+#include "model/GetSparkAppAttemptLogResult.h"
+#include "model/GetSparkAppInfoRequest.h"
+#include "model/GetSparkAppInfoResult.h"
+#include "model/GetSparkAppLogRequest.h"
+#include "model/GetSparkAppLogResult.h"
+#include "model/GetSparkAppMetricsRequest.h"
+#include "model/GetSparkAppMetricsResult.h"
+#include "model/GetSparkAppStateRequest.h"
+#include "model/GetSparkAppStateResult.h"
+#include "model/GetSparkAppWebUiAddressRequest.h"
+#include "model/GetSparkAppWebUiAddressResult.h"
+#include "model/GetSparkConfigLogPathRequest.h"
+#include "model/GetSparkConfigLogPathResult.h"
+#include "model/GetSparkLogAnalyzeTaskRequest.h"
+#include "model/GetSparkLogAnalyzeTaskResult.h"
+#include "model/GetSparkSQLEngineStateRequest.h"
+#include "model/GetSparkSQLEngineStateResult.h"
+#include "model/GetSparkTemplateFileContentRequest.h"
+#include "model/GetSparkTemplateFileContentResult.h"
+#include "model/GetSparkTemplateFolderTreeRequest.h"
+#include "model/GetSparkTemplateFolderTreeResult.h"
+#include "model/GetSparkTemplateFullTreeRequest.h"
+#include "model/GetSparkTemplateFullTreeResult.h"
+#include "model/GetTableRequest.h"
+#include "model/GetTableResult.h"
+#include "model/GetTableColumnsRequest.h"
+#include "model/GetTableColumnsResult.h"
+#include "model/GetTableDDLRequest.h"
+#include "model/GetTableDDLResult.h"
+#include "model/GetTableObjectsRequest.h"
+#include "model/GetTableObjectsResult.h"
+#include "model/GetViewDDLRequest.h"
+#include "model/GetViewDDLResult.h"
+#include "model/GetViewObjectsRequest.h"
+#include "model/GetViewObjectsResult.h"
+#include "model/KillSparkAppRequest.h"
+#include "model/KillSparkAppResult.h"
+#include "model/KillSparkLogAnalyzeTaskRequest.h"
+#include "model/KillSparkLogAnalyzeTaskResult.h"
+#include "model/KillSparkSQLEngineRequest.h"
+#include "model/KillSparkSQLEngineResult.h"
+#include "model/ListSparkAppAttemptsRequest.h"
+#include "model/ListSparkAppAttemptsResult.h"
+#include "model/ListSparkAppsRequest.h"
+#include "model/ListSparkAppsResult.h"
+#include "model/ListSparkLogAnalyzeTasksRequest.h"
+#include "model/ListSparkLogAnalyzeTasksResult.h"
+#include "model/ListSparkTemplateFileIdsRequest.h"
+#include "model/ListSparkTemplateFileIdsResult.h"
 #include "model/ModifyAccountDescriptionRequest.h"
 #include "model/ModifyAccountDescriptionResult.h"
 #include "model/ModifyAuditLogConfigRequest.h"
 #include "model/ModifyAuditLogConfigResult.h"
-#include "model/ModifyAutoRenewAttributeRequest.h"
-#include "model/ModifyAutoRenewAttributeResult.h"
 #include "model/ModifyBackupPolicyRequest.h"
 #include "model/ModifyBackupPolicyResult.h"
+#include "model/ModifyClusterAccessWhiteListRequest.h"
+#include "model/ModifyClusterAccessWhiteListResult.h"
 #include "model/ModifyClusterConnectionStringRequest.h"
 #include "model/ModifyClusterConnectionStringResult.h"
 #include "model/ModifyDBClusterRequest.h"
 #include "model/ModifyDBClusterResult.h"
-#include "model/ModifyDBClusterAccessWhiteListRequest.h"
-#include "model/ModifyDBClusterAccessWhiteListResult.h"
 #include "model/ModifyDBClusterDescriptionRequest.h"
 #include "model/ModifyDBClusterDescriptionResult.h"
 #include "model/ModifyDBClusterMaintainTimeRequest.h"
 #include "model/ModifyDBClusterMaintainTimeResult.h"
-#include "model/ModifyDBClusterPayTypeRequest.h"
-#include "model/ModifyDBClusterPayTypeResult.h"
-#include "model/ModifyDBClusterResourceGroupRequest.h"
-#include "model/ModifyDBClusterResourceGroupResult.h"
 #include "model/ModifyDBResourceGroupRequest.h"
 #include "model/ModifyDBResourceGroupResult.h"
-#include "model/ModifyDBResourcePoolRequest.h"
-#include "model/ModifyDBResourcePoolResult.h"
-#include "model/ModifyElasticPlanRequest.h"
-#include "model/ModifyElasticPlanResult.h"
-#include "model/ModifyLogBackupPolicyRequest.h"
-#include "model/ModifyLogBackupPolicyResult.h"
-#include "model/ModifyMaintenanceActionRequest.h"
-#include "model/ModifyMaintenanceActionResult.h"
+#include "model/PreloadSparkAppMetricsRequest.h"
+#include "model/PreloadSparkAppMetricsResult.h"
 #include "model/ReleaseClusterPublicConnectionRequest.h"
 #include "model/ReleaseClusterPublicConnectionResult.h"
 #include "model/ResetAccountPasswordRequest.h"
 #include "model/ResetAccountPasswordResult.h"
-#include "model/RevokeOperatorPermissionRequest.h"
-#include "model/RevokeOperatorPermissionResult.h"
-#include "model/TagResourcesRequest.h"
-#include "model/TagResourcesResult.h"
-#include "model/UnbindDBResourceGroupWithUserRequest.h"
-#include "model/UnbindDBResourceGroupWithUserResult.h"
-#include "model/UnbindDBResourcePoolWithUserRequest.h"
-#include "model/UnbindDBResourcePoolWithUserResult.h"
-#include "model/UntagResourcesRequest.h"
-#include "model/UntagResourcesResult.h"
+#include "model/SetSparkAppLogRootPathRequest.h"
+#include "model/SetSparkAppLogRootPathResult.h"
+#include "model/StartSparkSQLEngineRequest.h"
+#include "model/StartSparkSQLEngineResult.h"
+#include "model/SubmitSparkAppRequest.h"
+#include "model/SubmitSparkAppResult.h"
+#include "model/SubmitSparkLogAnalyzeTaskRequest.h"
+#include "model/SubmitSparkLogAnalyzeTaskResult.h"
+#include "model/UnbindAccountRequest.h"
+#include "model/UnbindAccountResult.h"
+#include "model/UpdateSparkTemplateFileRequest.h"
+#include "model/UpdateSparkTemplateFileResult.h"
 
 
 namespace AlibabaCloud
@@ -208,12 +216,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AllocateClusterPublicConnectionResult> AllocateClusterPublicConnectionOutcome;
 			typedef std::future<AllocateClusterPublicConnectionOutcome> AllocateClusterPublicConnectionOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::AllocateClusterPublicConnectionRequest&, const AllocateClusterPublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AllocateClusterPublicConnectionAsyncHandler;
-			typedef Outcome<Error, Model::BindDBResourceGroupWithUserResult> BindDBResourceGroupWithUserOutcome;
-			typedef std::future<BindDBResourceGroupWithUserOutcome> BindDBResourceGroupWithUserOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::BindDBResourceGroupWithUserRequest&, const BindDBResourceGroupWithUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindDBResourceGroupWithUserAsyncHandler;
-			typedef Outcome<Error, Model::BindDBResourcePoolWithUserResult> BindDBResourcePoolWithUserOutcome;
-			typedef std::future<BindDBResourcePoolWithUserOutcome> BindDBResourcePoolWithUserOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::BindDBResourcePoolWithUserRequest&, const BindDBResourcePoolWithUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindDBResourcePoolWithUserAsyncHandler;
+			typedef Outcome<Error, Model::BindAccountResult> BindAccountOutcome;
+			typedef std::future<BindAccountOutcome> BindAccountOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::BindAccountRequest&, const BindAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindAccountAsyncHandler;
+			typedef Outcome<Error, Model::CheckBindRamUserResult> CheckBindRamUserOutcome;
+			typedef std::future<CheckBindRamUserOutcome> CheckBindRamUserOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::CheckBindRamUserRequest&, const CheckBindRamUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckBindRamUserAsyncHandler;
 			typedef Outcome<Error, Model::CreateAccountResult> CreateAccountOutcome;
 			typedef std::future<CreateAccountOutcome> CreateAccountOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::CreateAccountRequest&, const CreateAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccountAsyncHandler;
@@ -223,12 +231,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDBResourceGroupResult> CreateDBResourceGroupOutcome;
 			typedef std::future<CreateDBResourceGroupOutcome> CreateDBResourceGroupOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::CreateDBResourceGroupRequest&, const CreateDBResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBResourceGroupAsyncHandler;
-			typedef Outcome<Error, Model::CreateDBResourcePoolResult> CreateDBResourcePoolOutcome;
-			typedef std::future<CreateDBResourcePoolOutcome> CreateDBResourcePoolOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::CreateDBResourcePoolRequest&, const CreateDBResourcePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBResourcePoolAsyncHandler;
-			typedef Outcome<Error, Model::CreateElasticPlanResult> CreateElasticPlanOutcome;
-			typedef std::future<CreateElasticPlanOutcome> CreateElasticPlanOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::CreateElasticPlanRequest&, const CreateElasticPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateElasticPlanAsyncHandler;
+			typedef Outcome<Error, Model::CreateOssSubDirectoryResult> CreateOssSubDirectoryOutcome;
+			typedef std::future<CreateOssSubDirectoryOutcome> CreateOssSubDirectoryOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::CreateOssSubDirectoryRequest&, const CreateOssSubDirectoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateOssSubDirectoryAsyncHandler;
+			typedef Outcome<Error, Model::CreateSparkTemplateResult> CreateSparkTemplateOutcome;
+			typedef std::future<CreateSparkTemplateOutcome> CreateSparkTemplateOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::CreateSparkTemplateRequest&, const CreateSparkTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSparkTemplateAsyncHandler;
 			typedef Outcome<Error, Model::DeleteAccountResult> DeleteAccountOutcome;
 			typedef std::future<DeleteAccountOutcome> DeleteAccountOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DeleteAccountRequest&, const DeleteAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountAsyncHandler;
@@ -238,108 +246,84 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDBResourceGroupResult> DeleteDBResourceGroupOutcome;
 			typedef std::future<DeleteDBResourceGroupOutcome> DeleteDBResourceGroupOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DeleteDBResourceGroupRequest&, const DeleteDBResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBResourceGroupAsyncHandler;
-			typedef Outcome<Error, Model::DeleteDBResourcePoolResult> DeleteDBResourcePoolOutcome;
-			typedef std::future<DeleteDBResourcePoolOutcome> DeleteDBResourcePoolOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DeleteDBResourcePoolRequest&, const DeleteDBResourcePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBResourcePoolAsyncHandler;
-			typedef Outcome<Error, Model::DeleteElasticPlanResult> DeleteElasticPlanOutcome;
-			typedef std::future<DeleteElasticPlanOutcome> DeleteElasticPlanOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DeleteElasticPlanRequest&, const DeleteElasticPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteElasticPlanAsyncHandler;
+			typedef Outcome<Error, Model::DeleteProcessInstanceResult> DeleteProcessInstanceOutcome;
+			typedef std::future<DeleteProcessInstanceOutcome> DeleteProcessInstanceOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DeleteProcessInstanceRequest&, const DeleteProcessInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteProcessInstanceAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSparkTemplateResult> DeleteSparkTemplateOutcome;
+			typedef std::future<DeleteSparkTemplateOutcome> DeleteSparkTemplateOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DeleteSparkTemplateRequest&, const DeleteSparkTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSparkTemplateAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSparkTemplateFileResult> DeleteSparkTemplateFileOutcome;
+			typedef std::future<DeleteSparkTemplateFileOutcome> DeleteSparkTemplateFileOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DeleteSparkTemplateFileRequest&, const DeleteSparkTemplateFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSparkTemplateFileAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAccountsResult> DescribeAccountsOutcome;
 			typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeAccountsRequest&, const DescribeAccountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAllAccountsResult> DescribeAllAccountsOutcome;
-			typedef std::future<DescribeAllAccountsOutcome> DescribeAllAccountsOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeAllAccountsRequest&, const DescribeAllAccountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllAccountsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAllDataSourceResult> DescribeAllDataSourceOutcome;
-			typedef std::future<DescribeAllDataSourceOutcome> DescribeAllDataSourceOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeAllDataSourceRequest&, const DescribeAllDataSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllDataSourceAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAdbMySqlColumnsResult> DescribeAdbMySqlColumnsOutcome;
+			typedef std::future<DescribeAdbMySqlColumnsOutcome> DescribeAdbMySqlColumnsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeAdbMySqlColumnsRequest&, const DescribeAdbMySqlColumnsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAdbMySqlColumnsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAdbMySqlSchemasResult> DescribeAdbMySqlSchemasOutcome;
+			typedef std::future<DescribeAdbMySqlSchemasOutcome> DescribeAdbMySqlSchemasOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeAdbMySqlSchemasRequest&, const DescribeAdbMySqlSchemasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAdbMySqlSchemasAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAdbMySqlTablesResult> DescribeAdbMySqlTablesOutcome;
+			typedef std::future<DescribeAdbMySqlTablesOutcome> DescribeAdbMySqlTablesOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeAdbMySqlTablesRequest&, const DescribeAdbMySqlTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAdbMySqlTablesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeApsActionLogsResult> DescribeApsActionLogsOutcome;
+			typedef std::future<DescribeApsActionLogsOutcome> DescribeApsActionLogsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeApsActionLogsRequest&, const DescribeApsActionLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApsActionLogsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeApsResourceGroupsResult> DescribeApsResourceGroupsOutcome;
+			typedef std::future<DescribeApsResourceGroupsOutcome> DescribeApsResourceGroupsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeApsResourceGroupsRequest&, const DescribeApsResourceGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApsResourceGroupsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAuditLogConfigResult> DescribeAuditLogConfigOutcome;
 			typedef std::future<DescribeAuditLogConfigOutcome> DescribeAuditLogConfigOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeAuditLogConfigRequest&, const DescribeAuditLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogConfigAsyncHandler;
 			typedef Outcome<Error, Model::DescribeAuditLogRecordsResult> DescribeAuditLogRecordsOutcome;
 			typedef std::future<DescribeAuditLogRecordsOutcome> DescribeAuditLogRecordsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeAuditLogRecordsRequest&, const DescribeAuditLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogRecordsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAutoRenewAttributeResult> DescribeAutoRenewAttributeOutcome;
-			typedef std::future<DescribeAutoRenewAttributeOutcome> DescribeAutoRenewAttributeOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeAutoRenewAttributeRequest&, const DescribeAutoRenewAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoRenewAttributeAsyncHandler;
-			typedef Outcome<Error, Model::DescribeAvailableResourceResult> DescribeAvailableResourceOutcome;
-			typedef std::future<DescribeAvailableResourceOutcome> DescribeAvailableResourceOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeAvailableResourceRequest&, const DescribeAvailableResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableResourceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBackupPolicyResult> DescribeBackupPolicyOutcome;
 			typedef std::future<DescribeBackupPolicyOutcome> DescribeBackupPolicyOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeBackupPolicyRequest&, const DescribeBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupPolicyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBackupsResult> DescribeBackupsOutcome;
 			typedef std::future<DescribeBackupsOutcome> DescribeBackupsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeBackupsRequest&, const DescribeBackupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeColumnsResult> DescribeColumnsOutcome;
-			typedef std::future<DescribeColumnsOutcome> DescribeColumnsOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeColumnsRequest&, const DescribeColumnsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeColumnsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeConnectionCountRecordsResult> DescribeConnectionCountRecordsOutcome;
-			typedef std::future<DescribeConnectionCountRecordsOutcome> DescribeConnectionCountRecordsOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeConnectionCountRecordsRequest&, const DescribeConnectionCountRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConnectionCountRecordsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDBClusterAccessWhiteListResult> DescribeDBClusterAccessWhiteListOutcome;
-			typedef std::future<DescribeDBClusterAccessWhiteListOutcome> DescribeDBClusterAccessWhiteListOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeDBClusterAccessWhiteListRequest&, const DescribeDBClusterAccessWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterAccessWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterAccessWhiteListResult> DescribeClusterAccessWhiteListOutcome;
+			typedef std::future<DescribeClusterAccessWhiteListOutcome> DescribeClusterAccessWhiteListOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeClusterAccessWhiteListRequest&, const DescribeClusterAccessWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAccessWhiteListAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClusterNetInfoResult> DescribeClusterNetInfoOutcome;
+			typedef std::future<DescribeClusterNetInfoOutcome> DescribeClusterNetInfoOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeClusterNetInfoRequest&, const DescribeClusterNetInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNetInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBClusterAttributeResult> DescribeDBClusterAttributeOutcome;
 			typedef std::future<DescribeDBClusterAttributeOutcome> DescribeDBClusterAttributeOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeDBClusterAttributeRequest&, const DescribeDBClusterAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBClusterForecastResult> DescribeDBClusterForecastOutcome;
 			typedef std::future<DescribeDBClusterForecastOutcome> DescribeDBClusterForecastOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeDBClusterForecastRequest&, const DescribeDBClusterForecastOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterForecastAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDBClusterHealthReportResult> DescribeDBClusterHealthReportOutcome;
-			typedef std::future<DescribeDBClusterHealthReportOutcome> DescribeDBClusterHealthReportOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeDBClusterHealthReportRequest&, const DescribeDBClusterHealthReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterHealthReportAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDBClusterNetInfoResult> DescribeDBClusterNetInfoOutcome;
-			typedef std::future<DescribeDBClusterNetInfoOutcome> DescribeDBClusterNetInfoOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeDBClusterNetInfoRequest&, const DescribeDBClusterNetInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterNetInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBClusterHealthStatusResult> DescribeDBClusterHealthStatusOutcome;
+			typedef std::future<DescribeDBClusterHealthStatusOutcome> DescribeDBClusterHealthStatusOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeDBClusterHealthStatusRequest&, const DescribeDBClusterHealthStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterHealthStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBClusterPerformanceResult> DescribeDBClusterPerformanceOutcome;
 			typedef std::future<DescribeDBClusterPerformanceOutcome> DescribeDBClusterPerformanceOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeDBClusterPerformanceRequest&, const DescribeDBClusterPerformanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterPerformanceAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDBClusterResourcePoolPerformanceResult> DescribeDBClusterResourcePoolPerformanceOutcome;
-			typedef std::future<DescribeDBClusterResourcePoolPerformanceOutcome> DescribeDBClusterResourcePoolPerformanceOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeDBClusterResourcePoolPerformanceRequest&, const DescribeDBClusterResourcePoolPerformanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterResourcePoolPerformanceAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBClustersResult> DescribeDBClustersOutcome;
 			typedef std::future<DescribeDBClustersOutcome> DescribeDBClustersOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeDBClustersRequest&, const DescribeDBClustersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClustersAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBResourceGroupResult> DescribeDBResourceGroupOutcome;
 			typedef std::future<DescribeDBResourceGroupOutcome> DescribeDBResourceGroupOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeDBResourceGroupRequest&, const DescribeDBResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBResourceGroupAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDBResourcePoolResult> DescribeDBResourcePoolOutcome;
-			typedef std::future<DescribeDBResourcePoolOutcome> DescribeDBResourcePoolOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeDBResourcePoolRequest&, const DescribeDBResourcePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBResourcePoolAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDiagnosisDimensionsResult> DescribeDiagnosisDimensionsOutcome;
 			typedef std::future<DescribeDiagnosisDimensionsOutcome> DescribeDiagnosisDimensionsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeDiagnosisDimensionsRequest&, const DescribeDiagnosisDimensionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnosisDimensionsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDiagnosisRecordsResult> DescribeDiagnosisRecordsOutcome;
 			typedef std::future<DescribeDiagnosisRecordsOutcome> DescribeDiagnosisRecordsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeDiagnosisRecordsRequest&, const DescribeDiagnosisRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnosisRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDiagnosisSQLInfoResult> DescribeDiagnosisSQLInfoOutcome;
+			typedef std::future<DescribeDiagnosisSQLInfoOutcome> DescribeDiagnosisSQLInfoOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeDiagnosisSQLInfoRequest&, const DescribeDiagnosisSQLInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiagnosisSQLInfoAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDownloadRecordsResult> DescribeDownloadRecordsOutcome;
 			typedef std::future<DescribeDownloadRecordsOutcome> DescribeDownloadRecordsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeDownloadRecordsRequest&, const DescribeDownloadRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDownloadRecordsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeElasticDailyPlanResult> DescribeElasticDailyPlanOutcome;
-			typedef std::future<DescribeElasticDailyPlanOutcome> DescribeElasticDailyPlanOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeElasticDailyPlanRequest&, const DescribeElasticDailyPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeElasticDailyPlanAsyncHandler;
-			typedef Outcome<Error, Model::DescribeElasticPlanResult> DescribeElasticPlanOutcome;
-			typedef std::future<DescribeElasticPlanOutcome> DescribeElasticPlanOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeElasticPlanRequest&, const DescribeElasticPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeElasticPlanAsyncHandler;
-			typedef Outcome<Error, Model::DescribeInclinedTablesResult> DescribeInclinedTablesOutcome;
-			typedef std::future<DescribeInclinedTablesOutcome> DescribeInclinedTablesOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeInclinedTablesRequest&, const DescribeInclinedTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInclinedTablesAsyncHandler;
-			typedef Outcome<Error, Model::DescribeLoadTasksRecordsResult> DescribeLoadTasksRecordsOutcome;
-			typedef std::future<DescribeLoadTasksRecordsOutcome> DescribeLoadTasksRecordsOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeLoadTasksRecordsRequest&, const DescribeLoadTasksRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoadTasksRecordsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeMaintenanceActionResult> DescribeMaintenanceActionOutcome;
-			typedef std::future<DescribeMaintenanceActionOutcome> DescribeMaintenanceActionOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeMaintenanceActionRequest&, const DescribeMaintenanceActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMaintenanceActionAsyncHandler;
-			typedef Outcome<Error, Model::DescribeOperatorPermissionResult> DescribeOperatorPermissionOutcome;
-			typedef std::future<DescribeOperatorPermissionOutcome> DescribeOperatorPermissionOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeOperatorPermissionRequest&, const DescribeOperatorPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOperatorPermissionAsyncHandler;
 			typedef Outcome<Error, Model::DescribePatternPerformanceResult> DescribePatternPerformanceOutcome;
 			typedef std::future<DescribePatternPerformanceOutcome> DescribePatternPerformanceOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribePatternPerformanceRequest&, const DescribePatternPerformanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePatternPerformanceAsyncHandler;
-			typedef Outcome<Error, Model::DescribeProcessListResult> DescribeProcessListOutcome;
-			typedef std::future<DescribeProcessListOutcome> DescribeProcessListOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeProcessListRequest&, const DescribeProcessListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProcessListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRegionsResult> DescribeRegionsOutcome;
 			typedef std::future<DescribeRegionsOutcome> DescribeRegionsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeRegionsRequest&, const DescribeRegionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRegionsAsyncHandler;
@@ -349,123 +333,159 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeSQLPatternsResult> DescribeSQLPatternsOutcome;
 			typedef std::future<DescribeSQLPatternsOutcome> DescribeSQLPatternsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeSQLPatternsRequest&, const DescribeSQLPatternsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLPatternsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSQLPlanResult> DescribeSQLPlanOutcome;
-			typedef std::future<DescribeSQLPlanOutcome> DescribeSQLPlanOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeSQLPlanRequest&, const DescribeSQLPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLPlanAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSQLPlanTaskResult> DescribeSQLPlanTaskOutcome;
-			typedef std::future<DescribeSQLPlanTaskOutcome> DescribeSQLPlanTaskOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeSQLPlanTaskRequest&, const DescribeSQLPlanTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSQLPlanTaskAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSchemasResult> DescribeSchemasOutcome;
-			typedef std::future<DescribeSchemasOutcome> DescribeSchemasOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeSchemasRequest&, const DescribeSchemasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSchemasAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSlowLogRecordsResult> DescribeSlowLogRecordsOutcome;
-			typedef std::future<DescribeSlowLogRecordsOutcome> DescribeSlowLogRecordsOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeSlowLogRecordsRequest&, const DescribeSlowLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogRecordsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeSlowLogTrendResult> DescribeSlowLogTrendOutcome;
-			typedef std::future<DescribeSlowLogTrendOutcome> DescribeSlowLogTrendOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeSlowLogTrendRequest&, const DescribeSlowLogTrendOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogTrendAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSparkCodeLogResult> DescribeSparkCodeLogOutcome;
+			typedef std::future<DescribeSparkCodeLogOutcome> DescribeSparkCodeLogOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeSparkCodeLogRequest&, const DescribeSparkCodeLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkCodeLogAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSparkCodeOutputResult> DescribeSparkCodeOutputOutcome;
+			typedef std::future<DescribeSparkCodeOutputOutcome> DescribeSparkCodeOutputOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeSparkCodeOutputRequest&, const DescribeSparkCodeOutputOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkCodeOutputAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSparkCodeWebUiResult> DescribeSparkCodeWebUiOutcome;
+			typedef std::future<DescribeSparkCodeWebUiOutcome> DescribeSparkCodeWebUiOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DescribeSparkCodeWebUiRequest&, const DescribeSparkCodeWebUiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSparkCodeWebUiAsyncHandler;
 			typedef Outcome<Error, Model::DescribeSqlPatternResult> DescribeSqlPatternOutcome;
 			typedef std::future<DescribeSqlPatternOutcome> DescribeSqlPatternOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeSqlPatternRequest&, const DescribeSqlPatternOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlPatternAsyncHandler;
 			typedef Outcome<Error, Model::DescribeTableAccessCountResult> DescribeTableAccessCountOutcome;
 			typedef std::future<DescribeTableAccessCountOutcome> DescribeTableAccessCountOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DescribeTableAccessCountRequest&, const DescribeTableAccessCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableAccessCountAsyncHandler;
-			typedef Outcome<Error, Model::DescribeTableDetailResult> DescribeTableDetailOutcome;
-			typedef std::future<DescribeTableDetailOutcome> DescribeTableDetailOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeTableDetailRequest&, const DescribeTableDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableDetailAsyncHandler;
-			typedef Outcome<Error, Model::DescribeTablePartitionDiagnoseResult> DescribeTablePartitionDiagnoseOutcome;
-			typedef std::future<DescribeTablePartitionDiagnoseOutcome> DescribeTablePartitionDiagnoseOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeTablePartitionDiagnoseRequest&, const DescribeTablePartitionDiagnoseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablePartitionDiagnoseAsyncHandler;
-			typedef Outcome<Error, Model::DescribeTableStatisticsResult> DescribeTableStatisticsOutcome;
-			typedef std::future<DescribeTableStatisticsOutcome> DescribeTableStatisticsOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeTableStatisticsRequest&, const DescribeTableStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableStatisticsAsyncHandler;
-			typedef Outcome<Error, Model::DescribeTablesResult> DescribeTablesOutcome;
-			typedef std::future<DescribeTablesOutcome> DescribeTablesOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeTablesRequest&, const DescribeTablesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTablesAsyncHandler;
-			typedef Outcome<Error, Model::DescribeTaskInfoResult> DescribeTaskInfoOutcome;
-			typedef std::future<DescribeTaskInfoOutcome> DescribeTaskInfoOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::DescribeTaskInfoRequest&, const DescribeTaskInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskInfoAsyncHandler;
 			typedef Outcome<Error, Model::DownloadDiagnosisRecordsResult> DownloadDiagnosisRecordsOutcome;
 			typedef std::future<DownloadDiagnosisRecordsOutcome> DownloadDiagnosisRecordsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DownloadDiagnosisRecordsRequest&, const DownloadDiagnosisRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DownloadDiagnosisRecordsAsyncHandler;
-			typedef Outcome<Error, Model::GrantOperatorPermissionResult> GrantOperatorPermissionOutcome;
-			typedef std::future<GrantOperatorPermissionOutcome> GrantOperatorPermissionOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::GrantOperatorPermissionRequest&, const GrantOperatorPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GrantOperatorPermissionAsyncHandler;
-			typedef Outcome<Error, Model::KillProcessResult> KillProcessOutcome;
-			typedef std::future<KillProcessOutcome> KillProcessOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::KillProcessRequest&, const KillProcessOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> KillProcessAsyncHandler;
-			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
-			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::GetDatabaseObjectsResult> GetDatabaseObjectsOutcome;
+			typedef std::future<GetDatabaseObjectsOutcome> GetDatabaseObjectsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetDatabaseObjectsRequest&, const GetDatabaseObjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDatabaseObjectsAsyncHandler;
+			typedef Outcome<Error, Model::GetLakehouseValidResourceGroupsResult> GetLakehouseValidResourceGroupsOutcome;
+			typedef std::future<GetLakehouseValidResourceGroupsOutcome> GetLakehouseValidResourceGroupsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetLakehouseValidResourceGroupsRequest&, const GetLakehouseValidResourceGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLakehouseValidResourceGroupsAsyncHandler;
+			typedef Outcome<Error, Model::GetSparkAppAttemptLogResult> GetSparkAppAttemptLogOutcome;
+			typedef std::future<GetSparkAppAttemptLogOutcome> GetSparkAppAttemptLogOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetSparkAppAttemptLogRequest&, const GetSparkAppAttemptLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkAppAttemptLogAsyncHandler;
+			typedef Outcome<Error, Model::GetSparkAppInfoResult> GetSparkAppInfoOutcome;
+			typedef std::future<GetSparkAppInfoOutcome> GetSparkAppInfoOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetSparkAppInfoRequest&, const GetSparkAppInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkAppInfoAsyncHandler;
+			typedef Outcome<Error, Model::GetSparkAppLogResult> GetSparkAppLogOutcome;
+			typedef std::future<GetSparkAppLogOutcome> GetSparkAppLogOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetSparkAppLogRequest&, const GetSparkAppLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkAppLogAsyncHandler;
+			typedef Outcome<Error, Model::GetSparkAppMetricsResult> GetSparkAppMetricsOutcome;
+			typedef std::future<GetSparkAppMetricsOutcome> GetSparkAppMetricsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetSparkAppMetricsRequest&, const GetSparkAppMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkAppMetricsAsyncHandler;
+			typedef Outcome<Error, Model::GetSparkAppStateResult> GetSparkAppStateOutcome;
+			typedef std::future<GetSparkAppStateOutcome> GetSparkAppStateOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetSparkAppStateRequest&, const GetSparkAppStateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkAppStateAsyncHandler;
+			typedef Outcome<Error, Model::GetSparkAppWebUiAddressResult> GetSparkAppWebUiAddressOutcome;
+			typedef std::future<GetSparkAppWebUiAddressOutcome> GetSparkAppWebUiAddressOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetSparkAppWebUiAddressRequest&, const GetSparkAppWebUiAddressOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkAppWebUiAddressAsyncHandler;
+			typedef Outcome<Error, Model::GetSparkConfigLogPathResult> GetSparkConfigLogPathOutcome;
+			typedef std::future<GetSparkConfigLogPathOutcome> GetSparkConfigLogPathOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetSparkConfigLogPathRequest&, const GetSparkConfigLogPathOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkConfigLogPathAsyncHandler;
+			typedef Outcome<Error, Model::GetSparkLogAnalyzeTaskResult> GetSparkLogAnalyzeTaskOutcome;
+			typedef std::future<GetSparkLogAnalyzeTaskOutcome> GetSparkLogAnalyzeTaskOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetSparkLogAnalyzeTaskRequest&, const GetSparkLogAnalyzeTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkLogAnalyzeTaskAsyncHandler;
+			typedef Outcome<Error, Model::GetSparkSQLEngineStateResult> GetSparkSQLEngineStateOutcome;
+			typedef std::future<GetSparkSQLEngineStateOutcome> GetSparkSQLEngineStateOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetSparkSQLEngineStateRequest&, const GetSparkSQLEngineStateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkSQLEngineStateAsyncHandler;
+			typedef Outcome<Error, Model::GetSparkTemplateFileContentResult> GetSparkTemplateFileContentOutcome;
+			typedef std::future<GetSparkTemplateFileContentOutcome> GetSparkTemplateFileContentOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetSparkTemplateFileContentRequest&, const GetSparkTemplateFileContentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkTemplateFileContentAsyncHandler;
+			typedef Outcome<Error, Model::GetSparkTemplateFolderTreeResult> GetSparkTemplateFolderTreeOutcome;
+			typedef std::future<GetSparkTemplateFolderTreeOutcome> GetSparkTemplateFolderTreeOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetSparkTemplateFolderTreeRequest&, const GetSparkTemplateFolderTreeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkTemplateFolderTreeAsyncHandler;
+			typedef Outcome<Error, Model::GetSparkTemplateFullTreeResult> GetSparkTemplateFullTreeOutcome;
+			typedef std::future<GetSparkTemplateFullTreeOutcome> GetSparkTemplateFullTreeOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetSparkTemplateFullTreeRequest&, const GetSparkTemplateFullTreeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSparkTemplateFullTreeAsyncHandler;
+			typedef Outcome<Error, Model::GetTableResult> GetTableOutcome;
+			typedef std::future<GetTableOutcome> GetTableOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetTableRequest&, const GetTableOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTableAsyncHandler;
+			typedef Outcome<Error, Model::GetTableColumnsResult> GetTableColumnsOutcome;
+			typedef std::future<GetTableColumnsOutcome> GetTableColumnsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetTableColumnsRequest&, const GetTableColumnsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTableColumnsAsyncHandler;
+			typedef Outcome<Error, Model::GetTableDDLResult> GetTableDDLOutcome;
+			typedef std::future<GetTableDDLOutcome> GetTableDDLOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetTableDDLRequest&, const GetTableDDLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTableDDLAsyncHandler;
+			typedef Outcome<Error, Model::GetTableObjectsResult> GetTableObjectsOutcome;
+			typedef std::future<GetTableObjectsOutcome> GetTableObjectsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetTableObjectsRequest&, const GetTableObjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTableObjectsAsyncHandler;
+			typedef Outcome<Error, Model::GetViewDDLResult> GetViewDDLOutcome;
+			typedef std::future<GetViewDDLOutcome> GetViewDDLOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetViewDDLRequest&, const GetViewDDLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetViewDDLAsyncHandler;
+			typedef Outcome<Error, Model::GetViewObjectsResult> GetViewObjectsOutcome;
+			typedef std::future<GetViewObjectsOutcome> GetViewObjectsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::GetViewObjectsRequest&, const GetViewObjectsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetViewObjectsAsyncHandler;
+			typedef Outcome<Error, Model::KillSparkAppResult> KillSparkAppOutcome;
+			typedef std::future<KillSparkAppOutcome> KillSparkAppOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::KillSparkAppRequest&, const KillSparkAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> KillSparkAppAsyncHandler;
+			typedef Outcome<Error, Model::KillSparkLogAnalyzeTaskResult> KillSparkLogAnalyzeTaskOutcome;
+			typedef std::future<KillSparkLogAnalyzeTaskOutcome> KillSparkLogAnalyzeTaskOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::KillSparkLogAnalyzeTaskRequest&, const KillSparkLogAnalyzeTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> KillSparkLogAnalyzeTaskAsyncHandler;
+			typedef Outcome<Error, Model::KillSparkSQLEngineResult> KillSparkSQLEngineOutcome;
+			typedef std::future<KillSparkSQLEngineOutcome> KillSparkSQLEngineOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::KillSparkSQLEngineRequest&, const KillSparkSQLEngineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> KillSparkSQLEngineAsyncHandler;
+			typedef Outcome<Error, Model::ListSparkAppAttemptsResult> ListSparkAppAttemptsOutcome;
+			typedef std::future<ListSparkAppAttemptsOutcome> ListSparkAppAttemptsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::ListSparkAppAttemptsRequest&, const ListSparkAppAttemptsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSparkAppAttemptsAsyncHandler;
+			typedef Outcome<Error, Model::ListSparkAppsResult> ListSparkAppsOutcome;
+			typedef std::future<ListSparkAppsOutcome> ListSparkAppsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::ListSparkAppsRequest&, const ListSparkAppsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSparkAppsAsyncHandler;
+			typedef Outcome<Error, Model::ListSparkLogAnalyzeTasksResult> ListSparkLogAnalyzeTasksOutcome;
+			typedef std::future<ListSparkLogAnalyzeTasksOutcome> ListSparkLogAnalyzeTasksOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::ListSparkLogAnalyzeTasksRequest&, const ListSparkLogAnalyzeTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSparkLogAnalyzeTasksAsyncHandler;
+			typedef Outcome<Error, Model::ListSparkTemplateFileIdsResult> ListSparkTemplateFileIdsOutcome;
+			typedef std::future<ListSparkTemplateFileIdsOutcome> ListSparkTemplateFileIdsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::ListSparkTemplateFileIdsRequest&, const ListSparkTemplateFileIdsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSparkTemplateFileIdsAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAccountDescriptionResult> ModifyAccountDescriptionOutcome;
 			typedef std::future<ModifyAccountDescriptionOutcome> ModifyAccountDescriptionOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ModifyAccountDescriptionRequest&, const ModifyAccountDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountDescriptionAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAuditLogConfigResult> ModifyAuditLogConfigOutcome;
 			typedef std::future<ModifyAuditLogConfigOutcome> ModifyAuditLogConfigOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ModifyAuditLogConfigRequest&, const ModifyAuditLogConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAuditLogConfigAsyncHandler;
-			typedef Outcome<Error, Model::ModifyAutoRenewAttributeResult> ModifyAutoRenewAttributeOutcome;
-			typedef std::future<ModifyAutoRenewAttributeOutcome> ModifyAutoRenewAttributeOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::ModifyAutoRenewAttributeRequest&, const ModifyAutoRenewAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoRenewAttributeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyBackupPolicyResult> ModifyBackupPolicyOutcome;
 			typedef std::future<ModifyBackupPolicyOutcome> ModifyBackupPolicyOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ModifyBackupPolicyRequest&, const ModifyBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupPolicyAsyncHandler;
+			typedef Outcome<Error, Model::ModifyClusterAccessWhiteListResult> ModifyClusterAccessWhiteListOutcome;
+			typedef std::future<ModifyClusterAccessWhiteListOutcome> ModifyClusterAccessWhiteListOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::ModifyClusterAccessWhiteListRequest&, const ModifyClusterAccessWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterAccessWhiteListAsyncHandler;
 			typedef Outcome<Error, Model::ModifyClusterConnectionStringResult> ModifyClusterConnectionStringOutcome;
 			typedef std::future<ModifyClusterConnectionStringOutcome> ModifyClusterConnectionStringOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ModifyClusterConnectionStringRequest&, const ModifyClusterConnectionStringOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterConnectionStringAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBClusterResult> ModifyDBClusterOutcome;
 			typedef std::future<ModifyDBClusterOutcome> ModifyDBClusterOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ModifyDBClusterRequest&, const ModifyDBClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterAsyncHandler;
-			typedef Outcome<Error, Model::ModifyDBClusterAccessWhiteListResult> ModifyDBClusterAccessWhiteListOutcome;
-			typedef std::future<ModifyDBClusterAccessWhiteListOutcome> ModifyDBClusterAccessWhiteListOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::ModifyDBClusterAccessWhiteListRequest&, const ModifyDBClusterAccessWhiteListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterAccessWhiteListAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBClusterDescriptionResult> ModifyDBClusterDescriptionOutcome;
 			typedef std::future<ModifyDBClusterDescriptionOutcome> ModifyDBClusterDescriptionOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ModifyDBClusterDescriptionRequest&, const ModifyDBClusterDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterDescriptionAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBClusterMaintainTimeResult> ModifyDBClusterMaintainTimeOutcome;
 			typedef std::future<ModifyDBClusterMaintainTimeOutcome> ModifyDBClusterMaintainTimeOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ModifyDBClusterMaintainTimeRequest&, const ModifyDBClusterMaintainTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterMaintainTimeAsyncHandler;
-			typedef Outcome<Error, Model::ModifyDBClusterPayTypeResult> ModifyDBClusterPayTypeOutcome;
-			typedef std::future<ModifyDBClusterPayTypeOutcome> ModifyDBClusterPayTypeOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::ModifyDBClusterPayTypeRequest&, const ModifyDBClusterPayTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterPayTypeAsyncHandler;
-			typedef Outcome<Error, Model::ModifyDBClusterResourceGroupResult> ModifyDBClusterResourceGroupOutcome;
-			typedef std::future<ModifyDBClusterResourceGroupOutcome> ModifyDBClusterResourceGroupOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::ModifyDBClusterResourceGroupRequest&, const ModifyDBClusterResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBResourceGroupResult> ModifyDBResourceGroupOutcome;
 			typedef std::future<ModifyDBResourceGroupOutcome> ModifyDBResourceGroupOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ModifyDBResourceGroupRequest&, const ModifyDBResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBResourceGroupAsyncHandler;
-			typedef Outcome<Error, Model::ModifyDBResourcePoolResult> ModifyDBResourcePoolOutcome;
-			typedef std::future<ModifyDBResourcePoolOutcome> ModifyDBResourcePoolOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::ModifyDBResourcePoolRequest&, const ModifyDBResourcePoolOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBResourcePoolAsyncHandler;
-			typedef Outcome<Error, Model::ModifyElasticPlanResult> ModifyElasticPlanOutcome;
-			typedef std::future<ModifyElasticPlanOutcome> ModifyElasticPlanOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::ModifyElasticPlanRequest&, const ModifyElasticPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyElasticPlanAsyncHandler;
-			typedef Outcome<Error, Model::ModifyLogBackupPolicyResult> ModifyLogBackupPolicyOutcome;
-			typedef std::future<ModifyLogBackupPolicyOutcome> ModifyLogBackupPolicyOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::ModifyLogBackupPolicyRequest&, const ModifyLogBackupPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogBackupPolicyAsyncHandler;
-			typedef Outcome<Error, Model::ModifyMaintenanceActionResult> ModifyMaintenanceActionOutcome;
-			typedef std::future<ModifyMaintenanceActionOutcome> ModifyMaintenanceActionOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::ModifyMaintenanceActionRequest&, const ModifyMaintenanceActionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMaintenanceActionAsyncHandler;
+			typedef Outcome<Error, Model::PreloadSparkAppMetricsResult> PreloadSparkAppMetricsOutcome;
+			typedef std::future<PreloadSparkAppMetricsOutcome> PreloadSparkAppMetricsOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::PreloadSparkAppMetricsRequest&, const PreloadSparkAppMetricsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PreloadSparkAppMetricsAsyncHandler;
 			typedef Outcome<Error, Model::ReleaseClusterPublicConnectionResult> ReleaseClusterPublicConnectionOutcome;
 			typedef std::future<ReleaseClusterPublicConnectionOutcome> ReleaseClusterPublicConnectionOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ReleaseClusterPublicConnectionRequest&, const ReleaseClusterPublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseClusterPublicConnectionAsyncHandler;
 			typedef Outcome<Error, Model::ResetAccountPasswordResult> ResetAccountPasswordOutcome;
 			typedef std::future<ResetAccountPasswordOutcome> ResetAccountPasswordOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::ResetAccountPasswordRequest&, const ResetAccountPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountPasswordAsyncHandler;
-			typedef Outcome<Error, Model::RevokeOperatorPermissionResult> RevokeOperatorPermissionOutcome;
-			typedef std::future<RevokeOperatorPermissionOutcome> RevokeOperatorPermissionOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::RevokeOperatorPermissionRequest&, const RevokeOperatorPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RevokeOperatorPermissionAsyncHandler;
-			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
-			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
-			typedef Outcome<Error, Model::UnbindDBResourceGroupWithUserResult> UnbindDBResourceGroupWithUserOutcome;
-			typedef std::future<UnbindDBResourceGroupWithUserOutcome> UnbindDBResourceGroupWithUserOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::UnbindDBResourceGroupWithUserRequest&, const UnbindDBResourceGroupWithUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDBResourceGroupWithUserAsyncHandler;
-			typedef Outcome<Error, Model::UnbindDBResourcePoolWithUserResult> UnbindDBResourcePoolWithUserOutcome;
-			typedef std::future<UnbindDBResourcePoolWithUserOutcome> UnbindDBResourcePoolWithUserOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::UnbindDBResourcePoolWithUserRequest&, const UnbindDBResourcePoolWithUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDBResourcePoolWithUserAsyncHandler;
-			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
-			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
-			typedef std::function<void(const AdbClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::SetSparkAppLogRootPathResult> SetSparkAppLogRootPathOutcome;
+			typedef std::future<SetSparkAppLogRootPathOutcome> SetSparkAppLogRootPathOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::SetSparkAppLogRootPathRequest&, const SetSparkAppLogRootPathOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetSparkAppLogRootPathAsyncHandler;
+			typedef Outcome<Error, Model::StartSparkSQLEngineResult> StartSparkSQLEngineOutcome;
+			typedef std::future<StartSparkSQLEngineOutcome> StartSparkSQLEngineOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::StartSparkSQLEngineRequest&, const StartSparkSQLEngineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartSparkSQLEngineAsyncHandler;
+			typedef Outcome<Error, Model::SubmitSparkAppResult> SubmitSparkAppOutcome;
+			typedef std::future<SubmitSparkAppOutcome> SubmitSparkAppOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::SubmitSparkAppRequest&, const SubmitSparkAppOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitSparkAppAsyncHandler;
+			typedef Outcome<Error, Model::SubmitSparkLogAnalyzeTaskResult> SubmitSparkLogAnalyzeTaskOutcome;
+			typedef std::future<SubmitSparkLogAnalyzeTaskOutcome> SubmitSparkLogAnalyzeTaskOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::SubmitSparkLogAnalyzeTaskRequest&, const SubmitSparkLogAnalyzeTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitSparkLogAnalyzeTaskAsyncHandler;
+			typedef Outcome<Error, Model::UnbindAccountResult> UnbindAccountOutcome;
+			typedef std::future<UnbindAccountOutcome> UnbindAccountOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::UnbindAccountRequest&, const UnbindAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UnbindAccountAsyncHandler;
+			typedef Outcome<Error, Model::UpdateSparkTemplateFileResult> UpdateSparkTemplateFileOutcome;
+			typedef std::future<UpdateSparkTemplateFileOutcome> UpdateSparkTemplateFileOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::UpdateSparkTemplateFileRequest&, const UpdateSparkTemplateFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSparkTemplateFileAsyncHandler;
 
 			AdbClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			AdbClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -474,12 +494,12 @@ namespace AlibabaCloud
 			AllocateClusterPublicConnectionOutcome allocateClusterPublicConnection(const Model::AllocateClusterPublicConnectionRequest &request)const;
 			void allocateClusterPublicConnectionAsync(const Model::AllocateClusterPublicConnectionRequest& request, const AllocateClusterPublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AllocateClusterPublicConnectionOutcomeCallable allocateClusterPublicConnectionCallable(const Model::AllocateClusterPublicConnectionRequest& request) const;
-			BindDBResourceGroupWithUserOutcome bindDBResourceGroupWithUser(const Model::BindDBResourceGroupWithUserRequest &request)const;
-			void bindDBResourceGroupWithUserAsync(const Model::BindDBResourceGroupWithUserRequest& request, const BindDBResourceGroupWithUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			BindDBResourceGroupWithUserOutcomeCallable bindDBResourceGroupWithUserCallable(const Model::BindDBResourceGroupWithUserRequest& request) const;
-			BindDBResourcePoolWithUserOutcome bindDBResourcePoolWithUser(const Model::BindDBResourcePoolWithUserRequest &request)const;
-			void bindDBResourcePoolWithUserAsync(const Model::BindDBResourcePoolWithUserRequest& request, const BindDBResourcePoolWithUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			BindDBResourcePoolWithUserOutcomeCallable bindDBResourcePoolWithUserCallable(const Model::BindDBResourcePoolWithUserRequest& request) const;
+			BindAccountOutcome bindAccount(const Model::BindAccountRequest &request)const;
+			void bindAccountAsync(const Model::BindAccountRequest& request, const BindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindAccountOutcomeCallable bindAccountCallable(const Model::BindAccountRequest& request) const;
+			CheckBindRamUserOutcome checkBindRamUser(const Model::CheckBindRamUserRequest &request)const;
+			void checkBindRamUserAsync(const Model::CheckBindRamUserRequest& request, const CheckBindRamUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckBindRamUserOutcomeCallable checkBindRamUserCallable(const Model::CheckBindRamUserRequest& request) const;
 			CreateAccountOutcome createAccount(const Model::CreateAccountRequest &request)const;
 			void createAccountAsync(const Model::CreateAccountRequest& request, const CreateAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAccountOutcomeCallable createAccountCallable(const Model::CreateAccountRequest& request) const;
@@ -489,12 +509,12 @@ namespace AlibabaCloud
 			CreateDBResourceGroupOutcome createDBResourceGroup(const Model::CreateDBResourceGroupRequest &request)const;
 			void createDBResourceGroupAsync(const Model::CreateDBResourceGroupRequest& request, const CreateDBResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDBResourceGroupOutcomeCallable createDBResourceGroupCallable(const Model::CreateDBResourceGroupRequest& request) const;
-			CreateDBResourcePoolOutcome createDBResourcePool(const Model::CreateDBResourcePoolRequest &request)const;
-			void createDBResourcePoolAsync(const Model::CreateDBResourcePoolRequest& request, const CreateDBResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateDBResourcePoolOutcomeCallable createDBResourcePoolCallable(const Model::CreateDBResourcePoolRequest& request) const;
-			CreateElasticPlanOutcome createElasticPlan(const Model::CreateElasticPlanRequest &request)const;
-			void createElasticPlanAsync(const Model::CreateElasticPlanRequest& request, const CreateElasticPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateElasticPlanOutcomeCallable createElasticPlanCallable(const Model::CreateElasticPlanRequest& request) const;
+			CreateOssSubDirectoryOutcome createOssSubDirectory(const Model::CreateOssSubDirectoryRequest &request)const;
+			void createOssSubDirectoryAsync(const Model::CreateOssSubDirectoryRequest& request, const CreateOssSubDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateOssSubDirectoryOutcomeCallable createOssSubDirectoryCallable(const Model::CreateOssSubDirectoryRequest& request) const;
+			CreateSparkTemplateOutcome createSparkTemplate(const Model::CreateSparkTemplateRequest &request)const;
+			void createSparkTemplateAsync(const Model::CreateSparkTemplateRequest& request, const CreateSparkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSparkTemplateOutcomeCallable createSparkTemplateCallable(const Model::CreateSparkTemplateRequest& request) const;
 			DeleteAccountOutcome deleteAccount(const Model::DeleteAccountRequest &request)const;
 			void deleteAccountAsync(const Model::DeleteAccountRequest& request, const DeleteAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteAccountOutcomeCallable deleteAccountCallable(const Model::DeleteAccountRequest& request) const;
@@ -504,108 +524,84 @@ namespace AlibabaCloud
 			DeleteDBResourceGroupOutcome deleteDBResourceGroup(const Model::DeleteDBResourceGroupRequest &request)const;
 			void deleteDBResourceGroupAsync(const Model::DeleteDBResourceGroupRequest& request, const DeleteDBResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDBResourceGroupOutcomeCallable deleteDBResourceGroupCallable(const Model::DeleteDBResourceGroupRequest& request) const;
-			DeleteDBResourcePoolOutcome deleteDBResourcePool(const Model::DeleteDBResourcePoolRequest &request)const;
-			void deleteDBResourcePoolAsync(const Model::DeleteDBResourcePoolRequest& request, const DeleteDBResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteDBResourcePoolOutcomeCallable deleteDBResourcePoolCallable(const Model::DeleteDBResourcePoolRequest& request) const;
-			DeleteElasticPlanOutcome deleteElasticPlan(const Model::DeleteElasticPlanRequest &request)const;
-			void deleteElasticPlanAsync(const Model::DeleteElasticPlanRequest& request, const DeleteElasticPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteElasticPlanOutcomeCallable deleteElasticPlanCallable(const Model::DeleteElasticPlanRequest& request) const;
+			DeleteProcessInstanceOutcome deleteProcessInstance(const Model::DeleteProcessInstanceRequest &request)const;
+			void deleteProcessInstanceAsync(const Model::DeleteProcessInstanceRequest& request, const DeleteProcessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteProcessInstanceOutcomeCallable deleteProcessInstanceCallable(const Model::DeleteProcessInstanceRequest& request) const;
+			DeleteSparkTemplateOutcome deleteSparkTemplate(const Model::DeleteSparkTemplateRequest &request)const;
+			void deleteSparkTemplateAsync(const Model::DeleteSparkTemplateRequest& request, const DeleteSparkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSparkTemplateOutcomeCallable deleteSparkTemplateCallable(const Model::DeleteSparkTemplateRequest& request) const;
+			DeleteSparkTemplateFileOutcome deleteSparkTemplateFile(const Model::DeleteSparkTemplateFileRequest &request)const;
+			void deleteSparkTemplateFileAsync(const Model::DeleteSparkTemplateFileRequest& request, const DeleteSparkTemplateFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSparkTemplateFileOutcomeCallable deleteSparkTemplateFileCallable(const Model::DeleteSparkTemplateFileRequest& request) const;
 			DescribeAccountsOutcome describeAccounts(const Model::DescribeAccountsRequest &request)const;
 			void describeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAccountsOutcomeCallable describeAccountsCallable(const Model::DescribeAccountsRequest& request) const;
-			DescribeAllAccountsOutcome describeAllAccounts(const Model::DescribeAllAccountsRequest &request)const;
-			void describeAllAccountsAsync(const Model::DescribeAllAccountsRequest& request, const DescribeAllAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAllAccountsOutcomeCallable describeAllAccountsCallable(const Model::DescribeAllAccountsRequest& request) const;
-			DescribeAllDataSourceOutcome describeAllDataSource(const Model::DescribeAllDataSourceRequest &request)const;
-			void describeAllDataSourceAsync(const Model::DescribeAllDataSourceRequest& request, const DescribeAllDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAllDataSourceOutcomeCallable describeAllDataSourceCallable(const Model::DescribeAllDataSourceRequest& request) const;
+			DescribeAdbMySqlColumnsOutcome describeAdbMySqlColumns(const Model::DescribeAdbMySqlColumnsRequest &request)const;
+			void describeAdbMySqlColumnsAsync(const Model::DescribeAdbMySqlColumnsRequest& request, const DescribeAdbMySqlColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAdbMySqlColumnsOutcomeCallable describeAdbMySqlColumnsCallable(const Model::DescribeAdbMySqlColumnsRequest& request) const;
+			DescribeAdbMySqlSchemasOutcome describeAdbMySqlSchemas(const Model::DescribeAdbMySqlSchemasRequest &request)const;
+			void describeAdbMySqlSchemasAsync(const Model::DescribeAdbMySqlSchemasRequest& request, const DescribeAdbMySqlSchemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAdbMySqlSchemasOutcomeCallable describeAdbMySqlSchemasCallable(const Model::DescribeAdbMySqlSchemasRequest& request) const;
+			DescribeAdbMySqlTablesOutcome describeAdbMySqlTables(const Model::DescribeAdbMySqlTablesRequest &request)const;
+			void describeAdbMySqlTablesAsync(const Model::DescribeAdbMySqlTablesRequest& request, const DescribeAdbMySqlTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAdbMySqlTablesOutcomeCallable describeAdbMySqlTablesCallable(const Model::DescribeAdbMySqlTablesRequest& request) const;
+			DescribeApsActionLogsOutcome describeApsActionLogs(const Model::DescribeApsActionLogsRequest &request)const;
+			void describeApsActionLogsAsync(const Model::DescribeApsActionLogsRequest& request, const DescribeApsActionLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeApsActionLogsOutcomeCallable describeApsActionLogsCallable(const Model::DescribeApsActionLogsRequest& request) const;
+			DescribeApsResourceGroupsOutcome describeApsResourceGroups(const Model::DescribeApsResourceGroupsRequest &request)const;
+			void describeApsResourceGroupsAsync(const Model::DescribeApsResourceGroupsRequest& request, const DescribeApsResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeApsResourceGroupsOutcomeCallable describeApsResourceGroupsCallable(const Model::DescribeApsResourceGroupsRequest& request) const;
 			DescribeAuditLogConfigOutcome describeAuditLogConfig(const Model::DescribeAuditLogConfigRequest &request)const;
 			void describeAuditLogConfigAsync(const Model::DescribeAuditLogConfigRequest& request, const DescribeAuditLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditLogConfigOutcomeCallable describeAuditLogConfigCallable(const Model::DescribeAuditLogConfigRequest& request) const;
 			DescribeAuditLogRecordsOutcome describeAuditLogRecords(const Model::DescribeAuditLogRecordsRequest &request)const;
 			void describeAuditLogRecordsAsync(const Model::DescribeAuditLogRecordsRequest& request, const DescribeAuditLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAuditLogRecordsOutcomeCallable describeAuditLogRecordsCallable(const Model::DescribeAuditLogRecordsRequest& request) const;
-			DescribeAutoRenewAttributeOutcome describeAutoRenewAttribute(const Model::DescribeAutoRenewAttributeRequest &request)const;
-			void describeAutoRenewAttributeAsync(const Model::DescribeAutoRenewAttributeRequest& request, const DescribeAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAutoRenewAttributeOutcomeCallable describeAutoRenewAttributeCallable(const Model::DescribeAutoRenewAttributeRequest& request) const;
-			DescribeAvailableResourceOutcome describeAvailableResource(const Model::DescribeAvailableResourceRequest &request)const;
-			void describeAvailableResourceAsync(const Model::DescribeAvailableResourceRequest& request, const DescribeAvailableResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeAvailableResourceOutcomeCallable describeAvailableResourceCallable(const Model::DescribeAvailableResourceRequest& request) const;
 			DescribeBackupPolicyOutcome describeBackupPolicy(const Model::DescribeBackupPolicyRequest &request)const;
 			void describeBackupPolicyAsync(const Model::DescribeBackupPolicyRequest& request, const DescribeBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupPolicyOutcomeCallable describeBackupPolicyCallable(const Model::DescribeBackupPolicyRequest& request) const;
 			DescribeBackupsOutcome describeBackups(const Model::DescribeBackupsRequest &request)const;
 			void describeBackupsAsync(const Model::DescribeBackupsRequest& request, const DescribeBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBackupsOutcomeCallable describeBackupsCallable(const Model::DescribeBackupsRequest& request) const;
-			DescribeColumnsOutcome describeColumns(const Model::DescribeColumnsRequest &request)const;
-			void describeColumnsAsync(const Model::DescribeColumnsRequest& request, const DescribeColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeColumnsOutcomeCallable describeColumnsCallable(const Model::DescribeColumnsRequest& request) const;
-			DescribeConnectionCountRecordsOutcome describeConnectionCountRecords(const Model::DescribeConnectionCountRecordsRequest &request)const;
-			void describeConnectionCountRecordsAsync(const Model::DescribeConnectionCountRecordsRequest& request, const DescribeConnectionCountRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeConnectionCountRecordsOutcomeCallable describeConnectionCountRecordsCallable(const Model::DescribeConnectionCountRecordsRequest& request) const;
-			DescribeDBClusterAccessWhiteListOutcome describeDBClusterAccessWhiteList(const Model::DescribeDBClusterAccessWhiteListRequest &request)const;
-			void describeDBClusterAccessWhiteListAsync(const Model::DescribeDBClusterAccessWhiteListRequest& request, const DescribeDBClusterAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDBClusterAccessWhiteListOutcomeCallable describeDBClusterAccessWhiteListCallable(const Model::DescribeDBClusterAccessWhiteListRequest& request) const;
+			DescribeClusterAccessWhiteListOutcome describeClusterAccessWhiteList(const Model::DescribeClusterAccessWhiteListRequest &request)const;
+			void describeClusterAccessWhiteListAsync(const Model::DescribeClusterAccessWhiteListRequest& request, const DescribeClusterAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterAccessWhiteListOutcomeCallable describeClusterAccessWhiteListCallable(const Model::DescribeClusterAccessWhiteListRequest& request) const;
+			DescribeClusterNetInfoOutcome describeClusterNetInfo(const Model::DescribeClusterNetInfoRequest &request)const;
+			void describeClusterNetInfoAsync(const Model::DescribeClusterNetInfoRequest& request, const DescribeClusterNetInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClusterNetInfoOutcomeCallable describeClusterNetInfoCallable(const Model::DescribeClusterNetInfoRequest& request) const;
 			DescribeDBClusterAttributeOutcome describeDBClusterAttribute(const Model::DescribeDBClusterAttributeRequest &request)const;
 			void describeDBClusterAttributeAsync(const Model::DescribeDBClusterAttributeRequest& request, const DescribeDBClusterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterAttributeOutcomeCallable describeDBClusterAttributeCallable(const Model::DescribeDBClusterAttributeRequest& request) const;
 			DescribeDBClusterForecastOutcome describeDBClusterForecast(const Model::DescribeDBClusterForecastRequest &request)const;
 			void describeDBClusterForecastAsync(const Model::DescribeDBClusterForecastRequest& request, const DescribeDBClusterForecastAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterForecastOutcomeCallable describeDBClusterForecastCallable(const Model::DescribeDBClusterForecastRequest& request) const;
-			DescribeDBClusterHealthReportOutcome describeDBClusterHealthReport(const Model::DescribeDBClusterHealthReportRequest &request)const;
-			void describeDBClusterHealthReportAsync(const Model::DescribeDBClusterHealthReportRequest& request, const DescribeDBClusterHealthReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDBClusterHealthReportOutcomeCallable describeDBClusterHealthReportCallable(const Model::DescribeDBClusterHealthReportRequest& request) const;
-			DescribeDBClusterNetInfoOutcome describeDBClusterNetInfo(const Model::DescribeDBClusterNetInfoRequest &request)const;
-			void describeDBClusterNetInfoAsync(const Model::DescribeDBClusterNetInfoRequest& request, const DescribeDBClusterNetInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDBClusterNetInfoOutcomeCallable describeDBClusterNetInfoCallable(const Model::DescribeDBClusterNetInfoRequest& request) const;
+			DescribeDBClusterHealthStatusOutcome describeDBClusterHealthStatus(const Model::DescribeDBClusterHealthStatusRequest &request)const;
+			void describeDBClusterHealthStatusAsync(const Model::DescribeDBClusterHealthStatusRequest& request, const DescribeDBClusterHealthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBClusterHealthStatusOutcomeCallable describeDBClusterHealthStatusCallable(const Model::DescribeDBClusterHealthStatusRequest& request) const;
 			DescribeDBClusterPerformanceOutcome describeDBClusterPerformance(const Model::DescribeDBClusterPerformanceRequest &request)const;
 			void describeDBClusterPerformanceAsync(const Model::DescribeDBClusterPerformanceRequest& request, const DescribeDBClusterPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterPerformanceOutcomeCallable describeDBClusterPerformanceCallable(const Model::DescribeDBClusterPerformanceRequest& request) const;
-			DescribeDBClusterResourcePoolPerformanceOutcome describeDBClusterResourcePoolPerformance(const Model::DescribeDBClusterResourcePoolPerformanceRequest &request)const;
-			void describeDBClusterResourcePoolPerformanceAsync(const Model::DescribeDBClusterResourcePoolPerformanceRequest& request, const DescribeDBClusterResourcePoolPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDBClusterResourcePoolPerformanceOutcomeCallable describeDBClusterResourcePoolPerformanceCallable(const Model::DescribeDBClusterResourcePoolPerformanceRequest& request) const;
 			DescribeDBClustersOutcome describeDBClusters(const Model::DescribeDBClustersRequest &request)const;
 			void describeDBClustersAsync(const Model::DescribeDBClustersRequest& request, const DescribeDBClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClustersOutcomeCallable describeDBClustersCallable(const Model::DescribeDBClustersRequest& request) const;
 			DescribeDBResourceGroupOutcome describeDBResourceGroup(const Model::DescribeDBResourceGroupRequest &request)const;
 			void describeDBResourceGroupAsync(const Model::DescribeDBResourceGroupRequest& request, const DescribeDBResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBResourceGroupOutcomeCallable describeDBResourceGroupCallable(const Model::DescribeDBResourceGroupRequest& request) const;
-			DescribeDBResourcePoolOutcome describeDBResourcePool(const Model::DescribeDBResourcePoolRequest &request)const;
-			void describeDBResourcePoolAsync(const Model::DescribeDBResourcePoolRequest& request, const DescribeDBResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDBResourcePoolOutcomeCallable describeDBResourcePoolCallable(const Model::DescribeDBResourcePoolRequest& request) const;
 			DescribeDiagnosisDimensionsOutcome describeDiagnosisDimensions(const Model::DescribeDiagnosisDimensionsRequest &request)const;
 			void describeDiagnosisDimensionsAsync(const Model::DescribeDiagnosisDimensionsRequest& request, const DescribeDiagnosisDimensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDiagnosisDimensionsOutcomeCallable describeDiagnosisDimensionsCallable(const Model::DescribeDiagnosisDimensionsRequest& request) const;
 			DescribeDiagnosisRecordsOutcome describeDiagnosisRecords(const Model::DescribeDiagnosisRecordsRequest &request)const;
 			void describeDiagnosisRecordsAsync(const Model::DescribeDiagnosisRecordsRequest& request, const DescribeDiagnosisRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDiagnosisRecordsOutcomeCallable describeDiagnosisRecordsCallable(const Model::DescribeDiagnosisRecordsRequest& request) const;
+			DescribeDiagnosisSQLInfoOutcome describeDiagnosisSQLInfo(const Model::DescribeDiagnosisSQLInfoRequest &request)const;
+			void describeDiagnosisSQLInfoAsync(const Model::DescribeDiagnosisSQLInfoRequest& request, const DescribeDiagnosisSQLInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDiagnosisSQLInfoOutcomeCallable describeDiagnosisSQLInfoCallable(const Model::DescribeDiagnosisSQLInfoRequest& request) const;
 			DescribeDownloadRecordsOutcome describeDownloadRecords(const Model::DescribeDownloadRecordsRequest &request)const;
 			void describeDownloadRecordsAsync(const Model::DescribeDownloadRecordsRequest& request, const DescribeDownloadRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDownloadRecordsOutcomeCallable describeDownloadRecordsCallable(const Model::DescribeDownloadRecordsRequest& request) const;
-			DescribeElasticDailyPlanOutcome describeElasticDailyPlan(const Model::DescribeElasticDailyPlanRequest &request)const;
-			void describeElasticDailyPlanAsync(const Model::DescribeElasticDailyPlanRequest& request, const DescribeElasticDailyPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeElasticDailyPlanOutcomeCallable describeElasticDailyPlanCallable(const Model::DescribeElasticDailyPlanRequest& request) const;
-			DescribeElasticPlanOutcome describeElasticPlan(const Model::DescribeElasticPlanRequest &request)const;
-			void describeElasticPlanAsync(const Model::DescribeElasticPlanRequest& request, const DescribeElasticPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeElasticPlanOutcomeCallable describeElasticPlanCallable(const Model::DescribeElasticPlanRequest& request) const;
-			DescribeInclinedTablesOutcome describeInclinedTables(const Model::DescribeInclinedTablesRequest &request)const;
-			void describeInclinedTablesAsync(const Model::DescribeInclinedTablesRequest& request, const DescribeInclinedTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeInclinedTablesOutcomeCallable describeInclinedTablesCallable(const Model::DescribeInclinedTablesRequest& request) const;
-			DescribeLoadTasksRecordsOutcome describeLoadTasksRecords(const Model::DescribeLoadTasksRecordsRequest &request)const;
-			void describeLoadTasksRecordsAsync(const Model::DescribeLoadTasksRecordsRequest& request, const DescribeLoadTasksRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeLoadTasksRecordsOutcomeCallable describeLoadTasksRecordsCallable(const Model::DescribeLoadTasksRecordsRequest& request) const;
-			DescribeMaintenanceActionOutcome describeMaintenanceAction(const Model::DescribeMaintenanceActionRequest &request)const;
-			void describeMaintenanceActionAsync(const Model::DescribeMaintenanceActionRequest& request, const DescribeMaintenanceActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeMaintenanceActionOutcomeCallable describeMaintenanceActionCallable(const Model::DescribeMaintenanceActionRequest& request) const;
-			DescribeOperatorPermissionOutcome describeOperatorPermission(const Model::DescribeOperatorPermissionRequest &request)const;
-			void describeOperatorPermissionAsync(const Model::DescribeOperatorPermissionRequest& request, const DescribeOperatorPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeOperatorPermissionOutcomeCallable describeOperatorPermissionCallable(const Model::DescribeOperatorPermissionRequest& request) const;
 			DescribePatternPerformanceOutcome describePatternPerformance(const Model::DescribePatternPerformanceRequest &request)const;
 			void describePatternPerformanceAsync(const Model::DescribePatternPerformanceRequest& request, const DescribePatternPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePatternPerformanceOutcomeCallable describePatternPerformanceCallable(const Model::DescribePatternPerformanceRequest& request) const;
-			DescribeProcessListOutcome describeProcessList(const Model::DescribeProcessListRequest &request)const;
-			void describeProcessListAsync(const Model::DescribeProcessListRequest& request, const DescribeProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeProcessListOutcomeCallable describeProcessListCallable(const Model::DescribeProcessListRequest& request) const;
 			DescribeRegionsOutcome describeRegions(const Model::DescribeRegionsRequest &request)const;
 			void describeRegionsAsync(const Model::DescribeRegionsRequest& request, const DescribeRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRegionsOutcomeCallable describeRegionsCallable(const Model::DescribeRegionsRequest& request) const;
@@ -615,123 +611,159 @@ namespace AlibabaCloud
 			DescribeSQLPatternsOutcome describeSQLPatterns(const Model::DescribeSQLPatternsRequest &request)const;
 			void describeSQLPatternsAsync(const Model::DescribeSQLPatternsRequest& request, const DescribeSQLPatternsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSQLPatternsOutcomeCallable describeSQLPatternsCallable(const Model::DescribeSQLPatternsRequest& request) const;
-			DescribeSQLPlanOutcome describeSQLPlan(const Model::DescribeSQLPlanRequest &request)const;
-			void describeSQLPlanAsync(const Model::DescribeSQLPlanRequest& request, const DescribeSQLPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSQLPlanOutcomeCallable describeSQLPlanCallable(const Model::DescribeSQLPlanRequest& request) const;
-			DescribeSQLPlanTaskOutcome describeSQLPlanTask(const Model::DescribeSQLPlanTaskRequest &request)const;
-			void describeSQLPlanTaskAsync(const Model::DescribeSQLPlanTaskRequest& request, const DescribeSQLPlanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSQLPlanTaskOutcomeCallable describeSQLPlanTaskCallable(const Model::DescribeSQLPlanTaskRequest& request) const;
-			DescribeSchemasOutcome describeSchemas(const Model::DescribeSchemasRequest &request)const;
-			void describeSchemasAsync(const Model::DescribeSchemasRequest& request, const DescribeSchemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSchemasOutcomeCallable describeSchemasCallable(const Model::DescribeSchemasRequest& request) const;
-			DescribeSlowLogRecordsOutcome describeSlowLogRecords(const Model::DescribeSlowLogRecordsRequest &request)const;
-			void describeSlowLogRecordsAsync(const Model::DescribeSlowLogRecordsRequest& request, const DescribeSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSlowLogRecordsOutcomeCallable describeSlowLogRecordsCallable(const Model::DescribeSlowLogRecordsRequest& request) const;
-			DescribeSlowLogTrendOutcome describeSlowLogTrend(const Model::DescribeSlowLogTrendRequest &request)const;
-			void describeSlowLogTrendAsync(const Model::DescribeSlowLogTrendRequest& request, const DescribeSlowLogTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeSlowLogTrendOutcomeCallable describeSlowLogTrendCallable(const Model::DescribeSlowLogTrendRequest& request) const;
+			DescribeSparkCodeLogOutcome describeSparkCodeLog(const Model::DescribeSparkCodeLogRequest &request)const;
+			void describeSparkCodeLogAsync(const Model::DescribeSparkCodeLogRequest& request, const DescribeSparkCodeLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSparkCodeLogOutcomeCallable describeSparkCodeLogCallable(const Model::DescribeSparkCodeLogRequest& request) const;
+			DescribeSparkCodeOutputOutcome describeSparkCodeOutput(const Model::DescribeSparkCodeOutputRequest &request)const;
+			void describeSparkCodeOutputAsync(const Model::DescribeSparkCodeOutputRequest& request, const DescribeSparkCodeOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSparkCodeOutputOutcomeCallable describeSparkCodeOutputCallable(const Model::DescribeSparkCodeOutputRequest& request) const;
+			DescribeSparkCodeWebUiOutcome describeSparkCodeWebUi(const Model::DescribeSparkCodeWebUiRequest &request)const;
+			void describeSparkCodeWebUiAsync(const Model::DescribeSparkCodeWebUiRequest& request, const DescribeSparkCodeWebUiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSparkCodeWebUiOutcomeCallable describeSparkCodeWebUiCallable(const Model::DescribeSparkCodeWebUiRequest& request) const;
 			DescribeSqlPatternOutcome describeSqlPattern(const Model::DescribeSqlPatternRequest &request)const;
 			void describeSqlPatternAsync(const Model::DescribeSqlPatternRequest& request, const DescribeSqlPatternAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeSqlPatternOutcomeCallable describeSqlPatternCallable(const Model::DescribeSqlPatternRequest& request) const;
 			DescribeTableAccessCountOutcome describeTableAccessCount(const Model::DescribeTableAccessCountRequest &request)const;
 			void describeTableAccessCountAsync(const Model::DescribeTableAccessCountRequest& request, const DescribeTableAccessCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTableAccessCountOutcomeCallable describeTableAccessCountCallable(const Model::DescribeTableAccessCountRequest& request) const;
-			DescribeTableDetailOutcome describeTableDetail(const Model::DescribeTableDetailRequest &request)const;
-			void describeTableDetailAsync(const Model::DescribeTableDetailRequest& request, const DescribeTableDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeTableDetailOutcomeCallable describeTableDetailCallable(const Model::DescribeTableDetailRequest& request) const;
-			DescribeTablePartitionDiagnoseOutcome describeTablePartitionDiagnose(const Model::DescribeTablePartitionDiagnoseRequest &request)const;
-			void describeTablePartitionDiagnoseAsync(const Model::DescribeTablePartitionDiagnoseRequest& request, const DescribeTablePartitionDiagnoseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeTablePartitionDiagnoseOutcomeCallable describeTablePartitionDiagnoseCallable(const Model::DescribeTablePartitionDiagnoseRequest& request) const;
-			DescribeTableStatisticsOutcome describeTableStatistics(const Model::DescribeTableStatisticsRequest &request)const;
-			void describeTableStatisticsAsync(const Model::DescribeTableStatisticsRequest& request, const DescribeTableStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeTableStatisticsOutcomeCallable describeTableStatisticsCallable(const Model::DescribeTableStatisticsRequest& request) const;
-			DescribeTablesOutcome describeTables(const Model::DescribeTablesRequest &request)const;
-			void describeTablesAsync(const Model::DescribeTablesRequest& request, const DescribeTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeTablesOutcomeCallable describeTablesCallable(const Model::DescribeTablesRequest& request) const;
-			DescribeTaskInfoOutcome describeTaskInfo(const Model::DescribeTaskInfoRequest &request)const;
-			void describeTaskInfoAsync(const Model::DescribeTaskInfoRequest& request, const DescribeTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeTaskInfoOutcomeCallable describeTaskInfoCallable(const Model::DescribeTaskInfoRequest& request) const;
 			DownloadDiagnosisRecordsOutcome downloadDiagnosisRecords(const Model::DownloadDiagnosisRecordsRequest &request)const;
 			void downloadDiagnosisRecordsAsync(const Model::DownloadDiagnosisRecordsRequest& request, const DownloadDiagnosisRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DownloadDiagnosisRecordsOutcomeCallable downloadDiagnosisRecordsCallable(const Model::DownloadDiagnosisRecordsRequest& request) const;
-			GrantOperatorPermissionOutcome grantOperatorPermission(const Model::GrantOperatorPermissionRequest &request)const;
-			void grantOperatorPermissionAsync(const Model::GrantOperatorPermissionRequest& request, const GrantOperatorPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GrantOperatorPermissionOutcomeCallable grantOperatorPermissionCallable(const Model::GrantOperatorPermissionRequest& request) const;
-			KillProcessOutcome killProcess(const Model::KillProcessRequest &request)const;
-			void killProcessAsync(const Model::KillProcessRequest& request, const KillProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			KillProcessOutcomeCallable killProcessCallable(const Model::KillProcessRequest& request) const;
-			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
-			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
+			GetDatabaseObjectsOutcome getDatabaseObjects(const Model::GetDatabaseObjectsRequest &request)const;
+			void getDatabaseObjectsAsync(const Model::GetDatabaseObjectsRequest& request, const GetDatabaseObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDatabaseObjectsOutcomeCallable getDatabaseObjectsCallable(const Model::GetDatabaseObjectsRequest& request) const;
+			GetLakehouseValidResourceGroupsOutcome getLakehouseValidResourceGroups(const Model::GetLakehouseValidResourceGroupsRequest &request)const;
+			void getLakehouseValidResourceGroupsAsync(const Model::GetLakehouseValidResourceGroupsRequest& request, const GetLakehouseValidResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetLakehouseValidResourceGroupsOutcomeCallable getLakehouseValidResourceGroupsCallable(const Model::GetLakehouseValidResourceGroupsRequest& request) const;
+			GetSparkAppAttemptLogOutcome getSparkAppAttemptLog(const Model::GetSparkAppAttemptLogRequest &request)const;
+			void getSparkAppAttemptLogAsync(const Model::GetSparkAppAttemptLogRequest& request, const GetSparkAppAttemptLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSparkAppAttemptLogOutcomeCallable getSparkAppAttemptLogCallable(const Model::GetSparkAppAttemptLogRequest& request) const;
+			GetSparkAppInfoOutcome getSparkAppInfo(const Model::GetSparkAppInfoRequest &request)const;
+			void getSparkAppInfoAsync(const Model::GetSparkAppInfoRequest& request, const GetSparkAppInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSparkAppInfoOutcomeCallable getSparkAppInfoCallable(const Model::GetSparkAppInfoRequest& request) const;
+			GetSparkAppLogOutcome getSparkAppLog(const Model::GetSparkAppLogRequest &request)const;
+			void getSparkAppLogAsync(const Model::GetSparkAppLogRequest& request, const GetSparkAppLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSparkAppLogOutcomeCallable getSparkAppLogCallable(const Model::GetSparkAppLogRequest& request) const;
+			GetSparkAppMetricsOutcome getSparkAppMetrics(const Model::GetSparkAppMetricsRequest &request)const;
+			void getSparkAppMetricsAsync(const Model::GetSparkAppMetricsRequest& request, const GetSparkAppMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSparkAppMetricsOutcomeCallable getSparkAppMetricsCallable(const Model::GetSparkAppMetricsRequest& request) const;
+			GetSparkAppStateOutcome getSparkAppState(const Model::GetSparkAppStateRequest &request)const;
+			void getSparkAppStateAsync(const Model::GetSparkAppStateRequest& request, const GetSparkAppStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSparkAppStateOutcomeCallable getSparkAppStateCallable(const Model::GetSparkAppStateRequest& request) const;
+			GetSparkAppWebUiAddressOutcome getSparkAppWebUiAddress(const Model::GetSparkAppWebUiAddressRequest &request)const;
+			void getSparkAppWebUiAddressAsync(const Model::GetSparkAppWebUiAddressRequest& request, const GetSparkAppWebUiAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSparkAppWebUiAddressOutcomeCallable getSparkAppWebUiAddressCallable(const Model::GetSparkAppWebUiAddressRequest& request) const;
+			GetSparkConfigLogPathOutcome getSparkConfigLogPath(const Model::GetSparkConfigLogPathRequest &request)const;
+			void getSparkConfigLogPathAsync(const Model::GetSparkConfigLogPathRequest& request, const GetSparkConfigLogPathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSparkConfigLogPathOutcomeCallable getSparkConfigLogPathCallable(const Model::GetSparkConfigLogPathRequest& request) const;
+			GetSparkLogAnalyzeTaskOutcome getSparkLogAnalyzeTask(const Model::GetSparkLogAnalyzeTaskRequest &request)const;
+			void getSparkLogAnalyzeTaskAsync(const Model::GetSparkLogAnalyzeTaskRequest& request, const GetSparkLogAnalyzeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSparkLogAnalyzeTaskOutcomeCallable getSparkLogAnalyzeTaskCallable(const Model::GetSparkLogAnalyzeTaskRequest& request) const;
+			GetSparkSQLEngineStateOutcome getSparkSQLEngineState(const Model::GetSparkSQLEngineStateRequest &request)const;
+			void getSparkSQLEngineStateAsync(const Model::GetSparkSQLEngineStateRequest& request, const GetSparkSQLEngineStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSparkSQLEngineStateOutcomeCallable getSparkSQLEngineStateCallable(const Model::GetSparkSQLEngineStateRequest& request) const;
+			GetSparkTemplateFileContentOutcome getSparkTemplateFileContent(const Model::GetSparkTemplateFileContentRequest &request)const;
+			void getSparkTemplateFileContentAsync(const Model::GetSparkTemplateFileContentRequest& request, const GetSparkTemplateFileContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSparkTemplateFileContentOutcomeCallable getSparkTemplateFileContentCallable(const Model::GetSparkTemplateFileContentRequest& request) const;
+			GetSparkTemplateFolderTreeOutcome getSparkTemplateFolderTree(const Model::GetSparkTemplateFolderTreeRequest &request)const;
+			void getSparkTemplateFolderTreeAsync(const Model::GetSparkTemplateFolderTreeRequest& request, const GetSparkTemplateFolderTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSparkTemplateFolderTreeOutcomeCallable getSparkTemplateFolderTreeCallable(const Model::GetSparkTemplateFolderTreeRequest& request) const;
+			GetSparkTemplateFullTreeOutcome getSparkTemplateFullTree(const Model::GetSparkTemplateFullTreeRequest &request)const;
+			void getSparkTemplateFullTreeAsync(const Model::GetSparkTemplateFullTreeRequest& request, const GetSparkTemplateFullTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSparkTemplateFullTreeOutcomeCallable getSparkTemplateFullTreeCallable(const Model::GetSparkTemplateFullTreeRequest& request) const;
+			GetTableOutcome getTable(const Model::GetTableRequest &request)const;
+			void getTableAsync(const Model::GetTableRequest& request, const GetTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTableOutcomeCallable getTableCallable(const Model::GetTableRequest& request) const;
+			GetTableColumnsOutcome getTableColumns(const Model::GetTableColumnsRequest &request)const;
+			void getTableColumnsAsync(const Model::GetTableColumnsRequest& request, const GetTableColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTableColumnsOutcomeCallable getTableColumnsCallable(const Model::GetTableColumnsRequest& request) const;
+			GetTableDDLOutcome getTableDDL(const Model::GetTableDDLRequest &request)const;
+			void getTableDDLAsync(const Model::GetTableDDLRequest& request, const GetTableDDLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTableDDLOutcomeCallable getTableDDLCallable(const Model::GetTableDDLRequest& request) const;
+			GetTableObjectsOutcome getTableObjects(const Model::GetTableObjectsRequest &request)const;
+			void getTableObjectsAsync(const Model::GetTableObjectsRequest& request, const GetTableObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTableObjectsOutcomeCallable getTableObjectsCallable(const Model::GetTableObjectsRequest& request) const;
+			GetViewDDLOutcome getViewDDL(const Model::GetViewDDLRequest &request)const;
+			void getViewDDLAsync(const Model::GetViewDDLRequest& request, const GetViewDDLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetViewDDLOutcomeCallable getViewDDLCallable(const Model::GetViewDDLRequest& request) const;
+			GetViewObjectsOutcome getViewObjects(const Model::GetViewObjectsRequest &request)const;
+			void getViewObjectsAsync(const Model::GetViewObjectsRequest& request, const GetViewObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetViewObjectsOutcomeCallable getViewObjectsCallable(const Model::GetViewObjectsRequest& request) const;
+			KillSparkAppOutcome killSparkApp(const Model::KillSparkAppRequest &request)const;
+			void killSparkAppAsync(const Model::KillSparkAppRequest& request, const KillSparkAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			KillSparkAppOutcomeCallable killSparkAppCallable(const Model::KillSparkAppRequest& request) const;
+			KillSparkLogAnalyzeTaskOutcome killSparkLogAnalyzeTask(const Model::KillSparkLogAnalyzeTaskRequest &request)const;
+			void killSparkLogAnalyzeTaskAsync(const Model::KillSparkLogAnalyzeTaskRequest& request, const KillSparkLogAnalyzeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			KillSparkLogAnalyzeTaskOutcomeCallable killSparkLogAnalyzeTaskCallable(const Model::KillSparkLogAnalyzeTaskRequest& request) const;
+			KillSparkSQLEngineOutcome killSparkSQLEngine(const Model::KillSparkSQLEngineRequest &request)const;
+			void killSparkSQLEngineAsync(const Model::KillSparkSQLEngineRequest& request, const KillSparkSQLEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			KillSparkSQLEngineOutcomeCallable killSparkSQLEngineCallable(const Model::KillSparkSQLEngineRequest& request) const;
+			ListSparkAppAttemptsOutcome listSparkAppAttempts(const Model::ListSparkAppAttemptsRequest &request)const;
+			void listSparkAppAttemptsAsync(const Model::ListSparkAppAttemptsRequest& request, const ListSparkAppAttemptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSparkAppAttemptsOutcomeCallable listSparkAppAttemptsCallable(const Model::ListSparkAppAttemptsRequest& request) const;
+			ListSparkAppsOutcome listSparkApps(const Model::ListSparkAppsRequest &request)const;
+			void listSparkAppsAsync(const Model::ListSparkAppsRequest& request, const ListSparkAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSparkAppsOutcomeCallable listSparkAppsCallable(const Model::ListSparkAppsRequest& request) const;
+			ListSparkLogAnalyzeTasksOutcome listSparkLogAnalyzeTasks(const Model::ListSparkLogAnalyzeTasksRequest &request)const;
+			void listSparkLogAnalyzeTasksAsync(const Model::ListSparkLogAnalyzeTasksRequest& request, const ListSparkLogAnalyzeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSparkLogAnalyzeTasksOutcomeCallable listSparkLogAnalyzeTasksCallable(const Model::ListSparkLogAnalyzeTasksRequest& request) const;
+			ListSparkTemplateFileIdsOutcome listSparkTemplateFileIds(const Model::ListSparkTemplateFileIdsRequest &request)const;
+			void listSparkTemplateFileIdsAsync(const Model::ListSparkTemplateFileIdsRequest& request, const ListSparkTemplateFileIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSparkTemplateFileIdsOutcomeCallable listSparkTemplateFileIdsCallable(const Model::ListSparkTemplateFileIdsRequest& request) const;
 			ModifyAccountDescriptionOutcome modifyAccountDescription(const Model::ModifyAccountDescriptionRequest &request)const;
 			void modifyAccountDescriptionAsync(const Model::ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccountDescriptionOutcomeCallable modifyAccountDescriptionCallable(const Model::ModifyAccountDescriptionRequest& request) const;
 			ModifyAuditLogConfigOutcome modifyAuditLogConfig(const Model::ModifyAuditLogConfigRequest &request)const;
 			void modifyAuditLogConfigAsync(const Model::ModifyAuditLogConfigRequest& request, const ModifyAuditLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAuditLogConfigOutcomeCallable modifyAuditLogConfigCallable(const Model::ModifyAuditLogConfigRequest& request) const;
-			ModifyAutoRenewAttributeOutcome modifyAutoRenewAttribute(const Model::ModifyAutoRenewAttributeRequest &request)const;
-			void modifyAutoRenewAttributeAsync(const Model::ModifyAutoRenewAttributeRequest& request, const ModifyAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyAutoRenewAttributeOutcomeCallable modifyAutoRenewAttributeCallable(const Model::ModifyAutoRenewAttributeRequest& request) const;
 			ModifyBackupPolicyOutcome modifyBackupPolicy(const Model::ModifyBackupPolicyRequest &request)const;
 			void modifyBackupPolicyAsync(const Model::ModifyBackupPolicyRequest& request, const ModifyBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBackupPolicyOutcomeCallable modifyBackupPolicyCallable(const Model::ModifyBackupPolicyRequest& request) const;
+			ModifyClusterAccessWhiteListOutcome modifyClusterAccessWhiteList(const Model::ModifyClusterAccessWhiteListRequest &request)const;
+			void modifyClusterAccessWhiteListAsync(const Model::ModifyClusterAccessWhiteListRequest& request, const ModifyClusterAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyClusterAccessWhiteListOutcomeCallable modifyClusterAccessWhiteListCallable(const Model::ModifyClusterAccessWhiteListRequest& request) const;
 			ModifyClusterConnectionStringOutcome modifyClusterConnectionString(const Model::ModifyClusterConnectionStringRequest &request)const;
 			void modifyClusterConnectionStringAsync(const Model::ModifyClusterConnectionStringRequest& request, const ModifyClusterConnectionStringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyClusterConnectionStringOutcomeCallable modifyClusterConnectionStringCallable(const Model::ModifyClusterConnectionStringRequest& request) const;
 			ModifyDBClusterOutcome modifyDBCluster(const Model::ModifyDBClusterRequest &request)const;
 			void modifyDBClusterAsync(const Model::ModifyDBClusterRequest& request, const ModifyDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBClusterOutcomeCallable modifyDBClusterCallable(const Model::ModifyDBClusterRequest& request) const;
-			ModifyDBClusterAccessWhiteListOutcome modifyDBClusterAccessWhiteList(const Model::ModifyDBClusterAccessWhiteListRequest &request)const;
-			void modifyDBClusterAccessWhiteListAsync(const Model::ModifyDBClusterAccessWhiteListRequest& request, const ModifyDBClusterAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyDBClusterAccessWhiteListOutcomeCallable modifyDBClusterAccessWhiteListCallable(const Model::ModifyDBClusterAccessWhiteListRequest& request) const;
 			ModifyDBClusterDescriptionOutcome modifyDBClusterDescription(const Model::ModifyDBClusterDescriptionRequest &request)const;
 			void modifyDBClusterDescriptionAsync(const Model::ModifyDBClusterDescriptionRequest& request, const ModifyDBClusterDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBClusterDescriptionOutcomeCallable modifyDBClusterDescriptionCallable(const Model::ModifyDBClusterDescriptionRequest& request) const;
 			ModifyDBClusterMaintainTimeOutcome modifyDBClusterMaintainTime(const Model::ModifyDBClusterMaintainTimeRequest &request)const;
 			void modifyDBClusterMaintainTimeAsync(const Model::ModifyDBClusterMaintainTimeRequest& request, const ModifyDBClusterMaintainTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBClusterMaintainTimeOutcomeCallable modifyDBClusterMaintainTimeCallable(const Model::ModifyDBClusterMaintainTimeRequest& request) const;
-			ModifyDBClusterPayTypeOutcome modifyDBClusterPayType(const Model::ModifyDBClusterPayTypeRequest &request)const;
-			void modifyDBClusterPayTypeAsync(const Model::ModifyDBClusterPayTypeRequest& request, const ModifyDBClusterPayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyDBClusterPayTypeOutcomeCallable modifyDBClusterPayTypeCallable(const Model::ModifyDBClusterPayTypeRequest& request) const;
-			ModifyDBClusterResourceGroupOutcome modifyDBClusterResourceGroup(const Model::ModifyDBClusterResourceGroupRequest &request)const;
-			void modifyDBClusterResourceGroupAsync(const Model::ModifyDBClusterResourceGroupRequest& request, const ModifyDBClusterResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyDBClusterResourceGroupOutcomeCallable modifyDBClusterResourceGroupCallable(const Model::ModifyDBClusterResourceGroupRequest& request) const;
 			ModifyDBResourceGroupOutcome modifyDBResourceGroup(const Model::ModifyDBResourceGroupRequest &request)const;
 			void modifyDBResourceGroupAsync(const Model::ModifyDBResourceGroupRequest& request, const ModifyDBResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBResourceGroupOutcomeCallable modifyDBResourceGroupCallable(const Model::ModifyDBResourceGroupRequest& request) const;
-			ModifyDBResourcePoolOutcome modifyDBResourcePool(const Model::ModifyDBResourcePoolRequest &request)const;
-			void modifyDBResourcePoolAsync(const Model::ModifyDBResourcePoolRequest& request, const ModifyDBResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyDBResourcePoolOutcomeCallable modifyDBResourcePoolCallable(const Model::ModifyDBResourcePoolRequest& request) const;
-			ModifyElasticPlanOutcome modifyElasticPlan(const Model::ModifyElasticPlanRequest &request)const;
-			void modifyElasticPlanAsync(const Model::ModifyElasticPlanRequest& request, const ModifyElasticPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyElasticPlanOutcomeCallable modifyElasticPlanCallable(const Model::ModifyElasticPlanRequest& request) const;
-			ModifyLogBackupPolicyOutcome modifyLogBackupPolicy(const Model::ModifyLogBackupPolicyRequest &request)const;
-			void modifyLogBackupPolicyAsync(const Model::ModifyLogBackupPolicyRequest& request, const ModifyLogBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyLogBackupPolicyOutcomeCallable modifyLogBackupPolicyCallable(const Model::ModifyLogBackupPolicyRequest& request) const;
-			ModifyMaintenanceActionOutcome modifyMaintenanceAction(const Model::ModifyMaintenanceActionRequest &request)const;
-			void modifyMaintenanceActionAsync(const Model::ModifyMaintenanceActionRequest& request, const ModifyMaintenanceActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ModifyMaintenanceActionOutcomeCallable modifyMaintenanceActionCallable(const Model::ModifyMaintenanceActionRequest& request) const;
+			PreloadSparkAppMetricsOutcome preloadSparkAppMetrics(const Model::PreloadSparkAppMetricsRequest &request)const;
+			void preloadSparkAppMetricsAsync(const Model::PreloadSparkAppMetricsRequest& request, const PreloadSparkAppMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PreloadSparkAppMetricsOutcomeCallable preloadSparkAppMetricsCallable(const Model::PreloadSparkAppMetricsRequest& request) const;
 			ReleaseClusterPublicConnectionOutcome releaseClusterPublicConnection(const Model::ReleaseClusterPublicConnectionRequest &request)const;
 			void releaseClusterPublicConnectionAsync(const Model::ReleaseClusterPublicConnectionRequest& request, const ReleaseClusterPublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleaseClusterPublicConnectionOutcomeCallable releaseClusterPublicConnectionCallable(const Model::ReleaseClusterPublicConnectionRequest& request) const;
 			ResetAccountPasswordOutcome resetAccountPassword(const Model::ResetAccountPasswordRequest &request)const;
 			void resetAccountPasswordAsync(const Model::ResetAccountPasswordRequest& request, const ResetAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetAccountPasswordOutcomeCallable resetAccountPasswordCallable(const Model::ResetAccountPasswordRequest& request) const;
-			RevokeOperatorPermissionOutcome revokeOperatorPermission(const Model::RevokeOperatorPermissionRequest &request)const;
-			void revokeOperatorPermissionAsync(const Model::RevokeOperatorPermissionRequest& request, const RevokeOperatorPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RevokeOperatorPermissionOutcomeCallable revokeOperatorPermissionCallable(const Model::RevokeOperatorPermissionRequest& request) const;
-			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
-			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
-			UnbindDBResourceGroupWithUserOutcome unbindDBResourceGroupWithUser(const Model::UnbindDBResourceGroupWithUserRequest &request)const;
-			void unbindDBResourceGroupWithUserAsync(const Model::UnbindDBResourceGroupWithUserRequest& request, const UnbindDBResourceGroupWithUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UnbindDBResourceGroupWithUserOutcomeCallable unbindDBResourceGroupWithUserCallable(const Model::UnbindDBResourceGroupWithUserRequest& request) const;
-			UnbindDBResourcePoolWithUserOutcome unbindDBResourcePoolWithUser(const Model::UnbindDBResourcePoolWithUserRequest &request)const;
-			void unbindDBResourcePoolWithUserAsync(const Model::UnbindDBResourcePoolWithUserRequest& request, const UnbindDBResourcePoolWithUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UnbindDBResourcePoolWithUserOutcomeCallable unbindDBResourcePoolWithUserCallable(const Model::UnbindDBResourcePoolWithUserRequest& request) const;
-			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
-			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
+			SetSparkAppLogRootPathOutcome setSparkAppLogRootPath(const Model::SetSparkAppLogRootPathRequest &request)const;
+			void setSparkAppLogRootPathAsync(const Model::SetSparkAppLogRootPathRequest& request, const SetSparkAppLogRootPathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetSparkAppLogRootPathOutcomeCallable setSparkAppLogRootPathCallable(const Model::SetSparkAppLogRootPathRequest& request) const;
+			StartSparkSQLEngineOutcome startSparkSQLEngine(const Model::StartSparkSQLEngineRequest &request)const;
+			void startSparkSQLEngineAsync(const Model::StartSparkSQLEngineRequest& request, const StartSparkSQLEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartSparkSQLEngineOutcomeCallable startSparkSQLEngineCallable(const Model::StartSparkSQLEngineRequest& request) const;
+			SubmitSparkAppOutcome submitSparkApp(const Model::SubmitSparkAppRequest &request)const;
+			void submitSparkAppAsync(const Model::SubmitSparkAppRequest& request, const SubmitSparkAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitSparkAppOutcomeCallable submitSparkAppCallable(const Model::SubmitSparkAppRequest& request) const;
+			SubmitSparkLogAnalyzeTaskOutcome submitSparkLogAnalyzeTask(const Model::SubmitSparkLogAnalyzeTaskRequest &request)const;
+			void submitSparkLogAnalyzeTaskAsync(const Model::SubmitSparkLogAnalyzeTaskRequest& request, const SubmitSparkLogAnalyzeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitSparkLogAnalyzeTaskOutcomeCallable submitSparkLogAnalyzeTaskCallable(const Model::SubmitSparkLogAnalyzeTaskRequest& request) const;
+			UnbindAccountOutcome unbindAccount(const Model::UnbindAccountRequest &request)const;
+			void unbindAccountAsync(const Model::UnbindAccountRequest& request, const UnbindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UnbindAccountOutcomeCallable unbindAccountCallable(const Model::UnbindAccountRequest& request) const;
+			UpdateSparkTemplateFileOutcome updateSparkTemplateFile(const Model::UpdateSparkTemplateFileRequest &request)const;
+			void updateSparkTemplateFileAsync(const Model::UpdateSparkTemplateFileRequest& request, const UpdateSparkTemplateFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateSparkTemplateFileOutcomeCallable updateSparkTemplateFileCallable(const Model::UpdateSparkTemplateFileRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

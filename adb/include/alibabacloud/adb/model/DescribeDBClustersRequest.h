@@ -28,14 +28,8 @@ namespace Adb {
 namespace Model {
 class ALIBABACLOUD_ADB_EXPORT DescribeDBClustersRequest : public RpcServiceRequest {
 public:
-	struct Tag {
-		std::string value;
-		std::string key;
-	};
 	DescribeDBClustersRequest();
 	~DescribeDBClustersRequest();
-	long getResourceOwnerId() const;
-	void setResourceOwnerId(long resourceOwnerId);
 	std::string getDBClusterDescription() const;
 	void setDBClusterDescription(const std::string &dBClusterDescription);
 	std::string getDBClusterStatus() const;
@@ -50,19 +44,10 @@ public:
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	std::vector<Tag> getTag() const;
-	void setTag(const std::vector<Tag> &tag);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	std::string getOwnerAccount() const;
-	void setOwnerAccount(const std::string &ownerAccount);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
 	std::string getDBClusterIds() const;
 	void setDBClusterIds(const std::string &dBClusterIds);
 
 private:
-	long resourceOwnerId_;
 	std::string dBClusterDescription_;
 	std::string dBClusterStatus_;
 	int pageNumber_;
@@ -70,10 +55,6 @@ private:
 	std::string resourceGroupId_;
 	std::string regionId_;
 	int pageSize_;
-	std::vector<Tag> tag_;
-	std::string resourceOwnerAccount_;
-	std::string ownerAccount_;
-	long ownerId_;
 	std::string dBClusterIds_;
 };
 } // namespace Model

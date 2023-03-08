@@ -35,11 +35,14 @@ namespace AlibabaCloud
 				struct PoolInfo
 				{
 					std::string groupName;
+					std::string status;
 					std::string groupType;
-					int nodeNum;
+					std::string minComputeResource;
 					std::string createTime;
 					std::string updateTime;
+					std::string maxComputeResource;
 					std::string groupUsers;
+					std::string elasticMinComputeResource;
 				};
 
 

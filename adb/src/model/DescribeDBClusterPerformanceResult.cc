@@ -53,6 +53,8 @@ void DescribeDBClusterPerformanceResult::parse(const std::string &payload)
 			PerformanceItem::SeriesItem seriesObject;
 			if(!valuePerformancesPerformanceItemSeriesSeriesItem["Name"].isNull())
 				seriesObject.name = valuePerformancesPerformanceItemSeriesSeriesItem["Name"].asString();
+			if(!valuePerformancesPerformanceItemSeriesSeriesItem["Tags"].isNull())
+				seriesObject.tags = valuePerformancesPerformanceItemSeriesSeriesItem["Tags"].asString();
 			auto allValues = value["Values"]["Values"];
 			for (auto value : allValues)
 				seriesObject.values.push_back(value.asString());

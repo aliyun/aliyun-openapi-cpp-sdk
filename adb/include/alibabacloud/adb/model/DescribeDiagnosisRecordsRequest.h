@@ -60,8 +60,8 @@ public:
 	void setResourceGroup(const std::string &resourceGroup);
 	std::string getDBClusterId() const;
 	void setDBClusterId(const std::string &dBClusterId);
-	long getPatternId() const;
-	void setPatternId(long patternId);
+	std::string getPatternId() const;
+	void setPatternId(const std::string &patternId);
 	std::string getEndTime() const;
 	void setEndTime(const std::string &endTime);
 	long getMinPeakMemory() const;
@@ -89,7 +89,7 @@ private:
 	long maxScanSize_;
 	std::string resourceGroup_;
 	std::string dBClusterId_;
-	long patternId_;
+	std::string patternId_;
 	std::string endTime_;
 	long minPeakMemory_;
 	long minScanSize_;

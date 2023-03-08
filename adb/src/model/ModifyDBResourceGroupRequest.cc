@@ -19,28 +19,37 @@
 using AlibabaCloud::Adb::Model::ModifyDBResourceGroupRequest;
 
 ModifyDBResourceGroupRequest::ModifyDBResourceGroupRequest()
-    : RpcServiceRequest("adb", "2019-03-15", "ModifyDBResourceGroup") {
+    : RpcServiceRequest("adb", "2021-12-01", "ModifyDBResourceGroup") {
   setMethod(HttpRequest::Method::Post);
 }
 
 ModifyDBResourceGroupRequest::~ModifyDBResourceGroupRequest() {}
 
-long ModifyDBResourceGroupRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+std::string ModifyDBResourceGroupRequest::getDBClusterId() const {
+  return dBClusterId_;
 }
 
-void ModifyDBResourceGroupRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void ModifyDBResourceGroupRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
 }
 
-int ModifyDBResourceGroupRequest::getNodeNum() const {
-  return nodeNum_;
+std::string ModifyDBResourceGroupRequest::getMinComputeResource() const {
+  return minComputeResource_;
 }
 
-void ModifyDBResourceGroupRequest::setNodeNum(int nodeNum) {
-  nodeNum_ = nodeNum;
-  setParameter(std::string("NodeNum"), std::to_string(nodeNum));
+void ModifyDBResourceGroupRequest::setMinComputeResource(const std::string &minComputeResource) {
+  minComputeResource_ = minComputeResource;
+  setParameter(std::string("MinComputeResource"), minComputeResource);
+}
+
+std::string ModifyDBResourceGroupRequest::getGroupName() const {
+  return groupName_;
+}
+
+void ModifyDBResourceGroupRequest::setGroupName(const std::string &groupName) {
+  groupName_ = groupName;
+  setParameter(std::string("GroupName"), groupName);
 }
 
 std::string ModifyDBResourceGroupRequest::getAccessKeyId() const {
@@ -61,48 +70,12 @@ void ModifyDBResourceGroupRequest::setGroupType(const std::string &groupType) {
   setParameter(std::string("GroupType"), groupType);
 }
 
-std::string ModifyDBResourceGroupRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string ModifyDBResourceGroupRequest::getMaxComputeResource() const {
+  return maxComputeResource_;
 }
 
-void ModifyDBResourceGroupRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string ModifyDBResourceGroupRequest::getDBClusterId() const {
-  return dBClusterId_;
-}
-
-void ModifyDBResourceGroupRequest::setDBClusterId(const std::string &dBClusterId) {
-  dBClusterId_ = dBClusterId;
-  setParameter(std::string("DBClusterId"), dBClusterId);
-}
-
-std::string ModifyDBResourceGroupRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void ModifyDBResourceGroupRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-long ModifyDBResourceGroupRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void ModifyDBResourceGroupRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
-std::string ModifyDBResourceGroupRequest::getGroupName() const {
-  return groupName_;
-}
-
-void ModifyDBResourceGroupRequest::setGroupName(const std::string &groupName) {
-  groupName_ = groupName;
-  setParameter(std::string("GroupName"), groupName);
+void ModifyDBResourceGroupRequest::setMaxComputeResource(const std::string &maxComputeResource) {
+  maxComputeResource_ = maxComputeResource;
+  setParameter(std::string("MaxComputeResource"), maxComputeResource);
 }
 

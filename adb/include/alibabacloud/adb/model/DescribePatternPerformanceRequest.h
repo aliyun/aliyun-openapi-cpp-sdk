@@ -30,8 +30,6 @@ class ALIBABACLOUD_ADB_EXPORT DescribePatternPerformanceRequest : public RpcServ
 public:
 	DescribePatternPerformanceRequest();
 	~DescribePatternPerformanceRequest();
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getDBClusterId() const;
 	void setDBClusterId(const std::string &dBClusterId);
 	std::string getPatternId() const;
@@ -40,13 +38,18 @@ public:
 	void setEndTime(const std::string &endTime);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getKey() const;
+	void setKey(const std::string &key);
 
 private:
-	std::string regionId_;
 	std::string dBClusterId_;
 	std::string patternId_;
 	std::string endTime_;
 	std::string startTime_;
+	std::string regionId_;
+	std::string key_;
 };
 } // namespace Model
 } // namespace Adb

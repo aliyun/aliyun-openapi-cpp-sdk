@@ -37,14 +37,10 @@ namespace AlibabaCloud
 				ResetAccountPasswordResult();
 				explicit ResetAccountPasswordResult(const std::string &payload);
 				~ResetAccountPasswordResult();
-				int getTaskId()const;
-				std::string getDBClusterId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int taskId_;
-				std::string dBClusterId_;
 
 			};
 		}

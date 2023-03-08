@@ -19,7 +19,7 @@
 using AlibabaCloud::Adb::Model::DescribeDBClusterForecastRequest;
 
 DescribeDBClusterForecastRequest::DescribeDBClusterForecastRequest()
-    : RpcServiceRequest("adb", "2019-03-15", "DescribeDBClusterForecast") {
+    : RpcServiceRequest("adb", "2021-12-01", "DescribeDBClusterForecast") {
   setMethod(HttpRequest::Method::Post);
 }
 

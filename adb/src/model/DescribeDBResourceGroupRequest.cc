@@ -19,29 +19,11 @@
 using AlibabaCloud::Adb::Model::DescribeDBResourceGroupRequest;
 
 DescribeDBResourceGroupRequest::DescribeDBResourceGroupRequest()
-    : RpcServiceRequest("adb", "2019-03-15", "DescribeDBResourceGroup") {
+    : RpcServiceRequest("adb", "2021-12-01", "DescribeDBResourceGroup") {
   setMethod(HttpRequest::Method::Post);
 }
 
 DescribeDBResourceGroupRequest::~DescribeDBResourceGroupRequest() {}
-
-long DescribeDBResourceGroupRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
-}
-
-void DescribeDBResourceGroupRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
-}
-
-std::string DescribeDBResourceGroupRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DescribeDBResourceGroupRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
 
 std::string DescribeDBResourceGroupRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
@@ -61,24 +43,6 @@ void DescribeDBResourceGroupRequest::setDBClusterId(const std::string &dBCluster
   setParameter(std::string("DBClusterId"), dBClusterId);
 }
 
-std::string DescribeDBResourceGroupRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void DescribeDBResourceGroupRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-long DescribeDBResourceGroupRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeDBResourceGroupRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string DescribeDBResourceGroupRequest::getGroupName() const {
   return groupName_;
 }
@@ -86,5 +50,23 @@ std::string DescribeDBResourceGroupRequest::getGroupName() const {
 void DescribeDBResourceGroupRequest::setGroupName(const std::string &groupName) {
   groupName_ = groupName;
   setParameter(std::string("GroupName"), groupName);
+}
+
+std::string DescribeDBResourceGroupRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DescribeDBResourceGroupRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeDBResourceGroupRequest::getGroupType() const {
+  return groupType_;
+}
+
+void DescribeDBResourceGroupRequest::setGroupType(const std::string &groupType) {
+  groupType_ = groupType;
+  setParameter(std::string("GroupType"), groupType);
 }
 

@@ -19,19 +19,19 @@
 using AlibabaCloud::Adb::Model::CreateAccountRequest;
 
 CreateAccountRequest::CreateAccountRequest()
-    : RpcServiceRequest("adb", "2019-03-15", "CreateAccount") {
+    : RpcServiceRequest("adb", "2021-12-01", "CreateAccount") {
   setMethod(HttpRequest::Method::Post);
 }
 
 CreateAccountRequest::~CreateAccountRequest() {}
 
-long CreateAccountRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+std::string CreateAccountRequest::getDBClusterId() const {
+  return dBClusterId_;
 }
 
-void CreateAccountRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void CreateAccountRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
 }
 
 std::string CreateAccountRequest::getAccountType() const {
@@ -61,51 +61,6 @@ void CreateAccountRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string CreateAccountRequest::getAccountName() const {
-  return accountName_;
-}
-
-void CreateAccountRequest::setAccountName(const std::string &accountName) {
-  accountName_ = accountName;
-  setParameter(std::string("AccountName"), accountName);
-}
-
-std::string CreateAccountRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void CreateAccountRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string CreateAccountRequest::getDBClusterId() const {
-  return dBClusterId_;
-}
-
-void CreateAccountRequest::setDBClusterId(const std::string &dBClusterId) {
-  dBClusterId_ = dBClusterId;
-  setParameter(std::string("DBClusterId"), dBClusterId);
-}
-
-std::string CreateAccountRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void CreateAccountRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-long CreateAccountRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void CreateAccountRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
-}
-
 std::string CreateAccountRequest::getAccountPassword() const {
   return accountPassword_;
 }
@@ -113,5 +68,14 @@ std::string CreateAccountRequest::getAccountPassword() const {
 void CreateAccountRequest::setAccountPassword(const std::string &accountPassword) {
   accountPassword_ = accountPassword;
   setParameter(std::string("AccountPassword"), accountPassword);
+}
+
+std::string CreateAccountRequest::getAccountName() const {
+  return accountName_;
+}
+
+void CreateAccountRequest::setAccountName(const std::string &accountName) {
+  accountName_ = accountName;
+  setParameter(std::string("AccountName"), accountName);
 }
 

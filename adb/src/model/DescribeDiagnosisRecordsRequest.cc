@@ -19,7 +19,7 @@
 using AlibabaCloud::Adb::Model::DescribeDiagnosisRecordsRequest;
 
 DescribeDiagnosisRecordsRequest::DescribeDiagnosisRecordsRequest()
-    : RpcServiceRequest("adb", "2019-03-15", "DescribeDiagnosisRecords") {
+    : RpcServiceRequest("adb", "2021-12-01", "DescribeDiagnosisRecords") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -160,13 +160,13 @@ void DescribeDiagnosisRecordsRequest::setDBClusterId(const std::string &dBCluste
   setParameter(std::string("DBClusterId"), dBClusterId);
 }
 
-long DescribeDiagnosisRecordsRequest::getPatternId() const {
+std::string DescribeDiagnosisRecordsRequest::getPatternId() const {
   return patternId_;
 }
 
-void DescribeDiagnosisRecordsRequest::setPatternId(long patternId) {
+void DescribeDiagnosisRecordsRequest::setPatternId(const std::string &patternId) {
   patternId_ = patternId;
-  setParameter(std::string("PatternId"), std::to_string(patternId));
+  setParameter(std::string("PatternId"), patternId);
 }
 
 std::string DescribeDiagnosisRecordsRequest::getEndTime() const {

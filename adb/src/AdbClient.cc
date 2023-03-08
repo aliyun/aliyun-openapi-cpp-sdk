@@ -87,72 +87,72 @@ AdbClient::AllocateClusterPublicConnectionOutcomeCallable AdbClient::allocateClu
 	return task->get_future();
 }
 
-AdbClient::BindDBResourceGroupWithUserOutcome AdbClient::bindDBResourceGroupWithUser(const BindDBResourceGroupWithUserRequest &request) const
+AdbClient::BindAccountOutcome AdbClient::bindAccount(const BindAccountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return BindDBResourceGroupWithUserOutcome(endpointOutcome.error());
+		return BindAccountOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return BindDBResourceGroupWithUserOutcome(BindDBResourceGroupWithUserResult(outcome.result()));
+		return BindAccountOutcome(BindAccountResult(outcome.result()));
 	else
-		return BindDBResourceGroupWithUserOutcome(outcome.error());
+		return BindAccountOutcome(outcome.error());
 }
 
-void AdbClient::bindDBResourceGroupWithUserAsync(const BindDBResourceGroupWithUserRequest& request, const BindDBResourceGroupWithUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::bindAccountAsync(const BindAccountRequest& request, const BindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, bindDBResourceGroupWithUser(request), context);
+		handler(this, request, bindAccount(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::BindDBResourceGroupWithUserOutcomeCallable AdbClient::bindDBResourceGroupWithUserCallable(const BindDBResourceGroupWithUserRequest &request) const
+AdbClient::BindAccountOutcomeCallable AdbClient::bindAccountCallable(const BindAccountRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<BindDBResourceGroupWithUserOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<BindAccountOutcome()>>(
 			[this, request]()
 			{
-			return this->bindDBResourceGroupWithUser(request);
+			return this->bindAccount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AdbClient::BindDBResourcePoolWithUserOutcome AdbClient::bindDBResourcePoolWithUser(const BindDBResourcePoolWithUserRequest &request) const
+AdbClient::CheckBindRamUserOutcome AdbClient::checkBindRamUser(const CheckBindRamUserRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return BindDBResourcePoolWithUserOutcome(endpointOutcome.error());
+		return CheckBindRamUserOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return BindDBResourcePoolWithUserOutcome(BindDBResourcePoolWithUserResult(outcome.result()));
+		return CheckBindRamUserOutcome(CheckBindRamUserResult(outcome.result()));
 	else
-		return BindDBResourcePoolWithUserOutcome(outcome.error());
+		return CheckBindRamUserOutcome(outcome.error());
 }
 
-void AdbClient::bindDBResourcePoolWithUserAsync(const BindDBResourcePoolWithUserRequest& request, const BindDBResourcePoolWithUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::checkBindRamUserAsync(const CheckBindRamUserRequest& request, const CheckBindRamUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, bindDBResourcePoolWithUser(request), context);
+		handler(this, request, checkBindRamUser(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::BindDBResourcePoolWithUserOutcomeCallable AdbClient::bindDBResourcePoolWithUserCallable(const BindDBResourcePoolWithUserRequest &request) const
+AdbClient::CheckBindRamUserOutcomeCallable AdbClient::checkBindRamUserCallable(const CheckBindRamUserRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<BindDBResourcePoolWithUserOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CheckBindRamUserOutcome()>>(
 			[this, request]()
 			{
-			return this->bindDBResourcePoolWithUser(request);
+			return this->checkBindRamUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -267,72 +267,72 @@ AdbClient::CreateDBResourceGroupOutcomeCallable AdbClient::createDBResourceGroup
 	return task->get_future();
 }
 
-AdbClient::CreateDBResourcePoolOutcome AdbClient::createDBResourcePool(const CreateDBResourcePoolRequest &request) const
+AdbClient::CreateOssSubDirectoryOutcome AdbClient::createOssSubDirectory(const CreateOssSubDirectoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateDBResourcePoolOutcome(endpointOutcome.error());
+		return CreateOssSubDirectoryOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateDBResourcePoolOutcome(CreateDBResourcePoolResult(outcome.result()));
+		return CreateOssSubDirectoryOutcome(CreateOssSubDirectoryResult(outcome.result()));
 	else
-		return CreateDBResourcePoolOutcome(outcome.error());
+		return CreateOssSubDirectoryOutcome(outcome.error());
 }
 
-void AdbClient::createDBResourcePoolAsync(const CreateDBResourcePoolRequest& request, const CreateDBResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::createOssSubDirectoryAsync(const CreateOssSubDirectoryRequest& request, const CreateOssSubDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createDBResourcePool(request), context);
+		handler(this, request, createOssSubDirectory(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::CreateDBResourcePoolOutcomeCallable AdbClient::createDBResourcePoolCallable(const CreateDBResourcePoolRequest &request) const
+AdbClient::CreateOssSubDirectoryOutcomeCallable AdbClient::createOssSubDirectoryCallable(const CreateOssSubDirectoryRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateDBResourcePoolOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateOssSubDirectoryOutcome()>>(
 			[this, request]()
 			{
-			return this->createDBResourcePool(request);
+			return this->createOssSubDirectory(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AdbClient::CreateElasticPlanOutcome AdbClient::createElasticPlan(const CreateElasticPlanRequest &request) const
+AdbClient::CreateSparkTemplateOutcome AdbClient::createSparkTemplate(const CreateSparkTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateElasticPlanOutcome(endpointOutcome.error());
+		return CreateSparkTemplateOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateElasticPlanOutcome(CreateElasticPlanResult(outcome.result()));
+		return CreateSparkTemplateOutcome(CreateSparkTemplateResult(outcome.result()));
 	else
-		return CreateElasticPlanOutcome(outcome.error());
+		return CreateSparkTemplateOutcome(outcome.error());
 }
 
-void AdbClient::createElasticPlanAsync(const CreateElasticPlanRequest& request, const CreateElasticPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::createSparkTemplateAsync(const CreateSparkTemplateRequest& request, const CreateSparkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createElasticPlan(request), context);
+		handler(this, request, createSparkTemplate(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::CreateElasticPlanOutcomeCallable AdbClient::createElasticPlanCallable(const CreateElasticPlanRequest &request) const
+AdbClient::CreateSparkTemplateOutcomeCallable AdbClient::createSparkTemplateCallable(const CreateSparkTemplateRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateElasticPlanOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CreateSparkTemplateOutcome()>>(
 			[this, request]()
 			{
-			return this->createElasticPlan(request);
+			return this->createSparkTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -447,72 +447,108 @@ AdbClient::DeleteDBResourceGroupOutcomeCallable AdbClient::deleteDBResourceGroup
 	return task->get_future();
 }
 
-AdbClient::DeleteDBResourcePoolOutcome AdbClient::deleteDBResourcePool(const DeleteDBResourcePoolRequest &request) const
+AdbClient::DeleteProcessInstanceOutcome AdbClient::deleteProcessInstance(const DeleteProcessInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteDBResourcePoolOutcome(endpointOutcome.error());
+		return DeleteProcessInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteDBResourcePoolOutcome(DeleteDBResourcePoolResult(outcome.result()));
+		return DeleteProcessInstanceOutcome(DeleteProcessInstanceResult(outcome.result()));
 	else
-		return DeleteDBResourcePoolOutcome(outcome.error());
+		return DeleteProcessInstanceOutcome(outcome.error());
 }
 
-void AdbClient::deleteDBResourcePoolAsync(const DeleteDBResourcePoolRequest& request, const DeleteDBResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::deleteProcessInstanceAsync(const DeleteProcessInstanceRequest& request, const DeleteProcessInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteDBResourcePool(request), context);
+		handler(this, request, deleteProcessInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::DeleteDBResourcePoolOutcomeCallable AdbClient::deleteDBResourcePoolCallable(const DeleteDBResourcePoolRequest &request) const
+AdbClient::DeleteProcessInstanceOutcomeCallable AdbClient::deleteProcessInstanceCallable(const DeleteProcessInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteDBResourcePoolOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteProcessInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteDBResourcePool(request);
+			return this->deleteProcessInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AdbClient::DeleteElasticPlanOutcome AdbClient::deleteElasticPlan(const DeleteElasticPlanRequest &request) const
+AdbClient::DeleteSparkTemplateOutcome AdbClient::deleteSparkTemplate(const DeleteSparkTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteElasticPlanOutcome(endpointOutcome.error());
+		return DeleteSparkTemplateOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteElasticPlanOutcome(DeleteElasticPlanResult(outcome.result()));
+		return DeleteSparkTemplateOutcome(DeleteSparkTemplateResult(outcome.result()));
 	else
-		return DeleteElasticPlanOutcome(outcome.error());
+		return DeleteSparkTemplateOutcome(outcome.error());
 }
 
-void AdbClient::deleteElasticPlanAsync(const DeleteElasticPlanRequest& request, const DeleteElasticPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::deleteSparkTemplateAsync(const DeleteSparkTemplateRequest& request, const DeleteSparkTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteElasticPlan(request), context);
+		handler(this, request, deleteSparkTemplate(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::DeleteElasticPlanOutcomeCallable AdbClient::deleteElasticPlanCallable(const DeleteElasticPlanRequest &request) const
+AdbClient::DeleteSparkTemplateOutcomeCallable AdbClient::deleteSparkTemplateCallable(const DeleteSparkTemplateRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteElasticPlanOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DeleteSparkTemplateOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteElasticPlan(request);
+			return this->deleteSparkTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::DeleteSparkTemplateFileOutcome AdbClient::deleteSparkTemplateFile(const DeleteSparkTemplateFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSparkTemplateFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSparkTemplateFileOutcome(DeleteSparkTemplateFileResult(outcome.result()));
+	else
+		return DeleteSparkTemplateFileOutcome(outcome.error());
+}
+
+void AdbClient::deleteSparkTemplateFileAsync(const DeleteSparkTemplateFileRequest& request, const DeleteSparkTemplateFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSparkTemplateFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::DeleteSparkTemplateFileOutcomeCallable AdbClient::deleteSparkTemplateFileCallable(const DeleteSparkTemplateFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSparkTemplateFileOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSparkTemplateFile(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -555,72 +591,180 @@ AdbClient::DescribeAccountsOutcomeCallable AdbClient::describeAccountsCallable(c
 	return task->get_future();
 }
 
-AdbClient::DescribeAllAccountsOutcome AdbClient::describeAllAccounts(const DescribeAllAccountsRequest &request) const
+AdbClient::DescribeAdbMySqlColumnsOutcome AdbClient::describeAdbMySqlColumns(const DescribeAdbMySqlColumnsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeAllAccountsOutcome(endpointOutcome.error());
+		return DescribeAdbMySqlColumnsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeAllAccountsOutcome(DescribeAllAccountsResult(outcome.result()));
+		return DescribeAdbMySqlColumnsOutcome(DescribeAdbMySqlColumnsResult(outcome.result()));
 	else
-		return DescribeAllAccountsOutcome(outcome.error());
+		return DescribeAdbMySqlColumnsOutcome(outcome.error());
 }
 
-void AdbClient::describeAllAccountsAsync(const DescribeAllAccountsRequest& request, const DescribeAllAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::describeAdbMySqlColumnsAsync(const DescribeAdbMySqlColumnsRequest& request, const DescribeAdbMySqlColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeAllAccounts(request), context);
+		handler(this, request, describeAdbMySqlColumns(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::DescribeAllAccountsOutcomeCallable AdbClient::describeAllAccountsCallable(const DescribeAllAccountsRequest &request) const
+AdbClient::DescribeAdbMySqlColumnsOutcomeCallable AdbClient::describeAdbMySqlColumnsCallable(const DescribeAdbMySqlColumnsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeAllAccountsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeAdbMySqlColumnsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeAllAccounts(request);
+			return this->describeAdbMySqlColumns(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AdbClient::DescribeAllDataSourceOutcome AdbClient::describeAllDataSource(const DescribeAllDataSourceRequest &request) const
+AdbClient::DescribeAdbMySqlSchemasOutcome AdbClient::describeAdbMySqlSchemas(const DescribeAdbMySqlSchemasRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeAllDataSourceOutcome(endpointOutcome.error());
+		return DescribeAdbMySqlSchemasOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeAllDataSourceOutcome(DescribeAllDataSourceResult(outcome.result()));
+		return DescribeAdbMySqlSchemasOutcome(DescribeAdbMySqlSchemasResult(outcome.result()));
 	else
-		return DescribeAllDataSourceOutcome(outcome.error());
+		return DescribeAdbMySqlSchemasOutcome(outcome.error());
 }
 
-void AdbClient::describeAllDataSourceAsync(const DescribeAllDataSourceRequest& request, const DescribeAllDataSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::describeAdbMySqlSchemasAsync(const DescribeAdbMySqlSchemasRequest& request, const DescribeAdbMySqlSchemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeAllDataSource(request), context);
+		handler(this, request, describeAdbMySqlSchemas(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::DescribeAllDataSourceOutcomeCallable AdbClient::describeAllDataSourceCallable(const DescribeAllDataSourceRequest &request) const
+AdbClient::DescribeAdbMySqlSchemasOutcomeCallable AdbClient::describeAdbMySqlSchemasCallable(const DescribeAdbMySqlSchemasRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeAllDataSourceOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeAdbMySqlSchemasOutcome()>>(
 			[this, request]()
 			{
-			return this->describeAllDataSource(request);
+			return this->describeAdbMySqlSchemas(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::DescribeAdbMySqlTablesOutcome AdbClient::describeAdbMySqlTables(const DescribeAdbMySqlTablesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAdbMySqlTablesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAdbMySqlTablesOutcome(DescribeAdbMySqlTablesResult(outcome.result()));
+	else
+		return DescribeAdbMySqlTablesOutcome(outcome.error());
+}
+
+void AdbClient::describeAdbMySqlTablesAsync(const DescribeAdbMySqlTablesRequest& request, const DescribeAdbMySqlTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAdbMySqlTables(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::DescribeAdbMySqlTablesOutcomeCallable AdbClient::describeAdbMySqlTablesCallable(const DescribeAdbMySqlTablesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAdbMySqlTablesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAdbMySqlTables(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::DescribeApsActionLogsOutcome AdbClient::describeApsActionLogs(const DescribeApsActionLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApsActionLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApsActionLogsOutcome(DescribeApsActionLogsResult(outcome.result()));
+	else
+		return DescribeApsActionLogsOutcome(outcome.error());
+}
+
+void AdbClient::describeApsActionLogsAsync(const DescribeApsActionLogsRequest& request, const DescribeApsActionLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApsActionLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::DescribeApsActionLogsOutcomeCallable AdbClient::describeApsActionLogsCallable(const DescribeApsActionLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApsActionLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApsActionLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::DescribeApsResourceGroupsOutcome AdbClient::describeApsResourceGroups(const DescribeApsResourceGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApsResourceGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApsResourceGroupsOutcome(DescribeApsResourceGroupsResult(outcome.result()));
+	else
+		return DescribeApsResourceGroupsOutcome(outcome.error());
+}
+
+void AdbClient::describeApsResourceGroupsAsync(const DescribeApsResourceGroupsRequest& request, const DescribeApsResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApsResourceGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::DescribeApsResourceGroupsOutcomeCallable AdbClient::describeApsResourceGroupsCallable(const DescribeApsResourceGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApsResourceGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApsResourceGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -699,78 +843,6 @@ AdbClient::DescribeAuditLogRecordsOutcomeCallable AdbClient::describeAuditLogRec
 	return task->get_future();
 }
 
-AdbClient::DescribeAutoRenewAttributeOutcome AdbClient::describeAutoRenewAttribute(const DescribeAutoRenewAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAutoRenewAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAutoRenewAttributeOutcome(DescribeAutoRenewAttributeResult(outcome.result()));
-	else
-		return DescribeAutoRenewAttributeOutcome(outcome.error());
-}
-
-void AdbClient::describeAutoRenewAttributeAsync(const DescribeAutoRenewAttributeRequest& request, const DescribeAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAutoRenewAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeAutoRenewAttributeOutcomeCallable AdbClient::describeAutoRenewAttributeCallable(const DescribeAutoRenewAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAutoRenewAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAutoRenewAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeAvailableResourceOutcome AdbClient::describeAvailableResource(const DescribeAvailableResourceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAvailableResourceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAvailableResourceOutcome(DescribeAvailableResourceResult(outcome.result()));
-	else
-		return DescribeAvailableResourceOutcome(outcome.error());
-}
-
-void AdbClient::describeAvailableResourceAsync(const DescribeAvailableResourceRequest& request, const DescribeAvailableResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAvailableResource(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeAvailableResourceOutcomeCallable AdbClient::describeAvailableResourceCallable(const DescribeAvailableResourceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAvailableResourceOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAvailableResource(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AdbClient::DescribeBackupPolicyOutcome AdbClient::describeBackupPolicy(const DescribeBackupPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -843,108 +915,72 @@ AdbClient::DescribeBackupsOutcomeCallable AdbClient::describeBackupsCallable(con
 	return task->get_future();
 }
 
-AdbClient::DescribeColumnsOutcome AdbClient::describeColumns(const DescribeColumnsRequest &request) const
+AdbClient::DescribeClusterAccessWhiteListOutcome AdbClient::describeClusterAccessWhiteList(const DescribeClusterAccessWhiteListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeColumnsOutcome(endpointOutcome.error());
+		return DescribeClusterAccessWhiteListOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeColumnsOutcome(DescribeColumnsResult(outcome.result()));
+		return DescribeClusterAccessWhiteListOutcome(DescribeClusterAccessWhiteListResult(outcome.result()));
 	else
-		return DescribeColumnsOutcome(outcome.error());
+		return DescribeClusterAccessWhiteListOutcome(outcome.error());
 }
 
-void AdbClient::describeColumnsAsync(const DescribeColumnsRequest& request, const DescribeColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::describeClusterAccessWhiteListAsync(const DescribeClusterAccessWhiteListRequest& request, const DescribeClusterAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeColumns(request), context);
+		handler(this, request, describeClusterAccessWhiteList(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::DescribeColumnsOutcomeCallable AdbClient::describeColumnsCallable(const DescribeColumnsRequest &request) const
+AdbClient::DescribeClusterAccessWhiteListOutcomeCallable AdbClient::describeClusterAccessWhiteListCallable(const DescribeClusterAccessWhiteListRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeColumnsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeClusterAccessWhiteListOutcome()>>(
 			[this, request]()
 			{
-			return this->describeColumns(request);
+			return this->describeClusterAccessWhiteList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AdbClient::DescribeConnectionCountRecordsOutcome AdbClient::describeConnectionCountRecords(const DescribeConnectionCountRecordsRequest &request) const
+AdbClient::DescribeClusterNetInfoOutcome AdbClient::describeClusterNetInfo(const DescribeClusterNetInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeConnectionCountRecordsOutcome(endpointOutcome.error());
+		return DescribeClusterNetInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeConnectionCountRecordsOutcome(DescribeConnectionCountRecordsResult(outcome.result()));
+		return DescribeClusterNetInfoOutcome(DescribeClusterNetInfoResult(outcome.result()));
 	else
-		return DescribeConnectionCountRecordsOutcome(outcome.error());
+		return DescribeClusterNetInfoOutcome(outcome.error());
 }
 
-void AdbClient::describeConnectionCountRecordsAsync(const DescribeConnectionCountRecordsRequest& request, const DescribeConnectionCountRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::describeClusterNetInfoAsync(const DescribeClusterNetInfoRequest& request, const DescribeClusterNetInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeConnectionCountRecords(request), context);
+		handler(this, request, describeClusterNetInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::DescribeConnectionCountRecordsOutcomeCallable AdbClient::describeConnectionCountRecordsCallable(const DescribeConnectionCountRecordsRequest &request) const
+AdbClient::DescribeClusterNetInfoOutcomeCallable AdbClient::describeClusterNetInfoCallable(const DescribeClusterNetInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeConnectionCountRecordsOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeClusterNetInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->describeConnectionCountRecords(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeDBClusterAccessWhiteListOutcome AdbClient::describeDBClusterAccessWhiteList(const DescribeDBClusterAccessWhiteListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDBClusterAccessWhiteListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDBClusterAccessWhiteListOutcome(DescribeDBClusterAccessWhiteListResult(outcome.result()));
-	else
-		return DescribeDBClusterAccessWhiteListOutcome(outcome.error());
-}
-
-void AdbClient::describeDBClusterAccessWhiteListAsync(const DescribeDBClusterAccessWhiteListRequest& request, const DescribeDBClusterAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDBClusterAccessWhiteList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeDBClusterAccessWhiteListOutcomeCallable AdbClient::describeDBClusterAccessWhiteListCallable(const DescribeDBClusterAccessWhiteListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDBClusterAccessWhiteListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDBClusterAccessWhiteList(request);
+			return this->describeClusterNetInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1023,72 +1059,36 @@ AdbClient::DescribeDBClusterForecastOutcomeCallable AdbClient::describeDBCluster
 	return task->get_future();
 }
 
-AdbClient::DescribeDBClusterHealthReportOutcome AdbClient::describeDBClusterHealthReport(const DescribeDBClusterHealthReportRequest &request) const
+AdbClient::DescribeDBClusterHealthStatusOutcome AdbClient::describeDBClusterHealthStatus(const DescribeDBClusterHealthStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeDBClusterHealthReportOutcome(endpointOutcome.error());
+		return DescribeDBClusterHealthStatusOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeDBClusterHealthReportOutcome(DescribeDBClusterHealthReportResult(outcome.result()));
+		return DescribeDBClusterHealthStatusOutcome(DescribeDBClusterHealthStatusResult(outcome.result()));
 	else
-		return DescribeDBClusterHealthReportOutcome(outcome.error());
+		return DescribeDBClusterHealthStatusOutcome(outcome.error());
 }
 
-void AdbClient::describeDBClusterHealthReportAsync(const DescribeDBClusterHealthReportRequest& request, const DescribeDBClusterHealthReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::describeDBClusterHealthStatusAsync(const DescribeDBClusterHealthStatusRequest& request, const DescribeDBClusterHealthStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeDBClusterHealthReport(request), context);
+		handler(this, request, describeDBClusterHealthStatus(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::DescribeDBClusterHealthReportOutcomeCallable AdbClient::describeDBClusterHealthReportCallable(const DescribeDBClusterHealthReportRequest &request) const
+AdbClient::DescribeDBClusterHealthStatusOutcomeCallable AdbClient::describeDBClusterHealthStatusCallable(const DescribeDBClusterHealthStatusRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeDBClusterHealthReportOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeDBClusterHealthStatusOutcome()>>(
 			[this, request]()
 			{
-			return this->describeDBClusterHealthReport(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeDBClusterNetInfoOutcome AdbClient::describeDBClusterNetInfo(const DescribeDBClusterNetInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDBClusterNetInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDBClusterNetInfoOutcome(DescribeDBClusterNetInfoResult(outcome.result()));
-	else
-		return DescribeDBClusterNetInfoOutcome(outcome.error());
-}
-
-void AdbClient::describeDBClusterNetInfoAsync(const DescribeDBClusterNetInfoRequest& request, const DescribeDBClusterNetInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDBClusterNetInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeDBClusterNetInfoOutcomeCallable AdbClient::describeDBClusterNetInfoCallable(const DescribeDBClusterNetInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDBClusterNetInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDBClusterNetInfo(request);
+			return this->describeDBClusterHealthStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1125,42 +1125,6 @@ AdbClient::DescribeDBClusterPerformanceOutcomeCallable AdbClient::describeDBClus
 			[this, request]()
 			{
 			return this->describeDBClusterPerformance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeDBClusterResourcePoolPerformanceOutcome AdbClient::describeDBClusterResourcePoolPerformance(const DescribeDBClusterResourcePoolPerformanceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDBClusterResourcePoolPerformanceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDBClusterResourcePoolPerformanceOutcome(DescribeDBClusterResourcePoolPerformanceResult(outcome.result()));
-	else
-		return DescribeDBClusterResourcePoolPerformanceOutcome(outcome.error());
-}
-
-void AdbClient::describeDBClusterResourcePoolPerformanceAsync(const DescribeDBClusterResourcePoolPerformanceRequest& request, const DescribeDBClusterResourcePoolPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDBClusterResourcePoolPerformance(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeDBClusterResourcePoolPerformanceOutcomeCallable AdbClient::describeDBClusterResourcePoolPerformanceCallable(const DescribeDBClusterResourcePoolPerformanceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDBClusterResourcePoolPerformanceOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDBClusterResourcePoolPerformance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1239,42 +1203,6 @@ AdbClient::DescribeDBResourceGroupOutcomeCallable AdbClient::describeDBResourceG
 	return task->get_future();
 }
 
-AdbClient::DescribeDBResourcePoolOutcome AdbClient::describeDBResourcePool(const DescribeDBResourcePoolRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDBResourcePoolOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDBResourcePoolOutcome(DescribeDBResourcePoolResult(outcome.result()));
-	else
-		return DescribeDBResourcePoolOutcome(outcome.error());
-}
-
-void AdbClient::describeDBResourcePoolAsync(const DescribeDBResourcePoolRequest& request, const DescribeDBResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDBResourcePool(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeDBResourcePoolOutcomeCallable AdbClient::describeDBResourcePoolCallable(const DescribeDBResourcePoolRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDBResourcePoolOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDBResourcePool(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AdbClient::DescribeDiagnosisDimensionsOutcome AdbClient::describeDiagnosisDimensions(const DescribeDiagnosisDimensionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1347,6 +1275,42 @@ AdbClient::DescribeDiagnosisRecordsOutcomeCallable AdbClient::describeDiagnosisR
 	return task->get_future();
 }
 
+AdbClient::DescribeDiagnosisSQLInfoOutcome AdbClient::describeDiagnosisSQLInfo(const DescribeDiagnosisSQLInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDiagnosisSQLInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDiagnosisSQLInfoOutcome(DescribeDiagnosisSQLInfoResult(outcome.result()));
+	else
+		return DescribeDiagnosisSQLInfoOutcome(outcome.error());
+}
+
+void AdbClient::describeDiagnosisSQLInfoAsync(const DescribeDiagnosisSQLInfoRequest& request, const DescribeDiagnosisSQLInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDiagnosisSQLInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::DescribeDiagnosisSQLInfoOutcomeCallable AdbClient::describeDiagnosisSQLInfoCallable(const DescribeDiagnosisSQLInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDiagnosisSQLInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDiagnosisSQLInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AdbClient::DescribeDownloadRecordsOutcome AdbClient::describeDownloadRecords(const DescribeDownloadRecordsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1383,222 +1347,6 @@ AdbClient::DescribeDownloadRecordsOutcomeCallable AdbClient::describeDownloadRec
 	return task->get_future();
 }
 
-AdbClient::DescribeElasticDailyPlanOutcome AdbClient::describeElasticDailyPlan(const DescribeElasticDailyPlanRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeElasticDailyPlanOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeElasticDailyPlanOutcome(DescribeElasticDailyPlanResult(outcome.result()));
-	else
-		return DescribeElasticDailyPlanOutcome(outcome.error());
-}
-
-void AdbClient::describeElasticDailyPlanAsync(const DescribeElasticDailyPlanRequest& request, const DescribeElasticDailyPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeElasticDailyPlan(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeElasticDailyPlanOutcomeCallable AdbClient::describeElasticDailyPlanCallable(const DescribeElasticDailyPlanRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeElasticDailyPlanOutcome()>>(
-			[this, request]()
-			{
-			return this->describeElasticDailyPlan(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeElasticPlanOutcome AdbClient::describeElasticPlan(const DescribeElasticPlanRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeElasticPlanOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeElasticPlanOutcome(DescribeElasticPlanResult(outcome.result()));
-	else
-		return DescribeElasticPlanOutcome(outcome.error());
-}
-
-void AdbClient::describeElasticPlanAsync(const DescribeElasticPlanRequest& request, const DescribeElasticPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeElasticPlan(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeElasticPlanOutcomeCallable AdbClient::describeElasticPlanCallable(const DescribeElasticPlanRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeElasticPlanOutcome()>>(
-			[this, request]()
-			{
-			return this->describeElasticPlan(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeInclinedTablesOutcome AdbClient::describeInclinedTables(const DescribeInclinedTablesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeInclinedTablesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeInclinedTablesOutcome(DescribeInclinedTablesResult(outcome.result()));
-	else
-		return DescribeInclinedTablesOutcome(outcome.error());
-}
-
-void AdbClient::describeInclinedTablesAsync(const DescribeInclinedTablesRequest& request, const DescribeInclinedTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeInclinedTables(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeInclinedTablesOutcomeCallable AdbClient::describeInclinedTablesCallable(const DescribeInclinedTablesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeInclinedTablesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeInclinedTables(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeLoadTasksRecordsOutcome AdbClient::describeLoadTasksRecords(const DescribeLoadTasksRecordsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeLoadTasksRecordsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeLoadTasksRecordsOutcome(DescribeLoadTasksRecordsResult(outcome.result()));
-	else
-		return DescribeLoadTasksRecordsOutcome(outcome.error());
-}
-
-void AdbClient::describeLoadTasksRecordsAsync(const DescribeLoadTasksRecordsRequest& request, const DescribeLoadTasksRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeLoadTasksRecords(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeLoadTasksRecordsOutcomeCallable AdbClient::describeLoadTasksRecordsCallable(const DescribeLoadTasksRecordsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeLoadTasksRecordsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeLoadTasksRecords(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeMaintenanceActionOutcome AdbClient::describeMaintenanceAction(const DescribeMaintenanceActionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeMaintenanceActionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeMaintenanceActionOutcome(DescribeMaintenanceActionResult(outcome.result()));
-	else
-		return DescribeMaintenanceActionOutcome(outcome.error());
-}
-
-void AdbClient::describeMaintenanceActionAsync(const DescribeMaintenanceActionRequest& request, const DescribeMaintenanceActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeMaintenanceAction(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeMaintenanceActionOutcomeCallable AdbClient::describeMaintenanceActionCallable(const DescribeMaintenanceActionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeMaintenanceActionOutcome()>>(
-			[this, request]()
-			{
-			return this->describeMaintenanceAction(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeOperatorPermissionOutcome AdbClient::describeOperatorPermission(const DescribeOperatorPermissionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeOperatorPermissionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeOperatorPermissionOutcome(DescribeOperatorPermissionResult(outcome.result()));
-	else
-		return DescribeOperatorPermissionOutcome(outcome.error());
-}
-
-void AdbClient::describeOperatorPermissionAsync(const DescribeOperatorPermissionRequest& request, const DescribeOperatorPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeOperatorPermission(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeOperatorPermissionOutcomeCallable AdbClient::describeOperatorPermissionCallable(const DescribeOperatorPermissionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeOperatorPermissionOutcome()>>(
-			[this, request]()
-			{
-			return this->describeOperatorPermission(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AdbClient::DescribePatternPerformanceOutcome AdbClient::describePatternPerformance(const DescribePatternPerformanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,42 +1377,6 @@ AdbClient::DescribePatternPerformanceOutcomeCallable AdbClient::describePatternP
 			[this, request]()
 			{
 			return this->describePatternPerformance(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeProcessListOutcome AdbClient::describeProcessList(const DescribeProcessListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeProcessListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeProcessListOutcome(DescribeProcessListResult(outcome.result()));
-	else
-		return DescribeProcessListOutcome(outcome.error());
-}
-
-void AdbClient::describeProcessListAsync(const DescribeProcessListRequest& request, const DescribeProcessListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeProcessList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeProcessListOutcomeCallable AdbClient::describeProcessListCallable(const DescribeProcessListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeProcessListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeProcessList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1779,180 +1491,108 @@ AdbClient::DescribeSQLPatternsOutcomeCallable AdbClient::describeSQLPatternsCall
 	return task->get_future();
 }
 
-AdbClient::DescribeSQLPlanOutcome AdbClient::describeSQLPlan(const DescribeSQLPlanRequest &request) const
+AdbClient::DescribeSparkCodeLogOutcome AdbClient::describeSparkCodeLog(const DescribeSparkCodeLogRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeSQLPlanOutcome(endpointOutcome.error());
+		return DescribeSparkCodeLogOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeSQLPlanOutcome(DescribeSQLPlanResult(outcome.result()));
+		return DescribeSparkCodeLogOutcome(DescribeSparkCodeLogResult(outcome.result()));
 	else
-		return DescribeSQLPlanOutcome(outcome.error());
+		return DescribeSparkCodeLogOutcome(outcome.error());
 }
 
-void AdbClient::describeSQLPlanAsync(const DescribeSQLPlanRequest& request, const DescribeSQLPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::describeSparkCodeLogAsync(const DescribeSparkCodeLogRequest& request, const DescribeSparkCodeLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeSQLPlan(request), context);
+		handler(this, request, describeSparkCodeLog(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::DescribeSQLPlanOutcomeCallable AdbClient::describeSQLPlanCallable(const DescribeSQLPlanRequest &request) const
+AdbClient::DescribeSparkCodeLogOutcomeCallable AdbClient::describeSparkCodeLogCallable(const DescribeSparkCodeLogRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeSQLPlanOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeSparkCodeLogOutcome()>>(
 			[this, request]()
 			{
-			return this->describeSQLPlan(request);
+			return this->describeSparkCodeLog(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AdbClient::DescribeSQLPlanTaskOutcome AdbClient::describeSQLPlanTask(const DescribeSQLPlanTaskRequest &request) const
+AdbClient::DescribeSparkCodeOutputOutcome AdbClient::describeSparkCodeOutput(const DescribeSparkCodeOutputRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeSQLPlanTaskOutcome(endpointOutcome.error());
+		return DescribeSparkCodeOutputOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeSQLPlanTaskOutcome(DescribeSQLPlanTaskResult(outcome.result()));
+		return DescribeSparkCodeOutputOutcome(DescribeSparkCodeOutputResult(outcome.result()));
 	else
-		return DescribeSQLPlanTaskOutcome(outcome.error());
+		return DescribeSparkCodeOutputOutcome(outcome.error());
 }
 
-void AdbClient::describeSQLPlanTaskAsync(const DescribeSQLPlanTaskRequest& request, const DescribeSQLPlanTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::describeSparkCodeOutputAsync(const DescribeSparkCodeOutputRequest& request, const DescribeSparkCodeOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeSQLPlanTask(request), context);
+		handler(this, request, describeSparkCodeOutput(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::DescribeSQLPlanTaskOutcomeCallable AdbClient::describeSQLPlanTaskCallable(const DescribeSQLPlanTaskRequest &request) const
+AdbClient::DescribeSparkCodeOutputOutcomeCallable AdbClient::describeSparkCodeOutputCallable(const DescribeSparkCodeOutputRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeSQLPlanTaskOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeSparkCodeOutputOutcome()>>(
 			[this, request]()
 			{
-			return this->describeSQLPlanTask(request);
+			return this->describeSparkCodeOutput(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AdbClient::DescribeSchemasOutcome AdbClient::describeSchemas(const DescribeSchemasRequest &request) const
+AdbClient::DescribeSparkCodeWebUiOutcome AdbClient::describeSparkCodeWebUi(const DescribeSparkCodeWebUiRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeSchemasOutcome(endpointOutcome.error());
+		return DescribeSparkCodeWebUiOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeSchemasOutcome(DescribeSchemasResult(outcome.result()));
+		return DescribeSparkCodeWebUiOutcome(DescribeSparkCodeWebUiResult(outcome.result()));
 	else
-		return DescribeSchemasOutcome(outcome.error());
+		return DescribeSparkCodeWebUiOutcome(outcome.error());
 }
 
-void AdbClient::describeSchemasAsync(const DescribeSchemasRequest& request, const DescribeSchemasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::describeSparkCodeWebUiAsync(const DescribeSparkCodeWebUiRequest& request, const DescribeSparkCodeWebUiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeSchemas(request), context);
+		handler(this, request, describeSparkCodeWebUi(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::DescribeSchemasOutcomeCallable AdbClient::describeSchemasCallable(const DescribeSchemasRequest &request) const
+AdbClient::DescribeSparkCodeWebUiOutcomeCallable AdbClient::describeSparkCodeWebUiCallable(const DescribeSparkCodeWebUiRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeSchemasOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeSparkCodeWebUiOutcome()>>(
 			[this, request]()
 			{
-			return this->describeSchemas(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeSlowLogRecordsOutcome AdbClient::describeSlowLogRecords(const DescribeSlowLogRecordsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSlowLogRecordsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSlowLogRecordsOutcome(DescribeSlowLogRecordsResult(outcome.result()));
-	else
-		return DescribeSlowLogRecordsOutcome(outcome.error());
-}
-
-void AdbClient::describeSlowLogRecordsAsync(const DescribeSlowLogRecordsRequest& request, const DescribeSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSlowLogRecords(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeSlowLogRecordsOutcomeCallable AdbClient::describeSlowLogRecordsCallable(const DescribeSlowLogRecordsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSlowLogRecordsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSlowLogRecords(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeSlowLogTrendOutcome AdbClient::describeSlowLogTrend(const DescribeSlowLogTrendRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeSlowLogTrendOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeSlowLogTrendOutcome(DescribeSlowLogTrendResult(outcome.result()));
-	else
-		return DescribeSlowLogTrendOutcome(outcome.error());
-}
-
-void AdbClient::describeSlowLogTrendAsync(const DescribeSlowLogTrendRequest& request, const DescribeSlowLogTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeSlowLogTrend(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeSlowLogTrendOutcomeCallable AdbClient::describeSlowLogTrendCallable(const DescribeSlowLogTrendRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeSlowLogTrendOutcome()>>(
-			[this, request]()
-			{
-			return this->describeSlowLogTrend(request);
+			return this->describeSparkCodeWebUi(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2031,186 +1671,6 @@ AdbClient::DescribeTableAccessCountOutcomeCallable AdbClient::describeTableAcces
 	return task->get_future();
 }
 
-AdbClient::DescribeTableDetailOutcome AdbClient::describeTableDetail(const DescribeTableDetailRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeTableDetailOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeTableDetailOutcome(DescribeTableDetailResult(outcome.result()));
-	else
-		return DescribeTableDetailOutcome(outcome.error());
-}
-
-void AdbClient::describeTableDetailAsync(const DescribeTableDetailRequest& request, const DescribeTableDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeTableDetail(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeTableDetailOutcomeCallable AdbClient::describeTableDetailCallable(const DescribeTableDetailRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeTableDetailOutcome()>>(
-			[this, request]()
-			{
-			return this->describeTableDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeTablePartitionDiagnoseOutcome AdbClient::describeTablePartitionDiagnose(const DescribeTablePartitionDiagnoseRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeTablePartitionDiagnoseOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeTablePartitionDiagnoseOutcome(DescribeTablePartitionDiagnoseResult(outcome.result()));
-	else
-		return DescribeTablePartitionDiagnoseOutcome(outcome.error());
-}
-
-void AdbClient::describeTablePartitionDiagnoseAsync(const DescribeTablePartitionDiagnoseRequest& request, const DescribeTablePartitionDiagnoseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeTablePartitionDiagnose(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeTablePartitionDiagnoseOutcomeCallable AdbClient::describeTablePartitionDiagnoseCallable(const DescribeTablePartitionDiagnoseRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeTablePartitionDiagnoseOutcome()>>(
-			[this, request]()
-			{
-			return this->describeTablePartitionDiagnose(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeTableStatisticsOutcome AdbClient::describeTableStatistics(const DescribeTableStatisticsRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeTableStatisticsOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeTableStatisticsOutcome(DescribeTableStatisticsResult(outcome.result()));
-	else
-		return DescribeTableStatisticsOutcome(outcome.error());
-}
-
-void AdbClient::describeTableStatisticsAsync(const DescribeTableStatisticsRequest& request, const DescribeTableStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeTableStatistics(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeTableStatisticsOutcomeCallable AdbClient::describeTableStatisticsCallable(const DescribeTableStatisticsRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeTableStatisticsOutcome()>>(
-			[this, request]()
-			{
-			return this->describeTableStatistics(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeTablesOutcome AdbClient::describeTables(const DescribeTablesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeTablesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeTablesOutcome(DescribeTablesResult(outcome.result()));
-	else
-		return DescribeTablesOutcome(outcome.error());
-}
-
-void AdbClient::describeTablesAsync(const DescribeTablesRequest& request, const DescribeTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeTables(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeTablesOutcomeCallable AdbClient::describeTablesCallable(const DescribeTablesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeTablesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeTables(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::DescribeTaskInfoOutcome AdbClient::describeTaskInfo(const DescribeTaskInfoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeTaskInfoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeTaskInfoOutcome(DescribeTaskInfoResult(outcome.result()));
-	else
-		return DescribeTaskInfoOutcome(outcome.error());
-}
-
-void AdbClient::describeTaskInfoAsync(const DescribeTaskInfoRequest& request, const DescribeTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeTaskInfo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::DescribeTaskInfoOutcomeCallable AdbClient::describeTaskInfoCallable(const DescribeTaskInfoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeTaskInfoOutcome()>>(
-			[this, request]()
-			{
-			return this->describeTaskInfo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AdbClient::DownloadDiagnosisRecordsOutcome AdbClient::downloadDiagnosisRecords(const DownloadDiagnosisRecordsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2247,108 +1707,972 @@ AdbClient::DownloadDiagnosisRecordsOutcomeCallable AdbClient::downloadDiagnosisR
 	return task->get_future();
 }
 
-AdbClient::GrantOperatorPermissionOutcome AdbClient::grantOperatorPermission(const GrantOperatorPermissionRequest &request) const
+AdbClient::GetDatabaseObjectsOutcome AdbClient::getDatabaseObjects(const GetDatabaseObjectsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return GrantOperatorPermissionOutcome(endpointOutcome.error());
+		return GetDatabaseObjectsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return GrantOperatorPermissionOutcome(GrantOperatorPermissionResult(outcome.result()));
+		return GetDatabaseObjectsOutcome(GetDatabaseObjectsResult(outcome.result()));
 	else
-		return GrantOperatorPermissionOutcome(outcome.error());
+		return GetDatabaseObjectsOutcome(outcome.error());
 }
 
-void AdbClient::grantOperatorPermissionAsync(const GrantOperatorPermissionRequest& request, const GrantOperatorPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::getDatabaseObjectsAsync(const GetDatabaseObjectsRequest& request, const GetDatabaseObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, grantOperatorPermission(request), context);
+		handler(this, request, getDatabaseObjects(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::GrantOperatorPermissionOutcomeCallable AdbClient::grantOperatorPermissionCallable(const GrantOperatorPermissionRequest &request) const
+AdbClient::GetDatabaseObjectsOutcomeCallable AdbClient::getDatabaseObjectsCallable(const GetDatabaseObjectsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<GrantOperatorPermissionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetDatabaseObjectsOutcome()>>(
 			[this, request]()
 			{
-			return this->grantOperatorPermission(request);
+			return this->getDatabaseObjects(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AdbClient::KillProcessOutcome AdbClient::killProcess(const KillProcessRequest &request) const
+AdbClient::GetLakehouseValidResourceGroupsOutcome AdbClient::getLakehouseValidResourceGroups(const GetLakehouseValidResourceGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return KillProcessOutcome(endpointOutcome.error());
+		return GetLakehouseValidResourceGroupsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return KillProcessOutcome(KillProcessResult(outcome.result()));
+		return GetLakehouseValidResourceGroupsOutcome(GetLakehouseValidResourceGroupsResult(outcome.result()));
 	else
-		return KillProcessOutcome(outcome.error());
+		return GetLakehouseValidResourceGroupsOutcome(outcome.error());
 }
 
-void AdbClient::killProcessAsync(const KillProcessRequest& request, const KillProcessAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::getLakehouseValidResourceGroupsAsync(const GetLakehouseValidResourceGroupsRequest& request, const GetLakehouseValidResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, killProcess(request), context);
+		handler(this, request, getLakehouseValidResourceGroups(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::KillProcessOutcomeCallable AdbClient::killProcessCallable(const KillProcessRequest &request) const
+AdbClient::GetLakehouseValidResourceGroupsOutcomeCallable AdbClient::getLakehouseValidResourceGroupsCallable(const GetLakehouseValidResourceGroupsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<KillProcessOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetLakehouseValidResourceGroupsOutcome()>>(
 			[this, request]()
 			{
-			return this->killProcess(request);
+			return this->getLakehouseValidResourceGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AdbClient::ListTagResourcesOutcome AdbClient::listTagResources(const ListTagResourcesRequest &request) const
+AdbClient::GetSparkAppAttemptLogOutcome AdbClient::getSparkAppAttemptLog(const GetSparkAppAttemptLogRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ListTagResourcesOutcome(endpointOutcome.error());
+		return GetSparkAppAttemptLogOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+		return GetSparkAppAttemptLogOutcome(GetSparkAppAttemptLogResult(outcome.result()));
 	else
-		return ListTagResourcesOutcome(outcome.error());
+		return GetSparkAppAttemptLogOutcome(outcome.error());
 }
 
-void AdbClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::getSparkAppAttemptLogAsync(const GetSparkAppAttemptLogRequest& request, const GetSparkAppAttemptLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, listTagResources(request), context);
+		handler(this, request, getSparkAppAttemptLog(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::ListTagResourcesOutcomeCallable AdbClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+AdbClient::GetSparkAppAttemptLogOutcomeCallable AdbClient::getSparkAppAttemptLogCallable(const GetSparkAppAttemptLogRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<GetSparkAppAttemptLogOutcome()>>(
 			[this, request]()
 			{
-			return this->listTagResources(request);
+			return this->getSparkAppAttemptLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetSparkAppInfoOutcome AdbClient::getSparkAppInfo(const GetSparkAppInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSparkAppInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSparkAppInfoOutcome(GetSparkAppInfoResult(outcome.result()));
+	else
+		return GetSparkAppInfoOutcome(outcome.error());
+}
+
+void AdbClient::getSparkAppInfoAsync(const GetSparkAppInfoRequest& request, const GetSparkAppInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSparkAppInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetSparkAppInfoOutcomeCallable AdbClient::getSparkAppInfoCallable(const GetSparkAppInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSparkAppInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getSparkAppInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetSparkAppLogOutcome AdbClient::getSparkAppLog(const GetSparkAppLogRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSparkAppLogOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSparkAppLogOutcome(GetSparkAppLogResult(outcome.result()));
+	else
+		return GetSparkAppLogOutcome(outcome.error());
+}
+
+void AdbClient::getSparkAppLogAsync(const GetSparkAppLogRequest& request, const GetSparkAppLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSparkAppLog(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetSparkAppLogOutcomeCallable AdbClient::getSparkAppLogCallable(const GetSparkAppLogRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSparkAppLogOutcome()>>(
+			[this, request]()
+			{
+			return this->getSparkAppLog(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetSparkAppMetricsOutcome AdbClient::getSparkAppMetrics(const GetSparkAppMetricsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSparkAppMetricsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSparkAppMetricsOutcome(GetSparkAppMetricsResult(outcome.result()));
+	else
+		return GetSparkAppMetricsOutcome(outcome.error());
+}
+
+void AdbClient::getSparkAppMetricsAsync(const GetSparkAppMetricsRequest& request, const GetSparkAppMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSparkAppMetrics(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetSparkAppMetricsOutcomeCallable AdbClient::getSparkAppMetricsCallable(const GetSparkAppMetricsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSparkAppMetricsOutcome()>>(
+			[this, request]()
+			{
+			return this->getSparkAppMetrics(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetSparkAppStateOutcome AdbClient::getSparkAppState(const GetSparkAppStateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSparkAppStateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSparkAppStateOutcome(GetSparkAppStateResult(outcome.result()));
+	else
+		return GetSparkAppStateOutcome(outcome.error());
+}
+
+void AdbClient::getSparkAppStateAsync(const GetSparkAppStateRequest& request, const GetSparkAppStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSparkAppState(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetSparkAppStateOutcomeCallable AdbClient::getSparkAppStateCallable(const GetSparkAppStateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSparkAppStateOutcome()>>(
+			[this, request]()
+			{
+			return this->getSparkAppState(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetSparkAppWebUiAddressOutcome AdbClient::getSparkAppWebUiAddress(const GetSparkAppWebUiAddressRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSparkAppWebUiAddressOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSparkAppWebUiAddressOutcome(GetSparkAppWebUiAddressResult(outcome.result()));
+	else
+		return GetSparkAppWebUiAddressOutcome(outcome.error());
+}
+
+void AdbClient::getSparkAppWebUiAddressAsync(const GetSparkAppWebUiAddressRequest& request, const GetSparkAppWebUiAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSparkAppWebUiAddress(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetSparkAppWebUiAddressOutcomeCallable AdbClient::getSparkAppWebUiAddressCallable(const GetSparkAppWebUiAddressRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSparkAppWebUiAddressOutcome()>>(
+			[this, request]()
+			{
+			return this->getSparkAppWebUiAddress(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetSparkConfigLogPathOutcome AdbClient::getSparkConfigLogPath(const GetSparkConfigLogPathRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSparkConfigLogPathOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSparkConfigLogPathOutcome(GetSparkConfigLogPathResult(outcome.result()));
+	else
+		return GetSparkConfigLogPathOutcome(outcome.error());
+}
+
+void AdbClient::getSparkConfigLogPathAsync(const GetSparkConfigLogPathRequest& request, const GetSparkConfigLogPathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSparkConfigLogPath(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetSparkConfigLogPathOutcomeCallable AdbClient::getSparkConfigLogPathCallable(const GetSparkConfigLogPathRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSparkConfigLogPathOutcome()>>(
+			[this, request]()
+			{
+			return this->getSparkConfigLogPath(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetSparkLogAnalyzeTaskOutcome AdbClient::getSparkLogAnalyzeTask(const GetSparkLogAnalyzeTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSparkLogAnalyzeTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSparkLogAnalyzeTaskOutcome(GetSparkLogAnalyzeTaskResult(outcome.result()));
+	else
+		return GetSparkLogAnalyzeTaskOutcome(outcome.error());
+}
+
+void AdbClient::getSparkLogAnalyzeTaskAsync(const GetSparkLogAnalyzeTaskRequest& request, const GetSparkLogAnalyzeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSparkLogAnalyzeTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetSparkLogAnalyzeTaskOutcomeCallable AdbClient::getSparkLogAnalyzeTaskCallable(const GetSparkLogAnalyzeTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSparkLogAnalyzeTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->getSparkLogAnalyzeTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetSparkSQLEngineStateOutcome AdbClient::getSparkSQLEngineState(const GetSparkSQLEngineStateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSparkSQLEngineStateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSparkSQLEngineStateOutcome(GetSparkSQLEngineStateResult(outcome.result()));
+	else
+		return GetSparkSQLEngineStateOutcome(outcome.error());
+}
+
+void AdbClient::getSparkSQLEngineStateAsync(const GetSparkSQLEngineStateRequest& request, const GetSparkSQLEngineStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSparkSQLEngineState(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetSparkSQLEngineStateOutcomeCallable AdbClient::getSparkSQLEngineStateCallable(const GetSparkSQLEngineStateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSparkSQLEngineStateOutcome()>>(
+			[this, request]()
+			{
+			return this->getSparkSQLEngineState(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetSparkTemplateFileContentOutcome AdbClient::getSparkTemplateFileContent(const GetSparkTemplateFileContentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSparkTemplateFileContentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSparkTemplateFileContentOutcome(GetSparkTemplateFileContentResult(outcome.result()));
+	else
+		return GetSparkTemplateFileContentOutcome(outcome.error());
+}
+
+void AdbClient::getSparkTemplateFileContentAsync(const GetSparkTemplateFileContentRequest& request, const GetSparkTemplateFileContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSparkTemplateFileContent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetSparkTemplateFileContentOutcomeCallable AdbClient::getSparkTemplateFileContentCallable(const GetSparkTemplateFileContentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSparkTemplateFileContentOutcome()>>(
+			[this, request]()
+			{
+			return this->getSparkTemplateFileContent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetSparkTemplateFolderTreeOutcome AdbClient::getSparkTemplateFolderTree(const GetSparkTemplateFolderTreeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSparkTemplateFolderTreeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSparkTemplateFolderTreeOutcome(GetSparkTemplateFolderTreeResult(outcome.result()));
+	else
+		return GetSparkTemplateFolderTreeOutcome(outcome.error());
+}
+
+void AdbClient::getSparkTemplateFolderTreeAsync(const GetSparkTemplateFolderTreeRequest& request, const GetSparkTemplateFolderTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSparkTemplateFolderTree(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetSparkTemplateFolderTreeOutcomeCallable AdbClient::getSparkTemplateFolderTreeCallable(const GetSparkTemplateFolderTreeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSparkTemplateFolderTreeOutcome()>>(
+			[this, request]()
+			{
+			return this->getSparkTemplateFolderTree(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetSparkTemplateFullTreeOutcome AdbClient::getSparkTemplateFullTree(const GetSparkTemplateFullTreeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSparkTemplateFullTreeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSparkTemplateFullTreeOutcome(GetSparkTemplateFullTreeResult(outcome.result()));
+	else
+		return GetSparkTemplateFullTreeOutcome(outcome.error());
+}
+
+void AdbClient::getSparkTemplateFullTreeAsync(const GetSparkTemplateFullTreeRequest& request, const GetSparkTemplateFullTreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSparkTemplateFullTree(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetSparkTemplateFullTreeOutcomeCallable AdbClient::getSparkTemplateFullTreeCallable(const GetSparkTemplateFullTreeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSparkTemplateFullTreeOutcome()>>(
+			[this, request]()
+			{
+			return this->getSparkTemplateFullTree(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetTableOutcome AdbClient::getTable(const GetTableRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTableOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTableOutcome(GetTableResult(outcome.result()));
+	else
+		return GetTableOutcome(outcome.error());
+}
+
+void AdbClient::getTableAsync(const GetTableRequest& request, const GetTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTable(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetTableOutcomeCallable AdbClient::getTableCallable(const GetTableRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTableOutcome()>>(
+			[this, request]()
+			{
+			return this->getTable(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetTableColumnsOutcome AdbClient::getTableColumns(const GetTableColumnsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTableColumnsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTableColumnsOutcome(GetTableColumnsResult(outcome.result()));
+	else
+		return GetTableColumnsOutcome(outcome.error());
+}
+
+void AdbClient::getTableColumnsAsync(const GetTableColumnsRequest& request, const GetTableColumnsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTableColumns(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetTableColumnsOutcomeCallable AdbClient::getTableColumnsCallable(const GetTableColumnsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTableColumnsOutcome()>>(
+			[this, request]()
+			{
+			return this->getTableColumns(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetTableDDLOutcome AdbClient::getTableDDL(const GetTableDDLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTableDDLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTableDDLOutcome(GetTableDDLResult(outcome.result()));
+	else
+		return GetTableDDLOutcome(outcome.error());
+}
+
+void AdbClient::getTableDDLAsync(const GetTableDDLRequest& request, const GetTableDDLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTableDDL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetTableDDLOutcomeCallable AdbClient::getTableDDLCallable(const GetTableDDLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTableDDLOutcome()>>(
+			[this, request]()
+			{
+			return this->getTableDDL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetTableObjectsOutcome AdbClient::getTableObjects(const GetTableObjectsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTableObjectsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTableObjectsOutcome(GetTableObjectsResult(outcome.result()));
+	else
+		return GetTableObjectsOutcome(outcome.error());
+}
+
+void AdbClient::getTableObjectsAsync(const GetTableObjectsRequest& request, const GetTableObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTableObjects(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetTableObjectsOutcomeCallable AdbClient::getTableObjectsCallable(const GetTableObjectsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTableObjectsOutcome()>>(
+			[this, request]()
+			{
+			return this->getTableObjects(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetViewDDLOutcome AdbClient::getViewDDL(const GetViewDDLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetViewDDLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetViewDDLOutcome(GetViewDDLResult(outcome.result()));
+	else
+		return GetViewDDLOutcome(outcome.error());
+}
+
+void AdbClient::getViewDDLAsync(const GetViewDDLRequest& request, const GetViewDDLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getViewDDL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetViewDDLOutcomeCallable AdbClient::getViewDDLCallable(const GetViewDDLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetViewDDLOutcome()>>(
+			[this, request]()
+			{
+			return this->getViewDDL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::GetViewObjectsOutcome AdbClient::getViewObjects(const GetViewObjectsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetViewObjectsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetViewObjectsOutcome(GetViewObjectsResult(outcome.result()));
+	else
+		return GetViewObjectsOutcome(outcome.error());
+}
+
+void AdbClient::getViewObjectsAsync(const GetViewObjectsRequest& request, const GetViewObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getViewObjects(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::GetViewObjectsOutcomeCallable AdbClient::getViewObjectsCallable(const GetViewObjectsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetViewObjectsOutcome()>>(
+			[this, request]()
+			{
+			return this->getViewObjects(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::KillSparkAppOutcome AdbClient::killSparkApp(const KillSparkAppRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return KillSparkAppOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return KillSparkAppOutcome(KillSparkAppResult(outcome.result()));
+	else
+		return KillSparkAppOutcome(outcome.error());
+}
+
+void AdbClient::killSparkAppAsync(const KillSparkAppRequest& request, const KillSparkAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, killSparkApp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::KillSparkAppOutcomeCallable AdbClient::killSparkAppCallable(const KillSparkAppRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<KillSparkAppOutcome()>>(
+			[this, request]()
+			{
+			return this->killSparkApp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::KillSparkLogAnalyzeTaskOutcome AdbClient::killSparkLogAnalyzeTask(const KillSparkLogAnalyzeTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return KillSparkLogAnalyzeTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return KillSparkLogAnalyzeTaskOutcome(KillSparkLogAnalyzeTaskResult(outcome.result()));
+	else
+		return KillSparkLogAnalyzeTaskOutcome(outcome.error());
+}
+
+void AdbClient::killSparkLogAnalyzeTaskAsync(const KillSparkLogAnalyzeTaskRequest& request, const KillSparkLogAnalyzeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, killSparkLogAnalyzeTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::KillSparkLogAnalyzeTaskOutcomeCallable AdbClient::killSparkLogAnalyzeTaskCallable(const KillSparkLogAnalyzeTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<KillSparkLogAnalyzeTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->killSparkLogAnalyzeTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::KillSparkSQLEngineOutcome AdbClient::killSparkSQLEngine(const KillSparkSQLEngineRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return KillSparkSQLEngineOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return KillSparkSQLEngineOutcome(KillSparkSQLEngineResult(outcome.result()));
+	else
+		return KillSparkSQLEngineOutcome(outcome.error());
+}
+
+void AdbClient::killSparkSQLEngineAsync(const KillSparkSQLEngineRequest& request, const KillSparkSQLEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, killSparkSQLEngine(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::KillSparkSQLEngineOutcomeCallable AdbClient::killSparkSQLEngineCallable(const KillSparkSQLEngineRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<KillSparkSQLEngineOutcome()>>(
+			[this, request]()
+			{
+			return this->killSparkSQLEngine(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::ListSparkAppAttemptsOutcome AdbClient::listSparkAppAttempts(const ListSparkAppAttemptsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSparkAppAttemptsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSparkAppAttemptsOutcome(ListSparkAppAttemptsResult(outcome.result()));
+	else
+		return ListSparkAppAttemptsOutcome(outcome.error());
+}
+
+void AdbClient::listSparkAppAttemptsAsync(const ListSparkAppAttemptsRequest& request, const ListSparkAppAttemptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSparkAppAttempts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::ListSparkAppAttemptsOutcomeCallable AdbClient::listSparkAppAttemptsCallable(const ListSparkAppAttemptsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSparkAppAttemptsOutcome()>>(
+			[this, request]()
+			{
+			return this->listSparkAppAttempts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::ListSparkAppsOutcome AdbClient::listSparkApps(const ListSparkAppsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSparkAppsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSparkAppsOutcome(ListSparkAppsResult(outcome.result()));
+	else
+		return ListSparkAppsOutcome(outcome.error());
+}
+
+void AdbClient::listSparkAppsAsync(const ListSparkAppsRequest& request, const ListSparkAppsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSparkApps(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::ListSparkAppsOutcomeCallable AdbClient::listSparkAppsCallable(const ListSparkAppsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSparkAppsOutcome()>>(
+			[this, request]()
+			{
+			return this->listSparkApps(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::ListSparkLogAnalyzeTasksOutcome AdbClient::listSparkLogAnalyzeTasks(const ListSparkLogAnalyzeTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSparkLogAnalyzeTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSparkLogAnalyzeTasksOutcome(ListSparkLogAnalyzeTasksResult(outcome.result()));
+	else
+		return ListSparkLogAnalyzeTasksOutcome(outcome.error());
+}
+
+void AdbClient::listSparkLogAnalyzeTasksAsync(const ListSparkLogAnalyzeTasksRequest& request, const ListSparkLogAnalyzeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSparkLogAnalyzeTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::ListSparkLogAnalyzeTasksOutcomeCallable AdbClient::listSparkLogAnalyzeTasksCallable(const ListSparkLogAnalyzeTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSparkLogAnalyzeTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->listSparkLogAnalyzeTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::ListSparkTemplateFileIdsOutcome AdbClient::listSparkTemplateFileIds(const ListSparkTemplateFileIdsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSparkTemplateFileIdsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSparkTemplateFileIdsOutcome(ListSparkTemplateFileIdsResult(outcome.result()));
+	else
+		return ListSparkTemplateFileIdsOutcome(outcome.error());
+}
+
+void AdbClient::listSparkTemplateFileIdsAsync(const ListSparkTemplateFileIdsRequest& request, const ListSparkTemplateFileIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSparkTemplateFileIds(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::ListSparkTemplateFileIdsOutcomeCallable AdbClient::listSparkTemplateFileIdsCallable(const ListSparkTemplateFileIdsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSparkTemplateFileIdsOutcome()>>(
+			[this, request]()
+			{
+			return this->listSparkTemplateFileIds(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2427,42 +2751,6 @@ AdbClient::ModifyAuditLogConfigOutcomeCallable AdbClient::modifyAuditLogConfigCa
 	return task->get_future();
 }
 
-AdbClient::ModifyAutoRenewAttributeOutcome AdbClient::modifyAutoRenewAttribute(const ModifyAutoRenewAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyAutoRenewAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyAutoRenewAttributeOutcome(ModifyAutoRenewAttributeResult(outcome.result()));
-	else
-		return ModifyAutoRenewAttributeOutcome(outcome.error());
-}
-
-void AdbClient::modifyAutoRenewAttributeAsync(const ModifyAutoRenewAttributeRequest& request, const ModifyAutoRenewAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyAutoRenewAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::ModifyAutoRenewAttributeOutcomeCallable AdbClient::modifyAutoRenewAttributeCallable(const ModifyAutoRenewAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyAutoRenewAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyAutoRenewAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AdbClient::ModifyBackupPolicyOutcome AdbClient::modifyBackupPolicy(const ModifyBackupPolicyRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2493,6 +2781,42 @@ AdbClient::ModifyBackupPolicyOutcomeCallable AdbClient::modifyBackupPolicyCallab
 			[this, request]()
 			{
 			return this->modifyBackupPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::ModifyClusterAccessWhiteListOutcome AdbClient::modifyClusterAccessWhiteList(const ModifyClusterAccessWhiteListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyClusterAccessWhiteListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyClusterAccessWhiteListOutcome(ModifyClusterAccessWhiteListResult(outcome.result()));
+	else
+		return ModifyClusterAccessWhiteListOutcome(outcome.error());
+}
+
+void AdbClient::modifyClusterAccessWhiteListAsync(const ModifyClusterAccessWhiteListRequest& request, const ModifyClusterAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyClusterAccessWhiteList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::ModifyClusterAccessWhiteListOutcomeCallable AdbClient::modifyClusterAccessWhiteListCallable(const ModifyClusterAccessWhiteListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyClusterAccessWhiteListOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyClusterAccessWhiteList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2571,42 +2895,6 @@ AdbClient::ModifyDBClusterOutcomeCallable AdbClient::modifyDBClusterCallable(con
 	return task->get_future();
 }
 
-AdbClient::ModifyDBClusterAccessWhiteListOutcome AdbClient::modifyDBClusterAccessWhiteList(const ModifyDBClusterAccessWhiteListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyDBClusterAccessWhiteListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyDBClusterAccessWhiteListOutcome(ModifyDBClusterAccessWhiteListResult(outcome.result()));
-	else
-		return ModifyDBClusterAccessWhiteListOutcome(outcome.error());
-}
-
-void AdbClient::modifyDBClusterAccessWhiteListAsync(const ModifyDBClusterAccessWhiteListRequest& request, const ModifyDBClusterAccessWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyDBClusterAccessWhiteList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::ModifyDBClusterAccessWhiteListOutcomeCallable AdbClient::modifyDBClusterAccessWhiteListCallable(const ModifyDBClusterAccessWhiteListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyDBClusterAccessWhiteListOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyDBClusterAccessWhiteList(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AdbClient::ModifyDBClusterDescriptionOutcome AdbClient::modifyDBClusterDescription(const ModifyDBClusterDescriptionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2679,78 +2967,6 @@ AdbClient::ModifyDBClusterMaintainTimeOutcomeCallable AdbClient::modifyDBCluster
 	return task->get_future();
 }
 
-AdbClient::ModifyDBClusterPayTypeOutcome AdbClient::modifyDBClusterPayType(const ModifyDBClusterPayTypeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyDBClusterPayTypeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyDBClusterPayTypeOutcome(ModifyDBClusterPayTypeResult(outcome.result()));
-	else
-		return ModifyDBClusterPayTypeOutcome(outcome.error());
-}
-
-void AdbClient::modifyDBClusterPayTypeAsync(const ModifyDBClusterPayTypeRequest& request, const ModifyDBClusterPayTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyDBClusterPayType(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::ModifyDBClusterPayTypeOutcomeCallable AdbClient::modifyDBClusterPayTypeCallable(const ModifyDBClusterPayTypeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyDBClusterPayTypeOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyDBClusterPayType(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::ModifyDBClusterResourceGroupOutcome AdbClient::modifyDBClusterResourceGroup(const ModifyDBClusterResourceGroupRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyDBClusterResourceGroupOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyDBClusterResourceGroupOutcome(ModifyDBClusterResourceGroupResult(outcome.result()));
-	else
-		return ModifyDBClusterResourceGroupOutcome(outcome.error());
-}
-
-void AdbClient::modifyDBClusterResourceGroupAsync(const ModifyDBClusterResourceGroupRequest& request, const ModifyDBClusterResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyDBClusterResourceGroup(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::ModifyDBClusterResourceGroupOutcomeCallable AdbClient::modifyDBClusterResourceGroupCallable(const ModifyDBClusterResourceGroupRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyDBClusterResourceGroupOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyDBClusterResourceGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 AdbClient::ModifyDBResourceGroupOutcome AdbClient::modifyDBResourceGroup(const ModifyDBResourceGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2787,144 +3003,36 @@ AdbClient::ModifyDBResourceGroupOutcomeCallable AdbClient::modifyDBResourceGroup
 	return task->get_future();
 }
 
-AdbClient::ModifyDBResourcePoolOutcome AdbClient::modifyDBResourcePool(const ModifyDBResourcePoolRequest &request) const
+AdbClient::PreloadSparkAppMetricsOutcome AdbClient::preloadSparkAppMetrics(const PreloadSparkAppMetricsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return ModifyDBResourcePoolOutcome(endpointOutcome.error());
+		return PreloadSparkAppMetricsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return ModifyDBResourcePoolOutcome(ModifyDBResourcePoolResult(outcome.result()));
+		return PreloadSparkAppMetricsOutcome(PreloadSparkAppMetricsResult(outcome.result()));
 	else
-		return ModifyDBResourcePoolOutcome(outcome.error());
+		return PreloadSparkAppMetricsOutcome(outcome.error());
 }
 
-void AdbClient::modifyDBResourcePoolAsync(const ModifyDBResourcePoolRequest& request, const ModifyDBResourcePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::preloadSparkAppMetricsAsync(const PreloadSparkAppMetricsRequest& request, const PreloadSparkAppMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, modifyDBResourcePool(request), context);
+		handler(this, request, preloadSparkAppMetrics(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::ModifyDBResourcePoolOutcomeCallable AdbClient::modifyDBResourcePoolCallable(const ModifyDBResourcePoolRequest &request) const
+AdbClient::PreloadSparkAppMetricsOutcomeCallable AdbClient::preloadSparkAppMetricsCallable(const PreloadSparkAppMetricsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<ModifyDBResourcePoolOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<PreloadSparkAppMetricsOutcome()>>(
 			[this, request]()
 			{
-			return this->modifyDBResourcePool(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::ModifyElasticPlanOutcome AdbClient::modifyElasticPlan(const ModifyElasticPlanRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyElasticPlanOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyElasticPlanOutcome(ModifyElasticPlanResult(outcome.result()));
-	else
-		return ModifyElasticPlanOutcome(outcome.error());
-}
-
-void AdbClient::modifyElasticPlanAsync(const ModifyElasticPlanRequest& request, const ModifyElasticPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyElasticPlan(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::ModifyElasticPlanOutcomeCallable AdbClient::modifyElasticPlanCallable(const ModifyElasticPlanRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyElasticPlanOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyElasticPlan(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::ModifyLogBackupPolicyOutcome AdbClient::modifyLogBackupPolicy(const ModifyLogBackupPolicyRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyLogBackupPolicyOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyLogBackupPolicyOutcome(ModifyLogBackupPolicyResult(outcome.result()));
-	else
-		return ModifyLogBackupPolicyOutcome(outcome.error());
-}
-
-void AdbClient::modifyLogBackupPolicyAsync(const ModifyLogBackupPolicyRequest& request, const ModifyLogBackupPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyLogBackupPolicy(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::ModifyLogBackupPolicyOutcomeCallable AdbClient::modifyLogBackupPolicyCallable(const ModifyLogBackupPolicyRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyLogBackupPolicyOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyLogBackupPolicy(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AdbClient::ModifyMaintenanceActionOutcome AdbClient::modifyMaintenanceAction(const ModifyMaintenanceActionRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ModifyMaintenanceActionOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ModifyMaintenanceActionOutcome(ModifyMaintenanceActionResult(outcome.result()));
-	else
-		return ModifyMaintenanceActionOutcome(outcome.error());
-}
-
-void AdbClient::modifyMaintenanceActionAsync(const ModifyMaintenanceActionRequest& request, const ModifyMaintenanceActionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, modifyMaintenanceAction(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AdbClient::ModifyMaintenanceActionOutcomeCallable AdbClient::modifyMaintenanceActionCallable(const ModifyMaintenanceActionRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ModifyMaintenanceActionOutcome()>>(
-			[this, request]()
-			{
-			return this->modifyMaintenanceAction(request);
+			return this->preloadSparkAppMetrics(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3003,180 +3111,216 @@ AdbClient::ResetAccountPasswordOutcomeCallable AdbClient::resetAccountPasswordCa
 	return task->get_future();
 }
 
-AdbClient::RevokeOperatorPermissionOutcome AdbClient::revokeOperatorPermission(const RevokeOperatorPermissionRequest &request) const
+AdbClient::SetSparkAppLogRootPathOutcome AdbClient::setSparkAppLogRootPath(const SetSparkAppLogRootPathRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return RevokeOperatorPermissionOutcome(endpointOutcome.error());
+		return SetSparkAppLogRootPathOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return RevokeOperatorPermissionOutcome(RevokeOperatorPermissionResult(outcome.result()));
+		return SetSparkAppLogRootPathOutcome(SetSparkAppLogRootPathResult(outcome.result()));
 	else
-		return RevokeOperatorPermissionOutcome(outcome.error());
+		return SetSparkAppLogRootPathOutcome(outcome.error());
 }
 
-void AdbClient::revokeOperatorPermissionAsync(const RevokeOperatorPermissionRequest& request, const RevokeOperatorPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::setSparkAppLogRootPathAsync(const SetSparkAppLogRootPathRequest& request, const SetSparkAppLogRootPathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, revokeOperatorPermission(request), context);
+		handler(this, request, setSparkAppLogRootPath(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::RevokeOperatorPermissionOutcomeCallable AdbClient::revokeOperatorPermissionCallable(const RevokeOperatorPermissionRequest &request) const
+AdbClient::SetSparkAppLogRootPathOutcomeCallable AdbClient::setSparkAppLogRootPathCallable(const SetSparkAppLogRootPathRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<RevokeOperatorPermissionOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<SetSparkAppLogRootPathOutcome()>>(
 			[this, request]()
 			{
-			return this->revokeOperatorPermission(request);
+			return this->setSparkAppLogRootPath(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AdbClient::TagResourcesOutcome AdbClient::tagResources(const TagResourcesRequest &request) const
+AdbClient::StartSparkSQLEngineOutcome AdbClient::startSparkSQLEngine(const StartSparkSQLEngineRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return TagResourcesOutcome(endpointOutcome.error());
+		return StartSparkSQLEngineOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+		return StartSparkSQLEngineOutcome(StartSparkSQLEngineResult(outcome.result()));
 	else
-		return TagResourcesOutcome(outcome.error());
+		return StartSparkSQLEngineOutcome(outcome.error());
 }
 
-void AdbClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::startSparkSQLEngineAsync(const StartSparkSQLEngineRequest& request, const StartSparkSQLEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, tagResources(request), context);
+		handler(this, request, startSparkSQLEngine(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::TagResourcesOutcomeCallable AdbClient::tagResourcesCallable(const TagResourcesRequest &request) const
+AdbClient::StartSparkSQLEngineOutcomeCallable AdbClient::startSparkSQLEngineCallable(const StartSparkSQLEngineRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<StartSparkSQLEngineOutcome()>>(
 			[this, request]()
 			{
-			return this->tagResources(request);
+			return this->startSparkSQLEngine(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AdbClient::UnbindDBResourceGroupWithUserOutcome AdbClient::unbindDBResourceGroupWithUser(const UnbindDBResourceGroupWithUserRequest &request) const
+AdbClient::SubmitSparkAppOutcome AdbClient::submitSparkApp(const SubmitSparkAppRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UnbindDBResourceGroupWithUserOutcome(endpointOutcome.error());
+		return SubmitSparkAppOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UnbindDBResourceGroupWithUserOutcome(UnbindDBResourceGroupWithUserResult(outcome.result()));
+		return SubmitSparkAppOutcome(SubmitSparkAppResult(outcome.result()));
 	else
-		return UnbindDBResourceGroupWithUserOutcome(outcome.error());
+		return SubmitSparkAppOutcome(outcome.error());
 }
 
-void AdbClient::unbindDBResourceGroupWithUserAsync(const UnbindDBResourceGroupWithUserRequest& request, const UnbindDBResourceGroupWithUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::submitSparkAppAsync(const SubmitSparkAppRequest& request, const SubmitSparkAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, unbindDBResourceGroupWithUser(request), context);
+		handler(this, request, submitSparkApp(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::UnbindDBResourceGroupWithUserOutcomeCallable AdbClient::unbindDBResourceGroupWithUserCallable(const UnbindDBResourceGroupWithUserRequest &request) const
+AdbClient::SubmitSparkAppOutcomeCallable AdbClient::submitSparkAppCallable(const SubmitSparkAppRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UnbindDBResourceGroupWithUserOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<SubmitSparkAppOutcome()>>(
 			[this, request]()
 			{
-			return this->unbindDBResourceGroupWithUser(request);
+			return this->submitSparkApp(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AdbClient::UnbindDBResourcePoolWithUserOutcome AdbClient::unbindDBResourcePoolWithUser(const UnbindDBResourcePoolWithUserRequest &request) const
+AdbClient::SubmitSparkLogAnalyzeTaskOutcome AdbClient::submitSparkLogAnalyzeTask(const SubmitSparkLogAnalyzeTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UnbindDBResourcePoolWithUserOutcome(endpointOutcome.error());
+		return SubmitSparkLogAnalyzeTaskOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UnbindDBResourcePoolWithUserOutcome(UnbindDBResourcePoolWithUserResult(outcome.result()));
+		return SubmitSparkLogAnalyzeTaskOutcome(SubmitSparkLogAnalyzeTaskResult(outcome.result()));
 	else
-		return UnbindDBResourcePoolWithUserOutcome(outcome.error());
+		return SubmitSparkLogAnalyzeTaskOutcome(outcome.error());
 }
 
-void AdbClient::unbindDBResourcePoolWithUserAsync(const UnbindDBResourcePoolWithUserRequest& request, const UnbindDBResourcePoolWithUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::submitSparkLogAnalyzeTaskAsync(const SubmitSparkLogAnalyzeTaskRequest& request, const SubmitSparkLogAnalyzeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, unbindDBResourcePoolWithUser(request), context);
+		handler(this, request, submitSparkLogAnalyzeTask(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::UnbindDBResourcePoolWithUserOutcomeCallable AdbClient::unbindDBResourcePoolWithUserCallable(const UnbindDBResourcePoolWithUserRequest &request) const
+AdbClient::SubmitSparkLogAnalyzeTaskOutcomeCallable AdbClient::submitSparkLogAnalyzeTaskCallable(const SubmitSparkLogAnalyzeTaskRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UnbindDBResourcePoolWithUserOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<SubmitSparkLogAnalyzeTaskOutcome()>>(
 			[this, request]()
 			{
-			return this->unbindDBResourcePoolWithUser(request);
+			return this->submitSparkLogAnalyzeTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-AdbClient::UntagResourcesOutcome AdbClient::untagResources(const UntagResourcesRequest &request) const
+AdbClient::UnbindAccountOutcome AdbClient::unbindAccount(const UnbindAccountRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return UntagResourcesOutcome(endpointOutcome.error());
+		return UnbindAccountOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+		return UnbindAccountOutcome(UnbindAccountResult(outcome.result()));
 	else
-		return UntagResourcesOutcome(outcome.error());
+		return UnbindAccountOutcome(outcome.error());
 }
 
-void AdbClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void AdbClient::unbindAccountAsync(const UnbindAccountRequest& request, const UnbindAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, untagResources(request), context);
+		handler(this, request, unbindAccount(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-AdbClient::UntagResourcesOutcomeCallable AdbClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+AdbClient::UnbindAccountOutcomeCallable AdbClient::unbindAccountCallable(const UnbindAccountRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<UnbindAccountOutcome()>>(
 			[this, request]()
 			{
-			return this->untagResources(request);
+			return this->unbindAccount(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AdbClient::UpdateSparkTemplateFileOutcome AdbClient::updateSparkTemplateFile(const UpdateSparkTemplateFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSparkTemplateFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSparkTemplateFileOutcome(UpdateSparkTemplateFileResult(outcome.result()));
+	else
+		return UpdateSparkTemplateFileOutcome(outcome.error());
+}
+
+void AdbClient::updateSparkTemplateFileAsync(const UpdateSparkTemplateFileRequest& request, const UpdateSparkTemplateFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSparkTemplateFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::UpdateSparkTemplateFileOutcomeCallable AdbClient::updateSparkTemplateFileCallable(const UpdateSparkTemplateFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSparkTemplateFileOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSparkTemplateFile(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

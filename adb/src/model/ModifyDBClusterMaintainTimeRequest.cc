@@ -19,19 +19,19 @@
 using AlibabaCloud::Adb::Model::ModifyDBClusterMaintainTimeRequest;
 
 ModifyDBClusterMaintainTimeRequest::ModifyDBClusterMaintainTimeRequest()
-    : RpcServiceRequest("adb", "2019-03-15", "ModifyDBClusterMaintainTime") {
+    : RpcServiceRequest("adb", "2021-12-01", "ModifyDBClusterMaintainTime") {
   setMethod(HttpRequest::Method::Post);
 }
 
 ModifyDBClusterMaintainTimeRequest::~ModifyDBClusterMaintainTimeRequest() {}
 
-long ModifyDBClusterMaintainTimeRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+std::string ModifyDBClusterMaintainTimeRequest::getDBClusterId() const {
+  return dBClusterId_;
 }
 
-void ModifyDBClusterMaintainTimeRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void ModifyDBClusterMaintainTimeRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
 }
 
 std::string ModifyDBClusterMaintainTimeRequest::getAccessKeyId() const {
@@ -50,41 +50,5 @@ std::string ModifyDBClusterMaintainTimeRequest::getMaintainTime() const {
 void ModifyDBClusterMaintainTimeRequest::setMaintainTime(const std::string &maintainTime) {
   maintainTime_ = maintainTime;
   setParameter(std::string("MaintainTime"), maintainTime);
-}
-
-std::string ModifyDBClusterMaintainTimeRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void ModifyDBClusterMaintainTimeRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string ModifyDBClusterMaintainTimeRequest::getDBClusterId() const {
-  return dBClusterId_;
-}
-
-void ModifyDBClusterMaintainTimeRequest::setDBClusterId(const std::string &dBClusterId) {
-  dBClusterId_ = dBClusterId;
-  setParameter(std::string("DBClusterId"), dBClusterId);
-}
-
-std::string ModifyDBClusterMaintainTimeRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void ModifyDBClusterMaintainTimeRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-long ModifyDBClusterMaintainTimeRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void ModifyDBClusterMaintainTimeRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

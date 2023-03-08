@@ -42,6 +42,8 @@ public:
 	void setHostAddress(const std::string &hostAddress);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getProxyUser() const;
+	void setProxyUser(const std::string &proxyUser);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getOrder() const;
@@ -76,6 +78,7 @@ private:
 	std::string accessKeyId_;
 	std::string hostAddress_;
 	std::string regionId_;
+	std::string proxyUser_;
 	int pageSize_;
 	std::string order_;
 	std::string sqlType_;

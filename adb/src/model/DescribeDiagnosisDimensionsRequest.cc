@@ -19,7 +19,7 @@
 using AlibabaCloud::Adb::Model::DescribeDiagnosisDimensionsRequest;
 
 DescribeDiagnosisDimensionsRequest::DescribeDiagnosisDimensionsRequest()
-    : RpcServiceRequest("adb", "2019-03-15", "DescribeDiagnosisDimensions") {
+    : RpcServiceRequest("adb", "2021-12-01", "DescribeDiagnosisDimensions") {
   setMethod(HttpRequest::Method::Post);
 }
 

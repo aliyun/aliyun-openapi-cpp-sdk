@@ -19,7 +19,7 @@
 using AlibabaCloud::Adb::Model::DescribeAuditLogConfigRequest;
 
 DescribeAuditLogConfigRequest::DescribeAuditLogConfigRequest()
-    : RpcServiceRequest("adb", "2019-03-15", "DescribeAuditLogConfig") {
+    : RpcServiceRequest("adb", "2021-12-01", "DescribeAuditLogConfig") {
   setMethod(HttpRequest::Method::Post);
 }
 

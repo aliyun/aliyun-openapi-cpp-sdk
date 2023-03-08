@@ -19,7 +19,7 @@
 using AlibabaCloud::Adb::Model::DownloadDiagnosisRecordsRequest;
 
 DownloadDiagnosisRecordsRequest::DownloadDiagnosisRecordsRequest()
-    : RpcServiceRequest("adb", "2019-03-15", "DownloadDiagnosisRecords") {
+    : RpcServiceRequest("adb", "2021-12-01", "DownloadDiagnosisRecords") {
   setMethod(HttpRequest::Method::Post);
 }
 

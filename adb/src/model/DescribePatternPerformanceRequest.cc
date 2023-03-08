@@ -19,20 +19,11 @@
 using AlibabaCloud::Adb::Model::DescribePatternPerformanceRequest;
 
 DescribePatternPerformanceRequest::DescribePatternPerformanceRequest()
-    : RpcServiceRequest("adb", "2019-03-15", "DescribePatternPerformance") {
+    : RpcServiceRequest("adb", "2021-12-01", "DescribePatternPerformance") {
   setMethod(HttpRequest::Method::Post);
 }
 
 DescribePatternPerformanceRequest::~DescribePatternPerformanceRequest() {}
-
-std::string DescribePatternPerformanceRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribePatternPerformanceRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
 
 std::string DescribePatternPerformanceRequest::getDBClusterId() const {
   return dBClusterId_;
@@ -68,5 +59,23 @@ std::string DescribePatternPerformanceRequest::getStartTime() const {
 void DescribePatternPerformanceRequest::setStartTime(const std::string &startTime) {
   startTime_ = startTime;
   setParameter(std::string("StartTime"), startTime);
+}
+
+std::string DescribePatternPerformanceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribePatternPerformanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribePatternPerformanceRequest::getKey() const {
+  return key_;
+}
+
+void DescribePatternPerformanceRequest::setKey(const std::string &key) {
+  key_ = key;
+  setParameter(std::string("Key"), key);
 }
 

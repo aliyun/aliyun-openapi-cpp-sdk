@@ -30,33 +30,21 @@ class ALIBABACLOUD_ADB_EXPORT ModifyClusterConnectionStringRequest : public RpcS
 public:
 	ModifyClusterConnectionStringRequest();
 	~ModifyClusterConnectionStringRequest();
-	long getResourceOwnerId() const;
-	void setResourceOwnerId(long resourceOwnerId);
 	std::string getConnectionStringPrefix() const;
 	void setConnectionStringPrefix(const std::string &connectionStringPrefix);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDBClusterId() const;
 	void setDBClusterId(const std::string &dBClusterId);
-	std::string getOwnerAccount() const;
-	void setOwnerAccount(const std::string &ownerAccount);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
 	std::string getCurrentConnectionString() const;
 	void setCurrentConnectionString(const std::string &currentConnectionString);
 	int getPort() const;
 	void setPort(int port);
 
 private:
-	long resourceOwnerId_;
 	std::string connectionStringPrefix_;
 	std::string accessKeyId_;
-	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
-	std::string ownerAccount_;
-	long ownerId_;
 	std::string currentConnectionString_;
 	int port_;
 };

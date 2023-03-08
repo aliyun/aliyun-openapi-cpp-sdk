@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string accountDescription;
 					std::string accountStatus;
+					std::string ramUsers;
 					std::string accountType;
 					std::string accountName;
 				};

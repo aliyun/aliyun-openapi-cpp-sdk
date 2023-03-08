@@ -19,19 +19,28 @@
 using AlibabaCloud::Adb::Model::DescribeDBClusterPerformanceRequest;
 
 DescribeDBClusterPerformanceRequest::DescribeDBClusterPerformanceRequest()
-    : RpcServiceRequest("adb", "2019-03-15", "DescribeDBClusterPerformance") {
+    : RpcServiceRequest("adb", "2021-12-01", "DescribeDBClusterPerformance") {
   setMethod(HttpRequest::Method::Post);
 }
 
 DescribeDBClusterPerformanceRequest::~DescribeDBClusterPerformanceRequest() {}
 
-long DescribeDBClusterPerformanceRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
+std::string DescribeDBClusterPerformanceRequest::getDBClusterId() const {
+  return dBClusterId_;
 }
 
-void DescribeDBClusterPerformanceRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+void DescribeDBClusterPerformanceRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
+}
+
+std::string DescribeDBClusterPerformanceRequest::getEndTime() const {
+  return endTime_;
+}
+
+void DescribeDBClusterPerformanceRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
 }
 
 std::string DescribeDBClusterPerformanceRequest::getStartTime() const {
@@ -52,6 +61,24 @@ void DescribeDBClusterPerformanceRequest::setAccessKeyId(const std::string &acce
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBClusterPerformanceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDBClusterPerformanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string DescribeDBClusterPerformanceRequest::getResourcePools() const {
+  return resourcePools_;
+}
+
+void DescribeDBClusterPerformanceRequest::setResourcePools(const std::string &resourcePools) {
+  resourcePools_ = resourcePools;
+  setParameter(std::string("ResourcePools"), resourcePools);
+}
+
 std::string DescribeDBClusterPerformanceRequest::getKey() const {
   return key_;
 }
@@ -59,50 +86,5 @@ std::string DescribeDBClusterPerformanceRequest::getKey() const {
 void DescribeDBClusterPerformanceRequest::setKey(const std::string &key) {
   key_ = key;
   setParameter(std::string("Key"), key);
-}
-
-std::string DescribeDBClusterPerformanceRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeDBClusterPerformanceRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string DescribeDBClusterPerformanceRequest::getDBClusterId() const {
-  return dBClusterId_;
-}
-
-void DescribeDBClusterPerformanceRequest::setDBClusterId(const std::string &dBClusterId) {
-  dBClusterId_ = dBClusterId;
-  setParameter(std::string("DBClusterId"), dBClusterId);
-}
-
-std::string DescribeDBClusterPerformanceRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void DescribeDBClusterPerformanceRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-std::string DescribeDBClusterPerformanceRequest::getEndTime() const {
-  return endTime_;
-}
-
-void DescribeDBClusterPerformanceRequest::setEndTime(const std::string &endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), endTime);
-}
-
-long DescribeDBClusterPerformanceRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeDBClusterPerformanceRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

@@ -19,20 +19,11 @@
 using AlibabaCloud::Adb::Model::ModifyClusterConnectionStringRequest;
 
 ModifyClusterConnectionStringRequest::ModifyClusterConnectionStringRequest()
-    : RpcServiceRequest("adb", "2019-03-15", "ModifyClusterConnectionString") {
+    : RpcServiceRequest("adb", "2021-12-01", "ModifyClusterConnectionString") {
   setMethod(HttpRequest::Method::Post);
 }
 
 ModifyClusterConnectionStringRequest::~ModifyClusterConnectionStringRequest() {}
-
-long ModifyClusterConnectionStringRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
-}
-
-void ModifyClusterConnectionStringRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
-}
 
 std::string ModifyClusterConnectionStringRequest::getConnectionStringPrefix() const {
   return connectionStringPrefix_;
@@ -52,15 +43,6 @@ void ModifyClusterConnectionStringRequest::setAccessKeyId(const std::string &acc
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ModifyClusterConnectionStringRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void ModifyClusterConnectionStringRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
 std::string ModifyClusterConnectionStringRequest::getDBClusterId() const {
   return dBClusterId_;
 }
@@ -68,24 +50,6 @@ std::string ModifyClusterConnectionStringRequest::getDBClusterId() const {
 void ModifyClusterConnectionStringRequest::setDBClusterId(const std::string &dBClusterId) {
   dBClusterId_ = dBClusterId;
   setParameter(std::string("DBClusterId"), dBClusterId);
-}
-
-std::string ModifyClusterConnectionStringRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void ModifyClusterConnectionStringRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-long ModifyClusterConnectionStringRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void ModifyClusterConnectionStringRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
 std::string ModifyClusterConnectionStringRequest::getCurrentConnectionString() const {

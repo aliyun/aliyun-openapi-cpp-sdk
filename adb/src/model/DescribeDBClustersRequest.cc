@@ -19,20 +19,11 @@
 using AlibabaCloud::Adb::Model::DescribeDBClustersRequest;
 
 DescribeDBClustersRequest::DescribeDBClustersRequest()
-    : RpcServiceRequest("adb", "2019-03-15", "DescribeDBClusters") {
+    : RpcServiceRequest("adb", "2021-12-01", "DescribeDBClusters") {
   setMethod(HttpRequest::Method::Post);
 }
 
 DescribeDBClustersRequest::~DescribeDBClustersRequest() {}
-
-long DescribeDBClustersRequest::getResourceOwnerId() const {
-  return resourceOwnerId_;
-}
-
-void DescribeDBClustersRequest::setResourceOwnerId(long resourceOwnerId) {
-  resourceOwnerId_ = resourceOwnerId;
-  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
-}
 
 std::string DescribeDBClustersRequest::getDBClusterDescription() const {
   return dBClusterDescription_;
@@ -95,47 +86,6 @@ int DescribeDBClustersRequest::getPageSize() const {
 void DescribeDBClustersRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
-std::vector<DescribeDBClustersRequest::Tag> DescribeDBClustersRequest::getTag() const {
-  return tag_;
-}
-
-void DescribeDBClustersRequest::setTag(const std::vector<DescribeDBClustersRequest::Tag> &tag) {
-  tag_ = tag;
-  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
-  auto tagObj = tag.at(dep1);
-  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
-    setParameter(tagObjStr + ".Value", tagObj.value);
-    setParameter(tagObjStr + ".Key", tagObj.key);
-  }
-}
-
-std::string DescribeDBClustersRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void DescribeDBClustersRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string DescribeDBClustersRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void DescribeDBClustersRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-long DescribeDBClustersRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeDBClustersRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
 std::string DescribeDBClustersRequest::getDBClusterIds() const {
