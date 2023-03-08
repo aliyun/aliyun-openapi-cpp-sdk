@@ -61,3 +61,12 @@ void CreateQualityFollowerRequest::setAlarmMode(int alarmMode) {
   setBodyParameter(std::string("AlarmMode"), std::to_string(alarmMode));
 }
 
+long CreateQualityFollowerRequest::getProjectId() const {
+  return projectId_;
+}
+
+void CreateQualityFollowerRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+

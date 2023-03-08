@@ -40,6 +40,8 @@ public:
 	void setEnvType(const std::string &envType);
 	std::string getTableName() const;
 	void setTableName(const std::string &tableName);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
 	std::string projectName_;
@@ -47,6 +49,7 @@ private:
 	std::string matchExpression_;
 	std::string envType_;
 	std::string tableName_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

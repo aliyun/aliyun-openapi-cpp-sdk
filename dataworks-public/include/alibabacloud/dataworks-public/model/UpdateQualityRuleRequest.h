@@ -50,6 +50,8 @@ public:
 	void setId(long id);
 	std::string getWarningThreshold() const;
 	void setWarningThreshold(const std::string &warningThreshold);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 	std::string getMethodName() const;
 	void setMethodName(const std::string &methodName);
 	std::string getProjectName() const;
@@ -82,6 +84,7 @@ private:
 	std::string property_;
 	long id_;
 	std::string warningThreshold_;
+	long projectId_;
 	std::string methodName_;
 	std::string projectName_;
 	int ruleType_;

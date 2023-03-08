@@ -43,3 +43,12 @@ void DeleteQualityRuleRequest::setRuleId(long ruleId) {
   setBodyParameter(std::string("RuleId"), std::to_string(ruleId));
 }
 
+long DeleteQualityRuleRequest::getProjectId() const {
+  return projectId_;
+}
+
+void DeleteQualityRuleRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+

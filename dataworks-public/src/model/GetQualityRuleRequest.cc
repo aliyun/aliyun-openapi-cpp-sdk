@@ -43,3 +43,12 @@ void GetQualityRuleRequest::setRuleId(long ruleId) {
   setBodyParameter(std::string("RuleId"), std::to_string(ruleId));
 }
 
+long GetQualityRuleRequest::getProjectId() const {
+  return projectId_;
+}
+
+void GetQualityRuleRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+

@@ -42,6 +42,8 @@ public:
 	void setPageSize(int pageSize);
 	long getRuleId() const;
 	void setRuleId(long ruleId);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
 	std::string projectName_;
@@ -50,6 +52,7 @@ private:
 	std::string endDate_;
 	int pageSize_;
 	long ruleId_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

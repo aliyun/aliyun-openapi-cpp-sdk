@@ -25,15 +25,6 @@ UpdateQualityFollowerRequest::UpdateQualityFollowerRequest()
 
 UpdateQualityFollowerRequest::~UpdateQualityFollowerRequest() {}
 
-int UpdateQualityFollowerRequest::getAlarmMode() const {
-  return alarmMode_;
-}
-
-void UpdateQualityFollowerRequest::setAlarmMode(int alarmMode) {
-  alarmMode_ = alarmMode;
-  setBodyParameter(std::string("AlarmMode"), std::to_string(alarmMode));
-}
-
 std::string UpdateQualityFollowerRequest::getProjectName() const {
   return projectName_;
 }
@@ -59,5 +50,23 @@ long UpdateQualityFollowerRequest::getFollowerId() const {
 void UpdateQualityFollowerRequest::setFollowerId(long followerId) {
   followerId_ = followerId;
   setBodyParameter(std::string("FollowerId"), std::to_string(followerId));
+}
+
+int UpdateQualityFollowerRequest::getAlarmMode() const {
+  return alarmMode_;
+}
+
+void UpdateQualityFollowerRequest::setAlarmMode(int alarmMode) {
+  alarmMode_ = alarmMode;
+  setBodyParameter(std::string("AlarmMode"), std::to_string(alarmMode));
+}
+
+long UpdateQualityFollowerRequest::getProjectId() const {
+  return projectId_;
+}
+
+void UpdateQualityFollowerRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 

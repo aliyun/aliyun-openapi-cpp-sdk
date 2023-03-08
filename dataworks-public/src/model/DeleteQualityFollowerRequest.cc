@@ -43,3 +43,12 @@ void DeleteQualityFollowerRequest::setFollowerId(long followerId) {
   setBodyParameter(std::string("FollowerId"), std::to_string(followerId));
 }
 
+long DeleteQualityFollowerRequest::getProjectId() const {
+  return projectId_;
+}
+
+void DeleteQualityFollowerRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+

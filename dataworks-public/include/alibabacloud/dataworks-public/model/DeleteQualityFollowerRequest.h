@@ -34,10 +34,13 @@ public:
 	void setProjectName(const std::string &projectName);
 	long getFollowerId() const;
 	void setFollowerId(long followerId);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
 	std::string projectName_;
 	long followerId_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

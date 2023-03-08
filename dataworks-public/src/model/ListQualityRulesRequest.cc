@@ -61,3 +61,12 @@ void ListQualityRulesRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+long ListQualityRulesRequest::getProjectId() const {
+  return projectId_;
+}
+
+void ListQualityRulesRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+

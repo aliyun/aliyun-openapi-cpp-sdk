@@ -38,12 +38,15 @@ public:
 	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
 	std::string projectName_;
 	long entityId_;
 	int pageNumber_;
 	int pageSize_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

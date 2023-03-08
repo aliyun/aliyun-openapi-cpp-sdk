@@ -34,6 +34,15 @@ void DeleteQualityEntityRequest::setProjectName(const std::string &projectName) 
   setBodyParameter(std::string("ProjectName"), projectName);
 }
 
+long DeleteQualityEntityRequest::getEntityId() const {
+  return entityId_;
+}
+
+void DeleteQualityEntityRequest::setEntityId(long entityId) {
+  entityId_ = entityId;
+  setBodyParameter(std::string("EntityId"), std::to_string(entityId));
+}
+
 std::string DeleteQualityEntityRequest::getEnvType() const {
   return envType_;
 }
@@ -43,12 +52,12 @@ void DeleteQualityEntityRequest::setEnvType(const std::string &envType) {
   setBodyParameter(std::string("EnvType"), envType);
 }
 
-long DeleteQualityEntityRequest::getEntityId() const {
-  return entityId_;
+long DeleteQualityEntityRequest::getProjectId() const {
+  return projectId_;
 }
 
-void DeleteQualityEntityRequest::setEntityId(long entityId) {
-  entityId_ = entityId;
-  setBodyParameter(std::string("EntityId"), std::to_string(entityId));
+void DeleteQualityEntityRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
 }
 

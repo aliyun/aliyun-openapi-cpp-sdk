@@ -32,15 +32,18 @@ public:
 	~DeleteQualityEntityRequest();
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
-	std::string getEnvType() const;
-	void setEnvType(const std::string &envType);
 	long getEntityId() const;
 	void setEntityId(long entityId);
+	std::string getEnvType() const;
+	void setEnvType(const std::string &envType);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
 	std::string projectName_;
-	std::string envType_;
 	long entityId_;
+	std::string envType_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

@@ -34,10 +34,13 @@ public:
 	void setProjectName(const std::string &projectName);
 	long getEntityId() const;
 	void setEntityId(long entityId);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
 	std::string projectName_;
 	long entityId_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

@@ -38,12 +38,15 @@ public:
 	void setEntityId(long entityId);
 	int getAlarmMode() const;
 	void setAlarmMode(int alarmMode);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
 	std::string projectName_;
 	std::string follower_;
 	long entityId_;
 	int alarmMode_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

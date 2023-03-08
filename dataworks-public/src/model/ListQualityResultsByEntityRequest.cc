@@ -79,3 +79,12 @@ void ListQualityResultsByEntityRequest::setPageSize(int pageSize) {
   setBodyParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+long ListQualityResultsByEntityRequest::getProjectId() const {
+  return projectId_;
+}
+
+void ListQualityResultsByEntityRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+

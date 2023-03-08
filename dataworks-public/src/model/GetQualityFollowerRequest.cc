@@ -43,3 +43,12 @@ void GetQualityFollowerRequest::setEntityId(long entityId) {
   setBodyParameter(std::string("EntityId"), std::to_string(entityId));
 }
 
+long GetQualityFollowerRequest::getProjectId() const {
+  return projectId_;
+}
+
+void GetQualityFollowerRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+

@@ -106,6 +106,15 @@ void CreateQualityRuleRequest::setWarningThreshold(const std::string &warningThr
   setBodyParameter(std::string("WarningThreshold"), warningThreshold);
 }
 
+long CreateQualityRuleRequest::getProjectId() const {
+  return projectId_;
+}
+
+void CreateQualityRuleRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+
 std::string CreateQualityRuleRequest::getMethodName() const {
   return methodName_;
 }

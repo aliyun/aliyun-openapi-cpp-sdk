@@ -30,20 +30,23 @@ class ALIBABACLOUD_DATAWORKS_PUBLIC_EXPORT UpdateQualityFollowerRequest : public
 public:
 	UpdateQualityFollowerRequest();
 	~UpdateQualityFollowerRequest();
-	int getAlarmMode() const;
-	void setAlarmMode(int alarmMode);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
 	std::string getFollower() const;
 	void setFollower(const std::string &follower);
 	long getFollowerId() const;
 	void setFollowerId(long followerId);
+	int getAlarmMode() const;
+	void setAlarmMode(int alarmMode);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
-	int alarmMode_;
 	std::string projectName_;
 	std::string follower_;
 	long followerId_;
+	int alarmMode_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

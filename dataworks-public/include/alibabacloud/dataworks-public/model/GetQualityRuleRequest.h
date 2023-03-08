@@ -34,10 +34,13 @@ public:
 	void setProjectName(const std::string &projectName);
 	long getRuleId() const;
 	void setRuleId(long ruleId);
+	long getProjectId() const;
+	void setProjectId(long projectId);
 
 private:
 	std::string projectName_;
 	long ruleId_;
+	long projectId_;
 };
 } // namespace Model
 } // namespace Dataworks_public

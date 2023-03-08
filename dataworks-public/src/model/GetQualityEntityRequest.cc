@@ -61,3 +61,12 @@ void GetQualityEntityRequest::setTableName(const std::string &tableName) {
   setBodyParameter(std::string("TableName"), tableName);
 }
 
+long GetQualityEntityRequest::getProjectId() const {
+  return projectId_;
+}
+
+void GetQualityEntityRequest::setProjectId(long projectId) {
+  projectId_ = projectId;
+  setBodyParameter(std::string("ProjectId"), std::to_string(projectId));
+}
+
