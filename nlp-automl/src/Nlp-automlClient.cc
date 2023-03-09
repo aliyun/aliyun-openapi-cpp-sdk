@@ -87,6 +87,42 @@ Nlp_automlClient::CreateAsyncPredictOutcomeCallable Nlp_automlClient::createAsyn
 	return task->get_future();
 }
 
+Nlp_automlClient::FindUserReport4AlinlpOutcome Nlp_automlClient::findUserReport4Alinlp(const FindUserReport4AlinlpRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FindUserReport4AlinlpOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FindUserReport4AlinlpOutcome(FindUserReport4AlinlpResult(outcome.result()));
+	else
+		return FindUserReport4AlinlpOutcome(outcome.error());
+}
+
+void Nlp_automlClient::findUserReport4AlinlpAsync(const FindUserReport4AlinlpRequest& request, const FindUserReport4AlinlpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, findUserReport4Alinlp(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Nlp_automlClient::FindUserReport4AlinlpOutcomeCallable Nlp_automlClient::findUserReport4AlinlpCallable(const FindUserReport4AlinlpRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FindUserReport4AlinlpOutcome()>>(
+			[this, request]()
+			{
+			return this->findUserReport4Alinlp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Nlp_automlClient::GetAsyncPredictOutcome Nlp_automlClient::getAsyncPredict(const GetAsyncPredictRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

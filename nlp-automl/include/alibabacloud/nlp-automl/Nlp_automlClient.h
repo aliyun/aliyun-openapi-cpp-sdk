@@ -24,6 +24,8 @@
 #include "Nlp_automlExport.h"
 #include "model/CreateAsyncPredictRequest.h"
 #include "model/CreateAsyncPredictResult.h"
+#include "model/FindUserReport4AlinlpRequest.h"
+#include "model/FindUserReport4AlinlpResult.h"
 #include "model/GetAsyncPredictRequest.h"
 #include "model/GetAsyncPredictResult.h"
 #include "model/GetPredictResultRequest.h"
@@ -42,6 +44,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateAsyncPredictResult> CreateAsyncPredictOutcome;
 			typedef std::future<CreateAsyncPredictOutcome> CreateAsyncPredictOutcomeCallable;
 			typedef std::function<void(const Nlp_automlClient*, const Model::CreateAsyncPredictRequest&, const CreateAsyncPredictOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAsyncPredictAsyncHandler;
+			typedef Outcome<Error, Model::FindUserReport4AlinlpResult> FindUserReport4AlinlpOutcome;
+			typedef std::future<FindUserReport4AlinlpOutcome> FindUserReport4AlinlpOutcomeCallable;
+			typedef std::function<void(const Nlp_automlClient*, const Model::FindUserReport4AlinlpRequest&, const FindUserReport4AlinlpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FindUserReport4AlinlpAsyncHandler;
 			typedef Outcome<Error, Model::GetAsyncPredictResult> GetAsyncPredictOutcome;
 			typedef std::future<GetAsyncPredictOutcome> GetAsyncPredictOutcomeCallable;
 			typedef std::function<void(const Nlp_automlClient*, const Model::GetAsyncPredictRequest&, const GetAsyncPredictOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncPredictAsyncHandler;
@@ -59,6 +64,9 @@ namespace AlibabaCloud
 			CreateAsyncPredictOutcome createAsyncPredict(const Model::CreateAsyncPredictRequest &request)const;
 			void createAsyncPredictAsync(const Model::CreateAsyncPredictRequest& request, const CreateAsyncPredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAsyncPredictOutcomeCallable createAsyncPredictCallable(const Model::CreateAsyncPredictRequest& request) const;
+			FindUserReport4AlinlpOutcome findUserReport4Alinlp(const Model::FindUserReport4AlinlpRequest &request)const;
+			void findUserReport4AlinlpAsync(const Model::FindUserReport4AlinlpRequest& request, const FindUserReport4AlinlpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			FindUserReport4AlinlpOutcomeCallable findUserReport4AlinlpCallable(const Model::FindUserReport4AlinlpRequest& request) const;
 			GetAsyncPredictOutcome getAsyncPredict(const Model::GetAsyncPredictRequest &request)const;
 			void getAsyncPredictAsync(const Model::GetAsyncPredictRequest& request, const GetAsyncPredictAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAsyncPredictOutcomeCallable getAsyncPredictCallable(const Model::GetAsyncPredictRequest& request) const;
