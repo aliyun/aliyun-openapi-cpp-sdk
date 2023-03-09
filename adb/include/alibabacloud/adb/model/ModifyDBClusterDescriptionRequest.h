@@ -30,17 +30,29 @@ class ALIBABACLOUD_ADB_EXPORT ModifyDBClusterDescriptionRequest : public RpcServ
 public:
 	ModifyDBClusterDescriptionRequest();
 	~ModifyDBClusterDescriptionRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
 	std::string getDBClusterDescription() const;
 	void setDBClusterDescription(const std::string &dBClusterDescription);
-	std::string getDBClusterId() const;
-	void setDBClusterId(const std::string &dBClusterId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getDBClusterId() const;
+	void setDBClusterId(const std::string &dBClusterId);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 
 private:
+	long resourceOwnerId_;
 	std::string dBClusterDescription_;
-	std::string dBClusterId_;
 	std::string accessKeyId_;
+	std::string resourceOwnerAccount_;
+	std::string dBClusterId_;
+	std::string ownerAccount_;
+	long ownerId_;
 };
 } // namespace Model
 } // namespace Adb

@@ -19,7 +19,7 @@
 using AlibabaCloud::Adb::Model::DescribeDBClusterHealthStatusRequest;
 
 DescribeDBClusterHealthStatusRequest::DescribeDBClusterHealthStatusRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "DescribeDBClusterHealthStatus") {
+    : RpcServiceRequest("adb", "2019-03-15", "DescribeDBClusterHealthStatus") {
   setMethod(HttpRequest::Method::Post);
 }
 

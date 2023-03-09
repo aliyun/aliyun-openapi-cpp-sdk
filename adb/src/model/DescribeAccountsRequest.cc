@@ -19,28 +19,28 @@
 using AlibabaCloud::Adb::Model::DescribeAccountsRequest;
 
 DescribeAccountsRequest::DescribeAccountsRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "DescribeAccounts") {
+    : RpcServiceRequest("adb", "2019-03-15", "DescribeAccounts") {
   setMethod(HttpRequest::Method::Post);
 }
 
 DescribeAccountsRequest::~DescribeAccountsRequest() {}
 
-std::string DescribeAccountsRequest::getDBClusterId() const {
-  return dBClusterId_;
+long DescribeAccountsRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void DescribeAccountsRequest::setDBClusterId(const std::string &dBClusterId) {
-  dBClusterId_ = dBClusterId;
-  setParameter(std::string("DBClusterId"), dBClusterId);
+void DescribeAccountsRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeAccountsRequest::getOwnerId() const {
-  return ownerId_;
+std::string DescribeAccountsRequest::getAccountType() const {
+  return accountType_;
 }
 
-void DescribeAccountsRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
+void DescribeAccountsRequest::setAccountType(const std::string &accountType) {
+  accountType_ = accountType;
+  setParameter(std::string("AccountType"), accountType);
 }
 
 std::string DescribeAccountsRequest::getAccessKeyId() const {
@@ -59,5 +59,41 @@ std::string DescribeAccountsRequest::getAccountName() const {
 void DescribeAccountsRequest::setAccountName(const std::string &accountName) {
   accountName_ = accountName;
   setParameter(std::string("AccountName"), accountName);
+}
+
+std::string DescribeAccountsRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeAccountsRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string DescribeAccountsRequest::getDBClusterId() const {
+  return dBClusterId_;
+}
+
+void DescribeAccountsRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
+}
+
+std::string DescribeAccountsRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void DescribeAccountsRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+long DescribeAccountsRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeAccountsRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

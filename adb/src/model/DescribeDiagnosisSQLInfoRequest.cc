@@ -19,7 +19,7 @@
 using AlibabaCloud::Adb::Model::DescribeDiagnosisSQLInfoRequest;
 
 DescribeDiagnosisSQLInfoRequest::DescribeDiagnosisSQLInfoRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "DescribeDiagnosisSQLInfo") {
+    : RpcServiceRequest("adb", "2019-03-15", "DescribeDiagnosisSQLInfo") {
   setMethod(HttpRequest::Method::Get);
 }
 

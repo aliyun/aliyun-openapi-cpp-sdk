@@ -19,7 +19,7 @@
 using AlibabaCloud::Adb::Model::DescribePatternPerformanceRequest;
 
 DescribePatternPerformanceRequest::DescribePatternPerformanceRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "DescribePatternPerformance") {
+    : RpcServiceRequest("adb", "2019-03-15", "DescribePatternPerformance") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -68,14 +68,5 @@ std::string DescribePatternPerformanceRequest::getRegionId() const {
 void DescribePatternPerformanceRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
-}
-
-std::string DescribePatternPerformanceRequest::getKey() const {
-  return key_;
-}
-
-void DescribePatternPerformanceRequest::setKey(const std::string &key) {
-  key_ = key;
-  setParameter(std::string("Key"), key);
 }
 

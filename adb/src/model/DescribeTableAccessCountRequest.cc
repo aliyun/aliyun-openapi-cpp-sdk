@@ -19,7 +19,7 @@
 using AlibabaCloud::Adb::Model::DescribeTableAccessCountRequest;
 
 DescribeTableAccessCountRequest::DescribeTableAccessCountRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "DescribeTableAccessCount") {
+    : RpcServiceRequest("adb", "2019-03-15", "DescribeTableAccessCount") {
   setMethod(HttpRequest::Method::Post);
 }
 

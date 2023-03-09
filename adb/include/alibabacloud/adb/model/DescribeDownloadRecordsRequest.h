@@ -30,16 +30,16 @@ class ALIBABACLOUD_ADB_EXPORT DescribeDownloadRecordsRequest : public RpcService
 public:
 	DescribeDownloadRecordsRequest();
 	~DescribeDownloadRecordsRequest();
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getDBClusterId() const;
 	void setDBClusterId(const std::string &dBClusterId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
 
 private:
-	std::string regionId_;
 	std::string dBClusterId_;
+	std::string regionId_;
 	std::string lang_;
 };
 } // namespace Model

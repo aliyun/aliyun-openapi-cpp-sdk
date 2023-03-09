@@ -34,22 +34,36 @@ namespace AlibabaCloud
 			public:
 				struct DBCluster
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string storageResource;
+					std::string category;
 					std::string resourceGroupId;
-					std::string reservedACU;
 					int port;
 					std::string dBClusterId;
+					std::string diskPerformanceLevel;
 					std::string dBClusterNetworkType;
 					std::string dBClusterType;
+					std::string diskType;
+					int elasticIOResource;
 					std::string dBVersion;
+					std::string dtsJobId;
+					long dBNodeCount;
 					std::string commodityCode;
-					std::string computeResourceTotal;
+					std::string executorCount;
 					std::string lockReason;
 					std::string maintainTime;
+					std::vector<DBCluster::Tag> tags;
 					std::string engine;
+					long dBNodeStorage;
 					std::string engineVersion;
 					bool userENIStatus;
 					std::string zoneId;
+					std::string innerIp;
+					std::string elasticIOResourceSize;
 					std::string vPCId;
 					std::string dBClusterStatus;
 					std::string mode;
@@ -59,11 +73,17 @@ namespace AlibabaCloud
 					std::string expired;
 					std::string payType;
 					std::string lockMode;
+					bool enableAirflow;
+					bool enableSpark;
+					std::string dBNodeClass;
+					std::string innerPort;
+					std::string vPCCloudInstanceId;
 					std::string creationTime;
+					std::string kmsId;
 					std::string regionId;
 					std::string connectionString;
 					std::string expireTime;
-					std::string storageResourceTotal;
+					std::string rdsInstanceId;
 				};
 
 

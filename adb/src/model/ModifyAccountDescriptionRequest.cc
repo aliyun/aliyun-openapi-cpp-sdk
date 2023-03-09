@@ -19,19 +19,19 @@
 using AlibabaCloud::Adb::Model::ModifyAccountDescriptionRequest;
 
 ModifyAccountDescriptionRequest::ModifyAccountDescriptionRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "ModifyAccountDescription") {
+    : RpcServiceRequest("adb", "2019-03-15", "ModifyAccountDescription") {
   setMethod(HttpRequest::Method::Post);
 }
 
 ModifyAccountDescriptionRequest::~ModifyAccountDescriptionRequest() {}
 
-std::string ModifyAccountDescriptionRequest::getDBClusterId() const {
-  return dBClusterId_;
+long ModifyAccountDescriptionRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ModifyAccountDescriptionRequest::setDBClusterId(const std::string &dBClusterId) {
-  dBClusterId_ = dBClusterId;
-  setParameter(std::string("DBClusterId"), dBClusterId);
+void ModifyAccountDescriptionRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
 std::string ModifyAccountDescriptionRequest::getAccountDescription() const {
@@ -59,5 +59,41 @@ std::string ModifyAccountDescriptionRequest::getAccountName() const {
 void ModifyAccountDescriptionRequest::setAccountName(const std::string &accountName) {
   accountName_ = accountName;
   setParameter(std::string("AccountName"), accountName);
+}
+
+std::string ModifyAccountDescriptionRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void ModifyAccountDescriptionRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string ModifyAccountDescriptionRequest::getDBClusterId() const {
+  return dBClusterId_;
+}
+
+void ModifyAccountDescriptionRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
+}
+
+std::string ModifyAccountDescriptionRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void ModifyAccountDescriptionRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+long ModifyAccountDescriptionRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void ModifyAccountDescriptionRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

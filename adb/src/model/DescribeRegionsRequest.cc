@@ -19,7 +19,7 @@
 using AlibabaCloud::Adb::Model::DescribeRegionsRequest;
 
 DescribeRegionsRequest::DescribeRegionsRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "DescribeRegions") {
+    : RpcServiceRequest("adb", "2019-03-15", "DescribeRegions") {
   setMethod(HttpRequest::Method::Post);
 }
 

@@ -35,25 +35,24 @@ namespace AlibabaCloud
 				struct PoolInfo
 				{
 					std::string groupName;
-					std::string status;
 					std::string groupType;
-					std::string minComputeResource;
+					int nodeNum;
 					std::string createTime;
 					std::string updateTime;
-					std::string maxComputeResource;
 					std::string groupUsers;
-					std::string elasticMinComputeResource;
 				};
 
 
 				DescribeDBResourceGroupResult();
 				explicit DescribeDBResourceGroupResult(const std::string &payload);
 				~DescribeDBResourceGroupResult();
+				std::string getDBClusterId()const;
 				std::vector<PoolInfo> getGroupsInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string dBClusterId_;
 				std::vector<PoolInfo> groupsInfo_;
 
 			};

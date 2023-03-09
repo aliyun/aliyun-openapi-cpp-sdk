@@ -19,11 +19,20 @@
 using AlibabaCloud::Adb::Model::ModifyDBClusterDescriptionRequest;
 
 ModifyDBClusterDescriptionRequest::ModifyDBClusterDescriptionRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "ModifyDBClusterDescription") {
+    : RpcServiceRequest("adb", "2019-03-15", "ModifyDBClusterDescription") {
   setMethod(HttpRequest::Method::Post);
 }
 
 ModifyDBClusterDescriptionRequest::~ModifyDBClusterDescriptionRequest() {}
+
+long ModifyDBClusterDescriptionRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void ModifyDBClusterDescriptionRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
 
 std::string ModifyDBClusterDescriptionRequest::getDBClusterDescription() const {
   return dBClusterDescription_;
@@ -32,6 +41,24 @@ std::string ModifyDBClusterDescriptionRequest::getDBClusterDescription() const {
 void ModifyDBClusterDescriptionRequest::setDBClusterDescription(const std::string &dBClusterDescription) {
   dBClusterDescription_ = dBClusterDescription;
   setParameter(std::string("DBClusterDescription"), dBClusterDescription);
+}
+
+std::string ModifyDBClusterDescriptionRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void ModifyDBClusterDescriptionRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ModifyDBClusterDescriptionRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void ModifyDBClusterDescriptionRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
 std::string ModifyDBClusterDescriptionRequest::getDBClusterId() const {
@@ -43,12 +70,21 @@ void ModifyDBClusterDescriptionRequest::setDBClusterId(const std::string &dBClus
   setParameter(std::string("DBClusterId"), dBClusterId);
 }
 
-std::string ModifyDBClusterDescriptionRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string ModifyDBClusterDescriptionRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ModifyDBClusterDescriptionRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void ModifyDBClusterDescriptionRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+long ModifyDBClusterDescriptionRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void ModifyDBClusterDescriptionRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

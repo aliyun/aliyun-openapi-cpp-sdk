@@ -19,38 +19,11 @@
 using AlibabaCloud::Adb::Model::DownloadDiagnosisRecordsRequest;
 
 DownloadDiagnosisRecordsRequest::DownloadDiagnosisRecordsRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "DownloadDiagnosisRecords") {
+    : RpcServiceRequest("adb", "2019-03-15", "DownloadDiagnosisRecords") {
   setMethod(HttpRequest::Method::Post);
 }
 
 DownloadDiagnosisRecordsRequest::~DownloadDiagnosisRecordsRequest() {}
-
-long DownloadDiagnosisRecordsRequest::getMaxScanSize() const {
-  return maxScanSize_;
-}
-
-void DownloadDiagnosisRecordsRequest::setMaxScanSize(long maxScanSize) {
-  maxScanSize_ = maxScanSize;
-  setParameter(std::string("MaxScanSize"), std::to_string(maxScanSize));
-}
-
-std::string DownloadDiagnosisRecordsRequest::getResourceGroup() const {
-  return resourceGroup_;
-}
-
-void DownloadDiagnosisRecordsRequest::setResourceGroup(const std::string &resourceGroup) {
-  resourceGroup_ = resourceGroup;
-  setParameter(std::string("ResourceGroup"), resourceGroup);
-}
-
-std::string DownloadDiagnosisRecordsRequest::getDBClusterId() const {
-  return dBClusterId_;
-}
-
-void DownloadDiagnosisRecordsRequest::setDBClusterId(const std::string &dBClusterId) {
-  dBClusterId_ = dBClusterId;
-  setParameter(std::string("DBClusterId"), dBClusterId);
-}
 
 std::string DownloadDiagnosisRecordsRequest::getQueryCondition() const {
   return queryCondition_;
@@ -59,15 +32,6 @@ std::string DownloadDiagnosisRecordsRequest::getQueryCondition() const {
 void DownloadDiagnosisRecordsRequest::setQueryCondition(const std::string &queryCondition) {
   queryCondition_ = queryCondition;
   setParameter(std::string("QueryCondition"), queryCondition);
-}
-
-std::string DownloadDiagnosisRecordsRequest::getEndTime() const {
-  return endTime_;
-}
-
-void DownloadDiagnosisRecordsRequest::setEndTime(const std::string &endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), endTime);
 }
 
 std::string DownloadDiagnosisRecordsRequest::getStartTime() const {
@@ -88,15 +52,6 @@ void DownloadDiagnosisRecordsRequest::setRawStartTime(const std::string &rawStar
   setParameter(std::string("RawStartTime"), rawStartTime);
 }
 
-long DownloadDiagnosisRecordsRequest::getMinPeakMemory() const {
-  return minPeakMemory_;
-}
-
-void DownloadDiagnosisRecordsRequest::setMinPeakMemory(long minPeakMemory) {
-  minPeakMemory_ = minPeakMemory;
-  setParameter(std::string("MinPeakMemory"), std::to_string(minPeakMemory));
-}
-
 std::string DownloadDiagnosisRecordsRequest::getRawEndTime() const {
   return rawEndTime_;
 }
@@ -104,15 +59,6 @@ std::string DownloadDiagnosisRecordsRequest::getRawEndTime() const {
 void DownloadDiagnosisRecordsRequest::setRawEndTime(const std::string &rawEndTime) {
   rawEndTime_ = rawEndTime;
   setParameter(std::string("RawEndTime"), rawEndTime);
-}
-
-long DownloadDiagnosisRecordsRequest::getMinScanSize() const {
-  return minScanSize_;
-}
-
-void DownloadDiagnosisRecordsRequest::setMinScanSize(long minScanSize) {
-  minScanSize_ = minScanSize;
-  setParameter(std::string("MinScanSize"), std::to_string(minScanSize));
 }
 
 std::string DownloadDiagnosisRecordsRequest::getDatabase() const {
@@ -142,15 +88,6 @@ void DownloadDiagnosisRecordsRequest::setClientIp(const std::string &clientIp) {
   setParameter(std::string("ClientIp"), clientIp);
 }
 
-long DownloadDiagnosisRecordsRequest::getMaxPeakMemory() const {
-  return maxPeakMemory_;
-}
-
-void DownloadDiagnosisRecordsRequest::setMaxPeakMemory(long maxPeakMemory) {
-  maxPeakMemory_ = maxPeakMemory;
-  setParameter(std::string("MaxPeakMemory"), std::to_string(maxPeakMemory));
-}
-
 std::string DownloadDiagnosisRecordsRequest::getKeyword() const {
   return keyword_;
 }
@@ -167,6 +104,69 @@ std::string DownloadDiagnosisRecordsRequest::getLang() const {
 void DownloadDiagnosisRecordsRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+long DownloadDiagnosisRecordsRequest::getMaxScanSize() const {
+  return maxScanSize_;
+}
+
+void DownloadDiagnosisRecordsRequest::setMaxScanSize(long maxScanSize) {
+  maxScanSize_ = maxScanSize;
+  setParameter(std::string("MaxScanSize"), std::to_string(maxScanSize));
+}
+
+std::string DownloadDiagnosisRecordsRequest::getResourceGroup() const {
+  return resourceGroup_;
+}
+
+void DownloadDiagnosisRecordsRequest::setResourceGroup(const std::string &resourceGroup) {
+  resourceGroup_ = resourceGroup;
+  setParameter(std::string("ResourceGroup"), resourceGroup);
+}
+
+std::string DownloadDiagnosisRecordsRequest::getDBClusterId() const {
+  return dBClusterId_;
+}
+
+void DownloadDiagnosisRecordsRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
+}
+
+std::string DownloadDiagnosisRecordsRequest::getEndTime() const {
+  return endTime_;
+}
+
+void DownloadDiagnosisRecordsRequest::setEndTime(const std::string &endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), endTime);
+}
+
+long DownloadDiagnosisRecordsRequest::getMinPeakMemory() const {
+  return minPeakMemory_;
+}
+
+void DownloadDiagnosisRecordsRequest::setMinPeakMemory(long minPeakMemory) {
+  minPeakMemory_ = minPeakMemory;
+  setParameter(std::string("MinPeakMemory"), std::to_string(minPeakMemory));
+}
+
+long DownloadDiagnosisRecordsRequest::getMinScanSize() const {
+  return minScanSize_;
+}
+
+void DownloadDiagnosisRecordsRequest::setMinScanSize(long minScanSize) {
+  minScanSize_ = minScanSize;
+  setParameter(std::string("MinScanSize"), std::to_string(minScanSize));
+}
+
+long DownloadDiagnosisRecordsRequest::getMaxPeakMemory() const {
+  return maxPeakMemory_;
+}
+
+void DownloadDiagnosisRecordsRequest::setMaxPeakMemory(long maxPeakMemory) {
+  maxPeakMemory_ = maxPeakMemory;
+  setParameter(std::string("MaxPeakMemory"), std::to_string(maxPeakMemory));
 }
 
 std::string DownloadDiagnosisRecordsRequest::getUserName() const {

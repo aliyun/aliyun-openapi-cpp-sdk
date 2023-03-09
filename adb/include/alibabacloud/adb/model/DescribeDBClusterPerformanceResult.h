@@ -37,7 +37,6 @@ namespace AlibabaCloud
 					struct SeriesItem
 					{
 						std::vector<std::string> values;
-						std::string tags;
 						std::string name;
 					};
 					std::vector<PerformanceItem::SeriesItem> series;

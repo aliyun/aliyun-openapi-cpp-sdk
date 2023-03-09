@@ -19,28 +19,28 @@
 using AlibabaCloud::Adb::Model::ResetAccountPasswordRequest;
 
 ResetAccountPasswordRequest::ResetAccountPasswordRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "ResetAccountPassword") {
+    : RpcServiceRequest("adb", "2019-03-15", "ResetAccountPassword") {
   setMethod(HttpRequest::Method::Post);
 }
 
 ResetAccountPasswordRequest::~ResetAccountPasswordRequest() {}
 
-std::string ResetAccountPasswordRequest::getDBClusterId() const {
-  return dBClusterId_;
+long ResetAccountPasswordRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
 }
 
-void ResetAccountPasswordRequest::setDBClusterId(const std::string &dBClusterId) {
-  dBClusterId_ = dBClusterId;
-  setParameter(std::string("DBClusterId"), dBClusterId);
+void ResetAccountPasswordRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ResetAccountPasswordRequest::getAccountDescription() const {
-  return accountDescription_;
+std::string ResetAccountPasswordRequest::getAccountType() const {
+  return accountType_;
 }
 
-void ResetAccountPasswordRequest::setAccountDescription(const std::string &accountDescription) {
-  accountDescription_ = accountDescription;
-  setParameter(std::string("AccountDescription"), accountDescription);
+void ResetAccountPasswordRequest::setAccountType(const std::string &accountType) {
+  accountType_ = accountType;
+  setParameter(std::string("AccountType"), accountType);
 }
 
 std::string ResetAccountPasswordRequest::getAccessKeyId() const {
@@ -52,15 +52,6 @@ void ResetAccountPasswordRequest::setAccessKeyId(const std::string &accessKeyId)
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string ResetAccountPasswordRequest::getAccountPassword() const {
-  return accountPassword_;
-}
-
-void ResetAccountPasswordRequest::setAccountPassword(const std::string &accountPassword) {
-  accountPassword_ = accountPassword;
-  setParameter(std::string("AccountPassword"), accountPassword);
-}
-
 std::string ResetAccountPasswordRequest::getAccountName() const {
   return accountName_;
 }
@@ -68,5 +59,50 @@ std::string ResetAccountPasswordRequest::getAccountName() const {
 void ResetAccountPasswordRequest::setAccountName(const std::string &accountName) {
   accountName_ = accountName;
   setParameter(std::string("AccountName"), accountName);
+}
+
+std::string ResetAccountPasswordRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void ResetAccountPasswordRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string ResetAccountPasswordRequest::getDBClusterId() const {
+  return dBClusterId_;
+}
+
+void ResetAccountPasswordRequest::setDBClusterId(const std::string &dBClusterId) {
+  dBClusterId_ = dBClusterId;
+  setParameter(std::string("DBClusterId"), dBClusterId);
+}
+
+std::string ResetAccountPasswordRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void ResetAccountPasswordRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+long ResetAccountPasswordRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void ResetAccountPasswordRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::string ResetAccountPasswordRequest::getAccountPassword() const {
+  return accountPassword_;
+}
+
+void ResetAccountPasswordRequest::setAccountPassword(const std::string &accountPassword) {
+  accountPassword_ = accountPassword;
+  setParameter(std::string("AccountPassword"), accountPassword);
 }
 

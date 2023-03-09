@@ -19,11 +19,20 @@
 using AlibabaCloud::Adb::Model::AllocateClusterPublicConnectionRequest;
 
 AllocateClusterPublicConnectionRequest::AllocateClusterPublicConnectionRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "AllocateClusterPublicConnection") {
+    : RpcServiceRequest("adb", "2019-03-15", "AllocateClusterPublicConnection") {
   setMethod(HttpRequest::Method::Post);
 }
 
 AllocateClusterPublicConnectionRequest::~AllocateClusterPublicConnectionRequest() {}
+
+long AllocateClusterPublicConnectionRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void AllocateClusterPublicConnectionRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
 
 std::string AllocateClusterPublicConnectionRequest::getConnectionStringPrefix() const {
   return connectionStringPrefix_;
@@ -32,6 +41,24 @@ std::string AllocateClusterPublicConnectionRequest::getConnectionStringPrefix() 
 void AllocateClusterPublicConnectionRequest::setConnectionStringPrefix(const std::string &connectionStringPrefix) {
   connectionStringPrefix_ = connectionStringPrefix;
   setParameter(std::string("ConnectionStringPrefix"), connectionStringPrefix);
+}
+
+std::string AllocateClusterPublicConnectionRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void AllocateClusterPublicConnectionRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string AllocateClusterPublicConnectionRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void AllocateClusterPublicConnectionRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
 std::string AllocateClusterPublicConnectionRequest::getDBClusterId() const {
@@ -43,12 +70,21 @@ void AllocateClusterPublicConnectionRequest::setDBClusterId(const std::string &d
   setParameter(std::string("DBClusterId"), dBClusterId);
 }
 
-std::string AllocateClusterPublicConnectionRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string AllocateClusterPublicConnectionRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void AllocateClusterPublicConnectionRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void AllocateClusterPublicConnectionRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+long AllocateClusterPublicConnectionRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void AllocateClusterPublicConnectionRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

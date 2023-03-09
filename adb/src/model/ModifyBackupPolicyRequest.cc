@@ -19,7 +19,7 @@
 using AlibabaCloud::Adb::Model::ModifyBackupPolicyRequest;
 
 ModifyBackupPolicyRequest::ModifyBackupPolicyRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "ModifyBackupPolicy") {
+    : RpcServiceRequest("adb", "2019-03-15", "ModifyBackupPolicy") {
   setMethod(HttpRequest::Method::Post);
 }
 

@@ -30,17 +30,29 @@ class ALIBABACLOUD_ADB_EXPORT ModifyDBClusterMaintainTimeRequest : public RpcSer
 public:
 	ModifyDBClusterMaintainTimeRequest();
 	~ModifyDBClusterMaintainTimeRequest();
-	std::string getDBClusterId() const;
-	void setDBClusterId(const std::string &dBClusterId);
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getMaintainTime() const;
 	void setMaintainTime(const std::string &maintainTime);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getDBClusterId() const;
+	void setDBClusterId(const std::string &dBClusterId);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 
 private:
-	std::string dBClusterId_;
+	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string maintainTime_;
+	std::string resourceOwnerAccount_;
+	std::string dBClusterId_;
+	std::string ownerAccount_;
+	long ownerId_;
 };
 } // namespace Model
 } // namespace Adb

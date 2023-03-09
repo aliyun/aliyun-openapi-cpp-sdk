@@ -30,17 +30,32 @@ class ALIBABACLOUD_ADB_EXPORT DeleteAccountRequest : public RpcServiceRequest {
 public:
 	DeleteAccountRequest();
 	~DeleteAccountRequest();
-	std::string getDBClusterId() const;
-	void setDBClusterId(const std::string &dBClusterId);
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
+	std::string getAccountType() const;
+	void setAccountType(const std::string &accountType);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getAccountName() const;
 	void setAccountName(const std::string &accountName);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getDBClusterId() const;
+	void setDBClusterId(const std::string &dBClusterId);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 
 private:
-	std::string dBClusterId_;
+	long resourceOwnerId_;
+	std::string accountType_;
 	std::string accessKeyId_;
 	std::string accountName_;
+	std::string resourceOwnerAccount_;
+	std::string dBClusterId_;
+	std::string ownerAccount_;
+	long ownerId_;
 };
 } // namespace Model
 } // namespace Adb

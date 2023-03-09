@@ -19,7 +19,7 @@
 using AlibabaCloud::Adb::Model::DescribeSQLPatternsRequest;
 
 DescribeSQLPatternsRequest::DescribeSQLPatternsRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "DescribeSQLPatterns") {
+    : RpcServiceRequest("adb", "2019-03-15", "DescribeSQLPatterns") {
   setMethod(HttpRequest::Method::Post);
 }
 

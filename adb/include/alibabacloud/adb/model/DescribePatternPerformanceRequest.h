@@ -40,8 +40,6 @@ public:
 	void setStartTime(const std::string &startTime);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getKey() const;
-	void setKey(const std::string &key);
 
 private:
 	std::string dBClusterId_;
@@ -49,7 +47,6 @@ private:
 	std::string endTime_;
 	std::string startTime_;
 	std::string regionId_;
-	std::string key_;
 };
 } // namespace Model
 } // namespace Adb

@@ -39,6 +39,20 @@ void ResetAccountPasswordResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["TaskId"].isNull())
+		taskId_ = std::stoi(value["TaskId"].asString());
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
 
+}
+
+int ResetAccountPasswordResult::getTaskId()const
+{
+	return taskId_;
+}
+
+std::string ResetAccountPasswordResult::getDBClusterId()const
+{
+	return dBClusterId_;
 }
 

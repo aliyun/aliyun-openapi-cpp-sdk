@@ -19,11 +19,38 @@
 using AlibabaCloud::Adb::Model::DeleteDBResourceGroupRequest;
 
 DeleteDBResourceGroupRequest::DeleteDBResourceGroupRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "DeleteDBResourceGroup") {
+    : RpcServiceRequest("adb", "2019-03-15", "DeleteDBResourceGroup") {
   setMethod(HttpRequest::Method::Post);
 }
 
 DeleteDBResourceGroupRequest::~DeleteDBResourceGroupRequest() {}
+
+long DeleteDBResourceGroupRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void DeleteDBResourceGroupRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
+std::string DeleteDBResourceGroupRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void DeleteDBResourceGroupRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DeleteDBResourceGroupRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DeleteDBResourceGroupRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
 
 std::string DeleteDBResourceGroupRequest::getDBClusterId() const {
   return dBClusterId_;
@@ -34,6 +61,24 @@ void DeleteDBResourceGroupRequest::setDBClusterId(const std::string &dBClusterId
   setParameter(std::string("DBClusterId"), dBClusterId);
 }
 
+std::string DeleteDBResourceGroupRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void DeleteDBResourceGroupRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+long DeleteDBResourceGroupRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DeleteDBResourceGroupRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
 std::string DeleteDBResourceGroupRequest::getGroupName() const {
   return groupName_;
 }
@@ -41,14 +86,5 @@ std::string DeleteDBResourceGroupRequest::getGroupName() const {
 void DeleteDBResourceGroupRequest::setGroupName(const std::string &groupName) {
   groupName_ = groupName;
   setParameter(std::string("GroupName"), groupName);
-}
-
-std::string DeleteDBResourceGroupRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void DeleteDBResourceGroupRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 

@@ -19,20 +19,11 @@
 using AlibabaCloud::Adb::Model::DescribeDownloadRecordsRequest;
 
 DescribeDownloadRecordsRequest::DescribeDownloadRecordsRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "DescribeDownloadRecords") {
+    : RpcServiceRequest("adb", "2019-03-15", "DescribeDownloadRecords") {
   setMethod(HttpRequest::Method::Post);
 }
 
 DescribeDownloadRecordsRequest::~DescribeDownloadRecordsRequest() {}
-
-std::string DescribeDownloadRecordsRequest::getRegionId() const {
-  return regionId_;
-}
-
-void DescribeDownloadRecordsRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
 
 std::string DescribeDownloadRecordsRequest::getDBClusterId() const {
   return dBClusterId_;
@@ -41,6 +32,15 @@ std::string DescribeDownloadRecordsRequest::getDBClusterId() const {
 void DescribeDownloadRecordsRequest::setDBClusterId(const std::string &dBClusterId) {
   dBClusterId_ = dBClusterId;
   setParameter(std::string("DBClusterId"), dBClusterId);
+}
+
+std::string DescribeDownloadRecordsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void DescribeDownloadRecordsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::string DescribeDownloadRecordsRequest::getLang() const {

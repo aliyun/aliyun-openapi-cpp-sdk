@@ -19,7 +19,7 @@
 using AlibabaCloud::Adb::Model::DescribeAuditLogRecordsRequest;
 
 DescribeAuditLogRecordsRequest::DescribeAuditLogRecordsRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "DescribeAuditLogRecords") {
+    : RpcServiceRequest("adb", "2019-03-15", "DescribeAuditLogRecords") {
   setMethod(HttpRequest::Method::Post);
 }
 
@@ -77,15 +77,6 @@ std::string DescribeAuditLogRecordsRequest::getRegionId() const {
 void DescribeAuditLogRecordsRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
-}
-
-std::string DescribeAuditLogRecordsRequest::getProxyUser() const {
-  return proxyUser_;
-}
-
-void DescribeAuditLogRecordsRequest::setProxyUser(const std::string &proxyUser) {
-  proxyUser_ = proxyUser;
-  setParameter(std::string("ProxyUser"), proxyUser);
 }
 
 int DescribeAuditLogRecordsRequest::getPageSize() const {

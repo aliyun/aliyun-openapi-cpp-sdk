@@ -30,29 +30,35 @@ class ALIBABACLOUD_ADB_EXPORT DescribeDBClusterPerformanceRequest : public RpcSe
 public:
 	DescribeDBClusterPerformanceRequest();
 	~DescribeDBClusterPerformanceRequest();
-	std::string getDBClusterId() const;
-	void setDBClusterId(const std::string &dBClusterId);
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
-	std::string getResourcePools() const;
-	void setResourcePools(const std::string &resourcePools);
 	std::string getKey() const;
 	void setKey(const std::string &key);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getDBClusterId() const;
+	void setDBClusterId(const std::string &dBClusterId);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 
 private:
-	std::string dBClusterId_;
-	std::string endTime_;
+	long resourceOwnerId_;
 	std::string startTime_;
 	std::string accessKeyId_;
-	std::string regionId_;
-	std::string resourcePools_;
 	std::string key_;
+	std::string resourceOwnerAccount_;
+	std::string dBClusterId_;
+	std::string ownerAccount_;
+	std::string endTime_;
+	long ownerId_;
 };
 } // namespace Model
 } // namespace Adb

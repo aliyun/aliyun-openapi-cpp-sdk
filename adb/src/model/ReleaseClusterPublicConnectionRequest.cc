@@ -19,11 +19,38 @@
 using AlibabaCloud::Adb::Model::ReleaseClusterPublicConnectionRequest;
 
 ReleaseClusterPublicConnectionRequest::ReleaseClusterPublicConnectionRequest()
-    : RpcServiceRequest("adb", "2021-12-01", "ReleaseClusterPublicConnection") {
+    : RpcServiceRequest("adb", "2019-03-15", "ReleaseClusterPublicConnection") {
   setMethod(HttpRequest::Method::Post);
 }
 
 ReleaseClusterPublicConnectionRequest::~ReleaseClusterPublicConnectionRequest() {}
+
+long ReleaseClusterPublicConnectionRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void ReleaseClusterPublicConnectionRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
+std::string ReleaseClusterPublicConnectionRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void ReleaseClusterPublicConnectionRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string ReleaseClusterPublicConnectionRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void ReleaseClusterPublicConnectionRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
 
 std::string ReleaseClusterPublicConnectionRequest::getDBClusterId() const {
   return dBClusterId_;
@@ -34,12 +61,21 @@ void ReleaseClusterPublicConnectionRequest::setDBClusterId(const std::string &dB
   setParameter(std::string("DBClusterId"), dBClusterId);
 }
 
-std::string ReleaseClusterPublicConnectionRequest::getAccessKeyId() const {
-  return accessKeyId_;
+std::string ReleaseClusterPublicConnectionRequest::getOwnerAccount() const {
+  return ownerAccount_;
 }
 
-void ReleaseClusterPublicConnectionRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void ReleaseClusterPublicConnectionRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+long ReleaseClusterPublicConnectionRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void ReleaseClusterPublicConnectionRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

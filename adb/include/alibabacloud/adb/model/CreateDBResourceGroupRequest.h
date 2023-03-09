@@ -30,26 +30,35 @@ class ALIBABACLOUD_ADB_EXPORT CreateDBResourceGroupRequest : public RpcServiceRe
 public:
 	CreateDBResourceGroupRequest();
 	~CreateDBResourceGroupRequest();
-	std::string getDBClusterId() const;
-	void setDBClusterId(const std::string &dBClusterId);
-	std::string getMinComputeResource() const;
-	void setMinComputeResource(const std::string &minComputeResource);
-	std::string getGroupName() const;
-	void setGroupName(const std::string &groupName);
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
+	int getNodeNum() const;
+	void setNodeNum(int nodeNum);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getGroupType() const;
 	void setGroupType(const std::string &groupType);
-	std::string getMaxComputeResource() const;
-	void setMaxComputeResource(const std::string &maxComputeResource);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getDBClusterId() const;
+	void setDBClusterId(const std::string &dBClusterId);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getGroupName() const;
+	void setGroupName(const std::string &groupName);
 
 private:
-	std::string dBClusterId_;
-	std::string minComputeResource_;
-	std::string groupName_;
+	long resourceOwnerId_;
+	int nodeNum_;
 	std::string accessKeyId_;
 	std::string groupType_;
-	std::string maxComputeResource_;
+	std::string resourceOwnerAccount_;
+	std::string dBClusterId_;
+	std::string ownerAccount_;
+	long ownerId_;
+	std::string groupName_;
 };
 } // namespace Model
 } // namespace Adb
