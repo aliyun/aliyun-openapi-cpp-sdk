@@ -73,6 +73,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 			dBNodesObject.sccMode = valueDBNodesDBNode["SccMode"].asString();
 		if(!valueDBNodesDBNode["ServerWeight"].isNull())
 			dBNodesObject.serverWeight = valueDBNodesDBNode["ServerWeight"].asString();
+		if(!valueDBNodesDBNode["ServerlessType"].isNull())
+			dBNodesObject.serverlessType = valueDBNodesDBNode["ServerlessType"].asString();
 		dBNodes_.push_back(dBNodesObject);
 	}
 	auto allTagsNode = value["Tags"]["Tag"];
@@ -85,6 +87,15 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 			tagsObject.value = valueTagsTag["Value"].asString();
 		tags_.push_back(tagsObject);
 	}
+	auto relatedAPInstanceNode = value["RelatedAPInstance"];
+	if(!relatedAPInstanceNode["Name"].isNull())
+		relatedAPInstance_.name = relatedAPInstanceNode["Name"].asString();
+	if(!relatedAPInstanceNode["ClassCode"].isNull())
+		relatedAPInstance_.classCode = relatedAPInstanceNode["ClassCode"].asString();
+	if(!relatedAPInstanceNode["OssStorageUsed"].isNull())
+		relatedAPInstance_.ossStorageUsed = relatedAPInstanceNode["OssStorageUsed"].asString();
+	if(!relatedAPInstanceNode["TotalAPNodes"].isNull())
+		relatedAPInstance_.totalAPNodes = relatedAPInstanceNode["TotalAPNodes"].asString();
 	if(!value["DeletionLock"].isNull())
 		deletionLock_ = std::stoi(value["DeletionLock"].asString());
 	if(!value["Category"].isNull())
@@ -165,6 +176,10 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		proxyType_ = value["ProxyType"].asString();
 	if(!value["ProxyStatus"].isNull())
 		proxyStatus_ = value["ProxyStatus"].asString();
+	if(!value["FeatureHTAPSupported"].isNull())
+		featureHTAPSupported_ = value["FeatureHTAPSupported"].asString();
+	if(!value["ProxyServerlessType"].isNull())
+		proxyServerlessType_ = value["ProxyServerlessType"].asString();
 
 }
 
@@ -241,6 +256,11 @@ std::string DescribeDBClusterAttributeResult::getDBVersion()const
 std::vector<DescribeDBClusterAttributeResult::DBNode> DescribeDBClusterAttributeResult::getDBNodes()const
 {
 	return dBNodes_;
+}
+
+std::string DescribeDBClusterAttributeResult::getFeatureHTAPSupported()const
+{
+	return featureHTAPSupported_;
 }
 
 std::string DescribeDBClusterAttributeResult::getZoneIds()const
@@ -343,6 +363,11 @@ std::string DescribeDBClusterAttributeResult::getDBVersionStatus()const
 	return dBVersionStatus_;
 }
 
+std::string DescribeDBClusterAttributeResult::getProxyServerlessType()const
+{
+	return proxyServerlessType_;
+}
+
 std::string DescribeDBClusterAttributeResult::getServerlessType()const
 {
 	return serverlessType_;
@@ -356,6 +381,11 @@ std::string DescribeDBClusterAttributeResult::getCreationTime()const
 std::string DescribeDBClusterAttributeResult::getSubCategory()const
 {
 	return subCategory_;
+}
+
+DescribeDBClusterAttributeResult::RelatedAPInstance DescribeDBClusterAttributeResult::getRelatedAPInstance()const
+{
+	return relatedAPInstance_;
 }
 
 long DescribeDBClusterAttributeResult::getSQLSize()const

@@ -226,6 +226,8 @@
 #include "model/ModifyDBClusterSSLResult.h"
 #include "model/ModifyDBClusterServerlessConfRequest.h"
 #include "model/ModifyDBClusterServerlessConfResult.h"
+#include "model/ModifyDBClusterStorageSpaceRequest.h"
+#include "model/ModifyDBClusterStorageSpaceResult.h"
 #include "model/ModifyDBClusterTDERequest.h"
 #include "model/ModifyDBClusterTDEResult.h"
 #include "model/ModifyDBDescriptionRequest.h"
@@ -595,6 +597,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDBClusterServerlessConfResult> ModifyDBClusterServerlessConfOutcome;
 			typedef std::future<ModifyDBClusterServerlessConfOutcome> ModifyDBClusterServerlessConfOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyDBClusterServerlessConfRequest&, const ModifyDBClusterServerlessConfOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterServerlessConfAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBClusterStorageSpaceResult> ModifyDBClusterStorageSpaceOutcome;
+			typedef std::future<ModifyDBClusterStorageSpaceOutcome> ModifyDBClusterStorageSpaceOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::ModifyDBClusterStorageSpaceRequest&, const ModifyDBClusterStorageSpaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterStorageSpaceAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBClusterTDEResult> ModifyDBClusterTDEOutcome;
 			typedef std::future<ModifyDBClusterTDEOutcome> ModifyDBClusterTDEOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyDBClusterTDERequest&, const ModifyDBClusterTDEOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBClusterTDEAsyncHandler;
@@ -987,6 +992,9 @@ namespace AlibabaCloud
 			ModifyDBClusterServerlessConfOutcome modifyDBClusterServerlessConf(const Model::ModifyDBClusterServerlessConfRequest &request)const;
 			void modifyDBClusterServerlessConfAsync(const Model::ModifyDBClusterServerlessConfRequest& request, const ModifyDBClusterServerlessConfAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBClusterServerlessConfOutcomeCallable modifyDBClusterServerlessConfCallable(const Model::ModifyDBClusterServerlessConfRequest& request) const;
+			ModifyDBClusterStorageSpaceOutcome modifyDBClusterStorageSpace(const Model::ModifyDBClusterStorageSpaceRequest &request)const;
+			void modifyDBClusterStorageSpaceAsync(const Model::ModifyDBClusterStorageSpaceRequest& request, const ModifyDBClusterStorageSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBClusterStorageSpaceOutcomeCallable modifyDBClusterStorageSpaceCallable(const Model::ModifyDBClusterStorageSpaceRequest& request) const;
 			ModifyDBClusterTDEOutcome modifyDBClusterTDE(const Model::ModifyDBClusterTDERequest &request)const;
 			void modifyDBClusterTDEAsync(const Model::ModifyDBClusterTDERequest& request, const ModifyDBClusterTDEAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBClusterTDEOutcomeCallable modifyDBClusterTDECallable(const Model::ModifyDBClusterTDERequest& request) const;

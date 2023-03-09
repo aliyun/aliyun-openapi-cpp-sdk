@@ -53,6 +53,10 @@ void DescribeDBClusterServerlessConfResult::parse(const std::string &payload)
 		secondsUntilAutoPause_ = value["SecondsUntilAutoPause"].asString();
 	if(!value["DBClusterId"].isNull())
 		dBClusterId_ = value["DBClusterId"].asString();
+	if(!value["ScaleApRoNumMin"].isNull())
+		scaleApRoNumMin_ = value["ScaleApRoNumMin"].asString();
+	if(!value["ScaleApRoNumMax"].isNull())
+		scaleApRoNumMax_ = value["ScaleApRoNumMax"].asString();
 
 }
 
@@ -64,6 +68,16 @@ std::string DescribeDBClusterServerlessConfResult::getScaleRoNumMin()const
 std::string DescribeDBClusterServerlessConfResult::getAllowShutDown()const
 {
 	return allowShutDown_;
+}
+
+std::string DescribeDBClusterServerlessConfResult::getScaleApRoNumMin()const
+{
+	return scaleApRoNumMin_;
+}
+
+std::string DescribeDBClusterServerlessConfResult::getScaleApRoNumMax()const
+{
+	return scaleApRoNumMax_;
 }
 
 std::string DescribeDBClusterServerlessConfResult::getScaleRoNumMax()const

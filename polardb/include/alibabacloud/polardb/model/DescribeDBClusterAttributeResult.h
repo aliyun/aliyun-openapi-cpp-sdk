@@ -32,6 +32,13 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_POLARDB_EXPORT DescribeDBClusterAttributeResult : public ServiceResult
 			{
 			public:
+				struct RelatedAPInstance
+				{
+					std::string totalAPNodes;
+					std::string classCode;
+					std::string ossStorageUsed;
+					std::string name;
+				};
 				struct DBNode
 				{
 					std::string dBNodeStatus;
@@ -43,6 +50,7 @@ namespace AlibabaCloud
 					std::string dBNodeId;
 					int maxIOPS;
 					std::string dBNodeClass;
+					std::string serverlessType;
 					std::string creationTime;
 					std::string sccMode;
 					std::string masterId;
@@ -75,6 +83,7 @@ namespace AlibabaCloud
 				long getStorageMax()const;
 				std::string getDBVersion()const;
 				std::vector<DBNode> getDBNodes()const;
+				std::string getFeatureHTAPSupported()const;
 				std::string getZoneIds()const;
 				long getInodeUsed()const;
 				std::string getMaintainTime()const;
@@ -95,9 +104,11 @@ namespace AlibabaCloud
 				bool getIsProxyLatestVersion()const;
 				long getStorageSpace()const;
 				std::string getDBVersionStatus()const;
+				std::string getProxyServerlessType()const;
 				std::string getServerlessType()const;
 				std::string getCreationTime()const;
 				std::string getSubCategory()const;
+				RelatedAPInstance getRelatedAPInstance()const;
 				long getSQLSize()const;
 				std::string getRegionId()const;
 				std::string getProxyType()const;
@@ -121,6 +132,7 @@ namespace AlibabaCloud
 				long storageMax_;
 				std::string dBVersion_;
 				std::vector<DBNode> dBNodes_;
+				std::string featureHTAPSupported_;
 				std::string zoneIds_;
 				long inodeUsed_;
 				std::string maintainTime_;
@@ -141,9 +153,11 @@ namespace AlibabaCloud
 				bool isProxyLatestVersion_;
 				long storageSpace_;
 				std::string dBVersionStatus_;
+				std::string proxyServerlessType_;
 				std::string serverlessType_;
 				std::string creationTime_;
 				std::string subCategory_;
+				RelatedAPInstance relatedAPInstance_;
 				long sQLSize_;
 				std::string regionId_;
 				std::string proxyType_;

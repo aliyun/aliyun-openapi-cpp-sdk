@@ -39,6 +39,8 @@ namespace AlibabaCloud
 				~DescribeDBClusterServerlessConfResult();
 				std::string getScaleRoNumMin()const;
 				std::string getAllowShutDown()const;
+				std::string getScaleApRoNumMin()const;
+				std::string getScaleApRoNumMax()const;
 				std::string getScaleRoNumMax()const;
 				std::string getDBClusterId()const;
 				std::string getScaleMin()const;
@@ -50,6 +52,8 @@ namespace AlibabaCloud
 			private:
 				std::string scaleRoNumMin_;
 				std::string allowShutDown_;
+				std::string scaleApRoNumMin_;
+				std::string scaleApRoNumMax_;
 				std::string scaleRoNumMax_;
 				std::string dBClusterId_;
 				std::string scaleMin_;

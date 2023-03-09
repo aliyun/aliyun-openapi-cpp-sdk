@@ -43,6 +43,15 @@ void ModifyDBClusterServerlessConfRequest::setResourceOwnerId(long resourceOwner
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ModifyDBClusterServerlessConfRequest::getScaleApRoNumMax() const {
+  return scaleApRoNumMax_;
+}
+
+void ModifyDBClusterServerlessConfRequest::setScaleApRoNumMax(const std::string &scaleApRoNumMax) {
+  scaleApRoNumMax_ = scaleApRoNumMax;
+  setParameter(std::string("ScaleApRoNumMax"), scaleApRoNumMax);
+}
+
 std::string ModifyDBClusterServerlessConfRequest::getScaleMax() const {
   return scaleMax_;
 }
@@ -68,6 +77,15 @@ std::string ModifyDBClusterServerlessConfRequest::getSecondsUntilAutoPause() con
 void ModifyDBClusterServerlessConfRequest::setSecondsUntilAutoPause(const std::string &secondsUntilAutoPause) {
   secondsUntilAutoPause_ = secondsUntilAutoPause;
   setParameter(std::string("SecondsUntilAutoPause"), secondsUntilAutoPause);
+}
+
+std::string ModifyDBClusterServerlessConfRequest::getScaleApRoNumMin() const {
+  return scaleApRoNumMin_;
+}
+
+void ModifyDBClusterServerlessConfRequest::setScaleApRoNumMin(const std::string &scaleApRoNumMin) {
+  scaleApRoNumMin_ = scaleApRoNumMin;
+  setParameter(std::string("ScaleApRoNumMin"), scaleApRoNumMin);
 }
 
 std::string ModifyDBClusterServerlessConfRequest::getScaleMin() const {

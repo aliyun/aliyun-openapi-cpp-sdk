@@ -3723,6 +3723,42 @@ PolardbClient::ModifyDBClusterServerlessConfOutcomeCallable PolardbClient::modif
 	return task->get_future();
 }
 
+PolardbClient::ModifyDBClusterStorageSpaceOutcome PolardbClient::modifyDBClusterStorageSpace(const ModifyDBClusterStorageSpaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDBClusterStorageSpaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDBClusterStorageSpaceOutcome(ModifyDBClusterStorageSpaceResult(outcome.result()));
+	else
+		return ModifyDBClusterStorageSpaceOutcome(outcome.error());
+}
+
+void PolardbClient::modifyDBClusterStorageSpaceAsync(const ModifyDBClusterStorageSpaceRequest& request, const ModifyDBClusterStorageSpaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDBClusterStorageSpace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::ModifyDBClusterStorageSpaceOutcomeCallable PolardbClient::modifyDBClusterStorageSpaceCallable(const ModifyDBClusterStorageSpaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDBClusterStorageSpaceOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDBClusterStorageSpace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::ModifyDBClusterTDEOutcome PolardbClient::modifyDBClusterTDE(const ModifyDBClusterTDERequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
