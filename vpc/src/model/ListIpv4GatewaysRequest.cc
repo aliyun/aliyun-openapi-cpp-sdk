@@ -43,6 +43,15 @@ void ListIpv4GatewaysRequest::setIpv4GatewayName(const std::string &ipv4GatewayN
   setParameter(std::string("Ipv4GatewayName"), ipv4GatewayName);
 }
 
+std::string ListIpv4GatewaysRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListIpv4GatewaysRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListIpv4GatewaysRequest::getRegionId() const {
   return regionId_;
 }
@@ -95,6 +104,20 @@ long ListIpv4GatewaysRequest::getOwnerId() const {
 void ListIpv4GatewaysRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::vector<ListIpv4GatewaysRequest::Tags> ListIpv4GatewaysRequest::getTags() const {
+  return tags_;
+}
+
+void ListIpv4GatewaysRequest::setTags(const std::vector<ListIpv4GatewaysRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+  }
 }
 
 std::string ListIpv4GatewaysRequest::getVpcId() const {

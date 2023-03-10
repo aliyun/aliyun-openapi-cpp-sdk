@@ -52,6 +52,15 @@ void ListTrafficMirrorSessionsRequest::setEnabled(bool enabled) {
   setParameter(std::string("Enabled"), enabled ? "true" : "false");
 }
 
+std::string ListTrafficMirrorSessionsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListTrafficMirrorSessionsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListTrafficMirrorSessionsRequest::getTrafficMirrorSessionName() const {
   return trafficMirrorSessionName_;
 }
@@ -139,6 +148,20 @@ std::string ListTrafficMirrorSessionsRequest::getTrafficMirrorFilterId() const {
 void ListTrafficMirrorSessionsRequest::setTrafficMirrorFilterId(const std::string &trafficMirrorFilterId) {
   trafficMirrorFilterId_ = trafficMirrorFilterId;
   setParameter(std::string("TrafficMirrorFilterId"), trafficMirrorFilterId);
+}
+
+std::vector<ListTrafficMirrorSessionsRequest::Tags> ListTrafficMirrorSessionsRequest::getTags() const {
+  return tags_;
+}
+
+void ListTrafficMirrorSessionsRequest::setTags(const std::vector<ListTrafficMirrorSessionsRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+  }
 }
 
 int ListTrafficMirrorSessionsRequest::getMaxResults() const {

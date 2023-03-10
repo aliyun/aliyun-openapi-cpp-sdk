@@ -115,6 +115,16 @@ void DescribeNetworkAclsResult::parse(const std::string &payload)
 				resourcesObject.resourceId = valueNetworkAclsNetworkAclResourcesResource["ResourceId"].asString();
 			networkAclsObject.resources.push_back(resourcesObject);
 		}
+		auto allTagsNode = valueNetworkAclsNetworkAcl["Tags"]["Tag"];
+		for (auto valueNetworkAclsNetworkAclTagsTag : allTagsNode)
+		{
+			NetworkAcl::Tag tagsObject;
+			if(!valueNetworkAclsNetworkAclTagsTag["Key"].isNull())
+				tagsObject.key = valueNetworkAclsNetworkAclTagsTag["Key"].asString();
+			if(!valueNetworkAclsNetworkAclTagsTag["Value"].isNull())
+				tagsObject.value = valueNetworkAclsNetworkAclTagsTag["Value"].asString();
+			networkAclsObject.tags.push_back(tagsObject);
+		}
 		networkAcls_.push_back(networkAclsObject);
 	}
 	if(!value["PageSize"].isNull())

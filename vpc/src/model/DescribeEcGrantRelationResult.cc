@@ -63,6 +63,8 @@ void DescribeEcGrantRelationResult::parse(const std::string &payload)
 			ecGrantRelationsObject.vbrRegionNo = valueEcGrantRelationsEcGrantRelationModel["VbrRegionNo"].asString();
 		if(!valueEcGrantRelationsEcGrantRelationModel["GmtCreate"].isNull())
 			ecGrantRelationsObject.gmtCreate = valueEcGrantRelationsEcGrantRelationModel["GmtCreate"].asString();
+		if(!valueEcGrantRelationsEcGrantRelationModel["GrantType"].isNull())
+			ecGrantRelationsObject.grantType = valueEcGrantRelationsEcGrantRelationModel["GrantType"].asString();
 		ecGrantRelations_.push_back(ecGrantRelationsObject);
 	}
 	if(!value["TotalCount"].isNull())

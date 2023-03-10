@@ -29,8 +29,8 @@ namespace Model {
 class ALIBABACLOUD_VPC_EXPORT UnTagResourcesRequest : public RpcServiceRequest {
 public:
 	struct Tag {
-		std::string value;
 		std::string key;
+		std::string value;
 	};
 	UnTagResourcesRequest();
 	~UnTagResourcesRequest();

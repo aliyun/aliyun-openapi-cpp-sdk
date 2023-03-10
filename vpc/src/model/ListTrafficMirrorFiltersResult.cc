@@ -51,6 +51,8 @@ void ListTrafficMirrorFiltersResult::parse(const std::string &payload)
 			trafficMirrorFiltersObject.trafficMirrorFilterId = valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterId"].asString();
 		if(!valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterName"].isNull())
 			trafficMirrorFiltersObject.trafficMirrorFilterName = valueTrafficMirrorFiltersTrafficMirrorFilter["TrafficMirrorFilterName"].asString();
+		if(!valueTrafficMirrorFiltersTrafficMirrorFilter["ResourceGroupId"].isNull())
+			trafficMirrorFiltersObject.resourceGroupId = valueTrafficMirrorFiltersTrafficMirrorFilter["ResourceGroupId"].asString();
 		auto allIngressRulesNode = valueTrafficMirrorFiltersTrafficMirrorFilter["IngressRules"]["TrafficMirrorRule"];
 		for (auto valueTrafficMirrorFiltersTrafficMirrorFilterIngressRulesTrafficMirrorRule : allIngressRulesNode)
 		{
@@ -106,6 +108,16 @@ void ListTrafficMirrorFiltersResult::parse(const std::string &payload)
 			if(!valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["SourcePortRange"].isNull())
 				egressRulesObject.sourcePortRange = valueTrafficMirrorFiltersTrafficMirrorFilterEgressRulesTrafficMirrorRule["SourcePortRange"].asString();
 			trafficMirrorFiltersObject.egressRules.push_back(egressRulesObject);
+		}
+		auto allTagsNode = valueTrafficMirrorFiltersTrafficMirrorFilter["Tags"]["Tag"];
+		for (auto valueTrafficMirrorFiltersTrafficMirrorFilterTagsTag : allTagsNode)
+		{
+			TrafficMirrorFilter::Tag tagsObject;
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterTagsTag["Key"].isNull())
+				tagsObject.key = valueTrafficMirrorFiltersTrafficMirrorFilterTagsTag["Key"].asString();
+			if(!valueTrafficMirrorFiltersTrafficMirrorFilterTagsTag["Value"].isNull())
+				tagsObject.value = valueTrafficMirrorFiltersTrafficMirrorFilterTagsTag["Value"].asString();
+			trafficMirrorFiltersObject.tags.push_back(tagsObject);
 		}
 		trafficMirrorFilters_.push_back(trafficMirrorFiltersObject);
 	}

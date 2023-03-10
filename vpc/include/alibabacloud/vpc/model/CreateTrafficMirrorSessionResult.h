@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				CreateTrafficMirrorSessionResult();
 				explicit CreateTrafficMirrorSessionResult(const std::string &payload);
 				~CreateTrafficMirrorSessionResult();
+				std::string getResourceGroupId()const;
 				std::string getTrafficMirrorSessionId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string resourceGroupId_;
 				std::string trafficMirrorSessionId_;
 
 			};

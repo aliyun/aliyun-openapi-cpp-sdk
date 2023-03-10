@@ -112,6 +112,16 @@ void DescribeNetworkAclAttributesResult::parse(const std::string &payload)
 			resourceObject.resourceId = networkAclAttributeNodeResourcesResource["ResourceId"].asString();
 		networkAclAttribute_.resources.push_back(resourceObject);
 	}
+	auto allTagsNode = networkAclAttributeNode["Tags"]["Tag"];
+	for (auto networkAclAttributeNodeTagsTag : allTagsNode)
+	{
+		NetworkAclAttribute::Tag tagObject;
+		if(!networkAclAttributeNodeTagsTag["Key"].isNull())
+			tagObject.key = networkAclAttributeNodeTagsTag["Key"].asString();
+		if(!networkAclAttributeNodeTagsTag["Value"].isNull())
+			tagObject.value = networkAclAttributeNodeTagsTag["Value"].asString();
+		networkAclAttribute_.tags.push_back(tagObject);
+	}
 
 }
 

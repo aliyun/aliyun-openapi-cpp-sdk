@@ -61,6 +61,15 @@ void CreateIpv6GatewayRequest::setSpec(const std::string &spec) {
   setParameter(std::string("Spec"), spec);
 }
 
+std::string CreateIpv6GatewayRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateIpv6GatewayRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateIpv6GatewayRequest::getRegionId() const {
   return regionId_;
 }

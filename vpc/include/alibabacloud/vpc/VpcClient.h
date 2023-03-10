@@ -106,6 +106,10 @@
 #include "model/CreateCommonBandwidthPackageResult.h"
 #include "model/CreateCustomerGatewayRequest.h"
 #include "model/CreateCustomerGatewayResult.h"
+#include "model/CreateDefaultVSwitchRequest.h"
+#include "model/CreateDefaultVSwitchResult.h"
+#include "model/CreateDefaultVpcRequest.h"
+#include "model/CreateDefaultVpcResult.h"
 #include "model/CreateDhcpOptionsSetRequest.h"
 #include "model/CreateDhcpOptionsSetResult.h"
 #include "model/CreateExpressCloudConnectionRequest.h"
@@ -853,6 +857,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCustomerGatewayResult> CreateCustomerGatewayOutcome;
 			typedef std::future<CreateCustomerGatewayOutcome> CreateCustomerGatewayOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreateCustomerGatewayRequest&, const CreateCustomerGatewayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomerGatewayAsyncHandler;
+			typedef Outcome<Error, Model::CreateDefaultVSwitchResult> CreateDefaultVSwitchOutcome;
+			typedef std::future<CreateDefaultVSwitchOutcome> CreateDefaultVSwitchOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CreateDefaultVSwitchRequest&, const CreateDefaultVSwitchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDefaultVSwitchAsyncHandler;
+			typedef Outcome<Error, Model::CreateDefaultVpcResult> CreateDefaultVpcOutcome;
+			typedef std::future<CreateDefaultVpcOutcome> CreateDefaultVpcOutcomeCallable;
+			typedef std::function<void(const VpcClient*, const Model::CreateDefaultVpcRequest&, const CreateDefaultVpcOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDefaultVpcAsyncHandler;
 			typedef Outcome<Error, Model::CreateDhcpOptionsSetResult> CreateDhcpOptionsSetOutcome;
 			typedef std::future<CreateDhcpOptionsSetOutcome> CreateDhcpOptionsSetOutcomeCallable;
 			typedef std::function<void(const VpcClient*, const Model::CreateDhcpOptionsSetRequest&, const CreateDhcpOptionsSetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDhcpOptionsSetAsyncHandler;
@@ -1902,6 +1912,12 @@ namespace AlibabaCloud
 			CreateCustomerGatewayOutcome createCustomerGateway(const Model::CreateCustomerGatewayRequest &request)const;
 			void createCustomerGatewayAsync(const Model::CreateCustomerGatewayRequest& request, const CreateCustomerGatewayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCustomerGatewayOutcomeCallable createCustomerGatewayCallable(const Model::CreateCustomerGatewayRequest& request) const;
+			CreateDefaultVSwitchOutcome createDefaultVSwitch(const Model::CreateDefaultVSwitchRequest &request)const;
+			void createDefaultVSwitchAsync(const Model::CreateDefaultVSwitchRequest& request, const CreateDefaultVSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDefaultVSwitchOutcomeCallable createDefaultVSwitchCallable(const Model::CreateDefaultVSwitchRequest& request) const;
+			CreateDefaultVpcOutcome createDefaultVpc(const Model::CreateDefaultVpcRequest &request)const;
+			void createDefaultVpcAsync(const Model::CreateDefaultVpcRequest& request, const CreateDefaultVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDefaultVpcOutcomeCallable createDefaultVpcCallable(const Model::CreateDefaultVpcRequest& request) const;
 			CreateDhcpOptionsSetOutcome createDhcpOptionsSet(const Model::CreateDhcpOptionsSetRequest &request)const;
 			void createDhcpOptionsSetAsync(const Model::CreateDhcpOptionsSetRequest& request, const CreateDhcpOptionsSetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDhcpOptionsSetOutcomeCallable createDhcpOptionsSetCallable(const Model::CreateDhcpOptionsSetRequest& request) const;

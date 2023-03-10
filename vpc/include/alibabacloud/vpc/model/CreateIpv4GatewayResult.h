@@ -38,11 +38,13 @@ namespace AlibabaCloud
 				explicit CreateIpv4GatewayResult(const std::string &payload);
 				~CreateIpv4GatewayResult();
 				std::string getIpv4GatewayId()const;
+				std::string getResourceGroupId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string ipv4GatewayId_;
+				std::string resourceGroupId_;
 
 			};
 		}

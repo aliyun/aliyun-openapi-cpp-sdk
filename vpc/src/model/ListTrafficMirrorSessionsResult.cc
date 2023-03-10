@@ -67,6 +67,18 @@ void ListTrafficMirrorSessionsResult::parse(const std::string &payload)
 			trafficMirrorSessionsObject.trafficMirrorFilterId = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorFilterId"].asString();
 		if(!valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionName"].isNull())
 			trafficMirrorSessionsObject.trafficMirrorSessionName = valueTrafficMirrorSessionsTrafficMirrorSession["TrafficMirrorSessionName"].asString();
+		if(!valueTrafficMirrorSessionsTrafficMirrorSession["ResourceGroupId"].isNull())
+			trafficMirrorSessionsObject.resourceGroupId = valueTrafficMirrorSessionsTrafficMirrorSession["ResourceGroupId"].asString();
+		auto allTagsNode = valueTrafficMirrorSessionsTrafficMirrorSession["Tags"]["Tag"];
+		for (auto valueTrafficMirrorSessionsTrafficMirrorSessionTagsTag : allTagsNode)
+		{
+			TrafficMirrorSession::Tag tagsObject;
+			if(!valueTrafficMirrorSessionsTrafficMirrorSessionTagsTag["Key"].isNull())
+				tagsObject.key = valueTrafficMirrorSessionsTrafficMirrorSessionTagsTag["Key"].asString();
+			if(!valueTrafficMirrorSessionsTrafficMirrorSessionTagsTag["Value"].isNull())
+				tagsObject.value = valueTrafficMirrorSessionsTrafficMirrorSessionTagsTag["Value"].asString();
+			trafficMirrorSessionsObject.tags.push_back(tagsObject);
+		}
 		auto allTrafficMirrorSourceIds = value["TrafficMirrorSourceIds"]["TrafficMirrorSourceId"];
 		for (auto value : allTrafficMirrorSourceIds)
 			trafficMirrorSessionsObject.trafficMirrorSourceIds.push_back(value.asString());

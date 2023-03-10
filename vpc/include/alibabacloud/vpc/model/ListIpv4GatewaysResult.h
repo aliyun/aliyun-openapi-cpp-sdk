@@ -34,13 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct Ipv4GatewayModelsItem
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string gmtCreate;
 					std::string ipv4GatewayRouteTableId;
 					std::string ipv4GatewayName;
 					std::string vpcId;
 					std::string ipv4GatewayId;
+					std::string resourceGroupId;
 					bool enabled;
+					std::vector<Ipv4GatewayModelsItem::Tag> tags;
 					std::string ipv4GatewayDescription;
 				};
 

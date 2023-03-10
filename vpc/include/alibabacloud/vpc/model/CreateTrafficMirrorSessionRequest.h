@@ -38,6 +38,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	bool getEnabled() const;
 	void setEnabled(bool enabled);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getTrafficMirrorSessionName() const;
 	void setTrafficMirrorSessionName(const std::string &trafficMirrorSessionName);
 	std::string getRegionId() const;
@@ -70,6 +72,7 @@ private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	bool enabled_;
+	std::string resourceGroupId_;
 	std::string trafficMirrorSessionName_;
 	std::string regionId_;
 	std::string trafficMirrorSessionDescription_;

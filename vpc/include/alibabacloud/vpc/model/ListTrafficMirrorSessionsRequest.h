@@ -28,6 +28,10 @@ namespace Vpc {
 namespace Model {
 class ALIBABACLOUD_VPC_EXPORT ListTrafficMirrorSessionsRequest : public RpcServiceRequest {
 public:
+	struct Tags {
+		std::string key;
+		std::string value;
+	};
 	ListTrafficMirrorSessionsRequest();
 	~ListTrafficMirrorSessionsRequest();
 	long getResourceOwnerId() const;
@@ -36,6 +40,8 @@ public:
 	void setTrafficMirrorSourceId(const std::string &trafficMirrorSourceId);
 	bool getEnabled() const;
 	void setEnabled(bool enabled);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getTrafficMirrorSessionName() const;
 	void setTrafficMirrorSessionName(const std::string &trafficMirrorSessionName);
 	std::string getNextToken() const;
@@ -56,6 +62,8 @@ public:
 	void setTrafficMirrorTargetId(const std::string &trafficMirrorTargetId);
 	std::string getTrafficMirrorFilterId() const;
 	void setTrafficMirrorFilterId(const std::string &trafficMirrorFilterId);
+	std::vector<Tags> getTags() const;
+	void setTags(const std::vector<Tags> &tags);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
 	int getVirtualNetworkId() const;
@@ -65,6 +73,7 @@ private:
 	long resourceOwnerId_;
 	std::string trafficMirrorSourceId_;
 	bool enabled_;
+	std::string resourceGroupId_;
 	std::string trafficMirrorSessionName_;
 	std::string nextToken_;
 	std::string regionId_;
@@ -75,6 +84,7 @@ private:
 	long ownerId_;
 	std::string trafficMirrorTargetId_;
 	std::string trafficMirrorFilterId_;
+	std::vector<Tags> tags_;
 	int maxResults_;
 	int virtualNetworkId_;
 };

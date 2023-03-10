@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_DESCRIBENETWORKACLSREQUEST_H_
-#define ALIBABACLOUD_VPC_MODEL_DESCRIBENETWORKACLSREQUEST_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_CREATEDEFAULTVPCREQUEST_H_
+#define ALIBABACLOUD_VPC_MODEL_CREATEDEFAULTVPCREQUEST_H_
 
 #include <alibabacloud/vpc/VpcExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,57 +26,47 @@
 namespace AlibabaCloud {
 namespace Vpc {
 namespace Model {
-class ALIBABACLOUD_VPC_EXPORT DescribeNetworkAclsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_VPC_EXPORT CreateDefaultVpcRequest : public RpcServiceRequest {
 public:
-	struct Tags {
-		std::string key;
-		std::string value;
-	};
-	DescribeNetworkAclsRequest();
-	~DescribeNetworkAclsRequest();
+	CreateDefaultVpcRequest();
+	~CreateDefaultVpcRequest();
+	bool getEnableDefaultVSwitch() const;
+	void setEnableDefaultVSwitch(bool enableDefaultVSwitch);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
+	bool getEnableIpv6() const;
+	void setEnableIpv6(bool enableIpv6);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getNetworkAclId() const;
-	void setNetworkAclId(const std::string &networkAclId);
-	std::string getResourceId() const;
-	void setResourceId(const std::string &resourceId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	std::string getNetworkAclName() const;
-	void setNetworkAclName(const std::string &networkAclName);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getResourceType() const;
-	void setResourceType(const std::string &resourceType);
-	std::vector<Tags> getTags() const;
-	void setTags(const std::vector<Tags> &tags);
-	std::string getVpcId() const;
-	void setVpcId(const std::string &vpcId);
+	std::string getIpv6CidrBlock() const;
+	void setIpv6CidrBlock(const std::string &ipv6CidrBlock);
+	std::vector<std::string> getZoneId() const;
+	void setZoneId(const std::vector<std::string> &zoneId);
 
 private:
+	bool enableDefaultVSwitch_;
 	long resourceOwnerId_;
 	std::string clientToken_;
-	int pageNumber_;
+	bool enableIpv6_;
+	std::string resourceGroupId_;
 	std::string regionId_;
-	int pageSize_;
-	std::string networkAclId_;
-	std::string resourceId_;
 	std::string resourceOwnerAccount_;
-	std::string networkAclName_;
+	std::string ownerAccount_;
 	long ownerId_;
-	std::string resourceType_;
-	std::vector<Tags> tags_;
-	std::string vpcId_;
+	std::string ipv6CidrBlock_;
+	std::vector<std::string> zoneId_;
 };
 } // namespace Model
 } // namespace Vpc
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_VPC_MODEL_DESCRIBENETWORKACLSREQUEST_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_CREATEDEFAULTVPCREQUEST_H_

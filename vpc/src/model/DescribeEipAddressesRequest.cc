@@ -201,6 +201,15 @@ void DescribeEipAddressesRequest::setDryRun(bool dryRun) {
   setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
+std::string DescribeEipAddressesRequest::getBandwidthPackageId() const {
+  return bandwidthPackageId_;
+}
+
+void DescribeEipAddressesRequest::setBandwidthPackageId(const std::string &bandwidthPackageId) {
+  bandwidthPackageId_ = bandwidthPackageId;
+  setParameter(std::string("BandwidthPackageId"), bandwidthPackageId);
+}
+
 std::string DescribeEipAddressesRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

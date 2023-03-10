@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					std::string vbrRegionNo;
 					long vbrOwnerUid;
 					std::string instanceId;
+					std::string grantType;
 					long aliUid;
 				};
 

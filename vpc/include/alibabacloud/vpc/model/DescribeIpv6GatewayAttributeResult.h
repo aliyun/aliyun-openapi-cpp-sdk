@@ -32,6 +32,11 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VPC_EXPORT DescribeIpv6GatewayAttributeResult : public ServiceResult
 			{
 			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 
 				DescribeIpv6GatewayAttributeResult();
@@ -39,30 +44,34 @@ namespace AlibabaCloud
 				~DescribeIpv6GatewayAttributeResult();
 				std::string getStatus()const;
 				std::string getDescription()const;
-				std::string getVpcId()const;
+				std::string getResourceGroupId()const;
 				std::string getInstanceChargeType()const;
-				std::string getExpiredTime()const;
-				std::string getCreationTime()const;
 				std::string getIpv6GatewayId()const;
-				std::string getRegionId()const;
-				std::string getSpec()const;
 				std::string getBusinessStatus()const;
 				std::string getName()const;
+				std::string getVpcId()const;
+				std::string getExpiredTime()const;
+				std::string getCreationTime()const;
+				std::string getRegionId()const;
+				std::string getSpec()const;
+				std::vector<Tag> getTags()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
 				std::string description_;
-				std::string vpcId_;
+				std::string resourceGroupId_;
 				std::string instanceChargeType_;
-				std::string expiredTime_;
-				std::string creationTime_;
 				std::string ipv6GatewayId_;
-				std::string regionId_;
-				std::string spec_;
 				std::string businessStatus_;
 				std::string name_;
+				std::string vpcId_;
+				std::string expiredTime_;
+				std::string creationTime_;
+				std::string regionId_;
+				std::string spec_;
+				std::vector<Tag> tags_;
 
 			};
 		}

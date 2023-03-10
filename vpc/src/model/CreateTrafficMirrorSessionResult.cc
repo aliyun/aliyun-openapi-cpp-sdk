@@ -41,7 +41,14 @@ void CreateTrafficMirrorSessionResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["TrafficMirrorSessionId"].isNull())
 		trafficMirrorSessionId_ = value["TrafficMirrorSessionId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
+}
+
+std::string CreateTrafficMirrorSessionResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string CreateTrafficMirrorSessionResult::getTrafficMirrorSessionId()const

@@ -52,6 +52,15 @@ void DescribeFlowLogsRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeFlowLogsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeFlowLogsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeFlowLogsRequest::getRegionId() const {
   return regionId_;
 }
@@ -131,6 +140,20 @@ std::string DescribeFlowLogsRequest::getResourceType() const {
 void DescribeFlowLogsRequest::setResourceType(const std::string &resourceType) {
   resourceType_ = resourceType;
   setParameter(std::string("ResourceType"), resourceType);
+}
+
+std::vector<DescribeFlowLogsRequest::Tags> DescribeFlowLogsRequest::getTags() const {
+  return tags_;
+}
+
+void DescribeFlowLogsRequest::setTags(const std::vector<DescribeFlowLogsRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
 }
 
 std::string DescribeFlowLogsRequest::getVpcId() const {

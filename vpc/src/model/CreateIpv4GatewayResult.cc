@@ -41,11 +41,18 @@ void CreateIpv4GatewayResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Ipv4GatewayId"].isNull())
 		ipv4GatewayId_ = value["Ipv4GatewayId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
 std::string CreateIpv4GatewayResult::getIpv4GatewayId()const
 {
 	return ipv4GatewayId_;
+}
+
+std::string CreateIpv4GatewayResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 

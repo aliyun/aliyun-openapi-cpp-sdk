@@ -43,6 +43,15 @@ void DescribeIpv6GatewaysRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeIpv6GatewaysRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeIpv6GatewaysRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeIpv6GatewaysRequest::getRegionId() const {
   return regionId_;
 }
@@ -86,6 +95,20 @@ long DescribeIpv6GatewaysRequest::getOwnerId() const {
 void DescribeIpv6GatewaysRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::vector<DescribeIpv6GatewaysRequest::Tags> DescribeIpv6GatewaysRequest::getTags() const {
+  return tags_;
+}
+
+void DescribeIpv6GatewaysRequest::setTags(const std::vector<DescribeIpv6GatewaysRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+  }
 }
 
 std::string DescribeIpv6GatewaysRequest::getVpcId() const {

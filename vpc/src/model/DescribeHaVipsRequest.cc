@@ -43,6 +43,15 @@ void DescribeHaVipsRequest::setPageNumber(int pageNumber) {
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string DescribeHaVipsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeHaVipsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string DescribeHaVipsRequest::getRegionId() const {
   return regionId_;
 }
@@ -86,6 +95,20 @@ long DescribeHaVipsRequest::getOwnerId() const {
 void DescribeHaVipsRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::vector<DescribeHaVipsRequest::Tags> DescribeHaVipsRequest::getTags() const {
+  return tags_;
+}
+
+void DescribeHaVipsRequest::setTags(const std::vector<DescribeHaVipsRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+  }
 }
 
 std::vector<DescribeHaVipsRequest::Filter> DescribeHaVipsRequest::getFilter() const {

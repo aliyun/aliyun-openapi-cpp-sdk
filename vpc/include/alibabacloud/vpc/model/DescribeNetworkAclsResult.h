@@ -62,6 +62,11 @@ namespace AlibabaCloud
 						std::string resourceId;
 						std::string resourceType;
 					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::vector<NetworkAcl::IngressAclEntry> ingressAclEntries;
 					std::string status;
 					std::string description;
@@ -73,6 +78,7 @@ namespace AlibabaCloud
 					std::string networkAclName;
 					std::vector<NetworkAcl::Resource> resources;
 					std::string regionId;
+					std::vector<NetworkAcl::Tag> tags;
 				};
 
 

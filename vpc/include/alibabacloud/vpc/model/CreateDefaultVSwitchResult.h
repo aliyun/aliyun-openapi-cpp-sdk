@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_CREATETRAFFICMIRRORFILTERRESULT_H_
-#define ALIBABACLOUD_VPC_MODEL_CREATETRAFFICMIRRORFILTERRESULT_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_CREATEDEFAULTVSWITCHRESULT_H_
+#define ALIBABACLOUD_VPC_MODEL_CREATEDEFAULTVSWITCHRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT CreateTrafficMirrorFilterResult : public ServiceResult
+			class ALIBABACLOUD_VPC_EXPORT CreateDefaultVSwitchResult : public ServiceResult
 			{
 			public:
 
 
-				CreateTrafficMirrorFilterResult();
-				explicit CreateTrafficMirrorFilterResult(const std::string &payload);
-				~CreateTrafficMirrorFilterResult();
-				std::string getResourceGroupId()const;
-				std::string getTrafficMirrorFilterId()const;
+				CreateDefaultVSwitchResult();
+				explicit CreateDefaultVSwitchResult(const std::string &payload);
+				~CreateDefaultVSwitchResult();
+				std::string getVSwitchId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string resourceGroupId_;
-				std::string trafficMirrorFilterId_;
+				std::string vSwitchId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_CREATETRAFFICMIRRORFILTERRESULT_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_CREATEDEFAULTVSWITCHRESULT_H_

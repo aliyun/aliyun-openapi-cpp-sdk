@@ -14,45 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/vpc/model/CreateTrafficMirrorFilterResult.h>
+#include <alibabacloud/vpc/model/CreateDefaultVSwitchResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Vpc;
 using namespace AlibabaCloud::Vpc::Model;
 
-CreateTrafficMirrorFilterResult::CreateTrafficMirrorFilterResult() :
+CreateDefaultVSwitchResult::CreateDefaultVSwitchResult() :
 	ServiceResult()
 {}
 
-CreateTrafficMirrorFilterResult::CreateTrafficMirrorFilterResult(const std::string &payload) :
+CreateDefaultVSwitchResult::CreateDefaultVSwitchResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-CreateTrafficMirrorFilterResult::~CreateTrafficMirrorFilterResult()
+CreateDefaultVSwitchResult::~CreateDefaultVSwitchResult()
 {}
 
-void CreateTrafficMirrorFilterResult::parse(const std::string &payload)
+void CreateDefaultVSwitchResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["TrafficMirrorFilterId"].isNull())
-		trafficMirrorFilterId_ = value["TrafficMirrorFilterId"].asString();
-	if(!value["ResourceGroupId"].isNull())
-		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["VSwitchId"].isNull())
+		vSwitchId_ = value["VSwitchId"].asString();
 
 }
 
-std::string CreateTrafficMirrorFilterResult::getResourceGroupId()const
+std::string CreateDefaultVSwitchResult::getVSwitchId()const
 {
-	return resourceGroupId_;
-}
-
-std::string CreateTrafficMirrorFilterResult::getTrafficMirrorFilterId()const
-{
-	return trafficMirrorFilterId_;
+	return vSwitchId_;
 }
 

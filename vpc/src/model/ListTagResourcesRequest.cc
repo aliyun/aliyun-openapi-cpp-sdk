@@ -34,15 +34,6 @@ void ListTagResourcesRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string ListTagResourcesRequest::getRegionId() const {
-  return regionId_;
-}
-
-void ListTagResourcesRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string ListTagResourcesRequest::getNextToken() const {
   return nextToken_;
 }
@@ -50,6 +41,15 @@ std::string ListTagResourcesRequest::getNextToken() const {
 void ListTagResourcesRequest::setNextToken(const std::string &nextToken) {
   nextToken_ = nextToken;
   setParameter(std::string("NextToken"), nextToken);
+}
+
+std::string ListTagResourcesRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ListTagResourcesRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
 std::vector<ListTagResourcesRequest::Tag> ListTagResourcesRequest::getTag() const {
@@ -61,8 +61,8 @@ void ListTagResourcesRequest::setTag(const std::vector<ListTagResourcesRequest::
   for(int dep1 = 0; dep1 != tag.size(); dep1++) {
   auto tagObj = tag.at(dep1);
   std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
-    setParameter(tagObjStr + ".Value", tagObj.value);
     setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
   }
 }
 

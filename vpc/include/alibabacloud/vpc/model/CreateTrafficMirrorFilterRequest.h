@@ -56,6 +56,8 @@ public:
 	void setIngressRules(const std::vector<IngressRules> &ingressRules);
 	std::string getTrafficMirrorFilterName() const;
 	void setTrafficMirrorFilterName(const std::string &trafficMirrorFilterName);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::vector<EgressRules> getEgressRules() const;
@@ -76,6 +78,7 @@ private:
 	std::string clientToken_;
 	std::vector<IngressRules> ingressRules_;
 	std::string trafficMirrorFilterName_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::vector<EgressRules> egressRules_;
 	bool dryRun_;

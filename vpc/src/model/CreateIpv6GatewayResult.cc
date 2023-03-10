@@ -41,7 +41,14 @@ void CreateIpv6GatewayResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Ipv6GatewayId"].isNull())
 		ipv6GatewayId_ = value["Ipv6GatewayId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
+}
+
+std::string CreateIpv6GatewayResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string CreateIpv6GatewayResult::getIpv6GatewayId()const

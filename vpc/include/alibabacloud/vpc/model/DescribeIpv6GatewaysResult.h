@@ -34,17 +34,24 @@ namespace AlibabaCloud
 			public:
 				struct Ipv6Gateway
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string description;
-					std::string vpcId;
+					std::string resourceGroupId;
 					std::string instanceChargeType;
-					std::string expiredTime;
-					std::string creationTime;
 					std::string ipv6GatewayId;
-					std::string regionId;
-					std::string spec;
 					std::string businessStatus;
 					std::string name;
+					std::string vpcId;
+					std::string expiredTime;
+					std::string creationTime;
+					std::string regionId;
+					std::string spec;
+					std::vector<Ipv6Gateway::Tag> tags;
 				};
 
 

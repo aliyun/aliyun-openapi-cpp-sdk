@@ -61,6 +61,15 @@ void CreateTrafficMirrorSessionRequest::setEnabled(bool enabled) {
   setParameter(std::string("Enabled"), enabled ? "true" : "false");
 }
 
+std::string CreateTrafficMirrorSessionRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateTrafficMirrorSessionRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateTrafficMirrorSessionRequest::getTrafficMirrorSessionName() const {
   return trafficMirrorSessionName_;
 }

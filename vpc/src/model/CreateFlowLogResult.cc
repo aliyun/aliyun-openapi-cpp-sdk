@@ -43,7 +43,14 @@ void CreateFlowLogResult::parse(const std::string &payload)
 		success_ = value["Success"].asString();
 	if(!value["FlowLogId"].isNull())
 		flowLogId_ = value["FlowLogId"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
+}
+
+std::string CreateFlowLogResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string CreateFlowLogResult::getFlowLogId()const

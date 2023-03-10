@@ -39,6 +39,16 @@ void DescribeIpv6GatewayAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
+	{
+		Tag tagsObject;
+		if(!valueTagsTag["Key"].isNull())
+			tagsObject.key = valueTagsTag["Key"].asString();
+		if(!valueTagsTag["Value"].isNull())
+			tagsObject.value = valueTagsTag["Value"].asString();
+		tags_.push_back(tagsObject);
+	}
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
 	if(!value["Status"].isNull())
@@ -61,6 +71,8 @@ void DescribeIpv6GatewayAttributeResult::parse(const std::string &payload)
 		businessStatus_ = value["BusinessStatus"].asString();
 	if(!value["Name"].isNull())
 		name_ = value["Name"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -74,14 +86,34 @@ std::string DescribeIpv6GatewayAttributeResult::getDescription()const
 	return description_;
 }
 
-std::string DescribeIpv6GatewayAttributeResult::getVpcId()const
+std::string DescribeIpv6GatewayAttributeResult::getResourceGroupId()const
 {
-	return vpcId_;
+	return resourceGroupId_;
 }
 
 std::string DescribeIpv6GatewayAttributeResult::getInstanceChargeType()const
 {
 	return instanceChargeType_;
+}
+
+std::string DescribeIpv6GatewayAttributeResult::getIpv6GatewayId()const
+{
+	return ipv6GatewayId_;
+}
+
+std::string DescribeIpv6GatewayAttributeResult::getBusinessStatus()const
+{
+	return businessStatus_;
+}
+
+std::string DescribeIpv6GatewayAttributeResult::getName()const
+{
+	return name_;
+}
+
+std::string DescribeIpv6GatewayAttributeResult::getVpcId()const
+{
+	return vpcId_;
 }
 
 std::string DescribeIpv6GatewayAttributeResult::getExpiredTime()const
@@ -94,11 +126,6 @@ std::string DescribeIpv6GatewayAttributeResult::getCreationTime()const
 	return creationTime_;
 }
 
-std::string DescribeIpv6GatewayAttributeResult::getIpv6GatewayId()const
-{
-	return ipv6GatewayId_;
-}
-
 std::string DescribeIpv6GatewayAttributeResult::getRegionId()const
 {
 	return regionId_;
@@ -109,13 +136,8 @@ std::string DescribeIpv6GatewayAttributeResult::getSpec()const
 	return spec_;
 }
 
-std::string DescribeIpv6GatewayAttributeResult::getBusinessStatus()const
+std::vector<DescribeIpv6GatewayAttributeResult::Tag> DescribeIpv6GatewayAttributeResult::getTags()const
 {
-	return businessStatus_;
-}
-
-std::string DescribeIpv6GatewayAttributeResult::getName()const
-{
-	return name_;
+	return tags_;
 }
 

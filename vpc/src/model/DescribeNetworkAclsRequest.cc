@@ -124,6 +124,20 @@ void DescribeNetworkAclsRequest::setResourceType(const std::string &resourceType
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::vector<DescribeNetworkAclsRequest::Tags> DescribeNetworkAclsRequest::getTags() const {
+  return tags_;
+}
+
+void DescribeNetworkAclsRequest::setTags(const std::vector<DescribeNetworkAclsRequest::Tags> &tags) {
+  tags_ = tags;
+  for(int dep1 = 0; dep1 != tags.size(); dep1++) {
+  auto tagsObj = tags.at(dep1);
+  std::string tagsObjStr = std::string("Tags") + "." + std::to_string(dep1 + 1);
+    setParameter(tagsObjStr + ".Key", tagsObj.key);
+    setParameter(tagsObjStr + ".Value", tagsObj.value);
+  }
+}
+
 std::string DescribeNetworkAclsRequest::getVpcId() const {
   return vpcId_;
 }

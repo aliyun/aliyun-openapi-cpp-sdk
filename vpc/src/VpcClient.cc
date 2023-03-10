@@ -1563,6 +1563,78 @@ VpcClient::CreateCustomerGatewayOutcomeCallable VpcClient::createCustomerGateway
 	return task->get_future();
 }
 
+VpcClient::CreateDefaultVSwitchOutcome VpcClient::createDefaultVSwitch(const CreateDefaultVSwitchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDefaultVSwitchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDefaultVSwitchOutcome(CreateDefaultVSwitchResult(outcome.result()));
+	else
+		return CreateDefaultVSwitchOutcome(outcome.error());
+}
+
+void VpcClient::createDefaultVSwitchAsync(const CreateDefaultVSwitchRequest& request, const CreateDefaultVSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDefaultVSwitch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::CreateDefaultVSwitchOutcomeCallable VpcClient::createDefaultVSwitchCallable(const CreateDefaultVSwitchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDefaultVSwitchOutcome()>>(
+			[this, request]()
+			{
+			return this->createDefaultVSwitch(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VpcClient::CreateDefaultVpcOutcome VpcClient::createDefaultVpc(const CreateDefaultVpcRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDefaultVpcOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDefaultVpcOutcome(CreateDefaultVpcResult(outcome.result()));
+	else
+		return CreateDefaultVpcOutcome(outcome.error());
+}
+
+void VpcClient::createDefaultVpcAsync(const CreateDefaultVpcRequest& request, const CreateDefaultVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDefaultVpc(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VpcClient::CreateDefaultVpcOutcomeCallable VpcClient::createDefaultVpcCallable(const CreateDefaultVpcRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDefaultVpcOutcome()>>(
+			[this, request]()
+			{
+			return this->createDefaultVpc(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VpcClient::CreateDhcpOptionsSetOutcome VpcClient::createDhcpOptionsSet(const CreateDhcpOptionsSetRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

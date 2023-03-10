@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				CreateIpv6GatewayResult();
 				explicit CreateIpv6GatewayResult(const std::string &payload);
 				~CreateIpv6GatewayResult();
+				std::string getResourceGroupId()const;
 				std::string getIpv6GatewayId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string resourceGroupId_;
 				std::string ipv6GatewayId_;
 
 			};

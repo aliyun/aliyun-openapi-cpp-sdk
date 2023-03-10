@@ -38,6 +38,8 @@ public:
 	void setDescription(const std::string &description);
 	std::string getSpec() const;
 	void setSpec(const std::string &spec);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getResourceOwnerAccount() const;
@@ -56,6 +58,7 @@ private:
 	std::string clientToken_;
 	std::string description_;
 	std::string spec_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

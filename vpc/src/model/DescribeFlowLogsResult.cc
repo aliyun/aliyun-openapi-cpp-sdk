@@ -71,7 +71,19 @@ void DescribeFlowLogsResult::parse(const std::string &payload)
 			flowLogsObject.aggregationInterval = std::stoi(valueFlowLogsFlowLog["AggregationInterval"].asString());
 		if(!valueFlowLogsFlowLog["ServiceType"].isNull())
 			flowLogsObject.serviceType = valueFlowLogsFlowLog["ServiceType"].asString();
-		auto allTrafficPath = value["TrafficPath"]["trafficPathList"];
+		if(!valueFlowLogsFlowLog["ResourceGroupId"].isNull())
+			flowLogsObject.resourceGroupId = valueFlowLogsFlowLog["ResourceGroupId"].asString();
+		auto allTagsNode = valueFlowLogsFlowLog["Tags"]["Tag"];
+		for (auto valueFlowLogsFlowLogTagsTag : allTagsNode)
+		{
+			FlowLog::Tag tagsObject;
+			if(!valueFlowLogsFlowLogTagsTag["Key"].isNull())
+				tagsObject.key = valueFlowLogsFlowLogTagsTag["Key"].asString();
+			if(!valueFlowLogsFlowLogTagsTag["Value"].isNull())
+				tagsObject.value = valueFlowLogsFlowLogTagsTag["Value"].asString();
+			flowLogsObject.tags.push_back(tagsObject);
+		}
+		auto allTrafficPath = value["TrafficPath"]["TrafficPathList"];
 		for (auto value : allTrafficPath)
 			flowLogsObject.trafficPath.push_back(value.asString());
 		flowLogs_.push_back(flowLogsObject);

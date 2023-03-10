@@ -62,11 +62,18 @@ namespace AlibabaCloud
 						std::string protocol;
 						std::string trafficMirrorFilterId;
 					};
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string trafficMirrorFilterDescription;
+					std::string resourceGroupId;
 					std::vector<TrafficMirrorFilter::TrafficMirrorRule> egressRules;
 					std::string trafficMirrorFilterStatus;
 					std::string trafficMirrorFilterId;
 					std::string trafficMirrorFilterName;
+					std::vector<TrafficMirrorFilter::Tag> tags;
 					std::vector<TrafficMirrorFilter::TrafficMirrorRule> ingressRules;
 				};
 

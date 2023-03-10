@@ -37,12 +37,14 @@ namespace AlibabaCloud
 				CreateFlowLogResult();
 				explicit CreateFlowLogResult(const std::string &payload);
 				~CreateFlowLogResult();
+				std::string getResourceGroupId()const;
 				std::string getFlowLogId()const;
 				std::string getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string resourceGroupId_;
 				std::string flowLogId_;
 				std::string success_;
 

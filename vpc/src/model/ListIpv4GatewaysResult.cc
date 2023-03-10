@@ -59,6 +59,18 @@ void ListIpv4GatewaysResult::parse(const std::string &payload)
 			ipv4GatewayModelsObject.ipv4GatewayRouteTableId = valueIpv4GatewayModelsIpv4GatewayModelsItem["Ipv4GatewayRouteTableId"].asString();
 		if(!valueIpv4GatewayModelsIpv4GatewayModelsItem["Ipv4GatewayName"].isNull())
 			ipv4GatewayModelsObject.ipv4GatewayName = valueIpv4GatewayModelsIpv4GatewayModelsItem["Ipv4GatewayName"].asString();
+		if(!valueIpv4GatewayModelsIpv4GatewayModelsItem["ResourceGroupId"].isNull())
+			ipv4GatewayModelsObject.resourceGroupId = valueIpv4GatewayModelsIpv4GatewayModelsItem["ResourceGroupId"].asString();
+		auto allTagsNode = valueIpv4GatewayModelsIpv4GatewayModelsItem["Tags"]["Tag"];
+		for (auto valueIpv4GatewayModelsIpv4GatewayModelsItemTagsTag : allTagsNode)
+		{
+			Ipv4GatewayModelsItem::Tag tagsObject;
+			if(!valueIpv4GatewayModelsIpv4GatewayModelsItemTagsTag["Key"].isNull())
+				tagsObject.key = valueIpv4GatewayModelsIpv4GatewayModelsItemTagsTag["Key"].asString();
+			if(!valueIpv4GatewayModelsIpv4GatewayModelsItemTagsTag["Value"].isNull())
+				tagsObject.value = valueIpv4GatewayModelsIpv4GatewayModelsItemTagsTag["Value"].asString();
+			ipv4GatewayModelsObject.tags.push_back(tagsObject);
+		}
 		ipv4GatewayModels_.push_back(ipv4GatewayModelsObject);
 	}
 	if(!value["NextToken"].isNull())

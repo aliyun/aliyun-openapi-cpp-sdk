@@ -34,8 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct HaVip
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string status;
 					std::string description;
+					std::string resourceGroupId;
 					std::vector<std::string> associatedEipAddresses;
 					std::string createTime;
 					std::string vSwitchId;
@@ -48,6 +54,7 @@ namespace AlibabaCloud
 					std::string ipAddress;
 					std::string regionId;
 					std::string associatedInstanceType;
+					std::vector<HaVip::Tag> tags;
 				};
 
 

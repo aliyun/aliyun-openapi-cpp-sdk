@@ -43,6 +43,24 @@ void DeleteVpcRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+bool DeleteVpcRequest::getForceDelete() const {
+  return forceDelete_;
+}
+
+void DeleteVpcRequest::setForceDelete(bool forceDelete) {
+  forceDelete_ = forceDelete;
+  setParameter(std::string("ForceDelete"), forceDelete ? "true" : "false");
+}
+
+bool DeleteVpcRequest::getDryRun() const {
+  return dryRun_;
+}
+
+void DeleteVpcRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
+}
+
 std::string DeleteVpcRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

@@ -42,6 +42,11 @@ namespace AlibabaCloud
 					int resourceCount;
 					std::string resourceType;
 				};
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 
 				DescribeVSwitchAttributesResult();
@@ -63,6 +68,7 @@ namespace AlibabaCloud
 				std::string getVSwitchName()const;
 				std::string getIpv6CidrBlock()const;
 				std::vector<CloudResourceSetType> getCloudResources()const;
+				std::vector<Tag> getTags()const;
 				std::string getShareType()const;
 
 			protected:
@@ -84,6 +90,7 @@ namespace AlibabaCloud
 				std::string vSwitchName_;
 				std::string ipv6CidrBlock_;
 				std::vector<CloudResourceSetType> cloudResources_;
+				std::vector<Tag> tags_;
 				std::string shareType_;
 
 			};

@@ -61,6 +61,15 @@ void CreateIpv4GatewayRequest::setIpv4GatewayName(const std::string &ipv4Gateway
   setParameter(std::string("Ipv4GatewayName"), ipv4GatewayName);
 }
 
+std::string CreateIpv4GatewayRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateIpv4GatewayRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateIpv4GatewayRequest::getRegionId() const {
   return regionId_;
 }

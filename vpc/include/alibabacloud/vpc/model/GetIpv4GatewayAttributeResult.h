@@ -32,6 +32,11 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_VPC_EXPORT GetIpv4GatewayAttributeResult : public ServiceResult
 			{
 			public:
+				struct Tag
+				{
+					std::string value;
+					std::string key;
+				};
 
 
 				GetIpv4GatewayAttributeResult();
@@ -42,8 +47,10 @@ namespace AlibabaCloud
 				std::string getIpv4GatewayName()const;
 				std::string getVpcId()const;
 				std::string getIpv4GatewayId()const;
+				std::string getResourceGroupId()const;
 				std::string getCreateTime()const;
 				bool getEnabled()const;
+				std::vector<Tag> getTags()const;
 				std::string getIpv4GatewayDescription()const;
 
 			protected:
@@ -54,8 +61,10 @@ namespace AlibabaCloud
 				std::string ipv4GatewayName_;
 				std::string vpcId_;
 				std::string ipv4GatewayId_;
+				std::string resourceGroupId_;
 				std::string createTime_;
 				bool enabled_;
+				std::vector<Tag> tags_;
 				std::string ipv4GatewayDescription_;
 
 			};

@@ -67,6 +67,18 @@ void DescribeHaVipsResult::parse(const std::string &payload)
 			haVipsObject.masterInstanceId = valueHaVipsHaVip["MasterInstanceId"].asString();
 		if(!valueHaVipsHaVip["Name"].isNull())
 			haVipsObject.name = valueHaVipsHaVip["Name"].asString();
+		if(!valueHaVipsHaVip["ResourceGroupId"].isNull())
+			haVipsObject.resourceGroupId = valueHaVipsHaVip["ResourceGroupId"].asString();
+		auto allTagsNode = valueHaVipsHaVip["Tags"]["Tag"];
+		for (auto valueHaVipsHaVipTagsTag : allTagsNode)
+		{
+			HaVip::Tag tagsObject;
+			if(!valueHaVipsHaVipTagsTag["Key"].isNull())
+				tagsObject.key = valueHaVipsHaVipTagsTag["Key"].asString();
+			if(!valueHaVipsHaVipTagsTag["Value"].isNull())
+				tagsObject.value = valueHaVipsHaVipTagsTag["Value"].asString();
+			haVipsObject.tags.push_back(tagsObject);
+		}
 		auto allAssociatedEipAddresses = value["AssociatedEipAddresses"]["associatedEipAddresse"];
 		for (auto value : allAssociatedEipAddresses)
 			haVipsObject.associatedEipAddresses.push_back(value.asString());

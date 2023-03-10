@@ -61,6 +61,15 @@ void CreateHaVipRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
+std::string CreateHaVipRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateHaVipRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateHaVipRequest::getRegionId() const {
   return regionId_;
 }

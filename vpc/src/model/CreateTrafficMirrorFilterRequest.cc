@@ -71,6 +71,15 @@ void CreateTrafficMirrorFilterRequest::setTrafficMirrorFilterName(const std::str
   setParameter(std::string("TrafficMirrorFilterName"), trafficMirrorFilterName);
 }
 
+std::string CreateTrafficMirrorFilterRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateTrafficMirrorFilterRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateTrafficMirrorFilterRequest::getRegionId() const {
   return regionId_;
 }

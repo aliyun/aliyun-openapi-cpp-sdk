@@ -65,6 +65,18 @@ void DescribeIpv6GatewaysResult::parse(const std::string &payload)
 			ipv6GatewaysObject.instanceChargeType = valueIpv6GatewaysIpv6Gateway["InstanceChargeType"].asString();
 		if(!valueIpv6GatewaysIpv6Gateway["RegionId"].isNull())
 			ipv6GatewaysObject.regionId = valueIpv6GatewaysIpv6Gateway["RegionId"].asString();
+		if(!valueIpv6GatewaysIpv6Gateway["ResourceGroupId"].isNull())
+			ipv6GatewaysObject.resourceGroupId = valueIpv6GatewaysIpv6Gateway["ResourceGroupId"].asString();
+		auto allTagsNode = valueIpv6GatewaysIpv6Gateway["Tags"]["Tag"];
+		for (auto valueIpv6GatewaysIpv6GatewayTagsTag : allTagsNode)
+		{
+			Ipv6Gateway::Tag tagsObject;
+			if(!valueIpv6GatewaysIpv6GatewayTagsTag["Key"].isNull())
+				tagsObject.key = valueIpv6GatewaysIpv6GatewayTagsTag["Key"].asString();
+			if(!valueIpv6GatewaysIpv6GatewayTagsTag["Value"].isNull())
+				tagsObject.value = valueIpv6GatewaysIpv6GatewayTagsTag["Value"].asString();
+			ipv6GatewaysObject.tags.push_back(tagsObject);
+		}
 		ipv6Gateways_.push_back(ipv6GatewaysObject);
 	}
 	if(!value["PageSize"].isNull())

@@ -49,6 +49,16 @@ void DescribeVSwitchAttributesResult::parse(const std::string &payload)
 			cloudResourcesObject.resourceType = valueCloudResourcesCloudResourceSetType["ResourceType"].asString();
 		cloudResources_.push_back(cloudResourcesObject);
 	}
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
+	{
+		Tag tagsObject;
+		if(!valueTagsTag["Key"].isNull())
+			tagsObject.key = valueTagsTag["Key"].asString();
+		if(!valueTagsTag["Value"].isNull())
+			tagsObject.value = valueTagsTag["Value"].asString();
+		tags_.push_back(tagsObject);
+	}
 	auto routeTableNode = value["RouteTable"];
 	if(!routeTableNode["RouteTableId"].isNull())
 		routeTable_.routeTableId = routeTableNode["RouteTableId"].asString();
@@ -165,6 +175,11 @@ std::string DescribeVSwitchAttributesResult::getIpv6CidrBlock()const
 std::vector<DescribeVSwitchAttributesResult::CloudResourceSetType> DescribeVSwitchAttributesResult::getCloudResources()const
 {
 	return cloudResources_;
+}
+
+std::vector<DescribeVSwitchAttributesResult::Tag> DescribeVSwitchAttributesResult::getTags()const
+{
+	return tags_;
 }
 
 std::string DescribeVSwitchAttributesResult::getShareType()const

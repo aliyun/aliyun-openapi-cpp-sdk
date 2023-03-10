@@ -43,6 +43,15 @@ void CreateFlowLogRequest::setDescription(const std::string &description) {
   setParameter(std::string("Description"), description);
 }
 
+std::string CreateFlowLogRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateFlowLogRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateFlowLogRequest::getRegionId() const {
   return regionId_;
 }

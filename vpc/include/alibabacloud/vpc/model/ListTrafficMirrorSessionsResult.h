@@ -34,7 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct TrafficMirrorSession
 				{
+					struct Tag
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string trafficMirrorTargetId;
+					std::string resourceGroupId;
 					int virtualNetworkId;
 					int priority;
 					std::string trafficMirrorSessionBusinessStatus;
@@ -46,6 +52,7 @@ namespace AlibabaCloud
 					std::string trafficMirrorSessionStatus;
 					std::string trafficMirrorSessionDescription;
 					std::string trafficMirrorSessionName;
+					std::vector<TrafficMirrorSession::Tag> tags;
 					std::string trafficMirrorTargetType;
 				};
 

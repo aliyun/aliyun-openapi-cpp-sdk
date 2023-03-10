@@ -38,6 +38,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getIpv4GatewayName() const;
 	void setIpv4GatewayName(const std::string &ipv4GatewayName);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	bool getDryRun() const;
@@ -56,6 +58,7 @@ private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	std::string ipv4GatewayName_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;

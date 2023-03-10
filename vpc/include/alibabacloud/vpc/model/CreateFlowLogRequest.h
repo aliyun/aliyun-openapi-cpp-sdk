@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getResourceId() const;
@@ -62,6 +64,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string description_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string resourceId_;
 	std::string projectName_;

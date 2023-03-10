@@ -105,6 +105,10 @@ set(vpc_public_header_model
 	include/alibabacloud/vpc/model/CreateCommonBandwidthPackageResult.h
 	include/alibabacloud/vpc/model/CreateCustomerGatewayRequest.h
 	include/alibabacloud/vpc/model/CreateCustomerGatewayResult.h
+	include/alibabacloud/vpc/model/CreateDefaultVSwitchRequest.h
+	include/alibabacloud/vpc/model/CreateDefaultVSwitchResult.h
+	include/alibabacloud/vpc/model/CreateDefaultVpcRequest.h
+	include/alibabacloud/vpc/model/CreateDefaultVpcResult.h
 	include/alibabacloud/vpc/model/CreateDhcpOptionsSetRequest.h
 	include/alibabacloud/vpc/model/CreateDhcpOptionsSetResult.h
 	include/alibabacloud/vpc/model/CreateExpressCloudConnectionRequest.h
@@ -804,6 +808,10 @@ set(vpc_src
 	src/model/CreateCommonBandwidthPackageResult.cc
 	src/model/CreateCustomerGatewayRequest.cc
 	src/model/CreateCustomerGatewayResult.cc
+	src/model/CreateDefaultVSwitchRequest.cc
+	src/model/CreateDefaultVSwitchResult.cc
+	src/model/CreateDefaultVpcRequest.cc
+	src/model/CreateDefaultVpcResult.cc
 	src/model/CreateDhcpOptionsSetRequest.cc
 	src/model/CreateDhcpOptionsSetResult.cc
 	src/model/CreateExpressCloudConnectionRequest.cc

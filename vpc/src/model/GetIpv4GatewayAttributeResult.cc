@@ -39,6 +39,16 @@ void GetIpv4GatewayAttributeResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allTagsNode = value["Tags"]["Tag"];
+	for (auto valueTagsTag : allTagsNode)
+	{
+		Tag tagsObject;
+		if(!valueTagsTag["Key"].isNull())
+			tagsObject.key = valueTagsTag["Key"].asString();
+		if(!valueTagsTag["Value"].isNull())
+			tagsObject.value = valueTagsTag["Value"].asString();
+		tags_.push_back(tagsObject);
+	}
 	if(!value["VpcId"].isNull())
 		vpcId_ = value["VpcId"].asString();
 	if(!value["Status"].isNull())
@@ -55,6 +65,8 @@ void GetIpv4GatewayAttributeResult::parse(const std::string &payload)
 		ipv4GatewayName_ = value["Ipv4GatewayName"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = value["CreateTime"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -83,6 +95,11 @@ std::string GetIpv4GatewayAttributeResult::getIpv4GatewayId()const
 	return ipv4GatewayId_;
 }
 
+std::string GetIpv4GatewayAttributeResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
 std::string GetIpv4GatewayAttributeResult::getCreateTime()const
 {
 	return createTime_;
@@ -91,6 +108,11 @@ std::string GetIpv4GatewayAttributeResult::getCreateTime()const
 bool GetIpv4GatewayAttributeResult::getEnabled()const
 {
 	return enabled_;
+}
+
+std::vector<GetIpv4GatewayAttributeResult::Tag> GetIpv4GatewayAttributeResult::getTags()const
+{
+	return tags_;
 }
 
 std::string GetIpv4GatewayAttributeResult::getIpv4GatewayDescription()const

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_VPC_MODEL_CREATETRAFFICMIRRORFILTERRESULT_H_
-#define ALIBABACLOUD_VPC_MODEL_CREATETRAFFICMIRRORFILTERRESULT_H_
+#ifndef ALIBABACLOUD_VPC_MODEL_CREATEDEFAULTVPCRESULT_H_
+#define ALIBABACLOUD_VPC_MODEL_CREATEDEFAULTVPCRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_VPC_EXPORT CreateTrafficMirrorFilterResult : public ServiceResult
+			class ALIBABACLOUD_VPC_EXPORT CreateDefaultVpcResult : public ServiceResult
 			{
 			public:
+				struct DefaultVSwitch
+				{
+					std::string zoneId;
+					std::string vSwitchId;
+				};
 
 
-				CreateTrafficMirrorFilterResult();
-				explicit CreateTrafficMirrorFilterResult(const std::string &payload);
-				~CreateTrafficMirrorFilterResult();
-				std::string getResourceGroupId()const;
-				std::string getTrafficMirrorFilterId()const;
+				CreateDefaultVpcResult();
+				explicit CreateDefaultVpcResult(const std::string &payload);
+				~CreateDefaultVpcResult();
+				std::string getVRouterId()const;
+				std::vector<DefaultVSwitch> getDefaultVSwitchs()const;
+				std::string getRouteTableId()const;
+				std::string getVpcId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string resourceGroupId_;
-				std::string trafficMirrorFilterId_;
+				std::string vRouterId_;
+				std::vector<DefaultVSwitch> defaultVSwitchs_;
+				std::string routeTableId_;
+				std::string vpcId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_VPC_MODEL_CREATETRAFFICMIRRORFILTERRESULT_H_
+#endif // !ALIBABACLOUD_VPC_MODEL_CREATEDEFAULTVPCRESULT_H_
