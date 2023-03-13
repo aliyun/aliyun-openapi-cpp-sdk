@@ -3003,6 +3003,42 @@ CbnClient::GrantInstanceToTransitRouterOutcomeCallable CbnClient::grantInstanceT
 	return task->get_future();
 }
 
+CbnClient::ListCenChildInstanceRouteEntriesToAttachmentOutcome CbnClient::listCenChildInstanceRouteEntriesToAttachment(const ListCenChildInstanceRouteEntriesToAttachmentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCenChildInstanceRouteEntriesToAttachmentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCenChildInstanceRouteEntriesToAttachmentOutcome(ListCenChildInstanceRouteEntriesToAttachmentResult(outcome.result()));
+	else
+		return ListCenChildInstanceRouteEntriesToAttachmentOutcome(outcome.error());
+}
+
+void CbnClient::listCenChildInstanceRouteEntriesToAttachmentAsync(const ListCenChildInstanceRouteEntriesToAttachmentRequest& request, const ListCenChildInstanceRouteEntriesToAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCenChildInstanceRouteEntriesToAttachment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CbnClient::ListCenChildInstanceRouteEntriesToAttachmentOutcomeCallable CbnClient::listCenChildInstanceRouteEntriesToAttachmentCallable(const ListCenChildInstanceRouteEntriesToAttachmentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCenChildInstanceRouteEntriesToAttachmentOutcome()>>(
+			[this, request]()
+			{
+			return this->listCenChildInstanceRouteEntriesToAttachment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CbnClient::ListCenInterRegionTrafficQosPoliciesOutcome CbnClient::listCenInterRegionTrafficQosPolicies(const ListCenInterRegionTrafficQosPoliciesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::string getNextHopInstanceId() const;
+	void setNextHopInstanceId(const std::string &nextHopInstanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getPrefixListId() const;
@@ -58,10 +60,13 @@ public:
 	void setVersion(const std::string &version);
 	std::string getNextHop() const;
 	void setNextHop(const std::string &nextHop);
+	std::string getStatus() const;
+	void setStatus(const std::string &status);
 
 private:
 	long resourceOwnerId_;
 	int pageNumber_;
+	std::string nextHopInstanceId_;
 	std::string regionId_;
 	std::string prefixListId_;
 	int pageSize_;
@@ -74,6 +79,7 @@ private:
 	std::string transitRouterTableId_;
 	std::string version_;
 	std::string nextHop_;
+	std::string status_;
 };
 } // namespace Model
 } // namespace Cbn

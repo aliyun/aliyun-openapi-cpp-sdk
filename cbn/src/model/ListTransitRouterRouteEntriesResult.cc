@@ -65,6 +65,16 @@ void ListTransitRouterRouteEntriesResult::parse(const std::string &payload)
 			transitRouterRouteEntriesObject.operationalMode = valueTransitRouterRouteEntriesTransitRouterRouteEntry["OperationalMode"].asString() == "true";
 		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["Tag"].isNull())
 			transitRouterRouteEntriesObject.tag = valueTransitRouterRouteEntriesTransitRouterRouteEntry["Tag"].asString();
+		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryNextHopResourceId"].isNull())
+			transitRouterRouteEntriesObject.transitRouterRouteEntryNextHopResourceId = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryNextHopResourceId"].asString();
+		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryNextHopResourceType"].isNull())
+			transitRouterRouteEntriesObject.transitRouterRouteEntryNextHopResourceType = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryNextHopResourceType"].asString();
+		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryOriginResourceType"].isNull())
+			transitRouterRouteEntriesObject.transitRouterRouteEntryOriginResourceType = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryOriginResourceType"].asString();
+		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryOriginResourceId"].isNull())
+			transitRouterRouteEntriesObject.transitRouterRouteEntryOriginResourceId = valueTransitRouterRouteEntriesTransitRouterRouteEntry["TransitRouterRouteEntryOriginResourceId"].asString();
+		if(!valueTransitRouterRouteEntriesTransitRouterRouteEntry["PrefixListId"].isNull())
+			transitRouterRouteEntriesObject.prefixListId = valueTransitRouterRouteEntriesTransitRouterRouteEntry["PrefixListId"].asString();
 		transitRouterRouteEntries_.push_back(transitRouterRouteEntriesObject);
 	}
 	if(!value["NextToken"].isNull())

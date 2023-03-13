@@ -67,6 +67,8 @@ void ListTransitRouterVpnAttachmentsResult::parse(const std::string &payload)
 			transitRouterAttachmentsObject.transitRouterAttachmentName = valueTransitRouterAttachmentsTransitRouterAttachment["TransitRouterAttachmentName"].asString();
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["ChargeType"].isNull())
 			transitRouterAttachmentsObject.chargeType = valueTransitRouterAttachmentsTransitRouterAttachment["ChargeType"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["CenId"].isNull())
+			transitRouterAttachmentsObject.cenId = valueTransitRouterAttachmentsTransitRouterAttachment["CenId"].asString();
 		auto allZonesNode = valueTransitRouterAttachmentsTransitRouterAttachment["Zones"]["ZoneMapping"];
 		for (auto valueTransitRouterAttachmentsTransitRouterAttachmentZonesZoneMapping : allZonesNode)
 		{

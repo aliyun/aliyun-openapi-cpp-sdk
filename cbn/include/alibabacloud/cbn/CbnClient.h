@@ -186,6 +186,8 @@
 #include "model/EnableTransitRouterRouteTablePropagationResult.h"
 #include "model/GrantInstanceToTransitRouterRequest.h"
 #include "model/GrantInstanceToTransitRouterResult.h"
+#include "model/ListCenChildInstanceRouteEntriesToAttachmentRequest.h"
+#include "model/ListCenChildInstanceRouteEntriesToAttachmentResult.h"
 #include "model/ListCenInterRegionTrafficQosPoliciesRequest.h"
 #include "model/ListCenInterRegionTrafficQosPoliciesResult.h"
 #include "model/ListCenInterRegionTrafficQosQueuesRequest.h"
@@ -561,6 +563,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GrantInstanceToTransitRouterResult> GrantInstanceToTransitRouterOutcome;
 			typedef std::future<GrantInstanceToTransitRouterOutcome> GrantInstanceToTransitRouterOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::GrantInstanceToTransitRouterRequest&, const GrantInstanceToTransitRouterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GrantInstanceToTransitRouterAsyncHandler;
+			typedef Outcome<Error, Model::ListCenChildInstanceRouteEntriesToAttachmentResult> ListCenChildInstanceRouteEntriesToAttachmentOutcome;
+			typedef std::future<ListCenChildInstanceRouteEntriesToAttachmentOutcome> ListCenChildInstanceRouteEntriesToAttachmentOutcomeCallable;
+			typedef std::function<void(const CbnClient*, const Model::ListCenChildInstanceRouteEntriesToAttachmentRequest&, const ListCenChildInstanceRouteEntriesToAttachmentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCenChildInstanceRouteEntriesToAttachmentAsyncHandler;
 			typedef Outcome<Error, Model::ListCenInterRegionTrafficQosPoliciesResult> ListCenInterRegionTrafficQosPoliciesOutcome;
 			typedef std::future<ListCenInterRegionTrafficQosPoliciesOutcome> ListCenInterRegionTrafficQosPoliciesOutcomeCallable;
 			typedef std::function<void(const CbnClient*, const Model::ListCenInterRegionTrafficQosPoliciesRequest&, const ListCenInterRegionTrafficQosPoliciesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCenInterRegionTrafficQosPoliciesAsyncHandler;
@@ -992,6 +997,9 @@ namespace AlibabaCloud
 			GrantInstanceToTransitRouterOutcome grantInstanceToTransitRouter(const Model::GrantInstanceToTransitRouterRequest &request)const;
 			void grantInstanceToTransitRouterAsync(const Model::GrantInstanceToTransitRouterRequest& request, const GrantInstanceToTransitRouterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GrantInstanceToTransitRouterOutcomeCallable grantInstanceToTransitRouterCallable(const Model::GrantInstanceToTransitRouterRequest& request) const;
+			ListCenChildInstanceRouteEntriesToAttachmentOutcome listCenChildInstanceRouteEntriesToAttachment(const Model::ListCenChildInstanceRouteEntriesToAttachmentRequest &request)const;
+			void listCenChildInstanceRouteEntriesToAttachmentAsync(const Model::ListCenChildInstanceRouteEntriesToAttachmentRequest& request, const ListCenChildInstanceRouteEntriesToAttachmentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCenChildInstanceRouteEntriesToAttachmentOutcomeCallable listCenChildInstanceRouteEntriesToAttachmentCallable(const Model::ListCenChildInstanceRouteEntriesToAttachmentRequest& request) const;
 			ListCenInterRegionTrafficQosPoliciesOutcome listCenInterRegionTrafficQosPolicies(const Model::ListCenInterRegionTrafficQosPoliciesRequest &request)const;
 			void listCenInterRegionTrafficQosPoliciesAsync(const Model::ListCenInterRegionTrafficQosPoliciesRequest& request, const ListCenInterRegionTrafficQosPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListCenInterRegionTrafficQosPoliciesOutcomeCallable listCenInterRegionTrafficQosPoliciesCallable(const Model::ListCenInterRegionTrafficQosPoliciesRequest& request) const;

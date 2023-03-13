@@ -41,13 +41,14 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string transitRouterAttachmentId;
-					bool autoPublishRouteEnabled;
-					long vbrOwnerId;
-					std::string creationTime;
 					std::string transitRouterAttachmentName;
 					std::string resourceType;
 					std::string vbrRegionId;
 					std::string vbrId;
+					bool autoPublishRouteEnabled;
+					long vbrOwnerId;
+					std::string creationTime;
+					std::string cenId;
 					std::vector<TransitRouterAttachment::Tag> tags;
 					std::string transitRouterAttachmentDescription;
 					std::string transitRouterId;

@@ -53,6 +53,7 @@ namespace AlibabaCloud
 					std::string vpnRegionId;
 					std::string chargeType;
 					std::string creationTime;
+					std::string cenId;
 					std::vector<TransitRouterAttachment::Tag> tags;
 					std::string transitRouterAttachmentDescription;
 					std::string transitRouterId;

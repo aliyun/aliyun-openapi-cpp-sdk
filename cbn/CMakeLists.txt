@@ -185,6 +185,8 @@ set(cbn_public_header_model
 	include/alibabacloud/cbn/model/EnableTransitRouterRouteTablePropagationResult.h
 	include/alibabacloud/cbn/model/GrantInstanceToTransitRouterRequest.h
 	include/alibabacloud/cbn/model/GrantInstanceToTransitRouterResult.h
+	include/alibabacloud/cbn/model/ListCenChildInstanceRouteEntriesToAttachmentRequest.h
+	include/alibabacloud/cbn/model/ListCenChildInstanceRouteEntriesToAttachmentResult.h
 	include/alibabacloud/cbn/model/ListCenInterRegionTrafficQosPoliciesRequest.h
 	include/alibabacloud/cbn/model/ListCenInterRegionTrafficQosPoliciesResult.h
 	include/alibabacloud/cbn/model/ListCenInterRegionTrafficQosQueuesRequest.h
@@ -472,6 +474,8 @@ set(cbn_src
 	src/model/EnableTransitRouterRouteTablePropagationResult.cc
 	src/model/GrantInstanceToTransitRouterRequest.cc
 	src/model/GrantInstanceToTransitRouterResult.cc
+	src/model/ListCenChildInstanceRouteEntriesToAttachmentRequest.cc
+	src/model/ListCenChildInstanceRouteEntriesToAttachmentResult.cc
 	src/model/ListCenInterRegionTrafficQosPoliciesRequest.cc
 	src/model/ListCenInterRegionTrafficQosPoliciesResult.cc
 	src/model/ListCenInterRegionTrafficQosQueuesRequest.cc

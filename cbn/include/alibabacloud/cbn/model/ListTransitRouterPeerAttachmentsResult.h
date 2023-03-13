@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					bool autoPublishRouteEnabled;
 					int bandwidth;
 					std::string creationTime;
+					std::string cenId;
 					std::string bandwidthPackageId;
 					std::string regionId;
 					std::string peerTransitRouterId;

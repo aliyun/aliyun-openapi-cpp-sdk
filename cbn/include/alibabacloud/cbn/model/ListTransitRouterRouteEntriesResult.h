@@ -34,15 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct TransitRouterRouteEntry
 				{
-					std::string transitRouterRouteEntryDestinationCidrBlock;
+					std::string transitRouterRouteEntryOriginResourceType;
 					std::string transitRouterRouteEntryNextHopId;
-					std::string transitRouterRouteEntryType;
-					std::string transitRouterRouteEntryDescription;
+					std::string transitRouterRouteEntryOriginResourceId;
+					std::string prefixListId;
 					std::string createTime;
 					std::string transitRouterRouteEntryNextHopType;
+					bool operationalMode;
+					std::string transitRouterRouteEntryDestinationCidrBlock;
+					std::string transitRouterRouteEntryNextHopResourceId;
+					std::string transitRouterRouteEntryNextHopResourceType;
+					std::string transitRouterRouteEntryType;
+					std::string transitRouterRouteEntryDescription;
 					std::string transitRouterRouteEntryName;
 					std::string tag;
-					bool operationalMode;
 					std::string transitRouterRouteEntryId;
 					std::string transitRouterRouteEntryStatus;
 				};

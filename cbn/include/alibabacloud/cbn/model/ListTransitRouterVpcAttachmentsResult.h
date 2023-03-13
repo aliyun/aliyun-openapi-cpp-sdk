@@ -57,6 +57,7 @@ namespace AlibabaCloud
 					std::string vpcId;
 					std::string chargeType;
 					std::string creationTime;
+					std::string cenId;
 					std::string vpcRegionId;
 					std::vector<TransitRouterAttachment::Tag> tags;
 					std::string transitRouterAttachmentDescription;

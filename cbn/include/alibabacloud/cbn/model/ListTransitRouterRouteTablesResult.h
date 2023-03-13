@@ -52,6 +52,7 @@ namespace AlibabaCloud
 					std::string regionId;
 					RouteTableOptions routeTableOptions;
 					std::vector<TransitRouterRouteTable::Tag> tags;
+					std::string transitRouterId;
 				};
 
 

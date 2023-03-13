@@ -25,6 +25,15 @@ ListTransitRouterRouteEntriesRequest::ListTransitRouterRouteEntriesRequest()
 
 ListTransitRouterRouteEntriesRequest::~ListTransitRouterRouteEntriesRequest() {}
 
+std::string ListTransitRouterRouteEntriesRequest::getTransitRouterRouteEntryType() const {
+  return transitRouterRouteEntryType_;
+}
+
+void ListTransitRouterRouteEntriesRequest::setTransitRouterRouteEntryType(const std::string &transitRouterRouteEntryType) {
+  transitRouterRouteEntryType_ = transitRouterRouteEntryType;
+  setParameter(std::string("TransitRouterRouteEntryType"), transitRouterRouteEntryType);
+}
+
 long ListTransitRouterRouteEntriesRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
@@ -32,6 +41,24 @@ long ListTransitRouterRouteEntriesRequest::getResourceOwnerId() const {
 void ListTransitRouterRouteEntriesRequest::setResourceOwnerId(long resourceOwnerId) {
   resourceOwnerId_ = resourceOwnerId;
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
+std::string ListTransitRouterRouteEntriesRequest::getTransitRouterRouteEntryNextHopResourceType() const {
+  return transitRouterRouteEntryNextHopResourceType_;
+}
+
+void ListTransitRouterRouteEntriesRequest::setTransitRouterRouteEntryNextHopResourceType(const std::string &transitRouterRouteEntryNextHopResourceType) {
+  transitRouterRouteEntryNextHopResourceType_ = transitRouterRouteEntryNextHopResourceType;
+  setParameter(std::string("TransitRouterRouteEntryNextHopResourceType"), transitRouterRouteEntryNextHopResourceType);
+}
+
+std::string ListTransitRouterRouteEntriesRequest::getTransitRouterRouteEntryNextHopType() const {
+  return transitRouterRouteEntryNextHopType_;
+}
+
+void ListTransitRouterRouteEntriesRequest::setTransitRouterRouteEntryNextHopType(const std::string &transitRouterRouteEntryNextHopType) {
+  transitRouterRouteEntryNextHopType_ = transitRouterRouteEntryNextHopType;
+  setParameter(std::string("TransitRouterRouteEntryNextHopType"), transitRouterRouteEntryNextHopType);
 }
 
 std::string ListTransitRouterRouteEntriesRequest::getTransitRouterRouteEntryDestinationCidrBlock() const {
@@ -61,6 +88,24 @@ void ListTransitRouterRouteEntriesRequest::setNextToken(const std::string &nextT
   setParameter(std::string("NextToken"), nextToken);
 }
 
+std::string ListTransitRouterRouteEntriesRequest::getPrefixListId() const {
+  return prefixListId_;
+}
+
+void ListTransitRouterRouteEntriesRequest::setPrefixListId(const std::string &prefixListId) {
+  prefixListId_ = prefixListId;
+  setParameter(std::string("PrefixListId"), prefixListId);
+}
+
+std::string ListTransitRouterRouteEntriesRequest::getTransitRouterRouteEntryNextHopId() const {
+  return transitRouterRouteEntryNextHopId_;
+}
+
+void ListTransitRouterRouteEntriesRequest::setTransitRouterRouteEntryNextHopId(const std::string &transitRouterRouteEntryNextHopId) {
+  transitRouterRouteEntryNextHopId_ = transitRouterRouteEntryNextHopId;
+  setParameter(std::string("TransitRouterRouteEntryNextHopId"), transitRouterRouteEntryNextHopId);
+}
+
 std::string ListTransitRouterRouteEntriesRequest::getTransitRouterRouteEntryStatus() const {
   return transitRouterRouteEntryStatus_;
 }
@@ -68,6 +113,19 @@ std::string ListTransitRouterRouteEntriesRequest::getTransitRouterRouteEntryStat
 void ListTransitRouterRouteEntriesRequest::setTransitRouterRouteEntryStatus(const std::string &transitRouterRouteEntryStatus) {
   transitRouterRouteEntryStatus_ = transitRouterRouteEntryStatus;
   setParameter(std::string("TransitRouterRouteEntryStatus"), transitRouterRouteEntryStatus);
+}
+
+std::vector<ListTransitRouterRouteEntriesRequest::RouteFilter> ListTransitRouterRouteEntriesRequest::getRouteFilter() const {
+  return routeFilter_;
+}
+
+void ListTransitRouterRouteEntriesRequest::setRouteFilter(const std::vector<ListTransitRouterRouteEntriesRequest::RouteFilter> &routeFilter) {
+  routeFilter_ = routeFilter;
+  for(int dep1 = 0; dep1 != routeFilter.size(); dep1++) {
+  auto routeFilterObj = routeFilter.at(dep1);
+  std::string routeFilterObjStr = std::string("RouteFilter") + "." + std::to_string(dep1 + 1);
+    setParameter(routeFilterObjStr + ".Key", routeFilterObj.key);
+  }
 }
 
 std::string ListTransitRouterRouteEntriesRequest::getResourceOwnerAccount() const {
@@ -122,6 +180,15 @@ void ListTransitRouterRouteEntriesRequest::setVersion(const std::string &version
   setParameter(std::string("Version"), version);
 }
 
+std::string ListTransitRouterRouteEntriesRequest::getTransitRouterRouteEntryOriginResourceType() const {
+  return transitRouterRouteEntryOriginResourceType_;
+}
+
+void ListTransitRouterRouteEntriesRequest::setTransitRouterRouteEntryOriginResourceType(const std::string &transitRouterRouteEntryOriginResourceType) {
+  transitRouterRouteEntryOriginResourceType_ = transitRouterRouteEntryOriginResourceType;
+  setParameter(std::string("TransitRouterRouteEntryOriginResourceType"), transitRouterRouteEntryOriginResourceType);
+}
+
 int ListTransitRouterRouteEntriesRequest::getMaxResults() const {
   return maxResults_;
 }
@@ -129,5 +196,23 @@ int ListTransitRouterRouteEntriesRequest::getMaxResults() const {
 void ListTransitRouterRouteEntriesRequest::setMaxResults(int maxResults) {
   maxResults_ = maxResults;
   setParameter(std::string("MaxResults"), std::to_string(maxResults));
+}
+
+std::string ListTransitRouterRouteEntriesRequest::getTransitRouterRouteEntryOriginResourceId() const {
+  return transitRouterRouteEntryOriginResourceId_;
+}
+
+void ListTransitRouterRouteEntriesRequest::setTransitRouterRouteEntryOriginResourceId(const std::string &transitRouterRouteEntryOriginResourceId) {
+  transitRouterRouteEntryOriginResourceId_ = transitRouterRouteEntryOriginResourceId;
+  setParameter(std::string("TransitRouterRouteEntryOriginResourceId"), transitRouterRouteEntryOriginResourceId);
+}
+
+std::string ListTransitRouterRouteEntriesRequest::getTransitRouterRouteEntryNextHopResourceId() const {
+  return transitRouterRouteEntryNextHopResourceId_;
+}
+
+void ListTransitRouterRouteEntriesRequest::setTransitRouterRouteEntryNextHopResourceId(const std::string &transitRouterRouteEntryNextHopResourceId) {
+  transitRouterRouteEntryNextHopResourceId_ = transitRouterRouteEntryNextHopResourceId;
+  setParameter(std::string("TransitRouterRouteEntryNextHopResourceId"), transitRouterRouteEntryNextHopResourceId);
 }
 

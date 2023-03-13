@@ -49,6 +49,8 @@ void ListGrantVSwitchesToCenResult::parse(const std::string &payload)
 			vSwitchesObject.zoneId = valueVSwitchesVSwitch["ZoneId"].asString();
 		if(!valueVSwitchesVSwitch["VSwitchId"].isNull())
 			vSwitchesObject.vSwitchId = valueVSwitchesVSwitch["VSwitchId"].asString();
+		if(!valueVSwitchesVSwitch["VSwitchName"].isNull())
+			vSwitchesObject.vSwitchName = valueVSwitchesVSwitch["VSwitchName"].asString();
 		vSwitches_.push_back(vSwitchesObject);
 	}
 	if(!value["PageSize"].isNull())

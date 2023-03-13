@@ -71,6 +71,8 @@ void ListTransitRouterVpcAttachmentsResult::parse(const std::string &payload)
 			transitRouterAttachmentsObject.chargeType = valueTransitRouterAttachmentsTransitRouterAttachment["ChargeType"].asString();
 		if(!valueTransitRouterAttachmentsTransitRouterAttachment["OrderType"].isNull())
 			transitRouterAttachmentsObject.orderType = valueTransitRouterAttachmentsTransitRouterAttachment["OrderType"].asString();
+		if(!valueTransitRouterAttachmentsTransitRouterAttachment["CenId"].isNull())
+			transitRouterAttachmentsObject.cenId = valueTransitRouterAttachmentsTransitRouterAttachment["CenId"].asString();
 		auto allZoneMappingsNode = valueTransitRouterAttachmentsTransitRouterAttachment["ZoneMappings"]["ZoneMapping"];
 		for (auto valueTransitRouterAttachmentsTransitRouterAttachmentZoneMappingsZoneMapping : allZoneMappingsNode)
 		{

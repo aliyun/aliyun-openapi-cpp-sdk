@@ -48,12 +48,19 @@ void ListTransitRouterAvailableResourceResult::parse(const std::string &payload)
 	auto allAvailableZones = value["AvailableZones"]["AvailableZone"];
 	for (const auto &item : allAvailableZones)
 		availableZones_.push_back(item.asString());
+	if(!value["SupportMulticast"].isNull())
+		supportMulticast_ = value["SupportMulticast"].asString() == "true";
 
 }
 
 std::vector<std::string> ListTransitRouterAvailableResourceResult::getSlaveZones()const
 {
 	return slaveZones_;
+}
+
+bool ListTransitRouterAvailableResourceResult::getSupportMulticast()const
+{
+	return supportMulticast_;
 }
 
 std::vector<std::string> ListTransitRouterAvailableResourceResult::getMasterZones()const

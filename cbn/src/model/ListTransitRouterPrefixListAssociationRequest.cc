@@ -43,6 +43,15 @@ void ListTransitRouterPrefixListAssociationRequest::setPageNumber(int pageNumber
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
+std::string ListTransitRouterPrefixListAssociationRequest::getNextHopInstanceId() const {
+  return nextHopInstanceId_;
+}
+
+void ListTransitRouterPrefixListAssociationRequest::setNextHopInstanceId(const std::string &nextHopInstanceId) {
+  nextHopInstanceId_ = nextHopInstanceId;
+  setParameter(std::string("NextHopInstanceId"), nextHopInstanceId);
+}
+
 std::string ListTransitRouterPrefixListAssociationRequest::getRegionId() const {
   return regionId_;
 }
@@ -149,5 +158,14 @@ std::string ListTransitRouterPrefixListAssociationRequest::getNextHop() const {
 void ListTransitRouterPrefixListAssociationRequest::setNextHop(const std::string &nextHop) {
   nextHop_ = nextHop;
   setParameter(std::string("NextHop"), nextHop);
+}
+
+std::string ListTransitRouterPrefixListAssociationRequest::getStatus() const {
+  return status_;
+}
+
+void ListTransitRouterPrefixListAssociationRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
 }
 

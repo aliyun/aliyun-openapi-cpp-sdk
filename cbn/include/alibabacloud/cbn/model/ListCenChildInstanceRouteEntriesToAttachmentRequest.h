@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CBN_MODEL_DELETETRANSITROUTERPEERATTACHMENTREQUEST_H_
-#define ALIBABACLOUD_CBN_MODEL_DELETETRANSITROUTERPEERATTACHMENTREQUEST_H_
+#ifndef ALIBABACLOUD_CBN_MODEL_LISTCENCHILDINSTANCEROUTEENTRIESTOATTACHMENTREQUEST_H_
+#define ALIBABACLOUD_CBN_MODEL_LISTCENCHILDINSTANCEROUTEENTRIESTOATTACHMENTREQUEST_H_
 
 #include <alibabacloud/cbn/CbnExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,44 +26,53 @@
 namespace AlibabaCloud {
 namespace Cbn {
 namespace Model {
-class ALIBABACLOUD_CBN_EXPORT DeleteTransitRouterPeerAttachmentRequest : public RpcServiceRequest {
+class ALIBABACLOUD_CBN_EXPORT ListCenChildInstanceRouteEntriesToAttachmentRequest : public RpcServiceRequest {
 public:
-	DeleteTransitRouterPeerAttachmentRequest();
-	~DeleteTransitRouterPeerAttachmentRequest();
+	struct RouteFilter {
+		std::string key;
+	};
+	ListCenChildInstanceRouteEntriesToAttachmentRequest();
+	~ListCenChildInstanceRouteEntriesToAttachmentRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getClientToken() const;
-	void setClientToken(const std::string &clientToken);
-	bool getDryRun() const;
-	void setDryRun(bool dryRun);
+	std::string getCenId() const;
+	void setCenId(const std::string &cenId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	std::vector<RouteFilter> getRouteFilter() const;
+	void setRouteFilter(const std::vector<RouteFilter> &routeFilter);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getResourceType() const;
-	void setResourceType(const std::string &resourceType);
 	std::string getVersion() const;
 	void setVersion(const std::string &version);
 	std::string getTransitRouterAttachmentId() const;
 	void setTransitRouterAttachmentId(const std::string &transitRouterAttachmentId);
-	bool getForce() const;
-	void setForce(bool force);
+	std::string getServiceType() const;
+	void setServiceType(const std::string &serviceType);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
+	std::string getChildInstanceRouteTableId() const;
+	void setChildInstanceRouteTableId(const std::string &childInstanceRouteTableId);
 
 private:
 	long resourceOwnerId_;
-	std::string clientToken_;
-	bool dryRun_;
+	std::string cenId_;
+	std::string nextToken_;
+	std::vector<RouteFilter> routeFilter_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string resourceType_;
 	std::string version_;
 	std::string transitRouterAttachmentId_;
-	bool force_;
+	std::string serviceType_;
+	int maxResults_;
+	std::string childInstanceRouteTableId_;
 };
 } // namespace Model
 } // namespace Cbn
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_CBN_MODEL_DELETETRANSITROUTERPEERATTACHMENTREQUEST_H_
+#endif // !ALIBABACLOUD_CBN_MODEL_LISTCENCHILDINSTANCEROUTEENTRIESTOATTACHMENTREQUEST_H_

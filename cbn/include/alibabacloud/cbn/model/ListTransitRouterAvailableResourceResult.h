@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit ListTransitRouterAvailableResourceResult(const std::string &payload);
 				~ListTransitRouterAvailableResourceResult();
 				std::vector<std::string> getSlaveZones()const;
+				bool getSupportMulticast()const;
 				std::vector<std::string> getMasterZones()const;
 				std::vector<std::string> getAvailableZones()const;
 
@@ -45,6 +46,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::vector<std::string> slaveZones_;
+				bool supportMulticast_;
 				std::vector<std::string> masterZones_;
 				std::vector<std::string> availableZones_;
 
