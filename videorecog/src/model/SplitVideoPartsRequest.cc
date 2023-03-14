@@ -34,6 +34,24 @@ void SplitVideoPartsRequest::set_Template(const std::string &_template) {
   setBodyParameter(std::string("Template"), _template);
 }
 
+int SplitVideoPartsRequest::getMinTime() const {
+  return minTime_;
+}
+
+void SplitVideoPartsRequest::setMinTime(int minTime) {
+  minTime_ = minTime;
+  setBodyParameter(std::string("MinTime"), std::to_string(minTime));
+}
+
+int SplitVideoPartsRequest::getMaxTime() const {
+  return maxTime_;
+}
+
+void SplitVideoPartsRequest::setMaxTime(int maxTime) {
+  maxTime_ = maxTime;
+  setBodyParameter(std::string("MaxTime"), std::to_string(maxTime));
+}
+
 bool SplitVideoPartsRequest::getAsync() const {
   return async_;
 }

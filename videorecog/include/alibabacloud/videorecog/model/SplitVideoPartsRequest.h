@@ -32,6 +32,10 @@ public:
 	~SplitVideoPartsRequest();
 	std::string get_Template() const;
 	void set_Template(const std::string &_template);
+	int getMinTime() const;
+	void setMinTime(int minTime);
+	int getMaxTime() const;
+	void setMaxTime(int maxTime);
 	bool getAsync() const;
 	void setAsync(bool async);
 	std::string getVideoUrl() const;
@@ -39,6 +43,8 @@ public:
 
 private:
 	std::string _template_;
+	int minTime_;
+	int maxTime_;
 	bool async_;
 	std::string videoUrl_;
 };
