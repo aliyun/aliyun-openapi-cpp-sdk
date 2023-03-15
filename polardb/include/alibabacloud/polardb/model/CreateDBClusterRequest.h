@@ -38,6 +38,10 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getDBClusterDescription() const;
 	void setDBClusterDescription(const std::string &dBClusterDescription);
+	std::string getProxyClass() const;
+	void setProxyClass(const std::string &proxyClass);
+	std::string getProxyType() const;
+	void setProxyType(const std::string &proxyType);
 	std::string getScaleMax() const;
 	void setScaleMax(const std::string &scaleMax);
 	std::string getStorageType() const;
@@ -104,6 +108,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	std::string getUsedTime() const;
 	void setUsedTime(const std::string &usedTime);
+	int getDBNodeNum() const;
+	void setDBNodeNum(int dBNodeNum);
 	std::string getVPCId() const;
 	void setVPCId(const std::string &vPCId);
 	std::string getScaleRoNumMin() const;
@@ -124,6 +130,8 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string dBClusterDescription_;
+	std::string proxyClass_;
+	std::string proxyType_;
 	std::string scaleMax_;
 	std::string storageType_;
 	std::string creationCategory_;
@@ -157,6 +165,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string usedTime_;
+	int dBNodeNum_;
 	std::string vPCId_;
 	std::string scaleRoNumMin_;
 	std::string dBType_;

@@ -43,6 +43,24 @@ void CreateDBClusterRequest::setDBClusterDescription(const std::string &dBCluste
   setParameter(std::string("DBClusterDescription"), dBClusterDescription);
 }
 
+std::string CreateDBClusterRequest::getProxyClass() const {
+  return proxyClass_;
+}
+
+void CreateDBClusterRequest::setProxyClass(const std::string &proxyClass) {
+  proxyClass_ = proxyClass;
+  setParameter(std::string("ProxyClass"), proxyClass);
+}
+
+std::string CreateDBClusterRequest::getProxyType() const {
+  return proxyType_;
+}
+
+void CreateDBClusterRequest::setProxyType(const std::string &proxyType) {
+  proxyType_ = proxyType;
+  setParameter(std::string("ProxyType"), proxyType);
+}
+
 std::string CreateDBClusterRequest::getScaleMax() const {
   return scaleMax_;
 }
@@ -343,6 +361,15 @@ std::string CreateDBClusterRequest::getUsedTime() const {
 void CreateDBClusterRequest::setUsedTime(const std::string &usedTime) {
   usedTime_ = usedTime;
   setParameter(std::string("UsedTime"), usedTime);
+}
+
+int CreateDBClusterRequest::getDBNodeNum() const {
+  return dBNodeNum_;
+}
+
+void CreateDBClusterRequest::setDBNodeNum(int dBNodeNum) {
+  dBNodeNum_ = dBNodeNum;
+  setParameter(std::string("DBNodeNum"), std::to_string(dBNodeNum));
 }
 
 std::string CreateDBClusterRequest::getVPCId() const {
