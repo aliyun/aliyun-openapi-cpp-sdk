@@ -339,42 +339,6 @@ ImagerecogClient::RecognizeImageStyleOutcomeCallable ImagerecogClient::recognize
 	return task->get_future();
 }
 
-ImagerecogClient::RecognizeLogoOutcome ImagerecogClient::recognizeLogo(const RecognizeLogoRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizeLogoOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizeLogoOutcome(RecognizeLogoResult(outcome.result()));
-	else
-		return RecognizeLogoOutcome(outcome.error());
-}
-
-void ImagerecogClient::recognizeLogoAsync(const RecognizeLogoRequest& request, const RecognizeLogoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizeLogo(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImagerecogClient::RecognizeLogoOutcomeCallable ImagerecogClient::recognizeLogoCallable(const RecognizeLogoRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizeLogoOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizeLogo(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImagerecogClient::RecognizeSceneOutcome ImagerecogClient::recognizeScene(const RecognizeSceneRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

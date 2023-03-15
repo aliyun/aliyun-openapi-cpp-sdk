@@ -38,8 +38,6 @@
 #include "model/RecognizeImageColorResult.h"
 #include "model/RecognizeImageStyleRequest.h"
 #include "model/RecognizeImageStyleResult.h"
-#include "model/RecognizeLogoRequest.h"
-#include "model/RecognizeLogoResult.h"
 #include "model/RecognizeSceneRequest.h"
 #include "model/RecognizeSceneResult.h"
 #include "model/RecognizeVehicleTypeRequest.h"
@@ -81,9 +79,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RecognizeImageStyleResult> RecognizeImageStyleOutcome;
 			typedef std::future<RecognizeImageStyleOutcome> RecognizeImageStyleOutcomeCallable;
 			typedef std::function<void(const ImagerecogClient*, const Model::RecognizeImageStyleRequest&, const RecognizeImageStyleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeImageStyleAsyncHandler;
-			typedef Outcome<Error, Model::RecognizeLogoResult> RecognizeLogoOutcome;
-			typedef std::future<RecognizeLogoOutcome> RecognizeLogoOutcomeCallable;
-			typedef std::function<void(const ImagerecogClient*, const Model::RecognizeLogoRequest&, const RecognizeLogoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeLogoAsyncHandler;
 			typedef Outcome<Error, Model::RecognizeSceneResult> RecognizeSceneOutcome;
 			typedef std::future<RecognizeSceneOutcome> RecognizeSceneOutcomeCallable;
 			typedef std::function<void(const ImagerecogClient*, const Model::RecognizeSceneRequest&, const RecognizeSceneOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeSceneAsyncHandler;
@@ -125,9 +120,6 @@ namespace AlibabaCloud
 			RecognizeImageStyleOutcome recognizeImageStyle(const Model::RecognizeImageStyleRequest &request)const;
 			void recognizeImageStyleAsync(const Model::RecognizeImageStyleRequest& request, const RecognizeImageStyleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeImageStyleOutcomeCallable recognizeImageStyleCallable(const Model::RecognizeImageStyleRequest& request) const;
-			RecognizeLogoOutcome recognizeLogo(const Model::RecognizeLogoRequest &request)const;
-			void recognizeLogoAsync(const Model::RecognizeLogoRequest& request, const RecognizeLogoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RecognizeLogoOutcomeCallable recognizeLogoCallable(const Model::RecognizeLogoRequest& request) const;
 			RecognizeSceneOutcome recognizeScene(const Model::RecognizeSceneRequest &request)const;
 			void recognizeSceneAsync(const Model::RecognizeSceneRequest& request, const RecognizeSceneAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RecognizeSceneOutcomeCallable recognizeSceneCallable(const Model::RecognizeSceneRequest& request) const;

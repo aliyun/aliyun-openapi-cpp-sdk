@@ -37,8 +37,6 @@ set(imagerecog_public_header_model
 	include/alibabacloud/imagerecog/model/RecognizeImageColorResult.h
 	include/alibabacloud/imagerecog/model/RecognizeImageStyleRequest.h
 	include/alibabacloud/imagerecog/model/RecognizeImageStyleResult.h
-	include/alibabacloud/imagerecog/model/RecognizeLogoRequest.h
-	include/alibabacloud/imagerecog/model/RecognizeLogoResult.h
 	include/alibabacloud/imagerecog/model/RecognizeSceneRequest.h
 	include/alibabacloud/imagerecog/model/RecognizeSceneResult.h
 	include/alibabacloud/imagerecog/model/RecognizeVehicleTypeRequest.h
@@ -66,8 +64,6 @@ set(imagerecog_src
 	src/model/RecognizeImageColorResult.cc
 	src/model/RecognizeImageStyleRequest.cc
 	src/model/RecognizeImageStyleResult.cc
-	src/model/RecognizeLogoRequest.cc
-	src/model/RecognizeLogoResult.cc
 	src/model/RecognizeSceneRequest.cc
 	src/model/RecognizeSceneResult.cc
 	src/model/RecognizeVehicleTypeRequest.cc
