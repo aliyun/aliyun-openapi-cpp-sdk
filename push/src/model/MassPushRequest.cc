@@ -52,6 +52,7 @@ void MassPushRequest::setPushTask(const std::vector<MassPushRequest::PushTask> &
     setBodyParameter(pushTaskObjStr + ".AndroidPopupActivity", pushTaskObj.androidPopupActivity);
     setBodyParameter(pushTaskObjStr + ".iOSRemindBody", pushTaskObj.iOSRemindBody);
     setBodyParameter(pushTaskObjStr + ".Trim", pushTaskObj.trim ? "true" : "false");
+    setBodyParameter(pushTaskObjStr + ".AndroidMessageVivoCategory", pushTaskObj.androidMessageVivoCategory);
     setBodyParameter(pushTaskObjStr + ".AndroidNotifyType", pushTaskObj.androidNotifyType);
     setBodyParameter(pushTaskObjStr + ".AndroidPopupTitle", pushTaskObj.androidPopupTitle);
     setBodyParameter(pushTaskObjStr + ".AndroidMessageHuaweiCategory", pushTaskObj.androidMessageHuaweiCategory);
@@ -75,6 +76,7 @@ void MassPushRequest::setPushTask(const std::vector<MassPushRequest::PushTask> &
     setBodyParameter(pushTaskObjStr + ".AndroidXiaomiBigPictureUrl", pushTaskObj.androidXiaomiBigPictureUrl);
     setBodyParameter(pushTaskObjStr + ".iOSRemind", pushTaskObj.iOSRemind ? "true" : "false");
     setBodyParameter(pushTaskObjStr + ".iOSNotificationThreadId", pushTaskObj.iOSNotificationThreadId);
+    setBodyParameter(pushTaskObjStr + ".AndroidHuaweiTargetUserType", std::to_string(pushTaskObj.androidHuaweiTargetUserType));
     setBodyParameter(pushTaskObjStr + ".AndroidMusic", pushTaskObj.androidMusic);
     setBodyParameter(pushTaskObjStr + ".iOSNotificationCollapseId", pushTaskObj.iOSNotificationCollapseId);
     setBodyParameter(pushTaskObjStr + ".AndroidMessageHuaweiUrgency", pushTaskObj.androidMessageHuaweiUrgency);
@@ -88,6 +90,7 @@ void MassPushRequest::setPushTask(const std::vector<MassPushRequest::PushTask> &
     setBodyParameter(pushTaskObjStr + ".Title", pushTaskObj.title);
     setBodyParameter(pushTaskObjStr + ".AndroidRenderStyle", pushTaskObj.androidRenderStyle);
     setBodyParameter(pushTaskObjStr + ".iOSExtParameters", pushTaskObj.iOSExtParameters);
+    setBodyParameter(pushTaskObjStr + ".AndroidHuaweiReceiptId", pushTaskObj.androidHuaweiReceiptId);
     setBodyParameter(pushTaskObjStr + ".AndroidNotificationHonorChannel", pushTaskObj.androidNotificationHonorChannel);
     setBodyParameter(pushTaskObjStr + ".AndroidXiaomiImageUrl", pushTaskObj.androidXiaomiImageUrl);
     setBodyParameter(pushTaskObjStr + ".AndroidPopupBody", pushTaskObj.androidPopupBody);

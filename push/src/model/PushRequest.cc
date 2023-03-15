@@ -115,6 +115,15 @@ void PushRequest::setTrim(bool trim) {
   setParameter(std::string("Trim"), trim ? "true" : "false");
 }
 
+std::string PushRequest::getAndroidMessageVivoCategory() const {
+  return androidMessageVivoCategory_;
+}
+
+void PushRequest::setAndroidMessageVivoCategory(const std::string &androidMessageVivoCategory) {
+  androidMessageVivoCategory_ = androidMessageVivoCategory;
+  setParameter(std::string("AndroidMessageVivoCategory"), androidMessageVivoCategory);
+}
+
 std::string PushRequest::getAndroidNotifyType() const {
   return androidNotifyType_;
 }
@@ -331,6 +340,15 @@ void PushRequest::setIOSNotificationThreadId(const std::string &iOSNotificationT
   setParameter(std::string("iOSNotificationThreadId"), iOSNotificationThreadId);
 }
 
+int PushRequest::getAndroidHuaweiTargetUserType() const {
+  return androidHuaweiTargetUserType_;
+}
+
+void PushRequest::setAndroidHuaweiTargetUserType(int androidHuaweiTargetUserType) {
+  androidHuaweiTargetUserType_ = androidHuaweiTargetUserType;
+  setParameter(std::string("AndroidHuaweiTargetUserType"), std::to_string(androidHuaweiTargetUserType));
+}
+
 std::string PushRequest::getAndroidMusic() const {
   return androidMusic_;
 }
@@ -464,6 +482,15 @@ std::string PushRequest::getIOSExtParameters() const {
 void PushRequest::setIOSExtParameters(const std::string &iOSExtParameters) {
   iOSExtParameters_ = iOSExtParameters;
   setParameter(std::string("iOSExtParameters"), iOSExtParameters);
+}
+
+std::string PushRequest::getAndroidHuaweiReceiptId() const {
+  return androidHuaweiReceiptId_;
+}
+
+void PushRequest::setAndroidHuaweiReceiptId(const std::string &androidHuaweiReceiptId) {
+  androidHuaweiReceiptId_ = androidHuaweiReceiptId;
+  setParameter(std::string("AndroidHuaweiReceiptId"), androidHuaweiReceiptId);
 }
 
 std::string PushRequest::getAndroidNotificationHonorChannel() const {

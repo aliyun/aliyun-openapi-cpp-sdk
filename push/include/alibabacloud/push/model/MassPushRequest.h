@@ -38,6 +38,7 @@ public:
 		std::string androidPopupActivity;
 		std::string iOSRemindBody;
 		bool trim;
+		std::string androidMessageVivoCategory;
 		std::string androidNotifyType;
 		std::string androidPopupTitle;
 		std::string androidMessageHuaweiCategory;
@@ -61,6 +62,7 @@ public:
 		std::string androidXiaomiBigPictureUrl;
 		bool iOSRemind;
 		std::string iOSNotificationThreadId;
+		int androidHuaweiTargetUserType;
 		std::string androidMusic;
 		std::string iOSNotificationCollapseId;
 		std::string androidMessageHuaweiUrgency;
@@ -74,6 +76,7 @@ public:
 		std::string title;
 		std::string androidRenderStyle;
 		std::string iOSExtParameters;
+		std::string androidHuaweiReceiptId;
 		std::string androidNotificationHonorChannel;
 		std::string androidXiaomiImageUrl;
 		std::string androidPopupBody;

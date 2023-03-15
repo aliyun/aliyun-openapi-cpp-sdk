@@ -50,6 +50,8 @@ public:
 	void setIOSRemindBody(const std::string &iOSRemindBody);
 	bool getTrim() const;
 	void setTrim(bool trim);
+	std::string getAndroidMessageVivoCategory() const;
+	void setAndroidMessageVivoCategory(const std::string &androidMessageVivoCategory);
 	std::string getAndroidNotifyType() const;
 	void setAndroidNotifyType(const std::string &androidNotifyType);
 	std::string getAndroidPopupTitle() const;
@@ -98,6 +100,8 @@ public:
 	void setIOSRemind(bool iOSRemind);
 	std::string getIOSNotificationThreadId() const;
 	void setIOSNotificationThreadId(const std::string &iOSNotificationThreadId);
+	int getAndroidHuaweiTargetUserType() const;
+	void setAndroidHuaweiTargetUserType(int androidHuaweiTargetUserType);
 	std::string getAndroidMusic() const;
 	void setAndroidMusic(const std::string &androidMusic);
 	std::string getIOSNotificationCollapseId() const;
@@ -128,6 +132,8 @@ public:
 	void setAndroidRenderStyle(int androidRenderStyle);
 	std::string getIOSExtParameters() const;
 	void setIOSExtParameters(const std::string &iOSExtParameters);
+	std::string getAndroidHuaweiReceiptId() const;
+	void setAndroidHuaweiReceiptId(const std::string &androidHuaweiReceiptId);
 	std::string getAndroidNotificationHonorChannel() const;
 	void setAndroidNotificationHonorChannel(const std::string &androidNotificationHonorChannel);
 	std::string getAndroidXiaomiImageUrl() const;
@@ -178,6 +184,7 @@ private:
 	std::string androidPopupActivity_;
 	std::string iOSRemindBody_;
 	bool trim_;
+	std::string androidMessageVivoCategory_;
 	std::string androidNotifyType_;
 	std::string androidPopupTitle_;
 	std::string androidMessageHuaweiCategory_;
@@ -202,6 +209,7 @@ private:
 	std::string androidXiaomiBigPictureUrl_;
 	bool iOSRemind_;
 	std::string iOSNotificationThreadId_;
+	int androidHuaweiTargetUserType_;
 	std::string androidMusic_;
 	std::string iOSNotificationCollapseId_;
 	std::string androidMessageHuaweiUrgency_;
@@ -217,6 +225,7 @@ private:
 	int smsDelaySecs_;
 	int androidRenderStyle_;
 	std::string iOSExtParameters_;
+	std::string androidHuaweiReceiptId_;
 	std::string androidNotificationHonorChannel_;
 	std::string androidXiaomiImageUrl_;
 	std::string smsTemplateName_;
