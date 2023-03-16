@@ -52,6 +52,15 @@ void ListSnapshotLinksRequest::setFilterKey(const std::string &filterKey) {
   setParameter(std::string("FilterKey"), filterKey);
 }
 
+std::string ListSnapshotLinksRequest::getLinkIds() const {
+  return linkIds_;
+}
+
+void ListSnapshotLinksRequest::setLinkIds(const std::string &linkIds) {
+  linkIds_ = linkIds;
+  setParameter(std::string("LinkIds"), linkIds);
+}
+
 std::string ListSnapshotLinksRequest::getRegionId() const {
   return regionId_;
 }
@@ -68,5 +77,14 @@ int ListSnapshotLinksRequest::getPageSize() const {
 void ListSnapshotLinksRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListSnapshotLinksRequest::getFsIds() const {
+  return fsIds_;
+}
+
+void ListSnapshotLinksRequest::setFsIds(const std::string &fsIds) {
+  fsIds_ = fsIds;
+  setParameter(std::string("FsIds"), fsIds);
 }
 

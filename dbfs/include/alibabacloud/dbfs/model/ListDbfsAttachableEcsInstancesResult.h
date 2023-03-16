@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string instanceTypeFamily;
 					std::string value;
 					std::string label;
+					std::string imageId;
 					std::string oSName;
 				};
 

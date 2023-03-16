@@ -55,6 +55,8 @@ void ListDbfsAttachableEcsInstancesResult::parse(const std::string &payload)
 			ecsLabelInfoObject.status = valueEcsLabelInfoLabelInfo["Status"].asString();
 		if(!valueEcsLabelInfoLabelInfo["ZoneId"].isNull())
 			ecsLabelInfoObject.zoneId = valueEcsLabelInfoLabelInfo["ZoneId"].asString();
+		if(!valueEcsLabelInfoLabelInfo["ImageId"].isNull())
+			ecsLabelInfoObject.imageId = valueEcsLabelInfoLabelInfo["ImageId"].asString();
 		ecsLabelInfo_.push_back(ecsLabelInfoObject);
 	}
 	if(!value["TotalCount"].isNull())

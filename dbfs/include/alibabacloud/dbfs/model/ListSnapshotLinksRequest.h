@@ -36,17 +36,23 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getFilterKey() const;
 	void setFilterKey(const std::string &filterKey);
+	std::string getLinkIds() const;
+	void setLinkIds(const std::string &linkIds);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getFsIds() const;
+	void setFsIds(const std::string &fsIds);
 
 private:
 	std::string filterValue_;
 	int pageNumber_;
 	std::string filterKey_;
+	std::string linkIds_;
 	std::string regionId_;
 	int pageSize_;
+	std::string fsIds_;
 };
 } // namespace Model
 } // namespace DBFS
