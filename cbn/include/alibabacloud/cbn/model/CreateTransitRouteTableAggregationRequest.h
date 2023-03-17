@@ -42,10 +42,10 @@ public:
 	void setDryRun(bool dryRun);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getTransitRouteTableAggregationScope() const;
+	void setTransitRouteTableAggregationScope(const std::string &transitRouteTableAggregationScope);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
-	std::string getTransitRouteTableAggregationScop() const;
-	void setTransitRouteTableAggregationScop(const std::string &transitRouteTableAggregationScop);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getVersion() const;
@@ -62,8 +62,8 @@ private:
 	std::string transitRouteTableAggregationName_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;
+	std::string transitRouteTableAggregationScope_;
 	std::string ownerAccount_;
-	std::string transitRouteTableAggregationScop_;
 	long ownerId_;
 	std::string version_;
 	std::string transitRouteTableId_;

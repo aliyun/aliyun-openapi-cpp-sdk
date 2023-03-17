@@ -37,7 +37,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string routeType;
 					std::string description;
-					std::string scop;
+					std::string scope;
 					std::string nexthop;
 					std::string transitRouteTableAggregationCidr;
 					std::string trRouteTableId;

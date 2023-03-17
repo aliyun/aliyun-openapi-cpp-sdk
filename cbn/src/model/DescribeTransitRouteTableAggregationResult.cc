@@ -47,8 +47,8 @@ void DescribeTransitRouteTableAggregationResult::parse(const std::string &payloa
 			dataObject.name = valueDataDataItem["Name"].asString();
 		if(!valueDataDataItem["TransitRouteTableAggregationCidr"].isNull())
 			dataObject.transitRouteTableAggregationCidr = valueDataDataItem["TransitRouteTableAggregationCidr"].asString();
-		if(!valueDataDataItem["Scop"].isNull())
-			dataObject.scop = valueDataDataItem["Scop"].asString();
+		if(!valueDataDataItem["Scope"].isNull())
+			dataObject.scope = valueDataDataItem["Scope"].asString();
 		if(!valueDataDataItem["Nexthop"].isNull())
 			dataObject.nexthop = valueDataDataItem["Nexthop"].asString();
 		if(!valueDataDataItem["RouteType"].isNull())

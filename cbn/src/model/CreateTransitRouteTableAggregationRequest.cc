@@ -79,6 +79,15 @@ void CreateTransitRouteTableAggregationRequest::setResourceOwnerAccount(const st
   setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
 }
 
+std::string CreateTransitRouteTableAggregationRequest::getTransitRouteTableAggregationScope() const {
+  return transitRouteTableAggregationScope_;
+}
+
+void CreateTransitRouteTableAggregationRequest::setTransitRouteTableAggregationScope(const std::string &transitRouteTableAggregationScope) {
+  transitRouteTableAggregationScope_ = transitRouteTableAggregationScope;
+  setParameter(std::string("TransitRouteTableAggregationScope"), transitRouteTableAggregationScope);
+}
+
 std::string CreateTransitRouteTableAggregationRequest::getOwnerAccount() const {
   return ownerAccount_;
 }
@@ -86,15 +95,6 @@ std::string CreateTransitRouteTableAggregationRequest::getOwnerAccount() const {
 void CreateTransitRouteTableAggregationRequest::setOwnerAccount(const std::string &ownerAccount) {
   ownerAccount_ = ownerAccount;
   setParameter(std::string("OwnerAccount"), ownerAccount);
-}
-
-std::string CreateTransitRouteTableAggregationRequest::getTransitRouteTableAggregationScop() const {
-  return transitRouteTableAggregationScop_;
-}
-
-void CreateTransitRouteTableAggregationRequest::setTransitRouteTableAggregationScop(const std::string &transitRouteTableAggregationScop) {
-  transitRouteTableAggregationScop_ = transitRouteTableAggregationScop;
-  setParameter(std::string("TransitRouteTableAggregationScop"), transitRouteTableAggregationScop);
 }
 
 long CreateTransitRouteTableAggregationRequest::getOwnerId() const {
