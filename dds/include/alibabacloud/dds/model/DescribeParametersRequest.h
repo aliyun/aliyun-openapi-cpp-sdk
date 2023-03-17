@@ -32,6 +32,8 @@ public:
 	~DescribeParametersRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getExtraParam() const;
+	void setExtraParam(const std::string &extraParam);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
@@ -51,6 +53,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string extraParam_;
 	std::string accessKeyId_;
 	std::string securityToken_;
 	std::string dBInstanceId_;

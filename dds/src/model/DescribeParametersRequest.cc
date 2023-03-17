@@ -34,6 +34,15 @@ void DescribeParametersRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeParametersRequest::getExtraParam() const {
+  return extraParam_;
+}
+
+void DescribeParametersRequest::setExtraParam(const std::string &extraParam) {
+  extraParam_ = extraParam;
+  setParameter(std::string("ExtraParam"), extraParam);
+}
+
 std::string DescribeParametersRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
