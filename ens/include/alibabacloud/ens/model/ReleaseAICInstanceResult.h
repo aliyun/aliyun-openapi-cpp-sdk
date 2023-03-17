@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_PRECREATEENSSERVICERESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_PRECREATEENSSERVICERESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_RELEASEAICINSTANCERESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_RELEASEAICINSTANCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,29 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT PreCreateEnsServiceResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT ReleaseAICInstanceResult : public ServiceResult
 			{
 			public:
 
 
-				PreCreateEnsServiceResult();
-				explicit PreCreateEnsServiceResult(const std::string &payload);
-				~PreCreateEnsServiceResult();
-				std::string getEnsServiceId()const;
-				std::string getNetLevel()const;
-				int getCode()const;
-				std::string getBuyResourcesDetail()const;
+				ReleaseAICInstanceResult();
+				explicit ReleaseAICInstanceResult(const std::string &payload);
+				~ReleaseAICInstanceResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string ensServiceId_;
-				std::string netLevel_;
-				int code_;
-				std::string buyResourcesDetail_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_PRECREATEENSSERVICERESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_RELEASEAICINSTANCERESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_CREATEIMAGEREQUEST_H_
-#define ALIBABACLOUD_ENS_MODEL_CREATEIMAGEREQUEST_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DELETEDISKREQUEST_H_
+#define ALIBABACLOUD_ENS_MODEL_DELETEDISKREQUEST_H_
 
 #include <alibabacloud/ens/EnsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,17 @@
 namespace AlibabaCloud {
 namespace Ens {
 namespace Model {
-class ALIBABACLOUD_ENS_EXPORT CreateImageRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ENS_EXPORT DeleteDiskRequest : public RpcServiceRequest {
 public:
-	CreateImageRequest();
-	~CreateImageRequest();
-	std::string getSnapshotId() const;
-	void setSnapshotId(const std::string &snapshotId);
-	std::string getDeleteAfterImageUpload() const;
-	void setDeleteAfterImageUpload(const std::string &deleteAfterImageUpload);
-	std::string getImageName() const;
-	void setImageName(const std::string &imageName);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
+	DeleteDiskRequest();
+	~DeleteDiskRequest();
+	std::string getDiskId() const;
+	void setDiskId(const std::string &diskId);
 
 private:
-	std::string snapshotId_;
-	std::string deleteAfterImageUpload_;
-	std::string imageName_;
-	std::string instanceId_;
+	std::string diskId_;
 };
 } // namespace Model
 } // namespace Ens
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ENS_MODEL_CREATEIMAGEREQUEST_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DELETEDISKREQUEST_H_

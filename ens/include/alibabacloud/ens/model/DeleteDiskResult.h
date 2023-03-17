@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEIMAGEINFOSRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBEIMAGEINFOSRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_DELETEDISKRESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_DELETEDISKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DescribeImageInfosResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT DeleteDiskResult : public ServiceResult
 			{
 			public:
-				struct Image
-				{
-					std::string description;
-					std::string imageVersion;
-					std::string imageSize;
-					std::string oSType;
-					std::string imageId;
-					std::string oSName;
-					std::string computeType;
-				};
 
 
-				DescribeImageInfosResult();
-				explicit DescribeImageInfosResult(const std::string &payload);
-				~DescribeImageInfosResult();
-				std::vector<Image> getImages()const;
+				DeleteDiskResult();
+				explicit DeleteDiskResult(const std::string &payload);
+				~DeleteDiskResult();
 				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Image> images_;
 				int code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEIMAGEINFOSRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_DELETEDISKRESULT_H_

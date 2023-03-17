@@ -40,8 +40,12 @@ public:
 	void setDiskChargeType(const std::string &diskChargeType);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
+	std::string getInstanceId() const;
+	void setInstanceId(const std::string &instanceId);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
+	std::string getSnapshotId() const;
+	void setSnapshotId(const std::string &snapshotId);
 	std::string getPageNumber() const;
 	void setPageNumber(const std::string &pageNumber);
 	std::string getPageSize() const;
@@ -63,7 +67,9 @@ private:
 	std::string diskName_;
 	std::string diskChargeType_;
 	std::string ensRegionId_;
+	std::string instanceId_;
 	std::string status_;
+	std::string snapshotId_;
 	std::string pageNumber_;
 	std::string pageSize_;
 	std::string diskIds_;

@@ -14,59 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/ens/model/PreCreateEnsServiceResult.h>
+#include <alibabacloud/ens/model/DeleteDiskResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Ens;
 using namespace AlibabaCloud::Ens::Model;
 
-PreCreateEnsServiceResult::PreCreateEnsServiceResult() :
+DeleteDiskResult::DeleteDiskResult() :
 	ServiceResult()
 {}
 
-PreCreateEnsServiceResult::PreCreateEnsServiceResult(const std::string &payload) :
+DeleteDiskResult::DeleteDiskResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-PreCreateEnsServiceResult::~PreCreateEnsServiceResult()
+DeleteDiskResult::~DeleteDiskResult()
 {}
 
-void PreCreateEnsServiceResult::parse(const std::string &payload)
+void DeleteDiskResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["BuyResourcesDetail"].isNull())
-		buyResourcesDetail_ = value["BuyResourcesDetail"].asString();
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
-	if(!value["EnsServiceId"].isNull())
-		ensServiceId_ = value["EnsServiceId"].asString();
-	if(!value["NetLevel"].isNull())
-		netLevel_ = value["NetLevel"].asString();
 
 }
 
-std::string PreCreateEnsServiceResult::getEnsServiceId()const
-{
-	return ensServiceId_;
-}
-
-std::string PreCreateEnsServiceResult::getNetLevel()const
-{
-	return netLevel_;
-}
-
-int PreCreateEnsServiceResult::getCode()const
+int DeleteDiskResult::getCode()const
 {
 	return code_;
-}
-
-std::string PreCreateEnsServiceResult::getBuyResourcesDetail()const
-{
-	return buyResourcesDetail_;
 }
 

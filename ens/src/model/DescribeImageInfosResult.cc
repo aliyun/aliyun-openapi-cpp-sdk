@@ -55,6 +55,8 @@ void DescribeImageInfosResult::parse(const std::string &payload)
 			imagesObject.oSName = valueImagesImage["OSName"].asString();
 		if(!valueImagesImage["OSType"].isNull())
 			imagesObject.oSType = valueImagesImage["OSType"].asString();
+		if(!valueImagesImage["ComputeType"].isNull())
+			imagesObject.computeType = valueImagesImage["ComputeType"].asString();
 		images_.push_back(imagesObject);
 	}
 	if(!value["Code"].isNull())

@@ -36,23 +36,23 @@ public:
 	void setStatus(const std::string &status);
 	std::string getImageId() const;
 	void setImageId(const std::string &imageId);
+	std::string getSnapshotId() const;
+	void setSnapshotId(const std::string &snapshotId);
 	std::string getPageNumber() const;
 	void setPageNumber(const std::string &pageNumber);
 	std::string getImageName() const;
 	void setImageName(const std::string &imageName);
 	std::string getPageSize() const;
 	void setPageSize(const std::string &pageSize);
-	std::string getProduct() const;
-	void setProduct(const std::string &product);
 
 private:
 	std::string ensRegionId_;
 	std::string status_;
 	std::string imageId_;
+	std::string snapshotId_;
 	std::string pageNumber_;
 	std::string imageName_;
 	std::string pageSize_;
-	std::string product_;
 };
 } // namespace Model
 } // namespace Ens

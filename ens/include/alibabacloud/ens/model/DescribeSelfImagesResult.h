@@ -37,6 +37,7 @@ namespace AlibabaCloud
 					std::string imageOwnerAlias;
 					std::string status;
 					std::string imageName;
+					std::string snapshotId;
 					std::string architecture;
 					std::string platform;
 					std::string imageSize;
@@ -44,6 +45,7 @@ namespace AlibabaCloud
 					std::string osVersion;
 					std::string creationTime;
 					std::string imageId;
+					std::string computeType;
 				};
 
 

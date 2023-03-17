@@ -70,6 +70,15 @@ void DescribeDisksRequest::setEnsRegionId(const std::string &ensRegionId) {
   setParameter(std::string("EnsRegionId"), ensRegionId);
 }
 
+std::string DescribeDisksRequest::getInstanceId() const {
+  return instanceId_;
+}
+
+void DescribeDisksRequest::setInstanceId(const std::string &instanceId) {
+  instanceId_ = instanceId;
+  setParameter(std::string("InstanceId"), instanceId);
+}
+
 std::string DescribeDisksRequest::getStatus() const {
   return status_;
 }
@@ -77,6 +86,15 @@ std::string DescribeDisksRequest::getStatus() const {
 void DescribeDisksRequest::setStatus(const std::string &status) {
   status_ = status;
   setParameter(std::string("Status"), status);
+}
+
+std::string DescribeDisksRequest::getSnapshotId() const {
+  return snapshotId_;
+}
+
+void DescribeDisksRequest::setSnapshotId(const std::string &snapshotId) {
+  snapshotId_ = snapshotId;
+  setParameter(std::string("SnapshotId"), snapshotId);
 }
 
 std::string DescribeDisksRequest::getPageNumber() const {

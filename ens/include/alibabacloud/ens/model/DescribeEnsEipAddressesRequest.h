@@ -30,6 +30,8 @@ class ALIBABACLOUD_ENS_EXPORT DescribeEnsEipAddressesRequest : public RpcService
 public:
 	DescribeEnsEipAddressesRequest();
 	~DescribeEnsEipAddressesRequest();
+	std::string getEipName() const;
+	void setEipName(const std::string &eipName);
 	std::string getEipAddress() const;
 	void setEipAddress(const std::string &eipAddress);
 	std::string getEnsRegionId() const;
@@ -48,6 +50,7 @@ public:
 	void setAssociatedInstanceId(const std::string &associatedInstanceId);
 
 private:
+	std::string eipName_;
 	std::string eipAddress_;
 	std::string ensRegionId_;
 	std::string status_;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_CREATEIMAGEREQUEST_H_
-#define ALIBABACLOUD_ENS_MODEL_CREATEIMAGEREQUEST_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_GETOSSUSAGEDATAREQUEST_H_
+#define ALIBABACLOUD_ENS_MODEL_GETOSSUSAGEDATAREQUEST_H_
 
 #include <alibabacloud/ens/EnsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,26 @@
 namespace AlibabaCloud {
 namespace Ens {
 namespace Model {
-class ALIBABACLOUD_ENS_EXPORT CreateImageRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ENS_EXPORT GetOssUsageDataRequest : public RpcServiceRequest {
 public:
-	CreateImageRequest();
-	~CreateImageRequest();
-	std::string getSnapshotId() const;
-	void setSnapshotId(const std::string &snapshotId);
-	std::string getDeleteAfterImageUpload() const;
-	void setDeleteAfterImageUpload(const std::string &deleteAfterImageUpload);
-	std::string getImageName() const;
-	void setImageName(const std::string &imageName);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
+	GetOssUsageDataRequest();
+	~GetOssUsageDataRequest();
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
+	std::string getPeriod() const;
+	void setPeriod(const std::string &period);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	std::string getBucket() const;
+	void setBucket(const std::string &bucket);
 
 private:
-	std::string snapshotId_;
-	std::string deleteAfterImageUpload_;
-	std::string imageName_;
-	std::string instanceId_;
+	std::string startTime_;
+	std::string period_;
+	std::string endTime_;
+	std::string bucket_;
 };
 } // namespace Model
 } // namespace Ens
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ENS_MODEL_CREATEIMAGEREQUEST_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_GETOSSUSAGEDATAREQUEST_H_

@@ -25,6 +25,15 @@ CreateImageRequest::CreateImageRequest()
 
 CreateImageRequest::~CreateImageRequest() {}
 
+std::string CreateImageRequest::getSnapshotId() const {
+  return snapshotId_;
+}
+
+void CreateImageRequest::setSnapshotId(const std::string &snapshotId) {
+  snapshotId_ = snapshotId;
+  setParameter(std::string("SnapshotId"), snapshotId);
+}
+
 std::string CreateImageRequest::getDeleteAfterImageUpload() const {
   return deleteAfterImageUpload_;
 }
@@ -41,15 +50,6 @@ std::string CreateImageRequest::getImageName() const {
 void CreateImageRequest::setImageName(const std::string &imageName) {
   imageName_ = imageName;
   setParameter(std::string("ImageName"), imageName);
-}
-
-std::string CreateImageRequest::getProduct() const {
-  return product_;
-}
-
-void CreateImageRequest::setProduct(const std::string &product) {
-  product_ = product;
-  setParameter(std::string("product"), product);
 }
 
 std::string CreateImageRequest::getInstanceId() const {

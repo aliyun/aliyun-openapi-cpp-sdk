@@ -40,6 +40,8 @@ public:
 	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::vector<std::string> getEnsRegionIds() const;
+	void setEnsRegionIds(const std::vector<std::string> &ensRegionIds);
 	std::string getMinDate() const;
 	void setMinDate(const std::string &minDate);
 	std::string getAppId() const;
@@ -53,6 +55,7 @@ private:
 	std::string maxDate_;
 	int pageNumber_;
 	int pageSize_;
+	std::vector<std::string> ensRegionIds_;
 	std::string minDate_;
 	std::string appId_;
 	std::string dataNames_;

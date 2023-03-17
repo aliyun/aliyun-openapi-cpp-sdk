@@ -32,6 +32,8 @@ public:
 	~DescribeSelfImagesRequest();
 	std::string getImageId() const;
 	void setImageId(const std::string &imageId);
+	std::string getSnapshotId() const;
+	void setSnapshotId(const std::string &snapshotId);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getImageName() const;
@@ -41,6 +43,7 @@ public:
 
 private:
 	std::string imageId_;
+	std::string snapshotId_;
 	int pageNumber_;
 	std::string imageName_;
 	int pageSize_;

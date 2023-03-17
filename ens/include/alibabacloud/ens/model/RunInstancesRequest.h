@@ -81,6 +81,8 @@ public:
 	void setInternetMaxBandwidthOut(long internetMaxBandwidthOut);
 	std::string getUserData() const;
 	void setUserData(const std::string &userData);
+	bool getPasswordInherit() const;
+	void setPasswordInherit(bool passwordInherit);
 	std::string getInstanceType() const;
 	void setInstanceType(const std::string &instanceType);
 	std::string getInstanceChargeType() const;
@@ -117,6 +119,7 @@ private:
 	std::string imageId_;
 	long internetMaxBandwidthOut_;
 	std::string userData_;
+	bool passwordInherit_;
 	std::string instanceType_;
 	std::string instanceChargeType_;
 	long amount_;

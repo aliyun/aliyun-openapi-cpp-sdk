@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ENS_MODEL_DESCRIBEIMAGEINFOSRESULT_H_
-#define ALIBABACLOUD_ENS_MODEL_DESCRIBEIMAGEINFOSRESULT_H_
+#ifndef ALIBABACLOUD_ENS_MODEL_GETOSSUSAGEDATARESULT_H_
+#define ALIBABACLOUD_ENS_MODEL_GETOSSUSAGEDATARESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,35 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ENS_EXPORT DescribeImageInfosResult : public ServiceResult
+			class ALIBABACLOUD_ENS_EXPORT GetOssUsageDataResult : public ServiceResult
 			{
 			public:
-				struct Image
+				struct UsageListItem
 				{
-					std::string description;
-					std::string imageVersion;
-					std::string imageSize;
-					std::string oSType;
-					std::string imageId;
-					std::string oSName;
-					std::string computeType;
+					long lanRxBw;
+					long wanRxBw;
+					long lanTxBw;
+					long wanTxBw;
+					std::string pointTs;
+					long storageUsageByte;
+					long point;
 				};
 
 
-				DescribeImageInfosResult();
-				explicit DescribeImageInfosResult(const std::string &payload);
-				~DescribeImageInfosResult();
-				std::vector<Image> getImages()const;
-				int getCode()const;
+				GetOssUsageDataResult();
+				explicit GetOssUsageDataResult(const std::string &payload);
+				~GetOssUsageDataResult();
+				std::vector<UsageListItem> getUsageList()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Image> images_;
-				int code_;
+				std::vector<UsageListItem> usageList_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ENS_MODEL_DESCRIBEIMAGEINFOSRESULT_H_
+#endif // !ALIBABACLOUD_ENS_MODEL_GETOSSUSAGEDATARESULT_H_

@@ -70,6 +70,17 @@ void DescribeDataDistResultRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::vector<DescribeDataDistResultRequest::std::string> DescribeDataDistResultRequest::getEnsRegionIds() const {
+  return ensRegionIds_;
+}
+
+void DescribeDataDistResultRequest::setEnsRegionIds(const std::vector<DescribeDataDistResultRequest::std::string> &ensRegionIds) {
+  ensRegionIds_ = ensRegionIds;
+  for(int dep1 = 0; dep1 != ensRegionIds.size(); dep1++) {
+    setParameter(std::string("EnsRegionIds") + "." + std::to_string(dep1 + 1), ensRegionIds[dep1]);
+  }
+}
+
 std::string DescribeDataDistResultRequest::getMinDate() const {
   return minDate_;
 }

@@ -25,6 +25,15 @@ DescribeEnsEipAddressesRequest::DescribeEnsEipAddressesRequest()
 
 DescribeEnsEipAddressesRequest::~DescribeEnsEipAddressesRequest() {}
 
+std::string DescribeEnsEipAddressesRequest::getEipName() const {
+  return eipName_;
+}
+
+void DescribeEnsEipAddressesRequest::setEipName(const std::string &eipName) {
+  eipName_ = eipName;
+  setParameter(std::string("EipName"), eipName);
+}
+
 std::string DescribeEnsEipAddressesRequest::getEipAddress() const {
   return eipAddress_;
 }

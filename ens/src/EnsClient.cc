@@ -411,6 +411,42 @@ EnsClient::AuthorizeSecurityGroupEgressOutcomeCallable EnsClient::authorizeSecur
 	return task->get_future();
 }
 
+EnsClient::CleanDistDataOutcome EnsClient::cleanDistData(const CleanDistDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CleanDistDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CleanDistDataOutcome(CleanDistDataResult(outcome.result()));
+	else
+		return CleanDistDataOutcome(outcome.error());
+}
+
+void EnsClient::cleanDistDataAsync(const CleanDistDataRequest& request, const CleanDistDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cleanDistData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CleanDistDataOutcomeCallable EnsClient::cleanDistDataCallable(const CleanDistDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CleanDistDataOutcome()>>(
+			[this, request]()
+			{
+			return this->cleanDistData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::CreateARMServerInstancesOutcome EnsClient::createARMServerInstances(const CreateARMServerInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1449,6 +1485,42 @@ EnsClient::DeleteDeviceInternetPortOutcomeCallable EnsClient::deleteDeviceIntern
 			[this, request]()
 			{
 			return this->deleteDeviceInternetPort(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeleteDiskOutcome EnsClient::deleteDisk(const DeleteDiskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDiskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDiskOutcome(DeleteDiskResult(outcome.result()));
+	else
+		return DeleteDiskOutcome(outcome.error());
+}
+
+void EnsClient::deleteDiskAsync(const DeleteDiskRequest& request, const DeleteDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDisk(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteDiskOutcomeCallable EnsClient::deleteDiskCallable(const DeleteDiskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDiskOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDisk(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4911,6 +4983,42 @@ EnsClient::GetOssStorageAndAccByBucketsOutcomeCallable EnsClient::getOssStorageA
 	return task->get_future();
 }
 
+EnsClient::GetOssUsageDataOutcome EnsClient::getOssUsageData(const GetOssUsageDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOssUsageDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOssUsageDataOutcome(GetOssUsageDataResult(outcome.result()));
+	else
+		return GetOssUsageDataOutcome(outcome.error());
+}
+
+void EnsClient::getOssUsageDataAsync(const GetOssUsageDataRequest& request, const GetOssUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOssUsageData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::GetOssUsageDataOutcomeCallable EnsClient::getOssUsageDataCallable(const GetOssUsageDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOssUsageDataOutcome()>>(
+			[this, request]()
+			{
+			return this->getOssUsageData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::ImportKeyPairOutcome EnsClient::importKeyPair(const ImportKeyPairRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5595,42 +5703,6 @@ EnsClient::ModifyVSwitchAttributeOutcomeCallable EnsClient::modifyVSwitchAttribu
 	return task->get_future();
 }
 
-EnsClient::PreCreateEnsServiceOutcome EnsClient::preCreateEnsService(const PreCreateEnsServiceRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return PreCreateEnsServiceOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return PreCreateEnsServiceOutcome(PreCreateEnsServiceResult(outcome.result()));
-	else
-		return PreCreateEnsServiceOutcome(outcome.error());
-}
-
-void EnsClient::preCreateEnsServiceAsync(const PreCreateEnsServiceRequest& request, const PreCreateEnsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, preCreateEnsService(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EnsClient::PreCreateEnsServiceOutcomeCallable EnsClient::preCreateEnsServiceCallable(const PreCreateEnsServiceRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<PreCreateEnsServiceOutcome()>>(
-			[this, request]()
-			{
-			return this->preCreateEnsService(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 EnsClient::PushApplicationDataOutcome EnsClient::pushApplicationData(const PushApplicationDataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5847,6 +5919,42 @@ EnsClient::RebootInstancesOutcomeCallable EnsClient::rebootInstancesCallable(con
 	return task->get_future();
 }
 
+EnsClient::RecoverAICInstanceOutcome EnsClient::recoverAICInstance(const RecoverAICInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RecoverAICInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RecoverAICInstanceOutcome(RecoverAICInstanceResult(outcome.result()));
+	else
+		return RecoverAICInstanceOutcome(outcome.error());
+}
+
+void EnsClient::recoverAICInstanceAsync(const RecoverAICInstanceRequest& request, const RecoverAICInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, recoverAICInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::RecoverAICInstanceOutcomeCallable EnsClient::recoverAICInstanceCallable(const RecoverAICInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RecoverAICInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->recoverAICInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::ReinitInstanceOutcome EnsClient::reinitInstance(const ReinitInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5913,6 +6021,42 @@ EnsClient::ReinitInstancesOutcomeCallable EnsClient::reinitInstancesCallable(con
 			[this, request]()
 			{
 			return this->reinitInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::ReleaseAICInstanceOutcome EnsClient::releaseAICInstance(const ReleaseAICInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReleaseAICInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReleaseAICInstanceOutcome(ReleaseAICInstanceResult(outcome.result()));
+	else
+		return ReleaseAICInstanceOutcome(outcome.error());
+}
+
+void EnsClient::releaseAICInstanceAsync(const ReleaseAICInstanceRequest& request, const ReleaseAICInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, releaseAICInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ReleaseAICInstanceOutcomeCallable EnsClient::releaseAICInstanceCallable(const ReleaseAICInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReleaseAICInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->releaseAICInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -6381,6 +6525,42 @@ EnsClient::ResetDeviceInstanceOutcomeCallable EnsClient::resetDeviceInstanceCall
 			[this, request]()
 			{
 			return this->resetDeviceInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::ResetDiskOutcome EnsClient::resetDisk(const ResetDiskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResetDiskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResetDiskOutcome(ResetDiskResult(outcome.result()));
+	else
+		return ResetDiskOutcome(outcome.error());
+}
+
+void EnsClient::resetDiskAsync(const ResetDiskRequest& request, const ResetDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resetDisk(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::ResetDiskOutcomeCallable EnsClient::resetDiskCallable(const ResetDiskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResetDiskOutcome()>>(
+			[this, request]()
+			{
+			return this->resetDisk(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

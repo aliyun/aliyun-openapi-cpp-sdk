@@ -32,28 +32,28 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ENS_EXPORT DescribeResourceTimelineResult : public ServiceResult
 			{
 			public:
-				struct 可用性事件
+				struct AvailableEventsItem
 				{
 					std::string occurrenceTime;
 					std::string type;
 					std::string reason;
 					std::string name;
 				};
-				struct 建设状态事件
+				struct BizEventsItem
 				{
 					std::string occurrenceTime;
 					std::string type;
 					std::string reason;
 					std::string name;
 				};
-				struct 资源扣减事件
+				struct InventoryEventsItem
 				{
 					std::string occurrenceTime;
 					std::string type;
 					std::string reason;
 					std::string name;
 				};
-				struct 资源预留事件
+				struct ReserveEventsItem
 				{
 					std::string occurrenceTime;
 					std::string type;
@@ -67,20 +67,20 @@ namespace AlibabaCloud
 				~DescribeResourceTimelineResult();
 				std::string getMsg()const;
 				std::string getDesc()const;
-				std::vector<资源扣减事件> getInventoryEvents()const;
-				std::vector<可用性事件> getAvailableEvents()const;
-				std::vector<建设状态事件> getBizEvents()const;
-				std::vector<资源预留事件> getReserveEvents()const;
+				std::vector<InventoryEventsItem> getInventoryEvents()const;
+				std::vector<AvailableEventsItem> getAvailableEvents()const;
+				std::vector<BizEventsItem> getBizEvents()const;
+				std::vector<ReserveEventsItem> getReserveEvents()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string msg_;
 				std::string desc_;
-				std::vector<资源扣减事件> inventoryEvents_;
-				std::vector<可用性事件> availableEvents_;
-				std::vector<建设状态事件> bizEvents_;
-				std::vector<资源预留事件> reserveEvents_;
+				std::vector<InventoryEventsItem> inventoryEvents_;
+				std::vector<AvailableEventsItem> availableEvents_;
+				std::vector<BizEventsItem> bizEvents_;
+				std::vector<ReserveEventsItem> reserveEvents_;
 
 			};
 		}

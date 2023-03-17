@@ -34,6 +34,15 @@ void DescribeSelfImagesRequest::setImageId(const std::string &imageId) {
   setParameter(std::string("ImageId"), imageId);
 }
 
+std::string DescribeSelfImagesRequest::getSnapshotId() const {
+  return snapshotId_;
+}
+
+void DescribeSelfImagesRequest::setSnapshotId(const std::string &snapshotId) {
+  snapshotId_ = snapshotId;
+  setParameter(std::string("SnapshotId"), snapshotId);
+}
+
 int DescribeSelfImagesRequest::getPageNumber() const {
   return pageNumber_;
 }

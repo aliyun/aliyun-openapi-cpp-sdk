@@ -223,6 +223,15 @@ void RunInstancesRequest::setUserData(const std::string &userData) {
   setParameter(std::string("UserData"), userData);
 }
 
+bool RunInstancesRequest::getPasswordInherit() const {
+  return passwordInherit_;
+}
+
+void RunInstancesRequest::setPasswordInherit(bool passwordInherit) {
+  passwordInherit_ = passwordInherit;
+  setParameter(std::string("PasswordInherit"), passwordInherit ? "true" : "false");
+}
+
 std::string RunInstancesRequest::getInstanceType() const {
   return instanceType_;
 }

@@ -41,6 +41,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/AuthorizeSecurityGroupResult.h
 	include/alibabacloud/ens/model/AuthorizeSecurityGroupEgressRequest.h
 	include/alibabacloud/ens/model/AuthorizeSecurityGroupEgressResult.h
+	include/alibabacloud/ens/model/CleanDistDataRequest.h
+	include/alibabacloud/ens/model/CleanDistDataResult.h
 	include/alibabacloud/ens/model/CreateARMServerInstancesRequest.h
 	include/alibabacloud/ens/model/CreateARMServerInstancesResult.h
 	include/alibabacloud/ens/model/CreateApplicationRequest.h
@@ -99,6 +101,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DeleteApplicationResult.h
 	include/alibabacloud/ens/model/DeleteDeviceInternetPortRequest.h
 	include/alibabacloud/ens/model/DeleteDeviceInternetPortResult.h
+	include/alibabacloud/ens/model/DeleteDiskRequest.h
+	include/alibabacloud/ens/model/DeleteDiskResult.h
 	include/alibabacloud/ens/model/DeleteEnsRouteEntryRequest.h
 	include/alibabacloud/ens/model/DeleteEnsRouteEntryResult.h
 	include/alibabacloud/ens/model/DeleteEpnInstanceRequest.h
@@ -291,6 +295,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/GetDeviceInternetPortResult.h
 	include/alibabacloud/ens/model/GetOssStorageAndAccByBucketsRequest.h
 	include/alibabacloud/ens/model/GetOssStorageAndAccByBucketsResult.h
+	include/alibabacloud/ens/model/GetOssUsageDataRequest.h
+	include/alibabacloud/ens/model/GetOssUsageDataResult.h
 	include/alibabacloud/ens/model/ImportKeyPairRequest.h
 	include/alibabacloud/ens/model/ImportKeyPairResult.h
 	include/alibabacloud/ens/model/JoinPublicIpsToEpnInstanceRequest.h
@@ -329,8 +335,6 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ModifySecurityGroupAttributeResult.h
 	include/alibabacloud/ens/model/ModifyVSwitchAttributeRequest.h
 	include/alibabacloud/ens/model/ModifyVSwitchAttributeResult.h
-	include/alibabacloud/ens/model/PreCreateEnsServiceRequest.h
-	include/alibabacloud/ens/model/PreCreateEnsServiceResult.h
 	include/alibabacloud/ens/model/PushApplicationDataRequest.h
 	include/alibabacloud/ens/model/PushApplicationDataResult.h
 	include/alibabacloud/ens/model/ReInitDiskRequest.h
@@ -343,10 +347,14 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/RebootInstanceResult.h
 	include/alibabacloud/ens/model/RebootInstancesRequest.h
 	include/alibabacloud/ens/model/RebootInstancesResult.h
+	include/alibabacloud/ens/model/RecoverAICInstanceRequest.h
+	include/alibabacloud/ens/model/RecoverAICInstanceResult.h
 	include/alibabacloud/ens/model/ReinitInstanceRequest.h
 	include/alibabacloud/ens/model/ReinitInstanceResult.h
 	include/alibabacloud/ens/model/ReinitInstancesRequest.h
 	include/alibabacloud/ens/model/ReinitInstancesResult.h
+	include/alibabacloud/ens/model/ReleaseAICInstanceRequest.h
+	include/alibabacloud/ens/model/ReleaseAICInstanceResult.h
 	include/alibabacloud/ens/model/ReleaseARMServerInstanceRequest.h
 	include/alibabacloud/ens/model/ReleaseARMServerInstanceResult.h
 	include/alibabacloud/ens/model/ReleaseInstanceRequest.h
@@ -373,6 +381,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/ResetAICInstanceResult.h
 	include/alibabacloud/ens/model/ResetDeviceInstanceRequest.h
 	include/alibabacloud/ens/model/ResetDeviceInstanceResult.h
+	include/alibabacloud/ens/model/ResetDiskRequest.h
+	include/alibabacloud/ens/model/ResetDiskResult.h
 	include/alibabacloud/ens/model/ResizeDiskRequest.h
 	include/alibabacloud/ens/model/ResizeDiskResult.h
 	include/alibabacloud/ens/model/RestartDeviceInstanceRequest.h
@@ -448,6 +458,8 @@ set(ens_src
 	src/model/AuthorizeSecurityGroupResult.cc
 	src/model/AuthorizeSecurityGroupEgressRequest.cc
 	src/model/AuthorizeSecurityGroupEgressResult.cc
+	src/model/CleanDistDataRequest.cc
+	src/model/CleanDistDataResult.cc
 	src/model/CreateARMServerInstancesRequest.cc
 	src/model/CreateARMServerInstancesResult.cc
 	src/model/CreateApplicationRequest.cc
@@ -506,6 +518,8 @@ set(ens_src
 	src/model/DeleteApplicationResult.cc
 	src/model/DeleteDeviceInternetPortRequest.cc
 	src/model/DeleteDeviceInternetPortResult.cc
+	src/model/DeleteDiskRequest.cc
+	src/model/DeleteDiskResult.cc
 	src/model/DeleteEnsRouteEntryRequest.cc
 	src/model/DeleteEnsRouteEntryResult.cc
 	src/model/DeleteEpnInstanceRequest.cc
@@ -698,6 +712,8 @@ set(ens_src
 	src/model/GetDeviceInternetPortResult.cc
 	src/model/GetOssStorageAndAccByBucketsRequest.cc
 	src/model/GetOssStorageAndAccByBucketsResult.cc
+	src/model/GetOssUsageDataRequest.cc
+	src/model/GetOssUsageDataResult.cc
 	src/model/ImportKeyPairRequest.cc
 	src/model/ImportKeyPairResult.cc
 	src/model/JoinPublicIpsToEpnInstanceRequest.cc
@@ -736,8 +752,6 @@ set(ens_src
 	src/model/ModifySecurityGroupAttributeResult.cc
 	src/model/ModifyVSwitchAttributeRequest.cc
 	src/model/ModifyVSwitchAttributeResult.cc
-	src/model/PreCreateEnsServiceRequest.cc
-	src/model/PreCreateEnsServiceResult.cc
 	src/model/PushApplicationDataRequest.cc
 	src/model/PushApplicationDataResult.cc
 	src/model/ReInitDiskRequest.cc
@@ -750,10 +764,14 @@ set(ens_src
 	src/model/RebootInstanceResult.cc
 	src/model/RebootInstancesRequest.cc
 	src/model/RebootInstancesResult.cc
+	src/model/RecoverAICInstanceRequest.cc
+	src/model/RecoverAICInstanceResult.cc
 	src/model/ReinitInstanceRequest.cc
 	src/model/ReinitInstanceResult.cc
 	src/model/ReinitInstancesRequest.cc
 	src/model/ReinitInstancesResult.cc
+	src/model/ReleaseAICInstanceRequest.cc
+	src/model/ReleaseAICInstanceResult.cc
 	src/model/ReleaseARMServerInstanceRequest.cc
 	src/model/ReleaseARMServerInstanceResult.cc
 	src/model/ReleaseInstanceRequest.cc
@@ -780,6 +798,8 @@ set(ens_src
 	src/model/ResetAICInstanceResult.cc
 	src/model/ResetDeviceInstanceRequest.cc
 	src/model/ResetDeviceInstanceResult.cc
+	src/model/ResetDiskRequest.cc
+	src/model/ResetDiskResult.cc
 	src/model/ResizeDiskRequest.cc
 	src/model/ResizeDiskResult.cc
 	src/model/RestartDeviceInstanceRequest.cc

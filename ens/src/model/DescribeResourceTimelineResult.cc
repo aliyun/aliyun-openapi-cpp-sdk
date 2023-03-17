@@ -39,60 +39,60 @@ void DescribeResourceTimelineResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allAvailableEventsNode = value["AvailableEvents"]["可用性事件"];
-	for (auto valueAvailableEvents可用性事件 : allAvailableEventsNode)
+	auto allAvailableEventsNode = value["AvailableEvents"]["AvailableEventsItem"];
+	for (auto valueAvailableEventsAvailableEventsItem : allAvailableEventsNode)
 	{
-		可用性事件 availableEventsObject;
-		if(!valueAvailableEvents可用性事件["Name"].isNull())
-			availableEventsObject.name = valueAvailableEvents可用性事件["Name"].asString();
-		if(!valueAvailableEvents可用性事件["OccurrenceTime"].isNull())
-			availableEventsObject.occurrenceTime = valueAvailableEvents可用性事件["OccurrenceTime"].asString();
-		if(!valueAvailableEvents可用性事件["Reason"].isNull())
-			availableEventsObject.reason = valueAvailableEvents可用性事件["Reason"].asString();
-		if(!valueAvailableEvents可用性事件["Type"].isNull())
-			availableEventsObject.type = valueAvailableEvents可用性事件["Type"].asString();
+		AvailableEventsItem availableEventsObject;
+		if(!valueAvailableEventsAvailableEventsItem["Name"].isNull())
+			availableEventsObject.name = valueAvailableEventsAvailableEventsItem["Name"].asString();
+		if(!valueAvailableEventsAvailableEventsItem["OccurrenceTime"].isNull())
+			availableEventsObject.occurrenceTime = valueAvailableEventsAvailableEventsItem["OccurrenceTime"].asString();
+		if(!valueAvailableEventsAvailableEventsItem["Reason"].isNull())
+			availableEventsObject.reason = valueAvailableEventsAvailableEventsItem["Reason"].asString();
+		if(!valueAvailableEventsAvailableEventsItem["Type"].isNull())
+			availableEventsObject.type = valueAvailableEventsAvailableEventsItem["Type"].asString();
 		availableEvents_.push_back(availableEventsObject);
 	}
-	auto allBizEventsNode = value["BizEvents"]["建设状态事件"];
-	for (auto valueBizEvents建设状态事件 : allBizEventsNode)
+	auto allBizEventsNode = value["BizEvents"]["BizEventsItem"];
+	for (auto valueBizEventsBizEventsItem : allBizEventsNode)
 	{
-		建设状态事件 bizEventsObject;
-		if(!valueBizEvents建设状态事件["Name"].isNull())
-			bizEventsObject.name = valueBizEvents建设状态事件["Name"].asString();
-		if(!valueBizEvents建设状态事件["OccurrenceTime"].isNull())
-			bizEventsObject.occurrenceTime = valueBizEvents建设状态事件["OccurrenceTime"].asString();
-		if(!valueBizEvents建设状态事件["Reason"].isNull())
-			bizEventsObject.reason = valueBizEvents建设状态事件["Reason"].asString();
-		if(!valueBizEvents建设状态事件["Type"].isNull())
-			bizEventsObject.type = valueBizEvents建设状态事件["Type"].asString();
+		BizEventsItem bizEventsObject;
+		if(!valueBizEventsBizEventsItem["Name"].isNull())
+			bizEventsObject.name = valueBizEventsBizEventsItem["Name"].asString();
+		if(!valueBizEventsBizEventsItem["OccurrenceTime"].isNull())
+			bizEventsObject.occurrenceTime = valueBizEventsBizEventsItem["OccurrenceTime"].asString();
+		if(!valueBizEventsBizEventsItem["Reason"].isNull())
+			bizEventsObject.reason = valueBizEventsBizEventsItem["Reason"].asString();
+		if(!valueBizEventsBizEventsItem["Type"].isNull())
+			bizEventsObject.type = valueBizEventsBizEventsItem["Type"].asString();
 		bizEvents_.push_back(bizEventsObject);
 	}
-	auto allInventoryEventsNode = value["InventoryEvents"]["资源扣减事件"];
-	for (auto valueInventoryEvents资源扣减事件 : allInventoryEventsNode)
+	auto allInventoryEventsNode = value["InventoryEvents"]["InventoryEventsItem"];
+	for (auto valueInventoryEventsInventoryEventsItem : allInventoryEventsNode)
 	{
-		资源扣减事件 inventoryEventsObject;
-		if(!valueInventoryEvents资源扣减事件["Name"].isNull())
-			inventoryEventsObject.name = valueInventoryEvents资源扣减事件["Name"].asString();
-		if(!valueInventoryEvents资源扣减事件["OccurrenceTime"].isNull())
-			inventoryEventsObject.occurrenceTime = valueInventoryEvents资源扣减事件["OccurrenceTime"].asString();
-		if(!valueInventoryEvents资源扣减事件["Reason"].isNull())
-			inventoryEventsObject.reason = valueInventoryEvents资源扣减事件["Reason"].asString();
-		if(!valueInventoryEvents资源扣减事件["Type"].isNull())
-			inventoryEventsObject.type = valueInventoryEvents资源扣减事件["Type"].asString();
+		InventoryEventsItem inventoryEventsObject;
+		if(!valueInventoryEventsInventoryEventsItem["Name"].isNull())
+			inventoryEventsObject.name = valueInventoryEventsInventoryEventsItem["Name"].asString();
+		if(!valueInventoryEventsInventoryEventsItem["OccurrenceTime"].isNull())
+			inventoryEventsObject.occurrenceTime = valueInventoryEventsInventoryEventsItem["OccurrenceTime"].asString();
+		if(!valueInventoryEventsInventoryEventsItem["Reason"].isNull())
+			inventoryEventsObject.reason = valueInventoryEventsInventoryEventsItem["Reason"].asString();
+		if(!valueInventoryEventsInventoryEventsItem["Type"].isNull())
+			inventoryEventsObject.type = valueInventoryEventsInventoryEventsItem["Type"].asString();
 		inventoryEvents_.push_back(inventoryEventsObject);
 	}
-	auto allReserveEventsNode = value["ReserveEvents"]["资源预留事件"];
-	for (auto valueReserveEvents资源预留事件 : allReserveEventsNode)
+	auto allReserveEventsNode = value["ReserveEvents"]["ReserveEventsItem"];
+	for (auto valueReserveEventsReserveEventsItem : allReserveEventsNode)
 	{
-		资源预留事件 reserveEventsObject;
-		if(!valueReserveEvents资源预留事件["Name"].isNull())
-			reserveEventsObject.name = valueReserveEvents资源预留事件["Name"].asString();
-		if(!valueReserveEvents资源预留事件["OccurrenceTime"].isNull())
-			reserveEventsObject.occurrenceTime = valueReserveEvents资源预留事件["OccurrenceTime"].asString();
-		if(!valueReserveEvents资源预留事件["Reason"].isNull())
-			reserveEventsObject.reason = valueReserveEvents资源预留事件["Reason"].asString();
-		if(!valueReserveEvents资源预留事件["Type"].isNull())
-			reserveEventsObject.type = valueReserveEvents资源预留事件["Type"].asString();
+		ReserveEventsItem reserveEventsObject;
+		if(!valueReserveEventsReserveEventsItem["Name"].isNull())
+			reserveEventsObject.name = valueReserveEventsReserveEventsItem["Name"].asString();
+		if(!valueReserveEventsReserveEventsItem["OccurrenceTime"].isNull())
+			reserveEventsObject.occurrenceTime = valueReserveEventsReserveEventsItem["OccurrenceTime"].asString();
+		if(!valueReserveEventsReserveEventsItem["Reason"].isNull())
+			reserveEventsObject.reason = valueReserveEventsReserveEventsItem["Reason"].asString();
+		if(!valueReserveEventsReserveEventsItem["Type"].isNull())
+			reserveEventsObject.type = valueReserveEventsReserveEventsItem["Type"].asString();
 		reserveEvents_.push_back(reserveEventsObject);
 	}
 	if(!value["Msg"].isNull())
@@ -112,22 +112,22 @@ std::string DescribeResourceTimelineResult::getDesc()const
 	return desc_;
 }
 
-std::vector<DescribeResourceTimelineResult::资源扣减事件> DescribeResourceTimelineResult::getInventoryEvents()const
+std::vector<DescribeResourceTimelineResult::InventoryEventsItem> DescribeResourceTimelineResult::getInventoryEvents()const
 {
 	return inventoryEvents_;
 }
 
-std::vector<DescribeResourceTimelineResult::可用性事件> DescribeResourceTimelineResult::getAvailableEvents()const
+std::vector<DescribeResourceTimelineResult::AvailableEventsItem> DescribeResourceTimelineResult::getAvailableEvents()const
 {
 	return availableEvents_;
 }
 
-std::vector<DescribeResourceTimelineResult::建设状态事件> DescribeResourceTimelineResult::getBizEvents()const
+std::vector<DescribeResourceTimelineResult::BizEventsItem> DescribeResourceTimelineResult::getBizEvents()const
 {
 	return bizEvents_;
 }
 
-std::vector<DescribeResourceTimelineResult::资源预留事件> DescribeResourceTimelineResult::getReserveEvents()const
+std::vector<DescribeResourceTimelineResult::ReserveEventsItem> DescribeResourceTimelineResult::getReserveEvents()const
 {
 	return reserveEvents_;
 }

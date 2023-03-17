@@ -63,6 +63,10 @@ void DescribeSelfImagesResult::parse(const std::string &payload)
 			imagesObject.platform = valueImagesImage["Platform"].asString();
 		if(!valueImagesImage["Status"].isNull())
 			imagesObject.status = valueImagesImage["Status"].asString();
+		if(!valueImagesImage["ComputeType"].isNull())
+			imagesObject.computeType = valueImagesImage["ComputeType"].asString();
+		if(!valueImagesImage["SnapshotId"].isNull())
+			imagesObject.snapshotId = valueImagesImage["SnapshotId"].asString();
 		images_.push_back(imagesObject);
 	}
 	if(!value["Code"].isNull())

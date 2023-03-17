@@ -52,6 +52,15 @@ void DescribeImagesRequest::setImageId(const std::string &imageId) {
   setParameter(std::string("ImageId"), imageId);
 }
 
+std::string DescribeImagesRequest::getSnapshotId() const {
+  return snapshotId_;
+}
+
+void DescribeImagesRequest::setSnapshotId(const std::string &snapshotId) {
+  snapshotId_ = snapshotId;
+  setParameter(std::string("SnapshotId"), snapshotId);
+}
+
 std::string DescribeImagesRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -77,14 +86,5 @@ std::string DescribeImagesRequest::getPageSize() const {
 void DescribeImagesRequest::setPageSize(const std::string &pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), pageSize);
-}
-
-std::string DescribeImagesRequest::getProduct() const {
-  return product_;
-}
-
-void DescribeImagesRequest::setProduct(const std::string &product) {
-  product_ = product;
-  setParameter(std::string("product"), product);
 }
 

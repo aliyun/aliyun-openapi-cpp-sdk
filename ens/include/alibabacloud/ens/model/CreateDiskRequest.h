@@ -30,6 +30,8 @@ class ALIBABACLOUD_ENS_EXPORT CreateDiskRequest : public RpcServiceRequest {
 public:
 	CreateDiskRequest();
 	~CreateDiskRequest();
+	std::string getSnapshotId() const;
+	void setSnapshotId(const std::string &snapshotId);
 	std::string getEnsRegionId() const;
 	void setEnsRegionId(const std::string &ensRegionId);
 	std::string getInstanceChargeType() const;
@@ -40,6 +42,7 @@ public:
 	void setCategory(const std::string &category);
 
 private:
+	std::string snapshotId_;
 	std::string ensRegionId_;
 	std::string instanceChargeType_;
 	std::string size_;

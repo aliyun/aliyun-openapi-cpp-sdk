@@ -34,16 +34,17 @@ namespace AlibabaCloud
 			public:
 				struct DisksItem
 				{
-					std::string instanceName;
 					std::string status;
-					bool portable;
-					std::string type;
 					std::string category;
 					std::string instanceId;
 					int size;
-					std::string creationTime;
 					std::string diskChargeType;
 					std::string diskName;
+					std::string instanceName;
+					bool portable;
+					std::string snapshotId;
+					std::string type;
+					std::string creationTime;
 					std::string ensRegionId;
 					std::string diskId;
 				};

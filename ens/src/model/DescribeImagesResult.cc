@@ -57,6 +57,8 @@ void DescribeImagesResult::parse(const std::string &payload)
 			imagesObject.imageSize = valueImagesImage["ImageSize"].asString();
 		if(!valueImagesImage["Platform"].isNull())
 			imagesObject.platform = valueImagesImage["Platform"].asString();
+		if(!valueImagesImage["SnapshotId"].isNull())
+			imagesObject.snapshotId = valueImagesImage["SnapshotId"].asString();
 		images_.push_back(imagesObject);
 	}
 	if(!value["Code"].isNull())

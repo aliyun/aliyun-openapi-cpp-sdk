@@ -25,6 +25,15 @@ CreateDiskRequest::CreateDiskRequest()
 
 CreateDiskRequest::~CreateDiskRequest() {}
 
+std::string CreateDiskRequest::getSnapshotId() const {
+  return snapshotId_;
+}
+
+void CreateDiskRequest::setSnapshotId(const std::string &snapshotId) {
+  snapshotId_ = snapshotId;
+  setParameter(std::string("SnapshotId"), snapshotId);
+}
+
 std::string CreateDiskRequest::getEnsRegionId() const {
   return ensRegionId_;
 }
