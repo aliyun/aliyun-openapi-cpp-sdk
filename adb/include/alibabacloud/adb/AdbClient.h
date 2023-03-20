@@ -170,6 +170,8 @@
 #include "model/DisableAdviceServiceResult.h"
 #include "model/DownloadDiagnosisRecordsRequest.h"
 #include "model/DownloadDiagnosisRecordsResult.h"
+#include "model/DryRunClusterRequest.h"
+#include "model/DryRunClusterResult.h"
 #include "model/EnableAdviceServiceRequest.h"
 #include "model/EnableAdviceServiceResult.h"
 #include "model/GrantOperatorPermissionRequest.h"
@@ -455,6 +457,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DownloadDiagnosisRecordsResult> DownloadDiagnosisRecordsOutcome;
 			typedef std::future<DownloadDiagnosisRecordsOutcome> DownloadDiagnosisRecordsOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::DownloadDiagnosisRecordsRequest&, const DownloadDiagnosisRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DownloadDiagnosisRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DryRunClusterResult> DryRunClusterOutcome;
+			typedef std::future<DryRunClusterOutcome> DryRunClusterOutcomeCallable;
+			typedef std::function<void(const AdbClient*, const Model::DryRunClusterRequest&, const DryRunClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DryRunClusterAsyncHandler;
 			typedef Outcome<Error, Model::EnableAdviceServiceResult> EnableAdviceServiceOutcome;
 			typedef std::future<EnableAdviceServiceOutcome> EnableAdviceServiceOutcomeCallable;
 			typedef std::function<void(const AdbClient*, const Model::EnableAdviceServiceRequest&, const EnableAdviceServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableAdviceServiceAsyncHandler;
@@ -763,6 +768,9 @@ namespace AlibabaCloud
 			DownloadDiagnosisRecordsOutcome downloadDiagnosisRecords(const Model::DownloadDiagnosisRecordsRequest &request)const;
 			void downloadDiagnosisRecordsAsync(const Model::DownloadDiagnosisRecordsRequest& request, const DownloadDiagnosisRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DownloadDiagnosisRecordsOutcomeCallable downloadDiagnosisRecordsCallable(const Model::DownloadDiagnosisRecordsRequest& request) const;
+			DryRunClusterOutcome dryRunCluster(const Model::DryRunClusterRequest &request)const;
+			void dryRunClusterAsync(const Model::DryRunClusterRequest& request, const DryRunClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DryRunClusterOutcomeCallable dryRunClusterCallable(const Model::DryRunClusterRequest& request) const;
 			EnableAdviceServiceOutcome enableAdviceService(const Model::EnableAdviceServiceRequest &request)const;
 			void enableAdviceServiceAsync(const Model::EnableAdviceServiceRequest& request, const EnableAdviceServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnableAdviceServiceOutcomeCallable enableAdviceServiceCallable(const Model::EnableAdviceServiceRequest& request) const;

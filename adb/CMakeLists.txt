@@ -169,6 +169,8 @@ set(adb_public_header_model
 	include/alibabacloud/adb/model/DisableAdviceServiceResult.h
 	include/alibabacloud/adb/model/DownloadDiagnosisRecordsRequest.h
 	include/alibabacloud/adb/model/DownloadDiagnosisRecordsResult.h
+	include/alibabacloud/adb/model/DryRunClusterRequest.h
+	include/alibabacloud/adb/model/DryRunClusterResult.h
 	include/alibabacloud/adb/model/EnableAdviceServiceRequest.h
 	include/alibabacloud/adb/model/EnableAdviceServiceResult.h
 	include/alibabacloud/adb/model/GrantOperatorPermissionRequest.h
@@ -374,6 +376,8 @@ set(adb_src
 	src/model/DisableAdviceServiceResult.cc
 	src/model/DownloadDiagnosisRecordsRequest.cc
 	src/model/DownloadDiagnosisRecordsResult.cc
+	src/model/DryRunClusterRequest.cc
+	src/model/DryRunClusterResult.cc
 	src/model/EnableAdviceServiceRequest.cc
 	src/model/EnableAdviceServiceResult.cc
 	src/model/GrantOperatorPermissionRequest.cc

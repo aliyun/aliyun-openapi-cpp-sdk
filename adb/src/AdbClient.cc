@@ -2715,6 +2715,42 @@ AdbClient::DownloadDiagnosisRecordsOutcomeCallable AdbClient::downloadDiagnosisR
 	return task->get_future();
 }
 
+AdbClient::DryRunClusterOutcome AdbClient::dryRunCluster(const DryRunClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DryRunClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DryRunClusterOutcome(DryRunClusterResult(outcome.result()));
+	else
+		return DryRunClusterOutcome(outcome.error());
+}
+
+void AdbClient::dryRunClusterAsync(const DryRunClusterRequest& request, const DryRunClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, dryRunCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AdbClient::DryRunClusterOutcomeCallable AdbClient::dryRunClusterCallable(const DryRunClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DryRunClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->dryRunCluster(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AdbClient::EnableAdviceServiceOutcome AdbClient::enableAdviceService(const EnableAdviceServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
