@@ -60,6 +60,8 @@
 #include "model/ScreenChestCTResult.h"
 #include "model/ScreenECRequest.h"
 #include "model/ScreenECResult.h"
+#include "model/SegmentLymphNodeRequest.h"
+#include "model/SegmentLymphNodeResult.h"
 #include "model/SegmentOARRequest.h"
 #include "model/SegmentOARResult.h"
 #include "model/TargetVolumeSegmentRequest.h"
@@ -132,6 +134,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ScreenECResult> ScreenECOutcome;
 			typedef std::future<ScreenECOutcome> ScreenECOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::ScreenECRequest&, const ScreenECOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ScreenECAsyncHandler;
+			typedef Outcome<Error, Model::SegmentLymphNodeResult> SegmentLymphNodeOutcome;
+			typedef std::future<SegmentLymphNodeOutcome> SegmentLymphNodeOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::SegmentLymphNodeRequest&, const SegmentLymphNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentLymphNodeAsyncHandler;
 			typedef Outcome<Error, Model::SegmentOARResult> SegmentOAROutcome;
 			typedef std::future<SegmentOAROutcome> SegmentOAROutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::SegmentOARRequest&, const SegmentOAROutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentOARAsyncHandler;
@@ -203,6 +208,9 @@ namespace AlibabaCloud
 			ScreenECOutcome screenEC(const Model::ScreenECRequest &request)const;
 			void screenECAsync(const Model::ScreenECRequest& request, const ScreenECAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ScreenECOutcomeCallable screenECCallable(const Model::ScreenECRequest& request) const;
+			SegmentLymphNodeOutcome segmentLymphNode(const Model::SegmentLymphNodeRequest &request)const;
+			void segmentLymphNodeAsync(const Model::SegmentLymphNodeRequest& request, const SegmentLymphNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SegmentLymphNodeOutcomeCallable segmentLymphNodeCallable(const Model::SegmentLymphNodeRequest& request) const;
 			SegmentOAROutcome segmentOAR(const Model::SegmentOARRequest &request)const;
 			void segmentOARAsync(const Model::SegmentOARRequest& request, const SegmentOARAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentOAROutcomeCallable segmentOARCallable(const Model::SegmentOARRequest& request) const;

@@ -735,6 +735,42 @@ ImageprocessClient::ScreenECOutcomeCallable ImageprocessClient::screenECCallable
 	return task->get_future();
 }
 
+ImageprocessClient::SegmentLymphNodeOutcome ImageprocessClient::segmentLymphNode(const SegmentLymphNodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SegmentLymphNodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SegmentLymphNodeOutcome(SegmentLymphNodeResult(outcome.result()));
+	else
+		return SegmentLymphNodeOutcome(outcome.error());
+}
+
+void ImageprocessClient::segmentLymphNodeAsync(const SegmentLymphNodeRequest& request, const SegmentLymphNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, segmentLymphNode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::SegmentLymphNodeOutcomeCallable ImageprocessClient::segmentLymphNodeCallable(const SegmentLymphNodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SegmentLymphNodeOutcome()>>(
+			[this, request]()
+			{
+			return this->segmentLymphNode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageprocessClient::SegmentOAROutcome ImageprocessClient::segmentOAR(const SegmentOARRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
