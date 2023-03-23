@@ -49,6 +49,7 @@ namespace AlibabaCloud
 					std::string ossEndpoint;
 					std::vector<RecordFormatItem> recordFormat;
 					std::string ossBucket;
+					int onDemand;
 				};
 				struct SyncGroup
 				{

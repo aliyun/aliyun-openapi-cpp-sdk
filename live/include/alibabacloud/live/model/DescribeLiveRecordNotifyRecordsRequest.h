@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATAREQUEST_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATAREQUEST_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVERECORDNOTIFYRECORDSREQUEST_H_
+#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVERECORDNOTIFYRECORDSREQUEST_H_
 
 #include <alibabacloud/live/LiveExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,41 @@
 namespace AlibabaCloud {
 namespace Live {
 namespace Model {
-class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainRecordUsageDataRequest : public RpcServiceRequest {
+class ALIBABACLOUD_LIVE_EXPORT DescribeLiveRecordNotifyRecordsRequest : public RpcServiceRequest {
 public:
-	DescribeLiveDomainRecordUsageDataRequest();
-	~DescribeLiveDomainRecordUsageDataRequest();
+	DescribeLiveRecordNotifyRecordsRequest();
+	~DescribeLiveRecordNotifyRecordsRequest();
 	std::string getStartTime() const;
 	void setStartTime(const std::string &startTime);
-	std::string getSplitBy() const;
-	void setSplitBy(const std::string &splitBy);
+	long getPageNumber() const;
+	void setPageNumber(long pageNumber);
+	std::string getAppName() const;
+	void setAppName(const std::string &appName);
+	long getPageSize() const;
+	void setPageSize(long pageSize);
+	std::string getStreamName() const;
+	void setStreamName(const std::string &streamName);
 	std::string getDomainName() const;
 	void setDomainName(const std::string &domainName);
 	std::string getEndTime() const;
 	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getInterval() const;
-	void setInterval(const std::string &interval);
-	std::string getRegion() const;
-	void setRegion(const std::string &region);
+	std::string getStatus() const;
+	void setStatus(const std::string &status);
 
 private:
 	std::string startTime_;
-	std::string splitBy_;
+	long pageNumber_;
+	std::string appName_;
+	long pageSize_;
+	std::string streamName_;
 	std::string domainName_;
 	std::string endTime_;
 	long ownerId_;
-	std::string interval_;
-	std::string region_;
+	std::string status_;
 };
 } // namespace Model
 } // namespace Live
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATAREQUEST_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVERECORDNOTIFYRECORDSREQUEST_H_

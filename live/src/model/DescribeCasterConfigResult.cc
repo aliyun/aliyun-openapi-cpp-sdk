@@ -63,6 +63,8 @@ void DescribeCasterConfigResult::parse(const std::string &payload)
 		recordConfig_.ossEndpoint = recordConfigNode["OssEndpoint"].asString();
 	if(!recordConfigNode["OssBucket"].isNull())
 		recordConfig_.ossBucket = recordConfigNode["OssBucket"].asString();
+	if(!recordConfigNode["OnDemand"].isNull())
+		recordConfig_.onDemand = std::stoi(recordConfigNode["OnDemand"].asString());
 	auto allRecordFormatNode = recordConfigNode["RecordFormat"]["RecordFormatItem"];
 	for (auto recordConfigNodeRecordFormatRecordFormatItem : allRecordFormatNode)
 	{

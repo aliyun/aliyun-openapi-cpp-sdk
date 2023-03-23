@@ -1239,6 +1239,42 @@ LiveClient::BatchDeleteLiveDomainConfigsOutcomeCallable LiveClient::batchDeleteL
 	return task->get_future();
 }
 
+LiveClient::BatchGetOnlineUsersOutcome LiveClient::batchGetOnlineUsers(const BatchGetOnlineUsersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BatchGetOnlineUsersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BatchGetOnlineUsersOutcome(BatchGetOnlineUsersResult(outcome.result()));
+	else
+		return BatchGetOnlineUsersOutcome(outcome.error());
+}
+
+void LiveClient::batchGetOnlineUsersAsync(const BatchGetOnlineUsersRequest& request, const BatchGetOnlineUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, batchGetOnlineUsers(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::BatchGetOnlineUsersOutcomeCallable LiveClient::batchGetOnlineUsersCallable(const BatchGetOnlineUsersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BatchGetOnlineUsersOutcome()>>(
+			[this, request]()
+			{
+			return this->batchGetOnlineUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::BatchSetLiveDomainConfigsOutcome LiveClient::batchSetLiveDomainConfigs(const BatchSetLiveDomainConfigsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1521,6 +1557,42 @@ LiveClient::CreateCustomTemplateOutcomeCallable LiveClient::createCustomTemplate
 			[this, request]()
 			{
 			return this->createCustomTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::CreateLiveDelayConfigOutcome LiveClient::createLiveDelayConfig(const CreateLiveDelayConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateLiveDelayConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateLiveDelayConfigOutcome(CreateLiveDelayConfigResult(outcome.result()));
+	else
+		return CreateLiveDelayConfigOutcome(outcome.error());
+}
+
+void LiveClient::createLiveDelayConfigAsync(const CreateLiveDelayConfigRequest& request, const CreateLiveDelayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createLiveDelayConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CreateLiveDelayConfigOutcomeCallable LiveClient::createLiveDelayConfigCallable(const CreateLiveDelayConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateLiveDelayConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->createLiveDelayConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2277,6 +2349,42 @@ LiveClient::DeleteLiveCenterTransferOutcomeCallable LiveClient::deleteLiveCenter
 			[this, request]()
 			{
 			return this->deleteLiveCenterTransfer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteLiveDelayConfigOutcome LiveClient::deleteLiveDelayConfig(const DeleteLiveDelayConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLiveDelayConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLiveDelayConfigOutcome(DeleteLiveDelayConfigResult(outcome.result()));
+	else
+		return DeleteLiveDelayConfigOutcome(outcome.error());
+}
+
+void LiveClient::deleteLiveDelayConfigAsync(const DeleteLiveDelayConfigRequest& request, const DeleteLiveDelayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLiveDelayConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveDelayConfigOutcomeCallable LiveClient::deleteLiveDelayConfigCallable(const DeleteLiveDelayConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLiveDelayConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLiveDelayConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4083,6 +4191,42 @@ LiveClient::DescribeLiveCertificateListOutcomeCallable LiveClient::describeLiveC
 	return task->get_future();
 }
 
+LiveClient::DescribeLiveDelayConfigOutcome LiveClient::describeLiveDelayConfig(const DescribeLiveDelayConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveDelayConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveDelayConfigOutcome(DescribeLiveDelayConfigResult(outcome.result()));
+	else
+		return DescribeLiveDelayConfigOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveDelayConfigAsync(const DescribeLiveDelayConfigRequest& request, const DescribeLiveDelayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveDelayConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveDelayConfigOutcomeCallable LiveClient::describeLiveDelayConfigCallable(const DescribeLiveDelayConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveDelayConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveDelayConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::DescribeLiveDelayedStreamingUsageOutcome LiveClient::describeLiveDelayedStreamingUsage(const DescribeLiveDelayedStreamingUsageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5445,6 +5589,42 @@ LiveClient::DescribeLiveRecordNotifyConfigOutcomeCallable LiveClient::describeLi
 			[this, request]()
 			{
 			return this->describeLiveRecordNotifyConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeLiveRecordNotifyRecordsOutcome LiveClient::describeLiveRecordNotifyRecords(const DescribeLiveRecordNotifyRecordsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeLiveRecordNotifyRecordsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeLiveRecordNotifyRecordsOutcome(DescribeLiveRecordNotifyRecordsResult(outcome.result()));
+	else
+		return DescribeLiveRecordNotifyRecordsOutcome(outcome.error());
+}
+
+void LiveClient::describeLiveRecordNotifyRecordsAsync(const DescribeLiveRecordNotifyRecordsRequest& request, const DescribeLiveRecordNotifyRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeLiveRecordNotifyRecords(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveRecordNotifyRecordsOutcomeCallable LiveClient::describeLiveRecordNotifyRecordsCallable(const DescribeLiveRecordNotifyRecordsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeLiveRecordNotifyRecordsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeLiveRecordNotifyRecords(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -8043,6 +8223,42 @@ LiveClient::LeaveMessageGroupOutcomeCallable LiveClient::leaveMessageGroupCallab
 	return task->get_future();
 }
 
+LiveClient::ListLiveDelayConfigOutcome LiveClient::listLiveDelayConfig(const ListLiveDelayConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListLiveDelayConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListLiveDelayConfigOutcome(ListLiveDelayConfigResult(outcome.result()));
+	else
+		return ListLiveDelayConfigOutcome(outcome.error());
+}
+
+void LiveClient::listLiveDelayConfigAsync(const ListLiveDelayConfigRequest& request, const ListLiveDelayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listLiveDelayConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::ListLiveDelayConfigOutcomeCallable LiveClient::listLiveDelayConfigCallable(const ListLiveDelayConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListLiveDelayConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->listLiveDelayConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::ListLiveRealtimeLogDeliveryOutcome LiveClient::listLiveRealtimeLogDelivery(const ListLiveRealtimeLogDeliveryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -10521,6 +10737,42 @@ LiveClient::UpdateLiveCenterTransferOutcomeCallable LiveClient::updateLiveCenter
 			[this, request]()
 			{
 			return this->updateLiveCenterTransfer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::UpdateLiveDelayConfigOutcome LiveClient::updateLiveDelayConfig(const UpdateLiveDelayConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateLiveDelayConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateLiveDelayConfigOutcome(UpdateLiveDelayConfigResult(outcome.result()));
+	else
+		return UpdateLiveDelayConfigOutcome(outcome.error());
+}
+
+void LiveClient::updateLiveDelayConfigAsync(const UpdateLiveDelayConfigRequest& request, const UpdateLiveDelayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateLiveDelayConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::UpdateLiveDelayConfigOutcomeCallable LiveClient::updateLiveDelayConfigCallable(const UpdateLiveDelayConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateLiveDelayConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateLiveDelayConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -32,6 +32,7 @@ public:
 		float volumeRate;
 		int fixedDelayDuration;
 		std::string validChannel;
+		std::string filter;
 	};
 	UpdateCasterSceneAudioRequest();
 	~UpdateCasterSceneAudioRequest();

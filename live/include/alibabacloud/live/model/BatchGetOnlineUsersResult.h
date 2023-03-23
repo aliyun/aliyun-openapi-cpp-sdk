@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATARESULT_H_
-#define ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATARESULT_H_
+#ifndef ALIBABACLOUD_LIVE_MODEL_BATCHGETONLINEUSERSRESULT_H_
+#define ALIBABACLOUD_LIVE_MODEL_BATCHGETONLINEUSERSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,36 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_LIVE_EXPORT DescribeLiveDomainRecordUsageDataResult : public ServiceResult
+			class ALIBABACLOUD_LIVE_EXPORT BatchGetOnlineUsersResult : public ServiceResult
 			{
 			public:
-				struct DataModule
+				struct Result
 				{
-					std::string type;
-					std::string region;
-					long duration;
-					long count;
-					std::string domain;
-					std::string timeStamp;
+					struct OnlineUsersItem
+					{
+						std::string userId;
+						long joinTime;
+						bool online;
+					};
+					std::vector<OnlineUsersItem> onlineUsers;
 				};
 
 
-				DescribeLiveDomainRecordUsageDataResult();
-				explicit DescribeLiveDomainRecordUsageDataResult(const std::string &payload);
-				~DescribeLiveDomainRecordUsageDataResult();
-				std::string getEndTime()const;
-				std::string getStartTime()const;
-				std::vector<DataModule> getRecordUsageData()const;
+				BatchGetOnlineUsersResult();
+				explicit BatchGetOnlineUsersResult(const std::string &payload);
+				~BatchGetOnlineUsersResult();
+				Result getResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string endTime_;
-				std::string startTime_;
-				std::vector<DataModule> recordUsageData_;
+				Result result_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_LIVE_MODEL_DESCRIBELIVEDOMAINRECORDUSAGEDATARESULT_H_
+#endif // !ALIBABACLOUD_LIVE_MODEL_BATCHGETONLINEUSERSRESULT_H_

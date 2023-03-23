@@ -79,3 +79,12 @@ void DescribeLiveDomainRecordUsageDataRequest::setInterval(const std::string &in
   setParameter(std::string("Interval"), interval);
 }
 
+std::string DescribeLiveDomainRecordUsageDataRequest::getRegion() const {
+  return region_;
+}
+
+void DescribeLiveDomainRecordUsageDataRequest::setRegion(const std::string &region) {
+  region_ = region;
+  setParameter(std::string("Region"), region);
+}
+

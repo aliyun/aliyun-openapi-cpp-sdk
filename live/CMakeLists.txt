@@ -87,6 +87,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/AllowPushStreamResult.h
 	include/alibabacloud/live/model/BatchDeleteLiveDomainConfigsRequest.h
 	include/alibabacloud/live/model/BatchDeleteLiveDomainConfigsResult.h
+	include/alibabacloud/live/model/BatchGetOnlineUsersRequest.h
+	include/alibabacloud/live/model/BatchGetOnlineUsersResult.h
 	include/alibabacloud/live/model/BatchSetLiveDomainConfigsRequest.h
 	include/alibabacloud/live/model/BatchSetLiveDomainConfigsResult.h
 	include/alibabacloud/live/model/CancelMuteAllGroupUserRequest.h
@@ -103,6 +105,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CreateCasterResult.h
 	include/alibabacloud/live/model/CreateCustomTemplateRequest.h
 	include/alibabacloud/live/model/CreateCustomTemplateResult.h
+	include/alibabacloud/live/model/CreateLiveDelayConfigRequest.h
+	include/alibabacloud/live/model/CreateLiveDelayConfigResult.h
 	include/alibabacloud/live/model/CreateLiveRealTimeLogDeliveryRequest.h
 	include/alibabacloud/live/model/CreateLiveRealTimeLogDeliveryResult.h
 	include/alibabacloud/live/model/CreateLiveStreamMonitorRequest.h
@@ -145,6 +149,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteLiveAudioAuditNotifyConfigResult.h
 	include/alibabacloud/live/model/DeleteLiveCenterTransferRequest.h
 	include/alibabacloud/live/model/DeleteLiveCenterTransferResult.h
+	include/alibabacloud/live/model/DeleteLiveDelayConfigRequest.h
+	include/alibabacloud/live/model/DeleteLiveDelayConfigResult.h
 	include/alibabacloud/live/model/DeleteLiveDetectNotifyConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveDetectNotifyConfigResult.h
 	include/alibabacloud/live/model/DeleteLiveDomainRequest.h
@@ -245,6 +251,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveCertificateDetailResult.h
 	include/alibabacloud/live/model/DescribeLiveCertificateListRequest.h
 	include/alibabacloud/live/model/DescribeLiveCertificateListResult.h
+	include/alibabacloud/live/model/DescribeLiveDelayConfigRequest.h
+	include/alibabacloud/live/model/DescribeLiveDelayConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveDelayedStreamingUsageRequest.h
 	include/alibabacloud/live/model/DescribeLiveDelayedStreamingUsageResult.h
 	include/alibabacloud/live/model/DescribeLiveDetectNotifyConfigRequest.h
@@ -321,6 +329,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeLiveRecordConfigResult.h
 	include/alibabacloud/live/model/DescribeLiveRecordNotifyConfigRequest.h
 	include/alibabacloud/live/model/DescribeLiveRecordNotifyConfigResult.h
+	include/alibabacloud/live/model/DescribeLiveRecordNotifyRecordsRequest.h
+	include/alibabacloud/live/model/DescribeLiveRecordNotifyRecordsResult.h
 	include/alibabacloud/live/model/DescribeLiveRecordVodConfigsRequest.h
 	include/alibabacloud/live/model/DescribeLiveRecordVodConfigsResult.h
 	include/alibabacloud/live/model/DescribeLiveShiftConfigsRequest.h
@@ -465,6 +475,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/JoinMessageGroupResult.h
 	include/alibabacloud/live/model/LeaveMessageGroupRequest.h
 	include/alibabacloud/live/model/LeaveMessageGroupResult.h
+	include/alibabacloud/live/model/ListLiveDelayConfigRequest.h
+	include/alibabacloud/live/model/ListLiveDelayConfigResult.h
 	include/alibabacloud/live/model/ListLiveRealtimeLogDeliveryRequest.h
 	include/alibabacloud/live/model/ListLiveRealtimeLogDeliveryResult.h
 	include/alibabacloud/live/model/ListLiveRealtimeLogDeliveryDomainsRequest.h
@@ -603,6 +615,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/UpdateLiveAudioAuditNotifyConfigResult.h
 	include/alibabacloud/live/model/UpdateLiveCenterTransferRequest.h
 	include/alibabacloud/live/model/UpdateLiveCenterTransferResult.h
+	include/alibabacloud/live/model/UpdateLiveDelayConfigRequest.h
+	include/alibabacloud/live/model/UpdateLiveDelayConfigResult.h
 	include/alibabacloud/live/model/UpdateLiveDetectNotifyConfigRequest.h
 	include/alibabacloud/live/model/UpdateLiveDetectNotifyConfigResult.h
 	include/alibabacloud/live/model/UpdateLivePullStreamInfoConfigRequest.h
@@ -698,6 +712,8 @@ set(live_src
 	src/model/AllowPushStreamResult.cc
 	src/model/BatchDeleteLiveDomainConfigsRequest.cc
 	src/model/BatchDeleteLiveDomainConfigsResult.cc
+	src/model/BatchGetOnlineUsersRequest.cc
+	src/model/BatchGetOnlineUsersResult.cc
 	src/model/BatchSetLiveDomainConfigsRequest.cc
 	src/model/BatchSetLiveDomainConfigsResult.cc
 	src/model/CancelMuteAllGroupUserRequest.cc
@@ -714,6 +730,8 @@ set(live_src
 	src/model/CreateCasterResult.cc
 	src/model/CreateCustomTemplateRequest.cc
 	src/model/CreateCustomTemplateResult.cc
+	src/model/CreateLiveDelayConfigRequest.cc
+	src/model/CreateLiveDelayConfigResult.cc
 	src/model/CreateLiveRealTimeLogDeliveryRequest.cc
 	src/model/CreateLiveRealTimeLogDeliveryResult.cc
 	src/model/CreateLiveStreamMonitorRequest.cc
@@ -756,6 +774,8 @@ set(live_src
 	src/model/DeleteLiveAudioAuditNotifyConfigResult.cc
 	src/model/DeleteLiveCenterTransferRequest.cc
 	src/model/DeleteLiveCenterTransferResult.cc
+	src/model/DeleteLiveDelayConfigRequest.cc
+	src/model/DeleteLiveDelayConfigResult.cc
 	src/model/DeleteLiveDetectNotifyConfigRequest.cc
 	src/model/DeleteLiveDetectNotifyConfigResult.cc
 	src/model/DeleteLiveDomainRequest.cc
@@ -856,6 +876,8 @@ set(live_src
 	src/model/DescribeLiveCertificateDetailResult.cc
 	src/model/DescribeLiveCertificateListRequest.cc
 	src/model/DescribeLiveCertificateListResult.cc
+	src/model/DescribeLiveDelayConfigRequest.cc
+	src/model/DescribeLiveDelayConfigResult.cc
 	src/model/DescribeLiveDelayedStreamingUsageRequest.cc
 	src/model/DescribeLiveDelayedStreamingUsageResult.cc
 	src/model/DescribeLiveDetectNotifyConfigRequest.cc
@@ -932,6 +954,8 @@ set(live_src
 	src/model/DescribeLiveRecordConfigResult.cc
 	src/model/DescribeLiveRecordNotifyConfigRequest.cc
 	src/model/DescribeLiveRecordNotifyConfigResult.cc
+	src/model/DescribeLiveRecordNotifyRecordsRequest.cc
+	src/model/DescribeLiveRecordNotifyRecordsResult.cc
 	src/model/DescribeLiveRecordVodConfigsRequest.cc
 	src/model/DescribeLiveRecordVodConfigsResult.cc
 	src/model/DescribeLiveShiftConfigsRequest.cc
@@ -1076,6 +1100,8 @@ set(live_src
 	src/model/JoinMessageGroupResult.cc
 	src/model/LeaveMessageGroupRequest.cc
 	src/model/LeaveMessageGroupResult.cc
+	src/model/ListLiveDelayConfigRequest.cc
+	src/model/ListLiveDelayConfigResult.cc
 	src/model/ListLiveRealtimeLogDeliveryRequest.cc
 	src/model/ListLiveRealtimeLogDeliveryResult.cc
 	src/model/ListLiveRealtimeLogDeliveryDomainsRequest.cc
@@ -1214,6 +1240,8 @@ set(live_src
 	src/model/UpdateLiveAudioAuditNotifyConfigResult.cc
 	src/model/UpdateLiveCenterTransferRequest.cc
 	src/model/UpdateLiveCenterTransferResult.cc
+	src/model/UpdateLiveDelayConfigRequest.cc
+	src/model/UpdateLiveDelayConfigResult.cc
 	src/model/UpdateLiveDetectNotifyConfigRequest.cc
 	src/model/UpdateLiveDetectNotifyConfigResult.cc
 	src/model/UpdateLivePullStreamInfoConfigRequest.cc
