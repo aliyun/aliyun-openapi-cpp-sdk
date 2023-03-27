@@ -39,6 +39,21 @@ void DeleteLaunchTemplateVersionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allLaunchTemplateVersionsNode = value["LaunchTemplateVersions"]["LaunchTemplateVersion"];
+	for (auto valueLaunchTemplateVersionsLaunchTemplateVersion : allLaunchTemplateVersionsNode)
+	{
+		LaunchTemplateVersion launchTemplateVersionsObject;
+		if(!valueLaunchTemplateVersionsLaunchTemplateVersion["LaunchTemplateId"].isNull())
+			launchTemplateVersionsObject.launchTemplateId = valueLaunchTemplateVersionsLaunchTemplateVersion["LaunchTemplateId"].asString();
+		if(!valueLaunchTemplateVersionsLaunchTemplateVersion["LaunchTemplateVersionNumber"].isNull())
+			launchTemplateVersionsObject.launchTemplateVersionNumber = std::stol(valueLaunchTemplateVersionsLaunchTemplateVersion["LaunchTemplateVersionNumber"].asString());
+		launchTemplateVersions_.push_back(launchTemplateVersionsObject);
+	}
 
+}
+
+std::vector<DeleteLaunchTemplateVersionResult::LaunchTemplateVersion> DeleteLaunchTemplateVersionResult::getLaunchTemplateVersions()const
+{
+	return launchTemplateVersions_;
 }
 

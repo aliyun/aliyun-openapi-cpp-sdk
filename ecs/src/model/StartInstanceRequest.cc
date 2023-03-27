@@ -34,15 +34,6 @@ void StartInstanceRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string StartInstanceRequest::getSourceRegionId() const {
-  return sourceRegionId_;
-}
-
-void StartInstanceRequest::setSourceRegionId(const std::string &sourceRegionId) {
-  sourceRegionId_ = sourceRegionId;
-  setParameter(std::string("SourceRegionId"), sourceRegionId);
-}
-
 bool StartInstanceRequest::getInitLocalDisk() const {
   return initLocalDisk_;
 }

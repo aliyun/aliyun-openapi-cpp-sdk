@@ -49,6 +49,9 @@ public:
 		std::string rolearn;
 		long assumeRoleFor;
 	};
+	struct NetworkOptions {
+		bool enableJumboFrame;
+	};
 	struct Tag {
 		std::string key;
 		std::string value;
@@ -167,6 +170,8 @@ public:
 	void setSpotDuration(int spotDuration);
 	std::vector<std::string> getSecurityGroupIds() const;
 	void setSecurityGroupIds(const std::vector<std::string> &securityGroupIds);
+	NetworkOptions getNetworkOptions() const;
+	void setNetworkOptions(const NetworkOptions &networkOptions);
 	std::string getSystemDiskSize() const;
 	void setSystemDiskSize(const std::string &systemDiskSize);
 	std::string getImageFamily() const;
@@ -304,6 +309,7 @@ private:
 	std::string dedicatedHostId_;
 	int spotDuration_;
 	std::vector<std::string> securityGroupIds_;
+	NetworkOptions networkOptions_;
 	std::string systemDiskSize_;
 	std::string imageFamily_;
 	std::string launchTemplateName_;

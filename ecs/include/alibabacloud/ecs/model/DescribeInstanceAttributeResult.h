@@ -67,6 +67,7 @@ namespace AlibabaCloud
 				std::string getInstanceNetworkType()const;
 				std::vector<std::string> getPublicIpAddress()const;
 				std::vector<std::string> getInnerIpAddress()const;
+				bool getEnableJumboFrame()const;
 				std::string getExpiredTime()const;
 				EipAddress getEipAddress()const;
 				std::string getImageId()const;
@@ -102,6 +103,7 @@ namespace AlibabaCloud
 				std::string instanceNetworkType_;
 				std::vector<std::string> publicIpAddress_;
 				std::vector<std::string> innerIpAddress_;
+				bool enableJumboFrame_;
 				std::string expiredTime_;
 				EipAddress eipAddress_;
 				std::string imageId_;

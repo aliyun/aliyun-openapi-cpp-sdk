@@ -38,11 +38,13 @@ namespace AlibabaCloud
 				explicit CreateLaunchTemplateVersionResult(const std::string &payload);
 				~CreateLaunchTemplateVersionResult();
 				long getLaunchTemplateVersionNumber()const;
+				std::string getLaunchTemplateId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				long launchTemplateVersionNumber_;
+				std::string launchTemplateId_;
 
 			};
 		}

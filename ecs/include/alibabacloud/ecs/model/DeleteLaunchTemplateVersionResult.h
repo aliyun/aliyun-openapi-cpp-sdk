@@ -32,15 +32,22 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ECS_EXPORT DeleteLaunchTemplateVersionResult : public ServiceResult
 			{
 			public:
+				struct LaunchTemplateVersion
+				{
+					long launchTemplateVersionNumber;
+					std::string launchTemplateId;
+				};
 
 
 				DeleteLaunchTemplateVersionResult();
 				explicit DeleteLaunchTemplateVersionResult(const std::string &payload);
 				~DeleteLaunchTemplateVersionResult();
+				std::vector<LaunchTemplateVersion> getLaunchTemplateVersions()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::vector<LaunchTemplateVersion> launchTemplateVersions_;
 
 			};
 		}

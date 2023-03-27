@@ -97,6 +97,15 @@ void ModifyInstanceAttributeRequest::setHostName(const std::string &hostName) {
   setParameter(std::string("HostName"), hostName);
 }
 
+bool ModifyInstanceAttributeRequest::getEnableJumboFrame() const {
+  return enableJumboFrame_;
+}
+
+void ModifyInstanceAttributeRequest::setEnableJumboFrame(bool enableJumboFrame) {
+  enableJumboFrame_ = enableJumboFrame;
+  setParameter(std::string("EnableJumboFrame"), enableJumboFrame ? "true" : "false");
+}
+
 std::string ModifyInstanceAttributeRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

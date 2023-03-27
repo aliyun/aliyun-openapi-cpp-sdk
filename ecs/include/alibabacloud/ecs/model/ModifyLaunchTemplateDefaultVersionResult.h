@@ -37,10 +37,12 @@ namespace AlibabaCloud
 				ModifyLaunchTemplateDefaultVersionResult();
 				explicit ModifyLaunchTemplateDefaultVersionResult(const std::string &payload);
 				~ModifyLaunchTemplateDefaultVersionResult();
+				std::string getLaunchTemplateId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				std::string launchTemplateId_;
 
 			};
 		}

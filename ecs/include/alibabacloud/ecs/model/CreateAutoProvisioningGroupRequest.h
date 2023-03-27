@@ -94,6 +94,8 @@ public:
 	void setLaunchConfigurationResourceGroupId(const std::string &launchConfigurationResourceGroupId);
 	std::string getLaunchConfigurationPassword() const;
 	void setLaunchConfigurationPassword(const std::string &launchConfigurationPassword);
+	std::string getLaunchConfigurationAutoReleaseTime() const;
+	void setLaunchConfigurationAutoReleaseTime(const std::string &launchConfigurationAutoReleaseTime);
 	std::string getPayAsYouGoAllocationStrategy() const;
 	void setPayAsYouGoAllocationStrategy(const std::string &payAsYouGoAllocationStrategy);
 	std::string getDefaultTargetCapacityType() const;
@@ -205,6 +207,7 @@ private:
 	std::string launchConfigurationImageId_;
 	std::string launchConfigurationResourceGroupId_;
 	std::string launchConfigurationPassword_;
+	std::string launchConfigurationAutoReleaseTime_;
 	std::string payAsYouGoAllocationStrategy_;
 	std::string defaultTargetCapacityType_;
 	std::string launchConfigurationKeyPairName_;

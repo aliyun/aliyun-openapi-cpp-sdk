@@ -128,6 +128,8 @@ void DescribeInstanceAttributeResult::parse(const std::string &payload)
 		internetChargeType_ = value["InternetChargeType"].asString();
 	if(!value["CreditSpecification"].isNull())
 		creditSpecification_ = value["CreditSpecification"].asString();
+	if(!value["EnableJumboFrame"].isNull())
+		enableJumboFrame_ = value["EnableJumboFrame"].asString() == "true";
 
 }
 
@@ -164,6 +166,11 @@ std::vector<std::string> DescribeInstanceAttributeResult::getPublicIpAddress()co
 std::vector<std::string> DescribeInstanceAttributeResult::getInnerIpAddress()const
 {
 	return innerIpAddress_;
+}
+
+bool DescribeInstanceAttributeResult::getEnableJumboFrame()const
+{
+	return enableJumboFrame_;
 }
 
 std::string DescribeInstanceAttributeResult::getExpiredTime()const

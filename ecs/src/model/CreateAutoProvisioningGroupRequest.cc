@@ -135,6 +135,15 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationPassword(const st
   setParameter(std::string("LaunchConfiguration.Password"), launchConfigurationPassword);
 }
 
+std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationAutoReleaseTime() const {
+  return launchConfigurationAutoReleaseTime_;
+}
+
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationAutoReleaseTime(const std::string &launchConfigurationAutoReleaseTime) {
+  launchConfigurationAutoReleaseTime_ = launchConfigurationAutoReleaseTime;
+  setParameter(std::string("LaunchConfiguration.AutoReleaseTime"), launchConfigurationAutoReleaseTime);
+}
+
 std::string CreateAutoProvisioningGroupRequest::getPayAsYouGoAllocationStrategy() const {
   return payAsYouGoAllocationStrategy_;
 }

@@ -32,8 +32,6 @@ public:
 	~StartInstanceRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getSourceRegionId() const;
-	void setSourceRegionId(const std::string &sourceRegionId);
 	bool getInitLocalDisk() const;
 	void setInitLocalDisk(bool initLocalDisk);
 	bool getDryRun() const;
@@ -49,7 +47,6 @@ public:
 
 private:
 	long resourceOwnerId_;
-	std::string sourceRegionId_;
 	bool initLocalDisk_;
 	bool dryRun_;
 	std::string resourceOwnerAccount_;

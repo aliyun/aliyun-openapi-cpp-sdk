@@ -34,6 +34,15 @@ void AssignIpv6AddressesRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string AssignIpv6AddressesRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void AssignIpv6AddressesRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 std::vector<std::string> AssignIpv6AddressesRequest::getIpv6Prefix() const {
   return ipv6Prefix_;
 }

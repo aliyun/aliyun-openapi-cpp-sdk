@@ -50,6 +50,8 @@ public:
 	void setPassword(const std::string &password);
 	std::string getHostName() const;
 	void setHostName(const std::string &hostName);
+	bool getEnableJumboFrame() const;
+	void setEnableJumboFrame(bool enableJumboFrame);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -76,6 +78,7 @@ private:
 	std::string userData_;
 	std::string password_;
 	std::string hostName_;
+	bool enableJumboFrame_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string creditSpecification_;

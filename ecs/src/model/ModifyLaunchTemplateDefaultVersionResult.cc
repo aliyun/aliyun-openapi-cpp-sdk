@@ -39,6 +39,13 @@ void ModifyLaunchTemplateDefaultVersionResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["LaunchTemplateId"].isNull())
+		launchTemplateId_ = value["LaunchTemplateId"].asString();
 
+}
+
+std::string ModifyLaunchTemplateDefaultVersionResult::getLaunchTemplateId()const
+{
+	return launchTemplateId_;
 }
 

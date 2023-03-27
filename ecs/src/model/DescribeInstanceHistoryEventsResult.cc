@@ -82,6 +82,16 @@ void DescribeInstanceHistoryEventsResult::parse(const std::string &payload)
 			instanceSystemEventSetObject.extendedAttribute.onlineRepairPolicy = extendedAttributeNode["OnlineRepairPolicy"].asString();
 		if(!extendedAttributeNode["Rack"].isNull())
 			instanceSystemEventSetObject.extendedAttribute.rack = extendedAttributeNode["Rack"].asString();
+		if(!extendedAttributeNode["PunishType"].isNull())
+			instanceSystemEventSetObject.extendedAttribute.punishType = extendedAttributeNode["PunishType"].asString();
+		if(!extendedAttributeNode["PunishDomain"].isNull())
+			instanceSystemEventSetObject.extendedAttribute.punishDomain = extendedAttributeNode["PunishDomain"].asString();
+		if(!extendedAttributeNode["PunishUrl"].isNull())
+			instanceSystemEventSetObject.extendedAttribute.punishUrl = extendedAttributeNode["PunishUrl"].asString();
+		if(!extendedAttributeNode["Code"].isNull())
+			instanceSystemEventSetObject.extendedAttribute.code = extendedAttributeNode["Code"].asString();
+		if(!extendedAttributeNode["CanAccept"].isNull())
+			instanceSystemEventSetObject.extendedAttribute.canAccept = extendedAttributeNode["CanAccept"].asString();
 		auto allInactiveDisksNode = extendedAttributeNode["InactiveDisks"]["InactiveDisk"];
 		for (auto extendedAttributeNodeInactiveDisksInactiveDisk : allInactiveDisksNode)
 		{

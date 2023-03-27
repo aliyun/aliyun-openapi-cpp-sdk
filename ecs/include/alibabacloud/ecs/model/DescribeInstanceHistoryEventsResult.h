@@ -54,11 +54,16 @@ namespace AlibabaCloud
 							std::string creationTime;
 							std::string deviceCategory;
 						};
-						std::string rack;
-						std::string hostType;
 						std::string device;
+						std::string punishType;
+						std::string punishDomain;
 						std::string hostId;
 						std::vector<InactiveDisk> inactiveDisks;
+						std::string code;
+						std::string canAccept;
+						std::string rack;
+						std::string punishUrl;
+						std::string hostType;
 						std::string diskId;
 						std::string onlineRepairPolicy;
 						std::vector<std::string> migrationOptions;

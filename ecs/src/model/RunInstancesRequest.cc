@@ -410,6 +410,15 @@ void RunInstancesRequest::setSecurityGroupIds(const std::vector<std::string> &se
   securityGroupIds_ = securityGroupIds;
 }
 
+RunInstancesRequest::NetworkOptions RunInstancesRequest::getNetworkOptions() const {
+  return networkOptions_;
+}
+
+void RunInstancesRequest::setNetworkOptions(const RunInstancesRequest::NetworkOptions &networkOptions) {
+  networkOptions_ = networkOptions;
+  setParameter(std::string("NetworkOptions") + ".EnableJumboFrame", networkOptions.enableJumboFrame ? "true" : "false");
+}
+
 std::string RunInstancesRequest::getSystemDiskSize() const {
   return systemDiskSize_;
 }

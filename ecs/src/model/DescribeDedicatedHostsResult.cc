@@ -89,6 +89,8 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 			dedicatedHostsObject.sockets = std::stoi(valueDedicatedHostsDedicatedHost["Sockets"].asString());
 		if(!valueDedicatedHostsDedicatedHost["MachineId"].isNull())
 			dedicatedHostsObject.machineId = valueDedicatedHostsDedicatedHost["MachineId"].asString();
+		if(!valueDedicatedHostsDedicatedHost["DedicatedHostOwnerId"].isNull())
+			dedicatedHostsObject.dedicatedHostOwnerId = std::stol(valueDedicatedHostsDedicatedHost["DedicatedHostOwnerId"].asString());
 		auto allInstancesNode = valueDedicatedHostsDedicatedHost["Instances"]["Instance"];
 		for (auto valueDedicatedHostsDedicatedHostInstancesInstance : allInstancesNode)
 		{
@@ -99,6 +101,8 @@ void DescribeDedicatedHostsResult::parse(const std::string &payload)
 				instancesObject.instanceId = valueDedicatedHostsDedicatedHostInstancesInstance["InstanceId"].asString();
 			if(!valueDedicatedHostsDedicatedHostInstancesInstance["SocketId"].isNull())
 				instancesObject.socketId = valueDedicatedHostsDedicatedHostInstancesInstance["SocketId"].asString();
+			if(!valueDedicatedHostsDedicatedHostInstancesInstance["InstanceOwnerId"].isNull())
+				instancesObject.instanceOwnerId = std::stol(valueDedicatedHostsDedicatedHostInstancesInstance["InstanceOwnerId"].asString());
 			dedicatedHostsObject.instances.push_back(instancesObject);
 		}
 		auto allOperationLocksNode = valueDedicatedHostsDedicatedHost["OperationLocks"]["OperationLock"];

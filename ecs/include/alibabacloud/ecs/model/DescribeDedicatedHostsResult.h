@@ -69,6 +69,7 @@ namespace AlibabaCloud
 						std::string instanceId;
 						std::string socketId;
 						std::string instanceType;
+						long instanceOwnerId;
 					};
 					struct OperationLock
 					{
@@ -92,6 +93,7 @@ namespace AlibabaCloud
 					float cpuOverCommitRatio;
 					std::string expiredTime;
 					std::string saleCycle;
+					long dedicatedHostOwnerId;
 					std::vector<DedicatedHost::Tag> tags;
 					HostDetailInfo hostDetailInfo;
 					std::string status;
