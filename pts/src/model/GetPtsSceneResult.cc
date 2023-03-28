@@ -155,6 +155,16 @@ void GetPtsSceneResult::parse(const std::string &payload)
 			globalParameterObject.paramValue = sceneNodeGlobalParameterListGlobalParameter["ParamValue"].asString();
 		scene_.globalParameterList.push_back(globalParameterObject);
 	}
+	auto allHeadersNode = sceneNode["Headers"]["Header"];
+	for (auto sceneNodeHeadersHeader : allHeadersNode)
+	{
+		Scene::Header1 header1Object;
+		if(!sceneNodeHeadersHeader["Name"].isNull())
+			header1Object.name = sceneNodeHeadersHeader["Name"].asString();
+		if(!sceneNodeHeadersHeader["Value"].isNull())
+			header1Object.value = sceneNodeHeadersHeader["Value"].asString();
+		scene_.headers.push_back(header1Object);
+	}
 	auto loadConfigNode = sceneNode["LoadConfig"];
 	if(!loadConfigNode["MaxRunningTime"].isNull())
 		scene_.loadConfig.maxRunningTime = std::stoi(loadConfigNode["MaxRunningTime"].asString());

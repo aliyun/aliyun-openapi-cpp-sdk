@@ -146,12 +146,18 @@ namespace AlibabaCloud
 						std::string paramValue;
 						std::string paramName;
 					};
+					struct Header1
+					{
+						std::string value;
+						std::string name;
+					};
 					std::string status;
 					std::string sceneId;
 					AdvanceSetting advanceSetting;
 					std::vector<Relation> relationList;
 					std::string modifiedTime;
 					std::string sceneName;
+					std::vector<Header1> headers;
 					LoadConfig loadConfig;
 					std::string createTime;
 					std::vector<GlobalParameter> globalParameterList;
