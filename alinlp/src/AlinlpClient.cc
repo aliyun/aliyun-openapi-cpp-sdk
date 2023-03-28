@@ -31,21 +31,21 @@ AlinlpClient::AlinlpClient(const Credentials &credentials, const ClientConfigura
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alinlp");
 }
 
 AlinlpClient::AlinlpClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alinlp");
 }
 
 AlinlpClient::AlinlpClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alinlp");
 }
 
 AlinlpClient::~AlinlpClient()
@@ -1239,6 +1239,42 @@ AlinlpClient::GetTsChEcomOutcomeCallable AlinlpClient::getTsChEcomCallable(const
 	return task->get_future();
 }
 
+AlinlpClient::GetUserUploadSignOutcome AlinlpClient::getUserUploadSign(const GetUserUploadSignRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUserUploadSignOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUserUploadSignOutcome(GetUserUploadSignResult(outcome.result()));
+	else
+		return GetUserUploadSignOutcome(outcome.error());
+}
+
+void AlinlpClient::getUserUploadSignAsync(const GetUserUploadSignRequest& request, const GetUserUploadSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUserUploadSign(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlinlpClient::GetUserUploadSignOutcomeCallable AlinlpClient::getUserUploadSignCallable(const GetUserUploadSignRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUserUploadSignOutcome()>>(
+			[this, request]()
+			{
+			return this->getUserUploadSign(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlinlpClient::GetWeChCommentOutcome AlinlpClient::getWeChComment(const GetWeChCommentRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1737,6 +1773,42 @@ AlinlpClient::GetWsCustomizedSeaGeneralOutcomeCallable AlinlpClient::getWsCustom
 			[this, request]()
 			{
 			return this->getWsCustomizedSeaGeneral(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlinlpClient::InsertCustomOutcome AlinlpClient::insertCustom(const InsertCustomRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InsertCustomOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InsertCustomOutcome(InsertCustomResult(outcome.result()));
+	else
+		return InsertCustomOutcome(outcome.error());
+}
+
+void AlinlpClient::insertCustomAsync(const InsertCustomRequest& request, const InsertCustomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, insertCustom(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlinlpClient::InsertCustomOutcomeCallable AlinlpClient::insertCustomCallable(const InsertCustomRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InsertCustomOutcome()>>(
+			[this, request]()
+			{
+			return this->insertCustom(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

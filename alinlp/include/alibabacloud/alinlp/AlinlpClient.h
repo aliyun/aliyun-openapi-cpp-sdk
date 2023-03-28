@@ -88,6 +88,8 @@
 #include "model/GetTcChGeneralResult.h"
 #include "model/GetTsChEcomRequest.h"
 #include "model/GetTsChEcomResult.h"
+#include "model/GetUserUploadSignRequest.h"
+#include "model/GetUserUploadSignResult.h"
 #include "model/GetWeChCommentRequest.h"
 #include "model/GetWeChCommentResult.h"
 #include "model/GetWeChEcomRequest.h"
@@ -116,6 +118,8 @@
 #include "model/GetWsCustomizedSeaEcomResult.h"
 #include "model/GetWsCustomizedSeaGeneralRequest.h"
 #include "model/GetWsCustomizedSeaGeneralResult.h"
+#include "model/InsertCustomRequest.h"
+#include "model/InsertCustomResult.h"
 #include "model/OpenAlinlpServiceRequest.h"
 #include "model/OpenAlinlpServiceResult.h"
 #include "model/RequestTableQARequest.h"
@@ -230,6 +234,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetTsChEcomResult> GetTsChEcomOutcome;
 			typedef std::future<GetTsChEcomOutcome> GetTsChEcomOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::GetTsChEcomRequest&, const GetTsChEcomOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTsChEcomAsyncHandler;
+			typedef Outcome<Error, Model::GetUserUploadSignResult> GetUserUploadSignOutcome;
+			typedef std::future<GetUserUploadSignOutcome> GetUserUploadSignOutcomeCallable;
+			typedef std::function<void(const AlinlpClient*, const Model::GetUserUploadSignRequest&, const GetUserUploadSignOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserUploadSignAsyncHandler;
 			typedef Outcome<Error, Model::GetWeChCommentResult> GetWeChCommentOutcome;
 			typedef std::future<GetWeChCommentOutcome> GetWeChCommentOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::GetWeChCommentRequest&, const GetWeChCommentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWeChCommentAsyncHandler;
@@ -272,6 +279,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetWsCustomizedSeaGeneralResult> GetWsCustomizedSeaGeneralOutcome;
 			typedef std::future<GetWsCustomizedSeaGeneralOutcome> GetWsCustomizedSeaGeneralOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::GetWsCustomizedSeaGeneralRequest&, const GetWsCustomizedSeaGeneralOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWsCustomizedSeaGeneralAsyncHandler;
+			typedef Outcome<Error, Model::InsertCustomResult> InsertCustomOutcome;
+			typedef std::future<InsertCustomOutcome> InsertCustomOutcomeCallable;
+			typedef std::function<void(const AlinlpClient*, const Model::InsertCustomRequest&, const InsertCustomOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InsertCustomAsyncHandler;
 			typedef Outcome<Error, Model::OpenAlinlpServiceResult> OpenAlinlpServiceOutcome;
 			typedef std::future<OpenAlinlpServiceOutcome> OpenAlinlpServiceOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::OpenAlinlpServiceRequest&, const OpenAlinlpServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenAlinlpServiceAsyncHandler;
@@ -385,6 +395,9 @@ namespace AlibabaCloud
 			GetTsChEcomOutcome getTsChEcom(const Model::GetTsChEcomRequest &request)const;
 			void getTsChEcomAsync(const Model::GetTsChEcomRequest& request, const GetTsChEcomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTsChEcomOutcomeCallable getTsChEcomCallable(const Model::GetTsChEcomRequest& request) const;
+			GetUserUploadSignOutcome getUserUploadSign(const Model::GetUserUploadSignRequest &request)const;
+			void getUserUploadSignAsync(const Model::GetUserUploadSignRequest& request, const GetUserUploadSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetUserUploadSignOutcomeCallable getUserUploadSignCallable(const Model::GetUserUploadSignRequest& request) const;
 			GetWeChCommentOutcome getWeChComment(const Model::GetWeChCommentRequest &request)const;
 			void getWeChCommentAsync(const Model::GetWeChCommentRequest& request, const GetWeChCommentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetWeChCommentOutcomeCallable getWeChCommentCallable(const Model::GetWeChCommentRequest& request) const;
@@ -427,6 +440,9 @@ namespace AlibabaCloud
 			GetWsCustomizedSeaGeneralOutcome getWsCustomizedSeaGeneral(const Model::GetWsCustomizedSeaGeneralRequest &request)const;
 			void getWsCustomizedSeaGeneralAsync(const Model::GetWsCustomizedSeaGeneralRequest& request, const GetWsCustomizedSeaGeneralAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetWsCustomizedSeaGeneralOutcomeCallable getWsCustomizedSeaGeneralCallable(const Model::GetWsCustomizedSeaGeneralRequest& request) const;
+			InsertCustomOutcome insertCustom(const Model::InsertCustomRequest &request)const;
+			void insertCustomAsync(const Model::InsertCustomRequest& request, const InsertCustomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InsertCustomOutcomeCallable insertCustomCallable(const Model::InsertCustomRequest& request) const;
 			OpenAlinlpServiceOutcome openAlinlpService(const Model::OpenAlinlpServiceRequest &request)const;
 			void openAlinlpServiceAsync(const Model::OpenAlinlpServiceRequest& request, const OpenAlinlpServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenAlinlpServiceOutcomeCallable openAlinlpServiceCallable(const Model::OpenAlinlpServiceRequest& request) const;

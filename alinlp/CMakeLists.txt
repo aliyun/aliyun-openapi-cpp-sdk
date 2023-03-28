@@ -87,6 +87,8 @@ set(alinlp_public_header_model
 	include/alibabacloud/alinlp/model/GetTcChGeneralResult.h
 	include/alibabacloud/alinlp/model/GetTsChEcomRequest.h
 	include/alibabacloud/alinlp/model/GetTsChEcomResult.h
+	include/alibabacloud/alinlp/model/GetUserUploadSignRequest.h
+	include/alibabacloud/alinlp/model/GetUserUploadSignResult.h
 	include/alibabacloud/alinlp/model/GetWeChCommentRequest.h
 	include/alibabacloud/alinlp/model/GetWeChCommentResult.h
 	include/alibabacloud/alinlp/model/GetWeChEcomRequest.h
@@ -115,6 +117,8 @@ set(alinlp_public_header_model
 	include/alibabacloud/alinlp/model/GetWsCustomizedSeaEcomResult.h
 	include/alibabacloud/alinlp/model/GetWsCustomizedSeaGeneralRequest.h
 	include/alibabacloud/alinlp/model/GetWsCustomizedSeaGeneralResult.h
+	include/alibabacloud/alinlp/model/InsertCustomRequest.h
+	include/alibabacloud/alinlp/model/InsertCustomResult.h
 	include/alibabacloud/alinlp/model/OpenAlinlpServiceRequest.h
 	include/alibabacloud/alinlp/model/OpenAlinlpServiceResult.h
 	include/alibabacloud/alinlp/model/RequestTableQARequest.h
@@ -190,6 +194,8 @@ set(alinlp_src
 	src/model/GetTcChGeneralResult.cc
 	src/model/GetTsChEcomRequest.cc
 	src/model/GetTsChEcomResult.cc
+	src/model/GetUserUploadSignRequest.cc
+	src/model/GetUserUploadSignResult.cc
 	src/model/GetWeChCommentRequest.cc
 	src/model/GetWeChCommentResult.cc
 	src/model/GetWeChEcomRequest.cc
@@ -218,6 +224,8 @@ set(alinlp_src
 	src/model/GetWsCustomizedSeaEcomResult.cc
 	src/model/GetWsCustomizedSeaGeneralRequest.cc
 	src/model/GetWsCustomizedSeaGeneralResult.cc
+	src/model/InsertCustomRequest.cc
+	src/model/InsertCustomResult.cc
 	src/model/OpenAlinlpServiceRequest.cc
 	src/model/OpenAlinlpServiceResult.cc
 	src/model/RequestTableQARequest.cc
