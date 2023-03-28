@@ -303,6 +303,42 @@ VideoenhanClient::DeleteFaceVideoTemplateOutcomeCallable VideoenhanClient::delet
 	return task->get_future();
 }
 
+VideoenhanClient::EnhancePortraitVideoOutcome VideoenhanClient::enhancePortraitVideo(const EnhancePortraitVideoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnhancePortraitVideoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnhancePortraitVideoOutcome(EnhancePortraitVideoResult(outcome.result()));
+	else
+		return EnhancePortraitVideoOutcome(outcome.error());
+}
+
+void VideoenhanClient::enhancePortraitVideoAsync(const EnhancePortraitVideoRequest& request, const EnhancePortraitVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enhancePortraitVideo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideoenhanClient::EnhancePortraitVideoOutcomeCallable VideoenhanClient::enhancePortraitVideoCallable(const EnhancePortraitVideoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnhancePortraitVideoOutcome()>>(
+			[this, request]()
+			{
+			return this->enhancePortraitVideo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VideoenhanClient::EnhanceVideoQualityOutcome VideoenhanClient::enhanceVideoQuality(const EnhanceVideoQualityRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +693,42 @@ VideoenhanClient::QueryFaceVideoTemplateOutcomeCallable VideoenhanClient::queryF
 			[this, request]()
 			{
 			return this->queryFaceVideoTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VideoenhanClient::ReduceVideoNoiseOutcome VideoenhanClient::reduceVideoNoise(const ReduceVideoNoiseRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ReduceVideoNoiseOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ReduceVideoNoiseOutcome(ReduceVideoNoiseResult(outcome.result()));
+	else
+		return ReduceVideoNoiseOutcome(outcome.error());
+}
+
+void VideoenhanClient::reduceVideoNoiseAsync(const ReduceVideoNoiseRequest& request, const ReduceVideoNoiseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, reduceVideoNoise(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VideoenhanClient::ReduceVideoNoiseOutcomeCallable VideoenhanClient::reduceVideoNoiseCallable(const ReduceVideoNoiseRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ReduceVideoNoiseOutcome()>>(
+			[this, request]()
+			{
+			return this->reduceVideoNoise(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

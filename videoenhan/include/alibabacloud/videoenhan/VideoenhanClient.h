@@ -36,6 +36,8 @@
 #include "model/ConvertHdrVideoResult.h"
 #include "model/DeleteFaceVideoTemplateRequest.h"
 #include "model/DeleteFaceVideoTemplateResult.h"
+#include "model/EnhancePortraitVideoRequest.h"
+#include "model/EnhancePortraitVideoResult.h"
 #include "model/EnhanceVideoQualityRequest.h"
 #include "model/EnhanceVideoQualityResult.h"
 #include "model/EraseVideoLogoRequest.h"
@@ -56,6 +58,8 @@
 #include "model/MergeVideoModelFaceResult.h"
 #include "model/QueryFaceVideoTemplateRequest.h"
 #include "model/QueryFaceVideoTemplateResult.h"
+#include "model/ReduceVideoNoiseRequest.h"
+#include "model/ReduceVideoNoiseResult.h"
 #include "model/SuperResolveVideoRequest.h"
 #include "model/SuperResolveVideoResult.h"
 #include "model/ToneSdrVideoRequest.h"
@@ -90,6 +94,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteFaceVideoTemplateResult> DeleteFaceVideoTemplateOutcome;
 			typedef std::future<DeleteFaceVideoTemplateOutcome> DeleteFaceVideoTemplateOutcomeCallable;
 			typedef std::function<void(const VideoenhanClient*, const Model::DeleteFaceVideoTemplateRequest&, const DeleteFaceVideoTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFaceVideoTemplateAsyncHandler;
+			typedef Outcome<Error, Model::EnhancePortraitVideoResult> EnhancePortraitVideoOutcome;
+			typedef std::future<EnhancePortraitVideoOutcome> EnhancePortraitVideoOutcomeCallable;
+			typedef std::function<void(const VideoenhanClient*, const Model::EnhancePortraitVideoRequest&, const EnhancePortraitVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnhancePortraitVideoAsyncHandler;
 			typedef Outcome<Error, Model::EnhanceVideoQualityResult> EnhanceVideoQualityOutcome;
 			typedef std::future<EnhanceVideoQualityOutcome> EnhanceVideoQualityOutcomeCallable;
 			typedef std::function<void(const VideoenhanClient*, const Model::EnhanceVideoQualityRequest&, const EnhanceVideoQualityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnhanceVideoQualityAsyncHandler;
@@ -120,6 +127,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryFaceVideoTemplateResult> QueryFaceVideoTemplateOutcome;
 			typedef std::future<QueryFaceVideoTemplateOutcome> QueryFaceVideoTemplateOutcomeCallable;
 			typedef std::function<void(const VideoenhanClient*, const Model::QueryFaceVideoTemplateRequest&, const QueryFaceVideoTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryFaceVideoTemplateAsyncHandler;
+			typedef Outcome<Error, Model::ReduceVideoNoiseResult> ReduceVideoNoiseOutcome;
+			typedef std::future<ReduceVideoNoiseOutcome> ReduceVideoNoiseOutcomeCallable;
+			typedef std::function<void(const VideoenhanClient*, const Model::ReduceVideoNoiseRequest&, const ReduceVideoNoiseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReduceVideoNoiseAsyncHandler;
 			typedef Outcome<Error, Model::SuperResolveVideoResult> SuperResolveVideoOutcome;
 			typedef std::future<SuperResolveVideoOutcome> SuperResolveVideoOutcomeCallable;
 			typedef std::function<void(const VideoenhanClient*, const Model::SuperResolveVideoRequest&, const SuperResolveVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SuperResolveVideoAsyncHandler;
@@ -152,6 +162,9 @@ namespace AlibabaCloud
 			DeleteFaceVideoTemplateOutcome deleteFaceVideoTemplate(const Model::DeleteFaceVideoTemplateRequest &request)const;
 			void deleteFaceVideoTemplateAsync(const Model::DeleteFaceVideoTemplateRequest& request, const DeleteFaceVideoTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteFaceVideoTemplateOutcomeCallable deleteFaceVideoTemplateCallable(const Model::DeleteFaceVideoTemplateRequest& request) const;
+			EnhancePortraitVideoOutcome enhancePortraitVideo(const Model::EnhancePortraitVideoRequest &request)const;
+			void enhancePortraitVideoAsync(const Model::EnhancePortraitVideoRequest& request, const EnhancePortraitVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnhancePortraitVideoOutcomeCallable enhancePortraitVideoCallable(const Model::EnhancePortraitVideoRequest& request) const;
 			EnhanceVideoQualityOutcome enhanceVideoQuality(const Model::EnhanceVideoQualityRequest &request)const;
 			void enhanceVideoQualityAsync(const Model::EnhanceVideoQualityRequest& request, const EnhanceVideoQualityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EnhanceVideoQualityOutcomeCallable enhanceVideoQualityCallable(const Model::EnhanceVideoQualityRequest& request) const;
@@ -182,6 +195,9 @@ namespace AlibabaCloud
 			QueryFaceVideoTemplateOutcome queryFaceVideoTemplate(const Model::QueryFaceVideoTemplateRequest &request)const;
 			void queryFaceVideoTemplateAsync(const Model::QueryFaceVideoTemplateRequest& request, const QueryFaceVideoTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryFaceVideoTemplateOutcomeCallable queryFaceVideoTemplateCallable(const Model::QueryFaceVideoTemplateRequest& request) const;
+			ReduceVideoNoiseOutcome reduceVideoNoise(const Model::ReduceVideoNoiseRequest &request)const;
+			void reduceVideoNoiseAsync(const Model::ReduceVideoNoiseRequest& request, const ReduceVideoNoiseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ReduceVideoNoiseOutcomeCallable reduceVideoNoiseCallable(const Model::ReduceVideoNoiseRequest& request) const;
 			SuperResolveVideoOutcome superResolveVideo(const Model::SuperResolveVideoRequest &request)const;
 			void superResolveVideoAsync(const Model::SuperResolveVideoRequest& request, const SuperResolveVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SuperResolveVideoOutcomeCallable superResolveVideoCallable(const Model::SuperResolveVideoRequest& request) const;
