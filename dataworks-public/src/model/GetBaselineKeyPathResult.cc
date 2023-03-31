@@ -69,32 +69,16 @@ void GetBaselineKeyPathResult::parse(const std::string &payload)
 				runsObject.absTime = std::stol(valueDataDataItemRunsRunsItem["AbsTime"].asString());
 			if(!valueDataDataItemRunsRunsItem["BeginRunningTime"].isNull())
 				runsObject.beginRunningTime = std::stol(valueDataDataItemRunsRunsItem["BeginRunningTime"].asString());
-			if(!valueDataDataItemRunsRunsItem["CycTime"].isNull())
-				runsObject.cycTime = std::stol(valueDataDataItemRunsRunsItem["CycTime"].asString());
-			if(!valueDataDataItemRunsRunsItem["Owner"].isNull())
-				runsObject.owner = valueDataDataItemRunsRunsItem["Owner"].asString();
 			if(!valueDataDataItemRunsRunsItem["FinishTime"].isNull())
 				runsObject.finishTime = std::stol(valueDataDataItemRunsRunsItem["FinishTime"].asString());
-			if(!valueDataDataItemRunsRunsItem["ProjectId"].isNull())
-				runsObject.projectId = std::stol(valueDataDataItemRunsRunsItem["ProjectId"].asString());
 			if(!valueDataDataItemRunsRunsItem["BeginCast"].isNull())
 				runsObject.beginCast = std::stol(valueDataDataItemRunsRunsItem["BeginCast"].asString());
-			if(!valueDataDataItemRunsRunsItem["InstanceId"].isNull())
-				runsObject.instanceId = std::stol(valueDataDataItemRunsRunsItem["InstanceId"].asString());
 			if(!valueDataDataItemRunsRunsItem["EndCast"].isNull())
 				runsObject.endCast = std::stol(valueDataDataItemRunsRunsItem["EndCast"].asString());
 			if(!valueDataDataItemRunsRunsItem["BeginWaitResTime"].isNull())
 				runsObject.beginWaitResTime = std::stol(valueDataDataItemRunsRunsItem["BeginWaitResTime"].asString());
-			if(!valueDataDataItemRunsRunsItem["InGroupId"].isNull())
-				runsObject.inGroupId = std::stoi(valueDataDataItemRunsRunsItem["InGroupId"].asString());
-			if(!valueDataDataItemRunsRunsItem["NodeName"].isNull())
-				runsObject.nodeName = valueDataDataItemRunsRunsItem["NodeName"].asString();
-			if(!valueDataDataItemRunsRunsItem["Bizdate"].isNull())
-				runsObject.bizdate = std::stol(valueDataDataItemRunsRunsItem["Bizdate"].asString());
 			if(!valueDataDataItemRunsRunsItem["BeginWaitTimeTime"].isNull())
 				runsObject.beginWaitTimeTime = std::stol(valueDataDataItemRunsRunsItem["BeginWaitTimeTime"].asString());
-			if(!valueDataDataItemRunsRunsItem["NodeId"].isNull())
-				runsObject.nodeId = std::stol(valueDataDataItemRunsRunsItem["NodeId"].asString());
 			dataObject.runs.push_back(runsObject);
 		}
 		auto allTopicsNode = valueDataDataItem["Topics"]["TopicsItem"];
@@ -102,7 +86,7 @@ void GetBaselineKeyPathResult::parse(const std::string &payload)
 		{
 			DataItem::TopicsItem topicsObject;
 			if(!valueDataDataItemTopicsTopicsItem["TopicName"].isNull())
-				topicsObject.topicName = std::stol(valueDataDataItemTopicsTopicsItem["TopicName"].asString());
+				topicsObject.topicName = valueDataDataItemTopicsTopicsItem["TopicName"].asString();
 			if(!valueDataDataItemTopicsTopicsItem["InstanceId"].isNull())
 				topicsObject.instanceId = std::stol(valueDataDataItemTopicsTopicsItem["InstanceId"].asString());
 			if(!valueDataDataItemTopicsTopicsItem["TopicId"].isNull())

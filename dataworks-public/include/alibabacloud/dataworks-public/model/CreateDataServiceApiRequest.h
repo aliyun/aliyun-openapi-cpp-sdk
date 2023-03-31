@@ -46,6 +46,8 @@ public:
 	void setSqlMode(long sqlMode);
 	long getTenantId() const;
 	void setTenantId(long tenantId);
+	int getRequestContentType() const;
+	void setRequestContentType(int requestContentType);
 	std::string getProtocols() const;
 	void setProtocols(const std::string &protocols);
 	long getProjectId() const;
@@ -76,6 +78,7 @@ private:
 	long resourceGroupId_;
 	long sqlMode_;
 	long tenantId_;
+	int requestContentType_;
 	std::string protocols_;
 	long projectId_;
 	int responseContentType_;

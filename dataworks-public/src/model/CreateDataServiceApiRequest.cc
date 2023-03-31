@@ -97,6 +97,15 @@ void CreateDataServiceApiRequest::setTenantId(long tenantId) {
   setBodyParameter(std::string("TenantId"), std::to_string(tenantId));
 }
 
+int CreateDataServiceApiRequest::getRequestContentType() const {
+  return requestContentType_;
+}
+
+void CreateDataServiceApiRequest::setRequestContentType(int requestContentType) {
+  requestContentType_ = requestContentType;
+  setBodyParameter(std::string("RequestContentType"), std::to_string(requestContentType));
+}
+
 std::string CreateDataServiceApiRequest::getProtocols() const {
   return protocols_;
 }

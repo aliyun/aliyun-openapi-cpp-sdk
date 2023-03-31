@@ -37,28 +37,20 @@ namespace AlibabaCloud
 					struct RunsItem
 					{
 						std::string status;
-						std::string owner;
-						long instanceId;
-						std::string nodeName;
-						long projectId;
-						long cycTime;
-						long beginWaitTimeTime;
-						long beginRunningTime;
-						int inGroupId;
-						long bizdate;
 						long beginCast;
 						long absTime;
 						long finishTime;
-						long nodeId;
 						long beginWaitResTime;
+						long beginWaitTimeTime;
 						long endCast;
+						long beginRunningTime;
 					};
 					struct TopicsItem
 					{
 						long instanceId;
 						long topicId;
 						long addTime;
-						long topicName;
+						std::string topicName;
 					};
 					int prgType;
 					std::string owner;
