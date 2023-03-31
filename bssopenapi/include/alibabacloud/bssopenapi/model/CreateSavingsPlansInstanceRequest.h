@@ -44,6 +44,8 @@ public:
 	void setDuration(const std::string &duration);
 	std::string getSpecType() const;
 	void setSpecType(const std::string &specType);
+	std::map<std::string, std::string> getExtendMap() const;
+	void setExtendMap(const std::map<std::string, std::string> &extendMap);
 	std::string getPayMode() const;
 	void setPayMode(const std::string &payMode);
 	std::string getRegion() const;
@@ -59,6 +61,7 @@ private:
 	std::string effectiveDate_;
 	std::string duration_;
 	std::string specType_;
+	std::map<std::string, std::string> extendMap_;
 	std::string payMode_;
 	std::string region_;
 	std::string pricingCycle_;

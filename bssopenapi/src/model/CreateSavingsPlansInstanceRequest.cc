@@ -88,6 +88,17 @@ void CreateSavingsPlansInstanceRequest::setSpecType(const std::string &specType)
   setParameter(std::string("SpecType"), specType);
 }
 
+std::map<std::string, std::string> CreateSavingsPlansInstanceRequest::getExtendMap() const {
+  return extendMap_;
+}
+
+void CreateSavingsPlansInstanceRequest::setExtendMap(const std::map<std::string, std::string> &extendMap) {
+  extendMap_ = extendMap;
+  for(auto const &iter1 : extendMap) {
+    setParameter(std::string("ExtendMap") + "." + iter1.first, iter1.second);
+  }
+}
+
 std::string CreateSavingsPlansInstanceRequest::getPayMode() const {
   return payMode_;
 }

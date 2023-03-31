@@ -90,6 +90,8 @@ void QuerySavingsPlansInstanceResult::parse(const std::string &payload)
 			savingsPlansDetailResponseObject.payMode = dataNodeItemsSavingsPlansDetailResponse["PayMode"].asString();
 		if(!dataNodeItemsSavingsPlansDetailResponse["DeductCycleType"].isNull())
 			savingsPlansDetailResponseObject.deductCycleType = dataNodeItemsSavingsPlansDetailResponse["DeductCycleType"].asString();
+		if(!dataNodeItemsSavingsPlansDetailResponse["RestPoolValue"].isNull())
+			savingsPlansDetailResponseObject.restPoolValue = dataNodeItemsSavingsPlansDetailResponse["RestPoolValue"].asString();
 		auto allTagsNode = dataNodeItemsSavingsPlansDetailResponse["Tags"]["Tag"];
 		for (auto dataNodeItemsSavingsPlansDetailResponseTagsTag : allTagsNode)
 		{
