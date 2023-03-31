@@ -39,6 +39,16 @@ namespace AlibabaCloud
 					std::string parameterValue;
 					std::string forceRestart;
 					std::string parameterName;
+					std::string characterType;
+					std::string parameterDescription;
+				};
+				struct _Parameter1
+				{
+					std::string checkingCode;
+					bool modifiableStatus;
+					std::string parameterValue;
+					bool forceRestart;
+					std::string parameterName;
 					std::string parameterDescription;
 				};
 
@@ -48,7 +58,7 @@ namespace AlibabaCloud
 				~DescribeParametersResult();
 				std::vector<_Parameter> getRunningParameters()const;
 				std::string getEngineVersion()const;
-				std::vector<_Parameter> getConfigParameters()const;
+				std::vector<_Parameter1> getConfigParameters()const;
 				std::string getEngine()const;
 
 			protected:
@@ -56,7 +66,7 @@ namespace AlibabaCloud
 			private:
 				std::vector<_Parameter> runningParameters_;
 				std::string engineVersion_;
-				std::vector<_Parameter> configParameters_;
+				std::vector<_Parameter1> configParameters_;
 				std::string engine_;
 
 			};

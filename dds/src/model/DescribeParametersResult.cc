@@ -55,12 +55,14 @@ void DescribeParametersResult::parse(const std::string &payload)
 			runningParametersObject.parameterDescription = valueRunningParametersParameter["ParameterDescription"].asString();
 		if(!valueRunningParametersParameter["ModifiableStatus"].isNull())
 			runningParametersObject.modifiableStatus = valueRunningParametersParameter["ModifiableStatus"].asString();
+		if(!valueRunningParametersParameter["CharacterType"].isNull())
+			runningParametersObject.characterType = valueRunningParametersParameter["CharacterType"].asString();
 		runningParameters_.push_back(runningParametersObject);
 	}
 	auto allConfigParametersNode = value["ConfigParameters"]["Parameter"];
 	for (auto valueConfigParametersParameter : allConfigParametersNode)
 	{
-		_Parameter configParametersObject;
+		_Parameter1 configParametersObject;
 		if(!valueConfigParametersParameter["CheckingCode"].isNull())
 			configParametersObject.checkingCode = valueConfigParametersParameter["CheckingCode"].asString();
 		if(!valueConfigParametersParameter["ParameterName"].isNull())
@@ -68,11 +70,11 @@ void DescribeParametersResult::parse(const std::string &payload)
 		if(!valueConfigParametersParameter["ParameterValue"].isNull())
 			configParametersObject.parameterValue = valueConfigParametersParameter["ParameterValue"].asString();
 		if(!valueConfigParametersParameter["ForceRestart"].isNull())
-			configParametersObject.forceRestart = valueConfigParametersParameter["ForceRestart"].asString();
+			configParametersObject.forceRestart = valueConfigParametersParameter["ForceRestart"].asString() == "true";
 		if(!valueConfigParametersParameter["ParameterDescription"].isNull())
 			configParametersObject.parameterDescription = valueConfigParametersParameter["ParameterDescription"].asString();
 		if(!valueConfigParametersParameter["ModifiableStatus"].isNull())
-			configParametersObject.modifiableStatus = valueConfigParametersParameter["ModifiableStatus"].asString();
+			configParametersObject.modifiableStatus = valueConfigParametersParameter["ModifiableStatus"].asString() == "true";
 		configParameters_.push_back(configParametersObject);
 	}
 	if(!value["EngineVersion"].isNull())
@@ -92,7 +94,7 @@ std::string DescribeParametersResult::getEngineVersion()const
 	return engineVersion_;
 }
 
-std::vector<DescribeParametersResult::_Parameter> DescribeParametersResult::getConfigParameters()const
+std::vector<DescribeParametersResult::_Parameter1> DescribeParametersResult::getConfigParameters()const
 {
 	return configParameters_;
 }

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DDS_MODEL_RESETACCOUNTPASSWORDREQUEST_H_
-#define ALIBABACLOUD_DDS_MODEL_RESETACCOUNTPASSWORDREQUEST_H_
+#ifndef ALIBABACLOUD_DDS_MODEL_CREATEGLOBALSECURITYIPGROUPREQUEST_H_
+#define ALIBABACLOUD_DDS_MODEL_CREATEGLOBALSECURITYIPGROUPREQUEST_H_
 
 #include <alibabacloud/dds/DdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,44 +26,50 @@
 namespace AlibabaCloud {
 namespace Dds {
 namespace Model {
-class ALIBABACLOUD_DDS_EXPORT ResetAccountPasswordRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DDS_EXPORT CreateGlobalSecurityIPGroupRequest : public RpcServiceRequest {
 public:
-	ResetAccountPasswordRequest();
-	~ResetAccountPasswordRequest();
+	CreateGlobalSecurityIPGroupRequest();
+	~CreateGlobalSecurityIPGroupRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getGIpList() const;
+	void setGIpList(const std::string &gIpList);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getAccountName() const;
-	void setAccountName(const std::string &accountName);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
-	std::string getDBInstanceId() const;
-	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getSecurityIPType() const;
+	void setSecurityIPType(const std::string &securityIPType);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getAccountPassword() const;
-	void setAccountPassword(const std::string &accountPassword);
-	std::string getCharacterType() const;
-	void setCharacterType(const std::string &characterType);
+	std::string getWhitelistNetType() const;
+	void setWhitelistNetType(const std::string &whitelistNetType);
+	std::string getGlobalIgName() const;
+	void setGlobalIgName(const std::string &globalIgName);
 
 private:
 	long resourceOwnerId_;
+	std::string gIpList_;
 	std::string accessKeyId_;
-	std::string accountName_;
+	std::string resourceGroupId_;
 	std::string securityToken_;
-	std::string dBInstanceId_;
+	std::string regionId_;
+	std::string securityIPType_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
-	std::string accountPassword_;
-	std::string characterType_;
+	std::string whitelistNetType_;
+	std::string globalIgName_;
 };
 } // namespace Model
 } // namespace Dds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DDS_MODEL_RESETACCOUNTPASSWORDREQUEST_H_
+#endif // !ALIBABACLOUD_DDS_MODEL_CREATEGLOBALSECURITYIPGROUPREQUEST_H_

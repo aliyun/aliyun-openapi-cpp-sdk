@@ -129,6 +129,15 @@ void CreateDBInstanceRequest::setTag(const std::vector<CreateDBInstanceRequest::
   }
 }
 
+std::string CreateDBInstanceRequest::getGlobalSecurityGroupIds() const {
+  return globalSecurityGroupIds_;
+}
+
+void CreateDBInstanceRequest::setGlobalSecurityGroupIds(const std::string &globalSecurityGroupIds) {
+  globalSecurityGroupIds_ = globalSecurityGroupIds;
+  setParameter(std::string("GlobalSecurityGroupIds"), globalSecurityGroupIds);
+}
+
 std::string CreateDBInstanceRequest::getBusinessInfo() const {
   return businessInfo_;
 }

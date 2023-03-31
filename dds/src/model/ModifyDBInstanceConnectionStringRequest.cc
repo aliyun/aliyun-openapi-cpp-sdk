@@ -88,6 +88,15 @@ void ModifyDBInstanceConnectionStringRequest::setOwnerAccount(const std::string 
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+int ModifyDBInstanceConnectionStringRequest::getNewPort() const {
+  return newPort_;
+}
+
+void ModifyDBInstanceConnectionStringRequest::setNewPort(int newPort) {
+  newPort_ = newPort;
+  setParameter(std::string("NewPort"), std::to_string(newPort));
+}
+
 std::string ModifyDBInstanceConnectionStringRequest::getNewConnectionString() const {
   return newConnectionString_;
 }

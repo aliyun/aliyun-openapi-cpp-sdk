@@ -112,6 +112,15 @@ void CreateShardingDBInstanceRequest::setDBInstanceDescription(const std::string
   setParameter(std::string("DBInstanceDescription"), dBInstanceDescription);
 }
 
+std::string CreateShardingDBInstanceRequest::getGlobalSecurityGroupIds() const {
+  return globalSecurityGroupIds_;
+}
+
+void CreateShardingDBInstanceRequest::setGlobalSecurityGroupIds(const std::string &globalSecurityGroupIds) {
+  globalSecurityGroupIds_ = globalSecurityGroupIds;
+  setParameter(std::string("GlobalSecurityGroupIds"), globalSecurityGroupIds);
+}
+
 int CreateShardingDBInstanceRequest::getPeriod() const {
   return period_;
 }

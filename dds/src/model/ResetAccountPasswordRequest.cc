@@ -106,3 +106,12 @@ void ResetAccountPasswordRequest::setAccountPassword(const std::string &accountP
   setParameter(std::string("AccountPassword"), accountPassword);
 }
 
+std::string ResetAccountPasswordRequest::getCharacterType() const {
+  return characterType_;
+}
+
+void ResetAccountPasswordRequest::setCharacterType(const std::string &characterType) {
+  characterType_ = characterType;
+  setParameter(std::string("CharacterType"), characterType);
+}
+

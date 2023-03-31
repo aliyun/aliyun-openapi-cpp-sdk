@@ -60,6 +60,8 @@ public:
 	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceDescription() const;
 	void setDBInstanceDescription(const std::string &dBInstanceDescription);
+	std::string getGlobalSecurityGroupIds() const;
+	void setGlobalSecurityGroupIds(const std::string &globalSecurityGroupIds);
 	int getPeriod() const;
 	void setPeriod(int period);
 	std::vector<ConfigServer> getConfigServer() const;
@@ -115,6 +117,7 @@ private:
 	std::string resourceGroupId_;
 	std::string securityToken_;
 	std::string dBInstanceDescription_;
+	std::string globalSecurityGroupIds_;
 	int period_;
 	std::vector<ConfigServer> configServer_;
 	long ownerId_;

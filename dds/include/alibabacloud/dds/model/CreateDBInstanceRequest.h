@@ -56,6 +56,8 @@ public:
 	void setDBInstanceDescription(const std::string &dBInstanceDescription);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	std::string getGlobalSecurityGroupIds() const;
+	void setGlobalSecurityGroupIds(const std::string &globalSecurityGroupIds);
 	std::string getBusinessInfo() const;
 	void setBusinessInfo(const std::string &businessInfo);
 	int getPeriod() const;
@@ -121,6 +123,7 @@ private:
 	std::string securityToken_;
 	std::string dBInstanceDescription_;
 	std::vector<Tag> tag_;
+	std::string globalSecurityGroupIds_;
 	std::string businessInfo_;
 	int period_;
 	std::string backupId_;

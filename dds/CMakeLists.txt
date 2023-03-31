@@ -33,6 +33,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/CreateBackupResult.h
 	include/alibabacloud/dds/model/CreateDBInstanceRequest.h
 	include/alibabacloud/dds/model/CreateDBInstanceResult.h
+	include/alibabacloud/dds/model/CreateGlobalSecurityIPGroupRequest.h
+	include/alibabacloud/dds/model/CreateGlobalSecurityIPGroupResult.h
 	include/alibabacloud/dds/model/CreateNodeRequest.h
 	include/alibabacloud/dds/model/CreateNodeResult.h
 	include/alibabacloud/dds/model/CreateNodeBatchRequest.h
@@ -41,6 +43,8 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/CreateShardingDBInstanceResult.h
 	include/alibabacloud/dds/model/DeleteDBInstanceRequest.h
 	include/alibabacloud/dds/model/DeleteDBInstanceResult.h
+	include/alibabacloud/dds/model/DeleteGlobalSecurityIPGroupRequest.h
+	include/alibabacloud/dds/model/DeleteGlobalSecurityIPGroupResult.h
 	include/alibabacloud/dds/model/DeleteNodeRequest.h
 	include/alibabacloud/dds/model/DeleteNodeResult.h
 	include/alibabacloud/dds/model/DescribeAccountsRequest.h
@@ -83,6 +87,10 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/DescribeDBInstancesOverviewResult.h
 	include/alibabacloud/dds/model/DescribeErrorLogRecordsRequest.h
 	include/alibabacloud/dds/model/DescribeErrorLogRecordsResult.h
+	include/alibabacloud/dds/model/DescribeGlobalSecurityIPGroupRequest.h
+	include/alibabacloud/dds/model/DescribeGlobalSecurityIPGroupResult.h
+	include/alibabacloud/dds/model/DescribeGlobalSecurityIPGroupRelationRequest.h
+	include/alibabacloud/dds/model/DescribeGlobalSecurityIPGroupRelationResult.h
 	include/alibabacloud/dds/model/DescribeInstanceAutoRenewalAttributeRequest.h
 	include/alibabacloud/dds/model/DescribeInstanceAutoRenewalAttributeResult.h
 	include/alibabacloud/dds/model/DescribeKernelReleaseNotesRequest.h
@@ -155,6 +163,12 @@ set(dds_public_header_model
 	include/alibabacloud/dds/model/ModifyDBInstanceSpecResult.h
 	include/alibabacloud/dds/model/ModifyDBInstanceTDERequest.h
 	include/alibabacloud/dds/model/ModifyDBInstanceTDEResult.h
+	include/alibabacloud/dds/model/ModifyGlobalSecurityIPGroupRequest.h
+	include/alibabacloud/dds/model/ModifyGlobalSecurityIPGroupResult.h
+	include/alibabacloud/dds/model/ModifyGlobalSecurityIPGroupNameRequest.h
+	include/alibabacloud/dds/model/ModifyGlobalSecurityIPGroupNameResult.h
+	include/alibabacloud/dds/model/ModifyGlobalSecurityIPGroupRelationRequest.h
+	include/alibabacloud/dds/model/ModifyGlobalSecurityIPGroupRelationResult.h
 	include/alibabacloud/dds/model/ModifyInstanceAutoRenewalAttributeRequest.h
 	include/alibabacloud/dds/model/ModifyInstanceAutoRenewalAttributeResult.h
 	include/alibabacloud/dds/model/ModifyInstanceVpcAuthModeRequest.h
@@ -212,6 +226,8 @@ set(dds_src
 	src/model/CreateBackupResult.cc
 	src/model/CreateDBInstanceRequest.cc
 	src/model/CreateDBInstanceResult.cc
+	src/model/CreateGlobalSecurityIPGroupRequest.cc
+	src/model/CreateGlobalSecurityIPGroupResult.cc
 	src/model/CreateNodeRequest.cc
 	src/model/CreateNodeResult.cc
 	src/model/CreateNodeBatchRequest.cc
@@ -220,6 +236,8 @@ set(dds_src
 	src/model/CreateShardingDBInstanceResult.cc
 	src/model/DeleteDBInstanceRequest.cc
 	src/model/DeleteDBInstanceResult.cc
+	src/model/DeleteGlobalSecurityIPGroupRequest.cc
+	src/model/DeleteGlobalSecurityIPGroupResult.cc
 	src/model/DeleteNodeRequest.cc
 	src/model/DeleteNodeResult.cc
 	src/model/DescribeAccountsRequest.cc
@@ -262,6 +280,10 @@ set(dds_src
 	src/model/DescribeDBInstancesOverviewResult.cc
 	src/model/DescribeErrorLogRecordsRequest.cc
 	src/model/DescribeErrorLogRecordsResult.cc
+	src/model/DescribeGlobalSecurityIPGroupRequest.cc
+	src/model/DescribeGlobalSecurityIPGroupResult.cc
+	src/model/DescribeGlobalSecurityIPGroupRelationRequest.cc
+	src/model/DescribeGlobalSecurityIPGroupRelationResult.cc
 	src/model/DescribeInstanceAutoRenewalAttributeRequest.cc
 	src/model/DescribeInstanceAutoRenewalAttributeResult.cc
 	src/model/DescribeKernelReleaseNotesRequest.cc
@@ -334,6 +356,12 @@ set(dds_src
 	src/model/ModifyDBInstanceSpecResult.cc
 	src/model/ModifyDBInstanceTDERequest.cc
 	src/model/ModifyDBInstanceTDEResult.cc
+	src/model/ModifyGlobalSecurityIPGroupRequest.cc
+	src/model/ModifyGlobalSecurityIPGroupResult.cc
+	src/model/ModifyGlobalSecurityIPGroupNameRequest.cc
+	src/model/ModifyGlobalSecurityIPGroupNameResult.cc
+	src/model/ModifyGlobalSecurityIPGroupRelationRequest.cc
+	src/model/ModifyGlobalSecurityIPGroupRelationResult.cc
 	src/model/ModifyInstanceAutoRenewalAttributeRequest.cc
 	src/model/ModifyInstanceAutoRenewalAttributeResult.cc
 	src/model/ModifyInstanceVpcAuthModeRequest.cc

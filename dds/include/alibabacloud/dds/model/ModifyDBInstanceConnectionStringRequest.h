@@ -44,6 +44,8 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	int getNewPort() const;
+	void setNewPort(int newPort);
 	std::string getNewConnectionString() const;
 	void setNewConnectionString(const std::string &newConnectionString);
 	long getOwnerId() const;
@@ -59,6 +61,7 @@ private:
 	std::string nodeId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	int newPort_;
 	std::string newConnectionString_;
 	long ownerId_;
 	std::string currentConnectionString_;
