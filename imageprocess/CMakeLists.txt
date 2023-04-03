@@ -23,6 +23,8 @@ set(imageprocess_public_header
 set(imageprocess_public_header_model 
 	include/alibabacloud/imageprocess/model/AnalyzeChestVesselRequest.h
 	include/alibabacloud/imageprocess/model/AnalyzeChestVesselResult.h
+	include/alibabacloud/imageprocess/model/CalcBMDRequest.h
+	include/alibabacloud/imageprocess/model/CalcBMDResult.h
 	include/alibabacloud/imageprocess/model/CalcCACSRequest.h
 	include/alibabacloud/imageprocess/model/CalcCACSResult.h
 	include/alibabacloud/imageprocess/model/ClassifyFNFRequest.h
@@ -72,6 +74,8 @@ set(imageprocess_src
 	src/ImageprocessClient.cc
 	src/model/AnalyzeChestVesselRequest.cc
 	src/model/AnalyzeChestVesselResult.cc
+	src/model/CalcBMDRequest.cc
+	src/model/CalcBMDResult.cc
 	src/model/CalcCACSRequest.cc
 	src/model/CalcCACSResult.cc
 	src/model/ClassifyFNFRequest.cc

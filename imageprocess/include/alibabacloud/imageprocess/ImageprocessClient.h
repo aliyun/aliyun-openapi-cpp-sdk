@@ -24,6 +24,8 @@
 #include "ImageprocessExport.h"
 #include "model/AnalyzeChestVesselRequest.h"
 #include "model/AnalyzeChestVesselResult.h"
+#include "model/CalcBMDRequest.h"
+#include "model/CalcBMDResult.h"
 #include "model/CalcCACSRequest.h"
 #include "model/CalcCACSResult.h"
 #include "model/ClassifyFNFRequest.h"
@@ -80,6 +82,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AnalyzeChestVesselResult> AnalyzeChestVesselOutcome;
 			typedef std::future<AnalyzeChestVesselOutcome> AnalyzeChestVesselOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::AnalyzeChestVesselRequest&, const AnalyzeChestVesselOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AnalyzeChestVesselAsyncHandler;
+			typedef Outcome<Error, Model::CalcBMDResult> CalcBMDOutcome;
+			typedef std::future<CalcBMDOutcome> CalcBMDOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::CalcBMDRequest&, const CalcBMDOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CalcBMDAsyncHandler;
 			typedef Outcome<Error, Model::CalcCACSResult> CalcCACSOutcome;
 			typedef std::future<CalcCACSOutcome> CalcCACSOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::CalcCACSRequest&, const CalcCACSOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CalcCACSAsyncHandler;
@@ -154,6 +159,9 @@ namespace AlibabaCloud
 			AnalyzeChestVesselOutcome analyzeChestVessel(const Model::AnalyzeChestVesselRequest &request)const;
 			void analyzeChestVesselAsync(const Model::AnalyzeChestVesselRequest& request, const AnalyzeChestVesselAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AnalyzeChestVesselOutcomeCallable analyzeChestVesselCallable(const Model::AnalyzeChestVesselRequest& request) const;
+			CalcBMDOutcome calcBMD(const Model::CalcBMDRequest &request)const;
+			void calcBMDAsync(const Model::CalcBMDRequest& request, const CalcBMDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CalcBMDOutcomeCallable calcBMDCallable(const Model::CalcBMDRequest& request) const;
 			CalcCACSOutcome calcCACS(const Model::CalcCACSRequest &request)const;
 			void calcCACSAsync(const Model::CalcCACSRequest& request, const CalcCACSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CalcCACSOutcomeCallable calcCACSCallable(const Model::CalcCACSRequest& request) const;

@@ -87,6 +87,42 @@ ImageprocessClient::AnalyzeChestVesselOutcomeCallable ImageprocessClient::analyz
 	return task->get_future();
 }
 
+ImageprocessClient::CalcBMDOutcome ImageprocessClient::calcBMD(const CalcBMDRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CalcBMDOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CalcBMDOutcome(CalcBMDResult(outcome.result()));
+	else
+		return CalcBMDOutcome(outcome.error());
+}
+
+void ImageprocessClient::calcBMDAsync(const CalcBMDRequest& request, const CalcBMDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, calcBMD(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::CalcBMDOutcomeCallable ImageprocessClient::calcBMDCallable(const CalcBMDRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CalcBMDOutcome()>>(
+			[this, request]()
+			{
+			return this->calcBMD(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageprocessClient::CalcCACSOutcome ImageprocessClient::calcCACS(const CalcCACSRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
