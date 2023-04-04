@@ -1,0 +1,557 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/avatar/AvatarClient.h>
+#include <alibabacloud/core/SimpleCredentialsProvider.h>
+
+using namespace AlibabaCloud;
+using namespace AlibabaCloud::Location;
+using namespace AlibabaCloud::Avatar;
+using namespace AlibabaCloud::Avatar::Model;
+
+namespace
+{
+	const std::string SERVICE_NAME = "avatar";
+}
+
+AvatarClient::AvatarClient(const Credentials &credentials, const ClientConfiguration &configuration) :
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
+{
+	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+}
+
+AvatarClient::AvatarClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
+	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
+{
+	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+}
+
+AvatarClient::AvatarClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
+	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
+{
+	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+}
+
+AvatarClient::~AvatarClient()
+{}
+
+AvatarClient::CancelVideoTaskOutcome AvatarClient::cancelVideoTask(const CancelVideoTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelVideoTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelVideoTaskOutcome(CancelVideoTaskResult(outcome.result()));
+	else
+		return CancelVideoTaskOutcome(outcome.error());
+}
+
+void AvatarClient::cancelVideoTaskAsync(const CancelVideoTaskRequest& request, const CancelVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelVideoTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::CancelVideoTaskOutcomeCallable AvatarClient::cancelVideoTaskCallable(const CancelVideoTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelVideoTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelVideoTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::CloseTimedResetOperateOutcome AvatarClient::closeTimedResetOperate(const CloseTimedResetOperateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CloseTimedResetOperateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CloseTimedResetOperateOutcome(CloseTimedResetOperateResult(outcome.result()));
+	else
+		return CloseTimedResetOperateOutcome(outcome.error());
+}
+
+void AvatarClient::closeTimedResetOperateAsync(const CloseTimedResetOperateRequest& request, const CloseTimedResetOperateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, closeTimedResetOperate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::CloseTimedResetOperateOutcomeCallable AvatarClient::closeTimedResetOperateCallable(const CloseTimedResetOperateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CloseTimedResetOperateOutcome()>>(
+			[this, request]()
+			{
+			return this->closeTimedResetOperate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::DuplexDecisionOutcome AvatarClient::duplexDecision(const DuplexDecisionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DuplexDecisionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DuplexDecisionOutcome(DuplexDecisionResult(outcome.result()));
+	else
+		return DuplexDecisionOutcome(outcome.error());
+}
+
+void AvatarClient::duplexDecisionAsync(const DuplexDecisionRequest& request, const DuplexDecisionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, duplexDecision(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::DuplexDecisionOutcomeCallable AvatarClient::duplexDecisionCallable(const DuplexDecisionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DuplexDecisionOutcome()>>(
+			[this, request]()
+			{
+			return this->duplexDecision(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::GetVideoTaskInfoOutcome AvatarClient::getVideoTaskInfo(const GetVideoTaskInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetVideoTaskInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetVideoTaskInfoOutcome(GetVideoTaskInfoResult(outcome.result()));
+	else
+		return GetVideoTaskInfoOutcome(outcome.error());
+}
+
+void AvatarClient::getVideoTaskInfoAsync(const GetVideoTaskInfoRequest& request, const GetVideoTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getVideoTaskInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::GetVideoTaskInfoOutcomeCallable AvatarClient::getVideoTaskInfoCallable(const GetVideoTaskInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetVideoTaskInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->getVideoTaskInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::LicenseAuthOutcome AvatarClient::licenseAuth(const LicenseAuthRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return LicenseAuthOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return LicenseAuthOutcome(LicenseAuthResult(outcome.result()));
+	else
+		return LicenseAuthOutcome(outcome.error());
+}
+
+void AvatarClient::licenseAuthAsync(const LicenseAuthRequest& request, const LicenseAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, licenseAuth(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::LicenseAuthOutcomeCallable AvatarClient::licenseAuthCallable(const LicenseAuthRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<LicenseAuthOutcome()>>(
+			[this, request]()
+			{
+			return this->licenseAuth(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::QueryRunningInstanceOutcome AvatarClient::queryRunningInstance(const QueryRunningInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryRunningInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryRunningInstanceOutcome(QueryRunningInstanceResult(outcome.result()));
+	else
+		return QueryRunningInstanceOutcome(outcome.error());
+}
+
+void AvatarClient::queryRunningInstanceAsync(const QueryRunningInstanceRequest& request, const QueryRunningInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryRunningInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::QueryRunningInstanceOutcomeCallable AvatarClient::queryRunningInstanceCallable(const QueryRunningInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryRunningInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->queryRunningInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::QueryTimedResetOperateStatusOutcome AvatarClient::queryTimedResetOperateStatus(const QueryTimedResetOperateStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryTimedResetOperateStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryTimedResetOperateStatusOutcome(QueryTimedResetOperateStatusResult(outcome.result()));
+	else
+		return QueryTimedResetOperateStatusOutcome(outcome.error());
+}
+
+void AvatarClient::queryTimedResetOperateStatusAsync(const QueryTimedResetOperateStatusRequest& request, const QueryTimedResetOperateStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryTimedResetOperateStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::QueryTimedResetOperateStatusOutcomeCallable AvatarClient::queryTimedResetOperateStatusCallable(const QueryTimedResetOperateStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryTimedResetOperateStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->queryTimedResetOperateStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::SendMessageOutcome AvatarClient::sendMessage(const SendMessageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendMessageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendMessageOutcome(SendMessageResult(outcome.result()));
+	else
+		return SendMessageOutcome(outcome.error());
+}
+
+void AvatarClient::sendMessageAsync(const SendMessageRequest& request, const SendMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendMessage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::SendMessageOutcomeCallable AvatarClient::sendMessageCallable(const SendMessageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendMessageOutcome()>>(
+			[this, request]()
+			{
+			return this->sendMessage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::StartInstanceOutcome AvatarClient::startInstance(const StartInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartInstanceOutcome(StartInstanceResult(outcome.result()));
+	else
+		return StartInstanceOutcome(outcome.error());
+}
+
+void AvatarClient::startInstanceAsync(const StartInstanceRequest& request, const StartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::StartInstanceOutcomeCallable AvatarClient::startInstanceCallable(const StartInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->startInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::StartTimedResetOperateOutcome AvatarClient::startTimedResetOperate(const StartTimedResetOperateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartTimedResetOperateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartTimedResetOperateOutcome(StartTimedResetOperateResult(outcome.result()));
+	else
+		return StartTimedResetOperateOutcome(outcome.error());
+}
+
+void AvatarClient::startTimedResetOperateAsync(const StartTimedResetOperateRequest& request, const StartTimedResetOperateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startTimedResetOperate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::StartTimedResetOperateOutcomeCallable AvatarClient::startTimedResetOperateCallable(const StartTimedResetOperateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartTimedResetOperateOutcome()>>(
+			[this, request]()
+			{
+			return this->startTimedResetOperate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::StopInstanceOutcome AvatarClient::stopInstance(const StopInstanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopInstanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopInstanceOutcome(StopInstanceResult(outcome.result()));
+	else
+		return StopInstanceOutcome(outcome.error());
+}
+
+void AvatarClient::stopInstanceAsync(const StopInstanceRequest& request, const StopInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopInstance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::StopInstanceOutcomeCallable AvatarClient::stopInstanceCallable(const StopInstanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopInstanceOutcome()>>(
+			[this, request]()
+			{
+			return this->stopInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::SubmitTextTo2DAvatarVideoTaskOutcome AvatarClient::submitTextTo2DAvatarVideoTask(const SubmitTextTo2DAvatarVideoTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitTextTo2DAvatarVideoTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitTextTo2DAvatarVideoTaskOutcome(SubmitTextTo2DAvatarVideoTaskResult(outcome.result()));
+	else
+		return SubmitTextTo2DAvatarVideoTaskOutcome(outcome.error());
+}
+
+void AvatarClient::submitTextTo2DAvatarVideoTaskAsync(const SubmitTextTo2DAvatarVideoTaskRequest& request, const SubmitTextTo2DAvatarVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitTextTo2DAvatarVideoTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::SubmitTextTo2DAvatarVideoTaskOutcomeCallable AvatarClient::submitTextTo2DAvatarVideoTaskCallable(const SubmitTextTo2DAvatarVideoTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitTextTo2DAvatarVideoTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->submitTextTo2DAvatarVideoTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::SubmitTextTo3DAvatarVideoTaskOutcome AvatarClient::submitTextTo3DAvatarVideoTask(const SubmitTextTo3DAvatarVideoTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitTextTo3DAvatarVideoTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitTextTo3DAvatarVideoTaskOutcome(SubmitTextTo3DAvatarVideoTaskResult(outcome.result()));
+	else
+		return SubmitTextTo3DAvatarVideoTaskOutcome(outcome.error());
+}
+
+void AvatarClient::submitTextTo3DAvatarVideoTaskAsync(const SubmitTextTo3DAvatarVideoTaskRequest& request, const SubmitTextTo3DAvatarVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitTextTo3DAvatarVideoTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::SubmitTextTo3DAvatarVideoTaskOutcomeCallable AvatarClient::submitTextTo3DAvatarVideoTaskCallable(const SubmitTextTo3DAvatarVideoTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitTextTo3DAvatarVideoTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->submitTextTo3DAvatarVideoTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::SubmitTextToSignVideoTaskOutcome AvatarClient::submitTextToSignVideoTask(const SubmitTextToSignVideoTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitTextToSignVideoTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitTextToSignVideoTaskOutcome(SubmitTextToSignVideoTaskResult(outcome.result()));
+	else
+		return SubmitTextToSignVideoTaskOutcome(outcome.error());
+}
+
+void AvatarClient::submitTextToSignVideoTaskAsync(const SubmitTextToSignVideoTaskRequest& request, const SubmitTextToSignVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitTextToSignVideoTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::SubmitTextToSignVideoTaskOutcomeCallable AvatarClient::submitTextToSignVideoTaskCallable(const SubmitTextToSignVideoTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitTextToSignVideoTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->submitTextToSignVideoTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
