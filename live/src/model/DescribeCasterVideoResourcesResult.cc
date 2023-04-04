@@ -65,6 +65,10 @@ void DescribeCasterVideoResourcesResult::parse(const std::string &payload)
 			videoResourcesObject.repeatNum = std::stoi(valueVideoResourcesVideoResource["RepeatNum"].asString());
 		if(!valueVideoResourcesVideoResource["ResourceName"].isNull())
 			videoResourcesObject.resourceName = valueVideoResourcesVideoResource["ResourceName"].asString();
+		if(!valueVideoResourcesVideoResource["ImageId"].isNull())
+			videoResourcesObject.imageId = valueVideoResourcesVideoResource["ImageId"].asString();
+		if(!valueVideoResourcesVideoResource["ImageUrl"].isNull())
+			videoResourcesObject.imageUrl = valueVideoResourcesVideoResource["ImageUrl"].asString();
 		videoResources_.push_back(videoResourcesObject);
 	}
 	if(!value["Total"].isNull())

@@ -52,6 +52,15 @@ void SetCasterConfigRequest::setProgramName(const std::string &programName) {
   setParameter(std::string("ProgramName"), programName);
 }
 
+std::string SetCasterConfigRequest::getUrgentImageUrl() const {
+  return urgentImageUrl_;
+}
+
+void SetCasterConfigRequest::setUrgentImageUrl(const std::string &urgentImageUrl) {
+  urgentImageUrl_ = urgentImageUrl;
+  setParameter(std::string("UrgentImageUrl"), urgentImageUrl);
+}
+
 std::string SetCasterConfigRequest::getRecordConfig() const {
   return recordConfig_;
 }
@@ -158,6 +167,15 @@ float SetCasterConfigRequest::getDelay() const {
 void SetCasterConfigRequest::setDelay(float delay) {
   delay_ = delay;
   setParameter(std::string("Delay"), std::to_string(delay));
+}
+
+std::string SetCasterConfigRequest::getUrgentImageId() const {
+  return urgentImageId_;
+}
+
+void SetCasterConfigRequest::setUrgentImageId(const std::string &urgentImageId) {
+  urgentImageId_ = urgentImageId;
+  setParameter(std::string("UrgentImageId"), urgentImageId);
 }
 
 std::string SetCasterConfigRequest::getCallbackUrl() const {

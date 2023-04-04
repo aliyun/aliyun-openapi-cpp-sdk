@@ -34,17 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct VideoResource
 				{
-					int endOffset;
 					int beginOffset;
 					std::string materialId;
 					std::string flvUrl;
-					std::string resourceId;
 					std::string resourceName;
 					std::string locationId;
 					int repeatNum;
+					std::string imageUrl;
 					std::string liveStreamUrl;
 					int ptsCallbackInterval;
 					std::string vodUrl;
+					int endOffset;
+					std::string resourceId;
+					std::string imageId;
 				};
 
 

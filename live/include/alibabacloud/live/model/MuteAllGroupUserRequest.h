@@ -32,6 +32,8 @@ public:
 	~MuteAllGroupUserRequest();
 	std::string getOperatorUserId() const;
 	void setOperatorUserId(const std::string &operatorUserId);
+	int getBroadCastType() const;
+	void setBroadCastType(int broadCastType);
 	std::string getGroupId() const;
 	void setGroupId(const std::string &groupId);
 	std::string getAppId() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string operatorUserId_;
+	int broadCastType_;
 	std::string groupId_;
 	std::string appId_;
 };

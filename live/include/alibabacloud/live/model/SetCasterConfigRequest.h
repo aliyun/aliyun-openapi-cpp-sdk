@@ -36,6 +36,8 @@ public:
 	void setProgramEffect(int programEffect);
 	std::string getProgramName() const;
 	void setProgramName(const std::string &programName);
+	std::string getUrgentImageUrl() const;
+	void setUrgentImageUrl(const std::string &urgentImageUrl);
 	std::string getRecordConfig() const;
 	void setRecordConfig(const std::string &recordConfig);
 	std::string getUrgentMaterialId() const;
@@ -60,6 +62,8 @@ public:
 	void setOwnerId(long ownerId);
 	float getDelay() const;
 	void setDelay(float delay);
+	std::string getUrgentImageId() const;
+	void setUrgentImageId(const std::string &urgentImageId);
 	std::string getCallbackUrl() const;
 	void setCallbackUrl(const std::string &callbackUrl);
 
@@ -67,6 +71,7 @@ private:
 	int channelEnable_;
 	int programEffect_;
 	std::string programName_;
+	std::string urgentImageUrl_;
 	std::string recordConfig_;
 	std::string urgentMaterialId_;
 	std::string transcodeConfig_;
@@ -79,6 +84,7 @@ private:
 	std::string domainName_;
 	long ownerId_;
 	float delay_;
+	std::string urgentImageId_;
 	std::string callbackUrl_;
 };
 } // namespace Model

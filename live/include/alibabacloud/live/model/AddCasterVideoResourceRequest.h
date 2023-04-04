@@ -30,6 +30,8 @@ class ALIBABACLOUD_LIVE_EXPORT AddCasterVideoResourceRequest : public RpcService
 public:
 	AddCasterVideoResourceRequest();
 	~AddCasterVideoResourceRequest();
+	std::string getImageId() const;
+	void setImageId(const std::string &imageId);
 	int getInputType() const;
 	void setInputType(int inputType);
 	int getEndOffset() const;
@@ -54,6 +56,8 @@ public:
 	void setLiveStreamUrl(const std::string &liveStreamUrl);
 	std::string getLocationId() const;
 	void setLocationId(const std::string &locationId);
+	std::string getImageUrl() const;
+	void setImageUrl(const std::string &imageUrl);
 	int getPtsCallbackInterval() const;
 	void setPtsCallbackInterval(int ptsCallbackInterval);
 	std::string getResourceName() const;
@@ -62,6 +66,7 @@ public:
 	void setRepeatNum(int repeatNum);
 
 private:
+	std::string imageId_;
 	int inputType_;
 	int endOffset_;
 	std::string materialId_;
@@ -74,6 +79,7 @@ private:
 	int fixedDelayDuration_;
 	std::string liveStreamUrl_;
 	std::string locationId_;
+	std::string imageUrl_;
 	int ptsCallbackInterval_;
 	std::string resourceName_;
 	int repeatNum_;

@@ -25,6 +25,15 @@ ModifyCasterVideoResourceRequest::ModifyCasterVideoResourceRequest()
 
 ModifyCasterVideoResourceRequest::~ModifyCasterVideoResourceRequest() {}
 
+std::string ModifyCasterVideoResourceRequest::getImageId() const {
+  return imageId_;
+}
+
+void ModifyCasterVideoResourceRequest::setImageId(const std::string &imageId) {
+  imageId_ = imageId;
+  setParameter(std::string("ImageId"), imageId);
+}
+
 int ModifyCasterVideoResourceRequest::getInputType() const {
   return inputType_;
 }
@@ -104,6 +113,15 @@ std::string ModifyCasterVideoResourceRequest::getLiveStreamUrl() const {
 void ModifyCasterVideoResourceRequest::setLiveStreamUrl(const std::string &liveStreamUrl) {
   liveStreamUrl_ = liveStreamUrl;
   setParameter(std::string("LiveStreamUrl"), liveStreamUrl);
+}
+
+std::string ModifyCasterVideoResourceRequest::getImageUrl() const {
+  return imageUrl_;
+}
+
+void ModifyCasterVideoResourceRequest::setImageUrl(const std::string &imageUrl) {
+  imageUrl_ = imageUrl;
+  setParameter(std::string("ImageUrl"), imageUrl);
 }
 
 int ModifyCasterVideoResourceRequest::getPtsCallbackInterval() const {

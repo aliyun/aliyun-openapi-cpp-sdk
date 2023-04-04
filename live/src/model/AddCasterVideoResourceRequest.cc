@@ -25,6 +25,15 @@ AddCasterVideoResourceRequest::AddCasterVideoResourceRequest()
 
 AddCasterVideoResourceRequest::~AddCasterVideoResourceRequest() {}
 
+std::string AddCasterVideoResourceRequest::getImageId() const {
+  return imageId_;
+}
+
+void AddCasterVideoResourceRequest::setImageId(const std::string &imageId) {
+  imageId_ = imageId;
+  setParameter(std::string("ImageId"), imageId);
+}
+
 int AddCasterVideoResourceRequest::getInputType() const {
   return inputType_;
 }
@@ -131,6 +140,15 @@ std::string AddCasterVideoResourceRequest::getLocationId() const {
 void AddCasterVideoResourceRequest::setLocationId(const std::string &locationId) {
   locationId_ = locationId;
   setParameter(std::string("LocationId"), locationId);
+}
+
+std::string AddCasterVideoResourceRequest::getImageUrl() const {
+  return imageUrl_;
+}
+
+void AddCasterVideoResourceRequest::setImageUrl(const std::string &imageUrl) {
+  imageUrl_ = imageUrl;
+  setParameter(std::string("ImageUrl"), imageUrl);
 }
 
 int AddCasterVideoResourceRequest::getPtsCallbackInterval() const {

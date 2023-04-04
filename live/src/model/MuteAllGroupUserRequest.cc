@@ -34,6 +34,15 @@ void MuteAllGroupUserRequest::setOperatorUserId(const std::string &operatorUserI
   setBodyParameter(std::string("OperatorUserId"), operatorUserId);
 }
 
+int MuteAllGroupUserRequest::getBroadCastType() const {
+  return broadCastType_;
+}
+
+void MuteAllGroupUserRequest::setBroadCastType(int broadCastType) {
+  broadCastType_ = broadCastType;
+  setBodyParameter(std::string("BroadCastType"), std::to_string(broadCastType));
+}
+
 std::string MuteAllGroupUserRequest::getGroupId() const {
   return groupId_;
 }

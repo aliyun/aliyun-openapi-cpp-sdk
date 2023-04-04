@@ -85,6 +85,10 @@ void DescribeCasterConfigResult::parse(const std::string &payload)
 		urgentLiveStreamUrl_ = value["UrgentLiveStreamUrl"].asString();
 	if(!value["UrgentMaterialId"].isNull())
 		urgentMaterialId_ = value["UrgentMaterialId"].asString();
+	if(!value["UrgentImageId"].isNull())
+		urgentImageId_ = value["UrgentImageId"].asString();
+	if(!value["UrgentImageUrl"].isNull())
+		urgentImageUrl_ = value["UrgentImageUrl"].asString();
 	if(!value["CallbackUrl"].isNull())
 		callbackUrl_ = value["CallbackUrl"].asString();
 	if(!value["ProgramName"].isNull())
@@ -116,6 +120,11 @@ std::string DescribeCasterConfigResult::getDomainName()const
 	return domainName_;
 }
 
+std::string DescribeCasterConfigResult::getUrgentImageUrl()const
+{
+	return urgentImageUrl_;
+}
+
 std::string DescribeCasterConfigResult::getUrgentMaterialId()const
 {
 	return urgentMaterialId_;
@@ -129,6 +138,11 @@ std::string DescribeCasterConfigResult::getSideOutputUrlList()const
 DescribeCasterConfigResult::TranscodeConfig DescribeCasterConfigResult::getTranscodeConfig()const
 {
 	return transcodeConfig_;
+}
+
+std::string DescribeCasterConfigResult::getUrgentImageId()const
+{
+	return urgentImageId_;
 }
 
 std::string DescribeCasterConfigResult::getProgramName()const

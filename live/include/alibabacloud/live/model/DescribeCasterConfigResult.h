@@ -64,9 +64,11 @@ namespace AlibabaCloud
 				~DescribeCasterConfigResult();
 				int getChannelEnable()const;
 				std::string getDomainName()const;
+				std::string getUrgentImageUrl()const;
 				std::string getUrgentMaterialId()const;
 				std::string getSideOutputUrlList()const;
 				TranscodeConfig getTranscodeConfig()const;
+				std::string getUrgentImageId()const;
 				std::string getProgramName()const;
 				float getDelay()const;
 				std::string getCallbackUrl()const;
@@ -83,9 +85,11 @@ namespace AlibabaCloud
 			private:
 				int channelEnable_;
 				std::string domainName_;
+				std::string urgentImageUrl_;
 				std::string urgentMaterialId_;
 				std::string sideOutputUrlList_;
 				TranscodeConfig transcodeConfig_;
+				std::string urgentImageId_;
 				std::string programName_;
 				float delay_;
 				std::string callbackUrl_;
