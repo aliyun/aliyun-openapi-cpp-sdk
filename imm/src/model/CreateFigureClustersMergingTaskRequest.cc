@@ -34,22 +34,17 @@ void CreateFigureClustersMergingTaskRequest::setUserData(const std::string &user
   setParameter(std::string("UserData"), userData);
 }
 
-std::string CreateFigureClustersMergingTaskRequest::getProjectName() const {
-  return projectName_;
+CreateFigureClustersMergingTaskRequest::Notification CreateFigureClustersMergingTaskRequest::getNotification() const {
+  return notification_;
 }
 
-void CreateFigureClustersMergingTaskRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
-std::string CreateFigureClustersMergingTaskRequest::getNotifyTopicName() const {
-  return notifyTopicName_;
-}
-
-void CreateFigureClustersMergingTaskRequest::setNotifyTopicName(const std::string &notifyTopicName) {
-  notifyTopicName_ = notifyTopicName;
-  setParameter(std::string("NotifyTopicName"), notifyTopicName);
+void CreateFigureClustersMergingTaskRequest::setNotification(const CreateFigureClustersMergingTaskRequest::Notification &notification) {
+  notification_ = notification;
+  setParameter(std::string("Notification") + ".MNS.Endpoint", notification.mNS.endpoint);
+  setParameter(std::string("Notification") + ".MNS.TopicName", notification.mNS.topicName);
+  setParameter(std::string("Notification") + ".RocketMQ.Endpoint", notification.rocketMQ.endpoint);
+  setParameter(std::string("Notification") + ".RocketMQ.InstanceId", notification.rocketMQ.instanceId);
+  setParameter(std::string("Notification") + ".RocketMQ.TopicName", notification.rocketMQ.topicName);
 }
 
 std::string CreateFigureClustersMergingTaskRequest::getNotifyEndpoint() const {
@@ -79,13 +74,33 @@ void CreateFigureClustersMergingTaskRequest::setFrom(const std::string &from) {
   setParameter(std::string("From"), from);
 }
 
-std::string CreateFigureClustersMergingTaskRequest::getTo() const {
-  return to_;
+std::vector<CreateFigureClustersMergingTaskRequest::std::string> CreateFigureClustersMergingTaskRequest::getFroms() const {
+  return froms_;
 }
 
-void CreateFigureClustersMergingTaskRequest::setTo(const std::string &to) {
-  to_ = to;
-  setParameter(std::string("To"), to);
+void CreateFigureClustersMergingTaskRequest::setFroms(const std::vector<CreateFigureClustersMergingTaskRequest::std::string> &froms) {
+  froms_ = froms;
+  for(int dep1 = 0; dep1 != froms.size(); dep1++) {
+    setParameter(std::string("Froms") + "." + std::to_string(dep1 + 1), froms[dep1]);
+  }
+}
+
+std::string CreateFigureClustersMergingTaskRequest::getProjectName() const {
+  return projectName_;
+}
+
+void CreateFigureClustersMergingTaskRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string CreateFigureClustersMergingTaskRequest::getNotifyTopicName() const {
+  return notifyTopicName_;
+}
+
+void CreateFigureClustersMergingTaskRequest::setNotifyTopicName(const std::string &notifyTopicName) {
+  notifyTopicName_ = notifyTopicName;
+  setParameter(std::string("NotifyTopicName"), notifyTopicName);
 }
 
 std::map<std::string, std::string> CreateFigureClustersMergingTaskRequest::getTags() const {
@@ -97,5 +112,14 @@ void CreateFigureClustersMergingTaskRequest::setTags(const std::map<std::string,
   for(auto const &iter1 : tags) {
     setParameter(std::string("Tags") + "." + iter1.first, iter1.second);
   }
+}
+
+std::string CreateFigureClustersMergingTaskRequest::getTo() const {
+  return to_;
+}
+
+void CreateFigureClustersMergingTaskRequest::setTo(const std::string &to) {
+  to_ = to;
+  setParameter(std::string("To"), to);
 }
 

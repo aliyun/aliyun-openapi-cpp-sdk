@@ -40,17 +40,6 @@ public:
 		double startTime;
 		std::string uRI;
 	};
-	struct CredentialConfig {
-		struct ChainItem {
-			std::string role;
-			std::string roleType;
-			std::string assumeRoleFor;
-		};
-		ChainItem chainItem;
-		std::vector<ChainItem> chain;
-		std::string serviceRole;
-		std::string policy;
-	};
 	struct Targets {
 		std::string container;
 		struct Image {
@@ -66,6 +55,19 @@ public:
 			};
 			SnapshotsItem snapshotsItem;
 			std::vector<SnapshotsItem> snapshots;
+			struct AnimationsItem {
+				int number;
+				double frameRate;
+				std::string format;
+				int width;
+				double interval;
+				double startTime;
+				std::string scaleType;
+				std::string uRI;
+				int height;
+			};
+			AnimationsItem animationsItem;
+			std::vector<AnimationsItem> animations;
 			struct SpritesItem {
 				int tileHeight;
 				int number;
@@ -96,6 +98,8 @@ public:
 		Segment segment;
 		struct Subtitle {
 			bool disableSubtitle;
+			int integer;
+			std::vector<int> stream;
 			struct ExtractSubtitle {
 				std::string format;
 				std::string uRI;
@@ -103,6 +107,7 @@ public:
 			ExtractSubtitle extractSubtitle;
 		};
 		Subtitle subtitle;
+		bool stripMetadata;
 		struct Preset {
 			std::string name;
 			std::string type;
@@ -143,6 +148,8 @@ public:
 				std::vector<WatermarksItem> watermarks;
 			};
 			FilterVideo filterVideo;
+			int integer;
+			std::vector<int> stream;
 			bool disableVideo;
 			struct TranscodeVideo {
 				std::string resolutionOption;
@@ -167,6 +174,8 @@ public:
 		};
 		Video video;
 		struct Audio {
+			long long;
+			std::vector<long> stream;
 			bool disableAudio;
 			struct TranscodeAudio {
 				std::string codec;
@@ -186,34 +195,62 @@ public:
 		Audio audio;
 		std::string uRI;
 		float speed;
+		double pTSOffset;
+	};
+	struct Notification {
+		struct MNS {
+			std::string endpoint;
+			std::string topicName;
+		};
+		MNS mNS;
+		struct RocketMQ {
+			std::string endpoint;
+			std::string instanceId;
+			std::string topicName;
+		};
+		RocketMQ rocketMQ;
+	};
+	struct CredentialConfig {
+		struct ChainItem {
+			std::string role;
+			std::string roleType;
+			std::string assumeRoleFor;
+		};
+		ChainItem chainItem;
+		std::vector<ChainItem> chain;
+		std::string serviceRole;
+		std::string policy;
 	};
 	CreateMediaConvertTaskRequest();
 	~CreateMediaConvertTaskRequest();
+	std::vector<Sources> getSources() const;
+	void setSources(const std::vector<Sources> &sources);
+	std::vector<Targets> getTargets() const;
+	void setTargets(const std::vector<Targets> &targets);
 	std::string getUserData() const;
 	void setUserData(const std::string &userData);
+	Notification getNotification() const;
+	void setNotification(const Notification &notification);
+	std::string getNotifyEndpoint() const;
+	void setNotifyEndpoint(const std::string &notifyEndpoint);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
 	std::string getNotifyTopicName() const;
 	void setNotifyTopicName(const std::string &notifyTopicName);
-	std::vector<Sources> getSources() const;
-	void setSources(const std::vector<Sources> &sources);
-	std::string getNotifyEndpoint() const;
-	void setNotifyEndpoint(const std::string &notifyEndpoint);
 	CredentialConfig getCredentialConfig() const;
 	void setCredentialConfig(const CredentialConfig &credentialConfig);
-	std::vector<Targets> getTargets() const;
-	void setTargets(const std::vector<Targets> &targets);
 	std::map<std::string, std::string> getTags() const;
 	void setTags(const std::map<std::string, std::string> &tags);
 
 private:
+	std::vector<Sources> sources_;
+	std::vector<Targets> targets_;
 	std::string userData_;
+	Notification notification_;
+	std::string notifyEndpoint_;
 	std::string projectName_;
 	std::string notifyTopicName_;
-	std::vector<Sources> sources_;
-	std::string notifyEndpoint_;
 	CredentialConfig credentialConfig_;
-	std::vector<Targets> targets_;
 	std::map<std::string, std::string> tags_;
 };
 } // namespace Model

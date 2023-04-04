@@ -28,31 +28,34 @@ namespace Imm {
 namespace Model {
 class ALIBABACLOUD_IMM_EXPORT CompareImageFacesRequest : public RpcServiceRequest {
 public:
+	struct Source {
+		std::string uRI2;
+		std::string uRI1;
+	};
+	struct CredentialConfig {
+		struct ChainItem {
+			std::string role;
+			std::string roleType;
+			std::string assumeRoleFor;
+		};
+		ChainItem chainItem;
+		std::vector<ChainItem> chain;
+		std::string serviceRole;
+		std::string policy;
+	};
 	CompareImageFacesRequest();
 	~CompareImageFacesRequest();
-	std::string getProject() const;
-	void setProject(const std::string &project);
-	std::string getFaceIdA() const;
-	void setFaceIdA(const std::string &faceIdA);
-	std::string getFaceIdB() const;
-	void setFaceIdB(const std::string &faceIdB);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getImageUriB() const;
-	void setImageUriB(const std::string &imageUriB);
-	std::string getImageUriA() const;
-	void setImageUriA(const std::string &imageUriA);
-	std::string getSetId() const;
-	void setSetId(const std::string &setId);
+	Source getSource() const;
+	void setSource(const Source &source);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
+	CredentialConfig getCredentialConfig() const;
+	void setCredentialConfig(const CredentialConfig &credentialConfig);
 
 private:
-	std::string project_;
-	std::string faceIdA_;
-	std::string faceIdB_;
-	std::string accessKeyId_;
-	std::string imageUriB_;
-	std::string imageUriA_;
-	std::string setId_;
+	Source source_;
+	std::string projectName_;
+	CredentialConfig credentialConfig_;
 };
 } // namespace Model
 } // namespace Imm

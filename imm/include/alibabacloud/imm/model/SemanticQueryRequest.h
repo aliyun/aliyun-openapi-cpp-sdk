@@ -30,23 +30,23 @@ class ALIBABACLOUD_IMM_EXPORT SemanticQueryRequest : public RpcServiceRequest {
 public:
 	SemanticQueryRequest();
 	~SemanticQueryRequest();
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::string getDatasetName() const;
+	void setDatasetName(const std::string &datasetName);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
 	std::string getQuery() const;
 	void setQuery(const std::string &query);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
-	std::string getDatasetName() const;
-	void setDatasetName(const std::string &datasetName);
 
 private:
-	std::string projectName_;
 	std::string nextToken_;
+	std::string datasetName_;
+	std::string projectName_;
 	std::string query_;
 	int maxResults_;
-	std::string datasetName_;
 };
 } // namespace Model
 } // namespace Imm

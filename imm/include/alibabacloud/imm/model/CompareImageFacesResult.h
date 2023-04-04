@@ -32,55 +32,17 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_IMM_EXPORT CompareImageFacesResult : public ServiceResult
 			{
 			public:
-				struct FaceA
-				{
-					struct FaceAttributes
-					{
-						struct FaceBoundary
-						{
-							int left;
-							int top;
-							int height;
-							int width;
-						};
-						FaceBoundary faceBoundary;
-					};
-					std::string faceId;
-					FaceAttributes faceAttributes;
-				};
-				struct FaceB
-				{
-					struct FaceAttributes1
-					{
-						struct FaceBoundary2
-						{
-							int left;
-							int top;
-							int height;
-							int width;
-						};
-						FaceBoundary2 faceBoundary2;
-					};
-					std::string faceId;
-					FaceAttributes1 faceAttributes1;
-				};
 
 
 				CompareImageFacesResult();
 				explicit CompareImageFacesResult(const std::string &payload);
 				~CompareImageFacesResult();
 				float getSimilarity()const;
-				FaceA getFaceA()const;
-				std::string getSetId()const;
-				FaceB getFaceB()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				float similarity_;
-				FaceA faceA_;
-				std::string setId_;
-				FaceB faceB_;
 
 			};
 		}

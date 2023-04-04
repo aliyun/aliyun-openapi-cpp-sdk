@@ -28,34 +28,58 @@ namespace Imm {
 namespace Model {
 class ALIBABACLOUD_IMM_EXPORT CreateStoryRequest : public RpcServiceRequest {
 public:
+	struct Notification {
+		struct MNS {
+			std::string endpoint;
+			std::string topicName;
+		};
+		MNS mNS;
+		struct RocketMQ {
+			std::string endpoint;
+			std::string instanceId;
+			std::string topicName;
+		};
+		RocketMQ rocketMQ;
+	};
+	struct Address {
+		std::string country;
+		std::string province;
+		std::string city;
+		std::string district;
+		std::string township;
+	};
 	CreateStoryRequest();
 	~CreateStoryRequest();
-	long getMinFileCount() const;
-	void setMinFileCount(long minFileCount);
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
 	std::string getCustomLabels() const;
 	void setCustomLabels(const std::string &customLabels);
-	std::string getStoryStartTime() const;
-	void setStoryStartTime(const std::string &storyStartTime);
+	Notification getNotification() const;
+	void setNotification(const Notification &notification);
+	std::string getNotifyEndpoint() const;
+	void setNotifyEndpoint(const std::string &notifyEndpoint);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
 	std::string getNotifyTopicName() const;
 	void setNotifyTopicName(const std::string &notifyTopicName);
 	std::string getStoryType() const;
 	void setStoryType(const std::string &storyType);
-	std::string getCustomId() const;
-	void setCustomId(const std::string &customId);
 	std::map<std::string, std::string> getTags() const;
 	void setTags(const std::map<std::string, std::string> &tags);
-	std::string getUserData() const;
-	void setUserData(const std::string &userData);
-	std::string getNotifyEndpoint() const;
-	void setNotifyEndpoint(const std::string &notifyEndpoint);
-	long getMaxFileCount() const;
-	void setMaxFileCount(long maxFileCount);
 	std::string getStorySubType() const;
 	void setStorySubType(const std::string &storySubType);
+	long getMinFileCount() const;
+	void setMinFileCount(long minFileCount);
+	std::string getUserData() const;
+	void setUserData(const std::string &userData);
+	long getMaxFileCount() const;
+	void setMaxFileCount(long maxFileCount);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
+	std::string getStoryStartTime() const;
+	void setStoryStartTime(const std::string &storyStartTime);
+	Address getAddress() const;
+	void setAddress(const Address &address);
+	std::string getCustomId() const;
+	void setCustomId(const std::string &customId);
 	std::string getStoryEndTime() const;
 	void setStoryEndTime(const std::string &storyEndTime);
 	std::string getObjectId() const;
@@ -64,19 +88,21 @@ public:
 	void setStoryName(const std::string &storyName);
 
 private:
-	long minFileCount_;
-	std::string projectName_;
 	std::string customLabels_;
-	std::string storyStartTime_;
+	Notification notification_;
+	std::string notifyEndpoint_;
+	std::string projectName_;
 	std::string notifyTopicName_;
 	std::string storyType_;
-	std::string customId_;
 	std::map<std::string, std::string> tags_;
-	std::string userData_;
-	std::string notifyEndpoint_;
-	long maxFileCount_;
 	std::string storySubType_;
+	long minFileCount_;
+	std::string userData_;
+	long maxFileCount_;
 	std::string datasetName_;
+	std::string storyStartTime_;
+	Address address_;
+	std::string customId_;
 	std::string storyEndTime_;
 	std::string objectId_;
 	std::string storyName_;

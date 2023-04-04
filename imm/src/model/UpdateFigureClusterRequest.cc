@@ -25,6 +25,15 @@ UpdateFigureClusterRequest::UpdateFigureClusterRequest()
 
 UpdateFigureClusterRequest::~UpdateFigureClusterRequest() {}
 
+std::string UpdateFigureClusterRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void UpdateFigureClusterRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
+}
+
 std::string UpdateFigureClusterRequest::getProjectName() const {
   return projectName_;
 }
@@ -43,20 +52,12 @@ void UpdateFigureClusterRequest::setFigureCluster(const UpdateFigureClusterReque
   for(int dep1 = 0; dep1 != figureCluster.cover.figures.size(); dep1++) {
     setParameter(std::string("FigureCluster") + ".Cover.Figures." + std::to_string(dep1 + 1) + ".FigureId", figureCluster.cover.figures[dep1].figureId);
   }
+  setParameter(std::string("FigureCluster") + ".MetaLockVersion", std::to_string(figureCluster.metaLockVersion));
   for(auto const &iter1 : figureCluster.customLabels) {
     setParameter(std::string("FigureCluster") + ".CustomLabels." + iter1.first, iter1.second);
   }
   setParameter(std::string("FigureCluster") + ".Name", figureCluster.name);
   setParameter(std::string("FigureCluster") + ".CustomId", figureCluster.customId);
   setParameter(std::string("FigureCluster") + ".ObjectId", figureCluster.objectId);
-}
-
-std::string UpdateFigureClusterRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void UpdateFigureClusterRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
 }
 

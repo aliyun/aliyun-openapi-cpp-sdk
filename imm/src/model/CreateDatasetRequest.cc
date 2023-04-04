@@ -25,15 +25,6 @@ CreateDatasetRequest::CreateDatasetRequest()
 
 CreateDatasetRequest::~CreateDatasetRequest() {}
 
-std::string CreateDatasetRequest::getProjectName() const {
-  return projectName_;
-}
-
-void CreateDatasetRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
 long CreateDatasetRequest::getDatasetMaxBindCount() const {
   return datasetMaxBindCount_;
 }
@@ -43,13 +34,13 @@ void CreateDatasetRequest::setDatasetMaxBindCount(long datasetMaxBindCount) {
   setParameter(std::string("DatasetMaxBindCount"), std::to_string(datasetMaxBindCount));
 }
 
-long CreateDatasetRequest::getDatasetMaxTotalFileSize() const {
-  return datasetMaxTotalFileSize_;
+std::string CreateDatasetRequest::getDescription() const {
+  return description_;
 }
 
-void CreateDatasetRequest::setDatasetMaxTotalFileSize(long datasetMaxTotalFileSize) {
-  datasetMaxTotalFileSize_ = datasetMaxTotalFileSize;
-  setParameter(std::string("DatasetMaxTotalFileSize"), std::to_string(datasetMaxTotalFileSize));
+void CreateDatasetRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
 long CreateDatasetRequest::getDatasetMaxRelationCount() const {
@@ -70,13 +61,22 @@ void CreateDatasetRequest::setDatasetName(const std::string &datasetName) {
   setParameter(std::string("DatasetName"), datasetName);
 }
 
-std::string CreateDatasetRequest::getDescription() const {
-  return description_;
+long CreateDatasetRequest::getDatasetMaxFileCount() const {
+  return datasetMaxFileCount_;
 }
 
-void CreateDatasetRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setParameter(std::string("Description"), description);
+void CreateDatasetRequest::setDatasetMaxFileCount(long datasetMaxFileCount) {
+  datasetMaxFileCount_ = datasetMaxFileCount;
+  setParameter(std::string("DatasetMaxFileCount"), std::to_string(datasetMaxFileCount));
+}
+
+std::string CreateDatasetRequest::getProjectName() const {
+  return projectName_;
+}
+
+void CreateDatasetRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
 long CreateDatasetRequest::getDatasetMaxEntityCount() const {
@@ -88,15 +88,6 @@ void CreateDatasetRequest::setDatasetMaxEntityCount(long datasetMaxEntityCount) 
   setParameter(std::string("DatasetMaxEntityCount"), std::to_string(datasetMaxEntityCount));
 }
 
-long CreateDatasetRequest::getDatasetMaxFileCount() const {
-  return datasetMaxFileCount_;
-}
-
-void CreateDatasetRequest::setDatasetMaxFileCount(long datasetMaxFileCount) {
-  datasetMaxFileCount_ = datasetMaxFileCount;
-  setParameter(std::string("DatasetMaxFileCount"), std::to_string(datasetMaxFileCount));
-}
-
 std::string CreateDatasetRequest::getTemplateId() const {
   return templateId_;
 }
@@ -104,5 +95,14 @@ std::string CreateDatasetRequest::getTemplateId() const {
 void CreateDatasetRequest::setTemplateId(const std::string &templateId) {
   templateId_ = templateId;
   setParameter(std::string("TemplateId"), templateId);
+}
+
+long CreateDatasetRequest::getDatasetMaxTotalFileSize() const {
+  return datasetMaxTotalFileSize_;
+}
+
+void CreateDatasetRequest::setDatasetMaxTotalFileSize(long datasetMaxTotalFileSize) {
+  datasetMaxTotalFileSize_ = datasetMaxTotalFileSize;
+  setParameter(std::string("DatasetMaxTotalFileSize"), std::to_string(datasetMaxTotalFileSize));
 }
 

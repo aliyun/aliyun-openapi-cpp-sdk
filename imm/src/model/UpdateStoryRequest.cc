@@ -25,24 +25,6 @@ UpdateStoryRequest::UpdateStoryRequest()
 
 UpdateStoryRequest::~UpdateStoryRequest() {}
 
-UpdateStoryRequest::Cover UpdateStoryRequest::getCover() const {
-  return cover_;
-}
-
-void UpdateStoryRequest::setCover(const UpdateStoryRequest::Cover &cover) {
-  cover_ = cover;
-  setBodyParameter(std::string("Cover") + ".URI", cover.uRI);
-}
-
-std::string UpdateStoryRequest::getProjectName() const {
-  return projectName_;
-}
-
-void UpdateStoryRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setBodyParameter(std::string("ProjectName"), projectName);
-}
-
 std::string UpdateStoryRequest::getCustomLabels() const {
   return customLabels_;
 }
@@ -52,6 +34,15 @@ void UpdateStoryRequest::setCustomLabels(const std::string &customLabels) {
   setBodyParameter(std::string("CustomLabels"), customLabels);
 }
 
+UpdateStoryRequest::Cover UpdateStoryRequest::getCover() const {
+  return cover_;
+}
+
+void UpdateStoryRequest::setCover(const UpdateStoryRequest::Cover &cover) {
+  cover_ = cover;
+  setBodyParameter(std::string("Cover") + ".URI", cover.uRI);
+}
+
 std::string UpdateStoryRequest::getDatasetName() const {
   return datasetName_;
 }
@@ -59,6 +50,15 @@ std::string UpdateStoryRequest::getDatasetName() const {
 void UpdateStoryRequest::setDatasetName(const std::string &datasetName) {
   datasetName_ = datasetName;
   setBodyParameter(std::string("DatasetName"), datasetName);
+}
+
+std::string UpdateStoryRequest::getProjectName() const {
+  return projectName_;
+}
+
+void UpdateStoryRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setBodyParameter(std::string("ProjectName"), projectName);
 }
 
 std::string UpdateStoryRequest::getCustomId() const {

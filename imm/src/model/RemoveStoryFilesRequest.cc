@@ -25,15 +25,6 @@ RemoveStoryFilesRequest::RemoveStoryFilesRequest()
 
 RemoveStoryFilesRequest::~RemoveStoryFilesRequest() {}
 
-std::string RemoveStoryFilesRequest::getProjectName() const {
-  return projectName_;
-}
-
-void RemoveStoryFilesRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setBodyParameter(std::string("ProjectName"), projectName);
-}
-
 std::string RemoveStoryFilesRequest::getDatasetName() const {
   return datasetName_;
 }
@@ -41,6 +32,15 @@ std::string RemoveStoryFilesRequest::getDatasetName() const {
 void RemoveStoryFilesRequest::setDatasetName(const std::string &datasetName) {
   datasetName_ = datasetName;
   setBodyParameter(std::string("DatasetName"), datasetName);
+}
+
+std::string RemoveStoryFilesRequest::getProjectName() const {
+  return projectName_;
+}
+
+void RemoveStoryFilesRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setBodyParameter(std::string("ProjectName"), projectName);
 }
 
 std::vector<RemoveStoryFilesRequest::Files> RemoveStoryFilesRequest::getFiles() const {

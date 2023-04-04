@@ -34,15 +34,15 @@ namespace AlibabaCloud
 			public:
 				struct BodiesItem
 				{
-					struct BodyBoundary
+					struct Boundary
 					{
-						int left;
-						int top;
-						int height;
-						int width;
+						long left;
+						long top;
+						long height;
+						long width;
 					};
-					float bodyConfidence;
-					BodyBoundary bodyBoundary;
+					float confidence;
+					Boundary boundary;
 				};
 
 
@@ -50,13 +50,11 @@ namespace AlibabaCloud
 				explicit DetectImageBodiesResult(const std::string &payload);
 				~DetectImageBodiesResult();
 				std::vector<BodiesItem> getBodies()const;
-				std::string getImageUri()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<BodiesItem> bodies_;
-				std::string imageUri_;
 
 			};
 		}

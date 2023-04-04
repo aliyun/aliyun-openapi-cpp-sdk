@@ -30,23 +30,38 @@ class ALIBABACLOUD_IMM_EXPORT UpdateProjectRequest : public RpcServiceRequest {
 public:
 	UpdateProjectRequest();
 	~UpdateProjectRequest();
-	std::string getProject() const;
-	void setProject(const std::string &project);
-	std::string getNewBCTaskVersion() const;
-	void setNewBCTaskVersion(const std::string &newBCTaskVersion);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getNewServiceRole() const;
-	void setNewServiceRole(const std::string &newServiceRole);
-	int getNewCU() const;
-	void setNewCU(int newCU);
+	long getDatasetMaxBindCount() const;
+	void setDatasetMaxBindCount(long datasetMaxBindCount);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
+	long getDatasetMaxRelationCount() const;
+	void setDatasetMaxRelationCount(long datasetMaxRelationCount);
+	long getDatasetMaxFileCount() const;
+	void setDatasetMaxFileCount(long datasetMaxFileCount);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
+	long getProjectMaxDatasetCount() const;
+	void setProjectMaxDatasetCount(long projectMaxDatasetCount);
+	long getDatasetMaxEntityCount() const;
+	void setDatasetMaxEntityCount(long datasetMaxEntityCount);
+	std::string getTemplateId() const;
+	void setTemplateId(const std::string &templateId);
+	long getDatasetMaxTotalFileSize() const;
+	void setDatasetMaxTotalFileSize(long datasetMaxTotalFileSize);
+	std::string getServiceRole() const;
+	void setServiceRole(const std::string &serviceRole);
 
 private:
-	std::string project_;
-	std::string newBCTaskVersion_;
-	std::string accessKeyId_;
-	std::string newServiceRole_;
-	int newCU_;
+	long datasetMaxBindCount_;
+	std::string description_;
+	long datasetMaxRelationCount_;
+	long datasetMaxFileCount_;
+	std::string projectName_;
+	long projectMaxDatasetCount_;
+	long datasetMaxEntityCount_;
+	std::string templateId_;
+	long datasetMaxTotalFileSize_;
+	std::string serviceRole_;
 };
 } // namespace Model
 } // namespace Imm

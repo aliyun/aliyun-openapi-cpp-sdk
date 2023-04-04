@@ -312,32 +312,18 @@ namespace AlibabaCloud
 					std::string latLong;
 					std::string oSSObjectType;
 				};
-				struct AggregationsItem
-				{
-					struct GroupsItem
-					{
-						std::string value;
-						long count;
-					};
-					std::string field;
-					std::vector<AggregationsItem::GroupsItem> groups;
-					float value;
-					std::string operation;
-				};
 
 
 				SemanticQueryResult();
 				explicit SemanticQueryResult(const std::string &payload);
 				~SemanticQueryResult();
 				std::string getNextToken()const;
-				std::vector<AggregationsItem> getAggregations()const;
 				std::vector<FilesItem> getFiles()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string nextToken_;
-				std::vector<AggregationsItem> aggregations_;
 				std::vector<FilesItem> files_;
 
 			};

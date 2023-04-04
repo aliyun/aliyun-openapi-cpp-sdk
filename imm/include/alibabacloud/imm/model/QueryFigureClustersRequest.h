@@ -28,31 +28,45 @@ namespace Imm {
 namespace Model {
 class ALIBABACLOUD_IMM_EXPORT QueryFigureClustersRequest : public RpcServiceRequest {
 public:
+	struct CreateTimeRange {
+		std::string start;
+		std::string end;
+	};
+	struct UpdateTimeRange {
+		std::string start;
+		std::string end;
+	};
 	QueryFigureClustersRequest();
 	~QueryFigureClustersRequest();
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
 	std::string getCustomLabels() const;
 	void setCustomLabels(const std::string &customLabels);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
-	long getMaxResults() const;
-	void setMaxResults(long maxResults);
-	std::string getSort() const;
-	void setSort(const std::string &sort);
 	std::string getOrder() const;
 	void setOrder(const std::string &order);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
+	std::string getSort() const;
+	void setSort(const std::string &sort);
+	CreateTimeRange getCreateTimeRange() const;
+	void setCreateTimeRange(const CreateTimeRange &createTimeRange);
+	long getMaxResults() const;
+	void setMaxResults(long maxResults);
+	UpdateTimeRange getUpdateTimeRange() const;
+	void setUpdateTimeRange(const UpdateTimeRange &updateTimeRange);
 
 private:
-	std::string projectName_;
 	std::string customLabels_;
 	std::string nextToken_;
 	std::string datasetName_;
-	long maxResults_;
-	std::string sort_;
 	std::string order_;
+	std::string projectName_;
+	std::string sort_;
+	CreateTimeRange createTimeRange_;
+	long maxResults_;
+	UpdateTimeRange updateTimeRange_;
 };
 } // namespace Model
 } // namespace Imm

@@ -37,6 +37,7 @@ public:
 			std::vector<FiguresItem> figures;
 		};
 		Cover cover;
+		long metaLockVersion;
 		std::map<std::string, std::string> customLabels;
 		std::string name;
 		std::string customId;
@@ -44,17 +45,17 @@ public:
 	};
 	UpdateFigureClusterRequest();
 	~UpdateFigureClusterRequest();
+	std::string getDatasetName() const;
+	void setDatasetName(const std::string &datasetName);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
 	FigureCluster getFigureCluster() const;
 	void setFigureCluster(const FigureCluster &figureCluster);
-	std::string getDatasetName() const;
-	void setDatasetName(const std::string &datasetName);
 
 private:
+	std::string datasetName_;
 	std::string projectName_;
 	FigureCluster figureCluster_;
-	std::string datasetName_;
 };
 } // namespace Model
 } // namespace Imm

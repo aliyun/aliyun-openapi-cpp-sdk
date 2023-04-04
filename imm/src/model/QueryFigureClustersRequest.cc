@@ -25,15 +25,6 @@ QueryFigureClustersRequest::QueryFigureClustersRequest()
 
 QueryFigureClustersRequest::~QueryFigureClustersRequest() {}
 
-std::string QueryFigureClustersRequest::getProjectName() const {
-  return projectName_;
-}
-
-void QueryFigureClustersRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
 std::string QueryFigureClustersRequest::getCustomLabels() const {
   return customLabels_;
 }
@@ -61,13 +52,22 @@ void QueryFigureClustersRequest::setDatasetName(const std::string &datasetName) 
   setParameter(std::string("DatasetName"), datasetName);
 }
 
-long QueryFigureClustersRequest::getMaxResults() const {
-  return maxResults_;
+std::string QueryFigureClustersRequest::getOrder() const {
+  return order_;
 }
 
-void QueryFigureClustersRequest::setMaxResults(long maxResults) {
-  maxResults_ = maxResults;
-  setParameter(std::string("MaxResults"), std::to_string(maxResults));
+void QueryFigureClustersRequest::setOrder(const std::string &order) {
+  order_ = order;
+  setParameter(std::string("Order"), order);
+}
+
+std::string QueryFigureClustersRequest::getProjectName() const {
+  return projectName_;
+}
+
+void QueryFigureClustersRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
 std::string QueryFigureClustersRequest::getSort() const {
@@ -79,12 +79,32 @@ void QueryFigureClustersRequest::setSort(const std::string &sort) {
   setParameter(std::string("Sort"), sort);
 }
 
-std::string QueryFigureClustersRequest::getOrder() const {
-  return order_;
+QueryFigureClustersRequest::CreateTimeRange QueryFigureClustersRequest::getCreateTimeRange() const {
+  return createTimeRange_;
 }
 
-void QueryFigureClustersRequest::setOrder(const std::string &order) {
-  order_ = order;
-  setParameter(std::string("Order"), order);
+void QueryFigureClustersRequest::setCreateTimeRange(const QueryFigureClustersRequest::CreateTimeRange &createTimeRange) {
+  createTimeRange_ = createTimeRange;
+  setParameter(std::string("CreateTimeRange") + ".Start", createTimeRange.start);
+  setParameter(std::string("CreateTimeRange") + ".End", createTimeRange.end);
+}
+
+long QueryFigureClustersRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void QueryFigureClustersRequest::setMaxResults(long maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
+}
+
+QueryFigureClustersRequest::UpdateTimeRange QueryFigureClustersRequest::getUpdateTimeRange() const {
+  return updateTimeRange_;
+}
+
+void QueryFigureClustersRequest::setUpdateTimeRange(const QueryFigureClustersRequest::UpdateTimeRange &updateTimeRange) {
+  updateTimeRange_ = updateTimeRange;
+  setParameter(std::string("UpdateTimeRange") + ".Start", updateTimeRange.start);
+  setParameter(std::string("UpdateTimeRange") + ".End", updateTimeRange.end);
 }
 

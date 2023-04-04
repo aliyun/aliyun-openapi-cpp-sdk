@@ -39,22 +39,11 @@ void CreateOfficeConversionTaskResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
 	if(!value["TaskId"].isNull())
 		taskId_ = value["TaskId"].asString();
-	if(!value["Percent"].isNull())
-		percent_ = std::stoi(value["Percent"].asString());
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
-	if(!value["TgtLoc"].isNull())
-		tgtLoc_ = value["TgtLoc"].asString();
+	if(!value["EventId"].isNull())
+		eventId_ = value["EventId"].asString();
 
-}
-
-std::string CreateOfficeConversionTaskResult::getStatus()const
-{
-	return status_;
 }
 
 std::string CreateOfficeConversionTaskResult::getTaskId()const
@@ -62,18 +51,8 @@ std::string CreateOfficeConversionTaskResult::getTaskId()const
 	return taskId_;
 }
 
-int CreateOfficeConversionTaskResult::getPercent()const
+std::string CreateOfficeConversionTaskResult::getEventId()const
 {
-	return percent_;
-}
-
-std::string CreateOfficeConversionTaskResult::getCreateTime()const
-{
-	return createTime_;
-}
-
-std::string CreateOfficeConversionTaskResult::getTgtLoc()const
-{
-	return tgtLoc_;
+	return eventId_;
 }
 

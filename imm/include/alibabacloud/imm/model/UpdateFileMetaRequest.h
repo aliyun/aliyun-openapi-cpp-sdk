@@ -46,17 +46,17 @@ public:
 	};
 	UpdateFileMetaRequest();
 	~UpdateFileMetaRequest();
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
 	File getFile() const;
 	void setFile(const File &file);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
 
 private:
-	std::string projectName_;
 	File file_;
 	std::string datasetName_;
+	std::string projectName_;
 };
 } // namespace Model
 } // namespace Imm

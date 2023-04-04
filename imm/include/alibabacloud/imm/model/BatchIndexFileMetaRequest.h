@@ -28,6 +28,19 @@ namespace Imm {
 namespace Model {
 class ALIBABACLOUD_IMM_EXPORT BatchIndexFileMetaRequest : public RpcServiceRequest {
 public:
+	struct Notification {
+		struct MNS {
+			std::string endpoint;
+			std::string topicName;
+		};
+		MNS mNS;
+		struct RocketMQ {
+			std::string endpoint;
+			std::string instanceId;
+			std::string topicName;
+		};
+		RocketMQ rocketMQ;
+	};
 	struct Files {
 		std::map<std::string, std::string> customLabels;
 		struct FiguresItem {
@@ -46,22 +59,25 @@ public:
 	};
 	BatchIndexFileMetaRequest();
 	~BatchIndexFileMetaRequest();
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
-	std::string getNotifyTopicName() const;
-	void setNotifyTopicName(const std::string &notifyTopicName);
+	Notification getNotification() const;
+	void setNotification(const Notification &notification);
 	std::string getNotifyEndpoint() const;
 	void setNotifyEndpoint(const std::string &notifyEndpoint);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
+	std::string getNotifyTopicName() const;
+	void setNotifyTopicName(const std::string &notifyTopicName);
 	std::vector<Files> getFiles() const;
 	void setFiles(const std::vector<Files> &files);
 
 private:
-	std::string projectName_;
-	std::string notifyTopicName_;
+	Notification notification_;
 	std::string notifyEndpoint_;
 	std::string datasetName_;
+	std::string projectName_;
+	std::string notifyTopicName_;
 	std::vector<Files> files_;
 };
 } // namespace Model

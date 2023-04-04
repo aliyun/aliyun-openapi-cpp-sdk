@@ -28,6 +28,19 @@ namespace Imm {
 namespace Model {
 class ALIBABACLOUD_IMM_EXPORT CreateImageSplicingTaskRequest : public RpcServiceRequest {
 public:
+	struct Notification {
+		struct MNS {
+			std::string endpoint;
+			std::string topicName;
+		};
+		MNS mNS;
+		struct RocketMQ {
+			std::string endpoint;
+			std::string instanceId;
+			std::string topicName;
+		};
+		RocketMQ rocketMQ;
+	};
 	struct Sources {
 		long rotate;
 		std::string uRI;
@@ -45,56 +58,59 @@ public:
 	};
 	CreateImageSplicingTaskRequest();
 	~CreateImageSplicingTaskRequest();
-	long getPadding() const;
-	void setPadding(long padding);
+	long getAlign() const;
+	void setAlign(long align);
+	std::string getBackgroundColor() const;
+	void setBackgroundColor(const std::string &backgroundColor);
+	Notification getNotification() const;
+	void setNotification(const Notification &notification);
+	std::string getNotifyEndpoint() const;
+	void setNotifyEndpoint(const std::string &notifyEndpoint);
+	std::string getScaleType() const;
+	void setScaleType(const std::string &scaleType);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
 	long getMargin() const;
 	void setMargin(long margin);
 	std::string getNotifyTopicName() const;
 	void setNotifyTopicName(const std::string &notifyTopicName);
-	std::vector<Sources> getSources() const;
-	void setSources(const std::vector<Sources> &sources);
-	CredentialConfig getCredentialConfig() const;
-	void setCredentialConfig(const CredentialConfig &credentialConfig);
-	long getAlign() const;
-	void setAlign(long align);
 	long getQuality() const;
 	void setQuality(long quality);
-	std::string getBackgroundColor() const;
-	void setBackgroundColor(const std::string &backgroundColor);
 	std::map<std::string, std::string> getTags() const;
 	void setTags(const std::map<std::string, std::string> &tags);
+	std::vector<Sources> getSources() const;
+	void setSources(const std::vector<Sources> &sources);
 	std::string getUserData() const;
 	void setUserData(const std::string &userData);
-	std::string getNotifyEndpoint() const;
-	void setNotifyEndpoint(const std::string &notifyEndpoint);
 	std::string getTargetURI() const;
 	void setTargetURI(const std::string &targetURI);
-	std::string getScaleType() const;
-	void setScaleType(const std::string &scaleType);
 	std::string getImageFormat() const;
 	void setImageFormat(const std::string &imageFormat);
 	std::string getDirection() const;
 	void setDirection(const std::string &direction);
+	long getPadding() const;
+	void setPadding(long padding);
+	CredentialConfig getCredentialConfig() const;
+	void setCredentialConfig(const CredentialConfig &credentialConfig);
 
 private:
-	long padding_;
+	long align_;
+	std::string backgroundColor_;
+	Notification notification_;
+	std::string notifyEndpoint_;
+	std::string scaleType_;
 	std::string projectName_;
 	long margin_;
 	std::string notifyTopicName_;
-	std::vector<Sources> sources_;
-	CredentialConfig credentialConfig_;
-	long align_;
 	long quality_;
-	std::string backgroundColor_;
 	std::map<std::string, std::string> tags_;
+	std::vector<Sources> sources_;
 	std::string userData_;
-	std::string notifyEndpoint_;
 	std::string targetURI_;
-	std::string scaleType_;
 	std::string imageFormat_;
 	std::string direction_;
+	long padding_;
+	CredentialConfig credentialConfig_;
 };
 } // namespace Model
 } // namespace Imm

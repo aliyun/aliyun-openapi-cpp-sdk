@@ -19,72 +19,43 @@
 using AlibabaCloud::Imm::Model::CompareImageFacesRequest;
 
 CompareImageFacesRequest::CompareImageFacesRequest()
-    : RpcServiceRequest("imm", "2017-09-06", "CompareImageFaces") {
+    : RpcServiceRequest("imm", "2020-09-30", "CompareImageFaces") {
   setMethod(HttpRequest::Method::Post);
 }
 
 CompareImageFacesRequest::~CompareImageFacesRequest() {}
 
-std::string CompareImageFacesRequest::getProject() const {
-  return project_;
+CompareImageFacesRequest::Source CompareImageFacesRequest::getSource() const {
+  return source_;
 }
 
-void CompareImageFacesRequest::setProject(const std::string &project) {
-  project_ = project;
-  setParameter(std::string("Project"), project);
+void CompareImageFacesRequest::setSource(const CompareImageFacesRequest::Source &source) {
+  source_ = source;
+  setParameter(std::string("Source") + ".URI2", source.uRI2);
+  setParameter(std::string("Source") + ".URI1", source.uRI1);
 }
 
-std::string CompareImageFacesRequest::getFaceIdA() const {
-  return faceIdA_;
+std::string CompareImageFacesRequest::getProjectName() const {
+  return projectName_;
 }
 
-void CompareImageFacesRequest::setFaceIdA(const std::string &faceIdA) {
-  faceIdA_ = faceIdA;
-  setParameter(std::string("FaceIdA"), faceIdA);
+void CompareImageFacesRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
-std::string CompareImageFacesRequest::getFaceIdB() const {
-  return faceIdB_;
+CompareImageFacesRequest::CredentialConfig CompareImageFacesRequest::getCredentialConfig() const {
+  return credentialConfig_;
 }
 
-void CompareImageFacesRequest::setFaceIdB(const std::string &faceIdB) {
-  faceIdB_ = faceIdB;
-  setParameter(std::string("FaceIdB"), faceIdB);
-}
-
-std::string CompareImageFacesRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void CompareImageFacesRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
-std::string CompareImageFacesRequest::getImageUriB() const {
-  return imageUriB_;
-}
-
-void CompareImageFacesRequest::setImageUriB(const std::string &imageUriB) {
-  imageUriB_ = imageUriB;
-  setParameter(std::string("ImageUriB"), imageUriB);
-}
-
-std::string CompareImageFacesRequest::getImageUriA() const {
-  return imageUriA_;
-}
-
-void CompareImageFacesRequest::setImageUriA(const std::string &imageUriA) {
-  imageUriA_ = imageUriA;
-  setParameter(std::string("ImageUriA"), imageUriA);
-}
-
-std::string CompareImageFacesRequest::getSetId() const {
-  return setId_;
-}
-
-void CompareImageFacesRequest::setSetId(const std::string &setId) {
-  setId_ = setId;
-  setParameter(std::string("SetId"), setId);
+void CompareImageFacesRequest::setCredentialConfig(const CompareImageFacesRequest::CredentialConfig &credentialConfig) {
+  credentialConfig_ = credentialConfig;
+  for(int dep1 = 0; dep1 != credentialConfig.chain.size(); dep1++) {
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".Role", credentialConfig.chain[dep1].role);
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".RoleType", credentialConfig.chain[dep1].roleType);
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".AssumeRoleFor", credentialConfig.chain[dep1].assumeRoleFor);
+  }
+  setParameter(std::string("CredentialConfig") + ".ServiceRole", credentialConfig.serviceRole);
+  setParameter(std::string("CredentialConfig") + ".Policy", credentialConfig.policy);
 }
 

@@ -25,15 +25,6 @@ ListBindingsRequest::ListBindingsRequest()
 
 ListBindingsRequest::~ListBindingsRequest() {}
 
-std::string ListBindingsRequest::getProjectName() const {
-  return projectName_;
-}
-
-void ListBindingsRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
 std::string ListBindingsRequest::getNextToken() const {
   return nextToken_;
 }
@@ -50,6 +41,15 @@ std::string ListBindingsRequest::getDatasetName() const {
 void ListBindingsRequest::setDatasetName(const std::string &datasetName) {
   datasetName_ = datasetName;
   setParameter(std::string("DatasetName"), datasetName);
+}
+
+std::string ListBindingsRequest::getProjectName() const {
+  return projectName_;
+}
+
+void ListBindingsRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
 long ListBindingsRequest::getMaxResults() const {

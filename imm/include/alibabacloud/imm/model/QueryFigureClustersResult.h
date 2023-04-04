@@ -317,6 +317,7 @@ namespace AlibabaCloud
 					long videoCount;
 					std::string projectName;
 					std::string objectId;
+					long metaLockVersion;
 					std::string createTime;
 					float maxAge;
 					std::string gender;

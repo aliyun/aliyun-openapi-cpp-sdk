@@ -21,12 +21,16 @@ set(imm_public_header
 	include/alibabacloud/imm/ImmExport.h )
 
 set(imm_public_header_model 
+	include/alibabacloud/imm/model/AddImageMosaicRequest.h
+	include/alibabacloud/imm/model/AddImageMosaicResult.h
 	include/alibabacloud/imm/model/AddStoryFilesRequest.h
 	include/alibabacloud/imm/model/AddStoryFilesResult.h
 	include/alibabacloud/imm/model/AttachOSSBucketRequest.h
 	include/alibabacloud/imm/model/AttachOSSBucketResult.h
 	include/alibabacloud/imm/model/BatchDeleteFileMetaRequest.h
 	include/alibabacloud/imm/model/BatchDeleteFileMetaResult.h
+	include/alibabacloud/imm/model/BatchGetFigureClusterRequest.h
+	include/alibabacloud/imm/model/BatchGetFigureClusterResult.h
 	include/alibabacloud/imm/model/BatchGetFileMetaRequest.h
 	include/alibabacloud/imm/model/BatchGetFileMetaResult.h
 	include/alibabacloud/imm/model/BatchIndexFileMetaRequest.h
@@ -35,68 +39,74 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/BatchUpdateFileMetaResult.h
 	include/alibabacloud/imm/model/CompareImageFacesRequest.h
 	include/alibabacloud/imm/model/CompareImageFacesResult.h
-	include/alibabacloud/imm/model/ConvertOfficeFormatRequest.h
-	include/alibabacloud/imm/model/ConvertOfficeFormatResult.h
+	include/alibabacloud/imm/model/CreateArchiveFileInspectionTaskRequest.h
+	include/alibabacloud/imm/model/CreateArchiveFileInspectionTaskResult.h
+	include/alibabacloud/imm/model/CreateBatchRequest.h
+	include/alibabacloud/imm/model/CreateBatchResult.h
 	include/alibabacloud/imm/model/CreateBindingRequest.h
 	include/alibabacloud/imm/model/CreateBindingResult.h
+	include/alibabacloud/imm/model/CreateCompressPointCloudTaskRequest.h
+	include/alibabacloud/imm/model/CreateCompressPointCloudTaskResult.h
+	include/alibabacloud/imm/model/CreateCustomizedStoryRequest.h
+	include/alibabacloud/imm/model/CreateCustomizedStoryResult.h
 	include/alibabacloud/imm/model/CreateDatasetRequest.h
 	include/alibabacloud/imm/model/CreateDatasetResult.h
-	include/alibabacloud/imm/model/CreateDetectVideoLabelsTaskRequest.h
-	include/alibabacloud/imm/model/CreateDetectVideoLabelsTaskResult.h
+	include/alibabacloud/imm/model/CreateFacesSearchingTaskRequest.h
+	include/alibabacloud/imm/model/CreateFacesSearchingTaskResult.h
 	include/alibabacloud/imm/model/CreateFigureClusteringTaskRequest.h
 	include/alibabacloud/imm/model/CreateFigureClusteringTaskResult.h
 	include/alibabacloud/imm/model/CreateFigureClustersMergingTaskRequest.h
 	include/alibabacloud/imm/model/CreateFigureClustersMergingTaskResult.h
-	include/alibabacloud/imm/model/CreateGrabFrameTaskRequest.h
-	include/alibabacloud/imm/model/CreateGrabFrameTaskResult.h
-	include/alibabacloud/imm/model/CreateGroupFacesJobRequest.h
-	include/alibabacloud/imm/model/CreateGroupFacesJobResult.h
+	include/alibabacloud/imm/model/CreateFileCompressionTaskRequest.h
+	include/alibabacloud/imm/model/CreateFileCompressionTaskResult.h
+	include/alibabacloud/imm/model/CreateFileUncompressionTaskRequest.h
+	include/alibabacloud/imm/model/CreateFileUncompressionTaskResult.h
 	include/alibabacloud/imm/model/CreateImageModerationTaskRequest.h
 	include/alibabacloud/imm/model/CreateImageModerationTaskResult.h
 	include/alibabacloud/imm/model/CreateImageSplicingTaskRequest.h
 	include/alibabacloud/imm/model/CreateImageSplicingTaskResult.h
+	include/alibabacloud/imm/model/CreateImageToPDFTaskRequest.h
+	include/alibabacloud/imm/model/CreateImageToPDFTaskResult.h
+	include/alibabacloud/imm/model/CreateLocationDateClusteringTaskRequest.h
+	include/alibabacloud/imm/model/CreateLocationDateClusteringTaskResult.h
 	include/alibabacloud/imm/model/CreateMediaConvertTaskRequest.h
 	include/alibabacloud/imm/model/CreateMediaConvertTaskResult.h
-	include/alibabacloud/imm/model/CreateMergeFaceGroupsJobRequest.h
-	include/alibabacloud/imm/model/CreateMergeFaceGroupsJobResult.h
 	include/alibabacloud/imm/model/CreateOfficeConversionTaskRequest.h
 	include/alibabacloud/imm/model/CreateOfficeConversionTaskResult.h
 	include/alibabacloud/imm/model/CreateProjectRequest.h
 	include/alibabacloud/imm/model/CreateProjectResult.h
-	include/alibabacloud/imm/model/CreateSetRequest.h
-	include/alibabacloud/imm/model/CreateSetResult.h
+	include/alibabacloud/imm/model/CreateSimilarImageClusteringTaskRequest.h
+	include/alibabacloud/imm/model/CreateSimilarImageClusteringTaskResult.h
 	include/alibabacloud/imm/model/CreateStoryRequest.h
 	include/alibabacloud/imm/model/CreateStoryResult.h
-	include/alibabacloud/imm/model/CreateVideoCompressTaskRequest.h
-	include/alibabacloud/imm/model/CreateVideoCompressTaskResult.h
+	include/alibabacloud/imm/model/CreateTriggerRequest.h
+	include/alibabacloud/imm/model/CreateTriggerResult.h
+	include/alibabacloud/imm/model/CreateVideoLabelClassificationTaskRequest.h
+	include/alibabacloud/imm/model/CreateVideoLabelClassificationTaskResult.h
 	include/alibabacloud/imm/model/CreateVideoModerationTaskRequest.h
 	include/alibabacloud/imm/model/CreateVideoModerationTaskResult.h
-	include/alibabacloud/imm/model/DecodeBlindWatermarkRequest.h
-	include/alibabacloud/imm/model/DecodeBlindWatermarkResult.h
+	include/alibabacloud/imm/model/DeleteBatchRequest.h
+	include/alibabacloud/imm/model/DeleteBatchResult.h
 	include/alibabacloud/imm/model/DeleteBindingRequest.h
 	include/alibabacloud/imm/model/DeleteBindingResult.h
 	include/alibabacloud/imm/model/DeleteDatasetRequest.h
 	include/alibabacloud/imm/model/DeleteDatasetResult.h
 	include/alibabacloud/imm/model/DeleteFileMetaRequest.h
 	include/alibabacloud/imm/model/DeleteFileMetaResult.h
-	include/alibabacloud/imm/model/DeleteImageRequest.h
-	include/alibabacloud/imm/model/DeleteImageResult.h
-	include/alibabacloud/imm/model/DeleteOfficeConversionTaskRequest.h
-	include/alibabacloud/imm/model/DeleteOfficeConversionTaskResult.h
+	include/alibabacloud/imm/model/DeleteLocationDateClusterRequest.h
+	include/alibabacloud/imm/model/DeleteLocationDateClusterResult.h
 	include/alibabacloud/imm/model/DeleteProjectRequest.h
 	include/alibabacloud/imm/model/DeleteProjectResult.h
-	include/alibabacloud/imm/model/DeleteSetRequest.h
-	include/alibabacloud/imm/model/DeleteSetResult.h
 	include/alibabacloud/imm/model/DeleteStoryRequest.h
 	include/alibabacloud/imm/model/DeleteStoryResult.h
-	include/alibabacloud/imm/model/DeleteVideoRequest.h
-	include/alibabacloud/imm/model/DeleteVideoResult.h
-	include/alibabacloud/imm/model/DeleteVideoTaskRequest.h
-	include/alibabacloud/imm/model/DeleteVideoTaskResult.h
+	include/alibabacloud/imm/model/DeleteTriggerRequest.h
+	include/alibabacloud/imm/model/DeleteTriggerResult.h
 	include/alibabacloud/imm/model/DetachOSSBucketRequest.h
 	include/alibabacloud/imm/model/DetachOSSBucketResult.h
 	include/alibabacloud/imm/model/DetectImageBodiesRequest.h
 	include/alibabacloud/imm/model/DetectImageBodiesResult.h
+	include/alibabacloud/imm/model/DetectImageCarsRequest.h
+	include/alibabacloud/imm/model/DetectImageCarsResult.h
 	include/alibabacloud/imm/model/DetectImageCodesRequest.h
 	include/alibabacloud/imm/model/DetectImageCodesResult.h
 	include/alibabacloud/imm/model/DetectImageCroppingRequest.h
@@ -105,145 +115,127 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/DetectImageFacesResult.h
 	include/alibabacloud/imm/model/DetectImageLabelsRequest.h
 	include/alibabacloud/imm/model/DetectImageLabelsResult.h
-	include/alibabacloud/imm/model/DetectImageQRCodesRequest.h
-	include/alibabacloud/imm/model/DetectImageQRCodesResult.h
 	include/alibabacloud/imm/model/DetectImageScoreRequest.h
 	include/alibabacloud/imm/model/DetectImageScoreResult.h
-	include/alibabacloud/imm/model/DetectImageTagsRequest.h
-	include/alibabacloud/imm/model/DetectImageTagsResult.h
-	include/alibabacloud/imm/model/DetectQRCodesRequest.h
-	include/alibabacloud/imm/model/DetectQRCodesResult.h
+	include/alibabacloud/imm/model/DetectMediaMetaRequest.h
+	include/alibabacloud/imm/model/DetectMediaMetaResult.h
 	include/alibabacloud/imm/model/DetectTextAnomalyRequest.h
 	include/alibabacloud/imm/model/DetectTextAnomalyResult.h
-	include/alibabacloud/imm/model/EncodeBlindWatermarkRequest.h
-	include/alibabacloud/imm/model/EncodeBlindWatermarkResult.h
-	include/alibabacloud/imm/model/FindImagesRequest.h
-	include/alibabacloud/imm/model/FindImagesResult.h
-	include/alibabacloud/imm/model/FindSimilarFacesRequest.h
-	include/alibabacloud/imm/model/FindSimilarFacesResult.h
+	include/alibabacloud/imm/model/ExtractDocumentTextRequest.h
+	include/alibabacloud/imm/model/ExtractDocumentTextResult.h
 	include/alibabacloud/imm/model/FuzzyQueryRequest.h
 	include/alibabacloud/imm/model/FuzzyQueryResult.h
+	include/alibabacloud/imm/model/GenerateDRMLicenseRequest.h
+	include/alibabacloud/imm/model/GenerateDRMLicenseResult.h
+	include/alibabacloud/imm/model/GenerateVideoPlaylistRequest.h
+	include/alibabacloud/imm/model/GenerateVideoPlaylistResult.h
+	include/alibabacloud/imm/model/GenerateWebofficeTokenRequest.h
+	include/alibabacloud/imm/model/GenerateWebofficeTokenResult.h
+	include/alibabacloud/imm/model/GetBatchRequest.h
+	include/alibabacloud/imm/model/GetBatchResult.h
 	include/alibabacloud/imm/model/GetBindingRequest.h
 	include/alibabacloud/imm/model/GetBindingResult.h
+	include/alibabacloud/imm/model/GetDRMLicenseRequest.h
+	include/alibabacloud/imm/model/GetDRMLicenseResult.h
 	include/alibabacloud/imm/model/GetDatasetRequest.h
 	include/alibabacloud/imm/model/GetDatasetResult.h
-	include/alibabacloud/imm/model/GetDetectVideoLabelsResultRequest.h
-	include/alibabacloud/imm/model/GetDetectVideoLabelsResultResult.h
 	include/alibabacloud/imm/model/GetFigureClusterRequest.h
 	include/alibabacloud/imm/model/GetFigureClusterResult.h
 	include/alibabacloud/imm/model/GetFileMetaRequest.h
 	include/alibabacloud/imm/model/GetFileMetaResult.h
-	include/alibabacloud/imm/model/GetImageRequest.h
-	include/alibabacloud/imm/model/GetImageResult.h
-	include/alibabacloud/imm/model/GetImageCroppingSuggestionsRequest.h
-	include/alibabacloud/imm/model/GetImageCroppingSuggestionsResult.h
-	include/alibabacloud/imm/model/GetImageQualityRequest.h
-	include/alibabacloud/imm/model/GetImageQualityResult.h
-	include/alibabacloud/imm/model/GetMediaMetaRequest.h
-	include/alibabacloud/imm/model/GetMediaMetaResult.h
+	include/alibabacloud/imm/model/GetImageModerationResultRequest.h
+	include/alibabacloud/imm/model/GetImageModerationResultResult.h
 	include/alibabacloud/imm/model/GetOSSBucketAttachmentRequest.h
 	include/alibabacloud/imm/model/GetOSSBucketAttachmentResult.h
-	include/alibabacloud/imm/model/GetOfficeConversionTaskRequest.h
-	include/alibabacloud/imm/model/GetOfficeConversionTaskResult.h
-	include/alibabacloud/imm/model/GetOfficePreviewURLRequest.h
-	include/alibabacloud/imm/model/GetOfficePreviewURLResult.h
 	include/alibabacloud/imm/model/GetProjectRequest.h
 	include/alibabacloud/imm/model/GetProjectResult.h
-	include/alibabacloud/imm/model/GetSetRequest.h
-	include/alibabacloud/imm/model/GetSetResult.h
 	include/alibabacloud/imm/model/GetStoryRequest.h
 	include/alibabacloud/imm/model/GetStoryResult.h
 	include/alibabacloud/imm/model/GetTaskRequest.h
 	include/alibabacloud/imm/model/GetTaskResult.h
-	include/alibabacloud/imm/model/GetVideoRequest.h
-	include/alibabacloud/imm/model/GetVideoResult.h
-	include/alibabacloud/imm/model/GetVideoTaskRequest.h
-	include/alibabacloud/imm/model/GetVideoTaskResult.h
-	include/alibabacloud/imm/model/GetWebofficeURLRequest.h
-	include/alibabacloud/imm/model/GetWebofficeURLResult.h
+	include/alibabacloud/imm/model/GetTriggerRequest.h
+	include/alibabacloud/imm/model/GetTriggerResult.h
+	include/alibabacloud/imm/model/GetVideoLabelClassificationResultRequest.h
+	include/alibabacloud/imm/model/GetVideoLabelClassificationResultResult.h
+	include/alibabacloud/imm/model/GetVideoModerationResultRequest.h
+	include/alibabacloud/imm/model/GetVideoModerationResultResult.h
 	include/alibabacloud/imm/model/IndexFileMetaRequest.h
 	include/alibabacloud/imm/model/IndexFileMetaResult.h
-	include/alibabacloud/imm/model/IndexImageRequest.h
-	include/alibabacloud/imm/model/IndexImageResult.h
-	include/alibabacloud/imm/model/IndexVideoRequest.h
-	include/alibabacloud/imm/model/IndexVideoResult.h
+	include/alibabacloud/imm/model/ListBatchesRequest.h
+	include/alibabacloud/imm/model/ListBatchesResult.h
 	include/alibabacloud/imm/model/ListBindingsRequest.h
 	include/alibabacloud/imm/model/ListBindingsResult.h
 	include/alibabacloud/imm/model/ListDatasetsRequest.h
 	include/alibabacloud/imm/model/ListDatasetsResult.h
-	include/alibabacloud/imm/model/ListFaceGroupsRequest.h
-	include/alibabacloud/imm/model/ListFaceGroupsResult.h
-	include/alibabacloud/imm/model/ListImagesRequest.h
-	include/alibabacloud/imm/model/ListImagesResult.h
-	include/alibabacloud/imm/model/ListOfficeConversionTaskRequest.h
-	include/alibabacloud/imm/model/ListOfficeConversionTaskResult.h
 	include/alibabacloud/imm/model/ListProjectsRequest.h
 	include/alibabacloud/imm/model/ListProjectsResult.h
 	include/alibabacloud/imm/model/ListRegionsRequest.h
 	include/alibabacloud/imm/model/ListRegionsResult.h
-	include/alibabacloud/imm/model/ListSetTagsRequest.h
-	include/alibabacloud/imm/model/ListSetTagsResult.h
-	include/alibabacloud/imm/model/ListSetsRequest.h
-	include/alibabacloud/imm/model/ListSetsResult.h
 	include/alibabacloud/imm/model/ListTasksRequest.h
 	include/alibabacloud/imm/model/ListTasksResult.h
-	include/alibabacloud/imm/model/ListVideoAudiosRequest.h
-	include/alibabacloud/imm/model/ListVideoAudiosResult.h
-	include/alibabacloud/imm/model/ListVideoFramesRequest.h
-	include/alibabacloud/imm/model/ListVideoFramesResult.h
-	include/alibabacloud/imm/model/ListVideoTasksRequest.h
-	include/alibabacloud/imm/model/ListVideoTasksResult.h
-	include/alibabacloud/imm/model/ListVideosRequest.h
-	include/alibabacloud/imm/model/ListVideosResult.h
-	include/alibabacloud/imm/model/MergeFigureClustersRequest.h
-	include/alibabacloud/imm/model/MergeFigureClustersResult.h
-	include/alibabacloud/imm/model/OpenImmServiceRequest.h
-	include/alibabacloud/imm/model/OpenImmServiceResult.h
-	include/alibabacloud/imm/model/PutProjectRequest.h
-	include/alibabacloud/imm/model/PutProjectResult.h
+	include/alibabacloud/imm/model/ListTriggersRequest.h
+	include/alibabacloud/imm/model/ListTriggersResult.h
+	include/alibabacloud/imm/model/LiveTranscodingRequest.h
+	include/alibabacloud/imm/model/LiveTranscodingResult.h
 	include/alibabacloud/imm/model/QueryFigureClustersRequest.h
 	include/alibabacloud/imm/model/QueryFigureClustersResult.h
+	include/alibabacloud/imm/model/QueryLocationDateClustersRequest.h
+	include/alibabacloud/imm/model/QueryLocationDateClustersResult.h
+	include/alibabacloud/imm/model/QuerySimilarImageClustersRequest.h
+	include/alibabacloud/imm/model/QuerySimilarImageClustersResult.h
 	include/alibabacloud/imm/model/QueryStoriesRequest.h
 	include/alibabacloud/imm/model/QueryStoriesResult.h
-	include/alibabacloud/imm/model/RefreshOfficePreviewTokenRequest.h
-	include/alibabacloud/imm/model/RefreshOfficePreviewTokenResult.h
 	include/alibabacloud/imm/model/RefreshWebofficeTokenRequest.h
 	include/alibabacloud/imm/model/RefreshWebofficeTokenResult.h
 	include/alibabacloud/imm/model/RemoveStoryFilesRequest.h
 	include/alibabacloud/imm/model/RemoveStoryFilesResult.h
+	include/alibabacloud/imm/model/ResumeBatchRequest.h
+	include/alibabacloud/imm/model/ResumeBatchResult.h
 	include/alibabacloud/imm/model/ResumeBindingRequest.h
 	include/alibabacloud/imm/model/ResumeBindingResult.h
+	include/alibabacloud/imm/model/ResumeTriggerRequest.h
+	include/alibabacloud/imm/model/ResumeTriggerResult.h
+	include/alibabacloud/imm/model/SearchImageFigureClusterRequest.h
+	include/alibabacloud/imm/model/SearchImageFigureClusterResult.h
 	include/alibabacloud/imm/model/SemanticQueryRequest.h
 	include/alibabacloud/imm/model/SemanticQueryResult.h
 	include/alibabacloud/imm/model/SimpleQueryRequest.h
 	include/alibabacloud/imm/model/SimpleQueryResult.h
 	include/alibabacloud/imm/model/StopBindingRequest.h
 	include/alibabacloud/imm/model/StopBindingResult.h
+	include/alibabacloud/imm/model/SuspendBatchRequest.h
+	include/alibabacloud/imm/model/SuspendBatchResult.h
+	include/alibabacloud/imm/model/SuspendTriggerRequest.h
+	include/alibabacloud/imm/model/SuspendTriggerResult.h
+	include/alibabacloud/imm/model/UpdateBatchRequest.h
+	include/alibabacloud/imm/model/UpdateBatchResult.h
 	include/alibabacloud/imm/model/UpdateDatasetRequest.h
 	include/alibabacloud/imm/model/UpdateDatasetResult.h
-	include/alibabacloud/imm/model/UpdateFaceGroupRequest.h
-	include/alibabacloud/imm/model/UpdateFaceGroupResult.h
 	include/alibabacloud/imm/model/UpdateFigureClusterRequest.h
 	include/alibabacloud/imm/model/UpdateFigureClusterResult.h
 	include/alibabacloud/imm/model/UpdateFileMetaRequest.h
 	include/alibabacloud/imm/model/UpdateFileMetaResult.h
-	include/alibabacloud/imm/model/UpdateImageRequest.h
-	include/alibabacloud/imm/model/UpdateImageResult.h
+	include/alibabacloud/imm/model/UpdateLocationDateClusterRequest.h
+	include/alibabacloud/imm/model/UpdateLocationDateClusterResult.h
 	include/alibabacloud/imm/model/UpdateProjectRequest.h
 	include/alibabacloud/imm/model/UpdateProjectResult.h
-	include/alibabacloud/imm/model/UpdateSetRequest.h
-	include/alibabacloud/imm/model/UpdateSetResult.h
 	include/alibabacloud/imm/model/UpdateStoryRequest.h
-	include/alibabacloud/imm/model/UpdateStoryResult.h )
+	include/alibabacloud/imm/model/UpdateStoryResult.h
+	include/alibabacloud/imm/model/UpdateTriggerRequest.h
+	include/alibabacloud/imm/model/UpdateTriggerResult.h )
 
 set(imm_src 
 	src/ImmClient.cc
+	src/model/AddImageMosaicRequest.cc
+	src/model/AddImageMosaicResult.cc
 	src/model/AddStoryFilesRequest.cc
 	src/model/AddStoryFilesResult.cc
 	src/model/AttachOSSBucketRequest.cc
 	src/model/AttachOSSBucketResult.cc
 	src/model/BatchDeleteFileMetaRequest.cc
 	src/model/BatchDeleteFileMetaResult.cc
+	src/model/BatchGetFigureClusterRequest.cc
+	src/model/BatchGetFigureClusterResult.cc
 	src/model/BatchGetFileMetaRequest.cc
 	src/model/BatchGetFileMetaResult.cc
 	src/model/BatchIndexFileMetaRequest.cc
@@ -252,68 +244,74 @@ set(imm_src
 	src/model/BatchUpdateFileMetaResult.cc
 	src/model/CompareImageFacesRequest.cc
 	src/model/CompareImageFacesResult.cc
-	src/model/ConvertOfficeFormatRequest.cc
-	src/model/ConvertOfficeFormatResult.cc
+	src/model/CreateArchiveFileInspectionTaskRequest.cc
+	src/model/CreateArchiveFileInspectionTaskResult.cc
+	src/model/CreateBatchRequest.cc
+	src/model/CreateBatchResult.cc
 	src/model/CreateBindingRequest.cc
 	src/model/CreateBindingResult.cc
+	src/model/CreateCompressPointCloudTaskRequest.cc
+	src/model/CreateCompressPointCloudTaskResult.cc
+	src/model/CreateCustomizedStoryRequest.cc
+	src/model/CreateCustomizedStoryResult.cc
 	src/model/CreateDatasetRequest.cc
 	src/model/CreateDatasetResult.cc
-	src/model/CreateDetectVideoLabelsTaskRequest.cc
-	src/model/CreateDetectVideoLabelsTaskResult.cc
+	src/model/CreateFacesSearchingTaskRequest.cc
+	src/model/CreateFacesSearchingTaskResult.cc
 	src/model/CreateFigureClusteringTaskRequest.cc
 	src/model/CreateFigureClusteringTaskResult.cc
 	src/model/CreateFigureClustersMergingTaskRequest.cc
 	src/model/CreateFigureClustersMergingTaskResult.cc
-	src/model/CreateGrabFrameTaskRequest.cc
-	src/model/CreateGrabFrameTaskResult.cc
-	src/model/CreateGroupFacesJobRequest.cc
-	src/model/CreateGroupFacesJobResult.cc
+	src/model/CreateFileCompressionTaskRequest.cc
+	src/model/CreateFileCompressionTaskResult.cc
+	src/model/CreateFileUncompressionTaskRequest.cc
+	src/model/CreateFileUncompressionTaskResult.cc
 	src/model/CreateImageModerationTaskRequest.cc
 	src/model/CreateImageModerationTaskResult.cc
 	src/model/CreateImageSplicingTaskRequest.cc
 	src/model/CreateImageSplicingTaskResult.cc
+	src/model/CreateImageToPDFTaskRequest.cc
+	src/model/CreateImageToPDFTaskResult.cc
+	src/model/CreateLocationDateClusteringTaskRequest.cc
+	src/model/CreateLocationDateClusteringTaskResult.cc
 	src/model/CreateMediaConvertTaskRequest.cc
 	src/model/CreateMediaConvertTaskResult.cc
-	src/model/CreateMergeFaceGroupsJobRequest.cc
-	src/model/CreateMergeFaceGroupsJobResult.cc
 	src/model/CreateOfficeConversionTaskRequest.cc
 	src/model/CreateOfficeConversionTaskResult.cc
 	src/model/CreateProjectRequest.cc
 	src/model/CreateProjectResult.cc
-	src/model/CreateSetRequest.cc
-	src/model/CreateSetResult.cc
+	src/model/CreateSimilarImageClusteringTaskRequest.cc
+	src/model/CreateSimilarImageClusteringTaskResult.cc
 	src/model/CreateStoryRequest.cc
 	src/model/CreateStoryResult.cc
-	src/model/CreateVideoCompressTaskRequest.cc
-	src/model/CreateVideoCompressTaskResult.cc
+	src/model/CreateTriggerRequest.cc
+	src/model/CreateTriggerResult.cc
+	src/model/CreateVideoLabelClassificationTaskRequest.cc
+	src/model/CreateVideoLabelClassificationTaskResult.cc
 	src/model/CreateVideoModerationTaskRequest.cc
 	src/model/CreateVideoModerationTaskResult.cc
-	src/model/DecodeBlindWatermarkRequest.cc
-	src/model/DecodeBlindWatermarkResult.cc
+	src/model/DeleteBatchRequest.cc
+	src/model/DeleteBatchResult.cc
 	src/model/DeleteBindingRequest.cc
 	src/model/DeleteBindingResult.cc
 	src/model/DeleteDatasetRequest.cc
 	src/model/DeleteDatasetResult.cc
 	src/model/DeleteFileMetaRequest.cc
 	src/model/DeleteFileMetaResult.cc
-	src/model/DeleteImageRequest.cc
-	src/model/DeleteImageResult.cc
-	src/model/DeleteOfficeConversionTaskRequest.cc
-	src/model/DeleteOfficeConversionTaskResult.cc
+	src/model/DeleteLocationDateClusterRequest.cc
+	src/model/DeleteLocationDateClusterResult.cc
 	src/model/DeleteProjectRequest.cc
 	src/model/DeleteProjectResult.cc
-	src/model/DeleteSetRequest.cc
-	src/model/DeleteSetResult.cc
 	src/model/DeleteStoryRequest.cc
 	src/model/DeleteStoryResult.cc
-	src/model/DeleteVideoRequest.cc
-	src/model/DeleteVideoResult.cc
-	src/model/DeleteVideoTaskRequest.cc
-	src/model/DeleteVideoTaskResult.cc
+	src/model/DeleteTriggerRequest.cc
+	src/model/DeleteTriggerResult.cc
 	src/model/DetachOSSBucketRequest.cc
 	src/model/DetachOSSBucketResult.cc
 	src/model/DetectImageBodiesRequest.cc
 	src/model/DetectImageBodiesResult.cc
+	src/model/DetectImageCarsRequest.cc
+	src/model/DetectImageCarsResult.cc
 	src/model/DetectImageCodesRequest.cc
 	src/model/DetectImageCodesResult.cc
 	src/model/DetectImageCroppingRequest.cc
@@ -322,136 +320,114 @@ set(imm_src
 	src/model/DetectImageFacesResult.cc
 	src/model/DetectImageLabelsRequest.cc
 	src/model/DetectImageLabelsResult.cc
-	src/model/DetectImageQRCodesRequest.cc
-	src/model/DetectImageQRCodesResult.cc
 	src/model/DetectImageScoreRequest.cc
 	src/model/DetectImageScoreResult.cc
-	src/model/DetectImageTagsRequest.cc
-	src/model/DetectImageTagsResult.cc
-	src/model/DetectQRCodesRequest.cc
-	src/model/DetectQRCodesResult.cc
+	src/model/DetectMediaMetaRequest.cc
+	src/model/DetectMediaMetaResult.cc
 	src/model/DetectTextAnomalyRequest.cc
 	src/model/DetectTextAnomalyResult.cc
-	src/model/EncodeBlindWatermarkRequest.cc
-	src/model/EncodeBlindWatermarkResult.cc
-	src/model/FindImagesRequest.cc
-	src/model/FindImagesResult.cc
-	src/model/FindSimilarFacesRequest.cc
-	src/model/FindSimilarFacesResult.cc
+	src/model/ExtractDocumentTextRequest.cc
+	src/model/ExtractDocumentTextResult.cc
 	src/model/FuzzyQueryRequest.cc
 	src/model/FuzzyQueryResult.cc
+	src/model/GenerateDRMLicenseRequest.cc
+	src/model/GenerateDRMLicenseResult.cc
+	src/model/GenerateVideoPlaylistRequest.cc
+	src/model/GenerateVideoPlaylistResult.cc
+	src/model/GenerateWebofficeTokenRequest.cc
+	src/model/GenerateWebofficeTokenResult.cc
+	src/model/GetBatchRequest.cc
+	src/model/GetBatchResult.cc
 	src/model/GetBindingRequest.cc
 	src/model/GetBindingResult.cc
+	src/model/GetDRMLicenseRequest.cc
+	src/model/GetDRMLicenseResult.cc
 	src/model/GetDatasetRequest.cc
 	src/model/GetDatasetResult.cc
-	src/model/GetDetectVideoLabelsResultRequest.cc
-	src/model/GetDetectVideoLabelsResultResult.cc
 	src/model/GetFigureClusterRequest.cc
 	src/model/GetFigureClusterResult.cc
 	src/model/GetFileMetaRequest.cc
 	src/model/GetFileMetaResult.cc
-	src/model/GetImageRequest.cc
-	src/model/GetImageResult.cc
-	src/model/GetImageCroppingSuggestionsRequest.cc
-	src/model/GetImageCroppingSuggestionsResult.cc
-	src/model/GetImageQualityRequest.cc
-	src/model/GetImageQualityResult.cc
-	src/model/GetMediaMetaRequest.cc
-	src/model/GetMediaMetaResult.cc
+	src/model/GetImageModerationResultRequest.cc
+	src/model/GetImageModerationResultResult.cc
 	src/model/GetOSSBucketAttachmentRequest.cc
 	src/model/GetOSSBucketAttachmentResult.cc
-	src/model/GetOfficeConversionTaskRequest.cc
-	src/model/GetOfficeConversionTaskResult.cc
-	src/model/GetOfficePreviewURLRequest.cc
-	src/model/GetOfficePreviewURLResult.cc
 	src/model/GetProjectRequest.cc
 	src/model/GetProjectResult.cc
-	src/model/GetSetRequest.cc
-	src/model/GetSetResult.cc
 	src/model/GetStoryRequest.cc
 	src/model/GetStoryResult.cc
 	src/model/GetTaskRequest.cc
 	src/model/GetTaskResult.cc
-	src/model/GetVideoRequest.cc
-	src/model/GetVideoResult.cc
-	src/model/GetVideoTaskRequest.cc
-	src/model/GetVideoTaskResult.cc
-	src/model/GetWebofficeURLRequest.cc
-	src/model/GetWebofficeURLResult.cc
+	src/model/GetTriggerRequest.cc
+	src/model/GetTriggerResult.cc
+	src/model/GetVideoLabelClassificationResultRequest.cc
+	src/model/GetVideoLabelClassificationResultResult.cc
+	src/model/GetVideoModerationResultRequest.cc
+	src/model/GetVideoModerationResultResult.cc
 	src/model/IndexFileMetaRequest.cc
 	src/model/IndexFileMetaResult.cc
-	src/model/IndexImageRequest.cc
-	src/model/IndexImageResult.cc
-	src/model/IndexVideoRequest.cc
-	src/model/IndexVideoResult.cc
+	src/model/ListBatchesRequest.cc
+	src/model/ListBatchesResult.cc
 	src/model/ListBindingsRequest.cc
 	src/model/ListBindingsResult.cc
 	src/model/ListDatasetsRequest.cc
 	src/model/ListDatasetsResult.cc
-	src/model/ListFaceGroupsRequest.cc
-	src/model/ListFaceGroupsResult.cc
-	src/model/ListImagesRequest.cc
-	src/model/ListImagesResult.cc
-	src/model/ListOfficeConversionTaskRequest.cc
-	src/model/ListOfficeConversionTaskResult.cc
 	src/model/ListProjectsRequest.cc
 	src/model/ListProjectsResult.cc
 	src/model/ListRegionsRequest.cc
 	src/model/ListRegionsResult.cc
-	src/model/ListSetTagsRequest.cc
-	src/model/ListSetTagsResult.cc
-	src/model/ListSetsRequest.cc
-	src/model/ListSetsResult.cc
 	src/model/ListTasksRequest.cc
 	src/model/ListTasksResult.cc
-	src/model/ListVideoAudiosRequest.cc
-	src/model/ListVideoAudiosResult.cc
-	src/model/ListVideoFramesRequest.cc
-	src/model/ListVideoFramesResult.cc
-	src/model/ListVideoTasksRequest.cc
-	src/model/ListVideoTasksResult.cc
-	src/model/ListVideosRequest.cc
-	src/model/ListVideosResult.cc
-	src/model/MergeFigureClustersRequest.cc
-	src/model/MergeFigureClustersResult.cc
-	src/model/OpenImmServiceRequest.cc
-	src/model/OpenImmServiceResult.cc
-	src/model/PutProjectRequest.cc
-	src/model/PutProjectResult.cc
+	src/model/ListTriggersRequest.cc
+	src/model/ListTriggersResult.cc
+	src/model/LiveTranscodingRequest.cc
+	src/model/LiveTranscodingResult.cc
 	src/model/QueryFigureClustersRequest.cc
 	src/model/QueryFigureClustersResult.cc
+	src/model/QueryLocationDateClustersRequest.cc
+	src/model/QueryLocationDateClustersResult.cc
+	src/model/QuerySimilarImageClustersRequest.cc
+	src/model/QuerySimilarImageClustersResult.cc
 	src/model/QueryStoriesRequest.cc
 	src/model/QueryStoriesResult.cc
-	src/model/RefreshOfficePreviewTokenRequest.cc
-	src/model/RefreshOfficePreviewTokenResult.cc
 	src/model/RefreshWebofficeTokenRequest.cc
 	src/model/RefreshWebofficeTokenResult.cc
 	src/model/RemoveStoryFilesRequest.cc
 	src/model/RemoveStoryFilesResult.cc
+	src/model/ResumeBatchRequest.cc
+	src/model/ResumeBatchResult.cc
 	src/model/ResumeBindingRequest.cc
 	src/model/ResumeBindingResult.cc
+	src/model/ResumeTriggerRequest.cc
+	src/model/ResumeTriggerResult.cc
+	src/model/SearchImageFigureClusterRequest.cc
+	src/model/SearchImageFigureClusterResult.cc
 	src/model/SemanticQueryRequest.cc
 	src/model/SemanticQueryResult.cc
 	src/model/SimpleQueryRequest.cc
 	src/model/SimpleQueryResult.cc
 	src/model/StopBindingRequest.cc
 	src/model/StopBindingResult.cc
+	src/model/SuspendBatchRequest.cc
+	src/model/SuspendBatchResult.cc
+	src/model/SuspendTriggerRequest.cc
+	src/model/SuspendTriggerResult.cc
+	src/model/UpdateBatchRequest.cc
+	src/model/UpdateBatchResult.cc
 	src/model/UpdateDatasetRequest.cc
 	src/model/UpdateDatasetResult.cc
-	src/model/UpdateFaceGroupRequest.cc
-	src/model/UpdateFaceGroupResult.cc
 	src/model/UpdateFigureClusterRequest.cc
 	src/model/UpdateFigureClusterResult.cc
 	src/model/UpdateFileMetaRequest.cc
 	src/model/UpdateFileMetaResult.cc
-	src/model/UpdateImageRequest.cc
-	src/model/UpdateImageResult.cc
+	src/model/UpdateLocationDateClusterRequest.cc
+	src/model/UpdateLocationDateClusterResult.cc
 	src/model/UpdateProjectRequest.cc
 	src/model/UpdateProjectResult.cc
-	src/model/UpdateSetRequest.cc
-	src/model/UpdateSetResult.cc
 	src/model/UpdateStoryRequest.cc
-	src/model/UpdateStoryResult.cc )
+	src/model/UpdateStoryResult.cc
+	src/model/UpdateTriggerRequest.cc
+	src/model/UpdateTriggerResult.cc )
 
 add_library(imm ${LIB_TYPE}
 	${imm_public_header}

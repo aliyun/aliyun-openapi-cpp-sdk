@@ -28,6 +28,19 @@ namespace Imm {
 namespace Model {
 class ALIBABACLOUD_IMM_EXPORT IndexFileMetaRequest : public RpcServiceRequest {
 public:
+	struct Notification {
+		struct MNS {
+			std::string endpoint;
+			std::string topicName;
+		};
+		MNS mNS;
+		struct RocketMQ {
+			std::string endpoint;
+			std::string instanceId;
+			std::string topicName;
+		};
+		RocketMQ rocketMQ;
+	};
 	struct File {
 		std::map<std::string, std::string> customLabels;
 		struct FiguresItem {
@@ -46,23 +59,26 @@ public:
 	};
 	IndexFileMetaRequest();
 	~IndexFileMetaRequest();
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
+	Notification getNotification() const;
+	void setNotification(const Notification &notification);
 	File getFile() const;
 	void setFile(const File &file);
-	std::string getNotifyTopicName() const;
-	void setNotifyTopicName(const std::string &notifyTopicName);
 	std::string getNotifyEndpoint() const;
 	void setNotifyEndpoint(const std::string &notifyEndpoint);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
+	std::string getNotifyTopicName() const;
+	void setNotifyTopicName(const std::string &notifyTopicName);
 
 private:
-	std::string projectName_;
+	Notification notification_;
 	File file_;
-	std::string notifyTopicName_;
 	std::string notifyEndpoint_;
 	std::string datasetName_;
+	std::string projectName_;
+	std::string notifyTopicName_;
 };
 } // namespace Model
 } // namespace Imm

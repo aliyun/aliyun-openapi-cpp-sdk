@@ -28,22 +28,30 @@ namespace Imm {
 namespace Model {
 class ALIBABACLOUD_IMM_EXPORT DetectImageFacesRequest : public RpcServiceRequest {
 public:
+	struct CredentialConfig {
+		struct ChainItem {
+			std::string role;
+			std::string roleType;
+			std::string assumeRoleFor;
+		};
+		ChainItem chainItem;
+		std::vector<ChainItem> chain;
+		std::string serviceRole;
+		std::string policy;
+	};
 	DetectImageFacesRequest();
 	~DetectImageFacesRequest();
-	std::string getProject() const;
-	void setProject(const std::string &project);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getRealUid() const;
-	void setRealUid(const std::string &realUid);
-	std::string getImageUri() const;
-	void setImageUri(const std::string &imageUri);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
+	CredentialConfig getCredentialConfig() const;
+	void setCredentialConfig(const CredentialConfig &credentialConfig);
+	std::string getSourceURI() const;
+	void setSourceURI(const std::string &sourceURI);
 
 private:
-	std::string project_;
-	std::string accessKeyId_;
-	std::string realUid_;
-	std::string imageUri_;
+	std::string projectName_;
+	CredentialConfig credentialConfig_;
+	std::string sourceURI_;
 };
 } // namespace Model
 } // namespace Imm

@@ -25,24 +25,6 @@ DetectImageCroppingRequest::DetectImageCroppingRequest()
 
 DetectImageCroppingRequest::~DetectImageCroppingRequest() {}
 
-std::string DetectImageCroppingRequest::getProjectName() const {
-  return projectName_;
-}
-
-void DetectImageCroppingRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
-std::string DetectImageCroppingRequest::getSourceURI() const {
-  return sourceURI_;
-}
-
-void DetectImageCroppingRequest::setSourceURI(const std::string &sourceURI) {
-  sourceURI_ = sourceURI;
-  setParameter(std::string("SourceURI"), sourceURI);
-}
-
 std::string DetectImageCroppingRequest::getAspectRatios() const {
   return aspectRatios_;
 }
@@ -50,6 +32,15 @@ std::string DetectImageCroppingRequest::getAspectRatios() const {
 void DetectImageCroppingRequest::setAspectRatios(const std::string &aspectRatios) {
   aspectRatios_ = aspectRatios;
   setParameter(std::string("AspectRatios"), aspectRatios);
+}
+
+std::string DetectImageCroppingRequest::getProjectName() const {
+  return projectName_;
+}
+
+void DetectImageCroppingRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
 DetectImageCroppingRequest::CredentialConfig DetectImageCroppingRequest::getCredentialConfig() const {
@@ -65,5 +56,14 @@ void DetectImageCroppingRequest::setCredentialConfig(const DetectImageCroppingRe
   }
   setParameter(std::string("CredentialConfig") + ".ServiceRole", credentialConfig.serviceRole);
   setParameter(std::string("CredentialConfig") + ".Policy", credentialConfig.policy);
+}
+
+std::string DetectImageCroppingRequest::getSourceURI() const {
+  return sourceURI_;
+}
+
+void DetectImageCroppingRequest::setSourceURI(const std::string &sourceURI) {
+  sourceURI_ = sourceURI;
+  setParameter(std::string("SourceURI"), sourceURI);
 }
 

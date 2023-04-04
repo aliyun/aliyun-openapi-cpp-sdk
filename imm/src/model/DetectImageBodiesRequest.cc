@@ -19,36 +19,51 @@
 using AlibabaCloud::Imm::Model::DetectImageBodiesRequest;
 
 DetectImageBodiesRequest::DetectImageBodiesRequest()
-    : RpcServiceRequest("imm", "2017-09-06", "DetectImageBodies") {
+    : RpcServiceRequest("imm", "2020-09-30", "DetectImageBodies") {
   setMethod(HttpRequest::Method::Post);
 }
 
 DetectImageBodiesRequest::~DetectImageBodiesRequest() {}
 
-std::string DetectImageBodiesRequest::getProject() const {
-  return project_;
+std::string DetectImageBodiesRequest::getProjectName() const {
+  return projectName_;
 }
 
-void DetectImageBodiesRequest::setProject(const std::string &project) {
-  project_ = project;
-  setParameter(std::string("Project"), project);
+void DetectImageBodiesRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
-std::string DetectImageBodiesRequest::getAccessKeyId() const {
-  return accessKeyId_;
+DetectImageBodiesRequest::CredentialConfig DetectImageBodiesRequest::getCredentialConfig() const {
+  return credentialConfig_;
 }
 
-void DetectImageBodiesRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void DetectImageBodiesRequest::setCredentialConfig(const DetectImageBodiesRequest::CredentialConfig &credentialConfig) {
+  credentialConfig_ = credentialConfig;
+  for(int dep1 = 0; dep1 != credentialConfig.chain.size(); dep1++) {
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".Role", credentialConfig.chain[dep1].role);
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".RoleType", credentialConfig.chain[dep1].roleType);
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".AssumeRoleFor", credentialConfig.chain[dep1].assumeRoleFor);
+  }
+  setParameter(std::string("CredentialConfig") + ".ServiceRole", credentialConfig.serviceRole);
+  setParameter(std::string("CredentialConfig") + ".Policy", credentialConfig.policy);
 }
 
-std::string DetectImageBodiesRequest::getImageUri() const {
-  return imageUri_;
+std::string DetectImageBodiesRequest::getSourceURI() const {
+  return sourceURI_;
 }
 
-void DetectImageBodiesRequest::setImageUri(const std::string &imageUri) {
-  imageUri_ = imageUri;
-  setParameter(std::string("ImageUri"), imageUri);
+void DetectImageBodiesRequest::setSourceURI(const std::string &sourceURI) {
+  sourceURI_ = sourceURI;
+  setParameter(std::string("SourceURI"), sourceURI);
+}
+
+float DetectImageBodiesRequest::getSensitivity() const {
+  return sensitivity_;
+}
+
+void DetectImageBodiesRequest::setSensitivity(float sensitivity) {
+  sensitivity_ = sensitivity;
+  setParameter(std::string("Sensitivity"), std::to_string(sensitivity));
 }
 

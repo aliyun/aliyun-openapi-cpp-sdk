@@ -25,13 +25,17 @@ IndexFileMetaRequest::IndexFileMetaRequest()
 
 IndexFileMetaRequest::~IndexFileMetaRequest() {}
 
-std::string IndexFileMetaRequest::getProjectName() const {
-  return projectName_;
+IndexFileMetaRequest::Notification IndexFileMetaRequest::getNotification() const {
+  return notification_;
 }
 
-void IndexFileMetaRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
+void IndexFileMetaRequest::setNotification(const IndexFileMetaRequest::Notification &notification) {
+  notification_ = notification;
+  setParameter(std::string("Notification") + ".MNS.Endpoint", notification.mNS.endpoint);
+  setParameter(std::string("Notification") + ".MNS.TopicName", notification.mNS.topicName);
+  setParameter(std::string("Notification") + ".RocketMQ.Endpoint", notification.rocketMQ.endpoint);
+  setParameter(std::string("Notification") + ".RocketMQ.InstanceId", notification.rocketMQ.instanceId);
+  setParameter(std::string("Notification") + ".RocketMQ.TopicName", notification.rocketMQ.topicName);
 }
 
 IndexFileMetaRequest::File IndexFileMetaRequest::getFile() const {
@@ -56,15 +60,6 @@ void IndexFileMetaRequest::setFile(const IndexFileMetaRequest::File &file) {
   setParameter(std::string("File") + ".ContentType", file.contentType);
 }
 
-std::string IndexFileMetaRequest::getNotifyTopicName() const {
-  return notifyTopicName_;
-}
-
-void IndexFileMetaRequest::setNotifyTopicName(const std::string &notifyTopicName) {
-  notifyTopicName_ = notifyTopicName;
-  setParameter(std::string("NotifyTopicName"), notifyTopicName);
-}
-
 std::string IndexFileMetaRequest::getNotifyEndpoint() const {
   return notifyEndpoint_;
 }
@@ -81,5 +76,23 @@ std::string IndexFileMetaRequest::getDatasetName() const {
 void IndexFileMetaRequest::setDatasetName(const std::string &datasetName) {
   datasetName_ = datasetName;
   setParameter(std::string("DatasetName"), datasetName);
+}
+
+std::string IndexFileMetaRequest::getProjectName() const {
+  return projectName_;
+}
+
+void IndexFileMetaRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string IndexFileMetaRequest::getNotifyTopicName() const {
+  return notifyTopicName_;
+}
+
+void IndexFileMetaRequest::setNotifyTopicName(const std::string &notifyTopicName) {
+  notifyTopicName_ = notifyTopicName;
+  setParameter(std::string("NotifyTopicName"), notifyTopicName);
 }
 

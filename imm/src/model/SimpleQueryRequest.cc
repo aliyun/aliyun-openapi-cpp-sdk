@@ -25,26 +25,6 @@ SimpleQueryRequest::SimpleQueryRequest()
 
 SimpleQueryRequest::~SimpleQueryRequest() {}
 
-std::string SimpleQueryRequest::getProjectName() const {
-  return projectName_;
-}
-
-void SimpleQueryRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
-std::vector<SimpleQueryRequest::std::string> SimpleQueryRequest::getWithFields() const {
-  return withFields_;
-}
-
-void SimpleQueryRequest::setWithFields(const std::vector<SimpleQueryRequest::std::string> &withFields) {
-  withFields_ = withFields;
-  for(int dep1 = 0; dep1 != withFields.size(); dep1++) {
-    setParameter(std::string("WithFields") + "." + std::to_string(dep1 + 1), withFields[dep1]);
-  }
-}
-
 std::string SimpleQueryRequest::getNextToken() const {
   return nextToken_;
 }
@@ -52,6 +32,33 @@ std::string SimpleQueryRequest::getNextToken() const {
 void SimpleQueryRequest::setNextToken(const std::string &nextToken) {
   nextToken_ = nextToken;
   setParameter(std::string("NextToken"), nextToken);
+}
+
+std::string SimpleQueryRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void SimpleQueryRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
+}
+
+std::string SimpleQueryRequest::getOrder() const {
+  return order_;
+}
+
+void SimpleQueryRequest::setOrder(const std::string &order) {
+  order_ = order;
+  setParameter(std::string("Order"), order);
+}
+
+std::string SimpleQueryRequest::getProjectName() const {
+  return projectName_;
+}
+
+void SimpleQueryRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
 SimpleQueryRequest::Query SimpleQueryRequest::getQuery() const {
@@ -68,24 +75,6 @@ void SimpleQueryRequest::setQuery(const SimpleQueryRequest::Query &query) {
   setParameter(std::string("Query") + ".Operation", query.operation);
 }
 
-int SimpleQueryRequest::getMaxResults() const {
-  return maxResults_;
-}
-
-void SimpleQueryRequest::setMaxResults(int maxResults) {
-  maxResults_ = maxResults;
-  setParameter(std::string("MaxResults"), std::to_string(maxResults));
-}
-
-std::string SimpleQueryRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void SimpleQueryRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
-}
-
 std::string SimpleQueryRequest::getSort() const {
   return sort_;
 }
@@ -93,6 +82,26 @@ std::string SimpleQueryRequest::getSort() const {
 void SimpleQueryRequest::setSort(const std::string &sort) {
   sort_ = sort;
   setParameter(std::string("Sort"), sort);
+}
+
+std::vector<SimpleQueryRequest::std::string> SimpleQueryRequest::getWithFields() const {
+  return withFields_;
+}
+
+void SimpleQueryRequest::setWithFields(const std::vector<SimpleQueryRequest::std::string> &withFields) {
+  withFields_ = withFields;
+  for(int dep1 = 0; dep1 != withFields.size(); dep1++) {
+    setParameter(std::string("WithFields") + "." + std::to_string(dep1 + 1), withFields[dep1]);
+  }
+}
+
+int SimpleQueryRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void SimpleQueryRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
 std::vector<SimpleQueryRequest::Aggregations> SimpleQueryRequest::getAggregations() const {
@@ -105,14 +114,5 @@ void SimpleQueryRequest::setAggregations(const std::vector<SimpleQueryRequest::A
     setParameter(std::string("Aggregations") + "." + std::to_string(dep1 + 1) + ".Field", aggregations[dep1].field);
     setParameter(std::string("Aggregations") + "." + std::to_string(dep1 + 1) + ".Operation", aggregations[dep1].operation);
   }
-}
-
-std::string SimpleQueryRequest::getOrder() const {
-  return order_;
-}
-
-void SimpleQueryRequest::setOrder(const std::string &order) {
-  order_ = order;
-  setParameter(std::string("Order"), order);
 }
 

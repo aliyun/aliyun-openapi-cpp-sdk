@@ -30,16 +30,16 @@ class ALIBABACLOUD_IMM_EXPORT GetFileMetaRequest : public RpcServiceRequest {
 public:
 	GetFileMetaRequest();
 	~GetFileMetaRequest();
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
 	std::string getURI() const;
 	void setURI(const std::string &uRI);
 
 private:
-	std::string projectName_;
 	std::string datasetName_;
+	std::string projectName_;
 	std::string uRI_;
 };
 } // namespace Model

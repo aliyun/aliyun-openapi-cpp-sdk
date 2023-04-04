@@ -25,13 +25,14 @@ ListTasksRequest::ListTasksRequest()
 
 ListTasksRequest::~ListTasksRequest() {}
 
-std::string ListTasksRequest::getProjectName() const {
-  return projectName_;
+ListTasksRequest::StartTimeRange ListTasksRequest::getStartTimeRange() const {
+  return startTimeRange_;
 }
 
-void ListTasksRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
+void ListTasksRequest::setStartTimeRange(const ListTasksRequest::StartTimeRange &startTimeRange) {
+  startTimeRange_ = startTimeRange;
+  setParameter(std::string("StartTimeRange") + ".Start", startTimeRange.start);
+  setParameter(std::string("StartTimeRange") + ".End", startTimeRange.end);
 }
 
 std::string ListTasksRequest::getNextToken() const {
@@ -41,6 +42,24 @@ std::string ListTasksRequest::getNextToken() const {
 void ListTasksRequest::setNextToken(const std::string &nextToken) {
   nextToken_ = nextToken;
   setParameter(std::string("NextToken"), nextToken);
+}
+
+std::string ListTasksRequest::getOrder() const {
+  return order_;
+}
+
+void ListTasksRequest::setOrder(const std::string &order) {
+  order_ = order;
+  setParameter(std::string("Order"), order);
+}
+
+std::string ListTasksRequest::getProjectName() const {
+  return projectName_;
+}
+
+void ListTasksRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
 std::vector<ListTasksRequest::std::string> ListTasksRequest::getTaskTypes() const {
@@ -64,6 +83,15 @@ void ListTasksRequest::setEndTimeRange(const ListTasksRequest::EndTimeRange &end
   setParameter(std::string("EndTimeRange") + ".End", endTimeRange.end);
 }
 
+std::string ListTasksRequest::getSort() const {
+  return sort_;
+}
+
+void ListTasksRequest::setSort(const std::string &sort) {
+  sort_ = sort;
+  setParameter(std::string("Sort"), sort);
+}
+
 long ListTasksRequest::getMaxResults() const {
   return maxResults_;
 }
@@ -82,24 +110,6 @@ void ListTasksRequest::setTagSelector(const std::string &tagSelector) {
   setParameter(std::string("TagSelector"), tagSelector);
 }
 
-std::string ListTasksRequest::getSort() const {
-  return sort_;
-}
-
-void ListTasksRequest::setSort(const std::string &sort) {
-  sort_ = sort;
-  setParameter(std::string("Sort"), sort);
-}
-
-std::string ListTasksRequest::getOrder() const {
-  return order_;
-}
-
-void ListTasksRequest::setOrder(const std::string &order) {
-  order_ = order;
-  setParameter(std::string("Order"), order);
-}
-
 std::string ListTasksRequest::getStatus() const {
   return status_;
 }
@@ -107,15 +117,5 @@ std::string ListTasksRequest::getStatus() const {
 void ListTasksRequest::setStatus(const std::string &status) {
   status_ = status;
   setParameter(std::string("Status"), status);
-}
-
-ListTasksRequest::StartTimeRange ListTasksRequest::getStartTimeRange() const {
-  return startTimeRange_;
-}
-
-void ListTasksRequest::setStartTimeRange(const ListTasksRequest::StartTimeRange &startTimeRange) {
-  startTimeRange_ = startTimeRange;
-  setParameter(std::string("StartTimeRange") + ".Start", startTimeRange.start);
-  setParameter(std::string("StartTimeRange") + ".End", startTimeRange.end);
 }
 

@@ -19,27 +19,27 @@
 using AlibabaCloud::Imm::Model::GetProjectRequest;
 
 GetProjectRequest::GetProjectRequest()
-    : RpcServiceRequest("imm", "2017-09-06", "GetProject") {
+    : RpcServiceRequest("imm", "2020-09-30", "GetProject") {
   setMethod(HttpRequest::Method::Post);
 }
 
 GetProjectRequest::~GetProjectRequest() {}
 
-std::string GetProjectRequest::getProject() const {
-  return project_;
+std::string GetProjectRequest::getProjectName() const {
+  return projectName_;
 }
 
-void GetProjectRequest::setProject(const std::string &project) {
-  project_ = project;
-  setParameter(std::string("Project"), project);
+void GetProjectRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
-std::string GetProjectRequest::getAccessKeyId() const {
-  return accessKeyId_;
+bool GetProjectRequest::getWithStatistics() const {
+  return withStatistics_;
 }
 
-void GetProjectRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void GetProjectRequest::setWithStatistics(bool withStatistics) {
+  withStatistics_ = withStatistics;
+  setParameter(std::string("WithStatistics"), withStatistics ? "true" : "false");
 }
 

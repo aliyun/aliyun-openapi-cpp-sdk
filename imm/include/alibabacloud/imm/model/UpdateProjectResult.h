@@ -32,29 +32,37 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_IMM_EXPORT UpdateProjectResult : public ServiceResult
 			{
 			public:
+				struct Project
+				{
+					std::string description;
+					long fileCount;
+					std::string projectName;
+					std::string createTime;
+					long projectMaxDatasetCount;
+					long datasetMaxTotalFileSize;
+					long datasetMaxRelationCount;
+					long datasetMaxFileCount;
+					long engineConcurrency;
+					std::string serviceRole;
+					long datasetMaxBindCount;
+					long datasetCount;
+					std::string updateTime;
+					long datasetMaxEntityCount;
+					long totalFileSize;
+					std::string templateId;
+					long projectQueriesPerSecond;
+				};
 
 
 				UpdateProjectResult();
 				explicit UpdateProjectResult(const std::string &payload);
 				~UpdateProjectResult();
-				std::string getProject()const;
-				std::string getModifyTime()const;
-				std::string getType()const;
-				int getCU()const;
-				std::string getServiceRole()const;
-				std::string getCreateTime()const;
-				std::string getRegionId()const;
+				Project getProject()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string project_;
-				std::string modifyTime_;
-				std::string type_;
-				int cU_;
-				std::string serviceRole_;
-				std::string createTime_;
-				std::string regionId_;
+				Project project_;
 
 			};
 		}

@@ -30,44 +30,38 @@ class ALIBABACLOUD_IMM_EXPORT CreateProjectRequest : public RpcServiceRequest {
 public:
 	CreateProjectRequest();
 	~CreateProjectRequest();
-	long getEngineConcurrency() const;
-	void setEngineConcurrency(long engineConcurrency);
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
 	long getDatasetMaxBindCount() const;
 	void setDatasetMaxBindCount(long datasetMaxBindCount);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
+	long getDatasetMaxRelationCount() const;
+	void setDatasetMaxRelationCount(long datasetMaxRelationCount);
+	long getDatasetMaxFileCount() const;
+	void setDatasetMaxFileCount(long datasetMaxFileCount);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
 	long getProjectMaxDatasetCount() const;
 	void setProjectMaxDatasetCount(long projectMaxDatasetCount);
+	long getDatasetMaxEntityCount() const;
+	void setDatasetMaxEntityCount(long datasetMaxEntityCount);
+	std::string getTemplateId() const;
+	void setTemplateId(const std::string &templateId);
 	long getDatasetMaxTotalFileSize() const;
 	void setDatasetMaxTotalFileSize(long datasetMaxTotalFileSize);
 	std::string getServiceRole() const;
 	void setServiceRole(const std::string &serviceRole);
-	long getProjectQueriesPerSecond() const;
-	void setProjectQueriesPerSecond(long projectQueriesPerSecond);
-	long getDatasetMaxRelationCount() const;
-	void setDatasetMaxRelationCount(long datasetMaxRelationCount);
-	std::string getDescription() const;
-	void setDescription(const std::string &description);
-	long getDatasetMaxEntityCount() const;
-	void setDatasetMaxEntityCount(long datasetMaxEntityCount);
-	long getDatasetMaxFileCount() const;
-	void setDatasetMaxFileCount(long datasetMaxFileCount);
-	std::string getTemplateId() const;
-	void setTemplateId(const std::string &templateId);
 
 private:
-	long engineConcurrency_;
-	std::string projectName_;
 	long datasetMaxBindCount_;
+	std::string description_;
+	long datasetMaxRelationCount_;
+	long datasetMaxFileCount_;
+	std::string projectName_;
 	long projectMaxDatasetCount_;
+	long datasetMaxEntityCount_;
+	std::string templateId_;
 	long datasetMaxTotalFileSize_;
 	std::string serviceRole_;
-	long projectQueriesPerSecond_;
-	long datasetMaxRelationCount_;
-	std::string description_;
-	long datasetMaxEntityCount_;
-	long datasetMaxFileCount_;
-	std::string templateId_;
 };
 } // namespace Model
 } // namespace Imm

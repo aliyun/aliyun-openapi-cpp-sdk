@@ -25,15 +25,6 @@ ResumeBindingRequest::ResumeBindingRequest()
 
 ResumeBindingRequest::~ResumeBindingRequest() {}
 
-std::string ResumeBindingRequest::getProjectName() const {
-  return projectName_;
-}
-
-void ResumeBindingRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
 std::string ResumeBindingRequest::getDatasetName() const {
   return datasetName_;
 }
@@ -41,6 +32,15 @@ std::string ResumeBindingRequest::getDatasetName() const {
 void ResumeBindingRequest::setDatasetName(const std::string &datasetName) {
   datasetName_ = datasetName;
   setParameter(std::string("DatasetName"), datasetName);
+}
+
+std::string ResumeBindingRequest::getProjectName() const {
+  return projectName_;
+}
+
+void ResumeBindingRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
 std::string ResumeBindingRequest::getURI() const {

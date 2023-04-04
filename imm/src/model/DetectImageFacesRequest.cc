@@ -19,45 +19,42 @@
 using AlibabaCloud::Imm::Model::DetectImageFacesRequest;
 
 DetectImageFacesRequest::DetectImageFacesRequest()
-    : RpcServiceRequest("imm", "2017-09-06", "DetectImageFaces") {
+    : RpcServiceRequest("imm", "2020-09-30", "DetectImageFaces") {
   setMethod(HttpRequest::Method::Post);
 }
 
 DetectImageFacesRequest::~DetectImageFacesRequest() {}
 
-std::string DetectImageFacesRequest::getProject() const {
-  return project_;
+std::string DetectImageFacesRequest::getProjectName() const {
+  return projectName_;
 }
 
-void DetectImageFacesRequest::setProject(const std::string &project) {
-  project_ = project;
-  setParameter(std::string("Project"), project);
+void DetectImageFacesRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
-std::string DetectImageFacesRequest::getAccessKeyId() const {
-  return accessKeyId_;
+DetectImageFacesRequest::CredentialConfig DetectImageFacesRequest::getCredentialConfig() const {
+  return credentialConfig_;
 }
 
-void DetectImageFacesRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
+void DetectImageFacesRequest::setCredentialConfig(const DetectImageFacesRequest::CredentialConfig &credentialConfig) {
+  credentialConfig_ = credentialConfig;
+  for(int dep1 = 0; dep1 != credentialConfig.chain.size(); dep1++) {
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".Role", credentialConfig.chain[dep1].role);
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".RoleType", credentialConfig.chain[dep1].roleType);
+    setParameter(std::string("CredentialConfig") + ".Chain." + std::to_string(dep1 + 1) + ".AssumeRoleFor", credentialConfig.chain[dep1].assumeRoleFor);
+  }
+  setParameter(std::string("CredentialConfig") + ".ServiceRole", credentialConfig.serviceRole);
+  setParameter(std::string("CredentialConfig") + ".Policy", credentialConfig.policy);
 }
 
-std::string DetectImageFacesRequest::getRealUid() const {
-  return realUid_;
+std::string DetectImageFacesRequest::getSourceURI() const {
+  return sourceURI_;
 }
 
-void DetectImageFacesRequest::setRealUid(const std::string &realUid) {
-  realUid_ = realUid;
-  setParameter(std::string("RealUid"), realUid);
-}
-
-std::string DetectImageFacesRequest::getImageUri() const {
-  return imageUri_;
-}
-
-void DetectImageFacesRequest::setImageUri(const std::string &imageUri) {
-  imageUri_ = imageUri;
-  setParameter(std::string("ImageUri"), imageUri);
+void DetectImageFacesRequest::setSourceURI(const std::string &sourceURI) {
+  sourceURI_ = sourceURI;
+  setParameter(std::string("SourceURI"), sourceURI);
 }
 

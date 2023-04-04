@@ -32,17 +32,17 @@ public:
 	~StopBindingRequest();
 	std::string getReason() const;
 	void setReason(const std::string &reason);
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
 	std::string getURI() const;
 	void setURI(const std::string &uRI);
 
 private:
 	std::string reason_;
-	std::string projectName_;
 	std::string datasetName_;
+	std::string projectName_;
 	std::string uRI_;
 };
 } // namespace Model

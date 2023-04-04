@@ -74,6 +74,8 @@ void GetFigureClusterResult::parse(const std::string &payload)
 		figureCluster_.customId = figureClusterNode["CustomId"].asString();
 	if(!figureClusterNode["CustomLabels"].isNull())
 		figureCluster_.customLabels = figureClusterNode["CustomLabels"].asString();
+	if(!figureClusterNode["MetaLockVersion"].isNull())
+		figureCluster_.metaLockVersion = std::stol(figureClusterNode["MetaLockVersion"].asString());
 	auto coverNode = figureClusterNode["Cover"];
 	if(!coverNode["OwnerId"].isNull())
 		figureCluster_.cover.ownerId = coverNode["OwnerId"].asString();

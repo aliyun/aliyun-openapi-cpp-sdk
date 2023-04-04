@@ -25,15 +25,6 @@ SemanticQueryRequest::SemanticQueryRequest()
 
 SemanticQueryRequest::~SemanticQueryRequest() {}
 
-std::string SemanticQueryRequest::getProjectName() const {
-  return projectName_;
-}
-
-void SemanticQueryRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
 std::string SemanticQueryRequest::getNextToken() const {
   return nextToken_;
 }
@@ -41,6 +32,24 @@ std::string SemanticQueryRequest::getNextToken() const {
 void SemanticQueryRequest::setNextToken(const std::string &nextToken) {
   nextToken_ = nextToken;
   setParameter(std::string("NextToken"), nextToken);
+}
+
+std::string SemanticQueryRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void SemanticQueryRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
+}
+
+std::string SemanticQueryRequest::getProjectName() const {
+  return projectName_;
+}
+
+void SemanticQueryRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
 std::string SemanticQueryRequest::getQuery() const {
@@ -59,14 +68,5 @@ int SemanticQueryRequest::getMaxResults() const {
 void SemanticQueryRequest::setMaxResults(int maxResults) {
   maxResults_ = maxResults;
   setParameter(std::string("MaxResults"), std::to_string(maxResults));
-}
-
-std::string SemanticQueryRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void SemanticQueryRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
 }
 

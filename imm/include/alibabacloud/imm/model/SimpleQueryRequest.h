@@ -41,35 +41,35 @@ public:
 	};
 	SimpleQueryRequest();
 	~SimpleQueryRequest();
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
-	std::vector<std::string> getWithFields() const;
-	void setWithFields(const std::vector<std::string> &withFields);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
-	Query getQuery() const;
-	void setQuery(const Query &query);
-	int getMaxResults() const;
-	void setMaxResults(int maxResults);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
-	std::string getSort() const;
-	void setSort(const std::string &sort);
-	std::vector<Aggregations> getAggregations() const;
-	void setAggregations(const std::vector<Aggregations> &aggregations);
 	std::string getOrder() const;
 	void setOrder(const std::string &order);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
+	Query getQuery() const;
+	void setQuery(const Query &query);
+	std::string getSort() const;
+	void setSort(const std::string &sort);
+	std::vector<std::string> getWithFields() const;
+	void setWithFields(const std::vector<std::string> &withFields);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
+	std::vector<Aggregations> getAggregations() const;
+	void setAggregations(const std::vector<Aggregations> &aggregations);
 
 private:
-	std::string projectName_;
-	std::vector<std::string> withFields_;
 	std::string nextToken_;
-	Query query_;
-	int maxResults_;
 	std::string datasetName_;
-	std::string sort_;
-	std::vector<Aggregations> aggregations_;
 	std::string order_;
+	std::string projectName_;
+	Query query_;
+	std::string sort_;
+	std::vector<std::string> withFields_;
+	int maxResults_;
+	std::vector<Aggregations> aggregations_;
 };
 } // namespace Model
 } // namespace Imm

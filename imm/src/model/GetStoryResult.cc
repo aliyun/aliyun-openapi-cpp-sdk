@@ -210,25 +210,25 @@ void GetStoryResult::parse(const std::string &payload)
 			filesItemObject.bitrate = std::stol(storyNodeFilesFilesItem["Bitrate"].asString());
 		if(!storyNodeFilesFilesItem["Duration"].isNull())
 			filesItemObject.duration = storyNodeFilesFilesItem["Duration"].asString();
-		auto allAddressesNode = storyNodeFilesFilesItem["Addresses"]["AddressesItem"];
-		for (auto storyNodeFilesFilesItemAddressesAddressesItem : allAddressesNode)
+		auto allAddresses1Node = storyNodeFilesFilesItem["Addresses"]["AddressesItem"];
+		for (auto storyNodeFilesFilesItemAddressesAddressesItem : allAddresses1Node)
 		{
-			Story::FilesItem::AddressesItem addressesObject;
+			Story::FilesItem::AddressesItem addresses1Object;
 			if(!storyNodeFilesFilesItemAddressesAddressesItem["Language"].isNull())
-				addressesObject.language = storyNodeFilesFilesItemAddressesAddressesItem["Language"].asString();
+				addresses1Object.language = storyNodeFilesFilesItemAddressesAddressesItem["Language"].asString();
 			if(!storyNodeFilesFilesItemAddressesAddressesItem["AddressLine"].isNull())
-				addressesObject.addressLine = storyNodeFilesFilesItemAddressesAddressesItem["AddressLine"].asString();
+				addresses1Object.addressLine = storyNodeFilesFilesItemAddressesAddressesItem["AddressLine"].asString();
 			if(!storyNodeFilesFilesItemAddressesAddressesItem["Country"].isNull())
-				addressesObject.country = storyNodeFilesFilesItemAddressesAddressesItem["Country"].asString();
+				addresses1Object.country = storyNodeFilesFilesItemAddressesAddressesItem["Country"].asString();
 			if(!storyNodeFilesFilesItemAddressesAddressesItem["Province"].isNull())
-				addressesObject.province = storyNodeFilesFilesItemAddressesAddressesItem["Province"].asString();
+				addresses1Object.province = storyNodeFilesFilesItemAddressesAddressesItem["Province"].asString();
 			if(!storyNodeFilesFilesItemAddressesAddressesItem["City"].isNull())
-				addressesObject.city = storyNodeFilesFilesItemAddressesAddressesItem["City"].asString();
+				addresses1Object.city = storyNodeFilesFilesItemAddressesAddressesItem["City"].asString();
 			if(!storyNodeFilesFilesItemAddressesAddressesItem["District"].isNull())
-				addressesObject.district = storyNodeFilesFilesItemAddressesAddressesItem["District"].asString();
+				addresses1Object.district = storyNodeFilesFilesItemAddressesAddressesItem["District"].asString();
 			if(!storyNodeFilesFilesItemAddressesAddressesItem["Township"].isNull())
-				addressesObject.township = storyNodeFilesFilesItemAddressesAddressesItem["Township"].asString();
-			filesItemObject.addresses.push_back(addressesObject);
+				addresses1Object.township = storyNodeFilesFilesItemAddressesAddressesItem["Township"].asString();
+			filesItemObject.addresses1.push_back(addresses1Object);
 		}
 		auto allFiguresNode = storyNodeFilesFilesItem["Figures"]["FiguresItem"];
 		for (auto storyNodeFilesFilesItemFiguresFiguresItem : allFiguresNode)
@@ -326,15 +326,15 @@ void GetStoryResult::parse(const std::string &payload)
 				croppingSuggestionsObject.aspectRatio = storyNodeFilesFilesItemCroppingSuggestionsCroppingSuggestionsItem["AspectRatio"].asString();
 			if(!storyNodeFilesFilesItemCroppingSuggestionsCroppingSuggestionsItem["Confidence"].isNull())
 				croppingSuggestionsObject.confidence = std::stof(storyNodeFilesFilesItemCroppingSuggestionsCroppingSuggestionsItem["Confidence"].asString());
-			auto boundary1Node = value["Boundary"];
-			if(!boundary1Node["Width"].isNull())
-				croppingSuggestionsObject.boundary1.width = std::stol(boundary1Node["Width"].asString());
-			if(!boundary1Node["Height"].isNull())
-				croppingSuggestionsObject.boundary1.height = std::stol(boundary1Node["Height"].asString());
-			if(!boundary1Node["Left"].isNull())
-				croppingSuggestionsObject.boundary1.left = std::stol(boundary1Node["Left"].asString());
-			if(!boundary1Node["Top"].isNull())
-				croppingSuggestionsObject.boundary1.top = std::stol(boundary1Node["Top"].asString());
+			auto boundary2Node = value["Boundary"];
+			if(!boundary2Node["Width"].isNull())
+				croppingSuggestionsObject.boundary2.width = std::stol(boundary2Node["Width"].asString());
+			if(!boundary2Node["Height"].isNull())
+				croppingSuggestionsObject.boundary2.height = std::stol(boundary2Node["Height"].asString());
+			if(!boundary2Node["Left"].isNull())
+				croppingSuggestionsObject.boundary2.left = std::stol(boundary2Node["Left"].asString());
+			if(!boundary2Node["Top"].isNull())
+				croppingSuggestionsObject.boundary2.top = std::stol(boundary2Node["Top"].asString());
 			filesItemObject.croppingSuggestions.push_back(croppingSuggestionsObject);
 		}
 		auto allOCRContentsNode = storyNodeFilesFilesItem["OCRContents"]["OCRContentsItem"];
@@ -347,15 +347,15 @@ void GetStoryResult::parse(const std::string &payload)
 				oCRContentsObject.contents = storyNodeFilesFilesItemOCRContentsOCRContentsItem["Contents"].asString();
 			if(!storyNodeFilesFilesItemOCRContentsOCRContentsItem["Confidence"].isNull())
 				oCRContentsObject.confidence = std::stof(storyNodeFilesFilesItemOCRContentsOCRContentsItem["Confidence"].asString());
-			auto boundary2Node = value["Boundary"];
-			if(!boundary2Node["Width"].isNull())
-				oCRContentsObject.boundary2.width = std::stol(boundary2Node["Width"].asString());
-			if(!boundary2Node["Height"].isNull())
-				oCRContentsObject.boundary2.height = std::stol(boundary2Node["Height"].asString());
-			if(!boundary2Node["Left"].isNull())
-				oCRContentsObject.boundary2.left = std::stol(boundary2Node["Left"].asString());
-			if(!boundary2Node["Top"].isNull())
-				oCRContentsObject.boundary2.top = std::stol(boundary2Node["Top"].asString());
+			auto boundary3Node = value["Boundary"];
+			if(!boundary3Node["Width"].isNull())
+				oCRContentsObject.boundary3.width = std::stol(boundary3Node["Width"].asString());
+			if(!boundary3Node["Height"].isNull())
+				oCRContentsObject.boundary3.height = std::stol(boundary3Node["Height"].asString());
+			if(!boundary3Node["Left"].isNull())
+				oCRContentsObject.boundary3.left = std::stol(boundary3Node["Left"].asString());
+			if(!boundary3Node["Top"].isNull())
+				oCRContentsObject.boundary3.top = std::stol(boundary3Node["Top"].asString());
 			filesItemObject.oCRContents.push_back(oCRContentsObject);
 		}
 		auto allVideoStreamsNode = storyNodeFilesFilesItem["VideoStreams"]["VideoStreamsItem"];
@@ -500,55 +500,75 @@ void GetStoryResult::parse(const std::string &payload)
 				audioCoversObject.imageHeight = std::stol(storyNodeFilesFilesItemAudioCoversAudioCoversItem["ImageHeight"].asString());
 			if(!storyNodeFilesFilesItemAudioCoversAudioCoversItem["EXIF"].isNull())
 				audioCoversObject.eXIF = storyNodeFilesFilesItemAudioCoversAudioCoversItem["EXIF"].asString();
-			auto allCroppingSuggestions4Node = storyNodeFilesFilesItemAudioCoversAudioCoversItem["CroppingSuggestions"]["CroppingSuggestionsItem"];
-			for (auto storyNodeFilesFilesItemAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem : allCroppingSuggestions4Node)
+			auto allCroppingSuggestions5Node = storyNodeFilesFilesItemAudioCoversAudioCoversItem["CroppingSuggestions"]["CroppingSuggestionsItem"];
+			for (auto storyNodeFilesFilesItemAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem : allCroppingSuggestions5Node)
 			{
-				Story::FilesItem::AudioCoversItem::CroppingSuggestionsItem6 croppingSuggestions4Object;
+				Story::FilesItem::AudioCoversItem::CroppingSuggestionsItem7 croppingSuggestions5Object;
 				if(!storyNodeFilesFilesItemAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem["AspectRatio"].isNull())
-					croppingSuggestions4Object.aspectRatio = storyNodeFilesFilesItemAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem["AspectRatio"].asString();
+					croppingSuggestions5Object.aspectRatio = storyNodeFilesFilesItemAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem["AspectRatio"].asString();
 				if(!storyNodeFilesFilesItemAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem["Confidence"].isNull())
-					croppingSuggestions4Object.confidence = std::stof(storyNodeFilesFilesItemAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem["Confidence"].asString());
-				auto boundary7Node = value["Boundary"];
-				if(!boundary7Node["Width"].isNull())
-					croppingSuggestions4Object.boundary7.width = std::stol(boundary7Node["Width"].asString());
-				if(!boundary7Node["Height"].isNull())
-					croppingSuggestions4Object.boundary7.height = std::stol(boundary7Node["Height"].asString());
-				if(!boundary7Node["Left"].isNull())
-					croppingSuggestions4Object.boundary7.left = std::stol(boundary7Node["Left"].asString());
-				if(!boundary7Node["Top"].isNull())
-					croppingSuggestions4Object.boundary7.top = std::stol(boundary7Node["Top"].asString());
-				audioCoversObject.croppingSuggestions4.push_back(croppingSuggestions4Object);
+					croppingSuggestions5Object.confidence = std::stof(storyNodeFilesFilesItemAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem["Confidence"].asString());
+				auto boundary8Node = value["Boundary"];
+				if(!boundary8Node["Width"].isNull())
+					croppingSuggestions5Object.boundary8.width = std::stol(boundary8Node["Width"].asString());
+				if(!boundary8Node["Height"].isNull())
+					croppingSuggestions5Object.boundary8.height = std::stol(boundary8Node["Height"].asString());
+				if(!boundary8Node["Left"].isNull())
+					croppingSuggestions5Object.boundary8.left = std::stol(boundary8Node["Left"].asString());
+				if(!boundary8Node["Top"].isNull())
+					croppingSuggestions5Object.boundary8.top = std::stol(boundary8Node["Top"].asString());
+				audioCoversObject.croppingSuggestions5.push_back(croppingSuggestions5Object);
 			}
-			auto allOCRContents5Node = storyNodeFilesFilesItemAudioCoversAudioCoversItem["OCRContents"]["OCRContentsItem"];
-			for (auto storyNodeFilesFilesItemAudioCoversAudioCoversItemOCRContentsOCRContentsItem : allOCRContents5Node)
+			auto allOCRContents6Node = storyNodeFilesFilesItemAudioCoversAudioCoversItem["OCRContents"]["OCRContentsItem"];
+			for (auto storyNodeFilesFilesItemAudioCoversAudioCoversItemOCRContentsOCRContentsItem : allOCRContents6Node)
 			{
-				Story::FilesItem::AudioCoversItem::OCRContentsItem8 oCRContents5Object;
+				Story::FilesItem::AudioCoversItem::OCRContentsItem9 oCRContents6Object;
 				if(!storyNodeFilesFilesItemAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Language"].isNull())
-					oCRContents5Object.language = storyNodeFilesFilesItemAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Language"].asString();
+					oCRContents6Object.language = storyNodeFilesFilesItemAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Language"].asString();
 				if(!storyNodeFilesFilesItemAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Contents"].isNull())
-					oCRContents5Object.contents = storyNodeFilesFilesItemAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Contents"].asString();
+					oCRContents6Object.contents = storyNodeFilesFilesItemAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Contents"].asString();
 				if(!storyNodeFilesFilesItemAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Confidence"].isNull())
-					oCRContents5Object.confidence = std::stof(storyNodeFilesFilesItemAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Confidence"].asString());
-				auto boundary9Node = value["Boundary"];
-				if(!boundary9Node["Width"].isNull())
-					oCRContents5Object.boundary9.width = std::stol(boundary9Node["Width"].asString());
-				if(!boundary9Node["Height"].isNull())
-					oCRContents5Object.boundary9.height = std::stol(boundary9Node["Height"].asString());
-				if(!boundary9Node["Left"].isNull())
-					oCRContents5Object.boundary9.left = std::stol(boundary9Node["Left"].asString());
-				if(!boundary9Node["Top"].isNull())
-					oCRContents5Object.boundary9.top = std::stol(boundary9Node["Top"].asString());
-				audioCoversObject.oCRContents5.push_back(oCRContents5Object);
+					oCRContents6Object.confidence = std::stof(storyNodeFilesFilesItemAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Confidence"].asString());
+				auto boundary10Node = value["Boundary"];
+				if(!boundary10Node["Width"].isNull())
+					oCRContents6Object.boundary10.width = std::stol(boundary10Node["Width"].asString());
+				if(!boundary10Node["Height"].isNull())
+					oCRContents6Object.boundary10.height = std::stol(boundary10Node["Height"].asString());
+				if(!boundary10Node["Left"].isNull())
+					oCRContents6Object.boundary10.left = std::stol(boundary10Node["Left"].asString());
+				if(!boundary10Node["Top"].isNull())
+					oCRContents6Object.boundary10.top = std::stol(boundary10Node["Top"].asString());
+				audioCoversObject.oCRContents6.push_back(oCRContents6Object);
 			}
-			auto imageScore3Node = value["ImageScore"];
-			if(!imageScore3Node["OverallQualityScore"].isNull())
-				audioCoversObject.imageScore3.overallQualityScore = std::stof(imageScore3Node["OverallQualityScore"].asString());
+			auto imageScore4Node = value["ImageScore"];
+			if(!imageScore4Node["OverallQualityScore"].isNull())
+				audioCoversObject.imageScore4.overallQualityScore = std::stof(imageScore4Node["OverallQualityScore"].asString());
 			filesItemObject.audioCovers.push_back(audioCoversObject);
 		}
 		auto imageScoreNode = value["ImageScore"];
 		if(!imageScoreNode["OverallQualityScore"].isNull())
 			filesItemObject.imageScore.overallQualityScore = std::stof(imageScoreNode["OverallQualityScore"].asString());
 		story_.files.push_back(filesItemObject);
+	}
+	auto allAddressesNode = storyNode["Addresses"]["AddressesItem"];
+	for (auto storyNodeAddressesAddressesItem : allAddressesNode)
+	{
+		Story::AddressesItem11 addressesItem11Object;
+		if(!storyNodeAddressesAddressesItem["Language"].isNull())
+			addressesItem11Object.language = storyNodeAddressesAddressesItem["Language"].asString();
+		if(!storyNodeAddressesAddressesItem["AddressLine"].isNull())
+			addressesItem11Object.addressLine = storyNodeAddressesAddressesItem["AddressLine"].asString();
+		if(!storyNodeAddressesAddressesItem["Country"].isNull())
+			addressesItem11Object.country = storyNodeAddressesAddressesItem["Country"].asString();
+		if(!storyNodeAddressesAddressesItem["Province"].isNull())
+			addressesItem11Object.province = storyNodeAddressesAddressesItem["Province"].asString();
+		if(!storyNodeAddressesAddressesItem["City"].isNull())
+			addressesItem11Object.city = storyNodeAddressesAddressesItem["City"].asString();
+		if(!storyNodeAddressesAddressesItem["District"].isNull())
+			addressesItem11Object.district = storyNodeAddressesAddressesItem["District"].asString();
+		if(!storyNodeAddressesAddressesItem["Township"].isNull())
+			addressesItem11Object.township = storyNodeAddressesAddressesItem["Township"].asString();
+		story_.addresses.push_back(addressesItem11Object);
 	}
 	auto coverNode = storyNode["Cover"];
 	if(!coverNode["OwnerId"].isNull())
@@ -689,344 +709,344 @@ void GetStoryResult::parse(const std::string &payload)
 		story_.cover.bitrate = std::stol(coverNode["Bitrate"].asString());
 	if(!coverNode["Duration"].isNull())
 		story_.cover.duration = coverNode["Duration"].asString();
-	auto allAddresses11Node = coverNode["Addresses"]["AddressesItem"];
-	for (auto coverNodeAddressesAddressesItem : allAddresses11Node)
+	auto allAddresses13Node = coverNode["Addresses"]["AddressesItem"];
+	for (auto coverNodeAddressesAddressesItem : allAddresses13Node)
 	{
-		Story::Cover::AddressesItem20 addressesItem20Object;
+		Story::Cover::AddressesItem22 addressesItem22Object;
 		if(!coverNodeAddressesAddressesItem["Language"].isNull())
-			addressesItem20Object.language = coverNodeAddressesAddressesItem["Language"].asString();
+			addressesItem22Object.language = coverNodeAddressesAddressesItem["Language"].asString();
 		if(!coverNodeAddressesAddressesItem["AddressLine"].isNull())
-			addressesItem20Object.addressLine = coverNodeAddressesAddressesItem["AddressLine"].asString();
+			addressesItem22Object.addressLine = coverNodeAddressesAddressesItem["AddressLine"].asString();
 		if(!coverNodeAddressesAddressesItem["Country"].isNull())
-			addressesItem20Object.country = coverNodeAddressesAddressesItem["Country"].asString();
+			addressesItem22Object.country = coverNodeAddressesAddressesItem["Country"].asString();
 		if(!coverNodeAddressesAddressesItem["Province"].isNull())
-			addressesItem20Object.province = coverNodeAddressesAddressesItem["Province"].asString();
+			addressesItem22Object.province = coverNodeAddressesAddressesItem["Province"].asString();
 		if(!coverNodeAddressesAddressesItem["City"].isNull())
-			addressesItem20Object.city = coverNodeAddressesAddressesItem["City"].asString();
+			addressesItem22Object.city = coverNodeAddressesAddressesItem["City"].asString();
 		if(!coverNodeAddressesAddressesItem["District"].isNull())
-			addressesItem20Object.district = coverNodeAddressesAddressesItem["District"].asString();
+			addressesItem22Object.district = coverNodeAddressesAddressesItem["District"].asString();
 		if(!coverNodeAddressesAddressesItem["Township"].isNull())
-			addressesItem20Object.township = coverNodeAddressesAddressesItem["Township"].asString();
-		story_.cover.addresses11.push_back(addressesItem20Object);
+			addressesItem22Object.township = coverNodeAddressesAddressesItem["Township"].asString();
+		story_.cover.addresses13.push_back(addressesItem22Object);
 	}
-	auto allFigures12Node = coverNode["Figures"]["FiguresItem"];
-	for (auto coverNodeFiguresFiguresItem : allFigures12Node)
+	auto allFigures14Node = coverNode["Figures"]["FiguresItem"];
+	for (auto coverNodeFiguresFiguresItem : allFigures14Node)
 	{
-		Story::Cover::FiguresItem21 figuresItem21Object;
+		Story::Cover::FiguresItem23 figuresItem23Object;
 		if(!coverNodeFiguresFiguresItem["FigureId"].isNull())
-			figuresItem21Object.figureId = coverNodeFiguresFiguresItem["FigureId"].asString();
+			figuresItem23Object.figureId = coverNodeFiguresFiguresItem["FigureId"].asString();
 		if(!coverNodeFiguresFiguresItem["FigureConfidence"].isNull())
-			figuresItem21Object.figureConfidence = std::stof(coverNodeFiguresFiguresItem["FigureConfidence"].asString());
+			figuresItem23Object.figureConfidence = std::stof(coverNodeFiguresFiguresItem["FigureConfidence"].asString());
 		if(!coverNodeFiguresFiguresItem["FigureClusterId"].isNull())
-			figuresItem21Object.figureClusterId = coverNodeFiguresFiguresItem["FigureClusterId"].asString();
+			figuresItem23Object.figureClusterId = coverNodeFiguresFiguresItem["FigureClusterId"].asString();
 		if(!coverNodeFiguresFiguresItem["FigureClusterConfidence"].isNull())
-			figuresItem21Object.figureClusterConfidence = std::stof(coverNodeFiguresFiguresItem["FigureClusterConfidence"].asString());
+			figuresItem23Object.figureClusterConfidence = std::stof(coverNodeFiguresFiguresItem["FigureClusterConfidence"].asString());
 		if(!coverNodeFiguresFiguresItem["FigureType"].isNull())
-			figuresItem21Object.figureType = coverNodeFiguresFiguresItem["FigureType"].asString();
+			figuresItem23Object.figureType = coverNodeFiguresFiguresItem["FigureType"].asString();
 		if(!coverNodeFiguresFiguresItem["Age"].isNull())
-			figuresItem21Object.age = std::stol(coverNodeFiguresFiguresItem["Age"].asString());
+			figuresItem23Object.age = std::stol(coverNodeFiguresFiguresItem["Age"].asString());
 		if(!coverNodeFiguresFiguresItem["AgeSD"].isNull())
-			figuresItem21Object.ageSD = std::stof(coverNodeFiguresFiguresItem["AgeSD"].asString());
+			figuresItem23Object.ageSD = std::stof(coverNodeFiguresFiguresItem["AgeSD"].asString());
 		if(!coverNodeFiguresFiguresItem["Gender"].isNull())
-			figuresItem21Object.gender = coverNodeFiguresFiguresItem["Gender"].asString();
+			figuresItem23Object.gender = coverNodeFiguresFiguresItem["Gender"].asString();
 		if(!coverNodeFiguresFiguresItem["GenderConfidence"].isNull())
-			figuresItem21Object.genderConfidence = std::stof(coverNodeFiguresFiguresItem["GenderConfidence"].asString());
+			figuresItem23Object.genderConfidence = std::stof(coverNodeFiguresFiguresItem["GenderConfidence"].asString());
 		if(!coverNodeFiguresFiguresItem["Emotion"].isNull())
-			figuresItem21Object.emotion = coverNodeFiguresFiguresItem["Emotion"].asString();
+			figuresItem23Object.emotion = coverNodeFiguresFiguresItem["Emotion"].asString();
 		if(!coverNodeFiguresFiguresItem["EmotionConfidence"].isNull())
-			figuresItem21Object.emotionConfidence = std::stof(coverNodeFiguresFiguresItem["EmotionConfidence"].asString());
+			figuresItem23Object.emotionConfidence = std::stof(coverNodeFiguresFiguresItem["EmotionConfidence"].asString());
 		if(!coverNodeFiguresFiguresItem["FaceQuality"].isNull())
-			figuresItem21Object.faceQuality = std::stof(coverNodeFiguresFiguresItem["FaceQuality"].asString());
+			figuresItem23Object.faceQuality = std::stof(coverNodeFiguresFiguresItem["FaceQuality"].asString());
 		if(!coverNodeFiguresFiguresItem["Mouth"].isNull())
-			figuresItem21Object.mouth = coverNodeFiguresFiguresItem["Mouth"].asString();
+			figuresItem23Object.mouth = coverNodeFiguresFiguresItem["Mouth"].asString();
 		if(!coverNodeFiguresFiguresItem["MouthConfidence"].isNull())
-			figuresItem21Object.mouthConfidence = std::stof(coverNodeFiguresFiguresItem["MouthConfidence"].asString());
+			figuresItem23Object.mouthConfidence = std::stof(coverNodeFiguresFiguresItem["MouthConfidence"].asString());
 		if(!coverNodeFiguresFiguresItem["Beard"].isNull())
-			figuresItem21Object.beard = coverNodeFiguresFiguresItem["Beard"].asString();
+			figuresItem23Object.beard = coverNodeFiguresFiguresItem["Beard"].asString();
 		if(!coverNodeFiguresFiguresItem["BeardConfidence"].isNull())
-			figuresItem21Object.beardConfidence = std::stof(coverNodeFiguresFiguresItem["BeardConfidence"].asString());
+			figuresItem23Object.beardConfidence = std::stof(coverNodeFiguresFiguresItem["BeardConfidence"].asString());
 		if(!coverNodeFiguresFiguresItem["Hat"].isNull())
-			figuresItem21Object.hat = coverNodeFiguresFiguresItem["Hat"].asString();
+			figuresItem23Object.hat = coverNodeFiguresFiguresItem["Hat"].asString();
 		if(!coverNodeFiguresFiguresItem["HatConfidence"].isNull())
-			figuresItem21Object.hatConfidence = std::stof(coverNodeFiguresFiguresItem["HatConfidence"].asString());
+			figuresItem23Object.hatConfidence = std::stof(coverNodeFiguresFiguresItem["HatConfidence"].asString());
 		if(!coverNodeFiguresFiguresItem["Mask"].isNull())
-			figuresItem21Object.mask = coverNodeFiguresFiguresItem["Mask"].asString();
+			figuresItem23Object.mask = coverNodeFiguresFiguresItem["Mask"].asString();
 		if(!coverNodeFiguresFiguresItem["MaskConfidence"].isNull())
-			figuresItem21Object.maskConfidence = std::stof(coverNodeFiguresFiguresItem["MaskConfidence"].asString());
+			figuresItem23Object.maskConfidence = std::stof(coverNodeFiguresFiguresItem["MaskConfidence"].asString());
 		if(!coverNodeFiguresFiguresItem["Glasses"].isNull())
-			figuresItem21Object.glasses = coverNodeFiguresFiguresItem["Glasses"].asString();
+			figuresItem23Object.glasses = coverNodeFiguresFiguresItem["Glasses"].asString();
 		if(!coverNodeFiguresFiguresItem["GlassesConfidence"].isNull())
-			figuresItem21Object.glassesConfidence = std::stof(coverNodeFiguresFiguresItem["GlassesConfidence"].asString());
+			figuresItem23Object.glassesConfidence = std::stof(coverNodeFiguresFiguresItem["GlassesConfidence"].asString());
 		if(!coverNodeFiguresFiguresItem["Sharpness"].isNull())
-			figuresItem21Object.sharpness = std::stof(coverNodeFiguresFiguresItem["Sharpness"].asString());
+			figuresItem23Object.sharpness = std::stof(coverNodeFiguresFiguresItem["Sharpness"].asString());
 		if(!coverNodeFiguresFiguresItem["Attractive"].isNull())
-			figuresItem21Object.attractive = std::stof(coverNodeFiguresFiguresItem["Attractive"].asString());
-		auto boundary22Node = value["Boundary"];
-		if(!boundary22Node["Width"].isNull())
-			figuresItem21Object.boundary22.width = std::stol(boundary22Node["Width"].asString());
-		if(!boundary22Node["Height"].isNull())
-			figuresItem21Object.boundary22.height = std::stol(boundary22Node["Height"].asString());
-		if(!boundary22Node["Left"].isNull())
-			figuresItem21Object.boundary22.left = std::stol(boundary22Node["Left"].asString());
-		if(!boundary22Node["Top"].isNull())
-			figuresItem21Object.boundary22.top = std::stol(boundary22Node["Top"].asString());
-		auto headPose23Node = value["HeadPose"];
-		if(!headPose23Node["Pitch"].isNull())
-			figuresItem21Object.headPose23.pitch = std::stof(headPose23Node["Pitch"].asString());
-		if(!headPose23Node["Roll"].isNull())
-			figuresItem21Object.headPose23.roll = std::stof(headPose23Node["Roll"].asString());
-		if(!headPose23Node["Yaw"].isNull())
-			figuresItem21Object.headPose23.yaw = std::stof(headPose23Node["Yaw"].asString());
-		story_.cover.figures12.push_back(figuresItem21Object);
+			figuresItem23Object.attractive = std::stof(coverNodeFiguresFiguresItem["Attractive"].asString());
+		auto boundary24Node = value["Boundary"];
+		if(!boundary24Node["Width"].isNull())
+			figuresItem23Object.boundary24.width = std::stol(boundary24Node["Width"].asString());
+		if(!boundary24Node["Height"].isNull())
+			figuresItem23Object.boundary24.height = std::stol(boundary24Node["Height"].asString());
+		if(!boundary24Node["Left"].isNull())
+			figuresItem23Object.boundary24.left = std::stol(boundary24Node["Left"].asString());
+		if(!boundary24Node["Top"].isNull())
+			figuresItem23Object.boundary24.top = std::stol(boundary24Node["Top"].asString());
+		auto headPose25Node = value["HeadPose"];
+		if(!headPose25Node["Pitch"].isNull())
+			figuresItem23Object.headPose25.pitch = std::stof(headPose25Node["Pitch"].asString());
+		if(!headPose25Node["Roll"].isNull())
+			figuresItem23Object.headPose25.roll = std::stof(headPose25Node["Roll"].asString());
+		if(!headPose25Node["Yaw"].isNull())
+			figuresItem23Object.headPose25.yaw = std::stof(headPose25Node["Yaw"].asString());
+		story_.cover.figures14.push_back(figuresItem23Object);
 	}
-	auto allLabels13Node = coverNode["Labels"]["LabelsItem"];
-	for (auto coverNodeLabelsLabelsItem : allLabels13Node)
+	auto allLabels15Node = coverNode["Labels"]["LabelsItem"];
+	for (auto coverNodeLabelsLabelsItem : allLabels15Node)
 	{
-		Story::Cover::LabelsItem24 labelsItem24Object;
+		Story::Cover::LabelsItem26 labelsItem26Object;
 		if(!coverNodeLabelsLabelsItem["Language"].isNull())
-			labelsItem24Object.language = coverNodeLabelsLabelsItem["Language"].asString();
+			labelsItem26Object.language = coverNodeLabelsLabelsItem["Language"].asString();
 		if(!coverNodeLabelsLabelsItem["LabelName"].isNull())
-			labelsItem24Object.labelName = coverNodeLabelsLabelsItem["LabelName"].asString();
+			labelsItem26Object.labelName = coverNodeLabelsLabelsItem["LabelName"].asString();
 		if(!coverNodeLabelsLabelsItem["LabelLevel"].isNull())
-			labelsItem24Object.labelLevel = std::stol(coverNodeLabelsLabelsItem["LabelLevel"].asString());
+			labelsItem26Object.labelLevel = std::stol(coverNodeLabelsLabelsItem["LabelLevel"].asString());
 		if(!coverNodeLabelsLabelsItem["LabelConfidence"].isNull())
-			labelsItem24Object.labelConfidence = std::stof(coverNodeLabelsLabelsItem["LabelConfidence"].asString());
+			labelsItem26Object.labelConfidence = std::stof(coverNodeLabelsLabelsItem["LabelConfidence"].asString());
 		if(!coverNodeLabelsLabelsItem["ParentLabelName"].isNull())
-			labelsItem24Object.parentLabelName = coverNodeLabelsLabelsItem["ParentLabelName"].asString();
+			labelsItem26Object.parentLabelName = coverNodeLabelsLabelsItem["ParentLabelName"].asString();
 		if(!coverNodeLabelsLabelsItem["CentricScore"].isNull())
-			labelsItem24Object.centricScore = std::stof(coverNodeLabelsLabelsItem["CentricScore"].asString());
-		story_.cover.labels13.push_back(labelsItem24Object);
+			labelsItem26Object.centricScore = std::stof(coverNodeLabelsLabelsItem["CentricScore"].asString());
+		story_.cover.labels15.push_back(labelsItem26Object);
 	}
-	auto allCroppingSuggestions14Node = coverNode["CroppingSuggestions"]["CroppingSuggestionsItem"];
-	for (auto coverNodeCroppingSuggestionsCroppingSuggestionsItem : allCroppingSuggestions14Node)
+	auto allCroppingSuggestions16Node = coverNode["CroppingSuggestions"]["CroppingSuggestionsItem"];
+	for (auto coverNodeCroppingSuggestionsCroppingSuggestionsItem : allCroppingSuggestions16Node)
 	{
-		Story::Cover::CroppingSuggestionsItem25 croppingSuggestionsItem25Object;
+		Story::Cover::CroppingSuggestionsItem27 croppingSuggestionsItem27Object;
 		if(!coverNodeCroppingSuggestionsCroppingSuggestionsItem["AspectRatio"].isNull())
-			croppingSuggestionsItem25Object.aspectRatio = coverNodeCroppingSuggestionsCroppingSuggestionsItem["AspectRatio"].asString();
+			croppingSuggestionsItem27Object.aspectRatio = coverNodeCroppingSuggestionsCroppingSuggestionsItem["AspectRatio"].asString();
 		if(!coverNodeCroppingSuggestionsCroppingSuggestionsItem["Confidence"].isNull())
-			croppingSuggestionsItem25Object.confidence = std::stof(coverNodeCroppingSuggestionsCroppingSuggestionsItem["Confidence"].asString());
-		auto boundary26Node = value["Boundary"];
-		if(!boundary26Node["Width"].isNull())
-			croppingSuggestionsItem25Object.boundary26.width = std::stol(boundary26Node["Width"].asString());
-		if(!boundary26Node["Height"].isNull())
-			croppingSuggestionsItem25Object.boundary26.height = std::stol(boundary26Node["Height"].asString());
-		if(!boundary26Node["Left"].isNull())
-			croppingSuggestionsItem25Object.boundary26.left = std::stol(boundary26Node["Left"].asString());
-		if(!boundary26Node["Top"].isNull())
-			croppingSuggestionsItem25Object.boundary26.top = std::stol(boundary26Node["Top"].asString());
-		story_.cover.croppingSuggestions14.push_back(croppingSuggestionsItem25Object);
-	}
-	auto allOCRContents15Node = coverNode["OCRContents"]["OCRContentsItem"];
-	for (auto coverNodeOCRContentsOCRContentsItem : allOCRContents15Node)
-	{
-		Story::Cover::OCRContentsItem27 oCRContentsItem27Object;
-		if(!coverNodeOCRContentsOCRContentsItem["Language"].isNull())
-			oCRContentsItem27Object.language = coverNodeOCRContentsOCRContentsItem["Language"].asString();
-		if(!coverNodeOCRContentsOCRContentsItem["Contents"].isNull())
-			oCRContentsItem27Object.contents = coverNodeOCRContentsOCRContentsItem["Contents"].asString();
-		if(!coverNodeOCRContentsOCRContentsItem["Confidence"].isNull())
-			oCRContentsItem27Object.confidence = std::stof(coverNodeOCRContentsOCRContentsItem["Confidence"].asString());
+			croppingSuggestionsItem27Object.confidence = std::stof(coverNodeCroppingSuggestionsCroppingSuggestionsItem["Confidence"].asString());
 		auto boundary28Node = value["Boundary"];
 		if(!boundary28Node["Width"].isNull())
-			oCRContentsItem27Object.boundary28.width = std::stol(boundary28Node["Width"].asString());
+			croppingSuggestionsItem27Object.boundary28.width = std::stol(boundary28Node["Width"].asString());
 		if(!boundary28Node["Height"].isNull())
-			oCRContentsItem27Object.boundary28.height = std::stol(boundary28Node["Height"].asString());
+			croppingSuggestionsItem27Object.boundary28.height = std::stol(boundary28Node["Height"].asString());
 		if(!boundary28Node["Left"].isNull())
-			oCRContentsItem27Object.boundary28.left = std::stol(boundary28Node["Left"].asString());
+			croppingSuggestionsItem27Object.boundary28.left = std::stol(boundary28Node["Left"].asString());
 		if(!boundary28Node["Top"].isNull())
-			oCRContentsItem27Object.boundary28.top = std::stol(boundary28Node["Top"].asString());
-		story_.cover.oCRContents15.push_back(oCRContentsItem27Object);
+			croppingSuggestionsItem27Object.boundary28.top = std::stol(boundary28Node["Top"].asString());
+		story_.cover.croppingSuggestions16.push_back(croppingSuggestionsItem27Object);
 	}
-	auto allVideoStreams16Node = coverNode["VideoStreams"]["VideoStreamsItem"];
-	for (auto coverNodeVideoStreamsVideoStreamsItem : allVideoStreams16Node)
+	auto allOCRContents17Node = coverNode["OCRContents"]["OCRContentsItem"];
+	for (auto coverNodeOCRContentsOCRContentsItem : allOCRContents17Node)
 	{
-		Story::Cover::VideoStreamsItem29 videoStreamsItem29Object;
+		Story::Cover::OCRContentsItem29 oCRContentsItem29Object;
+		if(!coverNodeOCRContentsOCRContentsItem["Language"].isNull())
+			oCRContentsItem29Object.language = coverNodeOCRContentsOCRContentsItem["Language"].asString();
+		if(!coverNodeOCRContentsOCRContentsItem["Contents"].isNull())
+			oCRContentsItem29Object.contents = coverNodeOCRContentsOCRContentsItem["Contents"].asString();
+		if(!coverNodeOCRContentsOCRContentsItem["Confidence"].isNull())
+			oCRContentsItem29Object.confidence = std::stof(coverNodeOCRContentsOCRContentsItem["Confidence"].asString());
+		auto boundary30Node = value["Boundary"];
+		if(!boundary30Node["Width"].isNull())
+			oCRContentsItem29Object.boundary30.width = std::stol(boundary30Node["Width"].asString());
+		if(!boundary30Node["Height"].isNull())
+			oCRContentsItem29Object.boundary30.height = std::stol(boundary30Node["Height"].asString());
+		if(!boundary30Node["Left"].isNull())
+			oCRContentsItem29Object.boundary30.left = std::stol(boundary30Node["Left"].asString());
+		if(!boundary30Node["Top"].isNull())
+			oCRContentsItem29Object.boundary30.top = std::stol(boundary30Node["Top"].asString());
+		story_.cover.oCRContents17.push_back(oCRContentsItem29Object);
+	}
+	auto allVideoStreams18Node = coverNode["VideoStreams"]["VideoStreamsItem"];
+	for (auto coverNodeVideoStreamsVideoStreamsItem : allVideoStreams18Node)
+	{
+		Story::Cover::VideoStreamsItem31 videoStreamsItem31Object;
 		if(!coverNodeVideoStreamsVideoStreamsItem["Index"].isNull())
-			videoStreamsItem29Object.index = std::stol(coverNodeVideoStreamsVideoStreamsItem["Index"].asString());
+			videoStreamsItem31Object.index = std::stol(coverNodeVideoStreamsVideoStreamsItem["Index"].asString());
 		if(!coverNodeVideoStreamsVideoStreamsItem["Language"].isNull())
-			videoStreamsItem29Object.language = coverNodeVideoStreamsVideoStreamsItem["Language"].asString();
+			videoStreamsItem31Object.language = coverNodeVideoStreamsVideoStreamsItem["Language"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["CodecName"].isNull())
-			videoStreamsItem29Object.codecName = coverNodeVideoStreamsVideoStreamsItem["CodecName"].asString();
+			videoStreamsItem31Object.codecName = coverNodeVideoStreamsVideoStreamsItem["CodecName"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["CodecLongName"].isNull())
-			videoStreamsItem29Object.codecLongName = coverNodeVideoStreamsVideoStreamsItem["CodecLongName"].asString();
+			videoStreamsItem31Object.codecLongName = coverNodeVideoStreamsVideoStreamsItem["CodecLongName"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["Profile"].isNull())
-			videoStreamsItem29Object.profile = coverNodeVideoStreamsVideoStreamsItem["Profile"].asString();
+			videoStreamsItem31Object.profile = coverNodeVideoStreamsVideoStreamsItem["Profile"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["CodecTimeBase"].isNull())
-			videoStreamsItem29Object.codecTimeBase = coverNodeVideoStreamsVideoStreamsItem["CodecTimeBase"].asString();
+			videoStreamsItem31Object.codecTimeBase = coverNodeVideoStreamsVideoStreamsItem["CodecTimeBase"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["CodecTagString"].isNull())
-			videoStreamsItem29Object.codecTagString = coverNodeVideoStreamsVideoStreamsItem["CodecTagString"].asString();
+			videoStreamsItem31Object.codecTagString = coverNodeVideoStreamsVideoStreamsItem["CodecTagString"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["CodecTag"].isNull())
-			videoStreamsItem29Object.codecTag = coverNodeVideoStreamsVideoStreamsItem["CodecTag"].asString();
+			videoStreamsItem31Object.codecTag = coverNodeVideoStreamsVideoStreamsItem["CodecTag"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["Width"].isNull())
-			videoStreamsItem29Object.width = std::stol(coverNodeVideoStreamsVideoStreamsItem["Width"].asString());
+			videoStreamsItem31Object.width = std::stol(coverNodeVideoStreamsVideoStreamsItem["Width"].asString());
 		if(!coverNodeVideoStreamsVideoStreamsItem["Height"].isNull())
-			videoStreamsItem29Object.height = std::stol(coverNodeVideoStreamsVideoStreamsItem["Height"].asString());
+			videoStreamsItem31Object.height = std::stol(coverNodeVideoStreamsVideoStreamsItem["Height"].asString());
 		if(!coverNodeVideoStreamsVideoStreamsItem["HasBFrames"].isNull())
-			videoStreamsItem29Object.hasBFrames = std::stol(coverNodeVideoStreamsVideoStreamsItem["HasBFrames"].asString());
+			videoStreamsItem31Object.hasBFrames = std::stol(coverNodeVideoStreamsVideoStreamsItem["HasBFrames"].asString());
 		if(!coverNodeVideoStreamsVideoStreamsItem["SampleAspectRatio"].isNull())
-			videoStreamsItem29Object.sampleAspectRatio = coverNodeVideoStreamsVideoStreamsItem["SampleAspectRatio"].asString();
+			videoStreamsItem31Object.sampleAspectRatio = coverNodeVideoStreamsVideoStreamsItem["SampleAspectRatio"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["DisplayAspectRatio"].isNull())
-			videoStreamsItem29Object.displayAspectRatio = coverNodeVideoStreamsVideoStreamsItem["DisplayAspectRatio"].asString();
+			videoStreamsItem31Object.displayAspectRatio = coverNodeVideoStreamsVideoStreamsItem["DisplayAspectRatio"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["PixelFormat"].isNull())
-			videoStreamsItem29Object.pixelFormat = coverNodeVideoStreamsVideoStreamsItem["PixelFormat"].asString();
+			videoStreamsItem31Object.pixelFormat = coverNodeVideoStreamsVideoStreamsItem["PixelFormat"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["Level"].isNull())
-			videoStreamsItem29Object.level = std::stol(coverNodeVideoStreamsVideoStreamsItem["Level"].asString());
+			videoStreamsItem31Object.level = std::stol(coverNodeVideoStreamsVideoStreamsItem["Level"].asString());
 		if(!coverNodeVideoStreamsVideoStreamsItem["FrameRate"].isNull())
-			videoStreamsItem29Object.frameRate = coverNodeVideoStreamsVideoStreamsItem["FrameRate"].asString();
+			videoStreamsItem31Object.frameRate = coverNodeVideoStreamsVideoStreamsItem["FrameRate"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["AverageFrameRate"].isNull())
-			videoStreamsItem29Object.averageFrameRate = coverNodeVideoStreamsVideoStreamsItem["AverageFrameRate"].asString();
+			videoStreamsItem31Object.averageFrameRate = coverNodeVideoStreamsVideoStreamsItem["AverageFrameRate"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["TimeBase"].isNull())
-			videoStreamsItem29Object.timeBase = coverNodeVideoStreamsVideoStreamsItem["TimeBase"].asString();
+			videoStreamsItem31Object.timeBase = coverNodeVideoStreamsVideoStreamsItem["TimeBase"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["StartTime"].isNull())
-			videoStreamsItem29Object.startTime = coverNodeVideoStreamsVideoStreamsItem["StartTime"].asString();
+			videoStreamsItem31Object.startTime = coverNodeVideoStreamsVideoStreamsItem["StartTime"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["Duration"].isNull())
-			videoStreamsItem29Object.duration = coverNodeVideoStreamsVideoStreamsItem["Duration"].asString();
+			videoStreamsItem31Object.duration = coverNodeVideoStreamsVideoStreamsItem["Duration"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["Bitrate"].isNull())
-			videoStreamsItem29Object.bitrate = std::stol(coverNodeVideoStreamsVideoStreamsItem["Bitrate"].asString());
+			videoStreamsItem31Object.bitrate = std::stol(coverNodeVideoStreamsVideoStreamsItem["Bitrate"].asString());
 		if(!coverNodeVideoStreamsVideoStreamsItem["FrameCount"].isNull())
-			videoStreamsItem29Object.frameCount = std::stol(coverNodeVideoStreamsVideoStreamsItem["FrameCount"].asString());
+			videoStreamsItem31Object.frameCount = std::stol(coverNodeVideoStreamsVideoStreamsItem["FrameCount"].asString());
 		if(!coverNodeVideoStreamsVideoStreamsItem["Rotate"].isNull())
-			videoStreamsItem29Object.rotate = coverNodeVideoStreamsVideoStreamsItem["Rotate"].asString();
+			videoStreamsItem31Object.rotate = coverNodeVideoStreamsVideoStreamsItem["Rotate"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["BitDepth"].isNull())
-			videoStreamsItem29Object.bitDepth = std::stol(coverNodeVideoStreamsVideoStreamsItem["BitDepth"].asString());
+			videoStreamsItem31Object.bitDepth = std::stol(coverNodeVideoStreamsVideoStreamsItem["BitDepth"].asString());
 		if(!coverNodeVideoStreamsVideoStreamsItem["ColorSpace"].isNull())
-			videoStreamsItem29Object.colorSpace = coverNodeVideoStreamsVideoStreamsItem["ColorSpace"].asString();
+			videoStreamsItem31Object.colorSpace = coverNodeVideoStreamsVideoStreamsItem["ColorSpace"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["ColorRange"].isNull())
-			videoStreamsItem29Object.colorRange = coverNodeVideoStreamsVideoStreamsItem["ColorRange"].asString();
+			videoStreamsItem31Object.colorRange = coverNodeVideoStreamsVideoStreamsItem["ColorRange"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["ColorTransfer"].isNull())
-			videoStreamsItem29Object.colorTransfer = coverNodeVideoStreamsVideoStreamsItem["ColorTransfer"].asString();
+			videoStreamsItem31Object.colorTransfer = coverNodeVideoStreamsVideoStreamsItem["ColorTransfer"].asString();
 		if(!coverNodeVideoStreamsVideoStreamsItem["ColorPrimaries"].isNull())
-			videoStreamsItem29Object.colorPrimaries = coverNodeVideoStreamsVideoStreamsItem["ColorPrimaries"].asString();
-		story_.cover.videoStreams16.push_back(videoStreamsItem29Object);
+			videoStreamsItem31Object.colorPrimaries = coverNodeVideoStreamsVideoStreamsItem["ColorPrimaries"].asString();
+		story_.cover.videoStreams18.push_back(videoStreamsItem31Object);
 	}
-	auto allSubtitles17Node = coverNode["Subtitles"]["SubtitlesItem"];
-	for (auto coverNodeSubtitlesSubtitlesItem : allSubtitles17Node)
+	auto allSubtitles19Node = coverNode["Subtitles"]["SubtitlesItem"];
+	for (auto coverNodeSubtitlesSubtitlesItem : allSubtitles19Node)
 	{
-		Story::Cover::SubtitlesItem30 subtitlesItem30Object;
+		Story::Cover::SubtitlesItem32 subtitlesItem32Object;
 		if(!coverNodeSubtitlesSubtitlesItem["Index"].isNull())
-			subtitlesItem30Object.index = std::stol(coverNodeSubtitlesSubtitlesItem["Index"].asString());
+			subtitlesItem32Object.index = std::stol(coverNodeSubtitlesSubtitlesItem["Index"].asString());
 		if(!coverNodeSubtitlesSubtitlesItem["Language"].isNull())
-			subtitlesItem30Object.language = coverNodeSubtitlesSubtitlesItem["Language"].asString();
+			subtitlesItem32Object.language = coverNodeSubtitlesSubtitlesItem["Language"].asString();
 		if(!coverNodeSubtitlesSubtitlesItem["CodecName"].isNull())
-			subtitlesItem30Object.codecName = coverNodeSubtitlesSubtitlesItem["CodecName"].asString();
+			subtitlesItem32Object.codecName = coverNodeSubtitlesSubtitlesItem["CodecName"].asString();
 		if(!coverNodeSubtitlesSubtitlesItem["CodecLongName"].isNull())
-			subtitlesItem30Object.codecLongName = coverNodeSubtitlesSubtitlesItem["CodecLongName"].asString();
+			subtitlesItem32Object.codecLongName = coverNodeSubtitlesSubtitlesItem["CodecLongName"].asString();
 		if(!coverNodeSubtitlesSubtitlesItem["CodecTagString"].isNull())
-			subtitlesItem30Object.codecTagString = coverNodeSubtitlesSubtitlesItem["CodecTagString"].asString();
+			subtitlesItem32Object.codecTagString = coverNodeSubtitlesSubtitlesItem["CodecTagString"].asString();
 		if(!coverNodeSubtitlesSubtitlesItem["CodecTag"].isNull())
-			subtitlesItem30Object.codecTag = coverNodeSubtitlesSubtitlesItem["CodecTag"].asString();
+			subtitlesItem32Object.codecTag = coverNodeSubtitlesSubtitlesItem["CodecTag"].asString();
 		if(!coverNodeSubtitlesSubtitlesItem["StartTime"].isNull())
-			subtitlesItem30Object.startTime = coverNodeSubtitlesSubtitlesItem["StartTime"].asString();
+			subtitlesItem32Object.startTime = coverNodeSubtitlesSubtitlesItem["StartTime"].asString();
 		if(!coverNodeSubtitlesSubtitlesItem["Duration"].isNull())
-			subtitlesItem30Object.duration = coverNodeSubtitlesSubtitlesItem["Duration"].asString();
+			subtitlesItem32Object.duration = coverNodeSubtitlesSubtitlesItem["Duration"].asString();
 		if(!coverNodeSubtitlesSubtitlesItem["Bitrate"].isNull())
-			subtitlesItem30Object.bitrate = std::stol(coverNodeSubtitlesSubtitlesItem["Bitrate"].asString());
+			subtitlesItem32Object.bitrate = std::stol(coverNodeSubtitlesSubtitlesItem["Bitrate"].asString());
 		if(!coverNodeSubtitlesSubtitlesItem["Content"].isNull())
-			subtitlesItem30Object.content = coverNodeSubtitlesSubtitlesItem["Content"].asString();
+			subtitlesItem32Object.content = coverNodeSubtitlesSubtitlesItem["Content"].asString();
 		if(!coverNodeSubtitlesSubtitlesItem["Width"].isNull())
-			subtitlesItem30Object.width = std::stol(coverNodeSubtitlesSubtitlesItem["Width"].asString());
+			subtitlesItem32Object.width = std::stol(coverNodeSubtitlesSubtitlesItem["Width"].asString());
 		if(!coverNodeSubtitlesSubtitlesItem["Height"].isNull())
-			subtitlesItem30Object.height = std::stol(coverNodeSubtitlesSubtitlesItem["Height"].asString());
-		story_.cover.subtitles17.push_back(subtitlesItem30Object);
+			subtitlesItem32Object.height = std::stol(coverNodeSubtitlesSubtitlesItem["Height"].asString());
+		story_.cover.subtitles19.push_back(subtitlesItem32Object);
 	}
-	auto allAudioStreams18Node = coverNode["AudioStreams"]["AudioStreamsItem"];
-	for (auto coverNodeAudioStreamsAudioStreamsItem : allAudioStreams18Node)
+	auto allAudioStreams20Node = coverNode["AudioStreams"]["AudioStreamsItem"];
+	for (auto coverNodeAudioStreamsAudioStreamsItem : allAudioStreams20Node)
 	{
-		Story::Cover::AudioStreamsItem31 audioStreamsItem31Object;
+		Story::Cover::AudioStreamsItem33 audioStreamsItem33Object;
 		if(!coverNodeAudioStreamsAudioStreamsItem["Index"].isNull())
-			audioStreamsItem31Object.index = std::stol(coverNodeAudioStreamsAudioStreamsItem["Index"].asString());
+			audioStreamsItem33Object.index = std::stol(coverNodeAudioStreamsAudioStreamsItem["Index"].asString());
 		if(!coverNodeAudioStreamsAudioStreamsItem["Language"].isNull())
-			audioStreamsItem31Object.language = coverNodeAudioStreamsAudioStreamsItem["Language"].asString();
+			audioStreamsItem33Object.language = coverNodeAudioStreamsAudioStreamsItem["Language"].asString();
 		if(!coverNodeAudioStreamsAudioStreamsItem["CodecName"].isNull())
-			audioStreamsItem31Object.codecName = coverNodeAudioStreamsAudioStreamsItem["CodecName"].asString();
+			audioStreamsItem33Object.codecName = coverNodeAudioStreamsAudioStreamsItem["CodecName"].asString();
 		if(!coverNodeAudioStreamsAudioStreamsItem["CodecLongName"].isNull())
-			audioStreamsItem31Object.codecLongName = coverNodeAudioStreamsAudioStreamsItem["CodecLongName"].asString();
+			audioStreamsItem33Object.codecLongName = coverNodeAudioStreamsAudioStreamsItem["CodecLongName"].asString();
 		if(!coverNodeAudioStreamsAudioStreamsItem["CodecTimeBase"].isNull())
-			audioStreamsItem31Object.codecTimeBase = coverNodeAudioStreamsAudioStreamsItem["CodecTimeBase"].asString();
+			audioStreamsItem33Object.codecTimeBase = coverNodeAudioStreamsAudioStreamsItem["CodecTimeBase"].asString();
 		if(!coverNodeAudioStreamsAudioStreamsItem["CodecTagString"].isNull())
-			audioStreamsItem31Object.codecTagString = coverNodeAudioStreamsAudioStreamsItem["CodecTagString"].asString();
+			audioStreamsItem33Object.codecTagString = coverNodeAudioStreamsAudioStreamsItem["CodecTagString"].asString();
 		if(!coverNodeAudioStreamsAudioStreamsItem["CodecTag"].isNull())
-			audioStreamsItem31Object.codecTag = coverNodeAudioStreamsAudioStreamsItem["CodecTag"].asString();
+			audioStreamsItem33Object.codecTag = coverNodeAudioStreamsAudioStreamsItem["CodecTag"].asString();
 		if(!coverNodeAudioStreamsAudioStreamsItem["TimeBase"].isNull())
-			audioStreamsItem31Object.timeBase = coverNodeAudioStreamsAudioStreamsItem["TimeBase"].asString();
+			audioStreamsItem33Object.timeBase = coverNodeAudioStreamsAudioStreamsItem["TimeBase"].asString();
 		if(!coverNodeAudioStreamsAudioStreamsItem["StartTime"].isNull())
-			audioStreamsItem31Object.startTime = coverNodeAudioStreamsAudioStreamsItem["StartTime"].asString();
+			audioStreamsItem33Object.startTime = coverNodeAudioStreamsAudioStreamsItem["StartTime"].asString();
 		if(!coverNodeAudioStreamsAudioStreamsItem["Duration"].isNull())
-			audioStreamsItem31Object.duration = coverNodeAudioStreamsAudioStreamsItem["Duration"].asString();
+			audioStreamsItem33Object.duration = coverNodeAudioStreamsAudioStreamsItem["Duration"].asString();
 		if(!coverNodeAudioStreamsAudioStreamsItem["Bitrate"].isNull())
-			audioStreamsItem31Object.bitrate = std::stol(coverNodeAudioStreamsAudioStreamsItem["Bitrate"].asString());
+			audioStreamsItem33Object.bitrate = std::stol(coverNodeAudioStreamsAudioStreamsItem["Bitrate"].asString());
 		if(!coverNodeAudioStreamsAudioStreamsItem["FrameCount"].isNull())
-			audioStreamsItem31Object.frameCount = std::stol(coverNodeAudioStreamsAudioStreamsItem["FrameCount"].asString());
+			audioStreamsItem33Object.frameCount = std::stol(coverNodeAudioStreamsAudioStreamsItem["FrameCount"].asString());
 		if(!coverNodeAudioStreamsAudioStreamsItem["Lyric"].isNull())
-			audioStreamsItem31Object.lyric = coverNodeAudioStreamsAudioStreamsItem["Lyric"].asString();
+			audioStreamsItem33Object.lyric = coverNodeAudioStreamsAudioStreamsItem["Lyric"].asString();
 		if(!coverNodeAudioStreamsAudioStreamsItem["SampleFormat"].isNull())
-			audioStreamsItem31Object.sampleFormat = coverNodeAudioStreamsAudioStreamsItem["SampleFormat"].asString();
+			audioStreamsItem33Object.sampleFormat = coverNodeAudioStreamsAudioStreamsItem["SampleFormat"].asString();
 		if(!coverNodeAudioStreamsAudioStreamsItem["SampleRate"].isNull())
-			audioStreamsItem31Object.sampleRate = std::stol(coverNodeAudioStreamsAudioStreamsItem["SampleRate"].asString());
+			audioStreamsItem33Object.sampleRate = std::stol(coverNodeAudioStreamsAudioStreamsItem["SampleRate"].asString());
 		if(!coverNodeAudioStreamsAudioStreamsItem["Channels"].isNull())
-			audioStreamsItem31Object.channels = std::stol(coverNodeAudioStreamsAudioStreamsItem["Channels"].asString());
+			audioStreamsItem33Object.channels = std::stol(coverNodeAudioStreamsAudioStreamsItem["Channels"].asString());
 		if(!coverNodeAudioStreamsAudioStreamsItem["ChannelLayout"].isNull())
-			audioStreamsItem31Object.channelLayout = coverNodeAudioStreamsAudioStreamsItem["ChannelLayout"].asString();
-		story_.cover.audioStreams18.push_back(audioStreamsItem31Object);
+			audioStreamsItem33Object.channelLayout = coverNodeAudioStreamsAudioStreamsItem["ChannelLayout"].asString();
+		story_.cover.audioStreams20.push_back(audioStreamsItem33Object);
 	}
-	auto allAudioCovers19Node = coverNode["AudioCovers"]["AudioCoversItem"];
-	for (auto coverNodeAudioCoversAudioCoversItem : allAudioCovers19Node)
+	auto allAudioCovers21Node = coverNode["AudioCovers"]["AudioCoversItem"];
+	for (auto coverNodeAudioCoversAudioCoversItem : allAudioCovers21Node)
 	{
-		Story::Cover::AudioCoversItem32 audioCoversItem32Object;
+		Story::Cover::AudioCoversItem34 audioCoversItem34Object;
 		if(!coverNodeAudioCoversAudioCoversItem["ImageWidth"].isNull())
-			audioCoversItem32Object.imageWidth = std::stol(coverNodeAudioCoversAudioCoversItem["ImageWidth"].asString());
+			audioCoversItem34Object.imageWidth = std::stol(coverNodeAudioCoversAudioCoversItem["ImageWidth"].asString());
 		if(!coverNodeAudioCoversAudioCoversItem["ImageHeight"].isNull())
-			audioCoversItem32Object.imageHeight = std::stol(coverNodeAudioCoversAudioCoversItem["ImageHeight"].asString());
+			audioCoversItem34Object.imageHeight = std::stol(coverNodeAudioCoversAudioCoversItem["ImageHeight"].asString());
 		if(!coverNodeAudioCoversAudioCoversItem["EXIF"].isNull())
-			audioCoversItem32Object.eXIF = coverNodeAudioCoversAudioCoversItem["EXIF"].asString();
-		auto allCroppingSuggestions34Node = coverNodeAudioCoversAudioCoversItem["CroppingSuggestions"]["CroppingSuggestionsItem"];
-		for (auto coverNodeAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem : allCroppingSuggestions34Node)
+			audioCoversItem34Object.eXIF = coverNodeAudioCoversAudioCoversItem["EXIF"].asString();
+		auto allCroppingSuggestions36Node = coverNodeAudioCoversAudioCoversItem["CroppingSuggestions"]["CroppingSuggestionsItem"];
+		for (auto coverNodeAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem : allCroppingSuggestions36Node)
 		{
-			Story::Cover::AudioCoversItem32::CroppingSuggestionsItem36 croppingSuggestions34Object;
+			Story::Cover::AudioCoversItem34::CroppingSuggestionsItem38 croppingSuggestions36Object;
 			if(!coverNodeAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem["AspectRatio"].isNull())
-				croppingSuggestions34Object.aspectRatio = coverNodeAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem["AspectRatio"].asString();
+				croppingSuggestions36Object.aspectRatio = coverNodeAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem["AspectRatio"].asString();
 			if(!coverNodeAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem["Confidence"].isNull())
-				croppingSuggestions34Object.confidence = std::stof(coverNodeAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem["Confidence"].asString());
-			auto boundary37Node = value["Boundary"];
-			if(!boundary37Node["Width"].isNull())
-				croppingSuggestions34Object.boundary37.width = std::stol(boundary37Node["Width"].asString());
-			if(!boundary37Node["Height"].isNull())
-				croppingSuggestions34Object.boundary37.height = std::stol(boundary37Node["Height"].asString());
-			if(!boundary37Node["Left"].isNull())
-				croppingSuggestions34Object.boundary37.left = std::stol(boundary37Node["Left"].asString());
-			if(!boundary37Node["Top"].isNull())
-				croppingSuggestions34Object.boundary37.top = std::stol(boundary37Node["Top"].asString());
-			audioCoversItem32Object.croppingSuggestions34.push_back(croppingSuggestions34Object);
-		}
-		auto allOCRContents35Node = coverNodeAudioCoversAudioCoversItem["OCRContents"]["OCRContentsItem"];
-		for (auto coverNodeAudioCoversAudioCoversItemOCRContentsOCRContentsItem : allOCRContents35Node)
-		{
-			Story::Cover::AudioCoversItem32::OCRContentsItem38 oCRContents35Object;
-			if(!coverNodeAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Language"].isNull())
-				oCRContents35Object.language = coverNodeAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Language"].asString();
-			if(!coverNodeAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Contents"].isNull())
-				oCRContents35Object.contents = coverNodeAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Contents"].asString();
-			if(!coverNodeAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Confidence"].isNull())
-				oCRContents35Object.confidence = std::stof(coverNodeAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Confidence"].asString());
+				croppingSuggestions36Object.confidence = std::stof(coverNodeAudioCoversAudioCoversItemCroppingSuggestionsCroppingSuggestionsItem["Confidence"].asString());
 			auto boundary39Node = value["Boundary"];
 			if(!boundary39Node["Width"].isNull())
-				oCRContents35Object.boundary39.width = std::stol(boundary39Node["Width"].asString());
+				croppingSuggestions36Object.boundary39.width = std::stol(boundary39Node["Width"].asString());
 			if(!boundary39Node["Height"].isNull())
-				oCRContents35Object.boundary39.height = std::stol(boundary39Node["Height"].asString());
+				croppingSuggestions36Object.boundary39.height = std::stol(boundary39Node["Height"].asString());
 			if(!boundary39Node["Left"].isNull())
-				oCRContents35Object.boundary39.left = std::stol(boundary39Node["Left"].asString());
+				croppingSuggestions36Object.boundary39.left = std::stol(boundary39Node["Left"].asString());
 			if(!boundary39Node["Top"].isNull())
-				oCRContents35Object.boundary39.top = std::stol(boundary39Node["Top"].asString());
-			audioCoversItem32Object.oCRContents35.push_back(oCRContents35Object);
+				croppingSuggestions36Object.boundary39.top = std::stol(boundary39Node["Top"].asString());
+			audioCoversItem34Object.croppingSuggestions36.push_back(croppingSuggestions36Object);
 		}
-		auto imageScore33Node = value["ImageScore"];
-		if(!imageScore33Node["OverallQualityScore"].isNull())
-			audioCoversItem32Object.imageScore33.overallQualityScore = std::stof(imageScore33Node["OverallQualityScore"].asString());
-		story_.cover.audioCovers19.push_back(audioCoversItem32Object);
+		auto allOCRContents37Node = coverNodeAudioCoversAudioCoversItem["OCRContents"]["OCRContentsItem"];
+		for (auto coverNodeAudioCoversAudioCoversItemOCRContentsOCRContentsItem : allOCRContents37Node)
+		{
+			Story::Cover::AudioCoversItem34::OCRContentsItem40 oCRContents37Object;
+			if(!coverNodeAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Language"].isNull())
+				oCRContents37Object.language = coverNodeAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Language"].asString();
+			if(!coverNodeAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Contents"].isNull())
+				oCRContents37Object.contents = coverNodeAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Contents"].asString();
+			if(!coverNodeAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Confidence"].isNull())
+				oCRContents37Object.confidence = std::stof(coverNodeAudioCoversAudioCoversItemOCRContentsOCRContentsItem["Confidence"].asString());
+			auto boundary41Node = value["Boundary"];
+			if(!boundary41Node["Width"].isNull())
+				oCRContents37Object.boundary41.width = std::stol(boundary41Node["Width"].asString());
+			if(!boundary41Node["Height"].isNull())
+				oCRContents37Object.boundary41.height = std::stol(boundary41Node["Height"].asString());
+			if(!boundary41Node["Left"].isNull())
+				oCRContents37Object.boundary41.left = std::stol(boundary41Node["Left"].asString());
+			if(!boundary41Node["Top"].isNull())
+				oCRContents37Object.boundary41.top = std::stol(boundary41Node["Top"].asString());
+			audioCoversItem34Object.oCRContents37.push_back(oCRContents37Object);
+		}
+		auto imageScore35Node = value["ImageScore"];
+		if(!imageScore35Node["OverallQualityScore"].isNull())
+			audioCoversItem34Object.imageScore35.overallQualityScore = std::stof(imageScore35Node["OverallQualityScore"].asString());
+		story_.cover.audioCovers21.push_back(audioCoversItem34Object);
 	}
-	auto imageScore10Node = coverNode["ImageScore"];
-	if(!imageScore10Node["OverallQualityScore"].isNull())
-		story_.cover.imageScore10.overallQualityScore = std::stof(imageScore10Node["OverallQualityScore"].asString());
+	auto imageScore12Node = coverNode["ImageScore"];
+	if(!imageScore12Node["OverallQualityScore"].isNull())
+		story_.cover.imageScore12.overallQualityScore = std::stof(imageScore12Node["OverallQualityScore"].asString());
 		auto allFigureClusterIds = storyNode["FigureClusterIds"]["null"];
 		for (auto value : allFigureClusterIds)
 			story_.figureClusterIds.push_back(value.asString());

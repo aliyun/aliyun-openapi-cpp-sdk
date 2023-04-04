@@ -30,14 +30,14 @@ class ALIBABACLOUD_IMM_EXPORT DeleteDatasetRequest : public RpcServiceRequest {
 public:
 	DeleteDatasetRequest();
 	~DeleteDatasetRequest();
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
 
 private:
-	std::string projectName_;
 	std::string datasetName_;
+	std::string projectName_;
 };
 } // namespace Model
 } // namespace Imm

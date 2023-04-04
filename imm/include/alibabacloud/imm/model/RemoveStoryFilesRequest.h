@@ -33,18 +33,18 @@ public:
 	};
 	RemoveStoryFilesRequest();
 	~RemoveStoryFilesRequest();
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
 	std::vector<Files> getFiles() const;
 	void setFiles(const std::vector<Files> &files);
 	std::string getObjectId() const;
 	void setObjectId(const std::string &objectId);
 
 private:
-	std::string projectName_;
 	std::string datasetName_;
+	std::string projectName_;
 	std::vector<Files> files_;
 	std::string objectId_;
 };

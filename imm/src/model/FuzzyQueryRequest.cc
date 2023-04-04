@@ -25,15 +25,6 @@ FuzzyQueryRequest::FuzzyQueryRequest()
 
 FuzzyQueryRequest::~FuzzyQueryRequest() {}
 
-std::string FuzzyQueryRequest::getProjectName() const {
-  return projectName_;
-}
-
-void FuzzyQueryRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
 std::string FuzzyQueryRequest::getNextToken() const {
   return nextToken_;
 }
@@ -41,6 +32,33 @@ std::string FuzzyQueryRequest::getNextToken() const {
 void FuzzyQueryRequest::setNextToken(const std::string &nextToken) {
   nextToken_ = nextToken;
   setParameter(std::string("NextToken"), nextToken);
+}
+
+std::string FuzzyQueryRequest::getDatasetName() const {
+  return datasetName_;
+}
+
+void FuzzyQueryRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
+}
+
+std::string FuzzyQueryRequest::getOrder() const {
+  return order_;
+}
+
+void FuzzyQueryRequest::setOrder(const std::string &order) {
+  order_ = order;
+  setParameter(std::string("Order"), order);
+}
+
+std::string FuzzyQueryRequest::getProjectName() const {
+  return projectName_;
+}
+
+void FuzzyQueryRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
 std::string FuzzyQueryRequest::getQuery() const {
@@ -52,6 +70,15 @@ void FuzzyQueryRequest::setQuery(const std::string &query) {
   setParameter(std::string("Query"), query);
 }
 
+std::string FuzzyQueryRequest::getSort() const {
+  return sort_;
+}
+
+void FuzzyQueryRequest::setSort(const std::string &sort) {
+  sort_ = sort;
+  setParameter(std::string("Sort"), sort);
+}
+
 long FuzzyQueryRequest::getMaxResults() const {
   return maxResults_;
 }
@@ -59,14 +86,5 @@ long FuzzyQueryRequest::getMaxResults() const {
 void FuzzyQueryRequest::setMaxResults(long maxResults) {
   maxResults_ = maxResults;
   setParameter(std::string("MaxResults"), std::to_string(maxResults));
-}
-
-std::string FuzzyQueryRequest::getDatasetName() const {
-  return datasetName_;
-}
-
-void FuzzyQueryRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
 }
 

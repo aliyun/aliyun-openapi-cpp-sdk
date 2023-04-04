@@ -25,15 +25,6 @@ GetFileMetaRequest::GetFileMetaRequest()
 
 GetFileMetaRequest::~GetFileMetaRequest() {}
 
-std::string GetFileMetaRequest::getProjectName() const {
-  return projectName_;
-}
-
-void GetFileMetaRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
 std::string GetFileMetaRequest::getDatasetName() const {
   return datasetName_;
 }
@@ -41,6 +32,15 @@ std::string GetFileMetaRequest::getDatasetName() const {
 void GetFileMetaRequest::setDatasetName(const std::string &datasetName) {
   datasetName_ = datasetName;
   setParameter(std::string("DatasetName"), datasetName);
+}
+
+std::string GetFileMetaRequest::getProjectName() const {
+  return projectName_;
+}
+
+void GetFileMetaRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 
 std::string GetFileMetaRequest::getURI() const {

@@ -41,20 +41,20 @@ public:
 	};
 	DetectImageLabelsRequest();
 	~DetectImageLabelsRequest();
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
-	std::string getSourceURI() const;
-	void setSourceURI(const std::string &sourceURI);
 	float getThreshold() const;
 	void setThreshold(float threshold);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
 	CredentialConfig getCredentialConfig() const;
 	void setCredentialConfig(const CredentialConfig &credentialConfig);
+	std::string getSourceURI() const;
+	void setSourceURI(const std::string &sourceURI);
 
 private:
-	std::string projectName_;
-	std::string sourceURI_;
 	float threshold_;
+	std::string projectName_;
 	CredentialConfig credentialConfig_;
+	std::string sourceURI_;
 };
 } // namespace Model
 } // namespace Imm

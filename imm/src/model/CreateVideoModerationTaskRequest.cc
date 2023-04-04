@@ -34,6 +34,28 @@ void CreateVideoModerationTaskRequest::setUserData(const std::string &userData) 
   setParameter(std::string("UserData"), userData);
 }
 
+CreateVideoModerationTaskRequest::Notification CreateVideoModerationTaskRequest::getNotification() const {
+  return notification_;
+}
+
+void CreateVideoModerationTaskRequest::setNotification(const CreateVideoModerationTaskRequest::Notification &notification) {
+  notification_ = notification;
+  setParameter(std::string("Notification") + ".MNS.Endpoint", notification.mNS.endpoint);
+  setParameter(std::string("Notification") + ".MNS.TopicName", notification.mNS.topicName);
+  setParameter(std::string("Notification") + ".RocketMQ.Endpoint", notification.rocketMQ.endpoint);
+  setParameter(std::string("Notification") + ".RocketMQ.InstanceId", notification.rocketMQ.instanceId);
+  setParameter(std::string("Notification") + ".RocketMQ.TopicName", notification.rocketMQ.topicName);
+}
+
+std::string CreateVideoModerationTaskRequest::getNotifyEndpoint() const {
+  return notifyEndpoint_;
+}
+
+void CreateVideoModerationTaskRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
+  notifyEndpoint_ = notifyEndpoint;
+  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
+}
+
 std::string CreateVideoModerationTaskRequest::getProjectName() const {
   return projectName_;
 }
@@ -52,35 +74,6 @@ void CreateVideoModerationTaskRequest::setNotifyTopicName(const std::string &not
   setParameter(std::string("NotifyTopicName"), notifyTopicName);
 }
 
-std::string CreateVideoModerationTaskRequest::getNotifyEndpoint() const {
-  return notifyEndpoint_;
-}
-
-void CreateVideoModerationTaskRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
-  notifyEndpoint_ = notifyEndpoint;
-  setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
-}
-
-std::string CreateVideoModerationTaskRequest::getSourceURI() const {
-  return sourceURI_;
-}
-
-void CreateVideoModerationTaskRequest::setSourceURI(const std::string &sourceURI) {
-  sourceURI_ = sourceURI;
-  setParameter(std::string("SourceURI"), sourceURI);
-}
-
-std::vector<CreateVideoModerationTaskRequest::std::string> CreateVideoModerationTaskRequest::getScenes() const {
-  return scenes_;
-}
-
-void CreateVideoModerationTaskRequest::setScenes(const std::vector<CreateVideoModerationTaskRequest::std::string> &scenes) {
-  scenes_ = scenes;
-  for(int dep1 = 0; dep1 != scenes.size(); dep1++) {
-    setParameter(std::string("Scenes") + "." + std::to_string(dep1 + 1), scenes[dep1]);
-  }
-}
-
 long CreateVideoModerationTaskRequest::getMaxFrames() const {
   return maxFrames_;
 }
@@ -88,15 +81,6 @@ long CreateVideoModerationTaskRequest::getMaxFrames() const {
 void CreateVideoModerationTaskRequest::setMaxFrames(long maxFrames) {
   maxFrames_ = maxFrames;
   setParameter(std::string("MaxFrames"), std::to_string(maxFrames));
-}
-
-long CreateVideoModerationTaskRequest::getInterval() const {
-  return interval_;
-}
-
-void CreateVideoModerationTaskRequest::setInterval(long interval) {
-  interval_ = interval;
-  setParameter(std::string("Interval"), std::to_string(interval));
 }
 
 CreateVideoModerationTaskRequest::CredentialConfig CreateVideoModerationTaskRequest::getCredentialConfig() const {
@@ -132,5 +116,34 @@ void CreateVideoModerationTaskRequest::setTags(const std::map<std::string, std::
   for(auto const &iter1 : tags) {
     setParameter(std::string("Tags") + "." + iter1.first, iter1.second);
   }
+}
+
+std::string CreateVideoModerationTaskRequest::getSourceURI() const {
+  return sourceURI_;
+}
+
+void CreateVideoModerationTaskRequest::setSourceURI(const std::string &sourceURI) {
+  sourceURI_ = sourceURI;
+  setParameter(std::string("SourceURI"), sourceURI);
+}
+
+std::vector<CreateVideoModerationTaskRequest::std::string> CreateVideoModerationTaskRequest::getScenes() const {
+  return scenes_;
+}
+
+void CreateVideoModerationTaskRequest::setScenes(const std::vector<CreateVideoModerationTaskRequest::std::string> &scenes) {
+  scenes_ = scenes;
+  for(int dep1 = 0; dep1 != scenes.size(); dep1++) {
+    setParameter(std::string("Scenes") + "." + std::to_string(dep1 + 1), scenes[dep1]);
+  }
+}
+
+long CreateVideoModerationTaskRequest::getInterval() const {
+  return interval_;
+}
+
+void CreateVideoModerationTaskRequest::setInterval(long interval) {
+  interval_ = interval;
+  setParameter(std::string("Interval"), std::to_string(interval));
 }
 

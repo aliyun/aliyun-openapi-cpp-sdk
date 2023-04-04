@@ -36,11 +36,11 @@ namespace AlibabaCloud
 				{
 					struct Cover
 					{
-						struct ImageScore10
+						struct ImageScore12
 						{
 							float overallQualityScore;
 						};
-						struct AddressesItem20
+						struct AddressesItem22
 						{
 							std::string language;
 							std::string township;
@@ -50,16 +50,16 @@ namespace AlibabaCloud
 							std::string district;
 							std::string province;
 						};
-						struct FiguresItem21
+						struct FiguresItem23
 						{
-							struct Boundary22
+							struct Boundary24
 							{
 								long left;
 								long top;
 								long height;
 								long width;
 							};
-							struct HeadPose23
+							struct HeadPose25
 							{
 								float pitch;
 								float roll;
@@ -67,8 +67,8 @@ namespace AlibabaCloud
 							};
 							std::string beard;
 							float maskConfidence;
+							HeadPose25 headPose25;
 							std::string gender;
-							HeadPose23 headPose23;
 							float figureClusterConfidence;
 							float beardConfidence;
 							std::string figureId;
@@ -79,11 +79,11 @@ namespace AlibabaCloud
 							std::string figureType;
 							float genderConfidence;
 							std::string mask;
-							Boundary22 boundary22;
 							float emotionConfidence;
 							float hatConfidence;
 							float glassesConfidence;
 							float sharpness;
+							Boundary24 boundary24;
 							std::string figureClusterId;
 							float faceQuality;
 							float attractive;
@@ -92,7 +92,7 @@ namespace AlibabaCloud
 							float figureConfidence;
 							std::string hat;
 						};
-						struct LabelsItem24
+						struct LabelsItem26
 						{
 							float centricScore;
 							std::string language;
@@ -101,20 +101,7 @@ namespace AlibabaCloud
 							long labelLevel;
 							std::string parentLabelName;
 						};
-						struct CroppingSuggestionsItem25
-						{
-							struct Boundary26
-							{
-								long left;
-								long top;
-								long height;
-								long width;
-							};
-							std::string aspectRatio;
-							float confidence;
-							Boundary26 boundary26;
-						};
-						struct OCRContentsItem27
+						struct CroppingSuggestionsItem27
 						{
 							struct Boundary28
 							{
@@ -123,12 +110,25 @@ namespace AlibabaCloud
 								long height;
 								long width;
 							};
+							std::string aspectRatio;
 							Boundary28 boundary28;
+							float confidence;
+						};
+						struct OCRContentsItem29
+						{
+							struct Boundary30
+							{
+								long left;
+								long top;
+								long height;
+								long width;
+							};
 							std::string contents;
+							Boundary30 boundary30;
 							std::string language;
 							float confidence;
 						};
-						struct VideoStreamsItem29
+						struct VideoStreamsItem31
 						{
 							std::string codecTimeBase;
 							std::string rotate;
@@ -159,7 +159,7 @@ namespace AlibabaCloud
 							std::string codecLongName;
 							long level;
 						};
-						struct SubtitlesItem30
+						struct SubtitlesItem32
 						{
 							std::string codecTag;
 							std::string codecTagString;
@@ -174,7 +174,7 @@ namespace AlibabaCloud
 							long bitrate;
 							long width;
 						};
-						struct AudioStreamsItem31
+						struct AudioStreamsItem33
 						{
 							std::string codecTag;
 							std::string codecTimeBase;
@@ -194,26 +194,13 @@ namespace AlibabaCloud
 							std::string lyric;
 							std::string timeBase;
 						};
-						struct AudioCoversItem32
+						struct AudioCoversItem34
 						{
-							struct ImageScore33
+							struct ImageScore35
 							{
 								float overallQualityScore;
 							};
-							struct CroppingSuggestionsItem36
-							{
-								struct Boundary37
-								{
-									long left;
-									long top;
-									long height;
-									long width;
-								};
-								std::string aspectRatio;
-								float confidence;
-								Boundary37 boundary37;
-							};
-							struct OCRContentsItem38
+							struct CroppingSuggestionsItem38
 							{
 								struct Boundary39
 								{
@@ -222,40 +209,53 @@ namespace AlibabaCloud
 									long height;
 									long width;
 								};
+								std::string aspectRatio;
 								Boundary39 boundary39;
+								float confidence;
+							};
+							struct OCRContentsItem40
+							{
+								struct Boundary41
+								{
+									long left;
+									long top;
+									long height;
+									long width;
+								};
 								std::string contents;
+								Boundary41 boundary41;
 								std::string language;
 								float confidence;
 							};
 							std::string eXIF;
 							long imageHeight;
-							ImageScore33 imageScore33;
-							std::vector<AudioCoversItem32::CroppingSuggestionsItem36> croppingSuggestions34;
 							long imageWidth;
-							std::vector<AudioCoversItem32::OCRContentsItem38> oCRContents35;
+							ImageScore35 imageScore35;
+							std::vector<AudioCoversItem34::CroppingSuggestionsItem38> croppingSuggestions36;
+							std::vector<AudioCoversItem34::OCRContentsItem40> oCRContents37;
 						};
-						std::vector<FiguresItem21> figures12;
 						std::string produceTime;
 						std::string timezone;
 						std::string artist;
+						std::vector<FiguresItem23> figures14;
 						std::string objectACL;
 						std::string contentType;
 						std::string accessControlRequestMethod;
+						std::vector<AudioStreamsItem33> audioStreams20;
 						long size;
 						std::string album;
 						std::string contentLanguage;
 						std::string oSSTagging;
+						std::vector<LabelsItem26> labels15;
 						long streamCount;
-						std::vector<LabelsItem24> labels13;
 						std::string customLabels;
 						long videoHeight;
 						long imageWidth;
 						std::string documentLanguage;
 						std::string oSSStorageClass;
-						std::vector<OCRContentsItem27> oCRContents15;
 						std::string mediaType;
-						std::vector<AudioStreamsItem31> audioStreams18;
 						std::string oSSDeleteMarker;
+						std::vector<OCRContentsItem29> oCRContents17;
 						std::string formatLongName;
 						long programCount;
 						double startTime;
@@ -276,22 +276,22 @@ namespace AlibabaCloud
 						std::string fileAccessTime;
 						std::string projectName;
 						long videoWidth;
+						std::vector<AudioCoversItem34> audioCovers21;
 						std::string contentEncoding;
 						std::string uRI;
+						std::vector<SubtitlesItem32> subtitles19;
 						std::string objectType;
-						std::vector<SubtitlesItem30> subtitles17;
 						std::string serverSideEncryptionKeyId;
 						std::string ownerId;
 						std::string fileModifiedTime;
 						std::string language;
-						ImageScore10 imageScore10;
 						std::string fileCreateTime;
+						ImageScore12 imageScore12;
 						std::string serverSideEncryption;
 						std::string formatName;
 						std::string composer;
-						std::vector<AudioCoversItem32> audioCovers19;
-						std::vector<VideoStreamsItem29> videoStreams16;
 						std::string objectId;
+						std::vector<VideoStreamsItem31> videoStreams18;
 						std::string createTime;
 						std::string title;
 						std::string travelClusterId;
@@ -302,15 +302,15 @@ namespace AlibabaCloud
 						std::string contentMd5;
 						std::string contentDisposition;
 						std::string customId;
-						std::vector<CroppingSuggestionsItem25> croppingSuggestions14;
 						std::string updateTime;
 						std::string oSSUserMeta;
 						std::string accessControlAllowOrigin;
 						std::string oSSCRC64;
 						long oSSTaggingCount;
+						std::vector<CroppingSuggestionsItem27> croppingSuggestions16;
 						std::string oSSURI;
-						std::vector<AddressesItem20> addresses11;
 						std::string serverSideDataEncryption;
+						std::vector<AddressesItem22> addresses13;
 						std::string latLong;
 						std::string oSSObjectType;
 					};
@@ -383,7 +383,7 @@ namespace AlibabaCloud
 						};
 						struct CroppingSuggestionsItem
 						{
-							struct Boundary1
+							struct Boundary2
 							{
 								long left;
 								long top;
@@ -391,12 +391,12 @@ namespace AlibabaCloud
 								long width;
 							};
 							std::string aspectRatio;
-							Boundary1 boundary1;
 							float confidence;
+							Boundary2 boundary2;
 						};
 						struct OCRContentsItem
 						{
-							struct Boundary2
+							struct Boundary3
 							{
 								long left;
 								long top;
@@ -406,7 +406,7 @@ namespace AlibabaCloud
 							std::string contents;
 							std::string language;
 							float confidence;
-							Boundary2 boundary2;
+							Boundary3 boundary3;
 						};
 						struct VideoStreamsItem
 						{
@@ -476,13 +476,13 @@ namespace AlibabaCloud
 						};
 						struct AudioCoversItem
 						{
-							struct ImageScore3
+							struct ImageScore4
 							{
 								float overallQualityScore;
 							};
-							struct CroppingSuggestionsItem6
+							struct CroppingSuggestionsItem7
 							{
-								struct Boundary7
+								struct Boundary8
 								{
 									long left;
 									long top;
@@ -491,11 +491,11 @@ namespace AlibabaCloud
 								};
 								std::string aspectRatio;
 								float confidence;
-								Boundary7 boundary7;
+								Boundary8 boundary8;
 							};
-							struct OCRContentsItem8
+							struct OCRContentsItem9
 							{
-								struct Boundary9
+								struct Boundary10
 								{
 									long left;
 									long top;
@@ -505,14 +505,14 @@ namespace AlibabaCloud
 								std::string contents;
 								std::string language;
 								float confidence;
-								Boundary9 boundary9;
+								Boundary10 boundary10;
 							};
 							std::string eXIF;
-							std::vector<AudioCoversItem::CroppingSuggestionsItem6> croppingSuggestions4;
 							long imageHeight;
 							long imageWidth;
-							std::vector<AudioCoversItem::OCRContentsItem8> oCRContents5;
-							ImageScore3 imageScore3;
+							std::vector<AudioCoversItem::CroppingSuggestionsItem7> croppingSuggestions5;
+							ImageScore4 imageScore4;
+							std::vector<AudioCoversItem::OCRContentsItem9> oCRContents6;
 						};
 						std::string produceTime;
 						std::string timezone;
@@ -524,7 +524,6 @@ namespace AlibabaCloud
 						std::string album;
 						std::string contentLanguage;
 						std::string oSSTagging;
-						std::vector<FilesItem::AddressesItem> addresses;
 						long streamCount;
 						std::string customLabels;
 						long videoHeight;
@@ -541,6 +540,7 @@ namespace AlibabaCloud
 						std::vector<FilesItem::LabelsItem> labels;
 						double duration;
 						long orientation;
+						std::vector<FilesItem::AddressesItem> addresses1;
 						std::vector<FilesItem::CroppingSuggestionsItem> croppingSuggestions;
 						std::string eXIF;
 						std::string performer;
@@ -594,11 +594,22 @@ namespace AlibabaCloud
 						std::string latLong;
 						std::string oSSObjectType;
 					};
+					struct AddressesItem11
+					{
+						std::string language;
+						std::string township;
+						std::string addressLine;
+						std::string country;
+						std::string city;
+						std::string district;
+						std::string province;
+					};
 					std::string storyName;
 					std::string projectName;
 					std::string objectId;
 					std::string createTime;
 					std::string storyType;
+					std::vector<StoriesItem::AddressesItem11> addresses;
 					std::string objectType;
 					Cover cover;
 					std::string customLabels;

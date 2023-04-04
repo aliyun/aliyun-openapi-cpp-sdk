@@ -25,15 +25,13 @@ BatchDeleteFileMetaRequest::BatchDeleteFileMetaRequest()
 
 BatchDeleteFileMetaRequest::~BatchDeleteFileMetaRequest() {}
 
-std::vector<BatchDeleteFileMetaRequest::std::string> BatchDeleteFileMetaRequest::getURIs() const {
-  return uRIs_;
+std::string BatchDeleteFileMetaRequest::getDatasetName() const {
+  return datasetName_;
 }
 
-void BatchDeleteFileMetaRequest::setURIs(const std::vector<BatchDeleteFileMetaRequest::std::string> &uRIs) {
-  uRIs_ = uRIs;
-  for(int dep1 = 0; dep1 != uRIs.size(); dep1++) {
-    setParameter(std::string("URIs") + "." + std::to_string(dep1 + 1), uRIs[dep1]);
-  }
+void BatchDeleteFileMetaRequest::setDatasetName(const std::string &datasetName) {
+  datasetName_ = datasetName;
+  setParameter(std::string("DatasetName"), datasetName);
 }
 
 std::string BatchDeleteFileMetaRequest::getProjectName() const {
@@ -45,12 +43,14 @@ void BatchDeleteFileMetaRequest::setProjectName(const std::string &projectName) 
   setParameter(std::string("ProjectName"), projectName);
 }
 
-std::string BatchDeleteFileMetaRequest::getDatasetName() const {
-  return datasetName_;
+std::vector<BatchDeleteFileMetaRequest::std::string> BatchDeleteFileMetaRequest::getURIs() const {
+  return uRIs_;
 }
 
-void BatchDeleteFileMetaRequest::setDatasetName(const std::string &datasetName) {
-  datasetName_ = datasetName;
-  setParameter(std::string("DatasetName"), datasetName);
+void BatchDeleteFileMetaRequest::setURIs(const std::vector<BatchDeleteFileMetaRequest::std::string> &uRIs) {
+  uRIs_ = uRIs;
+  for(int dep1 = 0; dep1 != uRIs.size(); dep1++) {
+    setParameter(std::string("URIs") + "." + std::to_string(dep1 + 1), uRIs[dep1]);
+  }
 }
 

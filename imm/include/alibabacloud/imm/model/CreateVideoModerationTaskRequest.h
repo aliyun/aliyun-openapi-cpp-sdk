@@ -28,6 +28,19 @@ namespace Imm {
 namespace Model {
 class ALIBABACLOUD_IMM_EXPORT CreateVideoModerationTaskRequest : public RpcServiceRequest {
 public:
+	struct Notification {
+		struct MNS {
+			std::string endpoint;
+			std::string topicName;
+		};
+		MNS mNS;
+		struct RocketMQ {
+			std::string endpoint;
+			std::string instanceId;
+			std::string topicName;
+		};
+		RocketMQ rocketMQ;
+	};
 	struct CredentialConfig {
 		struct ChainItem {
 			std::string role;
@@ -43,39 +56,42 @@ public:
 	~CreateVideoModerationTaskRequest();
 	std::string getUserData() const;
 	void setUserData(const std::string &userData);
+	Notification getNotification() const;
+	void setNotification(const Notification &notification);
+	std::string getNotifyEndpoint() const;
+	void setNotifyEndpoint(const std::string &notifyEndpoint);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
 	std::string getNotifyTopicName() const;
 	void setNotifyTopicName(const std::string &notifyTopicName);
-	std::string getNotifyEndpoint() const;
-	void setNotifyEndpoint(const std::string &notifyEndpoint);
-	std::string getSourceURI() const;
-	void setSourceURI(const std::string &sourceURI);
-	std::vector<std::string> getScenes() const;
-	void setScenes(const std::vector<std::string> &scenes);
 	long getMaxFrames() const;
 	void setMaxFrames(long maxFrames);
-	long getInterval() const;
-	void setInterval(long interval);
 	CredentialConfig getCredentialConfig() const;
 	void setCredentialConfig(const CredentialConfig &credentialConfig);
 	std::string getReviewer() const;
 	void setReviewer(const std::string &reviewer);
 	std::map<std::string, std::string> getTags() const;
 	void setTags(const std::map<std::string, std::string> &tags);
+	std::string getSourceURI() const;
+	void setSourceURI(const std::string &sourceURI);
+	std::vector<std::string> getScenes() const;
+	void setScenes(const std::vector<std::string> &scenes);
+	long getInterval() const;
+	void setInterval(long interval);
 
 private:
 	std::string userData_;
+	Notification notification_;
+	std::string notifyEndpoint_;
 	std::string projectName_;
 	std::string notifyTopicName_;
-	std::string notifyEndpoint_;
-	std::string sourceURI_;
-	std::vector<std::string> scenes_;
 	long maxFrames_;
-	long interval_;
 	CredentialConfig credentialConfig_;
 	std::string reviewer_;
 	std::map<std::string, std::string> tags_;
+	std::string sourceURI_;
+	std::vector<std::string> scenes_;
+	long interval_;
 };
 } // namespace Model
 } // namespace Imm

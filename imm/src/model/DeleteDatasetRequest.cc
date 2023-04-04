@@ -25,15 +25,6 @@ DeleteDatasetRequest::DeleteDatasetRequest()
 
 DeleteDatasetRequest::~DeleteDatasetRequest() {}
 
-std::string DeleteDatasetRequest::getProjectName() const {
-  return projectName_;
-}
-
-void DeleteDatasetRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
 std::string DeleteDatasetRequest::getDatasetName() const {
   return datasetName_;
 }
@@ -41,5 +32,14 @@ std::string DeleteDatasetRequest::getDatasetName() const {
 void DeleteDatasetRequest::setDatasetName(const std::string &datasetName) {
   datasetName_ = datasetName;
   setParameter(std::string("DatasetName"), datasetName);
+}
+
+std::string DeleteDatasetRequest::getProjectName() const {
+  return projectName_;
+}
+
+void DeleteDatasetRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
 }
 

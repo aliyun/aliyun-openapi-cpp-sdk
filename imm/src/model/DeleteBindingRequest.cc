@@ -25,24 +25,6 @@ DeleteBindingRequest::DeleteBindingRequest()
 
 DeleteBindingRequest::~DeleteBindingRequest() {}
 
-std::string DeleteBindingRequest::getProjectName() const {
-  return projectName_;
-}
-
-void DeleteBindingRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
-bool DeleteBindingRequest::getCleanup() const {
-  return cleanup_;
-}
-
-void DeleteBindingRequest::setCleanup(bool cleanup) {
-  cleanup_ = cleanup;
-  setParameter(std::string("Cleanup"), cleanup ? "true" : "false");
-}
-
 std::string DeleteBindingRequest::getDatasetName() const {
   return datasetName_;
 }
@@ -52,6 +34,15 @@ void DeleteBindingRequest::setDatasetName(const std::string &datasetName) {
   setParameter(std::string("DatasetName"), datasetName);
 }
 
+std::string DeleteBindingRequest::getProjectName() const {
+  return projectName_;
+}
+
+void DeleteBindingRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
+}
+
 std::string DeleteBindingRequest::getURI() const {
   return uRI_;
 }
@@ -59,5 +50,14 @@ std::string DeleteBindingRequest::getURI() const {
 void DeleteBindingRequest::setURI(const std::string &uRI) {
   uRI_ = uRI;
   setParameter(std::string("URI"), uRI);
+}
+
+bool DeleteBindingRequest::getCleanup() const {
+  return cleanup_;
+}
+
+void DeleteBindingRequest::setCleanup(bool cleanup) {
+  cleanup_ = cleanup;
+  setParameter(std::string("Cleanup"), cleanup ? "true" : "false");
 }
 

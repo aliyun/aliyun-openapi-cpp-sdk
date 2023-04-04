@@ -521,28 +521,6 @@ void SemanticQueryResult::parse(const std::string &payload)
 			filesObject.imageScore.overallQualityScore = std::stof(imageScoreNode["OverallQualityScore"].asString());
 		files_.push_back(filesObject);
 	}
-	auto allAggregationsNode = value["Aggregations"]["AggregationsItem"];
-	for (auto valueAggregationsAggregationsItem : allAggregationsNode)
-	{
-		AggregationsItem aggregationsObject;
-		if(!valueAggregationsAggregationsItem["Field"].isNull())
-			aggregationsObject.field = valueAggregationsAggregationsItem["Field"].asString();
-		if(!valueAggregationsAggregationsItem["Operation"].isNull())
-			aggregationsObject.operation = valueAggregationsAggregationsItem["Operation"].asString();
-		if(!valueAggregationsAggregationsItem["Value"].isNull())
-			aggregationsObject.value = std::stof(valueAggregationsAggregationsItem["Value"].asString());
-		auto allGroupsNode = valueAggregationsAggregationsItem["Groups"]["GroupsItem"];
-		for (auto valueAggregationsAggregationsItemGroupsGroupsItem : allGroupsNode)
-		{
-			AggregationsItem::GroupsItem groupsObject;
-			if(!valueAggregationsAggregationsItemGroupsGroupsItem["Value"].isNull())
-				groupsObject.value = valueAggregationsAggregationsItemGroupsGroupsItem["Value"].asString();
-			if(!valueAggregationsAggregationsItemGroupsGroupsItem["Count"].isNull())
-				groupsObject.count = std::stol(valueAggregationsAggregationsItemGroupsGroupsItem["Count"].asString());
-			aggregationsObject.groups.push_back(groupsObject);
-		}
-		aggregations_.push_back(aggregationsObject);
-	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 
@@ -551,11 +529,6 @@ void SemanticQueryResult::parse(const std::string &payload)
 std::string SemanticQueryResult::getNextToken()const
 {
 	return nextToken_;
-}
-
-std::vector<SemanticQueryResult::AggregationsItem> SemanticQueryResult::getAggregations()const
-{
-	return aggregations_;
 }
 
 std::vector<SemanticQueryResult::FilesItem> SemanticQueryResult::getFiles()const

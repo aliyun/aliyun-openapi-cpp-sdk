@@ -25,22 +25,17 @@ BatchIndexFileMetaRequest::BatchIndexFileMetaRequest()
 
 BatchIndexFileMetaRequest::~BatchIndexFileMetaRequest() {}
 
-std::string BatchIndexFileMetaRequest::getProjectName() const {
-  return projectName_;
+BatchIndexFileMetaRequest::Notification BatchIndexFileMetaRequest::getNotification() const {
+  return notification_;
 }
 
-void BatchIndexFileMetaRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
-std::string BatchIndexFileMetaRequest::getNotifyTopicName() const {
-  return notifyTopicName_;
-}
-
-void BatchIndexFileMetaRequest::setNotifyTopicName(const std::string &notifyTopicName) {
-  notifyTopicName_ = notifyTopicName;
-  setParameter(std::string("NotifyTopicName"), notifyTopicName);
+void BatchIndexFileMetaRequest::setNotification(const BatchIndexFileMetaRequest::Notification &notification) {
+  notification_ = notification;
+  setParameter(std::string("Notification") + ".MNS.Endpoint", notification.mNS.endpoint);
+  setParameter(std::string("Notification") + ".MNS.TopicName", notification.mNS.topicName);
+  setParameter(std::string("Notification") + ".RocketMQ.Endpoint", notification.rocketMQ.endpoint);
+  setParameter(std::string("Notification") + ".RocketMQ.InstanceId", notification.rocketMQ.instanceId);
+  setParameter(std::string("Notification") + ".RocketMQ.TopicName", notification.rocketMQ.topicName);
 }
 
 std::string BatchIndexFileMetaRequest::getNotifyEndpoint() const {
@@ -59,6 +54,24 @@ std::string BatchIndexFileMetaRequest::getDatasetName() const {
 void BatchIndexFileMetaRequest::setDatasetName(const std::string &datasetName) {
   datasetName_ = datasetName;
   setParameter(std::string("DatasetName"), datasetName);
+}
+
+std::string BatchIndexFileMetaRequest::getProjectName() const {
+  return projectName_;
+}
+
+void BatchIndexFileMetaRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string BatchIndexFileMetaRequest::getNotifyTopicName() const {
+  return notifyTopicName_;
+}
+
+void BatchIndexFileMetaRequest::setNotifyTopicName(const std::string &notifyTopicName) {
+  notifyTopicName_ = notifyTopicName;
+  setParameter(std::string("NotifyTopicName"), notifyTopicName);
 }
 
 std::vector<BatchIndexFileMetaRequest::Files> BatchIndexFileMetaRequest::getFiles() const {

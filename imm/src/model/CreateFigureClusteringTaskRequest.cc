@@ -34,22 +34,17 @@ void CreateFigureClusteringTaskRequest::setUserData(const std::string &userData)
   setParameter(std::string("UserData"), userData);
 }
 
-std::string CreateFigureClusteringTaskRequest::getProjectName() const {
-  return projectName_;
+CreateFigureClusteringTaskRequest::Notification CreateFigureClusteringTaskRequest::getNotification() const {
+  return notification_;
 }
 
-void CreateFigureClusteringTaskRequest::setProjectName(const std::string &projectName) {
-  projectName_ = projectName;
-  setParameter(std::string("ProjectName"), projectName);
-}
-
-std::string CreateFigureClusteringTaskRequest::getNotifyTopicName() const {
-  return notifyTopicName_;
-}
-
-void CreateFigureClusteringTaskRequest::setNotifyTopicName(const std::string &notifyTopicName) {
-  notifyTopicName_ = notifyTopicName;
-  setParameter(std::string("NotifyTopicName"), notifyTopicName);
+void CreateFigureClusteringTaskRequest::setNotification(const CreateFigureClusteringTaskRequest::Notification &notification) {
+  notification_ = notification;
+  setParameter(std::string("Notification") + ".MNS.Endpoint", notification.mNS.endpoint);
+  setParameter(std::string("Notification") + ".MNS.TopicName", notification.mNS.topicName);
+  setParameter(std::string("Notification") + ".RocketMQ.Endpoint", notification.rocketMQ.endpoint);
+  setParameter(std::string("Notification") + ".RocketMQ.InstanceId", notification.rocketMQ.instanceId);
+  setParameter(std::string("Notification") + ".RocketMQ.TopicName", notification.rocketMQ.topicName);
 }
 
 std::string CreateFigureClusteringTaskRequest::getNotifyEndpoint() const {
@@ -68,6 +63,24 @@ std::string CreateFigureClusteringTaskRequest::getDatasetName() const {
 void CreateFigureClusteringTaskRequest::setDatasetName(const std::string &datasetName) {
   datasetName_ = datasetName;
   setParameter(std::string("DatasetName"), datasetName);
+}
+
+std::string CreateFigureClusteringTaskRequest::getProjectName() const {
+  return projectName_;
+}
+
+void CreateFigureClusteringTaskRequest::setProjectName(const std::string &projectName) {
+  projectName_ = projectName;
+  setParameter(std::string("ProjectName"), projectName);
+}
+
+std::string CreateFigureClusteringTaskRequest::getNotifyTopicName() const {
+  return notifyTopicName_;
+}
+
+void CreateFigureClusteringTaskRequest::setNotifyTopicName(const std::string &notifyTopicName) {
+  notifyTopicName_ = notifyTopicName;
+  setParameter(std::string("NotifyTopicName"), notifyTopicName);
 }
 
 std::map<std::string, std::string> CreateFigureClusteringTaskRequest::getTags() const {

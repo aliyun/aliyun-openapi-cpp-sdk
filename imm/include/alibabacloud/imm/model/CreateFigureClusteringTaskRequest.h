@@ -28,27 +28,43 @@ namespace Imm {
 namespace Model {
 class ALIBABACLOUD_IMM_EXPORT CreateFigureClusteringTaskRequest : public RpcServiceRequest {
 public:
+	struct Notification {
+		struct MNS {
+			std::string endpoint;
+			std::string topicName;
+		};
+		MNS mNS;
+		struct RocketMQ {
+			std::string endpoint;
+			std::string instanceId;
+			std::string topicName;
+		};
+		RocketMQ rocketMQ;
+	};
 	CreateFigureClusteringTaskRequest();
 	~CreateFigureClusteringTaskRequest();
 	std::string getUserData() const;
 	void setUserData(const std::string &userData);
-	std::string getProjectName() const;
-	void setProjectName(const std::string &projectName);
-	std::string getNotifyTopicName() const;
-	void setNotifyTopicName(const std::string &notifyTopicName);
+	Notification getNotification() const;
+	void setNotification(const Notification &notification);
 	std::string getNotifyEndpoint() const;
 	void setNotifyEndpoint(const std::string &notifyEndpoint);
 	std::string getDatasetName() const;
 	void setDatasetName(const std::string &datasetName);
+	std::string getProjectName() const;
+	void setProjectName(const std::string &projectName);
+	std::string getNotifyTopicName() const;
+	void setNotifyTopicName(const std::string &notifyTopicName);
 	std::map<std::string, std::string> getTags() const;
 	void setTags(const std::map<std::string, std::string> &tags);
 
 private:
 	std::string userData_;
-	std::string projectName_;
-	std::string notifyTopicName_;
+	Notification notification_;
 	std::string notifyEndpoint_;
 	std::string datasetName_;
+	std::string projectName_;
+	std::string notifyTopicName_;
 	std::map<std::string, std::string> tags_;
 };
 } // namespace Model
