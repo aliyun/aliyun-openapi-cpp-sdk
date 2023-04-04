@@ -104,6 +104,8 @@
 #include "model/ModifyWirelessCloudConnectorFeatureResult.h"
 #include "model/OpenCc5gServiceRequest.h"
 #include "model/OpenCc5gServiceResult.h"
+#include "model/RebindCardsRequest.h"
+#include "model/RebindCardsResult.h"
 #include "model/RemoveWirelessCloudConnectorFromGroupRequest.h"
 #include "model/RemoveWirelessCloudConnectorFromGroupResult.h"
 #include "model/ResumeCardsRequest.h"
@@ -266,6 +268,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::OpenCc5gServiceResult> OpenCc5gServiceOutcome;
 			typedef std::future<OpenCc5gServiceOutcome> OpenCc5gServiceOutcomeCallable;
 			typedef std::function<void(const CC5GClient*, const Model::OpenCc5gServiceRequest&, const OpenCc5gServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenCc5gServiceAsyncHandler;
+			typedef Outcome<Error, Model::RebindCardsResult> RebindCardsOutcome;
+			typedef std::future<RebindCardsOutcome> RebindCardsOutcomeCallable;
+			typedef std::function<void(const CC5GClient*, const Model::RebindCardsRequest&, const RebindCardsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebindCardsAsyncHandler;
 			typedef Outcome<Error, Model::RemoveWirelessCloudConnectorFromGroupResult> RemoveWirelessCloudConnectorFromGroupOutcome;
 			typedef std::future<RemoveWirelessCloudConnectorFromGroupOutcome> RemoveWirelessCloudConnectorFromGroupOutcomeCallable;
 			typedef std::function<void(const CC5GClient*, const Model::RemoveWirelessCloudConnectorFromGroupRequest&, const RemoveWirelessCloudConnectorFromGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveWirelessCloudConnectorFromGroupAsyncHandler;
@@ -439,6 +444,9 @@ namespace AlibabaCloud
 			OpenCc5gServiceOutcome openCc5gService(const Model::OpenCc5gServiceRequest &request)const;
 			void openCc5gServiceAsync(const Model::OpenCc5gServiceRequest& request, const OpenCc5gServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenCc5gServiceOutcomeCallable openCc5gServiceCallable(const Model::OpenCc5gServiceRequest& request) const;
+			RebindCardsOutcome rebindCards(const Model::RebindCardsRequest &request)const;
+			void rebindCardsAsync(const Model::RebindCardsRequest& request, const RebindCardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RebindCardsOutcomeCallable rebindCardsCallable(const Model::RebindCardsRequest& request) const;
 			RemoveWirelessCloudConnectorFromGroupOutcome removeWirelessCloudConnectorFromGroup(const Model::RemoveWirelessCloudConnectorFromGroupRequest &request)const;
 			void removeWirelessCloudConnectorFromGroupAsync(const Model::RemoveWirelessCloudConnectorFromGroupRequest& request, const RemoveWirelessCloudConnectorFromGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveWirelessCloudConnectorFromGroupOutcomeCallable removeWirelessCloudConnectorFromGroupCallable(const Model::RemoveWirelessCloudConnectorFromGroupRequest& request) const;

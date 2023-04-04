@@ -103,6 +103,8 @@ set(cc5g_public_header_model
 	include/alibabacloud/cc5g/model/ModifyWirelessCloudConnectorFeatureResult.h
 	include/alibabacloud/cc5g/model/OpenCc5gServiceRequest.h
 	include/alibabacloud/cc5g/model/OpenCc5gServiceResult.h
+	include/alibabacloud/cc5g/model/RebindCardsRequest.h
+	include/alibabacloud/cc5g/model/RebindCardsResult.h
 	include/alibabacloud/cc5g/model/RemoveWirelessCloudConnectorFromGroupRequest.h
 	include/alibabacloud/cc5g/model/RemoveWirelessCloudConnectorFromGroupResult.h
 	include/alibabacloud/cc5g/model/ResumeCardsRequest.h
@@ -218,6 +220,8 @@ set(cc5g_src
 	src/model/ModifyWirelessCloudConnectorFeatureResult.cc
 	src/model/OpenCc5gServiceRequest.cc
 	src/model/OpenCc5gServiceResult.cc
+	src/model/RebindCardsRequest.cc
+	src/model/RebindCardsResult.cc
 	src/model/RemoveWirelessCloudConnectorFromGroupRequest.cc
 	src/model/RemoveWirelessCloudConnectorFromGroupResult.cc
 	src/model/ResumeCardsRequest.cc

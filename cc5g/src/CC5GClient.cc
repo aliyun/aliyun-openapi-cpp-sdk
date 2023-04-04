@@ -1527,6 +1527,42 @@ CC5GClient::OpenCc5gServiceOutcomeCallable CC5GClient::openCc5gServiceCallable(c
 	return task->get_future();
 }
 
+CC5GClient::RebindCardsOutcome CC5GClient::rebindCards(const RebindCardsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RebindCardsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RebindCardsOutcome(RebindCardsResult(outcome.result()));
+	else
+		return RebindCardsOutcome(outcome.error());
+}
+
+void CC5GClient::rebindCardsAsync(const RebindCardsRequest& request, const RebindCardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rebindCards(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CC5GClient::RebindCardsOutcomeCallable CC5GClient::rebindCardsCallable(const RebindCardsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RebindCardsOutcome()>>(
+			[this, request]()
+			{
+			return this->rebindCards(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CC5GClient::RemoveWirelessCloudConnectorFromGroupOutcome CC5GClient::removeWirelessCloudConnectorFromGroup(const RemoveWirelessCloudConnectorFromGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
