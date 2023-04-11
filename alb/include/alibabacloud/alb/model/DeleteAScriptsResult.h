@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALB_MODEL_LISTACLSRESULT_H_
-#define ALIBABACLOUD_ALB_MODEL_LISTACLSRESULT_H_
+#ifndef ALIBABACLOUD_ALB_MODEL_DELETEASCRIPTSRESULT_H_
+#define ALIBABACLOUD_ALB_MODEL_DELETEASCRIPTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALB_EXPORT ListAclsResult : public ServiceResult
+			class ALIBABACLOUD_ALB_EXPORT DeleteAScriptsResult : public ServiceResult
 			{
 			public:
-				struct Acl
-				{
-					bool serviceManagedEnabled;
-					bool configManagedEnabled;
-					std::string aclStatus;
-					std::string resourceGroupId;
-					std::string aclId;
-					std::string addressIPVersion;
-					std::string serviceManagedMode;
-					std::string createTime;
-					std::string aclName;
-				};
 
 
-				ListAclsResult();
-				explicit ListAclsResult(const std::string &payload);
-				~ListAclsResult();
-				int getTotalCount()const;
-				std::string getNextToken()const;
-				std::vector<Acl> getAcls()const;
-				int getMaxResults()const;
+				DeleteAScriptsResult();
+				explicit DeleteAScriptsResult(const std::string &payload);
+				~DeleteAScriptsResult();
+				std::string getJobId()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				std::string nextToken_;
-				std::vector<Acl> acls_;
-				int maxResults_;
+				std::string jobId_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALB_MODEL_LISTACLSRESULT_H_
+#endif // !ALIBABACLOUD_ALB_MODEL_DELETEASCRIPTSRESULT_H_

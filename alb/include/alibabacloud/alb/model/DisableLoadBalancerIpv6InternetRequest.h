@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALB_MODEL_DESCRIBEZONESREQUEST_H_
-#define ALIBABACLOUD_ALB_MODEL_DESCRIBEZONESREQUEST_H_
+#ifndef ALIBABACLOUD_ALB_MODEL_DISABLELOADBALANCERIPV6INTERNETREQUEST_H_
+#define ALIBABACLOUD_ALB_MODEL_DISABLELOADBALANCERIPV6INTERNETREQUEST_H_
 
 #include <alibabacloud/alb/AlbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,17 +26,23 @@
 namespace AlibabaCloud {
 namespace Alb {
 namespace Model {
-class ALIBABACLOUD_ALB_EXPORT DescribeZonesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ALB_EXPORT DisableLoadBalancerIpv6InternetRequest : public RpcServiceRequest {
 public:
-	DescribeZonesRequest();
-	~DescribeZonesRequest();
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
+	DisableLoadBalancerIpv6InternetRequest();
+	~DisableLoadBalancerIpv6InternetRequest();
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
+	std::string getLoadBalancerId() const;
+	void setLoadBalancerId(const std::string &loadBalancerId);
 
 private:
-	std::string acceptLanguage_;
+	std::string clientToken_;
+	bool dryRun_;
+	std::string loadBalancerId_;
 };
 } // namespace Model
 } // namespace Alb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ALB_MODEL_DESCRIBEZONESREQUEST_H_
+#endif // !ALIBABACLOUD_ALB_MODEL_DISABLELOADBALANCERIPV6INTERNETREQUEST_H_

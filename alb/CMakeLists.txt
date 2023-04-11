@@ -33,6 +33,8 @@ set(alb_public_header_model
 	include/alibabacloud/alb/model/AssociateAdditionalCertificatesWithListenerResult.h
 	include/alibabacloud/alb/model/AttachCommonBandwidthPackageToLoadBalancerRequest.h
 	include/alibabacloud/alb/model/AttachCommonBandwidthPackageToLoadBalancerResult.h
+	include/alibabacloud/alb/model/CreateAScriptsRequest.h
+	include/alibabacloud/alb/model/CreateAScriptsResult.h
 	include/alibabacloud/alb/model/CreateAclRequest.h
 	include/alibabacloud/alb/model/CreateAclResult.h
 	include/alibabacloud/alb/model/CreateHealthCheckTemplateRequest.h
@@ -49,6 +51,8 @@ set(alb_public_header_model
 	include/alibabacloud/alb/model/CreateSecurityPolicyResult.h
 	include/alibabacloud/alb/model/CreateServerGroupRequest.h
 	include/alibabacloud/alb/model/CreateServerGroupResult.h
+	include/alibabacloud/alb/model/DeleteAScriptsRequest.h
+	include/alibabacloud/alb/model/DeleteAScriptsResult.h
 	include/alibabacloud/alb/model/DeleteAclRequest.h
 	include/alibabacloud/alb/model/DeleteAclResult.h
 	include/alibabacloud/alb/model/DeleteHealthCheckTemplatesRequest.h
@@ -75,6 +79,8 @@ set(alb_public_header_model
 	include/alibabacloud/alb/model/DisableDeletionProtectionResult.h
 	include/alibabacloud/alb/model/DisableLoadBalancerAccessLogRequest.h
 	include/alibabacloud/alb/model/DisableLoadBalancerAccessLogResult.h
+	include/alibabacloud/alb/model/DisableLoadBalancerIpv6InternetRequest.h
+	include/alibabacloud/alb/model/DisableLoadBalancerIpv6InternetResult.h
 	include/alibabacloud/alb/model/DissociateAclsFromListenerRequest.h
 	include/alibabacloud/alb/model/DissociateAclsFromListenerResult.h
 	include/alibabacloud/alb/model/DissociateAdditionalCertificatesFromListenerRequest.h
@@ -83,6 +89,8 @@ set(alb_public_header_model
 	include/alibabacloud/alb/model/EnableDeletionProtectionResult.h
 	include/alibabacloud/alb/model/EnableLoadBalancerAccessLogRequest.h
 	include/alibabacloud/alb/model/EnableLoadBalancerAccessLogResult.h
+	include/alibabacloud/alb/model/EnableLoadBalancerIpv6InternetRequest.h
+	include/alibabacloud/alb/model/EnableLoadBalancerIpv6InternetResult.h
 	include/alibabacloud/alb/model/GetHealthCheckTemplateAttributeRequest.h
 	include/alibabacloud/alb/model/GetHealthCheckTemplateAttributeResult.h
 	include/alibabacloud/alb/model/GetListenerAttributeRequest.h
@@ -91,6 +99,8 @@ set(alb_public_header_model
 	include/alibabacloud/alb/model/GetListenerHealthStatusResult.h
 	include/alibabacloud/alb/model/GetLoadBalancerAttributeRequest.h
 	include/alibabacloud/alb/model/GetLoadBalancerAttributeResult.h
+	include/alibabacloud/alb/model/ListAScriptsRequest.h
+	include/alibabacloud/alb/model/ListAScriptsResult.h
 	include/alibabacloud/alb/model/ListAclEntriesRequest.h
 	include/alibabacloud/alb/model/ListAclEntriesResult.h
 	include/alibabacloud/alb/model/ListAclRelationsRequest.h
@@ -141,6 +151,8 @@ set(alb_public_header_model
 	include/alibabacloud/alb/model/TagResourcesResult.h
 	include/alibabacloud/alb/model/UnTagResourcesRequest.h
 	include/alibabacloud/alb/model/UnTagResourcesResult.h
+	include/alibabacloud/alb/model/UpdateAScriptsRequest.h
+	include/alibabacloud/alb/model/UpdateAScriptsResult.h
 	include/alibabacloud/alb/model/UpdateAclAttributeRequest.h
 	include/alibabacloud/alb/model/UpdateAclAttributeResult.h
 	include/alibabacloud/alb/model/UpdateHealthCheckTemplateAttributeRequest.h
@@ -182,6 +194,8 @@ set(alb_src
 	src/model/AssociateAdditionalCertificatesWithListenerResult.cc
 	src/model/AttachCommonBandwidthPackageToLoadBalancerRequest.cc
 	src/model/AttachCommonBandwidthPackageToLoadBalancerResult.cc
+	src/model/CreateAScriptsRequest.cc
+	src/model/CreateAScriptsResult.cc
 	src/model/CreateAclRequest.cc
 	src/model/CreateAclResult.cc
 	src/model/CreateHealthCheckTemplateRequest.cc
@@ -198,6 +212,8 @@ set(alb_src
 	src/model/CreateSecurityPolicyResult.cc
 	src/model/CreateServerGroupRequest.cc
 	src/model/CreateServerGroupResult.cc
+	src/model/DeleteAScriptsRequest.cc
+	src/model/DeleteAScriptsResult.cc
 	src/model/DeleteAclRequest.cc
 	src/model/DeleteAclResult.cc
 	src/model/DeleteHealthCheckTemplatesRequest.cc
@@ -224,6 +240,8 @@ set(alb_src
 	src/model/DisableDeletionProtectionResult.cc
 	src/model/DisableLoadBalancerAccessLogRequest.cc
 	src/model/DisableLoadBalancerAccessLogResult.cc
+	src/model/DisableLoadBalancerIpv6InternetRequest.cc
+	src/model/DisableLoadBalancerIpv6InternetResult.cc
 	src/model/DissociateAclsFromListenerRequest.cc
 	src/model/DissociateAclsFromListenerResult.cc
 	src/model/DissociateAdditionalCertificatesFromListenerRequest.cc
@@ -232,6 +250,8 @@ set(alb_src
 	src/model/EnableDeletionProtectionResult.cc
 	src/model/EnableLoadBalancerAccessLogRequest.cc
 	src/model/EnableLoadBalancerAccessLogResult.cc
+	src/model/EnableLoadBalancerIpv6InternetRequest.cc
+	src/model/EnableLoadBalancerIpv6InternetResult.cc
 	src/model/GetHealthCheckTemplateAttributeRequest.cc
 	src/model/GetHealthCheckTemplateAttributeResult.cc
 	src/model/GetListenerAttributeRequest.cc
@@ -240,6 +260,8 @@ set(alb_src
 	src/model/GetListenerHealthStatusResult.cc
 	src/model/GetLoadBalancerAttributeRequest.cc
 	src/model/GetLoadBalancerAttributeResult.cc
+	src/model/ListAScriptsRequest.cc
+	src/model/ListAScriptsResult.cc
 	src/model/ListAclEntriesRequest.cc
 	src/model/ListAclEntriesResult.cc
 	src/model/ListAclRelationsRequest.cc
@@ -290,6 +312,8 @@ set(alb_src
 	src/model/TagResourcesResult.cc
 	src/model/UnTagResourcesRequest.cc
 	src/model/UnTagResourcesResult.cc
+	src/model/UpdateAScriptsRequest.cc
+	src/model/UpdateAScriptsResult.cc
 	src/model/UpdateAclAttributeRequest.cc
 	src/model/UpdateAclAttributeResult.cc
 	src/model/UpdateHealthCheckTemplateAttributeRequest.cc

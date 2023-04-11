@@ -267,6 +267,42 @@ AlbClient::AttachCommonBandwidthPackageToLoadBalancerOutcomeCallable AlbClient::
 	return task->get_future();
 }
 
+AlbClient::CreateAScriptsOutcome AlbClient::createAScripts(const CreateAScriptsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAScriptsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAScriptsOutcome(CreateAScriptsResult(outcome.result()));
+	else
+		return CreateAScriptsOutcome(outcome.error());
+}
+
+void AlbClient::createAScriptsAsync(const CreateAScriptsRequest& request, const CreateAScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAScripts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::CreateAScriptsOutcomeCallable AlbClient::createAScriptsCallable(const CreateAScriptsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAScriptsOutcome()>>(
+			[this, request]()
+			{
+			return this->createAScripts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlbClient::CreateAclOutcome AlbClient::createAcl(const CreateAclRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +585,42 @@ AlbClient::CreateServerGroupOutcomeCallable AlbClient::createServerGroupCallable
 			[this, request]()
 			{
 			return this->createServerGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlbClient::DeleteAScriptsOutcome AlbClient::deleteAScripts(const DeleteAScriptsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAScriptsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAScriptsOutcome(DeleteAScriptsResult(outcome.result()));
+	else
+		return DeleteAScriptsOutcome(outcome.error());
+}
+
+void AlbClient::deleteAScriptsAsync(const DeleteAScriptsRequest& request, const DeleteAScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAScripts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::DeleteAScriptsOutcomeCallable AlbClient::deleteAScriptsCallable(const DeleteAScriptsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAScriptsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAScripts(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1023,6 +1095,42 @@ AlbClient::DisableLoadBalancerAccessLogOutcomeCallable AlbClient::disableLoadBal
 	return task->get_future();
 }
 
+AlbClient::DisableLoadBalancerIpv6InternetOutcome AlbClient::disableLoadBalancerIpv6Internet(const DisableLoadBalancerIpv6InternetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableLoadBalancerIpv6InternetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableLoadBalancerIpv6InternetOutcome(DisableLoadBalancerIpv6InternetResult(outcome.result()));
+	else
+		return DisableLoadBalancerIpv6InternetOutcome(outcome.error());
+}
+
+void AlbClient::disableLoadBalancerIpv6InternetAsync(const DisableLoadBalancerIpv6InternetRequest& request, const DisableLoadBalancerIpv6InternetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableLoadBalancerIpv6Internet(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::DisableLoadBalancerIpv6InternetOutcomeCallable AlbClient::disableLoadBalancerIpv6InternetCallable(const DisableLoadBalancerIpv6InternetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableLoadBalancerIpv6InternetOutcome()>>(
+			[this, request]()
+			{
+			return this->disableLoadBalancerIpv6Internet(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlbClient::DissociateAclsFromListenerOutcome AlbClient::dissociateAclsFromListener(const DissociateAclsFromListenerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1167,6 +1275,42 @@ AlbClient::EnableLoadBalancerAccessLogOutcomeCallable AlbClient::enableLoadBalan
 	return task->get_future();
 }
 
+AlbClient::EnableLoadBalancerIpv6InternetOutcome AlbClient::enableLoadBalancerIpv6Internet(const EnableLoadBalancerIpv6InternetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableLoadBalancerIpv6InternetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableLoadBalancerIpv6InternetOutcome(EnableLoadBalancerIpv6InternetResult(outcome.result()));
+	else
+		return EnableLoadBalancerIpv6InternetOutcome(outcome.error());
+}
+
+void AlbClient::enableLoadBalancerIpv6InternetAsync(const EnableLoadBalancerIpv6InternetRequest& request, const EnableLoadBalancerIpv6InternetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableLoadBalancerIpv6Internet(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::EnableLoadBalancerIpv6InternetOutcomeCallable AlbClient::enableLoadBalancerIpv6InternetCallable(const EnableLoadBalancerIpv6InternetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableLoadBalancerIpv6InternetOutcome()>>(
+			[this, request]()
+			{
+			return this->enableLoadBalancerIpv6Internet(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlbClient::GetHealthCheckTemplateAttributeOutcome AlbClient::getHealthCheckTemplateAttribute(const GetHealthCheckTemplateAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1305,6 +1449,42 @@ AlbClient::GetLoadBalancerAttributeOutcomeCallable AlbClient::getLoadBalancerAtt
 			[this, request]()
 			{
 			return this->getLoadBalancerAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlbClient::ListAScriptsOutcome AlbClient::listAScripts(const ListAScriptsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAScriptsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAScriptsOutcome(ListAScriptsResult(outcome.result()));
+	else
+		return ListAScriptsOutcome(outcome.error());
+}
+
+void AlbClient::listAScriptsAsync(const ListAScriptsRequest& request, const ListAScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAScripts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::ListAScriptsOutcomeCallable AlbClient::listAScriptsCallable(const ListAScriptsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAScriptsOutcome()>>(
+			[this, request]()
+			{
+			return this->listAScripts(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2205,6 +2385,42 @@ AlbClient::UnTagResourcesOutcomeCallable AlbClient::unTagResourcesCallable(const
 			[this, request]()
 			{
 			return this->unTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlbClient::UpdateAScriptsOutcome AlbClient::updateAScripts(const UpdateAScriptsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAScriptsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAScriptsOutcome(UpdateAScriptsResult(outcome.result()));
+	else
+		return UpdateAScriptsOutcome(outcome.error());
+}
+
+void AlbClient::updateAScriptsAsync(const UpdateAScriptsRequest& request, const UpdateAScriptsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAScripts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlbClient::UpdateAScriptsOutcomeCallable AlbClient::updateAScriptsCallable(const UpdateAScriptsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAScriptsOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAScripts(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

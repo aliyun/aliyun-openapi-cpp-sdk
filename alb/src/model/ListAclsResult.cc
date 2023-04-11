@@ -59,6 +59,8 @@ void ListAclsResult::parse(const std::string &payload)
 			aclsObject.serviceManagedMode = valueAclsAcl["ServiceManagedMode"].asString();
 		if(!valueAclsAcl["ConfigManagedEnabled"].isNull())
 			aclsObject.configManagedEnabled = valueAclsAcl["ConfigManagedEnabled"].asString() == "true";
+		if(!valueAclsAcl["CreateTime"].isNull())
+			aclsObject.createTime = valueAclsAcl["CreateTime"].asString();
 		acls_.push_back(aclsObject);
 	}
 	if(!value["MaxResults"].isNull())

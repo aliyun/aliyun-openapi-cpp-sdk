@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALB_MODEL_DESCRIBEZONESREQUEST_H_
-#define ALIBABACLOUD_ALB_MODEL_DESCRIBEZONESREQUEST_H_
+#ifndef ALIBABACLOUD_ALB_MODEL_DELETEASCRIPTSREQUEST_H_
+#define ALIBABACLOUD_ALB_MODEL_DELETEASCRIPTSREQUEST_H_
 
 #include <alibabacloud/alb/AlbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,17 +26,23 @@
 namespace AlibabaCloud {
 namespace Alb {
 namespace Model {
-class ALIBABACLOUD_ALB_EXPORT DescribeZonesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ALB_EXPORT DeleteAScriptsRequest : public RpcServiceRequest {
 public:
-	DescribeZonesRequest();
-	~DescribeZonesRequest();
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
+	DeleteAScriptsRequest();
+	~DeleteAScriptsRequest();
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	bool getDryRun() const;
+	void setDryRun(bool dryRun);
+	std::vector<std::string> getAScriptIds() const;
+	void setAScriptIds(const std::vector<std::string> &aScriptIds);
 
 private:
-	std::string acceptLanguage_;
+	std::string clientToken_;
+	bool dryRun_;
+	std::vector<std::string> aScriptIds_;
 };
 } // namespace Model
 } // namespace Alb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ALB_MODEL_DESCRIBEZONESREQUEST_H_
+#endif // !ALIBABACLOUD_ALB_MODEL_DELETEASCRIPTSREQUEST_H_

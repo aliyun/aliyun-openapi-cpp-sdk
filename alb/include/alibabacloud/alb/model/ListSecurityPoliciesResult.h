@@ -40,6 +40,7 @@ namespace AlibabaCloud
 					std::string resourceGroupId;
 					std::string securityPolicyStatus;
 					std::string serviceManagedMode;
+					std::string createTime;
 					std::vector<std::string> tLSVersions;
 					std::string securityPolicyName;
 				};

@@ -76,6 +76,7 @@ namespace AlibabaCloud
 					std::string scheduler;
 					bool upstreamKeepaliveEnabled;
 					StickySessionConfig stickySessionConfig;
+					std::string createTime;
 					std::vector<std::string> relatedRuleIds;
 					std::string serverGroupId;
 					int serverCount;

@@ -110,6 +110,9 @@ void GetLoadBalancerAttributeResult::parse(const std::string &payload)
 	auto allFeatureLabels = value["FeatureLabels"]["FeatureLabel"];
 	for (const auto &item : allFeatureLabels)
 		featureLabels_.push_back(item.asString());
+	auto allSecurityGroupIds = value["SecurityGroupIds"]["SecurityGroupId"];
+	for (const auto &item : allSecurityGroupIds)
+		securityGroupIds_.push_back(item.asString());
 	if(!value["AddressAllocatedMode"].isNull())
 		addressAllocatedMode_ = value["AddressAllocatedMode"].asString();
 	if(!value["AddressType"].isNull())
@@ -148,6 +151,12 @@ void GetLoadBalancerAttributeResult::parse(const std::string &payload)
 		addressIpVersion_ = value["AddressIpVersion"].asString();
 	if(!value["Ipv6AddressType"].isNull())
 		ipv6AddressType_ = value["Ipv6AddressType"].asString();
+	if(!value["BackToOriginRouteEnabled"].isNull())
+		backToOriginRouteEnabled_ = value["BackToOriginRouteEnabled"].asString() == "true";
+	if(!value["LoadBalancerVersion"].isNull())
+		loadBalancerVersion_ = value["LoadBalancerVersion"].asString();
+	if(!value["SysSecurityGroupId"].isNull())
+		sysSecurityGroupId_ = value["SysSecurityGroupId"].asString();
 
 }
 
@@ -159,6 +168,11 @@ bool GetLoadBalancerAttributeResult::getServiceManagedEnabled()const
 std::string GetLoadBalancerAttributeResult::getAddressIpVersion()const
 {
 	return addressIpVersion_;
+}
+
+std::string GetLoadBalancerAttributeResult::getLoadBalancerVersion()const
+{
+	return loadBalancerVersion_;
 }
 
 std::string GetLoadBalancerAttributeResult::getResourceGroupId()const
@@ -206,6 +220,11 @@ std::string GetLoadBalancerAttributeResult::getServiceManagedMode()const
 	return serviceManagedMode_;
 }
 
+std::string GetLoadBalancerAttributeResult::getSysSecurityGroupId()const
+{
+	return sysSecurityGroupId_;
+}
+
 std::string GetLoadBalancerAttributeResult::getBandwidthPackageId()const
 {
 	return bandwidthPackageId_;
@@ -214,6 +233,11 @@ std::string GetLoadBalancerAttributeResult::getBandwidthPackageId()const
 std::vector<GetLoadBalancerAttributeResult::Tag> GetLoadBalancerAttributeResult::getTags()const
 {
 	return tags_;
+}
+
+bool GetLoadBalancerAttributeResult::getBackToOriginRouteEnabled()const
+{
+	return backToOriginRouteEnabled_;
 }
 
 std::string GetLoadBalancerAttributeResult::getLoadBalancerEdition()const
@@ -234,6 +258,11 @@ std::string GetLoadBalancerAttributeResult::getCreateTime()const
 GetLoadBalancerAttributeResult::ModificationProtectionConfig GetLoadBalancerAttributeResult::getModificationProtectionConfig()const
 {
 	return modificationProtectionConfig_;
+}
+
+std::vector<std::string> GetLoadBalancerAttributeResult::getSecurityGroupIds()const
+{
+	return securityGroupIds_;
 }
 
 std::string GetLoadBalancerAttributeResult::getLoadBalancerName()const

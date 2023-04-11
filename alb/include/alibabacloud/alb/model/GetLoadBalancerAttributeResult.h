@@ -84,6 +84,7 @@ namespace AlibabaCloud
 				~GetLoadBalancerAttributeResult();
 				bool getServiceManagedEnabled()const;
 				std::string getAddressIpVersion()const;
+				std::string getLoadBalancerVersion()const;
 				std::string getResourceGroupId()const;
 				std::vector<std::string> getFeatureLabels()const;
 				std::string getLoadBalancerId()const;
@@ -93,12 +94,15 @@ namespace AlibabaCloud
 				int getBandwidthCapacity()const;
 				DeletionProtectionConfig getDeletionProtectionConfig()const;
 				std::string getServiceManagedMode()const;
+				std::string getSysSecurityGroupId()const;
 				std::string getBandwidthPackageId()const;
 				std::vector<Tag> getTags()const;
+				bool getBackToOriginRouteEnabled()const;
 				std::string getLoadBalancerEdition()const;
 				LoadBalancerBillingConfig getLoadBalancerBillingConfig()const;
 				std::string getCreateTime()const;
 				ModificationProtectionConfig getModificationProtectionConfig()const;
+				std::vector<std::string> getSecurityGroupIds()const;
 				std::string getLoadBalancerName()const;
 				AccessLogConfig getAccessLogConfig()const;
 				bool getConfigManagedEnabled()const;
@@ -115,6 +119,7 @@ namespace AlibabaCloud
 			private:
 				bool serviceManagedEnabled_;
 				std::string addressIpVersion_;
+				std::string loadBalancerVersion_;
 				std::string resourceGroupId_;
 				std::vector<std::string> featureLabels_;
 				std::string loadBalancerId_;
@@ -124,12 +129,15 @@ namespace AlibabaCloud
 				int bandwidthCapacity_;
 				DeletionProtectionConfig deletionProtectionConfig_;
 				std::string serviceManagedMode_;
+				std::string sysSecurityGroupId_;
 				std::string bandwidthPackageId_;
 				std::vector<Tag> tags_;
+				bool backToOriginRouteEnabled_;
 				std::string loadBalancerEdition_;
 				LoadBalancerBillingConfig loadBalancerBillingConfig_;
 				std::string createTime_;
 				ModificationProtectionConfig modificationProtectionConfig_;
+				std::vector<std::string> securityGroupIds_;
 				std::string loadBalancerName_;
 				AccessLogConfig accessLogConfig_;
 				bool configManagedEnabled_;

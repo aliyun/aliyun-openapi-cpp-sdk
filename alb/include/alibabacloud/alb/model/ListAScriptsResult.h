@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALB_MODEL_LISTACLSRESULT_H_
-#define ALIBABACLOUD_ALB_MODEL_LISTACLSRESULT_H_
+#ifndef ALIBABACLOUD_ALB_MODEL_LISTASCRIPTSRESULT_H_
+#define ALIBABACLOUD_ALB_MODEL_LISTASCRIPTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,48 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALB_EXPORT ListAclsResult : public ServiceResult
+			class ALIBABACLOUD_ALB_EXPORT ListAScriptsResult : public ServiceResult
 			{
 			public:
-				struct Acl
+				struct AScript
 				{
-					bool serviceManagedEnabled;
-					bool configManagedEnabled;
-					std::string aclStatus;
-					std::string resourceGroupId;
-					std::string aclId;
-					std::string addressIPVersion;
-					std::string serviceManagedMode;
-					std::string createTime;
-					std::string aclName;
+					struct ExtAttribute
+					{
+						std::string attributeKey;
+						std::string attributeValue;
+					};
+					std::string scriptContent;
+					std::string aScriptStatus;
+					std::string aScriptName;
+					std::string position;
+					long priority;
+					std::string aScriptId;
+					bool enabled;
+					bool extAttributeEnabled;
+					std::string loadBalancerId;
+					std::vector<AScript::ExtAttribute> extAttributes;
+					std::string listenerId;
 				};
 
 
-				ListAclsResult();
-				explicit ListAclsResult(const std::string &payload);
-				~ListAclsResult();
+				ListAScriptsResult();
+				explicit ListAScriptsResult(const std::string &payload);
+				~ListAScriptsResult();
 				int getTotalCount()const;
 				std::string getNextToken()const;
-				std::vector<Acl> getAcls()const;
 				int getMaxResults()const;
+				std::vector<AScript> getAScripts()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				int totalCount_;
 				std::string nextToken_;
-				std::vector<Acl> acls_;
 				int maxResults_;
+				std::vector<AScript> aScripts_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALB_MODEL_LISTACLSRESULT_H_
+#endif // !ALIBABACLOUD_ALB_MODEL_LISTASCRIPTSRESULT_H_

@@ -55,6 +55,8 @@ void ListSecurityPoliciesResult::parse(const std::string &payload)
 			securityPoliciesObject.serviceManagedEnabled = valueSecurityPoliciesSecurityPolicy["ServiceManagedEnabled"].asString() == "true";
 		if(!valueSecurityPoliciesSecurityPolicy["ServiceManagedMode"].isNull())
 			securityPoliciesObject.serviceManagedMode = valueSecurityPoliciesSecurityPolicy["ServiceManagedMode"].asString();
+		if(!valueSecurityPoliciesSecurityPolicy["CreateTime"].isNull())
+			securityPoliciesObject.createTime = valueSecurityPoliciesSecurityPolicy["CreateTime"].asString();
 		auto allCiphers = value["Ciphers"]["Cipher"];
 		for (auto value : allCiphers)
 			securityPoliciesObject.ciphers.push_back(value.asString());

@@ -25,3 +25,12 @@ DescribeZonesRequest::DescribeZonesRequest()
 
 DescribeZonesRequest::~DescribeZonesRequest() {}
 
+std::string DescribeZonesRequest::getAcceptLanguage() const {
+  return acceptLanguage_;
+}
+
+void DescribeZonesRequest::setAcceptLanguage(const std::string &acceptLanguage) {
+  acceptLanguage_ = acceptLanguage;
+  setParameter(std::string("AcceptLanguage"), acceptLanguage);
+}
+
