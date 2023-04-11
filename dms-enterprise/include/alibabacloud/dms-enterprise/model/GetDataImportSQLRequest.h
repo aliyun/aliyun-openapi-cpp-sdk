@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYREQUEST_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYREQUEST_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDATAIMPORTSQLREQUEST_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDATAIMPORTSQLREQUEST_H_
 
 #include <alibabacloud/dms-enterprise/Dms_enterpriseExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,23 @@
 namespace AlibabaCloud {
 namespace Dms_enterprise {
 namespace Model {
-class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetProxyRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetDataImportSQLRequest : public RpcServiceRequest {
 public:
-	GetProxyRequest();
-	~GetProxyRequest();
+	GetDataImportSQLRequest();
+	~GetDataImportSQLRequest();
 	long getTid() const;
 	void setTid(long tid);
-	long getProxyId() const;
-	void setProxyId(long proxyId);
+	long getSqlId() const;
+	void setSqlId(long sqlId);
+	long getOrderId() const;
+	void setOrderId(long orderId);
 
 private:
 	long tid_;
-	long proxyId_;
+	long sqlId_;
+	long orderId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYREQUEST_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDATAIMPORTSQLREQUEST_H_

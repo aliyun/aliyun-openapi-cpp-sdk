@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					std::string dbaId;
 					std::string alias;
 					std::string datalinkName;
+					std::string catalogName;
 					std::vector<std::string> ownerNameList;
 					bool logic;
 					std::string schemaName;

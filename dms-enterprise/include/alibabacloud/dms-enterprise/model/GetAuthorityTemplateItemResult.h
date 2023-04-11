@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTPROXIESRESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTPROXIESRESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETAUTHORITYTEMPLATEITEMRESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETAUTHORITYTEMPLATEITEMRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,26 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListProxiesResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetAuthorityTemplateItemResult : public ServiceResult
 			{
 			public:
-				struct ProxyListItem
+				struct AuthorityTemplateItem
 				{
-					std::string publicHost;
-					std::string privateHost;
+					std::string tableName;
 					long instanceId;
-					long proxyId;
-					long creatorId;
-					std::string protocolType;
-					int protocolPort;
-					std::string regionId;
-					bool privateEnable;
-					std::string creatorName;
-					bool publicEnable;
-					int httpsPort;
+					std::string attribute;
+					long dbId;
+					std::string resourceType;
+					long itemId;
+					long templateId;
+					long modifierId;
 				};
 
 
-				ListProxiesResult();
-				explicit ListProxiesResult(const std::string &payload);
-				~ListProxiesResult();
-				std::vector<ProxyListItem> getProxyList()const;
+				GetAuthorityTemplateItemResult();
+				explicit GetAuthorityTemplateItemResult(const std::string &payload);
+				~GetAuthorityTemplateItemResult();
+				std::vector<AuthorityTemplateItem> getAuthorityTemplateItemList()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -60,7 +56,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ProxyListItem> proxyList_;
+				std::vector<AuthorityTemplateItem> authorityTemplateItemList_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -69,4 +65,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTPROXIESRESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETAUTHORITYTEMPLATEITEMRESULT_H_

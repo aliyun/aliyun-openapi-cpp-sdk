@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTPROXIESRESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTPROXIESRESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDATAIMPORTSQLRESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDATAIMPORTSQLRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,19 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListProxiesResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetDataImportSQLResult : public ServiceResult
 			{
 			public:
-				struct ProxyListItem
+				struct SQLDetail
 				{
-					std::string publicHost;
-					std::string privateHost;
-					long instanceId;
-					long proxyId;
-					long creatorId;
-					std::string protocolType;
-					int protocolPort;
-					std::string regionId;
-					bool privateEnable;
-					std::string creatorName;
-					bool publicEnable;
-					int httpsPort;
+					std::string execSql;
 				};
 
 
-				ListProxiesResult();
-				explicit ListProxiesResult(const std::string &payload);
-				~ListProxiesResult();
-				std::vector<ProxyListItem> getProxyList()const;
+				GetDataImportSQLResult();
+				explicit GetDataImportSQLResult(const std::string &payload);
+				~GetDataImportSQLResult();
+				SQLDetail getSQLDetail()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -60,7 +49,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ProxyListItem> proxyList_;
+				SQLDetail sQLDetail_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -69,4 +58,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTPROXIESRESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDATAIMPORTSQLRESULT_H_

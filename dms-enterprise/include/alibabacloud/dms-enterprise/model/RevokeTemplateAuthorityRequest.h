@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYREQUEST_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYREQUEST_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_REVOKETEMPLATEAUTHORITYREQUEST_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_REVOKETEMPLATEAUTHORITYREQUEST_H_
 
 #include <alibabacloud/dms-enterprise/Dms_enterpriseExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,23 @@
 namespace AlibabaCloud {
 namespace Dms_enterprise {
 namespace Model {
-class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetProxyRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT RevokeTemplateAuthorityRequest : public RpcServiceRequest {
 public:
-	GetProxyRequest();
-	~GetProxyRequest();
+	RevokeTemplateAuthorityRequest();
+	~RevokeTemplateAuthorityRequest();
 	long getTid() const;
 	void setTid(long tid);
-	long getProxyId() const;
-	void setProxyId(long proxyId);
+	long getTemplateId() const;
+	void setTemplateId(long templateId);
+	std::string getUserIds() const;
+	void setUserIds(const std::string &userIds);
 
 private:
 	long tid_;
-	long proxyId_;
+	long templateId_;
+	std::string userIds_;
 };
 } // namespace Model
 } // namespace Dms_enterprise
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYREQUEST_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_REVOKETEMPLATEAUTHORITYREQUEST_H_

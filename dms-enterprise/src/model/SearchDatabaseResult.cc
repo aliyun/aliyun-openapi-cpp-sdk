@@ -69,6 +69,8 @@ void SearchDatabaseResult::parse(const std::string &payload)
 			searchDatabaseListObject.searchName = valueSearchDatabaseListSearchDatabase["SearchName"].asString();
 		if(!valueSearchDatabaseListSearchDatabase["Alias"].isNull())
 			searchDatabaseListObject.alias = valueSearchDatabaseListSearchDatabase["Alias"].asString();
+		if(!valueSearchDatabaseListSearchDatabase["CatalogName"].isNull())
+			searchDatabaseListObject.catalogName = valueSearchDatabaseListSearchDatabase["CatalogName"].asString();
 		auto allOwnerIdList = value["OwnerIdList"]["OwnerIds"];
 		for (auto value : allOwnerIdList)
 			searchDatabaseListObject.ownerIdList.push_back(value.asString());

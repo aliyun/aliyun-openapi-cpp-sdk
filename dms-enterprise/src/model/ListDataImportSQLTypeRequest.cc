@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dms-enterprise/model/GetProxyRequest.h>
+#include <alibabacloud/dms-enterprise/model/ListDataImportSQLTypeRequest.h>
 
-using AlibabaCloud::Dms_enterprise::Model::GetProxyRequest;
+using AlibabaCloud::Dms_enterprise::Model::ListDataImportSQLTypeRequest;
 
-GetProxyRequest::GetProxyRequest()
-    : RpcServiceRequest("dms-enterprise", "2018-11-01", "GetProxy") {
+ListDataImportSQLTypeRequest::ListDataImportSQLTypeRequest()
+    : RpcServiceRequest("dms-enterprise", "2018-11-01", "ListDataImportSQLType") {
   setMethod(HttpRequest::Method::Post);
 }
 
-GetProxyRequest::~GetProxyRequest() {}
+ListDataImportSQLTypeRequest::~ListDataImportSQLTypeRequest() {}
 
-long GetProxyRequest::getTid() const {
+long ListDataImportSQLTypeRequest::getTid() const {
   return tid_;
 }
 
-void GetProxyRequest::setTid(long tid) {
+void ListDataImportSQLTypeRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-long GetProxyRequest::getProxyId() const {
-  return proxyId_;
+long ListDataImportSQLTypeRequest::getOrderId() const {
+  return orderId_;
 }
 
-void GetProxyRequest::setProxyId(long proxyId) {
-  proxyId_ = proxyId;
-  setParameter(std::string("ProxyId"), std::to_string(proxyId));
+void ListDataImportSQLTypeRequest::setOrderId(long orderId) {
+  orderId_ = orderId;
+  setParameter(std::string("OrderId"), std::to_string(orderId));
 }
 

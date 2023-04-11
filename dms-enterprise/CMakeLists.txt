@@ -41,6 +41,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ChangeLhDagOwnerResult.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CloseOrderResult.h
+	include/alibabacloud/dms-enterprise/model/CreateAuthorityTemplateRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateAuthorityTemplateResult.h
 	include/alibabacloud/dms-enterprise/model/CreateDataCorrectOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateDataCorrectOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateDataCronClearOrderRequest.h
@@ -117,6 +119,10 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ExecuteStructSyncResult.h
 	include/alibabacloud/dms-enterprise/model/GetApprovalDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetApprovalDetailResult.h
+	include/alibabacloud/dms-enterprise/model/GetAuthorityTemplateRequest.h
+	include/alibabacloud/dms-enterprise/model/GetAuthorityTemplateResult.h
+	include/alibabacloud/dms-enterprise/model/GetAuthorityTemplateItemRequest.h
+	include/alibabacloud/dms-enterprise/model/GetAuthorityTemplateItemResult.h
 	include/alibabacloud/dms-enterprise/model/GetDBTaskSQLJobLogRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDBTaskSQLJobLogResult.h
 	include/alibabacloud/dms-enterprise/model/GetDBTopologyRequest.h
@@ -139,6 +145,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetDataExportDownloadURLResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataExportOrderDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDataExportOrderDetailResult.h
+	include/alibabacloud/dms-enterprise/model/GetDataImportSQLRequest.h
+	include/alibabacloud/dms-enterprise/model/GetDataImportSQLResult.h
 	include/alibabacloud/dms-enterprise/model/GetDatabaseRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDatabaseResult.h
 	include/alibabacloud/dms-enterprise/model/GetInstanceRequest.h
@@ -203,6 +211,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetUserActiveTenantResult.h
 	include/alibabacloud/dms-enterprise/model/GetUserUploadFileJobRequest.h
 	include/alibabacloud/dms-enterprise/model/GetUserUploadFileJobResult.h
+	include/alibabacloud/dms-enterprise/model/GrantTemplateAuthorityRequest.h
+	include/alibabacloud/dms-enterprise/model/GrantTemplateAuthorityResult.h
 	include/alibabacloud/dms-enterprise/model/GrantUserPermissionRequest.h
 	include/alibabacloud/dms-enterprise/model/GrantUserPermissionResult.h
 	include/alibabacloud/dms-enterprise/model/InspectProxyAccessSecretRequest.h
@@ -223,6 +233,10 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ListDataCorrectPreCheckDBResult.h
 	include/alibabacloud/dms-enterprise/model/ListDataCorrectPreCheckSQLRequest.h
 	include/alibabacloud/dms-enterprise/model/ListDataCorrectPreCheckSQLResult.h
+	include/alibabacloud/dms-enterprise/model/ListDataImportSQLPreCheckDetailRequest.h
+	include/alibabacloud/dms-enterprise/model/ListDataImportSQLPreCheckDetailResult.h
+	include/alibabacloud/dms-enterprise/model/ListDataImportSQLTypeRequest.h
+	include/alibabacloud/dms-enterprise/model/ListDataImportSQLTypeResult.h
 	include/alibabacloud/dms-enterprise/model/ListDatabaseUserPermssionsRequest.h
 	include/alibabacloud/dms-enterprise/model/ListDatabaseUserPermssionsResult.h
 	include/alibabacloud/dms-enterprise/model/ListDatabasesRequest.h
@@ -331,6 +345,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/ResumeTaskFlowInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/RetryDataCorrectPreCheckRequest.h
 	include/alibabacloud/dms-enterprise/model/RetryDataCorrectPreCheckResult.h
+	include/alibabacloud/dms-enterprise/model/RevokeTemplateAuthorityRequest.h
+	include/alibabacloud/dms-enterprise/model/RevokeTemplateAuthorityResult.h
 	include/alibabacloud/dms-enterprise/model/RevokeUserPermissionRequest.h
 	include/alibabacloud/dms-enterprise/model/RevokeUserPermissionResult.h
 	include/alibabacloud/dms-enterprise/model/SearchDatabaseRequest.h
@@ -351,6 +367,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/SyncDatabaseMetaResult.h
 	include/alibabacloud/dms-enterprise/model/SyncInstanceMetaRequest.h
 	include/alibabacloud/dms-enterprise/model/SyncInstanceMetaResult.h
+	include/alibabacloud/dms-enterprise/model/UpdateAuthorityTemplateRequest.h
+	include/alibabacloud/dms-enterprise/model/UpdateAuthorityTemplateResult.h
 	include/alibabacloud/dms-enterprise/model/UpdateInstanceRequest.h
 	include/alibabacloud/dms-enterprise/model/UpdateInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/UpdateSLARulesRequest.h
@@ -410,6 +428,8 @@ set(dms-enterprise_src
 	src/model/ChangeLhDagOwnerResult.cc
 	src/model/CloseOrderRequest.cc
 	src/model/CloseOrderResult.cc
+	src/model/CreateAuthorityTemplateRequest.cc
+	src/model/CreateAuthorityTemplateResult.cc
 	src/model/CreateDataCorrectOrderRequest.cc
 	src/model/CreateDataCorrectOrderResult.cc
 	src/model/CreateDataCronClearOrderRequest.cc
@@ -486,6 +506,10 @@ set(dms-enterprise_src
 	src/model/ExecuteStructSyncResult.cc
 	src/model/GetApprovalDetailRequest.cc
 	src/model/GetApprovalDetailResult.cc
+	src/model/GetAuthorityTemplateRequest.cc
+	src/model/GetAuthorityTemplateResult.cc
+	src/model/GetAuthorityTemplateItemRequest.cc
+	src/model/GetAuthorityTemplateItemResult.cc
 	src/model/GetDBTaskSQLJobLogRequest.cc
 	src/model/GetDBTaskSQLJobLogResult.cc
 	src/model/GetDBTopologyRequest.cc
@@ -508,6 +532,8 @@ set(dms-enterprise_src
 	src/model/GetDataExportDownloadURLResult.cc
 	src/model/GetDataExportOrderDetailRequest.cc
 	src/model/GetDataExportOrderDetailResult.cc
+	src/model/GetDataImportSQLRequest.cc
+	src/model/GetDataImportSQLResult.cc
 	src/model/GetDatabaseRequest.cc
 	src/model/GetDatabaseResult.cc
 	src/model/GetInstanceRequest.cc
@@ -572,6 +598,8 @@ set(dms-enterprise_src
 	src/model/GetUserActiveTenantResult.cc
 	src/model/GetUserUploadFileJobRequest.cc
 	src/model/GetUserUploadFileJobResult.cc
+	src/model/GrantTemplateAuthorityRequest.cc
+	src/model/GrantTemplateAuthorityResult.cc
 	src/model/GrantUserPermissionRequest.cc
 	src/model/GrantUserPermissionResult.cc
 	src/model/InspectProxyAccessSecretRequest.cc
@@ -592,6 +620,10 @@ set(dms-enterprise_src
 	src/model/ListDataCorrectPreCheckDBResult.cc
 	src/model/ListDataCorrectPreCheckSQLRequest.cc
 	src/model/ListDataCorrectPreCheckSQLResult.cc
+	src/model/ListDataImportSQLPreCheckDetailRequest.cc
+	src/model/ListDataImportSQLPreCheckDetailResult.cc
+	src/model/ListDataImportSQLTypeRequest.cc
+	src/model/ListDataImportSQLTypeResult.cc
 	src/model/ListDatabaseUserPermssionsRequest.cc
 	src/model/ListDatabaseUserPermssionsResult.cc
 	src/model/ListDatabasesRequest.cc
@@ -700,6 +732,8 @@ set(dms-enterprise_src
 	src/model/ResumeTaskFlowInstanceResult.cc
 	src/model/RetryDataCorrectPreCheckRequest.cc
 	src/model/RetryDataCorrectPreCheckResult.cc
+	src/model/RevokeTemplateAuthorityRequest.cc
+	src/model/RevokeTemplateAuthorityResult.cc
 	src/model/RevokeUserPermissionRequest.cc
 	src/model/RevokeUserPermissionResult.cc
 	src/model/SearchDatabaseRequest.cc
@@ -720,6 +754,8 @@ set(dms-enterprise_src
 	src/model/SyncDatabaseMetaResult.cc
 	src/model/SyncInstanceMetaRequest.cc
 	src/model/SyncInstanceMetaResult.cc
+	src/model/UpdateAuthorityTemplateRequest.cc
+	src/model/UpdateAuthorityTemplateResult.cc
 	src/model/UpdateInstanceRequest.cc
 	src/model/UpdateInstanceResult.cc
 	src/model/UpdateSLARulesRequest.cc

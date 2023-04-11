@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYREQUEST_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYREQUEST_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTDATAIMPORTSQLPRECHECKDETAILREQUEST_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTDATAIMPORTSQLPRECHECKDETAILREQUEST_H_
 
 #include <alibabacloud/dms-enterprise/Dms_enterpriseExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,32 @@
 namespace AlibabaCloud {
 namespace Dms_enterprise {
 namespace Model {
-class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetProxyRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListDataImportSQLPreCheckDetailRequest : public RpcServiceRequest {
 public:
-	GetProxyRequest();
-	~GetProxyRequest();
+	ListDataImportSQLPreCheckDetailRequest();
+	~ListDataImportSQLPreCheckDetailRequest();
+	long getPageNumer() const;
+	void setPageNumer(long pageNumer);
 	long getTid() const;
 	void setTid(long tid);
-	long getProxyId() const;
-	void setProxyId(long proxyId);
+	std::string getStatusCode() const;
+	void setStatusCode(const std::string &statusCode);
+	long getPageSize() const;
+	void setPageSize(long pageSize);
+	std::string getSqlType() const;
+	void setSqlType(const std::string &sqlType);
+	long getOrderId() const;
+	void setOrderId(long orderId);
 
 private:
+	long pageNumer_;
 	long tid_;
-	long proxyId_;
+	std::string statusCode_;
+	long pageSize_;
+	std::string sqlType_;
+	long orderId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYREQUEST_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTDATAIMPORTSQLPRECHECKDETAILREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYREQUEST_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYREQUEST_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GRANTTEMPLATEAUTHORITYREQUEST_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GRANTTEMPLATEAUTHORITYREQUEST_H_
 
 #include <alibabacloud/dms-enterprise/Dms_enterpriseExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,29 @@
 namespace AlibabaCloud {
 namespace Dms_enterprise {
 namespace Model {
-class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetProxyRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GrantTemplateAuthorityRequest : public RpcServiceRequest {
 public:
-	GetProxyRequest();
-	~GetProxyRequest();
+	GrantTemplateAuthorityRequest();
+	~GrantTemplateAuthorityRequest();
+	std::string getExpireDate() const;
+	void setExpireDate(const std::string &expireDate);
 	long getTid() const;
 	void setTid(long tid);
-	long getProxyId() const;
-	void setProxyId(long proxyId);
+	long getTemplateId() const;
+	void setTemplateId(long templateId);
+	std::string getUserIds() const;
+	void setUserIds(const std::string &userIds);
+	std::string getComment() const;
+	void setComment(const std::string &comment);
 
 private:
+	std::string expireDate_;
 	long tid_;
-	long proxyId_;
+	long templateId_;
+	std::string userIds_;
+	std::string comment_;
 };
 } // namespace Model
 } // namespace Dms_enterprise
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETPROXYREQUEST_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GRANTTEMPLATEAUTHORITYREQUEST_H_

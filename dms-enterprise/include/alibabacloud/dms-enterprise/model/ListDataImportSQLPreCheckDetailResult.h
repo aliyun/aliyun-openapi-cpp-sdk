@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTPROXIESRESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTPROXIESRESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTDATAIMPORTSQLPRECHECKDETAILRESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTDATAIMPORTSQLPRECHECKDETAILRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,30 +29,23 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListProxiesResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListDataImportSQLPreCheckDetailResult : public ServiceResult
 			{
 			public:
-				struct ProxyListItem
+				struct PreCheckSQLDetail
 				{
-					std::string publicHost;
-					std::string privateHost;
-					long instanceId;
-					long proxyId;
-					long creatorId;
-					std::string protocolType;
-					int protocolPort;
-					std::string regionId;
-					bool privateEnable;
-					std::string creatorName;
-					bool publicEnable;
-					int httpsPort;
+					bool skip;
+					std::string sqlType;
+					std::string statusCode;
+					long sqlId;
 				};
 
 
-				ListProxiesResult();
-				explicit ListProxiesResult(const std::string &payload);
-				~ListProxiesResult();
-				std::vector<ProxyListItem> getProxyList()const;
+				ListDataImportSQLPreCheckDetailResult();
+				explicit ListDataImportSQLPreCheckDetailResult(const std::string &payload);
+				~ListDataImportSQLPreCheckDetailResult();
+				long getTotalCount()const;
+				std::vector<PreCheckSQLDetail> getPreCheckSQLDetailList()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -60,7 +53,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ProxyListItem> proxyList_;
+				long totalCount_;
+				std::vector<PreCheckSQLDetail> preCheckSQLDetailList_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -69,4 +63,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTPROXIESRESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTDATAIMPORTSQLPRECHECKDETAILRESULT_H_

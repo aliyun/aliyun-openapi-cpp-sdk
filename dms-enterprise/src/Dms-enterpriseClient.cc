@@ -411,6 +411,42 @@ Dms_enterpriseClient::CloseOrderOutcomeCallable Dms_enterpriseClient::closeOrder
 	return task->get_future();
 }
 
+Dms_enterpriseClient::CreateAuthorityTemplateOutcome Dms_enterpriseClient::createAuthorityTemplate(const CreateAuthorityTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAuthorityTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAuthorityTemplateOutcome(CreateAuthorityTemplateResult(outcome.result()));
+	else
+		return CreateAuthorityTemplateOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createAuthorityTemplateAsync(const CreateAuthorityTemplateRequest& request, const CreateAuthorityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAuthorityTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateAuthorityTemplateOutcomeCallable Dms_enterpriseClient::createAuthorityTemplateCallable(const CreateAuthorityTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAuthorityTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->createAuthorityTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::CreateDataCorrectOrderOutcome Dms_enterpriseClient::createDataCorrectOrder(const CreateDataCorrectOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1779,6 +1815,78 @@ Dms_enterpriseClient::GetApprovalDetailOutcomeCallable Dms_enterpriseClient::get
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetAuthorityTemplateOutcome Dms_enterpriseClient::getAuthorityTemplate(const GetAuthorityTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAuthorityTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAuthorityTemplateOutcome(GetAuthorityTemplateResult(outcome.result()));
+	else
+		return GetAuthorityTemplateOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getAuthorityTemplateAsync(const GetAuthorityTemplateRequest& request, const GetAuthorityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAuthorityTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetAuthorityTemplateOutcomeCallable Dms_enterpriseClient::getAuthorityTemplateCallable(const GetAuthorityTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAuthorityTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->getAuthorityTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetAuthorityTemplateItemOutcome Dms_enterpriseClient::getAuthorityTemplateItem(const GetAuthorityTemplateItemRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAuthorityTemplateItemOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAuthorityTemplateItemOutcome(GetAuthorityTemplateItemResult(outcome.result()));
+	else
+		return GetAuthorityTemplateItemOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getAuthorityTemplateItemAsync(const GetAuthorityTemplateItemRequest& request, const GetAuthorityTemplateItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAuthorityTemplateItem(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetAuthorityTemplateItemOutcomeCallable Dms_enterpriseClient::getAuthorityTemplateItemCallable(const GetAuthorityTemplateItemRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAuthorityTemplateItemOutcome()>>(
+			[this, request]()
+			{
+			return this->getAuthorityTemplateItem(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetDBTaskSQLJobLogOutcome Dms_enterpriseClient::getDBTaskSQLJobLog(const GetDBTaskSQLJobLogRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2169,6 +2277,42 @@ Dms_enterpriseClient::GetDataExportOrderDetailOutcomeCallable Dms_enterpriseClie
 			[this, request]()
 			{
 			return this->getDataExportOrderDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetDataImportSQLOutcome Dms_enterpriseClient::getDataImportSQL(const GetDataImportSQLRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataImportSQLOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataImportSQLOutcome(GetDataImportSQLResult(outcome.result()));
+	else
+		return GetDataImportSQLOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataImportSQLAsync(const GetDataImportSQLRequest& request, const GetDataImportSQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataImportSQL(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataImportSQLOutcomeCallable Dms_enterpriseClient::getDataImportSQLCallable(const GetDataImportSQLRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataImportSQLOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataImportSQL(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3327,6 +3471,42 @@ Dms_enterpriseClient::GetUserUploadFileJobOutcomeCallable Dms_enterpriseClient::
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GrantTemplateAuthorityOutcome Dms_enterpriseClient::grantTemplateAuthority(const GrantTemplateAuthorityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GrantTemplateAuthorityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GrantTemplateAuthorityOutcome(GrantTemplateAuthorityResult(outcome.result()));
+	else
+		return GrantTemplateAuthorityOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::grantTemplateAuthorityAsync(const GrantTemplateAuthorityRequest& request, const GrantTemplateAuthorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, grantTemplateAuthority(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GrantTemplateAuthorityOutcomeCallable Dms_enterpriseClient::grantTemplateAuthorityCallable(const GrantTemplateAuthorityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GrantTemplateAuthorityOutcome()>>(
+			[this, request]()
+			{
+			return this->grantTemplateAuthority(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GrantUserPermissionOutcome Dms_enterpriseClient::grantUserPermission(const GrantUserPermissionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3681,6 +3861,78 @@ Dms_enterpriseClient::ListDataCorrectPreCheckSQLOutcomeCallable Dms_enterpriseCl
 			[this, request]()
 			{
 			return this->listDataCorrectPreCheckSQL(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListDataImportSQLPreCheckDetailOutcome Dms_enterpriseClient::listDataImportSQLPreCheckDetail(const ListDataImportSQLPreCheckDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDataImportSQLPreCheckDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDataImportSQLPreCheckDetailOutcome(ListDataImportSQLPreCheckDetailResult(outcome.result()));
+	else
+		return ListDataImportSQLPreCheckDetailOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listDataImportSQLPreCheckDetailAsync(const ListDataImportSQLPreCheckDetailRequest& request, const ListDataImportSQLPreCheckDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDataImportSQLPreCheckDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListDataImportSQLPreCheckDetailOutcomeCallable Dms_enterpriseClient::listDataImportSQLPreCheckDetailCallable(const ListDataImportSQLPreCheckDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDataImportSQLPreCheckDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->listDataImportSQLPreCheckDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::ListDataImportSQLTypeOutcome Dms_enterpriseClient::listDataImportSQLType(const ListDataImportSQLTypeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListDataImportSQLTypeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListDataImportSQLTypeOutcome(ListDataImportSQLTypeResult(outcome.result()));
+	else
+		return ListDataImportSQLTypeOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::listDataImportSQLTypeAsync(const ListDataImportSQLTypeRequest& request, const ListDataImportSQLTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listDataImportSQLType(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::ListDataImportSQLTypeOutcomeCallable Dms_enterpriseClient::listDataImportSQLTypeCallable(const ListDataImportSQLTypeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListDataImportSQLTypeOutcome()>>(
+			[this, request]()
+			{
+			return this->listDataImportSQLType(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5631,6 +5883,42 @@ Dms_enterpriseClient::RetryDataCorrectPreCheckOutcomeCallable Dms_enterpriseClie
 	return task->get_future();
 }
 
+Dms_enterpriseClient::RevokeTemplateAuthorityOutcome Dms_enterpriseClient::revokeTemplateAuthority(const RevokeTemplateAuthorityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RevokeTemplateAuthorityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RevokeTemplateAuthorityOutcome(RevokeTemplateAuthorityResult(outcome.result()));
+	else
+		return RevokeTemplateAuthorityOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::revokeTemplateAuthorityAsync(const RevokeTemplateAuthorityRequest& request, const RevokeTemplateAuthorityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, revokeTemplateAuthority(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::RevokeTemplateAuthorityOutcomeCallable Dms_enterpriseClient::revokeTemplateAuthorityCallable(const RevokeTemplateAuthorityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RevokeTemplateAuthorityOutcome()>>(
+			[this, request]()
+			{
+			return this->revokeTemplateAuthority(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::RevokeUserPermissionOutcome Dms_enterpriseClient::revokeUserPermission(const RevokeUserPermissionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5985,6 +6273,42 @@ Dms_enterpriseClient::SyncInstanceMetaOutcomeCallable Dms_enterpriseClient::sync
 			[this, request]()
 			{
 			return this->syncInstanceMeta(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::UpdateAuthorityTemplateOutcome Dms_enterpriseClient::updateAuthorityTemplate(const UpdateAuthorityTemplateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateAuthorityTemplateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateAuthorityTemplateOutcome(UpdateAuthorityTemplateResult(outcome.result()));
+	else
+		return UpdateAuthorityTemplateOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::updateAuthorityTemplateAsync(const UpdateAuthorityTemplateRequest& request, const UpdateAuthorityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateAuthorityTemplate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::UpdateAuthorityTemplateOutcomeCallable Dms_enterpriseClient::updateAuthorityTemplateCallable(const UpdateAuthorityTemplateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateAuthorityTemplateOutcome()>>(
+			[this, request]()
+			{
+			return this->updateAuthorityTemplate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

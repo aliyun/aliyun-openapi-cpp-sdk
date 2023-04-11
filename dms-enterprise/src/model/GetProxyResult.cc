@@ -67,6 +67,8 @@ void GetProxyResult::parse(const std::string &payload)
 		protocolType_ = value["ProtocolType"].asString();
 	if(!value["ProtocolPort"].isNull())
 		protocolPort_ = std::stoi(value["ProtocolPort"].asString());
+	if(!value["RegionId"].isNull())
+		regionId_ = value["RegionId"].asString();
 
 }
 
@@ -118,6 +120,11 @@ std::string GetProxyResult::getErrorCode()const
 int GetProxyResult::getProtocolPort()const
 {
 	return protocolPort_;
+}
+
+std::string GetProxyResult::getRegionId()const
+{
+	return regionId_;
 }
 
 std::string GetProxyResult::getErrorMessage()const

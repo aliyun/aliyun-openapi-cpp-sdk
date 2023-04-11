@@ -14,32 +14,32 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/dms-enterprise/model/GetProxyRequest.h>
+#include <alibabacloud/dms-enterprise/model/GetAuthorityTemplateItemRequest.h>
 
-using AlibabaCloud::Dms_enterprise::Model::GetProxyRequest;
+using AlibabaCloud::Dms_enterprise::Model::GetAuthorityTemplateItemRequest;
 
-GetProxyRequest::GetProxyRequest()
-    : RpcServiceRequest("dms-enterprise", "2018-11-01", "GetProxy") {
+GetAuthorityTemplateItemRequest::GetAuthorityTemplateItemRequest()
+    : RpcServiceRequest("dms-enterprise", "2018-11-01", "GetAuthorityTemplateItem") {
   setMethod(HttpRequest::Method::Post);
 }
 
-GetProxyRequest::~GetProxyRequest() {}
+GetAuthorityTemplateItemRequest::~GetAuthorityTemplateItemRequest() {}
 
-long GetProxyRequest::getTid() const {
+long GetAuthorityTemplateItemRequest::getTid() const {
   return tid_;
 }
 
-void GetProxyRequest::setTid(long tid) {
+void GetAuthorityTemplateItemRequest::setTid(long tid) {
   tid_ = tid;
   setParameter(std::string("Tid"), std::to_string(tid));
 }
 
-long GetProxyRequest::getProxyId() const {
-  return proxyId_;
+long GetAuthorityTemplateItemRequest::getTemplateId() const {
+  return templateId_;
 }
 
-void GetProxyRequest::setProxyId(long proxyId) {
-  proxyId_ = proxyId;
-  setParameter(std::string("ProxyId"), std::to_string(proxyId));
+void GetAuthorityTemplateItemRequest::setTemplateId(long templateId) {
+  templateId_ = templateId;
+  setParameter(std::string("TemplateId"), std::to_string(templateId));
 }
 

@@ -65,6 +65,8 @@ void ListProxiesResult::parse(const std::string &payload)
 			proxyListObject.protocolType = valueProxyListProxyListItem["ProtocolType"].asString();
 		if(!valueProxyListProxyListItem["ProtocolPort"].isNull())
 			proxyListObject.protocolPort = std::stoi(valueProxyListProxyListItem["ProtocolPort"].asString());
+		if(!valueProxyListProxyListItem["RegionId"].isNull())
+			proxyListObject.regionId = valueProxyListProxyListItem["RegionId"].asString();
 		proxyList_.push_back(proxyListObject);
 	}
 	if(!value["Success"].isNull())

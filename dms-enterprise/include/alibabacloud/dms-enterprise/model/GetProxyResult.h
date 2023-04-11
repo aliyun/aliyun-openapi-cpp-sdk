@@ -47,6 +47,7 @@ namespace AlibabaCloud
 				std::string getProtocolType()const;
 				std::string getErrorCode()const;
 				int getProtocolPort()const;
+				std::string getRegionId()const;
 				std::string getErrorMessage()const;
 				bool getPrivateEnable()const;
 				std::string getCreatorName()const;
@@ -65,6 +66,7 @@ namespace AlibabaCloud
 				std::string protocolType_;
 				std::string errorCode_;
 				int protocolPort_;
+				std::string regionId_;
 				std::string errorMessage_;
 				bool privateEnable_;
 				std::string creatorName_;

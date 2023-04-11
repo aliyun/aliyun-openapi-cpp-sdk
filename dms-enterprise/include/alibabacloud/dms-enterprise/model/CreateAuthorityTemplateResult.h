@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTPROXIESRESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTPROXIESRESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_CREATEAUTHORITYTEMPLATERESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_CREATEAUTHORITYTEMPLATERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,44 +29,37 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListProxiesResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT CreateAuthorityTemplateResult : public ServiceResult
 			{
 			public:
-				struct ProxyListItem
+				struct AuthorityTemplateView
 				{
-					std::string publicHost;
-					std::string privateHost;
-					long instanceId;
-					long proxyId;
+					std::string description;
 					long creatorId;
-					std::string protocolType;
-					int protocolPort;
-					std::string regionId;
-					bool privateEnable;
-					std::string creatorName;
-					bool publicEnable;
-					int httpsPort;
+					std::string createTime;
+					long templateId;
+					std::string name;
 				};
 
 
-				ListProxiesResult();
-				explicit ListProxiesResult(const std::string &payload);
-				~ListProxiesResult();
-				std::vector<ProxyListItem> getProxyList()const;
+				CreateAuthorityTemplateResult();
+				explicit CreateAuthorityTemplateResult(const std::string &payload);
+				~CreateAuthorityTemplateResult();
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
+				AuthorityTemplateView getAuthorityTemplateView()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ProxyListItem> proxyList_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
+				AuthorityTemplateView authorityTemplateView_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTPROXIESRESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_CREATEAUTHORITYTEMPLATERESULT_H_
