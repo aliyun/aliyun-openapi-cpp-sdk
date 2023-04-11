@@ -14,14 +14,23 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alimt/model/GetUserRequest.h>
+#include <alibabacloud/alimt/model/GetTranslateImageBatchResultRequest.h>
 
-using AlibabaCloud::Alimt::Model::GetUserRequest;
+using AlibabaCloud::Alimt::Model::GetTranslateImageBatchResultRequest;
 
-GetUserRequest::GetUserRequest()
-    : RpcServiceRequest("alimt", "2018-10-12", "GetUser") {
+GetTranslateImageBatchResultRequest::GetTranslateImageBatchResultRequest()
+    : RpcServiceRequest("alimt", "2018-10-12", "GetTranslateImageBatchResult") {
   setMethod(HttpRequest::Method::Post);
 }
 
-GetUserRequest::~GetUserRequest() {}
+GetTranslateImageBatchResultRequest::~GetTranslateImageBatchResultRequest() {}
+
+std::string GetTranslateImageBatchResultRequest::getTaskId() const {
+  return taskId_;
+}
+
+void GetTranslateImageBatchResultRequest::setTaskId(const std::string &taskId) {
+  taskId_ = taskId;
+  setBodyParameter(std::string("TaskId"), taskId);
+}
 

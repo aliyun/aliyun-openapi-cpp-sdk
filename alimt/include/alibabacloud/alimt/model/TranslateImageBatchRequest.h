@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIMT_MODEL_TRANSLATEECOMMERCEREQUEST_H_
-#define ALIBABACLOUD_ALIMT_MODEL_TRANSLATEECOMMERCEREQUEST_H_
+#ifndef ALIBABACLOUD_ALIMT_MODEL_TRANSLATEIMAGEBATCHREQUEST_H_
+#define ALIBABACLOUD_ALIMT_MODEL_TRANSLATEIMAGEBATCHREQUEST_H_
 
 #include <alibabacloud/alimt/AlimtExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,32 @@
 namespace AlibabaCloud {
 namespace Alimt {
 namespace Model {
-class ALIBABACLOUD_ALIMT_EXPORT TranslateECommerceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ALIMT_EXPORT TranslateImageBatchRequest : public RpcServiceRequest {
 public:
-	TranslateECommerceRequest();
-	~TranslateECommerceRequest();
+	TranslateImageBatchRequest();
+	~TranslateImageBatchRequest();
+	std::string getExt() const;
+	void setExt(const std::string &ext);
 	std::string getSourceLanguage() const;
 	void setSourceLanguage(const std::string &sourceLanguage);
-	std::string getSourceText() const;
-	void setSourceText(const std::string &sourceText);
-	std::string getFormatType() const;
-	void setFormatType(const std::string &formatType);
-	std::string getScene() const;
-	void setScene(const std::string &scene);
-	std::string getContext() const;
-	void setContext(const std::string &context);
+	std::string getImageUrls() const;
+	void setImageUrls(const std::string &imageUrls);
+	std::string getCustomTaskId() const;
+	void setCustomTaskId(const std::string &customTaskId);
+	std::string getField() const;
+	void setField(const std::string &field);
 	std::string getTargetLanguage() const;
 	void setTargetLanguage(const std::string &targetLanguage);
 
 private:
+	std::string ext_;
 	std::string sourceLanguage_;
-	std::string sourceText_;
-	std::string formatType_;
-	std::string scene_;
-	std::string context_;
+	std::string imageUrls_;
+	std::string customTaskId_;
+	std::string field_;
 	std::string targetLanguage_;
 };
 } // namespace Model
 } // namespace Alimt
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ALIMT_MODEL_TRANSLATEECOMMERCEREQUEST_H_
+#endif // !ALIBABACLOUD_ALIMT_MODEL_TRANSLATEIMAGEBATCHREQUEST_H_

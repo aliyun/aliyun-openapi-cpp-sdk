@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIMT_MODEL_GETUSERRESULT_H_
-#define ALIBABACLOUD_ALIMT_MODEL_GETUSERRESULT_H_
+#ifndef ALIBABACLOUD_ALIMT_MODEL_GETTRANSLATEIMAGEBATCHRESULTRESULT_H_
+#define ALIBABACLOUD_ALIMT_MODEL_GETTRANSLATEIMAGEBATCHRESULTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,27 +29,42 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIMT_EXPORT GetUserResult : public ServiceResult
+			class ALIBABACLOUD_ALIMT_EXPORT GetTranslateImageBatchResultResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					struct CertificateImageTranslateResult
+					{
+						std::string message;
+						std::string inPaintingUrl;
+						std::string templateJson;
+						std::string sourceImageUrl;
+						int code;
+						bool success;
+						std::string finalImageUrl;
+					};
+					std::string status;
+					std::vector<CertificateImageTranslateResult> result;
+				};
 
 
-				GetUserResult();
-				explicit GetUserResult(const std::string &payload);
-				~GetUserResult();
+				GetTranslateImageBatchResultResult();
+				explicit GetTranslateImageBatchResultResult(const std::string &payload);
+				~GetTranslateImageBatchResultResult();
 				std::string getMessage()const;
-				std::string getData()const;
+				Data getData()const;
 				int getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::string data_;
+				Data data_;
 				int code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIMT_MODEL_GETUSERRESULT_H_
+#endif // !ALIBABACLOUD_ALIMT_MODEL_GETTRANSLATEIMAGEBATCHRESULTRESULT_H_

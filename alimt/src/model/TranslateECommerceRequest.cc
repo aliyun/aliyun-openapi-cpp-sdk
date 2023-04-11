@@ -61,6 +61,15 @@ void TranslateECommerceRequest::setScene(const std::string &scene) {
   setBodyParameter(std::string("Scene"), scene);
 }
 
+std::string TranslateECommerceRequest::getContext() const {
+  return context_;
+}
+
+void TranslateECommerceRequest::setContext(const std::string &context) {
+  context_ = context;
+  setParameter(std::string("Context"), context);
+}
+
 std::string TranslateECommerceRequest::getTargetLanguage() const {
   return targetLanguage_;
 }

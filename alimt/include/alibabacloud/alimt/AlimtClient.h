@@ -44,10 +44,10 @@
 #include "model/GetTitleGenerateResult.h"
 #include "model/GetTitleIntelligenceRequest.h"
 #include "model/GetTitleIntelligenceResult.h"
+#include "model/GetTranslateImageBatchResultRequest.h"
+#include "model/GetTranslateImageBatchResultResult.h"
 #include "model/GetTranslateReportRequest.h"
 #include "model/GetTranslateReportResult.h"
-#include "model/GetUserRequest.h"
-#include "model/GetUserResult.h"
 #include "model/OpenAlimtServiceRequest.h"
 #include "model/OpenAlimtServiceResult.h"
 #include "model/TranslateRequest.h"
@@ -60,6 +60,8 @@
 #include "model/TranslateGeneralResult.h"
 #include "model/TranslateImageRequest.h"
 #include "model/TranslateImageResult.h"
+#include "model/TranslateImageBatchRequest.h"
+#include "model/TranslateImageBatchResult.h"
 
 
 namespace AlibabaCloud
@@ -102,12 +104,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetTitleIntelligenceResult> GetTitleIntelligenceOutcome;
 			typedef std::future<GetTitleIntelligenceOutcome> GetTitleIntelligenceOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::GetTitleIntelligenceRequest&, const GetTitleIntelligenceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTitleIntelligenceAsyncHandler;
+			typedef Outcome<Error, Model::GetTranslateImageBatchResultResult> GetTranslateImageBatchResultOutcome;
+			typedef std::future<GetTranslateImageBatchResultOutcome> GetTranslateImageBatchResultOutcomeCallable;
+			typedef std::function<void(const AlimtClient*, const Model::GetTranslateImageBatchResultRequest&, const GetTranslateImageBatchResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTranslateImageBatchResultAsyncHandler;
 			typedef Outcome<Error, Model::GetTranslateReportResult> GetTranslateReportOutcome;
 			typedef std::future<GetTranslateReportOutcome> GetTranslateReportOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::GetTranslateReportRequest&, const GetTranslateReportOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetTranslateReportAsyncHandler;
-			typedef Outcome<Error, Model::GetUserResult> GetUserOutcome;
-			typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
-			typedef std::function<void(const AlimtClient*, const Model::GetUserRequest&, const GetUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
 			typedef Outcome<Error, Model::OpenAlimtServiceResult> OpenAlimtServiceOutcome;
 			typedef std::future<OpenAlimtServiceOutcome> OpenAlimtServiceOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::OpenAlimtServiceRequest&, const OpenAlimtServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenAlimtServiceAsyncHandler;
@@ -126,6 +128,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TranslateImageResult> TranslateImageOutcome;
 			typedef std::future<TranslateImageOutcome> TranslateImageOutcomeCallable;
 			typedef std::function<void(const AlimtClient*, const Model::TranslateImageRequest&, const TranslateImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TranslateImageAsyncHandler;
+			typedef Outcome<Error, Model::TranslateImageBatchResult> TranslateImageBatchOutcome;
+			typedef std::future<TranslateImageBatchOutcome> TranslateImageBatchOutcomeCallable;
+			typedef std::function<void(const AlimtClient*, const Model::TranslateImageBatchRequest&, const TranslateImageBatchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TranslateImageBatchAsyncHandler;
 
 			AlimtClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			AlimtClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -164,12 +169,12 @@ namespace AlibabaCloud
 			GetTitleIntelligenceOutcome getTitleIntelligence(const Model::GetTitleIntelligenceRequest &request)const;
 			void getTitleIntelligenceAsync(const Model::GetTitleIntelligenceRequest& request, const GetTitleIntelligenceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTitleIntelligenceOutcomeCallable getTitleIntelligenceCallable(const Model::GetTitleIntelligenceRequest& request) const;
+			GetTranslateImageBatchResultOutcome getTranslateImageBatchResult(const Model::GetTranslateImageBatchResultRequest &request)const;
+			void getTranslateImageBatchResultAsync(const Model::GetTranslateImageBatchResultRequest& request, const GetTranslateImageBatchResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetTranslateImageBatchResultOutcomeCallable getTranslateImageBatchResultCallable(const Model::GetTranslateImageBatchResultRequest& request) const;
 			GetTranslateReportOutcome getTranslateReport(const Model::GetTranslateReportRequest &request)const;
 			void getTranslateReportAsync(const Model::GetTranslateReportRequest& request, const GetTranslateReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetTranslateReportOutcomeCallable getTranslateReportCallable(const Model::GetTranslateReportRequest& request) const;
-			GetUserOutcome getUser(const Model::GetUserRequest &request)const;
-			void getUserAsync(const Model::GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetUserOutcomeCallable getUserCallable(const Model::GetUserRequest& request) const;
 			OpenAlimtServiceOutcome openAlimtService(const Model::OpenAlimtServiceRequest &request)const;
 			void openAlimtServiceAsync(const Model::OpenAlimtServiceRequest& request, const OpenAlimtServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenAlimtServiceOutcomeCallable openAlimtServiceCallable(const Model::OpenAlimtServiceRequest& request) const;
@@ -188,6 +193,9 @@ namespace AlibabaCloud
 			TranslateImageOutcome translateImage(const Model::TranslateImageRequest &request)const;
 			void translateImageAsync(const Model::TranslateImageRequest& request, const TranslateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TranslateImageOutcomeCallable translateImageCallable(const Model::TranslateImageRequest& request) const;
+			TranslateImageBatchOutcome translateImageBatch(const Model::TranslateImageBatchRequest &request)const;
+			void translateImageBatchAsync(const Model::TranslateImageBatchRequest& request, const TranslateImageBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TranslateImageBatchOutcomeCallable translateImageBatchCallable(const Model::TranslateImageBatchRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

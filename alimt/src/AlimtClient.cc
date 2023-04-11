@@ -447,6 +447,42 @@ AlimtClient::GetTitleIntelligenceOutcomeCallable AlimtClient::getTitleIntelligen
 	return task->get_future();
 }
 
+AlimtClient::GetTranslateImageBatchResultOutcome AlimtClient::getTranslateImageBatchResult(const GetTranslateImageBatchResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetTranslateImageBatchResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetTranslateImageBatchResultOutcome(GetTranslateImageBatchResultResult(outcome.result()));
+	else
+		return GetTranslateImageBatchResultOutcome(outcome.error());
+}
+
+void AlimtClient::getTranslateImageBatchResultAsync(const GetTranslateImageBatchResultRequest& request, const GetTranslateImageBatchResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getTranslateImageBatchResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::GetTranslateImageBatchResultOutcomeCallable AlimtClient::getTranslateImageBatchResultCallable(const GetTranslateImageBatchResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetTranslateImageBatchResultOutcome()>>(
+			[this, request]()
+			{
+			return this->getTranslateImageBatchResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlimtClient::GetTranslateReportOutcome AlimtClient::getTranslateReport(const GetTranslateReportRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,42 +513,6 @@ AlimtClient::GetTranslateReportOutcomeCallable AlimtClient::getTranslateReportCa
 			[this, request]()
 			{
 			return this->getTranslateReport(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AlimtClient::GetUserOutcome AlimtClient::getUser(const GetUserRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetUserOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetUserOutcome(GetUserResult(outcome.result()));
-	else
-		return GetUserOutcome(outcome.error());
-}
-
-void AlimtClient::getUserAsync(const GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getUser(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AlimtClient::GetUserOutcomeCallable AlimtClient::getUserCallable(const GetUserRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetUserOutcome()>>(
-			[this, request]()
-			{
-			return this->getUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -729,6 +729,42 @@ AlimtClient::TranslateImageOutcomeCallable AlimtClient::translateImageCallable(c
 			[this, request]()
 			{
 			return this->translateImage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlimtClient::TranslateImageBatchOutcome AlimtClient::translateImageBatch(const TranslateImageBatchRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TranslateImageBatchOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TranslateImageBatchOutcome(TranslateImageBatchResult(outcome.result()));
+	else
+		return TranslateImageBatchOutcome(outcome.error());
+}
+
+void AlimtClient::translateImageBatchAsync(const TranslateImageBatchRequest& request, const TranslateImageBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, translateImageBatch(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlimtClient::TranslateImageBatchOutcomeCallable AlimtClient::translateImageBatchCallable(const TranslateImageBatchRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TranslateImageBatchOutcome()>>(
+			[this, request]()
+			{
+			return this->translateImageBatch(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

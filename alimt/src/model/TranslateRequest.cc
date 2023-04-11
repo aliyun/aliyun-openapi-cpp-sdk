@@ -61,6 +61,15 @@ void TranslateRequest::setScene(const std::string &scene) {
   setBodyParameter(std::string("Scene"), scene);
 }
 
+std::string TranslateRequest::getContext() const {
+  return context_;
+}
+
+void TranslateRequest::setContext(const std::string &context) {
+  context_ = context;
+  setParameter(std::string("Context"), context);
+}
+
 std::string TranslateRequest::getTargetLanguage() const {
   return targetLanguage_;
 }

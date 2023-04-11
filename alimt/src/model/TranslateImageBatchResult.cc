@@ -14,51 +14,52 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/alimt/model/GetUserResult.h>
+#include <alibabacloud/alimt/model/TranslateImageBatchResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Alimt;
 using namespace AlibabaCloud::Alimt::Model;
 
-GetUserResult::GetUserResult() :
+TranslateImageBatchResult::TranslateImageBatchResult() :
 	ServiceResult()
 {}
 
-GetUserResult::GetUserResult(const std::string &payload) :
+TranslateImageBatchResult::TranslateImageBatchResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-GetUserResult::~GetUserResult()
+TranslateImageBatchResult::~TranslateImageBatchResult()
 {}
 
-void GetUserResult::parse(const std::string &payload)
+void TranslateImageBatchResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["Code"].isNull())
-		code_ = std::stoi(value["Code"].asString());
+	auto dataNode = value["Data"];
+	if(!dataNode["TaskId"].isNull())
+		data_.taskId = dataNode["TaskId"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["Data"].isNull())
-		data_ = value["Data"].asString();
+	if(!value["Code"].isNull())
+		code_ = std::stoi(value["Code"].asString());
 
 }
 
-std::string GetUserResult::getMessage()const
+std::string TranslateImageBatchResult::getMessage()const
 {
 	return message_;
 }
 
-std::string GetUserResult::getData()const
+TranslateImageBatchResult::Data TranslateImageBatchResult::getData()const
 {
 	return data_;
 }
 
-int GetUserResult::getCode()const
+int TranslateImageBatchResult::getCode()const
 {
 	return code_;
 }

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIMT_MODEL_GETUSERREQUEST_H_
-#define ALIBABACLOUD_ALIMT_MODEL_GETUSERREQUEST_H_
+#ifndef ALIBABACLOUD_ALIMT_MODEL_GETTRANSLATEIMAGEBATCHRESULTREQUEST_H_
+#define ALIBABACLOUD_ALIMT_MODEL_GETTRANSLATEIMAGEBATCHRESULTREQUEST_H_
 
 #include <alibabacloud/alimt/AlimtExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,14 +26,17 @@
 namespace AlibabaCloud {
 namespace Alimt {
 namespace Model {
-class ALIBABACLOUD_ALIMT_EXPORT GetUserRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ALIMT_EXPORT GetTranslateImageBatchResultRequest : public RpcServiceRequest {
 public:
-	GetUserRequest();
-	~GetUserRequest();
+	GetTranslateImageBatchResultRequest();
+	~GetTranslateImageBatchResultRequest();
+	std::string getTaskId() const;
+	void setTaskId(const std::string &taskId);
 
 private:
+	std::string taskId_;
 };
 } // namespace Model
 } // namespace Alimt
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ALIMT_MODEL_GETUSERREQUEST_H_
+#endif // !ALIBABACLOUD_ALIMT_MODEL_GETTRANSLATEIMAGEBATCHRESULTREQUEST_H_

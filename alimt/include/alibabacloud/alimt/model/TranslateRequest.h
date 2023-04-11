@@ -38,6 +38,8 @@ public:
 	void setFormatType(const std::string &formatType);
 	std::string getScene() const;
 	void setScene(const std::string &scene);
+	std::string getContext() const;
+	void setContext(const std::string &context);
 	std::string getTargetLanguage() const;
 	void setTargetLanguage(const std::string &targetLanguage);
 
@@ -46,6 +48,7 @@ private:
 	std::string sourceText_;
 	std::string formatType_;
 	std::string scene_;
+	std::string context_;
 	std::string targetLanguage_;
 };
 } // namespace Model
