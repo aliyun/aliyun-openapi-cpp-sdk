@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CAMS_MODEL_SENDMESSAGERESULT_H_
-#define ALIBABACLOUD_CAMS_MODEL_SENDMESSAGERESULT_H_
+#ifndef ALIBABACLOUD_CAMS_MODEL_QUERYPHONEBUSINESSPROFILERESULT_H_
+#define ALIBABACLOUD_CAMS_MODEL_QUERYPHONEBUSINESSPROFILERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,36 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CAMS_EXPORT SendMessageResult : public ServiceResult
+			class ALIBABACLOUD_CAMS_EXPORT QueryPhoneBusinessProfileResult : public ServiceResult
 			{
 			public:
-				struct Module
+				struct Data
 				{
-					std::string toId;
-					std::string fromId;
-					std::string messageId;
+					std::string vertical;
+					std::string description;
+					std::string email;
+					std::string address;
+					std::string profilePictureUrl;
+					std::vector<std::string> websites;
 				};
 
 
-				SendMessageResult();
-				explicit SendMessageResult(const std::string &payload);
-				~SendMessageResult();
-				Module getModule()const;
-				std::string getResultMessage()const;
-				std::string getResultCode()const;
+				QueryPhoneBusinessProfileResult();
+				explicit QueryPhoneBusinessProfileResult(const std::string &payload);
+				~QueryPhoneBusinessProfileResult();
+				std::string getMessage()const;
+				Data getData()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				Module module_;
-				std::string resultMessage_;
-				std::string resultCode_;
+				std::string message_;
+				Data data_;
+				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CAMS_MODEL_SENDMESSAGERESULT_H_
+#endif // !ALIBABACLOUD_CAMS_MODEL_QUERYPHONEBUSINESSPROFILERESULT_H_

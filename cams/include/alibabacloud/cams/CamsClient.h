@@ -22,10 +22,66 @@
 #include <alibabacloud/core/EndpointProvider.h>
 #include <alibabacloud/core/RpcServiceClient.h>
 #include "CamsExport.h"
-#include "model/CheckContactsRequest.h"
-#include "model/CheckContactsResult.h"
-#include "model/SendMessageRequest.h"
-#include "model/SendMessageResult.h"
+#include "model/BeeBotAssociateRequest.h"
+#include "model/BeeBotAssociateResult.h"
+#include "model/BeeBotChatRequest.h"
+#include "model/BeeBotChatResult.h"
+#include "model/ChatappBindWabaRequest.h"
+#include "model/ChatappBindWabaResult.h"
+#include "model/ChatappEmbedSignUpRequest.h"
+#include "model/ChatappEmbedSignUpResult.h"
+#include "model/ChatappMigrationRegisterRequest.h"
+#include "model/ChatappMigrationRegisterResult.h"
+#include "model/ChatappMigrationVerifiedRequest.h"
+#include "model/ChatappMigrationVerifiedResult.h"
+#include "model/ChatappPhoneNumberRegisterRequest.h"
+#include "model/ChatappPhoneNumberRegisterResult.h"
+#include "model/ChatappSyncPhoneNumberRequest.h"
+#include "model/ChatappSyncPhoneNumberResult.h"
+#include "model/ChatappVerifyAndRegisterRequest.h"
+#include "model/ChatappVerifyAndRegisterResult.h"
+#include "model/CreateChatappMigrationInitiateRequest.h"
+#include "model/CreateChatappMigrationInitiateResult.h"
+#include "model/CreateChatappTemplateRequest.h"
+#include "model/CreateChatappTemplateResult.h"
+#include "model/DeleteChatappTemplateRequest.h"
+#include "model/DeleteChatappTemplateResult.h"
+#include "model/GetChatappTemplateDetailRequest.h"
+#include "model/GetChatappTemplateDetailResult.h"
+#include "model/GetChatappUploadAuthorizationRequest.h"
+#include "model/GetChatappUploadAuthorizationResult.h"
+#include "model/GetChatappVerifyCodeRequest.h"
+#include "model/GetChatappVerifyCodeResult.h"
+#include "model/GetMigrationVerifyCodeRequest.h"
+#include "model/GetMigrationVerifyCodeResult.h"
+#include "model/GetPhoneNumberVerificationStatusRequest.h"
+#include "model/GetPhoneNumberVerificationStatusResult.h"
+#include "model/IsvGetAppIdRequest.h"
+#include "model/IsvGetAppIdResult.h"
+#include "model/ListChatappTemplateRequest.h"
+#include "model/ListChatappTemplateResult.h"
+#include "model/ModifyChatappTemplateRequest.h"
+#include "model/ModifyChatappTemplateResult.h"
+#include "model/ModifyPhoneBusinessProfileRequest.h"
+#include "model/ModifyPhoneBusinessProfileResult.h"
+#include "model/QueryChatappBindWabaRequest.h"
+#include "model/QueryChatappBindWabaResult.h"
+#include "model/QueryChatappPhoneNumbersRequest.h"
+#include "model/QueryChatappPhoneNumbersResult.h"
+#include "model/QueryPhoneBusinessProfileRequest.h"
+#include "model/QueryPhoneBusinessProfileResult.h"
+#include "model/QueryWabaBusinessInfoRequest.h"
+#include "model/QueryWabaBusinessInfoResult.h"
+#include "model/SendChatappMassMessageRequest.h"
+#include "model/SendChatappMassMessageResult.h"
+#include "model/SendChatappMessageRequest.h"
+#include "model/SendChatappMessageResult.h"
+#include "model/SubmitIsvCustomerTermsRequest.h"
+#include "model/SubmitIsvCustomerTermsResult.h"
+#include "model/UpdateAccountWebhookRequest.h"
+#include "model/UpdateAccountWebhookResult.h"
+#include "model/UpdatePhoneWebhookRequest.h"
+#include "model/UpdatePhoneWebhookResult.h"
 
 
 namespace AlibabaCloud
@@ -35,23 +91,191 @@ namespace AlibabaCloud
 		class ALIBABACLOUD_CAMS_EXPORT CamsClient : public RpcServiceClient
 		{
 		public:
-			typedef Outcome<Error, Model::CheckContactsResult> CheckContactsOutcome;
-			typedef std::future<CheckContactsOutcome> CheckContactsOutcomeCallable;
-			typedef std::function<void(const CamsClient*, const Model::CheckContactsRequest&, const CheckContactsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckContactsAsyncHandler;
-			typedef Outcome<Error, Model::SendMessageResult> SendMessageOutcome;
-			typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
-			typedef std::function<void(const CamsClient*, const Model::SendMessageRequest&, const SendMessageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendMessageAsyncHandler;
+			typedef Outcome<Error, Model::BeeBotAssociateResult> BeeBotAssociateOutcome;
+			typedef std::future<BeeBotAssociateOutcome> BeeBotAssociateOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::BeeBotAssociateRequest&, const BeeBotAssociateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BeeBotAssociateAsyncHandler;
+			typedef Outcome<Error, Model::BeeBotChatResult> BeeBotChatOutcome;
+			typedef std::future<BeeBotChatOutcome> BeeBotChatOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::BeeBotChatRequest&, const BeeBotChatOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BeeBotChatAsyncHandler;
+			typedef Outcome<Error, Model::ChatappBindWabaResult> ChatappBindWabaOutcome;
+			typedef std::future<ChatappBindWabaOutcome> ChatappBindWabaOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::ChatappBindWabaRequest&, const ChatappBindWabaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChatappBindWabaAsyncHandler;
+			typedef Outcome<Error, Model::ChatappEmbedSignUpResult> ChatappEmbedSignUpOutcome;
+			typedef std::future<ChatappEmbedSignUpOutcome> ChatappEmbedSignUpOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::ChatappEmbedSignUpRequest&, const ChatappEmbedSignUpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChatappEmbedSignUpAsyncHandler;
+			typedef Outcome<Error, Model::ChatappMigrationRegisterResult> ChatappMigrationRegisterOutcome;
+			typedef std::future<ChatappMigrationRegisterOutcome> ChatappMigrationRegisterOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::ChatappMigrationRegisterRequest&, const ChatappMigrationRegisterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChatappMigrationRegisterAsyncHandler;
+			typedef Outcome<Error, Model::ChatappMigrationVerifiedResult> ChatappMigrationVerifiedOutcome;
+			typedef std::future<ChatappMigrationVerifiedOutcome> ChatappMigrationVerifiedOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::ChatappMigrationVerifiedRequest&, const ChatappMigrationVerifiedOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChatappMigrationVerifiedAsyncHandler;
+			typedef Outcome<Error, Model::ChatappPhoneNumberRegisterResult> ChatappPhoneNumberRegisterOutcome;
+			typedef std::future<ChatappPhoneNumberRegisterOutcome> ChatappPhoneNumberRegisterOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::ChatappPhoneNumberRegisterRequest&, const ChatappPhoneNumberRegisterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChatappPhoneNumberRegisterAsyncHandler;
+			typedef Outcome<Error, Model::ChatappSyncPhoneNumberResult> ChatappSyncPhoneNumberOutcome;
+			typedef std::future<ChatappSyncPhoneNumberOutcome> ChatappSyncPhoneNumberOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::ChatappSyncPhoneNumberRequest&, const ChatappSyncPhoneNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChatappSyncPhoneNumberAsyncHandler;
+			typedef Outcome<Error, Model::ChatappVerifyAndRegisterResult> ChatappVerifyAndRegisterOutcome;
+			typedef std::future<ChatappVerifyAndRegisterOutcome> ChatappVerifyAndRegisterOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::ChatappVerifyAndRegisterRequest&, const ChatappVerifyAndRegisterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChatappVerifyAndRegisterAsyncHandler;
+			typedef Outcome<Error, Model::CreateChatappMigrationInitiateResult> CreateChatappMigrationInitiateOutcome;
+			typedef std::future<CreateChatappMigrationInitiateOutcome> CreateChatappMigrationInitiateOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::CreateChatappMigrationInitiateRequest&, const CreateChatappMigrationInitiateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateChatappMigrationInitiateAsyncHandler;
+			typedef Outcome<Error, Model::CreateChatappTemplateResult> CreateChatappTemplateOutcome;
+			typedef std::future<CreateChatappTemplateOutcome> CreateChatappTemplateOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::CreateChatappTemplateRequest&, const CreateChatappTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateChatappTemplateAsyncHandler;
+			typedef Outcome<Error, Model::DeleteChatappTemplateResult> DeleteChatappTemplateOutcome;
+			typedef std::future<DeleteChatappTemplateOutcome> DeleteChatappTemplateOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::DeleteChatappTemplateRequest&, const DeleteChatappTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteChatappTemplateAsyncHandler;
+			typedef Outcome<Error, Model::GetChatappTemplateDetailResult> GetChatappTemplateDetailOutcome;
+			typedef std::future<GetChatappTemplateDetailOutcome> GetChatappTemplateDetailOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::GetChatappTemplateDetailRequest&, const GetChatappTemplateDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetChatappTemplateDetailAsyncHandler;
+			typedef Outcome<Error, Model::GetChatappUploadAuthorizationResult> GetChatappUploadAuthorizationOutcome;
+			typedef std::future<GetChatappUploadAuthorizationOutcome> GetChatappUploadAuthorizationOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::GetChatappUploadAuthorizationRequest&, const GetChatappUploadAuthorizationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetChatappUploadAuthorizationAsyncHandler;
+			typedef Outcome<Error, Model::GetChatappVerifyCodeResult> GetChatappVerifyCodeOutcome;
+			typedef std::future<GetChatappVerifyCodeOutcome> GetChatappVerifyCodeOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::GetChatappVerifyCodeRequest&, const GetChatappVerifyCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetChatappVerifyCodeAsyncHandler;
+			typedef Outcome<Error, Model::GetMigrationVerifyCodeResult> GetMigrationVerifyCodeOutcome;
+			typedef std::future<GetMigrationVerifyCodeOutcome> GetMigrationVerifyCodeOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::GetMigrationVerifyCodeRequest&, const GetMigrationVerifyCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetMigrationVerifyCodeAsyncHandler;
+			typedef Outcome<Error, Model::GetPhoneNumberVerificationStatusResult> GetPhoneNumberVerificationStatusOutcome;
+			typedef std::future<GetPhoneNumberVerificationStatusOutcome> GetPhoneNumberVerificationStatusOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::GetPhoneNumberVerificationStatusRequest&, const GetPhoneNumberVerificationStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPhoneNumberVerificationStatusAsyncHandler;
+			typedef Outcome<Error, Model::IsvGetAppIdResult> IsvGetAppIdOutcome;
+			typedef std::future<IsvGetAppIdOutcome> IsvGetAppIdOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::IsvGetAppIdRequest&, const IsvGetAppIdOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> IsvGetAppIdAsyncHandler;
+			typedef Outcome<Error, Model::ListChatappTemplateResult> ListChatappTemplateOutcome;
+			typedef std::future<ListChatappTemplateOutcome> ListChatappTemplateOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::ListChatappTemplateRequest&, const ListChatappTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListChatappTemplateAsyncHandler;
+			typedef Outcome<Error, Model::ModifyChatappTemplateResult> ModifyChatappTemplateOutcome;
+			typedef std::future<ModifyChatappTemplateOutcome> ModifyChatappTemplateOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::ModifyChatappTemplateRequest&, const ModifyChatappTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyChatappTemplateAsyncHandler;
+			typedef Outcome<Error, Model::ModifyPhoneBusinessProfileResult> ModifyPhoneBusinessProfileOutcome;
+			typedef std::future<ModifyPhoneBusinessProfileOutcome> ModifyPhoneBusinessProfileOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::ModifyPhoneBusinessProfileRequest&, const ModifyPhoneBusinessProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPhoneBusinessProfileAsyncHandler;
+			typedef Outcome<Error, Model::QueryChatappBindWabaResult> QueryChatappBindWabaOutcome;
+			typedef std::future<QueryChatappBindWabaOutcome> QueryChatappBindWabaOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::QueryChatappBindWabaRequest&, const QueryChatappBindWabaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryChatappBindWabaAsyncHandler;
+			typedef Outcome<Error, Model::QueryChatappPhoneNumbersResult> QueryChatappPhoneNumbersOutcome;
+			typedef std::future<QueryChatappPhoneNumbersOutcome> QueryChatappPhoneNumbersOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::QueryChatappPhoneNumbersRequest&, const QueryChatappPhoneNumbersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryChatappPhoneNumbersAsyncHandler;
+			typedef Outcome<Error, Model::QueryPhoneBusinessProfileResult> QueryPhoneBusinessProfileOutcome;
+			typedef std::future<QueryPhoneBusinessProfileOutcome> QueryPhoneBusinessProfileOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::QueryPhoneBusinessProfileRequest&, const QueryPhoneBusinessProfileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryPhoneBusinessProfileAsyncHandler;
+			typedef Outcome<Error, Model::QueryWabaBusinessInfoResult> QueryWabaBusinessInfoOutcome;
+			typedef std::future<QueryWabaBusinessInfoOutcome> QueryWabaBusinessInfoOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::QueryWabaBusinessInfoRequest&, const QueryWabaBusinessInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryWabaBusinessInfoAsyncHandler;
+			typedef Outcome<Error, Model::SendChatappMassMessageResult> SendChatappMassMessageOutcome;
+			typedef std::future<SendChatappMassMessageOutcome> SendChatappMassMessageOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::SendChatappMassMessageRequest&, const SendChatappMassMessageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendChatappMassMessageAsyncHandler;
+			typedef Outcome<Error, Model::SendChatappMessageResult> SendChatappMessageOutcome;
+			typedef std::future<SendChatappMessageOutcome> SendChatappMessageOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::SendChatappMessageRequest&, const SendChatappMessageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendChatappMessageAsyncHandler;
+			typedef Outcome<Error, Model::SubmitIsvCustomerTermsResult> SubmitIsvCustomerTermsOutcome;
+			typedef std::future<SubmitIsvCustomerTermsOutcome> SubmitIsvCustomerTermsOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::SubmitIsvCustomerTermsRequest&, const SubmitIsvCustomerTermsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitIsvCustomerTermsAsyncHandler;
+			typedef Outcome<Error, Model::UpdateAccountWebhookResult> UpdateAccountWebhookOutcome;
+			typedef std::future<UpdateAccountWebhookOutcome> UpdateAccountWebhookOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::UpdateAccountWebhookRequest&, const UpdateAccountWebhookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAccountWebhookAsyncHandler;
+			typedef Outcome<Error, Model::UpdatePhoneWebhookResult> UpdatePhoneWebhookOutcome;
+			typedef std::future<UpdatePhoneWebhookOutcome> UpdatePhoneWebhookOutcomeCallable;
+			typedef std::function<void(const CamsClient*, const Model::UpdatePhoneWebhookRequest&, const UpdatePhoneWebhookOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdatePhoneWebhookAsyncHandler;
 
 			CamsClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			CamsClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
 			CamsClient(const std::string &accessKeyId, const std::string &accessKeySecret, const ClientConfiguration &configuration);
 			~CamsClient();
-			CheckContactsOutcome checkContacts(const Model::CheckContactsRequest &request)const;
-			void checkContactsAsync(const Model::CheckContactsRequest& request, const CheckContactsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CheckContactsOutcomeCallable checkContactsCallable(const Model::CheckContactsRequest& request) const;
-			SendMessageOutcome sendMessage(const Model::SendMessageRequest &request)const;
-			void sendMessageAsync(const Model::SendMessageRequest& request, const SendMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SendMessageOutcomeCallable sendMessageCallable(const Model::SendMessageRequest& request) const;
+			BeeBotAssociateOutcome beeBotAssociate(const Model::BeeBotAssociateRequest &request)const;
+			void beeBotAssociateAsync(const Model::BeeBotAssociateRequest& request, const BeeBotAssociateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BeeBotAssociateOutcomeCallable beeBotAssociateCallable(const Model::BeeBotAssociateRequest& request) const;
+			BeeBotChatOutcome beeBotChat(const Model::BeeBotChatRequest &request)const;
+			void beeBotChatAsync(const Model::BeeBotChatRequest& request, const BeeBotChatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BeeBotChatOutcomeCallable beeBotChatCallable(const Model::BeeBotChatRequest& request) const;
+			ChatappBindWabaOutcome chatappBindWaba(const Model::ChatappBindWabaRequest &request)const;
+			void chatappBindWabaAsync(const Model::ChatappBindWabaRequest& request, const ChatappBindWabaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChatappBindWabaOutcomeCallable chatappBindWabaCallable(const Model::ChatappBindWabaRequest& request) const;
+			ChatappEmbedSignUpOutcome chatappEmbedSignUp(const Model::ChatappEmbedSignUpRequest &request)const;
+			void chatappEmbedSignUpAsync(const Model::ChatappEmbedSignUpRequest& request, const ChatappEmbedSignUpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChatappEmbedSignUpOutcomeCallable chatappEmbedSignUpCallable(const Model::ChatappEmbedSignUpRequest& request) const;
+			ChatappMigrationRegisterOutcome chatappMigrationRegister(const Model::ChatappMigrationRegisterRequest &request)const;
+			void chatappMigrationRegisterAsync(const Model::ChatappMigrationRegisterRequest& request, const ChatappMigrationRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChatappMigrationRegisterOutcomeCallable chatappMigrationRegisterCallable(const Model::ChatappMigrationRegisterRequest& request) const;
+			ChatappMigrationVerifiedOutcome chatappMigrationVerified(const Model::ChatappMigrationVerifiedRequest &request)const;
+			void chatappMigrationVerifiedAsync(const Model::ChatappMigrationVerifiedRequest& request, const ChatappMigrationVerifiedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChatappMigrationVerifiedOutcomeCallable chatappMigrationVerifiedCallable(const Model::ChatappMigrationVerifiedRequest& request) const;
+			ChatappPhoneNumberRegisterOutcome chatappPhoneNumberRegister(const Model::ChatappPhoneNumberRegisterRequest &request)const;
+			void chatappPhoneNumberRegisterAsync(const Model::ChatappPhoneNumberRegisterRequest& request, const ChatappPhoneNumberRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChatappPhoneNumberRegisterOutcomeCallable chatappPhoneNumberRegisterCallable(const Model::ChatappPhoneNumberRegisterRequest& request) const;
+			ChatappSyncPhoneNumberOutcome chatappSyncPhoneNumber(const Model::ChatappSyncPhoneNumberRequest &request)const;
+			void chatappSyncPhoneNumberAsync(const Model::ChatappSyncPhoneNumberRequest& request, const ChatappSyncPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChatappSyncPhoneNumberOutcomeCallable chatappSyncPhoneNumberCallable(const Model::ChatappSyncPhoneNumberRequest& request) const;
+			ChatappVerifyAndRegisterOutcome chatappVerifyAndRegister(const Model::ChatappVerifyAndRegisterRequest &request)const;
+			void chatappVerifyAndRegisterAsync(const Model::ChatappVerifyAndRegisterRequest& request, const ChatappVerifyAndRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChatappVerifyAndRegisterOutcomeCallable chatappVerifyAndRegisterCallable(const Model::ChatappVerifyAndRegisterRequest& request) const;
+			CreateChatappMigrationInitiateOutcome createChatappMigrationInitiate(const Model::CreateChatappMigrationInitiateRequest &request)const;
+			void createChatappMigrationInitiateAsync(const Model::CreateChatappMigrationInitiateRequest& request, const CreateChatappMigrationInitiateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateChatappMigrationInitiateOutcomeCallable createChatappMigrationInitiateCallable(const Model::CreateChatappMigrationInitiateRequest& request) const;
+			CreateChatappTemplateOutcome createChatappTemplate(const Model::CreateChatappTemplateRequest &request)const;
+			void createChatappTemplateAsync(const Model::CreateChatappTemplateRequest& request, const CreateChatappTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateChatappTemplateOutcomeCallable createChatappTemplateCallable(const Model::CreateChatappTemplateRequest& request) const;
+			DeleteChatappTemplateOutcome deleteChatappTemplate(const Model::DeleteChatappTemplateRequest &request)const;
+			void deleteChatappTemplateAsync(const Model::DeleteChatappTemplateRequest& request, const DeleteChatappTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteChatappTemplateOutcomeCallable deleteChatappTemplateCallable(const Model::DeleteChatappTemplateRequest& request) const;
+			GetChatappTemplateDetailOutcome getChatappTemplateDetail(const Model::GetChatappTemplateDetailRequest &request)const;
+			void getChatappTemplateDetailAsync(const Model::GetChatappTemplateDetailRequest& request, const GetChatappTemplateDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetChatappTemplateDetailOutcomeCallable getChatappTemplateDetailCallable(const Model::GetChatappTemplateDetailRequest& request) const;
+			GetChatappUploadAuthorizationOutcome getChatappUploadAuthorization(const Model::GetChatappUploadAuthorizationRequest &request)const;
+			void getChatappUploadAuthorizationAsync(const Model::GetChatappUploadAuthorizationRequest& request, const GetChatappUploadAuthorizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetChatappUploadAuthorizationOutcomeCallable getChatappUploadAuthorizationCallable(const Model::GetChatappUploadAuthorizationRequest& request) const;
+			GetChatappVerifyCodeOutcome getChatappVerifyCode(const Model::GetChatappVerifyCodeRequest &request)const;
+			void getChatappVerifyCodeAsync(const Model::GetChatappVerifyCodeRequest& request, const GetChatappVerifyCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetChatappVerifyCodeOutcomeCallable getChatappVerifyCodeCallable(const Model::GetChatappVerifyCodeRequest& request) const;
+			GetMigrationVerifyCodeOutcome getMigrationVerifyCode(const Model::GetMigrationVerifyCodeRequest &request)const;
+			void getMigrationVerifyCodeAsync(const Model::GetMigrationVerifyCodeRequest& request, const GetMigrationVerifyCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetMigrationVerifyCodeOutcomeCallable getMigrationVerifyCodeCallable(const Model::GetMigrationVerifyCodeRequest& request) const;
+			GetPhoneNumberVerificationStatusOutcome getPhoneNumberVerificationStatus(const Model::GetPhoneNumberVerificationStatusRequest &request)const;
+			void getPhoneNumberVerificationStatusAsync(const Model::GetPhoneNumberVerificationStatusRequest& request, const GetPhoneNumberVerificationStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPhoneNumberVerificationStatusOutcomeCallable getPhoneNumberVerificationStatusCallable(const Model::GetPhoneNumberVerificationStatusRequest& request) const;
+			IsvGetAppIdOutcome isvGetAppId(const Model::IsvGetAppIdRequest &request)const;
+			void isvGetAppIdAsync(const Model::IsvGetAppIdRequest& request, const IsvGetAppIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			IsvGetAppIdOutcomeCallable isvGetAppIdCallable(const Model::IsvGetAppIdRequest& request) const;
+			ListChatappTemplateOutcome listChatappTemplate(const Model::ListChatappTemplateRequest &request)const;
+			void listChatappTemplateAsync(const Model::ListChatappTemplateRequest& request, const ListChatappTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListChatappTemplateOutcomeCallable listChatappTemplateCallable(const Model::ListChatappTemplateRequest& request) const;
+			ModifyChatappTemplateOutcome modifyChatappTemplate(const Model::ModifyChatappTemplateRequest &request)const;
+			void modifyChatappTemplateAsync(const Model::ModifyChatappTemplateRequest& request, const ModifyChatappTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyChatappTemplateOutcomeCallable modifyChatappTemplateCallable(const Model::ModifyChatappTemplateRequest& request) const;
+			ModifyPhoneBusinessProfileOutcome modifyPhoneBusinessProfile(const Model::ModifyPhoneBusinessProfileRequest &request)const;
+			void modifyPhoneBusinessProfileAsync(const Model::ModifyPhoneBusinessProfileRequest& request, const ModifyPhoneBusinessProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyPhoneBusinessProfileOutcomeCallable modifyPhoneBusinessProfileCallable(const Model::ModifyPhoneBusinessProfileRequest& request) const;
+			QueryChatappBindWabaOutcome queryChatappBindWaba(const Model::QueryChatappBindWabaRequest &request)const;
+			void queryChatappBindWabaAsync(const Model::QueryChatappBindWabaRequest& request, const QueryChatappBindWabaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryChatappBindWabaOutcomeCallable queryChatappBindWabaCallable(const Model::QueryChatappBindWabaRequest& request) const;
+			QueryChatappPhoneNumbersOutcome queryChatappPhoneNumbers(const Model::QueryChatappPhoneNumbersRequest &request)const;
+			void queryChatappPhoneNumbersAsync(const Model::QueryChatappPhoneNumbersRequest& request, const QueryChatappPhoneNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryChatappPhoneNumbersOutcomeCallable queryChatappPhoneNumbersCallable(const Model::QueryChatappPhoneNumbersRequest& request) const;
+			QueryPhoneBusinessProfileOutcome queryPhoneBusinessProfile(const Model::QueryPhoneBusinessProfileRequest &request)const;
+			void queryPhoneBusinessProfileAsync(const Model::QueryPhoneBusinessProfileRequest& request, const QueryPhoneBusinessProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryPhoneBusinessProfileOutcomeCallable queryPhoneBusinessProfileCallable(const Model::QueryPhoneBusinessProfileRequest& request) const;
+			QueryWabaBusinessInfoOutcome queryWabaBusinessInfo(const Model::QueryWabaBusinessInfoRequest &request)const;
+			void queryWabaBusinessInfoAsync(const Model::QueryWabaBusinessInfoRequest& request, const QueryWabaBusinessInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryWabaBusinessInfoOutcomeCallable queryWabaBusinessInfoCallable(const Model::QueryWabaBusinessInfoRequest& request) const;
+			SendChatappMassMessageOutcome sendChatappMassMessage(const Model::SendChatappMassMessageRequest &request)const;
+			void sendChatappMassMessageAsync(const Model::SendChatappMassMessageRequest& request, const SendChatappMassMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SendChatappMassMessageOutcomeCallable sendChatappMassMessageCallable(const Model::SendChatappMassMessageRequest& request) const;
+			SendChatappMessageOutcome sendChatappMessage(const Model::SendChatappMessageRequest &request)const;
+			void sendChatappMessageAsync(const Model::SendChatappMessageRequest& request, const SendChatappMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SendChatappMessageOutcomeCallable sendChatappMessageCallable(const Model::SendChatappMessageRequest& request) const;
+			SubmitIsvCustomerTermsOutcome submitIsvCustomerTerms(const Model::SubmitIsvCustomerTermsRequest &request)const;
+			void submitIsvCustomerTermsAsync(const Model::SubmitIsvCustomerTermsRequest& request, const SubmitIsvCustomerTermsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitIsvCustomerTermsOutcomeCallable submitIsvCustomerTermsCallable(const Model::SubmitIsvCustomerTermsRequest& request) const;
+			UpdateAccountWebhookOutcome updateAccountWebhook(const Model::UpdateAccountWebhookRequest &request)const;
+			void updateAccountWebhookAsync(const Model::UpdateAccountWebhookRequest& request, const UpdateAccountWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateAccountWebhookOutcomeCallable updateAccountWebhookCallable(const Model::UpdateAccountWebhookRequest& request) const;
+			UpdatePhoneWebhookOutcome updatePhoneWebhook(const Model::UpdatePhoneWebhookRequest &request)const;
+			void updatePhoneWebhookAsync(const Model::UpdatePhoneWebhookRequest& request, const UpdatePhoneWebhookAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdatePhoneWebhookOutcomeCallable updatePhoneWebhookCallable(const Model::UpdatePhoneWebhookRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

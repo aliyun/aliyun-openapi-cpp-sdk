@@ -1,0 +1,111 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef ALIBABACLOUD_CAMS_MODEL_SENDCHATAPPMESSAGEREQUEST_H_
+#define ALIBABACLOUD_CAMS_MODEL_SENDCHATAPPMESSAGEREQUEST_H_
+
+#include <alibabacloud/cams/CamsExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <string>
+#include <vector>
+#include <map>
+
+namespace AlibabaCloud {
+namespace Cams {
+namespace Model {
+class ALIBABACLOUD_CAMS_EXPORT SendChatappMessageRequest : public RpcServiceRequest {
+public:
+	SendChatappMessageRequest();
+	~SendChatappMessageRequest();
+	std::string getMessageType() const;
+	void setMessageType(const std::string &messageType);
+	std::string getLanguage() const;
+	void setLanguage(const std::string &language);
+	std::string getCustWabaId() const;
+	void setCustWabaId(const std::string &custWabaId);
+	std::string getType() const;
+	void setType(const std::string &type);
+	std::string getFallBackContent() const;
+	void setFallBackContent(const std::string &fallBackContent);
+	std::string getContent() const;
+	void setContent(const std::string &content);
+	std::map<std::string, std::string> getTemplateParams() const;
+	void setTemplateParams(const std::map<std::string, std::string> &templateParams);
+	std::vector<std::string> getPayload() const;
+	void setPayload(const std::vector<std::string> &payload);
+	std::string getApiCode() const;
+	void setApiCode(const std::string &apiCode);
+	std::string getChannelType() const;
+	void setChannelType(const std::string &channelType);
+	std::string getFrom() const;
+	void setFrom(const std::string &from);
+	std::string getTag() const;
+	void setTag(const std::string &tag);
+	std::string getTrackingData() const;
+	void setTrackingData(const std::string &trackingData);
+	std::string getTaskId() const;
+	void setTaskId(const std::string &taskId);
+	std::string getIsvCode() const;
+	void setIsvCode(const std::string &isvCode);
+	std::string getContextMessageId() const;
+	void setContextMessageId(const std::string &contextMessageId);
+	std::string getProdCode() const;
+	void setProdCode(const std::string &prodCode);
+	std::string getLabel() const;
+	void setLabel(const std::string &label);
+	std::string getFallBackId() const;
+	void setFallBackId(const std::string &fallBackId);
+	int getTtl() const;
+	void setTtl(int ttl);
+	int getFallBackDuration() const;
+	void setFallBackDuration(int fallBackDuration);
+	std::string getCustSpaceId() const;
+	void setCustSpaceId(const std::string &custSpaceId);
+	std::string getTo() const;
+	void setTo(const std::string &to);
+	std::string getTemplateCode() const;
+	void setTemplateCode(const std::string &templateCode);
+
+private:
+	std::string messageType_;
+	std::string language_;
+	std::string custWabaId_;
+	std::string type_;
+	std::string fallBackContent_;
+	std::string content_;
+	std::map<std::string, std::string> templateParams_;
+	std::vector<std::string> payload_;
+	std::string apiCode_;
+	std::string channelType_;
+	std::string from_;
+	std::string tag_;
+	std::string trackingData_;
+	std::string taskId_;
+	std::string isvCode_;
+	std::string contextMessageId_;
+	std::string prodCode_;
+	std::string label_;
+	std::string fallBackId_;
+	int ttl_;
+	int fallBackDuration_;
+	std::string custSpaceId_;
+	std::string to_;
+	std::string templateCode_;
+};
+} // namespace Model
+} // namespace Cams
+} // namespace AlibabaCloud
+#endif // !ALIBABACLOUD_CAMS_MODEL_SENDCHATAPPMESSAGEREQUEST_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_CAMS_MODEL_CHECKCONTACTSRESULT_H_
-#define ALIBABACLOUD_CAMS_MODEL_CHECKCONTACTSRESULT_H_
+#ifndef ALIBABACLOUD_CAMS_MODEL_GETCHATAPPVERIFYCODERESULT_H_
+#define ALIBABACLOUD_CAMS_MODEL_GETCHATAPPVERIFYCODERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,32 +29,25 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_CAMS_EXPORT CheckContactsResult : public ServiceResult
+			class ALIBABACLOUD_CAMS_EXPORT GetChatappVerifyCodeResult : public ServiceResult
 			{
 			public:
-				struct ContactStatus
-				{
-					std::string status;
-					std::string phoneNumber;
-				};
 
 
-				CheckContactsResult();
-				explicit CheckContactsResult(const std::string &payload);
-				~CheckContactsResult();
-				std::vector<ContactStatus> getContacts()const;
-				std::string getResultMessage()const;
-				std::string getResultCode()const;
+				GetChatappVerifyCodeResult();
+				explicit GetChatappVerifyCodeResult(const std::string &payload);
+				~GetChatappVerifyCodeResult();
+				std::string getMessage()const;
+				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ContactStatus> contacts_;
-				std::string resultMessage_;
-				std::string resultCode_;
+				std::string message_;
+				std::string code_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_CAMS_MODEL_CHECKCONTACTSRESULT_H_
+#endif // !ALIBABACLOUD_CAMS_MODEL_GETCHATAPPVERIFYCODERESULT_H_
