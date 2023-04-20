@@ -43,6 +43,7 @@ namespace AlibabaCloud
 					};
 					std::string status;
 					std::string deployType;
+					std::vector<std::string> upgradableServiceVersions;
 					std::string serviceId;
 					std::string deployMetadata;
 					std::string version;
@@ -65,6 +66,7 @@ namespace AlibabaCloud
 							std::vector<std::string> endpointIps;
 							std::string ingressEndpointStatus;
 							std::string vpcId;
+							std::string domainName;
 							std::string networkServiceStatus;
 							std::vector<std::string> vSwitches;
 						};
@@ -113,6 +115,7 @@ namespace AlibabaCloud
 				Service getService()const;
 				std::string getPayType()const;
 				long getUserId()const;
+				std::string getEnableUserPrometheus()const;
 				std::string getStatusDetail()const;
 				std::string getUpdateTime()const;
 				std::string getOutputs()const;
@@ -143,6 +146,7 @@ namespace AlibabaCloud
 				Service service_;
 				std::string payType_;
 				long userId_;
+				std::string enableUserPrometheus_;
 				std::string statusDetail_;
 				std::string updateTime_;
 				std::string outputs_;

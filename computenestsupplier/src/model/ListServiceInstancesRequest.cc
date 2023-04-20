@@ -57,6 +57,15 @@ void ListServiceInstancesRequest::setTag(const std::vector<ListServiceInstancesR
   }
 }
 
+bool ListServiceInstancesRequest::getShowDeleted() const {
+  return showDeleted_;
+}
+
+void ListServiceInstancesRequest::setShowDeleted(bool showDeleted) {
+  showDeleted_ = showDeleted;
+  setParameter(std::string("ShowDeleted"), showDeleted ? "true" : "false");
+}
+
 std::vector<ListServiceInstancesRequest::Filter> ListServiceInstancesRequest::getFilter() const {
   return filter_;
 }

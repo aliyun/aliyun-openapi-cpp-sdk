@@ -112,6 +112,8 @@ void ListServiceInstancesResult::parse(const std::string &payload)
 			serviceInstancesObject.service.versionName = serviceNode["VersionName"].asString();
 		if(!serviceNode["DeployMetadata"].isNull())
 			serviceInstancesObject.service.deployMetadata = serviceNode["DeployMetadata"].asString();
+		if(!serviceNode["EnablePrivateVpcConnection"].isNull())
+			serviceInstancesObject.service.enablePrivateVpcConnection = serviceNode["EnablePrivateVpcConnection"].asString() == "true";
 		auto allServiceInfosNode = serviceNode["ServiceInfos"]["ServiceInfo"];
 		for (auto serviceNodeServiceInfosServiceInfo : allServiceInfosNode)
 		{

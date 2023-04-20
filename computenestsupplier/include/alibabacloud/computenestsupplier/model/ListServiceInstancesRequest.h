@@ -43,6 +43,8 @@ public:
 	void setNextToken(const std::string &nextToken);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	bool getShowDeleted() const;
+	void setShowDeleted(bool showDeleted);
 	std::vector<Filter> getFilter() const;
 	void setFilter(const std::vector<Filter> &filter);
 	std::string getMaxResults() const;
@@ -52,6 +54,7 @@ private:
 	std::string regionId_;
 	std::string nextToken_;
 	std::vector<Tag> tag_;
+	bool showDeleted_;
 	std::vector<Filter> filter_;
 	std::string maxResults_;
 };

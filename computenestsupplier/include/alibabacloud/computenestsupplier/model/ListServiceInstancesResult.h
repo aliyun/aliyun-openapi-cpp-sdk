@@ -46,6 +46,7 @@ namespace AlibabaCloud
 						std::string status;
 						std::string deployType;
 						std::string deployMetadata;
+						bool enablePrivateVpcConnection;
 						std::string version;
 						std::string supplierName;
 						std::string serviceType;

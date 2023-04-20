@@ -88,6 +88,9 @@ void GetServiceInstanceResult::parse(const std::string &payload)
 			serviceInfoObject.shortDescription = serviceNodeServiceInfosServiceInfo["ShortDescription"].asString();
 		service_.serviceInfos.push_back(serviceInfoObject);
 	}
+		auto allUpgradableServiceVersions = serviceNode["UpgradableServiceVersions"]["UpgradableServiceVersion"];
+		for (auto value : allUpgradableServiceVersions)
+			service_.upgradableServiceVersions.push_back(value.asString());
 	auto networkConfigNode = value["NetworkConfig"];
 	if(!networkConfigNode["EndpointServiceId"].isNull())
 		networkConfig_.endpointServiceId = networkConfigNode["EndpointServiceId"].asString();
@@ -113,6 +116,8 @@ void GetServiceInstanceResult::parse(const std::string &payload)
 				connectionConfigsObject.ingressEndpointStatus = networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["IngressEndpointStatus"].asString();
 			if(!networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["NetworkServiceStatus"].isNull())
 				connectionConfigsObject.networkServiceStatus = networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["NetworkServiceStatus"].asString();
+			if(!networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["DomainName"].isNull())
+				connectionConfigsObject.domainName = networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["DomainName"].asString();
 			auto allSecurityGroups = value["SecurityGroups"]["SecurityGroup"];
 			for (auto value : allSecurityGroups)
 				connectionConfigsObject.securityGroups.push_back(value.asString());
@@ -182,6 +187,8 @@ void GetServiceInstanceResult::parse(const std::string &payload)
 		licenseMetadata_ = value["LicenseMetadata"].asString();
 	if(!value["Name"].isNull())
 		name_ = value["Name"].asString();
+	if(!value["EnableUserPrometheus"].isNull())
+		enableUserPrometheus_ = value["EnableUserPrometheus"].asString();
 
 }
 
@@ -283,6 +290,11 @@ std::string GetServiceInstanceResult::getPayType()const
 long GetServiceInstanceResult::getUserId()const
 {
 	return userId_;
+}
+
+std::string GetServiceInstanceResult::getEnableUserPrometheus()const
+{
+	return enableUserPrometheus_;
 }
 
 std::string GetServiceInstanceResult::getStatusDetail()const
