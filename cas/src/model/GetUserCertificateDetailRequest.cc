@@ -43,3 +43,12 @@ void GetUserCertificateDetailRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+bool GetUserCertificateDetailRequest::getCertFilter() const {
+  return certFilter_;
+}
+
+void GetUserCertificateDetailRequest::setCertFilter(bool certFilter) {
+  certFilter_ = certFilter;
+  setParameter(std::string("CertFilter"), certFilter ? "true" : "false");
+}
+

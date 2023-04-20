@@ -83,6 +83,8 @@ void GetUserCertificateDetailResult::parse(const std::string &payload)
 		orderId_ = std::stol(value["OrderId"].asString());
 	if(!value["ResourceGroupId"].isNull())
 		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["Algorithm"].isNull())
+		algorithm_ = value["Algorithm"].asString();
 
 }
 
@@ -134,6 +136,11 @@ long GetUserCertificateDetailResult::getOrderId()const
 std::string GetUserCertificateDetailResult::getEndDate()const
 {
 	return endDate_;
+}
+
+std::string GetUserCertificateDetailResult::getAlgorithm()const
+{
+	return algorithm_;
 }
 
 std::string GetUserCertificateDetailResult::getProvince()const

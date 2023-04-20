@@ -47,6 +47,7 @@ namespace AlibabaCloud
 				std::string getCity()const;
 				long getOrderId()const;
 				std::string getEndDate()const;
+				std::string getAlgorithm()const;
 				std::string getProvince()const;
 				std::string getName()const;
 				std::string getCommon()const;
@@ -73,6 +74,7 @@ namespace AlibabaCloud
 				std::string city_;
 				long orderId_;
 				std::string endDate_;
+				std::string algorithm_;
 				std::string province_;
 				std::string name_;
 				std::string common_;

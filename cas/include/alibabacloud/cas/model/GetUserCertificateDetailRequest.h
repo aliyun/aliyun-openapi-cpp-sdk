@@ -34,10 +34,13 @@ public:
 	void setCertId(long certId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	bool getCertFilter() const;
+	void setCertFilter(bool certFilter);
 
 private:
 	long certId_;
 	std::string sourceIp_;
+	bool certFilter_;
 };
 } // namespace Model
 } // namespace Cas
