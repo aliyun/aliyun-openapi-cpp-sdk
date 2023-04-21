@@ -141,6 +141,8 @@ set(ice_public_header_model
 	include/alibabacloud/ice/model/DescribeQueryConfigsResult.h
 	include/alibabacloud/ice/model/GetCategoriesRequest.h
 	include/alibabacloud/ice/model/GetCategoriesResult.h
+	include/alibabacloud/ice/model/GetContentAnalyzeConfigRequest.h
+	include/alibabacloud/ice/model/GetContentAnalyzeConfigResult.h
 	include/alibabacloud/ice/model/GetCustomTemplateRequest.h
 	include/alibabacloud/ice/model/GetCustomTemplateResult.h
 	include/alibabacloud/ice/model/GetDefaultStorageLocationRequest.h
@@ -245,6 +247,8 @@ set(ice_public_header_model
 	include/alibabacloud/ice/model/ListPublicMediaBasicInfosResult.h
 	include/alibabacloud/ice/model/ListSmartJobsRequest.h
 	include/alibabacloud/ice/model/ListSmartJobsResult.h
+	include/alibabacloud/ice/model/ListSmartSysAvatarModelsRequest.h
+	include/alibabacloud/ice/model/ListSmartSysAvatarModelsResult.h
 	include/alibabacloud/ice/model/ListSnapshotJobsRequest.h
 	include/alibabacloud/ice/model/ListSnapshotJobsResult.h
 	include/alibabacloud/ice/model/ListSystemTemplatesRequest.h
@@ -273,12 +277,18 @@ set(ice_public_header_model
 	include/alibabacloud/ice/model/SearchEditingProjectResult.h
 	include/alibabacloud/ice/model/SearchMediaRequest.h
 	include/alibabacloud/ice/model/SearchMediaResult.h
+	include/alibabacloud/ice/model/SearchMediaByFaceRequest.h
+	include/alibabacloud/ice/model/SearchMediaByFaceResult.h
+	include/alibabacloud/ice/model/SearchMediaClipByFaceRequest.h
+	include/alibabacloud/ice/model/SearchMediaClipByFaceResult.h
 	include/alibabacloud/ice/model/SearchPublicMediaInfoRequest.h
 	include/alibabacloud/ice/model/SearchPublicMediaInfoResult.h
 	include/alibabacloud/ice/model/SendLiveSnapshotJobCommandRequest.h
 	include/alibabacloud/ice/model/SendLiveSnapshotJobCommandResult.h
 	include/alibabacloud/ice/model/SendLiveTranscodeJobCommandRequest.h
 	include/alibabacloud/ice/model/SendLiveTranscodeJobCommandResult.h
+	include/alibabacloud/ice/model/SetContentAnalyzeConfigRequest.h
+	include/alibabacloud/ice/model/SetContentAnalyzeConfigResult.h
 	include/alibabacloud/ice/model/SetDefaultCustomTemplateRequest.h
 	include/alibabacloud/ice/model/SetDefaultCustomTemplateResult.h
 	include/alibabacloud/ice/model/SetDefaultStorageLocationRequest.h
@@ -291,6 +301,8 @@ set(ice_public_header_model
 	include/alibabacloud/ice/model/SubmitASRJobResult.h
 	include/alibabacloud/ice/model/SubmitAudioProduceJobRequest.h
 	include/alibabacloud/ice/model/SubmitAudioProduceJobResult.h
+	include/alibabacloud/ice/model/SubmitAvatarVideoJobRequest.h
+	include/alibabacloud/ice/model/SubmitAvatarVideoJobResult.h
 	include/alibabacloud/ice/model/SubmitDNAJobRequest.h
 	include/alibabacloud/ice/model/SubmitDNAJobResult.h
 	include/alibabacloud/ice/model/SubmitDynamicChartJobRequest.h
@@ -476,6 +488,8 @@ set(ice_src
 	src/model/DescribeQueryConfigsResult.cc
 	src/model/GetCategoriesRequest.cc
 	src/model/GetCategoriesResult.cc
+	src/model/GetContentAnalyzeConfigRequest.cc
+	src/model/GetContentAnalyzeConfigResult.cc
 	src/model/GetCustomTemplateRequest.cc
 	src/model/GetCustomTemplateResult.cc
 	src/model/GetDefaultStorageLocationRequest.cc
@@ -580,6 +594,8 @@ set(ice_src
 	src/model/ListPublicMediaBasicInfosResult.cc
 	src/model/ListSmartJobsRequest.cc
 	src/model/ListSmartJobsResult.cc
+	src/model/ListSmartSysAvatarModelsRequest.cc
+	src/model/ListSmartSysAvatarModelsResult.cc
 	src/model/ListSnapshotJobsRequest.cc
 	src/model/ListSnapshotJobsResult.cc
 	src/model/ListSystemTemplatesRequest.cc
@@ -608,12 +624,18 @@ set(ice_src
 	src/model/SearchEditingProjectResult.cc
 	src/model/SearchMediaRequest.cc
 	src/model/SearchMediaResult.cc
+	src/model/SearchMediaByFaceRequest.cc
+	src/model/SearchMediaByFaceResult.cc
+	src/model/SearchMediaClipByFaceRequest.cc
+	src/model/SearchMediaClipByFaceResult.cc
 	src/model/SearchPublicMediaInfoRequest.cc
 	src/model/SearchPublicMediaInfoResult.cc
 	src/model/SendLiveSnapshotJobCommandRequest.cc
 	src/model/SendLiveSnapshotJobCommandResult.cc
 	src/model/SendLiveTranscodeJobCommandRequest.cc
 	src/model/SendLiveTranscodeJobCommandResult.cc
+	src/model/SetContentAnalyzeConfigRequest.cc
+	src/model/SetContentAnalyzeConfigResult.cc
 	src/model/SetDefaultCustomTemplateRequest.cc
 	src/model/SetDefaultCustomTemplateResult.cc
 	src/model/SetDefaultStorageLocationRequest.cc
@@ -626,6 +648,8 @@ set(ice_src
 	src/model/SubmitASRJobResult.cc
 	src/model/SubmitAudioProduceJobRequest.cc
 	src/model/SubmitAudioProduceJobResult.cc
+	src/model/SubmitAvatarVideoJobRequest.cc
+	src/model/SubmitAvatarVideoJobResult.cc
 	src/model/SubmitDNAJobRequest.cc
 	src/model/SubmitDNAJobResult.cc
 	src/model/SubmitDynamicChartJobRequest.cc

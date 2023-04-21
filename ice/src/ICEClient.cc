@@ -2211,6 +2211,42 @@ ICEClient::GetCategoriesOutcomeCallable ICEClient::getCategoriesCallable(const G
 	return task->get_future();
 }
 
+ICEClient::GetContentAnalyzeConfigOutcome ICEClient::getContentAnalyzeConfig(const GetContentAnalyzeConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetContentAnalyzeConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetContentAnalyzeConfigOutcome(GetContentAnalyzeConfigResult(outcome.result()));
+	else
+		return GetContentAnalyzeConfigOutcome(outcome.error());
+}
+
+void ICEClient::getContentAnalyzeConfigAsync(const GetContentAnalyzeConfigRequest& request, const GetContentAnalyzeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getContentAnalyzeConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ICEClient::GetContentAnalyzeConfigOutcomeCallable ICEClient::getContentAnalyzeConfigCallable(const GetContentAnalyzeConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetContentAnalyzeConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getContentAnalyzeConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ICEClient::GetCustomTemplateOutcome ICEClient::getCustomTemplate(const GetCustomTemplateRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4083,6 +4119,42 @@ ICEClient::ListSmartJobsOutcomeCallable ICEClient::listSmartJobsCallable(const L
 	return task->get_future();
 }
 
+ICEClient::ListSmartSysAvatarModelsOutcome ICEClient::listSmartSysAvatarModels(const ListSmartSysAvatarModelsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListSmartSysAvatarModelsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListSmartSysAvatarModelsOutcome(ListSmartSysAvatarModelsResult(outcome.result()));
+	else
+		return ListSmartSysAvatarModelsOutcome(outcome.error());
+}
+
+void ICEClient::listSmartSysAvatarModelsAsync(const ListSmartSysAvatarModelsRequest& request, const ListSmartSysAvatarModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listSmartSysAvatarModels(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ICEClient::ListSmartSysAvatarModelsOutcomeCallable ICEClient::listSmartSysAvatarModelsCallable(const ListSmartSysAvatarModelsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListSmartSysAvatarModelsOutcome()>>(
+			[this, request]()
+			{
+			return this->listSmartSysAvatarModels(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ICEClient::ListSnapshotJobsOutcome ICEClient::listSnapshotJobs(const ListSnapshotJobsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4587,6 +4659,78 @@ ICEClient::SearchMediaOutcomeCallable ICEClient::searchMediaCallable(const Searc
 	return task->get_future();
 }
 
+ICEClient::SearchMediaByFaceOutcome ICEClient::searchMediaByFace(const SearchMediaByFaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchMediaByFaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchMediaByFaceOutcome(SearchMediaByFaceResult(outcome.result()));
+	else
+		return SearchMediaByFaceOutcome(outcome.error());
+}
+
+void ICEClient::searchMediaByFaceAsync(const SearchMediaByFaceRequest& request, const SearchMediaByFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchMediaByFace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ICEClient::SearchMediaByFaceOutcomeCallable ICEClient::searchMediaByFaceCallable(const SearchMediaByFaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchMediaByFaceOutcome()>>(
+			[this, request]()
+			{
+			return this->searchMediaByFace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ICEClient::SearchMediaClipByFaceOutcome ICEClient::searchMediaClipByFace(const SearchMediaClipByFaceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchMediaClipByFaceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchMediaClipByFaceOutcome(SearchMediaClipByFaceResult(outcome.result()));
+	else
+		return SearchMediaClipByFaceOutcome(outcome.error());
+}
+
+void ICEClient::searchMediaClipByFaceAsync(const SearchMediaClipByFaceRequest& request, const SearchMediaClipByFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchMediaClipByFace(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ICEClient::SearchMediaClipByFaceOutcomeCallable ICEClient::searchMediaClipByFaceCallable(const SearchMediaClipByFaceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchMediaClipByFaceOutcome()>>(
+			[this, request]()
+			{
+			return this->searchMediaClipByFace(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ICEClient::SearchPublicMediaInfoOutcome ICEClient::searchPublicMediaInfo(const SearchPublicMediaInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4689,6 +4833,42 @@ ICEClient::SendLiveTranscodeJobCommandOutcomeCallable ICEClient::sendLiveTransco
 			[this, request]()
 			{
 			return this->sendLiveTranscodeJobCommand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ICEClient::SetContentAnalyzeConfigOutcome ICEClient::setContentAnalyzeConfig(const SetContentAnalyzeConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetContentAnalyzeConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetContentAnalyzeConfigOutcome(SetContentAnalyzeConfigResult(outcome.result()));
+	else
+		return SetContentAnalyzeConfigOutcome(outcome.error());
+}
+
+void ICEClient::setContentAnalyzeConfigAsync(const SetContentAnalyzeConfigRequest& request, const SetContentAnalyzeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setContentAnalyzeConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ICEClient::SetContentAnalyzeConfigOutcomeCallable ICEClient::setContentAnalyzeConfigCallable(const SetContentAnalyzeConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetContentAnalyzeConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->setContentAnalyzeConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4905,6 +5085,42 @@ ICEClient::SubmitAudioProduceJobOutcomeCallable ICEClient::submitAudioProduceJob
 			[this, request]()
 			{
 			return this->submitAudioProduceJob(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ICEClient::SubmitAvatarVideoJobOutcome ICEClient::submitAvatarVideoJob(const SubmitAvatarVideoJobRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitAvatarVideoJobOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitAvatarVideoJobOutcome(SubmitAvatarVideoJobResult(outcome.result()));
+	else
+		return SubmitAvatarVideoJobOutcome(outcome.error());
+}
+
+void ICEClient::submitAvatarVideoJobAsync(const SubmitAvatarVideoJobRequest& request, const SubmitAvatarVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitAvatarVideoJob(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ICEClient::SubmitAvatarVideoJobOutcomeCallable ICEClient::submitAvatarVideoJobCallable(const SubmitAvatarVideoJobRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitAvatarVideoJobOutcome()>>(
+			[this, request]()
+			{
+			return this->submitAvatarVideoJob(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

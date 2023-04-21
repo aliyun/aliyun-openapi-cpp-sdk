@@ -142,6 +142,8 @@
 #include "model/DescribeQueryConfigsResult.h"
 #include "model/GetCategoriesRequest.h"
 #include "model/GetCategoriesResult.h"
+#include "model/GetContentAnalyzeConfigRequest.h"
+#include "model/GetContentAnalyzeConfigResult.h"
 #include "model/GetCustomTemplateRequest.h"
 #include "model/GetCustomTemplateResult.h"
 #include "model/GetDefaultStorageLocationRequest.h"
@@ -246,6 +248,8 @@
 #include "model/ListPublicMediaBasicInfosResult.h"
 #include "model/ListSmartJobsRequest.h"
 #include "model/ListSmartJobsResult.h"
+#include "model/ListSmartSysAvatarModelsRequest.h"
+#include "model/ListSmartSysAvatarModelsResult.h"
 #include "model/ListSnapshotJobsRequest.h"
 #include "model/ListSnapshotJobsResult.h"
 #include "model/ListSystemTemplatesRequest.h"
@@ -274,12 +278,18 @@
 #include "model/SearchEditingProjectResult.h"
 #include "model/SearchMediaRequest.h"
 #include "model/SearchMediaResult.h"
+#include "model/SearchMediaByFaceRequest.h"
+#include "model/SearchMediaByFaceResult.h"
+#include "model/SearchMediaClipByFaceRequest.h"
+#include "model/SearchMediaClipByFaceResult.h"
 #include "model/SearchPublicMediaInfoRequest.h"
 #include "model/SearchPublicMediaInfoResult.h"
 #include "model/SendLiveSnapshotJobCommandRequest.h"
 #include "model/SendLiveSnapshotJobCommandResult.h"
 #include "model/SendLiveTranscodeJobCommandRequest.h"
 #include "model/SendLiveTranscodeJobCommandResult.h"
+#include "model/SetContentAnalyzeConfigRequest.h"
+#include "model/SetContentAnalyzeConfigResult.h"
 #include "model/SetDefaultCustomTemplateRequest.h"
 #include "model/SetDefaultCustomTemplateResult.h"
 #include "model/SetDefaultStorageLocationRequest.h"
@@ -292,6 +302,8 @@
 #include "model/SubmitASRJobResult.h"
 #include "model/SubmitAudioProduceJobRequest.h"
 #include "model/SubmitAudioProduceJobResult.h"
+#include "model/SubmitAvatarVideoJobRequest.h"
+#include "model/SubmitAvatarVideoJobResult.h"
 #include "model/SubmitDNAJobRequest.h"
 #include "model/SubmitDNAJobResult.h"
 #include "model/SubmitDynamicChartJobRequest.h"
@@ -543,6 +555,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetCategoriesResult> GetCategoriesOutcome;
 			typedef std::future<GetCategoriesOutcome> GetCategoriesOutcomeCallable;
 			typedef std::function<void(const ICEClient*, const Model::GetCategoriesRequest&, const GetCategoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCategoriesAsyncHandler;
+			typedef Outcome<Error, Model::GetContentAnalyzeConfigResult> GetContentAnalyzeConfigOutcome;
+			typedef std::future<GetContentAnalyzeConfigOutcome> GetContentAnalyzeConfigOutcomeCallable;
+			typedef std::function<void(const ICEClient*, const Model::GetContentAnalyzeConfigRequest&, const GetContentAnalyzeConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetContentAnalyzeConfigAsyncHandler;
 			typedef Outcome<Error, Model::GetCustomTemplateResult> GetCustomTemplateOutcome;
 			typedef std::future<GetCustomTemplateOutcome> GetCustomTemplateOutcomeCallable;
 			typedef std::function<void(const ICEClient*, const Model::GetCustomTemplateRequest&, const GetCustomTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetCustomTemplateAsyncHandler;
@@ -699,6 +714,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSmartJobsResult> ListSmartJobsOutcome;
 			typedef std::future<ListSmartJobsOutcome> ListSmartJobsOutcomeCallable;
 			typedef std::function<void(const ICEClient*, const Model::ListSmartJobsRequest&, const ListSmartJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSmartJobsAsyncHandler;
+			typedef Outcome<Error, Model::ListSmartSysAvatarModelsResult> ListSmartSysAvatarModelsOutcome;
+			typedef std::future<ListSmartSysAvatarModelsOutcome> ListSmartSysAvatarModelsOutcomeCallable;
+			typedef std::function<void(const ICEClient*, const Model::ListSmartSysAvatarModelsRequest&, const ListSmartSysAvatarModelsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSmartSysAvatarModelsAsyncHandler;
 			typedef Outcome<Error, Model::ListSnapshotJobsResult> ListSnapshotJobsOutcome;
 			typedef std::future<ListSnapshotJobsOutcome> ListSnapshotJobsOutcomeCallable;
 			typedef std::function<void(const ICEClient*, const Model::ListSnapshotJobsRequest&, const ListSnapshotJobsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSnapshotJobsAsyncHandler;
@@ -741,6 +759,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SearchMediaResult> SearchMediaOutcome;
 			typedef std::future<SearchMediaOutcome> SearchMediaOutcomeCallable;
 			typedef std::function<void(const ICEClient*, const Model::SearchMediaRequest&, const SearchMediaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchMediaAsyncHandler;
+			typedef Outcome<Error, Model::SearchMediaByFaceResult> SearchMediaByFaceOutcome;
+			typedef std::future<SearchMediaByFaceOutcome> SearchMediaByFaceOutcomeCallable;
+			typedef std::function<void(const ICEClient*, const Model::SearchMediaByFaceRequest&, const SearchMediaByFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchMediaByFaceAsyncHandler;
+			typedef Outcome<Error, Model::SearchMediaClipByFaceResult> SearchMediaClipByFaceOutcome;
+			typedef std::future<SearchMediaClipByFaceOutcome> SearchMediaClipByFaceOutcomeCallable;
+			typedef std::function<void(const ICEClient*, const Model::SearchMediaClipByFaceRequest&, const SearchMediaClipByFaceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchMediaClipByFaceAsyncHandler;
 			typedef Outcome<Error, Model::SearchPublicMediaInfoResult> SearchPublicMediaInfoOutcome;
 			typedef std::future<SearchPublicMediaInfoOutcome> SearchPublicMediaInfoOutcomeCallable;
 			typedef std::function<void(const ICEClient*, const Model::SearchPublicMediaInfoRequest&, const SearchPublicMediaInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchPublicMediaInfoAsyncHandler;
@@ -750,6 +774,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SendLiveTranscodeJobCommandResult> SendLiveTranscodeJobCommandOutcome;
 			typedef std::future<SendLiveTranscodeJobCommandOutcome> SendLiveTranscodeJobCommandOutcomeCallable;
 			typedef std::function<void(const ICEClient*, const Model::SendLiveTranscodeJobCommandRequest&, const SendLiveTranscodeJobCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendLiveTranscodeJobCommandAsyncHandler;
+			typedef Outcome<Error, Model::SetContentAnalyzeConfigResult> SetContentAnalyzeConfigOutcome;
+			typedef std::future<SetContentAnalyzeConfigOutcome> SetContentAnalyzeConfigOutcomeCallable;
+			typedef std::function<void(const ICEClient*, const Model::SetContentAnalyzeConfigRequest&, const SetContentAnalyzeConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetContentAnalyzeConfigAsyncHandler;
 			typedef Outcome<Error, Model::SetDefaultCustomTemplateResult> SetDefaultCustomTemplateOutcome;
 			typedef std::future<SetDefaultCustomTemplateOutcome> SetDefaultCustomTemplateOutcomeCallable;
 			typedef std::function<void(const ICEClient*, const Model::SetDefaultCustomTemplateRequest&, const SetDefaultCustomTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDefaultCustomTemplateAsyncHandler;
@@ -768,6 +795,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SubmitAudioProduceJobResult> SubmitAudioProduceJobOutcome;
 			typedef std::future<SubmitAudioProduceJobOutcome> SubmitAudioProduceJobOutcomeCallable;
 			typedef std::function<void(const ICEClient*, const Model::SubmitAudioProduceJobRequest&, const SubmitAudioProduceJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitAudioProduceJobAsyncHandler;
+			typedef Outcome<Error, Model::SubmitAvatarVideoJobResult> SubmitAvatarVideoJobOutcome;
+			typedef std::future<SubmitAvatarVideoJobOutcome> SubmitAvatarVideoJobOutcomeCallable;
+			typedef std::function<void(const ICEClient*, const Model::SubmitAvatarVideoJobRequest&, const SubmitAvatarVideoJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitAvatarVideoJobAsyncHandler;
 			typedef Outcome<Error, Model::SubmitDNAJobResult> SubmitDNAJobOutcome;
 			typedef std::future<SubmitDNAJobOutcome> SubmitDNAJobOutcomeCallable;
 			typedef std::function<void(const ICEClient*, const Model::SubmitDNAJobRequest&, const SubmitDNAJobOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitDNAJobAsyncHandler;
@@ -1046,6 +1076,9 @@ namespace AlibabaCloud
 			GetCategoriesOutcome getCategories(const Model::GetCategoriesRequest &request)const;
 			void getCategoriesAsync(const Model::GetCategoriesRequest& request, const GetCategoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCategoriesOutcomeCallable getCategoriesCallable(const Model::GetCategoriesRequest& request) const;
+			GetContentAnalyzeConfigOutcome getContentAnalyzeConfig(const Model::GetContentAnalyzeConfigRequest &request)const;
+			void getContentAnalyzeConfigAsync(const Model::GetContentAnalyzeConfigRequest& request, const GetContentAnalyzeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetContentAnalyzeConfigOutcomeCallable getContentAnalyzeConfigCallable(const Model::GetContentAnalyzeConfigRequest& request) const;
 			GetCustomTemplateOutcome getCustomTemplate(const Model::GetCustomTemplateRequest &request)const;
 			void getCustomTemplateAsync(const Model::GetCustomTemplateRequest& request, const GetCustomTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetCustomTemplateOutcomeCallable getCustomTemplateCallable(const Model::GetCustomTemplateRequest& request) const;
@@ -1202,6 +1235,9 @@ namespace AlibabaCloud
 			ListSmartJobsOutcome listSmartJobs(const Model::ListSmartJobsRequest &request)const;
 			void listSmartJobsAsync(const Model::ListSmartJobsRequest& request, const ListSmartJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSmartJobsOutcomeCallable listSmartJobsCallable(const Model::ListSmartJobsRequest& request) const;
+			ListSmartSysAvatarModelsOutcome listSmartSysAvatarModels(const Model::ListSmartSysAvatarModelsRequest &request)const;
+			void listSmartSysAvatarModelsAsync(const Model::ListSmartSysAvatarModelsRequest& request, const ListSmartSysAvatarModelsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListSmartSysAvatarModelsOutcomeCallable listSmartSysAvatarModelsCallable(const Model::ListSmartSysAvatarModelsRequest& request) const;
 			ListSnapshotJobsOutcome listSnapshotJobs(const Model::ListSnapshotJobsRequest &request)const;
 			void listSnapshotJobsAsync(const Model::ListSnapshotJobsRequest& request, const ListSnapshotJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSnapshotJobsOutcomeCallable listSnapshotJobsCallable(const Model::ListSnapshotJobsRequest& request) const;
@@ -1244,6 +1280,12 @@ namespace AlibabaCloud
 			SearchMediaOutcome searchMedia(const Model::SearchMediaRequest &request)const;
 			void searchMediaAsync(const Model::SearchMediaRequest& request, const SearchMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchMediaOutcomeCallable searchMediaCallable(const Model::SearchMediaRequest& request) const;
+			SearchMediaByFaceOutcome searchMediaByFace(const Model::SearchMediaByFaceRequest &request)const;
+			void searchMediaByFaceAsync(const Model::SearchMediaByFaceRequest& request, const SearchMediaByFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchMediaByFaceOutcomeCallable searchMediaByFaceCallable(const Model::SearchMediaByFaceRequest& request) const;
+			SearchMediaClipByFaceOutcome searchMediaClipByFace(const Model::SearchMediaClipByFaceRequest &request)const;
+			void searchMediaClipByFaceAsync(const Model::SearchMediaClipByFaceRequest& request, const SearchMediaClipByFaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchMediaClipByFaceOutcomeCallable searchMediaClipByFaceCallable(const Model::SearchMediaClipByFaceRequest& request) const;
 			SearchPublicMediaInfoOutcome searchPublicMediaInfo(const Model::SearchPublicMediaInfoRequest &request)const;
 			void searchPublicMediaInfoAsync(const Model::SearchPublicMediaInfoRequest& request, const SearchPublicMediaInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchPublicMediaInfoOutcomeCallable searchPublicMediaInfoCallable(const Model::SearchPublicMediaInfoRequest& request) const;
@@ -1253,6 +1295,9 @@ namespace AlibabaCloud
 			SendLiveTranscodeJobCommandOutcome sendLiveTranscodeJobCommand(const Model::SendLiveTranscodeJobCommandRequest &request)const;
 			void sendLiveTranscodeJobCommandAsync(const Model::SendLiveTranscodeJobCommandRequest& request, const SendLiveTranscodeJobCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SendLiveTranscodeJobCommandOutcomeCallable sendLiveTranscodeJobCommandCallable(const Model::SendLiveTranscodeJobCommandRequest& request) const;
+			SetContentAnalyzeConfigOutcome setContentAnalyzeConfig(const Model::SetContentAnalyzeConfigRequest &request)const;
+			void setContentAnalyzeConfigAsync(const Model::SetContentAnalyzeConfigRequest& request, const SetContentAnalyzeConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetContentAnalyzeConfigOutcomeCallable setContentAnalyzeConfigCallable(const Model::SetContentAnalyzeConfigRequest& request) const;
 			SetDefaultCustomTemplateOutcome setDefaultCustomTemplate(const Model::SetDefaultCustomTemplateRequest &request)const;
 			void setDefaultCustomTemplateAsync(const Model::SetDefaultCustomTemplateRequest& request, const SetDefaultCustomTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDefaultCustomTemplateOutcomeCallable setDefaultCustomTemplateCallable(const Model::SetDefaultCustomTemplateRequest& request) const;
@@ -1271,6 +1316,9 @@ namespace AlibabaCloud
 			SubmitAudioProduceJobOutcome submitAudioProduceJob(const Model::SubmitAudioProduceJobRequest &request)const;
 			void submitAudioProduceJobAsync(const Model::SubmitAudioProduceJobRequest& request, const SubmitAudioProduceJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitAudioProduceJobOutcomeCallable submitAudioProduceJobCallable(const Model::SubmitAudioProduceJobRequest& request) const;
+			SubmitAvatarVideoJobOutcome submitAvatarVideoJob(const Model::SubmitAvatarVideoJobRequest &request)const;
+			void submitAvatarVideoJobAsync(const Model::SubmitAvatarVideoJobRequest& request, const SubmitAvatarVideoJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitAvatarVideoJobOutcomeCallable submitAvatarVideoJobCallable(const Model::SubmitAvatarVideoJobRequest& request) const;
 			SubmitDNAJobOutcome submitDNAJob(const Model::SubmitDNAJobRequest &request)const;
 			void submitDNAJobAsync(const Model::SubmitDNAJobRequest& request, const SubmitDNAJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitDNAJobOutcomeCallable submitDNAJobCallable(const Model::SubmitDNAJobRequest& request) const;
