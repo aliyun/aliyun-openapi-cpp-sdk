@@ -54,6 +54,23 @@ void QueryFaceImageTemplateResult::parse(const std::string &payload)
 			elementsItemObject.templateId = dataNodeElementsElementsItem["TemplateId"].asString();
 		if(!dataNodeElementsElementsItem["TemplateURL"].isNull())
 			elementsItemObject.templateURL = dataNodeElementsElementsItem["TemplateURL"].asString();
+		auto allFaceInfosNode = dataNodeElementsElementsItem["FaceInfos"]["FaceInfosItem"];
+		for (auto dataNodeElementsElementsItemFaceInfosFaceInfosItem : allFaceInfosNode)
+		{
+			Data::ElementsItem::FaceInfosItem faceInfosObject;
+			if(!dataNodeElementsElementsItemFaceInfosFaceInfosItem["TemplateFaceID"].isNull())
+				faceInfosObject.templateFaceID = dataNodeElementsElementsItemFaceInfosFaceInfosItem["TemplateFaceID"].asString();
+			auto faceRectNode = value["FaceRect"];
+			if(!faceRectNode["X"].isNull())
+				faceInfosObject.faceRect.x = faceRectNode["X"].asString();
+			if(!faceRectNode["Y"].isNull())
+				faceInfosObject.faceRect.y = faceRectNode["Y"].asString();
+			if(!faceRectNode["Height"].isNull())
+				faceInfosObject.faceRect.height = faceRectNode["Height"].asString();
+			if(!faceRectNode["Width"].isNull())
+				faceInfosObject.faceRect.width = faceRectNode["Width"].asString();
+			elementsItemObject.faceInfos.push_back(faceInfosObject);
+		}
 		data_.elements.push_back(elementsItemObject);
 	}
 	if(!value["Code"].isNull())

@@ -34,6 +34,19 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct FaceInfosItem
+					{
+						struct FaceRect
+						{
+							std::string x;
+							std::string y;
+							std::string height;
+							std::string width;
+						};
+						FaceRect faceRect;
+						std::string templateFaceID;
+					};
+					std::vector<FaceInfosItem> faceInfos;
 					std::string templateId;
 				};
 

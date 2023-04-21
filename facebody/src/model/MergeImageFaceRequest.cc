@@ -34,6 +34,20 @@ void MergeImageFaceRequest::setFormatResultToJson(bool formatResultToJson) {
   setParameter(std::string("FormatResultToJson"), formatResultToJson ? "true" : "false");
 }
 
+std::vector<MergeImageFaceRequest::MergeInfos> MergeImageFaceRequest::getMergeInfos() const {
+  return mergeInfos_;
+}
+
+void MergeImageFaceRequest::setMergeInfos(const std::vector<MergeImageFaceRequest::MergeInfos> &mergeInfos) {
+  mergeInfos_ = mergeInfos;
+  for(int dep1 = 0; dep1 != mergeInfos.size(); dep1++) {
+  auto mergeInfosObj = mergeInfos.at(dep1);
+  std::string mergeInfosObjStr = std::string("MergeInfos") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(mergeInfosObjStr + ".ImageURL", mergeInfosObj.imageURL);
+    setBodyParameter(mergeInfosObjStr + ".TemplateFaceID", mergeInfosObj.templateFaceID);
+  }
+}
+
 std::string MergeImageFaceRequest::getUserId() const {
   return userId_;
 }
@@ -77,5 +91,23 @@ std::string MergeImageFaceRequest::getImageURL() const {
 void MergeImageFaceRequest::setImageURL(const std::string &imageURL) {
   imageURL_ = imageURL;
   setBodyParameter(std::string("ImageURL"), imageURL);
+}
+
+bool MergeImageFaceRequest::getAddWatermark() const {
+  return addWatermark_;
+}
+
+void MergeImageFaceRequest::setAddWatermark(bool addWatermark) {
+  addWatermark_ = addWatermark;
+  setBodyParameter(std::string("AddWatermark"), addWatermark ? "true" : "false");
+}
+
+std::string MergeImageFaceRequest::getModelVersion() const {
+  return modelVersion_;
+}
+
+void MergeImageFaceRequest::setModelVersion(const std::string &modelVersion) {
+  modelVersion_ = modelVersion;
+  setBodyParameter(std::string("ModelVersion"), modelVersion);
 }
 

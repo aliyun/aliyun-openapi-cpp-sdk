@@ -28,10 +28,16 @@ namespace Facebody {
 namespace Model {
 class ALIBABACLOUD_FACEBODY_EXPORT MergeImageFaceRequest : public RpcServiceRequest {
 public:
+	struct MergeInfos {
+		std::string imageURL;
+		std::string templateFaceID;
+	};
 	MergeImageFaceRequest();
 	~MergeImageFaceRequest();
 	bool getFormatResultToJson() const;
 	void setFormatResultToJson(bool formatResultToJson);
+	std::vector<MergeInfos> getMergeInfos() const;
+	void setMergeInfos(const std::vector<MergeInfos> &mergeInfos);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
 	std::string getOssFile() const;
@@ -42,14 +48,21 @@ public:
 	void setRequestProxyBy(const std::string &requestProxyBy);
 	std::string getImageURL() const;
 	void setImageURL(const std::string &imageURL);
+	bool getAddWatermark() const;
+	void setAddWatermark(bool addWatermark);
+	std::string getModelVersion() const;
+	void setModelVersion(const std::string &modelVersion);
 
 private:
 	bool formatResultToJson_;
+	std::vector<MergeInfos> mergeInfos_;
 	std::string userId_;
 	std::string ossFile_;
 	std::string templateId_;
 	std::string requestProxyBy_;
 	std::string imageURL_;
+	bool addWatermark_;
+	std::string modelVersion_;
 };
 } // namespace Model
 } // namespace Facebody

@@ -42,6 +42,23 @@ void AddFaceImageTemplateResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["TemplateId"].isNull())
 		data_.templateId = dataNode["TemplateId"].asString();
+	auto allFaceInfosNode = dataNode["FaceInfos"]["FaceInfosItem"];
+	for (auto dataNodeFaceInfosFaceInfosItem : allFaceInfosNode)
+	{
+		Data::FaceInfosItem faceInfosItemObject;
+		if(!dataNodeFaceInfosFaceInfosItem["TemplateFaceID"].isNull())
+			faceInfosItemObject.templateFaceID = dataNodeFaceInfosFaceInfosItem["TemplateFaceID"].asString();
+		auto faceRectNode = value["FaceRect"];
+		if(!faceRectNode["X"].isNull())
+			faceInfosItemObject.faceRect.x = faceRectNode["X"].asString();
+		if(!faceRectNode["Y"].isNull())
+			faceInfosItemObject.faceRect.y = faceRectNode["Y"].asString();
+		if(!faceRectNode["Height"].isNull())
+			faceInfosItemObject.faceRect.height = faceRectNode["Height"].asString();
+		if(!faceRectNode["Width"].isNull())
+			faceInfosItemObject.faceRect.width = faceRectNode["Width"].asString();
+		data_.faceInfos.push_back(faceInfosItemObject);
+	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
