@@ -61,6 +61,8 @@ void ListDDLPublishRecordsResult::parse(const std::string &payload)
 			dDLPublishRecordListObject.statusDesc = valueDDLPublishRecordListDDLPublishRecord["StatusDesc"].asString();
 		if(!valueDDLPublishRecordListDDLPublishRecord["WorkflowInstanceId"].isNull())
 			dDLPublishRecordListObject.workflowInstanceId = std::stol(valueDDLPublishRecordListDDLPublishRecord["WorkflowInstanceId"].asString());
+		if(!valueDDLPublishRecordListDDLPublishRecord["Comment"].isNull())
+			dDLPublishRecordListObject.comment = valueDDLPublishRecordListDDLPublishRecord["Comment"].asString();
 		auto allPublishTaskInfoListNode = valueDDLPublishRecordListDDLPublishRecord["PublishTaskInfoList"]["PublishTaskInfo"];
 		for (auto valueDDLPublishRecordListDDLPublishRecordPublishTaskInfoListPublishTaskInfo : allPublishTaskInfoListNode)
 		{

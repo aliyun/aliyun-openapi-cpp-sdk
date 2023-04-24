@@ -54,6 +54,7 @@ namespace AlibabaCloud
 						std::string planTime;
 					};
 					std::string statusDesc;
+					std::string comment;
 					std::vector<DDLPublishRecord::PublishTaskInfo> publishTaskInfoList;
 					std::string auditStatus;
 					long creatorId;

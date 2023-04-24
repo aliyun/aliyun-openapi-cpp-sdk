@@ -48,8 +48,14 @@
 #include "model/CreateDataCorrectOrderResult.h"
 #include "model/CreateDataCronClearOrderRequest.h"
 #include "model/CreateDataCronClearOrderResult.h"
+#include "model/CreateDataExportOrderRequest.h"
+#include "model/CreateDataExportOrderResult.h"
 #include "model/CreateDataImportOrderRequest.h"
 #include "model/CreateDataImportOrderResult.h"
+#include "model/CreateDataTrackOrderRequest.h"
+#include "model/CreateDataTrackOrderResult.h"
+#include "model/CreateDatabaseExportOrderRequest.h"
+#include "model/CreateDatabaseExportOrderResult.h"
 #include "model/CreateFreeLockCorrectOrderRequest.h"
 #include "model/CreateFreeLockCorrectOrderResult.h"
 #include "model/CreateLakeHouseSpaceRequest.h"
@@ -106,6 +112,8 @@
 #include "model/DeleteUserResult.h"
 #include "model/DisableUserRequest.h"
 #include "model/DisableUserResult.h"
+#include "model/DownloadDataTrackResultRequest.h"
+#include "model/DownloadDataTrackResultResult.h"
 #include "model/EditLogicDatabaseRequest.h"
 #include "model/EditLogicDatabaseResult.h"
 #include "model/EnableUserRequest.h"
@@ -148,8 +156,16 @@
 #include "model/GetDataExportOrderDetailResult.h"
 #include "model/GetDataImportSQLRequest.h"
 #include "model/GetDataImportSQLResult.h"
+#include "model/GetDataTrackJobDegreeRequest.h"
+#include "model/GetDataTrackJobDegreeResult.h"
+#include "model/GetDataTrackJobTableMetaRequest.h"
+#include "model/GetDataTrackJobTableMetaResult.h"
+#include "model/GetDataTrackOrderDetailRequest.h"
+#include "model/GetDataTrackOrderDetailResult.h"
 #include "model/GetDatabaseRequest.h"
 #include "model/GetDatabaseResult.h"
+#include "model/GetDatabaseExportOrderDetailRequest.h"
+#include "model/GetDatabaseExportOrderDetailResult.h"
 #include "model/GetInstanceRequest.h"
 #include "model/GetInstanceResult.h"
 #include "model/GetIntervalLimitOfSLARequest.h"
@@ -330,6 +346,8 @@
 #include "model/PauseDataCorrectSQLJobResult.h"
 #include "model/PublishAndDeployTaskFlowRequest.h"
 #include "model/PublishAndDeployTaskFlowResult.h"
+#include "model/QueryDataTrackResultDownloadStatusRequest.h"
+#include "model/QueryDataTrackResultDownloadStatusResult.h"
 #include "model/ReDeployLhDagVersionRequest.h"
 #include "model/ReDeployLhDagVersionResult.h"
 #include "model/ReRunTaskFlowInstanceRequest.h"
@@ -350,6 +368,8 @@
 #include "model/RevokeTemplateAuthorityResult.h"
 #include "model/RevokeUserPermissionRequest.h"
 #include "model/RevokeUserPermissionResult.h"
+#include "model/SearchDataTrackResultRequest.h"
+#include "model/SearchDataTrackResultResult.h"
 #include "model/SearchDatabaseRequest.h"
 #include "model/SearchDatabaseResult.h"
 #include "model/SearchTableRequest.h"
@@ -454,9 +474,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDataCronClearOrderResult> CreateDataCronClearOrderOutcome;
 			typedef std::future<CreateDataCronClearOrderOutcome> CreateDataCronClearOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateDataCronClearOrderRequest&, const CreateDataCronClearOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataCronClearOrderAsyncHandler;
+			typedef Outcome<Error, Model::CreateDataExportOrderResult> CreateDataExportOrderOutcome;
+			typedef std::future<CreateDataExportOrderOutcome> CreateDataExportOrderOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateDataExportOrderRequest&, const CreateDataExportOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataExportOrderAsyncHandler;
 			typedef Outcome<Error, Model::CreateDataImportOrderResult> CreateDataImportOrderOutcome;
 			typedef std::future<CreateDataImportOrderOutcome> CreateDataImportOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateDataImportOrderRequest&, const CreateDataImportOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataImportOrderAsyncHandler;
+			typedef Outcome<Error, Model::CreateDataTrackOrderResult> CreateDataTrackOrderOutcome;
+			typedef std::future<CreateDataTrackOrderOutcome> CreateDataTrackOrderOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateDataTrackOrderRequest&, const CreateDataTrackOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataTrackOrderAsyncHandler;
+			typedef Outcome<Error, Model::CreateDatabaseExportOrderResult> CreateDatabaseExportOrderOutcome;
+			typedef std::future<CreateDatabaseExportOrderOutcome> CreateDatabaseExportOrderOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateDatabaseExportOrderRequest&, const CreateDatabaseExportOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatabaseExportOrderAsyncHandler;
 			typedef Outcome<Error, Model::CreateFreeLockCorrectOrderResult> CreateFreeLockCorrectOrderOutcome;
 			typedef std::future<CreateFreeLockCorrectOrderOutcome> CreateFreeLockCorrectOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateFreeLockCorrectOrderRequest&, const CreateFreeLockCorrectOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFreeLockCorrectOrderAsyncHandler;
@@ -541,6 +570,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DisableUserResult> DisableUserOutcome;
 			typedef std::future<DisableUserOutcome> DisableUserOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::DisableUserRequest&, const DisableUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableUserAsyncHandler;
+			typedef Outcome<Error, Model::DownloadDataTrackResultResult> DownloadDataTrackResultOutcome;
+			typedef std::future<DownloadDataTrackResultOutcome> DownloadDataTrackResultOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::DownloadDataTrackResultRequest&, const DownloadDataTrackResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DownloadDataTrackResultAsyncHandler;
 			typedef Outcome<Error, Model::EditLogicDatabaseResult> EditLogicDatabaseOutcome;
 			typedef std::future<EditLogicDatabaseOutcome> EditLogicDatabaseOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::EditLogicDatabaseRequest&, const EditLogicDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EditLogicDatabaseAsyncHandler;
@@ -604,9 +636,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDataImportSQLResult> GetDataImportSQLOutcome;
 			typedef std::future<GetDataImportSQLOutcome> GetDataImportSQLOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataImportSQLRequest&, const GetDataImportSQLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataImportSQLAsyncHandler;
+			typedef Outcome<Error, Model::GetDataTrackJobDegreeResult> GetDataTrackJobDegreeOutcome;
+			typedef std::future<GetDataTrackJobDegreeOutcome> GetDataTrackJobDegreeOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataTrackJobDegreeRequest&, const GetDataTrackJobDegreeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataTrackJobDegreeAsyncHandler;
+			typedef Outcome<Error, Model::GetDataTrackJobTableMetaResult> GetDataTrackJobTableMetaOutcome;
+			typedef std::future<GetDataTrackJobTableMetaOutcome> GetDataTrackJobTableMetaOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataTrackJobTableMetaRequest&, const GetDataTrackJobTableMetaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataTrackJobTableMetaAsyncHandler;
+			typedef Outcome<Error, Model::GetDataTrackOrderDetailResult> GetDataTrackOrderDetailOutcome;
+			typedef std::future<GetDataTrackOrderDetailOutcome> GetDataTrackOrderDetailOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataTrackOrderDetailRequest&, const GetDataTrackOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataTrackOrderDetailAsyncHandler;
 			typedef Outcome<Error, Model::GetDatabaseResult> GetDatabaseOutcome;
 			typedef std::future<GetDatabaseOutcome> GetDatabaseOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDatabaseRequest&, const GetDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDatabaseAsyncHandler;
+			typedef Outcome<Error, Model::GetDatabaseExportOrderDetailResult> GetDatabaseExportOrderDetailOutcome;
+			typedef std::future<GetDatabaseExportOrderDetailOutcome> GetDatabaseExportOrderDetailOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDatabaseExportOrderDetailRequest&, const GetDatabaseExportOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDatabaseExportOrderDetailAsyncHandler;
 			typedef Outcome<Error, Model::GetInstanceResult> GetInstanceOutcome;
 			typedef std::future<GetInstanceOutcome> GetInstanceOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetInstanceRequest&, const GetInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetInstanceAsyncHandler;
@@ -877,6 +921,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::PublishAndDeployTaskFlowResult> PublishAndDeployTaskFlowOutcome;
 			typedef std::future<PublishAndDeployTaskFlowOutcome> PublishAndDeployTaskFlowOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::PublishAndDeployTaskFlowRequest&, const PublishAndDeployTaskFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PublishAndDeployTaskFlowAsyncHandler;
+			typedef Outcome<Error, Model::QueryDataTrackResultDownloadStatusResult> QueryDataTrackResultDownloadStatusOutcome;
+			typedef std::future<QueryDataTrackResultDownloadStatusOutcome> QueryDataTrackResultDownloadStatusOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::QueryDataTrackResultDownloadStatusRequest&, const QueryDataTrackResultDownloadStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryDataTrackResultDownloadStatusAsyncHandler;
 			typedef Outcome<Error, Model::ReDeployLhDagVersionResult> ReDeployLhDagVersionOutcome;
 			typedef std::future<ReDeployLhDagVersionOutcome> ReDeployLhDagVersionOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ReDeployLhDagVersionRequest&, const ReDeployLhDagVersionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReDeployLhDagVersionAsyncHandler;
@@ -907,6 +954,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RevokeUserPermissionResult> RevokeUserPermissionOutcome;
 			typedef std::future<RevokeUserPermissionOutcome> RevokeUserPermissionOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::RevokeUserPermissionRequest&, const RevokeUserPermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RevokeUserPermissionAsyncHandler;
+			typedef Outcome<Error, Model::SearchDataTrackResultResult> SearchDataTrackResultOutcome;
+			typedef std::future<SearchDataTrackResultOutcome> SearchDataTrackResultOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::SearchDataTrackResultRequest&, const SearchDataTrackResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchDataTrackResultAsyncHandler;
 			typedef Outcome<Error, Model::SearchDatabaseResult> SearchDatabaseOutcome;
 			typedef std::future<SearchDatabaseOutcome> SearchDatabaseOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::SearchDatabaseRequest&, const SearchDatabaseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchDatabaseAsyncHandler;
@@ -1035,9 +1085,18 @@ namespace AlibabaCloud
 			CreateDataCronClearOrderOutcome createDataCronClearOrder(const Model::CreateDataCronClearOrderRequest &request)const;
 			void createDataCronClearOrderAsync(const Model::CreateDataCronClearOrderRequest& request, const CreateDataCronClearOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataCronClearOrderOutcomeCallable createDataCronClearOrderCallable(const Model::CreateDataCronClearOrderRequest& request) const;
+			CreateDataExportOrderOutcome createDataExportOrder(const Model::CreateDataExportOrderRequest &request)const;
+			void createDataExportOrderAsync(const Model::CreateDataExportOrderRequest& request, const CreateDataExportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDataExportOrderOutcomeCallable createDataExportOrderCallable(const Model::CreateDataExportOrderRequest& request) const;
 			CreateDataImportOrderOutcome createDataImportOrder(const Model::CreateDataImportOrderRequest &request)const;
 			void createDataImportOrderAsync(const Model::CreateDataImportOrderRequest& request, const CreateDataImportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataImportOrderOutcomeCallable createDataImportOrderCallable(const Model::CreateDataImportOrderRequest& request) const;
+			CreateDataTrackOrderOutcome createDataTrackOrder(const Model::CreateDataTrackOrderRequest &request)const;
+			void createDataTrackOrderAsync(const Model::CreateDataTrackOrderRequest& request, const CreateDataTrackOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDataTrackOrderOutcomeCallable createDataTrackOrderCallable(const Model::CreateDataTrackOrderRequest& request) const;
+			CreateDatabaseExportOrderOutcome createDatabaseExportOrder(const Model::CreateDatabaseExportOrderRequest &request)const;
+			void createDatabaseExportOrderAsync(const Model::CreateDatabaseExportOrderRequest& request, const CreateDatabaseExportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDatabaseExportOrderOutcomeCallable createDatabaseExportOrderCallable(const Model::CreateDatabaseExportOrderRequest& request) const;
 			CreateFreeLockCorrectOrderOutcome createFreeLockCorrectOrder(const Model::CreateFreeLockCorrectOrderRequest &request)const;
 			void createFreeLockCorrectOrderAsync(const Model::CreateFreeLockCorrectOrderRequest& request, const CreateFreeLockCorrectOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFreeLockCorrectOrderOutcomeCallable createFreeLockCorrectOrderCallable(const Model::CreateFreeLockCorrectOrderRequest& request) const;
@@ -1122,6 +1181,9 @@ namespace AlibabaCloud
 			DisableUserOutcome disableUser(const Model::DisableUserRequest &request)const;
 			void disableUserAsync(const Model::DisableUserRequest& request, const DisableUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableUserOutcomeCallable disableUserCallable(const Model::DisableUserRequest& request) const;
+			DownloadDataTrackResultOutcome downloadDataTrackResult(const Model::DownloadDataTrackResultRequest &request)const;
+			void downloadDataTrackResultAsync(const Model::DownloadDataTrackResultRequest& request, const DownloadDataTrackResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DownloadDataTrackResultOutcomeCallable downloadDataTrackResultCallable(const Model::DownloadDataTrackResultRequest& request) const;
 			EditLogicDatabaseOutcome editLogicDatabase(const Model::EditLogicDatabaseRequest &request)const;
 			void editLogicDatabaseAsync(const Model::EditLogicDatabaseRequest& request, const EditLogicDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			EditLogicDatabaseOutcomeCallable editLogicDatabaseCallable(const Model::EditLogicDatabaseRequest& request) const;
@@ -1185,9 +1247,21 @@ namespace AlibabaCloud
 			GetDataImportSQLOutcome getDataImportSQL(const Model::GetDataImportSQLRequest &request)const;
 			void getDataImportSQLAsync(const Model::GetDataImportSQLRequest& request, const GetDataImportSQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataImportSQLOutcomeCallable getDataImportSQLCallable(const Model::GetDataImportSQLRequest& request) const;
+			GetDataTrackJobDegreeOutcome getDataTrackJobDegree(const Model::GetDataTrackJobDegreeRequest &request)const;
+			void getDataTrackJobDegreeAsync(const Model::GetDataTrackJobDegreeRequest& request, const GetDataTrackJobDegreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDataTrackJobDegreeOutcomeCallable getDataTrackJobDegreeCallable(const Model::GetDataTrackJobDegreeRequest& request) const;
+			GetDataTrackJobTableMetaOutcome getDataTrackJobTableMeta(const Model::GetDataTrackJobTableMetaRequest &request)const;
+			void getDataTrackJobTableMetaAsync(const Model::GetDataTrackJobTableMetaRequest& request, const GetDataTrackJobTableMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDataTrackJobTableMetaOutcomeCallable getDataTrackJobTableMetaCallable(const Model::GetDataTrackJobTableMetaRequest& request) const;
+			GetDataTrackOrderDetailOutcome getDataTrackOrderDetail(const Model::GetDataTrackOrderDetailRequest &request)const;
+			void getDataTrackOrderDetailAsync(const Model::GetDataTrackOrderDetailRequest& request, const GetDataTrackOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDataTrackOrderDetailOutcomeCallable getDataTrackOrderDetailCallable(const Model::GetDataTrackOrderDetailRequest& request) const;
 			GetDatabaseOutcome getDatabase(const Model::GetDatabaseRequest &request)const;
 			void getDatabaseAsync(const Model::GetDatabaseRequest& request, const GetDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDatabaseOutcomeCallable getDatabaseCallable(const Model::GetDatabaseRequest& request) const;
+			GetDatabaseExportOrderDetailOutcome getDatabaseExportOrderDetail(const Model::GetDatabaseExportOrderDetailRequest &request)const;
+			void getDatabaseExportOrderDetailAsync(const Model::GetDatabaseExportOrderDetailRequest& request, const GetDatabaseExportOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDatabaseExportOrderDetailOutcomeCallable getDatabaseExportOrderDetailCallable(const Model::GetDatabaseExportOrderDetailRequest& request) const;
 			GetInstanceOutcome getInstance(const Model::GetInstanceRequest &request)const;
 			void getInstanceAsync(const Model::GetInstanceRequest& request, const GetInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetInstanceOutcomeCallable getInstanceCallable(const Model::GetInstanceRequest& request) const;
@@ -1458,6 +1532,9 @@ namespace AlibabaCloud
 			PublishAndDeployTaskFlowOutcome publishAndDeployTaskFlow(const Model::PublishAndDeployTaskFlowRequest &request)const;
 			void publishAndDeployTaskFlowAsync(const Model::PublishAndDeployTaskFlowRequest& request, const PublishAndDeployTaskFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			PublishAndDeployTaskFlowOutcomeCallable publishAndDeployTaskFlowCallable(const Model::PublishAndDeployTaskFlowRequest& request) const;
+			QueryDataTrackResultDownloadStatusOutcome queryDataTrackResultDownloadStatus(const Model::QueryDataTrackResultDownloadStatusRequest &request)const;
+			void queryDataTrackResultDownloadStatusAsync(const Model::QueryDataTrackResultDownloadStatusRequest& request, const QueryDataTrackResultDownloadStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryDataTrackResultDownloadStatusOutcomeCallable queryDataTrackResultDownloadStatusCallable(const Model::QueryDataTrackResultDownloadStatusRequest& request) const;
 			ReDeployLhDagVersionOutcome reDeployLhDagVersion(const Model::ReDeployLhDagVersionRequest &request)const;
 			void reDeployLhDagVersionAsync(const Model::ReDeployLhDagVersionRequest& request, const ReDeployLhDagVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReDeployLhDagVersionOutcomeCallable reDeployLhDagVersionCallable(const Model::ReDeployLhDagVersionRequest& request) const;
@@ -1488,6 +1565,9 @@ namespace AlibabaCloud
 			RevokeUserPermissionOutcome revokeUserPermission(const Model::RevokeUserPermissionRequest &request)const;
 			void revokeUserPermissionAsync(const Model::RevokeUserPermissionRequest& request, const RevokeUserPermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RevokeUserPermissionOutcomeCallable revokeUserPermissionCallable(const Model::RevokeUserPermissionRequest& request) const;
+			SearchDataTrackResultOutcome searchDataTrackResult(const Model::SearchDataTrackResultRequest &request)const;
+			void searchDataTrackResultAsync(const Model::SearchDataTrackResultRequest& request, const SearchDataTrackResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SearchDataTrackResultOutcomeCallable searchDataTrackResultCallable(const Model::SearchDataTrackResultRequest& request) const;
 			SearchDatabaseOutcome searchDatabase(const Model::SearchDatabaseRequest &request)const;
 			void searchDatabaseAsync(const Model::SearchDatabaseRequest& request, const SearchDatabaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchDatabaseOutcomeCallable searchDatabaseCallable(const Model::SearchDatabaseRequest& request) const;

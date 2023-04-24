@@ -519,6 +519,42 @@ Dms_enterpriseClient::CreateDataCronClearOrderOutcomeCallable Dms_enterpriseClie
 	return task->get_future();
 }
 
+Dms_enterpriseClient::CreateDataExportOrderOutcome Dms_enterpriseClient::createDataExportOrder(const CreateDataExportOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDataExportOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDataExportOrderOutcome(CreateDataExportOrderResult(outcome.result()));
+	else
+		return CreateDataExportOrderOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createDataExportOrderAsync(const CreateDataExportOrderRequest& request, const CreateDataExportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDataExportOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateDataExportOrderOutcomeCallable Dms_enterpriseClient::createDataExportOrderCallable(const CreateDataExportOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDataExportOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createDataExportOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::CreateDataImportOrderOutcome Dms_enterpriseClient::createDataImportOrder(const CreateDataImportOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,6 +585,78 @@ Dms_enterpriseClient::CreateDataImportOrderOutcomeCallable Dms_enterpriseClient:
 			[this, request]()
 			{
 			return this->createDataImportOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::CreateDataTrackOrderOutcome Dms_enterpriseClient::createDataTrackOrder(const CreateDataTrackOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDataTrackOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDataTrackOrderOutcome(CreateDataTrackOrderResult(outcome.result()));
+	else
+		return CreateDataTrackOrderOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createDataTrackOrderAsync(const CreateDataTrackOrderRequest& request, const CreateDataTrackOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDataTrackOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateDataTrackOrderOutcomeCallable Dms_enterpriseClient::createDataTrackOrderCallable(const CreateDataTrackOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDataTrackOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createDataTrackOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::CreateDatabaseExportOrderOutcome Dms_enterpriseClient::createDatabaseExportOrder(const CreateDatabaseExportOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDatabaseExportOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDatabaseExportOrderOutcome(CreateDatabaseExportOrderResult(outcome.result()));
+	else
+		return CreateDatabaseExportOrderOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createDatabaseExportOrderAsync(const CreateDatabaseExportOrderRequest& request, const CreateDatabaseExportOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDatabaseExportOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateDatabaseExportOrderOutcomeCallable Dms_enterpriseClient::createDatabaseExportOrderCallable(const CreateDatabaseExportOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDatabaseExportOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createDatabaseExportOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1563,6 +1671,42 @@ Dms_enterpriseClient::DisableUserOutcomeCallable Dms_enterpriseClient::disableUs
 	return task->get_future();
 }
 
+Dms_enterpriseClient::DownloadDataTrackResultOutcome Dms_enterpriseClient::downloadDataTrackResult(const DownloadDataTrackResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DownloadDataTrackResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DownloadDataTrackResultOutcome(DownloadDataTrackResultResult(outcome.result()));
+	else
+		return DownloadDataTrackResultOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::downloadDataTrackResultAsync(const DownloadDataTrackResultRequest& request, const DownloadDataTrackResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, downloadDataTrackResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::DownloadDataTrackResultOutcomeCallable Dms_enterpriseClient::downloadDataTrackResultCallable(const DownloadDataTrackResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DownloadDataTrackResultOutcome()>>(
+			[this, request]()
+			{
+			return this->downloadDataTrackResult(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::EditLogicDatabaseOutcome Dms_enterpriseClient::editLogicDatabase(const EditLogicDatabaseRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2319,6 +2463,114 @@ Dms_enterpriseClient::GetDataImportSQLOutcomeCallable Dms_enterpriseClient::getD
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetDataTrackJobDegreeOutcome Dms_enterpriseClient::getDataTrackJobDegree(const GetDataTrackJobDegreeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataTrackJobDegreeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataTrackJobDegreeOutcome(GetDataTrackJobDegreeResult(outcome.result()));
+	else
+		return GetDataTrackJobDegreeOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataTrackJobDegreeAsync(const GetDataTrackJobDegreeRequest& request, const GetDataTrackJobDegreeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataTrackJobDegree(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataTrackJobDegreeOutcomeCallable Dms_enterpriseClient::getDataTrackJobDegreeCallable(const GetDataTrackJobDegreeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataTrackJobDegreeOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataTrackJobDegree(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetDataTrackJobTableMetaOutcome Dms_enterpriseClient::getDataTrackJobTableMeta(const GetDataTrackJobTableMetaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataTrackJobTableMetaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataTrackJobTableMetaOutcome(GetDataTrackJobTableMetaResult(outcome.result()));
+	else
+		return GetDataTrackJobTableMetaOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataTrackJobTableMetaAsync(const GetDataTrackJobTableMetaRequest& request, const GetDataTrackJobTableMetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataTrackJobTableMeta(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataTrackJobTableMetaOutcomeCallable Dms_enterpriseClient::getDataTrackJobTableMetaCallable(const GetDataTrackJobTableMetaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataTrackJobTableMetaOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataTrackJobTableMeta(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetDataTrackOrderDetailOutcome Dms_enterpriseClient::getDataTrackOrderDetail(const GetDataTrackOrderDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataTrackOrderDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataTrackOrderDetailOutcome(GetDataTrackOrderDetailResult(outcome.result()));
+	else
+		return GetDataTrackOrderDetailOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataTrackOrderDetailAsync(const GetDataTrackOrderDetailRequest& request, const GetDataTrackOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataTrackOrderDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataTrackOrderDetailOutcomeCallable Dms_enterpriseClient::getDataTrackOrderDetailCallable(const GetDataTrackOrderDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataTrackOrderDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataTrackOrderDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetDatabaseOutcome Dms_enterpriseClient::getDatabase(const GetDatabaseRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2349,6 +2601,42 @@ Dms_enterpriseClient::GetDatabaseOutcomeCallable Dms_enterpriseClient::getDataba
 			[this, request]()
 			{
 			return this->getDatabase(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetDatabaseExportOrderDetailOutcome Dms_enterpriseClient::getDatabaseExportOrderDetail(const GetDatabaseExportOrderDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDatabaseExportOrderDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDatabaseExportOrderDetailOutcome(GetDatabaseExportOrderDetailResult(outcome.result()));
+	else
+		return GetDatabaseExportOrderDetailOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDatabaseExportOrderDetailAsync(const GetDatabaseExportOrderDetailRequest& request, const GetDatabaseExportOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDatabaseExportOrderDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDatabaseExportOrderDetailOutcomeCallable Dms_enterpriseClient::getDatabaseExportOrderDetailCallable(const GetDatabaseExportOrderDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDatabaseExportOrderDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getDatabaseExportOrderDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5595,6 +5883,42 @@ Dms_enterpriseClient::PublishAndDeployTaskFlowOutcomeCallable Dms_enterpriseClie
 	return task->get_future();
 }
 
+Dms_enterpriseClient::QueryDataTrackResultDownloadStatusOutcome Dms_enterpriseClient::queryDataTrackResultDownloadStatus(const QueryDataTrackResultDownloadStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryDataTrackResultDownloadStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryDataTrackResultDownloadStatusOutcome(QueryDataTrackResultDownloadStatusResult(outcome.result()));
+	else
+		return QueryDataTrackResultDownloadStatusOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::queryDataTrackResultDownloadStatusAsync(const QueryDataTrackResultDownloadStatusRequest& request, const QueryDataTrackResultDownloadStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryDataTrackResultDownloadStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::QueryDataTrackResultDownloadStatusOutcomeCallable Dms_enterpriseClient::queryDataTrackResultDownloadStatusCallable(const QueryDataTrackResultDownloadStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryDataTrackResultDownloadStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->queryDataTrackResultDownloadStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::ReDeployLhDagVersionOutcome Dms_enterpriseClient::reDeployLhDagVersion(const ReDeployLhDagVersionRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5949,6 +6273,42 @@ Dms_enterpriseClient::RevokeUserPermissionOutcomeCallable Dms_enterpriseClient::
 			[this, request]()
 			{
 			return this->revokeUserPermission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::SearchDataTrackResultOutcome Dms_enterpriseClient::searchDataTrackResult(const SearchDataTrackResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SearchDataTrackResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SearchDataTrackResultOutcome(SearchDataTrackResultResult(outcome.result()));
+	else
+		return SearchDataTrackResultOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::searchDataTrackResultAsync(const SearchDataTrackResultRequest& request, const SearchDataTrackResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, searchDataTrackResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::SearchDataTrackResultOutcomeCallable Dms_enterpriseClient::searchDataTrackResultCallable(const SearchDataTrackResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SearchDataTrackResultOutcome()>>(
+			[this, request]()
+			{
+			return this->searchDataTrackResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
