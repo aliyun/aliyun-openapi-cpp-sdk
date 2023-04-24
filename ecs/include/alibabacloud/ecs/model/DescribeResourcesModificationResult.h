@@ -45,7 +45,22 @@ namespace AlibabaCloud
 							std::string value;
 							std::string unit;
 						};
+						struct ConditionSupportedResource
+						{
+							struct Condition
+							{
+								std::string key;
+							};
+							std::string status;
+							std::string statusCategory;
+							int min;
+							int max;
+							std::string value;
+							std::string unit;
+							std::vector<ConditionSupportedResource::Condition> conditions;
+						};
 						std::string type;
+						std::vector<AvailableResource::ConditionSupportedResource> conditionSupportedResources;
 						std::vector<AvailableResource::SupportedResource> supportedResources;
 					};
 					std::string status;

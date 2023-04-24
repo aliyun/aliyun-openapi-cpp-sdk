@@ -56,6 +56,8 @@ public:
 	void setDestinationResource(const std::string &destinationResource);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
+	std::vector<std::string> getConditions() const;
+	void setConditions(const std::vector<std::string> &conditions);
 
 private:
 	long resourceOwnerId_;
@@ -71,6 +73,7 @@ private:
 	long ownerId_;
 	std::string destinationResource_;
 	std::string zoneId_;
+	std::vector<std::string> conditions_;
 };
 } // namespace Model
 } // namespace Ecs

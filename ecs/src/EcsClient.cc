@@ -9303,6 +9303,42 @@ EcsClient::ModifyDiskChargeTypeOutcomeCallable EcsClient::modifyDiskChargeTypeCa
 	return task->get_future();
 }
 
+EcsClient::ModifyDiskDeploymentOutcome EcsClient::modifyDiskDeployment(const ModifyDiskDeploymentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyDiskDeploymentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyDiskDeploymentOutcome(ModifyDiskDeploymentResult(outcome.result()));
+	else
+		return ModifyDiskDeploymentOutcome(outcome.error());
+}
+
+void EcsClient::modifyDiskDeploymentAsync(const ModifyDiskDeploymentRequest& request, const ModifyDiskDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyDiskDeployment(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcsClient::ModifyDiskDeploymentOutcomeCallable EcsClient::modifyDiskDeploymentCallable(const ModifyDiskDeploymentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyDiskDeploymentOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyDiskDeployment(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcsClient::ModifyDiskSpecOutcome EcsClient::modifyDiskSpec(const ModifyDiskSpecRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

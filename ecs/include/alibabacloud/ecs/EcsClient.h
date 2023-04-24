@@ -536,6 +536,8 @@
 #include "model/ModifyDiskAttributeResult.h"
 #include "model/ModifyDiskChargeTypeRequest.h"
 #include "model/ModifyDiskChargeTypeResult.h"
+#include "model/ModifyDiskDeploymentRequest.h"
+#include "model/ModifyDiskDeploymentResult.h"
 #include "model/ModifyDiskSpecRequest.h"
 #include "model/ModifyDiskSpecResult.h"
 #include "model/ModifyEipAddressAttributeRequest.h"
@@ -1494,6 +1496,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDiskChargeTypeResult> ModifyDiskChargeTypeOutcome;
 			typedef std::future<ModifyDiskChargeTypeOutcome> ModifyDiskChargeTypeOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDiskChargeTypeRequest&, const ModifyDiskChargeTypeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskChargeTypeAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDiskDeploymentResult> ModifyDiskDeploymentOutcome;
+			typedef std::future<ModifyDiskDeploymentOutcome> ModifyDiskDeploymentOutcomeCallable;
+			typedef std::function<void(const EcsClient*, const Model::ModifyDiskDeploymentRequest&, const ModifyDiskDeploymentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskDeploymentAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDiskSpecResult> ModifyDiskSpecOutcome;
 			typedef std::future<ModifyDiskSpecOutcome> ModifyDiskSpecOutcomeCallable;
 			typedef std::function<void(const EcsClient*, const Model::ModifyDiskSpecRequest&, const ModifyDiskSpecOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskSpecAsyncHandler;
@@ -2537,6 +2542,9 @@ namespace AlibabaCloud
 			ModifyDiskChargeTypeOutcome modifyDiskChargeType(const Model::ModifyDiskChargeTypeRequest &request)const;
 			void modifyDiskChargeTypeAsync(const Model::ModifyDiskChargeTypeRequest& request, const ModifyDiskChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDiskChargeTypeOutcomeCallable modifyDiskChargeTypeCallable(const Model::ModifyDiskChargeTypeRequest& request) const;
+			ModifyDiskDeploymentOutcome modifyDiskDeployment(const Model::ModifyDiskDeploymentRequest &request)const;
+			void modifyDiskDeploymentAsync(const Model::ModifyDiskDeploymentRequest& request, const ModifyDiskDeploymentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDiskDeploymentOutcomeCallable modifyDiskDeploymentCallable(const Model::ModifyDiskDeploymentRequest& request) const;
 			ModifyDiskSpecOutcome modifyDiskSpec(const Model::ModifyDiskSpecRequest &request)const;
 			void modifyDiskSpecAsync(const Model::ModifyDiskSpecRequest& request, const ModifyDiskSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDiskSpecOutcomeCallable modifyDiskSpecCallable(const Model::ModifyDiskSpecRequest& request) const;

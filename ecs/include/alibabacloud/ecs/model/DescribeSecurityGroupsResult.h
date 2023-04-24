@@ -41,16 +41,16 @@ namespace AlibabaCloud
 					};
 					int ecsCount;
 					std::string description;
-					std::string vpcId;
-					bool serviceManaged;
-					std::string resourceGroupId;
 					std::string securityGroupName;
+					std::string vpcId;
+					std::string resourceGroupId;
+					bool serviceManaged;
 					std::string securityGroupId;
-					std::string creationTime;
 					std::string securityGroupType;
+					std::string creationTime;
 					std::vector<SecurityGroup::Tag> tags;
-					long serviceID;
 					int availableInstanceAmount;
+					long serviceID;
 				};
 
 
@@ -59,8 +59,8 @@ namespace AlibabaCloud
 				~DescribeSecurityGroupsResult();
 				std::vector<SecurityGroup> getSecurityGroups()const;
 				int getTotalCount()const;
-				int getPageSize()const;
 				std::string getNextToken()const;
+				int getPageSize()const;
 				int getPageNumber()const;
 				std::string getRegionId()const;
 
@@ -69,8 +69,8 @@ namespace AlibabaCloud
 			private:
 				std::vector<SecurityGroup> securityGroups_;
 				int totalCount_;
-				int pageSize_;
 				std::string nextToken_;
+				int pageSize_;
 				int pageNumber_;
 				std::string regionId_;
 

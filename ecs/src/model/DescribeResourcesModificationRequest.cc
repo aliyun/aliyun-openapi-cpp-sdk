@@ -142,3 +142,11 @@ void DescribeResourcesModificationRequest::setZoneId(const std::string &zoneId) 
   setParameter(std::string("ZoneId"), zoneId);
 }
 
+std::vector<std::string> DescribeResourcesModificationRequest::getConditions() const {
+  return conditions_;
+}
+
+void DescribeResourcesModificationRequest::setConditions(const std::vector<std::string> &conditions) {
+  conditions_ = conditions;
+}
+

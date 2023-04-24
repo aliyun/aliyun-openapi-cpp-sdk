@@ -75,6 +75,32 @@ void DescribeResourcesModificationResult::parse(const std::string &payload)
 					supportedResourcesObject.min = std::stoi(valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceSupportedResourcesSupportedResource["Min"].asString());
 				availableResourcesObject.supportedResources.push_back(supportedResourcesObject);
 			}
+			auto allConditionSupportedResourcesNode = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResource["ConditionSupportedResources"]["ConditionSupportedResource"];
+			for (auto valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResource : allConditionSupportedResourcesNode)
+			{
+				AvailableZone::AvailableResource::ConditionSupportedResource conditionSupportedResourcesObject;
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResource["Status"].isNull())
+					conditionSupportedResourcesObject.status = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResource["Status"].asString();
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResource["Value"].isNull())
+					conditionSupportedResourcesObject.value = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResource["Value"].asString();
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResource["Max"].isNull())
+					conditionSupportedResourcesObject.max = std::stoi(valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResource["Max"].asString());
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResource["Unit"].isNull())
+					conditionSupportedResourcesObject.unit = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResource["Unit"].asString();
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResource["StatusCategory"].isNull())
+					conditionSupportedResourcesObject.statusCategory = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResource["StatusCategory"].asString();
+				if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResource["Min"].isNull())
+					conditionSupportedResourcesObject.min = std::stoi(valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResource["Min"].asString());
+				auto allConditionsNode = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResource["Conditions"]["Condition"];
+				for (auto valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResourceConditionsCondition : allConditionsNode)
+				{
+					AvailableZone::AvailableResource::ConditionSupportedResource::Condition conditionsObject;
+					if(!valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResourceConditionsCondition["Key"].isNull())
+						conditionsObject.key = valueAvailableZonesAvailableZoneAvailableResourcesAvailableResourceConditionSupportedResourcesConditionSupportedResourceConditionsCondition["Key"].asString();
+					conditionSupportedResourcesObject.conditions.push_back(conditionsObject);
+				}
+				availableResourcesObject.conditionSupportedResources.push_back(conditionSupportedResourcesObject);
+			}
 			availableZonesObject.availableResources.push_back(availableResourcesObject);
 		}
 		availableZones_.push_back(availableZonesObject);

@@ -88,6 +88,17 @@ void ModifyDiskSpecRequest::setOwnerAccount(const std::string &ownerAccount) {
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+ModifyDiskSpecRequest::PerformanceControlOptions ModifyDiskSpecRequest::getPerformanceControlOptions() const {
+  return performanceControlOptions_;
+}
+
+void ModifyDiskSpecRequest::setPerformanceControlOptions(const ModifyDiskSpecRequest::PerformanceControlOptions &performanceControlOptions) {
+  performanceControlOptions_ = performanceControlOptions;
+  setParameter(std::string("PerformanceControlOptions") + ".IOPS", std::to_string(performanceControlOptions.iOPS));
+  setParameter(std::string("PerformanceControlOptions") + ".Throughput", std::to_string(performanceControlOptions.throughput));
+  setParameter(std::string("PerformanceControlOptions") + ".Recover", performanceControlOptions.recover);
+}
+
 long ModifyDiskSpecRequest::getOwnerId() const {
   return ownerId_;
 }

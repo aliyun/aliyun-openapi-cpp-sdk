@@ -28,6 +28,11 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT ModifyPrepayInstanceSpecRequest : public RpcServiceRequest {
 public:
+	struct Disk {
+		std::string performanceLevel;
+		std::string diskId;
+		std::string category;
+	};
 	ModifyPrepayInstanceSpecRequest();
 	~ModifyPrepayInstanceSpecRequest();
 	long getResourceOwnerId() const;
@@ -48,6 +53,8 @@ public:
 	void setMigrateAcrossZone(bool migrateAcrossZone);
 	std::string getInstanceType() const;
 	void setInstanceType(const std::string &instanceType);
+	std::string getModifyMode() const;
+	void setModifyMode(const std::string &modifyMode);
 	bool getAutoPay() const;
 	void setAutoPay(bool autoPay);
 	bool getRebootWhenFinished() const;
@@ -60,6 +67,8 @@ public:
 	void setEndTime(const std::string &endTime);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::vector<Disk> getDisk() const;
+	void setDisk(const std::vector<Disk> &disk);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 
@@ -73,12 +82,14 @@ private:
 	std::string regionId_;
 	bool migrateAcrossZone_;
 	std::string instanceType_;
+	std::string modifyMode_;
 	bool autoPay_;
 	bool rebootWhenFinished_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string endTime_;
 	long ownerId_;
+	std::vector<Disk> disk_;
 	std::string instanceId_;
 };
 } // namespace Model

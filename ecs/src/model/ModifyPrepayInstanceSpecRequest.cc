@@ -106,6 +106,15 @@ void ModifyPrepayInstanceSpecRequest::setInstanceType(const std::string &instanc
   setParameter(std::string("InstanceType"), instanceType);
 }
 
+std::string ModifyPrepayInstanceSpecRequest::getModifyMode() const {
+  return modifyMode_;
+}
+
+void ModifyPrepayInstanceSpecRequest::setModifyMode(const std::string &modifyMode) {
+  modifyMode_ = modifyMode;
+  setParameter(std::string("ModifyMode"), modifyMode);
+}
+
 bool ModifyPrepayInstanceSpecRequest::getAutoPay() const {
   return autoPay_;
 }
@@ -158,6 +167,21 @@ long ModifyPrepayInstanceSpecRequest::getOwnerId() const {
 void ModifyPrepayInstanceSpecRequest::setOwnerId(long ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
+}
+
+std::vector<ModifyPrepayInstanceSpecRequest::Disk> ModifyPrepayInstanceSpecRequest::getDisk() const {
+  return disk_;
+}
+
+void ModifyPrepayInstanceSpecRequest::setDisk(const std::vector<ModifyPrepayInstanceSpecRequest::Disk> &disk) {
+  disk_ = disk;
+  for(int dep1 = 0; dep1 != disk.size(); dep1++) {
+  auto diskObj = disk.at(dep1);
+  std::string diskObjStr = std::string("Disk") + "." + std::to_string(dep1 + 1);
+    setParameter(diskObjStr + ".PerformanceLevel", diskObj.performanceLevel);
+    setParameter(diskObjStr + ".DiskId", diskObj.diskId);
+    setParameter(diskObjStr + ".Category", diskObj.category);
+  }
 }
 
 std::string ModifyPrepayInstanceSpecRequest::getInstanceId() const {

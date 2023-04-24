@@ -88,6 +88,15 @@ void ModifyInstanceSpecRequest::setTemporaryEndTime(const std::string &temporary
   setParameter(std::string("Temporary.EndTime"), temporaryEndTime);
 }
 
+std::string ModifyInstanceSpecRequest::getModifyMode() const {
+  return modifyMode_;
+}
+
+void ModifyInstanceSpecRequest::setModifyMode(const std::string &modifyMode) {
+  modifyMode_ = modifyMode;
+  setParameter(std::string("ModifyMode"), modifyMode);
+}
+
 std::string ModifyInstanceSpecRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -140,6 +149,21 @@ bool ModifyInstanceSpecRequest::getAsync() const {
 void ModifyInstanceSpecRequest::setAsync(bool async) {
   async_ = async;
   setParameter(std::string("Async"), async ? "true" : "false");
+}
+
+std::vector<ModifyInstanceSpecRequest::Disk> ModifyInstanceSpecRequest::getDisk() const {
+  return disk_;
+}
+
+void ModifyInstanceSpecRequest::setDisk(const std::vector<ModifyInstanceSpecRequest::Disk> &disk) {
+  disk_ = disk;
+  for(int dep1 = 0; dep1 != disk.size(); dep1++) {
+  auto diskObj = disk.at(dep1);
+  std::string diskObjStr = std::string("Disk") + "." + std::to_string(dep1 + 1);
+    setParameter(diskObjStr + ".PerformanceLevel", diskObj.performanceLevel);
+    setParameter(diskObjStr + ".DiskId", diskObj.diskId);
+    setParameter(diskObjStr + ".Category", diskObj.category);
+  }
 }
 
 std::string ModifyInstanceSpecRequest::getInstanceId() const {

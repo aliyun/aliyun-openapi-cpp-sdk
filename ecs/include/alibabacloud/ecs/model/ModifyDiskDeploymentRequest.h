@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYDISKSPECREQUEST_H_
-#define ALIBABACLOUD_ECS_MODEL_MODIFYDISKSPECREQUEST_H_
+#ifndef ALIBABACLOUD_ECS_MODEL_MODIFYDISKDEPLOYMENTREQUEST_H_
+#define ALIBABACLOUD_ECS_MODEL_MODIFYDISKDEPLOYMENTREQUEST_H_
 
 #include <alibabacloud/ecs/EcsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,15 +26,10 @@
 namespace AlibabaCloud {
 namespace Ecs {
 namespace Model {
-class ALIBABACLOUD_ECS_EXPORT ModifyDiskSpecRequest : public RpcServiceRequest {
+class ALIBABACLOUD_ECS_EXPORT ModifyDiskDeploymentRequest : public RpcServiceRequest {
 public:
-	struct PerformanceControlOptions {
-		int iOPS;
-		int throughput;
-		std::string recover;
-	};
-	ModifyDiskSpecRequest();
-	~ModifyDiskSpecRequest();
+	ModifyDiskDeploymentRequest();
+	~ModifyDiskDeploymentRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getDiskCategory() const;
@@ -49,12 +44,10 @@ public:
 	void setPerformanceLevel(const std::string &performanceLevel);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
-	PerformanceControlOptions getPerformanceControlOptions() const;
-	void setPerformanceControlOptions(const PerformanceControlOptions &performanceControlOptions);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	long getProvisionedIops() const;
-	void setProvisionedIops(long provisionedIops);
+	std::string getStorageClusterId() const;
+	void setStorageClusterId(const std::string &storageClusterId);
 
 private:
 	long resourceOwnerId_;
@@ -64,11 +57,10 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string performanceLevel_;
 	std::string ownerAccount_;
-	PerformanceControlOptions performanceControlOptions_;
 	long ownerId_;
-	long provisionedIops_;
+	std::string storageClusterId_;
 };
 } // namespace Model
 } // namespace Ecs
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYDISKSPECREQUEST_H_
+#endif // !ALIBABACLOUD_ECS_MODEL_MODIFYDISKDEPLOYMENTREQUEST_H_

@@ -28,6 +28,11 @@ namespace Ecs {
 namespace Model {
 class ALIBABACLOUD_ECS_EXPORT ModifyInstanceSpecRequest : public RpcServiceRequest {
 public:
+	struct Disk {
+		std::string performanceLevel;
+		std::string diskId;
+		std::string category;
+	};
 	ModifyInstanceSpecRequest();
 	~ModifyInstanceSpecRequest();
 	long getResourceOwnerId() const;
@@ -44,6 +49,8 @@ public:
 	void setInstanceType(const std::string &instanceType);
 	std::string getTemporaryEndTime() const;
 	void setTemporaryEndTime(const std::string &temporaryEndTime);
+	std::string getModifyMode() const;
+	void setModifyMode(const std::string &modifyMode);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -56,6 +63,8 @@ public:
 	void setTemporaryStartTime(const std::string &temporaryStartTime);
 	bool getAsync() const;
 	void setAsync(bool async);
+	std::vector<Disk> getDisk() const;
+	void setDisk(const std::vector<Disk> &disk);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	int getInternetMaxBandwidthIn() const;
@@ -69,12 +78,14 @@ private:
 	std::string systemDiskCategory_;
 	std::string instanceType_;
 	std::string temporaryEndTime_;
+	std::string modifyMode_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
 	int temporaryInternetMaxBandwidthOut_;
 	std::string temporaryStartTime_;
 	bool async_;
+	std::vector<Disk> disk_;
 	std::string instanceId_;
 	int internetMaxBandwidthIn_;
 };

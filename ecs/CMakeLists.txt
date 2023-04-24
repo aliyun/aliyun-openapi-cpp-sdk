@@ -535,6 +535,8 @@ set(ecs_public_header_model
 	include/alibabacloud/ecs/model/ModifyDiskAttributeResult.h
 	include/alibabacloud/ecs/model/ModifyDiskChargeTypeRequest.h
 	include/alibabacloud/ecs/model/ModifyDiskChargeTypeResult.h
+	include/alibabacloud/ecs/model/ModifyDiskDeploymentRequest.h
+	include/alibabacloud/ecs/model/ModifyDiskDeploymentResult.h
 	include/alibabacloud/ecs/model/ModifyDiskSpecRequest.h
 	include/alibabacloud/ecs/model/ModifyDiskSpecResult.h
 	include/alibabacloud/ecs/model/ModifyEipAddressAttributeRequest.h
@@ -1230,6 +1232,8 @@ set(ecs_src
 	src/model/ModifyDiskAttributeResult.cc
 	src/model/ModifyDiskChargeTypeRequest.cc
 	src/model/ModifyDiskChargeTypeResult.cc
+	src/model/ModifyDiskDeploymentRequest.cc
+	src/model/ModifyDiskDeploymentResult.cc
 	src/model/ModifyDiskSpecRequest.cc
 	src/model/ModifyDiskSpecResult.cc
 	src/model/ModifyEipAddressAttributeRequest.cc
