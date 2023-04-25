@@ -38,6 +38,8 @@ public:
 	void setPhoneNumber(const std::string &phoneNumber);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
+	std::string getState() const;
+	void setState(const std::string &state);
 	long getPageNumber() const;
 	void setPageNumber(long pageNumber);
 
@@ -46,6 +48,7 @@ private:
 	std::string campaignId_;
 	std::string phoneNumber_;
 	long pageSize_;
+	std::string state_;
 	long pageNumber_;
 };
 } // namespace Model

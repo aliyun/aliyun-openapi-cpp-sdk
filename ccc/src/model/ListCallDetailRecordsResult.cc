@@ -110,6 +110,12 @@ void ListCallDetailRecordsResult::parse(const std::string &payload)
 			callDetailRecordObject.calleeLocation = dataNodeListCallDetailRecord["CalleeLocation"].asString();
 		if(!dataNodeListCallDetailRecord["EarlyMediaState"].isNull())
 			callDetailRecordObject.earlyMediaState = dataNodeListCallDetailRecord["EarlyMediaState"].asString();
+		if(!dataNodeListCallDetailRecord["ReleaseReason"].isNull())
+			callDetailRecordObject.releaseReason = dataNodeListCallDetailRecord["ReleaseReason"].asString();
+		if(!dataNodeListCallDetailRecord["DialingTime"].isNull())
+			callDetailRecordObject.dialingTime = std::stol(dataNodeListCallDetailRecord["DialingTime"].asString());
+		if(!dataNodeListCallDetailRecord["TalkTime"].isNull())
+			callDetailRecordObject.talkTime = std::stol(dataNodeListCallDetailRecord["TalkTime"].asString());
 		data_.list.push_back(callDetailRecordObject);
 	}
 	if(!value["Code"].isNull())

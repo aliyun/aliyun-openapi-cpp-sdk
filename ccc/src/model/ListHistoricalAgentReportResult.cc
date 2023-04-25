@@ -56,6 +56,10 @@ void ListHistoricalAgentReportResult::parse(const std::string &payload)
 			itemsObject.agentId = dataNodeListItems["AgentId"].asString();
 		if(!dataNodeListItems["DisplayId"].isNull())
 			itemsObject.displayId = dataNodeListItems["DisplayId"].asString();
+		if(!dataNodeListItems["SkillGroupIds"].isNull())
+			itemsObject.skillGroupIds = dataNodeListItems["SkillGroupIds"].asString();
+		if(!dataNodeListItems["SkillGroupNames"].isNull())
+			itemsObject.skillGroupNames = dataNodeListItems["SkillGroupNames"].asString();
 		auto inboundNode = value["Inbound"];
 		if(!inboundNode["AverageRingTime"].isNull())
 			itemsObject.inbound.averageRingTime = std::stof(inboundNode["AverageRingTime"].asString());

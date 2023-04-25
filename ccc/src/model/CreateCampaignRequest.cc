@@ -52,6 +52,15 @@ void CreateCampaignRequest::setSimulation(bool simulation) {
   setParameter(std::string("Simulation"), simulation ? "true" : "false");
 }
 
+bool CreateCampaignRequest::getExecutingUntilTimeout() const {
+  return executingUntilTimeout_;
+}
+
+void CreateCampaignRequest::setExecutingUntilTimeout(bool executingUntilTimeout) {
+  executingUntilTimeout_ = executingUntilTimeout;
+  setParameter(std::string("ExecutingUntilTimeout"), executingUntilTimeout ? "true" : "false");
+}
+
 std::string CreateCampaignRequest::getEndTime() const {
   return endTime_;
 }

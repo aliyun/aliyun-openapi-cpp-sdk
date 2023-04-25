@@ -96,26 +96,12 @@ void ListPhoneNumbersResult::parse(const std::string &payload)
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
-	if(!value["PageSize"].isNull())
-		pageSize_ = std::stoi(value["PageSize"].asString());
 
 }
 
 std::string ListPhoneNumbersResult::getMessage()const
 {
 	return message_;
-}
-
-int ListPhoneNumbersResult::getPageSize()const
-{
-	return pageSize_;
-}
-
-int ListPhoneNumbersResult::getPageNumber()const
-{
-	return pageNumber_;
 }
 
 int ListPhoneNumbersResult::getHttpStatusCode()const

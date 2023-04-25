@@ -39,9 +39,6 @@ void UpdateConfigItemsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allParams = value["Params"]["Param"];
-	for (const auto &item : allParams)
-		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
@@ -59,11 +56,6 @@ std::string UpdateConfigItemsResult::getMessage()const
 int UpdateConfigItemsResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
-}
-
-std::vector<std::string> UpdateConfigItemsResult::getParams()const
-{
-	return params_;
 }
 
 std::string UpdateConfigItemsResult::getCode()const

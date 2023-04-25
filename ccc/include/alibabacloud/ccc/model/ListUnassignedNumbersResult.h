@@ -36,8 +36,6 @@ namespace AlibabaCloud
 				{
 					struct PhoneNumber
 					{
-						bool active;
-						bool usage;
 						std::string number;
 						std::string city;
 						std::string province;

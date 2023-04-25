@@ -44,6 +44,8 @@ void GetMonoRecordingResult::parse(const std::string &payload)
 		data_.fileUrl = dataNode["FileUrl"].asString();
 	if(!dataNode["FileName"].isNull())
 		data_.fileName = dataNode["FileName"].asString();
+	if(!dataNode["Duration"].isNull())
+		data_.duration = std::stol(dataNode["Duration"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())

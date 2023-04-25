@@ -43,7 +43,6 @@ namespace AlibabaCloud
 							std::string releaseInitiator;
 							std::string callType;
 							int index;
-							std::string associatedData;
 							std::string channelId;
 							long timestamp;
 							std::string releaseReason;

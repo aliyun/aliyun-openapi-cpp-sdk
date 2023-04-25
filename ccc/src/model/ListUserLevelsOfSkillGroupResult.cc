@@ -66,6 +66,8 @@ void ListUserLevelsOfSkillGroupResult::parse(const std::string &payload)
 			userSkillLevelObject.roleName = dataNodeListUserSkillLevel["RoleName"].asString();
 		if(!dataNodeListUserSkillLevel["RoleId"].isNull())
 			userSkillLevelObject.roleId = dataNodeListUserSkillLevel["RoleId"].asString();
+		if(!dataNodeListUserSkillLevel["RamId"].isNull())
+			userSkillLevelObject.ramId = dataNodeListUserSkillLevel["RamId"].asString();
 		data_.list.push_back(userSkillLevelObject);
 	}
 	if(!value["Code"].isNull())

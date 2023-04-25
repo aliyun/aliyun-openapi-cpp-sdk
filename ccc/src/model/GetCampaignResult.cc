@@ -84,8 +84,6 @@ void GetCampaignResult::parse(const std::string &payload)
 		httpStatusCode_ = std::stol(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -102,10 +100,5 @@ GetCampaignResult::Data GetCampaignResult::getData()const
 std::string GetCampaignResult::getCode()const
 {
 	return code_;
-}
-
-bool GetCampaignResult::getSuccess()const
-{
-	return success_;
 }
 

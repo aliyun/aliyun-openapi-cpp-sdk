@@ -70,6 +70,8 @@ void ListRealtimeSkillGroupStatesResult::parse(const std::string &payload)
 			skillGroupStateObject.readyAgents = std::stol(dataNodeListSkillGroupState["ReadyAgents"].asString());
 		if(!dataNodeListSkillGroupState["InstanceId"].isNull())
 			skillGroupStateObject.instanceId = dataNodeListSkillGroupState["InstanceId"].asString();
+		if(!dataNodeListSkillGroupState["OutboundScenarioReadyAgents"].isNull())
+			skillGroupStateObject.outboundScenarioReadyAgents = std::stol(dataNodeListSkillGroupState["OutboundScenarioReadyAgents"].asString());
 		data_.list.push_back(skillGroupStateObject);
 	}
 	if(!value["Code"].isNull())

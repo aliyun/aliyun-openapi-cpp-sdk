@@ -110,9 +110,6 @@ void ListUsersResult::parse(const std::string &payload)
 		}
 		data_.list.push_back(userDetailObject);
 	}
-	auto allParams = value["Params"]["Param"];
-	for (const auto &item : allParams)
-		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
@@ -130,11 +127,6 @@ std::string ListUsersResult::getMessage()const
 int ListUsersResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
-}
-
-std::vector<std::string> ListUsersResult::getParams()const
-{
-	return params_;
 }
 
 ListUsersResult::Data ListUsersResult::getData()const

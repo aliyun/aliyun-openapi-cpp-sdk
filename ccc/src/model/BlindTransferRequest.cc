@@ -61,6 +61,15 @@ void BlindTransferRequest::setDeviceId(const std::string &deviceId) {
   setParameter(std::string("DeviceId"), deviceId);
 }
 
+std::string BlindTransferRequest::getStrategyName() const {
+  return strategyName_;
+}
+
+void BlindTransferRequest::setStrategyName(const std::string &strategyName) {
+  strategyName_ = strategyName;
+  setParameter(std::string("StrategyName"), strategyName);
+}
+
 int BlindTransferRequest::getTimeoutSeconds() const {
   return timeoutSeconds_;
 }
@@ -86,5 +95,23 @@ std::string BlindTransferRequest::getInstanceId() const {
 void BlindTransferRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string BlindTransferRequest::getStrategyParams() const {
+  return strategyParams_;
+}
+
+void BlindTransferRequest::setStrategyParams(const std::string &strategyParams) {
+  strategyParams_ = strategyParams;
+  setParameter(std::string("StrategyParams"), strategyParams);
+}
+
+int BlindTransferRequest::getCallPriority() const {
+  return callPriority_;
+}
+
+void BlindTransferRequest::setCallPriority(int callPriority) {
+  callPriority_ = callPriority;
+  setParameter(std::string("CallPriority"), std::to_string(callPriority));
 }
 

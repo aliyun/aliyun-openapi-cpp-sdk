@@ -49,6 +49,8 @@ void PollUserStatusResult::parse(const std::string &payload)
 		data_.callContext.instanceId = callContextNode["InstanceId"].asString();
 	if(!callContextNode["JobId"].isNull())
 		data_.callContext.jobId = callContextNode["JobId"].asString();
+	if(!callContextNode["CallVariables"].isNull())
+		data_.callContext.callVariables = callContextNode["CallVariables"].asString();
 	auto allChannelContextsNode = callContextNode["ChannelContexts"]["ChannelContext"];
 	for (auto callContextNodeChannelContextsChannelContext : allChannelContextsNode)
 	{
@@ -69,8 +71,6 @@ void PollUserStatusResult::parse(const std::string &payload)
 			channelContextObject.skillGroupId = callContextNodeChannelContextsChannelContext["SkillGroupId"].asString();
 		if(!callContextNodeChannelContextsChannelContext["Timestamp"].isNull())
 			channelContextObject.timestamp = std::stol(callContextNodeChannelContextsChannelContext["Timestamp"].asString());
-		if(!callContextNodeChannelContextsChannelContext["AssociatedData"].isNull())
-			channelContextObject.associatedData = callContextNodeChannelContextsChannelContext["AssociatedData"].asString();
 		if(!callContextNodeChannelContextsChannelContext["ReleaseReason"].isNull())
 			channelContextObject.releaseReason = callContextNodeChannelContextsChannelContext["ReleaseReason"].asString();
 		if(!callContextNodeChannelContextsChannelContext["CallType"].isNull())

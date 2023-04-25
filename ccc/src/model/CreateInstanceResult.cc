@@ -39,9 +39,6 @@ void CreateInstanceResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allParams = value["Params"]["Param"];
-	for (const auto &item : allParams)
-		params_.push_back(item.asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
@@ -61,11 +58,6 @@ std::string CreateInstanceResult::getMessage()const
 int CreateInstanceResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
-}
-
-std::vector<std::string> CreateInstanceResult::getParams()const
-{
-	return params_;
 }
 
 std::string CreateInstanceResult::getData()const

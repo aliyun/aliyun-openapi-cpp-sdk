@@ -40,16 +40,15 @@ namespace AlibabaCloud
 						{
 							std::string destination;
 							std::string channelState;
-							std::string releaseInitiator;
-							std::string callType;
-							std::string associatedData;
-							std::string channelId;
-							long timestamp;
 							std::string releaseReason;
+							std::string releaseInitiator;
 							std::string channelFlags;
 							std::string originator;
 							std::string userId;
+							std::string callType;
 							std::string userExtension;
+							std::string channelId;
+							long timestamp;
 							std::string jobId;
 						};
 						std::string instanceId;
@@ -64,7 +63,6 @@ namespace AlibabaCloud
 						std::string deviceId;
 						std::string breakCode;
 						bool outboundScenario;
-						std::string uri;
 						std::string mobile;
 						std::vector<std::string> signedSkillGroupIdList;
 						std::string extension;

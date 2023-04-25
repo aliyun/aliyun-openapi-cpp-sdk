@@ -54,8 +54,6 @@ void ListCasesResult::parse(const std::string &payload)
 			listItemObject.abandonType = dataNodeListlistItem["AbandonType"].asString();
 		if(!dataNodeListlistItem["AttemptCount"].isNull())
 			listItemObject.attemptCount = std::stol(dataNodeListlistItem["AttemptCount"].asString());
-		if(!dataNodeListlistItem["ExpandInfo"].isNull())
-			listItemObject.expandInfo = dataNodeListlistItem["ExpandInfo"].asString();
 		if(!dataNodeListlistItem["FailureReason"].isNull())
 			listItemObject.failureReason = dataNodeListlistItem["FailureReason"].asString();
 		if(!dataNodeListlistItem["PhoneNumber"].isNull())
@@ -74,8 +72,6 @@ void ListCasesResult::parse(const std::string &payload)
 		httpStatusCode_ = std::stol(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["Success"].isNull())
-		success_ = value["Success"].asString() == "true";
 
 }
 
@@ -97,10 +93,5 @@ ListCasesResult::Data ListCasesResult::getData()const
 std::string ListCasesResult::getCode()const
 {
 	return code_;
-}
-
-bool ListCasesResult::getSuccess()const
-{
-	return success_;
 }
 

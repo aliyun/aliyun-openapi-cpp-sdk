@@ -88,6 +88,7 @@ namespace AlibabaCloud
 					int satisfaction;
 					std::string contactId;
 					std::string callingNumber;
+					std::string releaseReason;
 					bool recordingReady;
 					std::vector<CustomerEventsItem> customerEvents;
 					std::string skillGroupNames;

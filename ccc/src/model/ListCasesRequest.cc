@@ -61,6 +61,15 @@ void ListCasesRequest::setPageSize(long pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::string ListCasesRequest::getState() const {
+  return state_;
+}
+
+void ListCasesRequest::setState(const std::string &state) {
+  state_ = state;
+  setParameter(std::string("State"), state);
+}
+
 long ListCasesRequest::getPageNumber() const {
   return pageNumber_;
 }

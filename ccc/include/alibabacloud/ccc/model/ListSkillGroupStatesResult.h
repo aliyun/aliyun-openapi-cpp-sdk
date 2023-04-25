@@ -37,15 +37,22 @@ namespace AlibabaCloud
 					struct RealTimeSkillGroupState
 					{
 						long breakingAgents;
-						long talkingAgents;
-						std::string skillGroupName;
+						long waitingCallsLevel20;
 						std::string instanceId;
-						long loggedInAgents;
+						long waitingCallsLevel10;
 						long readyAgents;
-						long waitingCalls;
-						long longestCall;
+						long waitingCallsLevel30;
 						std::string skillGroupId;
 						long workingAgents;
+						long inboundTalkingAgents;
+						long outboundScenarioReadyAgents;
+						long averageWaitingTime;
+						long talkingAgents;
+						std::string skillGroupName;
+						long loggedInAgents;
+						long waitingCalls;
+						long longestCall;
+						long outboundTalkingAgents;
 					};
 					int totalCount;
 					int pageSize;

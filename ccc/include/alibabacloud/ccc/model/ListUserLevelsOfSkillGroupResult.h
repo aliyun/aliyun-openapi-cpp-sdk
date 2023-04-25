@@ -42,6 +42,7 @@ namespace AlibabaCloud
 						std::string skillGroupName;
 						std::string userId;
 						std::string displayName;
+						std::string ramId;
 						std::string skillGroupId;
 						std::string roleId;
 					};

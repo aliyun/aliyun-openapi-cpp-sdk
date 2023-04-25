@@ -93,7 +93,6 @@ namespace AlibabaCloud
 				~ListInstancesOfUserResult();
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				std::vector<std::string> getParams()const;
 				Data getData()const;
 				std::string getCode()const;
 
@@ -102,7 +101,6 @@ namespace AlibabaCloud
 			private:
 				std::string message_;
 				int httpStatusCode_;
-				std::vector<std::string> params_;
 				Data data_;
 				std::string code_;
 

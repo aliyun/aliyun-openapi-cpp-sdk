@@ -68,8 +68,6 @@ namespace AlibabaCloud
 				explicit ListPhoneNumbersResult(const std::string &payload);
 				~ListPhoneNumbersResult();
 				std::string getMessage()const;
-				int getPageSize()const;
-				int getPageNumber()const;
 				int getHttpStatusCode()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -78,8 +76,6 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				int pageSize_;
-				int pageNumber_;
 				int httpStatusCode_;
 				Data data_;
 				std::string code_;

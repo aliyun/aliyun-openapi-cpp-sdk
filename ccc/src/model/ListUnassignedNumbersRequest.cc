@@ -43,15 +43,6 @@ void ListUnassignedNumbersRequest::setSearchPattern(const std::string &searchPat
   setParameter(std::string("SearchPattern"), searchPattern);
 }
 
-std::string ListUnassignedNumbersRequest::getInstanceId() const {
-  return instanceId_;
-}
-
-void ListUnassignedNumbersRequest::setInstanceId(const std::string &instanceId) {
-  instanceId_ = instanceId;
-  setParameter(std::string("InstanceId"), instanceId);
-}
-
 int ListUnassignedNumbersRequest::getPageSize() const {
   return pageSize_;
 }

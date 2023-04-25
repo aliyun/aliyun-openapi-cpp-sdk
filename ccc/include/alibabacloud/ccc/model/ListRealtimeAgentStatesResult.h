@@ -36,15 +36,20 @@ namespace AlibabaCloud
 				{
 					struct AgentState
 					{
-						std::string extension;
-						std::string counterParty;
 						long stateTime;
 						std::string instanceId;
-						std::string state;
 						std::string stateCode;
+						std::string callType;
+						bool outboundScenario;
+						long duration;
+						std::string mobile;
+						std::string extension;
+						std::string counterParty;
+						std::string state;
 						std::string agentId;
 						std::string agentName;
 						std::vector<std::string> skillGroupNameList;
+						std::string workMode;
 						std::vector<std::string> skillGroupIdList;
 					};
 					int totalCount;

@@ -54,9 +54,6 @@ void CreateUserResult::parse(const std::string &payload)
 		data_.mobile = dataNode["Mobile"].asString();
 	if(!dataNode["UserId"].isNull())
 		data_.userId = dataNode["UserId"].asString();
-	auto allParams = value["Params"]["Param"];
-	for (const auto &item : allParams)
-		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
@@ -74,11 +71,6 @@ std::string CreateUserResult::getMessage()const
 int CreateUserResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
-}
-
-std::vector<std::string> CreateUserResult::getParams()const
-{
-	return params_;
 }
 
 CreateUserResult::Data CreateUserResult::getData()const

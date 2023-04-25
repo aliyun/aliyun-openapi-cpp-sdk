@@ -64,6 +64,10 @@ void ListAgentStatesResult::parse(const std::string &payload)
 			realTimeAgentStateObject.agentName = dataNodeListRealTimeAgentState["AgentName"].asString();
 		if(!dataNodeListRealTimeAgentState["InstanceId"].isNull())
 			realTimeAgentStateObject.instanceId = dataNodeListRealTimeAgentState["InstanceId"].asString();
+		if(!dataNodeListRealTimeAgentState["BreakCode"].isNull())
+			realTimeAgentStateObject.breakCode = dataNodeListRealTimeAgentState["BreakCode"].asString();
+		if(!dataNodeListRealTimeAgentState["OutboundScenario"].isNull())
+			realTimeAgentStateObject.outboundScenario = dataNodeListRealTimeAgentState["OutboundScenario"].asString() == "true";
 		data_.list.push_back(realTimeAgentStateObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

@@ -66,6 +66,16 @@ void ListRealtimeAgentStatesResult::parse(const std::string &payload)
 			agentStateObject.instanceId = dataNodeListAgentState["InstanceId"].asString();
 		if(!dataNodeListAgentState["CounterParty"].isNull())
 			agentStateObject.counterParty = dataNodeListAgentState["CounterParty"].asString();
+		if(!dataNodeListAgentState["WorkMode"].isNull())
+			agentStateObject.workMode = dataNodeListAgentState["WorkMode"].asString();
+		if(!dataNodeListAgentState["OutboundScenario"].isNull())
+			agentStateObject.outboundScenario = dataNodeListAgentState["OutboundScenario"].asString() == "true";
+		if(!dataNodeListAgentState["Mobile"].isNull())
+			agentStateObject.mobile = dataNodeListAgentState["Mobile"].asString();
+		if(!dataNodeListAgentState["CallType"].isNull())
+			agentStateObject.callType = dataNodeListAgentState["CallType"].asString();
+		if(!dataNodeListAgentState["Duration"].isNull())
+			agentStateObject.duration = std::stol(dataNodeListAgentState["Duration"].asString());
 		auto allSkillGroupIdList = value["SkillGroupIdList"]["SkillGroupId"];
 		for (auto value : allSkillGroupIdList)
 			agentStateObject.skillGroupIdList.push_back(value.asString());

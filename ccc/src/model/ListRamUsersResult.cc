@@ -66,9 +66,6 @@ void ListRamUsersResult::parse(const std::string &payload)
 			ramUserObject.ramId = dataNodeListRamUser["RamId"].asString();
 		data_.list.push_back(ramUserObject);
 	}
-	auto allParams = value["Params"]["Param"];
-	for (const auto &item : allParams)
-		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
@@ -86,11 +83,6 @@ std::string ListRamUsersResult::getMessage()const
 int ListRamUsersResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
-}
-
-std::vector<std::string> ListRamUsersResult::getParams()const
-{
-	return params_;
 }
 
 ListRamUsersResult::Data ListRamUsersResult::getData()const

@@ -43,3 +43,12 @@ void RemoveUsersRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+bool RemoveUsersRequest::getForce() const {
+  return force_;
+}
+
+void RemoveUsersRequest::setForce(bool force) {
+  force_ = force;
+  setParameter(std::string("Force"), force ? "true" : "false");
+}
+

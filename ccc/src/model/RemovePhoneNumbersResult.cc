@@ -42,9 +42,6 @@ void RemovePhoneNumbersResult::parse(const std::string &payload)
 	auto allData = value["Data"]["Number"];
 	for (const auto &item : allData)
 		data_.push_back(item.asString());
-	auto allParams = value["Params"]["Param"];
-	for (const auto &item : allParams)
-		params_.push_back(item.asString());
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Code"].isNull())
@@ -62,11 +59,6 @@ std::string RemovePhoneNumbersResult::getMessage()const
 int RemovePhoneNumbersResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
-}
-
-std::vector<std::string> RemovePhoneNumbersResult::getParams()const
-{
-	return params_;
 }
 
 std::vector<std::string> RemovePhoneNumbersResult::getData()const

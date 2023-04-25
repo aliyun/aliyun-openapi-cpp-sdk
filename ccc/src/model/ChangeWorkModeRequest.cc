@@ -25,6 +25,24 @@ ChangeWorkModeRequest::ChangeWorkModeRequest()
 
 ChangeWorkModeRequest::~ChangeWorkModeRequest() {}
 
+std::string ChangeWorkModeRequest::getSignedSkillGroupIdList() const {
+  return signedSkillGroupIdList_;
+}
+
+void ChangeWorkModeRequest::setSignedSkillGroupIdList(const std::string &signedSkillGroupIdList) {
+  signedSkillGroupIdList_ = signedSkillGroupIdList;
+  setParameter(std::string("SignedSkillGroupIdList"), signedSkillGroupIdList);
+}
+
+std::string ChangeWorkModeRequest::getMobile() const {
+  return mobile_;
+}
+
+void ChangeWorkModeRequest::setMobile(const std::string &mobile) {
+  mobile_ = mobile;
+  setParameter(std::string("Mobile"), mobile);
+}
+
 std::string ChangeWorkModeRequest::getWorkMode() const {
   return workMode_;
 }

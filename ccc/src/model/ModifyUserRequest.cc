@@ -70,6 +70,24 @@ void ModifyUserRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string ModifyUserRequest::getDisplayName() const {
+  return displayName_;
+}
+
+void ModifyUserRequest::setDisplayName(const std::string &displayName) {
+  displayName_ = displayName;
+  setParameter(std::string("DisplayName"), displayName);
+}
+
+bool ModifyUserRequest::getForce() const {
+  return force_;
+}
+
+void ModifyUserRequest::setForce(bool force) {
+  force_ = force;
+  setParameter(std::string("Force"), force ? "true" : "false");
+}
+
 std::string ModifyUserRequest::getDisplayId() const {
   return displayId_;
 }

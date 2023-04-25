@@ -146,6 +146,12 @@ void ListSkillGroupSummaryReportsSinceMidnightResult::parse(const std::string &p
 			skillGroupSummaryReportObject.inbound.callsServiceLevel20 = std::stol(inboundNode["CallsServiceLevel20"].asString());
 		if(!inboundNode["CallsServiceLevel30"].isNull())
 			skillGroupSummaryReportObject.inbound.callsServiceLevel30 = std::stol(inboundNode["CallsServiceLevel30"].asString());
+		if(!inboundNode["CallsServiceLevel10"].isNull())
+			skillGroupSummaryReportObject.inbound.callsServiceLevel10 = std::stol(inboundNode["CallsServiceLevel10"].asString());
+		if(!inboundNode["CallsAttendedTransferOut"].isNull())
+			skillGroupSummaryReportObject.inbound.callsAttendedTransferOut = std::stol(inboundNode["CallsAttendedTransferOut"].asString());
+		if(!inboundNode["CallsBlindTransferOut"].isNull())
+			skillGroupSummaryReportObject.inbound.callsBlindTransferOut = std::stol(inboundNode["CallsBlindTransferOut"].asString());
 		auto outboundNode = value["Outbound"];
 		if(!outboundNode["TotalTalkTime"].isNull())
 			skillGroupSummaryReportObject.outbound.totalTalkTime = std::stol(outboundNode["TotalTalkTime"].asString());
@@ -177,6 +183,8 @@ void ListSkillGroupSummaryReportsSinceMidnightResult::parse(const std::string &p
 			skillGroupSummaryReportObject.outbound.maxTalkTime = std::stol(outboundNode["MaxTalkTime"].asString());
 		if(!outboundNode["AverageDialingTime"].isNull())
 			skillGroupSummaryReportObject.outbound.averageDialingTime = std::stol(outboundNode["AverageDialingTime"].asString());
+		if(!outboundNode["CallsServiceLevel30"].isNull())
+			skillGroupSummaryReportObject.outbound.callsServiceLevel30 = outboundNode["CallsServiceLevel30"].asString();
 		pagedSkillGroupSummaryReport_.list.push_back(skillGroupSummaryReportObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

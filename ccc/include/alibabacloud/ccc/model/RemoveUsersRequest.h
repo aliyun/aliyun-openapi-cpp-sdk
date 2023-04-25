@@ -34,10 +34,13 @@ public:
 	void setUserIdList(const std::string &userIdList);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	bool getForce() const;
+	void setForce(bool force);
 
 private:
 	std::string userIdList_;
 	std::string instanceId_;
+	bool force_;
 };
 } // namespace Model
 } // namespace CCC

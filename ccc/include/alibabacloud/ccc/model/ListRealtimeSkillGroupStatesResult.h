@@ -46,6 +46,7 @@ namespace AlibabaCloud
 						long waitingCalls;
 						std::string skillGroupId;
 						long workingAgents;
+						long outboundScenarioReadyAgents;
 					};
 					int totalCount;
 					int pageSize;

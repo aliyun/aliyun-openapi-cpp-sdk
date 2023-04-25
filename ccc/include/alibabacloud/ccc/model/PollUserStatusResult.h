@@ -44,7 +44,6 @@ namespace AlibabaCloud
 							std::string callType;
 							int index;
 							std::string skillGroupId;
-							std::string associatedData;
 							std::string channelId;
 							long timestamp;
 							std::string channelVariables;
@@ -55,6 +54,7 @@ namespace AlibabaCloud
 							std::string userExtension;
 							std::string jobId;
 						};
+						std::string callVariables;
 						std::string instanceId;
 						std::string callType;
 						std::string jobId;

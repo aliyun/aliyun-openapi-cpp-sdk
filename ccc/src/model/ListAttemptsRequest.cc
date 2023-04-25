@@ -43,6 +43,15 @@ void ListAttemptsRequest::setCampaignId(const std::string &campaignId) {
   setParameter(std::string("CampaignId"), campaignId);
 }
 
+std::string ListAttemptsRequest::getCriteria() const {
+  return criteria_;
+}
+
+void ListAttemptsRequest::setCriteria(const std::string &criteria) {
+  criteria_ = criteria;
+  setParameter(std::string("Criteria"), criteria);
+}
+
 std::string ListAttemptsRequest::getCallee() const {
   return callee_;
 }

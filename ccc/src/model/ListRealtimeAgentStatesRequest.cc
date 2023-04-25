@@ -25,6 +25,33 @@ ListRealtimeAgentStatesRequest::ListRealtimeAgentStatesRequest()
 
 ListRealtimeAgentStatesRequest::~ListRealtimeAgentStatesRequest() {}
 
+std::string ListRealtimeAgentStatesRequest::getCallTypeList() const {
+  return callTypeList_;
+}
+
+void ListRealtimeAgentStatesRequest::setCallTypeList(const std::string &callTypeList) {
+  callTypeList_ = callTypeList;
+  setParameter(std::string("CallTypeList"), callTypeList);
+}
+
+std::string ListRealtimeAgentStatesRequest::getQuery() const {
+  return query_;
+}
+
+void ListRealtimeAgentStatesRequest::setQuery(const std::string &query) {
+  query_ = query;
+  setParameter(std::string("Query"), query);
+}
+
+bool ListRealtimeAgentStatesRequest::getOutboundScenario() const {
+  return outboundScenario_;
+}
+
+void ListRealtimeAgentStatesRequest::setOutboundScenario(bool outboundScenario) {
+  outboundScenario_ = outboundScenario;
+  setParameter(std::string("OutboundScenario"), outboundScenario ? "true" : "false");
+}
+
 int ListRealtimeAgentStatesRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -41,6 +68,15 @@ std::string ListRealtimeAgentStatesRequest::getInstanceId() const {
 void ListRealtimeAgentStatesRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string ListRealtimeAgentStatesRequest::getWorkModeList() const {
+  return workModeList_;
+}
+
+void ListRealtimeAgentStatesRequest::setWorkModeList(const std::string &workModeList) {
+  workModeList_ = workModeList;
+  setParameter(std::string("WorkModeList"), workModeList);
 }
 
 std::string ListRealtimeAgentStatesRequest::getAgentIdList() const {

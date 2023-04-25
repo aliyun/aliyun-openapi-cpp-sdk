@@ -39,9 +39,6 @@ void ModifySkillLevelsOfUserResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allParams = value["Params"]["Param"];
-	for (const auto &item : allParams)
-		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
@@ -59,11 +56,6 @@ std::string ModifySkillLevelsOfUserResult::getMessage()const
 int ModifySkillLevelsOfUserResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
-}
-
-std::vector<std::string> ModifySkillLevelsOfUserResult::getParams()const
-{
-	return params_;
 }
 
 std::string ModifySkillLevelsOfUserResult::getCode()const

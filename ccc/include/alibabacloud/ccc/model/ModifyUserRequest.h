@@ -40,6 +40,10 @@ public:
 	void setUserId(const std::string &userId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getDisplayName() const;
+	void setDisplayName(const std::string &displayName);
+	bool getForce() const;
+	void setForce(bool force);
 	std::string getDisplayId() const;
 	void setDisplayId(const std::string &displayId);
 
@@ -49,6 +53,8 @@ private:
 	std::string workMode_;
 	std::string userId_;
 	std::string instanceId_;
+	std::string displayName_;
+	bool force_;
 	std::string displayId_;
 };
 } // namespace Model

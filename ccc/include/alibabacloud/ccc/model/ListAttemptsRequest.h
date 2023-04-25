@@ -34,6 +34,8 @@ public:
 	void setContactId(const std::string &contactId);
 	std::string getCampaignId() const;
 	void setCampaignId(const std::string &campaignId);
+	std::string getCriteria() const;
+	void setCriteria(const std::string &criteria);
 	std::string getCallee() const;
 	void setCallee(const std::string &callee);
 	long getStartTime() const;
@@ -60,6 +62,7 @@ public:
 private:
 	std::string contactId_;
 	std::string campaignId_;
+	std::string criteria_;
 	std::string callee_;
 	long startTime_;
 	int pageNumber_;

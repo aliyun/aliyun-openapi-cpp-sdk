@@ -61,6 +61,15 @@ void InitiateAttendedTransferRequest::setDeviceId(const std::string &deviceId) {
   setParameter(std::string("DeviceId"), deviceId);
 }
 
+std::string InitiateAttendedTransferRequest::getStrategyName() const {
+  return strategyName_;
+}
+
+void InitiateAttendedTransferRequest::setStrategyName(const std::string &strategyName) {
+  strategyName_ = strategyName;
+  setParameter(std::string("StrategyName"), strategyName);
+}
+
 int InitiateAttendedTransferRequest::getTimeoutSeconds() const {
   return timeoutSeconds_;
 }
@@ -86,5 +95,23 @@ std::string InitiateAttendedTransferRequest::getInstanceId() const {
 void InitiateAttendedTransferRequest::setInstanceId(const std::string &instanceId) {
   instanceId_ = instanceId;
   setParameter(std::string("InstanceId"), instanceId);
+}
+
+std::string InitiateAttendedTransferRequest::getStrategyParams() const {
+  return strategyParams_;
+}
+
+void InitiateAttendedTransferRequest::setStrategyParams(const std::string &strategyParams) {
+  strategyParams_ = strategyParams;
+  setParameter(std::string("StrategyParams"), strategyParams);
+}
+
+int InitiateAttendedTransferRequest::getCallPriority() const {
+  return callPriority_;
+}
+
+void InitiateAttendedTransferRequest::setCallPriority(int callPriority) {
+  callPriority_ = callPriority;
+  setParameter(std::string("CallPriority"), std::to_string(callPriority));
 }
 

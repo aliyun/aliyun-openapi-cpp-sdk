@@ -122,6 +122,8 @@ namespace AlibabaCloud
 						};
 						Outbound outbound;
 						Overall overall;
+						std::string skillGroupIds;
+						std::string skillGroupNames;
 						std::string displayId;
 						std::string agentName;
 						std::string agentId;

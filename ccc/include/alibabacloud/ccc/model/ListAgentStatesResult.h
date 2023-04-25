@@ -40,6 +40,8 @@ namespace AlibabaCloud
 						std::string stateDuration;
 						std::string instanceId;
 						std::string state;
+						std::string breakCode;
+						bool outboundScenario;
 						std::string dn;
 						std::string agentId;
 						std::string agentName;

@@ -46,7 +46,6 @@ namespace AlibabaCloud
 							std::string userId;
 							std::string callType;
 							std::string userExtension;
-							std::string associatedData;
 							std::string channelId;
 							long timestamp;
 							std::string jobId;

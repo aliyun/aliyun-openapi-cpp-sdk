@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string fileUrl;
 					std::string fileName;
+					long duration;
 				};
 
 

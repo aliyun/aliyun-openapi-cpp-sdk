@@ -69,8 +69,10 @@ namespace AlibabaCloud
 							float handleRate;
 							long callsServiceLevel30;
 							long totalTalkTime;
+							long callsServiceLevel10;
 							long overFlowInQueueOfQueueCount;
 							std::string maxTalkTime;
+							long callsAttendedTransferOut;
 							long averageTalkTime;
 							long answeredByAgentOfQueueWaitTimeDuration;
 							long satisfactionSurveysOffered;
@@ -82,6 +84,7 @@ namespace AlibabaCloud
 							long averageRingTime;
 							long answeredByAgentOfQueueMaxWaitTimeDuration;
 							long averageWorkTime;
+							long callsBlindTransferOut;
 							long maxWorkTime;
 							long inComingQueueOfQueueCount;
 						};
@@ -94,6 +97,7 @@ namespace AlibabaCloud
 							long satisfactionSurveysResponded;
 							long averageDialingTime;
 							long callsAnswered;
+							std::string callsServiceLevel30;
 							long totalTalkTime;
 							long callsDialed;
 							long maxDialingTime;

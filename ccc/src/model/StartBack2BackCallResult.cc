@@ -63,8 +63,6 @@ void StartBack2BackCallResult::parse(const std::string &payload)
 			channelContextObject.channelFlags = callContextNodeChannelContextsChannelContext["ChannelFlags"].asString();
 		if(!callContextNodeChannelContextsChannelContext["Timestamp"].isNull())
 			channelContextObject.timestamp = std::stol(callContextNodeChannelContextsChannelContext["Timestamp"].asString());
-		if(!callContextNodeChannelContextsChannelContext["AssociatedData"].isNull())
-			channelContextObject.associatedData = callContextNodeChannelContextsChannelContext["AssociatedData"].asString();
 		if(!callContextNodeChannelContextsChannelContext["ReleaseReason"].isNull())
 			channelContextObject.releaseReason = callContextNodeChannelContextsChannelContext["ReleaseReason"].asString();
 		if(!callContextNodeChannelContextsChannelContext["CallType"].isNull())
@@ -98,8 +96,6 @@ void StartBack2BackCallResult::parse(const std::string &payload)
 		data_.userContext.instanceId = userContextNode["InstanceId"].asString();
 	if(!userContextNode["OutboundScenario"].isNull())
 		data_.userContext.outboundScenario = userContextNode["OutboundScenario"].asString() == "true";
-	if(!userContextNode["Uri"].isNull())
-		data_.userContext.uri = userContextNode["Uri"].asString();
 	if(!userContextNode["DeviceState"].isNull())
 		data_.userContext.deviceState = userContextNode["DeviceState"].asString();
 	if(!userContextNode["Mobile"].isNull())

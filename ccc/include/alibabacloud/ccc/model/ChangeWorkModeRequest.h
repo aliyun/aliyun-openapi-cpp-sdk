@@ -30,6 +30,10 @@ class ALIBABACLOUD_CCC_EXPORT ChangeWorkModeRequest : public RpcServiceRequest {
 public:
 	ChangeWorkModeRequest();
 	~ChangeWorkModeRequest();
+	std::string getSignedSkillGroupIdList() const;
+	void setSignedSkillGroupIdList(const std::string &signedSkillGroupIdList);
+	std::string getMobile() const;
+	void setMobile(const std::string &mobile);
 	std::string getWorkMode() const;
 	void setWorkMode(const std::string &workMode);
 	std::string getUserId() const;
@@ -40,6 +44,8 @@ public:
 	void setInstanceId(const std::string &instanceId);
 
 private:
+	std::string signedSkillGroupIdList_;
+	std::string mobile_;
 	std::string workMode_;
 	std::string userId_;
 	std::string deviceId_;

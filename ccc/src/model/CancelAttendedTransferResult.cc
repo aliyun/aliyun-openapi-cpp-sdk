@@ -67,8 +67,6 @@ void CancelAttendedTransferResult::parse(const std::string &payload)
 			channelContextObject.channelFlags = callContextNodeChannelContextsChannelContext["ChannelFlags"].asString();
 		if(!callContextNodeChannelContextsChannelContext["Timestamp"].isNull())
 			channelContextObject.timestamp = std::stol(callContextNodeChannelContextsChannelContext["Timestamp"].asString());
-		if(!callContextNodeChannelContextsChannelContext["AssociatedData"].isNull())
-			channelContextObject.associatedData = callContextNodeChannelContextsChannelContext["AssociatedData"].asString();
 		if(!callContextNodeChannelContextsChannelContext["ReleaseReason"].isNull())
 			channelContextObject.releaseReason = callContextNodeChannelContextsChannelContext["ReleaseReason"].asString();
 		if(!callContextNodeChannelContextsChannelContext["CallType"].isNull())

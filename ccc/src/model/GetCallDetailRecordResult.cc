@@ -84,6 +84,8 @@ void GetCallDetailRecordResult::parse(const std::string &payload)
 		data_.calleeLocation = dataNode["CalleeLocation"].asString();
 	if(!dataNode["EarlyMediaState"].isNull())
 		data_.earlyMediaState = dataNode["EarlyMediaState"].asString();
+	if(!dataNode["ReleaseReason"].isNull())
+		data_.releaseReason = dataNode["ReleaseReason"].asString();
 	auto allAgentEventsNode = dataNode["AgentEvents"]["AgentEventsItem"];
 	for (auto dataNodeAgentEventsAgentEventsItem : allAgentEventsNode)
 	{

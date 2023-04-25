@@ -122,9 +122,6 @@ void GetInstanceResult::parse(const std::string &payload)
 		}
 		data_.numberList.push_back(phoneNumberObject);
 	}
-	auto allParams = value["Params"]["Param"];
-	for (const auto &item : allParams)
-		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
@@ -142,11 +139,6 @@ std::string GetInstanceResult::getMessage()const
 int GetInstanceResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
-}
-
-std::vector<std::string> GetInstanceResult::getParams()const
-{
-	return params_;
 }
 
 GetInstanceResult::Data GetInstanceResult::getData()const

@@ -88,3 +88,12 @@ void ListAgentStatesRequest::setState(const std::string &state) {
   setParameter(std::string("State"), state);
 }
 
+bool ListAgentStatesRequest::getExcludeOfflineUsers() const {
+  return excludeOfflineUsers_;
+}
+
+void ListAgentStatesRequest::setExcludeOfflineUsers(bool excludeOfflineUsers) {
+  excludeOfflineUsers_ = excludeOfflineUsers;
+  setParameter(std::string("ExcludeOfflineUsers"), excludeOfflineUsers ? "true" : "false");
+}
+

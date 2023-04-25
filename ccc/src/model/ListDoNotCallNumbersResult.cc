@@ -62,9 +62,6 @@ void ListDoNotCallNumbersResult::parse(const std::string &payload)
 			blockedNumberObject.creator = dataNodeListBlockedNumber["Creator"].asString();
 		data_.list.push_back(blockedNumberObject);
 	}
-	auto allParams = value["Params"]["Param"];
-	for (const auto &item : allParams)
-		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
@@ -82,11 +79,6 @@ std::string ListDoNotCallNumbersResult::getMessage()const
 int ListDoNotCallNumbersResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
-}
-
-std::vector<std::string> ListDoNotCallNumbersResult::getParams()const
-{
-	return params_;
 }
 
 ListDoNotCallNumbersResult::Data ListDoNotCallNumbersResult::getData()const

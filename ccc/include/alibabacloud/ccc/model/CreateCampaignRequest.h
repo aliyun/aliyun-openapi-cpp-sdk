@@ -36,6 +36,8 @@ public:
 	void setContactFlowId(const std::string &contactFlowId);
 	bool getSimulation() const;
 	void setSimulation(bool simulation);
+	bool getExecutingUntilTimeout() const;
+	void setExecutingUntilTimeout(bool executingUntilTimeout);
 	std::string getEndTime() const;
 	void setEndTime(const std::string &endTime);
 	std::string getStartTime() const;
@@ -65,6 +67,7 @@ private:
 	std::string queueId_;
 	std::string contactFlowId_;
 	bool simulation_;
+	bool executingUntilTimeout_;
 	std::string endTime_;
 	std::string startTime_;
 	long maxAttemptCount_;

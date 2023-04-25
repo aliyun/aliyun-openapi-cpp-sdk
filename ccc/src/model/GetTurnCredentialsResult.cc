@@ -44,9 +44,6 @@ void GetTurnCredentialsResult::parse(const std::string &payload)
 		data_.userName = dataNode["UserName"].asString();
 	if(!dataNode["Password"].isNull())
 		data_.password = dataNode["Password"].asString();
-	auto allParams = value["Params"]["Param"];
-	for (const auto &item : allParams)
-		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
@@ -64,11 +61,6 @@ std::string GetTurnCredentialsResult::getMessage()const
 int GetTurnCredentialsResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
-}
-
-std::vector<std::string> GetTurnCredentialsResult::getParams()const
-{
-	return params_;
 }
 
 GetTurnCredentialsResult::Data GetTurnCredentialsResult::getData()const

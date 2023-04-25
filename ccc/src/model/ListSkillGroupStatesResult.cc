@@ -70,6 +70,20 @@ void ListSkillGroupStatesResult::parse(const std::string &payload)
 			realTimeSkillGroupStateObject.readyAgents = std::stol(dataNodeListRealTimeSkillGroupState["ReadyAgents"].asString());
 		if(!dataNodeListRealTimeSkillGroupState["InstanceId"].isNull())
 			realTimeSkillGroupStateObject.instanceId = dataNodeListRealTimeSkillGroupState["InstanceId"].asString();
+		if(!dataNodeListRealTimeSkillGroupState["AverageWaitingTime"].isNull())
+			realTimeSkillGroupStateObject.averageWaitingTime = std::stol(dataNodeListRealTimeSkillGroupState["AverageWaitingTime"].asString());
+		if(!dataNodeListRealTimeSkillGroupState["WaitingCallsLevel10"].isNull())
+			realTimeSkillGroupStateObject.waitingCallsLevel10 = std::stol(dataNodeListRealTimeSkillGroupState["WaitingCallsLevel10"].asString());
+		if(!dataNodeListRealTimeSkillGroupState["WaitingCallsLevel20"].isNull())
+			realTimeSkillGroupStateObject.waitingCallsLevel20 = std::stol(dataNodeListRealTimeSkillGroupState["WaitingCallsLevel20"].asString());
+		if(!dataNodeListRealTimeSkillGroupState["WaitingCallsLevel30"].isNull())
+			realTimeSkillGroupStateObject.waitingCallsLevel30 = std::stol(dataNodeListRealTimeSkillGroupState["WaitingCallsLevel30"].asString());
+		if(!dataNodeListRealTimeSkillGroupState["OutboundScenarioReadyAgents"].isNull())
+			realTimeSkillGroupStateObject.outboundScenarioReadyAgents = std::stol(dataNodeListRealTimeSkillGroupState["OutboundScenarioReadyAgents"].asString());
+		if(!dataNodeListRealTimeSkillGroupState["InboundTalkingAgents"].isNull())
+			realTimeSkillGroupStateObject.inboundTalkingAgents = std::stol(dataNodeListRealTimeSkillGroupState["InboundTalkingAgents"].asString());
+		if(!dataNodeListRealTimeSkillGroupState["OutboundTalkingAgents"].isNull())
+			realTimeSkillGroupStateObject.outboundTalkingAgents = std::stol(dataNodeListRealTimeSkillGroupState["OutboundTalkingAgents"].asString());
 		data_.list.push_back(realTimeSkillGroupStateObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

@@ -68,9 +68,6 @@ void GetUserResult::parse(const std::string &payload)
 		data_.deviceExt = dataNode["DeviceExt"].asString();
 	if(!dataNode["DeviceState"].isNull())
 		data_.deviceState = dataNode["DeviceState"].asString();
-	auto allParams = value["Params"]["Param"];
-	for (const auto &item : allParams)
-		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
@@ -88,11 +85,6 @@ std::string GetUserResult::getMessage()const
 int GetUserResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
-}
-
-std::vector<std::string> GetUserResult::getParams()const
-{
-	return params_;
 }
 
 GetUserResult::Data GetUserResult::getData()const

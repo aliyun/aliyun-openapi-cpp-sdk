@@ -52,12 +52,8 @@ void ListUnassignedNumbersResult::parse(const std::string &payload)
 		Data::PhoneNumber phoneNumberObject;
 		if(!dataNodeListPhoneNumber["Number"].isNull())
 			phoneNumberObject.number = dataNodeListPhoneNumber["Number"].asString();
-		if(!dataNodeListPhoneNumber["Active"].isNull())
-			phoneNumberObject.active = dataNodeListPhoneNumber["Active"].asString() == "true";
 		if(!dataNodeListPhoneNumber["City"].isNull())
 			phoneNumberObject.city = dataNodeListPhoneNumber["City"].asString();
-		if(!dataNodeListPhoneNumber["Usage"].isNull())
-			phoneNumberObject.usage = dataNodeListPhoneNumber["Usage"].asString() == "true";
 		if(!dataNodeListPhoneNumber["Province"].isNull())
 			phoneNumberObject.province = dataNodeListPhoneNumber["Province"].asString();
 		data_.list.push_back(phoneNumberObject);

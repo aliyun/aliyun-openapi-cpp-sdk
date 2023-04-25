@@ -44,6 +44,8 @@ public:
 	void setPageSize(int pageSize);
 	std::string getState() const;
 	void setState(const std::string &state);
+	bool getExcludeOfflineUsers() const;
+	void setExcludeOfflineUsers(bool excludeOfflineUsers);
 
 private:
 	std::string agentIds_;
@@ -53,6 +55,7 @@ private:
 	std::string skillGroupId_;
 	int pageSize_;
 	std::string state_;
+	bool excludeOfflineUsers_;
 };
 } // namespace Model
 } // namespace CCC

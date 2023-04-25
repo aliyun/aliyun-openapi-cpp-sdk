@@ -102,9 +102,6 @@ void ListInstancesResult::parse(const std::string &payload)
 		}
 		data_.list.push_back(callCenterInstanceObject);
 	}
-	auto allParams = value["Params"]["Param"];
-	for (const auto &item : allParams)
-		params_.push_back(item.asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["HttpStatusCode"].isNull())
@@ -122,11 +119,6 @@ std::string ListInstancesResult::getMessage()const
 int ListInstancesResult::getHttpStatusCode()const
 {
 	return httpStatusCode_;
-}
-
-std::vector<std::string> ListInstancesResult::getParams()const
-{
-	return params_;
 }
 
 ListInstancesResult::Data ListInstancesResult::getData()const

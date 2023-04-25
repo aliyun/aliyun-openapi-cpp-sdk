@@ -43,8 +43,6 @@ void AssignUsersResult::parse(const std::string &payload)
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString();
-	if(!value["Sync"].isNull())
-		sync_ = value["Sync"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["WorkflowId"].isNull())
@@ -67,11 +65,6 @@ int AssignUsersResult::getHttpStatusCode()const
 std::string AssignUsersResult::getData()const
 {
 	return data_;
-}
-
-std::string AssignUsersResult::getSync()const
-{
-	return sync_;
 }
 
 std::string AssignUsersResult::getWorkflowId()const

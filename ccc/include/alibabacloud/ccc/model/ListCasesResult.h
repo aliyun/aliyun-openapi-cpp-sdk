@@ -36,7 +36,6 @@ namespace AlibabaCloud
 				{
 					struct ListItem
 					{
-						std::string expandInfo;
 						long attemptCount;
 						std::string abandonType;
 						std::string state;
@@ -59,7 +58,6 @@ namespace AlibabaCloud
 				long getHttpStatusCode()const;
 				Data getData()const;
 				std::string getCode()const;
-				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -68,7 +66,6 @@ namespace AlibabaCloud
 				long httpStatusCode_;
 				Data data_;
 				std::string code_;
-				bool success_;
 
 			};
 		}

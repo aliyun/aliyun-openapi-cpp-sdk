@@ -43,6 +43,8 @@ namespace AlibabaCloud
 						int satisfactionIndex;
 						std::string contactId;
 						std::string callingNumber;
+						long talkTime;
+						std::string releaseReason;
 						bool recordingReady;
 						std::string skillGroupNames;
 						bool satisfactionSurveyOffered;
@@ -64,6 +66,7 @@ namespace AlibabaCloud
 						std::string agentIds;
 						long waitTime;
 						std::string callerLocation;
+						long dialingTime;
 						std::string agentNames;
 						long recordingDuration;
 					};

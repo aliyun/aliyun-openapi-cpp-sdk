@@ -34,15 +34,12 @@ public:
 	void setPageNumber(int pageNumber);
 	std::string getSearchPattern() const;
 	void setSearchPattern(const std::string &searchPattern);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 
 private:
 	int pageNumber_;
 	std::string searchPattern_;
-	std::string instanceId_;
 	int pageSize_;
 };
 } // namespace Model

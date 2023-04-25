@@ -38,21 +38,30 @@ public:
 	void setUserId(const std::string &userId);
 	std::string getDeviceId() const;
 	void setDeviceId(const std::string &deviceId);
+	std::string getStrategyName() const;
+	void setStrategyName(const std::string &strategyName);
 	int getTimeoutSeconds() const;
 	void setTimeoutSeconds(int timeoutSeconds);
 	std::string getJobId() const;
 	void setJobId(const std::string &jobId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::string getStrategyParams() const;
+	void setStrategyParams(const std::string &strategyParams);
+	int getCallPriority() const;
+	void setCallPriority(int callPriority);
 
 private:
 	std::string transferee_;
 	std::string transferor_;
 	std::string userId_;
 	std::string deviceId_;
+	std::string strategyName_;
 	int timeoutSeconds_;
 	std::string jobId_;
 	std::string instanceId_;
+	std::string strategyParams_;
+	int callPriority_;
 };
 } // namespace Model
 } // namespace CCC
