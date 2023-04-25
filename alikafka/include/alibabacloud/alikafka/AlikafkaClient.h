@@ -86,6 +86,8 @@
 #include "model/UntagResourcesResult.h"
 #include "model/UpdateAllowedIpRequest.h"
 #include "model/UpdateAllowedIpResult.h"
+#include "model/UpdateConsumerOffsetRequest.h"
+#include "model/UpdateConsumerOffsetResult.h"
 #include "model/UpdateInstanceConfigRequest.h"
 #include "model/UpdateInstanceConfigResult.h"
 #include "model/UpgradeInstanceVersionRequest.h"
@@ -199,6 +201,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateAllowedIpResult> UpdateAllowedIpOutcome;
 			typedef std::future<UpdateAllowedIpOutcome> UpdateAllowedIpOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::UpdateAllowedIpRequest&, const UpdateAllowedIpOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAllowedIpAsyncHandler;
+			typedef Outcome<Error, Model::UpdateConsumerOffsetResult> UpdateConsumerOffsetOutcome;
+			typedef std::future<UpdateConsumerOffsetOutcome> UpdateConsumerOffsetOutcomeCallable;
+			typedef std::function<void(const AlikafkaClient*, const Model::UpdateConsumerOffsetRequest&, const UpdateConsumerOffsetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateConsumerOffsetAsyncHandler;
 			typedef Outcome<Error, Model::UpdateInstanceConfigResult> UpdateInstanceConfigOutcome;
 			typedef std::future<UpdateInstanceConfigOutcome> UpdateInstanceConfigOutcomeCallable;
 			typedef std::function<void(const AlikafkaClient*, const Model::UpdateInstanceConfigRequest&, const UpdateInstanceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceConfigAsyncHandler;
@@ -312,6 +317,9 @@ namespace AlibabaCloud
 			UpdateAllowedIpOutcome updateAllowedIp(const Model::UpdateAllowedIpRequest &request)const;
 			void updateAllowedIpAsync(const Model::UpdateAllowedIpRequest& request, const UpdateAllowedIpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAllowedIpOutcomeCallable updateAllowedIpCallable(const Model::UpdateAllowedIpRequest& request) const;
+			UpdateConsumerOffsetOutcome updateConsumerOffset(const Model::UpdateConsumerOffsetRequest &request)const;
+			void updateConsumerOffsetAsync(const Model::UpdateConsumerOffsetRequest& request, const UpdateConsumerOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateConsumerOffsetOutcomeCallable updateConsumerOffsetCallable(const Model::UpdateConsumerOffsetRequest& request) const;
 			UpdateInstanceConfigOutcome updateInstanceConfig(const Model::UpdateInstanceConfigRequest &request)const;
 			void updateInstanceConfigAsync(const Model::UpdateInstanceConfigRequest& request, const UpdateInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateInstanceConfigOutcomeCallable updateInstanceConfigCallable(const Model::UpdateInstanceConfigRequest& request) const;

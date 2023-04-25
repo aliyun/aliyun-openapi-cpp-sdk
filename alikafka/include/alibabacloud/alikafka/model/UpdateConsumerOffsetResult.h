@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_GETQUOTATIPRESULT_H_
-#define ALIBABACLOUD_ALIKAFKA_MODEL_GETQUOTATIPRESULT_H_
+#ifndef ALIBABACLOUD_ALIKAFKA_MODEL_UPDATECONSUMEROFFSETRESULT_H_
+#define ALIBABACLOUD_ALIKAFKA_MODEL_UPDATECONSUMEROFFSETRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,33 +29,17 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_ALIKAFKA_EXPORT GetQuotaTipResult : public ServiceResult
+			class ALIBABACLOUD_ALIKAFKA_EXPORT UpdateConsumerOffsetResult : public ServiceResult
 			{
 			public:
-				struct QuotaData
-				{
-					int isPartitionBuy;
-					int topicLeft;
-					int groupUsed;
-					int partitionQuata;
-					int topicUsed;
-					int partitionNumOfBuy;
-					int partitionLeft;
-					int topicQuota;
-					int partitionQuota;
-					int topicNumOfBuy;
-					int partitionUsed;
-					int groupLeft;
-				};
 
 
-				GetQuotaTipResult();
-				explicit GetQuotaTipResult(const std::string &payload);
-				~GetQuotaTipResult();
+				UpdateConsumerOffsetResult();
+				explicit UpdateConsumerOffsetResult(const std::string &payload);
+				~UpdateConsumerOffsetResult();
 				std::string getMessage()const;
 				int getCode()const;
 				bool getSuccess()const;
-				QuotaData getQuotaData()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -63,10 +47,9 @@ namespace AlibabaCloud
 				std::string message_;
 				int code_;
 				bool success_;
-				QuotaData quotaData_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_GETQUOTATIPRESULT_H_
+#endif // !ALIBABACLOUD_ALIKAFKA_MODEL_UPDATECONSUMEROFFSETRESULT_H_

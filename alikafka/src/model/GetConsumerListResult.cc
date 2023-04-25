@@ -51,6 +51,8 @@ void GetConsumerListResult::parse(const std::string &payload)
 			consumerListObject.remark = valueConsumerListConsumerVO["Remark"].asString();
 		if(!valueConsumerListConsumerVO["RegionId"].isNull())
 			consumerListObject.regionId = valueConsumerListConsumerVO["RegionId"].asString();
+		if(!valueConsumerListConsumerVO["AutomaticallyCreatedGroup"].isNull())
+			consumerListObject.automaticallyCreatedGroup = valueConsumerListConsumerVO["AutomaticallyCreatedGroup"].asString() == "true";
 		auto allTagsNode = valueConsumerListConsumerVO["Tags"]["TagVO"];
 		for (auto valueConsumerListConsumerVOTagsTagVO : allTagsNode)
 		{

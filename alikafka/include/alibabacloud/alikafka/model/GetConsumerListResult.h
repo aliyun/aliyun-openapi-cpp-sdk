@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string key;
 					};
 					std::string instanceId;
+					bool automaticallyCreatedGroup;
 					std::string consumerId;
 					std::string regionId;
 					std::vector<ConsumerVO::TagVO> tags;

@@ -85,6 +85,8 @@ set(alikafka_public_header_model
 	include/alibabacloud/alikafka/model/UntagResourcesResult.h
 	include/alibabacloud/alikafka/model/UpdateAllowedIpRequest.h
 	include/alibabacloud/alikafka/model/UpdateAllowedIpResult.h
+	include/alibabacloud/alikafka/model/UpdateConsumerOffsetRequest.h
+	include/alibabacloud/alikafka/model/UpdateConsumerOffsetResult.h
 	include/alibabacloud/alikafka/model/UpdateInstanceConfigRequest.h
 	include/alibabacloud/alikafka/model/UpdateInstanceConfigResult.h
 	include/alibabacloud/alikafka/model/UpgradeInstanceVersionRequest.h
@@ -160,6 +162,8 @@ set(alikafka_src
 	src/model/UntagResourcesResult.cc
 	src/model/UpdateAllowedIpRequest.cc
 	src/model/UpdateAllowedIpResult.cc
+	src/model/UpdateConsumerOffsetRequest.cc
+	src/model/UpdateConsumerOffsetResult.cc
 	src/model/UpdateInstanceConfigRequest.cc
 	src/model/UpdateInstanceConfigResult.cc
 	src/model/UpgradeInstanceVersionRequest.cc

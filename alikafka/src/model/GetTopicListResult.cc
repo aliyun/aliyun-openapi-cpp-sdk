@@ -63,6 +63,8 @@ void GetTopicListResult::parse(const std::string &payload)
 			topicListObject.localTopic = valueTopicListTopicVO["LocalTopic"].asString() == "true";
 		if(!valueTopicListTopicVO["RegionId"].isNull())
 			topicListObject.regionId = valueTopicListTopicVO["RegionId"].asString();
+		if(!valueTopicListTopicVO["AutoCreate"].isNull())
+			topicListObject.autoCreate = valueTopicListTopicVO["AutoCreate"].asString() == "true";
 		auto allTagsNode = valueTopicListTopicVO["Tags"]["TagVO"];
 		for (auto valueTopicListTopicVOTagsTagVO : allTagsNode)
 		{

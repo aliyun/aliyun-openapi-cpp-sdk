@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					bool compactTopic;
 					std::string instanceId;
 					long createTime;
+					bool autoCreate;
 					std::string statusName;
 					std::string regionId;
 					std::string topic;

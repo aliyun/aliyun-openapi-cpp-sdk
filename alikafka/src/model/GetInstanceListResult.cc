@@ -105,6 +105,8 @@ void GetInstanceListResult::parse(const std::string &payload)
 			instanceListObject.kmsKeyId = valueInstanceListInstanceVO["KmsKeyId"].asString();
 		if(!valueInstanceListInstanceVO["StandardZoneId"].isNull())
 			instanceListObject.standardZoneId = valueInstanceListInstanceVO["StandardZoneId"].asString();
+		if(!valueInstanceListInstanceVO["IoMaxSpec"].isNull())
+			instanceListObject.ioMaxSpec = valueInstanceListInstanceVO["IoMaxSpec"].asString();
 		auto allTagsNode = valueInstanceListInstanceVO["Tags"]["TagVO"];
 		for (auto valueInstanceListInstanceVOTagsTagVO : allTagsNode)
 		{

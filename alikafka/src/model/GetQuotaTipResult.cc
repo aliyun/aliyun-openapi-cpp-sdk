@@ -62,6 +62,8 @@ void GetQuotaTipResult::parse(const std::string &payload)
 		quotaData_.groupUsed = std::stoi(quotaDataNode["GroupUsed"].asString());
 	if(!quotaDataNode["IsPartitionBuy"].isNull())
 		quotaData_.isPartitionBuy = std::stoi(quotaDataNode["IsPartitionBuy"].asString());
+	if(!quotaDataNode["PartitionQuota"].isNull())
+		quotaData_.partitionQuota = std::stoi(quotaDataNode["PartitionQuota"].asString());
 	if(!value["Code"].isNull())
 		code_ = std::stoi(value["Code"].asString());
 	if(!value["Message"].isNull())

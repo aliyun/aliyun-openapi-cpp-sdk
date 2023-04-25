@@ -75,6 +75,7 @@ namespace AlibabaCloud
 					std::string domainEndpoint;
 					int paidType;
 					std::string standardZoneId;
+					std::string ioMaxSpec;
 					std::string regionId;
 				};
 

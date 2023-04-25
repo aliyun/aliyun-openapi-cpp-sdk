@@ -31,21 +31,21 @@ AlikafkaClient::AlikafkaClient(const Credentials &credentials, const ClientConfi
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alikafka");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 AlikafkaClient::AlikafkaClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alikafka");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 AlikafkaClient::AlikafkaClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "alikafka");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 AlikafkaClient::~AlikafkaClient()
@@ -1197,6 +1197,42 @@ AlikafkaClient::UpdateAllowedIpOutcomeCallable AlikafkaClient::updateAllowedIpCa
 			[this, request]()
 			{
 			return this->updateAllowedIp(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlikafkaClient::UpdateConsumerOffsetOutcome AlikafkaClient::updateConsumerOffset(const UpdateConsumerOffsetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateConsumerOffsetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateConsumerOffsetOutcome(UpdateConsumerOffsetResult(outcome.result()));
+	else
+		return UpdateConsumerOffsetOutcome(outcome.error());
+}
+
+void AlikafkaClient::updateConsumerOffsetAsync(const UpdateConsumerOffsetRequest& request, const UpdateConsumerOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateConsumerOffset(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlikafkaClient::UpdateConsumerOffsetOutcomeCallable AlikafkaClient::updateConsumerOffsetCallable(const UpdateConsumerOffsetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateConsumerOffsetOutcome()>>(
+			[this, request]()
+			{
+			return this->updateConsumerOffset(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
