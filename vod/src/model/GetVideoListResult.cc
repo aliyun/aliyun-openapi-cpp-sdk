@@ -75,6 +75,12 @@ void GetVideoListResult::parse(const std::string &payload)
 			videoListObject.title = valueVideoListVideo["Title"].asString();
 		if(!valueVideoListVideo["ModifyTime"].isNull())
 			videoListObject.modifyTime = valueVideoListVideo["ModifyTime"].asString();
+		if(!valueVideoListVideo["StorageClass"].isNull())
+			videoListObject.storageClass = valueVideoListVideo["StorageClass"].asString();
+		if(!valueVideoListVideo["RestoreStatus"].isNull())
+			videoListObject.restoreStatus = valueVideoListVideo["RestoreStatus"].asString();
+		if(!valueVideoListVideo["RestoreExpiration"].isNull())
+			videoListObject.restoreExpiration = valueVideoListVideo["RestoreExpiration"].asString();
 		auto allSnapshots = value["Snapshots"]["Snapshot"];
 		for (auto value : allSnapshots)
 			videoListObject.snapshots.push_back(value.asString());

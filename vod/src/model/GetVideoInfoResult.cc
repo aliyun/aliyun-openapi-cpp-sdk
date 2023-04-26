@@ -84,6 +84,12 @@ void GetVideoInfoResult::parse(const std::string &payload)
 		video_.auditStatus = videoNode["AuditStatus"].asString();
 	if(!videoNode["ModifyTime"].isNull())
 		video_.modifyTime = videoNode["ModifyTime"].asString();
+	if(!videoNode["StorageClass"].isNull())
+		video_.storageClass = videoNode["StorageClass"].asString();
+	if(!videoNode["RestoreStatus"].isNull())
+		video_.restoreStatus = videoNode["RestoreStatus"].asString();
+	if(!videoNode["RestoreExpiration"].isNull())
+		video_.restoreExpiration = videoNode["RestoreExpiration"].asString();
 	auto allThumbnailListNode = videoNode["ThumbnailList"]["Thumbnail"];
 	for (auto videoNodeThumbnailListThumbnail : allThumbnailListNode)
 	{

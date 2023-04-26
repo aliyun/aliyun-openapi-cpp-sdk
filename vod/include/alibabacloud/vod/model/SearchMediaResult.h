@@ -61,6 +61,7 @@ namespace AlibabaCloud
 						std::string modificationTime;
 						long cateId;
 						std::string cateName;
+						std::string restoreStatus;
 						std::string preprocessStatus;
 						std::string auditAIResult;
 						std::string mediaType;
@@ -71,10 +72,12 @@ namespace AlibabaCloud
 						std::string tags;
 						std::string status;
 						std::string videoId;
+						std::string storageClass;
 						std::string auditLabel;
 						std::string downloadSwitch;
 						std::string title;
 						float duration;
+						std::string restoreExpiration;
 						std::string auditStatus;
 						std::string mediaSource;
 						std::string appId;
@@ -112,6 +115,7 @@ namespace AlibabaCloud
 						std::string modificationTime;
 						long cateId;
 						std::string cateName;
+						std::string restoreStatus;
 						std::string preprocessStatus;
 						std::string auditAIResult;
 						std::vector<std::string> spriteSnapshots1;
@@ -121,10 +125,12 @@ namespace AlibabaCloud
 						std::string tags;
 						std::vector<PlayInfo4> playInfoList3;
 						std::string status;
+						std::string storageClass;
 						std::string downloadSwitch;
 						std::string title;
 						float duration;
 						std::vector<std::string> snapshots2;
+						std::string restoreExpiration;
 						std::string auditStatus;
 						std::string mediaSource;
 						std::string appId;
@@ -179,13 +185,46 @@ namespace AlibabaCloud
 						std::string storageLocation;
 						std::string tags;
 					};
+					struct AiData
+					{
+						struct AiLabelInfoItem
+						{
+							struct OccurrencesItem
+							{
+								double score;
+								double from;
+								double to;
+							};
+							std::string category;
+							std::vector<AiLabelInfoItem::OccurrencesItem> occurrences;
+							std::string labelName;
+							std::string labelId;
+						};
+						struct OcrInfoItem
+						{
+							std::string content;
+							double from;
+							double to;
+						};
+						std::vector<OcrInfoItem> ocrInfo;
+						std::vector<AiLabelInfoItem> aiLabelInfo;
+					};
+					struct AiRoughData
+					{
+						std::string status;
+						std::string aiCategory;
+						std::string saveType;
+						std::string aiJobId;
+					};
 					AttachedMedia attachedMedia;
+					AiData aiData;
 					std::string mediaId;
 					Video video;
 					std::string creationTime;
 					std::string mediaType;
 					Audio audio;
 					Image image;
+					AiRoughData aiRoughData;
 				};
 
 

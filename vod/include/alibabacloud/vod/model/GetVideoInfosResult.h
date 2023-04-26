@@ -42,14 +42,17 @@ namespace AlibabaCloud
 					std::string videoId;
 					std::string description;
 					long size;
+					std::string storageClass;
 					std::string downloadSwitch;
 					std::string title;
 					std::string modificationTime;
 					float duration;
 					long cateId;
 					std::string cateName;
+					std::string restoreStatus;
 					std::vector<Video::Thumbnail> thumbnailList;
 					std::string preprocessStatus;
+					std::string restoreExpiration;
 					std::string customMediaInfo;
 					std::string appId;
 					std::string creationTime;

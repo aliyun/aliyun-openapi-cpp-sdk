@@ -68,6 +68,12 @@ void GetMezzanineInfoResult::parse(const std::string &payload)
 		mezzanine_.duration = mezzanineNode["Duration"].asString();
 	if(!mezzanineNode["Fps"].isNull())
 		mezzanine_.fps = mezzanineNode["Fps"].asString();
+	if(!mezzanineNode["StorageClass"].isNull())
+		mezzanine_.storageClass = mezzanineNode["StorageClass"].asString();
+	if(!mezzanineNode["RestoreStatus"].isNull())
+		mezzanine_.restoreStatus = mezzanineNode["RestoreStatus"].asString();
+	if(!mezzanineNode["RestoreExpiration"].isNull())
+		mezzanine_.restoreExpiration = mezzanineNode["RestoreExpiration"].asString();
 	auto allAudioStreamListNode = mezzanineNode["AudioStreamList"]["AudioStream"];
 	for (auto mezzanineNodeAudioStreamListAudioStream : allAudioStreamListNode)
 	{

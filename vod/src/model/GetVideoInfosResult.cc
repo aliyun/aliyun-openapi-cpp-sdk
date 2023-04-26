@@ -81,6 +81,12 @@ void GetVideoInfosResult::parse(const std::string &payload)
 			videoListObject.duration = std::stof(valueVideoListVideo["Duration"].asString());
 		if(!valueVideoListVideo["Title"].isNull())
 			videoListObject.title = valueVideoListVideo["Title"].asString();
+		if(!valueVideoListVideo["StorageClass"].isNull())
+			videoListObject.storageClass = valueVideoListVideo["StorageClass"].asString();
+		if(!valueVideoListVideo["RestoreStatus"].isNull())
+			videoListObject.restoreStatus = valueVideoListVideo["RestoreStatus"].asString();
+		if(!valueVideoListVideo["RestoreExpiration"].isNull())
+			videoListObject.restoreExpiration = valueVideoListVideo["RestoreExpiration"].asString();
 		auto allThumbnailListNode = valueVideoListVideo["ThumbnailList"]["Thumbnail"];
 		for (auto valueVideoListVideoThumbnailListThumbnail : allThumbnailListNode)
 		{

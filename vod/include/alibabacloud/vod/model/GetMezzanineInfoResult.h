@@ -84,13 +84,16 @@ namespace AlibabaCloud
 					std::string videoId;
 					std::string cRC64;
 					long size;
+					std::string storageClass;
 					std::string fileName;
 					std::string fps;
 					std::vector<VideoStream> videoStreamList;
 					std::string duration;
 					std::vector<AudioStream> audioStreamList;
+					std::string restoreStatus;
 					std::string bitrate;
 					std::string preprocessStatus;
+					std::string restoreExpiration;
 					std::string fileURL;
 					std::string creationTime;
 					long height;

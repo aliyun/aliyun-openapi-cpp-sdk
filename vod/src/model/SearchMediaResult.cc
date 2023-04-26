@@ -100,6 +100,12 @@ void SearchMediaResult::parse(const std::string &payload)
 			mediaListObject.video.auditAIResult = videoNode["AuditAIResult"].asString();
 		if(!videoNode["PreprocessStatus"].isNull())
 			mediaListObject.video.preprocessStatus = videoNode["PreprocessStatus"].asString();
+		if(!videoNode["RestoreExpiration"].isNull())
+			mediaListObject.video.restoreExpiration = videoNode["RestoreExpiration"].asString();
+		if(!videoNode["RestoreStatus"].isNull())
+			mediaListObject.video.restoreStatus = videoNode["RestoreStatus"].asString();
+		if(!videoNode["StorageClass"].isNull())
+			mediaListObject.video.storageClass = videoNode["StorageClass"].asString();
 		if(!videoNode["Size"].isNull())
 			mediaListObject.video.size = std::stol(videoNode["Size"].asString());
 		if(!videoNode["Duration"].isNull())
@@ -193,6 +199,12 @@ void SearchMediaResult::parse(const std::string &payload)
 			mediaListObject.audio.auditAIResult = audioNode["AuditAIResult"].asString();
 		if(!audioNode["PreprocessStatus"].isNull())
 			mediaListObject.audio.preprocessStatus = audioNode["PreprocessStatus"].asString();
+		if(!audioNode["RestoreExpiration"].isNull())
+			mediaListObject.audio.restoreExpiration = audioNode["RestoreExpiration"].asString();
+		if(!audioNode["RestoreStatus"].isNull())
+			mediaListObject.audio.restoreStatus = audioNode["RestoreStatus"].asString();
+		if(!audioNode["StorageClass"].isNull())
+			mediaListObject.audio.storageClass = audioNode["StorageClass"].asString();
 		if(!audioNode["Size"].isNull())
 			mediaListObject.audio.size = std::stol(audioNode["Size"].asString());
 		if(!audioNode["Duration"].isNull())
@@ -317,6 +329,52 @@ void SearchMediaResult::parse(const std::string &payload)
 				categoryObject.level = std::stol(attachedMediaNodeCategoriesCategory["Level"].asString());
 			mediaListObject.attachedMedia.categories.push_back(categoryObject);
 		}
+		auto aiDataNode = value["AiData"];
+		auto allAiLabelInfoNode = aiDataNode["AiLabelInfo"]["AiLabelInfoItem"];
+		for (auto aiDataNodeAiLabelInfoAiLabelInfoItem : allAiLabelInfoNode)
+		{
+			Media::AiData::AiLabelInfoItem aiLabelInfoItemObject;
+			if(!aiDataNodeAiLabelInfoAiLabelInfoItem["Category"].isNull())
+				aiLabelInfoItemObject.category = aiDataNodeAiLabelInfoAiLabelInfoItem["Category"].asString();
+			if(!aiDataNodeAiLabelInfoAiLabelInfoItem["LabelName"].isNull())
+				aiLabelInfoItemObject.labelName = aiDataNodeAiLabelInfoAiLabelInfoItem["LabelName"].asString();
+			if(!aiDataNodeAiLabelInfoAiLabelInfoItem["LabelId"].isNull())
+				aiLabelInfoItemObject.labelId = aiDataNodeAiLabelInfoAiLabelInfoItem["LabelId"].asString();
+			auto allOccurrencesNode = aiDataNodeAiLabelInfoAiLabelInfoItem["Occurrences"]["OccurrencesItem"];
+			for (auto aiDataNodeAiLabelInfoAiLabelInfoItemOccurrencesOccurrencesItem : allOccurrencesNode)
+			{
+				Media::AiData::AiLabelInfoItem::OccurrencesItem occurrencesObject;
+				if(!aiDataNodeAiLabelInfoAiLabelInfoItemOccurrencesOccurrencesItem["Score"].isNull())
+					occurrencesObject.score = aiDataNodeAiLabelInfoAiLabelInfoItemOccurrencesOccurrencesItem["Score"].asString();
+				if(!aiDataNodeAiLabelInfoAiLabelInfoItemOccurrencesOccurrencesItem["From"].isNull())
+					occurrencesObject.from = aiDataNodeAiLabelInfoAiLabelInfoItemOccurrencesOccurrencesItem["From"].asString();
+				if(!aiDataNodeAiLabelInfoAiLabelInfoItemOccurrencesOccurrencesItem["To"].isNull())
+					occurrencesObject.to = aiDataNodeAiLabelInfoAiLabelInfoItemOccurrencesOccurrencesItem["To"].asString();
+				aiLabelInfoItemObject.occurrences.push_back(occurrencesObject);
+			}
+			mediaListObject.aiData.aiLabelInfo.push_back(aiLabelInfoItemObject);
+		}
+		auto allOcrInfoNode = aiDataNode["OcrInfo"]["OcrInfoItem"];
+		for (auto aiDataNodeOcrInfoOcrInfoItem : allOcrInfoNode)
+		{
+			Media::AiData::OcrInfoItem ocrInfoItemObject;
+			if(!aiDataNodeOcrInfoOcrInfoItem["From"].isNull())
+				ocrInfoItemObject.from = aiDataNodeOcrInfoOcrInfoItem["From"].asString();
+			if(!aiDataNodeOcrInfoOcrInfoItem["To"].isNull())
+				ocrInfoItemObject.to = aiDataNodeOcrInfoOcrInfoItem["To"].asString();
+			if(!aiDataNodeOcrInfoOcrInfoItem["Content"].isNull())
+				ocrInfoItemObject.content = aiDataNodeOcrInfoOcrInfoItem["Content"].asString();
+			mediaListObject.aiData.ocrInfo.push_back(ocrInfoItemObject);
+		}
+		auto aiRoughDataNode = value["AiRoughData"];
+		if(!aiRoughDataNode["SaveType"].isNull())
+			mediaListObject.aiRoughData.saveType = aiRoughDataNode["SaveType"].asString();
+		if(!aiRoughDataNode["Status"].isNull())
+			mediaListObject.aiRoughData.status = aiRoughDataNode["Status"].asString();
+		if(!aiRoughDataNode["AiJobId"].isNull())
+			mediaListObject.aiRoughData.aiJobId = aiRoughDataNode["AiJobId"].asString();
+		if(!aiRoughDataNode["AiCategory"].isNull())
+			mediaListObject.aiRoughData.aiCategory = aiRoughDataNode["AiCategory"].asString();
 		mediaList_.push_back(mediaListObject);
 	}
 	if(!value["Total"].isNull())
