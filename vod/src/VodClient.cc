@@ -4083,6 +4083,42 @@ VodClient::RegisterMediaOutcomeCallable VodClient::registerMediaCallable(const R
 	return task->get_future();
 }
 
+VodClient::RestoreMediaOutcome VodClient::restoreMedia(const RestoreMediaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RestoreMediaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RestoreMediaOutcome(RestoreMediaResult(outcome.result()));
+	else
+		return RestoreMediaOutcome(outcome.error());
+}
+
+void VodClient::restoreMediaAsync(const RestoreMediaRequest& request, const RestoreMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, restoreMedia(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::RestoreMediaOutcomeCallable VodClient::restoreMediaCallable(const RestoreMediaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RestoreMediaOutcome()>>(
+			[this, request]()
+			{
+			return this->restoreMedia(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 VodClient::SearchEditingProjectOutcome VodClient::searchEditingProject(const SearchEditingProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5013,6 +5049,42 @@ VodClient::UpdateImageInfosOutcomeCallable VodClient::updateImageInfosCallable(c
 			[this, request]()
 			{
 			return this->updateImageInfos(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+VodClient::UpdateMediaStorageClassOutcome VodClient::updateMediaStorageClass(const UpdateMediaStorageClassRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateMediaStorageClassOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateMediaStorageClassOutcome(UpdateMediaStorageClassResult(outcome.result()));
+	else
+		return UpdateMediaStorageClassOutcome(outcome.error());
+}
+
+void VodClient::updateMediaStorageClassAsync(const UpdateMediaStorageClassRequest& request, const UpdateMediaStorageClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateMediaStorageClass(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+VodClient::UpdateMediaStorageClassOutcomeCallable VodClient::updateMediaStorageClassCallable(const UpdateMediaStorageClassRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateMediaStorageClassOutcome()>>(
+			[this, request]()
+			{
+			return this->updateMediaStorageClass(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

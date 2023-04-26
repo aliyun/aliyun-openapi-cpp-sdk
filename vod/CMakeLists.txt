@@ -245,6 +245,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/RefreshVodObjectCachesResult.h
 	include/alibabacloud/vod/model/RegisterMediaRequest.h
 	include/alibabacloud/vod/model/RegisterMediaResult.h
+	include/alibabacloud/vod/model/RestoreMediaRequest.h
+	include/alibabacloud/vod/model/RestoreMediaResult.h
 	include/alibabacloud/vod/model/SearchEditingProjectRequest.h
 	include/alibabacloud/vod/model/SearchEditingProjectResult.h
 	include/alibabacloud/vod/model/SearchMediaRequest.h
@@ -297,6 +299,8 @@ set(vod_public_header_model
 	include/alibabacloud/vod/model/UpdateEditingProjectResult.h
 	include/alibabacloud/vod/model/UpdateImageInfosRequest.h
 	include/alibabacloud/vod/model/UpdateImageInfosResult.h
+	include/alibabacloud/vod/model/UpdateMediaStorageClassRequest.h
+	include/alibabacloud/vod/model/UpdateMediaStorageClassResult.h
 	include/alibabacloud/vod/model/UpdateTranscodeTemplateGroupRequest.h
 	include/alibabacloud/vod/model/UpdateTranscodeTemplateGroupResult.h
 	include/alibabacloud/vod/model/UpdateVideoInfoRequest.h
@@ -542,6 +546,8 @@ set(vod_src
 	src/model/RefreshVodObjectCachesResult.cc
 	src/model/RegisterMediaRequest.cc
 	src/model/RegisterMediaResult.cc
+	src/model/RestoreMediaRequest.cc
+	src/model/RestoreMediaResult.cc
 	src/model/SearchEditingProjectRequest.cc
 	src/model/SearchEditingProjectResult.cc
 	src/model/SearchMediaRequest.cc
@@ -594,6 +600,8 @@ set(vod_src
 	src/model/UpdateEditingProjectResult.cc
 	src/model/UpdateImageInfosRequest.cc
 	src/model/UpdateImageInfosResult.cc
+	src/model/UpdateMediaStorageClassRequest.cc
+	src/model/UpdateMediaStorageClassResult.cc
 	src/model/UpdateTranscodeTemplateGroupRequest.cc
 	src/model/UpdateTranscodeTemplateGroupResult.cc
 	src/model/UpdateVideoInfoRequest.cc

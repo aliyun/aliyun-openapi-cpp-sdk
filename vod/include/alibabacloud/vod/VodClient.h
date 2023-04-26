@@ -246,6 +246,8 @@
 #include "model/RefreshVodObjectCachesResult.h"
 #include "model/RegisterMediaRequest.h"
 #include "model/RegisterMediaResult.h"
+#include "model/RestoreMediaRequest.h"
+#include "model/RestoreMediaResult.h"
 #include "model/SearchEditingProjectRequest.h"
 #include "model/SearchEditingProjectResult.h"
 #include "model/SearchMediaRequest.h"
@@ -298,6 +300,8 @@
 #include "model/UpdateEditingProjectResult.h"
 #include "model/UpdateImageInfosRequest.h"
 #include "model/UpdateImageInfosResult.h"
+#include "model/UpdateMediaStorageClassRequest.h"
+#include "model/UpdateMediaStorageClassResult.h"
 #include "model/UpdateTranscodeTemplateGroupRequest.h"
 #include "model/UpdateTranscodeTemplateGroupResult.h"
 #include "model/UpdateVideoInfoRequest.h"
@@ -661,6 +665,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RegisterMediaResult> RegisterMediaOutcome;
 			typedef std::future<RegisterMediaOutcome> RegisterMediaOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::RegisterMediaRequest&, const RegisterMediaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterMediaAsyncHandler;
+			typedef Outcome<Error, Model::RestoreMediaResult> RestoreMediaOutcome;
+			typedef std::future<RestoreMediaOutcome> RestoreMediaOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::RestoreMediaRequest&, const RestoreMediaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestoreMediaAsyncHandler;
 			typedef Outcome<Error, Model::SearchEditingProjectResult> SearchEditingProjectOutcome;
 			typedef std::future<SearchEditingProjectOutcome> SearchEditingProjectOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::SearchEditingProjectRequest&, const SearchEditingProjectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SearchEditingProjectAsyncHandler;
@@ -739,6 +746,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateImageInfosResult> UpdateImageInfosOutcome;
 			typedef std::future<UpdateImageInfosOutcome> UpdateImageInfosOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::UpdateImageInfosRequest&, const UpdateImageInfosOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateImageInfosAsyncHandler;
+			typedef Outcome<Error, Model::UpdateMediaStorageClassResult> UpdateMediaStorageClassOutcome;
+			typedef std::future<UpdateMediaStorageClassOutcome> UpdateMediaStorageClassOutcomeCallable;
+			typedef std::function<void(const VodClient*, const Model::UpdateMediaStorageClassRequest&, const UpdateMediaStorageClassOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateMediaStorageClassAsyncHandler;
 			typedef Outcome<Error, Model::UpdateTranscodeTemplateGroupResult> UpdateTranscodeTemplateGroupOutcome;
 			typedef std::future<UpdateTranscodeTemplateGroupOutcome> UpdateTranscodeTemplateGroupOutcomeCallable;
 			typedef std::function<void(const VodClient*, const Model::UpdateTranscodeTemplateGroupRequest&, const UpdateTranscodeTemplateGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTranscodeTemplateGroupAsyncHandler;
@@ -1107,6 +1117,9 @@ namespace AlibabaCloud
 			RegisterMediaOutcome registerMedia(const Model::RegisterMediaRequest &request)const;
 			void registerMediaAsync(const Model::RegisterMediaRequest& request, const RegisterMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RegisterMediaOutcomeCallable registerMediaCallable(const Model::RegisterMediaRequest& request) const;
+			RestoreMediaOutcome restoreMedia(const Model::RestoreMediaRequest &request)const;
+			void restoreMediaAsync(const Model::RestoreMediaRequest& request, const RestoreMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RestoreMediaOutcomeCallable restoreMediaCallable(const Model::RestoreMediaRequest& request) const;
 			SearchEditingProjectOutcome searchEditingProject(const Model::SearchEditingProjectRequest &request)const;
 			void searchEditingProjectAsync(const Model::SearchEditingProjectRequest& request, const SearchEditingProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SearchEditingProjectOutcomeCallable searchEditingProjectCallable(const Model::SearchEditingProjectRequest& request) const;
@@ -1185,6 +1198,9 @@ namespace AlibabaCloud
 			UpdateImageInfosOutcome updateImageInfos(const Model::UpdateImageInfosRequest &request)const;
 			void updateImageInfosAsync(const Model::UpdateImageInfosRequest& request, const UpdateImageInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateImageInfosOutcomeCallable updateImageInfosCallable(const Model::UpdateImageInfosRequest& request) const;
+			UpdateMediaStorageClassOutcome updateMediaStorageClass(const Model::UpdateMediaStorageClassRequest &request)const;
+			void updateMediaStorageClassAsync(const Model::UpdateMediaStorageClassRequest& request, const UpdateMediaStorageClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateMediaStorageClassOutcomeCallable updateMediaStorageClassCallable(const Model::UpdateMediaStorageClassRequest& request) const;
 			UpdateTranscodeTemplateGroupOutcome updateTranscodeTemplateGroup(const Model::UpdateTranscodeTemplateGroupRequest &request)const;
 			void updateTranscodeTemplateGroupAsync(const Model::UpdateTranscodeTemplateGroupRequest& request, const UpdateTranscodeTemplateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateTranscodeTemplateGroupOutcomeCallable updateTranscodeTemplateGroupCallable(const Model::UpdateTranscodeTemplateGroupRequest& request) const;
