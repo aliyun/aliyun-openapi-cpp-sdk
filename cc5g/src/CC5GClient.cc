@@ -1023,6 +1023,42 @@ CC5GClient::ListBatchOperateCardsTasksOutcomeCallable CC5GClient::listBatchOpera
 	return task->get_future();
 }
 
+CC5GClient::ListCardDayUsagesOutcome CC5GClient::listCardDayUsages(const ListCardDayUsagesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCardDayUsagesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCardDayUsagesOutcome(ListCardDayUsagesResult(outcome.result()));
+	else
+		return ListCardDayUsagesOutcome(outcome.error());
+}
+
+void CC5GClient::listCardDayUsagesAsync(const ListCardDayUsagesRequest& request, const ListCardDayUsagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCardDayUsages(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CC5GClient::ListCardDayUsagesOutcomeCallable CC5GClient::listCardDayUsagesCallable(const ListCardDayUsagesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCardDayUsagesOutcome()>>(
+			[this, request]()
+			{
+			return this->listCardDayUsages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CC5GClient::ListCardUsagesOutcome CC5GClient::listCardUsages(const ListCardUsagesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
