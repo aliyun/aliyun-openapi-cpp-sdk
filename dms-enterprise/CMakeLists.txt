@@ -153,6 +153,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetDataExportDownloadURLResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataExportOrderDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDataExportOrderDetailResult.h
+	include/alibabacloud/dms-enterprise/model/GetDataExportPreCheckDetailRequest.h
+	include/alibabacloud/dms-enterprise/model/GetDataExportPreCheckDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataImportSQLRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDataImportSQLResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataTrackJobDegreeRequest.h
@@ -560,6 +562,8 @@ set(dms-enterprise_src
 	src/model/GetDataExportDownloadURLResult.cc
 	src/model/GetDataExportOrderDetailRequest.cc
 	src/model/GetDataExportOrderDetailResult.cc
+	src/model/GetDataExportPreCheckDetailRequest.cc
+	src/model/GetDataExportPreCheckDetailResult.cc
 	src/model/GetDataImportSQLRequest.cc
 	src/model/GetDataImportSQLResult.cc
 	src/model/GetDataTrackJobDegreeRequest.cc

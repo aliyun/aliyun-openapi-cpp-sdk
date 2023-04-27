@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETOPLOGREQUEST_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETOPLOGREQUEST_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDATAEXPORTPRECHECKDETAILREQUEST_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDATAEXPORTPRECHECKDETAILREQUEST_H_
 
 #include <alibabacloud/dms-enterprise/Dms_enterpriseExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,38 +26,20 @@
 namespace AlibabaCloud {
 namespace Dms_enterprise {
 namespace Model {
-class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetOpLogRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetDataExportPreCheckDetailRequest : public RpcServiceRequest {
 public:
-	GetOpLogRequest();
-	~GetOpLogRequest();
-	std::string getUserNick() const;
-	void setUserNick(const std::string &userNick);
-	std::string getStartTime() const;
-	void setStartTime(const std::string &startTime);
+	GetDataExportPreCheckDetailRequest();
+	~GetDataExportPreCheckDetailRequest();
 	long getTid() const;
 	void setTid(long tid);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	std::string getModule() const;
-	void setModule(const std::string &module);
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
-	std::string getDatabaseName() const;
-	void setDatabaseName(const std::string &databaseName);
+	long getOrderId() const;
+	void setOrderId(long orderId);
 
 private:
-	std::string userNick_;
-	std::string startTime_;
 	long tid_;
-	int pageNumber_;
-	int pageSize_;
-	std::string module_;
-	std::string endTime_;
-	std::string databaseName_;
+	long orderId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETOPLOGREQUEST_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDATAEXPORTPRECHECKDETAILREQUEST_H_

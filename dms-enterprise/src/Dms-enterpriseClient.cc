@@ -2427,6 +2427,42 @@ Dms_enterpriseClient::GetDataExportOrderDetailOutcomeCallable Dms_enterpriseClie
 	return task->get_future();
 }
 
+Dms_enterpriseClient::GetDataExportPreCheckDetailOutcome Dms_enterpriseClient::getDataExportPreCheckDetail(const GetDataExportPreCheckDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataExportPreCheckDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataExportPreCheckDetailOutcome(GetDataExportPreCheckDetailResult(outcome.result()));
+	else
+		return GetDataExportPreCheckDetailOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataExportPreCheckDetailAsync(const GetDataExportPreCheckDetailRequest& request, const GetDataExportPreCheckDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataExportPreCheckDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataExportPreCheckDetailOutcomeCallable Dms_enterpriseClient::getDataExportPreCheckDetailCallable(const GetDataExportPreCheckDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataExportPreCheckDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataExportPreCheckDetail(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::GetDataImportSQLOutcome Dms_enterpriseClient::getDataImportSQL(const GetDataImportSQLRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

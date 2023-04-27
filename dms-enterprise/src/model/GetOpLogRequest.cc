@@ -25,6 +25,15 @@ GetOpLogRequest::GetOpLogRequest()
 
 GetOpLogRequest::~GetOpLogRequest() {}
 
+std::string GetOpLogRequest::getUserNick() const {
+  return userNick_;
+}
+
+void GetOpLogRequest::setUserNick(const std::string &userNick) {
+  userNick_ = userNick;
+  setParameter(std::string("UserNick"), userNick);
+}
+
 std::string GetOpLogRequest::getStartTime() const {
   return startTime_;
 }
@@ -77,5 +86,14 @@ std::string GetOpLogRequest::getEndTime() const {
 void GetOpLogRequest::setEndTime(const std::string &endTime) {
   endTime_ = endTime;
   setParameter(std::string("EndTime"), endTime);
+}
+
+std::string GetOpLogRequest::getDatabaseName() const {
+  return databaseName_;
+}
+
+void GetOpLogRequest::setDatabaseName(const std::string &databaseName) {
+  databaseName_ = databaseName;
+  setParameter(std::string("DatabaseName"), databaseName);
 }
 

@@ -154,6 +154,8 @@
 #include "model/GetDataExportDownloadURLResult.h"
 #include "model/GetDataExportOrderDetailRequest.h"
 #include "model/GetDataExportOrderDetailResult.h"
+#include "model/GetDataExportPreCheckDetailRequest.h"
+#include "model/GetDataExportPreCheckDetailResult.h"
 #include "model/GetDataImportSQLRequest.h"
 #include "model/GetDataImportSQLResult.h"
 #include "model/GetDataTrackJobDegreeRequest.h"
@@ -633,6 +635,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDataExportOrderDetailResult> GetDataExportOrderDetailOutcome;
 			typedef std::future<GetDataExportOrderDetailOutcome> GetDataExportOrderDetailOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataExportOrderDetailRequest&, const GetDataExportOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataExportOrderDetailAsyncHandler;
+			typedef Outcome<Error, Model::GetDataExportPreCheckDetailResult> GetDataExportPreCheckDetailOutcome;
+			typedef std::future<GetDataExportPreCheckDetailOutcome> GetDataExportPreCheckDetailOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataExportPreCheckDetailRequest&, const GetDataExportPreCheckDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataExportPreCheckDetailAsyncHandler;
 			typedef Outcome<Error, Model::GetDataImportSQLResult> GetDataImportSQLOutcome;
 			typedef std::future<GetDataImportSQLOutcome> GetDataImportSQLOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataImportSQLRequest&, const GetDataImportSQLOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataImportSQLAsyncHandler;
@@ -1244,6 +1249,9 @@ namespace AlibabaCloud
 			GetDataExportOrderDetailOutcome getDataExportOrderDetail(const Model::GetDataExportOrderDetailRequest &request)const;
 			void getDataExportOrderDetailAsync(const Model::GetDataExportOrderDetailRequest& request, const GetDataExportOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataExportOrderDetailOutcomeCallable getDataExportOrderDetailCallable(const Model::GetDataExportOrderDetailRequest& request) const;
+			GetDataExportPreCheckDetailOutcome getDataExportPreCheckDetail(const Model::GetDataExportPreCheckDetailRequest &request)const;
+			void getDataExportPreCheckDetailAsync(const Model::GetDataExportPreCheckDetailRequest& request, const GetDataExportPreCheckDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDataExportPreCheckDetailOutcomeCallable getDataExportPreCheckDetailCallable(const Model::GetDataExportPreCheckDetailRequest& request) const;
 			GetDataImportSQLOutcome getDataImportSQL(const Model::GetDataImportSQLRequest &request)const;
 			void getDataImportSQLAsync(const Model::GetDataImportSQLRequest& request, const GetDataImportSQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataImportSQLOutcomeCallable getDataImportSQLCallable(const Model::GetDataImportSQLRequest& request) const;
