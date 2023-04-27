@@ -560,7 +560,14 @@ void QueryFigureClustersResult::parse(const std::string &payload)
 	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stol(value["TotalCount"].asString());
 
+}
+
+long QueryFigureClustersResult::getTotalCount()const
+{
+	return totalCount_;
 }
 
 std::string QueryFigureClustersResult::getNextToken()const

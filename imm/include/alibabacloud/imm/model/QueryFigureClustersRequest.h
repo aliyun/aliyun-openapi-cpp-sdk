@@ -54,6 +54,8 @@ public:
 	void setCreateTimeRange(const CreateTimeRange &createTimeRange);
 	long getMaxResults() const;
 	void setMaxResults(long maxResults);
+	bool getWithTotalCount() const;
+	void setWithTotalCount(bool withTotalCount);
 	UpdateTimeRange getUpdateTimeRange() const;
 	void setUpdateTimeRange(const UpdateTimeRange &updateTimeRange);
 
@@ -66,6 +68,7 @@ private:
 	std::string sort_;
 	CreateTimeRange createTimeRange_;
 	long maxResults_;
+	bool withTotalCount_;
 	UpdateTimeRange updateTimeRange_;
 };
 } // namespace Model

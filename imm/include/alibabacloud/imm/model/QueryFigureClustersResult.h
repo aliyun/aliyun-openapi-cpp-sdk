@@ -339,12 +339,14 @@ namespace AlibabaCloud
 				QueryFigureClustersResult();
 				explicit QueryFigureClustersResult(const std::string &payload);
 				~QueryFigureClustersResult();
+				long getTotalCount()const;
 				std::string getNextToken()const;
 				std::vector<FigureClustersItem> getFigureClusters()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				long totalCount_;
 				std::string nextToken_;
 				std::vector<FigureClustersItem> figureClusters_;
 

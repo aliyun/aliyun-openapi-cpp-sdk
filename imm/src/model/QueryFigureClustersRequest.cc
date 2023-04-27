@@ -98,6 +98,15 @@ void QueryFigureClustersRequest::setMaxResults(long maxResults) {
   setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
+bool QueryFigureClustersRequest::getWithTotalCount() const {
+  return withTotalCount_;
+}
+
+void QueryFigureClustersRequest::setWithTotalCount(bool withTotalCount) {
+  withTotalCount_ = withTotalCount;
+  setParameter(std::string("WithTotalCount"), withTotalCount ? "true" : "false");
+}
+
 QueryFigureClustersRequest::UpdateTimeRange QueryFigureClustersRequest::getUpdateTimeRange() const {
   return updateTimeRange_;
 }
