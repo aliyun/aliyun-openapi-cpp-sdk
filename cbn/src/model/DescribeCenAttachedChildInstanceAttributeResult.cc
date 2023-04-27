@@ -49,6 +49,24 @@ void DescribeCenAttachedChildInstanceAttributeResult::parse(const std::string &p
 			childInstanceRouteTablesObject.routeTableType = valueChildInstanceRouteTablesChildInstanceRouteTable["RouteTableType"].asString();
 		childInstanceRouteTables_.push_back(childInstanceRouteTablesObject);
 	}
+	auto childInstanceAttributesNode = value["ChildInstanceAttributes"];
+	if(!childInstanceAttributesNode["CidrBlock"].isNull())
+		childInstanceAttributes_.cidrBlock = childInstanceAttributesNode["CidrBlock"].asString();
+	if(!childInstanceAttributesNode["Ipv6CidrBlock"].isNull())
+		childInstanceAttributes_.ipv6CidrBlock = childInstanceAttributesNode["Ipv6CidrBlock"].asString();
+	auto allIpv6CidrBlocksNode = childInstanceAttributesNode["Ipv6CidrBlocks"]["ipv6CidrBlock"];
+	for (auto childInstanceAttributesNodeIpv6CidrBlocksipv6CidrBlock : allIpv6CidrBlocksNode)
+	{
+		ChildInstanceAttributes::Ipv6CidrBlock ipv6CidrBlockObject;
+		if(!childInstanceAttributesNodeIpv6CidrBlocksipv6CidrBlock["Ipv6Isp"].isNull())
+			ipv6CidrBlockObject.ipv6Isp = childInstanceAttributesNodeIpv6CidrBlocksipv6CidrBlock["Ipv6Isp"].asString();
+		if(!childInstanceAttributesNodeIpv6CidrBlocksipv6CidrBlock["Ipv6CidrBlock"].isNull())
+			ipv6CidrBlockObject.ipv6CidrBlock = childInstanceAttributesNodeIpv6CidrBlocksipv6CidrBlock["Ipv6CidrBlock"].asString();
+		childInstanceAttributes_.ipv6CidrBlocks.push_back(ipv6CidrBlockObject);
+	}
+		auto allSecondaryCidrBlocks = childInstanceAttributesNode["SecondaryCidrBlocks"]["secondaryCidrBlock"];
+		for (auto value : allSecondaryCidrBlocks)
+			childInstanceAttributes_.secondaryCidrBlocks.push_back(value.asString());
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
 	if(!value["ChildInstanceType"].isNull())
@@ -83,6 +101,11 @@ std::vector<DescribeCenAttachedChildInstanceAttributeResult::ChildInstanceRouteT
 std::string DescribeCenAttachedChildInstanceAttributeResult::getChildInstanceType()const
 {
 	return childInstanceType_;
+}
+
+DescribeCenAttachedChildInstanceAttributeResult::ChildInstanceAttributes DescribeCenAttachedChildInstanceAttributeResult::getChildInstanceAttributes()const
+{
+	return childInstanceAttributes_;
 }
 
 std::string DescribeCenAttachedChildInstanceAttributeResult::getIpv6StatusInCen()const

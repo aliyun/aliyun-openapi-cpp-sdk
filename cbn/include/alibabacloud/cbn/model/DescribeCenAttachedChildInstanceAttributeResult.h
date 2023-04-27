@@ -32,6 +32,18 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_CBN_EXPORT DescribeCenAttachedChildInstanceAttributeResult : public ServiceResult
 			{
 			public:
+				struct ChildInstanceAttributes
+				{
+					struct Ipv6CidrBlock
+					{
+						std::string ipv6Isp;
+						std::string ipv6CidrBlock;
+					};
+					std::vector<std::string> secondaryCidrBlocks;
+					std::string cidrBlock;
+					std::vector<Ipv6CidrBlock> ipv6CidrBlocks;
+					std::string ipv6CidrBlock;
+				};
 				struct ChildInstanceRouteTable
 				{
 					std::string routeTableId;
@@ -45,6 +57,7 @@ namespace AlibabaCloud
 				std::string getStatus()const;
 				std::vector<ChildInstanceRouteTable> getChildInstanceRouteTables()const;
 				std::string getChildInstanceType()const;
+				ChildInstanceAttributes getChildInstanceAttributes()const;
 				std::string getIpv6StatusInCen()const;
 				std::string getCenId()const;
 				std::string getChildInstanceAttachTime()const;
@@ -59,6 +72,7 @@ namespace AlibabaCloud
 				std::string status_;
 				std::vector<ChildInstanceRouteTable> childInstanceRouteTables_;
 				std::string childInstanceType_;
+				ChildInstanceAttributes childInstanceAttributes_;
 				std::string ipv6StatusInCen_;
 				std::string cenId_;
 				std::string childInstanceAttachTime_;
