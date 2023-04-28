@@ -34,6 +34,15 @@ void DescribePhoneNumberOnlineTimeRequest::setResourceOwnerId(long resourceOwner
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribePhoneNumberOnlineTimeRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void DescribePhoneNumberOnlineTimeRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
 std::string DescribePhoneNumberOnlineTimeRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

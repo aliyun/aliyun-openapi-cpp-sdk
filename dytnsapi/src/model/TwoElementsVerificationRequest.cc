@@ -34,6 +34,15 @@ void TwoElementsVerificationRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string TwoElementsVerificationRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void TwoElementsVerificationRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
 std::string TwoElementsVerificationRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

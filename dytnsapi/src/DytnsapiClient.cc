@@ -87,42 +87,6 @@ DytnsapiClient::DescribeEmptyNumberOutcomeCallable DytnsapiClient::describeEmpty
 	return task->get_future();
 }
 
-DytnsapiClient::DescribeEmptyNumberDetectOutcome DytnsapiClient::describeEmptyNumberDetect(const DescribeEmptyNumberDetectRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeEmptyNumberDetectOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeEmptyNumberDetectOutcome(DescribeEmptyNumberDetectResult(outcome.result()));
-	else
-		return DescribeEmptyNumberDetectOutcome(outcome.error());
-}
-
-void DytnsapiClient::describeEmptyNumberDetectAsync(const DescribeEmptyNumberDetectRequest& request, const DescribeEmptyNumberDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeEmptyNumberDetect(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DytnsapiClient::DescribeEmptyNumberDetectOutcomeCallable DytnsapiClient::describeEmptyNumberDetectCallable(const DescribeEmptyNumberDetectRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeEmptyNumberDetectOutcome()>>(
-			[this, request]()
-			{
-			return this->describeEmptyNumberDetect(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 DytnsapiClient::DescribePhoneNumberAnalysisOutcome DytnsapiClient::describePhoneNumberAnalysis(const DescribePhoneNumberAnalysisRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -153,42 +117,6 @@ DytnsapiClient::DescribePhoneNumberAnalysisOutcomeCallable DytnsapiClient::descr
 			[this, request]()
 			{
 			return this->describePhoneNumberAnalysis(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DytnsapiClient::DescribePhoneNumberAttributeOutcome DytnsapiClient::describePhoneNumberAttribute(const DescribePhoneNumberAttributeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribePhoneNumberAttributeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribePhoneNumberAttributeOutcome(DescribePhoneNumberAttributeResult(outcome.result()));
-	else
-		return DescribePhoneNumberAttributeOutcome(outcome.error());
-}
-
-void DytnsapiClient::describePhoneNumberAttributeAsync(const DescribePhoneNumberAttributeRequest& request, const DescribePhoneNumberAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describePhoneNumberAttribute(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DytnsapiClient::DescribePhoneNumberAttributeOutcomeCallable DytnsapiClient::describePhoneNumberAttributeCallable(const DescribePhoneNumberAttributeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribePhoneNumberAttributeOutcome()>>(
-			[this, request]()
-			{
-			return this->describePhoneNumberAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -261,78 +189,6 @@ DytnsapiClient::DescribePhoneNumberOperatorAttributeOutcomeCallable DytnsapiClie
 			[this, request]()
 			{
 			return this->describePhoneNumberOperatorAttribute(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DytnsapiClient::DescribePhoneNumberResaleOutcome DytnsapiClient::describePhoneNumberResale(const DescribePhoneNumberResaleRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribePhoneNumberResaleOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribePhoneNumberResaleOutcome(DescribePhoneNumberResaleResult(outcome.result()));
-	else
-		return DescribePhoneNumberResaleOutcome(outcome.error());
-}
-
-void DytnsapiClient::describePhoneNumberResaleAsync(const DescribePhoneNumberResaleRequest& request, const DescribePhoneNumberResaleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describePhoneNumberResale(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DytnsapiClient::DescribePhoneNumberResaleOutcomeCallable DytnsapiClient::describePhoneNumberResaleCallable(const DescribePhoneNumberResaleRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribePhoneNumberResaleOutcome()>>(
-			[this, request]()
-			{
-			return this->describePhoneNumberResale(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-DytnsapiClient::DescribePhoneNumberStatusOutcome DytnsapiClient::describePhoneNumberStatus(const DescribePhoneNumberStatusRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribePhoneNumberStatusOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribePhoneNumberStatusOutcome(DescribePhoneNumberStatusResult(outcome.result()));
-	else
-		return DescribePhoneNumberStatusOutcome(outcome.error());
-}
-
-void DytnsapiClient::describePhoneNumberStatusAsync(const DescribePhoneNumberStatusRequest& request, const DescribePhoneNumberStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describePhoneNumberStatus(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-DytnsapiClient::DescribePhoneNumberStatusOutcomeCallable DytnsapiClient::describePhoneNumberStatusCallable(const DescribePhoneNumberStatusRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribePhoneNumberStatusOutcome()>>(
-			[this, request]()
-			{
-			return this->describePhoneNumberStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

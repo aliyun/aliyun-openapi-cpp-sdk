@@ -32,6 +32,8 @@ public:
 	~DescribeEmptyNumberRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getExtendFunction() const;
+	void setExtendFunction(const std::string &extendFunction);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getRouteName() const;
@@ -49,6 +51,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string extendFunction_;
 	std::string accessKeyId_;
 	std::string routeName_;
 	std::string mask_;

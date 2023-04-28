@@ -34,6 +34,15 @@ void PhoneNumberStatusForAccountRequest::setResourceOwnerId(long resourceOwnerId
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string PhoneNumberStatusForAccountRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void PhoneNumberStatusForAccountRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
 std::string PhoneNumberStatusForAccountRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -41,6 +50,15 @@ std::string PhoneNumberStatusForAccountRequest::getAccessKeyId() const {
 void PhoneNumberStatusForAccountRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string PhoneNumberStatusForAccountRequest::getRouteName() const {
+  return routeName_;
+}
+
+void PhoneNumberStatusForAccountRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
 }
 
 std::string PhoneNumberStatusForAccountRequest::getMask() const {

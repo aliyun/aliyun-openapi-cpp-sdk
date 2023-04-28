@@ -23,20 +23,12 @@ set(dytnsapi_public_header
 set(dytnsapi_public_header_model 
 	include/alibabacloud/dytnsapi/model/DescribeEmptyNumberRequest.h
 	include/alibabacloud/dytnsapi/model/DescribeEmptyNumberResult.h
-	include/alibabacloud/dytnsapi/model/DescribeEmptyNumberDetectRequest.h
-	include/alibabacloud/dytnsapi/model/DescribeEmptyNumberDetectResult.h
 	include/alibabacloud/dytnsapi/model/DescribePhoneNumberAnalysisRequest.h
 	include/alibabacloud/dytnsapi/model/DescribePhoneNumberAnalysisResult.h
-	include/alibabacloud/dytnsapi/model/DescribePhoneNumberAttributeRequest.h
-	include/alibabacloud/dytnsapi/model/DescribePhoneNumberAttributeResult.h
 	include/alibabacloud/dytnsapi/model/DescribePhoneNumberOnlineTimeRequest.h
 	include/alibabacloud/dytnsapi/model/DescribePhoneNumberOnlineTimeResult.h
 	include/alibabacloud/dytnsapi/model/DescribePhoneNumberOperatorAttributeRequest.h
 	include/alibabacloud/dytnsapi/model/DescribePhoneNumberOperatorAttributeResult.h
-	include/alibabacloud/dytnsapi/model/DescribePhoneNumberResaleRequest.h
-	include/alibabacloud/dytnsapi/model/DescribePhoneNumberResaleResult.h
-	include/alibabacloud/dytnsapi/model/DescribePhoneNumberStatusRequest.h
-	include/alibabacloud/dytnsapi/model/DescribePhoneNumberStatusResult.h
 	include/alibabacloud/dytnsapi/model/DescribePhoneTwiceTelVerifyRequest.h
 	include/alibabacloud/dytnsapi/model/DescribePhoneTwiceTelVerifyResult.h
 	include/alibabacloud/dytnsapi/model/InvalidPhoneNumberFilterRequest.h
@@ -64,20 +56,12 @@ set(dytnsapi_src
 	src/DytnsapiClient.cc
 	src/model/DescribeEmptyNumberRequest.cc
 	src/model/DescribeEmptyNumberResult.cc
-	src/model/DescribeEmptyNumberDetectRequest.cc
-	src/model/DescribeEmptyNumberDetectResult.cc
 	src/model/DescribePhoneNumberAnalysisRequest.cc
 	src/model/DescribePhoneNumberAnalysisResult.cc
-	src/model/DescribePhoneNumberAttributeRequest.cc
-	src/model/DescribePhoneNumberAttributeResult.cc
 	src/model/DescribePhoneNumberOnlineTimeRequest.cc
 	src/model/DescribePhoneNumberOnlineTimeResult.cc
 	src/model/DescribePhoneNumberOperatorAttributeRequest.cc
 	src/model/DescribePhoneNumberOperatorAttributeResult.cc
-	src/model/DescribePhoneNumberResaleRequest.cc
-	src/model/DescribePhoneNumberResaleResult.cc
-	src/model/DescribePhoneNumberStatusRequest.cc
-	src/model/DescribePhoneNumberStatusResult.cc
 	src/model/DescribePhoneTwiceTelVerifyRequest.cc
 	src/model/DescribePhoneTwiceTelVerifyResult.cc
 	src/model/InvalidPhoneNumberFilterRequest.cc

@@ -34,6 +34,15 @@ void DescribeEmptyNumberRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeEmptyNumberRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void DescribeEmptyNumberRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
 std::string DescribeEmptyNumberRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

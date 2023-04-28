@@ -24,20 +24,12 @@
 #include "DytnsapiExport.h"
 #include "model/DescribeEmptyNumberRequest.h"
 #include "model/DescribeEmptyNumberResult.h"
-#include "model/DescribeEmptyNumberDetectRequest.h"
-#include "model/DescribeEmptyNumberDetectResult.h"
 #include "model/DescribePhoneNumberAnalysisRequest.h"
 #include "model/DescribePhoneNumberAnalysisResult.h"
-#include "model/DescribePhoneNumberAttributeRequest.h"
-#include "model/DescribePhoneNumberAttributeResult.h"
 #include "model/DescribePhoneNumberOnlineTimeRequest.h"
 #include "model/DescribePhoneNumberOnlineTimeResult.h"
 #include "model/DescribePhoneNumberOperatorAttributeRequest.h"
 #include "model/DescribePhoneNumberOperatorAttributeResult.h"
-#include "model/DescribePhoneNumberResaleRequest.h"
-#include "model/DescribePhoneNumberResaleResult.h"
-#include "model/DescribePhoneNumberStatusRequest.h"
-#include "model/DescribePhoneNumberStatusResult.h"
 #include "model/DescribePhoneTwiceTelVerifyRequest.h"
 #include "model/DescribePhoneTwiceTelVerifyResult.h"
 #include "model/InvalidPhoneNumberFilterRequest.h"
@@ -72,27 +64,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeEmptyNumberResult> DescribeEmptyNumberOutcome;
 			typedef std::future<DescribeEmptyNumberOutcome> DescribeEmptyNumberOutcomeCallable;
 			typedef std::function<void(const DytnsapiClient*, const Model::DescribeEmptyNumberRequest&, const DescribeEmptyNumberOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmptyNumberAsyncHandler;
-			typedef Outcome<Error, Model::DescribeEmptyNumberDetectResult> DescribeEmptyNumberDetectOutcome;
-			typedef std::future<DescribeEmptyNumberDetectOutcome> DescribeEmptyNumberDetectOutcomeCallable;
-			typedef std::function<void(const DytnsapiClient*, const Model::DescribeEmptyNumberDetectRequest&, const DescribeEmptyNumberDetectOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmptyNumberDetectAsyncHandler;
 			typedef Outcome<Error, Model::DescribePhoneNumberAnalysisResult> DescribePhoneNumberAnalysisOutcome;
 			typedef std::future<DescribePhoneNumberAnalysisOutcome> DescribePhoneNumberAnalysisOutcomeCallable;
 			typedef std::function<void(const DytnsapiClient*, const Model::DescribePhoneNumberAnalysisRequest&, const DescribePhoneNumberAnalysisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneNumberAnalysisAsyncHandler;
-			typedef Outcome<Error, Model::DescribePhoneNumberAttributeResult> DescribePhoneNumberAttributeOutcome;
-			typedef std::future<DescribePhoneNumberAttributeOutcome> DescribePhoneNumberAttributeOutcomeCallable;
-			typedef std::function<void(const DytnsapiClient*, const Model::DescribePhoneNumberAttributeRequest&, const DescribePhoneNumberAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneNumberAttributeAsyncHandler;
 			typedef Outcome<Error, Model::DescribePhoneNumberOnlineTimeResult> DescribePhoneNumberOnlineTimeOutcome;
 			typedef std::future<DescribePhoneNumberOnlineTimeOutcome> DescribePhoneNumberOnlineTimeOutcomeCallable;
 			typedef std::function<void(const DytnsapiClient*, const Model::DescribePhoneNumberOnlineTimeRequest&, const DescribePhoneNumberOnlineTimeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneNumberOnlineTimeAsyncHandler;
 			typedef Outcome<Error, Model::DescribePhoneNumberOperatorAttributeResult> DescribePhoneNumberOperatorAttributeOutcome;
 			typedef std::future<DescribePhoneNumberOperatorAttributeOutcome> DescribePhoneNumberOperatorAttributeOutcomeCallable;
 			typedef std::function<void(const DytnsapiClient*, const Model::DescribePhoneNumberOperatorAttributeRequest&, const DescribePhoneNumberOperatorAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneNumberOperatorAttributeAsyncHandler;
-			typedef Outcome<Error, Model::DescribePhoneNumberResaleResult> DescribePhoneNumberResaleOutcome;
-			typedef std::future<DescribePhoneNumberResaleOutcome> DescribePhoneNumberResaleOutcomeCallable;
-			typedef std::function<void(const DytnsapiClient*, const Model::DescribePhoneNumberResaleRequest&, const DescribePhoneNumberResaleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneNumberResaleAsyncHandler;
-			typedef Outcome<Error, Model::DescribePhoneNumberStatusResult> DescribePhoneNumberStatusOutcome;
-			typedef std::future<DescribePhoneNumberStatusOutcome> DescribePhoneNumberStatusOutcomeCallable;
-			typedef std::function<void(const DytnsapiClient*, const Model::DescribePhoneNumberStatusRequest&, const DescribePhoneNumberStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneNumberStatusAsyncHandler;
 			typedef Outcome<Error, Model::DescribePhoneTwiceTelVerifyResult> DescribePhoneTwiceTelVerifyOutcome;
 			typedef std::future<DescribePhoneTwiceTelVerifyOutcome> DescribePhoneTwiceTelVerifyOutcomeCallable;
 			typedef std::function<void(const DytnsapiClient*, const Model::DescribePhoneTwiceTelVerifyRequest&, const DescribePhoneTwiceTelVerifyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePhoneTwiceTelVerifyAsyncHandler;
@@ -134,27 +114,15 @@ namespace AlibabaCloud
 			DescribeEmptyNumberOutcome describeEmptyNumber(const Model::DescribeEmptyNumberRequest &request)const;
 			void describeEmptyNumberAsync(const Model::DescribeEmptyNumberRequest& request, const DescribeEmptyNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeEmptyNumberOutcomeCallable describeEmptyNumberCallable(const Model::DescribeEmptyNumberRequest& request) const;
-			DescribeEmptyNumberDetectOutcome describeEmptyNumberDetect(const Model::DescribeEmptyNumberDetectRequest &request)const;
-			void describeEmptyNumberDetectAsync(const Model::DescribeEmptyNumberDetectRequest& request, const DescribeEmptyNumberDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeEmptyNumberDetectOutcomeCallable describeEmptyNumberDetectCallable(const Model::DescribeEmptyNumberDetectRequest& request) const;
 			DescribePhoneNumberAnalysisOutcome describePhoneNumberAnalysis(const Model::DescribePhoneNumberAnalysisRequest &request)const;
 			void describePhoneNumberAnalysisAsync(const Model::DescribePhoneNumberAnalysisRequest& request, const DescribePhoneNumberAnalysisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePhoneNumberAnalysisOutcomeCallable describePhoneNumberAnalysisCallable(const Model::DescribePhoneNumberAnalysisRequest& request) const;
-			DescribePhoneNumberAttributeOutcome describePhoneNumberAttribute(const Model::DescribePhoneNumberAttributeRequest &request)const;
-			void describePhoneNumberAttributeAsync(const Model::DescribePhoneNumberAttributeRequest& request, const DescribePhoneNumberAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribePhoneNumberAttributeOutcomeCallable describePhoneNumberAttributeCallable(const Model::DescribePhoneNumberAttributeRequest& request) const;
 			DescribePhoneNumberOnlineTimeOutcome describePhoneNumberOnlineTime(const Model::DescribePhoneNumberOnlineTimeRequest &request)const;
 			void describePhoneNumberOnlineTimeAsync(const Model::DescribePhoneNumberOnlineTimeRequest& request, const DescribePhoneNumberOnlineTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePhoneNumberOnlineTimeOutcomeCallable describePhoneNumberOnlineTimeCallable(const Model::DescribePhoneNumberOnlineTimeRequest& request) const;
 			DescribePhoneNumberOperatorAttributeOutcome describePhoneNumberOperatorAttribute(const Model::DescribePhoneNumberOperatorAttributeRequest &request)const;
 			void describePhoneNumberOperatorAttributeAsync(const Model::DescribePhoneNumberOperatorAttributeRequest& request, const DescribePhoneNumberOperatorAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePhoneNumberOperatorAttributeOutcomeCallable describePhoneNumberOperatorAttributeCallable(const Model::DescribePhoneNumberOperatorAttributeRequest& request) const;
-			DescribePhoneNumberResaleOutcome describePhoneNumberResale(const Model::DescribePhoneNumberResaleRequest &request)const;
-			void describePhoneNumberResaleAsync(const Model::DescribePhoneNumberResaleRequest& request, const DescribePhoneNumberResaleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribePhoneNumberResaleOutcomeCallable describePhoneNumberResaleCallable(const Model::DescribePhoneNumberResaleRequest& request) const;
-			DescribePhoneNumberStatusOutcome describePhoneNumberStatus(const Model::DescribePhoneNumberStatusRequest &request)const;
-			void describePhoneNumberStatusAsync(const Model::DescribePhoneNumberStatusRequest& request, const DescribePhoneNumberStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribePhoneNumberStatusOutcomeCallable describePhoneNumberStatusCallable(const Model::DescribePhoneNumberStatusRequest& request) const;
 			DescribePhoneTwiceTelVerifyOutcome describePhoneTwiceTelVerify(const Model::DescribePhoneTwiceTelVerifyRequest &request)const;
 			void describePhoneTwiceTelVerifyAsync(const Model::DescribePhoneTwiceTelVerifyRequest& request, const DescribePhoneTwiceTelVerifyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePhoneTwiceTelVerifyOutcomeCallable describePhoneTwiceTelVerifyCallable(const Model::DescribePhoneTwiceTelVerifyRequest& request) const;

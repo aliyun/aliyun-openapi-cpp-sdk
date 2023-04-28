@@ -43,6 +43,15 @@ void DescribePhoneTwiceTelVerifyRequest::setStartTime(const std::string &startTi
   setParameter(std::string("StartTime"), startTime);
 }
 
+std::string DescribePhoneTwiceTelVerifyRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void DescribePhoneTwiceTelVerifyRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
 std::string DescribePhoneTwiceTelVerifyRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

@@ -34,6 +34,15 @@ void PhoneNumberStatusForVirtualRequest::setResourceOwnerId(long resourceOwnerId
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string PhoneNumberStatusForVirtualRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void PhoneNumberStatusForVirtualRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
 std::string PhoneNumberStatusForVirtualRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -41,6 +50,15 @@ std::string PhoneNumberStatusForVirtualRequest::getAccessKeyId() const {
 void PhoneNumberStatusForVirtualRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string PhoneNumberStatusForVirtualRequest::getRouteName() const {
+  return routeName_;
+}
+
+void PhoneNumberStatusForVirtualRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
 }
 
 std::string PhoneNumberStatusForVirtualRequest::getMask() const {

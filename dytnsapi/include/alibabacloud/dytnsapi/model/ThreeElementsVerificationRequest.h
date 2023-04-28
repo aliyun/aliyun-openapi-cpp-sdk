@@ -32,6 +32,8 @@ public:
 	~ThreeElementsVerificationRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getExtendFunction() const;
+	void setExtendFunction(const std::string &extendFunction);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getCertCode() const;
@@ -57,6 +59,7 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string extendFunction_;
 	std::string accessKeyId_;
 	std::string certCode_;
 	std::string routeName_;

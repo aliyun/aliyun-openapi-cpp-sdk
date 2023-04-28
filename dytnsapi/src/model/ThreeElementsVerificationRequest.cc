@@ -34,6 +34,15 @@ void ThreeElementsVerificationRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string ThreeElementsVerificationRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void ThreeElementsVerificationRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
 std::string ThreeElementsVerificationRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
