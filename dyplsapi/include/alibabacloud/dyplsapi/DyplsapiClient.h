@@ -34,6 +34,8 @@
 #include "model/BindAxnResult.h"
 #include "model/BindAxnExtensionRequest.h"
 #include "model/BindAxnExtensionResult.h"
+#include "model/BindBatchAxgRequest.h"
+#include "model/BindBatchAxgResult.h"
 #include "model/BuySecretNoRequest.h"
 #include "model/BuySecretNoResult.h"
 #include "model/CancelPickUpWaybillRequest.h"
@@ -44,6 +46,8 @@
 #include "model/CreatePickUpWaybillResult.h"
 #include "model/CreatePickUpWaybillPreQueryRequest.h"
 #include "model/CreatePickUpWaybillPreQueryResult.h"
+#include "model/DeleteAxgGroupRequest.h"
+#include "model/DeleteAxgGroupResult.h"
 #include "model/DeleteSecretBlacklistRequest.h"
 #include "model/DeleteSecretBlacklistResult.h"
 #include "model/GetSecretAsrDetailRequest.h"
@@ -103,6 +107,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::BindAxnExtensionResult> BindAxnExtensionOutcome;
 			typedef std::future<BindAxnExtensionOutcome> BindAxnExtensionOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::BindAxnExtensionRequest&, const BindAxnExtensionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindAxnExtensionAsyncHandler;
+			typedef Outcome<Error, Model::BindBatchAxgResult> BindBatchAxgOutcome;
+			typedef std::future<BindBatchAxgOutcome> BindBatchAxgOutcomeCallable;
+			typedef std::function<void(const DyplsapiClient*, const Model::BindBatchAxgRequest&, const BindBatchAxgOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BindBatchAxgAsyncHandler;
 			typedef Outcome<Error, Model::BuySecretNoResult> BuySecretNoOutcome;
 			typedef std::future<BuySecretNoOutcome> BuySecretNoOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::BuySecretNoRequest&, const BuySecretNoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> BuySecretNoAsyncHandler;
@@ -118,6 +125,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreatePickUpWaybillPreQueryResult> CreatePickUpWaybillPreQueryOutcome;
 			typedef std::future<CreatePickUpWaybillPreQueryOutcome> CreatePickUpWaybillPreQueryOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::CreatePickUpWaybillPreQueryRequest&, const CreatePickUpWaybillPreQueryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreatePickUpWaybillPreQueryAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAxgGroupResult> DeleteAxgGroupOutcome;
+			typedef std::future<DeleteAxgGroupOutcome> DeleteAxgGroupOutcomeCallable;
+			typedef std::function<void(const DyplsapiClient*, const Model::DeleteAxgGroupRequest&, const DeleteAxgGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAxgGroupAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSecretBlacklistResult> DeleteSecretBlacklistOutcome;
 			typedef std::future<DeleteSecretBlacklistOutcome> DeleteSecretBlacklistOutcomeCallable;
 			typedef std::function<void(const DyplsapiClient*, const Model::DeleteSecretBlacklistRequest&, const DeleteSecretBlacklistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecretBlacklistAsyncHandler;
@@ -189,6 +199,9 @@ namespace AlibabaCloud
 			BindAxnExtensionOutcome bindAxnExtension(const Model::BindAxnExtensionRequest &request)const;
 			void bindAxnExtensionAsync(const Model::BindAxnExtensionRequest& request, const BindAxnExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BindAxnExtensionOutcomeCallable bindAxnExtensionCallable(const Model::BindAxnExtensionRequest& request) const;
+			BindBatchAxgOutcome bindBatchAxg(const Model::BindBatchAxgRequest &request)const;
+			void bindBatchAxgAsync(const Model::BindBatchAxgRequest& request, const BindBatchAxgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			BindBatchAxgOutcomeCallable bindBatchAxgCallable(const Model::BindBatchAxgRequest& request) const;
 			BuySecretNoOutcome buySecretNo(const Model::BuySecretNoRequest &request)const;
 			void buySecretNoAsync(const Model::BuySecretNoRequest& request, const BuySecretNoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			BuySecretNoOutcomeCallable buySecretNoCallable(const Model::BuySecretNoRequest& request) const;
@@ -204,6 +217,9 @@ namespace AlibabaCloud
 			CreatePickUpWaybillPreQueryOutcome createPickUpWaybillPreQuery(const Model::CreatePickUpWaybillPreQueryRequest &request)const;
 			void createPickUpWaybillPreQueryAsync(const Model::CreatePickUpWaybillPreQueryRequest& request, const CreatePickUpWaybillPreQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreatePickUpWaybillPreQueryOutcomeCallable createPickUpWaybillPreQueryCallable(const Model::CreatePickUpWaybillPreQueryRequest& request) const;
+			DeleteAxgGroupOutcome deleteAxgGroup(const Model::DeleteAxgGroupRequest &request)const;
+			void deleteAxgGroupAsync(const Model::DeleteAxgGroupRequest& request, const DeleteAxgGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAxgGroupOutcomeCallable deleteAxgGroupCallable(const Model::DeleteAxgGroupRequest& request) const;
 			DeleteSecretBlacklistOutcome deleteSecretBlacklist(const Model::DeleteSecretBlacklistRequest &request)const;
 			void deleteSecretBlacklistAsync(const Model::DeleteSecretBlacklistRequest& request, const DeleteSecretBlacklistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSecretBlacklistOutcomeCallable deleteSecretBlacklistCallable(const Model::DeleteSecretBlacklistRequest& request) const;

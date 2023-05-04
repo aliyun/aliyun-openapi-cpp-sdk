@@ -34,6 +34,24 @@ void UnlockSecretNoRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string UnlockSecretNoRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void UnlockSecretNoRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string UnlockSecretNoRequest::getSecretNo() const {
+  return secretNo_;
+}
+
+void UnlockSecretNoRequest::setSecretNo(const std::string &secretNo) {
+  secretNo_ = secretNo;
+  setParameter(std::string("SecretNo"), secretNo);
+}
+
 std::string UnlockSecretNoRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -52,15 +70,6 @@ void UnlockSecretNoRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string UnlockSecretNoRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void UnlockSecretNoRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string UnlockSecretNoRequest::getPoolKey() const {
   return poolKey_;
 }
@@ -68,14 +77,5 @@ std::string UnlockSecretNoRequest::getPoolKey() const {
 void UnlockSecretNoRequest::setPoolKey(const std::string &poolKey) {
   poolKey_ = poolKey;
   setParameter(std::string("PoolKey"), poolKey);
-}
-
-std::string UnlockSecretNoRequest::getSecretNo() const {
-  return secretNo_;
-}
-
-void UnlockSecretNoRequest::setSecretNo(const std::string &secretNo) {
-  secretNo_ = secretNo;
-  setParameter(std::string("SecretNo"), secretNo);
 }
 

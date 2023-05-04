@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYPLSAPI_MODEL_UNLOCKSECRETNOREQUEST_H_
-#define ALIBABACLOUD_DYPLSAPI_MODEL_UNLOCKSECRETNOREQUEST_H_
+#ifndef ALIBABACLOUD_DYPLSAPI_MODEL_DELETEAXGGROUPREQUEST_H_
+#define ALIBABACLOUD_DYPLSAPI_MODEL_DELETEAXGGROUPREQUEST_H_
 
 #include <alibabacloud/dyplsapi/DyplsapiExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,18 +26,18 @@
 namespace AlibabaCloud {
 namespace Dyplsapi {
 namespace Model {
-class ALIBABACLOUD_DYPLSAPI_EXPORT UnlockSecretNoRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DYPLSAPI_EXPORT DeleteAxgGroupRequest : public RpcServiceRequest {
 public:
-	UnlockSecretNoRequest();
-	~UnlockSecretNoRequest();
+	DeleteAxgGroupRequest();
+	~DeleteAxgGroupRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSecretNo() const;
-	void setSecretNo(const std::string &secretNo);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	long getGroupId() const;
+	void setGroupId(long groupId);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getPoolKey() const;
@@ -46,12 +46,12 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
-	std::string secretNo_;
 	std::string resourceOwnerAccount_;
+	long groupId_;
 	long ownerId_;
 	std::string poolKey_;
 };
 } // namespace Model
 } // namespace Dyplsapi
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DYPLSAPI_MODEL_UNLOCKSECRETNOREQUEST_H_
+#endif // !ALIBABACLOUD_DYPLSAPI_MODEL_DELETEAXGGROUPREQUEST_H_

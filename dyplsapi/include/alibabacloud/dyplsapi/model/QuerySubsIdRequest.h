@@ -32,24 +32,24 @@ public:
 	~QuerySubsIdRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getAccessKeyId() const;
+	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getPhoneNoX() const;
+	void setPhoneNoX(const std::string &phoneNoX);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	std::string getAccessKeyId() const;
-	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getPoolKey() const;
 	void setPoolKey(const std::string &poolKey);
-	std::string getPhoneNoX() const;
-	void setPhoneNoX(const std::string &phoneNoX);
 
 private:
 	long resourceOwnerId_;
+	std::string accessKeyId_;
+	std::string phoneNoX_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
-	std::string accessKeyId_;
 	std::string poolKey_;
-	std::string phoneNoX_;
 };
 } // namespace Model
 } // namespace Dyplsapi

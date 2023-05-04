@@ -267,6 +267,42 @@ DyplsapiClient::BindAxnExtensionOutcomeCallable DyplsapiClient::bindAxnExtension
 	return task->get_future();
 }
 
+DyplsapiClient::BindBatchAxgOutcome DyplsapiClient::bindBatchAxg(const BindBatchAxgRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return BindBatchAxgOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return BindBatchAxgOutcome(BindBatchAxgResult(outcome.result()));
+	else
+		return BindBatchAxgOutcome(outcome.error());
+}
+
+void DyplsapiClient::bindBatchAxgAsync(const BindBatchAxgRequest& request, const BindBatchAxgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, bindBatchAxg(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::BindBatchAxgOutcomeCallable DyplsapiClient::bindBatchAxgCallable(const BindBatchAxgRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<BindBatchAxgOutcome()>>(
+			[this, request]()
+			{
+			return this->bindBatchAxg(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 DyplsapiClient::BuySecretNoOutcome DyplsapiClient::buySecretNo(const BuySecretNoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -441,6 +477,42 @@ DyplsapiClient::CreatePickUpWaybillPreQueryOutcomeCallable DyplsapiClient::creat
 			[this, request]()
 			{
 			return this->createPickUpWaybillPreQuery(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+DyplsapiClient::DeleteAxgGroupOutcome DyplsapiClient::deleteAxgGroup(const DeleteAxgGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAxgGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAxgGroupOutcome(DeleteAxgGroupResult(outcome.result()));
+	else
+		return DeleteAxgGroupOutcome(outcome.error());
+}
+
+void DyplsapiClient::deleteAxgGroupAsync(const DeleteAxgGroupRequest& request, const DeleteAxgGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAxgGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+DyplsapiClient::DeleteAxgGroupOutcomeCallable DyplsapiClient::deleteAxgGroupCallable(const DeleteAxgGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAxgGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAxgGroup(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

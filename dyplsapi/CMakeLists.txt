@@ -33,6 +33,8 @@ set(dyplsapi_public_header_model
 	include/alibabacloud/dyplsapi/model/BindAxnResult.h
 	include/alibabacloud/dyplsapi/model/BindAxnExtensionRequest.h
 	include/alibabacloud/dyplsapi/model/BindAxnExtensionResult.h
+	include/alibabacloud/dyplsapi/model/BindBatchAxgRequest.h
+	include/alibabacloud/dyplsapi/model/BindBatchAxgResult.h
 	include/alibabacloud/dyplsapi/model/BuySecretNoRequest.h
 	include/alibabacloud/dyplsapi/model/BuySecretNoResult.h
 	include/alibabacloud/dyplsapi/model/CancelPickUpWaybillRequest.h
@@ -43,6 +45,8 @@ set(dyplsapi_public_header_model
 	include/alibabacloud/dyplsapi/model/CreatePickUpWaybillResult.h
 	include/alibabacloud/dyplsapi/model/CreatePickUpWaybillPreQueryRequest.h
 	include/alibabacloud/dyplsapi/model/CreatePickUpWaybillPreQueryResult.h
+	include/alibabacloud/dyplsapi/model/DeleteAxgGroupRequest.h
+	include/alibabacloud/dyplsapi/model/DeleteAxgGroupResult.h
 	include/alibabacloud/dyplsapi/model/DeleteSecretBlacklistRequest.h
 	include/alibabacloud/dyplsapi/model/DeleteSecretBlacklistResult.h
 	include/alibabacloud/dyplsapi/model/GetSecretAsrDetailRequest.h
@@ -90,6 +94,8 @@ set(dyplsapi_src
 	src/model/BindAxnResult.cc
 	src/model/BindAxnExtensionRequest.cc
 	src/model/BindAxnExtensionResult.cc
+	src/model/BindBatchAxgRequest.cc
+	src/model/BindBatchAxgResult.cc
 	src/model/BuySecretNoRequest.cc
 	src/model/BuySecretNoResult.cc
 	src/model/CancelPickUpWaybillRequest.cc
@@ -100,6 +106,8 @@ set(dyplsapi_src
 	src/model/CreatePickUpWaybillResult.cc
 	src/model/CreatePickUpWaybillPreQueryRequest.cc
 	src/model/CreatePickUpWaybillPreQueryResult.cc
+	src/model/DeleteAxgGroupRequest.cc
+	src/model/DeleteAxgGroupResult.cc
 	src/model/DeleteSecretBlacklistRequest.cc
 	src/model/DeleteSecretBlacklistResult.cc
 	src/model/GetSecretAsrDetailRequest.cc

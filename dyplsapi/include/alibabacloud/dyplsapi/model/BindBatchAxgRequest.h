@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DYPLSAPI_MODEL_UNLOCKSECRETNOREQUEST_H_
-#define ALIBABACLOUD_DYPLSAPI_MODEL_UNLOCKSECRETNOREQUEST_H_
+#ifndef ALIBABACLOUD_DYPLSAPI_MODEL_BINDBATCHAXGREQUEST_H_
+#define ALIBABACLOUD_DYPLSAPI_MODEL_BINDBATCHAXGREQUEST_H_
 
 #include <alibabacloud/dyplsapi/DyplsapiExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,16 +26,32 @@
 namespace AlibabaCloud {
 namespace Dyplsapi {
 namespace Model {
-class ALIBABACLOUD_DYPLSAPI_EXPORT UnlockSecretNoRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DYPLSAPI_EXPORT BindBatchAxgRequest : public RpcServiceRequest {
 public:
-	UnlockSecretNoRequest();
-	~UnlockSecretNoRequest();
+	struct AxgBindList {
+		std::string phoneNoB;
+		std::string phoneNoA;
+		std::string expectCity;
+		std::string groupId;
+		int callDisplayType;
+		std::string outOrderId;
+		std::string phoneNoX;
+		bool isRecordingEnabled;
+		std::string outId;
+		std::string expiration;
+		std::string ringConfig;
+		bool aSRStatus;
+		std::string aSRModelId;
+		std::string callRestrict;
+	};
+	BindBatchAxgRequest();
+	~BindBatchAxgRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::vector<AxgBindList> getAxgBindList() const;
+	void setAxgBindList(const std::vector<AxgBindList> &axgBindList);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getSecretNo() const;
-	void setSecretNo(const std::string &secretNo);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
@@ -45,8 +61,8 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::vector<AxgBindList> axgBindList_;
 	std::string accessKeyId_;
-	std::string secretNo_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
 	std::string poolKey_;
@@ -54,4 +70,4 @@ private:
 } // namespace Model
 } // namespace Dyplsapi
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DYPLSAPI_MODEL_UNLOCKSECRETNOREQUEST_H_
+#endif // !ALIBABACLOUD_DYPLSAPI_MODEL_BINDBATCHAXGREQUEST_H_

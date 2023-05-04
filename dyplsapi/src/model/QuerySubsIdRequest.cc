@@ -34,6 +34,24 @@ void QuerySubsIdRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string QuerySubsIdRequest::getAccessKeyId() const {
+  return accessKeyId_;
+}
+
+void QuerySubsIdRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string QuerySubsIdRequest::getPhoneNoX() const {
+  return phoneNoX_;
+}
+
+void QuerySubsIdRequest::setPhoneNoX(const std::string &phoneNoX) {
+  phoneNoX_ = phoneNoX;
+  setParameter(std::string("PhoneNoX"), phoneNoX);
+}
+
 std::string QuerySubsIdRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -52,15 +70,6 @@ void QuerySubsIdRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-std::string QuerySubsIdRequest::getAccessKeyId() const {
-  return accessKeyId_;
-}
-
-void QuerySubsIdRequest::setAccessKeyId(const std::string &accessKeyId) {
-  accessKeyId_ = accessKeyId;
-  setParameter(std::string("AccessKeyId"), accessKeyId);
-}
-
 std::string QuerySubsIdRequest::getPoolKey() const {
   return poolKey_;
 }
@@ -68,14 +77,5 @@ std::string QuerySubsIdRequest::getPoolKey() const {
 void QuerySubsIdRequest::setPoolKey(const std::string &poolKey) {
   poolKey_ = poolKey;
   setParameter(std::string("PoolKey"), poolKey);
-}
-
-std::string QuerySubsIdRequest::getPhoneNoX() const {
-  return phoneNoX_;
-}
-
-void QuerySubsIdRequest::setPhoneNoX(const std::string &phoneNoX) {
-  phoneNoX_ = phoneNoX;
-  setParameter(std::string("PhoneNoX"), phoneNoX);
 }
 
