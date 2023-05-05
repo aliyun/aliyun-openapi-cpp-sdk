@@ -52,6 +52,8 @@ public:
 	void setMaxResults(int maxResults);
 	std::string getEventType() const;
 	void setEventType(const std::string &eventType);
+	std::string getLangType() const;
+	void setLangType(const std::string &langType);
 
 private:
 	std::string officeSiteId_;
@@ -65,6 +67,7 @@ private:
 	std::string officeSiteName_;
 	int maxResults_;
 	std::string eventType_;
+	std::string langType_;
 };
 } // namespace Model
 } // namespace Ecd

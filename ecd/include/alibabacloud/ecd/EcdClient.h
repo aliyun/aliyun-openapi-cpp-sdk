@@ -24,8 +24,14 @@
 #include "EcdExport.h"
 #include "model/ActivateOfficeSiteRequest.h"
 #include "model/ActivateOfficeSiteResult.h"
+#include "model/AddDevicesRequest.h"
+#include "model/AddDevicesResult.h"
+#include "model/AddFilePermissionRequest.h"
+#include "model/AddFilePermissionResult.h"
 #include "model/AddUserToDesktopGroupRequest.h"
 #include "model/AddUserToDesktopGroupResult.h"
+#include "model/ApplyAutoSnapshotPolicyRequest.h"
+#include "model/ApplyAutoSnapshotPolicyResult.h"
 #include "model/ApplyCoordinatePrivilegeRequest.h"
 #include "model/ApplyCoordinatePrivilegeResult.h"
 #include "model/ApplyCoordinationForMonitoringRequest.h"
@@ -36,16 +42,26 @@
 #include "model/AssociateNetworkPackageResult.h"
 #include "model/AttachCenRequest.h"
 #include "model/AttachCenResult.h"
+#include "model/AttachEndUserRequest.h"
+#include "model/AttachEndUserResult.h"
+#include "model/CancelAutoSnapshotPolicyRequest.h"
+#include "model/CancelAutoSnapshotPolicyResult.h"
+#include "model/CancelCdsFileShareLinkRequest.h"
+#include "model/CancelCdsFileShareLinkResult.h"
 #include "model/CancelCoordinationForMonitoringRequest.h"
 #include "model/CancelCoordinationForMonitoringResult.h"
 #include "model/CancelCopyImageRequest.h"
 #include "model/CancelCopyImageResult.h"
 #include "model/ClonePolicyGroupRequest.h"
 #include "model/ClonePolicyGroupResult.h"
+#include "model/CompleteCdsFileRequest.h"
+#include "model/CompleteCdsFileResult.h"
 #include "model/ConfigADConnectorTrustRequest.h"
 #include "model/ConfigADConnectorTrustResult.h"
 #include "model/ConfigADConnectorUserRequest.h"
 #include "model/ConfigADConnectorUserResult.h"
+#include "model/CopyCdsFileRequest.h"
+#include "model/CopyCdsFileResult.h"
 #include "model/CopyImageRequest.h"
 #include "model/CopyImageResult.h"
 #include "model/CreateADConnectorDirectoryRequest.h"
@@ -54,16 +70,20 @@
 #include "model/CreateADConnectorOfficeSiteResult.h"
 #include "model/CreateAndBindNasFileSystemRequest.h"
 #include "model/CreateAndBindNasFileSystemResult.h"
+#include "model/CreateAutoSnapshotPolicyRequest.h"
+#include "model/CreateAutoSnapshotPolicyResult.h"
 #include "model/CreateBundleRequest.h"
 #include "model/CreateBundleResult.h"
+#include "model/CreateCdsFileRequest.h"
+#include "model/CreateCdsFileResult.h"
+#include "model/CreateCdsFileShareLinkRequest.h"
+#include "model/CreateCdsFileShareLinkResult.h"
 #include "model/CreateDesktopGroupRequest.h"
 #include "model/CreateDesktopGroupResult.h"
 #include "model/CreateDesktopsRequest.h"
 #include "model/CreateDesktopsResult.h"
 #include "model/CreateDiskEncryptionServiceRequest.h"
 #include "model/CreateDiskEncryptionServiceResult.h"
-#include "model/CreateDriveRequest.h"
-#include "model/CreateDriveResult.h"
 #include "model/CreateImageRequest.h"
 #include "model/CreateImageResult.h"
 #include "model/CreateNASFileSystemRequest.h"
@@ -78,18 +98,24 @@
 #include "model/CreateSimpleOfficeSiteResult.h"
 #include "model/CreateSnapshotRequest.h"
 #include "model/CreateSnapshotResult.h"
+#include "model/DeleteAutoSnapshotPolicyRequest.h"
+#include "model/DeleteAutoSnapshotPolicyResult.h"
 #include "model/DeleteBundlesRequest.h"
 #include "model/DeleteBundlesResult.h"
+#include "model/DeleteCdsFileRequest.h"
+#include "model/DeleteCdsFileResult.h"
+#include "model/DeleteCloudDriveGroupsRequest.h"
+#include "model/DeleteCloudDriveGroupsResult.h"
 #include "model/DeleteCloudDriveUsersRequest.h"
 #include "model/DeleteCloudDriveUsersResult.h"
 #include "model/DeleteDesktopGroupRequest.h"
 #include "model/DeleteDesktopGroupResult.h"
 #include "model/DeleteDesktopsRequest.h"
 #include "model/DeleteDesktopsResult.h"
+#include "model/DeleteDevicesRequest.h"
+#include "model/DeleteDevicesResult.h"
 #include "model/DeleteDirectoriesRequest.h"
 #include "model/DeleteDirectoriesResult.h"
-#include "model/DeleteDriveRequest.h"
-#include "model/DeleteDriveResult.h"
 #include "model/DeleteImagesRequest.h"
 #include "model/DeleteImagesResult.h"
 #include "model/DeleteNASFileSystemsRequest.h"
@@ -106,12 +132,18 @@
 #include "model/DeleteVirtualMFADeviceResult.h"
 #include "model/DescribeAlarmEventStackInfoRequest.h"
 #include "model/DescribeAlarmEventStackInfoResult.h"
+#include "model/DescribeAutoSnapshotPolicyRequest.h"
+#include "model/DescribeAutoSnapshotPolicyResult.h"
 #include "model/DescribeBundlesRequest.h"
 #include "model/DescribeBundlesResult.h"
+#include "model/DescribeCdsFileShareLinksRequest.h"
+#include "model/DescribeCdsFileShareLinksResult.h"
 #include "model/DescribeCensRequest.h"
 #include "model/DescribeCensResult.h"
 #include "model/DescribeClientEventsRequest.h"
 #include "model/DescribeClientEventsResult.h"
+#include "model/DescribeCloudDriveGroupsRequest.h"
+#include "model/DescribeCloudDriveGroupsResult.h"
 #include "model/DescribeCloudDrivePermissionsRequest.h"
 #include "model/DescribeCloudDrivePermissionsResult.h"
 #include "model/DescribeCustomizedListHeadersRequest.h"
@@ -126,10 +158,10 @@
 #include "model/DescribeDesktopsResult.h"
 #include "model/DescribeDesktopsInGroupRequest.h"
 #include "model/DescribeDesktopsInGroupResult.h"
+#include "model/DescribeDevicesRequest.h"
+#include "model/DescribeDevicesResult.h"
 #include "model/DescribeDirectoriesRequest.h"
 #include "model/DescribeDirectoriesResult.h"
-#include "model/DescribeDrivesRequest.h"
-#include "model/DescribeDrivesResult.h"
 #include "model/DescribeFlowMetricRequest.h"
 #include "model/DescribeFlowMetricResult.h"
 #include "model/DescribeFlowStatisticRequest.h"
@@ -178,6 +210,8 @@
 #include "model/DescribeSuspEventsResult.h"
 #include "model/DescribeUserConnectionRecordsRequest.h"
 #include "model/DescribeUserConnectionRecordsResult.h"
+#include "model/DescribeUserProfilePathRulesRequest.h"
+#include "model/DescribeUserProfilePathRulesResult.h"
 #include "model/DescribeUsersInGroupRequest.h"
 #include "model/DescribeUsersInGroupResult.h"
 #include "model/DescribeUsersPasswordRequest.h"
@@ -194,6 +228,8 @@
 #include "model/DescribeZonesResult.h"
 #include "model/DetachCenRequest.h"
 #include "model/DetachCenResult.h"
+#include "model/DetachEndUserRequest.h"
+#include "model/DetachEndUserResult.h"
 #include "model/DisableDesktopsInGroupRequest.h"
 #include "model/DisableDesktopsInGroupResult.h"
 #include "model/DissociateNetworkPackageRequest.h"
@@ -214,8 +250,14 @@
 #include "model/GetSpMetadataResult.h"
 #include "model/HandleSecurityEventsRequest.h"
 #include "model/HandleSecurityEventsResult.h"
+#include "model/HibernateDesktopsRequest.h"
+#include "model/HibernateDesktopsResult.h"
+#include "model/ListCdsFilesRequest.h"
+#include "model/ListCdsFilesResult.h"
 #include "model/ListDirectoryUsersRequest.h"
 #include "model/ListDirectoryUsersResult.h"
+#include "model/ListFilePermissionRequest.h"
+#include "model/ListFilePermissionResult.h"
 #include "model/ListOfficeSiteOverviewRequest.h"
 #include "model/ListOfficeSiteOverviewResult.h"
 #include "model/ListOfficeSiteUsersRequest.h"
@@ -226,12 +268,22 @@
 #include "model/ListUserAdOrganizationUnitsResult.h"
 #include "model/LockVirtualMFADeviceRequest.h"
 #include "model/LockVirtualMFADeviceResult.h"
+#include "model/MigrateDesktopsRequest.h"
+#include "model/MigrateDesktopsResult.h"
 #include "model/ModifyADConnectorDirectoryRequest.h"
 #include "model/ModifyADConnectorDirectoryResult.h"
 #include "model/ModifyADConnectorOfficeSiteRequest.h"
 #include "model/ModifyADConnectorOfficeSiteResult.h"
+#include "model/ModifyAutoSnapshotPolicyRequest.h"
+#include "model/ModifyAutoSnapshotPolicyResult.h"
 #include "model/ModifyBundleRequest.h"
 #include "model/ModifyBundleResult.h"
+#include "model/ModifyCdsFileRequest.h"
+#include "model/ModifyCdsFileResult.h"
+#include "model/ModifyCdsFileShareLinkRequest.h"
+#include "model/ModifyCdsFileShareLinkResult.h"
+#include "model/ModifyCloudDriveGroupsRequest.h"
+#include "model/ModifyCloudDriveGroupsResult.h"
 #include "model/ModifyCloudDrivePermissionRequest.h"
 #include "model/ModifyCloudDrivePermissionResult.h"
 #include "model/ModifyCustomizedListHeadersRequest.h"
@@ -276,12 +328,16 @@
 #include "model/ModifyUserEntitlementResult.h"
 #include "model/ModifyUserToDesktopGroupRequest.h"
 #include "model/ModifyUserToDesktopGroupResult.h"
+#include "model/MoveCdsFileRequest.h"
+#include "model/MoveCdsFileResult.h"
 #include "model/OperateVulsRequest.h"
 #include "model/OperateVulsResult.h"
 #include "model/RebootDesktopsRequest.h"
 #include "model/RebootDesktopsResult.h"
 #include "model/RebuildDesktopsRequest.h"
 #include "model/RebuildDesktopsResult.h"
+#include "model/RemoveFilePermissionRequest.h"
+#include "model/RemoveFilePermissionResult.h"
 #include "model/RemoveUserFromDesktopGroupRequest.h"
 #include "model/RemoveUserFromDesktopGroupResult.h"
 #include "model/RenewDesktopsRequest.h"
@@ -302,14 +358,20 @@
 #include "model/RunCommandResult.h"
 #include "model/SendVerifyCodeRequest.h"
 #include "model/SendVerifyCodeResult.h"
+#include "model/SetDesktopGroupScaleTimerRequest.h"
+#include "model/SetDesktopGroupScaleTimerResult.h"
 #include "model/SetDesktopGroupTimerRequest.h"
 #include "model/SetDesktopGroupTimerResult.h"
 #include "model/SetDesktopGroupTimerStatusRequest.h"
 #include "model/SetDesktopGroupTimerStatusResult.h"
+#include "model/SetDirectorySsoStatusRequest.h"
+#include "model/SetDirectorySsoStatusResult.h"
 #include "model/SetIdpMetadataRequest.h"
 #include "model/SetIdpMetadataResult.h"
 #include "model/SetOfficeSiteSsoStatusRequest.h"
 #include "model/SetOfficeSiteSsoStatusResult.h"
+#include "model/SetUserProfilePathRulesRequest.h"
+#include "model/SetUserProfilePathRulesResult.h"
 #include "model/StartDesktopsRequest.h"
 #include "model/StartDesktopsResult.h"
 #include "model/StartVirusScanTaskRequest.h"
@@ -330,6 +392,8 @@
 #include "model/UploadImageResult.h"
 #include "model/VerifyCenRequest.h"
 #include "model/VerifyCenResult.h"
+#include "model/WakeupDesktopsRequest.h"
+#include "model/WakeupDesktopsResult.h"
 
 
 namespace AlibabaCloud
@@ -342,9 +406,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ActivateOfficeSiteResult> ActivateOfficeSiteOutcome;
 			typedef std::future<ActivateOfficeSiteOutcome> ActivateOfficeSiteOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::ActivateOfficeSiteRequest&, const ActivateOfficeSiteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ActivateOfficeSiteAsyncHandler;
+			typedef Outcome<Error, Model::AddDevicesResult> AddDevicesOutcome;
+			typedef std::future<AddDevicesOutcome> AddDevicesOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::AddDevicesRequest&, const AddDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDevicesAsyncHandler;
+			typedef Outcome<Error, Model::AddFilePermissionResult> AddFilePermissionOutcome;
+			typedef std::future<AddFilePermissionOutcome> AddFilePermissionOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::AddFilePermissionRequest&, const AddFilePermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddFilePermissionAsyncHandler;
 			typedef Outcome<Error, Model::AddUserToDesktopGroupResult> AddUserToDesktopGroupOutcome;
 			typedef std::future<AddUserToDesktopGroupOutcome> AddUserToDesktopGroupOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::AddUserToDesktopGroupRequest&, const AddUserToDesktopGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddUserToDesktopGroupAsyncHandler;
+			typedef Outcome<Error, Model::ApplyAutoSnapshotPolicyResult> ApplyAutoSnapshotPolicyOutcome;
+			typedef std::future<ApplyAutoSnapshotPolicyOutcome> ApplyAutoSnapshotPolicyOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::ApplyAutoSnapshotPolicyRequest&, const ApplyAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyAutoSnapshotPolicyAsyncHandler;
 			typedef Outcome<Error, Model::ApplyCoordinatePrivilegeResult> ApplyCoordinatePrivilegeOutcome;
 			typedef std::future<ApplyCoordinatePrivilegeOutcome> ApplyCoordinatePrivilegeOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::ApplyCoordinatePrivilegeRequest&, const ApplyCoordinatePrivilegeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApplyCoordinatePrivilegeAsyncHandler;
@@ -360,6 +433,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AttachCenResult> AttachCenOutcome;
 			typedef std::future<AttachCenOutcome> AttachCenOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::AttachCenRequest&, const AttachCenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachCenAsyncHandler;
+			typedef Outcome<Error, Model::AttachEndUserResult> AttachEndUserOutcome;
+			typedef std::future<AttachEndUserOutcome> AttachEndUserOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::AttachEndUserRequest&, const AttachEndUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachEndUserAsyncHandler;
+			typedef Outcome<Error, Model::CancelAutoSnapshotPolicyResult> CancelAutoSnapshotPolicyOutcome;
+			typedef std::future<CancelAutoSnapshotPolicyOutcome> CancelAutoSnapshotPolicyOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::CancelAutoSnapshotPolicyRequest&, const CancelAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelAutoSnapshotPolicyAsyncHandler;
+			typedef Outcome<Error, Model::CancelCdsFileShareLinkResult> CancelCdsFileShareLinkOutcome;
+			typedef std::future<CancelCdsFileShareLinkOutcome> CancelCdsFileShareLinkOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::CancelCdsFileShareLinkRequest&, const CancelCdsFileShareLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelCdsFileShareLinkAsyncHandler;
 			typedef Outcome<Error, Model::CancelCoordinationForMonitoringResult> CancelCoordinationForMonitoringOutcome;
 			typedef std::future<CancelCoordinationForMonitoringOutcome> CancelCoordinationForMonitoringOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::CancelCoordinationForMonitoringRequest&, const CancelCoordinationForMonitoringOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CancelCoordinationForMonitoringAsyncHandler;
@@ -369,12 +451,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ClonePolicyGroupResult> ClonePolicyGroupOutcome;
 			typedef std::future<ClonePolicyGroupOutcome> ClonePolicyGroupOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::ClonePolicyGroupRequest&, const ClonePolicyGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ClonePolicyGroupAsyncHandler;
+			typedef Outcome<Error, Model::CompleteCdsFileResult> CompleteCdsFileOutcome;
+			typedef std::future<CompleteCdsFileOutcome> CompleteCdsFileOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::CompleteCdsFileRequest&, const CompleteCdsFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CompleteCdsFileAsyncHandler;
 			typedef Outcome<Error, Model::ConfigADConnectorTrustResult> ConfigADConnectorTrustOutcome;
 			typedef std::future<ConfigADConnectorTrustOutcome> ConfigADConnectorTrustOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::ConfigADConnectorTrustRequest&, const ConfigADConnectorTrustOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfigADConnectorTrustAsyncHandler;
 			typedef Outcome<Error, Model::ConfigADConnectorUserResult> ConfigADConnectorUserOutcome;
 			typedef std::future<ConfigADConnectorUserOutcome> ConfigADConnectorUserOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::ConfigADConnectorUserRequest&, const ConfigADConnectorUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ConfigADConnectorUserAsyncHandler;
+			typedef Outcome<Error, Model::CopyCdsFileResult> CopyCdsFileOutcome;
+			typedef std::future<CopyCdsFileOutcome> CopyCdsFileOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::CopyCdsFileRequest&, const CopyCdsFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyCdsFileAsyncHandler;
 			typedef Outcome<Error, Model::CopyImageResult> CopyImageOutcome;
 			typedef std::future<CopyImageOutcome> CopyImageOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::CopyImageRequest&, const CopyImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CopyImageAsyncHandler;
@@ -387,9 +475,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateAndBindNasFileSystemResult> CreateAndBindNasFileSystemOutcome;
 			typedef std::future<CreateAndBindNasFileSystemOutcome> CreateAndBindNasFileSystemOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::CreateAndBindNasFileSystemRequest&, const CreateAndBindNasFileSystemOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAndBindNasFileSystemAsyncHandler;
+			typedef Outcome<Error, Model::CreateAutoSnapshotPolicyResult> CreateAutoSnapshotPolicyOutcome;
+			typedef std::future<CreateAutoSnapshotPolicyOutcome> CreateAutoSnapshotPolicyOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::CreateAutoSnapshotPolicyRequest&, const CreateAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoSnapshotPolicyAsyncHandler;
 			typedef Outcome<Error, Model::CreateBundleResult> CreateBundleOutcome;
 			typedef std::future<CreateBundleOutcome> CreateBundleOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::CreateBundleRequest&, const CreateBundleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateBundleAsyncHandler;
+			typedef Outcome<Error, Model::CreateCdsFileResult> CreateCdsFileOutcome;
+			typedef std::future<CreateCdsFileOutcome> CreateCdsFileOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::CreateCdsFileRequest&, const CreateCdsFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCdsFileAsyncHandler;
+			typedef Outcome<Error, Model::CreateCdsFileShareLinkResult> CreateCdsFileShareLinkOutcome;
+			typedef std::future<CreateCdsFileShareLinkOutcome> CreateCdsFileShareLinkOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::CreateCdsFileShareLinkRequest&, const CreateCdsFileShareLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCdsFileShareLinkAsyncHandler;
 			typedef Outcome<Error, Model::CreateDesktopGroupResult> CreateDesktopGroupOutcome;
 			typedef std::future<CreateDesktopGroupOutcome> CreateDesktopGroupOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::CreateDesktopGroupRequest&, const CreateDesktopGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDesktopGroupAsyncHandler;
@@ -399,9 +496,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateDiskEncryptionServiceResult> CreateDiskEncryptionServiceOutcome;
 			typedef std::future<CreateDiskEncryptionServiceOutcome> CreateDiskEncryptionServiceOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::CreateDiskEncryptionServiceRequest&, const CreateDiskEncryptionServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDiskEncryptionServiceAsyncHandler;
-			typedef Outcome<Error, Model::CreateDriveResult> CreateDriveOutcome;
-			typedef std::future<CreateDriveOutcome> CreateDriveOutcomeCallable;
-			typedef std::function<void(const EcdClient*, const Model::CreateDriveRequest&, const CreateDriveOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDriveAsyncHandler;
 			typedef Outcome<Error, Model::CreateImageResult> CreateImageOutcome;
 			typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::CreateImageRequest&, const CreateImageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAsyncHandler;
@@ -423,9 +517,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateSnapshotResult> CreateSnapshotOutcome;
 			typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::CreateSnapshotRequest&, const CreateSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotAsyncHandler;
+			typedef Outcome<Error, Model::DeleteAutoSnapshotPolicyResult> DeleteAutoSnapshotPolicyOutcome;
+			typedef std::future<DeleteAutoSnapshotPolicyOutcome> DeleteAutoSnapshotPolicyOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::DeleteAutoSnapshotPolicyRequest&, const DeleteAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAutoSnapshotPolicyAsyncHandler;
 			typedef Outcome<Error, Model::DeleteBundlesResult> DeleteBundlesOutcome;
 			typedef std::future<DeleteBundlesOutcome> DeleteBundlesOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DeleteBundlesRequest&, const DeleteBundlesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBundlesAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCdsFileResult> DeleteCdsFileOutcome;
+			typedef std::future<DeleteCdsFileOutcome> DeleteCdsFileOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::DeleteCdsFileRequest&, const DeleteCdsFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCdsFileAsyncHandler;
+			typedef Outcome<Error, Model::DeleteCloudDriveGroupsResult> DeleteCloudDriveGroupsOutcome;
+			typedef std::future<DeleteCloudDriveGroupsOutcome> DeleteCloudDriveGroupsOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::DeleteCloudDriveGroupsRequest&, const DeleteCloudDriveGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudDriveGroupsAsyncHandler;
 			typedef Outcome<Error, Model::DeleteCloudDriveUsersResult> DeleteCloudDriveUsersOutcome;
 			typedef std::future<DeleteCloudDriveUsersOutcome> DeleteCloudDriveUsersOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DeleteCloudDriveUsersRequest&, const DeleteCloudDriveUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCloudDriveUsersAsyncHandler;
@@ -435,12 +538,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteDesktopsResult> DeleteDesktopsOutcome;
 			typedef std::future<DeleteDesktopsOutcome> DeleteDesktopsOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DeleteDesktopsRequest&, const DeleteDesktopsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDesktopsAsyncHandler;
+			typedef Outcome<Error, Model::DeleteDevicesResult> DeleteDevicesOutcome;
+			typedef std::future<DeleteDevicesOutcome> DeleteDevicesOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::DeleteDevicesRequest&, const DeleteDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDevicesAsyncHandler;
 			typedef Outcome<Error, Model::DeleteDirectoriesResult> DeleteDirectoriesOutcome;
 			typedef std::future<DeleteDirectoriesOutcome> DeleteDirectoriesOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DeleteDirectoriesRequest&, const DeleteDirectoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDirectoriesAsyncHandler;
-			typedef Outcome<Error, Model::DeleteDriveResult> DeleteDriveOutcome;
-			typedef std::future<DeleteDriveOutcome> DeleteDriveOutcomeCallable;
-			typedef std::function<void(const EcdClient*, const Model::DeleteDriveRequest&, const DeleteDriveOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDriveAsyncHandler;
 			typedef Outcome<Error, Model::DeleteImagesResult> DeleteImagesOutcome;
 			typedef std::future<DeleteImagesOutcome> DeleteImagesOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DeleteImagesRequest&, const DeleteImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImagesAsyncHandler;
@@ -465,15 +568,24 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeAlarmEventStackInfoResult> DescribeAlarmEventStackInfoOutcome;
 			typedef std::future<DescribeAlarmEventStackInfoOutcome> DescribeAlarmEventStackInfoOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DescribeAlarmEventStackInfoRequest&, const DescribeAlarmEventStackInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmEventStackInfoAsyncHandler;
+			typedef Outcome<Error, Model::DescribeAutoSnapshotPolicyResult> DescribeAutoSnapshotPolicyOutcome;
+			typedef std::future<DescribeAutoSnapshotPolicyOutcome> DescribeAutoSnapshotPolicyOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::DescribeAutoSnapshotPolicyRequest&, const DescribeAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoSnapshotPolicyAsyncHandler;
 			typedef Outcome<Error, Model::DescribeBundlesResult> DescribeBundlesOutcome;
 			typedef std::future<DescribeBundlesOutcome> DescribeBundlesOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DescribeBundlesRequest&, const DescribeBundlesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBundlesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCdsFileShareLinksResult> DescribeCdsFileShareLinksOutcome;
+			typedef std::future<DescribeCdsFileShareLinksOutcome> DescribeCdsFileShareLinksOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::DescribeCdsFileShareLinksRequest&, const DescribeCdsFileShareLinksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCdsFileShareLinksAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCensResult> DescribeCensOutcome;
 			typedef std::future<DescribeCensOutcome> DescribeCensOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DescribeCensRequest&, const DescribeCensOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCensAsyncHandler;
 			typedef Outcome<Error, Model::DescribeClientEventsResult> DescribeClientEventsOutcome;
 			typedef std::future<DescribeClientEventsOutcome> DescribeClientEventsOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DescribeClientEventsRequest&, const DescribeClientEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientEventsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCloudDriveGroupsResult> DescribeCloudDriveGroupsOutcome;
+			typedef std::future<DescribeCloudDriveGroupsOutcome> DescribeCloudDriveGroupsOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::DescribeCloudDriveGroupsRequest&, const DescribeCloudDriveGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudDriveGroupsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCloudDrivePermissionsResult> DescribeCloudDrivePermissionsOutcome;
 			typedef std::future<DescribeCloudDrivePermissionsOutcome> DescribeCloudDrivePermissionsOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DescribeCloudDrivePermissionsRequest&, const DescribeCloudDrivePermissionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudDrivePermissionsAsyncHandler;
@@ -495,12 +607,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDesktopsInGroupResult> DescribeDesktopsInGroupOutcome;
 			typedef std::future<DescribeDesktopsInGroupOutcome> DescribeDesktopsInGroupOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DescribeDesktopsInGroupRequest&, const DescribeDesktopsInGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDesktopsInGroupAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDevicesResult> DescribeDevicesOutcome;
+			typedef std::future<DescribeDevicesOutcome> DescribeDevicesOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::DescribeDevicesRequest&, const DescribeDevicesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDirectoriesResult> DescribeDirectoriesOutcome;
 			typedef std::future<DescribeDirectoriesOutcome> DescribeDirectoriesOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DescribeDirectoriesRequest&, const DescribeDirectoriesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDirectoriesAsyncHandler;
-			typedef Outcome<Error, Model::DescribeDrivesResult> DescribeDrivesOutcome;
-			typedef std::future<DescribeDrivesOutcome> DescribeDrivesOutcomeCallable;
-			typedef std::function<void(const EcdClient*, const Model::DescribeDrivesRequest&, const DescribeDrivesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDrivesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeFlowMetricResult> DescribeFlowMetricOutcome;
 			typedef std::future<DescribeFlowMetricOutcome> DescribeFlowMetricOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DescribeFlowMetricRequest&, const DescribeFlowMetricOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowMetricAsyncHandler;
@@ -573,6 +685,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeUserConnectionRecordsResult> DescribeUserConnectionRecordsOutcome;
 			typedef std::future<DescribeUserConnectionRecordsOutcome> DescribeUserConnectionRecordsOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DescribeUserConnectionRecordsRequest&, const DescribeUserConnectionRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserConnectionRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUserProfilePathRulesResult> DescribeUserProfilePathRulesOutcome;
+			typedef std::future<DescribeUserProfilePathRulesOutcome> DescribeUserProfilePathRulesOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::DescribeUserProfilePathRulesRequest&, const DescribeUserProfilePathRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserProfilePathRulesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeUsersInGroupResult> DescribeUsersInGroupOutcome;
 			typedef std::future<DescribeUsersInGroupOutcome> DescribeUsersInGroupOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DescribeUsersInGroupRequest&, const DescribeUsersInGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsersInGroupAsyncHandler;
@@ -597,6 +712,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetachCenResult> DetachCenOutcome;
 			typedef std::future<DetachCenOutcome> DetachCenOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DetachCenRequest&, const DetachCenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachCenAsyncHandler;
+			typedef Outcome<Error, Model::DetachEndUserResult> DetachEndUserOutcome;
+			typedef std::future<DetachEndUserOutcome> DetachEndUserOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::DetachEndUserRequest&, const DetachEndUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetachEndUserAsyncHandler;
 			typedef Outcome<Error, Model::DisableDesktopsInGroupResult> DisableDesktopsInGroupOutcome;
 			typedef std::future<DisableDesktopsInGroupOutcome> DisableDesktopsInGroupOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::DisableDesktopsInGroupRequest&, const DisableDesktopsInGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableDesktopsInGroupAsyncHandler;
@@ -627,9 +745,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::HandleSecurityEventsResult> HandleSecurityEventsOutcome;
 			typedef std::future<HandleSecurityEventsOutcome> HandleSecurityEventsOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::HandleSecurityEventsRequest&, const HandleSecurityEventsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> HandleSecurityEventsAsyncHandler;
+			typedef Outcome<Error, Model::HibernateDesktopsResult> HibernateDesktopsOutcome;
+			typedef std::future<HibernateDesktopsOutcome> HibernateDesktopsOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::HibernateDesktopsRequest&, const HibernateDesktopsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> HibernateDesktopsAsyncHandler;
+			typedef Outcome<Error, Model::ListCdsFilesResult> ListCdsFilesOutcome;
+			typedef std::future<ListCdsFilesOutcome> ListCdsFilesOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::ListCdsFilesRequest&, const ListCdsFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCdsFilesAsyncHandler;
 			typedef Outcome<Error, Model::ListDirectoryUsersResult> ListDirectoryUsersOutcome;
 			typedef std::future<ListDirectoryUsersOutcome> ListDirectoryUsersOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::ListDirectoryUsersRequest&, const ListDirectoryUsersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDirectoryUsersAsyncHandler;
+			typedef Outcome<Error, Model::ListFilePermissionResult> ListFilePermissionOutcome;
+			typedef std::future<ListFilePermissionOutcome> ListFilePermissionOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::ListFilePermissionRequest&, const ListFilePermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListFilePermissionAsyncHandler;
 			typedef Outcome<Error, Model::ListOfficeSiteOverviewResult> ListOfficeSiteOverviewOutcome;
 			typedef std::future<ListOfficeSiteOverviewOutcome> ListOfficeSiteOverviewOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::ListOfficeSiteOverviewRequest&, const ListOfficeSiteOverviewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOfficeSiteOverviewAsyncHandler;
@@ -645,15 +772,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::LockVirtualMFADeviceResult> LockVirtualMFADeviceOutcome;
 			typedef std::future<LockVirtualMFADeviceOutcome> LockVirtualMFADeviceOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::LockVirtualMFADeviceRequest&, const LockVirtualMFADeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LockVirtualMFADeviceAsyncHandler;
+			typedef Outcome<Error, Model::MigrateDesktopsResult> MigrateDesktopsOutcome;
+			typedef std::future<MigrateDesktopsOutcome> MigrateDesktopsOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::MigrateDesktopsRequest&, const MigrateDesktopsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MigrateDesktopsAsyncHandler;
 			typedef Outcome<Error, Model::ModifyADConnectorDirectoryResult> ModifyADConnectorDirectoryOutcome;
 			typedef std::future<ModifyADConnectorDirectoryOutcome> ModifyADConnectorDirectoryOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::ModifyADConnectorDirectoryRequest&, const ModifyADConnectorDirectoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyADConnectorDirectoryAsyncHandler;
 			typedef Outcome<Error, Model::ModifyADConnectorOfficeSiteResult> ModifyADConnectorOfficeSiteOutcome;
 			typedef std::future<ModifyADConnectorOfficeSiteOutcome> ModifyADConnectorOfficeSiteOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::ModifyADConnectorOfficeSiteRequest&, const ModifyADConnectorOfficeSiteOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyADConnectorOfficeSiteAsyncHandler;
+			typedef Outcome<Error, Model::ModifyAutoSnapshotPolicyResult> ModifyAutoSnapshotPolicyOutcome;
+			typedef std::future<ModifyAutoSnapshotPolicyOutcome> ModifyAutoSnapshotPolicyOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::ModifyAutoSnapshotPolicyRequest&, const ModifyAutoSnapshotPolicyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAutoSnapshotPolicyAsyncHandler;
 			typedef Outcome<Error, Model::ModifyBundleResult> ModifyBundleOutcome;
 			typedef std::future<ModifyBundleOutcome> ModifyBundleOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::ModifyBundleRequest&, const ModifyBundleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBundleAsyncHandler;
+			typedef Outcome<Error, Model::ModifyCdsFileResult> ModifyCdsFileOutcome;
+			typedef std::future<ModifyCdsFileOutcome> ModifyCdsFileOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::ModifyCdsFileRequest&, const ModifyCdsFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCdsFileAsyncHandler;
+			typedef Outcome<Error, Model::ModifyCdsFileShareLinkResult> ModifyCdsFileShareLinkOutcome;
+			typedef std::future<ModifyCdsFileShareLinkOutcome> ModifyCdsFileShareLinkOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::ModifyCdsFileShareLinkRequest&, const ModifyCdsFileShareLinkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCdsFileShareLinkAsyncHandler;
+			typedef Outcome<Error, Model::ModifyCloudDriveGroupsResult> ModifyCloudDriveGroupsOutcome;
+			typedef std::future<ModifyCloudDriveGroupsOutcome> ModifyCloudDriveGroupsOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::ModifyCloudDriveGroupsRequest&, const ModifyCloudDriveGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudDriveGroupsAsyncHandler;
 			typedef Outcome<Error, Model::ModifyCloudDrivePermissionResult> ModifyCloudDrivePermissionOutcome;
 			typedef std::future<ModifyCloudDrivePermissionOutcome> ModifyCloudDrivePermissionOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::ModifyCloudDrivePermissionRequest&, const ModifyCloudDrivePermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCloudDrivePermissionAsyncHandler;
@@ -720,6 +862,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyUserToDesktopGroupResult> ModifyUserToDesktopGroupOutcome;
 			typedef std::future<ModifyUserToDesktopGroupOutcome> ModifyUserToDesktopGroupOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::ModifyUserToDesktopGroupRequest&, const ModifyUserToDesktopGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserToDesktopGroupAsyncHandler;
+			typedef Outcome<Error, Model::MoveCdsFileResult> MoveCdsFileOutcome;
+			typedef std::future<MoveCdsFileOutcome> MoveCdsFileOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::MoveCdsFileRequest&, const MoveCdsFileOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> MoveCdsFileAsyncHandler;
 			typedef Outcome<Error, Model::OperateVulsResult> OperateVulsOutcome;
 			typedef std::future<OperateVulsOutcome> OperateVulsOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::OperateVulsRequest&, const OperateVulsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OperateVulsAsyncHandler;
@@ -729,6 +874,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RebuildDesktopsResult> RebuildDesktopsOutcome;
 			typedef std::future<RebuildDesktopsOutcome> RebuildDesktopsOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::RebuildDesktopsRequest&, const RebuildDesktopsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebuildDesktopsAsyncHandler;
+			typedef Outcome<Error, Model::RemoveFilePermissionResult> RemoveFilePermissionOutcome;
+			typedef std::future<RemoveFilePermissionOutcome> RemoveFilePermissionOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::RemoveFilePermissionRequest&, const RemoveFilePermissionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveFilePermissionAsyncHandler;
 			typedef Outcome<Error, Model::RemoveUserFromDesktopGroupResult> RemoveUserFromDesktopGroupOutcome;
 			typedef std::future<RemoveUserFromDesktopGroupOutcome> RemoveUserFromDesktopGroupOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::RemoveUserFromDesktopGroupRequest&, const RemoveUserFromDesktopGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveUserFromDesktopGroupAsyncHandler;
@@ -759,18 +907,27 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SendVerifyCodeResult> SendVerifyCodeOutcome;
 			typedef std::future<SendVerifyCodeOutcome> SendVerifyCodeOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::SendVerifyCodeRequest&, const SendVerifyCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendVerifyCodeAsyncHandler;
+			typedef Outcome<Error, Model::SetDesktopGroupScaleTimerResult> SetDesktopGroupScaleTimerOutcome;
+			typedef std::future<SetDesktopGroupScaleTimerOutcome> SetDesktopGroupScaleTimerOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::SetDesktopGroupScaleTimerRequest&, const SetDesktopGroupScaleTimerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDesktopGroupScaleTimerAsyncHandler;
 			typedef Outcome<Error, Model::SetDesktopGroupTimerResult> SetDesktopGroupTimerOutcome;
 			typedef std::future<SetDesktopGroupTimerOutcome> SetDesktopGroupTimerOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::SetDesktopGroupTimerRequest&, const SetDesktopGroupTimerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDesktopGroupTimerAsyncHandler;
 			typedef Outcome<Error, Model::SetDesktopGroupTimerStatusResult> SetDesktopGroupTimerStatusOutcome;
 			typedef std::future<SetDesktopGroupTimerStatusOutcome> SetDesktopGroupTimerStatusOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::SetDesktopGroupTimerStatusRequest&, const SetDesktopGroupTimerStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDesktopGroupTimerStatusAsyncHandler;
+			typedef Outcome<Error, Model::SetDirectorySsoStatusResult> SetDirectorySsoStatusOutcome;
+			typedef std::future<SetDirectorySsoStatusOutcome> SetDirectorySsoStatusOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::SetDirectorySsoStatusRequest&, const SetDirectorySsoStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetDirectorySsoStatusAsyncHandler;
 			typedef Outcome<Error, Model::SetIdpMetadataResult> SetIdpMetadataOutcome;
 			typedef std::future<SetIdpMetadataOutcome> SetIdpMetadataOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::SetIdpMetadataRequest&, const SetIdpMetadataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetIdpMetadataAsyncHandler;
 			typedef Outcome<Error, Model::SetOfficeSiteSsoStatusResult> SetOfficeSiteSsoStatusOutcome;
 			typedef std::future<SetOfficeSiteSsoStatusOutcome> SetOfficeSiteSsoStatusOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::SetOfficeSiteSsoStatusRequest&, const SetOfficeSiteSsoStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetOfficeSiteSsoStatusAsyncHandler;
+			typedef Outcome<Error, Model::SetUserProfilePathRulesResult> SetUserProfilePathRulesOutcome;
+			typedef std::future<SetUserProfilePathRulesOutcome> SetUserProfilePathRulesOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::SetUserProfilePathRulesRequest&, const SetUserProfilePathRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetUserProfilePathRulesAsyncHandler;
 			typedef Outcome<Error, Model::StartDesktopsResult> StartDesktopsOutcome;
 			typedef std::future<StartDesktopsOutcome> StartDesktopsOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::StartDesktopsRequest&, const StartDesktopsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartDesktopsAsyncHandler;
@@ -801,6 +958,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::VerifyCenResult> VerifyCenOutcome;
 			typedef std::future<VerifyCenOutcome> VerifyCenOutcomeCallable;
 			typedef std::function<void(const EcdClient*, const Model::VerifyCenRequest&, const VerifyCenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> VerifyCenAsyncHandler;
+			typedef Outcome<Error, Model::WakeupDesktopsResult> WakeupDesktopsOutcome;
+			typedef std::future<WakeupDesktopsOutcome> WakeupDesktopsOutcomeCallable;
+			typedef std::function<void(const EcdClient*, const Model::WakeupDesktopsRequest&, const WakeupDesktopsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> WakeupDesktopsAsyncHandler;
 
 			EcdClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			EcdClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -809,9 +969,18 @@ namespace AlibabaCloud
 			ActivateOfficeSiteOutcome activateOfficeSite(const Model::ActivateOfficeSiteRequest &request)const;
 			void activateOfficeSiteAsync(const Model::ActivateOfficeSiteRequest& request, const ActivateOfficeSiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ActivateOfficeSiteOutcomeCallable activateOfficeSiteCallable(const Model::ActivateOfficeSiteRequest& request) const;
+			AddDevicesOutcome addDevices(const Model::AddDevicesRequest &request)const;
+			void addDevicesAsync(const Model::AddDevicesRequest& request, const AddDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddDevicesOutcomeCallable addDevicesCallable(const Model::AddDevicesRequest& request) const;
+			AddFilePermissionOutcome addFilePermission(const Model::AddFilePermissionRequest &request)const;
+			void addFilePermissionAsync(const Model::AddFilePermissionRequest& request, const AddFilePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddFilePermissionOutcomeCallable addFilePermissionCallable(const Model::AddFilePermissionRequest& request) const;
 			AddUserToDesktopGroupOutcome addUserToDesktopGroup(const Model::AddUserToDesktopGroupRequest &request)const;
 			void addUserToDesktopGroupAsync(const Model::AddUserToDesktopGroupRequest& request, const AddUserToDesktopGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddUserToDesktopGroupOutcomeCallable addUserToDesktopGroupCallable(const Model::AddUserToDesktopGroupRequest& request) const;
+			ApplyAutoSnapshotPolicyOutcome applyAutoSnapshotPolicy(const Model::ApplyAutoSnapshotPolicyRequest &request)const;
+			void applyAutoSnapshotPolicyAsync(const Model::ApplyAutoSnapshotPolicyRequest& request, const ApplyAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ApplyAutoSnapshotPolicyOutcomeCallable applyAutoSnapshotPolicyCallable(const Model::ApplyAutoSnapshotPolicyRequest& request) const;
 			ApplyCoordinatePrivilegeOutcome applyCoordinatePrivilege(const Model::ApplyCoordinatePrivilegeRequest &request)const;
 			void applyCoordinatePrivilegeAsync(const Model::ApplyCoordinatePrivilegeRequest& request, const ApplyCoordinatePrivilegeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ApplyCoordinatePrivilegeOutcomeCallable applyCoordinatePrivilegeCallable(const Model::ApplyCoordinatePrivilegeRequest& request) const;
@@ -827,6 +996,15 @@ namespace AlibabaCloud
 			AttachCenOutcome attachCen(const Model::AttachCenRequest &request)const;
 			void attachCenAsync(const Model::AttachCenRequest& request, const AttachCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachCenOutcomeCallable attachCenCallable(const Model::AttachCenRequest& request) const;
+			AttachEndUserOutcome attachEndUser(const Model::AttachEndUserRequest &request)const;
+			void attachEndUserAsync(const Model::AttachEndUserRequest& request, const AttachEndUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AttachEndUserOutcomeCallable attachEndUserCallable(const Model::AttachEndUserRequest& request) const;
+			CancelAutoSnapshotPolicyOutcome cancelAutoSnapshotPolicy(const Model::CancelAutoSnapshotPolicyRequest &request)const;
+			void cancelAutoSnapshotPolicyAsync(const Model::CancelAutoSnapshotPolicyRequest& request, const CancelAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelAutoSnapshotPolicyOutcomeCallable cancelAutoSnapshotPolicyCallable(const Model::CancelAutoSnapshotPolicyRequest& request) const;
+			CancelCdsFileShareLinkOutcome cancelCdsFileShareLink(const Model::CancelCdsFileShareLinkRequest &request)const;
+			void cancelCdsFileShareLinkAsync(const Model::CancelCdsFileShareLinkRequest& request, const CancelCdsFileShareLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CancelCdsFileShareLinkOutcomeCallable cancelCdsFileShareLinkCallable(const Model::CancelCdsFileShareLinkRequest& request) const;
 			CancelCoordinationForMonitoringOutcome cancelCoordinationForMonitoring(const Model::CancelCoordinationForMonitoringRequest &request)const;
 			void cancelCoordinationForMonitoringAsync(const Model::CancelCoordinationForMonitoringRequest& request, const CancelCoordinationForMonitoringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CancelCoordinationForMonitoringOutcomeCallable cancelCoordinationForMonitoringCallable(const Model::CancelCoordinationForMonitoringRequest& request) const;
@@ -836,12 +1014,18 @@ namespace AlibabaCloud
 			ClonePolicyGroupOutcome clonePolicyGroup(const Model::ClonePolicyGroupRequest &request)const;
 			void clonePolicyGroupAsync(const Model::ClonePolicyGroupRequest& request, const ClonePolicyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ClonePolicyGroupOutcomeCallable clonePolicyGroupCallable(const Model::ClonePolicyGroupRequest& request) const;
+			CompleteCdsFileOutcome completeCdsFile(const Model::CompleteCdsFileRequest &request)const;
+			void completeCdsFileAsync(const Model::CompleteCdsFileRequest& request, const CompleteCdsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CompleteCdsFileOutcomeCallable completeCdsFileCallable(const Model::CompleteCdsFileRequest& request) const;
 			ConfigADConnectorTrustOutcome configADConnectorTrust(const Model::ConfigADConnectorTrustRequest &request)const;
 			void configADConnectorTrustAsync(const Model::ConfigADConnectorTrustRequest& request, const ConfigADConnectorTrustAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConfigADConnectorTrustOutcomeCallable configADConnectorTrustCallable(const Model::ConfigADConnectorTrustRequest& request) const;
 			ConfigADConnectorUserOutcome configADConnectorUser(const Model::ConfigADConnectorUserRequest &request)const;
 			void configADConnectorUserAsync(const Model::ConfigADConnectorUserRequest& request, const ConfigADConnectorUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ConfigADConnectorUserOutcomeCallable configADConnectorUserCallable(const Model::ConfigADConnectorUserRequest& request) const;
+			CopyCdsFileOutcome copyCdsFile(const Model::CopyCdsFileRequest &request)const;
+			void copyCdsFileAsync(const Model::CopyCdsFileRequest& request, const CopyCdsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CopyCdsFileOutcomeCallable copyCdsFileCallable(const Model::CopyCdsFileRequest& request) const;
 			CopyImageOutcome copyImage(const Model::CopyImageRequest &request)const;
 			void copyImageAsync(const Model::CopyImageRequest& request, const CopyImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CopyImageOutcomeCallable copyImageCallable(const Model::CopyImageRequest& request) const;
@@ -854,9 +1038,18 @@ namespace AlibabaCloud
 			CreateAndBindNasFileSystemOutcome createAndBindNasFileSystem(const Model::CreateAndBindNasFileSystemRequest &request)const;
 			void createAndBindNasFileSystemAsync(const Model::CreateAndBindNasFileSystemRequest& request, const CreateAndBindNasFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAndBindNasFileSystemOutcomeCallable createAndBindNasFileSystemCallable(const Model::CreateAndBindNasFileSystemRequest& request) const;
+			CreateAutoSnapshotPolicyOutcome createAutoSnapshotPolicy(const Model::CreateAutoSnapshotPolicyRequest &request)const;
+			void createAutoSnapshotPolicyAsync(const Model::CreateAutoSnapshotPolicyRequest& request, const CreateAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateAutoSnapshotPolicyOutcomeCallable createAutoSnapshotPolicyCallable(const Model::CreateAutoSnapshotPolicyRequest& request) const;
 			CreateBundleOutcome createBundle(const Model::CreateBundleRequest &request)const;
 			void createBundleAsync(const Model::CreateBundleRequest& request, const CreateBundleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateBundleOutcomeCallable createBundleCallable(const Model::CreateBundleRequest& request) const;
+			CreateCdsFileOutcome createCdsFile(const Model::CreateCdsFileRequest &request)const;
+			void createCdsFileAsync(const Model::CreateCdsFileRequest& request, const CreateCdsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCdsFileOutcomeCallable createCdsFileCallable(const Model::CreateCdsFileRequest& request) const;
+			CreateCdsFileShareLinkOutcome createCdsFileShareLink(const Model::CreateCdsFileShareLinkRequest &request)const;
+			void createCdsFileShareLinkAsync(const Model::CreateCdsFileShareLinkRequest& request, const CreateCdsFileShareLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateCdsFileShareLinkOutcomeCallable createCdsFileShareLinkCallable(const Model::CreateCdsFileShareLinkRequest& request) const;
 			CreateDesktopGroupOutcome createDesktopGroup(const Model::CreateDesktopGroupRequest &request)const;
 			void createDesktopGroupAsync(const Model::CreateDesktopGroupRequest& request, const CreateDesktopGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDesktopGroupOutcomeCallable createDesktopGroupCallable(const Model::CreateDesktopGroupRequest& request) const;
@@ -866,9 +1059,6 @@ namespace AlibabaCloud
 			CreateDiskEncryptionServiceOutcome createDiskEncryptionService(const Model::CreateDiskEncryptionServiceRequest &request)const;
 			void createDiskEncryptionServiceAsync(const Model::CreateDiskEncryptionServiceRequest& request, const CreateDiskEncryptionServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDiskEncryptionServiceOutcomeCallable createDiskEncryptionServiceCallable(const Model::CreateDiskEncryptionServiceRequest& request) const;
-			CreateDriveOutcome createDrive(const Model::CreateDriveRequest &request)const;
-			void createDriveAsync(const Model::CreateDriveRequest& request, const CreateDriveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			CreateDriveOutcomeCallable createDriveCallable(const Model::CreateDriveRequest& request) const;
 			CreateImageOutcome createImage(const Model::CreateImageRequest &request)const;
 			void createImageAsync(const Model::CreateImageRequest& request, const CreateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateImageOutcomeCallable createImageCallable(const Model::CreateImageRequest& request) const;
@@ -890,9 +1080,18 @@ namespace AlibabaCloud
 			CreateSnapshotOutcome createSnapshot(const Model::CreateSnapshotRequest &request)const;
 			void createSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSnapshotOutcomeCallable createSnapshotCallable(const Model::CreateSnapshotRequest& request) const;
+			DeleteAutoSnapshotPolicyOutcome deleteAutoSnapshotPolicy(const Model::DeleteAutoSnapshotPolicyRequest &request)const;
+			void deleteAutoSnapshotPolicyAsync(const Model::DeleteAutoSnapshotPolicyRequest& request, const DeleteAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteAutoSnapshotPolicyOutcomeCallable deleteAutoSnapshotPolicyCallable(const Model::DeleteAutoSnapshotPolicyRequest& request) const;
 			DeleteBundlesOutcome deleteBundles(const Model::DeleteBundlesRequest &request)const;
 			void deleteBundlesAsync(const Model::DeleteBundlesRequest& request, const DeleteBundlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteBundlesOutcomeCallable deleteBundlesCallable(const Model::DeleteBundlesRequest& request) const;
+			DeleteCdsFileOutcome deleteCdsFile(const Model::DeleteCdsFileRequest &request)const;
+			void deleteCdsFileAsync(const Model::DeleteCdsFileRequest& request, const DeleteCdsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCdsFileOutcomeCallable deleteCdsFileCallable(const Model::DeleteCdsFileRequest& request) const;
+			DeleteCloudDriveGroupsOutcome deleteCloudDriveGroups(const Model::DeleteCloudDriveGroupsRequest &request)const;
+			void deleteCloudDriveGroupsAsync(const Model::DeleteCloudDriveGroupsRequest& request, const DeleteCloudDriveGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteCloudDriveGroupsOutcomeCallable deleteCloudDriveGroupsCallable(const Model::DeleteCloudDriveGroupsRequest& request) const;
 			DeleteCloudDriveUsersOutcome deleteCloudDriveUsers(const Model::DeleteCloudDriveUsersRequest &request)const;
 			void deleteCloudDriveUsersAsync(const Model::DeleteCloudDriveUsersRequest& request, const DeleteCloudDriveUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCloudDriveUsersOutcomeCallable deleteCloudDriveUsersCallable(const Model::DeleteCloudDriveUsersRequest& request) const;
@@ -902,12 +1101,12 @@ namespace AlibabaCloud
 			DeleteDesktopsOutcome deleteDesktops(const Model::DeleteDesktopsRequest &request)const;
 			void deleteDesktopsAsync(const Model::DeleteDesktopsRequest& request, const DeleteDesktopsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDesktopsOutcomeCallable deleteDesktopsCallable(const Model::DeleteDesktopsRequest& request) const;
+			DeleteDevicesOutcome deleteDevices(const Model::DeleteDevicesRequest &request)const;
+			void deleteDevicesAsync(const Model::DeleteDevicesRequest& request, const DeleteDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteDevicesOutcomeCallable deleteDevicesCallable(const Model::DeleteDevicesRequest& request) const;
 			DeleteDirectoriesOutcome deleteDirectories(const Model::DeleteDirectoriesRequest &request)const;
 			void deleteDirectoriesAsync(const Model::DeleteDirectoriesRequest& request, const DeleteDirectoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteDirectoriesOutcomeCallable deleteDirectoriesCallable(const Model::DeleteDirectoriesRequest& request) const;
-			DeleteDriveOutcome deleteDrive(const Model::DeleteDriveRequest &request)const;
-			void deleteDriveAsync(const Model::DeleteDriveRequest& request, const DeleteDriveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DeleteDriveOutcomeCallable deleteDriveCallable(const Model::DeleteDriveRequest& request) const;
 			DeleteImagesOutcome deleteImages(const Model::DeleteImagesRequest &request)const;
 			void deleteImagesAsync(const Model::DeleteImagesRequest& request, const DeleteImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteImagesOutcomeCallable deleteImagesCallable(const Model::DeleteImagesRequest& request) const;
@@ -932,15 +1131,24 @@ namespace AlibabaCloud
 			DescribeAlarmEventStackInfoOutcome describeAlarmEventStackInfo(const Model::DescribeAlarmEventStackInfoRequest &request)const;
 			void describeAlarmEventStackInfoAsync(const Model::DescribeAlarmEventStackInfoRequest& request, const DescribeAlarmEventStackInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeAlarmEventStackInfoOutcomeCallable describeAlarmEventStackInfoCallable(const Model::DescribeAlarmEventStackInfoRequest& request) const;
+			DescribeAutoSnapshotPolicyOutcome describeAutoSnapshotPolicy(const Model::DescribeAutoSnapshotPolicyRequest &request)const;
+			void describeAutoSnapshotPolicyAsync(const Model::DescribeAutoSnapshotPolicyRequest& request, const DescribeAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeAutoSnapshotPolicyOutcomeCallable describeAutoSnapshotPolicyCallable(const Model::DescribeAutoSnapshotPolicyRequest& request) const;
 			DescribeBundlesOutcome describeBundles(const Model::DescribeBundlesRequest &request)const;
 			void describeBundlesAsync(const Model::DescribeBundlesRequest& request, const DescribeBundlesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeBundlesOutcomeCallable describeBundlesCallable(const Model::DescribeBundlesRequest& request) const;
+			DescribeCdsFileShareLinksOutcome describeCdsFileShareLinks(const Model::DescribeCdsFileShareLinksRequest &request)const;
+			void describeCdsFileShareLinksAsync(const Model::DescribeCdsFileShareLinksRequest& request, const DescribeCdsFileShareLinksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCdsFileShareLinksOutcomeCallable describeCdsFileShareLinksCallable(const Model::DescribeCdsFileShareLinksRequest& request) const;
 			DescribeCensOutcome describeCens(const Model::DescribeCensRequest &request)const;
 			void describeCensAsync(const Model::DescribeCensRequest& request, const DescribeCensAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCensOutcomeCallable describeCensCallable(const Model::DescribeCensRequest& request) const;
 			DescribeClientEventsOutcome describeClientEvents(const Model::DescribeClientEventsRequest &request)const;
 			void describeClientEventsAsync(const Model::DescribeClientEventsRequest& request, const DescribeClientEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeClientEventsOutcomeCallable describeClientEventsCallable(const Model::DescribeClientEventsRequest& request) const;
+			DescribeCloudDriveGroupsOutcome describeCloudDriveGroups(const Model::DescribeCloudDriveGroupsRequest &request)const;
+			void describeCloudDriveGroupsAsync(const Model::DescribeCloudDriveGroupsRequest& request, const DescribeCloudDriveGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCloudDriveGroupsOutcomeCallable describeCloudDriveGroupsCallable(const Model::DescribeCloudDriveGroupsRequest& request) const;
 			DescribeCloudDrivePermissionsOutcome describeCloudDrivePermissions(const Model::DescribeCloudDrivePermissionsRequest &request)const;
 			void describeCloudDrivePermissionsAsync(const Model::DescribeCloudDrivePermissionsRequest& request, const DescribeCloudDrivePermissionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCloudDrivePermissionsOutcomeCallable describeCloudDrivePermissionsCallable(const Model::DescribeCloudDrivePermissionsRequest& request) const;
@@ -962,12 +1170,12 @@ namespace AlibabaCloud
 			DescribeDesktopsInGroupOutcome describeDesktopsInGroup(const Model::DescribeDesktopsInGroupRequest &request)const;
 			void describeDesktopsInGroupAsync(const Model::DescribeDesktopsInGroupRequest& request, const DescribeDesktopsInGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDesktopsInGroupOutcomeCallable describeDesktopsInGroupCallable(const Model::DescribeDesktopsInGroupRequest& request) const;
+			DescribeDevicesOutcome describeDevices(const Model::DescribeDevicesRequest &request)const;
+			void describeDevicesAsync(const Model::DescribeDevicesRequest& request, const DescribeDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDevicesOutcomeCallable describeDevicesCallable(const Model::DescribeDevicesRequest& request) const;
 			DescribeDirectoriesOutcome describeDirectories(const Model::DescribeDirectoriesRequest &request)const;
 			void describeDirectoriesAsync(const Model::DescribeDirectoriesRequest& request, const DescribeDirectoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDirectoriesOutcomeCallable describeDirectoriesCallable(const Model::DescribeDirectoriesRequest& request) const;
-			DescribeDrivesOutcome describeDrives(const Model::DescribeDrivesRequest &request)const;
-			void describeDrivesAsync(const Model::DescribeDrivesRequest& request, const DescribeDrivesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			DescribeDrivesOutcomeCallable describeDrivesCallable(const Model::DescribeDrivesRequest& request) const;
 			DescribeFlowMetricOutcome describeFlowMetric(const Model::DescribeFlowMetricRequest &request)const;
 			void describeFlowMetricAsync(const Model::DescribeFlowMetricRequest& request, const DescribeFlowMetricAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeFlowMetricOutcomeCallable describeFlowMetricCallable(const Model::DescribeFlowMetricRequest& request) const;
@@ -1040,6 +1248,9 @@ namespace AlibabaCloud
 			DescribeUserConnectionRecordsOutcome describeUserConnectionRecords(const Model::DescribeUserConnectionRecordsRequest &request)const;
 			void describeUserConnectionRecordsAsync(const Model::DescribeUserConnectionRecordsRequest& request, const DescribeUserConnectionRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUserConnectionRecordsOutcomeCallable describeUserConnectionRecordsCallable(const Model::DescribeUserConnectionRecordsRequest& request) const;
+			DescribeUserProfilePathRulesOutcome describeUserProfilePathRules(const Model::DescribeUserProfilePathRulesRequest &request)const;
+			void describeUserProfilePathRulesAsync(const Model::DescribeUserProfilePathRulesRequest& request, const DescribeUserProfilePathRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUserProfilePathRulesOutcomeCallable describeUserProfilePathRulesCallable(const Model::DescribeUserProfilePathRulesRequest& request) const;
 			DescribeUsersInGroupOutcome describeUsersInGroup(const Model::DescribeUsersInGroupRequest &request)const;
 			void describeUsersInGroupAsync(const Model::DescribeUsersInGroupRequest& request, const DescribeUsersInGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeUsersInGroupOutcomeCallable describeUsersInGroupCallable(const Model::DescribeUsersInGroupRequest& request) const;
@@ -1064,6 +1275,9 @@ namespace AlibabaCloud
 			DetachCenOutcome detachCen(const Model::DetachCenRequest &request)const;
 			void detachCenAsync(const Model::DetachCenRequest& request, const DetachCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetachCenOutcomeCallable detachCenCallable(const Model::DetachCenRequest& request) const;
+			DetachEndUserOutcome detachEndUser(const Model::DetachEndUserRequest &request)const;
+			void detachEndUserAsync(const Model::DetachEndUserRequest& request, const DetachEndUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetachEndUserOutcomeCallable detachEndUserCallable(const Model::DetachEndUserRequest& request) const;
 			DisableDesktopsInGroupOutcome disableDesktopsInGroup(const Model::DisableDesktopsInGroupRequest &request)const;
 			void disableDesktopsInGroupAsync(const Model::DisableDesktopsInGroupRequest& request, const DisableDesktopsInGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DisableDesktopsInGroupOutcomeCallable disableDesktopsInGroupCallable(const Model::DisableDesktopsInGroupRequest& request) const;
@@ -1094,9 +1308,18 @@ namespace AlibabaCloud
 			HandleSecurityEventsOutcome handleSecurityEvents(const Model::HandleSecurityEventsRequest &request)const;
 			void handleSecurityEventsAsync(const Model::HandleSecurityEventsRequest& request, const HandleSecurityEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			HandleSecurityEventsOutcomeCallable handleSecurityEventsCallable(const Model::HandleSecurityEventsRequest& request) const;
+			HibernateDesktopsOutcome hibernateDesktops(const Model::HibernateDesktopsRequest &request)const;
+			void hibernateDesktopsAsync(const Model::HibernateDesktopsRequest& request, const HibernateDesktopsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			HibernateDesktopsOutcomeCallable hibernateDesktopsCallable(const Model::HibernateDesktopsRequest& request) const;
+			ListCdsFilesOutcome listCdsFiles(const Model::ListCdsFilesRequest &request)const;
+			void listCdsFilesAsync(const Model::ListCdsFilesRequest& request, const ListCdsFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCdsFilesOutcomeCallable listCdsFilesCallable(const Model::ListCdsFilesRequest& request) const;
 			ListDirectoryUsersOutcome listDirectoryUsers(const Model::ListDirectoryUsersRequest &request)const;
 			void listDirectoryUsersAsync(const Model::ListDirectoryUsersRequest& request, const ListDirectoryUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDirectoryUsersOutcomeCallable listDirectoryUsersCallable(const Model::ListDirectoryUsersRequest& request) const;
+			ListFilePermissionOutcome listFilePermission(const Model::ListFilePermissionRequest &request)const;
+			void listFilePermissionAsync(const Model::ListFilePermissionRequest& request, const ListFilePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListFilePermissionOutcomeCallable listFilePermissionCallable(const Model::ListFilePermissionRequest& request) const;
 			ListOfficeSiteOverviewOutcome listOfficeSiteOverview(const Model::ListOfficeSiteOverviewRequest &request)const;
 			void listOfficeSiteOverviewAsync(const Model::ListOfficeSiteOverviewRequest& request, const ListOfficeSiteOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListOfficeSiteOverviewOutcomeCallable listOfficeSiteOverviewCallable(const Model::ListOfficeSiteOverviewRequest& request) const;
@@ -1112,15 +1335,30 @@ namespace AlibabaCloud
 			LockVirtualMFADeviceOutcome lockVirtualMFADevice(const Model::LockVirtualMFADeviceRequest &request)const;
 			void lockVirtualMFADeviceAsync(const Model::LockVirtualMFADeviceRequest& request, const LockVirtualMFADeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			LockVirtualMFADeviceOutcomeCallable lockVirtualMFADeviceCallable(const Model::LockVirtualMFADeviceRequest& request) const;
+			MigrateDesktopsOutcome migrateDesktops(const Model::MigrateDesktopsRequest &request)const;
+			void migrateDesktopsAsync(const Model::MigrateDesktopsRequest& request, const MigrateDesktopsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MigrateDesktopsOutcomeCallable migrateDesktopsCallable(const Model::MigrateDesktopsRequest& request) const;
 			ModifyADConnectorDirectoryOutcome modifyADConnectorDirectory(const Model::ModifyADConnectorDirectoryRequest &request)const;
 			void modifyADConnectorDirectoryAsync(const Model::ModifyADConnectorDirectoryRequest& request, const ModifyADConnectorDirectoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyADConnectorDirectoryOutcomeCallable modifyADConnectorDirectoryCallable(const Model::ModifyADConnectorDirectoryRequest& request) const;
 			ModifyADConnectorOfficeSiteOutcome modifyADConnectorOfficeSite(const Model::ModifyADConnectorOfficeSiteRequest &request)const;
 			void modifyADConnectorOfficeSiteAsync(const Model::ModifyADConnectorOfficeSiteRequest& request, const ModifyADConnectorOfficeSiteAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyADConnectorOfficeSiteOutcomeCallable modifyADConnectorOfficeSiteCallable(const Model::ModifyADConnectorOfficeSiteRequest& request) const;
+			ModifyAutoSnapshotPolicyOutcome modifyAutoSnapshotPolicy(const Model::ModifyAutoSnapshotPolicyRequest &request)const;
+			void modifyAutoSnapshotPolicyAsync(const Model::ModifyAutoSnapshotPolicyRequest& request, const ModifyAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyAutoSnapshotPolicyOutcomeCallable modifyAutoSnapshotPolicyCallable(const Model::ModifyAutoSnapshotPolicyRequest& request) const;
 			ModifyBundleOutcome modifyBundle(const Model::ModifyBundleRequest &request)const;
 			void modifyBundleAsync(const Model::ModifyBundleRequest& request, const ModifyBundleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyBundleOutcomeCallable modifyBundleCallable(const Model::ModifyBundleRequest& request) const;
+			ModifyCdsFileOutcome modifyCdsFile(const Model::ModifyCdsFileRequest &request)const;
+			void modifyCdsFileAsync(const Model::ModifyCdsFileRequest& request, const ModifyCdsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyCdsFileOutcomeCallable modifyCdsFileCallable(const Model::ModifyCdsFileRequest& request) const;
+			ModifyCdsFileShareLinkOutcome modifyCdsFileShareLink(const Model::ModifyCdsFileShareLinkRequest &request)const;
+			void modifyCdsFileShareLinkAsync(const Model::ModifyCdsFileShareLinkRequest& request, const ModifyCdsFileShareLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyCdsFileShareLinkOutcomeCallable modifyCdsFileShareLinkCallable(const Model::ModifyCdsFileShareLinkRequest& request) const;
+			ModifyCloudDriveGroupsOutcome modifyCloudDriveGroups(const Model::ModifyCloudDriveGroupsRequest &request)const;
+			void modifyCloudDriveGroupsAsync(const Model::ModifyCloudDriveGroupsRequest& request, const ModifyCloudDriveGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyCloudDriveGroupsOutcomeCallable modifyCloudDriveGroupsCallable(const Model::ModifyCloudDriveGroupsRequest& request) const;
 			ModifyCloudDrivePermissionOutcome modifyCloudDrivePermission(const Model::ModifyCloudDrivePermissionRequest &request)const;
 			void modifyCloudDrivePermissionAsync(const Model::ModifyCloudDrivePermissionRequest& request, const ModifyCloudDrivePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyCloudDrivePermissionOutcomeCallable modifyCloudDrivePermissionCallable(const Model::ModifyCloudDrivePermissionRequest& request) const;
@@ -1187,6 +1425,9 @@ namespace AlibabaCloud
 			ModifyUserToDesktopGroupOutcome modifyUserToDesktopGroup(const Model::ModifyUserToDesktopGroupRequest &request)const;
 			void modifyUserToDesktopGroupAsync(const Model::ModifyUserToDesktopGroupRequest& request, const ModifyUserToDesktopGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyUserToDesktopGroupOutcomeCallable modifyUserToDesktopGroupCallable(const Model::ModifyUserToDesktopGroupRequest& request) const;
+			MoveCdsFileOutcome moveCdsFile(const Model::MoveCdsFileRequest &request)const;
+			void moveCdsFileAsync(const Model::MoveCdsFileRequest& request, const MoveCdsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			MoveCdsFileOutcomeCallable moveCdsFileCallable(const Model::MoveCdsFileRequest& request) const;
 			OperateVulsOutcome operateVuls(const Model::OperateVulsRequest &request)const;
 			void operateVulsAsync(const Model::OperateVulsRequest& request, const OperateVulsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OperateVulsOutcomeCallable operateVulsCallable(const Model::OperateVulsRequest& request) const;
@@ -1196,6 +1437,9 @@ namespace AlibabaCloud
 			RebuildDesktopsOutcome rebuildDesktops(const Model::RebuildDesktopsRequest &request)const;
 			void rebuildDesktopsAsync(const Model::RebuildDesktopsRequest& request, const RebuildDesktopsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RebuildDesktopsOutcomeCallable rebuildDesktopsCallable(const Model::RebuildDesktopsRequest& request) const;
+			RemoveFilePermissionOutcome removeFilePermission(const Model::RemoveFilePermissionRequest &request)const;
+			void removeFilePermissionAsync(const Model::RemoveFilePermissionRequest& request, const RemoveFilePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveFilePermissionOutcomeCallable removeFilePermissionCallable(const Model::RemoveFilePermissionRequest& request) const;
 			RemoveUserFromDesktopGroupOutcome removeUserFromDesktopGroup(const Model::RemoveUserFromDesktopGroupRequest &request)const;
 			void removeUserFromDesktopGroupAsync(const Model::RemoveUserFromDesktopGroupRequest& request, const RemoveUserFromDesktopGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveUserFromDesktopGroupOutcomeCallable removeUserFromDesktopGroupCallable(const Model::RemoveUserFromDesktopGroupRequest& request) const;
@@ -1226,18 +1470,27 @@ namespace AlibabaCloud
 			SendVerifyCodeOutcome sendVerifyCode(const Model::SendVerifyCodeRequest &request)const;
 			void sendVerifyCodeAsync(const Model::SendVerifyCodeRequest& request, const SendVerifyCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SendVerifyCodeOutcomeCallable sendVerifyCodeCallable(const Model::SendVerifyCodeRequest& request) const;
+			SetDesktopGroupScaleTimerOutcome setDesktopGroupScaleTimer(const Model::SetDesktopGroupScaleTimerRequest &request)const;
+			void setDesktopGroupScaleTimerAsync(const Model::SetDesktopGroupScaleTimerRequest& request, const SetDesktopGroupScaleTimerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetDesktopGroupScaleTimerOutcomeCallable setDesktopGroupScaleTimerCallable(const Model::SetDesktopGroupScaleTimerRequest& request) const;
 			SetDesktopGroupTimerOutcome setDesktopGroupTimer(const Model::SetDesktopGroupTimerRequest &request)const;
 			void setDesktopGroupTimerAsync(const Model::SetDesktopGroupTimerRequest& request, const SetDesktopGroupTimerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDesktopGroupTimerOutcomeCallable setDesktopGroupTimerCallable(const Model::SetDesktopGroupTimerRequest& request) const;
 			SetDesktopGroupTimerStatusOutcome setDesktopGroupTimerStatus(const Model::SetDesktopGroupTimerStatusRequest &request)const;
 			void setDesktopGroupTimerStatusAsync(const Model::SetDesktopGroupTimerStatusRequest& request, const SetDesktopGroupTimerStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetDesktopGroupTimerStatusOutcomeCallable setDesktopGroupTimerStatusCallable(const Model::SetDesktopGroupTimerStatusRequest& request) const;
+			SetDirectorySsoStatusOutcome setDirectorySsoStatus(const Model::SetDirectorySsoStatusRequest &request)const;
+			void setDirectorySsoStatusAsync(const Model::SetDirectorySsoStatusRequest& request, const SetDirectorySsoStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetDirectorySsoStatusOutcomeCallable setDirectorySsoStatusCallable(const Model::SetDirectorySsoStatusRequest& request) const;
 			SetIdpMetadataOutcome setIdpMetadata(const Model::SetIdpMetadataRequest &request)const;
 			void setIdpMetadataAsync(const Model::SetIdpMetadataRequest& request, const SetIdpMetadataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetIdpMetadataOutcomeCallable setIdpMetadataCallable(const Model::SetIdpMetadataRequest& request) const;
 			SetOfficeSiteSsoStatusOutcome setOfficeSiteSsoStatus(const Model::SetOfficeSiteSsoStatusRequest &request)const;
 			void setOfficeSiteSsoStatusAsync(const Model::SetOfficeSiteSsoStatusRequest& request, const SetOfficeSiteSsoStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetOfficeSiteSsoStatusOutcomeCallable setOfficeSiteSsoStatusCallable(const Model::SetOfficeSiteSsoStatusRequest& request) const;
+			SetUserProfilePathRulesOutcome setUserProfilePathRules(const Model::SetUserProfilePathRulesRequest &request)const;
+			void setUserProfilePathRulesAsync(const Model::SetUserProfilePathRulesRequest& request, const SetUserProfilePathRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SetUserProfilePathRulesOutcomeCallable setUserProfilePathRulesCallable(const Model::SetUserProfilePathRulesRequest& request) const;
 			StartDesktopsOutcome startDesktops(const Model::StartDesktopsRequest &request)const;
 			void startDesktopsAsync(const Model::StartDesktopsRequest& request, const StartDesktopsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartDesktopsOutcomeCallable startDesktopsCallable(const Model::StartDesktopsRequest& request) const;
@@ -1268,6 +1521,9 @@ namespace AlibabaCloud
 			VerifyCenOutcome verifyCen(const Model::VerifyCenRequest &request)const;
 			void verifyCenAsync(const Model::VerifyCenRequest& request, const VerifyCenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			VerifyCenOutcomeCallable verifyCenCallable(const Model::VerifyCenRequest& request) const;
+			WakeupDesktopsOutcome wakeupDesktops(const Model::WakeupDesktopsRequest &request)const;
+			void wakeupDesktopsAsync(const Model::WakeupDesktopsRequest& request, const WakeupDesktopsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			WakeupDesktopsOutcomeCallable wakeupDesktopsCallable(const Model::WakeupDesktopsRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

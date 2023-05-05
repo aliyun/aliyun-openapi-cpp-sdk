@@ -79,6 +79,10 @@ void DescribeImagesResult::parse(const std::string &payload)
 			imagesObject.sharedCount = std::stoi(valueImagesImage["SharedCount"].asString());
 		if(!valueImagesImage["SessionType"].isNull())
 			imagesObject.sessionType = valueImagesImage["SessionType"].asString();
+		if(!valueImagesImage["UpdateTime"].isNull())
+			imagesObject.updateTime = valueImagesImage["UpdateTime"].asString();
+		if(!valueImagesImage["Platform"].isNull())
+			imagesObject.platform = valueImagesImage["Platform"].asString();
 		auto allSupportedLanguages = value["SupportedLanguages"]["Language"];
 		for (auto value : allSupportedLanguages)
 			imagesObject.supportedLanguages.push_back(value.asString());

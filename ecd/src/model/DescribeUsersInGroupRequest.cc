@@ -25,6 +25,14 @@ DescribeUsersInGroupRequest::DescribeUsersInGroupRequest()
 
 DescribeUsersInGroupRequest::~DescribeUsersInGroupRequest() {}
 
+std::vector<std::string> DescribeUsersInGroupRequest::getEndUserIds() const {
+  return endUserIds_;
+}
+
+void DescribeUsersInGroupRequest::setEndUserIds(const std::vector<std::string> &endUserIds) {
+  endUserIds_ = endUserIds;
+}
+
 int DescribeUsersInGroupRequest::getConnectState() const {
   return connectState_;
 }

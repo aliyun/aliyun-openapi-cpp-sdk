@@ -32,6 +32,8 @@ public:
 	~DescribeInvocationsRequest();
 	std::string getInvokeStatus() const;
 	void setInvokeStatus(const std::string &invokeStatus);
+	std::vector<std::string> getDesktopIds() const;
+	void setDesktopIds(const std::vector<std::string> &desktopIds);
 	bool getIncludeOutput() const;
 	void setIncludeOutput(bool includeOutput);
 	std::string getRegionId() const;
@@ -53,6 +55,7 @@ public:
 
 private:
 	std::string invokeStatus_;
+	std::vector<std::string> desktopIds_;
 	bool includeOutput_;
 	std::string regionId_;
 	std::string nextToken_;

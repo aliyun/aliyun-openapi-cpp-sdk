@@ -43,6 +43,15 @@ void CreateDesktopGroupRequest::setAllowBufferCount(int allowBufferCount) {
   setParameter(std::string("AllowBufferCount"), std::to_string(allowBufferCount));
 }
 
+int CreateDesktopGroupRequest::getGroupVersion() const {
+  return groupVersion_;
+}
+
+void CreateDesktopGroupRequest::setGroupVersion(int groupVersion) {
+  groupVersion_ = groupVersion;
+  setParameter(std::string("GroupVersion"), std::to_string(groupVersion));
+}
+
 bool CreateDesktopGroupRequest::getAllClassifyUsers() const {
   return allClassifyUsers_;
 }
@@ -124,6 +133,15 @@ void CreateDesktopGroupRequest::setPeriodUnit(const std::string &periodUnit) {
   setParameter(std::string("PeriodUnit"), periodUnit);
 }
 
+bool CreateDesktopGroupRequest::getAutoRenew() const {
+  return autoRenew_;
+}
+
+void CreateDesktopGroupRequest::setAutoRenew(bool autoRenew) {
+  autoRenew_ = autoRenew;
+  setParameter(std::string("AutoRenew"), autoRenew ? "true" : "false");
+}
+
 bool CreateDesktopGroupRequest::getProfileFollowSwitch() const {
   return profileFollowSwitch_;
 }
@@ -131,6 +149,15 @@ bool CreateDesktopGroupRequest::getProfileFollowSwitch() const {
 void CreateDesktopGroupRequest::setProfileFollowSwitch(bool profileFollowSwitch) {
   profileFollowSwitch_ = profileFollowSwitch;
   setParameter(std::string("ProfileFollowSwitch"), profileFollowSwitch ? "true" : "false");
+}
+
+int CreateDesktopGroupRequest::getBuyDesktopsCount() const {
+  return buyDesktopsCount_;
+}
+
+void CreateDesktopGroupRequest::setBuyDesktopsCount(int buyDesktopsCount) {
+  buyDesktopsCount_ = buyDesktopsCount;
+  setParameter(std::string("BuyDesktopsCount"), std::to_string(buyDesktopsCount));
 }
 
 std::string CreateDesktopGroupRequest::getPolicyGroupId() const {

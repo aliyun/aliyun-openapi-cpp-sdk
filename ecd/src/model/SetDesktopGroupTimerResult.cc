@@ -39,21 +39,6 @@ void SetDesktopGroupTimerResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOrderIds = value["OrderIds"]["OrderId"];
-	for (const auto &item : allOrderIds)
-		orderIds_.push_back(item.asString());
-	if(!value["DesktopGroupId"].isNull())
-		desktopGroupId_ = value["DesktopGroupId"].asString();
 
-}
-
-std::string SetDesktopGroupTimerResult::getDesktopGroupId()const
-{
-	return desktopGroupId_;
-}
-
-std::vector<std::string> SetDesktopGroupTimerResult::getOrderIds()const
-{
-	return orderIds_;
 }
 

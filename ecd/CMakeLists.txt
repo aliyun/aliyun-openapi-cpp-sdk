@@ -23,8 +23,14 @@ set(ecd_public_header
 set(ecd_public_header_model 
 	include/alibabacloud/ecd/model/ActivateOfficeSiteRequest.h
 	include/alibabacloud/ecd/model/ActivateOfficeSiteResult.h
+	include/alibabacloud/ecd/model/AddDevicesRequest.h
+	include/alibabacloud/ecd/model/AddDevicesResult.h
+	include/alibabacloud/ecd/model/AddFilePermissionRequest.h
+	include/alibabacloud/ecd/model/AddFilePermissionResult.h
 	include/alibabacloud/ecd/model/AddUserToDesktopGroupRequest.h
 	include/alibabacloud/ecd/model/AddUserToDesktopGroupResult.h
+	include/alibabacloud/ecd/model/ApplyAutoSnapshotPolicyRequest.h
+	include/alibabacloud/ecd/model/ApplyAutoSnapshotPolicyResult.h
 	include/alibabacloud/ecd/model/ApplyCoordinatePrivilegeRequest.h
 	include/alibabacloud/ecd/model/ApplyCoordinatePrivilegeResult.h
 	include/alibabacloud/ecd/model/ApplyCoordinationForMonitoringRequest.h
@@ -35,16 +41,26 @@ set(ecd_public_header_model
 	include/alibabacloud/ecd/model/AssociateNetworkPackageResult.h
 	include/alibabacloud/ecd/model/AttachCenRequest.h
 	include/alibabacloud/ecd/model/AttachCenResult.h
+	include/alibabacloud/ecd/model/AttachEndUserRequest.h
+	include/alibabacloud/ecd/model/AttachEndUserResult.h
+	include/alibabacloud/ecd/model/CancelAutoSnapshotPolicyRequest.h
+	include/alibabacloud/ecd/model/CancelAutoSnapshotPolicyResult.h
+	include/alibabacloud/ecd/model/CancelCdsFileShareLinkRequest.h
+	include/alibabacloud/ecd/model/CancelCdsFileShareLinkResult.h
 	include/alibabacloud/ecd/model/CancelCoordinationForMonitoringRequest.h
 	include/alibabacloud/ecd/model/CancelCoordinationForMonitoringResult.h
 	include/alibabacloud/ecd/model/CancelCopyImageRequest.h
 	include/alibabacloud/ecd/model/CancelCopyImageResult.h
 	include/alibabacloud/ecd/model/ClonePolicyGroupRequest.h
 	include/alibabacloud/ecd/model/ClonePolicyGroupResult.h
+	include/alibabacloud/ecd/model/CompleteCdsFileRequest.h
+	include/alibabacloud/ecd/model/CompleteCdsFileResult.h
 	include/alibabacloud/ecd/model/ConfigADConnectorTrustRequest.h
 	include/alibabacloud/ecd/model/ConfigADConnectorTrustResult.h
 	include/alibabacloud/ecd/model/ConfigADConnectorUserRequest.h
 	include/alibabacloud/ecd/model/ConfigADConnectorUserResult.h
+	include/alibabacloud/ecd/model/CopyCdsFileRequest.h
+	include/alibabacloud/ecd/model/CopyCdsFileResult.h
 	include/alibabacloud/ecd/model/CopyImageRequest.h
 	include/alibabacloud/ecd/model/CopyImageResult.h
 	include/alibabacloud/ecd/model/CreateADConnectorDirectoryRequest.h
@@ -53,16 +69,20 @@ set(ecd_public_header_model
 	include/alibabacloud/ecd/model/CreateADConnectorOfficeSiteResult.h
 	include/alibabacloud/ecd/model/CreateAndBindNasFileSystemRequest.h
 	include/alibabacloud/ecd/model/CreateAndBindNasFileSystemResult.h
+	include/alibabacloud/ecd/model/CreateAutoSnapshotPolicyRequest.h
+	include/alibabacloud/ecd/model/CreateAutoSnapshotPolicyResult.h
 	include/alibabacloud/ecd/model/CreateBundleRequest.h
 	include/alibabacloud/ecd/model/CreateBundleResult.h
+	include/alibabacloud/ecd/model/CreateCdsFileRequest.h
+	include/alibabacloud/ecd/model/CreateCdsFileResult.h
+	include/alibabacloud/ecd/model/CreateCdsFileShareLinkRequest.h
+	include/alibabacloud/ecd/model/CreateCdsFileShareLinkResult.h
 	include/alibabacloud/ecd/model/CreateDesktopGroupRequest.h
 	include/alibabacloud/ecd/model/CreateDesktopGroupResult.h
 	include/alibabacloud/ecd/model/CreateDesktopsRequest.h
 	include/alibabacloud/ecd/model/CreateDesktopsResult.h
 	include/alibabacloud/ecd/model/CreateDiskEncryptionServiceRequest.h
 	include/alibabacloud/ecd/model/CreateDiskEncryptionServiceResult.h
-	include/alibabacloud/ecd/model/CreateDriveRequest.h
-	include/alibabacloud/ecd/model/CreateDriveResult.h
 	include/alibabacloud/ecd/model/CreateImageRequest.h
 	include/alibabacloud/ecd/model/CreateImageResult.h
 	include/alibabacloud/ecd/model/CreateNASFileSystemRequest.h
@@ -77,18 +97,24 @@ set(ecd_public_header_model
 	include/alibabacloud/ecd/model/CreateSimpleOfficeSiteResult.h
 	include/alibabacloud/ecd/model/CreateSnapshotRequest.h
 	include/alibabacloud/ecd/model/CreateSnapshotResult.h
+	include/alibabacloud/ecd/model/DeleteAutoSnapshotPolicyRequest.h
+	include/alibabacloud/ecd/model/DeleteAutoSnapshotPolicyResult.h
 	include/alibabacloud/ecd/model/DeleteBundlesRequest.h
 	include/alibabacloud/ecd/model/DeleteBundlesResult.h
+	include/alibabacloud/ecd/model/DeleteCdsFileRequest.h
+	include/alibabacloud/ecd/model/DeleteCdsFileResult.h
+	include/alibabacloud/ecd/model/DeleteCloudDriveGroupsRequest.h
+	include/alibabacloud/ecd/model/DeleteCloudDriveGroupsResult.h
 	include/alibabacloud/ecd/model/DeleteCloudDriveUsersRequest.h
 	include/alibabacloud/ecd/model/DeleteCloudDriveUsersResult.h
 	include/alibabacloud/ecd/model/DeleteDesktopGroupRequest.h
 	include/alibabacloud/ecd/model/DeleteDesktopGroupResult.h
 	include/alibabacloud/ecd/model/DeleteDesktopsRequest.h
 	include/alibabacloud/ecd/model/DeleteDesktopsResult.h
+	include/alibabacloud/ecd/model/DeleteDevicesRequest.h
+	include/alibabacloud/ecd/model/DeleteDevicesResult.h
 	include/alibabacloud/ecd/model/DeleteDirectoriesRequest.h
 	include/alibabacloud/ecd/model/DeleteDirectoriesResult.h
-	include/alibabacloud/ecd/model/DeleteDriveRequest.h
-	include/alibabacloud/ecd/model/DeleteDriveResult.h
 	include/alibabacloud/ecd/model/DeleteImagesRequest.h
 	include/alibabacloud/ecd/model/DeleteImagesResult.h
 	include/alibabacloud/ecd/model/DeleteNASFileSystemsRequest.h
@@ -105,12 +131,18 @@ set(ecd_public_header_model
 	include/alibabacloud/ecd/model/DeleteVirtualMFADeviceResult.h
 	include/alibabacloud/ecd/model/DescribeAlarmEventStackInfoRequest.h
 	include/alibabacloud/ecd/model/DescribeAlarmEventStackInfoResult.h
+	include/alibabacloud/ecd/model/DescribeAutoSnapshotPolicyRequest.h
+	include/alibabacloud/ecd/model/DescribeAutoSnapshotPolicyResult.h
 	include/alibabacloud/ecd/model/DescribeBundlesRequest.h
 	include/alibabacloud/ecd/model/DescribeBundlesResult.h
+	include/alibabacloud/ecd/model/DescribeCdsFileShareLinksRequest.h
+	include/alibabacloud/ecd/model/DescribeCdsFileShareLinksResult.h
 	include/alibabacloud/ecd/model/DescribeCensRequest.h
 	include/alibabacloud/ecd/model/DescribeCensResult.h
 	include/alibabacloud/ecd/model/DescribeClientEventsRequest.h
 	include/alibabacloud/ecd/model/DescribeClientEventsResult.h
+	include/alibabacloud/ecd/model/DescribeCloudDriveGroupsRequest.h
+	include/alibabacloud/ecd/model/DescribeCloudDriveGroupsResult.h
 	include/alibabacloud/ecd/model/DescribeCloudDrivePermissionsRequest.h
 	include/alibabacloud/ecd/model/DescribeCloudDrivePermissionsResult.h
 	include/alibabacloud/ecd/model/DescribeCustomizedListHeadersRequest.h
@@ -125,10 +157,10 @@ set(ecd_public_header_model
 	include/alibabacloud/ecd/model/DescribeDesktopsResult.h
 	include/alibabacloud/ecd/model/DescribeDesktopsInGroupRequest.h
 	include/alibabacloud/ecd/model/DescribeDesktopsInGroupResult.h
+	include/alibabacloud/ecd/model/DescribeDevicesRequest.h
+	include/alibabacloud/ecd/model/DescribeDevicesResult.h
 	include/alibabacloud/ecd/model/DescribeDirectoriesRequest.h
 	include/alibabacloud/ecd/model/DescribeDirectoriesResult.h
-	include/alibabacloud/ecd/model/DescribeDrivesRequest.h
-	include/alibabacloud/ecd/model/DescribeDrivesResult.h
 	include/alibabacloud/ecd/model/DescribeFlowMetricRequest.h
 	include/alibabacloud/ecd/model/DescribeFlowMetricResult.h
 	include/alibabacloud/ecd/model/DescribeFlowStatisticRequest.h
@@ -177,6 +209,8 @@ set(ecd_public_header_model
 	include/alibabacloud/ecd/model/DescribeSuspEventsResult.h
 	include/alibabacloud/ecd/model/DescribeUserConnectionRecordsRequest.h
 	include/alibabacloud/ecd/model/DescribeUserConnectionRecordsResult.h
+	include/alibabacloud/ecd/model/DescribeUserProfilePathRulesRequest.h
+	include/alibabacloud/ecd/model/DescribeUserProfilePathRulesResult.h
 	include/alibabacloud/ecd/model/DescribeUsersInGroupRequest.h
 	include/alibabacloud/ecd/model/DescribeUsersInGroupResult.h
 	include/alibabacloud/ecd/model/DescribeUsersPasswordRequest.h
@@ -193,6 +227,8 @@ set(ecd_public_header_model
 	include/alibabacloud/ecd/model/DescribeZonesResult.h
 	include/alibabacloud/ecd/model/DetachCenRequest.h
 	include/alibabacloud/ecd/model/DetachCenResult.h
+	include/alibabacloud/ecd/model/DetachEndUserRequest.h
+	include/alibabacloud/ecd/model/DetachEndUserResult.h
 	include/alibabacloud/ecd/model/DisableDesktopsInGroupRequest.h
 	include/alibabacloud/ecd/model/DisableDesktopsInGroupResult.h
 	include/alibabacloud/ecd/model/DissociateNetworkPackageRequest.h
@@ -213,8 +249,14 @@ set(ecd_public_header_model
 	include/alibabacloud/ecd/model/GetSpMetadataResult.h
 	include/alibabacloud/ecd/model/HandleSecurityEventsRequest.h
 	include/alibabacloud/ecd/model/HandleSecurityEventsResult.h
+	include/alibabacloud/ecd/model/HibernateDesktopsRequest.h
+	include/alibabacloud/ecd/model/HibernateDesktopsResult.h
+	include/alibabacloud/ecd/model/ListCdsFilesRequest.h
+	include/alibabacloud/ecd/model/ListCdsFilesResult.h
 	include/alibabacloud/ecd/model/ListDirectoryUsersRequest.h
 	include/alibabacloud/ecd/model/ListDirectoryUsersResult.h
+	include/alibabacloud/ecd/model/ListFilePermissionRequest.h
+	include/alibabacloud/ecd/model/ListFilePermissionResult.h
 	include/alibabacloud/ecd/model/ListOfficeSiteOverviewRequest.h
 	include/alibabacloud/ecd/model/ListOfficeSiteOverviewResult.h
 	include/alibabacloud/ecd/model/ListOfficeSiteUsersRequest.h
@@ -225,12 +267,22 @@ set(ecd_public_header_model
 	include/alibabacloud/ecd/model/ListUserAdOrganizationUnitsResult.h
 	include/alibabacloud/ecd/model/LockVirtualMFADeviceRequest.h
 	include/alibabacloud/ecd/model/LockVirtualMFADeviceResult.h
+	include/alibabacloud/ecd/model/MigrateDesktopsRequest.h
+	include/alibabacloud/ecd/model/MigrateDesktopsResult.h
 	include/alibabacloud/ecd/model/ModifyADConnectorDirectoryRequest.h
 	include/alibabacloud/ecd/model/ModifyADConnectorDirectoryResult.h
 	include/alibabacloud/ecd/model/ModifyADConnectorOfficeSiteRequest.h
 	include/alibabacloud/ecd/model/ModifyADConnectorOfficeSiteResult.h
+	include/alibabacloud/ecd/model/ModifyAutoSnapshotPolicyRequest.h
+	include/alibabacloud/ecd/model/ModifyAutoSnapshotPolicyResult.h
 	include/alibabacloud/ecd/model/ModifyBundleRequest.h
 	include/alibabacloud/ecd/model/ModifyBundleResult.h
+	include/alibabacloud/ecd/model/ModifyCdsFileRequest.h
+	include/alibabacloud/ecd/model/ModifyCdsFileResult.h
+	include/alibabacloud/ecd/model/ModifyCdsFileShareLinkRequest.h
+	include/alibabacloud/ecd/model/ModifyCdsFileShareLinkResult.h
+	include/alibabacloud/ecd/model/ModifyCloudDriveGroupsRequest.h
+	include/alibabacloud/ecd/model/ModifyCloudDriveGroupsResult.h
 	include/alibabacloud/ecd/model/ModifyCloudDrivePermissionRequest.h
 	include/alibabacloud/ecd/model/ModifyCloudDrivePermissionResult.h
 	include/alibabacloud/ecd/model/ModifyCustomizedListHeadersRequest.h
@@ -275,12 +327,16 @@ set(ecd_public_header_model
 	include/alibabacloud/ecd/model/ModifyUserEntitlementResult.h
 	include/alibabacloud/ecd/model/ModifyUserToDesktopGroupRequest.h
 	include/alibabacloud/ecd/model/ModifyUserToDesktopGroupResult.h
+	include/alibabacloud/ecd/model/MoveCdsFileRequest.h
+	include/alibabacloud/ecd/model/MoveCdsFileResult.h
 	include/alibabacloud/ecd/model/OperateVulsRequest.h
 	include/alibabacloud/ecd/model/OperateVulsResult.h
 	include/alibabacloud/ecd/model/RebootDesktopsRequest.h
 	include/alibabacloud/ecd/model/RebootDesktopsResult.h
 	include/alibabacloud/ecd/model/RebuildDesktopsRequest.h
 	include/alibabacloud/ecd/model/RebuildDesktopsResult.h
+	include/alibabacloud/ecd/model/RemoveFilePermissionRequest.h
+	include/alibabacloud/ecd/model/RemoveFilePermissionResult.h
 	include/alibabacloud/ecd/model/RemoveUserFromDesktopGroupRequest.h
 	include/alibabacloud/ecd/model/RemoveUserFromDesktopGroupResult.h
 	include/alibabacloud/ecd/model/RenewDesktopsRequest.h
@@ -301,14 +357,20 @@ set(ecd_public_header_model
 	include/alibabacloud/ecd/model/RunCommandResult.h
 	include/alibabacloud/ecd/model/SendVerifyCodeRequest.h
 	include/alibabacloud/ecd/model/SendVerifyCodeResult.h
+	include/alibabacloud/ecd/model/SetDesktopGroupScaleTimerRequest.h
+	include/alibabacloud/ecd/model/SetDesktopGroupScaleTimerResult.h
 	include/alibabacloud/ecd/model/SetDesktopGroupTimerRequest.h
 	include/alibabacloud/ecd/model/SetDesktopGroupTimerResult.h
 	include/alibabacloud/ecd/model/SetDesktopGroupTimerStatusRequest.h
 	include/alibabacloud/ecd/model/SetDesktopGroupTimerStatusResult.h
+	include/alibabacloud/ecd/model/SetDirectorySsoStatusRequest.h
+	include/alibabacloud/ecd/model/SetDirectorySsoStatusResult.h
 	include/alibabacloud/ecd/model/SetIdpMetadataRequest.h
 	include/alibabacloud/ecd/model/SetIdpMetadataResult.h
 	include/alibabacloud/ecd/model/SetOfficeSiteSsoStatusRequest.h
 	include/alibabacloud/ecd/model/SetOfficeSiteSsoStatusResult.h
+	include/alibabacloud/ecd/model/SetUserProfilePathRulesRequest.h
+	include/alibabacloud/ecd/model/SetUserProfilePathRulesResult.h
 	include/alibabacloud/ecd/model/StartDesktopsRequest.h
 	include/alibabacloud/ecd/model/StartDesktopsResult.h
 	include/alibabacloud/ecd/model/StartVirusScanTaskRequest.h
@@ -328,14 +390,22 @@ set(ecd_public_header_model
 	include/alibabacloud/ecd/model/UploadImageRequest.h
 	include/alibabacloud/ecd/model/UploadImageResult.h
 	include/alibabacloud/ecd/model/VerifyCenRequest.h
-	include/alibabacloud/ecd/model/VerifyCenResult.h )
+	include/alibabacloud/ecd/model/VerifyCenResult.h
+	include/alibabacloud/ecd/model/WakeupDesktopsRequest.h
+	include/alibabacloud/ecd/model/WakeupDesktopsResult.h )
 
 set(ecd_src 
 	src/EcdClient.cc
 	src/model/ActivateOfficeSiteRequest.cc
 	src/model/ActivateOfficeSiteResult.cc
+	src/model/AddDevicesRequest.cc
+	src/model/AddDevicesResult.cc
+	src/model/AddFilePermissionRequest.cc
+	src/model/AddFilePermissionResult.cc
 	src/model/AddUserToDesktopGroupRequest.cc
 	src/model/AddUserToDesktopGroupResult.cc
+	src/model/ApplyAutoSnapshotPolicyRequest.cc
+	src/model/ApplyAutoSnapshotPolicyResult.cc
 	src/model/ApplyCoordinatePrivilegeRequest.cc
 	src/model/ApplyCoordinatePrivilegeResult.cc
 	src/model/ApplyCoordinationForMonitoringRequest.cc
@@ -346,16 +416,26 @@ set(ecd_src
 	src/model/AssociateNetworkPackageResult.cc
 	src/model/AttachCenRequest.cc
 	src/model/AttachCenResult.cc
+	src/model/AttachEndUserRequest.cc
+	src/model/AttachEndUserResult.cc
+	src/model/CancelAutoSnapshotPolicyRequest.cc
+	src/model/CancelAutoSnapshotPolicyResult.cc
+	src/model/CancelCdsFileShareLinkRequest.cc
+	src/model/CancelCdsFileShareLinkResult.cc
 	src/model/CancelCoordinationForMonitoringRequest.cc
 	src/model/CancelCoordinationForMonitoringResult.cc
 	src/model/CancelCopyImageRequest.cc
 	src/model/CancelCopyImageResult.cc
 	src/model/ClonePolicyGroupRequest.cc
 	src/model/ClonePolicyGroupResult.cc
+	src/model/CompleteCdsFileRequest.cc
+	src/model/CompleteCdsFileResult.cc
 	src/model/ConfigADConnectorTrustRequest.cc
 	src/model/ConfigADConnectorTrustResult.cc
 	src/model/ConfigADConnectorUserRequest.cc
 	src/model/ConfigADConnectorUserResult.cc
+	src/model/CopyCdsFileRequest.cc
+	src/model/CopyCdsFileResult.cc
 	src/model/CopyImageRequest.cc
 	src/model/CopyImageResult.cc
 	src/model/CreateADConnectorDirectoryRequest.cc
@@ -364,16 +444,20 @@ set(ecd_src
 	src/model/CreateADConnectorOfficeSiteResult.cc
 	src/model/CreateAndBindNasFileSystemRequest.cc
 	src/model/CreateAndBindNasFileSystemResult.cc
+	src/model/CreateAutoSnapshotPolicyRequest.cc
+	src/model/CreateAutoSnapshotPolicyResult.cc
 	src/model/CreateBundleRequest.cc
 	src/model/CreateBundleResult.cc
+	src/model/CreateCdsFileRequest.cc
+	src/model/CreateCdsFileResult.cc
+	src/model/CreateCdsFileShareLinkRequest.cc
+	src/model/CreateCdsFileShareLinkResult.cc
 	src/model/CreateDesktopGroupRequest.cc
 	src/model/CreateDesktopGroupResult.cc
 	src/model/CreateDesktopsRequest.cc
 	src/model/CreateDesktopsResult.cc
 	src/model/CreateDiskEncryptionServiceRequest.cc
 	src/model/CreateDiskEncryptionServiceResult.cc
-	src/model/CreateDriveRequest.cc
-	src/model/CreateDriveResult.cc
 	src/model/CreateImageRequest.cc
 	src/model/CreateImageResult.cc
 	src/model/CreateNASFileSystemRequest.cc
@@ -388,18 +472,24 @@ set(ecd_src
 	src/model/CreateSimpleOfficeSiteResult.cc
 	src/model/CreateSnapshotRequest.cc
 	src/model/CreateSnapshotResult.cc
+	src/model/DeleteAutoSnapshotPolicyRequest.cc
+	src/model/DeleteAutoSnapshotPolicyResult.cc
 	src/model/DeleteBundlesRequest.cc
 	src/model/DeleteBundlesResult.cc
+	src/model/DeleteCdsFileRequest.cc
+	src/model/DeleteCdsFileResult.cc
+	src/model/DeleteCloudDriveGroupsRequest.cc
+	src/model/DeleteCloudDriveGroupsResult.cc
 	src/model/DeleteCloudDriveUsersRequest.cc
 	src/model/DeleteCloudDriveUsersResult.cc
 	src/model/DeleteDesktopGroupRequest.cc
 	src/model/DeleteDesktopGroupResult.cc
 	src/model/DeleteDesktopsRequest.cc
 	src/model/DeleteDesktopsResult.cc
+	src/model/DeleteDevicesRequest.cc
+	src/model/DeleteDevicesResult.cc
 	src/model/DeleteDirectoriesRequest.cc
 	src/model/DeleteDirectoriesResult.cc
-	src/model/DeleteDriveRequest.cc
-	src/model/DeleteDriveResult.cc
 	src/model/DeleteImagesRequest.cc
 	src/model/DeleteImagesResult.cc
 	src/model/DeleteNASFileSystemsRequest.cc
@@ -416,12 +506,18 @@ set(ecd_src
 	src/model/DeleteVirtualMFADeviceResult.cc
 	src/model/DescribeAlarmEventStackInfoRequest.cc
 	src/model/DescribeAlarmEventStackInfoResult.cc
+	src/model/DescribeAutoSnapshotPolicyRequest.cc
+	src/model/DescribeAutoSnapshotPolicyResult.cc
 	src/model/DescribeBundlesRequest.cc
 	src/model/DescribeBundlesResult.cc
+	src/model/DescribeCdsFileShareLinksRequest.cc
+	src/model/DescribeCdsFileShareLinksResult.cc
 	src/model/DescribeCensRequest.cc
 	src/model/DescribeCensResult.cc
 	src/model/DescribeClientEventsRequest.cc
 	src/model/DescribeClientEventsResult.cc
+	src/model/DescribeCloudDriveGroupsRequest.cc
+	src/model/DescribeCloudDriveGroupsResult.cc
 	src/model/DescribeCloudDrivePermissionsRequest.cc
 	src/model/DescribeCloudDrivePermissionsResult.cc
 	src/model/DescribeCustomizedListHeadersRequest.cc
@@ -436,10 +532,10 @@ set(ecd_src
 	src/model/DescribeDesktopsResult.cc
 	src/model/DescribeDesktopsInGroupRequest.cc
 	src/model/DescribeDesktopsInGroupResult.cc
+	src/model/DescribeDevicesRequest.cc
+	src/model/DescribeDevicesResult.cc
 	src/model/DescribeDirectoriesRequest.cc
 	src/model/DescribeDirectoriesResult.cc
-	src/model/DescribeDrivesRequest.cc
-	src/model/DescribeDrivesResult.cc
 	src/model/DescribeFlowMetricRequest.cc
 	src/model/DescribeFlowMetricResult.cc
 	src/model/DescribeFlowStatisticRequest.cc
@@ -488,6 +584,8 @@ set(ecd_src
 	src/model/DescribeSuspEventsResult.cc
 	src/model/DescribeUserConnectionRecordsRequest.cc
 	src/model/DescribeUserConnectionRecordsResult.cc
+	src/model/DescribeUserProfilePathRulesRequest.cc
+	src/model/DescribeUserProfilePathRulesResult.cc
 	src/model/DescribeUsersInGroupRequest.cc
 	src/model/DescribeUsersInGroupResult.cc
 	src/model/DescribeUsersPasswordRequest.cc
@@ -504,6 +602,8 @@ set(ecd_src
 	src/model/DescribeZonesResult.cc
 	src/model/DetachCenRequest.cc
 	src/model/DetachCenResult.cc
+	src/model/DetachEndUserRequest.cc
+	src/model/DetachEndUserResult.cc
 	src/model/DisableDesktopsInGroupRequest.cc
 	src/model/DisableDesktopsInGroupResult.cc
 	src/model/DissociateNetworkPackageRequest.cc
@@ -524,8 +624,14 @@ set(ecd_src
 	src/model/GetSpMetadataResult.cc
 	src/model/HandleSecurityEventsRequest.cc
 	src/model/HandleSecurityEventsResult.cc
+	src/model/HibernateDesktopsRequest.cc
+	src/model/HibernateDesktopsResult.cc
+	src/model/ListCdsFilesRequest.cc
+	src/model/ListCdsFilesResult.cc
 	src/model/ListDirectoryUsersRequest.cc
 	src/model/ListDirectoryUsersResult.cc
+	src/model/ListFilePermissionRequest.cc
+	src/model/ListFilePermissionResult.cc
 	src/model/ListOfficeSiteOverviewRequest.cc
 	src/model/ListOfficeSiteOverviewResult.cc
 	src/model/ListOfficeSiteUsersRequest.cc
@@ -536,12 +642,22 @@ set(ecd_src
 	src/model/ListUserAdOrganizationUnitsResult.cc
 	src/model/LockVirtualMFADeviceRequest.cc
 	src/model/LockVirtualMFADeviceResult.cc
+	src/model/MigrateDesktopsRequest.cc
+	src/model/MigrateDesktopsResult.cc
 	src/model/ModifyADConnectorDirectoryRequest.cc
 	src/model/ModifyADConnectorDirectoryResult.cc
 	src/model/ModifyADConnectorOfficeSiteRequest.cc
 	src/model/ModifyADConnectorOfficeSiteResult.cc
+	src/model/ModifyAutoSnapshotPolicyRequest.cc
+	src/model/ModifyAutoSnapshotPolicyResult.cc
 	src/model/ModifyBundleRequest.cc
 	src/model/ModifyBundleResult.cc
+	src/model/ModifyCdsFileRequest.cc
+	src/model/ModifyCdsFileResult.cc
+	src/model/ModifyCdsFileShareLinkRequest.cc
+	src/model/ModifyCdsFileShareLinkResult.cc
+	src/model/ModifyCloudDriveGroupsRequest.cc
+	src/model/ModifyCloudDriveGroupsResult.cc
 	src/model/ModifyCloudDrivePermissionRequest.cc
 	src/model/ModifyCloudDrivePermissionResult.cc
 	src/model/ModifyCustomizedListHeadersRequest.cc
@@ -586,12 +702,16 @@ set(ecd_src
 	src/model/ModifyUserEntitlementResult.cc
 	src/model/ModifyUserToDesktopGroupRequest.cc
 	src/model/ModifyUserToDesktopGroupResult.cc
+	src/model/MoveCdsFileRequest.cc
+	src/model/MoveCdsFileResult.cc
 	src/model/OperateVulsRequest.cc
 	src/model/OperateVulsResult.cc
 	src/model/RebootDesktopsRequest.cc
 	src/model/RebootDesktopsResult.cc
 	src/model/RebuildDesktopsRequest.cc
 	src/model/RebuildDesktopsResult.cc
+	src/model/RemoveFilePermissionRequest.cc
+	src/model/RemoveFilePermissionResult.cc
 	src/model/RemoveUserFromDesktopGroupRequest.cc
 	src/model/RemoveUserFromDesktopGroupResult.cc
 	src/model/RenewDesktopsRequest.cc
@@ -612,14 +732,20 @@ set(ecd_src
 	src/model/RunCommandResult.cc
 	src/model/SendVerifyCodeRequest.cc
 	src/model/SendVerifyCodeResult.cc
+	src/model/SetDesktopGroupScaleTimerRequest.cc
+	src/model/SetDesktopGroupScaleTimerResult.cc
 	src/model/SetDesktopGroupTimerRequest.cc
 	src/model/SetDesktopGroupTimerResult.cc
 	src/model/SetDesktopGroupTimerStatusRequest.cc
 	src/model/SetDesktopGroupTimerStatusResult.cc
+	src/model/SetDirectorySsoStatusRequest.cc
+	src/model/SetDirectorySsoStatusResult.cc
 	src/model/SetIdpMetadataRequest.cc
 	src/model/SetIdpMetadataResult.cc
 	src/model/SetOfficeSiteSsoStatusRequest.cc
 	src/model/SetOfficeSiteSsoStatusResult.cc
+	src/model/SetUserProfilePathRulesRequest.cc
+	src/model/SetUserProfilePathRulesResult.cc
 	src/model/StartDesktopsRequest.cc
 	src/model/StartDesktopsResult.cc
 	src/model/StartVirusScanTaskRequest.cc
@@ -639,7 +765,9 @@ set(ecd_src
 	src/model/UploadImageRequest.cc
 	src/model/UploadImageResult.cc
 	src/model/VerifyCenRequest.cc
-	src/model/VerifyCenResult.cc )
+	src/model/VerifyCenResult.cc
+	src/model/WakeupDesktopsRequest.cc
+	src/model/WakeupDesktopsResult.cc )
 
 add_library(ecd ${LIB_TYPE}
 	${ecd_public_header}

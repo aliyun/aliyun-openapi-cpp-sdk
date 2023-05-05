@@ -34,6 +34,14 @@ void DescribeInvocationsRequest::setInvokeStatus(const std::string &invokeStatus
   setParameter(std::string("InvokeStatus"), invokeStatus);
 }
 
+std::vector<std::string> DescribeInvocationsRequest::getDesktopIds() const {
+  return desktopIds_;
+}
+
+void DescribeInvocationsRequest::setDesktopIds(const std::vector<std::string> &desktopIds) {
+  desktopIds_ = desktopIds;
+}
+
 bool DescribeInvocationsRequest::getIncludeOutput() const {
   return includeOutput_;
 }

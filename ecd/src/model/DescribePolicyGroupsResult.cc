@@ -81,6 +81,8 @@ void DescribePolicyGroupsResult::parse(const std::string &payload)
 			describePolicyGroupsObject.localDrive = valueDescribePolicyGroupsDescribePolicyGroup["LocalDrive"].asString();
 		if(!valueDescribePolicyGroupsDescribePolicyGroup["GpuAcceleration"].isNull())
 			describePolicyGroupsObject.gpuAcceleration = valueDescribePolicyGroupsDescribePolicyGroup["GpuAcceleration"].asString();
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["DomainResolveRuleType"].isNull())
+			describePolicyGroupsObject.domainResolveRuleType = valueDescribePolicyGroupsDescribePolicyGroup["DomainResolveRuleType"].asString();
 		if(!valueDescribePolicyGroupsDescribePolicyGroup["Recording"].isNull())
 			describePolicyGroupsObject.recording = valueDescribePolicyGroupsDescribePolicyGroup["Recording"].asString();
 		if(!valueDescribePolicyGroupsDescribePolicyGroup["RecordingStartTime"].isNull())
@@ -103,6 +105,52 @@ void DescribePolicyGroupsResult::parse(const std::string &payload)
 			describePolicyGroupsObject.recordContentExpires = std::stol(valueDescribePolicyGroupsDescribePolicyGroup["RecordContentExpires"].asString());
 		if(!valueDescribePolicyGroupsDescribePolicyGroup["RemoteCoordinate"].isNull())
 			describePolicyGroupsObject.remoteCoordinate = valueDescribePolicyGroupsDescribePolicyGroup["RemoteCoordinate"].asString();
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["RecordingDuration"].isNull())
+			describePolicyGroupsObject.recordingDuration = std::stoi(valueDescribePolicyGroupsDescribePolicyGroup["RecordingDuration"].asString());
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["Scope"].isNull())
+			describePolicyGroupsObject.scope = valueDescribePolicyGroupsDescribePolicyGroup["Scope"].asString();
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["RecordingAudio"].isNull())
+			describePolicyGroupsObject.recordingAudio = valueDescribePolicyGroupsDescribePolicyGroup["RecordingAudio"].asString();
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["InternetCommunicationProtocol"].isNull())
+			describePolicyGroupsObject.internetCommunicationProtocol = valueDescribePolicyGroupsDescribePolicyGroup["InternetCommunicationProtocol"].asString();
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["VideoRedirect"].isNull())
+			describePolicyGroupsObject.videoRedirect = valueDescribePolicyGroupsDescribePolicyGroup["VideoRedirect"].asString();
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["WatermarkTransparencyValue"].isNull())
+			describePolicyGroupsObject.watermarkTransparencyValue = std::stoi(valueDescribePolicyGroupsDescribePolicyGroup["WatermarkTransparencyValue"].asString());
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["WatermarkColor"].isNull())
+			describePolicyGroupsObject.watermarkColor = std::stoi(valueDescribePolicyGroupsDescribePolicyGroup["WatermarkColor"].asString());
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["WatermarkFontSize"].isNull())
+			describePolicyGroupsObject.watermarkFontSize = std::stoi(valueDescribePolicyGroupsDescribePolicyGroup["WatermarkFontSize"].asString());
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["WatermarkFontStyle"].isNull())
+			describePolicyGroupsObject.watermarkFontStyle = valueDescribePolicyGroupsDescribePolicyGroup["WatermarkFontStyle"].asString();
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["WatermarkDegree"].isNull())
+			describePolicyGroupsObject.watermarkDegree = valueDescribePolicyGroupsDescribePolicyGroup["WatermarkDegree"].asString();
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["WatermarkRowAmount"].isNull())
+			describePolicyGroupsObject.watermarkRowAmount = std::stoi(valueDescribePolicyGroupsDescribePolicyGroup["WatermarkRowAmount"].asString());
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["EndUserApplyAdminCoordinate"].isNull())
+			describePolicyGroupsObject.endUserApplyAdminCoordinate = valueDescribePolicyGroupsDescribePolicyGroup["EndUserApplyAdminCoordinate"].asString();
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["EndUserGroupCoordinate"].isNull())
+			describePolicyGroupsObject.endUserGroupCoordinate = valueDescribePolicyGroupsDescribePolicyGroup["EndUserGroupCoordinate"].asString();
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["CpuProtectedMode"].isNull())
+			describePolicyGroupsObject.cpuProtectedMode = valueDescribePolicyGroupsDescribePolicyGroup["CpuProtectedMode"].asString();
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["CpuRateLimit"].isNull())
+			describePolicyGroupsObject.cpuRateLimit = std::stoi(valueDescribePolicyGroupsDescribePolicyGroup["CpuRateLimit"].asString());
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["CpuSampleDuration"].isNull())
+			describePolicyGroupsObject.cpuSampleDuration = std::stoi(valueDescribePolicyGroupsDescribePolicyGroup["CpuSampleDuration"].asString());
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["CpuSingleRateLimit"].isNull())
+			describePolicyGroupsObject.cpuSingleRateLimit = std::stoi(valueDescribePolicyGroupsDescribePolicyGroup["CpuSingleRateLimit"].asString());
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["CpuDownGradeDuration"].isNull())
+			describePolicyGroupsObject.cpuDownGradeDuration = std::stoi(valueDescribePolicyGroupsDescribePolicyGroup["CpuDownGradeDuration"].asString());
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["MemoryProtectedMode"].isNull())
+			describePolicyGroupsObject.memoryProtectedMode = valueDescribePolicyGroupsDescribePolicyGroup["MemoryProtectedMode"].asString();
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["MemoryRateLimit"].isNull())
+			describePolicyGroupsObject.memoryRateLimit = std::stoi(valueDescribePolicyGroupsDescribePolicyGroup["MemoryRateLimit"].asString());
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["MemorySampleDuration"].isNull())
+			describePolicyGroupsObject.memorySampleDuration = std::stoi(valueDescribePolicyGroupsDescribePolicyGroup["MemorySampleDuration"].asString());
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["MemorySingleRateLimit"].isNull())
+			describePolicyGroupsObject.memorySingleRateLimit = std::stoi(valueDescribePolicyGroupsDescribePolicyGroup["MemorySingleRateLimit"].asString());
+		if(!valueDescribePolicyGroupsDescribePolicyGroup["MemoryDownGradeDuration"].isNull())
+			describePolicyGroupsObject.memoryDownGradeDuration = std::stoi(valueDescribePolicyGroupsDescribePolicyGroup["MemoryDownGradeDuration"].asString());
 		auto allAuthorizeSecurityPolicyRulesNode = valueDescribePolicyGroupsDescribePolicyGroup["AuthorizeSecurityPolicyRules"]["AuthorizeSecurityPolicyRule"];
 		for (auto valueDescribePolicyGroupsDescribePolicyGroupAuthorizeSecurityPolicyRulesAuthorizeSecurityPolicyRule : allAuthorizeSecurityPolicyRulesNode)
 		{
@@ -163,9 +211,42 @@ void DescribePolicyGroupsResult::parse(const std::string &payload)
 				usbSupplyRedirectRuleObject.usbRuleType = std::stol(valueDescribePolicyGroupsDescribePolicyGroupUsbSupplyRedirectRuleUsbSupplyRedirectRuleItem["UsbRuleType"].asString());
 			describePolicyGroupsObject.usbSupplyRedirectRule.push_back(usbSupplyRedirectRuleObject);
 		}
+		auto allDomainResolveRuleNode = valueDescribePolicyGroupsDescribePolicyGroup["DomainResolveRule"]["DomainResolveRuleItem"];
+		for (auto valueDescribePolicyGroupsDescribePolicyGroupDomainResolveRuleDomainResolveRuleItem : allDomainResolveRuleNode)
+		{
+			DescribePolicyGroup::DomainResolveRuleItem domainResolveRuleObject;
+			if(!valueDescribePolicyGroupsDescribePolicyGroupDomainResolveRuleDomainResolveRuleItem["Domain"].isNull())
+				domainResolveRuleObject.domain = valueDescribePolicyGroupsDescribePolicyGroupDomainResolveRuleDomainResolveRuleItem["Domain"].asString();
+			if(!valueDescribePolicyGroupsDescribePolicyGroupDomainResolveRuleDomainResolveRuleItem["Policy"].isNull())
+				domainResolveRuleObject.policy = valueDescribePolicyGroupsDescribePolicyGroupDomainResolveRuleDomainResolveRuleItem["Policy"].asString();
+			if(!valueDescribePolicyGroupsDescribePolicyGroupDomainResolveRuleDomainResolveRuleItem["Description"].isNull())
+				domainResolveRuleObject.description = valueDescribePolicyGroupsDescribePolicyGroupDomainResolveRuleDomainResolveRuleItem["Description"].asString();
+			describePolicyGroupsObject.domainResolveRule.push_back(domainResolveRuleObject);
+		}
+		auto allNetRedirectRuleNode = valueDescribePolicyGroupsDescribePolicyGroup["NetRedirectRule"]["NetRedirectRuleItem"];
+		for (auto valueDescribePolicyGroupsDescribePolicyGroupNetRedirectRuleNetRedirectRuleItem : allNetRedirectRuleNode)
+		{
+			DescribePolicyGroup::NetRedirectRuleItem netRedirectRuleObject;
+			if(!valueDescribePolicyGroupsDescribePolicyGroupNetRedirectRuleNetRedirectRuleItem["Domain"].isNull())
+				netRedirectRuleObject.domain = valueDescribePolicyGroupsDescribePolicyGroupNetRedirectRuleNetRedirectRuleItem["Domain"].asString();
+			if(!valueDescribePolicyGroupsDescribePolicyGroupNetRedirectRuleNetRedirectRuleItem["RuleType"].isNull())
+				netRedirectRuleObject.ruleType = valueDescribePolicyGroupsDescribePolicyGroupNetRedirectRuleNetRedirectRuleItem["RuleType"].asString();
+			if(!valueDescribePolicyGroupsDescribePolicyGroupNetRedirectRuleNetRedirectRuleItem["Policy"].isNull())
+				netRedirectRuleObject.policy = valueDescribePolicyGroupsDescribePolicyGroupNetRedirectRuleNetRedirectRuleItem["Policy"].asString();
+			describePolicyGroupsObject.netRedirectRule.push_back(netRedirectRuleObject);
+		}
 		auto allPreemptLoginUsers = value["PreemptLoginUsers"]["PreemptLoginUser"];
 		for (auto value : allPreemptLoginUsers)
 			describePolicyGroupsObject.preemptLoginUsers.push_back(value.asString());
+		auto allScopeValue = value["ScopeValue"]["scopeValue"];
+		for (auto value : allScopeValue)
+			describePolicyGroupsObject.scopeValue.push_back(value.asString());
+		auto allCpuProcessors = value["CpuProcessors"]["cpuProcessor"];
+		for (auto value : allCpuProcessors)
+			describePolicyGroupsObject.cpuProcessors.push_back(value.asString());
+		auto allMemoryProcessors = value["MemoryProcessors"]["memoryProcessor"];
+		for (auto value : allMemoryProcessors)
+			describePolicyGroupsObject.memoryProcessors.push_back(value.asString());
 		describePolicyGroups_.push_back(describePolicyGroupsObject);
 	}
 	if(!value["NextToken"].isNull())

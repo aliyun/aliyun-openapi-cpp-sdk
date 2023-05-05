@@ -34,6 +34,10 @@ public:
 	void setOfficeSiteId(const std::string &officeSiteId);
 	std::vector<std::string> getEndUserIds() const;
 	void setEndUserIds(const std::vector<std::string> &endUserIds);
+	std::vector<std::string> getImageId() const;
+	void setImageId(const std::vector<std::string> &imageId);
+	std::vector<std::string> getBundleId() const;
+	void setBundleId(const std::vector<std::string> &bundleId);
 	std::string getDesktopGroupName() const;
 	void setDesktopGroupName(const std::string &desktopGroupName);
 	std::string getDesktopGroupId() const;
@@ -52,6 +56,8 @@ public:
 	void setPeriodUnit(const std::string &periodUnit);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
+	std::string getProtocolType() const;
+	void setProtocolType(const std::string &protocolType);
 	std::string getPolicyGroupId() const;
 	void setPolicyGroupId(const std::string &policyGroupId);
 	int getStatus() const;
@@ -60,6 +66,8 @@ public:
 private:
 	std::string officeSiteId_;
 	std::vector<std::string> endUserIds_;
+	std::vector<std::string> imageId_;
+	std::vector<std::string> bundleId_;
 	std::string desktopGroupName_;
 	std::string desktopGroupId_;
 	std::string regionId_;
@@ -69,6 +77,7 @@ private:
 	std::vector<std::string> excludedEndUserIds_;
 	std::string periodUnit_;
 	int maxResults_;
+	std::string protocolType_;
 	std::string policyGroupId_;
 	int status_;
 };

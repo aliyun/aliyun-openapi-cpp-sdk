@@ -34,12 +34,15 @@ public:
 	void setImageId(const std::string &imageId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getOperateType() const;
+	void setOperateType(const std::string &operateType);
 	std::vector<std::string> getDesktopId() const;
 	void setDesktopId(const std::vector<std::string> &desktopId);
 
 private:
 	std::string imageId_;
 	std::string regionId_;
+	std::string operateType_;
 	std::vector<std::string> desktopId_;
 };
 } // namespace Model

@@ -42,6 +42,8 @@ public:
 	void setNeedVerifyZeroDevice(bool needVerifyZeroDevice);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	bool getEnableAdminAccess() const;
+	void setEnableAdminAccess(bool enableAdminAccess);
 
 private:
 	std::string officeSiteId_;
@@ -50,6 +52,7 @@ private:
 	bool needVerifyLoginRisk_;
 	bool needVerifyZeroDevice_;
 	std::string regionId_;
+	bool enableAdminAccess_;
 };
 } // namespace Model
 } // namespace Ecd

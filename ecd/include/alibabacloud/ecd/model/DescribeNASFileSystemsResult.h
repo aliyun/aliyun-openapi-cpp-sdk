@@ -34,15 +34,23 @@ namespace AlibabaCloud
 			public:
 				struct FileSystem
 				{
+					struct DesktopGroup
+					{
+						std::string desktopGroupId;
+						std::string desktopGroupName;
+					};
 					bool supportAcl;
 					std::string storageType;
 					std::string description;
+					std::vector<FileSystem::DesktopGroup> desktopGroups;
 					std::string zoneId;
 					std::string createTime;
 					std::string mountTargetStatus;
 					long meteredSize;
 					bool encryptionEnabled;
 					std::string officeSiteId;
+					bool profileCompatible;
+					std::string domainId;
 					long capacity;
 					std::string mountTargetDomain;
 					std::string fileSystemType;

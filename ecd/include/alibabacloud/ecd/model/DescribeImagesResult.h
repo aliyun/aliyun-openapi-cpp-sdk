@@ -39,6 +39,7 @@ namespace AlibabaCloud
 					std::string sessionType;
 					std::string description;
 					int sharedCount;
+					std::string platform;
 					int size;
 					bool volumeEncryptionEnabled;
 					std::string imageType;
@@ -52,6 +53,7 @@ namespace AlibabaCloud
 					std::string creationTime;
 					std::string imageId;
 					bool gpuCategory;
+					std::string updateTime;
 					int dataDiskSize;
 				};
 

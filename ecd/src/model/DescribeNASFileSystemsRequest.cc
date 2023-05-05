@@ -34,6 +34,15 @@ void DescribeNASFileSystemsRequest::setOfficeSiteId(const std::string &officeSit
   setParameter(std::string("OfficeSiteId"), officeSiteId);
 }
 
+bool DescribeNASFileSystemsRequest::getMatchCompatibleProfile() const {
+  return matchCompatibleProfile_;
+}
+
+void DescribeNASFileSystemsRequest::setMatchCompatibleProfile(bool matchCompatibleProfile) {
+  matchCompatibleProfile_ = matchCompatibleProfile;
+  setParameter(std::string("MatchCompatibleProfile"), matchCompatibleProfile ? "true" : "false");
+}
+
 std::string DescribeNASFileSystemsRequest::getRegionId() const {
   return regionId_;
 }

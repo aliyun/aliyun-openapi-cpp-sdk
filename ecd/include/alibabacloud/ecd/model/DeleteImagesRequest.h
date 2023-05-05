@@ -34,10 +34,13 @@ public:
 	void setImageId(const std::vector<std::string> &imageId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	bool getDeleteCascadedBundle() const;
+	void setDeleteCascadedBundle(bool deleteCascadedBundle);
 
 private:
 	std::vector<std::string> imageId_;
 	std::string regionId_;
+	bool deleteCascadedBundle_;
 };
 } // namespace Model
 } // namespace Ecd

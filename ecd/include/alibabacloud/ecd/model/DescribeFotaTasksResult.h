@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string status;
 					std::string taskUid;
 					int pendingDesktopCount;
+					int pendingCustomImageCount;
 					int size;
 					std::string releaseNote;
 					std::string publishTime;

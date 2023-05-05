@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct ModifyResult
 				{
 					std::string message;
+					bool checkResult;
 					std::string desktopId;
 					std::string code;
 				};

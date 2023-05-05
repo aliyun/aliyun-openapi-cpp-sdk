@@ -46,6 +46,8 @@ public:
 	void setDesktopGroupName(const std::string &desktopGroupName);
 	int getAllowBufferCount() const;
 	void setAllowBufferCount(int allowBufferCount);
+	std::vector<std::string> getPolicyGroupIds() const;
+	void setPolicyGroupIds(const std::vector<std::string> &policyGroupIds);
 	long getIdleDisconnectDuration() const;
 	void setIdleDisconnectDuration(long idleDisconnectDuration);
 	std::string getDesktopGroupId() const;
@@ -76,6 +78,8 @@ public:
 	void setConnectDuration(long connectDuration);
 	bool getProfileFollowSwitch() const;
 	void setProfileFollowSwitch(bool profileFollowSwitch);
+	int getBuyDesktopsCount() const;
+	void setBuyDesktopsCount(int buyDesktopsCount);
 	std::string getPolicyGroupId() const;
 	void setPolicyGroupId(const std::string &policyGroupId);
 
@@ -88,6 +92,7 @@ private:
 	long loadPolicy_;
 	std::string desktopGroupName_;
 	int allowBufferCount_;
+	std::vector<std::string> policyGroupIds_;
 	long idleDisconnectDuration_;
 	std::string desktopGroupId_;
 	std::string regionId_;
@@ -103,6 +108,7 @@ private:
 	long keepDuration_;
 	long connectDuration_;
 	bool profileFollowSwitch_;
+	int buyDesktopsCount_;
 	std::string policyGroupId_;
 };
 } // namespace Model

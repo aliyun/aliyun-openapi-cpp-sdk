@@ -37,9 +37,13 @@ namespace AlibabaCloud
 					std::string status;
 					std::string progress;
 					std::string description;
+					std::string desktopName;
+					std::string deletionTime;
 					std::string desktopId;
 					bool volumeEncryptionEnabled;
+					std::string creator;
 					std::string snapshotName;
+					std::string desktopStatus;
 					std::string snapshotId;
 					std::string sourceDiskSize;
 					std::string protocolType;

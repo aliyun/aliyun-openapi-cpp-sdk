@@ -42,6 +42,22 @@ void DescribeDesktopGroupsRequest::setEndUserIds(const std::vector<std::string> 
   endUserIds_ = endUserIds;
 }
 
+std::vector<std::string> DescribeDesktopGroupsRequest::getImageId() const {
+  return imageId_;
+}
+
+void DescribeDesktopGroupsRequest::setImageId(const std::vector<std::string> &imageId) {
+  imageId_ = imageId;
+}
+
+std::vector<std::string> DescribeDesktopGroupsRequest::getBundleId() const {
+  return bundleId_;
+}
+
+void DescribeDesktopGroupsRequest::setBundleId(const std::vector<std::string> &bundleId) {
+  bundleId_ = bundleId;
+}
+
 std::string DescribeDesktopGroupsRequest::getDesktopGroupName() const {
   return desktopGroupName_;
 }
@@ -120,6 +136,15 @@ int DescribeDesktopGroupsRequest::getMaxResults() const {
 void DescribeDesktopGroupsRequest::setMaxResults(int maxResults) {
   maxResults_ = maxResults;
   setParameter(std::string("MaxResults"), std::to_string(maxResults));
+}
+
+std::string DescribeDesktopGroupsRequest::getProtocolType() const {
+  return protocolType_;
+}
+
+void DescribeDesktopGroupsRequest::setProtocolType(const std::string &protocolType) {
+  protocolType_ = protocolType;
+  setParameter(std::string("ProtocolType"), protocolType);
 }
 
 std::string DescribeDesktopGroupsRequest::getPolicyGroupId() const {

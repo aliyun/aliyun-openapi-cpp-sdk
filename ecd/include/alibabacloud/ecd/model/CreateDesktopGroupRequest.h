@@ -34,6 +34,8 @@ public:
 	void setDesktopGroupName(const std::string &desktopGroupName);
 	int getAllowBufferCount() const;
 	void setAllowBufferCount(int allowBufferCount);
+	int getGroupVersion() const;
+	void setGroupVersion(int groupVersion);
 	bool getAllClassifyUsers() const;
 	void setAllClassifyUsers(bool allClassifyUsers);
 	int getMaxDesktopsCount() const;
@@ -52,8 +54,12 @@ public:
 	void setKeepDuration(long keepDuration);
 	std::string getPeriodUnit() const;
 	void setPeriodUnit(const std::string &periodUnit);
+	bool getAutoRenew() const;
+	void setAutoRenew(bool autoRenew);
 	bool getProfileFollowSwitch() const;
 	void setProfileFollowSwitch(bool profileFollowSwitch);
+	int getBuyDesktopsCount() const;
+	void setBuyDesktopsCount(int buyDesktopsCount);
 	std::string getPolicyGroupId() const;
 	void setPolicyGroupId(const std::string &policyGroupId);
 	std::string getVolumeEncryptionKey() const;
@@ -104,6 +110,7 @@ public:
 private:
 	std::string desktopGroupName_;
 	int allowBufferCount_;
+	int groupVersion_;
 	bool allClassifyUsers_;
 	int maxDesktopsCount_;
 	bool volumeEncryptionEnabled_;
@@ -113,7 +120,9 @@ private:
 	float ratioThreshold_;
 	long keepDuration_;
 	std::string periodUnit_;
+	bool autoRenew_;
 	bool profileFollowSwitch_;
+	int buyDesktopsCount_;
 	std::string policyGroupId_;
 	std::string volumeEncryptionKey_;
 	std::string officeSiteId_;

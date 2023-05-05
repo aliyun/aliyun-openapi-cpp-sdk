@@ -59,6 +59,8 @@ void DescribeFotaTasksResult::parse(const std::string &payload)
 			fotaTasksObject.releaseNote = valueFotaTasksFotaTask["ReleaseNote"].asString();
 		if(!valueFotaTasksFotaTask["Size"].isNull())
 			fotaTasksObject.size = std::stoi(valueFotaTasksFotaTask["Size"].asString());
+		if(!valueFotaTasksFotaTask["PendingCustomImageCount"].isNull())
+			fotaTasksObject.pendingCustomImageCount = std::stoi(valueFotaTasksFotaTask["PendingCustomImageCount"].asString());
 		fotaTasks_.push_back(fotaTasksObject);
 	}
 

@@ -49,6 +49,8 @@ void ModifyDesktopsPolicyGroupResult::parse(const std::string &payload)
 			modifyResultsObject.message = valueModifyResultsModifyResult["Message"].asString();
 		if(!valueModifyResultsModifyResult["DesktopId"].isNull())
 			modifyResultsObject.desktopId = valueModifyResultsModifyResult["DesktopId"].asString();
+		if(!valueModifyResultsModifyResult["CheckResult"].isNull())
+			modifyResultsObject.checkResult = valueModifyResultsModifyResult["CheckResult"].asString() == "true";
 		modifyResults_.push_back(modifyResultsObject);
 	}
 

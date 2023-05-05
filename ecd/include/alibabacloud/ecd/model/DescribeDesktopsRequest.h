@@ -36,12 +36,20 @@ public:
 	~DescribeDesktopsRequest();
 	std::string getOfficeSiteId() const;
 	void setOfficeSiteId(const std::string &officeSiteId);
+	std::string getSnapshotPolicyId() const;
+	void setSnapshotPolicyId(const std::string &snapshotPolicyId);
+	std::vector<std::string> getImageId() const;
+	void setImageId(const std::vector<std::string> &imageId);
 	std::string getDesktopStatus() const;
 	void setDesktopStatus(const std::string &desktopStatus);
+	std::string getDesktopGroupId() const;
+	void setDesktopGroupId(const std::string &desktopGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	bool getOnlyDesktopGroup() const;
+	void setOnlyDesktopGroup(bool onlyDesktopGroup);
 	bool getQueryFotaUpdate() const;
 	void setQueryFotaUpdate(bool queryFotaUpdate);
 	std::string getDirectoryId() const;
@@ -52,6 +60,8 @@ public:
 	void setDesktopId(const std::vector<std::string> &desktopId);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	std::string getDesktopType() const;
+	void setDesktopType(const std::string &desktopType);
 	std::string getDesktopName() const;
 	void setDesktopName(const std::string &desktopName);
 	std::string getGroupId() const;
@@ -68,6 +78,8 @@ public:
 	void setExpiredTime(const std::string &expiredTime);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
+	std::vector<std::string> getOsTypes() const;
+	void setOsTypes(const std::vector<std::string> &osTypes);
 	std::string getProtocolType() const;
 	void setProtocolType(const std::string &protocolType);
 	std::string getChargeType() const;
@@ -79,14 +91,19 @@ public:
 
 private:
 	std::string officeSiteId_;
+	std::string snapshotPolicyId_;
+	std::vector<std::string> imageId_;
 	std::string desktopStatus_;
+	std::string desktopGroupId_;
 	std::string regionId_;
 	std::string nextToken_;
+	bool onlyDesktopGroup_;
 	bool queryFotaUpdate_;
 	std::string directoryId_;
 	std::vector<std::string> endUserId_;
 	std::vector<std::string> desktopId_;
 	std::vector<Tag> tag_;
+	std::string desktopType_;
 	std::string desktopName_;
 	std::string groupId_;
 	std::string officeSiteName_;
@@ -95,6 +112,7 @@ private:
 	std::string managementFlag_;
 	std::string expiredTime_;
 	int maxResults_;
+	std::vector<std::string> osTypes_;
 	std::string protocolType_;
 	std::string chargeType_;
 	std::string policyGroupId_;

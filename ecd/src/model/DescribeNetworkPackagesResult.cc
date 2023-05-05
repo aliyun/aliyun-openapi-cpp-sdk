@@ -53,8 +53,16 @@ void DescribeNetworkPackagesResult::parse(const std::string &payload)
 			networkPackagesObject.createTime = valueNetworkPackagesNetworkPackage["CreateTime"].asString();
 		if(!valueNetworkPackagesNetworkPackage["OfficeSiteId"].isNull())
 			networkPackagesObject.officeSiteId = valueNetworkPackagesNetworkPackage["OfficeSiteId"].asString();
+		if(!valueNetworkPackagesNetworkPackage["PayType"].isNull())
+			networkPackagesObject.payType = valueNetworkPackagesNetworkPackage["PayType"].asString();
 		if(!valueNetworkPackagesNetworkPackage["InternetChargeType"].isNull())
 			networkPackagesObject.internetChargeType = valueNetworkPackagesNetworkPackage["InternetChargeType"].asString();
+		if(!valueNetworkPackagesNetworkPackage["ReservationInternetChargeType"].isNull())
+			networkPackagesObject.reservationInternetChargeType = valueNetworkPackagesNetworkPackage["ReservationInternetChargeType"].asString();
+		if(!valueNetworkPackagesNetworkPackage["ReservationBandwidth"].isNull())
+			networkPackagesObject.reservationBandwidth = std::stoi(valueNetworkPackagesNetworkPackage["ReservationBandwidth"].asString());
+		if(!valueNetworkPackagesNetworkPackage["ReservationActiveTime"].isNull())
+			networkPackagesObject.reservationActiveTime = valueNetworkPackagesNetworkPackage["ReservationActiveTime"].asString();
 		if(!valueNetworkPackagesNetworkPackage["NetworkPackageStatus"].isNull())
 			networkPackagesObject.networkPackageStatus = valueNetworkPackagesNetworkPackage["NetworkPackageStatus"].asString();
 		if(!valueNetworkPackagesNetworkPackage["OfficeSiteName"].isNull())
@@ -65,6 +73,8 @@ void DescribeNetworkPackagesResult::parse(const std::string &payload)
 			networkPackagesObject.vpcSnatPolicy = valueNetworkPackagesNetworkPackage["VpcSnatPolicy"].asString();
 		if(!valueNetworkPackagesNetworkPackage["QosType"].isNull())
 			networkPackagesObject.qosType = valueNetworkPackagesNetworkPackage["QosType"].asString();
+		if(!valueNetworkPackagesNetworkPackage["NgwVersion"].isNull())
+			networkPackagesObject.ngwVersion = valueNetworkPackagesNetworkPackage["NgwVersion"].asString();
 		auto allEipAddresses = value["EipAddresses"]["EipAddress"];
 		for (auto value : allEipAddresses)
 			networkPackagesObject.eipAddresses.push_back(value.asString());

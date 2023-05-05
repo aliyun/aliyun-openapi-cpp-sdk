@@ -34,17 +34,22 @@ namespace AlibabaCloud
 			public:
 				struct NetworkPackage
 				{
+					std::string networkPackageId;
+					std::string createTime;
+					std::string payType;
+					std::string internetChargeType;
+					std::string reservationInternetChargeType;
 					std::string qosType;
 					std::string officeSiteId;
 					std::vector<std::string> eipAddresses;
 					std::string vpcSnatPolicy;
-					std::string networkPackageId;
 					int bandwidth;
 					std::string expiredTime;
-					std::string createTime;
+					std::string ngwVersion;
 					std::string officeSiteName;
+					std::string reservationActiveTime;
+					int reservationBandwidth;
 					std::string networkPackageStatus;
-					std::string internetChargeType;
 					std::string officeSiteVpcType;
 				};
 

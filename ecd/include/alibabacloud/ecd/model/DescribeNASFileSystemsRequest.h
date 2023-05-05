@@ -32,6 +32,8 @@ public:
 	~DescribeNASFileSystemsRequest();
 	std::string getOfficeSiteId() const;
 	void setOfficeSiteId(const std::string &officeSiteId);
+	bool getMatchCompatibleProfile() const;
+	void setMatchCompatibleProfile(bool matchCompatibleProfile);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string officeSiteId_;
+	bool matchCompatibleProfile_;
 	std::string regionId_;
 	std::string nextToken_;
 	int maxResults_;

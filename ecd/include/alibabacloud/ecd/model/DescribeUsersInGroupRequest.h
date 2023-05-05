@@ -30,6 +30,8 @@ class ALIBABACLOUD_ECD_EXPORT DescribeUsersInGroupRequest : public RpcServiceReq
 public:
 	DescribeUsersInGroupRequest();
 	~DescribeUsersInGroupRequest();
+	std::vector<std::string> getEndUserIds() const;
+	void setEndUserIds(const std::vector<std::string> &endUserIds);
 	int getConnectState() const;
 	void setConnectState(int connectState);
 	std::string getOrgId() const;
@@ -50,6 +52,7 @@ public:
 	void setEndUserId(const std::string &endUserId);
 
 private:
+	std::vector<std::string> endUserIds_;
 	int connectState_;
 	std::string orgId_;
 	std::string filter_;

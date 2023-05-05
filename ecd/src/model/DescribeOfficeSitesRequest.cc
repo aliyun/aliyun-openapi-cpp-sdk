@@ -51,6 +51,15 @@ void DescribeOfficeSitesRequest::setEnableInternetAccess(bool enableInternetAcce
   setParameter(std::string("EnableInternetAccess"), enableInternetAccess ? "true" : "false");
 }
 
+bool DescribeOfficeSitesRequest::getVpcNotNone() const {
+  return vpcNotNone_;
+}
+
+void DescribeOfficeSitesRequest::setVpcNotNone(bool vpcNotNone) {
+  vpcNotNone_ = vpcNotNone;
+  setParameter(std::string("VpcNotNone"), vpcNotNone ? "true" : "false");
+}
+
 std::string DescribeOfficeSitesRequest::getRegionId() const {
   return regionId_;
 }

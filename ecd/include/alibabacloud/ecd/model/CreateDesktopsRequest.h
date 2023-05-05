@@ -28,9 +28,26 @@ namespace Ecd {
 namespace Model {
 class ALIBABACLOUD_ECD_EXPORT CreateDesktopsRequest : public RpcServiceRequest {
 public:
+	struct DesktopTimers {
+		std::string cronExpression;
+		std::string timerType;
+		bool allowClientSetting;
+		std::string resetType;
+		bool enforce;
+		int interval;
+		std::string operationType;
+	};
 	struct Tag {
 		std::string value;
 		std::string key;
+	};
+	struct BundleModels {
+		bool volumeEncryptionEnabled;
+		std::string volumeEncryptionKey;
+		int amount;
+		std::string desktopName;
+		std::string hostname;
+		std::string bundleId;
 	};
 	struct UserCommands {
 		std::string contentEncoding;
@@ -51,6 +68,8 @@ public:
 	void setUserAssignMode(const std::string &userAssignMode);
 	std::string getHostname() const;
 	void setHostname(const std::string &hostname);
+	std::vector<DesktopTimers> getDesktopTimers() const;
+	void setDesktopTimers(const std::vector<DesktopTimers> &desktopTimers);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	bool getDesktopNameSuffix() const;
@@ -61,8 +80,12 @@ public:
 	void setDirectoryId(const std::string &directoryId);
 	std::vector<std::string> getEndUserId() const;
 	void setEndUserId(const std::vector<std::string> &endUserId);
+	std::string getDesktopMemberIp() const;
+	void setDesktopMemberIp(const std::string &desktopMemberIp);
 	std::vector<Tag> getTag() const;
 	void setTag(const std::vector<Tag> &tag);
+	std::vector<BundleModels> getBundleModels() const;
+	void setBundleModels(const std::vector<BundleModels> &bundleModels);
 	bool getVolumeEncryptionEnabled() const;
 	void setVolumeEncryptionEnabled(bool volumeEncryptionEnabled);
 	std::string getDesktopName() const;
@@ -103,12 +126,15 @@ private:
 	std::string bundleId_;
 	std::string userAssignMode_;
 	std::string hostname_;
+	std::vector<DesktopTimers> desktopTimers_;
 	std::string regionId_;
 	bool desktopNameSuffix_;
 	std::string systemDiskSize_;
 	std::string directoryId_;
 	std::vector<std::string> endUserId_;
+	std::string desktopMemberIp_;
 	std::vector<Tag> tag_;
+	std::vector<BundleModels> bundleModels_;
 	bool volumeEncryptionEnabled_;
 	std::string desktopName_;
 	int amount_;

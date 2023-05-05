@@ -77,6 +77,20 @@ void DescribeNASFileSystemsResult::parse(const std::string &payload)
 			fileSystemsObject.fileSystemStatus = valueFileSystemsFileSystem["FileSystemStatus"].asString();
 		if(!valueFileSystemsFileSystem["EncryptionEnabled"].isNull())
 			fileSystemsObject.encryptionEnabled = valueFileSystemsFileSystem["EncryptionEnabled"].asString() == "true";
+		if(!valueFileSystemsFileSystem["ProfileCompatible"].isNull())
+			fileSystemsObject.profileCompatible = valueFileSystemsFileSystem["ProfileCompatible"].asString() == "true";
+		if(!valueFileSystemsFileSystem["DomainId"].isNull())
+			fileSystemsObject.domainId = valueFileSystemsFileSystem["DomainId"].asString();
+		auto allDesktopGroupsNode = valueFileSystemsFileSystem["DesktopGroups"]["DesktopGroup"];
+		for (auto valueFileSystemsFileSystemDesktopGroupsDesktopGroup : allDesktopGroupsNode)
+		{
+			FileSystem::DesktopGroup desktopGroupsObject;
+			if(!valueFileSystemsFileSystemDesktopGroupsDesktopGroup["DesktopGroupId"].isNull())
+				desktopGroupsObject.desktopGroupId = valueFileSystemsFileSystemDesktopGroupsDesktopGroup["DesktopGroupId"].asString();
+			if(!valueFileSystemsFileSystemDesktopGroupsDesktopGroup["DesktopGroupName"].isNull())
+				desktopGroupsObject.desktopGroupName = valueFileSystemsFileSystemDesktopGroupsDesktopGroup["DesktopGroupName"].asString();
+			fileSystemsObject.desktopGroups.push_back(desktopGroupsObject);
+		}
 		fileSystems_.push_back(fileSystemsObject);
 	}
 	if(!value["NextToken"].isNull())

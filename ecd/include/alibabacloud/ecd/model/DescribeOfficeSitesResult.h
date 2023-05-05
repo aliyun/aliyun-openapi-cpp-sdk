@@ -66,10 +66,13 @@ namespace AlibabaCloud
 					int bandwidth;
 					bool enableInternetAccess;
 					std::string dnsUserName;
+					std::string rdsLicenseAddress;
 					std::string status;
 					std::string domainName;
 					std::vector<std::string> vSwitchIds;
 					bool needVerifyLoginRisk;
+					std::string rdsLicenseStatus;
+					std::string rdsLicenseDomainName;
 					bool enableAdminAccess;
 					std::string officeSiteType;
 					std::vector<std::string> fileSystemIds;

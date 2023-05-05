@@ -25,6 +25,15 @@ CreateSimpleOfficeSiteRequest::CreateSimpleOfficeSiteRequest()
 
 CreateSimpleOfficeSiteRequest::~CreateSimpleOfficeSiteRequest() {}
 
+std::string CreateSimpleOfficeSiteRequest::getVpcType() const {
+  return vpcType_;
+}
+
+void CreateSimpleOfficeSiteRequest::setVpcType(const std::string &vpcType) {
+  vpcType_ = vpcType;
+  setParameter(std::string("VpcType"), vpcType);
+}
+
 std::string CreateSimpleOfficeSiteRequest::getCenId() const {
   return cenId_;
 }

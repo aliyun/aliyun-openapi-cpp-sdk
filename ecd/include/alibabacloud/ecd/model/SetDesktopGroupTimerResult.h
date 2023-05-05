@@ -37,14 +37,10 @@ namespace AlibabaCloud
 				SetDesktopGroupTimerResult();
 				explicit SetDesktopGroupTimerResult(const std::string &payload);
 				~SetDesktopGroupTimerResult();
-				std::string getDesktopGroupId()const;
-				std::vector<std::string> getOrderIds()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string desktopGroupId_;
-				std::vector<std::string> orderIds_;
 
 			};
 		}

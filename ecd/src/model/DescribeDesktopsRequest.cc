@@ -34,6 +34,23 @@ void DescribeDesktopsRequest::setOfficeSiteId(const std::string &officeSiteId) {
   setParameter(std::string("OfficeSiteId"), officeSiteId);
 }
 
+std::string DescribeDesktopsRequest::getSnapshotPolicyId() const {
+  return snapshotPolicyId_;
+}
+
+void DescribeDesktopsRequest::setSnapshotPolicyId(const std::string &snapshotPolicyId) {
+  snapshotPolicyId_ = snapshotPolicyId;
+  setParameter(std::string("SnapshotPolicyId"), snapshotPolicyId);
+}
+
+std::vector<std::string> DescribeDesktopsRequest::getImageId() const {
+  return imageId_;
+}
+
+void DescribeDesktopsRequest::setImageId(const std::vector<std::string> &imageId) {
+  imageId_ = imageId;
+}
+
 std::string DescribeDesktopsRequest::getDesktopStatus() const {
   return desktopStatus_;
 }
@@ -41,6 +58,15 @@ std::string DescribeDesktopsRequest::getDesktopStatus() const {
 void DescribeDesktopsRequest::setDesktopStatus(const std::string &desktopStatus) {
   desktopStatus_ = desktopStatus;
   setParameter(std::string("DesktopStatus"), desktopStatus);
+}
+
+std::string DescribeDesktopsRequest::getDesktopGroupId() const {
+  return desktopGroupId_;
+}
+
+void DescribeDesktopsRequest::setDesktopGroupId(const std::string &desktopGroupId) {
+  desktopGroupId_ = desktopGroupId;
+  setParameter(std::string("DesktopGroupId"), desktopGroupId);
 }
 
 std::string DescribeDesktopsRequest::getRegionId() const {
@@ -59,6 +85,15 @@ std::string DescribeDesktopsRequest::getNextToken() const {
 void DescribeDesktopsRequest::setNextToken(const std::string &nextToken) {
   nextToken_ = nextToken;
   setParameter(std::string("NextToken"), nextToken);
+}
+
+bool DescribeDesktopsRequest::getOnlyDesktopGroup() const {
+  return onlyDesktopGroup_;
+}
+
+void DescribeDesktopsRequest::setOnlyDesktopGroup(bool onlyDesktopGroup) {
+  onlyDesktopGroup_ = onlyDesktopGroup;
+  setParameter(std::string("OnlyDesktopGroup"), onlyDesktopGroup ? "true" : "false");
 }
 
 bool DescribeDesktopsRequest::getQueryFotaUpdate() const {
@@ -107,6 +142,15 @@ void DescribeDesktopsRequest::setTag(const std::vector<DescribeDesktopsRequest::
     setParameter(tagObjStr + ".Value", tagObj.value);
     setParameter(tagObjStr + ".Key", tagObj.key);
   }
+}
+
+std::string DescribeDesktopsRequest::getDesktopType() const {
+  return desktopType_;
+}
+
+void DescribeDesktopsRequest::setDesktopType(const std::string &desktopType) {
+  desktopType_ = desktopType;
+  setParameter(std::string("DesktopType"), desktopType);
 }
 
 std::string DescribeDesktopsRequest::getDesktopName() const {
@@ -178,6 +222,14 @@ int DescribeDesktopsRequest::getMaxResults() const {
 void DescribeDesktopsRequest::setMaxResults(int maxResults) {
   maxResults_ = maxResults;
   setParameter(std::string("MaxResults"), std::to_string(maxResults));
+}
+
+std::vector<std::string> DescribeDesktopsRequest::getOsTypes() const {
+  return osTypes_;
+}
+
+void DescribeDesktopsRequest::setOsTypes(const std::vector<std::string> &osTypes) {
+  osTypes_ = osTypes;
 }
 
 std::string DescribeDesktopsRequest::getProtocolType() const {

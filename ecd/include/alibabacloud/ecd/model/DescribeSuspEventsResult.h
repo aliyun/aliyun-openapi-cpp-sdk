@@ -57,6 +57,7 @@ namespace AlibabaCloud
 					std::string desc;
 					std::string operateMsg;
 					std::string canBeDealOnLine;
+					std::string desktopGroupId;
 					std::vector<SuspEvent::Detail> details;
 					std::string alarmEventType;
 					std::string alarmUniqueInfo;

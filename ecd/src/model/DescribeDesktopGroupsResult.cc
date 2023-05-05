@@ -125,6 +125,12 @@ void DescribeDesktopGroupsResult::parse(const std::string &payload)
 			desktopGroupsObject.version = std::stoi(valueDesktopGroupsDesktopGroup["Version"].asString());
 		if(!valueDesktopGroupsDesktopGroup["StopDuration"].isNull())
 			desktopGroupsObject.stopDuration = std::stol(valueDesktopGroupsDesktopGroup["StopDuration"].asString());
+		if(!valueDesktopGroupsDesktopGroup["ProtocolType"].isNull())
+			desktopGroupsObject.protocolType = valueDesktopGroupsDesktopGroup["ProtocolType"].asString();
+		if(!valueDesktopGroupsDesktopGroup["OsType"].isNull())
+			desktopGroupsObject.osType = valueDesktopGroupsDesktopGroup["OsType"].asString();
+		if(!valueDesktopGroupsDesktopGroup["BuyDesktopsCount"].isNull())
+			desktopGroupsObject.buyDesktopsCount = std::stoi(valueDesktopGroupsDesktopGroup["BuyDesktopsCount"].asString());
 		desktopGroups_.push_back(desktopGroupsObject);
 	}
 	if(!value["NextToken"].isNull())

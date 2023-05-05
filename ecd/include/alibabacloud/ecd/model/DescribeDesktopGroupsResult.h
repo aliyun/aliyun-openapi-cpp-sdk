@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					long ownType;
 					long loadPolicy;
 					int version;
+					std::string osType;
 					long keepDuration;
 					std::string expiredTime;
 					int maxDesktopsCount;
@@ -73,8 +74,10 @@ namespace AlibabaCloud
 					std::string directoryId;
 					std::string gpuSpec;
 					long stopDuration;
+					std::string protocolType;
 					std::string volumeEncryptionKey;
 					std::string dataDiskSize;
+					int buyDesktopsCount;
 				};
 
 

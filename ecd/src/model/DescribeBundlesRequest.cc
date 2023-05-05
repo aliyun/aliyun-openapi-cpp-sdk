@@ -34,6 +34,14 @@ void DescribeBundlesRequest::setGpuCount(float gpuCount) {
   setParameter(std::string("GpuCount"), std::to_string(gpuCount));
 }
 
+std::vector<std::string> DescribeBundlesRequest::getImageId() const {
+  return imageId_;
+}
+
+void DescribeBundlesRequest::setImageId(const std::vector<std::string> &imageId) {
+  imageId_ = imageId;
+}
+
 std::vector<std::string> DescribeBundlesRequest::getBundleId() const {
   return bundleId_;
 }
@@ -49,6 +57,15 @@ std::string DescribeBundlesRequest::getDesktopTypeFamily() const {
 void DescribeBundlesRequest::setDesktopTypeFamily(const std::string &desktopTypeFamily) {
   desktopTypeFamily_ = desktopTypeFamily;
   setParameter(std::string("DesktopTypeFamily"), desktopTypeFamily);
+}
+
+bool DescribeBundlesRequest::getSelectedBundle() const {
+  return selectedBundle_;
+}
+
+void DescribeBundlesRequest::setSelectedBundle(bool selectedBundle) {
+  selectedBundle_ = selectedBundle;
+  setParameter(std::string("SelectedBundle"), selectedBundle ? "true" : "false");
 }
 
 std::string DescribeBundlesRequest::getRegionId() const {
@@ -112,6 +129,24 @@ int DescribeBundlesRequest::getMemorySize() const {
 void DescribeBundlesRequest::setMemorySize(int memorySize) {
   memorySize_ = memorySize;
   setParameter(std::string("MemorySize"), std::to_string(memorySize));
+}
+
+std::string DescribeBundlesRequest::getSessionType() const {
+  return sessionType_;
+}
+
+void DescribeBundlesRequest::setSessionType(const std::string &sessionType) {
+  sessionType_ = sessionType;
+  setParameter(std::string("SessionType"), sessionType);
+}
+
+std::string DescribeBundlesRequest::getOsType() const {
+  return osType_;
+}
+
+void DescribeBundlesRequest::setOsType(const std::string &osType) {
+  osType_ = osType;
+  setParameter(std::string("OsType"), osType);
 }
 
 int DescribeBundlesRequest::getMaxResults() const {

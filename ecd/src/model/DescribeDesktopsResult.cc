@@ -133,6 +133,16 @@ void DescribeDesktopsResult::parse(const std::string &payload)
 			desktopsObject.platform = valueDesktopsDesktop["Platform"].asString();
 		if(!valueDesktopsDesktop["SessionType"].isNull())
 			desktopsObject.sessionType = valueDesktopsDesktop["SessionType"].asString();
+		if(!valueDesktopsDesktop["SnapshotPolicyId"].isNull())
+			desktopsObject.snapshotPolicyId = valueDesktopsDesktop["SnapshotPolicyId"].asString();
+		if(!valueDesktopsDesktop["SnapshotPolicyName"].isNull())
+			desktopsObject.snapshotPolicyName = valueDesktopsDesktop["SnapshotPolicyName"].asString();
+		if(!valueDesktopsDesktop["BindAmount"].isNull())
+			desktopsObject.bindAmount = std::stoi(valueDesktopsDesktop["BindAmount"].asString());
+		if(!valueDesktopsDesktop["HibernationOptionsConfigured"].isNull())
+			desktopsObject.hibernationOptionsConfigured = valueDesktopsDesktop["HibernationOptionsConfigured"].asString() == "true";
+		if(!valueDesktopsDesktop["SupportHibernation"].isNull())
+			desktopsObject.supportHibernation = valueDesktopsDesktop["SupportHibernation"].asString() == "true";
 		auto allDisksNode = valueDesktopsDesktop["Disks"]["Disk"];
 		for (auto valueDesktopsDesktopDisksDisk : allDisksNode)
 		{
@@ -184,6 +194,12 @@ void DescribeDesktopsResult::parse(const std::string &payload)
 		auto allManagementFlags = value["ManagementFlags"]["mgtFlag"];
 		for (auto value : allManagementFlags)
 			desktopsObject.managementFlags.push_back(value.asString());
+		auto allPolicyGroupIdList = value["PolicyGroupIdList"]["policyGroupId"];
+		for (auto value : allPolicyGroupIdList)
+			desktopsObject.policyGroupIdList.push_back(value.asString());
+		auto allPolicyGroupNameList = value["PolicyGroupNameList"]["policyGroupName"];
+		for (auto value : allPolicyGroupNameList)
+			desktopsObject.policyGroupNameList.push_back(value.asString());
 		desktops_.push_back(desktopsObject);
 	}
 	if(!value["NextToken"].isNull())

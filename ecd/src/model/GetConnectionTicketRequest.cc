@@ -43,6 +43,15 @@ void GetConnectionTicketRequest::setUuid(const std::string &uuid) {
   setParameter(std::string("Uuid"), uuid);
 }
 
+std::string GetConnectionTicketRequest::getCommandContent() const {
+  return commandContent_;
+}
+
+void GetConnectionTicketRequest::setCommandContent(const std::string &commandContent) {
+  commandContent_ = commandContent;
+  setParameter(std::string("CommandContent"), commandContent);
+}
+
 std::string GetConnectionTicketRequest::getPassword() const {
   return password_;
 }

@@ -59,6 +59,8 @@ namespace AlibabaCloud
 						std::string externalUserName;
 						std::string establishmentTime;
 					};
+					bool supportHibernation;
+					std::string snapshotPolicyId;
 					std::string platform;
 					long memory;
 					std::string desktopName;
@@ -78,17 +80,21 @@ namespace AlibabaCloud
 					std::string bundleName;
 					std::string desktopId;
 					std::vector<std::string> endUserIds;
+					std::vector<std::string> policyGroupIdList;
 					std::string gpuDriverVersion;
 					std::string directoryId;
 					std::string creationTime;
 					std::vector<Desktop::Disk> disks;
+					std::string snapshotPolicyName;
 					std::string dataDiskSize;
 					std::string managementFlag;
 					long downgradedTimes;
 					std::string sessionType;
 					int systemDiskSize;
+					int bindAmount;
 					bool volumeEncryptionEnabled;
 					std::string networkInterfaceId;
+					bool hibernationOptionsConfigured;
 					std::string zoneType;
 					std::string networkInterfaceIp;
 					std::string officeSiteName;
@@ -96,6 +102,7 @@ namespace AlibabaCloud
 					std::string dataDiskCategory;
 					std::string officeSiteVpcType;
 					std::string progress;
+					std::vector<std::string> policyGroupNameList;
 					std::string policyGroupId;
 					std::string policyGroupName;
 					std::vector<std::string> managementFlags;

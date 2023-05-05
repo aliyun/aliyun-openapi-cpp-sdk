@@ -85,6 +85,8 @@ void DescribeSuspEventsResult::parse(const std::string &payload)
 			suspEventsObject.level = valueSuspEventsSuspEvent["Level"].asString();
 		if(!valueSuspEventsSuspEvent["Id"].isNull())
 			suspEventsObject.id = std::stol(valueSuspEventsSuspEvent["Id"].asString());
+		if(!valueSuspEventsSuspEvent["DesktopGroupId"].isNull())
+			suspEventsObject.desktopGroupId = valueSuspEventsSuspEvent["DesktopGroupId"].asString();
 		auto allDetailsNode = valueSuspEventsSuspEvent["Details"]["Detail"];
 		for (auto valueSuspEventsSuspEventDetailsDetail : allDetailsNode)
 		{

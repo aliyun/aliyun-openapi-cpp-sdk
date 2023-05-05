@@ -43,6 +43,15 @@ void DescribePolicyGroupsRequest::setNextToken(const std::string &nextToken) {
   setParameter(std::string("NextToken"), nextToken);
 }
 
+std::string DescribePolicyGroupsRequest::getScope() const {
+  return scope_;
+}
+
+void DescribePolicyGroupsRequest::setScope(const std::string &scope) {
+  scope_ = scope;
+  setParameter(std::string("Scope"), scope);
+}
+
 int DescribePolicyGroupsRequest::getMaxResults() const {
   return maxResults_;
 }

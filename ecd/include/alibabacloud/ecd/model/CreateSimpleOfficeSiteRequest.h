@@ -30,6 +30,8 @@ class ALIBABACLOUD_ECD_EXPORT CreateSimpleOfficeSiteRequest : public RpcServiceR
 public:
 	CreateSimpleOfficeSiteRequest();
 	~CreateSimpleOfficeSiteRequest();
+	std::string getVpcType() const;
+	void setVpcType(const std::string &vpcType);
 	std::string getCenId() const;
 	void setCenId(const std::string &cenId);
 	long getCenOwnerId() const;
@@ -58,6 +60,7 @@ public:
 	void setCidrBlock(const std::string &cidrBlock);
 
 private:
+	std::string vpcType_;
 	std::string cenId_;
 	long cenOwnerId_;
 	bool enableInternetAccess_;

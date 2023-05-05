@@ -96,6 +96,15 @@ void DescribeImagesRequest::setImageType(const std::string &imageType) {
   setParameter(std::string("ImageType"), imageType);
 }
 
+std::string DescribeImagesRequest::getSessionType() const {
+  return sessionType_;
+}
+
+void DescribeImagesRequest::setSessionType(const std::string &sessionType) {
+  sessionType_ = sessionType;
+  setParameter(std::string("SessionType"), sessionType);
+}
+
 std::string DescribeImagesRequest::getOsType() const {
   return osType_;
 }

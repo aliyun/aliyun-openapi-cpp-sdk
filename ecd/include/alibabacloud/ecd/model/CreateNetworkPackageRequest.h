@@ -32,6 +32,8 @@ public:
 	~CreateNetworkPackageRequest();
 	std::string getOfficeSiteId() const;
 	void setOfficeSiteId(const std::string &officeSiteId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPeriod() const;
 	void setPeriod(int period);
 	bool getAutoPay() const;
@@ -44,21 +46,22 @@ public:
 	void setPeriodUnit(const std::string &periodUnit);
 	bool getAutoRenew() const;
 	void setAutoRenew(bool autoRenew);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
 	std::string getInternetChargeType() const;
 	void setInternetChargeType(const std::string &internetChargeType);
+	std::string getPayType() const;
+	void setPayType(const std::string &payType);
 
 private:
 	std::string officeSiteId_;
+	std::string regionId_;
 	int period_;
 	bool autoPay_;
 	int bandwidth_;
 	std::string promotionId_;
 	std::string periodUnit_;
 	bool autoRenew_;
-	std::string regionId_;
 	std::string internetChargeType_;
+	std::string payType_;
 };
 } // namespace Model
 } // namespace Ecd

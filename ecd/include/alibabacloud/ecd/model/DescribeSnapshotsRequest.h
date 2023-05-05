@@ -32,21 +32,42 @@ public:
 	~DescribeSnapshotsRequest();
 	std::string getSnapshotId() const;
 	void setSnapshotId(const std::string &snapshotId);
+	std::string getSnapshotName() const;
+	void setSnapshotName(const std::string &snapshotName);
+	std::string getStartTime() const;
+	void setStartTime(const std::string &startTime);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
-	int getMaxResults() const;
-	void setMaxResults(int maxResults);
 	std::string getDesktopId() const;
 	void setDesktopId(const std::string &desktopId);
+	std::string getDesktopName() const;
+	void setDesktopName(const std::string &desktopName);
+	std::string getCreator() const;
+	void setCreator(const std::string &creator);
+	std::string getSourceDiskType() const;
+	void setSourceDiskType(const std::string &sourceDiskType);
+	std::string getEndTime() const;
+	void setEndTime(const std::string &endTime);
+	std::string getSnapshotType() const;
+	void setSnapshotType(const std::string &snapshotType);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 
 private:
 	std::string snapshotId_;
+	std::string snapshotName_;
+	std::string startTime_;
 	std::string regionId_;
 	std::string nextToken_;
-	int maxResults_;
 	std::string desktopId_;
+	std::string desktopName_;
+	std::string creator_;
+	std::string sourceDiskType_;
+	std::string endTime_;
+	std::string snapshotType_;
+	int maxResults_;
 };
 } // namespace Model
 } // namespace Ecd

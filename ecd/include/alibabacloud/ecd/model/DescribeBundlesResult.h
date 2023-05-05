@@ -51,6 +51,7 @@ namespace AlibabaCloud
 					std::string sessionType;
 					std::string description;
 					std::string platform;
+					std::string imageStatus;
 					std::string bundleName;
 					bool volumeEncryptionEnabled;
 					std::string imageName;

@@ -43,6 +43,15 @@ void RebuildDesktopsRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string RebuildDesktopsRequest::getOperateType() const {
+  return operateType_;
+}
+
+void RebuildDesktopsRequest::setOperateType(const std::string &operateType) {
+  operateType_ = operateType;
+  setParameter(std::string("OperateType"), operateType);
+}
+
 std::vector<std::string> RebuildDesktopsRequest::getDesktopId() const {
   return desktopId_;
 }

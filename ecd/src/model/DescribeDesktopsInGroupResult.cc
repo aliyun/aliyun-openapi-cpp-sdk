@@ -75,6 +75,10 @@ void DescribeDesktopsInGroupResult::parse(const std::string &payload)
 			paidDesktopsObject.memberEniIp = valuePaidDesktopsPaidDesktop["MemberEniIp"].asString();
 		if(!valuePaidDesktopsPaidDesktop["PrimaryEniIp"].isNull())
 			paidDesktopsObject.primaryEniIp = valuePaidDesktopsPaidDesktop["PrimaryEniIp"].asString();
+		if(!valuePaidDesktopsPaidDesktop["ProtocolType"].isNull())
+			paidDesktopsObject.protocolType = valuePaidDesktopsPaidDesktop["ProtocolType"].asString();
+		if(!valuePaidDesktopsPaidDesktop["FotaVersion"].isNull())
+			paidDesktopsObject.fotaVersion = valuePaidDesktopsPaidDesktop["FotaVersion"].asString();
 		auto allEndUserIds = value["EndUserIds"]["endUserIds"];
 		for (auto value : allEndUserIds)
 			paidDesktopsObject.endUserIds.push_back(value.asString());
@@ -128,6 +132,10 @@ void DescribeDesktopsInGroupResult::parse(const std::string &payload)
 			postPaidDesktopsObject.memberEniIp = valuePostPaidDesktopsPostPaidDesktop["MemberEniIp"].asString();
 		if(!valuePostPaidDesktopsPostPaidDesktop["PrimaryEniIp"].isNull())
 			postPaidDesktopsObject.primaryEniIp = valuePostPaidDesktopsPostPaidDesktop["PrimaryEniIp"].asString();
+		if(!valuePostPaidDesktopsPostPaidDesktop["ProtocolType"].isNull())
+			postPaidDesktopsObject.protocolType = valuePostPaidDesktopsPostPaidDesktop["ProtocolType"].asString();
+		if(!valuePostPaidDesktopsPostPaidDesktop["FotaVersion"].isNull())
+			postPaidDesktopsObject.fotaVersion = valuePostPaidDesktopsPostPaidDesktop["FotaVersion"].asString();
 		auto allEndUserIds1 = value["EndUserIds"]["endUserIds"];
 		for (auto value : allEndUserIds1)
 			postPaidDesktopsObject.endUserIds1.push_back(value.asString());

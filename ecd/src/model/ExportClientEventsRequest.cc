@@ -123,3 +123,12 @@ void ExportClientEventsRequest::setEventType(const std::string &eventType) {
   setParameter(std::string("EventType"), eventType);
 }
 
+std::string ExportClientEventsRequest::getLangType() const {
+  return langType_;
+}
+
+void ExportClientEventsRequest::setLangType(const std::string &langType) {
+  langType_ = langType;
+  setParameter(std::string("LangType"), langType);
+}
+

@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getUuid() const;
 	void setUuid(const std::string &uuid);
+	std::string getCommandContent() const;
+	void setCommandContent(const std::string &commandContent);
 	std::string getPassword() const;
 	void setPassword(const std::string &password);
 	std::string getRegionId() const;
@@ -52,6 +54,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string uuid_;
+	std::string commandContent_;
 	std::string password_;
 	std::string regionId_;
 	std::string endUserId_;

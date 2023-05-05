@@ -79,6 +79,25 @@ void CreateDesktopsRequest::setHostname(const std::string &hostname) {
   setParameter(std::string("Hostname"), hostname);
 }
 
+std::vector<CreateDesktopsRequest::DesktopTimers> CreateDesktopsRequest::getDesktopTimers() const {
+  return desktopTimers_;
+}
+
+void CreateDesktopsRequest::setDesktopTimers(const std::vector<CreateDesktopsRequest::DesktopTimers> &desktopTimers) {
+  desktopTimers_ = desktopTimers;
+  for(int dep1 = 0; dep1 != desktopTimers.size(); dep1++) {
+  auto desktopTimersObj = desktopTimers.at(dep1);
+  std::string desktopTimersObjStr = std::string("DesktopTimers") + "." + std::to_string(dep1 + 1);
+    setParameter(desktopTimersObjStr + ".CronExpression", desktopTimersObj.cronExpression);
+    setParameter(desktopTimersObjStr + ".TimerType", desktopTimersObj.timerType);
+    setParameter(desktopTimersObjStr + ".AllowClientSetting", desktopTimersObj.allowClientSetting ? "true" : "false");
+    setParameter(desktopTimersObjStr + ".ResetType", desktopTimersObj.resetType);
+    setParameter(desktopTimersObjStr + ".Enforce", desktopTimersObj.enforce ? "true" : "false");
+    setParameter(desktopTimersObjStr + ".Interval", std::to_string(desktopTimersObj.interval));
+    setParameter(desktopTimersObjStr + ".OperationType", desktopTimersObj.operationType);
+  }
+}
+
 std::string CreateDesktopsRequest::getRegionId() const {
   return regionId_;
 }
@@ -123,6 +142,15 @@ void CreateDesktopsRequest::setEndUserId(const std::vector<std::string> &endUser
   endUserId_ = endUserId;
 }
 
+std::string CreateDesktopsRequest::getDesktopMemberIp() const {
+  return desktopMemberIp_;
+}
+
+void CreateDesktopsRequest::setDesktopMemberIp(const std::string &desktopMemberIp) {
+  desktopMemberIp_ = desktopMemberIp;
+  setParameter(std::string("DesktopMemberIp"), desktopMemberIp);
+}
+
 std::vector<CreateDesktopsRequest::Tag> CreateDesktopsRequest::getTag() const {
   return tag_;
 }
@@ -134,6 +162,24 @@ void CreateDesktopsRequest::setTag(const std::vector<CreateDesktopsRequest::Tag>
   std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
     setParameter(tagObjStr + ".Value", tagObj.value);
     setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
+std::vector<CreateDesktopsRequest::BundleModels> CreateDesktopsRequest::getBundleModels() const {
+  return bundleModels_;
+}
+
+void CreateDesktopsRequest::setBundleModels(const std::vector<CreateDesktopsRequest::BundleModels> &bundleModels) {
+  bundleModels_ = bundleModels;
+  for(int dep1 = 0; dep1 != bundleModels.size(); dep1++) {
+  auto bundleModelsObj = bundleModels.at(dep1);
+  std::string bundleModelsObjStr = std::string("BundleModels") + "." + std::to_string(dep1 + 1);
+    setParameter(bundleModelsObjStr + ".VolumeEncryptionEnabled", bundleModelsObj.volumeEncryptionEnabled ? "true" : "false");
+    setParameter(bundleModelsObjStr + ".VolumeEncryptionKey", bundleModelsObj.volumeEncryptionKey);
+    setParameter(bundleModelsObjStr + ".Amount", std::to_string(bundleModelsObj.amount));
+    setParameter(bundleModelsObjStr + ".DesktopName", bundleModelsObj.desktopName);
+    setParameter(bundleModelsObjStr + ".Hostname", bundleModelsObj.hostname);
+    setParameter(bundleModelsObjStr + ".BundleId", bundleModelsObj.bundleId);
   }
 }
 

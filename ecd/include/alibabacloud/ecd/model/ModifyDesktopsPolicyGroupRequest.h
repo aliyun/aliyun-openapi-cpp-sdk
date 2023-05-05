@@ -30,6 +30,10 @@ class ALIBABACLOUD_ECD_EXPORT ModifyDesktopsPolicyGroupRequest : public RpcServi
 public:
 	ModifyDesktopsPolicyGroupRequest();
 	~ModifyDesktopsPolicyGroupRequest();
+	bool getPreCheck() const;
+	void setPreCheck(bool preCheck);
+	std::vector<std::string> getPolicyGroupIds() const;
+	void setPolicyGroupIds(const std::vector<std::string> &policyGroupIds);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::vector<std::string> getDesktopId() const;
@@ -38,6 +42,8 @@ public:
 	void setPolicyGroupId(const std::string &policyGroupId);
 
 private:
+	bool preCheck_;
+	std::vector<std::string> policyGroupIds_;
 	std::string regionId_;
 	std::vector<std::string> desktopId_;
 	std::string policyGroupId_;

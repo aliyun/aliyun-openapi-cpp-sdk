@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string oUName;
 					std::string officeSiteId;
+					std::string displayOUName;
 				};
 
 
@@ -43,11 +44,13 @@ namespace AlibabaCloud
 				explicit ListUserAdOrganizationUnitsResult(const std::string &payload);
 				~ListUserAdOrganizationUnitsResult();
 				std::vector<OuName> getOUNames()const;
+				std::string getNextToken()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<OuName> oUNames_;
+				std::string nextToken_;
 
 			};
 		}

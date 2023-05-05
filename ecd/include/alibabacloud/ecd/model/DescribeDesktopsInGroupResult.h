@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct PaidDesktop
 				{
+					std::string fotaVersion;
 					int systemDiskSize;
 					std::string desktopName;
 					std::string desktopId;
@@ -49,6 +50,7 @@ namespace AlibabaCloud
 					std::string endUserId;
 					std::string osType;
 					std::string primaryEniIp;
+					std::string protocolType;
 					std::string imageId;
 					std::string memberEniIp;
 					std::string connectionStatus;
@@ -56,6 +58,7 @@ namespace AlibabaCloud
 				};
 				struct PostPaidDesktop
 				{
+					std::string fotaVersion;
 					int systemDiskSize;
 					std::string createTime;
 					std::string desktopName;
@@ -71,6 +74,7 @@ namespace AlibabaCloud
 					std::string releaseTime;
 					std::string osType;
 					std::string primaryEniIp;
+					std::string protocolType;
 					std::string createDuration;
 					std::string imageId;
 					std::string memberEniIp;

@@ -79,3 +79,12 @@ void ModifyOfficeSiteAttributeRequest::setRegionId(const std::string &regionId) 
   setParameter(std::string("RegionId"), regionId);
 }
 
+bool ModifyOfficeSiteAttributeRequest::getEnableAdminAccess() const {
+  return enableAdminAccess_;
+}
+
+void ModifyOfficeSiteAttributeRequest::setEnableAdminAccess(bool enableAdminAccess) {
+  enableAdminAccess_ = enableAdminAccess;
+  setParameter(std::string("EnableAdminAccess"), enableAdminAccess ? "true" : "false");
+}
+

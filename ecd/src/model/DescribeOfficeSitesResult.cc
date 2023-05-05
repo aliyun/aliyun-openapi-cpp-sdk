@@ -109,6 +109,12 @@ void DescribeOfficeSitesResult::parse(const std::string &payload)
 			officeSitesObject.protocolType = valueOfficeSitesOfficeSite["ProtocolType"].asString();
 		if(!valueOfficeSitesOfficeSite["AdHostname"].isNull())
 			officeSitesObject.adHostname = valueOfficeSitesOfficeSite["AdHostname"].asString();
+		if(!valueOfficeSitesOfficeSite["RdsLicenseStatus"].isNull())
+			officeSitesObject.rdsLicenseStatus = valueOfficeSitesOfficeSite["RdsLicenseStatus"].asString();
+		if(!valueOfficeSitesOfficeSite["RdsLicenseAddress"].isNull())
+			officeSitesObject.rdsLicenseAddress = valueOfficeSitesOfficeSite["RdsLicenseAddress"].asString();
+		if(!valueOfficeSitesOfficeSite["RdsLicenseDomainName"].isNull())
+			officeSitesObject.rdsLicenseDomainName = valueOfficeSitesOfficeSite["RdsLicenseDomainName"].asString();
 		auto allADConnectorsNode = valueOfficeSitesOfficeSite["ADConnectors"]["ADConnector"];
 		for (auto valueOfficeSitesOfficeSiteADConnectorsADConnector : allADConnectorsNode)
 		{

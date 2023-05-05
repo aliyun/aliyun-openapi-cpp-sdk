@@ -32,10 +32,14 @@ public:
 	~DescribeBundlesRequest();
 	float getGpuCount() const;
 	void setGpuCount(float gpuCount);
+	std::vector<std::string> getImageId() const;
+	void setImageId(const std::vector<std::string> &imageId);
 	std::vector<std::string> getBundleId() const;
 	void setBundleId(const std::vector<std::string> &bundleId);
 	std::string getDesktopTypeFamily() const;
 	void setDesktopTypeFamily(const std::string &desktopTypeFamily);
+	bool getSelectedBundle() const;
+	void setSelectedBundle(bool selectedBundle);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
@@ -50,6 +54,10 @@ public:
 	void setVolumeEncryptionEnabled(bool volumeEncryptionEnabled);
 	int getMemorySize() const;
 	void setMemorySize(int memorySize);
+	std::string getSessionType() const;
+	void setSessionType(const std::string &sessionType);
+	std::string getOsType() const;
+	void setOsType(const std::string &osType);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
 	bool getCheckStock() const;
@@ -63,8 +71,10 @@ public:
 
 private:
 	float gpuCount_;
+	std::vector<std::string> imageId_;
 	std::vector<std::string> bundleId_;
 	std::string desktopTypeFamily_;
+	bool selectedBundle_;
 	std::string regionId_;
 	std::string nextToken_;
 	bool fromDesktopGroup_;
@@ -72,6 +82,8 @@ private:
 	std::string fotaChannel_;
 	bool volumeEncryptionEnabled_;
 	int memorySize_;
+	std::string sessionType_;
+	std::string osType_;
 	int maxResults_;
 	bool checkStock_;
 	std::string protocolType_;

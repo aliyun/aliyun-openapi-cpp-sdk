@@ -46,6 +46,8 @@ public:
 	void setFotaChannel(const std::string &fotaChannel);
 	std::string getImageType() const;
 	void setImageType(const std::string &imageType);
+	std::string getSessionType() const;
+	void setSessionType(const std::string &sessionType);
 	std::string getOsType() const;
 	void setOsType(const std::string &osType);
 	std::string getImageStatus() const;
@@ -66,6 +68,7 @@ private:
 	std::string nextToken_;
 	std::string fotaChannel_;
 	std::string imageType_;
+	std::string sessionType_;
 	std::string osType_;
 	std::string imageStatus_;
 	int maxResults_;

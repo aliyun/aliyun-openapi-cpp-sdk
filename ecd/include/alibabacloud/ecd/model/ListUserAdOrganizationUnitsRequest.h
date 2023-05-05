@@ -32,12 +32,21 @@ public:
 	~ListUserAdOrganizationUnitsRequest();
 	std::string getOfficeSiteId() const;
 	void setOfficeSiteId(const std::string &officeSiteId);
+	std::string getFilter() const;
+	void setFilter(const std::string &filter);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
 
 private:
 	std::string officeSiteId_;
+	std::string filter_;
 	std::string regionId_;
+	std::string nextToken_;
+	int maxResults_;
 };
 } // namespace Model
 } // namespace Ecd

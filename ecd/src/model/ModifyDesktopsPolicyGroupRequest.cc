@@ -25,6 +25,23 @@ ModifyDesktopsPolicyGroupRequest::ModifyDesktopsPolicyGroupRequest()
 
 ModifyDesktopsPolicyGroupRequest::~ModifyDesktopsPolicyGroupRequest() {}
 
+bool ModifyDesktopsPolicyGroupRequest::getPreCheck() const {
+  return preCheck_;
+}
+
+void ModifyDesktopsPolicyGroupRequest::setPreCheck(bool preCheck) {
+  preCheck_ = preCheck;
+  setParameter(std::string("PreCheck"), preCheck ? "true" : "false");
+}
+
+std::vector<std::string> ModifyDesktopsPolicyGroupRequest::getPolicyGroupIds() const {
+  return policyGroupIds_;
+}
+
+void ModifyDesktopsPolicyGroupRequest::setPolicyGroupIds(const std::vector<std::string> &policyGroupIds) {
+  policyGroupIds_ = policyGroupIds;
+}
+
 std::string ModifyDesktopsPolicyGroupRequest::getRegionId() const {
   return regionId_;
 }

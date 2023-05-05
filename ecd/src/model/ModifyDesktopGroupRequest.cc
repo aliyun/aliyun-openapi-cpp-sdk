@@ -97,6 +97,14 @@ void ModifyDesktopGroupRequest::setAllowBufferCount(int allowBufferCount) {
   setParameter(std::string("AllowBufferCount"), std::to_string(allowBufferCount));
 }
 
+std::vector<std::string> ModifyDesktopGroupRequest::getPolicyGroupIds() const {
+  return policyGroupIds_;
+}
+
+void ModifyDesktopGroupRequest::setPolicyGroupIds(const std::vector<std::string> &policyGroupIds) {
+  policyGroupIds_ = policyGroupIds;
+}
+
 long ModifyDesktopGroupRequest::getIdleDisconnectDuration() const {
   return idleDisconnectDuration_;
 }
@@ -230,6 +238,15 @@ bool ModifyDesktopGroupRequest::getProfileFollowSwitch() const {
 void ModifyDesktopGroupRequest::setProfileFollowSwitch(bool profileFollowSwitch) {
   profileFollowSwitch_ = profileFollowSwitch;
   setParameter(std::string("ProfileFollowSwitch"), profileFollowSwitch ? "true" : "false");
+}
+
+int ModifyDesktopGroupRequest::getBuyDesktopsCount() const {
+  return buyDesktopsCount_;
+}
+
+void ModifyDesktopGroupRequest::setBuyDesktopsCount(int buyDesktopsCount) {
+  buyDesktopsCount_ = buyDesktopsCount;
+  setParameter(std::string("BuyDesktopsCount"), std::to_string(buyDesktopsCount));
 }
 
 std::string ModifyDesktopGroupRequest::getPolicyGroupId() const {

@@ -34,6 +34,15 @@ void CreateNetworkPackageRequest::setOfficeSiteId(const std::string &officeSiteI
   setParameter(std::string("OfficeSiteId"), officeSiteId);
 }
 
+std::string CreateNetworkPackageRequest::getRegionId() const {
+  return regionId_;
+}
+
+void CreateNetworkPackageRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int CreateNetworkPackageRequest::getPeriod() const {
   return period_;
 }
@@ -88,15 +97,6 @@ void CreateNetworkPackageRequest::setAutoRenew(bool autoRenew) {
   setParameter(std::string("AutoRenew"), autoRenew ? "true" : "false");
 }
 
-std::string CreateNetworkPackageRequest::getRegionId() const {
-  return regionId_;
-}
-
-void CreateNetworkPackageRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
 std::string CreateNetworkPackageRequest::getInternetChargeType() const {
   return internetChargeType_;
 }
@@ -104,5 +104,14 @@ std::string CreateNetworkPackageRequest::getInternetChargeType() const {
 void CreateNetworkPackageRequest::setInternetChargeType(const std::string &internetChargeType) {
   internetChargeType_ = internetChargeType;
   setParameter(std::string("InternetChargeType"), internetChargeType);
+}
+
+std::string CreateNetworkPackageRequest::getPayType() const {
+  return payType_;
+}
+
+void CreateNetworkPackageRequest::setPayType(const std::string &payType) {
+  payType_ = payType;
+  setParameter(std::string("PayType"), payType);
 }
 

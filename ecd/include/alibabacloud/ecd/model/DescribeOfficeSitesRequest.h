@@ -36,6 +36,8 @@ public:
 	void setVpcType(const std::string &vpcType);
 	bool getEnableInternetAccess() const;
 	void setEnableInternetAccess(bool enableInternetAccess);
+	bool getVpcNotNone() const;
+	void setVpcNotNone(bool vpcNotNone);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getOfficeSiteType() const;
@@ -51,6 +53,7 @@ private:
 	std::vector<std::string> officeSiteId_;
 	std::string vpcType_;
 	bool enableInternetAccess_;
+	bool vpcNotNone_;
 	std::string regionId_;
 	std::string officeSiteType_;
 	std::string nextToken_;

@@ -42,3 +42,12 @@ void DeleteImagesRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+bool DeleteImagesRequest::getDeleteCascadedBundle() const {
+  return deleteCascadedBundle_;
+}
+
+void DeleteImagesRequest::setDeleteCascadedBundle(bool deleteCascadedBundle) {
+  deleteCascadedBundle_ = deleteCascadedBundle;
+  setParameter(std::string("DeleteCascadedBundle"), deleteCascadedBundle ? "true" : "false");
+}
+

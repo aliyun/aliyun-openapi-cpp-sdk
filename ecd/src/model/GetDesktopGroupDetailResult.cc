@@ -126,6 +126,12 @@ void GetDesktopGroupDetailResult::parse(const std::string &payload)
 		desktops_.nasFileSystemID = desktopsNode["NasFileSystemID"].asString();
 	if(!desktopsNode["NasFileSystemName"].isNull())
 		desktops_.nasFileSystemName = desktopsNode["NasFileSystemName"].asString();
+	if(!desktopsNode["TimingStrategyInfo"].isNull())
+		desktops_.timingStrategyInfo = desktopsNode["TimingStrategyInfo"].asString();
+	if(!desktopsNode["BuyDesktopsCount"].isNull())
+		desktops_.buyDesktopsCount = std::stoi(desktopsNode["BuyDesktopsCount"].asString());
+	if(!desktopsNode["ImageId"].isNull())
+		desktops_.imageId = desktopsNode["ImageId"].asString();
 	auto allTimerInfosNode = desktopsNode["TimerInfos"]["TimerInfo"];
 	for (auto desktopsNodeTimerInfosTimerInfo : allTimerInfosNode)
 	{
@@ -140,6 +146,34 @@ void GetDesktopGroupDetailResult::parse(const std::string &payload)
 			timerInfoObject.forced = desktopsNodeTimerInfosTimerInfo["Forced"].asString() == "true";
 		desktops_.timerInfos.push_back(timerInfoObject);
 	}
+	auto allScaleTimerInfosNode = desktopsNode["ScaleTimerInfos"]["ScaleTimerInfo"];
+	for (auto desktopsNodeScaleTimerInfosScaleTimerInfo : allScaleTimerInfosNode)
+	{
+		Desktops::ScaleTimerInfo scaleTimerInfoObject;
+		if(!desktopsNodeScaleTimerInfosScaleTimerInfo["Type"].isNull())
+			scaleTimerInfoObject.type = desktopsNodeScaleTimerInfosScaleTimerInfo["Type"].asString();
+		if(!desktopsNodeScaleTimerInfosScaleTimerInfo["Cron"].isNull())
+			scaleTimerInfoObject.cron = desktopsNodeScaleTimerInfosScaleTimerInfo["Cron"].asString();
+		if(!desktopsNodeScaleTimerInfosScaleTimerInfo["LoadPolicy"].isNull())
+			scaleTimerInfoObject.loadPolicy = std::stoi(desktopsNodeScaleTimerInfosScaleTimerInfo["LoadPolicy"].asString());
+		if(!desktopsNodeScaleTimerInfosScaleTimerInfo["BuyResAmount"].isNull())
+			scaleTimerInfoObject.buyResAmount = std::stoi(desktopsNodeScaleTimerInfosScaleTimerInfo["BuyResAmount"].asString());
+		if(!desktopsNodeScaleTimerInfosScaleTimerInfo["MinResAmount"].isNull())
+			scaleTimerInfoObject.minResAmount = std::stoi(desktopsNodeScaleTimerInfosScaleTimerInfo["MinResAmount"].asString());
+		if(!desktopsNodeScaleTimerInfosScaleTimerInfo["MaxResAmount"].isNull())
+			scaleTimerInfoObject.maxResAmount = std::stoi(desktopsNodeScaleTimerInfosScaleTimerInfo["MaxResAmount"].asString());
+		if(!desktopsNodeScaleTimerInfosScaleTimerInfo["KeepDuration"].isNull())
+			scaleTimerInfoObject.keepDuration = std::stol(desktopsNodeScaleTimerInfosScaleTimerInfo["KeepDuration"].asString());
+		if(!desktopsNodeScaleTimerInfosScaleTimerInfo["RatioThreshold"].isNull())
+			scaleTimerInfoObject.ratioThreshold = std::stof(desktopsNodeScaleTimerInfosScaleTimerInfo["RatioThreshold"].asString());
+		desktops_.scaleTimerInfos.push_back(scaleTimerInfoObject);
+	}
+		auto allPolicyGroupIds = desktopsNode["PolicyGroupIds"]["policyGroupId"];
+		for (auto value : allPolicyGroupIds)
+			desktops_.policyGroupIds.push_back(value.asString());
+		auto allPolicyGroupNames = desktopsNode["PolicyGroupNames"]["policyGroupName"];
+		for (auto value : allPolicyGroupNames)
+			desktops_.policyGroupNames.push_back(value.asString());
 
 }
 

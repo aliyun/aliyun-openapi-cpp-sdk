@@ -34,6 +34,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	std::string getScope() const;
+	void setScope(const std::string &scope);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
 	std::vector<std::string> getPolicyGroupId() const;
@@ -42,6 +44,7 @@ public:
 private:
 	std::string regionId_;
 	std::string nextToken_;
+	std::string scope_;
 	int maxResults_;
 	std::vector<std::string> policyGroupId_;
 };

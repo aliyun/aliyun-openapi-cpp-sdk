@@ -97,6 +97,15 @@ void ModifyPolicyGroupRequest::setLocalDrive(const std::string &localDrive) {
   setParameter(std::string("LocalDrive"), localDrive);
 }
 
+int ModifyPolicyGroupRequest::getWatermarkTransparencyValue() const {
+  return watermarkTransparencyValue_;
+}
+
+void ModifyPolicyGroupRequest::setWatermarkTransparencyValue(int watermarkTransparencyValue) {
+  watermarkTransparencyValue_ = watermarkTransparencyValue;
+  setParameter(std::string("WatermarkTransparencyValue"), std::to_string(watermarkTransparencyValue));
+}
+
 std::vector<ModifyPolicyGroupRequest::AuthorizeSecurityPolicyRule> ModifyPolicyGroupRequest::getAuthorizeSecurityPolicyRule() const {
   return authorizeSecurityPolicyRule_;
 }
@@ -125,6 +134,15 @@ void ModifyPolicyGroupRequest::setClipboard(const std::string &clipboard) {
   setParameter(std::string("Clipboard"), clipboard);
 }
 
+std::string ModifyPolicyGroupRequest::getEndUserApplyAdminCoordinate() const {
+  return endUserApplyAdminCoordinate_;
+}
+
+void ModifyPolicyGroupRequest::setEndUserApplyAdminCoordinate(const std::string &endUserApplyAdminCoordinate) {
+  endUserApplyAdminCoordinate_ = endUserApplyAdminCoordinate;
+  setParameter(std::string("EndUserApplyAdminCoordinate"), endUserApplyAdminCoordinate);
+}
+
 std::string ModifyPolicyGroupRequest::getUsbRedirect() const {
   return usbRedirect_;
 }
@@ -150,6 +168,48 @@ std::string ModifyPolicyGroupRequest::getRecordingStartTime() const {
 void ModifyPolicyGroupRequest::setRecordingStartTime(const std::string &recordingStartTime) {
   recordingStartTime_ = recordingStartTime;
   setParameter(std::string("RecordingStartTime"), recordingStartTime);
+}
+
+std::vector<ModifyPolicyGroupRequest::NetRedirectRule> ModifyPolicyGroupRequest::getNetRedirectRule() const {
+  return netRedirectRule_;
+}
+
+void ModifyPolicyGroupRequest::setNetRedirectRule(const std::vector<ModifyPolicyGroupRequest::NetRedirectRule> &netRedirectRule) {
+  netRedirectRule_ = netRedirectRule;
+  for(int dep1 = 0; dep1 != netRedirectRule.size(); dep1++) {
+  auto netRedirectRuleObj = netRedirectRule.at(dep1);
+  std::string netRedirectRuleObjStr = std::string("NetRedirectRule") + "." + std::to_string(dep1 + 1);
+    setParameter(netRedirectRuleObjStr + ".RuleType", netRedirectRuleObj.ruleType);
+    setParameter(netRedirectRuleObjStr + ".Domain", netRedirectRuleObj.domain);
+    setParameter(netRedirectRuleObjStr + ".Policy", netRedirectRuleObj.policy);
+  }
+}
+
+int ModifyPolicyGroupRequest::getRecordingDuration() const {
+  return recordingDuration_;
+}
+
+void ModifyPolicyGroupRequest::setRecordingDuration(int recordingDuration) {
+  recordingDuration_ = recordingDuration;
+  setParameter(std::string("RecordingDuration"), std::to_string(recordingDuration));
+}
+
+int ModifyPolicyGroupRequest::getWatermarkColor() const {
+  return watermarkColor_;
+}
+
+void ModifyPolicyGroupRequest::setWatermarkColor(int watermarkColor) {
+  watermarkColor_ = watermarkColor;
+  setParameter(std::string("WatermarkColor"), std::to_string(watermarkColor));
+}
+
+int ModifyPolicyGroupRequest::getMemoryRateLimit() const {
+  return memoryRateLimit_;
+}
+
+void ModifyPolicyGroupRequest::setMemoryRateLimit(int memoryRateLimit) {
+  memoryRateLimit_ = memoryRateLimit;
+  setParameter(std::string("MemoryRateLimit"), std::to_string(memoryRateLimit));
 }
 
 std::vector<ModifyPolicyGroupRequest::RevokeAccessPolicyRule> ModifyPolicyGroupRequest::getRevokeAccessPolicyRule() const {
@@ -184,6 +244,32 @@ void ModifyPolicyGroupRequest::setCameraRedirect(const std::string &cameraRedire
   setParameter(std::string("CameraRedirect"), cameraRedirect);
 }
 
+std::vector<std::string> ModifyPolicyGroupRequest::getMemoryProcessors() const {
+  return memoryProcessors_;
+}
+
+void ModifyPolicyGroupRequest::setMemoryProcessors(const std::vector<std::string> &memoryProcessors) {
+  memoryProcessors_ = memoryProcessors;
+}
+
+std::string ModifyPolicyGroupRequest::getVideoRedirect() const {
+  return videoRedirect_;
+}
+
+void ModifyPolicyGroupRequest::setVideoRedirect(const std::string &videoRedirect) {
+  videoRedirect_ = videoRedirect;
+  setParameter(std::string("VideoRedirect"), videoRedirect);
+}
+
+int ModifyPolicyGroupRequest::getCpuSingleRateLimit() const {
+  return cpuSingleRateLimit_;
+}
+
+void ModifyPolicyGroupRequest::setCpuSingleRateLimit(int cpuSingleRateLimit) {
+  cpuSingleRateLimit_ = cpuSingleRateLimit;
+  setParameter(std::string("CpuSingleRateLimit"), std::to_string(cpuSingleRateLimit));
+}
+
 std::string ModifyPolicyGroupRequest::getAppContentProtection() const {
   return appContentProtection_;
 }
@@ -191,6 +277,30 @@ std::string ModifyPolicyGroupRequest::getAppContentProtection() const {
 void ModifyPolicyGroupRequest::setAppContentProtection(const std::string &appContentProtection) {
   appContentProtection_ = appContentProtection;
   setParameter(std::string("AppContentProtection"), appContentProtection);
+}
+
+std::string ModifyPolicyGroupRequest::getCpuProtectedMode() const {
+  return cpuProtectedMode_;
+}
+
+void ModifyPolicyGroupRequest::setCpuProtectedMode(const std::string &cpuProtectedMode) {
+  cpuProtectedMode_ = cpuProtectedMode;
+  setParameter(std::string("CpuProtectedMode"), cpuProtectedMode);
+}
+
+std::vector<ModifyPolicyGroupRequest::DomainResolveRule> ModifyPolicyGroupRequest::getDomainResolveRule() const {
+  return domainResolveRule_;
+}
+
+void ModifyPolicyGroupRequest::setDomainResolveRule(const std::vector<ModifyPolicyGroupRequest::DomainResolveRule> &domainResolveRule) {
+  domainResolveRule_ = domainResolveRule;
+  for(int dep1 = 0; dep1 != domainResolveRule.size(); dep1++) {
+  auto domainResolveRuleObj = domainResolveRule.at(dep1);
+  std::string domainResolveRuleObjStr = std::string("DomainResolveRule") + "." + std::to_string(dep1 + 1);
+    setParameter(domainResolveRuleObjStr + ".Domain", domainResolveRuleObj.domain);
+    setParameter(domainResolveRuleObjStr + ".Description", domainResolveRuleObj.description);
+    setParameter(domainResolveRuleObjStr + ".Policy", domainResolveRuleObj.policy);
+  }
 }
 
 std::vector<ModifyPolicyGroupRequest::AuthorizeAccessPolicyRule> ModifyPolicyGroupRequest::getAuthorizeAccessPolicyRule() const {
@@ -225,6 +335,15 @@ void ModifyPolicyGroupRequest::setName(const std::string &name) {
   setParameter(std::string("Name"), name);
 }
 
+int ModifyPolicyGroupRequest::getMemorySampleDuration() const {
+  return memorySampleDuration_;
+}
+
+void ModifyPolicyGroupRequest::setMemorySampleDuration(int memorySampleDuration) {
+  memorySampleDuration_ = memorySampleDuration;
+  setParameter(std::string("MemorySampleDuration"), std::to_string(memorySampleDuration));
+}
+
 std::string ModifyPolicyGroupRequest::getPolicyGroupId() const {
   return policyGroupId_;
 }
@@ -241,6 +360,15 @@ std::string ModifyPolicyGroupRequest::getWatermarkCustomText() const {
 void ModifyPolicyGroupRequest::setWatermarkCustomText(const std::string &watermarkCustomText) {
   watermarkCustomText_ = watermarkCustomText;
   setParameter(std::string("WatermarkCustomText"), watermarkCustomText);
+}
+
+int ModifyPolicyGroupRequest::getCpuDownGradeDuration() const {
+  return cpuDownGradeDuration_;
+}
+
+void ModifyPolicyGroupRequest::setCpuDownGradeDuration(int cpuDownGradeDuration) {
+  cpuDownGradeDuration_ = cpuDownGradeDuration;
+  setParameter(std::string("CpuDownGradeDuration"), std::to_string(cpuDownGradeDuration));
 }
 
 std::string ModifyPolicyGroupRequest::getPreemptLogin() const {
@@ -285,6 +413,15 @@ void ModifyPolicyGroupRequest::setUsbSupplyRedirectRule(const std::vector<Modify
   }
 }
 
+int ModifyPolicyGroupRequest::getWatermarkFontSize() const {
+  return watermarkFontSize_;
+}
+
+void ModifyPolicyGroupRequest::setWatermarkFontSize(int watermarkFontSize) {
+  watermarkFontSize_ = watermarkFontSize;
+  setParameter(std::string("WatermarkFontSize"), std::to_string(watermarkFontSize));
+}
+
 std::string ModifyPolicyGroupRequest::getRecording() const {
   return recording_;
 }
@@ -294,6 +431,32 @@ void ModifyPolicyGroupRequest::setRecording(const std::string &recording) {
   setParameter(std::string("Recording"), recording);
 }
 
+std::vector<std::string> ModifyPolicyGroupRequest::getScopeValue() const {
+  return scopeValue_;
+}
+
+void ModifyPolicyGroupRequest::setScopeValue(const std::vector<std::string> &scopeValue) {
+  scopeValue_ = scopeValue;
+}
+
+std::string ModifyPolicyGroupRequest::getDomainResolveRuleType() const {
+  return domainResolveRuleType_;
+}
+
+void ModifyPolicyGroupRequest::setDomainResolveRuleType(const std::string &domainResolveRuleType) {
+  domainResolveRuleType_ = domainResolveRuleType;
+  setParameter(std::string("DomainResolveRuleType"), domainResolveRuleType);
+}
+
+int ModifyPolicyGroupRequest::getMemorySingleRateLimit() const {
+  return memorySingleRateLimit_;
+}
+
+void ModifyPolicyGroupRequest::setMemorySingleRateLimit(int memorySingleRateLimit) {
+  memorySingleRateLimit_ = memorySingleRateLimit;
+  setParameter(std::string("MemorySingleRateLimit"), std::to_string(memorySingleRateLimit));
+}
+
 long ModifyPolicyGroupRequest::getRecordingFps() const {
   return recordingFps_;
 }
@@ -301,6 +464,15 @@ long ModifyPolicyGroupRequest::getRecordingFps() const {
 void ModifyPolicyGroupRequest::setRecordingFps(long recordingFps) {
   recordingFps_ = recordingFps;
   setParameter(std::string("RecordingFps"), std::to_string(recordingFps));
+}
+
+std::string ModifyPolicyGroupRequest::getWatermarkFontStyle() const {
+  return watermarkFontStyle_;
+}
+
+void ModifyPolicyGroupRequest::setWatermarkFontStyle(const std::string &watermarkFontStyle) {
+  watermarkFontStyle_ = watermarkFontStyle;
+  setParameter(std::string("WatermarkFontStyle"), watermarkFontStyle);
 }
 
 std::string ModifyPolicyGroupRequest::getRegionId() const {
@@ -321,6 +493,50 @@ void ModifyPolicyGroupRequest::setRecordContent(const std::string &recordContent
   setParameter(std::string("RecordContent"), recordContent);
 }
 
+std::string ModifyPolicyGroupRequest::getScope() const {
+  return scope_;
+}
+
+void ModifyPolicyGroupRequest::setScope(const std::string &scope) {
+  scope_ = scope;
+  setParameter(std::string("Scope"), scope);
+}
+
+int ModifyPolicyGroupRequest::getWatermarkRowAmount() const {
+  return watermarkRowAmount_;
+}
+
+void ModifyPolicyGroupRequest::setWatermarkRowAmount(int watermarkRowAmount) {
+  watermarkRowAmount_ = watermarkRowAmount;
+  setParameter(std::string("WatermarkRowAmount"), std::to_string(watermarkRowAmount));
+}
+
+std::vector<std::string> ModifyPolicyGroupRequest::getCpuProcessors() const {
+  return cpuProcessors_;
+}
+
+void ModifyPolicyGroupRequest::setCpuProcessors(const std::vector<std::string> &cpuProcessors) {
+  cpuProcessors_ = cpuProcessors;
+}
+
+std::string ModifyPolicyGroupRequest::getEndUserGroupCoordinate() const {
+  return endUserGroupCoordinate_;
+}
+
+void ModifyPolicyGroupRequest::setEndUserGroupCoordinate(const std::string &endUserGroupCoordinate) {
+  endUserGroupCoordinate_ = endUserGroupCoordinate;
+  setParameter(std::string("EndUserGroupCoordinate"), endUserGroupCoordinate);
+}
+
+double ModifyPolicyGroupRequest::getWatermarkDegree() const {
+  return watermarkDegree_;
+}
+
+void ModifyPolicyGroupRequest::setWatermarkDegree(double watermarkDegree) {
+  watermarkDegree_ = watermarkDegree;
+  setParameter(std::string("WatermarkDegree"), std::to_string(watermarkDegree));
+}
+
 long ModifyPolicyGroupRequest::getRecordContentExpires() const {
   return recordContentExpires_;
 }
@@ -330,6 +546,24 @@ void ModifyPolicyGroupRequest::setRecordContentExpires(long recordContentExpires
   setParameter(std::string("RecordContentExpires"), std::to_string(recordContentExpires));
 }
 
+std::string ModifyPolicyGroupRequest::getRecordingAudio() const {
+  return recordingAudio_;
+}
+
+void ModifyPolicyGroupRequest::setRecordingAudio(const std::string &recordingAudio) {
+  recordingAudio_ = recordingAudio;
+  setParameter(std::string("RecordingAudio"), recordingAudio);
+}
+
+int ModifyPolicyGroupRequest::getCpuRateLimit() const {
+  return cpuRateLimit_;
+}
+
+void ModifyPolicyGroupRequest::setCpuRateLimit(int cpuRateLimit) {
+  cpuRateLimit_ = cpuRateLimit;
+  setParameter(std::string("CpuRateLimit"), std::to_string(cpuRateLimit));
+}
+
 std::string ModifyPolicyGroupRequest::getRemoteCoordinate() const {
   return remoteCoordinate_;
 }
@@ -337,6 +571,15 @@ std::string ModifyPolicyGroupRequest::getRemoteCoordinate() const {
 void ModifyPolicyGroupRequest::setRemoteCoordinate(const std::string &remoteCoordinate) {
   remoteCoordinate_ = remoteCoordinate;
   setParameter(std::string("RemoteCoordinate"), remoteCoordinate);
+}
+
+int ModifyPolicyGroupRequest::getCpuSampleDuration() const {
+  return cpuSampleDuration_;
+}
+
+void ModifyPolicyGroupRequest::setCpuSampleDuration(int cpuSampleDuration) {
+  cpuSampleDuration_ = cpuSampleDuration;
+  setParameter(std::string("CpuSampleDuration"), std::to_string(cpuSampleDuration));
 }
 
 std::string ModifyPolicyGroupRequest::getHtml5Access() const {
@@ -382,5 +625,32 @@ std::string ModifyPolicyGroupRequest::getRecordingEndTime() const {
 void ModifyPolicyGroupRequest::setRecordingEndTime(const std::string &recordingEndTime) {
   recordingEndTime_ = recordingEndTime;
   setParameter(std::string("RecordingEndTime"), recordingEndTime);
+}
+
+std::string ModifyPolicyGroupRequest::getMemoryProtectedMode() const {
+  return memoryProtectedMode_;
+}
+
+void ModifyPolicyGroupRequest::setMemoryProtectedMode(const std::string &memoryProtectedMode) {
+  memoryProtectedMode_ = memoryProtectedMode;
+  setParameter(std::string("MemoryProtectedMode"), memoryProtectedMode);
+}
+
+int ModifyPolicyGroupRequest::getMemoryDownGradeDuration() const {
+  return memoryDownGradeDuration_;
+}
+
+void ModifyPolicyGroupRequest::setMemoryDownGradeDuration(int memoryDownGradeDuration) {
+  memoryDownGradeDuration_ = memoryDownGradeDuration;
+  setParameter(std::string("MemoryDownGradeDuration"), std::to_string(memoryDownGradeDuration));
+}
+
+std::string ModifyPolicyGroupRequest::getInternetCommunicationProtocol() const {
+  return internetCommunicationProtocol_;
+}
+
+void ModifyPolicyGroupRequest::setInternetCommunicationProtocol(const std::string &internetCommunicationProtocol) {
+  internetCommunicationProtocol_ = internetCommunicationProtocol;
+  setParameter(std::string("InternetCommunicationProtocol"), internetCommunicationProtocol);
 }
 

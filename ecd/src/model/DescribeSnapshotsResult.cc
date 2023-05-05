@@ -65,12 +65,20 @@ void DescribeSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.sourceDiskType = valueSnapshotsSnapshot["SourceDiskType"].asString();
 		if(!valueSnapshotsSnapshot["DesktopId"].isNull())
 			snapshotsObject.desktopId = valueSnapshotsSnapshot["DesktopId"].asString();
+		if(!valueSnapshotsSnapshot["DesktopName"].isNull())
+			snapshotsObject.desktopName = valueSnapshotsSnapshot["DesktopName"].asString();
+		if(!valueSnapshotsSnapshot["DesktopStatus"].isNull())
+			snapshotsObject.desktopStatus = valueSnapshotsSnapshot["DesktopStatus"].asString();
+		if(!valueSnapshotsSnapshot["Creator"].isNull())
+			snapshotsObject.creator = valueSnapshotsSnapshot["Creator"].asString();
+		if(!valueSnapshotsSnapshot["ProtocolType"].isNull())
+			snapshotsObject.protocolType = valueSnapshotsSnapshot["ProtocolType"].asString();
 		if(!valueSnapshotsSnapshot["VolumeEncryptionEnabled"].isNull())
 			snapshotsObject.volumeEncryptionEnabled = valueSnapshotsSnapshot["VolumeEncryptionEnabled"].asString() == "true";
 		if(!valueSnapshotsSnapshot["VolumeEncryptionKey"].isNull())
 			snapshotsObject.volumeEncryptionKey = valueSnapshotsSnapshot["VolumeEncryptionKey"].asString();
-		if(!valueSnapshotsSnapshot["ProtocolType"].isNull())
-			snapshotsObject.protocolType = valueSnapshotsSnapshot["ProtocolType"].asString();
+		if(!valueSnapshotsSnapshot["DeletionTime"].isNull())
+			snapshotsObject.deletionTime = valueSnapshotsSnapshot["DeletionTime"].asString();
 		snapshots_.push_back(snapshotsObject);
 	}
 	if(!value["NextToken"].isNull())

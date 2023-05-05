@@ -52,3 +52,12 @@ void ConfigADConnectorTrustRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+bool ConfigADConnectorTrustRequest::getRdsLicenseDomain() const {
+  return rdsLicenseDomain_;
+}
+
+void ConfigADConnectorTrustRequest::setRdsLicenseDomain(bool rdsLicenseDomain) {
+  rdsLicenseDomain_ = rdsLicenseDomain;
+  setParameter(std::string("RdsLicenseDomain"), rdsLicenseDomain ? "true" : "false");
+}
+

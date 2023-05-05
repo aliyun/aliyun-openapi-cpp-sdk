@@ -36,11 +36,14 @@ public:
 	void setTrustKey(const std::string &trustKey);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	bool getRdsLicenseDomain() const;
+	void setRdsLicenseDomain(bool rdsLicenseDomain);
 
 private:
 	std::string officeSiteId_;
 	std::string trustKey_;
 	std::string regionId_;
+	bool rdsLicenseDomain_;
 };
 } // namespace Model
 } // namespace Ecd

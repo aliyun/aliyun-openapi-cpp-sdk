@@ -47,13 +47,22 @@ void ListUserAdOrganizationUnitsResult::parse(const std::string &payload)
 			oUNamesObject.officeSiteId = valueOUNamesouName["OfficeSiteId"].asString();
 		if(!valueOUNamesouName["OUName"].isNull())
 			oUNamesObject.oUName = valueOUNamesouName["OUName"].asString();
+		if(!valueOUNamesouName["DisplayOUName"].isNull())
+			oUNamesObject.displayOUName = valueOUNamesouName["DisplayOUName"].asString();
 		oUNames_.push_back(oUNamesObject);
 	}
+	if(!value["NextToken"].isNull())
+		nextToken_ = value["NextToken"].asString();
 
 }
 
 std::vector<ListUserAdOrganizationUnitsResult::OuName> ListUserAdOrganizationUnitsResult::getOUNames()const
 {
 	return oUNames_;
+}
+
+std::string ListUserAdOrganizationUnitsResult::getNextToken()const
+{
+	return nextToken_;
 }
 

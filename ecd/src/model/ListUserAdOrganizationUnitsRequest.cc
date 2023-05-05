@@ -34,6 +34,15 @@ void ListUserAdOrganizationUnitsRequest::setOfficeSiteId(const std::string &offi
   setParameter(std::string("OfficeSiteId"), officeSiteId);
 }
 
+std::string ListUserAdOrganizationUnitsRequest::getFilter() const {
+  return filter_;
+}
+
+void ListUserAdOrganizationUnitsRequest::setFilter(const std::string &filter) {
+  filter_ = filter;
+  setParameter(std::string("Filter"), filter);
+}
+
 std::string ListUserAdOrganizationUnitsRequest::getRegionId() const {
   return regionId_;
 }
@@ -41,5 +50,23 @@ std::string ListUserAdOrganizationUnitsRequest::getRegionId() const {
 void ListUserAdOrganizationUnitsRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string ListUserAdOrganizationUnitsRequest::getNextToken() const {
+  return nextToken_;
+}
+
+void ListUserAdOrganizationUnitsRequest::setNextToken(const std::string &nextToken) {
+  nextToken_ = nextToken;
+  setParameter(std::string("NextToken"), nextToken);
+}
+
+int ListUserAdOrganizationUnitsRequest::getMaxResults() const {
+  return maxResults_;
+}
+
+void ListUserAdOrganizationUnitsRequest::setMaxResults(int maxResults) {
+  maxResults_ = maxResults;
+  setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 

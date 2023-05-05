@@ -87,6 +87,78 @@ EcdClient::ActivateOfficeSiteOutcomeCallable EcdClient::activateOfficeSiteCallab
 	return task->get_future();
 }
 
+EcdClient::AddDevicesOutcome EcdClient::addDevices(const AddDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddDevicesOutcome(AddDevicesResult(outcome.result()));
+	else
+		return AddDevicesOutcome(outcome.error());
+}
+
+void EcdClient::addDevicesAsync(const AddDevicesRequest& request, const AddDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::AddDevicesOutcomeCallable EcdClient::addDevicesCallable(const AddDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->addDevices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::AddFilePermissionOutcome EcdClient::addFilePermission(const AddFilePermissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddFilePermissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddFilePermissionOutcome(AddFilePermissionResult(outcome.result()));
+	else
+		return AddFilePermissionOutcome(outcome.error());
+}
+
+void EcdClient::addFilePermissionAsync(const AddFilePermissionRequest& request, const AddFilePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addFilePermission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::AddFilePermissionOutcomeCallable EcdClient::addFilePermissionCallable(const AddFilePermissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddFilePermissionOutcome()>>(
+			[this, request]()
+			{
+			return this->addFilePermission(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::AddUserToDesktopGroupOutcome EcdClient::addUserToDesktopGroup(const AddUserToDesktopGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,6 +189,42 @@ EcdClient::AddUserToDesktopGroupOutcomeCallable EcdClient::addUserToDesktopGroup
 			[this, request]()
 			{
 			return this->addUserToDesktopGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::ApplyAutoSnapshotPolicyOutcome EcdClient::applyAutoSnapshotPolicy(const ApplyAutoSnapshotPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ApplyAutoSnapshotPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ApplyAutoSnapshotPolicyOutcome(ApplyAutoSnapshotPolicyResult(outcome.result()));
+	else
+		return ApplyAutoSnapshotPolicyOutcome(outcome.error());
+}
+
+void EcdClient::applyAutoSnapshotPolicyAsync(const ApplyAutoSnapshotPolicyRequest& request, const ApplyAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, applyAutoSnapshotPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::ApplyAutoSnapshotPolicyOutcomeCallable EcdClient::applyAutoSnapshotPolicyCallable(const ApplyAutoSnapshotPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ApplyAutoSnapshotPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->applyAutoSnapshotPolicy(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,6 +411,114 @@ EcdClient::AttachCenOutcomeCallable EcdClient::attachCenCallable(const AttachCen
 	return task->get_future();
 }
 
+EcdClient::AttachEndUserOutcome EcdClient::attachEndUser(const AttachEndUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AttachEndUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AttachEndUserOutcome(AttachEndUserResult(outcome.result()));
+	else
+		return AttachEndUserOutcome(outcome.error());
+}
+
+void EcdClient::attachEndUserAsync(const AttachEndUserRequest& request, const AttachEndUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, attachEndUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::AttachEndUserOutcomeCallable EcdClient::attachEndUserCallable(const AttachEndUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AttachEndUserOutcome()>>(
+			[this, request]()
+			{
+			return this->attachEndUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::CancelAutoSnapshotPolicyOutcome EcdClient::cancelAutoSnapshotPolicy(const CancelAutoSnapshotPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelAutoSnapshotPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelAutoSnapshotPolicyOutcome(CancelAutoSnapshotPolicyResult(outcome.result()));
+	else
+		return CancelAutoSnapshotPolicyOutcome(outcome.error());
+}
+
+void EcdClient::cancelAutoSnapshotPolicyAsync(const CancelAutoSnapshotPolicyRequest& request, const CancelAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelAutoSnapshotPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::CancelAutoSnapshotPolicyOutcomeCallable EcdClient::cancelAutoSnapshotPolicyCallable(const CancelAutoSnapshotPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelAutoSnapshotPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelAutoSnapshotPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::CancelCdsFileShareLinkOutcome EcdClient::cancelCdsFileShareLink(const CancelCdsFileShareLinkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CancelCdsFileShareLinkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CancelCdsFileShareLinkOutcome(CancelCdsFileShareLinkResult(outcome.result()));
+	else
+		return CancelCdsFileShareLinkOutcome(outcome.error());
+}
+
+void EcdClient::cancelCdsFileShareLinkAsync(const CancelCdsFileShareLinkRequest& request, const CancelCdsFileShareLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, cancelCdsFileShareLink(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::CancelCdsFileShareLinkOutcomeCallable EcdClient::cancelCdsFileShareLinkCallable(const CancelCdsFileShareLinkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CancelCdsFileShareLinkOutcome()>>(
+			[this, request]()
+			{
+			return this->cancelCdsFileShareLink(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::CancelCoordinationForMonitoringOutcome EcdClient::cancelCoordinationForMonitoring(const CancelCoordinationForMonitoringRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -411,6 +627,42 @@ EcdClient::ClonePolicyGroupOutcomeCallable EcdClient::clonePolicyGroupCallable(c
 	return task->get_future();
 }
 
+EcdClient::CompleteCdsFileOutcome EcdClient::completeCdsFile(const CompleteCdsFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CompleteCdsFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CompleteCdsFileOutcome(CompleteCdsFileResult(outcome.result()));
+	else
+		return CompleteCdsFileOutcome(outcome.error());
+}
+
+void EcdClient::completeCdsFileAsync(const CompleteCdsFileRequest& request, const CompleteCdsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, completeCdsFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::CompleteCdsFileOutcomeCallable EcdClient::completeCdsFileCallable(const CompleteCdsFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CompleteCdsFileOutcome()>>(
+			[this, request]()
+			{
+			return this->completeCdsFile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::ConfigADConnectorTrustOutcome EcdClient::configADConnectorTrust(const ConfigADConnectorTrustRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -477,6 +729,42 @@ EcdClient::ConfigADConnectorUserOutcomeCallable EcdClient::configADConnectorUser
 			[this, request]()
 			{
 			return this->configADConnectorUser(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::CopyCdsFileOutcome EcdClient::copyCdsFile(const CopyCdsFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CopyCdsFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CopyCdsFileOutcome(CopyCdsFileResult(outcome.result()));
+	else
+		return CopyCdsFileOutcome(outcome.error());
+}
+
+void EcdClient::copyCdsFileAsync(const CopyCdsFileRequest& request, const CopyCdsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, copyCdsFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::CopyCdsFileOutcomeCallable EcdClient::copyCdsFileCallable(const CopyCdsFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CopyCdsFileOutcome()>>(
+			[this, request]()
+			{
+			return this->copyCdsFile(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -627,6 +915,42 @@ EcdClient::CreateAndBindNasFileSystemOutcomeCallable EcdClient::createAndBindNas
 	return task->get_future();
 }
 
+EcdClient::CreateAutoSnapshotPolicyOutcome EcdClient::createAutoSnapshotPolicy(const CreateAutoSnapshotPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAutoSnapshotPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAutoSnapshotPolicyOutcome(CreateAutoSnapshotPolicyResult(outcome.result()));
+	else
+		return CreateAutoSnapshotPolicyOutcome(outcome.error());
+}
+
+void EcdClient::createAutoSnapshotPolicyAsync(const CreateAutoSnapshotPolicyRequest& request, const CreateAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAutoSnapshotPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::CreateAutoSnapshotPolicyOutcomeCallable EcdClient::createAutoSnapshotPolicyCallable(const CreateAutoSnapshotPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAutoSnapshotPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->createAutoSnapshotPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::CreateBundleOutcome EcdClient::createBundle(const CreateBundleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +981,78 @@ EcdClient::CreateBundleOutcomeCallable EcdClient::createBundleCallable(const Cre
 			[this, request]()
 			{
 			return this->createBundle(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::CreateCdsFileOutcome EcdClient::createCdsFile(const CreateCdsFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCdsFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCdsFileOutcome(CreateCdsFileResult(outcome.result()));
+	else
+		return CreateCdsFileOutcome(outcome.error());
+}
+
+void EcdClient::createCdsFileAsync(const CreateCdsFileRequest& request, const CreateCdsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCdsFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::CreateCdsFileOutcomeCallable EcdClient::createCdsFileCallable(const CreateCdsFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCdsFileOutcome()>>(
+			[this, request]()
+			{
+			return this->createCdsFile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::CreateCdsFileShareLinkOutcome EcdClient::createCdsFileShareLink(const CreateCdsFileShareLinkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateCdsFileShareLinkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateCdsFileShareLinkOutcome(CreateCdsFileShareLinkResult(outcome.result()));
+	else
+		return CreateCdsFileShareLinkOutcome(outcome.error());
+}
+
+void EcdClient::createCdsFileShareLinkAsync(const CreateCdsFileShareLinkRequest& request, const CreateCdsFileShareLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createCdsFileShareLink(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::CreateCdsFileShareLinkOutcomeCallable EcdClient::createCdsFileShareLinkCallable(const CreateCdsFileShareLinkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateCdsFileShareLinkOutcome()>>(
+			[this, request]()
+			{
+			return this->createCdsFileShareLink(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -765,42 +1161,6 @@ EcdClient::CreateDiskEncryptionServiceOutcomeCallable EcdClient::createDiskEncry
 			[this, request]()
 			{
 			return this->createDiskEncryptionService(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcdClient::CreateDriveOutcome EcdClient::createDrive(const CreateDriveRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateDriveOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateDriveOutcome(CreateDriveResult(outcome.result()));
-	else
-		return CreateDriveOutcome(outcome.error());
-}
-
-void EcdClient::createDriveAsync(const CreateDriveRequest& request, const CreateDriveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createDrive(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcdClient::CreateDriveOutcomeCallable EcdClient::createDriveCallable(const CreateDriveRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateDriveOutcome()>>(
-			[this, request]()
-			{
-			return this->createDrive(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1059,6 +1419,42 @@ EcdClient::CreateSnapshotOutcomeCallable EcdClient::createSnapshotCallable(const
 	return task->get_future();
 }
 
+EcdClient::DeleteAutoSnapshotPolicyOutcome EcdClient::deleteAutoSnapshotPolicy(const DeleteAutoSnapshotPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteAutoSnapshotPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteAutoSnapshotPolicyOutcome(DeleteAutoSnapshotPolicyResult(outcome.result()));
+	else
+		return DeleteAutoSnapshotPolicyOutcome(outcome.error());
+}
+
+void EcdClient::deleteAutoSnapshotPolicyAsync(const DeleteAutoSnapshotPolicyRequest& request, const DeleteAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteAutoSnapshotPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::DeleteAutoSnapshotPolicyOutcomeCallable EcdClient::deleteAutoSnapshotPolicyCallable(const DeleteAutoSnapshotPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteAutoSnapshotPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteAutoSnapshotPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::DeleteBundlesOutcome EcdClient::deleteBundles(const DeleteBundlesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1089,6 +1485,78 @@ EcdClient::DeleteBundlesOutcomeCallable EcdClient::deleteBundlesCallable(const D
 			[this, request]()
 			{
 			return this->deleteBundles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::DeleteCdsFileOutcome EcdClient::deleteCdsFile(const DeleteCdsFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCdsFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCdsFileOutcome(DeleteCdsFileResult(outcome.result()));
+	else
+		return DeleteCdsFileOutcome(outcome.error());
+}
+
+void EcdClient::deleteCdsFileAsync(const DeleteCdsFileRequest& request, const DeleteCdsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCdsFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::DeleteCdsFileOutcomeCallable EcdClient::deleteCdsFileCallable(const DeleteCdsFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCdsFileOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCdsFile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::DeleteCloudDriveGroupsOutcome EcdClient::deleteCloudDriveGroups(const DeleteCloudDriveGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteCloudDriveGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteCloudDriveGroupsOutcome(DeleteCloudDriveGroupsResult(outcome.result()));
+	else
+		return DeleteCloudDriveGroupsOutcome(outcome.error());
+}
+
+void EcdClient::deleteCloudDriveGroupsAsync(const DeleteCloudDriveGroupsRequest& request, const DeleteCloudDriveGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteCloudDriveGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::DeleteCloudDriveGroupsOutcomeCallable EcdClient::deleteCloudDriveGroupsCallable(const DeleteCloudDriveGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteCloudDriveGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteCloudDriveGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1203,6 +1671,42 @@ EcdClient::DeleteDesktopsOutcomeCallable EcdClient::deleteDesktopsCallable(const
 	return task->get_future();
 }
 
+EcdClient::DeleteDevicesOutcome EcdClient::deleteDevices(const DeleteDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteDevicesOutcome(DeleteDevicesResult(outcome.result()));
+	else
+		return DeleteDevicesOutcome(outcome.error());
+}
+
+void EcdClient::deleteDevicesAsync(const DeleteDevicesRequest& request, const DeleteDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::DeleteDevicesOutcomeCallable EcdClient::deleteDevicesCallable(const DeleteDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteDevices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::DeleteDirectoriesOutcome EcdClient::deleteDirectories(const DeleteDirectoriesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1233,42 +1737,6 @@ EcdClient::DeleteDirectoriesOutcomeCallable EcdClient::deleteDirectoriesCallable
 			[this, request]()
 			{
 			return this->deleteDirectories(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcdClient::DeleteDriveOutcome EcdClient::deleteDrive(const DeleteDriveRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DeleteDriveOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DeleteDriveOutcome(DeleteDriveResult(outcome.result()));
-	else
-		return DeleteDriveOutcome(outcome.error());
-}
-
-void EcdClient::deleteDriveAsync(const DeleteDriveRequest& request, const DeleteDriveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, deleteDrive(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcdClient::DeleteDriveOutcomeCallable EcdClient::deleteDriveCallable(const DeleteDriveRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DeleteDriveOutcome()>>(
-			[this, request]()
-			{
-			return this->deleteDrive(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1563,6 +2031,42 @@ EcdClient::DescribeAlarmEventStackInfoOutcomeCallable EcdClient::describeAlarmEv
 	return task->get_future();
 }
 
+EcdClient::DescribeAutoSnapshotPolicyOutcome EcdClient::describeAutoSnapshotPolicy(const DescribeAutoSnapshotPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeAutoSnapshotPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeAutoSnapshotPolicyOutcome(DescribeAutoSnapshotPolicyResult(outcome.result()));
+	else
+		return DescribeAutoSnapshotPolicyOutcome(outcome.error());
+}
+
+void EcdClient::describeAutoSnapshotPolicyAsync(const DescribeAutoSnapshotPolicyRequest& request, const DescribeAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeAutoSnapshotPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::DescribeAutoSnapshotPolicyOutcomeCallable EcdClient::describeAutoSnapshotPolicyCallable(const DescribeAutoSnapshotPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeAutoSnapshotPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->describeAutoSnapshotPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::DescribeBundlesOutcome EcdClient::describeBundles(const DescribeBundlesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1593,6 +2097,42 @@ EcdClient::DescribeBundlesOutcomeCallable EcdClient::describeBundlesCallable(con
 			[this, request]()
 			{
 			return this->describeBundles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::DescribeCdsFileShareLinksOutcome EcdClient::describeCdsFileShareLinks(const DescribeCdsFileShareLinksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCdsFileShareLinksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCdsFileShareLinksOutcome(DescribeCdsFileShareLinksResult(outcome.result()));
+	else
+		return DescribeCdsFileShareLinksOutcome(outcome.error());
+}
+
+void EcdClient::describeCdsFileShareLinksAsync(const DescribeCdsFileShareLinksRequest& request, const DescribeCdsFileShareLinksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCdsFileShareLinks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::DescribeCdsFileShareLinksOutcomeCallable EcdClient::describeCdsFileShareLinksCallable(const DescribeCdsFileShareLinksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCdsFileShareLinksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCdsFileShareLinks(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1665,6 +2205,42 @@ EcdClient::DescribeClientEventsOutcomeCallable EcdClient::describeClientEventsCa
 			[this, request]()
 			{
 			return this->describeClientEvents(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::DescribeCloudDriveGroupsOutcome EcdClient::describeCloudDriveGroups(const DescribeCloudDriveGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCloudDriveGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCloudDriveGroupsOutcome(DescribeCloudDriveGroupsResult(outcome.result()));
+	else
+		return DescribeCloudDriveGroupsOutcome(outcome.error());
+}
+
+void EcdClient::describeCloudDriveGroupsAsync(const DescribeCloudDriveGroupsRequest& request, const DescribeCloudDriveGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCloudDriveGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::DescribeCloudDriveGroupsOutcomeCallable EcdClient::describeCloudDriveGroupsCallable(const DescribeCloudDriveGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCloudDriveGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCloudDriveGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1923,6 +2499,42 @@ EcdClient::DescribeDesktopsInGroupOutcomeCallable EcdClient::describeDesktopsInG
 	return task->get_future();
 }
 
+EcdClient::DescribeDevicesOutcome EcdClient::describeDevices(const DescribeDevicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDevicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDevicesOutcome(DescribeDevicesResult(outcome.result()));
+	else
+		return DescribeDevicesOutcome(outcome.error());
+}
+
+void EcdClient::describeDevicesAsync(const DescribeDevicesRequest& request, const DescribeDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDevices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::DescribeDevicesOutcomeCallable EcdClient::describeDevicesCallable(const DescribeDevicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDevicesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDevices(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::DescribeDirectoriesOutcome EcdClient::describeDirectories(const DescribeDirectoriesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1953,42 +2565,6 @@ EcdClient::DescribeDirectoriesOutcomeCallable EcdClient::describeDirectoriesCall
 			[this, request]()
 			{
 			return this->describeDirectories(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-EcdClient::DescribeDrivesOutcome EcdClient::describeDrives(const DescribeDrivesRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeDrivesOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeDrivesOutcome(DescribeDrivesResult(outcome.result()));
-	else
-		return DescribeDrivesOutcome(outcome.error());
-}
-
-void EcdClient::describeDrivesAsync(const DescribeDrivesRequest& request, const DescribeDrivesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeDrives(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-EcdClient::DescribeDrivesOutcomeCallable EcdClient::describeDrivesCallable(const DescribeDrivesRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeDrivesOutcome()>>(
-			[this, request]()
-			{
-			return this->describeDrives(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2859,6 +3435,42 @@ EcdClient::DescribeUserConnectionRecordsOutcomeCallable EcdClient::describeUserC
 	return task->get_future();
 }
 
+EcdClient::DescribeUserProfilePathRulesOutcome EcdClient::describeUserProfilePathRules(const DescribeUserProfilePathRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUserProfilePathRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUserProfilePathRulesOutcome(DescribeUserProfilePathRulesResult(outcome.result()));
+	else
+		return DescribeUserProfilePathRulesOutcome(outcome.error());
+}
+
+void EcdClient::describeUserProfilePathRulesAsync(const DescribeUserProfilePathRulesRequest& request, const DescribeUserProfilePathRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUserProfilePathRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::DescribeUserProfilePathRulesOutcomeCallable EcdClient::describeUserProfilePathRulesCallable(const DescribeUserProfilePathRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUserProfilePathRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUserProfilePathRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::DescribeUsersInGroupOutcome EcdClient::describeUsersInGroup(const DescribeUsersInGroupRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3141,6 +3753,42 @@ EcdClient::DetachCenOutcomeCallable EcdClient::detachCenCallable(const DetachCen
 			[this, request]()
 			{
 			return this->detachCen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::DetachEndUserOutcome EcdClient::detachEndUser(const DetachEndUserRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetachEndUserOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetachEndUserOutcome(DetachEndUserResult(outcome.result()));
+	else
+		return DetachEndUserOutcome(outcome.error());
+}
+
+void EcdClient::detachEndUserAsync(const DetachEndUserRequest& request, const DetachEndUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detachEndUser(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::DetachEndUserOutcomeCallable EcdClient::detachEndUserCallable(const DetachEndUserRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetachEndUserOutcome()>>(
+			[this, request]()
+			{
+			return this->detachEndUser(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3507,6 +4155,78 @@ EcdClient::HandleSecurityEventsOutcomeCallable EcdClient::handleSecurityEventsCa
 	return task->get_future();
 }
 
+EcdClient::HibernateDesktopsOutcome EcdClient::hibernateDesktops(const HibernateDesktopsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return HibernateDesktopsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return HibernateDesktopsOutcome(HibernateDesktopsResult(outcome.result()));
+	else
+		return HibernateDesktopsOutcome(outcome.error());
+}
+
+void EcdClient::hibernateDesktopsAsync(const HibernateDesktopsRequest& request, const HibernateDesktopsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, hibernateDesktops(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::HibernateDesktopsOutcomeCallable EcdClient::hibernateDesktopsCallable(const HibernateDesktopsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<HibernateDesktopsOutcome()>>(
+			[this, request]()
+			{
+			return this->hibernateDesktops(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::ListCdsFilesOutcome EcdClient::listCdsFiles(const ListCdsFilesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCdsFilesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCdsFilesOutcome(ListCdsFilesResult(outcome.result()));
+	else
+		return ListCdsFilesOutcome(outcome.error());
+}
+
+void EcdClient::listCdsFilesAsync(const ListCdsFilesRequest& request, const ListCdsFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCdsFiles(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::ListCdsFilesOutcomeCallable EcdClient::listCdsFilesCallable(const ListCdsFilesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCdsFilesOutcome()>>(
+			[this, request]()
+			{
+			return this->listCdsFiles(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::ListDirectoryUsersOutcome EcdClient::listDirectoryUsers(const ListDirectoryUsersRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3537,6 +4257,42 @@ EcdClient::ListDirectoryUsersOutcomeCallable EcdClient::listDirectoryUsersCallab
 			[this, request]()
 			{
 			return this->listDirectoryUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::ListFilePermissionOutcome EcdClient::listFilePermission(const ListFilePermissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListFilePermissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListFilePermissionOutcome(ListFilePermissionResult(outcome.result()));
+	else
+		return ListFilePermissionOutcome(outcome.error());
+}
+
+void EcdClient::listFilePermissionAsync(const ListFilePermissionRequest& request, const ListFilePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listFilePermission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::ListFilePermissionOutcomeCallable EcdClient::listFilePermissionCallable(const ListFilePermissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListFilePermissionOutcome()>>(
+			[this, request]()
+			{
+			return this->listFilePermission(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3723,6 +4479,42 @@ EcdClient::LockVirtualMFADeviceOutcomeCallable EcdClient::lockVirtualMFADeviceCa
 	return task->get_future();
 }
 
+EcdClient::MigrateDesktopsOutcome EcdClient::migrateDesktops(const MigrateDesktopsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MigrateDesktopsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MigrateDesktopsOutcome(MigrateDesktopsResult(outcome.result()));
+	else
+		return MigrateDesktopsOutcome(outcome.error());
+}
+
+void EcdClient::migrateDesktopsAsync(const MigrateDesktopsRequest& request, const MigrateDesktopsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, migrateDesktops(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::MigrateDesktopsOutcomeCallable EcdClient::migrateDesktopsCallable(const MigrateDesktopsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MigrateDesktopsOutcome()>>(
+			[this, request]()
+			{
+			return this->migrateDesktops(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::ModifyADConnectorDirectoryOutcome EcdClient::modifyADConnectorDirectory(const ModifyADConnectorDirectoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3795,6 +4587,42 @@ EcdClient::ModifyADConnectorOfficeSiteOutcomeCallable EcdClient::modifyADConnect
 	return task->get_future();
 }
 
+EcdClient::ModifyAutoSnapshotPolicyOutcome EcdClient::modifyAutoSnapshotPolicy(const ModifyAutoSnapshotPolicyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyAutoSnapshotPolicyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyAutoSnapshotPolicyOutcome(ModifyAutoSnapshotPolicyResult(outcome.result()));
+	else
+		return ModifyAutoSnapshotPolicyOutcome(outcome.error());
+}
+
+void EcdClient::modifyAutoSnapshotPolicyAsync(const ModifyAutoSnapshotPolicyRequest& request, const ModifyAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyAutoSnapshotPolicy(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::ModifyAutoSnapshotPolicyOutcomeCallable EcdClient::modifyAutoSnapshotPolicyCallable(const ModifyAutoSnapshotPolicyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyAutoSnapshotPolicyOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyAutoSnapshotPolicy(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::ModifyBundleOutcome EcdClient::modifyBundle(const ModifyBundleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3825,6 +4653,114 @@ EcdClient::ModifyBundleOutcomeCallable EcdClient::modifyBundleCallable(const Mod
 			[this, request]()
 			{
 			return this->modifyBundle(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::ModifyCdsFileOutcome EcdClient::modifyCdsFile(const ModifyCdsFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyCdsFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyCdsFileOutcome(ModifyCdsFileResult(outcome.result()));
+	else
+		return ModifyCdsFileOutcome(outcome.error());
+}
+
+void EcdClient::modifyCdsFileAsync(const ModifyCdsFileRequest& request, const ModifyCdsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyCdsFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::ModifyCdsFileOutcomeCallable EcdClient::modifyCdsFileCallable(const ModifyCdsFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyCdsFileOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyCdsFile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::ModifyCdsFileShareLinkOutcome EcdClient::modifyCdsFileShareLink(const ModifyCdsFileShareLinkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyCdsFileShareLinkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyCdsFileShareLinkOutcome(ModifyCdsFileShareLinkResult(outcome.result()));
+	else
+		return ModifyCdsFileShareLinkOutcome(outcome.error());
+}
+
+void EcdClient::modifyCdsFileShareLinkAsync(const ModifyCdsFileShareLinkRequest& request, const ModifyCdsFileShareLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyCdsFileShareLink(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::ModifyCdsFileShareLinkOutcomeCallable EcdClient::modifyCdsFileShareLinkCallable(const ModifyCdsFileShareLinkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyCdsFileShareLinkOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyCdsFileShareLink(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::ModifyCloudDriveGroupsOutcome EcdClient::modifyCloudDriveGroups(const ModifyCloudDriveGroupsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyCloudDriveGroupsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyCloudDriveGroupsOutcome(ModifyCloudDriveGroupsResult(outcome.result()));
+	else
+		return ModifyCloudDriveGroupsOutcome(outcome.error());
+}
+
+void EcdClient::modifyCloudDriveGroupsAsync(const ModifyCloudDriveGroupsRequest& request, const ModifyCloudDriveGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyCloudDriveGroups(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::ModifyCloudDriveGroupsOutcomeCallable EcdClient::modifyCloudDriveGroupsCallable(const ModifyCloudDriveGroupsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyCloudDriveGroupsOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyCloudDriveGroups(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4623,6 +5559,42 @@ EcdClient::ModifyUserToDesktopGroupOutcomeCallable EcdClient::modifyUserToDeskto
 	return task->get_future();
 }
 
+EcdClient::MoveCdsFileOutcome EcdClient::moveCdsFile(const MoveCdsFileRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return MoveCdsFileOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return MoveCdsFileOutcome(MoveCdsFileResult(outcome.result()));
+	else
+		return MoveCdsFileOutcome(outcome.error());
+}
+
+void EcdClient::moveCdsFileAsync(const MoveCdsFileRequest& request, const MoveCdsFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, moveCdsFile(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::MoveCdsFileOutcomeCallable EcdClient::moveCdsFileCallable(const MoveCdsFileRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<MoveCdsFileOutcome()>>(
+			[this, request]()
+			{
+			return this->moveCdsFile(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::OperateVulsOutcome EcdClient::operateVuls(const OperateVulsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4725,6 +5697,42 @@ EcdClient::RebuildDesktopsOutcomeCallable EcdClient::rebuildDesktopsCallable(con
 			[this, request]()
 			{
 			return this->rebuildDesktops(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::RemoveFilePermissionOutcome EcdClient::removeFilePermission(const RemoveFilePermissionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveFilePermissionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveFilePermissionOutcome(RemoveFilePermissionResult(outcome.result()));
+	else
+		return RemoveFilePermissionOutcome(outcome.error());
+}
+
+void EcdClient::removeFilePermissionAsync(const RemoveFilePermissionRequest& request, const RemoveFilePermissionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeFilePermission(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::RemoveFilePermissionOutcomeCallable EcdClient::removeFilePermissionCallable(const RemoveFilePermissionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveFilePermissionOutcome()>>(
+			[this, request]()
+			{
+			return this->removeFilePermission(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5091,6 +6099,42 @@ EcdClient::SendVerifyCodeOutcomeCallable EcdClient::sendVerifyCodeCallable(const
 	return task->get_future();
 }
 
+EcdClient::SetDesktopGroupScaleTimerOutcome EcdClient::setDesktopGroupScaleTimer(const SetDesktopGroupScaleTimerRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDesktopGroupScaleTimerOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDesktopGroupScaleTimerOutcome(SetDesktopGroupScaleTimerResult(outcome.result()));
+	else
+		return SetDesktopGroupScaleTimerOutcome(outcome.error());
+}
+
+void EcdClient::setDesktopGroupScaleTimerAsync(const SetDesktopGroupScaleTimerRequest& request, const SetDesktopGroupScaleTimerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDesktopGroupScaleTimer(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::SetDesktopGroupScaleTimerOutcomeCallable EcdClient::setDesktopGroupScaleTimerCallable(const SetDesktopGroupScaleTimerRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDesktopGroupScaleTimerOutcome()>>(
+			[this, request]()
+			{
+			return this->setDesktopGroupScaleTimer(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::SetDesktopGroupTimerOutcome EcdClient::setDesktopGroupTimer(const SetDesktopGroupTimerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5163,6 +6207,42 @@ EcdClient::SetDesktopGroupTimerStatusOutcomeCallable EcdClient::setDesktopGroupT
 	return task->get_future();
 }
 
+EcdClient::SetDirectorySsoStatusOutcome EcdClient::setDirectorySsoStatus(const SetDirectorySsoStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetDirectorySsoStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetDirectorySsoStatusOutcome(SetDirectorySsoStatusResult(outcome.result()));
+	else
+		return SetDirectorySsoStatusOutcome(outcome.error());
+}
+
+void EcdClient::setDirectorySsoStatusAsync(const SetDirectorySsoStatusRequest& request, const SetDirectorySsoStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setDirectorySsoStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::SetDirectorySsoStatusOutcomeCallable EcdClient::setDirectorySsoStatusCallable(const SetDirectorySsoStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetDirectorySsoStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->setDirectorySsoStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EcdClient::SetIdpMetadataOutcome EcdClient::setIdpMetadata(const SetIdpMetadataRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5229,6 +6309,42 @@ EcdClient::SetOfficeSiteSsoStatusOutcomeCallable EcdClient::setOfficeSiteSsoStat
 			[this, request]()
 			{
 			return this->setOfficeSiteSsoStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::SetUserProfilePathRulesOutcome EcdClient::setUserProfilePathRules(const SetUserProfilePathRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SetUserProfilePathRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SetUserProfilePathRulesOutcome(SetUserProfilePathRulesResult(outcome.result()));
+	else
+		return SetUserProfilePathRulesOutcome(outcome.error());
+}
+
+void EcdClient::setUserProfilePathRulesAsync(const SetUserProfilePathRulesRequest& request, const SetUserProfilePathRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, setUserProfilePathRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::SetUserProfilePathRulesOutcomeCallable EcdClient::setUserProfilePathRulesCallable(const SetUserProfilePathRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SetUserProfilePathRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->setUserProfilePathRules(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -5589,6 +6705,42 @@ EcdClient::VerifyCenOutcomeCallable EcdClient::verifyCenCallable(const VerifyCen
 			[this, request]()
 			{
 			return this->verifyCen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EcdClient::WakeupDesktopsOutcome EcdClient::wakeupDesktops(const WakeupDesktopsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return WakeupDesktopsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return WakeupDesktopsOutcome(WakeupDesktopsResult(outcome.result()));
+	else
+		return WakeupDesktopsOutcome(outcome.error());
+}
+
+void EcdClient::wakeupDesktopsAsync(const WakeupDesktopsRequest& request, const WakeupDesktopsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, wakeupDesktops(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EcdClient::WakeupDesktopsOutcomeCallable EcdClient::wakeupDesktopsCallable(const WakeupDesktopsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<WakeupDesktopsOutcome()>>(
+			[this, request]()
+			{
+			return this->wakeupDesktops(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

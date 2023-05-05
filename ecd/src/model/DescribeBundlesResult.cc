@@ -77,6 +77,8 @@ void DescribeBundlesResult::parse(const std::string &payload)
 			bundlesObject.volumeEncryptionKey = valueBundlesBundle["VolumeEncryptionKey"].asString();
 		if(!valueBundlesBundle["Platform"].isNull())
 			bundlesObject.platform = valueBundlesBundle["Platform"].asString();
+		if(!valueBundlesBundle["ImageStatus"].isNull())
+			bundlesObject.imageStatus = valueBundlesBundle["ImageStatus"].asString();
 		auto allDisksNode = valueBundlesBundle["Disks"]["Disk"];
 		for (auto valueBundlesBundleDisksDisk : allDisksNode)
 		{
