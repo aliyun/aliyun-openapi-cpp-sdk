@@ -41,7 +41,14 @@ void RunPreTrainServiceResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["PredictResult"].isNull())
 		predictResult_ = value["PredictResult"].asString();
+	if(!value["BillingCount"].isNull())
+		billingCount_ = std::stoi(value["BillingCount"].asString());
 
+}
+
+int RunPreTrainServiceResult::getBillingCount()const
+{
+	return billingCount_;
 }
 
 std::string RunPreTrainServiceResult::getPredictResult()const

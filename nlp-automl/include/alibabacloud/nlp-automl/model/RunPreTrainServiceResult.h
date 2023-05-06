@@ -37,11 +37,13 @@ namespace AlibabaCloud
 				RunPreTrainServiceResult();
 				explicit RunPreTrainServiceResult(const std::string &payload);
 				~RunPreTrainServiceResult();
+				int getBillingCount()const;
 				std::string getPredictResult()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int billingCount_;
 				std::string predictResult_;
 
 			};
