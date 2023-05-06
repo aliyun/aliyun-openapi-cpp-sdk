@@ -519,6 +519,42 @@ AlinlpClient::GetEcEnGeneralOutcomeCallable AlinlpClient::getEcEnGeneralCallable
 	return task->get_future();
 }
 
+AlinlpClient::GetEmbeddingOutcome AlinlpClient::getEmbedding(const GetEmbeddingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetEmbeddingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetEmbeddingOutcome(GetEmbeddingResult(outcome.result()));
+	else
+		return GetEmbeddingOutcome(outcome.error());
+}
+
+void AlinlpClient::getEmbeddingAsync(const GetEmbeddingRequest& request, const GetEmbeddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getEmbedding(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlinlpClient::GetEmbeddingOutcomeCallable AlinlpClient::getEmbeddingCallable(const GetEmbeddingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetEmbeddingOutcome()>>(
+			[this, request]()
+			{
+			return this->getEmbedding(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlinlpClient::GetItemPubChEcomOutcome AlinlpClient::getItemPubChEcom(const GetItemPubChEcomRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -807,6 +843,78 @@ AlinlpClient::GetNerCustomizedSeaEcomOutcomeCallable AlinlpClient::getNerCustomi
 	return task->get_future();
 }
 
+AlinlpClient::GetOpenNLUOutcome AlinlpClient::getOpenNLU(const GetOpenNLURequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOpenNLUOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOpenNLUOutcome(GetOpenNLUResult(outcome.result()));
+	else
+		return GetOpenNLUOutcome(outcome.error());
+}
+
+void AlinlpClient::getOpenNLUAsync(const GetOpenNLURequest& request, const GetOpenNLUAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOpenNLU(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlinlpClient::GetOpenNLUOutcomeCallable AlinlpClient::getOpenNLUCallable(const GetOpenNLURequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOpenNLUOutcome()>>(
+			[this, request]()
+			{
+			return this->getOpenNLU(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlinlpClient::GetOpenNLUHighRecallOutcome AlinlpClient::getOpenNLUHighRecall(const GetOpenNLUHighRecallRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOpenNLUHighRecallOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOpenNLUHighRecallOutcome(GetOpenNLUHighRecallResult(outcome.result()));
+	else
+		return GetOpenNLUHighRecallOutcome(outcome.error());
+}
+
+void AlinlpClient::getOpenNLUHighRecallAsync(const GetOpenNLUHighRecallRequest& request, const GetOpenNLUHighRecallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOpenNLUHighRecall(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlinlpClient::GetOpenNLUHighRecallOutcomeCallable AlinlpClient::getOpenNLUHighRecallCallable(const GetOpenNLUHighRecallRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOpenNLUHighRecallOutcome()>>(
+			[this, request]()
+			{
+			return this->getOpenNLUHighRecall(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlinlpClient::GetOperationChMedicalOutcome AlinlpClient::getOperationChMedical(const GetOperationChMedicalRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -945,6 +1053,42 @@ AlinlpClient::GetPriceChEcomOutcomeCallable AlinlpClient::getPriceChEcomCallable
 			[this, request]()
 			{
 			return this->getPriceChEcom(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlinlpClient::GetSSETestOutcome AlinlpClient::getSSETest(const GetSSETestRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetSSETestOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetSSETestOutcome(GetSSETestResult(outcome.result()));
+	else
+		return GetSSETestOutcome(outcome.error());
+}
+
+void AlinlpClient::getSSETestAsync(const GetSSETestRequest& request, const GetSSETestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getSSETest(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlinlpClient::GetSSETestOutcomeCallable AlinlpClient::getSSETestCallable(const GetSSETestRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetSSETestOutcome()>>(
+			[this, request]()
+			{
+			return this->getSSETest(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

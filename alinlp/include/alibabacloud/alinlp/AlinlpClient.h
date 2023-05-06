@@ -48,6 +48,8 @@
 #include "model/GetEcChGeneralResult.h"
 #include "model/GetEcEnGeneralRequest.h"
 #include "model/GetEcEnGeneralResult.h"
+#include "model/GetEmbeddingRequest.h"
+#include "model/GetEmbeddingResult.h"
 #include "model/GetItemPubChEcomRequest.h"
 #include "model/GetItemPubChEcomResult.h"
 #include "model/GetKeywordChEcomRequest.h"
@@ -64,6 +66,10 @@
 #include "model/GetNerCustomizedChEcomResult.h"
 #include "model/GetNerCustomizedSeaEcomRequest.h"
 #include "model/GetNerCustomizedSeaEcomResult.h"
+#include "model/GetOpenNLURequest.h"
+#include "model/GetOpenNLUResult.h"
+#include "model/GetOpenNLUHighRecallRequest.h"
+#include "model/GetOpenNLUHighRecallResult.h"
 #include "model/GetOperationChMedicalRequest.h"
 #include "model/GetOperationChMedicalResult.h"
 #include "model/GetPosChEcomRequest.h"
@@ -72,6 +78,8 @@
 #include "model/GetPosChGeneralResult.h"
 #include "model/GetPriceChEcomRequest.h"
 #include "model/GetPriceChEcomResult.h"
+#include "model/GetSSETestRequest.h"
+#include "model/GetSSETestResult.h"
 #include "model/GetSaChGeneralRequest.h"
 #include "model/GetSaChGeneralResult.h"
 #include "model/GetSaSeaEcomRequest.h"
@@ -174,6 +182,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetEcEnGeneralResult> GetEcEnGeneralOutcome;
 			typedef std::future<GetEcEnGeneralOutcome> GetEcEnGeneralOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::GetEcEnGeneralRequest&, const GetEcEnGeneralOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEcEnGeneralAsyncHandler;
+			typedef Outcome<Error, Model::GetEmbeddingResult> GetEmbeddingOutcome;
+			typedef std::future<GetEmbeddingOutcome> GetEmbeddingOutcomeCallable;
+			typedef std::function<void(const AlinlpClient*, const Model::GetEmbeddingRequest&, const GetEmbeddingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetEmbeddingAsyncHandler;
 			typedef Outcome<Error, Model::GetItemPubChEcomResult> GetItemPubChEcomOutcome;
 			typedef std::future<GetItemPubChEcomOutcome> GetItemPubChEcomOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::GetItemPubChEcomRequest&, const GetItemPubChEcomOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetItemPubChEcomAsyncHandler;
@@ -198,6 +209,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetNerCustomizedSeaEcomResult> GetNerCustomizedSeaEcomOutcome;
 			typedef std::future<GetNerCustomizedSeaEcomOutcome> GetNerCustomizedSeaEcomOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::GetNerCustomizedSeaEcomRequest&, const GetNerCustomizedSeaEcomOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetNerCustomizedSeaEcomAsyncHandler;
+			typedef Outcome<Error, Model::GetOpenNLUResult> GetOpenNLUOutcome;
+			typedef std::future<GetOpenNLUOutcome> GetOpenNLUOutcomeCallable;
+			typedef std::function<void(const AlinlpClient*, const Model::GetOpenNLURequest&, const GetOpenNLUOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOpenNLUAsyncHandler;
+			typedef Outcome<Error, Model::GetOpenNLUHighRecallResult> GetOpenNLUHighRecallOutcome;
+			typedef std::future<GetOpenNLUHighRecallOutcome> GetOpenNLUHighRecallOutcomeCallable;
+			typedef std::function<void(const AlinlpClient*, const Model::GetOpenNLUHighRecallRequest&, const GetOpenNLUHighRecallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOpenNLUHighRecallAsyncHandler;
 			typedef Outcome<Error, Model::GetOperationChMedicalResult> GetOperationChMedicalOutcome;
 			typedef std::future<GetOperationChMedicalOutcome> GetOperationChMedicalOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::GetOperationChMedicalRequest&, const GetOperationChMedicalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOperationChMedicalAsyncHandler;
@@ -210,6 +227,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetPriceChEcomResult> GetPriceChEcomOutcome;
 			typedef std::future<GetPriceChEcomOutcome> GetPriceChEcomOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::GetPriceChEcomRequest&, const GetPriceChEcomOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPriceChEcomAsyncHandler;
+			typedef Outcome<Error, Model::GetSSETestResult> GetSSETestOutcome;
+			typedef std::future<GetSSETestOutcome> GetSSETestOutcomeCallable;
+			typedef std::function<void(const AlinlpClient*, const Model::GetSSETestRequest&, const GetSSETestOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSSETestAsyncHandler;
 			typedef Outcome<Error, Model::GetSaChGeneralResult> GetSaChGeneralOutcome;
 			typedef std::future<GetSaChGeneralOutcome> GetSaChGeneralOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::GetSaChGeneralRequest&, const GetSaChGeneralOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetSaChGeneralAsyncHandler;
@@ -335,6 +355,9 @@ namespace AlibabaCloud
 			GetEcEnGeneralOutcome getEcEnGeneral(const Model::GetEcEnGeneralRequest &request)const;
 			void getEcEnGeneralAsync(const Model::GetEcEnGeneralRequest& request, const GetEcEnGeneralAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetEcEnGeneralOutcomeCallable getEcEnGeneralCallable(const Model::GetEcEnGeneralRequest& request) const;
+			GetEmbeddingOutcome getEmbedding(const Model::GetEmbeddingRequest &request)const;
+			void getEmbeddingAsync(const Model::GetEmbeddingRequest& request, const GetEmbeddingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetEmbeddingOutcomeCallable getEmbeddingCallable(const Model::GetEmbeddingRequest& request) const;
 			GetItemPubChEcomOutcome getItemPubChEcom(const Model::GetItemPubChEcomRequest &request)const;
 			void getItemPubChEcomAsync(const Model::GetItemPubChEcomRequest& request, const GetItemPubChEcomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetItemPubChEcomOutcomeCallable getItemPubChEcomCallable(const Model::GetItemPubChEcomRequest& request) const;
@@ -359,6 +382,12 @@ namespace AlibabaCloud
 			GetNerCustomizedSeaEcomOutcome getNerCustomizedSeaEcom(const Model::GetNerCustomizedSeaEcomRequest &request)const;
 			void getNerCustomizedSeaEcomAsync(const Model::GetNerCustomizedSeaEcomRequest& request, const GetNerCustomizedSeaEcomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetNerCustomizedSeaEcomOutcomeCallable getNerCustomizedSeaEcomCallable(const Model::GetNerCustomizedSeaEcomRequest& request) const;
+			GetOpenNLUOutcome getOpenNLU(const Model::GetOpenNLURequest &request)const;
+			void getOpenNLUAsync(const Model::GetOpenNLURequest& request, const GetOpenNLUAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetOpenNLUOutcomeCallable getOpenNLUCallable(const Model::GetOpenNLURequest& request) const;
+			GetOpenNLUHighRecallOutcome getOpenNLUHighRecall(const Model::GetOpenNLUHighRecallRequest &request)const;
+			void getOpenNLUHighRecallAsync(const Model::GetOpenNLUHighRecallRequest& request, const GetOpenNLUHighRecallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetOpenNLUHighRecallOutcomeCallable getOpenNLUHighRecallCallable(const Model::GetOpenNLUHighRecallRequest& request) const;
 			GetOperationChMedicalOutcome getOperationChMedical(const Model::GetOperationChMedicalRequest &request)const;
 			void getOperationChMedicalAsync(const Model::GetOperationChMedicalRequest& request, const GetOperationChMedicalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOperationChMedicalOutcomeCallable getOperationChMedicalCallable(const Model::GetOperationChMedicalRequest& request) const;
@@ -371,6 +400,9 @@ namespace AlibabaCloud
 			GetPriceChEcomOutcome getPriceChEcom(const Model::GetPriceChEcomRequest &request)const;
 			void getPriceChEcomAsync(const Model::GetPriceChEcomRequest& request, const GetPriceChEcomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPriceChEcomOutcomeCallable getPriceChEcomCallable(const Model::GetPriceChEcomRequest& request) const;
+			GetSSETestOutcome getSSETest(const Model::GetSSETestRequest &request)const;
+			void getSSETestAsync(const Model::GetSSETestRequest& request, const GetSSETestAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetSSETestOutcomeCallable getSSETestCallable(const Model::GetSSETestRequest& request) const;
 			GetSaChGeneralOutcome getSaChGeneral(const Model::GetSaChGeneralRequest &request)const;
 			void getSaChGeneralAsync(const Model::GetSaChGeneralRequest& request, const GetSaChGeneralAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetSaChGeneralOutcomeCallable getSaChGeneralCallable(const Model::GetSaChGeneralRequest& request) const;

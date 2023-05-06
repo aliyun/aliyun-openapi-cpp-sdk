@@ -47,6 +47,8 @@ set(alinlp_public_header_model
 	include/alibabacloud/alinlp/model/GetEcChGeneralResult.h
 	include/alibabacloud/alinlp/model/GetEcEnGeneralRequest.h
 	include/alibabacloud/alinlp/model/GetEcEnGeneralResult.h
+	include/alibabacloud/alinlp/model/GetEmbeddingRequest.h
+	include/alibabacloud/alinlp/model/GetEmbeddingResult.h
 	include/alibabacloud/alinlp/model/GetItemPubChEcomRequest.h
 	include/alibabacloud/alinlp/model/GetItemPubChEcomResult.h
 	include/alibabacloud/alinlp/model/GetKeywordChEcomRequest.h
@@ -63,6 +65,10 @@ set(alinlp_public_header_model
 	include/alibabacloud/alinlp/model/GetNerCustomizedChEcomResult.h
 	include/alibabacloud/alinlp/model/GetNerCustomizedSeaEcomRequest.h
 	include/alibabacloud/alinlp/model/GetNerCustomizedSeaEcomResult.h
+	include/alibabacloud/alinlp/model/GetOpenNLURequest.h
+	include/alibabacloud/alinlp/model/GetOpenNLUResult.h
+	include/alibabacloud/alinlp/model/GetOpenNLUHighRecallRequest.h
+	include/alibabacloud/alinlp/model/GetOpenNLUHighRecallResult.h
 	include/alibabacloud/alinlp/model/GetOperationChMedicalRequest.h
 	include/alibabacloud/alinlp/model/GetOperationChMedicalResult.h
 	include/alibabacloud/alinlp/model/GetPosChEcomRequest.h
@@ -71,6 +77,8 @@ set(alinlp_public_header_model
 	include/alibabacloud/alinlp/model/GetPosChGeneralResult.h
 	include/alibabacloud/alinlp/model/GetPriceChEcomRequest.h
 	include/alibabacloud/alinlp/model/GetPriceChEcomResult.h
+	include/alibabacloud/alinlp/model/GetSSETestRequest.h
+	include/alibabacloud/alinlp/model/GetSSETestResult.h
 	include/alibabacloud/alinlp/model/GetSaChGeneralRequest.h
 	include/alibabacloud/alinlp/model/GetSaChGeneralResult.h
 	include/alibabacloud/alinlp/model/GetSaSeaEcomRequest.h
@@ -154,6 +162,8 @@ set(alinlp_src
 	src/model/GetEcChGeneralResult.cc
 	src/model/GetEcEnGeneralRequest.cc
 	src/model/GetEcEnGeneralResult.cc
+	src/model/GetEmbeddingRequest.cc
+	src/model/GetEmbeddingResult.cc
 	src/model/GetItemPubChEcomRequest.cc
 	src/model/GetItemPubChEcomResult.cc
 	src/model/GetKeywordChEcomRequest.cc
@@ -170,6 +180,10 @@ set(alinlp_src
 	src/model/GetNerCustomizedChEcomResult.cc
 	src/model/GetNerCustomizedSeaEcomRequest.cc
 	src/model/GetNerCustomizedSeaEcomResult.cc
+	src/model/GetOpenNLURequest.cc
+	src/model/GetOpenNLUResult.cc
+	src/model/GetOpenNLUHighRecallRequest.cc
+	src/model/GetOpenNLUHighRecallResult.cc
 	src/model/GetOperationChMedicalRequest.cc
 	src/model/GetOperationChMedicalResult.cc
 	src/model/GetPosChEcomRequest.cc
@@ -178,6 +192,8 @@ set(alinlp_src
 	src/model/GetPosChGeneralResult.cc
 	src/model/GetPriceChEcomRequest.cc
 	src/model/GetPriceChEcomResult.cc
+	src/model/GetSSETestRequest.cc
+	src/model/GetSSETestResult.cc
 	src/model/GetSaChGeneralRequest.cc
 	src/model/GetSaChGeneralResult.cc
 	src/model/GetSaSeaEcomRequest.cc
