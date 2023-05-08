@@ -38,10 +38,23 @@ namespace AlibabaCloud
 					{
 						struct Button
 						{
+							struct ExtendAttrs
+							{
+								std::string action;
+								std::string nextLanguageCode;
+								std::string nextTemplateCode;
+								std::string intentCode;
+								std::string nextTemplateName;
+							};
+							std::string autofillText;
 							std::string type;
+							bool isOptOut;
+							std::string signatureHash;
+							std::string packageName;
 							std::string phoneNumber;
 							std::string text;
 							std::string urlType;
+							ExtendAttrs extendAttrs;
 							std::string url;
 						};
 						std::string thumbUrl;
@@ -52,9 +65,11 @@ namespace AlibabaCloud
 						std::string longitude;
 						std::string url;
 						std::string caption;
+						bool addSecretRecommendation;
 						std::string locationName;
 						std::string type;
 						std::string format;
+						int codeExpirationMinutes;
 						std::string fileType;
 						std::string locationAddress;
 						std::vector<Component::Button> buttons;

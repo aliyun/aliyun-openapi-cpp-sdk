@@ -41,12 +41,18 @@ public:
 			std::string phoneNumber;
 			std::string url;
 			std::string urlType;
+			std::string signatureHash;
+			std::string packageName;
+			std::string autofillText;
+			bool isOptOut;
 		};
 		ButtonsItem buttonsItem;
 		std::vector<ButtonsItem> buttons;
 		std::string thumbUrl;
 		int duration;
 		std::string fileType;
+		int codeExpirationMinutes;
+		bool addSecretRecommendation;
 	};
 	CreateChatappTemplateRequest();
 	~CreateChatappTemplateRequest();

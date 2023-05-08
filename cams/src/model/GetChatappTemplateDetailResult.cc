@@ -84,6 +84,10 @@ void GetChatappTemplateDetailResult::parse(const std::string &payload)
 			componentObject.locationName = dataNodeComponentscomponent["LocationName"].asString();
 		if(!dataNodeComponentscomponent["LocationAddress"].isNull())
 			componentObject.locationAddress = dataNodeComponentscomponent["LocationAddress"].asString();
+		if(!dataNodeComponentscomponent["AddSecretRecommendation"].isNull())
+			componentObject.addSecretRecommendation = dataNodeComponentscomponent["AddSecretRecommendation"].asString() == "true";
+		if(!dataNodeComponentscomponent["CodeExpirationMinutes"].isNull())
+			componentObject.codeExpirationMinutes = std::stoi(dataNodeComponentscomponent["CodeExpirationMinutes"].asString());
 		auto allButtonsNode = dataNodeComponentscomponent["Buttons"]["button"];
 		for (auto dataNodeComponentscomponentButtonsbutton : allButtonsNode)
 		{
@@ -98,6 +102,25 @@ void GetChatappTemplateDetailResult::parse(const std::string &payload)
 				buttonsObject.url = dataNodeComponentscomponentButtonsbutton["Url"].asString();
 			if(!dataNodeComponentscomponentButtonsbutton["UrlType"].isNull())
 				buttonsObject.urlType = dataNodeComponentscomponentButtonsbutton["UrlType"].asString();
+			if(!dataNodeComponentscomponentButtonsbutton["SignatureHash"].isNull())
+				buttonsObject.signatureHash = dataNodeComponentscomponentButtonsbutton["SignatureHash"].asString();
+			if(!dataNodeComponentscomponentButtonsbutton["PackageName"].isNull())
+				buttonsObject.packageName = dataNodeComponentscomponentButtonsbutton["PackageName"].asString();
+			if(!dataNodeComponentscomponentButtonsbutton["AutofillText"].isNull())
+				buttonsObject.autofillText = dataNodeComponentscomponentButtonsbutton["AutofillText"].asString();
+			if(!dataNodeComponentscomponentButtonsbutton["IsOptOut"].isNull())
+				buttonsObject.isOptOut = dataNodeComponentscomponentButtonsbutton["IsOptOut"].asString() == "true";
+			auto extendAttrsNode = value["ExtendAttrs"];
+			if(!extendAttrsNode["NextTemplateCode"].isNull())
+				buttonsObject.extendAttrs.nextTemplateCode = extendAttrsNode["NextTemplateCode"].asString();
+			if(!extendAttrsNode["NextTemplateName"].isNull())
+				buttonsObject.extendAttrs.nextTemplateName = extendAttrsNode["NextTemplateName"].asString();
+			if(!extendAttrsNode["NextLanguageCode"].isNull())
+				buttonsObject.extendAttrs.nextLanguageCode = extendAttrsNode["NextLanguageCode"].asString();
+			if(!extendAttrsNode["Action"].isNull())
+				buttonsObject.extendAttrs.action = extendAttrsNode["Action"].asString();
+			if(!extendAttrsNode["IntentCode"].isNull())
+				buttonsObject.extendAttrs.intentCode = extendAttrsNode["IntentCode"].asString();
 			componentObject.buttons.push_back(buttonsObject);
 		}
 		data_.components.push_back(componentObject);

@@ -44,10 +44,16 @@ void CreateChatappTemplateRequest::setComponents(const std::vector<CreateChatapp
       setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".PhoneNumber", components[dep1].buttons[dep2].phoneNumber);
       setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".Url", components[dep1].buttons[dep2].url);
       setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".UrlType", components[dep1].buttons[dep2].urlType);
+      setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".SignatureHash", components[dep1].buttons[dep2].signatureHash);
+      setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".PackageName", components[dep1].buttons[dep2].packageName);
+      setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".AutofillText", components[dep1].buttons[dep2].autofillText);
+      setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Buttons." + std::to_string(dep2 + 1) + ".IsOptOut", components[dep1].buttons[dep2].isOptOut ? "true" : "false");
     }
     setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".ThumbUrl", components[dep1].thumbUrl);
     setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".Duration", std::to_string(components[dep1].duration));
     setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".FileType", components[dep1].fileType);
+    setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".CodeExpirationMinutes", std::to_string(components[dep1].codeExpirationMinutes));
+    setBodyParameter(std::string("Components") + "." + std::to_string(dep1 + 1) + ".AddSecretRecommendation", components[dep1].addSecretRecommendation ? "true" : "false");
   }
 }
 
