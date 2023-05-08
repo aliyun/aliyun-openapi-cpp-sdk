@@ -34,7 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct RecordingDTO
 				{
+					struct HoldTimeSegment
+					{
+						long endTime;
+						long startTime;
+					};
 					std::string fileUrl;
+					std::vector<RecordingDTO::HoldTimeSegment> holdTimeSegments;
 					std::string agentChannelId;
 					std::string fileName;
 					long startTime;

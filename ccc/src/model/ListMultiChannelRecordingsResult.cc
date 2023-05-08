@@ -63,6 +63,16 @@ void ListMultiChannelRecordingsResult::parse(const std::string &payload)
 			dataObject.ramId = valueDataRecordingDTO["RamId"].asString();
 		if(!valueDataRecordingDTO["AgentChannelId"].isNull())
 			dataObject.agentChannelId = valueDataRecordingDTO["AgentChannelId"].asString();
+		auto allHoldTimeSegmentsNode = valueDataRecordingDTO["HoldTimeSegments"]["holdTimeSegment"];
+		for (auto valueDataRecordingDTOHoldTimeSegmentsholdTimeSegment : allHoldTimeSegmentsNode)
+		{
+			RecordingDTO::HoldTimeSegment holdTimeSegmentsObject;
+			if(!valueDataRecordingDTOHoldTimeSegmentsholdTimeSegment["StartTime"].isNull())
+				holdTimeSegmentsObject.startTime = std::stol(valueDataRecordingDTOHoldTimeSegmentsholdTimeSegment["StartTime"].asString());
+			if(!valueDataRecordingDTOHoldTimeSegmentsholdTimeSegment["EndTime"].isNull())
+				holdTimeSegmentsObject.endTime = std::stol(valueDataRecordingDTOHoldTimeSegmentsholdTimeSegment["EndTime"].asString());
+			dataObject.holdTimeSegments.push_back(holdTimeSegmentsObject);
+		}
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())
