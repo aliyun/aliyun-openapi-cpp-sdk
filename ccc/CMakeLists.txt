@@ -147,6 +147,8 @@ set(ccc_public_header_model
 	include/alibabacloud/ccc/model/GetUploadAudioDataParamsResult.h
 	include/alibabacloud/ccc/model/GetUserRequest.h
 	include/alibabacloud/ccc/model/GetUserResult.h
+	include/alibabacloud/ccc/model/GetVideoRequest.h
+	include/alibabacloud/ccc/model/GetVideoResult.h
 	include/alibabacloud/ccc/model/GetVoicemailRecordingRequest.h
 	include/alibabacloud/ccc/model/GetVoicemailRecordingResult.h
 	include/alibabacloud/ccc/model/HoldCallRequest.h
@@ -490,6 +492,8 @@ set(ccc_src
 	src/model/GetUploadAudioDataParamsResult.cc
 	src/model/GetUserRequest.cc
 	src/model/GetUserResult.cc
+	src/model/GetVideoRequest.cc
+	src/model/GetVideoResult.cc
 	src/model/GetVoicemailRecordingRequest.cc
 	src/model/GetVoicemailRecordingResult.cc
 	src/model/HoldCallRequest.cc

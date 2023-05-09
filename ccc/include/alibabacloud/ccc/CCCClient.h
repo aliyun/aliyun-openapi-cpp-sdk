@@ -148,6 +148,8 @@
 #include "model/GetUploadAudioDataParamsResult.h"
 #include "model/GetUserRequest.h"
 #include "model/GetUserResult.h"
+#include "model/GetVideoRequest.h"
+#include "model/GetVideoResult.h"
 #include "model/GetVoicemailRecordingRequest.h"
 #include "model/GetVoicemailRecordingResult.h"
 #include "model/HoldCallRequest.h"
@@ -560,6 +562,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetUserResult> GetUserOutcome;
 			typedef std::future<GetUserOutcome> GetUserOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetUserRequest&, const GetUserOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUserAsyncHandler;
+			typedef Outcome<Error, Model::GetVideoResult> GetVideoOutcome;
+			typedef std::future<GetVideoOutcome> GetVideoOutcomeCallable;
+			typedef std::function<void(const CCCClient*, const Model::GetVideoRequest&, const GetVideoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVideoAsyncHandler;
 			typedef Outcome<Error, Model::GetVoicemailRecordingResult> GetVoicemailRecordingOutcome;
 			typedef std::future<GetVoicemailRecordingOutcome> GetVoicemailRecordingOutcomeCallable;
 			typedef std::function<void(const CCCClient*, const Model::GetVoicemailRecordingRequest&, const GetVoicemailRecordingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetVoicemailRecordingAsyncHandler;
@@ -1075,6 +1080,9 @@ namespace AlibabaCloud
 			GetUserOutcome getUser(const Model::GetUserRequest &request)const;
 			void getUserAsync(const Model::GetUserRequest& request, const GetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetUserOutcomeCallable getUserCallable(const Model::GetUserRequest& request) const;
+			GetVideoOutcome getVideo(const Model::GetVideoRequest &request)const;
+			void getVideoAsync(const Model::GetVideoRequest& request, const GetVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetVideoOutcomeCallable getVideoCallable(const Model::GetVideoRequest& request) const;
 			GetVoicemailRecordingOutcome getVoicemailRecording(const Model::GetVoicemailRecordingRequest &request)const;
 			void getVoicemailRecordingAsync(const Model::GetVoicemailRecordingRequest& request, const GetVoicemailRecordingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetVoicemailRecordingOutcomeCallable getVoicemailRecordingCallable(const Model::GetVoicemailRecordingRequest& request) const;

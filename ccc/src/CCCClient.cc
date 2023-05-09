@@ -2319,6 +2319,42 @@ CCCClient::GetUserOutcomeCallable CCCClient::getUserCallable(const GetUserReques
 	return task->get_future();
 }
 
+CCCClient::GetVideoOutcome CCCClient::getVideo(const GetVideoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetVideoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetVideoOutcome(GetVideoResult(outcome.result()));
+	else
+		return GetVideoOutcome(outcome.error());
+}
+
+void CCCClient::getVideoAsync(const GetVideoRequest& request, const GetVideoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getVideo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+CCCClient::GetVideoOutcomeCallable CCCClient::getVideoCallable(const GetVideoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetVideoOutcome()>>(
+			[this, request]()
+			{
+			return this->getVideo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 CCCClient::GetVoicemailRecordingOutcome CCCClient::getVoicemailRecording(const GetVoicemailRecordingRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
