@@ -45,15 +45,12 @@ public:
 	void setProjectName(const std::string &projectName);
 	CredentialConfig getCredentialConfig() const;
 	void setCredentialConfig(const CredentialConfig &credentialConfig);
-	std::string getToken() const;
-	void setToken(const std::string &token);
 	std::string getSourceURI() const;
 	void setSourceURI(const std::string &sourceURI);
 
 private:
 	std::string projectName_;
 	CredentialConfig credentialConfig_;
-	std::string token_;
 	std::string sourceURI_;
 };
 } // namespace Model

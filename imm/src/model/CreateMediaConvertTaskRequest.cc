@@ -97,8 +97,6 @@ void CreateMediaConvertTaskRequest::setTargets(const std::vector<CreateMediaConv
     setParameter(std::string("Targets") + "." + std::to_string(dep1 + 1) + ".Subtitle.ExtractSubtitle.Format", targets[dep1].subtitle.extractSubtitle.format);
     setParameter(std::string("Targets") + "." + std::to_string(dep1 + 1) + ".Subtitle.ExtractSubtitle.URI", targets[dep1].subtitle.extractSubtitle.uRI);
     setParameter(std::string("Targets") + "." + std::to_string(dep1 + 1) + ".StripMetadata", targets[dep1].stripMetadata ? "true" : "false");
-    setParameter(std::string("Targets") + "." + std::to_string(dep1 + 1) + ".Preset.Name", targets[dep1].preset.name);
-    setParameter(std::string("Targets") + "." + std::to_string(dep1 + 1) + ".Preset.Type", targets[dep1].preset.type);
     for(int dep2 = 0; dep2 != targets[dep1].video.filterVideo.delogos.size(); dep2++) {
       setParameter(std::string("Targets") + "." + std::to_string(dep1 + 1) + ".Video.FilterVideo.Delogos." + std::to_string(dep2 + 1) + ".Duration", std::to_string(targets[dep1].video.filterVideo.delogos[dep2].duration));
       setParameter(std::string("Targets") + "." + std::to_string(dep1 + 1) + ".Video.FilterVideo.Delogos." + std::to_string(dep2 + 1) + ".Dx", std::to_string(targets[dep1].video.filterVideo.delogos[dep2].dx));
@@ -194,6 +192,15 @@ std::string CreateMediaConvertTaskRequest::getNotifyEndpoint() const {
 void CreateMediaConvertTaskRequest::setNotifyEndpoint(const std::string &notifyEndpoint) {
   notifyEndpoint_ = notifyEndpoint;
   setParameter(std::string("NotifyEndpoint"), notifyEndpoint);
+}
+
+int CreateMediaConvertTaskRequest::getAlignmentIndex() const {
+  return alignmentIndex_;
+}
+
+void CreateMediaConvertTaskRequest::setAlignmentIndex(int alignmentIndex) {
+  alignmentIndex_ = alignmentIndex;
+  setParameter(std::string("AlignmentIndex"), std::to_string(alignmentIndex));
 }
 
 std::string CreateMediaConvertTaskRequest::getProjectName() const {

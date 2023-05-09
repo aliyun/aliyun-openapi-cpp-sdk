@@ -108,11 +108,6 @@ public:
 		};
 		Subtitle subtitle;
 		bool stripMetadata;
-		struct Preset {
-			std::string name;
-			std::string type;
-		};
-		Preset preset;
 		struct Video {
 			struct FilterVideo {
 				struct DelogosItem {
@@ -233,6 +228,8 @@ public:
 	void setNotification(const Notification &notification);
 	std::string getNotifyEndpoint() const;
 	void setNotifyEndpoint(const std::string &notifyEndpoint);
+	int getAlignmentIndex() const;
+	void setAlignmentIndex(int alignmentIndex);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
 	std::string getNotifyTopicName() const;
@@ -248,6 +245,7 @@ private:
 	std::string userData_;
 	Notification notification_;
 	std::string notifyEndpoint_;
+	int alignmentIndex_;
 	std::string projectName_;
 	std::string notifyTopicName_;
 	CredentialConfig credentialConfig_;

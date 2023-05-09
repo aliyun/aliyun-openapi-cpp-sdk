@@ -49,15 +49,6 @@ void LiveTranscodingRequest::setCredentialConfig(const LiveTranscodingRequest::C
   setParameter(std::string("CredentialConfig") + ".Policy", credentialConfig.policy);
 }
 
-std::string LiveTranscodingRequest::getToken() const {
-  return token_;
-}
-
-void LiveTranscodingRequest::setToken(const std::string &token) {
-  token_ = token;
-  setParameter(std::string("Token"), token);
-}
-
 std::string LiveTranscodingRequest::getSourceURI() const {
   return sourceURI_;
 }
