@@ -34,6 +34,8 @@ public:
 	};
 	SendMessageRequest();
 	~SendMessageRequest();
+	bool getFeedback() const;
+	void setFeedback(bool feedback);
 	std::string getTextRequest() const;
 	void setTextRequest(const std::string &textRequest);
 	long getTenantId() const;
@@ -44,6 +46,7 @@ public:
 	void setSessionId(const std::string &sessionId);
 
 private:
+	bool feedback_;
 	std::string textRequest_;
 	long tenantId_;
 	VAMLRequest vAMLRequest_;

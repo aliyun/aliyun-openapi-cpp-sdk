@@ -25,6 +25,15 @@ SendMessageRequest::SendMessageRequest()
 
 SendMessageRequest::~SendMessageRequest() {}
 
+bool SendMessageRequest::getFeedback() const {
+  return feedback_;
+}
+
+void SendMessageRequest::setFeedback(bool feedback) {
+  feedback_ = feedback;
+  setParameter(std::string("Feedback"), feedback ? "true" : "false");
+}
+
 std::string SendMessageRequest::getTextRequest() const {
   return textRequest_;
 }
