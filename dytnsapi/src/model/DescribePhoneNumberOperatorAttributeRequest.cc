@@ -34,6 +34,15 @@ void DescribePhoneNumberOperatorAttributeRequest::setResourceOwnerId(long resour
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribePhoneNumberOperatorAttributeRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void DescribePhoneNumberOperatorAttributeRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
 std::string DescribePhoneNumberOperatorAttributeRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -41,6 +50,15 @@ std::string DescribePhoneNumberOperatorAttributeRequest::getAccessKeyId() const 
 void DescribePhoneNumberOperatorAttributeRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribePhoneNumberOperatorAttributeRequest::getRouteName() const {
+  return routeName_;
+}
+
+void DescribePhoneNumberOperatorAttributeRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
 }
 
 std::string DescribePhoneNumberOperatorAttributeRequest::getMask() const {
