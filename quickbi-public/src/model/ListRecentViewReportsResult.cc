@@ -48,6 +48,8 @@ void ListRecentViewReportsResult::parse(const std::string &payload)
 		result_.pageNum = std::stoi(resultNode["PageNum"].asString());
 	if(!resultNode["PageSize"].isNull())
 		result_.pageSize = std::stoi(resultNode["PageSize"].asString());
+	if(!resultNode["Attention"].isNull())
+		result_.attention = resultNode["Attention"].asString();
 	auto allDataNode = resultNode["Data"]["DataItem"];
 	for (auto resultNodeDataDataItem : allDataNode)
 	{

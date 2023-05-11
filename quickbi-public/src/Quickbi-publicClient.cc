@@ -31,21 +31,21 @@ Quickbi_publicClient::Quickbi_publicClient(const Credentials &credentials, const
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "quickbi");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "2.2.0");
 }
 
 Quickbi_publicClient::Quickbi_publicClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "quickbi");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "2.2.0");
 }
 
 Quickbi_publicClient::Quickbi_publicClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "quickbi");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "2.2.0");
 }
 
 Quickbi_publicClient::~Quickbi_publicClient()
@@ -369,6 +369,42 @@ Quickbi_publicClient::AddWorkspaceUsersOutcomeCallable Quickbi_publicClient::add
 			[this, request]()
 			{
 			return this->addWorkspaceUsers(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::AllotDatasetAccelerationTaskOutcome Quickbi_publicClient::allotDatasetAccelerationTask(const AllotDatasetAccelerationTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AllotDatasetAccelerationTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AllotDatasetAccelerationTaskOutcome(AllotDatasetAccelerationTaskResult(outcome.result()));
+	else
+		return AllotDatasetAccelerationTaskOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::allotDatasetAccelerationTaskAsync(const AllotDatasetAccelerationTaskRequest& request, const AllotDatasetAccelerationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, allotDatasetAccelerationTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::AllotDatasetAccelerationTaskOutcomeCallable Quickbi_publicClient::allotDatasetAccelerationTaskCallable(const AllotDatasetAccelerationTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AllotDatasetAccelerationTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->allotDatasetAccelerationTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1095,6 +1131,42 @@ Quickbi_publicClient::GetUserGroupInfoOutcomeCallable Quickbi_publicClient::getU
 	return task->get_future();
 }
 
+Quickbi_publicClient::ListApiDatasourceOutcome Quickbi_publicClient::listApiDatasource(const ListApiDatasourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListApiDatasourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListApiDatasourceOutcome(ListApiDatasourceResult(outcome.result()));
+	else
+		return ListApiDatasourceOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::listApiDatasourceAsync(const ListApiDatasourceRequest& request, const ListApiDatasourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listApiDatasource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ListApiDatasourceOutcomeCallable Quickbi_publicClient::listApiDatasourceCallable(const ListApiDatasourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListApiDatasourceOutcome()>>(
+			[this, request]()
+			{
+			return this->listApiDatasource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::ListByUserGroupIdOutcome Quickbi_publicClient::listByUserGroupId(const ListByUserGroupIdRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1449,6 +1521,42 @@ Quickbi_publicClient::ListUserGroupsByUserIdOutcomeCallable Quickbi_publicClient
 			[this, request]()
 			{
 			return this->listUserGroupsByUserId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::ModifyApiDatasourceParametersOutcome Quickbi_publicClient::modifyApiDatasourceParameters(const ModifyApiDatasourceParametersRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyApiDatasourceParametersOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyApiDatasourceParametersOutcome(ModifyApiDatasourceParametersResult(outcome.result()));
+	else
+		return ModifyApiDatasourceParametersOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::modifyApiDatasourceParametersAsync(const ModifyApiDatasourceParametersRequest& request, const ModifyApiDatasourceParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyApiDatasourceParameters(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::ModifyApiDatasourceParametersOutcomeCallable Quickbi_publicClient::modifyApiDatasourceParametersCallable(const ModifyApiDatasourceParametersRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyApiDatasourceParametersOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyApiDatasourceParameters(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

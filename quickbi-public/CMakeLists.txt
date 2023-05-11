@@ -39,6 +39,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/AddUserToWorkspaceResult.h
 	include/alibabacloud/quickbi-public/model/AddWorkspaceUsersRequest.h
 	include/alibabacloud/quickbi-public/model/AddWorkspaceUsersResult.h
+	include/alibabacloud/quickbi-public/model/AllotDatasetAccelerationTaskRequest.h
+	include/alibabacloud/quickbi-public/model/AllotDatasetAccelerationTaskResult.h
 	include/alibabacloud/quickbi-public/model/AuthorizeMenuRequest.h
 	include/alibabacloud/quickbi-public/model/AuthorizeMenuResult.h
 	include/alibabacloud/quickbi-public/model/BatchAddFeishuUsersRequest.h
@@ -79,6 +81,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/DeleteUserTagMetaResult.h
 	include/alibabacloud/quickbi-public/model/GetUserGroupInfoRequest.h
 	include/alibabacloud/quickbi-public/model/GetUserGroupInfoResult.h
+	include/alibabacloud/quickbi-public/model/ListApiDatasourceRequest.h
+	include/alibabacloud/quickbi-public/model/ListApiDatasourceResult.h
 	include/alibabacloud/quickbi-public/model/ListByUserGroupIdRequest.h
 	include/alibabacloud/quickbi-public/model/ListByUserGroupIdResult.h
 	include/alibabacloud/quickbi-public/model/ListCollectionsRequest.h
@@ -99,6 +103,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ListSharedReportsResult.h
 	include/alibabacloud/quickbi-public/model/ListUserGroupsByUserIdRequest.h
 	include/alibabacloud/quickbi-public/model/ListUserGroupsByUserIdResult.h
+	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersRequest.h
+	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersResult.h
 	include/alibabacloud/quickbi-public/model/QueryDataServiceRequest.h
 	include/alibabacloud/quickbi-public/model/QueryDataServiceResult.h
 	include/alibabacloud/quickbi-public/model/QueryDatasetDetailInfoRequest.h
@@ -200,6 +206,8 @@ set(quickbi-public_src
 	src/model/AddUserToWorkspaceResult.cc
 	src/model/AddWorkspaceUsersRequest.cc
 	src/model/AddWorkspaceUsersResult.cc
+	src/model/AllotDatasetAccelerationTaskRequest.cc
+	src/model/AllotDatasetAccelerationTaskResult.cc
 	src/model/AuthorizeMenuRequest.cc
 	src/model/AuthorizeMenuResult.cc
 	src/model/BatchAddFeishuUsersRequest.cc
@@ -240,6 +248,8 @@ set(quickbi-public_src
 	src/model/DeleteUserTagMetaResult.cc
 	src/model/GetUserGroupInfoRequest.cc
 	src/model/GetUserGroupInfoResult.cc
+	src/model/ListApiDatasourceRequest.cc
+	src/model/ListApiDatasourceResult.cc
 	src/model/ListByUserGroupIdRequest.cc
 	src/model/ListByUserGroupIdResult.cc
 	src/model/ListCollectionsRequest.cc
@@ -260,6 +270,8 @@ set(quickbi-public_src
 	src/model/ListSharedReportsResult.cc
 	src/model/ListUserGroupsByUserIdRequest.cc
 	src/model/ListUserGroupsByUserIdResult.cc
+	src/model/ModifyApiDatasourceParametersRequest.cc
+	src/model/ModifyApiDatasourceParametersResult.cc
 	src/model/QueryDataServiceRequest.cc
 	src/model/QueryDataServiceResult.cc
 	src/model/QueryDatasetDetailInfoRequest.cc

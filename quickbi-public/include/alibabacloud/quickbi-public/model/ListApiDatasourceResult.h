@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTRECENTVIEWREPORTSRESULT_H_
-#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTRECENTVIEWREPORTSRESULT_H_
+#ifndef ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTAPIDATASOURCERESULT_H_
+#define ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTAPIDATASOURCERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,41 +29,34 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT ListRecentViewReportsResult : public ServiceResult
+			class ALIBABACLOUD_QUICKBI_PUBLIC_EXPORT ListApiDatasourceResult : public ServiceResult
 			{
 			public:
 				struct Result
 				{
 					struct DataItem
 					{
-						bool favorite;
-						std::string latestViewTime;
-						std::string ownerName;
-						std::string ownerNum;
-						std::string gmtModified;
-						std::string workspaceId;
-						long viewCount;
-						std::string name;
-						std::string type;
+						std::string dateUpdateTime;
 						std::string gmtCreate;
-						std::string treeId;
-						std::string workspaceName;
-						bool hasViewAuth;
-						int publishStatus;
-						bool hasEditAuth;
+						std::string parameters;
+						int statusType;
+						float dataSize;
+						std::string gmtModified;
+						std::string apiId;
+						std::string showName;
+						std::string body;
+						std::string jobId;
 					};
 					int totalNum;
 					int pageNum;
 					int pageSize;
-					std::string attention;
 					std::vector<DataItem> data;
-					int totalPages;
 				};
 
 
-				ListRecentViewReportsResult();
-				explicit ListRecentViewReportsResult(const std::string &payload);
-				~ListRecentViewReportsResult();
+				ListApiDatasourceResult();
+				explicit ListApiDatasourceResult(const std::string &payload);
+				~ListApiDatasourceResult();
 				bool getSuccess()const;
 				Result getResult()const;
 
@@ -77,4 +70,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTRECENTVIEWREPORTSRESULT_H_
+#endif // !ALIBABACLOUD_QUICKBI_PUBLIC_MODEL_LISTAPIDATASOURCERESULT_H_
