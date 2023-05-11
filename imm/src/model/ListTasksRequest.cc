@@ -92,6 +92,15 @@ void ListTasksRequest::setSort(const std::string &sort) {
   setParameter(std::string("Sort"), sort);
 }
 
+bool ListTasksRequest::getRequestDefinition() const {
+  return requestDefinition_;
+}
+
+void ListTasksRequest::setRequestDefinition(bool requestDefinition) {
+  requestDefinition_ = requestDefinition;
+  setParameter(std::string("RequestDefinition"), requestDefinition ? "true" : "false");
+}
+
 long ListTasksRequest::getMaxResults() const {
   return maxResults_;
 }

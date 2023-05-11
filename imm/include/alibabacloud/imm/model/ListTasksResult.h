@@ -35,6 +35,8 @@ namespace AlibabaCloud
 				struct TasksItem
 				{
 					std::string status;
+					std::string taskRequestDefinition;
+					int progress;
 					std::string taskId;
 					std::string message;
 					std::string endTime;

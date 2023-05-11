@@ -36,11 +36,14 @@ public:
 	void setProjectName(const std::string &projectName);
 	std::string getTaskType() const;
 	void setTaskType(const std::string &taskType);
+	bool getRequestDefinition() const;
+	void setRequestDefinition(bool requestDefinition);
 
 private:
 	std::string taskId_;
 	std::string projectName_;
 	std::string taskType_;
+	bool requestDefinition_;
 };
 } // namespace Model
 } // namespace Imm

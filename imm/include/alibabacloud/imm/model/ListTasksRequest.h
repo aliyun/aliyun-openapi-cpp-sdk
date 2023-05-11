@@ -52,6 +52,8 @@ public:
 	void setEndTimeRange(const EndTimeRange &endTimeRange);
 	std::string getSort() const;
 	void setSort(const std::string &sort);
+	bool getRequestDefinition() const;
+	void setRequestDefinition(bool requestDefinition);
 	long getMaxResults() const;
 	void setMaxResults(long maxResults);
 	std::string getTagSelector() const;
@@ -67,6 +69,7 @@ private:
 	std::vector<std::string> taskTypes_;
 	EndTimeRange endTimeRange_;
 	std::string sort_;
+	bool requestDefinition_;
 	long maxResults_;
 	std::string tagSelector_;
 	std::string status_;

@@ -46,12 +46,12 @@ public:
 			struct SnapshotsItem {
 				int number;
 				std::string format;
-				int width;
+				double width;
 				double interval;
 				double startTime;
 				std::string scaleType;
 				std::string uRI;
-				int height;
+				double height;
 			};
 			SnapshotsItem snapshotsItem;
 			std::vector<SnapshotsItem> snapshots;
@@ -59,12 +59,12 @@ public:
 				int number;
 				double frameRate;
 				std::string format;
-				int width;
+				double width;
 				double interval;
 				double startTime;
 				std::string scaleType;
 				std::string uRI;
-				int height;
+				double height;
 			};
 			AnimationsItem animationsItem;
 			std::vector<AnimationsItem> animations;

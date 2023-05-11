@@ -38,30 +38,34 @@ namespace AlibabaCloud
 				explicit GetTaskResult(const std::string &payload);
 				~GetTaskResult();
 				std::string getStatus()const;
+				int getProgress()const;
 				std::string getTaskId()const;
 				std::string getMessage()const;
 				std::string getEndTime()const;
 				std::string getProjectName()const;
 				std::string getUserData()const;
-				std::string getTaskType()const;
 				std::string getStartTime()const;
-				std::string getEventId()const;
 				std::string getCode()const;
+				std::string getTaskRequestDefinition()const;
+				std::string getTaskType()const;
+				std::string getEventId()const;
 				std::string getTags()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
+				int progress_;
 				std::string taskId_;
 				std::string message_;
 				std::string endTime_;
 				std::string projectName_;
 				std::string userData_;
-				std::string taskType_;
 				std::string startTime_;
-				std::string eventId_;
 				std::string code_;
+				std::string taskRequestDefinition_;
+				std::string taskType_;
+				std::string eventId_;
 				std::string tags_;
 
 			};

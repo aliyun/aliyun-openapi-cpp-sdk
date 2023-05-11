@@ -61,6 +61,10 @@ void ListTasksResult::parse(const std::string &payload)
 			tasksObject.taskId = valueTasksTasksItem["TaskId"].asString();
 		if(!valueTasksTasksItem["Tags"].isNull())
 			tasksObject.tags = valueTasksTasksItem["Tags"].asString();
+		if(!valueTasksTasksItem["TaskRequestDefinition"].isNull())
+			tasksObject.taskRequestDefinition = valueTasksTasksItem["TaskRequestDefinition"].asString();
+		if(!valueTasksTasksItem["Progress"].isNull())
+			tasksObject.progress = std::stoi(valueTasksTasksItem["Progress"].asString());
 		tasks_.push_back(tasksObject);
 	}
 	if(!value["ProjectName"].isNull())

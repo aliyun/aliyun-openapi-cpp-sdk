@@ -61,12 +61,21 @@ void GetTaskResult::parse(const std::string &payload)
 		taskId_ = value["TaskId"].asString();
 	if(!value["Tags"].isNull())
 		tags_ = value["Tags"].asString();
+	if(!value["TaskRequestDefinition"].isNull())
+		taskRequestDefinition_ = value["TaskRequestDefinition"].asString();
+	if(!value["Progress"].isNull())
+		progress_ = std::stoi(value["Progress"].asString());
 
 }
 
 std::string GetTaskResult::getStatus()const
 {
 	return status_;
+}
+
+int GetTaskResult::getProgress()const
+{
+	return progress_;
 }
 
 std::string GetTaskResult::getTaskId()const
@@ -94,24 +103,29 @@ std::string GetTaskResult::getUserData()const
 	return userData_;
 }
 
-std::string GetTaskResult::getTaskType()const
-{
-	return taskType_;
-}
-
 std::string GetTaskResult::getStartTime()const
 {
 	return startTime_;
 }
 
-std::string GetTaskResult::getEventId()const
-{
-	return eventId_;
-}
-
 std::string GetTaskResult::getCode()const
 {
 	return code_;
+}
+
+std::string GetTaskResult::getTaskRequestDefinition()const
+{
+	return taskRequestDefinition_;
+}
+
+std::string GetTaskResult::getTaskType()const
+{
+	return taskType_;
+}
+
+std::string GetTaskResult::getEventId()const
+{
+	return eventId_;
 }
 
 std::string GetTaskResult::getTags()const

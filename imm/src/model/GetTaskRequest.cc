@@ -52,3 +52,12 @@ void GetTaskRequest::setTaskType(const std::string &taskType) {
   setParameter(std::string("TaskType"), taskType);
 }
 
+bool GetTaskRequest::getRequestDefinition() const {
+  return requestDefinition_;
+}
+
+void GetTaskRequest::setRequestDefinition(bool requestDefinition) {
+  requestDefinition_ = requestDefinition;
+  setParameter(std::string("RequestDefinition"), requestDefinition ? "true" : "false");
+}
+
