@@ -70,8 +70,6 @@
 #include "model/GetOpenNLUResult.h"
 #include "model/GetOpenNLUHighRecallRequest.h"
 #include "model/GetOpenNLUHighRecallResult.h"
-#include "model/GetOpenStatusOfServiceCenterRequest.h"
-#include "model/GetOpenStatusOfServiceCenterResult.h"
 #include "model/GetOperationChMedicalRequest.h"
 #include "model/GetOperationChMedicalResult.h"
 #include "model/GetPosChEcomRequest.h"
@@ -130,22 +128,8 @@
 #include "model/GetWsCustomizedSeaGeneralResult.h"
 #include "model/InsertCustomRequest.h"
 #include "model/InsertCustomResult.h"
-#include "model/ListOneLevelCategoryRequest.h"
-#include "model/ListOneLevelCategoryResult.h"
-#include "model/ListServiceInfoOfServiceCenterRequest.h"
-#include "model/ListServiceInfoOfServiceCenterResult.h"
-#include "model/ListTwoLevelCategoryRequest.h"
-#include "model/ListTwoLevelCategoryResult.h"
-#include "model/ListVersionServiceApiRequest.h"
-#include "model/ListVersionServiceApiResult.h"
 #include "model/OpenAlinlpServiceRequest.h"
 #include "model/OpenAlinlpServiceResult.h"
-#include "model/OverViewPageConfigInfoRequest.h"
-#include "model/OverViewPageConfigInfoResult.h"
-#include "model/QueryOpenStatusDetailLingjieRequest.h"
-#include "model/QueryOpenStatusDetailLingjieResult.h"
-#include "model/RequestDialogApiRequest.h"
-#include "model/RequestDialogApiResult.h"
 #include "model/RequestTableQARequest.h"
 #include "model/RequestTableQAResult.h"
 #include "model/RequestTableQAOnlineRequest.h"
@@ -231,9 +215,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetOpenNLUHighRecallResult> GetOpenNLUHighRecallOutcome;
 			typedef std::future<GetOpenNLUHighRecallOutcome> GetOpenNLUHighRecallOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::GetOpenNLUHighRecallRequest&, const GetOpenNLUHighRecallOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOpenNLUHighRecallAsyncHandler;
-			typedef Outcome<Error, Model::GetOpenStatusOfServiceCenterResult> GetOpenStatusOfServiceCenterOutcome;
-			typedef std::future<GetOpenStatusOfServiceCenterOutcome> GetOpenStatusOfServiceCenterOutcomeCallable;
-			typedef std::function<void(const AlinlpClient*, const Model::GetOpenStatusOfServiceCenterRequest&, const GetOpenStatusOfServiceCenterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOpenStatusOfServiceCenterAsyncHandler;
 			typedef Outcome<Error, Model::GetOperationChMedicalResult> GetOperationChMedicalOutcome;
 			typedef std::future<GetOperationChMedicalOutcome> GetOperationChMedicalOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::GetOperationChMedicalRequest&, const GetOperationChMedicalOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOperationChMedicalAsyncHandler;
@@ -321,30 +302,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::InsertCustomResult> InsertCustomOutcome;
 			typedef std::future<InsertCustomOutcome> InsertCustomOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::InsertCustomRequest&, const InsertCustomOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InsertCustomAsyncHandler;
-			typedef Outcome<Error, Model::ListOneLevelCategoryResult> ListOneLevelCategoryOutcome;
-			typedef std::future<ListOneLevelCategoryOutcome> ListOneLevelCategoryOutcomeCallable;
-			typedef std::function<void(const AlinlpClient*, const Model::ListOneLevelCategoryRequest&, const ListOneLevelCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListOneLevelCategoryAsyncHandler;
-			typedef Outcome<Error, Model::ListServiceInfoOfServiceCenterResult> ListServiceInfoOfServiceCenterOutcome;
-			typedef std::future<ListServiceInfoOfServiceCenterOutcome> ListServiceInfoOfServiceCenterOutcomeCallable;
-			typedef std::function<void(const AlinlpClient*, const Model::ListServiceInfoOfServiceCenterRequest&, const ListServiceInfoOfServiceCenterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListServiceInfoOfServiceCenterAsyncHandler;
-			typedef Outcome<Error, Model::ListTwoLevelCategoryResult> ListTwoLevelCategoryOutcome;
-			typedef std::future<ListTwoLevelCategoryOutcome> ListTwoLevelCategoryOutcomeCallable;
-			typedef std::function<void(const AlinlpClient*, const Model::ListTwoLevelCategoryRequest&, const ListTwoLevelCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTwoLevelCategoryAsyncHandler;
-			typedef Outcome<Error, Model::ListVersionServiceApiResult> ListVersionServiceApiOutcome;
-			typedef std::future<ListVersionServiceApiOutcome> ListVersionServiceApiOutcomeCallable;
-			typedef std::function<void(const AlinlpClient*, const Model::ListVersionServiceApiRequest&, const ListVersionServiceApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListVersionServiceApiAsyncHandler;
 			typedef Outcome<Error, Model::OpenAlinlpServiceResult> OpenAlinlpServiceOutcome;
 			typedef std::future<OpenAlinlpServiceOutcome> OpenAlinlpServiceOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::OpenAlinlpServiceRequest&, const OpenAlinlpServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenAlinlpServiceAsyncHandler;
-			typedef Outcome<Error, Model::OverViewPageConfigInfoResult> OverViewPageConfigInfoOutcome;
-			typedef std::future<OverViewPageConfigInfoOutcome> OverViewPageConfigInfoOutcomeCallable;
-			typedef std::function<void(const AlinlpClient*, const Model::OverViewPageConfigInfoRequest&, const OverViewPageConfigInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OverViewPageConfigInfoAsyncHandler;
-			typedef Outcome<Error, Model::QueryOpenStatusDetailLingjieResult> QueryOpenStatusDetailLingjieOutcome;
-			typedef std::future<QueryOpenStatusDetailLingjieOutcome> QueryOpenStatusDetailLingjieOutcomeCallable;
-			typedef std::function<void(const AlinlpClient*, const Model::QueryOpenStatusDetailLingjieRequest&, const QueryOpenStatusDetailLingjieOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenStatusDetailLingjieAsyncHandler;
-			typedef Outcome<Error, Model::RequestDialogApiResult> RequestDialogApiOutcome;
-			typedef std::future<RequestDialogApiOutcome> RequestDialogApiOutcomeCallable;
-			typedef std::function<void(const AlinlpClient*, const Model::RequestDialogApiRequest&, const RequestDialogApiOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RequestDialogApiAsyncHandler;
 			typedef Outcome<Error, Model::RequestTableQAResult> RequestTableQAOutcome;
 			typedef std::future<RequestTableQAOutcome> RequestTableQAOutcomeCallable;
 			typedef std::function<void(const AlinlpClient*, const Model::RequestTableQARequest&, const RequestTableQAOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RequestTableQAAsyncHandler;
@@ -428,9 +388,6 @@ namespace AlibabaCloud
 			GetOpenNLUHighRecallOutcome getOpenNLUHighRecall(const Model::GetOpenNLUHighRecallRequest &request)const;
 			void getOpenNLUHighRecallAsync(const Model::GetOpenNLUHighRecallRequest& request, const GetOpenNLUHighRecallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOpenNLUHighRecallOutcomeCallable getOpenNLUHighRecallCallable(const Model::GetOpenNLUHighRecallRequest& request) const;
-			GetOpenStatusOfServiceCenterOutcome getOpenStatusOfServiceCenter(const Model::GetOpenStatusOfServiceCenterRequest &request)const;
-			void getOpenStatusOfServiceCenterAsync(const Model::GetOpenStatusOfServiceCenterRequest& request, const GetOpenStatusOfServiceCenterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetOpenStatusOfServiceCenterOutcomeCallable getOpenStatusOfServiceCenterCallable(const Model::GetOpenStatusOfServiceCenterRequest& request) const;
 			GetOperationChMedicalOutcome getOperationChMedical(const Model::GetOperationChMedicalRequest &request)const;
 			void getOperationChMedicalAsync(const Model::GetOperationChMedicalRequest& request, const GetOperationChMedicalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetOperationChMedicalOutcomeCallable getOperationChMedicalCallable(const Model::GetOperationChMedicalRequest& request) const;
@@ -518,30 +475,9 @@ namespace AlibabaCloud
 			InsertCustomOutcome insertCustom(const Model::InsertCustomRequest &request)const;
 			void insertCustomAsync(const Model::InsertCustomRequest& request, const InsertCustomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InsertCustomOutcomeCallable insertCustomCallable(const Model::InsertCustomRequest& request) const;
-			ListOneLevelCategoryOutcome listOneLevelCategory(const Model::ListOneLevelCategoryRequest &request)const;
-			void listOneLevelCategoryAsync(const Model::ListOneLevelCategoryRequest& request, const ListOneLevelCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListOneLevelCategoryOutcomeCallable listOneLevelCategoryCallable(const Model::ListOneLevelCategoryRequest& request) const;
-			ListServiceInfoOfServiceCenterOutcome listServiceInfoOfServiceCenter(const Model::ListServiceInfoOfServiceCenterRequest &request)const;
-			void listServiceInfoOfServiceCenterAsync(const Model::ListServiceInfoOfServiceCenterRequest& request, const ListServiceInfoOfServiceCenterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListServiceInfoOfServiceCenterOutcomeCallable listServiceInfoOfServiceCenterCallable(const Model::ListServiceInfoOfServiceCenterRequest& request) const;
-			ListTwoLevelCategoryOutcome listTwoLevelCategory(const Model::ListTwoLevelCategoryRequest &request)const;
-			void listTwoLevelCategoryAsync(const Model::ListTwoLevelCategoryRequest& request, const ListTwoLevelCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListTwoLevelCategoryOutcomeCallable listTwoLevelCategoryCallable(const Model::ListTwoLevelCategoryRequest& request) const;
-			ListVersionServiceApiOutcome listVersionServiceApi(const Model::ListVersionServiceApiRequest &request)const;
-			void listVersionServiceApiAsync(const Model::ListVersionServiceApiRequest& request, const ListVersionServiceApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ListVersionServiceApiOutcomeCallable listVersionServiceApiCallable(const Model::ListVersionServiceApiRequest& request) const;
 			OpenAlinlpServiceOutcome openAlinlpService(const Model::OpenAlinlpServiceRequest &request)const;
 			void openAlinlpServiceAsync(const Model::OpenAlinlpServiceRequest& request, const OpenAlinlpServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenAlinlpServiceOutcomeCallable openAlinlpServiceCallable(const Model::OpenAlinlpServiceRequest& request) const;
-			OverViewPageConfigInfoOutcome overViewPageConfigInfo(const Model::OverViewPageConfigInfoRequest &request)const;
-			void overViewPageConfigInfoAsync(const Model::OverViewPageConfigInfoRequest& request, const OverViewPageConfigInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			OverViewPageConfigInfoOutcomeCallable overViewPageConfigInfoCallable(const Model::OverViewPageConfigInfoRequest& request) const;
-			QueryOpenStatusDetailLingjieOutcome queryOpenStatusDetailLingjie(const Model::QueryOpenStatusDetailLingjieRequest &request)const;
-			void queryOpenStatusDetailLingjieAsync(const Model::QueryOpenStatusDetailLingjieRequest& request, const QueryOpenStatusDetailLingjieAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			QueryOpenStatusDetailLingjieOutcomeCallable queryOpenStatusDetailLingjieCallable(const Model::QueryOpenStatusDetailLingjieRequest& request) const;
-			RequestDialogApiOutcome requestDialogApi(const Model::RequestDialogApiRequest &request)const;
-			void requestDialogApiAsync(const Model::RequestDialogApiRequest& request, const RequestDialogApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			RequestDialogApiOutcomeCallable requestDialogApiCallable(const Model::RequestDialogApiRequest& request) const;
 			RequestTableQAOutcome requestTableQA(const Model::RequestTableQARequest &request)const;
 			void requestTableQAAsync(const Model::RequestTableQARequest& request, const RequestTableQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RequestTableQAOutcomeCallable requestTableQACallable(const Model::RequestTableQARequest& request) const;

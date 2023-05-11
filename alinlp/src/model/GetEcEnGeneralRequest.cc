@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Alinlp::Model::GetEcEnGeneralRequest;
 
-GetEcEnGeneralRequest::GetEcEnGeneralRequest() :
-	RpcServiceRequest("alinlp", "2020-06-29", "GetEcEnGeneral")
-{
-	setMethod(HttpRequest::Method::Post);
+GetEcEnGeneralRequest::GetEcEnGeneralRequest()
+    : RpcServiceRequest("alinlp", "2020-06-29", "GetEcEnGeneral") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-GetEcEnGeneralRequest::~GetEcEnGeneralRequest()
-{}
+GetEcEnGeneralRequest::~GetEcEnGeneralRequest() {}
 
-std::string GetEcEnGeneralRequest::getServiceCode()const
-{
-	return serviceCode_;
+std::string GetEcEnGeneralRequest::getServiceCode() const {
+  return serviceCode_;
 }
 
-void GetEcEnGeneralRequest::setServiceCode(const std::string& serviceCode)
-{
-	serviceCode_ = serviceCode;
-	setBodyParameter("ServiceCode", serviceCode);
+void GetEcEnGeneralRequest::setServiceCode(const std::string &serviceCode) {
+  serviceCode_ = serviceCode;
+  setBodyParameter(std::string("ServiceCode"), serviceCode);
 }
 
-std::string GetEcEnGeneralRequest::getText()const
-{
-	return text_;
+std::string GetEcEnGeneralRequest::getText() const {
+  return text_;
 }
 
-void GetEcEnGeneralRequest::setText(const std::string& text)
-{
-	text_ = text;
-	setBodyParameter("Text", text);
+void GetEcEnGeneralRequest::setText(const std::string &text) {
+  text_ = text;
+  setBodyParameter(std::string("Text"), text);
 }
 
