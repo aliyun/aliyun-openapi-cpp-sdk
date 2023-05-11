@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,28 +18,34 @@
 
 using AlibabaCloud::Alinlp::Model::ADClockRequest;
 
-ADClockRequest::ADClockRequest()
-    : RpcServiceRequest("alinlp", "2020-06-29", "ADClock") {
-  setMethod(HttpRequest::Method::Post);
+ADClockRequest::ADClockRequest() :
+	RpcServiceRequest("alinlp", "2020-06-29", "ADClock")
+{
+	setMethod(HttpRequest::Method::Post);
 }
 
-ADClockRequest::~ADClockRequest() {}
+ADClockRequest::~ADClockRequest()
+{}
 
-std::string ADClockRequest::getParams() const {
-  return params_;
+std::string ADClockRequest::getParams()const
+{
+	return params_;
 }
 
-void ADClockRequest::setParams(const std::string &params) {
-  params_ = params;
-  setBodyParameter(std::string("Params"), params);
+void ADClockRequest::setParams(const std::string& params)
+{
+	params_ = params;
+	setBodyParameter("Params", params);
 }
 
-std::string ADClockRequest::getServiceCode() const {
-  return serviceCode_;
+std::string ADClockRequest::getServiceCode()const
+{
+	return serviceCode_;
 }
 
-void ADClockRequest::setServiceCode(const std::string &serviceCode) {
-  serviceCode_ = serviceCode;
-  setBodyParameter(std::string("ServiceCode"), serviceCode);
+void ADClockRequest::setServiceCode(const std::string& serviceCode)
+{
+	serviceCode_ = serviceCode;
+	setBodyParameter("ServiceCode", serviceCode);
 }
 

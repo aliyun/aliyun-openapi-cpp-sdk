@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- *
+ * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- *
+ * 
  *      http://www.apache.org/licenses/LICENSE-2.0
- *
+ * 
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,32 +17,41 @@
 #ifndef ALIBABACLOUD_ALINLP_MODEL_GETEMBEDDINGREQUEST_H_
 #define ALIBABACLOUD_ALINLP_MODEL_GETEMBEDDINGREQUEST_H_
 
-#include <alibabacloud/alinlp/AlinlpExport.h>
-#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <map>
+#include <alibabacloud/core/RpcServiceRequest.h>
+#include <alibabacloud/alinlp/AlinlpExport.h>
 
-namespace AlibabaCloud {
-namespace Alinlp {
-namespace Model {
-class ALIBABACLOUD_ALINLP_EXPORT GetEmbeddingRequest : public RpcServiceRequest {
-public:
-	GetEmbeddingRequest();
-	~GetEmbeddingRequest();
-	std::string getBusiness() const;
-	void setBusiness(const std::string &business);
-	std::string getServiceCode() const;
-	void setServiceCode(const std::string &serviceCode);
-	std::string getText() const;
-	void setText(const std::string &text);
+namespace AlibabaCloud
+{
+	namespace Alinlp
+	{
+		namespace Model
+		{
+			class ALIBABACLOUD_ALINLP_EXPORT GetEmbeddingRequest : public RpcServiceRequest
+			{
 
-private:
-	std::string business_;
-	std::string serviceCode_;
-	std::string text_;
-};
-} // namespace Model
-} // namespace Alinlp
-} // namespace AlibabaCloud
+			public:
+				GetEmbeddingRequest();
+				~GetEmbeddingRequest();
+
+				std::string getBusiness()const;
+				void setBusiness(const std::string& business);
+				std::string getServiceCode()const;
+				void setServiceCode(const std::string& serviceCode);
+				std::string getText()const;
+				void setText(const std::string& text);
+				std::string getTextType()const;
+				void setTextType(const std::string& textType);
+
+            private:
+				std::string business_;
+				std::string serviceCode_;
+				std::string text_;
+				std::string textType_;
+
+			};
+		}
+	}
+}
 #endif // !ALIBABACLOUD_ALINLP_MODEL_GETEMBEDDINGREQUEST_H_
