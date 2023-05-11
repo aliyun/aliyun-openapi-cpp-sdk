@@ -38,6 +38,17 @@ void ImportDTDataRequest::setRealTenantId(const std::string& realTenantId)
 	setBodyParameter("RealTenantId", realTenantId);
 }
 
+std::string ImportDTDataRequest::getDTInstanceId()const
+{
+	return dTInstanceId_;
+}
+
+void ImportDTDataRequest::setDTInstanceId(const std::string& dTInstanceId)
+{
+	dTInstanceId_ = dTInstanceId;
+	setParameter("DTInstanceId", dTInstanceId);
+}
+
 std::string ImportDTDataRequest::getRealTripartiteKey()const
 {
 	return realTripartiteKey_;

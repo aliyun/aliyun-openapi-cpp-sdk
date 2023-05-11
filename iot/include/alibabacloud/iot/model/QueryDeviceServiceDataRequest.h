@@ -57,6 +57,8 @@ namespace AlibabaCloud
 				void setProductKey(const std::string& productKey);
 				int getAsc()const;
 				void setAsc(int asc);
+				bool getNeedIopsCheck()const;
+				void setNeedIopsCheck(bool needIopsCheck);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
@@ -76,6 +78,7 @@ namespace AlibabaCloud
 				long endTime_;
 				std::string productKey_;
 				int asc_;
+				bool needIopsCheck_;
 				std::string apiProduct_;
 				std::string apiRevision_;
 				std::string deviceName_;

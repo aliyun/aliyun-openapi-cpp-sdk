@@ -38,6 +38,17 @@ void QueryConsumerGroupListRequest::setRealTenantId(const std::string& realTenan
 	setParameter("RealTenantId", realTenantId);
 }
 
+std::string QueryConsumerGroupListRequest::getType()const
+{
+	return type_;
+}
+
+void QueryConsumerGroupListRequest::setType(const std::string& type)
+{
+	type_ = type;
+	setParameter("Type", type);
+}
+
 std::string QueryConsumerGroupListRequest::getRealTripartiteKey()const
 {
 	return realTripartiteKey_;
@@ -102,6 +113,17 @@ void QueryConsumerGroupListRequest::setGroupName(const std::string& groupName)
 {
 	groupName_ = groupName;
 	setParameter("GroupName", groupName);
+}
+
+std::string QueryConsumerGroupListRequest::getSubBizCode()const
+{
+	return subBizCode_;
+}
+
+void QueryConsumerGroupListRequest::setSubBizCode(const std::string& subBizCode)
+{
+	subBizCode_ = subBizCode;
+	setParameter("SubBizCode", subBizCode);
 }
 
 std::string QueryConsumerGroupListRequest::getApiProduct()const

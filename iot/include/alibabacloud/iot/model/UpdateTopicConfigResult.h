@@ -37,14 +37,14 @@ namespace AlibabaCloud
 				UpdateTopicConfigResult();
 				explicit UpdateTopicConfigResult(const std::string &payload);
 				~UpdateTopicConfigResult();
-				std::string getErrorMessage()const;
+				std::string getMessage()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string errorMessage_;
+				std::string message_;
 				std::string code_;
 				bool success_;
 

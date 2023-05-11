@@ -35,7 +35,9 @@ namespace AlibabaCloud
 				struct ProductTopicInfo
 				{
 					std::string desc;
+					std::string codec;
 					std::string topicShortName;
+					bool enableProxySubscribe;
 					std::string operation;
 					std::string id;
 					std::string productKey;

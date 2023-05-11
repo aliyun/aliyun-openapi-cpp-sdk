@@ -82,6 +82,17 @@ void CreateProductTopicRequest::setTopicShortName(const std::string& topicShortN
 	setParameter("TopicShortName", topicShortName);
 }
 
+bool CreateProductTopicRequest::getEnableProxySubscribe()const
+{
+	return enableProxySubscribe_;
+}
+
+void CreateProductTopicRequest::setEnableProxySubscribe(bool enableProxySubscribe)
+{
+	enableProxySubscribe_ = enableProxySubscribe;
+	setParameter("EnableProxySubscribe", enableProxySubscribe ? "true" : "false");
+}
+
 std::string CreateProductTopicRequest::getProductKey()const
 {
 	return productKey_;
@@ -91,6 +102,17 @@ void CreateProductTopicRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
 	setParameter("ProductKey", productKey);
+}
+
+std::string CreateProductTopicRequest::getCodec()const
+{
+	return codec_;
+}
+
+void CreateProductTopicRequest::setCodec(const std::string& codec)
+{
+	codec_ = codec;
+	setParameter("Codec", codec);
 }
 
 std::string CreateProductTopicRequest::getApiProduct()const

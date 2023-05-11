@@ -42,12 +42,27 @@ void BatchCheckDeviceNamesResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["ApplyId"].isNull())
 		data_.applyId = std::stol(dataNode["ApplyId"].asString());
+	auto allInvalidDetailListNode = dataNode["InvalidDetailList"]["InvalidDetailListItem"];
+	for (auto dataNodeInvalidDetailListInvalidDetailListItem : allInvalidDetailListNode)
+	{
+		Data::InvalidDetailListItem invalidDetailListItemObject;
+		if(!dataNodeInvalidDetailListInvalidDetailListItem["DeviceName"].isNull())
+			invalidDetailListItemObject.deviceName = dataNodeInvalidDetailListInvalidDetailListItem["DeviceName"].asString();
+		if(!dataNodeInvalidDetailListInvalidDetailListItem["NickName"].isNull())
+			invalidDetailListItemObject.nickName = dataNodeInvalidDetailListInvalidDetailListItem["NickName"].asString();
+		if(!dataNodeInvalidDetailListInvalidDetailListItem["ErrorMsg"].isNull())
+			invalidDetailListItemObject.errorMsg = dataNodeInvalidDetailListInvalidDetailListItem["ErrorMsg"].asString();
+		data_.invalidDetailList.push_back(invalidDetailListItemObject);
+	}
 		auto allInvalidDeviceNameList = dataNode["InvalidDeviceNameList"]["InvalidDeviceName"];
 		for (auto value : allInvalidDeviceNameList)
 			data_.invalidDeviceNameList.push_back(value.asString());
 		auto allInvalidDeviceNicknameList = dataNode["InvalidDeviceNicknameList"]["InvalidDeviceNickname"];
 		for (auto value : allInvalidDeviceNicknameList)
 			data_.invalidDeviceNicknameList.push_back(value.asString());
+		auto allRepeatedDeviceNameList = dataNode["RepeatedDeviceNameList"]["RepeatDevieNameList"];
+		for (auto value : allRepeatedDeviceNameList)
+			data_.repeatedDeviceNameList.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

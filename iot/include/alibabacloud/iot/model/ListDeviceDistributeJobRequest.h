@@ -53,6 +53,8 @@ namespace AlibabaCloud
 				void setApiRevision(const std::string& apiRevision);
 				std::string getTargetUid()const;
 				void setTargetUid(const std::string& targetUid);
+				std::string getSourceRegion()const;
+				void setSourceRegion(const std::string& sourceRegion);
 				int getStatus()const;
 				void setStatus(int status);
 
@@ -66,6 +68,7 @@ namespace AlibabaCloud
 				std::string apiProduct_;
 				std::string apiRevision_;
 				std::string targetUid_;
+				std::string sourceRegion_;
 				int status_;
 
 			};

@@ -53,6 +53,10 @@ void QueryProductTopicResult::parse(const std::string &payload)
 			dataObject.desc = valueDataProductTopicInfo["Desc"].asString();
 		if(!valueDataProductTopicInfo["Id"].isNull())
 			dataObject.id = valueDataProductTopicInfo["Id"].asString();
+		if(!valueDataProductTopicInfo["EnableProxySubscribe"].isNull())
+			dataObject.enableProxySubscribe = valueDataProductTopicInfo["EnableProxySubscribe"].asString() == "true";
+		if(!valueDataProductTopicInfo["Codec"].isNull())
+			dataObject.codec = valueDataProductTopicInfo["Codec"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Success"].isNull())

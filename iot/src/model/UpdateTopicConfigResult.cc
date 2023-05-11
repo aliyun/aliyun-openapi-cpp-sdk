@@ -43,14 +43,14 @@ void UpdateTopicConfigResult::parse(const std::string &payload)
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
-	if(!value["ErrorMessage"].isNull())
-		errorMessage_ = value["ErrorMessage"].asString();
+	if(!value["Message"].isNull())
+		message_ = value["Message"].asString();
 
 }
 
-std::string UpdateTopicConfigResult::getErrorMessage()const
+std::string UpdateTopicConfigResult::getMessage()const
 {
-	return errorMessage_;
+	return message_;
 }
 
 std::string UpdateTopicConfigResult::getCode()const

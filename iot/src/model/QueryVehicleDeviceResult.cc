@@ -46,30 +46,33 @@ void QueryVehicleDeviceResult::parse(const std::string &payload)
 		data_.productKey = dataNode["ProductKey"].asString();
 	if(!dataNode["DeviceName"].isNull())
 		data_.deviceName = dataNode["DeviceName"].asString();
-	if(!dataNode["Manufacturer"].isNull())
-		data_.manufacturer = dataNode["Manufacturer"].asString();
-	if(!dataNode["DeviceModel"].isNull())
-		data_.deviceModel = dataNode["DeviceModel"].asString();
-	if(!dataNode["DeviceId"].isNull())
-		data_.deviceId = dataNode["DeviceId"].asString();
-	if(!dataNode["Status"].isNull())
-		data_.status = dataNode["Status"].asString();
-	if(!dataNode["AuthCode"].isNull())
-		data_.authCode = dataNode["AuthCode"].asString();
-	if(!dataNode["Province"].isNull())
-		data_.province = dataNode["Province"].asString();
-	if(!dataNode["City"].isNull())
-		data_.city = dataNode["City"].asString();
-	if(!dataNode["VehicleColour"].isNull())
-		data_.vehicleColour = dataNode["VehicleColour"].asString();
-	if(!dataNode["VehicleNumber"].isNull())
-		data_.vehicleNumber = dataNode["VehicleNumber"].asString();
 	if(!dataNode["CreateTime"].isNull())
 		data_.createTime = std::stol(dataNode["CreateTime"].asString());
 	if(!dataNode["ModifiedTime"].isNull())
 		data_.modifiedTime = std::stol(dataNode["ModifiedTime"].asString());
-	if(!dataNode["RegisterTime"].isNull())
-		data_.registerTime = std::stol(dataNode["RegisterTime"].asString());
+	if(!dataNode["Protocol"].isNull())
+		data_.protocol = dataNode["Protocol"].asString();
+	auto jtProtocolDeviceDataNode = dataNode["JtProtocolDeviceData"];
+	if(!jtProtocolDeviceDataNode["Manufacturer"].isNull())
+		data_.jtProtocolDeviceData.manufacturer = jtProtocolDeviceDataNode["Manufacturer"].asString();
+	if(!jtProtocolDeviceDataNode["DeviceModel"].isNull())
+		data_.jtProtocolDeviceData.deviceModel = jtProtocolDeviceDataNode["DeviceModel"].asString();
+	if(!jtProtocolDeviceDataNode["DeviceId"].isNull())
+		data_.jtProtocolDeviceData.deviceId = jtProtocolDeviceDataNode["DeviceId"].asString();
+	if(!jtProtocolDeviceDataNode["Status"].isNull())
+		data_.jtProtocolDeviceData.status = jtProtocolDeviceDataNode["Status"].asString();
+	if(!jtProtocolDeviceDataNode["AuthCode"].isNull())
+		data_.jtProtocolDeviceData.authCode = jtProtocolDeviceDataNode["AuthCode"].asString();
+	if(!jtProtocolDeviceDataNode["Province"].isNull())
+		data_.jtProtocolDeviceData.province = jtProtocolDeviceDataNode["Province"].asString();
+	if(!jtProtocolDeviceDataNode["City"].isNull())
+		data_.jtProtocolDeviceData.city = jtProtocolDeviceDataNode["City"].asString();
+	if(!jtProtocolDeviceDataNode["VehicleColour"].isNull())
+		data_.jtProtocolDeviceData.vehicleColour = jtProtocolDeviceDataNode["VehicleColour"].asString();
+	if(!jtProtocolDeviceDataNode["VehicleNumber"].isNull())
+		data_.jtProtocolDeviceData.vehicleNumber = jtProtocolDeviceDataNode["VehicleNumber"].asString();
+	if(!jtProtocolDeviceDataNode["RegisterTime"].isNull())
+		data_.jtProtocolDeviceData.registerTime = jtProtocolDeviceDataNode["RegisterTime"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

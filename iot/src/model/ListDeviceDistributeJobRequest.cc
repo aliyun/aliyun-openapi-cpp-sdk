@@ -126,6 +126,17 @@ void ListDeviceDistributeJobRequest::setTargetUid(const std::string& targetUid)
 	setParameter("TargetUid", targetUid);
 }
 
+std::string ListDeviceDistributeJobRequest::getSourceRegion()const
+{
+	return sourceRegion_;
+}
+
+void ListDeviceDistributeJobRequest::setSourceRegion(const std::string& sourceRegion)
+{
+	sourceRegion_ = sourceRegion;
+	setParameter("SourceRegion", sourceRegion);
+}
+
 int ListDeviceDistributeJobRequest::getStatus()const
 {
 	return status_;

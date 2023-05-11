@@ -27,6 +27,17 @@ UpdateTopicConfigRequest::UpdateTopicConfigRequest() :
 UpdateTopicConfigRequest::~UpdateTopicConfigRequest()
 {}
 
+std::string UpdateTopicConfigRequest::getDescription()const
+{
+	return description_;
+}
+
+void UpdateTopicConfigRequest::setDescription(const std::string& description)
+{
+	description_ = description;
+	setParameter("Description", description);
+}
+
 std::string UpdateTopicConfigRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
@@ -60,6 +71,17 @@ void UpdateTopicConfigRequest::setEnableBroadcast(bool enableBroadcast)
 	setParameter("EnableBroadcast", enableBroadcast ? "true" : "false");
 }
 
+bool UpdateTopicConfigRequest::getEnableProxySubscribe()const
+{
+	return enableProxySubscribe_;
+}
+
+void UpdateTopicConfigRequest::setEnableProxySubscribe(bool enableProxySubscribe)
+{
+	enableProxySubscribe_ = enableProxySubscribe;
+	setParameter("EnableProxySubscribe", enableProxySubscribe ? "true" : "false");
+}
+
 std::string UpdateTopicConfigRequest::getProductKey()const
 {
 	return productKey_;
@@ -69,6 +91,17 @@ void UpdateTopicConfigRequest::setProductKey(const std::string& productKey)
 {
 	productKey_ = productKey;
 	setParameter("ProductKey", productKey);
+}
+
+std::string UpdateTopicConfigRequest::getCodec()const
+{
+	return codec_;
+}
+
+void UpdateTopicConfigRequest::setCodec(const std::string& codec)
+{
+	codec_ = codec;
+	setParameter("Codec", codec);
 }
 
 std::string UpdateTopicConfigRequest::getApiProduct()const
@@ -91,5 +124,16 @@ void UpdateTopicConfigRequest::setApiRevision(const std::string& apiRevision)
 {
 	apiRevision_ = apiRevision;
 	setBodyParameter("ApiRevision", apiRevision);
+}
+
+std::string UpdateTopicConfigRequest::getOperation()const
+{
+	return operation_;
+}
+
+void UpdateTopicConfigRequest::setOperation(const std::string& operation)
+{
+	operation_ = operation;
+	setParameter("Operation", operation);
 }
 

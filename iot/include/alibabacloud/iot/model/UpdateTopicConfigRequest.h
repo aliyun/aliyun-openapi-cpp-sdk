@@ -35,26 +35,38 @@ namespace AlibabaCloud
 				UpdateTopicConfigRequest();
 				~UpdateTopicConfigRequest();
 
+				std::string getDescription()const;
+				void setDescription(const std::string& description);
 				std::string getIotInstanceId()const;
 				void setIotInstanceId(const std::string& iotInstanceId);
 				std::string getTopicFullName()const;
 				void setTopicFullName(const std::string& topicFullName);
 				bool getEnableBroadcast()const;
 				void setEnableBroadcast(bool enableBroadcast);
+				bool getEnableProxySubscribe()const;
+				void setEnableProxySubscribe(bool enableProxySubscribe);
 				std::string getProductKey()const;
 				void setProductKey(const std::string& productKey);
+				std::string getCodec()const;
+				void setCodec(const std::string& codec);
 				std::string getApiProduct()const;
 				void setApiProduct(const std::string& apiProduct);
 				std::string getApiRevision()const;
 				void setApiRevision(const std::string& apiRevision);
+				std::string getOperation()const;
+				void setOperation(const std::string& operation);
 
             private:
+				std::string description_;
 				std::string iotInstanceId_;
 				std::string topicFullName_;
 				bool enableBroadcast_;
+				bool enableProxySubscribe_;
 				std::string productKey_;
+				std::string codec_;
 				std::string apiProduct_;
 				std::string apiRevision_;
+				std::string operation_;
 
 			};
 		}

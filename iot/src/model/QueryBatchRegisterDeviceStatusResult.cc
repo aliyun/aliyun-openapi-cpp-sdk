@@ -42,6 +42,18 @@ void QueryBatchRegisterDeviceStatusResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["Status"].isNull())
 		data_.status = dataNode["Status"].asString();
+	auto allInvalidDetailListNode = dataNode["InvalidDetailList"]["invalidDetailListItem"];
+	for (auto dataNodeInvalidDetailListinvalidDetailListItem : allInvalidDetailListNode)
+	{
+		Data::InvalidDetailListItem invalidDetailListItemObject;
+		if(!dataNodeInvalidDetailListinvalidDetailListItem["DeviceName"].isNull())
+			invalidDetailListItemObject.deviceName = dataNodeInvalidDetailListinvalidDetailListItem["DeviceName"].asString();
+		if(!dataNodeInvalidDetailListinvalidDetailListItem["ErrorMsg"].isNull())
+			invalidDetailListItemObject.errorMsg = dataNodeInvalidDetailListinvalidDetailListItem["ErrorMsg"].asString();
+		if(!dataNodeInvalidDetailListinvalidDetailListItem["NickName"].isNull())
+			invalidDetailListItemObject.nickName = dataNodeInvalidDetailListinvalidDetailListItem["NickName"].asString();
+		data_.invalidDetailList.push_back(invalidDetailListItemObject);
+	}
 		auto allValidList = dataNode["ValidList"]["Name"];
 		for (auto value : allValidList)
 			data_.validList.push_back(value.asString());

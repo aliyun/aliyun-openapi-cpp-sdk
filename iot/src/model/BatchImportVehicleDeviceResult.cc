@@ -42,6 +42,40 @@ void BatchImportVehicleDeviceResult::parse(const std::string &payload)
 	auto dataNode = value["Data"];
 	if(!dataNode["ApplyId"].isNull())
 		data_.applyId = std::stol(dataNode["ApplyId"].asString());
+	auto allInvalidDetailListNode = dataNode["InvalidDetailList"]["InvalidDetailListItem"];
+	for (auto dataNodeInvalidDetailListInvalidDetailListItem : allInvalidDetailListNode)
+	{
+		Data::InvalidDetailListItem invalidDetailListItemObject;
+		if(!dataNodeInvalidDetailListInvalidDetailListItem["Manufacturer"].isNull())
+			invalidDetailListItemObject.manufacturer = dataNodeInvalidDetailListInvalidDetailListItem["Manufacturer"].asString();
+		if(!dataNodeInvalidDetailListInvalidDetailListItem["DeviceModel"].isNull())
+			invalidDetailListItemObject.deviceModel = dataNodeInvalidDetailListInvalidDetailListItem["DeviceModel"].asString();
+		if(!dataNodeInvalidDetailListInvalidDetailListItem["DeviceId"].isNull())
+			invalidDetailListItemObject.deviceId = dataNodeInvalidDetailListInvalidDetailListItem["DeviceId"].asString();
+		if(!dataNodeInvalidDetailListInvalidDetailListItem["DeviceName"].isNull())
+			invalidDetailListItemObject.deviceName = dataNodeInvalidDetailListInvalidDetailListItem["DeviceName"].asString();
+		if(!dataNodeInvalidDetailListInvalidDetailListItem["ErrorMsg"].isNull())
+			invalidDetailListItemObject.errorMsg = dataNodeInvalidDetailListInvalidDetailListItem["ErrorMsg"].asString();
+		data_.invalidDetailList.push_back(invalidDetailListItemObject);
+	}
+		auto allInvalidManufacturerList = dataNode["InvalidManufacturerList"]["invalidManufacturerList"];
+		for (auto value : allInvalidManufacturerList)
+			data_.invalidManufacturerList.push_back(value.asString());
+		auto allInvalidDeviceModelList = dataNode["InvalidDeviceModelList"]["invalidDeviceModelList"];
+		for (auto value : allInvalidDeviceModelList)
+			data_.invalidDeviceModelList.push_back(value.asString());
+		auto allInvalidDeviceIdList = dataNode["InvalidDeviceIdList"]["invalidDeviceIdList"];
+		for (auto value : allInvalidDeviceIdList)
+			data_.invalidDeviceIdList.push_back(value.asString());
+		auto allRepeatedDeviceIdList = dataNode["RepeatedDeviceIdList"]["repeatedDeviceIdList"];
+		for (auto value : allRepeatedDeviceIdList)
+			data_.repeatedDeviceIdList.push_back(value.asString());
+		auto allInvalidDeviceNameList = dataNode["InvalidDeviceNameList"]["InvalidDeviceNameList"];
+		for (auto value : allInvalidDeviceNameList)
+			data_.invalidDeviceNameList.push_back(value.asString());
+		auto allRepeatedDeviceNameList = dataNode["RepeatedDeviceNameList"]["RepeatedDeviceNameList"];
+		for (auto value : allRepeatedDeviceNameList)
+			data_.repeatedDeviceNameList.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

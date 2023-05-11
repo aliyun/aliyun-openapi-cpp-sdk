@@ -38,17 +38,6 @@ void QueryVehicleDeviceRequest::setRealTenantId(const std::string& realTenantId)
 	setParameter("RealTenantId", realTenantId);
 }
 
-std::string QueryVehicleDeviceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void QueryVehicleDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
 std::string QueryVehicleDeviceRequest::getRealTripartiteKey()const
 {
 	return realTripartiteKey_;

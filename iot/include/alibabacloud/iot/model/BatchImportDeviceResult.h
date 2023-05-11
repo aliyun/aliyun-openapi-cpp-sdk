@@ -34,8 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
+					struct InvalidDetailListItem
+					{
+						std::string deviceSecret;
+						std::string errorMsg;
+						std::string sn;
+						std::string deviceName;
+					};
 					std::vector<std::string> invalidDeviceNameList;
 					long applyId;
+					std::vector<InvalidDetailListItem> invalidDetailList;
 					std::vector<std::string> repeatedDeviceNameList;
 					std::vector<std::string> invalidDeviceSecretList;
 					std::vector<std::string> invalidSnList;

@@ -71,6 +71,28 @@ void UpdateProductTopicRequest::setTopicShortName(const std::string& topicShortN
 	setParameter("TopicShortName", topicShortName);
 }
 
+bool UpdateProductTopicRequest::getEnableProxySubscribe()const
+{
+	return enableProxySubscribe_;
+}
+
+void UpdateProductTopicRequest::setEnableProxySubscribe(bool enableProxySubscribe)
+{
+	enableProxySubscribe_ = enableProxySubscribe;
+	setParameter("EnableProxySubscribe", enableProxySubscribe ? "true" : "false");
+}
+
+std::string UpdateProductTopicRequest::getCodec()const
+{
+	return codec_;
+}
+
+void UpdateProductTopicRequest::setCodec(const std::string& codec)
+{
+	codec_ = codec;
+	setParameter("Codec", codec);
+}
+
 std::string UpdateProductTopicRequest::getApiProduct()const
 {
 	return apiProduct_;

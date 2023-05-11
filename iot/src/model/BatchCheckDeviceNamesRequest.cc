@@ -129,7 +129,7 @@ void BatchCheckDeviceNamesRequest::setDeviceName(const std::vector<std::string>&
 {
 	deviceName_ = deviceName;
 	for(int dep1 = 0; dep1!= deviceName.size(); dep1++) {
-		setParameter("DeviceName."+ std::to_string(dep1), deviceName.at(dep1));
+		setBodyParameter("DeviceName."+ std::to_string(dep1), deviceName.at(dep1));
 	}
 }
 

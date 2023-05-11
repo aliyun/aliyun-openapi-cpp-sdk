@@ -34,20 +34,25 @@ namespace AlibabaCloud
 			public:
 				struct Data
 				{
-					std::string deviceModel;
-					std::string status;
-					std::string authCode;
-					std::string deviceId;
-					long createTime;
-					std::string vehicleColour;
-					std::string city;
-					std::string province;
+					struct JtProtocolDeviceData
+					{
+						std::string deviceModel;
+						std::string status;
+						std::string registerTime;
+						std::string authCode;
+						std::string deviceId;
+						std::string manufacturer;
+						std::string vehicleColour;
+						std::string city;
+						std::string province;
+						std::string vehicleNumber;
+					};
 					std::string iotId;
-					long registerTime;
 					long modifiedTime;
-					std::string manufacturer;
+					JtProtocolDeviceData jtProtocolDeviceData;
+					long createTime;
+					std::string protocol;
 					std::string productKey;
-					std::string vehicleNumber;
 					std::string deviceName;
 				};
 

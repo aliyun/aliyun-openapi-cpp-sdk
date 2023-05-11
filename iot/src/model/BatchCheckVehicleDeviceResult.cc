@@ -40,6 +40,22 @@ void BatchCheckVehicleDeviceResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	auto allInvalidDetailListNode = dataNode["InvalidDetailList"]["InvalidDetailListItem"];
+	for (auto dataNodeInvalidDetailListInvalidDetailListItem : allInvalidDetailListNode)
+	{
+		Data::InvalidDetailListItem invalidDetailListItemObject;
+		if(!dataNodeInvalidDetailListInvalidDetailListItem["Manufacturer"].isNull())
+			invalidDetailListItemObject.manufacturer = dataNodeInvalidDetailListInvalidDetailListItem["Manufacturer"].asString();
+		if(!dataNodeInvalidDetailListInvalidDetailListItem["DeviceModel"].isNull())
+			invalidDetailListItemObject.deviceModel = dataNodeInvalidDetailListInvalidDetailListItem["DeviceModel"].asString();
+		if(!dataNodeInvalidDetailListInvalidDetailListItem["DeviceId"].isNull())
+			invalidDetailListItemObject.deviceId = dataNodeInvalidDetailListInvalidDetailListItem["DeviceId"].asString();
+		if(!dataNodeInvalidDetailListInvalidDetailListItem["DeviceName"].isNull())
+			invalidDetailListItemObject.deviceName = dataNodeInvalidDetailListInvalidDetailListItem["DeviceName"].asString();
+		if(!dataNodeInvalidDetailListInvalidDetailListItem["ErrorMsg"].isNull())
+			invalidDetailListItemObject.errorMsg = dataNodeInvalidDetailListInvalidDetailListItem["ErrorMsg"].asString();
+		data_.invalidDetailList.push_back(invalidDetailListItemObject);
+	}
 		auto allInvalidManufacturerList = dataNode["InvalidManufacturerList"]["invalidManufacturerList"];
 		for (auto value : allInvalidManufacturerList)
 			data_.invalidManufacturerList.push_back(value.asString());
@@ -52,6 +68,12 @@ void BatchCheckVehicleDeviceResult::parse(const std::string &payload)
 		auto allRepeatedDeviceIdList = dataNode["RepeatedDeviceIdList"]["repeatedDeviceIdList"];
 		for (auto value : allRepeatedDeviceIdList)
 			data_.repeatedDeviceIdList.push_back(value.asString());
+		auto allInvalidDeviceNameList = dataNode["InvalidDeviceNameList"]["InvalidDeviceNameList"];
+		for (auto value : allInvalidDeviceNameList)
+			data_.invalidDeviceNameList.push_back(value.asString());
+		auto allRepeatedDeviceNameList = dataNode["RepeatedDeviceNameList"]["RepeatedDeviceNameList"];
+		for (auto value : allRepeatedDeviceNameList)
+			data_.repeatedDeviceNameList.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["Code"].isNull())

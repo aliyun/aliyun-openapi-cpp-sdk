@@ -148,6 +148,17 @@ void QueryDeviceEventDataRequest::setAsc(int asc)
 	setParameter("Asc", std::to_string(asc));
 }
 
+bool QueryDeviceEventDataRequest::getNeedIopsCheck()const
+{
+	return needIopsCheck_;
+}
+
+void QueryDeviceEventDataRequest::setNeedIopsCheck(bool needIopsCheck)
+{
+	needIopsCheck_ = needIopsCheck;
+	setParameter("NeedIopsCheck", needIopsCheck ? "true" : "false");
+}
+
 std::string QueryDeviceEventDataRequest::getApiProduct()const
 {
 	return apiProduct_;

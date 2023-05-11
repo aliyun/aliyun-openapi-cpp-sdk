@@ -27,17 +27,6 @@ BatchCheckImportDeviceRequest::BatchCheckImportDeviceRequest() :
 BatchCheckImportDeviceRequest::~BatchCheckImportDeviceRequest()
 {}
 
-std::string BatchCheckImportDeviceRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
-}
-
-void BatchCheckImportDeviceRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
-}
-
 std::string BatchCheckImportDeviceRequest::getIotInstanceId()const
 {
 	return iotInstanceId_;
