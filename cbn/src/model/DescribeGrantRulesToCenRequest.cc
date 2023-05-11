@@ -106,6 +106,24 @@ void DescribeGrantRulesToCenRequest::setVersion(const std::string &version) {
   setParameter(std::string("Version"), version);
 }
 
+long DescribeGrantRulesToCenRequest::getChildInstanceOwnerId() const {
+  return childInstanceOwnerId_;
+}
+
+void DescribeGrantRulesToCenRequest::setChildInstanceOwnerId(long childInstanceOwnerId) {
+  childInstanceOwnerId_ = childInstanceOwnerId;
+  setParameter(std::string("ChildInstanceOwnerId"), std::to_string(childInstanceOwnerId));
+}
+
+std::string DescribeGrantRulesToCenRequest::getChildInstanceId() const {
+  return childInstanceId_;
+}
+
+void DescribeGrantRulesToCenRequest::setChildInstanceId(const std::string &childInstanceId) {
+  childInstanceId_ = childInstanceId;
+  setParameter(std::string("ChildInstanceId"), childInstanceId);
+}
+
 long DescribeGrantRulesToCenRequest::getMaxResults() const {
   return maxResults_;
 }

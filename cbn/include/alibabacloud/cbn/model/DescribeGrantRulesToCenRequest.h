@@ -48,6 +48,10 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getVersion() const;
 	void setVersion(const std::string &version);
+	long getChildInstanceOwnerId() const;
+	void setChildInstanceOwnerId(long childInstanceOwnerId);
+	std::string getChildInstanceId() const;
+	void setChildInstanceId(const std::string &childInstanceId);
 	long getMaxResults() const;
 	void setMaxResults(long maxResults);
 
@@ -61,6 +65,8 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string version_;
+	long childInstanceOwnerId_;
+	std::string childInstanceId_;
 	long maxResults_;
 };
 } // namespace Model
