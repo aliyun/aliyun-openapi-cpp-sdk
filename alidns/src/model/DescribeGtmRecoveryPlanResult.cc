@@ -45,50 +45,50 @@ void DescribeGtmRecoveryPlanResult::parse(const std::string &payload)
 		FaultAddrPool faultAddrPoolsObject;
 		if(!valueFaultAddrPoolsFaultAddrPool["AddrPoolId"].isNull())
 			faultAddrPoolsObject.addrPoolId = valueFaultAddrPoolsFaultAddrPool["AddrPoolId"].asString();
-		if(!valueFaultAddrPoolsFaultAddrPool["AddrPoolName"].isNull())
-			faultAddrPoolsObject.addrPoolName = valueFaultAddrPoolsFaultAddrPool["AddrPoolName"].asString();
 		if(!valueFaultAddrPoolsFaultAddrPool["InstanceId"].isNull())
 			faultAddrPoolsObject.instanceId = valueFaultAddrPoolsFaultAddrPool["InstanceId"].asString();
+		if(!valueFaultAddrPoolsFaultAddrPool["AddrPoolName"].isNull())
+			faultAddrPoolsObject.addrPoolName = valueFaultAddrPoolsFaultAddrPool["AddrPoolName"].asString();
 		auto allAddrsNode = valueFaultAddrPoolsFaultAddrPool["Addrs"]["Addr"];
 		for (auto valueFaultAddrPoolsFaultAddrPoolAddrsAddr : allAddrsNode)
 		{
 			FaultAddrPool::Addr addrsObject;
-			if(!valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Id"].isNull())
-				addrsObject.id = std::stol(valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Id"].asString());
-			if(!valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Mode"].isNull())
-				addrsObject.mode = valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Mode"].asString();
 			if(!valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Value"].isNull())
 				addrsObject.value = valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Value"].asString();
+			if(!valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Mode"].isNull())
+				addrsObject.mode = valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Mode"].asString();
+			if(!valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Id"].isNull())
+				addrsObject.id = std::stol(valueFaultAddrPoolsFaultAddrPoolAddrsAddr["Id"].asString());
 			faultAddrPoolsObject.addrs.push_back(addrsObject);
 		}
 		faultAddrPools_.push_back(faultAddrPoolsObject);
 	}
-	if(!value["RecoveryPlanId"].isNull())
-		recoveryPlanId_ = std::stol(value["RecoveryPlanId"].asString());
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["Remark"].isNull())
-		remark_ = value["Remark"].asString();
-	if(!value["FaultAddrPoolNum"].isNull())
-		faultAddrPoolNum_ = std::stoi(value["FaultAddrPoolNum"].asString());
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["LastExecuteTime"].isNull())
-		lastExecuteTime_ = value["LastExecuteTime"].asString();
-	if(!value["LastExecuteTimestamp"].isNull())
-		lastExecuteTimestamp_ = std::stol(value["LastExecuteTimestamp"].asString());
 	if(!value["LastRollbackTime"].isNull())
 		lastRollbackTime_ = value["LastRollbackTime"].asString();
-	if(!value["LastRollbackTimestamp"].isNull())
-		lastRollbackTimestamp_ = std::stol(value["LastRollbackTimestamp"].asString());
+	if(!value["FaultAddrPoolNum"].isNull())
+		faultAddrPoolNum_ = std::stoi(value["FaultAddrPoolNum"].asString());
+	if(!value["LastExecuteTime"].isNull())
+		lastExecuteTime_ = value["LastExecuteTime"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = value["CreateTime"].asString();
-	if(!value["CreateTimestamp"].isNull())
-		createTimestamp_ = std::stol(value["CreateTimestamp"].asString());
+	if(!value["LastExecuteTimestamp"].isNull())
+		lastExecuteTimestamp_ = std::stol(value["LastExecuteTimestamp"].asString());
+	if(!value["Remark"].isNull())
+		remark_ = value["Remark"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["RecoveryPlanId"].isNull())
+		recoveryPlanId_ = std::stol(value["RecoveryPlanId"].asString());
 	if(!value["UpdateTime"].isNull())
 		updateTime_ = value["UpdateTime"].asString();
 	if(!value["UpdateTimestamp"].isNull())
 		updateTimestamp_ = std::stol(value["UpdateTimestamp"].asString());
+	if(!value["LastRollbackTimestamp"].isNull())
+		lastRollbackTimestamp_ = std::stol(value["LastRollbackTimestamp"].asString());
+	if(!value["CreateTimestamp"].isNull())
+		createTimestamp_ = std::stol(value["CreateTimestamp"].asString());
 
 }
 
@@ -127,14 +127,14 @@ long DescribeGtmRecoveryPlanResult::getLastExecuteTimestamp()const
 	return lastExecuteTimestamp_;
 }
 
-std::string DescribeGtmRecoveryPlanResult::getName()const
-{
-	return name_;
-}
-
 std::string DescribeGtmRecoveryPlanResult::getRemark()const
 {
 	return remark_;
+}
+
+std::string DescribeGtmRecoveryPlanResult::getName()const
+{
+	return name_;
 }
 
 long DescribeGtmRecoveryPlanResult::getRecoveryPlanId()const

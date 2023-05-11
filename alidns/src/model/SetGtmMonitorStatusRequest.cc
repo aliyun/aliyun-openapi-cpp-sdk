@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Alidns::Model::SetGtmMonitorStatusRequest;
 
-SetGtmMonitorStatusRequest::SetGtmMonitorStatusRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "SetGtmMonitorStatus")
-{
-	setMethod(HttpRequest::Method::Post);
+SetGtmMonitorStatusRequest::SetGtmMonitorStatusRequest()
+    : RpcServiceRequest("alidns", "2015-01-09", "SetGtmMonitorStatus") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-SetGtmMonitorStatusRequest::~SetGtmMonitorStatusRequest()
-{}
+SetGtmMonitorStatusRequest::~SetGtmMonitorStatusRequest() {}
 
-std::string SetGtmMonitorStatusRequest::getMonitorConfigId()const
-{
-	return monitorConfigId_;
+std::string SetGtmMonitorStatusRequest::getMonitorConfigId() const {
+  return monitorConfigId_;
 }
 
-void SetGtmMonitorStatusRequest::setMonitorConfigId(const std::string& monitorConfigId)
-{
-	monitorConfigId_ = monitorConfigId;
-	setParameter("MonitorConfigId", monitorConfigId);
+void SetGtmMonitorStatusRequest::setMonitorConfigId(const std::string &monitorConfigId) {
+  monitorConfigId_ = monitorConfigId;
+  setParameter(std::string("MonitorConfigId"), monitorConfigId);
 }
 
-std::string SetGtmMonitorStatusRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string SetGtmMonitorStatusRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void SetGtmMonitorStatusRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void SetGtmMonitorStatusRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string SetGtmMonitorStatusRequest::getLang()const
-{
-	return lang_;
+std::string SetGtmMonitorStatusRequest::getLang() const {
+  return lang_;
 }
 
-void SetGtmMonitorStatusRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void SetGtmMonitorStatusRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-std::string SetGtmMonitorStatusRequest::getStatus()const
-{
-	return status_;
+std::string SetGtmMonitorStatusRequest::getStatus() const {
+  return status_;
 }
 
-void SetGtmMonitorStatusRequest::setStatus(const std::string& status)
-{
-	status_ = status;
-	setParameter("Status", status);
+void SetGtmMonitorStatusRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
 }
 

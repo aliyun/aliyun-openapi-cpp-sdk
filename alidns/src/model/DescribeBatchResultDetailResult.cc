@@ -43,46 +43,46 @@ void DescribeBatchResultDetailResult::parse(const std::string &payload)
 	for (auto valueBatchResultDetailsBatchResultDetail : allBatchResultDetailsNode)
 	{
 		BatchResultDetail batchResultDetailsObject;
-		if(!valueBatchResultDetailsBatchResultDetail["Domain"].isNull())
-			batchResultDetailsObject.domain = valueBatchResultDetailsBatchResultDetail["Domain"].asString();
-		if(!valueBatchResultDetailsBatchResultDetail["Type"].isNull())
-			batchResultDetailsObject.type = valueBatchResultDetailsBatchResultDetail["Type"].asString();
-		if(!valueBatchResultDetailsBatchResultDetail["Rr"].isNull())
-			batchResultDetailsObject.rr = valueBatchResultDetailsBatchResultDetail["Rr"].asString();
-		if(!valueBatchResultDetailsBatchResultDetail["Value"].isNull())
-			batchResultDetailsObject.value = valueBatchResultDetailsBatchResultDetail["Value"].asString();
 		if(!valueBatchResultDetailsBatchResultDetail["Status"].isNull())
 			batchResultDetailsObject.status = valueBatchResultDetailsBatchResultDetail["Status"].asString() == "true";
-		if(!valueBatchResultDetailsBatchResultDetail["Reason"].isNull())
-			batchResultDetailsObject.reason = valueBatchResultDetailsBatchResultDetail["Reason"].asString();
-		if(!valueBatchResultDetailsBatchResultDetail["NewRr"].isNull())
-			batchResultDetailsObject.newRr = valueBatchResultDetailsBatchResultDetail["NewRr"].asString();
-		if(!valueBatchResultDetailsBatchResultDetail["NewValue"].isNull())
-			batchResultDetailsObject.newValue = valueBatchResultDetailsBatchResultDetail["NewValue"].asString();
-		if(!valueBatchResultDetailsBatchResultDetail["BatchType"].isNull())
-			batchResultDetailsObject.batchType = valueBatchResultDetailsBatchResultDetail["BatchType"].asString();
-		if(!valueBatchResultDetailsBatchResultDetail["OperateDateStr"].isNull())
-			batchResultDetailsObject.operateDateStr = valueBatchResultDetailsBatchResultDetail["OperateDateStr"].asString();
-		if(!valueBatchResultDetailsBatchResultDetail["Line"].isNull())
-			batchResultDetailsObject.line = valueBatchResultDetailsBatchResultDetail["Line"].asString();
-		if(!valueBatchResultDetailsBatchResultDetail["Priority"].isNull())
-			batchResultDetailsObject.priority = valueBatchResultDetailsBatchResultDetail["Priority"].asString();
-		if(!valueBatchResultDetailsBatchResultDetail["Ttl"].isNull())
-			batchResultDetailsObject.ttl = valueBatchResultDetailsBatchResultDetail["Ttl"].asString();
-		if(!valueBatchResultDetailsBatchResultDetail["RecordId"].isNull())
-			batchResultDetailsObject.recordId = valueBatchResultDetailsBatchResultDetail["RecordId"].asString();
+		if(!valueBatchResultDetailsBatchResultDetail["Type"].isNull())
+			batchResultDetailsObject.type = valueBatchResultDetailsBatchResultDetail["Type"].asString();
+		if(!valueBatchResultDetailsBatchResultDetail["Domain"].isNull())
+			batchResultDetailsObject.domain = valueBatchResultDetailsBatchResultDetail["Domain"].asString();
 		if(!valueBatchResultDetailsBatchResultDetail["Remark"].isNull())
 			batchResultDetailsObject.remark = valueBatchResultDetailsBatchResultDetail["Remark"].asString();
+		if(!valueBatchResultDetailsBatchResultDetail["RecordId"].isNull())
+			batchResultDetailsObject.recordId = valueBatchResultDetailsBatchResultDetail["RecordId"].asString();
+		if(!valueBatchResultDetailsBatchResultDetail["Rr"].isNull())
+			batchResultDetailsObject.rr = valueBatchResultDetailsBatchResultDetail["Rr"].asString();
+		if(!valueBatchResultDetailsBatchResultDetail["Priority"].isNull())
+			batchResultDetailsObject.priority = valueBatchResultDetailsBatchResultDetail["Priority"].asString();
 		if(!valueBatchResultDetailsBatchResultDetail["RrStatus"].isNull())
 			batchResultDetailsObject.rrStatus = valueBatchResultDetailsBatchResultDetail["RrStatus"].asString();
+		if(!valueBatchResultDetailsBatchResultDetail["OperateDateStr"].isNull())
+			batchResultDetailsObject.operateDateStr = valueBatchResultDetailsBatchResultDetail["OperateDateStr"].asString();
+		if(!valueBatchResultDetailsBatchResultDetail["NewValue"].isNull())
+			batchResultDetailsObject.newValue = valueBatchResultDetailsBatchResultDetail["NewValue"].asString();
+		if(!valueBatchResultDetailsBatchResultDetail["Value"].isNull())
+			batchResultDetailsObject.value = valueBatchResultDetailsBatchResultDetail["Value"].asString();
+		if(!valueBatchResultDetailsBatchResultDetail["Ttl"].isNull())
+			batchResultDetailsObject.ttl = valueBatchResultDetailsBatchResultDetail["Ttl"].asString();
+		if(!valueBatchResultDetailsBatchResultDetail["BatchType"].isNull())
+			batchResultDetailsObject.batchType = valueBatchResultDetailsBatchResultDetail["BatchType"].asString();
+		if(!valueBatchResultDetailsBatchResultDetail["Line"].isNull())
+			batchResultDetailsObject.line = valueBatchResultDetailsBatchResultDetail["Line"].asString();
+		if(!valueBatchResultDetailsBatchResultDetail["NewRr"].isNull())
+			batchResultDetailsObject.newRr = valueBatchResultDetailsBatchResultDetail["NewRr"].asString();
+		if(!valueBatchResultDetailsBatchResultDetail["Reason"].isNull())
+			batchResultDetailsObject.reason = valueBatchResultDetailsBatchResultDetail["Reason"].asString();
 		batchResultDetails_.push_back(batchResultDetailsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
 
 }
 

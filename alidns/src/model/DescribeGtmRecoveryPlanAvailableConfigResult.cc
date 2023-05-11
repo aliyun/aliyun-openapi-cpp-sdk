@@ -43,10 +43,10 @@ void DescribeGtmRecoveryPlanAvailableConfigResult::parse(const std::string &payl
 	for (auto valueInstancesInstance : allInstancesNode)
 	{
 		Instance instancesObject;
-		if(!valueInstancesInstance["InstanceId"].isNull())
-			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
 		if(!valueInstancesInstance["InstanceName"].isNull())
 			instancesObject.instanceName = valueInstancesInstance["InstanceName"].asString();
+		if(!valueInstancesInstance["InstanceId"].isNull())
+			instancesObject.instanceId = valueInstancesInstance["InstanceId"].asString();
 		auto allAddrPoolsNode = valueInstancesInstance["AddrPools"]["AddrPool"];
 		for (auto valueInstancesInstanceAddrPoolsAddrPool : allAddrPoolsNode)
 		{

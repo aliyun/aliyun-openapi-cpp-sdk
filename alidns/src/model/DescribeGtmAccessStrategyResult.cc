@@ -43,44 +43,44 @@ void DescribeGtmAccessStrategyResult::parse(const std::string &payload)
 	for (auto valueLinesLine : allLinesNode)
 	{
 		Line linesObject;
+		if(!valueLinesLine["GroupName"].isNull())
+			linesObject.groupName = valueLinesLine["GroupName"].asString();
 		if(!valueLinesLine["LineCode"].isNull())
 			linesObject.lineCode = valueLinesLine["LineCode"].asString();
 		if(!valueLinesLine["LineName"].isNull())
 			linesObject.lineName = valueLinesLine["LineName"].asString();
 		if(!valueLinesLine["GroupCode"].isNull())
 			linesObject.groupCode = valueLinesLine["GroupCode"].asString();
-		if(!valueLinesLine["GroupName"].isNull())
-			linesObject.groupName = valueLinesLine["GroupName"].asString();
 		lines_.push_back(linesObject);
 	}
-	if(!value["StrategyId"].isNull())
-		strategyId_ = value["StrategyId"].asString();
-	if(!value["StrategyName"].isNull())
-		strategyName_ = value["StrategyName"].asString();
-	if(!value["DefultAddrPoolId"].isNull())
-		defultAddrPoolId_ = value["DefultAddrPoolId"].asString();
-	if(!value["DefaultAddrPoolName"].isNull())
-		defaultAddrPoolName_ = value["DefaultAddrPoolName"].asString();
-	if(!value["FailoverAddrPoolId"].isNull())
-		failoverAddrPoolId_ = value["FailoverAddrPoolId"].asString();
-	if(!value["FailoverAddrPoolName"].isNull())
-		failoverAddrPoolName_ = value["FailoverAddrPoolName"].asString();
-	if(!value["StrategyMode"].isNull())
-		strategyMode_ = value["StrategyMode"].asString();
-	if(!value["AccessMode"].isNull())
-		accessMode_ = value["AccessMode"].asString();
-	if(!value["AccessStatus"].isNull())
-		accessStatus_ = value["AccessStatus"].asString();
 	if(!value["InstanceId"].isNull())
 		instanceId_ = value["InstanceId"].asString();
+	if(!value["StrategyId"].isNull())
+		strategyId_ = value["StrategyId"].asString();
 	if(!value["DefaultAddrPoolStatus"].isNull())
 		defaultAddrPoolStatus_ = value["DefaultAddrPoolStatus"].asString();
-	if(!value["FailoverAddrPoolStatus"].isNull())
-		failoverAddrPoolStatus_ = value["FailoverAddrPoolStatus"].asString();
+	if(!value["FailoverAddrPoolId"].isNull())
+		failoverAddrPoolId_ = value["FailoverAddrPoolId"].asString();
+	if(!value["AccessStatus"].isNull())
+		accessStatus_ = value["AccessStatus"].asString();
 	if(!value["DefaultAddrPoolMonitorStatus"].isNull())
 		defaultAddrPoolMonitorStatus_ = value["DefaultAddrPoolMonitorStatus"].asString();
+	if(!value["DefaultAddrPoolName"].isNull())
+		defaultAddrPoolName_ = value["DefaultAddrPoolName"].asString();
+	if(!value["DefultAddrPoolId"].isNull())
+		defultAddrPoolId_ = value["DefultAddrPoolId"].asString();
+	if(!value["StrategyName"].isNull())
+		strategyName_ = value["StrategyName"].asString();
+	if(!value["FailoverAddrPoolStatus"].isNull())
+		failoverAddrPoolStatus_ = value["FailoverAddrPoolStatus"].asString();
+	if(!value["AccessMode"].isNull())
+		accessMode_ = value["AccessMode"].asString();
+	if(!value["StrategyMode"].isNull())
+		strategyMode_ = value["StrategyMode"].asString();
 	if(!value["FailoverAddrPoolMonitorStatus"].isNull())
 		failoverAddrPoolMonitorStatus_ = value["FailoverAddrPoolMonitorStatus"].asString();
+	if(!value["FailoverAddrPoolName"].isNull())
+		failoverAddrPoolName_ = value["FailoverAddrPoolName"].asString();
 
 }
 
@@ -144,14 +144,14 @@ std::string DescribeGtmAccessStrategyResult::getStrategyMode()const
 	return strategyMode_;
 }
 
-std::string DescribeGtmAccessStrategyResult::getFailoverAddrPoolName()const
-{
-	return failoverAddrPoolName_;
-}
-
 std::string DescribeGtmAccessStrategyResult::getFailoverAddrPoolMonitorStatus()const
 {
 	return failoverAddrPoolMonitorStatus_;
+}
+
+std::string DescribeGtmAccessStrategyResult::getFailoverAddrPoolName()const
+{
+	return failoverAddrPoolName_;
 }
 
 std::vector<DescribeGtmAccessStrategyResult::Line> DescribeGtmAccessStrategyResult::getLines()const

@@ -43,42 +43,42 @@ void DescribeDomainsResult::parse(const std::string &payload)
 	for (auto valueDomainsDomain : allDomainsNode)
 	{
 		Domain domainsObject;
-		if(!valueDomainsDomain["DomainId"].isNull())
-			domainsObject.domainId = valueDomainsDomain["DomainId"].asString();
-		if(!valueDomainsDomain["DomainName"].isNull())
-			domainsObject.domainName = valueDomainsDomain["DomainName"].asString();
-		if(!valueDomainsDomain["PunyCode"].isNull())
-			domainsObject.punyCode = valueDomainsDomain["PunyCode"].asString();
-		if(!valueDomainsDomain["AliDomain"].isNull())
-			domainsObject.aliDomain = valueDomainsDomain["AliDomain"].asString() == "true";
-		if(!valueDomainsDomain["RecordCount"].isNull())
-			domainsObject.recordCount = std::stol(valueDomainsDomain["RecordCount"].asString());
-		if(!valueDomainsDomain["RegistrantEmail"].isNull())
-			domainsObject.registrantEmail = valueDomainsDomain["RegistrantEmail"].asString();
 		if(!valueDomainsDomain["Remark"].isNull())
 			domainsObject.remark = valueDomainsDomain["Remark"].asString();
+		if(!valueDomainsDomain["CreateTime"].isNull())
+			domainsObject.createTime = valueDomainsDomain["CreateTime"].asString();
+		if(!valueDomainsDomain["RecordCount"].isNull())
+			domainsObject.recordCount = std::stol(valueDomainsDomain["RecordCount"].asString());
+		if(!valueDomainsDomain["InstanceId"].isNull())
+			domainsObject.instanceId = valueDomainsDomain["InstanceId"].asString();
+		if(!valueDomainsDomain["DomainName"].isNull())
+			domainsObject.domainName = valueDomainsDomain["DomainName"].asString();
+		if(!valueDomainsDomain["DomainId"].isNull())
+			domainsObject.domainId = valueDomainsDomain["DomainId"].asString();
+		if(!valueDomainsDomain["AliDomain"].isNull())
+			domainsObject.aliDomain = valueDomainsDomain["AliDomain"].asString() == "true";
 		if(!valueDomainsDomain["GroupId"].isNull())
 			domainsObject.groupId = valueDomainsDomain["GroupId"].asString();
 		if(!valueDomainsDomain["GroupName"].isNull())
 			domainsObject.groupName = valueDomainsDomain["GroupName"].asString();
-		if(!valueDomainsDomain["InstanceId"].isNull())
-			domainsObject.instanceId = valueDomainsDomain["InstanceId"].asString();
-		if(!valueDomainsDomain["VersionCode"].isNull())
-			domainsObject.versionCode = valueDomainsDomain["VersionCode"].asString();
-		if(!valueDomainsDomain["VersionName"].isNull())
-			domainsObject.versionName = valueDomainsDomain["VersionName"].asString();
+		if(!valueDomainsDomain["ResourceGroupId"].isNull())
+			domainsObject.resourceGroupId = valueDomainsDomain["ResourceGroupId"].asString();
 		if(!valueDomainsDomain["InstanceEndTime"].isNull())
 			domainsObject.instanceEndTime = valueDomainsDomain["InstanceEndTime"].asString();
 		if(!valueDomainsDomain["InstanceExpired"].isNull())
 			domainsObject.instanceExpired = valueDomainsDomain["InstanceExpired"].asString() == "true";
-		if(!valueDomainsDomain["Starmark"].isNull())
-			domainsObject.starmark = valueDomainsDomain["Starmark"].asString() == "true";
-		if(!valueDomainsDomain["CreateTime"].isNull())
-			domainsObject.createTime = valueDomainsDomain["CreateTime"].asString();
+		if(!valueDomainsDomain["VersionName"].isNull())
+			domainsObject.versionName = valueDomainsDomain["VersionName"].asString();
+		if(!valueDomainsDomain["VersionCode"].isNull())
+			domainsObject.versionCode = valueDomainsDomain["VersionCode"].asString();
+		if(!valueDomainsDomain["PunyCode"].isNull())
+			domainsObject.punyCode = valueDomainsDomain["PunyCode"].asString();
+		if(!valueDomainsDomain["RegistrantEmail"].isNull())
+			domainsObject.registrantEmail = valueDomainsDomain["RegistrantEmail"].asString();
 		if(!valueDomainsDomain["CreateTimestamp"].isNull())
 			domainsObject.createTimestamp = std::stol(valueDomainsDomain["CreateTimestamp"].asString());
-		if(!valueDomainsDomain["ResourceGroupId"].isNull())
-			domainsObject.resourceGroupId = valueDomainsDomain["ResourceGroupId"].asString();
+		if(!valueDomainsDomain["Starmark"].isNull())
+			domainsObject.starmark = valueDomainsDomain["Starmark"].asString() == "true";
 		auto allTagsNode = valueDomainsDomain["Tags"]["Tag"];
 		for (auto valueDomainsDomainTagsTag : allTagsNode)
 		{
@@ -96,10 +96,10 @@ void DescribeDomainsResult::parse(const std::string &payload)
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
 
 }
 

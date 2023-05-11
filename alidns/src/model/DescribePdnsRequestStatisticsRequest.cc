@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,111 +18,91 @@
 
 using AlibabaCloud::Alidns::Model::DescribePdnsRequestStatisticsRequest;
 
-DescribePdnsRequestStatisticsRequest::DescribePdnsRequestStatisticsRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "DescribePdnsRequestStatistics")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribePdnsRequestStatisticsRequest::DescribePdnsRequestStatisticsRequest()
+    : RpcServiceRequest("alidns", "2015-01-09", "DescribePdnsRequestStatistics") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribePdnsRequestStatisticsRequest::~DescribePdnsRequestStatisticsRequest()
-{}
+DescribePdnsRequestStatisticsRequest::~DescribePdnsRequestStatisticsRequest() {}
 
-std::string DescribePdnsRequestStatisticsRequest::getDomainName()const
-{
-	return domainName_;
+std::string DescribePdnsRequestStatisticsRequest::getDomainName() const {
+  return domainName_;
 }
 
-void DescribePdnsRequestStatisticsRequest::setDomainName(const std::string& domainName)
-{
-	domainName_ = domainName;
-	setParameter("DomainName", domainName);
+void DescribePdnsRequestStatisticsRequest::setDomainName(const std::string &domainName) {
+  domainName_ = domainName;
+  setParameter(std::string("DomainName"), domainName);
 }
 
-bool DescribePdnsRequestStatisticsRequest::getNeedThreatInfo()const
-{
-	return needThreatInfo_;
+bool DescribePdnsRequestStatisticsRequest::getNeedThreatInfo() const {
+  return needThreatInfo_;
 }
 
-void DescribePdnsRequestStatisticsRequest::setNeedThreatInfo(bool needThreatInfo)
-{
-	needThreatInfo_ = needThreatInfo;
-	setParameter("NeedThreatInfo", needThreatInfo ? "true" : "false");
+void DescribePdnsRequestStatisticsRequest::setNeedThreatInfo(bool needThreatInfo) {
+  needThreatInfo_ = needThreatInfo;
+  setParameter(std::string("NeedThreatInfo"), needThreatInfo ? "true" : "false");
 }
 
-std::string DescribePdnsRequestStatisticsRequest::getType()const
-{
-	return type_;
+std::string DescribePdnsRequestStatisticsRequest::getType() const {
+  return type_;
 }
 
-void DescribePdnsRequestStatisticsRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setParameter("Type", type);
+void DescribePdnsRequestStatisticsRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
 }
 
-std::string DescribePdnsRequestStatisticsRequest::getStartDate()const
-{
-	return startDate_;
+std::string DescribePdnsRequestStatisticsRequest::getStartDate() const {
+  return startDate_;
 }
 
-void DescribePdnsRequestStatisticsRequest::setStartDate(const std::string& startDate)
-{
-	startDate_ = startDate;
-	setParameter("StartDate", startDate);
+void DescribePdnsRequestStatisticsRequest::setStartDate(const std::string &startDate) {
+  startDate_ = startDate;
+  setParameter(std::string("StartDate"), startDate);
 }
 
-long DescribePdnsRequestStatisticsRequest::getPageNumber()const
-{
-	return pageNumber_;
+long DescribePdnsRequestStatisticsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribePdnsRequestStatisticsRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribePdnsRequestStatisticsRequest::setPageNumber(long pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribePdnsRequestStatisticsRequest::getEndDate()const
-{
-	return endDate_;
+std::string DescribePdnsRequestStatisticsRequest::getEndDate() const {
+  return endDate_;
 }
 
-void DescribePdnsRequestStatisticsRequest::setEndDate(const std::string& endDate)
-{
-	endDate_ = endDate;
-	setParameter("EndDate", endDate);
+void DescribePdnsRequestStatisticsRequest::setEndDate(const std::string &endDate) {
+  endDate_ = endDate;
+  setParameter(std::string("EndDate"), endDate);
 }
 
-long DescribePdnsRequestStatisticsRequest::getPageSize()const
-{
-	return pageSize_;
+long DescribePdnsRequestStatisticsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribePdnsRequestStatisticsRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribePdnsRequestStatisticsRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribePdnsRequestStatisticsRequest::getSubDomain()const
-{
-	return subDomain_;
+std::string DescribePdnsRequestStatisticsRequest::getSubDomain() const {
+  return subDomain_;
 }
 
-void DescribePdnsRequestStatisticsRequest::setSubDomain(const std::string& subDomain)
-{
-	subDomain_ = subDomain;
-	setParameter("SubDomain", subDomain);
+void DescribePdnsRequestStatisticsRequest::setSubDomain(const std::string &subDomain) {
+  subDomain_ = subDomain;
+  setParameter(std::string("SubDomain"), subDomain);
 }
 
-std::string DescribePdnsRequestStatisticsRequest::getLang()const
-{
-	return lang_;
+std::string DescribePdnsRequestStatisticsRequest::getLang() const {
+  return lang_;
 }
 
-void DescribePdnsRequestStatisticsRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DescribePdnsRequestStatisticsRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

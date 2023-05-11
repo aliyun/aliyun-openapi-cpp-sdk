@@ -43,14 +43,14 @@ void DescribeDomainInfoResult::parse(const std::string &payload)
 	for (auto valueRecordLinesRecordLine : allRecordLinesNode)
 	{
 		RecordLine recordLinesObject;
-		if(!valueRecordLinesRecordLine["LineCode"].isNull())
-			recordLinesObject.lineCode = valueRecordLinesRecordLine["LineCode"].asString();
 		if(!valueRecordLinesRecordLine["FatherCode"].isNull())
 			recordLinesObject.fatherCode = valueRecordLinesRecordLine["FatherCode"].asString();
-		if(!valueRecordLinesRecordLine["LineName"].isNull())
-			recordLinesObject.lineName = valueRecordLinesRecordLine["LineName"].asString();
 		if(!valueRecordLinesRecordLine["LineDisplayName"].isNull())
 			recordLinesObject.lineDisplayName = valueRecordLinesRecordLine["LineDisplayName"].asString();
+		if(!valueRecordLinesRecordLine["LineCode"].isNull())
+			recordLinesObject.lineCode = valueRecordLinesRecordLine["LineCode"].asString();
+		if(!valueRecordLinesRecordLine["LineName"].isNull())
+			recordLinesObject.lineName = valueRecordLinesRecordLine["LineName"].asString();
 		recordLines_.push_back(recordLinesObject);
 	}
 	auto allDnsServers = value["DnsServers"]["DnsServer"];
@@ -59,55 +59,55 @@ void DescribeDomainInfoResult::parse(const std::string &payload)
 	auto allAvailableTtls = value["AvailableTtls"]["AvailableTtl"];
 	for (const auto &item : allAvailableTtls)
 		availableTtls_.push_back(item.asString());
-	if(!value["DomainId"].isNull())
-		domainId_ = value["DomainId"].asString();
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["PunyCode"].isNull())
-		punyCode_ = value["PunyCode"].asString();
+	if(!value["RecordLineTreeJson"].isNull())
+		recordLineTreeJson_ = value["RecordLineTreeJson"].asString();
+	if(!value["GroupName"].isNull())
+		groupName_ = value["GroupName"].asString();
+	if(!value["InBlackHole"].isNull())
+		inBlackHole_ = value["InBlackHole"].asString() == "true";
+	if(!value["RegionLines"].isNull())
+		regionLines_ = value["RegionLines"].asString() == "true";
+	if(!value["SlaveDns"].isNull())
+		slaveDns_ = value["SlaveDns"].asString() == "true";
 	if(!value["AliDomain"].isNull())
 		aliDomain_ = value["AliDomain"].asString() == "true";
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["PunyCode"].isNull())
+		punyCode_ = value["PunyCode"].asString();
 	if(!value["Remark"].isNull())
 		remark_ = value["Remark"].asString();
 	if(!value["GroupId"].isNull())
 		groupId_ = value["GroupId"].asString();
-	if(!value["GroupName"].isNull())
-		groupName_ = value["GroupName"].asString();
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
 	if(!value["VersionCode"].isNull())
 		versionCode_ = value["VersionCode"].asString();
-	if(!value["VersionName"].isNull())
-		versionName_ = value["VersionName"].asString();
+	if(!value["DomainId"].isNull())
+		domainId_ = value["DomainId"].asString();
 	if(!value["MinTtl"].isNull())
 		minTtl_ = std::stol(value["MinTtl"].asString());
-	if(!value["RecordLineTreeJson"].isNull())
-		recordLineTreeJson_ = value["RecordLineTreeJson"].asString();
-	if(!value["LineType"].isNull())
-		lineType_ = value["LineType"].asString();
-	if(!value["RegionLines"].isNull())
-		regionLines_ = value["RegionLines"].asString() == "true";
-	if(!value["InBlackHole"].isNull())
-		inBlackHole_ = value["InBlackHole"].asString() == "true";
 	if(!value["InClean"].isNull())
 		inClean_ = value["InClean"].asString() == "true";
-	if(!value["SlaveDns"].isNull())
-		slaveDns_ = value["SlaveDns"].asString() == "true";
-	if(!value["ResourceGroupId"].isNull())
-		resourceGroupId_ = value["ResourceGroupId"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
+	if(!value["VersionName"].isNull())
+		versionName_ = value["VersionName"].asString();
+	if(!value["LineType"].isNull())
+		lineType_ = value["LineType"].asString();
 
-}
-
-std::string DescribeDomainInfoResult::getGroupName()const
-{
-	return groupName_;
 }
 
 std::string DescribeDomainInfoResult::getRecordLineTreeJson()const
 {
 	return recordLineTreeJson_;
+}
+
+std::string DescribeDomainInfoResult::getGroupName()const
+{
+	return groupName_;
 }
 
 bool DescribeDomainInfoResult::getInBlackHole()const
@@ -120,14 +120,14 @@ bool DescribeDomainInfoResult::getRegionLines()const
 	return regionLines_;
 }
 
-bool DescribeDomainInfoResult::getAliDomain()const
-{
-	return aliDomain_;
-}
-
 bool DescribeDomainInfoResult::getSlaveDns()const
 {
 	return slaveDns_;
+}
+
+bool DescribeDomainInfoResult::getAliDomain()const
+{
+	return aliDomain_;
 }
 
 std::string DescribeDomainInfoResult::getResourceGroupId()const
@@ -135,14 +135,14 @@ std::string DescribeDomainInfoResult::getResourceGroupId()const
 	return resourceGroupId_;
 }
 
-std::string DescribeDomainInfoResult::getDomainName()const
-{
-	return domainName_;
-}
-
 std::string DescribeDomainInfoResult::getInstanceId()const
 {
 	return instanceId_;
+}
+
+std::string DescribeDomainInfoResult::getDomainName()const
+{
+	return domainName_;
 }
 
 std::string DescribeDomainInfoResult::getCreateTime()const
@@ -190,11 +190,6 @@ std::vector<std::string> DescribeDomainInfoResult::getAvailableTtls()const
 	return availableTtls_;
 }
 
-std::string DescribeDomainInfoResult::getVersionName()const
-{
-	return versionName_;
-}
-
 long DescribeDomainInfoResult::getMinTtl()const
 {
 	return minTtl_;
@@ -203,6 +198,11 @@ long DescribeDomainInfoResult::getMinTtl()const
 bool DescribeDomainInfoResult::getInClean()const
 {
 	return inClean_;
+}
+
+std::string DescribeDomainInfoResult::getVersionName()const
+{
+	return versionName_;
 }
 
 std::string DescribeDomainInfoResult::getLineType()const

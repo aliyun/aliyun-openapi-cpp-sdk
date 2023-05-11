@@ -38,8 +38,8 @@ namespace AlibabaCloud
 					bool inBlackHole;
 					long bindDomainCount;
 					bool regionLines;
-					std::string endTime;
 					long bindCount;
+					std::string endTime;
 					long startTimestamp;
 					std::string iSPLines;
 					long endTimestamp;
@@ -63,8 +63,8 @@ namespace AlibabaCloud
 					long bindDomainUsedCount;
 					std::string versionCode;
 					long overseaDDosDefendFlow;
-					long subDomainLevel;
 					bool inClean;
+					long subDomainLevel;
 					std::string domain;
 				};
 

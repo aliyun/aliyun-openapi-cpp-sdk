@@ -57,8 +57,8 @@ namespace AlibabaCloud
 				std::string getLastExecuteTime()const;
 				std::string getCreateTime()const;
 				long getLastExecuteTimestamp()const;
-				std::string getName()const;
 				std::string getRemark()const;
+				std::string getName()const;
 				long getRecoveryPlanId()const;
 				std::string getUpdateTime()const;
 				long getUpdateTimestamp()const;
@@ -75,8 +75,8 @@ namespace AlibabaCloud
 				std::string lastExecuteTime_;
 				std::string createTime_;
 				long lastExecuteTimestamp_;
-				std::string name_;
 				std::string remark_;
+				std::string name_;
 				long recoveryPlanId_;
 				std::string updateTime_;
 				long updateTimestamp_;

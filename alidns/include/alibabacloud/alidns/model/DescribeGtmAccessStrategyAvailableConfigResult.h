@@ -39,8 +39,8 @@ namespace AlibabaCloud
 				};
 				struct Line
 				{
-					std::string groupName;
 					std::string status;
+					std::string groupName;
 					std::string groupCode;
 					std::string fatherCode;
 					std::string lineCode;
@@ -53,12 +53,14 @@ namespace AlibabaCloud
 				~DescribeGtmAccessStrategyAvailableConfigResult();
 				std::vector<AddrPool> getAddrPools()const;
 				std::vector<Line> getLines()const;
+				bool getSuggestSetDefaultLine()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<AddrPool> addrPools_;
 				std::vector<Line> lines_;
+				bool suggestSetDefaultLine_;
 
 			};
 		}

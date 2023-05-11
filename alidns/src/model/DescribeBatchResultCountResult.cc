@@ -43,16 +43,16 @@ void DescribeBatchResultCountResult::parse(const std::string &payload)
 		status_ = std::stoi(value["Status"].asString());
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stoi(value["TotalCount"].asString());
-	if(!value["SuccessCount"].isNull())
-		successCount_ = std::stoi(value["SuccessCount"].asString());
-	if(!value["FailedCount"].isNull())
-		failedCount_ = std::stoi(value["FailedCount"].asString());
-	if(!value["Reason"].isNull())
-		reason_ = value["Reason"].asString();
-	if(!value["BatchType"].isNull())
-		batchType_ = value["BatchType"].asString();
 	if(!value["TaskId"].isNull())
 		taskId_ = std::stol(value["TaskId"].asString());
+	if(!value["FailedCount"].isNull())
+		failedCount_ = std::stoi(value["FailedCount"].asString());
+	if(!value["SuccessCount"].isNull())
+		successCount_ = std::stoi(value["SuccessCount"].asString());
+	if(!value["BatchType"].isNull())
+		batchType_ = value["BatchType"].asString();
+	if(!value["Reason"].isNull())
+		reason_ = value["Reason"].asString();
 
 }
 
@@ -81,13 +81,13 @@ int DescribeBatchResultCountResult::getSuccessCount()const
 	return successCount_;
 }
 
-std::string DescribeBatchResultCountResult::getReason()const
-{
-	return reason_;
-}
-
 std::string DescribeBatchResultCountResult::getBatchType()const
 {
 	return batchType_;
+}
+
+std::string DescribeBatchResultCountResult::getReason()const
+{
+	return reason_;
 }
 

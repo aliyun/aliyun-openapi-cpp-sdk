@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,89 +18,91 @@
 
 using AlibabaCloud::Alidns::Model::DescribeDnsProductInstancesRequest;
 
-DescribeDnsProductInstancesRequest::DescribeDnsProductInstancesRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "DescribeDnsProductInstances")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDnsProductInstancesRequest::DescribeDnsProductInstancesRequest()
+    : RpcServiceRequest("alidns", "2015-01-09", "DescribeDnsProductInstances") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDnsProductInstancesRequest::~DescribeDnsProductInstancesRequest()
-{}
+DescribeDnsProductInstancesRequest::~DescribeDnsProductInstancesRequest() {}
 
-long DescribeDnsProductInstancesRequest::getPageNumber()const
-{
-	return pageNumber_;
+std::string DescribeDnsProductInstancesRequest::getOrderBy() const {
+  return orderBy_;
 }
 
-void DescribeDnsProductInstancesRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeDnsProductInstancesRequest::setOrderBy(const std::string &orderBy) {
+  orderBy_ = orderBy;
+  setParameter(std::string("OrderBy"), orderBy);
 }
 
-std::string DescribeDnsProductInstancesRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+long DescribeDnsProductInstancesRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeDnsProductInstancesRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeDnsProductInstancesRequest::setPageNumber(long pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeDnsProductInstancesRequest::getDomainType()const
-{
-	return domainType_;
+std::string DescribeDnsProductInstancesRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeDnsProductInstancesRequest::setDomainType(const std::string& domainType)
-{
-	domainType_ = domainType;
-	setParameter("DomainType", domainType);
+void DescribeDnsProductInstancesRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeDnsProductInstancesRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string DescribeDnsProductInstancesRequest::getDomainType() const {
+  return domainType_;
 }
 
-void DescribeDnsProductInstancesRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void DescribeDnsProductInstancesRequest::setDomainType(const std::string &domainType) {
+  domainType_ = domainType;
+  setParameter(std::string("DomainType"), domainType);
 }
 
-long DescribeDnsProductInstancesRequest::getPageSize()const
-{
-	return pageSize_;
+std::string DescribeDnsProductInstancesRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void DescribeDnsProductInstancesRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeDnsProductInstancesRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string DescribeDnsProductInstancesRequest::getLang()const
-{
-	return lang_;
+long DescribeDnsProductInstancesRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeDnsProductInstancesRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DescribeDnsProductInstancesRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeDnsProductInstancesRequest::getVersionCode()const
-{
-	return versionCode_;
+std::string DescribeDnsProductInstancesRequest::getLang() const {
+  return lang_;
 }
 
-void DescribeDnsProductInstancesRequest::setVersionCode(const std::string& versionCode)
-{
-	versionCode_ = versionCode;
-	setParameter("VersionCode", versionCode);
+void DescribeDnsProductInstancesRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeDnsProductInstancesRequest::getVersionCode() const {
+  return versionCode_;
+}
+
+void DescribeDnsProductInstancesRequest::setVersionCode(const std::string &versionCode) {
+  versionCode_ = versionCode;
+  setParameter(std::string("VersionCode"), versionCode);
+}
+
+std::string DescribeDnsProductInstancesRequest::getDirection() const {
+  return direction_;
+}
+
+void DescribeDnsProductInstancesRequest::setDirection(const std::string &direction) {
+  direction_ = direction;
+  setParameter(std::string("Direction"), direction);
 }
 

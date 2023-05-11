@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Alidns::Model::TransferDomainRequest;
 
-TransferDomainRequest::TransferDomainRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "TransferDomain")
-{
-	setMethod(HttpRequest::Method::Post);
+TransferDomainRequest::TransferDomainRequest()
+    : RpcServiceRequest("alidns", "2015-01-09", "TransferDomain") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-TransferDomainRequest::~TransferDomainRequest()
-{}
+TransferDomainRequest::~TransferDomainRequest() {}
 
-std::string TransferDomainRequest::getDomainNames()const
-{
-	return domainNames_;
+std::string TransferDomainRequest::getDomainNames() const {
+  return domainNames_;
 }
 
-void TransferDomainRequest::setDomainNames(const std::string& domainNames)
-{
-	domainNames_ = domainNames;
-	setParameter("DomainNames", domainNames);
+void TransferDomainRequest::setDomainNames(const std::string &domainNames) {
+  domainNames_ = domainNames;
+  setParameter(std::string("DomainNames"), domainNames);
 }
 
-std::string TransferDomainRequest::getRemark()const
-{
-	return remark_;
+std::string TransferDomainRequest::getRemark() const {
+  return remark_;
 }
 
-void TransferDomainRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setParameter("Remark", remark);
+void TransferDomainRequest::setRemark(const std::string &remark) {
+  remark_ = remark;
+  setParameter(std::string("Remark"), remark);
 }
 
-std::string TransferDomainRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string TransferDomainRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void TransferDomainRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void TransferDomainRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-long TransferDomainRequest::getTargetUserId()const
-{
-	return targetUserId_;
+long TransferDomainRequest::getTargetUserId() const {
+  return targetUserId_;
 }
 
-void TransferDomainRequest::setTargetUserId(long targetUserId)
-{
-	targetUserId_ = targetUserId;
-	setParameter("TargetUserId", std::to_string(targetUserId));
+void TransferDomainRequest::setTargetUserId(long targetUserId) {
+  targetUserId_ = targetUserId;
+  setParameter(std::string("TargetUserId"), std::to_string(targetUserId));
 }
 
-std::string TransferDomainRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string TransferDomainRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void TransferDomainRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void TransferDomainRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string TransferDomainRequest::getLang()const
-{
-	return lang_;
+std::string TransferDomainRequest::getLang() const {
+  return lang_;
 }
 
-void TransferDomainRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void TransferDomainRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

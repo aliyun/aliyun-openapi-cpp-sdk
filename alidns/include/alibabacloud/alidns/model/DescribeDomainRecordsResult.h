@@ -34,9 +34,9 @@ namespace AlibabaCloud
 			public:
 				struct Record
 				{
+					std::string status;
 					std::string rR;
 					std::string line;
-					std::string status;
 					bool locked;
 					std::string type;
 					std::string domainName;

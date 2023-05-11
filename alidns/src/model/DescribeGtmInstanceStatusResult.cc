@@ -39,18 +39,18 @@ void DescribeGtmInstanceStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["Status"].isNull())
+		status_ = value["Status"].asString();
+	if(!value["StrategyNotAvailableNum"].isNull())
+		strategyNotAvailableNum_ = std::stoi(value["StrategyNotAvailableNum"].asString());
+	if(!value["SwitchToFailoverStrategyNum"].isNull())
+		switchToFailoverStrategyNum_ = std::stoi(value["SwitchToFailoverStrategyNum"].asString());
+	if(!value["StatusReason"].isNull())
+		statusReason_ = value["StatusReason"].asString();
 	if(!value["AddrNotAvailableNum"].isNull())
 		addrNotAvailableNum_ = std::stoi(value["AddrNotAvailableNum"].asString());
 	if(!value["AddrPoolNotAvailableNum"].isNull())
 		addrPoolNotAvailableNum_ = std::stoi(value["AddrPoolNotAvailableNum"].asString());
-	if(!value["SwitchToFailoverStrategyNum"].isNull())
-		switchToFailoverStrategyNum_ = std::stoi(value["SwitchToFailoverStrategyNum"].asString());
-	if(!value["StrategyNotAvailableNum"].isNull())
-		strategyNotAvailableNum_ = std::stoi(value["StrategyNotAvailableNum"].asString());
-	if(!value["Status"].isNull())
-		status_ = value["Status"].asString();
-	if(!value["StatusReason"].isNull())
-		statusReason_ = value["StatusReason"].asString();
 
 }
 

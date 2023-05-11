@@ -43,28 +43,28 @@ void DescribeDomainLogsResult::parse(const std::string &payload)
 	for (auto valueDomainLogsDomainLog : allDomainLogsNode)
 	{
 		DomainLog domainLogsObject;
-		if(!valueDomainLogsDomainLog["ActionTime"].isNull())
-			domainLogsObject.actionTime = valueDomainLogsDomainLog["ActionTime"].asString();
-		if(!valueDomainLogsDomainLog["ActionTimestamp"].isNull())
-			domainLogsObject.actionTimestamp = std::stol(valueDomainLogsDomainLog["ActionTimestamp"].asString());
-		if(!valueDomainLogsDomainLog["DomainName"].isNull())
-			domainLogsObject.domainName = valueDomainLogsDomainLog["DomainName"].asString();
 		if(!valueDomainLogsDomainLog["Action"].isNull())
 			domainLogsObject.action = valueDomainLogsDomainLog["Action"].asString();
-		if(!valueDomainLogsDomainLog["Message"].isNull())
-			domainLogsObject.message = valueDomainLogsDomainLog["Message"].asString();
-		if(!valueDomainLogsDomainLog["ClientIp"].isNull())
-			domainLogsObject.clientIp = valueDomainLogsDomainLog["ClientIp"].asString();
+		if(!valueDomainLogsDomainLog["ActionTimestamp"].isNull())
+			domainLogsObject.actionTimestamp = std::stol(valueDomainLogsDomainLog["ActionTimestamp"].asString());
 		if(!valueDomainLogsDomainLog["ZoneId"].isNull())
 			domainLogsObject.zoneId = valueDomainLogsDomainLog["ZoneId"].asString();
+		if(!valueDomainLogsDomainLog["ClientIp"].isNull())
+			domainLogsObject.clientIp = valueDomainLogsDomainLog["ClientIp"].asString();
+		if(!valueDomainLogsDomainLog["Message"].isNull())
+			domainLogsObject.message = valueDomainLogsDomainLog["Message"].asString();
+		if(!valueDomainLogsDomainLog["ActionTime"].isNull())
+			domainLogsObject.actionTime = valueDomainLogsDomainLog["ActionTime"].asString();
+		if(!valueDomainLogsDomainLog["DomainName"].isNull())
+			domainLogsObject.domainName = valueDomainLogsDomainLog["DomainName"].asString();
 		domainLogs_.push_back(domainLogsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
 
 }
 

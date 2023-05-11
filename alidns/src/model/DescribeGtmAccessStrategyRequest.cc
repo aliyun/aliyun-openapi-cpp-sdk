@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Alidns::Model::DescribeGtmAccessStrategyRequest;
 
-DescribeGtmAccessStrategyRequest::DescribeGtmAccessStrategyRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "DescribeGtmAccessStrategy")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeGtmAccessStrategyRequest::DescribeGtmAccessStrategyRequest()
+    : RpcServiceRequest("alidns", "2015-01-09", "DescribeGtmAccessStrategy") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeGtmAccessStrategyRequest::~DescribeGtmAccessStrategyRequest()
-{}
+DescribeGtmAccessStrategyRequest::~DescribeGtmAccessStrategyRequest() {}
 
-std::string DescribeGtmAccessStrategyRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string DescribeGtmAccessStrategyRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void DescribeGtmAccessStrategyRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void DescribeGtmAccessStrategyRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string DescribeGtmAccessStrategyRequest::getStrategyId()const
-{
-	return strategyId_;
+std::string DescribeGtmAccessStrategyRequest::getStrategyId() const {
+  return strategyId_;
 }
 
-void DescribeGtmAccessStrategyRequest::setStrategyId(const std::string& strategyId)
-{
-	strategyId_ = strategyId;
-	setParameter("StrategyId", strategyId);
+void DescribeGtmAccessStrategyRequest::setStrategyId(const std::string &strategyId) {
+  strategyId_ = strategyId;
+  setParameter(std::string("StrategyId"), strategyId);
 }
 
-std::string DescribeGtmAccessStrategyRequest::getLang()const
-{
-	return lang_;
+std::string DescribeGtmAccessStrategyRequest::getLang() const {
+  return lang_;
 }
 
-void DescribeGtmAccessStrategyRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DescribeGtmAccessStrategyRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

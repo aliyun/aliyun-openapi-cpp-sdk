@@ -154,6 +154,8 @@
 #include "model/DescribeDomainRecordInfoResult.h"
 #include "model/DescribeDomainRecordsRequest.h"
 #include "model/DescribeDomainRecordsResult.h"
+#include "model/DescribeDomainResolveStatisticsSummaryRequest.h"
+#include "model/DescribeDomainResolveStatisticsSummaryResult.h"
 #include "model/DescribeDomainStatisticsRequest.h"
 #include "model/DescribeDomainStatisticsResult.h"
 #include "model/DescribeDomainStatisticsSummaryRequest.h"
@@ -194,6 +196,14 @@
 #include "model/DescribeGtmRecoveryPlansResult.h"
 #include "model/DescribeInstanceDomainsRequest.h"
 #include "model/DescribeInstanceDomainsResult.h"
+#include "model/DescribeIspFlushCacheInstancesRequest.h"
+#include "model/DescribeIspFlushCacheInstancesResult.h"
+#include "model/DescribeIspFlushCacheRemainQuotaRequest.h"
+#include "model/DescribeIspFlushCacheRemainQuotaResult.h"
+#include "model/DescribeIspFlushCacheTaskRequest.h"
+#include "model/DescribeIspFlushCacheTaskResult.h"
+#include "model/DescribeIspFlushCacheTasksRequest.h"
+#include "model/DescribeIspFlushCacheTasksResult.h"
 #include "model/DescribePdnsAccountSummaryRequest.h"
 #include "model/DescribePdnsAccountSummaryResult.h"
 #include "model/DescribePdnsAppKeyRequest.h"
@@ -218,6 +228,8 @@
 #include "model/DescribePdnsUserInfoResult.h"
 #include "model/DescribeRecordLogsRequest.h"
 #include "model/DescribeRecordLogsResult.h"
+#include "model/DescribeRecordResolveStatisticsSummaryRequest.h"
+#include "model/DescribeRecordResolveStatisticsSummaryResult.h"
 #include "model/DescribeRecordStatisticsRequest.h"
 #include "model/DescribeRecordStatisticsResult.h"
 #include "model/DescribeRecordStatisticsSummaryRequest.h"
@@ -274,6 +286,8 @@
 #include "model/SetGtmAccessModeResult.h"
 #include "model/SetGtmMonitorStatusRequest.h"
 #include "model/SetGtmMonitorStatusResult.h"
+#include "model/SubmitIspFlushCacheTaskRequest.h"
+#include "model/SubmitIspFlushCacheTaskResult.h"
 #include "model/SwitchDnsGtmInstanceStrategyModeRequest.h"
 #include "model/SwitchDnsGtmInstanceStrategyModeResult.h"
 #include "model/TagResourcesRequest.h"
@@ -320,6 +334,8 @@
 #include "model/UpdateGtmMonitorResult.h"
 #include "model/UpdateGtmRecoveryPlanRequest.h"
 #include "model/UpdateGtmRecoveryPlanResult.h"
+#include "model/UpdateIspFlushCacheInstanceConfigRequest.h"
+#include "model/UpdateIspFlushCacheInstanceConfigResult.h"
 #include "model/ValidateDnsGtmCnameRrCanUseRequest.h"
 #include "model/ValidateDnsGtmCnameRrCanUseResult.h"
 #include "model/ValidatePdnsUdpIpSegmentRequest.h"
@@ -531,6 +547,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDomainRecordsResult> DescribeDomainRecordsOutcome;
 			typedef std::future<DescribeDomainRecordsOutcome> DescribeDomainRecordsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDomainRecordsRequest&, const DescribeDomainRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDomainResolveStatisticsSummaryResult> DescribeDomainResolveStatisticsSummaryOutcome;
+			typedef std::future<DescribeDomainResolveStatisticsSummaryOutcome> DescribeDomainResolveStatisticsSummaryOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeDomainResolveStatisticsSummaryRequest&, const DescribeDomainResolveStatisticsSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainResolveStatisticsSummaryAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainStatisticsResult> DescribeDomainStatisticsOutcome;
 			typedef std::future<DescribeDomainStatisticsOutcome> DescribeDomainStatisticsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeDomainStatisticsRequest&, const DescribeDomainStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainStatisticsAsyncHandler;
@@ -591,6 +610,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceDomainsResult> DescribeInstanceDomainsOutcome;
 			typedef std::future<DescribeInstanceDomainsOutcome> DescribeInstanceDomainsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeInstanceDomainsRequest&, const DescribeInstanceDomainsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDomainsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIspFlushCacheInstancesResult> DescribeIspFlushCacheInstancesOutcome;
+			typedef std::future<DescribeIspFlushCacheInstancesOutcome> DescribeIspFlushCacheInstancesOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeIspFlushCacheInstancesRequest&, const DescribeIspFlushCacheInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIspFlushCacheInstancesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIspFlushCacheRemainQuotaResult> DescribeIspFlushCacheRemainQuotaOutcome;
+			typedef std::future<DescribeIspFlushCacheRemainQuotaOutcome> DescribeIspFlushCacheRemainQuotaOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeIspFlushCacheRemainQuotaRequest&, const DescribeIspFlushCacheRemainQuotaOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIspFlushCacheRemainQuotaAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIspFlushCacheTaskResult> DescribeIspFlushCacheTaskOutcome;
+			typedef std::future<DescribeIspFlushCacheTaskOutcome> DescribeIspFlushCacheTaskOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeIspFlushCacheTaskRequest&, const DescribeIspFlushCacheTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIspFlushCacheTaskAsyncHandler;
+			typedef Outcome<Error, Model::DescribeIspFlushCacheTasksResult> DescribeIspFlushCacheTasksOutcome;
+			typedef std::future<DescribeIspFlushCacheTasksOutcome> DescribeIspFlushCacheTasksOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeIspFlushCacheTasksRequest&, const DescribeIspFlushCacheTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIspFlushCacheTasksAsyncHandler;
 			typedef Outcome<Error, Model::DescribePdnsAccountSummaryResult> DescribePdnsAccountSummaryOutcome;
 			typedef std::future<DescribePdnsAccountSummaryOutcome> DescribePdnsAccountSummaryOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribePdnsAccountSummaryRequest&, const DescribePdnsAccountSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribePdnsAccountSummaryAsyncHandler;
@@ -627,6 +658,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeRecordLogsResult> DescribeRecordLogsOutcome;
 			typedef std::future<DescribeRecordLogsOutcome> DescribeRecordLogsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeRecordLogsRequest&, const DescribeRecordLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordLogsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeRecordResolveStatisticsSummaryResult> DescribeRecordResolveStatisticsSummaryOutcome;
+			typedef std::future<DescribeRecordResolveStatisticsSummaryOutcome> DescribeRecordResolveStatisticsSummaryOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::DescribeRecordResolveStatisticsSummaryRequest&, const DescribeRecordResolveStatisticsSummaryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordResolveStatisticsSummaryAsyncHandler;
 			typedef Outcome<Error, Model::DescribeRecordStatisticsResult> DescribeRecordStatisticsOutcome;
 			typedef std::future<DescribeRecordStatisticsOutcome> DescribeRecordStatisticsOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::DescribeRecordStatisticsRequest&, const DescribeRecordStatisticsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordStatisticsAsyncHandler;
@@ -711,6 +745,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetGtmMonitorStatusResult> SetGtmMonitorStatusOutcome;
 			typedef std::future<SetGtmMonitorStatusOutcome> SetGtmMonitorStatusOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::SetGtmMonitorStatusRequest&, const SetGtmMonitorStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetGtmMonitorStatusAsyncHandler;
+			typedef Outcome<Error, Model::SubmitIspFlushCacheTaskResult> SubmitIspFlushCacheTaskOutcome;
+			typedef std::future<SubmitIspFlushCacheTaskOutcome> SubmitIspFlushCacheTaskOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::SubmitIspFlushCacheTaskRequest&, const SubmitIspFlushCacheTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitIspFlushCacheTaskAsyncHandler;
 			typedef Outcome<Error, Model::SwitchDnsGtmInstanceStrategyModeResult> SwitchDnsGtmInstanceStrategyModeOutcome;
 			typedef std::future<SwitchDnsGtmInstanceStrategyModeOutcome> SwitchDnsGtmInstanceStrategyModeOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::SwitchDnsGtmInstanceStrategyModeRequest&, const SwitchDnsGtmInstanceStrategyModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDnsGtmInstanceStrategyModeAsyncHandler;
@@ -780,6 +817,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateGtmRecoveryPlanResult> UpdateGtmRecoveryPlanOutcome;
 			typedef std::future<UpdateGtmRecoveryPlanOutcome> UpdateGtmRecoveryPlanOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::UpdateGtmRecoveryPlanRequest&, const UpdateGtmRecoveryPlanOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateGtmRecoveryPlanAsyncHandler;
+			typedef Outcome<Error, Model::UpdateIspFlushCacheInstanceConfigResult> UpdateIspFlushCacheInstanceConfigOutcome;
+			typedef std::future<UpdateIspFlushCacheInstanceConfigOutcome> UpdateIspFlushCacheInstanceConfigOutcomeCallable;
+			typedef std::function<void(const AlidnsClient*, const Model::UpdateIspFlushCacheInstanceConfigRequest&, const UpdateIspFlushCacheInstanceConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateIspFlushCacheInstanceConfigAsyncHandler;
 			typedef Outcome<Error, Model::ValidateDnsGtmCnameRrCanUseResult> ValidateDnsGtmCnameRrCanUseOutcome;
 			typedef std::future<ValidateDnsGtmCnameRrCanUseOutcome> ValidateDnsGtmCnameRrCanUseOutcomeCallable;
 			typedef std::function<void(const AlidnsClient*, const Model::ValidateDnsGtmCnameRrCanUseRequest&, const ValidateDnsGtmCnameRrCanUseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ValidateDnsGtmCnameRrCanUseAsyncHandler;
@@ -989,6 +1029,9 @@ namespace AlibabaCloud
 			DescribeDomainRecordsOutcome describeDomainRecords(const Model::DescribeDomainRecordsRequest &request)const;
 			void describeDomainRecordsAsync(const Model::DescribeDomainRecordsRequest& request, const DescribeDomainRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainRecordsOutcomeCallable describeDomainRecordsCallable(const Model::DescribeDomainRecordsRequest& request) const;
+			DescribeDomainResolveStatisticsSummaryOutcome describeDomainResolveStatisticsSummary(const Model::DescribeDomainResolveStatisticsSummaryRequest &request)const;
+			void describeDomainResolveStatisticsSummaryAsync(const Model::DescribeDomainResolveStatisticsSummaryRequest& request, const DescribeDomainResolveStatisticsSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDomainResolveStatisticsSummaryOutcomeCallable describeDomainResolveStatisticsSummaryCallable(const Model::DescribeDomainResolveStatisticsSummaryRequest& request) const;
 			DescribeDomainStatisticsOutcome describeDomainStatistics(const Model::DescribeDomainStatisticsRequest &request)const;
 			void describeDomainStatisticsAsync(const Model::DescribeDomainStatisticsRequest& request, const DescribeDomainStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainStatisticsOutcomeCallable describeDomainStatisticsCallable(const Model::DescribeDomainStatisticsRequest& request) const;
@@ -1049,6 +1092,18 @@ namespace AlibabaCloud
 			DescribeInstanceDomainsOutcome describeInstanceDomains(const Model::DescribeInstanceDomainsRequest &request)const;
 			void describeInstanceDomainsAsync(const Model::DescribeInstanceDomainsRequest& request, const DescribeInstanceDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceDomainsOutcomeCallable describeInstanceDomainsCallable(const Model::DescribeInstanceDomainsRequest& request) const;
+			DescribeIspFlushCacheInstancesOutcome describeIspFlushCacheInstances(const Model::DescribeIspFlushCacheInstancesRequest &request)const;
+			void describeIspFlushCacheInstancesAsync(const Model::DescribeIspFlushCacheInstancesRequest& request, const DescribeIspFlushCacheInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIspFlushCacheInstancesOutcomeCallable describeIspFlushCacheInstancesCallable(const Model::DescribeIspFlushCacheInstancesRequest& request) const;
+			DescribeIspFlushCacheRemainQuotaOutcome describeIspFlushCacheRemainQuota(const Model::DescribeIspFlushCacheRemainQuotaRequest &request)const;
+			void describeIspFlushCacheRemainQuotaAsync(const Model::DescribeIspFlushCacheRemainQuotaRequest& request, const DescribeIspFlushCacheRemainQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIspFlushCacheRemainQuotaOutcomeCallable describeIspFlushCacheRemainQuotaCallable(const Model::DescribeIspFlushCacheRemainQuotaRequest& request) const;
+			DescribeIspFlushCacheTaskOutcome describeIspFlushCacheTask(const Model::DescribeIspFlushCacheTaskRequest &request)const;
+			void describeIspFlushCacheTaskAsync(const Model::DescribeIspFlushCacheTaskRequest& request, const DescribeIspFlushCacheTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIspFlushCacheTaskOutcomeCallable describeIspFlushCacheTaskCallable(const Model::DescribeIspFlushCacheTaskRequest& request) const;
+			DescribeIspFlushCacheTasksOutcome describeIspFlushCacheTasks(const Model::DescribeIspFlushCacheTasksRequest &request)const;
+			void describeIspFlushCacheTasksAsync(const Model::DescribeIspFlushCacheTasksRequest& request, const DescribeIspFlushCacheTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeIspFlushCacheTasksOutcomeCallable describeIspFlushCacheTasksCallable(const Model::DescribeIspFlushCacheTasksRequest& request) const;
 			DescribePdnsAccountSummaryOutcome describePdnsAccountSummary(const Model::DescribePdnsAccountSummaryRequest &request)const;
 			void describePdnsAccountSummaryAsync(const Model::DescribePdnsAccountSummaryRequest& request, const DescribePdnsAccountSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribePdnsAccountSummaryOutcomeCallable describePdnsAccountSummaryCallable(const Model::DescribePdnsAccountSummaryRequest& request) const;
@@ -1085,6 +1140,9 @@ namespace AlibabaCloud
 			DescribeRecordLogsOutcome describeRecordLogs(const Model::DescribeRecordLogsRequest &request)const;
 			void describeRecordLogsAsync(const Model::DescribeRecordLogsRequest& request, const DescribeRecordLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRecordLogsOutcomeCallable describeRecordLogsCallable(const Model::DescribeRecordLogsRequest& request) const;
+			DescribeRecordResolveStatisticsSummaryOutcome describeRecordResolveStatisticsSummary(const Model::DescribeRecordResolveStatisticsSummaryRequest &request)const;
+			void describeRecordResolveStatisticsSummaryAsync(const Model::DescribeRecordResolveStatisticsSummaryRequest& request, const DescribeRecordResolveStatisticsSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeRecordResolveStatisticsSummaryOutcomeCallable describeRecordResolveStatisticsSummaryCallable(const Model::DescribeRecordResolveStatisticsSummaryRequest& request) const;
 			DescribeRecordStatisticsOutcome describeRecordStatistics(const Model::DescribeRecordStatisticsRequest &request)const;
 			void describeRecordStatisticsAsync(const Model::DescribeRecordStatisticsRequest& request, const DescribeRecordStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeRecordStatisticsOutcomeCallable describeRecordStatisticsCallable(const Model::DescribeRecordStatisticsRequest& request) const;
@@ -1169,6 +1227,9 @@ namespace AlibabaCloud
 			SetGtmMonitorStatusOutcome setGtmMonitorStatus(const Model::SetGtmMonitorStatusRequest &request)const;
 			void setGtmMonitorStatusAsync(const Model::SetGtmMonitorStatusRequest& request, const SetGtmMonitorStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetGtmMonitorStatusOutcomeCallable setGtmMonitorStatusCallable(const Model::SetGtmMonitorStatusRequest& request) const;
+			SubmitIspFlushCacheTaskOutcome submitIspFlushCacheTask(const Model::SubmitIspFlushCacheTaskRequest &request)const;
+			void submitIspFlushCacheTaskAsync(const Model::SubmitIspFlushCacheTaskRequest& request, const SubmitIspFlushCacheTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitIspFlushCacheTaskOutcomeCallable submitIspFlushCacheTaskCallable(const Model::SubmitIspFlushCacheTaskRequest& request) const;
 			SwitchDnsGtmInstanceStrategyModeOutcome switchDnsGtmInstanceStrategyMode(const Model::SwitchDnsGtmInstanceStrategyModeRequest &request)const;
 			void switchDnsGtmInstanceStrategyModeAsync(const Model::SwitchDnsGtmInstanceStrategyModeRequest& request, const SwitchDnsGtmInstanceStrategyModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SwitchDnsGtmInstanceStrategyModeOutcomeCallable switchDnsGtmInstanceStrategyModeCallable(const Model::SwitchDnsGtmInstanceStrategyModeRequest& request) const;
@@ -1238,6 +1299,9 @@ namespace AlibabaCloud
 			UpdateGtmRecoveryPlanOutcome updateGtmRecoveryPlan(const Model::UpdateGtmRecoveryPlanRequest &request)const;
 			void updateGtmRecoveryPlanAsync(const Model::UpdateGtmRecoveryPlanRequest& request, const UpdateGtmRecoveryPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateGtmRecoveryPlanOutcomeCallable updateGtmRecoveryPlanCallable(const Model::UpdateGtmRecoveryPlanRequest& request) const;
+			UpdateIspFlushCacheInstanceConfigOutcome updateIspFlushCacheInstanceConfig(const Model::UpdateIspFlushCacheInstanceConfigRequest &request)const;
+			void updateIspFlushCacheInstanceConfigAsync(const Model::UpdateIspFlushCacheInstanceConfigRequest& request, const UpdateIspFlushCacheInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateIspFlushCacheInstanceConfigOutcomeCallable updateIspFlushCacheInstanceConfigCallable(const Model::UpdateIspFlushCacheInstanceConfigRequest& request) const;
 			ValidateDnsGtmCnameRrCanUseOutcome validateDnsGtmCnameRrCanUse(const Model::ValidateDnsGtmCnameRrCanUseRequest &request)const;
 			void validateDnsGtmCnameRrCanUseAsync(const Model::ValidateDnsGtmCnameRrCanUseRequest& request, const ValidateDnsGtmCnameRrCanUseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ValidateDnsGtmCnameRrCanUseOutcomeCallable validateDnsGtmCnameRrCanUseCallable(const Model::ValidateDnsGtmCnameRrCanUseRequest& request) const;

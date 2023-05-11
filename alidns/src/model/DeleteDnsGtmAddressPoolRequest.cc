@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Alidns::Model::DeleteDnsGtmAddressPoolRequest;
 
-DeleteDnsGtmAddressPoolRequest::DeleteDnsGtmAddressPoolRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "DeleteDnsGtmAddressPool")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteDnsGtmAddressPoolRequest::DeleteDnsGtmAddressPoolRequest()
+    : RpcServiceRequest("alidns", "2015-01-09", "DeleteDnsGtmAddressPool") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteDnsGtmAddressPoolRequest::~DeleteDnsGtmAddressPoolRequest()
-{}
+DeleteDnsGtmAddressPoolRequest::~DeleteDnsGtmAddressPoolRequest() {}
 
-std::string DeleteDnsGtmAddressPoolRequest::getAddrPoolId()const
-{
-	return addrPoolId_;
+std::string DeleteDnsGtmAddressPoolRequest::getAddrPoolId() const {
+  return addrPoolId_;
 }
 
-void DeleteDnsGtmAddressPoolRequest::setAddrPoolId(const std::string& addrPoolId)
-{
-	addrPoolId_ = addrPoolId;
-	setParameter("AddrPoolId", addrPoolId);
+void DeleteDnsGtmAddressPoolRequest::setAddrPoolId(const std::string &addrPoolId) {
+  addrPoolId_ = addrPoolId;
+  setParameter(std::string("AddrPoolId"), addrPoolId);
 }
 
-std::string DeleteDnsGtmAddressPoolRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string DeleteDnsGtmAddressPoolRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void DeleteDnsGtmAddressPoolRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void DeleteDnsGtmAddressPoolRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string DeleteDnsGtmAddressPoolRequest::getLang()const
-{
-	return lang_;
+std::string DeleteDnsGtmAddressPoolRequest::getLang() const {
+  return lang_;
 }
 
-void DeleteDnsGtmAddressPoolRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DeleteDnsGtmAddressPoolRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

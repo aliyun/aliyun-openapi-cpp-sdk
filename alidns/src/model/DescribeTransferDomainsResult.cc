@@ -43,26 +43,26 @@ void DescribeTransferDomainsResult::parse(const std::string &payload)
 	for (auto valueDomainTransfersDomainTransfer : allDomainTransfersNode)
 	{
 		DomainTransfer domainTransfersObject;
-		if(!valueDomainTransfersDomainTransfer["DomainName"].isNull())
-			domainTransfersObject.domainName = valueDomainTransfersDomainTransfer["DomainName"].asString();
-		if(!valueDomainTransfersDomainTransfer["CreateTime"].isNull())
-			domainTransfersObject.createTime = valueDomainTransfersDomainTransfer["CreateTime"].asString();
-		if(!valueDomainTransfersDomainTransfer["CreateTimestamp"].isNull())
-			domainTransfersObject.createTimestamp = std::stol(valueDomainTransfersDomainTransfer["CreateTimestamp"].asString());
 		if(!valueDomainTransfersDomainTransfer["FromUserId"].isNull())
 			domainTransfersObject.fromUserId = std::stol(valueDomainTransfersDomainTransfer["FromUserId"].asString());
+		if(!valueDomainTransfersDomainTransfer["CreateTime"].isNull())
+			domainTransfersObject.createTime = valueDomainTransfersDomainTransfer["CreateTime"].asString();
 		if(!valueDomainTransfersDomainTransfer["TargetUserId"].isNull())
 			domainTransfersObject.targetUserId = std::stol(valueDomainTransfersDomainTransfer["TargetUserId"].asString());
+		if(!valueDomainTransfersDomainTransfer["DomainName"].isNull())
+			domainTransfersObject.domainName = valueDomainTransfersDomainTransfer["DomainName"].asString();
 		if(!valueDomainTransfersDomainTransfer["Id"].isNull())
 			domainTransfersObject.id = std::stol(valueDomainTransfersDomainTransfer["Id"].asString());
+		if(!valueDomainTransfersDomainTransfer["CreateTimestamp"].isNull())
+			domainTransfersObject.createTimestamp = std::stol(valueDomainTransfersDomainTransfer["CreateTimestamp"].asString());
 		domainTransfers_.push_back(domainTransfersObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
 
 }
 

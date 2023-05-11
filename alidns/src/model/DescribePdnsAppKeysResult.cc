@@ -43,12 +43,12 @@ void DescribePdnsAppKeysResult::parse(const std::string &payload)
 	for (auto valueAppKeysAppKey : allAppKeysNode)
 	{
 		AppKey appKeysObject;
-		if(!valueAppKeysAppKey["State"].isNull())
-			appKeysObject.state = valueAppKeysAppKey["State"].asString();
 		if(!valueAppKeysAppKey["AppKeyId"].isNull())
 			appKeysObject.appKeyId = valueAppKeysAppKey["AppKeyId"].asString();
 		if(!valueAppKeysAppKey["CreateDate"].isNull())
 			appKeysObject.createDate = valueAppKeysAppKey["CreateDate"].asString();
+		if(!valueAppKeysAppKey["State"].isNull())
+			appKeysObject.state = valueAppKeysAppKey["State"].asString();
 		appKeys_.push_back(appKeysObject);
 	}
 

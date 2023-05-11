@@ -39,16 +39,18 @@ void DescribeDomainNsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDnsServers = value["DnsServers"]["DnsServer"];
-	for (const auto &item : allDnsServers)
-		dnsServers_.push_back(item.asString());
 	auto allExpectDnsServers = value["ExpectDnsServers"]["ExpectDnsServer"];
 	for (const auto &item : allExpectDnsServers)
 		expectDnsServers_.push_back(item.asString());
+	auto allDnsServers = value["DnsServers"]["DnsServer"];
+	for (const auto &item : allDnsServers)
+		dnsServers_.push_back(item.asString());
 	if(!value["AllAliDns"].isNull())
 		allAliDns_ = value["AllAliDns"].asString() == "true";
 	if(!value["IncludeAliDns"].isNull())
 		includeAliDns_ = value["IncludeAliDns"].asString() == "true";
+	if(!value["DetectFailedReasonCode"].isNull())
+		detectFailedReasonCode_ = value["DetectFailedReasonCode"].asString();
 
 }
 
@@ -70,5 +72,10 @@ std::vector<std::string> DescribeDomainNsResult::getDnsServers()const
 bool DescribeDomainNsResult::getIncludeAliDns()const
 {
 	return includeAliDns_;
+}
+
+std::string DescribeDomainNsResult::getDetectFailedReasonCode()const
+{
+	return detectFailedReasonCode_;
 }
 

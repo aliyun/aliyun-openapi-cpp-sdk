@@ -44,15 +44,15 @@ namespace AlibabaCloud
 				DescribeDomainInfoResult();
 				explicit DescribeDomainInfoResult(const std::string &payload);
 				~DescribeDomainInfoResult();
-				std::string getGroupName()const;
 				std::string getRecordLineTreeJson()const;
+				std::string getGroupName()const;
 				bool getInBlackHole()const;
 				bool getRegionLines()const;
-				bool getAliDomain()const;
 				bool getSlaveDns()const;
+				bool getAliDomain()const;
 				std::string getResourceGroupId()const;
-				std::string getDomainName()const;
 				std::string getInstanceId()const;
+				std::string getDomainName()const;
 				std::string getCreateTime()const;
 				std::string getPunyCode()const;
 				std::vector<std::string> getDnsServers()const;
@@ -62,23 +62,23 @@ namespace AlibabaCloud
 				std::string getVersionCode()const;
 				std::string getDomainId()const;
 				std::vector<std::string> getAvailableTtls()const;
-				std::string getVersionName()const;
 				long getMinTtl()const;
 				bool getInClean()const;
+				std::string getVersionName()const;
 				std::string getLineType()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string groupName_;
 				std::string recordLineTreeJson_;
+				std::string groupName_;
 				bool inBlackHole_;
 				bool regionLines_;
-				bool aliDomain_;
 				bool slaveDns_;
+				bool aliDomain_;
 				std::string resourceGroupId_;
-				std::string domainName_;
 				std::string instanceId_;
+				std::string domainName_;
 				std::string createTime_;
 				std::string punyCode_;
 				std::vector<std::string> dnsServers_;
@@ -88,9 +88,9 @@ namespace AlibabaCloud
 				std::string versionCode_;
 				std::string domainId_;
 				std::vector<std::string> availableTtls_;
-				std::string versionName_;
 				long minTtl_;
 				bool inClean_;
+				std::string versionName_;
 				std::string lineType_;
 
 			};

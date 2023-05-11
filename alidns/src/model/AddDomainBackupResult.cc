@@ -39,10 +39,10 @@ void AddDomainBackupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
 	if(!value["PeriodType"].isNull())
 		periodType_ = value["PeriodType"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 
 }
 

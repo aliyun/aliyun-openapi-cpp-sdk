@@ -43,18 +43,18 @@ void DescribePdnsThreatStatisticResult::parse(const std::string &payload)
 	for (auto valueDataStatisticItem : allDataNode)
 	{
 		StatisticItem dataObject;
-		if(!valueDataStatisticItem["UdpTotalCount"].isNull())
-			dataObject.udpTotalCount = std::stol(valueDataStatisticItem["UdpTotalCount"].asString());
 		if(!valueDataStatisticItem["TotalCount"].isNull())
 			dataObject.totalCount = std::stol(valueDataStatisticItem["TotalCount"].asString());
-		if(!valueDataStatisticItem["ThreatLevel"].isNull())
-			dataObject.threatLevel = valueDataStatisticItem["ThreatLevel"].asString();
-		if(!valueDataStatisticItem["ThreatType"].isNull())
-			dataObject.threatType = valueDataStatisticItem["ThreatType"].asString();
 		if(!valueDataStatisticItem["Timestamp"].isNull())
 			dataObject.timestamp = std::stol(valueDataStatisticItem["Timestamp"].asString());
+		if(!valueDataStatisticItem["ThreatType"].isNull())
+			dataObject.threatType = valueDataStatisticItem["ThreatType"].asString();
+		if(!valueDataStatisticItem["ThreatLevel"].isNull())
+			dataObject.threatLevel = valueDataStatisticItem["ThreatLevel"].asString();
 		if(!valueDataStatisticItem["DohTotalCount"].isNull())
 			dataObject.dohTotalCount = std::stol(valueDataStatisticItem["DohTotalCount"].asString());
+		if(!valueDataStatisticItem["UdpTotalCount"].isNull())
+			dataObject.udpTotalCount = std::stol(valueDataStatisticItem["UdpTotalCount"].asString());
 		data_.push_back(dataObject);
 	}
 

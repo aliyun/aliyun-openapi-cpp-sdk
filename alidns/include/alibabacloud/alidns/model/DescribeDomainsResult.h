@@ -42,8 +42,8 @@ namespace AlibabaCloud
 					std::string groupName;
 					bool aliDomain;
 					std::string resourceGroupId;
-					std::string domainName;
 					std::string instanceId;
+					std::string domainName;
 					std::string createTime;
 					std::string punyCode;
 					std::vector<std::string> dnsServers;
@@ -53,8 +53,8 @@ namespace AlibabaCloud
 					std::string versionCode;
 					std::string domainId;
 					std::string versionName;
-					std::string registrantEmail;
 					std::string instanceEndTime;
+					std::string registrantEmail;
 					bool instanceExpired;
 					long recordCount;
 					long createTimestamp;

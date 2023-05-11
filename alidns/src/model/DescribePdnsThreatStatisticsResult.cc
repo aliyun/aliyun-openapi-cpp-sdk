@@ -43,28 +43,28 @@ void DescribePdnsThreatStatisticsResult::parse(const std::string &payload)
 	for (auto valueDataStatisticItem : allDataNode)
 	{
 		StatisticItem dataObject;
-		if(!valueDataStatisticItem["SubDomain"].isNull())
-			dataObject.subDomain = valueDataStatisticItem["SubDomain"].asString();
-		if(!valueDataStatisticItem["UdpTotalCount"].isNull())
-			dataObject.udpTotalCount = std::stol(valueDataStatisticItem["UdpTotalCount"].asString());
-		if(!valueDataStatisticItem["TotalCount"].isNull())
-			dataObject.totalCount = std::stol(valueDataStatisticItem["TotalCount"].asString());
-		if(!valueDataStatisticItem["SourceIp"].isNull())
-			dataObject.sourceIp = valueDataStatisticItem["SourceIp"].asString();
-		if(!valueDataStatisticItem["ThreatLevel"].isNull())
-			dataObject.threatLevel = valueDataStatisticItem["ThreatLevel"].asString();
 		if(!valueDataStatisticItem["DomainName"].isNull())
 			dataObject.domainName = valueDataStatisticItem["DomainName"].asString();
-		if(!valueDataStatisticItem["ThreatType"].isNull())
-			dataObject.threatType = valueDataStatisticItem["ThreatType"].asString();
-		if(!valueDataStatisticItem["MaxThreatLevel"].isNull())
-			dataObject.maxThreatLevel = valueDataStatisticItem["MaxThreatLevel"].asString();
+		if(!valueDataStatisticItem["SubDomain"].isNull())
+			dataObject.subDomain = valueDataStatisticItem["SubDomain"].asString();
 		if(!valueDataStatisticItem["LatestThreatTime"].isNull())
 			dataObject.latestThreatTime = std::stol(valueDataStatisticItem["LatestThreatTime"].asString());
+		if(!valueDataStatisticItem["TotalCount"].isNull())
+			dataObject.totalCount = std::stol(valueDataStatisticItem["TotalCount"].asString());
 		if(!valueDataStatisticItem["DohTotalCount"].isNull())
 			dataObject.dohTotalCount = std::stol(valueDataStatisticItem["DohTotalCount"].asString());
+		if(!valueDataStatisticItem["UdpTotalCount"].isNull())
+			dataObject.udpTotalCount = std::stol(valueDataStatisticItem["UdpTotalCount"].asString());
+		if(!valueDataStatisticItem["MaxThreatLevel"].isNull())
+			dataObject.maxThreatLevel = valueDataStatisticItem["MaxThreatLevel"].asString();
 		if(!valueDataStatisticItem["DomainCount"].isNull())
 			dataObject.domainCount = std::stol(valueDataStatisticItem["DomainCount"].asString());
+		if(!valueDataStatisticItem["SourceIp"].isNull())
+			dataObject.sourceIp = valueDataStatisticItem["SourceIp"].asString();
+		if(!valueDataStatisticItem["ThreatType"].isNull())
+			dataObject.threatType = valueDataStatisticItem["ThreatType"].asString();
+		if(!valueDataStatisticItem["ThreatLevel"].isNull())
+			dataObject.threatLevel = valueDataStatisticItem["ThreatLevel"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["TotalCount"].isNull())

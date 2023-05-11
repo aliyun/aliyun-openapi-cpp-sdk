@@ -40,16 +40,16 @@ namespace AlibabaCloud
 						std::string host;
 					};
 					long expireTimestamp;
-					std::string domainName;
 					std::string instanceId;
+					std::string domainName;
 					std::string createTime;
 					int cacheTtlMin;
 					std::string remark;
 					std::string versionCode;
 					std::string domainId;
 					std::string sourceEdns;
-					std::string updateTime;
 					std::string sourceProtocol;
+					std::string updateTime;
 					long updateTimestamp;
 					int cacheTtlMax;
 					std::vector<Domain::SourceDnsServer> sourceDnsServers;

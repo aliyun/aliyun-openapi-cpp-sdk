@@ -43,22 +43,22 @@ void DescribeGtmMonitorAvailableConfigResult::parse(const std::string &payload)
 	for (auto valueIspCityNodesIspCityNode : allIspCityNodesNode)
 	{
 		IspCityNode ispCityNodesObject;
-		if(!valueIspCityNodesIspCityNode["IspName"].isNull())
-			ispCityNodesObject.ispName = valueIspCityNodesIspCityNode["IspName"].asString();
+		if(!valueIspCityNodesIspCityNode["CityCode"].isNull())
+			ispCityNodesObject.cityCode = valueIspCityNodesIspCityNode["CityCode"].asString();
+		if(!valueIspCityNodesIspCityNode["Mainland"].isNull())
+			ispCityNodesObject.mainland = valueIspCityNodesIspCityNode["Mainland"].asString() == "true";
+		if(!valueIspCityNodesIspCityNode["GroupName"].isNull())
+			ispCityNodesObject.groupName = valueIspCityNodesIspCityNode["GroupName"].asString();
 		if(!valueIspCityNodesIspCityNode["IspCode"].isNull())
 			ispCityNodesObject.ispCode = valueIspCityNodesIspCityNode["IspCode"].asString();
 		if(!valueIspCityNodesIspCityNode["CityName"].isNull())
 			ispCityNodesObject.cityName = valueIspCityNodesIspCityNode["CityName"].asString();
-		if(!valueIspCityNodesIspCityNode["CityCode"].isNull())
-			ispCityNodesObject.cityCode = valueIspCityNodesIspCityNode["CityCode"].asString();
-		if(!valueIspCityNodesIspCityNode["DefaultSelected"].isNull())
-			ispCityNodesObject.defaultSelected = valueIspCityNodesIspCityNode["DefaultSelected"].asString() == "true";
-		if(!valueIspCityNodesIspCityNode["Mainland"].isNull())
-			ispCityNodesObject.mainland = valueIspCityNodesIspCityNode["Mainland"].asString() == "true";
+		if(!valueIspCityNodesIspCityNode["IspName"].isNull())
+			ispCityNodesObject.ispName = valueIspCityNodesIspCityNode["IspName"].asString();
 		if(!valueIspCityNodesIspCityNode["GroupType"].isNull())
 			ispCityNodesObject.groupType = valueIspCityNodesIspCityNode["GroupType"].asString();
-		if(!valueIspCityNodesIspCityNode["GroupName"].isNull())
-			ispCityNodesObject.groupName = valueIspCityNodesIspCityNode["GroupName"].asString();
+		if(!valueIspCityNodesIspCityNode["DefaultSelected"].isNull())
+			ispCityNodesObject.defaultSelected = valueIspCityNodesIspCityNode["DefaultSelected"].asString() == "true";
 		ispCityNodes_.push_back(ispCityNodesObject);
 	}
 

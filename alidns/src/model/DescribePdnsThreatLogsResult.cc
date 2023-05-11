@@ -43,16 +43,16 @@ void DescribePdnsThreatLogsResult::parse(const std::string &payload)
 	for (auto valueLogsLog : allLogsNode)
 	{
 		Log logsObject;
-		if(!valueLogsLog["SubDomain"].isNull())
-			logsObject.subDomain = valueLogsLog["SubDomain"].asString();
-		if(!valueLogsLog["SourceIp"].isNull())
-			logsObject.sourceIp = valueLogsLog["SourceIp"].asString();
-		if(!valueLogsLog["ThreatLevel"].isNull())
-			logsObject.threatLevel = valueLogsLog["ThreatLevel"].asString();
 		if(!valueLogsLog["ThreatTime"].isNull())
 			logsObject.threatTime = valueLogsLog["ThreatTime"].asString();
 		if(!valueLogsLog["ThreatType"].isNull())
 			logsObject.threatType = valueLogsLog["ThreatType"].asString();
+		if(!valueLogsLog["ThreatLevel"].isNull())
+			logsObject.threatLevel = valueLogsLog["ThreatLevel"].asString();
+		if(!valueLogsLog["SourceIp"].isNull())
+			logsObject.sourceIp = valueLogsLog["SourceIp"].asString();
+		if(!valueLogsLog["SubDomain"].isNull())
+			logsObject.subDomain = valueLogsLog["SubDomain"].asString();
 		logs_.push_back(logsObject);
 	}
 	if(!value["TotalCount"].isNull())

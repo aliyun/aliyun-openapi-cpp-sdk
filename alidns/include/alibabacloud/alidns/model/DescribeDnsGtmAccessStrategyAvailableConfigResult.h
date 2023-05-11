@@ -32,7 +32,19 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ALIDNS_EXPORT DescribeDnsGtmAccessStrategyAvailableConfigResult : public ServiceResult
 			{
 			public:
+				struct DomainAddrPool
+				{
+					std::string id;
+					std::string name;
+					int addrCount;
+				};
 				struct Ipv4AddrPool
+				{
+					std::string id;
+					std::string name;
+					int addrCount;
+				};
+				struct Ipv6AddrPool
 				{
 					std::string id;
 					std::string name;
@@ -46,25 +58,13 @@ namespace AlibabaCloud
 					std::string lineCode;
 					std::string lineName;
 				};
-				struct Ipv6AddrPool
-				{
-					std::string id;
-					std::string name;
-					int addrCount;
-				};
-				struct DomainAddrPool
-				{
-					std::string id;
-					std::string name;
-					int addrCount;
-				};
 
 
 				DescribeDnsGtmAccessStrategyAvailableConfigResult();
 				explicit DescribeDnsGtmAccessStrategyAvailableConfigResult(const std::string &payload);
 				~DescribeDnsGtmAccessStrategyAvailableConfigResult();
-				std::vector<Ipv4AddrPool> getIpv4AddrPools()const;
 				std::vector<DomainAddrPool> getDomainAddrPools()const;
+				std::vector<Ipv4AddrPool> getIpv4AddrPools()const;
 				std::vector<std::string> getSelectedDomainLines()const;
 				std::vector<std::string> getSelectedIpv4Lines()const;
 				std::vector<Ipv6AddrPool> getIpv6AddrPools()const;
@@ -75,8 +75,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Ipv4AddrPool> ipv4AddrPools_;
 				std::vector<DomainAddrPool> domainAddrPools_;
+				std::vector<Ipv4AddrPool> ipv4AddrPools_;
 				std::vector<std::string> selectedDomainLines_;
 				std::vector<std::string> selectedIpv4Lines_;
 				std::vector<Ipv6AddrPool> ipv6AddrPools_;

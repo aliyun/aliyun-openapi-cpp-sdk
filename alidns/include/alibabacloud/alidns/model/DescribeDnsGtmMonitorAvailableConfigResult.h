@@ -34,47 +34,47 @@ namespace AlibabaCloud
 			public:
 				struct Ipv4IspCityNode
 				{
-					std::string groupName;
 					std::string cityCode;
+					std::string groupName;
 					std::string ispName;
 					std::string groupType;
 					std::string cityName;
-					bool defaultSelected;
 					std::string ispCode;
+					bool defaultSelected;
 					std::vector<std::string> ips;
 				};
 				struct DomainIpv4IspCityNode
 				{
-					std::string groupName;
 					std::string cityCode;
+					std::string groupName;
 					std::string ispName;
 					std::string groupType;
 					std::vector<std::string> ips1;
 					std::string cityName;
-					bool defaultSelected;
 					std::string ispCode;
+					bool defaultSelected;
 				};
 				struct DomainIpv6IspCityNode
 				{
-					std::string groupName;
 					std::string cityCode;
+					std::string groupName;
 					std::string ispName;
 					std::string groupType;
 					std::vector<std::string> ips2;
 					std::string cityName;
-					bool defaultSelected;
 					std::string ispCode;
+					bool defaultSelected;
 				};
 				struct Ipv6IspCityNode
 				{
-					std::string groupName;
 					std::string cityCode;
+					std::string groupName;
 					std::string ispName;
 					std::string groupType;
 					std::vector<std::string> ips3;
 					std::string cityName;
-					bool defaultSelected;
 					std::string ispCode;
+					bool defaultSelected;
 				};
 
 

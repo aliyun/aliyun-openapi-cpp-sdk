@@ -43,24 +43,24 @@ void DescribeRecordLogsResult::parse(const std::string &payload)
 	for (auto valueRecordLogsRecordLog : allRecordLogsNode)
 	{
 		RecordLog recordLogsObject;
-		if(!valueRecordLogsRecordLog["ActionTime"].isNull())
-			recordLogsObject.actionTime = valueRecordLogsRecordLog["ActionTime"].asString();
-		if(!valueRecordLogsRecordLog["ActionTimestamp"].isNull())
-			recordLogsObject.actionTimestamp = std::stol(valueRecordLogsRecordLog["ActionTimestamp"].asString());
 		if(!valueRecordLogsRecordLog["Action"].isNull())
 			recordLogsObject.action = valueRecordLogsRecordLog["Action"].asString();
-		if(!valueRecordLogsRecordLog["Message"].isNull())
-			recordLogsObject.message = valueRecordLogsRecordLog["Message"].asString();
+		if(!valueRecordLogsRecordLog["ActionTimestamp"].isNull())
+			recordLogsObject.actionTimestamp = std::stol(valueRecordLogsRecordLog["ActionTimestamp"].asString());
 		if(!valueRecordLogsRecordLog["ClientIp"].isNull())
 			recordLogsObject.clientIp = valueRecordLogsRecordLog["ClientIp"].asString();
+		if(!valueRecordLogsRecordLog["Message"].isNull())
+			recordLogsObject.message = valueRecordLogsRecordLog["Message"].asString();
+		if(!valueRecordLogsRecordLog["ActionTime"].isNull())
+			recordLogsObject.actionTime = valueRecordLogsRecordLog["ActionTime"].asString();
 		recordLogs_.push_back(recordLogsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
 
 }
 

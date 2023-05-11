@@ -39,12 +39,12 @@ void ModifyHichinaDomainDNSResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allOriginalDnsServers = value["OriginalDnsServers"]["DnsServer"];
-	for (const auto &item : allOriginalDnsServers)
-		originalDnsServers_.push_back(item.asString());
 	auto allNewDnsServers = value["NewDnsServers"]["DnsServer"];
 	for (const auto &item : allNewDnsServers)
 		newDnsServers_.push_back(item.asString());
+	auto allOriginalDnsServers = value["OriginalDnsServers"]["DnsServer"];
+	for (const auto &item : allOriginalDnsServers)
+		originalDnsServers_.push_back(item.asString());
 
 }
 

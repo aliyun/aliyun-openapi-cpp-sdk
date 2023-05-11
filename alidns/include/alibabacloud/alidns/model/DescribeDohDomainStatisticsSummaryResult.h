@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Statistic
 				{
-					long totalCount;
 					long ipCount;
+					long totalCount;
 					std::string domainName;
 					long v4HttpCount;
 					long v6HttpCount;

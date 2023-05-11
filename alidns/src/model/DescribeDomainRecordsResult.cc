@@ -43,38 +43,38 @@ void DescribeDomainRecordsResult::parse(const std::string &payload)
 	for (auto valueDomainRecordsRecord : allDomainRecordsNode)
 	{
 		Record domainRecordsObject;
-		if(!valueDomainRecordsRecord["DomainName"].isNull())
-			domainRecordsObject.domainName = valueDomainRecordsRecord["DomainName"].asString();
-		if(!valueDomainRecordsRecord["RecordId"].isNull())
-			domainRecordsObject.recordId = valueDomainRecordsRecord["RecordId"].asString();
-		if(!valueDomainRecordsRecord["RR"].isNull())
-			domainRecordsObject.rR = valueDomainRecordsRecord["RR"].asString();
-		if(!valueDomainRecordsRecord["Type"].isNull())
-			domainRecordsObject.type = valueDomainRecordsRecord["Type"].asString();
-		if(!valueDomainRecordsRecord["Value"].isNull())
-			domainRecordsObject.value = valueDomainRecordsRecord["Value"].asString();
-		if(!valueDomainRecordsRecord["TTL"].isNull())
-			domainRecordsObject.tTL = std::stol(valueDomainRecordsRecord["TTL"].asString());
-		if(!valueDomainRecordsRecord["Priority"].isNull())
-			domainRecordsObject.priority = std::stol(valueDomainRecordsRecord["Priority"].asString());
-		if(!valueDomainRecordsRecord["Line"].isNull())
-			domainRecordsObject.line = valueDomainRecordsRecord["Line"].asString();
 		if(!valueDomainRecordsRecord["Status"].isNull())
 			domainRecordsObject.status = valueDomainRecordsRecord["Status"].asString();
-		if(!valueDomainRecordsRecord["Locked"].isNull())
-			domainRecordsObject.locked = valueDomainRecordsRecord["Locked"].asString() == "true";
-		if(!valueDomainRecordsRecord["Weight"].isNull())
-			domainRecordsObject.weight = std::stoi(valueDomainRecordsRecord["Weight"].asString());
+		if(!valueDomainRecordsRecord["Type"].isNull())
+			domainRecordsObject.type = valueDomainRecordsRecord["Type"].asString();
 		if(!valueDomainRecordsRecord["Remark"].isNull())
 			domainRecordsObject.remark = valueDomainRecordsRecord["Remark"].asString();
+		if(!valueDomainRecordsRecord["TTL"].isNull())
+			domainRecordsObject.tTL = std::stol(valueDomainRecordsRecord["TTL"].asString());
+		if(!valueDomainRecordsRecord["RecordId"].isNull())
+			domainRecordsObject.recordId = valueDomainRecordsRecord["RecordId"].asString();
+		if(!valueDomainRecordsRecord["Priority"].isNull())
+			domainRecordsObject.priority = std::stol(valueDomainRecordsRecord["Priority"].asString());
+		if(!valueDomainRecordsRecord["RR"].isNull())
+			domainRecordsObject.rR = valueDomainRecordsRecord["RR"].asString();
+		if(!valueDomainRecordsRecord["DomainName"].isNull())
+			domainRecordsObject.domainName = valueDomainRecordsRecord["DomainName"].asString();
+		if(!valueDomainRecordsRecord["Weight"].isNull())
+			domainRecordsObject.weight = std::stoi(valueDomainRecordsRecord["Weight"].asString());
+		if(!valueDomainRecordsRecord["Value"].isNull())
+			domainRecordsObject.value = valueDomainRecordsRecord["Value"].asString();
+		if(!valueDomainRecordsRecord["Line"].isNull())
+			domainRecordsObject.line = valueDomainRecordsRecord["Line"].asString();
+		if(!valueDomainRecordsRecord["Locked"].isNull())
+			domainRecordsObject.locked = valueDomainRecordsRecord["Locked"].asString() == "true";
 		domainRecords_.push_back(domainRecordsObject);
 	}
 	if(!value["TotalCount"].isNull())
 		totalCount_ = std::stol(value["TotalCount"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stol(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stol(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stol(value["PageNumber"].asString());
 
 }
 

@@ -39,16 +39,16 @@ void DescribeDnsGtmInstanceStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["AddrNotAvailableNum"].isNull())
-		addrNotAvailableNum_ = std::stoi(value["AddrNotAvailableNum"].asString());
-	if(!value["AddrPoolGroupNotAvailableNum"].isNull())
-		addrPoolGroupNotAvailableNum_ = std::stoi(value["AddrPoolGroupNotAvailableNum"].asString());
-	if(!value["SwitchToFailoverStrategyNum"].isNull())
-		switchToFailoverStrategyNum_ = std::stoi(value["SwitchToFailoverStrategyNum"].asString());
 	if(!value["StrategyNotAvailableNum"].isNull())
 		strategyNotAvailableNum_ = std::stoi(value["StrategyNotAvailableNum"].asString());
 	if(!value["AddrAvailableNum"].isNull())
 		addrAvailableNum_ = std::stoi(value["AddrAvailableNum"].asString());
+	if(!value["SwitchToFailoverStrategyNum"].isNull())
+		switchToFailoverStrategyNum_ = std::stoi(value["SwitchToFailoverStrategyNum"].asString());
+	if(!value["AddrNotAvailableNum"].isNull())
+		addrNotAvailableNum_ = std::stoi(value["AddrNotAvailableNum"].asString());
+	if(!value["AddrPoolGroupNotAvailableNum"].isNull())
+		addrPoolGroupNotAvailableNum_ = std::stoi(value["AddrPoolGroupNotAvailableNum"].asString());
 
 }
 

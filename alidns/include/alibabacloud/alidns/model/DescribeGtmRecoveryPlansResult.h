@@ -34,14 +34,14 @@ namespace AlibabaCloud
 			public:
 				struct RecoveryPlan
 				{
-					std::string lastRollbackTime;
 					std::string status;
+					std::string lastRollbackTime;
 					int faultAddrPoolNum;
 					std::string lastExecuteTime;
 					std::string createTime;
 					long lastExecuteTimestamp;
-					std::string name;
 					std::string remark;
+					std::string name;
 					long recoveryPlanId;
 					std::string updateTime;
 					long updateTimestamp;

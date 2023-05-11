@@ -153,6 +153,8 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/DescribeDomainRecordInfoResult.h
 	include/alibabacloud/alidns/model/DescribeDomainRecordsRequest.h
 	include/alibabacloud/alidns/model/DescribeDomainRecordsResult.h
+	include/alibabacloud/alidns/model/DescribeDomainResolveStatisticsSummaryRequest.h
+	include/alibabacloud/alidns/model/DescribeDomainResolveStatisticsSummaryResult.h
 	include/alibabacloud/alidns/model/DescribeDomainStatisticsRequest.h
 	include/alibabacloud/alidns/model/DescribeDomainStatisticsResult.h
 	include/alibabacloud/alidns/model/DescribeDomainStatisticsSummaryRequest.h
@@ -193,6 +195,14 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/DescribeGtmRecoveryPlansResult.h
 	include/alibabacloud/alidns/model/DescribeInstanceDomainsRequest.h
 	include/alibabacloud/alidns/model/DescribeInstanceDomainsResult.h
+	include/alibabacloud/alidns/model/DescribeIspFlushCacheInstancesRequest.h
+	include/alibabacloud/alidns/model/DescribeIspFlushCacheInstancesResult.h
+	include/alibabacloud/alidns/model/DescribeIspFlushCacheRemainQuotaRequest.h
+	include/alibabacloud/alidns/model/DescribeIspFlushCacheRemainQuotaResult.h
+	include/alibabacloud/alidns/model/DescribeIspFlushCacheTaskRequest.h
+	include/alibabacloud/alidns/model/DescribeIspFlushCacheTaskResult.h
+	include/alibabacloud/alidns/model/DescribeIspFlushCacheTasksRequest.h
+	include/alibabacloud/alidns/model/DescribeIspFlushCacheTasksResult.h
 	include/alibabacloud/alidns/model/DescribePdnsAccountSummaryRequest.h
 	include/alibabacloud/alidns/model/DescribePdnsAccountSummaryResult.h
 	include/alibabacloud/alidns/model/DescribePdnsAppKeyRequest.h
@@ -217,6 +227,8 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/DescribePdnsUserInfoResult.h
 	include/alibabacloud/alidns/model/DescribeRecordLogsRequest.h
 	include/alibabacloud/alidns/model/DescribeRecordLogsResult.h
+	include/alibabacloud/alidns/model/DescribeRecordResolveStatisticsSummaryRequest.h
+	include/alibabacloud/alidns/model/DescribeRecordResolveStatisticsSummaryResult.h
 	include/alibabacloud/alidns/model/DescribeRecordStatisticsRequest.h
 	include/alibabacloud/alidns/model/DescribeRecordStatisticsResult.h
 	include/alibabacloud/alidns/model/DescribeRecordStatisticsSummaryRequest.h
@@ -273,6 +285,8 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/SetGtmAccessModeResult.h
 	include/alibabacloud/alidns/model/SetGtmMonitorStatusRequest.h
 	include/alibabacloud/alidns/model/SetGtmMonitorStatusResult.h
+	include/alibabacloud/alidns/model/SubmitIspFlushCacheTaskRequest.h
+	include/alibabacloud/alidns/model/SubmitIspFlushCacheTaskResult.h
 	include/alibabacloud/alidns/model/SwitchDnsGtmInstanceStrategyModeRequest.h
 	include/alibabacloud/alidns/model/SwitchDnsGtmInstanceStrategyModeResult.h
 	include/alibabacloud/alidns/model/TagResourcesRequest.h
@@ -319,6 +333,8 @@ set(alidns_public_header_model
 	include/alibabacloud/alidns/model/UpdateGtmMonitorResult.h
 	include/alibabacloud/alidns/model/UpdateGtmRecoveryPlanRequest.h
 	include/alibabacloud/alidns/model/UpdateGtmRecoveryPlanResult.h
+	include/alibabacloud/alidns/model/UpdateIspFlushCacheInstanceConfigRequest.h
+	include/alibabacloud/alidns/model/UpdateIspFlushCacheInstanceConfigResult.h
 	include/alibabacloud/alidns/model/ValidateDnsGtmCnameRrCanUseRequest.h
 	include/alibabacloud/alidns/model/ValidateDnsGtmCnameRrCanUseResult.h
 	include/alibabacloud/alidns/model/ValidatePdnsUdpIpSegmentRequest.h
@@ -458,6 +474,8 @@ set(alidns_src
 	src/model/DescribeDomainRecordInfoResult.cc
 	src/model/DescribeDomainRecordsRequest.cc
 	src/model/DescribeDomainRecordsResult.cc
+	src/model/DescribeDomainResolveStatisticsSummaryRequest.cc
+	src/model/DescribeDomainResolveStatisticsSummaryResult.cc
 	src/model/DescribeDomainStatisticsRequest.cc
 	src/model/DescribeDomainStatisticsResult.cc
 	src/model/DescribeDomainStatisticsSummaryRequest.cc
@@ -498,6 +516,14 @@ set(alidns_src
 	src/model/DescribeGtmRecoveryPlansResult.cc
 	src/model/DescribeInstanceDomainsRequest.cc
 	src/model/DescribeInstanceDomainsResult.cc
+	src/model/DescribeIspFlushCacheInstancesRequest.cc
+	src/model/DescribeIspFlushCacheInstancesResult.cc
+	src/model/DescribeIspFlushCacheRemainQuotaRequest.cc
+	src/model/DescribeIspFlushCacheRemainQuotaResult.cc
+	src/model/DescribeIspFlushCacheTaskRequest.cc
+	src/model/DescribeIspFlushCacheTaskResult.cc
+	src/model/DescribeIspFlushCacheTasksRequest.cc
+	src/model/DescribeIspFlushCacheTasksResult.cc
 	src/model/DescribePdnsAccountSummaryRequest.cc
 	src/model/DescribePdnsAccountSummaryResult.cc
 	src/model/DescribePdnsAppKeyRequest.cc
@@ -522,6 +548,8 @@ set(alidns_src
 	src/model/DescribePdnsUserInfoResult.cc
 	src/model/DescribeRecordLogsRequest.cc
 	src/model/DescribeRecordLogsResult.cc
+	src/model/DescribeRecordResolveStatisticsSummaryRequest.cc
+	src/model/DescribeRecordResolveStatisticsSummaryResult.cc
 	src/model/DescribeRecordStatisticsRequest.cc
 	src/model/DescribeRecordStatisticsResult.cc
 	src/model/DescribeRecordStatisticsSummaryRequest.cc
@@ -578,6 +606,8 @@ set(alidns_src
 	src/model/SetGtmAccessModeResult.cc
 	src/model/SetGtmMonitorStatusRequest.cc
 	src/model/SetGtmMonitorStatusResult.cc
+	src/model/SubmitIspFlushCacheTaskRequest.cc
+	src/model/SubmitIspFlushCacheTaskResult.cc
 	src/model/SwitchDnsGtmInstanceStrategyModeRequest.cc
 	src/model/SwitchDnsGtmInstanceStrategyModeResult.cc
 	src/model/TagResourcesRequest.cc
@@ -624,6 +654,8 @@ set(alidns_src
 	src/model/UpdateGtmMonitorResult.cc
 	src/model/UpdateGtmRecoveryPlanRequest.cc
 	src/model/UpdateGtmRecoveryPlanResult.cc
+	src/model/UpdateIspFlushCacheInstanceConfigRequest.cc
+	src/model/UpdateIspFlushCacheInstanceConfigResult.cc
 	src/model/ValidateDnsGtmCnameRrCanUseRequest.cc
 	src/model/ValidateDnsGtmCnameRrCanUseResult.cc
 	src/model/ValidatePdnsUdpIpSegmentRequest.cc

@@ -48,8 +48,8 @@ namespace AlibabaCloud
 				std::string getCreateTime()const;
 				long getId()const;
 				std::string getIpSegments()const;
-				long getCreateTimestamp()const;
 				std::string getCode()const;
+				long getCreateTimestamp()const;
 				std::string getName()const;
 
 			protected:
@@ -60,8 +60,8 @@ namespace AlibabaCloud
 				std::string createTime_;
 				long id_;
 				std::string ipSegments_;
-				long createTimestamp_;
 				std::string code_;
+				long createTimestamp_;
 				std::string name_;
 
 			};

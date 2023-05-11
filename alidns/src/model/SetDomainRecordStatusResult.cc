@@ -39,10 +39,10 @@ void SetDomainRecordStatusResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["RecordId"].isNull())
-		recordId_ = value["RecordId"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
+	if(!value["RecordId"].isNull())
+		recordId_ = value["RecordId"].asString();
 
 }
 

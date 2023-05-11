@@ -43,40 +43,40 @@ void DescribeGtmInstanceAddressPoolsResult::parse(const std::string &payload)
 	for (auto valueAddrPoolsAddrPool : allAddrPoolsNode)
 	{
 		AddrPool addrPoolsObject;
-		if(!valueAddrPoolsAddrPool["AddrPoolId"].isNull())
-			addrPoolsObject.addrPoolId = valueAddrPoolsAddrPool["AddrPoolId"].asString();
-		if(!valueAddrPoolsAddrPool["CreateTime"].isNull())
-			addrPoolsObject.createTime = valueAddrPoolsAddrPool["CreateTime"].asString();
-		if(!valueAddrPoolsAddrPool["CreateTimestamp"].isNull())
-			addrPoolsObject.createTimestamp = std::stol(valueAddrPoolsAddrPool["CreateTimestamp"].asString());
-		if(!valueAddrPoolsAddrPool["UpdateTime"].isNull())
-			addrPoolsObject.updateTime = valueAddrPoolsAddrPool["UpdateTime"].asString();
-		if(!valueAddrPoolsAddrPool["UpdateTimestamp"].isNull())
-			addrPoolsObject.updateTimestamp = std::stol(valueAddrPoolsAddrPool["UpdateTimestamp"].asString());
-		if(!valueAddrPoolsAddrPool["AddrCount"].isNull())
-			addrPoolsObject.addrCount = std::stoi(valueAddrPoolsAddrPool["AddrCount"].asString());
-		if(!valueAddrPoolsAddrPool["MinAvailableAddrNum"].isNull())
-			addrPoolsObject.minAvailableAddrNum = std::stoi(valueAddrPoolsAddrPool["MinAvailableAddrNum"].asString());
-		if(!valueAddrPoolsAddrPool["MonitorConfigId"].isNull())
-			addrPoolsObject.monitorConfigId = valueAddrPoolsAddrPool["MonitorConfigId"].asString();
-		if(!valueAddrPoolsAddrPool["MonitorStatus"].isNull())
-			addrPoolsObject.monitorStatus = valueAddrPoolsAddrPool["MonitorStatus"].asString();
-		if(!valueAddrPoolsAddrPool["Name"].isNull())
-			addrPoolsObject.name = valueAddrPoolsAddrPool["Name"].asString();
-		if(!valueAddrPoolsAddrPool["Status"].isNull())
-			addrPoolsObject.status = valueAddrPoolsAddrPool["Status"].asString();
 		if(!valueAddrPoolsAddrPool["Type"].isNull())
 			addrPoolsObject.type = valueAddrPoolsAddrPool["Type"].asString();
+		if(!valueAddrPoolsAddrPool["Status"].isNull())
+			addrPoolsObject.status = valueAddrPoolsAddrPool["Status"].asString();
+		if(!valueAddrPoolsAddrPool["UpdateTime"].isNull())
+			addrPoolsObject.updateTime = valueAddrPoolsAddrPool["UpdateTime"].asString();
+		if(!valueAddrPoolsAddrPool["CreateTime"].isNull())
+			addrPoolsObject.createTime = valueAddrPoolsAddrPool["CreateTime"].asString();
+		if(!valueAddrPoolsAddrPool["MonitorConfigId"].isNull())
+			addrPoolsObject.monitorConfigId = valueAddrPoolsAddrPool["MonitorConfigId"].asString();
+		if(!valueAddrPoolsAddrPool["MinAvailableAddrNum"].isNull())
+			addrPoolsObject.minAvailableAddrNum = std::stoi(valueAddrPoolsAddrPool["MinAvailableAddrNum"].asString());
+		if(!valueAddrPoolsAddrPool["UpdateTimestamp"].isNull())
+			addrPoolsObject.updateTimestamp = std::stol(valueAddrPoolsAddrPool["UpdateTimestamp"].asString());
+		if(!valueAddrPoolsAddrPool["MonitorStatus"].isNull())
+			addrPoolsObject.monitorStatus = valueAddrPoolsAddrPool["MonitorStatus"].asString();
+		if(!valueAddrPoolsAddrPool["AddrPoolId"].isNull())
+			addrPoolsObject.addrPoolId = valueAddrPoolsAddrPool["AddrPoolId"].asString();
+		if(!valueAddrPoolsAddrPool["Name"].isNull())
+			addrPoolsObject.name = valueAddrPoolsAddrPool["Name"].asString();
+		if(!valueAddrPoolsAddrPool["AddrCount"].isNull())
+			addrPoolsObject.addrCount = std::stoi(valueAddrPoolsAddrPool["AddrCount"].asString());
+		if(!valueAddrPoolsAddrPool["CreateTimestamp"].isNull())
+			addrPoolsObject.createTimestamp = std::stol(valueAddrPoolsAddrPool["CreateTimestamp"].asString());
 		addrPools_.push_back(addrPoolsObject);
 	}
-	if(!value["TotalItems"].isNull())
-		totalItems_ = std::stoi(value["TotalItems"].asString());
-	if(!value["TotalPages"].isNull())
-		totalPages_ = std::stoi(value["TotalPages"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalPages"].isNull())
+		totalPages_ = std::stoi(value["TotalPages"].asString());
+	if(!value["TotalItems"].isNull())
+		totalItems_ = std::stoi(value["TotalItems"].asString());
 
 }
 

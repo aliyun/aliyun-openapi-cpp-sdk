@@ -34,13 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct Strategy
 				{
-					struct Line
-					{
-						std::string groupName;
-						std::string groupCode;
-						std::string lineCode;
-						std::string lineName;
-					};
 					struct EffectiveAddrPool
 					{
 						int lbaWeight;
@@ -48,11 +41,18 @@ namespace AlibabaCloud
 						std::string name;
 						int addrCount;
 					};
+					struct Line
+					{
+						std::string groupName;
+						std::string groupCode;
+						std::string lineCode;
+						std::string lineName;
+					};
 					std::vector<Strategy::EffectiveAddrPool> effectiveAddrPools;
 					std::string strategyName;
 					std::string effectiveAddrPoolType;
-					std::string createTime;
 					std::string effectiveAddrPoolGroupType;
+					std::string createTime;
 					std::string strategyId;
 					long createTimestamp;
 					std::vector<Strategy::Line> lines;

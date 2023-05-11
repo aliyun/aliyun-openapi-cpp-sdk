@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Alidns::Model::DescribeDnsGtmInstancesRequest;
 
-DescribeDnsGtmInstancesRequest::DescribeDnsGtmInstancesRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "DescribeDnsGtmInstances")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDnsGtmInstancesRequest::DescribeDnsGtmInstancesRequest()
+    : RpcServiceRequest("alidns", "2015-01-09", "DescribeDnsGtmInstances") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDnsGtmInstancesRequest::~DescribeDnsGtmInstancesRequest()
-{}
+DescribeDnsGtmInstancesRequest::~DescribeDnsGtmInstancesRequest() {}
 
-int DescribeDnsGtmInstancesRequest::getPageNumber()const
-{
-	return pageNumber_;
+int DescribeDnsGtmInstancesRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeDnsGtmInstancesRequest::setPageNumber(int pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeDnsGtmInstancesRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeDnsGtmInstancesRequest::getResourceGroupId()const
-{
-	return resourceGroupId_;
+std::string DescribeDnsGtmInstancesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
 }
 
-void DescribeDnsGtmInstancesRequest::setResourceGroupId(const std::string& resourceGroupId)
-{
-	resourceGroupId_ = resourceGroupId;
-	setParameter("ResourceGroupId", resourceGroupId);
+void DescribeDnsGtmInstancesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string DescribeDnsGtmInstancesRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string DescribeDnsGtmInstancesRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void DescribeDnsGtmInstancesRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void DescribeDnsGtmInstancesRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-int DescribeDnsGtmInstancesRequest::getPageSize()const
-{
-	return pageSize_;
+int DescribeDnsGtmInstancesRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeDnsGtmInstancesRequest::setPageSize(int pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeDnsGtmInstancesRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeDnsGtmInstancesRequest::getLang()const
-{
-	return lang_;
+std::string DescribeDnsGtmInstancesRequest::getLang() const {
+  return lang_;
 }
 
-void DescribeDnsGtmInstancesRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DescribeDnsGtmInstancesRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-std::string DescribeDnsGtmInstancesRequest::getKeyword()const
-{
-	return keyword_;
+std::string DescribeDnsGtmInstancesRequest::getKeyword() const {
+  return keyword_;
 }
 
-void DescribeDnsGtmInstancesRequest::setKeyword(const std::string& keyword)
-{
-	keyword_ = keyword;
-	setParameter("Keyword", keyword);
+void DescribeDnsGtmInstancesRequest::setKeyword(const std::string &keyword) {
+  keyword_ = keyword;
+  setParameter(std::string("Keyword"), keyword);
 }
 

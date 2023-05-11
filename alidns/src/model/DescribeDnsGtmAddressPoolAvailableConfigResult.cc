@@ -43,16 +43,16 @@ void DescribeDnsGtmAddressPoolAvailableConfigResult::parse(const std::string &pa
 	for (auto valueAttributeInfosAttributeInfo : allAttributeInfosNode)
 	{
 		AttributeInfo attributeInfosObject;
+		if(!valueAttributeInfosAttributeInfo["FatherCode"].isNull())
+			attributeInfosObject.fatherCode = valueAttributeInfosAttributeInfo["FatherCode"].asString();
+		if(!valueAttributeInfosAttributeInfo["GroupName"].isNull())
+			attributeInfosObject.groupName = valueAttributeInfosAttributeInfo["GroupName"].asString();
 		if(!valueAttributeInfosAttributeInfo["LineCode"].isNull())
 			attributeInfosObject.lineCode = valueAttributeInfosAttributeInfo["LineCode"].asString();
 		if(!valueAttributeInfosAttributeInfo["LineName"].isNull())
 			attributeInfosObject.lineName = valueAttributeInfosAttributeInfo["LineName"].asString();
 		if(!valueAttributeInfosAttributeInfo["GroupCode"].isNull())
 			attributeInfosObject.groupCode = valueAttributeInfosAttributeInfo["GroupCode"].asString();
-		if(!valueAttributeInfosAttributeInfo["GroupName"].isNull())
-			attributeInfosObject.groupName = valueAttributeInfosAttributeInfo["GroupName"].asString();
-		if(!valueAttributeInfosAttributeInfo["FatherCode"].isNull())
-			attributeInfosObject.fatherCode = valueAttributeInfosAttributeInfo["FatherCode"].asString();
 		attributeInfos_.push_back(attributeInfosObject);
 	}
 

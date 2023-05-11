@@ -44,8 +44,8 @@ namespace AlibabaCloud
 					std::string createTime;
 					long id;
 					std::string ipSegments;
-					long createTimestamp;
 					std::string code;
+					long createTimestamp;
 					std::string name;
 				};
 

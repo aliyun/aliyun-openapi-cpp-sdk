@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,45 +18,37 @@
 
 using AlibabaCloud::Alidns::Model::DeleteDnsGtmAccessStrategyRequest;
 
-DeleteDnsGtmAccessStrategyRequest::DeleteDnsGtmAccessStrategyRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "DeleteDnsGtmAccessStrategy")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteDnsGtmAccessStrategyRequest::DeleteDnsGtmAccessStrategyRequest()
+    : RpcServiceRequest("alidns", "2015-01-09", "DeleteDnsGtmAccessStrategy") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteDnsGtmAccessStrategyRequest::~DeleteDnsGtmAccessStrategyRequest()
-{}
+DeleteDnsGtmAccessStrategyRequest::~DeleteDnsGtmAccessStrategyRequest() {}
 
-std::string DeleteDnsGtmAccessStrategyRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string DeleteDnsGtmAccessStrategyRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void DeleteDnsGtmAccessStrategyRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void DeleteDnsGtmAccessStrategyRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string DeleteDnsGtmAccessStrategyRequest::getStrategyId()const
-{
-	return strategyId_;
+std::string DeleteDnsGtmAccessStrategyRequest::getStrategyId() const {
+  return strategyId_;
 }
 
-void DeleteDnsGtmAccessStrategyRequest::setStrategyId(const std::string& strategyId)
-{
-	strategyId_ = strategyId;
-	setParameter("StrategyId", strategyId);
+void DeleteDnsGtmAccessStrategyRequest::setStrategyId(const std::string &strategyId) {
+  strategyId_ = strategyId;
+  setParameter(std::string("StrategyId"), strategyId);
 }
 
-std::string DeleteDnsGtmAccessStrategyRequest::getLang()const
-{
-	return lang_;
+std::string DeleteDnsGtmAccessStrategyRequest::getLang() const {
+  return lang_;
 }
 
-void DeleteDnsGtmAccessStrategyRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DeleteDnsGtmAccessStrategyRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

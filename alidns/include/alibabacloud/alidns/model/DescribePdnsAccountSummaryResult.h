@@ -35,10 +35,10 @@ namespace AlibabaCloud
 				struct Data
 				{
 					long totalCount;
-					long threatCount;
 					long userId;
-					long httpsCount;
+					long threatCount;
 					long httpCount;
+					long httpsCount;
 					long subDomainCount;
 					long domainCount;
 				};

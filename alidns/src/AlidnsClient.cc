@@ -2427,6 +2427,42 @@ AlidnsClient::DescribeDomainRecordsOutcomeCallable AlidnsClient::describeDomainR
 	return task->get_future();
 }
 
+AlidnsClient::DescribeDomainResolveStatisticsSummaryOutcome AlidnsClient::describeDomainResolveStatisticsSummary(const DescribeDomainResolveStatisticsSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDomainResolveStatisticsSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDomainResolveStatisticsSummaryOutcome(DescribeDomainResolveStatisticsSummaryResult(outcome.result()));
+	else
+		return DescribeDomainResolveStatisticsSummaryOutcome(outcome.error());
+}
+
+void AlidnsClient::describeDomainResolveStatisticsSummaryAsync(const DescribeDomainResolveStatisticsSummaryRequest& request, const DescribeDomainResolveStatisticsSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDomainResolveStatisticsSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeDomainResolveStatisticsSummaryOutcomeCallable AlidnsClient::describeDomainResolveStatisticsSummaryCallable(const DescribeDomainResolveStatisticsSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDomainResolveStatisticsSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDomainResolveStatisticsSummary(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::DescribeDomainStatisticsOutcome AlidnsClient::describeDomainStatistics(const DescribeDomainStatisticsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3147,6 +3183,150 @@ AlidnsClient::DescribeInstanceDomainsOutcomeCallable AlidnsClient::describeInsta
 	return task->get_future();
 }
 
+AlidnsClient::DescribeIspFlushCacheInstancesOutcome AlidnsClient::describeIspFlushCacheInstances(const DescribeIspFlushCacheInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIspFlushCacheInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIspFlushCacheInstancesOutcome(DescribeIspFlushCacheInstancesResult(outcome.result()));
+	else
+		return DescribeIspFlushCacheInstancesOutcome(outcome.error());
+}
+
+void AlidnsClient::describeIspFlushCacheInstancesAsync(const DescribeIspFlushCacheInstancesRequest& request, const DescribeIspFlushCacheInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIspFlushCacheInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeIspFlushCacheInstancesOutcomeCallable AlidnsClient::describeIspFlushCacheInstancesCallable(const DescribeIspFlushCacheInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIspFlushCacheInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIspFlushCacheInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeIspFlushCacheRemainQuotaOutcome AlidnsClient::describeIspFlushCacheRemainQuota(const DescribeIspFlushCacheRemainQuotaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIspFlushCacheRemainQuotaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIspFlushCacheRemainQuotaOutcome(DescribeIspFlushCacheRemainQuotaResult(outcome.result()));
+	else
+		return DescribeIspFlushCacheRemainQuotaOutcome(outcome.error());
+}
+
+void AlidnsClient::describeIspFlushCacheRemainQuotaAsync(const DescribeIspFlushCacheRemainQuotaRequest& request, const DescribeIspFlushCacheRemainQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIspFlushCacheRemainQuota(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeIspFlushCacheRemainQuotaOutcomeCallable AlidnsClient::describeIspFlushCacheRemainQuotaCallable(const DescribeIspFlushCacheRemainQuotaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIspFlushCacheRemainQuotaOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIspFlushCacheRemainQuota(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeIspFlushCacheTaskOutcome AlidnsClient::describeIspFlushCacheTask(const DescribeIspFlushCacheTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIspFlushCacheTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIspFlushCacheTaskOutcome(DescribeIspFlushCacheTaskResult(outcome.result()));
+	else
+		return DescribeIspFlushCacheTaskOutcome(outcome.error());
+}
+
+void AlidnsClient::describeIspFlushCacheTaskAsync(const DescribeIspFlushCacheTaskRequest& request, const DescribeIspFlushCacheTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIspFlushCacheTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeIspFlushCacheTaskOutcomeCallable AlidnsClient::describeIspFlushCacheTaskCallable(const DescribeIspFlushCacheTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIspFlushCacheTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIspFlushCacheTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeIspFlushCacheTasksOutcome AlidnsClient::describeIspFlushCacheTasks(const DescribeIspFlushCacheTasksRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeIspFlushCacheTasksOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeIspFlushCacheTasksOutcome(DescribeIspFlushCacheTasksResult(outcome.result()));
+	else
+		return DescribeIspFlushCacheTasksOutcome(outcome.error());
+}
+
+void AlidnsClient::describeIspFlushCacheTasksAsync(const DescribeIspFlushCacheTasksRequest& request, const DescribeIspFlushCacheTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeIspFlushCacheTasks(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeIspFlushCacheTasksOutcomeCallable AlidnsClient::describeIspFlushCacheTasksCallable(const DescribeIspFlushCacheTasksRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeIspFlushCacheTasksOutcome()>>(
+			[this, request]()
+			{
+			return this->describeIspFlushCacheTasks(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::DescribePdnsAccountSummaryOutcome AlidnsClient::describePdnsAccountSummary(const DescribePdnsAccountSummaryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3573,6 +3753,42 @@ AlidnsClient::DescribeRecordLogsOutcomeCallable AlidnsClient::describeRecordLogs
 			[this, request]()
 			{
 			return this->describeRecordLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::DescribeRecordResolveStatisticsSummaryOutcome AlidnsClient::describeRecordResolveStatisticsSummary(const DescribeRecordResolveStatisticsSummaryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRecordResolveStatisticsSummaryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRecordResolveStatisticsSummaryOutcome(DescribeRecordResolveStatisticsSummaryResult(outcome.result()));
+	else
+		return DescribeRecordResolveStatisticsSummaryOutcome(outcome.error());
+}
+
+void AlidnsClient::describeRecordResolveStatisticsSummaryAsync(const DescribeRecordResolveStatisticsSummaryRequest& request, const DescribeRecordResolveStatisticsSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRecordResolveStatisticsSummary(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::DescribeRecordResolveStatisticsSummaryOutcomeCallable AlidnsClient::describeRecordResolveStatisticsSummaryCallable(const DescribeRecordResolveStatisticsSummaryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRecordResolveStatisticsSummaryOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRecordResolveStatisticsSummary(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4587,6 +4803,42 @@ AlidnsClient::SetGtmMonitorStatusOutcomeCallable AlidnsClient::setGtmMonitorStat
 	return task->get_future();
 }
 
+AlidnsClient::SubmitIspFlushCacheTaskOutcome AlidnsClient::submitIspFlushCacheTask(const SubmitIspFlushCacheTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitIspFlushCacheTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitIspFlushCacheTaskOutcome(SubmitIspFlushCacheTaskResult(outcome.result()));
+	else
+		return SubmitIspFlushCacheTaskOutcome(outcome.error());
+}
+
+void AlidnsClient::submitIspFlushCacheTaskAsync(const SubmitIspFlushCacheTaskRequest& request, const SubmitIspFlushCacheTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitIspFlushCacheTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::SubmitIspFlushCacheTaskOutcomeCallable AlidnsClient::submitIspFlushCacheTaskCallable(const SubmitIspFlushCacheTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitIspFlushCacheTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->submitIspFlushCacheTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AlidnsClient::SwitchDnsGtmInstanceStrategyModeOutcome AlidnsClient::switchDnsGtmInstanceStrategyMode(const SwitchDnsGtmInstanceStrategyModeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -5409,6 +5661,42 @@ AlidnsClient::UpdateGtmRecoveryPlanOutcomeCallable AlidnsClient::updateGtmRecove
 			[this, request]()
 			{
 			return this->updateGtmRecoveryPlan(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AlidnsClient::UpdateIspFlushCacheInstanceConfigOutcome AlidnsClient::updateIspFlushCacheInstanceConfig(const UpdateIspFlushCacheInstanceConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateIspFlushCacheInstanceConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateIspFlushCacheInstanceConfigOutcome(UpdateIspFlushCacheInstanceConfigResult(outcome.result()));
+	else
+		return UpdateIspFlushCacheInstanceConfigOutcome(outcome.error());
+}
+
+void AlidnsClient::updateIspFlushCacheInstanceConfigAsync(const UpdateIspFlushCacheInstanceConfigRequest& request, const UpdateIspFlushCacheInstanceConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateIspFlushCacheInstanceConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AlidnsClient::UpdateIspFlushCacheInstanceConfigOutcomeCallable AlidnsClient::updateIspFlushCacheInstanceConfigCallable(const UpdateIspFlushCacheInstanceConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateIspFlushCacheInstanceConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->updateIspFlushCacheInstanceConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

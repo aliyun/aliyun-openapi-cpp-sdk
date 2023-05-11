@@ -43,28 +43,28 @@ void DescribeCustomLineResult::parse(const std::string &payload)
 	for (auto valueIpSegmentListIpSegment : allIpSegmentListNode)
 	{
 		IpSegment ipSegmentListObject;
-		if(!valueIpSegmentListIpSegment["Name"].isNull())
-			ipSegmentListObject.name = valueIpSegmentListIpSegment["Name"].asString();
-		if(!valueIpSegmentListIpSegment["StartIp"].isNull())
-			ipSegmentListObject.startIp = valueIpSegmentListIpSegment["StartIp"].asString();
 		if(!valueIpSegmentListIpSegment["EndIp"].isNull())
 			ipSegmentListObject.endIp = valueIpSegmentListIpSegment["EndIp"].asString();
+		if(!valueIpSegmentListIpSegment["StartIp"].isNull())
+			ipSegmentListObject.startIp = valueIpSegmentListIpSegment["StartIp"].asString();
+		if(!valueIpSegmentListIpSegment["Name"].isNull())
+			ipSegmentListObject.name = valueIpSegmentListIpSegment["Name"].asString();
 		ipSegmentList_.push_back(ipSegmentListObject);
 	}
-	if(!value["Id"].isNull())
-		id_ = std::stol(value["Id"].asString());
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
 	if(!value["DomainName"].isNull())
 		domainName_ = value["DomainName"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = value["CreateTime"].asString();
-	if(!value["CreateTimestamp"].isNull())
-		createTimestamp_ = std::stol(value["CreateTimestamp"].asString());
+	if(!value["Id"].isNull())
+		id_ = std::stol(value["Id"].asString());
 	if(!value["IpSegments"].isNull())
 		ipSegments_ = value["IpSegments"].asString();
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
+	if(!value["CreateTimestamp"].isNull())
+		createTimestamp_ = std::stol(value["CreateTimestamp"].asString());
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
 
 }
 
@@ -93,14 +93,14 @@ std::string DescribeCustomLineResult::getIpSegments()const
 	return ipSegments_;
 }
 
-long DescribeCustomLineResult::getCreateTimestamp()const
-{
-	return createTimestamp_;
-}
-
 std::string DescribeCustomLineResult::getCode()const
 {
 	return code_;
+}
+
+long DescribeCustomLineResult::getCreateTimestamp()const
+{
+	return createTimestamp_;
 }
 
 std::string DescribeCustomLineResult::getName()const

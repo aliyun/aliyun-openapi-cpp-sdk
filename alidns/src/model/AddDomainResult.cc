@@ -42,6 +42,8 @@ void AddDomainResult::parse(const std::string &payload)
 	auto allDnsServers = value["DnsServers"]["DnsServer"];
 	for (const auto &item : allDnsServers)
 		dnsServers_.push_back(item.asString());
+	if(!value["GroupName"].isNull())
+		groupName_ = value["GroupName"].asString();
 	if(!value["DomainId"].isNull())
 		domainId_ = value["DomainId"].asString();
 	if(!value["DomainName"].isNull())
@@ -50,8 +52,6 @@ void AddDomainResult::parse(const std::string &payload)
 		punyCode_ = value["PunyCode"].asString();
 	if(!value["GroupId"].isNull())
 		groupId_ = value["GroupId"].asString();
-	if(!value["GroupName"].isNull())
-		groupName_ = value["GroupName"].asString();
 
 }
 

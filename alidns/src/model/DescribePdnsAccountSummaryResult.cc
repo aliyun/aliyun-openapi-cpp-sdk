@@ -40,20 +40,20 @@ void DescribePdnsAccountSummaryResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto dataNode = value["Data"];
+	if(!dataNode["UserId"].isNull())
+		data_.userId = std::stol(dataNode["UserId"].asString());
+	if(!dataNode["DomainCount"].isNull())
+		data_.domainCount = std::stol(dataNode["DomainCount"].asString());
+	if(!dataNode["SubDomainCount"].isNull())
+		data_.subDomainCount = std::stol(dataNode["SubDomainCount"].asString());
+	if(!dataNode["HttpCount"].isNull())
+		data_.httpCount = std::stol(dataNode["HttpCount"].asString());
+	if(!dataNode["HttpsCount"].isNull())
+		data_.httpsCount = std::stol(dataNode["HttpsCount"].asString());
 	if(!dataNode["TotalCount"].isNull())
 		data_.totalCount = std::stol(dataNode["TotalCount"].asString());
 	if(!dataNode["ThreatCount"].isNull())
 		data_.threatCount = std::stol(dataNode["ThreatCount"].asString());
-	if(!dataNode["UserId"].isNull())
-		data_.userId = std::stol(dataNode["UserId"].asString());
-	if(!dataNode["HttpsCount"].isNull())
-		data_.httpsCount = std::stol(dataNode["HttpsCount"].asString());
-	if(!dataNode["HttpCount"].isNull())
-		data_.httpCount = std::stol(dataNode["HttpCount"].asString());
-	if(!dataNode["SubDomainCount"].isNull())
-		data_.subDomainCount = std::stol(dataNode["SubDomainCount"].asString());
-	if(!dataNode["DomainCount"].isNull())
-		data_.domainCount = std::stol(dataNode["DomainCount"].asString());
 
 }
 

@@ -43,18 +43,18 @@ void DescribeDohAccountStatisticsResult::parse(const std::string &payload)
 	for (auto valueStatisticsStatistic : allStatisticsNode)
 	{
 		Statistic statisticsObject;
-		if(!valueStatisticsStatistic["Timestamp"].isNull())
-			statisticsObject.timestamp = std::stol(valueStatisticsStatistic["Timestamp"].asString());
-		if(!valueStatisticsStatistic["V4HttpCount"].isNull())
-			statisticsObject.v4HttpCount = std::stol(valueStatisticsStatistic["V4HttpCount"].asString());
 		if(!valueStatisticsStatistic["V6HttpCount"].isNull())
 			statisticsObject.v6HttpCount = std::stol(valueStatisticsStatistic["V6HttpCount"].asString());
 		if(!valueStatisticsStatistic["V4HttpsCount"].isNull())
 			statisticsObject.v4HttpsCount = std::stol(valueStatisticsStatistic["V4HttpsCount"].asString());
-		if(!valueStatisticsStatistic["V6HttpsCount"].isNull())
-			statisticsObject.v6HttpsCount = std::stol(valueStatisticsStatistic["V6HttpsCount"].asString());
+		if(!valueStatisticsStatistic["Timestamp"].isNull())
+			statisticsObject.timestamp = std::stol(valueStatisticsStatistic["Timestamp"].asString());
 		if(!valueStatisticsStatistic["TotalCount"].isNull())
 			statisticsObject.totalCount = std::stol(valueStatisticsStatistic["TotalCount"].asString());
+		if(!valueStatisticsStatistic["V4HttpCount"].isNull())
+			statisticsObject.v4HttpCount = std::stol(valueStatisticsStatistic["V4HttpCount"].asString());
+		if(!valueStatisticsStatistic["V6HttpsCount"].isNull())
+			statisticsObject.v6HttpsCount = std::stol(valueStatisticsStatistic["V6HttpsCount"].asString());
 		statistics_.push_back(statisticsObject);
 	}
 

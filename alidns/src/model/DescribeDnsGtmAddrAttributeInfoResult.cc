@@ -46,16 +46,16 @@ void DescribeDnsGtmAddrAttributeInfoResult::parse(const std::string &payload)
 		if(!valueAddrAddrItem["Addr"].isNull())
 			addrObject.addr = valueAddrAddrItem["Addr"].asString();
 		auto attributeInfoNode = value["AttributeInfo"];
+		if(!attributeInfoNode["FatherCode"].isNull())
+			addrObject.attributeInfo.fatherCode = attributeInfoNode["FatherCode"].asString();
+		if(!attributeInfoNode["GroupName"].isNull())
+			addrObject.attributeInfo.groupName = attributeInfoNode["GroupName"].asString();
 		if(!attributeInfoNode["LineCode"].isNull())
 			addrObject.attributeInfo.lineCode = attributeInfoNode["LineCode"].asString();
 		if(!attributeInfoNode["LineName"].isNull())
 			addrObject.attributeInfo.lineName = attributeInfoNode["LineName"].asString();
 		if(!attributeInfoNode["GroupCode"].isNull())
 			addrObject.attributeInfo.groupCode = attributeInfoNode["GroupCode"].asString();
-		if(!attributeInfoNode["GroupName"].isNull())
-			addrObject.attributeInfo.groupName = attributeInfoNode["GroupName"].asString();
-		if(!attributeInfoNode["FatherCode"].isNull())
-			addrObject.attributeInfo.fatherCode = attributeInfoNode["FatherCode"].asString();
 		addr_.push_back(addrObject);
 	}
 

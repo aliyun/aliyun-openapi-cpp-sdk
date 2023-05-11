@@ -37,15 +37,15 @@ namespace AlibabaCloud
 					std::string status;
 					std::string type;
 					std::string createTime;
-					std::string addrPoolId;
 					std::string updateTime;
+					std::string addrPoolId;
 					long updateTimestamp;
-					int minAvailableAddrNum;
 					std::string monitorConfigId;
-					long createTimestamp;
+					int minAvailableAddrNum;
 					std::string monitorStatus;
-					int addrCount;
+					long createTimestamp;
 					std::string name;
+					int addrCount;
 				};
 
 

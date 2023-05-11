@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Alidns::Model::DescribeDnsGtmAvailableAlertGroupRequest;
 
-DescribeDnsGtmAvailableAlertGroupRequest::DescribeDnsGtmAvailableAlertGroupRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "DescribeDnsGtmAvailableAlertGroup")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDnsGtmAvailableAlertGroupRequest::DescribeDnsGtmAvailableAlertGroupRequest()
+    : RpcServiceRequest("alidns", "2015-01-09", "DescribeDnsGtmAvailableAlertGroup") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDnsGtmAvailableAlertGroupRequest::~DescribeDnsGtmAvailableAlertGroupRequest()
-{}
+DescribeDnsGtmAvailableAlertGroupRequest::~DescribeDnsGtmAvailableAlertGroupRequest() {}
 
-std::string DescribeDnsGtmAvailableAlertGroupRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string DescribeDnsGtmAvailableAlertGroupRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void DescribeDnsGtmAvailableAlertGroupRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void DescribeDnsGtmAvailableAlertGroupRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string DescribeDnsGtmAvailableAlertGroupRequest::getLang()const
-{
-	return lang_;
+std::string DescribeDnsGtmAvailableAlertGroupRequest::getLang() const {
+  return lang_;
 }
 
-void DescribeDnsGtmAvailableAlertGroupRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DescribeDnsGtmAvailableAlertGroupRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

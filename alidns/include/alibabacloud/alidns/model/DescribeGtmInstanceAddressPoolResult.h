@@ -36,11 +36,11 @@ namespace AlibabaCloud
 				{
 					int lbaWeight;
 					std::string alertStatus;
-					long addrId;
 					std::string createTime;
+					long addrId;
 					std::string mode;
-					std::string updateTime;
 					std::string value;
+					std::string updateTime;
 					long updateTimestamp;
 					long createTimestamp;
 				};
@@ -55,13 +55,13 @@ namespace AlibabaCloud
 				int getAddrCount()const;
 				std::string getName()const;
 				std::string getType()const;
-				std::string getAddrPoolId()const;
 				std::string getUpdateTime()const;
+				std::string getAddrPoolId()const;
 				long getUpdateTimestamp()const;
-				int getMinAvailableAddrNum()const;
 				std::string getMonitorConfigId()const;
-				long getCreateTimestamp()const;
+				int getMinAvailableAddrNum()const;
 				std::string getMonitorStatus()const;
+				long getCreateTimestamp()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -72,13 +72,13 @@ namespace AlibabaCloud
 				int addrCount_;
 				std::string name_;
 				std::string type_;
-				std::string addrPoolId_;
 				std::string updateTime_;
+				std::string addrPoolId_;
 				long updateTimestamp_;
-				int minAvailableAddrNum_;
 				std::string monitorConfigId_;
-				long createTimestamp_;
+				int minAvailableAddrNum_;
 				std::string monitorStatus_;
+				long createTimestamp_;
 
 			};
 		}

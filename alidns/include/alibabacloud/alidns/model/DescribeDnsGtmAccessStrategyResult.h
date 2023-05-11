@@ -32,12 +32,12 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_ALIDNS_EXPORT DescribeDnsGtmAccessStrategyResult : public ServiceResult
 			{
 			public:
-				struct Line
+				struct FailoverAddrPool
 				{
-					std::string groupName;
-					std::string groupCode;
-					std::string lineCode;
-					std::string lineName;
+					int lbaWeight;
+					std::string id;
+					std::string name;
+					int addrCount;
 				};
 				struct DefaultAddrPool
 				{
@@ -46,12 +46,12 @@ namespace AlibabaCloud
 					std::string name;
 					int addrCount;
 				};
-				struct FailoverAddrPool
+				struct Line
 				{
-					int lbaWeight;
-					std::string id;
-					std::string name;
-					int addrCount;
+					std::string groupName;
+					std::string groupCode;
+					std::string lineCode;
+					std::string lineName;
 				};
 
 
@@ -60,9 +60,9 @@ namespace AlibabaCloud
 				~DescribeDnsGtmAccessStrategyResult();
 				int getFailoverMinAvailableAddrNum()const;
 				std::string getDefaultAddrPoolType()const;
+				int getDefaultAvailableAddrNum()const;
 				std::string getStrategyId()const;
 				std::string getFailoverAddrPoolGroupStatus()const;
-				int getDefaultAvailableAddrNum()const;
 				int getFailoverAvailableAddrNum()const;
 				std::string getFailoverLbaStrategy()const;
 				int getDefaultMaxReturnAddrNum()const;
@@ -89,9 +89,9 @@ namespace AlibabaCloud
 			private:
 				int failoverMinAvailableAddrNum_;
 				std::string defaultAddrPoolType_;
+				int defaultAvailableAddrNum_;
 				std::string strategyId_;
 				std::string failoverAddrPoolGroupStatus_;
-				int defaultAvailableAddrNum_;
 				int failoverAvailableAddrNum_;
 				std::string failoverLbaStrategy_;
 				int defaultMaxReturnAddrNum_;

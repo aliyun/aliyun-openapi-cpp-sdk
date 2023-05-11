@@ -43,40 +43,40 @@ void DescribeDnsGtmMonitorConfigResult::parse(const std::string &payload)
 	for (auto valueIspCityNodesIspCityNode : allIspCityNodesNode)
 	{
 		IspCityNode ispCityNodesObject;
-		if(!valueIspCityNodesIspCityNode["CountryName"].isNull())
-			ispCityNodesObject.countryName = valueIspCityNodesIspCityNode["CountryName"].asString();
-		if(!valueIspCityNodesIspCityNode["CountryCode"].isNull())
-			ispCityNodesObject.countryCode = valueIspCityNodesIspCityNode["CountryCode"].asString();
-		if(!valueIspCityNodesIspCityNode["CityName"].isNull())
-			ispCityNodesObject.cityName = valueIspCityNodesIspCityNode["CityName"].asString();
 		if(!valueIspCityNodesIspCityNode["CityCode"].isNull())
 			ispCityNodesObject.cityCode = valueIspCityNodesIspCityNode["CityCode"].asString();
+		if(!valueIspCityNodesIspCityNode["CountryName"].isNull())
+			ispCityNodesObject.countryName = valueIspCityNodesIspCityNode["CountryName"].asString();
 		if(!valueIspCityNodesIspCityNode["IspCode"].isNull())
 			ispCityNodesObject.ispCode = valueIspCityNodesIspCityNode["IspCode"].asString();
+		if(!valueIspCityNodesIspCityNode["CityName"].isNull())
+			ispCityNodesObject.cityName = valueIspCityNodesIspCityNode["CityName"].asString();
+		if(!valueIspCityNodesIspCityNode["CountryCode"].isNull())
+			ispCityNodesObject.countryCode = valueIspCityNodesIspCityNode["CountryCode"].asString();
 		if(!valueIspCityNodesIspCityNode["IspName"].isNull())
 			ispCityNodesObject.ispName = valueIspCityNodesIspCityNode["IspName"].asString();
 		ispCityNodes_.push_back(ispCityNodesObject);
 	}
-	if(!value["MonitorConfigId"].isNull())
-		monitorConfigId_ = value["MonitorConfigId"].asString();
-	if(!value["CreateTime"].isNull())
-		createTime_ = value["CreateTime"].asString();
-	if(!value["CreateTimestamp"].isNull())
-		createTimestamp_ = std::stol(value["CreateTimestamp"].asString());
-	if(!value["UpdateTime"].isNull())
-		updateTime_ = value["UpdateTime"].asString();
-	if(!value["UpdateTimestamp"].isNull())
-		updateTimestamp_ = std::stol(value["UpdateTimestamp"].asString());
-	if(!value["ProtocolType"].isNull())
-		protocolType_ = value["ProtocolType"].asString();
-	if(!value["Interval"].isNull())
-		interval_ = std::stoi(value["Interval"].asString());
-	if(!value["EvaluationCount"].isNull())
-		evaluationCount_ = std::stoi(value["EvaluationCount"].asString());
 	if(!value["Timeout"].isNull())
 		timeout_ = std::stoi(value["Timeout"].asString());
+	if(!value["ProtocolType"].isNull())
+		protocolType_ = value["ProtocolType"].asString();
+	if(!value["CreateTime"].isNull())
+		createTime_ = value["CreateTime"].asString();
+	if(!value["UpdateTime"].isNull())
+		updateTime_ = value["UpdateTime"].asString();
+	if(!value["EvaluationCount"].isNull())
+		evaluationCount_ = std::stoi(value["EvaluationCount"].asString());
+	if(!value["UpdateTimestamp"].isNull())
+		updateTimestamp_ = std::stol(value["UpdateTimestamp"].asString());
 	if(!value["MonitorExtendInfo"].isNull())
 		monitorExtendInfo_ = value["MonitorExtendInfo"].asString();
+	if(!value["MonitorConfigId"].isNull())
+		monitorConfigId_ = value["MonitorConfigId"].asString();
+	if(!value["CreateTimestamp"].isNull())
+		createTimestamp_ = std::stol(value["CreateTimestamp"].asString());
+	if(!value["Interval"].isNull())
+		interval_ = std::stoi(value["Interval"].asString());
 
 }
 
@@ -85,14 +85,14 @@ std::vector<DescribeDnsGtmMonitorConfigResult::IspCityNode> DescribeDnsGtmMonito
 	return ispCityNodes_;
 }
 
-std::string DescribeDnsGtmMonitorConfigResult::getProtocolType()const
-{
-	return protocolType_;
-}
-
 int DescribeDnsGtmMonitorConfigResult::getTimeout()const
 {
 	return timeout_;
+}
+
+std::string DescribeDnsGtmMonitorConfigResult::getProtocolType()const
+{
+	return protocolType_;
 }
 
 std::string DescribeDnsGtmMonitorConfigResult::getCreateTime()const

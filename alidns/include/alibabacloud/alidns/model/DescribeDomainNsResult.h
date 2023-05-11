@@ -41,6 +41,7 @@ namespace AlibabaCloud
 				std::vector<std::string> getExpectDnsServers()const;
 				std::vector<std::string> getDnsServers()const;
 				bool getIncludeAliDns()const;
+				std::string getDetectFailedReasonCode()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -49,6 +50,7 @@ namespace AlibabaCloud
 				std::vector<std::string> expectDnsServers_;
 				std::vector<std::string> dnsServers_;
 				bool includeAliDns_;
+				std::string detectFailedReasonCode_;
 
 			};
 		}

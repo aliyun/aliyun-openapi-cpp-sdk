@@ -37,8 +37,8 @@ namespace AlibabaCloud
 					long totalCount;
 					long v4HttpCount;
 					long v6HttpCount;
-					long timestamp;
 					long v4HttpsCount;
+					long timestamp;
 					long v6HttpsCount;
 				};
 

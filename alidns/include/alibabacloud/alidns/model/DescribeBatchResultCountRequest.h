@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,41 +17,35 @@
 #ifndef ALIBABACLOUD_ALIDNS_MODEL_DESCRIBEBATCHRESULTCOUNTREQUEST_H_
 #define ALIBABACLOUD_ALIDNS_MODEL_DESCRIBEBATCHRESULTCOUNTREQUEST_H_
 
+#include <alibabacloud/alidns/AlidnsExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/alidns/AlidnsExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Alidns
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_ALIDNS_EXPORT DescribeBatchResultCountRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Alidns {
+namespace Model {
+class ALIBABACLOUD_ALIDNS_EXPORT DescribeBatchResultCountRequest : public RpcServiceRequest {
+public:
+	DescribeBatchResultCountRequest();
+	~DescribeBatchResultCountRequest();
+	std::string getBatchType() const;
+	void setBatchType(const std::string &batchType);
+	std::string getUserClientIp() const;
+	void setUserClientIp(const std::string &userClientIp);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
+	long getTaskId() const;
+	void setTaskId(long taskId);
 
-			public:
-				DescribeBatchResultCountRequest();
-				~DescribeBatchResultCountRequest();
-
-				std::string getBatchType()const;
-				void setBatchType(const std::string& batchType);
-				std::string getUserClientIp()const;
-				void setUserClientIp(const std::string& userClientIp);
-				std::string getLang()const;
-				void setLang(const std::string& lang);
-				long getTaskId()const;
-				void setTaskId(long taskId);
-
-            private:
-				std::string batchType_;
-				std::string userClientIp_;
-				std::string lang_;
-				long taskId_;
-
-			};
-		}
-	}
-}
+private:
+	std::string batchType_;
+	std::string userClientIp_;
+	std::string lang_;
+	long taskId_;
+};
+} // namespace Model
+} // namespace Alidns
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_ALIDNS_MODEL_DESCRIBEBATCHRESULTCOUNTREQUEST_H_

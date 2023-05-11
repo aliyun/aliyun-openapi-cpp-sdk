@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Alidns::Model::DescribeDomainRecordInfoRequest;
 
-DescribeDomainRecordInfoRequest::DescribeDomainRecordInfoRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "DescribeDomainRecordInfo")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDomainRecordInfoRequest::DescribeDomainRecordInfoRequest()
+    : RpcServiceRequest("alidns", "2015-01-09", "DescribeDomainRecordInfo") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDomainRecordInfoRequest::~DescribeDomainRecordInfoRequest()
-{}
+DescribeDomainRecordInfoRequest::~DescribeDomainRecordInfoRequest() {}
 
-std::string DescribeDomainRecordInfoRequest::getAccessKeyId()const
-{
-	return accessKeyId_;
+std::string DescribeDomainRecordInfoRequest::getAccessKeyId() const {
+  return accessKeyId_;
 }
 
-void DescribeDomainRecordInfoRequest::setAccessKeyId(const std::string& accessKeyId)
-{
-	accessKeyId_ = accessKeyId;
-	setParameter("AccessKeyId", accessKeyId);
+void DescribeDomainRecordInfoRequest::setAccessKeyId(const std::string &accessKeyId) {
+  accessKeyId_ = accessKeyId;
+  setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
-std::string DescribeDomainRecordInfoRequest::getRecordId()const
-{
-	return recordId_;
+std::string DescribeDomainRecordInfoRequest::getRecordId() const {
+  return recordId_;
 }
 
-void DescribeDomainRecordInfoRequest::setRecordId(const std::string& recordId)
-{
-	recordId_ = recordId;
-	setParameter("RecordId", recordId);
+void DescribeDomainRecordInfoRequest::setRecordId(const std::string &recordId) {
+  recordId_ = recordId;
+  setParameter(std::string("RecordId"), recordId);
 }
 
-std::string DescribeDomainRecordInfoRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string DescribeDomainRecordInfoRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void DescribeDomainRecordInfoRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void DescribeDomainRecordInfoRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string DescribeDomainRecordInfoRequest::getLang()const
-{
-	return lang_;
+std::string DescribeDomainRecordInfoRequest::getLang() const {
+  return lang_;
 }
 
-void DescribeDomainRecordInfoRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DescribeDomainRecordInfoRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

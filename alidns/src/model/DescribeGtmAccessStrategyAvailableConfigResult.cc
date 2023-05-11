@@ -53,20 +53,22 @@ void DescribeGtmAccessStrategyAvailableConfigResult::parse(const std::string &pa
 	for (auto valueLinesLine : allLinesNode)
 	{
 		Line linesObject;
-		if(!valueLinesLine["LineCode"].isNull())
-			linesObject.lineCode = valueLinesLine["LineCode"].asString();
-		if(!valueLinesLine["LineName"].isNull())
-			linesObject.lineName = valueLinesLine["LineName"].asString();
-		if(!valueLinesLine["GroupCode"].isNull())
-			linesObject.groupCode = valueLinesLine["GroupCode"].asString();
-		if(!valueLinesLine["GroupName"].isNull())
-			linesObject.groupName = valueLinesLine["GroupName"].asString();
 		if(!valueLinesLine["Status"].isNull())
 			linesObject.status = valueLinesLine["Status"].asString();
 		if(!valueLinesLine["FatherCode"].isNull())
 			linesObject.fatherCode = valueLinesLine["FatherCode"].asString();
+		if(!valueLinesLine["LineCode"].isNull())
+			linesObject.lineCode = valueLinesLine["LineCode"].asString();
+		if(!valueLinesLine["GroupName"].isNull())
+			linesObject.groupName = valueLinesLine["GroupName"].asString();
+		if(!valueLinesLine["LineName"].isNull())
+			linesObject.lineName = valueLinesLine["LineName"].asString();
+		if(!valueLinesLine["GroupCode"].isNull())
+			linesObject.groupCode = valueLinesLine["GroupCode"].asString();
 		lines_.push_back(linesObject);
 	}
+	if(!value["SuggestSetDefaultLine"].isNull())
+		suggestSetDefaultLine_ = value["SuggestSetDefaultLine"].asString() == "true";
 
 }
 
@@ -78,5 +80,10 @@ std::vector<DescribeGtmAccessStrategyAvailableConfigResult::AddrPool> DescribeGt
 std::vector<DescribeGtmAccessStrategyAvailableConfigResult::Line> DescribeGtmAccessStrategyAvailableConfigResult::getLines()const
 {
 	return lines_;
+}
+
+bool DescribeGtmAccessStrategyAvailableConfigResult::getSuggestSetDefaultLine()const
+{
+	return suggestSetDefaultLine_;
 }
 

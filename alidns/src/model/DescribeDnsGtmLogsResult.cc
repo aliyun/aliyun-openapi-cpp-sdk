@@ -43,32 +43,32 @@ void DescribeDnsGtmLogsResult::parse(const std::string &payload)
 	for (auto valueLogsLog : allLogsNode)
 	{
 		Log logsObject;
+		if(!valueLogsLog["OperTimestamp"].isNull())
+			logsObject.operTimestamp = std::stol(valueLogsLog["OperTimestamp"].asString());
+		if(!valueLogsLog["EntityId"].isNull())
+			logsObject.entityId = valueLogsLog["EntityId"].asString();
+		if(!valueLogsLog["EntityType"].isNull())
+			logsObject.entityType = valueLogsLog["EntityType"].asString();
 		if(!valueLogsLog["OperTime"].isNull())
 			logsObject.operTime = valueLogsLog["OperTime"].asString();
 		if(!valueLogsLog["OperAction"].isNull())
 			logsObject.operAction = valueLogsLog["OperAction"].asString();
-		if(!valueLogsLog["EntityType"].isNull())
-			logsObject.entityType = valueLogsLog["EntityType"].asString();
-		if(!valueLogsLog["EntityId"].isNull())
-			logsObject.entityId = valueLogsLog["EntityId"].asString();
-		if(!valueLogsLog["EntityName"].isNull())
-			logsObject.entityName = valueLogsLog["EntityName"].asString();
-		if(!valueLogsLog["OperTimestamp"].isNull())
-			logsObject.operTimestamp = std::stol(valueLogsLog["OperTimestamp"].asString());
-		if(!valueLogsLog["Id"].isNull())
-			logsObject.id = std::stol(valueLogsLog["Id"].asString());
 		if(!valueLogsLog["Content"].isNull())
 			logsObject.content = valueLogsLog["Content"].asString();
+		if(!valueLogsLog["EntityName"].isNull())
+			logsObject.entityName = valueLogsLog["EntityName"].asString();
+		if(!valueLogsLog["Id"].isNull())
+			logsObject.id = std::stol(valueLogsLog["Id"].asString());
 		logs_.push_back(logsObject);
 	}
-	if(!value["TotalItems"].isNull())
-		totalItems_ = std::stoi(value["TotalItems"].asString());
-	if(!value["TotalPages"].isNull())
-		totalPages_ = std::stoi(value["TotalPages"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
 	if(!value["PageNumber"].isNull())
 		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalPages"].isNull())
+		totalPages_ = std::stoi(value["TotalPages"].asString());
+	if(!value["TotalItems"].isNull())
+		totalItems_ = std::stoi(value["TotalItems"].asString());
 
 }
 

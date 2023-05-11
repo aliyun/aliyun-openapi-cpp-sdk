@@ -45,10 +45,10 @@ void DescribePdnsOperateLogsResult::parse(const std::string &payload)
 		Log logsObject;
 		if(!valueLogsLog["OperateTime"].isNull())
 			logsObject.operateTime = valueLogsLog["OperateTime"].asString();
-		if(!valueLogsLog["Action"].isNull())
-			logsObject.action = valueLogsLog["Action"].asString();
 		if(!valueLogsLog["Type"].isNull())
 			logsObject.type = valueLogsLog["Type"].asString();
+		if(!valueLogsLog["Action"].isNull())
+			logsObject.action = valueLogsLog["Action"].asString();
 		if(!valueLogsLog["content"].isNull())
 			logsObject.content = valueLogsLog["content"].asString();
 		logs_.push_back(logsObject);

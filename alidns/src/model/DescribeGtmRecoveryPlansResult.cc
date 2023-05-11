@@ -43,42 +43,42 @@ void DescribeGtmRecoveryPlansResult::parse(const std::string &payload)
 	for (auto valueRecoveryPlansRecoveryPlan : allRecoveryPlansNode)
 	{
 		RecoveryPlan recoveryPlansObject;
-		if(!valueRecoveryPlansRecoveryPlan["RecoveryPlanId"].isNull())
-			recoveryPlansObject.recoveryPlanId = std::stol(valueRecoveryPlansRecoveryPlan["RecoveryPlanId"].asString());
-		if(!valueRecoveryPlansRecoveryPlan["Name"].isNull())
-			recoveryPlansObject.name = valueRecoveryPlansRecoveryPlan["Name"].asString();
-		if(!valueRecoveryPlansRecoveryPlan["Remark"].isNull())
-			recoveryPlansObject.remark = valueRecoveryPlansRecoveryPlan["Remark"].asString();
-		if(!valueRecoveryPlansRecoveryPlan["FaultAddrPoolNum"].isNull())
-			recoveryPlansObject.faultAddrPoolNum = std::stoi(valueRecoveryPlansRecoveryPlan["FaultAddrPoolNum"].asString());
-		if(!valueRecoveryPlansRecoveryPlan["LastExecuteTime"].isNull())
-			recoveryPlansObject.lastExecuteTime = valueRecoveryPlansRecoveryPlan["LastExecuteTime"].asString();
-		if(!valueRecoveryPlansRecoveryPlan["LastExecuteTimestamp"].isNull())
-			recoveryPlansObject.lastExecuteTimestamp = std::stol(valueRecoveryPlansRecoveryPlan["LastExecuteTimestamp"].asString());
-		if(!valueRecoveryPlansRecoveryPlan["LastRollbackTime"].isNull())
-			recoveryPlansObject.lastRollbackTime = valueRecoveryPlansRecoveryPlan["LastRollbackTime"].asString();
-		if(!valueRecoveryPlansRecoveryPlan["LastRollbackTimestamp"].isNull())
-			recoveryPlansObject.lastRollbackTimestamp = std::stol(valueRecoveryPlansRecoveryPlan["LastRollbackTimestamp"].asString());
-		if(!valueRecoveryPlansRecoveryPlan["CreateTime"].isNull())
-			recoveryPlansObject.createTime = valueRecoveryPlansRecoveryPlan["CreateTime"].asString();
-		if(!valueRecoveryPlansRecoveryPlan["CreateTimestamp"].isNull())
-			recoveryPlansObject.createTimestamp = std::stol(valueRecoveryPlansRecoveryPlan["CreateTimestamp"].asString());
-		if(!valueRecoveryPlansRecoveryPlan["UpdateTime"].isNull())
-			recoveryPlansObject.updateTime = valueRecoveryPlansRecoveryPlan["UpdateTime"].asString();
-		if(!valueRecoveryPlansRecoveryPlan["UpdateTimestamp"].isNull())
-			recoveryPlansObject.updateTimestamp = std::stol(valueRecoveryPlansRecoveryPlan["UpdateTimestamp"].asString());
 		if(!valueRecoveryPlansRecoveryPlan["Status"].isNull())
 			recoveryPlansObject.status = valueRecoveryPlansRecoveryPlan["Status"].asString();
+		if(!valueRecoveryPlansRecoveryPlan["LastRollbackTimestamp"].isNull())
+			recoveryPlansObject.lastRollbackTimestamp = std::stol(valueRecoveryPlansRecoveryPlan["LastRollbackTimestamp"].asString());
+		if(!valueRecoveryPlansRecoveryPlan["UpdateTime"].isNull())
+			recoveryPlansObject.updateTime = valueRecoveryPlansRecoveryPlan["UpdateTime"].asString();
+		if(!valueRecoveryPlansRecoveryPlan["Remark"].isNull())
+			recoveryPlansObject.remark = valueRecoveryPlansRecoveryPlan["Remark"].asString();
+		if(!valueRecoveryPlansRecoveryPlan["CreateTime"].isNull())
+			recoveryPlansObject.createTime = valueRecoveryPlansRecoveryPlan["CreateTime"].asString();
+		if(!valueRecoveryPlansRecoveryPlan["RecoveryPlanId"].isNull())
+			recoveryPlansObject.recoveryPlanId = std::stol(valueRecoveryPlansRecoveryPlan["RecoveryPlanId"].asString());
+		if(!valueRecoveryPlansRecoveryPlan["UpdateTimestamp"].isNull())
+			recoveryPlansObject.updateTimestamp = std::stol(valueRecoveryPlansRecoveryPlan["UpdateTimestamp"].asString());
+		if(!valueRecoveryPlansRecoveryPlan["LastExecuteTimestamp"].isNull())
+			recoveryPlansObject.lastExecuteTimestamp = std::stol(valueRecoveryPlansRecoveryPlan["LastExecuteTimestamp"].asString());
+		if(!valueRecoveryPlansRecoveryPlan["LastExecuteTime"].isNull())
+			recoveryPlansObject.lastExecuteTime = valueRecoveryPlansRecoveryPlan["LastExecuteTime"].asString();
+		if(!valueRecoveryPlansRecoveryPlan["LastRollbackTime"].isNull())
+			recoveryPlansObject.lastRollbackTime = valueRecoveryPlansRecoveryPlan["LastRollbackTime"].asString();
+		if(!valueRecoveryPlansRecoveryPlan["Name"].isNull())
+			recoveryPlansObject.name = valueRecoveryPlansRecoveryPlan["Name"].asString();
+		if(!valueRecoveryPlansRecoveryPlan["FaultAddrPoolNum"].isNull())
+			recoveryPlansObject.faultAddrPoolNum = std::stoi(valueRecoveryPlansRecoveryPlan["FaultAddrPoolNum"].asString());
+		if(!valueRecoveryPlansRecoveryPlan["CreateTimestamp"].isNull())
+			recoveryPlansObject.createTimestamp = std::stol(valueRecoveryPlansRecoveryPlan["CreateTimestamp"].asString());
 		recoveryPlans_.push_back(recoveryPlansObject);
 	}
-	if(!value["TotalItems"].isNull())
-		totalItems_ = std::stoi(value["TotalItems"].asString());
-	if(!value["TotalPages"].isNull())
-		totalPages_ = std::stoi(value["TotalPages"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalPages"].isNull())
+		totalPages_ = std::stoi(value["TotalPages"].asString());
+	if(!value["TotalItems"].isNull())
+		totalItems_ = std::stoi(value["TotalItems"].asString());
 
 }
 

@@ -39,12 +39,12 @@ void DescribeDohUserInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	if(!value["SubDomainCount"].isNull())
+		subDomainCount_ = std::stoi(value["SubDomainCount"].asString());
 	if(!value["PdnsId"].isNull())
 		pdnsId_ = std::stol(value["PdnsId"].asString());
 	if(!value["DomainCount"].isNull())
 		domainCount_ = std::stoi(value["DomainCount"].asString());
-	if(!value["SubDomainCount"].isNull())
-		subDomainCount_ = std::stoi(value["SubDomainCount"].asString());
 
 }
 

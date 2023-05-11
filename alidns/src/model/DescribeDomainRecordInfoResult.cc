@@ -39,40 +39,42 @@ void DescribeDomainRecordInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DomainId"].isNull())
-		domainId_ = value["DomainId"].asString();
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
-	if(!value["PunyCode"].isNull())
-		punyCode_ = value["PunyCode"].asString();
-	if(!value["GroupId"].isNull())
-		groupId_ = value["GroupId"].asString();
-	if(!value["GroupName"].isNull())
-		groupName_ = value["GroupName"].asString();
-	if(!value["RecordId"].isNull())
-		recordId_ = value["RecordId"].asString();
-	if(!value["RR"].isNull())
-		rR_ = value["RR"].asString();
-	if(!value["Type"].isNull())
-		type_ = value["Type"].asString();
-	if(!value["Value"].isNull())
-		value_ = value["Value"].asString();
-	if(!value["TTL"].isNull())
-		tTL_ = std::stol(value["TTL"].asString());
-	if(!value["Priority"].isNull())
-		priority_ = std::stol(value["Priority"].asString());
-	if(!value["Line"].isNull())
-		line_ = value["Line"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
+	if(!value["RR"].isNull())
+		rR_ = value["RR"].asString();
+	if(!value["GroupName"].isNull())
+		groupName_ = value["GroupName"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
+	if(!value["Priority"].isNull())
+		priority_ = std::stol(value["Priority"].asString());
+	if(!value["PunyCode"].isNull())
+		punyCode_ = value["PunyCode"].asString();
+	if(!value["TTL"].isNull())
+		tTL_ = std::stol(value["TTL"].asString());
+	if(!value["GroupId"].isNull())
+		groupId_ = value["GroupId"].asString();
+	if(!value["Line"].isNull())
+		line_ = value["Line"].asString();
 	if(!value["Locked"].isNull())
 		locked_ = value["Locked"].asString() == "true";
+	if(!value["Type"].isNull())
+		type_ = value["Type"].asString();
+	if(!value["DomainId"].isNull())
+		domainId_ = value["DomainId"].asString();
+	if(!value["Value"].isNull())
+		value_ = value["Value"].asString();
+	if(!value["RecordId"].isNull())
+		recordId_ = value["RecordId"].asString();
+	if(!value["Remark"].isNull())
+		remark_ = value["Remark"].asString();
 
 }
 
-std::string DescribeDomainRecordInfoResult::getGroupName()const
+std::string DescribeDomainRecordInfoResult::getStatus()const
 {
-	return groupName_;
+	return status_;
 }
 
 std::string DescribeDomainRecordInfoResult::getRR()const
@@ -80,9 +82,9 @@ std::string DescribeDomainRecordInfoResult::getRR()const
 	return rR_;
 }
 
-std::string DescribeDomainRecordInfoResult::getStatus()const
+std::string DescribeDomainRecordInfoResult::getGroupName()const
 {
-	return status_;
+	return groupName_;
 }
 
 std::string DescribeDomainRecordInfoResult::getDomainName()const
@@ -108,6 +110,11 @@ long DescribeDomainRecordInfoResult::getTTL()const
 std::string DescribeDomainRecordInfoResult::getGroupId()const
 {
 	return groupId_;
+}
+
+std::string DescribeDomainRecordInfoResult::getRemark()const
+{
+	return remark_;
 }
 
 std::string DescribeDomainRecordInfoResult::getLine()const

@@ -40,16 +40,16 @@ void DescribePdnsUserInfoResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto userInfoNode = value["UserInfo"];
-	if(!userInfoNode["AvailableService"].isNull())
-		userInfo_.availableService = userInfoNode["AvailableService"].asString();
-	if(!userInfoNode["ServiceType"].isNull())
-		userInfo_.serviceType = userInfoNode["ServiceType"].asString();
-	if(!userInfoNode["State"].isNull())
-		userInfo_.state = userInfoNode["State"].asString();
-	if(!userInfoNode["StoppedService"].isNull())
-		userInfo_.stoppedService = userInfoNode["StoppedService"].asString();
 	if(!userInfoNode["PdnsId"].isNull())
 		userInfo_.pdnsId = std::stol(userInfoNode["PdnsId"].asString());
+	if(!userInfoNode["State"].isNull())
+		userInfo_.state = userInfoNode["State"].asString();
+	if(!userInfoNode["ServiceType"].isNull())
+		userInfo_.serviceType = userInfoNode["ServiceType"].asString();
+	if(!userInfoNode["StoppedService"].isNull())
+		userInfo_.stoppedService = userInfoNode["StoppedService"].asString();
+	if(!userInfoNode["AvailableService"].isNull())
+		userInfo_.availableService = userInfoNode["AvailableService"].asString();
 
 }
 

@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct Log
 				{
 					std::string operateTime;
-					std::string action;
 					std::string type;
+					std::string action;
 					std::string content;
 				};
 

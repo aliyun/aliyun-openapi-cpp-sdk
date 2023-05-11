@@ -54,12 +54,12 @@ namespace AlibabaCloud
 				std::string getType()const;
 				std::string getLbaStrategy()const;
 				std::string getCreateTime()const;
-				std::string getAddrPoolId()const;
 				std::string getUpdateTime()const;
+				std::string getAddrPoolId()const;
 				long getUpdateTimestamp()const;
 				std::string getMonitorConfigId()const;
-				long getCreateTimestamp()const;
 				std::string getMonitorStatus()const;
+				long getCreateTimestamp()const;
 				int getAddrCount()const;
 				std::string getName()const;
 
@@ -70,12 +70,12 @@ namespace AlibabaCloud
 				std::string type_;
 				std::string lbaStrategy_;
 				std::string createTime_;
-				std::string addrPoolId_;
 				std::string updateTime_;
+				std::string addrPoolId_;
 				long updateTimestamp_;
 				std::string monitorConfigId_;
-				long createTimestamp_;
 				std::string monitorStatus_;
+				long createTimestamp_;
 				int addrCount_;
 				std::string name_;
 

@@ -56,8 +56,8 @@ namespace AlibabaCloud
 				std::string getFailoverAddrPoolStatus()const;
 				std::string getAccessMode()const;
 				std::string getStrategyMode()const;
-				std::string getFailoverAddrPoolName()const;
 				std::string getFailoverAddrPoolMonitorStatus()const;
+				std::string getFailoverAddrPoolName()const;
 				std::vector<Line> getLines()const;
 
 			protected:
@@ -75,8 +75,8 @@ namespace AlibabaCloud
 				std::string failoverAddrPoolStatus_;
 				std::string accessMode_;
 				std::string strategyMode_;
-				std::string failoverAddrPoolName_;
 				std::string failoverAddrPoolMonitorStatus_;
+				std::string failoverAddrPoolName_;
 				std::vector<Line> lines_;
 
 			};

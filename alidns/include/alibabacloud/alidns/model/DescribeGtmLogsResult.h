@@ -34,8 +34,8 @@ namespace AlibabaCloud
 			public:
 				struct Log
 				{
-					std::string entityType;
 					std::string entityId;
+					std::string entityType;
 					std::string entityName;
 					std::string operTime;
 					std::string content;

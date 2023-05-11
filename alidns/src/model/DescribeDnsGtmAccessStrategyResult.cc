@@ -39,92 +39,92 @@ void DescribeDnsGtmAccessStrategyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allFailoverAddrPoolsNode = value["FailoverAddrPools"]["FailoverAddrPool"];
+	for (auto valueFailoverAddrPoolsFailoverAddrPool : allFailoverAddrPoolsNode)
+	{
+		FailoverAddrPool failoverAddrPoolsObject;
+		if(!valueFailoverAddrPoolsFailoverAddrPool["LbaWeight"].isNull())
+			failoverAddrPoolsObject.lbaWeight = std::stoi(valueFailoverAddrPoolsFailoverAddrPool["LbaWeight"].asString());
+		if(!valueFailoverAddrPoolsFailoverAddrPool["Name"].isNull())
+			failoverAddrPoolsObject.name = valueFailoverAddrPoolsFailoverAddrPool["Name"].asString();
+		if(!valueFailoverAddrPoolsFailoverAddrPool["AddrCount"].isNull())
+			failoverAddrPoolsObject.addrCount = std::stoi(valueFailoverAddrPoolsFailoverAddrPool["AddrCount"].asString());
+		if(!valueFailoverAddrPoolsFailoverAddrPool["Id"].isNull())
+			failoverAddrPoolsObject.id = valueFailoverAddrPoolsFailoverAddrPool["Id"].asString();
+		failoverAddrPools_.push_back(failoverAddrPoolsObject);
+	}
+	auto allDefaultAddrPoolsNode = value["DefaultAddrPools"]["DefaultAddrPool"];
+	for (auto valueDefaultAddrPoolsDefaultAddrPool : allDefaultAddrPoolsNode)
+	{
+		DefaultAddrPool defaultAddrPoolsObject;
+		if(!valueDefaultAddrPoolsDefaultAddrPool["LbaWeight"].isNull())
+			defaultAddrPoolsObject.lbaWeight = std::stoi(valueDefaultAddrPoolsDefaultAddrPool["LbaWeight"].asString());
+		if(!valueDefaultAddrPoolsDefaultAddrPool["Name"].isNull())
+			defaultAddrPoolsObject.name = valueDefaultAddrPoolsDefaultAddrPool["Name"].asString();
+		if(!valueDefaultAddrPoolsDefaultAddrPool["AddrCount"].isNull())
+			defaultAddrPoolsObject.addrCount = std::stoi(valueDefaultAddrPoolsDefaultAddrPool["AddrCount"].asString());
+		if(!valueDefaultAddrPoolsDefaultAddrPool["Id"].isNull())
+			defaultAddrPoolsObject.id = valueDefaultAddrPoolsDefaultAddrPool["Id"].asString();
+		defaultAddrPools_.push_back(defaultAddrPoolsObject);
+	}
 	auto allLinesNode = value["Lines"]["Line"];
 	for (auto valueLinesLine : allLinesNode)
 	{
 		Line linesObject;
+		if(!valueLinesLine["GroupName"].isNull())
+			linesObject.groupName = valueLinesLine["GroupName"].asString();
 		if(!valueLinesLine["LineCode"].isNull())
 			linesObject.lineCode = valueLinesLine["LineCode"].asString();
 		if(!valueLinesLine["LineName"].isNull())
 			linesObject.lineName = valueLinesLine["LineName"].asString();
 		if(!valueLinesLine["GroupCode"].isNull())
 			linesObject.groupCode = valueLinesLine["GroupCode"].asString();
-		if(!valueLinesLine["GroupName"].isNull())
-			linesObject.groupName = valueLinesLine["GroupName"].asString();
 		lines_.push_back(linesObject);
 	}
-	auto allDefaultAddrPoolsNode = value["DefaultAddrPools"]["DefaultAddrPool"];
-	for (auto valueDefaultAddrPoolsDefaultAddrPool : allDefaultAddrPoolsNode)
-	{
-		DefaultAddrPool defaultAddrPoolsObject;
-		if(!valueDefaultAddrPoolsDefaultAddrPool["Id"].isNull())
-			defaultAddrPoolsObject.id = valueDefaultAddrPoolsDefaultAddrPool["Id"].asString();
-		if(!valueDefaultAddrPoolsDefaultAddrPool["Name"].isNull())
-			defaultAddrPoolsObject.name = valueDefaultAddrPoolsDefaultAddrPool["Name"].asString();
-		if(!valueDefaultAddrPoolsDefaultAddrPool["AddrCount"].isNull())
-			defaultAddrPoolsObject.addrCount = std::stoi(valueDefaultAddrPoolsDefaultAddrPool["AddrCount"].asString());
-		if(!valueDefaultAddrPoolsDefaultAddrPool["LbaWeight"].isNull())
-			defaultAddrPoolsObject.lbaWeight = std::stoi(valueDefaultAddrPoolsDefaultAddrPool["LbaWeight"].asString());
-		defaultAddrPools_.push_back(defaultAddrPoolsObject);
-	}
-	auto allFailoverAddrPoolsNode = value["FailoverAddrPools"]["FailoverAddrPool"];
-	for (auto valueFailoverAddrPoolsFailoverAddrPool : allFailoverAddrPoolsNode)
-	{
-		FailoverAddrPool failoverAddrPoolsObject;
-		if(!valueFailoverAddrPoolsFailoverAddrPool["Id"].isNull())
-			failoverAddrPoolsObject.id = valueFailoverAddrPoolsFailoverAddrPool["Id"].asString();
-		if(!valueFailoverAddrPoolsFailoverAddrPool["Name"].isNull())
-			failoverAddrPoolsObject.name = valueFailoverAddrPoolsFailoverAddrPool["Name"].asString();
-		if(!valueFailoverAddrPoolsFailoverAddrPool["AddrCount"].isNull())
-			failoverAddrPoolsObject.addrCount = std::stoi(valueFailoverAddrPoolsFailoverAddrPool["AddrCount"].asString());
-		if(!valueFailoverAddrPoolsFailoverAddrPool["LbaWeight"].isNull())
-			failoverAddrPoolsObject.lbaWeight = std::stoi(valueFailoverAddrPoolsFailoverAddrPool["LbaWeight"].asString());
-		failoverAddrPools_.push_back(failoverAddrPoolsObject);
-	}
-	if(!value["StrategyId"].isNull())
-		strategyId_ = value["StrategyId"].asString();
-	if(!value["StrategyName"].isNull())
-		strategyName_ = value["StrategyName"].asString();
-	if(!value["StrategyMode"].isNull())
-		strategyMode_ = value["StrategyMode"].asString();
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
+	if(!value["FailoverMinAvailableAddrNum"].isNull())
+		failoverMinAvailableAddrNum_ = std::stoi(value["FailoverMinAvailableAddrNum"].asString());
 	if(!value["DefaultAddrPoolType"].isNull())
 		defaultAddrPoolType_ = value["DefaultAddrPoolType"].asString();
-	if(!value["DefaultLbaStrategy"].isNull())
-		defaultLbaStrategy_ = value["DefaultLbaStrategy"].asString();
-	if(!value["DefaultMinAvailableAddrNum"].isNull())
-		defaultMinAvailableAddrNum_ = std::stoi(value["DefaultMinAvailableAddrNum"].asString());
+	if(!value["DefaultAvailableAddrNum"].isNull())
+		defaultAvailableAddrNum_ = std::stoi(value["DefaultAvailableAddrNum"].asString());
+	if(!value["StrategyId"].isNull())
+		strategyId_ = value["StrategyId"].asString();
+	if(!value["FailoverAddrPoolGroupStatus"].isNull())
+		failoverAddrPoolGroupStatus_ = value["FailoverAddrPoolGroupStatus"].asString();
+	if(!value["FailoverAvailableAddrNum"].isNull())
+		failoverAvailableAddrNum_ = std::stoi(value["FailoverAvailableAddrNum"].asString());
+	if(!value["FailoverLbaStrategy"].isNull())
+		failoverLbaStrategy_ = value["FailoverLbaStrategy"].asString();
 	if(!value["DefaultMaxReturnAddrNum"].isNull())
 		defaultMaxReturnAddrNum_ = std::stoi(value["DefaultMaxReturnAddrNum"].asString());
-	if(!value["DefaultLatencyOptimization"].isNull())
-		defaultLatencyOptimization_ = value["DefaultLatencyOptimization"].asString();
+	if(!value["StrategyMode"].isNull())
+		strategyMode_ = value["StrategyMode"].asString();
+	if(!value["CreateTimestamp"].isNull())
+		createTimestamp_ = std::stol(value["CreateTimestamp"].asString());
+	if(!value["DefaultLbaStrategy"].isNull())
+		defaultLbaStrategy_ = value["DefaultLbaStrategy"].asString();
 	if(!value["DefaultAddrPoolGroupStatus"].isNull())
 		defaultAddrPoolGroupStatus_ = value["DefaultAddrPoolGroupStatus"].asString();
 	if(!value["FailoverAddrPoolType"].isNull())
 		failoverAddrPoolType_ = value["FailoverAddrPoolType"].asString();
-	if(!value["FailoverLbaStrategy"].isNull())
-		failoverLbaStrategy_ = value["FailoverLbaStrategy"].asString();
-	if(!value["FailoverMinAvailableAddrNum"].isNull())
-		failoverMinAvailableAddrNum_ = std::stoi(value["FailoverMinAvailableAddrNum"].asString());
-	if(!value["FailoverMaxReturnAddrNum"].isNull())
-		failoverMaxReturnAddrNum_ = std::stoi(value["FailoverMaxReturnAddrNum"].asString());
-	if(!value["FailoverLatencyOptimization"].isNull())
-		failoverLatencyOptimization_ = value["FailoverLatencyOptimization"].asString();
-	if(!value["FailoverAddrPoolGroupStatus"].isNull())
-		failoverAddrPoolGroupStatus_ = value["FailoverAddrPoolGroupStatus"].asString();
-	if(!value["AccessMode"].isNull())
-		accessMode_ = value["AccessMode"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["DefaultLatencyOptimization"].isNull())
+		defaultLatencyOptimization_ = value["DefaultLatencyOptimization"].asString();
 	if(!value["EffectiveAddrPoolGroupType"].isNull())
 		effectiveAddrPoolGroupType_ = value["EffectiveAddrPoolGroupType"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = value["CreateTime"].asString();
-	if(!value["CreateTimestamp"].isNull())
-		createTimestamp_ = std::stol(value["CreateTimestamp"].asString());
-	if(!value["DefaultAvailableAddrNum"].isNull())
-		defaultAvailableAddrNum_ = std::stoi(value["DefaultAvailableAddrNum"].asString());
-	if(!value["FailoverAvailableAddrNum"].isNull())
-		failoverAvailableAddrNum_ = std::stoi(value["FailoverAvailableAddrNum"].asString());
+	if(!value["DefaultMinAvailableAddrNum"].isNull())
+		defaultMinAvailableAddrNum_ = std::stoi(value["DefaultMinAvailableAddrNum"].asString());
+	if(!value["FailoverLatencyOptimization"].isNull())
+		failoverLatencyOptimization_ = value["FailoverLatencyOptimization"].asString();
+	if(!value["StrategyName"].isNull())
+		strategyName_ = value["StrategyName"].asString();
+	if(!value["FailoverMaxReturnAddrNum"].isNull())
+		failoverMaxReturnAddrNum_ = std::stoi(value["FailoverMaxReturnAddrNum"].asString());
+	if(!value["AccessMode"].isNull())
+		accessMode_ = value["AccessMode"].asString();
 
 }
 
@@ -138,6 +138,11 @@ std::string DescribeDnsGtmAccessStrategyResult::getDefaultAddrPoolType()const
 	return defaultAddrPoolType_;
 }
 
+int DescribeDnsGtmAccessStrategyResult::getDefaultAvailableAddrNum()const
+{
+	return defaultAvailableAddrNum_;
+}
+
 std::string DescribeDnsGtmAccessStrategyResult::getStrategyId()const
 {
 	return strategyId_;
@@ -146,11 +151,6 @@ std::string DescribeDnsGtmAccessStrategyResult::getStrategyId()const
 std::string DescribeDnsGtmAccessStrategyResult::getFailoverAddrPoolGroupStatus()const
 {
 	return failoverAddrPoolGroupStatus_;
-}
-
-int DescribeDnsGtmAccessStrategyResult::getDefaultAvailableAddrNum()const
-{
-	return defaultAvailableAddrNum_;
 }
 
 int DescribeDnsGtmAccessStrategyResult::getFailoverAvailableAddrNum()const

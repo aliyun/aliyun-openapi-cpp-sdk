@@ -38,11 +38,11 @@ namespace AlibabaCloud
 				explicit DescribeDomainDnssecInfoResult(const std::string &payload);
 				~DescribeDomainDnssecInfoResult();
 				std::string getStatus()const;
-				std::string getDomainName()const;
 				std::string getDigest()const;
+				std::string getDomainName()const;
 				std::string getPublicKey()const;
-				std::string getDsRecord()const;
 				std::string getDigestType()const;
+				std::string getDsRecord()const;
 				std::string getKeyTag()const;
 				std::string getFlags()const;
 				std::string getAlgorithm()const;
@@ -51,11 +51,11 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::string status_;
-				std::string domainName_;
 				std::string digest_;
+				std::string domainName_;
 				std::string publicKey_;
-				std::string dsRecord_;
 				std::string digestType_;
+				std::string dsRecord_;
 				std::string keyTag_;
 				std::string flags_;
 				std::string algorithm_;

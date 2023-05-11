@@ -43,14 +43,14 @@ void DescribeSupportLinesResult::parse(const std::string &payload)
 	for (auto valueRecordLinesRecordLine : allRecordLinesNode)
 	{
 		RecordLine recordLinesObject;
-		if(!valueRecordLinesRecordLine["LineCode"].isNull())
-			recordLinesObject.lineCode = valueRecordLinesRecordLine["LineCode"].asString();
 		if(!valueRecordLinesRecordLine["FatherCode"].isNull())
 			recordLinesObject.fatherCode = valueRecordLinesRecordLine["FatherCode"].asString();
-		if(!valueRecordLinesRecordLine["LineName"].isNull())
-			recordLinesObject.lineName = valueRecordLinesRecordLine["LineName"].asString();
 		if(!valueRecordLinesRecordLine["LineDisplayName"].isNull())
 			recordLinesObject.lineDisplayName = valueRecordLinesRecordLine["LineDisplayName"].asString();
+		if(!valueRecordLinesRecordLine["LineCode"].isNull())
+			recordLinesObject.lineCode = valueRecordLinesRecordLine["LineCode"].asString();
+		if(!valueRecordLinesRecordLine["LineName"].isNull())
+			recordLinesObject.lineName = valueRecordLinesRecordLine["LineName"].asString();
 		recordLines_.push_back(recordLinesObject);
 	}
 

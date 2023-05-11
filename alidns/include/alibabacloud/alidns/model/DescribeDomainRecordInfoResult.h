@@ -37,14 +37,15 @@ namespace AlibabaCloud
 				DescribeDomainRecordInfoResult();
 				explicit DescribeDomainRecordInfoResult(const std::string &payload);
 				~DescribeDomainRecordInfoResult();
-				std::string getGroupName()const;
-				std::string getRR()const;
 				std::string getStatus()const;
+				std::string getRR()const;
+				std::string getGroupName()const;
 				std::string getDomainName()const;
 				long getPriority()const;
 				std::string getPunyCode()const;
 				long getTTL()const;
 				std::string getGroupId()const;
+				std::string getRemark()const;
 				std::string getLine()const;
 				bool getLocked()const;
 				std::string getType()const;
@@ -55,14 +56,15 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string groupName_;
-				std::string rR_;
 				std::string status_;
+				std::string rR_;
+				std::string groupName_;
 				std::string domainName_;
 				long priority_;
 				std::string punyCode_;
 				long tTL_;
 				std::string groupId_;
+				std::string remark_;
 				std::string line_;
 				bool locked_;
 				std::string type_;

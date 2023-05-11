@@ -39,24 +39,24 @@ void DescribeDomainDnssecInfoResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["DsRecord"].isNull())
-		dsRecord_ = value["DsRecord"].asString();
 	if(!value["Digest"].isNull())
 		digest_ = value["Digest"].asString();
-	if(!value["DigestType"].isNull())
-		digestType_ = value["DigestType"].asString();
-	if(!value["Algorithm"].isNull())
-		algorithm_ = value["Algorithm"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["PublicKey"].isNull())
 		publicKey_ = value["PublicKey"].asString();
+	if(!value["DigestType"].isNull())
+		digestType_ = value["DigestType"].asString();
+	if(!value["DsRecord"].isNull())
+		dsRecord_ = value["DsRecord"].asString();
 	if(!value["KeyTag"].isNull())
 		keyTag_ = value["KeyTag"].asString();
 	if(!value["Flags"].isNull())
 		flags_ = value["Flags"].asString();
+	if(!value["Algorithm"].isNull())
+		algorithm_ = value["Algorithm"].asString();
 
 }
 
@@ -65,14 +65,14 @@ std::string DescribeDomainDnssecInfoResult::getStatus()const
 	return status_;
 }
 
-std::string DescribeDomainDnssecInfoResult::getDomainName()const
-{
-	return domainName_;
-}
-
 std::string DescribeDomainDnssecInfoResult::getDigest()const
 {
 	return digest_;
+}
+
+std::string DescribeDomainDnssecInfoResult::getDomainName()const
+{
+	return domainName_;
 }
 
 std::string DescribeDomainDnssecInfoResult::getPublicKey()const
@@ -80,14 +80,14 @@ std::string DescribeDomainDnssecInfoResult::getPublicKey()const
 	return publicKey_;
 }
 
-std::string DescribeDomainDnssecInfoResult::getDsRecord()const
-{
-	return dsRecord_;
-}
-
 std::string DescribeDomainDnssecInfoResult::getDigestType()const
 {
 	return digestType_;
+}
+
+std::string DescribeDomainDnssecInfoResult::getDsRecord()const
+{
+	return dsRecord_;
 }
 
 std::string DescribeDomainDnssecInfoResult::getKeyTag()const

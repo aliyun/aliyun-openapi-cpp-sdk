@@ -34,20 +34,20 @@ namespace AlibabaCloud
 			public:
 				struct BatchResultDetail
 				{
-					std::string rr;
 					bool status;
+					std::string rr;
 					std::string operateDateStr;
 					std::string priority;
 					std::string rrStatus;
 					std::string ttl;
-					std::string reason;
 					std::string batchType;
+					std::string reason;
 					std::string remark;
 					std::string line;
 					std::string type;
 					std::string value;
-					std::string newRr;
 					std::string newValue;
+					std::string newRr;
 					std::string recordId;
 					std::string domain;
 				};

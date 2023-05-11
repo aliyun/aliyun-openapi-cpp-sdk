@@ -35,8 +35,8 @@ namespace AlibabaCloud
 				struct UserInfo
 				{
 					std::string availableService;
-					std::string serviceType;
 					std::string state;
+					std::string serviceType;
 					std::string stoppedService;
 					long pdnsId;
 				};

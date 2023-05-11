@@ -39,10 +39,10 @@ void UnbindInstanceDomainsResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["SuccessCount"].isNull())
-		successCount_ = std::stoi(value["SuccessCount"].asString());
 	if(!value["FailedCount"].isNull())
 		failedCount_ = std::stoi(value["FailedCount"].asString());
+	if(!value["SuccessCount"].isNull())
+		successCount_ = std::stoi(value["SuccessCount"].asString());
 
 }
 

@@ -42,72 +42,72 @@ void DescribeDnsProductInstanceResult::parse(const std::string &payload)
 	auto allDnsServers = value["DnsServers"]["DnsServer"];
 	for (const auto &item : allDnsServers)
 		dnsServers_.push_back(item.asString());
-	if(!value["InstanceId"].isNull())
-		instanceId_ = value["InstanceId"].asString();
-	if(!value["VersionCode"].isNull())
-		versionCode_ = value["VersionCode"].asString();
-	if(!value["VersionName"].isNull())
-		versionName_ = value["VersionName"].asString();
-	if(!value["StartTime"].isNull())
-		startTime_ = value["StartTime"].asString();
-	if(!value["StartTimestamp"].isNull())
-		startTimestamp_ = std::stol(value["StartTimestamp"].asString());
-	if(!value["EndTime"].isNull())
-		endTime_ = value["EndTime"].asString();
-	if(!value["EndTimestamp"].isNull())
-		endTimestamp_ = std::stol(value["EndTimestamp"].asString());
-	if(!value["Domain"].isNull())
-		domain_ = value["Domain"].asString();
-	if(!value["BindCount"].isNull())
-		bindCount_ = std::stol(value["BindCount"].asString());
-	if(!value["BindUsedCount"].isNull())
-		bindUsedCount_ = std::stol(value["BindUsedCount"].asString());
-	if(!value["TTLMinValue"].isNull())
-		tTLMinValue_ = std::stol(value["TTLMinValue"].asString());
-	if(!value["SubDomainLevel"].isNull())
-		subDomainLevel_ = std::stol(value["SubDomainLevel"].asString());
-	if(!value["DnsSLBCount"].isNull())
-		dnsSLBCount_ = std::stol(value["DnsSLBCount"].asString());
-	if(!value["URLForwardCount"].isNull())
-		uRLForwardCount_ = std::stol(value["URLForwardCount"].asString());
-	if(!value["DDosDefendFlow"].isNull())
-		dDosDefendFlow_ = std::stol(value["DDosDefendFlow"].asString());
-	if(!value["DDosDefendQuery"].isNull())
-		dDosDefendQuery_ = std::stol(value["DDosDefendQuery"].asString());
-	if(!value["OverseaDDosDefendFlow"].isNull())
-		overseaDDosDefendFlow_ = std::stol(value["OverseaDDosDefendFlow"].asString());
-	if(!value["SearchEngineLines"].isNull())
-		searchEngineLines_ = value["SearchEngineLines"].asString();
-	if(!value["ISPLines"].isNull())
-		iSPLines_ = value["ISPLines"].asString();
-	if(!value["ISPRegionLines"].isNull())
-		iSPRegionLines_ = value["ISPRegionLines"].asString();
-	if(!value["OverseaLine"].isNull())
-		overseaLine_ = value["OverseaLine"].asString();
 	if(!value["MonitorNodeCount"].isNull())
 		monitorNodeCount_ = std::stol(value["MonitorNodeCount"].asString());
-	if(!value["MonitorFrequency"].isNull())
-		monitorFrequency_ = std::stol(value["MonitorFrequency"].asString());
-	if(!value["MonitorTaskCount"].isNull())
-		monitorTaskCount_ = std::stol(value["MonitorTaskCount"].asString());
-	if(!value["RegionLines"].isNull())
-		regionLines_ = value["RegionLines"].asString() == "true";
-	if(!value["Gslb"].isNull())
-		gslb_ = value["Gslb"].asString() == "true";
-	if(!value["InClean"].isNull())
-		inClean_ = value["InClean"].asString() == "true";
 	if(!value["InBlackHole"].isNull())
 		inBlackHole_ = value["InBlackHole"].asString() == "true";
 	if(!value["BindDomainCount"].isNull())
 		bindDomainCount_ = std::stol(value["BindDomainCount"].asString());
-	if(!value["BindDomainUsedCount"].isNull())
-		bindDomainUsedCount_ = std::stol(value["BindDomainUsedCount"].asString());
+	if(!value["RegionLines"].isNull())
+		regionLines_ = value["RegionLines"].asString() == "true";
+	if(!value["BindCount"].isNull())
+		bindCount_ = std::stol(value["BindCount"].asString());
+	if(!value["EndTime"].isNull())
+		endTime_ = value["EndTime"].asString();
+	if(!value["StartTimestamp"].isNull())
+		startTimestamp_ = std::stol(value["StartTimestamp"].asString());
+	if(!value["ISPLines"].isNull())
+		iSPLines_ = value["ISPLines"].asString();
+	if(!value["EndTimestamp"].isNull())
+		endTimestamp_ = std::stol(value["EndTimestamp"].asString());
+	if(!value["DDosDefendQuery"].isNull())
+		dDosDefendQuery_ = std::stol(value["DDosDefendQuery"].asString());
 	if(!value["DnsSecurity"].isNull())
 		dnsSecurity_ = value["DnsSecurity"].asString();
-	if(!value["PaymentType"].isNull())
-		paymentType_ = value["PaymentType"].asString();
 	if(!value["DomainType"].isNull())
 		domainType_ = value["DomainType"].asString();
+	if(!value["URLForwardCount"].isNull())
+		uRLForwardCount_ = std::stol(value["URLForwardCount"].asString());
+	if(!value["TTLMinValue"].isNull())
+		tTLMinValue_ = std::stol(value["TTLMinValue"].asString());
+	if(!value["PaymentType"].isNull())
+		paymentType_ = value["PaymentType"].asString();
+	if(!value["VersionName"].isNull())
+		versionName_ = value["VersionName"].asString();
+	if(!value["OverseaLine"].isNull())
+		overseaLine_ = value["OverseaLine"].asString();
+	if(!value["ISPRegionLines"].isNull())
+		iSPRegionLines_ = value["ISPRegionLines"].asString();
+	if(!value["Gslb"].isNull())
+		gslb_ = value["Gslb"].asString() == "true";
+	if(!value["BindUsedCount"].isNull())
+		bindUsedCount_ = std::stol(value["BindUsedCount"].asString());
+	if(!value["DnsSLBCount"].isNull())
+		dnsSLBCount_ = std::stol(value["DnsSLBCount"].asString());
+	if(!value["InstanceId"].isNull())
+		instanceId_ = value["InstanceId"].asString();
+	if(!value["MonitorTaskCount"].isNull())
+		monitorTaskCount_ = std::stol(value["MonitorTaskCount"].asString());
+	if(!value["StartTime"].isNull())
+		startTime_ = value["StartTime"].asString();
+	if(!value["DDosDefendFlow"].isNull())
+		dDosDefendFlow_ = std::stol(value["DDosDefendFlow"].asString());
+	if(!value["MonitorFrequency"].isNull())
+		monitorFrequency_ = std::stol(value["MonitorFrequency"].asString());
+	if(!value["SearchEngineLines"].isNull())
+		searchEngineLines_ = value["SearchEngineLines"].asString();
+	if(!value["BindDomainUsedCount"].isNull())
+		bindDomainUsedCount_ = std::stol(value["BindDomainUsedCount"].asString());
+	if(!value["VersionCode"].isNull())
+		versionCode_ = value["VersionCode"].asString();
+	if(!value["OverseaDDosDefendFlow"].isNull())
+		overseaDDosDefendFlow_ = std::stol(value["OverseaDDosDefendFlow"].asString());
+	if(!value["InClean"].isNull())
+		inClean_ = value["InClean"].asString() == "true";
+	if(!value["SubDomainLevel"].isNull())
+		subDomainLevel_ = std::stol(value["SubDomainLevel"].asString());
+	if(!value["Domain"].isNull())
+		domain_ = value["Domain"].asString();
 
 }
 
@@ -131,14 +131,14 @@ bool DescribeDnsProductInstanceResult::getRegionLines()const
 	return regionLines_;
 }
 
-std::string DescribeDnsProductInstanceResult::getEndTime()const
-{
-	return endTime_;
-}
-
 long DescribeDnsProductInstanceResult::getBindCount()const
 {
 	return bindCount_;
+}
+
+std::string DescribeDnsProductInstanceResult::getEndTime()const
+{
+	return endTime_;
 }
 
 long DescribeDnsProductInstanceResult::getStartTimestamp()const
@@ -266,14 +266,14 @@ long DescribeDnsProductInstanceResult::getOverseaDDosDefendFlow()const
 	return overseaDDosDefendFlow_;
 }
 
-long DescribeDnsProductInstanceResult::getSubDomainLevel()const
-{
-	return subDomainLevel_;
-}
-
 bool DescribeDnsProductInstanceResult::getInClean()const
 {
 	return inClean_;
+}
+
+long DescribeDnsProductInstanceResult::getSubDomainLevel()const
+{
+	return subDomainLevel_;
 }
 
 std::string DescribeDnsProductInstanceResult::getDomain()const

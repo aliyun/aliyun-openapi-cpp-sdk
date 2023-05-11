@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Alidns::Model::DescribeDnsGtmAddrAttributeInfoRequest;
 
-DescribeDnsGtmAddrAttributeInfoRequest::DescribeDnsGtmAddrAttributeInfoRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "DescribeDnsGtmAddrAttributeInfo")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDnsGtmAddrAttributeInfoRequest::DescribeDnsGtmAddrAttributeInfoRequest()
+    : RpcServiceRequest("alidns", "2015-01-09", "DescribeDnsGtmAddrAttributeInfo") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDnsGtmAddrAttributeInfoRequest::~DescribeDnsGtmAddrAttributeInfoRequest()
-{}
+DescribeDnsGtmAddrAttributeInfoRequest::~DescribeDnsGtmAddrAttributeInfoRequest() {}
 
-std::string DescribeDnsGtmAddrAttributeInfoRequest::getAddrs()const
-{
-	return addrs_;
+std::string DescribeDnsGtmAddrAttributeInfoRequest::getAddrs() const {
+  return addrs_;
 }
 
-void DescribeDnsGtmAddrAttributeInfoRequest::setAddrs(const std::string& addrs)
-{
-	addrs_ = addrs;
-	setParameter("Addrs", addrs);
+void DescribeDnsGtmAddrAttributeInfoRequest::setAddrs(const std::string &addrs) {
+  addrs_ = addrs;
+  setParameter(std::string("Addrs"), addrs);
 }
 
-std::string DescribeDnsGtmAddrAttributeInfoRequest::getType()const
-{
-	return type_;
+std::string DescribeDnsGtmAddrAttributeInfoRequest::getType() const {
+  return type_;
 }
 
-void DescribeDnsGtmAddrAttributeInfoRequest::setType(const std::string& type)
-{
-	type_ = type;
-	setParameter("Type", type);
+void DescribeDnsGtmAddrAttributeInfoRequest::setType(const std::string &type) {
+  type_ = type;
+  setParameter(std::string("Type"), type);
 }
 
-std::string DescribeDnsGtmAddrAttributeInfoRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string DescribeDnsGtmAddrAttributeInfoRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void DescribeDnsGtmAddrAttributeInfoRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void DescribeDnsGtmAddrAttributeInfoRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string DescribeDnsGtmAddrAttributeInfoRequest::getLang()const
-{
-	return lang_;
+std::string DescribeDnsGtmAddrAttributeInfoRequest::getLang() const {
+  return lang_;
 }
 
-void DescribeDnsGtmAddrAttributeInfoRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DescribeDnsGtmAddrAttributeInfoRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

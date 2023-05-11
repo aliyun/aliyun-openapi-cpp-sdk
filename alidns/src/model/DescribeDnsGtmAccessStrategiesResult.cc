@@ -43,58 +43,58 @@ void DescribeDnsGtmAccessStrategiesResult::parse(const std::string &payload)
 	for (auto valueStrategiesStrategy : allStrategiesNode)
 	{
 		Strategy strategiesObject;
+		if(!valueStrategiesStrategy["EffectiveLbaStrategy"].isNull())
+			strategiesObject.effectiveLbaStrategy = valueStrategiesStrategy["EffectiveLbaStrategy"].asString();
 		if(!valueStrategiesStrategy["StrategyId"].isNull())
 			strategiesObject.strategyId = valueStrategiesStrategy["StrategyId"].asString();
 		if(!valueStrategiesStrategy["StrategyName"].isNull())
 			strategiesObject.strategyName = valueStrategiesStrategy["StrategyName"].asString();
+		if(!valueStrategiesStrategy["EffectiveAddrPoolGroupType"].isNull())
+			strategiesObject.effectiveAddrPoolGroupType = valueStrategiesStrategy["EffectiveAddrPoolGroupType"].asString();
 		if(!valueStrategiesStrategy["CreateTime"].isNull())
 			strategiesObject.createTime = valueStrategiesStrategy["CreateTime"].asString();
 		if(!valueStrategiesStrategy["CreateTimestamp"].isNull())
 			strategiesObject.createTimestamp = std::stol(valueStrategiesStrategy["CreateTimestamp"].asString());
-		if(!valueStrategiesStrategy["EffectiveAddrPoolGroupType"].isNull())
-			strategiesObject.effectiveAddrPoolGroupType = valueStrategiesStrategy["EffectiveAddrPoolGroupType"].asString();
 		if(!valueStrategiesStrategy["EffectiveAddrPoolType"].isNull())
 			strategiesObject.effectiveAddrPoolType = valueStrategiesStrategy["EffectiveAddrPoolType"].asString();
-		if(!valueStrategiesStrategy["EffectiveLbaStrategy"].isNull())
-			strategiesObject.effectiveLbaStrategy = valueStrategiesStrategy["EffectiveLbaStrategy"].asString();
+		auto allEffectiveAddrPoolsNode = valueStrategiesStrategy["EffectiveAddrPools"]["EffectiveAddrPool"];
+		for (auto valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool : allEffectiveAddrPoolsNode)
+		{
+			Strategy::EffectiveAddrPool effectiveAddrPoolsObject;
+			if(!valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["LbaWeight"].isNull())
+				effectiveAddrPoolsObject.lbaWeight = std::stoi(valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["LbaWeight"].asString());
+			if(!valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["Name"].isNull())
+				effectiveAddrPoolsObject.name = valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["Name"].asString();
+			if(!valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["AddrCount"].isNull())
+				effectiveAddrPoolsObject.addrCount = std::stoi(valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["AddrCount"].asString());
+			if(!valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["Id"].isNull())
+				effectiveAddrPoolsObject.id = valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["Id"].asString();
+			strategiesObject.effectiveAddrPools.push_back(effectiveAddrPoolsObject);
+		}
 		auto allLinesNode = valueStrategiesStrategy["Lines"]["Line"];
 		for (auto valueStrategiesStrategyLinesLine : allLinesNode)
 		{
 			Strategy::Line linesObject;
+			if(!valueStrategiesStrategyLinesLine["GroupName"].isNull())
+				linesObject.groupName = valueStrategiesStrategyLinesLine["GroupName"].asString();
 			if(!valueStrategiesStrategyLinesLine["LineCode"].isNull())
 				linesObject.lineCode = valueStrategiesStrategyLinesLine["LineCode"].asString();
 			if(!valueStrategiesStrategyLinesLine["LineName"].isNull())
 				linesObject.lineName = valueStrategiesStrategyLinesLine["LineName"].asString();
 			if(!valueStrategiesStrategyLinesLine["GroupCode"].isNull())
 				linesObject.groupCode = valueStrategiesStrategyLinesLine["GroupCode"].asString();
-			if(!valueStrategiesStrategyLinesLine["GroupName"].isNull())
-				linesObject.groupName = valueStrategiesStrategyLinesLine["GroupName"].asString();
 			strategiesObject.lines.push_back(linesObject);
-		}
-		auto allEffectiveAddrPoolsNode = valueStrategiesStrategy["EffectiveAddrPools"]["EffectiveAddrPool"];
-		for (auto valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool : allEffectiveAddrPoolsNode)
-		{
-			Strategy::EffectiveAddrPool effectiveAddrPoolsObject;
-			if(!valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["Id"].isNull())
-				effectiveAddrPoolsObject.id = valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["Id"].asString();
-			if(!valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["Name"].isNull())
-				effectiveAddrPoolsObject.name = valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["Name"].asString();
-			if(!valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["AddrCount"].isNull())
-				effectiveAddrPoolsObject.addrCount = std::stoi(valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["AddrCount"].asString());
-			if(!valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["LbaWeight"].isNull())
-				effectiveAddrPoolsObject.lbaWeight = std::stoi(valueStrategiesStrategyEffectiveAddrPoolsEffectiveAddrPool["LbaWeight"].asString());
-			strategiesObject.effectiveAddrPools.push_back(effectiveAddrPoolsObject);
 		}
 		strategies_.push_back(strategiesObject);
 	}
-	if(!value["TotalItems"].isNull())
-		totalItems_ = std::stoi(value["TotalItems"].asString());
-	if(!value["TotalPages"].isNull())
-		totalPages_ = std::stoi(value["TotalPages"].asString());
-	if(!value["PageNumber"].isNull())
-		pageNumber_ = std::stoi(value["PageNumber"].asString());
 	if(!value["PageSize"].isNull())
 		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["TotalPages"].isNull())
+		totalPages_ = std::stoi(value["TotalPages"].asString());
+	if(!value["TotalItems"].isNull())
+		totalItems_ = std::stoi(value["TotalItems"].asString());
 
 }
 

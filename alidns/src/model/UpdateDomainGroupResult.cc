@@ -39,10 +39,10 @@ void UpdateDomainGroupResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["GroupId"].isNull())
-		groupId_ = value["GroupId"].asString();
 	if(!value["GroupName"].isNull())
 		groupName_ = value["GroupName"].asString();
+	if(!value["GroupId"].isNull())
+		groupId_ = value["GroupId"].asString();
 
 }
 

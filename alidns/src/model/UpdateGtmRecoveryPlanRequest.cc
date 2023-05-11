@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,78 +18,64 @@
 
 using AlibabaCloud::Alidns::Model::UpdateGtmRecoveryPlanRequest;
 
-UpdateGtmRecoveryPlanRequest::UpdateGtmRecoveryPlanRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "UpdateGtmRecoveryPlan")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateGtmRecoveryPlanRequest::UpdateGtmRecoveryPlanRequest()
+    : RpcServiceRequest("alidns", "2015-01-09", "UpdateGtmRecoveryPlan") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateGtmRecoveryPlanRequest::~UpdateGtmRecoveryPlanRequest()
-{}
+UpdateGtmRecoveryPlanRequest::~UpdateGtmRecoveryPlanRequest() {}
 
-std::string UpdateGtmRecoveryPlanRequest::getFaultAddrPool()const
-{
-	return faultAddrPool_;
+std::string UpdateGtmRecoveryPlanRequest::getFaultAddrPool() const {
+  return faultAddrPool_;
 }
 
-void UpdateGtmRecoveryPlanRequest::setFaultAddrPool(const std::string& faultAddrPool)
-{
-	faultAddrPool_ = faultAddrPool;
-	setParameter("FaultAddrPool", faultAddrPool);
+void UpdateGtmRecoveryPlanRequest::setFaultAddrPool(const std::string &faultAddrPool) {
+  faultAddrPool_ = faultAddrPool;
+  setParameter(std::string("FaultAddrPool"), faultAddrPool);
 }
 
-std::string UpdateGtmRecoveryPlanRequest::getRemark()const
-{
-	return remark_;
+std::string UpdateGtmRecoveryPlanRequest::getRemark() const {
+  return remark_;
 }
 
-void UpdateGtmRecoveryPlanRequest::setRemark(const std::string& remark)
-{
-	remark_ = remark;
-	setParameter("Remark", remark);
+void UpdateGtmRecoveryPlanRequest::setRemark(const std::string &remark) {
+  remark_ = remark;
+  setParameter(std::string("Remark"), remark);
 }
 
-std::string UpdateGtmRecoveryPlanRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string UpdateGtmRecoveryPlanRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void UpdateGtmRecoveryPlanRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void UpdateGtmRecoveryPlanRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string UpdateGtmRecoveryPlanRequest::getName()const
-{
-	return name_;
+std::string UpdateGtmRecoveryPlanRequest::getName() const {
+  return name_;
 }
 
-void UpdateGtmRecoveryPlanRequest::setName(const std::string& name)
-{
-	name_ = name;
-	setParameter("Name", name);
+void UpdateGtmRecoveryPlanRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 
-long UpdateGtmRecoveryPlanRequest::getRecoveryPlanId()const
-{
-	return recoveryPlanId_;
+long UpdateGtmRecoveryPlanRequest::getRecoveryPlanId() const {
+  return recoveryPlanId_;
 }
 
-void UpdateGtmRecoveryPlanRequest::setRecoveryPlanId(long recoveryPlanId)
-{
-	recoveryPlanId_ = recoveryPlanId;
-	setParameter("RecoveryPlanId", std::to_string(recoveryPlanId));
+void UpdateGtmRecoveryPlanRequest::setRecoveryPlanId(long recoveryPlanId) {
+  recoveryPlanId_ = recoveryPlanId;
+  setParameter(std::string("RecoveryPlanId"), std::to_string(recoveryPlanId));
 }
 
-std::string UpdateGtmRecoveryPlanRequest::getLang()const
-{
-	return lang_;
+std::string UpdateGtmRecoveryPlanRequest::getLang() const {
+  return lang_;
 }
 
-void UpdateGtmRecoveryPlanRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void UpdateGtmRecoveryPlanRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

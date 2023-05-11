@@ -43,18 +43,18 @@ void DescribePdnsUdpIpSegmentsResult::parse(const std::string &payload)
 	for (auto valueIpSegmentsIpSegment : allIpSegmentsNode)
 	{
 		IpSegment ipSegmentsObject;
-		if(!valueIpSegmentsIpSegment["UpdateDate"].isNull())
-			ipSegmentsObject.updateDate = valueIpSegmentsIpSegment["UpdateDate"].asString();
-		if(!valueIpSegmentsIpSegment["State"].isNull())
-			ipSegmentsObject.state = valueIpSegmentsIpSegment["State"].asString();
+		if(!valueIpSegmentsIpSegment["Name"].isNull())
+			ipSegmentsObject.name = valueIpSegmentsIpSegment["Name"].asString();
 		if(!valueIpSegmentsIpSegment["Ip"].isNull())
 			ipSegmentsObject.ip = valueIpSegmentsIpSegment["Ip"].asString();
 		if(!valueIpSegmentsIpSegment["Mask"].isNull())
 			ipSegmentsObject.mask = std::stol(valueIpSegmentsIpSegment["Mask"].asString());
+		if(!valueIpSegmentsIpSegment["State"].isNull())
+			ipSegmentsObject.state = valueIpSegmentsIpSegment["State"].asString();
 		if(!valueIpSegmentsIpSegment["CreateDate"].isNull())
 			ipSegmentsObject.createDate = valueIpSegmentsIpSegment["CreateDate"].asString();
-		if(!valueIpSegmentsIpSegment["Name"].isNull())
-			ipSegmentsObject.name = valueIpSegmentsIpSegment["Name"].asString();
+		if(!valueIpSegmentsIpSegment["UpdateDate"].isNull())
+			ipSegmentsObject.updateDate = valueIpSegmentsIpSegment["UpdateDate"].asString();
 		ipSegments_.push_back(ipSegmentsObject);
 	}
 	if(!value["TotalCount"].isNull())

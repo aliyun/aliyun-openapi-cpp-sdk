@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,56 +18,46 @@
 
 using AlibabaCloud::Alidns::Model::UpdateDomainGroupRequest;
 
-UpdateDomainGroupRequest::UpdateDomainGroupRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "UpdateDomainGroup")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateDomainGroupRequest::UpdateDomainGroupRequest()
+    : RpcServiceRequest("alidns", "2015-01-09", "UpdateDomainGroup") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateDomainGroupRequest::~UpdateDomainGroupRequest()
-{}
+UpdateDomainGroupRequest::~UpdateDomainGroupRequest() {}
 
-std::string UpdateDomainGroupRequest::getGroupId()const
-{
-	return groupId_;
+std::string UpdateDomainGroupRequest::getGroupId() const {
+  return groupId_;
 }
 
-void UpdateDomainGroupRequest::setGroupId(const std::string& groupId)
-{
-	groupId_ = groupId;
-	setParameter("GroupId", groupId);
+void UpdateDomainGroupRequest::setGroupId(const std::string &groupId) {
+  groupId_ = groupId;
+  setParameter(std::string("GroupId"), groupId);
 }
 
-std::string UpdateDomainGroupRequest::getGroupName()const
-{
-	return groupName_;
+std::string UpdateDomainGroupRequest::getGroupName() const {
+  return groupName_;
 }
 
-void UpdateDomainGroupRequest::setGroupName(const std::string& groupName)
-{
-	groupName_ = groupName;
-	setParameter("GroupName", groupName);
+void UpdateDomainGroupRequest::setGroupName(const std::string &groupName) {
+  groupName_ = groupName;
+  setParameter(std::string("GroupName"), groupName);
 }
 
-std::string UpdateDomainGroupRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string UpdateDomainGroupRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void UpdateDomainGroupRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void UpdateDomainGroupRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-std::string UpdateDomainGroupRequest::getLang()const
-{
-	return lang_;
+std::string UpdateDomainGroupRequest::getLang() const {
+  return lang_;
 }
 
-void UpdateDomainGroupRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void UpdateDomainGroupRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 

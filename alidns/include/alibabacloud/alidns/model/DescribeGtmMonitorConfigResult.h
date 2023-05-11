@@ -47,8 +47,8 @@ namespace AlibabaCloud
 				explicit DescribeGtmMonitorConfigResult(const std::string &payload);
 				~DescribeGtmMonitorConfigResult();
 				std::vector<IspCityNode> getIspCityNodes()const;
-				std::string getProtocolType()const;
 				int getTimeout()const;
+				std::string getProtocolType()const;
 				std::string getCreateTime()const;
 				std::string getUpdateTime()const;
 				int getEvaluationCount()const;
@@ -62,8 +62,8 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				std::vector<IspCityNode> ispCityNodes_;
-				std::string protocolType_;
 				int timeout_;
+				std::string protocolType_;
 				std::string createTime_;
 				std::string updateTime_;
 				int evaluationCount_;

@@ -41,8 +41,8 @@ namespace AlibabaCloud
 				bool getInBlackHole()const;
 				long getBindDomainCount()const;
 				bool getRegionLines()const;
-				std::string getEndTime()const;
 				long getBindCount()const;
+				std::string getEndTime()const;
 				long getStartTimestamp()const;
 				std::string getISPLines()const;
 				std::vector<std::string> getDnsServers()const;
@@ -68,8 +68,8 @@ namespace AlibabaCloud
 				long getBindDomainUsedCount()const;
 				std::string getVersionCode()const;
 				long getOverseaDDosDefendFlow()const;
-				long getSubDomainLevel()const;
 				bool getInClean()const;
+				long getSubDomainLevel()const;
 				std::string getDomain()const;
 
 			protected:
@@ -79,8 +79,8 @@ namespace AlibabaCloud
 				bool inBlackHole_;
 				long bindDomainCount_;
 				bool regionLines_;
-				std::string endTime_;
 				long bindCount_;
+				std::string endTime_;
 				long startTimestamp_;
 				std::string iSPLines_;
 				std::vector<std::string> dnsServers_;
@@ -106,8 +106,8 @@ namespace AlibabaCloud
 				long bindDomainUsedCount_;
 				std::string versionCode_;
 				long overseaDDosDefendFlow_;
-				long subDomainLevel_;
 				bool inClean_;
+				long subDomainLevel_;
 				std::string domain_;
 
 			};

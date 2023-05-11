@@ -36,8 +36,8 @@ namespace AlibabaCloud
 				{
 					std::string actionTime;
 					std::string action;
-					std::string message;
 					std::string zoneId;
+					std::string message;
 					std::string domainName;
 					long actionTimestamp;
 					std::string clientIp;

@@ -39,10 +39,10 @@ void GetTxtRecordForVerifyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["DomainName"].isNull())
-		domainName_ = value["DomainName"].asString();
 	if(!value["RR"].isNull())
 		rR_ = value["RR"].asString();
+	if(!value["DomainName"].isNull())
+		domainName_ = value["DomainName"].asString();
 	if(!value["Value"].isNull())
 		value_ = value["Value"].asString();
 

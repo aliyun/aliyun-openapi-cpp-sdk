@@ -40,14 +40,14 @@ void DescribePdnsAppKeyResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto appKeyNode = value["AppKey"];
-	if(!appKeyNode["State"].isNull())
-		appKey_.state = appKeyNode["State"].asString();
 	if(!appKeyNode["AppKeyId"].isNull())
 		appKey_.appKeyId = appKeyNode["AppKeyId"].asString();
-	if(!appKeyNode["CreateDate"].isNull())
-		appKey_.createDate = appKeyNode["CreateDate"].asString();
 	if(!appKeyNode["AppKeySecret"].isNull())
 		appKey_.appKeySecret = appKeyNode["AppKeySecret"].asString();
+	if(!appKeyNode["State"].isNull())
+		appKey_.state = appKeyNode["State"].asString();
+	if(!appKeyNode["CreateDate"].isNull())
+		appKey_.createDate = appKeyNode["CreateDate"].asString();
 
 }
 

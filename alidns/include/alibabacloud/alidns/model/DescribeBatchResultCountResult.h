@@ -42,8 +42,8 @@ namespace AlibabaCloud
 				long getTaskId()const;
 				int getFailedCount()const;
 				int getSuccessCount()const;
-				std::string getReason()const;
 				std::string getBatchType()const;
+				std::string getReason()const;
 
 			protected:
 				void parse(const std::string &payload);
@@ -53,8 +53,8 @@ namespace AlibabaCloud
 				long taskId_;
 				int failedCount_;
 				int successCount_;
-				std::string reason_;
 				std::string batchType_;
+				std::string reason_;
 
 			};
 		}

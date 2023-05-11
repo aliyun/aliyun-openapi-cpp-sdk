@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Alidns::Model::DescribeDomainGroupsRequest;
 
-DescribeDomainGroupsRequest::DescribeDomainGroupsRequest() :
-	RpcServiceRequest("alidns", "2015-01-09", "DescribeDomainGroups")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeDomainGroupsRequest::DescribeDomainGroupsRequest()
+    : RpcServiceRequest("alidns", "2015-01-09", "DescribeDomainGroups") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeDomainGroupsRequest::~DescribeDomainGroupsRequest()
-{}
+DescribeDomainGroupsRequest::~DescribeDomainGroupsRequest() {}
 
-long DescribeDomainGroupsRequest::getPageNumber()const
-{
-	return pageNumber_;
+long DescribeDomainGroupsRequest::getPageNumber() const {
+  return pageNumber_;
 }
 
-void DescribeDomainGroupsRequest::setPageNumber(long pageNumber)
-{
-	pageNumber_ = pageNumber;
-	setParameter("PageNumber", std::to_string(pageNumber));
+void DescribeDomainGroupsRequest::setPageNumber(long pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 
-std::string DescribeDomainGroupsRequest::getUserClientIp()const
-{
-	return userClientIp_;
+std::string DescribeDomainGroupsRequest::getUserClientIp() const {
+  return userClientIp_;
 }
 
-void DescribeDomainGroupsRequest::setUserClientIp(const std::string& userClientIp)
-{
-	userClientIp_ = userClientIp;
-	setParameter("UserClientIp", userClientIp);
+void DescribeDomainGroupsRequest::setUserClientIp(const std::string &userClientIp) {
+  userClientIp_ = userClientIp;
+  setParameter(std::string("UserClientIp"), userClientIp);
 }
 
-long DescribeDomainGroupsRequest::getPageSize()const
-{
-	return pageSize_;
+long DescribeDomainGroupsRequest::getPageSize() const {
+  return pageSize_;
 }
 
-void DescribeDomainGroupsRequest::setPageSize(long pageSize)
-{
-	pageSize_ = pageSize;
-	setParameter("PageSize", std::to_string(pageSize));
+void DescribeDomainGroupsRequest::setPageSize(long pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string DescribeDomainGroupsRequest::getLang()const
-{
-	return lang_;
+std::string DescribeDomainGroupsRequest::getLang() const {
+  return lang_;
 }
 
-void DescribeDomainGroupsRequest::setLang(const std::string& lang)
-{
-	lang_ = lang;
-	setParameter("Lang", lang);
+void DescribeDomainGroupsRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
 }
 
-std::string DescribeDomainGroupsRequest::getKeyWord()const
-{
-	return keyWord_;
+std::string DescribeDomainGroupsRequest::getKeyWord() const {
+  return keyWord_;
 }
 
-void DescribeDomainGroupsRequest::setKeyWord(const std::string& keyWord)
-{
-	keyWord_ = keyWord;
-	setParameter("KeyWord", keyWord);
+void DescribeDomainGroupsRequest::setKeyWord(const std::string &keyWord) {
+  keyWord_ = keyWord;
+  setParameter(std::string("KeyWord"), keyWord);
 }
 
