@@ -28,12 +28,20 @@ namespace Polardb {
 namespace Model {
 class ALIBABACLOUD_POLARDB_EXPORT CreateDBEndpointAddressRequest : public RpcServiceRequest {
 public:
+	struct ZoneInfo {
+		std::string vSwitchId;
+		std::string zoneId;
+	};
 	CreateDBEndpointAddressRequest();
 	~CreateDBEndpointAddressRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getConnectionStringPrefix() const;
 	void setConnectionStringPrefix(const std::string &connectionStringPrefix);
+	std::vector<ZoneInfo> getZoneInfo() const;
+	void setZoneInfo(const std::vector<ZoneInfo> &zoneInfo);
+	std::string getSecurityGroupId() const;
+	void setSecurityGroupId(const std::string &securityGroupId);
 	std::string getDBEndpointId() const;
 	void setDBEndpointId(const std::string &dBEndpointId);
 	std::string getAccessKeyId() const;
@@ -48,10 +56,14 @@ public:
 	void setOwnerId(long ownerId);
 	std::string getNetType() const;
 	void setNetType(const std::string &netType);
+	std::string getVPCId() const;
+	void setVPCId(const std::string &vPCId);
 
 private:
 	long resourceOwnerId_;
 	std::string connectionStringPrefix_;
+	std::vector<ZoneInfo> zoneInfo_;
+	std::string securityGroupId_;
 	std::string dBEndpointId_;
 	std::string accessKeyId_;
 	std::string resourceOwnerAccount_;
@@ -59,6 +71,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	std::string netType_;
+	std::string vPCId_;
 };
 } // namespace Model
 } // namespace Polardb

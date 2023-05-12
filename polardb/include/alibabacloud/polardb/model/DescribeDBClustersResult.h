@@ -45,6 +45,7 @@ namespace AlibabaCloud
 						std::string dBNodeRole;
 						std::string dBNodeId;
 						std::string regionId;
+						std::string serverless;
 						std::string dBNodeClass;
 					};
 					int deletionLock;
@@ -65,6 +66,7 @@ namespace AlibabaCloud
 					std::string expired;
 					std::string payType;
 					std::string lockMode;
+					std::string strictConsistency;
 					std::string dBNodeClass;
 					long storageUsed;
 					int dBNodeNumber;

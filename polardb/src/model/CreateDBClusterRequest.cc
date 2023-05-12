@@ -264,6 +264,15 @@ void CreateDBClusterRequest::setScaleRoNumMax(const std::string &scaleRoNumMax) 
   setParameter(std::string("ScaleRoNumMax"), scaleRoNumMax);
 }
 
+std::string CreateDBClusterRequest::getStandbyAZ() const {
+  return standbyAZ_;
+}
+
+void CreateDBClusterRequest::setStandbyAZ(const std::string &standbyAZ) {
+  standbyAZ_ = standbyAZ;
+  setParameter(std::string("StandbyAZ"), standbyAZ);
+}
+
 std::string CreateDBClusterRequest::getClientToken() const {
   return clientToken_;
 }
@@ -406,6 +415,15 @@ std::string CreateDBClusterRequest::getDBVersion() const {
 void CreateDBClusterRequest::setDBVersion(const std::string &dBVersion) {
   dBVersion_ = dBVersion;
   setParameter(std::string("DBVersion"), dBVersion);
+}
+
+std::string CreateDBClusterRequest::getStrictConsistency() const {
+  return strictConsistency_;
+}
+
+void CreateDBClusterRequest::setStrictConsistency(const std::string &strictConsistency) {
+  strictConsistency_ = strictConsistency;
+  setParameter(std::string("StrictConsistency"), strictConsistency);
 }
 
 std::string CreateDBClusterRequest::getCloneDataPoint() const {

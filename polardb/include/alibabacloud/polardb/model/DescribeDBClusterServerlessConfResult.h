@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit DescribeDBClusterServerlessConfResult(const std::string &payload);
 				~DescribeDBClusterServerlessConfResult();
 				std::string getScaleRoNumMin()const;
+				std::string getDBMaxscaleId()const;
 				std::string getAllowShutDown()const;
 				std::string getScaleApRoNumMin()const;
 				std::string getScaleApRoNumMax()const;
@@ -46,11 +47,13 @@ namespace AlibabaCloud
 				std::string getScaleMin()const;
 				std::string getScaleMax()const;
 				std::string getSecondsUntilAutoPause()const;
+				std::string getSwitchs()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string scaleRoNumMin_;
+				std::string dBMaxscaleId_;
 				std::string allowShutDown_;
 				std::string scaleApRoNumMin_;
 				std::string scaleApRoNumMax_;
@@ -59,6 +62,7 @@ namespace AlibabaCloud
 				std::string scaleMin_;
 				std::string scaleMax_;
 				std::string secondsUntilAutoPause_;
+				std::string switchs_;
 
 			};
 		}

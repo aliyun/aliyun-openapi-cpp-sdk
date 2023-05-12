@@ -4371,6 +4371,42 @@ PolardbClient::ResetAccountOutcomeCallable PolardbClient::resetAccountCallable(c
 	return task->get_future();
 }
 
+PolardbClient::ResetGlobalDatabaseNetworkOutcome PolardbClient::resetGlobalDatabaseNetwork(const ResetGlobalDatabaseNetworkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ResetGlobalDatabaseNetworkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ResetGlobalDatabaseNetworkOutcome(ResetGlobalDatabaseNetworkResult(outcome.result()));
+	else
+		return ResetGlobalDatabaseNetworkOutcome(outcome.error());
+}
+
+void PolardbClient::resetGlobalDatabaseNetworkAsync(const ResetGlobalDatabaseNetworkRequest& request, const ResetGlobalDatabaseNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, resetGlobalDatabaseNetwork(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::ResetGlobalDatabaseNetworkOutcomeCallable PolardbClient::resetGlobalDatabaseNetworkCallable(const ResetGlobalDatabaseNetworkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ResetGlobalDatabaseNetworkOutcome()>>(
+			[this, request]()
+			{
+			return this->resetGlobalDatabaseNetwork(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::RestartDBNodeOutcome PolardbClient::restartDBNode(const RestartDBNodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

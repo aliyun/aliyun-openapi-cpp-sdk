@@ -43,6 +43,15 @@ void DescribeDBClusterServerlessConfRequest::setAccessKeyId(const std::string &a
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DescribeDBClusterServerlessConfRequest::getRequestType() const {
+  return requestType_;
+}
+
+void DescribeDBClusterServerlessConfRequest::setRequestType(const std::string &requestType) {
+  requestType_ = requestType;
+  setParameter(std::string("RequestType"), requestType);
+}
+
 std::string DescribeDBClusterServerlessConfRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

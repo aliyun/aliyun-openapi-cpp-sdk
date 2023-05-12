@@ -99,6 +99,7 @@ namespace AlibabaCloud
 				std::string getProxyCpuCores()const;
 				std::string getPayType()const;
 				std::string getLockMode()const;
+				std::string getStrictConsistency()const;
 				long getStorageUsed()const;
 				long getInodeTotal()const;
 				bool getIsProxyLatestVersion()const;
@@ -148,6 +149,7 @@ namespace AlibabaCloud
 				std::string proxyCpuCores_;
 				std::string payType_;
 				std::string lockMode_;
+				std::string strictConsistency_;
 				long storageUsed_;
 				long inodeTotal_;
 				bool isProxyLatestVersion_;

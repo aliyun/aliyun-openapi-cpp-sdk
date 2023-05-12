@@ -43,6 +43,29 @@ void CreateDBEndpointAddressRequest::setConnectionStringPrefix(const std::string
   setParameter(std::string("ConnectionStringPrefix"), connectionStringPrefix);
 }
 
+std::vector<CreateDBEndpointAddressRequest::ZoneInfo> CreateDBEndpointAddressRequest::getZoneInfo() const {
+  return zoneInfo_;
+}
+
+void CreateDBEndpointAddressRequest::setZoneInfo(const std::vector<CreateDBEndpointAddressRequest::ZoneInfo> &zoneInfo) {
+  zoneInfo_ = zoneInfo;
+  for(int dep1 = 0; dep1 != zoneInfo.size(); dep1++) {
+  auto zoneInfoObj = zoneInfo.at(dep1);
+  std::string zoneInfoObjStr = std::string("ZoneInfo") + "." + std::to_string(dep1 + 1);
+    setParameter(zoneInfoObjStr + ".VSwitchId", zoneInfoObj.vSwitchId);
+    setParameter(zoneInfoObjStr + ".ZoneId", zoneInfoObj.zoneId);
+  }
+}
+
+std::string CreateDBEndpointAddressRequest::getSecurityGroupId() const {
+  return securityGroupId_;
+}
+
+void CreateDBEndpointAddressRequest::setSecurityGroupId(const std::string &securityGroupId) {
+  securityGroupId_ = securityGroupId;
+  setParameter(std::string("SecurityGroupId"), securityGroupId);
+}
+
 std::string CreateDBEndpointAddressRequest::getDBEndpointId() const {
   return dBEndpointId_;
 }
@@ -104,5 +127,14 @@ std::string CreateDBEndpointAddressRequest::getNetType() const {
 void CreateDBEndpointAddressRequest::setNetType(const std::string &netType) {
   netType_ = netType;
   setParameter(std::string("NetType"), netType);
+}
+
+std::string CreateDBEndpointAddressRequest::getVPCId() const {
+  return vPCId_;
+}
+
+void CreateDBEndpointAddressRequest::setVPCId(const std::string &vPCId) {
+  vPCId_ = vPCId;
+  setParameter(std::string("VPCId"), vPCId);
 }
 

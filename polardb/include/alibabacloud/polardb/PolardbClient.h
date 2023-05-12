@@ -262,6 +262,8 @@
 #include "model/RemoveDBClusterFromGDNResult.h"
 #include "model/ResetAccountRequest.h"
 #include "model/ResetAccountResult.h"
+#include "model/ResetGlobalDatabaseNetworkRequest.h"
+#include "model/ResetGlobalDatabaseNetworkResult.h"
 #include "model/RestartDBNodeRequest.h"
 #include "model/RestartDBNodeResult.h"
 #include "model/RestoreTableRequest.h"
@@ -651,6 +653,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResetAccountResult> ResetAccountOutcome;
 			typedef std::future<ResetAccountOutcome> ResetAccountOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ResetAccountRequest&, const ResetAccountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetAccountAsyncHandler;
+			typedef Outcome<Error, Model::ResetGlobalDatabaseNetworkResult> ResetGlobalDatabaseNetworkOutcome;
+			typedef std::future<ResetGlobalDatabaseNetworkOutcome> ResetGlobalDatabaseNetworkOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::ResetGlobalDatabaseNetworkRequest&, const ResetGlobalDatabaseNetworkOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResetGlobalDatabaseNetworkAsyncHandler;
 			typedef Outcome<Error, Model::RestartDBNodeResult> RestartDBNodeOutcome;
 			typedef std::future<RestartDBNodeOutcome> RestartDBNodeOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::RestartDBNodeRequest&, const RestartDBNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartDBNodeAsyncHandler;
@@ -1046,6 +1051,9 @@ namespace AlibabaCloud
 			ResetAccountOutcome resetAccount(const Model::ResetAccountRequest &request)const;
 			void resetAccountAsync(const Model::ResetAccountRequest& request, const ResetAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResetAccountOutcomeCallable resetAccountCallable(const Model::ResetAccountRequest& request) const;
+			ResetGlobalDatabaseNetworkOutcome resetGlobalDatabaseNetwork(const Model::ResetGlobalDatabaseNetworkRequest &request)const;
+			void resetGlobalDatabaseNetworkAsync(const Model::ResetGlobalDatabaseNetworkRequest& request, const ResetGlobalDatabaseNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ResetGlobalDatabaseNetworkOutcomeCallable resetGlobalDatabaseNetworkCallable(const Model::ResetGlobalDatabaseNetworkRequest& request) const;
 			RestartDBNodeOutcome restartDBNode(const Model::RestartDBNodeRequest &request)const;
 			void restartDBNodeAsync(const Model::RestartDBNodeRequest& request, const RestartDBNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestartDBNodeOutcomeCallable restartDBNodeCallable(const Model::RestartDBNodeRequest& request) const;

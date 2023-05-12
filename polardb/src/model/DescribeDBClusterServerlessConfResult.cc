@@ -57,12 +57,21 @@ void DescribeDBClusterServerlessConfResult::parse(const std::string &payload)
 		scaleApRoNumMin_ = value["ScaleApRoNumMin"].asString();
 	if(!value["ScaleApRoNumMax"].isNull())
 		scaleApRoNumMax_ = value["ScaleApRoNumMax"].asString();
+	if(!value["Switchs"].isNull())
+		switchs_ = value["Switchs"].asString();
+	if(!value["DBMaxscaleId"].isNull())
+		dBMaxscaleId_ = value["DBMaxscaleId"].asString();
 
 }
 
 std::string DescribeDBClusterServerlessConfResult::getScaleRoNumMin()const
 {
 	return scaleRoNumMin_;
+}
+
+std::string DescribeDBClusterServerlessConfResult::getDBMaxscaleId()const
+{
+	return dBMaxscaleId_;
 }
 
 std::string DescribeDBClusterServerlessConfResult::getAllowShutDown()const
@@ -103,5 +112,10 @@ std::string DescribeDBClusterServerlessConfResult::getScaleMax()const
 std::string DescribeDBClusterServerlessConfResult::getSecondsUntilAutoPause()const
 {
 	return secondsUntilAutoPause_;
+}
+
+std::string DescribeDBClusterServerlessConfResult::getSwitchs()const
+{
+	return switchs_;
 }
 

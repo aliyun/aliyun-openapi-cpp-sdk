@@ -86,6 +86,8 @@ public:
 	void setLowerCaseTableNames(const std::string &lowerCaseTableNames);
 	std::string getScaleRoNumMax() const;
 	void setScaleRoNumMax(const std::string &scaleRoNumMax);
+	std::string getStandbyAZ() const;
+	void setStandbyAZ(const std::string &standbyAZ);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getDefaultTimeZone() const;
@@ -118,6 +120,8 @@ public:
 	void setDBType(const std::string &dBType);
 	std::string getDBVersion() const;
 	void setDBVersion(const std::string &dBVersion);
+	std::string getStrictConsistency() const;
+	void setStrictConsistency(const std::string &strictConsistency);
 	std::string getCloneDataPoint() const;
 	void setCloneDataPoint(const std::string &cloneDataPoint);
 	std::string getPayType() const;
@@ -154,6 +158,7 @@ private:
 	std::string allowShutDown_;
 	std::string lowerCaseTableNames_;
 	std::string scaleRoNumMax_;
+	std::string standbyAZ_;
 	std::string clientToken_;
 	std::string defaultTimeZone_;
 	std::string accessKeyId_;
@@ -170,6 +175,7 @@ private:
 	std::string scaleRoNumMin_;
 	std::string dBType_;
 	std::string dBVersion_;
+	std::string strictConsistency_;
 	std::string cloneDataPoint_;
 	std::string payType_;
 	long storageSpace_;

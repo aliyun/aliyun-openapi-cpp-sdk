@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERSERVERLESSCONFREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERSERVERLESSCONFREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_RESETGLOBALDATABASENETWORKREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_RESETGLOBALDATABASENETWORKREQUEST_H_
 
 #include <alibabacloud/polardb/PolardbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,16 +26,20 @@
 namespace AlibabaCloud {
 namespace Polardb {
 namespace Model {
-class ALIBABACLOUD_POLARDB_EXPORT DescribeDBClusterServerlessConfRequest : public RpcServiceRequest {
+class ALIBABACLOUD_POLARDB_EXPORT ResetGlobalDatabaseNetworkRequest : public RpcServiceRequest {
 public:
-	DescribeDBClusterServerlessConfRequest();
-	~DescribeDBClusterServerlessConfRequest();
+	ResetGlobalDatabaseNetworkRequest();
+	~ResetGlobalDatabaseNetworkRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getRequestType() const;
-	void setRequestType(const std::string &requestType);
+	std::string getSecurityToken() const;
+	void setSecurityToken(const std::string &securityToken);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getGDNId() const;
+	void setGDNId(const std::string &gDNId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDBClusterId() const;
@@ -48,7 +52,9 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string accessKeyId_;
-	std::string requestType_;
+	std::string securityToken_;
+	std::string regionId_;
+	std::string gDNId_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;
@@ -57,4 +63,4 @@ private:
 } // namespace Model
 } // namespace Polardb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERSERVERLESSCONFREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_RESETGLOBALDATABASENETWORKREQUEST_H_

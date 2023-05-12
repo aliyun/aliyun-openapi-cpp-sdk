@@ -59,6 +59,8 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.storagePayType = valueItemsDBCluster["StoragePayType"].asString();
 		if(!valueItemsDBCluster["ServerlessType"].isNull())
 			itemsObject.serverlessType = valueItemsDBCluster["ServerlessType"].asString();
+		if(!valueItemsDBCluster["StrictConsistency"].isNull())
+			itemsObject.strictConsistency = valueItemsDBCluster["StrictConsistency"].asString();
 		if(!valueItemsDBCluster["DBNodeClass"].isNull())
 			itemsObject.dBNodeClass = valueItemsDBCluster["DBNodeClass"].asString();
 		if(!valueItemsDBCluster["DBType"].isNull())
@@ -115,6 +117,8 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 				dBNodesObject.dBNodeId = valueItemsDBClusterDBNodesDBNode["DBNodeId"].asString();
 			if(!valueItemsDBClusterDBNodesDBNode["RegionId"].isNull())
 				dBNodesObject.regionId = valueItemsDBClusterDBNodesDBNode["RegionId"].asString();
+			if(!valueItemsDBClusterDBNodesDBNode["Serverless"].isNull())
+				dBNodesObject.serverless = valueItemsDBClusterDBNodesDBNode["Serverless"].asString();
 			itemsObject.dBNodes.push_back(dBNodesObject);
 		}
 		items_.push_back(itemsObject);

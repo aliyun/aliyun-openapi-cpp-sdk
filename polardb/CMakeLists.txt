@@ -261,6 +261,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/RemoveDBClusterFromGDNResult.h
 	include/alibabacloud/polardb/model/ResetAccountRequest.h
 	include/alibabacloud/polardb/model/ResetAccountResult.h
+	include/alibabacloud/polardb/model/ResetGlobalDatabaseNetworkRequest.h
+	include/alibabacloud/polardb/model/ResetGlobalDatabaseNetworkResult.h
 	include/alibabacloud/polardb/model/RestartDBNodeRequest.h
 	include/alibabacloud/polardb/model/RestartDBNodeResult.h
 	include/alibabacloud/polardb/model/RestoreTableRequest.h
@@ -524,6 +526,8 @@ set(polardb_src
 	src/model/RemoveDBClusterFromGDNResult.cc
 	src/model/ResetAccountRequest.cc
 	src/model/ResetAccountResult.cc
+	src/model/ResetGlobalDatabaseNetworkRequest.cc
+	src/model/ResetGlobalDatabaseNetworkResult.cc
 	src/model/RestartDBNodeRequest.cc
 	src/model/RestartDBNodeResult.cc
 	src/model/RestoreTableRequest.cc

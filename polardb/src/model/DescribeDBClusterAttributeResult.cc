@@ -168,6 +168,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		storageType_ = value["StorageType"].asString();
 	if(!value["ServerlessType"].isNull())
 		serverlessType_ = value["ServerlessType"].asString();
+	if(!value["StrictConsistency"].isNull())
+		strictConsistency_ = value["StrictConsistency"].asString();
 	if(!value["ProxyCpuCores"].isNull())
 		proxyCpuCores_ = value["ProxyCpuCores"].asString();
 	if(!value["ProxyStandardCpuCores"].isNull())
@@ -336,6 +338,11 @@ std::string DescribeDBClusterAttributeResult::getPayType()const
 std::string DescribeDBClusterAttributeResult::getLockMode()const
 {
 	return lockMode_;
+}
+
+std::string DescribeDBClusterAttributeResult::getStrictConsistency()const
+{
+	return strictConsistency_;
 }
 
 long DescribeDBClusterAttributeResult::getStorageUsed()const
