@@ -377,6 +377,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/SearchTableResult.h
 	include/alibabacloud/dms-enterprise/model/SetOwnersRequest.h
 	include/alibabacloud/dms-enterprise/model/SetOwnersResult.h
+	include/alibabacloud/dms-enterprise/model/SkipDataCorrectRowCheckRequest.h
+	include/alibabacloud/dms-enterprise/model/SkipDataCorrectRowCheckResult.h
 	include/alibabacloud/dms-enterprise/model/StopTaskFlowInstanceRequest.h
 	include/alibabacloud/dms-enterprise/model/StopTaskFlowInstanceResult.h
 	include/alibabacloud/dms-enterprise/model/SubmitOrderApprovalRequest.h
@@ -786,6 +788,8 @@ set(dms-enterprise_src
 	src/model/SearchTableResult.cc
 	src/model/SetOwnersRequest.cc
 	src/model/SetOwnersResult.cc
+	src/model/SkipDataCorrectRowCheckRequest.cc
+	src/model/SkipDataCorrectRowCheckResult.cc
 	src/model/StopTaskFlowInstanceRequest.cc
 	src/model/StopTaskFlowInstanceResult.cc
 	src/model/SubmitOrderApprovalRequest.cc

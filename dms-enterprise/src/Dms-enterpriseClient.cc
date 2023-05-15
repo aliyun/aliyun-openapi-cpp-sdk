@@ -6459,6 +6459,42 @@ Dms_enterpriseClient::SetOwnersOutcomeCallable Dms_enterpriseClient::setOwnersCa
 	return task->get_future();
 }
 
+Dms_enterpriseClient::SkipDataCorrectRowCheckOutcome Dms_enterpriseClient::skipDataCorrectRowCheck(const SkipDataCorrectRowCheckRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SkipDataCorrectRowCheckOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SkipDataCorrectRowCheckOutcome(SkipDataCorrectRowCheckResult(outcome.result()));
+	else
+		return SkipDataCorrectRowCheckOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::skipDataCorrectRowCheckAsync(const SkipDataCorrectRowCheckRequest& request, const SkipDataCorrectRowCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, skipDataCorrectRowCheck(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::SkipDataCorrectRowCheckOutcomeCallable Dms_enterpriseClient::skipDataCorrectRowCheckCallable(const SkipDataCorrectRowCheckRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SkipDataCorrectRowCheckOutcome()>>(
+			[this, request]()
+			{
+			return this->skipDataCorrectRowCheck(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::StopTaskFlowInstanceOutcome Dms_enterpriseClient::stopTaskFlowInstance(const StopTaskFlowInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

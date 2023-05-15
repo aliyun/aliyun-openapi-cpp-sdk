@@ -378,6 +378,8 @@
 #include "model/SearchTableResult.h"
 #include "model/SetOwnersRequest.h"
 #include "model/SetOwnersResult.h"
+#include "model/SkipDataCorrectRowCheckRequest.h"
+#include "model/SkipDataCorrectRowCheckResult.h"
 #include "model/StopTaskFlowInstanceRequest.h"
 #include "model/StopTaskFlowInstanceResult.h"
 #include "model/SubmitOrderApprovalRequest.h"
@@ -971,6 +973,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SetOwnersResult> SetOwnersOutcome;
 			typedef std::future<SetOwnersOutcome> SetOwnersOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::SetOwnersRequest&, const SetOwnersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SetOwnersAsyncHandler;
+			typedef Outcome<Error, Model::SkipDataCorrectRowCheckResult> SkipDataCorrectRowCheckOutcome;
+			typedef std::future<SkipDataCorrectRowCheckOutcome> SkipDataCorrectRowCheckOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::SkipDataCorrectRowCheckRequest&, const SkipDataCorrectRowCheckOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SkipDataCorrectRowCheckAsyncHandler;
 			typedef Outcome<Error, Model::StopTaskFlowInstanceResult> StopTaskFlowInstanceOutcome;
 			typedef std::future<StopTaskFlowInstanceOutcome> StopTaskFlowInstanceOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::StopTaskFlowInstanceRequest&, const StopTaskFlowInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopTaskFlowInstanceAsyncHandler;
@@ -1585,6 +1590,9 @@ namespace AlibabaCloud
 			SetOwnersOutcome setOwners(const Model::SetOwnersRequest &request)const;
 			void setOwnersAsync(const Model::SetOwnersRequest& request, const SetOwnersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SetOwnersOutcomeCallable setOwnersCallable(const Model::SetOwnersRequest& request) const;
+			SkipDataCorrectRowCheckOutcome skipDataCorrectRowCheck(const Model::SkipDataCorrectRowCheckRequest &request)const;
+			void skipDataCorrectRowCheckAsync(const Model::SkipDataCorrectRowCheckRequest& request, const SkipDataCorrectRowCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SkipDataCorrectRowCheckOutcomeCallable skipDataCorrectRowCheckCallable(const Model::SkipDataCorrectRowCheckRequest& request) const;
 			StopTaskFlowInstanceOutcome stopTaskFlowInstance(const Model::StopTaskFlowInstanceRequest &request)const;
 			void stopTaskFlowInstanceAsync(const Model::StopTaskFlowInstanceRequest& request, const StopTaskFlowInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopTaskFlowInstanceOutcomeCallable stopTaskFlowInstanceCallable(const Model::StopTaskFlowInstanceRequest& request) const;
