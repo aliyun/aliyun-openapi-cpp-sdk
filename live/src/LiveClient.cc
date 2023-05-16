@@ -1563,6 +1563,42 @@ LiveClient::CreateCustomTemplateOutcomeCallable LiveClient::createCustomTemplate
 	return task->get_future();
 }
 
+LiveClient::CreateEventSubOutcome LiveClient::createEventSub(const CreateEventSubRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateEventSubOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateEventSubOutcome(CreateEventSubResult(outcome.result()));
+	else
+		return CreateEventSubOutcome(outcome.error());
+}
+
+void LiveClient::createEventSubAsync(const CreateEventSubRequest& request, const CreateEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createEventSub(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::CreateEventSubOutcomeCallable LiveClient::createEventSubCallable(const CreateEventSubRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateEventSubOutcome()>>(
+			[this, request]()
+			{
+			return this->createEventSub(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 LiveClient::CreateLiveDelayConfigOutcome LiveClient::createLiveDelayConfig(const CreateLiveDelayConfigRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2169,6 +2205,42 @@ LiveClient::DeleteCustomTemplateOutcomeCallable LiveClient::deleteCustomTemplate
 			[this, request]()
 			{
 			return this->deleteCustomTemplate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DeleteEventSubOutcome LiveClient::deleteEventSub(const DeleteEventSubRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteEventSubOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteEventSubOutcome(DeleteEventSubResult(outcome.result()));
+	else
+		return DeleteEventSubOutcome(outcome.error());
+}
+
+void LiveClient::deleteEventSubAsync(const DeleteEventSubRequest& request, const DeleteEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteEventSub(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DeleteEventSubOutcomeCallable LiveClient::deleteEventSubCallable(const DeleteEventSubRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteEventSubOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteEventSub(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3861,6 +3933,42 @@ LiveClient::DescribeCastersOutcomeCallable LiveClient::describeCastersCallable(c
 			[this, request]()
 			{
 			return this->describeCasters(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::DescribeChannelParticipantsOutcome LiveClient::describeChannelParticipants(const DescribeChannelParticipantsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeChannelParticipantsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeChannelParticipantsOutcome(DescribeChannelParticipantsResult(outcome.result()));
+	else
+		return DescribeChannelParticipantsOutcome(outcome.error());
+}
+
+void LiveClient::describeChannelParticipantsAsync(const DescribeChannelParticipantsRequest& request, const DescribeChannelParticipantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeChannelParticipants(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::DescribeChannelParticipantsOutcomeCallable LiveClient::describeChannelParticipantsCallable(const DescribeChannelParticipantsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeChannelParticipantsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeChannelParticipants(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -9297,6 +9405,42 @@ LiveClient::RemoveShowFromShowListOutcomeCallable LiveClient::removeShowFromShow
 			[this, request]()
 			{
 			return this->removeShowFromShowList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+LiveClient::RemoveTerminalsOutcome LiveClient::removeTerminals(const RemoveTerminalsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RemoveTerminalsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RemoveTerminalsOutcome(RemoveTerminalsResult(outcome.result()));
+	else
+		return RemoveTerminalsOutcome(outcome.error());
+}
+
+void LiveClient::removeTerminalsAsync(const RemoveTerminalsRequest& request, const RemoveTerminalsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, removeTerminals(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+LiveClient::RemoveTerminalsOutcomeCallable LiveClient::removeTerminalsCallable(const RemoveTerminalsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RemoveTerminalsOutcome()>>(
+			[this, request]()
+			{
+			return this->removeTerminals(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

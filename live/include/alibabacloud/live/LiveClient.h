@@ -106,6 +106,8 @@
 #include "model/CreateCasterResult.h"
 #include "model/CreateCustomTemplateRequest.h"
 #include "model/CreateCustomTemplateResult.h"
+#include "model/CreateEventSubRequest.h"
+#include "model/CreateEventSubResult.h"
 #include "model/CreateLiveDelayConfigRequest.h"
 #include "model/CreateLiveDelayConfigResult.h"
 #include "model/CreateLiveRealTimeLogDeliveryRequest.h"
@@ -140,6 +142,8 @@
 #include "model/DeleteCasterVideoResourceResult.h"
 #include "model/DeleteCustomTemplateRequest.h"
 #include "model/DeleteCustomTemplateResult.h"
+#include "model/DeleteEventSubRequest.h"
+#include "model/DeleteEventSubResult.h"
 #include "model/DeleteLiveAppRecordConfigRequest.h"
 #include "model/DeleteLiveAppRecordConfigResult.h"
 #include "model/DeleteLiveAppSnapshotConfigRequest.h"
@@ -234,6 +238,8 @@
 #include "model/DescribeCasterVideoResourcesResult.h"
 #include "model/DescribeCastersRequest.h"
 #include "model/DescribeCastersResult.h"
+#include "model/DescribeChannelParticipantsRequest.h"
+#include "model/DescribeChannelParticipantsResult.h"
 #include "model/DescribeDomainUsageDataRequest.h"
 #include "model/DescribeDomainUsageDataResult.h"
 #include "model/DescribeDomainWithIntegrityRequest.h"
@@ -536,6 +542,8 @@
 #include "model/RealTimeSnapshotCommandResult.h"
 #include "model/RemoveShowFromShowListRequest.h"
 #include "model/RemoveShowFromShowListResult.h"
+#include "model/RemoveTerminalsRequest.h"
+#include "model/RemoveTerminalsResult.h"
 #include "model/RestartCasterRequest.h"
 #include "model/RestartCasterResult.h"
 #include "model/ResumeLiveStreamRequest.h"
@@ -779,6 +787,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateCustomTemplateResult> CreateCustomTemplateOutcome;
 			typedef std::future<CreateCustomTemplateOutcome> CreateCustomTemplateOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::CreateCustomTemplateRequest&, const CreateCustomTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomTemplateAsyncHandler;
+			typedef Outcome<Error, Model::CreateEventSubResult> CreateEventSubOutcome;
+			typedef std::future<CreateEventSubOutcome> CreateEventSubOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::CreateEventSubRequest&, const CreateEventSubOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateEventSubAsyncHandler;
 			typedef Outcome<Error, Model::CreateLiveDelayConfigResult> CreateLiveDelayConfigOutcome;
 			typedef std::future<CreateLiveDelayConfigOutcome> CreateLiveDelayConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::CreateLiveDelayConfigRequest&, const CreateLiveDelayConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateLiveDelayConfigAsyncHandler;
@@ -830,6 +841,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteCustomTemplateResult> DeleteCustomTemplateOutcome;
 			typedef std::future<DeleteCustomTemplateOutcome> DeleteCustomTemplateOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteCustomTemplateRequest&, const DeleteCustomTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomTemplateAsyncHandler;
+			typedef Outcome<Error, Model::DeleteEventSubResult> DeleteEventSubOutcome;
+			typedef std::future<DeleteEventSubOutcome> DeleteEventSubOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DeleteEventSubRequest&, const DeleteEventSubOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteEventSubAsyncHandler;
 			typedef Outcome<Error, Model::DeleteLiveAppRecordConfigResult> DeleteLiveAppRecordConfigOutcome;
 			typedef std::future<DeleteLiveAppRecordConfigOutcome> DeleteLiveAppRecordConfigOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DeleteLiveAppRecordConfigRequest&, const DeleteLiveAppRecordConfigOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLiveAppRecordConfigAsyncHandler;
@@ -971,6 +985,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCastersResult> DescribeCastersOutcome;
 			typedef std::future<DescribeCastersOutcome> DescribeCastersOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeCastersRequest&, const DescribeCastersOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCastersAsyncHandler;
+			typedef Outcome<Error, Model::DescribeChannelParticipantsResult> DescribeChannelParticipantsOutcome;
+			typedef std::future<DescribeChannelParticipantsOutcome> DescribeChannelParticipantsOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::DescribeChannelParticipantsRequest&, const DescribeChannelParticipantsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelParticipantsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDomainUsageDataResult> DescribeDomainUsageDataOutcome;
 			typedef std::future<DescribeDomainUsageDataOutcome> DescribeDomainUsageDataOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::DescribeDomainUsageDataRequest&, const DescribeDomainUsageDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainUsageDataAsyncHandler;
@@ -1424,6 +1441,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RemoveShowFromShowListResult> RemoveShowFromShowListOutcome;
 			typedef std::future<RemoveShowFromShowListOutcome> RemoveShowFromShowListOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::RemoveShowFromShowListRequest&, const RemoveShowFromShowListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveShowFromShowListAsyncHandler;
+			typedef Outcome<Error, Model::RemoveTerminalsResult> RemoveTerminalsOutcome;
+			typedef std::future<RemoveTerminalsOutcome> RemoveTerminalsOutcomeCallable;
+			typedef std::function<void(const LiveClient*, const Model::RemoveTerminalsRequest&, const RemoveTerminalsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveTerminalsAsyncHandler;
 			typedef Outcome<Error, Model::RestartCasterResult> RestartCasterOutcome;
 			typedef std::future<RestartCasterOutcome> RestartCasterOutcomeCallable;
 			typedef std::function<void(const LiveClient*, const Model::RestartCasterRequest&, const RestartCasterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RestartCasterAsyncHandler;
@@ -1717,6 +1737,9 @@ namespace AlibabaCloud
 			CreateCustomTemplateOutcome createCustomTemplate(const Model::CreateCustomTemplateRequest &request)const;
 			void createCustomTemplateAsync(const Model::CreateCustomTemplateRequest& request, const CreateCustomTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateCustomTemplateOutcomeCallable createCustomTemplateCallable(const Model::CreateCustomTemplateRequest& request) const;
+			CreateEventSubOutcome createEventSub(const Model::CreateEventSubRequest &request)const;
+			void createEventSubAsync(const Model::CreateEventSubRequest& request, const CreateEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateEventSubOutcomeCallable createEventSubCallable(const Model::CreateEventSubRequest& request) const;
 			CreateLiveDelayConfigOutcome createLiveDelayConfig(const Model::CreateLiveDelayConfigRequest &request)const;
 			void createLiveDelayConfigAsync(const Model::CreateLiveDelayConfigRequest& request, const CreateLiveDelayConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateLiveDelayConfigOutcomeCallable createLiveDelayConfigCallable(const Model::CreateLiveDelayConfigRequest& request) const;
@@ -1768,6 +1791,9 @@ namespace AlibabaCloud
 			DeleteCustomTemplateOutcome deleteCustomTemplate(const Model::DeleteCustomTemplateRequest &request)const;
 			void deleteCustomTemplateAsync(const Model::DeleteCustomTemplateRequest& request, const DeleteCustomTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteCustomTemplateOutcomeCallable deleteCustomTemplateCallable(const Model::DeleteCustomTemplateRequest& request) const;
+			DeleteEventSubOutcome deleteEventSub(const Model::DeleteEventSubRequest &request)const;
+			void deleteEventSubAsync(const Model::DeleteEventSubRequest& request, const DeleteEventSubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteEventSubOutcomeCallable deleteEventSubCallable(const Model::DeleteEventSubRequest& request) const;
 			DeleteLiveAppRecordConfigOutcome deleteLiveAppRecordConfig(const Model::DeleteLiveAppRecordConfigRequest &request)const;
 			void deleteLiveAppRecordConfigAsync(const Model::DeleteLiveAppRecordConfigRequest& request, const DeleteLiveAppRecordConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteLiveAppRecordConfigOutcomeCallable deleteLiveAppRecordConfigCallable(const Model::DeleteLiveAppRecordConfigRequest& request) const;
@@ -1909,6 +1935,9 @@ namespace AlibabaCloud
 			DescribeCastersOutcome describeCasters(const Model::DescribeCastersRequest &request)const;
 			void describeCastersAsync(const Model::DescribeCastersRequest& request, const DescribeCastersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCastersOutcomeCallable describeCastersCallable(const Model::DescribeCastersRequest& request) const;
+			DescribeChannelParticipantsOutcome describeChannelParticipants(const Model::DescribeChannelParticipantsRequest &request)const;
+			void describeChannelParticipantsAsync(const Model::DescribeChannelParticipantsRequest& request, const DescribeChannelParticipantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeChannelParticipantsOutcomeCallable describeChannelParticipantsCallable(const Model::DescribeChannelParticipantsRequest& request) const;
 			DescribeDomainUsageDataOutcome describeDomainUsageData(const Model::DescribeDomainUsageDataRequest &request)const;
 			void describeDomainUsageDataAsync(const Model::DescribeDomainUsageDataRequest& request, const DescribeDomainUsageDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDomainUsageDataOutcomeCallable describeDomainUsageDataCallable(const Model::DescribeDomainUsageDataRequest& request) const;
@@ -2362,6 +2391,9 @@ namespace AlibabaCloud
 			RemoveShowFromShowListOutcome removeShowFromShowList(const Model::RemoveShowFromShowListRequest &request)const;
 			void removeShowFromShowListAsync(const Model::RemoveShowFromShowListRequest& request, const RemoveShowFromShowListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveShowFromShowListOutcomeCallable removeShowFromShowListCallable(const Model::RemoveShowFromShowListRequest& request) const;
+			RemoveTerminalsOutcome removeTerminals(const Model::RemoveTerminalsRequest &request)const;
+			void removeTerminalsAsync(const Model::RemoveTerminalsRequest& request, const RemoveTerminalsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RemoveTerminalsOutcomeCallable removeTerminalsCallable(const Model::RemoveTerminalsRequest& request) const;
 			RestartCasterOutcome restartCaster(const Model::RestartCasterRequest &request)const;
 			void restartCasterAsync(const Model::RestartCasterRequest& request, const RestartCasterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RestartCasterOutcomeCallable restartCasterCallable(const Model::RestartCasterRequest& request) const;

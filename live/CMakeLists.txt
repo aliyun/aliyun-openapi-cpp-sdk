@@ -105,6 +105,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/CreateCasterResult.h
 	include/alibabacloud/live/model/CreateCustomTemplateRequest.h
 	include/alibabacloud/live/model/CreateCustomTemplateResult.h
+	include/alibabacloud/live/model/CreateEventSubRequest.h
+	include/alibabacloud/live/model/CreateEventSubResult.h
 	include/alibabacloud/live/model/CreateLiveDelayConfigRequest.h
 	include/alibabacloud/live/model/CreateLiveDelayConfigResult.h
 	include/alibabacloud/live/model/CreateLiveRealTimeLogDeliveryRequest.h
@@ -139,6 +141,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DeleteCasterVideoResourceResult.h
 	include/alibabacloud/live/model/DeleteCustomTemplateRequest.h
 	include/alibabacloud/live/model/DeleteCustomTemplateResult.h
+	include/alibabacloud/live/model/DeleteEventSubRequest.h
+	include/alibabacloud/live/model/DeleteEventSubResult.h
 	include/alibabacloud/live/model/DeleteLiveAppRecordConfigRequest.h
 	include/alibabacloud/live/model/DeleteLiveAppRecordConfigResult.h
 	include/alibabacloud/live/model/DeleteLiveAppSnapshotConfigRequest.h
@@ -233,6 +237,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/DescribeCasterVideoResourcesResult.h
 	include/alibabacloud/live/model/DescribeCastersRequest.h
 	include/alibabacloud/live/model/DescribeCastersResult.h
+	include/alibabacloud/live/model/DescribeChannelParticipantsRequest.h
+	include/alibabacloud/live/model/DescribeChannelParticipantsResult.h
 	include/alibabacloud/live/model/DescribeDomainUsageDataRequest.h
 	include/alibabacloud/live/model/DescribeDomainUsageDataResult.h
 	include/alibabacloud/live/model/DescribeDomainWithIntegrityRequest.h
@@ -535,6 +541,8 @@ set(live_public_header_model
 	include/alibabacloud/live/model/RealTimeSnapshotCommandResult.h
 	include/alibabacloud/live/model/RemoveShowFromShowListRequest.h
 	include/alibabacloud/live/model/RemoveShowFromShowListResult.h
+	include/alibabacloud/live/model/RemoveTerminalsRequest.h
+	include/alibabacloud/live/model/RemoveTerminalsResult.h
 	include/alibabacloud/live/model/RestartCasterRequest.h
 	include/alibabacloud/live/model/RestartCasterResult.h
 	include/alibabacloud/live/model/ResumeLiveStreamRequest.h
@@ -730,6 +738,8 @@ set(live_src
 	src/model/CreateCasterResult.cc
 	src/model/CreateCustomTemplateRequest.cc
 	src/model/CreateCustomTemplateResult.cc
+	src/model/CreateEventSubRequest.cc
+	src/model/CreateEventSubResult.cc
 	src/model/CreateLiveDelayConfigRequest.cc
 	src/model/CreateLiveDelayConfigResult.cc
 	src/model/CreateLiveRealTimeLogDeliveryRequest.cc
@@ -764,6 +774,8 @@ set(live_src
 	src/model/DeleteCasterVideoResourceResult.cc
 	src/model/DeleteCustomTemplateRequest.cc
 	src/model/DeleteCustomTemplateResult.cc
+	src/model/DeleteEventSubRequest.cc
+	src/model/DeleteEventSubResult.cc
 	src/model/DeleteLiveAppRecordConfigRequest.cc
 	src/model/DeleteLiveAppRecordConfigResult.cc
 	src/model/DeleteLiveAppSnapshotConfigRequest.cc
@@ -858,6 +870,8 @@ set(live_src
 	src/model/DescribeCasterVideoResourcesResult.cc
 	src/model/DescribeCastersRequest.cc
 	src/model/DescribeCastersResult.cc
+	src/model/DescribeChannelParticipantsRequest.cc
+	src/model/DescribeChannelParticipantsResult.cc
 	src/model/DescribeDomainUsageDataRequest.cc
 	src/model/DescribeDomainUsageDataResult.cc
 	src/model/DescribeDomainWithIntegrityRequest.cc
@@ -1160,6 +1174,8 @@ set(live_src
 	src/model/RealTimeSnapshotCommandResult.cc
 	src/model/RemoveShowFromShowListRequest.cc
 	src/model/RemoveShowFromShowListResult.cc
+	src/model/RemoveTerminalsRequest.cc
+	src/model/RemoveTerminalsResult.cc
 	src/model/RestartCasterRequest.cc
 	src/model/RestartCasterResult.cc
 	src/model/ResumeLiveStreamRequest.cc
