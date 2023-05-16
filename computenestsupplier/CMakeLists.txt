@@ -23,12 +23,16 @@ set(computenestsupplier_public_header
 set(computenestsupplier_public_header_model 
 	include/alibabacloud/computenestsupplier/model/CreateArtifactRequest.h
 	include/alibabacloud/computenestsupplier/model/CreateArtifactResult.h
+	include/alibabacloud/computenestsupplier/model/CreateServiceRequest.h
+	include/alibabacloud/computenestsupplier/model/CreateServiceResult.h
 	include/alibabacloud/computenestsupplier/model/DeleteArtifactRequest.h
 	include/alibabacloud/computenestsupplier/model/DeleteArtifactResult.h
 	include/alibabacloud/computenestsupplier/model/GetArtifactRequest.h
 	include/alibabacloud/computenestsupplier/model/GetArtifactResult.h
 	include/alibabacloud/computenestsupplier/model/GetArtifactRepositoryCredentialsRequest.h
 	include/alibabacloud/computenestsupplier/model/GetArtifactRepositoryCredentialsResult.h
+	include/alibabacloud/computenestsupplier/model/GetServiceEstimateCostRequest.h
+	include/alibabacloud/computenestsupplier/model/GetServiceEstimateCostResult.h
 	include/alibabacloud/computenestsupplier/model/GetServiceInstanceRequest.h
 	include/alibabacloud/computenestsupplier/model/GetServiceInstanceResult.h
 	include/alibabacloud/computenestsupplier/model/ListArtifactVersionsRequest.h
@@ -39,6 +43,8 @@ set(computenestsupplier_public_header_model
 	include/alibabacloud/computenestsupplier/model/ListServiceInstancesResult.h
 	include/alibabacloud/computenestsupplier/model/ListServiceUsagesRequest.h
 	include/alibabacloud/computenestsupplier/model/ListServiceUsagesResult.h
+	include/alibabacloud/computenestsupplier/model/ListServicesRequest.h
+	include/alibabacloud/computenestsupplier/model/ListServicesResult.h
 	include/alibabacloud/computenestsupplier/model/ReleaseArtifactRequest.h
 	include/alibabacloud/computenestsupplier/model/ReleaseArtifactResult.h
 	include/alibabacloud/computenestsupplier/model/UpdateArtifactRequest.h
@@ -48,12 +54,16 @@ set(computenestsupplier_src
 	src/ComputeNestSupplierClient.cc
 	src/model/CreateArtifactRequest.cc
 	src/model/CreateArtifactResult.cc
+	src/model/CreateServiceRequest.cc
+	src/model/CreateServiceResult.cc
 	src/model/DeleteArtifactRequest.cc
 	src/model/DeleteArtifactResult.cc
 	src/model/GetArtifactRequest.cc
 	src/model/GetArtifactResult.cc
 	src/model/GetArtifactRepositoryCredentialsRequest.cc
 	src/model/GetArtifactRepositoryCredentialsResult.cc
+	src/model/GetServiceEstimateCostRequest.cc
+	src/model/GetServiceEstimateCostResult.cc
 	src/model/GetServiceInstanceRequest.cc
 	src/model/GetServiceInstanceResult.cc
 	src/model/ListArtifactVersionsRequest.cc
@@ -64,6 +74,8 @@ set(computenestsupplier_src
 	src/model/ListServiceInstancesResult.cc
 	src/model/ListServiceUsagesRequest.cc
 	src/model/ListServiceUsagesResult.cc
+	src/model/ListServicesRequest.cc
+	src/model/ListServicesResult.cc
 	src/model/ReleaseArtifactRequest.cc
 	src/model/ReleaseArtifactResult.cc
 	src/model/UpdateArtifactRequest.cc

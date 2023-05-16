@@ -118,6 +118,8 @@ void GetServiceInstanceResult::parse(const std::string &payload)
 				connectionConfigsObject.networkServiceStatus = networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["NetworkServiceStatus"].asString();
 			if(!networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["DomainName"].isNull())
 				connectionConfigsObject.domainName = networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["DomainName"].asString();
+			if(!networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["ConnectBandwidth"].isNull())
+				connectionConfigsObject.connectBandwidth = std::stoi(networkConfigNodePrivateVpcConnectionsPrivateVpcConnectionConnectionConfigsConnectionConfig["ConnectBandwidth"].asString());
 			auto allSecurityGroups = value["SecurityGroups"]["SecurityGroup"];
 			for (auto value : allSecurityGroups)
 				connectionConfigsObject.securityGroups.push_back(value.asString());
@@ -189,6 +191,8 @@ void GetServiceInstanceResult::parse(const std::string &payload)
 		name_ = value["Name"].asString();
 	if(!value["EnableUserPrometheus"].isNull())
 		enableUserPrometheus_ = value["EnableUserPrometheus"].asString();
+	if(!value["RdAccountLoginUrl"].isNull())
+		rdAccountLoginUrl_ = value["RdAccountLoginUrl"].asString();
 
 }
 
@@ -285,6 +289,11 @@ GetServiceInstanceResult::Service GetServiceInstanceResult::getService()const
 std::string GetServiceInstanceResult::getPayType()const
 {
 	return payType_;
+}
+
+std::string GetServiceInstanceResult::getRdAccountLoginUrl()const
+{
+	return rdAccountLoginUrl_;
 }
 
 long GetServiceInstanceResult::getUserId()const

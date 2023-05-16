@@ -68,6 +68,7 @@ namespace AlibabaCloud
 							std::string vpcId;
 							std::string domainName;
 							std::string networkServiceStatus;
+							int connectBandwidth;
 							std::vector<std::string> vSwitches;
 						};
 						std::string endpointServiceId;
@@ -114,6 +115,7 @@ namespace AlibabaCloud
 				NetworkConfig getNetworkConfig()const;
 				Service getService()const;
 				std::string getPayType()const;
+				std::string getRdAccountLoginUrl()const;
 				long getUserId()const;
 				std::string getEnableUserPrometheus()const;
 				std::string getStatusDetail()const;
@@ -145,6 +147,7 @@ namespace AlibabaCloud
 				NetworkConfig networkConfig_;
 				Service service_;
 				std::string payType_;
+				std::string rdAccountLoginUrl_;
 				long userId_;
 				std::string enableUserPrometheus_;
 				std::string statusDetail_;

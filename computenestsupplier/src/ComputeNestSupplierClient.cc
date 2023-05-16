@@ -87,6 +87,42 @@ ComputeNestSupplierClient::CreateArtifactOutcomeCallable ComputeNestSupplierClie
 	return task->get_future();
 }
 
+ComputeNestSupplierClient::CreateServiceOutcome ComputeNestSupplierClient::createService(const CreateServiceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateServiceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateServiceOutcome(CreateServiceResult(outcome.result()));
+	else
+		return CreateServiceOutcome(outcome.error());
+}
+
+void ComputeNestSupplierClient::createServiceAsync(const CreateServiceRequest& request, const CreateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createService(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ComputeNestSupplierClient::CreateServiceOutcomeCallable ComputeNestSupplierClient::createServiceCallable(const CreateServiceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateServiceOutcome()>>(
+			[this, request]()
+			{
+			return this->createService(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ComputeNestSupplierClient::DeleteArtifactOutcome ComputeNestSupplierClient::deleteArtifact(const DeleteArtifactRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -189,6 +225,42 @@ ComputeNestSupplierClient::GetArtifactRepositoryCredentialsOutcomeCallable Compu
 			[this, request]()
 			{
 			return this->getArtifactRepositoryCredentials(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ComputeNestSupplierClient::GetServiceEstimateCostOutcome ComputeNestSupplierClient::getServiceEstimateCost(const GetServiceEstimateCostRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetServiceEstimateCostOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetServiceEstimateCostOutcome(GetServiceEstimateCostResult(outcome.result()));
+	else
+		return GetServiceEstimateCostOutcome(outcome.error());
+}
+
+void ComputeNestSupplierClient::getServiceEstimateCostAsync(const GetServiceEstimateCostRequest& request, const GetServiceEstimateCostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getServiceEstimateCost(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ComputeNestSupplierClient::GetServiceEstimateCostOutcomeCallable ComputeNestSupplierClient::getServiceEstimateCostCallable(const GetServiceEstimateCostRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetServiceEstimateCostOutcome()>>(
+			[this, request]()
+			{
+			return this->getServiceEstimateCost(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -369,6 +441,42 @@ ComputeNestSupplierClient::ListServiceUsagesOutcomeCallable ComputeNestSupplierC
 			[this, request]()
 			{
 			return this->listServiceUsages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ComputeNestSupplierClient::ListServicesOutcome ComputeNestSupplierClient::listServices(const ListServicesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListServicesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListServicesOutcome(ListServicesResult(outcome.result()));
+	else
+		return ListServicesOutcome(outcome.error());
+}
+
+void ComputeNestSupplierClient::listServicesAsync(const ListServicesRequest& request, const ListServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listServices(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ComputeNestSupplierClient::ListServicesOutcomeCallable ComputeNestSupplierClient::listServicesCallable(const ListServicesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListServicesOutcome()>>(
+			[this, request]()
+			{
+			return this->listServices(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
