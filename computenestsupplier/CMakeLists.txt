@@ -27,10 +27,14 @@ set(computenestsupplier_public_header_model
 	include/alibabacloud/computenestsupplier/model/CreateServiceResult.h
 	include/alibabacloud/computenestsupplier/model/DeleteArtifactRequest.h
 	include/alibabacloud/computenestsupplier/model/DeleteArtifactResult.h
+	include/alibabacloud/computenestsupplier/model/DeleteServiceRequest.h
+	include/alibabacloud/computenestsupplier/model/DeleteServiceResult.h
 	include/alibabacloud/computenestsupplier/model/GetArtifactRequest.h
 	include/alibabacloud/computenestsupplier/model/GetArtifactResult.h
 	include/alibabacloud/computenestsupplier/model/GetArtifactRepositoryCredentialsRequest.h
 	include/alibabacloud/computenestsupplier/model/GetArtifactRepositoryCredentialsResult.h
+	include/alibabacloud/computenestsupplier/model/GetServiceRequest.h
+	include/alibabacloud/computenestsupplier/model/GetServiceResult.h
 	include/alibabacloud/computenestsupplier/model/GetServiceEstimateCostRequest.h
 	include/alibabacloud/computenestsupplier/model/GetServiceEstimateCostResult.h
 	include/alibabacloud/computenestsupplier/model/GetServiceInstanceRequest.h
@@ -48,7 +52,9 @@ set(computenestsupplier_public_header_model
 	include/alibabacloud/computenestsupplier/model/ReleaseArtifactRequest.h
 	include/alibabacloud/computenestsupplier/model/ReleaseArtifactResult.h
 	include/alibabacloud/computenestsupplier/model/UpdateArtifactRequest.h
-	include/alibabacloud/computenestsupplier/model/UpdateArtifactResult.h )
+	include/alibabacloud/computenestsupplier/model/UpdateArtifactResult.h
+	include/alibabacloud/computenestsupplier/model/UpdateServiceRequest.h
+	include/alibabacloud/computenestsupplier/model/UpdateServiceResult.h )
 
 set(computenestsupplier_src 
 	src/ComputeNestSupplierClient.cc
@@ -58,10 +64,14 @@ set(computenestsupplier_src
 	src/model/CreateServiceResult.cc
 	src/model/DeleteArtifactRequest.cc
 	src/model/DeleteArtifactResult.cc
+	src/model/DeleteServiceRequest.cc
+	src/model/DeleteServiceResult.cc
 	src/model/GetArtifactRequest.cc
 	src/model/GetArtifactResult.cc
 	src/model/GetArtifactRepositoryCredentialsRequest.cc
 	src/model/GetArtifactRepositoryCredentialsResult.cc
+	src/model/GetServiceRequest.cc
+	src/model/GetServiceResult.cc
 	src/model/GetServiceEstimateCostRequest.cc
 	src/model/GetServiceEstimateCostResult.cc
 	src/model/GetServiceInstanceRequest.cc
@@ -79,7 +89,9 @@ set(computenestsupplier_src
 	src/model/ReleaseArtifactRequest.cc
 	src/model/ReleaseArtifactResult.cc
 	src/model/UpdateArtifactRequest.cc
-	src/model/UpdateArtifactResult.cc )
+	src/model/UpdateArtifactResult.cc
+	src/model/UpdateServiceRequest.cc
+	src/model/UpdateServiceResult.cc )
 
 add_library(computenestsupplier ${LIB_TYPE}
 	${computenestsupplier_public_header}

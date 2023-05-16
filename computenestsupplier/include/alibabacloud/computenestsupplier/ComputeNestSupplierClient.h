@@ -28,10 +28,14 @@
 #include "model/CreateServiceResult.h"
 #include "model/DeleteArtifactRequest.h"
 #include "model/DeleteArtifactResult.h"
+#include "model/DeleteServiceRequest.h"
+#include "model/DeleteServiceResult.h"
 #include "model/GetArtifactRequest.h"
 #include "model/GetArtifactResult.h"
 #include "model/GetArtifactRepositoryCredentialsRequest.h"
 #include "model/GetArtifactRepositoryCredentialsResult.h"
+#include "model/GetServiceRequest.h"
+#include "model/GetServiceResult.h"
 #include "model/GetServiceEstimateCostRequest.h"
 #include "model/GetServiceEstimateCostResult.h"
 #include "model/GetServiceInstanceRequest.h"
@@ -50,6 +54,8 @@
 #include "model/ReleaseArtifactResult.h"
 #include "model/UpdateArtifactRequest.h"
 #include "model/UpdateArtifactResult.h"
+#include "model/UpdateServiceRequest.h"
+#include "model/UpdateServiceResult.h"
 
 
 namespace AlibabaCloud
@@ -68,12 +74,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteArtifactResult> DeleteArtifactOutcome;
 			typedef std::future<DeleteArtifactOutcome> DeleteArtifactOutcomeCallable;
 			typedef std::function<void(const ComputeNestSupplierClient*, const Model::DeleteArtifactRequest&, const DeleteArtifactOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteArtifactAsyncHandler;
+			typedef Outcome<Error, Model::DeleteServiceResult> DeleteServiceOutcome;
+			typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
+			typedef std::function<void(const ComputeNestSupplierClient*, const Model::DeleteServiceRequest&, const DeleteServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceAsyncHandler;
 			typedef Outcome<Error, Model::GetArtifactResult> GetArtifactOutcome;
 			typedef std::future<GetArtifactOutcome> GetArtifactOutcomeCallable;
 			typedef std::function<void(const ComputeNestSupplierClient*, const Model::GetArtifactRequest&, const GetArtifactOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetArtifactAsyncHandler;
 			typedef Outcome<Error, Model::GetArtifactRepositoryCredentialsResult> GetArtifactRepositoryCredentialsOutcome;
 			typedef std::future<GetArtifactRepositoryCredentialsOutcome> GetArtifactRepositoryCredentialsOutcomeCallable;
 			typedef std::function<void(const ComputeNestSupplierClient*, const Model::GetArtifactRepositoryCredentialsRequest&, const GetArtifactRepositoryCredentialsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetArtifactRepositoryCredentialsAsyncHandler;
+			typedef Outcome<Error, Model::GetServiceResult> GetServiceOutcome;
+			typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
+			typedef std::function<void(const ComputeNestSupplierClient*, const Model::GetServiceRequest&, const GetServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceAsyncHandler;
 			typedef Outcome<Error, Model::GetServiceEstimateCostResult> GetServiceEstimateCostOutcome;
 			typedef std::future<GetServiceEstimateCostOutcome> GetServiceEstimateCostOutcomeCallable;
 			typedef std::function<void(const ComputeNestSupplierClient*, const Model::GetServiceEstimateCostRequest&, const GetServiceEstimateCostOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceEstimateCostAsyncHandler;
@@ -101,6 +113,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::UpdateArtifactResult> UpdateArtifactOutcome;
 			typedef std::future<UpdateArtifactOutcome> UpdateArtifactOutcomeCallable;
 			typedef std::function<void(const ComputeNestSupplierClient*, const Model::UpdateArtifactRequest&, const UpdateArtifactOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateArtifactAsyncHandler;
+			typedef Outcome<Error, Model::UpdateServiceResult> UpdateServiceOutcome;
+			typedef std::future<UpdateServiceOutcome> UpdateServiceOutcomeCallable;
+			typedef std::function<void(const ComputeNestSupplierClient*, const Model::UpdateServiceRequest&, const UpdateServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateServiceAsyncHandler;
 
 			ComputeNestSupplierClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			ComputeNestSupplierClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -115,12 +130,18 @@ namespace AlibabaCloud
 			DeleteArtifactOutcome deleteArtifact(const Model::DeleteArtifactRequest &request)const;
 			void deleteArtifactAsync(const Model::DeleteArtifactRequest& request, const DeleteArtifactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteArtifactOutcomeCallable deleteArtifactCallable(const Model::DeleteArtifactRequest& request) const;
+			DeleteServiceOutcome deleteService(const Model::DeleteServiceRequest &request)const;
+			void deleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteServiceOutcomeCallable deleteServiceCallable(const Model::DeleteServiceRequest& request) const;
 			GetArtifactOutcome getArtifact(const Model::GetArtifactRequest &request)const;
 			void getArtifactAsync(const Model::GetArtifactRequest& request, const GetArtifactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetArtifactOutcomeCallable getArtifactCallable(const Model::GetArtifactRequest& request) const;
 			GetArtifactRepositoryCredentialsOutcome getArtifactRepositoryCredentials(const Model::GetArtifactRepositoryCredentialsRequest &request)const;
 			void getArtifactRepositoryCredentialsAsync(const Model::GetArtifactRepositoryCredentialsRequest& request, const GetArtifactRepositoryCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetArtifactRepositoryCredentialsOutcomeCallable getArtifactRepositoryCredentialsCallable(const Model::GetArtifactRepositoryCredentialsRequest& request) const;
+			GetServiceOutcome getService(const Model::GetServiceRequest &request)const;
+			void getServiceAsync(const Model::GetServiceRequest& request, const GetServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetServiceOutcomeCallable getServiceCallable(const Model::GetServiceRequest& request) const;
 			GetServiceEstimateCostOutcome getServiceEstimateCost(const Model::GetServiceEstimateCostRequest &request)const;
 			void getServiceEstimateCostAsync(const Model::GetServiceEstimateCostRequest& request, const GetServiceEstimateCostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetServiceEstimateCostOutcomeCallable getServiceEstimateCostCallable(const Model::GetServiceEstimateCostRequest& request) const;
@@ -148,6 +169,9 @@ namespace AlibabaCloud
 			UpdateArtifactOutcome updateArtifact(const Model::UpdateArtifactRequest &request)const;
 			void updateArtifactAsync(const Model::UpdateArtifactRequest& request, const UpdateArtifactAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateArtifactOutcomeCallable updateArtifactCallable(const Model::UpdateArtifactRequest& request) const;
+			UpdateServiceOutcome updateService(const Model::UpdateServiceRequest &request)const;
+			void updateServiceAsync(const Model::UpdateServiceRequest& request, const UpdateServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateServiceOutcomeCallable updateServiceCallable(const Model::UpdateServiceRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
