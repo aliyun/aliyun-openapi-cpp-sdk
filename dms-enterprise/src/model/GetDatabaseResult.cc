@@ -68,6 +68,8 @@ void GetDatabaseResult::parse(const std::string &payload)
 		database_.dbType = databaseNode["DbType"].asString();
 	if(!databaseNode["SearchName"].isNull())
 		database_.searchName = databaseNode["SearchName"].asString();
+	if(!databaseNode["InstanceAlias"].isNull())
+		database_.instanceAlias = databaseNode["InstanceAlias"].asString();
 		auto allOwnerIdList = databaseNode["OwnerIdList"]["OwnerIds"];
 		for (auto value : allOwnerIdList)
 			database_.ownerIdList.push_back(value.asString());
