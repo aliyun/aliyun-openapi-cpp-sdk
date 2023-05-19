@@ -54,6 +54,8 @@
 #include "model/DescribeCostBudgetsSummaryResult.h"
 #include "model/DescribeInstanceAmortizedCostByAmortizationPeriodRequest.h"
 #include "model/DescribeInstanceAmortizedCostByAmortizationPeriodResult.h"
+#include "model/DescribeInstanceAmortizedCostByAmortizationPeriodDateRequest.h"
+#include "model/DescribeInstanceAmortizedCostByAmortizationPeriodDateResult.h"
 #include "model/DescribeInstanceAmortizedCostByConsumePeriodRequest.h"
 #include "model/DescribeInstanceAmortizedCostByConsumePeriodResult.h"
 #include "model/DescribeInstanceBillRequest.h"
@@ -275,6 +277,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeInstanceAmortizedCostByAmortizationPeriodResult> DescribeInstanceAmortizedCostByAmortizationPeriodOutcome;
 			typedef std::future<DescribeInstanceAmortizedCostByAmortizationPeriodOutcome> DescribeInstanceAmortizedCostByAmortizationPeriodOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::DescribeInstanceAmortizedCostByAmortizationPeriodRequest&, const DescribeInstanceAmortizedCostByAmortizationPeriodOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAmortizedCostByAmortizationPeriodAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceAmortizedCostByAmortizationPeriodDateResult> DescribeInstanceAmortizedCostByAmortizationPeriodDateOutcome;
+			typedef std::future<DescribeInstanceAmortizedCostByAmortizationPeriodDateOutcome> DescribeInstanceAmortizedCostByAmortizationPeriodDateOutcomeCallable;
+			typedef std::function<void(const BssOpenApiClient*, const Model::DescribeInstanceAmortizedCostByAmortizationPeriodDateRequest&, const DescribeInstanceAmortizedCostByAmortizationPeriodDateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAmortizedCostByAmortizationPeriodDateAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInstanceAmortizedCostByConsumePeriodResult> DescribeInstanceAmortizedCostByConsumePeriodOutcome;
 			typedef std::future<DescribeInstanceAmortizedCostByConsumePeriodOutcome> DescribeInstanceAmortizedCostByConsumePeriodOutcomeCallable;
 			typedef std::function<void(const BssOpenApiClient*, const Model::DescribeInstanceAmortizedCostByConsumePeriodRequest&, const DescribeInstanceAmortizedCostByConsumePeriodOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAmortizedCostByConsumePeriodAsyncHandler;
@@ -574,6 +579,9 @@ namespace AlibabaCloud
 			DescribeInstanceAmortizedCostByAmortizationPeriodOutcome describeInstanceAmortizedCostByAmortizationPeriod(const Model::DescribeInstanceAmortizedCostByAmortizationPeriodRequest &request)const;
 			void describeInstanceAmortizedCostByAmortizationPeriodAsync(const Model::DescribeInstanceAmortizedCostByAmortizationPeriodRequest& request, const DescribeInstanceAmortizedCostByAmortizationPeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceAmortizedCostByAmortizationPeriodOutcomeCallable describeInstanceAmortizedCostByAmortizationPeriodCallable(const Model::DescribeInstanceAmortizedCostByAmortizationPeriodRequest& request) const;
+			DescribeInstanceAmortizedCostByAmortizationPeriodDateOutcome describeInstanceAmortizedCostByAmortizationPeriodDate(const Model::DescribeInstanceAmortizedCostByAmortizationPeriodDateRequest &request)const;
+			void describeInstanceAmortizedCostByAmortizationPeriodDateAsync(const Model::DescribeInstanceAmortizedCostByAmortizationPeriodDateRequest& request, const DescribeInstanceAmortizedCostByAmortizationPeriodDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceAmortizedCostByAmortizationPeriodDateOutcomeCallable describeInstanceAmortizedCostByAmortizationPeriodDateCallable(const Model::DescribeInstanceAmortizedCostByAmortizationPeriodDateRequest& request) const;
 			DescribeInstanceAmortizedCostByConsumePeriodOutcome describeInstanceAmortizedCostByConsumePeriod(const Model::DescribeInstanceAmortizedCostByConsumePeriodRequest &request)const;
 			void describeInstanceAmortizedCostByConsumePeriodAsync(const Model::DescribeInstanceAmortizedCostByConsumePeriodRequest& request, const DescribeInstanceAmortizedCostByConsumePeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInstanceAmortizedCostByConsumePeriodOutcomeCallable describeInstanceAmortizedCostByConsumePeriodCallable(const Model::DescribeInstanceAmortizedCostByConsumePeriodRequest& request) const;

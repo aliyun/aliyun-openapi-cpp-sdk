@@ -627,6 +627,42 @@ BssOpenApiClient::DescribeInstanceAmortizedCostByAmortizationPeriodOutcomeCallab
 	return task->get_future();
 }
 
+BssOpenApiClient::DescribeInstanceAmortizedCostByAmortizationPeriodDateOutcome BssOpenApiClient::describeInstanceAmortizedCostByAmortizationPeriodDate(const DescribeInstanceAmortizedCostByAmortizationPeriodDateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceAmortizedCostByAmortizationPeriodDateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceAmortizedCostByAmortizationPeriodDateOutcome(DescribeInstanceAmortizedCostByAmortizationPeriodDateResult(outcome.result()));
+	else
+		return DescribeInstanceAmortizedCostByAmortizationPeriodDateOutcome(outcome.error());
+}
+
+void BssOpenApiClient::describeInstanceAmortizedCostByAmortizationPeriodDateAsync(const DescribeInstanceAmortizedCostByAmortizationPeriodDateRequest& request, const DescribeInstanceAmortizedCostByAmortizationPeriodDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceAmortizedCostByAmortizationPeriodDate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+BssOpenApiClient::DescribeInstanceAmortizedCostByAmortizationPeriodDateOutcomeCallable BssOpenApiClient::describeInstanceAmortizedCostByAmortizationPeriodDateCallable(const DescribeInstanceAmortizedCostByAmortizationPeriodDateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceAmortizedCostByAmortizationPeriodDateOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceAmortizedCostByAmortizationPeriodDate(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 BssOpenApiClient::DescribeInstanceAmortizedCostByConsumePeriodOutcome BssOpenApiClient::describeInstanceAmortizedCostByConsumePeriod(const DescribeInstanceAmortizedCostByConsumePeriodRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -53,6 +53,8 @@ set(bssopenapi_public_header_model
 	include/alibabacloud/bssopenapi/model/DescribeCostBudgetsSummaryResult.h
 	include/alibabacloud/bssopenapi/model/DescribeInstanceAmortizedCostByAmortizationPeriodRequest.h
 	include/alibabacloud/bssopenapi/model/DescribeInstanceAmortizedCostByAmortizationPeriodResult.h
+	include/alibabacloud/bssopenapi/model/DescribeInstanceAmortizedCostByAmortizationPeriodDateRequest.h
+	include/alibabacloud/bssopenapi/model/DescribeInstanceAmortizedCostByAmortizationPeriodDateResult.h
 	include/alibabacloud/bssopenapi/model/DescribeInstanceAmortizedCostByConsumePeriodRequest.h
 	include/alibabacloud/bssopenapi/model/DescribeInstanceAmortizedCostByConsumePeriodResult.h
 	include/alibabacloud/bssopenapi/model/DescribeInstanceBillRequest.h
@@ -252,6 +254,8 @@ set(bssopenapi_src
 	src/model/DescribeCostBudgetsSummaryResult.cc
 	src/model/DescribeInstanceAmortizedCostByAmortizationPeriodRequest.cc
 	src/model/DescribeInstanceAmortizedCostByAmortizationPeriodResult.cc
+	src/model/DescribeInstanceAmortizedCostByAmortizationPeriodDateRequest.cc
+	src/model/DescribeInstanceAmortizedCostByAmortizationPeriodDateResult.cc
 	src/model/DescribeInstanceAmortizedCostByConsumePeriodRequest.cc
 	src/model/DescribeInstanceAmortizedCostByConsumePeriodResult.cc
 	src/model/DescribeInstanceBillRequest.cc
