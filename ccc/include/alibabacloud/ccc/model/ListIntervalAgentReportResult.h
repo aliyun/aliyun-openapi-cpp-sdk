@@ -95,30 +95,42 @@ namespace AlibabaCloud
 					};
 					struct Overall
 					{
+						struct BreakCodeDetail
+						{
+							std::string breakCode;
+							long duration;
+							long count;
+						};
+						long totalWorkTime;
+						long totalHoldTime;
+						float averageHoldTime;
+						float satisfactionIndex;
+						float averageBreakTime;
+						long totalOutboundScenarioTime;
+						long firstCheckInTime;
+						long totalOffSiteOnlineTime;
+						long totalTalkTime;
+						float averageReadyTime;
+						long maxTalkTime;
+						long maxReadyTime;
+						float satisfactionRate;
+						long maxBreakTime;
+						long maxHoldTime;
+						float averageTalkTime;
 						long totalReadyTime;
 						long lastCheckoutTime;
 						long totalCalls;
 						long totalBreakTime;
-						long totalWorkTime;
-						long totalHoldTime;
 						long satisfactionSurveysOffered;
-						float averageHoldTime;
-						float satisfactionIndex;
-						float averageBreakTime;
-						long firstCheckInTime;
+						long totalOfficePhoneOnlineTime;
 						long satisfactionSurveysResponded;
-						long totalTalkTime;
-						float averageReadyTime;
+						long totalOutboundScenarioReadyTime;
 						long totalLoggedInTime;
-						long maxTalkTime;
 						float averageWorkTime;
-						long maxReadyTime;
-						float satisfactionRate;
+						std::vector<BreakCodeDetail> breakCodeDetailList;
+						long totalOnSiteOnlineTime;
 						long maxWorkTime;
-						long maxBreakTime;
 						float occupancyRate;
-						long maxHoldTime;
-						float averageTalkTime;
 					};
 					Outbound outbound;
 					Overall overall;

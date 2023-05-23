@@ -213,6 +213,32 @@ void ListHistoricalAgentReportResult::parse(const std::string &payload)
 			itemsObject.overall.maxTalkTime = std::stol(overallNode["MaxTalkTime"].asString());
 		if(!overallNode["TotalCalls"].isNull())
 			itemsObject.overall.totalCalls = std::stol(overallNode["TotalCalls"].asString());
+		if(!overallNode["TotalOnSiteOnlineTime"].isNull())
+			itemsObject.overall.totalOnSiteOnlineTime = std::stol(overallNode["TotalOnSiteOnlineTime"].asString());
+		if(!overallNode["TotalOffSiteOnlineTime"].isNull())
+			itemsObject.overall.totalOffSiteOnlineTime = std::stol(overallNode["TotalOffSiteOnlineTime"].asString());
+		if(!overallNode["TotalOfficePhoneOnlineTime"].isNull())
+			itemsObject.overall.totalOfficePhoneOnlineTime = std::stol(overallNode["TotalOfficePhoneOnlineTime"].asString());
+		if(!overallNode["FirstCheckInTime"].isNull())
+			itemsObject.overall.firstCheckInTime = std::stol(overallNode["FirstCheckInTime"].asString());
+		if(!overallNode["LastCheckOutTime"].isNull())
+			itemsObject.overall.lastCheckOutTime = std::stol(overallNode["LastCheckOutTime"].asString());
+		if(!overallNode["TotalOutboundScenarioTime"].isNull())
+			itemsObject.overall.totalOutboundScenarioTime = std::stol(overallNode["TotalOutboundScenarioTime"].asString());
+		if(!overallNode["TotalOutboundScenarioReadyTime"].isNull())
+			itemsObject.overall.totalOutboundScenarioReadyTime = std::stol(overallNode["TotalOutboundScenarioReadyTime"].asString());
+		auto allBreakCodeDetailListNode = overallNode["BreakCodeDetailList"]["BreakCodeDetail"];
+		for (auto overallNodeBreakCodeDetailListBreakCodeDetail : allBreakCodeDetailListNode)
+		{
+			Data::Items::Overall::BreakCodeDetail breakCodeDetailObject;
+			if(!overallNodeBreakCodeDetailListBreakCodeDetail["BreakCode"].isNull())
+				breakCodeDetailObject.breakCode = overallNodeBreakCodeDetailListBreakCodeDetail["BreakCode"].asString();
+			if(!overallNodeBreakCodeDetailListBreakCodeDetail["Count"].isNull())
+				breakCodeDetailObject.count = std::stol(overallNodeBreakCodeDetailListBreakCodeDetail["Count"].asString());
+			if(!overallNodeBreakCodeDetailListBreakCodeDetail["Duration"].isNull())
+				breakCodeDetailObject.duration = std::stol(overallNodeBreakCodeDetailListBreakCodeDetail["Duration"].asString());
+			itemsObject.overall.breakCodeDetailList.push_back(breakCodeDetailObject);
+		}
 		data_.list.push_back(itemsObject);
 	}
 	if(!value["Code"].isNull())

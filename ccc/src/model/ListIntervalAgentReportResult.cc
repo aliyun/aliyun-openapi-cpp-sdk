@@ -192,8 +192,6 @@ void ListIntervalAgentReportResult::parse(const std::string &payload)
 			dataObject.overall.satisfactionRate = std::stof(overallNode["SatisfactionRate"].asString());
 		if(!overallNode["SatisfactionSurveysOffered"].isNull())
 			dataObject.overall.satisfactionSurveysOffered = std::stol(overallNode["SatisfactionSurveysOffered"].asString());
-		if(!overallNode["FirstCheckInTime"].isNull())
-			dataObject.overall.firstCheckInTime = std::stol(overallNode["FirstCheckInTime"].asString());
 		if(!overallNode["SatisfactionSurveysResponded"].isNull())
 			dataObject.overall.satisfactionSurveysResponded = std::stol(overallNode["SatisfactionSurveysResponded"].asString());
 		if(!overallNode["AverageHoldTime"].isNull())
@@ -202,6 +200,30 @@ void ListIntervalAgentReportResult::parse(const std::string &payload)
 			dataObject.overall.averageReadyTime = std::stof(overallNode["AverageReadyTime"].asString());
 		if(!overallNode["TotalBreakTime"].isNull())
 			dataObject.overall.totalBreakTime = std::stol(overallNode["TotalBreakTime"].asString());
+		if(!overallNode["TotalOnSiteOnlineTime"].isNull())
+			dataObject.overall.totalOnSiteOnlineTime = std::stol(overallNode["TotalOnSiteOnlineTime"].asString());
+		if(!overallNode["TotalOffSiteOnlineTime"].isNull())
+			dataObject.overall.totalOffSiteOnlineTime = std::stol(overallNode["TotalOffSiteOnlineTime"].asString());
+		if(!overallNode["TotalOfficePhoneOnlineTime"].isNull())
+			dataObject.overall.totalOfficePhoneOnlineTime = std::stol(overallNode["TotalOfficePhoneOnlineTime"].asString());
+		if(!overallNode["TotalOutboundScenarioTime"].isNull())
+			dataObject.overall.totalOutboundScenarioTime = std::stol(overallNode["TotalOutboundScenarioTime"].asString());
+		if(!overallNode["TotalOutboundScenarioReadyTime"].isNull())
+			dataObject.overall.totalOutboundScenarioReadyTime = std::stol(overallNode["TotalOutboundScenarioReadyTime"].asString());
+		if(!overallNode["FirstCheckInTime"].isNull())
+			dataObject.overall.firstCheckInTime = std::stol(overallNode["FirstCheckInTime"].asString());
+		auto allBreakCodeDetailListNode = overallNode["BreakCodeDetailList"]["BreakCodeDetail"];
+		for (auto overallNodeBreakCodeDetailListBreakCodeDetail : allBreakCodeDetailListNode)
+		{
+			DataItem::Overall::BreakCodeDetail breakCodeDetailObject;
+			if(!overallNodeBreakCodeDetailListBreakCodeDetail["BreakCode"].isNull())
+				breakCodeDetailObject.breakCode = overallNodeBreakCodeDetailListBreakCodeDetail["BreakCode"].asString();
+			if(!overallNodeBreakCodeDetailListBreakCodeDetail["Count"].isNull())
+				breakCodeDetailObject.count = std::stol(overallNodeBreakCodeDetailListBreakCodeDetail["Count"].asString());
+			if(!overallNodeBreakCodeDetailListBreakCodeDetail["Duration"].isNull())
+				breakCodeDetailObject.duration = std::stol(overallNodeBreakCodeDetailListBreakCodeDetail["Duration"].asString());
+			dataObject.overall.breakCodeDetailList.push_back(breakCodeDetailObject);
+		}
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

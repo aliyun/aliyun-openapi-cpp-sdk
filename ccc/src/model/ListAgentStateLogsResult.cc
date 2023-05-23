@@ -53,6 +53,10 @@ void ListAgentStateLogsResult::parse(const std::string &payload)
 			dataObject.state = valueDataDataItem["State"].asString();
 		if(!valueDataDataItem["OutboundScenario"].isNull())
 			dataObject.outboundScenario = valueDataDataItem["OutboundScenario"].asString() == "true";
+		if(!valueDataDataItem["BreakCode"].isNull())
+			dataObject.breakCode = valueDataDataItem["BreakCode"].asString();
+		if(!valueDataDataItem["WorkMode"].isNull())
+			dataObject.workMode = valueDataDataItem["WorkMode"].asString();
 		data_.push_back(dataObject);
 	}
 	if(!value["Code"].isNull())

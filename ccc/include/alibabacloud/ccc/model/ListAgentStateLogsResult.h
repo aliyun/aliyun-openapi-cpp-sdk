@@ -35,10 +35,12 @@ namespace AlibabaCloud
 				struct DataItem
 				{
 					std::string state;
+					std::string breakCode;
 					long startTime;
 					std::string stateCode;
 					bool outboundScenario;
 					long duration;
+					std::string workMode;
 				};
 
 
