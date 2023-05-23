@@ -40,6 +40,8 @@
 #include "model/GetServiceEstimateCostResult.h"
 #include "model/GetServiceInstanceRequest.h"
 #include "model/GetServiceInstanceResult.h"
+#include "model/GetUploadCredentialsRequest.h"
+#include "model/GetUploadCredentialsResult.h"
 #include "model/ListArtifactVersionsRequest.h"
 #include "model/ListArtifactVersionsResult.h"
 #include "model/ListArtifactsRequest.h"
@@ -92,6 +94,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetServiceInstanceResult> GetServiceInstanceOutcome;
 			typedef std::future<GetServiceInstanceOutcome> GetServiceInstanceOutcomeCallable;
 			typedef std::function<void(const ComputeNestSupplierClient*, const Model::GetServiceInstanceRequest&, const GetServiceInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetServiceInstanceAsyncHandler;
+			typedef Outcome<Error, Model::GetUploadCredentialsResult> GetUploadCredentialsOutcome;
+			typedef std::future<GetUploadCredentialsOutcome> GetUploadCredentialsOutcomeCallable;
+			typedef std::function<void(const ComputeNestSupplierClient*, const Model::GetUploadCredentialsRequest&, const GetUploadCredentialsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetUploadCredentialsAsyncHandler;
 			typedef Outcome<Error, Model::ListArtifactVersionsResult> ListArtifactVersionsOutcome;
 			typedef std::future<ListArtifactVersionsOutcome> ListArtifactVersionsOutcomeCallable;
 			typedef std::function<void(const ComputeNestSupplierClient*, const Model::ListArtifactVersionsRequest&, const ListArtifactVersionsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListArtifactVersionsAsyncHandler;
@@ -148,6 +153,9 @@ namespace AlibabaCloud
 			GetServiceInstanceOutcome getServiceInstance(const Model::GetServiceInstanceRequest &request)const;
 			void getServiceInstanceAsync(const Model::GetServiceInstanceRequest& request, const GetServiceInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetServiceInstanceOutcomeCallable getServiceInstanceCallable(const Model::GetServiceInstanceRequest& request) const;
+			GetUploadCredentialsOutcome getUploadCredentials(const Model::GetUploadCredentialsRequest &request)const;
+			void getUploadCredentialsAsync(const Model::GetUploadCredentialsRequest& request, const GetUploadCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetUploadCredentialsOutcomeCallable getUploadCredentialsCallable(const Model::GetUploadCredentialsRequest& request) const;
 			ListArtifactVersionsOutcome listArtifactVersions(const Model::ListArtifactVersionsRequest &request)const;
 			void listArtifactVersionsAsync(const Model::ListArtifactVersionsRequest& request, const ListArtifactVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListArtifactVersionsOutcomeCallable listArtifactVersionsCallable(const Model::ListArtifactVersionsRequest& request) const;

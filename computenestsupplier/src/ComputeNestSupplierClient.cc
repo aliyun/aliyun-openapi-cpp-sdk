@@ -375,6 +375,42 @@ ComputeNestSupplierClient::GetServiceInstanceOutcomeCallable ComputeNestSupplier
 	return task->get_future();
 }
 
+ComputeNestSupplierClient::GetUploadCredentialsOutcome ComputeNestSupplierClient::getUploadCredentials(const GetUploadCredentialsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetUploadCredentialsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetUploadCredentialsOutcome(GetUploadCredentialsResult(outcome.result()));
+	else
+		return GetUploadCredentialsOutcome(outcome.error());
+}
+
+void ComputeNestSupplierClient::getUploadCredentialsAsync(const GetUploadCredentialsRequest& request, const GetUploadCredentialsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getUploadCredentials(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ComputeNestSupplierClient::GetUploadCredentialsOutcomeCallable ComputeNestSupplierClient::getUploadCredentialsCallable(const GetUploadCredentialsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetUploadCredentialsOutcome()>>(
+			[this, request]()
+			{
+			return this->getUploadCredentials(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ComputeNestSupplierClient::ListArtifactVersionsOutcome ComputeNestSupplierClient::listArtifactVersions(const ListArtifactVersionsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

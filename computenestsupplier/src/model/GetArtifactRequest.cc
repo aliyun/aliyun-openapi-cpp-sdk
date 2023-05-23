@@ -34,6 +34,15 @@ void GetArtifactRequest::setArtifactVersion(const std::string &artifactVersion) 
   setParameter(std::string("ArtifactVersion"), artifactVersion);
 }
 
+std::string GetArtifactRequest::getArtifactName() const {
+  return artifactName_;
+}
+
+void GetArtifactRequest::setArtifactName(const std::string &artifactName) {
+  artifactName_ = artifactName;
+  setParameter(std::string("ArtifactName"), artifactName);
+}
+
 std::string GetArtifactRequest::getArtifactId() const {
   return artifactId_;
 }

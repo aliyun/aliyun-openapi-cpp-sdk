@@ -39,6 +39,8 @@ set(computenestsupplier_public_header_model
 	include/alibabacloud/computenestsupplier/model/GetServiceEstimateCostResult.h
 	include/alibabacloud/computenestsupplier/model/GetServiceInstanceRequest.h
 	include/alibabacloud/computenestsupplier/model/GetServiceInstanceResult.h
+	include/alibabacloud/computenestsupplier/model/GetUploadCredentialsRequest.h
+	include/alibabacloud/computenestsupplier/model/GetUploadCredentialsResult.h
 	include/alibabacloud/computenestsupplier/model/ListArtifactVersionsRequest.h
 	include/alibabacloud/computenestsupplier/model/ListArtifactVersionsResult.h
 	include/alibabacloud/computenestsupplier/model/ListArtifactsRequest.h
@@ -76,6 +78,8 @@ set(computenestsupplier_src
 	src/model/GetServiceEstimateCostResult.cc
 	src/model/GetServiceInstanceRequest.cc
 	src/model/GetServiceInstanceResult.cc
+	src/model/GetUploadCredentialsRequest.cc
+	src/model/GetUploadCredentialsResult.cc
 	src/model/ListArtifactVersionsRequest.cc
 	src/model/ListArtifactVersionsResult.cc
 	src/model/ListArtifactsRequest.cc

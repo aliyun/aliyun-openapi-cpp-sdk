@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_COMPUTENESTSUPPLIER_MODEL_GETARTIFACTREQUEST_H_
-#define ALIBABACLOUD_COMPUTENESTSUPPLIER_MODEL_GETARTIFACTREQUEST_H_
+#ifndef ALIBABACLOUD_COMPUTENESTSUPPLIER_MODEL_GETUPLOADCREDENTIALSREQUEST_H_
+#define ALIBABACLOUD_COMPUTENESTSUPPLIER_MODEL_GETUPLOADCREDENTIALSREQUEST_H_
 
 #include <alibabacloud/computenestsupplier/ComputeNestSupplierExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,23 +26,17 @@
 namespace AlibabaCloud {
 namespace ComputeNestSupplier {
 namespace Model {
-class ALIBABACLOUD_COMPUTENESTSUPPLIER_EXPORT GetArtifactRequest : public RpcServiceRequest {
+class ALIBABACLOUD_COMPUTENESTSUPPLIER_EXPORT GetUploadCredentialsRequest : public RpcServiceRequest {
 public:
-	GetArtifactRequest();
-	~GetArtifactRequest();
-	std::string getArtifactVersion() const;
-	void setArtifactVersion(const std::string &artifactVersion);
-	std::string getArtifactName() const;
-	void setArtifactName(const std::string &artifactName);
-	std::string getArtifactId() const;
-	void setArtifactId(const std::string &artifactId);
+	GetUploadCredentialsRequest();
+	~GetUploadCredentialsRequest();
+	std::string getFileName() const;
+	void setFileName(const std::string &fileName);
 
 private:
-	std::string artifactVersion_;
-	std::string artifactName_;
-	std::string artifactId_;
+	std::string fileName_;
 };
 } // namespace Model
 } // namespace ComputeNestSupplier
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_COMPUTENESTSUPPLIER_MODEL_GETARTIFACTREQUEST_H_
+#endif // !ALIBABACLOUD_COMPUTENESTSUPPLIER_MODEL_GETUPLOADCREDENTIALSREQUEST_H_
