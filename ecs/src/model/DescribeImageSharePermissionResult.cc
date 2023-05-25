@@ -53,6 +53,8 @@ void DescribeImageSharePermissionResult::parse(const std::string &payload)
 		Account accountsObject;
 		if(!valueAccountsAccount["AliyunId"].isNull())
 			accountsObject.aliyunId = valueAccountsAccount["AliyunId"].asString();
+		if(!valueAccountsAccount["SharedTime"].isNull())
+			accountsObject.sharedTime = valueAccountsAccount["SharedTime"].asString();
 		accounts_.push_back(accountsObject);
 	}
 	if(!value["PageNumber"].isNull())

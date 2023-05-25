@@ -39,6 +39,7 @@ namespace AlibabaCloud
 				struct Account
 				{
 					std::string aliyunId;
+					std::string sharedTime;
 				};
 
 

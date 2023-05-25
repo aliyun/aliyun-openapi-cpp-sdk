@@ -70,3 +70,12 @@ void DescribeDeploymentSetSupportedInstanceTypeFamilyRequest::setOwnerId(long ow
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeDeploymentSetSupportedInstanceTypeFamilyRequest::getStrategy() const {
+  return strategy_;
+}
+
+void DescribeDeploymentSetSupportedInstanceTypeFamilyRequest::setStrategy(const std::string &strategy) {
+  strategy_ = strategy;
+  setParameter(std::string("Strategy"), strategy);
+}
+

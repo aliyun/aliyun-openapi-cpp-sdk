@@ -43,6 +43,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getContainerName() const;
 	void setContainerName(const std::string &containerName);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::vector<SystemTag> getSystemTag() const;
 	void setSystemTag(const std::vector<SystemTag> &systemTag);
 	std::string getCommandId() const;
@@ -81,6 +83,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string containerName_;
+	std::string clientToken_;
 	std::vector<SystemTag> systemTag_;
 	std::string commandId_;
 	long timeout_;

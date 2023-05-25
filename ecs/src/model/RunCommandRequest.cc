@@ -34,15 +34,6 @@ void RunCommandRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string RunCommandRequest::getContainerName() const {
-  return containerName_;
-}
-
-void RunCommandRequest::setContainerName(const std::string &containerName) {
-  containerName_ = containerName;
-  setParameter(std::string("ContainerName"), containerName);
-}
-
 std::string RunCommandRequest::getWorkingDir() const {
   return workingDir_;
 }
@@ -52,15 +43,6 @@ void RunCommandRequest::setWorkingDir(const std::string &workingDir) {
   setParameter(std::string("WorkingDir"), workingDir);
 }
 
-std::string RunCommandRequest::getDescription() const {
-  return description_;
-}
-
-void RunCommandRequest::setDescription(const std::string &description) {
-  description_ = description;
-  setParameter(std::string("Description"), description);
-}
-
 std::string RunCommandRequest::getType() const {
   return type_;
 }
@@ -68,24 +50,6 @@ std::string RunCommandRequest::getType() const {
 void RunCommandRequest::setType(const std::string &type) {
   type_ = type;
   setParameter(std::string("Type"), type);
-}
-
-std::string RunCommandRequest::getCommandContent() const {
-  return commandContent_;
-}
-
-void RunCommandRequest::setCommandContent(const std::string &commandContent) {
-  commandContent_ = commandContent;
-  setParameter(std::string("CommandContent"), commandContent);
-}
-
-long RunCommandRequest::getTimeout() const {
-  return timeout_;
-}
-
-void RunCommandRequest::setTimeout(long timeout) {
-  timeout_ = timeout;
-  setParameter(std::string("Timeout"), std::to_string(timeout));
 }
 
 std::string RunCommandRequest::getFrequency() const {
@@ -106,24 +70,6 @@ void RunCommandRequest::setResourceGroupId(const std::string &resourceGroupId) {
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string RunCommandRequest::getRegionId() const {
-  return regionId_;
-}
-
-void RunCommandRequest::setRegionId(const std::string &regionId) {
-  regionId_ = regionId;
-  setParameter(std::string("RegionId"), regionId);
-}
-
-std::string RunCommandRequest::getContentEncoding() const {
-  return contentEncoding_;
-}
-
-void RunCommandRequest::setContentEncoding(const std::string &contentEncoding) {
-  contentEncoding_ = contentEncoding;
-  setParameter(std::string("ContentEncoding"), contentEncoding);
-}
-
 std::string RunCommandRequest::getRepeatMode() const {
   return repeatMode_;
 }
@@ -131,15 +77,6 @@ std::string RunCommandRequest::getRepeatMode() const {
 void RunCommandRequest::setRepeatMode(const std::string &repeatMode) {
   repeatMode_ = repeatMode;
   setParameter(std::string("RepeatMode"), repeatMode);
-}
-
-std::string RunCommandRequest::getWindowsPasswordName() const {
-  return windowsPasswordName_;
-}
-
-void RunCommandRequest::setWindowsPasswordName(const std::string &windowsPasswordName) {
-  windowsPasswordName_ = windowsPasswordName;
-  setParameter(std::string("WindowsPasswordName"), windowsPasswordName);
 }
 
 std::vector<RunCommandRequest::Tag> RunCommandRequest::getTag() const {
@@ -172,24 +109,6 @@ bool RunCommandRequest::getTimed() const {
 void RunCommandRequest::setTimed(bool timed) {
   timed_ = timed;
   setParameter(std::string("Timed"), timed ? "true" : "false");
-}
-
-std::string RunCommandRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
-}
-
-void RunCommandRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-std::string RunCommandRequest::getOwnerAccount() const {
-  return ownerAccount_;
-}
-
-void RunCommandRequest::setOwnerAccount(const std::string &ownerAccount) {
-  ownerAccount_ = ownerAccount;
-  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
 long RunCommandRequest::getOwnerId() const {
@@ -234,6 +153,96 @@ std::map<std::string, std::string> RunCommandRequest::getParameters() const {
 void RunCommandRequest::setParameters(std::map<std::string, std::string> parameters) {
   parameters_ = parameters;
   setParameter(std::string("Parameters"), parameters);
+}
+
+std::string RunCommandRequest::getContainerName() const {
+  return containerName_;
+}
+
+void RunCommandRequest::setContainerName(const std::string &containerName) {
+  containerName_ = containerName;
+  setParameter(std::string("ContainerName"), containerName);
+}
+
+std::string RunCommandRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void RunCommandRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string RunCommandRequest::getDescription() const {
+  return description_;
+}
+
+void RunCommandRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
+}
+
+std::string RunCommandRequest::getCommandContent() const {
+  return commandContent_;
+}
+
+void RunCommandRequest::setCommandContent(const std::string &commandContent) {
+  commandContent_ = commandContent;
+  setParameter(std::string("CommandContent"), commandContent);
+}
+
+long RunCommandRequest::getTimeout() const {
+  return timeout_;
+}
+
+void RunCommandRequest::setTimeout(long timeout) {
+  timeout_ = timeout;
+  setParameter(std::string("Timeout"), std::to_string(timeout));
+}
+
+std::string RunCommandRequest::getRegionId() const {
+  return regionId_;
+}
+
+void RunCommandRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
+std::string RunCommandRequest::getContentEncoding() const {
+  return contentEncoding_;
+}
+
+void RunCommandRequest::setContentEncoding(const std::string &contentEncoding) {
+  contentEncoding_ = contentEncoding;
+  setParameter(std::string("ContentEncoding"), contentEncoding);
+}
+
+std::string RunCommandRequest::getWindowsPasswordName() const {
+  return windowsPasswordName_;
+}
+
+void RunCommandRequest::setWindowsPasswordName(const std::string &windowsPasswordName) {
+  windowsPasswordName_ = windowsPasswordName;
+  setParameter(std::string("WindowsPasswordName"), windowsPasswordName);
+}
+
+std::string RunCommandRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void RunCommandRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+std::string RunCommandRequest::getOwnerAccount() const {
+  return ownerAccount_;
+}
+
+void RunCommandRequest::setOwnerAccount(const std::string &ownerAccount) {
+  ownerAccount_ = ownerAccount;
+  setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
 bool RunCommandRequest::getEnableParameter() const {

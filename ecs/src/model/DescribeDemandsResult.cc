@@ -91,6 +91,8 @@ void DescribeDemandsResult::parse(const std::string &payload)
 				supplyInfosObject.supplyStartTime = valueDemandsDemandSupplyInfosSupplyInfo["SupplyStartTime"].asString();
 			if(!valueDemandsDemandSupplyInfosSupplyInfo["SupplyEndTime"].isNull())
 				supplyInfosObject.supplyEndTime = valueDemandsDemandSupplyInfosSupplyInfo["SupplyEndTime"].asString();
+			if(!valueDemandsDemandSupplyInfosSupplyInfo["PrivatePoolId"].isNull())
+				supplyInfosObject.privatePoolId = valueDemandsDemandSupplyInfosSupplyInfo["PrivatePoolId"].asString();
 			demandsObject.supplyInfos.push_back(supplyInfosObject);
 		}
 		demands_.push_back(demandsObject);

@@ -43,6 +43,15 @@ void InvokeCommandRequest::setContainerName(const std::string &containerName) {
   setParameter(std::string("ContainerName"), containerName);
 }
 
+std::string InvokeCommandRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void InvokeCommandRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
 std::vector<InvokeCommandRequest::SystemTag> InvokeCommandRequest::getSystemTag() const {
   return systemTag_;
 }

@@ -40,6 +40,7 @@ namespace AlibabaCloud
 						std::string supplyStartTime;
 						int amount;
 						std::string supplyEndTime;
+						std::string privatePoolId;
 					};
 					std::string demandDescription;
 					std::string comment;

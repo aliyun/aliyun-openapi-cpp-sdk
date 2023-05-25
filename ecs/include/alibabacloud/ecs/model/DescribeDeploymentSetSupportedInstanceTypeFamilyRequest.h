@@ -40,6 +40,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getStrategy() const;
+	void setStrategy(const std::string &strategy);
 
 private:
 	long resourceOwnerId_;
@@ -47,6 +49,7 @@ private:
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string strategy_;
 };
 } // namespace Model
 } // namespace Ecs
