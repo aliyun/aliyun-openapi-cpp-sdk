@@ -28,6 +28,8 @@
 #include "model/CheckAccountNameResult.h"
 #include "model/CheckDBNameRequest.h"
 #include "model/CheckDBNameResult.h"
+#include "model/CheckKMSAuthorizedRequest.h"
+#include "model/CheckKMSAuthorizedResult.h"
 #include "model/CloseAITaskRequest.h"
 #include "model/CloseAITaskResult.h"
 #include "model/CloseDBClusterMigrationRequest.h"
@@ -106,6 +108,8 @@
 #include "model/DescribeDBClusterAuditLogCollectorResult.h"
 #include "model/DescribeDBClusterAvailableResourcesRequest.h"
 #include "model/DescribeDBClusterAvailableResourcesResult.h"
+#include "model/DescribeDBClusterConnectivityRequest.h"
+#include "model/DescribeDBClusterConnectivityResult.h"
 #include "model/DescribeDBClusterEndpointsRequest.h"
 #include "model/DescribeDBClusterEndpointsResult.h"
 #include "model/DescribeDBClusterMigrationRequest.h"
@@ -178,6 +182,8 @@
 #include "model/DescribeSlowLogsResult.h"
 #include "model/DescribeTasksRequest.h"
 #include "model/DescribeTasksResult.h"
+#include "model/DescribeUserEncryptionKeyListRequest.h"
+#include "model/DescribeUserEncryptionKeyListResult.h"
 #include "model/DescribeVSwitchesRequest.h"
 #include "model/DescribeVSwitchesResult.h"
 #include "model/EnableFirewallRulesRequest.h"
@@ -190,6 +196,8 @@
 #include "model/GrantAccountPrivilegeResult.h"
 #include "model/ListTagResourcesRequest.h"
 #include "model/ListTagResourcesResult.h"
+#include "model/ManuallyStartDBClusterRequest.h"
+#include "model/ManuallyStartDBClusterResult.h"
 #include "model/ModifyAccountDescriptionRequest.h"
 #include "model/ModifyAccountDescriptionResult.h"
 #include "model/ModifyAccountPasswordRequest.h"
@@ -302,6 +310,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CheckDBNameResult> CheckDBNameOutcome;
 			typedef std::future<CheckDBNameOutcome> CheckDBNameOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::CheckDBNameRequest&, const CheckDBNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckDBNameAsyncHandler;
+			typedef Outcome<Error, Model::CheckKMSAuthorizedResult> CheckKMSAuthorizedOutcome;
+			typedef std::future<CheckKMSAuthorizedOutcome> CheckKMSAuthorizedOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::CheckKMSAuthorizedRequest&, const CheckKMSAuthorizedOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckKMSAuthorizedAsyncHandler;
 			typedef Outcome<Error, Model::CloseAITaskResult> CloseAITaskOutcome;
 			typedef std::future<CloseAITaskOutcome> CloseAITaskOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::CloseAITaskRequest&, const CloseAITaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CloseAITaskAsyncHandler;
@@ -419,6 +430,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDBClusterAvailableResourcesResult> DescribeDBClusterAvailableResourcesOutcome;
 			typedef std::future<DescribeDBClusterAvailableResourcesOutcome> DescribeDBClusterAvailableResourcesOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterAvailableResourcesRequest&, const DescribeDBClusterAvailableResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterAvailableResourcesAsyncHandler;
+			typedef Outcome<Error, Model::DescribeDBClusterConnectivityResult> DescribeDBClusterConnectivityOutcome;
+			typedef std::future<DescribeDBClusterConnectivityOutcome> DescribeDBClusterConnectivityOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterConnectivityRequest&, const DescribeDBClusterConnectivityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterConnectivityAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDBClusterEndpointsResult> DescribeDBClusterEndpointsOutcome;
 			typedef std::future<DescribeDBClusterEndpointsOutcome> DescribeDBClusterEndpointsOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeDBClusterEndpointsRequest&, const DescribeDBClusterEndpointsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBClusterEndpointsAsyncHandler;
@@ -527,6 +541,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeTasksResult> DescribeTasksOutcome;
 			typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeTasksRequest&, const DescribeTasksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksAsyncHandler;
+			typedef Outcome<Error, Model::DescribeUserEncryptionKeyListResult> DescribeUserEncryptionKeyListOutcome;
+			typedef std::future<DescribeUserEncryptionKeyListOutcome> DescribeUserEncryptionKeyListOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::DescribeUserEncryptionKeyListRequest&, const DescribeUserEncryptionKeyListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserEncryptionKeyListAsyncHandler;
 			typedef Outcome<Error, Model::DescribeVSwitchesResult> DescribeVSwitchesOutcome;
 			typedef std::future<DescribeVSwitchesOutcome> DescribeVSwitchesOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::DescribeVSwitchesRequest&, const DescribeVSwitchesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVSwitchesAsyncHandler;
@@ -545,6 +562,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
 			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
+			typedef Outcome<Error, Model::ManuallyStartDBClusterResult> ManuallyStartDBClusterOutcome;
+			typedef std::future<ManuallyStartDBClusterOutcome> ManuallyStartDBClusterOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::ManuallyStartDBClusterRequest&, const ManuallyStartDBClusterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ManuallyStartDBClusterAsyncHandler;
 			typedef Outcome<Error, Model::ModifyAccountDescriptionResult> ModifyAccountDescriptionOutcome;
 			typedef std::future<ModifyAccountDescriptionOutcome> ModifyAccountDescriptionOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyAccountDescriptionRequest&, const ModifyAccountDescriptionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccountDescriptionAsyncHandler;
@@ -700,6 +720,9 @@ namespace AlibabaCloud
 			CheckDBNameOutcome checkDBName(const Model::CheckDBNameRequest &request)const;
 			void checkDBNameAsync(const Model::CheckDBNameRequest& request, const CheckDBNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckDBNameOutcomeCallable checkDBNameCallable(const Model::CheckDBNameRequest& request) const;
+			CheckKMSAuthorizedOutcome checkKMSAuthorized(const Model::CheckKMSAuthorizedRequest &request)const;
+			void checkKMSAuthorizedAsync(const Model::CheckKMSAuthorizedRequest& request, const CheckKMSAuthorizedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckKMSAuthorizedOutcomeCallable checkKMSAuthorizedCallable(const Model::CheckKMSAuthorizedRequest& request) const;
 			CloseAITaskOutcome closeAITask(const Model::CloseAITaskRequest &request)const;
 			void closeAITaskAsync(const Model::CloseAITaskRequest& request, const CloseAITaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CloseAITaskOutcomeCallable closeAITaskCallable(const Model::CloseAITaskRequest& request) const;
@@ -817,6 +840,9 @@ namespace AlibabaCloud
 			DescribeDBClusterAvailableResourcesOutcome describeDBClusterAvailableResources(const Model::DescribeDBClusterAvailableResourcesRequest &request)const;
 			void describeDBClusterAvailableResourcesAsync(const Model::DescribeDBClusterAvailableResourcesRequest& request, const DescribeDBClusterAvailableResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterAvailableResourcesOutcomeCallable describeDBClusterAvailableResourcesCallable(const Model::DescribeDBClusterAvailableResourcesRequest& request) const;
+			DescribeDBClusterConnectivityOutcome describeDBClusterConnectivity(const Model::DescribeDBClusterConnectivityRequest &request)const;
+			void describeDBClusterConnectivityAsync(const Model::DescribeDBClusterConnectivityRequest& request, const DescribeDBClusterConnectivityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeDBClusterConnectivityOutcomeCallable describeDBClusterConnectivityCallable(const Model::DescribeDBClusterConnectivityRequest& request) const;
 			DescribeDBClusterEndpointsOutcome describeDBClusterEndpoints(const Model::DescribeDBClusterEndpointsRequest &request)const;
 			void describeDBClusterEndpointsAsync(const Model::DescribeDBClusterEndpointsRequest& request, const DescribeDBClusterEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDBClusterEndpointsOutcomeCallable describeDBClusterEndpointsCallable(const Model::DescribeDBClusterEndpointsRequest& request) const;
@@ -925,6 +951,9 @@ namespace AlibabaCloud
 			DescribeTasksOutcome describeTasks(const Model::DescribeTasksRequest &request)const;
 			void describeTasksAsync(const Model::DescribeTasksRequest& request, const DescribeTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeTasksOutcomeCallable describeTasksCallable(const Model::DescribeTasksRequest& request) const;
+			DescribeUserEncryptionKeyListOutcome describeUserEncryptionKeyList(const Model::DescribeUserEncryptionKeyListRequest &request)const;
+			void describeUserEncryptionKeyListAsync(const Model::DescribeUserEncryptionKeyListRequest& request, const DescribeUserEncryptionKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeUserEncryptionKeyListOutcomeCallable describeUserEncryptionKeyListCallable(const Model::DescribeUserEncryptionKeyListRequest& request) const;
 			DescribeVSwitchesOutcome describeVSwitches(const Model::DescribeVSwitchesRequest &request)const;
 			void describeVSwitchesAsync(const Model::DescribeVSwitchesRequest& request, const DescribeVSwitchesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeVSwitchesOutcomeCallable describeVSwitchesCallable(const Model::DescribeVSwitchesRequest& request) const;
@@ -943,6 +972,9 @@ namespace AlibabaCloud
 			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
 			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
+			ManuallyStartDBClusterOutcome manuallyStartDBCluster(const Model::ManuallyStartDBClusterRequest &request)const;
+			void manuallyStartDBClusterAsync(const Model::ManuallyStartDBClusterRequest& request, const ManuallyStartDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ManuallyStartDBClusterOutcomeCallable manuallyStartDBClusterCallable(const Model::ManuallyStartDBClusterRequest& request) const;
 			ModifyAccountDescriptionOutcome modifyAccountDescription(const Model::ModifyAccountDescriptionRequest &request)const;
 			void modifyAccountDescriptionAsync(const Model::ModifyAccountDescriptionRequest& request, const ModifyAccountDescriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyAccountDescriptionOutcomeCallable modifyAccountDescriptionCallable(const Model::ModifyAccountDescriptionRequest& request) const;

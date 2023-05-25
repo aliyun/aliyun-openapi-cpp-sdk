@@ -159,6 +159,42 @@ PolardbClient::CheckDBNameOutcomeCallable PolardbClient::checkDBNameCallable(con
 	return task->get_future();
 }
 
+PolardbClient::CheckKMSAuthorizedOutcome PolardbClient::checkKMSAuthorized(const CheckKMSAuthorizedRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckKMSAuthorizedOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckKMSAuthorizedOutcome(CheckKMSAuthorizedResult(outcome.result()));
+	else
+		return CheckKMSAuthorizedOutcome(outcome.error());
+}
+
+void PolardbClient::checkKMSAuthorizedAsync(const CheckKMSAuthorizedRequest& request, const CheckKMSAuthorizedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkKMSAuthorized(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::CheckKMSAuthorizedOutcomeCallable PolardbClient::checkKMSAuthorizedCallable(const CheckKMSAuthorizedRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckKMSAuthorizedOutcome()>>(
+			[this, request]()
+			{
+			return this->checkKMSAuthorized(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::CloseAITaskOutcome PolardbClient::closeAITask(const CloseAITaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1563,6 +1599,42 @@ PolardbClient::DescribeDBClusterAvailableResourcesOutcomeCallable PolardbClient:
 	return task->get_future();
 }
 
+PolardbClient::DescribeDBClusterConnectivityOutcome PolardbClient::describeDBClusterConnectivity(const DescribeDBClusterConnectivityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeDBClusterConnectivityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeDBClusterConnectivityOutcome(DescribeDBClusterConnectivityResult(outcome.result()));
+	else
+		return DescribeDBClusterConnectivityOutcome(outcome.error());
+}
+
+void PolardbClient::describeDBClusterConnectivityAsync(const DescribeDBClusterConnectivityRequest& request, const DescribeDBClusterConnectivityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeDBClusterConnectivity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeDBClusterConnectivityOutcomeCallable PolardbClient::describeDBClusterConnectivityCallable(const DescribeDBClusterConnectivityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeDBClusterConnectivityOutcome()>>(
+			[this, request]()
+			{
+			return this->describeDBClusterConnectivity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribeDBClusterEndpointsOutcome PolardbClient::describeDBClusterEndpoints(const DescribeDBClusterEndpointsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2859,6 +2931,42 @@ PolardbClient::DescribeTasksOutcomeCallable PolardbClient::describeTasksCallable
 	return task->get_future();
 }
 
+PolardbClient::DescribeUserEncryptionKeyListOutcome PolardbClient::describeUserEncryptionKeyList(const DescribeUserEncryptionKeyListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeUserEncryptionKeyListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeUserEncryptionKeyListOutcome(DescribeUserEncryptionKeyListResult(outcome.result()));
+	else
+		return DescribeUserEncryptionKeyListOutcome(outcome.error());
+}
+
+void PolardbClient::describeUserEncryptionKeyListAsync(const DescribeUserEncryptionKeyListRequest& request, const DescribeUserEncryptionKeyListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeUserEncryptionKeyList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::DescribeUserEncryptionKeyListOutcomeCallable PolardbClient::describeUserEncryptionKeyListCallable(const DescribeUserEncryptionKeyListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeUserEncryptionKeyListOutcome()>>(
+			[this, request]()
+			{
+			return this->describeUserEncryptionKeyList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PolardbClient::DescribeVSwitchesOutcome PolardbClient::describeVSwitches(const DescribeVSwitchesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3069,6 +3177,42 @@ PolardbClient::ListTagResourcesOutcomeCallable PolardbClient::listTagResourcesCa
 			[this, request]()
 			{
 			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PolardbClient::ManuallyStartDBClusterOutcome PolardbClient::manuallyStartDBCluster(const ManuallyStartDBClusterRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ManuallyStartDBClusterOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ManuallyStartDBClusterOutcome(ManuallyStartDBClusterResult(outcome.result()));
+	else
+		return ManuallyStartDBClusterOutcome(outcome.error());
+}
+
+void PolardbClient::manuallyStartDBClusterAsync(const ManuallyStartDBClusterRequest& request, const ManuallyStartDBClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, manuallyStartDBCluster(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PolardbClient::ManuallyStartDBClusterOutcomeCallable PolardbClient::manuallyStartDBClusterCallable(const ManuallyStartDBClusterRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ManuallyStartDBClusterOutcome()>>(
+			[this, request]()
+			{
+			return this->manuallyStartDBCluster(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

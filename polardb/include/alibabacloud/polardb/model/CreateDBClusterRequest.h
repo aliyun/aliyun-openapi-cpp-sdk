@@ -104,10 +104,16 @@ public:
 	void setEngine(const std::string &engine);
 	std::string getGDNId() const;
 	void setGDNId(const std::string &gDNId);
+	std::string getLooseXEngine() const;
+	void setLooseXEngine(const std::string &looseXEngine);
+	std::string getLoosePolarLogBin() const;
+	void setLoosePolarLogBin(const std::string &loosePolarLogBin);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	std::string getLooseXEngineUseMemoryPct() const;
+	void setLooseXEngineUseMemoryPct(const std::string &looseXEngineUseMemoryPct);
 	std::string getUsedTime() const;
 	void setUsedTime(const std::string &usedTime);
 	int getDBNodeNum() const;
@@ -167,8 +173,11 @@ private:
 	std::string regionId_;
 	std::string engine_;
 	std::string gDNId_;
+	std::string looseXEngine_;
+	std::string loosePolarLogBin_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	std::string looseXEngineUseMemoryPct_;
 	std::string usedTime_;
 	int dBNodeNum_;
 	std::string vPCId_;

@@ -345,6 +345,24 @@ void CreateDBClusterRequest::setGDNId(const std::string &gDNId) {
   setParameter(std::string("GDNId"), gDNId);
 }
 
+std::string CreateDBClusterRequest::getLooseXEngine() const {
+  return looseXEngine_;
+}
+
+void CreateDBClusterRequest::setLooseXEngine(const std::string &looseXEngine) {
+  looseXEngine_ = looseXEngine;
+  setParameter(std::string("LooseXEngine"), looseXEngine);
+}
+
+std::string CreateDBClusterRequest::getLoosePolarLogBin() const {
+  return loosePolarLogBin_;
+}
+
+void CreateDBClusterRequest::setLoosePolarLogBin(const std::string &loosePolarLogBin) {
+  loosePolarLogBin_ = loosePolarLogBin;
+  setParameter(std::string("LoosePolarLogBin"), loosePolarLogBin);
+}
+
 std::string CreateDBClusterRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
@@ -361,6 +379,15 @@ std::string CreateDBClusterRequest::getOwnerAccount() const {
 void CreateDBClusterRequest::setOwnerAccount(const std::string &ownerAccount) {
   ownerAccount_ = ownerAccount;
   setParameter(std::string("OwnerAccount"), ownerAccount);
+}
+
+std::string CreateDBClusterRequest::getLooseXEngineUseMemoryPct() const {
+  return looseXEngineUseMemoryPct_;
+}
+
+void CreateDBClusterRequest::setLooseXEngineUseMemoryPct(const std::string &looseXEngineUseMemoryPct) {
+  looseXEngineUseMemoryPct_ = looseXEngineUseMemoryPct;
+  setParameter(std::string("LooseXEngineUseMemoryPct"), looseXEngineUseMemoryPct);
 }
 
 std::string CreateDBClusterRequest::getUsedTime() const {
