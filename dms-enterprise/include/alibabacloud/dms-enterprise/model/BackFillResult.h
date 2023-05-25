@@ -40,6 +40,7 @@ namespace AlibabaCloud
 				long getNodeId()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
+				long getDagInstanceId()const;
 				bool getSuccess()const;
 
 			protected:
@@ -48,6 +49,7 @@ namespace AlibabaCloud
 				long nodeId_;
 				std::string errorCode_;
 				std::string errorMessage_;
+				long dagInstanceId_;
 				bool success_;
 
 			};

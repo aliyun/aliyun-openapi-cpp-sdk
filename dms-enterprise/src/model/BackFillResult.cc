@@ -45,6 +45,8 @@ void BackFillResult::parse(const std::string &payload)
 		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
+	if(!value["DagInstanceId"].isNull())
+		dagInstanceId_ = std::stol(value["DagInstanceId"].asString());
 	if(!value["NodeId"].isNull())
 		nodeId_ = std::stol(value["NodeId"].asString());
 
@@ -63,6 +65,11 @@ std::string BackFillResult::getErrorCode()const
 std::string BackFillResult::getErrorMessage()const
 {
 	return errorMessage_;
+}
+
+long BackFillResult::getDagInstanceId()const
+{
+	return dagInstanceId_;
 }
 
 bool BackFillResult::getSuccess()const

@@ -195,6 +195,42 @@ Dms_enterpriseClient::AddTaskFlowEdgesOutcomeCallable Dms_enterpriseClient::addT
 	return task->get_future();
 }
 
+Dms_enterpriseClient::AnalyzeSQLLineageOutcome Dms_enterpriseClient::analyzeSQLLineage(const AnalyzeSQLLineageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AnalyzeSQLLineageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AnalyzeSQLLineageOutcome(AnalyzeSQLLineageResult(outcome.result()));
+	else
+		return AnalyzeSQLLineageOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::analyzeSQLLineageAsync(const AnalyzeSQLLineageRequest& request, const AnalyzeSQLLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, analyzeSQLLineage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::AnalyzeSQLLineageOutcomeCallable Dms_enterpriseClient::analyzeSQLLineageCallable(const AnalyzeSQLLineageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AnalyzeSQLLineageOutcome()>>(
+			[this, request]()
+			{
+			return this->analyzeSQLLineage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::ApproveOrderOutcome Dms_enterpriseClient::approveOrder(const ApproveOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2097,6 +2133,42 @@ Dms_enterpriseClient::GetDBTopologyOutcomeCallable Dms_enterpriseClient::getDBTo
 			[this, request]()
 			{
 			return this->getDBTopology(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetDataArchiveOrderDetailOutcome Dms_enterpriseClient::getDataArchiveOrderDetail(const GetDataArchiveOrderDetailRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataArchiveOrderDetailOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataArchiveOrderDetailOutcome(GetDataArchiveOrderDetailResult(outcome.result()));
+	else
+		return GetDataArchiveOrderDetailOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataArchiveOrderDetailAsync(const GetDataArchiveOrderDetailRequest& request, const GetDataArchiveOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataArchiveOrderDetail(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataArchiveOrderDetailOutcomeCallable Dms_enterpriseClient::getDataArchiveOrderDetailCallable(const GetDataArchiveOrderDetailRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataArchiveOrderDetailOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataArchiveOrderDetail(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

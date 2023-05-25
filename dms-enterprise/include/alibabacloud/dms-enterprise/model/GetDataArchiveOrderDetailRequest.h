@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTASKFLOWSBYPAGEREQUEST_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTASKFLOWSBYPAGEREQUEST_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDATAARCHIVEORDERDETAILREQUEST_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDATAARCHIVEORDERDETAILREQUEST_H_
 
 #include <alibabacloud/dms-enterprise/Dms_enterpriseExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,35 +26,20 @@
 namespace AlibabaCloud {
 namespace Dms_enterprise {
 namespace Model {
-class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListTaskFlowsByPageRequest : public RpcServiceRequest {
+class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT GetDataArchiveOrderDetailRequest : public RpcServiceRequest {
 public:
-	ListTaskFlowsByPageRequest();
-	~ListTaskFlowsByPageRequest();
-	std::string getSearchKey() const;
-	void setSearchKey(const std::string &searchKey);
-	std::vector<long> getDagIdList() const;
-	void setDagIdList(const std::vector<long> &dagIdList);
+	GetDataArchiveOrderDetailRequest();
+	~GetDataArchiveOrderDetailRequest();
 	long getTid() const;
 	void setTid(long tid);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
-	int getPageIndex() const;
-	void setPageIndex(int pageIndex);
-	long getScenarioId() const;
-	void setScenarioId(long scenarioId);
-	bool getNeedLastDagInstance() const;
-	void setNeedLastDagInstance(bool needLastDagInstance);
+	long getOrderId() const;
+	void setOrderId(long orderId);
 
 private:
-	std::string searchKey_;
-	std::vector<long> dagIdList_;
 	long tid_;
-	int pageSize_;
-	int pageIndex_;
-	long scenarioId_;
-	bool needLastDagInstance_;
+	long orderId_;
 };
 } // namespace Model
 } // namespace Dms_enterprise
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTASKFLOWSBYPAGEREQUEST_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_GETDATAARCHIVEORDERDETAILREQUEST_H_

@@ -35,15 +35,22 @@ namespace AlibabaCloud
 				struct TaskFlow
 				{
 					int status;
-					int latestInstanceStatus;
 					std::string latestInstanceTime;
+					bool cronSwitch;
+					int triggerType;
 					std::string description;
+					std::string scenarioId;
 					std::string creatorId;
 					long deployId;
-					long id;
 					std::string dagName;
-					std::string creatorNickName;
 					std::string dagOwnerNickName;
+					int latestInstanceStatus;
+					std::string cronParam;
+					std::string timeZoneId;
+					std::string cronStr;
+					long id;
+					std::string creatorNickName;
+					int cronType;
 				};
 
 

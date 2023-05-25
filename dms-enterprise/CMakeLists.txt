@@ -29,6 +29,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/AddLogicTableRouteConfigResult.h
 	include/alibabacloud/dms-enterprise/model/AddTaskFlowEdgesRequest.h
 	include/alibabacloud/dms-enterprise/model/AddTaskFlowEdgesResult.h
+	include/alibabacloud/dms-enterprise/model/AnalyzeSQLLineageRequest.h
+	include/alibabacloud/dms-enterprise/model/AnalyzeSQLLineageResult.h
 	include/alibabacloud/dms-enterprise/model/ApproveOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/ApproveOrderResult.h
 	include/alibabacloud/dms-enterprise/model/BackFillRequest.h
@@ -135,6 +137,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetDBTaskSQLJobLogResult.h
 	include/alibabacloud/dms-enterprise/model/GetDBTopologyRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDBTopologyResult.h
+	include/alibabacloud/dms-enterprise/model/GetDataArchiveOrderDetailRequest.h
+	include/alibabacloud/dms-enterprise/model/GetDataArchiveOrderDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectBackupFilesRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectBackupFilesResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectOrderDetailRequest.h
@@ -440,6 +444,8 @@ set(dms-enterprise_src
 	src/model/AddLogicTableRouteConfigResult.cc
 	src/model/AddTaskFlowEdgesRequest.cc
 	src/model/AddTaskFlowEdgesResult.cc
+	src/model/AnalyzeSQLLineageRequest.cc
+	src/model/AnalyzeSQLLineageResult.cc
 	src/model/ApproveOrderRequest.cc
 	src/model/ApproveOrderResult.cc
 	src/model/BackFillRequest.cc
@@ -546,6 +552,8 @@ set(dms-enterprise_src
 	src/model/GetDBTaskSQLJobLogResult.cc
 	src/model/GetDBTopologyRequest.cc
 	src/model/GetDBTopologyResult.cc
+	src/model/GetDataArchiveOrderDetailRequest.cc
+	src/model/GetDataArchiveOrderDetailResult.cc
 	src/model/GetDataCorrectBackupFilesRequest.cc
 	src/model/GetDataCorrectBackupFilesResult.cc
 	src/model/GetDataCorrectOrderDetailRequest.cc

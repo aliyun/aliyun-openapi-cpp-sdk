@@ -30,6 +30,8 @@ class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListTaskFlowInstanceRequest : public Rp
 public:
 	ListTaskFlowInstanceRequest();
 	~ListTaskFlowInstanceRequest();
+	bool getUseBizDate() const;
+	void setUseBizDate(bool useBizDate);
 	int getTriggerType() const;
 	void setTriggerType(int triggerType);
 	long getDagId() const;
@@ -44,8 +46,11 @@ public:
 	void setStartTimeBegin(const std::string &startTimeBegin);
 	std::string getStartTimeEnd() const;
 	void setStartTimeEnd(const std::string &startTimeEnd);
+	int getStatus() const;
+	void setStatus(int status);
 
 private:
+	bool useBizDate_;
 	int triggerType_;
 	long dagId_;
 	long tid_;
@@ -53,6 +58,7 @@ private:
 	int pageIndex_;
 	std::string startTimeBegin_;
 	std::string startTimeEnd_;
+	int status_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

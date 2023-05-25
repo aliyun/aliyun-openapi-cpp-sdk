@@ -25,6 +25,15 @@ ListTaskFlowInstanceRequest::ListTaskFlowInstanceRequest()
 
 ListTaskFlowInstanceRequest::~ListTaskFlowInstanceRequest() {}
 
+bool ListTaskFlowInstanceRequest::getUseBizDate() const {
+  return useBizDate_;
+}
+
+void ListTaskFlowInstanceRequest::setUseBizDate(bool useBizDate) {
+  useBizDate_ = useBizDate;
+  setParameter(std::string("UseBizDate"), useBizDate ? "true" : "false");
+}
+
 int ListTaskFlowInstanceRequest::getTriggerType() const {
   return triggerType_;
 }
@@ -86,5 +95,14 @@ std::string ListTaskFlowInstanceRequest::getStartTimeEnd() const {
 void ListTaskFlowInstanceRequest::setStartTimeEnd(const std::string &startTimeEnd) {
   startTimeEnd_ = startTimeEnd;
   setParameter(std::string("StartTimeEnd"), startTimeEnd);
+}
+
+int ListTaskFlowInstanceRequest::getStatus() const {
+  return status_;
+}
+
+void ListTaskFlowInstanceRequest::setStatus(int status) {
+  status_ = status;
+  setParameter(std::string("Status"), std::to_string(status));
 }
 

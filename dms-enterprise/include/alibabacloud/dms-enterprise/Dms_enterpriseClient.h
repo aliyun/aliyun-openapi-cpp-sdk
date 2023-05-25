@@ -30,6 +30,8 @@
 #include "model/AddLogicTableRouteConfigResult.h"
 #include "model/AddTaskFlowEdgesRequest.h"
 #include "model/AddTaskFlowEdgesResult.h"
+#include "model/AnalyzeSQLLineageRequest.h"
+#include "model/AnalyzeSQLLineageResult.h"
 #include "model/ApproveOrderRequest.h"
 #include "model/ApproveOrderResult.h"
 #include "model/BackFillRequest.h"
@@ -136,6 +138,8 @@
 #include "model/GetDBTaskSQLJobLogResult.h"
 #include "model/GetDBTopologyRequest.h"
 #include "model/GetDBTopologyResult.h"
+#include "model/GetDataArchiveOrderDetailRequest.h"
+#include "model/GetDataArchiveOrderDetailResult.h"
 #include "model/GetDataCorrectBackupFilesRequest.h"
 #include "model/GetDataCorrectBackupFilesResult.h"
 #include "model/GetDataCorrectOrderDetailRequest.h"
@@ -451,6 +455,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddTaskFlowEdgesResult> AddTaskFlowEdgesOutcome;
 			typedef std::future<AddTaskFlowEdgesOutcome> AddTaskFlowEdgesOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::AddTaskFlowEdgesRequest&, const AddTaskFlowEdgesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddTaskFlowEdgesAsyncHandler;
+			typedef Outcome<Error, Model::AnalyzeSQLLineageResult> AnalyzeSQLLineageOutcome;
+			typedef std::future<AnalyzeSQLLineageOutcome> AnalyzeSQLLineageOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::AnalyzeSQLLineageRequest&, const AnalyzeSQLLineageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AnalyzeSQLLineageAsyncHandler;
 			typedef Outcome<Error, Model::ApproveOrderResult> ApproveOrderOutcome;
 			typedef std::future<ApproveOrderOutcome> ApproveOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::ApproveOrderRequest&, const ApproveOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ApproveOrderAsyncHandler;
@@ -610,6 +617,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDBTopologyResult> GetDBTopologyOutcome;
 			typedef std::future<GetDBTopologyOutcome> GetDBTopologyOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDBTopologyRequest&, const GetDBTopologyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDBTopologyAsyncHandler;
+			typedef Outcome<Error, Model::GetDataArchiveOrderDetailResult> GetDataArchiveOrderDetailOutcome;
+			typedef std::future<GetDataArchiveOrderDetailOutcome> GetDataArchiveOrderDetailOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataArchiveOrderDetailRequest&, const GetDataArchiveOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataArchiveOrderDetailAsyncHandler;
 			typedef Outcome<Error, Model::GetDataCorrectBackupFilesResult> GetDataCorrectBackupFilesOutcome;
 			typedef std::future<GetDataCorrectBackupFilesOutcome> GetDataCorrectBackupFilesOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataCorrectBackupFilesRequest&, const GetDataCorrectBackupFilesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataCorrectBackupFilesAsyncHandler;
@@ -1068,6 +1078,9 @@ namespace AlibabaCloud
 			AddTaskFlowEdgesOutcome addTaskFlowEdges(const Model::AddTaskFlowEdgesRequest &request)const;
 			void addTaskFlowEdgesAsync(const Model::AddTaskFlowEdgesRequest& request, const AddTaskFlowEdgesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddTaskFlowEdgesOutcomeCallable addTaskFlowEdgesCallable(const Model::AddTaskFlowEdgesRequest& request) const;
+			AnalyzeSQLLineageOutcome analyzeSQLLineage(const Model::AnalyzeSQLLineageRequest &request)const;
+			void analyzeSQLLineageAsync(const Model::AnalyzeSQLLineageRequest& request, const AnalyzeSQLLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AnalyzeSQLLineageOutcomeCallable analyzeSQLLineageCallable(const Model::AnalyzeSQLLineageRequest& request) const;
 			ApproveOrderOutcome approveOrder(const Model::ApproveOrderRequest &request)const;
 			void approveOrderAsync(const Model::ApproveOrderRequest& request, const ApproveOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ApproveOrderOutcomeCallable approveOrderCallable(const Model::ApproveOrderRequest& request) const;
@@ -1227,6 +1240,9 @@ namespace AlibabaCloud
 			GetDBTopologyOutcome getDBTopology(const Model::GetDBTopologyRequest &request)const;
 			void getDBTopologyAsync(const Model::GetDBTopologyRequest& request, const GetDBTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDBTopologyOutcomeCallable getDBTopologyCallable(const Model::GetDBTopologyRequest& request) const;
+			GetDataArchiveOrderDetailOutcome getDataArchiveOrderDetail(const Model::GetDataArchiveOrderDetailRequest &request)const;
+			void getDataArchiveOrderDetailAsync(const Model::GetDataArchiveOrderDetailRequest& request, const GetDataArchiveOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDataArchiveOrderDetailOutcomeCallable getDataArchiveOrderDetailCallable(const Model::GetDataArchiveOrderDetailRequest& request) const;
 			GetDataCorrectBackupFilesOutcome getDataCorrectBackupFiles(const Model::GetDataCorrectBackupFilesRequest &request)const;
 			void getDataCorrectBackupFilesAsync(const Model::GetDataCorrectBackupFilesRequest& request, const GetDataCorrectBackupFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataCorrectBackupFilesOutcomeCallable getDataCorrectBackupFilesCallable(const Model::GetDataCorrectBackupFilesRequest& request) const;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTASKFLOWINSTANCERESULT_H_
-#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTASKFLOWINSTANCERESULT_H_
+#ifndef ALIBABACLOUD_DMS_ENTERPRISE_MODEL_ANALYZESQLLINEAGERESULT_H_
+#define ALIBABACLOUD_DMS_ENTERPRISE_MODEL_ANALYZESQLLINEAGERESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,44 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT ListTaskFlowInstanceResult : public ServiceResult
+			class ALIBABACLOUD_DMS_ENTERPRISE_EXPORT AnalyzeSQLLineageResult : public ServiceResult
 			{
 			public:
-				struct DAGInstance
+				struct LineageResult
 				{
-					int status;
-					int triggerType;
-					long historyDagId;
-					std::string ownerName;
-					std::string endTime;
-					std::string message;
-					std::string startTime;
-					std::string dagVersion;
-					long id;
-					std::string dagName;
-					std::string businessTime;
-					std::string dagId;
+					struct LineageItem
+					{
+						struct ProcessDetail
+						{
+							std::string code;
+							std::string calWay;
+						};
+						ProcessDetail processDetail;
+						std::string dst;
+						std::string src;
+						std::string operType;
+						std::string lineageType;
+					};
+					struct ObjectMetadataItem
+					{
+						struct Field
+						{
+							std::string name;
+						};
+						std::string type;
+						std::vector<ObjectMetadataItem::Field> fields;
+						std::string source;
+						std::string name;
+					};
+					std::vector<LineageItem> lineages;
+					std::vector<ObjectMetadataItem> objectMetadata;
 				};
 
 
-				ListTaskFlowInstanceResult();
-				explicit ListTaskFlowInstanceResult(const std::string &payload);
-				~ListTaskFlowInstanceResult();
-				int getTotalCount()const;
-				std::vector<DAGInstance> getDAGInstanceList()const;
+				AnalyzeSQLLineageResult();
+				explicit AnalyzeSQLLineageResult(const std::string &payload);
+				~AnalyzeSQLLineageResult();
+				LineageResult getLineageResult()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -61,8 +74,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				int totalCount_;
-				std::vector<DAGInstance> dAGInstanceList_;
+				LineageResult lineageResult_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
@@ -71,4 +83,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_LISTTASKFLOWINSTANCERESULT_H_
+#endif // !ALIBABACLOUD_DMS_ENTERPRISE_MODEL_ANALYZESQLLINEAGERESULT_H_

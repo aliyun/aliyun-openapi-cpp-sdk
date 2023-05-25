@@ -81,6 +81,17 @@ void BackFillRequest::setStartNodeIds(const std::vector<BackFillRequest::long> &
   }
 }
 
+std::vector<BackFillRequest::long> BackFillRequest::getFilterNodeIds() const {
+  return filterNodeIds_;
+}
+
+void BackFillRequest::setFilterNodeIds(const std::vector<BackFillRequest::long> &filterNodeIds) {
+  filterNodeIds_ = filterNodeIds;
+  for(int dep1 = 0; dep1 != filterNodeIds.size(); dep1++) {
+    setParameter(std::string("FilterNodeIds") + "." + std::to_string(dep1 + 1), std::to_string(filterNodeIds[dep1]));
+  }
+}
+
 std::string BackFillRequest::getBackFillDateBegin() const {
   return backFillDateBegin_;
 }

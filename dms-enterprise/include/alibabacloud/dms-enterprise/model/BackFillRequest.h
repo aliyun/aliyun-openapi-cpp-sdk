@@ -42,6 +42,8 @@ public:
 	void setHistoryDagId(long historyDagId);
 	std::vector<long> getStartNodeIds() const;
 	void setStartNodeIds(const std::vector<long> &startNodeIds);
+	std::vector<long> getFilterNodeIds() const;
+	void setFilterNodeIds(const std::vector<long> &filterNodeIds);
 	std::string getBackFillDateBegin() const;
 	void setBackFillDateBegin(const std::string &backFillDateBegin);
 	std::string getBackFillDate() const;
@@ -58,6 +60,7 @@ private:
 	std::string backFillDateEnd_;
 	long historyDagId_;
 	std::vector<long> startNodeIds_;
+	std::vector<long> filterNodeIds_;
 	std::string backFillDateBegin_;
 	std::string backFillDate_;
 	bool asc_;

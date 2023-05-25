@@ -47,6 +47,8 @@ void ListTaskFlowInstanceResult::parse(const std::string &payload)
 			dAGInstanceListObject.id = std::stol(valueDAGInstanceListDAGInstance["Id"].asString());
 		if(!valueDAGInstanceListDAGInstance["BusinessTime"].isNull())
 			dAGInstanceListObject.businessTime = valueDAGInstanceListDAGInstance["BusinessTime"].asString();
+		if(!valueDAGInstanceListDAGInstance["startTime"].isNull())
+			dAGInstanceListObject.startTime = valueDAGInstanceListDAGInstance["startTime"].asString();
 		if(!valueDAGInstanceListDAGInstance["EndTime"].isNull())
 			dAGInstanceListObject.endTime = valueDAGInstanceListDAGInstance["EndTime"].asString();
 		if(!valueDAGInstanceListDAGInstance["DagId"].isNull())
