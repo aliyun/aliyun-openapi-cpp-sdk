@@ -69,12 +69,16 @@ void ListTaskFlowsByPageResult::parse(const std::string &payload)
 			taskFlowListObject.cronSwitch = valueTaskFlowListTaskFlow["CronSwitch"].asString() == "true";
 		if(!valueTaskFlowListTaskFlow["CronStr"].isNull())
 			taskFlowListObject.cronStr = valueTaskFlowListTaskFlow["CronStr"].asString();
-		if(!valueTaskFlowListTaskFlow["CronParam"].isNull())
-			taskFlowListObject.cronParam = valueTaskFlowListTaskFlow["CronParam"].asString();
+		if(!valueTaskFlowListTaskFlow["ScheduleParam"].isNull())
+			taskFlowListObject.scheduleParam = valueTaskFlowListTaskFlow["ScheduleParam"].asString();
 		if(!valueTaskFlowListTaskFlow["TriggerType"].isNull())
 			taskFlowListObject.triggerType = std::stoi(valueTaskFlowListTaskFlow["TriggerType"].asString());
 		if(!valueTaskFlowListTaskFlow["CronType"].isNull())
 			taskFlowListObject.cronType = std::stoi(valueTaskFlowListTaskFlow["CronType"].asString());
+		if(!valueTaskFlowListTaskFlow["CronBeginDate"].isNull())
+			taskFlowListObject.cronBeginDate = valueTaskFlowListTaskFlow["CronBeginDate"].asString();
+		if(!valueTaskFlowListTaskFlow["CronEndDate"].isNull())
+			taskFlowListObject.cronEndDate = valueTaskFlowListTaskFlow["CronEndDate"].asString();
 		if(!valueTaskFlowListTaskFlow["TimeZoneId"].isNull())
 			taskFlowListObject.timeZoneId = valueTaskFlowListTaskFlow["TimeZoneId"].asString();
 		taskFlowList_.push_back(taskFlowListObject);

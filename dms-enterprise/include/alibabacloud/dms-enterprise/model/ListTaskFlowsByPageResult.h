@@ -45,12 +45,14 @@ namespace AlibabaCloud
 					std::string dagName;
 					std::string dagOwnerNickName;
 					int latestInstanceStatus;
-					std::string cronParam;
+					std::string scheduleParam;
 					std::string timeZoneId;
 					std::string cronStr;
+					std::string cronEndDate;
 					long id;
 					std::string creatorNickName;
 					int cronType;
+					std::string cronBeginDate;
 				};
 
 
