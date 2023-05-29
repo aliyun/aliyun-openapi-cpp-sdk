@@ -45,44 +45,44 @@ void DescribeOrderResult::parse(const std::string &payload)
 	auto allInstanceIds = value["InstanceIds"]["InstanceId"];
 	for (const auto &item : allInstanceIds)
 		instanceIds_.push_back(item.asString());
-	if(!value["OrderId"].isNull())
-		orderId_ = std::stol(value["OrderId"].asString());
-	if(!value["AliUid"].isNull())
-		aliUid_ = std::stol(value["AliUid"].asString());
-	if(!value["SupplierCompanyName"].isNull())
-		supplierCompanyName_ = value["SupplierCompanyName"].asString();
-	if(!value["ProductCode"].isNull())
-		productCode_ = value["ProductCode"].asString();
-	if(!value["ProductSkuCode"].isNull())
-		productSkuCode_ = value["ProductSkuCode"].asString();
 	if(!value["ProductName"].isNull())
 		productName_ = value["ProductName"].asString();
-	if(!value["PeriodType"].isNull())
-		periodType_ = value["PeriodType"].asString();
-	if(!value["Quantity"].isNull())
-		quantity_ = std::stoi(value["Quantity"].asString());
-	if(!value["AccountQuantity"].isNull())
-		accountQuantity_ = std::stol(value["AccountQuantity"].asString());
-	if(!value["OrderType"].isNull())
-		orderType_ = value["OrderType"].asString();
-	if(!value["OrderStatus"].isNull())
-		orderStatus_ = value["OrderStatus"].asString();
-	if(!value["PayStatus"].isNull())
-		payStatus_ = value["PayStatus"].asString();
-	if(!value["PaidOn"].isNull())
-		paidOn_ = std::stol(value["PaidOn"].asString());
-	if(!value["CreatedOn"].isNull())
-		createdOn_ = std::stol(value["CreatedOn"].asString());
+	if(!value["SupplierCompanyName"].isNull())
+		supplierCompanyName_ = value["SupplierCompanyName"].asString();
 	if(!value["OriginalPrice"].isNull())
 		originalPrice_ = std::stof(value["OriginalPrice"].asString());
-	if(!value["TotalPrice"].isNull())
-		totalPrice_ = std::stof(value["TotalPrice"].asString());
-	if(!value["PaymentPrice"].isNull())
-		paymentPrice_ = std::stof(value["PaymentPrice"].asString());
+	if(!value["AliUid"].isNull())
+		aliUid_ = std::stol(value["AliUid"].asString());
 	if(!value["CouponPrice"].isNull())
 		couponPrice_ = std::stof(value["CouponPrice"].asString());
+	if(!value["AccountQuantity"].isNull())
+		accountQuantity_ = std::stol(value["AccountQuantity"].asString());
+	if(!value["PeriodType"].isNull())
+		periodType_ = value["PeriodType"].asString();
+	if(!value["PayStatus"].isNull())
+		payStatus_ = value["PayStatus"].asString();
+	if(!value["PaymentPrice"].isNull())
+		paymentPrice_ = std::stof(value["PaymentPrice"].asString());
+	if(!value["OrderStatus"].isNull())
+		orderStatus_ = value["OrderStatus"].asString();
+	if(!value["ProductSkuCode"].isNull())
+		productSkuCode_ = value["ProductSkuCode"].asString();
+	if(!value["PaidOn"].isNull())
+		paidOn_ = std::stol(value["PaidOn"].asString());
 	if(!value["Components"].isNull())
 		components_ = value["Components"].asString();
+	if(!value["CreatedOn"].isNull())
+		createdOn_ = std::stol(value["CreatedOn"].asString());
+	if(!value["OrderType"].isNull())
+		orderType_ = value["OrderType"].asString();
+	if(!value["TotalPrice"].isNull())
+		totalPrice_ = std::stof(value["TotalPrice"].asString());
+	if(!value["Quantity"].isNull())
+		quantity_ = std::stoi(value["Quantity"].asString());
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["ProductCode"].isNull())
+		productCode_ = value["ProductCode"].asString();
 
 }
 
@@ -91,24 +91,24 @@ long DescribeOrderResult::getPaidOn()const
 	return paidOn_;
 }
 
-std::string DescribeOrderResult::getPeriodType()const
-{
-	return periodType_;
-}
-
 float DescribeOrderResult::getCouponPrice()const
 {
 	return couponPrice_;
 }
 
-std::string DescribeOrderResult::getPayStatus()const
+std::string DescribeOrderResult::getPeriodType()const
 {
-	return payStatus_;
+	return periodType_;
 }
 
 float DescribeOrderResult::getOriginalPrice()const
 {
 	return originalPrice_;
+}
+
+std::string DescribeOrderResult::getPayStatus()const
+{
+	return payStatus_;
 }
 
 std::string DescribeOrderResult::getProductName()const
@@ -166,14 +166,14 @@ std::string DescribeOrderResult::getProductSkuCode()const
 	return productSkuCode_;
 }
 
-long DescribeOrderResult::getCreatedOn()const
-{
-	return createdOn_;
-}
-
 float DescribeOrderResult::getPaymentPrice()const
 {
 	return paymentPrice_;
+}
+
+long DescribeOrderResult::getCreatedOn()const
+{
+	return createdOn_;
 }
 
 std::vector<std::string> DescribeOrderResult::getInstanceIds()const

@@ -48,13 +48,13 @@ namespace AlibabaCloud
 					};
 					std::string licenseCode;
 					std::string productName;
-					std::string instanceId;
 					std::string activateTime;
-					std::string productCode;
+					std::string instanceId;
 					std::string supplierName;
+					std::string productCode;
 					std::string licenseStatus;
-					std::string createTime;
 					std::string expiredTime;
+					std::string createTime;
 					std::vector<LicenseAttribute> extendArray;
 					ExtendInfo extendInfo;
 					std::string productSkuId;

@@ -38,10 +38,10 @@ namespace AlibabaCloud
 				explicit DescribeOrderResult(const std::string &payload);
 				~DescribeOrderResult();
 				long getPaidOn()const;
-				std::string getPeriodType()const;
 				float getCouponPrice()const;
-				std::string getPayStatus()const;
+				std::string getPeriodType()const;
 				float getOriginalPrice()const;
+				std::string getPayStatus()const;
 				std::string getProductName()const;
 				std::string getProductCode()const;
 				std::string getSupplierCompanyName()const;
@@ -53,8 +53,8 @@ namespace AlibabaCloud
 				std::string getOrderType()const;
 				float getTotalPrice()const;
 				std::string getProductSkuCode()const;
-				long getCreatedOn()const;
 				float getPaymentPrice()const;
+				long getCreatedOn()const;
 				std::vector<std::string> getInstanceIds()const;
 				long getAccountQuantity()const;
 				long getAliUid()const;
@@ -63,10 +63,10 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				long paidOn_;
-				std::string periodType_;
 				float couponPrice_;
-				std::string payStatus_;
+				std::string periodType_;
 				float originalPrice_;
+				std::string payStatus_;
 				std::string productName_;
 				std::string productCode_;
 				std::string supplierCompanyName_;
@@ -78,8 +78,8 @@ namespace AlibabaCloud
 				std::string orderType_;
 				float totalPrice_;
 				std::string productSkuCode_;
-				long createdOn_;
 				float paymentPrice_;
+				long createdOn_;
 				std::vector<std::string> instanceIds_;
 				long accountQuantity_;
 				long aliUid_;

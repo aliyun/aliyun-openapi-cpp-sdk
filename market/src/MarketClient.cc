@@ -31,21 +31,21 @@ MarketClient::MarketClient(const Credentials &credentials, const ClientConfigura
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "market");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 MarketClient::MarketClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "market");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 MarketClient::MarketClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "market");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
 }
 
 MarketClient::~MarketClient()
@@ -87,72 +87,36 @@ MarketClient::ActivateLicenseOutcomeCallable MarketClient::activateLicenseCallab
 	return task->get_future();
 }
 
-MarketClient::BindImagePackageOutcome MarketClient::bindImagePackage(const BindImagePackageRequest &request) const
+MarketClient::AutoRenewInstanceOutcome MarketClient::autoRenewInstance(const AutoRenewInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return BindImagePackageOutcome(endpointOutcome.error());
+		return AutoRenewInstanceOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return BindImagePackageOutcome(BindImagePackageResult(outcome.result()));
+		return AutoRenewInstanceOutcome(AutoRenewInstanceResult(outcome.result()));
 	else
-		return BindImagePackageOutcome(outcome.error());
+		return AutoRenewInstanceOutcome(outcome.error());
 }
 
-void MarketClient::bindImagePackageAsync(const BindImagePackageRequest& request, const BindImagePackageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MarketClient::autoRenewInstanceAsync(const AutoRenewInstanceRequest& request, const AutoRenewInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, bindImagePackage(request), context);
+		handler(this, request, autoRenewInstance(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MarketClient::BindImagePackageOutcomeCallable MarketClient::bindImagePackageCallable(const BindImagePackageRequest &request) const
+MarketClient::AutoRenewInstanceOutcomeCallable MarketClient::autoRenewInstanceCallable(const AutoRenewInstanceRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<BindImagePackageOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<AutoRenewInstanceOutcome()>>(
 			[this, request]()
 			{
-			return this->bindImagePackage(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-MarketClient::CreateCommodityOutcome MarketClient::createCommodity(const CreateCommodityRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return CreateCommodityOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return CreateCommodityOutcome(CreateCommodityResult(outcome.result()));
-	else
-		return CreateCommodityOutcome(outcome.error());
-}
-
-void MarketClient::createCommodityAsync(const CreateCommodityRequest& request, const CreateCommodityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, createCommodity(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MarketClient::CreateCommodityOutcomeCallable MarketClient::createCommodityCallable(const CreateCommodityRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<CreateCommodityOutcome()>>(
-			[this, request]()
-			{
-			return this->createCommodity(request);
+			return this->autoRenewInstance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -195,144 +159,144 @@ MarketClient::CreateOrderOutcomeCallable MarketClient::createOrderCallable(const
 	return task->get_future();
 }
 
-MarketClient::CreateRateOutcome MarketClient::createRate(const CreateRateRequest &request) const
+MarketClient::CrossAccountVerifyTokenOutcome MarketClient::crossAccountVerifyToken(const CrossAccountVerifyTokenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return CreateRateOutcome(endpointOutcome.error());
+		return CrossAccountVerifyTokenOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return CreateRateOutcome(CreateRateResult(outcome.result()));
+		return CrossAccountVerifyTokenOutcome(CrossAccountVerifyTokenResult(outcome.result()));
 	else
-		return CreateRateOutcome(outcome.error());
+		return CrossAccountVerifyTokenOutcome(outcome.error());
 }
 
-void MarketClient::createRateAsync(const CreateRateRequest& request, const CreateRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MarketClient::crossAccountVerifyTokenAsync(const CrossAccountVerifyTokenRequest& request, const CrossAccountVerifyTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, createRate(request), context);
+		handler(this, request, crossAccountVerifyToken(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MarketClient::CreateRateOutcomeCallable MarketClient::createRateCallable(const CreateRateRequest &request) const
+MarketClient::CrossAccountVerifyTokenOutcomeCallable MarketClient::crossAccountVerifyTokenCallable(const CrossAccountVerifyTokenRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<CreateRateOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<CrossAccountVerifyTokenOutcome()>>(
 			[this, request]()
 			{
-			return this->createRate(request);
+			return this->crossAccountVerifyToken(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-MarketClient::DeleteCommodityOutcome MarketClient::deleteCommodity(const DeleteCommodityRequest &request) const
+MarketClient::DescribeCurrentNodeInfoOutcome MarketClient::describeCurrentNodeInfo(const DescribeCurrentNodeInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DeleteCommodityOutcome(endpointOutcome.error());
+		return DescribeCurrentNodeInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DeleteCommodityOutcome(DeleteCommodityResult(outcome.result()));
+		return DescribeCurrentNodeInfoOutcome(DescribeCurrentNodeInfoResult(outcome.result()));
 	else
-		return DeleteCommodityOutcome(outcome.error());
+		return DescribeCurrentNodeInfoOutcome(outcome.error());
 }
 
-void MarketClient::deleteCommodityAsync(const DeleteCommodityRequest& request, const DeleteCommodityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MarketClient::describeCurrentNodeInfoAsync(const DescribeCurrentNodeInfoRequest& request, const DescribeCurrentNodeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, deleteCommodity(request), context);
+		handler(this, request, describeCurrentNodeInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MarketClient::DeleteCommodityOutcomeCallable MarketClient::deleteCommodityCallable(const DeleteCommodityRequest &request) const
+MarketClient::DescribeCurrentNodeInfoOutcomeCallable MarketClient::describeCurrentNodeInfoCallable(const DescribeCurrentNodeInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DeleteCommodityOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeCurrentNodeInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->deleteCommodity(request);
+			return this->describeCurrentNodeInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-MarketClient::DescribeCommoditiesOutcome MarketClient::describeCommodities(const DescribeCommoditiesRequest &request) const
+MarketClient::DescribeDistributionProductsOutcome MarketClient::describeDistributionProducts(const DescribeDistributionProductsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeCommoditiesOutcome(endpointOutcome.error());
+		return DescribeDistributionProductsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeCommoditiesOutcome(DescribeCommoditiesResult(outcome.result()));
+		return DescribeDistributionProductsOutcome(DescribeDistributionProductsResult(outcome.result()));
 	else
-		return DescribeCommoditiesOutcome(outcome.error());
+		return DescribeDistributionProductsOutcome(outcome.error());
 }
 
-void MarketClient::describeCommoditiesAsync(const DescribeCommoditiesRequest& request, const DescribeCommoditiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MarketClient::describeDistributionProductsAsync(const DescribeDistributionProductsRequest& request, const DescribeDistributionProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeCommodities(request), context);
+		handler(this, request, describeDistributionProducts(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MarketClient::DescribeCommoditiesOutcomeCallable MarketClient::describeCommoditiesCallable(const DescribeCommoditiesRequest &request) const
+MarketClient::DescribeDistributionProductsOutcomeCallable MarketClient::describeDistributionProductsCallable(const DescribeDistributionProductsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeCommoditiesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeDistributionProductsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeCommodities(request);
+			return this->describeDistributionProducts(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-MarketClient::DescribeCommodityOutcome MarketClient::describeCommodity(const DescribeCommodityRequest &request) const
+MarketClient::DescribeDistributionProductsLinkOutcome MarketClient::describeDistributionProductsLink(const DescribeDistributionProductsLinkRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeCommodityOutcome(endpointOutcome.error());
+		return DescribeDistributionProductsLinkOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeCommodityOutcome(DescribeCommodityResult(outcome.result()));
+		return DescribeDistributionProductsLinkOutcome(DescribeDistributionProductsLinkResult(outcome.result()));
 	else
-		return DescribeCommodityOutcome(outcome.error());
+		return DescribeDistributionProductsLinkOutcome(outcome.error());
 }
 
-void MarketClient::describeCommodityAsync(const DescribeCommodityRequest& request, const DescribeCommodityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MarketClient::describeDistributionProductsLinkAsync(const DescribeDistributionProductsLinkRequest& request, const DescribeDistributionProductsLinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeCommodity(request), context);
+		handler(this, request, describeDistributionProductsLink(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MarketClient::DescribeCommodityOutcomeCallable MarketClient::describeCommodityCallable(const DescribeCommodityRequest &request) const
+MarketClient::DescribeDistributionProductsLinkOutcomeCallable MarketClient::describeDistributionProductsLinkCallable(const DescribeDistributionProductsLinkRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeCommodityOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeDistributionProductsLinkOutcome()>>(
 			[this, request]()
 			{
-			return this->describeCommodity(request);
+			return this->describeDistributionProductsLink(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -591,72 +555,252 @@ MarketClient::DescribeProductsOutcomeCallable MarketClient::describeProductsCall
 	return task->get_future();
 }
 
-MarketClient::DescribeRateOutcome MarketClient::describeRate(const DescribeRateRequest &request) const
+MarketClient::DescribeProjectAttachmentsOutcome MarketClient::describeProjectAttachments(const DescribeProjectAttachmentsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return DescribeRateOutcome(endpointOutcome.error());
+		return DescribeProjectAttachmentsOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return DescribeRateOutcome(DescribeRateResult(outcome.result()));
+		return DescribeProjectAttachmentsOutcome(DescribeProjectAttachmentsResult(outcome.result()));
 	else
-		return DescribeRateOutcome(outcome.error());
+		return DescribeProjectAttachmentsOutcome(outcome.error());
 }
 
-void MarketClient::describeRateAsync(const DescribeRateRequest& request, const DescribeRateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MarketClient::describeProjectAttachmentsAsync(const DescribeProjectAttachmentsRequest& request, const DescribeProjectAttachmentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, describeRate(request), context);
+		handler(this, request, describeProjectAttachments(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MarketClient::DescribeRateOutcomeCallable MarketClient::describeRateCallable(const DescribeRateRequest &request) const
+MarketClient::DescribeProjectAttachmentsOutcomeCallable MarketClient::describeProjectAttachmentsCallable(const DescribeProjectAttachmentsRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<DescribeRateOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeProjectAttachmentsOutcome()>>(
 			[this, request]()
 			{
-			return this->describeRate(request);
+			return this->describeProjectAttachments(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-MarketClient::NotifyContractEventOutcome MarketClient::notifyContractEvent(const NotifyContractEventRequest &request) const
+MarketClient::DescribeProjectInfoOutcome MarketClient::describeProjectInfo(const DescribeProjectInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return NotifyContractEventOutcome(endpointOutcome.error());
+		return DescribeProjectInfoOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return NotifyContractEventOutcome(NotifyContractEventResult(outcome.result()));
+		return DescribeProjectInfoOutcome(DescribeProjectInfoResult(outcome.result()));
 	else
-		return NotifyContractEventOutcome(outcome.error());
+		return DescribeProjectInfoOutcome(outcome.error());
 }
 
-void MarketClient::notifyContractEventAsync(const NotifyContractEventRequest& request, const NotifyContractEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MarketClient::describeProjectInfoAsync(const DescribeProjectInfoRequest& request, const DescribeProjectInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, notifyContractEvent(request), context);
+		handler(this, request, describeProjectInfo(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MarketClient::NotifyContractEventOutcomeCallable MarketClient::notifyContractEventCallable(const NotifyContractEventRequest &request) const
+MarketClient::DescribeProjectInfoOutcomeCallable MarketClient::describeProjectInfoCallable(const DescribeProjectInfoRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<NotifyContractEventOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<DescribeProjectInfoOutcome()>>(
 			[this, request]()
 			{
-			return this->notifyContractEvent(request);
+			return this->describeProjectInfo(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MarketClient::DescribeProjectMessagesOutcome MarketClient::describeProjectMessages(const DescribeProjectMessagesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeProjectMessagesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeProjectMessagesOutcome(DescribeProjectMessagesResult(outcome.result()));
+	else
+		return DescribeProjectMessagesOutcome(outcome.error());
+}
+
+void MarketClient::describeProjectMessagesAsync(const DescribeProjectMessagesRequest& request, const DescribeProjectMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeProjectMessages(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MarketClient::DescribeProjectMessagesOutcomeCallable MarketClient::describeProjectMessagesCallable(const DescribeProjectMessagesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeProjectMessagesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeProjectMessages(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MarketClient::DescribeProjectNodesOutcome MarketClient::describeProjectNodes(const DescribeProjectNodesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeProjectNodesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeProjectNodesOutcome(DescribeProjectNodesResult(outcome.result()));
+	else
+		return DescribeProjectNodesOutcome(outcome.error());
+}
+
+void MarketClient::describeProjectNodesAsync(const DescribeProjectNodesRequest& request, const DescribeProjectNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeProjectNodes(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MarketClient::DescribeProjectNodesOutcomeCallable MarketClient::describeProjectNodesCallable(const DescribeProjectNodesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeProjectNodesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeProjectNodes(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MarketClient::DescribeProjectOperateLogsOutcome MarketClient::describeProjectOperateLogs(const DescribeProjectOperateLogsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeProjectOperateLogsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeProjectOperateLogsOutcome(DescribeProjectOperateLogsResult(outcome.result()));
+	else
+		return DescribeProjectOperateLogsOutcome(outcome.error());
+}
+
+void MarketClient::describeProjectOperateLogsAsync(const DescribeProjectOperateLogsRequest& request, const DescribeProjectOperateLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeProjectOperateLogs(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MarketClient::DescribeProjectOperateLogsOutcomeCallable MarketClient::describeProjectOperateLogsCallable(const DescribeProjectOperateLogsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeProjectOperateLogsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeProjectOperateLogs(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MarketClient::FinishCurrentProjectNodeOutcome MarketClient::finishCurrentProjectNode(const FinishCurrentProjectNodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return FinishCurrentProjectNodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return FinishCurrentProjectNodeOutcome(FinishCurrentProjectNodeResult(outcome.result()));
+	else
+		return FinishCurrentProjectNodeOutcome(outcome.error());
+}
+
+void MarketClient::finishCurrentProjectNodeAsync(const FinishCurrentProjectNodeRequest& request, const FinishCurrentProjectNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, finishCurrentProjectNode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MarketClient::FinishCurrentProjectNodeOutcomeCallable MarketClient::finishCurrentProjectNodeCallable(const FinishCurrentProjectNodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<FinishCurrentProjectNodeOutcome()>>(
+			[this, request]()
+			{
+			return this->finishCurrentProjectNode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+MarketClient::PauseProjectOutcome MarketClient::pauseProject(const PauseProjectRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PauseProjectOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PauseProjectOutcome(PauseProjectResult(outcome.result()));
+	else
+		return PauseProjectOutcome(outcome.error());
+}
+
+void MarketClient::pauseProjectAsync(const PauseProjectRequest& request, const PauseProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, pauseProject(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MarketClient::PauseProjectOutcomeCallable MarketClient::pauseProjectCallable(const PauseProjectRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PauseProjectOutcome()>>(
+			[this, request]()
+			{
+			return this->pauseProject(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -699,144 +843,72 @@ MarketClient::PushMeteringDataOutcomeCallable MarketClient::pushMeteringDataCall
 	return task->get_future();
 }
 
-MarketClient::QueryMarketCategoriesOutcome MarketClient::queryMarketCategories(const QueryMarketCategoriesRequest &request) const
+MarketClient::ResumeProjectOutcome MarketClient::resumeProject(const ResumeProjectRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryMarketCategoriesOutcome(endpointOutcome.error());
+		return ResumeProjectOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryMarketCategoriesOutcome(QueryMarketCategoriesResult(outcome.result()));
+		return ResumeProjectOutcome(ResumeProjectResult(outcome.result()));
 	else
-		return QueryMarketCategoriesOutcome(outcome.error());
+		return ResumeProjectOutcome(outcome.error());
 }
 
-void MarketClient::queryMarketCategoriesAsync(const QueryMarketCategoriesRequest& request, const QueryMarketCategoriesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MarketClient::resumeProjectAsync(const ResumeProjectRequest& request, const ResumeProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryMarketCategories(request), context);
+		handler(this, request, resumeProject(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MarketClient::QueryMarketCategoriesOutcomeCallable MarketClient::queryMarketCategoriesCallable(const QueryMarketCategoriesRequest &request) const
+MarketClient::ResumeProjectOutcomeCallable MarketClient::resumeProjectCallable(const ResumeProjectRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryMarketCategoriesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<ResumeProjectOutcome()>>(
 			[this, request]()
 			{
-			return this->queryMarketCategories(request);
+			return this->resumeProject(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
 	return task->get_future();
 }
 
-MarketClient::QueryMarketImagesOutcome MarketClient::queryMarketImages(const QueryMarketImagesRequest &request) const
+MarketClient::RollbackCurrentProjectNodeOutcome MarketClient::rollbackCurrentProjectNode(const RollbackCurrentProjectNodeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
 	if (!endpointOutcome.isSuccess())
-		return QueryMarketImagesOutcome(endpointOutcome.error());
+		return RollbackCurrentProjectNodeOutcome(endpointOutcome.error());
 
 	auto outcome = makeRequest(endpointOutcome.result(), request);
 
 	if (outcome.isSuccess())
-		return QueryMarketImagesOutcome(QueryMarketImagesResult(outcome.result()));
+		return RollbackCurrentProjectNodeOutcome(RollbackCurrentProjectNodeResult(outcome.result()));
 	else
-		return QueryMarketImagesOutcome(outcome.error());
+		return RollbackCurrentProjectNodeOutcome(outcome.error());
 }
 
-void MarketClient::queryMarketImagesAsync(const QueryMarketImagesRequest& request, const QueryMarketImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+void MarketClient::rollbackCurrentProjectNodeAsync(const RollbackCurrentProjectNodeRequest& request, const RollbackCurrentProjectNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
 {
 	auto fn = [this, request, handler, context]()
 	{
-		handler(this, request, queryMarketImages(request), context);
+		handler(this, request, rollbackCurrentProjectNode(request), context);
 	};
 
 	asyncExecute(new Runnable(fn));
 }
 
-MarketClient::QueryMarketImagesOutcomeCallable MarketClient::queryMarketImagesCallable(const QueryMarketImagesRequest &request) const
+MarketClient::RollbackCurrentProjectNodeOutcomeCallable MarketClient::rollbackCurrentProjectNodeCallable(const RollbackCurrentProjectNodeRequest &request) const
 {
-	auto task = std::make_shared<std::packaged_task<QueryMarketImagesOutcome()>>(
+	auto task = std::make_shared<std::packaged_task<RollbackCurrentProjectNodeOutcome()>>(
 			[this, request]()
 			{
-			return this->queryMarketImages(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-MarketClient::UpdateCommodityOutcome MarketClient::updateCommodity(const UpdateCommodityRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UpdateCommodityOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UpdateCommodityOutcome(UpdateCommodityResult(outcome.result()));
-	else
-		return UpdateCommodityOutcome(outcome.error());
-}
-
-void MarketClient::updateCommodityAsync(const UpdateCommodityRequest& request, const UpdateCommodityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, updateCommodity(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MarketClient::UpdateCommodityOutcomeCallable MarketClient::updateCommodityCallable(const UpdateCommodityRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UpdateCommodityOutcome()>>(
-			[this, request]()
-			{
-			return this->updateCommodity(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-MarketClient::UploadCommodityFileOutcome MarketClient::uploadCommodityFile(const UploadCommodityFileRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return UploadCommodityFileOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return UploadCommodityFileOutcome(UploadCommodityFileResult(outcome.result()));
-	else
-		return UploadCommodityFileOutcome(outcome.error());
-}
-
-void MarketClient::uploadCommodityFileAsync(const UploadCommodityFileRequest& request, const UploadCommodityFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, uploadCommodityFile(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-MarketClient::UploadCommodityFileOutcomeCallable MarketClient::uploadCommodityFileCallable(const UploadCommodityFileRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<UploadCommodityFileOutcome()>>(
-			[this, request]()
-			{
-			return this->uploadCommodityFile(request);
+			return this->rollbackCurrentProjectNode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

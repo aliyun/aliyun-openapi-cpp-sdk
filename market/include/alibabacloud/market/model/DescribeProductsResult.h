@@ -37,14 +37,15 @@ namespace AlibabaCloud
 					long categoryId;
 					std::string warrantyDate;
 					std::string imageUrl;
-					std::string targetUrl;
 					std::string operationSystem;
 					std::string deliveryDate;
+					std::string targetUrl;
 					std::string code;
-					std::string name;
+					std::string priceInfo;
 					std::string shortDescription;
-					long supplierId;
+					std::string name;
 					std::string deliveryWay;
+					long supplierId;
 					std::string score;
 					std::string supplierName;
 					std::string suggestedPrice;

@@ -23,20 +23,18 @@ set(market_public_header
 set(market_public_header_model 
 	include/alibabacloud/market/model/ActivateLicenseRequest.h
 	include/alibabacloud/market/model/ActivateLicenseResult.h
-	include/alibabacloud/market/model/BindImagePackageRequest.h
-	include/alibabacloud/market/model/BindImagePackageResult.h
-	include/alibabacloud/market/model/CreateCommodityRequest.h
-	include/alibabacloud/market/model/CreateCommodityResult.h
+	include/alibabacloud/market/model/AutoRenewInstanceRequest.h
+	include/alibabacloud/market/model/AutoRenewInstanceResult.h
 	include/alibabacloud/market/model/CreateOrderRequest.h
 	include/alibabacloud/market/model/CreateOrderResult.h
-	include/alibabacloud/market/model/CreateRateRequest.h
-	include/alibabacloud/market/model/CreateRateResult.h
-	include/alibabacloud/market/model/DeleteCommodityRequest.h
-	include/alibabacloud/market/model/DeleteCommodityResult.h
-	include/alibabacloud/market/model/DescribeCommoditiesRequest.h
-	include/alibabacloud/market/model/DescribeCommoditiesResult.h
-	include/alibabacloud/market/model/DescribeCommodityRequest.h
-	include/alibabacloud/market/model/DescribeCommodityResult.h
+	include/alibabacloud/market/model/CrossAccountVerifyTokenRequest.h
+	include/alibabacloud/market/model/CrossAccountVerifyTokenResult.h
+	include/alibabacloud/market/model/DescribeCurrentNodeInfoRequest.h
+	include/alibabacloud/market/model/DescribeCurrentNodeInfoResult.h
+	include/alibabacloud/market/model/DescribeDistributionProductsRequest.h
+	include/alibabacloud/market/model/DescribeDistributionProductsResult.h
+	include/alibabacloud/market/model/DescribeDistributionProductsLinkRequest.h
+	include/alibabacloud/market/model/DescribeDistributionProductsLinkResult.h
 	include/alibabacloud/market/model/DescribeInstanceRequest.h
 	include/alibabacloud/market/model/DescribeInstanceResult.h
 	include/alibabacloud/market/model/DescribeInstancesRequest.h
@@ -51,39 +49,43 @@ set(market_public_header_model
 	include/alibabacloud/market/model/DescribeProductResult.h
 	include/alibabacloud/market/model/DescribeProductsRequest.h
 	include/alibabacloud/market/model/DescribeProductsResult.h
-	include/alibabacloud/market/model/DescribeRateRequest.h
-	include/alibabacloud/market/model/DescribeRateResult.h
-	include/alibabacloud/market/model/NotifyContractEventRequest.h
-	include/alibabacloud/market/model/NotifyContractEventResult.h
+	include/alibabacloud/market/model/DescribeProjectAttachmentsRequest.h
+	include/alibabacloud/market/model/DescribeProjectAttachmentsResult.h
+	include/alibabacloud/market/model/DescribeProjectInfoRequest.h
+	include/alibabacloud/market/model/DescribeProjectInfoResult.h
+	include/alibabacloud/market/model/DescribeProjectMessagesRequest.h
+	include/alibabacloud/market/model/DescribeProjectMessagesResult.h
+	include/alibabacloud/market/model/DescribeProjectNodesRequest.h
+	include/alibabacloud/market/model/DescribeProjectNodesResult.h
+	include/alibabacloud/market/model/DescribeProjectOperateLogsRequest.h
+	include/alibabacloud/market/model/DescribeProjectOperateLogsResult.h
+	include/alibabacloud/market/model/FinishCurrentProjectNodeRequest.h
+	include/alibabacloud/market/model/FinishCurrentProjectNodeResult.h
+	include/alibabacloud/market/model/PauseProjectRequest.h
+	include/alibabacloud/market/model/PauseProjectResult.h
 	include/alibabacloud/market/model/PushMeteringDataRequest.h
 	include/alibabacloud/market/model/PushMeteringDataResult.h
-	include/alibabacloud/market/model/QueryMarketCategoriesRequest.h
-	include/alibabacloud/market/model/QueryMarketCategoriesResult.h
-	include/alibabacloud/market/model/QueryMarketImagesRequest.h
-	include/alibabacloud/market/model/QueryMarketImagesResult.h
-	include/alibabacloud/market/model/UpdateCommodityRequest.h
-	include/alibabacloud/market/model/UpdateCommodityResult.h
-	include/alibabacloud/market/model/UploadCommodityFileRequest.h
-	include/alibabacloud/market/model/UploadCommodityFileResult.h )
+	include/alibabacloud/market/model/ResumeProjectRequest.h
+	include/alibabacloud/market/model/ResumeProjectResult.h
+	include/alibabacloud/market/model/RollbackCurrentProjectNodeRequest.h
+	include/alibabacloud/market/model/RollbackCurrentProjectNodeResult.h )
 
 set(market_src 
 	src/MarketClient.cc
 	src/model/ActivateLicenseRequest.cc
 	src/model/ActivateLicenseResult.cc
-	src/model/BindImagePackageRequest.cc
-	src/model/BindImagePackageResult.cc
-	src/model/CreateCommodityRequest.cc
-	src/model/CreateCommodityResult.cc
+	src/model/AutoRenewInstanceRequest.cc
+	src/model/AutoRenewInstanceResult.cc
 	src/model/CreateOrderRequest.cc
 	src/model/CreateOrderResult.cc
-	src/model/CreateRateRequest.cc
-	src/model/CreateRateResult.cc
-	src/model/DeleteCommodityRequest.cc
-	src/model/DeleteCommodityResult.cc
-	src/model/DescribeCommoditiesRequest.cc
-	src/model/DescribeCommoditiesResult.cc
-	src/model/DescribeCommodityRequest.cc
-	src/model/DescribeCommodityResult.cc
+	src/model/CrossAccountVerifyTokenRequest.cc
+	src/model/CrossAccountVerifyTokenResult.cc
+	src/model/DescribeCurrentNodeInfoRequest.cc
+	src/model/DescribeCurrentNodeInfoResult.cc
+	src/model/DescribeDistributionProductsRequest.cc
+	src/model/DescribeDistributionProductsResult.cc
+	src/model/DescribeDistributionProductsLinkRequest.cc
+	src/model/DescribeDistributionProductsLinkResult.cc
 	src/model/DescribeInstanceRequest.cc
 	src/model/DescribeInstanceResult.cc
 	src/model/DescribeInstancesRequest.cc
@@ -98,20 +100,26 @@ set(market_src
 	src/model/DescribeProductResult.cc
 	src/model/DescribeProductsRequest.cc
 	src/model/DescribeProductsResult.cc
-	src/model/DescribeRateRequest.cc
-	src/model/DescribeRateResult.cc
-	src/model/NotifyContractEventRequest.cc
-	src/model/NotifyContractEventResult.cc
+	src/model/DescribeProjectAttachmentsRequest.cc
+	src/model/DescribeProjectAttachmentsResult.cc
+	src/model/DescribeProjectInfoRequest.cc
+	src/model/DescribeProjectInfoResult.cc
+	src/model/DescribeProjectMessagesRequest.cc
+	src/model/DescribeProjectMessagesResult.cc
+	src/model/DescribeProjectNodesRequest.cc
+	src/model/DescribeProjectNodesResult.cc
+	src/model/DescribeProjectOperateLogsRequest.cc
+	src/model/DescribeProjectOperateLogsResult.cc
+	src/model/FinishCurrentProjectNodeRequest.cc
+	src/model/FinishCurrentProjectNodeResult.cc
+	src/model/PauseProjectRequest.cc
+	src/model/PauseProjectResult.cc
 	src/model/PushMeteringDataRequest.cc
 	src/model/PushMeteringDataResult.cc
-	src/model/QueryMarketCategoriesRequest.cc
-	src/model/QueryMarketCategoriesResult.cc
-	src/model/QueryMarketImagesRequest.cc
-	src/model/QueryMarketImagesResult.cc
-	src/model/UpdateCommodityRequest.cc
-	src/model/UpdateCommodityResult.cc
-	src/model/UploadCommodityFileRequest.cc
-	src/model/UploadCommodityFileResult.cc )
+	src/model/ResumeProjectRequest.cc
+	src/model/ResumeProjectResult.cc
+	src/model/RollbackCurrentProjectNodeRequest.cc
+	src/model/RollbackCurrentProjectNodeResult.cc )
 
 add_library(market ${LIB_TYPE}
 	${market_public_header}

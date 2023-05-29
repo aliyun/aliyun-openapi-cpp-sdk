@@ -41,8 +41,8 @@ namespace AlibabaCloud
 					};
 					std::vector<WangWang> wangWangs;
 					std::vector<std::string> telephones;
-					long id;
 					std::string emails;
+					long id;
 					std::string name;
 				};
 				struct ProductSku
@@ -61,16 +61,16 @@ namespace AlibabaCloud
 								std::string type;
 								std::string min;
 								std::string max;
-								std::string value;
 								std::string displayName;
+								std::string value;
 								std::string step;
 								std::string remark;
 							};
 							std::vector<Property::PropertyValue> propertyValues;
 							std::string key;
 							std::string displayUnit;
-							std::string name;
 							std::string showType;
+							std::string name;
 						};
 						std::string id;
 						std::vector<Module::Property> properties;
@@ -89,8 +89,8 @@ namespace AlibabaCloud
 				{
 					int order;
 					std::string type;
-					std::string values;
 					std::string label;
+					std::string values;
 					std::string key;
 				};
 
@@ -98,8 +98,8 @@ namespace AlibabaCloud
 				DescribeProductResult();
 				explicit DescribeProductResult(const std::string &payload);
 				~DescribeProductResult();
-				std::string getStatus()const;
 				long getFrontCategoryId()const;
+				std::string getStatus()const;
 				std::string getDescription()const;
 				ShopInfo getShopInfo()const;
 				std::vector<ProductSku> getProductSkus()const;
@@ -107,8 +107,8 @@ namespace AlibabaCloud
 				long getGmtModified()const;
 				long getGmtCreated()const;
 				std::string getCode()const;
-				std::string getName()const;
 				std::string getShortDescription()const;
+				std::string getName()const;
 				long getSupplierPk()const;
 				std::string getType()const;
 				float getScore()const;
@@ -121,8 +121,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string status_;
 				long frontCategoryId_;
+				std::string status_;
 				std::string description_;
 				ShopInfo shopInfo_;
 				std::vector<ProductSku> productSkus_;
@@ -130,8 +130,8 @@ namespace AlibabaCloud
 				long gmtModified_;
 				long gmtCreated_;
 				std::string code_;
-				std::string name_;
 				std::string shortDescription_;
+				std::string name_;
 				long supplierPk_;
 				std::string type_;
 				float score_;

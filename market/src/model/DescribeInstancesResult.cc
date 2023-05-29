@@ -43,40 +43,40 @@ void DescribeInstancesResult::parse(const std::string &payload)
 	for (auto valueInstanceItemsInstanceItem : allInstanceItemsNode)
 	{
 		InstanceItem instanceItemsObject;
-		if(!valueInstanceItemsInstanceItem["InstanceId"].isNull())
-			instanceItemsObject.instanceId = std::stol(valueInstanceItemsInstanceItem["InstanceId"].asString());
-		if(!valueInstanceItemsInstanceItem["OrderId"].isNull())
-			instanceItemsObject.orderId = std::stol(valueInstanceItemsInstanceItem["OrderId"].asString());
-		if(!valueInstanceItemsInstanceItem["SupplierName"].isNull())
-			instanceItemsObject.supplierName = valueInstanceItemsInstanceItem["SupplierName"].asString();
-		if(!valueInstanceItemsInstanceItem["ProductCode"].isNull())
-			instanceItemsObject.productCode = valueInstanceItemsInstanceItem["ProductCode"].asString();
-		if(!valueInstanceItemsInstanceItem["ProductSkuCode"].isNull())
-			instanceItemsObject.productSkuCode = valueInstanceItemsInstanceItem["ProductSkuCode"].asString();
-		if(!valueInstanceItemsInstanceItem["ProductName"].isNull())
-			instanceItemsObject.productName = valueInstanceItemsInstanceItem["ProductName"].asString();
-		if(!valueInstanceItemsInstanceItem["ProductType"].isNull())
-			instanceItemsObject.productType = valueInstanceItemsInstanceItem["ProductType"].asString();
 		if(!valueInstanceItemsInstanceItem["Status"].isNull())
 			instanceItemsObject.status = valueInstanceItemsInstanceItem["Status"].asString();
-		if(!valueInstanceItemsInstanceItem["BeganOn"].isNull())
-			instanceItemsObject.beganOn = std::stol(valueInstanceItemsInstanceItem["BeganOn"].asString());
-		if(!valueInstanceItemsInstanceItem["EndOn"].isNull())
-			instanceItemsObject.endOn = std::stol(valueInstanceItemsInstanceItem["EndOn"].asString());
-		if(!valueInstanceItemsInstanceItem["CreatedOn"].isNull())
-			instanceItemsObject.createdOn = std::stol(valueInstanceItemsInstanceItem["CreatedOn"].asString());
-		if(!valueInstanceItemsInstanceItem["ExtendJson"].isNull())
-			instanceItemsObject.extendJson = valueInstanceItemsInstanceItem["ExtendJson"].asString();
-		if(!valueInstanceItemsInstanceItem["HostJson"].isNull())
-			instanceItemsObject.hostJson = valueInstanceItemsInstanceItem["HostJson"].asString();
 		if(!valueInstanceItemsInstanceItem["AppJson"].isNull())
 			instanceItemsObject.appJson = valueInstanceItemsInstanceItem["AppJson"].asString();
 		if(!valueInstanceItemsInstanceItem["ApiJson"].isNull())
 			instanceItemsObject.apiJson = valueInstanceItemsInstanceItem["ApiJson"].asString();
+		if(!valueInstanceItemsInstanceItem["ProductName"].isNull())
+			instanceItemsObject.productName = valueInstanceItemsInstanceItem["ProductName"].asString();
 		if(!valueInstanceItemsInstanceItem["ImageJson"].isNull())
 			instanceItemsObject.imageJson = valueInstanceItemsInstanceItem["ImageJson"].asString();
+		if(!valueInstanceItemsInstanceItem["InstanceId"].isNull())
+			instanceItemsObject.instanceId = std::stol(valueInstanceItemsInstanceItem["InstanceId"].asString());
+		if(!valueInstanceItemsInstanceItem["ExtendJson"].isNull())
+			instanceItemsObject.extendJson = valueInstanceItemsInstanceItem["ExtendJson"].asString();
+		if(!valueInstanceItemsInstanceItem["BeganOn"].isNull())
+			instanceItemsObject.beganOn = std::stol(valueInstanceItemsInstanceItem["BeganOn"].asString());
+		if(!valueInstanceItemsInstanceItem["ProductType"].isNull())
+			instanceItemsObject.productType = valueInstanceItemsInstanceItem["ProductType"].asString();
+		if(!valueInstanceItemsInstanceItem["HostJson"].isNull())
+			instanceItemsObject.hostJson = valueInstanceItemsInstanceItem["HostJson"].asString();
+		if(!valueInstanceItemsInstanceItem["ProductSkuCode"].isNull())
+			instanceItemsObject.productSkuCode = valueInstanceItemsInstanceItem["ProductSkuCode"].asString();
+		if(!valueInstanceItemsInstanceItem["CreatedOn"].isNull())
+			instanceItemsObject.createdOn = std::stol(valueInstanceItemsInstanceItem["CreatedOn"].asString());
 		if(!valueInstanceItemsInstanceItem["IdaasJson"].isNull())
 			instanceItemsObject.idaasJson = valueInstanceItemsInstanceItem["IdaasJson"].asString();
+		if(!valueInstanceItemsInstanceItem["EndOn"].isNull())
+			instanceItemsObject.endOn = std::stol(valueInstanceItemsInstanceItem["EndOn"].asString());
+		if(!valueInstanceItemsInstanceItem["OrderId"].isNull())
+			instanceItemsObject.orderId = std::stol(valueInstanceItemsInstanceItem["OrderId"].asString());
+		if(!valueInstanceItemsInstanceItem["ProductCode"].isNull())
+			instanceItemsObject.productCode = valueInstanceItemsInstanceItem["ProductCode"].asString();
+		if(!valueInstanceItemsInstanceItem["SupplierName"].isNull())
+			instanceItemsObject.supplierName = valueInstanceItemsInstanceItem["SupplierName"].asString();
 		instanceItems_.push_back(instanceItemsObject);
 	}
 	if(!value["PageNumber"].isNull())

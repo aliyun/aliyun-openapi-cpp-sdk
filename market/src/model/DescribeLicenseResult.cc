@@ -40,26 +40,26 @@ void DescribeLicenseResult::parse(const std::string &payload)
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
 	auto licenseNode = value["License"];
+	if(!licenseNode["ActivateTime"].isNull())
+		license_.activateTime = licenseNode["ActivateTime"].asString();
 	if(!licenseNode["LicenseStatus"].isNull())
 		license_.licenseStatus = licenseNode["LicenseStatus"].asString();
+	if(!licenseNode["ProductName"].isNull())
+		license_.productName = licenseNode["ProductName"].asString();
+	if(!licenseNode["ExpiredTime"].isNull())
+		license_.expiredTime = licenseNode["ExpiredTime"].asString();
+	if(!licenseNode["ProductSkuId"].isNull())
+		license_.productSkuId = licenseNode["ProductSkuId"].asString();
+	if(!licenseNode["CreateTime"].isNull())
+		license_.createTime = licenseNode["CreateTime"].asString();
 	if(!licenseNode["LicenseCode"].isNull())
 		license_.licenseCode = licenseNode["LicenseCode"].asString();
 	if(!licenseNode["InstanceId"].isNull())
 		license_.instanceId = licenseNode["InstanceId"].asString();
-	if(!licenseNode["CreateTime"].isNull())
-		license_.createTime = licenseNode["CreateTime"].asString();
-	if(!licenseNode["ExpiredTime"].isNull())
-		license_.expiredTime = licenseNode["ExpiredTime"].asString();
-	if(!licenseNode["ActivateTime"].isNull())
-		license_.activateTime = licenseNode["ActivateTime"].asString();
-	if(!licenseNode["ProductSkuId"].isNull())
-		license_.productSkuId = licenseNode["ProductSkuId"].asString();
-	if(!licenseNode["ProductCode"].isNull())
-		license_.productCode = licenseNode["ProductCode"].asString();
-	if(!licenseNode["ProductName"].isNull())
-		license_.productName = licenseNode["ProductName"].asString();
 	if(!licenseNode["SupplierName"].isNull())
 		license_.supplierName = licenseNode["SupplierName"].asString();
+	if(!licenseNode["ProductCode"].isNull())
+		license_.productCode = licenseNode["ProductCode"].asString();
 	auto allExtendArrayNode = licenseNode["ExtendArray"]["LicenseAttribute"];
 	for (auto licenseNodeExtendArrayLicenseAttribute : allExtendArrayNode)
 	{
@@ -73,12 +73,12 @@ void DescribeLicenseResult::parse(const std::string &payload)
 	auto extendInfoNode = licenseNode["ExtendInfo"];
 	if(!extendInfoNode["AliUid"].isNull())
 		license_.extendInfo.aliUid = std::stol(extendInfoNode["AliUid"].asString());
+	if(!extendInfoNode["AccountQuantity"].isNull())
+		license_.extendInfo.accountQuantity = std::stol(extendInfoNode["AccountQuantity"].asString());
 	if(!extendInfoNode["Email"].isNull())
 		license_.extendInfo.email = extendInfoNode["Email"].asString();
 	if(!extendInfoNode["Mobile"].isNull())
 		license_.extendInfo.mobile = extendInfoNode["Mobile"].asString();
-	if(!extendInfoNode["AccountQuantity"].isNull())
-		license_.extendInfo.accountQuantity = std::stol(extendInfoNode["AccountQuantity"].asString());
 
 }
 

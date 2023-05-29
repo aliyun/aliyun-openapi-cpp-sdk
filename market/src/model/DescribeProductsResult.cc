@@ -43,36 +43,38 @@ void DescribeProductsResult::parse(const std::string &payload)
 	for (auto valueProductItemsProductItem : allProductItemsNode)
 	{
 		ProductItem productItemsObject;
-		if(!valueProductItemsProductItem["Code"].isNull())
-			productItemsObject.code = valueProductItemsProductItem["Code"].asString();
-		if(!valueProductItemsProductItem["Name"].isNull())
-			productItemsObject.name = valueProductItemsProductItem["Name"].asString();
-		if(!valueProductItemsProductItem["CategoryId"].isNull())
-			productItemsObject.categoryId = std::stol(valueProductItemsProductItem["CategoryId"].asString());
-		if(!valueProductItemsProductItem["SupplierId"].isNull())
-			productItemsObject.supplierId = std::stol(valueProductItemsProductItem["SupplierId"].asString());
-		if(!valueProductItemsProductItem["SupplierName"].isNull())
-			productItemsObject.supplierName = valueProductItemsProductItem["SupplierName"].asString();
-		if(!valueProductItemsProductItem["ShortDescription"].isNull())
-			productItemsObject.shortDescription = valueProductItemsProductItem["ShortDescription"].asString();
-		if(!valueProductItemsProductItem["Tags"].isNull())
-			productItemsObject.tags = valueProductItemsProductItem["Tags"].asString();
-		if(!valueProductItemsProductItem["SuggestedPrice"].isNull())
-			productItemsObject.suggestedPrice = valueProductItemsProductItem["SuggestedPrice"].asString();
-		if(!valueProductItemsProductItem["TargetUrl"].isNull())
-			productItemsObject.targetUrl = valueProductItemsProductItem["TargetUrl"].asString();
-		if(!valueProductItemsProductItem["ImageUrl"].isNull())
-			productItemsObject.imageUrl = valueProductItemsProductItem["ImageUrl"].asString();
-		if(!valueProductItemsProductItem["Score"].isNull())
-			productItemsObject.score = valueProductItemsProductItem["Score"].asString();
-		if(!valueProductItemsProductItem["OperationSystem"].isNull())
-			productItemsObject.operationSystem = valueProductItemsProductItem["OperationSystem"].asString();
-		if(!valueProductItemsProductItem["WarrantyDate"].isNull())
-			productItemsObject.warrantyDate = valueProductItemsProductItem["WarrantyDate"].asString();
-		if(!valueProductItemsProductItem["DeliveryDate"].isNull())
-			productItemsObject.deliveryDate = valueProductItemsProductItem["DeliveryDate"].asString();
+		if(!valueProductItemsProductItem["PriceInfo"].isNull())
+			productItemsObject.priceInfo = valueProductItemsProductItem["PriceInfo"].asString();
 		if(!valueProductItemsProductItem["DeliveryWay"].isNull())
 			productItemsObject.deliveryWay = valueProductItemsProductItem["DeliveryWay"].asString();
+		if(!valueProductItemsProductItem["ImageUrl"].isNull())
+			productItemsObject.imageUrl = valueProductItemsProductItem["ImageUrl"].asString();
+		if(!valueProductItemsProductItem["WarrantyDate"].isNull())
+			productItemsObject.warrantyDate = valueProductItemsProductItem["WarrantyDate"].asString();
+		if(!valueProductItemsProductItem["Tags"].isNull())
+			productItemsObject.tags = valueProductItemsProductItem["Tags"].asString();
+		if(!valueProductItemsProductItem["Score"].isNull())
+			productItemsObject.score = valueProductItemsProductItem["Score"].asString();
+		if(!valueProductItemsProductItem["SupplierId"].isNull())
+			productItemsObject.supplierId = std::stol(valueProductItemsProductItem["SupplierId"].asString());
+		if(!valueProductItemsProductItem["OperationSystem"].isNull())
+			productItemsObject.operationSystem = valueProductItemsProductItem["OperationSystem"].asString();
+		if(!valueProductItemsProductItem["ShortDescription"].isNull())
+			productItemsObject.shortDescription = valueProductItemsProductItem["ShortDescription"].asString();
+		if(!valueProductItemsProductItem["DeliveryDate"].isNull())
+			productItemsObject.deliveryDate = valueProductItemsProductItem["DeliveryDate"].asString();
+		if(!valueProductItemsProductItem["TargetUrl"].isNull())
+			productItemsObject.targetUrl = valueProductItemsProductItem["TargetUrl"].asString();
+		if(!valueProductItemsProductItem["Code"].isNull())
+			productItemsObject.code = valueProductItemsProductItem["Code"].asString();
+		if(!valueProductItemsProductItem["CategoryId"].isNull())
+			productItemsObject.categoryId = std::stol(valueProductItemsProductItem["CategoryId"].asString());
+		if(!valueProductItemsProductItem["Name"].isNull())
+			productItemsObject.name = valueProductItemsProductItem["Name"].asString();
+		if(!valueProductItemsProductItem["SuggestedPrice"].isNull())
+			productItemsObject.suggestedPrice = valueProductItemsProductItem["SuggestedPrice"].asString();
+		if(!valueProductItemsProductItem["SupplierName"].isNull())
+			productItemsObject.supplierName = valueProductItemsProductItem["SupplierName"].asString();
 		productItems_.push_back(productItemsObject);
 	}
 	if(!value["PageNumber"].isNull())

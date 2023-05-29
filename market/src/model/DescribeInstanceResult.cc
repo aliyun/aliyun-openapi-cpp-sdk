@@ -43,42 +43,42 @@ void DescribeInstanceResult::parse(const std::string &payload)
 	for (auto valueModulesModule : allModulesNode)
 	{
 		Module modulesObject;
-		if(!valueModulesModule["Id"].isNull())
-			modulesObject.id = valueModulesModule["Id"].asString();
-		if(!valueModulesModule["Name"].isNull())
-			modulesObject.name = valueModulesModule["Name"].asString();
 		if(!valueModulesModule["Code"].isNull())
 			modulesObject.code = valueModulesModule["Code"].asString();
-		auto allPropertiesNode = allModulesNode["Properties"]["Property"];
-		for (auto allModulesNodePropertiesProperty : allPropertiesNode)
+		if(!valueModulesModule["Name"].isNull())
+			modulesObject.name = valueModulesModule["Name"].asString();
+		if(!valueModulesModule["Id"].isNull())
+			modulesObject.id = valueModulesModule["Id"].asString();
+		auto allPropertiesNode = valueModulesModule["Properties"]["Property"];
+		for (auto valueModulesModulePropertiesProperty : allPropertiesNode)
 		{
 			Module::Property propertiesObject;
-			if(!allModulesNodePropertiesProperty["Name"].isNull())
-				propertiesObject.name = allModulesNodePropertiesProperty["Name"].asString();
-			if(!allModulesNodePropertiesProperty["Key"].isNull())
-				propertiesObject.key = allModulesNodePropertiesProperty["Key"].asString();
-			if(!allModulesNodePropertiesProperty["ShowType"].isNull())
-				propertiesObject.showType = allModulesNodePropertiesProperty["ShowType"].asString();
-			if(!allModulesNodePropertiesProperty["DisplayUnit"].isNull())
-				propertiesObject.displayUnit = allModulesNodePropertiesProperty["DisplayUnit"].asString();
-			auto allPropertyValuesNode = allPropertiesNode["PropertyValues"]["PropertyValue"];
-			for (auto allPropertiesNodePropertyValuesPropertyValue : allPropertyValuesNode)
+			if(!valueModulesModulePropertiesProperty["Key"].isNull())
+				propertiesObject.key = valueModulesModulePropertiesProperty["Key"].asString();
+			if(!valueModulesModulePropertiesProperty["ShowType"].isNull())
+				propertiesObject.showType = valueModulesModulePropertiesProperty["ShowType"].asString();
+			if(!valueModulesModulePropertiesProperty["Name"].isNull())
+				propertiesObject.name = valueModulesModulePropertiesProperty["Name"].asString();
+			if(!valueModulesModulePropertiesProperty["DisplayUnit"].isNull())
+				propertiesObject.displayUnit = valueModulesModulePropertiesProperty["DisplayUnit"].asString();
+			auto allPropertyValuesNode = valueModulesModulePropertiesProperty["PropertyValues"]["PropertyValue"];
+			for (auto valueModulesModulePropertiesPropertyPropertyValuesPropertyValue : allPropertyValuesNode)
 			{
 				Module::Property::PropertyValue propertyValuesObject;
-				if(!allPropertiesNodePropertyValuesPropertyValue["Value"].isNull())
-					propertyValuesObject.value = allPropertiesNodePropertyValuesPropertyValue["Value"].asString();
-				if(!allPropertiesNodePropertyValuesPropertyValue["DisplayName"].isNull())
-					propertyValuesObject.displayName = allPropertiesNodePropertyValuesPropertyValue["DisplayName"].asString();
-				if(!allPropertiesNodePropertyValuesPropertyValue["Type"].isNull())
-					propertyValuesObject.type = allPropertiesNodePropertyValuesPropertyValue["Type"].asString();
-				if(!allPropertiesNodePropertyValuesPropertyValue["Min"].isNull())
-					propertyValuesObject.min = allPropertiesNodePropertyValuesPropertyValue["Min"].asString();
-				if(!allPropertiesNodePropertyValuesPropertyValue["Max"].isNull())
-					propertyValuesObject.max = allPropertiesNodePropertyValuesPropertyValue["Max"].asString();
-				if(!allPropertiesNodePropertyValuesPropertyValue["Step"].isNull())
-					propertyValuesObject.step = allPropertiesNodePropertyValuesPropertyValue["Step"].asString();
-				if(!allPropertiesNodePropertyValuesPropertyValue["Remark"].isNull())
-					propertyValuesObject.remark = allPropertiesNodePropertyValuesPropertyValue["Remark"].asString();
+				if(!valueModulesModulePropertiesPropertyPropertyValuesPropertyValue["DisplayName"].isNull())
+					propertyValuesObject.displayName = valueModulesModulePropertiesPropertyPropertyValuesPropertyValue["DisplayName"].asString();
+				if(!valueModulesModulePropertiesPropertyPropertyValuesPropertyValue["Type"].isNull())
+					propertyValuesObject.type = valueModulesModulePropertiesPropertyPropertyValuesPropertyValue["Type"].asString();
+				if(!valueModulesModulePropertiesPropertyPropertyValuesPropertyValue["Step"].isNull())
+					propertyValuesObject.step = valueModulesModulePropertiesPropertyPropertyValuesPropertyValue["Step"].asString();
+				if(!valueModulesModulePropertiesPropertyPropertyValuesPropertyValue["Value"].isNull())
+					propertyValuesObject.value = valueModulesModulePropertiesPropertyPropertyValuesPropertyValue["Value"].asString();
+				if(!valueModulesModulePropertiesPropertyPropertyValuesPropertyValue["Max"].isNull())
+					propertyValuesObject.max = valueModulesModulePropertiesPropertyPropertyValuesPropertyValue["Max"].asString();
+				if(!valueModulesModulePropertiesPropertyPropertyValuesPropertyValue["Remark"].isNull())
+					propertyValuesObject.remark = valueModulesModulePropertiesPropertyPropertyValuesPropertyValue["Remark"].asString();
+				if(!valueModulesModulePropertiesPropertyPropertyValuesPropertyValue["Min"].isNull())
+					propertyValuesObject.min = valueModulesModulePropertiesPropertyPropertyValuesPropertyValue["Min"].asString();
 				propertiesObject.propertyValues.push_back(propertyValuesObject);
 			}
 			modulesObject.properties.push_back(propertiesObject);
@@ -88,40 +88,42 @@ void DescribeInstanceResult::parse(const std::string &payload)
 	auto relationalDataNode = value["RelationalData"];
 	if(!relationalDataNode["ServiceStatus"].isNull())
 		relationalData_.serviceStatus = relationalDataNode["ServiceStatus"].asString();
-	if(!value["InstanceId"].isNull())
-		instanceId_ = std::stol(value["InstanceId"].asString());
-	if(!value["OrderId"].isNull())
-		orderId_ = std::stol(value["OrderId"].asString());
-	if(!value["SupplierName"].isNull())
-		supplierName_ = value["SupplierName"].asString();
-	if(!value["ProductCode"].isNull())
-		productCode_ = value["ProductCode"].asString();
-	if(!value["ProductSkuCode"].isNull())
-		productSkuCode_ = value["ProductSkuCode"].asString();
-	if(!value["ProductName"].isNull())
-		productName_ = value["ProductName"].asString();
-	if(!value["ProductType"].isNull())
-		productType_ = value["ProductType"].asString();
 	if(!value["Status"].isNull())
 		status_ = value["Status"].asString();
-	if(!value["BeganOn"].isNull())
-		beganOn_ = std::stol(value["BeganOn"].asString());
-	if(!value["EndOn"].isNull())
-		endOn_ = std::stol(value["EndOn"].asString());
-	if(!value["CreatedOn"].isNull())
-		createdOn_ = std::stol(value["CreatedOn"].asString());
-	if(!value["ExtendJson"].isNull())
-		extendJson_ = value["ExtendJson"].asString();
-	if(!value["HostJson"].isNull())
-		hostJson_ = value["HostJson"].asString();
 	if(!value["AppJson"].isNull())
 		appJson_ = value["AppJson"].asString();
+	if(!value["ProductName"].isNull())
+		productName_ = value["ProductName"].asString();
+	if(!value["InstanceId"].isNull())
+		instanceId_ = std::stol(value["InstanceId"].asString());
+	if(!value["ExtendJson"].isNull())
+		extendJson_ = value["ExtendJson"].asString();
+	if(!value["IsTrial"].isNull())
+		isTrial_ = value["IsTrial"].asString() == "true";
+	if(!value["BeganOn"].isNull())
+		beganOn_ = std::stol(value["BeganOn"].asString());
 	if(!value["ComponentJson"].isNull())
 		componentJson_ = value["ComponentJson"].asString();
 	if(!value["Constraints"].isNull())
 		constraints_ = value["Constraints"].asString();
-	if(!value["IsTrial"].isNull())
-		isTrial_ = value["IsTrial"].asString() == "true";
+	if(!value["ProductType"].isNull())
+		productType_ = value["ProductType"].asString();
+	if(!value["HostJson"].isNull())
+		hostJson_ = value["HostJson"].asString();
+	if(!value["ProductSkuCode"].isNull())
+		productSkuCode_ = value["ProductSkuCode"].asString();
+	if(!value["CreatedOn"].isNull())
+		createdOn_ = std::stol(value["CreatedOn"].asString());
+	if(!value["EndOn"].isNull())
+		endOn_ = std::stol(value["EndOn"].asString());
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["ProductCode"].isNull())
+		productCode_ = value["ProductCode"].asString();
+	if(!value["SupplierName"].isNull())
+		supplierName_ = value["SupplierName"].asString();
+	if(!value["AutoRenewal"].isNull())
+		autoRenewal_ = value["AutoRenewal"].asString();
 
 }
 
@@ -140,14 +142,14 @@ long DescribeInstanceResult::getInstanceId()const
 	return instanceId_;
 }
 
-std::string DescribeInstanceResult::getProductCode()const
-{
-	return productCode_;
-}
-
 long DescribeInstanceResult::getEndOn()const
 {
 	return endOn_;
+}
+
+std::string DescribeInstanceResult::getProductCode()const
+{
+	return productCode_;
 }
 
 std::vector<DescribeInstanceResult::Module> DescribeInstanceResult::getModules()const
@@ -160,14 +162,14 @@ DescribeInstanceResult::RelationalData DescribeInstanceResult::getRelationalData
 	return relationalData_;
 }
 
-std::string DescribeInstanceResult::getProductType()const
-{
-	return productType_;
-}
-
 std::string DescribeInstanceResult::getAppJson()const
 {
 	return appJson_;
+}
+
+std::string DescribeInstanceResult::getProductType()const
+{
+	return productType_;
 }
 
 long DescribeInstanceResult::getOrderId()const
@@ -185,14 +187,9 @@ std::string DescribeInstanceResult::getExtendJson()const
 	return extendJson_;
 }
 
-std::string DescribeInstanceResult::getSupplierName()const
+std::string DescribeInstanceResult::getAutoRenewal()const
 {
-	return supplierName_;
-}
-
-std::string DescribeInstanceResult::getComponentJson()const
-{
-	return componentJson_;
+	return autoRenewal_;
 }
 
 bool DescribeInstanceResult::getIsTrial()const
@@ -200,19 +197,29 @@ bool DescribeInstanceResult::getIsTrial()const
 	return isTrial_;
 }
 
+std::string DescribeInstanceResult::getComponentJson()const
+{
+	return componentJson_;
+}
+
+std::string DescribeInstanceResult::getSupplierName()const
+{
+	return supplierName_;
+}
+
 std::string DescribeInstanceResult::getProductSkuCode()const
 {
 	return productSkuCode_;
 }
 
-long DescribeInstanceResult::getCreatedOn()const
-{
-	return createdOn_;
-}
-
 std::string DescribeInstanceResult::getHostJson()const
 {
 	return hostJson_;
+}
+
+long DescribeInstanceResult::getCreatedOn()const
+{
+	return createdOn_;
 }
 
 long DescribeInstanceResult::getBeganOn()const

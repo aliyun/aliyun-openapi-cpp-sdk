@@ -43,12 +43,12 @@ void DescribePriceResult::parse(const std::string &payload)
 	for (auto valuePromotionRulesPromotionRule : allPromotionRulesNode)
 	{
 		PromotionRule promotionRulesObject;
-		if(!valuePromotionRulesPromotionRule["RuleId"].isNull())
-			promotionRulesObject.ruleId = valuePromotionRulesPromotionRule["RuleId"].asString();
-		if(!valuePromotionRulesPromotionRule["Name"].isNull())
-			promotionRulesObject.name = valuePromotionRulesPromotionRule["Name"].asString();
 		if(!valuePromotionRulesPromotionRule["Title"].isNull())
 			promotionRulesObject.title = valuePromotionRulesPromotionRule["Title"].asString();
+		if(!valuePromotionRulesPromotionRule["Name"].isNull())
+			promotionRulesObject.name = valuePromotionRulesPromotionRule["Name"].asString();
+		if(!valuePromotionRulesPromotionRule["RuleId"].isNull())
+			promotionRulesObject.ruleId = valuePromotionRulesPromotionRule["RuleId"].asString();
 		promotionRules_.push_back(promotionRulesObject);
 	}
 	auto allCouponsNode = value["Coupons"]["Coupon"];
@@ -63,34 +63,34 @@ void DescribePriceResult::parse(const std::string &payload)
 			couponsObject.couponName = valueCouponsCoupon["CouponName"].asString();
 		if(!valueCouponsCoupon["CouponDesc"].isNull())
 			couponsObject.couponDesc = valueCouponsCoupon["CouponDesc"].asString();
-		if(!valueCouponsCoupon["CanPromFee"].isNull())
-			couponsObject.canPromFee = std::stof(valueCouponsCoupon["CanPromFee"].asString());
 		if(!valueCouponsCoupon["IsSelected"].isNull())
 			couponsObject.isSelected = valueCouponsCoupon["IsSelected"].asString() == "true";
+		if(!valueCouponsCoupon["CanPromFee"].isNull())
+			couponsObject.canPromFee = std::stof(valueCouponsCoupon["CanPromFee"].asString());
 		coupons_.push_back(couponsObject);
 	}
-	if(!value["ProductCode"].isNull())
-		productCode_ = value["ProductCode"].asString();
-	if(!value["OriginalPrice"].isNull())
-		originalPrice_ = std::stof(value["OriginalPrice"].asString());
-	if(!value["TradePrice"].isNull())
-		tradePrice_ = std::stof(value["TradePrice"].asString());
-	if(!value["DiscountPrice"].isNull())
-		discountPrice_ = std::stof(value["DiscountPrice"].asString());
-	if(!value["Cuxiao"].isNull())
-		cuxiao_ = value["Cuxiao"].asString() == "true";
-	if(!value["Duration"].isNull())
-		duration_ = std::stoi(value["Duration"].asString());
-	if(!value["Cycle"].isNull())
-		cycle_ = value["Cycle"].asString();
-	if(!value["InfoTitle"].isNull())
-		infoTitle_ = value["InfoTitle"].asString();
 	if(!value["ExpressionCode"].isNull())
 		expressionCode_ = value["ExpressionCode"].asString();
+	if(!value["Cuxiao"].isNull())
+		cuxiao_ = value["Cuxiao"].asString() == "true";
+	if(!value["DiscountPrice"].isNull())
+		discountPrice_ = std::stof(value["DiscountPrice"].asString());
+	if(!value["Cycle"].isNull())
+		cycle_ = value["Cycle"].asString();
+	if(!value["TradePrice"].isNull())
+		tradePrice_ = std::stof(value["TradePrice"].asString());
+	if(!value["OriginalPrice"].isNull())
+		originalPrice_ = std::stof(value["OriginalPrice"].asString());
+	if(!value["Duration"].isNull())
+		duration_ = std::stoi(value["Duration"].asString());
 	if(!value["Currency"].isNull())
 		currency_ = value["Currency"].asString();
 	if(!value["ExpressionMessage"].isNull())
 		expressionMessage_ = value["ExpressionMessage"].asString();
+	if(!value["InfoTitle"].isNull())
+		infoTitle_ = value["InfoTitle"].asString();
+	if(!value["ProductCode"].isNull())
+		productCode_ = value["ProductCode"].asString();
 
 }
 
@@ -114,14 +114,14 @@ int DescribePriceResult::getDuration()const
 	return duration_;
 }
 
-float DescribePriceResult::getTradePrice()const
-{
-	return tradePrice_;
-}
-
 bool DescribePriceResult::getCuxiao()const
 {
 	return cuxiao_;
+}
+
+float DescribePriceResult::getTradePrice()const
+{
+	return tradePrice_;
 }
 
 std::string DescribePriceResult::getCycle()const

@@ -56,8 +56,8 @@ namespace AlibabaCloud
 				float getOriginalPrice()const;
 				std::string getProductCode()const;
 				int getDuration()const;
-				float getTradePrice()const;
 				bool getCuxiao()const;
+				float getTradePrice()const;
 				std::string getCycle()const;
 				std::string getInfoTitle()const;
 				std::vector<PromotionRule> getPromotionRules()const;
@@ -73,8 +73,8 @@ namespace AlibabaCloud
 				float originalPrice_;
 				std::string productCode_;
 				int duration_;
-				float tradePrice_;
 				bool cuxiao_;
+				float tradePrice_;
 				std::string cycle_;
 				std::string infoTitle_;
 				std::vector<PromotionRule> promotionRules_;
