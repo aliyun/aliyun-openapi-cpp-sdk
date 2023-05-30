@@ -25,6 +25,15 @@ SetDeletionProtectionRequest::SetDeletionProtectionRequest()
 
 SetDeletionProtectionRequest::~SetDeletionProtectionRequest() {}
 
+std::string SetDeletionProtectionRequest::getDeletionProtectionDescription() const {
+  return deletionProtectionDescription_;
+}
+
+void SetDeletionProtectionRequest::setDeletionProtectionDescription(const std::string &deletionProtectionDescription) {
+  deletionProtectionDescription_ = deletionProtectionDescription;
+  setParameter(std::string("DeletionProtectionDescription"), deletionProtectionDescription);
+}
+
 bool SetDeletionProtectionRequest::getEnableDeletionProtection() const {
   return enableDeletionProtection_;
 }
@@ -41,14 +50,5 @@ std::string SetDeletionProtectionRequest::getProtectedResourceArn() const {
 void SetDeletionProtectionRequest::setProtectedResourceArn(const std::string &protectedResourceArn) {
   protectedResourceArn_ = protectedResourceArn;
   setParameter(std::string("ProtectedResourceArn"), protectedResourceArn);
-}
-
-std::string SetDeletionProtectionRequest::getDeletionProtectionDescription() const {
-  return deletionProtectionDescription_;
-}
-
-void SetDeletionProtectionRequest::setDeletionProtectionDescription(const std::string &deletionProtectionDescription) {
-  deletionProtectionDescription_ = deletionProtectionDescription;
-  setParameter(std::string("DeletionProtectionDescription"), deletionProtectionDescription);
 }
 

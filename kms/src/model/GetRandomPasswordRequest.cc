@@ -25,15 +25,6 @@ GetRandomPasswordRequest::GetRandomPasswordRequest()
 
 GetRandomPasswordRequest::~GetRandomPasswordRequest() {}
 
-std::string GetRandomPasswordRequest::getExcludeLowercase() const {
-  return excludeLowercase_;
-}
-
-void GetRandomPasswordRequest::setExcludeLowercase(const std::string &excludeLowercase) {
-  excludeLowercase_ = excludeLowercase;
-  setParameter(std::string("ExcludeLowercase"), excludeLowercase);
-}
-
 std::string GetRandomPasswordRequest::getExcludeCharacters() const {
   return excludeCharacters_;
 }
@@ -61,15 +52,6 @@ void GetRandomPasswordRequest::setExcludePunctuation(const std::string &excludeP
   setParameter(std::string("ExcludePunctuation"), excludePunctuation);
 }
 
-std::string GetRandomPasswordRequest::getExcludeUppercase() const {
-  return excludeUppercase_;
-}
-
-void GetRandomPasswordRequest::setExcludeUppercase(const std::string &excludeUppercase) {
-  excludeUppercase_ = excludeUppercase;
-  setParameter(std::string("ExcludeUppercase"), excludeUppercase);
-}
-
 std::string GetRandomPasswordRequest::getRequireEachIncludedType() const {
   return requireEachIncludedType_;
 }
@@ -86,5 +68,23 @@ std::string GetRandomPasswordRequest::getExcludeNumbers() const {
 void GetRandomPasswordRequest::setExcludeNumbers(const std::string &excludeNumbers) {
   excludeNumbers_ = excludeNumbers;
   setParameter(std::string("ExcludeNumbers"), excludeNumbers);
+}
+
+std::string GetRandomPasswordRequest::getExcludeLowercase() const {
+  return excludeLowercase_;
+}
+
+void GetRandomPasswordRequest::setExcludeLowercase(const std::string &excludeLowercase) {
+  excludeLowercase_ = excludeLowercase;
+  setParameter(std::string("ExcludeLowercase"), excludeLowercase);
+}
+
+std::string GetRandomPasswordRequest::getExcludeUppercase() const {
+  return excludeUppercase_;
+}
+
+void GetRandomPasswordRequest::setExcludeUppercase(const std::string &excludeUppercase) {
+  excludeUppercase_ = excludeUppercase;
+  setParameter(std::string("ExcludeUppercase"), excludeUppercase);
 }
 

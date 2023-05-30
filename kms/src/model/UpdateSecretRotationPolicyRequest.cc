@@ -34,15 +34,6 @@ void UpdateSecretRotationPolicyRequest::setRotationInterval(const std::string &r
   setParameter(std::string("RotationInterval"), rotationInterval);
 }
 
-std::string UpdateSecretRotationPolicyRequest::getSecretName() const {
-  return secretName_;
-}
-
-void UpdateSecretRotationPolicyRequest::setSecretName(const std::string &secretName) {
-  secretName_ = secretName;
-  setParameter(std::string("SecretName"), secretName);
-}
-
 bool UpdateSecretRotationPolicyRequest::getEnableAutomaticRotation() const {
   return enableAutomaticRotation_;
 }
@@ -50,5 +41,14 @@ bool UpdateSecretRotationPolicyRequest::getEnableAutomaticRotation() const {
 void UpdateSecretRotationPolicyRequest::setEnableAutomaticRotation(bool enableAutomaticRotation) {
   enableAutomaticRotation_ = enableAutomaticRotation;
   setParameter(std::string("EnableAutomaticRotation"), enableAutomaticRotation ? "true" : "false");
+}
+
+std::string UpdateSecretRotationPolicyRequest::getSecretName() const {
+  return secretName_;
+}
+
+void UpdateSecretRotationPolicyRequest::setSecretName(const std::string &secretName) {
+  secretName_ = secretName;
+  setParameter(std::string("SecretName"), secretName);
 }
 

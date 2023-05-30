@@ -30,29 +30,29 @@ class ALIBABACLOUD_KMS_EXPORT GetRandomPasswordRequest : public RpcServiceReques
 public:
 	GetRandomPasswordRequest();
 	~GetRandomPasswordRequest();
-	std::string getExcludeLowercase() const;
-	void setExcludeLowercase(const std::string &excludeLowercase);
 	std::string getExcludeCharacters() const;
 	void setExcludeCharacters(const std::string &excludeCharacters);
 	std::string getPasswordLength() const;
 	void setPasswordLength(const std::string &passwordLength);
 	std::string getExcludePunctuation() const;
 	void setExcludePunctuation(const std::string &excludePunctuation);
-	std::string getExcludeUppercase() const;
-	void setExcludeUppercase(const std::string &excludeUppercase);
 	std::string getRequireEachIncludedType() const;
 	void setRequireEachIncludedType(const std::string &requireEachIncludedType);
 	std::string getExcludeNumbers() const;
 	void setExcludeNumbers(const std::string &excludeNumbers);
+	std::string getExcludeLowercase() const;
+	void setExcludeLowercase(const std::string &excludeLowercase);
+	std::string getExcludeUppercase() const;
+	void setExcludeUppercase(const std::string &excludeUppercase);
 
 private:
-	std::string excludeLowercase_;
 	std::string excludeCharacters_;
 	std::string passwordLength_;
 	std::string excludePunctuation_;
-	std::string excludeUppercase_;
 	std::string requireEachIncludedType_;
 	std::string excludeNumbers_;
+	std::string excludeLowercase_;
+	std::string excludeUppercase_;
 };
 } // namespace Model
 } // namespace Kms

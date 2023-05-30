@@ -30,28 +30,28 @@ class ALIBABACLOUD_KMS_EXPORT GenerateAndExportDataKeyRequest : public RpcServic
 public:
 	GenerateAndExportDataKeyRequest();
 	~GenerateAndExportDataKeyRequest();
-	std::string getEncryptionContext() const;
-	void setEncryptionContext(const std::string &encryptionContext);
 	std::string getKeyId() const;
 	void setKeyId(const std::string &keyId);
 	std::string getKeySpec() const;
 	void setKeySpec(const std::string &keySpec);
 	int getNumberOfBytes() const;
 	void setNumberOfBytes(int numberOfBytes);
-	std::string getWrappingAlgorithm() const;
-	void setWrappingAlgorithm(const std::string &wrappingAlgorithm);
 	std::string getPublicKeyBlob() const;
 	void setPublicKeyBlob(const std::string &publicKeyBlob);
+	std::string getEncryptionContext() const;
+	void setEncryptionContext(const std::string &encryptionContext);
+	std::string getWrappingAlgorithm() const;
+	void setWrappingAlgorithm(const std::string &wrappingAlgorithm);
 	std::string getWrappingKeySpec() const;
 	void setWrappingKeySpec(const std::string &wrappingKeySpec);
 
 private:
-	std::string encryptionContext_;
 	std::string keyId_;
 	std::string keySpec_;
 	int numberOfBytes_;
-	std::string wrappingAlgorithm_;
 	std::string publicKeyBlob_;
+	std::string encryptionContext_;
+	std::string wrappingAlgorithm_;
 	std::string wrappingKeySpec_;
 };
 } // namespace Model

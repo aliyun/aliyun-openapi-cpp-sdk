@@ -34,15 +34,6 @@ void AsymmetricVerifyRequest::setKeyVersionId(const std::string &keyVersionId) {
   setParameter(std::string("KeyVersionId"), keyVersionId);
 }
 
-std::string AsymmetricVerifyRequest::getDigest() const {
-  return digest_;
-}
-
-void AsymmetricVerifyRequest::setDigest(const std::string &digest) {
-  digest_ = digest;
-  setParameter(std::string("Digest"), digest);
-}
-
 std::string AsymmetricVerifyRequest::getKeyId() const {
   return keyId_;
 }
@@ -50,6 +41,15 @@ std::string AsymmetricVerifyRequest::getKeyId() const {
 void AsymmetricVerifyRequest::setKeyId(const std::string &keyId) {
   keyId_ = keyId;
   setParameter(std::string("KeyId"), keyId);
+}
+
+std::string AsymmetricVerifyRequest::getDigest() const {
+  return digest_;
+}
+
+void AsymmetricVerifyRequest::setDigest(const std::string &digest) {
+  digest_ = digest;
+  setParameter(std::string("Digest"), digest);
 }
 
 std::string AsymmetricVerifyRequest::getValue() const {

@@ -34,15 +34,6 @@ void AsymmetricSignRequest::setKeyVersionId(const std::string &keyVersionId) {
   setParameter(std::string("KeyVersionId"), keyVersionId);
 }
 
-std::string AsymmetricSignRequest::getDigest() const {
-  return digest_;
-}
-
-void AsymmetricSignRequest::setDigest(const std::string &digest) {
-  digest_ = digest;
-  setParameter(std::string("Digest"), digest);
-}
-
 std::string AsymmetricSignRequest::getKeyId() const {
   return keyId_;
 }
@@ -50,6 +41,15 @@ std::string AsymmetricSignRequest::getKeyId() const {
 void AsymmetricSignRequest::setKeyId(const std::string &keyId) {
   keyId_ = keyId;
   setParameter(std::string("KeyId"), keyId);
+}
+
+std::string AsymmetricSignRequest::getDigest() const {
+  return digest_;
+}
+
+void AsymmetricSignRequest::setDigest(const std::string &digest) {
+  digest_ = digest;
+  setParameter(std::string("Digest"), digest);
 }
 
 std::string AsymmetricSignRequest::getAlgorithm() const {

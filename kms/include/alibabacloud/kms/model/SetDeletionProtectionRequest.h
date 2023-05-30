@@ -30,17 +30,17 @@ class ALIBABACLOUD_KMS_EXPORT SetDeletionProtectionRequest : public RpcServiceRe
 public:
 	SetDeletionProtectionRequest();
 	~SetDeletionProtectionRequest();
+	std::string getDeletionProtectionDescription() const;
+	void setDeletionProtectionDescription(const std::string &deletionProtectionDescription);
 	bool getEnableDeletionProtection() const;
 	void setEnableDeletionProtection(bool enableDeletionProtection);
 	std::string getProtectedResourceArn() const;
 	void setProtectedResourceArn(const std::string &protectedResourceArn);
-	std::string getDeletionProtectionDescription() const;
-	void setDeletionProtectionDescription(const std::string &deletionProtectionDescription);
 
 private:
+	std::string deletionProtectionDescription_;
 	bool enableDeletionProtection_;
 	std::string protectedResourceArn_;
-	std::string deletionProtectionDescription_;
 };
 } // namespace Model
 } // namespace Kms

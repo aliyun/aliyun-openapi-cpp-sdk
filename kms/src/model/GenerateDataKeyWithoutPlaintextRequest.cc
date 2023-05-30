@@ -25,15 +25,6 @@ GenerateDataKeyWithoutPlaintextRequest::GenerateDataKeyWithoutPlaintextRequest()
 
 GenerateDataKeyWithoutPlaintextRequest::~GenerateDataKeyWithoutPlaintextRequest() {}
 
-std::string GenerateDataKeyWithoutPlaintextRequest::getEncryptionContext() const {
-  return encryptionContext_;
-}
-
-void GenerateDataKeyWithoutPlaintextRequest::setEncryptionContext(const std::string &encryptionContext) {
-  encryptionContext_ = encryptionContext;
-  setParameter(std::string("EncryptionContext"), encryptionContext);
-}
-
 std::string GenerateDataKeyWithoutPlaintextRequest::getKeyId() const {
   return keyId_;
 }
@@ -59,5 +50,14 @@ int GenerateDataKeyWithoutPlaintextRequest::getNumberOfBytes() const {
 void GenerateDataKeyWithoutPlaintextRequest::setNumberOfBytes(int numberOfBytes) {
   numberOfBytes_ = numberOfBytes;
   setParameter(std::string("NumberOfBytes"), std::to_string(numberOfBytes));
+}
+
+std::string GenerateDataKeyWithoutPlaintextRequest::getEncryptionContext() const {
+  return encryptionContext_;
+}
+
+void GenerateDataKeyWithoutPlaintextRequest::setEncryptionContext(const std::string &encryptionContext) {
+  encryptionContext_ = encryptionContext;
+  setParameter(std::string("EncryptionContext"), encryptionContext);
 }
 

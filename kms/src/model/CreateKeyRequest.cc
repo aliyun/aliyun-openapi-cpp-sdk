@@ -25,24 +25,6 @@ CreateKeyRequest::CreateKeyRequest()
 
 CreateKeyRequest::~CreateKeyRequest() {}
 
-std::string CreateKeyRequest::getProtectionLevel() const {
-  return protectionLevel_;
-}
-
-void CreateKeyRequest::setProtectionLevel(const std::string &protectionLevel) {
-  protectionLevel_ = protectionLevel;
-  setParameter(std::string("ProtectionLevel"), protectionLevel);
-}
-
-std::string CreateKeyRequest::getKeyUsage() const {
-  return keyUsage_;
-}
-
-void CreateKeyRequest::setKeyUsage(const std::string &keyUsage) {
-  keyUsage_ = keyUsage;
-  setParameter(std::string("KeyUsage"), keyUsage);
-}
-
 std::string CreateKeyRequest::getOrigin() const {
   return origin_;
 }
@@ -50,15 +32,6 @@ std::string CreateKeyRequest::getOrigin() const {
 void CreateKeyRequest::setOrigin(const std::string &origin) {
   origin_ = origin;
   setParameter(std::string("Origin"), origin);
-}
-
-std::string CreateKeyRequest::getDKMSInstanceId() const {
-  return dKMSInstanceId_;
-}
-
-void CreateKeyRequest::setDKMSInstanceId(const std::string &dKMSInstanceId) {
-  dKMSInstanceId_ = dKMSInstanceId;
-  setParameter(std::string("DKMSInstanceId"), dKMSInstanceId);
 }
 
 std::string CreateKeyRequest::getDescription() const {
@@ -95,5 +68,41 @@ bool CreateKeyRequest::getEnableAutomaticRotation() const {
 void CreateKeyRequest::setEnableAutomaticRotation(bool enableAutomaticRotation) {
   enableAutomaticRotation_ = enableAutomaticRotation;
   setParameter(std::string("EnableAutomaticRotation"), enableAutomaticRotation ? "true" : "false");
+}
+
+std::string CreateKeyRequest::getTags() const {
+  return tags_;
+}
+
+void CreateKeyRequest::setTags(const std::string &tags) {
+  tags_ = tags;
+  setParameter(std::string("Tags"), tags);
+}
+
+std::string CreateKeyRequest::getProtectionLevel() const {
+  return protectionLevel_;
+}
+
+void CreateKeyRequest::setProtectionLevel(const std::string &protectionLevel) {
+  protectionLevel_ = protectionLevel;
+  setParameter(std::string("ProtectionLevel"), protectionLevel);
+}
+
+std::string CreateKeyRequest::getKeyUsage() const {
+  return keyUsage_;
+}
+
+void CreateKeyRequest::setKeyUsage(const std::string &keyUsage) {
+  keyUsage_ = keyUsage;
+  setParameter(std::string("KeyUsage"), keyUsage);
+}
+
+std::string CreateKeyRequest::getDKMSInstanceId() const {
+  return dKMSInstanceId_;
+}
+
+void CreateKeyRequest::setDKMSInstanceId(const std::string &dKMSInstanceId) {
+  dKMSInstanceId_ = dKMSInstanceId;
+  setParameter(std::string("DKMSInstanceId"), dKMSInstanceId);
 }
 

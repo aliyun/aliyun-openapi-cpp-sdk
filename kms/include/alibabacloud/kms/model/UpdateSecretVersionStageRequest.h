@@ -30,18 +30,18 @@ class ALIBABACLOUD_KMS_EXPORT UpdateSecretVersionStageRequest : public RpcServic
 public:
 	UpdateSecretVersionStageRequest();
 	~UpdateSecretVersionStageRequest();
-	std::string getRemoveFromVersion() const;
-	void setRemoveFromVersion(const std::string &removeFromVersion);
 	std::string getMoveToVersion() const;
 	void setMoveToVersion(const std::string &moveToVersion);
+	std::string getRemoveFromVersion() const;
+	void setRemoveFromVersion(const std::string &removeFromVersion);
 	std::string getVersionStage() const;
 	void setVersionStage(const std::string &versionStage);
 	std::string getSecretName() const;
 	void setSecretName(const std::string &secretName);
 
 private:
-	std::string removeFromVersion_;
 	std::string moveToVersion_;
+	std::string removeFromVersion_;
 	std::string versionStage_;
 	std::string secretName_;
 };

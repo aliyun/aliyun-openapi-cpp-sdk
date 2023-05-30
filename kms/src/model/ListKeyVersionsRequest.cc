@@ -25,15 +25,6 @@ ListKeyVersionsRequest::ListKeyVersionsRequest()
 
 ListKeyVersionsRequest::~ListKeyVersionsRequest() {}
 
-int ListKeyVersionsRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListKeyVersionsRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 std::string ListKeyVersionsRequest::getKeyId() const {
   return keyId_;
 }
@@ -50,5 +41,14 @@ int ListKeyVersionsRequest::getPageNumber() const {
 void ListKeyVersionsRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+int ListKeyVersionsRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListKeyVersionsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

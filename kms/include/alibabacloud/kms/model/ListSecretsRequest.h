@@ -30,20 +30,20 @@ class ALIBABACLOUD_KMS_EXPORT ListSecretsRequest : public RpcServiceRequest {
 public:
 	ListSecretsRequest();
 	~ListSecretsRequest();
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	std::string getFilters() const;
 	void setFilters(const std::string &filters);
-	std::string getFetchTags() const;
-	void setFetchTags(const std::string &fetchTags);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
+	std::string getFetchTags() const;
+	void setFetchTags(const std::string &fetchTags);
 
 private:
-	int pageSize_;
 	std::string filters_;
-	std::string fetchTags_;
 	int pageNumber_;
+	int pageSize_;
+	std::string fetchTags_;
 };
 } // namespace Model
 } // namespace Kms

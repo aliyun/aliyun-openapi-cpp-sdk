@@ -34,6 +34,15 @@ void ListSecretVersionIdsRequest::setIncludeDeprecated(const std::string &includ
   setParameter(std::string("IncludeDeprecated"), includeDeprecated);
 }
 
+int ListSecretVersionIdsRequest::getPageNumber() const {
+  return pageNumber_;
+}
+
+void ListSecretVersionIdsRequest::setPageNumber(int pageNumber) {
+  pageNumber_ = pageNumber;
+  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
 int ListSecretVersionIdsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -50,14 +59,5 @@ std::string ListSecretVersionIdsRequest::getSecretName() const {
 void ListSecretVersionIdsRequest::setSecretName(const std::string &secretName) {
   secretName_ = secretName;
   setParameter(std::string("SecretName"), secretName);
-}
-
-int ListSecretVersionIdsRequest::getPageNumber() const {
-  return pageNumber_;
-}
-
-void ListSecretVersionIdsRequest::setPageNumber(int pageNumber) {
-  pageNumber_ = pageNumber;
-  setParameter(std::string("PageNumber"), std::to_string(pageNumber));
 }
 

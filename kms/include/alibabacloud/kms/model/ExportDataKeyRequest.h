@@ -30,22 +30,22 @@ class ALIBABACLOUD_KMS_EXPORT ExportDataKeyRequest : public RpcServiceRequest {
 public:
 	ExportDataKeyRequest();
 	~ExportDataKeyRequest();
+	std::string getPublicKeyBlob() const;
+	void setPublicKeyBlob(const std::string &publicKeyBlob);
 	std::string getEncryptionContext() const;
 	void setEncryptionContext(const std::string &encryptionContext);
 	std::string getWrappingAlgorithm() const;
 	void setWrappingAlgorithm(const std::string &wrappingAlgorithm);
 	std::string getCiphertextBlob() const;
 	void setCiphertextBlob(const std::string &ciphertextBlob);
-	std::string getPublicKeyBlob() const;
-	void setPublicKeyBlob(const std::string &publicKeyBlob);
 	std::string getWrappingKeySpec() const;
 	void setWrappingKeySpec(const std::string &wrappingKeySpec);
 
 private:
+	std::string publicKeyBlob_;
 	std::string encryptionContext_;
 	std::string wrappingAlgorithm_;
 	std::string ciphertextBlob_;
-	std::string publicKeyBlob_;
 	std::string wrappingKeySpec_;
 };
 } // namespace Model

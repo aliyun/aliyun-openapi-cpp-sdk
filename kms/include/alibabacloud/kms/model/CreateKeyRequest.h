@@ -30,14 +30,8 @@ class ALIBABACLOUD_KMS_EXPORT CreateKeyRequest : public RpcServiceRequest {
 public:
 	CreateKeyRequest();
 	~CreateKeyRequest();
-	std::string getProtectionLevel() const;
-	void setProtectionLevel(const std::string &protectionLevel);
-	std::string getKeyUsage() const;
-	void setKeyUsage(const std::string &keyUsage);
 	std::string getOrigin() const;
 	void setOrigin(const std::string &origin);
-	std::string getDKMSInstanceId() const;
-	void setDKMSInstanceId(const std::string &dKMSInstanceId);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getKeySpec() const;
@@ -46,16 +40,25 @@ public:
 	void setRotationInterval(const std::string &rotationInterval);
 	bool getEnableAutomaticRotation() const;
 	void setEnableAutomaticRotation(bool enableAutomaticRotation);
+	std::string getTags() const;
+	void setTags(const std::string &tags);
+	std::string getProtectionLevel() const;
+	void setProtectionLevel(const std::string &protectionLevel);
+	std::string getKeyUsage() const;
+	void setKeyUsage(const std::string &keyUsage);
+	std::string getDKMSInstanceId() const;
+	void setDKMSInstanceId(const std::string &dKMSInstanceId);
 
 private:
-	std::string protectionLevel_;
-	std::string keyUsage_;
 	std::string origin_;
-	std::string dKMSInstanceId_;
 	std::string description_;
 	std::string keySpec_;
 	std::string rotationInterval_;
 	bool enableAutomaticRotation_;
+	std::string tags_;
+	std::string protectionLevel_;
+	std::string keyUsage_;
+	std::string dKMSInstanceId_;
 };
 } // namespace Model
 } // namespace Kms

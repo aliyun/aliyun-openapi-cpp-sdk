@@ -34,15 +34,6 @@ void UntagResourceRequest::setCertificateId(const std::string &certificateId) {
   setParameter(std::string("CertificateId"), certificateId);
 }
 
-std::string UntagResourceRequest::getTagKeys() const {
-  return tagKeys_;
-}
-
-void UntagResourceRequest::setTagKeys(const std::string &tagKeys) {
-  tagKeys_ = tagKeys;
-  setParameter(std::string("TagKeys"), tagKeys);
-}
-
 std::string UntagResourceRequest::getKeyId() const {
   return keyId_;
 }
@@ -50,6 +41,15 @@ std::string UntagResourceRequest::getKeyId() const {
 void UntagResourceRequest::setKeyId(const std::string &keyId) {
   keyId_ = keyId;
   setParameter(std::string("KeyId"), keyId);
+}
+
+std::string UntagResourceRequest::getTagKeys() const {
+  return tagKeys_;
+}
+
+void UntagResourceRequest::setTagKeys(const std::string &tagKeys) {
+  tagKeys_ = tagKeys;
+  setParameter(std::string("TagKeys"), tagKeys);
 }
 
 std::string UntagResourceRequest::getSecretName() const {

@@ -30,17 +30,17 @@ class ALIBABACLOUD_KMS_EXPORT EncryptRequest : public RpcServiceRequest {
 public:
 	EncryptRequest();
 	~EncryptRequest();
-	std::string getEncryptionContext() const;
-	void setEncryptionContext(const std::string &encryptionContext);
 	std::string getKeyId() const;
 	void setKeyId(const std::string &keyId);
 	std::string getPlaintext() const;
 	void setPlaintext(const std::string &plaintext);
+	std::string getEncryptionContext() const;
+	void setEncryptionContext(const std::string &encryptionContext);
 
 private:
-	std::string encryptionContext_;
 	std::string keyId_;
 	std::string plaintext_;
+	std::string encryptionContext_;
 };
 } // namespace Model
 } // namespace Kms

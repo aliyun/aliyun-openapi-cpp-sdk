@@ -32,15 +32,15 @@ public:
 	~UpdateSecretRotationPolicyRequest();
 	std::string getRotationInterval() const;
 	void setRotationInterval(const std::string &rotationInterval);
-	std::string getSecretName() const;
-	void setSecretName(const std::string &secretName);
 	bool getEnableAutomaticRotation() const;
 	void setEnableAutomaticRotation(bool enableAutomaticRotation);
+	std::string getSecretName() const;
+	void setSecretName(const std::string &secretName);
 
 private:
 	std::string rotationInterval_;
-	std::string secretName_;
 	bool enableAutomaticRotation_;
+	std::string secretName_;
 };
 } // namespace Model
 } // namespace Kms

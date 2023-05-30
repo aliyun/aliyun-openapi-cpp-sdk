@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_KMS_MODEL_ASYMMETRICVERIFYREQUEST_H_
-#define ALIBABACLOUD_KMS_MODEL_ASYMMETRICVERIFYREQUEST_H_
+#ifndef ALIBABACLOUD_KMS_MODEL_TAGRESOURCESREQUEST_H_
+#define ALIBABACLOUD_KMS_MODEL_TAGRESOURCESREQUEST_H_
 
 #include <alibabacloud/kms/KmsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,30 @@
 namespace AlibabaCloud {
 namespace Kms {
 namespace Model {
-class ALIBABACLOUD_KMS_EXPORT AsymmetricVerifyRequest : public RpcServiceRequest {
+class ALIBABACLOUD_KMS_EXPORT TagResourcesRequest : public RpcServiceRequest {
 public:
-	AsymmetricVerifyRequest();
-	~AsymmetricVerifyRequest();
-	std::string getKeyVersionId() const;
-	void setKeyVersionId(const std::string &keyVersionId);
-	std::string getKeyId() const;
-	void setKeyId(const std::string &keyId);
-	std::string getDigest() const;
-	void setDigest(const std::string &digest);
-	std::string getValue() const;
-	void setValue(const std::string &value);
-	std::string getAlgorithm() const;
-	void setAlgorithm(const std::string &algorithm);
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
+	TagResourcesRequest();
+	~TagResourcesRequest();
+	std::vector<std::string> getResourceId() const;
+	void setResourceId(const std::vector<std::string> &resourceId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
 private:
-	std::string keyVersionId_;
-	std::string keyId_;
-	std::string digest_;
-	std::string value_;
-	std::string algorithm_;
+	std::vector<std::string> resourceId_;
+	std::string resourceType_;
+	std::string regionId_;
+	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace Kms
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_KMS_MODEL_ASYMMETRICVERIFYREQUEST_H_
+#endif // !ALIBABACLOUD_KMS_MODEL_TAGRESOURCESREQUEST_H_

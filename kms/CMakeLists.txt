@@ -111,6 +111,8 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/ListSecretVersionIdsResult.h
 	include/alibabacloud/kms/model/ListSecretsRequest.h
 	include/alibabacloud/kms/model/ListSecretsResult.h
+	include/alibabacloud/kms/model/ListTagResourcesRequest.h
+	include/alibabacloud/kms/model/ListTagResourcesResult.h
 	include/alibabacloud/kms/model/OpenKmsServiceRequest.h
 	include/alibabacloud/kms/model/OpenKmsServiceResult.h
 	include/alibabacloud/kms/model/PutSecretValueRequest.h
@@ -127,8 +129,12 @@ set(kms_public_header_model
 	include/alibabacloud/kms/model/SetDeletionProtectionResult.h
 	include/alibabacloud/kms/model/TagResourceRequest.h
 	include/alibabacloud/kms/model/TagResourceResult.h
+	include/alibabacloud/kms/model/TagResourcesRequest.h
+	include/alibabacloud/kms/model/TagResourcesResult.h
 	include/alibabacloud/kms/model/UntagResourceRequest.h
 	include/alibabacloud/kms/model/UntagResourceResult.h
+	include/alibabacloud/kms/model/UntagResourcesRequest.h
+	include/alibabacloud/kms/model/UntagResourcesResult.h
 	include/alibabacloud/kms/model/UpdateAliasRequest.h
 	include/alibabacloud/kms/model/UpdateAliasResult.h
 	include/alibabacloud/kms/model/UpdateCertificateStatusRequest.h
@@ -238,6 +244,8 @@ set(kms_src
 	src/model/ListSecretVersionIdsResult.cc
 	src/model/ListSecretsRequest.cc
 	src/model/ListSecretsResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
 	src/model/OpenKmsServiceRequest.cc
 	src/model/OpenKmsServiceResult.cc
 	src/model/PutSecretValueRequest.cc
@@ -254,8 +262,12 @@ set(kms_src
 	src/model/SetDeletionProtectionResult.cc
 	src/model/TagResourceRequest.cc
 	src/model/TagResourceResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
 	src/model/UntagResourceRequest.cc
 	src/model/UntagResourceResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
 	src/model/UpdateAliasRequest.cc
 	src/model/UpdateAliasResult.cc
 	src/model/UpdateCertificateStatusRequest.cc

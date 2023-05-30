@@ -25,15 +25,6 @@ GenerateDataKeyRequest::GenerateDataKeyRequest()
 
 GenerateDataKeyRequest::~GenerateDataKeyRequest() {}
 
-std::string GenerateDataKeyRequest::getEncryptionContext() const {
-  return encryptionContext_;
-}
-
-void GenerateDataKeyRequest::setEncryptionContext(const std::string &encryptionContext) {
-  encryptionContext_ = encryptionContext;
-  setParameter(std::string("EncryptionContext"), encryptionContext);
-}
-
 std::string GenerateDataKeyRequest::getKeyId() const {
   return keyId_;
 }
@@ -59,5 +50,14 @@ int GenerateDataKeyRequest::getNumberOfBytes() const {
 void GenerateDataKeyRequest::setNumberOfBytes(int numberOfBytes) {
   numberOfBytes_ = numberOfBytes;
   setParameter(std::string("NumberOfBytes"), std::to_string(numberOfBytes));
+}
+
+std::string GenerateDataKeyRequest::getEncryptionContext() const {
+  return encryptionContext_;
+}
+
+void GenerateDataKeyRequest::setEncryptionContext(const std::string &encryptionContext) {
+  encryptionContext_ = encryptionContext;
+  setParameter(std::string("EncryptionContext"), encryptionContext);
 }
 

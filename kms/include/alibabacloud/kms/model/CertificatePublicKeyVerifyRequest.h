@@ -30,22 +30,22 @@ class ALIBABACLOUD_KMS_EXPORT CertificatePublicKeyVerifyRequest : public RpcServ
 public:
 	CertificatePublicKeyVerifyRequest();
 	~CertificatePublicKeyVerifyRequest();
-	std::string getSignatureValue() const;
-	void setSignatureValue(const std::string &signatureValue);
 	std::string getMessageType() const;
 	void setMessageType(const std::string &messageType);
 	std::string getCertificateId() const;
 	void setCertificateId(const std::string &certificateId);
 	std::string getMessage() const;
 	void setMessage(const std::string &message);
+	std::string getSignatureValue() const;
+	void setSignatureValue(const std::string &signatureValue);
 	std::string getAlgorithm() const;
 	void setAlgorithm(const std::string &algorithm);
 
 private:
-	std::string signatureValue_;
 	std::string messageType_;
 	std::string certificateId_;
 	std::string message_;
+	std::string signatureValue_;
 	std::string algorithm_;
 };
 } // namespace Model

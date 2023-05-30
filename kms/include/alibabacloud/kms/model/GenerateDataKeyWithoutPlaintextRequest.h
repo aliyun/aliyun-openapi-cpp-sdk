@@ -30,20 +30,20 @@ class ALIBABACLOUD_KMS_EXPORT GenerateDataKeyWithoutPlaintextRequest : public Rp
 public:
 	GenerateDataKeyWithoutPlaintextRequest();
 	~GenerateDataKeyWithoutPlaintextRequest();
-	std::string getEncryptionContext() const;
-	void setEncryptionContext(const std::string &encryptionContext);
 	std::string getKeyId() const;
 	void setKeyId(const std::string &keyId);
 	std::string getKeySpec() const;
 	void setKeySpec(const std::string &keySpec);
 	int getNumberOfBytes() const;
 	void setNumberOfBytes(int numberOfBytes);
+	std::string getEncryptionContext() const;
+	void setEncryptionContext(const std::string &encryptionContext);
 
 private:
-	std::string encryptionContext_;
 	std::string keyId_;
 	std::string keySpec_;
 	int numberOfBytes_;
+	std::string encryptionContext_;
 };
 } // namespace Model
 } // namespace Kms

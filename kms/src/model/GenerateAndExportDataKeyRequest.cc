@@ -25,15 +25,6 @@ GenerateAndExportDataKeyRequest::GenerateAndExportDataKeyRequest()
 
 GenerateAndExportDataKeyRequest::~GenerateAndExportDataKeyRequest() {}
 
-std::string GenerateAndExportDataKeyRequest::getEncryptionContext() const {
-  return encryptionContext_;
-}
-
-void GenerateAndExportDataKeyRequest::setEncryptionContext(const std::string &encryptionContext) {
-  encryptionContext_ = encryptionContext;
-  setParameter(std::string("EncryptionContext"), encryptionContext);
-}
-
 std::string GenerateAndExportDataKeyRequest::getKeyId() const {
   return keyId_;
 }
@@ -61,15 +52,6 @@ void GenerateAndExportDataKeyRequest::setNumberOfBytes(int numberOfBytes) {
   setParameter(std::string("NumberOfBytes"), std::to_string(numberOfBytes));
 }
 
-std::string GenerateAndExportDataKeyRequest::getWrappingAlgorithm() const {
-  return wrappingAlgorithm_;
-}
-
-void GenerateAndExportDataKeyRequest::setWrappingAlgorithm(const std::string &wrappingAlgorithm) {
-  wrappingAlgorithm_ = wrappingAlgorithm;
-  setParameter(std::string("WrappingAlgorithm"), wrappingAlgorithm);
-}
-
 std::string GenerateAndExportDataKeyRequest::getPublicKeyBlob() const {
   return publicKeyBlob_;
 }
@@ -77,6 +59,24 @@ std::string GenerateAndExportDataKeyRequest::getPublicKeyBlob() const {
 void GenerateAndExportDataKeyRequest::setPublicKeyBlob(const std::string &publicKeyBlob) {
   publicKeyBlob_ = publicKeyBlob;
   setParameter(std::string("PublicKeyBlob"), publicKeyBlob);
+}
+
+std::string GenerateAndExportDataKeyRequest::getEncryptionContext() const {
+  return encryptionContext_;
+}
+
+void GenerateAndExportDataKeyRequest::setEncryptionContext(const std::string &encryptionContext) {
+  encryptionContext_ = encryptionContext;
+  setParameter(std::string("EncryptionContext"), encryptionContext);
+}
+
+std::string GenerateAndExportDataKeyRequest::getWrappingAlgorithm() const {
+  return wrappingAlgorithm_;
+}
+
+void GenerateAndExportDataKeyRequest::setWrappingAlgorithm(const std::string &wrappingAlgorithm) {
+  wrappingAlgorithm_ = wrappingAlgorithm;
+  setParameter(std::string("WrappingAlgorithm"), wrappingAlgorithm);
 }
 
 std::string GenerateAndExportDataKeyRequest::getWrappingKeySpec() const {

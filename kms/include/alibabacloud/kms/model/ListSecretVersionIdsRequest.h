@@ -32,18 +32,18 @@ public:
 	~ListSecretVersionIdsRequest();
 	std::string getIncludeDeprecated() const;
 	void setIncludeDeprecated(const std::string &includeDeprecated);
+	int getPageNumber() const;
+	void setPageNumber(int pageNumber);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getSecretName() const;
 	void setSecretName(const std::string &secretName);
-	int getPageNumber() const;
-	void setPageNumber(int pageNumber);
 
 private:
 	std::string includeDeprecated_;
+	int pageNumber_;
 	int pageSize_;
 	std::string secretName_;
-	int pageNumber_;
 };
 } // namespace Model
 } // namespace Kms

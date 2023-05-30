@@ -25,15 +25,6 @@ ListKeysRequest::ListKeysRequest()
 
 ListKeysRequest::~ListKeysRequest() {}
 
-int ListKeysRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListKeysRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 std::string ListKeysRequest::getFilters() const {
   return filters_;
 }
@@ -50,5 +41,14 @@ int ListKeysRequest::getPageNumber() const {
 void ListKeysRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+int ListKeysRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListKeysRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

@@ -32,17 +32,17 @@ public:
 	~AsymmetricSignRequest();
 	std::string getKeyVersionId() const;
 	void setKeyVersionId(const std::string &keyVersionId);
-	std::string getDigest() const;
-	void setDigest(const std::string &digest);
 	std::string getKeyId() const;
 	void setKeyId(const std::string &keyId);
+	std::string getDigest() const;
+	void setDigest(const std::string &digest);
 	std::string getAlgorithm() const;
 	void setAlgorithm(const std::string &algorithm);
 
 private:
 	std::string keyVersionId_;
-	std::string digest_;
 	std::string keyId_;
+	std::string digest_;
 	std::string algorithm_;
 };
 } // namespace Model

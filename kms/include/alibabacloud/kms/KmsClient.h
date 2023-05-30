@@ -112,6 +112,8 @@
 #include "model/ListSecretVersionIdsResult.h"
 #include "model/ListSecretsRequest.h"
 #include "model/ListSecretsResult.h"
+#include "model/ListTagResourcesRequest.h"
+#include "model/ListTagResourcesResult.h"
 #include "model/OpenKmsServiceRequest.h"
 #include "model/OpenKmsServiceResult.h"
 #include "model/PutSecretValueRequest.h"
@@ -128,8 +130,12 @@
 #include "model/SetDeletionProtectionResult.h"
 #include "model/TagResourceRequest.h"
 #include "model/TagResourceResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
 #include "model/UntagResourceRequest.h"
 #include "model/UntagResourceResult.h"
+#include "model/UntagResourcesRequest.h"
+#include "model/UntagResourcesResult.h"
 #include "model/UpdateAliasRequest.h"
 #include "model/UpdateAliasResult.h"
 #include "model/UpdateCertificateStatusRequest.h"
@@ -290,6 +296,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListSecretsResult> ListSecretsOutcome;
 			typedef std::future<ListSecretsOutcome> ListSecretsOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::ListSecretsRequest&, const ListSecretsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListSecretsAsyncHandler;
+			typedef Outcome<Error, Model::ListTagResourcesResult> ListTagResourcesOutcome;
+			typedef std::future<ListTagResourcesOutcome> ListTagResourcesOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::ListTagResourcesRequest&, const ListTagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListTagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::OpenKmsServiceResult> OpenKmsServiceOutcome;
 			typedef std::future<OpenKmsServiceOutcome> OpenKmsServiceOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::OpenKmsServiceRequest&, const OpenKmsServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenKmsServiceAsyncHandler;
@@ -314,9 +323,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::TagResourceResult> TagResourceOutcome;
 			typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::TagResourceRequest&, const TagResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourceAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UntagResourceResult> UntagResourceOutcome;
 			typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::UntagResourceRequest&, const UntagResourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourceAsyncHandler;
+			typedef Outcome<Error, Model::UntagResourcesResult> UntagResourcesOutcome;
+			typedef std::future<UntagResourcesOutcome> UntagResourcesOutcomeCallable;
+			typedef std::function<void(const KmsClient*, const Model::UntagResourcesRequest&, const UntagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UntagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateAliasResult> UpdateAliasOutcome;
 			typedef std::future<UpdateAliasOutcome> UpdateAliasOutcomeCallable;
 			typedef std::function<void(const KmsClient*, const Model::UpdateAliasRequest&, const UpdateAliasOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAliasAsyncHandler;
@@ -481,6 +496,9 @@ namespace AlibabaCloud
 			ListSecretsOutcome listSecrets(const Model::ListSecretsRequest &request)const;
 			void listSecretsAsync(const Model::ListSecretsRequest& request, const ListSecretsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListSecretsOutcomeCallable listSecretsCallable(const Model::ListSecretsRequest& request) const;
+			ListTagResourcesOutcome listTagResources(const Model::ListTagResourcesRequest &request)const;
+			void listTagResourcesAsync(const Model::ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListTagResourcesOutcomeCallable listTagResourcesCallable(const Model::ListTagResourcesRequest& request) const;
 			OpenKmsServiceOutcome openKmsService(const Model::OpenKmsServiceRequest &request)const;
 			void openKmsServiceAsync(const Model::OpenKmsServiceRequest& request, const OpenKmsServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenKmsServiceOutcomeCallable openKmsServiceCallable(const Model::OpenKmsServiceRequest& request) const;
@@ -505,9 +523,15 @@ namespace AlibabaCloud
 			TagResourceOutcome tagResource(const Model::TagResourceRequest &request)const;
 			void tagResourceAsync(const Model::TagResourceRequest& request, const TagResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			TagResourceOutcomeCallable tagResourceCallable(const Model::TagResourceRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
 			UntagResourceOutcome untagResource(const Model::UntagResourceRequest &request)const;
 			void untagResourceAsync(const Model::UntagResourceRequest& request, const UntagResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UntagResourceOutcomeCallable untagResourceCallable(const Model::UntagResourceRequest& request) const;
+			UntagResourcesOutcome untagResources(const Model::UntagResourcesRequest &request)const;
+			void untagResourcesAsync(const Model::UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UntagResourcesOutcomeCallable untagResourcesCallable(const Model::UntagResourcesRequest& request) const;
 			UpdateAliasOutcome updateAlias(const Model::UpdateAliasRequest &request)const;
 			void updateAliasAsync(const Model::UpdateAliasRequest& request, const UpdateAliasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateAliasOutcomeCallable updateAliasCallable(const Model::UpdateAliasRequest& request) const;

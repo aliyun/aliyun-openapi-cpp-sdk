@@ -32,14 +32,14 @@ public:
 	~ReEncryptRequest();
 	std::string getDestinationEncryptionContext() const;
 	void setDestinationEncryptionContext(const std::string &destinationEncryptionContext);
+	std::string getSourceKeyId() const;
+	void setSourceKeyId(const std::string &sourceKeyId);
 	std::string getSourceEncryptionAlgorithm() const;
 	void setSourceEncryptionAlgorithm(const std::string &sourceEncryptionAlgorithm);
 	std::string getSourceKeyVersionId() const;
 	void setSourceKeyVersionId(const std::string &sourceKeyVersionId);
 	std::string getDestinationKeyId() const;
 	void setDestinationKeyId(const std::string &destinationKeyId);
-	std::string getSourceKeyId() const;
-	void setSourceKeyId(const std::string &sourceKeyId);
 	std::string getSourceEncryptionContext() const;
 	void setSourceEncryptionContext(const std::string &sourceEncryptionContext);
 	std::string getCiphertextBlob() const;
@@ -47,10 +47,10 @@ public:
 
 private:
 	std::string destinationEncryptionContext_;
+	std::string sourceKeyId_;
 	std::string sourceEncryptionAlgorithm_;
 	std::string sourceKeyVersionId_;
 	std::string destinationKeyId_;
-	std::string sourceKeyId_;
 	std::string sourceEncryptionContext_;
 	std::string ciphertextBlob_;
 };

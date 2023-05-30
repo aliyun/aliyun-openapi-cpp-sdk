@@ -32,17 +32,17 @@ public:
 	~UntagResourceRequest();
 	std::string getCertificateId() const;
 	void setCertificateId(const std::string &certificateId);
-	std::string getTagKeys() const;
-	void setTagKeys(const std::string &tagKeys);
 	std::string getKeyId() const;
 	void setKeyId(const std::string &keyId);
+	std::string getTagKeys() const;
+	void setTagKeys(const std::string &tagKeys);
 	std::string getSecretName() const;
 	void setSecretName(const std::string &secretName);
 
 private:
 	std::string certificateId_;
-	std::string tagKeys_;
 	std::string keyId_;
+	std::string tagKeys_;
 	std::string secretName_;
 };
 } // namespace Model

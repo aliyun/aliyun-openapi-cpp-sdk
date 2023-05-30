@@ -25,15 +25,6 @@ ListAliasesByKeyIdRequest::ListAliasesByKeyIdRequest()
 
 ListAliasesByKeyIdRequest::~ListAliasesByKeyIdRequest() {}
 
-int ListAliasesByKeyIdRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListAliasesByKeyIdRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 std::string ListAliasesByKeyIdRequest::getKeyId() const {
   return keyId_;
 }
@@ -50,5 +41,14 @@ int ListAliasesByKeyIdRequest::getPageNumber() const {
 void ListAliasesByKeyIdRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+int ListAliasesByKeyIdRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListAliasesByKeyIdRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

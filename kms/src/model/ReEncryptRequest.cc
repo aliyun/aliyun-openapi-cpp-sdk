@@ -34,6 +34,15 @@ void ReEncryptRequest::setDestinationEncryptionContext(const std::string &destin
   setParameter(std::string("DestinationEncryptionContext"), destinationEncryptionContext);
 }
 
+std::string ReEncryptRequest::getSourceKeyId() const {
+  return sourceKeyId_;
+}
+
+void ReEncryptRequest::setSourceKeyId(const std::string &sourceKeyId) {
+  sourceKeyId_ = sourceKeyId;
+  setParameter(std::string("SourceKeyId"), sourceKeyId);
+}
+
 std::string ReEncryptRequest::getSourceEncryptionAlgorithm() const {
   return sourceEncryptionAlgorithm_;
 }
@@ -59,15 +68,6 @@ std::string ReEncryptRequest::getDestinationKeyId() const {
 void ReEncryptRequest::setDestinationKeyId(const std::string &destinationKeyId) {
   destinationKeyId_ = destinationKeyId;
   setParameter(std::string("DestinationKeyId"), destinationKeyId);
-}
-
-std::string ReEncryptRequest::getSourceKeyId() const {
-  return sourceKeyId_;
-}
-
-void ReEncryptRequest::setSourceKeyId(const std::string &sourceKeyId) {
-  sourceKeyId_ = sourceKeyId;
-  setParameter(std::string("SourceKeyId"), sourceKeyId);
 }
 
 std::string ReEncryptRequest::getSourceEncryptionContext() const {

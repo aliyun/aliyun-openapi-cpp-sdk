@@ -34,16 +34,16 @@ public:
 	void setCertificateId(const std::string &certificateId);
 	std::string getKeyId() const;
 	void setKeyId(const std::string &keyId);
-	std::string getSecretName() const;
-	void setSecretName(const std::string &secretName);
 	std::string getTags() const;
 	void setTags(const std::string &tags);
+	std::string getSecretName() const;
+	void setSecretName(const std::string &secretName);
 
 private:
 	std::string certificateId_;
 	std::string keyId_;
-	std::string secretName_;
 	std::string tags_;
+	std::string secretName_;
 };
 } // namespace Model
 } // namespace Kms

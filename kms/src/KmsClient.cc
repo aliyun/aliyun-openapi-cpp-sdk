@@ -1671,6 +1671,42 @@ KmsClient::ListSecretsOutcomeCallable KmsClient::listSecretsCallable(const ListS
 	return task->get_future();
 }
 
+KmsClient::ListTagResourcesOutcome KmsClient::listTagResources(const ListTagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListTagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListTagResourcesOutcome(ListTagResourcesResult(outcome.result()));
+	else
+		return ListTagResourcesOutcome(outcome.error());
+}
+
+void KmsClient::listTagResourcesAsync(const ListTagResourcesRequest& request, const ListTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listTagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::ListTagResourcesOutcomeCallable KmsClient::listTagResourcesCallable(const ListTagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListTagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->listTagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::OpenKmsServiceOutcome KmsClient::openKmsService(const OpenKmsServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1959,6 +1995,42 @@ KmsClient::TagResourceOutcomeCallable KmsClient::tagResourceCallable(const TagRe
 	return task->get_future();
 }
 
+KmsClient::TagResourcesOutcome KmsClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void KmsClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::TagResourcesOutcomeCallable KmsClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 KmsClient::UntagResourceOutcome KmsClient::untagResource(const UntagResourceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1989,6 +2061,42 @@ KmsClient::UntagResourceOutcomeCallable KmsClient::untagResourceCallable(const U
 			[this, request]()
 			{
 			return this->untagResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+KmsClient::UntagResourcesOutcome KmsClient::untagResources(const UntagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UntagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UntagResourcesOutcome(UntagResourcesResult(outcome.result()));
+	else
+		return UntagResourcesOutcome(outcome.error());
+}
+
+void KmsClient::untagResourcesAsync(const UntagResourcesRequest& request, const UntagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, untagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+KmsClient::UntagResourcesOutcomeCallable KmsClient::untagResourcesCallable(const UntagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UntagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->untagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

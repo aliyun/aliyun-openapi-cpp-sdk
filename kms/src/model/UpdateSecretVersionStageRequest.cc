@@ -25,15 +25,6 @@ UpdateSecretVersionStageRequest::UpdateSecretVersionStageRequest()
 
 UpdateSecretVersionStageRequest::~UpdateSecretVersionStageRequest() {}
 
-std::string UpdateSecretVersionStageRequest::getRemoveFromVersion() const {
-  return removeFromVersion_;
-}
-
-void UpdateSecretVersionStageRequest::setRemoveFromVersion(const std::string &removeFromVersion) {
-  removeFromVersion_ = removeFromVersion;
-  setParameter(std::string("RemoveFromVersion"), removeFromVersion);
-}
-
 std::string UpdateSecretVersionStageRequest::getMoveToVersion() const {
   return moveToVersion_;
 }
@@ -41,6 +32,15 @@ std::string UpdateSecretVersionStageRequest::getMoveToVersion() const {
 void UpdateSecretVersionStageRequest::setMoveToVersion(const std::string &moveToVersion) {
   moveToVersion_ = moveToVersion;
   setParameter(std::string("MoveToVersion"), moveToVersion);
+}
+
+std::string UpdateSecretVersionStageRequest::getRemoveFromVersion() const {
+  return removeFromVersion_;
+}
+
+void UpdateSecretVersionStageRequest::setRemoveFromVersion(const std::string &removeFromVersion) {
+  removeFromVersion_ = removeFromVersion;
+  setParameter(std::string("RemoveFromVersion"), removeFromVersion);
 }
 
 std::string UpdateSecretVersionStageRequest::getVersionStage() const {

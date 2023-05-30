@@ -30,17 +30,17 @@ class ALIBABACLOUD_KMS_EXPORT ListKeyVersionsRequest : public RpcServiceRequest 
 public:
 	ListKeyVersionsRequest();
 	~ListKeyVersionsRequest();
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 	std::string getKeyId() const;
 	void setKeyId(const std::string &keyId);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 
 private:
-	int pageSize_;
 	std::string keyId_;
 	int pageNumber_;
+	int pageSize_;
 };
 } // namespace Model
 } // namespace Kms

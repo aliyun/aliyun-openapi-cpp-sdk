@@ -25,15 +25,6 @@ ListSecretsRequest::ListSecretsRequest()
 
 ListSecretsRequest::~ListSecretsRequest() {}
 
-int ListSecretsRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void ListSecretsRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
-}
-
 std::string ListSecretsRequest::getFilters() const {
   return filters_;
 }
@@ -43,15 +34,6 @@ void ListSecretsRequest::setFilters(const std::string &filters) {
   setParameter(std::string("Filters"), filters);
 }
 
-std::string ListSecretsRequest::getFetchTags() const {
-  return fetchTags_;
-}
-
-void ListSecretsRequest::setFetchTags(const std::string &fetchTags) {
-  fetchTags_ = fetchTags;
-  setParameter(std::string("FetchTags"), fetchTags);
-}
-
 int ListSecretsRequest::getPageNumber() const {
   return pageNumber_;
 }
@@ -59,5 +41,23 @@ int ListSecretsRequest::getPageNumber() const {
 void ListSecretsRequest::setPageNumber(int pageNumber) {
   pageNumber_ = pageNumber;
   setParameter(std::string("PageNumber"), std::to_string(pageNumber));
+}
+
+int ListSecretsRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void ListSecretsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string ListSecretsRequest::getFetchTags() const {
+  return fetchTags_;
+}
+
+void ListSecretsRequest::setFetchTags(const std::string &fetchTags) {
+  fetchTags_ = fetchTags;
+  setParameter(std::string("FetchTags"), fetchTags);
 }
 

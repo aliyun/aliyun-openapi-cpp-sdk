@@ -25,15 +25,6 @@ EncryptRequest::EncryptRequest()
 
 EncryptRequest::~EncryptRequest() {}
 
-std::string EncryptRequest::getEncryptionContext() const {
-  return encryptionContext_;
-}
-
-void EncryptRequest::setEncryptionContext(const std::string &encryptionContext) {
-  encryptionContext_ = encryptionContext;
-  setParameter(std::string("EncryptionContext"), encryptionContext);
-}
-
 std::string EncryptRequest::getKeyId() const {
   return keyId_;
 }
@@ -50,5 +41,14 @@ std::string EncryptRequest::getPlaintext() const {
 void EncryptRequest::setPlaintext(const std::string &plaintext) {
   plaintext_ = plaintext;
   setParameter(std::string("Plaintext"), plaintext);
+}
+
+std::string EncryptRequest::getEncryptionContext() const {
+  return encryptionContext_;
+}
+
+void EncryptRequest::setEncryptionContext(const std::string &encryptionContext) {
+  encryptionContext_ = encryptionContext;
+  setParameter(std::string("EncryptionContext"), encryptionContext);
 }
 

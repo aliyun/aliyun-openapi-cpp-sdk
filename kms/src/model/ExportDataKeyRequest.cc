@@ -25,6 +25,15 @@ ExportDataKeyRequest::ExportDataKeyRequest()
 
 ExportDataKeyRequest::~ExportDataKeyRequest() {}
 
+std::string ExportDataKeyRequest::getPublicKeyBlob() const {
+  return publicKeyBlob_;
+}
+
+void ExportDataKeyRequest::setPublicKeyBlob(const std::string &publicKeyBlob) {
+  publicKeyBlob_ = publicKeyBlob;
+  setParameter(std::string("PublicKeyBlob"), publicKeyBlob);
+}
+
 std::string ExportDataKeyRequest::getEncryptionContext() const {
   return encryptionContext_;
 }
@@ -50,15 +59,6 @@ std::string ExportDataKeyRequest::getCiphertextBlob() const {
 void ExportDataKeyRequest::setCiphertextBlob(const std::string &ciphertextBlob) {
   ciphertextBlob_ = ciphertextBlob;
   setParameter(std::string("CiphertextBlob"), ciphertextBlob);
-}
-
-std::string ExportDataKeyRequest::getPublicKeyBlob() const {
-  return publicKeyBlob_;
-}
-
-void ExportDataKeyRequest::setPublicKeyBlob(const std::string &publicKeyBlob) {
-  publicKeyBlob_ = publicKeyBlob;
-  setParameter(std::string("PublicKeyBlob"), publicKeyBlob);
 }
 
 std::string ExportDataKeyRequest::getWrappingKeySpec() const {

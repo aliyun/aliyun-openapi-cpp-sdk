@@ -43,15 +43,6 @@ void TagResourceRequest::setKeyId(const std::string &keyId) {
   setParameter(std::string("KeyId"), keyId);
 }
 
-std::string TagResourceRequest::getSecretName() const {
-  return secretName_;
-}
-
-void TagResourceRequest::setSecretName(const std::string &secretName) {
-  secretName_ = secretName;
-  setParameter(std::string("SecretName"), secretName);
-}
-
 std::string TagResourceRequest::getTags() const {
   return tags_;
 }
@@ -59,5 +50,14 @@ std::string TagResourceRequest::getTags() const {
 void TagResourceRequest::setTags(const std::string &tags) {
   tags_ = tags;
   setParameter(std::string("Tags"), tags);
+}
+
+std::string TagResourceRequest::getSecretName() const {
+  return secretName_;
+}
+
+void TagResourceRequest::setSecretName(const std::string &secretName) {
+  secretName_ = secretName;
+  setParameter(std::string("SecretName"), secretName);
 }
 

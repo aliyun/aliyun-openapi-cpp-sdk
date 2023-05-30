@@ -25,24 +25,6 @@ CreateCertificateRequest::CreateCertificateRequest()
 
 CreateCertificateRequest::~CreateCertificateRequest() {}
 
-std::string CreateCertificateRequest::getProtectionLevel() const {
-  return protectionLevel_;
-}
-
-void CreateCertificateRequest::setProtectionLevel(const std::string &protectionLevel) {
-  protectionLevel_ = protectionLevel;
-  setParameter(std::string("ProtectionLevel"), protectionLevel);
-}
-
-bool CreateCertificateRequest::getExportablePrivateKey() const {
-  return exportablePrivateKey_;
-}
-
-void CreateCertificateRequest::setExportablePrivateKey(bool exportablePrivateKey) {
-  exportablePrivateKey_ = exportablePrivateKey;
-  setParameter(std::string("ExportablePrivateKey"), exportablePrivateKey ? "true" : "false");
-}
-
 std::string CreateCertificateRequest::getClientToken() const {
   return clientToken_;
 }
@@ -61,15 +43,6 @@ void CreateCertificateRequest::setSubject(const std::string &subject) {
   setParameter(std::string("Subject"), subject);
 }
 
-std::map<std::string, std::string> CreateCertificateRequest::getSubjectAlternativeNames() const {
-  return subjectAlternativeNames_;
-}
-
-void CreateCertificateRequest::setSubjectAlternativeNames(std::map<std::string, std::string> subjectAlternativeNames) {
-  subjectAlternativeNames_ = subjectAlternativeNames;
-  setParameter(std::string("SubjectAlternativeNames"), subjectAlternativeNames);
-}
-
 std::string CreateCertificateRequest::getKeySpec() const {
   return keySpec_;
 }
@@ -77,5 +50,32 @@ std::string CreateCertificateRequest::getKeySpec() const {
 void CreateCertificateRequest::setKeySpec(const std::string &keySpec) {
   keySpec_ = keySpec;
   setParameter(std::string("KeySpec"), keySpec);
+}
+
+std::string CreateCertificateRequest::getProtectionLevel() const {
+  return protectionLevel_;
+}
+
+void CreateCertificateRequest::setProtectionLevel(const std::string &protectionLevel) {
+  protectionLevel_ = protectionLevel;
+  setParameter(std::string("ProtectionLevel"), protectionLevel);
+}
+
+bool CreateCertificateRequest::getExportablePrivateKey() const {
+  return exportablePrivateKey_;
+}
+
+void CreateCertificateRequest::setExportablePrivateKey(bool exportablePrivateKey) {
+  exportablePrivateKey_ = exportablePrivateKey;
+  setParameter(std::string("ExportablePrivateKey"), exportablePrivateKey ? "true" : "false");
+}
+
+std::map<std::string, std::string> CreateCertificateRequest::getSubjectAlternativeNames() const {
+  return subjectAlternativeNames_;
+}
+
+void CreateCertificateRequest::setSubjectAlternativeNames(std::map<std::string, std::string> subjectAlternativeNames) {
+  subjectAlternativeNames_ = subjectAlternativeNames;
+  setParameter(std::string("SubjectAlternativeNames"), subjectAlternativeNames);
 }
 

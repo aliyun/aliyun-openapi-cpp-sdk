@@ -25,15 +25,6 @@ CertificatePublicKeyVerifyRequest::CertificatePublicKeyVerifyRequest()
 
 CertificatePublicKeyVerifyRequest::~CertificatePublicKeyVerifyRequest() {}
 
-std::string CertificatePublicKeyVerifyRequest::getSignatureValue() const {
-  return signatureValue_;
-}
-
-void CertificatePublicKeyVerifyRequest::setSignatureValue(const std::string &signatureValue) {
-  signatureValue_ = signatureValue;
-  setParameter(std::string("SignatureValue"), signatureValue);
-}
-
 std::string CertificatePublicKeyVerifyRequest::getMessageType() const {
   return messageType_;
 }
@@ -59,6 +50,15 @@ std::string CertificatePublicKeyVerifyRequest::getMessage() const {
 void CertificatePublicKeyVerifyRequest::setMessage(const std::string &message) {
   message_ = message;
   setParameter(std::string("Message"), message);
+}
+
+std::string CertificatePublicKeyVerifyRequest::getSignatureValue() const {
+  return signatureValue_;
+}
+
+void CertificatePublicKeyVerifyRequest::setSignatureValue(const std::string &signatureValue) {
+  signatureValue_ = signatureValue;
+  setParameter(std::string("SignatureValue"), signatureValue);
 }
 
 std::string CertificatePublicKeyVerifyRequest::getAlgorithm() const {

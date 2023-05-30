@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_KMS_MODEL_ASYMMETRICVERIFYREQUEST_H_
-#define ALIBABACLOUD_KMS_MODEL_ASYMMETRICVERIFYREQUEST_H_
+#ifndef ALIBABACLOUD_KMS_MODEL_UNTAGRESOURCESREQUEST_H_
+#define ALIBABACLOUD_KMS_MODEL_UNTAGRESOURCESREQUEST_H_
 
 #include <alibabacloud/kms/KmsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,29 +26,29 @@
 namespace AlibabaCloud {
 namespace Kms {
 namespace Model {
-class ALIBABACLOUD_KMS_EXPORT AsymmetricVerifyRequest : public RpcServiceRequest {
+class ALIBABACLOUD_KMS_EXPORT UntagResourcesRequest : public RpcServiceRequest {
 public:
-	AsymmetricVerifyRequest();
-	~AsymmetricVerifyRequest();
-	std::string getKeyVersionId() const;
-	void setKeyVersionId(const std::string &keyVersionId);
-	std::string getKeyId() const;
-	void setKeyId(const std::string &keyId);
-	std::string getDigest() const;
-	void setDigest(const std::string &digest);
-	std::string getValue() const;
-	void setValue(const std::string &value);
-	std::string getAlgorithm() const;
-	void setAlgorithm(const std::string &algorithm);
+	UntagResourcesRequest();
+	~UntagResourcesRequest();
+	bool getAll() const;
+	void setAll(bool all);
+	std::vector<std::string> getResourceId() const;
+	void setResourceId(const std::vector<std::string> &resourceId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::vector<std::string> getTagKey() const;
+	void setTagKey(const std::vector<std::string> &tagKey);
 
 private:
-	std::string keyVersionId_;
-	std::string keyId_;
-	std::string digest_;
-	std::string value_;
-	std::string algorithm_;
+	bool all_;
+	std::vector<std::string> resourceId_;
+	std::string resourceType_;
+	std::string regionId_;
+	std::vector<std::string> tagKey_;
 };
 } // namespace Model
 } // namespace Kms
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_KMS_MODEL_ASYMMETRICVERIFYREQUEST_H_
+#endif // !ALIBABACLOUD_KMS_MODEL_UNTAGRESOURCESREQUEST_H_
