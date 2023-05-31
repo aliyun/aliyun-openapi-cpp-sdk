@@ -38,6 +38,8 @@
 #include "model/DetectKneeKeypointXRayResult.h"
 #include "model/DetectKneeXRayRequest.h"
 #include "model/DetectKneeXRayResult.h"
+#include "model/DetectLiverSteatosisRequest.h"
+#include "model/DetectLiverSteatosisResult.h"
 #include "model/DetectLungNoduleRequest.h"
 #include "model/DetectLungNoduleResult.h"
 #include "model/DetectLymphRequest.h"
@@ -54,14 +56,22 @@
 #include "model/FeedbackSessionResult.h"
 #include "model/GetAsyncJobResultRequest.h"
 #include "model/GetAsyncJobResultResult.h"
+#include "model/PredictCVDRequest.h"
+#include "model/PredictCVDResult.h"
 #include "model/RunCTRegistrationRequest.h"
 #include "model/RunCTRegistrationResult.h"
 #include "model/RunMedQARequest.h"
 #include "model/RunMedQAResult.h"
+#include "model/ScreenCRCRequest.h"
+#include "model/ScreenCRCResult.h"
 #include "model/ScreenChestCTRequest.h"
 #include "model/ScreenChestCTResult.h"
 #include "model/ScreenECRequest.h"
 #include "model/ScreenECResult.h"
+#include "model/ScreenGCRequest.h"
+#include "model/ScreenGCResult.h"
+#include "model/ScreenLCRequest.h"
+#include "model/ScreenLCResult.h"
 #include "model/SegmentLymphNodeRequest.h"
 #include "model/SegmentLymphNodeResult.h"
 #include "model/SegmentOARRequest.h"
@@ -103,6 +113,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DetectKneeXRayResult> DetectKneeXRayOutcome;
 			typedef std::future<DetectKneeXRayOutcome> DetectKneeXRayOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::DetectKneeXRayRequest&, const DetectKneeXRayOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectKneeXRayAsyncHandler;
+			typedef Outcome<Error, Model::DetectLiverSteatosisResult> DetectLiverSteatosisOutcome;
+			typedef std::future<DetectLiverSteatosisOutcome> DetectLiverSteatosisOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::DetectLiverSteatosisRequest&, const DetectLiverSteatosisOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectLiverSteatosisAsyncHandler;
 			typedef Outcome<Error, Model::DetectLungNoduleResult> DetectLungNoduleOutcome;
 			typedef std::future<DetectLungNoduleOutcome> DetectLungNoduleOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::DetectLungNoduleRequest&, const DetectLungNoduleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DetectLungNoduleAsyncHandler;
@@ -127,18 +140,30 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetAsyncJobResultResult> GetAsyncJobResultOutcome;
 			typedef std::future<GetAsyncJobResultOutcome> GetAsyncJobResultOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::GetAsyncJobResultRequest&, const GetAsyncJobResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetAsyncJobResultAsyncHandler;
+			typedef Outcome<Error, Model::PredictCVDResult> PredictCVDOutcome;
+			typedef std::future<PredictCVDOutcome> PredictCVDOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::PredictCVDRequest&, const PredictCVDOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> PredictCVDAsyncHandler;
 			typedef Outcome<Error, Model::RunCTRegistrationResult> RunCTRegistrationOutcome;
 			typedef std::future<RunCTRegistrationOutcome> RunCTRegistrationOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::RunCTRegistrationRequest&, const RunCTRegistrationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunCTRegistrationAsyncHandler;
 			typedef Outcome<Error, Model::RunMedQAResult> RunMedQAOutcome;
 			typedef std::future<RunMedQAOutcome> RunMedQAOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::RunMedQARequest&, const RunMedQAOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunMedQAAsyncHandler;
+			typedef Outcome<Error, Model::ScreenCRCResult> ScreenCRCOutcome;
+			typedef std::future<ScreenCRCOutcome> ScreenCRCOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::ScreenCRCRequest&, const ScreenCRCOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ScreenCRCAsyncHandler;
 			typedef Outcome<Error, Model::ScreenChestCTResult> ScreenChestCTOutcome;
 			typedef std::future<ScreenChestCTOutcome> ScreenChestCTOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::ScreenChestCTRequest&, const ScreenChestCTOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ScreenChestCTAsyncHandler;
 			typedef Outcome<Error, Model::ScreenECResult> ScreenECOutcome;
 			typedef std::future<ScreenECOutcome> ScreenECOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::ScreenECRequest&, const ScreenECOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ScreenECAsyncHandler;
+			typedef Outcome<Error, Model::ScreenGCResult> ScreenGCOutcome;
+			typedef std::future<ScreenGCOutcome> ScreenGCOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::ScreenGCRequest&, const ScreenGCOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ScreenGCAsyncHandler;
+			typedef Outcome<Error, Model::ScreenLCResult> ScreenLCOutcome;
+			typedef std::future<ScreenLCOutcome> ScreenLCOutcomeCallable;
+			typedef std::function<void(const ImageprocessClient*, const Model::ScreenLCRequest&, const ScreenLCOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ScreenLCAsyncHandler;
 			typedef Outcome<Error, Model::SegmentLymphNodeResult> SegmentLymphNodeOutcome;
 			typedef std::future<SegmentLymphNodeOutcome> SegmentLymphNodeOutcomeCallable;
 			typedef std::function<void(const ImageprocessClient*, const Model::SegmentLymphNodeRequest&, const SegmentLymphNodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SegmentLymphNodeAsyncHandler;
@@ -180,6 +205,9 @@ namespace AlibabaCloud
 			DetectKneeXRayOutcome detectKneeXRay(const Model::DetectKneeXRayRequest &request)const;
 			void detectKneeXRayAsync(const Model::DetectKneeXRayRequest& request, const DetectKneeXRayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectKneeXRayOutcomeCallable detectKneeXRayCallable(const Model::DetectKneeXRayRequest& request) const;
+			DetectLiverSteatosisOutcome detectLiverSteatosis(const Model::DetectLiverSteatosisRequest &request)const;
+			void detectLiverSteatosisAsync(const Model::DetectLiverSteatosisRequest& request, const DetectLiverSteatosisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DetectLiverSteatosisOutcomeCallable detectLiverSteatosisCallable(const Model::DetectLiverSteatosisRequest& request) const;
 			DetectLungNoduleOutcome detectLungNodule(const Model::DetectLungNoduleRequest &request)const;
 			void detectLungNoduleAsync(const Model::DetectLungNoduleRequest& request, const DetectLungNoduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DetectLungNoduleOutcomeCallable detectLungNoduleCallable(const Model::DetectLungNoduleRequest& request) const;
@@ -204,18 +232,30 @@ namespace AlibabaCloud
 			GetAsyncJobResultOutcome getAsyncJobResult(const Model::GetAsyncJobResultRequest &request)const;
 			void getAsyncJobResultAsync(const Model::GetAsyncJobResultRequest& request, const GetAsyncJobResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetAsyncJobResultOutcomeCallable getAsyncJobResultCallable(const Model::GetAsyncJobResultRequest& request) const;
+			PredictCVDOutcome predictCVD(const Model::PredictCVDRequest &request)const;
+			void predictCVDAsync(const Model::PredictCVDRequest& request, const PredictCVDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			PredictCVDOutcomeCallable predictCVDCallable(const Model::PredictCVDRequest& request) const;
 			RunCTRegistrationOutcome runCTRegistration(const Model::RunCTRegistrationRequest &request)const;
 			void runCTRegistrationAsync(const Model::RunCTRegistrationRequest& request, const RunCTRegistrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RunCTRegistrationOutcomeCallable runCTRegistrationCallable(const Model::RunCTRegistrationRequest& request) const;
 			RunMedQAOutcome runMedQA(const Model::RunMedQARequest &request)const;
 			void runMedQAAsync(const Model::RunMedQARequest& request, const RunMedQAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RunMedQAOutcomeCallable runMedQACallable(const Model::RunMedQARequest& request) const;
+			ScreenCRCOutcome screenCRC(const Model::ScreenCRCRequest &request)const;
+			void screenCRCAsync(const Model::ScreenCRCRequest& request, const ScreenCRCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ScreenCRCOutcomeCallable screenCRCCallable(const Model::ScreenCRCRequest& request) const;
 			ScreenChestCTOutcome screenChestCT(const Model::ScreenChestCTRequest &request)const;
 			void screenChestCTAsync(const Model::ScreenChestCTRequest& request, const ScreenChestCTAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ScreenChestCTOutcomeCallable screenChestCTCallable(const Model::ScreenChestCTRequest& request) const;
 			ScreenECOutcome screenEC(const Model::ScreenECRequest &request)const;
 			void screenECAsync(const Model::ScreenECRequest& request, const ScreenECAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ScreenECOutcomeCallable screenECCallable(const Model::ScreenECRequest& request) const;
+			ScreenGCOutcome screenGC(const Model::ScreenGCRequest &request)const;
+			void screenGCAsync(const Model::ScreenGCRequest& request, const ScreenGCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ScreenGCOutcomeCallable screenGCCallable(const Model::ScreenGCRequest& request) const;
+			ScreenLCOutcome screenLC(const Model::ScreenLCRequest &request)const;
+			void screenLCAsync(const Model::ScreenLCRequest& request, const ScreenLCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ScreenLCOutcomeCallable screenLCCallable(const Model::ScreenLCRequest& request) const;
 			SegmentLymphNodeOutcome segmentLymphNode(const Model::SegmentLymphNodeRequest &request)const;
 			void segmentLymphNodeAsync(const Model::SegmentLymphNodeRequest& request, const SegmentLymphNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SegmentLymphNodeOutcomeCallable segmentLymphNodeCallable(const Model::SegmentLymphNodeRequest& request) const;

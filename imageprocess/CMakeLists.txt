@@ -37,6 +37,8 @@ set(imageprocess_public_header_model
 	include/alibabacloud/imageprocess/model/DetectKneeKeypointXRayResult.h
 	include/alibabacloud/imageprocess/model/DetectKneeXRayRequest.h
 	include/alibabacloud/imageprocess/model/DetectKneeXRayResult.h
+	include/alibabacloud/imageprocess/model/DetectLiverSteatosisRequest.h
+	include/alibabacloud/imageprocess/model/DetectLiverSteatosisResult.h
 	include/alibabacloud/imageprocess/model/DetectLungNoduleRequest.h
 	include/alibabacloud/imageprocess/model/DetectLungNoduleResult.h
 	include/alibabacloud/imageprocess/model/DetectLymphRequest.h
@@ -53,14 +55,22 @@ set(imageprocess_public_header_model
 	include/alibabacloud/imageprocess/model/FeedbackSessionResult.h
 	include/alibabacloud/imageprocess/model/GetAsyncJobResultRequest.h
 	include/alibabacloud/imageprocess/model/GetAsyncJobResultResult.h
+	include/alibabacloud/imageprocess/model/PredictCVDRequest.h
+	include/alibabacloud/imageprocess/model/PredictCVDResult.h
 	include/alibabacloud/imageprocess/model/RunCTRegistrationRequest.h
 	include/alibabacloud/imageprocess/model/RunCTRegistrationResult.h
 	include/alibabacloud/imageprocess/model/RunMedQARequest.h
 	include/alibabacloud/imageprocess/model/RunMedQAResult.h
+	include/alibabacloud/imageprocess/model/ScreenCRCRequest.h
+	include/alibabacloud/imageprocess/model/ScreenCRCResult.h
 	include/alibabacloud/imageprocess/model/ScreenChestCTRequest.h
 	include/alibabacloud/imageprocess/model/ScreenChestCTResult.h
 	include/alibabacloud/imageprocess/model/ScreenECRequest.h
 	include/alibabacloud/imageprocess/model/ScreenECResult.h
+	include/alibabacloud/imageprocess/model/ScreenGCRequest.h
+	include/alibabacloud/imageprocess/model/ScreenGCResult.h
+	include/alibabacloud/imageprocess/model/ScreenLCRequest.h
+	include/alibabacloud/imageprocess/model/ScreenLCResult.h
 	include/alibabacloud/imageprocess/model/SegmentLymphNodeRequest.h
 	include/alibabacloud/imageprocess/model/SegmentLymphNodeResult.h
 	include/alibabacloud/imageprocess/model/SegmentOARRequest.h
@@ -88,6 +98,8 @@ set(imageprocess_src
 	src/model/DetectKneeKeypointXRayResult.cc
 	src/model/DetectKneeXRayRequest.cc
 	src/model/DetectKneeXRayResult.cc
+	src/model/DetectLiverSteatosisRequest.cc
+	src/model/DetectLiverSteatosisResult.cc
 	src/model/DetectLungNoduleRequest.cc
 	src/model/DetectLungNoduleResult.cc
 	src/model/DetectLymphRequest.cc
@@ -104,14 +116,22 @@ set(imageprocess_src
 	src/model/FeedbackSessionResult.cc
 	src/model/GetAsyncJobResultRequest.cc
 	src/model/GetAsyncJobResultResult.cc
+	src/model/PredictCVDRequest.cc
+	src/model/PredictCVDResult.cc
 	src/model/RunCTRegistrationRequest.cc
 	src/model/RunCTRegistrationResult.cc
 	src/model/RunMedQARequest.cc
 	src/model/RunMedQAResult.cc
+	src/model/ScreenCRCRequest.cc
+	src/model/ScreenCRCResult.cc
 	src/model/ScreenChestCTRequest.cc
 	src/model/ScreenChestCTResult.cc
 	src/model/ScreenECRequest.cc
 	src/model/ScreenECResult.cc
+	src/model/ScreenGCRequest.cc
+	src/model/ScreenGCResult.cc
+	src/model/ScreenLCRequest.cc
+	src/model/ScreenLCResult.cc
 	src/model/SegmentLymphNodeRequest.cc
 	src/model/SegmentLymphNodeResult.cc
 	src/model/SegmentOARRequest.cc

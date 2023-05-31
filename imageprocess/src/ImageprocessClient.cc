@@ -339,6 +339,42 @@ ImageprocessClient::DetectKneeXRayOutcomeCallable ImageprocessClient::detectKnee
 	return task->get_future();
 }
 
+ImageprocessClient::DetectLiverSteatosisOutcome ImageprocessClient::detectLiverSteatosis(const DetectLiverSteatosisRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DetectLiverSteatosisOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DetectLiverSteatosisOutcome(DetectLiverSteatosisResult(outcome.result()));
+	else
+		return DetectLiverSteatosisOutcome(outcome.error());
+}
+
+void ImageprocessClient::detectLiverSteatosisAsync(const DetectLiverSteatosisRequest& request, const DetectLiverSteatosisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, detectLiverSteatosis(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::DetectLiverSteatosisOutcomeCallable ImageprocessClient::detectLiverSteatosisCallable(const DetectLiverSteatosisRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DetectLiverSteatosisOutcome()>>(
+			[this, request]()
+			{
+			return this->detectLiverSteatosis(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageprocessClient::DetectLungNoduleOutcome ImageprocessClient::detectLungNodule(const DetectLungNoduleRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -627,6 +663,42 @@ ImageprocessClient::GetAsyncJobResultOutcomeCallable ImageprocessClient::getAsyn
 	return task->get_future();
 }
 
+ImageprocessClient::PredictCVDOutcome ImageprocessClient::predictCVD(const PredictCVDRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return PredictCVDOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return PredictCVDOutcome(PredictCVDResult(outcome.result()));
+	else
+		return PredictCVDOutcome(outcome.error());
+}
+
+void ImageprocessClient::predictCVDAsync(const PredictCVDRequest& request, const PredictCVDAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, predictCVD(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::PredictCVDOutcomeCallable ImageprocessClient::predictCVDCallable(const PredictCVDRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<PredictCVDOutcome()>>(
+			[this, request]()
+			{
+			return this->predictCVD(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageprocessClient::RunCTRegistrationOutcome ImageprocessClient::runCTRegistration(const RunCTRegistrationRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -699,6 +771,42 @@ ImageprocessClient::RunMedQAOutcomeCallable ImageprocessClient::runMedQACallable
 	return task->get_future();
 }
 
+ImageprocessClient::ScreenCRCOutcome ImageprocessClient::screenCRC(const ScreenCRCRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ScreenCRCOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ScreenCRCOutcome(ScreenCRCResult(outcome.result()));
+	else
+		return ScreenCRCOutcome(outcome.error());
+}
+
+void ImageprocessClient::screenCRCAsync(const ScreenCRCRequest& request, const ScreenCRCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, screenCRC(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::ScreenCRCOutcomeCallable ImageprocessClient::screenCRCCallable(const ScreenCRCRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ScreenCRCOutcome()>>(
+			[this, request]()
+			{
+			return this->screenCRC(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ImageprocessClient::ScreenChestCTOutcome ImageprocessClient::screenChestCT(const ScreenChestCTRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -765,6 +873,78 @@ ImageprocessClient::ScreenECOutcomeCallable ImageprocessClient::screenECCallable
 			[this, request]()
 			{
 			return this->screenEC(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImageprocessClient::ScreenGCOutcome ImageprocessClient::screenGC(const ScreenGCRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ScreenGCOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ScreenGCOutcome(ScreenGCResult(outcome.result()));
+	else
+		return ScreenGCOutcome(outcome.error());
+}
+
+void ImageprocessClient::screenGCAsync(const ScreenGCRequest& request, const ScreenGCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, screenGC(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::ScreenGCOutcomeCallable ImageprocessClient::screenGCCallable(const ScreenGCRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ScreenGCOutcome()>>(
+			[this, request]()
+			{
+			return this->screenGC(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+ImageprocessClient::ScreenLCOutcome ImageprocessClient::screenLC(const ScreenLCRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ScreenLCOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ScreenLCOutcome(ScreenLCResult(outcome.result()));
+	else
+		return ScreenLCOutcome(outcome.error());
+}
+
+void ImageprocessClient::screenLCAsync(const ScreenLCRequest& request, const ScreenLCAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, screenLC(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ImageprocessClient::ScreenLCOutcomeCallable ImageprocessClient::screenLCCallable(const ScreenLCRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ScreenLCOutcome()>>(
+			[this, request]()
+			{
+			return this->screenLC(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
