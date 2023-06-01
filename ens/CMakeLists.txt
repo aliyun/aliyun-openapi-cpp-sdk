@@ -29,6 +29,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/AddDeviceInternetPortResult.h
 	include/alibabacloud/ens/model/AddNetworkInterfaceToInstanceRequest.h
 	include/alibabacloud/ens/model/AddNetworkInterfaceToInstanceResult.h
+	include/alibabacloud/ens/model/AddSnatIpForSnatEntryRequest.h
+	include/alibabacloud/ens/model/AddSnatIpForSnatEntryResult.h
 	include/alibabacloud/ens/model/AssignPrivateIpAddressesRequest.h
 	include/alibabacloud/ens/model/AssignPrivateIpAddressesResult.h
 	include/alibabacloud/ens/model/AssociateEnsEipAddressRequest.h
@@ -55,6 +57,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/CreateEipInstanceResult.h
 	include/alibabacloud/ens/model/CreateEnsRouteEntryRequest.h
 	include/alibabacloud/ens/model/CreateEnsRouteEntryResult.h
+	include/alibabacloud/ens/model/CreateEnsSaleControlRequest.h
+	include/alibabacloud/ens/model/CreateEnsSaleControlResult.h
 	include/alibabacloud/ens/model/CreateEnsServiceRequest.h
 	include/alibabacloud/ens/model/CreateEnsServiceResult.h
 	include/alibabacloud/ens/model/CreateEpnInstanceRequest.h
@@ -105,6 +109,10 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DeleteDiskResult.h
 	include/alibabacloud/ens/model/DeleteEnsRouteEntryRequest.h
 	include/alibabacloud/ens/model/DeleteEnsRouteEntryResult.h
+	include/alibabacloud/ens/model/DeleteEnsSaleConditionControlRequest.h
+	include/alibabacloud/ens/model/DeleteEnsSaleConditionControlResult.h
+	include/alibabacloud/ens/model/DeleteEnsSaleControlRequest.h
+	include/alibabacloud/ens/model/DeleteEnsSaleControlResult.h
 	include/alibabacloud/ens/model/DeleteEpnInstanceRequest.h
 	include/alibabacloud/ens/model/DeleteEpnInstanceResult.h
 	include/alibabacloud/ens/model/DeleteFileSystemRequest.h
@@ -131,6 +139,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DeleteSecurityGroupResult.h
 	include/alibabacloud/ens/model/DeleteSnatEntryRequest.h
 	include/alibabacloud/ens/model/DeleteSnatEntryResult.h
+	include/alibabacloud/ens/model/DeleteSnatIpForSnatEntryRequest.h
+	include/alibabacloud/ens/model/DeleteSnatIpForSnatEntryResult.h
 	include/alibabacloud/ens/model/DeleteVSwitchRequest.h
 	include/alibabacloud/ens/model/DeleteVSwitchResult.h
 	include/alibabacloud/ens/model/DescribeAICImagesRequest.h
@@ -169,6 +179,10 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeEipAddressesResult.h
 	include/alibabacloud/ens/model/DescribeElbAvailableResourceInfoRequest.h
 	include/alibabacloud/ens/model/DescribeElbAvailableResourceInfoResult.h
+	include/alibabacloud/ens/model/DescribeEnsCommodityCodeRequest.h
+	include/alibabacloud/ens/model/DescribeEnsCommodityCodeResult.h
+	include/alibabacloud/ens/model/DescribeEnsCommodityModuleCodeRequest.h
+	include/alibabacloud/ens/model/DescribeEnsCommodityModuleCodeResult.h
 	include/alibabacloud/ens/model/DescribeEnsEipAddressesRequest.h
 	include/alibabacloud/ens/model/DescribeEnsEipAddressesResult.h
 	include/alibabacloud/ens/model/DescribeEnsNetDistrictRequest.h
@@ -187,6 +201,12 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeEnsResourceUsageResult.h
 	include/alibabacloud/ens/model/DescribeEnsRouteEntryListRequest.h
 	include/alibabacloud/ens/model/DescribeEnsRouteEntryListResult.h
+	include/alibabacloud/ens/model/DescribeEnsSaleControlRequest.h
+	include/alibabacloud/ens/model/DescribeEnsSaleControlResult.h
+	include/alibabacloud/ens/model/DescribeEnsSaleControlAvailableResourceRequest.h
+	include/alibabacloud/ens/model/DescribeEnsSaleControlAvailableResourceResult.h
+	include/alibabacloud/ens/model/DescribeEnsSaleControlStockRequest.h
+	include/alibabacloud/ens/model/DescribeEnsSaleControlStockResult.h
 	include/alibabacloud/ens/model/DescribeEpnBandWidthDataRequest.h
 	include/alibabacloud/ens/model/DescribeEpnBandWidthDataResult.h
 	include/alibabacloud/ens/model/DescribeEpnBandwitdhByInternetChargeTypeRequest.h
@@ -259,6 +279,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribePrePaidInstanceStockResult.h
 	include/alibabacloud/ens/model/DescribePriceRequest.h
 	include/alibabacloud/ens/model/DescribePriceResult.h
+	include/alibabacloud/ens/model/DescribeRegionBandwidthQuotaRequest.h
+	include/alibabacloud/ens/model/DescribeRegionBandwidthQuotaResult.h
 	include/alibabacloud/ens/model/DescribeRegionIspsRequest.h
 	include/alibabacloud/ens/model/DescribeRegionIspsResult.h
 	include/alibabacloud/ens/model/DescribeRegionResourceRequest.h
@@ -275,6 +297,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/DescribeSelfImagesResult.h
 	include/alibabacloud/ens/model/DescribeServcieScheduleRequest.h
 	include/alibabacloud/ens/model/DescribeServcieScheduleResult.h
+	include/alibabacloud/ens/model/DescribeSnatAttributeRequest.h
+	include/alibabacloud/ens/model/DescribeSnatAttributeResult.h
 	include/alibabacloud/ens/model/DescribeSnatTableEntriesRequest.h
 	include/alibabacloud/ens/model/DescribeSnatTableEntriesResult.h
 	include/alibabacloud/ens/model/DescribeUserBandWidthDataRequest.h
@@ -417,6 +441,8 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/StartInstancesResult.h
 	include/alibabacloud/ens/model/StartLoadBalancerListenerRequest.h
 	include/alibabacloud/ens/model/StartLoadBalancerListenerResult.h
+	include/alibabacloud/ens/model/StartSnatIpForSnatEntryRequest.h
+	include/alibabacloud/ens/model/StartSnatIpForSnatEntryResult.h
 	include/alibabacloud/ens/model/StopEpnInstanceRequest.h
 	include/alibabacloud/ens/model/StopEpnInstanceResult.h
 	include/alibabacloud/ens/model/StopInstanceRequest.h
@@ -425,12 +451,16 @@ set(ens_public_header_model
 	include/alibabacloud/ens/model/StopInstancesResult.h
 	include/alibabacloud/ens/model/StopLoadBalancerListenerRequest.h
 	include/alibabacloud/ens/model/StopLoadBalancerListenerResult.h
+	include/alibabacloud/ens/model/StopSnatIpForSnatEntryRequest.h
+	include/alibabacloud/ens/model/StopSnatIpForSnatEntryResult.h
 	include/alibabacloud/ens/model/UnAssociateEnsEipAddressRequest.h
 	include/alibabacloud/ens/model/UnAssociateEnsEipAddressResult.h
 	include/alibabacloud/ens/model/UnassignPrivateIpAddressesRequest.h
 	include/alibabacloud/ens/model/UnassignPrivateIpAddressesResult.h
 	include/alibabacloud/ens/model/UnassociateNetworkAclRequest.h
 	include/alibabacloud/ens/model/UnassociateNetworkAclResult.h
+	include/alibabacloud/ens/model/UpdateEnsSaleControlRequest.h
+	include/alibabacloud/ens/model/UpdateEnsSaleControlResult.h
 	include/alibabacloud/ens/model/UpgradeAICInstanceImageRequest.h
 	include/alibabacloud/ens/model/UpgradeAICInstanceImageResult.h
 	include/alibabacloud/ens/model/UpgradeApplicationRequest.h
@@ -446,6 +476,8 @@ set(ens_src
 	src/model/AddDeviceInternetPortResult.cc
 	src/model/AddNetworkInterfaceToInstanceRequest.cc
 	src/model/AddNetworkInterfaceToInstanceResult.cc
+	src/model/AddSnatIpForSnatEntryRequest.cc
+	src/model/AddSnatIpForSnatEntryResult.cc
 	src/model/AssignPrivateIpAddressesRequest.cc
 	src/model/AssignPrivateIpAddressesResult.cc
 	src/model/AssociateEnsEipAddressRequest.cc
@@ -472,6 +504,8 @@ set(ens_src
 	src/model/CreateEipInstanceResult.cc
 	src/model/CreateEnsRouteEntryRequest.cc
 	src/model/CreateEnsRouteEntryResult.cc
+	src/model/CreateEnsSaleControlRequest.cc
+	src/model/CreateEnsSaleControlResult.cc
 	src/model/CreateEnsServiceRequest.cc
 	src/model/CreateEnsServiceResult.cc
 	src/model/CreateEpnInstanceRequest.cc
@@ -522,6 +556,10 @@ set(ens_src
 	src/model/DeleteDiskResult.cc
 	src/model/DeleteEnsRouteEntryRequest.cc
 	src/model/DeleteEnsRouteEntryResult.cc
+	src/model/DeleteEnsSaleConditionControlRequest.cc
+	src/model/DeleteEnsSaleConditionControlResult.cc
+	src/model/DeleteEnsSaleControlRequest.cc
+	src/model/DeleteEnsSaleControlResult.cc
 	src/model/DeleteEpnInstanceRequest.cc
 	src/model/DeleteEpnInstanceResult.cc
 	src/model/DeleteFileSystemRequest.cc
@@ -548,6 +586,8 @@ set(ens_src
 	src/model/DeleteSecurityGroupResult.cc
 	src/model/DeleteSnatEntryRequest.cc
 	src/model/DeleteSnatEntryResult.cc
+	src/model/DeleteSnatIpForSnatEntryRequest.cc
+	src/model/DeleteSnatIpForSnatEntryResult.cc
 	src/model/DeleteVSwitchRequest.cc
 	src/model/DeleteVSwitchResult.cc
 	src/model/DescribeAICImagesRequest.cc
@@ -586,6 +626,10 @@ set(ens_src
 	src/model/DescribeEipAddressesResult.cc
 	src/model/DescribeElbAvailableResourceInfoRequest.cc
 	src/model/DescribeElbAvailableResourceInfoResult.cc
+	src/model/DescribeEnsCommodityCodeRequest.cc
+	src/model/DescribeEnsCommodityCodeResult.cc
+	src/model/DescribeEnsCommodityModuleCodeRequest.cc
+	src/model/DescribeEnsCommodityModuleCodeResult.cc
 	src/model/DescribeEnsEipAddressesRequest.cc
 	src/model/DescribeEnsEipAddressesResult.cc
 	src/model/DescribeEnsNetDistrictRequest.cc
@@ -604,6 +648,12 @@ set(ens_src
 	src/model/DescribeEnsResourceUsageResult.cc
 	src/model/DescribeEnsRouteEntryListRequest.cc
 	src/model/DescribeEnsRouteEntryListResult.cc
+	src/model/DescribeEnsSaleControlRequest.cc
+	src/model/DescribeEnsSaleControlResult.cc
+	src/model/DescribeEnsSaleControlAvailableResourceRequest.cc
+	src/model/DescribeEnsSaleControlAvailableResourceResult.cc
+	src/model/DescribeEnsSaleControlStockRequest.cc
+	src/model/DescribeEnsSaleControlStockResult.cc
 	src/model/DescribeEpnBandWidthDataRequest.cc
 	src/model/DescribeEpnBandWidthDataResult.cc
 	src/model/DescribeEpnBandwitdhByInternetChargeTypeRequest.cc
@@ -676,6 +726,8 @@ set(ens_src
 	src/model/DescribePrePaidInstanceStockResult.cc
 	src/model/DescribePriceRequest.cc
 	src/model/DescribePriceResult.cc
+	src/model/DescribeRegionBandwidthQuotaRequest.cc
+	src/model/DescribeRegionBandwidthQuotaResult.cc
 	src/model/DescribeRegionIspsRequest.cc
 	src/model/DescribeRegionIspsResult.cc
 	src/model/DescribeRegionResourceRequest.cc
@@ -692,6 +744,8 @@ set(ens_src
 	src/model/DescribeSelfImagesResult.cc
 	src/model/DescribeServcieScheduleRequest.cc
 	src/model/DescribeServcieScheduleResult.cc
+	src/model/DescribeSnatAttributeRequest.cc
+	src/model/DescribeSnatAttributeResult.cc
 	src/model/DescribeSnatTableEntriesRequest.cc
 	src/model/DescribeSnatTableEntriesResult.cc
 	src/model/DescribeUserBandWidthDataRequest.cc
@@ -834,6 +888,8 @@ set(ens_src
 	src/model/StartInstancesResult.cc
 	src/model/StartLoadBalancerListenerRequest.cc
 	src/model/StartLoadBalancerListenerResult.cc
+	src/model/StartSnatIpForSnatEntryRequest.cc
+	src/model/StartSnatIpForSnatEntryResult.cc
 	src/model/StopEpnInstanceRequest.cc
 	src/model/StopEpnInstanceResult.cc
 	src/model/StopInstanceRequest.cc
@@ -842,12 +898,16 @@ set(ens_src
 	src/model/StopInstancesResult.cc
 	src/model/StopLoadBalancerListenerRequest.cc
 	src/model/StopLoadBalancerListenerResult.cc
+	src/model/StopSnatIpForSnatEntryRequest.cc
+	src/model/StopSnatIpForSnatEntryResult.cc
 	src/model/UnAssociateEnsEipAddressRequest.cc
 	src/model/UnAssociateEnsEipAddressResult.cc
 	src/model/UnassignPrivateIpAddressesRequest.cc
 	src/model/UnassignPrivateIpAddressesResult.cc
 	src/model/UnassociateNetworkAclRequest.cc
 	src/model/UnassociateNetworkAclResult.cc
+	src/model/UpdateEnsSaleControlRequest.cc
+	src/model/UpdateEnsSaleControlResult.cc
 	src/model/UpgradeAICInstanceImageRequest.cc
 	src/model/UpgradeAICInstanceImageResult.cc
 	src/model/UpgradeApplicationRequest.cc

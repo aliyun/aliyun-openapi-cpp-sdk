@@ -53,9 +53,32 @@ void DescribeAICImagesResult::parse(const std::string &payload)
 			imagesObject.status = valueImagesImagesItem["Status"].asString();
 		if(!valueImagesImagesItem["CreationTime"].isNull())
 			imagesObject.creationTime = valueImagesImagesItem["CreationTime"].asString();
+		if(!valueImagesImagesItem["Description"].isNull())
+			imagesObject.description = valueImagesImagesItem["Description"].asString();
 		images_.push_back(imagesObject);
 	}
+	if(!value["PageNumber"].isNull())
+		pageNumber_ = std::stoi(value["PageNumber"].asString());
+	if(!value["PageSize"].isNull())
+		pageSize_ = std::stoi(value["PageSize"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
+}
+
+int DescribeAICImagesResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
+int DescribeAICImagesResult::getPageSize()const
+{
+	return pageSize_;
+}
+
+int DescribeAICImagesResult::getPageNumber()const
+{
+	return pageNumber_;
 }
 
 std::vector<DescribeAICImagesResult::ImagesItem> DescribeAICImagesResult::getImages()const

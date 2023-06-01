@@ -41,6 +41,8 @@ public:
 	void setScheduleAreaLevel(const std::string &scheduleAreaLevel);
 	bool getUniqueSuffix() const;
 	void setUniqueSuffix(bool uniqueSuffix);
+	std::string getInstanceChargeStrategy() const;
+	void setInstanceChargeStrategy(const std::string &instanceChargeStrategy);
 	std::string getSecurityId() const;
 	void setSecurityId(const std::string &securityId);
 	std::string getKeyPairName() const;
@@ -99,6 +101,7 @@ public:
 private:
 	std::string scheduleAreaLevel_;
 	bool uniqueSuffix_;
+	std::string instanceChargeStrategy_;
 	std::string securityId_;
 	std::string keyPairName_;
 	std::string password_;

@@ -34,3 +34,14 @@ void RebootARMServerInstanceRequest::setServerId(const std::string &serverId) {
   setParameter(std::string("ServerId"), serverId);
 }
 
+std::vector<RebootARMServerInstanceRequest::std::string> RebootARMServerInstanceRequest::getServerIds() const {
+  return serverIds_;
+}
+
+void RebootARMServerInstanceRequest::setServerIds(const std::vector<RebootARMServerInstanceRequest::std::string> &serverIds) {
+  serverIds_ = serverIds;
+  for(int dep1 = 0; dep1 != serverIds.size(); dep1++) {
+    setParameter(std::string("ServerIds") + "." + std::to_string(dep1 + 1), serverIds[dep1]);
+  }
+}
+

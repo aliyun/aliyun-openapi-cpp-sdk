@@ -32,9 +32,12 @@ public:
 	~RebootARMServerInstanceRequest();
 	std::string getServerId() const;
 	void setServerId(const std::string &serverId);
+	std::vector<std::string> getServerIds() const;
+	void setServerIds(const std::vector<std::string> &serverIds);
 
 private:
 	std::string serverId_;
+	std::vector<std::string> serverIds_;
 };
 } // namespace Model
 } // namespace Ens

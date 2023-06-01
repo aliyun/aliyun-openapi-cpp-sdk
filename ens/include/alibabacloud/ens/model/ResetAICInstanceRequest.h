@@ -34,10 +34,13 @@ public:
 	void setServerId(const std::string &serverId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
+	std::vector<std::string> getInstanceIds() const;
+	void setInstanceIds(const std::vector<std::string> &instanceIds);
 
 private:
 	std::string serverId_;
 	std::string instanceId_;
+	std::vector<std::string> instanceIds_;
 };
 } // namespace Model
 } // namespace Ens

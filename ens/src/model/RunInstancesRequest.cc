@@ -43,6 +43,15 @@ void RunInstancesRequest::setUniqueSuffix(bool uniqueSuffix) {
   setParameter(std::string("UniqueSuffix"), uniqueSuffix ? "true" : "false");
 }
 
+std::string RunInstancesRequest::getInstanceChargeStrategy() const {
+  return instanceChargeStrategy_;
+}
+
+void RunInstancesRequest::setInstanceChargeStrategy(const std::string &instanceChargeStrategy) {
+  instanceChargeStrategy_ = instanceChargeStrategy;
+  setParameter(std::string("InstanceChargeStrategy"), instanceChargeStrategy);
+}
+
 std::string RunInstancesRequest::getSecurityId() const {
   return securityId_;
 }

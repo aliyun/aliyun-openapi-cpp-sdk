@@ -52,6 +52,8 @@ public:
 	void setInstanceType(const std::string &instanceType);
 	int getAmount() const;
 	void setAmount(int amount);
+	std::string get_NameSpace() const;
+	void set_NameSpace(const std::string &_nameSpace);
 	std::string getPayType() const;
 	void setPayType(const std::string &payType);
 
@@ -67,6 +69,7 @@ private:
 	std::string serverType_;
 	std::string instanceType_;
 	int amount_;
+	std::string _nameSpace_;
 	std::string payType_;
 };
 } // namespace Model

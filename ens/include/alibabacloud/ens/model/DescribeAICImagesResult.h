@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::string user;
+					std::string description;
 					std::string imageId;
 					std::string creationTime;
 					std::string imageUrl;
@@ -45,11 +46,17 @@ namespace AlibabaCloud
 				DescribeAICImagesResult();
 				explicit DescribeAICImagesResult(const std::string &payload);
 				~DescribeAICImagesResult();
+				int getTotalCount()const;
+				int getPageSize()const;
+				int getPageNumber()const;
 				std::vector<ImagesItem> getImages()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				int totalCount_;
+				int pageSize_;
+				int pageNumber_;
 				std::vector<ImagesItem> images_;
 
 			};

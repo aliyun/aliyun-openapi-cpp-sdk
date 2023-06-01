@@ -195,6 +195,42 @@ EnsClient::AddNetworkInterfaceToInstanceOutcomeCallable EnsClient::addNetworkInt
 	return task->get_future();
 }
 
+EnsClient::AddSnatIpForSnatEntryOutcome EnsClient::addSnatIpForSnatEntry(const AddSnatIpForSnatEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddSnatIpForSnatEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddSnatIpForSnatEntryOutcome(AddSnatIpForSnatEntryResult(outcome.result()));
+	else
+		return AddSnatIpForSnatEntryOutcome(outcome.error());
+}
+
+void EnsClient::addSnatIpForSnatEntryAsync(const AddSnatIpForSnatEntryRequest& request, const AddSnatIpForSnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addSnatIpForSnatEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::AddSnatIpForSnatEntryOutcomeCallable EnsClient::addSnatIpForSnatEntryCallable(const AddSnatIpForSnatEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddSnatIpForSnatEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->addSnatIpForSnatEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::AssignPrivateIpAddressesOutcome EnsClient::assignPrivateIpAddresses(const AssignPrivateIpAddressesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +693,42 @@ EnsClient::CreateEnsRouteEntryOutcomeCallable EnsClient::createEnsRouteEntryCall
 			[this, request]()
 			{
 			return this->createEnsRouteEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::CreateEnsSaleControlOutcome EnsClient::createEnsSaleControl(const CreateEnsSaleControlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateEnsSaleControlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateEnsSaleControlOutcome(CreateEnsSaleControlResult(outcome.result()));
+	else
+		return CreateEnsSaleControlOutcome(outcome.error());
+}
+
+void EnsClient::createEnsSaleControlAsync(const CreateEnsSaleControlRequest& request, const CreateEnsSaleControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createEnsSaleControl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::CreateEnsSaleControlOutcomeCallable EnsClient::createEnsSaleControlCallable(const CreateEnsSaleControlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateEnsSaleControlOutcome()>>(
+			[this, request]()
+			{
+			return this->createEnsSaleControl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1563,6 +1635,78 @@ EnsClient::DeleteEnsRouteEntryOutcomeCallable EnsClient::deleteEnsRouteEntryCall
 	return task->get_future();
 }
 
+EnsClient::DeleteEnsSaleConditionControlOutcome EnsClient::deleteEnsSaleConditionControl(const DeleteEnsSaleConditionControlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteEnsSaleConditionControlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteEnsSaleConditionControlOutcome(DeleteEnsSaleConditionControlResult(outcome.result()));
+	else
+		return DeleteEnsSaleConditionControlOutcome(outcome.error());
+}
+
+void EnsClient::deleteEnsSaleConditionControlAsync(const DeleteEnsSaleConditionControlRequest& request, const DeleteEnsSaleConditionControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteEnsSaleConditionControl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteEnsSaleConditionControlOutcomeCallable EnsClient::deleteEnsSaleConditionControlCallable(const DeleteEnsSaleConditionControlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteEnsSaleConditionControlOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteEnsSaleConditionControl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeleteEnsSaleControlOutcome EnsClient::deleteEnsSaleControl(const DeleteEnsSaleControlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteEnsSaleControlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteEnsSaleControlOutcome(DeleteEnsSaleControlResult(outcome.result()));
+	else
+		return DeleteEnsSaleControlOutcome(outcome.error());
+}
+
+void EnsClient::deleteEnsSaleControlAsync(const DeleteEnsSaleControlRequest& request, const DeleteEnsSaleControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteEnsSaleControl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteEnsSaleControlOutcomeCallable EnsClient::deleteEnsSaleControlCallable(const DeleteEnsSaleControlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteEnsSaleControlOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteEnsSaleControl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DeleteEpnInstanceOutcome EnsClient::deleteEpnInstance(const DeleteEpnInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2025,6 +2169,42 @@ EnsClient::DeleteSnatEntryOutcomeCallable EnsClient::deleteSnatEntryCallable(con
 			[this, request]()
 			{
 			return this->deleteSnatEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DeleteSnatIpForSnatEntryOutcome EnsClient::deleteSnatIpForSnatEntry(const DeleteSnatIpForSnatEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSnatIpForSnatEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSnatIpForSnatEntryOutcome(DeleteSnatIpForSnatEntryResult(outcome.result()));
+	else
+		return DeleteSnatIpForSnatEntryOutcome(outcome.error());
+}
+
+void EnsClient::deleteSnatIpForSnatEntryAsync(const DeleteSnatIpForSnatEntryRequest& request, const DeleteSnatIpForSnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSnatIpForSnatEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DeleteSnatIpForSnatEntryOutcomeCallable EnsClient::deleteSnatIpForSnatEntryCallable(const DeleteSnatIpForSnatEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSnatIpForSnatEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSnatIpForSnatEntry(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2715,6 +2895,78 @@ EnsClient::DescribeElbAvailableResourceInfoOutcomeCallable EnsClient::describeEl
 	return task->get_future();
 }
 
+EnsClient::DescribeEnsCommodityCodeOutcome EnsClient::describeEnsCommodityCode(const DescribeEnsCommodityCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEnsCommodityCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEnsCommodityCodeOutcome(DescribeEnsCommodityCodeResult(outcome.result()));
+	else
+		return DescribeEnsCommodityCodeOutcome(outcome.error());
+}
+
+void EnsClient::describeEnsCommodityCodeAsync(const DescribeEnsCommodityCodeRequest& request, const DescribeEnsCommodityCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEnsCommodityCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeEnsCommodityCodeOutcomeCallable EnsClient::describeEnsCommodityCodeCallable(const DescribeEnsCommodityCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEnsCommodityCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEnsCommodityCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeEnsCommodityModuleCodeOutcome EnsClient::describeEnsCommodityModuleCode(const DescribeEnsCommodityModuleCodeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEnsCommodityModuleCodeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEnsCommodityModuleCodeOutcome(DescribeEnsCommodityModuleCodeResult(outcome.result()));
+	else
+		return DescribeEnsCommodityModuleCodeOutcome(outcome.error());
+}
+
+void EnsClient::describeEnsCommodityModuleCodeAsync(const DescribeEnsCommodityModuleCodeRequest& request, const DescribeEnsCommodityModuleCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEnsCommodityModuleCode(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeEnsCommodityModuleCodeOutcomeCallable EnsClient::describeEnsCommodityModuleCodeCallable(const DescribeEnsCommodityModuleCodeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEnsCommodityModuleCodeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEnsCommodityModuleCode(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeEnsEipAddressesOutcome EnsClient::describeEnsEipAddresses(const DescribeEnsEipAddressesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3033,6 +3285,114 @@ EnsClient::DescribeEnsRouteEntryListOutcomeCallable EnsClient::describeEnsRouteE
 			[this, request]()
 			{
 			return this->describeEnsRouteEntryList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeEnsSaleControlOutcome EnsClient::describeEnsSaleControl(const DescribeEnsSaleControlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEnsSaleControlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEnsSaleControlOutcome(DescribeEnsSaleControlResult(outcome.result()));
+	else
+		return DescribeEnsSaleControlOutcome(outcome.error());
+}
+
+void EnsClient::describeEnsSaleControlAsync(const DescribeEnsSaleControlRequest& request, const DescribeEnsSaleControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEnsSaleControl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeEnsSaleControlOutcomeCallable EnsClient::describeEnsSaleControlCallable(const DescribeEnsSaleControlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEnsSaleControlOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEnsSaleControl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeEnsSaleControlAvailableResourceOutcome EnsClient::describeEnsSaleControlAvailableResource(const DescribeEnsSaleControlAvailableResourceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEnsSaleControlAvailableResourceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEnsSaleControlAvailableResourceOutcome(DescribeEnsSaleControlAvailableResourceResult(outcome.result()));
+	else
+		return DescribeEnsSaleControlAvailableResourceOutcome(outcome.error());
+}
+
+void EnsClient::describeEnsSaleControlAvailableResourceAsync(const DescribeEnsSaleControlAvailableResourceRequest& request, const DescribeEnsSaleControlAvailableResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEnsSaleControlAvailableResource(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeEnsSaleControlAvailableResourceOutcomeCallable EnsClient::describeEnsSaleControlAvailableResourceCallable(const DescribeEnsSaleControlAvailableResourceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEnsSaleControlAvailableResourceOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEnsSaleControlAvailableResource(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeEnsSaleControlStockOutcome EnsClient::describeEnsSaleControlStock(const DescribeEnsSaleControlStockRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeEnsSaleControlStockOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeEnsSaleControlStockOutcome(DescribeEnsSaleControlStockResult(outcome.result()));
+	else
+		return DescribeEnsSaleControlStockOutcome(outcome.error());
+}
+
+void EnsClient::describeEnsSaleControlStockAsync(const DescribeEnsSaleControlStockRequest& request, const DescribeEnsSaleControlStockAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeEnsSaleControlStock(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeEnsSaleControlStockOutcomeCallable EnsClient::describeEnsSaleControlStockCallable(const DescribeEnsSaleControlStockRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeEnsSaleControlStockOutcome()>>(
+			[this, request]()
+			{
+			return this->describeEnsSaleControlStock(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -4335,6 +4695,42 @@ EnsClient::DescribePriceOutcomeCallable EnsClient::describePriceCallable(const D
 	return task->get_future();
 }
 
+EnsClient::DescribeRegionBandwidthQuotaOutcome EnsClient::describeRegionBandwidthQuota(const DescribeRegionBandwidthQuotaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeRegionBandwidthQuotaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeRegionBandwidthQuotaOutcome(DescribeRegionBandwidthQuotaResult(outcome.result()));
+	else
+		return DescribeRegionBandwidthQuotaOutcome(outcome.error());
+}
+
+void EnsClient::describeRegionBandwidthQuotaAsync(const DescribeRegionBandwidthQuotaRequest& request, const DescribeRegionBandwidthQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeRegionBandwidthQuota(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeRegionBandwidthQuotaOutcomeCallable EnsClient::describeRegionBandwidthQuotaCallable(const DescribeRegionBandwidthQuotaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeRegionBandwidthQuotaOutcome()>>(
+			[this, request]()
+			{
+			return this->describeRegionBandwidthQuota(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::DescribeRegionIspsOutcome EnsClient::describeRegionIsps(const DescribeRegionIspsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -4617,6 +5013,42 @@ EnsClient::DescribeServcieScheduleOutcomeCallable EnsClient::describeServcieSche
 			[this, request]()
 			{
 			return this->describeServcieSchedule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::DescribeSnatAttributeOutcome EnsClient::describeSnatAttribute(const DescribeSnatAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSnatAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSnatAttributeOutcome(DescribeSnatAttributeResult(outcome.result()));
+	else
+		return DescribeSnatAttributeOutcome(outcome.error());
+}
+
+void EnsClient::describeSnatAttributeAsync(const DescribeSnatAttributeRequest& request, const DescribeSnatAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSnatAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::DescribeSnatAttributeOutcomeCallable EnsClient::describeSnatAttributeCallable(const DescribeSnatAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSnatAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSnatAttribute(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7179,6 +7611,42 @@ EnsClient::StartLoadBalancerListenerOutcomeCallable EnsClient::startLoadBalancer
 	return task->get_future();
 }
 
+EnsClient::StartSnatIpForSnatEntryOutcome EnsClient::startSnatIpForSnatEntry(const StartSnatIpForSnatEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartSnatIpForSnatEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartSnatIpForSnatEntryOutcome(StartSnatIpForSnatEntryResult(outcome.result()));
+	else
+		return StartSnatIpForSnatEntryOutcome(outcome.error());
+}
+
+void EnsClient::startSnatIpForSnatEntryAsync(const StartSnatIpForSnatEntryRequest& request, const StartSnatIpForSnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startSnatIpForSnatEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::StartSnatIpForSnatEntryOutcomeCallable EnsClient::startSnatIpForSnatEntryCallable(const StartSnatIpForSnatEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartSnatIpForSnatEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->startSnatIpForSnatEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::StopEpnInstanceOutcome EnsClient::stopEpnInstance(const StopEpnInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7323,6 +7791,42 @@ EnsClient::StopLoadBalancerListenerOutcomeCallable EnsClient::stopLoadBalancerLi
 	return task->get_future();
 }
 
+EnsClient::StopSnatIpForSnatEntryOutcome EnsClient::stopSnatIpForSnatEntry(const StopSnatIpForSnatEntryRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopSnatIpForSnatEntryOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopSnatIpForSnatEntryOutcome(StopSnatIpForSnatEntryResult(outcome.result()));
+	else
+		return StopSnatIpForSnatEntryOutcome(outcome.error());
+}
+
+void EnsClient::stopSnatIpForSnatEntryAsync(const StopSnatIpForSnatEntryRequest& request, const StopSnatIpForSnatEntryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopSnatIpForSnatEntry(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::StopSnatIpForSnatEntryOutcomeCallable EnsClient::stopSnatIpForSnatEntryCallable(const StopSnatIpForSnatEntryRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopSnatIpForSnatEntryOutcome()>>(
+			[this, request]()
+			{
+			return this->stopSnatIpForSnatEntry(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 EnsClient::UnAssociateEnsEipAddressOutcome EnsClient::unAssociateEnsEipAddress(const UnAssociateEnsEipAddressRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7425,6 +7929,42 @@ EnsClient::UnassociateNetworkAclOutcomeCallable EnsClient::unassociateNetworkAcl
 			[this, request]()
 			{
 			return this->unassociateNetworkAcl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+EnsClient::UpdateEnsSaleControlOutcome EnsClient::updateEnsSaleControl(const UpdateEnsSaleControlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateEnsSaleControlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateEnsSaleControlOutcome(UpdateEnsSaleControlResult(outcome.result()));
+	else
+		return UpdateEnsSaleControlOutcome(outcome.error());
+}
+
+void EnsClient::updateEnsSaleControlAsync(const UpdateEnsSaleControlRequest& request, const UpdateEnsSaleControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateEnsSaleControl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+EnsClient::UpdateEnsSaleControlOutcomeCallable EnsClient::updateEnsSaleControlCallable(const UpdateEnsSaleControlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateEnsSaleControlOutcome()>>(
+			[this, request]()
+			{
+			return this->updateEnsSaleControl(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

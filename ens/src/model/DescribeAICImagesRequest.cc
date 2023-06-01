@@ -25,6 +25,24 @@ DescribeAICImagesRequest::DescribeAICImagesRequest()
 
 DescribeAICImagesRequest::~DescribeAICImagesRequest() {}
 
+std::string DescribeAICImagesRequest::getImageType() const {
+  return imageType_;
+}
+
+void DescribeAICImagesRequest::setImageType(const std::string &imageType) {
+  imageType_ = imageType;
+  setParameter(std::string("ImageType"), imageType);
+}
+
+std::string DescribeAICImagesRequest::getStatus() const {
+  return status_;
+}
+
+void DescribeAICImagesRequest::setStatus(const std::string &status) {
+  status_ = status;
+  setParameter(std::string("Status"), status);
+}
+
 std::string DescribeAICImagesRequest::getImageId() const {
   return imageId_;
 }
@@ -32,6 +50,24 @@ std::string DescribeAICImagesRequest::getImageId() const {
 void DescribeAICImagesRequest::setImageId(const std::string &imageId) {
   imageId_ = imageId;
   setParameter(std::string("ImageId"), imageId);
+}
+
+std::string DescribeAICImagesRequest::getMaxDate() const {
+  return maxDate_;
+}
+
+void DescribeAICImagesRequest::setMaxDate(const std::string &maxDate) {
+  maxDate_ = maxDate;
+  setParameter(std::string("MaxDate"), maxDate);
+}
+
+std::string DescribeAICImagesRequest::getDescription() const {
+  return description_;
+}
+
+void DescribeAICImagesRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
 }
 
 std::string DescribeAICImagesRequest::getPageNumber() const {
@@ -50,6 +86,15 @@ std::string DescribeAICImagesRequest::getPageSize() const {
 void DescribeAICImagesRequest::setPageSize(const std::string &pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), pageSize);
+}
+
+std::string DescribeAICImagesRequest::getMinDate() const {
+  return minDate_;
+}
+
+void DescribeAICImagesRequest::setMinDate(const std::string &minDate) {
+  minDate_ = minDate;
+  setParameter(std::string("MinDate"), minDate);
 }
 
 std::string DescribeAICImagesRequest::getImageUrl() const {

@@ -124,6 +124,15 @@ void CreateARMServerInstancesRequest::setAmount(int amount) {
   setParameter(std::string("Amount"), std::to_string(amount));
 }
 
+std::string CreateARMServerInstancesRequest::get_NameSpace() const {
+  return _nameSpace_;
+}
+
+void CreateARMServerInstancesRequest::set_NameSpace(const std::string &_nameSpace) {
+  _nameSpace_ = _nameSpace;
+  setParameter(std::string("NameSpace"), _nameSpace);
+}
+
 std::string CreateARMServerInstancesRequest::getPayType() const {
   return payType_;
 }

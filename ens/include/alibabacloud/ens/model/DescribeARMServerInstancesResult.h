@@ -46,19 +46,25 @@ namespace AlibabaCloud
 						NetworkAttributes networkAttributes;
 						std::string instanceId;
 						std::string state;
+						std::string latestAction;
 						std::string imageId;
 						long frequency;
 						std::string spec;
 						std::string resolution;
+						std::string name;
 					};
 					std::string status;
 					std::string serverId;
 					std::string state;
 					std::string expiredTime;
+					std::string latestAction;
 					std::string creationTime;
 					std::string specName;
+					std::string _namespace;
 					std::vector<ServersItem::AICInstancesItem> aICInstances;
+					std::string payType;
 					std::string ensRegionId;
+					std::string name;
 				};
 
 

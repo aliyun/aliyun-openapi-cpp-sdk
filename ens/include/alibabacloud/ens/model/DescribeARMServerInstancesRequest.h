@@ -30,20 +30,50 @@ class ALIBABACLOUD_ENS_EXPORT DescribeARMServerInstancesRequest : public RpcServ
 public:
 	DescribeARMServerInstancesRequest();
 	~DescribeARMServerInstancesRequest();
+	std::vector<std::string> getAICSpecs() const;
+	void setAICSpecs(const std::vector<std::string> &aICSpecs);
+	std::string getOrderByParams() const;
+	void setOrderByParams(const std::string &orderByParams);
+	bool getDescribeAICInstances() const;
+	void setDescribeAICInstances(bool describeAICInstances);
+	std::vector<std::string> getServerIds() const;
+	void setServerIds(const std::vector<std::string> &serverIds);
+	std::string getName() const;
+	void setName(const std::string &name);
+	std::string getMaxDate() const;
+	void setMaxDate(const std::string &maxDate);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
+	std::vector<std::string> getStates() const;
+	void setStates(const std::vector<std::string> &states);
+	std::vector<std::string> getServerSpecs() const;
+	void setServerSpecs(const std::vector<std::string> &serverSpecs);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::vector<std::string> getEnsRegionIds() const;
 	void setEnsRegionIds(const std::vector<std::string> &ensRegionIds);
-	std::vector<std::string> getServerIds() const;
-	void setServerIds(const std::vector<std::string> &serverIds);
+	std::string getMinDate() const;
+	void setMinDate(const std::string &minDate);
+	std::string getLatestAction() const;
+	void setLatestAction(const std::string &latestAction);
+	std::string get_Namespace() const;
+	void set_Namespace(const std::string &_namespace);
 
 private:
+	std::vector<std::string> aICSpecs_;
+	std::string orderByParams_;
+	bool describeAICInstances_;
+	std::vector<std::string> serverIds_;
+	std::string name_;
+	std::string maxDate_;
 	int pageNumber_;
+	std::vector<std::string> states_;
+	std::vector<std::string> serverSpecs_;
 	int pageSize_;
 	std::vector<std::string> ensRegionIds_;
-	std::vector<std::string> serverIds_;
+	std::string minDate_;
+	std::string latestAction_;
+	std::string _namespace_;
 };
 } // namespace Model
 } // namespace Ens

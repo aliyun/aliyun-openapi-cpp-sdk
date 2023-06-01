@@ -57,6 +57,14 @@ void DescribeARMServerInstancesResult::parse(const std::string &payload)
 			serversObject.state = valueServersServersItem["State"].asString();
 		if(!valueServersServersItem["Status"].isNull())
 			serversObject.status = valueServersServersItem["Status"].asString();
+		if(!valueServersServersItem["Namespace"].isNull())
+			serversObject._namespace = valueServersServersItem["Namespace"].asString();
+		if(!valueServersServersItem["Name"].isNull())
+			serversObject.name = valueServersServersItem["Name"].asString();
+		if(!valueServersServersItem["PayType"].isNull())
+			serversObject.payType = valueServersServersItem["PayType"].asString();
+		if(!valueServersServersItem["LatestAction"].isNull())
+			serversObject.latestAction = valueServersServersItem["LatestAction"].asString();
 		auto allAICInstancesNode = valueServersServersItem["AICInstances"]["AICInstancesItem"];
 		for (auto valueServersServersItemAICInstancesAICInstancesItem : allAICInstancesNode)
 		{
@@ -75,6 +83,10 @@ void DescribeARMServerInstancesResult::parse(const std::string &payload)
 				aICInstancesObject.state = valueServersServersItemAICInstancesAICInstancesItem["State"].asString();
 			if(!valueServersServersItemAICInstancesAICInstancesItem["Status"].isNull())
 				aICInstancesObject.status = valueServersServersItemAICInstancesAICInstancesItem["Status"].asString();
+			if(!valueServersServersItemAICInstancesAICInstancesItem["Name"].isNull())
+				aICInstancesObject.name = valueServersServersItemAICInstancesAICInstancesItem["Name"].asString();
+			if(!valueServersServersItemAICInstancesAICInstancesItem["LatestAction"].isNull())
+				aICInstancesObject.latestAction = valueServersServersItemAICInstancesAICInstancesItem["LatestAction"].asString();
 			auto networkAttributesNode = value["NetworkAttributes"];
 			if(!networkAttributesNode["IpAddress"].isNull())
 				aICInstancesObject.networkAttributes.ipAddress = networkAttributesNode["IpAddress"].asString();
