@@ -38,6 +38,8 @@
 #include "model/GetResourceCenterServiceStatusResult.h"
 #include "model/GetResourceConfigurationRequest.h"
 #include "model/GetResourceConfigurationResult.h"
+#include "model/GetResourceCountsRequest.h"
+#include "model/GetResourceCountsResult.h"
 #include "model/ListMultiAccountResourceGroupsRequest.h"
 #include "model/ListMultiAccountResourceGroupsResult.h"
 #include "model/ListMultiAccountTagKeysRequest.h"
@@ -87,6 +89,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetResourceConfigurationResult> GetResourceConfigurationOutcome;
 			typedef std::future<GetResourceConfigurationOutcome> GetResourceConfigurationOutcomeCallable;
 			typedef std::function<void(const ResourceCenterClient*, const Model::GetResourceConfigurationRequest&, const GetResourceConfigurationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceConfigurationAsyncHandler;
+			typedef Outcome<Error, Model::GetResourceCountsResult> GetResourceCountsOutcome;
+			typedef std::future<GetResourceCountsOutcome> GetResourceCountsOutcomeCallable;
+			typedef std::function<void(const ResourceCenterClient*, const Model::GetResourceCountsRequest&, const GetResourceCountsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceCountsAsyncHandler;
 			typedef Outcome<Error, Model::ListMultiAccountResourceGroupsResult> ListMultiAccountResourceGroupsOutcome;
 			typedef std::future<ListMultiAccountResourceGroupsOutcome> ListMultiAccountResourceGroupsOutcomeCallable;
 			typedef std::function<void(const ResourceCenterClient*, const Model::ListMultiAccountResourceGroupsRequest&, const ListMultiAccountResourceGroupsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListMultiAccountResourceGroupsAsyncHandler;
@@ -140,6 +145,9 @@ namespace AlibabaCloud
 			GetResourceConfigurationOutcome getResourceConfiguration(const Model::GetResourceConfigurationRequest &request)const;
 			void getResourceConfigurationAsync(const Model::GetResourceConfigurationRequest& request, const GetResourceConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetResourceConfigurationOutcomeCallable getResourceConfigurationCallable(const Model::GetResourceConfigurationRequest& request) const;
+			GetResourceCountsOutcome getResourceCounts(const Model::GetResourceCountsRequest &request)const;
+			void getResourceCountsAsync(const Model::GetResourceCountsRequest& request, const GetResourceCountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetResourceCountsOutcomeCallable getResourceCountsCallable(const Model::GetResourceCountsRequest& request) const;
 			ListMultiAccountResourceGroupsOutcome listMultiAccountResourceGroups(const Model::ListMultiAccountResourceGroupsRequest &request)const;
 			void listMultiAccountResourceGroupsAsync(const Model::ListMultiAccountResourceGroupsRequest& request, const ListMultiAccountResourceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListMultiAccountResourceGroupsOutcomeCallable listMultiAccountResourceGroupsCallable(const Model::ListMultiAccountResourceGroupsRequest& request) const;

@@ -42,6 +42,15 @@ void ListResourceTypesRequest::setResourceType(const std::string &resourceType) 
   setParameter(std::string("ResourceType"), resourceType);
 }
 
+std::string ListResourceTypesRequest::getScene() const {
+  return scene_;
+}
+
+void ListResourceTypesRequest::setScene(const std::string &scene) {
+  scene_ = scene;
+  setParameter(std::string("Scene"), scene);
+}
+
 std::string ListResourceTypesRequest::getAcceptLanguage() const {
   return acceptLanguage_;
 }

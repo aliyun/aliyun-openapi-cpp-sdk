@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RESOURCECENTER_MODEL_LISTRESOURCETYPESREQUEST_H_
-#define ALIBABACLOUD_RESOURCECENTER_MODEL_LISTRESOURCETYPESREQUEST_H_
+#ifndef ALIBABACLOUD_RESOURCECENTER_MODEL_GETRESOURCECOUNTSREQUEST_H_
+#define ALIBABACLOUD_RESOURCECENTER_MODEL_GETRESOURCECOUNTSREQUEST_H_
 
 #include <alibabacloud/resourcecenter/ResourceCenterExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,24 @@
 namespace AlibabaCloud {
 namespace ResourceCenter {
 namespace Model {
-class ALIBABACLOUD_RESOURCECENTER_EXPORT ListResourceTypesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_RESOURCECENTER_EXPORT GetResourceCountsRequest : public RpcServiceRequest {
 public:
-	ListResourceTypesRequest();
-	~ListResourceTypesRequest();
-	std::vector<std::string> getQuery() const;
-	void setQuery(const std::vector<std::string> &query);
-	std::string getResourceType() const;
-	void setResourceType(const std::string &resourceType);
-	std::string getScene() const;
-	void setScene(const std::string &scene);
-	std::string getAcceptLanguage() const;
-	void setAcceptLanguage(const std::string &acceptLanguage);
+	struct Filter {
+		std::string matchType;
+		std::string key;
+	};
+	GetResourceCountsRequest();
+	~GetResourceCountsRequest();
+	std::vector<Filter> getFilter() const;
+	void setFilter(const std::vector<Filter> &filter);
+	std::string getGroupByKey() const;
+	void setGroupByKey(const std::string &groupByKey);
 
 private:
-	std::vector<std::string> query_;
-	std::string resourceType_;
-	std::string scene_;
-	std::string acceptLanguage_;
+	std::vector<Filter> filter_;
+	std::string groupByKey_;
 };
 } // namespace Model
 } // namespace ResourceCenter
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_RESOURCECENTER_MODEL_LISTRESOURCETYPESREQUEST_H_
+#endif // !ALIBABACLOUD_RESOURCECENTER_MODEL_GETRESOURCECOUNTSREQUEST_H_

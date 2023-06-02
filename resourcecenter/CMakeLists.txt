@@ -37,6 +37,8 @@ set(resourcecenter_public_header_model
 	include/alibabacloud/resourcecenter/model/GetResourceCenterServiceStatusResult.h
 	include/alibabacloud/resourcecenter/model/GetResourceConfigurationRequest.h
 	include/alibabacloud/resourcecenter/model/GetResourceConfigurationResult.h
+	include/alibabacloud/resourcecenter/model/GetResourceCountsRequest.h
+	include/alibabacloud/resourcecenter/model/GetResourceCountsResult.h
 	include/alibabacloud/resourcecenter/model/ListMultiAccountResourceGroupsRequest.h
 	include/alibabacloud/resourcecenter/model/ListMultiAccountResourceGroupsResult.h
 	include/alibabacloud/resourcecenter/model/ListMultiAccountTagKeysRequest.h
@@ -72,6 +74,8 @@ set(resourcecenter_src
 	src/model/GetResourceCenterServiceStatusResult.cc
 	src/model/GetResourceConfigurationRequest.cc
 	src/model/GetResourceConfigurationResult.cc
+	src/model/GetResourceCountsRequest.cc
+	src/model/GetResourceCountsResult.cc
 	src/model/ListMultiAccountResourceGroupsRequest.cc
 	src/model/ListMultiAccountResourceGroupsResult.cc
 	src/model/ListMultiAccountTagKeysRequest.cc

@@ -339,6 +339,42 @@ ResourceCenterClient::GetResourceConfigurationOutcomeCallable ResourceCenterClie
 	return task->get_future();
 }
 
+ResourceCenterClient::GetResourceCountsOutcome ResourceCenterClient::getResourceCounts(const GetResourceCountsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetResourceCountsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetResourceCountsOutcome(GetResourceCountsResult(outcome.result()));
+	else
+		return GetResourceCountsOutcome(outcome.error());
+}
+
+void ResourceCenterClient::getResourceCountsAsync(const GetResourceCountsRequest& request, const GetResourceCountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getResourceCounts(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+ResourceCenterClient::GetResourceCountsOutcomeCallable ResourceCenterClient::getResourceCountsCallable(const GetResourceCountsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetResourceCountsOutcome()>>(
+			[this, request]()
+			{
+			return this->getResourceCounts(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 ResourceCenterClient::ListMultiAccountResourceGroupsOutcome ResourceCenterClient::listMultiAccountResourceGroups(const ListMultiAccountResourceGroupsRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
