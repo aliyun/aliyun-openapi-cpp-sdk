@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_REQUESTSERVICEOFCLOUDDBAREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_REQUESTSERVICEOFCLOUDDBAREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEENDPOINTREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEENDPOINTREQUEST_H_
 
 #include <alibabacloud/rds/RdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,26 +26,35 @@
 namespace AlibabaCloud {
 namespace Rds {
 namespace Model {
-class ALIBABACLOUD_RDS_EXPORT RequestServiceOfCloudDBARequest : public RpcServiceRequest {
+class ALIBABACLOUD_RDS_EXPORT ModifyDBInstanceEndpointRequest : public RpcServiceRequest {
 public:
-	RequestServiceOfCloudDBARequest();
-	~RequestServiceOfCloudDBARequest();
-	std::string getServiceRequestType() const;
-	void setServiceRequestType(const std::string &serviceRequestType);
+	ModifyDBInstanceEndpointRequest();
+	~ModifyDBInstanceEndpointRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
-	std::string getServiceRequestParam() const;
-	void setServiceRequestParam(const std::string &serviceRequestParam);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getDBInstanceEndpointDescription() const;
+	void setDBInstanceEndpointDescription(const std::string &dBInstanceEndpointDescription);
+	std::string getNodeItems() const;
+	void setNodeItems(const std::string &nodeItems);
+	std::string getDBInstanceEndpointId() const;
+	void setDBInstanceEndpointId(const std::string &dBInstanceEndpointId);
 
 private:
-	std::string serviceRequestType_;
+	long resourceOwnerId_;
+	std::string clientToken_;
 	std::string accessKeyId_;
-	std::string serviceRequestParam_;
 	std::string dBInstanceId_;
+	std::string dBInstanceEndpointDescription_;
+	std::string nodeItems_;
+	std::string dBInstanceEndpointId_;
 };
 } // namespace Model
 } // namespace Rds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_RDS_MODEL_REQUESTSERVICEOFCLOUDDBAREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_MODIFYDBINSTANCEENDPOINTREQUEST_H_

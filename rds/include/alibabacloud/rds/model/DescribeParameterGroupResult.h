@@ -51,17 +51,24 @@ namespace AlibabaCloud
 					std::string updateTime;
 					std::string engine;
 				};
+				struct RelatedCustinsInfoItem
+				{
+					std::string appliedTime;
+					std::string dBInstanceName;
+				};
 
 
 				DescribeParameterGroupResult();
 				explicit DescribeParameterGroupResult(const std::string &payload);
 				~DescribeParameterGroupResult();
 				std::vector<ParameterGroup> getParamGroup()const;
+				std::vector<RelatedCustinsInfoItem> getRelatedCustinsInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<ParameterGroup> paramGroup_;
+				std::vector<RelatedCustinsInfoItem> relatedCustinsInfo_;
 
 			};
 		}

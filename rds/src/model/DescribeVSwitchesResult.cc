@@ -67,6 +67,8 @@ void DescribeVSwitchesResult::parse(const std::string &payload)
 			vSwitchsObject.vSwitchId = valueVSwitchsVSwitch["VSwitchId"].asString();
 		if(!valueVSwitchsVSwitch["VSwitchName"].isNull())
 			vSwitchsObject.vSwitchName = valueVSwitchsVSwitch["VSwitchName"].asString();
+		if(!valueVSwitchsVSwitch["AvailableIpAddressCount"].isNull())
+			vSwitchsObject.availableIpAddressCount = valueVSwitchsVSwitch["AvailableIpAddressCount"].asString();
 		vSwitchs_.push_back(vSwitchsObject);
 	}
 	if(!value["TotalCount"].isNull())

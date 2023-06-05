@@ -88,6 +88,15 @@ void DescribeSecretsRequest::setPageSize(long pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
+std::string DescribeSecretsRequest::getDbInstanceId() const {
+  return dbInstanceId_;
+}
+
+void DescribeSecretsRequest::setDbInstanceId(const std::string &dbInstanceId) {
+  dbInstanceId_ = dbInstanceId;
+  setParameter(std::string("DbInstanceId"), dbInstanceId);
+}
+
 std::string DescribeSecretsRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

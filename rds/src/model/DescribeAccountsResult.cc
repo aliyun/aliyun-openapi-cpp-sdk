@@ -55,6 +55,16 @@ void DescribeAccountsResult::parse(const std::string &payload)
 			accountsObject.accountType = valueAccountsDBInstanceAccount["AccountType"].asString();
 		if(!valueAccountsDBInstanceAccount["AccountName"].isNull())
 			accountsObject.accountName = valueAccountsDBInstanceAccount["AccountName"].asString();
+		if(!valueAccountsDBInstanceAccount["ValidUntil"].isNull())
+			accountsObject.validUntil = valueAccountsDBInstanceAccount["ValidUntil"].asString();
+		if(!valueAccountsDBInstanceAccount["CreateDB"].isNull())
+			accountsObject.createDB = valueAccountsDBInstanceAccount["CreateDB"].asString();
+		if(!valueAccountsDBInstanceAccount["Replication"].isNull())
+			accountsObject.replication = valueAccountsDBInstanceAccount["Replication"].asString();
+		if(!valueAccountsDBInstanceAccount["CreateRole"].isNull())
+			accountsObject.createRole = valueAccountsDBInstanceAccount["CreateRole"].asString();
+		if(!valueAccountsDBInstanceAccount["BypassRLS"].isNull())
+			accountsObject.bypassRLS = valueAccountsDBInstanceAccount["BypassRLS"].asString();
 		auto allDatabasePrivilegesNode = valueAccountsDBInstanceAccount["DatabasePrivileges"]["DatabasePrivilege"];
 		for (auto valueAccountsDBInstanceAccountDatabasePrivilegesDatabasePrivilege : allDatabasePrivilegesNode)
 		{

@@ -40,6 +40,8 @@ public:
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getNodeId() const;
+	void setNodeId(const std::string &nodeId);
 	std::string getKey() const;
 	void setKey(const std::string &key);
 	std::string getResourceOwnerAccount() const;
@@ -59,6 +61,7 @@ private:
 	std::string startTime_;
 	std::string accessKeyId_;
 	std::string dBInstanceId_;
+	std::string nodeId_;
 	std::string key_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

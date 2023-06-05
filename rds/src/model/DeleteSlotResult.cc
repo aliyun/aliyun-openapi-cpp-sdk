@@ -14,46 +14,38 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rds/model/DescribeHistoryTasksStatResult.h>
+#include <alibabacloud/rds/model/DeleteSlotResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Rds;
 using namespace AlibabaCloud::Rds::Model;
 
-DescribeHistoryTasksStatResult::DescribeHistoryTasksStatResult() :
+DeleteSlotResult::DeleteSlotResult() :
 	ServiceResult()
 {}
 
-DescribeHistoryTasksStatResult::DescribeHistoryTasksStatResult(const std::string &payload) :
+DeleteSlotResult::DeleteSlotResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-DescribeHistoryTasksStatResult::~DescribeHistoryTasksStatResult()
+DeleteSlotResult::~DeleteSlotResult()
 {}
 
-void DescribeHistoryTasksStatResult::parse(const std::string &payload)
+void DeleteSlotResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allItemsNode = value["Items"]["ItemsItem"];
-	for (auto valueItemsItemsItem : allItemsNode)
-	{
-		ItemsItem itemsObject;
-		if(!valueItemsItemsItem["Status"].isNull())
-			itemsObject.status = valueItemsItemsItem["Status"].asString();
-		if(!valueItemsItemsItem["TotalCount"].isNull())
-			itemsObject.totalCount = std::stoi(valueItemsItemsItem["TotalCount"].asString());
-		items_.push_back(itemsObject);
-	}
+	if(!value["SlotName"].isNull())
+		slotName_ = value["SlotName"].asString();
 
 }
 
-std::vector<DescribeHistoryTasksStatResult::ItemsItem> DescribeHistoryTasksStatResult::getItems()const
+std::string DeleteSlotResult::getSlotName()const
 {
-	return items_;
+	return slotName_;
 }
 

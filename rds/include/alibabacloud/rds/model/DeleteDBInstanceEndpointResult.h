@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_REQUESTSERVICEOFCLOUDDBARESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_REQUESTSERVICEOFCLOUDDBARESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DELETEDBINSTANCEENDPOINTRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_DELETEDBINSTANCEENDPOINTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,25 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT RequestServiceOfCloudDBAResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT DeleteDBInstanceEndpointResult : public ServiceResult
 			{
 			public:
+				struct Data
+				{
+					std::string dBInstanceEndpointId;
+					std::string dBInstanceName;
+				};
 
 
-				RequestServiceOfCloudDBAResult();
-				explicit RequestServiceOfCloudDBAResult(const std::string &payload);
-				~RequestServiceOfCloudDBAResult();
-				std::string getAttrData()const;
-				std::string getListData()const;
+				DeleteDBInstanceEndpointResult();
+				explicit DeleteDBInstanceEndpointResult(const std::string &payload);
+				~DeleteDBInstanceEndpointResult();
+				Data getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string attrData_;
-				std::string listData_;
+				Data data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_REQUESTSERVICEOFCLOUDDBARESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DELETEDBINSTANCEENDPOINTRESULT_H_

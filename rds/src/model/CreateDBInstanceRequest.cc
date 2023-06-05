@@ -70,6 +70,15 @@ void CreateDBInstanceRequest::setSystemDBCharset(const std::string &systemDBChar
   setParameter(std::string("SystemDBCharset"), systemDBCharset);
 }
 
+std::string CreateDBInstanceRequest::getConnectionString() const {
+  return connectionString_;
+}
+
+void CreateDBInstanceRequest::setConnectionString(const std::string &connectionString) {
+  connectionString_ = connectionString;
+  setParameter(std::string("ConnectionString"), connectionString);
+}
+
 std::string CreateDBInstanceRequest::getEngineVersion() const {
   return engineVersion_;
 }
@@ -235,6 +244,15 @@ std::string CreateDBInstanceRequest::getAutoRenew() const {
 void CreateDBInstanceRequest::setAutoRenew(const std::string &autoRenew) {
   autoRenew_ = autoRenew;
   setParameter(std::string("AutoRenew"), autoRenew);
+}
+
+std::string CreateDBInstanceRequest::getPort() const {
+  return port_;
+}
+
+void CreateDBInstanceRequest::setPort(const std::string &port) {
+  port_ = port;
+  setParameter(std::string("Port"), port);
 }
 
 std::string CreateDBInstanceRequest::getRoleARN() const {
@@ -417,6 +435,15 @@ void CreateDBInstanceRequest::setAmount(int amount) {
   setParameter(std::string("Amount"), std::to_string(amount));
 }
 
+bool CreateDBInstanceRequest::getAutoPay() const {
+  return autoPay_;
+}
+
+void CreateDBInstanceRequest::setAutoPay(bool autoPay) {
+  autoPay_ = autoPay;
+  setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
+}
+
 CreateDBInstanceRequest::ServerlessConfig CreateDBInstanceRequest::getServerlessConfig() const {
   return serverlessConfig_;
 }
@@ -454,6 +481,15 @@ std::string CreateDBInstanceRequest::getUsedTime() const {
 void CreateDBInstanceRequest::setUsedTime(const std::string &usedTime) {
   usedTime_ = usedTime;
   setParameter(std::string("UsedTime"), usedTime);
+}
+
+bool CreateDBInstanceRequest::getBurstingEnabled() const {
+  return burstingEnabled_;
+}
+
+void CreateDBInstanceRequest::setBurstingEnabled(bool burstingEnabled) {
+  burstingEnabled_ = burstingEnabled;
+  setParameter(std::string("BurstingEnabled"), burstingEnabled ? "true" : "false");
 }
 
 std::string CreateDBInstanceRequest::getTargetMinorVersion() const {
@@ -517,5 +553,14 @@ std::string CreateDBInstanceRequest::getPayType() const {
 void CreateDBInstanceRequest::setPayType(const std::string &payType) {
   payType_ = payType;
   setParameter(std::string("PayType"), payType);
+}
+
+std::string CreateDBInstanceRequest::getBpeEnabled() const {
+  return bpeEnabled_;
+}
+
+void CreateDBInstanceRequest::setBpeEnabled(const std::string &bpeEnabled) {
+  bpeEnabled_ = bpeEnabled;
+  setParameter(std::string("BpeEnabled"), bpeEnabled);
 }
 

@@ -36,13 +36,14 @@ namespace AlibabaCloud
 				{
 					bool isDefault;
 					std::string status;
-					std::string izNo;
 					std::string regionNo;
-					std::string gmtCreate;
 					std::string description;
 					std::string vSwitchId;
+					std::string availableIpAddressCount;
 					std::string gmtModified;
 					std::string cidrBlock;
+					std::string izNo;
+					std::string gmtCreate;
 					std::string vSwitchName;
 					std::string bid;
 					std::string aliUid;

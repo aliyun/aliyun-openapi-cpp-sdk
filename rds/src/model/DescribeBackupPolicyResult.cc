@@ -95,7 +95,14 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		enableBackupLog_ = value["EnableBackupLog"].asString();
 	if(!value["BackupLog"].isNull())
 		backupLog_ = value["BackupLog"].asString();
+	if(!value["EnableIncrementDataBackup"].isNull())
+		enableIncrementDataBackup_ = value["EnableIncrementDataBackup"].asString() == "true";
 
+}
+
+bool DescribeBackupPolicyResult::getEnableIncrementDataBackup()const
+{
+	return enableIncrementDataBackup_;
 }
 
 std::string DescribeBackupPolicyResult::getCategory()const

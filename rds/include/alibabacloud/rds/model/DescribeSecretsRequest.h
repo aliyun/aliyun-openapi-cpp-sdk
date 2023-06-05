@@ -44,6 +44,8 @@ public:
 	void setEngine(const std::string &engine);
 	long getPageSize() const;
 	void setPageSize(long pageSize);
+	std::string getDbInstanceId() const;
+	void setDbInstanceId(const std::string &dbInstanceId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -61,6 +63,7 @@ private:
 	std::string regionId_;
 	std::string engine_;
 	long pageSize_;
+	std::string dbInstanceId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

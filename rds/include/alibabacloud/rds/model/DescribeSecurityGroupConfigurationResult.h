@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct EcsSecurityGroupRelation
 				{
+					std::string securityGroupName;
 					std::string networkType;
 					std::string securityGroupId;
 					std::string regionId;

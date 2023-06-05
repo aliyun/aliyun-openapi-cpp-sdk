@@ -82,9 +82,11 @@ namespace AlibabaCloud
 					std::string tempDBInstanceId;
 					std::vector<DBInstance::ReadOnlyDBInstanceId> readOnlyDBInstanceIds;
 					std::string dedicatedHostNameForSlave;
+					bool burstingEnabled;
 					std::string zoneId;
 					std::string createTime;
 					std::string dBInstanceStorageType;
+					std::string bpeEnabled;
 					std::string vpcName;
 					std::string regionId;
 					std::string tips;

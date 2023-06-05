@@ -241,6 +241,15 @@ void CloneDBInstanceRequest::setRestoreTime(const std::string &restoreTime) {
   setParameter(std::string("RestoreTime"), restoreTime);
 }
 
+bool CloneDBInstanceRequest::getAutoPay() const {
+  return autoPay_;
+}
+
+void CloneDBInstanceRequest::setAutoPay(bool autoPay) {
+  autoPay_ = autoPay;
+  setParameter(std::string("AutoPay"), autoPay ? "true" : "false");
+}
+
 CloneDBInstanceRequest::ServerlessConfig CloneDBInstanceRequest::getServerlessConfig() const {
   return serverlessConfig_;
 }
@@ -289,6 +298,15 @@ void CloneDBInstanceRequest::setUsedTime(int usedTime) {
   setParameter(std::string("UsedTime"), std::to_string(usedTime));
 }
 
+bool CloneDBInstanceRequest::getBurstingEnabled() const {
+  return burstingEnabled_;
+}
+
+void CloneDBInstanceRequest::setBurstingEnabled(bool burstingEnabled) {
+  burstingEnabled_ = burstingEnabled;
+  setParameter(std::string("BurstingEnabled"), burstingEnabled ? "true" : "false");
+}
+
 std::string CloneDBInstanceRequest::getDbNames() const {
   return dbNames_;
 }
@@ -323,5 +341,14 @@ std::string CloneDBInstanceRequest::getPayType() const {
 void CloneDBInstanceRequest::setPayType(const std::string &payType) {
   payType_ = payType;
   setParameter(std::string("PayType"), payType);
+}
+
+std::string CloneDBInstanceRequest::getBpeEnabled() const {
+  return bpeEnabled_;
+}
+
+void CloneDBInstanceRequest::setBpeEnabled(const std::string &bpeEnabled) {
+  bpeEnabled_ = bpeEnabled;
+  setParameter(std::string("BpeEnabled"), bpeEnabled);
 }
 

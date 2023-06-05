@@ -100,6 +100,15 @@ void ModifyDBInstanceSpecRequest::setEffectiveTime(const std::string &effectiveT
   setParameter(std::string("EffectiveTime"), effectiveTime);
 }
 
+std::string ModifyDBInstanceSpecRequest::getDBInstanceTransType() const {
+  return dBInstanceTransType_;
+}
+
+void ModifyDBInstanceSpecRequest::setDBInstanceTransType(const std::string &dBInstanceTransType) {
+  dBInstanceTransType_ = dBInstanceTransType;
+  setParameter(std::string("DBInstanceTransType"), dBInstanceTransType);
+}
+
 std::string ModifyDBInstanceSpecRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

@@ -32,6 +32,13 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_RDS_EXPORT DescribeParametersResult : public ServiceResult
 			{
 			public:
+				struct ParamGroupInfo
+				{
+					std::string parameterGroupName;
+					std::string parameterGroupDesc;
+					std::string parameterGroupType;
+					std::string paramGroupId;
+				};
 				struct DBInstanceParameter
 				{
 					std::string parameterValue;
@@ -45,6 +52,7 @@ namespace AlibabaCloud
 				~DescribeParametersResult();
 				std::vector<DBInstanceParameter> getRunningParameters()const;
 				std::string getEngineVersion()const;
+				ParamGroupInfo getParamGroupInfo()const;
 				std::vector<DBInstanceParameter> getConfigParameters()const;
 				std::string getEngine()const;
 
@@ -53,6 +61,7 @@ namespace AlibabaCloud
 			private:
 				std::vector<DBInstanceParameter> runningParameters_;
 				std::string engineVersion_;
+				ParamGroupInfo paramGroupInfo_;
 				std::vector<DBInstanceParameter> configParameters_;
 				std::string engine_;
 

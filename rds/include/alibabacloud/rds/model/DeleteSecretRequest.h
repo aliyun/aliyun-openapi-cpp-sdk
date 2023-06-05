@@ -42,6 +42,8 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getEngine() const;
 	void setEngine(const std::string &engine);
+	std::string getDbInstanceId() const;
+	void setDbInstanceId(const std::string &dbInstanceId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
@@ -56,6 +58,7 @@ private:
 	std::string accessKeyId_;
 	std::string regionId_;
 	std::string engine_;
+	std::string dbInstanceId_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
 	std::string secretName_;

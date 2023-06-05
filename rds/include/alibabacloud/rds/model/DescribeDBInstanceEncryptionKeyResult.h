@@ -32,6 +32,20 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_RDS_EXPORT DescribeDBInstanceEncryptionKeyResult : public ServiceResult
 			{
 			public:
+				struct EncryptionKeyInfo
+				{
+					std::string origin;
+					std::string description;
+					std::string keyType;
+					std::string encryptionKeyStatus;
+					std::string materialExpireTime;
+					std::string aliasName;
+					std::string keyUsage;
+					std::string encryptionKey;
+					std::string creator;
+					std::string usedBy;
+					std::string deleteDate;
+				};
 
 
 				DescribeDBInstanceEncryptionKeyResult();
@@ -41,6 +55,7 @@ namespace AlibabaCloud
 				std::string getDescription()const;
 				std::string getEncryptionKeyStatus()const;
 				std::string getMaterialExpireTime()const;
+				std::vector<EncryptionKeyInfo> getEncryptionKeyList()const;
 				std::string getKeyUsage()const;
 				std::string getEncryptionKey()const;
 				std::string getCreator()const;
@@ -53,6 +68,7 @@ namespace AlibabaCloud
 				std::string description_;
 				std::string encryptionKeyStatus_;
 				std::string materialExpireTime_;
+				std::vector<EncryptionKeyInfo> encryptionKeyList_;
 				std::string keyUsage_;
 				std::string encryptionKey_;
 				std::string creator_;

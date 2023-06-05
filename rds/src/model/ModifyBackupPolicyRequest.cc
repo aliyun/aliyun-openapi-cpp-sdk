@@ -151,6 +151,15 @@ void ModifyBackupPolicyRequest::setPreferredBackupPeriod(const std::string &pref
   setParameter(std::string("PreferredBackupPeriod"), preferredBackupPeriod);
 }
 
+bool ModifyBackupPolicyRequest::getEnableIncrementDataBackup() const {
+  return enableIncrementDataBackup_;
+}
+
+void ModifyBackupPolicyRequest::setEnableIncrementDataBackup(bool enableIncrementDataBackup) {
+  enableIncrementDataBackup_ = enableIncrementDataBackup;
+  setParameter(std::string("EnableIncrementDataBackup"), enableIncrementDataBackup ? "true" : "false");
+}
+
 std::string ModifyBackupPolicyRequest::getReleasedKeepPolicy() const {
   return releasedKeepPolicy_;
 }

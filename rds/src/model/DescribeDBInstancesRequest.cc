@@ -385,6 +385,15 @@ void DescribeDBInstancesRequest::setTag1key(const std::string &tag1key) {
   setParameter(std::string("Tag.1.key"), tag1key);
 }
 
+std::string DescribeDBInstancesRequest::getFilter() const {
+  return filter_;
+}
+
+void DescribeDBInstancesRequest::setFilter(const std::string &filter) {
+  filter_ = filter;
+  setParameter(std::string("Filter"), filter);
+}
+
 std::string DescribeDBInstancesRequest::getVpcId() const {
   return vpcId_;
 }
@@ -401,6 +410,15 @@ std::string DescribeDBInstancesRequest::getTag2value() const {
 void DescribeDBInstancesRequest::setTag2value(const std::string &tag2value) {
   tag2value_ = tag2value;
   setParameter(std::string("Tag.2.value"), tag2value);
+}
+
+std::string DescribeDBInstancesRequest::getCategory() const {
+  return category_;
+}
+
+void DescribeDBInstancesRequest::setCategory(const std::string &category) {
+  category_ = category;
+  setParameter(std::string("Category"), category);
 }
 
 std::string DescribeDBInstancesRequest::getPayType() const {

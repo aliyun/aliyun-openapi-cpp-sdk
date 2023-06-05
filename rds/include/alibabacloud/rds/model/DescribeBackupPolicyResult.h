@@ -47,6 +47,7 @@ namespace AlibabaCloud
 				DescribeBackupPolicyResult();
 				explicit DescribeBackupPolicyResult(const std::string &payload);
 				~DescribeBackupPolicyResult();
+				bool getEnableIncrementDataBackup()const;
 				std::string getCategory()const;
 				std::string getArchiveBackupRetentionPeriod()const;
 				std::string getReleasedKeepPolicy()const;
@@ -76,6 +77,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				bool enableIncrementDataBackup_;
 				std::string category_;
 				std::string archiveBackupRetentionPeriod_;
 				std::string releasedKeepPolicy_;

@@ -50,6 +50,8 @@ public:
 	void setDBInstanceStorage(int dBInstanceStorage);
 	std::string getSystemDBCharset() const;
 	void setSystemDBCharset(const std::string &systemDBCharset);
+	std::string getConnectionString() const;
+	void setConnectionString(const std::string &connectionString);
 	std::string getEngineVersion() const;
 	void setEngineVersion(const std::string &engineVersion);
 	bool getDeletionProtection() const;
@@ -86,6 +88,8 @@ public:
 	void setTargetDedicatedHostIdForLog(const std::string &targetDedicatedHostIdForLog);
 	std::string getAutoRenew() const;
 	void setAutoRenew(const std::string &autoRenew);
+	std::string getPort() const;
+	void setPort(const std::string &port);
 	std::string getRoleARN() const;
 	void setRoleARN(const std::string &roleARN);
 	std::string getTunnelId() const;
@@ -126,6 +130,8 @@ public:
 	void setDBInstanceNetType(const std::string &dBInstanceNetType);
 	int getAmount() const;
 	void setAmount(int amount);
+	bool getAutoPay() const;
+	void setAutoPay(bool autoPay);
 	ServerlessConfig getServerlessConfig() const;
 	void setServerlessConfig(const ServerlessConfig &serverlessConfig);
 	std::string getResourceOwnerAccount() const;
@@ -134,6 +140,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	std::string getUsedTime() const;
 	void setUsedTime(const std::string &usedTime);
+	bool getBurstingEnabled() const;
+	void setBurstingEnabled(bool burstingEnabled);
 	std::string getTargetMinorVersion() const;
 	void setTargetMinorVersion(const std::string &targetMinorVersion);
 	std::string getUserBackupId() const;
@@ -148,6 +156,8 @@ public:
 	void setCategory(const std::string &category);
 	std::string getPayType() const;
 	void setPayType(const std::string &payType);
+	std::string getBpeEnabled() const;
+	void setBpeEnabled(const std::string &bpeEnabled);
 
 private:
 	std::string dBParamGroupId_;
@@ -155,6 +165,7 @@ private:
 	long resourceOwnerId_;
 	int dBInstanceStorage_;
 	std::string systemDBCharset_;
+	std::string connectionString_;
 	std::string engineVersion_;
 	bool deletionProtection_;
 	std::string resourceGroupId_;
@@ -173,6 +184,7 @@ private:
 	std::string privateIpAddress_;
 	std::string targetDedicatedHostIdForLog_;
 	std::string autoRenew_;
+	std::string port_;
 	std::string roleARN_;
 	std::string tunnelId_;
 	std::string zoneId_;
@@ -193,10 +205,12 @@ private:
 	std::string createStrategy_;
 	std::string dBInstanceNetType_;
 	int amount_;
+	bool autoPay_;
 	ServerlessConfig serverlessConfig_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string usedTime_;
+	bool burstingEnabled_;
 	std::string targetMinorVersion_;
 	std::string userBackupId_;
 	int storageUpperBound_;
@@ -204,6 +218,7 @@ private:
 	std::string vPCId_;
 	std::string category_;
 	std::string payType_;
+	std::string bpeEnabled_;
 };
 } // namespace Model
 } // namespace Rds

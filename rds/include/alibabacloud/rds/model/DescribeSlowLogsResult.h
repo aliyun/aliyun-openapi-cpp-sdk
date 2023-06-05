@@ -50,11 +50,13 @@ namespace AlibabaCloud
 					long maxIOWriteCounts;
 					long minIOWriteCounts;
 					long sQLServerTotalExecutionCounts;
+					long maxExecutionTimeMS;
 					long sQLServerAvgExecutionTime;
 					long totalIOWriteCounts;
 					long sQLServerAvgCpuTime;
 					long mySQLTotalExecutionTimes;
 					long totalLastRowsAffectedCounts;
+					long maxLockTimeMS;
 					long maxRowsAffectedCounts;
 					long maxLockTime;
 					long sQLServerTotalCpuTime;

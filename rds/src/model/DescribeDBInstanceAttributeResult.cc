@@ -203,6 +203,12 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.deletionProtection = valueItemsDBInstanceAttribute["DeletionProtection"].asString() == "true";
 		if(!valueItemsDBInstanceAttribute["kindCode"].isNull())
 			itemsObject.kindCode = valueItemsDBInstanceAttribute["kindCode"].asString();
+		if(!valueItemsDBInstanceAttribute["InstructionSetArch"].isNull())
+			itemsObject.instructionSetArch = valueItemsDBInstanceAttribute["InstructionSetArch"].asString();
+		if(!valueItemsDBInstanceAttribute["BurstingEnabled"].isNull())
+			itemsObject.burstingEnabled = valueItemsDBInstanceAttribute["BurstingEnabled"].asString() == "true";
+		if(!valueItemsDBInstanceAttribute["BpeEnabled"].isNull())
+			itemsObject.bpeEnabled = valueItemsDBInstanceAttribute["BpeEnabled"].asString();
 		auto allSlaveZonesNode = valueItemsDBInstanceAttribute["SlaveZones"]["SlaveZone"];
 		for (auto valueItemsDBInstanceAttributeSlaveZonesSlaveZone : allSlaveZonesNode)
 		{
@@ -218,6 +224,22 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			if(!valueItemsDBInstanceAttributeReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].isNull())
 				readOnlyDBInstanceIdsObject.dBInstanceId = valueItemsDBInstanceAttributeReadOnlyDBInstanceIdsReadOnlyDBInstanceId["DBInstanceId"].asString();
 			itemsObject.readOnlyDBInstanceIds.push_back(readOnlyDBInstanceIdsObject);
+		}
+		auto allDBClusterNodesNode = valueItemsDBInstanceAttribute["DBClusterNodes"]["DBClusterNode"];
+		for (auto valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode : allDBClusterNodesNode)
+		{
+			DBInstanceAttribute::DBClusterNode dBClusterNodesObject;
+			if(!valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["NodeRegionId"].isNull())
+				dBClusterNodesObject.nodeRegionId = valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["NodeRegionId"].asString();
+			if(!valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["NodeZoneId"].isNull())
+				dBClusterNodesObject.nodeZoneId = valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["NodeZoneId"].asString();
+			if(!valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["NodeId"].isNull())
+				dBClusterNodesObject.nodeId = valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["NodeId"].asString();
+			if(!valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["NodeRole"].isNull())
+				dBClusterNodesObject.nodeRole = valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["NodeRole"].asString();
+			if(!valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["ClassCode"].isNull())
+				dBClusterNodesObject.classCode = valueItemsDBInstanceAttributeDBClusterNodesDBClusterNode["ClassCode"].asString();
+			itemsObject.dBClusterNodes.push_back(dBClusterNodesObject);
 		}
 		auto extraNode = value["Extra"];
 		if(!extraNode["ReplicaGroupStatus"].isNull())

@@ -66,12 +66,14 @@ namespace AlibabaCloud
 				DescribePriceResult();
 				explicit DescribePriceResult(const std::string &payload);
 				~DescribePriceResult();
+				bool getShowDiscount()const;
 				std::vector<Rule> getRules()const;
 				PriceInfo getPriceInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				bool showDiscount_;
 				std::vector<Rule> rules_;
 				PriceInfo priceInfo_;
 

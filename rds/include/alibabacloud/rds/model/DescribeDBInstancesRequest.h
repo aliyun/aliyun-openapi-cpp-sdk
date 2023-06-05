@@ -110,10 +110,14 @@ public:
 	void setTag5value(const std::string &tag5value);
 	std::string getTag1key() const;
 	void setTag1key(const std::string &tag1key);
+	std::string getFilter() const;
+	void setFilter(const std::string &filter);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
 	std::string getTag2value() const;
 	void setTag2value(const std::string &tag2value);
+	std::string getCategory() const;
+	void setCategory(const std::string &category);
 	std::string getPayType() const;
 	void setPayType(const std::string &payType);
 
@@ -158,8 +162,10 @@ private:
 	std::string dedicatedHostId_;
 	std::string tag5value_;
 	std::string tag1key_;
+	std::string filter_;
 	std::string vpcId_;
 	std::string tag2value_;
+	std::string category_;
 	std::string payType_;
 };
 } // namespace Model

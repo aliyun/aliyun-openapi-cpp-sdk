@@ -81,6 +81,8 @@ void DescribeSlowLogsResult::parse(const std::string &payload)
 			itemsObject.returnTotalRowCounts = std::stol(valueItemsSQLSlowLog["ReturnTotalRowCounts"].asString());
 		if(!valueItemsSQLSlowLog["MaxLockTime"].isNull())
 			itemsObject.maxLockTime = std::stol(valueItemsSQLSlowLog["MaxLockTime"].asString());
+		if(!valueItemsSQLSlowLog["MaxLockTimeMS"].isNull())
+			itemsObject.maxLockTimeMS = std::stol(valueItemsSQLSlowLog["MaxLockTimeMS"].asString());
 		if(!valueItemsSQLSlowLog["DBName"].isNull())
 			itemsObject.dBName = valueItemsSQLSlowLog["DBName"].asString();
 		if(!valueItemsSQLSlowLog["MinRowsAffectedCounts"].isNull())
@@ -107,6 +109,8 @@ void DescribeSlowLogsResult::parse(const std::string &payload)
 			itemsObject.slowLogId = std::stol(valueItemsSQLSlowLog["SlowLogId"].asString());
 		if(!valueItemsSQLSlowLog["MaxExecutionTime"].isNull())
 			itemsObject.maxExecutionTime = std::stol(valueItemsSQLSlowLog["MaxExecutionTime"].asString());
+		if(!valueItemsSQLSlowLog["MaxExecutionTimeMS"].isNull())
+			itemsObject.maxExecutionTimeMS = std::stol(valueItemsSQLSlowLog["MaxExecutionTimeMS"].asString());
 		if(!valueItemsSQLSlowLog["AvgExecutionTime"].isNull())
 			itemsObject.avgExecutionTime = std::stol(valueItemsSQLSlowLog["AvgExecutionTime"].asString());
 		if(!valueItemsSQLSlowLog["SQLServerAvgExecutionTime"].isNull())

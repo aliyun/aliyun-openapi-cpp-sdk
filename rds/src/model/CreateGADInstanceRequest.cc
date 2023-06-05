@@ -97,6 +97,7 @@ void CreateGADInstanceRequest::setUnitNode(const std::vector<CreateGADInstanceRe
     setParameter(unitNodeObjStr + ".VpcID", unitNodeObj.vpcID);
     setParameter(unitNodeObjStr + ".ZoneID", unitNodeObj.zoneID);
     setParameter(unitNodeObjStr + ".DBInstanceDescription", unitNodeObj.dBInstanceDescription);
+    setParameter(unitNodeObjStr + ".DBInstanceStorageType", unitNodeObj.dBInstanceStorageType);
     setParameter(unitNodeObjStr + ".PayType", unitNodeObj.payType);
     setParameter(unitNodeObjStr + ".DtsConflict", unitNodeObj.dtsConflict);
   }

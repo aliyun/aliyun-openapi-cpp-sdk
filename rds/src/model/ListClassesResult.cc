@@ -59,6 +59,10 @@ void ListClassesResult::parse(const std::string &payload)
 			itemsObject.classGroup = valueItemsClassList["ClassGroup"].asString();
 		if(!valueItemsClassList["MaxIOMBPS"].isNull())
 			itemsObject.maxIOMBPS = valueItemsClassList["MaxIOMBPS"].asString();
+		if(!valueItemsClassList["EncryptedMemory"].isNull())
+			itemsObject.encryptedMemory = valueItemsClassList["EncryptedMemory"].asString();
+		if(!valueItemsClassList["InstructionSetArch"].isNull())
+			itemsObject.instructionSetArch = valueItemsClassList["InstructionSetArch"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["RegionId"].isNull())

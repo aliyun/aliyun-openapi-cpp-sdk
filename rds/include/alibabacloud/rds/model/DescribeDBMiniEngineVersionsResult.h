@@ -41,7 +41,9 @@ namespace AlibabaCloud
 					std::string releaseNote;
 					std::string nodeType;
 					std::string minorVersion;
+					std::string tag;
 					std::string engine;
+					std::string communityMinorVersion;
 				};
 
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEHISTORYTASKSSTATREQUEST_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEHISTORYTASKSSTATREQUEST_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_MODIFYACTIVEOPERATIONTASKSREQUEST_H_
+#define ALIBABACLOUD_RDS_MODEL_MODIFYACTIVEOPERATIONTASKSREQUEST_H_
 
 #include <alibabacloud/rds/RdsExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,47 +26,44 @@
 namespace AlibabaCloud {
 namespace Rds {
 namespace Model {
-class ALIBABACLOUD_RDS_EXPORT DescribeHistoryTasksStatRequest : public RpcServiceRequest {
+class ALIBABACLOUD_RDS_EXPORT ModifyActiveOperationTasksRequest : public RpcServiceRequest {
 public:
-	DescribeHistoryTasksStatRequest();
-	~DescribeHistoryTasksStatRequest();
-	std::string getToStartTime() const;
-	void setToStartTime(const std::string &toStartTime);
+	ModifyActiveOperationTasksRequest();
+	~ModifyActiveOperationTasksRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::string getTaskId() const;
-	void setTaskId(const std::string &taskId);
-	int getToExecTime() const;
-	void setToExecTime(int toExecTime);
-	std::string getTaskType() const;
-	void setTaskType(const std::string &taskType);
-	std::string getFromStartTime() const;
-	void setFromStartTime(const std::string &fromStartTime);
-	int getFromExecTime() const;
-	void setFromExecTime(int fromExecTime);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
-	std::string getStatus() const;
-	void setStatus(const std::string &status);
+	std::string getSwitchTime() const;
+	void setSwitchTime(const std::string &switchTime);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	std::string getOwnerAccount() const;
+	void setOwnerAccount(const std::string &ownerAccount);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
+	std::string getIds() const;
+	void setIds(const std::string &ids);
+	int getImmediateStart() const;
+	void setImmediateStart(int immediateStart);
 
 private:
-	std::string toStartTime_;
+	long resourceOwnerId_;
 	std::string accessKeyId_;
 	std::string securityToken_;
 	std::string regionId_;
-	std::string taskId_;
-	int toExecTime_;
-	std::string taskType_;
-	std::string fromStartTime_;
-	int fromExecTime_;
-	std::string instanceId_;
-	std::string status_;
+	std::string switchTime_;
+	std::string resourceOwnerAccount_;
+	std::string ownerAccount_;
+	long ownerId_;
+	std::string ids_;
+	int immediateStart_;
 };
 } // namespace Model
 } // namespace Rds
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEHISTORYTASKSSTATREQUEST_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_MODIFYACTIVEOPERATIONTASKSREQUEST_H_

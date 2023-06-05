@@ -101,6 +101,7 @@ void CreateGadInstanceMemberRequest::setUnitNode(const std::vector<CreateGadInst
     setParameter(unitNodeObjStr + ".VpcID", unitNodeObj.vpcID);
     setParameter(unitNodeObjStr + ".ZoneID", unitNodeObj.zoneID);
     setParameter(unitNodeObjStr + ".DBInstanceDescription", unitNodeObj.dBInstanceDescription);
+    setParameter(unitNodeObjStr + ".DBInstanceStorageType", unitNodeObj.dBInstanceStorageType);
     setParameter(unitNodeObjStr + ".DtsConflict", unitNodeObj.dtsConflict);
   }
 }

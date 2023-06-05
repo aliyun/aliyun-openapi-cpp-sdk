@@ -49,6 +49,8 @@ void DescribeSecurityGroupConfigurationResult::parse(const std::string &payload)
 			itemsObject.securityGroupId = valueItemsEcsSecurityGroupRelation["SecurityGroupId"].asString();
 		if(!valueItemsEcsSecurityGroupRelation["RegionId"].isNull())
 			itemsObject.regionId = valueItemsEcsSecurityGroupRelation["RegionId"].asString();
+		if(!valueItemsEcsSecurityGroupRelation["SecurityGroupName"].isNull())
+			itemsObject.securityGroupName = valueItemsEcsSecurityGroupRelation["SecurityGroupName"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["DBInstanceName"].isNull())

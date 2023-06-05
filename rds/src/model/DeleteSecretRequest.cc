@@ -79,6 +79,15 @@ void DeleteSecretRequest::setEngine(const std::string &engine) {
   setParameter(std::string("Engine"), engine);
 }
 
+std::string DeleteSecretRequest::getDbInstanceId() const {
+  return dbInstanceId_;
+}
+
+void DeleteSecretRequest::setDbInstanceId(const std::string &dbInstanceId) {
+  dbInstanceId_ = dbInstanceId;
+  setParameter(std::string("DbInstanceId"), dbInstanceId);
+}
+
 std::string DeleteSecretRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

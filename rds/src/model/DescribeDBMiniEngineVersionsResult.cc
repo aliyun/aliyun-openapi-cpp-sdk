@@ -59,6 +59,10 @@ void DescribeDBMiniEngineVersionsResult::parse(const std::string &payload)
 			minorVersionItemsObject.engineVersion = valueMinorVersionItemsMinorVersionItemsItem["EngineVersion"].asString();
 		if(!valueMinorVersionItemsMinorVersionItemsItem["MinorVersion"].isNull())
 			minorVersionItemsObject.minorVersion = valueMinorVersionItemsMinorVersionItemsItem["MinorVersion"].asString();
+		if(!valueMinorVersionItemsMinorVersionItemsItem["CommunityMinorVersion"].isNull())
+			minorVersionItemsObject.communityMinorVersion = valueMinorVersionItemsMinorVersionItemsItem["CommunityMinorVersion"].asString();
+		if(!valueMinorVersionItemsMinorVersionItemsItem["Tag"].isNull())
+			minorVersionItemsObject.tag = valueMinorVersionItemsMinorVersionItemsItem["Tag"].asString();
 		minorVersionItems_.push_back(minorVersionItemsObject);
 	}
 	if(!value["DBInstanceId"].isNull())

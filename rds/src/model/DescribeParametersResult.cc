@@ -63,6 +63,15 @@ void DescribeParametersResult::parse(const std::string &payload)
 			runningParametersObject.parameterValue = valueRunningParametersDBInstanceParameter["ParameterValue"].asString();
 		runningParameters_.push_back(runningParametersObject);
 	}
+	auto paramGroupInfoNode = value["ParamGroupInfo"];
+	if(!paramGroupInfoNode["ParameterGroupName"].isNull())
+		paramGroupInfo_.parameterGroupName = paramGroupInfoNode["ParameterGroupName"].asString();
+	if(!paramGroupInfoNode["ParameterGroupDesc"].isNull())
+		paramGroupInfo_.parameterGroupDesc = paramGroupInfoNode["ParameterGroupDesc"].asString();
+	if(!paramGroupInfoNode["ParameterGroupType"].isNull())
+		paramGroupInfo_.parameterGroupType = paramGroupInfoNode["ParameterGroupType"].asString();
+	if(!paramGroupInfoNode["ParamGroupId"].isNull())
+		paramGroupInfo_.paramGroupId = paramGroupInfoNode["ParamGroupId"].asString();
 	if(!value["Engine"].isNull())
 		engine_ = value["Engine"].asString();
 	if(!value["EngineVersion"].isNull())
@@ -78,6 +87,11 @@ std::vector<DescribeParametersResult::DBInstanceParameter> DescribeParametersRes
 std::string DescribeParametersResult::getEngineVersion()const
 {
 	return engineVersion_;
+}
+
+DescribeParametersResult::ParamGroupInfo DescribeParametersResult::getParamGroupInfo()const
+{
+	return paramGroupInfo_;
 }
 
 std::vector<DescribeParametersResult::DBInstanceParameter> DescribeParametersResult::getConfigParameters()const

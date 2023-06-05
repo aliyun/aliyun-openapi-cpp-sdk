@@ -205,6 +205,15 @@ void DescribePriceRequest::setPayType(const std::string &payType) {
   setParameter(std::string("PayType"), payType);
 }
 
+std::string DescribePriceRequest::getDBNode() const {
+  return dBNode_;
+}
+
+void DescribePriceRequest::setDBNode(const std::string &dBNode) {
+  dBNode_ = dBNode;
+  setParameter(std::string("DBNode"), dBNode);
+}
+
 std::string DescribePriceRequest::getOrderType() const {
   return orderType_;
 }

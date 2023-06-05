@@ -14,45 +14,52 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/rds/model/RequestServiceOfCloudDBAResult.h>
+#include <alibabacloud/rds/model/CreateDBNodesResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Rds;
 using namespace AlibabaCloud::Rds::Model;
 
-RequestServiceOfCloudDBAResult::RequestServiceOfCloudDBAResult() :
+CreateDBNodesResult::CreateDBNodesResult() :
 	ServiceResult()
 {}
 
-RequestServiceOfCloudDBAResult::RequestServiceOfCloudDBAResult(const std::string &payload) :
+CreateDBNodesResult::CreateDBNodesResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-RequestServiceOfCloudDBAResult::~RequestServiceOfCloudDBAResult()
+CreateDBNodesResult::~CreateDBNodesResult()
 {}
 
-void RequestServiceOfCloudDBAResult::parse(const std::string &payload)
+void CreateDBNodesResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	if(!value["AttrData"].isNull())
-		attrData_ = value["AttrData"].asString();
-	if(!value["ListData"].isNull())
-		listData_ = value["ListData"].asString();
+	if(!value["DBInstanceId"].isNull())
+		dBInstanceId_ = value["DBInstanceId"].asString();
+	if(!value["OrderId"].isNull())
+		orderId_ = std::stol(value["OrderId"].asString());
+	if(!value["NodeIds"].isNull())
+		nodeIds_ = value["NodeIds"].asString();
 
 }
 
-std::string RequestServiceOfCloudDBAResult::getAttrData()const
+std::string CreateDBNodesResult::getDBInstanceId()const
 {
-	return attrData_;
+	return dBInstanceId_;
 }
 
-std::string RequestServiceOfCloudDBAResult::getListData()const
+std::string CreateDBNodesResult::getNodeIds()const
 {
-	return listData_;
+	return nodeIds_;
+}
+
+long CreateDBNodesResult::getOrderId()const
+{
+	return orderId_;
 }
 

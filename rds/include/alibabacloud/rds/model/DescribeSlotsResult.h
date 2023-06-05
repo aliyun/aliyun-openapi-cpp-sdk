@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBEHISTORYTASKSSTATRESULT_H_
-#define ALIBABACLOUD_RDS_MODEL_DESCRIBEHISTORYTASKSSTATRESULT_H_
+#ifndef ALIBABACLOUD_RDS_MODEL_DESCRIBESLOTSRESULT_H_
+#define ALIBABACLOUD_RDS_MODEL_DESCRIBESLOTSRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,28 +29,33 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_RDS_EXPORT DescribeHistoryTasksStatResult : public ServiceResult
+			class ALIBABACLOUD_RDS_EXPORT DescribeSlotsResult : public ServiceResult
 			{
 			public:
-				struct ItemsItem
+				struct Slot
 				{
-					std::string status;
-					int totalCount;
+					std::string temporary;
+					std::string slotStatus;
+					std::string database;
+					std::string walDelay;
+					std::string slotName;
+					std::string plugin;
+					std::string slotType;
 				};
 
 
-				DescribeHistoryTasksStatResult();
-				explicit DescribeHistoryTasksStatResult(const std::string &payload);
-				~DescribeHistoryTasksStatResult();
-				std::vector<ItemsItem> getItems()const;
+				DescribeSlotsResult();
+				explicit DescribeSlotsResult(const std::string &payload);
+				~DescribeSlotsResult();
+				std::vector<Slot> getSlots()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<ItemsItem> items_;
+				std::vector<Slot> slots_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBEHISTORYTASKSSTATRESULT_H_
+#endif // !ALIBABACLOUD_RDS_MODEL_DESCRIBESLOTSRESULT_H_

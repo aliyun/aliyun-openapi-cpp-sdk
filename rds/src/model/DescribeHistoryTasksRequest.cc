@@ -25,6 +25,15 @@ DescribeHistoryTasksRequest::DescribeHistoryTasksRequest()
 
 DescribeHistoryTasksRequest::~DescribeHistoryTasksRequest() {}
 
+long DescribeHistoryTasksRequest::getResourceOwnerId() const {
+  return resourceOwnerId_;
+}
+
+void DescribeHistoryTasksRequest::setResourceOwnerId(long resourceOwnerId) {
+  resourceOwnerId_ = resourceOwnerId;
+  setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
+}
+
 std::string DescribeHistoryTasksRequest::getToStartTime() const {
   return toStartTime_;
 }
@@ -50,6 +59,15 @@ std::string DescribeHistoryTasksRequest::getAccessKeyId() const {
 void DescribeHistoryTasksRequest::setAccessKeyId(const std::string &accessKeyId) {
   accessKeyId_ = accessKeyId;
   setParameter(std::string("AccessKeyId"), accessKeyId);
+}
+
+std::string DescribeHistoryTasksRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void DescribeHistoryTasksRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string DescribeHistoryTasksRequest::getSecurityToken() const {
@@ -115,6 +133,15 @@ void DescribeHistoryTasksRequest::setTaskType(const std::string &taskType) {
   setParameter(std::string("TaskType"), taskType);
 }
 
+long DescribeHistoryTasksRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeHistoryTasksRequest::setResourceOwnerAccount(long resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), std::to_string(resourceOwnerAccount));
+}
+
 std::string DescribeHistoryTasksRequest::getFromStartTime() const {
   return fromStartTime_;
 }
@@ -131,6 +158,15 @@ int DescribeHistoryTasksRequest::getFromExecTime() const {
 void DescribeHistoryTasksRequest::setFromExecTime(int fromExecTime) {
   fromExecTime_ = fromExecTime;
   setParameter(std::string("FromExecTime"), std::to_string(fromExecTime));
+}
+
+long DescribeHistoryTasksRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeHistoryTasksRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
 std::string DescribeHistoryTasksRequest::getInstanceId() const {

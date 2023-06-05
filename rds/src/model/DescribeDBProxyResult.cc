@@ -57,6 +57,10 @@ void DescribeDBProxyResult::parse(const std::string &payload)
 			dBProxyConnectStringItemsObject.dBProxyConnectStringPort = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectStringPort"].asString();
 		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectString"].isNull())
 			dBProxyConnectStringItemsObject.dBProxyConnectString = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyConnectString"].asString();
+		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyVpcId"].isNull())
+			dBProxyConnectStringItemsObject.dBProxyVpcId = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyVpcId"].asString();
+		if(!valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyVswitchId"].isNull())
+			dBProxyConnectStringItemsObject.dBProxyVswitchId = valueDBProxyConnectStringItemsDBProxyConnectStringItemsItem["DBProxyVswitchId"].asString();
 		dBProxyConnectStringItems_.push_back(dBProxyConnectStringItemsObject);
 	}
 	auto allDbProxyEndpointItemsNode = value["DbProxyEndpointItems"]["DbProxyEndpointItemsItem"];
@@ -73,6 +77,9 @@ void DescribeDBProxyResult::parse(const std::string &payload)
 			dbProxyEndpointItemsObject.dbProxyReadWriteMode = valueDbProxyEndpointItemsDbProxyEndpointItemsItem["DbProxyReadWriteMode"].asString();
 		dbProxyEndpointItems_.push_back(dbProxyEndpointItemsObject);
 	}
+	auto allDBProxyAVZones = value["DBProxyAVZones"]["DBProxyAVZones"];
+	for (const auto &item : allDBProxyAVZones)
+		dBProxyAVZones_.push_back(item.asString());
 	if(!value["DBProxyInstanceLatestMinorVersion"].isNull())
 		dBProxyInstanceLatestMinorVersion_ = value["DBProxyInstanceLatestMinorVersion"].asString();
 	if(!value["DBProxyInstanceCurrentMinorVersion"].isNull())
@@ -126,6 +133,11 @@ std::vector<DescribeDBProxyResult::DbProxyEndpointItemsItem> DescribeDBProxyResu
 std::string DescribeDBProxyResult::getDBProxyInstanceSize()const
 {
 	return dBProxyInstanceSize_;
+}
+
+std::vector<std::string> DescribeDBProxyResult::getDBProxyAVZones()const
+{
+	return dBProxyAVZones_;
 }
 
 std::string DescribeDBProxyResult::getDBProxyInstanceStatus()const

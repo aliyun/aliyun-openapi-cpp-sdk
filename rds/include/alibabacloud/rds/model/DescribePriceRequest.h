@@ -70,6 +70,8 @@ public:
 	void setTimeType(const std::string &timeType);
 	std::string getPayType() const;
 	void setPayType(const std::string &payType);
+	std::string getDBNode() const;
+	void setDBNode(const std::string &dBNode);
 	std::string getOrderType() const;
 	void setOrderType(const std::string &orderType);
 
@@ -94,6 +96,7 @@ private:
 	std::string zoneId_;
 	std::string timeType_;
 	std::string payType_;
+	std::string dBNode_;
 	std::string orderType_;
 };
 } // namespace Model

@@ -84,6 +84,8 @@ public:
 	void setDedicatedHostGroupId(const std::string &dedicatedHostGroupId);
 	std::string getRestoreTime() const;
 	void setRestoreTime(const std::string &restoreTime);
+	bool getAutoPay() const;
+	void setAutoPay(bool autoPay);
 	ServerlessConfig getServerlessConfig() const;
 	void setServerlessConfig(const ServerlessConfig &serverlessConfig);
 	std::string getResourceOwnerAccount() const;
@@ -94,6 +96,8 @@ public:
 	void setRestoreTable(const std::string &restoreTable);
 	int getUsedTime() const;
 	void setUsedTime(int usedTime);
+	bool getBurstingEnabled() const;
+	void setBurstingEnabled(bool burstingEnabled);
 	std::string getDbNames() const;
 	void setDbNames(const std::string &dbNames);
 	std::string getVPCId() const;
@@ -102,6 +106,8 @@ public:
 	void setCategory(const std::string &category);
 	std::string getPayType() const;
 	void setPayType(const std::string &payType);
+	std::string getBpeEnabled() const;
+	void setBpeEnabled(const std::string &bpeEnabled);
 
 private:
 	long resourceOwnerId_;
@@ -128,15 +134,18 @@ private:
 	std::string dBInstanceStorageType_;
 	std::string dedicatedHostGroupId_;
 	std::string restoreTime_;
+	bool autoPay_;
 	ServerlessConfig serverlessConfig_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string restoreTable_;
 	int usedTime_;
+	bool burstingEnabled_;
 	std::string dbNames_;
 	std::string vPCId_;
 	std::string category_;
 	std::string payType_;
+	std::string bpeEnabled_;
 };
 } // namespace Model
 } // namespace Rds

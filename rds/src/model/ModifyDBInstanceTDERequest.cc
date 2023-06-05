@@ -97,6 +97,15 @@ void ModifyDBInstanceTDERequest::setOwnerAccount(const std::string &ownerAccount
   setParameter(std::string("OwnerAccount"), ownerAccount);
 }
 
+bool ModifyDBInstanceTDERequest::getIsRotate() const {
+  return isRotate_;
+}
+
+void ModifyDBInstanceTDERequest::setIsRotate(bool isRotate) {
+  isRotate_ = isRotate;
+  setParameter(std::string("IsRotate"), isRotate ? "true" : "false");
+}
+
 std::string ModifyDBInstanceTDERequest::getEncryptionKey() const {
   return encryptionKey_;
 }

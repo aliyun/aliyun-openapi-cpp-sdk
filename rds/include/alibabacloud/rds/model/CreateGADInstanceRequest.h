@@ -46,6 +46,7 @@ public:
 		std::string vpcID;
 		std::string zoneID;
 		std::string dBInstanceDescription;
+		std::string dBInstanceStorageType;
 		std::string payType;
 		std::string dtsConflict;
 	};

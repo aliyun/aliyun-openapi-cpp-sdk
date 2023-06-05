@@ -75,11 +75,26 @@ void DescribeParameterGroupResult::parse(const std::string &payload)
 		}
 		paramGroup_.push_back(paramGroupObject);
 	}
+	auto allRelatedCustinsInfoNode = value["RelatedCustinsInfo"]["RelatedCustinsInfoItem"];
+	for (auto valueRelatedCustinsInfoRelatedCustinsInfoItem : allRelatedCustinsInfoNode)
+	{
+		RelatedCustinsInfoItem relatedCustinsInfoObject;
+		if(!valueRelatedCustinsInfoRelatedCustinsInfoItem["DBInstanceName"].isNull())
+			relatedCustinsInfoObject.dBInstanceName = valueRelatedCustinsInfoRelatedCustinsInfoItem["DBInstanceName"].asString();
+		if(!valueRelatedCustinsInfoRelatedCustinsInfoItem["AppliedTime"].isNull())
+			relatedCustinsInfoObject.appliedTime = valueRelatedCustinsInfoRelatedCustinsInfoItem["AppliedTime"].asString();
+		relatedCustinsInfo_.push_back(relatedCustinsInfoObject);
+	}
 
 }
 
 std::vector<DescribeParameterGroupResult::ParameterGroup> DescribeParameterGroupResult::getParamGroup()const
 {
 	return paramGroup_;
+}
+
+std::vector<DescribeParameterGroupResult::RelatedCustinsInfoItem> DescribeParameterGroupResult::getRelatedCustinsInfo()const
+{
+	return relatedCustinsInfo_;
 }
 

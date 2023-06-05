@@ -46,6 +46,8 @@ public:
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
 	void setOwnerAccount(const std::string &ownerAccount);
+	bool getIsRotate() const;
+	void setIsRotate(bool isRotate);
 	std::string getEncryptionKey() const;
 	void setEncryptionKey(const std::string &encryptionKey);
 	long getOwnerId() const;
@@ -66,6 +68,7 @@ private:
 	std::string dBInstanceId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
+	bool isRotate_;
 	std::string encryptionKey_;
 	long ownerId_;
 	std::string dBName_;

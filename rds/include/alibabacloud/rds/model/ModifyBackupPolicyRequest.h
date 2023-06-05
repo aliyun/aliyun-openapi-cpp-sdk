@@ -58,6 +58,8 @@ public:
 	void setBackupPolicyMode(const std::string &backupPolicyMode);
 	std::string getPreferredBackupPeriod() const;
 	void setPreferredBackupPeriod(const std::string &preferredBackupPeriod);
+	bool getEnableIncrementDataBackup() const;
+	void setEnableIncrementDataBackup(bool enableIncrementDataBackup);
 	std::string getReleasedKeepPolicy() const;
 	void setReleasedKeepPolicy(const std::string &releasedKeepPolicy);
 	std::string getResourceOwnerAccount() const;
@@ -104,6 +106,7 @@ private:
 	std::string enableBackupLog_;
 	std::string backupPolicyMode_;
 	std::string preferredBackupPeriod_;
+	bool enableIncrementDataBackup_;
 	std::string releasedKeepPolicy_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;

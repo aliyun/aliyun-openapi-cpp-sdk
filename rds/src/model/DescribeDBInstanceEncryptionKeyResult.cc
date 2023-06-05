@@ -39,6 +39,34 @@ void DescribeDBInstanceEncryptionKeyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allEncryptionKeyListNode = value["EncryptionKeyList"]["EncryptionKeyInfo"];
+	for (auto valueEncryptionKeyListEncryptionKeyInfo : allEncryptionKeyListNode)
+	{
+		EncryptionKeyInfo encryptionKeyListObject;
+		if(!valueEncryptionKeyListEncryptionKeyInfo["KeyType"].isNull())
+			encryptionKeyListObject.keyType = valueEncryptionKeyListEncryptionKeyInfo["KeyType"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["EncryptionKey"].isNull())
+			encryptionKeyListObject.encryptionKey = valueEncryptionKeyListEncryptionKeyInfo["EncryptionKey"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["Description"].isNull())
+			encryptionKeyListObject.description = valueEncryptionKeyListEncryptionKeyInfo["Description"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["KeyUsage"].isNull())
+			encryptionKeyListObject.keyUsage = valueEncryptionKeyListEncryptionKeyInfo["KeyUsage"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["DeleteDate"].isNull())
+			encryptionKeyListObject.deleteDate = valueEncryptionKeyListEncryptionKeyInfo["DeleteDate"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["Creator"].isNull())
+			encryptionKeyListObject.creator = valueEncryptionKeyListEncryptionKeyInfo["Creator"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["EncryptionKeyStatus"].isNull())
+			encryptionKeyListObject.encryptionKeyStatus = valueEncryptionKeyListEncryptionKeyInfo["EncryptionKeyStatus"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["Origin"].isNull())
+			encryptionKeyListObject.origin = valueEncryptionKeyListEncryptionKeyInfo["Origin"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["MaterialExpireTime"].isNull())
+			encryptionKeyListObject.materialExpireTime = valueEncryptionKeyListEncryptionKeyInfo["MaterialExpireTime"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["AliasName"].isNull())
+			encryptionKeyListObject.aliasName = valueEncryptionKeyListEncryptionKeyInfo["AliasName"].asString();
+		if(!valueEncryptionKeyListEncryptionKeyInfo["UsedBy"].isNull())
+			encryptionKeyListObject.usedBy = valueEncryptionKeyListEncryptionKeyInfo["UsedBy"].asString();
+		encryptionKeyList_.push_back(encryptionKeyListObject);
+	}
 	if(!value["DeleteDate"].isNull())
 		deleteDate_ = value["DeleteDate"].asString();
 	if(!value["Description"].isNull())
@@ -76,6 +104,11 @@ std::string DescribeDBInstanceEncryptionKeyResult::getEncryptionKeyStatus()const
 std::string DescribeDBInstanceEncryptionKeyResult::getMaterialExpireTime()const
 {
 	return materialExpireTime_;
+}
+
+std::vector<DescribeDBInstanceEncryptionKeyResult::EncryptionKeyInfo> DescribeDBInstanceEncryptionKeyResult::getEncryptionKeyList()const
+{
+	return encryptionKeyList_;
 }
 
 std::string DescribeDBInstanceEncryptionKeyResult::getKeyUsage()const

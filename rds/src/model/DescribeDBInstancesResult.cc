@@ -141,6 +141,10 @@ void DescribeDBInstancesResult::parse(const std::string &payload)
 			itemsObject.switchWeight = std::stoi(valueItemsDBInstance["SwitchWeight"].asString());
 		if(!valueItemsDBInstance["DeletionProtection"].isNull())
 			itemsObject.deletionProtection = valueItemsDBInstance["DeletionProtection"].asString() == "true";
+		if(!valueItemsDBInstance["BurstingEnabled"].isNull())
+			itemsObject.burstingEnabled = valueItemsDBInstance["BurstingEnabled"].asString() == "true";
+		if(!valueItemsDBInstance["BpeEnabled"].isNull())
+			itemsObject.bpeEnabled = valueItemsDBInstance["BpeEnabled"].asString();
 		auto allReadOnlyDBInstanceIdsNode = valueItemsDBInstance["ReadOnlyDBInstanceIds"]["ReadOnlyDBInstanceId"];
 		for (auto valueItemsDBInstanceReadOnlyDBInstanceIdsReadOnlyDBInstanceId : allReadOnlyDBInstanceIdsNode)
 		{

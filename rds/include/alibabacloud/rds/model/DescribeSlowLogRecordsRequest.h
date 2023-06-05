@@ -42,6 +42,8 @@ public:
 	void setPageSize(int pageSize);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getNodeId() const;
+	void setNodeId(const std::string &nodeId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -62,6 +64,7 @@ private:
 	std::string accessKeyId_;
 	int pageSize_;
 	std::string dBInstanceId_;
+	std::string nodeId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string endTime_;

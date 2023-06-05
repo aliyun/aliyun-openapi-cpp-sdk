@@ -84,7 +84,14 @@ void DescribePriceResult::parse(const std::string &payload)
 		auto allRuleIds = priceInfoNode["RuleIds"]["RuleId"];
 		for (auto value : allRuleIds)
 			priceInfo_.ruleIds.push_back(value.asString());
+	if(!value["ShowDiscount"].isNull())
+		showDiscount_ = value["ShowDiscount"].asString() == "true";
 
+}
+
+bool DescribePriceResult::getShowDiscount()const
+{
+	return showDiscount_;
 }
 
 std::vector<DescribePriceResult::Rule> DescribePriceResult::getRules()const

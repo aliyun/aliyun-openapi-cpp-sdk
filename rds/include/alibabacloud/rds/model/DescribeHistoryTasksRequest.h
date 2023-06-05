@@ -30,12 +30,16 @@ class ALIBABACLOUD_RDS_EXPORT DescribeHistoryTasksRequest : public RpcServiceReq
 public:
 	DescribeHistoryTasksRequest();
 	~DescribeHistoryTasksRequest();
+	long getResourceOwnerId() const;
+	void setResourceOwnerId(long resourceOwnerId);
 	std::string getToStartTime() const;
 	void setToStartTime(const std::string &toStartTime);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getSecurityToken() const;
 	void setSecurityToken(const std::string &securityToken);
 	std::string getRegionId() const;
@@ -50,19 +54,25 @@ public:
 	void setToExecTime(int toExecTime);
 	std::string getTaskType() const;
 	void setTaskType(const std::string &taskType);
+	long getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(long resourceOwnerAccount);
 	std::string getFromStartTime() const;
 	void setFromStartTime(const std::string &fromStartTime);
 	int getFromExecTime() const;
 	void setFromExecTime(int fromExecTime);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 	std::string getInstanceId() const;
 	void setInstanceId(const std::string &instanceId);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 
 private:
+	long resourceOwnerId_;
 	std::string toStartTime_;
 	int pageNumber_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	std::string securityToken_;
 	std::string regionId_;
 	int pageSize_;
@@ -70,8 +80,10 @@ private:
 	std::string taskId_;
 	int toExecTime_;
 	std::string taskType_;
+	long resourceOwnerAccount_;
 	std::string fromStartTime_;
 	int fromExecTime_;
+	long ownerId_;
 	std::string instanceId_;
 	std::string status_;
 };

@@ -70,6 +70,15 @@ void DescribeDBInstancePerformanceRequest::setDBInstanceId(const std::string &dB
   setParameter(std::string("DBInstanceId"), dBInstanceId);
 }
 
+std::string DescribeDBInstancePerformanceRequest::getNodeId() const {
+  return nodeId_;
+}
+
+void DescribeDBInstancePerformanceRequest::setNodeId(const std::string &nodeId) {
+  nodeId_ = nodeId;
+  setParameter(std::string("NodeId"), nodeId);
+}
+
 std::string DescribeDBInstancePerformanceRequest::getKey() const {
   return key_;
 }
