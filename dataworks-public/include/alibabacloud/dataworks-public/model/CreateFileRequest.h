@@ -70,6 +70,8 @@ public:
 	void setAutoRerunTimes(int autoRerunTimes);
 	std::string getCronExpress() const;
 	void setCronExpress(const std::string &cronExpress);
+	bool getIgnoreParentSkipRunningProperty() const;
+	void setIgnoreParentSkipRunningProperty(bool ignoreParentSkipRunningProperty);
 	long getEndEffectDate() const;
 	void setEndEffectDate(long endEffectDate);
 	std::string getFileName() const;
@@ -110,6 +112,7 @@ private:
 	std::string resourceGroupIdentifier_;
 	int autoRerunTimes_;
 	std::string cronExpress_;
+	bool ignoreParentSkipRunningProperty_;
 	long endEffectDate_;
 	std::string fileName_;
 	std::string inputParameters_;

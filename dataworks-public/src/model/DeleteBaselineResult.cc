@@ -49,16 +49,7 @@ void DeleteBaselineResult::parse(const std::string &payload)
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Data"].isNull())
 		data_ = value["Data"].asString() == "true";
-	if(!value["DynamicErrorCode"].isNull())
-		dynamicErrorCode_ = value["DynamicErrorCode"].asString();
-	if(!value["DynamicErrorMessage"].isNull())
-		dynamicErrorMessage_ = value["DynamicErrorMessage"].asString();
 
-}
-
-std::string DeleteBaselineResult::getDynamicErrorMessage()const
-{
-	return dynamicErrorMessage_;
 }
 
 int DeleteBaselineResult::getHttpStatusCode()const
@@ -69,11 +60,6 @@ int DeleteBaselineResult::getHttpStatusCode()const
 bool DeleteBaselineResult::getData()const
 {
 	return data_;
-}
-
-std::string DeleteBaselineResult::getDynamicErrorCode()const
-{
-	return dynamicErrorCode_;
 }
 
 std::string DeleteBaselineResult::getErrorCode()const

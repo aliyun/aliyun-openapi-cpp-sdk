@@ -62,8 +62,8 @@ namespace AlibabaCloud
 					long baselineId;
 					std::string owner;
 					std::string baselineType;
-					std::vector<std::string> taskIds;
 					int priority;
+					std::vector<std::string> nodeIds;
 					std::string baselineName;
 					long projectId;
 					bool enabled;
@@ -77,10 +77,8 @@ namespace AlibabaCloud
 				GetBaselineResult();
 				explicit GetBaselineResult(const std::string &payload);
 				~GetBaselineResult();
-				std::string getDynamicErrorMessage()const;
 				int getHttpStatusCode()const;
 				Data getData()const;
-				std::string getDynamicErrorCode()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -88,10 +86,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string dynamicErrorMessage_;
 				int httpStatusCode_;
 				Data data_;
-				std::string dynamicErrorCode_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;

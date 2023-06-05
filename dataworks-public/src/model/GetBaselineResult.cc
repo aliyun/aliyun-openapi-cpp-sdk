@@ -109,9 +109,9 @@ void GetBaselineResult::parse(const std::string &payload)
 			alertSettingObject.topicTypes.push_back(value.asString());
 		data_.alertSettings.push_back(alertSettingObject);
 	}
-		auto allTaskIds = dataNode["TaskIds"]["TaskId"];
-		for (auto value : allTaskIds)
-			data_.taskIds.push_back(value.asString());
+		auto allNodeIds = dataNode["NodeIds"]["NodeId"];
+		for (auto value : allNodeIds)
+			data_.nodeIds.push_back(value.asString());
 	if(!value["Success"].isNull())
 		success_ = value["Success"].asString() == "true";
 	if(!value["ErrorCode"].isNull())
@@ -120,16 +120,7 @@ void GetBaselineResult::parse(const std::string &payload)
 		errorMessage_ = value["ErrorMessage"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
-	if(!value["DynamicErrorCode"].isNull())
-		dynamicErrorCode_ = value["DynamicErrorCode"].asString();
-	if(!value["DynamicErrorMessage"].isNull())
-		dynamicErrorMessage_ = value["DynamicErrorMessage"].asString();
 
-}
-
-std::string GetBaselineResult::getDynamicErrorMessage()const
-{
-	return dynamicErrorMessage_;
 }
 
 int GetBaselineResult::getHttpStatusCode()const
@@ -140,11 +131,6 @@ int GetBaselineResult::getHttpStatusCode()const
 GetBaselineResult::Data GetBaselineResult::getData()const
 {
 	return data_;
-}
-
-std::string GetBaselineResult::getDynamicErrorCode()const
-{
-	return dynamicErrorCode_;
 }
 
 std::string GetBaselineResult::getErrorCode()const

@@ -205,6 +205,15 @@ void UpdateFileRequest::setCronExpress(const std::string &cronExpress) {
   setBodyParameter(std::string("CronExpress"), cronExpress);
 }
 
+bool UpdateFileRequest::getIgnoreParentSkipRunningProperty() const {
+  return ignoreParentSkipRunningProperty_;
+}
+
+void UpdateFileRequest::setIgnoreParentSkipRunningProperty(bool ignoreParentSkipRunningProperty) {
+  ignoreParentSkipRunningProperty_ = ignoreParentSkipRunningProperty;
+  setBodyParameter(std::string("IgnoreParentSkipRunningProperty"), ignoreParentSkipRunningProperty ? "true" : "false");
+}
+
 long UpdateFileRequest::getEndEffectDate() const {
   return endEffectDate_;
 }

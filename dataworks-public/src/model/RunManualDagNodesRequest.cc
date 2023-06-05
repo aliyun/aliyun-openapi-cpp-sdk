@@ -43,6 +43,24 @@ void RunManualDagNodesRequest::setProjectName(const std::string &projectName) {
   setBodyParameter(std::string("ProjectName"), projectName);
 }
 
+std::string RunManualDagNodesRequest::getStartBizDate() const {
+  return startBizDate_;
+}
+
+void RunManualDagNodesRequest::setStartBizDate(const std::string &startBizDate) {
+  startBizDate_ = startBizDate;
+  setBodyParameter(std::string("StartBizDate"), startBizDate);
+}
+
+std::string RunManualDagNodesRequest::getEndBizDate() const {
+  return endBizDate_;
+}
+
+void RunManualDagNodesRequest::setEndBizDate(const std::string &endBizDate) {
+  endBizDate_ = endBizDate;
+  setBodyParameter(std::string("EndBizDate"), endBizDate);
+}
+
 std::string RunManualDagNodesRequest::getDagParameters() const {
   return dagParameters_;
 }

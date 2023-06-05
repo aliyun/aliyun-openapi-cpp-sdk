@@ -40,7 +40,7 @@ namespace AlibabaCloud
 						int connectStatus;
 						std::string subType;
 						std::string description;
-						int bindingCalcEngineId;
+						long bindingCalcEngineId;
 						int projectId;
 						std::string gmtModified;
 						std::string _operator;
@@ -53,7 +53,7 @@ namespace AlibabaCloud
 						long tenantId;
 						std::string content;
 						std::string dataSourceType;
-						int id;
+						long id;
 					};
 					std::vector<DataSourcesItem> dataSources;
 					int totalCount;

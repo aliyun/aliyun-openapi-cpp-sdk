@@ -49,16 +49,7 @@ void CreateBaselineResult::parse(const std::string &payload)
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["Data"].isNull())
 		data_ = std::stol(value["Data"].asString());
-	if(!value["DynamicErrorCode"].isNull())
-		dynamicErrorCode_ = value["DynamicErrorCode"].asString();
-	if(!value["DynamicErrorMessage"].isNull())
-		dynamicErrorMessage_ = value["DynamicErrorMessage"].asString();
 
-}
-
-std::string CreateBaselineResult::getDynamicErrorMessage()const
-{
-	return dynamicErrorMessage_;
 }
 
 int CreateBaselineResult::getHttpStatusCode()const
@@ -69,11 +60,6 @@ int CreateBaselineResult::getHttpStatusCode()const
 long CreateBaselineResult::getData()const
 {
 	return data_;
-}
-
-std::string CreateBaselineResult::getDynamicErrorCode()const
-{
-	return dynamicErrorCode_;
 }
 
 std::string CreateBaselineResult::getErrorCode()const

@@ -81,9 +81,9 @@ void ListDataSourcesResult::parse(const std::string &payload)
 		if(!dataNodeDataSourcesDataSourcesItem["Content"].isNull())
 			dataSourcesItemObject.content = dataNodeDataSourcesDataSourcesItem["Content"].asString();
 		if(!dataNodeDataSourcesDataSourcesItem["Id"].isNull())
-			dataSourcesItemObject.id = std::stoi(dataNodeDataSourcesDataSourcesItem["Id"].asString());
+			dataSourcesItemObject.id = std::stol(dataNodeDataSourcesDataSourcesItem["Id"].asString());
 		if(!dataNodeDataSourcesDataSourcesItem["BindingCalcEngineId"].isNull())
-			dataSourcesItemObject.bindingCalcEngineId = std::stoi(dataNodeDataSourcesDataSourcesItem["BindingCalcEngineId"].asString());
+			dataSourcesItemObject.bindingCalcEngineId = std::stol(dataNodeDataSourcesDataSourcesItem["BindingCalcEngineId"].asString());
 		if(!dataNodeDataSourcesDataSourcesItem["TenantId"].isNull())
 			dataSourcesItemObject.tenantId = std::stol(dataNodeDataSourcesDataSourcesItem["TenantId"].asString());
 		data_.dataSources.push_back(dataSourcesItemObject);

@@ -34,6 +34,10 @@ public:
 	void setProjectEnv(const std::string &projectEnv);
 	std::string getProjectName() const;
 	void setProjectName(const std::string &projectName);
+	std::string getStartBizDate() const;
+	void setStartBizDate(const std::string &startBizDate);
+	std::string getEndBizDate() const;
+	void setEndBizDate(const std::string &endBizDate);
 	std::string getDagParameters() const;
 	void setDagParameters(const std::string &dagParameters);
 	std::string getIncludeNodeIds() const;
@@ -52,6 +56,8 @@ public:
 private:
 	std::string projectEnv_;
 	std::string projectName_;
+	std::string startBizDate_;
+	std::string endBizDate_;
 	std::string dagParameters_;
 	std::string includeNodeIds_;
 	std::string bizDate_;

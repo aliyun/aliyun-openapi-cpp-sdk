@@ -37,10 +37,8 @@ namespace AlibabaCloud
 				CreateBaselineResult();
 				explicit CreateBaselineResult(const std::string &payload);
 				~CreateBaselineResult();
-				std::string getDynamicErrorMessage()const;
 				int getHttpStatusCode()const;
 				long getData()const;
-				std::string getDynamicErrorCode()const;
 				std::string getErrorCode()const;
 				std::string getErrorMessage()const;
 				bool getSuccess()const;
@@ -48,10 +46,8 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string dynamicErrorMessage_;
 				int httpStatusCode_;
 				long data_;
-				std::string dynamicErrorCode_;
 				std::string errorCode_;
 				std::string errorMessage_;
 				bool success_;
