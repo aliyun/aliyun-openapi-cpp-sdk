@@ -34,6 +34,24 @@ void OperateAgentClientInstallRequest::setSourceIp(const std::string &sourceIp) 
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string OperateAgentClientInstallRequest::getLang() const {
+  return lang_;
+}
+
+void OperateAgentClientInstallRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
+std::string OperateAgentClientInstallRequest::getOs() const {
+  return os_;
+}
+
+void OperateAgentClientInstallRequest::setOs(const std::string &os) {
+  os_ = os;
+  setParameter(std::string("Os"), os);
+}
+
 std::string OperateAgentClientInstallRequest::getInstanceIds() const {
   return instanceIds_;
 }
@@ -43,13 +61,13 @@ void OperateAgentClientInstallRequest::setInstanceIds(const std::string &instanc
   setParameter(std::string("InstanceIds"), instanceIds);
 }
 
-std::string OperateAgentClientInstallRequest::getLang() const {
-  return lang_;
+std::string OperateAgentClientInstallRequest::getRegion() const {
+  return region_;
 }
 
-void OperateAgentClientInstallRequest::setLang(const std::string &lang) {
-  lang_ = lang;
-  setParameter(std::string("Lang"), lang);
+void OperateAgentClientInstallRequest::setRegion(const std::string &region) {
+  region_ = region;
+  setParameter(std::string("Region"), region);
 }
 
 std::string OperateAgentClientInstallRequest::getUuids() const {

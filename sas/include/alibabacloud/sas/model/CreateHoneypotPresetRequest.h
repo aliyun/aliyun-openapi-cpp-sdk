@@ -30,6 +30,8 @@ class ALIBABACLOUD_SAS_EXPORT CreateHoneypotPresetRequest : public RpcServiceReq
 public:
 	CreateHoneypotPresetRequest();
 	~CreateHoneypotPresetRequest();
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	std::string getNodeId() const;
 	void setNodeId(const std::string &nodeId);
 	std::string getPresetName() const;
@@ -40,6 +42,7 @@ public:
 	void setHoneypotImageName(const std::string &honeypotImageName);
 
 private:
+	std::string lang_;
 	std::string nodeId_;
 	std::string presetName_;
 	std::string meta_;

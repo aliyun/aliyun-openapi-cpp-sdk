@@ -30,20 +30,20 @@ class ALIBABACLOUD_SAS_EXPORT ConfirmVirusEventsRequest : public RpcServiceReque
 public:
 	ConfirmVirusEventsRequest();
 	~ConfirmVirusEventsRequest();
-	std::string getOperationRange() const;
-	void setOperationRange(const std::string &operationRange);
-	int getOperationAll() const;
-	void setOperationAll(int operationAll);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getOperationCode() const;
 	void setOperationCode(const std::string &operationCode);
+	std::string getOperationRange() const;
+	void setOperationRange(const std::string &operationRange);
+	int getOperationAll() const;
+	void setOperationAll(int operationAll);
 
 private:
-	std::string operationRange_;
-	int operationAll_;
 	std::string sourceIp_;
 	std::string operationCode_;
+	std::string operationRange_;
+	int operationAll_;
 };
 } // namespace Model
 } // namespace Sas

@@ -38,6 +38,8 @@ public:
 	void setPageSize(int pageSize);
 	std::string getHistoryName() const;
 	void setHistoryName(const std::string &historyName);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	std::vector<int> getInterceptionTypes() const;
 	void setInterceptionTypes(const std::vector<int> &interceptionTypes);
 	long getEndTime() const;
@@ -52,6 +54,7 @@ private:
 	std::string sourceIp_;
 	int pageSize_;
 	std::string historyName_;
+	std::string lang_;
 	std::vector<int> interceptionTypes_;
 	long endTime_;
 	int currentPage_;

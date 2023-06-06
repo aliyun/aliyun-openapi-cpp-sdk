@@ -32,8 +32,6 @@ public:
 	~DescribeSimilarSecurityEventsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
@@ -42,14 +40,16 @@ public:
 	void setLang(const std::string &lang);
 	long getTaskId() const;
 	void setTaskId(long taskId);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 
 private:
 	long resourceOwnerId_;
-	int currentPage_;
 	std::string sourceIp_;
 	int pageSize_;
 	std::string lang_;
 	long taskId_;
+	int currentPage_;
 };
 } // namespace Model
 } // namespace Sas

@@ -30,23 +30,23 @@ class ALIBABACLOUD_SAS_EXPORT DescribePropertyUserItemRequest : public RpcServic
 public:
 	DescribePropertyUserItemRequest();
 	~DescribePropertyUserItemRequest();
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
-	std::string getUser() const;
-	void setUser(const std::string &user);
 	bool getForceFlush() const;
 	void setForceFlush(bool forceFlush);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
+	std::string getUser() const;
+	void setUser(const std::string &user);
 
 private:
-	int currentPage_;
 	std::string sourceIp_;
 	int pageSize_;
-	std::string user_;
 	bool forceFlush_;
+	int currentPage_;
+	std::string user_;
 };
 } // namespace Model
 } // namespace Sas

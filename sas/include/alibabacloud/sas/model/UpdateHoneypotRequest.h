@@ -32,6 +32,8 @@ public:
 	~UpdateHoneypotRequest();
 	std::string getHoneypotName() const;
 	void setHoneypotName(const std::string &honeypotName);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	std::string getHoneypotId() const;
 	void setHoneypotId(const std::string &honeypotId);
 	std::string getMeta() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string honeypotName_;
+	std::string lang_;
 	std::string honeypotId_;
 	std::string meta_;
 };

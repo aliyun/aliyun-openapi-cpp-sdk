@@ -34,24 +34,6 @@ void ListInterceptionRulePageRequest::setCriteria(const std::string &criteria) {
   setParameter(std::string("Criteria"), criteria);
 }
 
-int ListInterceptionRulePageRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void ListInterceptionRulePageRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
-std::string ListInterceptionRulePageRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void ListInterceptionRulePageRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 std::string ListInterceptionRulePageRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -77,5 +59,23 @@ std::string ListInterceptionRulePageRequest::getCriteriaType() const {
 void ListInterceptionRulePageRequest::setCriteriaType(const std::string &criteriaType) {
   criteriaType_ = criteriaType;
   setParameter(std::string("CriteriaType"), criteriaType);
+}
+
+int ListInterceptionRulePageRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void ListInterceptionRulePageRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string ListInterceptionRulePageRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void ListInterceptionRulePageRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

@@ -25,15 +25,6 @@ DescribeExposedStatisticsDetailRequest::DescribeExposedStatisticsDetailRequest()
 
 DescribeExposedStatisticsDetailRequest::~DescribeExposedStatisticsDetailRequest() {}
 
-std::string DescribeExposedStatisticsDetailRequest::getStatisticsType() const {
-  return statisticsType_;
-}
-
-void DescribeExposedStatisticsDetailRequest::setStatisticsType(const std::string &statisticsType) {
-  statisticsType_ = statisticsType;
-  setParameter(std::string("StatisticsType"), statisticsType);
-}
-
 std::string DescribeExposedStatisticsDetailRequest::getStatisticsTypeGatewayType() const {
   return statisticsTypeGatewayType_;
 }
@@ -41,15 +32,6 @@ std::string DescribeExposedStatisticsDetailRequest::getStatisticsTypeGatewayType
 void DescribeExposedStatisticsDetailRequest::setStatisticsTypeGatewayType(const std::string &statisticsTypeGatewayType) {
   statisticsTypeGatewayType_ = statisticsTypeGatewayType;
   setParameter(std::string("StatisticsTypeGatewayType"), statisticsTypeGatewayType);
-}
-
-int DescribeExposedStatisticsDetailRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeExposedStatisticsDetailRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
 std::string DescribeExposedStatisticsDetailRequest::getSourceIp() const {
@@ -77,5 +59,23 @@ int DescribeExposedStatisticsDetailRequest::getPageSize() const {
 void DescribeExposedStatisticsDetailRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string DescribeExposedStatisticsDetailRequest::getStatisticsType() const {
+  return statisticsType_;
+}
+
+void DescribeExposedStatisticsDetailRequest::setStatisticsType(const std::string &statisticsType) {
+  statisticsType_ = statisticsType;
+  setParameter(std::string("StatisticsType"), statisticsType);
+}
+
+int DescribeExposedStatisticsDetailRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeExposedStatisticsDetailRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 

@@ -25,15 +25,6 @@ OperateWebLockFileEventsRequest::OperateWebLockFileEventsRequest()
 
 OperateWebLockFileEventsRequest::~OperateWebLockFileEventsRequest() {}
 
-int OperateWebLockFileEventsRequest::getDealAll() const {
-  return dealAll_;
-}
-
-void OperateWebLockFileEventsRequest::setDealAll(int dealAll) {
-  dealAll_ = dealAll;
-  setParameter(std::string("DealAll"), std::to_string(dealAll));
-}
-
 std::vector<long> OperateWebLockFileEventsRequest::getEventIds() const {
   return eventIds_;
 }
@@ -58,5 +49,14 @@ std::string OperateWebLockFileEventsRequest::getOperationCode() const {
 void OperateWebLockFileEventsRequest::setOperationCode(const std::string &operationCode) {
   operationCode_ = operationCode;
   setParameter(std::string("OperationCode"), operationCode);
+}
+
+int OperateWebLockFileEventsRequest::getDealAll() const {
+  return dealAll_;
+}
+
+void OperateWebLockFileEventsRequest::setDealAll(int dealAll) {
+  dealAll_ = dealAll;
+  setParameter(std::string("DealAll"), std::to_string(dealAll));
 }
 

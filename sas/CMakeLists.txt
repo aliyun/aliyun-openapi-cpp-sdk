@@ -21,6 +21,8 @@ set(sas_public_header
 	include/alibabacloud/sas/SasExport.h )
 
 set(sas_public_header_model 
+	include/alibabacloud/sas/model/AddAssetSelectionCriteriaRequest.h
+	include/alibabacloud/sas/model/AddAssetSelectionCriteriaResult.h
 	include/alibabacloud/sas/model/AddCheckInstanceResultWhiteListRequest.h
 	include/alibabacloud/sas/model/AddCheckInstanceResultWhiteListResult.h
 	include/alibabacloud/sas/model/AddCheckResultWhiteListRequest.h
@@ -47,6 +49,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/CancelOnceTaskResult.h
 	include/alibabacloud/sas/model/ChangeCheckConfigRequest.h
 	include/alibabacloud/sas/model/ChangeCheckConfigResult.h
+	include/alibabacloud/sas/model/ChangeCheckCustomConfigRequest.h
+	include/alibabacloud/sas/model/ChangeCheckCustomConfigResult.h
 	include/alibabacloud/sas/model/CheckQuaraFileIdRequest.h
 	include/alibabacloud/sas/model/CheckQuaraFileIdResult.h
 	include/alibabacloud/sas/model/CheckSecurityEventIdRequest.h
@@ -57,6 +61,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/ConfirmVirusEventsResult.h
 	include/alibabacloud/sas/model/CreateAntiBruteForceRuleRequest.h
 	include/alibabacloud/sas/model/CreateAntiBruteForceRuleResult.h
+	include/alibabacloud/sas/model/CreateAssetSelectionConfigRequest.h
+	include/alibabacloud/sas/model/CreateAssetSelectionConfigResult.h
 	include/alibabacloud/sas/model/CreateBackupPolicyRequest.h
 	include/alibabacloud/sas/model/CreateBackupPolicyResult.h
 	include/alibabacloud/sas/model/CreateContainerScanTaskRequest.h
@@ -85,6 +91,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/CreateJenkinsImageRegistryResult.h
 	include/alibabacloud/sas/model/CreateOrUpdateAssetGroupRequest.h
 	include/alibabacloud/sas/model/CreateOrUpdateAssetGroupResult.h
+	include/alibabacloud/sas/model/CreateOrUpdateDingTalkRequest.h
+	include/alibabacloud/sas/model/CreateOrUpdateDingTalkResult.h
 	include/alibabacloud/sas/model/CreateRestoreJobRequest.h
 	include/alibabacloud/sas/model/CreateRestoreJobResult.h
 	include/alibabacloud/sas/model/CreateServiceLinkedRoleRequest.h
@@ -157,8 +165,6 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/DescribeAgentInstallStatusResult.h
 	include/alibabacloud/sas/model/DescribeAlarmEventDetailRequest.h
 	include/alibabacloud/sas/model/DescribeAlarmEventDetailResult.h
-	include/alibabacloud/sas/model/DescribeAlarmEventListRequest.h
-	include/alibabacloud/sas/model/DescribeAlarmEventListResult.h
 	include/alibabacloud/sas/model/DescribeAlarmEventStackInfoRequest.h
 	include/alibabacloud/sas/model/DescribeAlarmEventStackInfoResult.h
 	include/alibabacloud/sas/model/DescribeAllEntityRequest.h
@@ -617,6 +623,10 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/GetAlarmMachineCountResult.h
 	include/alibabacloud/sas/model/GetAppNetworkRequest.h
 	include/alibabacloud/sas/model/GetAppNetworkResult.h
+	include/alibabacloud/sas/model/GetAssetDetailByUuidRequest.h
+	include/alibabacloud/sas/model/GetAssetDetailByUuidResult.h
+	include/alibabacloud/sas/model/GetAssetSelectionConfigRequest.h
+	include/alibabacloud/sas/model/GetAssetSelectionConfigResult.h
 	include/alibabacloud/sas/model/GetAssetsPropertyDetailRequest.h
 	include/alibabacloud/sas/model/GetAssetsPropertyDetailResult.h
 	include/alibabacloud/sas/model/GetAssetsPropertyItemRequest.h
@@ -699,6 +709,10 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/InstallUniBackupAgentResult.h
 	include/alibabacloud/sas/model/JoinWebLockProcessWhiteListRequest.h
 	include/alibabacloud/sas/model/JoinWebLockProcessWhiteListResult.h
+	include/alibabacloud/sas/model/ListAssetSelectionSelectedTargetRequest.h
+	include/alibabacloud/sas/model/ListAssetSelectionSelectedTargetResult.h
+	include/alibabacloud/sas/model/ListAssetSelectionTargetRequest.h
+	include/alibabacloud/sas/model/ListAssetSelectionTargetResult.h
 	include/alibabacloud/sas/model/ListAvailableHoneypotRequest.h
 	include/alibabacloud/sas/model/ListAvailableHoneypotResult.h
 	include/alibabacloud/sas/model/ListCheckInstanceResultRequest.h
@@ -739,8 +753,6 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/ListInstanceCatalogResult.h
 	include/alibabacloud/sas/model/ListInterceptionHistoryRequest.h
 	include/alibabacloud/sas/model/ListInterceptionHistoryResult.h
-	include/alibabacloud/sas/model/ListInterceptionImageRequest.h
-	include/alibabacloud/sas/model/ListInterceptionImageResult.h
 	include/alibabacloud/sas/model/ListInterceptionRulePageRequest.h
 	include/alibabacloud/sas/model/ListInterceptionRulePageResult.h
 	include/alibabacloud/sas/model/ListInterceptionTargetPageRequest.h
@@ -753,6 +765,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/ListPrivateRegistryListResult.h
 	include/alibabacloud/sas/model/ListPrivateRegistryTypeRequest.h
 	include/alibabacloud/sas/model/ListPrivateRegistryTypeResult.h
+	include/alibabacloud/sas/model/ListQueryRaspAppInfoRequest.h
+	include/alibabacloud/sas/model/ListQueryRaspAppInfoResult.h
 	include/alibabacloud/sas/model/ListRuleTargetAllRequest.h
 	include/alibabacloud/sas/model/ListRuleTargetAllResult.h
 	include/alibabacloud/sas/model/ListSystemAggregationRulesRequest.h
@@ -831,6 +845,8 @@ set(sas_public_header_model
 	include/alibabacloud/sas/model/ModifyPropertyScheduleConfigResult.h
 	include/alibabacloud/sas/model/ModifyPushAllTaskRequest.h
 	include/alibabacloud/sas/model/ModifyPushAllTaskResult.h
+	include/alibabacloud/sas/model/ModifyRefreshProcessInfoRequest.h
+	include/alibabacloud/sas/model/ModifyRefreshProcessInfoResult.h
 	include/alibabacloud/sas/model/ModifyRiskCheckStatusRequest.h
 	include/alibabacloud/sas/model/ModifyRiskCheckStatusResult.h
 	include/alibabacloud/sas/model/ModifyRiskSingleResultStatusRequest.h
@@ -982,6 +998,8 @@ set(sas_public_header_model
 
 set(sas_src 
 	src/SasClient.cc
+	src/model/AddAssetSelectionCriteriaRequest.cc
+	src/model/AddAssetSelectionCriteriaResult.cc
 	src/model/AddCheckInstanceResultWhiteListRequest.cc
 	src/model/AddCheckInstanceResultWhiteListResult.cc
 	src/model/AddCheckResultWhiteListRequest.cc
@@ -1008,6 +1026,8 @@ set(sas_src
 	src/model/CancelOnceTaskResult.cc
 	src/model/ChangeCheckConfigRequest.cc
 	src/model/ChangeCheckConfigResult.cc
+	src/model/ChangeCheckCustomConfigRequest.cc
+	src/model/ChangeCheckCustomConfigResult.cc
 	src/model/CheckQuaraFileIdRequest.cc
 	src/model/CheckQuaraFileIdResult.cc
 	src/model/CheckSecurityEventIdRequest.cc
@@ -1018,6 +1038,8 @@ set(sas_src
 	src/model/ConfirmVirusEventsResult.cc
 	src/model/CreateAntiBruteForceRuleRequest.cc
 	src/model/CreateAntiBruteForceRuleResult.cc
+	src/model/CreateAssetSelectionConfigRequest.cc
+	src/model/CreateAssetSelectionConfigResult.cc
 	src/model/CreateBackupPolicyRequest.cc
 	src/model/CreateBackupPolicyResult.cc
 	src/model/CreateContainerScanTaskRequest.cc
@@ -1046,6 +1068,8 @@ set(sas_src
 	src/model/CreateJenkinsImageRegistryResult.cc
 	src/model/CreateOrUpdateAssetGroupRequest.cc
 	src/model/CreateOrUpdateAssetGroupResult.cc
+	src/model/CreateOrUpdateDingTalkRequest.cc
+	src/model/CreateOrUpdateDingTalkResult.cc
 	src/model/CreateRestoreJobRequest.cc
 	src/model/CreateRestoreJobResult.cc
 	src/model/CreateServiceLinkedRoleRequest.cc
@@ -1118,8 +1142,6 @@ set(sas_src
 	src/model/DescribeAgentInstallStatusResult.cc
 	src/model/DescribeAlarmEventDetailRequest.cc
 	src/model/DescribeAlarmEventDetailResult.cc
-	src/model/DescribeAlarmEventListRequest.cc
-	src/model/DescribeAlarmEventListResult.cc
 	src/model/DescribeAlarmEventStackInfoRequest.cc
 	src/model/DescribeAlarmEventStackInfoResult.cc
 	src/model/DescribeAllEntityRequest.cc
@@ -1578,6 +1600,10 @@ set(sas_src
 	src/model/GetAlarmMachineCountResult.cc
 	src/model/GetAppNetworkRequest.cc
 	src/model/GetAppNetworkResult.cc
+	src/model/GetAssetDetailByUuidRequest.cc
+	src/model/GetAssetDetailByUuidResult.cc
+	src/model/GetAssetSelectionConfigRequest.cc
+	src/model/GetAssetSelectionConfigResult.cc
 	src/model/GetAssetsPropertyDetailRequest.cc
 	src/model/GetAssetsPropertyDetailResult.cc
 	src/model/GetAssetsPropertyItemRequest.cc
@@ -1660,6 +1686,10 @@ set(sas_src
 	src/model/InstallUniBackupAgentResult.cc
 	src/model/JoinWebLockProcessWhiteListRequest.cc
 	src/model/JoinWebLockProcessWhiteListResult.cc
+	src/model/ListAssetSelectionSelectedTargetRequest.cc
+	src/model/ListAssetSelectionSelectedTargetResult.cc
+	src/model/ListAssetSelectionTargetRequest.cc
+	src/model/ListAssetSelectionTargetResult.cc
 	src/model/ListAvailableHoneypotRequest.cc
 	src/model/ListAvailableHoneypotResult.cc
 	src/model/ListCheckInstanceResultRequest.cc
@@ -1700,8 +1730,6 @@ set(sas_src
 	src/model/ListInstanceCatalogResult.cc
 	src/model/ListInterceptionHistoryRequest.cc
 	src/model/ListInterceptionHistoryResult.cc
-	src/model/ListInterceptionImageRequest.cc
-	src/model/ListInterceptionImageResult.cc
 	src/model/ListInterceptionRulePageRequest.cc
 	src/model/ListInterceptionRulePageResult.cc
 	src/model/ListInterceptionTargetPageRequest.cc
@@ -1714,6 +1742,8 @@ set(sas_src
 	src/model/ListPrivateRegistryListResult.cc
 	src/model/ListPrivateRegistryTypeRequest.cc
 	src/model/ListPrivateRegistryTypeResult.cc
+	src/model/ListQueryRaspAppInfoRequest.cc
+	src/model/ListQueryRaspAppInfoResult.cc
 	src/model/ListRuleTargetAllRequest.cc
 	src/model/ListRuleTargetAllResult.cc
 	src/model/ListSystemAggregationRulesRequest.cc
@@ -1792,6 +1822,8 @@ set(sas_src
 	src/model/ModifyPropertyScheduleConfigResult.cc
 	src/model/ModifyPushAllTaskRequest.cc
 	src/model/ModifyPushAllTaskResult.cc
+	src/model/ModifyRefreshProcessInfoRequest.cc
+	src/model/ModifyRefreshProcessInfoResult.cc
 	src/model/ModifyRiskCheckStatusRequest.cc
 	src/model/ModifyRiskCheckStatusResult.cc
 	src/model/ModifyRiskSingleResultStatusRequest.cc

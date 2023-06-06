@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_LISTINTERCEPTIONIMAGEREQUEST_H_
-#define ALIBABACLOUD_SAS_MODEL_LISTINTERCEPTIONIMAGEREQUEST_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_CREATEASSETSELECTIONCONFIGREQUEST_H_
+#define ALIBABACLOUD_SAS_MODEL_CREATEASSETSELECTIONCONFIGREQUEST_H_
 
 #include <alibabacloud/sas/SasExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,17 +26,23 @@
 namespace AlibabaCloud {
 namespace Sas {
 namespace Model {
-class ALIBABACLOUD_SAS_EXPORT ListInterceptionImageRequest : public RpcServiceRequest {
+class ALIBABACLOUD_SAS_EXPORT CreateAssetSelectionConfigRequest : public RpcServiceRequest {
 public:
-	ListInterceptionImageRequest();
-	~ListInterceptionImageRequest();
+	CreateAssetSelectionConfigRequest();
+	~CreateAssetSelectionConfigRequest();
+	std::string getTargetType() const;
+	void setTargetType(const std::string &targetType);
+	std::string getBusinessType() const;
+	void setBusinessType(const std::string &businessType);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 
 private:
+	std::string targetType_;
+	std::string businessType_;
 	std::string sourceIp_;
 };
 } // namespace Model
 } // namespace Sas
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_SAS_MODEL_LISTINTERCEPTIONIMAGEREQUEST_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_CREATEASSETSELECTIONCONFIGREQUEST_H_

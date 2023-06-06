@@ -32,17 +32,23 @@ public:
 	~OperateAgentClientInstallRequest();
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	std::string getInstanceIds() const;
-	void setInstanceIds(const std::string &instanceIds);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getOs() const;
+	void setOs(const std::string &os);
+	std::string getInstanceIds() const;
+	void setInstanceIds(const std::string &instanceIds);
+	std::string getRegion() const;
+	void setRegion(const std::string &region);
 	std::string getUuids() const;
 	void setUuids(const std::string &uuids);
 
 private:
 	std::string sourceIp_;
-	std::string instanceIds_;
 	std::string lang_;
+	std::string os_;
+	std::string instanceIds_;
+	std::string region_;
 	std::string uuids_;
 };
 } // namespace Model

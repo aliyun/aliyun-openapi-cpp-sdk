@@ -32,21 +32,21 @@ public:
 	~DescribeContainerInstancesRequest();
 	std::string getCriteria() const;
 	void setCriteria(const std::string &criteria);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getLogicalExp() const;
 	void setLogicalExp(const std::string &logicalExp);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 
 private:
 	std::string criteria_;
-	int currentPage_;
 	std::string sourceIp_;
 	int pageSize_;
 	std::string logicalExp_;
+	int currentPage_;
 };
 } // namespace Model
 } // namespace Sas

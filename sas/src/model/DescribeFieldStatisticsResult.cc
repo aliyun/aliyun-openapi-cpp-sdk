@@ -88,6 +88,8 @@ void DescribeFieldStatisticsResult::parse(const std::string &payload)
 		groupedFields_.outMachineInstanceCount = std::stoi(groupedFieldsNode["OutMachineInstanceCount"].asString());
 	if(!groupedFieldsNode["TripartiteInstanceCount"].isNull())
 		groupedFields_.tripartiteInstanceCount = std::stoi(groupedFieldsNode["TripartiteInstanceCount"].asString());
+	if(!groupedFieldsNode["AzureInstanceCount"].isNull())
+		groupedFields_.azureInstanceCount = std::stoi(groupedFieldsNode["AzureInstanceCount"].asString());
 
 }
 

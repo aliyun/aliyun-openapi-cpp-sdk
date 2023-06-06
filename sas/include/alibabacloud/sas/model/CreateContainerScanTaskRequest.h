@@ -30,17 +30,17 @@ class ALIBABACLOUD_SAS_EXPORT CreateContainerScanTaskRequest : public RpcService
 public:
 	CreateContainerScanTaskRequest();
 	~CreateContainerScanTaskRequest();
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getContainerIds() const;
 	void setContainerIds(const std::string &containerIds);
-	std::string getLang() const;
-	void setLang(const std::string &lang);
 
 private:
+	std::string lang_;
 	std::string clusterId_;
 	std::string containerIds_;
-	std::string lang_;
 };
 } // namespace Model
 } // namespace Sas

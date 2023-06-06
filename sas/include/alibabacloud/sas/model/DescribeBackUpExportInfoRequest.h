@@ -30,23 +30,23 @@ class ALIBABACLOUD_SAS_EXPORT DescribeBackUpExportInfoRequest : public RpcServic
 public:
 	DescribeBackUpExportInfoRequest();
 	~DescribeBackUpExportInfoRequest();
-	std::string getExportType() const;
-	void setExportType(const std::string &exportType);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getExportType() const;
+	void setExportType(const std::string &exportType);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 
 private:
-	std::string exportType_;
-	int currentPage_;
 	std::string sourceIp_;
 	int pageSize_;
 	std::string lang_;
+	std::string exportType_;
+	int currentPage_;
 };
 } // namespace Model
 } // namespace Sas

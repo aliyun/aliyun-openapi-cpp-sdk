@@ -34,21 +34,21 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	std::vector<std::string> getIds() const;
-	void setIds(const std::vector<std::string> &ids);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
 	long getTaskId() const;
 	void setTaskId(long taskId);
+	std::vector<std::string> getIds() const;
+	void setIds(const std::vector<std::string> &ids);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 
 private:
 	long resourceOwnerId_;
 	std::string sourceIp_;
-	std::vector<std::string> ids_;
 	std::string lang_;
 	long taskId_;
+	std::vector<std::string> ids_;
 	std::string status_;
 };
 } // namespace Model

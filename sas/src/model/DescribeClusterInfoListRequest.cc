@@ -43,15 +43,6 @@ void DescribeClusterInfoListRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
-std::string DescribeClusterInfoListRequest::getTarget() const {
-  return target_;
-}
-
-void DescribeClusterInfoListRequest::setTarget(const std::string &target) {
-  target_ = target;
-  setParameter(std::string("Target"), target);
-}
-
 std::string DescribeClusterInfoListRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,5 +50,14 @@ std::string DescribeClusterInfoListRequest::getSourceIp() const {
 void DescribeClusterInfoListRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string DescribeClusterInfoListRequest::getTarget() const {
+  return target_;
+}
+
+void DescribeClusterInfoListRequest::setTarget(const std::string &target) {
+  target_ = target;
+  setParameter(std::string("Target"), target);
 }
 

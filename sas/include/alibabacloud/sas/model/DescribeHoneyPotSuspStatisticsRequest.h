@@ -32,18 +32,21 @@ public:
 	~DescribeHoneyPotSuspStatisticsRequest();
 	int getStatisticsDays() const;
 	void setStatisticsDays(int statisticsDays);
-	std::string getStatisticsKeyType() const;
-	void setStatisticsKeyType(const std::string &statisticsKeyType);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getFrom() const;
 	void setFrom(const std::string &from);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
+	std::string getStatisticsKeyType() const;
+	void setStatisticsKeyType(const std::string &statisticsKeyType);
 
 private:
 	int statisticsDays_;
-	std::string statisticsKeyType_;
 	std::string sourceIp_;
 	std::string from_;
+	std::string lang_;
+	std::string statisticsKeyType_;
 };
 } // namespace Model
 } // namespace Sas

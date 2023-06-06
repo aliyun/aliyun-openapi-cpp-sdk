@@ -30,23 +30,23 @@ class ALIBABACLOUD_SAS_EXPORT DescribeWebPathRequest : public RpcServiceRequest 
 public:
 	DescribeWebPathRequest();
 	~DescribeWebPathRequest();
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getType() const;
 	void setType(const std::string &type);
-	std::string getTarget() const;
-	void setTarget(const std::string &target);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
+	std::string getTarget() const;
+	void setTarget(const std::string &target);
 
 private:
-	int currentPage_;
 	std::string type_;
-	std::string target_;
 	std::string sourceIp_;
 	int pageSize_;
+	int currentPage_;
+	std::string target_;
 };
 } // namespace Model
 } // namespace Sas

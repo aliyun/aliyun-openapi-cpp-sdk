@@ -34,15 +34,6 @@ void EnableCustomBlockRecordRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string EnableCustomBlockRecordRequest::getBound() const {
-  return bound_;
-}
-
-void EnableCustomBlockRecordRequest::setBound(const std::string &bound) {
-  bound_ = bound;
-  setParameter(std::string("Bound"), bound);
-}
-
 std::string EnableCustomBlockRecordRequest::getBlockIp() const {
   return blockIp_;
 }
@@ -59,5 +50,14 @@ std::string EnableCustomBlockRecordRequest::getSourceIp() const {
 void EnableCustomBlockRecordRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string EnableCustomBlockRecordRequest::getBound() const {
+  return bound_;
+}
+
+void EnableCustomBlockRecordRequest::setBound(const std::string &bound) {
+  bound_ = bound;
+  setParameter(std::string("Bound"), bound);
 }
 

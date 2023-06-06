@@ -25,15 +25,6 @@ DescribeAlarmEventDetailRequest::DescribeAlarmEventDetailRequest()
 
 DescribeAlarmEventDetailRequest::~DescribeAlarmEventDetailRequest() {}
 
-std::string DescribeAlarmEventDetailRequest::getAlarmUniqueInfo() const {
-  return alarmUniqueInfo_;
-}
-
-void DescribeAlarmEventDetailRequest::setAlarmUniqueInfo(const std::string &alarmUniqueInfo) {
-  alarmUniqueInfo_ = alarmUniqueInfo;
-  setParameter(std::string("AlarmUniqueInfo"), alarmUniqueInfo);
-}
-
 std::string DescribeAlarmEventDetailRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,5 +50,14 @@ std::string DescribeAlarmEventDetailRequest::getLang() const {
 void DescribeAlarmEventDetailRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeAlarmEventDetailRequest::getAlarmUniqueInfo() const {
+  return alarmUniqueInfo_;
+}
+
+void DescribeAlarmEventDetailRequest::setAlarmUniqueInfo(const std::string &alarmUniqueInfo) {
+  alarmUniqueInfo_ = alarmUniqueInfo;
+  setParameter(std::string("AlarmUniqueInfo"), alarmUniqueInfo);
 }
 

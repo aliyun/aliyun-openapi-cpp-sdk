@@ -25,24 +25,6 @@ DescribeDomainListRequest::DescribeDomainListRequest()
 
 DescribeDomainListRequest::~DescribeDomainListRequest() {}
 
-int DescribeDomainListRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeDomainListRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
-std::string DescribeDomainListRequest::getFuzzyDomain() const {
-  return fuzzyDomain_;
-}
-
-void DescribeDomainListRequest::setFuzzyDomain(const std::string &fuzzyDomain) {
-  fuzzyDomain_ = fuzzyDomain;
-  setParameter(std::string("FuzzyDomain"), fuzzyDomain);
-}
-
 std::string DescribeDomainListRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -68,5 +50,23 @@ int DescribeDomainListRequest::getPageSize() const {
 void DescribeDomainListRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+int DescribeDomainListRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeDomainListRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string DescribeDomainListRequest::getFuzzyDomain() const {
+  return fuzzyDomain_;
+}
+
+void DescribeDomainListRequest::setFuzzyDomain(const std::string &fuzzyDomain) {
+  fuzzyDomain_ = fuzzyDomain;
+  setParameter(std::string("FuzzyDomain"), fuzzyDomain);
 }
 

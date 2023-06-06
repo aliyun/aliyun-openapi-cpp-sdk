@@ -30,16 +30,19 @@ class ALIBABACLOUD_SAS_EXPORT ValidateHcWarningsRequest : public RpcServiceReque
 public:
 	ValidateHcWarningsRequest();
 	~ValidateHcWarningsRequest();
-	std::string getRiskIds() const;
-	void setRiskIds(const std::string &riskIds);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getCheckIds() const;
+	void setCheckIds(const std::string &checkIds);
+	std::string getRiskIds() const;
+	void setRiskIds(const std::string &riskIds);
 	std::string getUuids() const;
 	void setUuids(const std::string &uuids);
 
 private:
-	std::string riskIds_;
 	std::string sourceIp_;
+	std::string checkIds_;
+	std::string riskIds_;
 	std::string uuids_;
 };
 } // namespace Model

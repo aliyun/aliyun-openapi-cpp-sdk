@@ -25,15 +25,6 @@ GetCheckRiskStatisticsRequest::GetCheckRiskStatisticsRequest()
 
 GetCheckRiskStatisticsRequest::~GetCheckRiskStatisticsRequest() {}
 
-int GetCheckRiskStatisticsRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void GetCheckRiskStatisticsRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 int GetCheckRiskStatisticsRequest::getPageSize() const {
   return pageSize_;
 }
@@ -50,5 +41,14 @@ std::string GetCheckRiskStatisticsRequest::getLang() const {
 void GetCheckRiskStatisticsRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+int GetCheckRiskStatisticsRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void GetCheckRiskStatisticsRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 

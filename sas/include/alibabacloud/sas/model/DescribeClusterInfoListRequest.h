@@ -34,16 +34,16 @@ public:
 	void setTargetType(const std::string &targetType);
 	std::string getType() const;
 	void setType(const std::string &type);
-	std::string getTarget() const;
-	void setTarget(const std::string &target);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getTarget() const;
+	void setTarget(const std::string &target);
 
 private:
 	std::string targetType_;
 	std::string type_;
-	std::string target_;
 	std::string sourceIp_;
+	std::string target_;
 };
 } // namespace Model
 } // namespace Sas

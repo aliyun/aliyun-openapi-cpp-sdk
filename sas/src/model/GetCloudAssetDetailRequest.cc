@@ -25,20 +25,6 @@ GetCloudAssetDetailRequest::GetCloudAssetDetailRequest()
 
 GetCloudAssetDetailRequest::~GetCloudAssetDetailRequest() {}
 
-std::vector<GetCloudAssetDetailRequest::CloudAssetInstances> GetCloudAssetDetailRequest::getCloudAssetInstances() const {
-  return cloudAssetInstances_;
-}
-
-void GetCloudAssetDetailRequest::setCloudAssetInstances(const std::vector<GetCloudAssetDetailRequest::CloudAssetInstances> &cloudAssetInstances) {
-  cloudAssetInstances_ = cloudAssetInstances;
-  for(int dep1 = 0; dep1 != cloudAssetInstances.size(); dep1++) {
-  auto cloudAssetInstancesObj = cloudAssetInstances.at(dep1);
-  std::string cloudAssetInstancesObjStr = std::string("CloudAssetInstances") + "." + std::to_string(dep1 + 1);
-    setParameter(cloudAssetInstancesObjStr + ".InstanceId", cloudAssetInstancesObj.instanceId);
-    setParameter(cloudAssetInstancesObjStr + ".RegionId", cloudAssetInstancesObj.regionId);
-  }
-}
-
 int GetCloudAssetDetailRequest::getAssetSubType() const {
   return assetSubType_;
 }
@@ -73,5 +59,19 @@ int GetCloudAssetDetailRequest::getAssetType() const {
 void GetCloudAssetDetailRequest::setAssetType(int assetType) {
   assetType_ = assetType;
   setParameter(std::string("AssetType"), std::to_string(assetType));
+}
+
+std::vector<GetCloudAssetDetailRequest::CloudAssetInstances> GetCloudAssetDetailRequest::getCloudAssetInstances() const {
+  return cloudAssetInstances_;
+}
+
+void GetCloudAssetDetailRequest::setCloudAssetInstances(const std::vector<GetCloudAssetDetailRequest::CloudAssetInstances> &cloudAssetInstances) {
+  cloudAssetInstances_ = cloudAssetInstances;
+  for(int dep1 = 0; dep1 != cloudAssetInstances.size(); dep1++) {
+  auto cloudAssetInstancesObj = cloudAssetInstances.at(dep1);
+  std::string cloudAssetInstancesObjStr = std::string("CloudAssetInstances") + "." + std::to_string(dep1 + 1);
+    setParameter(cloudAssetInstancesObjStr + ".InstanceId", cloudAssetInstancesObj.instanceId);
+    setParameter(cloudAssetInstancesObjStr + ".RegionId", cloudAssetInstancesObj.regionId);
+  }
 }
 

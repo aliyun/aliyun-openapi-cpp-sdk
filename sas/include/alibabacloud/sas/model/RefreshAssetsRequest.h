@@ -30,20 +30,20 @@ class ALIBABACLOUD_SAS_EXPORT RefreshAssetsRequest : public RpcServiceRequest {
 public:
 	RefreshAssetsRequest();
 	~RefreshAssetsRequest();
-	int getCloudAssetType() const;
-	void setCloudAssetType(int cloudAssetType);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getCloudAssetSubType() const;
 	void setCloudAssetSubType(int cloudAssetSubType);
 	std::string getAssetType() const;
 	void setAssetType(const std::string &assetType);
+	int getCloudAssetType() const;
+	void setCloudAssetType(int cloudAssetType);
 
 private:
-	int cloudAssetType_;
 	std::string sourceIp_;
 	int cloudAssetSubType_;
 	std::string assetType_;
+	int cloudAssetType_;
 };
 } // namespace Model
 } // namespace Sas

@@ -34,15 +34,6 @@ void DescribeCriteriaRequest::setSupportAutoTag(bool supportAutoTag) {
   setParameter(std::string("SupportAutoTag"), supportAutoTag ? "true" : "false");
 }
 
-std::string DescribeCriteriaRequest::getMachineTypes() const {
-  return machineTypes_;
-}
-
-void DescribeCriteriaRequest::setMachineTypes(const std::string &machineTypes) {
-  machineTypes_ = machineTypes;
-  setParameter(std::string("MachineTypes"), machineTypes);
-}
-
 std::string DescribeCriteriaRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,5 +50,14 @@ std::string DescribeCriteriaRequest::getValue() const {
 void DescribeCriteriaRequest::setValue(const std::string &value) {
   value_ = value;
   setParameter(std::string("Value"), value);
+}
+
+std::string DescribeCriteriaRequest::getMachineTypes() const {
+  return machineTypes_;
+}
+
+void DescribeCriteriaRequest::setMachineTypes(const std::string &machineTypes) {
+  machineTypes_ = machineTypes;
+  setParameter(std::string("MachineTypes"), machineTypes);
 }
 

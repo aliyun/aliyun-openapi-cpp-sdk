@@ -34,15 +34,6 @@ void DescribeAntiBruteForceRulesRequest::setResourceOwnerId(long resourceOwnerId
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int DescribeAntiBruteForceRulesRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeAntiBruteForceRulesRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribeAntiBruteForceRulesRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -68,5 +59,23 @@ long DescribeAntiBruteForceRulesRequest::getId() const {
 void DescribeAntiBruteForceRulesRequest::setId(long id) {
   id_ = id;
   setParameter(std::string("Id"), std::to_string(id));
+}
+
+int DescribeAntiBruteForceRulesRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeAntiBruteForceRulesRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string DescribeAntiBruteForceRulesRequest::getName() const {
+  return name_;
+}
+
+void DescribeAntiBruteForceRulesRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 

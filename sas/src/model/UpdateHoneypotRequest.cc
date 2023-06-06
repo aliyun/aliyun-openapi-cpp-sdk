@@ -34,6 +34,15 @@ void UpdateHoneypotRequest::setHoneypotName(const std::string &honeypotName) {
   setParameter(std::string("HoneypotName"), honeypotName);
 }
 
+std::string UpdateHoneypotRequest::getLang() const {
+  return lang_;
+}
+
+void UpdateHoneypotRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 std::string UpdateHoneypotRequest::getHoneypotId() const {
   return honeypotId_;
 }

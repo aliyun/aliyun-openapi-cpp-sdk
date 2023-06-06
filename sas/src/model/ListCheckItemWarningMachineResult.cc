@@ -65,6 +65,10 @@ void ListCheckItemWarningMachineResult::parse(const std::string &payload)
 			listObject.regionId = valueListListItem["RegionId"].asString();
 		if(!valueListListItem["Prompt"].isNull())
 			listObject.prompt = valueListListItem["Prompt"].asString();
+		if(!valueListListItem["ContainerId"].isNull())
+			listObject.containerId = valueListListItem["ContainerId"].asString();
+		if(!valueListListItem["ContainerName"].isNull())
+			listObject.containerName = valueListListItem["ContainerName"].asString();
 		auto allWarningRiskListNode = valueListListItem["WarningRiskList"]["WarningRiskListItem"];
 		for (auto valueListListItemWarningRiskListWarningRiskListItem : allWarningRiskListNode)
 		{

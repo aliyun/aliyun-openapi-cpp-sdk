@@ -25,6 +25,15 @@ DeleteHoneypotNodeRequest::DeleteHoneypotNodeRequest()
 
 DeleteHoneypotNodeRequest::~DeleteHoneypotNodeRequest() {}
 
+std::string DeleteHoneypotNodeRequest::getLang() const {
+  return lang_;
+}
+
+void DeleteHoneypotNodeRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 std::string DeleteHoneypotNodeRequest::getNodeId() const {
   return nodeId_;
 }

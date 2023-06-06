@@ -30,6 +30,8 @@ class ALIBABACLOUD_SAS_EXPORT DescribeCheckWarningsRequest : public RpcServiceRe
 public:
 	DescribeCheckWarningsRequest();
 	~DescribeCheckWarningsRequest();
+	std::string getContainerName() const;
+	void setContainerName(const std::string &containerName);
 	std::string getUuid() const;
 	void setUuid(const std::string &uuid);
 	std::string getCheckType() const;
@@ -50,6 +52,7 @@ public:
 	void setRiskStatus(int riskStatus);
 
 private:
+	std::string containerName_;
 	std::string uuid_;
 	std::string checkType_;
 	std::string sourceIp_;

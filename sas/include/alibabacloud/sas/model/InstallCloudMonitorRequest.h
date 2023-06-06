@@ -34,22 +34,22 @@ public:
 	void setAgentAccessKey(const std::string &agentAccessKey);
 	std::string getAgentSecretKey() const;
 	void setAgentSecretKey(const std::string &agentSecretKey);
-	std::string getArgusVersion() const;
-	void setArgusVersion(const std::string &argusVersion);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	std::vector<std::string> getInstanceIdList() const;
-	void setInstanceIdList(const std::vector<std::string> &instanceIdList);
 	std::vector<std::string> getUuidList() const;
 	void setUuidList(const std::vector<std::string> &uuidList);
+	std::string getArgusVersion() const;
+	void setArgusVersion(const std::string &argusVersion);
+	std::vector<std::string> getInstanceIdList() const;
+	void setInstanceIdList(const std::vector<std::string> &instanceIdList);
 
 private:
 	std::string agentAccessKey_;
 	std::string agentSecretKey_;
-	std::string argusVersion_;
 	std::string sourceIp_;
-	std::vector<std::string> instanceIdList_;
 	std::vector<std::string> uuidList_;
+	std::string argusVersion_;
+	std::vector<std::string> instanceIdList_;
 };
 } // namespace Model
 } // namespace Sas

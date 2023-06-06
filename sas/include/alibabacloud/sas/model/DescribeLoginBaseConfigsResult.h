@@ -47,6 +47,7 @@ namespace AlibabaCloud
 					std::string startTime;
 					int uuidCount;
 					std::string location;
+					std::string remark;
 				};
 
 

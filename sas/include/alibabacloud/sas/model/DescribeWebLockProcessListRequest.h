@@ -30,22 +30,22 @@ class ALIBABACLOUD_SAS_EXPORT DescribeWebLockProcessListRequest : public RpcServ
 public:
 	DescribeWebLockProcessListRequest();
 	~DescribeWebLockProcessListRequest();
-	std::string getProcessName() const;
-	void setProcessName(const std::string &processName);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getProcessName() const;
+	void setProcessName(const std::string &processName);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 	int getStatus() const;
 	void setStatus(int status);
 
 private:
-	std::string processName_;
-	int currentPage_;
 	std::string sourceIp_;
 	int pageSize_;
+	std::string processName_;
+	int currentPage_;
 	int status_;
 };
 } // namespace Model

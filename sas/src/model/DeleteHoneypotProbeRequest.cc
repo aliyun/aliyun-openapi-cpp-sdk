@@ -34,3 +34,12 @@ void DeleteHoneypotProbeRequest::setProbeId(const std::string &probeId) {
   setParameter(std::string("ProbeId"), probeId);
 }
 
+std::string DeleteHoneypotProbeRequest::getLang() const {
+  return lang_;
+}
+
+void DeleteHoneypotProbeRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+

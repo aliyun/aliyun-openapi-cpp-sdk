@@ -25,15 +25,6 @@ SetClusterInterceptionConfigRequest::SetClusterInterceptionConfigRequest()
 
 SetClusterInterceptionConfigRequest::~SetClusterInterceptionConfigRequest() {}
 
-std::string SetClusterInterceptionConfigRequest::getClusterIds() const {
-  return clusterIds_;
-}
-
-void SetClusterInterceptionConfigRequest::setClusterIds(const std::string &clusterIds) {
-  clusterIds_ = clusterIds;
-  setParameter(std::string("ClusterIds"), clusterIds);
-}
-
 std::string SetClusterInterceptionConfigRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -41,6 +32,15 @@ std::string SetClusterInterceptionConfigRequest::getSourceIp() const {
 void SetClusterInterceptionConfigRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string SetClusterInterceptionConfigRequest::getClusterIds() const {
+  return clusterIds_;
+}
+
+void SetClusterInterceptionConfigRequest::setClusterIds(const std::string &clusterIds) {
+  clusterIds_ = clusterIds;
+  setParameter(std::string("ClusterIds"), clusterIds);
 }
 
 int SetClusterInterceptionConfigRequest::getSwitchType() const {

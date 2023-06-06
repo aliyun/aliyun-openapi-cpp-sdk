@@ -38,12 +38,15 @@ public:
 	void setType(int type);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getDownloadUrl() const;
+	void setDownloadUrl(const std::string &downloadUrl);
 
 private:
 	std::string hashKey_;
 	std::string ossKey_;
 	int type_;
 	std::string sourceIp_;
+	std::string downloadUrl_;
 };
 } // namespace Model
 } // namespace Sas

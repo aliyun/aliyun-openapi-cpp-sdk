@@ -44,6 +44,8 @@ namespace AlibabaCloud
 					int mediumWarningCount;
 					std::string uuid;
 					std::string internetIp;
+					std::string containerId;
+					std::string containerName;
 					int highWarningCount;
 					std::string regionId;
 					int passCount;

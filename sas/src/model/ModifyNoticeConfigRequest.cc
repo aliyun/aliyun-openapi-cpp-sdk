@@ -34,6 +34,15 @@ void ModifyNoticeConfigRequest::setProject(const std::string &project) {
   setParameter(std::string("Project"), project);
 }
 
+std::string ModifyNoticeConfigRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void ModifyNoticeConfigRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
 int ModifyNoticeConfigRequest::getTimeLimit() const {
   return timeLimit_;
 }
@@ -50,15 +59,6 @@ int ModifyNoticeConfigRequest::getRoute() const {
 void ModifyNoticeConfigRequest::setRoute(int route) {
   route_ = route;
   setParameter(std::string("Route"), std::to_string(route));
-}
-
-std::string ModifyNoticeConfigRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void ModifyNoticeConfigRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
 }
 
 std::string ModifyNoticeConfigRequest::getFocusLevel() const {

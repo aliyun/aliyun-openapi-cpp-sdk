@@ -124,3 +124,12 @@ void DescribeGroupedInstancesRequest::setMachineTypes(const std::string &machine
   setParameter(std::string("MachineTypes"), machineTypes);
 }
 
+std::string DescribeGroupedInstancesRequest::getSaleVersionCheckCode() const {
+  return saleVersionCheckCode_;
+}
+
+void DescribeGroupedInstancesRequest::setSaleVersionCheckCode(const std::string &saleVersionCheckCode) {
+  saleVersionCheckCode_ = saleVersionCheckCode;
+  setParameter(std::string("SaleVersionCheckCode"), saleVersionCheckCode);
+}
+

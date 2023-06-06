@@ -25,15 +25,6 @@ DescribePropertySoftwareItemRequest::DescribePropertySoftwareItemRequest()
 
 DescribePropertySoftwareItemRequest::~DescribePropertySoftwareItemRequest() {}
 
-int DescribePropertySoftwareItemRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribePropertySoftwareItemRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribePropertySoftwareItemRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -41,15 +32,6 @@ std::string DescribePropertySoftwareItemRequest::getSourceIp() const {
 void DescribePropertySoftwareItemRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
-}
-
-std::string DescribePropertySoftwareItemRequest::getName() const {
-  return name_;
-}
-
-void DescribePropertySoftwareItemRequest::setName(const std::string &name) {
-  name_ = name;
-  setParameter(std::string("Name"), name);
 }
 
 int DescribePropertySoftwareItemRequest::getPageSize() const {
@@ -68,5 +50,23 @@ bool DescribePropertySoftwareItemRequest::getForceFlush() const {
 void DescribePropertySoftwareItemRequest::setForceFlush(bool forceFlush) {
   forceFlush_ = forceFlush;
   setParameter(std::string("ForceFlush"), forceFlush ? "true" : "false");
+}
+
+int DescribePropertySoftwareItemRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribePropertySoftwareItemRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string DescribePropertySoftwareItemRequest::getName() const {
+  return name_;
+}
+
+void DescribePropertySoftwareItemRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 

@@ -34,6 +34,15 @@ void GetCheckDetailRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string GetCheckDetailRequest::getRegionId() const {
+  return regionId_;
+}
+
+void GetCheckDetailRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string GetCheckDetailRequest::getLang() const {
   return lang_;
 }

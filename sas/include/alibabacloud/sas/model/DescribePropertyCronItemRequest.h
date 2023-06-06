@@ -30,8 +30,6 @@ class ALIBABACLOUD_SAS_EXPORT DescribePropertyCronItemRequest : public RpcServic
 public:
 	DescribePropertyCronItemRequest();
 	~DescribePropertyCronItemRequest();
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSource() const;
 	void setSource(const std::string &source);
 	std::string getSourceIp() const;
@@ -40,13 +38,15 @@ public:
 	void setPageSize(int pageSize);
 	bool getForceFlush() const;
 	void setForceFlush(bool forceFlush);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 
 private:
-	int currentPage_;
 	std::string source_;
 	std::string sourceIp_;
 	int pageSize_;
 	bool forceFlush_;
+	int currentPage_;
 };
 } // namespace Model
 } // namespace Sas

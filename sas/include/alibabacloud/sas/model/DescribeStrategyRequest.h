@@ -30,23 +30,23 @@ class ALIBABACLOUD_SAS_EXPORT DescribeStrategyRequest : public RpcServiceRequest
 public:
 	DescribeStrategyRequest();
 	~DescribeStrategyRequest();
-	std::string getCustomType() const;
-	void setCustomType(const std::string &customType);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	std::string getStrategyIds() const;
-	void setStrategyIds(const std::string &strategyIds);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
 	std::string getResourceDirectoryAccountId() const;
 	void setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId);
+	std::string getCustomType() const;
+	void setCustomType(const std::string &customType);
+	std::string getStrategyIds() const;
+	void setStrategyIds(const std::string &strategyIds);
 
 private:
-	std::string customType_;
 	std::string sourceIp_;
-	std::string strategyIds_;
 	std::string lang_;
 	std::string resourceDirectoryAccountId_;
+	std::string customType_;
+	std::string strategyIds_;
 };
 } // namespace Model
 } // namespace Sas

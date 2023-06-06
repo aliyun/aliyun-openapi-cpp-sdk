@@ -105,9 +105,16 @@ void DescribeVersionConfigResult::parse(const std::string &payload)
 		openTime_ = std::stol(value["OpenTime"].asString());
 	if(!value["IsNewContainerVersion"].isNull())
 		isNewContainerVersion_ = value["IsNewContainerVersion"].asString() == "true";
+	if(!value["IsNewMultiVersion"].isNull())
+		isNewMultiVersion_ = value["IsNewMultiVersion"].asString() == "true";
 	if(!value["ThreatAnalysisCapacity"].isNull())
 		threatAnalysisCapacity_ = std::stol(value["ThreatAnalysisCapacity"].asString());
 
+}
+
+bool DescribeVersionConfigResult::getIsNewMultiVersion()const
+{
+	return isNewMultiVersion_;
 }
 
 bool DescribeVersionConfigResult::getIsPaidUser()const

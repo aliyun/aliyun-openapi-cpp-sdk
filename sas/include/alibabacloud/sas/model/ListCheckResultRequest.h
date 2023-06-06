@@ -42,12 +42,16 @@ public:
 	void setCheckKey(const std::string &checkKey);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
 	std::vector<std::string> getVendors() const;
 	void setVendors(const std::vector<std::string> &vendors);
+	std::vector<std::string> getTypes() const;
+	void setTypes(const std::vector<std::string> &types);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
 	std::vector<long> getRequirementIds() const;
@@ -66,9 +70,11 @@ private:
 	std::vector<std::string> instanceTypes_;
 	std::string checkKey_;
 	std::string sourceIp_;
+	std::string regionId_;
 	int pageSize_;
 	std::string lang_;
 	std::vector<std::string> vendors_;
+	std::vector<std::string> types_;
 	int currentPage_;
 	std::vector<long> requirementIds_;
 	std::vector<std::string> sortTypes_;

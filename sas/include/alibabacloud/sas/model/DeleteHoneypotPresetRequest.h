@@ -30,10 +30,13 @@ class ALIBABACLOUD_SAS_EXPORT DeleteHoneypotPresetRequest : public RpcServiceReq
 public:
 	DeleteHoneypotPresetRequest();
 	~DeleteHoneypotPresetRequest();
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	std::string getHoneypotPresetId() const;
 	void setHoneypotPresetId(const std::string &honeypotPresetId);
 
 private:
+	std::string lang_;
 	std::string honeypotPresetId_;
 };
 } // namespace Model

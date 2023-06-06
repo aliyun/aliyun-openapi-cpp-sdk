@@ -30,10 +30,13 @@ class ALIBABACLOUD_SAS_EXPORT GetInterceptionSummaryRequest : public RpcServiceR
 public:
 	GetInterceptionSummaryRequest();
 	~GetInterceptionSummaryRequest();
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 
 private:
+	std::string clusterId_;
 	std::string sourceIp_;
 };
 } // namespace Model

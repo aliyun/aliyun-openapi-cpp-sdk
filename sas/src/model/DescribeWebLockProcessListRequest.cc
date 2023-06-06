@@ -25,24 +25,6 @@ DescribeWebLockProcessListRequest::DescribeWebLockProcessListRequest()
 
 DescribeWebLockProcessListRequest::~DescribeWebLockProcessListRequest() {}
 
-std::string DescribeWebLockProcessListRequest::getProcessName() const {
-  return processName_;
-}
-
-void DescribeWebLockProcessListRequest::setProcessName(const std::string &processName) {
-  processName_ = processName;
-  setParameter(std::string("ProcessName"), processName);
-}
-
-int DescribeWebLockProcessListRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeWebLockProcessListRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribeWebLockProcessListRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,6 +41,24 @@ int DescribeWebLockProcessListRequest::getPageSize() const {
 void DescribeWebLockProcessListRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string DescribeWebLockProcessListRequest::getProcessName() const {
+  return processName_;
+}
+
+void DescribeWebLockProcessListRequest::setProcessName(const std::string &processName) {
+  processName_ = processName;
+  setParameter(std::string("ProcessName"), processName);
+}
+
+int DescribeWebLockProcessListRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeWebLockProcessListRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
 int DescribeWebLockProcessListRequest::getStatus() const {

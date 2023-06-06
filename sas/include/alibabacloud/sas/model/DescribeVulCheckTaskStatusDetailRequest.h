@@ -30,20 +30,20 @@ class ALIBABACLOUD_SAS_EXPORT DescribeVulCheckTaskStatusDetailRequest : public R
 public:
 	DescribeVulCheckTaskStatusDetailRequest();
 	~DescribeVulCheckTaskStatusDetailRequest();
-	std::vector<std::string> getTypes() const;
-	void setTypes(const std::vector<std::string> &types);
 	std::vector<std::string> getTaskIds() const;
 	void setTaskIds(const std::vector<std::string> &taskIds);
 	std::string getUuid() const;
 	void setUuid(const std::string &uuid);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::vector<std::string> getTypes() const;
+	void setTypes(const std::vector<std::string> &types);
 
 private:
-	std::vector<std::string> types_;
 	std::vector<std::string> taskIds_;
 	std::string uuid_;
 	std::string sourceIp_;
+	std::vector<std::string> types_;
 };
 } // namespace Model
 } // namespace Sas

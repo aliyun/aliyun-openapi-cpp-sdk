@@ -25,6 +25,15 @@ GetInterceptionSummaryRequest::GetInterceptionSummaryRequest()
 
 GetInterceptionSummaryRequest::~GetInterceptionSummaryRequest() {}
 
+std::string GetInterceptionSummaryRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void GetInterceptionSummaryRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
+}
+
 std::string GetInterceptionSummaryRequest::getSourceIp() const {
   return sourceIp_;
 }

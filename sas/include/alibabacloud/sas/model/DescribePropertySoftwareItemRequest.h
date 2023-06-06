@@ -30,23 +30,23 @@ class ALIBABACLOUD_SAS_EXPORT DescribePropertySoftwareItemRequest : public RpcSe
 public:
 	DescribePropertySoftwareItemRequest();
 	~DescribePropertySoftwareItemRequest();
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	std::string getName() const;
-	void setName(const std::string &name);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	bool getForceFlush() const;
 	void setForceFlush(bool forceFlush);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
+	std::string getName() const;
+	void setName(const std::string &name);
 
 private:
-	int currentPage_;
 	std::string sourceIp_;
-	std::string name_;
 	int pageSize_;
 	bool forceFlush_;
+	int currentPage_;
+	std::string name_;
 };
 } // namespace Model
 } // namespace Sas

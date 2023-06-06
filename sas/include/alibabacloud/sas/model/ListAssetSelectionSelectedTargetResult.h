@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_SAS_MODEL_LISTINTERCEPTIONIMAGERESULT_H_
-#define ALIBABACLOUD_SAS_MODEL_LISTINTERCEPTIONIMAGERESULT_H_
+#ifndef ALIBABACLOUD_SAS_MODEL_LISTASSETSELECTIONSELECTEDTARGETRESULT_H_
+#define ALIBABACLOUD_SAS_MODEL_LISTASSETSELECTIONSELECTEDTARGETRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,28 +29,28 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_SAS_EXPORT ListInterceptionImageResult : public ServiceResult
+			class ALIBABACLOUD_SAS_EXPORT ListAssetSelectionSelectedTargetResult : public ServiceResult
 			{
 			public:
-				struct Image
+				struct DataItem
 				{
-					std::string imageName;
-					std::string imageUuid;
+					std::string targetName;
+					std::string targetId;
 				};
 
 
-				ListInterceptionImageResult();
-				explicit ListInterceptionImageResult(const std::string &payload);
-				~ListInterceptionImageResult();
-				std::vector<Image> getImageList()const;
+				ListAssetSelectionSelectedTargetResult();
+				explicit ListAssetSelectionSelectedTargetResult(const std::string &payload);
+				~ListAssetSelectionSelectedTargetResult();
+				std::vector<DataItem> getData()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<Image> imageList_;
+				std::vector<DataItem> data_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_SAS_MODEL_LISTINTERCEPTIONIMAGERESULT_H_
+#endif // !ALIBABACLOUD_SAS_MODEL_LISTASSETSELECTIONSELECTEDTARGETRESULT_H_

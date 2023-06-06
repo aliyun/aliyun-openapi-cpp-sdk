@@ -34,15 +34,6 @@ void DescribeDingTalkRequest::setRuleActionName(const std::string &ruleActionNam
   setParameter(std::string("RuleActionName"), ruleActionName);
 }
 
-int DescribeDingTalkRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeDingTalkRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribeDingTalkRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,5 +50,14 @@ int DescribeDingTalkRequest::getPageSize() const {
 void DescribeDingTalkRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+int DescribeDingTalkRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeDingTalkRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 

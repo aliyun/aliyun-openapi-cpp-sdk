@@ -30,23 +30,23 @@ class ALIBABACLOUD_SAS_EXPORT DescribeWebLockFileChangeStatisticsRequest : publi
 public:
 	DescribeWebLockFileChangeStatisticsRequest();
 	~DescribeWebLockFileChangeStatisticsRequest();
+	std::string getSourceIp() const;
+	void setSourceIp(const std::string &sourceIp);
+	int getPageSize() const;
+	void setPageSize(int pageSize);
 	long getTsEnd() const;
 	void setTsEnd(long tsEnd);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
 	long getTsBegin() const;
 	void setTsBegin(long tsBegin);
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
-	int getPageSize() const;
-	void setPageSize(int pageSize);
 
 private:
+	std::string sourceIp_;
+	int pageSize_;
 	long tsEnd_;
 	int currentPage_;
 	long tsBegin_;
-	std::string sourceIp_;
-	int pageSize_;
 };
 } // namespace Model
 } // namespace Sas

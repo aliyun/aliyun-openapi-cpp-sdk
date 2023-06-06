@@ -34,3 +34,12 @@ void DescribeHoneyPotAuthRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string DescribeHoneyPotAuthRequest::getLang() const {
+  return lang_;
+}
+
+void DescribeHoneyPotAuthRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+

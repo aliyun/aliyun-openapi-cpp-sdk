@@ -43,14 +43,6 @@ void ModifyRiskSingleResultStatusRequest::setSourceIp(const std::string &sourceI
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::vector<std::string> ModifyRiskSingleResultStatusRequest::getIds() const {
-  return ids_;
-}
-
-void ModifyRiskSingleResultStatusRequest::setIds(const std::vector<std::string> &ids) {
-  ids_ = ids;
-}
-
 std::string ModifyRiskSingleResultStatusRequest::getLang() const {
   return lang_;
 }
@@ -67,6 +59,14 @@ long ModifyRiskSingleResultStatusRequest::getTaskId() const {
 void ModifyRiskSingleResultStatusRequest::setTaskId(long taskId) {
   taskId_ = taskId;
   setParameter(std::string("TaskId"), std::to_string(taskId));
+}
+
+std::vector<std::string> ModifyRiskSingleResultStatusRequest::getIds() const {
+  return ids_;
+}
+
+void ModifyRiskSingleResultStatusRequest::setIds(const std::vector<std::string> &ids) {
+  ids_ = ids;
 }
 
 std::string ModifyRiskSingleResultStatusRequest::getStatus() const {

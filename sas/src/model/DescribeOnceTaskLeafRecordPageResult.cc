@@ -92,6 +92,18 @@ void DescribeOnceTaskLeafRecordPageResult::parse(const std::string &payload)
 			onceTasksObject.taskImageInfo.image = taskImageInfoNode["Image"].asString();
 		if(!taskImageInfoNode["Pod"].isNull())
 			onceTasksObject.taskImageInfo.pod = taskImageInfoNode["Pod"].asString();
+		if(!taskImageInfoNode["AppName"].isNull())
+			onceTasksObject.taskImageInfo.appName = taskImageInfoNode["AppName"].asString();
+		if(!taskImageInfoNode["NodeName"].isNull())
+			onceTasksObject.taskImageInfo.nodeName = taskImageInfoNode["NodeName"].asString();
+		if(!taskImageInfoNode["NodeIp"].isNull())
+			onceTasksObject.taskImageInfo.nodeIp = taskImageInfoNode["NodeIp"].asString();
+		if(!taskImageInfoNode["NodeInstanceId"].isNull())
+			onceTasksObject.taskImageInfo.nodeInstanceId = taskImageInfoNode["NodeInstanceId"].asString();
+		if(!taskImageInfoNode["ClusterId"].isNull())
+			onceTasksObject.taskImageInfo.clusterId = taskImageInfoNode["ClusterId"].asString();
+		if(!taskImageInfoNode["ClusterName"].isNull())
+			onceTasksObject.taskImageInfo.clusterName = taskImageInfoNode["ClusterName"].asString();
 		onceTasks_.push_back(onceTasksObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

@@ -39,6 +39,33 @@ void DescribeCheckWarningDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allCheckDetailColumnsNode = value["CheckDetailColumns"]["CheckDetailColumn"];
+	for (auto valueCheckDetailColumnsCheckDetailColumn : allCheckDetailColumnsNode)
+	{
+		CheckDetailColumn checkDetailColumnsObject;
+		if(!valueCheckDetailColumnsCheckDetailColumn["Type"].isNull())
+			checkDetailColumnsObject.type = valueCheckDetailColumnsCheckDetailColumn["Type"].asString();
+		if(!valueCheckDetailColumnsCheckDetailColumn["Key"].isNull())
+			checkDetailColumnsObject.key = valueCheckDetailColumnsCheckDetailColumn["Key"].asString();
+		if(!valueCheckDetailColumnsCheckDetailColumn["ShowName"].isNull())
+			checkDetailColumnsObject.showName = valueCheckDetailColumnsCheckDetailColumn["ShowName"].asString();
+		auto allGridsNode = valueCheckDetailColumnsCheckDetailColumn["Grids"]["Grid"];
+		for (auto valueCheckDetailColumnsCheckDetailColumnGridsGrid : allGridsNode)
+		{
+			CheckDetailColumn::Grid gridsObject;
+			if(!valueCheckDetailColumnsCheckDetailColumnGridsGrid["Type"].isNull())
+				gridsObject.type = valueCheckDetailColumnsCheckDetailColumnGridsGrid["Type"].asString();
+			if(!valueCheckDetailColumnsCheckDetailColumnGridsGrid["Key"].isNull())
+				gridsObject.key = valueCheckDetailColumnsCheckDetailColumnGridsGrid["Key"].asString();
+			if(!valueCheckDetailColumnsCheckDetailColumnGridsGrid["ShowName"].isNull())
+				gridsObject.showName = valueCheckDetailColumnsCheckDetailColumnGridsGrid["ShowName"].asString();
+			checkDetailColumnsObject.grids.push_back(gridsObject);
+		}
+		checkDetailColumns_.push_back(checkDetailColumnsObject);
+	}
+	auto allCheckDetailAssetInfo = value["CheckDetailAssetInfo"]["CheckDetailAssetInfo"];
+	for (const auto &item : allCheckDetailAssetInfo)
+		checkDetailAssetInfo_.push_back(item.asString());
 	if(!value["Advice"].isNull())
 		advice_ = value["Advice"].asString();
 	if(!value["Type"].isNull())
@@ -66,6 +93,11 @@ std::string DescribeCheckWarningDetailResult::getType()const
 	return type_;
 }
 
+std::vector<DescribeCheckWarningDetailResult::CheckDetailColumn> DescribeCheckWarningDetailResult::getCheckDetailColumns()const
+{
+	return checkDetailColumns_;
+}
+
 std::string DescribeCheckWarningDetailResult::getDescription()const
 {
 	return description_;
@@ -74,6 +106,11 @@ std::string DescribeCheckWarningDetailResult::getDescription()const
 long DescribeCheckWarningDetailResult::getCheckId()const
 {
 	return checkId_;
+}
+
+std::vector<std::string> DescribeCheckWarningDetailResult::getCheckDetailAssetInfo()const
+{
+	return checkDetailAssetInfo_;
 }
 
 std::string DescribeCheckWarningDetailResult::getLevel()const

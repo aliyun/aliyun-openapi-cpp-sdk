@@ -30,23 +30,23 @@ class ALIBABACLOUD_SAS_EXPORT ListVulAutoRepairConfigRequest : public RpcService
 public:
 	ListVulAutoRepairConfigRequest();
 	~ListVulAutoRepairConfigRequest();
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getType() const;
 	void setType(const std::string &type);
-	std::string getAliasName() const;
-	void setAliasName(const std::string &aliasName);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
+	std::string getAliasName() const;
+	void setAliasName(const std::string &aliasName);
 
 private:
-	int currentPage_;
 	std::string type_;
-	std::string aliasName_;
 	std::string sourceIp_;
 	int pageSize_;
+	int currentPage_;
+	std::string aliasName_;
 };
 } // namespace Model
 } // namespace Sas

@@ -30,8 +30,6 @@ class ALIBABACLOUD_SAS_EXPORT DescribeAlarmEventStackInfoRequest : public RpcSer
 public:
 	DescribeAlarmEventStackInfoRequest();
 	~DescribeAlarmEventStackInfoRequest();
-	std::string getUniqueInfo() const;
-	void setUniqueInfo(const std::string &uniqueInfo);
 	std::string getUuid() const;
 	void setUuid(const std::string &uuid);
 	std::string getEventName() const;
@@ -40,13 +38,15 @@ public:
 	void setSourceIp(const std::string &sourceIp);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getUniqueInfo() const;
+	void setUniqueInfo(const std::string &uniqueInfo);
 
 private:
-	std::string uniqueInfo_;
 	std::string uuid_;
 	std::string eventName_;
 	std::string sourceIp_;
 	std::string lang_;
+	std::string uniqueInfo_;
 };
 } // namespace Model
 } // namespace Sas

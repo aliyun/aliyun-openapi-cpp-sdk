@@ -34,8 +34,6 @@ public:
 	};
 	GetCloudAssetDetailRequest();
 	~GetCloudAssetDetailRequest();
-	std::vector<CloudAssetInstances> getCloudAssetInstances() const;
-	void setCloudAssetInstances(const std::vector<CloudAssetInstances> &cloudAssetInstances);
 	int getAssetSubType() const;
 	void setAssetSubType(int assetSubType);
 	std::string getSourceIp() const;
@@ -44,13 +42,15 @@ public:
 	void setVendor(int vendor);
 	int getAssetType() const;
 	void setAssetType(int assetType);
+	std::vector<CloudAssetInstances> getCloudAssetInstances() const;
+	void setCloudAssetInstances(const std::vector<CloudAssetInstances> &cloudAssetInstances);
 
 private:
-	std::vector<CloudAssetInstances> cloudAssetInstances_;
 	int assetSubType_;
 	std::string sourceIp_;
 	int vendor_;
 	int assetType_;
+	std::vector<CloudAssetInstances> cloudAssetInstances_;
 };
 } // namespace Model
 } // namespace Sas

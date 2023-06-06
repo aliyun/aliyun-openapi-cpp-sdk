@@ -39,6 +39,22 @@ void GetCheckDetailResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allCustomConfigsNode = value["CustomConfigs"]["CustomConfigsItem"];
+	for (auto valueCustomConfigsCustomConfigsItem : allCustomConfigsNode)
+	{
+		CustomConfigsItem customConfigsObject;
+		if(!valueCustomConfigsCustomConfigsItem["Name"].isNull())
+			customConfigsObject.name = valueCustomConfigsCustomConfigsItem["Name"].asString();
+		if(!valueCustomConfigsCustomConfigsItem["TypeDefine"].isNull())
+			customConfigsObject.typeDefine = valueCustomConfigsCustomConfigsItem["TypeDefine"].asString();
+		if(!valueCustomConfigsCustomConfigsItem["DefaultValue"].isNull())
+			customConfigsObject.defaultValue = valueCustomConfigsCustomConfigsItem["DefaultValue"].asString();
+		if(!valueCustomConfigsCustomConfigsItem["Value"].isNull())
+			customConfigsObject.value = valueCustomConfigsCustomConfigsItem["Value"].asString();
+		if(!valueCustomConfigsCustomConfigsItem["ShowName"].isNull())
+			customConfigsObject.showName = valueCustomConfigsCustomConfigsItem["ShowName"].asString();
+		customConfigs_.push_back(customConfigsObject);
+	}
 	auto descriptionNode = value["Description"];
 	if(!descriptionNode["Type"].isNull())
 		description_.type = descriptionNode["Type"].asString();
@@ -66,6 +82,11 @@ void GetCheckDetailResult::parse(const std::string &payload)
 GetCheckDetailResult::Description GetCheckDetailResult::getDescription()const
 {
 	return description_;
+}
+
+std::vector<GetCheckDetailResult::CustomConfigsItem> GetCheckDetailResult::getCustomConfigs()const
+{
+	return customConfigs_;
 }
 
 GetCheckDetailResult::AssistInfo GetCheckDetailResult::getAssistInfo()const

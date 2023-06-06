@@ -25,24 +25,6 @@ OperateVirusEventsRequest::OperateVirusEventsRequest()
 
 OperateVirusEventsRequest::~OperateVirusEventsRequest() {}
 
-std::string OperateVirusEventsRequest::getOperationRange() const {
-  return operationRange_;
-}
-
-void OperateVirusEventsRequest::setOperationRange(const std::string &operationRange) {
-  operationRange_ = operationRange;
-  setParameter(std::string("OperationRange"), operationRange);
-}
-
-int OperateVirusEventsRequest::getOperationAll() const {
-  return operationAll_;
-}
-
-void OperateVirusEventsRequest::setOperationAll(int operationAll) {
-  operationAll_ = operationAll;
-  setParameter(std::string("OperationAll"), std::to_string(operationAll));
-}
-
 std::string OperateVirusEventsRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,5 +41,23 @@ std::string OperateVirusEventsRequest::getOperationCode() const {
 void OperateVirusEventsRequest::setOperationCode(const std::string &operationCode) {
   operationCode_ = operationCode;
   setParameter(std::string("OperationCode"), operationCode);
+}
+
+std::string OperateVirusEventsRequest::getOperationRange() const {
+  return operationRange_;
+}
+
+void OperateVirusEventsRequest::setOperationRange(const std::string &operationRange) {
+  operationRange_ = operationRange;
+  setParameter(std::string("OperationRange"), operationRange);
+}
+
+int OperateVirusEventsRequest::getOperationAll() const {
+  return operationAll_;
+}
+
+void OperateVirusEventsRequest::setOperationAll(int operationAll) {
+  operationAll_ = operationAll;
+  setParameter(std::string("OperationAll"), std::to_string(operationAll));
 }
 

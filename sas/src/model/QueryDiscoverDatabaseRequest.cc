@@ -34,15 +34,6 @@ void QueryDiscoverDatabaseRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string QueryDiscoverDatabaseRequest::getCreateMark() const {
-  return createMark_;
-}
-
-void QueryDiscoverDatabaseRequest::setCreateMark(const std::string &createMark) {
-  createMark_ = createMark;
-  setParameter(std::string("CreateMark"), createMark);
-}
-
 std::string QueryDiscoverDatabaseRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -50,5 +41,14 @@ std::string QueryDiscoverDatabaseRequest::getSourceIp() const {
 void QueryDiscoverDatabaseRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string QueryDiscoverDatabaseRequest::getCreateMark() const {
+  return createMark_;
+}
+
+void QueryDiscoverDatabaseRequest::setCreateMark(const std::string &createMark) {
+  createMark_ = createMark;
+  setParameter(std::string("CreateMark"), createMark);
 }
 

@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					bool checkExploit;
 					int checkCount;
 					std::string typeAlias;
+					bool containerRisk;
 					int lowWarningCount;
 					std::string subTypeAlias;
 					std::string riskName;

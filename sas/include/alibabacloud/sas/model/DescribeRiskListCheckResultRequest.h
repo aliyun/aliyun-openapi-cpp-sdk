@@ -32,24 +32,24 @@ public:
 	~DescribeRiskListCheckResultRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	std::vector<std::string> getInstanceIds() const;
-	void setInstanceIds(const std::vector<std::string> &instanceIds);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
+	std::vector<std::string> getInstanceIds() const;
+	void setInstanceIds(const std::vector<std::string> &instanceIds);
 
 private:
 	long resourceOwnerId_;
-	int currentPage_;
 	std::string sourceIp_;
-	std::vector<std::string> instanceIds_;
 	int pageSize_;
 	std::string lang_;
+	int currentPage_;
+	std::vector<std::string> instanceIds_;
 };
 } // namespace Model
 } // namespace Sas

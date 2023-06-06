@@ -34,6 +34,15 @@ void AddCheckInstanceResultWhiteListRequest::setSourceIp(const std::string &sour
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+long AddCheckInstanceResultWhiteListRequest::getCheckId() const {
+  return checkId_;
+}
+
+void AddCheckInstanceResultWhiteListRequest::setCheckId(long checkId) {
+  checkId_ = checkId;
+  setParameter(std::string("CheckId"), std::to_string(checkId));
+}
+
 std::string AddCheckInstanceResultWhiteListRequest::getCheckGroupId() const {
   return checkGroupId_;
 }
@@ -49,14 +58,5 @@ std::vector<std::string> AddCheckInstanceResultWhiteListRequest::getInstanceIds(
 
 void AddCheckInstanceResultWhiteListRequest::setInstanceIds(const std::vector<std::string> &instanceIds) {
   instanceIds_ = instanceIds;
-}
-
-long AddCheckInstanceResultWhiteListRequest::getCheckId() const {
-  return checkId_;
-}
-
-void AddCheckInstanceResultWhiteListRequest::setCheckId(long checkId) {
-  checkId_ = checkId;
-  setParameter(std::string("CheckId"), std::to_string(checkId));
 }
 

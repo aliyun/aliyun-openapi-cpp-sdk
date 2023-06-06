@@ -71,6 +71,8 @@ void DescribeSuspEventQuaraFilesResult::parse(const std::string &payload)
 			quaraFilesObject.id = std::stoi(valueQuaraFilesQuaraFile["Id"].asString());
 		if(!valueQuaraFilesQuaraFile["ModifyTime"].isNull())
 			quaraFilesObject.modifyTime = valueQuaraFilesQuaraFile["ModifyTime"].asString();
+		if(!valueQuaraFilesQuaraFile["IntranetIp"].isNull())
+			quaraFilesObject.intranetIp = valueQuaraFilesQuaraFile["IntranetIp"].asString();
 		quaraFiles_.push_back(quaraFilesObject);
 	}
 	if(!value["CurrentPage"].isNull())

@@ -30,17 +30,17 @@ class ALIBABACLOUD_SAS_EXPORT DescribeCheckFixDetailsRequest : public RpcService
 public:
 	DescribeCheckFixDetailsRequest();
 	~DescribeCheckFixDetailsRequest();
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	std::string getCheckIds() const;
 	void setCheckIds(const std::string &checkIds);
 	long getRiskId() const;
 	void setRiskId(long riskId);
-	std::string getLang() const;
-	void setLang(const std::string &lang);
 
 private:
+	std::string lang_;
 	std::string checkIds_;
 	long riskId_;
-	std::string lang_;
 };
 } // namespace Model
 } // namespace Sas

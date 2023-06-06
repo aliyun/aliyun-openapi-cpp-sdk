@@ -32,12 +32,12 @@ public:
 	~ModifyNoticeConfigRequest();
 	std::string getProject() const;
 	void setProject(const std::string &project);
+	std::string getSourceIp() const;
+	void setSourceIp(const std::string &sourceIp);
 	int getTimeLimit() const;
 	void setTimeLimit(int timeLimit);
 	int getRoute() const;
 	void setRoute(int route);
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
 	std::string getFocusLevel() const;
 	void setFocusLevel(const std::string &focusLevel);
 	int getCustomThreshold() const;
@@ -45,9 +45,9 @@ public:
 
 private:
 	std::string project_;
+	std::string sourceIp_;
 	int timeLimit_;
 	int route_;
-	std::string sourceIp_;
 	std::string focusLevel_;
 	int customThreshold_;
 };

@@ -63,6 +63,8 @@ void ListCheckItemWarningSummaryResult::parse(const std::string &payload)
 			listObject.status = std::stoi(valueListListItem["Status"].asString());
 		if(!valueListListItem["WarningMachineCount"].isNull())
 			listObject.warningMachineCount = std::stoi(valueListListItem["WarningMachineCount"].asString());
+		if(!valueListListItem["ContainerCheckItem"].isNull())
+			listObject.containerCheckItem = valueListListItem["ContainerCheckItem"].asString() == "true";
 		list_.push_back(listObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

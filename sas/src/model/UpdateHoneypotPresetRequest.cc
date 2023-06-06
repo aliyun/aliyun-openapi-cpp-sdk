@@ -25,6 +25,15 @@ UpdateHoneypotPresetRequest::UpdateHoneypotPresetRequest()
 
 UpdateHoneypotPresetRequest::~UpdateHoneypotPresetRequest() {}
 
+std::string UpdateHoneypotPresetRequest::getLang() const {
+  return lang_;
+}
+
+void UpdateHoneypotPresetRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 std::string UpdateHoneypotPresetRequest::getHoneypotPresetId() const {
   return honeypotPresetId_;
 }

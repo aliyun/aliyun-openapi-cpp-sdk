@@ -46,13 +46,14 @@ namespace AlibabaCloud
 					std::string repoNamespace;
 					std::string oldUuid;
 					std::string buildTaskId;
+					std::string repoName;
+					std::string newUuid;
+					std::string vulAlias;
 					std::string finishTime;
 					std::string taskType;
-					std::string repoName;
 					std::string newTag;
 					std::string regionId;
 					std::string oldTag;
-					std::string newUuid;
 				};
 
 

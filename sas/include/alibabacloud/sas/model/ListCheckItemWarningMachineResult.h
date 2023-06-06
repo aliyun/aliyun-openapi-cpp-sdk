@@ -62,6 +62,8 @@ namespace AlibabaCloud
 					std::vector<ListItem::FixListItem> fixList;
 					std::string uuid;
 					std::string internetIp;
+					std::string containerId;
+					std::string containerName;
 					std::string prompt;
 					std::string regionId;
 					int authVersion;

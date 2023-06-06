@@ -25,24 +25,6 @@ DescribeImageFixTaskRequest::DescribeImageFixTaskRequest()
 
 DescribeImageFixTaskRequest::~DescribeImageFixTaskRequest() {}
 
-long DescribeImageFixTaskRequest::getEndTime() const {
-  return endTime_;
-}
-
-void DescribeImageFixTaskRequest::setEndTime(long endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), std::to_string(endTime));
-}
-
-int DescribeImageFixTaskRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeImageFixTaskRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 long DescribeImageFixTaskRequest::getStartTime() const {
   return startTime_;
 }
@@ -68,6 +50,24 @@ int DescribeImageFixTaskRequest::getPageSize() const {
 void DescribeImageFixTaskRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+long DescribeImageFixTaskRequest::getEndTime() const {
+  return endTime_;
+}
+
+void DescribeImageFixTaskRequest::setEndTime(long endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), std::to_string(endTime));
+}
+
+int DescribeImageFixTaskRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeImageFixTaskRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
 std::string DescribeImageFixTaskRequest::getStatus() const {

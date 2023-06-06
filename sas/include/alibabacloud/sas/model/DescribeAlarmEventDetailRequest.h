@@ -30,20 +30,20 @@ class ALIBABACLOUD_SAS_EXPORT DescribeAlarmEventDetailRequest : public RpcServic
 public:
 	DescribeAlarmEventDetailRequest();
 	~DescribeAlarmEventDetailRequest();
-	std::string getAlarmUniqueInfo() const;
-	void setAlarmUniqueInfo(const std::string &alarmUniqueInfo);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getFrom() const;
 	void setFrom(const std::string &from);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getAlarmUniqueInfo() const;
+	void setAlarmUniqueInfo(const std::string &alarmUniqueInfo);
 
 private:
-	std::string alarmUniqueInfo_;
 	std::string sourceIp_;
 	std::string from_;
 	std::string lang_;
+	std::string alarmUniqueInfo_;
 };
 } // namespace Model
 } // namespace Sas

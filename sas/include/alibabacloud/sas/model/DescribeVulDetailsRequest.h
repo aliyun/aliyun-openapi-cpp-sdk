@@ -32,21 +32,21 @@ public:
 	~DescribeVulDetailsRequest();
 	std::string getType() const;
 	void setType(const std::string &type);
-	std::string getAliasName() const;
-	void setAliasName(const std::string &aliasName);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	std::string getName() const;
-	void setName(const std::string &name);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getAliasName() const;
+	void setAliasName(const std::string &aliasName);
+	std::string getName() const;
+	void setName(const std::string &name);
 
 private:
 	std::string type_;
-	std::string aliasName_;
 	std::string sourceIp_;
-	std::string name_;
 	std::string lang_;
+	std::string aliasName_;
+	std::string name_;
 };
 } // namespace Model
 } // namespace Sas

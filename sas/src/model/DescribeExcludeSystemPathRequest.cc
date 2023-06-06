@@ -34,15 +34,6 @@ void DescribeExcludeSystemPathRequest::setResourceOwnerId(long resourceOwnerId) 
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int DescribeExcludeSystemPathRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeExcludeSystemPathRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribeExcludeSystemPathRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,5 +50,14 @@ int DescribeExcludeSystemPathRequest::getPageSize() const {
 void DescribeExcludeSystemPathRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+int DescribeExcludeSystemPathRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeExcludeSystemPathRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 

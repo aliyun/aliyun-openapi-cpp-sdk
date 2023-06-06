@@ -34,14 +34,6 @@ void StartBaselineSecurityCheckRequest::setResourceOwnerId(long resourceOwnerId)
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::vector<long> StartBaselineSecurityCheckRequest::getItemIds() const {
-  return itemIds_;
-}
-
-void StartBaselineSecurityCheckRequest::setItemIds(const std::vector<long> &itemIds) {
-  itemIds_ = itemIds;
-}
-
 std::string StartBaselineSecurityCheckRequest::getType() const {
   return type_;
 }
@@ -75,5 +67,13 @@ std::string StartBaselineSecurityCheckRequest::getLang() const {
 void StartBaselineSecurityCheckRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::vector<long> StartBaselineSecurityCheckRequest::getItemIds() const {
+  return itemIds_;
+}
+
+void StartBaselineSecurityCheckRequest::setItemIds(const std::vector<long> &itemIds) {
+  itemIds_ = itemIds;
 }
 

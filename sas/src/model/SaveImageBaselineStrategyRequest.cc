@@ -25,6 +25,24 @@ SaveImageBaselineStrategyRequest::SaveImageBaselineStrategyRequest()
 
 SaveImageBaselineStrategyRequest::~SaveImageBaselineStrategyRequest() {}
 
+std::string SaveImageBaselineStrategyRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void SaveImageBaselineStrategyRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string SaveImageBaselineStrategyRequest::getLang() const {
+  return lang_;
+}
+
+void SaveImageBaselineStrategyRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 std::string SaveImageBaselineStrategyRequest::getBaselineItemList() const {
   return baselineItemList_;
 }
@@ -43,15 +61,6 @@ void SaveImageBaselineStrategyRequest::setStrategyName(const std::string &strate
   setParameter(std::string("StrategyName"), strategyName);
 }
 
-std::string SaveImageBaselineStrategyRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void SaveImageBaselineStrategyRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
-}
-
 long SaveImageBaselineStrategyRequest::getStrategyId() const {
   return strategyId_;
 }
@@ -59,14 +68,5 @@ long SaveImageBaselineStrategyRequest::getStrategyId() const {
 void SaveImageBaselineStrategyRequest::setStrategyId(long strategyId) {
   strategyId_ = strategyId;
   setParameter(std::string("StrategyId"), std::to_string(strategyId));
-}
-
-std::string SaveImageBaselineStrategyRequest::getLang() const {
-  return lang_;
-}
-
-void SaveImageBaselineStrategyRequest::setLang(const std::string &lang) {
-  lang_ = lang;
-  setParameter(std::string("Lang"), lang);
 }
 

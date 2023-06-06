@@ -30,20 +30,20 @@ class ALIBABACLOUD_SAS_EXPORT ExportRecordRequest : public RpcServiceRequest {
 public:
 	ExportRecordRequest();
 	~ExportRecordRequest();
-	std::string getExportType() const;
-	void setExportType(const std::string &exportType);
-	std::string getParams() const;
-	void setParams(const std::string &params);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getExportType() const;
+	void setExportType(const std::string &exportType);
+	std::string getParams() const;
+	void setParams(const std::string &params);
 
 private:
-	std::string exportType_;
-	std::string params_;
 	std::string sourceIp_;
 	std::string lang_;
+	std::string exportType_;
+	std::string params_;
 };
 } // namespace Model
 } // namespace Sas

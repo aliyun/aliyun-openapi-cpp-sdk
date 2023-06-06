@@ -30,17 +30,17 @@ class ALIBABACLOUD_SAS_EXPORT DescribeClusterVulStatisticsRequest : public RpcSe
 public:
 	DescribeClusterVulStatisticsRequest();
 	~DescribeClusterVulStatisticsRequest();
+	std::string getSourceIp() const;
+	void setSourceIp(const std::string &sourceIp);
 	std::string getTypes() const;
 	void setTypes(const std::string &types);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
 
 private:
+	std::string sourceIp_;
 	std::string types_;
 	std::string clusterId_;
-	std::string sourceIp_;
 };
 } // namespace Model
 } // namespace Sas

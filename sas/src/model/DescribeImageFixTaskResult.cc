@@ -67,6 +67,8 @@ void DescribeImageFixTaskResult::parse(const std::string &payload)
 			buildTasksObject.finishTime = valueBuildTasksBuildTask["FinishTime"].asString();
 		if(!valueBuildTasksBuildTask["Status"].isNull())
 			buildTasksObject.status = std::stoi(valueBuildTasksBuildTask["Status"].asString());
+		if(!valueBuildTasksBuildTask["VulAlias"].isNull())
+			buildTasksObject.vulAlias = valueBuildTasksBuildTask["VulAlias"].asString();
 		buildTasks_.push_back(buildTasksObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

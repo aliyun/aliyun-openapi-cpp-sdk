@@ -25,15 +25,6 @@ DescribeWebPathRequest::DescribeWebPathRequest()
 
 DescribeWebPathRequest::~DescribeWebPathRequest() {}
 
-int DescribeWebPathRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeWebPathRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribeWebPathRequest::getType() const {
   return type_;
 }
@@ -41,15 +32,6 @@ std::string DescribeWebPathRequest::getType() const {
 void DescribeWebPathRequest::setType(const std::string &type) {
   type_ = type;
   setParameter(std::string("Type"), type);
-}
-
-std::string DescribeWebPathRequest::getTarget() const {
-  return target_;
-}
-
-void DescribeWebPathRequest::setTarget(const std::string &target) {
-  target_ = target;
-  setParameter(std::string("Target"), target);
 }
 
 std::string DescribeWebPathRequest::getSourceIp() const {
@@ -68,5 +50,23 @@ int DescribeWebPathRequest::getPageSize() const {
 void DescribeWebPathRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+int DescribeWebPathRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeWebPathRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string DescribeWebPathRequest::getTarget() const {
+  return target_;
+}
+
+void DescribeWebPathRequest::setTarget(const std::string &target) {
+  target_ = target;
+  setParameter(std::string("Target"), target);
 }
 

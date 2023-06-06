@@ -30,23 +30,23 @@ class ALIBABACLOUD_SAS_EXPORT SaveImageBaselineStrategyRequest : public RpcServi
 public:
 	SaveImageBaselineStrategyRequest();
 	~SaveImageBaselineStrategyRequest();
+	std::string getSourceIp() const;
+	void setSourceIp(const std::string &sourceIp);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	std::string getBaselineItemList() const;
 	void setBaselineItemList(const std::string &baselineItemList);
 	std::string getStrategyName() const;
 	void setStrategyName(const std::string &strategyName);
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
 	long getStrategyId() const;
 	void setStrategyId(long strategyId);
-	std::string getLang() const;
-	void setLang(const std::string &lang);
 
 private:
+	std::string sourceIp_;
+	std::string lang_;
 	std::string baselineItemList_;
 	std::string strategyName_;
-	std::string sourceIp_;
 	long strategyId_;
-	std::string lang_;
 };
 } // namespace Model
 } // namespace Sas

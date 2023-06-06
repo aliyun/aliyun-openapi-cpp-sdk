@@ -45,6 +45,7 @@ namespace AlibabaCloud
 					int forbiddenTime;
 					std::vector<std::string> uuidList;
 					int failCount;
+					std::string createTime;
 					bool enableSmartRule;
 					int machineCount;
 					long id;

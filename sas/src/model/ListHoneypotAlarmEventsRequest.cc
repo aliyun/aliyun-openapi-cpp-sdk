@@ -78,12 +78,3 @@ void ListHoneypotAlarmEventsRequest::setCurrentPage(int currentPage) {
   setBodyParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
-std::string ListHoneypotAlarmEventsRequest::getRequestId() const {
-  return requestId_;
-}
-
-void ListHoneypotAlarmEventsRequest::setRequestId(const std::string &requestId) {
-  requestId_ = requestId;
-  setBodyParameter(std::string("RequestId"), requestId);
-}
-

@@ -34,15 +34,6 @@ void ModifySecurityCheckScheduleConfigRequest::setResourceOwnerId(long resourceO
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int ModifySecurityCheckScheduleConfigRequest::getEndTime() const {
-  return endTime_;
-}
-
-void ModifySecurityCheckScheduleConfigRequest::setEndTime(int endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), std::to_string(endTime));
-}
-
 int ModifySecurityCheckScheduleConfigRequest::getStartTime() const {
   return startTime_;
 }
@@ -77,5 +68,14 @@ std::string ModifySecurityCheckScheduleConfigRequest::getLang() const {
 void ModifySecurityCheckScheduleConfigRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+int ModifySecurityCheckScheduleConfigRequest::getEndTime() const {
+  return endTime_;
+}
+
+void ModifySecurityCheckScheduleConfigRequest::setEndTime(int endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), std::to_string(endTime));
 }
 

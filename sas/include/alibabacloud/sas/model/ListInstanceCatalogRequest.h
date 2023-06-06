@@ -30,14 +30,26 @@ class ALIBABACLOUD_SAS_EXPORT ListInstanceCatalogRequest : public RpcServiceRequ
 public:
 	ListInstanceCatalogRequest();
 	~ListInstanceCatalogRequest();
+	std::vector<long> getStandardIds() const;
+	void setStandardIds(const std::vector<long> &standardIds);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::vector<std::string> getTypes() const;
+	void setTypes(const std::vector<std::string> &types);
+	std::vector<long> getRequirementIds() const;
+	void setRequirementIds(const std::vector<long> &requirementIds);
 
 private:
+	std::vector<long> standardIds_;
 	std::string sourceIp_;
+	std::string regionId_;
 	std::string lang_;
+	std::vector<std::string> types_;
+	std::vector<long> requirementIds_;
 };
 } // namespace Model
 } // namespace Sas

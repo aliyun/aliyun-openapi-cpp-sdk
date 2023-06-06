@@ -32,24 +32,24 @@ public:
 	~ListInterceptionRulePageRequest();
 	std::string getCriteria() const;
 	void setCriteria(const std::string &criteria);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
-	std::string getClusterId() const;
-	void setClusterId(const std::string &clusterId);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getCriteriaType() const;
 	void setCriteriaType(const std::string &criteriaType);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 
 private:
 	std::string criteria_;
-	int currentPage_;
-	std::string clusterId_;
 	std::string sourceIp_;
 	int pageSize_;
 	std::string criteriaType_;
+	int currentPage_;
+	std::string clusterId_;
 };
 } // namespace Model
 } // namespace Sas

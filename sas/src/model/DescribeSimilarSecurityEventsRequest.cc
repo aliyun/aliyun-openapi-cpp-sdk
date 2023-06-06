@@ -34,15 +34,6 @@ void DescribeSimilarSecurityEventsRequest::setResourceOwnerId(long resourceOwner
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int DescribeSimilarSecurityEventsRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeSimilarSecurityEventsRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribeSimilarSecurityEventsRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -77,5 +68,14 @@ long DescribeSimilarSecurityEventsRequest::getTaskId() const {
 void DescribeSimilarSecurityEventsRequest::setTaskId(long taskId) {
   taskId_ = taskId;
   setParameter(std::string("TaskId"), std::to_string(taskId));
+}
+
+int DescribeSimilarSecurityEventsRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeSimilarSecurityEventsRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 

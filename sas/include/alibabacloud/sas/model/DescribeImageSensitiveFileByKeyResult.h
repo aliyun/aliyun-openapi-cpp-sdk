@@ -40,7 +40,7 @@ namespace AlibabaCloud
 					int count;
 					std::string lastRowKey;
 				};
-				struct List
+				struct SensitiveFileListItem
 				{
 					std::string filePath;
 					std::string sensitiveFileName;
@@ -60,7 +60,7 @@ namespace AlibabaCloud
 				PageInfo getPageInfo()const;
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
-				std::vector<List> getSensitiveFileList()const;
+				std::vector<SensitiveFileListItem> getSensitiveFileList()const;
 				std::string getCode()const;
 				bool getSuccess()const;
 
@@ -70,7 +70,7 @@ namespace AlibabaCloud
 				PageInfo pageInfo_;
 				std::string message_;
 				int httpStatusCode_;
-				std::vector<List> sensitiveFileList_;
+				std::vector<SensitiveFileListItem> sensitiveFileList_;
 				std::string code_;
 				bool success_;
 

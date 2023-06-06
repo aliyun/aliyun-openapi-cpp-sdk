@@ -30,25 +30,25 @@ class ALIBABACLOUD_SAS_EXPORT PageImageRegistryRequest : public RpcServiceReques
 public:
 	PageImageRegistryRequest();
 	~PageImageRegistryRequest();
-	std::string getRegistryNameLike() const;
-	void setRegistryNameLike(const std::string &registryNameLike);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::vector<std::string> getRegistryTypeNotInList() const;
 	void setRegistryTypeNotInList(const std::vector<std::string> &registryTypeNotInList);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getRegistryNameLike() const;
+	void setRegistryNameLike(const std::string &registryNameLike);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 	std::vector<std::string> getRegistryTypeInList() const;
 	void setRegistryTypeInList(const std::vector<std::string> &registryTypeInList);
 
 private:
-	std::string registryNameLike_;
-	int currentPage_;
 	std::vector<std::string> registryTypeNotInList_;
 	std::string sourceIp_;
 	int pageSize_;
+	std::string registryNameLike_;
+	int currentPage_;
 	std::vector<std::string> registryTypeInList_;
 };
 } // namespace Model

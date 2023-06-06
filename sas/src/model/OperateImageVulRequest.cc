@@ -43,15 +43,6 @@ void OperateImageVulRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string OperateImageVulRequest::getOperateType() const {
-  return operateType_;
-}
-
-void OperateImageVulRequest::setOperateType(const std::string &operateType) {
-  operateType_ = operateType;
-  setParameter(std::string("OperateType"), operateType);
-}
-
 std::string OperateImageVulRequest::getInfo() const {
   return info_;
 }
@@ -59,5 +50,14 @@ std::string OperateImageVulRequest::getInfo() const {
 void OperateImageVulRequest::setInfo(const std::string &info) {
   info_ = info;
   setParameter(std::string("Info"), info);
+}
+
+std::string OperateImageVulRequest::getOperateType() const {
+  return operateType_;
+}
+
+void OperateImageVulRequest::setOperateType(const std::string &operateType) {
+  operateType_ = operateType;
+  setParameter(std::string("OperateType"), operateType);
 }
 

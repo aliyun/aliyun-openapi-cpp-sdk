@@ -34,15 +34,6 @@ void DescribeHoneyPotSuspStatisticsRequest::setStatisticsDays(int statisticsDays
   setParameter(std::string("StatisticsDays"), std::to_string(statisticsDays));
 }
 
-std::string DescribeHoneyPotSuspStatisticsRequest::getStatisticsKeyType() const {
-  return statisticsKeyType_;
-}
-
-void DescribeHoneyPotSuspStatisticsRequest::setStatisticsKeyType(const std::string &statisticsKeyType) {
-  statisticsKeyType_ = statisticsKeyType;
-  setParameter(std::string("StatisticsKeyType"), statisticsKeyType);
-}
-
 std::string DescribeHoneyPotSuspStatisticsRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,5 +50,23 @@ std::string DescribeHoneyPotSuspStatisticsRequest::getFrom() const {
 void DescribeHoneyPotSuspStatisticsRequest::setFrom(const std::string &from) {
   from_ = from;
   setParameter(std::string("From"), from);
+}
+
+std::string DescribeHoneyPotSuspStatisticsRequest::getLang() const {
+  return lang_;
+}
+
+void DescribeHoneyPotSuspStatisticsRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeHoneyPotSuspStatisticsRequest::getStatisticsKeyType() const {
+  return statisticsKeyType_;
+}
+
+void DescribeHoneyPotSuspStatisticsRequest::setStatisticsKeyType(const std::string &statisticsKeyType) {
+  statisticsKeyType_ = statisticsKeyType;
+  setParameter(std::string("StatisticsKeyType"), statisticsKeyType);
 }
 

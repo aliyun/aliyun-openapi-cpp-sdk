@@ -34,15 +34,6 @@ void DescribeVulDetailsRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
-std::string DescribeVulDetailsRequest::getAliasName() const {
-  return aliasName_;
-}
-
-void DescribeVulDetailsRequest::setAliasName(const std::string &aliasName) {
-  aliasName_ = aliasName;
-  setParameter(std::string("AliasName"), aliasName);
-}
-
 std::string DescribeVulDetailsRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -52,15 +43,6 @@ void DescribeVulDetailsRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string DescribeVulDetailsRequest::getName() const {
-  return name_;
-}
-
-void DescribeVulDetailsRequest::setName(const std::string &name) {
-  name_ = name;
-  setParameter(std::string("Name"), name);
-}
-
 std::string DescribeVulDetailsRequest::getLang() const {
   return lang_;
 }
@@ -68,5 +50,23 @@ std::string DescribeVulDetailsRequest::getLang() const {
 void DescribeVulDetailsRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeVulDetailsRequest::getAliasName() const {
+  return aliasName_;
+}
+
+void DescribeVulDetailsRequest::setAliasName(const std::string &aliasName) {
+  aliasName_ = aliasName;
+  setParameter(std::string("AliasName"), aliasName);
+}
+
+std::string DescribeVulDetailsRequest::getName() const {
+  return name_;
+}
+
+void DescribeVulDetailsRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 

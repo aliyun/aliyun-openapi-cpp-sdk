@@ -14,22 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sas/model/ListInterceptionImageRequest.h>
+#include <alibabacloud/sas/model/GetAssetSelectionConfigRequest.h>
 
-using AlibabaCloud::Sas::Model::ListInterceptionImageRequest;
+using AlibabaCloud::Sas::Model::GetAssetSelectionConfigRequest;
 
-ListInterceptionImageRequest::ListInterceptionImageRequest()
-    : RpcServiceRequest("sas", "2018-12-03", "ListInterceptionImage") {
+GetAssetSelectionConfigRequest::GetAssetSelectionConfigRequest()
+    : RpcServiceRequest("sas", "2018-12-03", "GetAssetSelectionConfig") {
   setMethod(HttpRequest::Method::Post);
 }
 
-ListInterceptionImageRequest::~ListInterceptionImageRequest() {}
+GetAssetSelectionConfigRequest::~GetAssetSelectionConfigRequest() {}
 
-std::string ListInterceptionImageRequest::getSourceIp() const {
+std::string GetAssetSelectionConfigRequest::getBusinessType() const {
+  return businessType_;
+}
+
+void GetAssetSelectionConfigRequest::setBusinessType(const std::string &businessType) {
+  businessType_ = businessType;
+  setParameter(std::string("BusinessType"), businessType);
+}
+
+std::string GetAssetSelectionConfigRequest::getSourceIp() const {
   return sourceIp_;
 }
 
-void ListInterceptionImageRequest::setSourceIp(const std::string &sourceIp) {
+void GetAssetSelectionConfigRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
 }

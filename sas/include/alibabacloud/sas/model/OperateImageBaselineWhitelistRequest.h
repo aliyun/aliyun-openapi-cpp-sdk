@@ -30,8 +30,6 @@ class ALIBABACLOUD_SAS_EXPORT OperateImageBaselineWhitelistRequest : public RpcS
 public:
 	OperateImageBaselineWhitelistRequest();
 	~OperateImageBaselineWhitelistRequest();
-	std::string getImageUuid() const;
-	void setImageUuid(const std::string &imageUuid);
 	std::string getBaselineItemKeyList() const;
 	void setBaselineItemKeyList(const std::string &baselineItemKeyList);
 	std::string getSourceIp() const;
@@ -40,15 +38,17 @@ public:
 	void setScanRange(const std::vector<std::string> &scanRange);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getImageUuid() const;
+	void setImageUuid(const std::string &imageUuid);
 	std::string getOperation() const;
 	void setOperation(const std::string &operation);
 
 private:
-	std::string imageUuid_;
 	std::string baselineItemKeyList_;
 	std::string sourceIp_;
 	std::vector<std::string> scanRange_;
 	std::string lang_;
+	std::string imageUuid_;
 	std::string operation_;
 };
 } // namespace Model

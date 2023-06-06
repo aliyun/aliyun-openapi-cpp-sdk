@@ -25,6 +25,24 @@ DescribeWebLockProcessBlockStatisticsRequest::DescribeWebLockProcessBlockStatist
 
 DescribeWebLockProcessBlockStatisticsRequest::~DescribeWebLockProcessBlockStatisticsRequest() {}
 
+std::string DescribeWebLockProcessBlockStatisticsRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void DescribeWebLockProcessBlockStatisticsRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
+int DescribeWebLockProcessBlockStatisticsRequest::getPageSize() const {
+  return pageSize_;
+}
+
+void DescribeWebLockProcessBlockStatisticsRequest::setPageSize(int pageSize) {
+  pageSize_ = pageSize;
+  setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
 long DescribeWebLockProcessBlockStatisticsRequest::getTsEnd() const {
   return tsEnd_;
 }
@@ -50,23 +68,5 @@ long DescribeWebLockProcessBlockStatisticsRequest::getTsBegin() const {
 void DescribeWebLockProcessBlockStatisticsRequest::setTsBegin(long tsBegin) {
   tsBegin_ = tsBegin;
   setParameter(std::string("TsBegin"), std::to_string(tsBegin));
-}
-
-std::string DescribeWebLockProcessBlockStatisticsRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void DescribeWebLockProcessBlockStatisticsRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
-}
-
-int DescribeWebLockProcessBlockStatisticsRequest::getPageSize() const {
-  return pageSize_;
-}
-
-void DescribeWebLockProcessBlockStatisticsRequest::setPageSize(int pageSize) {
-  pageSize_ = pageSize;
-  setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 

@@ -34,24 +34,6 @@ void DescribeRestorePlansRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int DescribeRestorePlansRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeRestorePlansRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
-std::string DescribeRestorePlansRequest::getInstanceName() const {
-  return instanceName_;
-}
-
-void DescribeRestorePlansRequest::setInstanceName(const std::string &instanceName) {
-  instanceName_ = instanceName;
-  setParameter(std::string("InstanceName"), instanceName);
-}
-
 std::string DescribeRestorePlansRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -68,6 +50,24 @@ int DescribeRestorePlansRequest::getPageSize() const {
 void DescribeRestorePlansRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+int DescribeRestorePlansRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeRestorePlansRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string DescribeRestorePlansRequest::getInstanceName() const {
+  return instanceName_;
+}
+
+void DescribeRestorePlansRequest::setInstanceName(const std::string &instanceName) {
+  instanceName_ = instanceName;
+  setParameter(std::string("InstanceName"), instanceName);
 }
 
 std::string DescribeRestorePlansRequest::getStatus() const {

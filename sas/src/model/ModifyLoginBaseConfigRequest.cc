@@ -43,15 +43,6 @@ void ModifyLoginBaseConfigRequest::setType(const std::string &type) {
   setParameter(std::string("Type"), type);
 }
 
-std::string ModifyLoginBaseConfigRequest::getTarget() const {
-  return target_;
-}
-
-void ModifyLoginBaseConfigRequest::setTarget(const std::string &target) {
-  target_ = target;
-  setParameter(std::string("Target"), target);
-}
-
 std::string ModifyLoginBaseConfigRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,6 +50,15 @@ std::string ModifyLoginBaseConfigRequest::getSourceIp() const {
 void ModifyLoginBaseConfigRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string ModifyLoginBaseConfigRequest::getTarget() const {
+  return target_;
+}
+
+void ModifyLoginBaseConfigRequest::setTarget(const std::string &target) {
+  target_ = target;
+  setParameter(std::string("Target"), target);
 }
 
 std::string ModifyLoginBaseConfigRequest::getConfig() const {

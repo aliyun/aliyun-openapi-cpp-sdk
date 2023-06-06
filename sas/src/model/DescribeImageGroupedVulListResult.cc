@@ -63,6 +63,8 @@ void DescribeImageGroupedVulListResult::parse(const std::string &payload)
 			groupedVulItemsObject.name = valueGroupedVulItemsGroupedVulItem["Name"].asString();
 		if(!valueGroupedVulItemsGroupedVulItem["AsapCount"].isNull())
 			groupedVulItemsObject.asapCount = std::stoi(valueGroupedVulItemsGroupedVulItem["AsapCount"].asString());
+		if(!valueGroupedVulItemsGroupedVulItem["CanFix"].isNull())
+			groupedVulItemsObject.canFix = valueGroupedVulItemsGroupedVulItem["CanFix"].asString();
 		groupedVulItems_.push_back(groupedVulItemsObject);
 	}
 	if(!value["CurrentPage"].isNull())

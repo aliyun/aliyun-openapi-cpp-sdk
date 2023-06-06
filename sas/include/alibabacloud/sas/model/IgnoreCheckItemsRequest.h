@@ -36,21 +36,21 @@ public:
 	~IgnoreCheckItemsRequest();
 	std::string getReason() const;
 	void setReason(const std::string &reason);
-	std::vector<CheckAndRiskTypeList> getCheckAndRiskTypeList() const;
-	void setCheckAndRiskTypeList(const std::vector<CheckAndRiskTypeList> &checkAndRiskTypeList);
 	int getType() const;
 	void setType(int type);
 	std::vector<std::string> getUuidList() const;
 	void setUuidList(const std::vector<std::string> &uuidList);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::vector<CheckAndRiskTypeList> getCheckAndRiskTypeList() const;
+	void setCheckAndRiskTypeList(const std::vector<CheckAndRiskTypeList> &checkAndRiskTypeList);
 
 private:
 	std::string reason_;
-	std::vector<CheckAndRiskTypeList> checkAndRiskTypeList_;
 	int type_;
 	std::vector<std::string> uuidList_;
 	std::string lang_;
+	std::vector<CheckAndRiskTypeList> checkAndRiskTypeList_;
 };
 } // namespace Model
 } // namespace Sas

@@ -34,15 +34,6 @@ void DescribeRiskListCheckResultRequest::setResourceOwnerId(long resourceOwnerId
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-int DescribeRiskListCheckResultRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeRiskListCheckResultRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribeRiskListCheckResultRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -50,14 +41,6 @@ std::string DescribeRiskListCheckResultRequest::getSourceIp() const {
 void DescribeRiskListCheckResultRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
-}
-
-std::vector<std::string> DescribeRiskListCheckResultRequest::getInstanceIds() const {
-  return instanceIds_;
-}
-
-void DescribeRiskListCheckResultRequest::setInstanceIds(const std::vector<std::string> &instanceIds) {
-  instanceIds_ = instanceIds;
 }
 
 int DescribeRiskListCheckResultRequest::getPageSize() const {
@@ -76,5 +59,22 @@ std::string DescribeRiskListCheckResultRequest::getLang() const {
 void DescribeRiskListCheckResultRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+int DescribeRiskListCheckResultRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeRiskListCheckResultRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::vector<std::string> DescribeRiskListCheckResultRequest::getInstanceIds() const {
+  return instanceIds_;
+}
+
+void DescribeRiskListCheckResultRequest::setInstanceIds(const std::vector<std::string> &instanceIds) {
+  instanceIds_ = instanceIds;
 }
 

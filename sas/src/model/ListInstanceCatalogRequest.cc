@@ -25,6 +25,14 @@ ListInstanceCatalogRequest::ListInstanceCatalogRequest()
 
 ListInstanceCatalogRequest::~ListInstanceCatalogRequest() {}
 
+std::vector<long> ListInstanceCatalogRequest::getStandardIds() const {
+  return standardIds_;
+}
+
+void ListInstanceCatalogRequest::setStandardIds(const std::vector<long> &standardIds) {
+  standardIds_ = standardIds;
+}
+
 std::string ListInstanceCatalogRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -34,6 +42,15 @@ void ListInstanceCatalogRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string ListInstanceCatalogRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ListInstanceCatalogRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string ListInstanceCatalogRequest::getLang() const {
   return lang_;
 }
@@ -41,5 +58,21 @@ std::string ListInstanceCatalogRequest::getLang() const {
 void ListInstanceCatalogRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::vector<std::string> ListInstanceCatalogRequest::getTypes() const {
+  return types_;
+}
+
+void ListInstanceCatalogRequest::setTypes(const std::vector<std::string> &types) {
+  types_ = types;
+}
+
+std::vector<long> ListInstanceCatalogRequest::getRequirementIds() const {
+  return requirementIds_;
+}
+
+void ListInstanceCatalogRequest::setRequirementIds(const std::vector<long> &requirementIds) {
+  requirementIds_ = requirementIds;
 }
 

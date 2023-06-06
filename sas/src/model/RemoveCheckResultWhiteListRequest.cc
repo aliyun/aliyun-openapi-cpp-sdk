@@ -25,14 +25,6 @@ RemoveCheckResultWhiteListRequest::RemoveCheckResultWhiteListRequest()
 
 RemoveCheckResultWhiteListRequest::~RemoveCheckResultWhiteListRequest() {}
 
-std::vector<long> RemoveCheckResultWhiteListRequest::getCheckIds() const {
-  return checkIds_;
-}
-
-void RemoveCheckResultWhiteListRequest::setCheckIds(const std::vector<long> &checkIds) {
-  checkIds_ = checkIds;
-}
-
 std::string RemoveCheckResultWhiteListRequest::getType() const {
   return type_;
 }
@@ -49,6 +41,14 @@ std::string RemoveCheckResultWhiteListRequest::getSourceIp() const {
 void RemoveCheckResultWhiteListRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::vector<long> RemoveCheckResultWhiteListRequest::getCheckIds() const {
+  return checkIds_;
+}
+
+void RemoveCheckResultWhiteListRequest::setCheckIds(const std::vector<long> &checkIds) {
+  checkIds_ = checkIds;
 }
 
 std::string RemoveCheckResultWhiteListRequest::getCheckGroupId() const {

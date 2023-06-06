@@ -25,24 +25,6 @@ DescribeImageBaselineDetailRequest::DescribeImageBaselineDetailRequest()
 
 DescribeImageBaselineDetailRequest::~DescribeImageBaselineDetailRequest() {}
 
-std::string DescribeImageBaselineDetailRequest::getImageUuid() const {
-  return imageUuid_;
-}
-
-void DescribeImageBaselineDetailRequest::setImageUuid(const std::string &imageUuid) {
-  imageUuid_ = imageUuid;
-  setParameter(std::string("ImageUuid"), imageUuid);
-}
-
-std::string DescribeImageBaselineDetailRequest::getBaselineItemKey() const {
-  return baselineItemKey_;
-}
-
-void DescribeImageBaselineDetailRequest::setBaselineItemKey(const std::string &baselineItemKey) {
-  baselineItemKey_ = baselineItemKey;
-  setParameter(std::string("BaselineItemKey"), baselineItemKey);
-}
-
 std::string DescribeImageBaselineDetailRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,5 +41,23 @@ std::string DescribeImageBaselineDetailRequest::getLang() const {
 void DescribeImageBaselineDetailRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeImageBaselineDetailRequest::getImageUuid() const {
+  return imageUuid_;
+}
+
+void DescribeImageBaselineDetailRequest::setImageUuid(const std::string &imageUuid) {
+  imageUuid_ = imageUuid;
+  setParameter(std::string("ImageUuid"), imageUuid);
+}
+
+std::string DescribeImageBaselineDetailRequest::getBaselineItemKey() const {
+  return baselineItemKey_;
+}
+
+void DescribeImageBaselineDetailRequest::setBaselineItemKey(const std::string &baselineItemKey) {
+  baselineItemKey_ = baselineItemKey;
+  setParameter(std::string("BaselineItemKey"), baselineItemKey);
 }
 

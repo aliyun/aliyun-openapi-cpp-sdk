@@ -32,8 +32,6 @@ public:
 	~ModifySecurityCheckScheduleConfigRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	int getEndTime() const;
-	void setEndTime(int endTime);
 	int getStartTime() const;
 	void setStartTime(int startTime);
 	std::string getSourceIp() const;
@@ -42,14 +40,16 @@ public:
 	void setDaysOfWeek(const std::string &daysOfWeek);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	int getEndTime() const;
+	void setEndTime(int endTime);
 
 private:
 	long resourceOwnerId_;
-	int endTime_;
 	int startTime_;
 	std::string sourceIp_;
 	std::string daysOfWeek_;
 	std::string lang_;
+	int endTime_;
 };
 } // namespace Model
 } // namespace Sas

@@ -25,6 +25,15 @@ ModifyInterceptionRuleSwitchRequest::ModifyInterceptionRuleSwitchRequest()
 
 ModifyInterceptionRuleSwitchRequest::~ModifyInterceptionRuleSwitchRequest() {}
 
+std::string ModifyInterceptionRuleSwitchRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void ModifyInterceptionRuleSwitchRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
 std::string ModifyInterceptionRuleSwitchRequest::getClusterId() const {
   return clusterId_;
 }
@@ -41,15 +50,6 @@ std::string ModifyInterceptionRuleSwitchRequest::getRuleIds() const {
 void ModifyInterceptionRuleSwitchRequest::setRuleIds(const std::string &ruleIds) {
   ruleIds_ = ruleIds;
   setParameter(std::string("RuleIds"), ruleIds);
-}
-
-std::string ModifyInterceptionRuleSwitchRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void ModifyInterceptionRuleSwitchRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
 }
 
 int ModifyInterceptionRuleSwitchRequest::getRuleSwitch() const {

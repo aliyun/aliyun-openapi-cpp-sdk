@@ -25,15 +25,6 @@ GetCheckConfigRequest::GetCheckConfigRequest()
 
 GetCheckConfigRequest::~GetCheckConfigRequest() {}
 
-int GetCheckConfigRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void GetCheckConfigRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string GetCheckConfigRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -41,15 +32,6 @@ std::string GetCheckConfigRequest::getSourceIp() const {
 void GetCheckConfigRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
-}
-
-std::string GetCheckConfigRequest::getCheckGroupId() const {
-  return checkGroupId_;
-}
-
-void GetCheckConfigRequest::setCheckGroupId(const std::string &checkGroupId) {
-  checkGroupId_ = checkGroupId;
-  setParameter(std::string("CheckGroupId"), checkGroupId);
 }
 
 int GetCheckConfigRequest::getPageSize() const {
@@ -77,5 +59,23 @@ std::string GetCheckConfigRequest::getLang() const {
 void GetCheckConfigRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+int GetCheckConfigRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void GetCheckConfigRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string GetCheckConfigRequest::getCheckGroupId() const {
+  return checkGroupId_;
+}
+
+void GetCheckConfigRequest::setCheckGroupId(const std::string &checkGroupId) {
+  checkGroupId_ = checkGroupId;
+  setParameter(std::string("CheckGroupId"), checkGroupId);
 }
 

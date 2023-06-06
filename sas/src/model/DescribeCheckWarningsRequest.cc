@@ -25,6 +25,15 @@ DescribeCheckWarningsRequest::DescribeCheckWarningsRequest()
 
 DescribeCheckWarningsRequest::~DescribeCheckWarningsRequest() {}
 
+std::string DescribeCheckWarningsRequest::getContainerName() const {
+  return containerName_;
+}
+
+void DescribeCheckWarningsRequest::setContainerName(const std::string &containerName) {
+  containerName_ = containerName;
+  setParameter(std::string("ContainerName"), containerName);
+}
+
 std::string DescribeCheckWarningsRequest::getUuid() const {
   return uuid_;
 }

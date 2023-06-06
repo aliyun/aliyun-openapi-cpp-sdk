@@ -30,18 +30,18 @@ class ALIBABACLOUD_SAS_EXPORT SetClusterInterceptionConfigRequest : public RpcSe
 public:
 	SetClusterInterceptionConfigRequest();
 	~SetClusterInterceptionConfigRequest();
-	std::string getClusterIds() const;
-	void setClusterIds(const std::string &clusterIds);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getClusterIds() const;
+	void setClusterIds(const std::string &clusterIds);
 	int getSwitchType() const;
 	void setSwitchType(int switchType);
 	int getSwitchOn() const;
 	void setSwitchOn(int switchOn);
 
 private:
-	std::string clusterIds_;
 	std::string sourceIp_;
+	std::string clusterIds_;
 	int switchType_;
 	int switchOn_;
 };

@@ -25,15 +25,6 @@ DescribePropertyCronItemRequest::DescribePropertyCronItemRequest()
 
 DescribePropertyCronItemRequest::~DescribePropertyCronItemRequest() {}
 
-int DescribePropertyCronItemRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribePropertyCronItemRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribePropertyCronItemRequest::getSource() const {
   return source_;
 }
@@ -68,5 +59,14 @@ bool DescribePropertyCronItemRequest::getForceFlush() const {
 void DescribePropertyCronItemRequest::setForceFlush(bool forceFlush) {
   forceFlush_ = forceFlush;
   setParameter(std::string("ForceFlush"), forceFlush ? "true" : "false");
+}
+
+int DescribePropertyCronItemRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribePropertyCronItemRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 

@@ -32,18 +32,18 @@ public:
 	~DisableCustomBlockRecordRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getBound() const;
-	void setBound(const std::string &bound);
 	std::string getBlockIp() const;
 	void setBlockIp(const std::string &blockIp);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getBound() const;
+	void setBound(const std::string &bound);
 
 private:
 	long resourceOwnerId_;
-	std::string bound_;
 	std::string blockIp_;
 	std::string sourceIp_;
+	std::string bound_;
 };
 } // namespace Model
 } // namespace Sas

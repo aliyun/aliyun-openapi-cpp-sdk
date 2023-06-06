@@ -32,8 +32,6 @@ public:
 	~StartBaselineSecurityCheckRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::vector<long> getItemIds() const;
-	void setItemIds(const std::vector<long> &itemIds);
 	std::string getType() const;
 	void setType(const std::string &type);
 	std::vector<std::string> getAssets() const;
@@ -42,14 +40,16 @@ public:
 	void setSourceIp(const std::string &sourceIp);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::vector<long> getItemIds() const;
+	void setItemIds(const std::vector<long> &itemIds);
 
 private:
 	long resourceOwnerId_;
-	std::vector<long> itemIds_;
 	std::string type_;
 	std::vector<std::string> assets_;
 	std::string sourceIp_;
 	std::string lang_;
+	std::vector<long> itemIds_;
 };
 } // namespace Model
 } // namespace Sas

@@ -59,6 +59,7 @@ namespace AlibabaCloud
 					std::string k8sNodeName;
 					bool hasTraceInfo;
 					std::string intranetIp;
+					std::string imageUuid;
 					std::string k8sClusterId;
 					std::string name;
 					std::string k8sNamespace;

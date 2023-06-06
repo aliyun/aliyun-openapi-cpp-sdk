@@ -30,20 +30,20 @@ class ALIBABACLOUD_SAS_EXPORT DescribePropertyTypeScaItemRequest : public RpcSer
 public:
 	DescribePropertyTypeScaItemRequest();
 	~DescribePropertyTypeScaItemRequest();
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 
 private:
-	int currentPage_;
 	std::string sourceIp_;
 	int pageSize_;
 	std::string lang_;
+	int currentPage_;
 };
 } // namespace Model
 } // namespace Sas

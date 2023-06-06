@@ -61,3 +61,12 @@ void CreateFileDetectRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string CreateFileDetectRequest::getDownloadUrl() const {
+  return downloadUrl_;
+}
+
+void CreateFileDetectRequest::setDownloadUrl(const std::string &downloadUrl) {
+  downloadUrl_ = downloadUrl;
+  setParameter(std::string("DownloadUrl"), downloadUrl);
+}
+

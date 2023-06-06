@@ -25,24 +25,6 @@ ModifyTagWithUuidRequest::ModifyTagWithUuidRequest()
 
 ModifyTagWithUuidRequest::~ModifyTagWithUuidRequest() {}
 
-std::string ModifyTagWithUuidRequest::getTagId() const {
-  return tagId_;
-}
-
-void ModifyTagWithUuidRequest::setTagId(const std::string &tagId) {
-  tagId_ = tagId;
-  setParameter(std::string("TagId"), tagId);
-}
-
-std::string ModifyTagWithUuidRequest::getMachineTypes() const {
-  return machineTypes_;
-}
-
-void ModifyTagWithUuidRequest::setMachineTypes(const std::string &machineTypes) {
-  machineTypes_ = machineTypes;
-  setParameter(std::string("MachineTypes"), machineTypes);
-}
-
 std::string ModifyTagWithUuidRequest::getTagList() const {
   return tagList_;
 }
@@ -68,5 +50,23 @@ std::string ModifyTagWithUuidRequest::getUuidList() const {
 void ModifyTagWithUuidRequest::setUuidList(const std::string &uuidList) {
   uuidList_ = uuidList;
   setParameter(std::string("UuidList"), uuidList);
+}
+
+std::string ModifyTagWithUuidRequest::getTagId() const {
+  return tagId_;
+}
+
+void ModifyTagWithUuidRequest::setTagId(const std::string &tagId) {
+  tagId_ = tagId;
+  setParameter(std::string("TagId"), tagId);
+}
+
+std::string ModifyTagWithUuidRequest::getMachineTypes() const {
+  return machineTypes_;
+}
+
+void ModifyTagWithUuidRequest::setMachineTypes(const std::string &machineTypes) {
+  machineTypes_ = machineTypes;
+  setParameter(std::string("MachineTypes"), machineTypes);
 }
 

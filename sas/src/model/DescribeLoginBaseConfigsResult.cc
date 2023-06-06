@@ -57,6 +57,8 @@ void DescribeLoginBaseConfigsResult::parse(const std::string &payload)
 			baseConfigsObject.uuidCount = std::stoi(valueBaseConfigsBaseConfig["UuidCount"].asString());
 		if(!valueBaseConfigsBaseConfig["Location"].isNull())
 			baseConfigsObject.location = valueBaseConfigsBaseConfig["Location"].asString();
+		if(!valueBaseConfigsBaseConfig["Remark"].isNull())
+			baseConfigsObject.remark = valueBaseConfigsBaseConfig["Remark"].asString();
 		auto allTargetListNode = valueBaseConfigsBaseConfig["TargetList"]["Target"];
 		for (auto valueBaseConfigsBaseConfigTargetListTarget : allTargetListNode)
 		{

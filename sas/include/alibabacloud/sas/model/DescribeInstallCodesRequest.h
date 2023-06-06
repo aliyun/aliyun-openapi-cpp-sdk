@@ -32,20 +32,20 @@ public:
 	~DescribeInstallCodesRequest();
 	std::string getSubAccountName() const;
 	void setSubAccountName(const std::string &subAccountName);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 	int getStatus() const;
 	void setStatus(int status);
 
 private:
 	std::string subAccountName_;
-	int currentPage_;
 	std::string sourceIp_;
 	int pageSize_;
+	int currentPage_;
 	int status_;
 };
 } // namespace Model

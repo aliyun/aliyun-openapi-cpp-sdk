@@ -30,25 +30,25 @@ class ALIBABACLOUD_SAS_EXPORT ModifyWebLockProcessStatusRequest : public RpcServ
 public:
 	ModifyWebLockProcessStatusRequest();
 	~ModifyWebLockProcessStatusRequest();
-	int getDealAll() const;
-	void setDealAll(int dealAll);
 	std::vector<std::string> getProcessPath() const;
 	void setProcessPath(const std::vector<std::string> &processPath);
 	std::string getUuid() const;
 	void setUuid(const std::string &uuid);
-	std::string getOperateInfo() const;
-	void setOperateInfo(const std::string &operateInfo);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	int getDealAll() const;
+	void setDealAll(int dealAll);
+	std::string getOperateInfo() const;
+	void setOperateInfo(const std::string &operateInfo);
 	int getStatus() const;
 	void setStatus(int status);
 
 private:
-	int dealAll_;
 	std::vector<std::string> processPath_;
 	std::string uuid_;
-	std::string operateInfo_;
 	std::string sourceIp_;
+	int dealAll_;
+	std::string operateInfo_;
 	int status_;
 };
 } // namespace Model

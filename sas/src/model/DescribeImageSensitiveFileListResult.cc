@@ -39,22 +39,22 @@ void DescribeImageSensitiveFileListResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSensitiveFileListNode = value["SensitiveFileList"]["List"];
-	for (auto valueSensitiveFileListList : allSensitiveFileListNode)
+	auto allSensitiveFileListNode = value["SensitiveFileList"]["SensitiveFileListItem"];
+	for (auto valueSensitiveFileListSensitiveFileListItem : allSensitiveFileListNode)
 	{
-		List sensitiveFileListObject;
-		if(!valueSensitiveFileListList["RiskLevel"].isNull())
-			sensitiveFileListObject.riskLevel = valueSensitiveFileListList["RiskLevel"].asString();
-		if(!valueSensitiveFileListList["SensitiveFileKey"].isNull())
-			sensitiveFileListObject.sensitiveFileKey = valueSensitiveFileListList["SensitiveFileKey"].asString();
-		if(!valueSensitiveFileListList["SensitiveFileName"].isNull())
-			sensitiveFileListObject.sensitiveFileName = valueSensitiveFileListList["SensitiveFileName"].asString();
-		if(!valueSensitiveFileListList["FirstScanTime"].isNull())
-			sensitiveFileListObject.firstScanTime = std::stol(valueSensitiveFileListList["FirstScanTime"].asString());
-		if(!valueSensitiveFileListList["LastScanTime"].isNull())
-			sensitiveFileListObject.lastScanTime = std::stol(valueSensitiveFileListList["LastScanTime"].asString());
-		if(!valueSensitiveFileListList["Count"].isNull())
-			sensitiveFileListObject.count = std::stoi(valueSensitiveFileListList["Count"].asString());
+		SensitiveFileListItem sensitiveFileListObject;
+		if(!valueSensitiveFileListSensitiveFileListItem["RiskLevel"].isNull())
+			sensitiveFileListObject.riskLevel = valueSensitiveFileListSensitiveFileListItem["RiskLevel"].asString();
+		if(!valueSensitiveFileListSensitiveFileListItem["SensitiveFileKey"].isNull())
+			sensitiveFileListObject.sensitiveFileKey = valueSensitiveFileListSensitiveFileListItem["SensitiveFileKey"].asString();
+		if(!valueSensitiveFileListSensitiveFileListItem["SensitiveFileName"].isNull())
+			sensitiveFileListObject.sensitiveFileName = valueSensitiveFileListSensitiveFileListItem["SensitiveFileName"].asString();
+		if(!valueSensitiveFileListSensitiveFileListItem["FirstScanTime"].isNull())
+			sensitiveFileListObject.firstScanTime = std::stol(valueSensitiveFileListSensitiveFileListItem["FirstScanTime"].asString());
+		if(!valueSensitiveFileListSensitiveFileListItem["LastScanTime"].isNull())
+			sensitiveFileListObject.lastScanTime = std::stol(valueSensitiveFileListSensitiveFileListItem["LastScanTime"].asString());
+		if(!valueSensitiveFileListSensitiveFileListItem["Count"].isNull())
+			sensitiveFileListObject.count = std::stoi(valueSensitiveFileListSensitiveFileListItem["Count"].asString());
 		sensitiveFileList_.push_back(sensitiveFileListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
@@ -94,7 +94,7 @@ int DescribeImageSensitiveFileListResult::getHttpStatusCode()const
 	return httpStatusCode_;
 }
 
-std::vector<DescribeImageSensitiveFileListResult::List> DescribeImageSensitiveFileListResult::getSensitiveFileList()const
+std::vector<DescribeImageSensitiveFileListResult::SensitiveFileListItem> DescribeImageSensitiveFileListResult::getSensitiveFileList()const
 {
 	return sensitiveFileList_;
 }

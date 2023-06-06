@@ -30,26 +30,26 @@ class ALIBABACLOUD_SAS_EXPORT DescribeExposedStatisticsDetailRequest : public Rp
 public:
 	DescribeExposedStatisticsDetailRequest();
 	~DescribeExposedStatisticsDetailRequest();
-	std::string getStatisticsType() const;
-	void setStatisticsType(const std::string &statisticsType);
 	std::string getStatisticsTypeGatewayType() const;
 	void setStatisticsTypeGatewayType(const std::string &statisticsTypeGatewayType);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getStatisticsTypeInstanceValue() const;
 	void setStatisticsTypeInstanceValue(const std::string &statisticsTypeInstanceValue);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getStatisticsType() const;
+	void setStatisticsType(const std::string &statisticsType);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 
 private:
-	std::string statisticsType_;
 	std::string statisticsTypeGatewayType_;
-	int currentPage_;
 	std::string sourceIp_;
 	std::string statisticsTypeInstanceValue_;
 	int pageSize_;
+	std::string statisticsType_;
+	int currentPage_;
 };
 } // namespace Model
 } // namespace Sas

@@ -32,21 +32,21 @@ public:
 	~DescribeAssetsSecurityEventSummaryRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getClusterId() const;
-	void setClusterId(const std::string &clusterId);
 	std::string getContainerFieldName() const;
 	void setContainerFieldName(const std::string &containerFieldName);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getContainerFieldValue() const;
 	void setContainerFieldValue(const std::string &containerFieldValue);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 
 private:
 	long resourceOwnerId_;
-	std::string clusterId_;
 	std::string containerFieldName_;
 	std::string sourceIp_;
 	std::string containerFieldValue_;
+	std::string clusterId_;
 };
 } // namespace Model
 } // namespace Sas

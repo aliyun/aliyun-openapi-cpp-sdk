@@ -39,30 +39,30 @@ void DescribeImageListBySensitiveFileResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allImageInfosNode = value["ImageInfos"]["List"];
-	for (auto valueImageInfosList : allImageInfosNode)
+	auto allImageInfosNode = value["ImageInfos"]["ImageInfoList"];
+	for (auto valueImageInfosImageInfoList : allImageInfosNode)
 	{
-		List imageInfosObject;
-		if(!valueImageInfosList["Uuid"].isNull())
-			imageInfosObject.uuid = valueImageInfosList["Uuid"].asString();
-		if(!valueImageInfosList["RegionId"].isNull())
-			imageInfosObject.regionId = valueImageInfosList["RegionId"].asString();
-		if(!valueImageInfosList["InstanceId"].isNull())
-			imageInfosObject.instanceId = valueImageInfosList["InstanceId"].asString();
-		if(!valueImageInfosList["RepoNamespace"].isNull())
-			imageInfosObject.repoNamespace = valueImageInfosList["RepoNamespace"].asString();
-		if(!valueImageInfosList["RepoName"].isNull())
-			imageInfosObject.repoName = valueImageInfosList["RepoName"].asString();
-		if(!valueImageInfosList["Digest"].isNull())
-			imageInfosObject.digest = valueImageInfosList["Digest"].asString();
-		if(!valueImageInfosList["Tag"].isNull())
-			imageInfosObject.tag = valueImageInfosList["Tag"].asString();
-		if(!valueImageInfosList["FirstScanTime"].isNull())
-			imageInfosObject.firstScanTime = std::stol(valueImageInfosList["FirstScanTime"].asString());
-		if(!valueImageInfosList["LastScanTime"].isNull())
-			imageInfosObject.lastScanTime = std::stol(valueImageInfosList["LastScanTime"].asString());
-		if(!valueImageInfosList["RiskLevel"].isNull())
-			imageInfosObject.riskLevel = valueImageInfosList["RiskLevel"].asString();
+		ImageInfoList imageInfosObject;
+		if(!valueImageInfosImageInfoList["Uuid"].isNull())
+			imageInfosObject.uuid = valueImageInfosImageInfoList["Uuid"].asString();
+		if(!valueImageInfosImageInfoList["RegionId"].isNull())
+			imageInfosObject.regionId = valueImageInfosImageInfoList["RegionId"].asString();
+		if(!valueImageInfosImageInfoList["InstanceId"].isNull())
+			imageInfosObject.instanceId = valueImageInfosImageInfoList["InstanceId"].asString();
+		if(!valueImageInfosImageInfoList["RepoNamespace"].isNull())
+			imageInfosObject.repoNamespace = valueImageInfosImageInfoList["RepoNamespace"].asString();
+		if(!valueImageInfosImageInfoList["RepoName"].isNull())
+			imageInfosObject.repoName = valueImageInfosImageInfoList["RepoName"].asString();
+		if(!valueImageInfosImageInfoList["Digest"].isNull())
+			imageInfosObject.digest = valueImageInfosImageInfoList["Digest"].asString();
+		if(!valueImageInfosImageInfoList["Tag"].isNull())
+			imageInfosObject.tag = valueImageInfosImageInfoList["Tag"].asString();
+		if(!valueImageInfosImageInfoList["FirstScanTime"].isNull())
+			imageInfosObject.firstScanTime = std::stol(valueImageInfosImageInfoList["FirstScanTime"].asString());
+		if(!valueImageInfosImageInfoList["LastScanTime"].isNull())
+			imageInfosObject.lastScanTime = std::stol(valueImageInfosImageInfoList["LastScanTime"].asString());
+		if(!valueImageInfosImageInfoList["RiskLevel"].isNull())
+			imageInfosObject.riskLevel = valueImageInfosImageInfoList["RiskLevel"].asString();
 		imageInfos_.push_back(imageInfosObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
@@ -87,7 +87,7 @@ void DescribeImageListBySensitiveFileResult::parse(const std::string &payload)
 
 }
 
-std::vector<DescribeImageListBySensitiveFileResult::List> DescribeImageListBySensitiveFileResult::getImageInfos()const
+std::vector<DescribeImageListBySensitiveFileResult::ImageInfoList> DescribeImageListBySensitiveFileResult::getImageInfos()const
 {
 	return imageInfos_;
 }

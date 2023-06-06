@@ -25,15 +25,6 @@ DescribeAlarmEventStackInfoRequest::DescribeAlarmEventStackInfoRequest()
 
 DescribeAlarmEventStackInfoRequest::~DescribeAlarmEventStackInfoRequest() {}
 
-std::string DescribeAlarmEventStackInfoRequest::getUniqueInfo() const {
-  return uniqueInfo_;
-}
-
-void DescribeAlarmEventStackInfoRequest::setUniqueInfo(const std::string &uniqueInfo) {
-  uniqueInfo_ = uniqueInfo;
-  setParameter(std::string("UniqueInfo"), uniqueInfo);
-}
-
 std::string DescribeAlarmEventStackInfoRequest::getUuid() const {
   return uuid_;
 }
@@ -68,5 +59,14 @@ std::string DescribeAlarmEventStackInfoRequest::getLang() const {
 void DescribeAlarmEventStackInfoRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string DescribeAlarmEventStackInfoRequest::getUniqueInfo() const {
+  return uniqueInfo_;
+}
+
+void DescribeAlarmEventStackInfoRequest::setUniqueInfo(const std::string &uniqueInfo) {
+  uniqueInfo_ = uniqueInfo;
+  setParameter(std::string("UniqueInfo"), uniqueInfo);
 }
 

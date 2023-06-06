@@ -37,6 +37,7 @@ namespace AlibabaCloud
 				DescribeVersionConfigResult();
 				explicit DescribeVersionConfigResult(const std::string &payload);
 				~DescribeVersionConfigResult();
+				bool getIsNewMultiVersion()const;
 				bool getIsPaidUser()const;
 				long getImageScanCapacity()const;
 				long getAppWhiteListAuthCount()const;
@@ -75,6 +76,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
+				bool isNewMultiVersion_;
 				bool isPaidUser_;
 				long imageScanCapacity_;
 				long appWhiteListAuthCount_;

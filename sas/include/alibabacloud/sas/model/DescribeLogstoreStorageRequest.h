@@ -30,20 +30,20 @@ class ALIBABACLOUD_SAS_EXPORT DescribeLogstoreStorageRequest : public RpcService
 public:
 	DescribeLogstoreStorageRequest();
 	~DescribeLogstoreStorageRequest();
-	std::string getLogVersion() const;
-	void setLogVersion(const std::string &logVersion);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getFrom() const;
 	void setFrom(const std::string &from);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getLogVersion() const;
+	void setLogVersion(const std::string &logVersion);
 
 private:
-	std::string logVersion_;
 	std::string sourceIp_;
 	std::string from_;
 	std::string lang_;
+	std::string logVersion_;
 };
 } // namespace Model
 } // namespace Sas

@@ -25,15 +25,6 @@ DescribePropertyTypeScaItemRequest::DescribePropertyTypeScaItemRequest()
 
 DescribePropertyTypeScaItemRequest::~DescribePropertyTypeScaItemRequest() {}
 
-int DescribePropertyTypeScaItemRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribePropertyTypeScaItemRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribePropertyTypeScaItemRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,5 +50,14 @@ std::string DescribePropertyTypeScaItemRequest::getLang() const {
 void DescribePropertyTypeScaItemRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+int DescribePropertyTypeScaItemRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribePropertyTypeScaItemRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 

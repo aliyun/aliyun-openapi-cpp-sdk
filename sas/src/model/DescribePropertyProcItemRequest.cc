@@ -25,15 +25,6 @@ DescribePropertyProcItemRequest::DescribePropertyProcItemRequest()
 
 DescribePropertyProcItemRequest::~DescribePropertyProcItemRequest() {}
 
-int DescribePropertyProcItemRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribePropertyProcItemRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribePropertyProcItemRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -41,15 +32,6 @@ std::string DescribePropertyProcItemRequest::getSourceIp() const {
 void DescribePropertyProcItemRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
-}
-
-std::string DescribePropertyProcItemRequest::getName() const {
-  return name_;
-}
-
-void DescribePropertyProcItemRequest::setName(const std::string &name) {
-  name_ = name;
-  setParameter(std::string("Name"), name);
 }
 
 int DescribePropertyProcItemRequest::getPageSize() const {
@@ -68,5 +50,23 @@ bool DescribePropertyProcItemRequest::getForceFlush() const {
 void DescribePropertyProcItemRequest::setForceFlush(bool forceFlush) {
   forceFlush_ = forceFlush;
   setParameter(std::string("ForceFlush"), forceFlush ? "true" : "false");
+}
+
+int DescribePropertyProcItemRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribePropertyProcItemRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string DescribePropertyProcItemRequest::getName() const {
+  return name_;
+}
+
+void DescribePropertyProcItemRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 

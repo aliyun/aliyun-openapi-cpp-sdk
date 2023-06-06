@@ -71,6 +71,10 @@ void DescribeWarningMachinesResult::parse(const std::string &payload)
 			warningMachinesObject.bind = valueWarningMachinesWarningMachine["Bind"].asString() == "true";
 		if(!valueWarningMachinesWarningMachine["AuthVersion"].isNull())
 			warningMachinesObject.authVersion = std::stoi(valueWarningMachinesWarningMachine["AuthVersion"].asString());
+		if(!valueWarningMachinesWarningMachine["ContainerId"].isNull())
+			warningMachinesObject.containerId = valueWarningMachinesWarningMachine["ContainerId"].asString();
+		if(!valueWarningMachinesWarningMachine["ContainerName"].isNull())
+			warningMachinesObject.containerName = valueWarningMachinesWarningMachine["ContainerName"].asString();
 		warningMachines_.push_back(warningMachinesObject);
 	}
 	if(!value["CurrentPage"].isNull())

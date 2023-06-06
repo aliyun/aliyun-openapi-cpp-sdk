@@ -60,6 +60,8 @@ void GetInterceptionSummaryResult::parse(const std::string &payload)
 		interceptionSummary_.suggestRuleCount = std::stoi(interceptionSummaryNode["SuggestRuleCount"].asString());
 	if(!interceptionSummaryNode["OpenRuleCount"].isNull())
 		interceptionSummary_.openRuleCount = std::stoi(interceptionSummaryNode["OpenRuleCount"].asString());
+	if(!interceptionSummaryNode["InterceptionCountInDays"].isNull())
+		interceptionSummary_.interceptionCountInDays = std::stoi(interceptionSummaryNode["InterceptionCountInDays"].asString());
 
 }
 

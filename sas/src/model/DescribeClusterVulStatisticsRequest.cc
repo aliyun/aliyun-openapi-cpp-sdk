@@ -25,6 +25,15 @@ DescribeClusterVulStatisticsRequest::DescribeClusterVulStatisticsRequest()
 
 DescribeClusterVulStatisticsRequest::~DescribeClusterVulStatisticsRequest() {}
 
+std::string DescribeClusterVulStatisticsRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void DescribeClusterVulStatisticsRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
 std::string DescribeClusterVulStatisticsRequest::getTypes() const {
   return types_;
 }
@@ -41,14 +50,5 @@ std::string DescribeClusterVulStatisticsRequest::getClusterId() const {
 void DescribeClusterVulStatisticsRequest::setClusterId(const std::string &clusterId) {
   clusterId_ = clusterId;
   setParameter(std::string("ClusterId"), clusterId);
-}
-
-std::string DescribeClusterVulStatisticsRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void DescribeClusterVulStatisticsRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
 }
 

@@ -25,15 +25,6 @@ FixCheckWarningsRequest::FixCheckWarningsRequest()
 
 FixCheckWarningsRequest::~FixCheckWarningsRequest() {}
 
-long FixCheckWarningsRequest::getRiskId() const {
-  return riskId_;
-}
-
-void FixCheckWarningsRequest::setRiskId(long riskId) {
-  riskId_ = riskId;
-  setParameter(std::string("RiskId"), std::to_string(riskId));
-}
-
 std::string FixCheckWarningsRequest::getCheckParams() const {
   return checkParams_;
 }
@@ -59,6 +50,15 @@ std::string FixCheckWarningsRequest::getLang() const {
 void FixCheckWarningsRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+long FixCheckWarningsRequest::getRiskId() const {
+  return riskId_;
+}
+
+void FixCheckWarningsRequest::setRiskId(long riskId) {
+  riskId_ = riskId;
+  setParameter(std::string("RiskId"), std::to_string(riskId));
 }
 
 std::string FixCheckWarningsRequest::getUuids() const {

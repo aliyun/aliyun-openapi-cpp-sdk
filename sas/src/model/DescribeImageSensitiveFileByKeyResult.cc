@@ -39,28 +39,28 @@ void DescribeImageSensitiveFileByKeyResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allSensitiveFileListNode = value["SensitiveFileList"]["List"];
-	for (auto valueSensitiveFileListList : allSensitiveFileListNode)
+	auto allSensitiveFileListNode = value["SensitiveFileList"]["SensitiveFileListItem"];
+	for (auto valueSensitiveFileListSensitiveFileListItem : allSensitiveFileListNode)
 	{
-		List sensitiveFileListObject;
-		if(!valueSensitiveFileListList["FilePath"].isNull())
-			sensitiveFileListObject.filePath = valueSensitiveFileListList["FilePath"].asString();
-		if(!valueSensitiveFileListList["LayerDigest"].isNull())
-			sensitiveFileListObject.layerDigest = valueSensitiveFileListList["LayerDigest"].asString();
-		if(!valueSensitiveFileListList["Promt"].isNull())
-			sensitiveFileListObject.promt = valueSensitiveFileListList["Promt"].asString();
-		if(!valueSensitiveFileListList["Advice"].isNull())
-			sensitiveFileListObject.advice = valueSensitiveFileListList["Advice"].asString();
-		if(!valueSensitiveFileListList["RiskLevel"].isNull())
-			sensitiveFileListObject.riskLevel = valueSensitiveFileListList["RiskLevel"].asString();
-		if(!valueSensitiveFileListList["SensitiveFileKey"].isNull())
-			sensitiveFileListObject.sensitiveFileKey = valueSensitiveFileListList["SensitiveFileKey"].asString();
-		if(!valueSensitiveFileListList["SensitiveFileName"].isNull())
-			sensitiveFileListObject.sensitiveFileName = valueSensitiveFileListList["SensitiveFileName"].asString();
-		if(!valueSensitiveFileListList["FirstScanTime"].isNull())
-			sensitiveFileListObject.firstScanTime = std::stol(valueSensitiveFileListList["FirstScanTime"].asString());
-		if(!valueSensitiveFileListList["LastScanTime"].isNull())
-			sensitiveFileListObject.lastScanTime = std::stol(valueSensitiveFileListList["LastScanTime"].asString());
+		SensitiveFileListItem sensitiveFileListObject;
+		if(!valueSensitiveFileListSensitiveFileListItem["FilePath"].isNull())
+			sensitiveFileListObject.filePath = valueSensitiveFileListSensitiveFileListItem["FilePath"].asString();
+		if(!valueSensitiveFileListSensitiveFileListItem["LayerDigest"].isNull())
+			sensitiveFileListObject.layerDigest = valueSensitiveFileListSensitiveFileListItem["LayerDigest"].asString();
+		if(!valueSensitiveFileListSensitiveFileListItem["Promt"].isNull())
+			sensitiveFileListObject.promt = valueSensitiveFileListSensitiveFileListItem["Promt"].asString();
+		if(!valueSensitiveFileListSensitiveFileListItem["Advice"].isNull())
+			sensitiveFileListObject.advice = valueSensitiveFileListSensitiveFileListItem["Advice"].asString();
+		if(!valueSensitiveFileListSensitiveFileListItem["RiskLevel"].isNull())
+			sensitiveFileListObject.riskLevel = valueSensitiveFileListSensitiveFileListItem["RiskLevel"].asString();
+		if(!valueSensitiveFileListSensitiveFileListItem["SensitiveFileKey"].isNull())
+			sensitiveFileListObject.sensitiveFileKey = valueSensitiveFileListSensitiveFileListItem["SensitiveFileKey"].asString();
+		if(!valueSensitiveFileListSensitiveFileListItem["SensitiveFileName"].isNull())
+			sensitiveFileListObject.sensitiveFileName = valueSensitiveFileListSensitiveFileListItem["SensitiveFileName"].asString();
+		if(!valueSensitiveFileListSensitiveFileListItem["FirstScanTime"].isNull())
+			sensitiveFileListObject.firstScanTime = std::stol(valueSensitiveFileListSensitiveFileListItem["FirstScanTime"].asString());
+		if(!valueSensitiveFileListSensitiveFileListItem["LastScanTime"].isNull())
+			sensitiveFileListObject.lastScanTime = std::stol(valueSensitiveFileListSensitiveFileListItem["LastScanTime"].asString());
 		sensitiveFileList_.push_back(sensitiveFileListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];
@@ -100,7 +100,7 @@ int DescribeImageSensitiveFileByKeyResult::getHttpStatusCode()const
 	return httpStatusCode_;
 }
 
-std::vector<DescribeImageSensitiveFileByKeyResult::List> DescribeImageSensitiveFileByKeyResult::getSensitiveFileList()const
+std::vector<DescribeImageSensitiveFileByKeyResult::SensitiveFileListItem> DescribeImageSensitiveFileByKeyResult::getSensitiveFileList()const
 {
 	return sensitiveFileList_;
 }

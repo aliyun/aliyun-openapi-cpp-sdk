@@ -14,46 +14,31 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/sas/model/ListInterceptionImageResult.h>
+#include <alibabacloud/sas/model/CreateOrUpdateDingTalkResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Sas;
 using namespace AlibabaCloud::Sas::Model;
 
-ListInterceptionImageResult::ListInterceptionImageResult() :
+CreateOrUpdateDingTalkResult::CreateOrUpdateDingTalkResult() :
 	ServiceResult()
 {}
 
-ListInterceptionImageResult::ListInterceptionImageResult(const std::string &payload) :
+CreateOrUpdateDingTalkResult::CreateOrUpdateDingTalkResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-ListInterceptionImageResult::~ListInterceptionImageResult()
+CreateOrUpdateDingTalkResult::~CreateOrUpdateDingTalkResult()
 {}
 
-void ListInterceptionImageResult::parse(const std::string &payload)
+void CreateOrUpdateDingTalkResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allImageListNode = value["ImageList"]["Image"];
-	for (auto valueImageListImage : allImageListNode)
-	{
-		Image imageListObject;
-		if(!valueImageListImage["ImageName"].isNull())
-			imageListObject.imageName = valueImageListImage["ImageName"].asString();
-		if(!valueImageListImage["ImageUuid"].isNull())
-			imageListObject.imageUuid = valueImageListImage["ImageUuid"].asString();
-		imageList_.push_back(imageListObject);
-	}
 
-}
-
-std::vector<ListInterceptionImageResult::Image> ListInterceptionImageResult::getImageList()const
-{
-	return imageList_;
 }
 

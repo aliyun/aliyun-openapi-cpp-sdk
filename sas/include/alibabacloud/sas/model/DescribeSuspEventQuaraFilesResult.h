@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string eventType;
 					std::string ip;
 					std::string eventName;
+					std::string intranetIp;
 					std::string instanceName;
 					std::string uuid;
 					std::string internetIp;

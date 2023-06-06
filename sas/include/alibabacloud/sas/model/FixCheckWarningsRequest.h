@@ -30,22 +30,22 @@ class ALIBABACLOUD_SAS_EXPORT FixCheckWarningsRequest : public RpcServiceRequest
 public:
 	FixCheckWarningsRequest();
 	~FixCheckWarningsRequest();
-	long getRiskId() const;
-	void setRiskId(long riskId);
 	std::string getCheckParams() const;
 	void setCheckParams(const std::string &checkParams);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	long getRiskId() const;
+	void setRiskId(long riskId);
 	std::string getUuids() const;
 	void setUuids(const std::string &uuids);
 
 private:
-	long riskId_;
 	std::string checkParams_;
 	std::string sourceIp_;
 	std::string lang_;
+	long riskId_;
 	std::string uuids_;
 };
 } // namespace Model

@@ -32,21 +32,21 @@ public:
 	~ModifyClientConfSetupRequest();
 	std::string getStrategyConfig() const;
 	void setStrategyConfig(const std::string &strategyConfig);
-	std::string getStrategyTagValue() const;
-	void setStrategyTagValue(const std::string &strategyTagValue);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getStrategyTag() const;
 	void setStrategyTag(const std::string &strategyTag);
 	std::string getResourceDirectoryAccountId() const;
 	void setResourceDirectoryAccountId(const std::string &resourceDirectoryAccountId);
+	std::string getStrategyTagValue() const;
+	void setStrategyTagValue(const std::string &strategyTagValue);
 
 private:
 	std::string strategyConfig_;
-	std::string strategyTagValue_;
 	std::string sourceIp_;
 	std::string strategyTag_;
 	std::string resourceDirectoryAccountId_;
+	std::string strategyTagValue_;
 };
 } // namespace Model
 } // namespace Sas

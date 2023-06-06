@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					int suggestRuleCount;
 					int openClusterCount;
 					int openRuleCount;
+					int interceptionCountInDays;
 				};
 
 

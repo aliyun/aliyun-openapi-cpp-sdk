@@ -25,6 +25,15 @@ CreateOrUpdateAssetGroupRequest::CreateOrUpdateAssetGroupRequest()
 
 CreateOrUpdateAssetGroupRequest::~CreateOrUpdateAssetGroupRequest() {}
 
+std::string CreateOrUpdateAssetGroupRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void CreateOrUpdateAssetGroupRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
 long CreateOrUpdateAssetGroupRequest::getGroupId() const {
   return groupId_;
 }
@@ -41,15 +50,6 @@ std::string CreateOrUpdateAssetGroupRequest::getGroupName() const {
 void CreateOrUpdateAssetGroupRequest::setGroupName(const std::string &groupName) {
   groupName_ = groupName;
   setParameter(std::string("GroupName"), groupName);
-}
-
-std::string CreateOrUpdateAssetGroupRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void CreateOrUpdateAssetGroupRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
 }
 
 std::string CreateOrUpdateAssetGroupRequest::getUuids() const {

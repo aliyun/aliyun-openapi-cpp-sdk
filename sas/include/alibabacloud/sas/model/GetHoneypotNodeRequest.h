@@ -30,10 +30,13 @@ class ALIBABACLOUD_SAS_EXPORT GetHoneypotNodeRequest : public RpcServiceRequest 
 public:
 	GetHoneypotNodeRequest();
 	~GetHoneypotNodeRequest();
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	std::string getNodeId() const;
 	void setNodeId(const std::string &nodeId);
 
 private:
+	std::string lang_;
 	std::string nodeId_;
 };
 } // namespace Model

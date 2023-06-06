@@ -30,25 +30,25 @@ class ALIBABACLOUD_SAS_EXPORT ModifyCustomBlockRecordRequest : public RpcService
 public:
 	ModifyCustomBlockRecordRequest();
 	~ModifyCustomBlockRecordRequest();
-	long getExpireTime() const;
-	void setExpireTime(long expireTime);
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getBound() const;
-	void setBound(const std::string &bound);
 	std::string getBlockIp() const;
 	void setBlockIp(const std::string &blockIp);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	long getExpireTime() const;
+	void setExpireTime(long expireTime);
+	std::string getBound() const;
+	void setBound(const std::string &bound);
 	std::string getUuids() const;
 	void setUuids(const std::string &uuids);
 
 private:
-	long expireTime_;
 	long resourceOwnerId_;
-	std::string bound_;
 	std::string blockIp_;
 	std::string sourceIp_;
+	long expireTime_;
+	std::string bound_;
 	std::string uuids_;
 };
 } // namespace Model

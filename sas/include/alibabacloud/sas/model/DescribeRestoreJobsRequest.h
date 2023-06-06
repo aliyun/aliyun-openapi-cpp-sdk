@@ -32,23 +32,23 @@ public:
 	~DescribeRestoreJobsRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getMachineRemark() const;
 	void setMachineRemark(const std::string &machineRemark);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 
 private:
 	long resourceOwnerId_;
-	int currentPage_;
 	std::string sourceIp_;
 	std::string machineRemark_;
 	int pageSize_;
+	int currentPage_;
 	std::string status_;
 };
 } // namespace Model

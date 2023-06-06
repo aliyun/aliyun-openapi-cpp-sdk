@@ -25,15 +25,6 @@ DescribeSuspEventDetailRequest::DescribeSuspEventDetailRequest()
 
 DescribeSuspEventDetailRequest::~DescribeSuspEventDetailRequest() {}
 
-int DescribeSuspEventDetailRequest::getSuspiciousEventId() const {
-  return suspiciousEventId_;
-}
-
-void DescribeSuspEventDetailRequest::setSuspiciousEventId(int suspiciousEventId) {
-  suspiciousEventId_ = suspiciousEventId;
-  setParameter(std::string("SuspiciousEventId"), std::to_string(suspiciousEventId));
-}
-
 std::string DescribeSuspEventDetailRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,5 +50,14 @@ std::string DescribeSuspEventDetailRequest::getLang() const {
 void DescribeSuspEventDetailRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+int DescribeSuspEventDetailRequest::getSuspiciousEventId() const {
+  return suspiciousEventId_;
+}
+
+void DescribeSuspEventDetailRequest::setSuspiciousEventId(int suspiciousEventId) {
+  suspiciousEventId_ = suspiciousEventId;
+  setParameter(std::string("SuspiciousEventId"), std::to_string(suspiciousEventId));
 }
 

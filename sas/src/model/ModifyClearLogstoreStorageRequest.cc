@@ -25,15 +25,6 @@ ModifyClearLogstoreStorageRequest::ModifyClearLogstoreStorageRequest()
 
 ModifyClearLogstoreStorageRequest::~ModifyClearLogstoreStorageRequest() {}
 
-std::string ModifyClearLogstoreStorageRequest::getUserLogStore() const {
-  return userLogStore_;
-}
-
-void ModifyClearLogstoreStorageRequest::setUserLogStore(const std::string &userLogStore) {
-  userLogStore_ = userLogStore;
-  setParameter(std::string("UserLogStore"), userLogStore);
-}
-
 std::string ModifyClearLogstoreStorageRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -41,15 +32,6 @@ std::string ModifyClearLogstoreStorageRequest::getSourceIp() const {
 void ModifyClearLogstoreStorageRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
-}
-
-std::string ModifyClearLogstoreStorageRequest::getUserProject() const {
-  return userProject_;
-}
-
-void ModifyClearLogstoreStorageRequest::setUserProject(const std::string &userProject) {
-  userProject_ = userProject;
-  setParameter(std::string("UserProject"), userProject);
 }
 
 std::string ModifyClearLogstoreStorageRequest::getFrom() const {
@@ -68,5 +50,23 @@ std::string ModifyClearLogstoreStorageRequest::getLang() const {
 void ModifyClearLogstoreStorageRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string ModifyClearLogstoreStorageRequest::getUserLogStore() const {
+  return userLogStore_;
+}
+
+void ModifyClearLogstoreStorageRequest::setUserLogStore(const std::string &userLogStore) {
+  userLogStore_ = userLogStore;
+  setParameter(std::string("UserLogStore"), userLogStore);
+}
+
+std::string ModifyClearLogstoreStorageRequest::getUserProject() const {
+  return userProject_;
+}
+
+void ModifyClearLogstoreStorageRequest::setUserProject(const std::string &userProject) {
+  userProject_ = userProject;
+  setParameter(std::string("UserProject"), userProject);
 }
 

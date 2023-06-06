@@ -30,23 +30,23 @@ class ALIBABACLOUD_SAS_EXPORT ModifyTagWithUuidRequest : public RpcServiceReques
 public:
 	ModifyTagWithUuidRequest();
 	~ModifyTagWithUuidRequest();
-	std::string getTagId() const;
-	void setTagId(const std::string &tagId);
-	std::string getMachineTypes() const;
-	void setMachineTypes(const std::string &machineTypes);
 	std::string getTagList() const;
 	void setTagList(const std::string &tagList);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getUuidList() const;
 	void setUuidList(const std::string &uuidList);
+	std::string getTagId() const;
+	void setTagId(const std::string &tagId);
+	std::string getMachineTypes() const;
+	void setMachineTypes(const std::string &machineTypes);
 
 private:
-	std::string tagId_;
-	std::string machineTypes_;
 	std::string tagList_;
 	std::string sourceIp_;
 	std::string uuidList_;
+	std::string tagId_;
+	std::string machineTypes_;
 };
 } // namespace Model
 } // namespace Sas

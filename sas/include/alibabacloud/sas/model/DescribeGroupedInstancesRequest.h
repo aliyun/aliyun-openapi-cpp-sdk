@@ -52,6 +52,8 @@ public:
 	void setCurrentPage(int currentPage);
 	std::string getMachineTypes() const;
 	void setMachineTypes(const std::string &machineTypes);
+	std::string getSaleVersionCheckCode() const;
+	void setSaleVersionCheckCode(const std::string &saleVersionCheckCode);
 
 private:
 	std::string criteria_;
@@ -65,6 +67,7 @@ private:
 	std::string fieldValue_;
 	int currentPage_;
 	std::string machineTypes_;
+	std::string saleVersionCheckCode_;
 };
 } // namespace Model
 } // namespace Sas

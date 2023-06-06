@@ -44,6 +44,16 @@ void DescribeBruteForceSummaryResult::parse(const std::string &payload)
 		bruteForceSummary_.allStrategyCount = std::stoi(bruteForceSummaryNode["AllStrategyCount"].asString());
 	if(!bruteForceSummaryNode["EffectiveCount"].isNull())
 		bruteForceSummary_.effectiveCount = std::stoi(bruteForceSummaryNode["EffectiveCount"].asString());
+	if(!bruteForceSummaryNode["AntiBruteForceRuleCount"].isNull())
+		bruteForceSummary_.antiBruteForceRuleCount = bruteForceSummaryNode["AntiBruteForceRuleCount"].asString();
+	if(!bruteForceSummaryNode["CustomRecordCount"].isNull())
+		bruteForceSummary_.customRecordCount = bruteForceSummaryNode["CustomRecordCount"].asString();
+	if(!bruteForceSummaryNode["SystemRecordCount"].isNull())
+		bruteForceSummary_.systemRecordCount = bruteForceSummaryNode["SystemRecordCount"].asString();
+	if(!bruteForceSummaryNode["CustomEffectiveCount"].isNull())
+		bruteForceSummary_.customEffectiveCount = bruteForceSummaryNode["CustomEffectiveCount"].asString();
+	if(!bruteForceSummaryNode["SystemEffectiveCount"].isNull())
+		bruteForceSummary_.systemEffectiveCount = bruteForceSummaryNode["SystemEffectiveCount"].asString();
 
 }
 

@@ -25,15 +25,6 @@ ListVulAutoRepairConfigRequest::ListVulAutoRepairConfigRequest()
 
 ListVulAutoRepairConfigRequest::~ListVulAutoRepairConfigRequest() {}
 
-int ListVulAutoRepairConfigRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void ListVulAutoRepairConfigRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string ListVulAutoRepairConfigRequest::getType() const {
   return type_;
 }
@@ -41,15 +32,6 @@ std::string ListVulAutoRepairConfigRequest::getType() const {
 void ListVulAutoRepairConfigRequest::setType(const std::string &type) {
   type_ = type;
   setParameter(std::string("Type"), type);
-}
-
-std::string ListVulAutoRepairConfigRequest::getAliasName() const {
-  return aliasName_;
-}
-
-void ListVulAutoRepairConfigRequest::setAliasName(const std::string &aliasName) {
-  aliasName_ = aliasName;
-  setParameter(std::string("AliasName"), aliasName);
 }
 
 std::string ListVulAutoRepairConfigRequest::getSourceIp() const {
@@ -68,5 +50,23 @@ int ListVulAutoRepairConfigRequest::getPageSize() const {
 void ListVulAutoRepairConfigRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+int ListVulAutoRepairConfigRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void ListVulAutoRepairConfigRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string ListVulAutoRepairConfigRequest::getAliasName() const {
+  return aliasName_;
+}
+
+void ListVulAutoRepairConfigRequest::setAliasName(const std::string &aliasName) {
+  aliasName_ = aliasName;
+  setParameter(std::string("AliasName"), aliasName);
 }
 

@@ -32,15 +32,15 @@ public:
 	~QueryDiscoverDatabaseRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getCreateMark() const;
-	void setCreateMark(const std::string &createMark);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getCreateMark() const;
+	void setCreateMark(const std::string &createMark);
 
 private:
 	long resourceOwnerId_;
-	std::string createMark_;
 	std::string sourceIp_;
+	std::string createMark_;
 };
 } // namespace Model
 } // namespace Sas

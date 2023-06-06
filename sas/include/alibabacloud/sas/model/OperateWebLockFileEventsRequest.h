@@ -30,20 +30,20 @@ class ALIBABACLOUD_SAS_EXPORT OperateWebLockFileEventsRequest : public RpcServic
 public:
 	OperateWebLockFileEventsRequest();
 	~OperateWebLockFileEventsRequest();
-	int getDealAll() const;
-	void setDealAll(int dealAll);
 	std::vector<long> getEventIds() const;
 	void setEventIds(const std::vector<long> &eventIds);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getOperationCode() const;
 	void setOperationCode(const std::string &operationCode);
+	int getDealAll() const;
+	void setDealAll(int dealAll);
 
 private:
-	int dealAll_;
 	std::vector<long> eventIds_;
 	std::string sourceIp_;
 	std::string operationCode_;
+	int dealAll_;
 };
 } // namespace Model
 } // namespace Sas

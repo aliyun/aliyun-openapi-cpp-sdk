@@ -33,15 +33,6 @@ void ChangeCheckConfigRequest::setStandardIds(const std::vector<long> &standardI
   standardIds_ = standardIds;
 }
 
-int ChangeCheckConfigRequest::getEndTime() const {
-  return endTime_;
-}
-
-void ChangeCheckConfigRequest::setEndTime(int endTime) {
-  endTime_ = endTime;
-  setParameter(std::string("EndTime"), std::to_string(endTime));
-}
-
 std::vector<int> ChangeCheckConfigRequest::getCycleDays() const {
   return cycleDays_;
 }
@@ -75,5 +66,14 @@ std::string ChangeCheckConfigRequest::getRegionId() const {
 void ChangeCheckConfigRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+int ChangeCheckConfigRequest::getEndTime() const {
+  return endTime_;
+}
+
+void ChangeCheckConfigRequest::setEndTime(int endTime) {
+  endTime_ = endTime;
+  setParameter(std::string("EndTime"), std::to_string(endTime));
 }
 

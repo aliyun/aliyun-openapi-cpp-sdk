@@ -30,19 +30,19 @@ class ALIBABACLOUD_SAS_EXPORT ModifyInterceptionRuleSwitchRequest : public RpcSe
 public:
 	ModifyInterceptionRuleSwitchRequest();
 	~ModifyInterceptionRuleSwitchRequest();
+	std::string getSourceIp() const;
+	void setSourceIp(const std::string &sourceIp);
 	std::string getClusterId() const;
 	void setClusterId(const std::string &clusterId);
 	std::string getRuleIds() const;
 	void setRuleIds(const std::string &ruleIds);
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
 	int getRuleSwitch() const;
 	void setRuleSwitch(int ruleSwitch);
 
 private:
+	std::string sourceIp_;
 	std::string clusterId_;
 	std::string ruleIds_;
-	std::string sourceIp_;
 	int ruleSwitch_;
 };
 } // namespace Model

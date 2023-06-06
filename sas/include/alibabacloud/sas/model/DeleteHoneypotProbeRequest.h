@@ -32,9 +32,12 @@ public:
 	~DeleteHoneypotProbeRequest();
 	std::string getProbeId() const;
 	void setProbeId(const std::string &probeId);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 
 private:
 	std::string probeId_;
+	std::string lang_;
 };
 } // namespace Model
 } // namespace Sas

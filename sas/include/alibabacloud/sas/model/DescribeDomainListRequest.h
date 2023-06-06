@@ -30,23 +30,23 @@ class ALIBABACLOUD_SAS_EXPORT DescribeDomainListRequest : public RpcServiceReque
 public:
 	DescribeDomainListRequest();
 	~DescribeDomainListRequest();
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
-	std::string getFuzzyDomain() const;
-	void setFuzzyDomain(const std::string &fuzzyDomain);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getDomainType() const;
 	void setDomainType(const std::string &domainType);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
+	std::string getFuzzyDomain() const;
+	void setFuzzyDomain(const std::string &fuzzyDomain);
 
 private:
-	int currentPage_;
-	std::string fuzzyDomain_;
 	std::string sourceIp_;
 	std::string domainType_;
 	int pageSize_;
+	int currentPage_;
+	std::string fuzzyDomain_;
 };
 } // namespace Model
 } // namespace Sas

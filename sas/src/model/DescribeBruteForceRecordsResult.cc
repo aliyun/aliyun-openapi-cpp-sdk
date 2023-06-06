@@ -69,6 +69,10 @@ void DescribeBruteForceRecordsResult::parse(const std::string &payload)
 			machineListObject.errorCode = valueMachineListBruteForceRecord["ErrorCode"].asString();
 		if(!valueMachineListBruteForceRecord["successInfo"].isNull())
 			machineListObject.successInfo = valueMachineListBruteForceRecord["successInfo"].asString();
+		if(!valueMachineListBruteForceRecord["BlockType"].isNull())
+			machineListObject.blockType = valueMachineListBruteForceRecord["BlockType"].asString();
+		if(!valueMachineListBruteForceRecord["AliNetOnline"].isNull())
+			machineListObject.aliNetOnline = valueMachineListBruteForceRecord["AliNetOnline"].asString() == "true";
 		machineList_.push_back(machineListObject);
 	}
 	auto pageInfoNode = value["PageInfo"];

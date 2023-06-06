@@ -30,25 +30,25 @@ class ALIBABACLOUD_SAS_EXPORT DescribeAccesskeyLeakListRequest : public RpcServi
 public:
 	DescribeAccesskeyLeakListRequest();
 	~DescribeAccesskeyLeakListRequest();
-	std::string getQuery() const;
-	void setQuery(const std::string &query);
 	long getStartTs() const;
 	void setStartTs(long startTs);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getQuery() const;
+	void setQuery(const std::string &query);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 	std::string getStatus() const;
 	void setStatus(const std::string &status);
 
 private:
-	std::string query_;
 	long startTs_;
-	int currentPage_;
 	std::string sourceIp_;
 	int pageSize_;
+	std::string query_;
+	int currentPage_;
 	std::string status_;
 };
 } // namespace Model

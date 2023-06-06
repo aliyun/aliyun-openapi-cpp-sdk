@@ -25,6 +25,24 @@ ModifyOpenLogShipperRequest::ModifyOpenLogShipperRequest()
 
 ModifyOpenLogShipperRequest::~ModifyOpenLogShipperRequest() {}
 
+std::string ModifyOpenLogShipperRequest::getSourceIp() const {
+  return sourceIp_;
+}
+
+void ModifyOpenLogShipperRequest::setSourceIp(const std::string &sourceIp) {
+  sourceIp_ = sourceIp;
+  setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string ModifyOpenLogShipperRequest::getFrom() const {
+  return from_;
+}
+
+void ModifyOpenLogShipperRequest::setFrom(const std::string &from) {
+  from_ = from;
+  setParameter(std::string("From"), from);
+}
+
 std::vector<ModifyOpenLogShipperRequest::LogMetaList> ModifyOpenLogShipperRequest::getLogMetaList() const {
   return logMetaList_;
 }
@@ -50,15 +68,6 @@ void ModifyOpenLogShipperRequest::setTtl(int ttl) {
   setParameter(std::string("Ttl"), std::to_string(ttl));
 }
 
-std::string ModifyOpenLogShipperRequest::getSourceIp() const {
-  return sourceIp_;
-}
-
-void ModifyOpenLogShipperRequest::setSourceIp(const std::string &sourceIp) {
-  sourceIp_ = sourceIp;
-  setParameter(std::string("SourceIp"), sourceIp);
-}
-
 int ModifyOpenLogShipperRequest::getHotTtl() const {
   return hotTtl_;
 }
@@ -66,15 +75,6 @@ int ModifyOpenLogShipperRequest::getHotTtl() const {
 void ModifyOpenLogShipperRequest::setHotTtl(int hotTtl) {
   hotTtl_ = hotTtl;
   setParameter(std::string("HotTtl"), std::to_string(hotTtl));
-}
-
-std::string ModifyOpenLogShipperRequest::getFrom() const {
-  return from_;
-}
-
-void ModifyOpenLogShipperRequest::setFrom(const std::string &from) {
-  from_ = from;
-  setParameter(std::string("From"), from);
 }
 
 std::string ModifyOpenLogShipperRequest::getTargetRegionId() const {

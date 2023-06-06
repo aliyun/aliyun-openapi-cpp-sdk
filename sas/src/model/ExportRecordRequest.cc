@@ -25,24 +25,6 @@ ExportRecordRequest::ExportRecordRequest()
 
 ExportRecordRequest::~ExportRecordRequest() {}
 
-std::string ExportRecordRequest::getExportType() const {
-  return exportType_;
-}
-
-void ExportRecordRequest::setExportType(const std::string &exportType) {
-  exportType_ = exportType;
-  setParameter(std::string("ExportType"), exportType);
-}
-
-std::string ExportRecordRequest::getParams() const {
-  return params_;
-}
-
-void ExportRecordRequest::setParams(const std::string &params) {
-  params_ = params;
-  setParameter(std::string("Params"), params);
-}
-
 std::string ExportRecordRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -59,5 +41,23 @@ std::string ExportRecordRequest::getLang() const {
 void ExportRecordRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string ExportRecordRequest::getExportType() const {
+  return exportType_;
+}
+
+void ExportRecordRequest::setExportType(const std::string &exportType) {
+  exportType_ = exportType;
+  setParameter(std::string("ExportType"), exportType);
+}
+
+std::string ExportRecordRequest::getParams() const {
+  return params_;
+}
+
+void ExportRecordRequest::setParams(const std::string &params) {
+  params_ = params;
+  setParameter(std::string("Params"), params);
 }
 

@@ -32,6 +32,19 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_SAS_EXPORT DescribeCheckWarningDetailResult : public ServiceResult
 			{
 			public:
+				struct CheckDetailColumn
+				{
+					struct Grid
+					{
+						std::string type;
+						std::string showName;
+						std::string key;
+					};
+					std::vector<CheckDetailColumn::Grid> grids;
+					std::string type;
+					std::string showName;
+					std::string key;
+				};
 
 
 				DescribeCheckWarningDetailResult();
@@ -39,8 +52,10 @@ namespace AlibabaCloud
 				~DescribeCheckWarningDetailResult();
 				std::string getItem()const;
 				std::string getType()const;
+				std::vector<CheckDetailColumn> getCheckDetailColumns()const;
 				std::string getDescription()const;
 				long getCheckId()const;
+				std::vector<std::string> getCheckDetailAssetInfo()const;
 				std::string getLevel()const;
 				std::string getPrompt()const;
 				std::string getAdvice()const;
@@ -50,8 +65,10 @@ namespace AlibabaCloud
 			private:
 				std::string item_;
 				std::string type_;
+				std::vector<CheckDetailColumn> checkDetailColumns_;
 				std::string description_;
 				long checkId_;
+				std::vector<std::string> checkDetailAssetInfo_;
 				std::string level_;
 				std::string prompt_;
 				std::string advice_;

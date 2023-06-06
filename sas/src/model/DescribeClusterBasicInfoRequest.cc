@@ -34,15 +34,6 @@ void DescribeClusterBasicInfoRequest::setTargetType(const std::string &targetTyp
   setParameter(std::string("TargetType"), targetType);
 }
 
-std::string DescribeClusterBasicInfoRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void DescribeClusterBasicInfoRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 std::string DescribeClusterBasicInfoRequest::getType() const {
   return type_;
 }
@@ -59,5 +50,14 @@ std::string DescribeClusterBasicInfoRequest::getSourceIp() const {
 void DescribeClusterBasicInfoRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string DescribeClusterBasicInfoRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void DescribeClusterBasicInfoRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

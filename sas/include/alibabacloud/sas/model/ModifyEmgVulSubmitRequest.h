@@ -32,18 +32,18 @@ public:
 	~ModifyEmgVulSubmitRequest();
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	std::string getName() const;
-	void setName(const std::string &name);
 	std::string getUserAgreement() const;
 	void setUserAgreement(const std::string &userAgreement);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
+	std::string getName() const;
+	void setName(const std::string &name);
 
 private:
 	std::string sourceIp_;
-	std::string name_;
 	std::string userAgreement_;
 	std::string lang_;
+	std::string name_;
 };
 } // namespace Model
 } // namespace Sas

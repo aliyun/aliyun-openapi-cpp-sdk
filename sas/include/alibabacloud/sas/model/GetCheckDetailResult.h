@@ -50,12 +50,21 @@ namespace AlibabaCloud
 					std::string value;
 					std::string link;
 				};
+				struct CustomConfigsItem
+				{
+					std::string defaultValue;
+					std::string typeDefine;
+					std::string value;
+					std::string showName;
+					std::string name;
+				};
 
 
 				GetCheckDetailResult();
 				explicit GetCheckDetailResult(const std::string &payload);
 				~GetCheckDetailResult();
 				Description getDescription()const;
+				std::vector<CustomConfigsItem> getCustomConfigs()const;
 				AssistInfo getAssistInfo()const;
 				Solution getSolution()const;
 
@@ -63,6 +72,7 @@ namespace AlibabaCloud
 				void parse(const std::string &payload);
 			private:
 				Description description_;
+				std::vector<CustomConfigsItem> customConfigs_;
 				AssistInfo assistInfo_;
 				Solution solution_;
 

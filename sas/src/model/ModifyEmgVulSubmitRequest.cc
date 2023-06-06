@@ -34,15 +34,6 @@ void ModifyEmgVulSubmitRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string ModifyEmgVulSubmitRequest::getName() const {
-  return name_;
-}
-
-void ModifyEmgVulSubmitRequest::setName(const std::string &name) {
-  name_ = name;
-  setParameter(std::string("Name"), name);
-}
-
 std::string ModifyEmgVulSubmitRequest::getUserAgreement() const {
   return userAgreement_;
 }
@@ -59,5 +50,14 @@ std::string ModifyEmgVulSubmitRequest::getLang() const {
 void ModifyEmgVulSubmitRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string ModifyEmgVulSubmitRequest::getName() const {
+  return name_;
+}
+
+void ModifyEmgVulSubmitRequest::setName(const std::string &name) {
+  name_ = name;
+  setParameter(std::string("Name"), name);
 }
 

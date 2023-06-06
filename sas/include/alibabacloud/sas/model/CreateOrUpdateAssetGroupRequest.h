@@ -30,19 +30,19 @@ class ALIBABACLOUD_SAS_EXPORT CreateOrUpdateAssetGroupRequest : public RpcServic
 public:
 	CreateOrUpdateAssetGroupRequest();
 	~CreateOrUpdateAssetGroupRequest();
+	std::string getSourceIp() const;
+	void setSourceIp(const std::string &sourceIp);
 	long getGroupId() const;
 	void setGroupId(long groupId);
 	std::string getGroupName() const;
 	void setGroupName(const std::string &groupName);
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
 	std::string getUuids() const;
 	void setUuids(const std::string &uuids);
 
 private:
+	std::string sourceIp_;
 	long groupId_;
 	std::string groupName_;
-	std::string sourceIp_;
 	std::string uuids_;
 };
 } // namespace Model

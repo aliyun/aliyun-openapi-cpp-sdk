@@ -25,6 +25,15 @@ GetHoneypotNodeRequest::GetHoneypotNodeRequest()
 
 GetHoneypotNodeRequest::~GetHoneypotNodeRequest() {}
 
+std::string GetHoneypotNodeRequest::getLang() const {
+  return lang_;
+}
+
+void GetHoneypotNodeRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 std::string GetHoneypotNodeRequest::getNodeId() const {
   return nodeId_;
 }

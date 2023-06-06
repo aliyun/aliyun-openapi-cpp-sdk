@@ -43,15 +43,6 @@ void DescribeFrontVulPatchListRequest::setSourceIp(const std::string &sourceIp) 
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string DescribeFrontVulPatchListRequest::getOperateType() const {
-  return operateType_;
-}
-
-void DescribeFrontVulPatchListRequest::setOperateType(const std::string &operateType) {
-  operateType_ = operateType;
-  setParameter(std::string("OperateType"), operateType);
-}
-
 std::string DescribeFrontVulPatchListRequest::getLang() const {
   return lang_;
 }
@@ -68,5 +59,14 @@ std::string DescribeFrontVulPatchListRequest::getInfo() const {
 void DescribeFrontVulPatchListRequest::setInfo(const std::string &info) {
   info_ = info;
   setParameter(std::string("Info"), info);
+}
+
+std::string DescribeFrontVulPatchListRequest::getOperateType() const {
+  return operateType_;
+}
+
+void DescribeFrontVulPatchListRequest::setOperateType(const std::string &operateType) {
+  operateType_ = operateType;
+  setParameter(std::string("OperateType"), operateType);
 }
 

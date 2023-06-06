@@ -32,18 +32,18 @@ public:
 	~DescribeCriteriaRequest();
 	bool getSupportAutoTag() const;
 	void setSupportAutoTag(bool supportAutoTag);
-	std::string getMachineTypes() const;
-	void setMachineTypes(const std::string &machineTypes);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	std::string getValue() const;
 	void setValue(const std::string &value);
+	std::string getMachineTypes() const;
+	void setMachineTypes(const std::string &machineTypes);
 
 private:
 	bool supportAutoTag_;
-	std::string machineTypes_;
 	std::string sourceIp_;
 	std::string value_;
+	std::string machineTypes_;
 };
 } // namespace Model
 } // namespace Sas

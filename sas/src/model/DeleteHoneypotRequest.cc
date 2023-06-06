@@ -25,6 +25,15 @@ DeleteHoneypotRequest::DeleteHoneypotRequest()
 
 DeleteHoneypotRequest::~DeleteHoneypotRequest() {}
 
+std::string DeleteHoneypotRequest::getLang() const {
+  return lang_;
+}
+
+void DeleteHoneypotRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 std::string DeleteHoneypotRequest::getHoneypotId() const {
   return honeypotId_;
 }

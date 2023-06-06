@@ -50,14 +50,6 @@ void ListCheckStandardRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::vector<std::string> ListCheckStandardRequest::getInstanceIds() const {
-  return instanceIds_;
-}
-
-void ListCheckStandardRequest::setInstanceIds(const std::vector<std::string> &instanceIds) {
-  instanceIds_ = instanceIds;
-}
-
 std::string ListCheckStandardRequest::getLang() const {
   return lang_;
 }
@@ -73,5 +65,13 @@ std::vector<std::string> ListCheckStandardRequest::getVendors() const {
 
 void ListCheckStandardRequest::setVendors(const std::vector<std::string> &vendors) {
   vendors_ = vendors;
+}
+
+std::vector<std::string> ListCheckStandardRequest::getInstanceIds() const {
+  return instanceIds_;
+}
+
+void ListCheckStandardRequest::setInstanceIds(const std::vector<std::string> &instanceIds) {
+  instanceIds_ = instanceIds;
 }
 

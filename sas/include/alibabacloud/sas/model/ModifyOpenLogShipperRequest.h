@@ -36,25 +36,25 @@ public:
 	};
 	ModifyOpenLogShipperRequest();
 	~ModifyOpenLogShipperRequest();
+	std::string getSourceIp() const;
+	void setSourceIp(const std::string &sourceIp);
+	std::string getFrom() const;
+	void setFrom(const std::string &from);
 	std::vector<LogMetaList> getLogMetaList() const;
 	void setLogMetaList(const std::vector<LogMetaList> &logMetaList);
 	int getTtl() const;
 	void setTtl(int ttl);
-	std::string getSourceIp() const;
-	void setSourceIp(const std::string &sourceIp);
 	int getHotTtl() const;
 	void setHotTtl(int hotTtl);
-	std::string getFrom() const;
-	void setFrom(const std::string &from);
 	std::string getTargetRegionId() const;
 	void setTargetRegionId(const std::string &targetRegionId);
 
 private:
+	std::string sourceIp_;
+	std::string from_;
 	std::vector<LogMetaList> logMetaList_;
 	int ttl_;
-	std::string sourceIp_;
 	int hotTtl_;
-	std::string from_;
 	std::string targetRegionId_;
 };
 } // namespace Model

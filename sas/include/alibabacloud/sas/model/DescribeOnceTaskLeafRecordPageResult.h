@@ -47,11 +47,17 @@ namespace AlibabaCloud
 						std::string repoNamespace;
 						std::string pod;
 						std::string digest;
+						std::string nodeName;
+						std::string clusterId;
 						std::string repoName;
+						std::string nodeInstanceId;
+						std::string image;
+						std::string nodeIp;
+						std::string appName;
+						std::string clusterName;
 						std::string tag;
 						std::string regionId;
 						std::string repoId;
-						std::string image;
 					};
 					std::string status;
 					long progress;

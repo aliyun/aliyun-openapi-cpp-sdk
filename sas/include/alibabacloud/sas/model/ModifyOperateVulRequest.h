@@ -36,17 +36,17 @@ public:
 	void setType(const std::string &type);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	std::string getOperateType() const;
-	void setOperateType(const std::string &operateType);
 	std::string getInfo() const;
 	void setInfo(const std::string &info);
+	std::string getOperateType() const;
+	void setOperateType(const std::string &operateType);
 
 private:
 	std::string reason_;
 	std::string type_;
 	std::string sourceIp_;
-	std::string operateType_;
 	std::string info_;
+	std::string operateType_;
 };
 } // namespace Model
 } // namespace Sas

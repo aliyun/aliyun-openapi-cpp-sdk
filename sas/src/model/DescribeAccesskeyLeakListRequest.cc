@@ -25,15 +25,6 @@ DescribeAccesskeyLeakListRequest::DescribeAccesskeyLeakListRequest()
 
 DescribeAccesskeyLeakListRequest::~DescribeAccesskeyLeakListRequest() {}
 
-std::string DescribeAccesskeyLeakListRequest::getQuery() const {
-  return query_;
-}
-
-void DescribeAccesskeyLeakListRequest::setQuery(const std::string &query) {
-  query_ = query;
-  setParameter(std::string("Query"), query);
-}
-
 long DescribeAccesskeyLeakListRequest::getStartTs() const {
   return startTs_;
 }
@@ -41,15 +32,6 @@ long DescribeAccesskeyLeakListRequest::getStartTs() const {
 void DescribeAccesskeyLeakListRequest::setStartTs(long startTs) {
   startTs_ = startTs;
   setParameter(std::string("StartTs"), std::to_string(startTs));
-}
-
-int DescribeAccesskeyLeakListRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeAccesskeyLeakListRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
 std::string DescribeAccesskeyLeakListRequest::getSourceIp() const {
@@ -68,6 +50,24 @@ int DescribeAccesskeyLeakListRequest::getPageSize() const {
 void DescribeAccesskeyLeakListRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string DescribeAccesskeyLeakListRequest::getQuery() const {
+  return query_;
+}
+
+void DescribeAccesskeyLeakListRequest::setQuery(const std::string &query) {
+  query_ = query;
+  setParameter(std::string("Query"), query);
+}
+
+int DescribeAccesskeyLeakListRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeAccesskeyLeakListRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
 std::string DescribeAccesskeyLeakListRequest::getStatus() const {

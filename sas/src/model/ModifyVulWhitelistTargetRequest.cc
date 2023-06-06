@@ -43,15 +43,6 @@ void ModifyVulWhitelistTargetRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string ModifyVulWhitelistTargetRequest::getTargetInfo() const {
-  return targetInfo_;
-}
-
-void ModifyVulWhitelistTargetRequest::setTargetInfo(const std::string &targetInfo) {
-  targetInfo_ = targetInfo;
-  setParameter(std::string("TargetInfo"), targetInfo);
-}
-
 long ModifyVulWhitelistTargetRequest::getId() const {
   return id_;
 }
@@ -59,5 +50,14 @@ long ModifyVulWhitelistTargetRequest::getId() const {
 void ModifyVulWhitelistTargetRequest::setId(long id) {
   id_ = id;
   setParameter(std::string("Id"), std::to_string(id));
+}
+
+std::string ModifyVulWhitelistTargetRequest::getTargetInfo() const {
+  return targetInfo_;
+}
+
+void ModifyVulWhitelistTargetRequest::setTargetInfo(const std::string &targetInfo) {
+  targetInfo_ = targetInfo;
+  setParameter(std::string("TargetInfo"), targetInfo);
 }
 

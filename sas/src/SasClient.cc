@@ -51,6 +51,42 @@ SasClient::SasClient(const std::string & accessKeyId, const std::string & access
 SasClient::~SasClient()
 {}
 
+SasClient::AddAssetSelectionCriteriaOutcome SasClient::addAssetSelectionCriteria(const AddAssetSelectionCriteriaRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddAssetSelectionCriteriaOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddAssetSelectionCriteriaOutcome(AddAssetSelectionCriteriaResult(outcome.result()));
+	else
+		return AddAssetSelectionCriteriaOutcome(outcome.error());
+}
+
+void SasClient::addAssetSelectionCriteriaAsync(const AddAssetSelectionCriteriaRequest& request, const AddAssetSelectionCriteriaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addAssetSelectionCriteria(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::AddAssetSelectionCriteriaOutcomeCallable SasClient::addAssetSelectionCriteriaCallable(const AddAssetSelectionCriteriaRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddAssetSelectionCriteriaOutcome()>>(
+			[this, request]()
+			{
+			return this->addAssetSelectionCriteria(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::AddCheckInstanceResultWhiteListOutcome SasClient::addCheckInstanceResultWhiteList(const AddCheckInstanceResultWhiteListRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -519,6 +555,42 @@ SasClient::ChangeCheckConfigOutcomeCallable SasClient::changeCheckConfigCallable
 	return task->get_future();
 }
 
+SasClient::ChangeCheckCustomConfigOutcome SasClient::changeCheckCustomConfig(const ChangeCheckCustomConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeCheckCustomConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeCheckCustomConfigOutcome(ChangeCheckCustomConfigResult(outcome.result()));
+	else
+		return ChangeCheckCustomConfigOutcome(outcome.error());
+}
+
+void SasClient::changeCheckCustomConfigAsync(const ChangeCheckCustomConfigRequest& request, const ChangeCheckCustomConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeCheckCustomConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ChangeCheckCustomConfigOutcomeCallable SasClient::changeCheckCustomConfigCallable(const ChangeCheckCustomConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeCheckCustomConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->changeCheckCustomConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::CheckQuaraFileIdOutcome SasClient::checkQuaraFileId(const CheckQuaraFileIdRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -693,6 +765,42 @@ SasClient::CreateAntiBruteForceRuleOutcomeCallable SasClient::createAntiBruteFor
 			[this, request]()
 			{
 			return this->createAntiBruteForceRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::CreateAssetSelectionConfigOutcome SasClient::createAssetSelectionConfig(const CreateAssetSelectionConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateAssetSelectionConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateAssetSelectionConfigOutcome(CreateAssetSelectionConfigResult(outcome.result()));
+	else
+		return CreateAssetSelectionConfigOutcome(outcome.error());
+}
+
+void SasClient::createAssetSelectionConfigAsync(const CreateAssetSelectionConfigRequest& request, const CreateAssetSelectionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createAssetSelectionConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::CreateAssetSelectionConfigOutcomeCallable SasClient::createAssetSelectionConfigCallable(const CreateAssetSelectionConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateAssetSelectionConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->createAssetSelectionConfig(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1197,6 +1305,42 @@ SasClient::CreateOrUpdateAssetGroupOutcomeCallable SasClient::createOrUpdateAsse
 			[this, request]()
 			{
 			return this->createOrUpdateAssetGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::CreateOrUpdateDingTalkOutcome SasClient::createOrUpdateDingTalk(const CreateOrUpdateDingTalkRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateOrUpdateDingTalkOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateOrUpdateDingTalkOutcome(CreateOrUpdateDingTalkResult(outcome.result()));
+	else
+		return CreateOrUpdateDingTalkOutcome(outcome.error());
+}
+
+void SasClient::createOrUpdateDingTalkAsync(const CreateOrUpdateDingTalkRequest& request, const CreateOrUpdateDingTalkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createOrUpdateDingTalk(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::CreateOrUpdateDingTalkOutcomeCallable SasClient::createOrUpdateDingTalkCallable(const CreateOrUpdateDingTalkRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateOrUpdateDingTalkOutcome()>>(
+			[this, request]()
+			{
+			return this->createOrUpdateDingTalk(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -2493,42 +2637,6 @@ SasClient::DescribeAlarmEventDetailOutcomeCallable SasClient::describeAlarmEvent
 			[this, request]()
 			{
 			return this->describeAlarmEventDetail(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-SasClient::DescribeAlarmEventListOutcome SasClient::describeAlarmEventList(const DescribeAlarmEventListRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DescribeAlarmEventListOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DescribeAlarmEventListOutcome(DescribeAlarmEventListResult(outcome.result()));
-	else
-		return DescribeAlarmEventListOutcome(outcome.error());
-}
-
-void SasClient::describeAlarmEventListAsync(const DescribeAlarmEventListRequest& request, const DescribeAlarmEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, describeAlarmEventList(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::DescribeAlarmEventListOutcomeCallable SasClient::describeAlarmEventListCallable(const DescribeAlarmEventListRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DescribeAlarmEventListOutcome()>>(
-			[this, request]()
-			{
-			return this->describeAlarmEventList(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -10779,6 +10887,78 @@ SasClient::GetAppNetworkOutcomeCallable SasClient::getAppNetworkCallable(const G
 	return task->get_future();
 }
 
+SasClient::GetAssetDetailByUuidOutcome SasClient::getAssetDetailByUuid(const GetAssetDetailByUuidRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAssetDetailByUuidOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAssetDetailByUuidOutcome(GetAssetDetailByUuidResult(outcome.result()));
+	else
+		return GetAssetDetailByUuidOutcome(outcome.error());
+}
+
+void SasClient::getAssetDetailByUuidAsync(const GetAssetDetailByUuidRequest& request, const GetAssetDetailByUuidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAssetDetailByUuid(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::GetAssetDetailByUuidOutcomeCallable SasClient::getAssetDetailByUuidCallable(const GetAssetDetailByUuidRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAssetDetailByUuidOutcome()>>(
+			[this, request]()
+			{
+			return this->getAssetDetailByUuid(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::GetAssetSelectionConfigOutcome SasClient::getAssetSelectionConfig(const GetAssetSelectionConfigRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetAssetSelectionConfigOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetAssetSelectionConfigOutcome(GetAssetSelectionConfigResult(outcome.result()));
+	else
+		return GetAssetSelectionConfigOutcome(outcome.error());
+}
+
+void SasClient::getAssetSelectionConfigAsync(const GetAssetSelectionConfigRequest& request, const GetAssetSelectionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getAssetSelectionConfig(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::GetAssetSelectionConfigOutcomeCallable SasClient::getAssetSelectionConfigCallable(const GetAssetSelectionConfigRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetAssetSelectionConfigOutcome()>>(
+			[this, request]()
+			{
+			return this->getAssetSelectionConfig(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::GetAssetsPropertyDetailOutcome SasClient::getAssetsPropertyDetail(const GetAssetsPropertyDetailRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -12255,6 +12435,78 @@ SasClient::JoinWebLockProcessWhiteListOutcomeCallable SasClient::joinWebLockProc
 	return task->get_future();
 }
 
+SasClient::ListAssetSelectionSelectedTargetOutcome SasClient::listAssetSelectionSelectedTarget(const ListAssetSelectionSelectedTargetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAssetSelectionSelectedTargetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAssetSelectionSelectedTargetOutcome(ListAssetSelectionSelectedTargetResult(outcome.result()));
+	else
+		return ListAssetSelectionSelectedTargetOutcome(outcome.error());
+}
+
+void SasClient::listAssetSelectionSelectedTargetAsync(const ListAssetSelectionSelectedTargetRequest& request, const ListAssetSelectionSelectedTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAssetSelectionSelectedTarget(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListAssetSelectionSelectedTargetOutcomeCallable SasClient::listAssetSelectionSelectedTargetCallable(const ListAssetSelectionSelectedTargetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAssetSelectionSelectedTargetOutcome()>>(
+			[this, request]()
+			{
+			return this->listAssetSelectionSelectedTarget(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ListAssetSelectionTargetOutcome SasClient::listAssetSelectionTarget(const ListAssetSelectionTargetRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListAssetSelectionTargetOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListAssetSelectionTargetOutcome(ListAssetSelectionTargetResult(outcome.result()));
+	else
+		return ListAssetSelectionTargetOutcome(outcome.error());
+}
+
+void SasClient::listAssetSelectionTargetAsync(const ListAssetSelectionTargetRequest& request, const ListAssetSelectionTargetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listAssetSelectionTarget(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListAssetSelectionTargetOutcomeCallable SasClient::listAssetSelectionTargetCallable(const ListAssetSelectionTargetRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListAssetSelectionTargetOutcome()>>(
+			[this, request]()
+			{
+			return this->listAssetSelectionTarget(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SasClient::ListAvailableHoneypotOutcome SasClient::listAvailableHoneypot(const ListAvailableHoneypotRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -12975,42 +13227,6 @@ SasClient::ListInterceptionHistoryOutcomeCallable SasClient::listInterceptionHis
 	return task->get_future();
 }
 
-SasClient::ListInterceptionImageOutcome SasClient::listInterceptionImage(const ListInterceptionImageRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ListInterceptionImageOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ListInterceptionImageOutcome(ListInterceptionImageResult(outcome.result()));
-	else
-		return ListInterceptionImageOutcome(outcome.error());
-}
-
-void SasClient::listInterceptionImageAsync(const ListInterceptionImageRequest& request, const ListInterceptionImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, listInterceptionImage(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-SasClient::ListInterceptionImageOutcomeCallable SasClient::listInterceptionImageCallable(const ListInterceptionImageRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ListInterceptionImageOutcome()>>(
-			[this, request]()
-			{
-			return this->listInterceptionImage(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 SasClient::ListInterceptionRulePageOutcome SasClient::listInterceptionRulePage(const ListInterceptionRulePageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -13221,6 +13437,42 @@ SasClient::ListPrivateRegistryTypeOutcomeCallable SasClient::listPrivateRegistry
 			[this, request]()
 			{
 			return this->listPrivateRegistryType(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ListQueryRaspAppInfoOutcome SasClient::listQueryRaspAppInfo(const ListQueryRaspAppInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListQueryRaspAppInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListQueryRaspAppInfoOutcome(ListQueryRaspAppInfoResult(outcome.result()));
+	else
+		return ListQueryRaspAppInfoOutcome(outcome.error());
+}
+
+void SasClient::listQueryRaspAppInfoAsync(const ListQueryRaspAppInfoRequest& request, const ListQueryRaspAppInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listQueryRaspAppInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ListQueryRaspAppInfoOutcomeCallable SasClient::listQueryRaspAppInfoCallable(const ListQueryRaspAppInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListQueryRaspAppInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->listQueryRaspAppInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -14625,6 +14877,42 @@ SasClient::ModifyPushAllTaskOutcomeCallable SasClient::modifyPushAllTaskCallable
 			[this, request]()
 			{
 			return this->modifyPushAllTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SasClient::ModifyRefreshProcessInfoOutcome SasClient::modifyRefreshProcessInfo(const ModifyRefreshProcessInfoRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyRefreshProcessInfoOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyRefreshProcessInfoOutcome(ModifyRefreshProcessInfoResult(outcome.result()));
+	else
+		return ModifyRefreshProcessInfoOutcome(outcome.error());
+}
+
+void SasClient::modifyRefreshProcessInfoAsync(const ModifyRefreshProcessInfoRequest& request, const ModifyRefreshProcessInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyRefreshProcessInfo(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SasClient::ModifyRefreshProcessInfoOutcomeCallable SasClient::modifyRefreshProcessInfoCallable(const ModifyRefreshProcessInfoRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyRefreshProcessInfoOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyRefreshProcessInfo(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

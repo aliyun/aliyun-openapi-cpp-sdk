@@ -44,6 +44,7 @@ namespace AlibabaCloud
 					std::string fieldAliasName;
 					std::string instanceCount;
 					long asapVulInstanceCount;
+					int authVersionCheckCount;
 					std::string unProtectedInstanceCount;
 					long fieldId;
 					std::string riskInstanceCount;

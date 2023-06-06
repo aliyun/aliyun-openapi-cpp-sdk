@@ -25,15 +25,6 @@ OpenSensitiveFileScanRequest::OpenSensitiveFileScanRequest()
 
 OpenSensitiveFileScanRequest::~OpenSensitiveFileScanRequest() {}
 
-int OpenSensitiveFileScanRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void OpenSensitiveFileScanRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 int OpenSensitiveFileScanRequest::getPageSize() const {
   return pageSize_;
 }
@@ -43,15 +34,6 @@ void OpenSensitiveFileScanRequest::setPageSize(int pageSize) {
   setParameter(std::string("PageSize"), std::to_string(pageSize));
 }
 
-std::string OpenSensitiveFileScanRequest::getSwitchOn() const {
-  return switchOn_;
-}
-
-void OpenSensitiveFileScanRequest::setSwitchOn(const std::string &switchOn) {
-  switchOn_ = switchOn;
-  setParameter(std::string("SwitchOn"), switchOn);
-}
-
 std::string OpenSensitiveFileScanRequest::getLang() const {
   return lang_;
 }
@@ -59,5 +41,23 @@ std::string OpenSensitiveFileScanRequest::getLang() const {
 void OpenSensitiveFileScanRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+int OpenSensitiveFileScanRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void OpenSensitiveFileScanRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string OpenSensitiveFileScanRequest::getSwitchOn() const {
+  return switchOn_;
+}
+
+void OpenSensitiveFileScanRequest::setSwitchOn(const std::string &switchOn) {
+  switchOn_ = switchOn;
+  setParameter(std::string("SwitchOn"), switchOn);
 }
 

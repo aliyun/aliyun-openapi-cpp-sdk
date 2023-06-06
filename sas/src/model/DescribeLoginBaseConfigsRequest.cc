@@ -25,15 +25,6 @@ DescribeLoginBaseConfigsRequest::DescribeLoginBaseConfigsRequest()
 
 DescribeLoginBaseConfigsRequest::~DescribeLoginBaseConfigsRequest() {}
 
-int DescribeLoginBaseConfigsRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeLoginBaseConfigsRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribeLoginBaseConfigsRequest::getType() const {
   return type_;
 }
@@ -41,15 +32,6 @@ std::string DescribeLoginBaseConfigsRequest::getType() const {
 void DescribeLoginBaseConfigsRequest::setType(const std::string &type) {
   type_ = type;
   setParameter(std::string("Type"), type);
-}
-
-std::string DescribeLoginBaseConfigsRequest::getTarget() const {
-  return target_;
-}
-
-void DescribeLoginBaseConfigsRequest::setTarget(const std::string &target) {
-  target_ = target;
-  setParameter(std::string("Target"), target);
 }
 
 std::string DescribeLoginBaseConfigsRequest::getSourceIp() const {
@@ -68,5 +50,23 @@ int DescribeLoginBaseConfigsRequest::getPageSize() const {
 void DescribeLoginBaseConfigsRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+int DescribeLoginBaseConfigsRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeLoginBaseConfigsRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string DescribeLoginBaseConfigsRequest::getTarget() const {
+  return target_;
+}
+
+void DescribeLoginBaseConfigsRequest::setTarget(const std::string &target) {
+  target_ = target;
+  setParameter(std::string("Target"), target);
 }
 

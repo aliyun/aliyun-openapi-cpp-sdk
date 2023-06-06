@@ -44,6 +44,7 @@ namespace AlibabaCloud
 				{
 					int status;
 					std::string description;
+					bool containerCheckItem;
 					long checkId;
 					std::string checkItem;
 					std::string alias;

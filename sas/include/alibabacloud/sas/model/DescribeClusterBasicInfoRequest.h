@@ -32,18 +32,18 @@ public:
 	~DescribeClusterBasicInfoRequest();
 	std::string getTargetType() const;
 	void setTargetType(const std::string &targetType);
-	std::string getClusterId() const;
-	void setClusterId(const std::string &clusterId);
 	std::string getType() const;
 	void setType(const std::string &type);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getClusterId() const;
+	void setClusterId(const std::string &clusterId);
 
 private:
 	std::string targetType_;
-	std::string clusterId_;
 	std::string type_;
 	std::string sourceIp_;
+	std::string clusterId_;
 };
 } // namespace Model
 } // namespace Sas

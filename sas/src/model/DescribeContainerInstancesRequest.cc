@@ -34,15 +34,6 @@ void DescribeContainerInstancesRequest::setCriteria(const std::string &criteria)
   setParameter(std::string("Criteria"), criteria);
 }
 
-int DescribeContainerInstancesRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeContainerInstancesRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribeContainerInstancesRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -68,5 +59,14 @@ std::string DescribeContainerInstancesRequest::getLogicalExp() const {
 void DescribeContainerInstancesRequest::setLogicalExp(const std::string &logicalExp) {
   logicalExp_ = logicalExp;
   setParameter(std::string("LogicalExp"), logicalExp);
+}
+
+int DescribeContainerInstancesRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeContainerInstancesRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 

@@ -25,15 +25,6 @@ ValidateHcWarningsRequest::ValidateHcWarningsRequest()
 
 ValidateHcWarningsRequest::~ValidateHcWarningsRequest() {}
 
-std::string ValidateHcWarningsRequest::getRiskIds() const {
-  return riskIds_;
-}
-
-void ValidateHcWarningsRequest::setRiskIds(const std::string &riskIds) {
-  riskIds_ = riskIds;
-  setParameter(std::string("RiskIds"), riskIds);
-}
-
 std::string ValidateHcWarningsRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -41,6 +32,24 @@ std::string ValidateHcWarningsRequest::getSourceIp() const {
 void ValidateHcWarningsRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string ValidateHcWarningsRequest::getCheckIds() const {
+  return checkIds_;
+}
+
+void ValidateHcWarningsRequest::setCheckIds(const std::string &checkIds) {
+  checkIds_ = checkIds;
+  setParameter(std::string("CheckIds"), checkIds);
+}
+
+std::string ValidateHcWarningsRequest::getRiskIds() const {
+  return riskIds_;
+}
+
+void ValidateHcWarningsRequest::setRiskIds(const std::string &riskIds) {
+  riskIds_ = riskIds;
+  setParameter(std::string("RiskIds"), riskIds);
 }
 
 std::string ValidateHcWarningsRequest::getUuids() const {

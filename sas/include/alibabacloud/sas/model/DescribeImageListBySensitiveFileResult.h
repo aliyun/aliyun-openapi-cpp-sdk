@@ -40,7 +40,7 @@ namespace AlibabaCloud
 					int count;
 					std::string lastRowKey;
 				};
-				struct List
+				struct ImageInfoList
 				{
 					std::string uuid;
 					std::string repoNamespace;
@@ -58,7 +58,7 @@ namespace AlibabaCloud
 				DescribeImageListBySensitiveFileResult();
 				explicit DescribeImageListBySensitiveFileResult(const std::string &payload);
 				~DescribeImageListBySensitiveFileResult();
-				std::vector<List> getImageInfos()const;
+				std::vector<ImageInfoList> getImageInfos()const;
 				PageInfo getPageInfo()const;
 				std::string getMessage()const;
 				int getHttpStatusCode()const;
@@ -68,7 +68,7 @@ namespace AlibabaCloud
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::vector<List> imageInfos_;
+				std::vector<ImageInfoList> imageInfos_;
 				PageInfo pageInfo_;
 				std::string message_;
 				int httpStatusCode_;

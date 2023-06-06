@@ -34,3 +34,12 @@ void ListPrivateRegistryTypeRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string ListPrivateRegistryTypeRequest::getLang() const {
+  return lang_;
+}
+
+void ListPrivateRegistryTypeRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+

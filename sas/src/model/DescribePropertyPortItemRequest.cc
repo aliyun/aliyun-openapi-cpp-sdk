@@ -25,15 +25,6 @@ DescribePropertyPortItemRequest::DescribePropertyPortItemRequest()
 
 DescribePropertyPortItemRequest::~DescribePropertyPortItemRequest() {}
 
-int DescribePropertyPortItemRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribePropertyPortItemRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribePropertyPortItemRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -41,15 +32,6 @@ std::string DescribePropertyPortItemRequest::getSourceIp() const {
 void DescribePropertyPortItemRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
-}
-
-std::string DescribePropertyPortItemRequest::getPort() const {
-  return port_;
-}
-
-void DescribePropertyPortItemRequest::setPort(const std::string &port) {
-  port_ = port;
-  setParameter(std::string("Port"), port);
 }
 
 int DescribePropertyPortItemRequest::getPageSize() const {
@@ -68,5 +50,23 @@ bool DescribePropertyPortItemRequest::getForceFlush() const {
 void DescribePropertyPortItemRequest::setForceFlush(bool forceFlush) {
   forceFlush_ = forceFlush;
   setParameter(std::string("ForceFlush"), forceFlush ? "true" : "false");
+}
+
+int DescribePropertyPortItemRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribePropertyPortItemRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
+}
+
+std::string DescribePropertyPortItemRequest::getPort() const {
+  return port_;
+}
+
+void DescribePropertyPortItemRequest::setPort(const std::string &port) {
+  port_ = port;
+  setParameter(std::string("Port"), port);
 }
 

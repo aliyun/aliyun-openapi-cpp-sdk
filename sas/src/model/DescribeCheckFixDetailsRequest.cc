@@ -25,6 +25,15 @@ DescribeCheckFixDetailsRequest::DescribeCheckFixDetailsRequest()
 
 DescribeCheckFixDetailsRequest::~DescribeCheckFixDetailsRequest() {}
 
+std::string DescribeCheckFixDetailsRequest::getLang() const {
+  return lang_;
+}
+
+void DescribeCheckFixDetailsRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 std::string DescribeCheckFixDetailsRequest::getCheckIds() const {
   return checkIds_;
 }
@@ -41,14 +50,5 @@ long DescribeCheckFixDetailsRequest::getRiskId() const {
 void DescribeCheckFixDetailsRequest::setRiskId(long riskId) {
   riskId_ = riskId;
   setParameter(std::string("RiskId"), std::to_string(riskId));
-}
-
-std::string DescribeCheckFixDetailsRequest::getLang() const {
-  return lang_;
-}
-
-void DescribeCheckFixDetailsRequest::setLang(const std::string &lang) {
-  lang_ = lang;
-  setParameter(std::string("Lang"), lang);
 }
 

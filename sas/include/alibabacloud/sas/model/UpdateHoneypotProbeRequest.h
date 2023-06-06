@@ -36,6 +36,8 @@ public:
 	void setProbeId(const std::string &probeId);
 	std::vector<std::string> getServiceIpList() const;
 	void setServiceIpList(const std::vector<std::string> &serviceIpList);
+	std::string getLang() const;
+	void setLang(const std::string &lang);
 	bool getArp() const;
 	void setArp(bool arp);
 	std::string getDisplayName() const;
@@ -45,6 +47,7 @@ private:
 	bool ping_;
 	std::string probeId_;
 	std::vector<std::string> serviceIpList_;
+	std::string lang_;
 	bool arp_;
 	std::string displayName_;
 };

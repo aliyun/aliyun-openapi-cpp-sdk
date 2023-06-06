@@ -25,15 +25,6 @@ ModifyCustomBlockRecordRequest::ModifyCustomBlockRecordRequest()
 
 ModifyCustomBlockRecordRequest::~ModifyCustomBlockRecordRequest() {}
 
-long ModifyCustomBlockRecordRequest::getExpireTime() const {
-  return expireTime_;
-}
-
-void ModifyCustomBlockRecordRequest::setExpireTime(long expireTime) {
-  expireTime_ = expireTime;
-  setParameter(std::string("ExpireTime"), std::to_string(expireTime));
-}
-
 long ModifyCustomBlockRecordRequest::getResourceOwnerId() const {
   return resourceOwnerId_;
 }
@@ -41,15 +32,6 @@ long ModifyCustomBlockRecordRequest::getResourceOwnerId() const {
 void ModifyCustomBlockRecordRequest::setResourceOwnerId(long resourceOwnerId) {
   resourceOwnerId_ = resourceOwnerId;
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
-}
-
-std::string ModifyCustomBlockRecordRequest::getBound() const {
-  return bound_;
-}
-
-void ModifyCustomBlockRecordRequest::setBound(const std::string &bound) {
-  bound_ = bound;
-  setParameter(std::string("Bound"), bound);
 }
 
 std::string ModifyCustomBlockRecordRequest::getBlockIp() const {
@@ -68,6 +50,24 @@ std::string ModifyCustomBlockRecordRequest::getSourceIp() const {
 void ModifyCustomBlockRecordRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+long ModifyCustomBlockRecordRequest::getExpireTime() const {
+  return expireTime_;
+}
+
+void ModifyCustomBlockRecordRequest::setExpireTime(long expireTime) {
+  expireTime_ = expireTime;
+  setParameter(std::string("ExpireTime"), std::to_string(expireTime));
+}
+
+std::string ModifyCustomBlockRecordRequest::getBound() const {
+  return bound_;
+}
+
+void ModifyCustomBlockRecordRequest::setBound(const std::string &bound) {
+  bound_ = bound;
+  setParameter(std::string("Bound"), bound);
 }
 
 std::string ModifyCustomBlockRecordRequest::getUuids() const {

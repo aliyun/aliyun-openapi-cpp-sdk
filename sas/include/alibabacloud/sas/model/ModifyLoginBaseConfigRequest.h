@@ -34,18 +34,18 @@ public:
 	void setConfigs(const std::string &configs);
 	std::string getType() const;
 	void setType(const std::string &type);
-	std::string getTarget() const;
-	void setTarget(const std::string &target);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getTarget() const;
+	void setTarget(const std::string &target);
 	std::string getConfig() const;
 	void setConfig(const std::string &config);
 
 private:
 	std::string configs_;
 	std::string type_;
-	std::string target_;
 	std::string sourceIp_;
+	std::string target_;
 	std::string config_;
 };
 } // namespace Model

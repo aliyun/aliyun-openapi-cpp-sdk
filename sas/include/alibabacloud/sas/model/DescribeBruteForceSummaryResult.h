@@ -35,7 +35,12 @@ namespace AlibabaCloud
 				struct BruteForceSummary
 				{
 					int allStrategyCount;
+					std::string antiBruteForceRuleCount;
+					std::string systemRecordCount;
 					int effectiveCount;
+					std::string customRecordCount;
+					std::string systemEffectiveCount;
+					std::string customEffectiveCount;
 				};
 
 

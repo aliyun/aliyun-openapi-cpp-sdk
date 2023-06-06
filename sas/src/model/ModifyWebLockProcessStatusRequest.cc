@@ -25,15 +25,6 @@ ModifyWebLockProcessStatusRequest::ModifyWebLockProcessStatusRequest()
 
 ModifyWebLockProcessStatusRequest::~ModifyWebLockProcessStatusRequest() {}
 
-int ModifyWebLockProcessStatusRequest::getDealAll() const {
-  return dealAll_;
-}
-
-void ModifyWebLockProcessStatusRequest::setDealAll(int dealAll) {
-  dealAll_ = dealAll;
-  setParameter(std::string("DealAll"), std::to_string(dealAll));
-}
-
 std::vector<std::string> ModifyWebLockProcessStatusRequest::getProcessPath() const {
   return processPath_;
 }
@@ -51,15 +42,6 @@ void ModifyWebLockProcessStatusRequest::setUuid(const std::string &uuid) {
   setParameter(std::string("Uuid"), uuid);
 }
 
-std::string ModifyWebLockProcessStatusRequest::getOperateInfo() const {
-  return operateInfo_;
-}
-
-void ModifyWebLockProcessStatusRequest::setOperateInfo(const std::string &operateInfo) {
-  operateInfo_ = operateInfo;
-  setParameter(std::string("OperateInfo"), operateInfo);
-}
-
 std::string ModifyWebLockProcessStatusRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -67,6 +49,24 @@ std::string ModifyWebLockProcessStatusRequest::getSourceIp() const {
 void ModifyWebLockProcessStatusRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+int ModifyWebLockProcessStatusRequest::getDealAll() const {
+  return dealAll_;
+}
+
+void ModifyWebLockProcessStatusRequest::setDealAll(int dealAll) {
+  dealAll_ = dealAll;
+  setParameter(std::string("DealAll"), std::to_string(dealAll));
+}
+
+std::string ModifyWebLockProcessStatusRequest::getOperateInfo() const {
+  return operateInfo_;
+}
+
+void ModifyWebLockProcessStatusRequest::setOperateInfo(const std::string &operateInfo) {
+  operateInfo_ = operateInfo;
+  setParameter(std::string("OperateInfo"), operateInfo);
 }
 
 int ModifyWebLockProcessStatusRequest::getStatus() const {

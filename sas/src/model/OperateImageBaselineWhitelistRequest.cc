@@ -25,15 +25,6 @@ OperateImageBaselineWhitelistRequest::OperateImageBaselineWhitelistRequest()
 
 OperateImageBaselineWhitelistRequest::~OperateImageBaselineWhitelistRequest() {}
 
-std::string OperateImageBaselineWhitelistRequest::getImageUuid() const {
-  return imageUuid_;
-}
-
-void OperateImageBaselineWhitelistRequest::setImageUuid(const std::string &imageUuid) {
-  imageUuid_ = imageUuid;
-  setParameter(std::string("ImageUuid"), imageUuid);
-}
-
 std::string OperateImageBaselineWhitelistRequest::getBaselineItemKeyList() const {
   return baselineItemKeyList_;
 }
@@ -67,6 +58,15 @@ std::string OperateImageBaselineWhitelistRequest::getLang() const {
 void OperateImageBaselineWhitelistRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::string OperateImageBaselineWhitelistRequest::getImageUuid() const {
+  return imageUuid_;
+}
+
+void OperateImageBaselineWhitelistRequest::setImageUuid(const std::string &imageUuid) {
+  imageUuid_ = imageUuid;
+  setParameter(std::string("ImageUuid"), imageUuid);
 }
 
 std::string OperateImageBaselineWhitelistRequest::getOperation() const {

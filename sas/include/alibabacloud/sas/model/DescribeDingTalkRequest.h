@@ -32,18 +32,18 @@ public:
 	~DescribeDingTalkRequest();
 	std::string getRuleActionName() const;
 	void setRuleActionName(const std::string &ruleActionName);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 
 private:
 	std::string ruleActionName_;
-	int currentPage_;
 	std::string sourceIp_;
 	int pageSize_;
+	int currentPage_;
 };
 } // namespace Model
 } // namespace Sas

@@ -32,21 +32,21 @@ public:
 	~DescribeInstanceAntiBruteForceRulesRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
 	std::vector<std::string> getUuidList() const;
 	void setUuidList(const std::vector<std::string> &uuidList);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
 
 private:
 	long resourceOwnerId_;
-	int currentPage_;
 	std::string sourceIp_;
 	int pageSize_;
 	std::vector<std::string> uuidList_;
+	int currentPage_;
 };
 } // namespace Model
 } // namespace Sas

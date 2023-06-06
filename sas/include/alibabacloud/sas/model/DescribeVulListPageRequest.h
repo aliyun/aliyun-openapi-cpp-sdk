@@ -32,21 +32,21 @@ public:
 	~DescribeVulListPageRequest();
 	std::string getCveId() const;
 	void setCveId(const std::string &cveId);
-	int getCurrentPage() const;
-	void setCurrentPage(int currentPage);
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
-	std::string getVulNameLike() const;
-	void setVulNameLike(const std::string &vulNameLike);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	int getCurrentPage() const;
+	void setCurrentPage(int currentPage);
+	std::string getVulNameLike() const;
+	void setVulNameLike(const std::string &vulNameLike);
 
 private:
 	std::string cveId_;
-	int currentPage_;
 	std::string sourceIp_;
-	std::string vulNameLike_;
 	int pageSize_;
+	int currentPage_;
+	std::string vulNameLike_;
 };
 } // namespace Model
 } // namespace Sas

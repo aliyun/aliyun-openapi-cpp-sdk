@@ -34,3 +34,12 @@ void GetHoneypotProbeRequest::setProbeId(const std::string &probeId) {
   setParameter(std::string("ProbeId"), probeId);
 }
 
+std::string GetHoneypotProbeRequest::getLang() const {
+  return lang_;
+}
+
+void GetHoneypotProbeRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+

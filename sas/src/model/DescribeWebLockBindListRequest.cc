@@ -34,15 +34,6 @@ void DescribeWebLockBindListRequest::setRemark(const std::string &remark) {
   setParameter(std::string("Remark"), remark);
 }
 
-int DescribeWebLockBindListRequest::getCurrentPage() const {
-  return currentPage_;
-}
-
-void DescribeWebLockBindListRequest::setCurrentPage(int currentPage) {
-  currentPage_ = currentPage;
-  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
-}
-
 std::string DescribeWebLockBindListRequest::getSourceIp() const {
   return sourceIp_;
 }
@@ -68,6 +59,15 @@ std::string DescribeWebLockBindListRequest::getLang() const {
 void DescribeWebLockBindListRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+int DescribeWebLockBindListRequest::getCurrentPage() const {
+  return currentPage_;
+}
+
+void DescribeWebLockBindListRequest::setCurrentPage(int currentPage) {
+  currentPage_ = currentPage;
+  setParameter(std::string("CurrentPage"), std::to_string(currentPage));
 }
 
 std::string DescribeWebLockBindListRequest::getStatus() const {

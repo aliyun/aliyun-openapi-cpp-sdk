@@ -69,6 +69,8 @@ void DescribeCheckWarningSummaryResult::parse(const std::string &payload)
 			warningSummarysObject.checkExploit = valueWarningSummarysWarningSummary["CheckExploit"].asString() == "true";
 		if(!valueWarningSummarysWarningSummary["DatabaseRisk"].isNull())
 			warningSummarysObject.databaseRisk = valueWarningSummarysWarningSummary["DatabaseRisk"].asString() == "true";
+		if(!valueWarningSummarysWarningSummary["ContainerRisk"].isNull())
+			warningSummarysObject.containerRisk = valueWarningSummarysWarningSummary["ContainerRisk"].asString() == "true";
 		warningSummarys_.push_back(warningSummarysObject);
 	}
 	if(!value["CurrentPage"].isNull())

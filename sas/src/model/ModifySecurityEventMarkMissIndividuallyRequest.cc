@@ -43,15 +43,6 @@ void ModifySecurityEventMarkMissIndividuallyRequest::setSourceIp(const std::stri
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
-std::string ModifySecurityEventMarkMissIndividuallyRequest::getDeleteMarkMissParam() const {
-  return deleteMarkMissParam_;
-}
-
-void ModifySecurityEventMarkMissIndividuallyRequest::setDeleteMarkMissParam(const std::string &deleteMarkMissParam) {
-  deleteMarkMissParam_ = deleteMarkMissParam;
-  setBodyParameter(std::string("DeleteMarkMissParam"), deleteMarkMissParam);
-}
-
 std::string ModifySecurityEventMarkMissIndividuallyRequest::getFrom() const {
   return from_;
 }
@@ -68,5 +59,14 @@ std::string ModifySecurityEventMarkMissIndividuallyRequest::getLang() const {
 void ModifySecurityEventMarkMissIndividuallyRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setBodyParameter(std::string("Lang"), lang);
+}
+
+std::string ModifySecurityEventMarkMissIndividuallyRequest::getDeleteMarkMissParam() const {
+  return deleteMarkMissParam_;
+}
+
+void ModifySecurityEventMarkMissIndividuallyRequest::setDeleteMarkMissParam(const std::string &deleteMarkMissParam) {
+  deleteMarkMissParam_ = deleteMarkMissParam;
+  setBodyParameter(std::string("DeleteMarkMissParam"), deleteMarkMissParam);
 }
 

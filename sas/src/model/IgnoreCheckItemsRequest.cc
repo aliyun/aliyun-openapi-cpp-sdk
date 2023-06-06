@@ -34,20 +34,6 @@ void IgnoreCheckItemsRequest::setReason(const std::string &reason) {
   setParameter(std::string("Reason"), reason);
 }
 
-std::vector<IgnoreCheckItemsRequest::CheckAndRiskTypeList> IgnoreCheckItemsRequest::getCheckAndRiskTypeList() const {
-  return checkAndRiskTypeList_;
-}
-
-void IgnoreCheckItemsRequest::setCheckAndRiskTypeList(const std::vector<IgnoreCheckItemsRequest::CheckAndRiskTypeList> &checkAndRiskTypeList) {
-  checkAndRiskTypeList_ = checkAndRiskTypeList;
-  for(int dep1 = 0; dep1 != checkAndRiskTypeList.size(); dep1++) {
-  auto checkAndRiskTypeListObj = checkAndRiskTypeList.at(dep1);
-  std::string checkAndRiskTypeListObjStr = std::string("CheckAndRiskTypeList") + "." + std::to_string(dep1 + 1);
-    setParameter(checkAndRiskTypeListObjStr + ".RiskType", checkAndRiskTypeListObj.riskType);
-    setParameter(checkAndRiskTypeListObjStr + ".CheckId", std::to_string(checkAndRiskTypeListObj.checkId));
-  }
-}
-
 int IgnoreCheckItemsRequest::getType() const {
   return type_;
 }
@@ -72,5 +58,19 @@ std::string IgnoreCheckItemsRequest::getLang() const {
 void IgnoreCheckItemsRequest::setLang(const std::string &lang) {
   lang_ = lang;
   setParameter(std::string("Lang"), lang);
+}
+
+std::vector<IgnoreCheckItemsRequest::CheckAndRiskTypeList> IgnoreCheckItemsRequest::getCheckAndRiskTypeList() const {
+  return checkAndRiskTypeList_;
+}
+
+void IgnoreCheckItemsRequest::setCheckAndRiskTypeList(const std::vector<IgnoreCheckItemsRequest::CheckAndRiskTypeList> &checkAndRiskTypeList) {
+  checkAndRiskTypeList_ = checkAndRiskTypeList;
+  for(int dep1 = 0; dep1 != checkAndRiskTypeList.size(); dep1++) {
+  auto checkAndRiskTypeListObj = checkAndRiskTypeList.at(dep1);
+  std::string checkAndRiskTypeListObjStr = std::string("CheckAndRiskTypeList") + "." + std::to_string(dep1 + 1);
+    setParameter(checkAndRiskTypeListObjStr + ".RiskType", checkAndRiskTypeListObj.riskType);
+    setParameter(checkAndRiskTypeListObjStr + ".CheckId", std::to_string(checkAndRiskTypeListObj.checkId));
+  }
 }
 

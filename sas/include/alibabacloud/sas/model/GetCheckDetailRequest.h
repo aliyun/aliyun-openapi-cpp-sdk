@@ -32,6 +32,8 @@ public:
 	~GetCheckDetailRequest();
 	std::string getSourceIp() const;
 	void setSourceIp(const std::string &sourceIp);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
 	std::string getLang() const;
 	void setLang(const std::string &lang);
 	long getCheckId() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string sourceIp_;
+	std::string regionId_;
 	std::string lang_;
 	long checkId_;
 };

@@ -75,6 +75,15 @@ void ListCheckResultRequest::setSourceIp(const std::string &sourceIp) {
   setParameter(std::string("SourceIp"), sourceIp);
 }
 
+std::string ListCheckResultRequest::getRegionId() const {
+  return regionId_;
+}
+
+void ListCheckResultRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 int ListCheckResultRequest::getPageSize() const {
   return pageSize_;
 }
@@ -99,6 +108,14 @@ std::vector<std::string> ListCheckResultRequest::getVendors() const {
 
 void ListCheckResultRequest::setVendors(const std::vector<std::string> &vendors) {
   vendors_ = vendors;
+}
+
+std::vector<std::string> ListCheckResultRequest::getTypes() const {
+  return types_;
+}
+
+void ListCheckResultRequest::setTypes(const std::vector<std::string> &types) {
+  types_ = types;
 }
 
 int ListCheckResultRequest::getCurrentPage() const {

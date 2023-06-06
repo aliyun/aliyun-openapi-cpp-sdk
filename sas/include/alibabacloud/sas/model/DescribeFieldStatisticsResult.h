@@ -34,30 +34,31 @@ namespace AlibabaCloud
 			public:
 				struct GroupedFields
 				{
+					int azureInstanceCount;
 					int huaweiInstanceCount;
 					int unKnowStatusInstanceCount;
 					int exposedInstanceCount;
 					int groupCount;
-					int tencentInstanceCount;
 					int instanceSyncTaskCount;
-					int riskInstanceCount;
 					int awsInstanceCount;
-					int importantAssetCount;
-					int generalAssetCount;
-					int idcInstanceCount;
 					int testAssetCount;
-					int outMachineInstanceCount;
-					int unprotectedInstanceCount;
-					int instanceCount;
 					int offlineInstanceCount;
-					int vpcCount;
 					int aliYunInstanceCount;
-					int tripartiteInstanceCount;
 					int regionCount;
 					int notRunningStatusCount;
 					int newInstanceCount;
 					int noRiskInstanceCount;
 					int pauseInstanceCount;
+					int tencentInstanceCount;
+					int riskInstanceCount;
+					int importantAssetCount;
+					int generalAssetCount;
+					int idcInstanceCount;
+					int outMachineInstanceCount;
+					int unprotectedInstanceCount;
+					int instanceCount;
+					int vpcCount;
+					int tripartiteInstanceCount;
 				};
 
 

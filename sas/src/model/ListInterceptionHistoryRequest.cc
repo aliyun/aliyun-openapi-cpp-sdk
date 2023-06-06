@@ -61,6 +61,15 @@ void ListInterceptionHistoryRequest::setHistoryName(const std::string &historyNa
   setParameter(std::string("HistoryName"), historyName);
 }
 
+std::string ListInterceptionHistoryRequest::getLang() const {
+  return lang_;
+}
+
+void ListInterceptionHistoryRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 std::vector<int> ListInterceptionHistoryRequest::getInterceptionTypes() const {
   return interceptionTypes_;
 }

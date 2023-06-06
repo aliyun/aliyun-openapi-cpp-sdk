@@ -51,6 +51,15 @@ void UpdateHoneypotProbeRequest::setServiceIpList(const std::vector<std::string>
   serviceIpList_ = serviceIpList;
 }
 
+std::string UpdateHoneypotProbeRequest::getLang() const {
+  return lang_;
+}
+
+void UpdateHoneypotProbeRequest::setLang(const std::string &lang) {
+  lang_ = lang;
+  setParameter(std::string("Lang"), lang);
+}
+
 bool UpdateHoneypotProbeRequest::getArp() const {
   return arp_;
 }

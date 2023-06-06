@@ -34,24 +34,6 @@ void IgnoreHcCheckWarningsRequest::setReason(const std::string &reason) {
   setParameter(std::string("Reason"), reason);
 }
 
-std::string IgnoreHcCheckWarningsRequest::getCheckIds() const {
-  return checkIds_;
-}
-
-void IgnoreHcCheckWarningsRequest::setCheckIds(const std::string &checkIds) {
-  checkIds_ = checkIds;
-  setParameter(std::string("CheckIds"), checkIds);
-}
-
-std::string IgnoreHcCheckWarningsRequest::getRiskId() const {
-  return riskId_;
-}
-
-void IgnoreHcCheckWarningsRequest::setRiskId(const std::string &riskId) {
-  riskId_ = riskId;
-  setParameter(std::string("RiskId"), riskId);
-}
-
 long IgnoreHcCheckWarningsRequest::getType() const {
   return type_;
 }
@@ -68,6 +50,24 @@ std::string IgnoreHcCheckWarningsRequest::getSourceIp() const {
 void IgnoreHcCheckWarningsRequest::setSourceIp(const std::string &sourceIp) {
   sourceIp_ = sourceIp;
   setParameter(std::string("SourceIp"), sourceIp);
+}
+
+std::string IgnoreHcCheckWarningsRequest::getCheckIds() const {
+  return checkIds_;
+}
+
+void IgnoreHcCheckWarningsRequest::setCheckIds(const std::string &checkIds) {
+  checkIds_ = checkIds;
+  setParameter(std::string("CheckIds"), checkIds);
+}
+
+std::string IgnoreHcCheckWarningsRequest::getRiskId() const {
+  return riskId_;
+}
+
+void IgnoreHcCheckWarningsRequest::setRiskId(const std::string &riskId) {
+  riskId_ = riskId;
+  setParameter(std::string("RiskId"), riskId);
 }
 
 std::string IgnoreHcCheckWarningsRequest::getCheckWarningIds() const {

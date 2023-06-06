@@ -49,6 +49,8 @@ namespace AlibabaCloud
 					std::string instanceName;
 					std::string uuid;
 					std::string internetIp;
+					std::string blockType;
+					bool aliNetOnline;
 					long id;
 					std::string errorCode;
 					std::string successInfo;

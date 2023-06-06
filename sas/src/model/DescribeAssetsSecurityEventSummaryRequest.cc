@@ -34,15 +34,6 @@ void DescribeAssetsSecurityEventSummaryRequest::setResourceOwnerId(long resource
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeAssetsSecurityEventSummaryRequest::getClusterId() const {
-  return clusterId_;
-}
-
-void DescribeAssetsSecurityEventSummaryRequest::setClusterId(const std::string &clusterId) {
-  clusterId_ = clusterId;
-  setParameter(std::string("ClusterId"), clusterId);
-}
-
 std::string DescribeAssetsSecurityEventSummaryRequest::getContainerFieldName() const {
   return containerFieldName_;
 }
@@ -68,5 +59,14 @@ std::string DescribeAssetsSecurityEventSummaryRequest::getContainerFieldValue() 
 void DescribeAssetsSecurityEventSummaryRequest::setContainerFieldValue(const std::string &containerFieldValue) {
   containerFieldValue_ = containerFieldValue;
   setParameter(std::string("ContainerFieldValue"), containerFieldValue);
+}
+
+std::string DescribeAssetsSecurityEventSummaryRequest::getClusterId() const {
+  return clusterId_;
+}
+
+void DescribeAssetsSecurityEventSummaryRequest::setClusterId(const std::string &clusterId) {
+  clusterId_ = clusterId;
+  setParameter(std::string("ClusterId"), clusterId);
 }
 

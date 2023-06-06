@@ -57,6 +57,8 @@ void DescribeGroupedInstancesResult::parse(const std::string &payload)
 			instancesObject.riskInstanceCount = valueInstancesInstance["RiskInstanceCount"].asString();
 		if(!valueInstancesInstance["GroupFlag"].isNull())
 			instancesObject.groupFlag = std::stoi(valueInstancesInstance["GroupFlag"].asString());
+		if(!valueInstancesInstance["AuthVersionCheckCount"].isNull())
+			instancesObject.authVersionCheckCount = std::stoi(valueInstancesInstance["AuthVersionCheckCount"].asString());
 		auto allGroupPath = value["GroupPath"]["groupPath"];
 		for (auto value : allGroupPath)
 			instancesObject.groupPath.push_back(value.asString());

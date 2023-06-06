@@ -42,8 +42,6 @@ public:
 	void setDealed(const std::string &dealed);
 	int getCurrentPage() const;
 	void setCurrentPage(int currentPage);
-	std::string getRequestId() const;
-	void setRequestId(const std::string &requestId);
 
 private:
 	std::string srcIp_;
@@ -52,7 +50,6 @@ private:
 	std::string dstIp_;
 	std::string dealed_;
 	int currentPage_;
-	std::string requestId_;
 };
 } // namespace Model
 } // namespace Sas
