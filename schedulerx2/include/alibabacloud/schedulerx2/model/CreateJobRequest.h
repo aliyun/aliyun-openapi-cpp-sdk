@@ -74,6 +74,8 @@ public:
 	void setStatus(int status);
 	std::string getNamespaceSource() const;
 	void setNamespaceSource(const std::string &namespaceSource);
+	std::string getTimezone() const;
+	void setTimezone(const std::string &timezone);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getContent() const;
@@ -129,6 +131,7 @@ private:
 	std::string parameters_;
 	int status_;
 	std::string namespaceSource_;
+	std::string timezone_;
 	std::string description_;
 	std::string content_;
 	long timeout_;

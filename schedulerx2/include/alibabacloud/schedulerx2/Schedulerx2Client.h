@@ -74,6 +74,8 @@
 #include "model/GetJobInstanceListResult.h"
 #include "model/GetLogRequest.h"
 #include "model/GetLogResult.h"
+#include "model/GetOverviewRequest.h"
+#include "model/GetOverviewResult.h"
 #include "model/GetWorkFlowRequest.h"
 #include "model/GetWorkFlowResult.h"
 #include "model/GetWorkerListRequest.h"
@@ -197,6 +199,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetLogResult> GetLogOutcome;
 			typedef std::future<GetLogOutcome> GetLogOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::GetLogRequest&, const GetLogOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetLogAsyncHandler;
+			typedef Outcome<Error, Model::GetOverviewResult> GetOverviewOutcome;
+			typedef std::future<GetOverviewOutcome> GetOverviewOutcomeCallable;
+			typedef std::function<void(const Schedulerx2Client*, const Model::GetOverviewRequest&, const GetOverviewOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetOverviewAsyncHandler;
 			typedef Outcome<Error, Model::GetWorkFlowResult> GetWorkFlowOutcome;
 			typedef std::future<GetWorkFlowOutcome> GetWorkFlowOutcomeCallable;
 			typedef std::function<void(const Schedulerx2Client*, const Model::GetWorkFlowRequest&, const GetWorkFlowOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetWorkFlowAsyncHandler;
@@ -334,6 +339,9 @@ namespace AlibabaCloud
 			GetLogOutcome getLog(const Model::GetLogRequest &request)const;
 			void getLogAsync(const Model::GetLogRequest& request, const GetLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetLogOutcomeCallable getLogCallable(const Model::GetLogRequest& request) const;
+			GetOverviewOutcome getOverview(const Model::GetOverviewRequest &request)const;
+			void getOverviewAsync(const Model::GetOverviewRequest& request, const GetOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetOverviewOutcomeCallable getOverviewCallable(const Model::GetOverviewRequest& request) const;
 			GetWorkFlowOutcome getWorkFlow(const Model::GetWorkFlowRequest &request)const;
 			void getWorkFlowAsync(const Model::GetWorkFlowRequest& request, const GetWorkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetWorkFlowOutcomeCallable getWorkFlowCallable(const Model::GetWorkFlowRequest& request) const;

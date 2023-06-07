@@ -203,6 +203,15 @@ void CreateJobRequest::setNamespaceSource(const std::string &namespaceSource) {
   setBodyParameter(std::string("NamespaceSource"), namespaceSource);
 }
 
+std::string CreateJobRequest::getTimezone() const {
+  return timezone_;
+}
+
+void CreateJobRequest::setTimezone(const std::string &timezone) {
+  timezone_ = timezone;
+  setBodyParameter(std::string("Timezone"), timezone);
+}
+
 std::string CreateJobRequest::getDescription() const {
   return description_;
 }

@@ -20,10 +20,19 @@ using AlibabaCloud::Schedulerx2::Model::ListNamespacesRequest;
 
 ListNamespacesRequest::ListNamespacesRequest()
     : RpcServiceRequest("schedulerx2", "2019-04-30", "ListNamespaces") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListNamespacesRequest::~ListNamespacesRequest() {}
+
+std::string ListNamespacesRequest::getNamespaceName() const {
+  return namespaceName_;
+}
+
+void ListNamespacesRequest::setNamespaceName(const std::string &namespaceName) {
+  namespaceName_ = namespaceName;
+  setParameter(std::string("NamespaceName"), namespaceName);
+}
 
 std::string ListNamespacesRequest::getRegionId() const {
   return regionId_;
@@ -32,5 +41,14 @@ std::string ListNamespacesRequest::getRegionId() const {
 void ListNamespacesRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string ListNamespacesRequest::get_Namespace() const {
+  return _namespace_;
+}
+
+void ListNamespacesRequest::set_Namespace(const std::string &_namespace) {
+  _namespace_ = _namespace;
+  setParameter(std::string("Namespace"), _namespace);
 }
 

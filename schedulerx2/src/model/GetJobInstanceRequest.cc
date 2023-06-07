@@ -52,6 +52,15 @@ void GetJobInstanceRequest::setJobId(long jobId) {
   setParameter(std::string("JobId"), std::to_string(jobId));
 }
 
+std::string GetJobInstanceRequest::getRegionId() const {
+  return regionId_;
+}
+
+void GetJobInstanceRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+
 std::string GetJobInstanceRequest::get_Namespace() const {
   return _namespace_;
 }

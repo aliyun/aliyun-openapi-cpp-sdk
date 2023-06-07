@@ -20,7 +20,7 @@ using AlibabaCloud::Schedulerx2::Model::ListGroupsRequest;
 
 ListGroupsRequest::ListGroupsRequest()
     : RpcServiceRequest("schedulerx2", "2019-04-30", "ListGroups") {
-  setMethod(HttpRequest::Method::Get);
+  setMethod(HttpRequest::Method::Post);
 }
 
 ListGroupsRequest::~ListGroupsRequest() {}
@@ -32,6 +32,15 @@ std::string ListGroupsRequest::getNamespaceSource() const {
 void ListGroupsRequest::setNamespaceSource(const std::string &namespaceSource) {
   namespaceSource_ = namespaceSource;
   setParameter(std::string("NamespaceSource"), namespaceSource);
+}
+
+std::string ListGroupsRequest::getAppGroupName() const {
+  return appGroupName_;
+}
+
+void ListGroupsRequest::setAppGroupName(const std::string &appGroupName) {
+  appGroupName_ = appGroupName;
+  setParameter(std::string("AppGroupName"), appGroupName);
 }
 
 std::string ListGroupsRequest::getRegionId() const {

@@ -185,6 +185,15 @@ void UpdateJobRequest::setParameters(const std::string &parameters) {
   setBodyParameter(std::string("Parameters"), parameters);
 }
 
+std::string UpdateJobRequest::get_Template() const {
+  return _template_;
+}
+
+void UpdateJobRequest::set_Template(const std::string &_template) {
+  _template_ = _template;
+  setBodyParameter(std::string("Template"), _template);
+}
+
 std::string UpdateJobRequest::getNamespaceSource() const {
   return namespaceSource_;
 }
@@ -192,6 +201,15 @@ std::string UpdateJobRequest::getNamespaceSource() const {
 void UpdateJobRequest::setNamespaceSource(const std::string &namespaceSource) {
   namespaceSource_ = namespaceSource;
   setBodyParameter(std::string("NamespaceSource"), namespaceSource);
+}
+
+std::string UpdateJobRequest::getTimezone() const {
+  return timezone_;
+}
+
+void UpdateJobRequest::setTimezone(const std::string &timezone) {
+  timezone_ = timezone;
+  setBodyParameter(std::string("Timezone"), timezone);
 }
 
 std::string UpdateJobRequest::getDescription() const {
@@ -336,6 +354,15 @@ std::string UpdateJobRequest::get_Namespace() const {
 void UpdateJobRequest::set_Namespace(const std::string &_namespace) {
   _namespace_ = _namespace;
   setBodyParameter(std::string("Namespace"), _namespace);
+}
+
+std::string UpdateJobRequest::getXAttrs() const {
+  return xAttrs_;
+}
+
+void UpdateJobRequest::setXAttrs(const std::string &xAttrs) {
+  xAttrs_ = xAttrs;
+  setBodyParameter(std::string("XAttrs"), xAttrs);
 }
 
 int UpdateJobRequest::getMaxConcurrency() const {

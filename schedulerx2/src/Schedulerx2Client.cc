@@ -987,6 +987,42 @@ Schedulerx2Client::GetLogOutcomeCallable Schedulerx2Client::getLogCallable(const
 	return task->get_future();
 }
 
+Schedulerx2Client::GetOverviewOutcome Schedulerx2Client::getOverview(const GetOverviewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetOverviewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetOverviewOutcome(GetOverviewResult(outcome.result()));
+	else
+		return GetOverviewOutcome(outcome.error());
+}
+
+void Schedulerx2Client::getOverviewAsync(const GetOverviewRequest& request, const GetOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getOverview(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Schedulerx2Client::GetOverviewOutcomeCallable Schedulerx2Client::getOverviewCallable(const GetOverviewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetOverviewOutcome()>>(
+			[this, request]()
+			{
+			return this->getOverview(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Schedulerx2Client::GetWorkFlowOutcome Schedulerx2Client::getWorkFlow(const GetWorkFlowRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

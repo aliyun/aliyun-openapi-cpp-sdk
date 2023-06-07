@@ -32,6 +32,8 @@ public:
 	~ListGroupsRequest();
 	std::string getNamespaceSource() const;
 	void setNamespaceSource(const std::string &namespaceSource);
+	std::string getAppGroupName() const;
+	void setAppGroupName(const std::string &appGroupName);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string get_Namespace() const;
@@ -39,6 +41,7 @@ public:
 
 private:
 	std::string namespaceSource_;
+	std::string appGroupName_;
 	std::string regionId_;
 	std::string _namespace_;
 };

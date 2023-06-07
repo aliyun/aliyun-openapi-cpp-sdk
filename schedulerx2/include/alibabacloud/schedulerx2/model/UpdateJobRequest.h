@@ -70,8 +70,12 @@ public:
 	void setTimeType(int timeType);
 	std::string getParameters() const;
 	void setParameters(const std::string &parameters);
+	std::string get_Template() const;
+	void set_Template(const std::string &_template);
 	std::string getNamespaceSource() const;
 	void setNamespaceSource(const std::string &namespaceSource);
+	std::string getTimezone() const;
+	void setTimezone(const std::string &timezone);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
 	std::string getContent() const;
@@ -104,6 +108,8 @@ public:
 	void setClassName(const std::string &className);
 	std::string get_Namespace() const;
 	void set_Namespace(const std::string &_namespace);
+	std::string getXAttrs() const;
+	void setXAttrs(const std::string &xAttrs);
 	int getMaxConcurrency() const;
 	void setMaxConcurrency(int maxConcurrency);
 
@@ -125,7 +131,9 @@ private:
 	std::string name_;
 	int timeType_;
 	std::string parameters_;
+	std::string _template_;
 	std::string namespaceSource_;
+	std::string timezone_;
 	std::string description_;
 	std::string content_;
 	long timeout_;
@@ -142,6 +150,7 @@ private:
 	int queueSize_;
 	std::string className_;
 	std::string _namespace_;
+	std::string xAttrs_;
 	int maxConcurrency_;
 };
 } // namespace Model
