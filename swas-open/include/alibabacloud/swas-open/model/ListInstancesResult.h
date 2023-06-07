@@ -34,15 +34,39 @@ namespace AlibabaCloud
 			public:
 				struct Instance
 				{
+					struct ResourceSpec
+					{
+						double memory;
+						int bandwidth;
+						int diskSize;
+						std::string diskCategory;
+						int cpu;
+						double flow;
+					};
+					struct Image
+					{
+						std::string imageName;
+						std::string imageVersion;
+						std::string osType;
+						std::string imageIconUrl;
+						std::string imageContact;
+						std::string imageType;
+					};
 					std::string status;
+					std::string disableReason;
 					std::string instanceId;
 					std::string planId;
+					ResourceSpec resourceSpec;
 					std::string ddosStatus;
+					Image image;
+					std::string combinationInstanceId;
 					std::string businessStatus;
 					std::string publicIpAddress;
 					std::string instanceName;
 					std::string innerIpAddress;
+					std::string uuid;
 					std::string chargeType;
+					bool combination;
 					std::string expiredTime;
 					std::string creationTime;
 					std::string imageId;

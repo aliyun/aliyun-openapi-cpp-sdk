@@ -34,6 +34,15 @@ void ListSnapshotsRequest::setSnapshotIds(const std::string &snapshotIds) {
   setParameter(std::string("SnapshotIds"), snapshotIds);
 }
 
+std::string ListSnapshotsRequest::getSourceDiskType() const {
+  return sourceDiskType_;
+}
+
+void ListSnapshotsRequest::setSourceDiskType(const std::string &sourceDiskType) {
+  sourceDiskType_ = sourceDiskType;
+  setParameter(std::string("SourceDiskType"), sourceDiskType);
+}
+
 int ListSnapshotsRequest::getPageNumber() const {
   return pageNumber_;
 }

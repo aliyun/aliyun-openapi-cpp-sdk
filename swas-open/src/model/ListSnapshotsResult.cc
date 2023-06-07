@@ -61,6 +61,10 @@ void ListSnapshotsResult::parse(const std::string &payload)
 			snapshotsObject.sourceDiskType = valueSnapshotsSnapshot["SourceDiskType"].asString();
 		if(!valueSnapshotsSnapshot["RegionId"].isNull())
 			snapshotsObject.regionId = valueSnapshotsSnapshot["RegionId"].asString();
+		if(!valueSnapshotsSnapshot["InstanceId"].isNull())
+			snapshotsObject.instanceId = valueSnapshotsSnapshot["InstanceId"].asString();
+		if(!valueSnapshotsSnapshot["RollbackTime"].isNull())
+			snapshotsObject.rollbackTime = valueSnapshotsSnapshot["RollbackTime"].asString();
 		snapshots_.push_back(snapshotsObject);
 	}
 	if(!value["TotalCount"].isNull())

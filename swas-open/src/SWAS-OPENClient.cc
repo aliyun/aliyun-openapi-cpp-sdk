@@ -159,6 +159,78 @@ SWAS_OPENClient::CreateFirewallRuleOutcomeCallable SWAS_OPENClient::createFirewa
 	return task->get_future();
 }
 
+SWAS_OPENClient::CreateFirewallRulesOutcome SWAS_OPENClient::createFirewallRules(const CreateFirewallRulesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateFirewallRulesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateFirewallRulesOutcome(CreateFirewallRulesResult(outcome.result()));
+	else
+		return CreateFirewallRulesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::createFirewallRulesAsync(const CreateFirewallRulesRequest& request, const CreateFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createFirewallRules(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::CreateFirewallRulesOutcomeCallable SWAS_OPENClient::createFirewallRulesCallable(const CreateFirewallRulesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateFirewallRulesOutcome()>>(
+			[this, request]()
+			{
+			return this->createFirewallRules(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::CreateInstanceKeyPairOutcome SWAS_OPENClient::createInstanceKeyPair(const CreateInstanceKeyPairRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateInstanceKeyPairOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateInstanceKeyPairOutcome(CreateInstanceKeyPairResult(outcome.result()));
+	else
+		return CreateInstanceKeyPairOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::createInstanceKeyPairAsync(const CreateInstanceKeyPairRequest& request, const CreateInstanceKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createInstanceKeyPair(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::CreateInstanceKeyPairOutcomeCallable SWAS_OPENClient::createInstanceKeyPairCallable(const CreateInstanceKeyPairRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateInstanceKeyPairOutcome()>>(
+			[this, request]()
+			{
+			return this->createInstanceKeyPair(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::CreateInstancesOutcome SWAS_OPENClient::createInstances(const CreateInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -303,6 +375,42 @@ SWAS_OPENClient::DeleteFirewallRuleOutcomeCallable SWAS_OPENClient::deleteFirewa
 	return task->get_future();
 }
 
+SWAS_OPENClient::DeleteInstanceKeyPairOutcome SWAS_OPENClient::deleteInstanceKeyPair(const DeleteInstanceKeyPairRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteInstanceKeyPairOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteInstanceKeyPairOutcome(DeleteInstanceKeyPairResult(outcome.result()));
+	else
+		return DeleteInstanceKeyPairOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::deleteInstanceKeyPairAsync(const DeleteInstanceKeyPairRequest& request, const DeleteInstanceKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteInstanceKeyPair(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DeleteInstanceKeyPairOutcomeCallable SWAS_OPENClient::deleteInstanceKeyPairCallable(const DeleteInstanceKeyPairRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteInstanceKeyPairOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteInstanceKeyPair(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::DeleteSnapshotOutcome SWAS_OPENClient::deleteSnapshot(const DeleteSnapshotRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -339,6 +447,42 @@ SWAS_OPENClient::DeleteSnapshotOutcomeCallable SWAS_OPENClient::deleteSnapshotCa
 	return task->get_future();
 }
 
+SWAS_OPENClient::DeleteSnapshotsOutcome SWAS_OPENClient::deleteSnapshots(const DeleteSnapshotsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteSnapshotsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteSnapshotsOutcome(DeleteSnapshotsResult(outcome.result()));
+	else
+		return DeleteSnapshotsOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::deleteSnapshotsAsync(const DeleteSnapshotsRequest& request, const DeleteSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteSnapshots(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DeleteSnapshotsOutcomeCallable SWAS_OPENClient::deleteSnapshotsCallable(const DeleteSnapshotsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteSnapshotsOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteSnapshots(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::DescribeCloudAssistantStatusOutcome SWAS_OPENClient::describeCloudAssistantStatus(const DescribeCloudAssistantStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -369,6 +513,42 @@ SWAS_OPENClient::DescribeCloudAssistantStatusOutcomeCallable SWAS_OPENClient::de
 			[this, request]()
 			{
 			return this->describeCloudAssistantStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::DescribeCloudMonitorAgentStatusesOutcome SWAS_OPENClient::describeCloudMonitorAgentStatuses(const DescribeCloudMonitorAgentStatusesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeCloudMonitorAgentStatusesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeCloudMonitorAgentStatusesOutcome(DescribeCloudMonitorAgentStatusesResult(outcome.result()));
+	else
+		return DescribeCloudMonitorAgentStatusesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::describeCloudMonitorAgentStatusesAsync(const DescribeCloudMonitorAgentStatusesRequest& request, const DescribeCloudMonitorAgentStatusesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeCloudMonitorAgentStatuses(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DescribeCloudMonitorAgentStatusesOutcomeCallable SWAS_OPENClient::describeCloudMonitorAgentStatusesCallable(const DescribeCloudMonitorAgentStatusesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeCloudMonitorAgentStatusesOutcome()>>(
+			[this, request]()
+			{
+			return this->describeCloudMonitorAgentStatuses(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -555,6 +735,114 @@ SWAS_OPENClient::DescribeDatabaseSlowLogRecordsOutcomeCallable SWAS_OPENClient::
 	return task->get_future();
 }
 
+SWAS_OPENClient::DescribeInstanceKeyPairOutcome SWAS_OPENClient::describeInstanceKeyPair(const DescribeInstanceKeyPairRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceKeyPairOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceKeyPairOutcome(DescribeInstanceKeyPairResult(outcome.result()));
+	else
+		return DescribeInstanceKeyPairOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::describeInstanceKeyPairAsync(const DescribeInstanceKeyPairRequest& request, const DescribeInstanceKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceKeyPair(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DescribeInstanceKeyPairOutcomeCallable SWAS_OPENClient::describeInstanceKeyPairCallable(const DescribeInstanceKeyPairRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceKeyPairOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceKeyPair(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::DescribeInstancePasswordsSettingOutcome SWAS_OPENClient::describeInstancePasswordsSetting(const DescribeInstancePasswordsSettingRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstancePasswordsSettingOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstancePasswordsSettingOutcome(DescribeInstancePasswordsSettingResult(outcome.result()));
+	else
+		return DescribeInstancePasswordsSettingOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::describeInstancePasswordsSettingAsync(const DescribeInstancePasswordsSettingRequest& request, const DescribeInstancePasswordsSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstancePasswordsSetting(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DescribeInstancePasswordsSettingOutcomeCallable SWAS_OPENClient::describeInstancePasswordsSettingCallable(const DescribeInstancePasswordsSettingRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstancePasswordsSettingOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstancePasswordsSetting(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::DescribeInstanceVncUrlOutcome SWAS_OPENClient::describeInstanceVncUrl(const DescribeInstanceVncUrlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeInstanceVncUrlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeInstanceVncUrlOutcome(DescribeInstanceVncUrlResult(outcome.result()));
+	else
+		return DescribeInstanceVncUrlOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::describeInstanceVncUrlAsync(const DescribeInstanceVncUrlRequest& request, const DescribeInstanceVncUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeInstanceVncUrl(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DescribeInstanceVncUrlOutcomeCallable SWAS_OPENClient::describeInstanceVncUrlCallable(const DescribeInstanceVncUrlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeInstanceVncUrlOutcome()>>(
+			[this, request]()
+			{
+			return this->describeInstanceVncUrl(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::DescribeInvocationResultOutcome SWAS_OPENClient::describeInvocationResult(const DescribeInvocationResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -627,6 +915,150 @@ SWAS_OPENClient::DescribeInvocationsOutcomeCallable SWAS_OPENClient::describeInv
 	return task->get_future();
 }
 
+SWAS_OPENClient::DescribeMonitorDataOutcome SWAS_OPENClient::describeMonitorData(const DescribeMonitorDataRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeMonitorDataOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeMonitorDataOutcome(DescribeMonitorDataResult(outcome.result()));
+	else
+		return DescribeMonitorDataOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::describeMonitorDataAsync(const DescribeMonitorDataRequest& request, const DescribeMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeMonitorData(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DescribeMonitorDataOutcomeCallable SWAS_OPENClient::describeMonitorDataCallable(const DescribeMonitorDataRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeMonitorDataOutcome()>>(
+			[this, request]()
+			{
+			return this->describeMonitorData(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::DescribeSecurityAgentStatusOutcome SWAS_OPENClient::describeSecurityAgentStatus(const DescribeSecurityAgentStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeSecurityAgentStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeSecurityAgentStatusOutcome(DescribeSecurityAgentStatusResult(outcome.result()));
+	else
+		return DescribeSecurityAgentStatusOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::describeSecurityAgentStatusAsync(const DescribeSecurityAgentStatusRequest& request, const DescribeSecurityAgentStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeSecurityAgentStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DescribeSecurityAgentStatusOutcomeCallable SWAS_OPENClient::describeSecurityAgentStatusCallable(const DescribeSecurityAgentStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeSecurityAgentStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->describeSecurityAgentStatus(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::DisableFirewallRuleOutcome SWAS_OPENClient::disableFirewallRule(const DisableFirewallRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DisableFirewallRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DisableFirewallRuleOutcome(DisableFirewallRuleResult(outcome.result()));
+	else
+		return DisableFirewallRuleOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::disableFirewallRuleAsync(const DisableFirewallRuleRequest& request, const DisableFirewallRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, disableFirewallRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::DisableFirewallRuleOutcomeCallable SWAS_OPENClient::disableFirewallRuleCallable(const DisableFirewallRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DisableFirewallRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->disableFirewallRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::EnableFirewallRuleOutcome SWAS_OPENClient::enableFirewallRule(const EnableFirewallRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return EnableFirewallRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return EnableFirewallRuleOutcome(EnableFirewallRuleResult(outcome.result()));
+	else
+		return EnableFirewallRuleOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::enableFirewallRuleAsync(const EnableFirewallRuleRequest& request, const EnableFirewallRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, enableFirewallRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::EnableFirewallRuleOutcomeCallable SWAS_OPENClient::enableFirewallRuleCallable(const EnableFirewallRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<EnableFirewallRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->enableFirewallRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::InstallCloudAssistantOutcome SWAS_OPENClient::installCloudAssistant(const InstallCloudAssistantRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -657,6 +1089,78 @@ SWAS_OPENClient::InstallCloudAssistantOutcomeCallable SWAS_OPENClient::installCl
 			[this, request]()
 			{
 			return this->installCloudAssistant(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::InstallCloudMonitorAgentOutcome SWAS_OPENClient::installCloudMonitorAgent(const InstallCloudMonitorAgentRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return InstallCloudMonitorAgentOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return InstallCloudMonitorAgentOutcome(InstallCloudMonitorAgentResult(outcome.result()));
+	else
+		return InstallCloudMonitorAgentOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::installCloudMonitorAgentAsync(const InstallCloudMonitorAgentRequest& request, const InstallCloudMonitorAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, installCloudMonitorAgent(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::InstallCloudMonitorAgentOutcomeCallable SWAS_OPENClient::installCloudMonitorAgentCallable(const InstallCloudMonitorAgentRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<InstallCloudMonitorAgentOutcome()>>(
+			[this, request]()
+			{
+			return this->installCloudMonitorAgent(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::ListCustomImagesOutcome SWAS_OPENClient::listCustomImages(const ListCustomImagesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListCustomImagesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListCustomImagesOutcome(ListCustomImagesResult(outcome.result()));
+	else
+		return ListCustomImagesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::listCustomImagesAsync(const ListCustomImagesRequest& request, const ListCustomImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listCustomImages(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::ListCustomImagesOutcomeCallable SWAS_OPENClient::listCustomImagesCallable(const ListCustomImagesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListCustomImagesOutcome()>>(
+			[this, request]()
+			{
+			return this->listCustomImages(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -801,6 +1305,42 @@ SWAS_OPENClient::ListInstancePlansModificationOutcomeCallable SWAS_OPENClient::l
 			[this, request]()
 			{
 			return this->listInstancePlansModification(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::ListInstanceStatusOutcome SWAS_OPENClient::listInstanceStatus(const ListInstanceStatusRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListInstanceStatusOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListInstanceStatusOutcome(ListInstanceStatusResult(outcome.result()));
+	else
+		return ListInstanceStatusOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::listInstanceStatusAsync(const ListInstanceStatusRequest& request, const ListInstanceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listInstanceStatus(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::ListInstanceStatusOutcomeCallable SWAS_OPENClient::listInstanceStatusCallable(const ListInstanceStatusRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListInstanceStatusOutcome()>>(
+			[this, request]()
+			{
+			return this->listInstanceStatus(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1095,6 +1635,42 @@ SWAS_OPENClient::ModifyDatabaseInstanceParameterOutcomeCallable SWAS_OPENClient:
 	return task->get_future();
 }
 
+SWAS_OPENClient::ModifyFirewallRuleOutcome SWAS_OPENClient::modifyFirewallRule(const ModifyFirewallRuleRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyFirewallRuleOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyFirewallRuleOutcome(ModifyFirewallRuleResult(outcome.result()));
+	else
+		return ModifyFirewallRuleOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::modifyFirewallRuleAsync(const ModifyFirewallRuleRequest& request, const ModifyFirewallRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyFirewallRule(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::ModifyFirewallRuleOutcomeCallable SWAS_OPENClient::modifyFirewallRuleCallable(const ModifyFirewallRuleRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyFirewallRuleOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyFirewallRule(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::ModifyImageShareStatusOutcome SWAS_OPENClient::modifyImageShareStatus(const ModifyImageShareStatusRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1131,6 +1707,42 @@ SWAS_OPENClient::ModifyImageShareStatusOutcomeCallable SWAS_OPENClient::modifyIm
 	return task->get_future();
 }
 
+SWAS_OPENClient::ModifyInstanceVncPasswordOutcome SWAS_OPENClient::modifyInstanceVncPassword(const ModifyInstanceVncPasswordRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyInstanceVncPasswordOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyInstanceVncPasswordOutcome(ModifyInstanceVncPasswordResult(outcome.result()));
+	else
+		return ModifyInstanceVncPasswordOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::modifyInstanceVncPasswordAsync(const ModifyInstanceVncPasswordRequest& request, const ModifyInstanceVncPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyInstanceVncPassword(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::ModifyInstanceVncPasswordOutcomeCallable SWAS_OPENClient::modifyInstanceVncPasswordCallable(const ModifyInstanceVncPasswordRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyInstanceVncPasswordOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyInstanceVncPassword(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::RebootInstanceOutcome SWAS_OPENClient::rebootInstance(const RebootInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1161,6 +1773,42 @@ SWAS_OPENClient::RebootInstanceOutcomeCallable SWAS_OPENClient::rebootInstanceCa
 			[this, request]()
 			{
 			return this->rebootInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::RebootInstancesOutcome SWAS_OPENClient::rebootInstances(const RebootInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RebootInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RebootInstancesOutcome(RebootInstancesResult(outcome.result()));
+	else
+		return RebootInstancesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::rebootInstancesAsync(const RebootInstancesRequest& request, const RebootInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, rebootInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::RebootInstancesOutcomeCallable SWAS_OPENClient::rebootInstancesCallable(const RebootInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RebootInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->rebootInstances(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1491,6 +2139,42 @@ SWAS_OPENClient::StartInstanceOutcomeCallable SWAS_OPENClient::startInstanceCall
 	return task->get_future();
 }
 
+SWAS_OPENClient::StartInstancesOutcome SWAS_OPENClient::startInstances(const StartInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StartInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StartInstancesOutcome(StartInstancesResult(outcome.result()));
+	else
+		return StartInstancesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::startInstancesAsync(const StartInstancesRequest& request, const StartInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, startInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::StartInstancesOutcomeCallable SWAS_OPENClient::startInstancesCallable(const StartInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StartInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->startInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::StopDatabaseInstanceOutcome SWAS_OPENClient::stopDatabaseInstance(const StopDatabaseInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1563,6 +2247,78 @@ SWAS_OPENClient::StopInstanceOutcomeCallable SWAS_OPENClient::stopInstanceCallab
 	return task->get_future();
 }
 
+SWAS_OPENClient::StopInstancesOutcome SWAS_OPENClient::stopInstances(const StopInstancesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return StopInstancesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return StopInstancesOutcome(StopInstancesResult(outcome.result()));
+	else
+		return StopInstancesOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::stopInstancesAsync(const StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, stopInstances(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::StopInstancesOutcomeCallable SWAS_OPENClient::stopInstancesCallable(const StopInstancesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<StopInstancesOutcome()>>(
+			[this, request]()
+			{
+			return this->stopInstances(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::UpdateDiskAttributeOutcome SWAS_OPENClient::updateDiskAttribute(const UpdateDiskAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateDiskAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateDiskAttributeOutcome(UpdateDiskAttributeResult(outcome.result()));
+	else
+		return UpdateDiskAttributeOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::updateDiskAttributeAsync(const UpdateDiskAttributeRequest& request, const UpdateDiskAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateDiskAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::UpdateDiskAttributeOutcomeCallable SWAS_OPENClient::updateDiskAttributeCallable(const UpdateDiskAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateDiskAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateDiskAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::UpdateInstanceAttributeOutcome SWAS_OPENClient::updateInstanceAttribute(const UpdateInstanceAttributeRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1599,6 +2355,42 @@ SWAS_OPENClient::UpdateInstanceAttributeOutcomeCallable SWAS_OPENClient::updateI
 	return task->get_future();
 }
 
+SWAS_OPENClient::UpdateSnapshotAttributeOutcome SWAS_OPENClient::updateSnapshotAttribute(const UpdateSnapshotAttributeRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UpdateSnapshotAttributeOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UpdateSnapshotAttributeOutcome(UpdateSnapshotAttributeResult(outcome.result()));
+	else
+		return UpdateSnapshotAttributeOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::updateSnapshotAttributeAsync(const UpdateSnapshotAttributeRequest& request, const UpdateSnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, updateSnapshotAttribute(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::UpdateSnapshotAttributeOutcomeCallable SWAS_OPENClient::updateSnapshotAttributeCallable(const UpdateSnapshotAttributeRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UpdateSnapshotAttributeOutcome()>>(
+			[this, request]()
+			{
+			return this->updateSnapshotAttribute(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 SWAS_OPENClient::UpgradeInstanceOutcome SWAS_OPENClient::upgradeInstance(const UpgradeInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1629,6 +2421,42 @@ SWAS_OPENClient::UpgradeInstanceOutcomeCallable SWAS_OPENClient::upgradeInstance
 			[this, request]()
 			{
 			return this->upgradeInstance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+SWAS_OPENClient::UploadInstanceKeyPairOutcome SWAS_OPENClient::uploadInstanceKeyPair(const UploadInstanceKeyPairRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return UploadInstanceKeyPairOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return UploadInstanceKeyPairOutcome(UploadInstanceKeyPairResult(outcome.result()));
+	else
+		return UploadInstanceKeyPairOutcome(outcome.error());
+}
+
+void SWAS_OPENClient::uploadInstanceKeyPairAsync(const UploadInstanceKeyPairRequest& request, const UploadInstanceKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, uploadInstanceKeyPair(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+SWAS_OPENClient::UploadInstanceKeyPairOutcomeCallable SWAS_OPENClient::uploadInstanceKeyPairCallable(const UploadInstanceKeyPairRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<UploadInstanceKeyPairOutcome()>>(
+			[this, request]()
+			{
+			return this->uploadInstanceKeyPair(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -51,6 +51,10 @@ void ListFirewallRulesResult::parse(const std::string &payload)
 			firewallRulesObject.ruleId = valueFirewallRulesFirewallRule["RuleId"].asString();
 		if(!valueFirewallRulesFirewallRule["RuleProtocol"].isNull())
 			firewallRulesObject.ruleProtocol = valueFirewallRulesFirewallRule["RuleProtocol"].asString();
+		if(!valueFirewallRulesFirewallRule["Policy"].isNull())
+			firewallRulesObject.policy = valueFirewallRulesFirewallRule["Policy"].asString();
+		if(!valueFirewallRulesFirewallRule["SourceCidrIp"].isNull())
+			firewallRulesObject.sourceCidrIp = valueFirewallRulesFirewallRule["SourceCidrIp"].asString();
 		firewallRules_.push_back(firewallRulesObject);
 	}
 	if(!value["TotalCount"].isNull())

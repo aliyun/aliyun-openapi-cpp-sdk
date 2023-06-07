@@ -69,6 +69,40 @@ void ListInstancesResult::parse(const std::string &payload)
 			instancesObject.ddosStatus = valueInstancesInstance["DdosStatus"].asString();
 		if(!valueInstancesInstance["ImageId"].isNull())
 			instancesObject.imageId = valueInstancesInstance["ImageId"].asString();
+		if(!valueInstancesInstance["DisableReason"].isNull())
+			instancesObject.disableReason = valueInstancesInstance["DisableReason"].asString();
+		if(!valueInstancesInstance["Combination"].isNull())
+			instancesObject.combination = valueInstancesInstance["Combination"].asString() == "true";
+		if(!valueInstancesInstance["CombinationInstanceId"].isNull())
+			instancesObject.combinationInstanceId = valueInstancesInstance["CombinationInstanceId"].asString();
+		if(!valueInstancesInstance["Uuid"].isNull())
+			instancesObject.uuid = valueInstancesInstance["Uuid"].asString();
+		auto resourceSpecNode = value["ResourceSpec"];
+		if(!resourceSpecNode["DiskCategory"].isNull())
+			instancesObject.resourceSpec.diskCategory = resourceSpecNode["DiskCategory"].asString();
+		if(!resourceSpecNode["Cpu"].isNull())
+			instancesObject.resourceSpec.cpu = std::stoi(resourceSpecNode["Cpu"].asString());
+		if(!resourceSpecNode["Bandwidth"].isNull())
+			instancesObject.resourceSpec.bandwidth = std::stoi(resourceSpecNode["Bandwidth"].asString());
+		if(!resourceSpecNode["DiskSize"].isNull())
+			instancesObject.resourceSpec.diskSize = std::stoi(resourceSpecNode["DiskSize"].asString());
+		if(!resourceSpecNode["Memory"].isNull())
+			instancesObject.resourceSpec.memory = resourceSpecNode["Memory"].asString();
+		if(!resourceSpecNode["Flow"].isNull())
+			instancesObject.resourceSpec.flow = resourceSpecNode["Flow"].asString();
+		auto imageNode = value["Image"];
+		if(!imageNode["OsType"].isNull())
+			instancesObject.image.osType = imageNode["OsType"].asString();
+		if(!imageNode["ImageName"].isNull())
+			instancesObject.image.imageName = imageNode["ImageName"].asString();
+		if(!imageNode["ImageVersion"].isNull())
+			instancesObject.image.imageVersion = imageNode["ImageVersion"].asString();
+		if(!imageNode["ImageType"].isNull())
+			instancesObject.image.imageType = imageNode["ImageType"].asString();
+		if(!imageNode["ImageIconUrl"].isNull())
+			instancesObject.image.imageIconUrl = imageNode["ImageIconUrl"].asString();
+		if(!imageNode["ImageContact"].isNull())
+			instancesObject.image.imageContact = imageNode["ImageContact"].asString();
 		instances_.push_back(instancesObject);
 	}
 	if(!value["TotalCount"].isNull())

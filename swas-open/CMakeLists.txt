@@ -27,6 +27,10 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/CreateCustomImageResult.h
 	include/alibabacloud/swas-open/model/CreateFirewallRuleRequest.h
 	include/alibabacloud/swas-open/model/CreateFirewallRuleResult.h
+	include/alibabacloud/swas-open/model/CreateFirewallRulesRequest.h
+	include/alibabacloud/swas-open/model/CreateFirewallRulesResult.h
+	include/alibabacloud/swas-open/model/CreateInstanceKeyPairRequest.h
+	include/alibabacloud/swas-open/model/CreateInstanceKeyPairResult.h
 	include/alibabacloud/swas-open/model/CreateInstancesRequest.h
 	include/alibabacloud/swas-open/model/CreateInstancesResult.h
 	include/alibabacloud/swas-open/model/CreateSnapshotRequest.h
@@ -35,10 +39,16 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/DeleteCustomImageResult.h
 	include/alibabacloud/swas-open/model/DeleteFirewallRuleRequest.h
 	include/alibabacloud/swas-open/model/DeleteFirewallRuleResult.h
+	include/alibabacloud/swas-open/model/DeleteInstanceKeyPairRequest.h
+	include/alibabacloud/swas-open/model/DeleteInstanceKeyPairResult.h
 	include/alibabacloud/swas-open/model/DeleteSnapshotRequest.h
 	include/alibabacloud/swas-open/model/DeleteSnapshotResult.h
+	include/alibabacloud/swas-open/model/DeleteSnapshotsRequest.h
+	include/alibabacloud/swas-open/model/DeleteSnapshotsResult.h
 	include/alibabacloud/swas-open/model/DescribeCloudAssistantStatusRequest.h
 	include/alibabacloud/swas-open/model/DescribeCloudAssistantStatusResult.h
+	include/alibabacloud/swas-open/model/DescribeCloudMonitorAgentStatusesRequest.h
+	include/alibabacloud/swas-open/model/DescribeCloudMonitorAgentStatusesResult.h
 	include/alibabacloud/swas-open/model/DescribeDatabaseErrorLogsRequest.h
 	include/alibabacloud/swas-open/model/DescribeDatabaseErrorLogsResult.h
 	include/alibabacloud/swas-open/model/DescribeDatabaseInstanceMetricDataRequest.h
@@ -49,12 +59,30 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/DescribeDatabaseInstancesResult.h
 	include/alibabacloud/swas-open/model/DescribeDatabaseSlowLogRecordsRequest.h
 	include/alibabacloud/swas-open/model/DescribeDatabaseSlowLogRecordsResult.h
+	include/alibabacloud/swas-open/model/DescribeInstanceKeyPairRequest.h
+	include/alibabacloud/swas-open/model/DescribeInstanceKeyPairResult.h
+	include/alibabacloud/swas-open/model/DescribeInstancePasswordsSettingRequest.h
+	include/alibabacloud/swas-open/model/DescribeInstancePasswordsSettingResult.h
+	include/alibabacloud/swas-open/model/DescribeInstanceVncUrlRequest.h
+	include/alibabacloud/swas-open/model/DescribeInstanceVncUrlResult.h
 	include/alibabacloud/swas-open/model/DescribeInvocationResultRequest.h
 	include/alibabacloud/swas-open/model/DescribeInvocationResultResult.h
 	include/alibabacloud/swas-open/model/DescribeInvocationsRequest.h
 	include/alibabacloud/swas-open/model/DescribeInvocationsResult.h
+	include/alibabacloud/swas-open/model/DescribeMonitorDataRequest.h
+	include/alibabacloud/swas-open/model/DescribeMonitorDataResult.h
+	include/alibabacloud/swas-open/model/DescribeSecurityAgentStatusRequest.h
+	include/alibabacloud/swas-open/model/DescribeSecurityAgentStatusResult.h
+	include/alibabacloud/swas-open/model/DisableFirewallRuleRequest.h
+	include/alibabacloud/swas-open/model/DisableFirewallRuleResult.h
+	include/alibabacloud/swas-open/model/EnableFirewallRuleRequest.h
+	include/alibabacloud/swas-open/model/EnableFirewallRuleResult.h
 	include/alibabacloud/swas-open/model/InstallCloudAssistantRequest.h
 	include/alibabacloud/swas-open/model/InstallCloudAssistantResult.h
+	include/alibabacloud/swas-open/model/InstallCloudMonitorAgentRequest.h
+	include/alibabacloud/swas-open/model/InstallCloudMonitorAgentResult.h
+	include/alibabacloud/swas-open/model/ListCustomImagesRequest.h
+	include/alibabacloud/swas-open/model/ListCustomImagesResult.h
 	include/alibabacloud/swas-open/model/ListDisksRequest.h
 	include/alibabacloud/swas-open/model/ListDisksResult.h
 	include/alibabacloud/swas-open/model/ListFirewallRulesRequest.h
@@ -63,6 +91,8 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/ListImagesResult.h
 	include/alibabacloud/swas-open/model/ListInstancePlansModificationRequest.h
 	include/alibabacloud/swas-open/model/ListInstancePlansModificationResult.h
+	include/alibabacloud/swas-open/model/ListInstanceStatusRequest.h
+	include/alibabacloud/swas-open/model/ListInstanceStatusResult.h
 	include/alibabacloud/swas-open/model/ListInstancesRequest.h
 	include/alibabacloud/swas-open/model/ListInstancesResult.h
 	include/alibabacloud/swas-open/model/ListInstancesTrafficPackagesRequest.h
@@ -79,10 +109,16 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/ModifyDatabaseInstanceDescriptionResult.h
 	include/alibabacloud/swas-open/model/ModifyDatabaseInstanceParameterRequest.h
 	include/alibabacloud/swas-open/model/ModifyDatabaseInstanceParameterResult.h
+	include/alibabacloud/swas-open/model/ModifyFirewallRuleRequest.h
+	include/alibabacloud/swas-open/model/ModifyFirewallRuleResult.h
 	include/alibabacloud/swas-open/model/ModifyImageShareStatusRequest.h
 	include/alibabacloud/swas-open/model/ModifyImageShareStatusResult.h
+	include/alibabacloud/swas-open/model/ModifyInstanceVncPasswordRequest.h
+	include/alibabacloud/swas-open/model/ModifyInstanceVncPasswordResult.h
 	include/alibabacloud/swas-open/model/RebootInstanceRequest.h
 	include/alibabacloud/swas-open/model/RebootInstanceResult.h
+	include/alibabacloud/swas-open/model/RebootInstancesRequest.h
+	include/alibabacloud/swas-open/model/RebootInstancesResult.h
 	include/alibabacloud/swas-open/model/ReleasePublicConnectionRequest.h
 	include/alibabacloud/swas-open/model/ReleasePublicConnectionResult.h
 	include/alibabacloud/swas-open/model/RenewInstanceRequest.h
@@ -101,14 +137,24 @@ set(swas-open_public_header_model
 	include/alibabacloud/swas-open/model/StartDatabaseInstanceResult.h
 	include/alibabacloud/swas-open/model/StartInstanceRequest.h
 	include/alibabacloud/swas-open/model/StartInstanceResult.h
+	include/alibabacloud/swas-open/model/StartInstancesRequest.h
+	include/alibabacloud/swas-open/model/StartInstancesResult.h
 	include/alibabacloud/swas-open/model/StopDatabaseInstanceRequest.h
 	include/alibabacloud/swas-open/model/StopDatabaseInstanceResult.h
 	include/alibabacloud/swas-open/model/StopInstanceRequest.h
 	include/alibabacloud/swas-open/model/StopInstanceResult.h
+	include/alibabacloud/swas-open/model/StopInstancesRequest.h
+	include/alibabacloud/swas-open/model/StopInstancesResult.h
+	include/alibabacloud/swas-open/model/UpdateDiskAttributeRequest.h
+	include/alibabacloud/swas-open/model/UpdateDiskAttributeResult.h
 	include/alibabacloud/swas-open/model/UpdateInstanceAttributeRequest.h
 	include/alibabacloud/swas-open/model/UpdateInstanceAttributeResult.h
+	include/alibabacloud/swas-open/model/UpdateSnapshotAttributeRequest.h
+	include/alibabacloud/swas-open/model/UpdateSnapshotAttributeResult.h
 	include/alibabacloud/swas-open/model/UpgradeInstanceRequest.h
-	include/alibabacloud/swas-open/model/UpgradeInstanceResult.h )
+	include/alibabacloud/swas-open/model/UpgradeInstanceResult.h
+	include/alibabacloud/swas-open/model/UploadInstanceKeyPairRequest.h
+	include/alibabacloud/swas-open/model/UploadInstanceKeyPairResult.h )
 
 set(swas-open_src 
 	src/SWAS-OPENClient.cc
@@ -118,6 +164,10 @@ set(swas-open_src
 	src/model/CreateCustomImageResult.cc
 	src/model/CreateFirewallRuleRequest.cc
 	src/model/CreateFirewallRuleResult.cc
+	src/model/CreateFirewallRulesRequest.cc
+	src/model/CreateFirewallRulesResult.cc
+	src/model/CreateInstanceKeyPairRequest.cc
+	src/model/CreateInstanceKeyPairResult.cc
 	src/model/CreateInstancesRequest.cc
 	src/model/CreateInstancesResult.cc
 	src/model/CreateSnapshotRequest.cc
@@ -126,10 +176,16 @@ set(swas-open_src
 	src/model/DeleteCustomImageResult.cc
 	src/model/DeleteFirewallRuleRequest.cc
 	src/model/DeleteFirewallRuleResult.cc
+	src/model/DeleteInstanceKeyPairRequest.cc
+	src/model/DeleteInstanceKeyPairResult.cc
 	src/model/DeleteSnapshotRequest.cc
 	src/model/DeleteSnapshotResult.cc
+	src/model/DeleteSnapshotsRequest.cc
+	src/model/DeleteSnapshotsResult.cc
 	src/model/DescribeCloudAssistantStatusRequest.cc
 	src/model/DescribeCloudAssistantStatusResult.cc
+	src/model/DescribeCloudMonitorAgentStatusesRequest.cc
+	src/model/DescribeCloudMonitorAgentStatusesResult.cc
 	src/model/DescribeDatabaseErrorLogsRequest.cc
 	src/model/DescribeDatabaseErrorLogsResult.cc
 	src/model/DescribeDatabaseInstanceMetricDataRequest.cc
@@ -140,12 +196,30 @@ set(swas-open_src
 	src/model/DescribeDatabaseInstancesResult.cc
 	src/model/DescribeDatabaseSlowLogRecordsRequest.cc
 	src/model/DescribeDatabaseSlowLogRecordsResult.cc
+	src/model/DescribeInstanceKeyPairRequest.cc
+	src/model/DescribeInstanceKeyPairResult.cc
+	src/model/DescribeInstancePasswordsSettingRequest.cc
+	src/model/DescribeInstancePasswordsSettingResult.cc
+	src/model/DescribeInstanceVncUrlRequest.cc
+	src/model/DescribeInstanceVncUrlResult.cc
 	src/model/DescribeInvocationResultRequest.cc
 	src/model/DescribeInvocationResultResult.cc
 	src/model/DescribeInvocationsRequest.cc
 	src/model/DescribeInvocationsResult.cc
+	src/model/DescribeMonitorDataRequest.cc
+	src/model/DescribeMonitorDataResult.cc
+	src/model/DescribeSecurityAgentStatusRequest.cc
+	src/model/DescribeSecurityAgentStatusResult.cc
+	src/model/DisableFirewallRuleRequest.cc
+	src/model/DisableFirewallRuleResult.cc
+	src/model/EnableFirewallRuleRequest.cc
+	src/model/EnableFirewallRuleResult.cc
 	src/model/InstallCloudAssistantRequest.cc
 	src/model/InstallCloudAssistantResult.cc
+	src/model/InstallCloudMonitorAgentRequest.cc
+	src/model/InstallCloudMonitorAgentResult.cc
+	src/model/ListCustomImagesRequest.cc
+	src/model/ListCustomImagesResult.cc
 	src/model/ListDisksRequest.cc
 	src/model/ListDisksResult.cc
 	src/model/ListFirewallRulesRequest.cc
@@ -154,6 +228,8 @@ set(swas-open_src
 	src/model/ListImagesResult.cc
 	src/model/ListInstancePlansModificationRequest.cc
 	src/model/ListInstancePlansModificationResult.cc
+	src/model/ListInstanceStatusRequest.cc
+	src/model/ListInstanceStatusResult.cc
 	src/model/ListInstancesRequest.cc
 	src/model/ListInstancesResult.cc
 	src/model/ListInstancesTrafficPackagesRequest.cc
@@ -170,10 +246,16 @@ set(swas-open_src
 	src/model/ModifyDatabaseInstanceDescriptionResult.cc
 	src/model/ModifyDatabaseInstanceParameterRequest.cc
 	src/model/ModifyDatabaseInstanceParameterResult.cc
+	src/model/ModifyFirewallRuleRequest.cc
+	src/model/ModifyFirewallRuleResult.cc
 	src/model/ModifyImageShareStatusRequest.cc
 	src/model/ModifyImageShareStatusResult.cc
+	src/model/ModifyInstanceVncPasswordRequest.cc
+	src/model/ModifyInstanceVncPasswordResult.cc
 	src/model/RebootInstanceRequest.cc
 	src/model/RebootInstanceResult.cc
+	src/model/RebootInstancesRequest.cc
+	src/model/RebootInstancesResult.cc
 	src/model/ReleasePublicConnectionRequest.cc
 	src/model/ReleasePublicConnectionResult.cc
 	src/model/RenewInstanceRequest.cc
@@ -192,14 +274,24 @@ set(swas-open_src
 	src/model/StartDatabaseInstanceResult.cc
 	src/model/StartInstanceRequest.cc
 	src/model/StartInstanceResult.cc
+	src/model/StartInstancesRequest.cc
+	src/model/StartInstancesResult.cc
 	src/model/StopDatabaseInstanceRequest.cc
 	src/model/StopDatabaseInstanceResult.cc
 	src/model/StopInstanceRequest.cc
 	src/model/StopInstanceResult.cc
+	src/model/StopInstancesRequest.cc
+	src/model/StopInstancesResult.cc
+	src/model/UpdateDiskAttributeRequest.cc
+	src/model/UpdateDiskAttributeResult.cc
 	src/model/UpdateInstanceAttributeRequest.cc
 	src/model/UpdateInstanceAttributeResult.cc
+	src/model/UpdateSnapshotAttributeRequest.cc
+	src/model/UpdateSnapshotAttributeResult.cc
 	src/model/UpgradeInstanceRequest.cc
-	src/model/UpgradeInstanceResult.cc )
+	src/model/UpgradeInstanceResult.cc
+	src/model/UploadInstanceKeyPairRequest.cc
+	src/model/UploadInstanceKeyPairResult.cc )
 
 add_library(swas-open ${LIB_TYPE}
 	${swas-open_public_header}

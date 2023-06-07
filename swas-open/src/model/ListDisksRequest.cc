@@ -25,6 +25,15 @@ ListDisksRequest::ListDisksRequest()
 
 ListDisksRequest::~ListDisksRequest() {}
 
+std::string ListDisksRequest::getDiskType() const {
+  return diskType_;
+}
+
+void ListDisksRequest::setDiskType(const std::string &diskType) {
+  diskType_ = diskType;
+  setParameter(std::string("DiskType"), diskType);
+}
+
 int ListDisksRequest::getPageNumber() const {
   return pageNumber_;
 }

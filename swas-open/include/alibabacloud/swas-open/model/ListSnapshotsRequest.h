@@ -32,6 +32,8 @@ public:
 	~ListSnapshotsRequest();
 	std::string getSnapshotIds() const;
 	void setSnapshotIds(const std::string &snapshotIds);
+	std::string getSourceDiskType() const;
+	void setSourceDiskType(const std::string &sourceDiskType);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getInstanceId() const;
@@ -45,6 +47,7 @@ public:
 
 private:
 	std::string snapshotIds_;
+	std::string sourceDiskType_;
 	int pageNumber_;
 	std::string instanceId_;
 	std::string regionId_;

@@ -65,6 +65,10 @@ void ListDisksResult::parse(const std::string &payload)
 			disksObject.instanceId = valueDisksDisk["InstanceId"].asString();
 		if(!valueDisksDisk["RegionId"].isNull())
 			disksObject.regionId = valueDisksDisk["RegionId"].asString();
+		if(!valueDisksDisk["Remark"].isNull())
+			disksObject.remark = valueDisksDisk["Remark"].asString();
+		if(!valueDisksDisk["InstanceName"].isNull())
+			disksObject.instanceName = valueDisksDisk["InstanceName"].asString();
 		disks_.push_back(disksObject);
 	}
 	if(!value["TotalCount"].isNull())

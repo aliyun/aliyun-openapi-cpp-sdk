@@ -30,6 +30,8 @@ class ALIBABACLOUD_SWAS_OPEN_EXPORT ListDisksRequest : public RpcServiceRequest 
 public:
 	ListDisksRequest();
 	~ListDisksRequest();
+	std::string getDiskType() const;
+	void setDiskType(const std::string &diskType);
 	int getPageNumber() const;
 	void setPageNumber(int pageNumber);
 	std::string getInstanceId() const;
@@ -42,6 +44,7 @@ public:
 	void setDiskIds(const std::string &diskIds);
 
 private:
+	std::string diskType_;
 	int pageNumber_;
 	std::string instanceId_;
 	std::string regionId_;

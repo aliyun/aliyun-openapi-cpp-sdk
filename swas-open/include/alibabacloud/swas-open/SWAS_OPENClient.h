@@ -28,6 +28,10 @@
 #include "model/CreateCustomImageResult.h"
 #include "model/CreateFirewallRuleRequest.h"
 #include "model/CreateFirewallRuleResult.h"
+#include "model/CreateFirewallRulesRequest.h"
+#include "model/CreateFirewallRulesResult.h"
+#include "model/CreateInstanceKeyPairRequest.h"
+#include "model/CreateInstanceKeyPairResult.h"
 #include "model/CreateInstancesRequest.h"
 #include "model/CreateInstancesResult.h"
 #include "model/CreateSnapshotRequest.h"
@@ -36,10 +40,16 @@
 #include "model/DeleteCustomImageResult.h"
 #include "model/DeleteFirewallRuleRequest.h"
 #include "model/DeleteFirewallRuleResult.h"
+#include "model/DeleteInstanceKeyPairRequest.h"
+#include "model/DeleteInstanceKeyPairResult.h"
 #include "model/DeleteSnapshotRequest.h"
 #include "model/DeleteSnapshotResult.h"
+#include "model/DeleteSnapshotsRequest.h"
+#include "model/DeleteSnapshotsResult.h"
 #include "model/DescribeCloudAssistantStatusRequest.h"
 #include "model/DescribeCloudAssistantStatusResult.h"
+#include "model/DescribeCloudMonitorAgentStatusesRequest.h"
+#include "model/DescribeCloudMonitorAgentStatusesResult.h"
 #include "model/DescribeDatabaseErrorLogsRequest.h"
 #include "model/DescribeDatabaseErrorLogsResult.h"
 #include "model/DescribeDatabaseInstanceMetricDataRequest.h"
@@ -50,12 +60,30 @@
 #include "model/DescribeDatabaseInstancesResult.h"
 #include "model/DescribeDatabaseSlowLogRecordsRequest.h"
 #include "model/DescribeDatabaseSlowLogRecordsResult.h"
+#include "model/DescribeInstanceKeyPairRequest.h"
+#include "model/DescribeInstanceKeyPairResult.h"
+#include "model/DescribeInstancePasswordsSettingRequest.h"
+#include "model/DescribeInstancePasswordsSettingResult.h"
+#include "model/DescribeInstanceVncUrlRequest.h"
+#include "model/DescribeInstanceVncUrlResult.h"
 #include "model/DescribeInvocationResultRequest.h"
 #include "model/DescribeInvocationResultResult.h"
 #include "model/DescribeInvocationsRequest.h"
 #include "model/DescribeInvocationsResult.h"
+#include "model/DescribeMonitorDataRequest.h"
+#include "model/DescribeMonitorDataResult.h"
+#include "model/DescribeSecurityAgentStatusRequest.h"
+#include "model/DescribeSecurityAgentStatusResult.h"
+#include "model/DisableFirewallRuleRequest.h"
+#include "model/DisableFirewallRuleResult.h"
+#include "model/EnableFirewallRuleRequest.h"
+#include "model/EnableFirewallRuleResult.h"
 #include "model/InstallCloudAssistantRequest.h"
 #include "model/InstallCloudAssistantResult.h"
+#include "model/InstallCloudMonitorAgentRequest.h"
+#include "model/InstallCloudMonitorAgentResult.h"
+#include "model/ListCustomImagesRequest.h"
+#include "model/ListCustomImagesResult.h"
 #include "model/ListDisksRequest.h"
 #include "model/ListDisksResult.h"
 #include "model/ListFirewallRulesRequest.h"
@@ -64,6 +92,8 @@
 #include "model/ListImagesResult.h"
 #include "model/ListInstancePlansModificationRequest.h"
 #include "model/ListInstancePlansModificationResult.h"
+#include "model/ListInstanceStatusRequest.h"
+#include "model/ListInstanceStatusResult.h"
 #include "model/ListInstancesRequest.h"
 #include "model/ListInstancesResult.h"
 #include "model/ListInstancesTrafficPackagesRequest.h"
@@ -80,10 +110,16 @@
 #include "model/ModifyDatabaseInstanceDescriptionResult.h"
 #include "model/ModifyDatabaseInstanceParameterRequest.h"
 #include "model/ModifyDatabaseInstanceParameterResult.h"
+#include "model/ModifyFirewallRuleRequest.h"
+#include "model/ModifyFirewallRuleResult.h"
 #include "model/ModifyImageShareStatusRequest.h"
 #include "model/ModifyImageShareStatusResult.h"
+#include "model/ModifyInstanceVncPasswordRequest.h"
+#include "model/ModifyInstanceVncPasswordResult.h"
 #include "model/RebootInstanceRequest.h"
 #include "model/RebootInstanceResult.h"
+#include "model/RebootInstancesRequest.h"
+#include "model/RebootInstancesResult.h"
 #include "model/ReleasePublicConnectionRequest.h"
 #include "model/ReleasePublicConnectionResult.h"
 #include "model/RenewInstanceRequest.h"
@@ -102,14 +138,24 @@
 #include "model/StartDatabaseInstanceResult.h"
 #include "model/StartInstanceRequest.h"
 #include "model/StartInstanceResult.h"
+#include "model/StartInstancesRequest.h"
+#include "model/StartInstancesResult.h"
 #include "model/StopDatabaseInstanceRequest.h"
 #include "model/StopDatabaseInstanceResult.h"
 #include "model/StopInstanceRequest.h"
 #include "model/StopInstanceResult.h"
+#include "model/StopInstancesRequest.h"
+#include "model/StopInstancesResult.h"
+#include "model/UpdateDiskAttributeRequest.h"
+#include "model/UpdateDiskAttributeResult.h"
 #include "model/UpdateInstanceAttributeRequest.h"
 #include "model/UpdateInstanceAttributeResult.h"
+#include "model/UpdateSnapshotAttributeRequest.h"
+#include "model/UpdateSnapshotAttributeResult.h"
 #include "model/UpgradeInstanceRequest.h"
 #include "model/UpgradeInstanceResult.h"
+#include "model/UploadInstanceKeyPairRequest.h"
+#include "model/UploadInstanceKeyPairResult.h"
 
 
 namespace AlibabaCloud
@@ -128,6 +174,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateFirewallRuleResult> CreateFirewallRuleOutcome;
 			typedef std::future<CreateFirewallRuleOutcome> CreateFirewallRuleOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateFirewallRuleRequest&, const CreateFirewallRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirewallRuleAsyncHandler;
+			typedef Outcome<Error, Model::CreateFirewallRulesResult> CreateFirewallRulesOutcome;
+			typedef std::future<CreateFirewallRulesOutcome> CreateFirewallRulesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateFirewallRulesRequest&, const CreateFirewallRulesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirewallRulesAsyncHandler;
+			typedef Outcome<Error, Model::CreateInstanceKeyPairResult> CreateInstanceKeyPairOutcome;
+			typedef std::future<CreateInstanceKeyPairOutcome> CreateInstanceKeyPairOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateInstanceKeyPairRequest&, const CreateInstanceKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceKeyPairAsyncHandler;
 			typedef Outcome<Error, Model::CreateInstancesResult> CreateInstancesOutcome;
 			typedef std::future<CreateInstancesOutcome> CreateInstancesOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::CreateInstancesRequest&, const CreateInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancesAsyncHandler;
@@ -140,12 +192,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteFirewallRuleResult> DeleteFirewallRuleOutcome;
 			typedef std::future<DeleteFirewallRuleOutcome> DeleteFirewallRuleOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteFirewallRuleRequest&, const DeleteFirewallRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirewallRuleAsyncHandler;
+			typedef Outcome<Error, Model::DeleteInstanceKeyPairResult> DeleteInstanceKeyPairOutcome;
+			typedef std::future<DeleteInstanceKeyPairOutcome> DeleteInstanceKeyPairOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteInstanceKeyPairRequest&, const DeleteInstanceKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteInstanceKeyPairAsyncHandler;
 			typedef Outcome<Error, Model::DeleteSnapshotResult> DeleteSnapshotOutcome;
 			typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteSnapshotRequest&, const DeleteSnapshotOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotAsyncHandler;
+			typedef Outcome<Error, Model::DeleteSnapshotsResult> DeleteSnapshotsOutcome;
+			typedef std::future<DeleteSnapshotsOutcome> DeleteSnapshotsOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DeleteSnapshotsRequest&, const DeleteSnapshotsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCloudAssistantStatusResult> DescribeCloudAssistantStatusOutcome;
 			typedef std::future<DescribeCloudAssistantStatusOutcome> DescribeCloudAssistantStatusOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeCloudAssistantStatusRequest&, const DescribeCloudAssistantStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudAssistantStatusAsyncHandler;
+			typedef Outcome<Error, Model::DescribeCloudMonitorAgentStatusesResult> DescribeCloudMonitorAgentStatusesOutcome;
+			typedef std::future<DescribeCloudMonitorAgentStatusesOutcome> DescribeCloudMonitorAgentStatusesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeCloudMonitorAgentStatusesRequest&, const DescribeCloudMonitorAgentStatusesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudMonitorAgentStatusesAsyncHandler;
 			typedef Outcome<Error, Model::DescribeDatabaseErrorLogsResult> DescribeDatabaseErrorLogsOutcome;
 			typedef std::future<DescribeDatabaseErrorLogsOutcome> DescribeDatabaseErrorLogsOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeDatabaseErrorLogsRequest&, const DescribeDatabaseErrorLogsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseErrorLogsAsyncHandler;
@@ -161,15 +222,42 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeDatabaseSlowLogRecordsResult> DescribeDatabaseSlowLogRecordsOutcome;
 			typedef std::future<DescribeDatabaseSlowLogRecordsOutcome> DescribeDatabaseSlowLogRecordsOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeDatabaseSlowLogRecordsRequest&, const DescribeDatabaseSlowLogRecordsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabaseSlowLogRecordsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceKeyPairResult> DescribeInstanceKeyPairOutcome;
+			typedef std::future<DescribeInstanceKeyPairOutcome> DescribeInstanceKeyPairOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeInstanceKeyPairRequest&, const DescribeInstanceKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceKeyPairAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstancePasswordsSettingResult> DescribeInstancePasswordsSettingOutcome;
+			typedef std::future<DescribeInstancePasswordsSettingOutcome> DescribeInstancePasswordsSettingOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeInstancePasswordsSettingRequest&, const DescribeInstancePasswordsSettingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancePasswordsSettingAsyncHandler;
+			typedef Outcome<Error, Model::DescribeInstanceVncUrlResult> DescribeInstanceVncUrlOutcome;
+			typedef std::future<DescribeInstanceVncUrlOutcome> DescribeInstanceVncUrlOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeInstanceVncUrlRequest&, const DescribeInstanceVncUrlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceVncUrlAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInvocationResultResult> DescribeInvocationResultOutcome;
 			typedef std::future<DescribeInvocationResultOutcome> DescribeInvocationResultOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeInvocationResultRequest&, const DescribeInvocationResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInvocationResultAsyncHandler;
 			typedef Outcome<Error, Model::DescribeInvocationsResult> DescribeInvocationsOutcome;
 			typedef std::future<DescribeInvocationsOutcome> DescribeInvocationsOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeInvocationsRequest&, const DescribeInvocationsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInvocationsAsyncHandler;
+			typedef Outcome<Error, Model::DescribeMonitorDataResult> DescribeMonitorDataOutcome;
+			typedef std::future<DescribeMonitorDataOutcome> DescribeMonitorDataOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeMonitorDataRequest&, const DescribeMonitorDataOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorDataAsyncHandler;
+			typedef Outcome<Error, Model::DescribeSecurityAgentStatusResult> DescribeSecurityAgentStatusOutcome;
+			typedef std::future<DescribeSecurityAgentStatusOutcome> DescribeSecurityAgentStatusOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DescribeSecurityAgentStatusRequest&, const DescribeSecurityAgentStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSecurityAgentStatusAsyncHandler;
+			typedef Outcome<Error, Model::DisableFirewallRuleResult> DisableFirewallRuleOutcome;
+			typedef std::future<DisableFirewallRuleOutcome> DisableFirewallRuleOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::DisableFirewallRuleRequest&, const DisableFirewallRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DisableFirewallRuleAsyncHandler;
+			typedef Outcome<Error, Model::EnableFirewallRuleResult> EnableFirewallRuleOutcome;
+			typedef std::future<EnableFirewallRuleOutcome> EnableFirewallRuleOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::EnableFirewallRuleRequest&, const EnableFirewallRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> EnableFirewallRuleAsyncHandler;
 			typedef Outcome<Error, Model::InstallCloudAssistantResult> InstallCloudAssistantOutcome;
 			typedef std::future<InstallCloudAssistantOutcome> InstallCloudAssistantOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::InstallCloudAssistantRequest&, const InstallCloudAssistantOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallCloudAssistantAsyncHandler;
+			typedef Outcome<Error, Model::InstallCloudMonitorAgentResult> InstallCloudMonitorAgentOutcome;
+			typedef std::future<InstallCloudMonitorAgentOutcome> InstallCloudMonitorAgentOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::InstallCloudMonitorAgentRequest&, const InstallCloudMonitorAgentOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> InstallCloudMonitorAgentAsyncHandler;
+			typedef Outcome<Error, Model::ListCustomImagesResult> ListCustomImagesOutcome;
+			typedef std::future<ListCustomImagesOutcome> ListCustomImagesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::ListCustomImagesRequest&, const ListCustomImagesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListCustomImagesAsyncHandler;
 			typedef Outcome<Error, Model::ListDisksResult> ListDisksOutcome;
 			typedef std::future<ListDisksOutcome> ListDisksOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::ListDisksRequest&, const ListDisksOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListDisksAsyncHandler;
@@ -182,6 +270,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListInstancePlansModificationResult> ListInstancePlansModificationOutcome;
 			typedef std::future<ListInstancePlansModificationOutcome> ListInstancePlansModificationOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::ListInstancePlansModificationRequest&, const ListInstancePlansModificationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancePlansModificationAsyncHandler;
+			typedef Outcome<Error, Model::ListInstanceStatusResult> ListInstanceStatusOutcome;
+			typedef std::future<ListInstanceStatusOutcome> ListInstanceStatusOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::ListInstanceStatusRequest&, const ListInstanceStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstanceStatusAsyncHandler;
 			typedef Outcome<Error, Model::ListInstancesResult> ListInstancesOutcome;
 			typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::ListInstancesRequest&, const ListInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancesAsyncHandler;
@@ -206,12 +297,21 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDatabaseInstanceParameterResult> ModifyDatabaseInstanceParameterOutcome;
 			typedef std::future<ModifyDatabaseInstanceParameterOutcome> ModifyDatabaseInstanceParameterOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::ModifyDatabaseInstanceParameterRequest&, const ModifyDatabaseInstanceParameterOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatabaseInstanceParameterAsyncHandler;
+			typedef Outcome<Error, Model::ModifyFirewallRuleResult> ModifyFirewallRuleOutcome;
+			typedef std::future<ModifyFirewallRuleOutcome> ModifyFirewallRuleOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::ModifyFirewallRuleRequest&, const ModifyFirewallRuleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFirewallRuleAsyncHandler;
 			typedef Outcome<Error, Model::ModifyImageShareStatusResult> ModifyImageShareStatusOutcome;
 			typedef std::future<ModifyImageShareStatusOutcome> ModifyImageShareStatusOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::ModifyImageShareStatusRequest&, const ModifyImageShareStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageShareStatusAsyncHandler;
+			typedef Outcome<Error, Model::ModifyInstanceVncPasswordResult> ModifyInstanceVncPasswordOutcome;
+			typedef std::future<ModifyInstanceVncPasswordOutcome> ModifyInstanceVncPasswordOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::ModifyInstanceVncPasswordRequest&, const ModifyInstanceVncPasswordOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceVncPasswordAsyncHandler;
 			typedef Outcome<Error, Model::RebootInstanceResult> RebootInstanceOutcome;
 			typedef std::future<RebootInstanceOutcome> RebootInstanceOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::RebootInstanceRequest&, const RebootInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstanceAsyncHandler;
+			typedef Outcome<Error, Model::RebootInstancesResult> RebootInstancesOutcome;
+			typedef std::future<RebootInstancesOutcome> RebootInstancesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::RebootInstancesRequest&, const RebootInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RebootInstancesAsyncHandler;
 			typedef Outcome<Error, Model::ReleasePublicConnectionResult> ReleasePublicConnectionOutcome;
 			typedef std::future<ReleasePublicConnectionOutcome> ReleasePublicConnectionOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::ReleasePublicConnectionRequest&, const ReleasePublicConnectionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ReleasePublicConnectionAsyncHandler;
@@ -239,18 +339,33 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StartInstanceResult> StartInstanceOutcome;
 			typedef std::future<StartInstanceOutcome> StartInstanceOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::StartInstanceRequest&, const StartInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartInstanceAsyncHandler;
+			typedef Outcome<Error, Model::StartInstancesResult> StartInstancesOutcome;
+			typedef std::future<StartInstancesOutcome> StartInstancesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::StartInstancesRequest&, const StartInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartInstancesAsyncHandler;
 			typedef Outcome<Error, Model::StopDatabaseInstanceResult> StopDatabaseInstanceOutcome;
 			typedef std::future<StopDatabaseInstanceOutcome> StopDatabaseInstanceOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::StopDatabaseInstanceRequest&, const StopDatabaseInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopDatabaseInstanceAsyncHandler;
 			typedef Outcome<Error, Model::StopInstanceResult> StopInstanceOutcome;
 			typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::StopInstanceRequest&, const StopInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopInstanceAsyncHandler;
+			typedef Outcome<Error, Model::StopInstancesResult> StopInstancesOutcome;
+			typedef std::future<StopInstancesOutcome> StopInstancesOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::StopInstancesRequest&, const StopInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopInstancesAsyncHandler;
+			typedef Outcome<Error, Model::UpdateDiskAttributeResult> UpdateDiskAttributeOutcome;
+			typedef std::future<UpdateDiskAttributeOutcome> UpdateDiskAttributeOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::UpdateDiskAttributeRequest&, const UpdateDiskAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateDiskAttributeAsyncHandler;
 			typedef Outcome<Error, Model::UpdateInstanceAttributeResult> UpdateInstanceAttributeOutcome;
 			typedef std::future<UpdateInstanceAttributeOutcome> UpdateInstanceAttributeOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::UpdateInstanceAttributeRequest&, const UpdateInstanceAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateInstanceAttributeAsyncHandler;
+			typedef Outcome<Error, Model::UpdateSnapshotAttributeResult> UpdateSnapshotAttributeOutcome;
+			typedef std::future<UpdateSnapshotAttributeOutcome> UpdateSnapshotAttributeOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::UpdateSnapshotAttributeRequest&, const UpdateSnapshotAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateSnapshotAttributeAsyncHandler;
 			typedef Outcome<Error, Model::UpgradeInstanceResult> UpgradeInstanceOutcome;
 			typedef std::future<UpgradeInstanceOutcome> UpgradeInstanceOutcomeCallable;
 			typedef std::function<void(const SWAS_OPENClient*, const Model::UpgradeInstanceRequest&, const UpgradeInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeInstanceAsyncHandler;
+			typedef Outcome<Error, Model::UploadInstanceKeyPairResult> UploadInstanceKeyPairOutcome;
+			typedef std::future<UploadInstanceKeyPairOutcome> UploadInstanceKeyPairOutcomeCallable;
+			typedef std::function<void(const SWAS_OPENClient*, const Model::UploadInstanceKeyPairRequest&, const UploadInstanceKeyPairOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UploadInstanceKeyPairAsyncHandler;
 
 			SWAS_OPENClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			SWAS_OPENClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -265,6 +380,12 @@ namespace AlibabaCloud
 			CreateFirewallRuleOutcome createFirewallRule(const Model::CreateFirewallRuleRequest &request)const;
 			void createFirewallRuleAsync(const Model::CreateFirewallRuleRequest& request, const CreateFirewallRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateFirewallRuleOutcomeCallable createFirewallRuleCallable(const Model::CreateFirewallRuleRequest& request) const;
+			CreateFirewallRulesOutcome createFirewallRules(const Model::CreateFirewallRulesRequest &request)const;
+			void createFirewallRulesAsync(const Model::CreateFirewallRulesRequest& request, const CreateFirewallRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateFirewallRulesOutcomeCallable createFirewallRulesCallable(const Model::CreateFirewallRulesRequest& request) const;
+			CreateInstanceKeyPairOutcome createInstanceKeyPair(const Model::CreateInstanceKeyPairRequest &request)const;
+			void createInstanceKeyPairAsync(const Model::CreateInstanceKeyPairRequest& request, const CreateInstanceKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateInstanceKeyPairOutcomeCallable createInstanceKeyPairCallable(const Model::CreateInstanceKeyPairRequest& request) const;
 			CreateInstancesOutcome createInstances(const Model::CreateInstancesRequest &request)const;
 			void createInstancesAsync(const Model::CreateInstancesRequest& request, const CreateInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateInstancesOutcomeCallable createInstancesCallable(const Model::CreateInstancesRequest& request) const;
@@ -277,12 +398,21 @@ namespace AlibabaCloud
 			DeleteFirewallRuleOutcome deleteFirewallRule(const Model::DeleteFirewallRuleRequest &request)const;
 			void deleteFirewallRuleAsync(const Model::DeleteFirewallRuleRequest& request, const DeleteFirewallRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteFirewallRuleOutcomeCallable deleteFirewallRuleCallable(const Model::DeleteFirewallRuleRequest& request) const;
+			DeleteInstanceKeyPairOutcome deleteInstanceKeyPair(const Model::DeleteInstanceKeyPairRequest &request)const;
+			void deleteInstanceKeyPairAsync(const Model::DeleteInstanceKeyPairRequest& request, const DeleteInstanceKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteInstanceKeyPairOutcomeCallable deleteInstanceKeyPairCallable(const Model::DeleteInstanceKeyPairRequest& request) const;
 			DeleteSnapshotOutcome deleteSnapshot(const Model::DeleteSnapshotRequest &request)const;
 			void deleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteSnapshotOutcomeCallable deleteSnapshotCallable(const Model::DeleteSnapshotRequest& request) const;
+			DeleteSnapshotsOutcome deleteSnapshots(const Model::DeleteSnapshotsRequest &request)const;
+			void deleteSnapshotsAsync(const Model::DeleteSnapshotsRequest& request, const DeleteSnapshotsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteSnapshotsOutcomeCallable deleteSnapshotsCallable(const Model::DeleteSnapshotsRequest& request) const;
 			DescribeCloudAssistantStatusOutcome describeCloudAssistantStatus(const Model::DescribeCloudAssistantStatusRequest &request)const;
 			void describeCloudAssistantStatusAsync(const Model::DescribeCloudAssistantStatusRequest& request, const DescribeCloudAssistantStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCloudAssistantStatusOutcomeCallable describeCloudAssistantStatusCallable(const Model::DescribeCloudAssistantStatusRequest& request) const;
+			DescribeCloudMonitorAgentStatusesOutcome describeCloudMonitorAgentStatuses(const Model::DescribeCloudMonitorAgentStatusesRequest &request)const;
+			void describeCloudMonitorAgentStatusesAsync(const Model::DescribeCloudMonitorAgentStatusesRequest& request, const DescribeCloudMonitorAgentStatusesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeCloudMonitorAgentStatusesOutcomeCallable describeCloudMonitorAgentStatusesCallable(const Model::DescribeCloudMonitorAgentStatusesRequest& request) const;
 			DescribeDatabaseErrorLogsOutcome describeDatabaseErrorLogs(const Model::DescribeDatabaseErrorLogsRequest &request)const;
 			void describeDatabaseErrorLogsAsync(const Model::DescribeDatabaseErrorLogsRequest& request, const DescribeDatabaseErrorLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDatabaseErrorLogsOutcomeCallable describeDatabaseErrorLogsCallable(const Model::DescribeDatabaseErrorLogsRequest& request) const;
@@ -298,15 +428,42 @@ namespace AlibabaCloud
 			DescribeDatabaseSlowLogRecordsOutcome describeDatabaseSlowLogRecords(const Model::DescribeDatabaseSlowLogRecordsRequest &request)const;
 			void describeDatabaseSlowLogRecordsAsync(const Model::DescribeDatabaseSlowLogRecordsRequest& request, const DescribeDatabaseSlowLogRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeDatabaseSlowLogRecordsOutcomeCallable describeDatabaseSlowLogRecordsCallable(const Model::DescribeDatabaseSlowLogRecordsRequest& request) const;
+			DescribeInstanceKeyPairOutcome describeInstanceKeyPair(const Model::DescribeInstanceKeyPairRequest &request)const;
+			void describeInstanceKeyPairAsync(const Model::DescribeInstanceKeyPairRequest& request, const DescribeInstanceKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceKeyPairOutcomeCallable describeInstanceKeyPairCallable(const Model::DescribeInstanceKeyPairRequest& request) const;
+			DescribeInstancePasswordsSettingOutcome describeInstancePasswordsSetting(const Model::DescribeInstancePasswordsSettingRequest &request)const;
+			void describeInstancePasswordsSettingAsync(const Model::DescribeInstancePasswordsSettingRequest& request, const DescribeInstancePasswordsSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstancePasswordsSettingOutcomeCallable describeInstancePasswordsSettingCallable(const Model::DescribeInstancePasswordsSettingRequest& request) const;
+			DescribeInstanceVncUrlOutcome describeInstanceVncUrl(const Model::DescribeInstanceVncUrlRequest &request)const;
+			void describeInstanceVncUrlAsync(const Model::DescribeInstanceVncUrlRequest& request, const DescribeInstanceVncUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeInstanceVncUrlOutcomeCallable describeInstanceVncUrlCallable(const Model::DescribeInstanceVncUrlRequest& request) const;
 			DescribeInvocationResultOutcome describeInvocationResult(const Model::DescribeInvocationResultRequest &request)const;
 			void describeInvocationResultAsync(const Model::DescribeInvocationResultRequest& request, const DescribeInvocationResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInvocationResultOutcomeCallable describeInvocationResultCallable(const Model::DescribeInvocationResultRequest& request) const;
 			DescribeInvocationsOutcome describeInvocations(const Model::DescribeInvocationsRequest &request)const;
 			void describeInvocationsAsync(const Model::DescribeInvocationsRequest& request, const DescribeInvocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeInvocationsOutcomeCallable describeInvocationsCallable(const Model::DescribeInvocationsRequest& request) const;
+			DescribeMonitorDataOutcome describeMonitorData(const Model::DescribeMonitorDataRequest &request)const;
+			void describeMonitorDataAsync(const Model::DescribeMonitorDataRequest& request, const DescribeMonitorDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeMonitorDataOutcomeCallable describeMonitorDataCallable(const Model::DescribeMonitorDataRequest& request) const;
+			DescribeSecurityAgentStatusOutcome describeSecurityAgentStatus(const Model::DescribeSecurityAgentStatusRequest &request)const;
+			void describeSecurityAgentStatusAsync(const Model::DescribeSecurityAgentStatusRequest& request, const DescribeSecurityAgentStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeSecurityAgentStatusOutcomeCallable describeSecurityAgentStatusCallable(const Model::DescribeSecurityAgentStatusRequest& request) const;
+			DisableFirewallRuleOutcome disableFirewallRule(const Model::DisableFirewallRuleRequest &request)const;
+			void disableFirewallRuleAsync(const Model::DisableFirewallRuleRequest& request, const DisableFirewallRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DisableFirewallRuleOutcomeCallable disableFirewallRuleCallable(const Model::DisableFirewallRuleRequest& request) const;
+			EnableFirewallRuleOutcome enableFirewallRule(const Model::EnableFirewallRuleRequest &request)const;
+			void enableFirewallRuleAsync(const Model::EnableFirewallRuleRequest& request, const EnableFirewallRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			EnableFirewallRuleOutcomeCallable enableFirewallRuleCallable(const Model::EnableFirewallRuleRequest& request) const;
 			InstallCloudAssistantOutcome installCloudAssistant(const Model::InstallCloudAssistantRequest &request)const;
 			void installCloudAssistantAsync(const Model::InstallCloudAssistantRequest& request, const InstallCloudAssistantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			InstallCloudAssistantOutcomeCallable installCloudAssistantCallable(const Model::InstallCloudAssistantRequest& request) const;
+			InstallCloudMonitorAgentOutcome installCloudMonitorAgent(const Model::InstallCloudMonitorAgentRequest &request)const;
+			void installCloudMonitorAgentAsync(const Model::InstallCloudMonitorAgentRequest& request, const InstallCloudMonitorAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			InstallCloudMonitorAgentOutcomeCallable installCloudMonitorAgentCallable(const Model::InstallCloudMonitorAgentRequest& request) const;
+			ListCustomImagesOutcome listCustomImages(const Model::ListCustomImagesRequest &request)const;
+			void listCustomImagesAsync(const Model::ListCustomImagesRequest& request, const ListCustomImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListCustomImagesOutcomeCallable listCustomImagesCallable(const Model::ListCustomImagesRequest& request) const;
 			ListDisksOutcome listDisks(const Model::ListDisksRequest &request)const;
 			void listDisksAsync(const Model::ListDisksRequest& request, const ListDisksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListDisksOutcomeCallable listDisksCallable(const Model::ListDisksRequest& request) const;
@@ -319,6 +476,9 @@ namespace AlibabaCloud
 			ListInstancePlansModificationOutcome listInstancePlansModification(const Model::ListInstancePlansModificationRequest &request)const;
 			void listInstancePlansModificationAsync(const Model::ListInstancePlansModificationRequest& request, const ListInstancePlansModificationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstancePlansModificationOutcomeCallable listInstancePlansModificationCallable(const Model::ListInstancePlansModificationRequest& request) const;
+			ListInstanceStatusOutcome listInstanceStatus(const Model::ListInstanceStatusRequest &request)const;
+			void listInstanceStatusAsync(const Model::ListInstanceStatusRequest& request, const ListInstanceStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListInstanceStatusOutcomeCallable listInstanceStatusCallable(const Model::ListInstanceStatusRequest& request) const;
 			ListInstancesOutcome listInstances(const Model::ListInstancesRequest &request)const;
 			void listInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstancesOutcomeCallable listInstancesCallable(const Model::ListInstancesRequest& request) const;
@@ -343,12 +503,21 @@ namespace AlibabaCloud
 			ModifyDatabaseInstanceParameterOutcome modifyDatabaseInstanceParameter(const Model::ModifyDatabaseInstanceParameterRequest &request)const;
 			void modifyDatabaseInstanceParameterAsync(const Model::ModifyDatabaseInstanceParameterRequest& request, const ModifyDatabaseInstanceParameterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDatabaseInstanceParameterOutcomeCallable modifyDatabaseInstanceParameterCallable(const Model::ModifyDatabaseInstanceParameterRequest& request) const;
+			ModifyFirewallRuleOutcome modifyFirewallRule(const Model::ModifyFirewallRuleRequest &request)const;
+			void modifyFirewallRuleAsync(const Model::ModifyFirewallRuleRequest& request, const ModifyFirewallRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyFirewallRuleOutcomeCallable modifyFirewallRuleCallable(const Model::ModifyFirewallRuleRequest& request) const;
 			ModifyImageShareStatusOutcome modifyImageShareStatus(const Model::ModifyImageShareStatusRequest &request)const;
 			void modifyImageShareStatusAsync(const Model::ModifyImageShareStatusRequest& request, const ModifyImageShareStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyImageShareStatusOutcomeCallable modifyImageShareStatusCallable(const Model::ModifyImageShareStatusRequest& request) const;
+			ModifyInstanceVncPasswordOutcome modifyInstanceVncPassword(const Model::ModifyInstanceVncPasswordRequest &request)const;
+			void modifyInstanceVncPasswordAsync(const Model::ModifyInstanceVncPasswordRequest& request, const ModifyInstanceVncPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyInstanceVncPasswordOutcomeCallable modifyInstanceVncPasswordCallable(const Model::ModifyInstanceVncPasswordRequest& request) const;
 			RebootInstanceOutcome rebootInstance(const Model::RebootInstanceRequest &request)const;
 			void rebootInstanceAsync(const Model::RebootInstanceRequest& request, const RebootInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RebootInstanceOutcomeCallable rebootInstanceCallable(const Model::RebootInstanceRequest& request) const;
+			RebootInstancesOutcome rebootInstances(const Model::RebootInstancesRequest &request)const;
+			void rebootInstancesAsync(const Model::RebootInstancesRequest& request, const RebootInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RebootInstancesOutcomeCallable rebootInstancesCallable(const Model::RebootInstancesRequest& request) const;
 			ReleasePublicConnectionOutcome releasePublicConnection(const Model::ReleasePublicConnectionRequest &request)const;
 			void releasePublicConnectionAsync(const Model::ReleasePublicConnectionRequest& request, const ReleasePublicConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ReleasePublicConnectionOutcomeCallable releasePublicConnectionCallable(const Model::ReleasePublicConnectionRequest& request) const;
@@ -376,18 +545,33 @@ namespace AlibabaCloud
 			StartInstanceOutcome startInstance(const Model::StartInstanceRequest &request)const;
 			void startInstanceAsync(const Model::StartInstanceRequest& request, const StartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartInstanceOutcomeCallable startInstanceCallable(const Model::StartInstanceRequest& request) const;
+			StartInstancesOutcome startInstances(const Model::StartInstancesRequest &request)const;
+			void startInstancesAsync(const Model::StartInstancesRequest& request, const StartInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StartInstancesOutcomeCallable startInstancesCallable(const Model::StartInstancesRequest& request) const;
 			StopDatabaseInstanceOutcome stopDatabaseInstance(const Model::StopDatabaseInstanceRequest &request)const;
 			void stopDatabaseInstanceAsync(const Model::StopDatabaseInstanceRequest& request, const StopDatabaseInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopDatabaseInstanceOutcomeCallable stopDatabaseInstanceCallable(const Model::StopDatabaseInstanceRequest& request) const;
 			StopInstanceOutcome stopInstance(const Model::StopInstanceRequest &request)const;
 			void stopInstanceAsync(const Model::StopInstanceRequest& request, const StopInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopInstanceOutcomeCallable stopInstanceCallable(const Model::StopInstanceRequest& request) const;
+			StopInstancesOutcome stopInstances(const Model::StopInstancesRequest &request)const;
+			void stopInstancesAsync(const Model::StopInstancesRequest& request, const StopInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			StopInstancesOutcomeCallable stopInstancesCallable(const Model::StopInstancesRequest& request) const;
+			UpdateDiskAttributeOutcome updateDiskAttribute(const Model::UpdateDiskAttributeRequest &request)const;
+			void updateDiskAttributeAsync(const Model::UpdateDiskAttributeRequest& request, const UpdateDiskAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateDiskAttributeOutcomeCallable updateDiskAttributeCallable(const Model::UpdateDiskAttributeRequest& request) const;
 			UpdateInstanceAttributeOutcome updateInstanceAttribute(const Model::UpdateInstanceAttributeRequest &request)const;
 			void updateInstanceAttributeAsync(const Model::UpdateInstanceAttributeRequest& request, const UpdateInstanceAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateInstanceAttributeOutcomeCallable updateInstanceAttributeCallable(const Model::UpdateInstanceAttributeRequest& request) const;
+			UpdateSnapshotAttributeOutcome updateSnapshotAttribute(const Model::UpdateSnapshotAttributeRequest &request)const;
+			void updateSnapshotAttributeAsync(const Model::UpdateSnapshotAttributeRequest& request, const UpdateSnapshotAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UpdateSnapshotAttributeOutcomeCallable updateSnapshotAttributeCallable(const Model::UpdateSnapshotAttributeRequest& request) const;
 			UpgradeInstanceOutcome upgradeInstance(const Model::UpgradeInstanceRequest &request)const;
 			void upgradeInstanceAsync(const Model::UpgradeInstanceRequest& request, const UpgradeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpgradeInstanceOutcomeCallable upgradeInstanceCallable(const Model::UpgradeInstanceRequest& request) const;
+			UploadInstanceKeyPairOutcome uploadInstanceKeyPair(const Model::UploadInstanceKeyPairRequest &request)const;
+			void uploadInstanceKeyPairAsync(const Model::UploadInstanceKeyPairRequest& request, const UploadInstanceKeyPairAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			UploadInstanceKeyPairOutcomeCallable uploadInstanceKeyPairCallable(const Model::UploadInstanceKeyPairRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;
