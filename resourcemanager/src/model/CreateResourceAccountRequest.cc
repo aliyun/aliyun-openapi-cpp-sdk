@@ -37,15 +37,6 @@ void CreateResourceAccountRequest::setTag(const std::vector<CreateResourceAccoun
   }
 }
 
-std::string CreateResourceAccountRequest::getVerificationCode() const {
-  return verificationCode_;
-}
-
-void CreateResourceAccountRequest::setVerificationCode(const std::string &verificationCode) {
-  verificationCode_ = verificationCode;
-  setParameter(std::string("VerificationCode"), verificationCode);
-}
-
 std::string CreateResourceAccountRequest::getAccountNamePrefix() const {
   return accountNamePrefix_;
 }
@@ -53,24 +44,6 @@ std::string CreateResourceAccountRequest::getAccountNamePrefix() const {
 void CreateResourceAccountRequest::setAccountNamePrefix(const std::string &accountNamePrefix) {
   accountNamePrefix_ = accountNamePrefix;
   setParameter(std::string("AccountNamePrefix"), accountNamePrefix);
-}
-
-std::string CreateResourceAccountRequest::getInheritSecureMobilePhoneFrom() const {
-  return inheritSecureMobilePhoneFrom_;
-}
-
-void CreateResourceAccountRequest::setInheritSecureMobilePhoneFrom(const std::string &inheritSecureMobilePhoneFrom) {
-  inheritSecureMobilePhoneFrom_ = inheritSecureMobilePhoneFrom;
-  setParameter(std::string("InheritSecureMobilePhoneFrom"), inheritSecureMobilePhoneFrom);
-}
-
-std::string CreateResourceAccountRequest::getSecureMobilePhone() const {
-  return secureMobilePhone_;
-}
-
-void CreateResourceAccountRequest::setSecureMobilePhone(const std::string &secureMobilePhone) {
-  secureMobilePhone_ = secureMobilePhone;
-  setParameter(std::string("SecureMobilePhone"), secureMobilePhone);
 }
 
 std::string CreateResourceAccountRequest::getResellAccountType() const {

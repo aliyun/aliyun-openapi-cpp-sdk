@@ -30,8 +30,6 @@ class ALIBABACLOUD_RESOURCEMANAGER_EXPORT BindSecureMobilePhoneRequest : public 
 public:
 	BindSecureMobilePhoneRequest();
 	~BindSecureMobilePhoneRequest();
-	std::string getInheritSecureMobilePhoneFrom() const;
-	void setInheritSecureMobilePhoneFrom(const std::string &inheritSecureMobilePhoneFrom);
 	std::string getSecureMobilePhone() const;
 	void setSecureMobilePhone(const std::string &secureMobilePhone);
 	std::string getAccountId() const;
@@ -40,7 +38,6 @@ public:
 	void setVerificationCode(const std::string &verificationCode);
 
 private:
-	std::string inheritSecureMobilePhoneFrom_;
 	std::string secureMobilePhone_;
 	std::string accountId_;
 	std::string verificationCode_;

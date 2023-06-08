@@ -31,21 +31,21 @@ ResourceManagerClient::ResourceManagerClient(const Credentials &credentials, con
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "resourcemanager");
 }
 
 ResourceManagerClient::ResourceManagerClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "resourcemanager");
 }
 
 ResourceManagerClient::ResourceManagerClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "resourcemanager");
 }
 
 ResourceManagerClient::~ResourceManagerClient()
@@ -1737,42 +1737,6 @@ ResourceManagerClient::GetResourceGroupOutcomeCallable ResourceManagerClient::ge
 			[this, request]()
 			{
 			return this->getResourceGroup(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ResourceManagerClient::GetResourceGroupListAclModeOutcome ResourceManagerClient::getResourceGroupListAclMode(const GetResourceGroupListAclModeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetResourceGroupListAclModeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetResourceGroupListAclModeOutcome(GetResourceGroupListAclModeResult(outcome.result()));
-	else
-		return GetResourceGroupListAclModeOutcome(outcome.error());
-}
-
-void ResourceManagerClient::getResourceGroupListAclModeAsync(const GetResourceGroupListAclModeRequest& request, const GetResourceGroupListAclModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getResourceGroupListAclMode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ResourceManagerClient::GetResourceGroupListAclModeOutcomeCallable ResourceManagerClient::getResourceGroupListAclModeCallable(const GetResourceGroupListAclModeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetResourceGroupListAclModeOutcome()>>(
-			[this, request]()
-			{
-			return this->getResourceGroupListAclMode(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

@@ -116,8 +116,6 @@
 #include "model/GetResourceDirectoryResult.h"
 #include "model/GetResourceGroupRequest.h"
 #include "model/GetResourceGroupResult.h"
-#include "model/GetResourceGroupListAclModeRequest.h"
-#include "model/GetResourceGroupListAclModeResult.h"
 #include "model/GetRoleRequest.h"
 #include "model/GetRoleResult.h"
 #include "model/GetServiceLinkedRoleDeletionStatusRequest.h"
@@ -356,9 +354,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetResourceGroupResult> GetResourceGroupOutcome;
 			typedef std::future<GetResourceGroupOutcome> GetResourceGroupOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::GetResourceGroupRequest&, const GetResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceGroupAsyncHandler;
-			typedef Outcome<Error, Model::GetResourceGroupListAclModeResult> GetResourceGroupListAclModeOutcome;
-			typedef std::future<GetResourceGroupListAclModeOutcome> GetResourceGroupListAclModeOutcomeCallable;
-			typedef std::function<void(const ResourceManagerClient*, const Model::GetResourceGroupListAclModeRequest&, const GetResourceGroupListAclModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetResourceGroupListAclModeAsyncHandler;
 			typedef Outcome<Error, Model::GetRoleResult> GetRoleOutcome;
 			typedef std::future<GetRoleOutcome> GetRoleOutcomeCallable;
 			typedef std::function<void(const ResourceManagerClient*, const Model::GetRoleRequest&, const GetRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetRoleAsyncHandler;
@@ -637,9 +632,6 @@ namespace AlibabaCloud
 			GetResourceGroupOutcome getResourceGroup(const Model::GetResourceGroupRequest &request)const;
 			void getResourceGroupAsync(const Model::GetResourceGroupRequest& request, const GetResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetResourceGroupOutcomeCallable getResourceGroupCallable(const Model::GetResourceGroupRequest& request) const;
-			GetResourceGroupListAclModeOutcome getResourceGroupListAclMode(const Model::GetResourceGroupListAclModeRequest &request)const;
-			void getResourceGroupListAclModeAsync(const Model::GetResourceGroupListAclModeRequest& request, const GetResourceGroupListAclModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetResourceGroupListAclModeOutcomeCallable getResourceGroupListAclModeCallable(const Model::GetResourceGroupListAclModeRequest& request) const;
 			GetRoleOutcome getRole(const Model::GetRoleRequest &request)const;
 			void getRoleAsync(const Model::GetRoleRequest& request, const GetRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetRoleOutcomeCallable getRoleCallable(const Model::GetRoleRequest& request) const;

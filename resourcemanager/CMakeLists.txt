@@ -115,8 +115,6 @@ set(resourcemanager_public_header_model
 	include/alibabacloud/resourcemanager/model/GetResourceDirectoryResult.h
 	include/alibabacloud/resourcemanager/model/GetResourceGroupRequest.h
 	include/alibabacloud/resourcemanager/model/GetResourceGroupResult.h
-	include/alibabacloud/resourcemanager/model/GetResourceGroupListAclModeRequest.h
-	include/alibabacloud/resourcemanager/model/GetResourceGroupListAclModeResult.h
 	include/alibabacloud/resourcemanager/model/GetRoleRequest.h
 	include/alibabacloud/resourcemanager/model/GetRoleResult.h
 	include/alibabacloud/resourcemanager/model/GetServiceLinkedRoleDeletionStatusRequest.h
@@ -302,8 +300,6 @@ set(resourcemanager_src
 	src/model/GetResourceDirectoryResult.cc
 	src/model/GetResourceGroupRequest.cc
 	src/model/GetResourceGroupResult.cc
-	src/model/GetResourceGroupListAclModeRequest.cc
-	src/model/GetResourceGroupListAclModeResult.cc
 	src/model/GetRoleRequest.cc
 	src/model/GetRoleResult.cc
 	src/model/GetServiceLinkedRoleDeletionStatusRequest.cc
