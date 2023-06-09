@@ -555,6 +555,42 @@ AvatarClient::SubmitAudioTo2DAvatarVideoTaskOutcomeCallable AvatarClient::submit
 	return task->get_future();
 }
 
+AvatarClient::SubmitAudioTo3DAvatarVideoTaskOutcome AvatarClient::submitAudioTo3DAvatarVideoTask(const SubmitAudioTo3DAvatarVideoTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitAudioTo3DAvatarVideoTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitAudioTo3DAvatarVideoTaskOutcome(SubmitAudioTo3DAvatarVideoTaskResult(outcome.result()));
+	else
+		return SubmitAudioTo3DAvatarVideoTaskOutcome(outcome.error());
+}
+
+void AvatarClient::submitAudioTo3DAvatarVideoTaskAsync(const SubmitAudioTo3DAvatarVideoTaskRequest& request, const SubmitAudioTo3DAvatarVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitAudioTo3DAvatarVideoTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::SubmitAudioTo3DAvatarVideoTaskOutcomeCallable AvatarClient::submitAudioTo3DAvatarVideoTaskCallable(const SubmitAudioTo3DAvatarVideoTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitAudioTo3DAvatarVideoTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->submitAudioTo3DAvatarVideoTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AvatarClient::SubmitTextTo2DAvatarVideoTaskOutcome AvatarClient::submitTextTo2DAvatarVideoTask(const SubmitTextTo2DAvatarVideoTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

@@ -50,6 +50,8 @@
 #include "model/StopInstanceResult.h"
 #include "model/SubmitAudioTo2DAvatarVideoTaskRequest.h"
 #include "model/SubmitAudioTo2DAvatarVideoTaskResult.h"
+#include "model/SubmitAudioTo3DAvatarVideoTaskRequest.h"
+#include "model/SubmitAudioTo3DAvatarVideoTaskResult.h"
 #include "model/SubmitTextTo2DAvatarVideoTaskRequest.h"
 #include "model/SubmitTextTo2DAvatarVideoTaskResult.h"
 #include "model/SubmitTextTo3DAvatarVideoTaskRequest.h"
@@ -105,6 +107,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SubmitAudioTo2DAvatarVideoTaskResult> SubmitAudioTo2DAvatarVideoTaskOutcome;
 			typedef std::future<SubmitAudioTo2DAvatarVideoTaskOutcome> SubmitAudioTo2DAvatarVideoTaskOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::SubmitAudioTo2DAvatarVideoTaskRequest&, const SubmitAudioTo2DAvatarVideoTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitAudioTo2DAvatarVideoTaskAsyncHandler;
+			typedef Outcome<Error, Model::SubmitAudioTo3DAvatarVideoTaskResult> SubmitAudioTo3DAvatarVideoTaskOutcome;
+			typedef std::future<SubmitAudioTo3DAvatarVideoTaskOutcome> SubmitAudioTo3DAvatarVideoTaskOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::SubmitAudioTo3DAvatarVideoTaskRequest&, const SubmitAudioTo3DAvatarVideoTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitAudioTo3DAvatarVideoTaskAsyncHandler;
 			typedef Outcome<Error, Model::SubmitTextTo2DAvatarVideoTaskResult> SubmitTextTo2DAvatarVideoTaskOutcome;
 			typedef std::future<SubmitTextTo2DAvatarVideoTaskOutcome> SubmitTextTo2DAvatarVideoTaskOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::SubmitTextTo2DAvatarVideoTaskRequest&, const SubmitTextTo2DAvatarVideoTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTextTo2DAvatarVideoTaskAsyncHandler;
@@ -158,6 +163,9 @@ namespace AlibabaCloud
 			SubmitAudioTo2DAvatarVideoTaskOutcome submitAudioTo2DAvatarVideoTask(const Model::SubmitAudioTo2DAvatarVideoTaskRequest &request)const;
 			void submitAudioTo2DAvatarVideoTaskAsync(const Model::SubmitAudioTo2DAvatarVideoTaskRequest& request, const SubmitAudioTo2DAvatarVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitAudioTo2DAvatarVideoTaskOutcomeCallable submitAudioTo2DAvatarVideoTaskCallable(const Model::SubmitAudioTo2DAvatarVideoTaskRequest& request) const;
+			SubmitAudioTo3DAvatarVideoTaskOutcome submitAudioTo3DAvatarVideoTask(const Model::SubmitAudioTo3DAvatarVideoTaskRequest &request)const;
+			void submitAudioTo3DAvatarVideoTaskAsync(const Model::SubmitAudioTo3DAvatarVideoTaskRequest& request, const SubmitAudioTo3DAvatarVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitAudioTo3DAvatarVideoTaskOutcomeCallable submitAudioTo3DAvatarVideoTaskCallable(const Model::SubmitAudioTo3DAvatarVideoTaskRequest& request) const;
 			SubmitTextTo2DAvatarVideoTaskOutcome submitTextTo2DAvatarVideoTask(const Model::SubmitTextTo2DAvatarVideoTaskRequest &request)const;
 			void submitTextTo2DAvatarVideoTaskAsync(const Model::SubmitTextTo2DAvatarVideoTaskRequest& request, const SubmitTextTo2DAvatarVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitTextTo2DAvatarVideoTaskOutcomeCallable submitTextTo2DAvatarVideoTaskCallable(const Model::SubmitTextTo2DAvatarVideoTaskRequest& request) const;
