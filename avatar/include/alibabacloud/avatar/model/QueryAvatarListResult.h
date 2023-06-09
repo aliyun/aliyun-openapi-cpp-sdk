@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_AVATAR_MODEL_GETVIDEOTASKINFORESULT_H_
-#define ALIBABACLOUD_AVATAR_MODEL_GETVIDEOTASKINFORESULT_H_
+#ifndef ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARLISTRESULT_H_
+#define ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARLISTRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,50 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_AVATAR_EXPORT GetVideoTaskInfoResult : public ServiceResult
+			class ALIBABACLOUD_AVATAR_EXPORT QueryAvatarListResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct TaskResult
+					struct ListItem
 					{
-						int videoDuration;
-						std::string failCode;
-						std::string subtitlesUrl;
-						std::string wordSubtitlesUrl;
-						std::string failReason;
-						std::string videoUrl;
+						struct SupportedResolutions
+						{
+							struct OfflineItem
+							{
+								std::string desc;
+								int height;
+								int width;
+							};
+							struct OnlineItem
+							{
+								std::string desc;
+								int height;
+								int width;
+							};
+							std::vector<OfflineItem> offline;
+							std::vector<OnlineItem> online;
+						};
+						std::string description;
+						SupportedResolutions supportedResolutions;
+						std::string portrait;
+						std::string avatarType;
+						std::string modelType;
+						std::string image;
+						std::string code;
+						std::string name;
 					};
-					std::string status;
-					std::string type;
-					std::string taskUuid;
-					TaskResult taskResult;
-					std::string process;
+					int totalCount;
+					int pageSize;
+					int totalPage;
+					std::vector<ListItem> list;
+					int pageNo;
 				};
 
 
-				GetVideoTaskInfoResult();
-				explicit GetVideoTaskInfoResult(const std::string &payload);
-				~GetVideoTaskInfoResult();
+				QueryAvatarListResult();
+				explicit QueryAvatarListResult(const std::string &payload);
+				~QueryAvatarListResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -71,4 +90,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_AVATAR_MODEL_GETVIDEOTASKINFORESULT_H_
+#endif // !ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARLISTRESULT_H_

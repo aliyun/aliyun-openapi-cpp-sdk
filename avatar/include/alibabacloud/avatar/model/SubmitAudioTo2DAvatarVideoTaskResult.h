@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_AVATAR_MODEL_SUBMITTEXTTOSIGNVIDEOTASKRESULT_H_
-#define ALIBABACLOUD_AVATAR_MODEL_SUBMITTEXTTOSIGNVIDEOTASKRESULT_H_
+#ifndef ALIBABACLOUD_AVATAR_MODEL_SUBMITAUDIOTO2DAVATARVIDEOTASKRESULT_H_
+#define ALIBABACLOUD_AVATAR_MODEL_SUBMITAUDIOTO2DAVATARVIDEOTASKRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,7 +29,7 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_AVATAR_EXPORT SubmitTextToSignVideoTaskResult : public ServiceResult
+			class ALIBABACLOUD_AVATAR_EXPORT SubmitAudioTo2DAvatarVideoTaskResult : public ServiceResult
 			{
 			public:
 				struct Data
@@ -38,9 +38,9 @@ namespace AlibabaCloud
 				};
 
 
-				SubmitTextToSignVideoTaskResult();
-				explicit SubmitTextToSignVideoTaskResult(const std::string &payload);
-				~SubmitTextToSignVideoTaskResult();
+				SubmitAudioTo2DAvatarVideoTaskResult();
+				explicit SubmitAudioTo2DAvatarVideoTaskResult(const std::string &payload);
+				~SubmitAudioTo2DAvatarVideoTaskResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -58,4 +58,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_AVATAR_MODEL_SUBMITTEXTTOSIGNVIDEOTASKRESULT_H_
+#endif // !ALIBABACLOUD_AVATAR_MODEL_SUBMITAUDIOTO2DAVATARVIDEOTASKRESULT_H_

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_AVATAR_MODEL_SUBMITTEXTTO2DAVATARVIDEOTASKREQUEST_H_
-#define ALIBABACLOUD_AVATAR_MODEL_SUBMITTEXTTO2DAVATARVIDEOTASKREQUEST_H_
+#ifndef ALIBABACLOUD_AVATAR_MODEL_SUBMITAUDIOTO2DAVATARVIDEOTASKREQUEST_H_
+#define ALIBABACLOUD_AVATAR_MODEL_SUBMITAUDIOTO2DAVATARVIDEOTASKREQUEST_H_
 
 #include <alibabacloud/avatar/AvatarExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,7 +26,7 @@
 namespace AlibabaCloud {
 namespace Avatar {
 namespace Model {
-class ALIBABACLOUD_AVATAR_EXPORT SubmitTextTo2DAvatarVideoTaskRequest : public RpcServiceRequest {
+class ALIBABACLOUD_AVATAR_EXPORT SubmitAudioTo2DAvatarVideoTaskRequest : public RpcServiceRequest {
 public:
 	struct App {
 		std::string appId;
@@ -34,46 +34,36 @@ public:
 	struct VideoInfo {
 		bool isAlpha;
 		std::string backgroundImageUrl;
-		bool isSubtitles;
 		int resolution;
 		int alphaFormat;
-	};
-	struct AudioInfo {
-		std::string voice;
-		int volume;
-		int speechRate;
-		int pitchRate;
 	};
 	struct AvatarInfo {
 		std::string code;
 	};
-	SubmitTextTo2DAvatarVideoTaskRequest();
-	~SubmitTextTo2DAvatarVideoTaskRequest();
+	SubmitAudioTo2DAvatarVideoTaskRequest();
+	~SubmitAudioTo2DAvatarVideoTaskRequest();
 	App getApp() const;
 	void setApp(const App &app);
 	VideoInfo getVideoInfo() const;
 	void setVideoInfo(const VideoInfo &videoInfo);
-	AudioInfo getAudioInfo() const;
-	void setAudioInfo(const AudioInfo &audioInfo);
 	AvatarInfo getAvatarInfo() const;
 	void setAvatarInfo(const AvatarInfo &avatarInfo);
 	long getTenantId() const;
 	void setTenantId(long tenantId);
-	std::string getText() const;
-	void setText(const std::string &text);
 	std::string getTitle() const;
 	void setTitle(const std::string &title);
+	std::string getUrl() const;
+	void setUrl(const std::string &url);
 
 private:
 	App app_;
 	VideoInfo videoInfo_;
-	AudioInfo audioInfo_;
 	AvatarInfo avatarInfo_;
 	long tenantId_;
-	std::string text_;
 	std::string title_;
+	std::string url_;
 };
 } // namespace Model
 } // namespace Avatar
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_AVATAR_MODEL_SUBMITTEXTTO2DAVATARVIDEOTASKREQUEST_H_
+#endif // !ALIBABACLOUD_AVATAR_MODEL_SUBMITAUDIOTO2DAVATARVIDEOTASKREQUEST_H_

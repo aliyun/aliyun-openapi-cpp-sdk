@@ -32,6 +32,10 @@
 #include "model/GetVideoTaskInfoResult.h"
 #include "model/LicenseAuthRequest.h"
 #include "model/LicenseAuthResult.h"
+#include "model/QueryAvatarRequest.h"
+#include "model/QueryAvatarResult.h"
+#include "model/QueryAvatarListRequest.h"
+#include "model/QueryAvatarListResult.h"
 #include "model/QueryRunningInstanceRequest.h"
 #include "model/QueryRunningInstanceResult.h"
 #include "model/QueryTimedResetOperateStatusRequest.h"
@@ -44,12 +48,12 @@
 #include "model/StartTimedResetOperateResult.h"
 #include "model/StopInstanceRequest.h"
 #include "model/StopInstanceResult.h"
+#include "model/SubmitAudioTo2DAvatarVideoTaskRequest.h"
+#include "model/SubmitAudioTo2DAvatarVideoTaskResult.h"
 #include "model/SubmitTextTo2DAvatarVideoTaskRequest.h"
 #include "model/SubmitTextTo2DAvatarVideoTaskResult.h"
 #include "model/SubmitTextTo3DAvatarVideoTaskRequest.h"
 #include "model/SubmitTextTo3DAvatarVideoTaskResult.h"
-#include "model/SubmitTextToSignVideoTaskRequest.h"
-#include "model/SubmitTextToSignVideoTaskResult.h"
 
 
 namespace AlibabaCloud
@@ -74,6 +78,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::LicenseAuthResult> LicenseAuthOutcome;
 			typedef std::future<LicenseAuthOutcome> LicenseAuthOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::LicenseAuthRequest&, const LicenseAuthOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> LicenseAuthAsyncHandler;
+			typedef Outcome<Error, Model::QueryAvatarResult> QueryAvatarOutcome;
+			typedef std::future<QueryAvatarOutcome> QueryAvatarOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::QueryAvatarRequest&, const QueryAvatarOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAvatarAsyncHandler;
+			typedef Outcome<Error, Model::QueryAvatarListResult> QueryAvatarListOutcome;
+			typedef std::future<QueryAvatarListOutcome> QueryAvatarListOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::QueryAvatarListRequest&, const QueryAvatarListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryAvatarListAsyncHandler;
 			typedef Outcome<Error, Model::QueryRunningInstanceResult> QueryRunningInstanceOutcome;
 			typedef std::future<QueryRunningInstanceOutcome> QueryRunningInstanceOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::QueryRunningInstanceRequest&, const QueryRunningInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryRunningInstanceAsyncHandler;
@@ -92,15 +102,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::StopInstanceResult> StopInstanceOutcome;
 			typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::StopInstanceRequest&, const StopInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopInstanceAsyncHandler;
+			typedef Outcome<Error, Model::SubmitAudioTo2DAvatarVideoTaskResult> SubmitAudioTo2DAvatarVideoTaskOutcome;
+			typedef std::future<SubmitAudioTo2DAvatarVideoTaskOutcome> SubmitAudioTo2DAvatarVideoTaskOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::SubmitAudioTo2DAvatarVideoTaskRequest&, const SubmitAudioTo2DAvatarVideoTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitAudioTo2DAvatarVideoTaskAsyncHandler;
 			typedef Outcome<Error, Model::SubmitTextTo2DAvatarVideoTaskResult> SubmitTextTo2DAvatarVideoTaskOutcome;
 			typedef std::future<SubmitTextTo2DAvatarVideoTaskOutcome> SubmitTextTo2DAvatarVideoTaskOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::SubmitTextTo2DAvatarVideoTaskRequest&, const SubmitTextTo2DAvatarVideoTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTextTo2DAvatarVideoTaskAsyncHandler;
 			typedef Outcome<Error, Model::SubmitTextTo3DAvatarVideoTaskResult> SubmitTextTo3DAvatarVideoTaskOutcome;
 			typedef std::future<SubmitTextTo3DAvatarVideoTaskOutcome> SubmitTextTo3DAvatarVideoTaskOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::SubmitTextTo3DAvatarVideoTaskRequest&, const SubmitTextTo3DAvatarVideoTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTextTo3DAvatarVideoTaskAsyncHandler;
-			typedef Outcome<Error, Model::SubmitTextToSignVideoTaskResult> SubmitTextToSignVideoTaskOutcome;
-			typedef std::future<SubmitTextToSignVideoTaskOutcome> SubmitTextToSignVideoTaskOutcomeCallable;
-			typedef std::function<void(const AvatarClient*, const Model::SubmitTextToSignVideoTaskRequest&, const SubmitTextToSignVideoTaskOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SubmitTextToSignVideoTaskAsyncHandler;
 
 			AvatarClient(const Credentials &credentials, const ClientConfiguration &configuration);
 			AvatarClient(const std::shared_ptr<CredentialsProvider> &credentialsProvider, const ClientConfiguration &configuration);
@@ -121,6 +131,12 @@ namespace AlibabaCloud
 			LicenseAuthOutcome licenseAuth(const Model::LicenseAuthRequest &request)const;
 			void licenseAuthAsync(const Model::LicenseAuthRequest& request, const LicenseAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			LicenseAuthOutcomeCallable licenseAuthCallable(const Model::LicenseAuthRequest& request) const;
+			QueryAvatarOutcome queryAvatar(const Model::QueryAvatarRequest &request)const;
+			void queryAvatarAsync(const Model::QueryAvatarRequest& request, const QueryAvatarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryAvatarOutcomeCallable queryAvatarCallable(const Model::QueryAvatarRequest& request) const;
+			QueryAvatarListOutcome queryAvatarList(const Model::QueryAvatarListRequest &request)const;
+			void queryAvatarListAsync(const Model::QueryAvatarListRequest& request, const QueryAvatarListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QueryAvatarListOutcomeCallable queryAvatarListCallable(const Model::QueryAvatarListRequest& request) const;
 			QueryRunningInstanceOutcome queryRunningInstance(const Model::QueryRunningInstanceRequest &request)const;
 			void queryRunningInstanceAsync(const Model::QueryRunningInstanceRequest& request, const QueryRunningInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryRunningInstanceOutcomeCallable queryRunningInstanceCallable(const Model::QueryRunningInstanceRequest& request) const;
@@ -139,15 +155,15 @@ namespace AlibabaCloud
 			StopInstanceOutcome stopInstance(const Model::StopInstanceRequest &request)const;
 			void stopInstanceAsync(const Model::StopInstanceRequest& request, const StopInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StopInstanceOutcomeCallable stopInstanceCallable(const Model::StopInstanceRequest& request) const;
+			SubmitAudioTo2DAvatarVideoTaskOutcome submitAudioTo2DAvatarVideoTask(const Model::SubmitAudioTo2DAvatarVideoTaskRequest &request)const;
+			void submitAudioTo2DAvatarVideoTaskAsync(const Model::SubmitAudioTo2DAvatarVideoTaskRequest& request, const SubmitAudioTo2DAvatarVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SubmitAudioTo2DAvatarVideoTaskOutcomeCallable submitAudioTo2DAvatarVideoTaskCallable(const Model::SubmitAudioTo2DAvatarVideoTaskRequest& request) const;
 			SubmitTextTo2DAvatarVideoTaskOutcome submitTextTo2DAvatarVideoTask(const Model::SubmitTextTo2DAvatarVideoTaskRequest &request)const;
 			void submitTextTo2DAvatarVideoTaskAsync(const Model::SubmitTextTo2DAvatarVideoTaskRequest& request, const SubmitTextTo2DAvatarVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitTextTo2DAvatarVideoTaskOutcomeCallable submitTextTo2DAvatarVideoTaskCallable(const Model::SubmitTextTo2DAvatarVideoTaskRequest& request) const;
 			SubmitTextTo3DAvatarVideoTaskOutcome submitTextTo3DAvatarVideoTask(const Model::SubmitTextTo3DAvatarVideoTaskRequest &request)const;
 			void submitTextTo3DAvatarVideoTaskAsync(const Model::SubmitTextTo3DAvatarVideoTaskRequest& request, const SubmitTextTo3DAvatarVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SubmitTextTo3DAvatarVideoTaskOutcomeCallable submitTextTo3DAvatarVideoTaskCallable(const Model::SubmitTextTo3DAvatarVideoTaskRequest& request) const;
-			SubmitTextToSignVideoTaskOutcome submitTextToSignVideoTask(const Model::SubmitTextToSignVideoTaskRequest &request)const;
-			void submitTextToSignVideoTaskAsync(const Model::SubmitTextToSignVideoTaskRequest& request, const SubmitTextToSignVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			SubmitTextToSignVideoTaskOutcomeCallable submitTextToSignVideoTaskCallable(const Model::SubmitTextToSignVideoTaskRequest& request) const;
 	
 		private:
 			std::shared_ptr<EndpointProvider> endpointProvider_;

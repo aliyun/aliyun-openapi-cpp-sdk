@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_AVATAR_MODEL_GETVIDEOTASKINFORESULT_H_
-#define ALIBABACLOUD_AVATAR_MODEL_GETVIDEOTASKINFORESULT_H_
+#ifndef ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARRESULT_H_
+#define ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,31 +29,41 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_AVATAR_EXPORT GetVideoTaskInfoResult : public ServiceResult
+			class ALIBABACLOUD_AVATAR_EXPORT QueryAvatarResult : public ServiceResult
 			{
 			public:
 				struct Data
 				{
-					struct TaskResult
+					struct SupportedResolutions
 					{
-						int videoDuration;
-						std::string failCode;
-						std::string subtitlesUrl;
-						std::string wordSubtitlesUrl;
-						std::string failReason;
-						std::string videoUrl;
+						struct OfflineItem
+						{
+							std::string desc;
+							int height;
+							int width;
+						};
+						struct OnlineItem
+						{
+							std::string desc;
+							int height;
+							int width;
+						};
+						std::vector<OfflineItem> offline;
+						std::vector<OnlineItem> online;
 					};
-					std::string status;
-					std::string type;
-					std::string taskUuid;
-					TaskResult taskResult;
-					std::string process;
+					std::string description;
+					SupportedResolutions supportedResolutions;
+					std::string portrait;
+					std::string modelType;
+					std::string avatarType;
+					std::string image;
+					std::string name;
 				};
 
 
-				GetVideoTaskInfoResult();
-				explicit GetVideoTaskInfoResult(const std::string &payload);
-				~GetVideoTaskInfoResult();
+				QueryAvatarResult();
+				explicit QueryAvatarResult(const std::string &payload);
+				~QueryAvatarResult();
 				std::string getMessage()const;
 				Data getData()const;
 				std::string getCode()const;
@@ -71,4 +81,4 @@ namespace AlibabaCloud
 		}
 	}
 }
-#endif // !ALIBABACLOUD_AVATAR_MODEL_GETVIDEOTASKINFORESULT_H_
+#endif // !ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARRESULT_H_

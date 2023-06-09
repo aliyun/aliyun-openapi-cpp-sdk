@@ -1,0 +1,84 @@
+/*
+ * Copyright 2009-2017 Alibaba Cloud All rights reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <alibabacloud/avatar/model/SubmitAudioTo2DAvatarVideoTaskRequest.h>
+
+using AlibabaCloud::Avatar::Model::SubmitAudioTo2DAvatarVideoTaskRequest;
+
+SubmitAudioTo2DAvatarVideoTaskRequest::SubmitAudioTo2DAvatarVideoTaskRequest()
+    : RpcServiceRequest("avatar", "2022-01-30", "SubmitAudioTo2DAvatarVideoTask") {
+  setMethod(HttpRequest::Method::Post);
+}
+
+SubmitAudioTo2DAvatarVideoTaskRequest::~SubmitAudioTo2DAvatarVideoTaskRequest() {}
+
+SubmitAudioTo2DAvatarVideoTaskRequest::App SubmitAudioTo2DAvatarVideoTaskRequest::getApp() const {
+  return app_;
+}
+
+void SubmitAudioTo2DAvatarVideoTaskRequest::setApp(const SubmitAudioTo2DAvatarVideoTaskRequest::App &app) {
+  app_ = app;
+  setParameter(std::string("App") + ".AppId", app.appId);
+}
+
+SubmitAudioTo2DAvatarVideoTaskRequest::VideoInfo SubmitAudioTo2DAvatarVideoTaskRequest::getVideoInfo() const {
+  return videoInfo_;
+}
+
+void SubmitAudioTo2DAvatarVideoTaskRequest::setVideoInfo(const SubmitAudioTo2DAvatarVideoTaskRequest::VideoInfo &videoInfo) {
+  videoInfo_ = videoInfo;
+  setParameter(std::string("VideoInfo") + ".IsAlpha", videoInfo.isAlpha ? "true" : "false");
+  setParameter(std::string("VideoInfo") + ".BackgroundImageUrl", videoInfo.backgroundImageUrl);
+  setParameter(std::string("VideoInfo") + ".Resolution", std::to_string(videoInfo.resolution));
+  setParameter(std::string("VideoInfo") + ".AlphaFormat", std::to_string(videoInfo.alphaFormat));
+}
+
+SubmitAudioTo2DAvatarVideoTaskRequest::AvatarInfo SubmitAudioTo2DAvatarVideoTaskRequest::getAvatarInfo() const {
+  return avatarInfo_;
+}
+
+void SubmitAudioTo2DAvatarVideoTaskRequest::setAvatarInfo(const SubmitAudioTo2DAvatarVideoTaskRequest::AvatarInfo &avatarInfo) {
+  avatarInfo_ = avatarInfo;
+  setParameter(std::string("AvatarInfo") + ".Code", avatarInfo.code);
+}
+
+long SubmitAudioTo2DAvatarVideoTaskRequest::getTenantId() const {
+  return tenantId_;
+}
+
+void SubmitAudioTo2DAvatarVideoTaskRequest::setTenantId(long tenantId) {
+  tenantId_ = tenantId;
+  setParameter(std::string("TenantId"), std::to_string(tenantId));
+}
+
+std::string SubmitAudioTo2DAvatarVideoTaskRequest::getTitle() const {
+  return title_;
+}
+
+void SubmitAudioTo2DAvatarVideoTaskRequest::setTitle(const std::string &title) {
+  title_ = title;
+  setParameter(std::string("Title"), title);
+}
+
+std::string SubmitAudioTo2DAvatarVideoTaskRequest::getUrl() const {
+  return url_;
+}
+
+void SubmitAudioTo2DAvatarVideoTaskRequest::setUrl(const std::string &url) {
+  url_ = url;
+  setParameter(std::string("Url"), url);
+}
+

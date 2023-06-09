@@ -43,6 +43,8 @@ void SubmitTextTo2DAvatarVideoTaskRequest::setVideoInfo(const SubmitTextTo2DAvat
   setParameter(std::string("VideoInfo") + ".IsAlpha", videoInfo.isAlpha ? "true" : "false");
   setParameter(std::string("VideoInfo") + ".BackgroundImageUrl", videoInfo.backgroundImageUrl);
   setParameter(std::string("VideoInfo") + ".IsSubtitles", videoInfo.isSubtitles ? "true" : "false");
+  setParameter(std::string("VideoInfo") + ".Resolution", std::to_string(videoInfo.resolution));
+  setParameter(std::string("VideoInfo") + ".AlphaFormat", std::to_string(videoInfo.alphaFormat));
 }
 
 SubmitTextTo2DAvatarVideoTaskRequest::AudioInfo SubmitTextTo2DAvatarVideoTaskRequest::getAudioInfo() const {

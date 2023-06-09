@@ -31,6 +31,10 @@ set(avatar_public_header_model
 	include/alibabacloud/avatar/model/GetVideoTaskInfoResult.h
 	include/alibabacloud/avatar/model/LicenseAuthRequest.h
 	include/alibabacloud/avatar/model/LicenseAuthResult.h
+	include/alibabacloud/avatar/model/QueryAvatarRequest.h
+	include/alibabacloud/avatar/model/QueryAvatarResult.h
+	include/alibabacloud/avatar/model/QueryAvatarListRequest.h
+	include/alibabacloud/avatar/model/QueryAvatarListResult.h
 	include/alibabacloud/avatar/model/QueryRunningInstanceRequest.h
 	include/alibabacloud/avatar/model/QueryRunningInstanceResult.h
 	include/alibabacloud/avatar/model/QueryTimedResetOperateStatusRequest.h
@@ -43,12 +47,12 @@ set(avatar_public_header_model
 	include/alibabacloud/avatar/model/StartTimedResetOperateResult.h
 	include/alibabacloud/avatar/model/StopInstanceRequest.h
 	include/alibabacloud/avatar/model/StopInstanceResult.h
+	include/alibabacloud/avatar/model/SubmitAudioTo2DAvatarVideoTaskRequest.h
+	include/alibabacloud/avatar/model/SubmitAudioTo2DAvatarVideoTaskResult.h
 	include/alibabacloud/avatar/model/SubmitTextTo2DAvatarVideoTaskRequest.h
 	include/alibabacloud/avatar/model/SubmitTextTo2DAvatarVideoTaskResult.h
 	include/alibabacloud/avatar/model/SubmitTextTo3DAvatarVideoTaskRequest.h
-	include/alibabacloud/avatar/model/SubmitTextTo3DAvatarVideoTaskResult.h
-	include/alibabacloud/avatar/model/SubmitTextToSignVideoTaskRequest.h
-	include/alibabacloud/avatar/model/SubmitTextToSignVideoTaskResult.h )
+	include/alibabacloud/avatar/model/SubmitTextTo3DAvatarVideoTaskResult.h )
 
 set(avatar_src 
 	src/AvatarClient.cc
@@ -62,6 +66,10 @@ set(avatar_src
 	src/model/GetVideoTaskInfoResult.cc
 	src/model/LicenseAuthRequest.cc
 	src/model/LicenseAuthResult.cc
+	src/model/QueryAvatarRequest.cc
+	src/model/QueryAvatarResult.cc
+	src/model/QueryAvatarListRequest.cc
+	src/model/QueryAvatarListResult.cc
 	src/model/QueryRunningInstanceRequest.cc
 	src/model/QueryRunningInstanceResult.cc
 	src/model/QueryTimedResetOperateStatusRequest.cc
@@ -74,12 +82,12 @@ set(avatar_src
 	src/model/StartTimedResetOperateResult.cc
 	src/model/StopInstanceRequest.cc
 	src/model/StopInstanceResult.cc
+	src/model/SubmitAudioTo2DAvatarVideoTaskRequest.cc
+	src/model/SubmitAudioTo2DAvatarVideoTaskResult.cc
 	src/model/SubmitTextTo2DAvatarVideoTaskRequest.cc
 	src/model/SubmitTextTo2DAvatarVideoTaskResult.cc
 	src/model/SubmitTextTo3DAvatarVideoTaskRequest.cc
-	src/model/SubmitTextTo3DAvatarVideoTaskResult.cc
-	src/model/SubmitTextToSignVideoTaskRequest.cc
-	src/model/SubmitTextToSignVideoTaskResult.cc )
+	src/model/SubmitTextTo3DAvatarVideoTaskResult.cc )
 
 add_library(avatar ${LIB_TYPE}
 	${avatar_public_header}

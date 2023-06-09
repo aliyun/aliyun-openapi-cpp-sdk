@@ -59,6 +59,8 @@ void GetVideoTaskInfoResult::parse(const std::string &payload)
 		data_.taskResult.failReason = taskResultNode["FailReason"].asString();
 	if(!taskResultNode["FailCode"].isNull())
 		data_.taskResult.failCode = taskResultNode["FailCode"].asString();
+	if(!taskResultNode["VideoDuration"].isNull())
+		data_.taskResult.videoDuration = std::stoi(taskResultNode["VideoDuration"].asString());
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

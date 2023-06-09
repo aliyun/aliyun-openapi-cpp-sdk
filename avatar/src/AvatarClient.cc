@@ -231,6 +231,78 @@ AvatarClient::LicenseAuthOutcomeCallable AvatarClient::licenseAuthCallable(const
 	return task->get_future();
 }
 
+AvatarClient::QueryAvatarOutcome AvatarClient::queryAvatar(const QueryAvatarRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryAvatarOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryAvatarOutcome(QueryAvatarResult(outcome.result()));
+	else
+		return QueryAvatarOutcome(outcome.error());
+}
+
+void AvatarClient::queryAvatarAsync(const QueryAvatarRequest& request, const QueryAvatarAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryAvatar(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::QueryAvatarOutcomeCallable AvatarClient::queryAvatarCallable(const QueryAvatarRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryAvatarOutcome()>>(
+			[this, request]()
+			{
+			return this->queryAvatar(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::QueryAvatarListOutcome AvatarClient::queryAvatarList(const QueryAvatarListRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryAvatarListOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryAvatarListOutcome(QueryAvatarListResult(outcome.result()));
+	else
+		return QueryAvatarListOutcome(outcome.error());
+}
+
+void AvatarClient::queryAvatarListAsync(const QueryAvatarListRequest& request, const QueryAvatarListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryAvatarList(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::QueryAvatarListOutcomeCallable AvatarClient::queryAvatarListCallable(const QueryAvatarListRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryAvatarListOutcome()>>(
+			[this, request]()
+			{
+			return this->queryAvatarList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AvatarClient::QueryRunningInstanceOutcome AvatarClient::queryRunningInstance(const QueryRunningInstanceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -447,6 +519,42 @@ AvatarClient::StopInstanceOutcomeCallable AvatarClient::stopInstanceCallable(con
 	return task->get_future();
 }
 
+AvatarClient::SubmitAudioTo2DAvatarVideoTaskOutcome AvatarClient::submitAudioTo2DAvatarVideoTask(const SubmitAudioTo2DAvatarVideoTaskRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SubmitAudioTo2DAvatarVideoTaskOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SubmitAudioTo2DAvatarVideoTaskOutcome(SubmitAudioTo2DAvatarVideoTaskResult(outcome.result()));
+	else
+		return SubmitAudioTo2DAvatarVideoTaskOutcome(outcome.error());
+}
+
+void AvatarClient::submitAudioTo2DAvatarVideoTaskAsync(const SubmitAudioTo2DAvatarVideoTaskRequest& request, const SubmitAudioTo2DAvatarVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, submitAudioTo2DAvatarVideoTask(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::SubmitAudioTo2DAvatarVideoTaskOutcomeCallable AvatarClient::submitAudioTo2DAvatarVideoTaskCallable(const SubmitAudioTo2DAvatarVideoTaskRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SubmitAudioTo2DAvatarVideoTaskOutcome()>>(
+			[this, request]()
+			{
+			return this->submitAudioTo2DAvatarVideoTask(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AvatarClient::SubmitTextTo2DAvatarVideoTaskOutcome AvatarClient::submitTextTo2DAvatarVideoTask(const SubmitTextTo2DAvatarVideoTaskRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -513,42 +621,6 @@ AvatarClient::SubmitTextTo3DAvatarVideoTaskOutcomeCallable AvatarClient::submitT
 			[this, request]()
 			{
 			return this->submitTextTo3DAvatarVideoTask(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-AvatarClient::SubmitTextToSignVideoTaskOutcome AvatarClient::submitTextToSignVideoTask(const SubmitTextToSignVideoTaskRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return SubmitTextToSignVideoTaskOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return SubmitTextToSignVideoTaskOutcome(SubmitTextToSignVideoTaskResult(outcome.result()));
-	else
-		return SubmitTextToSignVideoTaskOutcome(outcome.error());
-}
-
-void AvatarClient::submitTextToSignVideoTaskAsync(const SubmitTextToSignVideoTaskRequest& request, const SubmitTextToSignVideoTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, submitTextToSignVideoTask(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-AvatarClient::SubmitTextToSignVideoTaskOutcomeCallable AvatarClient::submitTextToSignVideoTaskCallable(const SubmitTextToSignVideoTaskRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<SubmitTextToSignVideoTaskOutcome()>>(
-			[this, request]()
-			{
-			return this->submitTextToSignVideoTask(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

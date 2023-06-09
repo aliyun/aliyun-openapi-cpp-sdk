@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_AVATAR_MODEL_SUBMITTEXTTOSIGNVIDEOTASKREQUEST_H_
-#define ALIBABACLOUD_AVATAR_MODEL_SUBMITTEXTTOSIGNVIDEOTASKREQUEST_H_
+#ifndef ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARREQUEST_H_
+#define ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARREQUEST_H_
 
 #include <alibabacloud/avatar/AvatarExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,37 +26,20 @@
 namespace AlibabaCloud {
 namespace Avatar {
 namespace Model {
-class ALIBABACLOUD_AVATAR_EXPORT SubmitTextToSignVideoTaskRequest : public RpcServiceRequest {
+class ALIBABACLOUD_AVATAR_EXPORT QueryAvatarRequest : public RpcServiceRequest {
 public:
-	struct App {
-		std::string appId;
-	};
-	struct VideoInfo {
-		bool isAlpha;
-		bool isSubtitles;
-		int resolution;
-	};
-	SubmitTextToSignVideoTaskRequest();
-	~SubmitTextToSignVideoTaskRequest();
-	App getApp() const;
-	void setApp(const App &app);
-	VideoInfo getVideoInfo() const;
-	void setVideoInfo(const VideoInfo &videoInfo);
+	QueryAvatarRequest();
+	~QueryAvatarRequest();
+	std::string getCode() const;
+	void setCode(const std::string &code);
 	long getTenantId() const;
 	void setTenantId(long tenantId);
-	std::string getText() const;
-	void setText(const std::string &text);
-	std::string getTitle() const;
-	void setTitle(const std::string &title);
 
 private:
-	App app_;
-	VideoInfo videoInfo_;
+	std::string code_;
 	long tenantId_;
-	std::string text_;
-	std::string title_;
 };
 } // namespace Model
 } // namespace Avatar
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_AVATAR_MODEL_SUBMITTEXTTOSIGNVIDEOTASKREQUEST_H_
+#endif // !ALIBABACLOUD_AVATAR_MODEL_QUERYAVATARREQUEST_H_

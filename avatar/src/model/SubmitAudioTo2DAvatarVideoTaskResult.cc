@@ -14,26 +14,26 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/avatar/model/SubmitTextToSignVideoTaskResult.h>
+#include <alibabacloud/avatar/model/SubmitAudioTo2DAvatarVideoTaskResult.h>
 #include <json/json.h>
 
 using namespace AlibabaCloud::Avatar;
 using namespace AlibabaCloud::Avatar::Model;
 
-SubmitTextToSignVideoTaskResult::SubmitTextToSignVideoTaskResult() :
+SubmitAudioTo2DAvatarVideoTaskResult::SubmitAudioTo2DAvatarVideoTaskResult() :
 	ServiceResult()
 {}
 
-SubmitTextToSignVideoTaskResult::SubmitTextToSignVideoTaskResult(const std::string &payload) :
+SubmitAudioTo2DAvatarVideoTaskResult::SubmitAudioTo2DAvatarVideoTaskResult(const std::string &payload) :
 	ServiceResult()
 {
 	parse(payload);
 }
 
-SubmitTextToSignVideoTaskResult::~SubmitTextToSignVideoTaskResult()
+SubmitAudioTo2DAvatarVideoTaskResult::~SubmitAudioTo2DAvatarVideoTaskResult()
 {}
 
-void SubmitTextToSignVideoTaskResult::parse(const std::string &payload)
+void SubmitAudioTo2DAvatarVideoTaskResult::parse(const std::string &payload)
 {
 	Json::Reader reader;
 	Json::Value value;
@@ -51,22 +51,22 @@ void SubmitTextToSignVideoTaskResult::parse(const std::string &payload)
 
 }
 
-std::string SubmitTextToSignVideoTaskResult::getMessage()const
+std::string SubmitAudioTo2DAvatarVideoTaskResult::getMessage()const
 {
 	return message_;
 }
 
-SubmitTextToSignVideoTaskResult::Data SubmitTextToSignVideoTaskResult::getData()const
+SubmitAudioTo2DAvatarVideoTaskResult::Data SubmitAudioTo2DAvatarVideoTaskResult::getData()const
 {
 	return data_;
 }
 
-std::string SubmitTextToSignVideoTaskResult::getCode()const
+std::string SubmitAudioTo2DAvatarVideoTaskResult::getCode()const
 {
 	return code_;
 }
 
-std::string SubmitTextToSignVideoTaskResult::getSuccess()const
+std::string SubmitAudioTo2DAvatarVideoTaskResult::getSuccess()const
 {
 	return success_;
 }
