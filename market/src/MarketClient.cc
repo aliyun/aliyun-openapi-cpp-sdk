@@ -195,6 +195,42 @@ MarketClient::CrossAccountVerifyTokenOutcomeCallable MarketClient::crossAccountV
 	return task->get_future();
 }
 
+MarketClient::DescribeApiMeteringOutcome MarketClient::describeApiMetering(const DescribeApiMeteringRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeApiMeteringOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeApiMeteringOutcome(DescribeApiMeteringResult(outcome.result()));
+	else
+		return DescribeApiMeteringOutcome(outcome.error());
+}
+
+void MarketClient::describeApiMeteringAsync(const DescribeApiMeteringRequest& request, const DescribeApiMeteringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeApiMetering(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+MarketClient::DescribeApiMeteringOutcomeCallable MarketClient::describeApiMeteringCallable(const DescribeApiMeteringRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeApiMeteringOutcome()>>(
+			[this, request]()
+			{
+			return this->describeApiMetering(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 MarketClient::DescribeCurrentNodeInfoOutcome MarketClient::describeCurrentNodeInfo(const DescribeCurrentNodeInfoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();

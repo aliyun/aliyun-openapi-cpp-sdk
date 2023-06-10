@@ -30,6 +30,8 @@
 #include "model/CreateOrderResult.h"
 #include "model/CrossAccountVerifyTokenRequest.h"
 #include "model/CrossAccountVerifyTokenResult.h"
+#include "model/DescribeApiMeteringRequest.h"
+#include "model/DescribeApiMeteringResult.h"
 #include "model/DescribeCurrentNodeInfoRequest.h"
 #include "model/DescribeCurrentNodeInfoResult.h"
 #include "model/DescribeDistributionProductsRequest.h"
@@ -91,6 +93,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CrossAccountVerifyTokenResult> CrossAccountVerifyTokenOutcome;
 			typedef std::future<CrossAccountVerifyTokenOutcome> CrossAccountVerifyTokenOutcomeCallable;
 			typedef std::function<void(const MarketClient*, const Model::CrossAccountVerifyTokenRequest&, const CrossAccountVerifyTokenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CrossAccountVerifyTokenAsyncHandler;
+			typedef Outcome<Error, Model::DescribeApiMeteringResult> DescribeApiMeteringOutcome;
+			typedef std::future<DescribeApiMeteringOutcome> DescribeApiMeteringOutcomeCallable;
+			typedef std::function<void(const MarketClient*, const Model::DescribeApiMeteringRequest&, const DescribeApiMeteringOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApiMeteringAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCurrentNodeInfoResult> DescribeCurrentNodeInfoOutcome;
 			typedef std::future<DescribeCurrentNodeInfoOutcome> DescribeCurrentNodeInfoOutcomeCallable;
 			typedef std::function<void(const MarketClient*, const Model::DescribeCurrentNodeInfoRequest&, const DescribeCurrentNodeInfoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCurrentNodeInfoAsyncHandler;
@@ -168,6 +173,9 @@ namespace AlibabaCloud
 			CrossAccountVerifyTokenOutcome crossAccountVerifyToken(const Model::CrossAccountVerifyTokenRequest &request)const;
 			void crossAccountVerifyTokenAsync(const Model::CrossAccountVerifyTokenRequest& request, const CrossAccountVerifyTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CrossAccountVerifyTokenOutcomeCallable crossAccountVerifyTokenCallable(const Model::CrossAccountVerifyTokenRequest& request) const;
+			DescribeApiMeteringOutcome describeApiMetering(const Model::DescribeApiMeteringRequest &request)const;
+			void describeApiMeteringAsync(const Model::DescribeApiMeteringRequest& request, const DescribeApiMeteringAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeApiMeteringOutcomeCallable describeApiMeteringCallable(const Model::DescribeApiMeteringRequest& request) const;
 			DescribeCurrentNodeInfoOutcome describeCurrentNodeInfo(const Model::DescribeCurrentNodeInfoRequest &request)const;
 			void describeCurrentNodeInfoAsync(const Model::DescribeCurrentNodeInfoRequest& request, const DescribeCurrentNodeInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCurrentNodeInfoOutcomeCallable describeCurrentNodeInfoCallable(const Model::DescribeCurrentNodeInfoRequest& request) const;

@@ -43,12 +43,12 @@ void DescribeDistributionProductsLinkResult::parse(const std::string &payload)
 	for (auto valueResultitem : allResultNode)
 	{
 		Item resultObject;
-		if(!valueResultitem["url"].isNull())
-			resultObject.url = valueResultitem["url"].asString();
-		if(!valueResultitem["code"].isNull())
-			resultObject.code = valueResultitem["code"].asString();
-		if(!valueResultitem["name"].isNull())
-			resultObject.name = valueResultitem["name"].asString();
+		if(!valueResultitem["Url"].isNull())
+			resultObject.url = valueResultitem["Url"].asString();
+		if(!valueResultitem["Code"].isNull())
+			resultObject.code = valueResultitem["Code"].asString();
+		if(!valueResultitem["Name"].isNull())
+			resultObject.name = valueResultitem["Name"].asString();
 		result_.push_back(resultObject);
 	}
 	if(!value["TotalCount"].isNull())

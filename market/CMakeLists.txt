@@ -29,6 +29,8 @@ set(market_public_header_model
 	include/alibabacloud/market/model/CreateOrderResult.h
 	include/alibabacloud/market/model/CrossAccountVerifyTokenRequest.h
 	include/alibabacloud/market/model/CrossAccountVerifyTokenResult.h
+	include/alibabacloud/market/model/DescribeApiMeteringRequest.h
+	include/alibabacloud/market/model/DescribeApiMeteringResult.h
 	include/alibabacloud/market/model/DescribeCurrentNodeInfoRequest.h
 	include/alibabacloud/market/model/DescribeCurrentNodeInfoResult.h
 	include/alibabacloud/market/model/DescribeDistributionProductsRequest.h
@@ -80,6 +82,8 @@ set(market_src
 	src/model/CreateOrderResult.cc
 	src/model/CrossAccountVerifyTokenRequest.cc
 	src/model/CrossAccountVerifyTokenResult.cc
+	src/model/DescribeApiMeteringRequest.cc
+	src/model/DescribeApiMeteringResult.cc
 	src/model/DescribeCurrentNodeInfoRequest.cc
 	src/model/DescribeCurrentNodeInfoResult.cc
 	src/model/DescribeDistributionProductsRequest.cc
