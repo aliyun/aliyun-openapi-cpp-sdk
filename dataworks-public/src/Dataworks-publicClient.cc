@@ -1779,6 +1779,42 @@ Dataworks_publicClient::DeleteFromMetaCategoryOutcomeCallable Dataworks_publicCl
 	return task->get_future();
 }
 
+Dataworks_publicClient::DeleteLineageRelationOutcome Dataworks_publicClient::deleteLineageRelation(const DeleteLineageRelationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DeleteLineageRelationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DeleteLineageRelationOutcome(DeleteLineageRelationResult(outcome.result()));
+	else
+		return DeleteLineageRelationOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::deleteLineageRelationAsync(const DeleteLineageRelationRequest& request, const DeleteLineageRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, deleteLineageRelation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::DeleteLineageRelationOutcomeCallable Dataworks_publicClient::deleteLineageRelationCallable(const DeleteLineageRelationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DeleteLineageRelationOutcome()>>(
+			[this, request]()
+			{
+			return this->deleteLineageRelation(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::DeleteMetaCategoryOutcome Dataworks_publicClient::deleteMetaCategory(const DeleteMetaCategoryRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -6027,6 +6063,42 @@ Dataworks_publicClient::ListInstancesOutcomeCallable Dataworks_publicClient::lis
 	return task->get_future();
 }
 
+Dataworks_publicClient::ListLineageOutcome Dataworks_publicClient::listLineage(const ListLineageRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ListLineageOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ListLineageOutcome(ListLineageResult(outcome.result()));
+	else
+		return ListLineageOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::listLineageAsync(const ListLineageRequest& request, const ListLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, listLineage(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::ListLineageOutcomeCallable Dataworks_publicClient::listLineageCallable(const ListLineageRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ListLineageOutcome()>>(
+			[this, request]()
+			{
+			return this->listLineage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dataworks_publicClient::ListManualDagInstancesOutcome Dataworks_publicClient::listManualDagInstances(const ListManualDagInstancesRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -7209,6 +7281,42 @@ Dataworks_publicClient::QueryPublicModelEngineOutcomeCallable Dataworks_publicCl
 			[this, request]()
 			{
 			return this->queryPublicModelEngine(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dataworks_publicClient::RegisterLineageRelationOutcome Dataworks_publicClient::registerLineageRelation(const RegisterLineageRelationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RegisterLineageRelationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RegisterLineageRelationOutcome(RegisterLineageRelationResult(outcome.result()));
+	else
+		return RegisterLineageRelationOutcome(outcome.error());
+}
+
+void Dataworks_publicClient::registerLineageRelationAsync(const RegisterLineageRelationRequest& request, const RegisterLineageRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, registerLineageRelation(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dataworks_publicClient::RegisterLineageRelationOutcomeCallable Dataworks_publicClient::registerLineageRelationCallable(const RegisterLineageRelationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RegisterLineageRelationOutcome()>>(
+			[this, request]()
+			{
+			return this->registerLineageRelation(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

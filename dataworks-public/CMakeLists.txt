@@ -117,6 +117,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/DeleteFolderResult.h
 	include/alibabacloud/dataworks-public/model/DeleteFromMetaCategoryRequest.h
 	include/alibabacloud/dataworks-public/model/DeleteFromMetaCategoryResult.h
+	include/alibabacloud/dataworks-public/model/DeleteLineageRelationRequest.h
+	include/alibabacloud/dataworks-public/model/DeleteLineageRelationResult.h
 	include/alibabacloud/dataworks-public/model/DeleteMetaCategoryRequest.h
 	include/alibabacloud/dataworks-public/model/DeleteMetaCategoryResult.h
 	include/alibabacloud/dataworks-public/model/DeleteMetaCollectionRequest.h
@@ -353,6 +355,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/ListInstanceHistoryResult.h
 	include/alibabacloud/dataworks-public/model/ListInstancesRequest.h
 	include/alibabacloud/dataworks-public/model/ListInstancesResult.h
+	include/alibabacloud/dataworks-public/model/ListLineageRequest.h
+	include/alibabacloud/dataworks-public/model/ListLineageResult.h
 	include/alibabacloud/dataworks-public/model/ListManualDagInstancesRequest.h
 	include/alibabacloud/dataworks-public/model/ListManualDagInstancesResult.h
 	include/alibabacloud/dataworks-public/model/ListMetaCollectionEntitiesRequest.h
@@ -419,6 +423,8 @@ set(dataworks-public_public_header_model
 	include/alibabacloud/dataworks-public/model/QueryDISyncTaskConfigProcessResultResult.h
 	include/alibabacloud/dataworks-public/model/QueryPublicModelEngineRequest.h
 	include/alibabacloud/dataworks-public/model/QueryPublicModelEngineResult.h
+	include/alibabacloud/dataworks-public/model/RegisterLineageRelationRequest.h
+	include/alibabacloud/dataworks-public/model/RegisterLineageRelationResult.h
 	include/alibabacloud/dataworks-public/model/RemoveProjectMemberFromRoleRequest.h
 	include/alibabacloud/dataworks-public/model/RemoveProjectMemberFromRoleResult.h
 	include/alibabacloud/dataworks-public/model/RestartInstanceRequest.h
@@ -626,6 +632,8 @@ set(dataworks-public_src
 	src/model/DeleteFolderResult.cc
 	src/model/DeleteFromMetaCategoryRequest.cc
 	src/model/DeleteFromMetaCategoryResult.cc
+	src/model/DeleteLineageRelationRequest.cc
+	src/model/DeleteLineageRelationResult.cc
 	src/model/DeleteMetaCategoryRequest.cc
 	src/model/DeleteMetaCategoryResult.cc
 	src/model/DeleteMetaCollectionRequest.cc
@@ -862,6 +870,8 @@ set(dataworks-public_src
 	src/model/ListInstanceHistoryResult.cc
 	src/model/ListInstancesRequest.cc
 	src/model/ListInstancesResult.cc
+	src/model/ListLineageRequest.cc
+	src/model/ListLineageResult.cc
 	src/model/ListManualDagInstancesRequest.cc
 	src/model/ListManualDagInstancesResult.cc
 	src/model/ListMetaCollectionEntitiesRequest.cc
@@ -928,6 +938,8 @@ set(dataworks-public_src
 	src/model/QueryDISyncTaskConfigProcessResultResult.cc
 	src/model/QueryPublicModelEngineRequest.cc
 	src/model/QueryPublicModelEngineResult.cc
+	src/model/RegisterLineageRelationRequest.cc
+	src/model/RegisterLineageRelationResult.cc
 	src/model/RemoveProjectMemberFromRoleRequest.cc
 	src/model/RemoveProjectMemberFromRoleResult.cc
 	src/model/RestartInstanceRequest.cc

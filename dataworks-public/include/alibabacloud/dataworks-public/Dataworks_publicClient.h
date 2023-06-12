@@ -118,6 +118,8 @@
 #include "model/DeleteFolderResult.h"
 #include "model/DeleteFromMetaCategoryRequest.h"
 #include "model/DeleteFromMetaCategoryResult.h"
+#include "model/DeleteLineageRelationRequest.h"
+#include "model/DeleteLineageRelationResult.h"
 #include "model/DeleteMetaCategoryRequest.h"
 #include "model/DeleteMetaCategoryResult.h"
 #include "model/DeleteMetaCollectionRequest.h"
@@ -354,6 +356,8 @@
 #include "model/ListInstanceHistoryResult.h"
 #include "model/ListInstancesRequest.h"
 #include "model/ListInstancesResult.h"
+#include "model/ListLineageRequest.h"
+#include "model/ListLineageResult.h"
 #include "model/ListManualDagInstancesRequest.h"
 #include "model/ListManualDagInstancesResult.h"
 #include "model/ListMetaCollectionEntitiesRequest.h"
@@ -420,6 +424,8 @@
 #include "model/QueryDISyncTaskConfigProcessResultResult.h"
 #include "model/QueryPublicModelEngineRequest.h"
 #include "model/QueryPublicModelEngineResult.h"
+#include "model/RegisterLineageRelationRequest.h"
+#include "model/RegisterLineageRelationResult.h"
 #include "model/RemoveProjectMemberFromRoleRequest.h"
 #include "model/RemoveProjectMemberFromRoleResult.h"
 #include "model/RestartInstanceRequest.h"
@@ -681,6 +687,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DeleteFromMetaCategoryResult> DeleteFromMetaCategoryOutcome;
 			typedef std::future<DeleteFromMetaCategoryOutcome> DeleteFromMetaCategoryOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::DeleteFromMetaCategoryRequest&, const DeleteFromMetaCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFromMetaCategoryAsyncHandler;
+			typedef Outcome<Error, Model::DeleteLineageRelationResult> DeleteLineageRelationOutcome;
+			typedef std::future<DeleteLineageRelationOutcome> DeleteLineageRelationOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::DeleteLineageRelationRequest&, const DeleteLineageRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteLineageRelationAsyncHandler;
 			typedef Outcome<Error, Model::DeleteMetaCategoryResult> DeleteMetaCategoryOutcome;
 			typedef std::future<DeleteMetaCategoryOutcome> DeleteMetaCategoryOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::DeleteMetaCategoryRequest&, const DeleteMetaCategoryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMetaCategoryAsyncHandler;
@@ -1035,6 +1044,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListInstancesResult> ListInstancesOutcome;
 			typedef std::future<ListInstancesOutcome> ListInstancesOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListInstancesRequest&, const ListInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListInstancesAsyncHandler;
+			typedef Outcome<Error, Model::ListLineageResult> ListLineageOutcome;
+			typedef std::future<ListLineageOutcome> ListLineageOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::ListLineageRequest&, const ListLineageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListLineageAsyncHandler;
 			typedef Outcome<Error, Model::ListManualDagInstancesResult> ListManualDagInstancesOutcome;
 			typedef std::future<ListManualDagInstancesOutcome> ListManualDagInstancesOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::ListManualDagInstancesRequest&, const ListManualDagInstancesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListManualDagInstancesAsyncHandler;
@@ -1134,6 +1146,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryPublicModelEngineResult> QueryPublicModelEngineOutcome;
 			typedef std::future<QueryPublicModelEngineOutcome> QueryPublicModelEngineOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::QueryPublicModelEngineRequest&, const QueryPublicModelEngineOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryPublicModelEngineAsyncHandler;
+			typedef Outcome<Error, Model::RegisterLineageRelationResult> RegisterLineageRelationOutcome;
+			typedef std::future<RegisterLineageRelationOutcome> RegisterLineageRelationOutcomeCallable;
+			typedef std::function<void(const Dataworks_publicClient*, const Model::RegisterLineageRelationRequest&, const RegisterLineageRelationOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RegisterLineageRelationAsyncHandler;
 			typedef Outcome<Error, Model::RemoveProjectMemberFromRoleResult> RemoveProjectMemberFromRoleOutcome;
 			typedef std::future<RemoveProjectMemberFromRoleOutcome> RemoveProjectMemberFromRoleOutcomeCallable;
 			typedef std::function<void(const Dataworks_publicClient*, const Model::RemoveProjectMemberFromRoleRequest&, const RemoveProjectMemberFromRoleOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveProjectMemberFromRoleAsyncHandler;
@@ -1445,6 +1460,9 @@ namespace AlibabaCloud
 			DeleteFromMetaCategoryOutcome deleteFromMetaCategory(const Model::DeleteFromMetaCategoryRequest &request)const;
 			void deleteFromMetaCategoryAsync(const Model::DeleteFromMetaCategoryRequest& request, const DeleteFromMetaCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteFromMetaCategoryOutcomeCallable deleteFromMetaCategoryCallable(const Model::DeleteFromMetaCategoryRequest& request) const;
+			DeleteLineageRelationOutcome deleteLineageRelation(const Model::DeleteLineageRelationRequest &request)const;
+			void deleteLineageRelationAsync(const Model::DeleteLineageRelationRequest& request, const DeleteLineageRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DeleteLineageRelationOutcomeCallable deleteLineageRelationCallable(const Model::DeleteLineageRelationRequest& request) const;
 			DeleteMetaCategoryOutcome deleteMetaCategory(const Model::DeleteMetaCategoryRequest &request)const;
 			void deleteMetaCategoryAsync(const Model::DeleteMetaCategoryRequest& request, const DeleteMetaCategoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DeleteMetaCategoryOutcomeCallable deleteMetaCategoryCallable(const Model::DeleteMetaCategoryRequest& request) const;
@@ -1799,6 +1817,9 @@ namespace AlibabaCloud
 			ListInstancesOutcome listInstances(const Model::ListInstancesRequest &request)const;
 			void listInstancesAsync(const Model::ListInstancesRequest& request, const ListInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListInstancesOutcomeCallable listInstancesCallable(const Model::ListInstancesRequest& request) const;
+			ListLineageOutcome listLineage(const Model::ListLineageRequest &request)const;
+			void listLineageAsync(const Model::ListLineageRequest& request, const ListLineageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ListLineageOutcomeCallable listLineageCallable(const Model::ListLineageRequest& request) const;
 			ListManualDagInstancesOutcome listManualDagInstances(const Model::ListManualDagInstancesRequest &request)const;
 			void listManualDagInstancesAsync(const Model::ListManualDagInstancesRequest& request, const ListManualDagInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListManualDagInstancesOutcomeCallable listManualDagInstancesCallable(const Model::ListManualDagInstancesRequest& request) const;
@@ -1898,6 +1919,9 @@ namespace AlibabaCloud
 			QueryPublicModelEngineOutcome queryPublicModelEngine(const Model::QueryPublicModelEngineRequest &request)const;
 			void queryPublicModelEngineAsync(const Model::QueryPublicModelEngineRequest& request, const QueryPublicModelEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryPublicModelEngineOutcomeCallable queryPublicModelEngineCallable(const Model::QueryPublicModelEngineRequest& request) const;
+			RegisterLineageRelationOutcome registerLineageRelation(const Model::RegisterLineageRelationRequest &request)const;
+			void registerLineageRelationAsync(const Model::RegisterLineageRelationRequest& request, const RegisterLineageRelationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			RegisterLineageRelationOutcomeCallable registerLineageRelationCallable(const Model::RegisterLineageRelationRequest& request) const;
 			RemoveProjectMemberFromRoleOutcome removeProjectMemberFromRole(const Model::RemoveProjectMemberFromRoleRequest &request)const;
 			void removeProjectMemberFromRoleAsync(const Model::RemoveProjectMemberFromRoleRequest& request, const RemoveProjectMemberFromRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveProjectMemberFromRoleOutcomeCallable removeProjectMemberFromRoleCallable(const Model::RemoveProjectMemberFromRoleRequest& request) const;
