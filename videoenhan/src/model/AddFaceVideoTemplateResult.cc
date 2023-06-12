@@ -42,6 +42,16 @@ void AddFaceVideoTemplateResult::parse(const std::string &payload)
 	auto dateNode = value["Date"];
 	if(!dateNode["TemplateId"].isNull())
 		date_.templateId = dateNode["TemplateId"].asString();
+	auto allFaceInfosNode = dateNode["FaceInfos"]["faceInfosItem"];
+	for (auto dateNodeFaceInfosfaceInfosItem : allFaceInfosNode)
+	{
+		Date::FaceInfosItem faceInfosItemObject;
+		if(!dateNodeFaceInfosfaceInfosItem["TemplateFaceID"].isNull())
+			faceInfosItemObject.templateFaceID = dateNodeFaceInfosfaceInfosItem["TemplateFaceID"].asString();
+		if(!dateNodeFaceInfosfaceInfosItem["TemplateFaceURL"].isNull())
+			faceInfosItemObject.templateFaceURL = dateNodeFaceInfosfaceInfosItem["TemplateFaceURL"].asString();
+		date_.faceInfos.push_back(faceInfosItemObject);
+	}
 	if(!value["Code"].isNull())
 		code_ = value["Code"].asString();
 	if(!value["Message"].isNull())

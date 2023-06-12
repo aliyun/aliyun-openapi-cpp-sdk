@@ -54,6 +54,16 @@ void QueryFaceVideoTemplateResult::parse(const std::string &payload)
 			elementsItemObject.templateId = dataNodeElementsElementsItem["TemplateId"].asString();
 		if(!dataNodeElementsElementsItem["TemplateURL"].isNull())
 			elementsItemObject.templateURL = dataNodeElementsElementsItem["TemplateURL"].asString();
+		auto allFaceInfosNode = dataNodeElementsElementsItem["FaceInfos"]["faceInfosItem"];
+		for (auto dataNodeElementsElementsItemFaceInfosfaceInfosItem : allFaceInfosNode)
+		{
+			Data::ElementsItem::FaceInfosItem faceInfosObject;
+			if(!dataNodeElementsElementsItemFaceInfosfaceInfosItem["TemplateFaceID"].isNull())
+				faceInfosObject.templateFaceID = dataNodeElementsElementsItemFaceInfosfaceInfosItem["TemplateFaceID"].asString();
+			if(!dataNodeElementsElementsItemFaceInfosfaceInfosItem["TemplateFaceURL"].isNull())
+				faceInfosObject.templateFaceURL = dataNodeElementsElementsItemFaceInfosfaceInfosItem["TemplateFaceURL"].asString();
+			elementsItemObject.faceInfos.push_back(faceInfosObject);
+		}
 		data_.elements.push_back(elementsItemObject);
 	}
 	if(!value["Code"].isNull())

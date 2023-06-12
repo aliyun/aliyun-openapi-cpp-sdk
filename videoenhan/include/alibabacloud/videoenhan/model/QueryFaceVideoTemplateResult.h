@@ -36,10 +36,16 @@ namespace AlibabaCloud
 				{
 					struct ElementsItem
 					{
+						struct FaceInfosItem
+						{
+							std::string templateFaceID;
+							std::string templateFaceURL;
+						};
 						std::string templateURL;
 						std::string userId;
 						std::string createTime;
 						std::string updateTime;
+						std::vector<ElementsItem::FaceInfosItem> faceInfos;
 						std::string templateId;
 					};
 					std::vector<ElementsItem> elements;

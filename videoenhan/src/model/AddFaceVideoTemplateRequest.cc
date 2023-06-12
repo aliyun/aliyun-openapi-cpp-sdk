@@ -34,6 +34,15 @@ void AddFaceVideoTemplateRequest::setUserId(const std::string &userId) {
   setBodyParameter(std::string("UserId"), userId);
 }
 
+std::string AddFaceVideoTemplateRequest::getVideoScene() const {
+  return videoScene_;
+}
+
+void AddFaceVideoTemplateRequest::setVideoScene(const std::string &videoScene) {
+  videoScene_ = videoScene;
+  setBodyParameter(std::string("VideoScene"), videoScene);
+}
+
 bool AddFaceVideoTemplateRequest::getAsync() const {
   return async_;
 }

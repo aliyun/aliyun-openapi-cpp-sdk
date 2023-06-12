@@ -28,10 +28,17 @@ namespace Videoenhan {
 namespace Model {
 class ALIBABACLOUD_VIDEOENHAN_EXPORT MergeVideoModelFaceRequest : public RpcServiceRequest {
 public:
+	struct MergeInfos {
+		std::string templateFaceURL;
+		std::string imageURL;
+		std::string templateFaceID;
+	};
 	MergeVideoModelFaceRequest();
 	~MergeVideoModelFaceRequest();
 	std::string getFaceImageURL() const;
 	void setFaceImageURL(const std::string &faceImageURL);
+	std::vector<MergeInfos> getMergeInfos() const;
+	void setMergeInfos(const std::vector<MergeInfos> &mergeInfos);
 	std::string getUserId() const;
 	void setUserId(const std::string &userId);
 	std::string getTemplateId() const;
@@ -41,6 +48,7 @@ public:
 
 private:
 	std::string faceImageURL_;
+	std::vector<MergeInfos> mergeInfos_;
 	std::string userId_;
 	std::string templateId_;
 	std::string async_;

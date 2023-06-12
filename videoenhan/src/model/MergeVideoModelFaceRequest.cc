@@ -34,6 +34,21 @@ void MergeVideoModelFaceRequest::setFaceImageURL(const std::string &faceImageURL
   setBodyParameter(std::string("FaceImageURL"), faceImageURL);
 }
 
+std::vector<MergeVideoModelFaceRequest::MergeInfos> MergeVideoModelFaceRequest::getMergeInfos() const {
+  return mergeInfos_;
+}
+
+void MergeVideoModelFaceRequest::setMergeInfos(const std::vector<MergeVideoModelFaceRequest::MergeInfos> &mergeInfos) {
+  mergeInfos_ = mergeInfos;
+  for(int dep1 = 0; dep1 != mergeInfos.size(); dep1++) {
+  auto mergeInfosObj = mergeInfos.at(dep1);
+  std::string mergeInfosObjStr = std::string("MergeInfos") + "." + std::to_string(dep1 + 1);
+    setBodyParameter(mergeInfosObjStr + ".TemplateFaceURL", mergeInfosObj.templateFaceURL);
+    setBodyParameter(mergeInfosObjStr + ".ImageURL", mergeInfosObj.imageURL);
+    setBodyParameter(mergeInfosObjStr + ".TemplateFaceID", mergeInfosObj.templateFaceID);
+  }
+}
+
 std::string MergeVideoModelFaceRequest::getUserId() const {
   return userId_;
 }
