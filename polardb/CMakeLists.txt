@@ -243,6 +243,8 @@ set(polardb_public_header_model
 	include/alibabacloud/polardb/model/ModifyDBEndpointAddressResult.h
 	include/alibabacloud/polardb/model/ModifyDBNodeClassRequest.h
 	include/alibabacloud/polardb/model/ModifyDBNodeClassResult.h
+	include/alibabacloud/polardb/model/ModifyDBNodeHotReplicaModeRequest.h
+	include/alibabacloud/polardb/model/ModifyDBNodeHotReplicaModeResult.h
 	include/alibabacloud/polardb/model/ModifyDBNodesClassRequest.h
 	include/alibabacloud/polardb/model/ModifyDBNodesClassResult.h
 	include/alibabacloud/polardb/model/ModifyDBNodesParametersRequest.h
@@ -516,6 +518,8 @@ set(polardb_src
 	src/model/ModifyDBEndpointAddressResult.cc
 	src/model/ModifyDBNodeClassRequest.cc
 	src/model/ModifyDBNodeClassResult.cc
+	src/model/ModifyDBNodeHotReplicaModeRequest.cc
+	src/model/ModifyDBNodeHotReplicaModeResult.cc
 	src/model/ModifyDBNodesClassRequest.cc
 	src/model/ModifyDBNodesClassResult.cc
 	src/model/ModifyDBNodesParametersRequest.cc

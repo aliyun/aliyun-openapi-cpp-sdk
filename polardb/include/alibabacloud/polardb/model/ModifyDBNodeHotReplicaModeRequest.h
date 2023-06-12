@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERPARAMETERSREQUEST_H_
-#define ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERPARAMETERSREQUEST_H_
+#ifndef ALIBABACLOUD_POLARDB_MODEL_MODIFYDBNODEHOTREPLICAMODEREQUEST_H_
+#define ALIBABACLOUD_POLARDB_MODEL_MODIFYDBNODEHOTREPLICAMODEREQUEST_H_
 
 #include <alibabacloud/polardb/PolardbExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,14 +26,14 @@
 namespace AlibabaCloud {
 namespace Polardb {
 namespace Model {
-class ALIBABACLOUD_POLARDB_EXPORT DescribeDBClusterParametersRequest : public RpcServiceRequest {
+class ALIBABACLOUD_POLARDB_EXPORT ModifyDBNodeHotReplicaModeRequest : public RpcServiceRequest {
 public:
-	DescribeDBClusterParametersRequest();
-	~DescribeDBClusterParametersRequest();
+	ModifyDBNodeHotReplicaModeRequest();
+	~ModifyDBNodeHotReplicaModeRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getDescribeType() const;
-	void setDescribeType(const std::string &describeType);
+	std::string getDBNodeId() const;
+	void setDBNodeId(const std::string &dBNodeId);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceOwnerAccount() const;
@@ -44,17 +44,20 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getHotReplicaMode() const;
+	void setHotReplicaMode(const std::string &hotReplicaMode);
 
 private:
 	long resourceOwnerId_;
-	std::string describeType_;
+	std::string dBNodeId_;
 	std::string accessKeyId_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string hotReplicaMode_;
 };
 } // namespace Model
 } // namespace Polardb
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_POLARDB_MODEL_DESCRIBEDBCLUSTERPARAMETERSREQUEST_H_
+#endif // !ALIBABACLOUD_POLARDB_MODEL_MODIFYDBNODEHOTREPLICAMODEREQUEST_H_

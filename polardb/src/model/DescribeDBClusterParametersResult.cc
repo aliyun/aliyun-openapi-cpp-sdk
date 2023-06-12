@@ -69,12 +69,40 @@ void DescribeDBClusterParametersResult::parse(const std::string &payload)
 			runningParametersObject.factor = valueRunningParametersParameter["Factor"].asString();
 		runningParameters_.push_back(runningParametersObject);
 	}
+	auto allParametersNode = value["Parameters"]["ParametersItem"];
+	for (auto valueParametersParametersItem : allParametersNode)
+	{
+		ParametersItem parametersObject;
+		if(!valueParametersParametersItem["rdsParameterName"].isNull())
+			parametersObject.rdsParameterName = valueParametersParametersItem["rdsParameterName"].asString();
+		if(!valueParametersParametersItem["rdsParameterValue"].isNull())
+			parametersObject.rdsParameterValue = valueParametersParametersItem["rdsParameterValue"].asString();
+		if(!valueParametersParametersItem["rdsParameterOptional"].isNull())
+			parametersObject.rdsParameterOptional = valueParametersParametersItem["rdsParameterOptional"].asString();
+		if(!valueParametersParametersItem["distParameterName"].isNull())
+			parametersObject.distParameterName = valueParametersParametersItem["distParameterName"].asString();
+		if(!valueParametersParametersItem["distParameterValue"].isNull())
+			parametersObject.distParameterValue = valueParametersParametersItem["distParameterValue"].asString();
+		if(!valueParametersParametersItem["distParameterOptional"].isNull())
+			parametersObject.distParameterOptional = valueParametersParametersItem["distParameterOptional"].asString();
+		if(!valueParametersParametersItem["IsEqual"].isNull())
+			parametersObject.isEqual = valueParametersParametersItem["IsEqual"].asString();
+		if(!valueParametersParametersItem["distParameterDescription"].isNull())
+			parametersObject.distParameterDescription = valueParametersParametersItem["distParameterDescription"].asString();
+		if(!valueParametersParametersItem["rdsParameterDescription"].isNull())
+			parametersObject.rdsParameterDescription = valueParametersParametersItem["rdsParameterDescription"].asString();
+		parameters_.push_back(parametersObject);
+	}
 	if(!value["DBVersion"].isNull())
 		dBVersion_ = value["DBVersion"].asString();
 	if(!value["DBType"].isNull())
 		dBType_ = value["DBType"].asString();
 	if(!value["Engine"].isNull())
 		engine_ = value["Engine"].asString();
+	if(!value["DBClusterId"].isNull())
+		dBClusterId_ = value["DBClusterId"].asString();
+	if(!value["ParameterNumbers"].isNull())
+		parameterNumbers_ = value["ParameterNumbers"].asString();
 
 }
 
@@ -86,6 +114,21 @@ std::vector<DescribeDBClusterParametersResult::_Parameter> DescribeDBClusterPara
 std::string DescribeDBClusterParametersResult::getDBVersion()const
 {
 	return dBVersion_;
+}
+
+std::vector<DescribeDBClusterParametersResult::ParametersItem> DescribeDBClusterParametersResult::getParameters()const
+{
+	return parameters_;
+}
+
+std::string DescribeDBClusterParametersResult::getParameterNumbers()const
+{
+	return parameterNumbers_;
+}
+
+std::string DescribeDBClusterParametersResult::getDBClusterId()const
+{
+	return dBClusterId_;
 }
 
 std::string DescribeDBClusterParametersResult::getDBType()const

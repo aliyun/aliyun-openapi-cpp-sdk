@@ -244,6 +244,8 @@
 #include "model/ModifyDBEndpointAddressResult.h"
 #include "model/ModifyDBNodeClassRequest.h"
 #include "model/ModifyDBNodeClassResult.h"
+#include "model/ModifyDBNodeHotReplicaModeRequest.h"
+#include "model/ModifyDBNodeHotReplicaModeResult.h"
 #include "model/ModifyDBNodesClassRequest.h"
 #include "model/ModifyDBNodesClassResult.h"
 #include "model/ModifyDBNodesParametersRequest.h"
@@ -634,6 +636,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ModifyDBNodeClassResult> ModifyDBNodeClassOutcome;
 			typedef std::future<ModifyDBNodeClassOutcome> ModifyDBNodeClassOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyDBNodeClassRequest&, const ModifyDBNodeClassOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBNodeClassAsyncHandler;
+			typedef Outcome<Error, Model::ModifyDBNodeHotReplicaModeResult> ModifyDBNodeHotReplicaModeOutcome;
+			typedef std::future<ModifyDBNodeHotReplicaModeOutcome> ModifyDBNodeHotReplicaModeOutcomeCallable;
+			typedef std::function<void(const PolardbClient*, const Model::ModifyDBNodeHotReplicaModeRequest&, const ModifyDBNodeHotReplicaModeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBNodeHotReplicaModeAsyncHandler;
 			typedef Outcome<Error, Model::ModifyDBNodesClassResult> ModifyDBNodesClassOutcome;
 			typedef std::future<ModifyDBNodesClassOutcome> ModifyDBNodesClassOutcomeCallable;
 			typedef std::function<void(const PolardbClient*, const Model::ModifyDBNodesClassRequest&, const ModifyDBNodesClassOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBNodesClassAsyncHandler;
@@ -1044,6 +1049,9 @@ namespace AlibabaCloud
 			ModifyDBNodeClassOutcome modifyDBNodeClass(const Model::ModifyDBNodeClassRequest &request)const;
 			void modifyDBNodeClassAsync(const Model::ModifyDBNodeClassRequest& request, const ModifyDBNodeClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBNodeClassOutcomeCallable modifyDBNodeClassCallable(const Model::ModifyDBNodeClassRequest& request) const;
+			ModifyDBNodeHotReplicaModeOutcome modifyDBNodeHotReplicaMode(const Model::ModifyDBNodeHotReplicaModeRequest &request)const;
+			void modifyDBNodeHotReplicaModeAsync(const Model::ModifyDBNodeHotReplicaModeRequest& request, const ModifyDBNodeHotReplicaModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyDBNodeHotReplicaModeOutcomeCallable modifyDBNodeHotReplicaModeCallable(const Model::ModifyDBNodeHotReplicaModeRequest& request) const;
 			ModifyDBNodesClassOutcome modifyDBNodesClass(const Model::ModifyDBNodesClassRequest &request)const;
 			void modifyDBNodesClassAsync(const Model::ModifyDBNodesClassRequest& request, const ModifyDBNodesClassAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ModifyDBNodesClassOutcomeCallable modifyDBNodesClassCallable(const Model::ModifyDBNodesClassRequest& request) const;

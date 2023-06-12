@@ -55,6 +55,10 @@ void DescribeBackupsResult::parse(const std::string &payload)
 			itemsObject.backupType = valueItemsBackup["BackupType"].asString();
 		if(!valueItemsBackup["BackupStartTime"].isNull())
 			itemsObject.backupStartTime = valueItemsBackup["BackupStartTime"].asString();
+		if(!valueItemsBackup["ExpectExpireTime"].isNull())
+			itemsObject.expectExpireTime = valueItemsBackup["ExpectExpireTime"].asString();
+		if(!valueItemsBackup["ExpectExpireType"].isNull())
+			itemsObject.expectExpireType = valueItemsBackup["ExpectExpireType"].asString();
 		if(!valueItemsBackup["IsAvail"].isNull())
 			itemsObject.isAvail = valueItemsBackup["IsAvail"].asString();
 		if(!valueItemsBackup["BackupEndTime"].isNull())

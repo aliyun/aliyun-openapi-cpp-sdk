@@ -47,6 +47,18 @@ namespace AlibabaCloud
 					std::string parameterName;
 					std::string parameterDescription;
 				};
+				struct ParametersItem
+				{
+					std::string rdsParameterDescription;
+					std::string distParameterValue;
+					std::string rdsParameterOptional;
+					std::string rdsParameterValue;
+					std::string distParameterDescription;
+					std::string distParameterOptional;
+					std::string rdsParameterName;
+					std::string distParameterName;
+					std::string isEqual;
+				};
 
 
 				DescribeDBClusterParametersResult();
@@ -54,6 +66,9 @@ namespace AlibabaCloud
 				~DescribeDBClusterParametersResult();
 				std::vector<_Parameter> getRunningParameters()const;
 				std::string getDBVersion()const;
+				std::vector<ParametersItem> getParameters()const;
+				std::string getParameterNumbers()const;
+				std::string getDBClusterId()const;
 				std::string getDBType()const;
 				std::string getEngine()const;
 
@@ -62,6 +77,9 @@ namespace AlibabaCloud
 			private:
 				std::vector<_Parameter> runningParameters_;
 				std::string dBVersion_;
+				std::vector<ParametersItem> parameters_;
+				std::string parameterNumbers_;
+				std::string dBClusterId_;
 				std::string dBType_;
 				std::string engine_;
 
