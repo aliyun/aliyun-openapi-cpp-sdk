@@ -28,6 +28,11 @@ namespace Avatar {
 namespace Model {
 class ALIBABACLOUD_AVATAR_EXPORT SendMessageRequest : public RpcServiceRequest {
 public:
+	struct StreamExtension {
+		bool isStream;
+		int index;
+		std::string position;
+	};
 	struct VAMLRequest {
 		std::string code;
 		std::string vaml;
@@ -36,6 +41,8 @@ public:
 	~SendMessageRequest();
 	bool getFeedback() const;
 	void setFeedback(bool feedback);
+	StreamExtension getStreamExtension() const;
+	void setStreamExtension(const StreamExtension &streamExtension);
 	std::string getTextRequest() const;
 	void setTextRequest(const std::string &textRequest);
 	long getTenantId() const;
@@ -47,6 +54,7 @@ public:
 
 private:
 	bool feedback_;
+	StreamExtension streamExtension_;
 	std::string textRequest_;
 	long tenantId_;
 	VAMLRequest vAMLRequest_;

@@ -34,6 +34,17 @@ void SendMessageRequest::setFeedback(bool feedback) {
   setParameter(std::string("Feedback"), feedback ? "true" : "false");
 }
 
+SendMessageRequest::StreamExtension SendMessageRequest::getStreamExtension() const {
+  return streamExtension_;
+}
+
+void SendMessageRequest::setStreamExtension(const SendMessageRequest::StreamExtension &streamExtension) {
+  streamExtension_ = streamExtension;
+  setParameter(std::string("StreamExtension") + ".IsStream", streamExtension.isStream ? "true" : "false");
+  setParameter(std::string("StreamExtension") + ".Index", std::to_string(streamExtension.index));
+  setParameter(std::string("StreamExtension") + ".Position", streamExtension.position);
+}
+
 std::string SendMessageRequest::getTextRequest() const {
   return textRequest_;
 }
