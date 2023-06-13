@@ -64,6 +64,8 @@ public:
 	void setPeriod(int period);
 	std::string getBackupId() const;
 	void setBackupId(const std::string &backupId);
+	std::string getEncryptionKey() const;
+	void setEncryptionKey(const std::string &encryptionKey);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
 	std::string getDBInstanceClass() const;
@@ -106,6 +108,8 @@ public:
 	void setClusterId(const std::string &clusterId);
 	std::string getAccountPassword() const;
 	void setAccountPassword(const std::string &accountPassword);
+	bool getEncrypted() const;
+	void setEncrypted(bool encrypted);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
 	std::string getChargeType() const;
@@ -127,6 +131,7 @@ private:
 	std::string businessInfo_;
 	int period_;
 	std::string backupId_;
+	std::string encryptionKey_;
 	long ownerId_;
 	std::string dBInstanceClass_;
 	std::string securityIPList_;
@@ -148,6 +153,7 @@ private:
 	std::string ownerAccount_;
 	std::string clusterId_;
 	std::string accountPassword_;
+	bool encrypted_;
 	std::string vpcId_;
 	std::string chargeType_;
 };

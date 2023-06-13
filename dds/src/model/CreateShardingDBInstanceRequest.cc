@@ -130,6 +130,15 @@ void CreateShardingDBInstanceRequest::setPeriod(int period) {
   setParameter(std::string("Period"), std::to_string(period));
 }
 
+std::string CreateShardingDBInstanceRequest::getEncryptionKey() const {
+  return encryptionKey_;
+}
+
+void CreateShardingDBInstanceRequest::setEncryptionKey(const std::string &encryptionKey) {
+  encryptionKey_ = encryptionKey;
+  setParameter(std::string("EncryptionKey"), encryptionKey);
+}
+
 std::vector<CreateShardingDBInstanceRequest::ConfigServer> CreateShardingDBInstanceRequest::getConfigServer() const {
   return configServer_;
 }
@@ -299,6 +308,15 @@ std::string CreateShardingDBInstanceRequest::getAccountPassword() const {
 void CreateShardingDBInstanceRequest::setAccountPassword(const std::string &accountPassword) {
   accountPassword_ = accountPassword;
   setParameter(std::string("AccountPassword"), accountPassword);
+}
+
+bool CreateShardingDBInstanceRequest::getEncrypted() const {
+  return encrypted_;
+}
+
+void CreateShardingDBInstanceRequest::setEncrypted(bool encrypted) {
+  encrypted_ = encrypted;
+  setParameter(std::string("Encrypted"), encrypted ? "true" : "false");
 }
 
 std::string CreateShardingDBInstanceRequest::getVpcId() const {

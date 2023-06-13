@@ -165,6 +165,15 @@ void CreateDBInstanceRequest::setBackupId(const std::string &backupId) {
   setParameter(std::string("BackupId"), backupId);
 }
 
+std::string CreateDBInstanceRequest::getEncryptionKey() const {
+  return encryptionKey_;
+}
+
+void CreateDBInstanceRequest::setEncryptionKey(const std::string &encryptionKey) {
+  encryptionKey_ = encryptionKey;
+  setParameter(std::string("EncryptionKey"), encryptionKey);
+}
+
 long CreateDBInstanceRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -352,6 +361,15 @@ std::string CreateDBInstanceRequest::getAccountPassword() const {
 void CreateDBInstanceRequest::setAccountPassword(const std::string &accountPassword) {
   accountPassword_ = accountPassword;
   setParameter(std::string("AccountPassword"), accountPassword);
+}
+
+bool CreateDBInstanceRequest::getEncrypted() const {
+  return encrypted_;
+}
+
+void CreateDBInstanceRequest::setEncrypted(bool encrypted) {
+  encrypted_ = encrypted;
+  setParameter(std::string("Encrypted"), encrypted ? "true" : "false");
 }
 
 std::string CreateDBInstanceRequest::getVpcId() const {

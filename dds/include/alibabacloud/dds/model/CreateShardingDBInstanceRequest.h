@@ -64,6 +64,8 @@ public:
 	void setGlobalSecurityGroupIds(const std::string &globalSecurityGroupIds);
 	int getPeriod() const;
 	void setPeriod(int period);
+	std::string getEncryptionKey() const;
+	void setEncryptionKey(const std::string &encryptionKey);
 	std::vector<ConfigServer> getConfigServer() const;
 	void setConfigServer(const std::vector<ConfigServer> &configServer);
 	long getOwnerId() const;
@@ -100,6 +102,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	std::string getAccountPassword() const;
 	void setAccountPassword(const std::string &accountPassword);
+	bool getEncrypted() const;
+	void setEncrypted(bool encrypted);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
 	std::string getProtocolType() const;
@@ -119,6 +123,7 @@ private:
 	std::string dBInstanceDescription_;
 	std::string globalSecurityGroupIds_;
 	int period_;
+	std::string encryptionKey_;
 	std::vector<ConfigServer> configServer_;
 	long ownerId_;
 	std::string securityIPList_;
@@ -137,6 +142,7 @@ private:
 	std::string srcDBInstanceId_;
 	std::string ownerAccount_;
 	std::string accountPassword_;
+	bool encrypted_;
 	std::string vpcId_;
 	std::string protocolType_;
 	std::string chargeType_;

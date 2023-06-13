@@ -127,6 +127,10 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			dBInstancesObject.paymentType = valueDBInstancesDBInstance["PaymentType"].asString();
 		if(!valueDBInstancesDBInstance["DBInstanceOrderStatus"].isNull())
 			dBInstancesObject.dBInstanceOrderStatus = valueDBInstancesDBInstance["DBInstanceOrderStatus"].asString();
+		if(!valueDBInstancesDBInstance["Encrypted"].isNull())
+			dBInstancesObject.encrypted = valueDBInstancesDBInstance["Encrypted"].asString() == "true";
+		if(!valueDBInstancesDBInstance["EncryptionKey"].isNull())
+			dBInstancesObject.encryptionKey = valueDBInstancesDBInstance["EncryptionKey"].asString();
 		auto allReplicaSetsNode = valueDBInstancesDBInstance["ReplicaSets"]["ReplicaSet"];
 		for (auto valueDBInstancesDBInstanceReplicaSetsReplicaSet : allReplicaSetsNode)
 		{
