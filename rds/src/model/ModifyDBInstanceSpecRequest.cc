@@ -199,6 +199,15 @@ void ModifyDBInstanceSpecRequest::setUsedTime(long usedTime) {
   setParameter(std::string("UsedTime"), std::to_string(usedTime));
 }
 
+bool ModifyDBInstanceSpecRequest::getBurstingEnabled() const {
+  return burstingEnabled_;
+}
+
+void ModifyDBInstanceSpecRequest::setBurstingEnabled(bool burstingEnabled) {
+  burstingEnabled_ = burstingEnabled;
+  setParameter(std::string("BurstingEnabled"), burstingEnabled ? "true" : "false");
+}
+
 std::string ModifyDBInstanceSpecRequest::getDBInstanceClass() const {
   return dBInstanceClass_;
 }

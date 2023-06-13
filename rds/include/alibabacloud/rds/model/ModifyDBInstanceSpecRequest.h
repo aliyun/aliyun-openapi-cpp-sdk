@@ -74,6 +74,8 @@ public:
 	void setOwnerId(long ownerId);
 	long getUsedTime() const;
 	void setUsedTime(long usedTime);
+	bool getBurstingEnabled() const;
+	void setBurstingEnabled(bool burstingEnabled);
 	std::string getDBInstanceClass() const;
 	void setDBInstanceClass(const std::string &dBInstanceClass);
 	std::string getZoneId() const;
@@ -103,6 +105,7 @@ private:
 	std::string ownerAccount_;
 	long ownerId_;
 	long usedTime_;
+	bool burstingEnabled_;
 	std::string dBInstanceClass_;
 	std::string zoneId_;
 	std::string category_;
