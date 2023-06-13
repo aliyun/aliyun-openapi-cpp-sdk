@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct LaunchResult
 				{
 					std::string zoneId;
+					int amount;
 					std::string errorMsg;
 					std::string errorCode;
 					std::string instanceType;

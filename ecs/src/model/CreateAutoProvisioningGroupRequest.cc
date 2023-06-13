@@ -126,6 +126,15 @@ void CreateAutoProvisioningGroupRequest::setLaunchConfigurationResourceGroupId(c
   setParameter(std::string("LaunchConfiguration.ResourceGroupId"), launchConfigurationResourceGroupId);
 }
 
+bool CreateAutoProvisioningGroupRequest::getResourcePlanningOnly() const {
+  return resourcePlanningOnly_;
+}
+
+void CreateAutoProvisioningGroupRequest::setResourcePlanningOnly(bool resourcePlanningOnly) {
+  resourcePlanningOnly_ = resourcePlanningOnly;
+  setParameter(std::string("ResourcePlanningOnly"), resourcePlanningOnly ? "true" : "false");
+}
+
 std::string CreateAutoProvisioningGroupRequest::getLaunchConfigurationPassword() const {
   return launchConfigurationPassword_;
 }
@@ -447,6 +456,11 @@ void CreateAutoProvisioningGroupRequest::setLaunchTemplateConfig(const std::vect
     setParameter(launchTemplateConfigObjStr + ".MaxQuantity", std::to_string(launchTemplateConfigObj.maxQuantity));
     setParameter(launchTemplateConfigObjStr + ".InstanceFamilyLevel", launchTemplateConfigObj.instanceFamilyLevel);
     setParameter(launchTemplateConfigObjStr + ".BurstablePerformance", launchTemplateConfigObj.burstablePerformance);
+    for(int dep2 = 0; dep2 != launchTemplateConfigObj.secondaryNetworkInterface.size(); dep2++) {
+    auto secondaryNetworkInterfaceObj = launchTemplateConfigObj.secondaryNetworkInterface.at(dep2);
+    std::string secondaryNetworkInterfaceObjStr = launchTemplateConfigObjStr + ".SecondaryNetworkInterface" + "." + std::to_string(dep2 + 1);
+      setParameter(secondaryNetworkInterfaceObjStr + ".VSwitchId", secondaryNetworkInterfaceObj.vSwitchId);
+    }
   }
 }
 
@@ -597,6 +611,20 @@ std::string CreateAutoProvisioningGroupRequest::getSpotTargetCapacity() const {
 void CreateAutoProvisioningGroupRequest::setSpotTargetCapacity(const std::string &spotTargetCapacity) {
   spotTargetCapacity_ = spotTargetCapacity;
   setParameter(std::string("SpotTargetCapacity"), spotTargetCapacity);
+}
+
+std::vector<CreateAutoProvisioningGroupRequest::LaunchConfigurationNetworkInterface> CreateAutoProvisioningGroupRequest::getLaunchConfigurationNetworkInterface() const {
+  return launchConfigurationNetworkInterface_;
+}
+
+void CreateAutoProvisioningGroupRequest::setLaunchConfigurationNetworkInterface(const std::vector<CreateAutoProvisioningGroupRequest::LaunchConfigurationNetworkInterface> &launchConfigurationNetworkInterface) {
+  launchConfigurationNetworkInterface_ = launchConfigurationNetworkInterface;
+  for(int dep1 = 0; dep1 != launchConfigurationNetworkInterface.size(); dep1++) {
+  auto launchConfigurationNetworkInterfaceObj = launchConfigurationNetworkInterface.at(dep1);
+  std::string launchConfigurationNetworkInterfaceObjStr = std::string("LaunchConfiguration.NetworkInterface") + "." + std::to_string(dep1 + 1);
+    setParameter(launchConfigurationNetworkInterfaceObjStr + ".SecurityGroupId", launchConfigurationNetworkInterfaceObj.securityGroupId);
+    setParameter(launchConfigurationNetworkInterfaceObjStr + ".InstanceType", launchConfigurationNetworkInterfaceObj.instanceType);
+  }
 }
 
 std::string CreateAutoProvisioningGroupRequest::getValidFrom() const {

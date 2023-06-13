@@ -65,10 +65,18 @@ public:
 		int maxQuantity;
 		std::string instanceFamilyLevel;
 		std::string burstablePerformance;
+		struct SecondaryNetworkInterface {
+			std::string vSwitchId;
+		};
+		std::vector<SecondaryNetworkInterface> secondaryNetworkInterface;
 	};
 	struct LaunchConfigurationTag {
 		std::string key;
 		std::string value;
+	};
+	struct LaunchConfigurationNetworkInterface {
+		std::string securityGroupId;
+		std::string instanceType;
 	};
 	CreateAutoProvisioningGroupRequest();
 	~CreateAutoProvisioningGroupRequest();
@@ -92,6 +100,8 @@ public:
 	void setLaunchConfigurationImageId(const std::string &launchConfigurationImageId);
 	std::string getLaunchConfigurationResourceGroupId() const;
 	void setLaunchConfigurationResourceGroupId(const std::string &launchConfigurationResourceGroupId);
+	bool getResourcePlanningOnly() const;
+	void setResourcePlanningOnly(bool resourcePlanningOnly);
 	std::string getLaunchConfigurationPassword() const;
 	void setLaunchConfigurationPassword(const std::string &launchConfigurationPassword);
 	std::string getLaunchConfigurationAutoReleaseTime() const;
@@ -190,6 +200,8 @@ public:
 	void setTotalTargetCapacity(const std::string &totalTargetCapacity);
 	std::string getSpotTargetCapacity() const;
 	void setSpotTargetCapacity(const std::string &spotTargetCapacity);
+	std::vector<LaunchConfigurationNetworkInterface> getLaunchConfigurationNetworkInterface() const;
+	void setLaunchConfigurationNetworkInterface(const std::vector<LaunchConfigurationNetworkInterface> &launchConfigurationNetworkInterface);
 	std::string getValidFrom() const;
 	void setValidFrom(const std::string &validFrom);
 	std::string getAutoProvisioningGroupName() const;
@@ -206,6 +218,7 @@ private:
 	std::string resourceGroupId_;
 	std::string launchConfigurationImageId_;
 	std::string launchConfigurationResourceGroupId_;
+	bool resourcePlanningOnly_;
 	std::string launchConfigurationPassword_;
 	std::string launchConfigurationAutoReleaseTime_;
 	std::string payAsYouGoAllocationStrategy_;
@@ -255,6 +268,7 @@ private:
 	bool hibernationOptionsConfigured_;
 	std::string totalTargetCapacity_;
 	std::string spotTargetCapacity_;
+	std::vector<LaunchConfigurationNetworkInterface> launchConfigurationNetworkInterface_;
 	std::string validFrom_;
 	std::string autoProvisioningGroupName_;
 };

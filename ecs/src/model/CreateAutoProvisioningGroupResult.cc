@@ -53,6 +53,8 @@ void CreateAutoProvisioningGroupResult::parse(const std::string &payload)
 			launchResultsObject.errorCode = valueLaunchResultsLaunchResult["ErrorCode"].asString();
 		if(!valueLaunchResultsLaunchResult["SpotStrategy"].isNull())
 			launchResultsObject.spotStrategy = valueLaunchResultsLaunchResult["SpotStrategy"].asString();
+		if(!valueLaunchResultsLaunchResult["Amount"].isNull())
+			launchResultsObject.amount = std::stoi(valueLaunchResultsLaunchResult["Amount"].asString());
 		auto allInstanceIds = value["InstanceIds"]["InstanceId"];
 		for (auto value : allInstanceIds)
 			launchResultsObject.instanceIds.push_back(value.asString());
