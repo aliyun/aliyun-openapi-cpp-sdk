@@ -34,38 +34,47 @@ namespace AlibabaCloud
 			public:
 				struct EndpointGroupsItem
 				{
+					struct EndpointConfigurationsItem
+					{
+						std::string probeProtocol;
+						bool enableProxyProtocol;
+						std::string type;
+						bool enableClientIPPreservation;
+						std::string endpoint;
+						std::string endpointId;
+						int probePort;
+						int weight;
+					};
 					struct PortOverridesItem
 					{
 						int listenerPort;
 						int endpointPort;
 					};
-					struct EndpointConfigurationsItem
+					struct TagsItem
 					{
-						bool enableProxyProtocol;
-						std::string probeProtocol;
-						std::string type;
-						std::string endpoint;
-						bool enableClientIPPreservation;
-						int probePort;
-						int weight;
+						std::string value;
+						std::string key;
 					};
 					int healthCheckIntervalSeconds;
 					int trafficPercentage;
 					std::vector<std::string> forwardingRuleIds;
-					std::string description;
 					std::string endpointGroupId;
+					std::string description;
 					std::string healthCheckPath;
 					int thresholdCount;
+					bool healthCheckEnabled;
 					std::string endpointRequestProtocol;
 					std::string name;
 					std::vector<EndpointGroupsItem::PortOverridesItem> portOverrides;
 					std::vector<std::string> endpointGroupIpList;
 					std::string endpointGroupRegion;
+					std::vector<std::string> endpointGroupUnconfirmedIpList;
 					std::string state;
 					std::string healthCheckProtocol;
 					int healthCheckPort;
 					std::vector<EndpointGroupsItem::EndpointConfigurationsItem> endpointConfigurations;
 					std::string acceleratorId;
+					std::vector<EndpointGroupsItem::TagsItem> tags;
 					std::string endpointGroupType;
 					std::string listenerId;
 				};

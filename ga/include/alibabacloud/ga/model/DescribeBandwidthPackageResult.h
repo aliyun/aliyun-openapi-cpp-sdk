@@ -32,46 +32,55 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_GA_EXPORT DescribeBandwidthPackageResult : public ServiceResult
 			{
 			public:
+				struct TagsItem
+				{
+					std::string value;
+					std::string key;
+				};
 
 
 				DescribeBandwidthPackageResult();
 				explicit DescribeBandwidthPackageResult(const std::string &payload);
 				~DescribeBandwidthPackageResult();
 				std::string getCbnGeographicRegionIdB()const;
-				std::string getDescription()const;
 				std::string getCbnGeographicRegionIdA()const;
+				std::string getDescription()const;
+				std::string getResourceGroupId()const;
 				std::string getCreateTime()const;
 				std::string getName()const;
 				std::string getBandwidthType()const;
 				std::string getType()const;
 				std::vector<std::string> getAccelerators()const;
-				std::string getChargeType()const;
 				std::string getState()const;
-				std::string getExpiredTime()const;
+				std::string getChargeType()const;
 				int getBandwidth()const;
+				std::string getExpiredTime()const;
 				std::string getBandwidthPackageId()const;
 				int getRatio()const;
 				std::string getRegionId()const;
+				std::vector<TagsItem> getTags()const;
 				std::string getBillingType()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string cbnGeographicRegionIdB_;
-				std::string description_;
 				std::string cbnGeographicRegionIdA_;
+				std::string description_;
+				std::string resourceGroupId_;
 				std::string createTime_;
 				std::string name_;
 				std::string bandwidthType_;
 				std::string type_;
 				std::vector<std::string> accelerators_;
-				std::string chargeType_;
 				std::string state_;
-				std::string expiredTime_;
+				std::string chargeType_;
 				int bandwidth_;
+				std::string expiredTime_;
 				std::string bandwidthPackageId_;
 				int ratio_;
 				std::string regionId_;
+				std::vector<TagsItem> tags_;
 				std::string billingType_;
 
 			};

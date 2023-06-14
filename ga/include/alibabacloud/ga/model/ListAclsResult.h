@@ -34,9 +34,16 @@ namespace AlibabaCloud
 			public:
 				struct GaAcls
 				{
+					struct TagsItem
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string aclStatus;
-					std::string addressIPVersion;
+					std::string resourceGroupId;
 					std::string aclId;
+					std::string addressIPVersion;
+					std::vector<GaAcls::TagsItem> tags;
 					std::string aclName;
 				};
 

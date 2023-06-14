@@ -43,36 +43,48 @@ void ListBandwidthPackagesResult::parse(const std::string &payload)
 	for (auto valueBandwidthPackagesBandwidthPackage : allBandwidthPackagesNode)
 	{
 		BandwidthPackage bandwidthPackagesObject;
-		if(!valueBandwidthPackagesBandwidthPackage["CbnGeographicRegionIdB"].isNull())
-			bandwidthPackagesObject.cbnGeographicRegionIdB = valueBandwidthPackagesBandwidthPackage["CbnGeographicRegionIdB"].asString();
-		if(!valueBandwidthPackagesBandwidthPackage["Description"].isNull())
-			bandwidthPackagesObject.description = valueBandwidthPackagesBandwidthPackage["Description"].asString();
-		if(!valueBandwidthPackagesBandwidthPackage["CbnGeographicRegionIdA"].isNull())
-			bandwidthPackagesObject.cbnGeographicRegionIdA = valueBandwidthPackagesBandwidthPackage["CbnGeographicRegionIdA"].asString();
-		if(!valueBandwidthPackagesBandwidthPackage["CreateTime"].isNull())
-			bandwidthPackagesObject.createTime = valueBandwidthPackagesBandwidthPackage["CreateTime"].asString();
-		if(!valueBandwidthPackagesBandwidthPackage["Name"].isNull())
-			bandwidthPackagesObject.name = valueBandwidthPackagesBandwidthPackage["Name"].asString();
-		if(!valueBandwidthPackagesBandwidthPackage["BandwidthType"].isNull())
-			bandwidthPackagesObject.bandwidthType = valueBandwidthPackagesBandwidthPackage["BandwidthType"].asString();
 		if(!valueBandwidthPackagesBandwidthPackage["Type"].isNull())
 			bandwidthPackagesObject.type = valueBandwidthPackagesBandwidthPackage["Type"].asString();
-		if(!valueBandwidthPackagesBandwidthPackage["ChargeType"].isNull())
-			bandwidthPackagesObject.chargeType = valueBandwidthPackagesBandwidthPackage["ChargeType"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["BandwidthType"].isNull())
+			bandwidthPackagesObject.bandwidthType = valueBandwidthPackagesBandwidthPackage["BandwidthType"].asString();
 		if(!valueBandwidthPackagesBandwidthPackage["State"].isNull())
 			bandwidthPackagesObject.state = valueBandwidthPackagesBandwidthPackage["State"].asString();
-		if(!valueBandwidthPackagesBandwidthPackage["ExpiredTime"].isNull())
-			bandwidthPackagesObject.expiredTime = valueBandwidthPackagesBandwidthPackage["ExpiredTime"].asString();
-		if(!valueBandwidthPackagesBandwidthPackage["Bandwidth"].isNull())
-			bandwidthPackagesObject.bandwidth = std::stoi(valueBandwidthPackagesBandwidthPackage["Bandwidth"].asString());
-		if(!valueBandwidthPackagesBandwidthPackage["BandwidthPackageId"].isNull())
-			bandwidthPackagesObject.bandwidthPackageId = valueBandwidthPackagesBandwidthPackage["BandwidthPackageId"].asString();
-		if(!valueBandwidthPackagesBandwidthPackage["Ratio"].isNull())
-			bandwidthPackagesObject.ratio = std::stoi(valueBandwidthPackagesBandwidthPackage["Ratio"].asString());
+		if(!valueBandwidthPackagesBandwidthPackage["CreateTime"].isNull())
+			bandwidthPackagesObject.createTime = valueBandwidthPackagesBandwidthPackage["CreateTime"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["ChargeType"].isNull())
+			bandwidthPackagesObject.chargeType = valueBandwidthPackagesBandwidthPackage["ChargeType"].asString();
 		if(!valueBandwidthPackagesBandwidthPackage["RegionId"].isNull())
 			bandwidthPackagesObject.regionId = valueBandwidthPackagesBandwidthPackage["RegionId"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["CbnGeographicRegionIdA"].isNull())
+			bandwidthPackagesObject.cbnGeographicRegionIdA = valueBandwidthPackagesBandwidthPackage["CbnGeographicRegionIdA"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["BandwidthPackageId"].isNull())
+			bandwidthPackagesObject.bandwidthPackageId = valueBandwidthPackagesBandwidthPackage["BandwidthPackageId"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["Bandwidth"].isNull())
+			bandwidthPackagesObject.bandwidth = std::stoi(valueBandwidthPackagesBandwidthPackage["Bandwidth"].asString());
+		if(!valueBandwidthPackagesBandwidthPackage["Description"].isNull())
+			bandwidthPackagesObject.description = valueBandwidthPackagesBandwidthPackage["Description"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["ExpiredTime"].isNull())
+			bandwidthPackagesObject.expiredTime = valueBandwidthPackagesBandwidthPackage["ExpiredTime"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["CbnGeographicRegionIdB"].isNull())
+			bandwidthPackagesObject.cbnGeographicRegionIdB = valueBandwidthPackagesBandwidthPackage["CbnGeographicRegionIdB"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["Name"].isNull())
+			bandwidthPackagesObject.name = valueBandwidthPackagesBandwidthPackage["Name"].asString();
 		if(!valueBandwidthPackagesBandwidthPackage["BillingType"].isNull())
 			bandwidthPackagesObject.billingType = valueBandwidthPackagesBandwidthPackage["BillingType"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["Ratio"].isNull())
+			bandwidthPackagesObject.ratio = std::stoi(valueBandwidthPackagesBandwidthPackage["Ratio"].asString());
+		if(!valueBandwidthPackagesBandwidthPackage["ResourceGroupId"].isNull())
+			bandwidthPackagesObject.resourceGroupId = valueBandwidthPackagesBandwidthPackage["ResourceGroupId"].asString();
+		auto allTagsNode = valueBandwidthPackagesBandwidthPackage["Tags"]["TagsItem"];
+		for (auto valueBandwidthPackagesBandwidthPackageTagsTagsItem : allTagsNode)
+		{
+			BandwidthPackage::TagsItem tagsObject;
+			if(!valueBandwidthPackagesBandwidthPackageTagsTagsItem["Key"].isNull())
+				tagsObject.key = valueBandwidthPackagesBandwidthPackageTagsTagsItem["Key"].asString();
+			if(!valueBandwidthPackagesBandwidthPackageTagsTagsItem["Value"].isNull())
+				tagsObject.value = valueBandwidthPackagesBandwidthPackageTagsTagsItem["Value"].asString();
+			bandwidthPackagesObject.tags.push_back(tagsObject);
+		}
 		auto allAccelerators = value["Accelerators"]["Accelerator"];
 		for (auto value : allAccelerators)
 			bandwidthPackagesObject.accelerators.push_back(value.asString());

@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,47 +17,51 @@
 #ifndef ALIBABACLOUD_GA_MODEL_LISTACLSREQUEST_H_
 #define ALIBABACLOUD_GA_MODEL_LISTACLSREQUEST_H_
 
+#include <alibabacloud/ga/GaExport.h>
+#include <alibabacloud/core/RpcServiceRequest.h>
 #include <string>
 #include <vector>
-#include <alibabacloud/core/RpcServiceRequest.h>
-#include <alibabacloud/ga/GaExport.h>
+#include <map>
 
-namespace AlibabaCloud
-{
-	namespace Ga
-	{
-		namespace Model
-		{
-			class ALIBABACLOUD_GA_EXPORT ListAclsRequest : public RpcServiceRequest
-			{
+namespace AlibabaCloud {
+namespace Ga {
+namespace Model {
+class ALIBABACLOUD_GA_EXPORT ListAclsRequest : public RpcServiceRequest {
+public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
+	ListAclsRequest();
+	~ListAclsRequest();
+	std::string getAclName() const;
+	void setAclName(const std::string &aclName);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::vector<std::string> getAclIds() const;
+	void setAclIds(const std::vector<std::string> &aclIds);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::string getNextToken() const;
+	void setNextToken(const std::string &nextToken);
+	int getMaxResults() const;
+	void setMaxResults(int maxResults);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
-			public:
-				ListAclsRequest();
-				~ListAclsRequest();
-
-				std::string getAclName()const;
-				void setAclName(const std::string& aclName);
-				std::string getClientToken()const;
-				void setClientToken(const std::string& clientToken);
-				Array getAclIds()const;
-				void setAclIds(const Array& aclIds);
-				std::string getRegionId()const;
-				void setRegionId(const std::string& regionId);
-				std::string getNextToken()const;
-				void setNextToken(const std::string& nextToken);
-				int getMaxResults()const;
-				void setMaxResults(int maxResults);
-
-            private:
-				std::string aclName_;
-				std::string clientToken_;
-				Array aclIds_;
-				std::string regionId_;
-				std::string nextToken_;
-				int maxResults_;
-
-			};
-		}
-	}
-}
+private:
+	std::string aclName_;
+	std::string clientToken_;
+	std::vector<std::string> aclIds_;
+	std::string resourceGroupId_;
+	std::string regionId_;
+	std::string nextToken_;
+	int maxResults_;
+	std::vector<Tag> tag_;
+};
+} // namespace Model
+} // namespace Ga
+} // namespace AlibabaCloud
 #endif // !ALIBABACLOUD_GA_MODEL_LISTACLSREQUEST_H_

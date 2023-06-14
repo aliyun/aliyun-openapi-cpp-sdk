@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Ga::Model::DescribeListenerRequest;
 
-DescribeListenerRequest::DescribeListenerRequest() :
-	RpcServiceRequest("ga", "2019-11-20", "DescribeListener")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeListenerRequest::DescribeListenerRequest()
+    : RpcServiceRequest("ga", "2019-11-20", "DescribeListener") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeListenerRequest::~DescribeListenerRequest()
-{}
+DescribeListenerRequest::~DescribeListenerRequest() {}
 
-std::string DescribeListenerRequest::getListenerId()const
-{
-	return listenerId_;
+std::string DescribeListenerRequest::getListenerId() const {
+  return listenerId_;
 }
 
-void DescribeListenerRequest::setListenerId(const std::string& listenerId)
-{
-	listenerId_ = listenerId;
-	setParameter("ListenerId", listenerId);
+void DescribeListenerRequest::setListenerId(const std::string &listenerId) {
+  listenerId_ = listenerId;
+  setParameter(std::string("ListenerId"), listenerId);
 }
 
-std::string DescribeListenerRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeListenerRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeListenerRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeListenerRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 

@@ -34,20 +34,6 @@ namespace AlibabaCloud
 			public:
 				struct ForwardingRulesItem
 				{
-					struct RuleActionsItem
-					{
-						struct ForwardGroupConfig
-						{
-							struct ServerGroupTuplesItem
-							{
-								std::string endpointGroupId;
-							};
-							std::vector<ServerGroupTuplesItem> serverGroupTuples;
-						};
-						std::string ruleActionType;
-						int order;
-						ForwardGroupConfig forwardGroupConfig;
-					};
 					struct RuleConditionsItem
 					{
 						struct PathConfig
@@ -61,12 +47,29 @@ namespace AlibabaCloud
 						PathConfig pathConfig;
 						HostConfig hostConfig;
 						std::string ruleConditionType;
+						std::string ruleConditionValue;
+					};
+					struct RuleActionsItem
+					{
+						struct ForwardGroupConfig
+						{
+							struct ServerGroupTuplesItem
+							{
+								std::string endpointGroupId;
+							};
+							std::vector<ServerGroupTuplesItem> serverGroupTuples;
+						};
+						int order;
+						std::string ruleActionType;
+						std::string ruleActionValue;
+						ForwardGroupConfig forwardGroupConfig;
 					};
 					std::vector<ForwardingRulesItem::RuleActionsItem> ruleActions;
-					std::string forwardingRuleName;
 					int priority;
+					std::string forwardingRuleName;
 					std::vector<ForwardingRulesItem::RuleConditionsItem> ruleConditions;
 					std::string forwardingRuleId;
+					std::string forwardingRuleDirection;
 					std::string forwardingRuleStatus;
 					std::string listenerId;
 				};

@@ -43,18 +43,18 @@ void ListAvailableAccelerateAreasResult::parse(const std::string &payload)
 	for (auto valueAreasAreasItem : allAreasNode)
 	{
 		AreasItem areasObject;
-		if(!valueAreasAreasItem["AreaId"].isNull())
-			areasObject.areaId = valueAreasAreasItem["AreaId"].asString();
 		if(!valueAreasAreasItem["LocalName"].isNull())
 			areasObject.localName = valueAreasAreasItem["LocalName"].asString();
+		if(!valueAreasAreasItem["AreaId"].isNull())
+			areasObject.areaId = valueAreasAreasItem["AreaId"].asString();
 		auto allRegionListNode = valueAreasAreasItem["RegionList"]["RegionListItem"];
 		for (auto valueAreasAreasItemRegionListRegionListItem : allRegionListNode)
 		{
 			AreasItem::RegionListItem regionListObject;
-			if(!valueAreasAreasItemRegionListRegionListItem["RegionId"].isNull())
-				regionListObject.regionId = valueAreasAreasItemRegionListRegionListItem["RegionId"].asString();
 			if(!valueAreasAreasItemRegionListRegionListItem["LocalName"].isNull())
 				regionListObject.localName = valueAreasAreasItemRegionListRegionListItem["LocalName"].asString();
+			if(!valueAreasAreasItemRegionListRegionListItem["RegionId"].isNull())
+				regionListObject.regionId = valueAreasAreasItemRegionListRegionListItem["RegionId"].asString();
 			areasObject.regionList.push_back(regionListObject);
 		}
 		areas_.push_back(areasObject);

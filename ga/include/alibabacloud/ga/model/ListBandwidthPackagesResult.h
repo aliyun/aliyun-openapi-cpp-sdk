@@ -34,21 +34,28 @@ namespace AlibabaCloud
 			public:
 				struct BandwidthPackage
 				{
+					struct TagsItem
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string cbnGeographicRegionIdB;
-					std::string description;
 					std::string cbnGeographicRegionIdA;
+					std::string description;
+					std::string resourceGroupId;
 					std::string createTime;
 					std::string name;
 					std::string bandwidthType;
 					std::string type;
 					std::vector<std::string> accelerators;
-					std::string chargeType;
 					std::string state;
-					std::string expiredTime;
+					std::string chargeType;
 					int bandwidth;
+					std::string expiredTime;
 					std::string bandwidthPackageId;
 					int ratio;
 					std::string regionId;
+					std::vector<BandwidthPackage::TagsItem> tags;
 					std::string billingType;
 				};
 

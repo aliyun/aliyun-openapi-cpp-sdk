@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Ga::Model::DescribeIpSetRequest;
 
-DescribeIpSetRequest::DescribeIpSetRequest() :
-	RpcServiceRequest("ga", "2019-11-20", "DescribeIpSet")
-{
-	setMethod(HttpRequest::Method::Post);
+DescribeIpSetRequest::DescribeIpSetRequest()
+    : RpcServiceRequest("ga", "2019-11-20", "DescribeIpSet") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DescribeIpSetRequest::~DescribeIpSetRequest()
-{}
+DescribeIpSetRequest::~DescribeIpSetRequest() {}
 
-std::string DescribeIpSetRequest::getIpSetId()const
-{
-	return ipSetId_;
+std::string DescribeIpSetRequest::getIpSetId() const {
+  return ipSetId_;
 }
 
-void DescribeIpSetRequest::setIpSetId(const std::string& ipSetId)
-{
-	ipSetId_ = ipSetId;
-	setParameter("IpSetId", ipSetId);
+void DescribeIpSetRequest::setIpSetId(const std::string &ipSetId) {
+  ipSetId_ = ipSetId;
+  setParameter(std::string("IpSetId"), ipSetId);
 }
 
-std::string DescribeIpSetRequest::getRegionId()const
-{
-	return regionId_;
+std::string DescribeIpSetRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DescribeIpSetRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DescribeIpSetRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 

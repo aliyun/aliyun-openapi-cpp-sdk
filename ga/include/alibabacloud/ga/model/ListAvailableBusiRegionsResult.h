@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct RegionsItem
 				{
+					bool pop;
 					std::string regionId;
 					std::string localName;
 				};

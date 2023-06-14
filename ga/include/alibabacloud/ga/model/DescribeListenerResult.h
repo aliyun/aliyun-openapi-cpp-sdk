@@ -32,15 +32,23 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_GA_EXPORT DescribeListenerResult : public ServiceResult
 			{
 			public:
-				struct BackendPort
+				struct XForwardedForConfig
 				{
-					std::string fromPort;
-					std::string toPort;
+					bool xForwardedForGaApEnabled;
+					bool xForwardedForProtoEnabled;
+					bool xForwardedForPortEnabled;
+					bool xRealIpEnabled;
+					bool xForwardedForGaIdEnabled;
 				};
 				struct PortRangesItem
 				{
 					int fromPort;
 					int toPort;
+				};
+				struct BackendPort
+				{
+					std::string fromPort;
+					std::string toPort;
 				};
 				struct Certificate
 				{
@@ -58,37 +66,43 @@ namespace AlibabaCloud
 				explicit DescribeListenerResult(const std::string &payload);
 				~DescribeListenerResult();
 				std::string getDescription()const;
-				std::vector<BackendPort> getBackendPorts()const;
 				std::vector<PortRangesItem> getPortRanges()const;
-				bool getProxyProtocol()const;
+				std::vector<BackendPort> getBackendPorts()const;
 				std::string getCreateTime()const;
+				bool getProxyProtocol()const;
 				std::vector<Certificate> getCertificates()const;
 				std::vector<RelatedAclsItem> getRelatedAcls()const;
 				std::string getName()const;
+				std::string getSecurityPolicyId()const;
+				std::string getType()const;
 				std::string getState()const;
+				XForwardedForConfig getXForwardedForConfig()const;
 				std::string getAclType()const;
 				std::string getProtocol()const;
 				std::string getAcceleratorId()const;
-				std::string getClientAffinity()const;
 				std::string getListenerId()const;
+				std::string getClientAffinity()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string description_;
-				std::vector<BackendPort> backendPorts_;
 				std::vector<PortRangesItem> portRanges_;
-				bool proxyProtocol_;
+				std::vector<BackendPort> backendPorts_;
 				std::string createTime_;
+				bool proxyProtocol_;
 				std::vector<Certificate> certificates_;
 				std::vector<RelatedAclsItem> relatedAcls_;
 				std::string name_;
+				std::string securityPolicyId_;
+				std::string type_;
 				std::string state_;
+				XForwardedForConfig xForwardedForConfig_;
 				std::string aclType_;
 				std::string protocol_;
 				std::string acceleratorId_;
-				std::string clientAffinity_;
 				std::string listenerId_;
+				std::string clientAffinity_;
 
 			};
 		}

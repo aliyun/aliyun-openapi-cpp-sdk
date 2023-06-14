@@ -39,15 +39,25 @@ void DescribeBandwidthPackageResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
+	auto allTagsNode = value["Tags"]["TagsItem"];
+	for (auto valueTagsTagsItem : allTagsNode)
+	{
+		TagsItem tagsObject;
+		if(!valueTagsTagsItem["Key"].isNull())
+			tagsObject.key = valueTagsTagsItem["Key"].asString();
+		if(!valueTagsTagsItem["Value"].isNull())
+			tagsObject.value = valueTagsTagsItem["Value"].asString();
+		tags_.push_back(tagsObject);
+	}
 	auto allAccelerators = value["Accelerators"]["Accelerator"];
 	for (const auto &item : allAccelerators)
 		accelerators_.push_back(item.asString());
 	if(!value["CbnGeographicRegionIdB"].isNull())
 		cbnGeographicRegionIdB_ = value["CbnGeographicRegionIdB"].asString();
-	if(!value["Description"].isNull())
-		description_ = value["Description"].asString();
 	if(!value["CbnGeographicRegionIdA"].isNull())
 		cbnGeographicRegionIdA_ = value["CbnGeographicRegionIdA"].asString();
+	if(!value["Description"].isNull())
+		description_ = value["Description"].asString();
 	if(!value["CreateTime"].isNull())
 		createTime_ = value["CreateTime"].asString();
 	if(!value["Name"].isNull())
@@ -56,22 +66,24 @@ void DescribeBandwidthPackageResult::parse(const std::string &payload)
 		bandwidthType_ = value["BandwidthType"].asString();
 	if(!value["Type"].isNull())
 		type_ = value["Type"].asString();
-	if(!value["ChargeType"].isNull())
-		chargeType_ = value["ChargeType"].asString();
 	if(!value["State"].isNull())
 		state_ = value["State"].asString();
-	if(!value["ExpiredTime"].isNull())
-		expiredTime_ = value["ExpiredTime"].asString();
+	if(!value["ChargeType"].isNull())
+		chargeType_ = value["ChargeType"].asString();
 	if(!value["Bandwidth"].isNull())
 		bandwidth_ = std::stoi(value["Bandwidth"].asString());
+	if(!value["ExpiredTime"].isNull())
+		expiredTime_ = value["ExpiredTime"].asString();
 	if(!value["BandwidthPackageId"].isNull())
 		bandwidthPackageId_ = value["BandwidthPackageId"].asString();
-	if(!value["Ratio"].isNull())
-		ratio_ = std::stoi(value["Ratio"].asString());
 	if(!value["RegionId"].isNull())
 		regionId_ = value["RegionId"].asString();
 	if(!value["BillingType"].isNull())
 		billingType_ = value["BillingType"].asString();
+	if(!value["Ratio"].isNull())
+		ratio_ = std::stoi(value["Ratio"].asString());
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -80,14 +92,19 @@ std::string DescribeBandwidthPackageResult::getCbnGeographicRegionIdB()const
 	return cbnGeographicRegionIdB_;
 }
 
+std::string DescribeBandwidthPackageResult::getCbnGeographicRegionIdA()const
+{
+	return cbnGeographicRegionIdA_;
+}
+
 std::string DescribeBandwidthPackageResult::getDescription()const
 {
 	return description_;
 }
 
-std::string DescribeBandwidthPackageResult::getCbnGeographicRegionIdA()const
+std::string DescribeBandwidthPackageResult::getResourceGroupId()const
 {
-	return cbnGeographicRegionIdA_;
+	return resourceGroupId_;
 }
 
 std::string DescribeBandwidthPackageResult::getCreateTime()const
@@ -115,24 +132,24 @@ std::vector<std::string> DescribeBandwidthPackageResult::getAccelerators()const
 	return accelerators_;
 }
 
-std::string DescribeBandwidthPackageResult::getChargeType()const
-{
-	return chargeType_;
-}
-
 std::string DescribeBandwidthPackageResult::getState()const
 {
 	return state_;
 }
 
-std::string DescribeBandwidthPackageResult::getExpiredTime()const
+std::string DescribeBandwidthPackageResult::getChargeType()const
 {
-	return expiredTime_;
+	return chargeType_;
 }
 
 int DescribeBandwidthPackageResult::getBandwidth()const
 {
 	return bandwidth_;
+}
+
+std::string DescribeBandwidthPackageResult::getExpiredTime()const
+{
+	return expiredTime_;
 }
 
 std::string DescribeBandwidthPackageResult::getBandwidthPackageId()const
@@ -148,6 +165,11 @@ int DescribeBandwidthPackageResult::getRatio()const
 std::string DescribeBandwidthPackageResult::getRegionId()const
 {
 	return regionId_;
+}
+
+std::vector<DescribeBandwidthPackageResult::TagsItem> DescribeBandwidthPackageResult::getTags()const
+{
+	return tags_;
 }
 
 std::string DescribeBandwidthPackageResult::getBillingType()const

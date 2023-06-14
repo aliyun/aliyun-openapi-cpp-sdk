@@ -43,14 +43,26 @@ void ListAclsResult::parse(const std::string &payload)
 	for (auto valueAclsGaAcls : allAclsNode)
 	{
 		GaAcls aclsObject;
-		if(!valueAclsGaAcls["AclStatus"].isNull())
-			aclsObject.aclStatus = valueAclsGaAcls["AclStatus"].asString();
-		if(!valueAclsGaAcls["AddressIPVersion"].isNull())
-			aclsObject.addressIPVersion = valueAclsGaAcls["AddressIPVersion"].asString();
 		if(!valueAclsGaAcls["AclId"].isNull())
 			aclsObject.aclId = valueAclsGaAcls["AclId"].asString();
 		if(!valueAclsGaAcls["AclName"].isNull())
 			aclsObject.aclName = valueAclsGaAcls["AclName"].asString();
+		if(!valueAclsGaAcls["AddressIPVersion"].isNull())
+			aclsObject.addressIPVersion = valueAclsGaAcls["AddressIPVersion"].asString();
+		if(!valueAclsGaAcls["AclStatus"].isNull())
+			aclsObject.aclStatus = valueAclsGaAcls["AclStatus"].asString();
+		if(!valueAclsGaAcls["ResourceGroupId"].isNull())
+			aclsObject.resourceGroupId = valueAclsGaAcls["ResourceGroupId"].asString();
+		auto allTagsNode = valueAclsGaAcls["Tags"]["TagsItem"];
+		for (auto valueAclsGaAclsTagsTagsItem : allTagsNode)
+		{
+			GaAcls::TagsItem tagsObject;
+			if(!valueAclsGaAclsTagsTagsItem["Key"].isNull())
+				tagsObject.key = valueAclsGaAclsTagsTagsItem["Key"].asString();
+			if(!valueAclsGaAclsTagsTagsItem["Value"].isNull())
+				tagsObject.value = valueAclsGaAclsTagsTagsItem["Value"].asString();
+			aclsObject.tags.push_back(tagsObject);
+		}
 		acls_.push_back(aclsObject);
 	}
 	if(!value["TotalCount"].isNull())

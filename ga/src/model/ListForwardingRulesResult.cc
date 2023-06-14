@@ -43,24 +43,46 @@ void ListForwardingRulesResult::parse(const std::string &payload)
 	for (auto valueForwardingRulesForwardingRulesItem : allForwardingRulesNode)
 	{
 		ForwardingRulesItem forwardingRulesObject;
-		if(!valueForwardingRulesForwardingRulesItem["ForwardingRuleName"].isNull())
-			forwardingRulesObject.forwardingRuleName = valueForwardingRulesForwardingRulesItem["ForwardingRuleName"].asString();
 		if(!valueForwardingRulesForwardingRulesItem["Priority"].isNull())
 			forwardingRulesObject.priority = std::stoi(valueForwardingRulesForwardingRulesItem["Priority"].asString());
 		if(!valueForwardingRulesForwardingRulesItem["ForwardingRuleId"].isNull())
 			forwardingRulesObject.forwardingRuleId = valueForwardingRulesForwardingRulesItem["ForwardingRuleId"].asString();
+		if(!valueForwardingRulesForwardingRulesItem["ForwardingRuleName"].isNull())
+			forwardingRulesObject.forwardingRuleName = valueForwardingRulesForwardingRulesItem["ForwardingRuleName"].asString();
+		if(!valueForwardingRulesForwardingRulesItem["ForwardingRuleDirection"].isNull())
+			forwardingRulesObject.forwardingRuleDirection = valueForwardingRulesForwardingRulesItem["ForwardingRuleDirection"].asString();
 		if(!valueForwardingRulesForwardingRulesItem["ForwardingRuleStatus"].isNull())
 			forwardingRulesObject.forwardingRuleStatus = valueForwardingRulesForwardingRulesItem["ForwardingRuleStatus"].asString();
 		if(!valueForwardingRulesForwardingRulesItem["ListenerId"].isNull())
 			forwardingRulesObject.listenerId = valueForwardingRulesForwardingRulesItem["ListenerId"].asString();
+		auto allRuleConditionsNode = valueForwardingRulesForwardingRulesItem["RuleConditions"]["RuleConditionsItem"];
+		for (auto valueForwardingRulesForwardingRulesItemRuleConditionsRuleConditionsItem : allRuleConditionsNode)
+		{
+			ForwardingRulesItem::RuleConditionsItem ruleConditionsObject;
+			if(!valueForwardingRulesForwardingRulesItemRuleConditionsRuleConditionsItem["RuleConditionType"].isNull())
+				ruleConditionsObject.ruleConditionType = valueForwardingRulesForwardingRulesItemRuleConditionsRuleConditionsItem["RuleConditionType"].asString();
+			if(!valueForwardingRulesForwardingRulesItemRuleConditionsRuleConditionsItem["RuleConditionValue"].isNull())
+				ruleConditionsObject.ruleConditionValue = valueForwardingRulesForwardingRulesItemRuleConditionsRuleConditionsItem["RuleConditionValue"].asString();
+			auto pathConfigNode = value["PathConfig"];
+				auto allValues = pathConfigNode["Values"]["Values"];
+				for (auto value : allValues)
+					ruleConditionsObject.pathConfig.values.push_back(value.asString());
+			auto hostConfigNode = value["HostConfig"];
+				auto allValues1 = hostConfigNode["Values"]["Values"];
+				for (auto value : allValues1)
+					ruleConditionsObject.hostConfig.values1.push_back(value.asString());
+			forwardingRulesObject.ruleConditions.push_back(ruleConditionsObject);
+		}
 		auto allRuleActionsNode = valueForwardingRulesForwardingRulesItem["RuleActions"]["RuleActionsItem"];
 		for (auto valueForwardingRulesForwardingRulesItemRuleActionsRuleActionsItem : allRuleActionsNode)
 		{
 			ForwardingRulesItem::RuleActionsItem ruleActionsObject;
-			if(!valueForwardingRulesForwardingRulesItemRuleActionsRuleActionsItem["RuleActionType"].isNull())
-				ruleActionsObject.ruleActionType = valueForwardingRulesForwardingRulesItemRuleActionsRuleActionsItem["RuleActionType"].asString();
 			if(!valueForwardingRulesForwardingRulesItemRuleActionsRuleActionsItem["Order"].isNull())
 				ruleActionsObject.order = std::stoi(valueForwardingRulesForwardingRulesItemRuleActionsRuleActionsItem["Order"].asString());
+			if(!valueForwardingRulesForwardingRulesItemRuleActionsRuleActionsItem["RuleActionType"].isNull())
+				ruleActionsObject.ruleActionType = valueForwardingRulesForwardingRulesItemRuleActionsRuleActionsItem["RuleActionType"].asString();
+			if(!valueForwardingRulesForwardingRulesItemRuleActionsRuleActionsItem["RuleActionValue"].isNull())
+				ruleActionsObject.ruleActionValue = valueForwardingRulesForwardingRulesItemRuleActionsRuleActionsItem["RuleActionValue"].asString();
 			auto forwardGroupConfigNode = value["ForwardGroupConfig"];
 			auto allServerGroupTuplesNode = forwardGroupConfigNode["ServerGroupTuples"]["ServerGroupTuplesItem"];
 			for (auto forwardGroupConfigNodeServerGroupTuplesServerGroupTuplesItem : allServerGroupTuplesNode)
@@ -71,22 +93,6 @@ void ListForwardingRulesResult::parse(const std::string &payload)
 				ruleActionsObject.forwardGroupConfig.serverGroupTuples.push_back(serverGroupTuplesItemObject);
 			}
 			forwardingRulesObject.ruleActions.push_back(ruleActionsObject);
-		}
-		auto allRuleConditionsNode = valueForwardingRulesForwardingRulesItem["RuleConditions"]["RuleConditionsItem"];
-		for (auto valueForwardingRulesForwardingRulesItemRuleConditionsRuleConditionsItem : allRuleConditionsNode)
-		{
-			ForwardingRulesItem::RuleConditionsItem ruleConditionsObject;
-			if(!valueForwardingRulesForwardingRulesItemRuleConditionsRuleConditionsItem["RuleConditionType"].isNull())
-				ruleConditionsObject.ruleConditionType = valueForwardingRulesForwardingRulesItemRuleConditionsRuleConditionsItem["RuleConditionType"].asString();
-			auto pathConfigNode = value["PathConfig"];
-				auto allValues = pathConfigNode["Values"]["Values"];
-				for (auto value : allValues)
-					ruleConditionsObject.pathConfig.values.push_back(value.asString());
-			auto hostConfigNode = value["HostConfig"];
-				auto allValues1 = hostConfigNode["Values"]["Values"];
-				for (auto value : allValues1)
-					ruleConditionsObject.hostConfig.values1.push_back(value.asString());
-			forwardingRulesObject.ruleConditions.push_back(ruleConditionsObject);
 		}
 		forwardingRules_.push_back(forwardingRulesObject);
 	}

@@ -43,16 +43,18 @@ void ListIpSetsResult::parse(const std::string &payload)
 	for (auto valueIpSetsIpSetsItem : allIpSetsNode)
 	{
 		IpSetsItem ipSetsObject;
-		if(!valueIpSetsIpSetsItem["IpSetId"].isNull())
-			ipSetsObject.ipSetId = valueIpSetsIpSetsItem["IpSetId"].asString();
-		if(!valueIpSetsIpSetsItem["IpVersion"].isNull())
-			ipSetsObject.ipVersion = valueIpSetsIpSetsItem["IpVersion"].asString();
-		if(!valueIpSetsIpSetsItem["State"].isNull())
-			ipSetsObject.state = valueIpSetsIpSetsItem["State"].asString();
-		if(!valueIpSetsIpSetsItem["Bandwidth"].isNull())
-			ipSetsObject.bandwidth = std::stoi(valueIpSetsIpSetsItem["Bandwidth"].asString());
 		if(!valueIpSetsIpSetsItem["AccelerateRegionId"].isNull())
 			ipSetsObject.accelerateRegionId = valueIpSetsIpSetsItem["AccelerateRegionId"].asString();
+		if(!valueIpSetsIpSetsItem["IpVersion"].isNull())
+			ipSetsObject.ipVersion = valueIpSetsIpSetsItem["IpVersion"].asString();
+		if(!valueIpSetsIpSetsItem["Bandwidth"].isNull())
+			ipSetsObject.bandwidth = std::stoi(valueIpSetsIpSetsItem["Bandwidth"].asString());
+		if(!valueIpSetsIpSetsItem["IspType"].isNull())
+			ipSetsObject.ispType = valueIpSetsIpSetsItem["IspType"].asString();
+		if(!valueIpSetsIpSetsItem["State"].isNull())
+			ipSetsObject.state = valueIpSetsIpSetsItem["State"].asString();
+		if(!valueIpSetsIpSetsItem["IpSetId"].isNull())
+			ipSetsObject.ipSetId = valueIpSetsIpSetsItem["IpSetId"].asString();
 		auto allIpAddressList = value["IpAddressList"]["IpAddressList"];
 		for (auto value : allIpAddressList)
 			ipSetsObject.ipAddressList.push_back(value.asString());

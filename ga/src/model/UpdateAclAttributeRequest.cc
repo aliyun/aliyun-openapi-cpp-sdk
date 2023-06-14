@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,67 +18,55 @@
 
 using AlibabaCloud::Ga::Model::UpdateAclAttributeRequest;
 
-UpdateAclAttributeRequest::UpdateAclAttributeRequest() :
-	RpcServiceRequest("ga", "2019-11-20", "UpdateAclAttribute")
-{
-	setMethod(HttpRequest::Method::Post);
+UpdateAclAttributeRequest::UpdateAclAttributeRequest()
+    : RpcServiceRequest("ga", "2019-11-20", "UpdateAclAttribute") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-UpdateAclAttributeRequest::~UpdateAclAttributeRequest()
-{}
+UpdateAclAttributeRequest::~UpdateAclAttributeRequest() {}
 
-std::string UpdateAclAttributeRequest::getAclId()const
-{
-	return aclId_;
+std::string UpdateAclAttributeRequest::getAclId() const {
+  return aclId_;
 }
 
-void UpdateAclAttributeRequest::setAclId(const std::string& aclId)
-{
-	aclId_ = aclId;
-	setParameter("AclId", aclId);
+void UpdateAclAttributeRequest::setAclId(const std::string &aclId) {
+  aclId_ = aclId;
+  setParameter(std::string("AclId"), aclId);
 }
 
-bool UpdateAclAttributeRequest::getDryRun()const
-{
-	return dryRun_;
+bool UpdateAclAttributeRequest::getDryRun() const {
+  return dryRun_;
 }
 
-void UpdateAclAttributeRequest::setDryRun(bool dryRun)
-{
-	dryRun_ = dryRun;
-	setParameter("DryRun", dryRun ? "true" : "false");
+void UpdateAclAttributeRequest::setDryRun(bool dryRun) {
+  dryRun_ = dryRun;
+  setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
-std::string UpdateAclAttributeRequest::getAclName()const
-{
-	return aclName_;
+std::string UpdateAclAttributeRequest::getAclName() const {
+  return aclName_;
 }
 
-void UpdateAclAttributeRequest::setAclName(const std::string& aclName)
-{
-	aclName_ = aclName;
-	setParameter("AclName", aclName);
+void UpdateAclAttributeRequest::setAclName(const std::string &aclName) {
+  aclName_ = aclName;
+  setParameter(std::string("AclName"), aclName);
 }
 
-std::string UpdateAclAttributeRequest::getClientToken()const
-{
-	return clientToken_;
+std::string UpdateAclAttributeRequest::getClientToken() const {
+  return clientToken_;
 }
 
-void UpdateAclAttributeRequest::setClientToken(const std::string& clientToken)
-{
-	clientToken_ = clientToken;
-	setParameter("ClientToken", clientToken);
+void UpdateAclAttributeRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string UpdateAclAttributeRequest::getRegionId()const
-{
-	return regionId_;
+std::string UpdateAclAttributeRequest::getRegionId() const {
+  return regionId_;
 }
 
-void UpdateAclAttributeRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void UpdateAclAttributeRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 

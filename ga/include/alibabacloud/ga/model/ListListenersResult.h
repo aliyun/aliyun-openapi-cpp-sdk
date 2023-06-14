@@ -34,33 +34,44 @@ namespace AlibabaCloud
 			public:
 				struct ListenersItem
 				{
-					struct PortRangesItem
+					struct XForwardedForConfig
 					{
-						int fromPort;
-						int toPort;
-					};
-					struct BackendPort
-					{
-						std::string fromPort;
-						std::string toPort;
+						bool xForwardedForGaApEnabled;
+						bool xForwardedForProtoEnabled;
+						bool xRealIpEnabled;
+						bool xForwardedForPortEnabled;
+						bool xForwardedForGaIdEnabled;
 					};
 					struct Certificate
 					{
 						std::string type;
 						std::string id;
 					};
+					struct BackendPort
+					{
+						std::string fromPort;
+						std::string toPort;
+					};
+					struct PortRangesItem
+					{
+						int fromPort;
+						int toPort;
+					};
 					std::string description;
-					std::string state;
-					std::vector<ListenersItem::PortRangesItem> portRanges;
 					std::vector<ListenersItem::BackendPort> backendPorts;
-					bool proxyProtocol;
+					std::vector<ListenersItem::PortRangesItem> portRanges;
 					long createTime;
+					bool proxyProtocol;
 					std::vector<ListenersItem::Certificate> certificates;
+					std::string name;
+					std::string securityPolicyId;
+					std::string type;
+					std::string state;
+					XForwardedForConfig xForwardedForConfig;
 					std::string protocol;
 					std::string acceleratorId;
-					std::string name;
-					std::string clientAffinity;
 					std::string listenerId;
+					std::string clientAffinity;
 				};
 
 

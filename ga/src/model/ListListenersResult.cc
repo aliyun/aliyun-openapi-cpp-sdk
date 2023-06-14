@@ -43,33 +43,37 @@ void ListListenersResult::parse(const std::string &payload)
 	for (auto valueListenersListenersItem : allListenersNode)
 	{
 		ListenersItem listenersObject;
+		if(!valueListenersListenersItem["ListenerId"].isNull())
+			listenersObject.listenerId = valueListenersListenersItem["ListenerId"].asString();
 		if(!valueListenersListenersItem["Description"].isNull())
 			listenersObject.description = valueListenersListenersItem["Description"].asString();
 		if(!valueListenersListenersItem["State"].isNull())
 			listenersObject.state = valueListenersListenersItem["State"].asString();
-		if(!valueListenersListenersItem["ProxyProtocol"].isNull())
-			listenersObject.proxyProtocol = valueListenersListenersItem["ProxyProtocol"].asString() == "true";
-		if(!valueListenersListenersItem["CreateTime"].isNull())
-			listenersObject.createTime = std::stol(valueListenersListenersItem["CreateTime"].asString());
-		if(!valueListenersListenersItem["Protocol"].isNull())
-			listenersObject.protocol = valueListenersListenersItem["Protocol"].asString();
-		if(!valueListenersListenersItem["AcceleratorId"].isNull())
-			listenersObject.acceleratorId = valueListenersListenersItem["AcceleratorId"].asString();
-		if(!valueListenersListenersItem["Name"].isNull())
-			listenersObject.name = valueListenersListenersItem["Name"].asString();
 		if(!valueListenersListenersItem["ClientAffinity"].isNull())
 			listenersObject.clientAffinity = valueListenersListenersItem["ClientAffinity"].asString();
-		if(!valueListenersListenersItem["ListenerId"].isNull())
-			listenersObject.listenerId = valueListenersListenersItem["ListenerId"].asString();
-		auto allPortRangesNode = valueListenersListenersItem["PortRanges"]["PortRangesItem"];
-		for (auto valueListenersListenersItemPortRangesPortRangesItem : allPortRangesNode)
+		if(!valueListenersListenersItem["Protocol"].isNull())
+			listenersObject.protocol = valueListenersListenersItem["Protocol"].asString();
+		if(!valueListenersListenersItem["CreateTime"].isNull())
+			listenersObject.createTime = std::stol(valueListenersListenersItem["CreateTime"].asString());
+		if(!valueListenersListenersItem["Name"].isNull())
+			listenersObject.name = valueListenersListenersItem["Name"].asString();
+		if(!valueListenersListenersItem["ProxyProtocol"].isNull())
+			listenersObject.proxyProtocol = valueListenersListenersItem["ProxyProtocol"].asString() == "true";
+		if(!valueListenersListenersItem["AcceleratorId"].isNull())
+			listenersObject.acceleratorId = valueListenersListenersItem["AcceleratorId"].asString();
+		if(!valueListenersListenersItem["SecurityPolicyId"].isNull())
+			listenersObject.securityPolicyId = valueListenersListenersItem["SecurityPolicyId"].asString();
+		if(!valueListenersListenersItem["Type"].isNull())
+			listenersObject.type = valueListenersListenersItem["Type"].asString();
+		auto allCertificatesNode = valueListenersListenersItem["Certificates"]["Certificate"];
+		for (auto valueListenersListenersItemCertificatesCertificate : allCertificatesNode)
 		{
-			ListenersItem::PortRangesItem portRangesObject;
-			if(!valueListenersListenersItemPortRangesPortRangesItem["FromPort"].isNull())
-				portRangesObject.fromPort = std::stoi(valueListenersListenersItemPortRangesPortRangesItem["FromPort"].asString());
-			if(!valueListenersListenersItemPortRangesPortRangesItem["ToPort"].isNull())
-				portRangesObject.toPort = std::stoi(valueListenersListenersItemPortRangesPortRangesItem["ToPort"].asString());
-			listenersObject.portRanges.push_back(portRangesObject);
+			ListenersItem::Certificate certificatesObject;
+			if(!valueListenersListenersItemCertificatesCertificate["Type"].isNull())
+				certificatesObject.type = valueListenersListenersItemCertificatesCertificate["Type"].asString();
+			if(!valueListenersListenersItemCertificatesCertificate["Id"].isNull())
+				certificatesObject.id = valueListenersListenersItemCertificatesCertificate["Id"].asString();
+			listenersObject.certificates.push_back(certificatesObject);
 		}
 		auto allBackendPortsNode = valueListenersListenersItem["BackendPorts"]["BackendPort"];
 		for (auto valueListenersListenersItemBackendPortsBackendPort : allBackendPortsNode)
@@ -81,16 +85,27 @@ void ListListenersResult::parse(const std::string &payload)
 				backendPortsObject.toPort = valueListenersListenersItemBackendPortsBackendPort["ToPort"].asString();
 			listenersObject.backendPorts.push_back(backendPortsObject);
 		}
-		auto allCertificatesNode = valueListenersListenersItem["Certificates"]["Certificate"];
-		for (auto valueListenersListenersItemCertificatesCertificate : allCertificatesNode)
+		auto allPortRangesNode = valueListenersListenersItem["PortRanges"]["PortRangesItem"];
+		for (auto valueListenersListenersItemPortRangesPortRangesItem : allPortRangesNode)
 		{
-			ListenersItem::Certificate certificatesObject;
-			if(!valueListenersListenersItemCertificatesCertificate["Type"].isNull())
-				certificatesObject.type = valueListenersListenersItemCertificatesCertificate["Type"].asString();
-			if(!valueListenersListenersItemCertificatesCertificate["Id"].isNull())
-				certificatesObject.id = valueListenersListenersItemCertificatesCertificate["Id"].asString();
-			listenersObject.certificates.push_back(certificatesObject);
+			ListenersItem::PortRangesItem portRangesObject;
+			if(!valueListenersListenersItemPortRangesPortRangesItem["FromPort"].isNull())
+				portRangesObject.fromPort = std::stoi(valueListenersListenersItemPortRangesPortRangesItem["FromPort"].asString());
+			if(!valueListenersListenersItemPortRangesPortRangesItem["ToPort"].isNull())
+				portRangesObject.toPort = std::stoi(valueListenersListenersItemPortRangesPortRangesItem["ToPort"].asString());
+			listenersObject.portRanges.push_back(portRangesObject);
 		}
+		auto xForwardedForConfigNode = value["XForwardedForConfig"];
+		if(!xForwardedForConfigNode["XForwardedForGaIdEnabled"].isNull())
+			listenersObject.xForwardedForConfig.xForwardedForGaIdEnabled = xForwardedForConfigNode["XForwardedForGaIdEnabled"].asString() == "true";
+		if(!xForwardedForConfigNode["XRealIpEnabled"].isNull())
+			listenersObject.xForwardedForConfig.xRealIpEnabled = xForwardedForConfigNode["XRealIpEnabled"].asString() == "true";
+		if(!xForwardedForConfigNode["XForwardedForGaApEnabled"].isNull())
+			listenersObject.xForwardedForConfig.xForwardedForGaApEnabled = xForwardedForConfigNode["XForwardedForGaApEnabled"].asString() == "true";
+		if(!xForwardedForConfigNode["XForwardedForProtoEnabled"].isNull())
+			listenersObject.xForwardedForConfig.xForwardedForProtoEnabled = xForwardedForConfigNode["XForwardedForProtoEnabled"].asString() == "true";
+		if(!xForwardedForConfigNode["XForwardedForPortEnabled"].isNull())
+			listenersObject.xForwardedForConfig.xForwardedForPortEnabled = xForwardedForConfigNode["XForwardedForPortEnabled"].asString() == "true";
 		listeners_.push_back(listenersObject);
 	}
 	if(!value["TotalCount"].isNull())

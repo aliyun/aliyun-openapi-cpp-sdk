@@ -53,22 +53,34 @@ void GetAclResult::parse(const std::string &payload)
 	for (auto valueRelatedListenersRelatedListenersItem : allRelatedListenersNode)
 	{
 		RelatedListenersItem relatedListenersObject;
+		if(!valueRelatedListenersRelatedListenersItem["ListenerId"].isNull())
+			relatedListenersObject.listenerId = valueRelatedListenersRelatedListenersItem["ListenerId"].asString();
 		if(!valueRelatedListenersRelatedListenersItem["AclType"].isNull())
 			relatedListenersObject.aclType = valueRelatedListenersRelatedListenersItem["AclType"].asString();
 		if(!valueRelatedListenersRelatedListenersItem["AcceleratorId"].isNull())
 			relatedListenersObject.acceleratorId = valueRelatedListenersRelatedListenersItem["AcceleratorId"].asString();
-		if(!valueRelatedListenersRelatedListenersItem["ListenerId"].isNull())
-			relatedListenersObject.listenerId = valueRelatedListenersRelatedListenersItem["ListenerId"].asString();
 		relatedListeners_.push_back(relatedListenersObject);
 	}
-	if(!value["AclStatus"].isNull())
-		aclStatus_ = value["AclStatus"].asString();
-	if(!value["AddressIPVersion"].isNull())
-		addressIPVersion_ = value["AddressIPVersion"].asString();
+	auto allTagsNode = value["Tags"]["TagsItem"];
+	for (auto valueTagsTagsItem : allTagsNode)
+	{
+		TagsItem tagsObject;
+		if(!valueTagsTagsItem["Key"].isNull())
+			tagsObject.key = valueTagsTagsItem["Key"].asString();
+		if(!valueTagsTagsItem["Value"].isNull())
+			tagsObject.value = valueTagsTagsItem["Value"].asString();
+		tags_.push_back(tagsObject);
+	}
 	if(!value["AclId"].isNull())
 		aclId_ = value["AclId"].asString();
+	if(!value["AddressIPVersion"].isNull())
+		addressIPVersion_ = value["AddressIPVersion"].asString();
+	if(!value["AclStatus"].isNull())
+		aclStatus_ = value["AclStatus"].asString();
 	if(!value["AclName"].isNull())
 		aclName_ = value["AclName"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -82,9 +94,9 @@ std::string GetAclResult::getAclStatus()const
 	return aclStatus_;
 }
 
-std::string GetAclResult::getAddressIPVersion()const
+std::string GetAclResult::getResourceGroupId()const
 {
-	return addressIPVersion_;
+	return resourceGroupId_;
 }
 
 std::string GetAclResult::getAclId()const
@@ -92,9 +104,19 @@ std::string GetAclResult::getAclId()const
 	return aclId_;
 }
 
+std::string GetAclResult::getAddressIPVersion()const
+{
+	return addressIPVersion_;
+}
+
 std::vector<GetAclResult::RelatedListenersItem> GetAclResult::getRelatedListeners()const
 {
 	return relatedListeners_;
+}
+
+std::vector<GetAclResult::TagsItem> GetAclResult::getTags()const
+{
+	return tags_;
 }
 
 std::string GetAclResult::getAclName()const

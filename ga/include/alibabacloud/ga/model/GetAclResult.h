@@ -43,6 +43,11 @@ namespace AlibabaCloud
 					std::string acceleratorId;
 					std::string listenerId;
 				};
+				struct TagsItem
+				{
+					std::string value;
+					std::string key;
+				};
 
 
 				GetAclResult();
@@ -50,9 +55,11 @@ namespace AlibabaCloud
 				~GetAclResult();
 				std::vector<AclEntriesItem> getAclEntries()const;
 				std::string getAclStatus()const;
-				std::string getAddressIPVersion()const;
+				std::string getResourceGroupId()const;
 				std::string getAclId()const;
+				std::string getAddressIPVersion()const;
 				std::vector<RelatedListenersItem> getRelatedListeners()const;
+				std::vector<TagsItem> getTags()const;
 				std::string getAclName()const;
 
 			protected:
@@ -60,9 +67,11 @@ namespace AlibabaCloud
 			private:
 				std::vector<AclEntriesItem> aclEntries_;
 				std::string aclStatus_;
-				std::string addressIPVersion_;
+				std::string resourceGroupId_;
 				std::string aclId_;
+				std::string addressIPVersion_;
 				std::vector<RelatedListenersItem> relatedListeners_;
+				std::vector<TagsItem> tags_;
 				std::string aclName_;
 
 			};

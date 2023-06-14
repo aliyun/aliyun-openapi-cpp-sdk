@@ -40,6 +40,7 @@ namespace AlibabaCloud
 				std::string getIpSetId()const;
 				std::string getIpVersion()const;
 				std::string getState()const;
+				std::string getIspType()const;
 				int getBandwidth()const;
 				std::vector<std::string> getIpAddressList()const;
 				std::string getAccelerateRegionId()const;
@@ -51,6 +52,7 @@ namespace AlibabaCloud
 				std::string ipSetId_;
 				std::string ipVersion_;
 				std::string state_;
+				std::string ispType_;
 				int bandwidth_;
 				std::vector<std::string> ipAddressList_;
 				std::string accelerateRegionId_;

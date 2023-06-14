@@ -50,6 +50,8 @@ void DescribeIpSetResult::parse(const std::string &payload)
 		state_ = value["State"].asString();
 	if(!value["Bandwidth"].isNull())
 		bandwidth_ = std::stoi(value["Bandwidth"].asString());
+	if(!value["IspType"].isNull())
+		ispType_ = value["IspType"].asString();
 	if(!value["AccelerateRegionId"].isNull())
 		accelerateRegionId_ = value["AccelerateRegionId"].asString();
 	if(!value["AcceleratorId"].isNull())
@@ -70,6 +72,11 @@ std::string DescribeIpSetResult::getIpVersion()const
 std::string DescribeIpSetResult::getState()const
 {
 	return state_;
+}
+
+std::string DescribeIpSetResult::getIspType()const
+{
+	return ispType_;
 }
 
 int DescribeIpSetResult::getBandwidth()const

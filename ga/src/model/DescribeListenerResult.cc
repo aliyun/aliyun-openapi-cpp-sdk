@@ -39,16 +39,6 @@ void DescribeListenerResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allBackendPortsNode = value["BackendPorts"]["BackendPort"];
-	for (auto valueBackendPortsBackendPort : allBackendPortsNode)
-	{
-		BackendPort backendPortsObject;
-		if(!valueBackendPortsBackendPort["FromPort"].isNull())
-			backendPortsObject.fromPort = valueBackendPortsBackendPort["FromPort"].asString();
-		if(!valueBackendPortsBackendPort["ToPort"].isNull())
-			backendPortsObject.toPort = valueBackendPortsBackendPort["ToPort"].asString();
-		backendPorts_.push_back(backendPortsObject);
-	}
 	auto allPortRangesNode = value["PortRanges"]["PortRangesItem"];
 	for (auto valuePortRangesPortRangesItem : allPortRangesNode)
 	{
@@ -58,6 +48,16 @@ void DescribeListenerResult::parse(const std::string &payload)
 		if(!valuePortRangesPortRangesItem["ToPort"].isNull())
 			portRangesObject.toPort = std::stoi(valuePortRangesPortRangesItem["ToPort"].asString());
 		portRanges_.push_back(portRangesObject);
+	}
+	auto allBackendPortsNode = value["BackendPorts"]["BackendPort"];
+	for (auto valueBackendPortsBackendPort : allBackendPortsNode)
+	{
+		BackendPort backendPortsObject;
+		if(!valueBackendPortsBackendPort["FromPort"].isNull())
+			backendPortsObject.fromPort = valueBackendPortsBackendPort["FromPort"].asString();
+		if(!valueBackendPortsBackendPort["ToPort"].isNull())
+			backendPortsObject.toPort = valueBackendPortsBackendPort["ToPort"].asString();
+		backendPorts_.push_back(backendPortsObject);
 	}
 	auto allCertificatesNode = value["Certificates"]["Certificate"];
 	for (auto valueCertificatesCertificate : allCertificatesNode)
@@ -73,32 +73,47 @@ void DescribeListenerResult::parse(const std::string &payload)
 	for (auto valueRelatedAclsrelatedAclsItem : allRelatedAclsNode)
 	{
 		RelatedAclsItem relatedAclsObject;
-		if(!valueRelatedAclsrelatedAclsItem["Status"].isNull())
-			relatedAclsObject.status = valueRelatedAclsrelatedAclsItem["Status"].asString();
 		if(!valueRelatedAclsrelatedAclsItem["AclId"].isNull())
 			relatedAclsObject.aclId = valueRelatedAclsrelatedAclsItem["AclId"].asString();
+		if(!valueRelatedAclsrelatedAclsItem["Status"].isNull())
+			relatedAclsObject.status = valueRelatedAclsrelatedAclsItem["Status"].asString();
 		relatedAcls_.push_back(relatedAclsObject);
 	}
+	auto xForwardedForConfigNode = value["XForwardedForConfig"];
+	if(!xForwardedForConfigNode["XForwardedForGaIdEnabled"].isNull())
+		xForwardedForConfig_.xForwardedForGaIdEnabled = xForwardedForConfigNode["XForwardedForGaIdEnabled"].asString() == "true";
+	if(!xForwardedForConfigNode["XForwardedForGaApEnabled"].isNull())
+		xForwardedForConfig_.xForwardedForGaApEnabled = xForwardedForConfigNode["XForwardedForGaApEnabled"].asString() == "true";
+	if(!xForwardedForConfigNode["XForwardedForProtoEnabled"].isNull())
+		xForwardedForConfig_.xForwardedForProtoEnabled = xForwardedForConfigNode["XForwardedForProtoEnabled"].asString() == "true";
+	if(!xForwardedForConfigNode["XForwardedForPortEnabled"].isNull())
+		xForwardedForConfig_.xForwardedForPortEnabled = xForwardedForConfigNode["XForwardedForPortEnabled"].asString() == "true";
+	if(!xForwardedForConfigNode["XRealIpEnabled"].isNull())
+		xForwardedForConfig_.xRealIpEnabled = xForwardedForConfigNode["XRealIpEnabled"].asString() == "true";
 	if(!value["Description"].isNull())
 		description_ = value["Description"].asString();
 	if(!value["State"].isNull())
 		state_ = value["State"].asString();
-	if(!value["ProxyProtocol"].isNull())
-		proxyProtocol_ = value["ProxyProtocol"].asString() == "true";
 	if(!value["CreateTime"].isNull())
 		createTime_ = value["CreateTime"].asString();
-	if(!value["AclType"].isNull())
-		aclType_ = value["AclType"].asString();
 	if(!value["Protocol"].isNull())
 		protocol_ = value["Protocol"].asString();
-	if(!value["AcceleratorId"].isNull())
-		acceleratorId_ = value["AcceleratorId"].asString();
-	if(!value["Name"].isNull())
-		name_ = value["Name"].asString();
-	if(!value["ClientAffinity"].isNull())
-		clientAffinity_ = value["ClientAffinity"].asString();
 	if(!value["ListenerId"].isNull())
 		listenerId_ = value["ListenerId"].asString();
+	if(!value["ClientAffinity"].isNull())
+		clientAffinity_ = value["ClientAffinity"].asString();
+	if(!value["Name"].isNull())
+		name_ = value["Name"].asString();
+	if(!value["AclType"].isNull())
+		aclType_ = value["AclType"].asString();
+	if(!value["AcceleratorId"].isNull())
+		acceleratorId_ = value["AcceleratorId"].asString();
+	if(!value["ProxyProtocol"].isNull())
+		proxyProtocol_ = value["ProxyProtocol"].asString() == "true";
+	if(!value["SecurityPolicyId"].isNull())
+		securityPolicyId_ = value["SecurityPolicyId"].asString();
+	if(!value["Type"].isNull())
+		type_ = value["Type"].asString();
 
 }
 
@@ -107,24 +122,24 @@ std::string DescribeListenerResult::getDescription()const
 	return description_;
 }
 
-std::vector<DescribeListenerResult::BackendPort> DescribeListenerResult::getBackendPorts()const
-{
-	return backendPorts_;
-}
-
 std::vector<DescribeListenerResult::PortRangesItem> DescribeListenerResult::getPortRanges()const
 {
 	return portRanges_;
 }
 
-bool DescribeListenerResult::getProxyProtocol()const
+std::vector<DescribeListenerResult::BackendPort> DescribeListenerResult::getBackendPorts()const
 {
-	return proxyProtocol_;
+	return backendPorts_;
 }
 
 std::string DescribeListenerResult::getCreateTime()const
 {
 	return createTime_;
+}
+
+bool DescribeListenerResult::getProxyProtocol()const
+{
+	return proxyProtocol_;
 }
 
 std::vector<DescribeListenerResult::Certificate> DescribeListenerResult::getCertificates()const
@@ -142,9 +157,24 @@ std::string DescribeListenerResult::getName()const
 	return name_;
 }
 
+std::string DescribeListenerResult::getSecurityPolicyId()const
+{
+	return securityPolicyId_;
+}
+
+std::string DescribeListenerResult::getType()const
+{
+	return type_;
+}
+
 std::string DescribeListenerResult::getState()const
 {
 	return state_;
+}
+
+DescribeListenerResult::XForwardedForConfig DescribeListenerResult::getXForwardedForConfig()const
+{
+	return xForwardedForConfig_;
 }
 
 std::string DescribeListenerResult::getAclType()const
@@ -162,13 +192,13 @@ std::string DescribeListenerResult::getAcceleratorId()const
 	return acceleratorId_;
 }
 
-std::string DescribeListenerResult::getClientAffinity()const
-{
-	return clientAffinity_;
-}
-
 std::string DescribeListenerResult::getListenerId()const
 {
 	return listenerId_;
+}
+
+std::string DescribeListenerResult::getClientAffinity()const
+{
+	return clientAffinity_;
 }
 

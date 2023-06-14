@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string ipSetId;
 					std::string ipVersion;
+					std::string ispType;
 					std::string state;
 					int bandwidth;
 					std::vector<std::string> ipAddressList;

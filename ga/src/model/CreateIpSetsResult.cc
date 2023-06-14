@@ -43,12 +43,14 @@ void CreateIpSetsResult::parse(const std::string &payload)
 	for (auto valueIpSetsGaIpSet : allIpSetsNode)
 	{
 		GaIpSet ipSetsObject;
-		if(!valueIpSetsGaIpSet["IpSetId"].isNull())
-			ipSetsObject.ipSetId = valueIpSetsGaIpSet["IpSetId"].asString();
-		if(!valueIpSetsGaIpSet["Bandwidth"].isNull())
-			ipSetsObject.bandwidth = std::stoi(valueIpSetsGaIpSet["Bandwidth"].asString());
 		if(!valueIpSetsGaIpSet["AccelerateRegionId"].isNull())
 			ipSetsObject.accelerateRegionId = valueIpSetsGaIpSet["AccelerateRegionId"].asString();
+		if(!valueIpSetsGaIpSet["Bandwidth"].isNull())
+			ipSetsObject.bandwidth = std::stoi(valueIpSetsGaIpSet["Bandwidth"].asString());
+		if(!valueIpSetsGaIpSet["IpSetId"].isNull())
+			ipSetsObject.ipSetId = valueIpSetsGaIpSet["IpSetId"].asString();
+		if(!valueIpSetsGaIpSet["IspType"].isNull())
+			ipSetsObject.ispType = valueIpSetsGaIpSet["IspType"].asString();
 		auto allIpList = value["IpList"]["IpList"];
 		for (auto value : allIpList)
 			ipSetsObject.ipList.push_back(value.asString());

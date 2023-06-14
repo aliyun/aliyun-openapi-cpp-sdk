@@ -43,24 +43,36 @@ void ListBandwidthackagesResult::parse(const std::string &payload)
 	for (auto valueBandwidthPackagesBandwidthPackage : allBandwidthPackagesNode)
 	{
 		BandwidthPackage bandwidthPackagesObject;
+		if(!valueBandwidthPackagesBandwidthPackage["BandwidthPackageId"].isNull())
+			bandwidthPackagesObject.bandwidthPackageId = valueBandwidthPackagesBandwidthPackage["BandwidthPackageId"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["Bandwidth"].isNull())
+			bandwidthPackagesObject.bandwidth = std::stoi(valueBandwidthPackagesBandwidthPackage["Bandwidth"].asString());
 		if(!valueBandwidthPackagesBandwidthPackage["Description"].isNull())
 			bandwidthPackagesObject.description = valueBandwidthPackagesBandwidthPackage["Description"].asString();
-		if(!valueBandwidthPackagesBandwidthPackage["ChargeType"].isNull())
-			bandwidthPackagesObject.chargeType = valueBandwidthPackagesBandwidthPackage["ChargeType"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["ExpiredTime"].isNull())
+			bandwidthPackagesObject.expiredTime = valueBandwidthPackagesBandwidthPackage["ExpiredTime"].asString();
 		if(!valueBandwidthPackagesBandwidthPackage["State"].isNull())
 			bandwidthPackagesObject.state = valueBandwidthPackagesBandwidthPackage["State"].asString();
 		if(!valueBandwidthPackagesBandwidthPackage["CreateTime"].isNull())
 			bandwidthPackagesObject.createTime = valueBandwidthPackagesBandwidthPackage["CreateTime"].asString();
-		if(!valueBandwidthPackagesBandwidthPackage["ExpiredTime"].isNull())
-			bandwidthPackagesObject.expiredTime = valueBandwidthPackagesBandwidthPackage["ExpiredTime"].asString();
-		if(!valueBandwidthPackagesBandwidthPackage["Bandwidth"].isNull())
-			bandwidthPackagesObject.bandwidth = std::stoi(valueBandwidthPackagesBandwidthPackage["Bandwidth"].asString());
-		if(!valueBandwidthPackagesBandwidthPackage["BandwidthPackageId"].isNull())
-			bandwidthPackagesObject.bandwidthPackageId = valueBandwidthPackagesBandwidthPackage["BandwidthPackageId"].asString();
-		if(!valueBandwidthPackagesBandwidthPackage["RegionId"].isNull())
-			bandwidthPackagesObject.regionId = valueBandwidthPackagesBandwidthPackage["RegionId"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["ChargeType"].isNull())
+			bandwidthPackagesObject.chargeType = valueBandwidthPackagesBandwidthPackage["ChargeType"].asString();
 		if(!valueBandwidthPackagesBandwidthPackage["Name"].isNull())
 			bandwidthPackagesObject.name = valueBandwidthPackagesBandwidthPackage["Name"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["RegionId"].isNull())
+			bandwidthPackagesObject.regionId = valueBandwidthPackagesBandwidthPackage["RegionId"].asString();
+		if(!valueBandwidthPackagesBandwidthPackage["ResourceGroupId"].isNull())
+			bandwidthPackagesObject.resourceGroupId = valueBandwidthPackagesBandwidthPackage["ResourceGroupId"].asString();
+		auto allTagsNode = valueBandwidthPackagesBandwidthPackage["Tags"]["TagsItem"];
+		for (auto valueBandwidthPackagesBandwidthPackageTagsTagsItem : allTagsNode)
+		{
+			BandwidthPackage::TagsItem tagsObject;
+			if(!valueBandwidthPackagesBandwidthPackageTagsTagsItem["Key"].isNull())
+				tagsObject.key = valueBandwidthPackagesBandwidthPackageTagsTagsItem["Key"].asString();
+			if(!valueBandwidthPackagesBandwidthPackageTagsTagsItem["Value"].isNull())
+				tagsObject.value = valueBandwidthPackagesBandwidthPackageTagsTagsItem["Value"].asString();
+			bandwidthPackagesObject.tags.push_back(tagsObject);
+		}
 		auto allAccelerators = value["Accelerators"]["Accelerator"];
 		for (auto value : allAccelerators)
 			bandwidthPackagesObject.accelerators.push_back(value.asString());

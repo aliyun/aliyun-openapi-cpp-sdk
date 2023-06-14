@@ -45,23 +45,39 @@ namespace AlibabaCloud
 						std::string instanceId;
 						int bandwidth;
 					};
+					struct IpSetConfig
+					{
+						std::string accessMode;
+					};
+					struct TagsItem
+					{
+						std::string value;
+						std::string key;
+					};
+					std::string upgradableStatus;
 					std::string ddosId;
 					std::string dnsName;
 					std::string description;
+					std::string resourceGroupId;
 					std::string instanceChargeType;
 					long createTime;
 					CrossDomainBandwidthPackage crossDomainBandwidthPackage;
+					IpSetConfig ipSetConfig;
 					std::string secondDnsName;
 					std::string name;
+					std::string crossBorderMode;
+					std::string bandwidthBillingType;
 					std::string type;
 					BasicBandwidthPackage basicBandwidthPackage;
 					std::string state;
-					long expiredTime;
 					int bandwidth;
+					long expiredTime;
 					std::string cenId;
 					std::string regionId;
 					std::string spec;
 					std::string acceleratorId;
+					std::vector<AcceleratorsItem::TagsItem> tags;
+					bool crossBorderStatus;
 				};
 
 

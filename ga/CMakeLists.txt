@@ -25,6 +25,8 @@ set(ga_public_header_model
 	include/alibabacloud/ga/model/AddEntriesToAclResult.h
 	include/alibabacloud/ga/model/AssociateAclsWithListenerRequest.h
 	include/alibabacloud/ga/model/AssociateAclsWithListenerResult.h
+	include/alibabacloud/ga/model/AssociateAdditionalCertificatesWithListenerRequest.h
+	include/alibabacloud/ga/model/AssociateAdditionalCertificatesWithListenerResult.h
 	include/alibabacloud/ga/model/AttachDdosToAcceleratorRequest.h
 	include/alibabacloud/ga/model/AttachDdosToAcceleratorResult.h
 	include/alibabacloud/ga/model/AttachLogStoreToEndpointGroupRequest.h
@@ -33,30 +35,90 @@ set(ga_public_header_model
 	include/alibabacloud/ga/model/BandwidthPackageAddAcceleratorResult.h
 	include/alibabacloud/ga/model/BandwidthPackageRemoveAcceleratorRequest.h
 	include/alibabacloud/ga/model/BandwidthPackageRemoveAcceleratorResult.h
+	include/alibabacloud/ga/model/ChangeResourceGroupRequest.h
+	include/alibabacloud/ga/model/ChangeResourceGroupResult.h
 	include/alibabacloud/ga/model/ConfigEndpointProbeRequest.h
 	include/alibabacloud/ga/model/ConfigEndpointProbeResult.h
 	include/alibabacloud/ga/model/CreateAcceleratorRequest.h
 	include/alibabacloud/ga/model/CreateAcceleratorResult.h
 	include/alibabacloud/ga/model/CreateAclRequest.h
 	include/alibabacloud/ga/model/CreateAclResult.h
+	include/alibabacloud/ga/model/CreateApplicationMonitorRequest.h
+	include/alibabacloud/ga/model/CreateApplicationMonitorResult.h
 	include/alibabacloud/ga/model/CreateBandwidthPackageRequest.h
 	include/alibabacloud/ga/model/CreateBandwidthPackageResult.h
+	include/alibabacloud/ga/model/CreateBasicAccelerateIpRequest.h
+	include/alibabacloud/ga/model/CreateBasicAccelerateIpResult.h
+	include/alibabacloud/ga/model/CreateBasicAccelerateIpEndpointRelationRequest.h
+	include/alibabacloud/ga/model/CreateBasicAccelerateIpEndpointRelationResult.h
+	include/alibabacloud/ga/model/CreateBasicAccelerateIpEndpointRelationsRequest.h
+	include/alibabacloud/ga/model/CreateBasicAccelerateIpEndpointRelationsResult.h
+	include/alibabacloud/ga/model/CreateBasicAcceleratorRequest.h
+	include/alibabacloud/ga/model/CreateBasicAcceleratorResult.h
+	include/alibabacloud/ga/model/CreateBasicEndpointRequest.h
+	include/alibabacloud/ga/model/CreateBasicEndpointResult.h
+	include/alibabacloud/ga/model/CreateBasicEndpointGroupRequest.h
+	include/alibabacloud/ga/model/CreateBasicEndpointGroupResult.h
+	include/alibabacloud/ga/model/CreateBasicEndpointsRequest.h
+	include/alibabacloud/ga/model/CreateBasicEndpointsResult.h
+	include/alibabacloud/ga/model/CreateBasicIpSetRequest.h
+	include/alibabacloud/ga/model/CreateBasicIpSetResult.h
+	include/alibabacloud/ga/model/CreateCustomRoutingEndpointGroupDestinationsRequest.h
+	include/alibabacloud/ga/model/CreateCustomRoutingEndpointGroupDestinationsResult.h
+	include/alibabacloud/ga/model/CreateCustomRoutingEndpointGroupsRequest.h
+	include/alibabacloud/ga/model/CreateCustomRoutingEndpointGroupsResult.h
+	include/alibabacloud/ga/model/CreateCustomRoutingEndpointTrafficPoliciesRequest.h
+	include/alibabacloud/ga/model/CreateCustomRoutingEndpointTrafficPoliciesResult.h
+	include/alibabacloud/ga/model/CreateCustomRoutingEndpointsRequest.h
+	include/alibabacloud/ga/model/CreateCustomRoutingEndpointsResult.h
+	include/alibabacloud/ga/model/CreateDomainRequest.h
+	include/alibabacloud/ga/model/CreateDomainResult.h
 	include/alibabacloud/ga/model/CreateEndpointGroupRequest.h
 	include/alibabacloud/ga/model/CreateEndpointGroupResult.h
+	include/alibabacloud/ga/model/CreateEndpointGroupsRequest.h
+	include/alibabacloud/ga/model/CreateEndpointGroupsResult.h
 	include/alibabacloud/ga/model/CreateForwardingRulesRequest.h
 	include/alibabacloud/ga/model/CreateForwardingRulesResult.h
 	include/alibabacloud/ga/model/CreateIpSetsRequest.h
 	include/alibabacloud/ga/model/CreateIpSetsResult.h
 	include/alibabacloud/ga/model/CreateListenerRequest.h
 	include/alibabacloud/ga/model/CreateListenerResult.h
+	include/alibabacloud/ga/model/CreateSpareIpsRequest.h
+	include/alibabacloud/ga/model/CreateSpareIpsResult.h
 	include/alibabacloud/ga/model/DeleteAcceleratorRequest.h
 	include/alibabacloud/ga/model/DeleteAcceleratorResult.h
 	include/alibabacloud/ga/model/DeleteAclRequest.h
 	include/alibabacloud/ga/model/DeleteAclResult.h
+	include/alibabacloud/ga/model/DeleteApplicationMonitorRequest.h
+	include/alibabacloud/ga/model/DeleteApplicationMonitorResult.h
 	include/alibabacloud/ga/model/DeleteBandwidthPackageRequest.h
 	include/alibabacloud/ga/model/DeleteBandwidthPackageResult.h
+	include/alibabacloud/ga/model/DeleteBasicAccelerateIpRequest.h
+	include/alibabacloud/ga/model/DeleteBasicAccelerateIpResult.h
+	include/alibabacloud/ga/model/DeleteBasicAccelerateIpEndpointRelationRequest.h
+	include/alibabacloud/ga/model/DeleteBasicAccelerateIpEndpointRelationResult.h
+	include/alibabacloud/ga/model/DeleteBasicAcceleratorRequest.h
+	include/alibabacloud/ga/model/DeleteBasicAcceleratorResult.h
+	include/alibabacloud/ga/model/DeleteBasicEndpointRequest.h
+	include/alibabacloud/ga/model/DeleteBasicEndpointResult.h
+	include/alibabacloud/ga/model/DeleteBasicEndpointGroupRequest.h
+	include/alibabacloud/ga/model/DeleteBasicEndpointGroupResult.h
+	include/alibabacloud/ga/model/DeleteBasicIpSetRequest.h
+	include/alibabacloud/ga/model/DeleteBasicIpSetResult.h
+	include/alibabacloud/ga/model/DeleteCustomRoutingEndpointGroupDestinationsRequest.h
+	include/alibabacloud/ga/model/DeleteCustomRoutingEndpointGroupDestinationsResult.h
+	include/alibabacloud/ga/model/DeleteCustomRoutingEndpointGroupsRequest.h
+	include/alibabacloud/ga/model/DeleteCustomRoutingEndpointGroupsResult.h
+	include/alibabacloud/ga/model/DeleteCustomRoutingEndpointTrafficPoliciesRequest.h
+	include/alibabacloud/ga/model/DeleteCustomRoutingEndpointTrafficPoliciesResult.h
+	include/alibabacloud/ga/model/DeleteCustomRoutingEndpointsRequest.h
+	include/alibabacloud/ga/model/DeleteCustomRoutingEndpointsResult.h
+	include/alibabacloud/ga/model/DeleteDomainAcceleratorRelationRequest.h
+	include/alibabacloud/ga/model/DeleteDomainAcceleratorRelationResult.h
 	include/alibabacloud/ga/model/DeleteEndpointGroupRequest.h
 	include/alibabacloud/ga/model/DeleteEndpointGroupResult.h
+	include/alibabacloud/ga/model/DeleteEndpointGroupsRequest.h
+	include/alibabacloud/ga/model/DeleteEndpointGroupsResult.h
 	include/alibabacloud/ga/model/DeleteForwardingRulesRequest.h
 	include/alibabacloud/ga/model/DeleteForwardingRulesResult.h
 	include/alibabacloud/ga/model/DeleteIpSetRequest.h
@@ -65,10 +127,30 @@ set(ga_public_header_model
 	include/alibabacloud/ga/model/DeleteIpSetsResult.h
 	include/alibabacloud/ga/model/DeleteListenerRequest.h
 	include/alibabacloud/ga/model/DeleteListenerResult.h
+	include/alibabacloud/ga/model/DeleteSpareIpsRequest.h
+	include/alibabacloud/ga/model/DeleteSpareIpsResult.h
 	include/alibabacloud/ga/model/DescribeAcceleratorRequest.h
 	include/alibabacloud/ga/model/DescribeAcceleratorResult.h
+	include/alibabacloud/ga/model/DescribeAcceleratorAutoRenewAttributeRequest.h
+	include/alibabacloud/ga/model/DescribeAcceleratorAutoRenewAttributeResult.h
+	include/alibabacloud/ga/model/DescribeApplicationMonitorRequest.h
+	include/alibabacloud/ga/model/DescribeApplicationMonitorResult.h
 	include/alibabacloud/ga/model/DescribeBandwidthPackageRequest.h
 	include/alibabacloud/ga/model/DescribeBandwidthPackageResult.h
+	include/alibabacloud/ga/model/DescribeBandwidthPackageAutoRenewAttributeRequest.h
+	include/alibabacloud/ga/model/DescribeBandwidthPackageAutoRenewAttributeResult.h
+	include/alibabacloud/ga/model/DescribeCommodityRequest.h
+	include/alibabacloud/ga/model/DescribeCommodityResult.h
+	include/alibabacloud/ga/model/DescribeCommodityPriceRequest.h
+	include/alibabacloud/ga/model/DescribeCommodityPriceResult.h
+	include/alibabacloud/ga/model/DescribeCustomRoutingEndPointTrafficPolicyRequest.h
+	include/alibabacloud/ga/model/DescribeCustomRoutingEndPointTrafficPolicyResult.h
+	include/alibabacloud/ga/model/DescribeCustomRoutingEndpointRequest.h
+	include/alibabacloud/ga/model/DescribeCustomRoutingEndpointResult.h
+	include/alibabacloud/ga/model/DescribeCustomRoutingEndpointGroupRequest.h
+	include/alibabacloud/ga/model/DescribeCustomRoutingEndpointGroupResult.h
+	include/alibabacloud/ga/model/DescribeCustomRoutingEndpointGroupDestinationsRequest.h
+	include/alibabacloud/ga/model/DescribeCustomRoutingEndpointGroupDestinationsResult.h
 	include/alibabacloud/ga/model/DescribeEndpointGroupRequest.h
 	include/alibabacloud/ga/model/DescribeEndpointGroupResult.h
 	include/alibabacloud/ga/model/DescribeIpSetRequest.h
@@ -81,16 +163,50 @@ set(ga_public_header_model
 	include/alibabacloud/ga/model/DetachDdosFromAcceleratorResult.h
 	include/alibabacloud/ga/model/DetachLogStoreFromEndpointGroupRequest.h
 	include/alibabacloud/ga/model/DetachLogStoreFromEndpointGroupResult.h
+	include/alibabacloud/ga/model/DetectApplicationMonitorRequest.h
+	include/alibabacloud/ga/model/DetectApplicationMonitorResult.h
+	include/alibabacloud/ga/model/DisableApplicationMonitorRequest.h
+	include/alibabacloud/ga/model/DisableApplicationMonitorResult.h
 	include/alibabacloud/ga/model/DissociateAclsFromListenerRequest.h
 	include/alibabacloud/ga/model/DissociateAclsFromListenerResult.h
+	include/alibabacloud/ga/model/DissociateAdditionalCertificatesFromListenerRequest.h
+	include/alibabacloud/ga/model/DissociateAdditionalCertificatesFromListenerResult.h
+	include/alibabacloud/ga/model/EnableApplicationMonitorRequest.h
+	include/alibabacloud/ga/model/EnableApplicationMonitorResult.h
 	include/alibabacloud/ga/model/GetAclRequest.h
 	include/alibabacloud/ga/model/GetAclResult.h
+	include/alibabacloud/ga/model/GetBasicAccelerateIpRequest.h
+	include/alibabacloud/ga/model/GetBasicAccelerateIpResult.h
+	include/alibabacloud/ga/model/GetBasicAccelerateIpEndpointRelationRequest.h
+	include/alibabacloud/ga/model/GetBasicAccelerateIpEndpointRelationResult.h
+	include/alibabacloud/ga/model/GetBasicAccelerateIpIdleCountRequest.h
+	include/alibabacloud/ga/model/GetBasicAccelerateIpIdleCountResult.h
+	include/alibabacloud/ga/model/GetBasicAcceleratorRequest.h
+	include/alibabacloud/ga/model/GetBasicAcceleratorResult.h
+	include/alibabacloud/ga/model/GetBasicEndpointRequest.h
+	include/alibabacloud/ga/model/GetBasicEndpointResult.h
+	include/alibabacloud/ga/model/GetBasicEndpointGroupRequest.h
+	include/alibabacloud/ga/model/GetBasicEndpointGroupResult.h
+	include/alibabacloud/ga/model/GetBasicIpSetRequest.h
+	include/alibabacloud/ga/model/GetBasicIpSetResult.h
+	include/alibabacloud/ga/model/GetHealthStatusRequest.h
+	include/alibabacloud/ga/model/GetHealthStatusResult.h
+	include/alibabacloud/ga/model/GetInvalidDomainCountRequest.h
+	include/alibabacloud/ga/model/GetInvalidDomainCountResult.h
+	include/alibabacloud/ga/model/GetIpsetsBandwidthLimitRequest.h
+	include/alibabacloud/ga/model/GetIpsetsBandwidthLimitResult.h
+	include/alibabacloud/ga/model/GetSpareIpRequest.h
+	include/alibabacloud/ga/model/GetSpareIpResult.h
 	include/alibabacloud/ga/model/ListAccelerateAreasRequest.h
 	include/alibabacloud/ga/model/ListAccelerateAreasResult.h
 	include/alibabacloud/ga/model/ListAcceleratorsRequest.h
 	include/alibabacloud/ga/model/ListAcceleratorsResult.h
 	include/alibabacloud/ga/model/ListAclsRequest.h
 	include/alibabacloud/ga/model/ListAclsResult.h
+	include/alibabacloud/ga/model/ListApplicationMonitorRequest.h
+	include/alibabacloud/ga/model/ListApplicationMonitorResult.h
+	include/alibabacloud/ga/model/ListApplicationMonitorDetectResultRequest.h
+	include/alibabacloud/ga/model/ListApplicationMonitorDetectResultResult.h
 	include/alibabacloud/ga/model/ListAvailableAccelerateAreasRequest.h
 	include/alibabacloud/ga/model/ListAvailableAccelerateAreasResult.h
 	include/alibabacloud/ga/model/ListAvailableBusiRegionsRequest.h
@@ -99,30 +215,104 @@ set(ga_public_header_model
 	include/alibabacloud/ga/model/ListBandwidthPackagesResult.h
 	include/alibabacloud/ga/model/ListBandwidthackagesRequest.h
 	include/alibabacloud/ga/model/ListBandwidthackagesResult.h
+	include/alibabacloud/ga/model/ListBasicAccelerateIpEndpointRelationsRequest.h
+	include/alibabacloud/ga/model/ListBasicAccelerateIpEndpointRelationsResult.h
+	include/alibabacloud/ga/model/ListBasicAccelerateIpsRequest.h
+	include/alibabacloud/ga/model/ListBasicAccelerateIpsResult.h
+	include/alibabacloud/ga/model/ListBasicAcceleratorsRequest.h
+	include/alibabacloud/ga/model/ListBasicAcceleratorsResult.h
+	include/alibabacloud/ga/model/ListBasicEndpointsRequest.h
+	include/alibabacloud/ga/model/ListBasicEndpointsResult.h
 	include/alibabacloud/ga/model/ListBusiRegionsRequest.h
 	include/alibabacloud/ga/model/ListBusiRegionsResult.h
+	include/alibabacloud/ga/model/ListCommonAreasRequest.h
+	include/alibabacloud/ga/model/ListCommonAreasResult.h
+	include/alibabacloud/ga/model/ListCustomRoutingEndpointGroupDestinationsRequest.h
+	include/alibabacloud/ga/model/ListCustomRoutingEndpointGroupDestinationsResult.h
+	include/alibabacloud/ga/model/ListCustomRoutingEndpointGroupsRequest.h
+	include/alibabacloud/ga/model/ListCustomRoutingEndpointGroupsResult.h
+	include/alibabacloud/ga/model/ListCustomRoutingEndpointTrafficPoliciesRequest.h
+	include/alibabacloud/ga/model/ListCustomRoutingEndpointTrafficPoliciesResult.h
+	include/alibabacloud/ga/model/ListCustomRoutingEndpointsRequest.h
+	include/alibabacloud/ga/model/ListCustomRoutingEndpointsResult.h
+	include/alibabacloud/ga/model/ListCustomRoutingPortMappingsRequest.h
+	include/alibabacloud/ga/model/ListCustomRoutingPortMappingsResult.h
+	include/alibabacloud/ga/model/ListCustomRoutingPortMappingsByDestinationRequest.h
+	include/alibabacloud/ga/model/ListCustomRoutingPortMappingsByDestinationResult.h
+	include/alibabacloud/ga/model/ListDomainsRequest.h
+	include/alibabacloud/ga/model/ListDomainsResult.h
 	include/alibabacloud/ga/model/ListEndpointGroupsRequest.h
 	include/alibabacloud/ga/model/ListEndpointGroupsResult.h
 	include/alibabacloud/ga/model/ListForwardingRulesRequest.h
 	include/alibabacloud/ga/model/ListForwardingRulesResult.h
 	include/alibabacloud/ga/model/ListIpSetsRequest.h
 	include/alibabacloud/ga/model/ListIpSetsResult.h
+	include/alibabacloud/ga/model/ListIspTypesRequest.h
+	include/alibabacloud/ga/model/ListIspTypesResult.h
+	include/alibabacloud/ga/model/ListListenerCertificatesRequest.h
+	include/alibabacloud/ga/model/ListListenerCertificatesResult.h
 	include/alibabacloud/ga/model/ListListenersRequest.h
 	include/alibabacloud/ga/model/ListListenersResult.h
+	include/alibabacloud/ga/model/ListSpareIpsRequest.h
+	include/alibabacloud/ga/model/ListSpareIpsResult.h
+	include/alibabacloud/ga/model/ListSystemSecurityPoliciesRequest.h
+	include/alibabacloud/ga/model/ListSystemSecurityPoliciesResult.h
+	include/alibabacloud/ga/model/ListTagResourcesRequest.h
+	include/alibabacloud/ga/model/ListTagResourcesResult.h
+	include/alibabacloud/ga/model/QueryCrossBorderApprovalStatusRequest.h
+	include/alibabacloud/ga/model/QueryCrossBorderApprovalStatusResult.h
 	include/alibabacloud/ga/model/RemoveEntriesFromAclRequest.h
 	include/alibabacloud/ga/model/RemoveEntriesFromAclResult.h
 	include/alibabacloud/ga/model/ReplaceBandwidthPackageRequest.h
 	include/alibabacloud/ga/model/ReplaceBandwidthPackageResult.h
+	include/alibabacloud/ga/model/TagResourcesRequest.h
+	include/alibabacloud/ga/model/TagResourcesResult.h
+	include/alibabacloud/ga/model/UntagResourcesRequest.h
+	include/alibabacloud/ga/model/UntagResourcesResult.h
 	include/alibabacloud/ga/model/UpdateAcceleratorRequest.h
 	include/alibabacloud/ga/model/UpdateAcceleratorResult.h
+	include/alibabacloud/ga/model/UpdateAcceleratorAutoRenewAttributeRequest.h
+	include/alibabacloud/ga/model/UpdateAcceleratorAutoRenewAttributeResult.h
+	include/alibabacloud/ga/model/UpdateAcceleratorConfirmRequest.h
+	include/alibabacloud/ga/model/UpdateAcceleratorConfirmResult.h
+	include/alibabacloud/ga/model/UpdateAcceleratorCrossBorderModeRequest.h
+	include/alibabacloud/ga/model/UpdateAcceleratorCrossBorderModeResult.h
 	include/alibabacloud/ga/model/UpdateAclAttributeRequest.h
 	include/alibabacloud/ga/model/UpdateAclAttributeResult.h
+	include/alibabacloud/ga/model/UpdateAdditionalCertificateWithListenerRequest.h
+	include/alibabacloud/ga/model/UpdateAdditionalCertificateWithListenerResult.h
+	include/alibabacloud/ga/model/UpdateApplicationMonitorRequest.h
+	include/alibabacloud/ga/model/UpdateApplicationMonitorResult.h
+	include/alibabacloud/ga/model/UpdateBandwidthPackagaAutoRenewAttributeRequest.h
+	include/alibabacloud/ga/model/UpdateBandwidthPackagaAutoRenewAttributeResult.h
 	include/alibabacloud/ga/model/UpdateBandwidthPackageRequest.h
 	include/alibabacloud/ga/model/UpdateBandwidthPackageResult.h
+	include/alibabacloud/ga/model/UpdateBasicAcceleratorRequest.h
+	include/alibabacloud/ga/model/UpdateBasicAcceleratorResult.h
+	include/alibabacloud/ga/model/UpdateBasicEndpointRequest.h
+	include/alibabacloud/ga/model/UpdateBasicEndpointResult.h
+	include/alibabacloud/ga/model/UpdateBasicEndpointGroupRequest.h
+	include/alibabacloud/ga/model/UpdateBasicEndpointGroupResult.h
+	include/alibabacloud/ga/model/UpdateBasicIpSetRequest.h
+	include/alibabacloud/ga/model/UpdateBasicIpSetResult.h
+	include/alibabacloud/ga/model/UpdateCustomRoutingEndpointGroupAttributeRequest.h
+	include/alibabacloud/ga/model/UpdateCustomRoutingEndpointGroupAttributeResult.h
+	include/alibabacloud/ga/model/UpdateCustomRoutingEndpointGroupDestinationsRequest.h
+	include/alibabacloud/ga/model/UpdateCustomRoutingEndpointGroupDestinationsResult.h
+	include/alibabacloud/ga/model/UpdateCustomRoutingEndpointTrafficPoliciesRequest.h
+	include/alibabacloud/ga/model/UpdateCustomRoutingEndpointTrafficPoliciesResult.h
+	include/alibabacloud/ga/model/UpdateCustomRoutingEndpointsRequest.h
+	include/alibabacloud/ga/model/UpdateCustomRoutingEndpointsResult.h
+	include/alibabacloud/ga/model/UpdateDomainRequest.h
+	include/alibabacloud/ga/model/UpdateDomainResult.h
+	include/alibabacloud/ga/model/UpdateDomainStateRequest.h
+	include/alibabacloud/ga/model/UpdateDomainStateResult.h
 	include/alibabacloud/ga/model/UpdateEndpointGroupRequest.h
 	include/alibabacloud/ga/model/UpdateEndpointGroupResult.h
 	include/alibabacloud/ga/model/UpdateEndpointGroupAttributeRequest.h
 	include/alibabacloud/ga/model/UpdateEndpointGroupAttributeResult.h
+	include/alibabacloud/ga/model/UpdateEndpointGroupsRequest.h
+	include/alibabacloud/ga/model/UpdateEndpointGroupsResult.h
 	include/alibabacloud/ga/model/UpdateForwardingRulesRequest.h
 	include/alibabacloud/ga/model/UpdateForwardingRulesResult.h
 	include/alibabacloud/ga/model/UpdateIpSetRequest.h
@@ -138,6 +328,8 @@ set(ga_src
 	src/model/AddEntriesToAclResult.cc
 	src/model/AssociateAclsWithListenerRequest.cc
 	src/model/AssociateAclsWithListenerResult.cc
+	src/model/AssociateAdditionalCertificatesWithListenerRequest.cc
+	src/model/AssociateAdditionalCertificatesWithListenerResult.cc
 	src/model/AttachDdosToAcceleratorRequest.cc
 	src/model/AttachDdosToAcceleratorResult.cc
 	src/model/AttachLogStoreToEndpointGroupRequest.cc
@@ -146,30 +338,90 @@ set(ga_src
 	src/model/BandwidthPackageAddAcceleratorResult.cc
 	src/model/BandwidthPackageRemoveAcceleratorRequest.cc
 	src/model/BandwidthPackageRemoveAcceleratorResult.cc
+	src/model/ChangeResourceGroupRequest.cc
+	src/model/ChangeResourceGroupResult.cc
 	src/model/ConfigEndpointProbeRequest.cc
 	src/model/ConfigEndpointProbeResult.cc
 	src/model/CreateAcceleratorRequest.cc
 	src/model/CreateAcceleratorResult.cc
 	src/model/CreateAclRequest.cc
 	src/model/CreateAclResult.cc
+	src/model/CreateApplicationMonitorRequest.cc
+	src/model/CreateApplicationMonitorResult.cc
 	src/model/CreateBandwidthPackageRequest.cc
 	src/model/CreateBandwidthPackageResult.cc
+	src/model/CreateBasicAccelerateIpRequest.cc
+	src/model/CreateBasicAccelerateIpResult.cc
+	src/model/CreateBasicAccelerateIpEndpointRelationRequest.cc
+	src/model/CreateBasicAccelerateIpEndpointRelationResult.cc
+	src/model/CreateBasicAccelerateIpEndpointRelationsRequest.cc
+	src/model/CreateBasicAccelerateIpEndpointRelationsResult.cc
+	src/model/CreateBasicAcceleratorRequest.cc
+	src/model/CreateBasicAcceleratorResult.cc
+	src/model/CreateBasicEndpointRequest.cc
+	src/model/CreateBasicEndpointResult.cc
+	src/model/CreateBasicEndpointGroupRequest.cc
+	src/model/CreateBasicEndpointGroupResult.cc
+	src/model/CreateBasicEndpointsRequest.cc
+	src/model/CreateBasicEndpointsResult.cc
+	src/model/CreateBasicIpSetRequest.cc
+	src/model/CreateBasicIpSetResult.cc
+	src/model/CreateCustomRoutingEndpointGroupDestinationsRequest.cc
+	src/model/CreateCustomRoutingEndpointGroupDestinationsResult.cc
+	src/model/CreateCustomRoutingEndpointGroupsRequest.cc
+	src/model/CreateCustomRoutingEndpointGroupsResult.cc
+	src/model/CreateCustomRoutingEndpointTrafficPoliciesRequest.cc
+	src/model/CreateCustomRoutingEndpointTrafficPoliciesResult.cc
+	src/model/CreateCustomRoutingEndpointsRequest.cc
+	src/model/CreateCustomRoutingEndpointsResult.cc
+	src/model/CreateDomainRequest.cc
+	src/model/CreateDomainResult.cc
 	src/model/CreateEndpointGroupRequest.cc
 	src/model/CreateEndpointGroupResult.cc
+	src/model/CreateEndpointGroupsRequest.cc
+	src/model/CreateEndpointGroupsResult.cc
 	src/model/CreateForwardingRulesRequest.cc
 	src/model/CreateForwardingRulesResult.cc
 	src/model/CreateIpSetsRequest.cc
 	src/model/CreateIpSetsResult.cc
 	src/model/CreateListenerRequest.cc
 	src/model/CreateListenerResult.cc
+	src/model/CreateSpareIpsRequest.cc
+	src/model/CreateSpareIpsResult.cc
 	src/model/DeleteAcceleratorRequest.cc
 	src/model/DeleteAcceleratorResult.cc
 	src/model/DeleteAclRequest.cc
 	src/model/DeleteAclResult.cc
+	src/model/DeleteApplicationMonitorRequest.cc
+	src/model/DeleteApplicationMonitorResult.cc
 	src/model/DeleteBandwidthPackageRequest.cc
 	src/model/DeleteBandwidthPackageResult.cc
+	src/model/DeleteBasicAccelerateIpRequest.cc
+	src/model/DeleteBasicAccelerateIpResult.cc
+	src/model/DeleteBasicAccelerateIpEndpointRelationRequest.cc
+	src/model/DeleteBasicAccelerateIpEndpointRelationResult.cc
+	src/model/DeleteBasicAcceleratorRequest.cc
+	src/model/DeleteBasicAcceleratorResult.cc
+	src/model/DeleteBasicEndpointRequest.cc
+	src/model/DeleteBasicEndpointResult.cc
+	src/model/DeleteBasicEndpointGroupRequest.cc
+	src/model/DeleteBasicEndpointGroupResult.cc
+	src/model/DeleteBasicIpSetRequest.cc
+	src/model/DeleteBasicIpSetResult.cc
+	src/model/DeleteCustomRoutingEndpointGroupDestinationsRequest.cc
+	src/model/DeleteCustomRoutingEndpointGroupDestinationsResult.cc
+	src/model/DeleteCustomRoutingEndpointGroupsRequest.cc
+	src/model/DeleteCustomRoutingEndpointGroupsResult.cc
+	src/model/DeleteCustomRoutingEndpointTrafficPoliciesRequest.cc
+	src/model/DeleteCustomRoutingEndpointTrafficPoliciesResult.cc
+	src/model/DeleteCustomRoutingEndpointsRequest.cc
+	src/model/DeleteCustomRoutingEndpointsResult.cc
+	src/model/DeleteDomainAcceleratorRelationRequest.cc
+	src/model/DeleteDomainAcceleratorRelationResult.cc
 	src/model/DeleteEndpointGroupRequest.cc
 	src/model/DeleteEndpointGroupResult.cc
+	src/model/DeleteEndpointGroupsRequest.cc
+	src/model/DeleteEndpointGroupsResult.cc
 	src/model/DeleteForwardingRulesRequest.cc
 	src/model/DeleteForwardingRulesResult.cc
 	src/model/DeleteIpSetRequest.cc
@@ -178,10 +430,30 @@ set(ga_src
 	src/model/DeleteIpSetsResult.cc
 	src/model/DeleteListenerRequest.cc
 	src/model/DeleteListenerResult.cc
+	src/model/DeleteSpareIpsRequest.cc
+	src/model/DeleteSpareIpsResult.cc
 	src/model/DescribeAcceleratorRequest.cc
 	src/model/DescribeAcceleratorResult.cc
+	src/model/DescribeAcceleratorAutoRenewAttributeRequest.cc
+	src/model/DescribeAcceleratorAutoRenewAttributeResult.cc
+	src/model/DescribeApplicationMonitorRequest.cc
+	src/model/DescribeApplicationMonitorResult.cc
 	src/model/DescribeBandwidthPackageRequest.cc
 	src/model/DescribeBandwidthPackageResult.cc
+	src/model/DescribeBandwidthPackageAutoRenewAttributeRequest.cc
+	src/model/DescribeBandwidthPackageAutoRenewAttributeResult.cc
+	src/model/DescribeCommodityRequest.cc
+	src/model/DescribeCommodityResult.cc
+	src/model/DescribeCommodityPriceRequest.cc
+	src/model/DescribeCommodityPriceResult.cc
+	src/model/DescribeCustomRoutingEndPointTrafficPolicyRequest.cc
+	src/model/DescribeCustomRoutingEndPointTrafficPolicyResult.cc
+	src/model/DescribeCustomRoutingEndpointRequest.cc
+	src/model/DescribeCustomRoutingEndpointResult.cc
+	src/model/DescribeCustomRoutingEndpointGroupRequest.cc
+	src/model/DescribeCustomRoutingEndpointGroupResult.cc
+	src/model/DescribeCustomRoutingEndpointGroupDestinationsRequest.cc
+	src/model/DescribeCustomRoutingEndpointGroupDestinationsResult.cc
 	src/model/DescribeEndpointGroupRequest.cc
 	src/model/DescribeEndpointGroupResult.cc
 	src/model/DescribeIpSetRequest.cc
@@ -194,16 +466,50 @@ set(ga_src
 	src/model/DetachDdosFromAcceleratorResult.cc
 	src/model/DetachLogStoreFromEndpointGroupRequest.cc
 	src/model/DetachLogStoreFromEndpointGroupResult.cc
+	src/model/DetectApplicationMonitorRequest.cc
+	src/model/DetectApplicationMonitorResult.cc
+	src/model/DisableApplicationMonitorRequest.cc
+	src/model/DisableApplicationMonitorResult.cc
 	src/model/DissociateAclsFromListenerRequest.cc
 	src/model/DissociateAclsFromListenerResult.cc
+	src/model/DissociateAdditionalCertificatesFromListenerRequest.cc
+	src/model/DissociateAdditionalCertificatesFromListenerResult.cc
+	src/model/EnableApplicationMonitorRequest.cc
+	src/model/EnableApplicationMonitorResult.cc
 	src/model/GetAclRequest.cc
 	src/model/GetAclResult.cc
+	src/model/GetBasicAccelerateIpRequest.cc
+	src/model/GetBasicAccelerateIpResult.cc
+	src/model/GetBasicAccelerateIpEndpointRelationRequest.cc
+	src/model/GetBasicAccelerateIpEndpointRelationResult.cc
+	src/model/GetBasicAccelerateIpIdleCountRequest.cc
+	src/model/GetBasicAccelerateIpIdleCountResult.cc
+	src/model/GetBasicAcceleratorRequest.cc
+	src/model/GetBasicAcceleratorResult.cc
+	src/model/GetBasicEndpointRequest.cc
+	src/model/GetBasicEndpointResult.cc
+	src/model/GetBasicEndpointGroupRequest.cc
+	src/model/GetBasicEndpointGroupResult.cc
+	src/model/GetBasicIpSetRequest.cc
+	src/model/GetBasicIpSetResult.cc
+	src/model/GetHealthStatusRequest.cc
+	src/model/GetHealthStatusResult.cc
+	src/model/GetInvalidDomainCountRequest.cc
+	src/model/GetInvalidDomainCountResult.cc
+	src/model/GetIpsetsBandwidthLimitRequest.cc
+	src/model/GetIpsetsBandwidthLimitResult.cc
+	src/model/GetSpareIpRequest.cc
+	src/model/GetSpareIpResult.cc
 	src/model/ListAccelerateAreasRequest.cc
 	src/model/ListAccelerateAreasResult.cc
 	src/model/ListAcceleratorsRequest.cc
 	src/model/ListAcceleratorsResult.cc
 	src/model/ListAclsRequest.cc
 	src/model/ListAclsResult.cc
+	src/model/ListApplicationMonitorRequest.cc
+	src/model/ListApplicationMonitorResult.cc
+	src/model/ListApplicationMonitorDetectResultRequest.cc
+	src/model/ListApplicationMonitorDetectResultResult.cc
 	src/model/ListAvailableAccelerateAreasRequest.cc
 	src/model/ListAvailableAccelerateAreasResult.cc
 	src/model/ListAvailableBusiRegionsRequest.cc
@@ -212,30 +518,104 @@ set(ga_src
 	src/model/ListBandwidthPackagesResult.cc
 	src/model/ListBandwidthackagesRequest.cc
 	src/model/ListBandwidthackagesResult.cc
+	src/model/ListBasicAccelerateIpEndpointRelationsRequest.cc
+	src/model/ListBasicAccelerateIpEndpointRelationsResult.cc
+	src/model/ListBasicAccelerateIpsRequest.cc
+	src/model/ListBasicAccelerateIpsResult.cc
+	src/model/ListBasicAcceleratorsRequest.cc
+	src/model/ListBasicAcceleratorsResult.cc
+	src/model/ListBasicEndpointsRequest.cc
+	src/model/ListBasicEndpointsResult.cc
 	src/model/ListBusiRegionsRequest.cc
 	src/model/ListBusiRegionsResult.cc
+	src/model/ListCommonAreasRequest.cc
+	src/model/ListCommonAreasResult.cc
+	src/model/ListCustomRoutingEndpointGroupDestinationsRequest.cc
+	src/model/ListCustomRoutingEndpointGroupDestinationsResult.cc
+	src/model/ListCustomRoutingEndpointGroupsRequest.cc
+	src/model/ListCustomRoutingEndpointGroupsResult.cc
+	src/model/ListCustomRoutingEndpointTrafficPoliciesRequest.cc
+	src/model/ListCustomRoutingEndpointTrafficPoliciesResult.cc
+	src/model/ListCustomRoutingEndpointsRequest.cc
+	src/model/ListCustomRoutingEndpointsResult.cc
+	src/model/ListCustomRoutingPortMappingsRequest.cc
+	src/model/ListCustomRoutingPortMappingsResult.cc
+	src/model/ListCustomRoutingPortMappingsByDestinationRequest.cc
+	src/model/ListCustomRoutingPortMappingsByDestinationResult.cc
+	src/model/ListDomainsRequest.cc
+	src/model/ListDomainsResult.cc
 	src/model/ListEndpointGroupsRequest.cc
 	src/model/ListEndpointGroupsResult.cc
 	src/model/ListForwardingRulesRequest.cc
 	src/model/ListForwardingRulesResult.cc
 	src/model/ListIpSetsRequest.cc
 	src/model/ListIpSetsResult.cc
+	src/model/ListIspTypesRequest.cc
+	src/model/ListIspTypesResult.cc
+	src/model/ListListenerCertificatesRequest.cc
+	src/model/ListListenerCertificatesResult.cc
 	src/model/ListListenersRequest.cc
 	src/model/ListListenersResult.cc
+	src/model/ListSpareIpsRequest.cc
+	src/model/ListSpareIpsResult.cc
+	src/model/ListSystemSecurityPoliciesRequest.cc
+	src/model/ListSystemSecurityPoliciesResult.cc
+	src/model/ListTagResourcesRequest.cc
+	src/model/ListTagResourcesResult.cc
+	src/model/QueryCrossBorderApprovalStatusRequest.cc
+	src/model/QueryCrossBorderApprovalStatusResult.cc
 	src/model/RemoveEntriesFromAclRequest.cc
 	src/model/RemoveEntriesFromAclResult.cc
 	src/model/ReplaceBandwidthPackageRequest.cc
 	src/model/ReplaceBandwidthPackageResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
+	src/model/UntagResourcesRequest.cc
+	src/model/UntagResourcesResult.cc
 	src/model/UpdateAcceleratorRequest.cc
 	src/model/UpdateAcceleratorResult.cc
+	src/model/UpdateAcceleratorAutoRenewAttributeRequest.cc
+	src/model/UpdateAcceleratorAutoRenewAttributeResult.cc
+	src/model/UpdateAcceleratorConfirmRequest.cc
+	src/model/UpdateAcceleratorConfirmResult.cc
+	src/model/UpdateAcceleratorCrossBorderModeRequest.cc
+	src/model/UpdateAcceleratorCrossBorderModeResult.cc
 	src/model/UpdateAclAttributeRequest.cc
 	src/model/UpdateAclAttributeResult.cc
+	src/model/UpdateAdditionalCertificateWithListenerRequest.cc
+	src/model/UpdateAdditionalCertificateWithListenerResult.cc
+	src/model/UpdateApplicationMonitorRequest.cc
+	src/model/UpdateApplicationMonitorResult.cc
+	src/model/UpdateBandwidthPackagaAutoRenewAttributeRequest.cc
+	src/model/UpdateBandwidthPackagaAutoRenewAttributeResult.cc
 	src/model/UpdateBandwidthPackageRequest.cc
 	src/model/UpdateBandwidthPackageResult.cc
+	src/model/UpdateBasicAcceleratorRequest.cc
+	src/model/UpdateBasicAcceleratorResult.cc
+	src/model/UpdateBasicEndpointRequest.cc
+	src/model/UpdateBasicEndpointResult.cc
+	src/model/UpdateBasicEndpointGroupRequest.cc
+	src/model/UpdateBasicEndpointGroupResult.cc
+	src/model/UpdateBasicIpSetRequest.cc
+	src/model/UpdateBasicIpSetResult.cc
+	src/model/UpdateCustomRoutingEndpointGroupAttributeRequest.cc
+	src/model/UpdateCustomRoutingEndpointGroupAttributeResult.cc
+	src/model/UpdateCustomRoutingEndpointGroupDestinationsRequest.cc
+	src/model/UpdateCustomRoutingEndpointGroupDestinationsResult.cc
+	src/model/UpdateCustomRoutingEndpointTrafficPoliciesRequest.cc
+	src/model/UpdateCustomRoutingEndpointTrafficPoliciesResult.cc
+	src/model/UpdateCustomRoutingEndpointsRequest.cc
+	src/model/UpdateCustomRoutingEndpointsResult.cc
+	src/model/UpdateDomainRequest.cc
+	src/model/UpdateDomainResult.cc
+	src/model/UpdateDomainStateRequest.cc
+	src/model/UpdateDomainStateResult.cc
 	src/model/UpdateEndpointGroupRequest.cc
 	src/model/UpdateEndpointGroupResult.cc
 	src/model/UpdateEndpointGroupAttributeRequest.cc
 	src/model/UpdateEndpointGroupAttributeResult.cc
+	src/model/UpdateEndpointGroupsRequest.cc
+	src/model/UpdateEndpointGroupsResult.cc
 	src/model/UpdateForwardingRulesRequest.cc
 	src/model/UpdateForwardingRulesResult.cc
 	src/model/UpdateIpSetRequest.cc

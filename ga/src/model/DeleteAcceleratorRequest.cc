@@ -1,12 +1,12 @@
 /*
  * Copyright 2009-2017 Alibaba Cloud All rights reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -18,34 +18,28 @@
 
 using AlibabaCloud::Ga::Model::DeleteAcceleratorRequest;
 
-DeleteAcceleratorRequest::DeleteAcceleratorRequest() :
-	RpcServiceRequest("ga", "2019-11-20", "DeleteAccelerator")
-{
-	setMethod(HttpRequest::Method::Post);
+DeleteAcceleratorRequest::DeleteAcceleratorRequest()
+    : RpcServiceRequest("ga", "2019-11-20", "DeleteAccelerator") {
+  setMethod(HttpRequest::Method::Post);
 }
 
-DeleteAcceleratorRequest::~DeleteAcceleratorRequest()
-{}
+DeleteAcceleratorRequest::~DeleteAcceleratorRequest() {}
 
-std::string DeleteAcceleratorRequest::getRegionId()const
-{
-	return regionId_;
+std::string DeleteAcceleratorRequest::getRegionId() const {
+  return regionId_;
 }
 
-void DeleteAcceleratorRequest::setRegionId(const std::string& regionId)
-{
-	regionId_ = regionId;
-	setParameter("RegionId", regionId);
+void DeleteAcceleratorRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
 }
 
-std::string DeleteAcceleratorRequest::getAcceleratorId()const
-{
-	return acceleratorId_;
+std::string DeleteAcceleratorRequest::getAcceleratorId() const {
+  return acceleratorId_;
 }
 
-void DeleteAcceleratorRequest::setAcceleratorId(const std::string& acceleratorId)
-{
-	acceleratorId_ = acceleratorId;
-	setParameter("AcceleratorId", acceleratorId);
+void DeleteAcceleratorRequest::setAcceleratorId(const std::string &acceleratorId) {
+  acceleratorId_ = acceleratorId;
+  setParameter(std::string("AcceleratorId"), acceleratorId);
 }
 
