@@ -53,6 +53,8 @@ void GetWirelessCloudConnectorResult::parse(const std::string &payload)
 			netLinksObject.description = valueNetLinksNetLink["Description"].asString();
 		if(!valueNetLinksNetLink["Status"].isNull())
 			netLinksObject.status = valueNetLinksNetLink["Status"].asString();
+		if(!valueNetLinksNetLink["Type"].isNull())
+			netLinksObject.type = valueNetLinksNetLink["Type"].asString();
 		if(!valueNetLinksNetLink["APN"].isNull())
 			netLinksObject.aPN = valueNetLinksNetLink["APN"].asString();
 		if(!valueNetLinksNetLink["ISP"].isNull())

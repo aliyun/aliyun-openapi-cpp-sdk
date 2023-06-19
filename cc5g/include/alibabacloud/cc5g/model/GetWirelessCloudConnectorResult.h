@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					std::string status;
 					std::vector<std::string> vSwitchs;
+					std::string type;
 					std::string description;
 					std::string vpcId;
 					std::string iSP;
