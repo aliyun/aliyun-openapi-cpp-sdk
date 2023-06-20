@@ -105,6 +105,12 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/ListUserGroupsByUserIdResult.h
 	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersRequest.h
 	include/alibabacloud/quickbi-public/model/ModifyApiDatasourceParametersResult.h
+	include/alibabacloud/quickbi-public/model/QueryComponentPerformanceRequest.h
+	include/alibabacloud/quickbi-public/model/QueryComponentPerformanceResult.h
+	include/alibabacloud/quickbi-public/model/QueryCubeOptimizationRequest.h
+	include/alibabacloud/quickbi-public/model/QueryCubeOptimizationResult.h
+	include/alibabacloud/quickbi-public/model/QueryCubePerformanceRequest.h
+	include/alibabacloud/quickbi-public/model/QueryCubePerformanceResult.h
 	include/alibabacloud/quickbi-public/model/QueryDataServiceRequest.h
 	include/alibabacloud/quickbi-public/model/QueryDataServiceResult.h
 	include/alibabacloud/quickbi-public/model/QueryDatasetDetailInfoRequest.h
@@ -123,6 +129,8 @@ set(quickbi-public_public_header_model
 	include/alibabacloud/quickbi-public/model/QueryOrganizationWorkspaceListResult.h
 	include/alibabacloud/quickbi-public/model/QueryReadableResourcesListByUserIdRequest.h
 	include/alibabacloud/quickbi-public/model/QueryReadableResourcesListByUserIdResult.h
+	include/alibabacloud/quickbi-public/model/QueryReportPerformanceRequest.h
+	include/alibabacloud/quickbi-public/model/QueryReportPerformanceResult.h
 	include/alibabacloud/quickbi-public/model/QueryShareListRequest.h
 	include/alibabacloud/quickbi-public/model/QueryShareListResult.h
 	include/alibabacloud/quickbi-public/model/QuerySharesToUserListRequest.h
@@ -272,6 +280,12 @@ set(quickbi-public_src
 	src/model/ListUserGroupsByUserIdResult.cc
 	src/model/ModifyApiDatasourceParametersRequest.cc
 	src/model/ModifyApiDatasourceParametersResult.cc
+	src/model/QueryComponentPerformanceRequest.cc
+	src/model/QueryComponentPerformanceResult.cc
+	src/model/QueryCubeOptimizationRequest.cc
+	src/model/QueryCubeOptimizationResult.cc
+	src/model/QueryCubePerformanceRequest.cc
+	src/model/QueryCubePerformanceResult.cc
 	src/model/QueryDataServiceRequest.cc
 	src/model/QueryDataServiceResult.cc
 	src/model/QueryDatasetDetailInfoRequest.cc
@@ -290,6 +304,8 @@ set(quickbi-public_src
 	src/model/QueryOrganizationWorkspaceListResult.cc
 	src/model/QueryReadableResourcesListByUserIdRequest.cc
 	src/model/QueryReadableResourcesListByUserIdResult.cc
+	src/model/QueryReportPerformanceRequest.cc
+	src/model/QueryReportPerformanceResult.cc
 	src/model/QueryShareListRequest.cc
 	src/model/QueryShareListResult.cc
 	src/model/QuerySharesToUserListRequest.cc

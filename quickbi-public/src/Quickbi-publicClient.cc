@@ -1563,6 +1563,114 @@ Quickbi_publicClient::ModifyApiDatasourceParametersOutcomeCallable Quickbi_publi
 	return task->get_future();
 }
 
+Quickbi_publicClient::QueryComponentPerformanceOutcome Quickbi_publicClient::queryComponentPerformance(const QueryComponentPerformanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryComponentPerformanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryComponentPerformanceOutcome(QueryComponentPerformanceResult(outcome.result()));
+	else
+		return QueryComponentPerformanceOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryComponentPerformanceAsync(const QueryComponentPerformanceRequest& request, const QueryComponentPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryComponentPerformance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryComponentPerformanceOutcomeCallable Quickbi_publicClient::queryComponentPerformanceCallable(const QueryComponentPerformanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryComponentPerformanceOutcome()>>(
+			[this, request]()
+			{
+			return this->queryComponentPerformance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryCubeOptimizationOutcome Quickbi_publicClient::queryCubeOptimization(const QueryCubeOptimizationRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCubeOptimizationOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCubeOptimizationOutcome(QueryCubeOptimizationResult(outcome.result()));
+	else
+		return QueryCubeOptimizationOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryCubeOptimizationAsync(const QueryCubeOptimizationRequest& request, const QueryCubeOptimizationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCubeOptimization(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryCubeOptimizationOutcomeCallable Quickbi_publicClient::queryCubeOptimizationCallable(const QueryCubeOptimizationRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCubeOptimizationOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCubeOptimization(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryCubePerformanceOutcome Quickbi_publicClient::queryCubePerformance(const QueryCubePerformanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryCubePerformanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryCubePerformanceOutcome(QueryCubePerformanceResult(outcome.result()));
+	else
+		return QueryCubePerformanceOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryCubePerformanceAsync(const QueryCubePerformanceRequest& request, const QueryCubePerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryCubePerformance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryCubePerformanceOutcomeCallable Quickbi_publicClient::queryCubePerformanceCallable(const QueryCubePerformanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryCubePerformanceOutcome()>>(
+			[this, request]()
+			{
+			return this->queryCubePerformance(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Quickbi_publicClient::QueryDataServiceOutcome Quickbi_publicClient::queryDataService(const QueryDataServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1881,6 +1989,42 @@ Quickbi_publicClient::QueryReadableResourcesListByUserIdOutcomeCallable Quickbi_
 			[this, request]()
 			{
 			return this->queryReadableResourcesListByUserId(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Quickbi_publicClient::QueryReportPerformanceOutcome Quickbi_publicClient::queryReportPerformance(const QueryReportPerformanceRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QueryReportPerformanceOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QueryReportPerformanceOutcome(QueryReportPerformanceResult(outcome.result()));
+	else
+		return QueryReportPerformanceOutcome(outcome.error());
+}
+
+void Quickbi_publicClient::queryReportPerformanceAsync(const QueryReportPerformanceRequest& request, const QueryReportPerformanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, queryReportPerformance(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Quickbi_publicClient::QueryReportPerformanceOutcomeCallable Quickbi_publicClient::queryReportPerformanceCallable(const QueryReportPerformanceRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QueryReportPerformanceOutcome()>>(
+			[this, request]()
+			{
+			return this->queryReportPerformance(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
