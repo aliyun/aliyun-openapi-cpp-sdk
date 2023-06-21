@@ -119,6 +119,10 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 				dBNodesObject.regionId = valueItemsDBClusterDBNodesDBNode["RegionId"].asString();
 			if(!valueItemsDBClusterDBNodesDBNode["Serverless"].isNull())
 				dBNodesObject.serverless = valueItemsDBClusterDBNodesDBNode["Serverless"].asString();
+			if(!valueItemsDBClusterDBNodesDBNode["ImciSwitch"].isNull())
+				dBNodesObject.imciSwitch = valueItemsDBClusterDBNodesDBNode["ImciSwitch"].asString();
+			if(!valueItemsDBClusterDBNodesDBNode["HotReplicaMode"].isNull())
+				dBNodesObject.hotReplicaMode = valueItemsDBClusterDBNodesDBNode["HotReplicaMode"].asString();
 			itemsObject.dBNodes.push_back(dBNodesObject);
 		}
 		items_.push_back(itemsObject);

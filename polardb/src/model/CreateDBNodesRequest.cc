@@ -79,6 +79,15 @@ void CreateDBNodesRequest::setResourceGroupId(const std::string &resourceGroupId
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
+std::string CreateDBNodesRequest::getDBNodeType() const {
+  return dBNodeType_;
+}
+
+void CreateDBNodesRequest::setDBNodeType(const std::string &dBNodeType) {
+  dBNodeType_ = dBNodeType;
+  setParameter(std::string("DBNodeType"), dBNodeType);
+}
+
 std::string CreateDBNodesRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

@@ -38,6 +38,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getDBNodeType() const;
+	void setDBNodeType(const std::string &dBNodeType);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getDBClusterId() const;
@@ -52,6 +54,7 @@ private:
 	std::vector<std::string> dBNodeId_;
 	std::string clientToken_;
 	std::string accessKeyId_;
+	std::string dBNodeType_;
 	std::string resourceOwnerAccount_;
 	std::string dBClusterId_;
 	std::string ownerAccount_;

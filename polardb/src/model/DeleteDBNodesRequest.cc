@@ -60,6 +60,15 @@ void DeleteDBNodesRequest::setAccessKeyId(const std::string &accessKeyId) {
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string DeleteDBNodesRequest::getDBNodeType() const {
+  return dBNodeType_;
+}
+
+void DeleteDBNodesRequest::setDBNodeType(const std::string &dBNodeType) {
+  dBNodeType_ = dBNodeType;
+  setParameter(std::string("DBNodeType"), dBNodeType);
+}
+
 std::string DeleteDBNodesRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

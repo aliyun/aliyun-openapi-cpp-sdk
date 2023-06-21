@@ -363,6 +363,15 @@ void CreateDBClusterRequest::setLoosePolarLogBin(const std::string &loosePolarLo
   setParameter(std::string("LoosePolarLogBin"), loosePolarLogBin);
 }
 
+std::string CreateDBClusterRequest::getArchitecture() const {
+  return architecture_;
+}
+
+void CreateDBClusterRequest::setArchitecture(const std::string &architecture) {
+  architecture_ = architecture;
+  setParameter(std::string("Architecture"), architecture);
+}
+
 std::string CreateDBClusterRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

@@ -43,9 +43,11 @@ namespace AlibabaCloud
 					{
 						std::string zoneId;
 						std::string dBNodeRole;
+						std::string imciSwitch;
 						std::string dBNodeId;
 						std::string regionId;
 						std::string serverless;
+						std::string hotReplicaMode;
 						std::string dBNodeClass;
 					};
 					int deletionLock;

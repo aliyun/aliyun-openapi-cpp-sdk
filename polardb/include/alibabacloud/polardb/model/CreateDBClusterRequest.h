@@ -108,6 +108,8 @@ public:
 	void setLooseXEngine(const std::string &looseXEngine);
 	std::string getLoosePolarLogBin() const;
 	void setLoosePolarLogBin(const std::string &loosePolarLogBin);
+	std::string getArchitecture() const;
+	void setArchitecture(const std::string &architecture);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -175,6 +177,7 @@ private:
 	std::string gDNId_;
 	std::string looseXEngine_;
 	std::string loosePolarLogBin_;
+	std::string architecture_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string looseXEngineUseMemoryPct_;
