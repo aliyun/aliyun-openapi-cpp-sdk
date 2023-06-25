@@ -32,20 +32,22 @@ public:
 	~DescribePhoneNumberAnalysisRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
+	std::string getExtendFunction() const;
+	void setExtendFunction(const std::string &extendFunction);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	long getRate() const;
 	void setRate(long rate);
+	std::string getRouteName() const;
+	void setRouteName(const std::string &routeName);
 	std::string getMask() const;
 	void setMask(const std::string &mask);
-	std::string getOfferType() const;
-	void setOfferType(const std::string &offerType);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
-	int getNumberType() const;
-	void setNumberType(int numberType);
+	long getNumberType() const;
+	void setNumberType(long numberType);
 	std::string getAuthCode() const;
 	void setAuthCode(const std::string &authCode);
 	std::string getInputNumber() const;
@@ -53,13 +55,14 @@ public:
 
 private:
 	long resourceOwnerId_;
+	std::string extendFunction_;
 	std::string accessKeyId_;
 	long rate_;
+	std::string routeName_;
 	std::string mask_;
-	std::string offerType_;
 	std::string resourceOwnerAccount_;
 	long ownerId_;
-	int numberType_;
+	long numberType_;
 	std::string authCode_;
 	std::string inputNumber_;
 };

@@ -34,6 +34,15 @@ void DescribePhoneNumberAnalysisRequest::setResourceOwnerId(long resourceOwnerId
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribePhoneNumberAnalysisRequest::getExtendFunction() const {
+  return extendFunction_;
+}
+
+void DescribePhoneNumberAnalysisRequest::setExtendFunction(const std::string &extendFunction) {
+  extendFunction_ = extendFunction;
+  setParameter(std::string("ExtendFunction"), extendFunction);
+}
+
 std::string DescribePhoneNumberAnalysisRequest::getAccessKeyId() const {
   return accessKeyId_;
 }
@@ -52,6 +61,15 @@ void DescribePhoneNumberAnalysisRequest::setRate(long rate) {
   setParameter(std::string("Rate"), std::to_string(rate));
 }
 
+std::string DescribePhoneNumberAnalysisRequest::getRouteName() const {
+  return routeName_;
+}
+
+void DescribePhoneNumberAnalysisRequest::setRouteName(const std::string &routeName) {
+  routeName_ = routeName;
+  setParameter(std::string("RouteName"), routeName);
+}
+
 std::string DescribePhoneNumberAnalysisRequest::getMask() const {
   return mask_;
 }
@@ -59,15 +77,6 @@ std::string DescribePhoneNumberAnalysisRequest::getMask() const {
 void DescribePhoneNumberAnalysisRequest::setMask(const std::string &mask) {
   mask_ = mask;
   setParameter(std::string("Mask"), mask);
-}
-
-std::string DescribePhoneNumberAnalysisRequest::getOfferType() const {
-  return offerType_;
-}
-
-void DescribePhoneNumberAnalysisRequest::setOfferType(const std::string &offerType) {
-  offerType_ = offerType;
-  setParameter(std::string("OfferType"), offerType);
 }
 
 std::string DescribePhoneNumberAnalysisRequest::getResourceOwnerAccount() const {
@@ -88,11 +97,11 @@ void DescribePhoneNumberAnalysisRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
-int DescribePhoneNumberAnalysisRequest::getNumberType() const {
+long DescribePhoneNumberAnalysisRequest::getNumberType() const {
   return numberType_;
 }
 
-void DescribePhoneNumberAnalysisRequest::setNumberType(int numberType) {
+void DescribePhoneNumberAnalysisRequest::setNumberType(long numberType) {
   numberType_ = numberType;
   setParameter(std::string("NumberType"), std::to_string(numberType));
 }

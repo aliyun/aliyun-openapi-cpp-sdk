@@ -32,7 +32,7 @@ namespace AlibabaCloud
 			class ALIBABACLOUD_DYTNSAPI_EXPORT DescribePhoneNumberAnalysisResult : public ServiceResult
 			{
 			public:
-				struct DataList
+				struct Data
 				{
 					std::string number;
 					std::string code;
@@ -43,14 +43,14 @@ namespace AlibabaCloud
 				explicit DescribePhoneNumberAnalysisResult(const std::string &payload);
 				~DescribePhoneNumberAnalysisResult();
 				std::string getMessage()const;
-				std::vector<DataList> getData()const;
+				Data getData()const;
 				std::string getCode()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string message_;
-				std::vector<DataList> data_;
+				Data data_;
 				std::string code_;
 
 			};

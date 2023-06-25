@@ -39,20 +39,15 @@ void DescribePhoneNumberAnalysisResult::parse(const std::string &payload)
 	Json::Value value;
 	reader.parse(payload, value);
 	setRequestId(value["RequestId"].asString());
-	auto allDataNode = value["Data"]["DataList"];
-	for (auto valueDataDataList : allDataNode)
-	{
-		DataList dataObject;
-		if(!valueDataDataList["Code"].isNull())
-			dataObject.code = valueDataDataList["Code"].asString();
-		if(!valueDataDataList["Number"].isNull())
-			dataObject.number = valueDataDataList["Number"].asString();
-		data_.push_back(dataObject);
-	}
-	if(!value["Code"].isNull())
-		code_ = value["Code"].asString();
+	auto dataNode = value["Data"];
+	if(!dataNode["Number"].isNull())
+		data_.number = dataNode["Number"].asString();
+	if(!dataNode["Code"].isNull())
+		data_.code = dataNode["Code"].asString();
 	if(!value["Message"].isNull())
 		message_ = value["Message"].asString();
+	if(!value["Code"].isNull())
+		code_ = value["Code"].asString();
 
 }
 
@@ -61,7 +56,7 @@ std::string DescribePhoneNumberAnalysisResult::getMessage()const
 	return message_;
 }
 
-std::vector<DescribePhoneNumberAnalysisResult::DataList> DescribePhoneNumberAnalysisResult::getData()const
+DescribePhoneNumberAnalysisResult::Data DescribePhoneNumberAnalysisResult::getData()const
 {
 	return data_;
 }
