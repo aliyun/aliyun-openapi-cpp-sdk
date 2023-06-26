@@ -66,7 +66,9 @@ namespace AlibabaCloud
 					std::string accountType;
 					int maxIOPS;
 					std::string supportUpgradeAccountType;
+					std::vector<std::string> slaveZones;
 					std::string vpcId;
+					std::string exportKey;
 					std::string masterInstanceId;
 					std::string creationTime;
 					std::string readDelayTime;

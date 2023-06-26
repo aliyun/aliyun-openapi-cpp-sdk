@@ -34,22 +34,13 @@ void DescribeDBInstancesAsCsvRequest::setResourceOwnerId(long resourceOwnerId) {
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
-std::string DescribeDBInstancesAsCsvRequest::getResourceOwnerAccount() const {
-  return resourceOwnerAccount_;
+std::string DescribeDBInstancesAsCsvRequest::getExportKey() const {
+  return exportKey_;
 }
 
-void DescribeDBInstancesAsCsvRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
-  resourceOwnerAccount_ = resourceOwnerAccount;
-  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
-}
-
-long DescribeDBInstancesAsCsvRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeDBInstancesAsCsvRequest::setOwnerId(long ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), std::to_string(ownerId));
+void DescribeDBInstancesAsCsvRequest::setExportKey(const std::string &exportKey) {
+  exportKey_ = exportKey;
+  setParameter(std::string("ExportKey"), exportKey);
 }
 
 std::string DescribeDBInstancesAsCsvRequest::getAccessKeyId() const {
@@ -86,5 +77,32 @@ std::string DescribeDBInstancesAsCsvRequest::getDBInstanceId() const {
 void DescribeDBInstancesAsCsvRequest::setDBInstanceId(const std::string &dBInstanceId) {
   dBInstanceId_ = dBInstanceId;
   setParameter(std::string("DBInstanceId"), dBInstanceId);
+}
+
+std::string DescribeDBInstancesAsCsvRequest::getResourceOwnerAccount() const {
+  return resourceOwnerAccount_;
+}
+
+void DescribeDBInstancesAsCsvRequest::setResourceOwnerAccount(const std::string &resourceOwnerAccount) {
+  resourceOwnerAccount_ = resourceOwnerAccount;
+  setParameter(std::string("ResourceOwnerAccount"), resourceOwnerAccount);
+}
+
+bool DescribeDBInstancesAsCsvRequest::getCachedAsync() const {
+  return cachedAsync_;
+}
+
+void DescribeDBInstancesAsCsvRequest::setCachedAsync(bool cachedAsync) {
+  cachedAsync_ = cachedAsync;
+  setParameter(std::string("CachedAsync"), cachedAsync ? "true" : "false");
+}
+
+long DescribeDBInstancesAsCsvRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeDBInstancesAsCsvRequest::setOwnerId(long ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 

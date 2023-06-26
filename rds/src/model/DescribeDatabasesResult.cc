@@ -83,6 +83,15 @@ void DescribeDatabasesResult::parse(const std::string &payload)
 				accountsObject.accountPrivilegeDetail = valueDatabasesDatabaseAccountsAccountPrivilegeInfo["AccountPrivilegeDetail"].asString();
 			databasesObject.accounts.push_back(accountsObject);
 		}
+		auto allBasicInfo = value["BasicInfo"]["BasicDbProperty"];
+		for (auto value : allBasicInfo)
+			databasesObject.basicInfo.push_back(value.asString());
+		auto allRuntimeInfo = value["RuntimeInfo"]["RuntimeDbProperty"];
+		for (auto value : allRuntimeInfo)
+			databasesObject.runtimeInfo.push_back(value.asString());
+		auto allAdvancedInfo = value["AdvancedInfo"]["AdvancedDbProperty"];
+		for (auto value : allAdvancedInfo)
+			databasesObject.advancedInfo.push_back(value.asString());
 		databases_.push_back(databasesObject);
 	}
 

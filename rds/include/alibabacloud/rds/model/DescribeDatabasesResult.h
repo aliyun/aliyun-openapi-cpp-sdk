@@ -44,14 +44,17 @@ namespace AlibabaCloud
 					std::string characterSetName;
 					std::string resourceGroupId;
 					int pageSize;
+					std::vector<std::string> runtimeInfo;
 					std::string tablespace;
 					std::string dBDescription;
 					std::string collate;
 					std::string dBStatus;
+					std::vector<std::string> advancedInfo;
 					int totalCount;
 					std::string dBInstanceId;
 					int pageNumber;
 					std::string dBName;
+					std::vector<std::string> basicInfo;
 					std::string ctype;
 					std::vector<Database::AccountPrivilegeInfo> accounts;
 					std::string engine;

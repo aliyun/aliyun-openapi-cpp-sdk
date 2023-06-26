@@ -32,10 +32,8 @@ public:
 	~DescribeDBInstancesAsCsvRequest();
 	long getResourceOwnerId() const;
 	void setResourceOwnerId(long resourceOwnerId);
-	std::string getResourceOwnerAccount() const;
-	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
-	long getOwnerId() const;
-	void setOwnerId(long ownerId);
+	std::string getExportKey() const;
+	void setExportKey(const std::string &exportKey);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
@@ -44,15 +42,23 @@ public:
 	void setRegionId(const std::string &regionId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
+	std::string getResourceOwnerAccount() const;
+	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
+	bool getCachedAsync() const;
+	void setCachedAsync(bool cachedAsync);
+	long getOwnerId() const;
+	void setOwnerId(long ownerId);
 
 private:
 	long resourceOwnerId_;
-	std::string resourceOwnerAccount_;
-	long ownerId_;
+	std::string exportKey_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string dBInstanceId_;
+	std::string resourceOwnerAccount_;
+	bool cachedAsync_;
+	long ownerId_;
 };
 } // namespace Model
 } // namespace Rds

@@ -125,6 +125,11 @@ void DescribeDBInstancesAsCsvResult::parse(const std::string &payload)
 			itemsObject.dBInstanceClass = valueItemsDBInstanceAttribute["DBInstanceClass"].asString();
 		if(!valueItemsDBInstanceAttribute["Engine"].isNull())
 			itemsObject.engine = valueItemsDBInstanceAttribute["Engine"].asString();
+		if(!valueItemsDBInstanceAttribute["ExportKey"].isNull())
+			itemsObject.exportKey = valueItemsDBInstanceAttribute["ExportKey"].asString();
+		auto allSlaveZones = value["SlaveZones"]["slaveRegion"];
+		for (auto value : allSlaveZones)
+			itemsObject.slaveZones.push_back(value.asString());
 		items_.push_back(itemsObject);
 	}
 
