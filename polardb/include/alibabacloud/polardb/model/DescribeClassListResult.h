@@ -46,6 +46,7 @@ namespace AlibabaCloud
 					std::string classGroup;
 					std::string psl5MaxIOPS;
 					std::string pl1MaxIOPS;
+					std::string referenceExtPrice;
 					std::string memoryClass;
 					std::string maxStorageCapacity;
 				};

@@ -46,6 +46,8 @@ public:
 	void setCommodityCode(const std::string &commodityCode);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getMasterHa() const;
+	void setMasterHa(const std::string &masterHa);
 	std::string getOrderType() const;
 	void setOrderType(const std::string &orderType);
 
@@ -58,6 +60,7 @@ private:
 	std::string ownerAccount_;
 	std::string commodityCode_;
 	long ownerId_;
+	std::string masterHa_;
 	std::string orderType_;
 };
 } // namespace Model

@@ -106,6 +106,15 @@ void ModifyDBClusterPrimaryZoneRequest::setPlannedStartTime(const std::string &p
   setParameter(std::string("PlannedStartTime"), plannedStartTime);
 }
 
+std::string ModifyDBClusterPrimaryZoneRequest::getVPCId() const {
+  return vPCId_;
+}
+
+void ModifyDBClusterPrimaryZoneRequest::setVPCId(const std::string &vPCId) {
+  vPCId_ = vPCId;
+  setParameter(std::string("VPCId"), vPCId);
+}
+
 std::string ModifyDBClusterPrimaryZoneRequest::getZoneId() const {
   return zoneId_;
 }

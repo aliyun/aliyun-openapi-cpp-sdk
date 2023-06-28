@@ -51,6 +51,8 @@ void DescribeClassListResult::parse(const std::string &payload)
 			itemsObject.cpu = valueItemsItemsItem["Cpu"].asString();
 		if(!valueItemsItemsItem["ReferencePrice"].isNull())
 			itemsObject.referencePrice = valueItemsItemsItem["ReferencePrice"].asString();
+		if(!valueItemsItemsItem["ReferenceExtPrice"].isNull())
+			itemsObject.referenceExtPrice = valueItemsItemsItem["ReferenceExtPrice"].asString();
 		if(!valueItemsItemsItem["MaxConnections"].isNull())
 			itemsObject.maxConnections = valueItemsItemsItem["MaxConnections"].asString();
 		if(!valueItemsItemsItem["MemoryClass"].isNull())

@@ -48,6 +48,8 @@ public:
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getPlannedStartTime() const;
 	void setPlannedStartTime(const std::string &plannedStartTime);
+	std::string getVPCId() const;
+	void setVPCId(const std::string &vPCId);
 	std::string getZoneId() const;
 	void setZoneId(const std::string &zoneId);
 	bool getFromTimeService() const;
@@ -63,6 +65,7 @@ private:
 	long ownerId_;
 	std::string vSwitchId_;
 	std::string plannedStartTime_;
+	std::string vPCId_;
 	std::string zoneId_;
 	bool fromTimeService_;
 };

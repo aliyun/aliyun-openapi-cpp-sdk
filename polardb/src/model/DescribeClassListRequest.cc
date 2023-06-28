@@ -97,6 +97,15 @@ void DescribeClassListRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string DescribeClassListRequest::getMasterHa() const {
+  return masterHa_;
+}
+
+void DescribeClassListRequest::setMasterHa(const std::string &masterHa) {
+  masterHa_ = masterHa;
+  setParameter(std::string("MasterHa"), masterHa);
+}
+
 std::string DescribeClassListRequest::getOrderType() const {
   return orderType_;
 }
