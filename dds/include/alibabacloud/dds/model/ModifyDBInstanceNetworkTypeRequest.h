@@ -54,6 +54,8 @@ public:
 	void setRetainClassic(const std::string &retainClassic);
 	std::string getVpcId() const;
 	void setVpcId(const std::string &vpcId);
+	std::string getZoneId() const;
+	void setZoneId(const std::string &zoneId);
 
 private:
 	long resourceOwnerId_;
@@ -68,6 +70,7 @@ private:
 	std::string vSwitchId_;
 	std::string retainClassic_;
 	std::string vpcId_;
+	std::string zoneId_;
 };
 } // namespace Model
 } // namespace Dds

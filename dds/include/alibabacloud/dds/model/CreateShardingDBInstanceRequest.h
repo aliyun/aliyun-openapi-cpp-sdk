@@ -33,6 +33,10 @@ public:
 		int storage;
 		std::string _class;
 	};
+	struct Tag {
+		std::string value;
+		std::string key;
+	};
 	struct ConfigServer {
 		int storage;
 		std::string _class;
@@ -60,6 +64,8 @@ public:
 	void setSecurityToken(const std::string &securityToken);
 	std::string getDBInstanceDescription() const;
 	void setDBInstanceDescription(const std::string &dBInstanceDescription);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getGlobalSecurityGroupIds() const;
 	void setGlobalSecurityGroupIds(const std::string &globalSecurityGroupIds);
 	int getPeriod() const;
@@ -121,6 +127,7 @@ private:
 	std::string resourceGroupId_;
 	std::string securityToken_;
 	std::string dBInstanceDescription_;
+	std::vector<Tag> tag_;
 	std::string globalSecurityGroupIds_;
 	int period_;
 	std::string encryptionKey_;

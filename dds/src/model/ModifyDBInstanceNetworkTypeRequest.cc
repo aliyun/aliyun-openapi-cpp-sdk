@@ -133,3 +133,12 @@ void ModifyDBInstanceNetworkTypeRequest::setVpcId(const std::string &vpcId) {
   setParameter(std::string("VpcId"), vpcId);
 }
 
+std::string ModifyDBInstanceNetworkTypeRequest::getZoneId() const {
+  return zoneId_;
+}
+
+void ModifyDBInstanceNetworkTypeRequest::setZoneId(const std::string &zoneId) {
+  zoneId_ = zoneId;
+  setParameter(std::string("ZoneId"), zoneId);
+}
+

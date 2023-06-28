@@ -112,6 +112,20 @@ void CreateShardingDBInstanceRequest::setDBInstanceDescription(const std::string
   setParameter(std::string("DBInstanceDescription"), dBInstanceDescription);
 }
 
+std::vector<CreateShardingDBInstanceRequest::Tag> CreateShardingDBInstanceRequest::getTag() const {
+  return tag_;
+}
+
+void CreateShardingDBInstanceRequest::setTag(const std::vector<CreateShardingDBInstanceRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+  }
+}
+
 std::string CreateShardingDBInstanceRequest::getGlobalSecurityGroupIds() const {
   return globalSecurityGroupIds_;
 }
