@@ -85,6 +85,7 @@ namespace AlibabaCloud
 					std::string autoUpgradeMinorVersion;
 					std::string dBInstanceId;
 					int dBInstanceStorage;
+					std::string pGBouncerEnabled;
 					std::string instructionSetArch;
 					std::string lockReason;
 					std::string availabilityValue;

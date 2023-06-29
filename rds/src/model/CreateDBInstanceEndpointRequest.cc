@@ -61,6 +61,15 @@ void CreateDBInstanceEndpointRequest::setAccessKeyId(const std::string &accessKe
   setParameter(std::string("AccessKeyId"), accessKeyId);
 }
 
+std::string CreateDBInstanceEndpointRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateDBInstanceEndpointRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string CreateDBInstanceEndpointRequest::getDBInstanceId() const {
   return dBInstanceId_;
 }

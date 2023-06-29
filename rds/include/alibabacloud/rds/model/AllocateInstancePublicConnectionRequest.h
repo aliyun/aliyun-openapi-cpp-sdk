@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getConnectionStringPrefix() const;
 	void setConnectionStringPrefix(const std::string &connectionStringPrefix);
+	std::string getPGBouncerPort() const;
+	void setPGBouncerPort(const std::string &pGBouncerPort);
 	std::string getGeneralGroupName() const;
 	void setGeneralGroupName(const std::string &generalGroupName);
 	std::string getAccessKeyId() const;
@@ -54,6 +56,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string connectionStringPrefix_;
+	std::string pGBouncerPort_;
 	std::string generalGroupName_;
 	std::string accessKeyId_;
 	std::string dBInstanceId_;

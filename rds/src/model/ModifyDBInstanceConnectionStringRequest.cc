@@ -43,6 +43,15 @@ void ModifyDBInstanceConnectionStringRequest::setConnectionStringPrefix(const st
   setParameter(std::string("ConnectionStringPrefix"), connectionStringPrefix);
 }
 
+std::string ModifyDBInstanceConnectionStringRequest::getPGBouncerPort() const {
+  return pGBouncerPort_;
+}
+
+void ModifyDBInstanceConnectionStringRequest::setPGBouncerPort(const std::string &pGBouncerPort) {
+  pGBouncerPort_ = pGBouncerPort;
+  setParameter(std::string("PGBouncerPort"), pGBouncerPort);
+}
+
 std::string ModifyDBInstanceConnectionStringRequest::getGeneralGroupName() const {
   return generalGroupName_;
 }

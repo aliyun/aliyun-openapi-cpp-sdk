@@ -67,6 +67,8 @@ void DescribeDBInstanceNetInfoResult::parse(const std::string &payload)
 			dBInstanceNetInfosObject.distributionType = valueDBInstanceNetInfosDBInstanceNetInfo["DistributionType"].asString();
 		if(!valueDBInstanceNetInfosDBInstanceNetInfo["IPAddress"].isNull())
 			dBInstanceNetInfosObject.iPAddress = valueDBInstanceNetInfosDBInstanceNetInfo["IPAddress"].asString();
+		if(!valueDBInstanceNetInfosDBInstanceNetInfo["PGBouncerPort"].isNull())
+			dBInstanceNetInfosObject.pGBouncerPort = valueDBInstanceNetInfosDBInstanceNetInfo["PGBouncerPort"].asString();
 		auto allSecurityIPGroupsNode = valueDBInstanceNetInfosDBInstanceNetInfo["SecurityIPGroups"]["securityIPGroup"];
 		for (auto valueDBInstanceNetInfosDBInstanceNetInfoSecurityIPGroupssecurityIPGroup : allSecurityIPGroupsNode)
 		{

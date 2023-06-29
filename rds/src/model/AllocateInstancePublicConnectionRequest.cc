@@ -43,6 +43,15 @@ void AllocateInstancePublicConnectionRequest::setConnectionStringPrefix(const st
   setParameter(std::string("ConnectionStringPrefix"), connectionStringPrefix);
 }
 
+std::string AllocateInstancePublicConnectionRequest::getPGBouncerPort() const {
+  return pGBouncerPort_;
+}
+
+void AllocateInstancePublicConnectionRequest::setPGBouncerPort(const std::string &pGBouncerPort) {
+  pGBouncerPort_ = pGBouncerPort;
+  setParameter(std::string("PGBouncerPort"), pGBouncerPort);
+}
+
 std::string AllocateInstancePublicConnectionRequest::getGeneralGroupName() const {
   return generalGroupName_;
 }

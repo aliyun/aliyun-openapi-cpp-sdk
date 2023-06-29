@@ -209,6 +209,8 @@ void DescribeDBInstanceAttributeResult::parse(const std::string &payload)
 			itemsObject.burstingEnabled = valueItemsDBInstanceAttribute["BurstingEnabled"].asString() == "true";
 		if(!valueItemsDBInstanceAttribute["BpeEnabled"].isNull())
 			itemsObject.bpeEnabled = valueItemsDBInstanceAttribute["BpeEnabled"].asString();
+		if(!valueItemsDBInstanceAttribute["PGBouncerEnabled"].isNull())
+			itemsObject.pGBouncerEnabled = valueItemsDBInstanceAttribute["PGBouncerEnabled"].asString();
 		auto allSlaveZonesNode = valueItemsDBInstanceAttribute["SlaveZones"]["SlaveZone"];
 		for (auto valueItemsDBInstanceAttributeSlaveZonesSlaveZone : allSlaveZonesNode)
 		{

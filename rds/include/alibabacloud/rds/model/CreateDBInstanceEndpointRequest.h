@@ -38,6 +38,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getDBInstanceId() const;
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getDBInstanceEndpointDescription() const;
@@ -60,6 +62,7 @@ private:
 	long resourceOwnerId_;
 	std::string clientToken_;
 	std::string accessKeyId_;
+	std::string resourceGroupId_;
 	std::string dBInstanceId_;
 	std::string dBInstanceEndpointDescription_;
 	std::string dBInstanceEndpointType_;

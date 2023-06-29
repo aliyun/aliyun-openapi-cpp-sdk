@@ -55,6 +55,7 @@ namespace AlibabaCloud
 					std::vector<DBInstanceNetInfo::SecurityIPGroup> securityIPGroups;
 					std::vector<DBInstanceNetInfo::DBInstanceWeight> dBInstanceWeights;
 					std::string connectionStringType;
+					std::string pGBouncerPort;
 					std::string maxDelayTime;
 					std::string expiredTime;
 					std::string connectionString;
