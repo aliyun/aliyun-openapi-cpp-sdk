@@ -34,6 +34,8 @@ public:
 	void setResourceOwnerId(long resourceOwnerId);
 	std::string getLocalLogRetentionHours() const;
 	void setLocalLogRetentionHours(const std::string &localLogRetentionHours);
+	int getBackupPriority() const;
+	void setBackupPriority(int backupPriority);
 	std::string getLogBackupFrequency() const;
 	void setLogBackupFrequency(const std::string &logBackupFrequency);
 	int getArchiveBackupKeepCount() const;
@@ -94,6 +96,7 @@ public:
 private:
 	long resourceOwnerId_;
 	std::string localLogRetentionHours_;
+	int backupPriority_;
 	std::string logBackupFrequency_;
 	int archiveBackupKeepCount_;
 	std::string backupLog_;

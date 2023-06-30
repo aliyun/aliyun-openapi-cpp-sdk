@@ -97,6 +97,10 @@ void DescribeBackupPolicyResult::parse(const std::string &payload)
 		backupLog_ = value["BackupLog"].asString();
 	if(!value["EnableIncrementDataBackup"].isNull())
 		enableIncrementDataBackup_ = value["EnableIncrementDataBackup"].asString() == "true";
+	if(!value["SupportModifyBackupPriority"].isNull())
+		supportModifyBackupPriority_ = value["SupportModifyBackupPriority"].asString() == "true";
+	if(!value["BackupPriority"].isNull())
+		backupPriority_ = std::stoi(value["BackupPriority"].asString());
 
 }
 
@@ -185,6 +189,11 @@ std::string DescribeBackupPolicyResult::getPreferredBackupTime()const
 	return preferredBackupTime_;
 }
 
+int DescribeBackupPolicyResult::getBackupPriority()const
+{
+	return backupPriority_;
+}
+
 int DescribeBackupPolicyResult::getLocalLogRetentionHours()const
 {
 	return localLogRetentionHours_;
@@ -223,6 +232,11 @@ std::string DescribeBackupPolicyResult::getLocalLogRetentionSpace()const
 int DescribeBackupPolicyResult::getBackupRetentionPeriod()const
 {
 	return backupRetentionPeriod_;
+}
+
+bool DescribeBackupPolicyResult::getSupportModifyBackupPriority()const
+{
+	return supportModifyBackupPriority_;
 }
 
 std::string DescribeBackupPolicyResult::getBackupInterval()const

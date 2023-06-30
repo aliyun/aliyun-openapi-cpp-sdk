@@ -64,6 +64,7 @@ namespace AlibabaCloud
 				std::string getDuplication()const;
 				std::string getArchiveBackupKeepPolicy()const;
 				std::string getPreferredBackupTime()const;
+				int getBackupPriority()const;
 				int getLocalLogRetentionHours()const;
 				std::string getHighSpaceUsageProtection()const;
 				std::string getCompressType()const;
@@ -72,6 +73,7 @@ namespace AlibabaCloud
 				std::string getEnableBackupLog()const;
 				std::string getLocalLogRetentionSpace()const;
 				int getBackupRetentionPeriod()const;
+				bool getSupportModifyBackupPriority()const;
 				std::string getBackupInterval()const;
 
 			protected:
@@ -94,6 +96,7 @@ namespace AlibabaCloud
 				std::string duplication_;
 				std::string archiveBackupKeepPolicy_;
 				std::string preferredBackupTime_;
+				int backupPriority_;
 				int localLogRetentionHours_;
 				std::string highSpaceUsageProtection_;
 				std::string compressType_;
@@ -102,6 +105,7 @@ namespace AlibabaCloud
 				std::string enableBackupLog_;
 				std::string localLogRetentionSpace_;
 				int backupRetentionPeriod_;
+				bool supportModifyBackupPriority_;
 				std::string backupInterval_;
 
 			};

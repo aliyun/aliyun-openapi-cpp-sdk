@@ -43,6 +43,15 @@ void ModifyBackupPolicyRequest::setLocalLogRetentionHours(const std::string &loc
   setParameter(std::string("LocalLogRetentionHours"), localLogRetentionHours);
 }
 
+int ModifyBackupPolicyRequest::getBackupPriority() const {
+  return backupPriority_;
+}
+
+void ModifyBackupPolicyRequest::setBackupPriority(int backupPriority) {
+  backupPriority_ = backupPriority;
+  setParameter(std::string("BackupPriority"), std::to_string(backupPriority));
+}
+
 std::string ModifyBackupPolicyRequest::getLogBackupFrequency() const {
   return logBackupFrequency_;
 }
