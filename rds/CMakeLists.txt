@@ -381,6 +381,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/ModifyDBDescriptionResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceAutoUpgradeMinorVersionRequest.h
 	include/alibabacloud/rds/model/ModifyDBInstanceAutoUpgradeMinorVersionResult.h
+	include/alibabacloud/rds/model/ModifyDBInstanceConfigRequest.h
+	include/alibabacloud/rds/model/ModifyDBInstanceConfigResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceConnectionModeRequest.h
 	include/alibabacloud/rds/model/ModifyDBInstanceConnectionModeResult.h
 	include/alibabacloud/rds/model/ModifyDBInstanceConnectionStringRequest.h
@@ -890,6 +892,8 @@ set(rds_src
 	src/model/ModifyDBDescriptionResult.cc
 	src/model/ModifyDBInstanceAutoUpgradeMinorVersionRequest.cc
 	src/model/ModifyDBInstanceAutoUpgradeMinorVersionResult.cc
+	src/model/ModifyDBInstanceConfigRequest.cc
+	src/model/ModifyDBInstanceConfigResult.cc
 	src/model/ModifyDBInstanceConnectionModeRequest.cc
 	src/model/ModifyDBInstanceConnectionModeResult.cc
 	src/model/ModifyDBInstanceConnectionStringRequest.cc
