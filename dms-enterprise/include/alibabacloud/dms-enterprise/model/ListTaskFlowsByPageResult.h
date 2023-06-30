@@ -41,6 +41,7 @@ namespace AlibabaCloud
 					std::string description;
 					std::string scenarioId;
 					std::string creatorId;
+					std::string dagOwnerId;
 					long deployId;
 					std::string dagName;
 					std::string dagOwnerNickName;

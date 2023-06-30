@@ -81,6 +81,8 @@ void ListTaskFlowsByPageResult::parse(const std::string &payload)
 			taskFlowListObject.cronEndDate = valueTaskFlowListTaskFlow["CronEndDate"].asString();
 		if(!valueTaskFlowListTaskFlow["TimeZoneId"].isNull())
 			taskFlowListObject.timeZoneId = valueTaskFlowListTaskFlow["TimeZoneId"].asString();
+		if(!valueTaskFlowListTaskFlow["DagOwnerId"].isNull())
+			taskFlowListObject.dagOwnerId = valueTaskFlowListTaskFlow["DagOwnerId"].asString();
 		taskFlowList_.push_back(taskFlowListObject);
 	}
 	if(!value["ErrorCode"].isNull())
