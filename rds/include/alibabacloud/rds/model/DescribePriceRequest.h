@@ -28,6 +28,10 @@ namespace Rds {
 namespace Model {
 class ALIBABACLOUD_RDS_EXPORT DescribePriceRequest : public RpcServiceRequest {
 public:
+	struct ServerlessConfig {
+		double minCapacity;
+		double maxCapacity;
+	};
 	DescribePriceRequest();
 	~DescribePriceRequest();
 	long getResourceOwnerId() const;
@@ -50,6 +54,8 @@ public:
 	void setDBInstanceStorageType(const std::string &dBInstanceStorageType);
 	int getQuantity() const;
 	void setQuantity(int quantity);
+	ServerlessConfig getServerlessConfig() const;
+	void setServerlessConfig(const ServerlessConfig &serverlessConfig);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -86,6 +92,7 @@ private:
 	std::string dBInstanceId_;
 	std::string dBInstanceStorageType_;
 	int quantity_;
+	ServerlessConfig serverlessConfig_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	std::string commodityCode_;

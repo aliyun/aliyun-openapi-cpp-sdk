@@ -66,14 +66,18 @@ namespace AlibabaCloud
 				DescribePriceResult();
 				explicit DescribePriceResult(const std::string &payload);
 				~DescribePriceResult();
+				float getTradeMinRCUAmount()const;
 				bool getShowDiscount()const;
+				float getTradeMaxRCUAmount()const;
 				std::vector<Rule> getRules()const;
 				PriceInfo getPriceInfo()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
+				float tradeMinRCUAmount_;
 				bool showDiscount_;
+				float tradeMaxRCUAmount_;
 				std::vector<Rule> rules_;
 				PriceInfo priceInfo_;
 

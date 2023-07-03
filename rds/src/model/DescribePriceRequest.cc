@@ -115,6 +115,16 @@ void DescribePriceRequest::setQuantity(int quantity) {
   setParameter(std::string("Quantity"), std::to_string(quantity));
 }
 
+DescribePriceRequest::ServerlessConfig DescribePriceRequest::getServerlessConfig() const {
+  return serverlessConfig_;
+}
+
+void DescribePriceRequest::setServerlessConfig(const DescribePriceRequest::ServerlessConfig &serverlessConfig) {
+  serverlessConfig_ = serverlessConfig;
+  setParameter(std::string("ServerlessConfig") + ".MinCapacity", std::to_string(serverlessConfig.minCapacity));
+  setParameter(std::string("ServerlessConfig") + ".MaxCapacity", std::to_string(serverlessConfig.maxCapacity));
+}
+
 std::string DescribePriceRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }

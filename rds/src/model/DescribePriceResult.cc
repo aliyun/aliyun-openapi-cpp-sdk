@@ -86,12 +86,26 @@ void DescribePriceResult::parse(const std::string &payload)
 			priceInfo_.ruleIds.push_back(value.asString());
 	if(!value["ShowDiscount"].isNull())
 		showDiscount_ = value["ShowDiscount"].asString() == "true";
+	if(!value["TradeMaxRCUAmount"].isNull())
+		tradeMaxRCUAmount_ = std::stof(value["TradeMaxRCUAmount"].asString());
+	if(!value["TradeMinRCUAmount"].isNull())
+		tradeMinRCUAmount_ = std::stof(value["TradeMinRCUAmount"].asString());
 
+}
+
+float DescribePriceResult::getTradeMinRCUAmount()const
+{
+	return tradeMinRCUAmount_;
 }
 
 bool DescribePriceResult::getShowDiscount()const
 {
 	return showDiscount_;
+}
+
+float DescribePriceResult::getTradeMaxRCUAmount()const
+{
+	return tradeMaxRCUAmount_;
 }
 
 std::vector<DescribePriceResult::Rule> DescribePriceResult::getRules()const
