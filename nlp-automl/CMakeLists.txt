@@ -30,7 +30,9 @@ set(nlp-automl_public_header_model
 	include/alibabacloud/nlp-automl/model/GetPredictResultRequest.h
 	include/alibabacloud/nlp-automl/model/GetPredictResultResult.h
 	include/alibabacloud/nlp-automl/model/RunPreTrainServiceRequest.h
-	include/alibabacloud/nlp-automl/model/RunPreTrainServiceResult.h )
+	include/alibabacloud/nlp-automl/model/RunPreTrainServiceResult.h
+	include/alibabacloud/nlp-automl/model/RunPreTrainServiceNewRequest.h
+	include/alibabacloud/nlp-automl/model/RunPreTrainServiceNewResult.h )
 
 set(nlp-automl_src 
 	src/Nlp-automlClient.cc
@@ -43,7 +45,9 @@ set(nlp-automl_src
 	src/model/GetPredictResultRequest.cc
 	src/model/GetPredictResultResult.cc
 	src/model/RunPreTrainServiceRequest.cc
-	src/model/RunPreTrainServiceResult.cc )
+	src/model/RunPreTrainServiceResult.cc
+	src/model/RunPreTrainServiceNewRequest.cc
+	src/model/RunPreTrainServiceNewResult.cc )
 
 add_library(nlp-automl ${LIB_TYPE}
 	${nlp-automl_public_header}

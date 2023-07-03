@@ -231,3 +231,39 @@ Nlp_automlClient::RunPreTrainServiceOutcomeCallable Nlp_automlClient::runPreTrai
 	return task->get_future();
 }
 
+Nlp_automlClient::RunPreTrainServiceNewOutcome Nlp_automlClient::runPreTrainServiceNew(const RunPreTrainServiceNewRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return RunPreTrainServiceNewOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return RunPreTrainServiceNewOutcome(RunPreTrainServiceNewResult(outcome.result()));
+	else
+		return RunPreTrainServiceNewOutcome(outcome.error());
+}
+
+void Nlp_automlClient::runPreTrainServiceNewAsync(const RunPreTrainServiceNewRequest& request, const RunPreTrainServiceNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, runPreTrainServiceNew(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Nlp_automlClient::RunPreTrainServiceNewOutcomeCallable Nlp_automlClient::runPreTrainServiceNewCallable(const RunPreTrainServiceNewRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<RunPreTrainServiceNewOutcome()>>(
+			[this, request]()
+			{
+			return this->runPreTrainServiceNew(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
