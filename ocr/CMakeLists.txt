@@ -21,12 +21,8 @@ set(ocr_public_header
 	include/alibabacloud/ocr/OcrExport.h )
 
 set(ocr_public_header_model 
-	include/alibabacloud/ocr/model/DetectCardScreenshotRequest.h
-	include/alibabacloud/ocr/model/DetectCardScreenshotResult.h
 	include/alibabacloud/ocr/model/GetAsyncJobResultRequest.h
 	include/alibabacloud/ocr/model/GetAsyncJobResultResult.h
-	include/alibabacloud/ocr/model/RecognizeAccountPageRequest.h
-	include/alibabacloud/ocr/model/RecognizeAccountPageResult.h
 	include/alibabacloud/ocr/model/RecognizeBankCardRequest.h
 	include/alibabacloud/ocr/model/RecognizeBankCardResult.h
 	include/alibabacloud/ocr/model/RecognizeBusinessCardRequest.h
@@ -35,8 +31,6 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/RecognizeBusinessLicenseResult.h
 	include/alibabacloud/ocr/model/RecognizeCharacterRequest.h
 	include/alibabacloud/ocr/model/RecognizeCharacterResult.h
-	include/alibabacloud/ocr/model/RecognizeChinapassportRequest.h
-	include/alibabacloud/ocr/model/RecognizeChinapassportResult.h
 	include/alibabacloud/ocr/model/RecognizeDriverLicenseRequest.h
 	include/alibabacloud/ocr/model/RecognizeDriverLicenseResult.h
 	include/alibabacloud/ocr/model/RecognizeDrivingLicenseRequest.h
@@ -45,12 +39,8 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/RecognizeIdentityCardResult.h
 	include/alibabacloud/ocr/model/RecognizeLicensePlateRequest.h
 	include/alibabacloud/ocr/model/RecognizeLicensePlateResult.h
-	include/alibabacloud/ocr/model/RecognizePassportMRZRequest.h
-	include/alibabacloud/ocr/model/RecognizePassportMRZResult.h
 	include/alibabacloud/ocr/model/RecognizePdfRequest.h
 	include/alibabacloud/ocr/model/RecognizePdfResult.h
-	include/alibabacloud/ocr/model/RecognizePoiNameRequest.h
-	include/alibabacloud/ocr/model/RecognizePoiNameResult.h
 	include/alibabacloud/ocr/model/RecognizeQrCodeRequest.h
 	include/alibabacloud/ocr/model/RecognizeQrCodeResult.h
 	include/alibabacloud/ocr/model/RecognizeQuotaInvoiceRequest.h
@@ -59,8 +49,6 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/RecognizeStampResult.h
 	include/alibabacloud/ocr/model/RecognizeTableRequest.h
 	include/alibabacloud/ocr/model/RecognizeTableResult.h
-	include/alibabacloud/ocr/model/RecognizeTakeoutOrderRequest.h
-	include/alibabacloud/ocr/model/RecognizeTakeoutOrderResult.h
 	include/alibabacloud/ocr/model/RecognizeTaxiInvoiceRequest.h
 	include/alibabacloud/ocr/model/RecognizeTaxiInvoiceResult.h
 	include/alibabacloud/ocr/model/RecognizeTicketInvoiceRequest.h
@@ -71,21 +59,13 @@ set(ocr_public_header_model
 	include/alibabacloud/ocr/model/RecognizeVATInvoiceResult.h
 	include/alibabacloud/ocr/model/RecognizeVINCodeRequest.h
 	include/alibabacloud/ocr/model/RecognizeVINCodeResult.h
-	include/alibabacloud/ocr/model/RecognizeVerificationcodeRequest.h
-	include/alibabacloud/ocr/model/RecognizeVerificationcodeResult.h
 	include/alibabacloud/ocr/model/RecognizeVideoCharacterRequest.h
-	include/alibabacloud/ocr/model/RecognizeVideoCharacterResult.h
-	include/alibabacloud/ocr/model/TrimDocumentRequest.h
-	include/alibabacloud/ocr/model/TrimDocumentResult.h )
+	include/alibabacloud/ocr/model/RecognizeVideoCharacterResult.h )
 
 set(ocr_src 
 	src/OcrClient.cc
-	src/model/DetectCardScreenshotRequest.cc
-	src/model/DetectCardScreenshotResult.cc
 	src/model/GetAsyncJobResultRequest.cc
 	src/model/GetAsyncJobResultResult.cc
-	src/model/RecognizeAccountPageRequest.cc
-	src/model/RecognizeAccountPageResult.cc
 	src/model/RecognizeBankCardRequest.cc
 	src/model/RecognizeBankCardResult.cc
 	src/model/RecognizeBusinessCardRequest.cc
@@ -94,8 +74,6 @@ set(ocr_src
 	src/model/RecognizeBusinessLicenseResult.cc
 	src/model/RecognizeCharacterRequest.cc
 	src/model/RecognizeCharacterResult.cc
-	src/model/RecognizeChinapassportRequest.cc
-	src/model/RecognizeChinapassportResult.cc
 	src/model/RecognizeDriverLicenseRequest.cc
 	src/model/RecognizeDriverLicenseResult.cc
 	src/model/RecognizeDrivingLicenseRequest.cc
@@ -104,12 +82,8 @@ set(ocr_src
 	src/model/RecognizeIdentityCardResult.cc
 	src/model/RecognizeLicensePlateRequest.cc
 	src/model/RecognizeLicensePlateResult.cc
-	src/model/RecognizePassportMRZRequest.cc
-	src/model/RecognizePassportMRZResult.cc
 	src/model/RecognizePdfRequest.cc
 	src/model/RecognizePdfResult.cc
-	src/model/RecognizePoiNameRequest.cc
-	src/model/RecognizePoiNameResult.cc
 	src/model/RecognizeQrCodeRequest.cc
 	src/model/RecognizeQrCodeResult.cc
 	src/model/RecognizeQuotaInvoiceRequest.cc
@@ -118,8 +92,6 @@ set(ocr_src
 	src/model/RecognizeStampResult.cc
 	src/model/RecognizeTableRequest.cc
 	src/model/RecognizeTableResult.cc
-	src/model/RecognizeTakeoutOrderRequest.cc
-	src/model/RecognizeTakeoutOrderResult.cc
 	src/model/RecognizeTaxiInvoiceRequest.cc
 	src/model/RecognizeTaxiInvoiceResult.cc
 	src/model/RecognizeTicketInvoiceRequest.cc
@@ -130,12 +102,8 @@ set(ocr_src
 	src/model/RecognizeVATInvoiceResult.cc
 	src/model/RecognizeVINCodeRequest.cc
 	src/model/RecognizeVINCodeResult.cc
-	src/model/RecognizeVerificationcodeRequest.cc
-	src/model/RecognizeVerificationcodeResult.cc
 	src/model/RecognizeVideoCharacterRequest.cc
-	src/model/RecognizeVideoCharacterResult.cc
-	src/model/TrimDocumentRequest.cc
-	src/model/TrimDocumentResult.cc )
+	src/model/RecognizeVideoCharacterResult.cc )
 
 add_library(ocr ${LIB_TYPE}
 	${ocr_public_header}

@@ -51,42 +51,6 @@ OcrClient::OcrClient(const std::string & accessKeyId, const std::string & access
 OcrClient::~OcrClient()
 {}
 
-OcrClient::DetectCardScreenshotOutcome OcrClient::detectCardScreenshot(const DetectCardScreenshotRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return DetectCardScreenshotOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return DetectCardScreenshotOutcome(DetectCardScreenshotResult(outcome.result()));
-	else
-		return DetectCardScreenshotOutcome(outcome.error());
-}
-
-void OcrClient::detectCardScreenshotAsync(const DetectCardScreenshotRequest& request, const DetectCardScreenshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, detectCardScreenshot(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::DetectCardScreenshotOutcomeCallable OcrClient::detectCardScreenshotCallable(const DetectCardScreenshotRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<DetectCardScreenshotOutcome()>>(
-			[this, request]()
-			{
-			return this->detectCardScreenshot(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OcrClient::GetAsyncJobResultOutcome OcrClient::getAsyncJobResult(const GetAsyncJobResultRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -117,42 +81,6 @@ OcrClient::GetAsyncJobResultOutcomeCallable OcrClient::getAsyncJobResultCallable
 			[this, request]()
 			{
 			return this->getAsyncJobResult(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OcrClient::RecognizeAccountPageOutcome OcrClient::recognizeAccountPage(const RecognizeAccountPageRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizeAccountPageOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizeAccountPageOutcome(RecognizeAccountPageResult(outcome.result()));
-	else
-		return RecognizeAccountPageOutcome(outcome.error());
-}
-
-void OcrClient::recognizeAccountPageAsync(const RecognizeAccountPageRequest& request, const RecognizeAccountPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizeAccountPage(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizeAccountPageOutcomeCallable OcrClient::recognizeAccountPageCallable(const RecognizeAccountPageRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizeAccountPageOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizeAccountPage(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -303,42 +231,6 @@ OcrClient::RecognizeCharacterOutcomeCallable OcrClient::recognizeCharacterCallab
 	return task->get_future();
 }
 
-OcrClient::RecognizeChinapassportOutcome OcrClient::recognizeChinapassport(const RecognizeChinapassportRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizeChinapassportOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizeChinapassportOutcome(RecognizeChinapassportResult(outcome.result()));
-	else
-		return RecognizeChinapassportOutcome(outcome.error());
-}
-
-void OcrClient::recognizeChinapassportAsync(const RecognizeChinapassportRequest& request, const RecognizeChinapassportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizeChinapassport(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizeChinapassportOutcomeCallable OcrClient::recognizeChinapassportCallable(const RecognizeChinapassportRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizeChinapassportOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizeChinapassport(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OcrClient::RecognizeDriverLicenseOutcome OcrClient::recognizeDriverLicense(const RecognizeDriverLicenseRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -483,42 +375,6 @@ OcrClient::RecognizeLicensePlateOutcomeCallable OcrClient::recognizeLicensePlate
 	return task->get_future();
 }
 
-OcrClient::RecognizePassportMRZOutcome OcrClient::recognizePassportMRZ(const RecognizePassportMRZRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizePassportMRZOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizePassportMRZOutcome(RecognizePassportMRZResult(outcome.result()));
-	else
-		return RecognizePassportMRZOutcome(outcome.error());
-}
-
-void OcrClient::recognizePassportMRZAsync(const RecognizePassportMRZRequest& request, const RecognizePassportMRZAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizePassportMRZ(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizePassportMRZOutcomeCallable OcrClient::recognizePassportMRZCallable(const RecognizePassportMRZRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizePassportMRZOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizePassportMRZ(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OcrClient::RecognizePdfOutcome OcrClient::recognizePdf(const RecognizePdfRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -549,42 +405,6 @@ OcrClient::RecognizePdfOutcomeCallable OcrClient::recognizePdfCallable(const Rec
 			[this, request]()
 			{
 			return this->recognizePdf(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OcrClient::RecognizePoiNameOutcome OcrClient::recognizePoiName(const RecognizePoiNameRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizePoiNameOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizePoiNameOutcome(RecognizePoiNameResult(outcome.result()));
-	else
-		return RecognizePoiNameOutcome(outcome.error());
-}
-
-void OcrClient::recognizePoiNameAsync(const RecognizePoiNameRequest& request, const RecognizePoiNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizePoiName(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizePoiNameOutcomeCallable OcrClient::recognizePoiNameCallable(const RecognizePoiNameRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizePoiNameOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizePoiName(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -729,42 +549,6 @@ OcrClient::RecognizeTableOutcomeCallable OcrClient::recognizeTableCallable(const
 			[this, request]()
 			{
 			return this->recognizeTable(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OcrClient::RecognizeTakeoutOrderOutcome OcrClient::recognizeTakeoutOrder(const RecognizeTakeoutOrderRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizeTakeoutOrderOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizeTakeoutOrderOutcome(RecognizeTakeoutOrderResult(outcome.result()));
-	else
-		return RecognizeTakeoutOrderOutcome(outcome.error());
-}
-
-void OcrClient::recognizeTakeoutOrderAsync(const RecognizeTakeoutOrderRequest& request, const RecognizeTakeoutOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizeTakeoutOrder(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizeTakeoutOrderOutcomeCallable OcrClient::recognizeTakeoutOrderCallable(const RecognizeTakeoutOrderRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizeTakeoutOrderOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizeTakeoutOrder(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -951,42 +735,6 @@ OcrClient::RecognizeVINCodeOutcomeCallable OcrClient::recognizeVINCodeCallable(c
 	return task->get_future();
 }
 
-OcrClient::RecognizeVerificationcodeOutcome OcrClient::recognizeVerificationcode(const RecognizeVerificationcodeRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return RecognizeVerificationcodeOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return RecognizeVerificationcodeOutcome(RecognizeVerificationcodeResult(outcome.result()));
-	else
-		return RecognizeVerificationcodeOutcome(outcome.error());
-}
-
-void OcrClient::recognizeVerificationcodeAsync(const RecognizeVerificationcodeRequest& request, const RecognizeVerificationcodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, recognizeVerificationcode(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::RecognizeVerificationcodeOutcomeCallable OcrClient::recognizeVerificationcodeCallable(const RecognizeVerificationcodeRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<RecognizeVerificationcodeOutcome()>>(
-			[this, request]()
-			{
-			return this->recognizeVerificationcode(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 OcrClient::RecognizeVideoCharacterOutcome OcrClient::recognizeVideoCharacter(const RecognizeVideoCharacterRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1017,42 +765,6 @@ OcrClient::RecognizeVideoCharacterOutcomeCallable OcrClient::recognizeVideoChara
 			[this, request]()
 			{
 			return this->recognizeVideoCharacter(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-OcrClient::TrimDocumentOutcome OcrClient::trimDocument(const TrimDocumentRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return TrimDocumentOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return TrimDocumentOutcome(TrimDocumentResult(outcome.result()));
-	else
-		return TrimDocumentOutcome(outcome.error());
-}
-
-void OcrClient::trimDocumentAsync(const TrimDocumentRequest& request, const TrimDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, trimDocument(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-OcrClient::TrimDocumentOutcomeCallable OcrClient::trimDocumentCallable(const TrimDocumentRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<TrimDocumentOutcome()>>(
-			[this, request]()
-			{
-			return this->trimDocument(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
