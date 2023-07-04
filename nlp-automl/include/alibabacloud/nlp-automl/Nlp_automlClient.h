@@ -30,6 +30,8 @@
 #include "model/GetAsyncPredictResult.h"
 #include "model/GetPredictResultRequest.h"
 #include "model/GetPredictResultResult.h"
+#include "model/GetPredictResultHighRequest.h"
+#include "model/GetPredictResultHighResult.h"
 #include "model/RunPreTrainServiceRequest.h"
 #include "model/RunPreTrainServiceResult.h"
 #include "model/RunPreTrainServiceNewRequest.h"
@@ -55,6 +57,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetPredictResultResult> GetPredictResultOutcome;
 			typedef std::future<GetPredictResultOutcome> GetPredictResultOutcomeCallable;
 			typedef std::function<void(const Nlp_automlClient*, const Model::GetPredictResultRequest&, const GetPredictResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPredictResultAsyncHandler;
+			typedef Outcome<Error, Model::GetPredictResultHighResult> GetPredictResultHighOutcome;
+			typedef std::future<GetPredictResultHighOutcome> GetPredictResultHighOutcomeCallable;
+			typedef std::function<void(const Nlp_automlClient*, const Model::GetPredictResultHighRequest&, const GetPredictResultHighOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetPredictResultHighAsyncHandler;
 			typedef Outcome<Error, Model::RunPreTrainServiceResult> RunPreTrainServiceOutcome;
 			typedef std::future<RunPreTrainServiceOutcome> RunPreTrainServiceOutcomeCallable;
 			typedef std::function<void(const Nlp_automlClient*, const Model::RunPreTrainServiceRequest&, const RunPreTrainServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RunPreTrainServiceAsyncHandler;
@@ -78,6 +83,9 @@ namespace AlibabaCloud
 			GetPredictResultOutcome getPredictResult(const Model::GetPredictResultRequest &request)const;
 			void getPredictResultAsync(const Model::GetPredictResultRequest& request, const GetPredictResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetPredictResultOutcomeCallable getPredictResultCallable(const Model::GetPredictResultRequest& request) const;
+			GetPredictResultHighOutcome getPredictResultHigh(const Model::GetPredictResultHighRequest &request)const;
+			void getPredictResultHighAsync(const Model::GetPredictResultHighRequest& request, const GetPredictResultHighAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetPredictResultHighOutcomeCallable getPredictResultHighCallable(const Model::GetPredictResultHighRequest& request) const;
 			RunPreTrainServiceOutcome runPreTrainService(const Model::RunPreTrainServiceRequest &request)const;
 			void runPreTrainServiceAsync(const Model::RunPreTrainServiceRequest& request, const RunPreTrainServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RunPreTrainServiceOutcomeCallable runPreTrainServiceCallable(const Model::RunPreTrainServiceRequest& request) const;

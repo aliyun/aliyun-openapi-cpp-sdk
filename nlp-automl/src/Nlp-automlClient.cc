@@ -195,6 +195,42 @@ Nlp_automlClient::GetPredictResultOutcomeCallable Nlp_automlClient::getPredictRe
 	return task->get_future();
 }
 
+Nlp_automlClient::GetPredictResultHighOutcome Nlp_automlClient::getPredictResultHigh(const GetPredictResultHighRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetPredictResultHighOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetPredictResultHighOutcome(GetPredictResultHighResult(outcome.result()));
+	else
+		return GetPredictResultHighOutcome(outcome.error());
+}
+
+void Nlp_automlClient::getPredictResultHighAsync(const GetPredictResultHighRequest& request, const GetPredictResultHighAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getPredictResultHigh(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Nlp_automlClient::GetPredictResultHighOutcomeCallable Nlp_automlClient::getPredictResultHighCallable(const GetPredictResultHighRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetPredictResultHighOutcome()>>(
+			[this, request]()
+			{
+			return this->getPredictResultHigh(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Nlp_automlClient::RunPreTrainServiceOutcome Nlp_automlClient::runPreTrainService(const RunPreTrainServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
