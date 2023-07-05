@@ -32,6 +32,8 @@ public:
 	~RemoveUserFromVpcEndpointServiceRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getUserARN() const;
+	void setUserARN(const std::string &userARN);
 	long getUserId() const;
 	void setUserId(long userId);
 	std::string getRegionId() const;
@@ -43,6 +45,7 @@ public:
 
 private:
 	std::string clientToken_;
+	std::string userARN_;
 	long userId_;
 	std::string regionId_;
 	bool dryRun_;

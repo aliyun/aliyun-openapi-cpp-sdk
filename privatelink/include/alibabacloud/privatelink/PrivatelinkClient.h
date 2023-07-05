@@ -30,8 +30,12 @@
 #include "model/AttachResourceToVpcEndpointServiceResult.h"
 #include "model/AttachSecurityGroupToVpcEndpointRequest.h"
 #include "model/AttachSecurityGroupToVpcEndpointResult.h"
+#include "model/ChangeResourceGroupRequest.h"
+#include "model/ChangeResourceGroupResult.h"
 #include "model/CheckProductOpenRequest.h"
 #include "model/CheckProductOpenResult.h"
+#include "model/CheckResourceSupportOperateRequest.h"
+#include "model/CheckResourceSupportOperateResult.h"
 #include "model/CreateVpcEndpointRequest.h"
 #include "model/CreateVpcEndpointResult.h"
 #include "model/CreateVpcEndpointServiceRequest.h"
@@ -76,12 +80,16 @@
 #include "model/ListVpcEndpointZonesResult.h"
 #include "model/ListVpcEndpointsRequest.h"
 #include "model/ListVpcEndpointsResult.h"
+#include "model/NotifyResourceAddressFamilyRequest.h"
+#include "model/NotifyResourceAddressFamilyResult.h"
 #include "model/OpenPrivateLinkServiceRequest.h"
 #include "model/OpenPrivateLinkServiceResult.h"
 #include "model/RemoveUserFromVpcEndpointServiceRequest.h"
 #include "model/RemoveUserFromVpcEndpointServiceResult.h"
 #include "model/RemoveZoneFromVpcEndpointRequest.h"
 #include "model/RemoveZoneFromVpcEndpointResult.h"
+#include "model/TagResourcesRequest.h"
+#include "model/TagResourcesResult.h"
 #include "model/UpdateVpcEndpointAttributeRequest.h"
 #include "model/UpdateVpcEndpointAttributeResult.h"
 #include "model/UpdateVpcEndpointConnectionAttributeRequest.h"
@@ -113,9 +121,15 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AttachSecurityGroupToVpcEndpointResult> AttachSecurityGroupToVpcEndpointOutcome;
 			typedef std::future<AttachSecurityGroupToVpcEndpointOutcome> AttachSecurityGroupToVpcEndpointOutcomeCallable;
 			typedef std::function<void(const PrivatelinkClient*, const Model::AttachSecurityGroupToVpcEndpointRequest&, const AttachSecurityGroupToVpcEndpointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AttachSecurityGroupToVpcEndpointAsyncHandler;
+			typedef Outcome<Error, Model::ChangeResourceGroupResult> ChangeResourceGroupOutcome;
+			typedef std::future<ChangeResourceGroupOutcome> ChangeResourceGroupOutcomeCallable;
+			typedef std::function<void(const PrivatelinkClient*, const Model::ChangeResourceGroupRequest&, const ChangeResourceGroupOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ChangeResourceGroupAsyncHandler;
 			typedef Outcome<Error, Model::CheckProductOpenResult> CheckProductOpenOutcome;
 			typedef std::future<CheckProductOpenOutcome> CheckProductOpenOutcomeCallable;
 			typedef std::function<void(const PrivatelinkClient*, const Model::CheckProductOpenRequest&, const CheckProductOpenOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckProductOpenAsyncHandler;
+			typedef Outcome<Error, Model::CheckResourceSupportOperateResult> CheckResourceSupportOperateOutcome;
+			typedef std::future<CheckResourceSupportOperateOutcome> CheckResourceSupportOperateOutcomeCallable;
+			typedef std::function<void(const PrivatelinkClient*, const Model::CheckResourceSupportOperateRequest&, const CheckResourceSupportOperateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CheckResourceSupportOperateAsyncHandler;
 			typedef Outcome<Error, Model::CreateVpcEndpointResult> CreateVpcEndpointOutcome;
 			typedef std::future<CreateVpcEndpointOutcome> CreateVpcEndpointOutcomeCallable;
 			typedef std::function<void(const PrivatelinkClient*, const Model::CreateVpcEndpointRequest&, const CreateVpcEndpointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcEndpointAsyncHandler;
@@ -182,6 +196,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListVpcEndpointsResult> ListVpcEndpointsOutcome;
 			typedef std::future<ListVpcEndpointsOutcome> ListVpcEndpointsOutcomeCallable;
 			typedef std::function<void(const PrivatelinkClient*, const Model::ListVpcEndpointsRequest&, const ListVpcEndpointsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListVpcEndpointsAsyncHandler;
+			typedef Outcome<Error, Model::NotifyResourceAddressFamilyResult> NotifyResourceAddressFamilyOutcome;
+			typedef std::future<NotifyResourceAddressFamilyOutcome> NotifyResourceAddressFamilyOutcomeCallable;
+			typedef std::function<void(const PrivatelinkClient*, const Model::NotifyResourceAddressFamilyRequest&, const NotifyResourceAddressFamilyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> NotifyResourceAddressFamilyAsyncHandler;
 			typedef Outcome<Error, Model::OpenPrivateLinkServiceResult> OpenPrivateLinkServiceOutcome;
 			typedef std::future<OpenPrivateLinkServiceOutcome> OpenPrivateLinkServiceOutcomeCallable;
 			typedef std::function<void(const PrivatelinkClient*, const Model::OpenPrivateLinkServiceRequest&, const OpenPrivateLinkServiceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> OpenPrivateLinkServiceAsyncHandler;
@@ -191,6 +208,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::RemoveZoneFromVpcEndpointResult> RemoveZoneFromVpcEndpointOutcome;
 			typedef std::future<RemoveZoneFromVpcEndpointOutcome> RemoveZoneFromVpcEndpointOutcomeCallable;
 			typedef std::function<void(const PrivatelinkClient*, const Model::RemoveZoneFromVpcEndpointRequest&, const RemoveZoneFromVpcEndpointOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> RemoveZoneFromVpcEndpointAsyncHandler;
+			typedef Outcome<Error, Model::TagResourcesResult> TagResourcesOutcome;
+			typedef std::future<TagResourcesOutcome> TagResourcesOutcomeCallable;
+			typedef std::function<void(const PrivatelinkClient*, const Model::TagResourcesRequest&, const TagResourcesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> TagResourcesAsyncHandler;
 			typedef Outcome<Error, Model::UpdateVpcEndpointAttributeResult> UpdateVpcEndpointAttributeOutcome;
 			typedef std::future<UpdateVpcEndpointAttributeOutcome> UpdateVpcEndpointAttributeOutcomeCallable;
 			typedef std::function<void(const PrivatelinkClient*, const Model::UpdateVpcEndpointAttributeRequest&, const UpdateVpcEndpointAttributeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> UpdateVpcEndpointAttributeAsyncHandler;
@@ -223,9 +243,15 @@ namespace AlibabaCloud
 			AttachSecurityGroupToVpcEndpointOutcome attachSecurityGroupToVpcEndpoint(const Model::AttachSecurityGroupToVpcEndpointRequest &request)const;
 			void attachSecurityGroupToVpcEndpointAsync(const Model::AttachSecurityGroupToVpcEndpointRequest& request, const AttachSecurityGroupToVpcEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AttachSecurityGroupToVpcEndpointOutcomeCallable attachSecurityGroupToVpcEndpointCallable(const Model::AttachSecurityGroupToVpcEndpointRequest& request) const;
+			ChangeResourceGroupOutcome changeResourceGroup(const Model::ChangeResourceGroupRequest &request)const;
+			void changeResourceGroupAsync(const Model::ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ChangeResourceGroupOutcomeCallable changeResourceGroupCallable(const Model::ChangeResourceGroupRequest& request) const;
 			CheckProductOpenOutcome checkProductOpen(const Model::CheckProductOpenRequest &request)const;
 			void checkProductOpenAsync(const Model::CheckProductOpenRequest& request, const CheckProductOpenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CheckProductOpenOutcomeCallable checkProductOpenCallable(const Model::CheckProductOpenRequest& request) const;
+			CheckResourceSupportOperateOutcome checkResourceSupportOperate(const Model::CheckResourceSupportOperateRequest &request)const;
+			void checkResourceSupportOperateAsync(const Model::CheckResourceSupportOperateRequest& request, const CheckResourceSupportOperateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CheckResourceSupportOperateOutcomeCallable checkResourceSupportOperateCallable(const Model::CheckResourceSupportOperateRequest& request) const;
 			CreateVpcEndpointOutcome createVpcEndpoint(const Model::CreateVpcEndpointRequest &request)const;
 			void createVpcEndpointAsync(const Model::CreateVpcEndpointRequest& request, const CreateVpcEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateVpcEndpointOutcomeCallable createVpcEndpointCallable(const Model::CreateVpcEndpointRequest& request) const;
@@ -292,6 +318,9 @@ namespace AlibabaCloud
 			ListVpcEndpointsOutcome listVpcEndpoints(const Model::ListVpcEndpointsRequest &request)const;
 			void listVpcEndpointsAsync(const Model::ListVpcEndpointsRequest& request, const ListVpcEndpointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListVpcEndpointsOutcomeCallable listVpcEndpointsCallable(const Model::ListVpcEndpointsRequest& request) const;
+			NotifyResourceAddressFamilyOutcome notifyResourceAddressFamily(const Model::NotifyResourceAddressFamilyRequest &request)const;
+			void notifyResourceAddressFamilyAsync(const Model::NotifyResourceAddressFamilyRequest& request, const NotifyResourceAddressFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			NotifyResourceAddressFamilyOutcomeCallable notifyResourceAddressFamilyCallable(const Model::NotifyResourceAddressFamilyRequest& request) const;
 			OpenPrivateLinkServiceOutcome openPrivateLinkService(const Model::OpenPrivateLinkServiceRequest &request)const;
 			void openPrivateLinkServiceAsync(const Model::OpenPrivateLinkServiceRequest& request, const OpenPrivateLinkServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			OpenPrivateLinkServiceOutcomeCallable openPrivateLinkServiceCallable(const Model::OpenPrivateLinkServiceRequest& request) const;
@@ -301,6 +330,9 @@ namespace AlibabaCloud
 			RemoveZoneFromVpcEndpointOutcome removeZoneFromVpcEndpoint(const Model::RemoveZoneFromVpcEndpointRequest &request)const;
 			void removeZoneFromVpcEndpointAsync(const Model::RemoveZoneFromVpcEndpointRequest& request, const RemoveZoneFromVpcEndpointAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			RemoveZoneFromVpcEndpointOutcomeCallable removeZoneFromVpcEndpointCallable(const Model::RemoveZoneFromVpcEndpointRequest& request) const;
+			TagResourcesOutcome tagResources(const Model::TagResourcesRequest &request)const;
+			void tagResourcesAsync(const Model::TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			TagResourcesOutcomeCallable tagResourcesCallable(const Model::TagResourcesRequest& request) const;
 			UpdateVpcEndpointAttributeOutcome updateVpcEndpointAttribute(const Model::UpdateVpcEndpointAttributeRequest &request)const;
 			void updateVpcEndpointAttributeAsync(const Model::UpdateVpcEndpointAttributeRequest& request, const UpdateVpcEndpointAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			UpdateVpcEndpointAttributeOutcomeCallable updateVpcEndpointAttributeCallable(const Model::UpdateVpcEndpointAttributeRequest& request) const;

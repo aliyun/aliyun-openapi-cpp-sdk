@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_ADDUSERTOVPCENDPOINTSERVICEREQUEST_H_
-#define ALIBABACLOUD_PRIVATELINK_MODEL_ADDUSERTOVPCENDPOINTSERVICEREQUEST_H_
+#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_TAGRESOURCESREQUEST_H_
+#define ALIBABACLOUD_PRIVATELINK_MODEL_TAGRESOURCESREQUEST_H_
 
 #include <alibabacloud/privatelink/PrivatelinkExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,36 @@
 namespace AlibabaCloud {
 namespace Privatelink {
 namespace Model {
-class ALIBABACLOUD_PRIVATELINK_EXPORT AddUserToVpcEndpointServiceRequest : public RpcServiceRequest {
+class ALIBABACLOUD_PRIVATELINK_EXPORT TagResourcesRequest : public RpcServiceRequest {
 public:
-	AddUserToVpcEndpointServiceRequest();
-	~AddUserToVpcEndpointServiceRequest();
-	std::string getClientToken() const;
-	void setClientToken(const std::string &clientToken);
-	std::string getUserARN() const;
-	void setUserARN(const std::string &userARN);
-	long getUserId() const;
-	void setUserId(long userId);
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
+	TagResourcesRequest();
+	~TagResourcesRequest();
+	std::vector<std::string> getResourceId() const;
+	void setResourceId(const std::vector<std::string> &resourceId);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
-	std::string getServiceId() const;
-	void setServiceId(const std::string &serviceId);
+	std::string getClientToken() const;
+	void setClientToken(const std::string &clientToken);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getRegionId() const;
+	void setRegionId(const std::string &regionId);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 
 private:
-	std::string clientToken_;
-	std::string userARN_;
-	long userId_;
-	std::string regionId_;
+	std::vector<std::string> resourceId_;
 	bool dryRun_;
-	std::string serviceId_;
+	std::string clientToken_;
+	std::string resourceType_;
+	std::string regionId_;
+	std::vector<Tag> tag_;
 };
 } // namespace Model
 } // namespace Privatelink
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_ADDUSERTOVPCENDPOINTSERVICEREQUEST_H_
+#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_TAGRESOURCESREQUEST_H_

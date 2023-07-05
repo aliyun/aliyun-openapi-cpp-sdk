@@ -28,12 +28,18 @@ namespace Privatelink {
 namespace Model {
 class ALIBABACLOUD_PRIVATELINK_EXPORT ListVpcEndpointsRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	ListVpcEndpointsRequest();
 	~ListVpcEndpointsRequest();
 	std::string getEndpointId() const;
 	void setEndpointId(const std::string &endpointId);
 	std::string getEndpointStatus() const;
 	void setEndpointStatus(const std::string &endpointStatus);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
@@ -42,6 +48,8 @@ public:
 	void setEndpointType(const std::string &endpointType);
 	std::string getServiceName() const;
 	void setServiceName(const std::string &serviceName);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getConnectionStatus() const;
 	void setConnectionStatus(const std::string &connectionStatus);
 	std::string getVpcId() const;
@@ -54,10 +62,12 @@ public:
 private:
 	std::string endpointId_;
 	std::string endpointStatus_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string nextToken_;
 	std::string endpointType_;
 	std::string serviceName_;
+	std::vector<Tag> tag_;
 	std::string connectionStatus_;
 	std::string vpcId_;
 	std::string endpointName_;

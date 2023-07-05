@@ -52,6 +52,15 @@ void ListVpcEndpointConnectionsRequest::setReplacedResourceId(const std::string 
   setParameter(std::string("ReplacedResourceId"), replacedResourceId);
 }
 
+std::string ListVpcEndpointConnectionsRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListVpcEndpointConnectionsRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListVpcEndpointConnectionsRequest::getRegionId() const {
   return regionId_;
 }
@@ -68,6 +77,15 @@ std::string ListVpcEndpointConnectionsRequest::getNextToken() const {
 void ListVpcEndpointConnectionsRequest::setNextToken(const std::string &nextToken) {
   nextToken_ = nextToken;
   setParameter(std::string("NextToken"), nextToken);
+}
+
+long ListVpcEndpointConnectionsRequest::getConnectionId() const {
+  return connectionId_;
+}
+
+void ListVpcEndpointConnectionsRequest::setConnectionId(long connectionId) {
+  connectionId_ = connectionId;
+  setParameter(std::string("ConnectionId"), std::to_string(connectionId));
 }
 
 std::string ListVpcEndpointConnectionsRequest::getResourceId() const {

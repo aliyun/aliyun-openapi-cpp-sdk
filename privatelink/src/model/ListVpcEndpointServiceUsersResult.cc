@@ -47,11 +47,26 @@ void ListVpcEndpointServiceUsersResult::parse(const std::string &payload)
 			usersObject.userId = std::stol(valueUsersUser["UserId"].asString());
 		users_.push_back(usersObject);
 	}
+	auto allUserARNsNode = value["UserARNs"]["UserARN"];
+	for (auto valueUserARNsUserARN : allUserARNsNode)
+	{
+		UserARN userARNsObject;
+		if(!valueUserARNsUserARN["UserARN"].isNull())
+			userARNsObject.userARN = valueUserARNsUserARN["UserARN"].asString();
+		userARNs_.push_back(userARNsObject);
+	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
+		maxResults_ = std::stoi(value["MaxResults"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = value["TotalCount"].asString();
 
+}
+
+std::string ListVpcEndpointServiceUsersResult::getTotalCount()const
+{
+	return totalCount_;
 }
 
 std::string ListVpcEndpointServiceUsersResult::getNextToken()const
@@ -59,7 +74,7 @@ std::string ListVpcEndpointServiceUsersResult::getNextToken()const
 	return nextToken_;
 }
 
-std::string ListVpcEndpointServiceUsersResult::getMaxResults()const
+int ListVpcEndpointServiceUsersResult::getMaxResults()const
 {
 	return maxResults_;
 }
@@ -67,5 +82,10 @@ std::string ListVpcEndpointServiceUsersResult::getMaxResults()const
 std::vector<ListVpcEndpointServiceUsersResult::User> ListVpcEndpointServiceUsersResult::getUsers()const
 {
 	return users_;
+}
+
+std::vector<ListVpcEndpointServiceUsersResult::UserARN> ListVpcEndpointServiceUsersResult::getUserARNs()const
+{
+	return userARNs_;
 }
 

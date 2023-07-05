@@ -65,12 +65,14 @@ void ListVpcEndpointServiceResourcesResult::parse(const std::string &payload)
 			resourcesObject.autoAllocatedEnabled = valueResourcesResource["AutoAllocatedEnabled"].asString() == "true";
 		if(!valueResourcesResource["StatusInfo"].isNull())
 			resourcesObject.statusInfo = valueResourcesResource["StatusInfo"].asString();
+		if(!valueResourcesResource["ResourceSupportIPv6"].isNull())
+			resourcesObject.resourceSupportIPv6 = valueResourcesResource["ResourceSupportIPv6"].asString() == "true";
 		resources_.push_back(resourcesObject);
 	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 
@@ -79,7 +81,7 @@ std::string ListVpcEndpointServiceResourcesResult::getNextToken()const
 	return nextToken_;
 }
 
-std::string ListVpcEndpointServiceResourcesResult::getMaxResults()const
+int ListVpcEndpointServiceResourcesResult::getMaxResults()const
 {
 	return maxResults_;
 }

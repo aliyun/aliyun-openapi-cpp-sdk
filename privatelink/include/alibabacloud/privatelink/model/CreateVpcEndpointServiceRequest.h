@@ -28,6 +28,15 @@ namespace Privatelink {
 namespace Model {
 class ALIBABACLOUD_PRIVATELINK_EXPORT CreateVpcEndpointServiceRequest : public RpcServiceRequest {
 public:
+	struct SystemTag {
+		std::string key;
+		std::string value;
+		std::string scope;
+	};
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	struct Resource {
 		std::string resourceType;
 		std::string resourceId;
@@ -43,18 +52,26 @@ public:
 	void setAutoAcceptEnabled(bool autoAcceptEnabled);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::vector<SystemTag> getSystemTag() const;
+	void setSystemTag(const std::vector<SystemTag> &systemTag);
 	std::string getPayer() const;
 	void setPayer(const std::string &payer);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	bool getZoneAffinityEnabled() const;
 	void setZoneAffinityEnabled(bool zoneAffinityEnabled);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
 	std::vector<Resource> getResource() const;
 	void setResource(const std::vector<Resource> &resource);
 	std::string getServiceResourceType() const;
 	void setServiceResourceType(const std::string &serviceResourceType);
+	bool getServiceSupportIPv6() const;
+	void setServiceSupportIPv6(bool serviceSupportIPv6);
 	std::string getServiceDescription() const;
 	void setServiceDescription(const std::string &serviceDescription);
 
@@ -63,12 +80,16 @@ private:
 	std::string privateServiceDomain_;
 	bool autoAcceptEnabled_;
 	std::string clientToken_;
+	std::vector<SystemTag> systemTag_;
 	std::string payer_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	bool zoneAffinityEnabled_;
+	std::vector<Tag> tag_;
 	bool dryRun_;
 	std::vector<Resource> resource_;
 	std::string serviceResourceType_;
+	bool serviceSupportIPv6_;
 	std::string serviceDescription_;
 };
 } // namespace Model

@@ -30,6 +30,8 @@ class ALIBABACLOUD_PRIVATELINK_EXPORT ListVpcEndpointServiceUsersRequest : publi
 public:
 	ListVpcEndpointServiceUsersRequest();
 	~ListVpcEndpointServiceUsersRequest();
+	std::string getUserListType() const;
+	void setUserListType(const std::string &userListType);
 	long getUserId() const;
 	void setUserId(long userId);
 	std::string getRegionId() const;
@@ -42,6 +44,7 @@ public:
 	void setServiceId(const std::string &serviceId);
 
 private:
+	std::string userListType_;
 	long userId_;
 	std::string regionId_;
 	std::string nextToken_;

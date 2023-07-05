@@ -61,6 +61,21 @@ void CreateVpcEndpointServiceRequest::setClientToken(const std::string &clientTo
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::vector<CreateVpcEndpointServiceRequest::SystemTag> CreateVpcEndpointServiceRequest::getSystemTag() const {
+  return systemTag_;
+}
+
+void CreateVpcEndpointServiceRequest::setSystemTag(const std::vector<CreateVpcEndpointServiceRequest::SystemTag> &systemTag) {
+  systemTag_ = systemTag;
+  for(int dep1 = 0; dep1 != systemTag.size(); dep1++) {
+  auto systemTagObj = systemTag.at(dep1);
+  std::string systemTagObjStr = std::string("SystemTag") + "." + std::to_string(dep1 + 1);
+    setParameter(systemTagObjStr + ".Key", systemTagObj.key);
+    setParameter(systemTagObjStr + ".Value", systemTagObj.value);
+    setParameter(systemTagObjStr + ".Scope", systemTagObj.scope);
+  }
+}
+
 std::string CreateVpcEndpointServiceRequest::getPayer() const {
   return payer_;
 }
@@ -68,6 +83,15 @@ std::string CreateVpcEndpointServiceRequest::getPayer() const {
 void CreateVpcEndpointServiceRequest::setPayer(const std::string &payer) {
   payer_ = payer;
   setParameter(std::string("Payer"), payer);
+}
+
+std::string CreateVpcEndpointServiceRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateVpcEndpointServiceRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string CreateVpcEndpointServiceRequest::getRegionId() const {
@@ -86,6 +110,20 @@ bool CreateVpcEndpointServiceRequest::getZoneAffinityEnabled() const {
 void CreateVpcEndpointServiceRequest::setZoneAffinityEnabled(bool zoneAffinityEnabled) {
   zoneAffinityEnabled_ = zoneAffinityEnabled;
   setParameter(std::string("ZoneAffinityEnabled"), zoneAffinityEnabled ? "true" : "false");
+}
+
+std::vector<CreateVpcEndpointServiceRequest::Tag> CreateVpcEndpointServiceRequest::getTag() const {
+  return tag_;
+}
+
+void CreateVpcEndpointServiceRequest::setTag(const std::vector<CreateVpcEndpointServiceRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
 }
 
 bool CreateVpcEndpointServiceRequest::getDryRun() const {
@@ -119,6 +157,15 @@ std::string CreateVpcEndpointServiceRequest::getServiceResourceType() const {
 void CreateVpcEndpointServiceRequest::setServiceResourceType(const std::string &serviceResourceType) {
   serviceResourceType_ = serviceResourceType;
   setParameter(std::string("ServiceResourceType"), serviceResourceType);
+}
+
+bool CreateVpcEndpointServiceRequest::getServiceSupportIPv6() const {
+  return serviceSupportIPv6_;
+}
+
+void CreateVpcEndpointServiceRequest::setServiceSupportIPv6(bool serviceSupportIPv6) {
+  serviceSupportIPv6_ = serviceSupportIPv6;
+  setParameter(std::string("ServiceSupportIPv6"), serviceSupportIPv6 ? "true" : "false");
 }
 
 std::string CreateVpcEndpointServiceRequest::getServiceDescription() const {

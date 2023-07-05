@@ -28,14 +28,22 @@ namespace Privatelink {
 namespace Model {
 class ALIBABACLOUD_PRIVATELINK_EXPORT ListVpcEndpointServicesByEndUserRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	ListVpcEndpointServicesByEndUserRequest();
 	~ListVpcEndpointServicesByEndUserRequest();
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
 	std::string getServiceName() const;
 	void setServiceName(const std::string &serviceName);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getServiceType() const;
 	void setServiceType(const std::string &serviceType);
 	int getMaxResults() const;
@@ -44,9 +52,11 @@ public:
 	void setServiceId(const std::string &serviceId);
 
 private:
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string nextToken_;
 	std::string serviceName_;
+	std::vector<Tag> tag_;
 	std::string serviceType_;
 	int maxResults_;
 	std::string serviceId_;

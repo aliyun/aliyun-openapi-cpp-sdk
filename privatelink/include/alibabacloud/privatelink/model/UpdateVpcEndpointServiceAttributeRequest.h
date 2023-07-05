@@ -46,6 +46,8 @@ public:
 	void setZoneAffinityEnabled(bool zoneAffinityEnabled);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
+	bool getServiceSupportIPv6() const;
+	void setServiceSupportIPv6(bool serviceSupportIPv6);
 	std::string getServiceDescription() const;
 	void setServiceDescription(const std::string &serviceDescription);
 	std::string getServiceId() const;
@@ -60,6 +62,7 @@ private:
 	std::string regionId_;
 	bool zoneAffinityEnabled_;
 	bool dryRun_;
+	bool serviceSupportIPv6_;
 	std::string serviceDescription_;
 	std::string serviceId_;
 };

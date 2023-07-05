@@ -52,6 +52,15 @@ void ListVpcEndpointServicesRequest::setServiceStatus(const std::string &service
   setParameter(std::string("ServiceStatus"), serviceStatus);
 }
 
+std::string ListVpcEndpointServicesRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListVpcEndpointServicesRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListVpcEndpointServicesRequest::getRegionId() const {
   return regionId_;
 }
@@ -86,6 +95,18 @@ std::string ListVpcEndpointServicesRequest::getServiceName() const {
 void ListVpcEndpointServicesRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
   setParameter(std::string("ServiceName"), serviceName);
+}
+
+std::vector<ListVpcEndpointServicesRequest::Tag> ListVpcEndpointServicesRequest::getTag() const {
+  return tag_;
+}
+
+void ListVpcEndpointServicesRequest::setTag(const std::vector<ListVpcEndpointServicesRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+  }
 }
 
 std::string ListVpcEndpointServicesRequest::getResourceId() const {

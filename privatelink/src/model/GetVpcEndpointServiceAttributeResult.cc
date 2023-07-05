@@ -88,7 +88,81 @@ void GetVpcEndpointServiceAttributeResult::parse(const std::string &payload)
 		privateServiceDomainVerifyValue_ = value["PrivateServiceDomainVerifyValue"].asString();
 	if(!value["PrivateServiceName"].isNull())
 		privateServiceName_ = value["PrivateServiceName"].asString();
+	if(!value["ServiceSupportIPv6"].isNull())
+		serviceSupportIPv6_ = value["ServiceSupportIPv6"].asString() == "true";
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
+}
+
+std::string GetVpcEndpointServiceAttributeResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
+}
+
+int GetVpcEndpointServiceAttributeResult::getMaxBandwidth()const
+{
+	return maxBandwidth_;
+}
+
+bool GetVpcEndpointServiceAttributeResult::getPrivateServiceDomainEnabled()const
+{
+	return privateServiceDomainEnabled_;
+}
+
+int GetVpcEndpointServiceAttributeResult::getMinBandwidth()const
+{
+	return minBandwidth_;
+}
+
+std::vector<std::string> GetVpcEndpointServiceAttributeResult::getZones()const
+{
+	return zones_;
+}
+
+bool GetVpcEndpointServiceAttributeResult::getAutoAcceptEnabled()const
+{
+	return autoAcceptEnabled_;
+}
+
+std::string GetVpcEndpointServiceAttributeResult::getServiceId()const
+{
+	return serviceId_;
+}
+
+bool GetVpcEndpointServiceAttributeResult::getServiceSupportIPv6()const
+{
+	return serviceSupportIPv6_;
+}
+
+std::string GetVpcEndpointServiceAttributeResult::getPrivateServiceDomainVerifyStatus()const
+{
+	return privateServiceDomainVerifyStatus_;
+}
+
+std::string GetVpcEndpointServiceAttributeResult::getPrivateServiceDomainVerifyName()const
+{
+	return privateServiceDomainVerifyName_;
+}
+
+std::string GetVpcEndpointServiceAttributeResult::getServiceStatus()const
+{
+	return serviceStatus_;
+}
+
+std::string GetVpcEndpointServiceAttributeResult::getServiceType()const
+{
+	return serviceType_;
+}
+
+std::string GetVpcEndpointServiceAttributeResult::getServiceResourceType()const
+{
+	return serviceResourceType_;
+}
+
+std::string GetVpcEndpointServiceAttributeResult::getPrivateServiceName()const
+{
+	return privateServiceName_;
 }
 
 std::string GetVpcEndpointServiceAttributeResult::getPayer()const
@@ -111,24 +185,9 @@ std::string GetVpcEndpointServiceAttributeResult::getCreateTime()const
 	return createTime_;
 }
 
-int GetVpcEndpointServiceAttributeResult::getMaxBandwidth()const
-{
-	return maxBandwidth_;
-}
-
 std::string GetVpcEndpointServiceAttributeResult::getPrivateServiceDomain()const
 {
 	return privateServiceDomain_;
-}
-
-bool GetVpcEndpointServiceAttributeResult::getPrivateServiceDomainEnabled()const
-{
-	return privateServiceDomainEnabled_;
-}
-
-int GetVpcEndpointServiceAttributeResult::getMinBandwidth()const
-{
-	return minBandwidth_;
 }
 
 std::string GetVpcEndpointServiceAttributeResult::getServiceDomain()const
@@ -136,34 +195,9 @@ std::string GetVpcEndpointServiceAttributeResult::getServiceDomain()const
 	return serviceDomain_;
 }
 
-std::vector<std::string> GetVpcEndpointServiceAttributeResult::getZones()const
-{
-	return zones_;
-}
-
-bool GetVpcEndpointServiceAttributeResult::getAutoAcceptEnabled()const
-{
-	return autoAcceptEnabled_;
-}
-
-std::string GetVpcEndpointServiceAttributeResult::getServiceId()const
-{
-	return serviceId_;
-}
-
-std::string GetVpcEndpointServiceAttributeResult::getPrivateServiceDomainVerifyStatus()const
-{
-	return privateServiceDomainVerifyStatus_;
-}
-
 std::string GetVpcEndpointServiceAttributeResult::getServiceBusinessStatus()const
 {
 	return serviceBusinessStatus_;
-}
-
-std::string GetVpcEndpointServiceAttributeResult::getPrivateServiceDomainVerifyName()const
-{
-	return privateServiceDomainVerifyName_;
 }
 
 std::string GetVpcEndpointServiceAttributeResult::getServiceName()const
@@ -171,29 +205,9 @@ std::string GetVpcEndpointServiceAttributeResult::getServiceName()const
 	return serviceName_;
 }
 
-std::string GetVpcEndpointServiceAttributeResult::getServiceStatus()const
-{
-	return serviceStatus_;
-}
-
-std::string GetVpcEndpointServiceAttributeResult::getServiceType()const
-{
-	return serviceType_;
-}
-
 int GetVpcEndpointServiceAttributeResult::getConnectBandwidth()const
 {
 	return connectBandwidth_;
-}
-
-std::string GetVpcEndpointServiceAttributeResult::getServiceResourceType()const
-{
-	return serviceResourceType_;
-}
-
-std::string GetVpcEndpointServiceAttributeResult::getPrivateServiceName()const
-{
-	return privateServiceName_;
 }
 
 std::string GetVpcEndpointServiceAttributeResult::getRegionId()const

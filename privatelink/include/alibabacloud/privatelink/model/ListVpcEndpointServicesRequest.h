@@ -28,6 +28,10 @@ namespace Privatelink {
 namespace Model {
 class ALIBABACLOUD_PRIVATELINK_EXPORT ListVpcEndpointServicesRequest : public RpcServiceRequest {
 public:
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	ListVpcEndpointServicesRequest();
 	~ListVpcEndpointServicesRequest();
 	std::string getServiceBusinessStatus() const;
@@ -36,6 +40,8 @@ public:
 	void setAutoAcceptEnabled(bool autoAcceptEnabled);
 	std::string getServiceStatus() const;
 	void setServiceStatus(const std::string &serviceStatus);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
@@ -44,6 +50,8 @@ public:
 	void setZoneAffinityEnabled(bool zoneAffinityEnabled);
 	std::string getServiceName() const;
 	void setServiceName(const std::string &serviceName);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
 	std::string getServiceResourceType() const;
@@ -57,10 +65,12 @@ private:
 	std::string serviceBusinessStatus_;
 	bool autoAcceptEnabled_;
 	std::string serviceStatus_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string nextToken_;
 	bool zoneAffinityEnabled_;
 	std::string serviceName_;
+	std::vector<Tag> tag_;
 	std::string resourceId_;
 	std::string serviceResourceType_;
 	int maxResults_;

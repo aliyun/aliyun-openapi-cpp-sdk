@@ -29,8 +29,12 @@ set(privatelink_public_header_model
 	include/alibabacloud/privatelink/model/AttachResourceToVpcEndpointServiceResult.h
 	include/alibabacloud/privatelink/model/AttachSecurityGroupToVpcEndpointRequest.h
 	include/alibabacloud/privatelink/model/AttachSecurityGroupToVpcEndpointResult.h
+	include/alibabacloud/privatelink/model/ChangeResourceGroupRequest.h
+	include/alibabacloud/privatelink/model/ChangeResourceGroupResult.h
 	include/alibabacloud/privatelink/model/CheckProductOpenRequest.h
 	include/alibabacloud/privatelink/model/CheckProductOpenResult.h
+	include/alibabacloud/privatelink/model/CheckResourceSupportOperateRequest.h
+	include/alibabacloud/privatelink/model/CheckResourceSupportOperateResult.h
 	include/alibabacloud/privatelink/model/CreateVpcEndpointRequest.h
 	include/alibabacloud/privatelink/model/CreateVpcEndpointResult.h
 	include/alibabacloud/privatelink/model/CreateVpcEndpointServiceRequest.h
@@ -75,12 +79,16 @@ set(privatelink_public_header_model
 	include/alibabacloud/privatelink/model/ListVpcEndpointZonesResult.h
 	include/alibabacloud/privatelink/model/ListVpcEndpointsRequest.h
 	include/alibabacloud/privatelink/model/ListVpcEndpointsResult.h
+	include/alibabacloud/privatelink/model/NotifyResourceAddressFamilyRequest.h
+	include/alibabacloud/privatelink/model/NotifyResourceAddressFamilyResult.h
 	include/alibabacloud/privatelink/model/OpenPrivateLinkServiceRequest.h
 	include/alibabacloud/privatelink/model/OpenPrivateLinkServiceResult.h
 	include/alibabacloud/privatelink/model/RemoveUserFromVpcEndpointServiceRequest.h
 	include/alibabacloud/privatelink/model/RemoveUserFromVpcEndpointServiceResult.h
 	include/alibabacloud/privatelink/model/RemoveZoneFromVpcEndpointRequest.h
 	include/alibabacloud/privatelink/model/RemoveZoneFromVpcEndpointResult.h
+	include/alibabacloud/privatelink/model/TagResourcesRequest.h
+	include/alibabacloud/privatelink/model/TagResourcesResult.h
 	include/alibabacloud/privatelink/model/UpdateVpcEndpointAttributeRequest.h
 	include/alibabacloud/privatelink/model/UpdateVpcEndpointAttributeResult.h
 	include/alibabacloud/privatelink/model/UpdateVpcEndpointConnectionAttributeRequest.h
@@ -102,8 +110,12 @@ set(privatelink_src
 	src/model/AttachResourceToVpcEndpointServiceResult.cc
 	src/model/AttachSecurityGroupToVpcEndpointRequest.cc
 	src/model/AttachSecurityGroupToVpcEndpointResult.cc
+	src/model/ChangeResourceGroupRequest.cc
+	src/model/ChangeResourceGroupResult.cc
 	src/model/CheckProductOpenRequest.cc
 	src/model/CheckProductOpenResult.cc
+	src/model/CheckResourceSupportOperateRequest.cc
+	src/model/CheckResourceSupportOperateResult.cc
 	src/model/CreateVpcEndpointRequest.cc
 	src/model/CreateVpcEndpointResult.cc
 	src/model/CreateVpcEndpointServiceRequest.cc
@@ -148,12 +160,16 @@ set(privatelink_src
 	src/model/ListVpcEndpointZonesResult.cc
 	src/model/ListVpcEndpointsRequest.cc
 	src/model/ListVpcEndpointsResult.cc
+	src/model/NotifyResourceAddressFamilyRequest.cc
+	src/model/NotifyResourceAddressFamilyResult.cc
 	src/model/OpenPrivateLinkServiceRequest.cc
 	src/model/OpenPrivateLinkServiceResult.cc
 	src/model/RemoveUserFromVpcEndpointServiceRequest.cc
 	src/model/RemoveUserFromVpcEndpointServiceResult.cc
 	src/model/RemoveZoneFromVpcEndpointRequest.cc
 	src/model/RemoveZoneFromVpcEndpointResult.cc
+	src/model/TagResourcesRequest.cc
+	src/model/TagResourcesResult.cc
 	src/model/UpdateVpcEndpointAttributeRequest.cc
 	src/model/UpdateVpcEndpointAttributeResult.cc
 	src/model/UpdateVpcEndpointConnectionAttributeRequest.cc

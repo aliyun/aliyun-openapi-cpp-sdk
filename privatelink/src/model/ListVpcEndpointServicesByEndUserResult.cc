@@ -57,6 +57,22 @@ void ListVpcEndpointServicesByEndUserResult::parse(const std::string &payload)
 			servicesObject.serviceDescription = valueServicesService["ServiceDescription"].asString();
 		if(!valueServicesService["PrivateServiceName"].isNull())
 			servicesObject.privateServiceName = valueServicesService["PrivateServiceName"].asString();
+		if(!valueServicesService["ServiceSupportIPv6"].isNull())
+			servicesObject.serviceSupportIPv6 = valueServicesService["ServiceSupportIPv6"].asString() == "true";
+		if(!valueServicesService["ResourceGroupId"].isNull())
+			servicesObject.resourceGroupId = valueServicesService["ResourceGroupId"].asString();
+		if(!valueServicesService["ServiceResourceType"].isNull())
+			servicesObject.serviceResourceType = valueServicesService["ServiceResourceType"].asString();
+		auto allTagsNode = valueServicesService["Tags"]["TagModel"];
+		for (auto valueServicesServiceTagsTagModel : allTagsNode)
+		{
+			Service::TagModel tagsObject;
+			if(!valueServicesServiceTagsTagModel["Key"].isNull())
+				tagsObject.key = valueServicesServiceTagsTagModel["Key"].asString();
+			if(!valueServicesServiceTagsTagModel["Value"].isNull())
+				tagsObject.value = valueServicesServiceTagsTagModel["Value"].asString();
+			servicesObject.tags.push_back(tagsObject);
+		}
 		auto allZones = value["Zones"]["Zone"];
 		for (auto value : allZones)
 			servicesObject.zones.push_back(value.asString());
@@ -65,7 +81,9 @@ void ListVpcEndpointServicesByEndUserResult::parse(const std::string &payload)
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
+		maxResults_ = std::stoi(value["MaxResults"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = value["TotalCount"].asString();
 
 }
 
@@ -74,12 +92,17 @@ std::vector<ListVpcEndpointServicesByEndUserResult::Service> ListVpcEndpointServ
 	return services_;
 }
 
+std::string ListVpcEndpointServicesByEndUserResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
 std::string ListVpcEndpointServicesByEndUserResult::getNextToken()const
 {
 	return nextToken_;
 }
 
-std::string ListVpcEndpointServicesByEndUserResult::getMaxResults()const
+int ListVpcEndpointServicesByEndUserResult::getMaxResults()const
 {
 	return maxResults_;
 }

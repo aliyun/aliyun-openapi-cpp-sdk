@@ -36,6 +36,8 @@ namespace AlibabaCloud
 				{
 					struct Zone
 					{
+						std::string connectionStringId;
+						long connectionId;
 						std::string zoneId;
 						std::string eniId;
 						std::string resourceId;
@@ -48,6 +50,7 @@ namespace AlibabaCloud
 					};
 					long endpointOwnerId;
 					std::string modifiedTime;
+					std::string resourceGroupId;
 					bool resourceOwner;
 					int bandwidth;
 					std::string endpointId;
@@ -62,15 +65,17 @@ namespace AlibabaCloud
 				explicit ListVpcEndpointConnectionsResult(const std::string &payload);
 				~ListVpcEndpointConnectionsResult();
 				std::vector<Connection> getConnections()const;
+				std::string getTotalCount()const;
 				std::string getNextToken()const;
-				std::string getMaxResults()const;
+				int getMaxResults()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<Connection> connections_;
+				std::string totalCount_;
 				std::string nextToken_;
-				std::string maxResults_;
+				int maxResults_;
 
 			};
 		}

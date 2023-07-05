@@ -34,7 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct Endpoint
 				{
+					struct TagModel
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string endpointDomain;
+					std::string resourceGroupId;
 					std::string createTime;
 					bool resourceOwner;
 					std::string endpointBusinessStatus;
@@ -49,6 +55,7 @@ namespace AlibabaCloud
 					std::string endpointType;
 					std::string regionId;
 					std::string connectionStatus;
+					std::vector<Endpoint::TagModel> tags;
 					bool zoneAffinityEnabled;
 				};
 
@@ -57,15 +64,17 @@ namespace AlibabaCloud
 				explicit ListVpcEndpointsResult(const std::string &payload);
 				~ListVpcEndpointsResult();
 				std::vector<Endpoint> getEndpoints()const;
+				int getTotalCount()const;
 				std::string getNextToken()const;
-				std::string getMaxResults()const;
+				int getMaxResults()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<Endpoint> endpoints_;
+				int totalCount_;
 				std::string nextToken_;
-				std::string maxResults_;
+				int maxResults_;
 
 			};
 		}

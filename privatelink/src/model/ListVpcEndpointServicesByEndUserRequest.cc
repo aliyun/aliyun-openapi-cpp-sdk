@@ -25,6 +25,15 @@ ListVpcEndpointServicesByEndUserRequest::ListVpcEndpointServicesByEndUserRequest
 
 ListVpcEndpointServicesByEndUserRequest::~ListVpcEndpointServicesByEndUserRequest() {}
 
+std::string ListVpcEndpointServicesByEndUserRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void ListVpcEndpointServicesByEndUserRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
+}
+
 std::string ListVpcEndpointServicesByEndUserRequest::getRegionId() const {
   return regionId_;
 }
@@ -50,6 +59,18 @@ std::string ListVpcEndpointServicesByEndUserRequest::getServiceName() const {
 void ListVpcEndpointServicesByEndUserRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
   setParameter(std::string("ServiceName"), serviceName);
+}
+
+std::vector<ListVpcEndpointServicesByEndUserRequest::Tag> ListVpcEndpointServicesByEndUserRequest::getTag() const {
+  return tag_;
+}
+
+void ListVpcEndpointServicesByEndUserRequest::setTag(const std::vector<ListVpcEndpointServicesByEndUserRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Key", tag[dep1].key);
+    setParameter(std::string("Tag") + "." + std::to_string(dep1 + 1) + ".Value", tag[dep1].value);
+  }
 }
 
 std::string ListVpcEndpointServicesByEndUserRequest::getServiceType() const {

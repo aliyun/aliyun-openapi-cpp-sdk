@@ -34,9 +34,12 @@ namespace AlibabaCloud
 			public:
 				struct Zone
 				{
+					long nsiIndex;
 					std::string zoneId;
 					std::string eniId;
+					std::string zoneIpv6Address;
 					std::string serviceStatus;
+					std::string nsiIndexString;
 					std::string vSwitchId;
 					std::string eniIp;
 					std::string zoneStatus;
@@ -49,14 +52,14 @@ namespace AlibabaCloud
 				explicit ListVpcEndpointZonesResult(const std::string &payload);
 				~ListVpcEndpointZonesResult();
 				std::string getNextToken()const;
-				std::string getMaxResults()const;
+				int getMaxResults()const;
 				std::vector<Zone> getZones()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string nextToken_;
-				std::string maxResults_;
+				int maxResults_;
 				std::vector<Zone> zones_;
 
 			};

@@ -75,12 +75,28 @@ void ListVpcEndpointServicesResult::parse(const std::string &payload)
 			servicesObject.serviceResourceType = valueServicesService["ServiceResourceType"].asString();
 		if(!valueServicesService["ServiceType"].isNull())
 			servicesObject.serviceType = valueServicesService["ServiceType"].asString();
+		if(!valueServicesService["ServiceSupportIPv6"].isNull())
+			servicesObject.serviceSupportIPv6 = valueServicesService["ServiceSupportIPv6"].asString() == "true";
+		if(!valueServicesService["ResourceGroupId"].isNull())
+			servicesObject.resourceGroupId = valueServicesService["ResourceGroupId"].asString();
+		auto allTagsNode = valueServicesService["Tags"]["TagModel"];
+		for (auto valueServicesServiceTagsTagModel : allTagsNode)
+		{
+			Service::TagModel tagsObject;
+			if(!valueServicesServiceTagsTagModel["Key"].isNull())
+				tagsObject.key = valueServicesServiceTagsTagModel["Key"].asString();
+			if(!valueServicesServiceTagsTagModel["Value"].isNull())
+				tagsObject.value = valueServicesServiceTagsTagModel["Value"].asString();
+			servicesObject.tags.push_back(tagsObject);
+		}
 		services_.push_back(servicesObject);
 	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
+		maxResults_ = std::stoi(value["MaxResults"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -89,12 +105,17 @@ std::vector<ListVpcEndpointServicesResult::Service> ListVpcEndpointServicesResul
 	return services_;
 }
 
+int ListVpcEndpointServicesResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
 std::string ListVpcEndpointServicesResult::getNextToken()const
 {
 	return nextToken_;
 }
 
-std::string ListVpcEndpointServicesResult::getMaxResults()const
+int ListVpcEndpointServicesResult::getMaxResults()const
 {
 	return maxResults_;
 }

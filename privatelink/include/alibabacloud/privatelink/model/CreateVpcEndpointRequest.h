@@ -28,17 +28,30 @@ namespace Privatelink {
 namespace Model {
 class ALIBABACLOUD_PRIVATELINK_EXPORT CreateVpcEndpointRequest : public RpcServiceRequest {
 public:
+	struct SystemTag {
+		std::string key;
+		std::string value;
+		std::string scope;
+	};
 	struct Zone {
 		std::string vSwitchId;
 		std::string zoneId;
 		std::string ip;
 	};
+	struct Tag {
+		std::string key;
+		std::string value;
+	};
 	CreateVpcEndpointRequest();
 	~CreateVpcEndpointRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::vector<SystemTag> getSystemTag() const;
+	void setSystemTag(const std::vector<SystemTag> &systemTag);
 	std::vector<std::string> getSecurityGroupId() const;
 	void setSecurityGroupId(const std::vector<std::string> &securityGroupId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getEndpointType() const;
@@ -47,6 +60,8 @@ public:
 	void setZone(const std::vector<Zone> &zone);
 	std::string getServiceName() const;
 	void setServiceName(const std::string &serviceName);
+	std::vector<Tag> getTag() const;
+	void setTag(const std::vector<Tag> &tag);
 	bool getDryRun() const;
 	void setDryRun(bool dryRun);
 	std::string getEndpointDescription() const;
@@ -64,11 +79,14 @@ public:
 
 private:
 	std::string clientToken_;
+	std::vector<SystemTag> systemTag_;
 	std::vector<std::string> securityGroupId_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string endpointType_;
 	std::vector<Zone> zone_;
 	std::string serviceName_;
+	std::vector<Tag> tag_;
 	bool dryRun_;
 	std::string endpointDescription_;
 	long zonePrivateIpAddressCount_;

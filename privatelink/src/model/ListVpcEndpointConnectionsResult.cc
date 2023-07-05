@@ -59,6 +59,8 @@ void ListVpcEndpointConnectionsResult::parse(const std::string &payload)
 			connectionsObject.endpointId = valueConnectionsConnection["EndpointId"].asString();
 		if(!valueConnectionsConnection["EndpointVpcId"].isNull())
 			connectionsObject.endpointVpcId = valueConnectionsConnection["EndpointVpcId"].asString();
+		if(!valueConnectionsConnection["ResourceGroupId"].isNull())
+			connectionsObject.resourceGroupId = valueConnectionsConnection["ResourceGroupId"].asString();
 		auto allZonesNode = valueConnectionsConnection["Zones"]["Zone"];
 		for (auto valueConnectionsConnectionZonesZone : allZonesNode)
 		{
@@ -81,6 +83,10 @@ void ListVpcEndpointConnectionsResult::parse(const std::string &payload)
 				zonesObject.replacedEniId = valueConnectionsConnectionZonesZone["ReplacedEniId"].asString();
 			if(!valueConnectionsConnectionZonesZone["StatusInfo"].isNull())
 				zonesObject.statusInfo = valueConnectionsConnectionZonesZone["StatusInfo"].asString();
+			if(!valueConnectionsConnectionZonesZone["ConnectionId"].isNull())
+				zonesObject.connectionId = std::stol(valueConnectionsConnectionZonesZone["ConnectionId"].asString());
+			if(!valueConnectionsConnectionZonesZone["ConnectionStringId"].isNull())
+				zonesObject.connectionStringId = valueConnectionsConnectionZonesZone["ConnectionStringId"].asString();
 			connectionsObject.zones.push_back(zonesObject);
 		}
 		connections_.push_back(connectionsObject);
@@ -88,7 +94,9 @@ void ListVpcEndpointConnectionsResult::parse(const std::string &payload)
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
+		maxResults_ = std::stoi(value["MaxResults"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = value["TotalCount"].asString();
 
 }
 
@@ -97,12 +105,17 @@ std::vector<ListVpcEndpointConnectionsResult::Connection> ListVpcEndpointConnect
 	return connections_;
 }
 
+std::string ListVpcEndpointConnectionsResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
 std::string ListVpcEndpointConnectionsResult::getNextToken()const
 {
 	return nextToken_;
 }
 
-std::string ListVpcEndpointConnectionsResult::getMaxResults()const
+int ListVpcEndpointConnectionsResult::getMaxResults()const
 {
 	return maxResults_;
 }

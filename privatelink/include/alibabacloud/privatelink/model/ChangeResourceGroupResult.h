@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_LISTVPCENDPOINTSERVICEUSERSRESULT_H_
-#define ALIBABACLOUD_PRIVATELINK_MODEL_LISTVPCENDPOINTSERVICEUSERSRESULT_H_
+#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_CHANGERESOURCEGROUPRESULT_H_
+#define ALIBABACLOUD_PRIVATELINK_MODEL_CHANGERESOURCEGROUPRESULT_H_
 
 #include <string>
 #include <vector>
@@ -29,39 +29,21 @@ namespace AlibabaCloud
 	{
 		namespace Model
 		{
-			class ALIBABACLOUD_PRIVATELINK_EXPORT ListVpcEndpointServiceUsersResult : public ServiceResult
+			class ALIBABACLOUD_PRIVATELINK_EXPORT ChangeResourceGroupResult : public ServiceResult
 			{
 			public:
-				struct User
-				{
-					long userId;
-				};
-				struct UserARN
-				{
-					std::string userARN;
-				};
 
 
-				ListVpcEndpointServiceUsersResult();
-				explicit ListVpcEndpointServiceUsersResult(const std::string &payload);
-				~ListVpcEndpointServiceUsersResult();
-				std::string getTotalCount()const;
-				std::string getNextToken()const;
-				int getMaxResults()const;
-				std::vector<User> getUsers()const;
-				std::vector<UserARN> getUserARNs()const;
+				ChangeResourceGroupResult();
+				explicit ChangeResourceGroupResult(const std::string &payload);
+				~ChangeResourceGroupResult();
 
 			protected:
 				void parse(const std::string &payload);
 			private:
-				std::string totalCount_;
-				std::string nextToken_;
-				int maxResults_;
-				std::vector<User> users_;
-				std::vector<UserARN> userARNs_;
 
 			};
 		}
 	}
 }
-#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_LISTVPCENDPOINTSERVICEUSERSRESULT_H_
+#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_CHANGERESOURCEGROUPRESULT_H_

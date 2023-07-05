@@ -34,7 +34,13 @@ namespace AlibabaCloud
 			public:
 				struct Service
 				{
+					struct TagModel
+					{
+						std::string value;
+						std::string key;
+					};
 					std::string payer;
+					std::string resourceGroupId;
 					std::string serviceDescription;
 					std::string createTime;
 					int maxBandwidth;
@@ -42,6 +48,7 @@ namespace AlibabaCloud
 					std::string serviceDomain;
 					bool autoAcceptEnabled;
 					std::string serviceId;
+					bool serviceSupportIPv6;
 					std::string serviceBusinessStatus;
 					std::string serviceName;
 					std::string serviceStatus;
@@ -49,6 +56,7 @@ namespace AlibabaCloud
 					int connectBandwidth;
 					std::string serviceResourceType;
 					std::string regionId;
+					std::vector<Service::TagModel> tags;
 					bool zoneAffinityEnabled;
 				};
 
@@ -57,15 +65,17 @@ namespace AlibabaCloud
 				explicit ListVpcEndpointServicesResult(const std::string &payload);
 				~ListVpcEndpointServicesResult();
 				std::vector<Service> getServices()const;
+				int getTotalCount()const;
 				std::string getNextToken()const;
-				std::string getMaxResults()const;
+				int getMaxResults()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<Service> services_;
+				int totalCount_;
 				std::string nextToken_;
-				std::string maxResults_;
+				int maxResults_;
 
 			};
 		}

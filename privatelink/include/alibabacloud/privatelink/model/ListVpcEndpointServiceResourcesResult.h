@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct Resource
 				{
+					bool resourceSupportIPv6;
 					long relatedEndpointCount;
 					long relatedDeprecatedEndpointCount;
 					std::string vpcId;
@@ -52,14 +53,14 @@ namespace AlibabaCloud
 				explicit ListVpcEndpointServiceResourcesResult(const std::string &payload);
 				~ListVpcEndpointServiceResourcesResult();
 				std::string getNextToken()const;
-				std::string getMaxResults()const;
+				int getMaxResults()const;
 				std::vector<Resource> getResources()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string nextToken_;
-				std::string maxResults_;
+				int maxResults_;
 				std::vector<Resource> resources_;
 
 			};

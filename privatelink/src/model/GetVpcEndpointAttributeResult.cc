@@ -77,6 +77,8 @@ void GetVpcEndpointAttributeResult::parse(const std::string &payload)
 		zoneAffinityEnabled_ = value["ZoneAffinityEnabled"].asString() == "true";
 	if(!value["PrivateServiceName"].isNull())
 		privateServiceName_ = value["PrivateServiceName"].asString();
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
@@ -88,6 +90,11 @@ std::string GetVpcEndpointAttributeResult::getPayer()const
 std::string GetVpcEndpointAttributeResult::getEndpointDomain()const
 {
 	return endpointDomain_;
+}
+
+std::string GetVpcEndpointAttributeResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string GetVpcEndpointAttributeResult::getCreateTime()const

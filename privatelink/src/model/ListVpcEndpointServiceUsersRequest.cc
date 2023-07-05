@@ -25,6 +25,15 @@ ListVpcEndpointServiceUsersRequest::ListVpcEndpointServiceUsersRequest()
 
 ListVpcEndpointServiceUsersRequest::~ListVpcEndpointServiceUsersRequest() {}
 
+std::string ListVpcEndpointServiceUsersRequest::getUserListType() const {
+  return userListType_;
+}
+
+void ListVpcEndpointServiceUsersRequest::setUserListType(const std::string &userListType) {
+  userListType_ = userListType;
+  setParameter(std::string("UserListType"), userListType);
+}
+
 long ListVpcEndpointServiceUsersRequest::getUserId() const {
   return userId_;
 }

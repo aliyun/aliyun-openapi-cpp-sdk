@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_DESCRIBEZONESREQUEST_H_
-#define ALIBABACLOUD_PRIVATELINK_MODEL_DESCRIBEZONESREQUEST_H_
+#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_CHECKRESOURCESUPPORTOPERATEREQUEST_H_
+#define ALIBABACLOUD_PRIVATELINK_MODEL_CHECKRESOURCESUPPORTOPERATEREQUEST_H_
 
 #include <alibabacloud/privatelink/PrivatelinkExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,23 @@
 namespace AlibabaCloud {
 namespace Privatelink {
 namespace Model {
-class ALIBABACLOUD_PRIVATELINK_EXPORT DescribeZonesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_PRIVATELINK_EXPORT CheckResourceSupportOperateRequest : public RpcServiceRequest {
 public:
-	DescribeZonesRequest();
-	~DescribeZonesRequest();
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
-	std::string getServiceResourceType() const;
-	void setServiceResourceType(const std::string &serviceResourceType);
+	CheckResourceSupportOperateRequest();
+	~CheckResourceSupportOperateRequest();
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	std::string getZoneId() const;
+	void setZoneId(const std::string &zoneId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
 
 private:
-	std::string regionId_;
-	std::string serviceResourceType_;
+	std::string resourceId_;
+	std::string zoneId_;
+	std::string resourceType_;
 };
 } // namespace Model
 } // namespace Privatelink
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_DESCRIBEZONESREQUEST_H_
+#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_CHECKRESOURCESUPPORTOPERATEREQUEST_H_

@@ -43,14 +43,14 @@ namespace AlibabaCloud
 				~ListVpcEndpointSecurityGroupsResult();
 				std::vector<SecurityGroup> getSecurityGroups()const;
 				std::string getNextToken()const;
-				std::string getMaxResults()const;
+				int getMaxResults()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::vector<SecurityGroup> securityGroups_;
 				std::string nextToken_;
-				std::string maxResults_;
+				int maxResults_;
 
 			};
 		}

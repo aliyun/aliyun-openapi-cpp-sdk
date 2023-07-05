@@ -34,3 +34,12 @@ void DescribeZonesRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string DescribeZonesRequest::getServiceResourceType() const {
+  return serviceResourceType_;
+}
+
+void DescribeZonesRequest::setServiceResourceType(const std::string &serviceResourceType) {
+  serviceResourceType_ = serviceResourceType;
+  setParameter(std::string("ServiceResourceType"), serviceResourceType);
+}
+

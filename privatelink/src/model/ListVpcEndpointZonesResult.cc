@@ -59,12 +59,18 @@ void ListVpcEndpointZonesResult::parse(const std::string &payload)
 			zonesObject.zoneDomain = valueZonesZone["ZoneDomain"].asString();
 		if(!valueZonesZone["RegionId"].isNull())
 			zonesObject.regionId = valueZonesZone["RegionId"].asString();
+		if(!valueZonesZone["NsiIndex"].isNull())
+			zonesObject.nsiIndex = std::stol(valueZonesZone["NsiIndex"].asString());
+		if(!valueZonesZone["NsiIndexString"].isNull())
+			zonesObject.nsiIndexString = valueZonesZone["NsiIndexString"].asString();
+		if(!valueZonesZone["ZoneIpv6Address"].isNull())
+			zonesObject.zoneIpv6Address = valueZonesZone["ZoneIpv6Address"].asString();
 		zones_.push_back(zonesObject);
 	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 
@@ -73,7 +79,7 @@ std::string ListVpcEndpointZonesResult::getNextToken()const
 	return nextToken_;
 }
 
-std::string ListVpcEndpointZonesResult::getMaxResults()const
+int ListVpcEndpointZonesResult::getMaxResults()const
 {
 	return maxResults_;
 }

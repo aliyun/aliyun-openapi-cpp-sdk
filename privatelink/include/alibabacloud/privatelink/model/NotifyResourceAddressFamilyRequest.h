@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_DESCRIBEZONESREQUEST_H_
-#define ALIBABACLOUD_PRIVATELINK_MODEL_DESCRIBEZONESREQUEST_H_
+#ifndef ALIBABACLOUD_PRIVATELINK_MODEL_NOTIFYRESOURCEADDRESSFAMILYREQUEST_H_
+#define ALIBABACLOUD_PRIVATELINK_MODEL_NOTIFYRESOURCEADDRESSFAMILYREQUEST_H_
 
 #include <alibabacloud/privatelink/PrivatelinkExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,20 +26,26 @@
 namespace AlibabaCloud {
 namespace Privatelink {
 namespace Model {
-class ALIBABACLOUD_PRIVATELINK_EXPORT DescribeZonesRequest : public RpcServiceRequest {
+class ALIBABACLOUD_PRIVATELINK_EXPORT NotifyResourceAddressFamilyRequest : public RpcServiceRequest {
 public:
-	DescribeZonesRequest();
-	~DescribeZonesRequest();
-	std::string getRegionId() const;
-	void setRegionId(const std::string &regionId);
-	std::string getServiceResourceType() const;
-	void setServiceResourceType(const std::string &serviceResourceType);
+	NotifyResourceAddressFamilyRequest();
+	~NotifyResourceAddressFamilyRequest();
+	std::string getResourceId() const;
+	void setResourceId(const std::string &resourceId);
+	std::string getResourceType() const;
+	void setResourceType(const std::string &resourceType);
+	std::string getAddressFamily() const;
+	void setAddressFamily(const std::string &addressFamily);
+	std::string getIpv6Address() const;
+	void setIpv6Address(const std::string &ipv6Address);
 
 private:
-	std::string regionId_;
-	std::string serviceResourceType_;
+	std::string resourceId_;
+	std::string resourceType_;
+	std::string addressFamily_;
+	std::string ipv6Address_;
 };
 } // namespace Model
 } // namespace Privatelink
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_DESCRIBEZONESREQUEST_H_
+#endif // !ALIBABACLOUD_PRIVATELINK_MODEL_NOTIFYRESOURCEADDRESSFAMILYREQUEST_H_

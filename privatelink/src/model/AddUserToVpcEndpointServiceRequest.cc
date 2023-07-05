@@ -34,6 +34,15 @@ void AddUserToVpcEndpointServiceRequest::setClientToken(const std::string &clien
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string AddUserToVpcEndpointServiceRequest::getUserARN() const {
+  return userARN_;
+}
+
+void AddUserToVpcEndpointServiceRequest::setUserARN(const std::string &userARN) {
+  userARN_ = userARN;
+  setParameter(std::string("UserARN"), userARN);
+}
+
 long AddUserToVpcEndpointServiceRequest::getUserId() const {
   return userId_;
 }

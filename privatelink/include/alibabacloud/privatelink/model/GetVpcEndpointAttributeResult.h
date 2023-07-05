@@ -39,6 +39,7 @@ namespace AlibabaCloud
 				~GetVpcEndpointAttributeResult();
 				std::string getPayer()const;
 				std::string getEndpointDomain()const;
+				std::string getResourceGroupId()const;
 				std::string getCreateTime()const;
 				bool getResourceOwner()const;
 				long getZonePrivateIpAddressCount()const;
@@ -62,6 +63,7 @@ namespace AlibabaCloud
 			private:
 				std::string payer_;
 				std::string endpointDomain_;
+				std::string resourceGroupId_;
 				std::string createTime_;
 				bool resourceOwner_;
 				long zonePrivateIpAddressCount_;

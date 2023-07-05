@@ -34,12 +34,36 @@ void CreateVpcEndpointRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::vector<CreateVpcEndpointRequest::SystemTag> CreateVpcEndpointRequest::getSystemTag() const {
+  return systemTag_;
+}
+
+void CreateVpcEndpointRequest::setSystemTag(const std::vector<CreateVpcEndpointRequest::SystemTag> &systemTag) {
+  systemTag_ = systemTag;
+  for(int dep1 = 0; dep1 != systemTag.size(); dep1++) {
+  auto systemTagObj = systemTag.at(dep1);
+  std::string systemTagObjStr = std::string("SystemTag") + "." + std::to_string(dep1 + 1);
+    setParameter(systemTagObjStr + ".Key", systemTagObj.key);
+    setParameter(systemTagObjStr + ".Value", systemTagObj.value);
+    setParameter(systemTagObjStr + ".Scope", systemTagObj.scope);
+  }
+}
+
 std::vector<std::string> CreateVpcEndpointRequest::getSecurityGroupId() const {
   return securityGroupId_;
 }
 
 void CreateVpcEndpointRequest::setSecurityGroupId(const std::vector<std::string> &securityGroupId) {
   securityGroupId_ = securityGroupId;
+}
+
+std::string CreateVpcEndpointRequest::getResourceGroupId() const {
+  return resourceGroupId_;
+}
+
+void CreateVpcEndpointRequest::setResourceGroupId(const std::string &resourceGroupId) {
+  resourceGroupId_ = resourceGroupId;
+  setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
 std::string CreateVpcEndpointRequest::getRegionId() const {
@@ -82,6 +106,20 @@ std::string CreateVpcEndpointRequest::getServiceName() const {
 void CreateVpcEndpointRequest::setServiceName(const std::string &serviceName) {
   serviceName_ = serviceName;
   setParameter(std::string("ServiceName"), serviceName);
+}
+
+std::vector<CreateVpcEndpointRequest::Tag> CreateVpcEndpointRequest::getTag() const {
+  return tag_;
+}
+
+void CreateVpcEndpointRequest::setTag(const std::vector<CreateVpcEndpointRequest::Tag> &tag) {
+  tag_ = tag;
+  for(int dep1 = 0; dep1 != tag.size(); dep1++) {
+  auto tagObj = tag.at(dep1);
+  std::string tagObjStr = std::string("Tag") + "." + std::to_string(dep1 + 1);
+    setParameter(tagObjStr + ".Key", tagObj.key);
+    setParameter(tagObjStr + ".Value", tagObj.value);
+  }
 }
 
 bool CreateVpcEndpointRequest::getDryRun() const {

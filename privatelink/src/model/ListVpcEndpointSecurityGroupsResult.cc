@@ -50,7 +50,7 @@ void ListVpcEndpointSecurityGroupsResult::parse(const std::string &payload)
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
+		maxResults_ = std::stoi(value["MaxResults"].asString());
 
 }
 
@@ -64,7 +64,7 @@ std::string ListVpcEndpointSecurityGroupsResult::getNextToken()const
 	return nextToken_;
 }
 
-std::string ListVpcEndpointSecurityGroupsResult::getMaxResults()const
+int ListVpcEndpointSecurityGroupsResult::getMaxResults()const
 {
 	return maxResults_;
 }

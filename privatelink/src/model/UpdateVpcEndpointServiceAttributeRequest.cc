@@ -97,6 +97,15 @@ void UpdateVpcEndpointServiceAttributeRequest::setDryRun(bool dryRun) {
   setParameter(std::string("DryRun"), dryRun ? "true" : "false");
 }
 
+bool UpdateVpcEndpointServiceAttributeRequest::getServiceSupportIPv6() const {
+  return serviceSupportIPv6_;
+}
+
+void UpdateVpcEndpointServiceAttributeRequest::setServiceSupportIPv6(bool serviceSupportIPv6) {
+  serviceSupportIPv6_ = serviceSupportIPv6;
+  setParameter(std::string("ServiceSupportIPv6"), serviceSupportIPv6 ? "true" : "false");
+}
+
 std::string UpdateVpcEndpointServiceAttributeRequest::getServiceDescription() const {
   return serviceDescription_;
 }

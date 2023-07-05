@@ -195,6 +195,42 @@ PrivatelinkClient::AttachSecurityGroupToVpcEndpointOutcomeCallable PrivatelinkCl
 	return task->get_future();
 }
 
+PrivatelinkClient::ChangeResourceGroupOutcome PrivatelinkClient::changeResourceGroup(const ChangeResourceGroupRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ChangeResourceGroupOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ChangeResourceGroupOutcome(ChangeResourceGroupResult(outcome.result()));
+	else
+		return ChangeResourceGroupOutcome(outcome.error());
+}
+
+void PrivatelinkClient::changeResourceGroupAsync(const ChangeResourceGroupRequest& request, const ChangeResourceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, changeResourceGroup(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PrivatelinkClient::ChangeResourceGroupOutcomeCallable PrivatelinkClient::changeResourceGroupCallable(const ChangeResourceGroupRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ChangeResourceGroupOutcome()>>(
+			[this, request]()
+			{
+			return this->changeResourceGroup(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PrivatelinkClient::CheckProductOpenOutcome PrivatelinkClient::checkProductOpen(const CheckProductOpenRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -225,6 +261,42 @@ PrivatelinkClient::CheckProductOpenOutcomeCallable PrivatelinkClient::checkProdu
 			[this, request]()
 			{
 			return this->checkProductOpen(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PrivatelinkClient::CheckResourceSupportOperateOutcome PrivatelinkClient::checkResourceSupportOperate(const CheckResourceSupportOperateRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CheckResourceSupportOperateOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CheckResourceSupportOperateOutcome(CheckResourceSupportOperateResult(outcome.result()));
+	else
+		return CheckResourceSupportOperateOutcome(outcome.error());
+}
+
+void PrivatelinkClient::checkResourceSupportOperateAsync(const CheckResourceSupportOperateRequest& request, const CheckResourceSupportOperateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, checkResourceSupportOperate(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PrivatelinkClient::CheckResourceSupportOperateOutcomeCallable PrivatelinkClient::checkResourceSupportOperateCallable(const CheckResourceSupportOperateRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CheckResourceSupportOperateOutcome()>>(
+			[this, request]()
+			{
+			return this->checkResourceSupportOperate(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -1023,6 +1095,42 @@ PrivatelinkClient::ListVpcEndpointsOutcomeCallable PrivatelinkClient::listVpcEnd
 	return task->get_future();
 }
 
+PrivatelinkClient::NotifyResourceAddressFamilyOutcome PrivatelinkClient::notifyResourceAddressFamily(const NotifyResourceAddressFamilyRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return NotifyResourceAddressFamilyOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return NotifyResourceAddressFamilyOutcome(NotifyResourceAddressFamilyResult(outcome.result()));
+	else
+		return NotifyResourceAddressFamilyOutcome(outcome.error());
+}
+
+void PrivatelinkClient::notifyResourceAddressFamilyAsync(const NotifyResourceAddressFamilyRequest& request, const NotifyResourceAddressFamilyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, notifyResourceAddressFamily(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PrivatelinkClient::NotifyResourceAddressFamilyOutcomeCallable PrivatelinkClient::notifyResourceAddressFamilyCallable(const NotifyResourceAddressFamilyRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<NotifyResourceAddressFamilyOutcome()>>(
+			[this, request]()
+			{
+			return this->notifyResourceAddressFamily(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 PrivatelinkClient::OpenPrivateLinkServiceOutcome PrivatelinkClient::openPrivateLinkService(const OpenPrivateLinkServiceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -1125,6 +1233,42 @@ PrivatelinkClient::RemoveZoneFromVpcEndpointOutcomeCallable PrivatelinkClient::r
 			[this, request]()
 			{
 			return this->removeZoneFromVpcEndpoint(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+PrivatelinkClient::TagResourcesOutcome PrivatelinkClient::tagResources(const TagResourcesRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return TagResourcesOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return TagResourcesOutcome(TagResourcesResult(outcome.result()));
+	else
+		return TagResourcesOutcome(outcome.error());
+}
+
+void PrivatelinkClient::tagResourcesAsync(const TagResourcesRequest& request, const TagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, tagResources(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+PrivatelinkClient::TagResourcesOutcomeCallable PrivatelinkClient::tagResourcesCallable(const TagResourcesRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<TagResourcesOutcome()>>(
+			[this, request]()
+			{
+			return this->tagResources(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

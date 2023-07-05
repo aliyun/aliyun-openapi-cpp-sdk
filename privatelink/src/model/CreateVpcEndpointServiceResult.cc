@@ -57,12 +57,21 @@ void CreateVpcEndpointServiceResult::parse(const std::string &payload)
 		autoAcceptEnabled_ = value["AutoAcceptEnabled"].asString() == "true";
 	if(!value["ServiceId"].isNull())
 		serviceId_ = value["ServiceId"].asString();
+	if(!value["ServiceSupportIPv6"].isNull())
+		serviceSupportIPv6_ = value["ServiceSupportIPv6"].asString() == "true";
+	if(!value["ResourceGroupId"].isNull())
+		resourceGroupId_ = value["ResourceGroupId"].asString();
 
 }
 
 std::string CreateVpcEndpointServiceResult::getServiceBusinessStatus()const
 {
 	return serviceBusinessStatus_;
+}
+
+std::string CreateVpcEndpointServiceResult::getResourceGroupId()const
+{
+	return resourceGroupId_;
 }
 
 std::string CreateVpcEndpointServiceResult::getServiceName()const
@@ -103,5 +112,10 @@ bool CreateVpcEndpointServiceResult::getAutoAcceptEnabled()const
 std::string CreateVpcEndpointServiceResult::getServiceId()const
 {
 	return serviceId_;
+}
+
+bool CreateVpcEndpointServiceResult::getServiceSupportIPv6()const
+{
+	return serviceSupportIPv6_;
 }
 

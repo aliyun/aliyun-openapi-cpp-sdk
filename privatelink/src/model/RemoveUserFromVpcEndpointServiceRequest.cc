@@ -34,6 +34,15 @@ void RemoveUserFromVpcEndpointServiceRequest::setClientToken(const std::string &
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string RemoveUserFromVpcEndpointServiceRequest::getUserARN() const {
+  return userARN_;
+}
+
+void RemoveUserFromVpcEndpointServiceRequest::setUserARN(const std::string &userARN) {
+  userARN_ = userARN;
+  setParameter(std::string("UserARN"), userARN);
+}
+
 long RemoveUserFromVpcEndpointServiceRequest::getUserId() const {
   return userId_;
 }

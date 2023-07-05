@@ -38,6 +38,7 @@ namespace AlibabaCloud
 				explicit CreateVpcEndpointServiceResult(const std::string &payload);
 				~CreateVpcEndpointServiceResult();
 				std::string getServiceBusinessStatus()const;
+				std::string getResourceGroupId()const;
 				std::string getServiceName()const;
 				std::string getServiceStatus()const;
 				std::string getServiceDescription()const;
@@ -46,11 +47,13 @@ namespace AlibabaCloud
 				bool getZoneAffinityEnabled()const;
 				bool getAutoAcceptEnabled()const;
 				std::string getServiceId()const;
+				bool getServiceSupportIPv6()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string serviceBusinessStatus_;
+				std::string resourceGroupId_;
 				std::string serviceName_;
 				std::string serviceStatus_;
 				std::string serviceDescription_;
@@ -59,6 +62,7 @@ namespace AlibabaCloud
 				bool zoneAffinityEnabled_;
 				bool autoAcceptEnabled_;
 				std::string serviceId_;
+				bool serviceSupportIPv6_;
 
 			};
 		}

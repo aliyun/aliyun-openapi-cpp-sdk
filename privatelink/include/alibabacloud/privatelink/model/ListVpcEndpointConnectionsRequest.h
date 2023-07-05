@@ -36,10 +36,14 @@ public:
 	void setEndpointOwnerId(long endpointOwnerId);
 	std::string getReplacedResourceId() const;
 	void setReplacedResourceId(const std::string &replacedResourceId);
+	std::string getResourceGroupId() const;
+	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
 	std::string getNextToken() const;
 	void setNextToken(const std::string &nextToken);
+	long getConnectionId() const;
+	void setConnectionId(long connectionId);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
 	std::string getConnectionStatus() const;
@@ -57,8 +61,10 @@ private:
 	std::string endpointId_;
 	long endpointOwnerId_;
 	std::string replacedResourceId_;
+	std::string resourceGroupId_;
 	std::string regionId_;
 	std::string nextToken_;
+	long connectionId_;
 	std::string resourceId_;
 	std::string connectionStatus_;
 	int maxResults_;

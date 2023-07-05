@@ -75,12 +75,26 @@ void ListVpcEndpointsResult::parse(const std::string &payload)
 			endpointsObject.endpointBusinessStatus = valueEndpointsEndpoint["EndpointBusinessStatus"].asString();
 		if(!valueEndpointsEndpoint["ServiceName"].isNull())
 			endpointsObject.serviceName = valueEndpointsEndpoint["ServiceName"].asString();
+		if(!valueEndpointsEndpoint["ResourceGroupId"].isNull())
+			endpointsObject.resourceGroupId = valueEndpointsEndpoint["ResourceGroupId"].asString();
+		auto allTagsNode = valueEndpointsEndpoint["Tags"]["TagModel"];
+		for (auto valueEndpointsEndpointTagsTagModel : allTagsNode)
+		{
+			Endpoint::TagModel tagsObject;
+			if(!valueEndpointsEndpointTagsTagModel["Key"].isNull())
+				tagsObject.key = valueEndpointsEndpointTagsTagModel["Key"].asString();
+			if(!valueEndpointsEndpointTagsTagModel["Value"].isNull())
+				tagsObject.value = valueEndpointsEndpointTagsTagModel["Value"].asString();
+			endpointsObject.tags.push_back(tagsObject);
+		}
 		endpoints_.push_back(endpointsObject);
 	}
 	if(!value["NextToken"].isNull())
 		nextToken_ = value["NextToken"].asString();
 	if(!value["MaxResults"].isNull())
-		maxResults_ = value["MaxResults"].asString();
+		maxResults_ = std::stoi(value["MaxResults"].asString());
+	if(!value["TotalCount"].isNull())
+		totalCount_ = std::stoi(value["TotalCount"].asString());
 
 }
 
@@ -89,12 +103,17 @@ std::vector<ListVpcEndpointsResult::Endpoint> ListVpcEndpointsResult::getEndpoin
 	return endpoints_;
 }
 
+int ListVpcEndpointsResult::getTotalCount()const
+{
+	return totalCount_;
+}
+
 std::string ListVpcEndpointsResult::getNextToken()const
 {
 	return nextToken_;
 }
 
-std::string ListVpcEndpointsResult::getMaxResults()const
+int ListVpcEndpointsResult::getMaxResults()const
 {
 	return maxResults_;
 }
