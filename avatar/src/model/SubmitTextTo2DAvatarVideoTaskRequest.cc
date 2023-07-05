@@ -34,19 +34,6 @@ void SubmitTextTo2DAvatarVideoTaskRequest::setApp(const SubmitTextTo2DAvatarVide
   setParameter(std::string("App") + ".AppId", app.appId);
 }
 
-SubmitTextTo2DAvatarVideoTaskRequest::VideoInfo SubmitTextTo2DAvatarVideoTaskRequest::getVideoInfo() const {
-  return videoInfo_;
-}
-
-void SubmitTextTo2DAvatarVideoTaskRequest::setVideoInfo(const SubmitTextTo2DAvatarVideoTaskRequest::VideoInfo &videoInfo) {
-  videoInfo_ = videoInfo;
-  setParameter(std::string("VideoInfo") + ".IsAlpha", videoInfo.isAlpha ? "true" : "false");
-  setParameter(std::string("VideoInfo") + ".BackgroundImageUrl", videoInfo.backgroundImageUrl);
-  setParameter(std::string("VideoInfo") + ".IsSubtitles", videoInfo.isSubtitles ? "true" : "false");
-  setParameter(std::string("VideoInfo") + ".Resolution", std::to_string(videoInfo.resolution));
-  setParameter(std::string("VideoInfo") + ".AlphaFormat", std::to_string(videoInfo.alphaFormat));
-}
-
 SubmitTextTo2DAvatarVideoTaskRequest::AudioInfo SubmitTextTo2DAvatarVideoTaskRequest::getAudioInfo() const {
   return audioInfo_;
 }
@@ -68,6 +55,46 @@ void SubmitTextTo2DAvatarVideoTaskRequest::setAvatarInfo(const SubmitTextTo2DAva
   setParameter(std::string("AvatarInfo") + ".Code", avatarInfo.code);
 }
 
+std::string SubmitTextTo2DAvatarVideoTaskRequest::getTitle() const {
+  return title_;
+}
+
+void SubmitTextTo2DAvatarVideoTaskRequest::setTitle(const std::string &title) {
+  title_ = title;
+  setParameter(std::string("Title"), title);
+}
+
+std::string SubmitTextTo2DAvatarVideoTaskRequest::getExtParams() const {
+  return extParams_;
+}
+
+void SubmitTextTo2DAvatarVideoTaskRequest::setExtParams(const std::string &extParams) {
+  extParams_ = extParams;
+  setParameter(std::string("ExtParams"), extParams);
+}
+
+SubmitTextTo2DAvatarVideoTaskRequest::VideoInfo SubmitTextTo2DAvatarVideoTaskRequest::getVideoInfo() const {
+  return videoInfo_;
+}
+
+void SubmitTextTo2DAvatarVideoTaskRequest::setVideoInfo(const SubmitTextTo2DAvatarVideoTaskRequest::VideoInfo &videoInfo) {
+  videoInfo_ = videoInfo;
+  setParameter(std::string("VideoInfo") + ".IsAlpha", videoInfo.isAlpha ? "true" : "false");
+  setParameter(std::string("VideoInfo") + ".BackgroundImageUrl", videoInfo.backgroundImageUrl);
+  setParameter(std::string("VideoInfo") + ".IsSubtitles", videoInfo.isSubtitles ? "true" : "false");
+  setParameter(std::string("VideoInfo") + ".Resolution", std::to_string(videoInfo.resolution));
+  setParameter(std::string("VideoInfo") + ".AlphaFormat", std::to_string(videoInfo.alphaFormat));
+}
+
+std::string SubmitTextTo2DAvatarVideoTaskRequest::getCallbackParams() const {
+  return callbackParams_;
+}
+
+void SubmitTextTo2DAvatarVideoTaskRequest::setCallbackParams(const std::string &callbackParams) {
+  callbackParams_ = callbackParams;
+  setParameter(std::string("CallbackParams"), callbackParams);
+}
+
 long SubmitTextTo2DAvatarVideoTaskRequest::getTenantId() const {
   return tenantId_;
 }
@@ -75,6 +102,24 @@ long SubmitTextTo2DAvatarVideoTaskRequest::getTenantId() const {
 void SubmitTextTo2DAvatarVideoTaskRequest::setTenantId(long tenantId) {
   tenantId_ = tenantId;
   setParameter(std::string("TenantId"), std::to_string(tenantId));
+}
+
+bool SubmitTextTo2DAvatarVideoTaskRequest::getCallback() const {
+  return callback_;
+}
+
+void SubmitTextTo2DAvatarVideoTaskRequest::setCallback(bool callback) {
+  callback_ = callback;
+  setParameter(std::string("Callback"), callback ? "true" : "false");
+}
+
+std::string SubmitTextTo2DAvatarVideoTaskRequest::getExtParams_CLS() const {
+  return extParams_CLS_;
+}
+
+void SubmitTextTo2DAvatarVideoTaskRequest::setExtParams_CLS(const std::string &extParams_CLS) {
+  extParams_CLS_ = extParams_CLS;
+  setParameter(std::string("ExtParams_CLS"), extParams_CLS);
 }
 
 std::string SubmitTextTo2DAvatarVideoTaskRequest::getText() const {
@@ -86,12 +131,12 @@ void SubmitTextTo2DAvatarVideoTaskRequest::setText(const std::string &text) {
   setParameter(std::string("Text"), text);
 }
 
-std::string SubmitTextTo2DAvatarVideoTaskRequest::getTitle() const {
-  return title_;
+std::string SubmitTextTo2DAvatarVideoTaskRequest::getCallbackParams_CLS() const {
+  return callbackParams_CLS_;
 }
 
-void SubmitTextTo2DAvatarVideoTaskRequest::setTitle(const std::string &title) {
-  title_ = title;
-  setParameter(std::string("Title"), title);
+void SubmitTextTo2DAvatarVideoTaskRequest::setCallbackParams_CLS(const std::string &callbackParams_CLS) {
+  callbackParams_CLS_ = callbackParams_CLS;
+  setParameter(std::string("CallbackParams_CLS"), callbackParams_CLS);
 }
 

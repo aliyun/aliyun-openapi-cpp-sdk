@@ -34,6 +34,45 @@ void SubmitAudioTo3DAvatarVideoTaskRequest::setApp(const SubmitAudioTo3DAvatarVi
   setParameter(std::string("App") + ".AppId", app.appId);
 }
 
+SubmitAudioTo3DAvatarVideoTaskRequest::AvatarInfo SubmitAudioTo3DAvatarVideoTaskRequest::getAvatarInfo() const {
+  return avatarInfo_;
+}
+
+void SubmitAudioTo3DAvatarVideoTaskRequest::setAvatarInfo(const SubmitAudioTo3DAvatarVideoTaskRequest::AvatarInfo &avatarInfo) {
+  avatarInfo_ = avatarInfo;
+  setParameter(std::string("AvatarInfo") + ".Code", avatarInfo.code);
+  setParameter(std::string("AvatarInfo") + ".Locate", std::to_string(avatarInfo.locate));
+  setParameter(std::string("AvatarInfo") + ".Angle", std::to_string(avatarInfo.angle));
+  setParameter(std::string("AvatarInfo") + ".IndustryCode", avatarInfo.industryCode);
+}
+
+std::string SubmitAudioTo3DAvatarVideoTaskRequest::getTitle() const {
+  return title_;
+}
+
+void SubmitAudioTo3DAvatarVideoTaskRequest::setTitle(const std::string &title) {
+  title_ = title;
+  setParameter(std::string("Title"), title);
+}
+
+std::string SubmitAudioTo3DAvatarVideoTaskRequest::getExtParams() const {
+  return extParams_;
+}
+
+void SubmitAudioTo3DAvatarVideoTaskRequest::setExtParams(const std::string &extParams) {
+  extParams_ = extParams;
+  setParameter(std::string("ExtParams"), extParams);
+}
+
+std::string SubmitAudioTo3DAvatarVideoTaskRequest::getUrl() const {
+  return url_;
+}
+
+void SubmitAudioTo3DAvatarVideoTaskRequest::setUrl(const std::string &url) {
+  url_ = url;
+  setParameter(std::string("Url"), url);
+}
+
 SubmitAudioTo3DAvatarVideoTaskRequest::VideoInfo SubmitAudioTo3DAvatarVideoTaskRequest::getVideoInfo() const {
   return videoInfo_;
 }
@@ -46,15 +85,13 @@ void SubmitAudioTo3DAvatarVideoTaskRequest::setVideoInfo(const SubmitAudioTo3DAv
   setParameter(std::string("VideoInfo") + ".AlphaFormat", std::to_string(videoInfo.alphaFormat));
 }
 
-SubmitAudioTo3DAvatarVideoTaskRequest::AvatarInfo SubmitAudioTo3DAvatarVideoTaskRequest::getAvatarInfo() const {
-  return avatarInfo_;
+std::string SubmitAudioTo3DAvatarVideoTaskRequest::getCallbackParams() const {
+  return callbackParams_;
 }
 
-void SubmitAudioTo3DAvatarVideoTaskRequest::setAvatarInfo(const SubmitAudioTo3DAvatarVideoTaskRequest::AvatarInfo &avatarInfo) {
-  avatarInfo_ = avatarInfo;
-  setParameter(std::string("AvatarInfo") + ".Code", avatarInfo.code);
-  setParameter(std::string("AvatarInfo") + ".Locate", std::to_string(avatarInfo.locate));
-  setParameter(std::string("AvatarInfo") + ".Angle", std::to_string(avatarInfo.angle));
+void SubmitAudioTo3DAvatarVideoTaskRequest::setCallbackParams(const std::string &callbackParams) {
+  callbackParams_ = callbackParams;
+  setParameter(std::string("CallbackParams"), callbackParams);
 }
 
 long SubmitAudioTo3DAvatarVideoTaskRequest::getTenantId() const {
@@ -66,21 +103,30 @@ void SubmitAudioTo3DAvatarVideoTaskRequest::setTenantId(long tenantId) {
   setParameter(std::string("TenantId"), std::to_string(tenantId));
 }
 
-std::string SubmitAudioTo3DAvatarVideoTaskRequest::getTitle() const {
-  return title_;
+bool SubmitAudioTo3DAvatarVideoTaskRequest::getCallback() const {
+  return callback_;
 }
 
-void SubmitAudioTo3DAvatarVideoTaskRequest::setTitle(const std::string &title) {
-  title_ = title;
-  setParameter(std::string("Title"), title);
+void SubmitAudioTo3DAvatarVideoTaskRequest::setCallback(bool callback) {
+  callback_ = callback;
+  setParameter(std::string("Callback"), callback ? "true" : "false");
 }
 
-std::string SubmitAudioTo3DAvatarVideoTaskRequest::getUrl() const {
-  return url_;
+std::string SubmitAudioTo3DAvatarVideoTaskRequest::getExtParams_CLS() const {
+  return extParams_CLS_;
 }
 
-void SubmitAudioTo3DAvatarVideoTaskRequest::setUrl(const std::string &url) {
-  url_ = url;
-  setParameter(std::string("Url"), url);
+void SubmitAudioTo3DAvatarVideoTaskRequest::setExtParams_CLS(const std::string &extParams_CLS) {
+  extParams_CLS_ = extParams_CLS;
+  setParameter(std::string("ExtParams_CLS"), extParams_CLS);
+}
+
+std::string SubmitAudioTo3DAvatarVideoTaskRequest::getCallbackParams_CLS() const {
+  return callbackParams_CLS_;
+}
+
+void SubmitAudioTo3DAvatarVideoTaskRequest::setCallbackParams_CLS(const std::string &callbackParams_CLS) {
+  callbackParams_CLS_ = callbackParams_CLS;
+  setParameter(std::string("CallbackParams_CLS"), callbackParams_CLS);
 }
 

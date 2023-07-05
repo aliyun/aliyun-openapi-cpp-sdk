@@ -34,6 +34,42 @@ void SubmitAudioTo2DAvatarVideoTaskRequest::setApp(const SubmitAudioTo2DAvatarVi
   setParameter(std::string("App") + ".AppId", app.appId);
 }
 
+SubmitAudioTo2DAvatarVideoTaskRequest::AvatarInfo SubmitAudioTo2DAvatarVideoTaskRequest::getAvatarInfo() const {
+  return avatarInfo_;
+}
+
+void SubmitAudioTo2DAvatarVideoTaskRequest::setAvatarInfo(const SubmitAudioTo2DAvatarVideoTaskRequest::AvatarInfo &avatarInfo) {
+  avatarInfo_ = avatarInfo;
+  setParameter(std::string("AvatarInfo") + ".Code", avatarInfo.code);
+}
+
+std::string SubmitAudioTo2DAvatarVideoTaskRequest::getTitle() const {
+  return title_;
+}
+
+void SubmitAudioTo2DAvatarVideoTaskRequest::setTitle(const std::string &title) {
+  title_ = title;
+  setParameter(std::string("Title"), title);
+}
+
+std::string SubmitAudioTo2DAvatarVideoTaskRequest::getExtParams() const {
+  return extParams_;
+}
+
+void SubmitAudioTo2DAvatarVideoTaskRequest::setExtParams(const std::string &extParams) {
+  extParams_ = extParams;
+  setParameter(std::string("ExtParams"), extParams);
+}
+
+std::string SubmitAudioTo2DAvatarVideoTaskRequest::getUrl() const {
+  return url_;
+}
+
+void SubmitAudioTo2DAvatarVideoTaskRequest::setUrl(const std::string &url) {
+  url_ = url;
+  setParameter(std::string("Url"), url);
+}
+
 SubmitAudioTo2DAvatarVideoTaskRequest::VideoInfo SubmitAudioTo2DAvatarVideoTaskRequest::getVideoInfo() const {
   return videoInfo_;
 }
@@ -46,13 +82,13 @@ void SubmitAudioTo2DAvatarVideoTaskRequest::setVideoInfo(const SubmitAudioTo2DAv
   setParameter(std::string("VideoInfo") + ".AlphaFormat", std::to_string(videoInfo.alphaFormat));
 }
 
-SubmitAudioTo2DAvatarVideoTaskRequest::AvatarInfo SubmitAudioTo2DAvatarVideoTaskRequest::getAvatarInfo() const {
-  return avatarInfo_;
+std::string SubmitAudioTo2DAvatarVideoTaskRequest::getCallbackParams() const {
+  return callbackParams_;
 }
 
-void SubmitAudioTo2DAvatarVideoTaskRequest::setAvatarInfo(const SubmitAudioTo2DAvatarVideoTaskRequest::AvatarInfo &avatarInfo) {
-  avatarInfo_ = avatarInfo;
-  setParameter(std::string("AvatarInfo") + ".Code", avatarInfo.code);
+void SubmitAudioTo2DAvatarVideoTaskRequest::setCallbackParams(const std::string &callbackParams) {
+  callbackParams_ = callbackParams;
+  setParameter(std::string("CallbackParams"), callbackParams);
 }
 
 long SubmitAudioTo2DAvatarVideoTaskRequest::getTenantId() const {
@@ -64,21 +100,30 @@ void SubmitAudioTo2DAvatarVideoTaskRequest::setTenantId(long tenantId) {
   setParameter(std::string("TenantId"), std::to_string(tenantId));
 }
 
-std::string SubmitAudioTo2DAvatarVideoTaskRequest::getTitle() const {
-  return title_;
+bool SubmitAudioTo2DAvatarVideoTaskRequest::getCallback() const {
+  return callback_;
 }
 
-void SubmitAudioTo2DAvatarVideoTaskRequest::setTitle(const std::string &title) {
-  title_ = title;
-  setParameter(std::string("Title"), title);
+void SubmitAudioTo2DAvatarVideoTaskRequest::setCallback(bool callback) {
+  callback_ = callback;
+  setParameter(std::string("Callback"), callback ? "true" : "false");
 }
 
-std::string SubmitAudioTo2DAvatarVideoTaskRequest::getUrl() const {
-  return url_;
+std::string SubmitAudioTo2DAvatarVideoTaskRequest::getExtParams_CLS() const {
+  return extParams_CLS_;
 }
 
-void SubmitAudioTo2DAvatarVideoTaskRequest::setUrl(const std::string &url) {
-  url_ = url;
-  setParameter(std::string("Url"), url);
+void SubmitAudioTo2DAvatarVideoTaskRequest::setExtParams_CLS(const std::string &extParams_CLS) {
+  extParams_CLS_ = extParams_CLS;
+  setParameter(std::string("ExtParams_CLS"), extParams_CLS);
+}
+
+std::string SubmitAudioTo2DAvatarVideoTaskRequest::getCallbackParams_CLS() const {
+  return callbackParams_CLS_;
+}
+
+void SubmitAudioTo2DAvatarVideoTaskRequest::setCallbackParams_CLS(const std::string &callbackParams_CLS) {
+  callbackParams_CLS_ = callbackParams_CLS;
+  setParameter(std::string("CallbackParams_CLS"), callbackParams_CLS);
 }
 

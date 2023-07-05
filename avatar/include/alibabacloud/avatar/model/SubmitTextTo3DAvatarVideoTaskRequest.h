@@ -31,6 +31,18 @@ public:
 	struct App {
 		std::string appId;
 	};
+	struct AudioInfo {
+		std::string voice;
+		int volume;
+		int speechRate;
+		int pitchRate;
+	};
+	struct AvatarInfo {
+		std::string code;
+		int locate;
+		int angle;
+		std::string industryCode;
+	};
 	struct VideoInfo {
 		bool isAlpha;
 		std::string backgroundImageUrl;
@@ -38,33 +50,46 @@ public:
 		int resolution;
 		int alphaFormat;
 	};
-	struct AvatarInfo {
-		std::string code;
-		int locate;
-		int angle;
-	};
 	SubmitTextTo3DAvatarVideoTaskRequest();
 	~SubmitTextTo3DAvatarVideoTaskRequest();
 	App getApp() const;
 	void setApp(const App &app);
-	VideoInfo getVideoInfo() const;
-	void setVideoInfo(const VideoInfo &videoInfo);
+	AudioInfo getAudioInfo() const;
+	void setAudioInfo(const AudioInfo &audioInfo);
 	AvatarInfo getAvatarInfo() const;
 	void setAvatarInfo(const AvatarInfo &avatarInfo);
-	long getTenantId() const;
-	void setTenantId(long tenantId);
-	std::string getText() const;
-	void setText(const std::string &text);
 	std::string getTitle() const;
 	void setTitle(const std::string &title);
+	std::string getExtParams() const;
+	void setExtParams(const std::string &extParams);
+	VideoInfo getVideoInfo() const;
+	void setVideoInfo(const VideoInfo &videoInfo);
+	std::string getCallbackParams() const;
+	void setCallbackParams(const std::string &callbackParams);
+	long getTenantId() const;
+	void setTenantId(long tenantId);
+	bool getCallback() const;
+	void setCallback(bool callback);
+	std::string getExtParams_CLS() const;
+	void setExtParams_CLS(const std::string &extParams_CLS);
+	std::string getText() const;
+	void setText(const std::string &text);
+	std::string getCallbackParams_CLS() const;
+	void setCallbackParams_CLS(const std::string &callbackParams_CLS);
 
 private:
 	App app_;
-	VideoInfo videoInfo_;
+	AudioInfo audioInfo_;
 	AvatarInfo avatarInfo_;
-	long tenantId_;
-	std::string text_;
 	std::string title_;
+	std::string extParams_;
+	VideoInfo videoInfo_;
+	std::string callbackParams_;
+	long tenantId_;
+	bool callback_;
+	std::string extParams_CLS_;
+	std::string text_;
+	std::string callbackParams_CLS_;
 };
 } // namespace Model
 } // namespace Avatar
