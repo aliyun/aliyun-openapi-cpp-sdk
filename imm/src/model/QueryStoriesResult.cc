@@ -145,12 +145,10 @@ void QueryStoriesResult::parse(const std::string &payload)
 				filesObject.language = valueStoriesStoriesItemFilesFilesItem["Language"].asString();
 			if(!valueStoriesStoriesItemFilesFilesItem["Album"].isNull())
 				filesObject.album = valueStoriesStoriesItemFilesFilesItem["Album"].asString();
-			if(!valueStoriesStoriesItemFilesFilesItem["DocumentLanguage"].isNull())
-				filesObject.documentLanguage = valueStoriesStoriesItemFilesFilesItem["DocumentLanguage"].asString();
 			if(!valueStoriesStoriesItemFilesFilesItem["PageCount"].isNull())
 				filesObject.pageCount = std::stol(valueStoriesStoriesItemFilesFilesItem["PageCount"].asString());
-			if(!valueStoriesStoriesItemFilesFilesItem["DocumentContent"].isNull())
-				filesObject.documentContent = valueStoriesStoriesItemFilesFilesItem["DocumentContent"].asString();
+			if(!valueStoriesStoriesItemFilesFilesItem["DocumentText"].isNull())
+				filesObject.documentText = valueStoriesStoriesItemFilesFilesItem["DocumentText"].asString();
 			if(!valueStoriesStoriesItemFilesFilesItem["ETag"].isNull())
 				filesObject.eTag = valueStoriesStoriesItemFilesFilesItem["ETag"].asString();
 			if(!valueStoriesStoriesItemFilesFilesItem["CacheControl"].isNull())
@@ -644,12 +642,10 @@ void QueryStoriesResult::parse(const std::string &payload)
 			storiesObject.cover.language = coverNode["Language"].asString();
 		if(!coverNode["Album"].isNull())
 			storiesObject.cover.album = coverNode["Album"].asString();
-		if(!coverNode["DocumentLanguage"].isNull())
-			storiesObject.cover.documentLanguage = coverNode["DocumentLanguage"].asString();
 		if(!coverNode["PageCount"].isNull())
 			storiesObject.cover.pageCount = std::stol(coverNode["PageCount"].asString());
-		if(!coverNode["DocumentContent"].isNull())
-			storiesObject.cover.documentContent = coverNode["DocumentContent"].asString();
+		if(!coverNode["DocumentText"].isNull())
+			storiesObject.cover.documentText = coverNode["DocumentText"].asString();
 		if(!coverNode["ETag"].isNull())
 			storiesObject.cover.eTag = coverNode["ETag"].asString();
 		if(!coverNode["CacheControl"].isNull())

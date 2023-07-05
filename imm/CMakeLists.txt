@@ -125,8 +125,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/ExtractDocumentTextResult.h
 	include/alibabacloud/imm/model/FuzzyQueryRequest.h
 	include/alibabacloud/imm/model/FuzzyQueryResult.h
-	include/alibabacloud/imm/model/GenerateDRMLicenseRequest.h
-	include/alibabacloud/imm/model/GenerateDRMLicenseResult.h
 	include/alibabacloud/imm/model/GenerateVideoPlaylistRequest.h
 	include/alibabacloud/imm/model/GenerateVideoPlaylistResult.h
 	include/alibabacloud/imm/model/GenerateWebofficeTokenRequest.h
@@ -135,8 +133,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/GetBatchResult.h
 	include/alibabacloud/imm/model/GetBindingRequest.h
 	include/alibabacloud/imm/model/GetBindingResult.h
-	include/alibabacloud/imm/model/GetDRMLicenseRequest.h
-	include/alibabacloud/imm/model/GetDRMLicenseResult.h
 	include/alibabacloud/imm/model/GetDatasetRequest.h
 	include/alibabacloud/imm/model/GetDatasetResult.h
 	include/alibabacloud/imm/model/GetFigureClusterRequest.h
@@ -191,8 +187,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/RemoveStoryFilesResult.h
 	include/alibabacloud/imm/model/ResumeBatchRequest.h
 	include/alibabacloud/imm/model/ResumeBatchResult.h
-	include/alibabacloud/imm/model/ResumeBindingRequest.h
-	include/alibabacloud/imm/model/ResumeBindingResult.h
 	include/alibabacloud/imm/model/ResumeTriggerRequest.h
 	include/alibabacloud/imm/model/ResumeTriggerResult.h
 	include/alibabacloud/imm/model/SearchImageFigureClusterRequest.h
@@ -201,8 +195,6 @@ set(imm_public_header_model
 	include/alibabacloud/imm/model/SemanticQueryResult.h
 	include/alibabacloud/imm/model/SimpleQueryRequest.h
 	include/alibabacloud/imm/model/SimpleQueryResult.h
-	include/alibabacloud/imm/model/StopBindingRequest.h
-	include/alibabacloud/imm/model/StopBindingResult.h
 	include/alibabacloud/imm/model/SuspendBatchRequest.h
 	include/alibabacloud/imm/model/SuspendBatchResult.h
 	include/alibabacloud/imm/model/SuspendTriggerRequest.h
@@ -330,8 +322,6 @@ set(imm_src
 	src/model/ExtractDocumentTextResult.cc
 	src/model/FuzzyQueryRequest.cc
 	src/model/FuzzyQueryResult.cc
-	src/model/GenerateDRMLicenseRequest.cc
-	src/model/GenerateDRMLicenseResult.cc
 	src/model/GenerateVideoPlaylistRequest.cc
 	src/model/GenerateVideoPlaylistResult.cc
 	src/model/GenerateWebofficeTokenRequest.cc
@@ -340,8 +330,6 @@ set(imm_src
 	src/model/GetBatchResult.cc
 	src/model/GetBindingRequest.cc
 	src/model/GetBindingResult.cc
-	src/model/GetDRMLicenseRequest.cc
-	src/model/GetDRMLicenseResult.cc
 	src/model/GetDatasetRequest.cc
 	src/model/GetDatasetResult.cc
 	src/model/GetFigureClusterRequest.cc
@@ -396,8 +384,6 @@ set(imm_src
 	src/model/RemoveStoryFilesResult.cc
 	src/model/ResumeBatchRequest.cc
 	src/model/ResumeBatchResult.cc
-	src/model/ResumeBindingRequest.cc
-	src/model/ResumeBindingResult.cc
 	src/model/ResumeTriggerRequest.cc
 	src/model/ResumeTriggerResult.cc
 	src/model/SearchImageFigureClusterRequest.cc
@@ -406,8 +392,6 @@ set(imm_src
 	src/model/SemanticQueryResult.cc
 	src/model/SimpleQueryRequest.cc
 	src/model/SimpleQueryResult.cc
-	src/model/StopBindingRequest.cc
-	src/model/StopBindingResult.cc
 	src/model/SuspendBatchRequest.cc
 	src/model/SuspendBatchResult.cc
 	src/model/SuspendTriggerRequest.cc

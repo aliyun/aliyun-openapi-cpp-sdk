@@ -142,12 +142,10 @@ void GetStoryResult::parse(const std::string &payload)
 			filesItemObject.language = storyNodeFilesFilesItem["Language"].asString();
 		if(!storyNodeFilesFilesItem["Album"].isNull())
 			filesItemObject.album = storyNodeFilesFilesItem["Album"].asString();
-		if(!storyNodeFilesFilesItem["DocumentLanguage"].isNull())
-			filesItemObject.documentLanguage = storyNodeFilesFilesItem["DocumentLanguage"].asString();
 		if(!storyNodeFilesFilesItem["PageCount"].isNull())
 			filesItemObject.pageCount = std::stol(storyNodeFilesFilesItem["PageCount"].asString());
-		if(!storyNodeFilesFilesItem["DocumentContent"].isNull())
-			filesItemObject.documentContent = storyNodeFilesFilesItem["DocumentContent"].asString();
+		if(!storyNodeFilesFilesItem["DocumentText"].isNull())
+			filesItemObject.documentText = storyNodeFilesFilesItem["DocumentText"].asString();
 		if(!storyNodeFilesFilesItem["ETag"].isNull())
 			filesItemObject.eTag = storyNodeFilesFilesItem["ETag"].asString();
 		if(!storyNodeFilesFilesItem["CacheControl"].isNull())
@@ -641,12 +639,10 @@ void GetStoryResult::parse(const std::string &payload)
 		story_.cover.language = coverNode["Language"].asString();
 	if(!coverNode["Album"].isNull())
 		story_.cover.album = coverNode["Album"].asString();
-	if(!coverNode["DocumentLanguage"].isNull())
-		story_.cover.documentLanguage = coverNode["DocumentLanguage"].asString();
 	if(!coverNode["PageCount"].isNull())
 		story_.cover.pageCount = std::stol(coverNode["PageCount"].asString());
-	if(!coverNode["DocumentContent"].isNull())
-		story_.cover.documentContent = coverNode["DocumentContent"].asString();
+	if(!coverNode["DocumentText"].isNull())
+		story_.cover.documentText = coverNode["DocumentText"].asString();
 	if(!coverNode["ETag"].isNull())
 		story_.cover.eTag = coverNode["ETag"].asString();
 	if(!coverNode["CacheControl"].isNull())

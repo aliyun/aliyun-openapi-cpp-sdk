@@ -32,6 +32,11 @@ CreateTriggerRequest::Notification CreateTriggerRequest::getNotification() const
 void CreateTriggerRequest::setNotification(const CreateTriggerRequest::Notification &notification) {
   notification_ = notification;
   setBodyParameter(std::string("Notification") + ".Endpoint", notification.endpoint);
+  setBodyParameter(std::string("Notification") + ".MNS.Endpoint", notification.mNS.endpoint);
+  setBodyParameter(std::string("Notification") + ".MNS.TopicName", notification.mNS.topicName);
+  setBodyParameter(std::string("Notification") + ".RocketMQ.Endpoint", notification.rocketMQ.endpoint);
+  setBodyParameter(std::string("Notification") + ".RocketMQ.InstanceId", notification.rocketMQ.instanceId);
+  setBodyParameter(std::string("Notification") + ".RocketMQ.TopicName", notification.rocketMQ.topicName);
   setBodyParameter(std::string("Notification") + ".Topic", notification.topic);
 }
 

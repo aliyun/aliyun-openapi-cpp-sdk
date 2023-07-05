@@ -30,6 +30,17 @@ class ALIBABACLOUD_IMM_EXPORT CreateBatchRequest : public RpcServiceRequest {
 public:
 	struct Notification {
 		std::string endpoint;
+		struct MNS {
+			std::string endpoint;
+			std::string topicName;
+		};
+		MNS mNS;
+		struct RocketMQ {
+			std::string endpoint;
+			std::string instanceId;
+			std::string topicName;
+		};
+		RocketMQ rocketMQ;
 		std::string topic;
 	};
 	struct Input {

@@ -113,12 +113,10 @@ void FuzzyQueryResult::parse(const std::string &payload)
 			filesObject.language = valueFilesFilesItem["Language"].asString();
 		if(!valueFilesFilesItem["Album"].isNull())
 			filesObject.album = valueFilesFilesItem["Album"].asString();
-		if(!valueFilesFilesItem["DocumentLanguage"].isNull())
-			filesObject.documentLanguage = valueFilesFilesItem["DocumentLanguage"].asString();
 		if(!valueFilesFilesItem["PageCount"].isNull())
 			filesObject.pageCount = std::stol(valueFilesFilesItem["PageCount"].asString());
-		if(!valueFilesFilesItem["DocumentContent"].isNull())
-			filesObject.documentContent = valueFilesFilesItem["DocumentContent"].asString();
+		if(!valueFilesFilesItem["DocumentText"].isNull())
+			filesObject.documentText = valueFilesFilesItem["DocumentText"].asString();
 		if(!valueFilesFilesItem["ETag"].isNull())
 			filesObject.eTag = valueFilesFilesItem["ETag"].asString();
 		if(!valueFilesFilesItem["CacheControl"].isNull())

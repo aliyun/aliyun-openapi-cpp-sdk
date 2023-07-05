@@ -126,8 +126,6 @@
 #include "model/ExtractDocumentTextResult.h"
 #include "model/FuzzyQueryRequest.h"
 #include "model/FuzzyQueryResult.h"
-#include "model/GenerateDRMLicenseRequest.h"
-#include "model/GenerateDRMLicenseResult.h"
 #include "model/GenerateVideoPlaylistRequest.h"
 #include "model/GenerateVideoPlaylistResult.h"
 #include "model/GenerateWebofficeTokenRequest.h"
@@ -136,8 +134,6 @@
 #include "model/GetBatchResult.h"
 #include "model/GetBindingRequest.h"
 #include "model/GetBindingResult.h"
-#include "model/GetDRMLicenseRequest.h"
-#include "model/GetDRMLicenseResult.h"
 #include "model/GetDatasetRequest.h"
 #include "model/GetDatasetResult.h"
 #include "model/GetFigureClusterRequest.h"
@@ -192,8 +188,6 @@
 #include "model/RemoveStoryFilesResult.h"
 #include "model/ResumeBatchRequest.h"
 #include "model/ResumeBatchResult.h"
-#include "model/ResumeBindingRequest.h"
-#include "model/ResumeBindingResult.h"
 #include "model/ResumeTriggerRequest.h"
 #include "model/ResumeTriggerResult.h"
 #include "model/SearchImageFigureClusterRequest.h"
@@ -202,8 +196,6 @@
 #include "model/SemanticQueryResult.h"
 #include "model/SimpleQueryRequest.h"
 #include "model/SimpleQueryResult.h"
-#include "model/StopBindingRequest.h"
-#include "model/StopBindingResult.h"
 #include "model/SuspendBatchRequest.h"
 #include "model/SuspendBatchResult.h"
 #include "model/SuspendTriggerRequest.h"
@@ -389,9 +381,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::FuzzyQueryResult> FuzzyQueryOutcome;
 			typedef std::future<FuzzyQueryOutcome> FuzzyQueryOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::FuzzyQueryRequest&, const FuzzyQueryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> FuzzyQueryAsyncHandler;
-			typedef Outcome<Error, Model::GenerateDRMLicenseResult> GenerateDRMLicenseOutcome;
-			typedef std::future<GenerateDRMLicenseOutcome> GenerateDRMLicenseOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::GenerateDRMLicenseRequest&, const GenerateDRMLicenseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateDRMLicenseAsyncHandler;
 			typedef Outcome<Error, Model::GenerateVideoPlaylistResult> GenerateVideoPlaylistOutcome;
 			typedef std::future<GenerateVideoPlaylistOutcome> GenerateVideoPlaylistOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GenerateVideoPlaylistRequest&, const GenerateVideoPlaylistOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GenerateVideoPlaylistAsyncHandler;
@@ -404,9 +393,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetBindingResult> GetBindingOutcome;
 			typedef std::future<GetBindingOutcome> GetBindingOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetBindingRequest&, const GetBindingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetBindingAsyncHandler;
-			typedef Outcome<Error, Model::GetDRMLicenseResult> GetDRMLicenseOutcome;
-			typedef std::future<GetDRMLicenseOutcome> GetDRMLicenseOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::GetDRMLicenseRequest&, const GetDRMLicenseOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDRMLicenseAsyncHandler;
 			typedef Outcome<Error, Model::GetDatasetResult> GetDatasetOutcome;
 			typedef std::future<GetDatasetOutcome> GetDatasetOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::GetDatasetRequest&, const GetDatasetOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDatasetAsyncHandler;
@@ -488,9 +474,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ResumeBatchResult> ResumeBatchOutcome;
 			typedef std::future<ResumeBatchOutcome> ResumeBatchOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::ResumeBatchRequest&, const ResumeBatchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeBatchAsyncHandler;
-			typedef Outcome<Error, Model::ResumeBindingResult> ResumeBindingOutcome;
-			typedef std::future<ResumeBindingOutcome> ResumeBindingOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::ResumeBindingRequest&, const ResumeBindingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeBindingAsyncHandler;
 			typedef Outcome<Error, Model::ResumeTriggerResult> ResumeTriggerOutcome;
 			typedef std::future<ResumeTriggerOutcome> ResumeTriggerOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::ResumeTriggerRequest&, const ResumeTriggerOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ResumeTriggerAsyncHandler;
@@ -503,9 +486,6 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::SimpleQueryResult> SimpleQueryOutcome;
 			typedef std::future<SimpleQueryOutcome> SimpleQueryOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::SimpleQueryRequest&, const SimpleQueryOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SimpleQueryAsyncHandler;
-			typedef Outcome<Error, Model::StopBindingResult> StopBindingOutcome;
-			typedef std::future<StopBindingOutcome> StopBindingOutcomeCallable;
-			typedef std::function<void(const ImmClient*, const Model::StopBindingRequest&, const StopBindingOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StopBindingAsyncHandler;
 			typedef Outcome<Error, Model::SuspendBatchResult> SuspendBatchOutcome;
 			typedef std::future<SuspendBatchOutcome> SuspendBatchOutcomeCallable;
 			typedef std::function<void(const ImmClient*, const Model::SuspendBatchRequest&, const SuspendBatchOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SuspendBatchAsyncHandler;
@@ -697,9 +677,6 @@ namespace AlibabaCloud
 			FuzzyQueryOutcome fuzzyQuery(const Model::FuzzyQueryRequest &request)const;
 			void fuzzyQueryAsync(const Model::FuzzyQueryRequest& request, const FuzzyQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			FuzzyQueryOutcomeCallable fuzzyQueryCallable(const Model::FuzzyQueryRequest& request) const;
-			GenerateDRMLicenseOutcome generateDRMLicense(const Model::GenerateDRMLicenseRequest &request)const;
-			void generateDRMLicenseAsync(const Model::GenerateDRMLicenseRequest& request, const GenerateDRMLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GenerateDRMLicenseOutcomeCallable generateDRMLicenseCallable(const Model::GenerateDRMLicenseRequest& request) const;
 			GenerateVideoPlaylistOutcome generateVideoPlaylist(const Model::GenerateVideoPlaylistRequest &request)const;
 			void generateVideoPlaylistAsync(const Model::GenerateVideoPlaylistRequest& request, const GenerateVideoPlaylistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GenerateVideoPlaylistOutcomeCallable generateVideoPlaylistCallable(const Model::GenerateVideoPlaylistRequest& request) const;
@@ -712,9 +689,6 @@ namespace AlibabaCloud
 			GetBindingOutcome getBinding(const Model::GetBindingRequest &request)const;
 			void getBindingAsync(const Model::GetBindingRequest& request, const GetBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetBindingOutcomeCallable getBindingCallable(const Model::GetBindingRequest& request) const;
-			GetDRMLicenseOutcome getDRMLicense(const Model::GetDRMLicenseRequest &request)const;
-			void getDRMLicenseAsync(const Model::GetDRMLicenseRequest& request, const GetDRMLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			GetDRMLicenseOutcomeCallable getDRMLicenseCallable(const Model::GetDRMLicenseRequest& request) const;
 			GetDatasetOutcome getDataset(const Model::GetDatasetRequest &request)const;
 			void getDatasetAsync(const Model::GetDatasetRequest& request, const GetDatasetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDatasetOutcomeCallable getDatasetCallable(const Model::GetDatasetRequest& request) const;
@@ -796,9 +770,6 @@ namespace AlibabaCloud
 			ResumeBatchOutcome resumeBatch(const Model::ResumeBatchRequest &request)const;
 			void resumeBatchAsync(const Model::ResumeBatchRequest& request, const ResumeBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResumeBatchOutcomeCallable resumeBatchCallable(const Model::ResumeBatchRequest& request) const;
-			ResumeBindingOutcome resumeBinding(const Model::ResumeBindingRequest &request)const;
-			void resumeBindingAsync(const Model::ResumeBindingRequest& request, const ResumeBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			ResumeBindingOutcomeCallable resumeBindingCallable(const Model::ResumeBindingRequest& request) const;
 			ResumeTriggerOutcome resumeTrigger(const Model::ResumeTriggerRequest &request)const;
 			void resumeTriggerAsync(const Model::ResumeTriggerRequest& request, const ResumeTriggerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ResumeTriggerOutcomeCallable resumeTriggerCallable(const Model::ResumeTriggerRequest& request) const;
@@ -811,9 +782,6 @@ namespace AlibabaCloud
 			SimpleQueryOutcome simpleQuery(const Model::SimpleQueryRequest &request)const;
 			void simpleQueryAsync(const Model::SimpleQueryRequest& request, const SimpleQueryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SimpleQueryOutcomeCallable simpleQueryCallable(const Model::SimpleQueryRequest& request) const;
-			StopBindingOutcome stopBinding(const Model::StopBindingRequest &request)const;
-			void stopBindingAsync(const Model::StopBindingRequest& request, const StopBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
-			StopBindingOutcomeCallable stopBindingCallable(const Model::StopBindingRequest& request) const;
 			SuspendBatchOutcome suspendBatch(const Model::SuspendBatchRequest &request)const;
 			void suspendBatchAsync(const Model::SuspendBatchRequest& request, const SuspendBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SuspendBatchOutcomeCallable suspendBatchCallable(const Model::SuspendBatchRequest& request) const;

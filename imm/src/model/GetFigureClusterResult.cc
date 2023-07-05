@@ -147,12 +147,10 @@ void GetFigureClusterResult::parse(const std::string &payload)
 		figureCluster_.cover.language = coverNode["Language"].asString();
 	if(!coverNode["Album"].isNull())
 		figureCluster_.cover.album = coverNode["Album"].asString();
-	if(!coverNode["DocumentLanguage"].isNull())
-		figureCluster_.cover.documentLanguage = coverNode["DocumentLanguage"].asString();
 	if(!coverNode["PageCount"].isNull())
 		figureCluster_.cover.pageCount = std::stol(coverNode["PageCount"].asString());
-	if(!coverNode["DocumentContent"].isNull())
-		figureCluster_.cover.documentContent = coverNode["DocumentContent"].asString();
+	if(!coverNode["DocumentText"].isNull())
+		figureCluster_.cover.documentText = coverNode["DocumentText"].asString();
 	if(!coverNode["ETag"].isNull())
 		figureCluster_.cover.eTag = coverNode["ETag"].asString();
 	if(!coverNode["CacheControl"].isNull())

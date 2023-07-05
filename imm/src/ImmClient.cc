@@ -1923,42 +1923,6 @@ ImmClient::FuzzyQueryOutcomeCallable ImmClient::fuzzyQueryCallable(const FuzzyQu
 	return task->get_future();
 }
 
-ImmClient::GenerateDRMLicenseOutcome ImmClient::generateDRMLicense(const GenerateDRMLicenseRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GenerateDRMLicenseOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GenerateDRMLicenseOutcome(GenerateDRMLicenseResult(outcome.result()));
-	else
-		return GenerateDRMLicenseOutcome(outcome.error());
-}
-
-void ImmClient::generateDRMLicenseAsync(const GenerateDRMLicenseRequest& request, const GenerateDRMLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, generateDRMLicense(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::GenerateDRMLicenseOutcomeCallable ImmClient::generateDRMLicenseCallable(const GenerateDRMLicenseRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GenerateDRMLicenseOutcome()>>(
-			[this, request]()
-			{
-			return this->generateDRMLicense(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::GenerateVideoPlaylistOutcome ImmClient::generateVideoPlaylist(const GenerateVideoPlaylistRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2097,42 +2061,6 @@ ImmClient::GetBindingOutcomeCallable ImmClient::getBindingCallable(const GetBind
 			[this, request]()
 			{
 			return this->getBinding(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImmClient::GetDRMLicenseOutcome ImmClient::getDRMLicense(const GetDRMLicenseRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return GetDRMLicenseOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return GetDRMLicenseOutcome(GetDRMLicenseResult(outcome.result()));
-	else
-		return GetDRMLicenseOutcome(outcome.error());
-}
-
-void ImmClient::getDRMLicenseAsync(const GetDRMLicenseRequest& request, const GetDRMLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, getDRMLicense(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::GetDRMLicenseOutcomeCallable ImmClient::getDRMLicenseCallable(const GetDRMLicenseRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<GetDRMLicenseOutcome()>>(
-			[this, request]()
-			{
-			return this->getDRMLicense(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -3111,42 +3039,6 @@ ImmClient::ResumeBatchOutcomeCallable ImmClient::resumeBatchCallable(const Resum
 	return task->get_future();
 }
 
-ImmClient::ResumeBindingOutcome ImmClient::resumeBinding(const ResumeBindingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return ResumeBindingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return ResumeBindingOutcome(ResumeBindingResult(outcome.result()));
-	else
-		return ResumeBindingOutcome(outcome.error());
-}
-
-void ImmClient::resumeBindingAsync(const ResumeBindingRequest& request, const ResumeBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, resumeBinding(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::ResumeBindingOutcomeCallable ImmClient::resumeBindingCallable(const ResumeBindingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<ResumeBindingOutcome()>>(
-			[this, request]()
-			{
-			return this->resumeBinding(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
 ImmClient::ResumeTriggerOutcome ImmClient::resumeTrigger(const ResumeTriggerRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3285,42 +3177,6 @@ ImmClient::SimpleQueryOutcomeCallable ImmClient::simpleQueryCallable(const Simpl
 			[this, request]()
 			{
 			return this->simpleQuery(request);
-			});
-
-	asyncExecute(new Runnable([task]() { (*task)(); }));
-	return task->get_future();
-}
-
-ImmClient::StopBindingOutcome ImmClient::stopBinding(const StopBindingRequest &request) const
-{
-	auto endpointOutcome = endpointProvider_->getEndpoint();
-	if (!endpointOutcome.isSuccess())
-		return StopBindingOutcome(endpointOutcome.error());
-
-	auto outcome = makeRequest(endpointOutcome.result(), request);
-
-	if (outcome.isSuccess())
-		return StopBindingOutcome(StopBindingResult(outcome.result()));
-	else
-		return StopBindingOutcome(outcome.error());
-}
-
-void ImmClient::stopBindingAsync(const StopBindingRequest& request, const StopBindingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
-{
-	auto fn = [this, request, handler, context]()
-	{
-		handler(this, request, stopBinding(request), context);
-	};
-
-	asyncExecute(new Runnable(fn));
-}
-
-ImmClient::StopBindingOutcomeCallable ImmClient::stopBindingCallable(const StopBindingRequest &request) const
-{
-	auto task = std::make_shared<std::packaged_task<StopBindingOutcome()>>(
-			[this, request]()
-			{
-			return this->stopBinding(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

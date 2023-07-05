@@ -250,7 +250,6 @@ namespace AlibabaCloud
 						long videoHeight;
 						long imageWidth;
 						std::vector<SubtitlesItem> subtitles;
-						std::string documentLanguage;
 						std::string oSSStorageClass;
 						std::string mediaType;
 						std::string oSSDeleteMarker;
@@ -270,7 +269,6 @@ namespace AlibabaCloud
 						long figureCount;
 						std::string eTag;
 						std::string datasetName;
-						std::string documentContent;
 						std::string fileHash;
 						std::string cacheControl;
 						std::string oSSVersionId;
@@ -300,6 +298,7 @@ namespace AlibabaCloud
 						std::string serverSideEncryptionCustomerAlgorithm;
 						long bitrate;
 						std::string albumArtist;
+						std::string documentText;
 						std::string contentMd5;
 						std::string contentDisposition;
 						std::string customId;
