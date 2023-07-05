@@ -61,6 +61,15 @@ void ModifyDBInstanceSpecRequest::setEngineVersion(const std::string &engineVers
   setParameter(std::string("EngineVersion"), engineVersion);
 }
 
+bool ModifyDBInstanceSpecRequest::getAutoUseCoupon() const {
+  return autoUseCoupon_;
+}
+
+void ModifyDBInstanceSpecRequest::setAutoUseCoupon(bool autoUseCoupon) {
+  autoUseCoupon_ = autoUseCoupon;
+  setParameter(std::string("AutoUseCoupon"), autoUseCoupon ? "true" : "false");
+}
+
 std::string ModifyDBInstanceSpecRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

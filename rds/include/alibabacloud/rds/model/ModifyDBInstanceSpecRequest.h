@@ -44,6 +44,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getEngineVersion() const;
 	void setEngineVersion(const std::string &engineVersion);
+	bool getAutoUseCoupon() const;
+	void setAutoUseCoupon(bool autoUseCoupon);
 	std::string getAccessKeyId() const;
 	void setAccessKeyId(const std::string &accessKeyId);
 	std::string getResourceGroupId() const;
@@ -90,6 +92,7 @@ private:
 	int dBInstanceStorage_;
 	std::string clientToken_;
 	std::string engineVersion_;
+	bool autoUseCoupon_;
 	std::string accessKeyId_;
 	std::string resourceGroupId_;
 	ServerlessConfiguration serverlessConfiguration_;
