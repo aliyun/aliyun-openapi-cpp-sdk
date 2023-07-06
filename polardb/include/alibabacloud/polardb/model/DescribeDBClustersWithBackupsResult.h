@@ -36,6 +36,7 @@ namespace AlibabaCloud
 				{
 					int deletionLock;
 					int isDeleted;
+					std::string category;
 					std::string zoneId;
 					std::string deletedTime;
 					std::string dBClusterStatus;

@@ -81,6 +81,8 @@ void DescribeDBClustersWithBackupsResult::parse(const std::string &payload)
 			itemsObject.zoneId = valueItemsDBCluster["ZoneId"].asString();
 		if(!valueItemsDBCluster["Engine"].isNull())
 			itemsObject.engine = valueItemsDBCluster["Engine"].asString();
+		if(!valueItemsDBCluster["Category"].isNull())
+			itemsObject.category = valueItemsDBCluster["Category"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["PageNumber"].isNull())

@@ -34,6 +34,15 @@ void DescribeDBClusterAttributeRequest::setResourceOwnerId(long resourceOwnerId)
   setParameter(std::string("ResourceOwnerId"), std::to_string(resourceOwnerId));
 }
 
+std::string DescribeDBClusterAttributeRequest::getDescribeType() const {
+  return describeType_;
+}
+
+void DescribeDBClusterAttributeRequest::setDescribeType(const std::string &describeType) {
+  describeType_ = describeType;
+  setParameter(std::string("DescribeType"), describeType);
+}
+
 std::string DescribeDBClusterAttributeRequest::getAccessKeyId() const {
   return accessKeyId_;
 }

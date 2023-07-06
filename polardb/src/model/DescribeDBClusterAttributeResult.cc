@@ -112,6 +112,12 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		dBClusterNetworkType_ = value["DBClusterNetworkType"].asString();
 	if(!value["IsLatestVersion"].isNull())
 		isLatestVersion_ = value["IsLatestVersion"].asString() == "true";
+	if(!value["HasCompleteStandbyRes"].isNull())
+		hasCompleteStandbyRes_ = value["HasCompleteStandbyRes"].asString() == "true";
+	if(!value["DataSyncMode"].isNull())
+		dataSyncMode_ = value["DataSyncMode"].asString();
+	if(!value["StandbyHAMode"].isNull())
+		standbyHAMode_ = value["StandbyHAMode"].asString();
 	if(!value["StorageMax"].isNull())
 		storageMax_ = std::stol(value["StorageMax"].asString());
 	if(!value["DBVersion"].isNull())
@@ -162,6 +168,8 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		expireTime_ = value["ExpireTime"].asString();
 	if(!value["SubCategory"].isNull())
 		subCategory_ = value["SubCategory"].asString();
+	if(!value["DeployUnit"].isNull())
+		deployUnit_ = value["DeployUnit"].asString();
 	if(!value["IsProxyLatestVersion"].isNull())
 		isProxyLatestVersion_ = value["IsProxyLatestVersion"].asString() == "true";
 	if(!value["StorageType"].isNull())
@@ -182,17 +190,9 @@ void DescribeDBClusterAttributeResult::parse(const std::string &payload)
 		featureHTAPSupported_ = value["FeatureHTAPSupported"].asString();
 	if(!value["ProxyServerlessType"].isNull())
 		proxyServerlessType_ = value["ProxyServerlessType"].asString();
+	if(!value["AiType"].isNull())
+		aiType_ = value["AiType"].asString();
 
-}
-
-int DescribeDBClusterAttributeResult::getDeletionLock()const
-{
-	return deletionLock_;
-}
-
-std::string DescribeDBClusterAttributeResult::getCategory()const
-{
-	return category_;
 }
 
 std::string DescribeDBClusterAttributeResult::getResourceGroupId()const
@@ -210,11 +210,6 @@ long DescribeDBClusterAttributeResult::getDataLevel1BackupChainSize()const
 	return dataLevel1BackupChainSize_;
 }
 
-std::string DescribeDBClusterAttributeResult::getDBClusterId()const
-{
-	return dBClusterId_;
-}
-
 std::string DescribeDBClusterAttributeResult::getProxyStatus()const
 {
 	return proxyStatus_;
@@ -225,29 +220,19 @@ std::string DescribeDBClusterAttributeResult::getDBType()const
 	return dBType_;
 }
 
-std::string DescribeDBClusterAttributeResult::getDBClusterNetworkType()const
-{
-	return dBClusterNetworkType_;
-}
-
 long DescribeDBClusterAttributeResult::getBlktagUsed()const
 {
 	return blktagUsed_;
 }
 
+std::string DescribeDBClusterAttributeResult::getStandbyHAMode()const
+{
+	return standbyHAMode_;
+}
+
 std::string DescribeDBClusterAttributeResult::getProxyStandardCpuCores()const
 {
 	return proxyStandardCpuCores_;
-}
-
-bool DescribeDBClusterAttributeResult::getIsLatestVersion()const
-{
-	return isLatestVersion_;
-}
-
-long DescribeDBClusterAttributeResult::getStorageMax()const
-{
-	return storageMax_;
 }
 
 std::string DescribeDBClusterAttributeResult::getDBVersion()const
@@ -265,21 +250,6 @@ std::string DescribeDBClusterAttributeResult::getFeatureHTAPSupported()const
 	return featureHTAPSupported_;
 }
 
-std::string DescribeDBClusterAttributeResult::getZoneIds()const
-{
-	return zoneIds_;
-}
-
-long DescribeDBClusterAttributeResult::getInodeUsed()const
-{
-	return inodeUsed_;
-}
-
-std::string DescribeDBClusterAttributeResult::getMaintainTime()const
-{
-	return maintainTime_;
-}
-
 std::vector<DescribeDBClusterAttributeResult::Tag> DescribeDBClusterAttributeResult::getTags()const
 {
 	return tags_;
@@ -290,11 +260,6 @@ std::string DescribeDBClusterAttributeResult::getEngine()const
 	return engine_;
 }
 
-long DescribeDBClusterAttributeResult::getBlktagTotal()const
-{
-	return blktagTotal_;
-}
-
 std::string DescribeDBClusterAttributeResult::getStorageType()const
 {
 	return storageType_;
@@ -303,11 +268,6 @@ std::string DescribeDBClusterAttributeResult::getStorageType()const
 std::string DescribeDBClusterAttributeResult::getVPCId()const
 {
 	return vPCId_;
-}
-
-std::string DescribeDBClusterAttributeResult::getDBClusterStatus()const
-{
-	return dBClusterStatus_;
 }
 
 std::string DescribeDBClusterAttributeResult::getVSwitchId()const
@@ -325,11 +285,6 @@ std::string DescribeDBClusterAttributeResult::getExpired()const
 	return expired_;
 }
 
-std::string DescribeDBClusterAttributeResult::getProxyCpuCores()const
-{
-	return proxyCpuCores_;
-}
-
 std::string DescribeDBClusterAttributeResult::getPayType()const
 {
 	return payType_;
@@ -338,11 +293,6 @@ std::string DescribeDBClusterAttributeResult::getPayType()const
 std::string DescribeDBClusterAttributeResult::getLockMode()const
 {
 	return lockMode_;
-}
-
-std::string DescribeDBClusterAttributeResult::getStrictConsistency()const
-{
-	return strictConsistency_;
 }
 
 long DescribeDBClusterAttributeResult::getStorageUsed()const
@@ -355,16 +305,6 @@ long DescribeDBClusterAttributeResult::getInodeTotal()const
 	return inodeTotal_;
 }
 
-bool DescribeDBClusterAttributeResult::getIsProxyLatestVersion()const
-{
-	return isProxyLatestVersion_;
-}
-
-long DescribeDBClusterAttributeResult::getStorageSpace()const
-{
-	return storageSpace_;
-}
-
 std::string DescribeDBClusterAttributeResult::getDBVersionStatus()const
 {
 	return dBVersionStatus_;
@@ -375,19 +315,124 @@ std::string DescribeDBClusterAttributeResult::getProxyServerlessType()const
 	return proxyServerlessType_;
 }
 
-std::string DescribeDBClusterAttributeResult::getServerlessType()const
-{
-	return serverlessType_;
-}
-
 std::string DescribeDBClusterAttributeResult::getCreationTime()const
 {
 	return creationTime_;
 }
 
+std::string DescribeDBClusterAttributeResult::getProxyType()const
+{
+	return proxyType_;
+}
+
+std::string DescribeDBClusterAttributeResult::getExpireTime()const
+{
+	return expireTime_;
+}
+
+int DescribeDBClusterAttributeResult::getDeletionLock()const
+{
+	return deletionLock_;
+}
+
+std::string DescribeDBClusterAttributeResult::getCategory()const
+{
+	return category_;
+}
+
+std::string DescribeDBClusterAttributeResult::getDBClusterId()const
+{
+	return dBClusterId_;
+}
+
+std::string DescribeDBClusterAttributeResult::getDeployUnit()const
+{
+	return deployUnit_;
+}
+
+std::string DescribeDBClusterAttributeResult::getDBClusterNetworkType()const
+{
+	return dBClusterNetworkType_;
+}
+
+bool DescribeDBClusterAttributeResult::getIsLatestVersion()const
+{
+	return isLatestVersion_;
+}
+
+long DescribeDBClusterAttributeResult::getStorageMax()const
+{
+	return storageMax_;
+}
+
+std::string DescribeDBClusterAttributeResult::getZoneIds()const
+{
+	return zoneIds_;
+}
+
+long DescribeDBClusterAttributeResult::getInodeUsed()const
+{
+	return inodeUsed_;
+}
+
+std::string DescribeDBClusterAttributeResult::getMaintainTime()const
+{
+	return maintainTime_;
+}
+
+long DescribeDBClusterAttributeResult::getBlktagTotal()const
+{
+	return blktagTotal_;
+}
+
+std::string DescribeDBClusterAttributeResult::getDataSyncMode()const
+{
+	return dataSyncMode_;
+}
+
+std::string DescribeDBClusterAttributeResult::getDBClusterStatus()const
+{
+	return dBClusterStatus_;
+}
+
+std::string DescribeDBClusterAttributeResult::getProxyCpuCores()const
+{
+	return proxyCpuCores_;
+}
+
+std::string DescribeDBClusterAttributeResult::getStrictConsistency()const
+{
+	return strictConsistency_;
+}
+
+bool DescribeDBClusterAttributeResult::getIsProxyLatestVersion()const
+{
+	return isProxyLatestVersion_;
+}
+
+long DescribeDBClusterAttributeResult::getStorageSpace()const
+{
+	return storageSpace_;
+}
+
+std::string DescribeDBClusterAttributeResult::getServerlessType()const
+{
+	return serverlessType_;
+}
+
 std::string DescribeDBClusterAttributeResult::getSubCategory()const
 {
 	return subCategory_;
+}
+
+std::string DescribeDBClusterAttributeResult::getAiType()const
+{
+	return aiType_;
+}
+
+bool DescribeDBClusterAttributeResult::getHasCompleteStandbyRes()const
+{
+	return hasCompleteStandbyRes_;
 }
 
 DescribeDBClusterAttributeResult::RelatedAPInstance DescribeDBClusterAttributeResult::getRelatedAPInstance()const
@@ -403,15 +448,5 @@ long DescribeDBClusterAttributeResult::getSQLSize()const
 std::string DescribeDBClusterAttributeResult::getRegionId()const
 {
 	return regionId_;
-}
-
-std::string DescribeDBClusterAttributeResult::getProxyType()const
-{
-	return proxyType_;
-}
-
-std::string DescribeDBClusterAttributeResult::getExpireTime()const
-{
-	return expireTime_;
 }
 
