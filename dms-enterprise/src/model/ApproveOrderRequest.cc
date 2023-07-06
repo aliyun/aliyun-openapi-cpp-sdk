@@ -52,6 +52,33 @@ void ApproveOrderRequest::setApprovalType(const std::string &approvalType) {
   setParameter(std::string("ApprovalType"), approvalType);
 }
 
+long ApproveOrderRequest::getNewApprover() const {
+  return newApprover_;
+}
+
+void ApproveOrderRequest::setNewApprover(long newApprover) {
+  newApprover_ = newApprover;
+  setParameter(std::string("NewApprover"), std::to_string(newApprover));
+}
+
+long ApproveOrderRequest::getApprovalNodeId() const {
+  return approvalNodeId_;
+}
+
+void ApproveOrderRequest::setApprovalNodeId(long approvalNodeId) {
+  approvalNodeId_ = approvalNodeId;
+  setParameter(std::string("ApprovalNodeId"), std::to_string(approvalNodeId));
+}
+
+long ApproveOrderRequest::getOldApprover() const {
+  return oldApprover_;
+}
+
+void ApproveOrderRequest::setOldApprover(long oldApprover) {
+  oldApprover_ = oldApprover;
+  setParameter(std::string("OldApprover"), std::to_string(oldApprover));
+}
+
 std::string ApproveOrderRequest::getComment() const {
   return comment_;
 }
@@ -59,5 +86,14 @@ std::string ApproveOrderRequest::getComment() const {
 void ApproveOrderRequest::setComment(const std::string &comment) {
   comment_ = comment;
   setParameter(std::string("Comment"), comment);
+}
+
+std::string ApproveOrderRequest::getApprovalNodePos() const {
+  return approvalNodePos_;
+}
+
+void ApproveOrderRequest::setApprovalNodePos(const std::string &approvalNodePos) {
+  approvalNodePos_ = approvalNodePos;
+  setParameter(std::string("ApprovalNodePos"), approvalNodePos);
 }
 

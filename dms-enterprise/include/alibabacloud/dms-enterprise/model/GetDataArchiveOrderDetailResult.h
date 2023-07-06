@@ -128,6 +128,7 @@ namespace AlibabaCloud
 						DagInfo dagInfo;
 						long instanceTotal;
 						long pageSize;
+						std::string tempTableNameMap;
 						long pageIndex;
 						NextFireTimeResult nextFireTimeResult;
 					};

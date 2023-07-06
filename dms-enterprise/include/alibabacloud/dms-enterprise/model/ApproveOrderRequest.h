@@ -36,14 +36,26 @@ public:
 	void setWorkflowInstanceId(long workflowInstanceId);
 	std::string getApprovalType() const;
 	void setApprovalType(const std::string &approvalType);
+	long getNewApprover() const;
+	void setNewApprover(long newApprover);
+	long getApprovalNodeId() const;
+	void setApprovalNodeId(long approvalNodeId);
+	long getOldApprover() const;
+	void setOldApprover(long oldApprover);
 	std::string getComment() const;
 	void setComment(const std::string &comment);
+	std::string getApprovalNodePos() const;
+	void setApprovalNodePos(const std::string &approvalNodePos);
 
 private:
 	long tid_;
 	long workflowInstanceId_;
 	std::string approvalType_;
+	long newApprover_;
+	long approvalNodeId_;
+	long oldApprover_;
 	std::string comment_;
+	std::string approvalNodePos_;
 };
 } // namespace Model
 } // namespace Dms_enterprise

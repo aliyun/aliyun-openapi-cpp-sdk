@@ -69,6 +69,8 @@ void GetDataArchiveOrderDetailResult::parse(const std::string &payload)
 		dataArchiveOrderDetail_.pluginExtraData.pageIndex = std::stol(pluginExtraDataNode["PageIndex"].asString());
 	if(!pluginExtraDataNode["PageSize"].isNull())
 		dataArchiveOrderDetail_.pluginExtraData.pageSize = std::stol(pluginExtraDataNode["PageSize"].asString());
+	if(!pluginExtraDataNode["TempTableNameMap"].isNull())
+		dataArchiveOrderDetail_.pluginExtraData.tempTableNameMap = pluginExtraDataNode["TempTableNameMap"].asString();
 	auto allInstancesNode = pluginExtraDataNode["Instances"]["InstancesItem"];
 	for (auto pluginExtraDataNodeInstancesInstancesItem : allInstancesNode)
 	{
