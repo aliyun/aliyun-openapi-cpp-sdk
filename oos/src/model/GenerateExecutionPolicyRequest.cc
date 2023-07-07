@@ -43,6 +43,15 @@ void GenerateExecutionPolicyRequest::setRegionId(const std::string &regionId) {
   setParameter(std::string("RegionId"), regionId);
 }
 
+std::string GenerateExecutionPolicyRequest::getRamRole() const {
+  return ramRole_;
+}
+
+void GenerateExecutionPolicyRequest::setRamRole(const std::string &ramRole) {
+  ramRole_ = ramRole;
+  setParameter(std::string("RamRole"), ramRole);
+}
+
 std::string GenerateExecutionPolicyRequest::getTemplateName() const {
   return templateName_;
 }

@@ -61,15 +61,6 @@ void ListApplicationGroupsRequest::setResourceId(const std::string &resourceId) 
   setParameter(std::string("ResourceId"), resourceId);
 }
 
-std::string ListApplicationGroupsRequest::getProduct() const {
-  return product_;
-}
-
-void ListApplicationGroupsRequest::setProduct(const std::string &product) {
-  product_ = product;
-  setParameter(std::string("Product"), product);
-}
-
 std::string ListApplicationGroupsRequest::getDeployRegionId() const {
   return deployRegionId_;
 }

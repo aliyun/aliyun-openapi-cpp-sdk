@@ -55,6 +55,8 @@ void ListApplicationsResult::parse(const std::string &payload)
 			applicationsObject.name = valueApplicationsApplication["Name"].asString();
 		if(!valueApplicationsApplication["CreateDate"].isNull())
 			applicationsObject.createDate = valueApplicationsApplication["CreateDate"].asString();
+		if(!valueApplicationsApplication["ApplicationType"].isNull())
+			applicationsObject.applicationType = valueApplicationsApplication["ApplicationType"].asString();
 		applications_.push_back(applicationsObject);
 	}
 	if(!value["NextToken"].isNull())

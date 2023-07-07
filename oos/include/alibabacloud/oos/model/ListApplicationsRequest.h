@@ -42,6 +42,8 @@ public:
 	void setName(const std::string &name);
 	int getMaxResults() const;
 	void setMaxResults(int maxResults);
+	std::string getApplicationType() const;
+	void setApplicationType(const std::string &applicationType);
 
 private:
 	std::string regionId_;
@@ -50,6 +52,7 @@ private:
 	std::string names_;
 	std::string name_;
 	int maxResults_;
+	std::string applicationType_;
 };
 } // namespace Model
 } // namespace Oos

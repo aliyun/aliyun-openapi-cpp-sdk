@@ -34,6 +34,8 @@ public:
 	void setExecutedBy(const std::string &executedBy);
 	bool getIncludeChildExecution() const;
 	void setIncludeChildExecution(bool includeChildExecution);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
 	std::string getMode() const;
 	void setMode(const std::string &mode);
 	std::string getExecutionId() const;
@@ -52,6 +54,8 @@ public:
 	void setEndDateBefore(const std::string &endDateBefore);
 	std::string getSortOrder() const;
 	void setSortOrder(const std::string &sortOrder);
+	std::string getCategories() const;
+	void setCategories(const std::string &categories);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
 	std::string getStartDateAfter() const;
@@ -62,6 +66,8 @@ public:
 	void setTags(std::map<std::string, std::string> tags);
 	std::string getParentExecutionId() const;
 	void setParentExecutionId(const std::string &parentExecutionId);
+	std::string getDepth() const;
+	void setDepth(const std::string &depth);
 	std::string getEndDateAfter() const;
 	void setEndDateAfter(const std::string &endDateAfter);
 	int getMaxResults() const;
@@ -78,6 +84,7 @@ public:
 private:
 	std::string executedBy_;
 	bool includeChildExecution_;
+	std::string description_;
 	std::string mode_;
 	std::string executionId_;
 	std::string resourceGroupId_;
@@ -87,11 +94,13 @@ private:
 	std::string templateName_;
 	std::string endDateBefore_;
 	std::string sortOrder_;
+	std::string categories_;
 	std::string resourceId_;
 	std::string startDateAfter_;
 	std::string startDateBefore_;
 	std::map<std::string, std::string> tags_;
 	std::string parentExecutionId_;
+	std::string depth_;
 	std::string endDateAfter_;
 	int maxResults_;
 	std::string sortField_;

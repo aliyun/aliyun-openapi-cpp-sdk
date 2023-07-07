@@ -35,6 +35,7 @@ namespace AlibabaCloud
 				struct Application
 				{
 					std::string updateDate;
+					std::string applicationType;
 					std::string description;
 					std::string resourceGroupId;
 					std::string createDate;

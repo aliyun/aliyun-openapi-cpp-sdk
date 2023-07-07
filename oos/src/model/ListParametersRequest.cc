@@ -88,6 +88,15 @@ void ListParametersRequest::setSortOrder(const std::string &sortOrder) {
   setParameter(std::string("SortOrder"), sortOrder);
 }
 
+std::string ListParametersRequest::getShareType() const {
+  return shareType_;
+}
+
+void ListParametersRequest::setShareType(const std::string &shareType) {
+  shareType_ = shareType;
+  setParameter(std::string("ShareType"), shareType);
+}
+
 std::string ListParametersRequest::getTags() const {
   return tags_;
 }

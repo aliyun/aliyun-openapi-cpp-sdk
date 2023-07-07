@@ -34,6 +34,7 @@ namespace AlibabaCloud
 			public:
 				struct PatchBaseline
 				{
+					std::string rejectedPatchesAction;
 					std::string updatedBy;
 					std::string description;
 					std::string createdBy;
@@ -44,6 +45,7 @@ namespace AlibabaCloud
 					std::string approvalRules;
 					std::string name;
 					std::string shareType;
+					std::vector<std::string> rejectedPatches;
 				};
 
 

@@ -41,11 +41,18 @@ void GenerateExecutionPolicyResult::parse(const std::string &payload)
 	setRequestId(value["RequestId"].asString());
 	if(!value["Policy"].isNull())
 		policy_ = value["Policy"].asString();
+	if(!value["MissingPolicy"].isNull())
+		missingPolicy_ = value["MissingPolicy"].asString();
 
 }
 
 std::string GenerateExecutionPolicyResult::getPolicy()const
 {
 	return policy_;
+}
+
+std::string GenerateExecutionPolicyResult::getMissingPolicy()const
+{
+	return missingPolicy_;
 }
 

@@ -44,6 +44,8 @@ public:
 	void setNextToken(const std::string &nextToken);
 	std::string getSortOrder() const;
 	void setSortOrder(const std::string &sortOrder);
+	std::string getShareType() const;
+	void setShareType(const std::string &shareType);
 	std::string getTags() const;
 	void setTags(const std::string &tags);
 	std::string getName() const;
@@ -61,6 +63,7 @@ private:
 	std::string regionId_;
 	std::string nextToken_;
 	std::string sortOrder_;
+	std::string shareType_;
 	std::string tags_;
 	std::string name_;
 	int maxResults_;

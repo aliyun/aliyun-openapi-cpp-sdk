@@ -34,12 +34,15 @@ public:
 	void setTemplateVersion(const std::string &templateVersion);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getRamRole() const;
+	void setRamRole(const std::string &ramRole);
 	std::string getTemplateName() const;
 	void setTemplateName(const std::string &templateName);
 
 private:
 	std::string templateVersion_;
 	std::string regionId_;
+	std::string ramRole_;
 	std::string templateName_;
 };
 } // namespace Model

@@ -36,8 +36,12 @@ public:
 	void setApprovalRules(const std::string &approvalRules);
 	std::string getDescription() const;
 	void setDescription(const std::string &description);
+	std::vector<std::string> getRejectedPatches() const;
+	void setRejectedPatches(const std::vector<std::string> &rejectedPatches);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getRejectedPatchesAction() const;
+	void setRejectedPatchesAction(const std::string &rejectedPatchesAction);
 	std::string getName() const;
 	void setName(const std::string &name);
 
@@ -45,7 +49,9 @@ private:
 	std::string clientToken_;
 	std::string approvalRules_;
 	std::string description_;
+	std::vector<std::string> rejectedPatches_;
 	std::string regionId_;
+	std::string rejectedPatchesAction_;
 	std::string name_;
 };
 } // namespace Model

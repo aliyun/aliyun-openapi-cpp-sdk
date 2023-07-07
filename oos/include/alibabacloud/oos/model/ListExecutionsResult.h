@@ -62,12 +62,14 @@ namespace AlibabaCloud
 					bool isParent;
 					std::string mode;
 					std::string targets;
+					std::string lastTriggerOutputs;
 					std::string waitingStatus;
 					std::string endDate;
 					std::string statusMessage;
 					std::string safetyCheck;
 					std::string outputs;
 					std::string ramRole;
+					std::string lastTriggerStatusMessage;
 					std::string counters;
 					std::string lastTriggerStatus;
 					std::string executionId;

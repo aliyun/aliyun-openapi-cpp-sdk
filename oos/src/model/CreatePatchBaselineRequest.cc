@@ -61,6 +61,17 @@ void CreatePatchBaselineRequest::setOperationSystem(const std::string &operation
   setParameter(std::string("OperationSystem"), operationSystem);
 }
 
+std::vector<CreatePatchBaselineRequest::std::string> CreatePatchBaselineRequest::getRejectedPatches() const {
+  return rejectedPatches_;
+}
+
+void CreatePatchBaselineRequest::setRejectedPatches(const std::vector<CreatePatchBaselineRequest::std::string> &rejectedPatches) {
+  rejectedPatches_ = rejectedPatches;
+  for(int dep1 = 0; dep1 != rejectedPatches.size(); dep1++) {
+    setParameter(std::string("RejectedPatches") + "." + std::to_string(dep1 + 1), rejectedPatches[dep1]);
+  }
+}
+
 std::string CreatePatchBaselineRequest::getRegionId() const {
   return regionId_;
 }
@@ -68,6 +79,15 @@ std::string CreatePatchBaselineRequest::getRegionId() const {
 void CreatePatchBaselineRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
+}
+
+std::string CreatePatchBaselineRequest::getRejectedPatchesAction() const {
+  return rejectedPatchesAction_;
+}
+
+void CreatePatchBaselineRequest::setRejectedPatchesAction(const std::string &rejectedPatchesAction) {
+  rejectedPatchesAction_ = rejectedPatchesAction;
+  setParameter(std::string("RejectedPatchesAction"), rejectedPatchesAction);
 }
 
 std::string CreatePatchBaselineRequest::getName() const {

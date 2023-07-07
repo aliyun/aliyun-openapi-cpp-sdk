@@ -79,3 +79,12 @@ void ListApplicationsRequest::setMaxResults(int maxResults) {
   setParameter(std::string("MaxResults"), std::to_string(maxResults));
 }
 
+std::string ListApplicationsRequest::getApplicationType() const {
+  return applicationType_;
+}
+
+void ListApplicationsRequest::setApplicationType(const std::string &applicationType) {
+  applicationType_ = applicationType;
+  setParameter(std::string("ApplicationType"), applicationType);
+}
+

@@ -38,8 +38,6 @@ public:
 	void setNextToken(const std::string &nextToken);
 	std::string getResourceId() const;
 	void setResourceId(const std::string &resourceId);
-	std::string getProduct() const;
-	void setProduct(const std::string &product);
 	std::string getDeployRegionId() const;
 	void setDeployRegionId(const std::string &deployRegionId);
 	std::string getResourceType() const;
@@ -54,7 +52,6 @@ private:
 	std::string regionId_;
 	std::string nextToken_;
 	std::string resourceId_;
-	std::string product_;
 	std::string deployRegionId_;
 	std::string resourceType_;
 	std::string applicationName_;

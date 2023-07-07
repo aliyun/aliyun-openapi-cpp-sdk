@@ -60,6 +60,11 @@ void CreatePatchBaselineResult::parse(const std::string &payload)
 		patchBaseline_.id = patchBaselineNode["Id"].asString();
 	if(!patchBaselineNode["ShareType"].isNull())
 		patchBaseline_.shareType = patchBaselineNode["ShareType"].asString();
+	if(!patchBaselineNode["RejectedPatchesAction"].isNull())
+		patchBaseline_.rejectedPatchesAction = patchBaselineNode["RejectedPatchesAction"].asString();
+		auto allRejectedPatches = patchBaselineNode["RejectedPatches"]["RejectedPatches"];
+		for (auto value : allRejectedPatches)
+			patchBaseline_.rejectedPatches.push_back(value.asString());
 
 }
 

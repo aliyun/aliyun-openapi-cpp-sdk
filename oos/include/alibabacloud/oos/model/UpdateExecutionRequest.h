@@ -32,6 +32,8 @@ public:
 	~UpdateExecutionRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getDescription() const;
+	void setDescription(const std::string &description);
 	std::string getExecutionId() const;
 	void setExecutionId(const std::string &executionId);
 	std::string getRegionId() const;
@@ -41,6 +43,7 @@ public:
 
 private:
 	std::string clientToken_;
+	std::string description_;
 	std::string executionId_;
 	std::string regionId_;
 	std::string parameters_;

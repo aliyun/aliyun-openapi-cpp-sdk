@@ -67,6 +67,8 @@ void GetParametersByPathResult::parse(const std::string &payload)
 			parametersObject.id = valueParametersParameter["Id"].asString();
 		if(!valueParametersParameter["ShareType"].isNull())
 			parametersObject.shareType = valueParametersParameter["ShareType"].asString();
+		if(!valueParametersParameter["Tags"].isNull())
+			parametersObject.tags = valueParametersParameter["Tags"].asString();
 		parameters_.push_back(parametersObject);
 	}
 	if(!value["NextToken"].isNull())

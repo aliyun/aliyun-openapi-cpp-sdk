@@ -103,6 +103,10 @@ void ListExecutionsResult::parse(const std::string &payload)
 			executionsObject.ramRole = valueExecutionsExecution["RamRole"].asString();
 		if(!valueExecutionsExecution["ResourceStatus"].isNull())
 			executionsObject.resourceStatus = valueExecutionsExecution["ResourceStatus"].asString();
+		if(!valueExecutionsExecution["LastTriggerStatusMessage"].isNull())
+			executionsObject.lastTriggerStatusMessage = valueExecutionsExecution["LastTriggerStatusMessage"].asString();
+		if(!valueExecutionsExecution["LastTriggerOutputs"].isNull())
+			executionsObject.lastTriggerOutputs = valueExecutionsExecution["LastTriggerOutputs"].asString();
 		auto allCurrentTasksNode = valueExecutionsExecution["CurrentTasks"]["CurrentTask"];
 		for (auto valueExecutionsExecutionCurrentTasksCurrentTask : allCurrentTasksNode)
 		{

@@ -38,8 +38,12 @@ public:
 	void setDescription(const std::string &description);
 	std::string getOperationSystem() const;
 	void setOperationSystem(const std::string &operationSystem);
+	std::vector<std::string> getRejectedPatches() const;
+	void setRejectedPatches(const std::vector<std::string> &rejectedPatches);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	std::string getRejectedPatchesAction() const;
+	void setRejectedPatchesAction(const std::string &rejectedPatchesAction);
 	std::string getName() const;
 	void setName(const std::string &name);
 
@@ -48,7 +52,9 @@ private:
 	std::string approvalRules_;
 	std::string description_;
 	std::string operationSystem_;
+	std::vector<std::string> rejectedPatches_;
 	std::string regionId_;
+	std::string rejectedPatchesAction_;
 	std::string name_;
 };
 } // namespace Model

@@ -34,6 +34,15 @@ void UpdateExecutionRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string UpdateExecutionRequest::getDescription() const {
+  return description_;
+}
+
+void UpdateExecutionRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
+}
+
 std::string UpdateExecutionRequest::getExecutionId() const {
   return executionId_;
 }

@@ -38,11 +38,13 @@ namespace AlibabaCloud
 				explicit GenerateExecutionPolicyResult(const std::string &payload);
 				~GenerateExecutionPolicyResult();
 				std::string getPolicy()const;
+				std::string getMissingPolicy()const;
 
 			protected:
 				void parse(const std::string &payload);
 			private:
 				std::string policy_;
+				std::string missingPolicy_;
 
 			};
 		}

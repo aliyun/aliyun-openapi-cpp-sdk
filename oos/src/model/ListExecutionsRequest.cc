@@ -43,6 +43,15 @@ void ListExecutionsRequest::setIncludeChildExecution(bool includeChildExecution)
   setParameter(std::string("IncludeChildExecution"), includeChildExecution ? "true" : "false");
 }
 
+std::string ListExecutionsRequest::getDescription() const {
+  return description_;
+}
+
+void ListExecutionsRequest::setDescription(const std::string &description) {
+  description_ = description;
+  setParameter(std::string("Description"), description);
+}
+
 std::string ListExecutionsRequest::getMode() const {
   return mode_;
 }
@@ -124,6 +133,15 @@ void ListExecutionsRequest::setSortOrder(const std::string &sortOrder) {
   setParameter(std::string("SortOrder"), sortOrder);
 }
 
+std::string ListExecutionsRequest::getCategories() const {
+  return categories_;
+}
+
+void ListExecutionsRequest::setCategories(const std::string &categories) {
+  categories_ = categories;
+  setParameter(std::string("Categories"), categories);
+}
+
 std::string ListExecutionsRequest::getResourceId() const {
   return resourceId_;
 }
@@ -167,6 +185,15 @@ std::string ListExecutionsRequest::getParentExecutionId() const {
 void ListExecutionsRequest::setParentExecutionId(const std::string &parentExecutionId) {
   parentExecutionId_ = parentExecutionId;
   setParameter(std::string("ParentExecutionId"), parentExecutionId);
+}
+
+std::string ListExecutionsRequest::getDepth() const {
+  return depth_;
+}
+
+void ListExecutionsRequest::setDepth(const std::string &depth) {
+  depth_ = depth;
+  setParameter(std::string("Depth"), depth);
 }
 
 std::string ListExecutionsRequest::getEndDateAfter() const {
