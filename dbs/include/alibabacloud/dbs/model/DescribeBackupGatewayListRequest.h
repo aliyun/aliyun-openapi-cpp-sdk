@@ -30,25 +30,25 @@ class ALIBABACLOUD_DBS_EXPORT DescribeBackupGatewayListRequest : public RpcServi
 public:
 	DescribeBackupGatewayListRequest();
 	~DescribeBackupGatewayListRequest();
-	std::string getIdentifier() const;
-	void setIdentifier(const std::string &identifier);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getIdentifier() const;
+	void setIdentifier(const std::string &identifier);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
 	std::string getRegion() const;
 	void setRegion(const std::string &region);
 
 private:
-	std::string identifier_;
 	std::string clientToken_;
 	int pageNum_;
-	std::string ownerId_;
 	int pageSize_;
+	std::string identifier_;
+	std::string ownerId_;
 	std::string region_;
 };
 } // namespace Model

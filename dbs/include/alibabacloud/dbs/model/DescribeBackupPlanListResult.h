@@ -38,6 +38,7 @@ namespace AlibabaCloud
 					std::string backupPlanName;
 					std::string backupObjects;
 					std::string resourceGroupId;
+					std::string databaseType;
 					std::string backupSetDownloadDir;
 					std::string sourceEndpointInstanceID;
 					std::string crossAliyunId;

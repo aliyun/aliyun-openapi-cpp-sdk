@@ -43,15 +43,6 @@ void DescribeBackupPlanBillingRequest::setBackupPlanId(const std::string &backup
   setParameter(std::string("BackupPlanId"), backupPlanId);
 }
 
-std::string DescribeBackupPlanBillingRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeBackupPlanBillingRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
 bool DescribeBackupPlanBillingRequest::getShowStorageType() const {
   return showStorageType_;
 }
@@ -59,5 +50,14 @@ bool DescribeBackupPlanBillingRequest::getShowStorageType() const {
 void DescribeBackupPlanBillingRequest::setShowStorageType(bool showStorageType) {
   showStorageType_ = showStorageType;
   setParameter(std::string("ShowStorageType"), showStorageType ? "true" : "false");
+}
+
+std::string DescribeBackupPlanBillingRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeBackupPlanBillingRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

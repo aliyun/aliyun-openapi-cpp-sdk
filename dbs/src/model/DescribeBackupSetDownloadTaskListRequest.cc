@@ -34,15 +34,6 @@ void DescribeBackupSetDownloadTaskListRequest::setClientToken(const std::string 
   setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string DescribeBackupSetDownloadTaskListRequest::getBackupSetDownloadTaskId() const {
-  return backupSetDownloadTaskId_;
-}
-
-void DescribeBackupSetDownloadTaskListRequest::setBackupSetDownloadTaskId(const std::string &backupSetDownloadTaskId) {
-  backupSetDownloadTaskId_ = backupSetDownloadTaskId;
-  setParameter(std::string("BackupSetDownloadTaskId"), backupSetDownloadTaskId);
-}
-
 std::string DescribeBackupSetDownloadTaskListRequest::getBackupPlanId() const {
   return backupPlanId_;
 }
@@ -61,15 +52,6 @@ void DescribeBackupSetDownloadTaskListRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-std::string DescribeBackupSetDownloadTaskListRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeBackupSetDownloadTaskListRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
 int DescribeBackupSetDownloadTaskListRequest::getPageSize() const {
   return pageSize_;
 }
@@ -77,5 +59,23 @@ int DescribeBackupSetDownloadTaskListRequest::getPageSize() const {
 void DescribeBackupSetDownloadTaskListRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string DescribeBackupSetDownloadTaskListRequest::getBackupSetDownloadTaskId() const {
+  return backupSetDownloadTaskId_;
+}
+
+void DescribeBackupSetDownloadTaskListRequest::setBackupSetDownloadTaskId(const std::string &backupSetDownloadTaskId) {
+  backupSetDownloadTaskId_ = backupSetDownloadTaskId;
+  setParameter(std::string("BackupSetDownloadTaskId"), backupSetDownloadTaskId);
+}
+
+std::string DescribeBackupSetDownloadTaskListRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeBackupSetDownloadTaskListRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

@@ -34,6 +34,15 @@ void CreateIncrementBackupSetDownloadRequest::setClientToken(const std::string &
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string CreateIncrementBackupSetDownloadRequest::getBackupSetDataFormat() const {
+  return backupSetDataFormat_;
+}
+
+void CreateIncrementBackupSetDownloadRequest::setBackupSetDataFormat(const std::string &backupSetDataFormat) {
+  backupSetDataFormat_ = backupSetDataFormat;
+  setParameter(std::string("BackupSetDataFormat"), backupSetDataFormat);
+}
+
 std::string CreateIncrementBackupSetDownloadRequest::getBackupSetName() const {
   return backupSetName_;
 }
@@ -59,14 +68,5 @@ std::string CreateIncrementBackupSetDownloadRequest::getOwnerId() const {
 void CreateIncrementBackupSetDownloadRequest::setOwnerId(const std::string &ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), ownerId);
-}
-
-std::string CreateIncrementBackupSetDownloadRequest::getBackupSetDataFormat() const {
-  return backupSetDataFormat_;
-}
-
-void CreateIncrementBackupSetDownloadRequest::setBackupSetDataFormat(const std::string &backupSetDataFormat) {
-  backupSetDataFormat_ = backupSetDataFormat;
-  setParameter(std::string("BackupSetDataFormat"), backupSetDataFormat);
 }
 

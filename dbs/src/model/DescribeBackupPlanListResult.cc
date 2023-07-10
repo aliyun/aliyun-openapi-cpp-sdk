@@ -115,6 +115,8 @@ void DescribeBackupPlanListResult::parse(const std::string &payload)
 			itemsObject.enableBackupLog = valueItemsBackupPlanDetail["EnableBackupLog"].asString() == "true";
 		if(!valueItemsBackupPlanDetail["ResourceGroupId"].isNull())
 			itemsObject.resourceGroupId = valueItemsBackupPlanDetail["ResourceGroupId"].asString();
+		if(!valueItemsBackupPlanDetail["DatabaseType"].isNull())
+			itemsObject.databaseType = valueItemsBackupPlanDetail["DatabaseType"].asString();
 		items_.push_back(itemsObject);
 	}
 	if(!value["HttpStatusCode"].isNull())

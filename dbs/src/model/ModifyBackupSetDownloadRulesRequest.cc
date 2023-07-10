@@ -70,6 +70,24 @@ void ModifyBackupSetDownloadRulesRequest::setBackupPlanId(const std::string &bac
   setParameter(std::string("BackupPlanId"), backupPlanId);
 }
 
+std::string ModifyBackupSetDownloadRulesRequest::getBackupSetDownloadTargetTypeLocation() const {
+  return backupSetDownloadTargetTypeLocation_;
+}
+
+void ModifyBackupSetDownloadRulesRequest::setBackupSetDownloadTargetTypeLocation(const std::string &backupSetDownloadTargetTypeLocation) {
+  backupSetDownloadTargetTypeLocation_ = backupSetDownloadTargetTypeLocation;
+  setParameter(std::string("BackupSetDownloadTargetTypeLocation"), backupSetDownloadTargetTypeLocation);
+}
+
+std::string ModifyBackupSetDownloadRulesRequest::getBackupSetDownloadDir() const {
+  return backupSetDownloadDir_;
+}
+
+void ModifyBackupSetDownloadRulesRequest::setBackupSetDownloadDir(const std::string &backupSetDownloadDir) {
+  backupSetDownloadDir_ = backupSetDownloadDir;
+  setParameter(std::string("BackupSetDownloadDir"), backupSetDownloadDir);
+}
+
 std::string ModifyBackupSetDownloadRulesRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -95,23 +113,5 @@ std::string ModifyBackupSetDownloadRulesRequest::getIncrementDataFormat() const 
 void ModifyBackupSetDownloadRulesRequest::setIncrementDataFormat(const std::string &incrementDataFormat) {
   incrementDataFormat_ = incrementDataFormat;
   setParameter(std::string("IncrementDataFormat"), incrementDataFormat);
-}
-
-std::string ModifyBackupSetDownloadRulesRequest::getBackupSetDownloadTargetTypeLocation() const {
-  return backupSetDownloadTargetTypeLocation_;
-}
-
-void ModifyBackupSetDownloadRulesRequest::setBackupSetDownloadTargetTypeLocation(const std::string &backupSetDownloadTargetTypeLocation) {
-  backupSetDownloadTargetTypeLocation_ = backupSetDownloadTargetTypeLocation;
-  setParameter(std::string("BackupSetDownloadTargetTypeLocation"), backupSetDownloadTargetTypeLocation);
-}
-
-std::string ModifyBackupSetDownloadRulesRequest::getBackupSetDownloadDir() const {
-  return backupSetDownloadDir_;
-}
-
-void ModifyBackupSetDownloadRulesRequest::setBackupSetDownloadDir(const std::string &backupSetDownloadDir) {
-  backupSetDownloadDir_ = backupSetDownloadDir;
-  setParameter(std::string("BackupSetDownloadDir"), backupSetDownloadDir);
 }
 

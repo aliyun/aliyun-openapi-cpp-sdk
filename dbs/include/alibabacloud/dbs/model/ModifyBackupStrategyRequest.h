@@ -30,28 +30,28 @@ class ALIBABACLOUD_DBS_EXPORT ModifyBackupStrategyRequest : public RpcServiceReq
 public:
 	ModifyBackupStrategyRequest();
 	~ModifyBackupStrategyRequest();
-	int getBackupLogIntervalSeconds() const;
-	void setBackupLogIntervalSeconds(int backupLogIntervalSeconds);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getBackupPlanId() const;
 	void setBackupPlanId(const std::string &backupPlanId);
+	std::string getBackupStartTime() const;
+	void setBackupStartTime(const std::string &backupStartTime);
+	int getBackupLogIntervalSeconds() const;
+	void setBackupLogIntervalSeconds(int backupLogIntervalSeconds);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
 	std::string getBackupPeriod() const;
 	void setBackupPeriod(const std::string &backupPeriod);
-	std::string getBackupStartTime() const;
-	void setBackupStartTime(const std::string &backupStartTime);
 	std::string getBackupStrategyType() const;
 	void setBackupStrategyType(const std::string &backupStrategyType);
 
 private:
-	int backupLogIntervalSeconds_;
 	std::string clientToken_;
 	std::string backupPlanId_;
+	std::string backupStartTime_;
+	int backupLogIntervalSeconds_;
 	std::string ownerId_;
 	std::string backupPeriod_;
-	std::string backupStartTime_;
 	std::string backupStrategyType_;
 };
 } // namespace Model

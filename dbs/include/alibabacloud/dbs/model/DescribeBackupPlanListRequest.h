@@ -36,16 +36,16 @@ public:
 	void setBackupPlanId(const std::string &backupPlanId);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
 	std::string getBackupPlanStatus() const;
 	void setBackupPlanStatus(const std::string &backupPlanStatus);
-	std::string getBackupPlanName() const;
-	void setBackupPlanName(const std::string &backupPlanName);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
+	std::string getBackupPlanName() const;
+	void setBackupPlanName(const std::string &backupPlanName);
 	std::string getRegion() const;
 	void setRegion(const std::string &region);
 
@@ -53,11 +53,11 @@ private:
 	std::string clientToken_;
 	std::string backupPlanId_;
 	int pageNum_;
-	std::string ownerId_;
 	std::string resourceGroupId_;
 	std::string backupPlanStatus_;
-	std::string backupPlanName_;
 	int pageSize_;
+	std::string ownerId_;
+	std::string backupPlanName_;
 	std::string region_;
 };
 } // namespace Model

@@ -52,15 +52,6 @@ void GetDBListFromAgentRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string GetDBListFromAgentRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void GetDBListFromAgentRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
 long GetDBListFromAgentRequest::getTaskId() const {
   return taskId_;
 }
@@ -68,5 +59,14 @@ long GetDBListFromAgentRequest::getTaskId() const {
 void GetDBListFromAgentRequest::setTaskId(long taskId) {
   taskId_ = taskId;
   setParameter(std::string("TaskId"), std::to_string(taskId));
+}
+
+std::string GetDBListFromAgentRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void GetDBListFromAgentRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

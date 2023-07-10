@@ -43,15 +43,6 @@ void UpgradeBackupPlanRequest::setBackupPlanId(const std::string &backupPlanId) 
   setParameter(std::string("BackupPlanId"), backupPlanId);
 }
 
-std::string UpgradeBackupPlanRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void UpgradeBackupPlanRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
 std::string UpgradeBackupPlanRequest::getInstanceClass() const {
   return instanceClass_;
 }
@@ -59,5 +50,14 @@ std::string UpgradeBackupPlanRequest::getInstanceClass() const {
 void UpgradeBackupPlanRequest::setInstanceClass(const std::string &instanceClass) {
   instanceClass_ = instanceClass;
   setParameter(std::string("InstanceClass"), instanceClass);
+}
+
+std::string UpgradeBackupPlanRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void UpgradeBackupPlanRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

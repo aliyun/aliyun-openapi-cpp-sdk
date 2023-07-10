@@ -43,15 +43,6 @@ void DescribeJobErrorCodeRequest::setLanguage(const std::string &language) {
   setParameter(std::string("Language"), language);
 }
 
-std::string DescribeJobErrorCodeRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeJobErrorCodeRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
 std::string DescribeJobErrorCodeRequest::getTaskId() const {
   return taskId_;
 }
@@ -59,5 +50,14 @@ std::string DescribeJobErrorCodeRequest::getTaskId() const {
 void DescribeJobErrorCodeRequest::setTaskId(const std::string &taskId) {
   taskId_ = taskId;
   setParameter(std::string("TaskId"), taskId);
+}
+
+std::string DescribeJobErrorCodeRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeJobErrorCodeRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

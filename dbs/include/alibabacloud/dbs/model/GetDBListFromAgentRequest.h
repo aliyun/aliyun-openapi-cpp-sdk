@@ -36,17 +36,17 @@ public:
 	void setBackupGatewayId(long backupGatewayId);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	long getTaskId() const;
 	void setTaskId(long taskId);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
 
 private:
 	std::string sourceEndpointRegion_;
 	long backupGatewayId_;
 	std::string clientToken_;
-	std::string ownerId_;
 	long taskId_;
+	std::string ownerId_;
 };
 } // namespace Model
 } // namespace Dbs

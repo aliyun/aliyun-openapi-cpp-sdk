@@ -40,16 +40,16 @@ public:
 	void setBackupSetDownloadTargetType(const std::string &backupSetDownloadTargetType);
 	std::string getBackupPlanId() const;
 	void setBackupPlanId(const std::string &backupPlanId);
+	std::string getBackupSetDownloadTargetTypeLocation() const;
+	void setBackupSetDownloadTargetTypeLocation(const std::string &backupSetDownloadTargetTypeLocation);
+	std::string getBackupSetDownloadDir() const;
+	void setBackupSetDownloadDir(const std::string &backupSetDownloadDir);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
 	bool getOpenAutoDownload() const;
 	void setOpenAutoDownload(bool openAutoDownload);
 	std::string getIncrementDataFormat() const;
 	void setIncrementDataFormat(const std::string &incrementDataFormat);
-	std::string getBackupSetDownloadTargetTypeLocation() const;
-	void setBackupSetDownloadTargetTypeLocation(const std::string &backupSetDownloadTargetTypeLocation);
-	std::string getBackupSetDownloadDir() const;
-	void setBackupSetDownloadDir(const std::string &backupSetDownloadDir);
 
 private:
 	std::string fullDataFormat_;
@@ -57,11 +57,11 @@ private:
 	std::string clientToken_;
 	std::string backupSetDownloadTargetType_;
 	std::string backupPlanId_;
+	std::string backupSetDownloadTargetTypeLocation_;
+	std::string backupSetDownloadDir_;
 	std::string ownerId_;
 	bool openAutoDownload_;
 	std::string incrementDataFormat_;
-	std::string backupSetDownloadTargetTypeLocation_;
-	std::string backupSetDownloadDir_;
 };
 } // namespace Model
 } // namespace Dbs

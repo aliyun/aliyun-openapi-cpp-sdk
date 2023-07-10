@@ -68,8 +68,6 @@ void DescribeBackupPlanBillingResult::parse(const std::string &payload)
 		item_.buyChargeType = itemNode["BuyChargeType"].asString();
 	if(!itemNode["UsedIncrementBytes"].isNull())
 		item_.usedIncrementBytes = std::stol(itemNode["UsedIncrementBytes"].asString());
-	if(!itemNode["ResourceGroupId"].isNull())
-		item_.resourceGroupId = itemNode["ResourceGroupId"].asString();
 	if(!value["HttpStatusCode"].isNull())
 		httpStatusCode_ = std::stoi(value["HttpStatusCode"].asString());
 	if(!value["ErrCode"].isNull())

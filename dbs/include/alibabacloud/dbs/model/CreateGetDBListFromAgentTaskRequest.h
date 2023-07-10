@@ -38,21 +38,21 @@ public:
 	void setDatabaseType(const std::string &databaseType);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getSourceEndpointIP() const;
+	void setSourceEndpointIP(const std::string &sourceEndpointIP);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
 	int getSourceEndpointPort() const;
 	void setSourceEndpointPort(int sourceEndpointPort);
-	std::string getSourceEndpointIP() const;
-	void setSourceEndpointIP(const std::string &sourceEndpointIP);
 
 private:
 	std::string sourceEndpointRegion_;
 	long backupGatewayId_;
 	std::string databaseType_;
 	std::string clientToken_;
+	std::string sourceEndpointIP_;
 	std::string ownerId_;
 	int sourceEndpointPort_;
-	std::string sourceEndpointIP_;
 };
 } // namespace Model
 } // namespace Dbs

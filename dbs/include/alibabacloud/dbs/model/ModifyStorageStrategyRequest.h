@@ -30,26 +30,26 @@ class ALIBABACLOUD_DBS_EXPORT ModifyStorageStrategyRequest : public RpcServiceRe
 public:
 	ModifyStorageStrategyRequest();
 	~ModifyStorageStrategyRequest();
-	int getDuplicationArchivePeriod() const;
-	void setDuplicationArchivePeriod(int duplicationArchivePeriod);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getBackupPlanId() const;
 	void setBackupPlanId(const std::string &backupPlanId);
+	int getDuplicationInfrequentAccessPeriod() const;
+	void setDuplicationInfrequentAccessPeriod(int duplicationInfrequentAccessPeriod);
+	int getDuplicationArchivePeriod() const;
+	void setDuplicationArchivePeriod(int duplicationArchivePeriod);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
 	int getBackupRetentionPeriod() const;
 	void setBackupRetentionPeriod(int backupRetentionPeriod);
-	int getDuplicationInfrequentAccessPeriod() const;
-	void setDuplicationInfrequentAccessPeriod(int duplicationInfrequentAccessPeriod);
 
 private:
-	int duplicationArchivePeriod_;
 	std::string clientToken_;
 	std::string backupPlanId_;
+	int duplicationInfrequentAccessPeriod_;
+	int duplicationArchivePeriod_;
 	std::string ownerId_;
 	int backupRetentionPeriod_;
-	int duplicationInfrequentAccessPeriod_;
 };
 } // namespace Model
 } // namespace Dbs

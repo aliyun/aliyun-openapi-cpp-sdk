@@ -25,15 +25,6 @@ ModifyStorageStrategyRequest::ModifyStorageStrategyRequest()
 
 ModifyStorageStrategyRequest::~ModifyStorageStrategyRequest() {}
 
-int ModifyStorageStrategyRequest::getDuplicationArchivePeriod() const {
-  return duplicationArchivePeriod_;
-}
-
-void ModifyStorageStrategyRequest::setDuplicationArchivePeriod(int duplicationArchivePeriod) {
-  duplicationArchivePeriod_ = duplicationArchivePeriod;
-  setParameter(std::string("DuplicationArchivePeriod"), std::to_string(duplicationArchivePeriod));
-}
-
 std::string ModifyStorageStrategyRequest::getClientToken() const {
   return clientToken_;
 }
@@ -52,6 +43,24 @@ void ModifyStorageStrategyRequest::setBackupPlanId(const std::string &backupPlan
   setParameter(std::string("BackupPlanId"), backupPlanId);
 }
 
+int ModifyStorageStrategyRequest::getDuplicationInfrequentAccessPeriod() const {
+  return duplicationInfrequentAccessPeriod_;
+}
+
+void ModifyStorageStrategyRequest::setDuplicationInfrequentAccessPeriod(int duplicationInfrequentAccessPeriod) {
+  duplicationInfrequentAccessPeriod_ = duplicationInfrequentAccessPeriod;
+  setParameter(std::string("DuplicationInfrequentAccessPeriod"), std::to_string(duplicationInfrequentAccessPeriod));
+}
+
+int ModifyStorageStrategyRequest::getDuplicationArchivePeriod() const {
+  return duplicationArchivePeriod_;
+}
+
+void ModifyStorageStrategyRequest::setDuplicationArchivePeriod(int duplicationArchivePeriod) {
+  duplicationArchivePeriod_ = duplicationArchivePeriod;
+  setParameter(std::string("DuplicationArchivePeriod"), std::to_string(duplicationArchivePeriod));
+}
+
 std::string ModifyStorageStrategyRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -68,14 +77,5 @@ int ModifyStorageStrategyRequest::getBackupRetentionPeriod() const {
 void ModifyStorageStrategyRequest::setBackupRetentionPeriod(int backupRetentionPeriod) {
   backupRetentionPeriod_ = backupRetentionPeriod;
   setParameter(std::string("BackupRetentionPeriod"), std::to_string(backupRetentionPeriod));
-}
-
-int ModifyStorageStrategyRequest::getDuplicationInfrequentAccessPeriod() const {
-  return duplicationInfrequentAccessPeriod_;
-}
-
-void ModifyStorageStrategyRequest::setDuplicationInfrequentAccessPeriod(int duplicationInfrequentAccessPeriod) {
-  duplicationInfrequentAccessPeriod_ = duplicationInfrequentAccessPeriod;
-  setParameter(std::string("DuplicationInfrequentAccessPeriod"), std::to_string(duplicationInfrequentAccessPeriod));
 }
 

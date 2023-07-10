@@ -34,16 +34,16 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getLanguage() const;
 	void setLanguage(const std::string &language);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	std::string getTaskId() const;
 	void setTaskId(const std::string &taskId);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
 
 private:
 	std::string clientToken_;
 	std::string language_;
-	std::string ownerId_;
 	std::string taskId_;
+	std::string ownerId_;
 };
 } // namespace Model
 } // namespace Dbs

@@ -34,15 +34,6 @@ void DescribeRestoreRangeInfoRequest::setBeginTimestampForRestore(long beginTime
   setParameter(std::string("BeginTimestampForRestore"), std::to_string(beginTimestampForRestore));
 }
 
-long DescribeRestoreRangeInfoRequest::getEndTimestampForRestore() const {
-  return endTimestampForRestore_;
-}
-
-void DescribeRestoreRangeInfoRequest::setEndTimestampForRestore(long endTimestampForRestore) {
-  endTimestampForRestore_ = endTimestampForRestore;
-  setParameter(std::string("EndTimestampForRestore"), std::to_string(endTimestampForRestore));
-}
-
 std::string DescribeRestoreRangeInfoRequest::getClientToken() const {
   return clientToken_;
 }
@@ -61,15 +52,6 @@ void DescribeRestoreRangeInfoRequest::setBackupPlanId(const std::string &backupP
   setParameter(std::string("BackupPlanId"), backupPlanId);
 }
 
-std::string DescribeRestoreRangeInfoRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeRestoreRangeInfoRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
 bool DescribeRestoreRangeInfoRequest::getRecentlyRestore() const {
   return recentlyRestore_;
 }
@@ -77,5 +59,23 @@ bool DescribeRestoreRangeInfoRequest::getRecentlyRestore() const {
 void DescribeRestoreRangeInfoRequest::setRecentlyRestore(bool recentlyRestore) {
   recentlyRestore_ = recentlyRestore;
   setParameter(std::string("RecentlyRestore"), recentlyRestore ? "true" : "false");
+}
+
+long DescribeRestoreRangeInfoRequest::getEndTimestampForRestore() const {
+  return endTimestampForRestore_;
+}
+
+void DescribeRestoreRangeInfoRequest::setEndTimestampForRestore(long endTimestampForRestore) {
+  endTimestampForRestore_ = endTimestampForRestore;
+  setParameter(std::string("EndTimestampForRestore"), std::to_string(endTimestampForRestore));
+}
+
+std::string DescribeRestoreRangeInfoRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeRestoreRangeInfoRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

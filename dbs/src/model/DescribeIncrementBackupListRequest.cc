@@ -52,15 +52,6 @@ void DescribeIncrementBackupListRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-std::string DescribeIncrementBackupListRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeIncrementBackupListRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
 long DescribeIncrementBackupListRequest::getStartTimestamp() const {
   return startTimestamp_;
 }
@@ -95,5 +86,14 @@ int DescribeIncrementBackupListRequest::getPageSize() const {
 void DescribeIncrementBackupListRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string DescribeIncrementBackupListRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeIncrementBackupListRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

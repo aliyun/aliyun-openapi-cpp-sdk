@@ -52,15 +52,6 @@ void DescribeRestoreTaskListRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-std::string DescribeRestoreTaskListRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeRestoreTaskListRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
 long DescribeRestoreTaskListRequest::getStartTimestamp() const {
   return startTimestamp_;
 }
@@ -95,5 +86,14 @@ int DescribeRestoreTaskListRequest::getPageSize() const {
 void DescribeRestoreTaskListRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string DescribeRestoreTaskListRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeRestoreTaskListRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

@@ -25,15 +25,6 @@ ConfigureBackupPlanRequest::ConfigureBackupPlanRequest()
 
 ConfigureBackupPlanRequest::~ConfigureBackupPlanRequest() {}
 
-std::string ConfigureBackupPlanRequest::getSourceEndpointRegion() const {
-  return sourceEndpointRegion_;
-}
-
-void ConfigureBackupPlanRequest::setSourceEndpointRegion(const std::string &sourceEndpointRegion) {
-  sourceEndpointRegion_ = sourceEndpointRegion;
-  setParameter(std::string("SourceEndpointRegion"), sourceEndpointRegion);
-}
-
 long ConfigureBackupPlanRequest::getBackupGatewayId() const {
   return backupGatewayId_;
 }
@@ -43,15 +34,6 @@ void ConfigureBackupPlanRequest::setBackupGatewayId(long backupGatewayId) {
   setParameter(std::string("BackupGatewayId"), std::to_string(backupGatewayId));
 }
 
-std::string ConfigureBackupPlanRequest::getSourceEndpointInstanceID() const {
-  return sourceEndpointInstanceID_;
-}
-
-void ConfigureBackupPlanRequest::setSourceEndpointInstanceID(const std::string &sourceEndpointInstanceID) {
-  sourceEndpointInstanceID_ = sourceEndpointInstanceID;
-  setParameter(std::string("SourceEndpointInstanceID"), sourceEndpointInstanceID);
-}
-
 std::string ConfigureBackupPlanRequest::getSourceEndpointUserName() const {
   return sourceEndpointUserName_;
 }
@@ -59,42 +41,6 @@ std::string ConfigureBackupPlanRequest::getSourceEndpointUserName() const {
 void ConfigureBackupPlanRequest::setSourceEndpointUserName(const std::string &sourceEndpointUserName) {
   sourceEndpointUserName_ = sourceEndpointUserName;
   setParameter(std::string("SourceEndpointUserName"), sourceEndpointUserName);
-}
-
-std::string ConfigureBackupPlanRequest::getClientToken() const {
-  return clientToken_;
-}
-
-void ConfigureBackupPlanRequest::setClientToken(const std::string &clientToken) {
-  clientToken_ = clientToken;
-  setParameter(std::string("ClientToken"), clientToken);
-}
-
-std::string ConfigureBackupPlanRequest::getBackupPlanId() const {
-  return backupPlanId_;
-}
-
-void ConfigureBackupPlanRequest::setBackupPlanId(const std::string &backupPlanId) {
-  backupPlanId_ = backupPlanId;
-  setParameter(std::string("BackupPlanId"), backupPlanId);
-}
-
-std::string ConfigureBackupPlanRequest::getSourceEndpointDatabaseName() const {
-  return sourceEndpointDatabaseName_;
-}
-
-void ConfigureBackupPlanRequest::setSourceEndpointDatabaseName(const std::string &sourceEndpointDatabaseName) {
-  sourceEndpointDatabaseName_ = sourceEndpointDatabaseName;
-  setParameter(std::string("SourceEndpointDatabaseName"), sourceEndpointDatabaseName);
-}
-
-int ConfigureBackupPlanRequest::getDuplicationInfrequentAccessPeriod() const {
-  return duplicationInfrequentAccessPeriod_;
-}
-
-void ConfigureBackupPlanRequest::setDuplicationInfrequentAccessPeriod(int duplicationInfrequentAccessPeriod) {
-  duplicationInfrequentAccessPeriod_ = duplicationInfrequentAccessPeriod;
-  setParameter(std::string("DuplicationInfrequentAccessPeriod"), std::to_string(duplicationInfrequentAccessPeriod));
 }
 
 std::string ConfigureBackupPlanRequest::getResourceGroupId() const {
@@ -133,15 +79,6 @@ void ConfigureBackupPlanRequest::setCrossRoleName(const std::string &crossRoleNa
   setParameter(std::string("CrossRoleName"), crossRoleName);
 }
 
-bool ConfigureBackupPlanRequest::getEnableBackupLog() const {
-  return enableBackupLog_;
-}
-
-void ConfigureBackupPlanRequest::setEnableBackupLog(bool enableBackupLog) {
-  enableBackupLog_ = enableBackupLog;
-  setParameter(std::string("EnableBackupLog"), enableBackupLog ? "true" : "false");
-}
-
 std::string ConfigureBackupPlanRequest::getBackupStorageType() const {
   return backupStorageType_;
 }
@@ -169,15 +106,6 @@ void ConfigureBackupPlanRequest::setBackupLogIntervalSeconds(int backupLogInterv
   setParameter(std::string("BackupLogIntervalSeconds"), std::to_string(backupLogIntervalSeconds));
 }
 
-std::string ConfigureBackupPlanRequest::getCrossAliyunId() const {
-  return crossAliyunId_;
-}
-
-void ConfigureBackupPlanRequest::setCrossAliyunId(const std::string &crossAliyunId) {
-  crossAliyunId_ = crossAliyunId;
-  setParameter(std::string("CrossAliyunId"), crossAliyunId);
-}
-
 bool ConfigureBackupPlanRequest::getAutoStartBackup() const {
   return autoStartBackup_;
 }
@@ -196,24 +124,6 @@ void ConfigureBackupPlanRequest::setSourceEndpointPassword(const std::string &so
   setParameter(std::string("SourceEndpointPassword"), sourceEndpointPassword);
 }
 
-std::string ConfigureBackupPlanRequest::getBackupObjects() const {
-  return backupObjects_;
-}
-
-void ConfigureBackupPlanRequest::setBackupObjects(const std::string &backupObjects) {
-  backupObjects_ = backupObjects;
-  setParameter(std::string("BackupObjects"), backupObjects);
-}
-
-long ConfigureBackupPlanRequest::getBackupRateLimit() const {
-  return backupRateLimit_;
-}
-
-void ConfigureBackupPlanRequest::setBackupRateLimit(long backupRateLimit) {
-  backupRateLimit_ = backupRateLimit;
-  setParameter(std::string("BackupRateLimit"), std::to_string(backupRateLimit));
-}
-
 std::string ConfigureBackupPlanRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -221,15 +131,6 @@ std::string ConfigureBackupPlanRequest::getOwnerId() const {
 void ConfigureBackupPlanRequest::setOwnerId(const std::string &ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), ownerId);
-}
-
-int ConfigureBackupPlanRequest::getSourceEndpointPort() const {
-  return sourceEndpointPort_;
-}
-
-void ConfigureBackupPlanRequest::setSourceEndpointPort(int sourceEndpointPort) {
-  sourceEndpointPort_ = sourceEndpointPort;
-  setParameter(std::string("SourceEndpointPort"), std::to_string(sourceEndpointPort));
 }
 
 int ConfigureBackupPlanRequest::getBackupRetentionPeriod() const {
@@ -277,15 +178,6 @@ void ConfigureBackupPlanRequest::setBackupPlanName(const std::string &backupPlan
   setParameter(std::string("BackupPlanName"), backupPlanName);
 }
 
-std::string ConfigureBackupPlanRequest::getSourceEndpointOracleSID() const {
-  return sourceEndpointOracleSID_;
-}
-
-void ConfigureBackupPlanRequest::setSourceEndpointOracleSID(const std::string &sourceEndpointOracleSID) {
-  sourceEndpointOracleSID_ = sourceEndpointOracleSID;
-  setParameter(std::string("SourceEndpointOracleSID"), sourceEndpointOracleSID);
-}
-
 std::string ConfigureBackupPlanRequest::getOSSBucketName() const {
   return oSSBucketName_;
 }
@@ -293,6 +185,114 @@ std::string ConfigureBackupPlanRequest::getOSSBucketName() const {
 void ConfigureBackupPlanRequest::setOSSBucketName(const std::string &oSSBucketName) {
   oSSBucketName_ = oSSBucketName;
   setParameter(std::string("OSSBucketName"), oSSBucketName);
+}
+
+std::string ConfigureBackupPlanRequest::getSourceEndpointRegion() const {
+  return sourceEndpointRegion_;
+}
+
+void ConfigureBackupPlanRequest::setSourceEndpointRegion(const std::string &sourceEndpointRegion) {
+  sourceEndpointRegion_ = sourceEndpointRegion;
+  setParameter(std::string("SourceEndpointRegion"), sourceEndpointRegion);
+}
+
+std::string ConfigureBackupPlanRequest::getSourceEndpointInstanceID() const {
+  return sourceEndpointInstanceID_;
+}
+
+void ConfigureBackupPlanRequest::setSourceEndpointInstanceID(const std::string &sourceEndpointInstanceID) {
+  sourceEndpointInstanceID_ = sourceEndpointInstanceID;
+  setParameter(std::string("SourceEndpointInstanceID"), sourceEndpointInstanceID);
+}
+
+std::string ConfigureBackupPlanRequest::getClientToken() const {
+  return clientToken_;
+}
+
+void ConfigureBackupPlanRequest::setClientToken(const std::string &clientToken) {
+  clientToken_ = clientToken;
+  setParameter(std::string("ClientToken"), clientToken);
+}
+
+std::string ConfigureBackupPlanRequest::getBackupPlanId() const {
+  return backupPlanId_;
+}
+
+void ConfigureBackupPlanRequest::setBackupPlanId(const std::string &backupPlanId) {
+  backupPlanId_ = backupPlanId;
+  setParameter(std::string("BackupPlanId"), backupPlanId);
+}
+
+std::string ConfigureBackupPlanRequest::getSourceEndpointDatabaseName() const {
+  return sourceEndpointDatabaseName_;
+}
+
+void ConfigureBackupPlanRequest::setSourceEndpointDatabaseName(const std::string &sourceEndpointDatabaseName) {
+  sourceEndpointDatabaseName_ = sourceEndpointDatabaseName;
+  setParameter(std::string("SourceEndpointDatabaseName"), sourceEndpointDatabaseName);
+}
+
+int ConfigureBackupPlanRequest::getDuplicationInfrequentAccessPeriod() const {
+  return duplicationInfrequentAccessPeriod_;
+}
+
+void ConfigureBackupPlanRequest::setDuplicationInfrequentAccessPeriod(int duplicationInfrequentAccessPeriod) {
+  duplicationInfrequentAccessPeriod_ = duplicationInfrequentAccessPeriod;
+  setParameter(std::string("DuplicationInfrequentAccessPeriod"), std::to_string(duplicationInfrequentAccessPeriod));
+}
+
+bool ConfigureBackupPlanRequest::getEnableBackupLog() const {
+  return enableBackupLog_;
+}
+
+void ConfigureBackupPlanRequest::setEnableBackupLog(bool enableBackupLog) {
+  enableBackupLog_ = enableBackupLog;
+  setParameter(std::string("EnableBackupLog"), enableBackupLog ? "true" : "false");
+}
+
+std::string ConfigureBackupPlanRequest::getCrossAliyunId() const {
+  return crossAliyunId_;
+}
+
+void ConfigureBackupPlanRequest::setCrossAliyunId(const std::string &crossAliyunId) {
+  crossAliyunId_ = crossAliyunId;
+  setParameter(std::string("CrossAliyunId"), crossAliyunId);
+}
+
+std::string ConfigureBackupPlanRequest::getBackupObjects() const {
+  return backupObjects_;
+}
+
+void ConfigureBackupPlanRequest::setBackupObjects(const std::string &backupObjects) {
+  backupObjects_ = backupObjects;
+  setParameter(std::string("BackupObjects"), backupObjects);
+}
+
+long ConfigureBackupPlanRequest::getBackupRateLimit() const {
+  return backupRateLimit_;
+}
+
+void ConfigureBackupPlanRequest::setBackupRateLimit(long backupRateLimit) {
+  backupRateLimit_ = backupRateLimit;
+  setParameter(std::string("BackupRateLimit"), std::to_string(backupRateLimit));
+}
+
+int ConfigureBackupPlanRequest::getSourceEndpointPort() const {
+  return sourceEndpointPort_;
+}
+
+void ConfigureBackupPlanRequest::setSourceEndpointPort(int sourceEndpointPort) {
+  sourceEndpointPort_ = sourceEndpointPort;
+  setParameter(std::string("SourceEndpointPort"), std::to_string(sourceEndpointPort));
+}
+
+std::string ConfigureBackupPlanRequest::getSourceEndpointOracleSID() const {
+  return sourceEndpointOracleSID_;
+}
+
+void ConfigureBackupPlanRequest::setSourceEndpointOracleSID(const std::string &sourceEndpointOracleSID) {
+  sourceEndpointOracleSID_ = sourceEndpointOracleSID;
+  setParameter(std::string("SourceEndpointOracleSID"), sourceEndpointOracleSID);
 }
 
 std::string ConfigureBackupPlanRequest::getBackupStrategyType() const {

@@ -61,6 +61,15 @@ void CreateGetDBListFromAgentTaskRequest::setClientToken(const std::string &clie
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string CreateGetDBListFromAgentTaskRequest::getSourceEndpointIP() const {
+  return sourceEndpointIP_;
+}
+
+void CreateGetDBListFromAgentTaskRequest::setSourceEndpointIP(const std::string &sourceEndpointIP) {
+  sourceEndpointIP_ = sourceEndpointIP;
+  setParameter(std::string("SourceEndpointIP"), sourceEndpointIP);
+}
+
 std::string CreateGetDBListFromAgentTaskRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -77,14 +86,5 @@ int CreateGetDBListFromAgentTaskRequest::getSourceEndpointPort() const {
 void CreateGetDBListFromAgentTaskRequest::setSourceEndpointPort(int sourceEndpointPort) {
   sourceEndpointPort_ = sourceEndpointPort;
   setParameter(std::string("SourceEndpointPort"), std::to_string(sourceEndpointPort));
-}
-
-std::string CreateGetDBListFromAgentTaskRequest::getSourceEndpointIP() const {
-  return sourceEndpointIP_;
-}
-
-void CreateGetDBListFromAgentTaskRequest::setSourceEndpointIP(const std::string &sourceEndpointIP) {
-  sourceEndpointIP_ = sourceEndpointIP;
-  setParameter(std::string("SourceEndpointIP"), sourceEndpointIP);
 }
 

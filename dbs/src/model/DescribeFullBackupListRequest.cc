@@ -43,15 +43,6 @@ void DescribeFullBackupListRequest::setBackupPlanId(const std::string &backupPla
   setParameter(std::string("BackupPlanId"), backupPlanId);
 }
 
-std::string DescribeFullBackupListRequest::getBackupSetId() const {
-  return backupSetId_;
-}
-
-void DescribeFullBackupListRequest::setBackupSetId(const std::string &backupSetId) {
-  backupSetId_ = backupSetId;
-  setParameter(std::string("BackupSetId"), backupSetId);
-}
-
 int DescribeFullBackupListRequest::getPageNum() const {
   return pageNum_;
 }
@@ -59,15 +50,6 @@ int DescribeFullBackupListRequest::getPageNum() const {
 void DescribeFullBackupListRequest::setPageNum(int pageNum) {
   pageNum_ = pageNum;
   setParameter(std::string("PageNum"), std::to_string(pageNum));
-}
-
-std::string DescribeFullBackupListRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeFullBackupListRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
 }
 
 long DescribeFullBackupListRequest::getStartTimestamp() const {
@@ -104,5 +86,23 @@ int DescribeFullBackupListRequest::getPageSize() const {
 void DescribeFullBackupListRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string DescribeFullBackupListRequest::getBackupSetId() const {
+  return backupSetId_;
+}
+
+void DescribeFullBackupListRequest::setBackupSetId(const std::string &backupSetId) {
+  backupSetId_ = backupSetId;
+  setParameter(std::string("BackupSetId"), backupSetId);
+}
+
+std::string DescribeFullBackupListRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeFullBackupListRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

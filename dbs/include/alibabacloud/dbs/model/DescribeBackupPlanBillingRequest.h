@@ -34,16 +34,16 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getBackupPlanId() const;
 	void setBackupPlanId(const std::string &backupPlanId);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	bool getShowStorageType() const;
 	void setShowStorageType(bool showStorageType);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
 
 private:
 	std::string clientToken_;
 	std::string backupPlanId_;
-	std::string ownerId_;
 	bool showStorageType_;
+	std::string ownerId_;
 };
 } // namespace Model
 } // namespace Dbs

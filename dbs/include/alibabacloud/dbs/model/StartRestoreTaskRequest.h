@@ -32,15 +32,15 @@ public:
 	~StartRestoreTaskRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	std::string getRestoreTaskId() const;
 	void setRestoreTaskId(const std::string &restoreTaskId);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
 
 private:
 	std::string clientToken_;
-	std::string ownerId_;
 	std::string restoreTaskId_;
+	std::string ownerId_;
 };
 } // namespace Model
 } // namespace Dbs

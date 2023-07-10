@@ -36,8 +36,6 @@ public:
 	void setBackupPlanId(const std::string &backupPlanId);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	long getStartTimestamp() const;
 	void setStartTimestamp(long startTimestamp);
 	long getEndTimestamp() const;
@@ -46,16 +44,18 @@ public:
 	void setRestoreTaskId(const std::string &restoreTaskId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
 
 private:
 	std::string clientToken_;
 	std::string backupPlanId_;
 	int pageNum_;
-	std::string ownerId_;
 	long startTimestamp_;
 	long endTimestamp_;
 	std::string restoreTaskId_;
 	int pageSize_;
+	std::string ownerId_;
 };
 } // namespace Model
 } // namespace Dbs

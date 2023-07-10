@@ -43,15 +43,6 @@ void DescribePreCheckProgressListRequest::setBackupPlanId(const std::string &bac
   setParameter(std::string("BackupPlanId"), backupPlanId);
 }
 
-std::string DescribePreCheckProgressListRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribePreCheckProgressListRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
 std::string DescribePreCheckProgressListRequest::getRestoreTaskId() const {
   return restoreTaskId_;
 }
@@ -59,5 +50,14 @@ std::string DescribePreCheckProgressListRequest::getRestoreTaskId() const {
 void DescribePreCheckProgressListRequest::setRestoreTaskId(const std::string &restoreTaskId) {
   restoreTaskId_ = restoreTaskId;
   setParameter(std::string("RestoreTaskId"), restoreTaskId);
+}
+
+std::string DescribePreCheckProgressListRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribePreCheckProgressListRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

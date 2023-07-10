@@ -32,24 +32,24 @@ public:
 	~DescribeBackupSetDownloadTaskListRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
-	std::string getBackupSetDownloadTaskId() const;
-	void setBackupSetDownloadTaskId(const std::string &backupSetDownloadTaskId);
 	std::string getBackupPlanId() const;
 	void setBackupPlanId(const std::string &backupPlanId);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getBackupSetDownloadTaskId() const;
+	void setBackupSetDownloadTaskId(const std::string &backupSetDownloadTaskId);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
 
 private:
 	std::string clientToken_;
-	std::string backupSetDownloadTaskId_;
 	std::string backupPlanId_;
 	int pageNum_;
-	std::string ownerId_;
 	int pageSize_;
+	std::string backupSetDownloadTaskId_;
+	std::string ownerId_;
 };
 } // namespace Model
 } // namespace Dbs

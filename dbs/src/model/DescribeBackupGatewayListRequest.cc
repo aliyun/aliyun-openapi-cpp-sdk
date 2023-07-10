@@ -25,15 +25,6 @@ DescribeBackupGatewayListRequest::DescribeBackupGatewayListRequest()
 
 DescribeBackupGatewayListRequest::~DescribeBackupGatewayListRequest() {}
 
-std::string DescribeBackupGatewayListRequest::getIdentifier() const {
-  return identifier_;
-}
-
-void DescribeBackupGatewayListRequest::setIdentifier(const std::string &identifier) {
-  identifier_ = identifier;
-  setParameter(std::string("Identifier"), identifier);
-}
-
 std::string DescribeBackupGatewayListRequest::getClientToken() const {
   return clientToken_;
 }
@@ -52,15 +43,6 @@ void DescribeBackupGatewayListRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-std::string DescribeBackupGatewayListRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeBackupGatewayListRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
 int DescribeBackupGatewayListRequest::getPageSize() const {
   return pageSize_;
 }
@@ -68,6 +50,24 @@ int DescribeBackupGatewayListRequest::getPageSize() const {
 void DescribeBackupGatewayListRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string DescribeBackupGatewayListRequest::getIdentifier() const {
+  return identifier_;
+}
+
+void DescribeBackupGatewayListRequest::setIdentifier(const std::string &identifier) {
+  identifier_ = identifier;
+  setParameter(std::string("Identifier"), identifier);
+}
+
+std::string DescribeBackupGatewayListRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeBackupGatewayListRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 
 std::string DescribeBackupGatewayListRequest::getRegion() const {

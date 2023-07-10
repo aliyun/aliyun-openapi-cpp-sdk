@@ -34,12 +34,8 @@ public:
 	void setClientToken(const std::string &clientToken);
 	std::string getBackupPlanId() const;
 	void setBackupPlanId(const std::string &backupPlanId);
-	std::string getBackupSetId() const;
-	void setBackupSetId(const std::string &backupSetId);
 	int getPageNum() const;
 	void setPageNum(int pageNum);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	long getStartTimestamp() const;
 	void setStartTimestamp(long startTimestamp);
 	long getEndTimestamp() const;
@@ -48,17 +44,21 @@ public:
 	void setShowStorageType(bool showStorageType);
 	int getPageSize() const;
 	void setPageSize(int pageSize);
+	std::string getBackupSetId() const;
+	void setBackupSetId(const std::string &backupSetId);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
 
 private:
 	std::string clientToken_;
 	std::string backupPlanId_;
-	std::string backupSetId_;
 	int pageNum_;
-	std::string ownerId_;
 	long startTimestamp_;
 	long endTimestamp_;
 	bool showStorageType_;
 	int pageSize_;
+	std::string backupSetId_;
+	std::string ownerId_;
 };
 } // namespace Model
 } // namespace Dbs

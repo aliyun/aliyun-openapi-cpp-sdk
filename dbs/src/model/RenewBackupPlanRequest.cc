@@ -25,15 +25,6 @@ RenewBackupPlanRequest::RenewBackupPlanRequest()
 
 RenewBackupPlanRequest::~RenewBackupPlanRequest() {}
 
-std::string RenewBackupPlanRequest::getPeriod() const {
-  return period_;
-}
-
-void RenewBackupPlanRequest::setPeriod(const std::string &period) {
-  period_ = period;
-  setParameter(std::string("Period"), period);
-}
-
 std::string RenewBackupPlanRequest::getClientToken() const {
   return clientToken_;
 }
@@ -50,6 +41,15 @@ std::string RenewBackupPlanRequest::getBackupPlanId() const {
 void RenewBackupPlanRequest::setBackupPlanId(const std::string &backupPlanId) {
   backupPlanId_ = backupPlanId;
   setParameter(std::string("BackupPlanId"), backupPlanId);
+}
+
+std::string RenewBackupPlanRequest::getPeriod() const {
+  return period_;
+}
+
+void RenewBackupPlanRequest::setPeriod(const std::string &period) {
+  period_ = period;
+  setParameter(std::string("Period"), period);
 }
 
 std::string RenewBackupPlanRequest::getOwnerId() const {

@@ -34,6 +34,15 @@ void CreateFullBackupSetDownloadRequest::setClientToken(const std::string &clien
   setParameter(std::string("ClientToken"), clientToken);
 }
 
+std::string CreateFullBackupSetDownloadRequest::getBackupSetDataFormat() const {
+  return backupSetDataFormat_;
+}
+
+void CreateFullBackupSetDownloadRequest::setBackupSetDataFormat(const std::string &backupSetDataFormat) {
+  backupSetDataFormat_ = backupSetDataFormat;
+  setParameter(std::string("BackupSetDataFormat"), backupSetDataFormat);
+}
+
 std::string CreateFullBackupSetDownloadRequest::getBackupSetId() const {
   return backupSetId_;
 }
@@ -50,14 +59,5 @@ std::string CreateFullBackupSetDownloadRequest::getOwnerId() const {
 void CreateFullBackupSetDownloadRequest::setOwnerId(const std::string &ownerId) {
   ownerId_ = ownerId;
   setParameter(std::string("OwnerId"), ownerId);
-}
-
-std::string CreateFullBackupSetDownloadRequest::getBackupSetDataFormat() const {
-  return backupSetDataFormat_;
-}
-
-void CreateFullBackupSetDownloadRequest::setBackupSetDataFormat(const std::string &backupSetDataFormat) {
-  backupSetDataFormat_ = backupSetDataFormat;
-  setParameter(std::string("BackupSetDataFormat"), backupSetDataFormat);
 }
 

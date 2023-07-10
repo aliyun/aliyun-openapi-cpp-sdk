@@ -25,15 +25,6 @@ ModifyBackupStrategyRequest::ModifyBackupStrategyRequest()
 
 ModifyBackupStrategyRequest::~ModifyBackupStrategyRequest() {}
 
-int ModifyBackupStrategyRequest::getBackupLogIntervalSeconds() const {
-  return backupLogIntervalSeconds_;
-}
-
-void ModifyBackupStrategyRequest::setBackupLogIntervalSeconds(int backupLogIntervalSeconds) {
-  backupLogIntervalSeconds_ = backupLogIntervalSeconds;
-  setParameter(std::string("BackupLogIntervalSeconds"), std::to_string(backupLogIntervalSeconds));
-}
-
 std::string ModifyBackupStrategyRequest::getClientToken() const {
   return clientToken_;
 }
@@ -52,6 +43,24 @@ void ModifyBackupStrategyRequest::setBackupPlanId(const std::string &backupPlanI
   setParameter(std::string("BackupPlanId"), backupPlanId);
 }
 
+std::string ModifyBackupStrategyRequest::getBackupStartTime() const {
+  return backupStartTime_;
+}
+
+void ModifyBackupStrategyRequest::setBackupStartTime(const std::string &backupStartTime) {
+  backupStartTime_ = backupStartTime;
+  setParameter(std::string("BackupStartTime"), backupStartTime);
+}
+
+int ModifyBackupStrategyRequest::getBackupLogIntervalSeconds() const {
+  return backupLogIntervalSeconds_;
+}
+
+void ModifyBackupStrategyRequest::setBackupLogIntervalSeconds(int backupLogIntervalSeconds) {
+  backupLogIntervalSeconds_ = backupLogIntervalSeconds;
+  setParameter(std::string("BackupLogIntervalSeconds"), std::to_string(backupLogIntervalSeconds));
+}
+
 std::string ModifyBackupStrategyRequest::getOwnerId() const {
   return ownerId_;
 }
@@ -68,15 +77,6 @@ std::string ModifyBackupStrategyRequest::getBackupPeriod() const {
 void ModifyBackupStrategyRequest::setBackupPeriod(const std::string &backupPeriod) {
   backupPeriod_ = backupPeriod;
   setParameter(std::string("BackupPeriod"), backupPeriod);
-}
-
-std::string ModifyBackupStrategyRequest::getBackupStartTime() const {
-  return backupStartTime_;
-}
-
-void ModifyBackupStrategyRequest::setBackupStartTime(const std::string &backupStartTime) {
-  backupStartTime_ = backupStartTime;
-  setParameter(std::string("BackupStartTime"), backupStartTime);
 }
 
 std::string ModifyBackupStrategyRequest::getBackupStrategyType() const {

@@ -36,7 +36,6 @@ namespace AlibabaCloud
 				{
 					bool isExpired;
 					long buyExpiredTimestamp;
-					std::string resourceGroupId;
 					long quotaStartTimestamp;
 					long totalFreeBytes;
 					long paiedBytes;

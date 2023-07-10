@@ -32,18 +32,18 @@ public:
 	~CreateFullBackupSetDownloadRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
+	std::string getBackupSetDataFormat() const;
+	void setBackupSetDataFormat(const std::string &backupSetDataFormat);
 	std::string getBackupSetId() const;
 	void setBackupSetId(const std::string &backupSetId);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
-	std::string getBackupSetDataFormat() const;
-	void setBackupSetDataFormat(const std::string &backupSetDataFormat);
 
 private:
 	std::string clientToken_;
+	std::string backupSetDataFormat_;
 	std::string backupSetId_;
 	std::string ownerId_;
-	std::string backupSetDataFormat_;
 };
 } // namespace Model
 } // namespace Dbs

@@ -34,15 +34,6 @@ void StartRestoreTaskRequest::setClientToken(const std::string &clientToken) {
   setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string StartRestoreTaskRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void StartRestoreTaskRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
 std::string StartRestoreTaskRequest::getRestoreTaskId() const {
   return restoreTaskId_;
 }
@@ -50,5 +41,14 @@ std::string StartRestoreTaskRequest::getRestoreTaskId() const {
 void StartRestoreTaskRequest::setRestoreTaskId(const std::string &restoreTaskId) {
   restoreTaskId_ = restoreTaskId;
   setParameter(std::string("RestoreTaskId"), restoreTaskId);
+}
+
+std::string StartRestoreTaskRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void StartRestoreTaskRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
 }
 

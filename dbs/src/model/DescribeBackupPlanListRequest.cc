@@ -52,15 +52,6 @@ void DescribeBackupPlanListRequest::setPageNum(int pageNum) {
   setParameter(std::string("PageNum"), std::to_string(pageNum));
 }
 
-std::string DescribeBackupPlanListRequest::getOwnerId() const {
-  return ownerId_;
-}
-
-void DescribeBackupPlanListRequest::setOwnerId(const std::string &ownerId) {
-  ownerId_ = ownerId;
-  setParameter(std::string("OwnerId"), ownerId);
-}
-
 std::string DescribeBackupPlanListRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
@@ -79,15 +70,6 @@ void DescribeBackupPlanListRequest::setBackupPlanStatus(const std::string &backu
   setParameter(std::string("BackupPlanStatus"), backupPlanStatus);
 }
 
-std::string DescribeBackupPlanListRequest::getBackupPlanName() const {
-  return backupPlanName_;
-}
-
-void DescribeBackupPlanListRequest::setBackupPlanName(const std::string &backupPlanName) {
-  backupPlanName_ = backupPlanName;
-  setParameter(std::string("BackupPlanName"), backupPlanName);
-}
-
 int DescribeBackupPlanListRequest::getPageSize() const {
   return pageSize_;
 }
@@ -95,6 +77,24 @@ int DescribeBackupPlanListRequest::getPageSize() const {
 void DescribeBackupPlanListRequest::setPageSize(int pageSize) {
   pageSize_ = pageSize;
   setParameter(std::string("PageSize"), std::to_string(pageSize));
+}
+
+std::string DescribeBackupPlanListRequest::getOwnerId() const {
+  return ownerId_;
+}
+
+void DescribeBackupPlanListRequest::setOwnerId(const std::string &ownerId) {
+  ownerId_ = ownerId;
+  setParameter(std::string("OwnerId"), ownerId);
+}
+
+std::string DescribeBackupPlanListRequest::getBackupPlanName() const {
+  return backupPlanName_;
+}
+
+void DescribeBackupPlanListRequest::setBackupPlanName(const std::string &backupPlanName) {
+  backupPlanName_ = backupPlanName;
+  setParameter(std::string("BackupPlanName"), backupPlanName);
 }
 
 std::string DescribeBackupPlanListRequest::getRegion() const {

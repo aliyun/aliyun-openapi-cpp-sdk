@@ -30,21 +30,21 @@ class ALIBABACLOUD_DBS_EXPORT RenewBackupPlanRequest : public RpcServiceRequest 
 public:
 	RenewBackupPlanRequest();
 	~RenewBackupPlanRequest();
-	std::string getPeriod() const;
-	void setPeriod(const std::string &period);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getBackupPlanId() const;
 	void setBackupPlanId(const std::string &backupPlanId);
+	std::string getPeriod() const;
+	void setPeriod(const std::string &period);
 	std::string getOwnerId() const;
 	void setOwnerId(const std::string &ownerId);
 	int getUsedTime() const;
 	void setUsedTime(int usedTime);
 
 private:
-	std::string period_;
 	std::string clientToken_;
 	std::string backupPlanId_;
+	std::string period_;
 	std::string ownerId_;
 	int usedTime_;
 };

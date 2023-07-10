@@ -32,24 +32,24 @@ public:
 	~DescribeRestoreRangeInfoRequest();
 	long getBeginTimestampForRestore() const;
 	void setBeginTimestampForRestore(long beginTimestampForRestore);
-	long getEndTimestampForRestore() const;
-	void setEndTimestampForRestore(long endTimestampForRestore);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getBackupPlanId() const;
 	void setBackupPlanId(const std::string &backupPlanId);
-	std::string getOwnerId() const;
-	void setOwnerId(const std::string &ownerId);
 	bool getRecentlyRestore() const;
 	void setRecentlyRestore(bool recentlyRestore);
+	long getEndTimestampForRestore() const;
+	void setEndTimestampForRestore(long endTimestampForRestore);
+	std::string getOwnerId() const;
+	void setOwnerId(const std::string &ownerId);
 
 private:
 	long beginTimestampForRestore_;
-	long endTimestampForRestore_;
 	std::string clientToken_;
 	std::string backupPlanId_;
-	std::string ownerId_;
 	bool recentlyRestore_;
+	long endTimestampForRestore_;
+	std::string ownerId_;
 };
 } // namespace Model
 } // namespace Dbs
