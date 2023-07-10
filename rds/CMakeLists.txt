@@ -163,6 +163,8 @@ set(rds_public_header_model
 	include/alibabacloud/rds/model/DescribeBinlogFilesResult.h
 	include/alibabacloud/rds/model/DescribeCharacterSetNameRequest.h
 	include/alibabacloud/rds/model/DescribeCharacterSetNameResult.h
+	include/alibabacloud/rds/model/DescribeClassDetailsRequest.h
+	include/alibabacloud/rds/model/DescribeClassDetailsResult.h
 	include/alibabacloud/rds/model/DescribeCloudMigrationPrecheckResultRequest.h
 	include/alibabacloud/rds/model/DescribeCloudMigrationPrecheckResultResult.h
 	include/alibabacloud/rds/model/DescribeCloudMigrationResultRequest.h
@@ -674,6 +676,8 @@ set(rds_src
 	src/model/DescribeBinlogFilesResult.cc
 	src/model/DescribeCharacterSetNameRequest.cc
 	src/model/DescribeCharacterSetNameResult.cc
+	src/model/DescribeClassDetailsRequest.cc
+	src/model/DescribeClassDetailsResult.cc
 	src/model/DescribeCloudMigrationPrecheckResultRequest.cc
 	src/model/DescribeCloudMigrationPrecheckResultResult.cc
 	src/model/DescribeCloudMigrationResultRequest.cc

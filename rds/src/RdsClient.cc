@@ -31,21 +31,21 @@ RdsClient::RdsClient(const Credentials &credentials, const ClientConfiguration &
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(credentials), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentials, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "rds");
 }
 
 RdsClient::RdsClient(const std::shared_ptr<CredentialsProvider>& credentialsProvider, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, credentialsProvider, configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(credentialsProvider, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "rds");
 }
 
 RdsClient::RdsClient(const std::string & accessKeyId, const std::string & accessKeySecret, const ClientConfiguration & configuration) :
 	RpcServiceClient(SERVICE_NAME, std::make_shared<SimpleCredentialsProvider>(accessKeyId, accessKeySecret), configuration)
 {
 	auto locationClient = std::make_shared<LocationClient>(accessKeyId, accessKeySecret, configuration);
-	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "");
+	endpointProvider_ = std::make_shared<EndpointProvider>(locationClient, configuration.regionId(), SERVICE_NAME, "rds");
 }
 
 RdsClient::~RdsClient()
@@ -2601,6 +2601,42 @@ RdsClient::DescribeCharacterSetNameOutcomeCallable RdsClient::describeCharacterS
 			[this, request]()
 			{
 			return this->describeCharacterSetName(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+RdsClient::DescribeClassDetailsOutcome RdsClient::describeClassDetails(const DescribeClassDetailsRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return DescribeClassDetailsOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return DescribeClassDetailsOutcome(DescribeClassDetailsResult(outcome.result()));
+	else
+		return DescribeClassDetailsOutcome(outcome.error());
+}
+
+void RdsClient::describeClassDetailsAsync(const DescribeClassDetailsRequest& request, const DescribeClassDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, describeClassDetails(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+RdsClient::DescribeClassDetailsOutcomeCallable RdsClient::describeClassDetailsCallable(const DescribeClassDetailsRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<DescribeClassDetailsOutcome()>>(
+			[this, request]()
+			{
+			return this->describeClassDetails(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

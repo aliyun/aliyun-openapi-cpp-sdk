@@ -164,6 +164,8 @@
 #include "model/DescribeBinlogFilesResult.h"
 #include "model/DescribeCharacterSetNameRequest.h"
 #include "model/DescribeCharacterSetNameResult.h"
+#include "model/DescribeClassDetailsRequest.h"
+#include "model/DescribeClassDetailsResult.h"
 #include "model/DescribeCloudMigrationPrecheckResultRequest.h"
 #include "model/DescribeCloudMigrationPrecheckResultResult.h"
 #include "model/DescribeCloudMigrationResultRequest.h"
@@ -752,6 +754,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::DescribeCharacterSetNameResult> DescribeCharacterSetNameOutcome;
 			typedef std::future<DescribeCharacterSetNameOutcome> DescribeCharacterSetNameOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeCharacterSetNameRequest&, const DescribeCharacterSetNameOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCharacterSetNameAsyncHandler;
+			typedef Outcome<Error, Model::DescribeClassDetailsResult> DescribeClassDetailsOutcome;
+			typedef std::future<DescribeClassDetailsOutcome> DescribeClassDetailsOutcomeCallable;
+			typedef std::function<void(const RdsClient*, const Model::DescribeClassDetailsRequest&, const DescribeClassDetailsOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClassDetailsAsyncHandler;
 			typedef Outcome<Error, Model::DescribeCloudMigrationPrecheckResultResult> DescribeCloudMigrationPrecheckResultOutcome;
 			typedef std::future<DescribeCloudMigrationPrecheckResultOutcome> DescribeCloudMigrationPrecheckResultOutcomeCallable;
 			typedef std::function<void(const RdsClient*, const Model::DescribeCloudMigrationPrecheckResultRequest&, const DescribeCloudMigrationPrecheckResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloudMigrationPrecheckResultAsyncHandler;
@@ -1519,6 +1524,9 @@ namespace AlibabaCloud
 			DescribeCharacterSetNameOutcome describeCharacterSetName(const Model::DescribeCharacterSetNameRequest &request)const;
 			void describeCharacterSetNameAsync(const Model::DescribeCharacterSetNameRequest& request, const DescribeCharacterSetNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCharacterSetNameOutcomeCallable describeCharacterSetNameCallable(const Model::DescribeCharacterSetNameRequest& request) const;
+			DescribeClassDetailsOutcome describeClassDetails(const Model::DescribeClassDetailsRequest &request)const;
+			void describeClassDetailsAsync(const Model::DescribeClassDetailsRequest& request, const DescribeClassDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			DescribeClassDetailsOutcomeCallable describeClassDetailsCallable(const Model::DescribeClassDetailsRequest& request) const;
 			DescribeCloudMigrationPrecheckResultOutcome describeCloudMigrationPrecheckResult(const Model::DescribeCloudMigrationPrecheckResultRequest &request)const;
 			void describeCloudMigrationPrecheckResultAsync(const Model::DescribeCloudMigrationPrecheckResultRequest& request, const DescribeCloudMigrationPrecheckResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			DescribeCloudMigrationPrecheckResultOutcomeCallable describeCloudMigrationPrecheckResultCallable(const Model::DescribeCloudMigrationPrecheckResultRequest& request) const;
