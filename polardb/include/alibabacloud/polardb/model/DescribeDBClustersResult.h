@@ -68,6 +68,7 @@ namespace AlibabaCloud
 					std::string expired;
 					std::string payType;
 					std::string lockMode;
+					std::string vswitchId;
 					std::string strictConsistency;
 					std::string dBNodeClass;
 					long storageUsed;
@@ -75,6 +76,7 @@ namespace AlibabaCloud
 					std::string vpcId;
 					long storageSpace;
 					std::string serverlessType;
+					std::string aiType;
 					std::string regionId;
 					std::string expireTime;
 				};

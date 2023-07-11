@@ -44,6 +44,8 @@ public:
 	void setOwnerAccount(const std::string &ownerAccount);
 	long getOwnerId() const;
 	void setOwnerId(long ownerId);
+	std::string getIsSwitchOverForDisaster() const;
+	void setIsSwitchOverForDisaster(const std::string &isSwitchOverForDisaster);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getPlannedStartTime() const;
@@ -63,6 +65,7 @@ private:
 	std::string dBClusterId_;
 	std::string ownerAccount_;
 	long ownerId_;
+	std::string isSwitchOverForDisaster_;
 	std::string vSwitchId_;
 	std::string plannedStartTime_;
 	std::string vPCId_;

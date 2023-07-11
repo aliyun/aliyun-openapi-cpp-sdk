@@ -45,6 +45,8 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 		DBCluster itemsObject;
 		if(!valueItemsDBCluster["VpcId"].isNull())
 			itemsObject.vpcId = valueItemsDBCluster["VpcId"].asString();
+		if(!valueItemsDBCluster["VswitchId"].isNull())
+			itemsObject.vswitchId = valueItemsDBCluster["VswitchId"].asString();
 		if(!valueItemsDBCluster["ExpireTime"].isNull())
 			itemsObject.expireTime = valueItemsDBCluster["ExpireTime"].asString();
 		if(!valueItemsDBCluster["Expired"].isNull())
@@ -93,6 +95,8 @@ void DescribeDBClustersResult::parse(const std::string &payload)
 			itemsObject.engine = valueItemsDBCluster["Engine"].asString();
 		if(!valueItemsDBCluster["Category"].isNull())
 			itemsObject.category = valueItemsDBCluster["Category"].asString();
+		if(!valueItemsDBCluster["AiType"].isNull())
+			itemsObject.aiType = valueItemsDBCluster["AiType"].asString();
 		auto allTagsNode = valueItemsDBCluster["Tags"]["Tag"];
 		for (auto valueItemsDBClusterTagsTag : allTagsNode)
 		{

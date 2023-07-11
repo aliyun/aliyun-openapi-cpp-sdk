@@ -88,6 +88,15 @@ void ModifyDBClusterPrimaryZoneRequest::setOwnerId(long ownerId) {
   setParameter(std::string("OwnerId"), std::to_string(ownerId));
 }
 
+std::string ModifyDBClusterPrimaryZoneRequest::getIsSwitchOverForDisaster() const {
+  return isSwitchOverForDisaster_;
+}
+
+void ModifyDBClusterPrimaryZoneRequest::setIsSwitchOverForDisaster(const std::string &isSwitchOverForDisaster) {
+  isSwitchOverForDisaster_ = isSwitchOverForDisaster;
+  setParameter(std::string("IsSwitchOverForDisaster"), isSwitchOverForDisaster);
+}
+
 std::string ModifyDBClusterPrimaryZoneRequest::getVSwitchId() const {
   return vSwitchId_;
 }
