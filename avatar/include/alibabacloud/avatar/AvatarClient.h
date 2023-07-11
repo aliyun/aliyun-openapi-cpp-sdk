@@ -40,8 +40,14 @@
 #include "model/QueryRunningInstanceResult.h"
 #include "model/QueryTimedResetOperateStatusRequest.h"
 #include "model/QueryTimedResetOperateStatusResult.h"
+#include "model/SendCommandRequest.h"
+#include "model/SendCommandResult.h"
 #include "model/SendMessageRequest.h"
 #include "model/SendMessageResult.h"
+#include "model/SendTextRequest.h"
+#include "model/SendTextResult.h"
+#include "model/SendVamlRequest.h"
+#include "model/SendVamlResult.h"
 #include "model/StartInstanceRequest.h"
 #include "model/StartInstanceResult.h"
 #include "model/StartTimedResetOperateRequest.h"
@@ -92,9 +98,18 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QueryTimedResetOperateStatusResult> QueryTimedResetOperateStatusOutcome;
 			typedef std::future<QueryTimedResetOperateStatusOutcome> QueryTimedResetOperateStatusOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::QueryTimedResetOperateStatusRequest&, const QueryTimedResetOperateStatusOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryTimedResetOperateStatusAsyncHandler;
+			typedef Outcome<Error, Model::SendCommandResult> SendCommandOutcome;
+			typedef std::future<SendCommandOutcome> SendCommandOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::SendCommandRequest&, const SendCommandOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendCommandAsyncHandler;
 			typedef Outcome<Error, Model::SendMessageResult> SendMessageOutcome;
 			typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::SendMessageRequest&, const SendMessageOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendMessageAsyncHandler;
+			typedef Outcome<Error, Model::SendTextResult> SendTextOutcome;
+			typedef std::future<SendTextOutcome> SendTextOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::SendTextRequest&, const SendTextOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendTextAsyncHandler;
+			typedef Outcome<Error, Model::SendVamlResult> SendVamlOutcome;
+			typedef std::future<SendVamlOutcome> SendVamlOutcomeCallable;
+			typedef std::function<void(const AvatarClient*, const Model::SendVamlRequest&, const SendVamlOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> SendVamlAsyncHandler;
 			typedef Outcome<Error, Model::StartInstanceResult> StartInstanceOutcome;
 			typedef std::future<StartInstanceOutcome> StartInstanceOutcomeCallable;
 			typedef std::function<void(const AvatarClient*, const Model::StartInstanceRequest&, const StartInstanceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> StartInstanceAsyncHandler;
@@ -148,9 +163,18 @@ namespace AlibabaCloud
 			QueryTimedResetOperateStatusOutcome queryTimedResetOperateStatus(const Model::QueryTimedResetOperateStatusRequest &request)const;
 			void queryTimedResetOperateStatusAsync(const Model::QueryTimedResetOperateStatusRequest& request, const QueryTimedResetOperateStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryTimedResetOperateStatusOutcomeCallable queryTimedResetOperateStatusCallable(const Model::QueryTimedResetOperateStatusRequest& request) const;
+			SendCommandOutcome sendCommand(const Model::SendCommandRequest &request)const;
+			void sendCommandAsync(const Model::SendCommandRequest& request, const SendCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SendCommandOutcomeCallable sendCommandCallable(const Model::SendCommandRequest& request) const;
 			SendMessageOutcome sendMessage(const Model::SendMessageRequest &request)const;
 			void sendMessageAsync(const Model::SendMessageRequest& request, const SendMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			SendMessageOutcomeCallable sendMessageCallable(const Model::SendMessageRequest& request) const;
+			SendTextOutcome sendText(const Model::SendTextRequest &request)const;
+			void sendTextAsync(const Model::SendTextRequest& request, const SendTextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SendTextOutcomeCallable sendTextCallable(const Model::SendTextRequest& request) const;
+			SendVamlOutcome sendVaml(const Model::SendVamlRequest &request)const;
+			void sendVamlAsync(const Model::SendVamlRequest& request, const SendVamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			SendVamlOutcomeCallable sendVamlCallable(const Model::SendVamlRequest& request) const;
 			StartInstanceOutcome startInstance(const Model::StartInstanceRequest &request)const;
 			void startInstanceAsync(const Model::StartInstanceRequest& request, const StartInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			StartInstanceOutcomeCallable startInstanceCallable(const Model::StartInstanceRequest& request) const;

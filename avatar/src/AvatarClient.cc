@@ -375,6 +375,42 @@ AvatarClient::QueryTimedResetOperateStatusOutcomeCallable AvatarClient::queryTim
 	return task->get_future();
 }
 
+AvatarClient::SendCommandOutcome AvatarClient::sendCommand(const SendCommandRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendCommandOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendCommandOutcome(SendCommandResult(outcome.result()));
+	else
+		return SendCommandOutcome(outcome.error());
+}
+
+void AvatarClient::sendCommandAsync(const SendCommandRequest& request, const SendCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendCommand(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::SendCommandOutcomeCallable AvatarClient::sendCommandCallable(const SendCommandRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendCommandOutcome()>>(
+			[this, request]()
+			{
+			return this->sendCommand(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 AvatarClient::SendMessageOutcome AvatarClient::sendMessage(const SendMessageRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -405,6 +441,78 @@ AvatarClient::SendMessageOutcomeCallable AvatarClient::sendMessageCallable(const
 			[this, request]()
 			{
 			return this->sendMessage(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::SendTextOutcome AvatarClient::sendText(const SendTextRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendTextOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendTextOutcome(SendTextResult(outcome.result()));
+	else
+		return SendTextOutcome(outcome.error());
+}
+
+void AvatarClient::sendTextAsync(const SendTextRequest& request, const SendTextAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendText(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::SendTextOutcomeCallable AvatarClient::sendTextCallable(const SendTextRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendTextOutcome()>>(
+			[this, request]()
+			{
+			return this->sendText(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+AvatarClient::SendVamlOutcome AvatarClient::sendVaml(const SendVamlRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return SendVamlOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return SendVamlOutcome(SendVamlResult(outcome.result()));
+	else
+		return SendVamlOutcome(outcome.error());
+}
+
+void AvatarClient::sendVamlAsync(const SendVamlRequest& request, const SendVamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, sendVaml(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+AvatarClient::SendVamlOutcomeCallable AvatarClient::sendVamlCallable(const SendVamlRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<SendVamlOutcome()>>(
+			[this, request]()
+			{
+			return this->sendVaml(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

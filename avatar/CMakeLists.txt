@@ -39,8 +39,14 @@ set(avatar_public_header_model
 	include/alibabacloud/avatar/model/QueryRunningInstanceResult.h
 	include/alibabacloud/avatar/model/QueryTimedResetOperateStatusRequest.h
 	include/alibabacloud/avatar/model/QueryTimedResetOperateStatusResult.h
+	include/alibabacloud/avatar/model/SendCommandRequest.h
+	include/alibabacloud/avatar/model/SendCommandResult.h
 	include/alibabacloud/avatar/model/SendMessageRequest.h
 	include/alibabacloud/avatar/model/SendMessageResult.h
+	include/alibabacloud/avatar/model/SendTextRequest.h
+	include/alibabacloud/avatar/model/SendTextResult.h
+	include/alibabacloud/avatar/model/SendVamlRequest.h
+	include/alibabacloud/avatar/model/SendVamlResult.h
 	include/alibabacloud/avatar/model/StartInstanceRequest.h
 	include/alibabacloud/avatar/model/StartInstanceResult.h
 	include/alibabacloud/avatar/model/StartTimedResetOperateRequest.h
@@ -76,8 +82,14 @@ set(avatar_src
 	src/model/QueryRunningInstanceResult.cc
 	src/model/QueryTimedResetOperateStatusRequest.cc
 	src/model/QueryTimedResetOperateStatusResult.cc
+	src/model/SendCommandRequest.cc
+	src/model/SendCommandResult.cc
 	src/model/SendMessageRequest.cc
 	src/model/SendMessageResult.cc
+	src/model/SendTextRequest.cc
+	src/model/SendTextResult.cc
+	src/model/SendVamlRequest.cc
+	src/model/SendVamlResult.cc
 	src/model/StartInstanceRequest.cc
 	src/model/StartInstanceResult.cc
 	src/model/StartTimedResetOperateRequest.cc
