@@ -70,3 +70,12 @@ void GetInstanceMetricsRequest::setInstanceId(const std::string &instanceId) {
   setParameter(std::string("InstanceId"), instanceId);
 }
 
+std::string GetInstanceMetricsRequest::getRegionId() const {
+  return regionId_;
+}
+
+void GetInstanceMetricsRequest::setRegionId(const std::string &regionId) {
+  regionId_ = regionId;
+  setParameter(std::string("RegionId"), regionId);
+}
+

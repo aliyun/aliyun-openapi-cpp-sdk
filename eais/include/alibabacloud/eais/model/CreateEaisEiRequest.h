@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EAIS_MODEL_CREATEEAIJUPYTERREQUEST_H_
-#define ALIBABACLOUD_EAIS_MODEL_CREATEEAIJUPYTERREQUEST_H_
+#ifndef ALIBABACLOUD_EAIS_MODEL_CREATEEAISEIREQUEST_H_
+#define ALIBABACLOUD_EAIS_MODEL_CREATEEAISEIREQUEST_H_
 
 #include <alibabacloud/eais/EaisExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,42 +26,35 @@
 namespace AlibabaCloud {
 namespace Eais {
 namespace Model {
-class ALIBABACLOUD_EAIS_EXPORT CreateEaiJupyterRequest : public RpcServiceRequest {
+class ALIBABACLOUD_EAIS_EXPORT CreateEaisEiRequest : public RpcServiceRequest {
 public:
-	struct EnvironmentVar {
-		std::string value;
-		std::string key;
-	};
-	CreateEaiJupyterRequest();
-	~CreateEaiJupyterRequest();
+	CreateEaisEiRequest();
+	~CreateEaisEiRequest();
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getSecurityGroupId() const;
 	void setSecurityGroupId(const std::string &securityGroupId);
-	std::string getEaisType() const;
-	void setEaisType(const std::string &eaisType);
 	std::string getVSwitchId() const;
 	void setVSwitchId(const std::string &vSwitchId);
 	std::string getResourceGroupId() const;
 	void setResourceGroupId(const std::string &resourceGroupId);
+	std::string getInstanceName() const;
+	void setInstanceName(const std::string &instanceName);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
-	std::vector<EnvironmentVar> getEnvironmentVar() const;
-	void setEnvironmentVar(const std::vector<EnvironmentVar> &environmentVar);
-	std::string getEaisName() const;
-	void setEaisName(const std::string &eaisName);
+	std::string getInstanceType() const;
+	void setInstanceType(const std::string &instanceType);
 
 private:
 	std::string clientToken_;
 	std::string securityGroupId_;
-	std::string eaisType_;
 	std::string vSwitchId_;
 	std::string resourceGroupId_;
+	std::string instanceName_;
 	std::string regionId_;
-	std::vector<EnvironmentVar> environmentVar_;
-	std::string eaisName_;
+	std::string instanceType_;
 };
 } // namespace Model
 } // namespace Eais
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_EAIS_MODEL_CREATEEAIJUPYTERREQUEST_H_
+#endif // !ALIBABACLOUD_EAIS_MODEL_CREATEEAISEIREQUEST_H_

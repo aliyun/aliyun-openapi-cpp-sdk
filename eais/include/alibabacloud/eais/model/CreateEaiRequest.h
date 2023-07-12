@@ -30,6 +30,8 @@ class ALIBABACLOUD_EAIS_EXPORT CreateEaiRequest : public RpcServiceRequest {
 public:
 	CreateEaiRequest();
 	~CreateEaiRequest();
+	std::string getImage() const;
+	void setImage(const std::string &image);
 	std::string getClientToken() const;
 	void setClientToken(const std::string &clientToken);
 	std::string getSecurityGroupId() const;
@@ -46,6 +48,7 @@ public:
 	void setInstanceType(const std::string &instanceType);
 
 private:
+	std::string image_;
 	std::string clientToken_;
 	std::string securityGroupId_;
 	std::string vSwitchId_;

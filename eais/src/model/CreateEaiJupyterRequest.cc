@@ -91,3 +91,12 @@ void CreateEaiJupyterRequest::setEnvironmentVar(const std::vector<CreateEaiJupyt
   }
 }
 
+std::string CreateEaiJupyterRequest::getEaisName() const {
+  return eaisName_;
+}
+
+void CreateEaiJupyterRequest::setEaisName(const std::string &eaisName) {
+  eaisName_ = eaisName;
+  setParameter(std::string("EaisName"), eaisName);
+}
+

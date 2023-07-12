@@ -23,6 +23,8 @@ set(eais_public_header
 set(eais_public_header_model 
 	include/alibabacloud/eais/model/AttachEaiRequest.h
 	include/alibabacloud/eais/model/AttachEaiResult.h
+	include/alibabacloud/eais/model/AttachEaisEiRequest.h
+	include/alibabacloud/eais/model/AttachEaisEiResult.h
 	include/alibabacloud/eais/model/ChangeResourceGroupRequest.h
 	include/alibabacloud/eais/model/ChangeResourceGroupResult.h
 	include/alibabacloud/eais/model/CreateEaiRequest.h
@@ -35,23 +37,35 @@ set(eais_public_header_model
 	include/alibabacloud/eais/model/CreateEaiEcsResult.h
 	include/alibabacloud/eais/model/CreateEaiJupyterRequest.h
 	include/alibabacloud/eais/model/CreateEaiJupyterResult.h
+	include/alibabacloud/eais/model/CreateEaisEiRequest.h
+	include/alibabacloud/eais/model/CreateEaisEiResult.h
 	include/alibabacloud/eais/model/DeleteEaiRequest.h
 	include/alibabacloud/eais/model/DeleteEaiResult.h
 	include/alibabacloud/eais/model/DeleteEaiAllRequest.h
 	include/alibabacloud/eais/model/DeleteEaiAllResult.h
+	include/alibabacloud/eais/model/DeleteEaisEiRequest.h
+	include/alibabacloud/eais/model/DeleteEaisEiResult.h
 	include/alibabacloud/eais/model/DescribeEaisRequest.h
 	include/alibabacloud/eais/model/DescribeEaisResult.h
 	include/alibabacloud/eais/model/DescribeRegionsRequest.h
 	include/alibabacloud/eais/model/DescribeRegionsResult.h
 	include/alibabacloud/eais/model/DetachEaiRequest.h
 	include/alibabacloud/eais/model/DetachEaiResult.h
+	include/alibabacloud/eais/model/DetachEaisEiRequest.h
+	include/alibabacloud/eais/model/DetachEaisEiResult.h
 	include/alibabacloud/eais/model/GetInstanceMetricsRequest.h
-	include/alibabacloud/eais/model/GetInstanceMetricsResult.h )
+	include/alibabacloud/eais/model/GetInstanceMetricsResult.h
+	include/alibabacloud/eais/model/StartEaisEiRequest.h
+	include/alibabacloud/eais/model/StartEaisEiResult.h
+	include/alibabacloud/eais/model/StopEaisEiRequest.h
+	include/alibabacloud/eais/model/StopEaisEiResult.h )
 
 set(eais_src 
 	src/EaisClient.cc
 	src/model/AttachEaiRequest.cc
 	src/model/AttachEaiResult.cc
+	src/model/AttachEaisEiRequest.cc
+	src/model/AttachEaisEiResult.cc
 	src/model/ChangeResourceGroupRequest.cc
 	src/model/ChangeResourceGroupResult.cc
 	src/model/CreateEaiRequest.cc
@@ -64,18 +78,28 @@ set(eais_src
 	src/model/CreateEaiEcsResult.cc
 	src/model/CreateEaiJupyterRequest.cc
 	src/model/CreateEaiJupyterResult.cc
+	src/model/CreateEaisEiRequest.cc
+	src/model/CreateEaisEiResult.cc
 	src/model/DeleteEaiRequest.cc
 	src/model/DeleteEaiResult.cc
 	src/model/DeleteEaiAllRequest.cc
 	src/model/DeleteEaiAllResult.cc
+	src/model/DeleteEaisEiRequest.cc
+	src/model/DeleteEaisEiResult.cc
 	src/model/DescribeEaisRequest.cc
 	src/model/DescribeEaisResult.cc
 	src/model/DescribeRegionsRequest.cc
 	src/model/DescribeRegionsResult.cc
 	src/model/DetachEaiRequest.cc
 	src/model/DetachEaiResult.cc
+	src/model/DetachEaisEiRequest.cc
+	src/model/DetachEaisEiResult.cc
 	src/model/GetInstanceMetricsRequest.cc
-	src/model/GetInstanceMetricsResult.cc )
+	src/model/GetInstanceMetricsResult.cc
+	src/model/StartEaisEiRequest.cc
+	src/model/StartEaisEiResult.cc
+	src/model/StopEaisEiRequest.cc
+	src/model/StopEaisEiResult.cc )
 
 add_library(eais ${LIB_TYPE}
 	${eais_public_header}

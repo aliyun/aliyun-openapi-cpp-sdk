@@ -14,85 +14,76 @@
  * limitations under the License.
  */
 
-#include <alibabacloud/eais/model/CreateEaiRequest.h>
+#include <alibabacloud/eais/model/CreateEaisEiRequest.h>
 
-using AlibabaCloud::Eais::Model::CreateEaiRequest;
+using AlibabaCloud::Eais::Model::CreateEaisEiRequest;
 
-CreateEaiRequest::CreateEaiRequest()
-    : RpcServiceRequest("eais", "2019-06-24", "CreateEai") {
+CreateEaisEiRequest::CreateEaisEiRequest()
+    : RpcServiceRequest("eais", "2019-06-24", "CreateEaisEi") {
   setMethod(HttpRequest::Method::Post);
 }
 
-CreateEaiRequest::~CreateEaiRequest() {}
+CreateEaisEiRequest::~CreateEaisEiRequest() {}
 
-std::string CreateEaiRequest::getImage() const {
-  return image_;
-}
-
-void CreateEaiRequest::setImage(const std::string &image) {
-  image_ = image;
-  setParameter(std::string("Image"), image);
-}
-
-std::string CreateEaiRequest::getClientToken() const {
+std::string CreateEaisEiRequest::getClientToken() const {
   return clientToken_;
 }
 
-void CreateEaiRequest::setClientToken(const std::string &clientToken) {
+void CreateEaisEiRequest::setClientToken(const std::string &clientToken) {
   clientToken_ = clientToken;
   setParameter(std::string("ClientToken"), clientToken);
 }
 
-std::string CreateEaiRequest::getSecurityGroupId() const {
+std::string CreateEaisEiRequest::getSecurityGroupId() const {
   return securityGroupId_;
 }
 
-void CreateEaiRequest::setSecurityGroupId(const std::string &securityGroupId) {
+void CreateEaisEiRequest::setSecurityGroupId(const std::string &securityGroupId) {
   securityGroupId_ = securityGroupId;
   setParameter(std::string("SecurityGroupId"), securityGroupId);
 }
 
-std::string CreateEaiRequest::getVSwitchId() const {
+std::string CreateEaisEiRequest::getVSwitchId() const {
   return vSwitchId_;
 }
 
-void CreateEaiRequest::setVSwitchId(const std::string &vSwitchId) {
+void CreateEaisEiRequest::setVSwitchId(const std::string &vSwitchId) {
   vSwitchId_ = vSwitchId;
   setParameter(std::string("VSwitchId"), vSwitchId);
 }
 
-std::string CreateEaiRequest::getResourceGroupId() const {
+std::string CreateEaisEiRequest::getResourceGroupId() const {
   return resourceGroupId_;
 }
 
-void CreateEaiRequest::setResourceGroupId(const std::string &resourceGroupId) {
+void CreateEaisEiRequest::setResourceGroupId(const std::string &resourceGroupId) {
   resourceGroupId_ = resourceGroupId;
   setParameter(std::string("ResourceGroupId"), resourceGroupId);
 }
 
-std::string CreateEaiRequest::getInstanceName() const {
+std::string CreateEaisEiRequest::getInstanceName() const {
   return instanceName_;
 }
 
-void CreateEaiRequest::setInstanceName(const std::string &instanceName) {
+void CreateEaisEiRequest::setInstanceName(const std::string &instanceName) {
   instanceName_ = instanceName;
   setParameter(std::string("InstanceName"), instanceName);
 }
 
-std::string CreateEaiRequest::getRegionId() const {
+std::string CreateEaisEiRequest::getRegionId() const {
   return regionId_;
 }
 
-void CreateEaiRequest::setRegionId(const std::string &regionId) {
+void CreateEaisEiRequest::setRegionId(const std::string &regionId) {
   regionId_ = regionId;
   setParameter(std::string("RegionId"), regionId);
 }
 
-std::string CreateEaiRequest::getInstanceType() const {
+std::string CreateEaisEiRequest::getInstanceType() const {
   return instanceType_;
 }
 
-void CreateEaiRequest::setInstanceType(const std::string &instanceType) {
+void CreateEaisEiRequest::setInstanceType(const std::string &instanceType) {
   instanceType_ = instanceType;
   setParameter(std::string("InstanceType"), instanceType);
 }

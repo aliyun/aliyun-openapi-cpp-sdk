@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef ALIBABACLOUD_EAIS_MODEL_GETINSTANCEMETRICSREQUEST_H_
-#define ALIBABACLOUD_EAIS_MODEL_GETINSTANCEMETRICSREQUEST_H_
+#ifndef ALIBABACLOUD_EAIS_MODEL_DELETEEAISEIREQUEST_H_
+#define ALIBABACLOUD_EAIS_MODEL_DELETEEAISEIREQUEST_H_
 
 #include <alibabacloud/eais/EaisExport.h>
 #include <alibabacloud/core/RpcServiceRequest.h>
@@ -26,32 +26,23 @@
 namespace AlibabaCloud {
 namespace Eais {
 namespace Model {
-class ALIBABACLOUD_EAIS_EXPORT GetInstanceMetricsRequest : public RpcServiceRequest {
+class ALIBABACLOUD_EAIS_EXPORT DeleteEaisEiRequest : public RpcServiceRequest {
 public:
-	GetInstanceMetricsRequest();
-	~GetInstanceMetricsRequest();
-	std::string getMetricType() const;
-	void setMetricType(const std::string &metricType);
-	std::string getTimeStep() const;
-	void setTimeStep(const std::string &timeStep);
-	std::string getEndTime() const;
-	void setEndTime(const std::string &endTime);
-	std::string getStartTime() const;
-	void setStartTime(const std::string &startTime);
-	std::string getInstanceId() const;
-	void setInstanceId(const std::string &instanceId);
+	DeleteEaisEiRequest();
+	~DeleteEaisEiRequest();
+	std::string getEiInstanceId() const;
+	void setEiInstanceId(const std::string &eiInstanceId);
 	std::string getRegionId() const;
 	void setRegionId(const std::string &regionId);
+	bool getForce() const;
+	void setForce(bool force);
 
 private:
-	std::string metricType_;
-	std::string timeStep_;
-	std::string endTime_;
-	std::string startTime_;
-	std::string instanceId_;
+	std::string eiInstanceId_;
 	std::string regionId_;
+	bool force_;
 };
 } // namespace Model
 } // namespace Eais
 } // namespace AlibabaCloud
-#endif // !ALIBABACLOUD_EAIS_MODEL_GETINSTANCEMETRICSREQUEST_H_
+#endif // !ALIBABACLOUD_EAIS_MODEL_DELETEEAISEIREQUEST_H_
