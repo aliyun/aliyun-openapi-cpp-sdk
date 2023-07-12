@@ -24,6 +24,8 @@
 #include "IotExport.h"
 #include "model/AddDataForApiSourceRequest.h"
 #include "model/AddDataForApiSourceResult.h"
+#include "model/AddDeviceToSharePromotionRequest.h"
+#include "model/AddDeviceToSharePromotionResult.h"
 #include "model/AddShareTaskDeviceRequest.h"
 #include "model/AddShareTaskDeviceResult.h"
 #include "model/AsyncRRpcRequest.h"
@@ -210,6 +212,10 @@
 #include "model/CreateSceneRuleResult.h"
 #include "model/CreateSchedulePeriodRequest.h"
 #include "model/CreateSchedulePeriodResult.h"
+#include "model/CreateSharePromotionActivityRequest.h"
+#include "model/CreateSharePromotionActivityResult.h"
+#include "model/CreateSharePromotionSpeechModelRequest.h"
+#include "model/CreateSharePromotionSpeechModelResult.h"
 #include "model/CreateSoundCodeRequest.h"
 #include "model/CreateSoundCodeResult.h"
 #include "model/CreateSoundCodeLabelRequest.h"
@@ -460,6 +466,8 @@
 #include "model/ListThingModelVersionResult.h"
 #include "model/ListThingTemplatesRequest.h"
 #include "model/ListThingTemplatesResult.h"
+#include "model/ModifyOTAFirmwareRequest.h"
+#include "model/ModifyOTAFirmwareResult.h"
 #include "model/NotifyAddThingTopoRequest.h"
 #include "model/NotifyAddThingTopoResult.h"
 #include "model/OpenIotServiceRequest.h"
@@ -624,6 +632,8 @@
 #include "model/QuerySceneRuleResult.h"
 #include "model/QuerySchedulePeriodListRequest.h"
 #include "model/QuerySchedulePeriodListResult.h"
+#include "model/QuerySharePromotionActivityAuditResultRequest.h"
+#include "model/QuerySharePromotionActivityAuditResultResult.h"
 #include "model/QueryShareTaskDeviceListRequest.h"
 #include "model/QueryShareTaskDeviceListResult.h"
 #include "model/QuerySolutionDeviceGroupPageRequest.h"
@@ -844,6 +854,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::AddDataForApiSourceResult> AddDataForApiSourceOutcome;
 			typedef std::future<AddDataForApiSourceOutcome> AddDataForApiSourceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::AddDataForApiSourceRequest&, const AddDataForApiSourceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDataForApiSourceAsyncHandler;
+			typedef Outcome<Error, Model::AddDeviceToSharePromotionResult> AddDeviceToSharePromotionOutcome;
+			typedef std::future<AddDeviceToSharePromotionOutcome> AddDeviceToSharePromotionOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::AddDeviceToSharePromotionRequest&, const AddDeviceToSharePromotionOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddDeviceToSharePromotionAsyncHandler;
 			typedef Outcome<Error, Model::AddShareTaskDeviceResult> AddShareTaskDeviceOutcome;
 			typedef std::future<AddShareTaskDeviceOutcome> AddShareTaskDeviceOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::AddShareTaskDeviceRequest&, const AddShareTaskDeviceOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> AddShareTaskDeviceAsyncHandler;
@@ -1123,6 +1136,12 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateSchedulePeriodResult> CreateSchedulePeriodOutcome;
 			typedef std::future<CreateSchedulePeriodOutcome> CreateSchedulePeriodOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateSchedulePeriodRequest&, const CreateSchedulePeriodOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSchedulePeriodAsyncHandler;
+			typedef Outcome<Error, Model::CreateSharePromotionActivityResult> CreateSharePromotionActivityOutcome;
+			typedef std::future<CreateSharePromotionActivityOutcome> CreateSharePromotionActivityOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CreateSharePromotionActivityRequest&, const CreateSharePromotionActivityOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSharePromotionActivityAsyncHandler;
+			typedef Outcome<Error, Model::CreateSharePromotionSpeechModelResult> CreateSharePromotionSpeechModelOutcome;
+			typedef std::future<CreateSharePromotionSpeechModelOutcome> CreateSharePromotionSpeechModelOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::CreateSharePromotionSpeechModelRequest&, const CreateSharePromotionSpeechModelOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSharePromotionSpeechModelAsyncHandler;
 			typedef Outcome<Error, Model::CreateSoundCodeResult> CreateSoundCodeOutcome;
 			typedef std::future<CreateSoundCodeOutcome> CreateSoundCodeOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::CreateSoundCodeRequest&, const CreateSoundCodeOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateSoundCodeAsyncHandler;
@@ -1498,6 +1517,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::ListThingTemplatesResult> ListThingTemplatesOutcome;
 			typedef std::future<ListThingTemplatesOutcome> ListThingTemplatesOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::ListThingTemplatesRequest&, const ListThingTemplatesOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ListThingTemplatesAsyncHandler;
+			typedef Outcome<Error, Model::ModifyOTAFirmwareResult> ModifyOTAFirmwareOutcome;
+			typedef std::future<ModifyOTAFirmwareOutcome> ModifyOTAFirmwareOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::ModifyOTAFirmwareRequest&, const ModifyOTAFirmwareOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> ModifyOTAFirmwareAsyncHandler;
 			typedef Outcome<Error, Model::NotifyAddThingTopoResult> NotifyAddThingTopoOutcome;
 			typedef std::future<NotifyAddThingTopoOutcome> NotifyAddThingTopoOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::NotifyAddThingTopoRequest&, const NotifyAddThingTopoOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> NotifyAddThingTopoAsyncHandler;
@@ -1744,6 +1766,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::QuerySchedulePeriodListResult> QuerySchedulePeriodListOutcome;
 			typedef std::future<QuerySchedulePeriodListOutcome> QuerySchedulePeriodListOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QuerySchedulePeriodListRequest&, const QuerySchedulePeriodListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySchedulePeriodListAsyncHandler;
+			typedef Outcome<Error, Model::QuerySharePromotionActivityAuditResultResult> QuerySharePromotionActivityAuditResultOutcome;
+			typedef std::future<QuerySharePromotionActivityAuditResultOutcome> QuerySharePromotionActivityAuditResultOutcomeCallable;
+			typedef std::function<void(const IotClient*, const Model::QuerySharePromotionActivityAuditResultRequest&, const QuerySharePromotionActivityAuditResultOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QuerySharePromotionActivityAuditResultAsyncHandler;
 			typedef Outcome<Error, Model::QueryShareTaskDeviceListResult> QueryShareTaskDeviceListOutcome;
 			typedef std::future<QueryShareTaskDeviceListOutcome> QueryShareTaskDeviceListOutcomeCallable;
 			typedef std::function<void(const IotClient*, const Model::QueryShareTaskDeviceListRequest&, const QueryShareTaskDeviceListOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> QueryShareTaskDeviceListAsyncHandler;
@@ -2064,6 +2089,9 @@ namespace AlibabaCloud
 			AddDataForApiSourceOutcome addDataForApiSource(const Model::AddDataForApiSourceRequest &request)const;
 			void addDataForApiSourceAsync(const Model::AddDataForApiSourceRequest& request, const AddDataForApiSourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddDataForApiSourceOutcomeCallable addDataForApiSourceCallable(const Model::AddDataForApiSourceRequest& request) const;
+			AddDeviceToSharePromotionOutcome addDeviceToSharePromotion(const Model::AddDeviceToSharePromotionRequest &request)const;
+			void addDeviceToSharePromotionAsync(const Model::AddDeviceToSharePromotionRequest& request, const AddDeviceToSharePromotionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			AddDeviceToSharePromotionOutcomeCallable addDeviceToSharePromotionCallable(const Model::AddDeviceToSharePromotionRequest& request) const;
 			AddShareTaskDeviceOutcome addShareTaskDevice(const Model::AddShareTaskDeviceRequest &request)const;
 			void addShareTaskDeviceAsync(const Model::AddShareTaskDeviceRequest& request, const AddShareTaskDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			AddShareTaskDeviceOutcomeCallable addShareTaskDeviceCallable(const Model::AddShareTaskDeviceRequest& request) const;
@@ -2343,6 +2371,12 @@ namespace AlibabaCloud
 			CreateSchedulePeriodOutcome createSchedulePeriod(const Model::CreateSchedulePeriodRequest &request)const;
 			void createSchedulePeriodAsync(const Model::CreateSchedulePeriodRequest& request, const CreateSchedulePeriodAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSchedulePeriodOutcomeCallable createSchedulePeriodCallable(const Model::CreateSchedulePeriodRequest& request) const;
+			CreateSharePromotionActivityOutcome createSharePromotionActivity(const Model::CreateSharePromotionActivityRequest &request)const;
+			void createSharePromotionActivityAsync(const Model::CreateSharePromotionActivityRequest& request, const CreateSharePromotionActivityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSharePromotionActivityOutcomeCallable createSharePromotionActivityCallable(const Model::CreateSharePromotionActivityRequest& request) const;
+			CreateSharePromotionSpeechModelOutcome createSharePromotionSpeechModel(const Model::CreateSharePromotionSpeechModelRequest &request)const;
+			void createSharePromotionSpeechModelAsync(const Model::CreateSharePromotionSpeechModelRequest& request, const CreateSharePromotionSpeechModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateSharePromotionSpeechModelOutcomeCallable createSharePromotionSpeechModelCallable(const Model::CreateSharePromotionSpeechModelRequest& request) const;
 			CreateSoundCodeOutcome createSoundCode(const Model::CreateSoundCodeRequest &request)const;
 			void createSoundCodeAsync(const Model::CreateSoundCodeRequest& request, const CreateSoundCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateSoundCodeOutcomeCallable createSoundCodeCallable(const Model::CreateSoundCodeRequest& request) const;
@@ -2718,6 +2752,9 @@ namespace AlibabaCloud
 			ListThingTemplatesOutcome listThingTemplates(const Model::ListThingTemplatesRequest &request)const;
 			void listThingTemplatesAsync(const Model::ListThingTemplatesRequest& request, const ListThingTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			ListThingTemplatesOutcomeCallable listThingTemplatesCallable(const Model::ListThingTemplatesRequest& request) const;
+			ModifyOTAFirmwareOutcome modifyOTAFirmware(const Model::ModifyOTAFirmwareRequest &request)const;
+			void modifyOTAFirmwareAsync(const Model::ModifyOTAFirmwareRequest& request, const ModifyOTAFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			ModifyOTAFirmwareOutcomeCallable modifyOTAFirmwareCallable(const Model::ModifyOTAFirmwareRequest& request) const;
 			NotifyAddThingTopoOutcome notifyAddThingTopo(const Model::NotifyAddThingTopoRequest &request)const;
 			void notifyAddThingTopoAsync(const Model::NotifyAddThingTopoRequest& request, const NotifyAddThingTopoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			NotifyAddThingTopoOutcomeCallable notifyAddThingTopoCallable(const Model::NotifyAddThingTopoRequest& request) const;
@@ -2964,6 +3001,9 @@ namespace AlibabaCloud
 			QuerySchedulePeriodListOutcome querySchedulePeriodList(const Model::QuerySchedulePeriodListRequest &request)const;
 			void querySchedulePeriodListAsync(const Model::QuerySchedulePeriodListRequest& request, const QuerySchedulePeriodListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QuerySchedulePeriodListOutcomeCallable querySchedulePeriodListCallable(const Model::QuerySchedulePeriodListRequest& request) const;
+			QuerySharePromotionActivityAuditResultOutcome querySharePromotionActivityAuditResult(const Model::QuerySharePromotionActivityAuditResultRequest &request)const;
+			void querySharePromotionActivityAuditResultAsync(const Model::QuerySharePromotionActivityAuditResultRequest& request, const QuerySharePromotionActivityAuditResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			QuerySharePromotionActivityAuditResultOutcomeCallable querySharePromotionActivityAuditResultCallable(const Model::QuerySharePromotionActivityAuditResultRequest& request) const;
 			QueryShareTaskDeviceListOutcome queryShareTaskDeviceList(const Model::QueryShareTaskDeviceListRequest &request)const;
 			void queryShareTaskDeviceListAsync(const Model::QueryShareTaskDeviceListRequest& request, const QueryShareTaskDeviceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			QueryShareTaskDeviceListOutcomeCallable queryShareTaskDeviceListCallable(const Model::QueryShareTaskDeviceListRequest& request) const;

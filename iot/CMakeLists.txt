@@ -23,6 +23,8 @@ set(iot_public_header
 set(iot_public_header_model 
 	include/alibabacloud/iot/model/AddDataForApiSourceRequest.h
 	include/alibabacloud/iot/model/AddDataForApiSourceResult.h
+	include/alibabacloud/iot/model/AddDeviceToSharePromotionRequest.h
+	include/alibabacloud/iot/model/AddDeviceToSharePromotionResult.h
 	include/alibabacloud/iot/model/AddShareTaskDeviceRequest.h
 	include/alibabacloud/iot/model/AddShareTaskDeviceResult.h
 	include/alibabacloud/iot/model/AsyncRRpcRequest.h
@@ -209,6 +211,10 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/CreateSceneRuleResult.h
 	include/alibabacloud/iot/model/CreateSchedulePeriodRequest.h
 	include/alibabacloud/iot/model/CreateSchedulePeriodResult.h
+	include/alibabacloud/iot/model/CreateSharePromotionActivityRequest.h
+	include/alibabacloud/iot/model/CreateSharePromotionActivityResult.h
+	include/alibabacloud/iot/model/CreateSharePromotionSpeechModelRequest.h
+	include/alibabacloud/iot/model/CreateSharePromotionSpeechModelResult.h
 	include/alibabacloud/iot/model/CreateSoundCodeRequest.h
 	include/alibabacloud/iot/model/CreateSoundCodeResult.h
 	include/alibabacloud/iot/model/CreateSoundCodeLabelRequest.h
@@ -459,6 +465,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/ListThingModelVersionResult.h
 	include/alibabacloud/iot/model/ListThingTemplatesRequest.h
 	include/alibabacloud/iot/model/ListThingTemplatesResult.h
+	include/alibabacloud/iot/model/ModifyOTAFirmwareRequest.h
+	include/alibabacloud/iot/model/ModifyOTAFirmwareResult.h
 	include/alibabacloud/iot/model/NotifyAddThingTopoRequest.h
 	include/alibabacloud/iot/model/NotifyAddThingTopoResult.h
 	include/alibabacloud/iot/model/OpenIotServiceRequest.h
@@ -623,6 +631,8 @@ set(iot_public_header_model
 	include/alibabacloud/iot/model/QuerySceneRuleResult.h
 	include/alibabacloud/iot/model/QuerySchedulePeriodListRequest.h
 	include/alibabacloud/iot/model/QuerySchedulePeriodListResult.h
+	include/alibabacloud/iot/model/QuerySharePromotionActivityAuditResultRequest.h
+	include/alibabacloud/iot/model/QuerySharePromotionActivityAuditResultResult.h
 	include/alibabacloud/iot/model/QueryShareTaskDeviceListRequest.h
 	include/alibabacloud/iot/model/QueryShareTaskDeviceListResult.h
 	include/alibabacloud/iot/model/QuerySolutionDeviceGroupPageRequest.h
@@ -836,6 +846,8 @@ set(iot_src
 	src/IotClient.cc
 	src/model/AddDataForApiSourceRequest.cc
 	src/model/AddDataForApiSourceResult.cc
+	src/model/AddDeviceToSharePromotionRequest.cc
+	src/model/AddDeviceToSharePromotionResult.cc
 	src/model/AddShareTaskDeviceRequest.cc
 	src/model/AddShareTaskDeviceResult.cc
 	src/model/AsyncRRpcRequest.cc
@@ -1022,6 +1034,10 @@ set(iot_src
 	src/model/CreateSceneRuleResult.cc
 	src/model/CreateSchedulePeriodRequest.cc
 	src/model/CreateSchedulePeriodResult.cc
+	src/model/CreateSharePromotionActivityRequest.cc
+	src/model/CreateSharePromotionActivityResult.cc
+	src/model/CreateSharePromotionSpeechModelRequest.cc
+	src/model/CreateSharePromotionSpeechModelResult.cc
 	src/model/CreateSoundCodeRequest.cc
 	src/model/CreateSoundCodeResult.cc
 	src/model/CreateSoundCodeLabelRequest.cc
@@ -1272,6 +1288,8 @@ set(iot_src
 	src/model/ListThingModelVersionResult.cc
 	src/model/ListThingTemplatesRequest.cc
 	src/model/ListThingTemplatesResult.cc
+	src/model/ModifyOTAFirmwareRequest.cc
+	src/model/ModifyOTAFirmwareResult.cc
 	src/model/NotifyAddThingTopoRequest.cc
 	src/model/NotifyAddThingTopoResult.cc
 	src/model/OpenIotServiceRequest.cc
@@ -1436,6 +1454,8 @@ set(iot_src
 	src/model/QuerySceneRuleResult.cc
 	src/model/QuerySchedulePeriodListRequest.cc
 	src/model/QuerySchedulePeriodListResult.cc
+	src/model/QuerySharePromotionActivityAuditResultRequest.cc
+	src/model/QuerySharePromotionActivityAuditResultResult.cc
 	src/model/QueryShareTaskDeviceListRequest.cc
 	src/model/QueryShareTaskDeviceListResult.cc
 	src/model/QuerySolutionDeviceGroupPageRequest.cc

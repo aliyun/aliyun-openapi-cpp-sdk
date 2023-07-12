@@ -87,6 +87,42 @@ IotClient::AddDataForApiSourceOutcomeCallable IotClient::addDataForApiSourceCall
 	return task->get_future();
 }
 
+IotClient::AddDeviceToSharePromotionOutcome IotClient::addDeviceToSharePromotion(const AddDeviceToSharePromotionRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return AddDeviceToSharePromotionOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return AddDeviceToSharePromotionOutcome(AddDeviceToSharePromotionResult(outcome.result()));
+	else
+		return AddDeviceToSharePromotionOutcome(outcome.error());
+}
+
+void IotClient::addDeviceToSharePromotionAsync(const AddDeviceToSharePromotionRequest& request, const AddDeviceToSharePromotionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, addDeviceToSharePromotion(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::AddDeviceToSharePromotionOutcomeCallable IotClient::addDeviceToSharePromotionCallable(const AddDeviceToSharePromotionRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<AddDeviceToSharePromotionOutcome()>>(
+			[this, request]()
+			{
+			return this->addDeviceToSharePromotion(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::AddShareTaskDeviceOutcome IotClient::addShareTaskDevice(const AddShareTaskDeviceRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -3429,6 +3465,78 @@ IotClient::CreateSchedulePeriodOutcomeCallable IotClient::createSchedulePeriodCa
 			[this, request]()
 			{
 			return this->createSchedulePeriod(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::CreateSharePromotionActivityOutcome IotClient::createSharePromotionActivity(const CreateSharePromotionActivityRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSharePromotionActivityOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSharePromotionActivityOutcome(CreateSharePromotionActivityResult(outcome.result()));
+	else
+		return CreateSharePromotionActivityOutcome(outcome.error());
+}
+
+void IotClient::createSharePromotionActivityAsync(const CreateSharePromotionActivityRequest& request, const CreateSharePromotionActivityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSharePromotionActivity(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateSharePromotionActivityOutcomeCallable IotClient::createSharePromotionActivityCallable(const CreateSharePromotionActivityRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSharePromotionActivityOutcome()>>(
+			[this, request]()
+			{
+			return this->createSharePromotionActivity(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::CreateSharePromotionSpeechModelOutcome IotClient::createSharePromotionSpeechModel(const CreateSharePromotionSpeechModelRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateSharePromotionSpeechModelOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateSharePromotionSpeechModelOutcome(CreateSharePromotionSpeechModelResult(outcome.result()));
+	else
+		return CreateSharePromotionSpeechModelOutcome(outcome.error());
+}
+
+void IotClient::createSharePromotionSpeechModelAsync(const CreateSharePromotionSpeechModelRequest& request, const CreateSharePromotionSpeechModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createSharePromotionSpeechModel(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::CreateSharePromotionSpeechModelOutcomeCallable IotClient::createSharePromotionSpeechModelCallable(const CreateSharePromotionSpeechModelRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateSharePromotionSpeechModelOutcome()>>(
+			[this, request]()
+			{
+			return this->createSharePromotionSpeechModel(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
@@ -7935,6 +8043,42 @@ IotClient::ListThingTemplatesOutcomeCallable IotClient::listThingTemplatesCallab
 	return task->get_future();
 }
 
+IotClient::ModifyOTAFirmwareOutcome IotClient::modifyOTAFirmware(const ModifyOTAFirmwareRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return ModifyOTAFirmwareOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return ModifyOTAFirmwareOutcome(ModifyOTAFirmwareResult(outcome.result()));
+	else
+		return ModifyOTAFirmwareOutcome(outcome.error());
+}
+
+void IotClient::modifyOTAFirmwareAsync(const ModifyOTAFirmwareRequest& request, const ModifyOTAFirmwareAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, modifyOTAFirmware(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::ModifyOTAFirmwareOutcomeCallable IotClient::modifyOTAFirmwareCallable(const ModifyOTAFirmwareRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<ModifyOTAFirmwareOutcome()>>(
+			[this, request]()
+			{
+			return this->modifyOTAFirmware(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 IotClient::NotifyAddThingTopoOutcome IotClient::notifyAddThingTopo(const NotifyAddThingTopoRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -10881,6 +11025,42 @@ IotClient::QuerySchedulePeriodListOutcomeCallable IotClient::querySchedulePeriod
 			[this, request]()
 			{
 			return this->querySchedulePeriodList(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+IotClient::QuerySharePromotionActivityAuditResultOutcome IotClient::querySharePromotionActivityAuditResult(const QuerySharePromotionActivityAuditResultRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return QuerySharePromotionActivityAuditResultOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return QuerySharePromotionActivityAuditResultOutcome(QuerySharePromotionActivityAuditResultResult(outcome.result()));
+	else
+		return QuerySharePromotionActivityAuditResultOutcome(outcome.error());
+}
+
+void IotClient::querySharePromotionActivityAuditResultAsync(const QuerySharePromotionActivityAuditResultRequest& request, const QuerySharePromotionActivityAuditResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, querySharePromotionActivityAuditResult(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+IotClient::QuerySharePromotionActivityAuditResultOutcomeCallable IotClient::querySharePromotionActivityAuditResultCallable(const QuerySharePromotionActivityAuditResultRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<QuerySharePromotionActivityAuditResultOutcome()>>(
+			[this, request]()
+			{
+			return this->querySharePromotionActivityAuditResult(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));
