@@ -483,6 +483,42 @@ Dms_enterpriseClient::CreateAuthorityTemplateOutcomeCallable Dms_enterpriseClien
 	return task->get_future();
 }
 
+Dms_enterpriseClient::CreateDataArchiveOrderOutcome Dms_enterpriseClient::createDataArchiveOrder(const CreateDataArchiveOrderRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return CreateDataArchiveOrderOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return CreateDataArchiveOrderOutcome(CreateDataArchiveOrderResult(outcome.result()));
+	else
+		return CreateDataArchiveOrderOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::createDataArchiveOrderAsync(const CreateDataArchiveOrderRequest& request, const CreateDataArchiveOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, createDataArchiveOrder(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::CreateDataArchiveOrderOutcomeCallable Dms_enterpriseClient::createDataArchiveOrderCallable(const CreateDataArchiveOrderRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<CreateDataArchiveOrderOutcome()>>(
+			[this, request]()
+			{
+			return this->createDataArchiveOrder(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
 Dms_enterpriseClient::CreateDataCorrectOrderOutcome Dms_enterpriseClient::createDataCorrectOrder(const CreateDataCorrectOrderRequest &request) const
 {
 	auto endpointOutcome = endpointProvider_->getEndpoint();
@@ -2133,6 +2169,42 @@ Dms_enterpriseClient::GetDBTopologyOutcomeCallable Dms_enterpriseClient::getDBTo
 			[this, request]()
 			{
 			return this->getDBTopology(request);
+			});
+
+	asyncExecute(new Runnable([task]() { (*task)(); }));
+	return task->get_future();
+}
+
+Dms_enterpriseClient::GetDataArchiveCountOutcome Dms_enterpriseClient::getDataArchiveCount(const GetDataArchiveCountRequest &request) const
+{
+	auto endpointOutcome = endpointProvider_->getEndpoint();
+	if (!endpointOutcome.isSuccess())
+		return GetDataArchiveCountOutcome(endpointOutcome.error());
+
+	auto outcome = makeRequest(endpointOutcome.result(), request);
+
+	if (outcome.isSuccess())
+		return GetDataArchiveCountOutcome(GetDataArchiveCountResult(outcome.result()));
+	else
+		return GetDataArchiveCountOutcome(outcome.error());
+}
+
+void Dms_enterpriseClient::getDataArchiveCountAsync(const GetDataArchiveCountRequest& request, const GetDataArchiveCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context) const
+{
+	auto fn = [this, request, handler, context]()
+	{
+		handler(this, request, getDataArchiveCount(request), context);
+	};
+
+	asyncExecute(new Runnable(fn));
+}
+
+Dms_enterpriseClient::GetDataArchiveCountOutcomeCallable Dms_enterpriseClient::getDataArchiveCountCallable(const GetDataArchiveCountRequest &request) const
+{
+	auto task = std::make_shared<std::packaged_task<GetDataArchiveCountOutcome()>>(
+			[this, request]()
+			{
+			return this->getDataArchiveCount(request);
 			});
 
 	asyncExecute(new Runnable([task]() { (*task)(); }));

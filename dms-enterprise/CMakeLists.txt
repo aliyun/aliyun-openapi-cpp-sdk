@@ -45,6 +45,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/CloseOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateAuthorityTemplateRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateAuthorityTemplateResult.h
+	include/alibabacloud/dms-enterprise/model/CreateDataArchiveOrderRequest.h
+	include/alibabacloud/dms-enterprise/model/CreateDataArchiveOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateDataCorrectOrderRequest.h
 	include/alibabacloud/dms-enterprise/model/CreateDataCorrectOrderResult.h
 	include/alibabacloud/dms-enterprise/model/CreateDataCronClearOrderRequest.h
@@ -137,6 +139,8 @@ set(dms-enterprise_public_header_model
 	include/alibabacloud/dms-enterprise/model/GetDBTaskSQLJobLogResult.h
 	include/alibabacloud/dms-enterprise/model/GetDBTopologyRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDBTopologyResult.h
+	include/alibabacloud/dms-enterprise/model/GetDataArchiveCountRequest.h
+	include/alibabacloud/dms-enterprise/model/GetDataArchiveCountResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataArchiveOrderDetailRequest.h
 	include/alibabacloud/dms-enterprise/model/GetDataArchiveOrderDetailResult.h
 	include/alibabacloud/dms-enterprise/model/GetDataCorrectBackupFilesRequest.h
@@ -460,6 +464,8 @@ set(dms-enterprise_src
 	src/model/CloseOrderResult.cc
 	src/model/CreateAuthorityTemplateRequest.cc
 	src/model/CreateAuthorityTemplateResult.cc
+	src/model/CreateDataArchiveOrderRequest.cc
+	src/model/CreateDataArchiveOrderResult.cc
 	src/model/CreateDataCorrectOrderRequest.cc
 	src/model/CreateDataCorrectOrderResult.cc
 	src/model/CreateDataCronClearOrderRequest.cc
@@ -552,6 +558,8 @@ set(dms-enterprise_src
 	src/model/GetDBTaskSQLJobLogResult.cc
 	src/model/GetDBTopologyRequest.cc
 	src/model/GetDBTopologyResult.cc
+	src/model/GetDataArchiveCountRequest.cc
+	src/model/GetDataArchiveCountResult.cc
 	src/model/GetDataArchiveOrderDetailRequest.cc
 	src/model/GetDataArchiveOrderDetailResult.cc
 	src/model/GetDataCorrectBackupFilesRequest.cc

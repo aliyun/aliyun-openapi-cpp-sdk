@@ -46,6 +46,8 @@
 #include "model/CloseOrderResult.h"
 #include "model/CreateAuthorityTemplateRequest.h"
 #include "model/CreateAuthorityTemplateResult.h"
+#include "model/CreateDataArchiveOrderRequest.h"
+#include "model/CreateDataArchiveOrderResult.h"
 #include "model/CreateDataCorrectOrderRequest.h"
 #include "model/CreateDataCorrectOrderResult.h"
 #include "model/CreateDataCronClearOrderRequest.h"
@@ -138,6 +140,8 @@
 #include "model/GetDBTaskSQLJobLogResult.h"
 #include "model/GetDBTopologyRequest.h"
 #include "model/GetDBTopologyResult.h"
+#include "model/GetDataArchiveCountRequest.h"
+#include "model/GetDataArchiveCountResult.h"
 #include "model/GetDataArchiveOrderDetailRequest.h"
 #include "model/GetDataArchiveOrderDetailResult.h"
 #include "model/GetDataCorrectBackupFilesRequest.h"
@@ -479,6 +483,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::CreateAuthorityTemplateResult> CreateAuthorityTemplateOutcome;
 			typedef std::future<CreateAuthorityTemplateOutcome> CreateAuthorityTemplateOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateAuthorityTemplateRequest&, const CreateAuthorityTemplateOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuthorityTemplateAsyncHandler;
+			typedef Outcome<Error, Model::CreateDataArchiveOrderResult> CreateDataArchiveOrderOutcome;
+			typedef std::future<CreateDataArchiveOrderOutcome> CreateDataArchiveOrderOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateDataArchiveOrderRequest&, const CreateDataArchiveOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataArchiveOrderAsyncHandler;
 			typedef Outcome<Error, Model::CreateDataCorrectOrderResult> CreateDataCorrectOrderOutcome;
 			typedef std::future<CreateDataCorrectOrderOutcome> CreateDataCorrectOrderOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::CreateDataCorrectOrderRequest&, const CreateDataCorrectOrderOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataCorrectOrderAsyncHandler;
@@ -617,6 +624,9 @@ namespace AlibabaCloud
 			typedef Outcome<Error, Model::GetDBTopologyResult> GetDBTopologyOutcome;
 			typedef std::future<GetDBTopologyOutcome> GetDBTopologyOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDBTopologyRequest&, const GetDBTopologyOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDBTopologyAsyncHandler;
+			typedef Outcome<Error, Model::GetDataArchiveCountResult> GetDataArchiveCountOutcome;
+			typedef std::future<GetDataArchiveCountOutcome> GetDataArchiveCountOutcomeCallable;
+			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataArchiveCountRequest&, const GetDataArchiveCountOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataArchiveCountAsyncHandler;
 			typedef Outcome<Error, Model::GetDataArchiveOrderDetailResult> GetDataArchiveOrderDetailOutcome;
 			typedef std::future<GetDataArchiveOrderDetailOutcome> GetDataArchiveOrderDetailOutcomeCallable;
 			typedef std::function<void(const Dms_enterpriseClient*, const Model::GetDataArchiveOrderDetailRequest&, const GetDataArchiveOrderDetailOutcome&, const std::shared_ptr<const AsyncCallerContext>&)> GetDataArchiveOrderDetailAsyncHandler;
@@ -1102,6 +1112,9 @@ namespace AlibabaCloud
 			CreateAuthorityTemplateOutcome createAuthorityTemplate(const Model::CreateAuthorityTemplateRequest &request)const;
 			void createAuthorityTemplateAsync(const Model::CreateAuthorityTemplateRequest& request, const CreateAuthorityTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateAuthorityTemplateOutcomeCallable createAuthorityTemplateCallable(const Model::CreateAuthorityTemplateRequest& request) const;
+			CreateDataArchiveOrderOutcome createDataArchiveOrder(const Model::CreateDataArchiveOrderRequest &request)const;
+			void createDataArchiveOrderAsync(const Model::CreateDataArchiveOrderRequest& request, const CreateDataArchiveOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			CreateDataArchiveOrderOutcomeCallable createDataArchiveOrderCallable(const Model::CreateDataArchiveOrderRequest& request) const;
 			CreateDataCorrectOrderOutcome createDataCorrectOrder(const Model::CreateDataCorrectOrderRequest &request)const;
 			void createDataCorrectOrderAsync(const Model::CreateDataCorrectOrderRequest& request, const CreateDataCorrectOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			CreateDataCorrectOrderOutcomeCallable createDataCorrectOrderCallable(const Model::CreateDataCorrectOrderRequest& request) const;
@@ -1240,6 +1253,9 @@ namespace AlibabaCloud
 			GetDBTopologyOutcome getDBTopology(const Model::GetDBTopologyRequest &request)const;
 			void getDBTopologyAsync(const Model::GetDBTopologyRequest& request, const GetDBTopologyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDBTopologyOutcomeCallable getDBTopologyCallable(const Model::GetDBTopologyRequest& request) const;
+			GetDataArchiveCountOutcome getDataArchiveCount(const Model::GetDataArchiveCountRequest &request)const;
+			void getDataArchiveCountAsync(const Model::GetDataArchiveCountRequest& request, const GetDataArchiveCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
+			GetDataArchiveCountOutcomeCallable getDataArchiveCountCallable(const Model::GetDataArchiveCountRequest& request) const;
 			GetDataArchiveOrderDetailOutcome getDataArchiveOrderDetail(const Model::GetDataArchiveOrderDetailRequest &request)const;
 			void getDataArchiveOrderDetailAsync(const Model::GetDataArchiveOrderDetailRequest& request, const GetDataArchiveOrderDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr) const;
 			GetDataArchiveOrderDetailOutcomeCallable getDataArchiveOrderDetailCallable(const Model::GetDataArchiveOrderDetailRequest& request) const;
