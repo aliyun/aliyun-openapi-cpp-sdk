@@ -44,6 +44,8 @@ public:
 	void setDBInstanceId(const std::string &dBInstanceId);
 	std::string getSwitchTime() const;
 	void setSwitchTime(const std::string &switchTime);
+	std::string getNodeId() const;
+	void setNodeId(const std::string &nodeId);
 	std::string getResourceOwnerAccount() const;
 	void setResourceOwnerAccount(const std::string &resourceOwnerAccount);
 	std::string getOwnerAccount() const;
@@ -59,6 +61,7 @@ private:
 	std::string effectiveTime_;
 	std::string dBInstanceId_;
 	std::string switchTime_;
+	std::string nodeId_;
 	std::string resourceOwnerAccount_;
 	std::string ownerAccount_;
 	long ownerId_;

@@ -88,6 +88,15 @@ void RestartDBInstanceRequest::setSwitchTime(const std::string &switchTime) {
   setParameter(std::string("SwitchTime"), switchTime);
 }
 
+std::string RestartDBInstanceRequest::getNodeId() const {
+  return nodeId_;
+}
+
+void RestartDBInstanceRequest::setNodeId(const std::string &nodeId) {
+  nodeId_ = nodeId;
+  setParameter(std::string("NodeId"), nodeId);
+}
+
 std::string RestartDBInstanceRequest::getResourceOwnerAccount() const {
   return resourceOwnerAccount_;
 }
